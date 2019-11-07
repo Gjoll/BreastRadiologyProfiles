@@ -1,0 +1,126 @@
+{
+  "resourceType": "StructureDefinition",
+  "id": "BreastRadiologyObservationPatientHistory",
+  "text": {
+    "status": "generated",
+    "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\">\n  <p><b>BreastRadiologyObservationPatientHistory Profile</b></p>\n  <p>Breast Radiology Patient History Observation.\n&lt;br&gt;This observation is the root section of the multiple observations that comprise\na breast radiology patient history observation.</p>\n  </div>"
+  },
+  "url": "http://hl7.org/fhir/us/breast-radiology/StructureDefinition/BreastRadiologyObservationPatientHistory",
+  "version": "0.0.2",
+  "name": "BreastRadiologyObservationPatientHistory",
+  "title": "BreastRadiologyObservationPatientHistory",
+  "status": "draft",
+  "date": "2019-11-01",
+  "publisher": "Hl7 - Clinical Interoperability Council",
+  "contact": [
+    {
+      "telecom": [
+        {
+          "system": "url",
+          "value": "http://www.hl7.org/Special/committees/cic"
+        }
+      ]
+    }
+  ],
+  "description": "Breast Radiology Patient History Observation.\n<br>This observation is the root section of the multiple observations that comprise\na breast radiology patient history observation.",
+  "purpose": "Observations are a key aspect of healthcare.  This resource is used to capture those that do not require more sophisticated mechanisms.",
+  "fhirVersion": "4.0.0",
+  "kind": "resource",
+  "abstract": false,
+  "type": "Observation",
+  "baseDefinition": "http://hl7.org/fhir/StructureDefinition/Observation",
+  "derivation": "constraint",
+  "differential": {
+    "element": [
+      {
+        "id": "Observation",
+        "path": "Observation",
+        "short": "BreastRadiologyObservationPatientHistory",
+        "definition": "Breast Radiology Patient History Observation.\n<br>This observation is the root section of the multiple observations that comprise\na breast radiology patient history observation."
+      },
+      {
+        "id": "Observation.category",
+        "path": "Observation.category",
+        "min": 0,
+        "max": "1",
+        "binding": {
+          "extension": [
+            {
+              "url": "http://hl7.org/fhir/StructureDefinition/elementdefinition-bindingName",
+              "valueString": "ObservationCategory"
+            }
+          ],
+          "strength": "extensible",
+          "description": "Codes for high level observation categories.",
+          "valueSet": "http://hl7.org/fhir/ValueSet/observation-category"
+        }
+      },
+      {
+        "id": "Observation.code",
+        "path": "Observation.code",
+        "slicing": {
+          "discriminator": [
+            {
+              "type": "value",
+              "path": "coding"
+            }
+          ],
+          "rules": "openAtEnd"
+        }
+      },
+      {
+        "id": "Observation.code.coding",
+        "path": "Observation.code.coding"
+      },
+      {
+        "id": "Observation.code.coding:ObservationCode",
+        "path": "Observation.code.coding",
+        "sliceName": "ObservationCode",
+        "patternCoding": {
+          "system": "http://loinc.org",
+          "code": "34117-2"
+        }
+      },
+      {
+        "id": "Observation.subject",
+        "path": "Observation.subject",
+        "short": "The subject of an observation",
+        "definition": "The subject of an observation.",
+        "min": 1,
+        "max": "1"
+      },
+      {
+        "id": "Observation.value[x]",
+        "path": "Observation.value[x]",
+        "min": 0,
+        "max": "0"
+      },
+      {
+        "id": "Observation.interpretation",
+        "path": "Observation.interpretation",
+        "min": 0,
+        "max": "1"
+      },
+      {
+        "id": "Observation.specimen",
+        "path": "Observation.specimen"
+      },
+      {
+        "id": "Observation.hasMember",
+        "path": "Observation.hasMember",
+        "type": [
+          {
+            "code": "Reference",
+            "targetProfile": [
+              "http://hl7.org/fhir/StructureDefinition/Observation"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "Observation.component",
+        "path": "Observation.component"
+      }
+    ]
+  }
+}

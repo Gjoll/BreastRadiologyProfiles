@@ -1,0 +1,147 @@
+{
+  "resourceType": "StructureDefinition",
+  "id": "BreastRadiologyAbnormalityMaxLength",
+  "text": {
+    "status": "generated",
+    "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\">\n  <p><b>BreastRadiologyAbnormalityMaxLength Profile</b></p>\n  <p>MaxLength value.\n</p></div>"
+  },
+  "url": "http://hl7.org/fhir/us/breast-radiology/StructureDefinition/BreastRadiologyAbnormalityMaxLength",
+  "version": "0.0.2",
+  "name": "BreastRadiologyAbnormalityMaxLength",
+  "title": "BreastRadiologyAbnormalityMaxLength",
+  "status": "draft",
+  "date": "2019-11-01",
+  "publisher": "Hl7 - Clinical Interoperability Council",
+  "contact": [
+    {
+      "telecom": [
+        {
+          "system": "url",
+          "value": "http://www.hl7.org/Special/committees/cic"
+        }
+      ]
+    }
+  ],
+  "description": "MaxLength value.\n<br>",
+  "purpose": "Observations are a key aspect of healthcare.  This resource is used to capture those that do not require more sophisticated mechanisms.",
+  "fhirVersion": "4.0.0",
+  "kind": "resource",
+  "abstract": false,
+  "type": "Observation",
+  "baseDefinition": "http://hl7.org/fhir/StructureDefinition/Observation",
+  "derivation": "constraint",
+  "differential": {
+    "element": [
+      {
+        "id": "Observation",
+        "path": "Observation",
+        "short": "BreastRadiologyAbnormalityMaxLength",
+        "definition": "MaxLength value.\n<br>"
+      },
+      {
+        "id": "Observation.category",
+        "path": "Observation.category",
+        "slicing": {
+          "discriminator": [
+            {
+              "type": "value",
+              "path": "coding"
+            }
+          ],
+          "rules": "openAtEnd"
+        },
+        "min": 0,
+        "max": "1"
+      },
+      {
+        "id": "Observation.category.coding",
+        "path": "Observation.category.coding"
+      },
+      {
+        "id": "Observation.category.coding:Imaging",
+        "path": "Observation.category.coding",
+        "sliceName": "Imaging",
+        "patternCoding": {
+          "system": "http://terminology.hl7.org/CodeSystem/observation-category",
+          "code": "imaging"
+        }
+      },
+      {
+        "id": "Observation.code",
+        "path": "Observation.code",
+        "slicing": {
+          "discriminator": [
+            {
+              "type": "value",
+              "path": "coding"
+            }
+          ],
+          "rules": "openAtEnd"
+        }
+      },
+      {
+        "id": "Observation.code.coding",
+        "path": "Observation.code.coding"
+      },
+      {
+        "id": "Observation.code.coding:ObservationCode",
+        "path": "Observation.code.coding",
+        "sliceName": "ObservationCode",
+        "patternCoding": {
+          "system": "http://hl7.org/fhir/us/breast-radiology/CodeSystem/BreastAbnormalityCodesCS",
+          "code": "MaxLength"
+        }
+      },
+      {
+        "id": "Observation.subject",
+        "path": "Observation.subject",
+        "short": "The subject of an observation",
+        "definition": "The subject of an observation.",
+        "min": 1,
+        "max": "1"
+      },
+        {
+            "id": "Observation.valueQuantity",
+            "path": "Observation.valueQuantity",
+            "base": {
+                "path": "Observation.value[x]",
+                "min": 1,
+                "max": "1"
+            },
+            "patternQuantity": {
+                "system": "http://unitsofmeasure.org",
+                "code": "UnitsOfLengthVS"
+            },
+            "type": [
+                {
+                    "code": "Quantity"
+                }
+            ]
+        },
+      {
+        "id": "Observation.interpretation",
+        "path": "Observation.interpretation",
+        "min": 0,
+        "max": "1"
+      },
+      {
+        "id": "Observation.specimen",
+        "path": "Observation.specimen",
+        "min": 0,
+        "max": "0"
+      },
+      {
+        "id": "Observation.hasMember",
+        "path": "Observation.hasMember",
+        "min": 0,
+        "max": "0"
+      },
+      {
+        "id": "Observation.component",
+        "path": "Observation.component",
+        "min": 0,
+        "max": "0"
+      }
+    ]
+  }
+}

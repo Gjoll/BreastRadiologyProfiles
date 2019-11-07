@@ -1,0 +1,445 @@
+{
+  "resourceType" : "ImplementationGuide",
+  "id" : "hl7.fhir.us.breast-radiology-0.1.0",
+  "extension" : [{
+    "url" : "http://hl7.org/fhir/StructureDefinition/igpublisher-folder-resource",
+    "valueString" : "C:\\Development\\Penrad\\FhirKhit\\Projects\\BreastRadiology\\IG\\guide\\resources"
+  },
+  {
+    "url" : "http://hl7.org/fhir/StructureDefinition/igpublisher-folder-resource",
+    "valueString" : "C:\\Development\\Penrad\\FhirKhit\\Projects\\BreastRadiology\\IG\\guide\\examples"
+  },
+  {
+    "url" : "http://hl7.org/fhir/StructureDefinition/igpublisher-folder-pages",
+    "valueString" : "C:\\Development\\Penrad\\FhirKhit\\Projects\\BreastRadiology\\IG\\guide\\pages"
+  }],
+  "url" : "http://hl7.org/fhir/us/breast-radiology/ImplementationGuide/hl7.fhir.us.breast-radiology-0.1.0",
+  "version" : "0.1.0",
+  "name" : "Breast_Radiology_Reporting_1st_for_comment_ballot",
+  "title" : "Breast Radiology Reporting - 1st for comment ballot",
+  "status" : "draft",
+  "publisher" : "Hl7 - Clinical Interoperability Council",
+  "contact" : [{
+    "telecom" : [{
+      "system" : "url",
+      "value" : "http://www.hl7.org/Special/committees/cic"
+    }]
+  }],
+  "packageId" : "hl7.fhir.us.breast-radiology",
+  "license" : "CC0-1.0",
+  "fhirVersion" : ["4.0.0",
+  "4.0.0"],
+  "definition" : {
+    "grouping" : [{
+      "name" : "Profiles in this Implementation Guide",
+      "description" : "Profiles in this Implementation Guide"
+    },
+    {
+      "id" : "Base",
+      "name" : "Base Name",
+      "description" : "Base Description"
+    }],
+    "resource" : [{
+      "reference" : {
+        "reference" : "CodeSystem/AssymetriesCS"
+      },
+      "name" : "AssymetriesCS",
+      "exampleBoolean" : false
+    },
+    {
+      "reference" : {
+        "reference" : "CodeSystem/CalcificationDistributionCS"
+      },
+      "name" : "CalcificationDistributionCS",
+      "exampleBoolean" : false
+    },
+    {
+      "reference" : {
+        "reference" : "CodeSystem/CalcificationTypeCS"
+      },
+      "name" : "CalcificationTypeCS",
+      "exampleBoolean" : false
+    },
+    {
+      "reference" : {
+        "reference" : "ValueSet/AssymetriesVS"
+      },
+      "name" : "AssymetriesVS",
+      "exampleBoolean" : false
+    },
+    {
+      "reference" : {
+        "reference" : "ValueSet/CalcificationDistributionVS"
+      },
+      "name" : "CalcificationDistributionVS",
+      "exampleBoolean" : false
+    },
+    {
+      "reference" : {
+        "reference" : "ValueSet/CalcificationTypeVS"
+      },
+      "name" : "CalcificationTypeVS",
+      "exampleBoolean" : false
+    },
+    {
+      "reference" : {
+        "reference" : "CodeSystem/BreastLocationClockCS"
+      },
+      "name" : "BreastLocationClockCS",
+      "exampleBoolean" : false
+    },
+    {
+      "reference" : {
+        "reference" : "CodeSystem/BreastLocationDepthCS"
+      },
+      "name" : "BreastLocationDepthCS",
+      "exampleBoolean" : false
+    },
+    {
+      "reference" : {
+        "reference" : "CodeSystem/BreastLocationQuadrantCS"
+      },
+      "name" : "BreastLocationQuadrantCS",
+      "exampleBoolean" : false
+    },
+    {
+      "reference" : {
+        "reference" : "StructureDefinition/BreastBodyLocation"
+      },
+      "name" : "BreastBodyLocation",
+      "exampleBoolean" : false
+    },
+    {
+      "reference" : {
+        "reference" : "ValueSet/BreastLocationClockVS"
+      },
+      "name" : "BreastLocationClockVS",
+      "exampleBoolean" : false
+    },
+    {
+      "reference" : {
+        "reference" : "ValueSet/BreastLocationDepthVS"
+      },
+      "name" : "BreastLocationDepthVS",
+      "exampleBoolean" : false
+    },
+    {
+      "reference" : {
+        "reference" : "ValueSet/BreastLocationQuadrantVS"
+      },
+      "name" : "BreastLocationQuadrantVS",
+      "exampleBoolean" : false
+    },
+    {
+      "reference" : {
+        "reference" : "ValueSet/UnitsOfLengthVS"
+      },
+      "name" : "UnitsOfLengthVS",
+      "exampleBoolean" : false
+    },
+    {
+      "reference" : {
+        "reference" : "CodeSystem/BreastRadAbnormalityMammoArchitecturalDistortionFindingsCS"
+      },
+      "name" : "BreastRadAbnormalityMammoArchitecturalDistortionFindingsCS",
+      "exampleBoolean" : false
+    },
+    {
+      "reference" : {
+        "reference" : "CodeSystem/BreastRadAbnormalityMammoMassDensityCS"
+      },
+      "name" : "BreastRadAbnormalityMammoMassDensityCS",
+      "exampleBoolean" : false
+    },
+    {
+      "reference" : {
+        "reference" : "CodeSystem/BreastRadAbnormalityMammoMassMarginCS"
+      },
+      "name" : "BreastRadAbnormalityMammoMassMarginCS",
+      "exampleBoolean" : false
+    },
+    {
+      "reference" : {
+        "reference" : "CodeSystem/BreastRadAbnormalityMassShapeCS"
+      },
+      "name" : "BreastRadAbnormalityMassShapeCS",
+      "exampleBoolean" : false
+    },
+    {
+      "reference" : {
+        "reference" : "CodeSystem/BreastRadBreastDensityCS"
+      },
+      "name" : "BreastRadBreastDensityCS",
+      "exampleBoolean" : false
+    },
+    {
+      "reference" : {
+        "reference" : "StructureDefinition/BreastRadAbnormalityMammo"
+      },
+      "name" : "BreastRadAbnormalityMammo",
+      "exampleBoolean" : false
+    },
+    {
+      "reference" : {
+        "reference" : "StructureDefinition/BreastRadAbnormalityMammoArchitecturalDistortion"
+      },
+      "name" : "BreastRadAbnormalityMammoArchitecturalDistortion",
+      "exampleBoolean" : false
+    },
+    {
+      "reference" : {
+        "reference" : "StructureDefinition/BreastRadAbnormalityMammoAssymetries"
+      },
+      "name" : "BreastRadAbnormalityMammoAssymetries",
+      "exampleBoolean" : false
+    },
+    {
+      "reference" : {
+        "reference" : "StructureDefinition/BreastRadAbnormalityMammoBreastDensity"
+      },
+      "name" : "BreastRadAbnormalityMammoBreastDensity",
+      "exampleBoolean" : false
+    },
+    {
+      "reference" : {
+        "reference" : "StructureDefinition/BreastRadAbnormalityMammoCalcificationDistribution"
+      },
+      "name" : "BreastRadAbnormalityMammoCalcificationDistribution",
+      "exampleBoolean" : false
+    },
+    {
+      "reference" : {
+        "reference" : "StructureDefinition/BreastRadAbnormalityMammoCalcificationType"
+      },
+      "name" : "BreastRadAbnormalityMammoCalcificationType",
+      "exampleBoolean" : false
+    },
+    {
+      "reference" : {
+        "reference" : "StructureDefinition/BreastRadAbnormalityMammoMassDensity"
+      },
+      "name" : "BreastRadAbnormalityMammoMassDensity",
+      "exampleBoolean" : false
+    },
+    {
+      "reference" : {
+        "reference" : "StructureDefinition/BreastRadAbnormalityMammoMassMargin"
+      },
+      "name" : "BreastRadAbnormalityMammoMassMargin",
+      "exampleBoolean" : false
+    },
+    {
+      "reference" : {
+        "reference" : "StructureDefinition/BreastRadAbnormalityMassShape"
+      },
+      "name" : "BreastRadAbnormalityMassShape",
+      "exampleBoolean" : false
+    },
+    {
+      "reference" : {
+        "reference" : "StructureDefinition/BreastRadAbnormalityMRI"
+      },
+      "name" : "BreastRadAbnormalityMRI",
+      "exampleBoolean" : false
+    },
+    {
+      "reference" : {
+        "reference" : "StructureDefinition/BreastRadAbnormalityUltraSound"
+      },
+      "name" : "BreastRadAbnormalityUltraSound",
+      "exampleBoolean" : false
+    },
+    {
+      "reference" : {
+        "reference" : "StructureDefinition/BreastRadMammoCalcifications"
+      },
+      "name" : "BreastRadMammoCalcifications",
+      "exampleBoolean" : false
+    },
+    {
+      "reference" : {
+        "reference" : "StructureDefinition/BreastRadMammoMass"
+      },
+      "name" : "BreastRadMammoMass",
+      "exampleBoolean" : false
+    },
+    {
+      "reference" : {
+        "reference" : "StructureDefinition/BreastRadPriorReports"
+      },
+      "name" : "BreastRadPriorReports",
+      "exampleBoolean" : false
+    },
+    {
+      "reference" : {
+        "reference" : "StructureDefinition/BreastRadRecommendations"
+      },
+      "name" : "BreastRadRecommendations",
+      "exampleBoolean" : false
+    },
+    {
+      "reference" : {
+        "reference" : "StructureDefinition/BreastRadReport"
+      },
+      "name" : "BreastRadReport",
+      "exampleBoolean" : false
+    },
+    {
+      "reference" : {
+        "reference" : "StructureDefinition/BreastRadSectionFindings"
+      },
+      "name" : "BreastRadSectionFindings",
+      "exampleBoolean" : false
+    },
+    {
+      "reference" : {
+        "reference" : "StructureDefinition/BreastRadSectionFindingsLeftBreast"
+      },
+      "name" : "BreastRadSectionFindingsLeftBreast",
+      "exampleBoolean" : false
+    },
+    {
+      "reference" : {
+        "reference" : "StructureDefinition/BreastRadSectionFindingsRightBreast"
+      },
+      "name" : "BreastRadSectionFindingsRightBreast",
+      "exampleBoolean" : false
+    },
+    {
+      "reference" : {
+        "reference" : "StructureDefinition/BreastRadSectionPatientHistory"
+      },
+      "name" : "BreastRadSectionPatientHistory",
+      "exampleBoolean" : false
+    },
+    {
+      "reference" : {
+        "reference" : "StructureDefinition/BreastRadSectionPatientRisk"
+      },
+      "name" : "BreastRadSectionPatientRisk",
+      "exampleBoolean" : false
+    },
+    {
+      "reference" : {
+        "reference" : "StructureDefinition/BreastRadSectionRoot"
+      },
+      "name" : "BreastRadSectionRoot",
+      "exampleBoolean" : false
+    },
+    {
+      "reference" : {
+        "reference" : "ValueSet/BreastRadAbnormalityMammoArchitecturalDistortionFindingsVS"
+      },
+      "name" : "BreastRadAbnormalityMammoArchitecturalDistortionFindingsVS",
+      "exampleBoolean" : false
+    },
+    {
+      "reference" : {
+        "reference" : "ValueSet/BreastRadAbnormalityMammoMassDensityVS"
+      },
+      "name" : "BreastRadAbnormalityMammoMassDensityVS",
+      "exampleBoolean" : false
+    },
+    {
+      "reference" : {
+        "reference" : "ValueSet/BreastRadAbnormalityMammoMassMarginVS"
+      },
+      "name" : "BreastRadAbnormalityMammoMassMarginVS",
+      "exampleBoolean" : false
+    },
+    {
+      "reference" : {
+        "reference" : "ValueSet/BreastRadAbnormalityMassShapeVS"
+      },
+      "name" : "BreastRadAbnormalityMassShapeVS",
+      "exampleBoolean" : false
+    },
+    {
+      "reference" : {
+        "reference" : "ValueSet/BreastRadBreastDensityVS"
+      },
+      "name" : "BreastRadBreastDensityVS",
+      "exampleBoolean" : false
+    },
+    {
+      "reference" : {
+        "reference" : "CodeSystem/BreastRadAbnormalityMammoIntramammaryLymphNodeFindingsCS"
+      },
+      "name" : "BreastRadAbnormalityMammoIntramammaryLymphNodeFindingsCS",
+      "exampleBoolean" : false
+    },
+    {
+      "reference" : {
+        "reference" : "CodeSystem/BreastRadAbnormalityMammoSkinLesionFindingsCS"
+      },
+      "name" : "BreastRadAbnormalityMammoSkinLesionFindingsCS",
+      "exampleBoolean" : false
+    },
+    {
+      "reference" : {
+        "reference" : "CodeSystem/BreastRadAbnormalityMammoSolitaryDilatedDuctFindingsCS"
+      },
+      "name" : "BreastRadAbnormalityMammoSolitaryDilatedDuctFindingsCS",
+      "exampleBoolean" : false
+    },
+    {
+      "reference" : {
+        "reference" : "StructureDefinition/BreastRadAbnormalityMammoIntramammaryLymphNode"
+      },
+      "name" : "BreastRadAbnormalityMammoIntramammaryLymphNode",
+      "exampleBoolean" : false
+    },
+    {
+      "reference" : {
+        "reference" : "StructureDefinition/BreastRadAbnormalityMammoSkinLesion"
+      },
+      "name" : "BreastRadAbnormalityMammoSkinLesion",
+      "exampleBoolean" : false
+    },
+    {
+      "reference" : {
+        "reference" : "StructureDefinition/BreastRadAbnormalityMammoSolitaryDilatedDuct"
+      },
+      "name" : "BreastRadAbnormalityMammoSolitaryDilatedDuct",
+      "exampleBoolean" : false
+    },
+    {
+      "reference" : {
+        "reference" : "ValueSet/BreastRadAbnormalityMammoIntramammaryLymphNodeFindingsVS"
+      },
+      "name" : "BreastRadAbnormalityMammoIntramammaryLymphNodeFindingsVS",
+      "exampleBoolean" : false
+    },
+    {
+      "reference" : {
+        "reference" : "ValueSet/BreastRadAbnormalityMammoSkinLesionFindingsVS"
+      },
+      "name" : "BreastRadAbnormalityMammoSkinLesionFindingsVS",
+      "exampleBoolean" : false
+    },
+    {
+      "reference" : {
+        "reference" : "ValueSet/BreastRadAbnormalityMammoSolitaryDilatedDuctFindingsVS"
+      },
+      "name" : "BreastRadAbnormalityMammoSolitaryDilatedDuctFindingsVS",
+      "exampleBoolean" : false
+    }],
+    "page" : {
+      "nameUrl" : "index.html",
+      "title" : "Breast Radiology Reporting - 1st for comment ballot",
+      "generation" : "html"
+    },
+    "parameter" : [{
+      "code" : "apply",
+      "value" : "version"
+    },
+    {
+      "code" : "generate",
+      "value" : "xml"
+    },
+    {
+      "code" : "generate",
+      "value" : "JSON"
+    }]
+  }
+}

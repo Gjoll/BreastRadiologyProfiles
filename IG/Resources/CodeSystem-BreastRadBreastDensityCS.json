@@ -1,0 +1,47 @@
+{
+  "resourceType": "CodeSystem",
+  "id": "BreastRadBreastDensityCS",
+  "url": "http://hl7.org/fhir/us/breast-radiology/CodeSystem/BreastRadBreastDensityCS",
+  "version": "0.0.2",
+  "name": "BreastRadBreastDensityCS",
+  "title": "Breast Radiology Breast Density",
+  "status": "draft",
+  "date": "2019-11-01",
+  "publisher": "Hl7-Clinical Interoperability Council",
+  "contact": [
+    {
+      "telecom": [
+        {
+          "system": "url",
+          "value": "http://www.hl7.org/Special/committees/cic"
+        }
+      ]
+    }
+  ],
+  "description": "Breast Radiology Mammography Breast Composition",
+  "caseSensitive": true,
+  "content": "complete",
+  "count": 5,
+  "concept": [
+    {
+      "code": "1",
+      "display": "Not Checked"
+    },
+    {
+      "code": "2",
+      "display": "a. The breasts are almost entirely fatty"
+    },
+    {
+      "code": "3",
+      "display": "b. There are scattered areas of fibroglandular density"
+    },
+    {
+      "code": "4",
+      "display": "c. The breasts are heterogeneously dense, which may obscure detection of small masses"
+    },
+    {
+      "code": "5",
+      "display": "d. The breasts are extremely dense, which lowers the sensitivity of mammography"
+    }
+  ]
+}

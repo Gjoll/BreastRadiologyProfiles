@@ -1,0 +1,362 @@
+#######
+###FileName:'StructureDefinition-BreastRadiologyAbnormality.json'
+###Title: (Single Line)
+BreastRadiologyAbnormality
+###
+###Description: (Multiple Line)
+Breast Abnormality entry. Each instance of this will describe one observed breast abnormality.
+Observations specific to this abnormality, such as density and size, will be found in observations referenced
+by this instances hasMember field.
+###
+###Purpose: (Multiple Line)
+???.
+###
+#######
+###FileName:'StructureDefinition-BreastRadiologyAbnormalityAssociatedFindings.json'
+###Title: (Single Line)
+BreastRadiologyAbnormalityAssociatedFindings
+###
+###Description: (Multiple Line)
+Associated Findings.
+###
+###Purpose: (Multiple Line)
+???.
+###
+#######
+###FileName:'StructureDefinition-BreastRadiologyAbnormalityAsymmetryType.json'
+###Title: (Single Line)
+BreastRadiologyAbnormalityAsymmetryType
+###
+###Description: (Multiple Line)
+Currently many studies utilize cortical thickening and hilum absence as criteria for definition of the risk for metastasis(11,12-16). ... Metastatic deposits accumulate in the lymph node peripheral area, causing enlargement of the cortex, usually focal (at early stages), or uniform..
+###
+###Purpose: (Multiple Line)
+???.
+###
+#######
+###FileName:'StructureDefinition-BreastRadiologyAbnormalityBiRadCode.json'
+###Title: (Single Line)
+BreastRadiologyAbnormalityBiRadCode
+###
+###Description: (Multiple Line)
+Bi-Rad code value.
+###
+###Purpose: (Multiple Line)
+???.
+###
+#######
+###FileName:'StructureDefinition-BreastRadiologyAbnormalityCalcificationType.json'
+###Title: (Single Line)
+BreastRadiologyAbnormalityCalcificationType
+###
+###Description: (Multiple Line)
+Calcification Type.
+###
+###Purpose: (Multiple Line)
+???.
+###
+#######
+###FileName:'StructureDefinition-BreastRadiologyAbnormalityChange.json'
+###Title: (Single Line)
+BreastRadiologyAbnormalityChange
+###
+###Description: (Multiple Line)
+Change value.
+###
+###Purpose: (Multiple Line)
+???.
+###
+#######
+###FileName:'StructureDefinition-BreastRadiologyAbnormalityConsistentWith.json'
+###Title: (Single Line)
+BreastRadiologyAbnormalityConsistentWith
+###
+###Description: (Multiple Line)
+Consistent With.
+###
+###Purpose: (Multiple Line)
+???.
+###
+#######
+###FileName:'StructureDefinition-BreastRadiologyAbnormalityCystTypes.json'
+###Title: (Single Line)
+BreastRadiologyAbnormalityCystTypes
+###
+###Description: (Multiple Line)
+Cyst Types.
+###
+###Purpose: (Multiple Line)
+???.
+###
+#######
+###FileName:'StructureDefinition-BreastRadiologyAbnormalityDensity.json'
+###Title: (Single Line)
+BreastRadiologyAbnormalityDensity
+###
+###Description: (Multiple Line)
+Ductal carcinoma in situ (DCIS) is the presence of abnormal cells inside a milk duct in the breast.
+DCIS is considered the earliest form of breast cancer. DCIS is noninvasive, meaning it hasn't spread out of the milk duct and
+has a low risk of becoming invasive.
+
+The code will be modified in a future  versions to be a suitable public terminology value.
+###
+###Purpose: (Multiple Line)
+???.
+###
+#######
+###FileName:'StructureDefinition-BreastRadiologyAbnormalityForeignBody.json'
+###Title: (Single Line)
+BreastRadiologyAbnormalityForeignBody
+###
+###Description: (Multiple Line)
+ForeignBody value.
+
+###
+###Purpose: (Multiple Line)
+???.
+###
+#######
+###FileName:'StructureDefinition-BreastRadiologyAbnormalityHilum.json'
+###Title: (Single Line)
+BreastRadiologyAbnormalityHilum
+###
+###Description: (Multiple Line)
+Hilum.
+###
+###Purpose: (Multiple Line)
+???.
+###
+#######
+###FileName:'StructureDefinition-BreastRadiologyAbnormalityLymphNodeQualifiers.json'
+###Title: (Single Line)
+BreastRadiologyAbnormalityLymphNodeQualifiers
+###
+###Description: (Multiple Line)
+Lymph Node Qualifiers.
+###
+###Purpose: (Multiple Line)
+???.
+###
+#######
+###FileName:'StructureDefinition-BreastRadiologyAbnormalityMargin.json'
+###Title: (Single Line)
+BreastRadiologyAbnormalityMargin
+###
+###Description: (Multiple Line)
+When breast cancer is surgically removed (during a surgical biopsy, lumpectomy or mastectomy),
+a rim of normal tissue surrounding the tumor is also removed.
+This rim is called a margin.
+Margins help show whether or not all of the tumor was removed.
+###
+###Purpose: (Multiple Line)
+???.
+###
+#######
+###FileName:'StructureDefinition-BreastRadiologyAbnormalityMassTypes.json'
+###Title: (Single Line)
+BreastRadiologyAbnormalityMassTypes
+###
+###Description: (Multiple Line)
+MassTypes value.
+###
+###Purpose: (Multiple Line)
+???.
+###
+#######
+###FileName:'StructureDefinition-BreastRadiologyAbnormalityMaxLength.json'
+###Title: (Single Line)
+BreastRadiologyAbnormalityMaxLength
+###
+###Description: (Multiple Line)
+MaxLength value.
+###
+###Purpose: (Multiple Line)
+???.
+###
+#######
+###FileName:'StructureDefinition-BreastRadiologyAbnormalityNodeTypes.json'
+###Title: (Single Line)
+BreastRadiologyAbnormalityNodeTypes
+###
+###Description: (Multiple Line)
+NodeTypes value.
+###
+###Purpose: (Multiple Line)
+???.
+###
+#######
+###FileName:'StructureDefinition-BreastRadiologyAbnormalityShape.json'
+###Title: (Single Line)
+BreastRadiologyAbnormalityShape
+###
+###Description: (Multiple Line)
+Shape value.
+###
+###Purpose: (Multiple Line)
+???.
+###
+#######
+###FileName:'StructureDefinition-BreastRadiologyAbnormalityType.json'
+###Title: (Single Line)
+BreastRadiologyAbnormalityType
+###
+###Description: (Multiple Line)
+Abnormality Type value.
+###
+###Purpose: (Multiple Line)
+???.
+###
+#######
+###FileName:'StructureDefinition-BreastRadiologyAbnormalityVascularity.json'
+###Title: (Single Line)
+BreastRadiologyAbnormalityVascularity
+###
+###Description: (Multiple Line)
+Vascularity value.
+###
+###Purpose: (Multiple Line)
+???.
+###
+#######
+###FileName:'StructureDefinition-BreastRadiologyAbnormalityWall.json'
+###Title: (Single Line)
+BreastRadiologyAbnormalityWall
+###
+###Description: (Multiple Line)
+Wall value.
+###
+###Purpose: (Multiple Line)
+???.
+###
+#######
+###FileName:'StructureDefinition-BreastRadiologyImpressions.json'
+###Title: (Single Line)
+Impressions
+###
+###Description: (Multiple Line)
+Breast Radiology Impressions Section.
+This is the root section of the multiple conditions that comprise the breast radiology impressions section.
+###
+###Purpose: (Multiple Line)
+
+###
+#######
+###FileName:'StructureDefinition-BreastRadiologyObservation.json'
+###Title: (Single Line)
+BreastRadiologyObservation
+###
+###Description: (Multiple Line)
+Breast Radiology Observation.
+This observation is the root section of the multiple observations that comprise a breast radiology observation.
+###
+###Purpose: (Multiple Line)
+???.
+###
+#######
+###FileName:'StructureDefinition-BreastRadiologyObservationFindings.json'
+###Title: (Single Line)
+BreastRadiologyObservationFindings
+###
+###Description: (Multiple Line)
+Breast Radiology Findings Section.
+
+This observation is the root section of the multiple observations that comprise
+a breast radiology finding section.
+There should be two hasMember children for this node,
+* Breast Radiology Findings Left Breast
+* Breast Radiology Findings Right Breast
+###
+###Purpose: (Multiple Line)
+???.
+###
+#######
+###FileName:'StructureDefinition-BreastRadiologyObservationFindingsLeftBreast.json'
+###Title: (Single Line)
+BreastRadiologyObservationFindingsLeftBreast
+###
+###Description: (Multiple Line)
+Breast Radiology Findings Left Breast Section.
+All the observations referenced by the hasMember field are observations of the
+left breast.
+###
+###Purpose: (Multiple Line)
+???.
+###
+#######
+###FileName:'StructureDefinition-BreastRadiologyObservationFindingsRightBreast.json'
+###Title: (Single Line)
+BreastRadiologyObservationFindingsRightBreast
+###
+###Description: (Multiple Line)
+Breast Radiology Findings Right Breast Section.
+All the observations referenced by the hasMember field are observations of the
+Right breast.
+###
+###Purpose: (Multiple Line)
+???.
+###
+#######
+###FileName:'StructureDefinition-BreastRadiologyObservationPatientHistory.json'
+###Title: (Single Line)
+BreastRadiologyObservationPatientHistory
+###
+###Description: (Multiple Line)
+Breast Radiology Patient History Observation.
+
+This observation is the root section of the multiple observations that comprise
+a breast radiology patient history observation.
+###
+###Purpose: (Multiple Line)
+???.
+###
+#######
+###FileName:'StructureDefinition-BreastRadiologyObservationPatientRisk.json'
+###Title: (Single Line)
+BreastRadiologyObservationPatientRisk
+###
+###Description: (Multiple Line)
+Breast Radiology PatientRisk Section.
+
+This observation is the root section of the multiple observations that comprise
+a breast radiology patient risk section.
+###
+###Purpose: (Multiple Line)
+???.
+###
+#######
+###FileName:'StructureDefinition-BreastRadiologyPriorReports.json'
+###Title: (Single Line)
+PriorReports
+###
+###Description: (Multiple Line)
+Prior reports
+###
+###Purpose: (Multiple Line)
+
+###
+#######
+###FileName:'StructureDefinition-BreastRadiologyRecommendations.json'
+###Title: (Single Line)
+Recommendations
+###
+###Description: (Multiple Line)
+Recommendations for future care
+###
+###Purpose: (Multiple Line)
+
+###
+#######
+###FileName:'StructureDefinition-BreastRadiologyReport.json'
+###Title: (Single Line)
+BreastRadiologyReport
+###
+###Description: (Multiple Line)
+Breast Radiology Diagnostic Report.
+
+This diagnostic report is the base of the Breast Radiology Report, and contains a summary of the report findings.
+
+Detailed information about the results of the exam are contained in the Breast Radiology Observation linked to by the 'result' field.
+###
+###Purpose: (Multiple Line)
+
+###

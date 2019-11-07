@@ -1,0 +1,78 @@
+{
+  "resourceType": "StructureDefinition",
+  "id": "BreastRadiologyRecommendations",
+  "text": {
+    "status": "generated",
+    "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\">\n  <p><b>Recommendations Extension</b></p>\n  <p>Recommendations for future care</p>\n</div>"
+  },
+  "url": "http://hl7.org/fhir/us/breast-radiology/StructureDefinition/BreastRadiologyRecommendations",
+  "version": "0.0.2",
+  "name": "BreastRadiologyRecommendations",
+  "title": "Recommendations",
+  "status": "draft",
+  "date": "2019-11-01",
+  "publisher": "Hl7 - Clinical Interoperability Council",
+  "contact": [
+    {
+      "telecom": [
+        {
+          "system": "url",
+          "value": "http://www.hl7.org/Special/committees/cic"
+        }
+      ]
+    }
+  ],
+  "description": "Recommendations for future care",
+  "fhirVersion": "4.0.0",
+  "kind": "complex-type",
+  "abstract": false,
+  "context": [
+    {
+      "type": "element",
+      "expression": "*"
+    }
+  ],
+  "type": "Extension",
+  "baseDefinition": "http://hl7.org/fhir/StructureDefinition/Extension",
+  "derivation": "constraint",
+  "differential": {
+    "element": [
+      {
+        "id": "Extension",
+        "path": "Extension",
+        "short": "Recommendations",
+        "definition": "Recommendations for future care"
+      },
+      {
+        "id": "Extension.extension",
+        "path": "Extension.extension",
+        "min": 0,
+        "max": "0"
+      },
+      {
+        "id": "Extension.url",
+        "path": "Extension.url",
+        "type": [
+          {
+            "code": "uri"
+          }
+        ],
+        "fixedUri": "http://hl7.org/fhir/us/breast-radiology/StructureDefinition/BreastRadiologyRecommendations"
+      },
+      {
+        "id": "Extension.valueReference",
+        "path": "Extension.valueReference",
+        "min": 1,
+        "type": [
+          {
+            "code": "Reference",
+            "targetProfile": [
+              "http://hl7.org/fhir/StructureDefinition/MedicationRequest",
+              "http://hl7.org/fhir/StructureDefinition/ServiceRequest"
+            ]
+          }
+        ]
+      }
+    ]
+  }
+}

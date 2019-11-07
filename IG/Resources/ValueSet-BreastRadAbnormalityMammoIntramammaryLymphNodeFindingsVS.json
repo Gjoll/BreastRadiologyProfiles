@@ -1,0 +1,43 @@
+{
+  "resourceType": "ValueSet",
+  "id": "BreastRadAbnormalityMammoIntramammaryLymphNodeFindingsVS",
+  "url": "http://hl7.org/fhir/us/breast-radiology/CodeSystem/BreastRadAbnormalityMammoIntramammaryLymphNodeFindingsVS",
+  "version": "0.0.2",
+  "name": "BreastRadAbnormalityMammoIntramammaryLymphNodeFindingsVS",
+  "title": "Breast Radiology Abnormality Intramammary LymphNode Findings (Mammo)",
+  "status": "draft",
+  "date": "2019-11-01",
+  "publisher": "Hl7-Clinical Interoperability Council",
+  "contact": [
+    {
+      "telecom": [
+        {
+          "system": "url",
+          "value": "http://www.hl7.org/Special/committees/cic"
+        }
+      ]
+    }
+  ],
+  "description": "Breast Radiology Abnormality Intramammary LymphNode Findings",
+  "compose": {
+    "include": [
+      {
+        "system": "http://hl7.org/fhir/us/breast-radiology/CodeSystem/BreastRadAbnormalityMammoIntramammaryLymphNodeFindingsCS",
+        "concept": [
+          {
+            "code": "1",
+            "display": "a. Present"
+          },
+          {
+            "code": "2",
+            "display": "b. NotPresent"
+          },
+          {
+            "code": "3",
+            "display": "c. NotChecked"
+          }
+        ]
+      }
+    ]
+  }
+}
