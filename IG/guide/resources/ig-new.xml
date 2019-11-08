@@ -3,13 +3,13 @@
 <ImplementationGuide xmlns="http://hl7.org/fhir">
   <id value="hl7.fhir.us.breast-radiology-0.1.0"/>
   <extension url="http://hl7.org/fhir/StructureDefinition/igpublisher-folder-resource">
-    <valueString value="C:\Development\Penrad\FhirKhit\Projects\BreastRadiology\IG\guide\resources"/>
+    <valueString value="C:\Development\Fhir\BreastRadiology2020FebBallot\IG\guide\resources"/>
   </extension>
   <extension url="http://hl7.org/fhir/StructureDefinition/igpublisher-folder-resource">
-    <valueString value="C:\Development\Penrad\FhirKhit\Projects\BreastRadiology\IG\guide\examples"/>
+    <valueString value="C:\Development\Fhir\BreastRadiology2020FebBallot\IG\guide\examples"/>
   </extension>
   <extension url="http://hl7.org/fhir/StructureDefinition/igpublisher-folder-pages">
-    <valueString value="C:\Development\Penrad\FhirKhit\Projects\BreastRadiology\IG\guide\pages"/>
+    <valueString value="C:\Development\Fhir\BreastRadiology2020FebBallot\IG\guide\pages"/>
   </extension>
   <url value="http://hl7.org/fhir/us/breast-radiology/ImplementationGuide/hl7.fhir.us.breast-radiology-0.1.0"/>
   <version value="0.1.0"/>

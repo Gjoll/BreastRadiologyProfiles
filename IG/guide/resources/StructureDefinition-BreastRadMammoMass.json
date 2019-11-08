@@ -100,14 +100,16 @@
             "severity": "error",
             "human": "If Observation.code is the same as an Observation.component.code then the value element associated with the code SHALL NOT be present",
             "expression": "value.empty() or component.code.where( (coding.code = %resource.code.coding.code) and (coding.system = %resource.code.coding.system)).empty()",
-            "xpath": "not(f:*[starts-with(local-name(.), 'value')] and (for $coding in f:code/f:coding return f:component/f:code/f:coding[f:code/@value=$coding/f:code/@value] [f:system/@value=$coding/f:system/@value]))"
+            "xpath": "not(f:*[starts-with(local-name(.), 'value')] and (for $coding in f:code/f:coding return f:component/f:code/f:coding[f:code/@value=$coding/f:code/@value] [f:system/@value=$coding/f:system/@value]))",
+            "source": "Observation"
           },
           {
             "key": "obs-6",
             "severity": "error",
             "human": "dataAbsentReason SHALL only be present if Observation.value[x] is not present",
             "expression": "dataAbsentReason.empty() or value.empty()",
-            "xpath": "not(exists(f:dataAbsentReason)) or (not(exists(*[starts-with(local-name(.), 'value')])))"
+            "xpath": "not(exists(f:dataAbsentReason)) or (not(exists(*[starts-with(local-name(.), 'value')])))",
+            "source": "Observation"
           }
         ],
         "isModifier": false,

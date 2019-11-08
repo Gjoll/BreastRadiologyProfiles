@@ -38,23 +38,38 @@ namespace FhirKhit.BreastRadiology.XUnitTests
             this.fc.Mark(Path.Combine(this.resourceDir, "IG.xml"));
         }
 
-        void AddIGStructureDefinition(StructureDefinition sDef, bool extensionFlag)
+        void AddIGStructureDefinition(StructureDefinition sDef)
         {
             String htmlName = $"StructureDefinition-{sDef.Name}.html";
 
             this.implementationGuide.AddIGResource($"StructureDefinition/{sDef.Name}", sDef.Name, false);
             this.igEditor.AddResource($"StructureDefinition/{sDef.Name}",
                 htmlName);
-            if (extensionFlag == false)
-                this.profilesEditor.AddProfile(sDef.Name,
-                    htmlName,
-                    sDef.BaseDefinition,
-                    sDef.BaseDefinition.LastUriPart(),
-                    sDef.Description);
-            else
-                this.extensionsEditor.AddExtension(sDef.Name,
-                    htmlName,
-                    sDef.Description);
+            switch (sDef.BaseDefinition)
+            {
+                case "":
+                case null:
+                    {
+                    List < Tuple<String, String>> references = new List<Tuple<String, string>>();
+                        references.Add(new Tuple<String, String>(sDef.Name, htmlName));
+                    this.profilesEditor.AddFragment(references, sDef.Description);
+                    }
+                    break;
+
+                case "http://hl7.org/fhir/StructureDefinition/Extension":
+                    this.extensionsEditor.AddExtension(sDef.Name,
+                        htmlName,
+                        sDef.Description);
+                    break;
+
+                default:
+                    this.profilesEditor.AddProfile(sDef.Name,
+                        htmlName,
+                        sDef.BaseDefinition,
+                        sDef.BaseDefinition.LastUriPart(),
+                        sDef.Description);
+                    break;
+            }
         }
 
 
@@ -140,8 +155,7 @@ namespace FhirKhit.BreastRadiology.XUnitTests
 
                             SnapshotCreator.Create(structureDefinition);
                             Save(structureDefinition, $"{fixedName}.json");
-                            bool extensionFlag = structureDefinition.BaseDefinition == "http://hl7.org/fhir/StructureDefinition/Extension";
-                            this.AddIGStructureDefinition(structureDefinition, extensionFlag);
+                            this.AddIGStructureDefinition(structureDefinition);
                         }
                         break;
 

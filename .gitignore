@@ -50,5 +50,7 @@ _ReSharper*/
 
 **/.vs/*
 
+**/[Cc]ache/*
+
 node_modules/
 package-lock.json

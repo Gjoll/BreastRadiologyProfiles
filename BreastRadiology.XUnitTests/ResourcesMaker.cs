@@ -49,9 +49,11 @@ namespace FhirKhit.BreastRadiology.XUnitTests
             return $"http://hl7.org/fhir/us/breast-radiology/StructureDefinition/{name}";
         }
 
-        public ResourcesMaker(String resourceDir)
+        public ResourcesMaker(String resourceDir,
+            String cacheDir)
         {
             this.resourceDir = resourceDir;
+            FhirStructureDefinitions.Create(cacheDir);
         }
 
         SDefEditor CreateEditor(String name, String title, String baseUrl)

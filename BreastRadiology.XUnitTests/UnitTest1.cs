@@ -1,5 +1,6 @@
 using FhirKhit.Tools;
 using FhirKhit.Tools.R4;
+using Hl7.Fhir.Specification.Source;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using System;
 using System.Diagnostics;
@@ -11,24 +12,30 @@ namespace FhirKhit.BreastRadiology.XUnitTests
     [TestClass]
     public class UnitTest1
     {
+        const String baseDir = "BreastRadiology2020FebBallot";
+
+        String cacheDir = Path.Combine(
+            DirHelper.FindParentDir(baseDir),
+            "Cache");
+
         String outputDir = Path.Combine(
-            DirHelper.FindParentDir("BreastRadiology"),
+            DirHelper.FindParentDir(baseDir),
             "IG",
             "Guide");
         String resourcesDir = Path.Combine(
-            DirHelper.FindParentDir("BreastRadiology"),
+            DirHelper.FindParentDir(baseDir),
             "IG",
             "Resources");
 
         String manualDir = Path.Combine(
-            DirHelper.FindParentDir("BreastRadiology"),
+            DirHelper.FindParentDir(baseDir),
             "IG",
             "ManualResources");
 
         [TestMethod]
         public void BuildResources()
         {
-            ResourcesMaker pc = new ResourcesMaker(this.resourcesDir);
+            ResourcesMaker pc = new ResourcesMaker(this.resourcesDir, this.cacheDir);
             pc.CreateResources();
         }
 
