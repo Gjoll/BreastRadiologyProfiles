@@ -1,0 +1,302 @@
+{
+  "resourceType": "StructureDefinition",
+  "extension": [
+    {
+      "url": "http://www.fragment.com/mapname",
+      "valueString": "Breast/Radiology/Report"
+    },
+    {
+      "url": "http://www.ResourceMaker.com/Group",
+      "valueString": "BaseResources"
+    },
+    {
+      "url": "http://www.fragment.com/fragment",
+      "valueUrl": "http://hl7.org/fhir/us/breast-radiology/StructureDefinition/HeaderFragment"
+    },
+    {
+      "url": "http://www.fragment.com/maplink",
+      "valueString": "fragment|True|http://hl7.org/fhir/us/breast-radiology/StructureDefinition/HeaderFragment"
+    },
+    {
+      "url": "http://www.fragment.com/fragment",
+      "valueUrl": "http://hl7.org/fhir/us/breast-radiology/StructureDefinition/CategoryFragment"
+    },
+    {
+      "url": "http://www.fragment.com/maplink",
+      "valueString": "fragment|True|http://hl7.org/fhir/us/breast-radiology/StructureDefinition/CategoryFragment"
+    },
+    {
+      "url": "http://www.fragment.com/maplink",
+      "valueString": "target|True|http://hl7.org/fhir/us/breast-radiology/StructureDefinition/BreastRadRecommendationsExtension"
+    },
+    {
+      "url": "http://www.fragment.com/maplink",
+      "valueString": "target|True|http://hl7.org/fhir/us/breast-radiology/StructureDefinition/BreastRadPriorReportsExtension"
+    },
+    {
+      "url": "http://www.fragment.com/maplink",
+      "valueString": "target|True|http://hl7.org/fhir/us/breast-radiology/StructureDefinition/BreastRadImpressionsExtension"
+    },
+    {
+      "url": "http://www.fragment.com/maplink",
+      "valueString": "target|True|http://hl7.org/fhir/us/breast-radiology/StructureDefinition/BreastRadPatientRiskExtension"
+    },
+    {
+      "url": "http://www.fragment.com/maplink",
+      "valueString": "target|True|http://hl7.org/fhir/us/breast-radiology/StructureDefinition/BreastRadSectionPatientHistory"
+    },
+    {
+      "url": "http://www.fragment.com/maplink",
+      "valueString": "target|True|http://hl7.org/fhir/us/breast-radiology/StructureDefinition/BreastRadSectionFindings"
+    }
+  ],
+  "url": "http://hl7.org/fhir/us/breast-radiology/StructureDefinition/BreastRadReport",
+  "name": "BreastRadReport",
+  "title": "Breast Radiology Report",
+  "status": "draft",
+  "description": "Breast Radiology Diagnostic Report\n\nThis diagnostic report has links to the data that comprise a Breast Radiology Report, including:\n\n\n** references to prior breast radiology reports for this patient\n** references to the observations of this report\n** references to the recommendations of this report\n** a summary of the report findings in a human readable format",
+  "fhirVersion": "4.0.0",
+  "kind": "resource",
+  "abstract": false,
+  "type": "DiagnosticReport",
+  "baseDefinition": "http://hl7.org/fhir/StructureDefinition/DiagnosticReport",
+  "derivation": "constraint",
+  "differential": {
+    "element": [
+      {
+        "id": "DiagnosticReport",
+        "path": "DiagnosticReport",
+        "short": "Breast Radiology Diagnostic Report",
+        "definition": "This diagnostic report has links to the data that comprise a Breast Radiology Report, including:\n\n\n** references to prior breast radiology reports for this patient\n** references to the observations of this report\n** references to the recommendations of this report\n** a summary of the report findings in a human readable format",
+        "min": 0,
+        "max": "*"
+      },
+      {
+        "id": "DiagnosticReport.extension",
+        "path": "DiagnosticReport.extension",
+        "slicing": {
+          "discriminator": [
+            {
+              "type": "value",
+              "path": "url"
+            }
+          ],
+          "ordered": true,
+          "rules": "openAtEnd"
+        },
+        "min": 0,
+        "max": "*",
+        "base": {
+          "path": "DiagnosticReport.extension",
+          "min": 0,
+          "max": "*"
+        }
+      },
+      {
+        "id": "DiagnosticReport.extension:recommendations",
+        "path": "DiagnosticReport.extension",
+        "sliceName": "recommendations",
+        "short": "Recommendations for future care",
+        "definition": "Recommendations for future care",
+        "min": 0,
+        "max": "*",
+        "base": {
+          "path": "DiagnosticReport.extension",
+          "min": 0,
+          "max": "*"
+        },
+        "type": [
+          {
+            "code": "Extension",
+            "profile": [
+              "http://hl7.org/fhir/us/breast-radiology/StructureDefinition/BreastRadRecommendationsExtension"
+            ]
+          }
+        ],
+        "isModifier": false
+      },
+      {
+        "id": "DiagnosticReport.extension:priorReports",
+        "path": "DiagnosticReport.extension",
+        "sliceName": "priorReports",
+        "short": "Prior breast radiology reports",
+        "definition": "Prior breast radiology reports",
+        "min": 0,
+        "max": "*",
+        "base": {
+          "path": "DiagnosticReport.extension",
+          "min": 0,
+          "max": "*"
+        },
+        "type": [
+          {
+            "code": "Extension",
+            "profile": [
+              "http://hl7.org/fhir/us/breast-radiology/StructureDefinition/BreastRadPriorReportsExtension"
+            ]
+          }
+        ],
+        "isModifier": false
+      },
+      {
+        "id": "DiagnosticReport.extension:impressions",
+        "path": "DiagnosticReport.extension",
+        "sliceName": "impressions",
+        "short": "Exam impressions",
+        "definition": "Exam impressions.",
+        "min": 0,
+        "max": "*",
+        "base": {
+          "path": "DiagnosticReport.extension",
+          "min": 0,
+          "max": "*"
+        },
+        "type": [
+          {
+            "code": "Extension",
+            "profile": [
+              "http://hl7.org/fhir/us/breast-radiology/StructureDefinition/BreastRadImpressionsExtension"
+            ]
+          }
+        ],
+        "isModifier": false
+      },
+      {
+        "id": "DiagnosticReport.extension:patientRisk",
+        "path": "DiagnosticReport.extension",
+        "sliceName": "patientRisk",
+        "short": "Patient Risk",
+        "definition": "Patient Risk.",
+        "min": 0,
+        "max": "*",
+        "base": {
+          "path": "DiagnosticReport.extension",
+          "min": 0,
+          "max": "*"
+        },
+        "type": [
+          {
+            "code": "Extension",
+            "profile": [
+              "http://hl7.org/fhir/us/breast-radiology/StructureDefinition/BreastRadPatientRiskExtension"
+            ]
+          }
+        ],
+        "isModifier": false
+      },
+      {
+        "id": "DiagnosticReport.code",
+        "path": "DiagnosticReport.code",
+        "min": 1,
+        "max": "1",
+        "base": {
+          "path": "DiagnosticReport.code",
+          "min": 1,
+          "max": "1"
+        },
+        "patternCodeableConcept": {
+          "coding": [
+            {
+              "system": "http://loinc.org",
+              "code": "10193-1"
+            }
+          ]
+        }
+      },
+      {
+        "id": "DiagnosticReport.specimen",
+        "path": "DiagnosticReport.specimen",
+        "min": 0,
+        "max": "0",
+        "base": {
+          "path": "DiagnosticReport.specimen",
+          "min": 0,
+          "max": "*"
+        }
+      },
+      {
+        "id": "DiagnosticReport.result",
+        "path": "DiagnosticReport.result",
+        "slicing": {
+          "discriminator": [
+            {
+              "type": "value",
+              "path": "url"
+            }
+          ],
+          "ordered": true,
+          "rules": "openAtEnd"
+        },
+        "min": 0,
+        "max": "*",
+        "base": {
+          "path": "DiagnosticReport.result",
+          "min": 0,
+          "max": "*"
+        }
+      },
+      {
+        "id": "DiagnosticReport.result:breastRadSectionPatientHistory",
+        "path": "DiagnosticReport.result",
+        "sliceName": "breastRadSectionPatientHistory",
+        "min": 1,
+        "max": "1",
+        "base": {
+          "path": "DiagnosticReport.result",
+          "min": 0,
+          "max": "*"
+        },
+        "type": [
+          {
+            "code": "Reference",
+            "targetProfile": [
+              "http://hl7.org/fhir/us/breast-radiology/StructureDefinition/BreastRadSectionPatientHistory"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "DiagnosticReport.result:breastRadSectionFindings",
+        "path": "DiagnosticReport.result",
+        "sliceName": "breastRadSectionFindings",
+        "min": 1,
+        "max": "1",
+        "base": {
+          "path": "DiagnosticReport.result",
+          "min": 0,
+          "max": "*"
+        },
+        "type": [
+          {
+            "code": "Reference",
+            "targetProfile": [
+              "http://hl7.org/fhir/us/breast-radiology/StructureDefinition/BreastRadSectionFindings"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "DiagnosticReport.conclusion",
+        "path": "DiagnosticReport.conclusion",
+        "min": 1,
+        "max": "1",
+        "base": {
+          "path": "DiagnosticReport.conclusion",
+          "min": 0,
+          "max": "1"
+        }
+      },
+      {
+        "id": "DiagnosticReport.conclusionCode",
+        "path": "DiagnosticReport.conclusionCode",
+        "min": 1,
+        "max": "1",
+        "base": {
+          "path": "DiagnosticReport.conclusionCode",
+          "min": 0,
+          "max": "*"
+        }
+      }
+    ]
+  }
+}

@@ -1,0 +1,262 @@
+{
+  "resourceType": "StructureDefinition",
+  "extension": [
+    {
+      "url": "http://www.fragment.com/mapname",
+      "valueString": "Breast/Body/Location"
+    },
+    {
+      "url": "http://www.ResourceMaker.com/Group",
+      "valueString": "ExtensionResources/BreastBodyLocation"
+    },
+    {
+      "url": "http://www.fragment.com/fragment",
+      "valueUrl": "http://hl7.org/fhir/us/breast-radiology/StructureDefinition/HeaderFragment"
+    },
+    {
+      "url": "http://www.fragment.com/maplink",
+      "valueString": "fragment|True|http://hl7.org/fhir/us/breast-radiology/StructureDefinition/HeaderFragment"
+    }
+  ],
+  "url": "http://hl7.org/fhir/us/breast-radiology/StructureDefinition/BreastBodyLocationExtension",
+  "name": "BreastBodyLocationExtension",
+  "title": "Breast Body Location Extension",
+  "status": "draft",
+  "description": "Breast Body Location extension\n\nthis extension defines the fields that are used to describe thelocation of an observed item in a breat radiology report\n\n\nBreast radiology exams have specific ways of defining a location that are unique to this field.",
+  "fhirVersion": "4.0.0",
+  "kind": "complex-type",
+  "abstract": false,
+  "context": [
+    {
+      "type": "element",
+      "expression": "*"
+    }
+  ],
+  "type": "Extension",
+  "baseDefinition": "http://hl7.org/fhir/StructureDefinition/Extension",
+  "derivation": "constraint",
+  "differential": {
+    "element": [
+      {
+        "id": "Extension",
+        "path": "Extension",
+        "short": "Breast Body Location extension",
+        "definition": "this extension defines the fields that are used to describe thelocation of an observed item in a breat radiology report\n\n\nBreast radiology exams have specific ways of defining a location that are unique to this field.",
+        "min": 0,
+        "max": "*"
+      },
+      {
+        "id": "Extension.extension",
+        "path": "Extension.extension",
+        "slicing": {
+          "discriminator": [
+            {
+              "type": "value",
+              "path": "url"
+            }
+          ],
+          "ordered": true,
+          "rules": "openAtEnd"
+        },
+        "min": 0,
+        "max": "*",
+        "base": {
+          "path": "Extension.extension",
+          "min": 0,
+          "max": "*"
+        }
+      },
+      {
+        "id": "Extension.extension:laterality",
+        "path": "Extension.extension",
+        "sliceName": "laterality",
+        "min": 0,
+        "max": "1"
+      },
+      {
+        "id": "Extension.extension:laterality.extension",
+        "path": "Extension.extension.extension",
+        "min": 0,
+        "max": "0"
+      },
+      {
+        "id": "Extension.extension:laterality.value[x]",
+        "path": "Extension.extension.value[x]",
+        "short": "Laterality of the body location",
+        "definition": "The laterality of the body location",
+        "min": 1,
+        "max": "1",
+        "type": [
+          {
+            "code": "CodeableConcept"
+          }
+        ],
+        "binding": {
+          "strength": "required",
+          "valueSet": "http://hl7.org/fhir/ValueSet/bodysite-laterality"
+        }
+      },
+      {
+        "id": "Extension.extension:quadrant",
+        "path": "Extension.extension",
+        "sliceName": "quadrant",
+        "min": 0,
+        "max": "1"
+      },
+      {
+        "id": "Extension.extension:quadrant.extension",
+        "path": "Extension.extension.extension",
+        "min": 0,
+        "max": "0"
+      },
+      {
+        "id": "Extension.extension:quadrant.value[x]",
+        "path": "Extension.extension.value[x]",
+        "short": "Quadrant of the body location",
+        "definition": "The quadrant  of the body location",
+        "min": 1,
+        "max": "1",
+        "type": [
+          {
+            "code": "CodeableConcept"
+          }
+        ],
+        "binding": {
+          "strength": "required",
+          "valueSet": "http://hl7.org/fhir/us/breast-radiology/ValueSet/BreastLocationQuadrantVS"
+        }
+      },
+      {
+        "id": "Extension.extension:clockDirection",
+        "path": "Extension.extension",
+        "sliceName": "clockDirection",
+        "min": 0,
+        "max": "1"
+      },
+      {
+        "id": "Extension.extension:clockDirection.extension",
+        "path": "Extension.extension.extension",
+        "min": 0,
+        "max": "0"
+      },
+      {
+        "id": "Extension.extension:clockDirection.value[x]",
+        "path": "Extension.extension.value[x]",
+        "short": "Clock direction of the body location",
+        "definition": "The clock direction of the body location.",
+        "min": 1,
+        "max": "1",
+        "type": [
+          {
+            "code": "CodeableConcept"
+          }
+        ],
+        "binding": {
+          "strength": "required",
+          "valueSet": "http://hl7.org/fhir/us/breast-radiology/ValueSet/BreastLocationClockVS"
+        }
+      },
+      {
+        "id": "Extension.extension:depth",
+        "path": "Extension.extension",
+        "sliceName": "depth",
+        "min": 0,
+        "max": "1"
+      },
+      {
+        "id": "Extension.extension:depth.extension",
+        "path": "Extension.extension.extension",
+        "min": 0,
+        "max": "0"
+      },
+      {
+        "id": "Extension.extension:depth.value[x]",
+        "path": "Extension.extension.value[x]",
+        "short": "Depth of the body location",
+        "definition": "The depth of the body location.",
+        "min": 1,
+        "max": "1",
+        "type": [
+          {
+            "code": "CodeableConcept"
+          }
+        ],
+        "binding": {
+          "strength": "required",
+          "valueSet": "http://hl7.org/fhir/us/breast-radiology/ValueSet/BreastLocationDepthVS"
+        }
+      },
+      {
+        "id": "Extension.extension:distanceFromNipple",
+        "path": "Extension.extension",
+        "sliceName": "distanceFromNipple"
+      },
+      {
+        "id": "Extension.extension:distanceFromNipple.value[x]",
+        "path": "Extension.extension.value[x]",
+        "min": 1,
+        "max": "1",
+        "type": [
+          {
+            "code": "Quantity"
+          }
+        ]
+      },
+      {
+        "id": "Extension.extension:distanceFromNipple.value[x].system",
+        "path": "Extension.extension.value[x].system",
+        "min": 1,
+        "max": "1",
+        "type": [
+          {
+            "code": "uri"
+          }
+        ],
+        "fixedUri": "http://unitsofmeasure.org"
+      },
+      {
+        "id": "Extension.extension:distanceFromNipple.value[x].code",
+        "path": "Extension.extension.value[x].code",
+        "min": 1,
+        "max": "1",
+        "type": [
+          {
+            "code": "uri"
+          }
+        ],
+        "binding": {
+          "strength": "required",
+          "valueSet": "http://hl7.org/fhir/us/breast-radiology/ValueSet/UnitsOfLengthVS"
+        }
+      },
+      {
+        "id": "Extension.url",
+        "path": "Extension.url",
+        "min": 1,
+        "max": "1",
+        "base": {
+          "path": "Extension.url",
+          "min": 1,
+          "max": "1"
+        },
+        "type": [
+          {
+            "code": "uri"
+          }
+        ],
+        "fixedUri": "http://hl7.org/fhir/us/breast-radiology/StructureDefinition/BreastBodyLocationExtension"
+      },
+      {
+        "id": "Extension.value[x]",
+        "path": "Extension.value[x]",
+        "min": 0,
+        "max": "0",
+        "base": {
+          "path": "Extension.value[x]",
+          "min": 0,
+          "max": "1"
+        }
+      }
+    ]
+  }
+}

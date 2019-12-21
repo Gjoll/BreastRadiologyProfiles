@@ -1,0 +1,60 @@
+{
+  "resourceType": "StructureDefinition",
+  "extension": [
+    {
+      "url": "http://www.fragment.com/mapname",
+      "valueString": "Mammo/Skin/Retraction"
+    },
+    {
+      "url": "http://www.ResourceMaker.com/Group",
+      "valueString": "MGResources/AssociatedFeature/SkinRetraction"
+    },
+    {
+      "url": "http://www.fragment.com/fragment",
+      "valueUrl": "http://hl7.org/fhir/us/breast-radiology/StructureDefinition/BreastRadObservationNoDeviceFragment"
+    },
+    {
+      "url": "http://www.fragment.com/maplink",
+      "valueString": "fragment|True|http://hl7.org/fhir/us/breast-radiology/StructureDefinition/BreastRadObservationNoDeviceFragment"
+    },
+    {
+      "url": "http://www.fragment.com/fragment",
+      "valueUrl": "http://hl7.org/fhir/us/breast-radiology/StructureDefinition/BreastRadObservationNoValueFragment"
+    },
+    {
+      "url": "http://www.fragment.com/maplink",
+      "valueString": "fragment|True|http://hl7.org/fhir/us/breast-radiology/StructureDefinition/BreastRadObservationNoValueFragment"
+    },
+    {
+      "url": "http://www.fragment.com/fragment",
+      "valueUrl": "http://hl7.org/fhir/us/breast-radiology/StructureDefinition/BreastBodyLocationRequiredFragment"
+    },
+    {
+      "url": "http://www.fragment.com/maplink",
+      "valueString": "fragment|True|http://hl7.org/fhir/us/breast-radiology/StructureDefinition/BreastBodyLocationRequiredFragment"
+    }
+  ],
+  "url": "http://hl7.org/fhir/us/breast-radiology/StructureDefinition/BreastRadMammoSkinRetraction",
+  "name": "BreastRadMammoSkinRetraction",
+  "title": "Mammo Skin Retraction",
+  "status": "draft",
+  "description": "Mammography Skin Retraction Observation\n\n\n\nThe skin is pulled in abnormally\n-- Bi-Rads® Atlas — Mammography Fifth Ed. 2013 \nIf this observation is present, and dataAbsentReason is empty, then a skin retraction was observed.\n\n\nIf this observation is present, and dataAbsentReason is not empty, then a skin retraction was not observed and dataAbsentReason contains the reason why.",
+  "fhirVersion": "4.0.0",
+  "kind": "resource",
+  "abstract": false,
+  "type": "Observation",
+  "baseDefinition": "http://hl7.org/fhir/StructureDefinition/Observation",
+  "derivation": "constraint",
+  "differential": {
+    "element": [
+      {
+        "id": "Observation",
+        "path": "Observation",
+        "short": "Mammography Skin Retraction Observation",
+        "definition": "The skin is pulled in abnormally\n-- Bi-Rads® Atlas — Mammography Fifth Ed. 2013 \nIf this observation is present, and dataAbsentReason is empty, then a skin retraction was observed.\n\n\nIf this observation is present, and dataAbsentReason is not empty, then a skin retraction was not observed and dataAbsentReason contains the reason why.",
+        "min": 0,
+        "max": "*"
+      }
+    ]
+  }
+}

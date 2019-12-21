@@ -1,0 +1,109 @@
+{
+  "resourceType": "StructureDefinition",
+  "extension": [
+    {
+      "url": "http://www.fragment.com/mapname",
+      "valueString": "Breast/Body/Location/Fragment/(Required)"
+    },
+    {
+      "url": "http://www.ResourceMaker.com/Group",
+      "valueString": "Fragment/{name}"
+    },
+    {
+      "url": "http://www.fragment.com/isFragment",
+      "valueBoolean": true
+    },
+    {
+      "url": "http://www.fragment.com/fragment",
+      "valueUrl": "http://hl7.org/fhir/us/breast-radiology/StructureDefinition/HeaderFragment"
+    },
+    {
+      "url": "http://www.fragment.com/maplink",
+      "valueString": "fragment|True|http://hl7.org/fhir/us/breast-radiology/StructureDefinition/HeaderFragment"
+    },
+    {
+      "url": "http://www.fragment.com/maplink",
+      "valueString": "extension|True|http://hl7.org/fhir/us/breast-radiology/StructureDefinition/BreastBodyLocationExtension"
+    },
+    {
+      "url": "http://www.fragment.com/maplink",
+      "valueString": "target|True|http://hl7.org/fhir/us/breast-radiology/StructureDefinition/BreastBodyLocationExtension"
+    }
+  ],
+  "url": "http://hl7.org/fhir/us/breast-radiology/StructureDefinition/BreastBodyLocationRequiredFragment",
+  "name": "BreastBodyLocationRequiredFragment",
+  "title": "Breast Body Location (Required) Fragment",
+  "status": "draft",
+  "description": "Fragment definition for a Required Breast Body Location\n\nThis fragment adds the references for the breast body location extension.\n\n\nThe references are required, meaning that the breast body location must exist.",
+  "fhirVersion": "4.0.0",
+  "kind": "resource",
+  "abstract": true,
+  "type": "Observation",
+  "baseDefinition": "http://hl7.org/fhir/StructureDefinition/Observation",
+  "derivation": "constraint",
+  "differential": {
+    "element": [
+      {
+        "id": "Observation",
+        "path": "Observation",
+        "short": "Fragment definition for a Required Breast Body Location",
+        "definition": "This fragment adds the references for the breast body location extension.\n\n\nThe references are required, meaning that the breast body location must exist.",
+        "min": 0,
+        "max": "*"
+      },
+      {
+        "id": "Observation.extension",
+        "path": "Observation.extension",
+        "slicing": {
+          "discriminator": [
+            {
+              "type": "value",
+              "path": "url"
+            }
+          ],
+          "ordered": true,
+          "rules": "openAtEnd"
+        },
+        "min": 0,
+        "max": "*",
+        "base": {
+          "path": "Observation.extension",
+          "min": 0,
+          "max": "*"
+        }
+      },
+      {
+        "id": "Observation.extension:breastBodyLocation",
+        "path": "Observation.extension",
+        "sliceName": "breastBodyLocation",
+        "min": 1,
+        "max": "1",
+        "base": {
+          "path": "Observation.extension",
+          "min": 0,
+          "max": "*"
+        },
+        "type": [
+          {
+            "code": "Extension",
+            "profile": [
+              "http://hl7.org/fhir/us/breast-radiology/StructureDefinition/BreastBodyLocationExtension"
+            ]
+          }
+        ],
+        "isModifier": false
+      },
+      {
+        "id": "Observation.bodySite",
+        "path": "Observation.bodySite",
+        "min": 1,
+        "max": "1",
+        "base": {
+          "path": "Observation.bodySite",
+          "min": 0,
+          "max": "1"
+        }
+      }
+    ]
+  }
+}

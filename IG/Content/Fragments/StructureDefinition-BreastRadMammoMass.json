@@ -1,0 +1,337 @@
+{
+  "resourceType": "StructureDefinition",
+  "extension": [
+    {
+      "url": "http://www.fragment.com/mapname",
+      "valueString": "Mammo/Mass"
+    },
+    {
+      "url": "http://www.ResourceMaker.com/Group",
+      "valueString": "MGResources/Mass"
+    },
+    {
+      "url": "http://www.fragment.com/fragment",
+      "valueUrl": "http://hl7.org/fhir/us/breast-radiology/StructureDefinition/BreastRadObservationNoDeviceFragment"
+    },
+    {
+      "url": "http://www.fragment.com/maplink",
+      "valueString": "fragment|True|http://hl7.org/fhir/us/breast-radiology/StructureDefinition/BreastRadObservationNoDeviceFragment"
+    },
+    {
+      "url": "http://www.fragment.com/fragment",
+      "valueUrl": "http://hl7.org/fhir/us/breast-radiology/StructureDefinition/BreastBodyLocationRequiredFragment"
+    },
+    {
+      "url": "http://www.fragment.com/maplink",
+      "valueString": "fragment|True|http://hl7.org/fhir/us/breast-radiology/StructureDefinition/BreastBodyLocationRequiredFragment"
+    },
+    {
+      "url": "http://www.fragment.com/fragment",
+      "valueUrl": "http://hl7.org/fhir/us/breast-radiology/StructureDefinition/ObservationSectionFragment"
+    },
+    {
+      "url": "http://www.fragment.com/maplink",
+      "valueString": "fragment|True|http://hl7.org/fhir/us/breast-radiology/StructureDefinition/ObservationSectionFragment"
+    },
+    {
+      "url": "http://www.fragment.com/fragment",
+      "valueUrl": "http://hl7.org/fhir/us/breast-radiology/StructureDefinition/BreastRadObservationNoValueFragment"
+    },
+    {
+      "url": "http://www.fragment.com/maplink",
+      "valueString": "fragment|True|http://hl7.org/fhir/us/breast-radiology/StructureDefinition/BreastRadObservationNoValueFragment"
+    },
+    {
+      "url": "http://www.fragment.com/fragment",
+      "valueUrl": "http://hl7.org/fhir/us/breast-radiology/StructureDefinition/ImagingStudyFragment"
+    },
+    {
+      "url": "http://www.fragment.com/maplink",
+      "valueString": "fragment|True|http://hl7.org/fhir/us/breast-radiology/StructureDefinition/ImagingStudyFragment"
+    },
+    {
+      "url": "http://www.fragment.com/maplink",
+      "valueString": "target|True|http://hl7.org/fhir/us/breast-radiology/StructureDefinition/BiRadsAssessmentCategory"
+    },
+    {
+      "url": "http://www.fragment.com/maplink",
+      "valueString": "target|True|http://hl7.org/fhir/us/breast-radiology/StructureDefinition/CommonCount"
+    },
+    {
+      "url": "http://www.fragment.com/maplink",
+      "valueString": "target|True|http://hl7.org/fhir/us/breast-radiology/StructureDefinition/CommonObservedChanges"
+    },
+    {
+      "url": "http://www.fragment.com/maplink",
+      "valueString": "target|True|http://hl7.org/fhir/us/breast-radiology/StructureDefinition/CommonSize"
+    },
+    {
+      "url": "http://www.fragment.com/maplink",
+      "valueString": "target|True|http://hl7.org/fhir/us/breast-radiology/StructureDefinition/CommonOrientation"
+    },
+    {
+      "url": "http://www.fragment.com/maplink",
+      "valueString": "target|True|http://hl7.org/fhir/us/breast-radiology/StructureDefinition/CommonObservedState"
+    },
+    {
+      "url": "http://www.fragment.com/maplink",
+      "valueString": "target|True|http://hl7.org/fhir/us/breast-radiology/StructureDefinition/MammoShape"
+    },
+    {
+      "url": "http://www.fragment.com/maplink",
+      "valueString": "target|True|http://hl7.org/fhir/us/breast-radiology/StructureDefinition/BreastRadMammoMassMargin"
+    },
+    {
+      "url": "http://www.fragment.com/maplink",
+      "valueString": "target|True|http://hl7.org/fhir/us/breast-radiology/StructureDefinition/BreastRadMammoMassDensity"
+    },
+    {
+      "url": "http://www.fragment.com/maplink",
+      "valueString": "target|False|http://hl7.org/fhir/us/breast-radiology/StructureDefinition/BreastRadMammoAssociatedFeatures"
+    }
+  ],
+  "url": "http://hl7.org/fhir/us/breast-radiology/StructureDefinition/BreastRadMammoMass",
+  "name": "BreastRadMammoMass",
+  "title": "Mammo Mass",
+  "status": "draft",
+  "description": "Breast Radiology Mammography Mass Observation\n\nIf this observation is present, and dataAbsentReason is empty, then a mass was observed.\n\n\nIf this observation is present, and dataAbsentReason is not empty, then a mass was not observed and dataAbsentReason contains the reason whyand no Shape, Margin, or Density observations should be referenced by this observation\n\n\n\"MASS\" is three dimensional and occupies space. It is seen on two different mammographic pro-\njections. It has completely or partially convex-outward borders and (when radiodense) appears\ndenser in the center than at the periphery. If a potential mass is seen only on a single projection, it\nshould be called an \"ASYMMETRY\" until its 3-dimensionality is confirmed\n-- Bi-Rads® Atlas — Mammography Fifth Ed. 2013 \n*** TODO Items ***** add mass size measurements (3 dimensional) like US?\n** same for asymmetry, lesion, calcification?",
+  "fhirVersion": "4.0.0",
+  "kind": "resource",
+  "abstract": false,
+  "type": "Observation",
+  "baseDefinition": "http://hl7.org/fhir/StructureDefinition/Observation",
+  "derivation": "constraint",
+  "differential": {
+    "element": [
+      {
+        "id": "Observation",
+        "path": "Observation",
+        "short": "Breast Radiology Mammography Mass Observation",
+        "definition": "If this observation is present, and dataAbsentReason is empty, then a mass was observed.\n\n\nIf this observation is present, and dataAbsentReason is not empty, then a mass was not observed and dataAbsentReason contains the reason whyand no Shape, Margin, or Density observations should be referenced by this observation\n\n\n\"MASS\" is three dimensional and occupies space. It is seen on two different mammographic pro-\njections. It has completely or partially convex-outward borders and (when radiodense) appears\ndenser in the center than at the periphery. If a potential mass is seen only on a single projection, it\nshould be called an \"ASYMMETRY\" until its 3-dimensionality is confirmed\n-- Bi-Rads® Atlas — Mammography Fifth Ed. 2013 \n*** TODO Items ***** add mass size measurements (3 dimensional) like US?\n** same for asymmetry, lesion, calcification?",
+        "min": 0,
+        "max": "*"
+      },
+      {
+        "id": "Observation.hasMember",
+        "path": "Observation.hasMember",
+        "slicing": {
+          "discriminator": [
+            {
+              "type": "value",
+              "path": "url"
+            }
+          ],
+          "ordered": true,
+          "rules": "openAtEnd"
+        },
+        "min": 0,
+        "max": "*",
+        "base": {
+          "path": "Observation.hasMember",
+          "min": 0,
+          "max": "*"
+        }
+      },
+      {
+        "id": "Observation.hasMember:biRadsAssessmentCategory",
+        "path": "Observation.hasMember",
+        "sliceName": "biRadsAssessmentCategory",
+        "min": 0,
+        "max": "1",
+        "base": {
+          "path": "Observation.hasMember",
+          "min": 0,
+          "max": "*"
+        },
+        "type": [
+          {
+            "code": "Reference",
+            "targetProfile": [
+              "http://hl7.org/fhir/us/breast-radiology/StructureDefinition/BiRadsAssessmentCategory"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "Observation.hasMember:commonCount",
+        "path": "Observation.hasMember",
+        "sliceName": "commonCount",
+        "min": 0,
+        "max": "1",
+        "base": {
+          "path": "Observation.hasMember",
+          "min": 0,
+          "max": "*"
+        },
+        "type": [
+          {
+            "code": "Reference",
+            "targetProfile": [
+              "http://hl7.org/fhir/us/breast-radiology/StructureDefinition/CommonCount"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "Observation.hasMember:commonObservedChanges",
+        "path": "Observation.hasMember",
+        "sliceName": "commonObservedChanges",
+        "min": 0,
+        "max": "*",
+        "base": {
+          "path": "Observation.hasMember",
+          "min": 0,
+          "max": "*"
+        },
+        "type": [
+          {
+            "code": "Reference",
+            "targetProfile": [
+              "http://hl7.org/fhir/us/breast-radiology/StructureDefinition/CommonObservedChanges"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "Observation.hasMember:commonSize",
+        "path": "Observation.hasMember",
+        "sliceName": "commonSize",
+        "min": 0,
+        "max": "1",
+        "base": {
+          "path": "Observation.hasMember",
+          "min": 0,
+          "max": "*"
+        },
+        "type": [
+          {
+            "code": "Reference",
+            "targetProfile": [
+              "http://hl7.org/fhir/us/breast-radiology/StructureDefinition/CommonSize"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "Observation.hasMember:commonOrientation",
+        "path": "Observation.hasMember",
+        "sliceName": "commonOrientation",
+        "min": 0,
+        "max": "1",
+        "base": {
+          "path": "Observation.hasMember",
+          "min": 0,
+          "max": "*"
+        },
+        "type": [
+          {
+            "code": "Reference",
+            "targetProfile": [
+              "http://hl7.org/fhir/us/breast-radiology/StructureDefinition/CommonOrientation"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "Observation.hasMember:commonObservedState",
+        "path": "Observation.hasMember",
+        "sliceName": "commonObservedState",
+        "min": 0,
+        "max": "*",
+        "base": {
+          "path": "Observation.hasMember",
+          "min": 0,
+          "max": "*"
+        },
+        "type": [
+          {
+            "code": "Reference",
+            "targetProfile": [
+              "http://hl7.org/fhir/us/breast-radiology/StructureDefinition/CommonObservedState"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "Observation.hasMember:mammoShape",
+        "path": "Observation.hasMember",
+        "sliceName": "mammoShape",
+        "min": 0,
+        "max": "1",
+        "base": {
+          "path": "Observation.hasMember",
+          "min": 0,
+          "max": "*"
+        },
+        "type": [
+          {
+            "code": "Reference",
+            "targetProfile": [
+              "http://hl7.org/fhir/us/breast-radiology/StructureDefinition/MammoShape"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "Observation.hasMember:breastRadMammoMassMargin",
+        "path": "Observation.hasMember",
+        "sliceName": "breastRadMammoMassMargin",
+        "min": 0,
+        "max": "*",
+        "base": {
+          "path": "Observation.hasMember",
+          "min": 0,
+          "max": "*"
+        },
+        "type": [
+          {
+            "code": "Reference",
+            "targetProfile": [
+              "http://hl7.org/fhir/us/breast-radiology/StructureDefinition/BreastRadMammoMassMargin"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "Observation.hasMember:breastRadMammoMassDensity",
+        "path": "Observation.hasMember",
+        "sliceName": "breastRadMammoMassDensity",
+        "min": 0,
+        "max": "1",
+        "base": {
+          "path": "Observation.hasMember",
+          "min": 0,
+          "max": "*"
+        },
+        "type": [
+          {
+            "code": "Reference",
+            "targetProfile": [
+              "http://hl7.org/fhir/us/breast-radiology/StructureDefinition/BreastRadMammoMassDensity"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "Observation.hasMember:breastRadMammoAssociatedFeatures",
+        "path": "Observation.hasMember",
+        "sliceName": "breastRadMammoAssociatedFeatures",
+        "min": 0,
+        "max": "1",
+        "base": {
+          "path": "Observation.hasMember",
+          "min": 0,
+          "max": "*"
+        },
+        "type": [
+          {
+            "code": "Reference",
+            "targetProfile": [
+              "http://hl7.org/fhir/us/breast-radiology/StructureDefinition/BreastRadMammoAssociatedFeatures"
+            ]
+          }
+        ]
+      }
+    ]
+  }
+}

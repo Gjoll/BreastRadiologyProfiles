@@ -1,0 +1,98 @@
+{
+  "resourceType": "StructureDefinition",
+  "extension": [
+    {
+      "url": "http://www.fragment.com/mapname",
+      "valueString": "Annotation/PolyLine/Fragment"
+    },
+    {
+      "url": "http://www.ResourceMaker.com/Group",
+      "valueString": "Fragment/{name}"
+    },
+    {
+      "url": "http://www.fragment.com/isFragment",
+      "valueBoolean": true
+    },
+    {
+      "url": "http://www.fragment.com/fragment",
+      "valueUrl": "http://hl7.org/fhir/us/breast-radiology/StructureDefinition/HeaderFragment"
+    },
+    {
+      "url": "http://www.fragment.com/maplink",
+      "valueString": "fragment|True|http://hl7.org/fhir/us/breast-radiology/StructureDefinition/HeaderFragment"
+    },
+    {
+      "url": "http://www.fragment.com/maplink",
+      "valueString": "extension|True|http://hl7.org/fhir/us/breast-radiology/StructureDefinition/AimAnnotationPolyLineExtension"
+    },
+    {
+      "url": "http://www.fragment.com/maplink",
+      "valueString": "target|True|http://hl7.org/fhir/us/breast-radiology/StructureDefinition/AimAnnotationPolyLineExtension"
+    }
+  ],
+  "url": "http://hl7.org/fhir/us/breast-radiology/StructureDefinition/AimAnnotationPolyLineFragment",
+  "name": "AimAnnotationPolyLineFragment",
+  "title": "Aim Annotation PolyLine Fragment",
+  "status": "draft",
+  "description": "Fragment definition to include AIM Annotation extension\n\nThis fragment adds the references for the AIM Annotation PolyLine extension.",
+  "fhirVersion": "4.0.0",
+  "kind": "resource",
+  "abstract": true,
+  "type": "Observation",
+  "baseDefinition": "http://hl7.org/fhir/StructureDefinition/Observation",
+  "derivation": "constraint",
+  "differential": {
+    "element": [
+      {
+        "id": "Observation",
+        "path": "Observation",
+        "short": "Fragment definition to include AIM Annotation extension",
+        "definition": "This fragment adds the references for the AIM Annotation PolyLine extension.",
+        "min": 0,
+        "max": "*"
+      },
+      {
+        "id": "Observation.extension",
+        "path": "Observation.extension",
+        "slicing": {
+          "discriminator": [
+            {
+              "type": "value",
+              "path": "url"
+            }
+          ],
+          "ordered": true,
+          "rules": "openAtEnd"
+        },
+        "min": 0,
+        "max": "*",
+        "base": {
+          "path": "Observation.extension",
+          "min": 0,
+          "max": "*"
+        }
+      },
+      {
+        "id": "Observation.extension:polyLineAnnotation",
+        "path": "Observation.extension",
+        "sliceName": "polyLineAnnotation",
+        "min": 1,
+        "max": "1",
+        "base": {
+          "path": "Observation.extension",
+          "min": 0,
+          "max": "*"
+        },
+        "type": [
+          {
+            "code": "Extension",
+            "profile": [
+              "http://hl7.org/fhir/us/breast-radiology/StructureDefinition/AimAnnotationPolyLineExtension"
+            ]
+          }
+        ],
+        "isModifier": false
+      }
+    ]
+  }
+}

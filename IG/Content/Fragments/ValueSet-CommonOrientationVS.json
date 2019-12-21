@@ -1,0 +1,39 @@
+{
+  "resourceType": "ValueSet",
+  "id": "CommonOrientationVS",
+  "extension": [
+    {
+      "url": "http://www.fragment.com/fragment",
+      "valueUrl": "http://hl7.org/fhir/us/breast-radiology/StructureDefinition/HeaderFragment"
+    },
+    {
+      "url": "http://www.ResourceMaker.com/Group",
+      "valueString": "CommonCodesVS"
+    },
+    {
+      "url": "http://www.fragment.com/mapname",
+      "valueString": "Orientation Values"
+    }
+  ],
+  "url": "http://hl7.org/fhir/us/breast-radiology/ValueSet/CommonOrientationVS",
+  "name": "CommonOrientationVS",
+  "title": "Orientation ValueSet",
+  "description": "Orientation codes",
+  "compose": {
+    "include": [
+      {
+        "system": "http://hl7.org/fhir/us/breast-radiology/CodeSystem/CommonOrientationCS",
+        "concept": [
+          {
+            "code": "Parallel",
+            "display": "Parallel"
+          },
+          {
+            "code": "NotParallel",
+            "display": "Not Parallel"
+          }
+        ]
+      }
+    ]
+  }
+}

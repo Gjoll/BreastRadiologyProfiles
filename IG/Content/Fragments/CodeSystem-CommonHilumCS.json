@@ -1,0 +1,33 @@
+{
+  "resourceType": "CodeSystem",
+  "id": "CommonHilumCS",
+  "extension": [
+    {
+      "url": "http://www.fragment.com/fragment",
+      "valueUrl": "http://hl7.org/fhir/us/breast-radiology/StructureDefinition/HeaderFragment"
+    },
+    {
+      "url": "http://www.ResourceMaker.com/Group",
+      "valueString": "CommonCodesCS"
+    }
+  ],
+  "url": "http://hl7.org/fhir/us/breast-radiology/CodeSystem/CommonHilumCS",
+  "name": "CommonHilumCS",
+  "title": "Hilum Values CodeSystem",
+  "description": "Codes defining hilum values.",
+  "caseSensitive": true,
+  "content": "complete",
+  "count": 2,
+  "concept": [
+    {
+      "code": "HilumFatty",
+      "display": "Hilum Fatty",
+      "definition": "Definition needed"
+    },
+    {
+      "code": "Hilum Not Fatty",
+      "display": "Hilum Not Fatty",
+      "definition": "Definition needed"
+    }
+  ]
+}

@@ -1,0 +1,84 @@
+{
+  "resourceType": "StructureDefinition",
+  "extension": [
+    {
+      "url": "http://www.fragment.com/mapname",
+      "valueString": "BiRads/Assessment/Category"
+    },
+    {
+      "url": "http://www.ResourceMaker.com/Group",
+      "valueString": "CommonResources/BiRads"
+    },
+    {
+      "url": "http://www.fragment.com/fragment",
+      "valueUrl": "http://hl7.org/fhir/us/breast-radiology/StructureDefinition/BreastRadObservationNoDeviceFragment"
+    },
+    {
+      "url": "http://www.fragment.com/maplink",
+      "valueString": "fragment|True|http://hl7.org/fhir/us/breast-radiology/StructureDefinition/BreastRadObservationNoDeviceFragment"
+    },
+    {
+      "url": "http://www.fragment.com/fragment",
+      "valueUrl": "http://hl7.org/fhir/us/breast-radiology/StructureDefinition/CodedValueObservationFragment"
+    },
+    {
+      "url": "http://www.fragment.com/maplink",
+      "valueString": "fragment|True|http://hl7.org/fhir/us/breast-radiology/StructureDefinition/CodedValueObservationFragment"
+    },
+    {
+      "url": "http://www.fragment.com/fragment",
+      "valueUrl": "http://hl7.org/fhir/us/breast-radiology/StructureDefinition/ObservationLeafFragment"
+    },
+    {
+      "url": "http://www.fragment.com/maplink",
+      "valueString": "fragment|True|http://hl7.org/fhir/us/breast-radiology/StructureDefinition/ObservationLeafFragment"
+    },
+    {
+      "url": "http://www.fragment.com/maplink",
+      "valueString": "valueSet|True|http://hl7.org/fhir/us/breast-radiology/ValueSet/BiRadsAssessmentCategoriesVS"
+    }
+  ],
+  "url": "http://hl7.org/fhir/us/breast-radiology/StructureDefinition/BiRadsAssessmentCategory",
+  "name": "BiRadsAssessmentCategory",
+  "title": "BiRads Assessment Category",
+  "status": "draft",
+  "description": "BiRads Assessment Category Observation\n\nBI-RADS® assessments are divided into incomplete (category 0) and final assessment categories\n(categories 1, 2, 3, 4, 5 and 6). An incomplete mammography assessment, usually rendered at batch-\nread screening mammography, requires further evaluation with additional mammographic views,\nultrasound, and/or comparison mammography examination(s). If the additional evaluation involves\nonly comparison with previous mammography examination(s) that then leads to a final assessment,\nthe incomplete screening assessment is replaced by this final assessment. If the additional evalu-\nation includes a diagnostic imaging examination, a final assessment is rendered for the diagnostic\nexamination, but the screening mammography examination remains assessed as category 0.\n-- Bi-Rads® Atlas — Mammography Fifth Ed. 2013 \n*** TODO Items ***** Should each mass/calcification observation have its own optional/required BiRad observation or just the Left/Right/Combined sections?\n** How is this different from CommonObservedState",
+  "fhirVersion": "4.0.0",
+  "kind": "resource",
+  "abstract": false,
+  "type": "Observation",
+  "baseDefinition": "http://hl7.org/fhir/StructureDefinition/Observation",
+  "derivation": "constraint",
+  "differential": {
+    "element": [
+      {
+        "id": "Observation",
+        "path": "Observation",
+        "short": "BiRads Assessment Category Observation",
+        "definition": "BI-RADS® assessments are divided into incomplete (category 0) and final assessment categories\n(categories 1, 2, 3, 4, 5 and 6). An incomplete mammography assessment, usually rendered at batch-\nread screening mammography, requires further evaluation with additional mammographic views,\nultrasound, and/or comparison mammography examination(s). If the additional evaluation involves\nonly comparison with previous mammography examination(s) that then leads to a final assessment,\nthe incomplete screening assessment is replaced by this final assessment. If the additional evalu-\nation includes a diagnostic imaging examination, a final assessment is rendered for the diagnostic\nexamination, but the screening mammography examination remains assessed as category 0.\n-- Bi-Rads® Atlas — Mammography Fifth Ed. 2013 \n*** TODO Items ***** Should each mass/calcification observation have its own optional/required BiRad observation or just the Left/Right/Combined sections?\n** How is this different from CommonObservedState",
+        "min": 0,
+        "max": "*"
+      },
+      {
+        "id": "Observation.value[x]",
+        "path": "Observation.value[x]",
+        "min": 0,
+        "max": "1",
+        "base": {
+          "path": "Observation.value[x]",
+          "min": 0,
+          "max": "1"
+        },
+        "type": [
+          {
+            "code": "CodeableConcept"
+          }
+        ],
+        "binding": {
+          "strength": "required",
+          "valueSet": "http://hl7.org/fhir/us/breast-radiology/ValueSet/BiRadsAssessmentCategoriesVS"
+        }
+      }
+    ]
+  }
+}

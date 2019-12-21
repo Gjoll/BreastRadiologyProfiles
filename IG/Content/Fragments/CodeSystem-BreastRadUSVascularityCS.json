@@ -1,0 +1,53 @@
+{
+  "resourceType": "CodeSystem",
+  "id": "BreastRadUSVascularityCS",
+  "extension": [
+    {
+      "url": "http://www.fragment.com/fragment",
+      "valueUrl": "http://hl7.org/fhir/us/breast-radiology/StructureDefinition/HeaderFragment"
+    },
+    {
+      "url": "http://www.ResourceMaker.com/Group",
+      "valueString": "USCodesCS"
+    }
+  ],
+  "url": "http://hl7.org/fhir/us/breast-radiology/CodeSystem/BreastRadUSVascularityCS",
+  "name": "BreastRadUSVascularityCS",
+  "title": "US Echo Pattern CodeSystem",
+  "description": "Ultra-sound Vascularity codes.",
+  "caseSensitive": true,
+  "content": "complete",
+  "count": 6,
+  "concept": [
+    {
+      "code": "Adjacent",
+      "display": "Adjacent",
+      "definition": "Penrad"
+    },
+    {
+      "code": "IncreaseSurround",
+      "display": "Increase Surround",
+      "definition": "Penrad"
+    },
+    {
+      "code": "Increased",
+      "display": "Increased",
+      "definition": "Penrad"
+    },
+    {
+      "code": "NoIncrease",
+      "display": "No increase",
+      "definition": "Penrad"
+    },
+    {
+      "code": "NotPresent",
+      "display": "Not present",
+      "definition": "Penrad"
+    },
+    {
+      "code": "Present",
+      "display": "Present",
+      "definition": "Penrad"
+    }
+  ]
+}

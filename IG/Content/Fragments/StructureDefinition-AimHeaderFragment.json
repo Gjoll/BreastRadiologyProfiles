@@ -1,0 +1,50 @@
+{
+  "resourceType": "StructureDefinition",
+  "extension": [
+    {
+      "url": "http://www.fragment.com/mapname",
+      "valueString": "Common/Header"
+    },
+    {
+      "url": "http://www.ResourceMaker.com/Group",
+      "valueString": "Fragment/{name}"
+    },
+    {
+      "url": "http://www.fragment.com/isFragment",
+      "valueBoolean": true
+    }
+  ],
+  "url": "http://hl7.org/fhir/us/breast-radiology/StructureDefinition/AimHeaderFragment",
+  "version": "0.0.2",
+  "name": "AimHeaderFragment",
+  "title": "Resource",
+  "status": "draft",
+  "date": "2019-11-01",
+  "publisher": "Hl7-Clinical Interoperability Council",
+  "contact": [
+    {
+      "telecom": [
+        {
+          "system": "url",
+          "value": "http://www.hl7.org/Special/committees/cic"
+        }
+      ]
+    }
+  ],
+  "fhirVersion": "4.0.0",
+  "kind": "resource",
+  "abstract": true,
+  "type": "Resource",
+  "baseDefinition": "http://hl7.org/fhir/StructureDefinition/Resource",
+  "derivation": "constraint",
+  "differential": {
+    "element": [
+      {
+        "id": "Resource",
+        "path": "Resource",
+        "min": 0,
+        "max": "*"
+      }
+    ]
+  }
+}

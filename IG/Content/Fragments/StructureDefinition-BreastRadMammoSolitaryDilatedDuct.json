@@ -1,0 +1,233 @@
+{
+  "resourceType": "StructureDefinition",
+  "extension": [
+    {
+      "url": "http://www.fragment.com/mapname",
+      "valueString": "Mammo/Solitary/Dialated/Duct"
+    },
+    {
+      "url": "http://www.ResourceMaker.com/Group",
+      "valueString": "MGResources/SolitaryDilatedDuct"
+    },
+    {
+      "url": "http://www.fragment.com/fragment",
+      "valueUrl": "http://hl7.org/fhir/us/breast-radiology/StructureDefinition/BreastRadObservationNoDeviceFragment"
+    },
+    {
+      "url": "http://www.fragment.com/maplink",
+      "valueString": "fragment|True|http://hl7.org/fhir/us/breast-radiology/StructureDefinition/BreastRadObservationNoDeviceFragment"
+    },
+    {
+      "url": "http://www.fragment.com/fragment",
+      "valueUrl": "http://hl7.org/fhir/us/breast-radiology/StructureDefinition/BreastRadObservationNoValueFragment"
+    },
+    {
+      "url": "http://www.fragment.com/maplink",
+      "valueString": "fragment|True|http://hl7.org/fhir/us/breast-radiology/StructureDefinition/BreastRadObservationNoValueFragment"
+    },
+    {
+      "url": "http://www.fragment.com/fragment",
+      "valueUrl": "http://hl7.org/fhir/us/breast-radiology/StructureDefinition/ObservationLeafFragment"
+    },
+    {
+      "url": "http://www.fragment.com/maplink",
+      "valueString": "fragment|True|http://hl7.org/fhir/us/breast-radiology/StructureDefinition/ObservationLeafFragment"
+    },
+    {
+      "url": "http://www.fragment.com/fragment",
+      "valueUrl": "http://hl7.org/fhir/us/breast-radiology/StructureDefinition/BreastBodyLocationRequiredFragment"
+    },
+    {
+      "url": "http://www.fragment.com/maplink",
+      "valueString": "fragment|True|http://hl7.org/fhir/us/breast-radiology/StructureDefinition/BreastBodyLocationRequiredFragment"
+    },
+    {
+      "url": "http://www.fragment.com/maplink",
+      "valueString": "target|True|http://hl7.org/fhir/us/breast-radiology/StructureDefinition/BiRadsAssessmentCategory"
+    },
+    {
+      "url": "http://www.fragment.com/maplink",
+      "valueString": "target|True|http://hl7.org/fhir/us/breast-radiology/StructureDefinition/CommonCount"
+    },
+    {
+      "url": "http://www.fragment.com/maplink",
+      "valueString": "target|True|http://hl7.org/fhir/us/breast-radiology/StructureDefinition/CommonObservedChanges"
+    },
+    {
+      "url": "http://www.fragment.com/maplink",
+      "valueString": "target|True|http://hl7.org/fhir/us/breast-radiology/StructureDefinition/CommonSize"
+    },
+    {
+      "url": "http://www.fragment.com/maplink",
+      "valueString": "target|True|http://hl7.org/fhir/us/breast-radiology/StructureDefinition/CommonOrientation"
+    },
+    {
+      "url": "http://www.fragment.com/maplink",
+      "valueString": "target|True|http://hl7.org/fhir/us/breast-radiology/StructureDefinition/CommonObservedState"
+    }
+  ],
+  "url": "http://hl7.org/fhir/us/breast-radiology/StructureDefinition/BreastRadMammoSolitaryDilatedDuct",
+  "name": "BreastRadMammoSolitaryDilatedDuct",
+  "title": "Mammo Solitary Dilated Duct",
+  "status": "draft",
+  "description": "Breat Radiology Mammography Solitary Dilated Duct Observation\n\nIf this observation is present, and dataAbsentReason is empty, then a solitary dilated duct was observed.\n\n\nIf this observation is present, and dataAbsentReason is not empty, then a solitary dilated duct was not observed and dataAbsentReason contains the reason why.\n\n\nThis is a unilateral tubular or branching structure that likely represents a dilated or otherwise en-\nlarged duct. It is a rare finding. Even if unassociated with other suspicious clinical or mammographic\nfindings, it has been reported to be associated with noncalcified DCIS.\n-- Bi-Rads® Atlas — Mammography Fifth Ed. 2013 \n*** TODO Items ***** should this be a leaf node (how about shape, density, location, etc).",
+  "fhirVersion": "4.0.0",
+  "kind": "resource",
+  "abstract": false,
+  "type": "Observation",
+  "baseDefinition": "http://hl7.org/fhir/StructureDefinition/Observation",
+  "derivation": "constraint",
+  "differential": {
+    "element": [
+      {
+        "id": "Observation",
+        "path": "Observation",
+        "short": "Breat Radiology Mammography Solitary Dilated Duct Observation",
+        "definition": "If this observation is present, and dataAbsentReason is empty, then a solitary dilated duct was observed.\n\n\nIf this observation is present, and dataAbsentReason is not empty, then a solitary dilated duct was not observed and dataAbsentReason contains the reason why.\n\n\nThis is a unilateral tubular or branching structure that likely represents a dilated or otherwise en-\nlarged duct. It is a rare finding. Even if unassociated with other suspicious clinical or mammographic\nfindings, it has been reported to be associated with noncalcified DCIS.\n-- Bi-Rads® Atlas — Mammography Fifth Ed. 2013 \n*** TODO Items ***** should this be a leaf node (how about shape, density, location, etc).",
+        "min": 0,
+        "max": "*"
+      },
+      {
+        "id": "Observation.hasMember",
+        "path": "Observation.hasMember",
+        "slicing": {
+          "discriminator": [
+            {
+              "type": "value",
+              "path": "url"
+            }
+          ],
+          "ordered": true,
+          "rules": "openAtEnd"
+        },
+        "min": 0,
+        "max": "*",
+        "base": {
+          "path": "Observation.hasMember",
+          "min": 0,
+          "max": "*"
+        }
+      },
+      {
+        "id": "Observation.hasMember:biRadsAssessmentCategory",
+        "path": "Observation.hasMember",
+        "sliceName": "biRadsAssessmentCategory",
+        "min": 0,
+        "max": "1",
+        "base": {
+          "path": "Observation.hasMember",
+          "min": 0,
+          "max": "*"
+        },
+        "type": [
+          {
+            "code": "Reference",
+            "targetProfile": [
+              "http://hl7.org/fhir/us/breast-radiology/StructureDefinition/BiRadsAssessmentCategory"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "Observation.hasMember:commonCount",
+        "path": "Observation.hasMember",
+        "sliceName": "commonCount",
+        "min": 0,
+        "max": "1",
+        "base": {
+          "path": "Observation.hasMember",
+          "min": 0,
+          "max": "*"
+        },
+        "type": [
+          {
+            "code": "Reference",
+            "targetProfile": [
+              "http://hl7.org/fhir/us/breast-radiology/StructureDefinition/CommonCount"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "Observation.hasMember:commonObservedChanges",
+        "path": "Observation.hasMember",
+        "sliceName": "commonObservedChanges",
+        "min": 0,
+        "max": "*",
+        "base": {
+          "path": "Observation.hasMember",
+          "min": 0,
+          "max": "*"
+        },
+        "type": [
+          {
+            "code": "Reference",
+            "targetProfile": [
+              "http://hl7.org/fhir/us/breast-radiology/StructureDefinition/CommonObservedChanges"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "Observation.hasMember:commonSize",
+        "path": "Observation.hasMember",
+        "sliceName": "commonSize",
+        "min": 0,
+        "max": "1",
+        "base": {
+          "path": "Observation.hasMember",
+          "min": 0,
+          "max": "*"
+        },
+        "type": [
+          {
+            "code": "Reference",
+            "targetProfile": [
+              "http://hl7.org/fhir/us/breast-radiology/StructureDefinition/CommonSize"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "Observation.hasMember:commonOrientation",
+        "path": "Observation.hasMember",
+        "sliceName": "commonOrientation",
+        "min": 0,
+        "max": "1",
+        "base": {
+          "path": "Observation.hasMember",
+          "min": 0,
+          "max": "*"
+        },
+        "type": [
+          {
+            "code": "Reference",
+            "targetProfile": [
+              "http://hl7.org/fhir/us/breast-radiology/StructureDefinition/CommonOrientation"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "Observation.hasMember:commonObservedState",
+        "path": "Observation.hasMember",
+        "sliceName": "commonObservedState",
+        "min": 0,
+        "max": "*",
+        "base": {
+          "path": "Observation.hasMember",
+          "min": 0,
+          "max": "*"
+        },
+        "type": [
+          {
+            "code": "Reference",
+            "targetProfile": [
+              "http://hl7.org/fhir/us/breast-radiology/StructureDefinition/CommonObservedState"
+            ]
+          }
+        ]
+      }
+    ]
+  }
+}

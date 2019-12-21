@@ -1,0 +1,145 @@
+{
+  "resourceType": "StructureDefinition",
+  "extension": [
+    {
+      "url": "http://www.fragment.com/mapname",
+      "valueString": "UltraSound/Finding"
+    },
+    {
+      "url": "http://www.ResourceMaker.com/Group",
+      "valueString": "USResources"
+    },
+    {
+      "url": "http://www.fragment.com/fragment",
+      "valueUrl": "http://hl7.org/fhir/us/breast-radiology/StructureDefinition/ObservationSectionFragment"
+    },
+    {
+      "url": "http://www.fragment.com/maplink",
+      "valueString": "fragment|True|http://hl7.org/fhir/us/breast-radiology/StructureDefinition/ObservationSectionFragment"
+    },
+    {
+      "url": "http://www.fragment.com/fragment",
+      "valueUrl": "http://hl7.org/fhir/us/breast-radiology/StructureDefinition/BreastRadObservationNoValueFragment"
+    },
+    {
+      "url": "http://www.fragment.com/maplink",
+      "valueString": "fragment|True|http://hl7.org/fhir/us/breast-radiology/StructureDefinition/BreastRadObservationNoValueFragment"
+    },
+    {
+      "url": "http://www.fragment.com/maplink",
+      "valueString": "target|True|http://hl7.org/fhir/us/breast-radiology/StructureDefinition/CommonForeignObject"
+    },
+    {
+      "url": "http://www.fragment.com/maplink",
+      "valueString": "target|True|http://hl7.org/fhir/us/breast-radiology/StructureDefinition/BreastRadUSMass"
+    },
+    {
+      "url": "http://www.fragment.com/maplink",
+      "valueString": "target|True|http://hl7.org/fhir/us/breast-radiology/StructureDefinition/BreastRadUSTissueComposition"
+    }
+  ],
+  "url": "http://hl7.org/fhir/us/breast-radiology/StructureDefinition/BreastRadUltraSoundFinding",
+  "name": "BreastRadUltraSoundFinding",
+  "title": "UltraSound Finding",
+  "status": "draft",
+  "description": "Breast Radiology Ultra Sound Finding\n\n*** TODO Items ***** Device Metrics detailing the observation devices parameters (transducer freq, etc).\n** BiRads US calcifications are only listed as - calc in a mass - calc outside a mass - intraductal calcification. Can we use the Mammo calcification structure instead?\n** US Special cases (page 155 E.). How to handle?\n** Associated features: MGResources/Ultra-Sound/MRI associated fetures are similar. Can we merge?us has- Edema- Vascularity- Elasticity AssessmentMammo has- Trabecular thickening- Axillary adenopathymri has- Skin INvasion- Nipple Invasion\n** MGResources/Ultra-Sound/MRI Mass Margin are different.Not Circumscribed differently.Can they be aligned?\n** MGResources/Ultra-Sound/MRI Breast Density similar but not same.Can they be aligned?",
+  "fhirVersion": "4.0.0",
+  "kind": "resource",
+  "abstract": false,
+  "type": "Observation",
+  "baseDefinition": "http://hl7.org/fhir/StructureDefinition/Observation",
+  "derivation": "constraint",
+  "differential": {
+    "element": [
+      {
+        "id": "Observation",
+        "path": "Observation",
+        "short": "Breast Radiology Ultra Sound Finding",
+        "definition": "*** TODO Items ***** Device Metrics detailing the observation devices parameters (transducer freq, etc).\n** BiRads US calcifications are only listed as - calc in a mass - calc outside a mass - intraductal calcification. Can we use the Mammo calcification structure instead?\n** US Special cases (page 155 E.). How to handle?\n** Associated features: MGResources/Ultra-Sound/MRI associated fetures are similar. Can we merge?us has- Edema- Vascularity- Elasticity AssessmentMammo has- Trabecular thickening- Axillary adenopathymri has- Skin INvasion- Nipple Invasion\n** MGResources/Ultra-Sound/MRI Mass Margin are different.Not Circumscribed differently.Can they be aligned?\n** MGResources/Ultra-Sound/MRI Breast Density similar but not same.Can they be aligned?",
+        "min": 0,
+        "max": "*"
+      },
+      {
+        "id": "Observation.hasMember",
+        "path": "Observation.hasMember",
+        "slicing": {
+          "discriminator": [
+            {
+              "type": "value",
+              "path": "url"
+            }
+          ],
+          "ordered": true,
+          "rules": "openAtEnd"
+        },
+        "min": 0,
+        "max": "*",
+        "base": {
+          "path": "Observation.hasMember",
+          "min": 0,
+          "max": "*"
+        }
+      },
+      {
+        "id": "Observation.hasMember:commonForeignObject",
+        "path": "Observation.hasMember",
+        "sliceName": "commonForeignObject",
+        "min": 0,
+        "max": "*",
+        "base": {
+          "path": "Observation.hasMember",
+          "min": 0,
+          "max": "*"
+        },
+        "type": [
+          {
+            "code": "Reference",
+            "targetProfile": [
+              "http://hl7.org/fhir/us/breast-radiology/StructureDefinition/CommonForeignObject"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "Observation.hasMember:breastRadUSMass",
+        "path": "Observation.hasMember",
+        "sliceName": "breastRadUSMass",
+        "min": 0,
+        "max": "*",
+        "base": {
+          "path": "Observation.hasMember",
+          "min": 0,
+          "max": "*"
+        },
+        "type": [
+          {
+            "code": "Reference",
+            "targetProfile": [
+              "http://hl7.org/fhir/us/breast-radiology/StructureDefinition/BreastRadUSMass"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "Observation.hasMember:breastRadUSTissueComposition",
+        "path": "Observation.hasMember",
+        "sliceName": "breastRadUSTissueComposition",
+        "min": 1,
+        "max": "1",
+        "base": {
+          "path": "Observation.hasMember",
+          "min": 0,
+          "max": "*"
+        },
+        "type": [
+          {
+            "code": "Reference",
+            "targetProfile": [
+              "http://hl7.org/fhir/us/breast-radiology/StructureDefinition/BreastRadUSTissueComposition"
+            ]
+          }
+        ]
+      }
+    ]
+  }
+}

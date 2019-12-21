@@ -1,0 +1,43 @@
+{
+  "resourceType": "CodeSystem",
+  "id": "USBoundaryCS",
+  "extension": [
+    {
+      "url": "http://www.fragment.com/fragment",
+      "valueUrl": "http://hl7.org/fhir/us/breast-radiology/StructureDefinition/HeaderFragment"
+    },
+    {
+      "url": "http://www.ResourceMaker.com/Group",
+      "valueString": "USCodesCS"
+    }
+  ],
+  "url": "http://hl7.org/fhir/us/breast-radiology/CodeSystem/USBoundaryCS",
+  "name": "USBoundaryCS",
+  "title": "UltraSound Boundary CodeSystem",
+  "description": "Ultra Sound Boundary codes.",
+  "caseSensitive": true,
+  "content": "complete",
+  "count": 4,
+  "concept": [
+    {
+      "code": "WellDefined",
+      "display": "Well defined boundary",
+      "definition": "Penrad"
+    },
+    {
+      "code": "Abrupt",
+      "display": "Abrupt boundary",
+      "definition": "Penrad"
+    },
+    {
+      "code": "Echogenic",
+      "display": "Echogenic boundary",
+      "definition": "Penrad"
+    },
+    {
+      "code": "Hyperechoic",
+      "display": "Hyperechoic boundary",
+      "definition": "Penrad"
+    }
+  ]
+}

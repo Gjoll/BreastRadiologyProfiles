@@ -1,0 +1,84 @@
+{
+  "resourceType": "StructureDefinition",
+  "extension": [
+    {
+      "url": "http://www.fragment.com/mapname",
+      "valueString": "Orientation"
+    },
+    {
+      "url": "http://www.ResourceMaker.com/Group",
+      "valueString": "CommonResources/Orientation"
+    },
+    {
+      "url": "http://www.fragment.com/fragment",
+      "valueUrl": "http://hl7.org/fhir/us/breast-radiology/StructureDefinition/BreastRadObservationNoDeviceFragment"
+    },
+    {
+      "url": "http://www.fragment.com/maplink",
+      "valueString": "fragment|True|http://hl7.org/fhir/us/breast-radiology/StructureDefinition/BreastRadObservationNoDeviceFragment"
+    },
+    {
+      "url": "http://www.fragment.com/fragment",
+      "valueUrl": "http://hl7.org/fhir/us/breast-radiology/StructureDefinition/CodedValueObservationFragment"
+    },
+    {
+      "url": "http://www.fragment.com/maplink",
+      "valueString": "fragment|True|http://hl7.org/fhir/us/breast-radiology/StructureDefinition/CodedValueObservationFragment"
+    },
+    {
+      "url": "http://www.fragment.com/fragment",
+      "valueUrl": "http://hl7.org/fhir/us/breast-radiology/StructureDefinition/ObservationLeafFragment"
+    },
+    {
+      "url": "http://www.fragment.com/maplink",
+      "valueString": "fragment|True|http://hl7.org/fhir/us/breast-radiology/StructureDefinition/ObservationLeafFragment"
+    },
+    {
+      "url": "http://www.fragment.com/maplink",
+      "valueString": "valueSet|True|http://hl7.org/fhir/us/breast-radiology/ValueSet/CommonOrientationVS"
+    }
+  ],
+  "url": "http://hl7.org/fhir/us/breast-radiology/StructureDefinition/CommonOrientation",
+  "name": "CommonOrientation",
+  "title": "Orientation",
+  "status": "draft",
+  "description": "Breast Radiology Orientation Observation\n\nIf this observation is present, and dataAbsentReason is empty, then a orientation was observed.\n\n\nIf this observation is present, and dataAbsentReason is not empty, then a orientation was not observed and dataAbsentReason contains the reason why.\n\n\nOrientation is defined with reference to the skin\nline. Obliquely situated masses may follow a radial pattern, and their long axes will help determine\nclassification as parallel or not parallel. Parallel or \"wider-than-tall\" orientation is a property of most\nbenign masses, notably fibroadenomas; however, many carcinomas have this orientation as well.\nOrientation alone should not be used as an isolated feature in assessing a mass for its likelihood of\nmalignancy.\n-- Bi-Rads® Atlas — Mammography Fifth Ed. 2013",
+  "fhirVersion": "4.0.0",
+  "kind": "resource",
+  "abstract": false,
+  "type": "Observation",
+  "baseDefinition": "http://hl7.org/fhir/StructureDefinition/Observation",
+  "derivation": "constraint",
+  "differential": {
+    "element": [
+      {
+        "id": "Observation",
+        "path": "Observation",
+        "short": "Breast Radiology Orientation Observation",
+        "definition": "If this observation is present, and dataAbsentReason is empty, then a orientation was observed.\n\n\nIf this observation is present, and dataAbsentReason is not empty, then a orientation was not observed and dataAbsentReason contains the reason why.\n\n\nOrientation is defined with reference to the skin\nline. Obliquely situated masses may follow a radial pattern, and their long axes will help determine\nclassification as parallel or not parallel. Parallel or \"wider-than-tall\" orientation is a property of most\nbenign masses, notably fibroadenomas; however, many carcinomas have this orientation as well.\nOrientation alone should not be used as an isolated feature in assessing a mass for its likelihood of\nmalignancy.\n-- Bi-Rads® Atlas — Mammography Fifth Ed. 2013",
+        "min": 0,
+        "max": "*"
+      },
+      {
+        "id": "Observation.value[x]",
+        "path": "Observation.value[x]",
+        "min": 0,
+        "max": "1",
+        "base": {
+          "path": "Observation.value[x]",
+          "min": 0,
+          "max": "1"
+        },
+        "type": [
+          {
+            "code": "CodeableConcept"
+          }
+        ],
+        "binding": {
+          "strength": "required",
+          "valueSet": "http://hl7.org/fhir/us/breast-radiology/ValueSet/CommonOrientationVS"
+        }
+      }
+    ]
+  }
+}

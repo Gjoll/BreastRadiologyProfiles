@@ -1,0 +1,59 @@
+{
+  "resourceType": "StructureDefinition",
+  "extension": [
+    {
+      "url": "http://www.fragment.com/mapname",
+      "valueString": "NoDevice/Observation/Fragment"
+    },
+    {
+      "url": "http://www.ResourceMaker.com/Group",
+      "valueString": "Fragment/{name}"
+    },
+    {
+      "url": "http://www.fragment.com/isFragment",
+      "valueBoolean": true
+    },
+    {
+      "url": "http://www.fragment.com/fragment",
+      "valueUrl": "http://hl7.org/fhir/us/breast-radiology/StructureDefinition/BreastRadObservationFragment"
+    },
+    {
+      "url": "http://www.fragment.com/maplink",
+      "valueString": "fragment|True|http://hl7.org/fhir/us/breast-radiology/StructureDefinition/BreastRadObservationFragment"
+    }
+  ],
+  "url": "http://hl7.org/fhir/us/breast-radiology/StructureDefinition/BreastRadObservationNoDeviceFragment",
+  "name": "BreastRadObservationNoDeviceFragment",
+  "title": "BreastRad Observation NoDevice Fragment",
+  "status": "draft",
+  "description": "Fragment that constrains Observations to have not device data.\n\nFragment for all observations that have no device.",
+  "fhirVersion": "4.0.0",
+  "kind": "resource",
+  "abstract": true,
+  "type": "Observation",
+  "baseDefinition": "http://hl7.org/fhir/StructureDefinition/Observation",
+  "derivation": "constraint",
+  "differential": {
+    "element": [
+      {
+        "id": "Observation",
+        "path": "Observation",
+        "short": "Fragment that constrains Observations to have not device data.",
+        "definition": "Fragment for all observations that have no device.",
+        "min": 0,
+        "max": "*"
+      },
+      {
+        "id": "Observation.device",
+        "path": "Observation.device",
+        "min": 0,
+        "max": "0",
+        "base": {
+          "path": "Observation.device",
+          "min": 0,
+          "max": "1"
+        }
+      }
+    ]
+  }
+}

@@ -1,0 +1,281 @@
+{
+  "resourceType": "StructureDefinition",
+  "extension": [
+    {
+      "url": "http://www.fragment.com/mapname",
+      "valueString": "Mammo/Calc."
+    },
+    {
+      "url": "http://www.ResourceMaker.com/Group",
+      "valueString": "MGResources/Calcification"
+    },
+    {
+      "url": "http://www.fragment.com/fragment",
+      "valueUrl": "http://hl7.org/fhir/us/breast-radiology/StructureDefinition/BreastRadObservationNoDeviceFragment"
+    },
+    {
+      "url": "http://www.fragment.com/maplink",
+      "valueString": "fragment|True|http://hl7.org/fhir/us/breast-radiology/StructureDefinition/BreastRadObservationNoDeviceFragment"
+    },
+    {
+      "url": "http://www.fragment.com/fragment",
+      "valueUrl": "http://hl7.org/fhir/us/breast-radiology/StructureDefinition/BreastBodyLocationRequiredFragment"
+    },
+    {
+      "url": "http://www.fragment.com/maplink",
+      "valueString": "fragment|True|http://hl7.org/fhir/us/breast-radiology/StructureDefinition/BreastBodyLocationRequiredFragment"
+    },
+    {
+      "url": "http://www.fragment.com/fragment",
+      "valueUrl": "http://hl7.org/fhir/us/breast-radiology/StructureDefinition/ObservationSectionFragment"
+    },
+    {
+      "url": "http://www.fragment.com/maplink",
+      "valueString": "fragment|True|http://hl7.org/fhir/us/breast-radiology/StructureDefinition/ObservationSectionFragment"
+    },
+    {
+      "url": "http://www.fragment.com/fragment",
+      "valueUrl": "http://hl7.org/fhir/us/breast-radiology/StructureDefinition/BreastRadObservationNoValueFragment"
+    },
+    {
+      "url": "http://www.fragment.com/maplink",
+      "valueString": "fragment|True|http://hl7.org/fhir/us/breast-radiology/StructureDefinition/BreastRadObservationNoValueFragment"
+    },
+    {
+      "url": "http://www.fragment.com/maplink",
+      "valueString": "target|True|http://hl7.org/fhir/us/breast-radiology/StructureDefinition/BiRadsAssessmentCategory"
+    },
+    {
+      "url": "http://www.fragment.com/maplink",
+      "valueString": "target|True|http://hl7.org/fhir/us/breast-radiology/StructureDefinition/CommonCount"
+    },
+    {
+      "url": "http://www.fragment.com/maplink",
+      "valueString": "target|True|http://hl7.org/fhir/us/breast-radiology/StructureDefinition/CommonObservedChanges"
+    },
+    {
+      "url": "http://www.fragment.com/maplink",
+      "valueString": "target|True|http://hl7.org/fhir/us/breast-radiology/StructureDefinition/CommonSize"
+    },
+    {
+      "url": "http://www.fragment.com/maplink",
+      "valueString": "target|True|http://hl7.org/fhir/us/breast-radiology/StructureDefinition/CommonObservedState"
+    },
+    {
+      "url": "http://www.fragment.com/maplink",
+      "valueString": "target|True|http://hl7.org/fhir/us/breast-radiology/StructureDefinition/BreastRadMammoCalcificationType"
+    },
+    {
+      "url": "http://www.fragment.com/maplink",
+      "valueString": "target|True|http://hl7.org/fhir/us/breast-radiology/StructureDefinition/BreastRadMammoCalcificationDistribution"
+    },
+    {
+      "url": "http://www.fragment.com/maplink",
+      "valueString": "target|False|http://hl7.org/fhir/us/breast-radiology/StructureDefinition/BreastRadMammoAssociatedFeatures"
+    }
+  ],
+  "url": "http://hl7.org/fhir/us/breast-radiology/StructureDefinition/BreastRadMammoCalcification",
+  "name": "BreastRadMammoCalcification",
+  "title": "Mammo Calcification",
+  "status": "draft",
+  "description": "Breast Radiology Mammography Calcification Observation\n\nIf this observation is present, and dataAbsentReason is empty, then a calcification was observed.\n\n\nIf this observation is present, and dataAbsentReason is not empty, then a calcification was not observed and dataAbsentReason contains the reason why and no Type or Distribution observations should be referenced by this observation\n\n\nCalcifications that are assessed as benign at mammography are typically larger, coarser, round with\nsmooth margins, and more easily seen than malignant calcifications. Calcifications associated with\nmalignancy (and many benign calcifications as well) are usually very small and often require the use\nof magnification to be seen well. When a specific typically benign etiology cannot be assigned, a\ndescription of calcifications should include their morphology and distribution. Calcifications that are\nobviously benign need not be reported, especially if the interpreting physician is concerned that\nthe referring clinician or patient might infer anything other than absolute confidence in benignity\nwere such calcifications described in the report. However, typically benign calcifications should be\nreported if the interpreting physician is concerned that other observers might misinterpret them as\nanything but benign were such calcifications not described in the report.\nAs an ASSOCIATED FEATURE, this may be used in conjunction with one or more other FINDING(S)\nto describe calcifications within or immediately adjacent to the finding(s)\n-- Bi-Rads® Atlas — Mammography Fifth Ed. 2013",
+  "fhirVersion": "4.0.0",
+  "kind": "resource",
+  "abstract": false,
+  "type": "Observation",
+  "baseDefinition": "http://hl7.org/fhir/StructureDefinition/Observation",
+  "derivation": "constraint",
+  "differential": {
+    "element": [
+      {
+        "id": "Observation",
+        "path": "Observation",
+        "short": "Breast Radiology Mammography Calcification Observation",
+        "definition": "If this observation is present, and dataAbsentReason is empty, then a calcification was observed.\n\n\nIf this observation is present, and dataAbsentReason is not empty, then a calcification was not observed and dataAbsentReason contains the reason why and no Type or Distribution observations should be referenced by this observation\n\n\nCalcifications that are assessed as benign at mammography are typically larger, coarser, round with\nsmooth margins, and more easily seen than malignant calcifications. Calcifications associated with\nmalignancy (and many benign calcifications as well) are usually very small and often require the use\nof magnification to be seen well. When a specific typically benign etiology cannot be assigned, a\ndescription of calcifications should include their morphology and distribution. Calcifications that are\nobviously benign need not be reported, especially if the interpreting physician is concerned that\nthe referring clinician or patient might infer anything other than absolute confidence in benignity\nwere such calcifications described in the report. However, typically benign calcifications should be\nreported if the interpreting physician is concerned that other observers might misinterpret them as\nanything but benign were such calcifications not described in the report.\nAs an ASSOCIATED FEATURE, this may be used in conjunction with one or more other FINDING(S)\nto describe calcifications within or immediately adjacent to the finding(s)\n-- Bi-Rads® Atlas — Mammography Fifth Ed. 2013",
+        "min": 0,
+        "max": "*"
+      },
+      {
+        "id": "Observation.hasMember",
+        "path": "Observation.hasMember",
+        "slicing": {
+          "discriminator": [
+            {
+              "type": "value",
+              "path": "url"
+            }
+          ],
+          "ordered": true,
+          "rules": "openAtEnd"
+        },
+        "min": 0,
+        "max": "*",
+        "base": {
+          "path": "Observation.hasMember",
+          "min": 0,
+          "max": "*"
+        }
+      },
+      {
+        "id": "Observation.hasMember:biRadsAssessmentCategory",
+        "path": "Observation.hasMember",
+        "sliceName": "biRadsAssessmentCategory",
+        "min": 0,
+        "max": "1",
+        "base": {
+          "path": "Observation.hasMember",
+          "min": 0,
+          "max": "*"
+        },
+        "type": [
+          {
+            "code": "Reference",
+            "targetProfile": [
+              "http://hl7.org/fhir/us/breast-radiology/StructureDefinition/BiRadsAssessmentCategory"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "Observation.hasMember:commonCount",
+        "path": "Observation.hasMember",
+        "sliceName": "commonCount",
+        "min": 0,
+        "max": "1",
+        "base": {
+          "path": "Observation.hasMember",
+          "min": 0,
+          "max": "*"
+        },
+        "type": [
+          {
+            "code": "Reference",
+            "targetProfile": [
+              "http://hl7.org/fhir/us/breast-radiology/StructureDefinition/CommonCount"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "Observation.hasMember:commonObservedChanges",
+        "path": "Observation.hasMember",
+        "sliceName": "commonObservedChanges",
+        "min": 0,
+        "max": "*",
+        "base": {
+          "path": "Observation.hasMember",
+          "min": 0,
+          "max": "*"
+        },
+        "type": [
+          {
+            "code": "Reference",
+            "targetProfile": [
+              "http://hl7.org/fhir/us/breast-radiology/StructureDefinition/CommonObservedChanges"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "Observation.hasMember:commonSize",
+        "path": "Observation.hasMember",
+        "sliceName": "commonSize",
+        "min": 0,
+        "max": "1",
+        "base": {
+          "path": "Observation.hasMember",
+          "min": 0,
+          "max": "*"
+        },
+        "type": [
+          {
+            "code": "Reference",
+            "targetProfile": [
+              "http://hl7.org/fhir/us/breast-radiology/StructureDefinition/CommonSize"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "Observation.hasMember:commonObservedState",
+        "path": "Observation.hasMember",
+        "sliceName": "commonObservedState",
+        "min": 0,
+        "max": "*",
+        "base": {
+          "path": "Observation.hasMember",
+          "min": 0,
+          "max": "*"
+        },
+        "type": [
+          {
+            "code": "Reference",
+            "targetProfile": [
+              "http://hl7.org/fhir/us/breast-radiology/StructureDefinition/CommonObservedState"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "Observation.hasMember:breastRadMammoCalcificationType",
+        "path": "Observation.hasMember",
+        "sliceName": "breastRadMammoCalcificationType",
+        "min": 0,
+        "max": "1",
+        "base": {
+          "path": "Observation.hasMember",
+          "min": 0,
+          "max": "*"
+        },
+        "type": [
+          {
+            "code": "Reference",
+            "targetProfile": [
+              "http://hl7.org/fhir/us/breast-radiology/StructureDefinition/BreastRadMammoCalcificationType"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "Observation.hasMember:breastRadMammoCalcificationDistribution",
+        "path": "Observation.hasMember",
+        "sliceName": "breastRadMammoCalcificationDistribution",
+        "min": 0,
+        "max": "1",
+        "base": {
+          "path": "Observation.hasMember",
+          "min": 0,
+          "max": "*"
+        },
+        "type": [
+          {
+            "code": "Reference",
+            "targetProfile": [
+              "http://hl7.org/fhir/us/breast-radiology/StructureDefinition/BreastRadMammoCalcificationDistribution"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "Observation.hasMember:breastRadMammoAssociatedFeatures",
+        "path": "Observation.hasMember",
+        "sliceName": "breastRadMammoAssociatedFeatures",
+        "min": 0,
+        "max": "1",
+        "base": {
+          "path": "Observation.hasMember",
+          "min": 0,
+          "max": "*"
+        },
+        "type": [
+          {
+            "code": "Reference",
+            "targetProfile": [
+              "http://hl7.org/fhir/us/breast-radiology/StructureDefinition/BreastRadMammoAssociatedFeatures"
+            ]
+          }
+        ]
+      }
+    ]
+  }
+}

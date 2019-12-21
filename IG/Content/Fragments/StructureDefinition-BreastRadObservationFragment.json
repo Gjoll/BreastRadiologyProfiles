@@ -1,0 +1,155 @@
+{
+  "resourceType": "StructureDefinition",
+  "extension": [
+    {
+      "url": "http://www.fragment.com/mapname",
+      "valueString": "Observation/Fragment"
+    },
+    {
+      "url": "http://www.ResourceMaker.com/Group",
+      "valueString": "Fragment/{name}"
+    },
+    {
+      "url": "http://www.fragment.com/isFragment",
+      "valueBoolean": true
+    },
+    {
+      "url": "http://www.fragment.com/fragment",
+      "valueUrl": "http://hl7.org/fhir/us/breast-radiology/StructureDefinition/HeaderFragment"
+    },
+    {
+      "url": "http://www.fragment.com/maplink",
+      "valueString": "fragment|True|http://hl7.org/fhir/us/breast-radiology/StructureDefinition/HeaderFragment"
+    },
+    {
+      "url": "http://www.fragment.com/fragment",
+      "valueUrl": "http://hl7.org/fhir/us/breast-radiology/StructureDefinition/CategoryFragment"
+    },
+    {
+      "url": "http://www.fragment.com/maplink",
+      "valueString": "fragment|True|http://hl7.org/fhir/us/breast-radiology/StructureDefinition/CategoryFragment"
+    }
+  ],
+  "url": "http://hl7.org/fhir/us/breast-radiology/StructureDefinition/BreastRadObservationFragment",
+  "name": "BreastRadObservationFragment",
+  "title": "BreastRad Observation Fragment",
+  "status": "draft",
+  "description": "Base fragment for all BreastRad observations.\n\nBase fragment that performs common constrains used in all breast radiology observations.",
+  "fhirVersion": "4.0.0",
+  "kind": "resource",
+  "abstract": true,
+  "type": "Observation",
+  "baseDefinition": "http://hl7.org/fhir/StructureDefinition/Observation",
+  "derivation": "constraint",
+  "differential": {
+    "element": [
+      {
+        "id": "Observation",
+        "path": "Observation",
+        "short": "Base fragment for all BreastRad observations.",
+        "definition": "Base fragment that performs common constrains used in all breast radiology observations.",
+        "min": 0,
+        "max": "*"
+      },
+      {
+        "id": "Observation.contained",
+        "path": "Observation.contained",
+        "min": 0,
+        "max": "0",
+        "base": {
+          "path": "Observation.contained",
+          "min": 0,
+          "max": "*"
+        }
+      },
+      {
+        "id": "Observation.basedOn",
+        "path": "Observation.basedOn",
+        "min": 0,
+        "max": "0",
+        "base": {
+          "path": "Observation.basedOn",
+          "min": 0,
+          "max": "*"
+        }
+      },
+      {
+        "id": "Observation.partOf",
+        "path": "Observation.partOf",
+        "min": 0,
+        "max": "0",
+        "base": {
+          "path": "Observation.partOf",
+          "min": 0,
+          "max": "*"
+        }
+      },
+      {
+        "id": "Observation.subject",
+        "path": "Observation.subject",
+        "min": 1,
+        "max": "1",
+        "base": {
+          "path": "Observation.subject",
+          "min": 0,
+          "max": "1"
+        }
+      },
+      {
+        "id": "Observation.focus",
+        "path": "Observation.focus",
+        "min": 0,
+        "max": "0",
+        "base": {
+          "path": "Observation.focus",
+          "min": 0,
+          "max": "*"
+        }
+      },
+      {
+        "id": "Observation.interpretation",
+        "path": "Observation.interpretation",
+        "min": 0,
+        "max": "0",
+        "base": {
+          "path": "Observation.interpretation",
+          "min": 0,
+          "max": "*"
+        }
+      },
+      {
+        "id": "Observation.specimen",
+        "path": "Observation.specimen",
+        "min": 0,
+        "max": "0",
+        "base": {
+          "path": "Observation.specimen",
+          "min": 0,
+          "max": "1"
+        }
+      },
+      {
+        "id": "Observation.referenceRange",
+        "path": "Observation.referenceRange",
+        "min": 0,
+        "max": "0",
+        "base": {
+          "path": "Observation.referenceRange",
+          "min": 0,
+          "max": "*"
+        }
+      },
+      {
+        "id": "Observation.component",
+        "path": "Observation.component",
+        "min": 0,
+        "max": "0",
+        "base": {
+          "path": "Observation.component",
+          "min": 0,
+          "max": "*"
+        }
+      }
+    ]
+  }
+}

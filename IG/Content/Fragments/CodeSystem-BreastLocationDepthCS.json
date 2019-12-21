@@ -1,0 +1,38 @@
+{
+  "resourceType": "CodeSystem",
+  "id": "BreastLocationDepthCS",
+  "extension": [
+    {
+      "url": "http://www.fragment.com/fragment",
+      "valueUrl": "http://hl7.org/fhir/us/breast-radiology/StructureDefinition/HeaderFragment"
+    },
+    {
+      "url": "http://www.ResourceMaker.com/Group",
+      "valueString": "CommonCodesCS"
+    }
+  ],
+  "url": "http://hl7.org/fhir/us/breast-radiology/CodeSystem/BreastLocationDepthCS",
+  "name": "BreastLocationDepthCS",
+  "title": "Breast Location Depth CodeSystem",
+  "description": "Breast body location depth codes.",
+  "caseSensitive": true,
+  "content": "complete",
+  "count": 3,
+  "concept": [
+    {
+      "code": "Anterior",
+      "display": "Anterior depth",
+      "definition": "Anterior depth"
+    },
+    {
+      "code": "Middle",
+      "display": "Middle depth",
+      "definition": "Middle depth"
+    },
+    {
+      "code": "Posterior",
+      "display": "Posterior depth",
+      "definition": "Posterior depth"
+    }
+  ]
+}
