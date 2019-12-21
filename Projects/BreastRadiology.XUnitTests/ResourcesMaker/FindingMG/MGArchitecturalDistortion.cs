@@ -27,8 +27,8 @@ namespace BreastRadiology.XUnitTests
             await VTask.Run(async () =>
             {
                 SDefEditor e = this.CreateEditor("BreastRadMammoArchitecturalDistortion",
-                            "Mammo Architectural Distortion",
-                        "Mammo/Arch./Distortion",
+                        "Mammography Architectural Distortion",
+                        "Mg Arch. Distortion",
                         ObservationUrl,
                         $"{Group_MGResources}/ArchitecturalDistortion",
                         out this.mgArchitecturalDistortion)

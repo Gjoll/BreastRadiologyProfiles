@@ -30,8 +30,8 @@ namespace BreastRadiology.XUnitTests
                 CodeSystem cs = await this.CreateCodeSystem(
                     "USBoundary",
                     "UltraSound Boundary",
-                    "US/Boundary/Values",
-                    "Ultra Sound Boundary codes.",
+                    "US Boundary/CodeSystem",
+                    "Ultra Sound Boundary code system.",
                     Group_USCodes,
                     new ConceptDef[]
                     {
@@ -61,7 +61,7 @@ namespace BreastRadiology.XUnitTests
                 ValueSet binding = await this.CreateValueSet(
                     "USBoundary",
                     "UltraSound Boundary",
-                    "US/Boundary/Values",
+                    "US Boundary/ValueSet",
                     "UltraSound Boundary Codes.",
                     Group_USCodes,
                     cs);
@@ -78,7 +78,7 @@ namespace BreastRadiology.XUnitTests
 
                 SDefEditor e = this.CreateEditor("BreastRadUSBoundary",
                     "Ultra Sound Boundary",
-                    "US/Boundary",
+                    "US Boundary",
                     ObservationUrl,
                     $"{Group_USResources}/Boundary",
                     out this.usBoundary)

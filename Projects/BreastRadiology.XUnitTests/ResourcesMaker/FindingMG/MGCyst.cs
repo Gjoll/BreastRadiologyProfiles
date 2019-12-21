@@ -28,8 +28,8 @@ namespace BreastRadiology.XUnitTests
             await VTask.Run(async () =>
             {
                 SDefEditor e = this.CreateEditor("BreastRadMammoCyst",
-                        "Mammo Cyst",
-                        "Mammo/Cyst",
+                        "Mammography Cyst",
+                        "Mg Cyst",
                         ObservationUrl,
                         $"{Group_MGResources}/Cyst",
                         out this.mgCyst)

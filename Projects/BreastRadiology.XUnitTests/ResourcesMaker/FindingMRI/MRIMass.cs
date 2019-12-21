@@ -29,7 +29,7 @@ namespace BreastRadiology.XUnitTests
             {
                 SDefEditor e = this.CreateEditor("BreastRadMRIMass",
                         "MRI Mass",
-                        "MRI/Mass",
+                        "MRI Mass",
                         ObservationUrl,
                         $"{Group_MRIResources}/Mass",
                         out this.mriMass)

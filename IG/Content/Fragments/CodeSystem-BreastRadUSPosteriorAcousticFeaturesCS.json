@@ -14,7 +14,7 @@
   "url": "http://hl7.org/fhir/us/breast-radiology/CodeSystem/BreastRadUSPosteriorAcousticFeaturesCS",
   "name": "BreastRadUSPosteriorAcousticFeaturesCS",
   "title": "US Posterior Acoustic Features CodeSystem",
-  "description": "Ultra-sound mass Posterior acoustic features codes.",
+  "description": "Ultra-sound mass Posterior acoustic features code system.",
   "caseSensitive": true,
   "content": "complete",
   "count": 4,

@@ -12,12 +12,12 @@
     },
     {
       "url": "http://www.fragment.com/mapname",
-      "valueString": "Hilum/Values"
+      "valueString": "Hilum/ValueSet"
     }
   ],
   "url": "http://hl7.org/fhir/us/breast-radiology/ValueSet/CommonHilumVS",
   "name": "CommonHilumVS",
-  "title": "Hilum Values ValueSet",
+  "title": "Hilum ValueSet ValueSet",
   "description": "Codes defining hilum values.",
   "compose": {
     "include": [

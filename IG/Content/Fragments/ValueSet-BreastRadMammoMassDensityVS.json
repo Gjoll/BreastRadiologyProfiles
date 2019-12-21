@@ -12,13 +12,13 @@
     },
     {
       "url": "http://www.fragment.com/mapname",
-      "valueString": "Mammo/Mass/Density/Values"
+      "valueString": "Mg Mass DensityValueSet"
     }
   ],
   "url": "http://hl7.org/fhir/us/breast-radiology/ValueSet/BreastRadMammoMassDensityVS",
   "name": "BreastRadMammoMassDensityVS",
-  "title": "Mammo Mass Density ValueSet",
-  "description": "Mammography mass density codes.",
+  "title": "Mammography Mass Density ValueSet",
+  "description": "Mammography mass density code system.",
   "compose": {
     "include": [
       {

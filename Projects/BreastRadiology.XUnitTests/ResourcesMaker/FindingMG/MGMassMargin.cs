@@ -31,9 +31,9 @@ namespace BreastRadiology.XUnitTests
                 CodeSystem cs = await this.CommonCSMargin();
                 ValueSet binding = await this.CreateValueSet(
                     "BreastRadMammoMassMargin",
-                    "Mammo Mass Margin",
-                    "Mammo/Mass/Margin/Values",
-                    "Mammography mass margin codes.",
+                    "Mammography Mass Margin",
+                    "Mg Mass MarginValueSet",
+                    "Mammography mass margin ValueSet.",
                     Group_MGCodes,
                     cs);
                 binding
@@ -53,8 +53,8 @@ namespace BreastRadiology.XUnitTests
                 }
 
                 SDefEditor e = this.CreateEditor("BreastRadMammoMassMargin",
-                    "Mammo Mass Margin",
-                    "Mammo/Mass/Margin",
+                    "Mammography Mass Margin",
+                    "Mg Mass Margin",
                     ObservationUrl,
                     $"{Group_MGResources}/Mass/Margin",
                     out this.mgMassMargin)

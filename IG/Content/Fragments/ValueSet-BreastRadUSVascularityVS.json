@@ -12,13 +12,13 @@
     },
     {
       "url": "http://www.fragment.com/mapname",
-      "valueString": "US/Vascularity/Values"
+      "valueString": "US Vascularity/ValueSet"
     }
   ],
   "url": "http://hl7.org/fhir/us/breast-radiology/ValueSet/BreastRadUSVascularityVS",
   "name": "BreastRadUSVascularityVS",
   "title": "US Vascularity ValueSet",
-  "description": "Ultra-sound Vascularity codes.",
+  "description": "Ultra-sound Vascularity code system.",
   "compose": {
     "include": [
       {

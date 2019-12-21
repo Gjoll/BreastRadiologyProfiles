@@ -31,8 +31,8 @@ namespace BreastRadiology.XUnitTests
                 CodeSystem cs = await this.CreateCodeSystem(
                     "BreastRadUSEchoPattern",
                     "US Echo Pattern",
-                    "US/Echo Pattern/Values",
-                    "Ultra-sound mass echo pattern codes.",
+                    "US Echo Pattern/CodeSystem",
+                    "Ultra-sound mass echo pattern code system.",
                     Group_USCodes,
                     new ConceptDef[]
                     {
@@ -123,8 +123,8 @@ namespace BreastRadiology.XUnitTests
                 ValueSet binding = await this.CreateValueSet(
                     "BreastRadUSEchoPattern",
                     "US Echo Pattern",
-                    "US/Echo Pattern/Values",
-                    "Ultra-sound mass echo pattern codes.",
+                    "US Echo Pattern/ValueSet",
+                    "Ultra-sound mass echo pattern code system.",
                     Group_USCodes,
                     cs);
 
@@ -140,7 +140,7 @@ namespace BreastRadiology.XUnitTests
 
                 SDefEditor e = this.CreateEditor("BreastRadUSEchoPattern",
                         "US Echo Pattern",
-                        "US/Echo Pattern",
+                        "US Echo Pattern",
                         ObservationUrl,
                         $"{Group_USResources}/EchoPattern",
                         out this.usEchoPattern)

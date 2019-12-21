@@ -13,7 +13,7 @@
   ],
   "url": "http://hl7.org/fhir/us/breast-radiology/CodeSystem/CommonHilumCS",
   "name": "CommonHilumCS",
-  "title": "Hilum Values CodeSystem",
+  "title": "Hilum CodeSystem CodeSystem",
   "description": "Codes defining hilum values.",
   "caseSensitive": true,
   "content": "complete",

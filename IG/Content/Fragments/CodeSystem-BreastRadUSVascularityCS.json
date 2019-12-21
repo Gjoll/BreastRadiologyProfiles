@@ -14,7 +14,7 @@
   "url": "http://hl7.org/fhir/us/breast-radiology/CodeSystem/BreastRadUSVascularityCS",
   "name": "BreastRadUSVascularityCS",
   "title": "US Echo Pattern CodeSystem",
-  "description": "Ultra-sound Vascularity codes.",
+  "description": "Ultra-sound Vascularity code system.",
   "caseSensitive": true,
   "content": "complete",
   "count": 6,

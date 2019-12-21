@@ -12,13 +12,13 @@
     },
     {
       "url": "http://www.fragment.com/mapname",
-      "valueString": "Mammo/Calc./Distribution/Values"
+      "valueString": "Mg Calc./DistributionValueSet"
     }
   ],
   "url": "http://hl7.org/fhir/us/breast-radiology/ValueSet/MammoCalcificationDistributionVS",
   "name": "MammoCalcificationDistributionVS",
-  "title": "Mammo Calcification Distribution ValueSet",
-  "description": "Mammography calcification distribution codes.",
+  "title": "Mammography Calcification Distribution ValueSet",
+  "description": "Mammography calcification distribution code system.",
   "compose": {
     "include": [
       {

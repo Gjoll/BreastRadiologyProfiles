@@ -28,8 +28,8 @@ namespace BreastRadiology.XUnitTests
             await VTask.Run(async () =>
             {
                 SDefEditor e = this.CreateEditor("BreastRadMammoFatNecrosis",
-                        "Mammo Fat Necrosis",
-                        "Mammo/FatNecrosis",
+                        "Mammography Fat Necrosis",
+                        "Mg Fat Necrosis",
                         ObservationUrl,
                         $"{Group_MGResources}/FatNecrosis",
                         out this.mgFatNecrosis)

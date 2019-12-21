@@ -32,8 +32,8 @@ namespace BreastRadiology.XUnitTests
                 ValueSet binding = await this.CreateValueSet(
                     "BreastRadUSMargin",
                     "US Margin",
-                    "US/Margin Values",
-                    "Ultra-sound mass margin codes.",
+                    "US Margin CodeSystem",
+                    "Ultra-sound mass margin code system.",
                     Group_USCodes,
                     cs);
                 binding
@@ -52,7 +52,7 @@ namespace BreastRadiology.XUnitTests
 
                 SDefEditor e = this.CreateEditor("BreastRadUSMargin",
                         "US Margin",
-                        "US/Margin",
+                        "US Margin",
                         ObservationUrl,
                         $"{Group_USResources}/Margin",
                         out this.usMargin)

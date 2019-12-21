@@ -14,7 +14,7 @@
   "url": "http://hl7.org/fhir/us/breast-radiology/CodeSystem/USBoundaryCS",
   "name": "USBoundaryCS",
   "title": "UltraSound Boundary CodeSystem",
-  "description": "Ultra Sound Boundary codes.",
+  "description": "Ultra Sound Boundary code system.",
   "caseSensitive": true,
   "content": "complete",
   "count": 4,

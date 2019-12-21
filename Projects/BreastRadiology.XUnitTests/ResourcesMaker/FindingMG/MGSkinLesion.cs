@@ -28,8 +28,8 @@ namespace BreastRadiology.XUnitTests
             await VTask.Run(async () =>
             {
                 SDefEditor e = this.CreateEditor("BreastRadMammoSkinLesion",
-                    "Mammo Skin Lesion",
-                    "Mammo/Skin/Lesion",
+                    "Mammography Skin Lesion",
+                    "Mg Skin Lesion",
                     ObservationUrl,
                     $"{Group_MGResources}/SkinLesion",
                     out this.mgSkinLesion)

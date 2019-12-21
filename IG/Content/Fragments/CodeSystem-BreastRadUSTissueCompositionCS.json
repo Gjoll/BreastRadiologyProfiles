@@ -14,7 +14,7 @@
   "url": "http://hl7.org/fhir/us/breast-radiology/CodeSystem/BreastRadUSTissueCompositionCS",
   "name": "BreastRadUSTissueCompositionCS",
   "title": "US Tissue Composition CodeSystem",
-  "description": "Ultra-sound breast tissue composition codes.",
+  "description": "Ultra-sound breast tissue composition code system.",
   "caseSensitive": true,
   "content": "complete",
   "count": 3,

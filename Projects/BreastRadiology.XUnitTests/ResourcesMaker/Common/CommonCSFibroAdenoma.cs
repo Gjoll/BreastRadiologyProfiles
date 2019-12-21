@@ -28,7 +28,7 @@ namespace BreastRadiology.XUnitTests
             return await this.CreateCodeSystem(
                     "Fibroadenoma",
                     "Fibroadenoma",
-                    "Fibroadenoma/Values",
+                    "Fibroadenoma/CodeSystem",
                     "Codes defining Fibroadenoma values.",
                     Group_CommonCodes,
                     new ConceptDef[]

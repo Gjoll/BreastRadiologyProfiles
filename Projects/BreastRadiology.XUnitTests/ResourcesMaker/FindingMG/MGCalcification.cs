@@ -28,8 +28,8 @@ namespace BreastRadiology.XUnitTests
             await VTask.Run(async () =>
             {
                 SDefEditor e = this.CreateEditor("BreastRadMammoCalcification",
-                        "Mammo Calcification",
-                        "Mammo/Calc.",
+                        "Mammography Calcification",
+                        "Mg Calc.",
                         ObservationUrl,
                         $"{Group_MGResources}/Calcification",
                         out this.mgCalcification)

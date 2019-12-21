@@ -14,7 +14,7 @@
   "url": "http://hl7.org/fhir/us/breast-radiology/CodeSystem/BreastLocationQuadrantCS",
   "name": "BreastLocationQuadrantCS",
   "title": "Breast Location Quadrant CodeSystem",
-  "description": "Breast body location quadrant codes.",
+  "description": "Breast body location quadrant code system.",
   "caseSensitive": true,
   "content": "complete",
   "count": 11,

@@ -27,8 +27,8 @@ namespace BreastRadiology.XUnitTests
             await VTask.Run(async () =>
             {
                 SDefEditor e = this.CreateEditor("BreastRadMammoTrabecularThickening",
-                    "Mammo Trabecular Thickening",
-                    "Mammo/Trabecular/Thickening",
+                    "Mammography Trabecular Thickening",
+                    "Mg Trabecular/Thickening",
                     ObservationUrl,
                     $"{Group_MGResources}/AssociatedFeature/TrabecularThickening",
                     out this.mgTrabecularThickening)

@@ -250,7 +250,7 @@ namespace BreastRadiology.XUnitTests
             return cs;
         }
         /// <summary>
-        /// Create a value set of all the codes in the passed CodeSystem.
+        /// Create a value set of all the codes in the passed code system.
         /// </summary>
         async VSTask CreateValueSet(String name,
             String title,

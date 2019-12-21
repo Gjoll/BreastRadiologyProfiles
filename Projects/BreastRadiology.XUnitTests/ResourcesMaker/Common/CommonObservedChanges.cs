@@ -31,7 +31,7 @@ namespace BreastRadiology.XUnitTests
                 CodeSystem cs = await this.CreateCodeSystem(
                     "CommonObservedChanges",
                     "Observed Changes",
-                    "Observed/Change/Values",
+                    "Observed/Change/CodeSystem",
                     "Codes defining types of observed changes in an abnormality over time.",
                     Group_CommonCodes,
                     new ConceptDef[]
@@ -107,7 +107,7 @@ namespace BreastRadiology.XUnitTests
                 ValueSet binding = await this.CreateValueSet(
                     "CommonObservedChanges",
                     "Observed Changes",
-                    "Observed/Change/Values",
+                    "Observed/Change/ValueSet",
                     "Codes defining types of observed changes in an abnormality over time.",
                     Group_CommonCodes,
                     cs);

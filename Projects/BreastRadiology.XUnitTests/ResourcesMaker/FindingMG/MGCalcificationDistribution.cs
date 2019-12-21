@@ -29,9 +29,9 @@ namespace BreastRadiology.XUnitTests
             {
                 CodeSystem cs  = await this.CreateCodeSystem(
                     "MammoCalcificationDistribution",
-                    "Mammo Calcification Distribution",
-                    "Mammo/Calc./Distribution/Values",
-                    "Mammography calcification distribution codes.",
+                    "Mammography Calcification Distribution",
+                    "Mg Calc./Distribution/CodeSystem",
+                    "Mammography calcification distribution code system.",
                     Group_MGCodes,
                     new ConceptDef[]
                     {
@@ -93,9 +93,9 @@ namespace BreastRadiology.XUnitTests
 
                     ValueSet binding = await this.CreateValueSet(
                         "MammoCalcificationDistribution",
-                        "Mammo Calcification Distribution",
-                        "Mammo/Calc./Distribution/Values",
-                        "Mammography calcification distribution codes.",
+                        "Mammography Calcification Distribution",
+                        "Mg Calc./DistributionValueSet",
+                        "Mammography calcification distribution code system.",
                         Group_MGCodes,
                         cs);
 
@@ -110,8 +110,8 @@ namespace BreastRadiology.XUnitTests
                 }
 
                 SDefEditor e = this.CreateEditor("BreastRadMammoCalcificationDistribution",
-                        "Mammo Calcification Distribution",
-                        "Mammo/Calc./Distribution",
+                        "Mammography Calcification Distribution",
+                        "Mg Calc./Distribution",
                         ObservationUrl,
                         $"{Group_MGResources}/Calcification/Distribution",
                         out this.mgCalcificationDistribution)

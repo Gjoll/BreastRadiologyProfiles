@@ -28,8 +28,8 @@ namespace BreastRadiology.XUnitTests
             return await this.CreateCodeSystem(
                     "BreastRadMargin",
                     "Margin",
-                    "Margin Values",
-                    "Margin codes.",
+                    "Margin CodeSystem",
+                    "Margin code system.",
                     Group_CommonCodes,
                     new ConceptDef[]
                     {

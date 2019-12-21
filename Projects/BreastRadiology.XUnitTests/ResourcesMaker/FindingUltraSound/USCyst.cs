@@ -29,7 +29,7 @@ namespace BreastRadiology.XUnitTests
             {
                 SDefEditor e = this.CreateEditor("BreastRadUltraSoundCyst",
                         "UltraSound Cyst",
-                        "UltraSound/Cyst",
+                        "US Cyst",
                         ObservationUrl,
                         $"{Group_USResources}/Cyst",
                         out this.usCyst)

@@ -30,7 +30,7 @@ namespace BreastRadiology.XUnitTests
                 //$ Fix me. Incorrect method!!!
                 SDefEditor e = this.CreateEditor("BreastRadMRIFinding",
                         "MRI Finding",
-                        "MRI/Finding",
+                        "MRI Finding",
                         ObservationUrl,
                         $"{Group_MRIResources}",
                         out this.findingMri)

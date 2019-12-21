@@ -12,13 +12,13 @@
     },
     {
       "url": "http://www.fragment.com/mapname",
-      "valueString": "Breast/Location/Quadrant/Values"
+      "valueString": "Breast/Location/QuadrantValueSet"
     }
   ],
   "url": "http://hl7.org/fhir/us/breast-radiology/ValueSet/BreastLocationQuadrantVS",
   "name": "BreastLocationQuadrantVS",
   "title": "Breast Location Quadrant ValueSet",
-  "description": "Breast body location quadrant codes.",
+  "description": "Breast body location quadrant code system.",
   "compose": {
     "include": [
       {

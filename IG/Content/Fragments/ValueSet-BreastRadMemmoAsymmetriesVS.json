@@ -12,12 +12,12 @@
     },
     {
       "url": "http://www.fragment.com/mapname",
-      "valueString": "Mammo/Asymmetry/Values"
+      "valueString": "Mg Asymmetry/ValueSet"
     }
   ],
   "url": "http://hl7.org/fhir/us/breast-radiology/ValueSet/BreastRadMemmoAsymmetriesVS",
   "name": "BreastRadMemmoAsymmetriesVS",
-  "title": "Mammo Asymmetries ValueSet",
+  "title": "Mammography Asymmetries ValueSet",
   "description": "Codes defining types of mammography asymmetries.",
   "compose": {
     "include": [

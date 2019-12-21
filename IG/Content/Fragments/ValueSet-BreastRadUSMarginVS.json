@@ -12,13 +12,13 @@
     },
     {
       "url": "http://www.fragment.com/mapname",
-      "valueString": "US/Margin Values"
+      "valueString": "US Margin CodeSystem"
     }
   ],
   "url": "http://hl7.org/fhir/us/breast-radiology/ValueSet/BreastRadUSMarginVS",
   "name": "BreastRadUSMarginVS",
   "title": "US Margin ValueSet",
-  "description": "Ultra-sound mass margin codes.",
+  "description": "Ultra-sound mass margin code system.",
   "compose": {
     "include": [
       {

@@ -28,7 +28,7 @@ namespace BreastRadiology.XUnitTests
             return await this.CreateCodeSystem(
                     "Shape",
                     "Shape",
-                    "Shape/Values",
+                    "Shape/CodeSystem",
                     "Codes defining shape values.",
                     Group_CommonCodes,
                     new ConceptDef[]

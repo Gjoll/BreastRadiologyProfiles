@@ -30,7 +30,7 @@ namespace BreastRadiology.XUnitTests
                 //$ Fix me. Incorrect method!!!
                 SDefEditor e = this.CreateEditor("BreastRadUltraSoundFinding",
                         "UltraSound Finding",
-                        "UltraSound/Finding",
+                        "US Finding",
                         ObservationUrl,
                         $"{Group_USResources}",
                         out this.findingUltraSound)

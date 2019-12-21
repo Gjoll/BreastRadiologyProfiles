@@ -12,7 +12,7 @@
     },
     {
       "url": "http://www.fragment.com/mapname",
-      "valueString": "US/Margin Values"
+      "valueString": "US Margin CodeSystem"
     },
     {
       "url": "http://www.fragment.com/mapname",
@@ -40,7 +40,7 @@
       ]
     }
   ],
-  "description": "Ultra-sound mass margin codes.",
+  "description": "Ultra-sound mass margin code system.",
   "compose": {
     "include": [
       {

@@ -3,7 +3,7 @@
   "extension": [
     {
       "url": "http://www.fragment.com/mapname",
-      "valueString": "Mammo/Axillary/Adenopathy"
+      "valueString": "Mg Axillary/Adenopathy"
     },
     {
       "url": "http://www.ResourceMaker.com/Group",
@@ -36,7 +36,7 @@
   ],
   "url": "http://hl7.org/fhir/us/breast-radiology/StructureDefinition/BreastRadMammoAxillaryAdenopathy",
   "name": "BreastRadMammoAxillaryAdenopathy",
-  "title": "Mammo Axillary Adenopathy",
+  "title": "Mammography Axillary Adenopathy",
   "status": "draft",
   "description": "Breast Radiology Mammography Axillary Adenopathy Observation\n\nIf this observation is present, and dataAbsentReason is empty, then an axillary adenopathy was observed.\n\n\nIf this observation is present, and dataAbsentReason is not empty, then an axillary adenopathy was not observed and dataAbsentReason contains the reason why.\n\n\nEnlarged axillary lymph nodes may warrant comment, clinical correlation, and additional \nevaluation, especially if new or considerably larger or rounder when compared to previous examination.\nA review of the patient’s medical history may elucidate the cause for axillary adenopathy, averting\nrecommendation for additional evaluation. When one or more large axillary nodes are \nsubstantially composed of fat, this is a normal variant.\n-- Bi-Rads® Atlas — Mammography Fifth Ed. 2013 \n*** TODO Items ***** Cardinalioty?\n** Body Location?\n** Size?",
   "fhirVersion": "4.0.0",

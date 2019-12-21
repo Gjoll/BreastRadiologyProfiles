@@ -12,7 +12,7 @@
     },
     {
       "url": "http://www.fragment.com/mapname",
-      "valueString": "US/Posterior Acoustic/Feature Values"
+      "valueString": "US Posterior Acoustic/Feature ValueSet"
     },
     {
       "url": "http://www.fragment.com/mapname",
@@ -40,7 +40,7 @@
       ]
     }
   ],
-  "description": "Ultra-sound mass Posterior acoustic features codes.",
+  "description": "Ultra-sound mass Posterior acoustic features code system.",
   "compose": {
     "include": [
       {

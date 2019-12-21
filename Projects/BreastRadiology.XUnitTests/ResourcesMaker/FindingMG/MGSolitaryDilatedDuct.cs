@@ -28,8 +28,8 @@ namespace BreastRadiology.XUnitTests
             await VTask.Run(async () =>
             {
                 SDefEditor e = this.CreateEditor("BreastRadMammoSolitaryDilatedDuct",
-                        "Mammo Solitary Dilated Duct",
-                        "Mammo/Solitary/Dialated/Duct",
+                        "Mammography Solitary Dilated Duct",
+                        "Mg Solitary/Dialated Duct",
                         ObservationUrl,
                         $"{Group_MGResources}/SolitaryDilatedDuct",
                         out this.mgSolitaryDilatedDuct)

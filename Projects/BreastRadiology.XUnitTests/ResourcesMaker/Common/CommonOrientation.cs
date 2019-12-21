@@ -31,8 +31,8 @@ namespace BreastRadiology.XUnitTests
                 CodeSystem cs  = await this.CreateCodeSystem(
                     "CommonOrientation",
                     "Orientation",
-                    "Orientation Values",
-                    "Orientation codes",
+                    "Orientation CodeSystem",
+                    "Orientation CodeSystem",
                     Group_CommonCodes,
                     new ConceptDef[]
                     {
@@ -60,8 +60,8 @@ namespace BreastRadiology.XUnitTests
                     ValueSet binding = await this.CreateValueSet(
                         "CommonOrientation",
                         "Orientation",
-                        "Orientation Values",
-                        "Orientation codes",
+                        "Orientation CodeSystem",
+                        "Orientation CodeSystem",
                         Group_CommonCodes,
                         cs);
 

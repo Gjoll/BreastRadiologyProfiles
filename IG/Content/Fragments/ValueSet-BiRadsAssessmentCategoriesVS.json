@@ -12,13 +12,13 @@
     },
     {
       "url": "http://www.fragment.com/mapname",
-      "valueString": "BiRads/Assessment/Category/Values"
+      "valueString": "BiRads/ValueSet"
     }
   ],
   "url": "http://hl7.org/fhir/us/breast-radiology/ValueSet/BiRadsAssessmentCategoriesVS",
   "name": "BiRadsAssessmentCategoriesVS",
   "title": "BiRads(r) Assessment Category Codes ValueSet",
-  "description": "BiRads(r) Assessment Category codes.",
+  "description": "BiRads(r) Assessment Category code system.",
   "compose": {
     "include": [
       {

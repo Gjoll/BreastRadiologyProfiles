@@ -31,7 +31,7 @@ namespace BreastRadiology.XUnitTests
                 CodeSystem cs  = await this.CreateCodeSystem(
                         "CommonAbnormalities",
                         "Foreign Object",
-                        "Foreign/Object/Values",
+                        "Foreign/Object/ValueSet",
                         "Foreign object codes defining types of foreign objects observed during a Breast Radiology exam",
                         Group_CommonCodes,
                         new ConceptDef[]
@@ -137,7 +137,7 @@ namespace BreastRadiology.XUnitTests
                 ValueSet binding  = await this.CreateValueSet(
                         "CommonAbnormalities",
                         "Foreign Object",
-                        "Foreign/Object/Values",
+                        "Foreign/Object/ValueSet",
                         "Foreign object codes defining types of foreign objects observed during a Breast Radiology exam",
                         Group_CommonCodes,
                         cs);
@@ -152,8 +152,8 @@ namespace BreastRadiology.XUnitTests
                 }
 
                 SDefEditor e = this.CreateEditor("CommonForeignObject",
-                        "ForeignObject",
-                        "ForeignObject",
+                        "Foreign Object",
+                        "Foreign Object",
                         ObservationUrl,
                         $"{Group_CommonResources}/Foreign",
                         out this.commonForeignObject)
@@ -195,7 +195,7 @@ namespace BreastRadiology.XUnitTests
                 e.AddValueSetLink(binding);
                 e.IntroDoc
                     .ReviewedStatus(ReviewStatus.NotReviewed)
-                    .CodedObservationLeafNode(e, "an ForeignObject", binding)
+                    .CodedObservationLeafNode(e, "a Foreign Object", binding)
                     ;
             });
         }

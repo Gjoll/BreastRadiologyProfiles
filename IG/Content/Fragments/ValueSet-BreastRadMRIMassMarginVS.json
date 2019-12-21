@@ -12,13 +12,13 @@
     },
     {
       "url": "http://www.fragment.com/mapname",
-      "valueString": "MRI/Mass/Margin/Values"
+      "valueString": "MRI Mass/Margin ValueSet"
     }
   ],
   "url": "http://hl7.org/fhir/us/breast-radiology/ValueSet/BreastRadMRIMassMarginVS",
   "name": "BreastRadMRIMassMarginVS",
   "title": "MRI Mass Margin ValueSet",
-  "description": "MRI mass margin codes.",
+  "description": "MRI mass margin value set.",
   "compose": {
     "include": [
       {

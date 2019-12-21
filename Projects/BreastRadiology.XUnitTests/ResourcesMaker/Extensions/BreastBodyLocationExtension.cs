@@ -76,7 +76,7 @@ namespace BreastRadiology.XUnitTests
 
                 e = this.CreateEditor("BreastBodyLocationExtension",
                     "Breast Body Location Extension",
-                    "Breast/Body/Location",
+                    "Breast Body Loc.",
                     ExtensionUrl,
                     $"{Group_ExtensionResources}/BreastBodyLocation",
                     out this.breastBodyLocationExtension)
@@ -117,8 +117,8 @@ namespace BreastRadiology.XUnitTests
                     CodeSystem cs  = await this.CreateCodeSystem(
                         "BreastLocationQuadrant",
                         "Breast Location Quadrant",
-                        "Breast/Location/Quadrant/Values",
-                        "Breast body location quadrant codes.",
+                        "Breast/Location/Quadrant/CodeSystem",
+                        "Breast body location quadrant code system.",
                         Group_CommonCodes,
                         new ConceptDef[]
                         {
@@ -192,8 +192,8 @@ namespace BreastRadiology.XUnitTests
                     ValueSet binding = await this.CreateValueSet(
                         "BreastLocationQuadrant",
                         "Breast Location Quadrant",
-                        "Breast/Location/Quadrant/Values",
-                        "Breast body location quadrant codes.",
+                        "Breast/Location/QuadrantValueSet",
+                        "Breast body location quadrant code system.",
                         Group_CommonCodes,
                         cs);
 
@@ -218,7 +218,7 @@ namespace BreastRadiology.XUnitTests
                     CodeSystem cs  = await this.CreateCodeSystem(
                         "BreastLocationClock",
                         "Breast Location Clock",
-                        "Breast/Location/Clock/Values",
+                        "Breast/Location/Clock/CodeSystem",
                         "Codes defining breast body location angles expressed in clock-face units.",
                         Group_CommonCodes,
                         new ConceptDef[]
@@ -348,7 +348,7 @@ namespace BreastRadiology.XUnitTests
                     ValueSet binding = await this.CreateValueSet(
                         "BreastLocationClock",
                         "Breast Location Clock",
-                        "Breast/Location/Clock/Values",
+                        "Breast/Location/ClockValueSet",
                         "Codes defining breast body location angles expressed in clock-face units.",
                         Group_CommonCodes,
                         cs);
@@ -374,8 +374,8 @@ namespace BreastRadiology.XUnitTests
                     CodeSystem cs  = await this.CreateCodeSystem(
                         "BreastLocationDepth",
                         "Breast Location Depth",
-                        "Breast/Location/Depth/Values",
-                        "Breast body location depth codes.",
+                        "Breast/Location/Depth/CodeSystem",
+                        "Breast body location depth code system.",
                         Group_CommonCodes,
                         new ConceptDef[]
                         {
@@ -398,8 +398,8 @@ namespace BreastRadiology.XUnitTests
                     ValueSet binding = await this.CreateValueSet(
                         "BreastLocationDepth",
                         "Breast Location Depth",
-                        "Breast/Location/Depth/Values",
-                        "Breast body location depth codes.",
+                        "Breast/Location/DepthValueSet",
+                        "Breast body location depth code system.",
                         Group_CommonCodes,
                         cs);
 

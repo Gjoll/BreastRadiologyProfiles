@@ -36,7 +36,7 @@
       ]
     }
   ],
-  "description": "Orientation codes",
+  "description": "Orientation CodeSystem",
   "caseSensitive": true,
   "content": "complete",
   "count": 2,

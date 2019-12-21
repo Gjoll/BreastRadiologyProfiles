@@ -30,14 +30,14 @@ namespace BreastRadiology.XUnitTests
                 ValueSet binding = await this.CreateValueSet(
                         "MammoFibroadenoma",
                         "Fibroadenoma",
-                        "Fibroadenoma/Values",
+                        "FibroadenomaValueSet",
                         "Codes defining Fibroadenoma values.",
                         Group_CommonCodes,
                         await this.CommonCSFibroadenoma());
 
                 SDefEditor e = this.CreateEditor("BreastRadMammoFibroadenoma",
-                        "Mammo Fibroadenoma",
-                        "Mammo/Fibroadenoma",
+                        "Mammography Fibroadenoma",
+                        "Mg Fibroadenoma",
                         ObservationUrl,
                         $"{Group_MGResources}/Fibroadenoma",
                         out this.mgFibroadenoma)

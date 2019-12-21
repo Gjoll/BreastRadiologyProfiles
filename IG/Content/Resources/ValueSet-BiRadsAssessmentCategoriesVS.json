@@ -12,7 +12,7 @@
     },
     {
       "url": "http://www.fragment.com/mapname",
-      "valueString": "BiRads/Assessment/Category/Values"
+      "valueString": "BiRads/ValueSet"
     },
     {
       "url": "http://www.fragment.com/mapname",
@@ -40,7 +40,7 @@
       ]
     }
   ],
-  "description": "BiRads(r) Assessment Category codes.",
+  "description": "BiRads(r) Assessment Category code system.",
   "compose": {
     "include": [
       {

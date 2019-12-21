@@ -31,8 +31,8 @@ namespace BreastRadiology.XUnitTests
                 CodeSystem cs = await this.CreateCodeSystem(
                     "BreastRadUSVascularity",
                     "US Echo Pattern",
-                    "US/Vascularity/Values",
-                    "Ultra-sound Vascularity codes.",
+                    "US Vascularity/CodeSystem",
+                    "Ultra-sound Vascularity code system.",
                     Group_USCodes,
                     new ConceptDef[]
                     {
@@ -71,8 +71,8 @@ namespace BreastRadiology.XUnitTests
                 ValueSet binding = await this.CreateValueSet(
                     "BreastRadUSVascularity",
                     "US Vascularity",
-                    "US/Vascularity/Values",
-                    "Ultra-sound Vascularity codes.",
+                    "US Vascularity/ValueSet",
+                    "Ultra-sound Vascularity code system.",
                     Group_USCodes,
                     cs);
 
@@ -88,7 +88,7 @@ namespace BreastRadiology.XUnitTests
 
                 SDefEditor e = this.CreateEditor("BreastRadUSVascularity",
                         "US Vascularity",
-                        "US/Vascularity",
+                        "US Vascularity",
                         ObservationUrl,
                         $"{Group_USResources}/Vascularity",
                         out this.usVascularity)

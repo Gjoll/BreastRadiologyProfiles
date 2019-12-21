@@ -13,7 +13,7 @@
   ],
   "url": "http://hl7.org/fhir/us/breast-radiology/CodeSystem/BreastRadMammoBreastDensityCS",
   "name": "BreastRadMammoBreastDensityCS",
-  "title": "Mammo Breast Density CodeSystem",
+  "title": "Mammography Breast Density CodeSystem",
   "description": "Codes for mammography breast density values.",
   "caseSensitive": true,
   "content": "complete",

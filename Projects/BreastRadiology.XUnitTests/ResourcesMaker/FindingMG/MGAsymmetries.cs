@@ -27,8 +27,8 @@ namespace BreastRadiology.XUnitTests
         {
             CodeSystem cs = await this.CreateCodeSystem(
                    "BreastRadMemmoAsymmetries",
-                   "Mammo Asymmetries",
-                    "Mammo/Asymmetry/Values",
+                   "Mammography Asymmetries",
+                    "Mg Asymmetry/CodeSystem",
                    "Codes defining types of mammography asymmetries.",
                     Group_MGCodes,
                    new ConceptDef[]
@@ -87,8 +87,8 @@ namespace BreastRadiology.XUnitTests
 
             ValueSet binding = await this.CreateValueSet(
                "BreastRadMemmoAsymmetries",
-               "Mammo Asymmetries",
-                "Mammo/Asymmetry/Values",
+               "Mammography Asymmetries",
+                "Mg Asymmetry/ValueSet",
                "Codes defining types of mammography asymmetries.",
                 Group_MGCodes,
                 cs);
@@ -104,8 +104,8 @@ namespace BreastRadiology.XUnitTests
             }
 
             SDefEditor e = this.CreateEditor("BreastRadMammoAsymmetries",
-                    "Mammo Asymmetries",
-                    "Mammo/Asymmetries",
+                    "Mammography Asymmetries",
+                    "Mg Asymmetries",
                     ObservationUrl,
                     $"{Group_MGResources}/Asymmetry",
                     out this.mgAsymmetries)

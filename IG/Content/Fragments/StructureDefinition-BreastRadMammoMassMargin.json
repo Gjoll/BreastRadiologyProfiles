@@ -3,7 +3,7 @@
   "extension": [
     {
       "url": "http://www.fragment.com/mapname",
-      "valueString": "Mammo/Mass/Margin"
+      "valueString": "Mg Mass Margin"
     },
     {
       "url": "http://www.ResourceMaker.com/Group",
@@ -40,7 +40,7 @@
   ],
   "url": "http://hl7.org/fhir/us/breast-radiology/StructureDefinition/BreastRadMammoMassMargin",
   "name": "BreastRadMammoMassMargin",
-  "title": "Mammo Mass Margin",
+  "title": "Mammography Mass Margin",
   "status": "draft",
   "description": "Breast Radiology Mammography Mass Margin Observation\n\nIf this observation is present, and dataAbsentReason is empty, then a mass margin was observed.\n\n\nIf this observation is present, and dataAbsentReason is not empty, then a mass margin was not observed and dataAbsentReason contains the reason why.\n\n\nThe margin is the edge or border of the lesion. The descriptors of margin, like the descriptors of shape, are important predictors of whether a mass is benign or malignant. \n-- Bi-Rads® Atlas — Mammography Fifth Ed. 2013",
   "fhirVersion": "4.0.0",

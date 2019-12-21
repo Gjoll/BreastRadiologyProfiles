@@ -14,7 +14,7 @@
   "url": "http://hl7.org/fhir/us/breast-radiology/CodeSystem/BreastRadUSElasticityCS",
   "name": "BreastRadUSElasticityCS",
   "title": "US Echo Pattern CodeSystem",
-  "description": "Ultra-sound Elasticity codes.",
+  "description": "Ultra-sound Elasticity code system.",
   "caseSensitive": true,
   "content": "complete",
   "count": 3,

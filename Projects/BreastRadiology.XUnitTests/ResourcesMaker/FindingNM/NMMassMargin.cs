@@ -31,8 +31,8 @@ namespace BreastRadiology.XUnitTests
                 CodeSystem cs  = await this.CreateCodeSystem(
                     "BreastRadNMMassMargin",
                     "NM Mass Margin",
-                    "NM/Mass/Margin/Values",
-                    "NM mass margin codes.",
+                    "NM/Mass/Margin/CodeSystem",
+                    "NM mass margin code system.",
                     Group_NMCodes,
                     new ConceptDef[]
                     {
@@ -49,8 +49,8 @@ namespace BreastRadiology.XUnitTests
                     ValueSet binding = await this.CreateValueSet(
                         "BreastRadNMMassMargin",
                         "NM Mass Margin",
-                        "NM/Mass/Margin/Values",
-                        "NM mass margin codes.",
+                        "NM/Mass/Margin/ValueSet",
+                        "NM mass margin value set.",
                         Group_NMCodes,
                         cs);
 

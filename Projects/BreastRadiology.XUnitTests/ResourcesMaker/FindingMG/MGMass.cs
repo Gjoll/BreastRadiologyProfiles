@@ -28,8 +28,8 @@ namespace BreastRadiology.XUnitTests
             await VTask.Run(async () =>
             {
                 SDefEditor e = this.CreateEditor("BreastRadMammoMass",
-                        "Mammo Mass",
-                        "Mammo/Mass",
+                        "Mammography Mass",
+                        "Mg Mass",
                         ObservationUrl,
                         $"{Group_MGResources}/Mass",
                         out this.mgMass)

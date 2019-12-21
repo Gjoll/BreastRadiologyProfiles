@@ -30,8 +30,8 @@ namespace BreastRadiology.XUnitTests
             {
                 CodeSystem cs  = await this.CreateCodeSystem(
                         "CommonHilum",
-                        "Hilum Values",
-                        "Hilum/Values",
+                        "Hilum CodeSystem",
+                        "Hilum/CodeSystem",
                         "Codes defining hilum values.",
                         Group_CommonCodes,
                         new ConceptDef[]
@@ -50,8 +50,8 @@ namespace BreastRadiology.XUnitTests
                     ;
                 ValueSet binding = await this.CreateValueSet(
                         "CommonHilum",
-                        "Hilum Values",
-                        "Hilum/Values",
+                        "Hilum ValueSet",
+                        "Hilum/ValueSet",
                         "Codes defining hilum values.",
                         Group_CommonCodes,
                         cs);

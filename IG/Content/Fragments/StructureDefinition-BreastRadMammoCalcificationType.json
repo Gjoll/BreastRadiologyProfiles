@@ -3,7 +3,7 @@
   "extension": [
     {
       "url": "http://www.fragment.com/mapname",
-      "valueString": "Mammo/Calc./Type"
+      "valueString": "Mg Calc. Type"
     },
     {
       "url": "http://www.ResourceMaker.com/Group",
@@ -40,7 +40,7 @@
   ],
   "url": "http://hl7.org/fhir/us/breast-radiology/StructureDefinition/BreastRadMammoCalcificationType",
   "name": "BreastRadMammoCalcificationType",
-  "title": "Mammo Calcification Type",
+  "title": "Mammography Calcification Type",
   "status": "draft",
   "description": "Breast Radiology Mammography Calcification Type Observation\n\nThis resource describes the type of calcification observed.",
   "fhirVersion": "4.0.0",

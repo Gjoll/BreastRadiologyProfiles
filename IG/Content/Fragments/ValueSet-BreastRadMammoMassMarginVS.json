@@ -12,13 +12,13 @@
     },
     {
       "url": "http://www.fragment.com/mapname",
-      "valueString": "Mammo/Mass/Margin/Values"
+      "valueString": "Mg Mass MarginValueSet"
     }
   ],
   "url": "http://hl7.org/fhir/us/breast-radiology/ValueSet/BreastRadMammoMassMarginVS",
   "name": "BreastRadMammoMassMarginVS",
-  "title": "Mammo Mass Margin ValueSet",
-  "description": "Mammography mass margin codes.",
+  "title": "Mammography Mass Margin ValueSet",
+  "description": "Mammography mass margin ValueSet.",
   "compose": {
     "include": [
       {

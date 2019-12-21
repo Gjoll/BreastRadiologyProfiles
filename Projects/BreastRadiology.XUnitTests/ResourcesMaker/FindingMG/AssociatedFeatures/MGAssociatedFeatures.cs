@@ -27,8 +27,8 @@ namespace BreastRadiology.XUnitTests
             await VTask.Run(async () =>
             {
                 SDefEditor e = this.CreateEditor("BreastRadMammoAssociatedFeatures",
-                        "Mammo Associated Features",
-                        "Mammo/Associated/Features",
+                        "Mammography Associated Features",
+                        "Mg Associated/Features",
                         ObservationUrl,
                         $"{Group_MGResources}/AssociatedFeature",
                         out this.mgAssociatedFeatures)

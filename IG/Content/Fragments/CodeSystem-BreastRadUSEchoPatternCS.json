@@ -14,7 +14,7 @@
   "url": "http://hl7.org/fhir/us/breast-radiology/CodeSystem/BreastRadUSEchoPatternCS",
   "name": "BreastRadUSEchoPatternCS",
   "title": "US Echo Pattern CodeSystem",
-  "description": "Ultra-sound mass echo pattern codes.",
+  "description": "Ultra-sound mass echo pattern code system.",
   "caseSensitive": true,
   "content": "complete",
   "count": 12,

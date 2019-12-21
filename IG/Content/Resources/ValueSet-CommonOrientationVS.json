@@ -12,7 +12,7 @@
     },
     {
       "url": "http://www.fragment.com/mapname",
-      "valueString": "Orientation Values"
+      "valueString": "Orientation CodeSystem"
     },
     {
       "url": "http://www.fragment.com/mapname",
@@ -40,7 +40,7 @@
       ]
     }
   ],
-  "description": "Orientation codes",
+  "description": "Orientation CodeSystem",
   "compose": {
     "include": [
       {

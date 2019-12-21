@@ -12,13 +12,13 @@
     },
     {
       "url": "http://www.fragment.com/mapname",
-      "valueString": "US/Elasticity/Values"
+      "valueString": "US Elasticity/ValueSet"
     }
   ],
   "url": "http://hl7.org/fhir/us/breast-radiology/ValueSet/BreastRadUSElasticityVS",
   "name": "BreastRadUSElasticityVS",
   "title": "US Elasticity ValueSet",
-  "description": "Ultra-sound Elasticity codes.",
+  "description": "Ultra-sound Elasticity code system.",
   "compose": {
     "include": [
       {

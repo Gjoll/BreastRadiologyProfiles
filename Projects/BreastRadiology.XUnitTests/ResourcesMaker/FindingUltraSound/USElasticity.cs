@@ -31,8 +31,8 @@ namespace BreastRadiology.XUnitTests
                 CodeSystem cs = await this.CreateCodeSystem(
                     "BreastRadUSElasticity",
                     "US Echo Pattern",
-                    "US/Elasticity/Values",
-                    "Ultra-sound Elasticity codes.",
+                    "US Elasticity/CodeSystem",
+                    "Ultra-sound Elasticity code system.",
                     Group_USCodes,
                     new ConceptDef[]
                     {
@@ -56,8 +56,8 @@ namespace BreastRadiology.XUnitTests
                 ValueSet binding = await this.CreateValueSet(
                     "BreastRadUSElasticity",
                     "US Elasticity",
-                    "US/Elasticity/Values",
-                    "Ultra-sound Elasticity codes.",
+                    "US Elasticity/ValueSet",
+                    "Ultra-sound Elasticity code system.",
                     Group_USCodes,
                     cs);
 
@@ -73,7 +73,7 @@ namespace BreastRadiology.XUnitTests
 
                 SDefEditor e = this.CreateEditor("BreastRadUSElasticity",
                         "US Elasticity",
-                        "US/Elasticity",
+                        "US Elasticity",
                         ObservationUrl,
                         $"{Group_USResources}/Elasticity",
                         out this.usElasticity)

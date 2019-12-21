@@ -31,8 +31,8 @@ namespace BreastRadiology.XUnitTests
                 CodeSystem cs = await this.CreateCodeSystem(
                     "BreastRadMRIMassMargin",
                     "MRI Mass Margin",
-                    "MRI/Mass/Margin/Values",
-                    "MRI mass margin codes.",
+                    "MRI Mass/Margin CodeSystem",
+                    "MRI mass margin code system.",
                     Group_MRICodes,
                     new ConceptDef[]
                     {
@@ -71,8 +71,8 @@ namespace BreastRadiology.XUnitTests
                 ValueSet binding = await this.CreateValueSet(
                     "BreastRadMRIMassMargin",
                     "MRI Mass Margin",
-                    "MRI/Mass/Margin/Values",
-                    "MRI mass margin codes.",
+                    "MRI Mass/Margin ValueSet",
+                    "MRI mass margin value set.",
                     Group_MRICodes,
                     cs);
                 {
@@ -87,7 +87,7 @@ namespace BreastRadiology.XUnitTests
 
                 SDefEditor e = this.CreateEditor("BreastRadMRIMassMargin",
                     "MRI Mass Margin",
-                    "MRI/Mass/Margin",
+                    "MRI Mass/Margin",
                     ObservationUrl,
                     $"{Group_MRIResources}/Mass/Margin",
                     out this.mriMassMargin)

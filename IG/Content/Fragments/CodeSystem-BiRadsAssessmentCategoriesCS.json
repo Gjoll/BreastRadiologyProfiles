@@ -14,7 +14,7 @@
   "url": "http://hl7.org/fhir/us/breast-radiology/CodeSystem/BiRadsAssessmentCategoriesCS",
   "name": "BiRadsAssessmentCategoriesCS",
   "title": "BiRads(r) Assessment Category Codes CodeSystem",
-  "description": "BiRads(r) Assessment Category codes.",
+  "description": "BiRads(r) Assessment Category code system.",
   "caseSensitive": true,
   "content": "complete",
   "count": 10,

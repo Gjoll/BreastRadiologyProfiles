@@ -14,7 +14,7 @@
   "url": "http://hl7.org/fhir/us/breast-radiology/CodeSystem/BreastRadNMMassMarginCS",
   "name": "BreastRadNMMassMarginCS",
   "title": "NM Mass Margin CodeSystem",
-  "description": "NM mass margin codes.",
+  "description": "NM mass margin code system.",
   "caseSensitive": true,
   "content": "complete",
   "count": 1,

@@ -29,9 +29,9 @@ namespace BreastRadiology.XUnitTests
             {
                 CodeSystem cs = await this.CreateCodeSystem(
                     "MammoCalcificationType",
-                    "Mammo Calcification Type",
-                    "Mammo/Calc./Type/Values",
-                    "Mammography calcification type codes.",
+                    "Mammography Calcification Type",
+                    "Mg Calc. Type/CodeSystem",
+                    "Mammography calcification type code system.",
                     Group_MGCodes,
                     new ConceptDef[]
                     {
@@ -200,9 +200,9 @@ namespace BreastRadiology.XUnitTests
 
                 ValueSet binding = await this.CreateValueSet(
                     "MammoCalcificationType",
-                    "Mammo Calcification Type",
-                    "Mammo/Calc./Type/Values",
-                    "Mammography calcification type codes.",
+                    "Mammography Calcification Type",
+                    "Mg Calc. TypeValueSet",
+                    "Mammography calcification type code system.",
                     Group_MGCodes,
                     cs);
 
@@ -217,8 +217,8 @@ namespace BreastRadiology.XUnitTests
                 }
 
                 SDefEditor e = this.CreateEditor("BreastRadMammoCalcificationType",
-                    "Mammo Calcification Type",
-                    "Mammo/Calc./Type",
+                    "Mammography Calcification Type",
+                    "Mg Calc. Type",
                     ObservationUrl,
                     $"{Group_MGResources}/Calcification/Type",
                     out this.mgCalcificationType)

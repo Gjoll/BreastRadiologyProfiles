@@ -3,7 +3,7 @@
   "extension": [
     {
       "url": "http://www.fragment.com/mapname",
-      "valueString": "Mammo/FatNecrosis"
+      "valueString": "Mg Fat Necrosis"
     },
     {
       "url": "http://www.ResourceMaker.com/Group",
@@ -80,7 +80,7 @@
   ],
   "url": "http://hl7.org/fhir/us/breast-radiology/StructureDefinition/BreastRadMammoFatNecrosis",
   "name": "BreastRadMammoFatNecrosis",
-  "title": "Mammo Fat Necrosis",
+  "title": "Mammography Fat Necrosis",
   "status": "draft",
   "description": "Breast Radiology Mammography Fat Necrosis Observation\n\nPenrad\n\n\nIf this observation is present, and dataAbsentReason is empty, then a FatNecrosis was observed.\n\n\nIf this observation is present, and dataAbsentReason is not empty, then a FatNecrosis was not observed and dataAbsentReason contains the reason why.",
   "fhirVersion": "4.0.0",

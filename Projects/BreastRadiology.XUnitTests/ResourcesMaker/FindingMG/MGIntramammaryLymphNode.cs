@@ -28,8 +28,8 @@ namespace BreastRadiology.XUnitTests
             await VTask.Run(async () =>
             {
                 SDefEditor e = this.CreateEditor("BreastRadMammoIntramammaryLymphNode",
-                    "Mammo Intramammary LymphNode",
-                    "Mammo/Intramammory/Lymph Node",
+                    "Mammography Intramammary LymphNode",
+                    "Mg Intramammory/Lymph Node",
                     ObservationUrl,
                     $"{Group_MGResources}/IntramammaryLymphNode",
                     out this.mgIntramammaryLymphNode)

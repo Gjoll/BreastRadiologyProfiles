@@ -30,8 +30,8 @@ namespace BreastRadiology.XUnitTests
                 CodeSystem cs = await this.CreateCodeSystem(
                     "BreastRadUSTissueComposition",
                     "US Tissue Composition",
-                    "US/Tissue/Composition/Values",
-                    "Ultra-sound breast tissue composition codes.",
+                    "US Tissue/Composition/CodeSystem",
+                    "Ultra-sound breast tissue composition code system.",
                     Group_USCodes,
                     new ConceptDef[]
                     {
@@ -70,8 +70,8 @@ namespace BreastRadiology.XUnitTests
                 ValueSet binding = await this.CreateValueSet(
                     "BreastRadUSTissueComposition",
                     "US Tissue Composition",
-                    "US/Tissue/Composition/Values",
-                    "Ultra-sound breast tissue composition codes.",
+                    "US Tissue/CompositionValueSet",
+                    "Ultra-sound breast tissue composition code system.",
                     Group_USCodes,
                     cs);
 
@@ -87,7 +87,7 @@ namespace BreastRadiology.XUnitTests
 
                 SDefEditor e = this.CreateEditor("BreastRadUSTissueComposition",
                         "US Tissue Composition",
-                        "US/Tissue/Composition",
+                        "US Tissue/Composition",
                         ObservationUrl,
                         $"{Group_USResources}/Mass/TissueComposition",
                         out this.usTissueComposition)

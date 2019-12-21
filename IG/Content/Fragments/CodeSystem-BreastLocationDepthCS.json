@@ -14,7 +14,7 @@
   "url": "http://hl7.org/fhir/us/breast-radiology/CodeSystem/BreastLocationDepthCS",
   "name": "BreastLocationDepthCS",
   "title": "Breast Location Depth CodeSystem",
-  "description": "Breast body location depth codes.",
+  "description": "Breast body location depth code system.",
   "caseSensitive": true,
   "content": "complete",
   "count": 3,

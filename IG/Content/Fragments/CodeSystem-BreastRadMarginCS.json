@@ -14,7 +14,7 @@
   "url": "http://hl7.org/fhir/us/breast-radiology/CodeSystem/BreastRadMarginCS",
   "name": "BreastRadMarginCS",
   "title": "Margin CodeSystem",
-  "description": "Margin codes.",
+  "description": "Margin code system.",
   "caseSensitive": true,
   "content": "complete",
   "count": 12,

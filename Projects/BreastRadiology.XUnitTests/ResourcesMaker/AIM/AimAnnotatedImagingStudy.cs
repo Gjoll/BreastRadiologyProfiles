@@ -28,7 +28,7 @@ namespace BreastRadiology.XUnitTests
             {
                 SDefEditor e = this.CreateEditor("AimAnnotatedImagingStudy",
                     "AIM Annotated Imaging Study",
-                    "Aim/Annotated/Imaging/Study",
+                    "Annotated/Imaging Study",
                     ImagingStudyUrl,
                     $"{Group_AimResources}/Aim/AimAnnotatedImagingStudy",
                     out this.aimAnnotatedImagingStudy)

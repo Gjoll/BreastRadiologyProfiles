@@ -27,8 +27,8 @@ namespace BreastRadiology.XUnitTests
             await VTask.Run(async () =>
             {
                 SDefEditor e = this.CreateEditor("BreastRadMammoSkinRetraction",
-                    "Mammo Skin Retraction",
-                    "Mammo/Skin/Retraction",
+                    "Mammography Skin Retraction",
+                    "Mg Skin Retraction",
                     ObservationUrl,
                     $"{Group_MGResources}/AssociatedFeature/SkinRetraction",
                     out this.mgSkinRetraction)

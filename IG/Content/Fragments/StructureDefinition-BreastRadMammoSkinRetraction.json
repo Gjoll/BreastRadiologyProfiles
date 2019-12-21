@@ -3,7 +3,7 @@
   "extension": [
     {
       "url": "http://www.fragment.com/mapname",
-      "valueString": "Mammo/Skin/Retraction"
+      "valueString": "Mg Skin Retraction"
     },
     {
       "url": "http://www.ResourceMaker.com/Group",
@@ -36,7 +36,7 @@
   ],
   "url": "http://hl7.org/fhir/us/breast-radiology/StructureDefinition/BreastRadMammoSkinRetraction",
   "name": "BreastRadMammoSkinRetraction",
-  "title": "Mammo Skin Retraction",
+  "title": "Mammography Skin Retraction",
   "status": "draft",
   "description": "Mammography Skin Retraction Observation\n\n\n\nThe skin is pulled in abnormally\n-- Bi-Rads® Atlas — Mammography Fifth Ed. 2013 \nIf this observation is present, and dataAbsentReason is empty, then a skin retraction was observed.\n\n\nIf this observation is present, and dataAbsentReason is not empty, then a skin retraction was not observed and dataAbsentReason contains the reason why.",
   "fhirVersion": "4.0.0",

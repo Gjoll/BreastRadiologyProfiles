@@ -31,7 +31,7 @@ namespace BreastRadiology.XUnitTests
                 ValueSet binding = await this.CreateValueSet(
                         "MammoShape",
                         "Shape",
-                        "Shape/Values",
+                        "Shape/ValueSet",
                         "Codes defining shape values.",
                         Group_MGCodes,
                         await this.CommonCSShape());

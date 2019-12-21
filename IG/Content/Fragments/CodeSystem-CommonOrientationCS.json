@@ -14,7 +14,7 @@
   "url": "http://hl7.org/fhir/us/breast-radiology/CodeSystem/CommonOrientationCS",
   "name": "CommonOrientationCS",
   "title": "Orientation CodeSystem",
-  "description": "Orientation codes",
+  "description": "Orientation CodeSystem",
   "caseSensitive": true,
   "content": "complete",
   "count": 2,

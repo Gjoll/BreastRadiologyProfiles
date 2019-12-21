@@ -29,8 +29,8 @@ namespace BreastRadiology.XUnitTests
             {
                 CodeSystem cs  = await this.CreateCodeSystem(
                     "BreastRadMammoBreastDensity",
-                    "Mammo Breast Density",
-                    "Mammo/Breast/Density/Values",
+                    "Mammography Breast Density",
+                    "Mg Breast Density/CodeSystem",
                     "Codes for mammography breast density values.",
                     Group_MGCodes,
                     new ConceptDef[]
@@ -93,8 +93,8 @@ namespace BreastRadiology.XUnitTests
 
                     ValueSet binding = await this.CreateValueSet(
                         "BreastRadMammoBreastDensity",
-                        "Mammo Breast Density",
-                        "Mammo/Breast/Density/Values",
+                        "Mammography Breast Density",
+                        "Mg Breast DensityValueSet",
                         "Codes for mammography breast density values.",
                         Group_MGCodes,
                         cs);
@@ -110,8 +110,8 @@ namespace BreastRadiology.XUnitTests
                 }
 
                 SDefEditor e = this.CreateEditor("BreastRadMammoBreastDensity",
-                        "Mammo Breast Density",
-                        "Mammo/Breast/Density",
+                        "Mammography Breast Density",
+                        "Mg Breast Density",
                         ObservationUrl,
                         $"{Group_MGResources}/BreastDensity",
                         out this.mgBreastDensity)

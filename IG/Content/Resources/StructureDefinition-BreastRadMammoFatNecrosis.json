@@ -3,7 +3,7 @@
   "extension": [
     {
       "url": "http://www.fragment.com/mapname",
-      "valueString": "Mammo/FatNecrosis"
+      "valueString": "Mg Fat Necrosis"
     },
     {
       "url": "http://www.ResourceMaker.com/Group",
@@ -141,7 +141,7 @@
   "url": "http://hl7.org/fhir/us/breast-radiology/StructureDefinition/BreastRadMammoFatNecrosis",
   "version": "0.0.2",
   "name": "BreastRadMammoFatNecrosis",
-  "title": "Mammo Fat Necrosis",
+  "title": "Mammography Fat Necrosis",
   "status": "draft",
   "date": "2019-11-01",
   "publisher": "Hl7-Clinical Interoperability Council",

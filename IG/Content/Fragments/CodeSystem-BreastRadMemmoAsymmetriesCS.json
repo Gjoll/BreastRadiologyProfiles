@@ -13,7 +13,7 @@
   ],
   "url": "http://hl7.org/fhir/us/breast-radiology/CodeSystem/BreastRadMemmoAsymmetriesCS",
   "name": "BreastRadMemmoAsymmetriesCS",
-  "title": "Mammo Asymmetries CodeSystem",
+  "title": "Mammography Asymmetries CodeSystem",
   "description": "Codes defining types of mammography asymmetries.",
   "caseSensitive": true,
   "content": "complete",

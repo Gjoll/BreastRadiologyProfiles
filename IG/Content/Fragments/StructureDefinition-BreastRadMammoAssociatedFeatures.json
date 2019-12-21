@@ -3,7 +3,7 @@
   "extension": [
     {
       "url": "http://www.fragment.com/mapname",
-      "valueString": "Mammo/Associated/Features"
+      "valueString": "Mg Associated/Features"
     },
     {
       "url": "http://www.ResourceMaker.com/Group",
@@ -60,7 +60,7 @@
   ],
   "url": "http://hl7.org/fhir/us/breast-radiology/StructureDefinition/BreastRadMammoAssociatedFeatures",
   "name": "BreastRadMammoAssociatedFeatures",
-  "title": "Mammo Associated Features",
+  "title": "Mammography Associated Features",
   "status": "draft",
   "description": "Mammography Associated Features Observation\n\nUsed with masses, asymmetries, or calcifications, or may stand alone as Features when no other abnormality is present.\n\n\n*** TODO Items ***** check Cardinality of the following Observation.hasMember targets?",
   "fhirVersion": "4.0.0",

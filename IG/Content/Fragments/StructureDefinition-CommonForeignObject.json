@@ -3,7 +3,7 @@
   "extension": [
     {
       "url": "http://www.fragment.com/mapname",
-      "valueString": "ForeignObject"
+      "valueString": "Foreign Object"
     },
     {
       "url": "http://www.ResourceMaker.com/Group",
@@ -68,7 +68,7 @@
   ],
   "url": "http://hl7.org/fhir/us/breast-radiology/StructureDefinition/CommonForeignObject",
   "name": "CommonForeignObject",
-  "title": "ForeignObject",
+  "title": "Foreign Object",
   "status": "draft",
   "description": "Breast Radiology Foreign Object Observation\n\nThese are foreign objects found during a breast radiology exam:\n\n\n*** TODO Items ***** there is no way to say that the following abnormalities do not exist, only that one does exist.\n** fill in code descriptions\n** How are metal and metallic codes different\n** body jewelery codes\n** are wire and wire fragment codes the same.",
   "fhirVersion": "4.0.0",

@@ -12,13 +12,13 @@
     },
     {
       "url": "http://www.fragment.com/mapname",
-      "valueString": "Orientation Values"
+      "valueString": "Orientation CodeSystem"
     }
   ],
   "url": "http://hl7.org/fhir/us/breast-radiology/ValueSet/CommonOrientationVS",
   "name": "CommonOrientationVS",
   "title": "Orientation ValueSet",
-  "description": "Orientation codes",
+  "description": "Orientation CodeSystem",
   "compose": {
     "include": [
       {

@@ -27,8 +27,8 @@ namespace BreastRadiology.XUnitTests
             await VTask.Run(async () =>
             {
                 SDefEditor e = this.CreateEditor("BreastRadMammoNippleRetraction",
-                    "Mammo Nipple Retraction",
-                    "Mammo/Nipple/Retraction",
+                    "Mammography Nipple Retraction",
+                    "Mg Nipple Retraction",
                     ObservationUrl,
                     $"{Group_MGResources}/AssociatedFeature/NippleRetraction",
                     out this.mgNippleRetraction)

@@ -3,7 +3,7 @@
   "extension": [
     {
       "url": "http://www.fragment.com/mapname",
-      "valueString": "Mammo/Intramammory/Lymph Node"
+      "valueString": "Mg Intramammory/Lymph Node"
     },
     {
       "url": "http://www.ResourceMaker.com/Group",
@@ -68,7 +68,7 @@
   ],
   "url": "http://hl7.org/fhir/us/breast-radiology/StructureDefinition/BreastRadMammoIntramammaryLymphNode",
   "name": "BreastRadMammoIntramammaryLymphNode",
-  "title": "Mammo Intramammary LymphNode",
+  "title": "Mammography Intramammary LymphNode",
   "status": "draft",
   "description": "Breast Radiology Mammography Intramammary LymphNode Observation\n\nIf this observation is present, and dataAbsentReason is empty, then an intramammary lymph node was observed.\n\n\nIf this observation is present, and dataAbsentReason is not empty, then an intramammary lymph node was not observed and dataAbsentReason contains the reason why.\n\n\nThese are circumscribed masses that are reniform and have hilar fat. They are generally 1 cm or smaller\nin size. They may be larger than 1 cm and characterized as normal when fat replacement is pro-\nnounced. They frequently occur in the lateral and usually upper portions of the breast closer to the\naxilla, although they may occur anywhere in the breast. They usually are seen adjacent to a vein,\nbecause the lymphatic drainage of the breast parallels the venous drainage.\n-- Bi-Rads® Atlas — Mammography Fifth Ed. 2013 \n*** TODO Items ***** should this be a leaf node (how about shape, density, location, etc).",
   "fhirVersion": "4.0.0",

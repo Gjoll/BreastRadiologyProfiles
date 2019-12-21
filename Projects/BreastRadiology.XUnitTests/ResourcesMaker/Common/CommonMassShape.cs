@@ -31,7 +31,7 @@ namespace BreastRadiology.XUnitTests
                 CodeSystem cs  = await this.CreateCodeSystem(
                         "CommonMassShape",
                         "Mass Shape",
-                        "Mass/Shape/Values",
+                        "Mass/Shape/CodeSystem",
                         "Codes defining mass shape values.",
                         Group_CommonCodes,
                         new ConceptDef[]
@@ -67,7 +67,7 @@ namespace BreastRadiology.XUnitTests
                     ValueSet binding = await this.CreateValueSet(
                         "CommonMassShape",
                         "Mass Shape",
-                        "Mass/Shape/Values",
+                        "Mass/Shape/ValueSet",
                         "Codes defining mass shape values.",
                         Group_CommonCodes,
                         cs);

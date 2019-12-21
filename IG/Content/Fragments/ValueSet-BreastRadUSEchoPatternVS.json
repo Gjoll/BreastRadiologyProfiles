@@ -12,13 +12,13 @@
     },
     {
       "url": "http://www.fragment.com/mapname",
-      "valueString": "US/Echo Pattern/Values"
+      "valueString": "US Echo Pattern/ValueSet"
     }
   ],
   "url": "http://hl7.org/fhir/us/breast-radiology/ValueSet/BreastRadUSEchoPatternVS",
   "name": "BreastRadUSEchoPatternVS",
   "title": "US Echo Pattern ValueSet",
-  "description": "Ultra-sound mass echo pattern codes.",
+  "description": "Ultra-sound mass echo pattern code system.",
   "compose": {
     "include": [
       {

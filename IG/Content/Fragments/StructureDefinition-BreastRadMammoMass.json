@@ -3,7 +3,7 @@
   "extension": [
     {
       "url": "http://www.fragment.com/mapname",
-      "valueString": "Mammo/Mass"
+      "valueString": "Mg Mass"
     },
     {
       "url": "http://www.ResourceMaker.com/Group",
@@ -92,7 +92,7 @@
   ],
   "url": "http://hl7.org/fhir/us/breast-radiology/StructureDefinition/BreastRadMammoMass",
   "name": "BreastRadMammoMass",
-  "title": "Mammo Mass",
+  "title": "Mammography Mass",
   "status": "draft",
   "description": "Breast Radiology Mammography Mass Observation\n\nIf this observation is present, and dataAbsentReason is empty, then a mass was observed.\n\n\nIf this observation is present, and dataAbsentReason is not empty, then a mass was not observed and dataAbsentReason contains the reason whyand no Shape, Margin, or Density observations should be referenced by this observation\n\n\n\"MASS\" is three dimensional and occupies space. It is seen on two different mammographic pro-\njections. It has completely or partially convex-outward borders and (when radiodense) appears\ndenser in the center than at the periphery. If a potential mass is seen only on a single projection, it\nshould be called an \"ASYMMETRY\" until its 3-dimensionality is confirmed\n-- Bi-Rads® Atlas — Mammography Fifth Ed. 2013 \n*** TODO Items ***** add mass size measurements (3 dimensional) like US?\n** same for asymmetry, lesion, calcification?",
   "fhirVersion": "4.0.0",

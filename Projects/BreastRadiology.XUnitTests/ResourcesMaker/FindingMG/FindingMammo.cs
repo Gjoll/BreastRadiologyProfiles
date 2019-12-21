@@ -27,8 +27,8 @@ namespace BreastRadiology.XUnitTests
             await VTask.Run(async () =>
             {
                 SDefEditor e = this.CreateEditor("BreastRadMammoFinding",
-                        "Mammo Finding",
-                        "Mammo/Finding",
+                        "Mammographi Finding",
+                        "Mg Finding",
                         ObservationUrl,
                         $"{Group_MGResources}",
                         out this.findingMammo)
