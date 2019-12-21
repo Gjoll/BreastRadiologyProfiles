@@ -6,7 +6,7 @@
       "valueString": "MRI Finding"
     },
     {
-      "url": "http://www.ResourceMaker.com/Group",
+      "url": "http://www.fragment.com/Group",
       "valueString": "MRIResources"
     },
     {
@@ -38,7 +38,7 @@
       "valueString": "Section/Fragment"
     },
     {
-      "url": "http://www.ResourceMaker.com/Group",
+      "url": "http://www.fragment.com/Group",
       "valueString": "Fragment/{name}"
     },
     {

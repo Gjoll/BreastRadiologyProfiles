@@ -1,4 +1,5 @@
 ﻿using FhirKhit.Tools;
+using FhirKhit.Tools.R4;
 using Hl7.Fhir.Model;
 using System;
 using System.Collections.Generic;
@@ -48,6 +49,13 @@ namespace BreastRadiology.XUnitTests
                 .AppendLine($"    </object>")
                 ;
 
+            return this;
+        }
+
+        public IntroDoc Refinement(ValueSet vs, String name)
+        {
+            this.Paragraph($"The type of this {name} may be further refined to be one of the following:");
+            this.List(vs);
             return this;
         }
 

@@ -7,7 +7,7 @@
       "valueUrl": "http://hl7.org/fhir/us/breast-radiology/StructureDefinition/HeaderFragment"
     },
     {
-      "url": "http://www.ResourceMaker.com/Group",
+      "url": "http://www.fragment.com/Group",
       "valueString": "USCodesVS"
     },
     {

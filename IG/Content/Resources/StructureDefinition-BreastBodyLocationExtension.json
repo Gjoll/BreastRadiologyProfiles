@@ -6,7 +6,7 @@
       "valueString": "Breast Body Loc."
     },
     {
-      "url": "http://www.ResourceMaker.com/Group",
+      "url": "http://www.fragment.com/Group",
       "valueString": "ExtensionResources/BreastBodyLocation"
     },
     {
@@ -22,7 +22,7 @@
       "valueString": "Common"
     },
     {
-      "url": "http://www.ResourceMaker.com/Group",
+      "url": "http://www.fragment.com/Group",
       "valueString": "Fragment/{name}"
     }
   ],

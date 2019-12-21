@@ -6,7 +6,7 @@
       "valueString": "Foreign Object"
     },
     {
-      "url": "http://www.ResourceMaker.com/Group",
+      "url": "http://www.fragment.com/Group",
       "valueString": "CommonResources/Foreign"
     },
     {
@@ -70,7 +70,7 @@
       "valueString": "Breast/Body/Location/Fragment/(Required)"
     },
     {
-      "url": "http://www.ResourceMaker.com/Group",
+      "url": "http://www.fragment.com/Group",
       "valueString": "Fragment/{name}"
     },
     {

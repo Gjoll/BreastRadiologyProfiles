@@ -6,7 +6,7 @@
       "valueString": "Prior Reports/Extension"
     },
     {
-      "url": "http://www.ResourceMaker.com/Group",
+      "url": "http://www.fragment.com/Group",
       "valueString": "ExtensionResources/PriorReports"
     },
     {
@@ -26,7 +26,7 @@
       "valueString": "Common"
     },
     {
-      "url": "http://www.ResourceMaker.com/Group",
+      "url": "http://www.fragment.com/Group",
       "valueString": "Fragment/{name}"
     }
   ],

@@ -6,7 +6,7 @@
       "valueString": "NM/Finding"
     },
     {
-      "url": "http://www.ResourceMaker.com/Group",
+      "url": "http://www.fragment.com/Group",
       "valueString": "NMResources"
     },
     {
@@ -34,7 +34,7 @@
       "valueString": "Section/Fragment"
     },
     {
-      "url": "http://www.ResourceMaker.com/Group",
+      "url": "http://www.fragment.com/Group",
       "valueString": "Fragment/{name}"
     },
     {

@@ -28,7 +28,7 @@ namespace BreastRadiology.XUnitTests
             {
                 SDefEditor e = this.CreateEditor("BreastRadNMFinding",
                         "NM Finding",
-                        "NM/Finding",
+                        "NM Finding",
                         ObservationUrl,
                         $"{Group_NMResources}",
                         out this.findingNM)

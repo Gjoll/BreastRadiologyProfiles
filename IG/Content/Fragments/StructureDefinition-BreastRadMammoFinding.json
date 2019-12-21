@@ -6,7 +6,7 @@
       "valueString": "Mg Finding"
     },
     {
-      "url": "http://www.ResourceMaker.com/Group",
+      "url": "http://www.fragment.com/Group",
       "valueString": "MGResources"
     },
     {
@@ -52,6 +52,10 @@
     {
       "url": "http://www.fragment.com/maplink",
       "valueString": "target|True|http://hl7.org/fhir/us/breast-radiology/StructureDefinition/BreastRadMammoFatNecrosis"
+    },
+    {
+      "url": "http://www.fragment.com/maplink",
+      "valueString": "target|True|http://hl7.org/fhir/us/breast-radiology/StructureDefinition/BreastRadMammoFibroadenoma"
     },
     {
       "url": "http://www.fragment.com/maplink",
@@ -252,6 +256,26 @@
             "code": "Reference",
             "targetProfile": [
               "http://hl7.org/fhir/us/breast-radiology/StructureDefinition/BreastRadMammoFatNecrosis"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "Observation.hasMember:breastRadMammoFibroadenoma",
+        "path": "Observation.hasMember",
+        "sliceName": "breastRadMammoFibroadenoma",
+        "min": 0,
+        "max": "*",
+        "base": {
+          "path": "Observation.hasMember",
+          "min": 0,
+          "max": "*"
+        },
+        "type": [
+          {
+            "code": "Reference",
+            "targetProfile": [
+              "http://hl7.org/fhir/us/breast-radiology/StructureDefinition/BreastRadMammoFibroadenoma"
             ]
           }
         ]

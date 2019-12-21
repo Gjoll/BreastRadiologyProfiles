@@ -6,7 +6,7 @@
       "valueString": "Mg Calc./Distribution"
     },
     {
-      "url": "http://www.ResourceMaker.com/Group",
+      "url": "http://www.fragment.com/Group",
       "valueString": "MGResources/Calcification/Distribution"
     },
     {
@@ -42,7 +42,7 @@
       "valueString": "NoDevice/Observation/Fragment"
     },
     {
-      "url": "http://www.ResourceMaker.com/Group",
+      "url": "http://www.fragment.com/Group",
       "valueString": "Fragment/{name}"
     },
     {

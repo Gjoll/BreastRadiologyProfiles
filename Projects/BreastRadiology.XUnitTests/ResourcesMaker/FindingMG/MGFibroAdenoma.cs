@@ -73,9 +73,16 @@ namespace BreastRadiology.XUnitTests
                     e.AddProfileTargets(targets);
                 }
 
+                e.Select("value[x]")
+                    .Type("CodeableConcept")
+                    .Binding(binding.Url, BindingStrength.Required)
+                    ;
+                e.AddValueSetLink(binding);
+
                 e.IntroDoc
                     .ReviewedStatus(ReviewStatus.NotReviewed)
                     .ObservationSection("Mammography Fibroadenoma")
+                    .Refinement(binding, "Fibroadenoma")
                     ;
             });
         }

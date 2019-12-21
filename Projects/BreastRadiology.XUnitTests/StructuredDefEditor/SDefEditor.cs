@@ -68,7 +68,7 @@ namespace BreastRadiology.XUnitTests
                 Max = "*"
             });
 
-            this.SDef.AddExtension(ResourceMap.ResourceMapNameUrl, new FhirString(mapName));
+            this.SDef.AddExtension(Global.ResourceMapNameUrl, new FhirString(mapName));
 
             this.IntroDoc = new IntroDoc(Path.Combine(this.pageDir, $"StructureDefinition-{name}-intro.xml"));
             this.IntroDoc.AddSvgImage(this);
@@ -288,7 +288,7 @@ namespace BreastRadiology.XUnitTests
         {
             if (url.StartsWith("http://hl7.org/fhir/StructureDefinition/") == true)
                 return this;
-            this.SDef.AddExtension(ResourceMap.ResourceMapLinkUrl,
+            this.SDef.AddExtension(Global.ResourceMapLinkUrl,
                 new FhirString($"{linkType}|{showChildren}|{url}"));
             return this;
         }

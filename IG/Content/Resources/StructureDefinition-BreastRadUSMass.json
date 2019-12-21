@@ -6,7 +6,7 @@
       "valueString": "US Mass"
     },
     {
-      "url": "http://www.ResourceMaker.com/Group",
+      "url": "http://www.fragment.com/Group",
       "valueString": "USResources/Finding/Mass"
     },
     {
@@ -110,7 +110,7 @@
       "valueString": "NoDevice/Observation/Fragment"
     },
     {
-      "url": "http://www.ResourceMaker.com/Group",
+      "url": "http://www.fragment.com/Group",
       "valueString": "Fragment/{name}"
     },
     {

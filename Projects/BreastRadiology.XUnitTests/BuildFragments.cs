@@ -263,15 +263,61 @@ namespace BreastRadiology.XUnitTests
                     resourceMapMaker.AddLegendItem("DiagnosticReport", Color.LightGreen);
                     resourceMapMaker.AddLegendItem("Extension", Color.LightSalmon);
                     resourceMapMaker.AddLegendItem("Observation", Color.LightSkyBlue);
-                    resourceMapMaker.AddLegendItem("MedicationRequest", Color.LightPink);
+                    //resourceMapMaker.AddLegendItem("MedicationRequest", Color.LightPink);
                     resourceMapMaker.AddLegendItem("ServiceRequest", Color.LightBlue);
-                    resourceMapMaker.AddLegendItem("RiskAssessment", Color.LightGray);
-                    resourceMapMaker.AddLegendItem("ClinicalImpression", Color.LightGoldenrodYellow);
-                    resourceMapMaker.AddLegendItem("ImagingStudy", Color.LightCoral);
+                    //resourceMapMaker.AddLegendItem("RiskAssessment", Color.LightGray);
+                    //resourceMapMaker.AddLegendItem("ClinicalImpression", Color.LightGoldenrodYellow);
+                    //resourceMapMaker.AddLegendItem("ImagingStudy", Color.LightCoral);
 
                     resourceMapMaker.Create(ResourcesMaker.CreateUrl("BreastRadReport"),
                         Path.Combine(this.graphicsDir, "ProfileOverview.svg"));
+                }
 
+                {
+                    ResourceMapMaker resourceMapMaker = new ResourceMapMaker(map);
+                    resourceMapMaker.AddLegendItem("DiagnosticReport", Color.LightGreen);
+                    resourceMapMaker.AddLegendItem("Extension", Color.LightSalmon);
+                    resourceMapMaker.AddLegendItem("Observation", Color.LightSkyBlue);
+                    resourceMapMaker.AddLegendItem("ImagingStudy", Color.LightCoral);
+
+                    resourceMapMaker.Create(ResourcesMaker.CreateUrl("BreastRadMammoFinding"),
+                        Path.Combine(this.graphicsDir, "MgFindings.svg"));
+                }
+
+                {
+                    ResourceMapMaker resourceMapMaker = new ResourceMapMaker(map);
+                    resourceMapMaker.AddLegendItem("DiagnosticReport", Color.LightGreen);
+                    resourceMapMaker.AddLegendItem("Extension", Color.LightSalmon);
+                    resourceMapMaker.AddLegendItem("Observation", Color.LightSkyBlue);
+                    resourceMapMaker.AddLegendItem("ImagingStudy", Color.LightCoral);
+
+                    resourceMapMaker.Create(ResourcesMaker.CreateUrl("BreastRadMRIFinding"),
+                        Path.Combine(this.graphicsDir, "MRIFindings.svg"));
+                }
+
+                {
+                    ResourceMapMaker resourceMapMaker = new ResourceMapMaker(map);
+                    resourceMapMaker.AddLegendItem("DiagnosticReport", Color.LightGreen);
+                    resourceMapMaker.AddLegendItem("Extension", Color.LightSalmon);
+                    resourceMapMaker.AddLegendItem("Observation", Color.LightSkyBlue);
+                    resourceMapMaker.AddLegendItem("ImagingStudy", Color.LightCoral);
+
+                    resourceMapMaker.Create(ResourcesMaker.CreateUrl("BreastRadNMFinding"),
+                        Path.Combine(this.graphicsDir, "NMFindings.svg"));
+                }
+
+                {
+                    ResourceMapMaker resourceMapMaker = new ResourceMapMaker(map);
+                    resourceMapMaker.AddLegendItem("DiagnosticReport", Color.LightGreen);
+                    resourceMapMaker.AddLegendItem("Extension", Color.LightSalmon);
+                    resourceMapMaker.AddLegendItem("Observation", Color.LightSkyBlue);
+                    resourceMapMaker.AddLegendItem("ImagingStudy", Color.LightCoral);
+
+                    resourceMapMaker.Create(ResourcesMaker.CreateUrl("BreastRadUltraSoundFinding"),
+                        Path.Combine(this.graphicsDir, "USFindings.svg"));
+                }
+
+                {
                     //FragmentMapMaker fragmentMapMaker = new FragmentMapMaker(this, mapDir);
                     //fragmentMapMaker.Create();
                 }

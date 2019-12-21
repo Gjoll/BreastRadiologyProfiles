@@ -18,7 +18,7 @@ namespace BreastRadiology.XUnitTests
         async CSTask CommonCSFibroadenoma()
         {
             if (this.commonCSFibroadenoma == null)
-                await this.CreateCommonCSFibroadenoma();
+                this.commonCSFibroadenoma = await this.CreateCommonCSFibroadenoma();
             return this.commonCSFibroadenoma;
         }
         CodeSystem commonCSFibroadenoma = null;

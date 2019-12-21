@@ -6,7 +6,7 @@
       "valueString": "Orientation"
     },
     {
-      "url": "http://www.ResourceMaker.com/Group",
+      "url": "http://www.fragment.com/Group",
       "valueString": "CommonResources/Orientation"
     },
     {
@@ -42,7 +42,7 @@
       "valueString": "NoDevice/Observation/Fragment"
     },
     {
-      "url": "http://www.ResourceMaker.com/Group",
+      "url": "http://www.fragment.com/Group",
       "valueString": "Fragment/{name}"
     },
     {

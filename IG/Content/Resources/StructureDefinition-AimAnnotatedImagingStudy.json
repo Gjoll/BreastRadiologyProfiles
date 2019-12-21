@@ -6,7 +6,7 @@
       "valueString": "Annotated/Imaging Study"
     },
     {
-      "url": "http://www.ResourceMaker.com/Group",
+      "url": "http://www.fragment.com/Group",
       "valueString": "AimResources/Aim/AimAnnotatedImagingStudy"
     },
     {
@@ -30,7 +30,7 @@
       "valueString": "Common/Header"
     },
     {
-      "url": "http://www.ResourceMaker.com/Group",
+      "url": "http://www.fragment.com/Group",
       "valueString": "Fragment/{name}"
     },
     {

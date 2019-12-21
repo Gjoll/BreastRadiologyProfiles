@@ -10,9 +10,6 @@ namespace BreastRadiology.XUnitTests
 {
     partial class ResourceMap
     {
-        public const String ResourceMapNameUrl = "http://www.fragment.com/mapname";
-        public const String ResourceMapLinkUrl = "http://www.fragment.com/maplink";
-
         Dictionary<String, ResourceMap.Node> resources = new Dictionary<string, ResourceMap.Node>();
 
         public ResourceMap()
@@ -90,12 +87,12 @@ namespace BreastRadiology.XUnitTests
                     return null;
             }
 
-            string mapName = r.GetStringExtension(ResourceMapNameUrl);
+            string mapName = r.GetStringExtension(Global.ResourceMapNameUrl);
             if (String.IsNullOrEmpty(mapName) == true)
                 throw new Exception($"Mapname missing from {resourceUrl}");
             String[] mapNameArray = mapName.Split('/');
             ResourceMap.Node retVal =  this.CreateMapNode(resourceUrl, mapNameArray, structureName, baseName);
-            foreach (Extension link in r.GetExtensions(ResourceMapLinkUrl))
+            foreach (Extension link in r.GetExtensions(Global.ResourceMapLinkUrl))
             {
                 FhirString s = (FhirString) link.Value;
                 String[] parts = s.Value.Split('|');

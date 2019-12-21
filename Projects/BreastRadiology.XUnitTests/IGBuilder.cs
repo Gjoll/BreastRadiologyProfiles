@@ -78,8 +78,6 @@ namespace BreastRadiology.XUnitTests
 
         void CopyResources(String inputDir, String inputMask, String outputDir)
         {
-            const String FragmentUrl = "http://www.fragment.com";
-
             foreach (String inputPath in Directory.GetFiles(inputDir, inputMask))
             {
                 DomainResource r;
@@ -105,7 +103,7 @@ namespace BreastRadiology.XUnitTests
 
                 foreach (Extension e in r.Extension.ToArray())
                 {
-                    if (e.Url.StartsWith(FragmentUrl))
+                    if (e.Url.StartsWith(Global.FragmentUrl))
                         r.Extension.Remove(e);
                 }
 
@@ -137,12 +135,10 @@ namespace BreastRadiology.XUnitTests
         public void AddResources(params String[] inputDirs)
         {
             const String fcn = "AddResources";
-            const String IsFragmentExtensionUrl = "http://www.fragment.com/isFragment";
-            const String GroupExtensionUrl = "http://www.ResourceMaker.com/Group";
 
             String Group(DomainResource resource)
             {
-                Extension groupExtension = resource.GetExtension(GroupExtensionUrl);
+                Extension groupExtension = resource.GetExtension(Global.GroupExtensionUrl);
                 if (resource == null)
                     throw new Exception($"StructureDefinition {resource.Id} lacks group extension");
                 FhirString value = groupExtension.Value as FhirString;
@@ -154,7 +150,8 @@ namespace BreastRadiology.XUnitTests
             String GetGroupPath(DomainResource resource)
             {
                 String groupPath = Group(resource);
-                resource.RemoveExtension(GroupExtensionUrl);
+                resource.RemoveExtension(Global.GroupExtensionUrl);
+                resource.RemoveExtension(Global.GraphicsBreakUrl);
 
                 String groupId = groupPath.BaseUriPart();
                 if (this.groupIds.Contains(groupId) == false)
@@ -230,9 +227,9 @@ namespace BreastRadiology.XUnitTests
 
                 if (structureDefinition.Snapshot == null)
                     SnapshotCreator.Create(structureDefinition);
-                Extension isFragmentExtension = structureDefinition.GetExtension(IsFragmentExtensionUrl);
+                Extension isFragmentExtension = structureDefinition.GetExtension(Global.IsFragmentExtensionUrl);
                 if (isFragmentExtension != null)
-                    structureDefinition.RemoveExtension(IsFragmentExtensionUrl);
+                    structureDefinition.RemoveExtension(Global.IsFragmentExtensionUrl);
 
                 // Dont add fragments to IG.
                 if (isFragmentExtension == null)

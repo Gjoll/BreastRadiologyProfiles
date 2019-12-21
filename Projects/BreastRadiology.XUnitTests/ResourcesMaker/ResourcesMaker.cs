@@ -48,7 +48,6 @@ namespace BreastRadiology.XUnitTests
 
         public const String Group_ExtensionResources = "ExtensionResources";
 
-        public const String GroupExtensionUrl = "http://www.ResourceMaker.com/Group";
         public static String BiRadCitation = "Bi-Rads® Atlas — Mammography Fifth Ed. 2013";
         const FHIRVersion FVersion = FHIRVersion.N4_0_0;
 
@@ -132,7 +131,7 @@ namespace BreastRadiology.XUnitTests
             // processing is complete.
             retVal.SDef.Extension.Add(new Extension
             {
-                Url = GroupExtensionUrl,
+                Url = Global.GroupExtensionUrl,
                 Value = new FhirString(groupPath)
             });
 
@@ -232,7 +231,7 @@ namespace BreastRadiology.XUnitTests
             // processing is complete.
             cs.Extension.Add(new Extension
             {
-                Url = GroupExtensionUrl,
+                Url = Global.GroupExtensionUrl,
                 Value = new FhirString($"{groupPath}CS")
             });
 
@@ -273,7 +272,7 @@ namespace BreastRadiology.XUnitTests
             // processing is complete.
             vs.Extension.Add(new Extension
             {
-                Url = GroupExtensionUrl,
+                Url = Global.GroupExtensionUrl,
                 Value = new FhirString($"{groupPath}VS")
             });
 
@@ -295,7 +294,7 @@ namespace BreastRadiology.XUnitTests
             }
 
             this.resources.Add(Path.Combine(this.resourceDir, $"ValueSet-{name}VS.json"), vs);
-            vs.AddExtension(ResourceMap.ResourceMapNameUrl, new FhirString(mapName));
+            vs.AddExtension(Global.ResourceMapNameUrl, new FhirString(mapName));
             return vs;
         }
 

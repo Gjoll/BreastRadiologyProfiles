@@ -31,6 +31,26 @@ namespace BreastRadiology.XUnitTests
             return md;
         }
 
+        public static Markdown List(this Markdown md, ValueSet vs)
+        {
+            List<String> items = new List<string>();
+            foreach (ValueSet.ConceptSetComponent component in vs.Compose.Include)
+            {
+                foreach (ValueSet.ConceptReferenceComponent concept in component.Concept)
+                    items.Add($"{concept.Code} - {concept.Display}");
+            }
+            return md.List(items.ToArray());
+        }
+
+        public static Markdown Refinement(this Markdown md, ValueSet vs, String name)
+        {
+            md
+                .Paragraph($"The type of this {name} may be further refined by one of the following values:")
+                .List(vs)
+            ;
+            return md;
+        }
+
         public static Markdown MissingObservation(this Markdown md, String articleAndName, String term = ".")
         {
             md
