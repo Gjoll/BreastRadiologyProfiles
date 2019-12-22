@@ -15,6 +15,7 @@ namespace BreastRadiology.XUnitTests
 
             public String[] MapName { get; }
             public String BaseName { get; }
+            public bool IsFragment { get; }
 
             /// <summary>
             /// Url of the resource this represents.
@@ -31,12 +32,14 @@ namespace BreastRadiology.XUnitTests
             public Node(String resourceUrl,
                 String[] mapName,
                 String structureName,
-                String baseName)
+                String baseName,
+                bool isFragment)
             {
                 this.ResourceUrl = resourceUrl;
                 this.MapName = mapName;
                 this.StructureName = structureName;
                 this.BaseName = baseName;
+                this.IsFragment = isFragment;
             }
 
             public IEnumerable<Link> LinksByName(params String[] linkTypes)

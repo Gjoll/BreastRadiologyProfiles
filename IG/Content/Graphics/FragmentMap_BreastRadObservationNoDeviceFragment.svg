@@ -11,7 +11,7 @@
 </defs>
 <g>
 <g>
-<rect fill="LightCyan" stroke="Black" stroke-width="1.875" x="7.5" y="7.5" width="130.5" height="71.25" rx="3.75" ry="3.75" />
+<rect fill="LightCyan" stroke="Black" stroke-width="1.875" x="7.5" y="7.5" width="130.5" height="52.5" rx="3.75" ry="3.75" />
 <a href="./StructureDefinition-FragmentBreastRadObservationFragment.html" target="_blank">
 <title>'Fragment BreastRadObservationFragment'</title>
 <text x="15" y="30">Observation</text>
@@ -20,25 +20,17 @@
 <title>'Fragment BreastRadObservationFragment'</title>
 <text x="15" y="48.75">Fragment</text>
 </a>
-<a href="StructureDefinition-BreastRadObservationFragment.html" target="_blank">
-<title>Resource 'BreastRadObservationFragment'</title>
-<text x="15" y="67.5">[Resource]</text>
-</a>
 </g>
-<line stroke="Black" stroke-width="1.875" marker-end="url(#arrowEnd)" x1="168" y1="52.5" x2="198" y2="52.5" />
-<line stroke="Black" stroke-width="1.875" marker-start="url(#arrowStart)" x1="138" y1="43.125" x2="168" y2="43.125" />
-<line stroke="Black" stroke-width="1.875" x1="168" y1="43.125" x2="168" y2="52.5" />
+<line stroke="Black" stroke-width="1.875" marker-end="url(#arrowEnd)" x1="168" y1="43.125" x2="198" y2="43.125" />
+<line stroke="Black" stroke-width="1.875" marker-start="url(#arrowStart)" x1="138" y1="33.75" x2="168" y2="33.75" />
+<line stroke="Black" stroke-width="1.875" x1="168" y1="33.75" x2="168" y2="43.125" />
 </g>
 <g>
 <g>
-<rect fill="Green" stroke="Black" stroke-width="1.875" x="198" y="7.5" width="130.5" height="90" rx="3.75" ry="3.75" />
+<rect fill="Green" stroke="Black" stroke-width="1.875" x="198" y="7.5" width="130.5" height="71.25" rx="3.75" ry="3.75" />
 <text x="205.5" y="30">NoDevice</text>
 <text x="205.5" y="48.75">Observation</text>
 <text x="205.5" y="67.5">Fragment</text>
-<a href="StructureDefinition-BreastRadObservationNoDeviceFragment.html" target="_blank">
-<title>Resource 'BreastRadObservationNoDeviceFragment'</title>
-<text x="205.5" y="86.25">[Resource]</text>
-</a>
 </g>
 <line stroke="Black" stroke-width="1.875" marker-end="url(#arrowEnd)" x1="358.5" y1="33.75" x2="388.5" y2="33.75" />
 <line stroke="Black" stroke-width="1.875" marker-end="url(#arrowEnd)" x1="358.5" y1="93.75" x2="388.5" y2="93.75" />
@@ -85,7 +77,7 @@
 <line stroke="Black" stroke-width="1.875" marker-end="url(#arrowEnd)" x1="358.5" y1="2760" x2="388.5" y2="2760" />
 <line stroke="Black" stroke-width="1.875" marker-end="url(#arrowEnd)" x1="358.5" y1="2820" x2="388.5" y2="2820" />
 <line stroke="Black" stroke-width="1.875" marker-end="url(#arrowEnd)" x1="358.5" y1="2880" x2="388.5" y2="2880" />
-<line stroke="Black" stroke-width="1.875" marker-start="url(#arrowStart)" x1="328.5" y1="52.5" x2="358.5" y2="52.5" />
+<line stroke="Black" stroke-width="1.875" marker-start="url(#arrowStart)" x1="328.5" y1="43.125" x2="358.5" y2="43.125" />
 <line stroke="Black" stroke-width="1.875" x1="358.5" y1="33.75" x2="358.5" y2="2880" />
 </g>
 <g>

@@ -12,12 +12,8 @@
 <g />
 <g>
 <g>
-<rect fill="Green" stroke="Black" stroke-width="1.875" x="67.5" y="7.5" width="141" height="52.5" rx="3.75" ry="3.75" />
+<rect fill="Green" stroke="Black" stroke-width="1.875" x="67.5" y="7.5" width="141" height="33.75" rx="3.75" ry="3.75" />
 <text x="75" y="30">ImagingStudy</text>
-<a href="StructureDefinition-ImagingStudyFragment.html" target="_blank">
-<title>Resource 'ImagingStudyFragment'</title>
-<text x="75" y="48.75">[Resource]</text>
-</a>
 </g>
 <line stroke="Black" stroke-width="1.875" marker-end="url(#arrowEnd)" x1="238.5" y1="33.75" x2="268.5" y2="33.75" />
 <line stroke="Black" stroke-width="1.875" marker-end="url(#arrowEnd)" x1="238.5" y1="93.75" x2="268.5" y2="93.75" />
@@ -26,8 +22,8 @@
 <line stroke="Black" stroke-width="1.875" marker-end="url(#arrowEnd)" x1="238.5" y1="273.75" x2="268.5" y2="273.75" />
 <line stroke="Black" stroke-width="1.875" marker-end="url(#arrowEnd)" x1="238.5" y1="343.125" x2="268.5" y2="343.125" />
 <line stroke="Black" stroke-width="1.875" marker-end="url(#arrowEnd)" x1="238.5" y1="412.5" x2="268.5" y2="412.5" />
-<line stroke="Black" stroke-width="1.875" marker-start="url(#arrowStart)" x1="208.5" y1="33.75" x2="238.5" y2="33.75" />
-<line stroke="Black" stroke-width="1.875" x1="238.5" y1="33.75" x2="238.5" y2="412.5" />
+<line stroke="Black" stroke-width="1.875" marker-start="url(#arrowStart)" x1="208.5" y1="24.375" x2="238.5" y2="24.375" />
+<line stroke="Black" stroke-width="1.875" x1="238.5" y1="24.375" x2="238.5" y2="412.5" />
 </g>
 <g>
 <g>

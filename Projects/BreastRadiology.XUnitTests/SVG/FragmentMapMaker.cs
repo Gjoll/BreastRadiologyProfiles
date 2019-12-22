@@ -93,6 +93,7 @@ namespace BreastRadiology.XUnitTests
                 node.AddTextLine(s, hRef, title);
             }
 
+            if (mapNode.IsFragment == false)
             {
                 String hRef = $"{mapNode.StructureName}-{mapNode.Name}.html";
                 String title = $"Resource '{mapNode.Name}'";
@@ -149,7 +150,7 @@ namespace BreastRadiology.XUnitTests
                 .AppendLine($"<object data=\"{svgName}\" type=\"image/svg+xml\">")
                 .AppendLine($"    <img src=\"{svgName}\" alt=\"{fragmentNode.Focus.Name}\"/>")
                 .AppendLine($"</object>");
-                ;
+            ;
         }
 
         void GraphNodes()

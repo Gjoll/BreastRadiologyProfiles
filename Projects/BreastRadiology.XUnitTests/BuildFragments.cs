@@ -259,22 +259,26 @@ namespace BreastRadiology.XUnitTests
                     map.CreateMapNode(ResourcesMaker.ClinicalImpressionUrl,
                         new string[] { "Clinical", "Impression" },
                         "StructureDefinition",
-                        "ClinicalImpression");
+                        "ClinicalImpression",
+                        false);
 
                     map.CreateMapNode(ResourcesMaker.MedicationRequestUrl,
                         new string[] { "Medication", "Request" },
                         "StructureDefinition",
-                        "MedicationRequest");
+                        "MedicationRequest",
+                        false);
 
                     map.CreateMapNode(ResourcesMaker.ServiceRequestUrl,
                         new string[] { "Service", "Request" },
                         "StructureDefinition",
-                        "ServiceRequest");
+                        "ServiceRequest",
+                        false);
 
                     map.CreateMapNode(ResourcesMaker.RiskAssessmentUrl,
                         new string[] { "Risk", "Assessment" },
                         "StructureDefinition",
-                        "RiskAssessment");
+                        "RiskAssessment",
+                        false);
 
                     map.AddDir(this.resourcesDir, "*.json");
                     {

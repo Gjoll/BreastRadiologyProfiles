@@ -1,6 +1,6 @@
 <?xml version="1.0"?>
 <!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
-<svg xmlns="http://www.w3.org/2000/svg" version="1.1" width="490.5" height="1061.25">
+<svg xmlns="http://www.w3.org/2000/svg" version="1.1" width="448.5" height="967.5">
 <defs>
 <marker id="arrowStart" markerWidth="3.75" markerHeight="3.75" markerUnits="px" refX="1.875" refY="1.875">
 <circle fill="Black" stroke-width="0" cx="1.875" cy="1.875" r="1.875" />
@@ -12,227 +12,203 @@
 <g />
 <g>
 <g>
-<rect fill="Green" stroke="Black" stroke-width="1.875" x="67.5" y="7.5" width="120" height="52.5" rx="3.75" ry="3.75" />
+<rect fill="Green" stroke="Black" stroke-width="1.875" x="67.5" y="7.5" width="78" height="33.75" rx="3.75" ry="3.75" />
 <text x="75" y="30">Common</text>
-<a href="StructureDefinition-HeaderFragment.html" target="_blank">
-<title>Resource 'HeaderFragment'</title>
-<text x="75" y="48.75">[Resource]</text>
-</a>
 </g>
-<line stroke="Black" stroke-width="1.875" marker-end="url(#arrowEnd)" x1="217.5" y1="52.5" x2="247.5" y2="52.5" />
-<line stroke="Black" stroke-width="1.875" marker-end="url(#arrowEnd)" x1="217.5" y1="131.25" x2="247.5" y2="131.25" />
-<line stroke="Black" stroke-width="1.875" marker-end="url(#arrowEnd)" x1="217.5" y1="228.75" x2="247.5" y2="228.75" />
-<line stroke="Black" stroke-width="1.875" marker-end="url(#arrowEnd)" x1="217.5" y1="326.25" x2="247.5" y2="326.25" />
-<line stroke="Black" stroke-width="1.875" marker-end="url(#arrowEnd)" x1="217.5" y1="395.625" x2="247.5" y2="395.625" />
-<line stroke="Black" stroke-width="1.875" marker-end="url(#arrowEnd)" x1="217.5" y1="474.375" x2="247.5" y2="474.375" />
-<line stroke="Black" stroke-width="1.875" marker-end="url(#arrowEnd)" x1="217.5" y1="553.125" x2="247.5" y2="553.125" />
-<line stroke="Black" stroke-width="1.875" marker-end="url(#arrowEnd)" x1="217.5" y1="631.875" x2="247.5" y2="631.875" />
-<line stroke="Black" stroke-width="1.875" marker-end="url(#arrowEnd)" x1="217.5" y1="710.625" x2="247.5" y2="710.625" />
-<line stroke="Black" stroke-width="1.875" marker-end="url(#arrowEnd)" x1="217.5" y1="798.75" x2="247.5" y2="798.75" />
-<line stroke="Black" stroke-width="1.875" marker-end="url(#arrowEnd)" x1="217.5" y1="896.25" x2="247.5" y2="896.25" />
-<line stroke="Black" stroke-width="1.875" marker-end="url(#arrowEnd)" x1="217.5" y1="993.75" x2="247.5" y2="993.75" />
-<line stroke="Black" stroke-width="1.875" marker-start="url(#arrowStart)" x1="187.5" y1="33.75" x2="217.5" y2="33.75" />
-<line stroke="Black" stroke-width="1.875" x1="217.5" y1="33.75" x2="217.5" y2="993.75" />
+<line stroke="Black" stroke-width="1.875" marker-end="url(#arrowEnd)" x1="175.5" y1="43.125" x2="205.5" y2="43.125" />
+<line stroke="Black" stroke-width="1.875" marker-end="url(#arrowEnd)" x1="175.5" y1="112.5" x2="205.5" y2="112.5" />
+<line stroke="Black" stroke-width="1.875" marker-end="url(#arrowEnd)" x1="175.5" y1="200.625" x2="205.5" y2="200.625" />
+<line stroke="Black" stroke-width="1.875" marker-end="url(#arrowEnd)" x1="175.5" y1="288.75" x2="205.5" y2="288.75" />
+<line stroke="Black" stroke-width="1.875" marker-end="url(#arrowEnd)" x1="175.5" y1="358.125" x2="205.5" y2="358.125" />
+<line stroke="Black" stroke-width="1.875" marker-end="url(#arrowEnd)" x1="175.5" y1="427.5" x2="205.5" y2="427.5" />
+<line stroke="Black" stroke-width="1.875" marker-end="url(#arrowEnd)" x1="175.5" y1="496.875" x2="205.5" y2="496.875" />
+<line stroke="Black" stroke-width="1.875" marker-end="url(#arrowEnd)" x1="175.5" y1="575.625" x2="205.5" y2="575.625" />
+<line stroke="Black" stroke-width="1.875" marker-end="url(#arrowEnd)" x1="175.5" y1="654.375" x2="205.5" y2="654.375" />
+<line stroke="Black" stroke-width="1.875" marker-end="url(#arrowEnd)" x1="175.5" y1="742.5" x2="205.5" y2="742.5" />
+<line stroke="Black" stroke-width="1.875" marker-end="url(#arrowEnd)" x1="175.5" y1="830.625" x2="205.5" y2="830.625" />
+<line stroke="Black" stroke-width="1.875" marker-end="url(#arrowEnd)" x1="175.5" y1="909.375" x2="205.5" y2="909.375" />
+<line stroke="Black" stroke-width="1.875" marker-start="url(#arrowStart)" x1="145.5" y1="24.375" x2="175.5" y2="24.375" />
+<line stroke="Black" stroke-width="1.875" x1="175.5" y1="24.375" x2="175.5" y2="909.375" />
 </g>
 <g>
 <g>
-<rect fill="LightBlue" stroke="Black" stroke-width="1.875" x="247.5" y="7.5" width="120" height="90" rx="3.75" ry="3.75" />
+<rect fill="LightBlue" stroke="Black" stroke-width="1.875" x="205.5" y="7.5" width="120" height="71.25" rx="3.75" ry="3.75" />
 <a href="./StructureDefinition-FragmentAimAnnotationPolyLineFragment.html" target="_blank">
 <title>'Fragment AimAnnotationPolyLineFragment'</title>
-<text x="255" y="30">Annotation</text>
+<text x="213" y="30">Annotation</text>
 </a>
 <a href="./StructureDefinition-FragmentAimAnnotationPolyLineFragment.html" target="_blank">
 <title>'Fragment AimAnnotationPolyLineFragment'</title>
-<text x="255" y="48.75">PolyLine</text>
+<text x="213" y="48.75">PolyLine</text>
 </a>
 <a href="./StructureDefinition-FragmentAimAnnotationPolyLineFragment.html" target="_blank">
 <title>'Fragment AimAnnotationPolyLineFragment'</title>
-<text x="255" y="67.5">Fragment</text>
-</a>
-<a href="StructureDefinition-AimAnnotationPolyLineFragment.html" target="_blank">
-<title>Resource 'AimAnnotationPolyLineFragment'</title>
-<text x="255" y="86.25">[Resource]</text>
+<text x="213" y="67.5">Fragment</text>
 </a>
 </g>
 <g>
-<rect fill="LightBlue" stroke="Black" stroke-width="1.875" x="247.5" y="105" width="183" height="52.5" rx="3.75" ry="3.75" />
+<rect fill="LightBlue" stroke="Black" stroke-width="1.875" x="205.5" y="86.25" width="183" height="52.5" rx="3.75" ry="3.75" />
 <a href="./StructureDefinition-FragmentBreastBodyLocationExtension.html" target="_blank">
 <title>'Fragment BreastBodyLocationExtension'</title>
-<text x="255" y="127.5">Breast Body Loc.</text>
+<text x="213" y="108.75">Breast Body Loc.</text>
 </a>
 <a href="StructureDefinition-BreastBodyLocationExtension.html" target="_blank">
 <title>Resource 'BreastBodyLocationExtension'</title>
-<text x="255" y="146.25">[Resource]</text>
+<text x="213" y="127.5">[Resource]</text>
 </a>
 </g>
 <g>
-<rect fill="LightBlue" stroke="Black" stroke-width="1.875" x="247.5" y="165" width="120" height="127.5" rx="3.75" ry="3.75" />
+<rect fill="LightBlue" stroke="Black" stroke-width="1.875" x="205.5" y="146.25" width="120" height="108.75" rx="3.75" ry="3.75" />
 <a href="./StructureDefinition-FragmentBreastBodyLocationRequiredFragment.html" target="_blank">
 <title>'Fragment BreastBodyLocationRequiredFragment'</title>
-<text x="255" y="187.5">Breast</text>
+<text x="213" y="168.75">Breast</text>
 </a>
 <a href="./StructureDefinition-FragmentBreastBodyLocationRequiredFragment.html" target="_blank">
 <title>'Fragment BreastBodyLocationRequiredFragment'</title>
-<text x="255" y="206.25">Body</text>
+<text x="213" y="187.5">Body</text>
 </a>
 <a href="./StructureDefinition-FragmentBreastBodyLocationRequiredFragment.html" target="_blank">
 <title>'Fragment BreastBodyLocationRequiredFragment'</title>
-<text x="255" y="225">Location</text>
+<text x="213" y="206.25">Location</text>
 </a>
 <a href="./StructureDefinition-FragmentBreastBodyLocationRequiredFragment.html" target="_blank">
 <title>'Fragment BreastBodyLocationRequiredFragment'</title>
-<text x="255" y="243.75">Fragment</text>
+<text x="213" y="225">Fragment</text>
 </a>
 <a href="./StructureDefinition-FragmentBreastBodyLocationRequiredFragment.html" target="_blank">
 <title>'Fragment BreastBodyLocationRequiredFragment'</title>
-<text x="255" y="262.5">(Required)</text>
-</a>
-<a href="StructureDefinition-BreastBodyLocationRequiredFragment.html" target="_blank">
-<title>Resource 'BreastBodyLocationRequiredFragment'</title>
-<text x="255" y="281.25">[Resource]</text>
+<text x="213" y="243.75">(Required)</text>
 </a>
 </g>
 <g>
-<rect fill="LightBlue" stroke="Black" stroke-width="1.875" x="247.5" y="300" width="120" height="52.5" rx="3.75" ry="3.75" />
+<rect fill="LightBlue" stroke="Black" stroke-width="1.875" x="205.5" y="262.5" width="120" height="52.5" rx="3.75" ry="3.75" />
 <a href="./StructureDefinition-FragmentBreastRadImpression.html" target="_blank">
 <title>'Fragment BreastRadImpression'</title>
-<text x="255" y="322.5">Impression</text>
+<text x="213" y="285">Impression</text>
 </a>
 <a href="StructureDefinition-BreastRadImpression.html" target="_blank">
 <title>Resource 'BreastRadImpression'</title>
-<text x="255" y="341.25">[Resource]</text>
+<text x="213" y="303.75">[Resource]</text>
 </a>
 </g>
 <g>
-<rect fill="LightBlue" stroke="Black" stroke-width="1.875" x="247.5" y="360" width="130.5" height="71.25" rx="3.75" ry="3.75" />
+<rect fill="LightBlue" stroke="Black" stroke-width="1.875" x="205.5" y="322.5" width="130.5" height="71.25" rx="3.75" ry="3.75" />
 <a href="./StructureDefinition-FragmentBreastRadImpressionsExtension.html" target="_blank">
 <title>'Fragment BreastRadImpressionsExtension'</title>
-<text x="255" y="382.5">Impressions</text>
+<text x="213" y="345">Impressions</text>
 </a>
 <a href="./StructureDefinition-FragmentBreastRadImpressionsExtension.html" target="_blank">
 <title>'Fragment BreastRadImpressionsExtension'</title>
-<text x="255" y="401.25">Extension</text>
+<text x="213" y="363.75">Extension</text>
 </a>
 <a href="StructureDefinition-BreastRadImpressionsExtension.html" target="_blank">
 <title>Resource 'BreastRadImpressionsExtension'</title>
-<text x="255" y="420">[Resource]</text>
+<text x="213" y="382.5">[Resource]</text>
 </a>
 </g>
 <g>
-<rect fill="LightBlue" stroke="Black" stroke-width="1.875" x="247.5" y="438.75" width="130.5" height="71.25" rx="3.75" ry="3.75" />
+<rect fill="LightBlue" stroke="Black" stroke-width="1.875" x="205.5" y="401.25" width="130.5" height="52.5" rx="3.75" ry="3.75" />
 <a href="./StructureDefinition-FragmentBreastRadObservationFragment.html" target="_blank">
 <title>'Fragment BreastRadObservationFragment'</title>
-<text x="255" y="461.25">Observation</text>
+<text x="213" y="423.75">Observation</text>
 </a>
 <a href="./StructureDefinition-FragmentBreastRadObservationFragment.html" target="_blank">
 <title>'Fragment BreastRadObservationFragment'</title>
-<text x="255" y="480">Fragment</text>
-</a>
-<a href="StructureDefinition-BreastRadObservationFragment.html" target="_blank">
-<title>Resource 'BreastRadObservationFragment'</title>
-<text x="255" y="498.75">[Resource]</text>
+<text x="213" y="442.5">Fragment</text>
 </a>
 </g>
 <g>
-<rect fill="LightBlue" stroke="Black" stroke-width="1.875" x="247.5" y="517.5" width="130.5" height="71.25" rx="3.75" ry="3.75" />
+<rect fill="LightBlue" stroke="Black" stroke-width="1.875" x="205.5" y="461.25" width="130.5" height="71.25" rx="3.75" ry="3.75" />
 <a href="./StructureDefinition-FragmentBreastRadPatientRiskExtension.html" target="_blank">
 <title>'Fragment BreastRadPatientRiskExtension'</title>
-<text x="255" y="540">PatientRisk</text>
+<text x="213" y="483.75">PatientRisk</text>
 </a>
 <a href="./StructureDefinition-FragmentBreastRadPatientRiskExtension.html" target="_blank">
 <title>'Fragment BreastRadPatientRiskExtension'</title>
-<text x="255" y="558.75">Extension</text>
+<text x="213" y="502.5">Extension</text>
 </a>
 <a href="StructureDefinition-BreastRadPatientRiskExtension.html" target="_blank">
 <title>Resource 'BreastRadPatientRiskExtension'</title>
-<text x="255" y="577.5">[Resource]</text>
+<text x="213" y="521.25">[Resource]</text>
 </a>
 </g>
 <g>
-<rect fill="LightBlue" stroke="Black" stroke-width="1.875" x="247.5" y="596.25" width="151.49998" height="71.25" rx="3.75" ry="3.75" />
+<rect fill="LightBlue" stroke="Black" stroke-width="1.875" x="205.5" y="540" width="151.49998" height="71.25" rx="3.75" ry="3.75" />
 <a href="./StructureDefinition-FragmentBreastRadPriorReportsExtension.html" target="_blank">
 <title>'Fragment BreastRadPriorReportsExtension'</title>
-<text x="255" y="618.75">Prior Reports</text>
+<text x="213" y="562.5">Prior Reports</text>
 </a>
 <a href="./StructureDefinition-FragmentBreastRadPriorReportsExtension.html" target="_blank">
 <title>'Fragment BreastRadPriorReportsExtension'</title>
-<text x="255" y="637.5">Extension</text>
+<text x="213" y="581.25">Extension</text>
 </a>
 <a href="StructureDefinition-BreastRadPriorReportsExtension.html" target="_blank">
 <title>Resource 'BreastRadPriorReportsExtension'</title>
-<text x="255" y="656.25">[Resource]</text>
+<text x="213" y="600">[Resource]</text>
 </a>
 </g>
 <g>
-<rect fill="LightBlue" stroke="Black" stroke-width="1.875" x="247.5" y="675" width="172.5" height="71.25" rx="3.75" ry="3.75" />
+<rect fill="LightBlue" stroke="Black" stroke-width="1.875" x="205.5" y="618.75" width="172.5" height="71.25" rx="3.75" ry="3.75" />
 <a href="./StructureDefinition-FragmentBreastRadRecommendationsExtension.html" target="_blank">
 <title>'Fragment BreastRadRecommendationsExtension'</title>
-<text x="255" y="697.5">Recommendations</text>
+<text x="213" y="641.25">Recommendations</text>
 </a>
 <a href="./StructureDefinition-FragmentBreastRadRecommendationsExtension.html" target="_blank">
 <title>'Fragment BreastRadRecommendationsExtension'</title>
-<text x="255" y="716.25">Extension</text>
+<text x="213" y="660">Extension</text>
 </a>
 <a href="StructureDefinition-BreastRadRecommendationsExtension.html" target="_blank">
 <title>Resource 'BreastRadRecommendationsExtension'</title>
-<text x="255" y="735">[Resource]</text>
+<text x="213" y="678.75">[Resource]</text>
 </a>
 </g>
 <g>
-<rect fill="LightBlue" stroke="Black" stroke-width="1.875" x="247.5" y="753.75" width="120" height="90" rx="3.75" ry="3.75" />
+<rect fill="LightBlue" stroke="Black" stroke-width="1.875" x="205.5" y="697.5" width="120" height="90" rx="3.75" ry="3.75" />
 <a href="./StructureDefinition-FragmentBreastRadReport.html" target="_blank">
 <title>'Fragment BreastRadReport'</title>
-<text x="255" y="776.25">Breast</text>
+<text x="213" y="720">Breast</text>
 </a>
 <a href="./StructureDefinition-FragmentBreastRadReport.html" target="_blank">
 <title>'Fragment BreastRadReport'</title>
-<text x="255" y="795">Radiology</text>
+<text x="213" y="738.75">Radiology</text>
 </a>
 <a href="./StructureDefinition-FragmentBreastRadReport.html" target="_blank">
 <title>'Fragment BreastRadReport'</title>
-<text x="255" y="813.75">Report</text>
+<text x="213" y="757.5">Report</text>
 </a>
 <a href="StructureDefinition-BreastRadReport.html" target="_blank">
 <title>Resource 'BreastRadReport'</title>
-<text x="255" y="832.5">[Resource]</text>
+<text x="213" y="776.25">[Resource]</text>
 </a>
 </g>
 <g>
-<rect fill="LightBlue" stroke="Black" stroke-width="1.875" x="247.5" y="851.25" width="130.5" height="90" rx="3.75" ry="3.75" />
+<rect fill="LightBlue" stroke="Black" stroke-width="1.875" x="205.5" y="795" width="130.5" height="71.25" rx="3.75" ry="3.75" />
 <a href="./StructureDefinition-FragmentCodedValueObservationFragment.html" target="_blank">
 <title>'Fragment CodedValueObservationFragment'</title>
-<text x="255" y="873.75">Observation</text>
+<text x="213" y="817.5">Observation</text>
 </a>
 <a href="./StructureDefinition-FragmentCodedValueObservationFragment.html" target="_blank">
 <title>'Fragment CodedValueObservationFragment'</title>
-<text x="255" y="892.5">CodedValue</text>
+<text x="213" y="836.25">CodedValue</text>
 </a>
 <a href="./StructureDefinition-FragmentCodedValueObservationFragment.html" target="_blank">
 <title>'Fragment CodedValueObservationFragment'</title>
-<text x="255" y="911.25">Fragment</text>
-</a>
-<a href="StructureDefinition-CodedValueObservationFragment.html" target="_blank">
-<title>Resource 'CodedValueObservationFragment'</title>
-<text x="255" y="930">[Resource]</text>
+<text x="213" y="855">Fragment</text>
 </a>
 </g>
 <g>
-<rect fill="LightBlue" stroke="Black" stroke-width="1.875" x="247.5" y="948.75" width="130.5" height="90" rx="3.75" ry="3.75" />
+<rect fill="LightBlue" stroke="Black" stroke-width="1.875" x="205.5" y="873.75" width="130.5" height="71.25" rx="3.75" ry="3.75" />
 <a href="./StructureDefinition-FragmentObservationLeafFragment.html" target="_blank">
 <title>'Fragment ObservationLeafFragment'</title>
-<text x="255" y="971.25">Observation</text>
+<text x="213" y="896.25">Observation</text>
 </a>
 <a href="./StructureDefinition-FragmentObservationLeafFragment.html" target="_blank">
 <title>'Fragment ObservationLeafFragment'</title>
-<text x="255" y="990">Leaf</text>
+<text x="213" y="915">Leaf</text>
 </a>
 <a href="./StructureDefinition-FragmentObservationLeafFragment.html" target="_blank">
 <title>'Fragment ObservationLeafFragment'</title>
-<text x="255" y="1008.75">Fragment</text>
-</a>
-<a href="StructureDefinition-ObservationLeafFragment.html" target="_blank">
-<title>Resource 'ObservationLeafFragment'</title>
-<text x="255" y="1027.5">[Resource]</text>
+<text x="213" y="933.75">Fragment</text>
 </a>
 </g>
 </g>

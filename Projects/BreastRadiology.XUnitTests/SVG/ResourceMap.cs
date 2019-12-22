@@ -91,7 +91,14 @@ namespace BreastRadiology.XUnitTests
             if (String.IsNullOrEmpty(mapName) == true)
                 throw new Exception($"Mapname missing from {resourceUrl}");
             String[] mapNameArray = mapName.Split('/');
-            ResourceMap.Node retVal =  this.CreateMapNode(resourceUrl, mapNameArray, structureName, baseName);
+
+            Extension isFragmentExtension = r.GetExtension(Global.IsFragmentExtensionUrl);
+
+            ResourceMap.Node retVal =  this.CreateMapNode(resourceUrl, 
+                mapNameArray, 
+                structureName, 
+                baseName,
+                isFragmentExtension != null);
             foreach (Extension link in r.GetExtensions(Global.ResourceMapLinkUrl))
             {
                 FhirString s = (FhirString) link.Value;
@@ -103,11 +110,11 @@ namespace BreastRadiology.XUnitTests
         }
 
 
-        public ResourceMap.Node CreateMapNode(String url, String[] mapName, String structureName, String baseName)
+        public ResourceMap.Node CreateMapNode(String url, String[] mapName, String structureName, String baseName, bool fragment)
         {
             if (this.resources.TryGetValue(url, out ResourceMap.Node retVal) == true)
                 throw new Exception($"Map node {url} already exists");
-            retVal = new Node(url, mapName, structureName, baseName);
+            retVal = new Node(url, mapName, structureName, baseName, fragment);
             return retVal;
         }
     }
