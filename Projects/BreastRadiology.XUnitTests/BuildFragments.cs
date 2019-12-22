@@ -237,7 +237,7 @@ namespace BreastRadiology.XUnitTests
                     ResourceMap map = new ResourceMap();
                     map.AddDir(this.fragmentDir, "*.json");
 
-                    FragmentMapMaker fragmentMapMaker = new FragmentMapMaker(map, this.graphicsDir);
+                    FragmentMapMaker fragmentMapMaker = new FragmentMapMaker(map, this.graphicsDir, this.pageDir);
                     fragmentMapMaker.Create();
                 }
 
@@ -372,9 +372,12 @@ namespace BreastRadiology.XUnitTests
                 p.AddGrouping($"{ResourcesMaker.Group_AimCodes}VS", "AIM ValueSets", "This section contains value sets used specifically by AIM");
                 p.AddGrouping($"{ResourcesMaker.Group_AimCodes}CS", "AIM CodeSystems", "This section contains code systems used specifically by AIM");
 
+                p.AddGrouping($"{ResourcesMaker.Group_Fragments}", "Fragments", "This section the fragments that are used to define the resources");
+
                 p.AddGrouping($"{ResourcesMaker.Group_ExtensionResources}", "Extension", "Extension Resource Definitions");
 
                 p.AddResources(this.resourcesDir);
+                p.AddFragments(this.fragmentDir);
                 p.AddPageContent(this.pageDir);
                 p.AddPageContent(this.pageTemplateDir);
                 p.AddImages(this.graphicsDir);

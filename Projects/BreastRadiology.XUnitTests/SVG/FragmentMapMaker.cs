@@ -26,7 +26,8 @@ namespace BreastRadiology.XUnitTests
         ResourceMap map;
 
         public FragmentMapMaker(ResourceMap map,
-            String graphicsDir)
+            String graphicsDir,
+            String pageDir)
         {
             this.map = map;
             this.graphicsDir = graphicsDir;

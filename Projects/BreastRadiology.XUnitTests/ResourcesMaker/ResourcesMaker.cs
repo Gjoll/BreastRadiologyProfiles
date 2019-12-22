@@ -31,6 +31,8 @@ namespace BreastRadiology.XUnitTests
         public const String Group_CommonResources = "CommonResources";
         public const String Group_CommonCodes = "CommonCodes";
 
+        public const String Group_Fragments = "Fragments";
+
         public const String Group_AimResources = "AimResources";
         public const String Group_AimCodes = "AimCodes";
 

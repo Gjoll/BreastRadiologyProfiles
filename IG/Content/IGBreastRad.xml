@@ -81,6 +81,11 @@
         <generation value="html"/>
       </page>
       <page>
+        <nameUrl value="fragments.html"/>
+        <title value="Resource Fragments"/>
+        <generation value="html"/>
+      </page>
+      <page>
         <nameUrl value="downloads.html"/>
         <title value="Useful Downloads"/>
         <generation value="html"/>

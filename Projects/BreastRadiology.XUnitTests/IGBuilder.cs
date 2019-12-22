@@ -249,5 +249,62 @@ namespace BreastRadiology.XUnitTests
                 }
             }
         }
+
+
+
+
+        public void AddFragments(params String[] inputDirs)
+        {
+            const String fcn = "AddFragments";
+
+            void Save(Resource r, String outputName)
+            {
+                String outputPath = Path.Combine(this.resourceDir, outputName);
+                r.SaveJson(outputPath);
+                this.fc.Mark(outputPath);
+            }
+
+            List<StructureDefinition> structureDefinitions = new List<StructureDefinition>();
+            foreach (String inputDir in inputDirs)
+            {
+                foreach (String file in Directory.GetFiles(inputDir))
+                {
+                    String fhirText = File.ReadAllText(file);
+                    FhirJsonParser parser = new FhirJsonParser();
+                    var resource = parser.Parse(fhirText, typeof(Resource));
+                    switch (resource)
+                    {
+                        case StructureDefinition structureDefinition:
+                            Int32 index = structureDefinition.Url.LastIndexOf('/');
+                            structureDefinition.Url = structureDefinition.Url.Insert(index+1, "Fragment");
+                            structureDefinition.Name = $"Fragment{structureDefinition.Name}";
+                            structureDefinitions.Add(structureDefinition);
+                            break;
+                    }
+                }
+            }
+
+            structureDefinitions.Sort((a, b) => String.Compare(a.Url, b.Url));
+
+            foreach (StructureDefinition structureDefinition in structureDefinitions)
+            {
+                String fixedName = $"StructureDefinition-{structureDefinition.Name}";
+
+                if (structureDefinition.Snapshot == null)
+                    SnapshotCreator.Create(structureDefinition);
+                Extension isFragmentExtension = structureDefinition.GetExtension(Global.IsFragmentExtensionUrl);
+                {
+                    String groupId = "Fragments";
+                    Save(structureDefinition, $"{fixedName}.json");
+                    String shortDescription = $"Fragment '{structureDefinition.Snapshot.Element[0].Short}'";
+
+                    this.implementationGuide.AddIGResource($"StructureDefinition/{structureDefinition.Name}",
+                        structureDefinition.Title,
+                        shortDescription,
+                        groupId,
+                        false);
+                }
+            }
+        }
     }
 }

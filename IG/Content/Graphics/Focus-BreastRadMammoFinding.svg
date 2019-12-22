@@ -66,10 +66,10 @@
 </a>
 </g>
 <g>
-<rect fill="LightSalmon" stroke="Black" stroke-width="1.875" x="388.5" y="90" width="162" height="33.75" rx="3.75" ry="3.75" />
-<a href="./StructureDefinition-BreastRadMammoAsymmetries.html" target="_blank">
-<title>'BreastRadMammoAsymmetries'</title>
-<text x="396" y="112.5">Mg Asymmetries</text>
+<rect fill="LightSalmon" stroke="Black" stroke-width="1.875" x="388.5" y="90" width="141" height="33.75" rx="3.75" ry="3.75" />
+<a href="./StructureDefinition-BreastRadMammoAsymmetry.html" target="_blank">
+<title>'BreastRadMammoAsymmetry'</title>
+<text x="396" y="112.5">Mg Asymmetry</text>
 </a>
 </g>
 <g>

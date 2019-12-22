@@ -22,7 +22,7 @@
   "compose": {
     "include": [
       {
-        "system": "http://hl7.org/fhir/us/breast-radiology/CodeSystem/BreastRadMammoAsymmetriesCS",
+        "system": "http://hl7.org/fhir/us/breast-radiology/CodeSystem/BreastRadMammoAsymmetryRefinementCS",
         "concept": [
           {
             "code": "Asymmetry",

@@ -35,7 +35,7 @@
     },
     {
       "url": "http://www.fragment.com/maplink",
-      "valueString": "target|True|http://hl7.org/fhir/us/breast-radiology/StructureDefinition/BreastRadMammoAsymmetries"
+      "valueString": "target|True|http://hl7.org/fhir/us/breast-radiology/StructureDefinition/BreastRadMammoAsymmetry"
     },
     {
       "url": "http://www.fragment.com/maplink",
@@ -172,9 +172,9 @@
         ]
       },
       {
-        "id": "Observation.hasMember:breastRadMammoAsymmetries",
+        "id": "Observation.hasMember:breastRadMammoAsymmetry",
         "path": "Observation.hasMember",
-        "sliceName": "breastRadMammoAsymmetries",
+        "sliceName": "breastRadMammoAsymmetry",
         "min": 0,
         "max": "*",
         "base": {
@@ -186,7 +186,7 @@
           {
             "code": "Reference",
             "targetProfile": [
-              "http://hl7.org/fhir/us/breast-radiology/StructureDefinition/BreastRadMammoAsymmetries"
+              "http://hl7.org/fhir/us/breast-radiology/StructureDefinition/BreastRadMammoAsymmetry"
             ]
           }
         ]
