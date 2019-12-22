@@ -61,6 +61,26 @@
         <generation value="html"/>
       </page>
       <page>
+        <nameUrl value="mgfinding.html"/>
+        <title value="Mammography Finding"/>
+        <generation value="html"/>
+      </page>
+      <page>
+        <nameUrl value="usfinding.html"/>
+        <title value="Ultra-Sound Finding"/>
+        <generation value="html"/>
+      </page>
+      <page>
+        <nameUrl value="mrifinding.html"/>
+        <title value="MRI Finding"/>
+        <generation value="html"/>
+      </page>
+      <page>
+        <nameUrl value="nmfinding.html"/>
+        <title value="Nuclear Medicine Finding"/>
+        <generation value="html"/>
+      </page>
+      <page>
         <nameUrl value="downloads.html"/>
         <title value="Useful Downloads"/>
         <generation value="html"/>

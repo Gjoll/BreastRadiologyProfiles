@@ -1,6 +1,6 @@
 <?xml version="1.0"?>
 <!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
-<svg xmlns="http://www.w3.org/2000/svg" version="1.1" width="727.5" height="667.5">
+<svg xmlns="http://www.w3.org/2000/svg" version="1.1" width="727.5" height="648.75">
 <defs>
 <marker id="arrowStart" markerWidth="3.75" markerHeight="3.75" markerUnits="px" refX="1.875" refY="1.875">
 <circle fill="Black" stroke-width="0" cx="1.875" cy="1.875" r="1.875" />
@@ -177,11 +177,11 @@
 <line stroke="Black" stroke-width="1.875" marker-end="url(#arrowEnd)" x1="507" y1="444.375" x2="537" y2="444.375" />
 <line stroke="Black" stroke-width="1.875" marker-end="url(#arrowEnd)" x1="507" y1="485.625" x2="537" y2="485.625" />
 <line stroke="Black" stroke-width="1.875" marker-end="url(#arrowEnd)" x1="507" y1="526.875" x2="537" y2="526.875" />
-<line stroke="Black" stroke-width="1.875" marker-end="url(#arrowEnd)" x1="507" y1="577.5" x2="537" y2="577.5" />
-<line stroke="Black" stroke-width="1.875" marker-end="url(#arrowEnd)" x1="507" y1="628.125" x2="537" y2="628.125" />
+<line stroke="Black" stroke-width="1.875" marker-end="url(#arrowEnd)" x1="507" y1="568.125" x2="537" y2="568.125" />
+<line stroke="Black" stroke-width="1.875" marker-end="url(#arrowEnd)" x1="507" y1="609.375" x2="537" y2="609.375" />
 <line stroke="Black" stroke-width="1.875" marker-start="url(#arrowStart)" x1="466.49997" y1="444.375" x2="507" y2="444.375" />
 <line stroke="Black" stroke-width="1.875" marker-start="url(#arrowStart)" x1="477" y1="485.625" x2="507" y2="485.625" />
-<line stroke="Black" stroke-width="1.875" x1="507" y1="444.375" x2="507" y2="628.125" />
+<line stroke="Black" stroke-width="1.875" x1="507" y1="444.375" x2="507" y2="609.375" />
 </g>
 <g>
 <g>
@@ -212,23 +212,19 @@
 </g>
 <g>
 <g>
-<rect fill="LightSkyBlue" stroke="Black" stroke-width="1.875" x="537" y="551.25" width="88.5" height="52.5" rx="3.75" ry="3.75" />
+<rect fill="LightSkyBlue" stroke="Black" stroke-width="1.875" x="537" y="551.25" width="120" height="33.75" rx="3.75" ry="3.75" />
 <a href="./StructureDefinition-BreastRadNMFinding.html" target="_blank">
 <title>BreastRadNMFinding</title>
-<text x="544.5" y="573.75">NM</text>
-</a>
-<a href="./StructureDefinition-BreastRadNMFinding.html" target="_blank">
-<title>BreastRadNMFinding</title>
-<text x="544.5" y="592.5">Finding</text>
+<text x="544.5" y="573.75">NM Finding</text>
 </a>
 </g>
 </g>
 <g>
 <g>
-<rect fill="LightSkyBlue" stroke="Black" stroke-width="1.875" x="537" y="611.25" width="120" height="33.75" rx="3.75" ry="3.75" />
+<rect fill="LightSkyBlue" stroke="Black" stroke-width="1.875" x="537" y="592.5" width="120" height="33.75" rx="3.75" ry="3.75" />
 <a href="./StructureDefinition-BreastRadUltraSoundFinding.html" target="_blank">
 <title>BreastRadUltraSoundFinding</title>
-<text x="544.5" y="633.75">US Finding</text>
+<text x="544.5" y="615">US Finding</text>
 </a>
 </g>
 </g>

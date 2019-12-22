@@ -1,6 +1,6 @@
 <?xml version="1.0"?>
 <!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
-<svg xmlns="http://www.w3.org/2000/svg" version="1.1" width="727.5" height="708.75">
+<svg xmlns="http://www.w3.org/2000/svg" version="1.1" width="727.5" height="648.75">
 <defs>
 <marker id="arrowStart" markerWidth="3.75" markerHeight="3.75" markerUnits="px" refX="1.875" refY="1.875">
 <circle fill="Black" stroke-width="0" cx="1.875" cy="1.875" r="1.875" />
@@ -30,229 +30,201 @@
 </g>
 <g>
 <g>
-<rect fill="LightPink" stroke="Black" stroke-width="1.875" x="670.5" y="7.5" width="193.5" height="33.75" rx="3.75" ry="3.75" />
-<text x="678" y="30">MedicationRequest</text>
+<rect fill="LightBlue" stroke="Black" stroke-width="1.875" x="670.5" y="7.5" width="162" height="33.75" rx="3.75" ry="3.75" />
+<text x="678" y="30">ServiceRequest</text>
 </g>
 </g>
 <g>
 <g>
-<rect fill="LightBlue" stroke="Black" stroke-width="1.875" x="67.5" y="48.75" width="162" height="33.75" rx="3.75" ry="3.75" />
-<text x="75" y="71.25">ServiceRequest</text>
-</g>
-</g>
-<g>
-<g>
-<rect fill="LightGray" stroke="Black" stroke-width="1.875" x="289.5" y="48.75" width="162" height="33.75" rx="3.75" ry="3.75" />
-<text x="297" y="71.25">RiskAssessment</text>
-</g>
-</g>
-<g>
-<g>
-<rect fill="LightGoldenrodYellow" stroke="Black" stroke-width="1.875" x="511.49997" y="48.75" width="203.99998" height="33.75" rx="3.75" ry="3.75" />
-<text x="519" y="71.25">ClinicalImpression</text>
-</g>
-</g>
-<g>
-<g>
-<rect fill="LightCoral" stroke="Black" stroke-width="1.875" x="775.49994" y="48.75" width="141" height="33.75" rx="3.75" ry="3.75" />
-<text x="782.99994" y="71.25">ImagingStudy</text>
-</g>
-</g>
-<g>
-<g>
-<rect fill="LightGreen" stroke="Black" stroke-width="1.875" x="7.5" y="127.5" width="109.49999" height="71.25" rx="3.75" ry="3.75" />
+<rect fill="LightGreen" stroke="Black" stroke-width="1.875" x="7.5" y="86.25" width="109.49999" height="71.25" rx="3.75" ry="3.75" />
 <a href="./StructureDefinition-BreastRadReport.html" target="_blank">
 <title>BreastRadReport</title>
-<text x="15" y="150">Breast</text>
+<text x="15" y="108.75">Breast</text>
 </a>
 <a href="./StructureDefinition-BreastRadReport.html" target="_blank">
 <title>BreastRadReport</title>
-<text x="15" y="168.75">Radiology</text>
+<text x="15" y="127.5">Radiology</text>
 </a>
 <a href="./StructureDefinition-BreastRadReport.html" target="_blank">
 <title>BreastRadReport</title>
-<text x="15" y="187.5">Report</text>
+<text x="15" y="146.25">Report</text>
 </a>
 </g>
-<line stroke="Black" stroke-width="1.875" marker-end="url(#arrowEnd)" x1="146.99998" y1="153.75" x2="176.99998" y2="153.75" />
-<line stroke="Black" stroke-width="1.875" marker-end="url(#arrowEnd)" x1="146.99998" y1="213.75" x2="176.99998" y2="213.75" />
-<line stroke="Black" stroke-width="1.875" marker-end="url(#arrowEnd)" x1="146.99998" y1="292.5" x2="176.99998" y2="292.5" />
-<line stroke="Black" stroke-width="1.875" marker-end="url(#arrowEnd)" x1="146.99998" y1="352.5" x2="176.99998" y2="352.5" />
+<line stroke="Black" stroke-width="1.875" marker-end="url(#arrowEnd)" x1="146.99998" y1="112.5" x2="176.99998" y2="112.5" />
+<line stroke="Black" stroke-width="1.875" marker-end="url(#arrowEnd)" x1="146.99998" y1="172.5" x2="176.99998" y2="172.5" />
+<line stroke="Black" stroke-width="1.875" marker-end="url(#arrowEnd)" x1="146.99998" y1="251.25" x2="176.99998" y2="251.25" />
+<line stroke="Black" stroke-width="1.875" marker-end="url(#arrowEnd)" x1="146.99998" y1="311.25" x2="176.99998" y2="311.25" />
+<line stroke="Black" stroke-width="1.875" marker-end="url(#arrowEnd)" x1="146.99998" y1="361.875" x2="176.99998" y2="361.875" />
 <line stroke="Black" stroke-width="1.875" marker-end="url(#arrowEnd)" x1="146.99998" y1="403.125" x2="176.99998" y2="403.125" />
-<line stroke="Black" stroke-width="1.875" marker-end="url(#arrowEnd)" x1="146.99998" y1="444.375" x2="176.99998" y2="444.375" />
-<line stroke="Black" stroke-width="1.875" marker-start="url(#arrowStart)" x1="116.99999" y1="163.125" x2="146.99998" y2="163.125" />
-<line stroke="Black" stroke-width="1.875" x1="146.99998" y1="153.75" x2="146.99998" y2="444.375" />
+<line stroke="Black" stroke-width="1.875" marker-start="url(#arrowStart)" x1="116.99999" y1="121.875" x2="146.99998" y2="121.875" />
+<line stroke="Black" stroke-width="1.875" x1="146.99998" y1="112.5" x2="146.99998" y2="403.125" />
 </g>
 <g>
 <g>
-<rect fill="LightSalmon" stroke="Black" stroke-width="1.875" x="176.99998" y="127.5" width="172.5" height="52.5" rx="3.75" ry="3.75" />
+<rect fill="LightSalmon" stroke="Black" stroke-width="1.875" x="176.99998" y="86.25" width="172.5" height="52.5" rx="3.75" ry="3.75" />
 <a href="./StructureDefinition-BreastRadRecommendationsExtension.html" target="_blank">
 <title>BreastRadRecommendationsExtension</title>
-<text x="184.49998" y="150">Recommendations</text>
+<text x="184.49998" y="108.75">Recommendations</text>
 </a>
 <a href="./StructureDefinition-BreastRadRecommendationsExtension.html" target="_blank">
 <title>BreastRadRecommendationsExtension</title>
-<text x="184.49998" y="168.75">Extension</text>
+<text x="184.49998" y="127.5">Extension</text>
 </a>
 </g>
 </g>
 <g>
 <g>
-<rect fill="LightSalmon" stroke="Black" stroke-width="1.875" x="176.99998" y="187.5" width="151.49998" height="52.5" rx="3.75" ry="3.75" />
+<rect fill="LightSalmon" stroke="Black" stroke-width="1.875" x="176.99998" y="146.25" width="151.49998" height="52.5" rx="3.75" ry="3.75" />
 <a href="./StructureDefinition-BreastRadPriorReportsExtension.html" target="_blank">
 <title>BreastRadPriorReportsExtension</title>
-<text x="184.49998" y="210">Prior Reports</text>
+<text x="184.49998" y="168.75">Prior Reports</text>
 </a>
 <a href="./StructureDefinition-BreastRadPriorReportsExtension.html" target="_blank">
 <title>BreastRadPriorReportsExtension</title>
-<text x="184.49998" y="228.75">Extension</text>
+<text x="184.49998" y="187.5">Extension</text>
 </a>
 </g>
-<line stroke="Black" stroke-width="1.875" marker-end="url(#arrowEnd)" x1="358.49997" y1="223.125" x2="388.49997" y2="223.125" />
-<line stroke="Black" stroke-width="1.875" marker-start="url(#arrowStart)" x1="328.49997" y1="213.75" x2="358.49997" y2="213.75" />
-<line stroke="Black" stroke-width="1.875" x1="358.49997" y1="213.75" x2="358.49997" y2="223.125" />
+<line stroke="Black" stroke-width="1.875" marker-end="url(#arrowEnd)" x1="358.49997" y1="181.875" x2="388.49997" y2="181.875" />
+<line stroke="Black" stroke-width="1.875" marker-start="url(#arrowStart)" x1="328.49997" y1="172.5" x2="358.49997" y2="172.5" />
+<line stroke="Black" stroke-width="1.875" x1="358.49997" y1="172.5" x2="358.49997" y2="181.875" />
 </g>
 <g>
 <g>
-<rect fill="LightGreen" stroke="Black" stroke-width="1.875" x="388.49997" y="187.5" width="109.49999" height="71.25" rx="3.75" ry="3.75" />
+<rect fill="LightGreen" stroke="Black" stroke-width="1.875" x="388.49997" y="146.25" width="109.49999" height="71.25" rx="3.75" ry="3.75" />
 <a href="./StructureDefinition-BreastRadReport.html" target="_blank">
 <title>BreastRadReport</title>
-<text x="395.99997" y="210">Breast</text>
-</a>
-<a href="./StructureDefinition-BreastRadReport.html" target="_blank">
-<title>BreastRadReport</title>
-<text x="395.99997" y="228.75">Radiology</text>
+<text x="395.99997" y="168.75">Breast</text>
 </a>
 <a href="./StructureDefinition-BreastRadReport.html" target="_blank">
 <title>BreastRadReport</title>
-<text x="395.99997" y="247.5">Report</text>
+<text x="395.99997" y="187.5">Radiology</text>
+</a>
+<a href="./StructureDefinition-BreastRadReport.html" target="_blank">
+<title>BreastRadReport</title>
+<text x="395.99997" y="206.25">Report</text>
 </a>
 </g>
 </g>
 <g>
 <g>
-<rect fill="LightSalmon" stroke="Black" stroke-width="1.875" x="176.99998" y="266.25" width="130.5" height="52.5" rx="3.75" ry="3.75" />
+<rect fill="LightSalmon" stroke="Black" stroke-width="1.875" x="176.99998" y="225" width="130.5" height="52.5" rx="3.75" ry="3.75" />
 <a href="./StructureDefinition-BreastRadImpressionsExtension.html" target="_blank">
 <title>BreastRadImpressionsExtension</title>
-<text x="184.49998" y="288.75">Impressions</text>
+<text x="184.49998" y="247.5">Impressions</text>
 </a>
 <a href="./StructureDefinition-BreastRadImpressionsExtension.html" target="_blank">
 <title>BreastRadImpressionsExtension</title>
-<text x="184.49998" y="307.5">Extension</text>
+<text x="184.49998" y="266.25">Extension</text>
 </a>
 </g>
 <g>
-<rect fill="LightSalmon" stroke="Black" stroke-width="1.875" x="176.99998" y="326.25" width="130.5" height="52.5" rx="3.75" ry="3.75" />
+<rect fill="LightSalmon" stroke="Black" stroke-width="1.875" x="176.99998" y="285" width="130.5" height="52.5" rx="3.75" ry="3.75" />
 <a href="./StructureDefinition-BreastRadPatientRiskExtension.html" target="_blank">
 <title>BreastRadPatientRiskExtension</title>
-<text x="184.49998" y="348.75">PatientRisk</text>
+<text x="184.49998" y="307.5">PatientRisk</text>
 </a>
 <a href="./StructureDefinition-BreastRadPatientRiskExtension.html" target="_blank">
 <title>BreastRadPatientRiskExtension</title>
-<text x="184.49998" y="367.5">Extension</text>
+<text x="184.49998" y="326.25">Extension</text>
 </a>
 </g>
 <g>
-<rect fill="LightSkyBlue" stroke="Black" stroke-width="1.875" x="176.99998" y="386.25" width="172.5" height="33.75" rx="3.75" ry="3.75" />
+<rect fill="LightSkyBlue" stroke="Black" stroke-width="1.875" x="176.99998" y="345" width="172.5" height="33.75" rx="3.75" ry="3.75" />
 <a href="./StructureDefinition-BreastRadSectionPatientHistory.html" target="_blank">
 <title>BreastRadSectionPatientHistory</title>
-<text x="184.49998" y="408.75">Patient History</text>
+<text x="184.49998" y="367.5">Patient History</text>
 </a>
 </g>
 </g>
 <g>
 <g>
-<rect fill="LightSkyBlue" stroke="Black" stroke-width="1.875" x="176.99998" y="427.5" width="99" height="33.75" rx="3.75" ry="3.75" />
+<rect fill="LightSkyBlue" stroke="Black" stroke-width="1.875" x="176.99998" y="386.25" width="99" height="33.75" rx="3.75" ry="3.75" />
 <a href="./StructureDefinition-BreastRadSectionFindings.html" target="_blank">
 <title>BreastRadSectionFindings</title>
-<text x="184.49998" y="450">Findings</text>
+<text x="184.49998" y="408.75">Findings</text>
 </a>
 </g>
+<line stroke="Black" stroke-width="1.875" marker-end="url(#arrowEnd)" x1="306" y1="403.125" x2="336" y2="403.125" />
 <line stroke="Black" stroke-width="1.875" marker-end="url(#arrowEnd)" x1="306" y1="444.375" x2="336" y2="444.375" />
 <line stroke="Black" stroke-width="1.875" marker-end="url(#arrowEnd)" x1="306" y1="485.625" x2="336" y2="485.625" />
-<line stroke="Black" stroke-width="1.875" marker-end="url(#arrowEnd)" x1="306" y1="526.875" x2="336" y2="526.875" />
-<line stroke="Black" stroke-width="1.875" marker-start="url(#arrowStart)" x1="276" y1="444.375" x2="306" y2="444.375" />
-<line stroke="Black" stroke-width="1.875" x1="306" y1="444.375" x2="306" y2="526.875" />
+<line stroke="Black" stroke-width="1.875" marker-start="url(#arrowStart)" x1="276" y1="403.125" x2="306" y2="403.125" />
+<line stroke="Black" stroke-width="1.875" x1="306" y1="403.125" x2="306" y2="485.625" />
+</g>
+<g>
+<g>
+<rect fill="LightSkyBlue" stroke="Black" stroke-width="1.875" x="336" y="386.25" width="130.5" height="33.75" rx="3.75" ry="3.75" />
+<a href="./StructureDefinition-BiRadsAssessmentCategory.html" target="_blank">
+<title>BiRadsAssessmentCategory</title>
+<text x="343.5" y="408.75">BiRads Code</text>
+</a>
+</g>
 </g>
 <g>
 <g>
 <rect fill="LightSkyBlue" stroke="Black" stroke-width="1.875" x="336" y="427.5" width="130.5" height="33.75" rx="3.75" ry="3.75" />
-<a href="./StructureDefinition-BiRadsAssessmentCategory.html" target="_blank">
-<title>BiRadsAssessmentCategory</title>
-<text x="343.5" y="450">BiRads Code</text>
-</a>
-</g>
-</g>
-<g>
-<g>
-<rect fill="LightSkyBlue" stroke="Black" stroke-width="1.875" x="336" y="468.75" width="130.5" height="33.75" rx="3.75" ry="3.75" />
 <a href="./StructureDefinition-BreastRadSectionFindingsLeftBreast.html" target="_blank">
 <title>BreastRadSectionFindingsLeftBreast</title>
-<text x="343.5" y="491.25">Left Breast</text>
+<text x="343.5" y="450">Left Breast</text>
 </a>
 </g>
 <g>
-<rect fill="LightSkyBlue" stroke="Black" stroke-width="1.875" x="336" y="510" width="141" height="33.75" rx="3.75" ry="3.75" />
+<rect fill="LightSkyBlue" stroke="Black" stroke-width="1.875" x="336" y="468.75" width="141" height="33.75" rx="3.75" ry="3.75" />
 <a href="./StructureDefinition-BreastRadSectionFindingsRightBreast.html" target="_blank">
 <title>BreastRadSectionFindingsRightBreast</title>
-<text x="343.5" y="532.5">Right Breast</text>
+<text x="343.5" y="491.25">Right Breast</text>
 </a>
 </g>
+<line stroke="Black" stroke-width="1.875" marker-end="url(#arrowEnd)" x1="507" y1="444.375" x2="537" y2="444.375" />
 <line stroke="Black" stroke-width="1.875" marker-end="url(#arrowEnd)" x1="507" y1="485.625" x2="537" y2="485.625" />
 <line stroke="Black" stroke-width="1.875" marker-end="url(#arrowEnd)" x1="507" y1="526.875" x2="537" y2="526.875" />
 <line stroke="Black" stroke-width="1.875" marker-end="url(#arrowEnd)" x1="507" y1="568.125" x2="537" y2="568.125" />
-<line stroke="Black" stroke-width="1.875" marker-end="url(#arrowEnd)" x1="507" y1="618.75" x2="537" y2="618.75" />
-<line stroke="Black" stroke-width="1.875" marker-end="url(#arrowEnd)" x1="507" y1="669.375" x2="537" y2="669.375" />
-<line stroke="Black" stroke-width="1.875" marker-start="url(#arrowStart)" x1="466.49997" y1="485.625" x2="507" y2="485.625" />
-<line stroke="Black" stroke-width="1.875" marker-start="url(#arrowStart)" x1="477" y1="526.875" x2="507" y2="526.875" />
-<line stroke="Black" stroke-width="1.875" x1="507" y1="485.625" x2="507" y2="669.375" />
+<line stroke="Black" stroke-width="1.875" marker-end="url(#arrowEnd)" x1="507" y1="609.375" x2="537" y2="609.375" />
+<line stroke="Black" stroke-width="1.875" marker-start="url(#arrowStart)" x1="466.49997" y1="444.375" x2="507" y2="444.375" />
+<line stroke="Black" stroke-width="1.875" marker-start="url(#arrowStart)" x1="477" y1="485.625" x2="507" y2="485.625" />
+<line stroke="Black" stroke-width="1.875" x1="507" y1="444.375" x2="507" y2="609.375" />
 </g>
 <g>
 <g>
-<rect fill="LightSkyBlue" stroke="Black" stroke-width="1.875" x="537" y="468.75" width="130.5" height="33.75" rx="3.75" ry="3.75" />
+<rect fill="LightSkyBlue" stroke="Black" stroke-width="1.875" x="537" y="427.5" width="130.5" height="33.75" rx="3.75" ry="3.75" />
 <a href="./StructureDefinition-BiRadsAssessmentCategory.html" target="_blank">
 <title>BiRadsAssessmentCategory</title>
-<text x="544.5" y="491.25">BiRads Code</text>
+<text x="544.5" y="450">BiRads Code</text>
 </a>
 </g>
 </g>
 <g>
 <g>
-<rect fill="LightSkyBlue" stroke="Black" stroke-width="1.875" x="537" y="510" width="120" height="33.75" rx="3.75" ry="3.75" />
+<rect fill="LightSkyBlue" stroke="Black" stroke-width="1.875" x="537" y="468.75" width="120" height="33.75" rx="3.75" ry="3.75" />
 <a href="./StructureDefinition-BreastRadMammoFinding.html" target="_blank">
 <title>BreastRadMammoFinding</title>
-<text x="544.5" y="532.5">Mg Finding</text>
+<text x="544.5" y="491.25">Mg Finding</text>
 </a>
 </g>
 </g>
 <g>
 <g>
-<rect fill="LightSkyBlue" stroke="Black" stroke-width="1.875" x="537" y="551.25" width="130.5" height="33.75" rx="3.75" ry="3.75" />
+<rect fill="LightSkyBlue" stroke="Black" stroke-width="1.875" x="537" y="510" width="130.5" height="33.75" rx="3.75" ry="3.75" />
 <a href="./StructureDefinition-BreastRadMRIFinding.html" target="_blank">
 <title>BreastRadMRIFinding</title>
-<text x="544.5" y="573.75">MRI Finding</text>
+<text x="544.5" y="532.5">MRI Finding</text>
 </a>
 </g>
 </g>
 <g>
 <g>
-<rect fill="LightSkyBlue" stroke="Black" stroke-width="1.875" x="537" y="592.5" width="88.5" height="52.5" rx="3.75" ry="3.75" />
+<rect fill="LightSkyBlue" stroke="Black" stroke-width="1.875" x="537" y="551.25" width="120" height="33.75" rx="3.75" ry="3.75" />
 <a href="./StructureDefinition-BreastRadNMFinding.html" target="_blank">
 <title>BreastRadNMFinding</title>
-<text x="544.5" y="615">NM</text>
-</a>
-<a href="./StructureDefinition-BreastRadNMFinding.html" target="_blank">
-<title>BreastRadNMFinding</title>
-<text x="544.5" y="633.75">Finding</text>
+<text x="544.5" y="573.75">NM Finding</text>
 </a>
 </g>
 </g>
 <g>
 <g>
-<rect fill="LightSkyBlue" stroke="Black" stroke-width="1.875" x="537" y="652.5" width="120" height="33.75" rx="3.75" ry="3.75" />
+<rect fill="LightSkyBlue" stroke="Black" stroke-width="1.875" x="537" y="592.5" width="120" height="33.75" rx="3.75" ry="3.75" />
 <a href="./StructureDefinition-BreastRadUltraSoundFinding.html" target="_blank">
 <title>BreastRadUltraSoundFinding</title>
-<text x="544.5" y="675">US Finding</text>
+<text x="544.5" y="615">US Finding</text>
 </a>
 </g>
 </g>

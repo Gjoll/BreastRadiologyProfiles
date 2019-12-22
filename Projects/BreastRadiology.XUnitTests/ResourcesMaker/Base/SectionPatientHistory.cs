@@ -47,6 +47,7 @@ namespace BreastRadiology.XUnitTests
                    .AddFragRef(await this.ObservationSectionFragment())
                    .AddFragRef(await this.ObservationNoValueFragment())
                    ;
+                e.Select("value[x]").Zero();
                e.Select("bodySite").Zero();
 
                e.IntroDoc

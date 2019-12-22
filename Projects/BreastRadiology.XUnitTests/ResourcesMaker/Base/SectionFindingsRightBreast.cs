@@ -29,32 +29,33 @@ namespace BreastRadiology.XUnitTests
         {
             await VTask.Run(async () =>
             {
-               SDefEditor e = this.CreateEditor("BreastRadSectionFindingsRightBreast",
-                       "Findings Right Breast",
-                       "Right Breast",
-                       ObservationUrl,
-                       $"{Group_BaseResources}/Findings/RightBreast",
-                       out this.sectionFindingsRightBreast)
-                   .Description("Findings Right Breast Section",
-                       new Markdown()
-                       .Paragraph("This resource is the head of the tree of observations made of the right breast during a breast radiology exam.")
-                       .Paragraph("Child observations are referenced by the 'Observation.hasMember' field.")
-                       .Todo(
-                       )
-                   )
-                   .AddFragRef(await this.ObservationNoDeviceFragment())
-                   .AddFragRef(await this.ObservationSectionFragment())
-                   .AddFragRef(await this.ObservationNoValueFragment())
-                   ;
-               e.Select("bodySite").Zero();
-               e.Find("hasMember").SliceByUrl(await this.FindingBreastTargets());
-               e.AddProfileTargets(await this.FindingBreastTargets());
-
-               e.IntroDoc
-                    .ReviewedStatus(ReviewStatus.NotReviewed)
-                    .ObservationSection($"Abnormality Right Breast Finding")
+                SDefEditor e = this.CreateEditor("BreastRadSectionFindingsRightBreast",
+                        "Findings Right Breast",
+                        "Right Breast",
+                        ObservationUrl,
+                        $"{Group_BaseResources}/Findings/RightBreast",
+                        out this.sectionFindingsRightBreast)
+                    .Description("Findings Right Breast Section",
+                        new Markdown()
+                        .Paragraph("This resource is the head of the tree of observations made of the right breast during a breast radiology exam.")
+                        .Paragraph("Child observations are referenced by the 'Observation.hasMember' field.")
+                        .Todo(
+                        )
+                    )
+                    .AddFragRef(await this.ObservationNoDeviceFragment())
+                    .AddFragRef(await this.ObservationSectionFragment())
+                    .AddFragRef(await this.ObservationNoValueFragment())
                     ;
+                e.Select("value[x]").Zero();
+                e.Select("bodySite").Zero();
+                e.Find("hasMember").SliceByUrl(await this.FindingBreastTargets());
+                e.AddProfileTargets(await this.FindingBreastTargets());
+
+                e.IntroDoc
+                     .ReviewedStatus(ReviewStatus.NotReviewed)
+                     .ObservationSection($"Abnormality Right Breast Finding")
+                     ;
             });
-       }
+        }
     }
 }

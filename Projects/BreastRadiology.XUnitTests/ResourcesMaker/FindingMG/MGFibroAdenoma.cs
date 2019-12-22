@@ -74,6 +74,7 @@ namespace BreastRadiology.XUnitTests
                 }
 
                 e.Select("value[x]")
+                    .ZeroToOne()
                     .Type("CodeableConcept")
                     .Binding(binding.Url, BindingStrength.Required)
                     ;

@@ -3,7 +3,7 @@
   "extension": [
     {
       "url": "http://www.fragment.com/mapname",
-      "valueString": "NM/Finding"
+      "valueString": "NM Finding"
     },
     {
       "url": "http://www.fragment.com/Group",
@@ -50,6 +50,17 @@
         "definition": "*** TODO Items ***** Device Metrics detailing the observation devices parameters (transducer freq, etc).",
         "min": 0,
         "max": "*"
+      },
+      {
+        "id": "Observation.value[x]",
+        "path": "Observation.value[x]",
+        "min": 0,
+        "max": "0",
+        "base": {
+          "path": "Observation.value[x]",
+          "min": 0,
+          "max": "1"
+        }
       },
       {
         "id": "Observation.hasMember",

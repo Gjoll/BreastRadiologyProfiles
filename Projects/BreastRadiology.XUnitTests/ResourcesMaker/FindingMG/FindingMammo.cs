@@ -41,6 +41,7 @@ namespace BreastRadiology.XUnitTests
                     .AddFragRef(await this.ObservationSectionFragment())
                     .AddFragRef(await this.ObservationNoValueFragment())
                     ;
+                e.Select("value[x]").Zero();
                 ////$ todo. Incorrect method!!!
                 //e.Find("method")
                 // .FixedCodeSlice("method", "http://snomed.info/sct", "115341008")
