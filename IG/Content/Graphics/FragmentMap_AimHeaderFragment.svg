@@ -15,8 +15,8 @@
 <rect fill="Green" stroke="Black" stroke-width="1.875" x="67.5" y="7.5" width="120" height="71.25" rx="3.75" ry="3.75" />
 <text x="75" y="30">Common</text>
 <text x="75" y="48.75">Header</text>
-<a href="../Guide/Output/StructureDefinition-AimHeaderFragment.html" target="_blank">
-<title>'AimHeaderFragment'</title>
+<a href="StructureDefinition-AimHeaderFragment.html" target="_blank">
+<title>Resource 'AimHeaderFragment'</title>
 <text x="75" y="67.5">[Resource]</text>
 </a>
 </g>
@@ -28,35 +28,35 @@
 <g>
 <g>
 <rect fill="LightBlue" stroke="Black" stroke-width="1.875" x="247.5" y="7.5" width="151.49998" height="71.25" rx="3.75" ry="3.75" />
-<a href="./FragmentMap_AimAnnotatedImagingStudy.svg" target="_blank">
-<title>'FragmentMap_AimAnnotatedImagingStudy.svg'</title>
+<a href="./StructureDefinition-FragmentAimAnnotatedImagingStudy.html" target="_blank">
+<title>'Fragment AimAnnotatedImagingStudy'</title>
 <text x="255" y="30">Annotated</text>
 </a>
-<a href="./FragmentMap_AimAnnotatedImagingStudy.svg" target="_blank">
-<title>'FragmentMap_AimAnnotatedImagingStudy.svg'</title>
+<a href="./StructureDefinition-FragmentAimAnnotatedImagingStudy.html" target="_blank">
+<title>'Fragment AimAnnotatedImagingStudy'</title>
 <text x="255" y="48.75">Imaging Study</text>
 </a>
-<a href="../Guide/Output/StructureDefinition-AimAnnotatedImagingStudy.html" target="_blank">
-<title>'AimAnnotatedImagingStudy'</title>
+<a href="StructureDefinition-AimAnnotatedImagingStudy.html" target="_blank">
+<title>Resource 'AimAnnotatedImagingStudy'</title>
 <text x="255" y="67.5">[Resource]</text>
 </a>
 </g>
 <g>
 <rect fill="LightBlue" stroke="Black" stroke-width="1.875" x="247.5" y="86.25" width="120" height="90" rx="3.75" ry="3.75" />
-<a href="./FragmentMap_AimAnnotationPolyLineExtension.svg" target="_blank">
-<title>'FragmentMap_AimAnnotationPolyLineExtension.svg'</title>
+<a href="./StructureDefinition-FragmentAimAnnotationPolyLineExtension.html" target="_blank">
+<title>'Fragment AimAnnotationPolyLineExtension'</title>
 <text x="255" y="108.75">Annotation</text>
 </a>
-<a href="./FragmentMap_AimAnnotationPolyLineExtension.svg" target="_blank">
-<title>'FragmentMap_AimAnnotationPolyLineExtension.svg'</title>
+<a href="./StructureDefinition-FragmentAimAnnotationPolyLineExtension.html" target="_blank">
+<title>'Fragment AimAnnotationPolyLineExtension'</title>
 <text x="255" y="127.5">PolyLine</text>
 </a>
-<a href="./FragmentMap_AimAnnotationPolyLineExtension.svg" target="_blank">
-<title>'FragmentMap_AimAnnotationPolyLineExtension.svg'</title>
+<a href="./StructureDefinition-FragmentAimAnnotationPolyLineExtension.html" target="_blank">
+<title>'Fragment AimAnnotationPolyLineExtension'</title>
 <text x="255" y="146.25">Location</text>
 </a>
-<a href="../Guide/Output/StructureDefinition-AimAnnotationPolyLineExtension.html" target="_blank">
-<title>'AimAnnotationPolyLineExtension'</title>
+<a href="StructureDefinition-AimAnnotationPolyLineExtension.html" target="_blank">
+<title>Resource 'AimAnnotationPolyLineExtension'</title>
 <text x="255" y="165">[Resource]</text>
 </a>
 </g>

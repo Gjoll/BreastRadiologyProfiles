@@ -14,8 +14,8 @@
 <g>
 <rect fill="Green" stroke="Black" stroke-width="1.875" x="67.5" y="7.5" width="120" height="52.5" rx="3.75" ry="3.75" />
 <text x="75" y="30">Common</text>
-<a href="../Guide/Output/StructureDefinition-HeaderFragment.html" target="_blank">
-<title>'HeaderFragment'</title>
+<a href="StructureDefinition-HeaderFragment.html" target="_blank">
+<title>Resource 'HeaderFragment'</title>
 <text x="75" y="48.75">[Resource]</text>
 </a>
 </g>
@@ -37,201 +37,201 @@
 <g>
 <g>
 <rect fill="LightBlue" stroke="Black" stroke-width="1.875" x="247.5" y="7.5" width="120" height="90" rx="3.75" ry="3.75" />
-<a href="./FragmentMap_AimAnnotationPolyLineFragment.svg" target="_blank">
-<title>'FragmentMap_AimAnnotationPolyLineFragment.svg'</title>
+<a href="./StructureDefinition-FragmentAimAnnotationPolyLineFragment.html" target="_blank">
+<title>'Fragment AimAnnotationPolyLineFragment'</title>
 <text x="255" y="30">Annotation</text>
 </a>
-<a href="./FragmentMap_AimAnnotationPolyLineFragment.svg" target="_blank">
-<title>'FragmentMap_AimAnnotationPolyLineFragment.svg'</title>
+<a href="./StructureDefinition-FragmentAimAnnotationPolyLineFragment.html" target="_blank">
+<title>'Fragment AimAnnotationPolyLineFragment'</title>
 <text x="255" y="48.75">PolyLine</text>
 </a>
-<a href="./FragmentMap_AimAnnotationPolyLineFragment.svg" target="_blank">
-<title>'FragmentMap_AimAnnotationPolyLineFragment.svg'</title>
+<a href="./StructureDefinition-FragmentAimAnnotationPolyLineFragment.html" target="_blank">
+<title>'Fragment AimAnnotationPolyLineFragment'</title>
 <text x="255" y="67.5">Fragment</text>
 </a>
-<a href="../Guide/Output/StructureDefinition-AimAnnotationPolyLineFragment.html" target="_blank">
-<title>'AimAnnotationPolyLineFragment'</title>
+<a href="StructureDefinition-AimAnnotationPolyLineFragment.html" target="_blank">
+<title>Resource 'AimAnnotationPolyLineFragment'</title>
 <text x="255" y="86.25">[Resource]</text>
 </a>
 </g>
 <g>
 <rect fill="LightBlue" stroke="Black" stroke-width="1.875" x="247.5" y="105" width="183" height="52.5" rx="3.75" ry="3.75" />
-<a href="./FragmentMap_BreastBodyLocationExtension.svg" target="_blank">
-<title>'FragmentMap_BreastBodyLocationExtension.svg'</title>
+<a href="./StructureDefinition-FragmentBreastBodyLocationExtension.html" target="_blank">
+<title>'Fragment BreastBodyLocationExtension'</title>
 <text x="255" y="127.5">Breast Body Loc.</text>
 </a>
-<a href="../Guide/Output/StructureDefinition-BreastBodyLocationExtension.html" target="_blank">
-<title>'BreastBodyLocationExtension'</title>
+<a href="StructureDefinition-BreastBodyLocationExtension.html" target="_blank">
+<title>Resource 'BreastBodyLocationExtension'</title>
 <text x="255" y="146.25">[Resource]</text>
 </a>
 </g>
 <g>
 <rect fill="LightBlue" stroke="Black" stroke-width="1.875" x="247.5" y="165" width="120" height="127.5" rx="3.75" ry="3.75" />
-<a href="./FragmentMap_BreastBodyLocationRequiredFragment.svg" target="_blank">
-<title>'FragmentMap_BreastBodyLocationRequiredFragment.svg'</title>
+<a href="./StructureDefinition-FragmentBreastBodyLocationRequiredFragment.html" target="_blank">
+<title>'Fragment BreastBodyLocationRequiredFragment'</title>
 <text x="255" y="187.5">Breast</text>
 </a>
-<a href="./FragmentMap_BreastBodyLocationRequiredFragment.svg" target="_blank">
-<title>'FragmentMap_BreastBodyLocationRequiredFragment.svg'</title>
+<a href="./StructureDefinition-FragmentBreastBodyLocationRequiredFragment.html" target="_blank">
+<title>'Fragment BreastBodyLocationRequiredFragment'</title>
 <text x="255" y="206.25">Body</text>
 </a>
-<a href="./FragmentMap_BreastBodyLocationRequiredFragment.svg" target="_blank">
-<title>'FragmentMap_BreastBodyLocationRequiredFragment.svg'</title>
+<a href="./StructureDefinition-FragmentBreastBodyLocationRequiredFragment.html" target="_blank">
+<title>'Fragment BreastBodyLocationRequiredFragment'</title>
 <text x="255" y="225">Location</text>
 </a>
-<a href="./FragmentMap_BreastBodyLocationRequiredFragment.svg" target="_blank">
-<title>'FragmentMap_BreastBodyLocationRequiredFragment.svg'</title>
+<a href="./StructureDefinition-FragmentBreastBodyLocationRequiredFragment.html" target="_blank">
+<title>'Fragment BreastBodyLocationRequiredFragment'</title>
 <text x="255" y="243.75">Fragment</text>
 </a>
-<a href="./FragmentMap_BreastBodyLocationRequiredFragment.svg" target="_blank">
-<title>'FragmentMap_BreastBodyLocationRequiredFragment.svg'</title>
+<a href="./StructureDefinition-FragmentBreastBodyLocationRequiredFragment.html" target="_blank">
+<title>'Fragment BreastBodyLocationRequiredFragment'</title>
 <text x="255" y="262.5">(Required)</text>
 </a>
-<a href="../Guide/Output/StructureDefinition-BreastBodyLocationRequiredFragment.html" target="_blank">
-<title>'BreastBodyLocationRequiredFragment'</title>
+<a href="StructureDefinition-BreastBodyLocationRequiredFragment.html" target="_blank">
+<title>Resource 'BreastBodyLocationRequiredFragment'</title>
 <text x="255" y="281.25">[Resource]</text>
 </a>
 </g>
 <g>
 <rect fill="LightBlue" stroke="Black" stroke-width="1.875" x="247.5" y="300" width="120" height="52.5" rx="3.75" ry="3.75" />
-<a href="./FragmentMap_BreastRadImpression.svg" target="_blank">
-<title>'FragmentMap_BreastRadImpression.svg'</title>
+<a href="./StructureDefinition-FragmentBreastRadImpression.html" target="_blank">
+<title>'Fragment BreastRadImpression'</title>
 <text x="255" y="322.5">Impression</text>
 </a>
-<a href="../Guide/Output/StructureDefinition-BreastRadImpression.html" target="_blank">
-<title>'BreastRadImpression'</title>
+<a href="StructureDefinition-BreastRadImpression.html" target="_blank">
+<title>Resource 'BreastRadImpression'</title>
 <text x="255" y="341.25">[Resource]</text>
 </a>
 </g>
 <g>
 <rect fill="LightBlue" stroke="Black" stroke-width="1.875" x="247.5" y="360" width="130.5" height="71.25" rx="3.75" ry="3.75" />
-<a href="./FragmentMap_BreastRadImpressionsExtension.svg" target="_blank">
-<title>'FragmentMap_BreastRadImpressionsExtension.svg'</title>
+<a href="./StructureDefinition-FragmentBreastRadImpressionsExtension.html" target="_blank">
+<title>'Fragment BreastRadImpressionsExtension'</title>
 <text x="255" y="382.5">Impressions</text>
 </a>
-<a href="./FragmentMap_BreastRadImpressionsExtension.svg" target="_blank">
-<title>'FragmentMap_BreastRadImpressionsExtension.svg'</title>
+<a href="./StructureDefinition-FragmentBreastRadImpressionsExtension.html" target="_blank">
+<title>'Fragment BreastRadImpressionsExtension'</title>
 <text x="255" y="401.25">Extension</text>
 </a>
-<a href="../Guide/Output/StructureDefinition-BreastRadImpressionsExtension.html" target="_blank">
-<title>'BreastRadImpressionsExtension'</title>
+<a href="StructureDefinition-BreastRadImpressionsExtension.html" target="_blank">
+<title>Resource 'BreastRadImpressionsExtension'</title>
 <text x="255" y="420">[Resource]</text>
 </a>
 </g>
 <g>
 <rect fill="LightBlue" stroke="Black" stroke-width="1.875" x="247.5" y="438.75" width="130.5" height="71.25" rx="3.75" ry="3.75" />
-<a href="./FragmentMap_BreastRadObservationFragment.svg" target="_blank">
-<title>'FragmentMap_BreastRadObservationFragment.svg'</title>
+<a href="./StructureDefinition-FragmentBreastRadObservationFragment.html" target="_blank">
+<title>'Fragment BreastRadObservationFragment'</title>
 <text x="255" y="461.25">Observation</text>
 </a>
-<a href="./FragmentMap_BreastRadObservationFragment.svg" target="_blank">
-<title>'FragmentMap_BreastRadObservationFragment.svg'</title>
+<a href="./StructureDefinition-FragmentBreastRadObservationFragment.html" target="_blank">
+<title>'Fragment BreastRadObservationFragment'</title>
 <text x="255" y="480">Fragment</text>
 </a>
-<a href="../Guide/Output/StructureDefinition-BreastRadObservationFragment.html" target="_blank">
-<title>'BreastRadObservationFragment'</title>
+<a href="StructureDefinition-BreastRadObservationFragment.html" target="_blank">
+<title>Resource 'BreastRadObservationFragment'</title>
 <text x="255" y="498.75">[Resource]</text>
 </a>
 </g>
 <g>
 <rect fill="LightBlue" stroke="Black" stroke-width="1.875" x="247.5" y="517.5" width="130.5" height="71.25" rx="3.75" ry="3.75" />
-<a href="./FragmentMap_BreastRadPatientRiskExtension.svg" target="_blank">
-<title>'FragmentMap_BreastRadPatientRiskExtension.svg'</title>
+<a href="./StructureDefinition-FragmentBreastRadPatientRiskExtension.html" target="_blank">
+<title>'Fragment BreastRadPatientRiskExtension'</title>
 <text x="255" y="540">PatientRisk</text>
 </a>
-<a href="./FragmentMap_BreastRadPatientRiskExtension.svg" target="_blank">
-<title>'FragmentMap_BreastRadPatientRiskExtension.svg'</title>
+<a href="./StructureDefinition-FragmentBreastRadPatientRiskExtension.html" target="_blank">
+<title>'Fragment BreastRadPatientRiskExtension'</title>
 <text x="255" y="558.75">Extension</text>
 </a>
-<a href="../Guide/Output/StructureDefinition-BreastRadPatientRiskExtension.html" target="_blank">
-<title>'BreastRadPatientRiskExtension'</title>
+<a href="StructureDefinition-BreastRadPatientRiskExtension.html" target="_blank">
+<title>Resource 'BreastRadPatientRiskExtension'</title>
 <text x="255" y="577.5">[Resource]</text>
 </a>
 </g>
 <g>
 <rect fill="LightBlue" stroke="Black" stroke-width="1.875" x="247.5" y="596.25" width="151.49998" height="71.25" rx="3.75" ry="3.75" />
-<a href="./FragmentMap_BreastRadPriorReportsExtension.svg" target="_blank">
-<title>'FragmentMap_BreastRadPriorReportsExtension.svg'</title>
+<a href="./StructureDefinition-FragmentBreastRadPriorReportsExtension.html" target="_blank">
+<title>'Fragment BreastRadPriorReportsExtension'</title>
 <text x="255" y="618.75">Prior Reports</text>
 </a>
-<a href="./FragmentMap_BreastRadPriorReportsExtension.svg" target="_blank">
-<title>'FragmentMap_BreastRadPriorReportsExtension.svg'</title>
+<a href="./StructureDefinition-FragmentBreastRadPriorReportsExtension.html" target="_blank">
+<title>'Fragment BreastRadPriorReportsExtension'</title>
 <text x="255" y="637.5">Extension</text>
 </a>
-<a href="../Guide/Output/StructureDefinition-BreastRadPriorReportsExtension.html" target="_blank">
-<title>'BreastRadPriorReportsExtension'</title>
+<a href="StructureDefinition-BreastRadPriorReportsExtension.html" target="_blank">
+<title>Resource 'BreastRadPriorReportsExtension'</title>
 <text x="255" y="656.25">[Resource]</text>
 </a>
 </g>
 <g>
 <rect fill="LightBlue" stroke="Black" stroke-width="1.875" x="247.5" y="675" width="172.5" height="71.25" rx="3.75" ry="3.75" />
-<a href="./FragmentMap_BreastRadRecommendationsExtension.svg" target="_blank">
-<title>'FragmentMap_BreastRadRecommendationsExtension.svg'</title>
+<a href="./StructureDefinition-FragmentBreastRadRecommendationsExtension.html" target="_blank">
+<title>'Fragment BreastRadRecommendationsExtension'</title>
 <text x="255" y="697.5">Recommendations</text>
 </a>
-<a href="./FragmentMap_BreastRadRecommendationsExtension.svg" target="_blank">
-<title>'FragmentMap_BreastRadRecommendationsExtension.svg'</title>
+<a href="./StructureDefinition-FragmentBreastRadRecommendationsExtension.html" target="_blank">
+<title>'Fragment BreastRadRecommendationsExtension'</title>
 <text x="255" y="716.25">Extension</text>
 </a>
-<a href="../Guide/Output/StructureDefinition-BreastRadRecommendationsExtension.html" target="_blank">
-<title>'BreastRadRecommendationsExtension'</title>
+<a href="StructureDefinition-BreastRadRecommendationsExtension.html" target="_blank">
+<title>Resource 'BreastRadRecommendationsExtension'</title>
 <text x="255" y="735">[Resource]</text>
 </a>
 </g>
 <g>
 <rect fill="LightBlue" stroke="Black" stroke-width="1.875" x="247.5" y="753.75" width="120" height="90" rx="3.75" ry="3.75" />
-<a href="./FragmentMap_BreastRadReport.svg" target="_blank">
-<title>'FragmentMap_BreastRadReport.svg'</title>
+<a href="./StructureDefinition-FragmentBreastRadReport.html" target="_blank">
+<title>'Fragment BreastRadReport'</title>
 <text x="255" y="776.25">Breast</text>
 </a>
-<a href="./FragmentMap_BreastRadReport.svg" target="_blank">
-<title>'FragmentMap_BreastRadReport.svg'</title>
+<a href="./StructureDefinition-FragmentBreastRadReport.html" target="_blank">
+<title>'Fragment BreastRadReport'</title>
 <text x="255" y="795">Radiology</text>
 </a>
-<a href="./FragmentMap_BreastRadReport.svg" target="_blank">
-<title>'FragmentMap_BreastRadReport.svg'</title>
+<a href="./StructureDefinition-FragmentBreastRadReport.html" target="_blank">
+<title>'Fragment BreastRadReport'</title>
 <text x="255" y="813.75">Report</text>
 </a>
-<a href="../Guide/Output/StructureDefinition-BreastRadReport.html" target="_blank">
-<title>'BreastRadReport'</title>
+<a href="StructureDefinition-BreastRadReport.html" target="_blank">
+<title>Resource 'BreastRadReport'</title>
 <text x="255" y="832.5">[Resource]</text>
 </a>
 </g>
 <g>
 <rect fill="LightBlue" stroke="Black" stroke-width="1.875" x="247.5" y="851.25" width="130.5" height="90" rx="3.75" ry="3.75" />
-<a href="./FragmentMap_CodedValueObservationFragment.svg" target="_blank">
-<title>'FragmentMap_CodedValueObservationFragment.svg'</title>
+<a href="./StructureDefinition-FragmentCodedValueObservationFragment.html" target="_blank">
+<title>'Fragment CodedValueObservationFragment'</title>
 <text x="255" y="873.75">Observation</text>
 </a>
-<a href="./FragmentMap_CodedValueObservationFragment.svg" target="_blank">
-<title>'FragmentMap_CodedValueObservationFragment.svg'</title>
+<a href="./StructureDefinition-FragmentCodedValueObservationFragment.html" target="_blank">
+<title>'Fragment CodedValueObservationFragment'</title>
 <text x="255" y="892.5">CodedValue</text>
 </a>
-<a href="./FragmentMap_CodedValueObservationFragment.svg" target="_blank">
-<title>'FragmentMap_CodedValueObservationFragment.svg'</title>
+<a href="./StructureDefinition-FragmentCodedValueObservationFragment.html" target="_blank">
+<title>'Fragment CodedValueObservationFragment'</title>
 <text x="255" y="911.25">Fragment</text>
 </a>
-<a href="../Guide/Output/StructureDefinition-CodedValueObservationFragment.html" target="_blank">
-<title>'CodedValueObservationFragment'</title>
+<a href="StructureDefinition-CodedValueObservationFragment.html" target="_blank">
+<title>Resource 'CodedValueObservationFragment'</title>
 <text x="255" y="930">[Resource]</text>
 </a>
 </g>
 <g>
 <rect fill="LightBlue" stroke="Black" stroke-width="1.875" x="247.5" y="948.75" width="130.5" height="90" rx="3.75" ry="3.75" />
-<a href="./FragmentMap_ObservationLeafFragment.svg" target="_blank">
-<title>'FragmentMap_ObservationLeafFragment.svg'</title>
+<a href="./StructureDefinition-FragmentObservationLeafFragment.html" target="_blank">
+<title>'Fragment ObservationLeafFragment'</title>
 <text x="255" y="971.25">Observation</text>
 </a>
-<a href="./FragmentMap_ObservationLeafFragment.svg" target="_blank">
-<title>'FragmentMap_ObservationLeafFragment.svg'</title>
+<a href="./StructureDefinition-FragmentObservationLeafFragment.html" target="_blank">
+<title>'Fragment ObservationLeafFragment'</title>
 <text x="255" y="990">Leaf</text>
 </a>
-<a href="./FragmentMap_ObservationLeafFragment.svg" target="_blank">
-<title>'FragmentMap_ObservationLeafFragment.svg'</title>
+<a href="./StructureDefinition-FragmentObservationLeafFragment.html" target="_blank">
+<title>'Fragment ObservationLeafFragment'</title>
 <text x="255" y="1008.75">Fragment</text>
 </a>
-<a href="../Guide/Output/StructureDefinition-ObservationLeafFragment.html" target="_blank">
-<title>'ObservationLeafFragment'</title>
+<a href="StructureDefinition-ObservationLeafFragment.html" target="_blank">
+<title>Resource 'ObservationLeafFragment'</title>
 <text x="255" y="1027.5">[Resource]</text>
 </a>
 </g>

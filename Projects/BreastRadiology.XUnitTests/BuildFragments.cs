@@ -247,7 +247,7 @@ namespace BreastRadiology.XUnitTests
                     ResourceMap map = new ResourceMap();
                     map.AddDir(this.fragmentDir, "*.json");
 
-                    FragmentMapMaker fragmentMapMaker = new FragmentMapMaker(this.fc, map, this.graphicsDir, this.pageDir);
+                    FragmentMapMaker fragmentMapMaker = new FragmentMapMaker(this.fc, map, this.graphicsDir, this.pageDir, this.pageTemplateDir);
                     fragmentMapMaker.Create();
                 }
 

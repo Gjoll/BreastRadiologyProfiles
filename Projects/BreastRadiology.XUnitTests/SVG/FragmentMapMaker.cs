@@ -27,16 +27,19 @@ namespace BreastRadiology.XUnitTests
         ResourceMap map;
         FileCleaner fc;
         String pageDir;
+        String pageTemplateDir;
 
         public FragmentMapMaker(FileCleaner fc,
             ResourceMap map,
             String graphicsDir,
-            String pageDir)
+            String pageDir,
+            String pageTemplateDir)
         {
             this.fc = fc;
             this.map = map;
             this.graphicsDir = graphicsDir;
             this.pageDir = pageDir;
+            this.pageTemplateDir = pageTemplateDir;
         }
 
         String FragmentMapName(ResourceMap.Node mapNode) => $"FragmentMap_{mapNode.Name}.svg";
@@ -82,17 +85,17 @@ namespace BreastRadiology.XUnitTests
                 String title = null;
                 if (linkFlag)
                 {
-                    String fragMapName = this.FragmentMapName(mapNode);
+                    String fragMapName = $"{mapNode.StructureName}-Fragment{mapNode.Name}.html";
                     hRef = $"./{fragMapName}";
-                    title = $"'{fragMapName}'";
+                    title = $"'Fragment {mapNode.Name}'";
                 }
                 String s = titlePart.Trim();
                 node.AddTextLine(s, hRef, title);
             }
 
             {
-                String hRef = $"../Guide/Output/{mapNode.StructureName}-{mapNode.Name}.html";
-                String title = $"'{mapNode.Name}'";
+                String hRef = $"{mapNode.StructureName}-{mapNode.Name}.html";
+                String title = $"Resource '{mapNode.Name}'";
                 node.AddTextLine("[Resource]", hRef, title);
             }
             return node;
@@ -125,19 +128,28 @@ namespace BreastRadiology.XUnitTests
             }
 
             e.Render(parentsGroup, true);
-            String outputPath = Path.Combine(this.graphicsDir, this.FragmentMapName(fragmentNode.Focus));
-            this.fc?.Mark(outputPath);
-            e.Save(outputPath);
+            String svgName = this.FragmentMapName(fragmentNode.Focus);
+            String outputSvgPath = Path.Combine(this.graphicsDir, svgName);
+            this.fc?.Mark(outputSvgPath);
+            e.Save(outputSvgPath);
 
             {
                 IntroDoc doc = new IntroDoc(Path.Combine(pageDir, $"StructureDefinition-Fragment{fragmentNode.Focus.Name}-intro.xml"));
                 doc
-                    .AddSvgImage("FragmentMap_{structureDefinition.Name}.svg")
+                    .AddSvgImage($"FragmentMap_{fragmentNode.Focus.Name}.svg")
                     ;
-                outputPath = doc.Save();
-                this.fc?.Mark(outputPath);
+                String outputDocPath = doc.Save();
+                this.fc?.Mark(outputDocPath);
             }
 
+            this.fragmentsBlock
+                .AppendLine($"<p>")
+                .AppendLine($"Fragment Diagram {fragmentNode.Focus.Name}")
+                .AppendLine($"</p>")
+                .AppendLine($"<object data=\"{svgName}\" type=\"image/svg+xml\">")
+                .AppendLine($"    <img src=\"{svgName}\" alt=\"{fragmentNode.Focus.Name}\"/>")
+                .AppendLine($"</object>");
+                ;
         }
 
         void GraphNodes()
@@ -174,12 +186,25 @@ namespace BreastRadiology.XUnitTests
             }
         }
 
+        CodeEditor fragmentsEditor;
+        CodeBlockNested fragmentsBlock;
+
         public void Create()
         {
+            this.fragmentsEditor = new CodeEditor();
+            this.fragmentsEditor.BlockStart = "<!-- +";
+            this.fragmentsEditor.BlockStartTerm = "-->";
+            this.fragmentsEditor.BlockEnd = "<!-- -";
+            this.fragmentsEditor.BlockEndTerm = "-->";
+            this.fragmentsEditor.Load(Path.Combine(this.pageTemplateDir, "fragments.xml"));
+            this.fragmentsBlock = this.fragmentsEditor.Blocks.Find("Block");
+
             this.SelectNodes();
             this.CreateNodes();
             this.LinkNodes();
             this.GraphNodes();
+
+            this.fragmentsEditor.Save();
         }
     }
 }
