@@ -20,17 +20,23 @@ namespace BreastRadiology.XUnitTests
             public List<ResourceMap.Node> Children = new List<ResourceMap.Node>();
         }
 
+        List<ResourceMap.Node> selectedNodes = new List<ResourceMap.Node>();
         Dictionary<String, FragmentNode> fragmentNodes = new Dictionary<string, FragmentNode>();
         String graphicsDir;
 
         ResourceMap map;
+        FileCleaner fc;
+        String pageDir;
 
-        public FragmentMapMaker(ResourceMap map,
+        public FragmentMapMaker(FileCleaner fc,
+            ResourceMap map,
             String graphicsDir,
             String pageDir)
         {
+            this.fc = fc;
             this.map = map;
             this.graphicsDir = graphicsDir;
+            this.pageDir = pageDir;
         }
 
         String FragmentMapName(ResourceMap.Node mapNode) => $"FragmentMap_{mapNode.Name}.svg";
@@ -50,7 +56,7 @@ namespace BreastRadiology.XUnitTests
 
         void LinkNodes()
         {
-            foreach (ResourceMap.Node focusMapNode in this.map.MapNodes)
+            foreach (ResourceMap.Node focusMapNode in this.selectedNodes)
             {
                 if (this.fragmentNodes.TryGetValue(focusMapNode.Name, out FragmentNode fragmentFocusNode) == false)
                     throw new Exception($"Internal error. Cant find Focus FragmentNode '{focusMapNode.Name}' ");
@@ -119,7 +125,19 @@ namespace BreastRadiology.XUnitTests
             }
 
             e.Render(parentsGroup, true);
-            e.Save(Path.Combine(this.graphicsDir, this.FragmentMapName(fragmentNode.Focus)));
+            String outputPath = Path.Combine(this.graphicsDir, this.FragmentMapName(fragmentNode.Focus));
+            this.fc?.Mark(outputPath);
+            e.Save(outputPath);
+
+            {
+                IntroDoc doc = new IntroDoc(Path.Combine(pageDir, $"StructureDefinition-Fragment{fragmentNode.Focus.Name}-intro.xml"));
+                doc
+                    .AddSvgImage("FragmentMap_{structureDefinition.Name}.svg")
+                    ;
+                outputPath = doc.Save();
+                this.fc?.Mark(outputPath);
+            }
+
         }
 
         void GraphNodes()
@@ -128,9 +146,25 @@ namespace BreastRadiology.XUnitTests
                 this.GraphNode(fragmentNode);
         }
 
-        void CreateNodes()
+        /// <summary>
+        /// Select nodes we are going to process.
+        /// </summary>
+        void SelectNodes()
         {
             foreach (ResourceMap.Node mapNode in this.map.MapNodes)
+            {
+                switch (mapNode.StructureName)
+                {
+                    case "StructureDefinition":
+                        this.selectedNodes.Add(mapNode);
+                        break;
+                }
+            }
+        }
+
+        void CreateNodes()
+        {
+            foreach (ResourceMap.Node mapNode in this.selectedNodes)
             {
                 FragmentNode fNode = new FragmentNode
                 {
@@ -142,6 +176,7 @@ namespace BreastRadiology.XUnitTests
 
         public void Create()
         {
+            this.SelectNodes();
             this.CreateNodes();
             this.LinkNodes();
             this.GraphNodes();

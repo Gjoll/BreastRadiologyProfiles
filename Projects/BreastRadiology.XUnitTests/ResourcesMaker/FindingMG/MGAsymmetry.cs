@@ -100,7 +100,7 @@ namespace BreastRadiology.XUnitTests
                     .Refinement(binding, "Asymmetry")
                 ;
                 String outputPath = valueSetIntroDoc.Save();
-                this.fc.Mark(outputPath);
+                this.fc?.Mark(outputPath);
             }
 
             SDefEditor e = this.CreateEditor("BreastRadMammoAsymmetry",

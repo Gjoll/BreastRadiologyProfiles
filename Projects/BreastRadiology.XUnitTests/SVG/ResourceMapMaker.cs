@@ -23,10 +23,13 @@ namespace BreastRadiology.XUnitTests
 
         Dictionary<String, LegendItem> legendItems = new Dictionary<string, LegendItem>();
         ResourceMap map;
+        FileCleaner fc;
 
 
-        public ResourceMapMaker(ResourceMap map)
+        public ResourceMapMaker(FileCleaner fc,
+            ResourceMap map)
         {
+            this.fc = fc;
             this.map = map;
         }
 
@@ -147,6 +150,7 @@ namespace BreastRadiology.XUnitTests
             svgEditor.Render(legendGroup, false);
             svgEditor.Render(rootGroup, true);
             svgEditor.Save(outputPath);
+            fc?.Mark(outputPath);
         }
 
         SENodeGroup CreateLegend(SvgEditor svgEditor)

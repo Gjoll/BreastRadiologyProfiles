@@ -34,16 +34,16 @@ namespace BreastRadiology.XUnitTests
 
         public BuildFragments()
         {
-            cacheDir = Path.Combine(DirHelper.FindParentDir(baseDir), "Cache");
-            contentDir = Path.Combine(DirHelper.FindParentDir(baseDir), "IG", "Content");
-            guideDir = Path.Combine(DirHelper.FindParentDir(baseDir), "IG", "Guide");
+            this.cacheDir = Path.Combine(DirHelper.FindParentDir(baseDir), "Cache");
+            this.contentDir = Path.Combine(DirHelper.FindParentDir(baseDir), "IG", "Content");
+            this.guideDir = Path.Combine(DirHelper.FindParentDir(baseDir), "IG", "Guide");
 
-            graphicsDir = Path.Combine(this.contentDir, "Graphics");
-            fragmentDir = Path.Combine(this.contentDir, "Fragments");
-            resourcesDir = Path.Combine(this.contentDir, "Resources");
-            pageDir = Path.Combine(this.contentDir, "Page");
-            pageTemplateDir = Path.Combine(this.contentDir, "PageTemplate");
-            mergedDir = Path.Combine(this.contentDir, "Merged");
+            this.graphicsDir = Path.Combine(this.contentDir, "Graphics");
+            this.fragmentDir = Path.Combine(this.contentDir, "Fragments");
+            this.resourcesDir = Path.Combine(this.contentDir, "Resources");
+            this.pageDir = Path.Combine(this.contentDir, "Page");
+            this.pageTemplateDir = Path.Combine(this.contentDir, "PageTemplate");
+            this.mergedDir = Path.Combine(this.contentDir, "Merged");
         }
 
         private void Message(String import, string className, string method, string msg)
@@ -81,7 +81,7 @@ namespace BreastRadiology.XUnitTests
         {
             try
             {
-                ResourcesMaker pc = new ResourcesMaker(this.fragmentDir, this.pageDir, this.cacheDir);
+                ResourcesMaker pc = new ResourcesMaker(this.fc, this.fragmentDir, this.pageDir, this.cacheDir);
                 pc.StatusErrors += this.StatusErrors;
                 pc.StatusInfo += this.StatusInfo;
                 pc.StatusWarnings += this.StatusWarnings;
@@ -123,7 +123,7 @@ namespace BreastRadiology.XUnitTests
                         Directory.Delete(this.mergedDir, true);
                 }
 
-                PreFhirGenerator preFhir = new PreFhirGenerator(cacheDir);
+                PreFhirGenerator preFhir = new PreFhirGenerator(this.fc, this.cacheDir);
                 preFhir.StatusErrors += this.StatusErrors;
                 preFhir.StatusInfo += this.StatusInfo;
                 preFhir.StatusWarnings += this.StatusWarnings;
@@ -131,7 +131,7 @@ namespace BreastRadiology.XUnitTests
                 if (saveMergedFiles)
                     preFhir.MergedDir = this.mergedDir;
                 preFhir.Process();
-                preFhir.SaveResources(this.resourcesDir, true);
+                preFhir.SaveResources(this.resourcesDir);
 
                 if (preFhir.HasErrors)
                 {
@@ -162,13 +162,13 @@ namespace BreastRadiology.XUnitTests
                 if (Directory.Exists(this.mergedDir) == false)
                     Directory.CreateDirectory(this.mergedDir);
 
-                PreFhirGenerator preFhir = new PreFhirGenerator(cacheDir);
+                PreFhirGenerator preFhir = new PreFhirGenerator(this.fc, this.cacheDir);
                 preFhir.StatusErrors += this.StatusErrors;
                 preFhir.StatusInfo += this.StatusInfo;
                 preFhir.StatusWarnings += this.StatusWarnings;
                 preFhir.MergedDir = this.mergedDir;
                 preFhir.ProcessOne(this.fragmentDir, "BreastRadUSMassMargin", true);
-                preFhir.SaveResources(this.resourcesDir, true);
+                preFhir.SaveResources(this.resourcesDir);
             }
             catch (Exception err)
             {
@@ -219,13 +219,23 @@ namespace BreastRadiology.XUnitTests
         //    pc.Clean(resourcesDir);
         //}
 
+        FileCleaner fc = null;
+
         [TestMethod]
         public void FullBuild()
         {
+            fc = new FileCleaner();
+            this.fc?.Add(this.graphicsDir, "*.svg");
+            this.fc?.Add(this.pageDir, "*.xml");
+            this.fc?.Add(this.fragmentDir, "*.json");
+            this.fc?.Add(this.resourcesDir, "*.json");
+
             this.A_BuildFragments();
             this.B_BuildResources();
             this.C_BuildGraphics();
             this.D_BuildIG();
+
+            this.fc?.DeleteUnMarkedFiles();
         }
 
         [TestMethod]
@@ -237,7 +247,7 @@ namespace BreastRadiology.XUnitTests
                     ResourceMap map = new ResourceMap();
                     map.AddDir(this.fragmentDir, "*.json");
 
-                    FragmentMapMaker fragmentMapMaker = new FragmentMapMaker(map, this.graphicsDir, this.pageDir);
+                    FragmentMapMaker fragmentMapMaker = new FragmentMapMaker(this.fc, map, this.graphicsDir, this.pageDir);
                     fragmentMapMaker.Create();
                 }
 
@@ -268,7 +278,7 @@ namespace BreastRadiology.XUnitTests
 
                     map.AddDir(this.resourcesDir, "*.json");
                     {
-                        ResourceMapMaker resourceMapMaker = new ResourceMapMaker(map);
+                        ResourceMapMaker resourceMapMaker = new ResourceMapMaker(this.fc, map);
                         resourceMapMaker.AddLegendItem("DiagnosticReport", Color.LightGreen);
                         resourceMapMaker.AddLegendItem("Extension", Color.LightSalmon);
                         resourceMapMaker.AddLegendItem("Observation", Color.LightSkyBlue);
@@ -283,7 +293,7 @@ namespace BreastRadiology.XUnitTests
                     }
 
                     {
-                        ResourceMapMaker resourceMapMaker = new ResourceMapMaker(map);
+                        ResourceMapMaker resourceMapMaker = new ResourceMapMaker(this.fc, map);
                         resourceMapMaker.AddLegendItem("DiagnosticReport", Color.LightGreen);
                         resourceMapMaker.AddLegendItem("Extension", Color.LightSalmon);
                         resourceMapMaker.AddLegendItem("Observation", Color.LightSkyBlue);
@@ -294,7 +304,7 @@ namespace BreastRadiology.XUnitTests
                     }
 
                     {
-                        ResourceMapMaker resourceMapMaker = new ResourceMapMaker(map);
+                        ResourceMapMaker resourceMapMaker = new ResourceMapMaker(this.fc, map);
                         resourceMapMaker.AddLegendItem("DiagnosticReport", Color.LightGreen);
                         resourceMapMaker.AddLegendItem("Extension", Color.LightSalmon);
                         resourceMapMaker.AddLegendItem("Observation", Color.LightSkyBlue);
@@ -305,7 +315,7 @@ namespace BreastRadiology.XUnitTests
                     }
 
                     {
-                        ResourceMapMaker resourceMapMaker = new ResourceMapMaker(map);
+                        ResourceMapMaker resourceMapMaker = new ResourceMapMaker(this.fc, map);
                         resourceMapMaker.AddLegendItem("DiagnosticReport", Color.LightGreen);
                         resourceMapMaker.AddLegendItem("Extension", Color.LightSalmon);
                         resourceMapMaker.AddLegendItem("Observation", Color.LightSkyBlue);
@@ -316,7 +326,7 @@ namespace BreastRadiology.XUnitTests
                     }
 
                     {
-                        ResourceMapMaker resourceMapMaker = new ResourceMapMaker(map);
+                        ResourceMapMaker resourceMapMaker = new ResourceMapMaker(this.fc, map);
                         resourceMapMaker.AddLegendItem("DiagnosticReport", Color.LightGreen);
                         resourceMapMaker.AddLegendItem("Extension", Color.LightSalmon);
                         resourceMapMaker.AddLegendItem("Observation", Color.LightSkyBlue);
@@ -327,7 +337,7 @@ namespace BreastRadiology.XUnitTests
                     }
 
                     {
-                        FocusMapMaker focusMapMaker = new FocusMapMaker(map, this.graphicsDir, this.pageDir);
+                        FocusMapMaker focusMapMaker = new FocusMapMaker(this.fc, map, this.graphicsDir, this.pageDir);
                         focusMapMaker.Create();
                     }
                 }
@@ -344,7 +354,8 @@ namespace BreastRadiology.XUnitTests
         {
             try
             {
-                IGBuilder p = new IGBuilder(Path.Combine(this.guideDir, "input"));
+                String outputDir = Path.Combine(this.guideDir, "input");
+                IGBuilder p = new IGBuilder(this.fc, outputDir);
                 p.StatusErrors += this.StatusErrors;
                 p.StatusInfo += this.StatusInfo;
                 p.StatusWarnings += this.StatusWarnings;

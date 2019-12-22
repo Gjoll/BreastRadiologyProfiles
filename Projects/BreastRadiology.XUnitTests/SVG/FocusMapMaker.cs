@@ -26,11 +26,15 @@ namespace BreastRadiology.XUnitTests
         ConcurrentDictionary<String, FocusNode> focusNodes = new ConcurrentDictionary<string, FocusNode>();
         String graphicsDir;
         String contentDir;
+        FileCleaner fc;
 
-        public FocusMapMaker(ResourceMap map,
+
+        public FocusMapMaker(FileCleaner fc,
+            ResourceMap map,
             String graphicsDir,
             String contentDir)
         {
+            this.fc = fc;
             this.map = map;
             this.graphicsDir = graphicsDir;
             this.contentDir = contentDir;
@@ -106,7 +110,9 @@ namespace BreastRadiology.XUnitTests
             }
 
             e.Render(parentsGroup, true);
-            e.Save(Path.Combine(this.graphicsDir, FocusMapName(fragmentNode.Focus)));
+            String outputPath = Path.Combine(this.graphicsDir, FocusMapName(fragmentNode.Focus));
+            fc?.Mark(outputPath);
+            e.Save(outputPath);
         }
 
 

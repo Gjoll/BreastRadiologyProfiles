@@ -70,9 +70,9 @@ namespace BreastRadiology.XUnitTests
 
         public const String contactUrl = "http://www.hl7.org/Special/committees/cic";
 
-        FileCleaner fc = new FileCleaner();
         Dictionary<String, Resource> resources = new Dictionary<string, Resource>();
 
+        FileCleaner fc;
         String resourceDir;
         String pageDir;
         FhirDateTime date = new FhirDateTime(2019, 11, 1);
@@ -83,12 +83,14 @@ namespace BreastRadiology.XUnitTests
             return $"http://hl7.org/fhir/us/breast-radiology/StructureDefinition/{name}";
         }
 
-        public ResourcesMaker(String resourceDir,
+        public ResourcesMaker(FileCleaner fc,
+            String resourceDir,
             String pageDir,
             String cacheDir)
         {
             const String fcn = "ResourcesMaker";
 
+            this.fc = fc;
             this.resourceDir = resourceDir;
             this.pageDir = pageDir;
 
@@ -307,13 +309,9 @@ namespace BreastRadiology.XUnitTests
             if (Directory.Exists(this.pageDir) == false)
                 Directory.CreateDirectory(this.pageDir);
 
-            this.fc.Add(this.resourceDir);
-            this.fc.Add(this.pageDir);
-
             this.BreastRadiologyReport().Wait();
 
             this.SaveAll();
-            this.fc.Dispose();
         }
 
         void SaveAll()
@@ -322,7 +320,7 @@ namespace BreastRadiology.XUnitTests
             foreach (KeyValuePair<string, Resource> resourceItem in this.resources)
             {
                 System.Threading.Tasks.Task t = resourceItem.Value.SaveJsonAsync(resourceItem.Key);
-                this.fc.Mark(resourceItem.Key);
+                this.fc?.Mark(resourceItem.Key);
                 tasks.Add(t);
             }
 
@@ -331,12 +329,12 @@ namespace BreastRadiology.XUnitTests
                 System.Threading.Tasks.Task t = System.Threading.Tasks.Task.Run(() =>
                    {
                        if (ce.WriteFragment(out String fragmentName))
-                           this.fc.Mark(fragmentName);
+                           this.fc?.Mark(fragmentName);
 
                        if (ce.IntroDoc != null)
                        {
                            String path = ce.IntroDoc.Save();
-                           this.fc.Mark(path);
+                           this.fc?.Mark(path);
                        }
                    });
                 tasks.Add(t);

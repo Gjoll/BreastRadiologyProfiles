@@ -11,7 +11,7 @@ namespace BreastRadiology.XUnitTests
 {
     public class IGBuilder : ConverterBase
     {
-        FileCleaner fc = new FileCleaner();
+        FileCleaner fc;
 
         String outputDir;
         String resourceDir => Path.Combine(this.outputDir, "resources");
@@ -29,28 +29,24 @@ namespace BreastRadiology.XUnitTests
         //ValueSetsEditor valueSetsEditor;
         ImplementationGuideEditor implementationGuide;
 
-        public IGBuilder(String outputDir)
+        public IGBuilder(FileCleaner fc, String outputDir)
         {
             this.outputDir = outputDir;
-            this.fc.Add(this.resourceDir);
-            this.fc.Add(this.pagecontentDir);
-            this.fc.Add(this.imagesDir);
+            this.fc = fc;
         }
 
         public void SaveAll()
         {
             this.implementationGuide.Save(this.ImpGuidePath);
-            this.fc.Mark(this.ImpGuidePath);
+            this.fc?.Mark(this.ImpGuidePath);
 
-            //this.fc.Mark(this.IgPath);
+            //this.fc?.Mark(this.IgPath);
 
             //this.examplesEditor.Save();
             //this.profilesEditor.Save();
             //this.extensionsEditor.Save();
             //this.codeSystemsEditor.Save();
             //this.valueSetsEditor.Save();
-
-            this.fc.Dispose();
         }
 
         public void Start(String impGuidePath)
@@ -72,7 +68,7 @@ namespace BreastRadiology.XUnitTests
                 String outputPath = Path.Combine(outputDir, Path.GetFileName(inputPath));
 
                 File.Copy(inputPath, outputPath, true);
-                this.fc.Mark(outputPath);
+                this.fc?.Mark(outputPath);
             }
         }
 
@@ -109,7 +105,7 @@ namespace BreastRadiology.XUnitTests
 
                 String outputPath = Path.Combine(outputDir, Path.GetFileName(inputPath));
                 r.SaveJson(outputPath);
-                this.fc.Mark(outputPath);
+                this.fc?.Mark(outputPath);
             }
         }
 
@@ -169,7 +165,7 @@ namespace BreastRadiology.XUnitTests
             {
                 String outputPath = Path.Combine(this.resourceDir, outputName);
                 r.SaveJson(outputPath);
-                this.fc.Mark(outputPath);
+                this.fc?.Mark(outputPath);
             }
 
             List<StructureDefinition> structureDefinitions = new List<StructureDefinition>();
@@ -253,34 +249,31 @@ namespace BreastRadiology.XUnitTests
 
 
 
-        public void AddFragments(params String[] inputDirs)
+        public void AddFragments(String inputDir)
         {
-            const String fcn = "AddFragments";
+            //const String fcn = "AddFragments";
 
             void Save(Resource r, String outputName)
             {
                 String outputPath = Path.Combine(this.resourceDir, outputName);
                 r.SaveJson(outputPath);
-                this.fc.Mark(outputPath);
+                this.fc?.Mark(outputPath);
             }
 
             List<StructureDefinition> structureDefinitions = new List<StructureDefinition>();
-            foreach (String inputDir in inputDirs)
+            foreach (String file in Directory.GetFiles(inputDir))
             {
-                foreach (String file in Directory.GetFiles(inputDir))
+                String fhirText = File.ReadAllText(file);
+                FhirJsonParser parser = new FhirJsonParser();
+                var resource = parser.Parse(fhirText, typeof(Resource));
+                switch (resource)
                 {
-                    String fhirText = File.ReadAllText(file);
-                    FhirJsonParser parser = new FhirJsonParser();
-                    var resource = parser.Parse(fhirText, typeof(Resource));
-                    switch (resource)
-                    {
-                        case StructureDefinition structureDefinition:
-                            Int32 index = structureDefinition.Url.LastIndexOf('/');
-                            structureDefinition.Url = structureDefinition.Url.Insert(index+1, "Fragment");
-                            structureDefinition.Name = $"Fragment{structureDefinition.Name}";
-                            structureDefinitions.Add(structureDefinition);
-                            break;
-                    }
+                    case StructureDefinition structureDefinition:
+                        Int32 index = structureDefinition.Url.LastIndexOf('/');
+                        structureDefinition.Url = structureDefinition.Url.Insert(index + 1, "Fragment");
+                        structureDefinition.Name = $"Fragment{structureDefinition.Name}";
+                        structureDefinitions.Add(structureDefinition);
+                        break;
                 }
             }
 

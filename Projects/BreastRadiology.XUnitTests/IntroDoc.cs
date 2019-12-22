@@ -41,7 +41,7 @@ namespace BreastRadiology.XUnitTests
             return this;
         }
 
-        IntroDoc AddSvgImage(String svgFileName)
+        public IntroDoc AddSvgImage(String svgFileName)
         {
             this.sb
                 .AppendLine($"    <object data=\"{svgFileName}\" type=\"image/svg+xml\">")

@@ -218,7 +218,7 @@ namespace BreastRadiology.XUnitTests
                             .ValueSet(binding);
                         ;
                         String outputPath = valueSetIntroDoc.Save();
-                        this.fc.Mark(outputPath);
+                        this.fc?.Mark(outputPath);
                     }
 
                     SliceAndBind("quadrant", 
@@ -374,7 +374,7 @@ namespace BreastRadiology.XUnitTests
                             .ValueSet(binding);
                         ;
                         String outputPath = valueSetIntroDoc.Save();
-                        this.fc.Mark(outputPath);
+                        this.fc?.Mark(outputPath);
                     }
 
                     SliceAndBind("clockDirection",
@@ -425,7 +425,7 @@ namespace BreastRadiology.XUnitTests
                             .ValueSet(binding);
                         ;
                         String outputPath = valueSetIntroDoc.Save();
-                        this.fc.Mark(outputPath);
+                        this.fc?.Mark(outputPath);
                     }
 
                     SliceAndBind("depth", 
