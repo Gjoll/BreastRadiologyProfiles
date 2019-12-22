@@ -58,7 +58,6 @@ namespace BreastRadiology.XUnitTests
                     new ProfileTargetSlice(await this.CommonObservedSize(), 0, "1"),
                     new ProfileTargetSlice(await this.CommonObservedCount(), 0, "1"),
                     new ProfileTargetSlice(await this.CommonObservedChanges(), 0, "*"),
-                    new ProfileTargetSlice(await this.CommonObservedState(), 0, "*")
                     };
                     e.Find("hasMember").SliceByUrl(targets);
                     e.AddProfileTargets(targets);

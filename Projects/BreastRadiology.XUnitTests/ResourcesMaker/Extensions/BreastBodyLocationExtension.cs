@@ -181,11 +181,25 @@ namespace BreastRadiology.XUnitTests
                             new Definition()
                                 .Line("Central location in the anterior third of the breast close to the nipple")
                             ),
-
                         new ConceptDef("AxillaryTail",
                             "AxillaryTail Quadrant",
                             new Definition()
                                 .Line("Upper outer quadrant location adjacent to the axilla but within the breast mound")
+                            ),
+                        new ConceptDef("AxillaLevel",
+                            "Axilla Quadrant",
+                            new Definition()
+                                .Line("Upper outer quadrant location in the axilla")
+                            ),
+                        new ConceptDef("InframammaryFold",
+                            "Inframammary Fold",
+                            new Definition()
+                                .Line("Inframammary Fold")
+                            ),
+                        new ConceptDef("InSkin",
+                            "In Skin",
+                            new Definition()
+                                .Line("In Skin")
                             )
                         });
 

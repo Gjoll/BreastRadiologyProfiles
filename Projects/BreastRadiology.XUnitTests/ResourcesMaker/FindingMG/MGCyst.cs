@@ -56,7 +56,6 @@ namespace BreastRadiology.XUnitTests
                     new ProfileTargetSlice(await this.CommonObservedChanges(), 0, "*"),
                     new ProfileTargetSlice(await this.CommonObservedSize(), 0, "1"),
                     new ProfileTargetSlice(await this.CommonOrientation(), 0, "1"),
-                    new ProfileTargetSlice(await this.CommonObservedState(), 0, "*"),
 
                     new ProfileTargetSlice(await this.MGShape(), 0, "1"),
                     //new ProfileTargetSlice(await this.MGMassMargin(), 0, "*"),
