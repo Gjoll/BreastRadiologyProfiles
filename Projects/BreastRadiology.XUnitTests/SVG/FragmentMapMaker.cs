@@ -21,15 +21,15 @@ namespace BreastRadiology.XUnitTests
         }
 
         Dictionary<String, FragmentNode> fragmentNodes = new Dictionary<string, FragmentNode>();
-        String outputDir;
+        String graphicsDir;
 
         ResourceMap map;
 
         public FragmentMapMaker(ResourceMap map,
-            String outputDir)
+            String graphicsDir)
         {
             this.map = map;
-            this.outputDir = outputDir;
+            this.graphicsDir = graphicsDir;
         }
 
         String FragmentMapName(ResourceMap.Node mapNode) => $"FragmentMap_{mapNode.Name}.svg";
@@ -118,7 +118,7 @@ namespace BreastRadiology.XUnitTests
             }
 
             e.Render(parentsGroup, true);
-            e.Save(Path.Combine(this.outputDir, this.FragmentMapName(fragmentNode.Focus)));
+            e.Save(Path.Combine(this.graphicsDir, this.FragmentMapName(fragmentNode.Focus)));
         }
 
         void GraphNodes()

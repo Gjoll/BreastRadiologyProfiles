@@ -550,7 +550,7 @@
     </resource>
     <resource>
       <reference>
-        <reference value="ValueSet/Mass Refinement ValueSetVS" />
+        <reference value="ValueSet/MassRefinementValueSetVS" />
       </reference>
       <name value="Mass Refinement ValueSet ValueSet" />
       <description value="Codes refining mass type." />

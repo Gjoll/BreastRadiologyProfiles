@@ -51,7 +51,7 @@
     },
     {
       "url": "http://www.fragment.com/maplink",
-      "valueString": "valueSet|True|http://hl7.org/fhir/us/breast-radiology/ValueSet/Mass Refinement ValueSetVS"
+      "valueString": "valueSet|True|http://hl7.org/fhir/us/breast-radiology/ValueSet/MassRefinementValueSetVS"
     },
     {
       "url": "http://www.fragment.com/maplink",
@@ -1329,7 +1329,7 @@
         "isSummary": true,
         "binding": {
           "strength": "required",
-          "valueSet": "http://hl7.org/fhir/us/breast-radiology/ValueSet/Mass Refinement ValueSetVS"
+          "valueSet": "http://hl7.org/fhir/us/breast-radiology/ValueSet/MassRefinementValueSetVS"
         },
         "mapping": [
           {
@@ -3145,7 +3145,7 @@
         ],
         "binding": {
           "strength": "required",
-          "valueSet": "http://hl7.org/fhir/us/breast-radiology/ValueSet/Mass Refinement ValueSetVS"
+          "valueSet": "http://hl7.org/fhir/us/breast-radiology/ValueSet/MassRefinementValueSetVS"
         }
       },
       {

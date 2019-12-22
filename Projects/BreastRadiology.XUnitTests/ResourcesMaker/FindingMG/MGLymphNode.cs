@@ -123,7 +123,7 @@ namespace BreastRadiology.XUnitTests
                     .AddFragRef(await this.ObservationNoDeviceFragment())
                     .AddFragRef(await this.BreastBodyLocationRequiredFragment())
                     .AddFragRef(await this.ObservationCodedValueFragment())
-                    .AddFragRef(await this.ObservationLeafFragment())
+                    .AddFragRef(await this.ObservationSectionFragment())
                     ;
 
                 e.Select("value[x]")

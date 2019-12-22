@@ -15,18 +15,18 @@ namespace BreastRadiology.XUnitTests
 {
     partial class ResourcesMaker : ConverterBase
     {
-        async StringTask MGAsymmetries()
+        async StringTask MGAsymmetry()
         {
-            if (this.mgAsymmetries == null)
-                await this.CreateMGAsymmetries();
-            return this.mgAsymmetries;
+            if (this.mgAsymmetry == null)
+                await this.CreateMGAsymmetry();
+            return this.mgAsymmetry;
         }
-        String mgAsymmetries = null;
+        String mgAsymmetry = null;
 
-        async VTask CreateMGAsymmetries()
+        async VTask CreateMGAsymmetry()
         {
             CodeSystem cs = await this.CreateCodeSystem(
-                   "BreastRadMammoAsymmetries",
+                   "BreastRadMammoAsymmetryRefinement",
                    "Mammography Asymmetry Refinement",
                     "Mg Asymmetry Refinement/CodeSystem",
                    "Codes defining types of mammography asymmetries.",
@@ -103,13 +103,13 @@ namespace BreastRadiology.XUnitTests
                 this.fc.Mark(outputPath);
             }
 
-            SDefEditor e = this.CreateEditor("BreastRadMammoAsymmetries",
-                    "Mammography Asymmetries",
-                    "Mg Asymmetries",
+            SDefEditor e = this.CreateEditor("BreastRadMammoAsymmetry",
+                    "Mammography Asymmetry",
+                    "Mg Asymmetry",
                     ObservationUrl,
                     $"{Group_MGResources}/Asymmetry",
-                    out this.mgAsymmetries)
-                .Description("Breast Radiology Mammography Asymmetries Observation",
+                    out this.mgAsymmetry)
+                .Description("Breast Radiology Mammography Asymmetry Observation",
                     new Markdown()
                         .MissingObservation("an asymmetry")
                         .BiradHeader()

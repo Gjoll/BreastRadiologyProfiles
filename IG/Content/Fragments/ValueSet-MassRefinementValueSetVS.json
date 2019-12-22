@@ -1,6 +1,6 @@
 {
   "resourceType": "ValueSet",
-  "id": "Mass Refinement ValueSetVS",
+  "id": "MassRefinementValueSetVS",
   "extension": [
     {
       "url": "http://www.fragment.com/fragment",
@@ -13,33 +13,11 @@
     {
       "url": "http://www.fragment.com/mapname",
       "valueString": "Mass Refinement/ValueSet"
-    },
-    {
-      "url": "http://www.fragment.com/mapname",
-      "valueString": "Common"
-    },
-    {
-      "url": "http://www.fragment.com/Group",
-      "valueString": "Fragment/{name}"
     }
   ],
-  "url": "http://hl7.org/fhir/us/breast-radiology/ValueSet/Mass Refinement ValueSetVS",
-  "version": "0.0.2",
-  "name": "Mass Refinement ValueSetVS",
+  "url": "http://hl7.org/fhir/us/breast-radiology/ValueSet/MassRefinementValueSetVS",
+  "name": "MassRefinementValueSetVS",
   "title": "Mass Refinement ValueSet ValueSet",
-  "status": "draft",
-  "date": "2019-11-01",
-  "publisher": "Hl7-Clinical Interoperability Council",
-  "contact": [
-    {
-      "telecom": [
-        {
-          "system": "url",
-          "value": "http://www.hl7.org/Special/committees/cic"
-        }
-      ]
-    }
-  ],
   "description": "Codes refining mass type.",
   "compose": {
     "include": [

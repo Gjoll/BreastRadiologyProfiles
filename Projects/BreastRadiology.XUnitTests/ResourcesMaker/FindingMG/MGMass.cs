@@ -28,7 +28,7 @@ namespace BreastRadiology.XUnitTests
             await VTask.Run(async () =>
             {
                 ValueSet binding = await this.CreateValueSet(
-                        "Mass Refinement ValueSet",
+                        "MassRefinementValueSet",
                         "Mass Refinement ValueSet",
                         "Mass Refinement/ValueSet",
                         "Codes refining mass type.",
@@ -57,8 +57,8 @@ namespace BreastRadiology.XUnitTests
                     )
                     .AddFragRef(await this.ObservationNoDeviceFragment())
                     .AddFragRef(await this.BreastBodyLocationRequiredFragment())
+                    .AddFragRef(await this.ObservationCodedValueFragment())
                     .AddFragRef(await this.ObservationSectionFragment())
-                    .AddFragRef(await this.ObservationNoValueFragment())
                     .AddFragRef(await this.ImagingStudyFragment())
                     ;
 

@@ -233,98 +233,103 @@ namespace BreastRadiology.XUnitTests
         {
             try
             {
-                if (Directory.Exists(this.graphicsDir) == false)
-                    Directory.CreateDirectory(this.graphicsDir);
-
-                ResourceMap map = new ResourceMap();
-                map.CreateMapNode(ResourcesMaker.ClinicalImpressionUrl,
-                    new string[] { "Clinical", "Impression" },
-                    "StructureDefinition",
-                    "ClinicalImpression");
-
-                map.CreateMapNode(ResourcesMaker.MedicationRequestUrl,
-                    new string[] { "Medication", "Request" },
-                    "StructureDefinition",
-                    "MedicationRequest");
-
-                map.CreateMapNode(ResourcesMaker.ServiceRequestUrl,
-                    new string[] { "Service", "Request" },
-                    "StructureDefinition",
-                    "ServiceRequest");
-
-                map.CreateMapNode(ResourcesMaker.RiskAssessmentUrl,
-                    new string[] { "Risk", "Assessment" },
-                    "StructureDefinition",
-                    "RiskAssessment");
-
-                map.AddDir(this.resourcesDir, "*.json");
                 {
-                    ResourceMapMaker resourceMapMaker = new ResourceMapMaker(map);
-                    resourceMapMaker.AddLegendItem("DiagnosticReport", Color.LightGreen);
-                    resourceMapMaker.AddLegendItem("Extension", Color.LightSalmon);
-                    resourceMapMaker.AddLegendItem("Observation", Color.LightSkyBlue);
-                    //resourceMapMaker.AddLegendItem("MedicationRequest", Color.LightPink);
-                    resourceMapMaker.AddLegendItem("ServiceRequest", Color.LightBlue);
-                    //resourceMapMaker.AddLegendItem("RiskAssessment", Color.LightGray);
-                    //resourceMapMaker.AddLegendItem("ClinicalImpression", Color.LightGoldenrodYellow);
-                    //resourceMapMaker.AddLegendItem("ImagingStudy", Color.LightCoral);
+                    ResourceMap map = new ResourceMap();
+                    map.AddDir(this.fragmentDir, "*.json");
 
-                    resourceMapMaker.Create(ResourcesMaker.CreateUrl("BreastRadReport"),
-                        Path.Combine(this.graphicsDir, "ProfileOverview.svg"));
+                    FragmentMapMaker fragmentMapMaker = new FragmentMapMaker(map, this.graphicsDir);
+                    fragmentMapMaker.Create();
                 }
 
                 {
-                    ResourceMapMaker resourceMapMaker = new ResourceMapMaker(map);
-                    resourceMapMaker.AddLegendItem("DiagnosticReport", Color.LightGreen);
-                    resourceMapMaker.AddLegendItem("Extension", Color.LightSalmon);
-                    resourceMapMaker.AddLegendItem("Observation", Color.LightSkyBlue);
-                    resourceMapMaker.AddLegendItem("ImagingStudy", Color.LightCoral);
+                    if (Directory.Exists(this.graphicsDir) == false)
+                        Directory.CreateDirectory(this.graphicsDir);
 
-                    resourceMapMaker.Create(ResourcesMaker.CreateUrl("BreastRadMammoFinding"),
-                        Path.Combine(this.graphicsDir, "MgFindings.svg"));
-                }
+                    ResourceMap map = new ResourceMap();
+                    map.CreateMapNode(ResourcesMaker.ClinicalImpressionUrl,
+                        new string[] { "Clinical", "Impression" },
+                        "StructureDefinition",
+                        "ClinicalImpression");
 
-                {
-                    ResourceMapMaker resourceMapMaker = new ResourceMapMaker(map);
-                    resourceMapMaker.AddLegendItem("DiagnosticReport", Color.LightGreen);
-                    resourceMapMaker.AddLegendItem("Extension", Color.LightSalmon);
-                    resourceMapMaker.AddLegendItem("Observation", Color.LightSkyBlue);
-                    resourceMapMaker.AddLegendItem("ImagingStudy", Color.LightCoral);
+                    map.CreateMapNode(ResourcesMaker.MedicationRequestUrl,
+                        new string[] { "Medication", "Request" },
+                        "StructureDefinition",
+                        "MedicationRequest");
 
-                    resourceMapMaker.Create(ResourcesMaker.CreateUrl("BreastRadMRIFinding"),
-                        Path.Combine(this.graphicsDir, "MRIFindings.svg"));
-                }
+                    map.CreateMapNode(ResourcesMaker.ServiceRequestUrl,
+                        new string[] { "Service", "Request" },
+                        "StructureDefinition",
+                        "ServiceRequest");
 
-                {
-                    ResourceMapMaker resourceMapMaker = new ResourceMapMaker(map);
-                    resourceMapMaker.AddLegendItem("DiagnosticReport", Color.LightGreen);
-                    resourceMapMaker.AddLegendItem("Extension", Color.LightSalmon);
-                    resourceMapMaker.AddLegendItem("Observation", Color.LightSkyBlue);
-                    resourceMapMaker.AddLegendItem("ImagingStudy", Color.LightCoral);
+                    map.CreateMapNode(ResourcesMaker.RiskAssessmentUrl,
+                        new string[] { "Risk", "Assessment" },
+                        "StructureDefinition",
+                        "RiskAssessment");
 
-                    resourceMapMaker.Create(ResourcesMaker.CreateUrl("BreastRadNMFinding"),
-                        Path.Combine(this.graphicsDir, "NMFindings.svg"));
-                }
+                    map.AddDir(this.resourcesDir, "*.json");
+                    {
+                        ResourceMapMaker resourceMapMaker = new ResourceMapMaker(map);
+                        resourceMapMaker.AddLegendItem("DiagnosticReport", Color.LightGreen);
+                        resourceMapMaker.AddLegendItem("Extension", Color.LightSalmon);
+                        resourceMapMaker.AddLegendItem("Observation", Color.LightSkyBlue);
+                        //resourceMapMaker.AddLegendItem("MedicationRequest", Color.LightPink);
+                        resourceMapMaker.AddLegendItem("ServiceRequest", Color.LightBlue);
+                        //resourceMapMaker.AddLegendItem("RiskAssessment", Color.LightGray);
+                        //resourceMapMaker.AddLegendItem("ClinicalImpression", Color.LightGoldenrodYellow);
+                        //resourceMapMaker.AddLegendItem("ImagingStudy", Color.LightCoral);
 
-                {
-                    ResourceMapMaker resourceMapMaker = new ResourceMapMaker(map);
-                    resourceMapMaker.AddLegendItem("DiagnosticReport", Color.LightGreen);
-                    resourceMapMaker.AddLegendItem("Extension", Color.LightSalmon);
-                    resourceMapMaker.AddLegendItem("Observation", Color.LightSkyBlue);
-                    resourceMapMaker.AddLegendItem("ImagingStudy", Color.LightCoral);
+                        resourceMapMaker.Create(ResourcesMaker.CreateUrl("BreastRadReport"),
+                            Path.Combine(this.graphicsDir, "ProfileOverview.svg"));
+                    }
 
-                    resourceMapMaker.Create(ResourcesMaker.CreateUrl("BreastRadUltraSoundFinding"),
-                        Path.Combine(this.graphicsDir, "USFindings.svg"));
-                }
+                    {
+                        ResourceMapMaker resourceMapMaker = new ResourceMapMaker(map);
+                        resourceMapMaker.AddLegendItem("DiagnosticReport", Color.LightGreen);
+                        resourceMapMaker.AddLegendItem("Extension", Color.LightSalmon);
+                        resourceMapMaker.AddLegendItem("Observation", Color.LightSkyBlue);
+                        resourceMapMaker.AddLegendItem("ImagingStudy", Color.LightCoral);
 
-                {
-                    //FragmentMapMaker fragmentMapMaker = new FragmentMapMaker(this, mapDir);
-                    //fragmentMapMaker.Create();
-                }
+                        resourceMapMaker.Create(ResourcesMaker.CreateUrl("BreastRadMammoFinding"),
+                            Path.Combine(this.graphicsDir, "MgFindings.svg"));
+                    }
 
-                {
-                    FocusMapMaker focusMapMaker = new FocusMapMaker(map, this.graphicsDir, this.pageDir);
-                    focusMapMaker.Create();
+                    {
+                        ResourceMapMaker resourceMapMaker = new ResourceMapMaker(map);
+                        resourceMapMaker.AddLegendItem("DiagnosticReport", Color.LightGreen);
+                        resourceMapMaker.AddLegendItem("Extension", Color.LightSalmon);
+                        resourceMapMaker.AddLegendItem("Observation", Color.LightSkyBlue);
+                        resourceMapMaker.AddLegendItem("ImagingStudy", Color.LightCoral);
+
+                        resourceMapMaker.Create(ResourcesMaker.CreateUrl("BreastRadMRIFinding"),
+                            Path.Combine(this.graphicsDir, "MRIFindings.svg"));
+                    }
+
+                    {
+                        ResourceMapMaker resourceMapMaker = new ResourceMapMaker(map);
+                        resourceMapMaker.AddLegendItem("DiagnosticReport", Color.LightGreen);
+                        resourceMapMaker.AddLegendItem("Extension", Color.LightSalmon);
+                        resourceMapMaker.AddLegendItem("Observation", Color.LightSkyBlue);
+                        resourceMapMaker.AddLegendItem("ImagingStudy", Color.LightCoral);
+
+                        resourceMapMaker.Create(ResourcesMaker.CreateUrl("BreastRadNMFinding"),
+                            Path.Combine(this.graphicsDir, "NMFindings.svg"));
+                    }
+
+                    {
+                        ResourceMapMaker resourceMapMaker = new ResourceMapMaker(map);
+                        resourceMapMaker.AddLegendItem("DiagnosticReport", Color.LightGreen);
+                        resourceMapMaker.AddLegendItem("Extension", Color.LightSalmon);
+                        resourceMapMaker.AddLegendItem("Observation", Color.LightSkyBlue);
+                        resourceMapMaker.AddLegendItem("ImagingStudy", Color.LightCoral);
+
+                        resourceMapMaker.Create(ResourcesMaker.CreateUrl("BreastRadUltraSoundFinding"),
+                            Path.Combine(this.graphicsDir, "USFindings.svg"));
+                    }
+
+                    {
+                        FocusMapMaker focusMapMaker = new FocusMapMaker(map, this.graphicsDir, this.pageDir);
+                        focusMapMaker.Create();
+                    }
                 }
             }
             catch (Exception err)
