@@ -129,10 +129,28 @@
     </resource>
     <resource>
       <reference>
+        <reference value="CodeSystem/BreastRadMammoAsymmetriesCS" />
+      </reference>
+      <name value="Mammography Asymmetry Refinement CodeSystem" />
+      <description value="Codes defining types of mammography asymmetries." />
+      <exampleBoolean value="false" />
+      <groupingId value="MGCodesCS" />
+    </resource>
+    <resource>
+      <reference>
         <reference value="CodeSystem/BreastRadMammoBreastDensityCS" />
       </reference>
       <name value="Mammography Breast Density CodeSystem" />
       <description value="Codes for mammography breast density values." />
+      <exampleBoolean value="false" />
+      <groupingId value="MGCodesCS" />
+    </resource>
+    <resource>
+      <reference>
+        <reference value="CodeSystem/BreastRadMammoLymphNodeCS" />
+      </reference>
+      <name value="Mammography Lymph Node Refinement CodeSystem" />
+      <description value="Codes defining types of mammography lymph node." />
       <exampleBoolean value="false" />
       <groupingId value="MGCodesCS" />
     </resource>
@@ -153,15 +171,6 @@
       <description value="Margin code system." />
       <exampleBoolean value="false" />
       <groupingId value="CommonCodesCS" />
-    </resource>
-    <resource>
-      <reference>
-        <reference value="CodeSystem/BreastRadMemmoAsymmetriesCS" />
-      </reference>
-      <name value="Mammography Asymmetries CodeSystem" />
-      <description value="Codes defining types of mammography asymmetries." />
-      <exampleBoolean value="false" />
-      <groupingId value="MGCodesCS" />
     </resource>
     <resource>
       <reference>
@@ -245,19 +254,19 @@
     </resource>
     <resource>
       <reference>
-        <reference value="CodeSystem/CommonObservedChangesCS" />
+        <reference value="CodeSystem/CommonMassRefinementCS" />
       </reference>
-      <name value="Observed Changes CodeSystem" />
-      <description value="Codes defining types of observed changes in an abnormality over time." />
+      <name value="Mass Refinement CodeSystem" />
+      <description value="Codes defining mass refinements." />
       <exampleBoolean value="false" />
       <groupingId value="CommonCodesCS" />
     </resource>
     <resource>
       <reference>
-        <reference value="CodeSystem/CommonObservedStateCS" />
+        <reference value="CodeSystem/CommonObservedChangesCS" />
       </reference>
-      <name value="Observed State CodeSystem" />
-      <description value="Codes for observed state of an abnormality." />
+      <name value="Observed Changes CodeSystem" />
+      <description value="Codes defining types of observed changes in an abnormality over time." />
       <exampleBoolean value="false" />
       <groupingId value="CommonCodesCS" />
     </resource>
@@ -353,10 +362,28 @@
     </resource>
     <resource>
       <reference>
+        <reference value="ValueSet/BreastRadMammoAsymmetriesVS" />
+      </reference>
+      <name value="Mammography Asymmetries ValueSet" />
+      <description value="Codes defining types of mammography asymmetries." />
+      <exampleBoolean value="false" />
+      <groupingId value="MGCodesVS" />
+    </resource>
+    <resource>
+      <reference>
         <reference value="ValueSet/BreastRadMammoBreastDensityVS" />
       </reference>
       <name value="Mammography Breast Density ValueSet" />
       <description value="Codes for mammography breast density values." />
+      <exampleBoolean value="false" />
+      <groupingId value="MGCodesVS" />
+    </resource>
+    <resource>
+      <reference>
+        <reference value="ValueSet/BreastRadMammoLymphNodeVS" />
+      </reference>
+      <name value="Mammography Lymph Node ValueSet" />
+      <description value="Codes defining types of mammography lymph node." />
       <exampleBoolean value="false" />
       <groupingId value="MGCodesVS" />
     </resource>
@@ -375,15 +402,6 @@
       </reference>
       <name value="Mammography Mass Margin ValueSet" />
       <description value="Mammography mass margin ValueSet." />
-      <exampleBoolean value="false" />
-      <groupingId value="MGCodesVS" />
-    </resource>
-    <resource>
-      <reference>
-        <reference value="ValueSet/BreastRadMemmoAsymmetriesVS" />
-      </reference>
-      <name value="Mammography Asymmetries ValueSet" />
-      <description value="Codes defining types of mammography asymmetries." />
       <exampleBoolean value="false" />
       <groupingId value="MGCodesVS" />
     </resource>
@@ -487,15 +505,6 @@
     </resource>
     <resource>
       <reference>
-        <reference value="ValueSet/CommonObservedStateVS" />
-      </reference>
-      <name value="Observed State ValueSet" />
-      <description value="Codes for observed state of an abnormality." />
-      <exampleBoolean value="false" />
-      <groupingId value="CommonCodesVS" />
-    </resource>
-    <resource>
-      <reference>
         <reference value="ValueSet/CommonOrientationVS" />
       </reference>
       <name value="Orientation ValueSet" />
@@ -536,6 +545,15 @@
       </reference>
       <name value="Shape ValueSet" />
       <description value="Codes defining shape values." />
+      <exampleBoolean value="false" />
+      <groupingId value="MGCodesVS" />
+    </resource>
+    <resource>
+      <reference>
+        <reference value="ValueSet/Mass Refinement ValueSetVS" />
+      </reference>
+      <name value="Mass Refinement ValueSet ValueSet" />
+      <description value="Codes refining mass type." />
       <exampleBoolean value="false" />
       <groupingId value="MGCodesVS" />
     </resource>
@@ -680,15 +698,6 @@
       </reference>
       <name value="Size" />
       <description value="Breast Radiology Size Observation" />
-      <exampleBoolean value="false" />
-      <groupingId value="CommonResources" />
-    </resource>
-    <resource>
-      <reference>
-        <reference value="StructureDefinition/CommonObservedState" />
-      </reference>
-      <name value="Observed State" />
-      <description value="Breast Radiology Observed State Observation" />
       <exampleBoolean value="false" />
       <groupingId value="CommonResources" />
     </resource>
@@ -901,10 +910,10 @@
     </resource>
     <resource>
       <reference>
-        <reference value="StructureDefinition/BreastRadMammoIntramammaryLymphNode" />
+        <reference value="StructureDefinition/BreastRadMammoLymphNode" />
       </reference>
-      <name value="Mammography Intramammary LymphNode" />
-      <description value="Breast Radiology Mammography Intramammary LymphNode Observation" />
+      <name value="Mammography LymphNode" />
+      <description value="Breast Radiology Mammography LymphNode Observation" />
       <exampleBoolean value="false" />
       <groupingId value="MGResources" />
     </resource>

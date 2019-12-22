@@ -1,0 +1,43 @@
+{
+  "resourceType": "ValueSet",
+  "id": "Mass Refinement ValueSetVS",
+  "extension": [
+    {
+      "url": "http://www.fragment.com/fragment",
+      "valueUrl": "http://hl7.org/fhir/us/breast-radiology/StructureDefinition/HeaderFragment"
+    },
+    {
+      "url": "http://www.fragment.com/Group",
+      "valueString": "MGCodesVS"
+    },
+    {
+      "url": "http://www.fragment.com/mapname",
+      "valueString": "Mass Refinement/ValueSet"
+    }
+  ],
+  "url": "http://hl7.org/fhir/us/breast-radiology/ValueSet/Mass Refinement ValueSetVS",
+  "name": "Mass Refinement ValueSetVS",
+  "title": "Mass Refinement ValueSet ValueSet",
+  "description": "Codes refining mass type.",
+  "compose": {
+    "include": [
+      {
+        "system": "http://hl7.org/fhir/us/breast-radiology/CodeSystem/CommonMassRefinementCS",
+        "concept": [
+          {
+            "code": "Solid",
+            "display": "Solid Mass"
+          },
+          {
+            "code": "PartiallySolid",
+            "display": "Partially Solid Mass"
+          },
+          {
+            "code": "Skin",
+            "display": "Skin Mass"
+          }
+        ]
+      }
+    ]
+  }
+}

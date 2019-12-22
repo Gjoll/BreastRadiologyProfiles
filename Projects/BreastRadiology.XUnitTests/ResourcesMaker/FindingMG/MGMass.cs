@@ -27,6 +27,14 @@ namespace BreastRadiology.XUnitTests
         {
             await VTask.Run(async () =>
             {
+                ValueSet binding = await this.CreateValueSet(
+                        "Mass Refinement ValueSet",
+                        "Mass Refinement ValueSet",
+                        "Mass Refinement/ValueSet",
+                        "Codes refining mass type.",
+                        Group_MGCodes,
+                        await this.CommonCSMassRefinement());
+
                 SDefEditor e = this.CreateEditor("BreastRadMammoMass",
                         "Mammography Mass",
                         "Mg Mass",
@@ -54,6 +62,13 @@ namespace BreastRadiology.XUnitTests
                     .AddFragRef(await this.ImagingStudyFragment())
                     ;
 
+                e.Select("value[x]")
+                    .ZeroToOne()
+                    .Type("CodeableConcept")
+                    .Binding(binding.Url, BindingStrength.Required)
+                    ;
+                e.AddValueSetLink(binding);
+
                 {
                     ProfileTargetSlice[] targets = new ProfileTargetSlice[]
                     {
@@ -76,6 +91,7 @@ namespace BreastRadiology.XUnitTests
                 e.IntroDoc
                     .ReviewedStatus(ReviewStatus.NotReviewed)
                     .ObservationSection("Mammography Mass")
+                    .Refinement(binding, "Mass")
                     ;
             });
         }

@@ -1,0 +1,38 @@
+{
+  "resourceType": "CodeSystem",
+  "id": "CommonMassRefinementCS",
+  "extension": [
+    {
+      "url": "http://www.fragment.com/fragment",
+      "valueUrl": "http://hl7.org/fhir/us/breast-radiology/StructureDefinition/HeaderFragment"
+    },
+    {
+      "url": "http://www.fragment.com/Group",
+      "valueString": "CommonCodesCS"
+    }
+  ],
+  "url": "http://hl7.org/fhir/us/breast-radiology/CodeSystem/CommonMassRefinementCS",
+  "name": "CommonMassRefinementCS",
+  "title": "Mass Refinement CodeSystem",
+  "description": "Codes defining mass refinements.",
+  "caseSensitive": true,
+  "content": "complete",
+  "count": 3,
+  "concept": [
+    {
+      "code": "Solid",
+      "display": "Solid Mass",
+      "definition": "Penrad.\r\nSolid Mass"
+    },
+    {
+      "code": "PartiallySolid",
+      "display": "Partially Solid Mass",
+      "definition": "Penrad.\r\nPartially Solid Mass"
+    },
+    {
+      "code": "Skin",
+      "display": "Skin Mass",
+      "definition": "Penrad.\r\nSkin Mass"
+    }
+  ]
+}

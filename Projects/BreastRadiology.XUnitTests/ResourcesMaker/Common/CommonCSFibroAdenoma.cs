@@ -13,19 +13,20 @@ using PreFhir;
 namespace BreastRadiology.XUnitTests
 {
     using CSTask = System.Threading.Tasks.Task<Hl7.Fhir.Model.CodeSystem>;
+    using VTask = System.Threading.Tasks.Task;
     partial class ResourcesMaker
     {
         async CSTask CommonCSFibroadenoma()
         {
             if (this.commonCSFibroadenoma == null)
-                this.commonCSFibroadenoma = await this.CreateCommonCSFibroadenoma();
+                await this.CreateCommonCSFibroadenoma();
             return this.commonCSFibroadenoma;
         }
         CodeSystem commonCSFibroadenoma = null;
 
-        async CSTask CreateCommonCSFibroadenoma()
+        async VTask CreateCommonCSFibroadenoma()
         {
-            return await this.CreateCodeSystem(
+            this.commonCSFibroadenoma = await this.CreateCodeSystem(
                     "Fibroadenoma",
                     "Fibroadenoma",
                     "Fibroadenoma/CodeSystem",

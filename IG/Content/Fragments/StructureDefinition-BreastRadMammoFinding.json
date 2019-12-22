@@ -59,7 +59,7 @@
     },
     {
       "url": "http://www.fragment.com/maplink",
-      "valueString": "target|True|http://hl7.org/fhir/us/breast-radiology/StructureDefinition/BreastRadMammoIntramammaryLymphNode"
+      "valueString": "target|True|http://hl7.org/fhir/us/breast-radiology/StructureDefinition/BreastRadMammoLymphNode"
     },
     {
       "url": "http://www.fragment.com/maplink",
@@ -292,9 +292,9 @@
         ]
       },
       {
-        "id": "Observation.hasMember:breastRadMammoIntramammaryLymphNode",
+        "id": "Observation.hasMember:breastRadMammoLymphNode",
         "path": "Observation.hasMember",
-        "sliceName": "breastRadMammoIntramammaryLymphNode",
+        "sliceName": "breastRadMammoLymphNode",
         "min": 0,
         "max": "*",
         "base": {
@@ -306,7 +306,7 @@
           {
             "code": "Reference",
             "targetProfile": [
-              "http://hl7.org/fhir/us/breast-radiology/StructureDefinition/BreastRadMammoIntramammaryLymphNode"
+              "http://hl7.org/fhir/us/breast-radiology/StructureDefinition/BreastRadMammoLymphNode"
             ]
           }
         ]
