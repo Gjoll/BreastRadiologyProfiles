@@ -887,6 +887,15 @@
     </resource>
     <resource>
       <reference>
+        <reference value="StructureDefinition/BreastRadMammoCommonTargets" />
+      </reference>
+      <name value="Mammography Common Targets Fragment" />
+      <description value="Breast Radiology Mammography Common Targets Fragment" />
+      <exampleBoolean value="false" />
+      <groupingId value="MGResources" />
+    </resource>
+    <resource>
+      <reference>
         <reference value="StructureDefinition/BreastRadMammoCyst" />
       </reference>
       <name value="Mammography Cyst" />
@@ -1698,6 +1707,15 @@
       </reference>
       <name value="Shape" />
       <description value="Fragment 'Breast Radiology Shape Observation'" />
+      <exampleBoolean value="false" />
+      <groupingId value="Fragments" />
+    </resource>
+    <resource>
+      <reference>
+        <reference value="StructureDefinition/FragmentMgCommonTargetsFragment" />
+      </reference>
+      <name value="Mg Common Targets Fragment" />
+      <description value="Fragment 'Mammography Common Targets Fragment'" />
       <exampleBoolean value="false" />
       <groupingId value="Fragments" />
     </resource>

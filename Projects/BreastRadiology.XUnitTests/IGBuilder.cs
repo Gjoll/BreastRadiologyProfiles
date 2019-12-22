@@ -72,43 +72,6 @@ namespace BreastRadiology.XUnitTests
             }
         }
 
-        void CopyResources(String inputDir, String inputMask, String outputDir)
-        {
-            foreach (String inputPath in Directory.GetFiles(inputDir, inputMask))
-            {
-                DomainResource r;
-                switch (Path.GetExtension(inputPath).ToUpper())
-                {
-                    case ".XML":
-                        {
-                            FhirXmlParser parser = new FhirXmlParser();
-                            r = parser.Parse<DomainResource>(File.ReadAllText(inputPath));
-                            break;
-                        }
-
-                    case ".JSON":
-                        {
-                            FhirJsonParser parser = new FhirJsonParser();
-                            r = parser.Parse<DomainResource>(File.ReadAllText(inputPath));
-                            break;
-                        }
-
-                    default:
-                        throw new Exception($"Unknown extension for serialized fhir resource '{inputPath}'");
-                }
-
-                foreach (Extension e in r.Extension.ToArray())
-                {
-                    if (e.Url.StartsWith(Global.FragmentUrl))
-                        r.Extension.Remove(e);
-                }
-
-                String outputPath = Path.Combine(outputDir, Path.GetFileName(inputPath));
-                r.SaveJson(outputPath);
-                this.fc?.Mark(outputPath);
-            }
-        }
-
         public void AddPageContent(String inputDir)
         {
             this.CopyFiles(inputDir, "*.xml", this.pagecontentDir);
@@ -161,8 +124,14 @@ namespace BreastRadiology.XUnitTests
                 return groupId;
             }
 
-            void Save(Resource r, String outputName)
+            void Save(DomainResource r, String outputName)
             {
+                foreach (Extension e in r.Extension.ToArray())
+                {
+                    if (e.Url.StartsWith(Global.FragmentUrl))
+                        r.Extension.Remove(e);
+                }
+
                 String outputPath = Path.Combine(this.resourceDir, outputName);
                 r.SaveJson(outputPath);
                 this.fc?.Mark(outputPath);
@@ -245,9 +214,6 @@ namespace BreastRadiology.XUnitTests
                 }
             }
         }
-
-
-
 
         public void AddFragments(String inputDir)
         {
