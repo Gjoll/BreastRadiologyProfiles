@@ -46,18 +46,15 @@ namespace BreastRadiology.XUnitTests
                             .Todo(
                             )
                     )
-                    .AddFragRef(await this.ObservationNoDeviceFragment())
                     .AddFragRef(await this.BreastBodyLocationRequiredFragment())
                     .AddFragRef(await this.ObservationNoValueFragment())
                     .AddFragRef(await this.ObservationSectionFragment())
+                    .AddFragRef(await this.MGCommonTargetsFragment())
                     ;
 
                 {
                     ProfileTargetSlice[] targets = new ProfileTargetSlice[]
                     {
-                    new ProfileTargetSlice(await this.CommonObservedSize(), 0, "1"),
-                    new ProfileTargetSlice(await this.CommonObservedCount(), 0, "1"),
-                    new ProfileTargetSlice(await this.CommonObservedChanges(), 0, "*"),
                     };
                     e.Find("hasMember").SliceByUrl(targets);
                     e.AddProfileTargets(targets);

@@ -55,19 +55,15 @@ namespace BreastRadiology.XUnitTests
                             )
                     )
                     .AddFragRef(await this.ObservationNoDeviceFragment())
-                    .AddFragRef(await this.BreastBodyLocationRequiredFragment())
                     .AddFragRef(await this.ObservationSectionFragment())
                     .AddFragRef(await this.ObservationNoValueFragment())
+                    .AddFragRef(await this.MGCommonTargetsFragment())
                     ;
 
                 {
                     ProfileTargetSlice[] targets = new ProfileTargetSlice[]
                     {
-                    new ProfileTargetSlice(await this.BiRadsAssessmentCategory(), 0, "1"),
-
                     new ProfileTargetSlice(await this.CommonObservedCount(), 0, "1"),
-                    new ProfileTargetSlice(await this.CommonObservedChanges(), 0, "*"),
-                    new ProfileTargetSlice(await this.CommonObservedSize(), 0, "1"),
 
                     new ProfileTargetSlice(await this.MGCalcificationType(), 0, "1"),
                     new ProfileTargetSlice(await this.MGCalcificationDistribution(), 0, "1"),
