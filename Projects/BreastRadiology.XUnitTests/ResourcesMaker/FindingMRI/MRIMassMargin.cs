@@ -114,7 +114,7 @@ namespace BreastRadiology.XUnitTests
                 e.AddValueSetLink(binding);
                 e.IntroDoc
                     .ReviewedStatus(ReviewStatus.NotReviewed)
-                    .CodedObservationLeafNode(e, "a MRI mass margin", binding)
+                    .CodedObservationLeafNode("a MRI mass margin", binding)
                     ;
             });
         }

@@ -143,7 +143,7 @@ namespace BreastRadiology.XUnitTests
                 e.AddValueSetLink(binding);
                 e.IntroDoc
                     .ReviewedStatus(ReviewStatus.NotReviewed)
-                    .CodedObservationLeafNode(e, "a mammography breast density", binding)
+                    .CodedObservationLeafNode("a mammography breast density", binding)
                     ;
             });
         }

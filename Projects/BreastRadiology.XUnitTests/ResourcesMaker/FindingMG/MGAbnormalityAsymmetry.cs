@@ -146,7 +146,8 @@ namespace BreastRadiology.XUnitTests
             e.AddValueSetLink(binding);
             e.IntroDoc
                 .ReviewedStatus(ReviewStatus.NotReviewed)
-                .CodedObservationLeafNode(e, "a mammography asymmetry abnormality", binding)
+                .ObservationSection("a mammography asymmetry abnormality")
+                .Refinement(binding, "Asymmetry")
                 ;
         }
     }

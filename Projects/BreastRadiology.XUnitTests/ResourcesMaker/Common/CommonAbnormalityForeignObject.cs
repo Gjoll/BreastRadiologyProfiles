@@ -195,7 +195,7 @@ namespace BreastRadiology.XUnitTests
                 e.AddValueSetLink(binding);
                 e.IntroDoc
                     .ReviewedStatus(ReviewStatus.NotReviewed)
-                    .CodedObservationLeafNode(e, "a foreign object abnormality", binding)
+                    .CodedObservationLeafNode("a foreign object abnormality", binding)
                     ;
             });
         }

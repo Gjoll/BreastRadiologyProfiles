@@ -104,7 +104,8 @@ namespace BreastRadiology.XUnitTests
 
                 e.IntroDoc
                     .ReviewedStatus(ReviewStatus.NotReviewed)
-                    .ObservationLeafNode($"Duct Abnormality")
+                    .ObservationSection($"Duct Abnormality")
+                    .Refinement(binding, "Duct")
                     ;
             });
         }

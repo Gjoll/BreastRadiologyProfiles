@@ -69,7 +69,7 @@ namespace BreastRadiology.XUnitTests
                 e.AddValueSetLink(binding);
                 e.IntroDoc
                     .ReviewedStatus(ReviewStatus.NotReviewed)
-                    .CodedObservationLeafNode(e, "a shape", binding)
+                    .CodedObservationLeafNode("a shape", binding)
                     ;
             });
         }

@@ -91,7 +91,7 @@ namespace BreastRadiology.XUnitTests
                 e.AddValueSetLink(binding);
                 e.IntroDoc
                     .ReviewedStatus(ReviewStatus.NotReviewed)
-                    .CodedObservationLeafNode(e, "a hilum", binding)
+                    .CodedObservationLeafNode("a hilum", binding)
                     ;
             });
         }

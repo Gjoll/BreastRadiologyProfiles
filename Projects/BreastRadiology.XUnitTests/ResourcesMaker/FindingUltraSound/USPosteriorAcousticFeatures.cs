@@ -120,7 +120,7 @@ namespace BreastRadiology.XUnitTests
                 e.AddValueSetLink(binding);
                 e.IntroDoc
                     .ReviewedStatus(ReviewStatus.NotReviewed)
-                    .CodedObservationLeafNode(e, "an ultra-sound mass posterior acoustic feature", binding)
+                    .CodedObservationLeafNode("an ultra-sound mass posterior acoustic feature", binding)
                     ;
             });
         }

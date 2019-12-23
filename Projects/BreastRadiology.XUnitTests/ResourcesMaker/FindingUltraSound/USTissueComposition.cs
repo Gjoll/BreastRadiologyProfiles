@@ -115,7 +115,7 @@ namespace BreastRadiology.XUnitTests
                 e.AddValueSetLink(binding);
                 e.IntroDoc
                     .ReviewedStatus(ReviewStatus.NotReviewed)
-                    .CodedObservationLeafNode(e, "an ultra-sound tissue composition", binding)
+                    .CodedObservationLeafNode("an ultra-sound tissue composition", binding)
                     ;
             });
         }

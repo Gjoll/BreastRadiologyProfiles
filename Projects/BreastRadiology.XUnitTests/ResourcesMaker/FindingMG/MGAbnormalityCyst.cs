@@ -27,6 +27,59 @@ namespace BreastRadiology.XUnitTests
         {
             await VTask.Run(async () =>
             {
+                CodeSystem cs = await this.CreateCodeSystem(
+                       "BreastRadMammoAbnormalityCystRefinement",
+                       "Mammography Cyst Abnormality Refinement",
+                        "Mg Cyst Refinement/CodeSystem",
+                       "Codes defining types of mammography cyst abnormalities.",
+                        Group_MGCodes,
+                       new ConceptDef[]
+                        {
+                        new ConceptDef("Complex",
+                            "Complex cyst",
+                            new Definition()
+                                .Line("Penrad.")
+                            ),
+                        new ConceptDef("Oil",
+                            "Oil cyst",
+                            new Definition()
+                                .Line("Penrad.")
+                            ),
+                        new ConceptDef("Simple",
+                            "Simple cyst",
+                            new Definition()
+                                .Line("Penrad.")
+                            ),
+                        new ConceptDef("Complicated",
+                            "Complicated cyst",
+                            new Definition()
+                                .Line("Penrad.")
+                            ),
+                        new ConceptDef("WithDebris",
+                            "Cyst With Debris",
+                            new Definition()
+                                .Line("Penrad.")
+                            )
+                        }
+                    );
+
+                ValueSet binding = await this.CreateValueSet(
+                   "BreastRadMammoAbnormalityCyst",
+                   "Mammography CystAbnormalities",
+                    "Mg Cyst/ValueSet",
+                   "Codes defining types of mammography cyst abnormalities.",
+                    Group_MGCodes,
+                    cs);
+
+                {
+                    IntroDoc valueSetIntroDoc = new IntroDoc(Path.Combine(this.pageDir, $"ValueSet-{binding.Name}-intro.xml"));
+                    valueSetIntroDoc
+                        .ReviewedStatus(ReviewStatus.NotReviewed)
+                    ;
+                    String outputPath = valueSetIntroDoc.Save();
+                    this.fc?.Mark(outputPath);
+                }
+
                 SDefEditor e = this.CreateEditor("BreastRadMammoAbnormalityCyst",
                         "Mammography Cyst Abnormality",
                         "Mg Cyst Abnormality",
@@ -58,9 +111,16 @@ namespace BreastRadiology.XUnitTests
                     e.AddProfileTargets(targets);
                 }
 
+                e.Select("value[x]")
+                    .Type("CodeableConcept")
+                    .Binding(binding.Url, BindingStrength.Required)
+                    ;
+                e.AddValueSetLink(binding);
+
                 e.IntroDoc
                     .ReviewedStatus(ReviewStatus.NotReviewed)
-                    .ObservationSection("Mammography Cyst Abnormality")
+                    .ObservationSection("a mammography asymmetry abnormality")
+                    .Refinement(binding, "Cyst")
                     ;
             });
         }

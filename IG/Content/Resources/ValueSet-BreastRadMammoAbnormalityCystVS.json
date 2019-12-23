@@ -1,6 +1,6 @@
 {
   "resourceType": "ValueSet",
-  "id": "BreastRadMammoMassDensityVS",
+  "id": "BreastRadMammoAbnormalityCystVS",
   "extension": [
     {
       "url": "http://www.fragment.com/fragment",
@@ -12,7 +12,7 @@
     },
     {
       "url": "http://www.fragment.com/mapname",
-      "valueString": "Mg Mass DensityValueSet"
+      "valueString": "Mg Cyst/ValueSet"
     },
     {
       "url": "http://www.fragment.com/mapname",
@@ -23,10 +23,10 @@
       "valueString": "Fragment/{name}"
     }
   ],
-  "url": "http://hl7.org/fhir/us/breast-radiology/ValueSet/BreastRadMammoMassDensityVS",
+  "url": "http://hl7.org/fhir/us/breast-radiology/ValueSet/BreastRadMammoAbnormalityCystVS",
   "version": "0.0.2",
-  "name": "BreastRadMammoMassDensityVS",
-  "title": "Mammography Mass Density ValueSet",
+  "name": "BreastRadMammoAbnormalityCystVS",
+  "title": "Mammography CystAbnormalities ValueSet",
   "status": "draft",
   "date": "2019-11-01",
   "publisher": "Hl7-Clinical Interoperability Council",
@@ -40,27 +40,31 @@
       ]
     }
   ],
-  "description": "Mammography mass density code system.",
+  "description": "Codes defining types of mammography cyst abnormalities.",
   "compose": {
     "include": [
       {
-        "system": "http://hl7.org/fhir/us/breast-radiology/CodeSystem/BreastRadMammoMassDensityCS",
+        "system": "http://hl7.org/fhir/us/breast-radiology/CodeSystem/BreastRadMammoAbnormalityCystRefinementCS",
         "concept": [
           {
-            "code": "HighDensity",
-            "display": "High Density"
+            "code": "Complex",
+            "display": "Complex cyst"
           },
           {
-            "code": "EqualDensity",
-            "display": "Equal Density"
+            "code": "Oil",
+            "display": "Oil cyst"
           },
           {
-            "code": "LowDensity",
-            "display": "Low Density"
+            "code": "Simple",
+            "display": "Simple cyst"
           },
           {
-            "code": "FatContaining",
-            "display": "Fat Containing"
+            "code": "Complicated",
+            "display": "Complicated cyst"
+          },
+          {
+            "code": "WithDebris",
+            "display": "Cyst With Debris"
           }
         ]
       }

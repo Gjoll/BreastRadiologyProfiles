@@ -100,7 +100,8 @@ namespace BreastRadiology.XUnitTests
 
                 e.IntroDoc
                     .ReviewedStatus(ReviewStatus.NotReviewed)
-                    .ObservationLeafNode($"Density Abnormality")
+                    .ObservationSection($"Density Abnormality")
+                    .Refinement(binding, "Density")
                     ;
             });
         }

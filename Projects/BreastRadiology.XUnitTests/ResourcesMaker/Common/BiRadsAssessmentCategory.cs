@@ -141,7 +141,7 @@ namespace BreastRadiology.XUnitTests
                 e.AddValueSetLink(binding);
                 e.IntroDoc
                     .ReviewedStatus(ReviewStatus.NotReviewed)
-                    .CodedObservationLeafNode(e, "a BiRad Assessment Category", binding);
+                    .CodedObservationLeafNode("a BiRad Assessment Category", binding);
             });
         }
     }

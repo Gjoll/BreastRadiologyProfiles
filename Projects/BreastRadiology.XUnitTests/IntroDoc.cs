@@ -111,8 +111,7 @@ namespace BreastRadiology.XUnitTests
         }
 
 
-        public IntroDoc CodedObservationLeafNode(SDefEditor e,
-            String leafNode,
+        public IntroDoc CodedObservationLeafNode(String leafNode,
             ValueSet binding)
         {
             this

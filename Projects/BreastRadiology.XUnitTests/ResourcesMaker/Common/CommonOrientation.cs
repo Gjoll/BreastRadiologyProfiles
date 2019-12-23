@@ -107,7 +107,7 @@ namespace BreastRadiology.XUnitTests
                 e.AddValueSetLink(binding);
                 e.IntroDoc
                     .ReviewedStatus(ReviewStatus.NotReviewed)
-                    .CodedObservationLeafNode(e, "an orientation", binding)
+                    .CodedObservationLeafNode("an orientation", binding)
                     ;
             });
         }

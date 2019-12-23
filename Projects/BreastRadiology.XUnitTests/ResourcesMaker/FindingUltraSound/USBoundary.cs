@@ -101,7 +101,7 @@ namespace BreastRadiology.XUnitTests
                 e.AddValueSetLink(binding);
                 e.IntroDoc
                     .ReviewedStatus(ReviewStatus.NotReviewed)
-                    .CodedObservationLeafNode(e, "an UltraSound boundary", binding)
+                    .CodedObservationLeafNode("an UltraSound boundary", binding)
                     ;
             });
         }

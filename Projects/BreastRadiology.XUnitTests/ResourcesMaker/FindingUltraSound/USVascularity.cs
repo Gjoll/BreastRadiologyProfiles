@@ -110,7 +110,7 @@ namespace BreastRadiology.XUnitTests
                 e.AddValueSetLink(binding);
                 e.IntroDoc
                     .ReviewedStatus(ReviewStatus.NotReviewed)
-                    .CodedObservationLeafNode(e, "an ultra-sound vascularity", binding)
+                    .CodedObservationLeafNode("an ultra-sound vascularity", binding)
                     ;
             });
         }

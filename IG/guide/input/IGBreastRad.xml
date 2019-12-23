@@ -142,6 +142,15 @@
     </resource>
     <resource>
       <reference>
+        <reference value="CodeSystem/BreastRadMammoAbnormalityCystRefinementCS" />
+      </reference>
+      <name value="Mammography Cyst Abnormality Refinement CodeSystem" />
+      <description value="Codes defining types of mammography cyst abnormalities." />
+      <exampleBoolean value="false" />
+      <groupingId value="MGCodesCS" />
+    </resource>
+    <resource>
+      <reference>
         <reference value="CodeSystem/BreastRadMammoAbnormalityDensityCS" />
       </reference>
       <name value="Mammography Density Abnormality Refinement CodeSystem" />
@@ -415,6 +424,15 @@
       </reference>
       <name value="Mammography AsymmetryAbnormalities ValueSet" />
       <description value="Codes defining types of mammography asymmetry abnormalities." />
+      <exampleBoolean value="false" />
+      <groupingId value="MGCodesVS" />
+    </resource>
+    <resource>
+      <reference>
+        <reference value="ValueSet/BreastRadMammoAbnormalityCystVS" />
+      </reference>
+      <name value="Mammography CystAbnormalities ValueSet" />
+      <description value="Codes defining types of mammography cyst abnormalities." />
       <exampleBoolean value="false" />
       <groupingId value="MGCodesVS" />
     </resource>
@@ -1451,28 +1469,10 @@
     </resource>
     <resource>
       <reference>
-        <reference value="StructureDefinition/FragmentBreastRadMammoArchitecturalDistortion" />
-      </reference>
-      <name value="Mammography Architectural Distortion" />
-      <description value="Fragment 'Breast Radiology Mammography Architectural Distortion Observation'" />
-      <exampleBoolean value="false" />
-      <groupingId value="Fragments" />
-    </resource>
-    <resource>
-      <reference>
         <reference value="StructureDefinition/FragmentBreastRadMammoAssociatedFeatures" />
       </reference>
       <name value="Mammography Associated Features" />
       <description value="Fragment 'Mammography Associated Features Observation'" />
-      <exampleBoolean value="false" />
-      <groupingId value="Fragments" />
-    </resource>
-    <resource>
-      <reference>
-        <reference value="StructureDefinition/FragmentBreastRadMammoAsymmetry" />
-      </reference>
-      <name value="Mammography Asymmetry" />
-      <description value="Fragment 'Breast Radiology Mammography Asymmetry Observation'" />
       <exampleBoolean value="false" />
       <groupingId value="Fragments" />
     </resource>
@@ -1496,15 +1496,6 @@
     </resource>
     <resource>
       <reference>
-        <reference value="StructureDefinition/FragmentBreastRadMammoCalcification" />
-      </reference>
-      <name value="Mammography Calcification" />
-      <description value="Fragment 'Breast Radiology Mammography Calcification Observation'" />
-      <exampleBoolean value="false" />
-      <groupingId value="Fragments" />
-    </resource>
-    <resource>
-      <reference>
         <reference value="StructureDefinition/FragmentBreastRadMammoCalcificationDistribution" />
       </reference>
       <name value="Mammography Calcification Distribution" />
@@ -1523,37 +1514,10 @@
     </resource>
     <resource>
       <reference>
-        <reference value="StructureDefinition/FragmentBreastRadMammoCyst" />
-      </reference>
-      <name value="Mammography Cyst" />
-      <description value="Fragment 'Breast Radiology Mammography Cyst Observation'" />
-      <exampleBoolean value="false" />
-      <groupingId value="Fragments" />
-    </resource>
-    <resource>
-      <reference>
         <reference value="StructureDefinition/FragmentBreastRadMammoDensity" />
       </reference>
       <name value="Mammography Density" />
       <description value="Fragment 'Breast Radiology Mammography Density Observation'" />
-      <exampleBoolean value="false" />
-      <groupingId value="Fragments" />
-    </resource>
-    <resource>
-      <reference>
-        <reference value="StructureDefinition/FragmentBreastRadMammoFatNecrosis" />
-      </reference>
-      <name value="Mammography Fat Necrosis" />
-      <description value="Fragment 'Breast Radiology Mammography Fat Necrosis Observation'" />
-      <exampleBoolean value="false" />
-      <groupingId value="Fragments" />
-    </resource>
-    <resource>
-      <reference>
-        <reference value="StructureDefinition/FragmentBreastRadMammoFibroadenoma" />
-      </reference>
-      <name value="Mammography Fibroadenoma" />
-      <description value="Fragment 'Breast Radiology Mammography Fibroadenoma Observation'" />
       <exampleBoolean value="false" />
       <groupingId value="Fragments" />
     </resource>
@@ -1568,28 +1532,10 @@
     </resource>
     <resource>
       <reference>
-        <reference value="StructureDefinition/FragmentBreastRadMammoLymphNode" />
-      </reference>
-      <name value="Mammography LymphNode" />
-      <description value="Fragment 'Breast Radiology Mammography LymphNode Observation'" />
-      <exampleBoolean value="false" />
-      <groupingId value="Fragments" />
-    </resource>
-    <resource>
-      <reference>
         <reference value="StructureDefinition/FragmentBreastRadMammoMass" />
       </reference>
       <name value="Mammography Mass Abnormality" />
       <description value="Fragment 'Breast Radiology Mammography Mass Abnormality Observation'" />
-      <exampleBoolean value="false" />
-      <groupingId value="Fragments" />
-    </resource>
-    <resource>
-      <reference>
-        <reference value="StructureDefinition/FragmentBreastRadMammoMassDensity" />
-      </reference>
-      <name value="Mammography Mass Density" />
-      <description value="Fragment 'Breast Radiology Mammography Mass Density Observation'" />
       <exampleBoolean value="false" />
       <groupingId value="Fragments" />
     </resource>
@@ -1635,15 +1581,6 @@
       </reference>
       <name value="Mammography Skin Thickening" />
       <description value="Fragment 'Mammography Skin Thickening Observation'" />
-      <exampleBoolean value="false" />
-      <groupingId value="Fragments" />
-    </resource>
-    <resource>
-      <reference>
-        <reference value="StructureDefinition/FragmentBreastRadMammoSolitaryDilatedDuct" />
-      </reference>
-      <name value="Mammography Solitary Dilated Duct" />
-      <description value="Fragment 'Breat Radiology Mammography Solitary Dilated Duct Observation'" />
       <exampleBoolean value="false" />
       <groupingId value="Fragments" />
     </resource>
@@ -1914,15 +1851,6 @@
       </reference>
       <name value="Count" />
       <description value="Fragment 'Breast Radiology Count Observation'" />
-      <exampleBoolean value="false" />
-      <groupingId value="Fragments" />
-    </resource>
-    <resource>
-      <reference>
-        <reference value="StructureDefinition/FragmentCommonForeignObject" />
-      </reference>
-      <name value="Foreign Object" />
-      <description value="Fragment 'Breast Radiology Foreign Object Observation'" />
       <exampleBoolean value="false" />
       <groupingId value="Fragments" />
     </resource>

@@ -52,7 +52,6 @@ namespace BreastRadiology.XUnitTests
                     .AddFragRef(await this.ObservationNoValueFragment())
                     .AddFragRef(await this.ObservationLeafFragment())
                     .AddFragRef(await this.MGCommonTargetsFragment())
-                    .AddFragRef(await this.MGShapeTargetsFragment())
                     ;
 
                 {
@@ -64,7 +63,7 @@ namespace BreastRadiology.XUnitTests
                 }
                 e.IntroDoc
                     .ReviewedStatus(ReviewStatus.NotReviewed)
-                    .ObservationLeafNode($"Architectural Distortion Abnormality")
+                    .ObservationSection($"Architectural Distortion Abnormality")
                     ;
             });
         }

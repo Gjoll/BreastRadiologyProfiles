@@ -146,7 +146,7 @@ namespace BreastRadiology.XUnitTests
                 e.AddValueSetLink(binding);
                 e.IntroDoc
                     .ReviewedStatus(ReviewStatus.NotReviewed)
-                    .CodedObservationLeafNode(e, "an abnormality observed change", binding)
+                    .CodedObservationLeafNode("an abnormality observed change", binding)
                     ;
             });
         }
