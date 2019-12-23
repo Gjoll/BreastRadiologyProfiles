@@ -51,11 +51,11 @@
     },
     {
       "url": "http://www.fragment.com/maplink",
-      "valueString": "target|True|http://hl7.org/fhir/us/breast-radiology/StructureDefinition/BreastRadMammoArchitecturalDistortion"
+      "valueString": "target|True|http://hl7.org/fhir/us/breast-radiology/StructureDefinition/BreastRadMammoAbnormalityArchitecturalDistortion"
     },
     {
       "url": "http://www.fragment.com/maplink",
-      "valueString": "target|True|http://hl7.org/fhir/us/breast-radiology/StructureDefinition/BreastRadMammoCalcification"
+      "valueString": "target|True|http://hl7.org/fhir/us/breast-radiology/StructureDefinition/BreastRadMammoAbnormalityCalcification"
     }
   ],
   "url": "http://hl7.org/fhir/us/breast-radiology/StructureDefinition/BreastRadMammoAssociatedFeatures",
@@ -181,9 +181,9 @@
         ]
       },
       {
-        "id": "Observation.hasMember:breastRadMammoArchitecturalDistortion",
+        "id": "Observation.hasMember:breastRadMammoAbnormalityArchitecturalDistortion",
         "path": "Observation.hasMember",
-        "sliceName": "breastRadMammoArchitecturalDistortion",
+        "sliceName": "breastRadMammoAbnormalityArchitecturalDistortion",
         "min": 0,
         "max": "*",
         "base": {
@@ -195,15 +195,15 @@
           {
             "code": "Reference",
             "targetProfile": [
-              "http://hl7.org/fhir/us/breast-radiology/StructureDefinition/BreastRadMammoArchitecturalDistortion"
+              "http://hl7.org/fhir/us/breast-radiology/StructureDefinition/BreastRadMammoAbnormalityArchitecturalDistortion"
             ]
           }
         ]
       },
       {
-        "id": "Observation.hasMember:breastRadMammoCalcification",
+        "id": "Observation.hasMember:breastRadMammoAbnormalityCalcification",
         "path": "Observation.hasMember",
-        "sliceName": "breastRadMammoCalcification",
+        "sliceName": "breastRadMammoAbnormalityCalcification",
         "min": 0,
         "max": "*",
         "base": {
@@ -215,7 +215,7 @@
           {
             "code": "Reference",
             "targetProfile": [
-              "http://hl7.org/fhir/us/breast-radiology/StructureDefinition/BreastRadMammoCalcification"
+              "http://hl7.org/fhir/us/breast-radiology/StructureDefinition/BreastRadMammoAbnormalityCalcification"
             ]
           }
         ]

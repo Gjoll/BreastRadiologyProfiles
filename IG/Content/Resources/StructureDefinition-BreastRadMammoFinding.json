@@ -27,39 +27,43 @@
     },
     {
       "url": "http://www.fragment.com/maplink",
-      "valueString": "target|True|http://hl7.org/fhir/us/breast-radiology/StructureDefinition/CommonForeignObject"
+      "valueString": "target|True|http://hl7.org/fhir/us/breast-radiology/StructureDefinition/CommonAbnormalityForeignObject"
     },
     {
       "url": "http://www.fragment.com/maplink",
-      "valueString": "target|True|http://hl7.org/fhir/us/breast-radiology/StructureDefinition/BreastRadMammoArchitecturalDistortion"
+      "valueString": "target|True|http://hl7.org/fhir/us/breast-radiology/StructureDefinition/BreastRadMammoAbnormalityArchitecturalDistortion"
     },
     {
       "url": "http://www.fragment.com/maplink",
-      "valueString": "target|True|http://hl7.org/fhir/us/breast-radiology/StructureDefinition/BreastRadMammoAsymmetry"
+      "valueString": "target|True|http://hl7.org/fhir/us/breast-radiology/StructureDefinition/BreastRadMammoAbnormalityAsymmetry"
     },
     {
       "url": "http://www.fragment.com/maplink",
-      "valueString": "target|True|http://hl7.org/fhir/us/breast-radiology/StructureDefinition/BreastRadMammoBreastDensity"
+      "valueString": "target|True|http://hl7.org/fhir/us/breast-radiology/StructureDefinition/BreastRadMammoAbnormalityCalcification"
     },
     {
       "url": "http://www.fragment.com/maplink",
-      "valueString": "target|True|http://hl7.org/fhir/us/breast-radiology/StructureDefinition/BreastRadMammoCalcification"
+      "valueString": "target|True|http://hl7.org/fhir/us/breast-radiology/StructureDefinition/BreastRadMammoAbnormalityCyst"
     },
     {
       "url": "http://www.fragment.com/maplink",
-      "valueString": "target|True|http://hl7.org/fhir/us/breast-radiology/StructureDefinition/BreastRadMammoCyst"
+      "valueString": "target|True|http://hl7.org/fhir/us/breast-radiology/StructureDefinition/BreastRadMammoAbnormalityDensity"
     },
     {
       "url": "http://www.fragment.com/maplink",
-      "valueString": "target|True|http://hl7.org/fhir/us/breast-radiology/StructureDefinition/BreastRadMammoFatNecrosis"
+      "valueString": "target|True|http://hl7.org/fhir/us/breast-radiology/StructureDefinition/BreastRadMammoAbnormalityDuct"
     },
     {
       "url": "http://www.fragment.com/maplink",
-      "valueString": "target|True|http://hl7.org/fhir/us/breast-radiology/StructureDefinition/BreastRadMammoFibroadenoma"
+      "valueString": "target|True|http://hl7.org/fhir/us/breast-radiology/StructureDefinition/BreastRadMammoAbnormalityFatNecrosis"
     },
     {
       "url": "http://www.fragment.com/maplink",
-      "valueString": "target|True|http://hl7.org/fhir/us/breast-radiology/StructureDefinition/BreastRadMammoLymphNode"
+      "valueString": "target|True|http://hl7.org/fhir/us/breast-radiology/StructureDefinition/BreastRadMammoAbnormalityFibroadenoma"
+    },
+    {
+      "url": "http://www.fragment.com/maplink",
+      "valueString": "target|True|http://hl7.org/fhir/us/breast-radiology/StructureDefinition/BreastRadMammoAbnormalityLymphNode"
     },
     {
       "url": "http://www.fragment.com/maplink",
@@ -71,11 +75,11 @@
     },
     {
       "url": "http://www.fragment.com/maplink",
-      "valueString": "target|True|http://hl7.org/fhir/us/breast-radiology/StructureDefinition/BreastRadMammoSolitaryDilatedDuct"
+      "valueString": "target|True|http://hl7.org/fhir/us/breast-radiology/StructureDefinition/BreastRadMammoAssociatedFeatures"
     },
     {
       "url": "http://www.fragment.com/maplink",
-      "valueString": "target|True|http://hl7.org/fhir/us/breast-radiology/StructureDefinition/BreastRadMammoAssociatedFeatures"
+      "valueString": "target|True|http://hl7.org/fhir/us/breast-radiology/StructureDefinition/BreastRadMammoBreastDensity"
     },
     {
       "url": "http://www.fragment.com/mapname",
@@ -2019,9 +2023,9 @@
         ]
       },
       {
-        "id": "Observation.hasMember:commonForeignObject",
+        "id": "Observation.hasMember:commonAbnormalityForeignObject",
         "path": "Observation.hasMember",
-        "sliceName": "commonForeignObject",
+        "sliceName": "commonAbnormalityForeignObject",
         "short": "Related resource that belongs to the Observation group",
         "definition": "This observation is a group observation (e.g. a battery, a panel of tests, a set of vital sign measurements) that includes the target as a member of the group.",
         "comment": "When using this element, an observation will typically have either a value or a set of related resources, although both may be present in some cases.  For a discussion on the ways Observations can assembled in groups together, see [Notes](observation.html#obsgrouping) below.  Note that a system may calculate results from [QuestionnaireResponse](questionnaireresponse.html)  into a final score and represent the score as an Observation.",
@@ -2036,7 +2040,7 @@
           {
             "code": "Reference",
             "targetProfile": [
-              "http://hl7.org/fhir/us/breast-radiology/StructureDefinition/CommonForeignObject"
+              "http://hl7.org/fhir/us/breast-radiology/StructureDefinition/CommonAbnormalityForeignObject"
             ]
           }
         ],
@@ -2054,9 +2058,9 @@
         ]
       },
       {
-        "id": "Observation.hasMember:breastRadMammoArchitecturalDistortion",
+        "id": "Observation.hasMember:breastRadMammoAbnormalityArchitecturalDistortion",
         "path": "Observation.hasMember",
-        "sliceName": "breastRadMammoArchitecturalDistortion",
+        "sliceName": "breastRadMammoAbnormalityArchitecturalDistortion",
         "short": "Related resource that belongs to the Observation group",
         "definition": "This observation is a group observation (e.g. a battery, a panel of tests, a set of vital sign measurements) that includes the target as a member of the group.",
         "comment": "When using this element, an observation will typically have either a value or a set of related resources, although both may be present in some cases.  For a discussion on the ways Observations can assembled in groups together, see [Notes](observation.html#obsgrouping) below.  Note that a system may calculate results from [QuestionnaireResponse](questionnaireresponse.html)  into a final score and represent the score as an Observation.",
@@ -2071,7 +2075,7 @@
           {
             "code": "Reference",
             "targetProfile": [
-              "http://hl7.org/fhir/us/breast-radiology/StructureDefinition/BreastRadMammoArchitecturalDistortion"
+              "http://hl7.org/fhir/us/breast-radiology/StructureDefinition/BreastRadMammoAbnormalityArchitecturalDistortion"
             ]
           }
         ],
@@ -2089,9 +2093,9 @@
         ]
       },
       {
-        "id": "Observation.hasMember:breastRadMammoAsymmetry",
+        "id": "Observation.hasMember:breastRadMammoAbnormalityAsymmetry",
         "path": "Observation.hasMember",
-        "sliceName": "breastRadMammoAsymmetry",
+        "sliceName": "breastRadMammoAbnormalityAsymmetry",
         "short": "Related resource that belongs to the Observation group",
         "definition": "This observation is a group observation (e.g. a battery, a panel of tests, a set of vital sign measurements) that includes the target as a member of the group.",
         "comment": "When using this element, an observation will typically have either a value or a set of related resources, although both may be present in some cases.  For a discussion on the ways Observations can assembled in groups together, see [Notes](observation.html#obsgrouping) below.  Note that a system may calculate results from [QuestionnaireResponse](questionnaireresponse.html)  into a final score and represent the score as an Observation.",
@@ -2106,7 +2110,7 @@
           {
             "code": "Reference",
             "targetProfile": [
-              "http://hl7.org/fhir/us/breast-radiology/StructureDefinition/BreastRadMammoAsymmetry"
+              "http://hl7.org/fhir/us/breast-radiology/StructureDefinition/BreastRadMammoAbnormalityAsymmetry"
             ]
           }
         ],
@@ -2124,14 +2128,14 @@
         ]
       },
       {
-        "id": "Observation.hasMember:breastRadMammoBreastDensity",
+        "id": "Observation.hasMember:breastRadMammoAbnormalityCalcification",
         "path": "Observation.hasMember",
-        "sliceName": "breastRadMammoBreastDensity",
+        "sliceName": "breastRadMammoAbnormalityCalcification",
         "short": "Related resource that belongs to the Observation group",
         "definition": "This observation is a group observation (e.g. a battery, a panel of tests, a set of vital sign measurements) that includes the target as a member of the group.",
         "comment": "When using this element, an observation will typically have either a value or a set of related resources, although both may be present in some cases.  For a discussion on the ways Observations can assembled in groups together, see [Notes](observation.html#obsgrouping) below.  Note that a system may calculate results from [QuestionnaireResponse](questionnaireresponse.html)  into a final score and represent the score as an Observation.",
-        "min": 1,
-        "max": "1",
+        "min": 0,
+        "max": "*",
         "base": {
           "path": "Observation.hasMember",
           "min": 0,
@@ -2141,7 +2145,7 @@
           {
             "code": "Reference",
             "targetProfile": [
-              "http://hl7.org/fhir/us/breast-radiology/StructureDefinition/BreastRadMammoBreastDensity"
+              "http://hl7.org/fhir/us/breast-radiology/StructureDefinition/BreastRadMammoAbnormalityCalcification"
             ]
           }
         ],
@@ -2159,9 +2163,9 @@
         ]
       },
       {
-        "id": "Observation.hasMember:breastRadMammoCalcification",
+        "id": "Observation.hasMember:breastRadMammoAbnormalityCyst",
         "path": "Observation.hasMember",
-        "sliceName": "breastRadMammoCalcification",
+        "sliceName": "breastRadMammoAbnormalityCyst",
         "short": "Related resource that belongs to the Observation group",
         "definition": "This observation is a group observation (e.g. a battery, a panel of tests, a set of vital sign measurements) that includes the target as a member of the group.",
         "comment": "When using this element, an observation will typically have either a value or a set of related resources, although both may be present in some cases.  For a discussion on the ways Observations can assembled in groups together, see [Notes](observation.html#obsgrouping) below.  Note that a system may calculate results from [QuestionnaireResponse](questionnaireresponse.html)  into a final score and represent the score as an Observation.",
@@ -2176,7 +2180,7 @@
           {
             "code": "Reference",
             "targetProfile": [
-              "http://hl7.org/fhir/us/breast-radiology/StructureDefinition/BreastRadMammoCalcification"
+              "http://hl7.org/fhir/us/breast-radiology/StructureDefinition/BreastRadMammoAbnormalityCyst"
             ]
           }
         ],
@@ -2194,9 +2198,9 @@
         ]
       },
       {
-        "id": "Observation.hasMember:breastRadMammoCyst",
+        "id": "Observation.hasMember:breastRadMammoAbnormalityDensity",
         "path": "Observation.hasMember",
-        "sliceName": "breastRadMammoCyst",
+        "sliceName": "breastRadMammoAbnormalityDensity",
         "short": "Related resource that belongs to the Observation group",
         "definition": "This observation is a group observation (e.g. a battery, a panel of tests, a set of vital sign measurements) that includes the target as a member of the group.",
         "comment": "When using this element, an observation will typically have either a value or a set of related resources, although both may be present in some cases.  For a discussion on the ways Observations can assembled in groups together, see [Notes](observation.html#obsgrouping) below.  Note that a system may calculate results from [QuestionnaireResponse](questionnaireresponse.html)  into a final score and represent the score as an Observation.",
@@ -2211,7 +2215,7 @@
           {
             "code": "Reference",
             "targetProfile": [
-              "http://hl7.org/fhir/us/breast-radiology/StructureDefinition/BreastRadMammoCyst"
+              "http://hl7.org/fhir/us/breast-radiology/StructureDefinition/BreastRadMammoAbnormalityDensity"
             ]
           }
         ],
@@ -2229,9 +2233,9 @@
         ]
       },
       {
-        "id": "Observation.hasMember:breastRadMammoFatNecrosis",
+        "id": "Observation.hasMember:breastRadMammoAbnormalityDuct",
         "path": "Observation.hasMember",
-        "sliceName": "breastRadMammoFatNecrosis",
+        "sliceName": "breastRadMammoAbnormalityDuct",
         "short": "Related resource that belongs to the Observation group",
         "definition": "This observation is a group observation (e.g. a battery, a panel of tests, a set of vital sign measurements) that includes the target as a member of the group.",
         "comment": "When using this element, an observation will typically have either a value or a set of related resources, although both may be present in some cases.  For a discussion on the ways Observations can assembled in groups together, see [Notes](observation.html#obsgrouping) below.  Note that a system may calculate results from [QuestionnaireResponse](questionnaireresponse.html)  into a final score and represent the score as an Observation.",
@@ -2246,7 +2250,7 @@
           {
             "code": "Reference",
             "targetProfile": [
-              "http://hl7.org/fhir/us/breast-radiology/StructureDefinition/BreastRadMammoFatNecrosis"
+              "http://hl7.org/fhir/us/breast-radiology/StructureDefinition/BreastRadMammoAbnormalityDuct"
             ]
           }
         ],
@@ -2264,9 +2268,9 @@
         ]
       },
       {
-        "id": "Observation.hasMember:breastRadMammoFibroadenoma",
+        "id": "Observation.hasMember:breastRadMammoAbnormalityFatNecrosis",
         "path": "Observation.hasMember",
-        "sliceName": "breastRadMammoFibroadenoma",
+        "sliceName": "breastRadMammoAbnormalityFatNecrosis",
         "short": "Related resource that belongs to the Observation group",
         "definition": "This observation is a group observation (e.g. a battery, a panel of tests, a set of vital sign measurements) that includes the target as a member of the group.",
         "comment": "When using this element, an observation will typically have either a value or a set of related resources, although both may be present in some cases.  For a discussion on the ways Observations can assembled in groups together, see [Notes](observation.html#obsgrouping) below.  Note that a system may calculate results from [QuestionnaireResponse](questionnaireresponse.html)  into a final score and represent the score as an Observation.",
@@ -2281,7 +2285,7 @@
           {
             "code": "Reference",
             "targetProfile": [
-              "http://hl7.org/fhir/us/breast-radiology/StructureDefinition/BreastRadMammoFibroadenoma"
+              "http://hl7.org/fhir/us/breast-radiology/StructureDefinition/BreastRadMammoAbnormalityFatNecrosis"
             ]
           }
         ],
@@ -2299,9 +2303,9 @@
         ]
       },
       {
-        "id": "Observation.hasMember:breastRadMammoLymphNode",
+        "id": "Observation.hasMember:breastRadMammoAbnormalityFibroadenoma",
         "path": "Observation.hasMember",
-        "sliceName": "breastRadMammoLymphNode",
+        "sliceName": "breastRadMammoAbnormalityFibroadenoma",
         "short": "Related resource that belongs to the Observation group",
         "definition": "This observation is a group observation (e.g. a battery, a panel of tests, a set of vital sign measurements) that includes the target as a member of the group.",
         "comment": "When using this element, an observation will typically have either a value or a set of related resources, although both may be present in some cases.  For a discussion on the ways Observations can assembled in groups together, see [Notes](observation.html#obsgrouping) below.  Note that a system may calculate results from [QuestionnaireResponse](questionnaireresponse.html)  into a final score and represent the score as an Observation.",
@@ -2316,7 +2320,42 @@
           {
             "code": "Reference",
             "targetProfile": [
-              "http://hl7.org/fhir/us/breast-radiology/StructureDefinition/BreastRadMammoLymphNode"
+              "http://hl7.org/fhir/us/breast-radiology/StructureDefinition/BreastRadMammoAbnormalityFibroadenoma"
+            ]
+          }
+        ],
+        "isModifier": false,
+        "isSummary": true,
+        "mapping": [
+          {
+            "identity": "v2",
+            "map": "Relationships established by OBX-4 usage"
+          },
+          {
+            "identity": "rim",
+            "map": "outBoundRelationship"
+          }
+        ]
+      },
+      {
+        "id": "Observation.hasMember:breastRadMammoAbnormalityLymphNode",
+        "path": "Observation.hasMember",
+        "sliceName": "breastRadMammoAbnormalityLymphNode",
+        "short": "Related resource that belongs to the Observation group",
+        "definition": "This observation is a group observation (e.g. a battery, a panel of tests, a set of vital sign measurements) that includes the target as a member of the group.",
+        "comment": "When using this element, an observation will typically have either a value or a set of related resources, although both may be present in some cases.  For a discussion on the ways Observations can assembled in groups together, see [Notes](observation.html#obsgrouping) below.  Note that a system may calculate results from [QuestionnaireResponse](questionnaireresponse.html)  into a final score and represent the score as an Observation.",
+        "min": 0,
+        "max": "*",
+        "base": {
+          "path": "Observation.hasMember",
+          "min": 0,
+          "max": "*"
+        },
+        "type": [
+          {
+            "code": "Reference",
+            "targetProfile": [
+              "http://hl7.org/fhir/us/breast-radiology/StructureDefinition/BreastRadMammoAbnormalityLymphNode"
             ]
           }
         ],
@@ -2404,41 +2443,6 @@
         ]
       },
       {
-        "id": "Observation.hasMember:breastRadMammoSolitaryDilatedDuct",
-        "path": "Observation.hasMember",
-        "sliceName": "breastRadMammoSolitaryDilatedDuct",
-        "short": "Related resource that belongs to the Observation group",
-        "definition": "This observation is a group observation (e.g. a battery, a panel of tests, a set of vital sign measurements) that includes the target as a member of the group.",
-        "comment": "When using this element, an observation will typically have either a value or a set of related resources, although both may be present in some cases.  For a discussion on the ways Observations can assembled in groups together, see [Notes](observation.html#obsgrouping) below.  Note that a system may calculate results from [QuestionnaireResponse](questionnaireresponse.html)  into a final score and represent the score as an Observation.",
-        "min": 0,
-        "max": "*",
-        "base": {
-          "path": "Observation.hasMember",
-          "min": 0,
-          "max": "*"
-        },
-        "type": [
-          {
-            "code": "Reference",
-            "targetProfile": [
-              "http://hl7.org/fhir/us/breast-radiology/StructureDefinition/BreastRadMammoSolitaryDilatedDuct"
-            ]
-          }
-        ],
-        "isModifier": false,
-        "isSummary": true,
-        "mapping": [
-          {
-            "identity": "v2",
-            "map": "Relationships established by OBX-4 usage"
-          },
-          {
-            "identity": "rim",
-            "map": "outBoundRelationship"
-          }
-        ]
-      },
-      {
         "id": "Observation.hasMember:breastRadMammoAssociatedFeatures",
         "path": "Observation.hasMember",
         "sliceName": "breastRadMammoAssociatedFeatures",
@@ -2457,6 +2461,41 @@
             "code": "Reference",
             "targetProfile": [
               "http://hl7.org/fhir/us/breast-radiology/StructureDefinition/BreastRadMammoAssociatedFeatures"
+            ]
+          }
+        ],
+        "isModifier": false,
+        "isSummary": true,
+        "mapping": [
+          {
+            "identity": "v2",
+            "map": "Relationships established by OBX-4 usage"
+          },
+          {
+            "identity": "rim",
+            "map": "outBoundRelationship"
+          }
+        ]
+      },
+      {
+        "id": "Observation.hasMember:breastRadMammoBreastDensity",
+        "path": "Observation.hasMember",
+        "sliceName": "breastRadMammoBreastDensity",
+        "short": "Related resource that belongs to the Observation group",
+        "definition": "This observation is a group observation (e.g. a battery, a panel of tests, a set of vital sign measurements) that includes the target as a member of the group.",
+        "comment": "When using this element, an observation will typically have either a value or a set of related resources, although both may be present in some cases.  For a discussion on the ways Observations can assembled in groups together, see [Notes](observation.html#obsgrouping) below.  Note that a system may calculate results from [QuestionnaireResponse](questionnaireresponse.html)  into a final score and represent the score as an Observation.",
+        "min": 1,
+        "max": "1",
+        "base": {
+          "path": "Observation.hasMember",
+          "min": 0,
+          "max": "*"
+        },
+        "type": [
+          {
+            "code": "Reference",
+            "targetProfile": [
+              "http://hl7.org/fhir/us/breast-radiology/StructureDefinition/BreastRadMammoBreastDensity"
             ]
           }
         ],
@@ -3182,9 +3221,9 @@
         }
       },
       {
-        "id": "Observation.hasMember:commonForeignObject",
+        "id": "Observation.hasMember:commonAbnormalityForeignObject",
         "path": "Observation.hasMember",
-        "sliceName": "commonForeignObject",
+        "sliceName": "commonAbnormalityForeignObject",
         "short": "Related resource that belongs to the Observation group",
         "definition": "This observation is a group observation (e.g. a battery, a panel of tests, a set of vital sign measurements) that includes the target as a member of the group.",
         "comment": "When using this element, an observation will typically have either a value or a set of related resources, although both may be present in some cases.  For a discussion on the ways Observations can assembled in groups together, see [Notes](observation.html#obsgrouping) below.  Note that a system may calculate results from [QuestionnaireResponse](questionnaireresponse.html)  into a final score and represent the score as an Observation.",
@@ -3199,7 +3238,7 @@
           {
             "code": "Reference",
             "targetProfile": [
-              "http://hl7.org/fhir/us/breast-radiology/StructureDefinition/CommonForeignObject"
+              "http://hl7.org/fhir/us/breast-radiology/StructureDefinition/CommonAbnormalityForeignObject"
             ]
           }
         ],
@@ -3217,9 +3256,9 @@
         ]
       },
       {
-        "id": "Observation.hasMember:breastRadMammoArchitecturalDistortion",
+        "id": "Observation.hasMember:breastRadMammoAbnormalityArchitecturalDistortion",
         "path": "Observation.hasMember",
-        "sliceName": "breastRadMammoArchitecturalDistortion",
+        "sliceName": "breastRadMammoAbnormalityArchitecturalDistortion",
         "short": "Related resource that belongs to the Observation group",
         "definition": "This observation is a group observation (e.g. a battery, a panel of tests, a set of vital sign measurements) that includes the target as a member of the group.",
         "comment": "When using this element, an observation will typically have either a value or a set of related resources, although both may be present in some cases.  For a discussion on the ways Observations can assembled in groups together, see [Notes](observation.html#obsgrouping) below.  Note that a system may calculate results from [QuestionnaireResponse](questionnaireresponse.html)  into a final score and represent the score as an Observation.",
@@ -3234,7 +3273,7 @@
           {
             "code": "Reference",
             "targetProfile": [
-              "http://hl7.org/fhir/us/breast-radiology/StructureDefinition/BreastRadMammoArchitecturalDistortion"
+              "http://hl7.org/fhir/us/breast-radiology/StructureDefinition/BreastRadMammoAbnormalityArchitecturalDistortion"
             ]
           }
         ],
@@ -3252,9 +3291,9 @@
         ]
       },
       {
-        "id": "Observation.hasMember:breastRadMammoAsymmetry",
+        "id": "Observation.hasMember:breastRadMammoAbnormalityAsymmetry",
         "path": "Observation.hasMember",
-        "sliceName": "breastRadMammoAsymmetry",
+        "sliceName": "breastRadMammoAbnormalityAsymmetry",
         "short": "Related resource that belongs to the Observation group",
         "definition": "This observation is a group observation (e.g. a battery, a panel of tests, a set of vital sign measurements) that includes the target as a member of the group.",
         "comment": "When using this element, an observation will typically have either a value or a set of related resources, although both may be present in some cases.  For a discussion on the ways Observations can assembled in groups together, see [Notes](observation.html#obsgrouping) below.  Note that a system may calculate results from [QuestionnaireResponse](questionnaireresponse.html)  into a final score and represent the score as an Observation.",
@@ -3269,7 +3308,7 @@
           {
             "code": "Reference",
             "targetProfile": [
-              "http://hl7.org/fhir/us/breast-radiology/StructureDefinition/BreastRadMammoAsymmetry"
+              "http://hl7.org/fhir/us/breast-radiology/StructureDefinition/BreastRadMammoAbnormalityAsymmetry"
             ]
           }
         ],
@@ -3287,14 +3326,14 @@
         ]
       },
       {
-        "id": "Observation.hasMember:breastRadMammoBreastDensity",
+        "id": "Observation.hasMember:breastRadMammoAbnormalityCalcification",
         "path": "Observation.hasMember",
-        "sliceName": "breastRadMammoBreastDensity",
+        "sliceName": "breastRadMammoAbnormalityCalcification",
         "short": "Related resource that belongs to the Observation group",
         "definition": "This observation is a group observation (e.g. a battery, a panel of tests, a set of vital sign measurements) that includes the target as a member of the group.",
         "comment": "When using this element, an observation will typically have either a value or a set of related resources, although both may be present in some cases.  For a discussion on the ways Observations can assembled in groups together, see [Notes](observation.html#obsgrouping) below.  Note that a system may calculate results from [QuestionnaireResponse](questionnaireresponse.html)  into a final score and represent the score as an Observation.",
-        "min": 1,
-        "max": "1",
+        "min": 0,
+        "max": "*",
         "base": {
           "path": "Observation.hasMember",
           "min": 0,
@@ -3304,7 +3343,7 @@
           {
             "code": "Reference",
             "targetProfile": [
-              "http://hl7.org/fhir/us/breast-radiology/StructureDefinition/BreastRadMammoBreastDensity"
+              "http://hl7.org/fhir/us/breast-radiology/StructureDefinition/BreastRadMammoAbnormalityCalcification"
             ]
           }
         ],
@@ -3322,9 +3361,9 @@
         ]
       },
       {
-        "id": "Observation.hasMember:breastRadMammoCalcification",
+        "id": "Observation.hasMember:breastRadMammoAbnormalityCyst",
         "path": "Observation.hasMember",
-        "sliceName": "breastRadMammoCalcification",
+        "sliceName": "breastRadMammoAbnormalityCyst",
         "short": "Related resource that belongs to the Observation group",
         "definition": "This observation is a group observation (e.g. a battery, a panel of tests, a set of vital sign measurements) that includes the target as a member of the group.",
         "comment": "When using this element, an observation will typically have either a value or a set of related resources, although both may be present in some cases.  For a discussion on the ways Observations can assembled in groups together, see [Notes](observation.html#obsgrouping) below.  Note that a system may calculate results from [QuestionnaireResponse](questionnaireresponse.html)  into a final score and represent the score as an Observation.",
@@ -3339,7 +3378,7 @@
           {
             "code": "Reference",
             "targetProfile": [
-              "http://hl7.org/fhir/us/breast-radiology/StructureDefinition/BreastRadMammoCalcification"
+              "http://hl7.org/fhir/us/breast-radiology/StructureDefinition/BreastRadMammoAbnormalityCyst"
             ]
           }
         ],
@@ -3357,9 +3396,9 @@
         ]
       },
       {
-        "id": "Observation.hasMember:breastRadMammoCyst",
+        "id": "Observation.hasMember:breastRadMammoAbnormalityDensity",
         "path": "Observation.hasMember",
-        "sliceName": "breastRadMammoCyst",
+        "sliceName": "breastRadMammoAbnormalityDensity",
         "short": "Related resource that belongs to the Observation group",
         "definition": "This observation is a group observation (e.g. a battery, a panel of tests, a set of vital sign measurements) that includes the target as a member of the group.",
         "comment": "When using this element, an observation will typically have either a value or a set of related resources, although both may be present in some cases.  For a discussion on the ways Observations can assembled in groups together, see [Notes](observation.html#obsgrouping) below.  Note that a system may calculate results from [QuestionnaireResponse](questionnaireresponse.html)  into a final score and represent the score as an Observation.",
@@ -3374,7 +3413,7 @@
           {
             "code": "Reference",
             "targetProfile": [
-              "http://hl7.org/fhir/us/breast-radiology/StructureDefinition/BreastRadMammoCyst"
+              "http://hl7.org/fhir/us/breast-radiology/StructureDefinition/BreastRadMammoAbnormalityDensity"
             ]
           }
         ],
@@ -3392,9 +3431,9 @@
         ]
       },
       {
-        "id": "Observation.hasMember:breastRadMammoFatNecrosis",
+        "id": "Observation.hasMember:breastRadMammoAbnormalityDuct",
         "path": "Observation.hasMember",
-        "sliceName": "breastRadMammoFatNecrosis",
+        "sliceName": "breastRadMammoAbnormalityDuct",
         "short": "Related resource that belongs to the Observation group",
         "definition": "This observation is a group observation (e.g. a battery, a panel of tests, a set of vital sign measurements) that includes the target as a member of the group.",
         "comment": "When using this element, an observation will typically have either a value or a set of related resources, although both may be present in some cases.  For a discussion on the ways Observations can assembled in groups together, see [Notes](observation.html#obsgrouping) below.  Note that a system may calculate results from [QuestionnaireResponse](questionnaireresponse.html)  into a final score and represent the score as an Observation.",
@@ -3409,7 +3448,7 @@
           {
             "code": "Reference",
             "targetProfile": [
-              "http://hl7.org/fhir/us/breast-radiology/StructureDefinition/BreastRadMammoFatNecrosis"
+              "http://hl7.org/fhir/us/breast-radiology/StructureDefinition/BreastRadMammoAbnormalityDuct"
             ]
           }
         ],
@@ -3427,9 +3466,9 @@
         ]
       },
       {
-        "id": "Observation.hasMember:breastRadMammoFibroadenoma",
+        "id": "Observation.hasMember:breastRadMammoAbnormalityFatNecrosis",
         "path": "Observation.hasMember",
-        "sliceName": "breastRadMammoFibroadenoma",
+        "sliceName": "breastRadMammoAbnormalityFatNecrosis",
         "short": "Related resource that belongs to the Observation group",
         "definition": "This observation is a group observation (e.g. a battery, a panel of tests, a set of vital sign measurements) that includes the target as a member of the group.",
         "comment": "When using this element, an observation will typically have either a value or a set of related resources, although both may be present in some cases.  For a discussion on the ways Observations can assembled in groups together, see [Notes](observation.html#obsgrouping) below.  Note that a system may calculate results from [QuestionnaireResponse](questionnaireresponse.html)  into a final score and represent the score as an Observation.",
@@ -3444,7 +3483,7 @@
           {
             "code": "Reference",
             "targetProfile": [
-              "http://hl7.org/fhir/us/breast-radiology/StructureDefinition/BreastRadMammoFibroadenoma"
+              "http://hl7.org/fhir/us/breast-radiology/StructureDefinition/BreastRadMammoAbnormalityFatNecrosis"
             ]
           }
         ],
@@ -3462,9 +3501,9 @@
         ]
       },
       {
-        "id": "Observation.hasMember:breastRadMammoLymphNode",
+        "id": "Observation.hasMember:breastRadMammoAbnormalityFibroadenoma",
         "path": "Observation.hasMember",
-        "sliceName": "breastRadMammoLymphNode",
+        "sliceName": "breastRadMammoAbnormalityFibroadenoma",
         "short": "Related resource that belongs to the Observation group",
         "definition": "This observation is a group observation (e.g. a battery, a panel of tests, a set of vital sign measurements) that includes the target as a member of the group.",
         "comment": "When using this element, an observation will typically have either a value or a set of related resources, although both may be present in some cases.  For a discussion on the ways Observations can assembled in groups together, see [Notes](observation.html#obsgrouping) below.  Note that a system may calculate results from [QuestionnaireResponse](questionnaireresponse.html)  into a final score and represent the score as an Observation.",
@@ -3479,7 +3518,42 @@
           {
             "code": "Reference",
             "targetProfile": [
-              "http://hl7.org/fhir/us/breast-radiology/StructureDefinition/BreastRadMammoLymphNode"
+              "http://hl7.org/fhir/us/breast-radiology/StructureDefinition/BreastRadMammoAbnormalityFibroadenoma"
+            ]
+          }
+        ],
+        "isModifier": false,
+        "isSummary": true,
+        "mapping": [
+          {
+            "identity": "v2",
+            "map": "Relationships established by OBX-4 usage"
+          },
+          {
+            "identity": "rim",
+            "map": "outBoundRelationship"
+          }
+        ]
+      },
+      {
+        "id": "Observation.hasMember:breastRadMammoAbnormalityLymphNode",
+        "path": "Observation.hasMember",
+        "sliceName": "breastRadMammoAbnormalityLymphNode",
+        "short": "Related resource that belongs to the Observation group",
+        "definition": "This observation is a group observation (e.g. a battery, a panel of tests, a set of vital sign measurements) that includes the target as a member of the group.",
+        "comment": "When using this element, an observation will typically have either a value or a set of related resources, although both may be present in some cases.  For a discussion on the ways Observations can assembled in groups together, see [Notes](observation.html#obsgrouping) below.  Note that a system may calculate results from [QuestionnaireResponse](questionnaireresponse.html)  into a final score and represent the score as an Observation.",
+        "min": 0,
+        "max": "*",
+        "base": {
+          "path": "Observation.hasMember",
+          "min": 0,
+          "max": "*"
+        },
+        "type": [
+          {
+            "code": "Reference",
+            "targetProfile": [
+              "http://hl7.org/fhir/us/breast-radiology/StructureDefinition/BreastRadMammoAbnormalityLymphNode"
             ]
           }
         ],
@@ -3567,41 +3641,6 @@
         ]
       },
       {
-        "id": "Observation.hasMember:breastRadMammoSolitaryDilatedDuct",
-        "path": "Observation.hasMember",
-        "sliceName": "breastRadMammoSolitaryDilatedDuct",
-        "short": "Related resource that belongs to the Observation group",
-        "definition": "This observation is a group observation (e.g. a battery, a panel of tests, a set of vital sign measurements) that includes the target as a member of the group.",
-        "comment": "When using this element, an observation will typically have either a value or a set of related resources, although both may be present in some cases.  For a discussion on the ways Observations can assembled in groups together, see [Notes](observation.html#obsgrouping) below.  Note that a system may calculate results from [QuestionnaireResponse](questionnaireresponse.html)  into a final score and represent the score as an Observation.",
-        "min": 0,
-        "max": "*",
-        "base": {
-          "path": "Observation.hasMember",
-          "min": 0,
-          "max": "*"
-        },
-        "type": [
-          {
-            "code": "Reference",
-            "targetProfile": [
-              "http://hl7.org/fhir/us/breast-radiology/StructureDefinition/BreastRadMammoSolitaryDilatedDuct"
-            ]
-          }
-        ],
-        "isModifier": false,
-        "isSummary": true,
-        "mapping": [
-          {
-            "identity": "v2",
-            "map": "Relationships established by OBX-4 usage"
-          },
-          {
-            "identity": "rim",
-            "map": "outBoundRelationship"
-          }
-        ]
-      },
-      {
         "id": "Observation.hasMember:breastRadMammoAssociatedFeatures",
         "path": "Observation.hasMember",
         "sliceName": "breastRadMammoAssociatedFeatures",
@@ -3620,6 +3659,41 @@
             "code": "Reference",
             "targetProfile": [
               "http://hl7.org/fhir/us/breast-radiology/StructureDefinition/BreastRadMammoAssociatedFeatures"
+            ]
+          }
+        ],
+        "isModifier": false,
+        "isSummary": true,
+        "mapping": [
+          {
+            "identity": "v2",
+            "map": "Relationships established by OBX-4 usage"
+          },
+          {
+            "identity": "rim",
+            "map": "outBoundRelationship"
+          }
+        ]
+      },
+      {
+        "id": "Observation.hasMember:breastRadMammoBreastDensity",
+        "path": "Observation.hasMember",
+        "sliceName": "breastRadMammoBreastDensity",
+        "short": "Related resource that belongs to the Observation group",
+        "definition": "This observation is a group observation (e.g. a battery, a panel of tests, a set of vital sign measurements) that includes the target as a member of the group.",
+        "comment": "When using this element, an observation will typically have either a value or a set of related resources, although both may be present in some cases.  For a discussion on the ways Observations can assembled in groups together, see [Notes](observation.html#obsgrouping) below.  Note that a system may calculate results from [QuestionnaireResponse](questionnaireresponse.html)  into a final score and represent the score as an Observation.",
+        "min": 1,
+        "max": "1",
+        "base": {
+          "path": "Observation.hasMember",
+          "min": 0,
+          "max": "*"
+        },
+        "type": [
+          {
+            "code": "Reference",
+            "targetProfile": [
+              "http://hl7.org/fhir/us/breast-radiology/StructureDefinition/BreastRadMammoBreastDensity"
             ]
           }
         ],

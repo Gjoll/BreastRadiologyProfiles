@@ -1,0 +1,43 @@
+{
+  "resourceType": "ValueSet",
+  "id": "BreastRadMammoAbnormalityDensityVS",
+  "extension": [
+    {
+      "url": "http://www.fragment.com/fragment",
+      "valueUrl": "http://hl7.org/fhir/us/breast-radiology/StructureDefinition/HeaderFragment"
+    },
+    {
+      "url": "http://www.fragment.com/Group",
+      "valueString": "MGCodesVS"
+    },
+    {
+      "url": "http://www.fragment.com/mapname",
+      "valueString": "Mg Density/ValueSet"
+    }
+  ],
+  "url": "http://hl7.org/fhir/us/breast-radiology/ValueSet/BreastRadMammoAbnormalityDensityVS",
+  "name": "BreastRadMammoAbnormalityDensityVS",
+  "title": "Mammography Density Abnormality ValueSet",
+  "description": "Codes defining types of mammography density abnormalities.",
+  "compose": {
+    "include": [
+      {
+        "system": "http://hl7.org/fhir/us/breast-radiology/CodeSystem/BreastRadMammoAbnormalityDensityCS",
+        "concept": [
+          {
+            "code": "FocalAsymmetrical",
+            "display": "Focal Asymmetrical"
+          },
+          {
+            "code": "Nodular",
+            "display": "Nodular"
+          },
+          {
+            "code": "Tubular",
+            "display": "Tubular"
+          }
+        ]
+      }
+    ]
+  }
+}

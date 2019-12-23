@@ -1,6 +1,6 @@
 <?xml version="1.0"?>
 <!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
-<svg xmlns="http://www.w3.org/2000/svg" version="1.1" width="673.5" height="1477.5">
+<svg xmlns="http://www.w3.org/2000/svg" version="1.1" width="789" height="1777.5">
 <defs>
 <marker id="arrowStart" markerWidth="3.75" markerHeight="3.75" markerUnits="px" refX="1.875" refY="1.875">
 <circle fill="Black" stroke-width="0" cx="1.875" cy="1.875" r="1.875" />
@@ -33,299 +33,359 @@
 <text x="205.5" y="67.5">Fragment</text>
 </g>
 <line stroke="Black" stroke-width="1.875" marker-end="url(#arrowEnd)" x1="358.5" y1="33.75" x2="388.5" y2="33.75" />
-<line stroke="Black" stroke-width="1.875" marker-end="url(#arrowEnd)" x1="358.5" y1="103.125" x2="388.5" y2="103.125" />
-<line stroke="Black" stroke-width="1.875" marker-end="url(#arrowEnd)" x1="358.5" y1="181.875" x2="388.5" y2="181.875" />
-<line stroke="Black" stroke-width="1.875" marker-end="url(#arrowEnd)" x1="358.5" y1="251.25" x2="388.5" y2="251.25" />
-<line stroke="Black" stroke-width="1.875" marker-end="url(#arrowEnd)" x1="358.5" y1="311.25" x2="388.5" y2="311.25" />
-<line stroke="Black" stroke-width="1.875" marker-end="url(#arrowEnd)" x1="358.5" y1="371.25" x2="388.5" y2="371.25" />
-<line stroke="Black" stroke-width="1.875" marker-end="url(#arrowEnd)" x1="358.5" y1="431.25" x2="388.5" y2="431.25" />
-<line stroke="Black" stroke-width="1.875" marker-end="url(#arrowEnd)" x1="358.5" y1="491.25" x2="388.5" y2="491.25" />
+<line stroke="Black" stroke-width="1.875" marker-end="url(#arrowEnd)" x1="358.5" y1="93.75" x2="388.5" y2="93.75" />
+<line stroke="Black" stroke-width="1.875" marker-end="url(#arrowEnd)" x1="358.5" y1="153.75" x2="388.5" y2="153.75" />
+<line stroke="Black" stroke-width="1.875" marker-end="url(#arrowEnd)" x1="358.5" y1="213.75" x2="388.5" y2="213.75" />
+<line stroke="Black" stroke-width="1.875" marker-end="url(#arrowEnd)" x1="358.5" y1="273.75" x2="388.5" y2="273.75" />
+<line stroke="Black" stroke-width="1.875" marker-end="url(#arrowEnd)" x1="358.5" y1="333.75" x2="388.5" y2="333.75" />
+<line stroke="Black" stroke-width="1.875" marker-end="url(#arrowEnd)" x1="358.5" y1="403.125" x2="388.5" y2="403.125" />
+<line stroke="Black" stroke-width="1.875" marker-end="url(#arrowEnd)" x1="358.5" y1="481.875" x2="388.5" y2="481.875" />
 <line stroke="Black" stroke-width="1.875" marker-end="url(#arrowEnd)" x1="358.5" y1="551.25" x2="388.5" y2="551.25" />
 <line stroke="Black" stroke-width="1.875" marker-end="url(#arrowEnd)" x1="358.5" y1="611.25" x2="388.5" y2="611.25" />
 <line stroke="Black" stroke-width="1.875" marker-end="url(#arrowEnd)" x1="358.5" y1="671.25" x2="388.5" y2="671.25" />
 <line stroke="Black" stroke-width="1.875" marker-end="url(#arrowEnd)" x1="358.5" y1="731.25" x2="388.5" y2="731.25" />
-<line stroke="Black" stroke-width="1.875" marker-end="url(#arrowEnd)" x1="358.5" y1="800.625" x2="388.5" y2="800.625" />
-<line stroke="Black" stroke-width="1.875" marker-end="url(#arrowEnd)" x1="358.5" y1="870" x2="388.5" y2="870" />
-<line stroke="Black" stroke-width="1.875" marker-end="url(#arrowEnd)" x1="358.5" y1="930" x2="388.5" y2="930" />
-<line stroke="Black" stroke-width="1.875" marker-end="url(#arrowEnd)" x1="358.5" y1="990" x2="388.5" y2="990" />
-<line stroke="Black" stroke-width="1.875" marker-end="url(#arrowEnd)" x1="358.5" y1="1059.375" x2="388.5" y2="1059.375" />
-<line stroke="Black" stroke-width="1.875" marker-end="url(#arrowEnd)" x1="358.5" y1="1128.75" x2="388.5" y2="1128.75" />
-<line stroke="Black" stroke-width="1.875" marker-end="url(#arrowEnd)" x1="358.5" y1="1188.75" x2="388.5" y2="1188.75" />
-<line stroke="Black" stroke-width="1.875" marker-end="url(#arrowEnd)" x1="358.5" y1="1248.75" x2="388.5" y2="1248.75" />
-<line stroke="Black" stroke-width="1.875" marker-end="url(#arrowEnd)" x1="358.5" y1="1308.75" x2="388.5" y2="1308.75" />
-<line stroke="Black" stroke-width="1.875" marker-end="url(#arrowEnd)" x1="358.5" y1="1368.75" x2="388.5" y2="1368.75" />
+<line stroke="Black" stroke-width="1.875" marker-end="url(#arrowEnd)" x1="358.5" y1="791.25" x2="388.5" y2="791.25" />
+<line stroke="Black" stroke-width="1.875" marker-end="url(#arrowEnd)" x1="358.5" y1="851.25" x2="388.5" y2="851.25" />
+<line stroke="Black" stroke-width="1.875" marker-end="url(#arrowEnd)" x1="358.5" y1="911.25" x2="388.5" y2="911.25" />
+<line stroke="Black" stroke-width="1.875" marker-end="url(#arrowEnd)" x1="358.5" y1="971.25" x2="388.5" y2="971.25" />
+<line stroke="Black" stroke-width="1.875" marker-end="url(#arrowEnd)" x1="358.5" y1="1031.25" x2="388.5" y2="1031.25" />
+<line stroke="Black" stroke-width="1.875" marker-end="url(#arrowEnd)" x1="358.5" y1="1100.625" x2="388.5" y2="1100.625" />
+<line stroke="Black" stroke-width="1.875" marker-end="url(#arrowEnd)" x1="358.5" y1="1170" x2="388.5" y2="1170" />
+<line stroke="Black" stroke-width="1.875" marker-end="url(#arrowEnd)" x1="358.5" y1="1230" x2="388.5" y2="1230" />
+<line stroke="Black" stroke-width="1.875" marker-end="url(#arrowEnd)" x1="358.5" y1="1290" x2="388.5" y2="1290" />
+<line stroke="Black" stroke-width="1.875" marker-end="url(#arrowEnd)" x1="358.5" y1="1359.375" x2="388.5" y2="1359.375" />
 <line stroke="Black" stroke-width="1.875" marker-end="url(#arrowEnd)" x1="358.5" y1="1428.75" x2="388.5" y2="1428.75" />
+<line stroke="Black" stroke-width="1.875" marker-end="url(#arrowEnd)" x1="358.5" y1="1488.75" x2="388.5" y2="1488.75" />
+<line stroke="Black" stroke-width="1.875" marker-end="url(#arrowEnd)" x1="358.5" y1="1548.75" x2="388.5" y2="1548.75" />
+<line stroke="Black" stroke-width="1.875" marker-end="url(#arrowEnd)" x1="358.5" y1="1608.75" x2="388.5" y2="1608.75" />
+<line stroke="Black" stroke-width="1.875" marker-end="url(#arrowEnd)" x1="358.5" y1="1668.75" x2="388.5" y2="1668.75" />
+<line stroke="Black" stroke-width="1.875" marker-end="url(#arrowEnd)" x1="358.5" y1="1728.75" x2="388.5" y2="1728.75" />
 <line stroke="Black" stroke-width="1.875" marker-start="url(#arrowStart)" x1="328.5" y1="43.125" x2="358.5" y2="43.125" />
-<line stroke="Black" stroke-width="1.875" x1="358.5" y1="33.75" x2="358.5" y2="1428.75" />
+<line stroke="Black" stroke-width="1.875" x1="358.5" y1="33.75" x2="358.5" y2="1728.75" />
 </g>
 <g>
 <g>
-<rect fill="LightBlue" stroke="Black" stroke-width="1.875" x="388.5" y="7.5" width="214.5" height="52.5" rx="3.75" ry="3.75" />
-<a href="./StructureDefinition-FragmentBreastRadMammoArchitecturalDistortion.html" target="_blank">
-<title>'Fragment BreastRadMammoArchitecturalDistortion'</title>
-<text x="396" y="30">Mg Arch. Distortion</text>
+<rect fill="LightBlue" stroke="Black" stroke-width="1.875" x="388.5" y="7.5" width="340.49997" height="52.5" rx="3.75" ry="3.75" />
+<a href="./StructureDefinition-FragmentBreastRadMammoAbnormalityArchitecturalDistortion.html" target="_blank">
+<title>'Fragment BreastRadMammoAbnormalityArchitecturalDistortion'</title>
+<text x="396" y="30">Mg Arch. Distortion Abnormality</text>
 </a>
-<a href="StructureDefinition-BreastRadMammoArchitecturalDistortion.html" target="_blank">
-<title>Resource 'BreastRadMammoArchitecturalDistortion'</title>
+<a href="StructureDefinition-BreastRadMammoAbnormalityArchitecturalDistortion.html" target="_blank">
+<title>Resource 'BreastRadMammoAbnormalityArchitecturalDistortion'</title>
 <text x="396" y="48.75">[Resource]</text>
 </a>
 </g>
 <g>
-<rect fill="LightBlue" stroke="Black" stroke-width="1.875" x="388.5" y="67.5" width="151.49998" height="71.25" rx="3.75" ry="3.75" />
+<rect fill="LightBlue" stroke="Black" stroke-width="1.875" x="388.5" y="67.5" width="225" height="52.5" rx="3.75" ry="3.75" />
+<a href="./StructureDefinition-FragmentBreastRadMammoAbnormalityCalcification.html" target="_blank">
+<title>'Fragment BreastRadMammoAbnormalityCalcification'</title>
+<text x="396" y="90">Mg Calc. Abnormality</text>
+</a>
+<a href="StructureDefinition-BreastRadMammoAbnormalityCalcification.html" target="_blank">
+<title>Resource 'BreastRadMammoAbnormalityCalcification'</title>
+<text x="396" y="108.75">[Resource]</text>
+</a>
+</g>
+<g>
+<rect fill="LightBlue" stroke="Black" stroke-width="1.875" x="388.5" y="127.5" width="214.5" height="52.5" rx="3.75" ry="3.75" />
+<a href="./StructureDefinition-FragmentBreastRadMammoAbnormalityCyst.html" target="_blank">
+<title>'Fragment BreastRadMammoAbnormalityCyst'</title>
+<text x="396" y="150">Mg Cyst Abnormality</text>
+</a>
+<a href="StructureDefinition-BreastRadMammoAbnormalityCyst.html" target="_blank">
+<title>Resource 'BreastRadMammoAbnormalityCyst'</title>
+<text x="396" y="168.75">[Resource]</text>
+</a>
+</g>
+<g>
+<rect fill="LightBlue" stroke="Black" stroke-width="1.875" x="388.5" y="187.5" width="298.5" height="52.5" rx="3.75" ry="3.75" />
+<a href="./StructureDefinition-FragmentBreastRadMammoAbnormalityFatNecrosis.html" target="_blank">
+<title>'Fragment BreastRadMammoAbnormalityFatNecrosis'</title>
+<text x="396" y="210">Mg Fat Necrosis Abnormality</text>
+</a>
+<a href="StructureDefinition-BreastRadMammoAbnormalityFatNecrosis.html" target="_blank">
+<title>Resource 'BreastRadMammoAbnormalityFatNecrosis'</title>
+<text x="396" y="228.75">[Resource]</text>
+</a>
+</g>
+<g>
+<rect fill="LightBlue" stroke="Black" stroke-width="1.875" x="388.5" y="247.5" width="298.5" height="52.5" rx="3.75" ry="3.75" />
+<a href="./StructureDefinition-FragmentBreastRadMammoAbnormalityFibroadenoma.html" target="_blank">
+<title>'Fragment BreastRadMammoAbnormalityFibroadenoma'</title>
+<text x="396" y="270">Mg Fibroadenoma Abnormality</text>
+</a>
+<a href="StructureDefinition-BreastRadMammoAbnormalityFibroadenoma.html" target="_blank">
+<title>Resource 'BreastRadMammoAbnormalityFibroadenoma'</title>
+<text x="396" y="288.75">[Resource]</text>
+</a>
+</g>
+<g>
+<rect fill="LightBlue" stroke="Black" stroke-width="1.875" x="388.5" y="307.5" width="214.5" height="52.5" rx="3.75" ry="3.75" />
+<a href="./StructureDefinition-FragmentBreastRadMammoArchitecturalDistortion.html" target="_blank">
+<title>'Fragment BreastRadMammoArchitecturalDistortion'</title>
+<text x="396" y="330">Mg Arch. Distortion</text>
+</a>
+<a href="StructureDefinition-BreastRadMammoArchitecturalDistortion.html" target="_blank">
+<title>Resource 'BreastRadMammoArchitecturalDistortion'</title>
+<text x="396" y="348.75">[Resource]</text>
+</a>
+</g>
+<g>
+<rect fill="LightBlue" stroke="Black" stroke-width="1.875" x="388.5" y="367.5" width="151.49998" height="71.25" rx="3.75" ry="3.75" />
 <a href="./StructureDefinition-FragmentBreastRadMammoAssociatedFeatures.html" target="_blank">
 <title>'Fragment BreastRadMammoAssociatedFeatures'</title>
-<text x="396" y="90">Mg Associated</text>
+<text x="396" y="390">Mg Associated</text>
 </a>
 <a href="./StructureDefinition-FragmentBreastRadMammoAssociatedFeatures.html" target="_blank">
 <title>'Fragment BreastRadMammoAssociatedFeatures'</title>
-<text x="396" y="108.75">Features</text>
+<text x="396" y="408.75">Features</text>
 </a>
 <a href="StructureDefinition-BreastRadMammoAssociatedFeatures.html" target="_blank">
 <title>Resource 'BreastRadMammoAssociatedFeatures'</title>
-<text x="396" y="127.5">[Resource]</text>
+<text x="396" y="427.5">[Resource]</text>
 </a>
 </g>
 <g>
-<rect fill="LightBlue" stroke="Black" stroke-width="1.875" x="388.5" y="146.25" width="130.5" height="71.25" rx="3.75" ry="3.75" />
+<rect fill="LightBlue" stroke="Black" stroke-width="1.875" x="388.5" y="446.25" width="130.5" height="71.25" rx="3.75" ry="3.75" />
 <a href="./StructureDefinition-FragmentBreastRadMammoAxillaryAdenopathy.html" target="_blank">
 <title>'Fragment BreastRadMammoAxillaryAdenopathy'</title>
-<text x="396" y="168.75">Mg Axillary</text>
+<text x="396" y="468.75">Mg Axillary</text>
 </a>
 <a href="./StructureDefinition-FragmentBreastRadMammoAxillaryAdenopathy.html" target="_blank">
 <title>'Fragment BreastRadMammoAxillaryAdenopathy'</title>
-<text x="396" y="187.5">Adenopathy</text>
+<text x="396" y="487.5">Adenopathy</text>
 </a>
 <a href="StructureDefinition-BreastRadMammoAxillaryAdenopathy.html" target="_blank">
 <title>Resource 'BreastRadMammoAxillaryAdenopathy'</title>
-<text x="396" y="206.25">[Resource]</text>
-</a>
-</g>
-<g>
-<rect fill="LightBlue" stroke="Black" stroke-width="1.875" x="388.5" y="225" width="120" height="52.5" rx="3.75" ry="3.75" />
-<a href="./StructureDefinition-FragmentBreastRadMammoCalcification.html" target="_blank">
-<title>'Fragment BreastRadMammoCalcification'</title>
-<text x="396" y="247.5">Mg Calc.</text>
-</a>
-<a href="StructureDefinition-BreastRadMammoCalcification.html" target="_blank">
-<title>Resource 'BreastRadMammoCalcification'</title>
-<text x="396" y="266.25">[Resource]</text>
-</a>
-</g>
-<g>
-<rect fill="LightBlue" stroke="Black" stroke-width="1.875" x="388.5" y="285" width="120" height="52.5" rx="3.75" ry="3.75" />
-<a href="./StructureDefinition-FragmentBreastRadMammoCyst.html" target="_blank">
-<title>'Fragment BreastRadMammoCyst'</title>
-<text x="396" y="307.5">Mg Cyst</text>
-</a>
-<a href="StructureDefinition-BreastRadMammoCyst.html" target="_blank">
-<title>Resource 'BreastRadMammoCyst'</title>
-<text x="396" y="326.25">[Resource]</text>
-</a>
-</g>
-<g>
-<rect fill="LightBlue" stroke="Black" stroke-width="1.875" x="388.5" y="345" width="172.5" height="52.5" rx="3.75" ry="3.75" />
-<a href="./StructureDefinition-FragmentBreastRadMammoFatNecrosis.html" target="_blank">
-<title>'Fragment BreastRadMammoFatNecrosis'</title>
-<text x="396" y="367.5">Mg Fat Necrosis</text>
-</a>
-<a href="StructureDefinition-BreastRadMammoFatNecrosis.html" target="_blank">
-<title>Resource 'BreastRadMammoFatNecrosis'</title>
-<text x="396" y="386.25">[Resource]</text>
-</a>
-</g>
-<g>
-<rect fill="LightBlue" stroke="Black" stroke-width="1.875" x="388.5" y="405" width="172.5" height="52.5" rx="3.75" ry="3.75" />
-<a href="./StructureDefinition-FragmentBreastRadMammoFibroadenoma.html" target="_blank">
-<title>'Fragment BreastRadMammoFibroadenoma'</title>
-<text x="396" y="427.5">Mg Fibroadenoma</text>
-</a>
-<a href="StructureDefinition-BreastRadMammoFibroadenoma.html" target="_blank">
-<title>Resource 'BreastRadMammoFibroadenoma'</title>
-<text x="396" y="446.25">[Resource]</text>
-</a>
-</g>
-<g>
-<rect fill="LightBlue" stroke="Black" stroke-width="1.875" x="388.5" y="465" width="120" height="52.5" rx="3.75" ry="3.75" />
-<a href="./StructureDefinition-FragmentBreastRadMammoFinding.html" target="_blank">
-<title>'Fragment BreastRadMammoFinding'</title>
-<text x="396" y="487.5">Mg Finding</text>
-</a>
-<a href="StructureDefinition-BreastRadMammoFinding.html" target="_blank">
-<title>Resource 'BreastRadMammoFinding'</title>
 <text x="396" y="506.25">[Resource]</text>
 </a>
 </g>
 <g>
-<rect fill="LightBlue" stroke="Black" stroke-width="1.875" x="388.5" y="525" width="225" height="52.5" rx="3.75" ry="3.75" />
-<a href="./StructureDefinition-FragmentBreastRadMammoNippleRetraction.html" target="_blank">
-<title>'Fragment BreastRadMammoNippleRetraction'</title>
-<text x="396" y="547.5">Mg Nipple Retraction</text>
+<rect fill="LightBlue" stroke="Black" stroke-width="1.875" x="388.5" y="525" width="120" height="52.5" rx="3.75" ry="3.75" />
+<a href="./StructureDefinition-FragmentBreastRadMammoCalcification.html" target="_blank">
+<title>'Fragment BreastRadMammoCalcification'</title>
+<text x="396" y="547.5">Mg Calc.</text>
 </a>
-<a href="StructureDefinition-BreastRadMammoNippleRetraction.html" target="_blank">
-<title>Resource 'BreastRadMammoNippleRetraction'</title>
+<a href="StructureDefinition-BreastRadMammoCalcification.html" target="_blank">
+<title>Resource 'BreastRadMammoCalcification'</title>
 <text x="396" y="566.25">[Resource]</text>
 </a>
 </g>
 <g>
-<rect fill="LightBlue" stroke="Black" stroke-width="1.875" x="388.5" y="585" width="162" height="52.5" rx="3.75" ry="3.75" />
-<a href="./StructureDefinition-FragmentBreastRadMammoSkinLesion.html" target="_blank">
-<title>'Fragment BreastRadMammoSkinLesion'</title>
-<text x="396" y="607.5">Mg Skin Lesion</text>
+<rect fill="LightBlue" stroke="Black" stroke-width="1.875" x="388.5" y="585" width="120" height="52.5" rx="3.75" ry="3.75" />
+<a href="./StructureDefinition-FragmentBreastRadMammoCyst.html" target="_blank">
+<title>'Fragment BreastRadMammoCyst'</title>
+<text x="396" y="607.5">Mg Cyst</text>
 </a>
-<a href="StructureDefinition-BreastRadMammoSkinLesion.html" target="_blank">
-<title>Resource 'BreastRadMammoSkinLesion'</title>
+<a href="StructureDefinition-BreastRadMammoCyst.html" target="_blank">
+<title>Resource 'BreastRadMammoCyst'</title>
 <text x="396" y="626.25">[Resource]</text>
 </a>
 </g>
 <g>
-<rect fill="LightBlue" stroke="Black" stroke-width="1.875" x="388.5" y="645" width="203.99998" height="52.5" rx="3.75" ry="3.75" />
-<a href="./StructureDefinition-FragmentBreastRadMammoSkinRetraction.html" target="_blank">
-<title>'Fragment BreastRadMammoSkinRetraction'</title>
-<text x="396" y="667.5">Mg Skin Retraction</text>
+<rect fill="LightBlue" stroke="Black" stroke-width="1.875" x="388.5" y="645" width="172.5" height="52.5" rx="3.75" ry="3.75" />
+<a href="./StructureDefinition-FragmentBreastRadMammoFatNecrosis.html" target="_blank">
+<title>'Fragment BreastRadMammoFatNecrosis'</title>
+<text x="396" y="667.5">Mg Fat Necrosis</text>
 </a>
-<a href="StructureDefinition-BreastRadMammoSkinRetraction.html" target="_blank">
-<title>Resource 'BreastRadMammoSkinRetraction'</title>
+<a href="StructureDefinition-BreastRadMammoFatNecrosis.html" target="_blank">
+<title>Resource 'BreastRadMammoFatNecrosis'</title>
 <text x="396" y="686.25">[Resource]</text>
 </a>
 </g>
 <g>
-<rect fill="LightBlue" stroke="Black" stroke-width="1.875" x="388.5" y="705" width="203.99998" height="52.5" rx="3.75" ry="3.75" />
-<a href="./StructureDefinition-FragmentBreastRadMammoSkinThickening.html" target="_blank">
-<title>'Fragment BreastRadMammoSkinThickening'</title>
-<text x="396" y="727.5">Mg Skin Thickening</text>
+<rect fill="LightBlue" stroke="Black" stroke-width="1.875" x="388.5" y="705" width="172.5" height="52.5" rx="3.75" ry="3.75" />
+<a href="./StructureDefinition-FragmentBreastRadMammoFibroadenoma.html" target="_blank">
+<title>'Fragment BreastRadMammoFibroadenoma'</title>
+<text x="396" y="727.5">Mg Fibroadenoma</text>
 </a>
-<a href="StructureDefinition-BreastRadMammoSkinThickening.html" target="_blank">
-<title>Resource 'BreastRadMammoSkinThickening'</title>
+<a href="StructureDefinition-BreastRadMammoFibroadenoma.html" target="_blank">
+<title>Resource 'BreastRadMammoFibroadenoma'</title>
 <text x="396" y="746.25">[Resource]</text>
 </a>
 </g>
 <g>
-<rect fill="LightBlue" stroke="Black" stroke-width="1.875" x="388.5" y="765" width="151.49998" height="71.25" rx="3.75" ry="3.75" />
+<rect fill="LightBlue" stroke="Black" stroke-width="1.875" x="388.5" y="765" width="120" height="52.5" rx="3.75" ry="3.75" />
+<a href="./StructureDefinition-FragmentBreastRadMammoFinding.html" target="_blank">
+<title>'Fragment BreastRadMammoFinding'</title>
+<text x="396" y="787.5">Mg Finding</text>
+</a>
+<a href="StructureDefinition-BreastRadMammoFinding.html" target="_blank">
+<title>Resource 'BreastRadMammoFinding'</title>
+<text x="396" y="806.25">[Resource]</text>
+</a>
+</g>
+<g>
+<rect fill="LightBlue" stroke="Black" stroke-width="1.875" x="388.5" y="825" width="225" height="52.5" rx="3.75" ry="3.75" />
+<a href="./StructureDefinition-FragmentBreastRadMammoNippleRetraction.html" target="_blank">
+<title>'Fragment BreastRadMammoNippleRetraction'</title>
+<text x="396" y="847.5">Mg Nipple Retraction</text>
+</a>
+<a href="StructureDefinition-BreastRadMammoNippleRetraction.html" target="_blank">
+<title>Resource 'BreastRadMammoNippleRetraction'</title>
+<text x="396" y="866.25">[Resource]</text>
+</a>
+</g>
+<g>
+<rect fill="LightBlue" stroke="Black" stroke-width="1.875" x="388.5" y="885" width="162" height="52.5" rx="3.75" ry="3.75" />
+<a href="./StructureDefinition-FragmentBreastRadMammoSkinLesion.html" target="_blank">
+<title>'Fragment BreastRadMammoSkinLesion'</title>
+<text x="396" y="907.5">Mg Skin Lesion</text>
+</a>
+<a href="StructureDefinition-BreastRadMammoSkinLesion.html" target="_blank">
+<title>Resource 'BreastRadMammoSkinLesion'</title>
+<text x="396" y="926.25">[Resource]</text>
+</a>
+</g>
+<g>
+<rect fill="LightBlue" stroke="Black" stroke-width="1.875" x="388.5" y="945" width="203.99998" height="52.5" rx="3.75" ry="3.75" />
+<a href="./StructureDefinition-FragmentBreastRadMammoSkinRetraction.html" target="_blank">
+<title>'Fragment BreastRadMammoSkinRetraction'</title>
+<text x="396" y="967.5">Mg Skin Retraction</text>
+</a>
+<a href="StructureDefinition-BreastRadMammoSkinRetraction.html" target="_blank">
+<title>Resource 'BreastRadMammoSkinRetraction'</title>
+<text x="396" y="986.25">[Resource]</text>
+</a>
+</g>
+<g>
+<rect fill="LightBlue" stroke="Black" stroke-width="1.875" x="388.5" y="1005" width="203.99998" height="52.5" rx="3.75" ry="3.75" />
+<a href="./StructureDefinition-FragmentBreastRadMammoSkinThickening.html" target="_blank">
+<title>'Fragment BreastRadMammoSkinThickening'</title>
+<text x="396" y="1027.5">Mg Skin Thickening</text>
+</a>
+<a href="StructureDefinition-BreastRadMammoSkinThickening.html" target="_blank">
+<title>Resource 'BreastRadMammoSkinThickening'</title>
+<text x="396" y="1046.25">[Resource]</text>
+</a>
+</g>
+<g>
+<rect fill="LightBlue" stroke="Black" stroke-width="1.875" x="388.5" y="1065" width="151.49998" height="71.25" rx="3.75" ry="3.75" />
 <a href="./StructureDefinition-FragmentBreastRadMammoSolitaryDilatedDuct.html" target="_blank">
 <title>'Fragment BreastRadMammoSolitaryDilatedDuct'</title>
-<text x="396" y="787.5">Mg Solitary</text>
+<text x="396" y="1087.5">Mg Solitary</text>
 </a>
 <a href="./StructureDefinition-FragmentBreastRadMammoSolitaryDilatedDuct.html" target="_blank">
 <title>'Fragment BreastRadMammoSolitaryDilatedDuct'</title>
-<text x="396" y="806.25">Dialated Duct</text>
+<text x="396" y="1106.25">Dialated Duct</text>
 </a>
 <a href="StructureDefinition-BreastRadMammoSolitaryDilatedDuct.html" target="_blank">
 <title>Resource 'BreastRadMammoSolitaryDilatedDuct'</title>
-<text x="396" y="825">[Resource]</text>
+<text x="396" y="1125">[Resource]</text>
 </a>
 </g>
 <g>
-<rect fill="LightBlue" stroke="Black" stroke-width="1.875" x="388.5" y="843.75" width="130.5" height="52.5" rx="3.75" ry="3.75" />
+<rect fill="LightBlue" stroke="Black" stroke-width="1.875" x="388.5" y="1143.75" width="130.5" height="52.5" rx="3.75" ry="3.75" />
 <a href="./StructureDefinition-FragmentBreastRadMRIFinding.html" target="_blank">
 <title>'Fragment BreastRadMRIFinding'</title>
-<text x="396" y="866.25">MRI Finding</text>
+<text x="396" y="1166.25">MRI Finding</text>
 </a>
 <a href="StructureDefinition-BreastRadMRIFinding.html" target="_blank">
 <title>Resource 'BreastRadMRIFinding'</title>
-<text x="396" y="885">[Resource]</text>
+<text x="396" y="1185">[Resource]</text>
 </a>
 </g>
 <g>
-<rect fill="LightBlue" stroke="Black" stroke-width="1.875" x="388.5" y="903.75" width="120" height="52.5" rx="3.75" ry="3.75" />
+<rect fill="LightBlue" stroke="Black" stroke-width="1.875" x="388.5" y="1203.75" width="120" height="52.5" rx="3.75" ry="3.75" />
 <a href="./StructureDefinition-FragmentBreastRadMRIMass.html" target="_blank">
 <title>'Fragment BreastRadMRIMass'</title>
-<text x="396" y="926.25">MRI Mass</text>
+<text x="396" y="1226.25">MRI Mass</text>
 </a>
 <a href="StructureDefinition-BreastRadMRIMass.html" target="_blank">
 <title>Resource 'BreastRadMRIMass'</title>
-<text x="396" y="945">[Resource]</text>
+<text x="396" y="1245">[Resource]</text>
 </a>
 </g>
 <g>
-<rect fill="LightBlue" stroke="Black" stroke-width="1.875" x="388.5" y="963.75" width="120" height="52.5" rx="3.75" ry="3.75" />
+<rect fill="LightBlue" stroke="Black" stroke-width="1.875" x="388.5" y="1263.75" width="120" height="52.5" rx="3.75" ry="3.75" />
 <a href="./StructureDefinition-FragmentBreastRadNMFinding.html" target="_blank">
 <title>'Fragment BreastRadNMFinding'</title>
-<text x="396" y="986.25">NM Finding</text>
+<text x="396" y="1286.25">NM Finding</text>
 </a>
 <a href="StructureDefinition-BreastRadNMFinding.html" target="_blank">
 <title>Resource 'BreastRadNMFinding'</title>
-<text x="396" y="1005">[Resource]</text>
+<text x="396" y="1305">[Resource]</text>
 </a>
 </g>
 <g>
-<rect fill="LightBlue" stroke="Black" stroke-width="1.875" x="388.5" y="1023.75" width="120" height="71.25" rx="3.75" ry="3.75" />
+<rect fill="LightBlue" stroke="Black" stroke-width="1.875" x="388.5" y="1323.75" width="120" height="71.25" rx="3.75" ry="3.75" />
 <a href="./StructureDefinition-FragmentBreastRadNMMass.html" target="_blank">
 <title>'Fragment BreastRadNMMass'</title>
-<text x="396" y="1046.25">NM</text>
+<text x="396" y="1346.25">NM</text>
 </a>
 <a href="./StructureDefinition-FragmentBreastRadNMMass.html" target="_blank">
 <title>'Fragment BreastRadNMMass'</title>
-<text x="396" y="1065">Mass</text>
+<text x="396" y="1365">Mass</text>
 </a>
 <a href="StructureDefinition-BreastRadNMMass.html" target="_blank">
 <title>Resource 'BreastRadNMMass'</title>
-<text x="396" y="1083.75">[Resource]</text>
-</a>
-</g>
-<g>
-<rect fill="LightBlue" stroke="Black" stroke-width="1.875" x="388.5" y="1102.5" width="120" height="52.5" rx="3.75" ry="3.75" />
-<a href="./StructureDefinition-FragmentBreastRadSectionFindings.html" target="_blank">
-<title>'Fragment BreastRadSectionFindings'</title>
-<text x="396" y="1125">Findings</text>
-</a>
-<a href="StructureDefinition-BreastRadSectionFindings.html" target="_blank">
-<title>Resource 'BreastRadSectionFindings'</title>
-<text x="396" y="1143.75">[Resource]</text>
-</a>
-</g>
-<g>
-<rect fill="LightBlue" stroke="Black" stroke-width="1.875" x="388.5" y="1162.5" width="130.5" height="52.5" rx="3.75" ry="3.75" />
-<a href="./StructureDefinition-FragmentBreastRadSectionFindingsLeftBreast.html" target="_blank">
-<title>'Fragment BreastRadSectionFindingsLeftBreast'</title>
-<text x="396" y="1185">Left Breast</text>
-</a>
-<a href="StructureDefinition-BreastRadSectionFindingsLeftBreast.html" target="_blank">
-<title>Resource 'BreastRadSectionFindingsLeftBreast'</title>
-<text x="396" y="1203.75">[Resource]</text>
-</a>
-</g>
-<g>
-<rect fill="LightBlue" stroke="Black" stroke-width="1.875" x="388.5" y="1222.5" width="141" height="52.5" rx="3.75" ry="3.75" />
-<a href="./StructureDefinition-FragmentBreastRadSectionFindingsRightBreast.html" target="_blank">
-<title>'Fragment BreastRadSectionFindingsRightBreast'</title>
-<text x="396" y="1245">Right Breast</text>
-</a>
-<a href="StructureDefinition-BreastRadSectionFindingsRightBreast.html" target="_blank">
-<title>Resource 'BreastRadSectionFindingsRightBreast'</title>
-<text x="396" y="1263.75">[Resource]</text>
-</a>
-</g>
-<g>
-<rect fill="LightBlue" stroke="Black" stroke-width="1.875" x="388.5" y="1282.5" width="172.5" height="52.5" rx="3.75" ry="3.75" />
-<a href="./StructureDefinition-FragmentBreastRadSectionPatientHistory.html" target="_blank">
-<title>'Fragment BreastRadSectionPatientHistory'</title>
-<text x="396" y="1305">Patient History</text>
-</a>
-<a href="StructureDefinition-BreastRadSectionPatientHistory.html" target="_blank">
-<title>Resource 'BreastRadSectionPatientHistory'</title>
-<text x="396" y="1323.75">[Resource]</text>
-</a>
-</g>
-<g>
-<rect fill="LightBlue" stroke="Black" stroke-width="1.875" x="388.5" y="1342.5" width="120" height="52.5" rx="3.75" ry="3.75" />
-<a href="./StructureDefinition-FragmentBreastRadUltraSoundFinding.html" target="_blank">
-<title>'Fragment BreastRadUltraSoundFinding'</title>
-<text x="396" y="1365">US Finding</text>
-</a>
-<a href="StructureDefinition-BreastRadUltraSoundFinding.html" target="_blank">
-<title>Resource 'BreastRadUltraSoundFinding'</title>
 <text x="396" y="1383.75">[Resource]</text>
 </a>
 </g>
 <g>
 <rect fill="LightBlue" stroke="Black" stroke-width="1.875" x="388.5" y="1402.5" width="120" height="52.5" rx="3.75" ry="3.75" />
+<a href="./StructureDefinition-FragmentBreastRadSectionFindings.html" target="_blank">
+<title>'Fragment BreastRadSectionFindings'</title>
+<text x="396" y="1425">Findings</text>
+</a>
+<a href="StructureDefinition-BreastRadSectionFindings.html" target="_blank">
+<title>Resource 'BreastRadSectionFindings'</title>
+<text x="396" y="1443.75">[Resource]</text>
+</a>
+</g>
+<g>
+<rect fill="LightBlue" stroke="Black" stroke-width="1.875" x="388.5" y="1462.5" width="130.5" height="52.5" rx="3.75" ry="3.75" />
+<a href="./StructureDefinition-FragmentBreastRadSectionFindingsLeftBreast.html" target="_blank">
+<title>'Fragment BreastRadSectionFindingsLeftBreast'</title>
+<text x="396" y="1485">Left Breast</text>
+</a>
+<a href="StructureDefinition-BreastRadSectionFindingsLeftBreast.html" target="_blank">
+<title>Resource 'BreastRadSectionFindingsLeftBreast'</title>
+<text x="396" y="1503.75">[Resource]</text>
+</a>
+</g>
+<g>
+<rect fill="LightBlue" stroke="Black" stroke-width="1.875" x="388.5" y="1522.5" width="141" height="52.5" rx="3.75" ry="3.75" />
+<a href="./StructureDefinition-FragmentBreastRadSectionFindingsRightBreast.html" target="_blank">
+<title>'Fragment BreastRadSectionFindingsRightBreast'</title>
+<text x="396" y="1545">Right Breast</text>
+</a>
+<a href="StructureDefinition-BreastRadSectionFindingsRightBreast.html" target="_blank">
+<title>Resource 'BreastRadSectionFindingsRightBreast'</title>
+<text x="396" y="1563.75">[Resource]</text>
+</a>
+</g>
+<g>
+<rect fill="LightBlue" stroke="Black" stroke-width="1.875" x="388.5" y="1582.5" width="172.5" height="52.5" rx="3.75" ry="3.75" />
+<a href="./StructureDefinition-FragmentBreastRadSectionPatientHistory.html" target="_blank">
+<title>'Fragment BreastRadSectionPatientHistory'</title>
+<text x="396" y="1605">Patient History</text>
+</a>
+<a href="StructureDefinition-BreastRadSectionPatientHistory.html" target="_blank">
+<title>Resource 'BreastRadSectionPatientHistory'</title>
+<text x="396" y="1623.75">[Resource]</text>
+</a>
+</g>
+<g>
+<rect fill="LightBlue" stroke="Black" stroke-width="1.875" x="388.5" y="1642.5" width="120" height="52.5" rx="3.75" ry="3.75" />
+<a href="./StructureDefinition-FragmentBreastRadUltraSoundFinding.html" target="_blank">
+<title>'Fragment BreastRadUltraSoundFinding'</title>
+<text x="396" y="1665">US Finding</text>
+</a>
+<a href="StructureDefinition-BreastRadUltraSoundFinding.html" target="_blank">
+<title>Resource 'BreastRadUltraSoundFinding'</title>
+<text x="396" y="1683.75">[Resource]</text>
+</a>
+</g>
+<g>
+<rect fill="LightBlue" stroke="Black" stroke-width="1.875" x="388.5" y="1702.5" width="120" height="52.5" rx="3.75" ry="3.75" />
 <a href="./StructureDefinition-FragmentBreastRadUSMass.html" target="_blank">
 <title>'Fragment BreastRadUSMass'</title>
-<text x="396" y="1425">US Mass</text>
+<text x="396" y="1725">US Mass</text>
 </a>
 <a href="StructureDefinition-BreastRadUSMass.html" target="_blank">
 <title>Resource 'BreastRadUSMass'</title>
-<text x="396" y="1443.75">[Resource]</text>
+<text x="396" y="1743.75">[Resource]</text>
 </a>
 </g>
 </g>

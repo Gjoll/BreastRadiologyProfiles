@@ -27,7 +27,7 @@
     },
     {
       "url": "http://www.fragment.com/maplink",
-      "valueString": "target|True|http://hl7.org/fhir/us/breast-radiology/StructureDefinition/CommonForeignObject"
+      "valueString": "target|True|http://hl7.org/fhir/us/breast-radiology/StructureDefinition/CommonAbnormalityForeignObject"
     },
     {
       "url": "http://www.fragment.com/maplink",
@@ -88,9 +88,9 @@
         }
       },
       {
-        "id": "Observation.hasMember:commonForeignObject",
+        "id": "Observation.hasMember:commonAbnormalityForeignObject",
         "path": "Observation.hasMember",
-        "sliceName": "commonForeignObject",
+        "sliceName": "commonAbnormalityForeignObject",
         "min": 0,
         "max": "*",
         "base": {
@@ -102,7 +102,7 @@
           {
             "code": "Reference",
             "targetProfile": [
-              "http://hl7.org/fhir/us/breast-radiology/StructureDefinition/CommonForeignObject"
+              "http://hl7.org/fhir/us/breast-radiology/StructureDefinition/CommonAbnormalityForeignObject"
             ]
           }
         ]

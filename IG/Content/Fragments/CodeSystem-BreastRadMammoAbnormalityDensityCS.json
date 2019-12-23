@@ -1,0 +1,38 @@
+{
+  "resourceType": "CodeSystem",
+  "id": "BreastRadMammoAbnormalityDensityCS",
+  "extension": [
+    {
+      "url": "http://www.fragment.com/fragment",
+      "valueUrl": "http://hl7.org/fhir/us/breast-radiology/StructureDefinition/HeaderFragment"
+    },
+    {
+      "url": "http://www.fragment.com/Group",
+      "valueString": "MGCodesCS"
+    }
+  ],
+  "url": "http://hl7.org/fhir/us/breast-radiology/CodeSystem/BreastRadMammoAbnormalityDensityCS",
+  "name": "BreastRadMammoAbnormalityDensityCS",
+  "title": "Mammography Density Abnormality Refinement CodeSystem",
+  "description": "Codes defining types of mammography density abnormalities.",
+  "caseSensitive": true,
+  "content": "complete",
+  "count": 3,
+  "concept": [
+    {
+      "code": "FocalAsymmetrical",
+      "display": "Focal Asymmetrical",
+      "definition": "Penrad"
+    },
+    {
+      "code": "Nodular",
+      "display": "Nodular",
+      "definition": "Penrad"
+    },
+    {
+      "code": "Tubular",
+      "display": "Tubular",
+      "definition": "Penrad"
+    }
+  ]
+}

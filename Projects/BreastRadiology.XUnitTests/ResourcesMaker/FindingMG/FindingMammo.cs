@@ -51,19 +51,20 @@ namespace BreastRadiology.XUnitTests
                 {
                     ProfileTargetSlice[] targets = new ProfileTargetSlice[]
                     {
-                    new ProfileTargetSlice(await this.CommonForeignObject(), 0, "*"),
-                    new ProfileTargetSlice(await this.MGArchitecturalDistortion(), 0, "*"),
-                    new ProfileTargetSlice(await this.MGAsymmetry(), 0, "*"),
-                    new ProfileTargetSlice(await this.MGBreastDensity(), 1, "1"),
-                    new ProfileTargetSlice(await this.MGCalcification(), 0, "*"),
-                    new ProfileTargetSlice(await this.MGCyst(), 0, "*"),
-                    new ProfileTargetSlice(await this.MGFatNecrosis(), 0, "*"),
-                    new ProfileTargetSlice(await this.MGFibroadenoma(), 0, "*"),
-                    new ProfileTargetSlice(await this.MGLymphNode(), 0, "*"),
-                    new ProfileTargetSlice(await this.MGMass(), 0, "*"),
+                    new ProfileTargetSlice(await this.CommonAbnormalityForeignObject(), 0, "*"),
+                    new ProfileTargetSlice(await this.MGAbnormalityArchitecturalDistortion(), 0, "*"),
+                    new ProfileTargetSlice(await this.MGAbnormalityAsymmetry(), 0, "*"),
+                    new ProfileTargetSlice(await this.MGAbnormalityCalcification(), 0, "*"),
+                    new ProfileTargetSlice(await this.MGAbnormalityCyst(), 0, "*"),
+                    new ProfileTargetSlice(await this.MGAbnormalityDensity(), 0, "*"),
+                    new ProfileTargetSlice(await this.MGAbnormalityDuct(), 0, "*"),
+                    new ProfileTargetSlice(await this.MGAbnormalityFatNecrosis(), 0, "*"),
+                    new ProfileTargetSlice(await this.MGAbnormalityFibroadenoma(), 0, "*"),
+                    new ProfileTargetSlice(await this.MGAbnormalityLymphNode(), 0, "*"),
+                    new ProfileTargetSlice(await this.MGAbnormalityMass(), 0, "*"),
                     new ProfileTargetSlice(await this.MGSkinLesion(), 0, "*"),
-                    new ProfileTargetSlice(await this.MGSolitaryDilatedDuct(), 0, "*"),
-                    new ProfileTargetSlice(await this.MGAssociatedFeatures(), 0, "*")
+                    new ProfileTargetSlice(await this.MGAssociatedFeatures(), 0, "*"),
+                    new ProfileTargetSlice(await this.MGBreastDensity(), 1, "1")
                     };
                     e.Find("hasMember").SliceByUrl(targets);
                     e.AddProfileTargets(targets);
