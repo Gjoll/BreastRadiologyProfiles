@@ -87,18 +87,22 @@ namespace BreastRadiology.XUnitTests
                         })
                     );
 
-        async VTask CreateBiRadsAssessmentCategory()
-        {
-            await VTask.Run(async () =>
-            {
-                ValueSet binding = await this.CreateValueSet(
+        VSTaskVar VSBiRadsAssessmentCategories = new VSTaskVar(
+            async () =>
+                await ResourcesMaker.Self.CreateValueSetXX(
                         "BiRadsAssessmentCategories",
                         "BiRads(r) Assessment Category Codes",
                         "BiRads/ValueSet",
                         "BiRads(r) Assessment Category code system.",
                         Group_CommonCodes,
-                        await CSBiRadsAssessmentCategories.Value());
+                        await ResourcesMaker.Self.CSBiRadsAssessmentCategories.Value())
+            );
 
+        async VTask CreateBiRadsAssessmentCategory()
+        {
+            await VTask.Run(async () =>
+            {
+                ValueSet binding = await VSBiRadsAssessmentCategories.Value();
                 {
                     IntroDoc valueSetIntroDoc = new IntroDoc(Path.Combine(this.pageDir, $"ValueSet-{binding.Name}-intro.xml"));
                     valueSetIntroDoc

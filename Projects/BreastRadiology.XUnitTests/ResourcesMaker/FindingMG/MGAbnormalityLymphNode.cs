@@ -23,7 +23,7 @@ namespace BreastRadiology.XUnitTests
         }
         String mgAbnormalityLymphNode = null;
 
-        CSTaskVar BreastRadMammoAbnormalityLymphNodeCS = new CSTaskVar(
+       CSTaskVar BreastRadMammoAbnormalityLymphNodeCS = new CSTaskVar(
             async () =>
                 await ResourcesMaker.Self.CreateCodeSystem(
                        "BreastRadMammoAbnormalityLymphNode",
@@ -83,17 +83,25 @@ namespace BreastRadiology.XUnitTests
                     )
                 );
 
-        async VTask CreateMGAbnormalityLymphNode()
-        {
-            await VTask.Run(async () =>
-            {
-                ValueSet binding = await this.CreateValueSet(
+
+        VSTaskVar BreastRadMammoAbnormalityLymphNodeVS = new VSTaskVar(
+            async () =>
+                await ResourcesMaker.Self.CreateValueSetXX(
                    "BreastRadMammoAbnormalityLymphNode",
                    "Mammography Lymph Node Abnormality",
                     "Mg Lymph Node/ValueSet",
                    "Codes defining types of mammography lymph node abnormalities.",
                     Group_MGCodes,
-                    await BreastRadMammoAbnormalityLymphNodeCS.Value());
+                    await ResourcesMaker.Self.BreastRadMammoAbnormalityLymphNodeCS.Value()
+                    )
+            );
+
+
+        async VTask CreateMGAbnormalityLymphNode()
+        {
+            await VTask.Run(async () =>
+            {
+                ValueSet binding = await this.BreastRadMammoAbnormalityLymphNodeVS.Value();
 
                 SDefEditor e = this.CreateEditor("BreastRadMammoAbnormalityLymphNode",
                     "Mammography LymphNode Abnormality",

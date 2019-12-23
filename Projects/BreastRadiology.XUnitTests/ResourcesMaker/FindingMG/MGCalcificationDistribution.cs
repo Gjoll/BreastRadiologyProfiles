@@ -23,7 +23,7 @@ namespace BreastRadiology.XUnitTests
         }
         String mgCalcificationDistribution = null;
 
-        CSTaskVar MGCalcificationDistributionCS = new CSTaskVar(
+       CSTaskVar MGCalcificationDistributionCS = new CSTaskVar(
             async () =>
                 await ResourcesMaker.Self.CreateCodeSystem(
                     "MammoCalcificationDistribution",
@@ -89,17 +89,25 @@ namespace BreastRadiology.XUnitTests
                     }
                 ));
 
-        async VTask CreateMGCalcificationDistribution()
-        {
-            await VTask.Run((Func<VTask>)(async () =>
-            {
-                ValueSet binding = await this.CreateValueSet(
+
+        VSTaskVar MammoCalcificationDistributionVS = new VSTaskVar(
+            async () =>
+                await ResourcesMaker.Self.CreateValueSetXX(
                         "MammoCalcificationDistribution",
                         "Mammography Calcification Distribution",
                         "Mg Calc./DistributionValueSet",
                         "Mammography calcification distribution code system.",
                         Group_MGCodes,
-                        await this.MGCalcificationDistributionCS.Value());
+                        await ResourcesMaker.Self.MGCalcificationDistributionCS.Value()
+                    )
+            );
+
+
+        async VTask CreateMGCalcificationDistribution()
+        {
+            await VTask.Run((Func<VTask>)(async () =>
+            {
+                ValueSet binding = await this.MammoCalcificationDistributionVS.Value();
 
                 {
                     IntroDoc valueSetIntroDoc = new IntroDoc(Path.Combine(this.pageDir, $"ValueSet-{binding.Name}-intro.xml"));

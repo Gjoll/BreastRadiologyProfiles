@@ -24,7 +24,7 @@ namespace BreastRadiology.XUnitTests
         }
         String nmMassMargin = null;
 
-        CSTaskVar BreastRadNMMassMarginCS = new CSTaskVar(
+       CSTaskVar BreastRadNMMassMarginCS = new CSTaskVar(
             async () =>
                 await ResourcesMaker.Self.CreateCodeSystem(
                     "BreastRadNMMassMargin",
@@ -44,17 +44,26 @@ namespace BreastRadiology.XUnitTests
                         )
                     })
                 );
-        async VTask CreateNMMassMargin()
-        {
-            await VTask.Run(async () =>
-            {
-                    ValueSet binding = await this.CreateValueSet(
+
+
+        VSTaskVar BreastRadNMMassMarginVS = new VSTaskVar(
+            async () =>
+                await ResourcesMaker.Self.CreateValueSetXX(
                         "BreastRadNMMassMargin",
                         "NM Mass Margin",
                         "NM/Mass/Margin/ValueSet",
                         "NM mass margin value set.",
                         Group_NMCodes,
-                        await BreastRadNMMassMarginCS.Value());
+                        await ResourcesMaker.Self.BreastRadNMMassMarginCS.Value()
+                    )
+            );
+
+
+        async VTask CreateNMMassMargin()
+        {
+            await VTask.Run(async () =>
+            {
+                    ValueSet binding = await this.BreastRadNMMassMarginVS.Value();
 
                 {
                     IntroDoc valueSetIntroDoc = new IntroDoc(Path.Combine(this.pageDir, $"ValueSet-{binding.Name}-intro.xml"));

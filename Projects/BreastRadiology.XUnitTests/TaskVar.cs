@@ -26,6 +26,13 @@ namespace BreastRadiology.XUnitTests
             this.entry = entry;
         }
     }
+    class VSTaskVar : TaskVar<ValueSet>
+    {
+        public VSTaskVar(Func<System.Threading.Tasks.Task<ValueSet>> entry) : base(entry)
+        {
+        }
+    }
+
     class CSTaskVar : TaskVar<CodeSystem>
     {
         public CSTaskVar(Func<System.Threading.Tasks.Task<CodeSystem>> entry) : base(entry)

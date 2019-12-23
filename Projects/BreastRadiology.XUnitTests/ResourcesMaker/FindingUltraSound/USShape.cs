@@ -24,18 +24,29 @@ namespace BreastRadiology.XUnitTests
         }
         String usShape = null;
 
-        async VTask CreateUSShape()
-        {
-            await VTask.Run(async () =>
+
+        VSTaskVar UltraSoundShapeVS = new VSTaskVar(
+            async () =>
             {
-                ValueSet binding = await this.CreateValueSet(
+                ValueSet binding = await ResourcesMaker.Self.CreateValueSetXX(
                         "UltraSoundShape",
                         "Shape",
                         "Shape/ValueSet",
                         "Codes defining shape values.",
                         Group_USCodes,
-                        await this.CommonShapeCS.Value());
+                        await ResourcesMaker.Self.CommonShapeCS.Value()
+                    );
                 binding.Remove("Reniform");
+                return binding;
+            }
+            );
+
+
+        async VTask CreateUSShape()
+        {
+            await VTask.Run(async () =>
+            {
+                ValueSet binding = await this.UltraSoundShapeVS.Value();
                 {
                     IntroDoc valueSetIntroDoc = new IntroDoc(Path.Combine(this.pageDir, $"ValueSet-{binding.Name}-intro.xml"));
                     valueSetIntroDoc

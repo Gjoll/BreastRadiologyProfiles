@@ -14,7 +14,7 @@ namespace BreastRadiology.XUnitTests
 {
     partial class ResourcesMaker
     {
-        CSTaskVar CommonShapeCS = new CSTaskVar(
+       CSTaskVar CommonShapeCS = new CSTaskVar(
             async () =>
                 await ResourcesMaker.Self.CreateCodeSystem(
                     "Shape",

@@ -23,7 +23,7 @@ namespace BreastRadiology.XUnitTests
         }
         String mgAbnormalityCyst = null;
 
-        CSTaskVar BreastRadMammoAbnormalityCystRefinementCS = new CSTaskVar(
+       CSTaskVar BreastRadMammoAbnormalityCystRefinementCS = new CSTaskVar(
             async () =>
                 await ResourcesMaker.Self.CreateCodeSystem(
                        "BreastRadMammoAbnormalityCystRefinement",
@@ -62,17 +62,25 @@ namespace BreastRadiology.XUnitTests
                     )
             );
 
-        async VTask CreateMGAbnormalityCyst()
-        {
-            await VTask.Run(async () =>
-            {
-                ValueSet binding = await this.CreateValueSet(
+
+        VSTaskVar BreastRadMammoAbnormalityCystVS = new VSTaskVar(
+            async () =>
+                await ResourcesMaker.Self.CreateValueSetXX(
                    "BreastRadMammoAbnormalityCyst",
                    "Mammography CystAbnormalities",
                     "Mg Cyst/ValueSet",
                    "Codes defining types of mammography cyst abnormalities.",
                     Group_MGCodes,
-                    await BreastRadMammoAbnormalityCystRefinementCS.Value());
+                    await ResourcesMaker.Self.BreastRadMammoAbnormalityCystRefinementCS.Value()
+                    )
+            );
+
+
+        async VTask CreateMGAbnormalityCyst()
+        {
+            await VTask.Run(async () =>
+            {
+                ValueSet binding = await this.BreastRadMammoAbnormalityCystVS.Value();
 
                 {
                     IntroDoc valueSetIntroDoc = new IntroDoc(Path.Combine(this.pageDir, $"ValueSet-{binding.Name}-intro.xml"));

@@ -24,17 +24,23 @@ namespace BreastRadiology.XUnitTests
         }
         String mgAbnormalityForeignObject = null;
 
-        async VTask CreateMGAbnormalityForeignObject()
-        {
-            await VTask.Run((Func<VTask>)(async () =>
-            {
-                ValueSet binding  = await this.CreateValueSet(
+        VSTaskVar MGAbnormalityForeignObjectVS = new VSTaskVar(
+            async () =>
+                await ResourcesMaker.Self.CreateValueSetXX(
                         "MGAbnormalities",
                         "Foreign Object",
                         "Foreign/Object/ValueSet",
                         "Foreign object codes defining types of foreign objects observed during a Breast Radiology exam",
                         Group_MGCodes,
-(CodeSystem)await this.CommonAbnormalityForeignObjectCS.Value());
+                        await ResourcesMaker.Self.CommonAbnormalityForeignObjectCS.Value())
+            );
+
+
+        async VTask CreateMGAbnormalityForeignObject()
+        {
+            await VTask.Run((Func<VTask>)(async () =>
+            {
+                ValueSet binding  = await MGAbnormalityForeignObjectVS.Value();
                 {
                     IntroDoc valueSetIntroDoc = new IntroDoc(Path.Combine(this.pageDir, $"ValueSet-{binding.Name}-intro.xml"));
                     valueSetIntroDoc

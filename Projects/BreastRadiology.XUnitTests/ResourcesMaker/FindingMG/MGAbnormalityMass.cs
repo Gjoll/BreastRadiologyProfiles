@@ -23,17 +23,24 @@ namespace BreastRadiology.XUnitTests
         }
         String mgAbnormalityMass = null;
 
-        async VTask CreateMGAbnormalityMass()
-        {
-            await VTask.Run(async () =>
-            {
-                ValueSet binding = await this.CreateValueSet(
+
+        VSTaskVar MassRefinementValueSetVS = new VSTaskVar(
+            async () =>
+                await ResourcesMaker.Self.CreateValueSetXX(
                         "MassRefinementValueSet",
                         "Mass Refinement ValueSet",
                         "Mass Refinement/ValueSet",
                         "Codes refining mass type.",
                         Group_MGCodes,
-                        await this.CommonCSMassRefinement.Value());
+                        await ResourcesMaker.Self.CommonCSMassRefinement.Value()
+                    )
+            );
+
+        async VTask CreateMGAbnormalityMass()
+        {
+            await VTask.Run(async () =>
+            {
+                ValueSet binding = await this.MassRefinementValueSetVS.Value();
 
                 SDefEditor e = this.CreateEditor("BreastRadMammoMass",
                         "Mammography Mass Abnormality",

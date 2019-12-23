@@ -24,7 +24,7 @@ namespace BreastRadiology.XUnitTests
         }
         String usElasticity = null;
 
-        CSTaskVar BreastRadUSElasticityCS = new CSTaskVar(
+       CSTaskVar BreastRadUSElasticityCS = new CSTaskVar(
             async () =>
                 await ResourcesMaker.Self.CreateCodeSystem(
                     "BreastRadUSElasticity",
@@ -52,18 +52,23 @@ namespace BreastRadiology.XUnitTests
                     })
                 );
 
-        async VTask CreateUSElasticity()
-        {
-            await VTask.Run(async () =>
-            {
-                ValueSet binding = await this.CreateValueSet(
+
+        VSTaskVar BreastRadUSElasticityVS = new VSTaskVar(
+            async () =>
+                await ResourcesMaker.Self.CreateValueSetXX(
                     "BreastRadUSElasticity",
                     "US Elasticity",
                     "US Elasticity/ValueSet",
                     "Ultra-sound Elasticity code system.",
                     Group_USCodes,
-                    await BreastRadUSElasticityCS.Value());
+                    await ResourcesMaker.Self.BreastRadUSElasticityCS.Value())
+            );
 
+        async VTask CreateUSElasticity()
+        {
+            await VTask.Run(async () =>
+            {
+                ValueSet binding = await this.BreastRadUSElasticityVS.Value();
                 {
                     IntroDoc valueSetIntroDoc = new IntroDoc(Path.Combine(this.pageDir, $"ValueSet-{binding.Name}-intro.xml"));
                     valueSetIntroDoc

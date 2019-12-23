@@ -24,7 +24,7 @@ namespace BreastRadiology.XUnitTests
         }
         String commonObservedChangeInNumber = null;
 
-        CSTaskVar CommonObservedChangeInNumberCS = new CSTaskVar(
+       CSTaskVar CommonObservedChangeInNumberCS = new CSTaskVar(
             async () =>
                 await ResourcesMaker.Self.CreateCodeSystem(
                     "CommonObservedChangeInNumber",
@@ -46,18 +46,24 @@ namespace BreastRadiology.XUnitTests
                         ),
                     })
                 );
-        
-        async VTask CreateCommonObservedChangeInNumber()
-        {
-            await VTask.Run(async () =>
-            {
-                ValueSet binding = await this.CreateValueSet(
+
+        VSTaskVar CommonObservedChangeInNumberVS = new VSTaskVar(
+            async () =>
+                await ResourcesMaker.Self.CreateValueSetXX(
                     "CommonObservedChangeInNumber",
                     "Observed Number Changes",
                     "Observed/Change/ValueSet",
                     "Codes defining types of observed changes in number of an abnormality over time.",
                     Group_CommonCodes,
-                    await CommonObservedChangeInNumberCS.Value());
+                    await ResourcesMaker.Self.CommonObservedChangeInNumberCS.Value()
+                    )
+            );
+
+        async VTask CreateCommonObservedChangeInNumber()
+        {
+            await VTask.Run(async () =>
+            {
+                ValueSet binding = await this.CommonObservedChangeInNumberVS.Value();
 
                 {
                     IntroDoc valueSetIntroDoc = new IntroDoc(Path.Combine(this.pageDir, $"ValueSet-{binding.Name}-intro.xml"));

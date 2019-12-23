@@ -24,15 +24,15 @@ namespace BreastRadiology.XUnitTests
         String mgAbnormalityAsymmetry = null;
 
         CSTaskVar BreastRadMammoAbnormalityAsymmetryRefinementCS = new CSTaskVar(
-            async () =>
-                await ResourcesMaker.Self.CreateCodeSystem(
-                   "BreastRadMammoAbnormalityAsymmetryRefinement",
-                   "Mammography Asymmetry Abnormality Refinement",
-                    "Mg Asymmetry Refinement/CodeSystem",
-                   "Codes defining types of mammography asymmetry abnormalities.",
-                    Group_MGCodes,
-                   new ConceptDef[]
-                    {
+             async () =>
+                 await ResourcesMaker.Self.CreateCodeSystem(
+                    "BreastRadMammoAbnormalityAsymmetryRefinement",
+                    "Mammography Asymmetry Abnormality Refinement",
+                     "Mg Asymmetry Refinement/CodeSystem",
+                    "Codes defining types of mammography asymmetry abnormalities.",
+                     Group_MGCodes,
+                    new ConceptDef[]
+                     {
                         new ConceptDef("Asymmetry",
                             "Asymmetry",
                             new Definition()
@@ -82,18 +82,27 @@ namespace BreastRadiology.XUnitTests
                                 .Line("of a sonographic correlate, especially for a small (< 1 cm) developing asymmetry, should not avert biopsy.")
                             .CiteEnd(BiRadCitation)
                             )
-                    }
-                )
-                    );
+                     }
+                 )
+             );
+
+
+        VSTaskVar BreastRadMammoAbnormalityAsymmetriesVS = new VSTaskVar(
+            async () =>
+                await ResourcesMaker.Self.CreateValueSetXX(
+                   "BreastRadMammoAbnormalityAsymmetries",
+                   "Mammography AsymmetryAbnormalities",
+                    "Mg Asymmetry/ValueSet",
+                   "Codes defining types of mammography asymmetry abnormalities.",
+                    Group_MGCodes,
+                    await ResourcesMaker.Self.BreastRadMammoAbnormalityAsymmetryRefinementCS.Value()
+                    )
+            );
+
+
         async VTask CreateMGAbnormalityAsymmetry()
         {
-            ValueSet binding = await this.CreateValueSet(
-               "BreastRadMammoAbnormalityAsymmetries",
-               "Mammography AsymmetryAbnormalities",
-                "Mg Asymmetry/ValueSet",
-               "Codes defining types of mammography asymmetry abnormalities.",
-                Group_MGCodes,
-                await BreastRadMammoAbnormalityAsymmetryRefinementCS.Value());
+            ValueSet binding = await this.BreastRadMammoAbnormalityAsymmetriesVS.Value();
 
             {
                 IntroDoc valueSetIntroDoc = new IntroDoc(Path.Combine(this.pageDir, $"ValueSet-{binding.Name}-intro.xml"));

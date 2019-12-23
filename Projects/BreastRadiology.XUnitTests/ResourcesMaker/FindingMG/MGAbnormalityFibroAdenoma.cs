@@ -23,17 +23,25 @@ namespace BreastRadiology.XUnitTests
         }
         String mgAbnormalityFibroadenoma = null;
 
-        async VTask CreateMGAbnormalityFibroadenoma()
-        {
-            await VTask.Run(async () =>
-            {
-                ValueSet binding = await this.CreateValueSet(
+
+        VSTaskVar MammoFibroadenomaVS = new VSTaskVar(
+            async () =>
+                await ResourcesMaker.Self.CreateValueSetXX(
                         "MammoFibroadenoma",
                         "Fibroadenoma",
                         "FibroadenomaValueSet",
                         "Codes defining Fibroadenoma values.",
                         Group_CommonCodes,
-                        await this.CommonFibroadenomaCS.Value());
+                        await ResourcesMaker.Self.CommonFibroadenomaCS.Value()
+                    )
+            );
+
+
+        async VTask CreateMGAbnormalityFibroadenoma()
+        {
+            await VTask.Run(async () =>
+            {
+                ValueSet binding = await this.MammoFibroadenomaVS.Value();
 
                 SDefEditor e = this.CreateEditor("BreastRadMammoAbnormalityFibroadenoma",
                         "Mammography Fibroadenoma Abnormality",

@@ -24,7 +24,7 @@ namespace BreastRadiology.XUnitTests
         }
         String usEchoPattern = null;
 
-        CSTaskVar BreastRadUSEchoPatternCS = new CSTaskVar(
+       CSTaskVar BreastRadUSEchoPatternCS = new CSTaskVar(
             async () =>
                 await ResourcesMaker.Self.CreateCodeSystem(
                     "BreastRadUSEchoPattern",
@@ -118,17 +118,25 @@ namespace BreastRadiology.XUnitTests
                         )
                     })
                 );
-        async VTask CreateUSEchoPattern()
-        {
-            await VTask.Run(async () =>
-            {
-                ValueSet binding = await this.CreateValueSet(
+
+
+        VSTaskVar BreastRadUSEchoPatternVS = new VSTaskVar(
+            async () =>
+                await ResourcesMaker.Self.CreateValueSetXX(
                     "BreastRadUSEchoPattern",
                     "US Echo Pattern",
                     "US Echo Pattern/ValueSet",
                     "Ultra-sound mass echo pattern code system.",
                     Group_USCodes,
-                    await BreastRadUSEchoPatternCS.Value());
+                    await ResourcesMaker.Self.BreastRadUSEchoPatternCS.Value())
+            );
+
+
+        async VTask CreateUSEchoPattern()
+        {
+            await VTask.Run(async () =>
+            {
+                ValueSet binding = await this.BreastRadUSEchoPatternVS.Value();
 
                 {
                     IntroDoc valueSetIntroDoc = new IntroDoc(Path.Combine(this.pageDir, $"ValueSet-{binding.Name}-intro.xml"));

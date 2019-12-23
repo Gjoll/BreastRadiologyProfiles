@@ -25,7 +25,7 @@ namespace BreastRadiology.XUnitTests
         }
         String breastBodyLocationExtension = null;
 
-        CSTaskVar BreastLocationRegionCS = new CSTaskVar(
+       CSTaskVar BreastLocationRegionCS = new CSTaskVar(
             async () =>
                 await ResourcesMaker.Self.CreateCodeSystem(
                         "BreastLocationRegion",
@@ -93,7 +93,7 @@ namespace BreastRadiology.XUnitTests
                         })
                     );
 
-        CSTaskVar BreastLocationQuadrantCS = new CSTaskVar(
+       CSTaskVar BreastLocationQuadrantCS = new CSTaskVar(
             async () =>
                 await ResourcesMaker.Self.CreateCodeSystem(
                         "BreastLocationQuadrant",
@@ -129,7 +129,7 @@ namespace BreastRadiology.XUnitTests
 
                         })
             );
-        CSTaskVar BreastLocationClockCS = new CSTaskVar(
+       CSTaskVar BreastLocationClockCS = new CSTaskVar(
             async () =>
                 await ResourcesMaker.Self.CreateCodeSystem(
                         "BreastLocationClock",
@@ -262,7 +262,7 @@ namespace BreastRadiology.XUnitTests
                         })
                     );
 
-        CSTaskVar BreastLocationDepthCS = new CSTaskVar(
+       CSTaskVar BreastLocationDepthCS = new CSTaskVar(
             async () =>
                 await ResourcesMaker.Self.CreateCodeSystem(
                         "BreastLocationDepth",
@@ -288,6 +288,54 @@ namespace BreastRadiology.XUnitTests
                                 .Line("Posterior depth")
                             )
                         })
+            );
+
+        VSTaskVar BreastLocationRegionVS = new VSTaskVar(
+            async () =>
+                await ResourcesMaker.Self.CreateValueSetXX(
+                        "BreastLocationRegion",
+                        "Breast Location Region",
+                        "Breast/Location/RegionValueSet",
+                        "Breast body location region code system.",
+                        Group_CommonCodes,
+                        await ResourcesMaker.Self.BreastLocationRegionCS.Value()
+                )
+            );
+
+        VSTaskVar BreastLocationClockVS = new VSTaskVar(
+            async () =>
+                await ResourcesMaker.Self.CreateValueSetXX(
+                        "BreastLocationClock",
+                        "Breast Location Clock",
+                        "Breast/Location/ClockValueSet",
+                        "Codes defining breast body location angles expressed in clock-face units.",
+                        Group_CommonCodes,
+                        await ResourcesMaker.Self.BreastLocationClockCS.Value()
+                )
+            );
+
+        VSTaskVar BreastLocationDepthVS = new VSTaskVar(
+            async () =>
+                await ResourcesMaker.Self.CreateValueSetXX(
+                        "BreastLocationDepth",
+                        "Breast Location Depth",
+                        "Breast/Location/DepthValueSet",
+                        "Breast body location depth code system.",
+                        Group_CommonCodes,
+                        await ResourcesMaker.Self.BreastLocationDepthCS.Value()
+                )
+            );
+
+        VSTaskVar BreastLocationQuadrantVS = new VSTaskVar(
+            async () =>
+                await ResourcesMaker.Self.CreateValueSetXX(
+                        "BreastLocationQuadrant",
+                        "Breast Location Quadrant",
+                        "Breast/Location/QuadrantValueSet",
+                        "Breast body location quadrant code system.",
+                        Group_CommonCodes,
+                        await ResourcesMaker.Self.BreastLocationQuadrantCS.Value()
+                )
             );
 
         async VTask CreateBreastBodyLocationExtension()
@@ -378,13 +426,7 @@ namespace BreastRadiology.XUnitTests
                     new Markdown().Paragraph("The laterality of the body location"));
 
                 {
-                    ValueSet binding = await this.CreateValueSet(
-                        "BreastLocationQuadrant",
-                        "Breast Location Quadrant",
-                        "Breast/Location/QuadrantValueSet",
-                        "Breast body location quadrant code system.",
-                        Group_CommonCodes,
-                        await BreastLocationQuadrantCS.Value());
+                    ValueSet binding = await this.BreastLocationQuadrantVS.Value();
 
                     {
                         IntroDoc valueSetIntroDoc = new IntroDoc(Path.Combine(this.pageDir, $"ValueSet-{binding.Name}-intro.xml"));
@@ -404,13 +446,7 @@ namespace BreastRadiology.XUnitTests
                 }
 
                 {
-                    ValueSet binding = await this.CreateValueSet(
-                        "BreastLocationRegion",
-                        "Breast Location Region",
-                        "Breast/Location/RegionValueSet",
-                        "Breast body location region code system.",
-                        Group_CommonCodes,
-                        await BreastLocationRegionCS.Value());
+                    ValueSet binding = await this.BreastLocationRegionVS.Value();
 
                     {
                         IntroDoc valueSetIntroDoc = new IntroDoc(Path.Combine(this.pageDir, $"ValueSet-{binding.Name}-intro.xml"));
@@ -430,13 +466,7 @@ namespace BreastRadiology.XUnitTests
                 }
                 {
 
-                    ValueSet binding = await this.CreateValueSet(
-                        "BreastLocationClock",
-                        "Breast Location Clock",
-                        "Breast/Location/ClockValueSet",
-                        "Codes defining breast body location angles expressed in clock-face units.",
-                        Group_CommonCodes,
-                        await BreastLocationClockCS.Value());
+                    ValueSet binding = await this.BreastLocationClockVS.Value();
 
                     {
                         IntroDoc valueSetIntroDoc = new IntroDoc(Path.Combine(this.pageDir, $"ValueSet-{binding.Name}-intro.xml"));
@@ -457,15 +487,7 @@ namespace BreastRadiology.XUnitTests
 
                 {
 
-                    ValueSet binding = await this.CreateValueSet(
-                        "BreastLocationDepth",
-                        "Breast Location Depth",
-                        "Breast/Location/DepthValueSet",
-                        "Breast body location depth code system.",
-                        Group_CommonCodes,
-                        await BreastLocationDepthCS.Value());
-
-
+                    ValueSet binding = await this.BreastLocationDepthVS.Value();
                     {
                         IntroDoc valueSetIntroDoc = new IntroDoc(Path.Combine(this.pageDir, $"ValueSet-{binding.Name}-intro.xml"));
                         valueSetIntroDoc

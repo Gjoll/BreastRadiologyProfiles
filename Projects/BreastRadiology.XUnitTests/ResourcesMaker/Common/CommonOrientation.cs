@@ -24,7 +24,7 @@ namespace BreastRadiology.XUnitTests
         }
         String orientation = null;
 
-        CSTaskVar CommonOrientationCS = new CSTaskVar(
+       CSTaskVar CommonOrientationCS = new CSTaskVar(
             async () =>
                 await ResourcesMaker.Self.CreateCodeSystem(
                     "CommonOrientation",
@@ -56,18 +56,24 @@ namespace BreastRadiology.XUnitTests
                     })
             );
 
-        async VTask CreateOrientation()
-        {
-            await VTask.Run(async () =>
-            {
-                    ValueSet binding = await this.CreateValueSet(
+
+        VSTaskVar CommonOrientationVS = new VSTaskVar(
+            async () =>
+                await ResourcesMaker.Self.CreateValueSetXX(
                         "CommonOrientation",
                         "Orientation",
                         "Orientation CodeSystem",
                         "Orientation CodeSystem",
                         Group_CommonCodes,
-                        await CommonOrientationCS.Value());
+                        await ResourcesMaker.Self.CommonOrientationCS.Value()
+                    )
+            );
 
+        async VTask CreateOrientation()
+        {
+            await VTask.Run(async () =>
+            {
+                    ValueSet binding = await this.CommonOrientationVS.Value();
                 {
                     IntroDoc valueSetIntroDoc = new IntroDoc(Path.Combine(this.pageDir, $"ValueSet-{binding.Name}-intro.xml"));
                     valueSetIntroDoc

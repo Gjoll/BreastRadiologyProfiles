@@ -24,17 +24,25 @@ namespace BreastRadiology.XUnitTests
         }
         String mgShape = null;
 
-        async VTask CreateMammoShape()
-        {
-            await VTask.Run(async () =>
-            {
-                ValueSet binding = await this.CreateValueSet(
+
+        VSTaskVar MammoShapeVS = new VSTaskVar(
+            async () =>
+                await ResourcesMaker.Self.CreateValueSetXX(
                         "MammoShape",
                         "Shape",
                         "Shape/ValueSet",
                         "Codes defining shape values.",
                         Group_MGCodes,
-                        await this.CommonShapeCS.Value());
+                        await ResourcesMaker.Self.CommonShapeCS.Value()
+                    )
+            );
+
+
+        async VTask CreateMammoShape()
+        {
+            await VTask.Run(async () =>
+            {
+                ValueSet binding = await this.MammoShapeVS.Value();
                 {
                     IntroDoc valueSetIntroDoc = new IntroDoc(Path.Combine(this.pageDir, $"ValueSet-{binding.Name}-intro.xml"));
                     valueSetIntroDoc

@@ -24,18 +24,25 @@ namespace BreastRadiology.XUnitTests
         }
         String mgMassMargin = null;
 
-        async VTask CreateMGMassMargin()
-        {
-            await VTask.Run(async () =>
-            {
-                CodeSystem cs = await this.CommonMarginCS.Value();
-                ValueSet binding = await this.CreateValueSet(
+
+        VSTaskVar BreastRadMammoMassMarginVS = new VSTaskVar(
+            async () =>
+                await ResourcesMaker.Self.CreateValueSetXX(
                     "BreastRadMammoMassMargin",
                     "Mammography Mass Margin",
                     "Mg Mass MarginValueSet",
                     "Mammography mass margin ValueSet.",
                     Group_MGCodes,
-                    cs);
+                    await ResourcesMaker.Self.CommonMarginCS.Value()
+                    )
+            );
+
+
+        async VTask CreateMGMassMargin()
+        {
+            await VTask.Run(async () =>
+            {
+                ValueSet binding = await this.BreastRadMammoMassMarginVS.Value();
                 binding
                     .Remove("IntraductalExtension")
                     .Remove("Lobulated")

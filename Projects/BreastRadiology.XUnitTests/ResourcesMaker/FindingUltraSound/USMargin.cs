@@ -24,22 +24,31 @@ namespace BreastRadiology.XUnitTests
         }
         String usMargin = null;
 
-        async VTask CreateUSMargin()
-        {
-            await VTask.Run(async () =>
+
+        VSTaskVar BreastRadUSMarginVS = new VSTaskVar(
+            async () =>
             {
-                CodeSystem cs = await this.CommonMarginCS.Value();
-                ValueSet binding = await this.CreateValueSet(
+                ValueSet binding = await ResourcesMaker.Self.CreateValueSetXX(
                     "BreastRadUSMargin",
                     "US Margin",
                     "US Margin CodeSystem",
                     "Ultra-sound mass margin code system.",
                     Group_USCodes,
-                    cs);
+                    await ResourcesMaker.Self.CommonMarginCS.Value());
                 binding
                     .Remove("Macrolobulated")
                     .Remove("Obscured")
                     ;
+                return binding;
+                }
+            );
+
+
+        async VTask CreateUSMargin()
+        {
+            await VTask.Run(async () =>
+            {
+                ValueSet binding = await this.BreastRadUSMarginVS.Value();
                 {
                     IntroDoc valueSetIntroDoc = new IntroDoc(Path.Combine(this.pageDir, $"ValueSet-{binding.Name}-intro.xml"));
                     valueSetIntroDoc

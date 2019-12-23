@@ -15,7 +15,7 @@ namespace BreastRadiology.XUnitTests
     using VTask = System.Threading.Tasks.Task;
     partial class ResourcesMaker
     {
-        CSTaskVar CommonFibroadenomaCS = new CSTaskVar(
+       CSTaskVar CommonFibroadenomaCS = new CSTaskVar(
             async () =>
                 await ResourcesMaker.Self.CreateCodeSystem(
                         "Fibroadenoma",

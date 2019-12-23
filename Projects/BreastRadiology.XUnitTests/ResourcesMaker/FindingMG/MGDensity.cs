@@ -24,7 +24,7 @@ namespace BreastRadiology.XUnitTests
         }
         String mgDensity = null;
 
-        CSTaskVar BreastRadMammoDensityCS = new CSTaskVar(
+       CSTaskVar BreastRadMammoDensityCS = new CSTaskVar(
             async () =>
                 await ResourcesMaker.Self.CreateCodeSystem(
                     "BreastRadMammoDensity",
@@ -72,17 +72,25 @@ namespace BreastRadiology.XUnitTests
                         )
                     })
             );
-        async VTask CreateMGDensity()
-        {
-            await VTask.Run(async () =>
-            {
-                ValueSet binding = await this.CreateValueSet(
+
+
+        VSTaskVar BreastRadMammoDensityVS = new VSTaskVar(
+            async () =>
+                await ResourcesMaker.Self.CreateValueSetXX(
                     "BreastRadMammoDensity",
                     "Mammography Density",
                     "Mg DensityValueSet",
                     "Mammography density code system.",
                     Group_MGCodes,
-                    await BreastRadMammoDensityCS.Value());
+                    await ResourcesMaker.Self.BreastRadMammoDensityCS.Value())
+                    );
+
+
+        async VTask CreateMGDensity()
+        {
+            await VTask.Run(async () =>
+            {
+                ValueSet binding = await this.BreastRadMammoDensityVS.Value();
 
                 {
                     IntroDoc valueSetIntroDoc = new IntroDoc(Path.Combine(this.pageDir, $"ValueSet-{binding.Name}-intro.xml"));

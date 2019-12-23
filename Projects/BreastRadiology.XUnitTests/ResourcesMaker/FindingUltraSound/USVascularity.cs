@@ -24,7 +24,7 @@ namespace BreastRadiology.XUnitTests
         }
         String usVascularity = null;
 
-        CSTaskVar BreastRadUSVascularityCS = new CSTaskVar(
+       CSTaskVar BreastRadUSVascularityCS = new CSTaskVar(
             async () =>
                 await ResourcesMaker.Self.CreateCodeSystem(
                     "BreastRadUSVascularity",
@@ -66,17 +66,28 @@ namespace BreastRadiology.XUnitTests
                         )
                     })
                 );
-        async VTask CreateUSVascularity()
-        {
-            await VTask.Run(async () =>
-            {
-                ValueSet binding = await this.CreateValueSet(
+
+
+
+        VSTaskVar BreastRadUSVascularityVS = new VSTaskVar(
+            async () =>
+                await ResourcesMaker.Self.CreateValueSetXX(
                     "BreastRadUSVascularity",
                     "US Vascularity",
                     "US Vascularity/ValueSet",
                     "Ultra-sound Vascularity code system.",
                     Group_USCodes,
-                    await BreastRadUSVascularityCS.Value());
+                    await ResourcesMaker.Self.BreastRadUSVascularityCS.Value()
+                    )
+            );
+
+
+
+        async VTask CreateUSVascularity()
+        {
+            await VTask.Run(async () =>
+            {
+                ValueSet binding = await this.BreastRadUSVascularityVS.Value();
 
                 {
                     IntroDoc valueSetIntroDoc = new IntroDoc(Path.Combine(this.pageDir, $"ValueSet-{binding.Name}-intro.xml"));

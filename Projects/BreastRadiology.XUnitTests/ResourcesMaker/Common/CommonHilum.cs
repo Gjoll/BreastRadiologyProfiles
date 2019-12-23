@@ -25,15 +25,15 @@ namespace BreastRadiology.XUnitTests
         String commonHilum = null;
 
         CSTaskVar CommonHilumCS = new CSTaskVar(
-            async () =>
-                await ResourcesMaker.Self.CreateCodeSystem(
-                        "CommonHilum",
-                        "Hilum CodeSystem",
-                        "Hilum/CodeSystem",
-                        "Codes defining hilum values.",
-                        Group_CommonCodes,
-                        new ConceptDef[]
-                        {
+             async () =>
+                 await ResourcesMaker.Self.CreateCodeSystem(
+                         "CommonHilum",
+                         "Hilum CodeSystem",
+                         "Hilum/CodeSystem",
+                         "Codes defining hilum values.",
+                         Group_CommonCodes,
+                         new ConceptDef[]
+                         {
                         new ConceptDef("HilumFatty",
                             "Hilum Fatty",
                             new Definition()
@@ -44,20 +44,25 @@ namespace BreastRadiology.XUnitTests
                             new Definition()
                                 .Line("Definition needed")
                             )
-                        })
-                    );
+                         })
+                     );
 
-        async VTask CreateCommonHilum()
-        {
-            await VTask.Run(async () =>
-            {
-                ValueSet binding = await this.CreateValueSet(
+        VSTaskVar CommonHilumVS = new VSTaskVar(
+            async () =>
+                await ResourcesMaker.Self.CreateValueSetXX(
                         "CommonHilum",
                         "Hilum ValueSet",
                         "Hilum/ValueSet",
                         "Codes defining hilum values.",
                         Group_CommonCodes,
-                        await CommonHilumCS.Value());
+                        await ResourcesMaker.Self.CommonHilumCS.Value())
+            );
+
+        async VTask CreateCommonHilum()
+        {
+            await VTask.Run(async () =>
+            {
+                ValueSet binding = await CommonHilumVS.Value();
 
                 {
                     IntroDoc valueSetIntroDoc = new IntroDoc(Path.Combine(this.pageDir, $"ValueSet-{binding.Name}-intro.xml"));

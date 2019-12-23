@@ -15,7 +15,7 @@ namespace BreastRadiology.XUnitTests
 {
     partial class ResourcesMaker
     {
-        CSTaskVar CommonCSMassRefinement = new CSTaskVar(
+       CSTaskVar CommonCSMassRefinement = new CSTaskVar(
             async () =>
                 await ResourcesMaker.Self.CreateCodeSystem(
                         "CommonMassRefinement",
