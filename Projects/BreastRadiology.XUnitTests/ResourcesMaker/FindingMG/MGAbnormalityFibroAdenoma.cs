@@ -51,7 +51,7 @@ namespace BreastRadiology.XUnitTests
                         out this.mgAbnormalityFibroadenoma)
                     .Description("Breast Radiology Mammography Fibroadenoma Abnormality Observation",
                         new Markdown()
-                            .Paragraph("Penrad")
+                            .Paragraph("[PR]")
                             .MissingObservation("a fibroadenoma abnormality")
                             .Todo(
                             )

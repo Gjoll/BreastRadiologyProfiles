@@ -42,7 +42,7 @@
   "name": "BreastRadUSVascularity",
   "title": "US Vascularity",
   "status": "draft",
-  "description": "Breast Radiology Ultra-Sound Vascularity Observation\n\nPenrad",
+  "description": "Breast Radiology Ultra-Sound Vascularity Observation\n\n[PR]",
   "fhirVersion": "4.0.0",
   "kind": "resource",
   "abstract": false,
@@ -55,7 +55,7 @@
         "id": "Observation",
         "path": "Observation",
         "short": "Breast Radiology Ultra-Sound Vascularity Observation",
-        "definition": "Penrad",
+        "definition": "[PR]",
         "min": 0,
         "max": "*"
       },

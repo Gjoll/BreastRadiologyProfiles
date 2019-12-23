@@ -28,19 +28,19 @@ namespace BreastRadiology.XUnitTests
                         new ConceptDef("Solid",
                             "Solid Mass",
                             new Definition()
-                               .Line("Penrad.")
+                               .Line("[PR]")
                                .Line("Solid Mass")
                             ),
                         new ConceptDef("PartiallySolid",
                             "Partially Solid Mass",
                             new Definition()
-                               .Line("Penrad.")
+                               .Line("[PR]")
                                .Line("Partially Solid Mass")
                             ),
                         new ConceptDef("Skin",
                             "Skin Mass",
                             new Definition()
-                               .Line("Penrad.")
+                               .Line("[PR]")
                                .Line("Skin Mass")
                             )
                         })

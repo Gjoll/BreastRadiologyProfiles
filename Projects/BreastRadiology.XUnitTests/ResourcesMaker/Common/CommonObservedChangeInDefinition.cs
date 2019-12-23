@@ -76,7 +76,7 @@ namespace BreastRadiology.XUnitTests
 
                 SDefEditor e = this.CreateEditor("CommonObservedChangeInDefinition",
                         "Observed Change in Definition",
-                        "Changes",
+                        "Definition Change",
                         ObservationUrl,
                         $"{Group_CommonResources}/ObservedChangeInDefinition",
                         out this.commonObservedChangeInDefinition)

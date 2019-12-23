@@ -37,17 +37,17 @@ namespace BreastRadiology.XUnitTests
                     new ConceptDef("Soft",
                         "Soft",
                         new Definition()
-                            .Line("Penrad")
+                            .Line("[PR]")
                         ),
                     new ConceptDef("Medium",
                         "Medium",
                         new Definition()
-                            .Line("Penrad")
+                            .Line("[PR]")
                         ),
                     new ConceptDef("Hard",
                         "Hard",
                         new Definition()
-                            .Line("Penrad")
+                            .Line("[PR]")
                         )
                     })
                 );
@@ -87,7 +87,7 @@ namespace BreastRadiology.XUnitTests
                         out this.usElasticity)
                     .Description("Breast Radiology Ultra-Sound Elasticity Observation",
                         new Markdown()
-                            .Paragraph("Penrad")
+                            .Paragraph("[PR]")
                             .Todo(
                             )
                         )

@@ -37,22 +37,22 @@
     {
       "code": "IntraductalExtension",
       "display": "Intraductal Extension",
-      "definition": "Penrad specific."
+      "definition": "[PR]"
     },
     {
       "code": "Irregular",
       "display": "Irregular Margin",
-      "definition": "Penrad specific."
+      "definition": "[PR]"
     },
     {
       "code": "Lobulated",
       "display": "Lobulated Margin",
-      "definition": "Penrad specific."
+      "definition": "[PR]"
     },
     {
       "code": "Macrolobulated",
       "display": "Microlobulated Margin",
-      "definition": "Penrad specific."
+      "definition": "[PR]"
     },
     {
       "code": "Microlobulated",
@@ -72,7 +72,7 @@
     {
       "code": "Smooth",
       "display": "Smooth Margin",
-      "definition": "Penrad specific."
+      "definition": "[PR]"
     },
     {
       "code": "Spiculated",

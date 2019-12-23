@@ -36,27 +36,27 @@ namespace BreastRadiology.XUnitTests
                         new ConceptDef("Complex",
                             "Complex cyst",
                             new Definition()
-                                .Line("Penrad.")
+                                .Line("[PR]")
                             ),
                         new ConceptDef("Oil",
                             "Oil cyst",
                             new Definition()
-                                .Line("Penrad.")
+                                .Line("[PR]")
                             ),
                         new ConceptDef("Simple",
                             "Simple cyst",
                             new Definition()
-                                .Line("Penrad.")
+                                .Line("[PR]")
                             ),
                         new ConceptDef("Complicated",
                             "Complicated cyst",
                             new Definition()
-                                .Line("Penrad.")
+                                .Line("[PR]")
                             ),
                         new ConceptDef("WithDebris",
                             "Cyst With Debris",
                             new Definition()
-                                .Line("Penrad.")
+                                .Line("[PR]")
                             )
                         }
                     )
@@ -99,7 +99,7 @@ namespace BreastRadiology.XUnitTests
                         out this.mgAbnormalityCyst)
                     .Description("Breast Radiology Mammography Cyst Abnormality Observation",
                         new Markdown()
-                            .Paragraph("Penrad")
+                            .Paragraph("[PR]")
                             .MissingObservation("a cyst")
                             .Todo(
                             )

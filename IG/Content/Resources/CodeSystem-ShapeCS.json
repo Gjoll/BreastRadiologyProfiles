@@ -49,7 +49,7 @@
     {
       "code": "Lobulated",
       "display": "Lobulated Shape",
-      "definition": "Penrad"
+      "definition": "[PR]"
     },
     {
       "code": "Oval",
@@ -59,7 +59,7 @@
     {
       "code": "Reniform",
       "display": "Reniform Shape",
-      "definition": "Penrad"
+      "definition": "[PR]"
     },
     {
       "code": "Round",

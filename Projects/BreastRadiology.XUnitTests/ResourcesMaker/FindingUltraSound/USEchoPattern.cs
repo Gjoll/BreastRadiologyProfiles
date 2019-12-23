@@ -46,13 +46,13 @@ namespace BreastRadiology.XUnitTests
                         new Definition()
                         .CiteStart()
                             .Line("A complex mass contains both anechoic (cystic or fluid) and echogenic (solid) components.")
-                            .Line("Not Penrad")
+                            .Line("Not [PR]")
                         .CiteEnd(BiRadCitation)
                         ),
                     new ConceptDef("FibrocysticTissue",
                         "Fibrocystic Tissue",
                         new Definition()
-                            .Line("Penrad")
+                            .Line("[PR]")
                         ),
                      new ConceptDef("Heterogeneous",
                         "Heterogeneous",
@@ -68,7 +68,7 @@ namespace BreastRadiology.XUnitTests
                      new ConceptDef("Homogeneous",
                         "Homogeneous",
                         new Definition()
-                            .Line("Penrad")
+                            .Line("[PR]")
                         ),
                    new ConceptDef("Hyperechoic",
                         "Hyperechoic",
@@ -99,22 +99,22 @@ namespace BreastRadiology.XUnitTests
                     new ConceptDef("MixedEchogenic",
                         "Mixed Echogenic",
                         new Definition()
-                            .Line("Penrad")
+                            .Line("[PR]")
                         ),
                     new ConceptDef("Septated",
                         "Mixed Echogenic",
                         new Definition()
-                            .Line("Penrad")
+                            .Line("[PR]")
                         ),
                     new ConceptDef("Sonolucent",
                         "Sonolucent",
                         new Definition()
-                            .Line("Penrad")
+                            .Line("[PR]")
                         ),
                     new ConceptDef("WithInternalEchos",
                         "With Internal Echos",
                         new Definition()
-                            .Line("Penrad")
+                            .Line("[PR]")
                         )
                     })
                 );

@@ -36,22 +36,22 @@ namespace BreastRadiology.XUnitTests
                     new ConceptDef("WellDefined",
                         "Well defined boundary",
                         new Definition()
-                            .Line("Penrad")
+                            .Line("[PR]")
                     ),
                     new ConceptDef("Abrupt",
                         "Abrupt boundary",
                         new Definition()
-                            .Line("Penrad")
+                            .Line("[PR]")
                     ),
                     new ConceptDef("Echogenic",
                         "Echogenic boundary",
                         new Definition()
-                            .Line("Penrad")
+                            .Line("[PR]")
                     ),
                     new ConceptDef("Hyperechoic",
                         "Hyperechoic boundary",
                         new Definition()
-                            .Line("Penrad")
+                            .Line("[PR]")
                     )
                     }
                 )
@@ -96,7 +96,7 @@ namespace BreastRadiology.XUnitTests
                     .Description("Breast Radiology Ultra-Sound Boundary Observation",
                         new Markdown()
                             .Paragraph("This resource describes an Ultra-Sound boundary observation.")
-                            .Paragraph("Penrad")
+                            .Paragraph("[PR]")
                             .Todo(
                             )
                      )

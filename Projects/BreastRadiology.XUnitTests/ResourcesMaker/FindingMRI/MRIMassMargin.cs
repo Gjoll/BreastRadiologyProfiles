@@ -37,12 +37,12 @@ namespace BreastRadiology.XUnitTests
                     new ConceptDef("Irregular",
                         "Irregular Margin",
                         new Definition()
-                            .Line("Penrad specific.")
+                            .Line("[PR]")
                         ),
                     new ConceptDef("Macrolobulated",
                         "Microlobulated Margin",
                         new Definition()
-                            .Line("Penrad specific.")
+                            .Line("[PR]")
                         ),
                     new ConceptDef("Obscured",
                         "Obscured Margin",
@@ -55,7 +55,7 @@ namespace BreastRadiology.XUnitTests
                     new ConceptDef("Smooth",
                         "Smooth Margin",
                         new Definition()
-                            .Line("Penrad specific.")
+                            .Line("[PR]")
                         ),
                     new ConceptDef("Spiculated",
                         "Spiculated Margin",

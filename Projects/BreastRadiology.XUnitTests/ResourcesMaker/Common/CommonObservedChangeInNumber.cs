@@ -77,7 +77,7 @@ namespace BreastRadiology.XUnitTests
 
                 SDefEditor e = this.CreateEditor("CommonObservedChangeInNumber",
                         "Observed Change in Number",
-                        "Changes",
+                        "Number Change",
                         ObservationUrl,
                         $"{Group_CommonResources}/ObservedChangeInNumber",
                         out this.commonObservedChangeInNumber)
@@ -85,6 +85,7 @@ namespace BreastRadiology.XUnitTests
                         new Markdown()
                             .MissingObservation("an observed change in number")
                             .Todo(
+                            "Is this change in count, or number of calcifications?"
                             )
                     )
                     .AddFragRef(await this.ObservationNoDeviceFragment())

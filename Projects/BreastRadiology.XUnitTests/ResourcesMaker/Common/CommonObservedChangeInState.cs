@@ -98,7 +98,7 @@ namespace BreastRadiology.XUnitTests
 
                 SDefEditor e = this.CreateEditor("CommonObservedChangeInState",
                         "Observed Change In State",
-                        "Changes",
+                        "State Change",
                         ObservationUrl,
                         $"{Group_CommonResources}/ObservedChangeInState",
                         out this.commonObservedChangeInState)

@@ -56,22 +56,22 @@ namespace BreastRadiology.XUnitTests
                     new ConceptDef("IntraductalExtension",
                         "Intraductal Extension",
                         new Definition()
-                            .Line("Penrad specific.")
+                            .Line("[PR]")
                         ),
                     new ConceptDef("Irregular",
                         "Irregular Margin",
                         new Definition()
-                            .Line("Penrad specific.")
+                            .Line("[PR]")
                         ),
                     new ConceptDef("Lobulated",
                         "Lobulated Margin",
                         new Definition()
-                            .Line("Penrad specific.")
+                            .Line("[PR]")
                         ),
                     new ConceptDef("Macrolobulated",
                         "Microlobulated Margin",
                         new Definition()
-                            .Line("Penrad specific.")
+                            .Line("[PR]")
                         ),
                     new ConceptDef("Microlobulated",
                         "Not Circumscribed - Microlobulated",
@@ -98,7 +98,7 @@ namespace BreastRadiology.XUnitTests
                     new ConceptDef("Smooth",
                         "Smooth Margin",
                         new Definition()
-                            .Line("Penrad specific.")
+                            .Line("[PR]")
                         ),
                     new ConceptDef("Spiculated",
                         "Not Circumscribed - Spiculated",

@@ -28,12 +28,12 @@ namespace BreastRadiology.XUnitTests
                             new ConceptDef("Normal",
                                 "Normal",
                                 new Definition()
-                                    .Line("Penrad")
+                                    .Line("[PR]")
                                 ),
                             new ConceptDef("Degenerated",
                                 "Degenerated",
                                 new Definition()
-                                    .Line("Penrad")
+                                    .Line("[PR]")
                                 )
                         })
                     );

@@ -35,7 +35,7 @@ namespace BreastRadiology.XUnitTests
                         out this.mgAbnormalityFatNecrosis)
                     .Description("Breast Radiology Mammography Fat Necrosis Abnormality Observation",
                         new Markdown()
-                            .Paragraph("Penrad")
+                            .Paragraph("[PR]")
                             .MissingObservation("a fat necrosis abnormality")
                             .Todo(
                             )

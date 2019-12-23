@@ -37,32 +37,32 @@ namespace BreastRadiology.XUnitTests
                     new ConceptDef("Adjacent",
                         "Adjacent",
                         new Definition()
-                            .Line("Penrad")
+                            .Line("[PR]")
                         ),
                     new ConceptDef("IncreaseSurround",
                         "Increase Surround",
                         new Definition()
-                            .Line("Penrad")
+                            .Line("[PR]")
                         ),
                     new ConceptDef("Increased",
                         "Increased",
                         new Definition()
-                            .Line("Penrad")
+                            .Line("[PR]")
                         ),
                     new ConceptDef("NoIncrease",
                         "No increase",
                         new Definition()
-                            .Line("Penrad")
+                            .Line("[PR]")
                         ),
                     new ConceptDef("NotPresent",
                         "Not present",
                         new Definition()
-                            .Line("Penrad")
+                            .Line("[PR]")
                         ),
                     new ConceptDef("Present",
                         "Present",
                         new Definition()
-                            .Line("Penrad")
+                            .Line("[PR]")
                         )
                     })
                 );
@@ -107,7 +107,7 @@ namespace BreastRadiology.XUnitTests
                         out this.usVascularity)
                     .Description("Breast Radiology Ultra-Sound Vascularity Observation",
                         new Markdown()
-                            .Paragraph("Penrad")
+                            .Paragraph("[PR]")
                             .Todo(
                             )
                         )

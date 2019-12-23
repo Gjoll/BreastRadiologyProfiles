@@ -36,22 +36,22 @@ namespace BreastRadiology.XUnitTests
                         new ConceptDef("Axillary",
                             "Axillary",
                             new Definition()
-                                .Line("Penrad")
+                                .Line("[PR]")
                             ),
                         new ConceptDef("Enlarged",
                             "Enlarged",
                             new Definition()
-                                .Line("Penrad")
+                                .Line("[PR]")
                             ),
                         new ConceptDef("FocalCortex",
                             "FocalCortex",
                             new Definition()
-                                .Line("Penrad")
+                                .Line("[PR]")
                             ),
                         new ConceptDef("UniformThickness",
                             "UniformThickness",
                             new Definition()
-                                .Line("Penrad")
+                                .Line("[PR]")
                             ),
                         new ConceptDef("Intramammory",
                             "Intramammory",
@@ -67,17 +67,17 @@ namespace BreastRadiology.XUnitTests
                         new ConceptDef("InternalMargin",
                             "Internal Margin",
                             new Definition()
-                                .Line("Penrad")
+                                .Line("[PR]")
                             ),
                         new ConceptDef("Normal",
                             "Normal",
                             new Definition()
-                                .Line("Penrad")
+                                .Line("[PR]")
                             ),
                         new ConceptDef("PathLymphNode",
                             "Path Lymph Node",
                             new Definition()
-                                .Line("Penrad")
+                                .Line("[PR]")
                             )
                         }
                     )

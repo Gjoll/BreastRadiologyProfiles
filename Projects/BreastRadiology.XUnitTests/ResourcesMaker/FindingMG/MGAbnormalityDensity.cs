@@ -36,17 +36,17 @@ namespace BreastRadiology.XUnitTests
                         new ConceptDef("FocalAsymmetrical",
                             "Focal Asymmetrical",
                             new Definition()
-                                .Line("Penrad")
+                                .Line("[PR]")
                             ),
                         new ConceptDef("Nodular",
                             "Nodular",
                             new Definition()
-                                .Line("Penrad")
+                                .Line("[PR]")
                             ),
                         new ConceptDef("Tubular",
                             "Tubular",
                             new Definition()
-                                .Line("Penrad")
+                                .Line("[PR]")
                             )
                         }
                     )

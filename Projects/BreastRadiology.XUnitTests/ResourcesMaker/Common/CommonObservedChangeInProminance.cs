@@ -77,7 +77,7 @@ namespace BreastRadiology.XUnitTests
 
                 SDefEditor e = this.CreateEditor("CommonObservedChangeInProminance",
                         "Observed Change in Prominance",
-                        "Changes",
+                        "Prominance Change",
                         ObservationUrl,
                         $"{Group_CommonResources}/ObservedChangeInProminance",
                         out this.commonObservedChangeInProminance)

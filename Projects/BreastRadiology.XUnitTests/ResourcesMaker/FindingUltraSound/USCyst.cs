@@ -35,7 +35,7 @@ namespace BreastRadiology.XUnitTests
                         out this.usCyst)
                     .Description("Breast Radiology UltraSound Cyst Observation",
                         new Markdown()
-                            .Paragraph("Penrad")
+                            .Paragraph("[PR]")
                             .MissingObservation("a cyst")
                             .Todo(
                             )

@@ -35,7 +35,7 @@ namespace BreastRadiology.XUnitTests
                         new ConceptDef("Lobulated",
                             "Lobulated Shape",
                             new Definition()
-                                .Line("Penrad")
+                                .Line("[PR]")
                             ),
                         new ConceptDef("Oval",
                             "Elliptical/Egg-shaped",
@@ -47,7 +47,7 @@ namespace BreastRadiology.XUnitTests
                         new ConceptDef("Reniform",
                             "Reniform Shape",
                             new Definition()
-                                .Line("Penrad")
+                                .Line("[PR]")
                             ),
                         new ConceptDef("Round",
                             "Round Shape",

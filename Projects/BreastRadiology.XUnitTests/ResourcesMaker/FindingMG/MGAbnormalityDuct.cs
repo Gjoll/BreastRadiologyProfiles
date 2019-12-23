@@ -36,12 +36,12 @@ namespace BreastRadiology.XUnitTests
                         new ConceptDef("Normal",
                             "Normal",
                             new Definition()
-                                .Line("Penrad")
+                                .Line("[PR]")
                             ),
                         new ConceptDef("Ectasia",
                             "Ectasia",
                             new Definition()
-                                .Line("Penrad")
+                                .Line("[PR]")
                             ),
                         new ConceptDef("Dilated",
                             "Dilated",
