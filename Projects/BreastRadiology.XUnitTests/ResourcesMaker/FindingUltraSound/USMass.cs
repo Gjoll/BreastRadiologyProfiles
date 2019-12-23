@@ -59,7 +59,7 @@ namespace BreastRadiology.XUnitTests
                     new ProfileTargetSlice(await this.BiRadsAssessmentCategory(), 0, "1"),
 
                     new ProfileTargetSlice(await this.CommonObservedCount(), 0, "1"),
-                    new ProfileTargetSlice(await this.CommonObservedChanges(), 0, "*"),
+                    new ProfileTargetSlice(await this.CommonObservedChangeInState(), 0, "*"),
                     new ProfileTargetSlice(await this.CommonObservedSize(), 0, "1"),
                     new ProfileTargetSlice(await this.CommonOrientation(), 0, "1"),
                     new ProfileTargetSlice(await this.CommonHilum(), 0, "1"),

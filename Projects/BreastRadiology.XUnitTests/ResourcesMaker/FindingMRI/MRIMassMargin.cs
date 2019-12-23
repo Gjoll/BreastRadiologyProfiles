@@ -24,11 +24,9 @@ namespace BreastRadiology.XUnitTests
         }
         String mriMassMargin = null;
 
-        async VTask CreateMRIMassMargin()
-        {
-            await VTask.Run(async () =>
-            {
-                CodeSystem cs = await this.CreateCodeSystem(
+        CSTaskVar BreastRadMRIMassMarginCS = new CSTaskVar(
+            async () =>
+                await ResourcesMaker.Self.CreateCodeSystem(
                     "BreastRadMRIMassMargin",
                     "MRI Mass Margin",
                     "MRI Mass/Margin CodeSystem",
@@ -67,14 +65,19 @@ namespace BreastRadiology.XUnitTests
                             .Line("implies a suspicious finding.")
                         .CiteEnd(BiRadCitation)
                         )
-                    });
+                    })
+                );
+        async VTask CreateMRIMassMargin()
+        {
+            await VTask.Run(async () =>
+            {
                 ValueSet binding = await this.CreateValueSet(
                     "BreastRadMRIMassMargin",
                     "MRI Mass Margin",
                     "MRI Mass/Margin ValueSet",
                     "MRI mass margin value set.",
                     Group_MRICodes,
-                    cs);
+                    await BreastRadMRIMassMarginCS.Value());
                 {
                     IntroDoc valueSetIntroDoc = new IntroDoc(Path.Combine(this.pageDir, $"ValueSet-{binding.Name}-intro.xml"));
                     valueSetIntroDoc

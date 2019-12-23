@@ -23,11 +23,9 @@ namespace BreastRadiology.XUnitTests
         }
         String mgCalcificationDistribution = null;
 
-        async VTask CreateMGCalcificationDistribution()
-        {
-            await VTask.Run(async () =>
-            {
-                CodeSystem cs  = await this.CreateCodeSystem(
+        CSTaskVar MGCalcificationDistributionCS = new CSTaskVar(
+            async () =>
+                await ResourcesMaker.Self.CreateCodeSystem(
                     "MammoCalcificationDistribution",
                     "Mammography Calcification Distribution",
                     "Mg Calc./Distribution/CodeSystem",
@@ -89,15 +87,19 @@ namespace BreastRadiology.XUnitTests
                         .CiteEnd(BiRadCitation)
                     )
                     }
-                );
+                ));
 
-                    ValueSet binding = await this.CreateValueSet(
+        async VTask CreateMGCalcificationDistribution()
+        {
+            await VTask.Run((Func<VTask>)(async () =>
+            {
+                ValueSet binding = await this.CreateValueSet(
                         "MammoCalcificationDistribution",
                         "Mammography Calcification Distribution",
                         "Mg Calc./DistributionValueSet",
                         "Mammography calcification distribution code system.",
                         Group_MGCodes,
-                        cs);
+                        await this.MGCalcificationDistributionCS.Value());
 
                 {
                     IntroDoc valueSetIntroDoc = new IntroDoc(Path.Combine(this.pageDir, $"ValueSet-{binding.Name}-intro.xml"));
@@ -141,7 +143,7 @@ namespace BreastRadiology.XUnitTests
                     .ReviewedStatus(ReviewStatus.NotReviewed)
                     .CodedObservationLeafNode("a mammography calcification distribution", binding)
                     ;
-            });
+            }));
         }
     }
 }

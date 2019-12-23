@@ -28,7 +28,7 @@ namespace BreastRadiology.XUnitTests
         {
             await VTask.Run(async () =>
             {
-                CodeSystem cs = await this.CommonCSMargin();
+                CodeSystem cs = await this.CommonMarginCS.Value();
                 ValueSet binding = await this.CreateValueSet(
                     "BreastRadMammoMassMargin",
                     "Mammography Mass Margin",

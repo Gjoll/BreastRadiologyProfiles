@@ -23,11 +23,9 @@ namespace BreastRadiology.XUnitTests
         }
         String mgCalcificationType = null;
 
-        async VTask CreateMGCalcificationType()
-        {
-            await VTask.Run(async () =>
-            {
-                CodeSystem cs = await this.CreateCodeSystem(
+        CSTaskVar MammoCalcificationTypeCS = new CSTaskVar(
+            async () =>
+                await ResourcesMaker.Self.CreateCodeSystem(
                     "MammoCalcificationType",
                     "Mammography Calcification Type",
                     "Mg Calc. Type/CodeSystem",
@@ -196,15 +194,19 @@ namespace BreastRadiology.XUnitTests
                         .CiteEnd(BiRadCitation)
                         )
                     }
-                );
-
+                )
+                    );
+        async VTask CreateMGCalcificationType()
+        {
+            await VTask.Run(async () =>
+            {
                 ValueSet binding = await this.CreateValueSet(
                     "MammoCalcificationType",
                     "Mammography Calcification Type",
                     "Mg Calc. TypeValueSet",
                     "Mammography calcification type code system.",
                     Group_MGCodes,
-                    cs);
+                    await MammoCalcificationTypeCS.Value());
 
                 {
                     IntroDoc valueSetIntroDoc = new IntroDoc(Path.Combine(this.pageDir, $"ValueSet-{binding.Name}-intro.xml"));

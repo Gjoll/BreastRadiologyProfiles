@@ -23,11 +23,9 @@ namespace BreastRadiology.XUnitTests
         }
         String usTissueComposition = null;
 
-        async VTask CreateUSTissueComposition()
-        {
-            await VTask.Run(async () =>
-            {
-                CodeSystem cs = await this.CreateCodeSystem(
+        CSTaskVar BreastRadUSTissueCompositionCS = new CSTaskVar(
+            async () =>
+                await ResourcesMaker.Self.CreateCodeSystem(
                     "BreastRadUSTissueComposition",
                     "US Tissue Composition",
                     "US Tissue/Composition/CodeSystem",
@@ -65,7 +63,13 @@ namespace BreastRadiology.XUnitTests
                         .CiteEnd(BiRadCitation)
                     )
                     }
-                );
+                )
+            );
+
+        async VTask CreateUSTissueComposition()
+        {
+            await VTask.Run(async () =>
+            {
 
                 ValueSet binding = await this.CreateValueSet(
                     "BreastRadUSTissueComposition",
@@ -73,7 +77,7 @@ namespace BreastRadiology.XUnitTests
                     "US Tissue/CompositionValueSet",
                     "Ultra-sound breast tissue composition code system.",
                     Group_USCodes,
-                    cs);
+                    await BreastRadUSTissueCompositionCS.Value());
 
                 {
                     IntroDoc valueSetIntroDoc = new IntroDoc(Path.Combine(this.pageDir, $"ValueSet-{binding.Name}-intro.xml"));

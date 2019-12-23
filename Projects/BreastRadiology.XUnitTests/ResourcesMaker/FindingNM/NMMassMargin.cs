@@ -24,11 +24,9 @@ namespace BreastRadiology.XUnitTests
         }
         String nmMassMargin = null;
 
-        async VTask CreateNMMassMargin()
-        {
-            await VTask.Run(async () =>
-            {
-                CodeSystem cs  = await this.CreateCodeSystem(
+        CSTaskVar BreastRadNMMassMarginCS = new CSTaskVar(
+            async () =>
+                await ResourcesMaker.Self.CreateCodeSystem(
                     "BreastRadNMMassMargin",
                     "NM Mass Margin",
                     "NM/Mass/Margin/CodeSystem",
@@ -44,15 +42,19 @@ namespace BreastRadiology.XUnitTests
                             .Line("The margin is sharply demarcated with an abrupt transition between the lesion and the surrounding tissue.")
                         .CiteEnd(BiRadCitation)
                         )
-                    });
-
+                    })
+                );
+        async VTask CreateNMMassMargin()
+        {
+            await VTask.Run(async () =>
+            {
                     ValueSet binding = await this.CreateValueSet(
                         "BreastRadNMMassMargin",
                         "NM Mass Margin",
                         "NM/Mass/Margin/ValueSet",
                         "NM mass margin value set.",
                         Group_NMCodes,
-                        cs);
+                        await BreastRadNMMassMarginCS.Value());
 
                 {
                     IntroDoc valueSetIntroDoc = new IntroDoc(Path.Combine(this.pageDir, $"ValueSet-{binding.Name}-intro.xml"));

@@ -109,8 +109,6 @@ namespace BreastRadiology.XUnitTests
             String GetGroupPath(DomainResource resource)
             {
                 String groupPath = Group(resource);
-                resource.RemoveExtension(Global.GroupExtensionUrl);
-                resource.RemoveExtension(Global.GraphicsBreakUrl);
 
                 String groupId = groupPath.BaseUriPart();
                 if (this.groupIds.Contains(groupId) == false)

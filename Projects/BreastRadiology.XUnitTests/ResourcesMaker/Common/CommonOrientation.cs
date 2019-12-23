@@ -24,11 +24,9 @@ namespace BreastRadiology.XUnitTests
         }
         String orientation = null;
 
-        async VTask CreateOrientation()
-        {
-            await VTask.Run(async () =>
-            {
-                CodeSystem cs  = await this.CreateCodeSystem(
+        CSTaskVar CommonOrientationCS = new CSTaskVar(
+            async () =>
+                await ResourcesMaker.Self.CreateCodeSystem(
                     "CommonOrientation",
                     "Orientation",
                     "Orientation CodeSystem",
@@ -55,15 +53,20 @@ namespace BreastRadiology.XUnitTests
                             .Line("obliquely oriented to the skin line. Round masses are NOT PARALLEL in their orientation.")
                         .CiteEnd(BiRadCitation)
                         )
-                    });
+                    })
+            );
 
+        async VTask CreateOrientation()
+        {
+            await VTask.Run(async () =>
+            {
                     ValueSet binding = await this.CreateValueSet(
                         "CommonOrientation",
                         "Orientation",
                         "Orientation CodeSystem",
                         "Orientation CodeSystem",
                         Group_CommonCodes,
-                        cs);
+                        await CommonOrientationCS.Value());
 
                 {
                     IntroDoc valueSetIntroDoc = new IntroDoc(Path.Combine(this.pageDir, $"ValueSet-{binding.Name}-intro.xml"));

@@ -27,59 +27,59 @@
     },
     {
       "url": "http://www.fragment.com/maplink",
-      "valueString": "target|True|http://hl7.org/fhir/us/breast-radiology/StructureDefinition/CommonAbnormalityForeignObject"
+      "valueString": "target|False|http://hl7.org/fhir/us/breast-radiology/StructureDefinition/MGAbnormalityForeignObject"
     },
     {
       "url": "http://www.fragment.com/maplink",
-      "valueString": "target|True|http://hl7.org/fhir/us/breast-radiology/StructureDefinition/BreastRadMammoAbnormalityArchitecturalDistortion"
+      "valueString": "target|False|http://hl7.org/fhir/us/breast-radiology/StructureDefinition/BreastRadMammoAbnormalityArchitecturalDistortion"
     },
     {
       "url": "http://www.fragment.com/maplink",
-      "valueString": "target|True|http://hl7.org/fhir/us/breast-radiology/StructureDefinition/BreastRadMammoAbnormalityAsymmetry"
+      "valueString": "target|False|http://hl7.org/fhir/us/breast-radiology/StructureDefinition/BreastRadMammoAbnormalityAsymmetry"
     },
     {
       "url": "http://www.fragment.com/maplink",
-      "valueString": "target|True|http://hl7.org/fhir/us/breast-radiology/StructureDefinition/BreastRadMammoAbnormalityCalcification"
+      "valueString": "target|False|http://hl7.org/fhir/us/breast-radiology/StructureDefinition/BreastRadMammoAbnormalityCalcification"
     },
     {
       "url": "http://www.fragment.com/maplink",
-      "valueString": "target|True|http://hl7.org/fhir/us/breast-radiology/StructureDefinition/BreastRadMammoAbnormalityCyst"
+      "valueString": "target|False|http://hl7.org/fhir/us/breast-radiology/StructureDefinition/BreastRadMammoAbnormalityCyst"
     },
     {
       "url": "http://www.fragment.com/maplink",
-      "valueString": "target|True|http://hl7.org/fhir/us/breast-radiology/StructureDefinition/BreastRadMammoAbnormalityDensity"
+      "valueString": "target|False|http://hl7.org/fhir/us/breast-radiology/StructureDefinition/BreastRadMammoAbnormalityDensity"
     },
     {
       "url": "http://www.fragment.com/maplink",
-      "valueString": "target|True|http://hl7.org/fhir/us/breast-radiology/StructureDefinition/BreastRadMammoAbnormalityDuct"
+      "valueString": "target|False|http://hl7.org/fhir/us/breast-radiology/StructureDefinition/BreastRadMammoAbnormalityDuct"
     },
     {
       "url": "http://www.fragment.com/maplink",
-      "valueString": "target|True|http://hl7.org/fhir/us/breast-radiology/StructureDefinition/BreastRadMammoAbnormalityFatNecrosis"
+      "valueString": "target|False|http://hl7.org/fhir/us/breast-radiology/StructureDefinition/BreastRadMammoAbnormalityFatNecrosis"
     },
     {
       "url": "http://www.fragment.com/maplink",
-      "valueString": "target|True|http://hl7.org/fhir/us/breast-radiology/StructureDefinition/BreastRadMammoAbnormalityFibroadenoma"
+      "valueString": "target|False|http://hl7.org/fhir/us/breast-radiology/StructureDefinition/BreastRadMammoAbnormalityFibroadenoma"
     },
     {
       "url": "http://www.fragment.com/maplink",
-      "valueString": "target|True|http://hl7.org/fhir/us/breast-radiology/StructureDefinition/BreastRadMammoAbnormalityLymphNode"
+      "valueString": "target|False|http://hl7.org/fhir/us/breast-radiology/StructureDefinition/BreastRadMammoAbnormalityLymphNode"
     },
     {
       "url": "http://www.fragment.com/maplink",
-      "valueString": "target|True|http://hl7.org/fhir/us/breast-radiology/StructureDefinition/BreastRadMammoMass"
+      "valueString": "target|False|http://hl7.org/fhir/us/breast-radiology/StructureDefinition/BreastRadMammoMass"
     },
     {
       "url": "http://www.fragment.com/maplink",
-      "valueString": "target|True|http://hl7.org/fhir/us/breast-radiology/StructureDefinition/BreastRadMammoSkinLesion"
+      "valueString": "target|False|http://hl7.org/fhir/us/breast-radiology/StructureDefinition/BreastRadMammoSkinLesion"
     },
     {
       "url": "http://www.fragment.com/maplink",
-      "valueString": "target|True|http://hl7.org/fhir/us/breast-radiology/StructureDefinition/BreastRadMammoAssociatedFeatures"
+      "valueString": "target|False|http://hl7.org/fhir/us/breast-radiology/StructureDefinition/BreastRadMammoAssociatedFeatures"
     },
     {
       "url": "http://www.fragment.com/maplink",
-      "valueString": "target|True|http://hl7.org/fhir/us/breast-radiology/StructureDefinition/BreastRadMammoBreastDensity"
+      "valueString": "target|False|http://hl7.org/fhir/us/breast-radiology/StructureDefinition/BreastRadMammoBreastDensity"
     }
   ],
   "url": "http://hl7.org/fhir/us/breast-radiology/StructureDefinition/BreastRadMammoFinding",
@@ -136,9 +136,9 @@
         }
       },
       {
-        "id": "Observation.hasMember:commonAbnormalityForeignObject",
+        "id": "Observation.hasMember:mGAbnormalityForeignObject",
         "path": "Observation.hasMember",
-        "sliceName": "commonAbnormalityForeignObject",
+        "sliceName": "mGAbnormalityForeignObject",
         "min": 0,
         "max": "*",
         "base": {
@@ -150,7 +150,7 @@
           {
             "code": "Reference",
             "targetProfile": [
-              "http://hl7.org/fhir/us/breast-radiology/StructureDefinition/CommonAbnormalityForeignObject"
+              "http://hl7.org/fhir/us/breast-radiology/StructureDefinition/MGAbnormalityForeignObject"
             ]
           }
         ]

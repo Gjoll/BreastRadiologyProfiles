@@ -23,11 +23,9 @@ namespace BreastRadiology.XUnitTests
         }
         String usBoundary = null;
 
-        async VTask CreateUSBoundary()
-        {
-            await VTask.Run(async () =>
-            {
-                CodeSystem cs = await this.CreateCodeSystem(
+        CSTaskVar USBoundaryCS = new CSTaskVar(
+            async () =>
+                await ResourcesMaker.Self.CreateCodeSystem(
                     "USBoundary",
                     "UltraSound Boundary",
                     "US Boundary/CodeSystem",
@@ -56,15 +54,20 @@ namespace BreastRadiology.XUnitTests
                             .Line("Penrad")
                     )
                     }
-                );
+                )
+            );
 
+        async VTask CreateUSBoundary()
+        {
+            await VTask.Run(async () =>
+            {
                 ValueSet binding = await this.CreateValueSet(
                     "USBoundary",
                     "UltraSound Boundary",
                     "US Boundary/ValueSet",
                     "UltraSound Boundary Codes.",
                     Group_USCodes,
-                    cs);
+                    await USBoundaryCS.Value());
 
                 {
                     IntroDoc valueSetIntroDoc = new IntroDoc(Path.Combine(this.pageDir, $"ValueSet-{binding.Name}-intro.xml"));

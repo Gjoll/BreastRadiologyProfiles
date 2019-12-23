@@ -25,96 +25,77 @@ namespace BreastRadiology.XUnitTests
         }
         String breastBodyLocationExtension = null;
 
+        CSTaskVar BreastLocationRegionCS = new CSTaskVar(
+            async () =>
+                await ResourcesMaker.Self.CreateCodeSystem(
+                        "BreastLocationRegion",
+                        "Breast Location Region",
+                        "Breast/Location/Region/CodeSystem",
+                        "Breast body location region code system.",
+                        Group_CommonCodes,
+                        new ConceptDef[]
+                        {
+                        new ConceptDef("Central",
+                            "Central Region",
+                            new Definition()
+                                .Line("Central region of the breast (behind nipple)")
+                            ),
 
-        async VTask CreateBreastBodyLocationExtension()
-        {
-            await VTask.Run(async () =>
-            {
-                SDefEditor e;
-                ElementDefGroup eGroup;
-                ElementDefinition topExtension;
+                        new ConceptDef("Upper Central",
+                            "Upper Central Region",
+                            new Definition()
+                                .Line("Upper Central region of the breast (12 oclock central)")
+                            ),
 
-                void AddMapLink(ValueSet binding)
-                {
-                    //breastBodyLocationMapLinks.Add(new ResourceMap.Link("valueSet", binding.Url, false));
-                }
+                        new ConceptDef("Lower Central",
+                            "Lower Central Region",
+                            new Definition()
+                                .Line("Lower Central region of the breast (6 oclock central)")
+                            ),
 
-                void SliceAndBind(String sliceName,
-                    String bindName,
-                    String shortText,
-                    Markdown definition)
-                {
-                    ElementDefinition extensionElement = e.Clone("extension");
-                    extensionElement
-                        .ElementId($"{topExtension.Path}:{sliceName}")
-                        .SliceName(sliceName)
-                        .ZeroToOne()
-                        ;
-                    ElementDefGroup extensionGroup = e.InsertAfter(eGroup, extensionElement);
+                        new ConceptDef("Outer Central",
+                            "Outer Central Region",
+                            new Definition()
+                                .Line("Outer Central region of the breast (3 or 9 oclock depending on laterality)")
+                            ),
 
-                    ElementDefinition sealExtension = e.Clone("extension");
-                    sealExtension
-                        .ElementId($"{topExtension.Path}:{sliceName}.extension")
-                        .Path($"{topExtension.Path}.extension")
-                        .Zero()
-                        ;
-                    extensionGroup.RelatedElements.Add(sealExtension);
+                        new ConceptDef("Inner Central",
+                            "Inner Central Region",
+                            new Definition()
+                                .Line("Inner Central region of the breast (3 or 9 oclock depending on laterality)")
+                            ),
 
-                    ElementDefinition elementValue = e.Clone("value[x]")
-                        .Path($"{topExtension.Path}.value[x]")
-                        .ElementId($"{topExtension.Path}:{sliceName}.value[x]")
-                        .Type("CodeableConcept")
-                        .Binding(bindName, BindingStrength.Required)
-                        .Single()
-                        .Short(shortText)
-                        .Definition(definition)
-                        ;
-                    extensionGroup.RelatedElements.Add(elementValue);
-                }
-
-                //breastBodyLocationMapLinks = new List<ResourceMap.Link>();
-
-                e = this.CreateEditor("BreastBodyLocationExtension",
-                    "Breast Body Location Extension",
-                    "Breast Body Loc.",
-                    ExtensionUrl,
-                    $"{Group_ExtensionResources}/BreastBodyLocation",
-                    out this.breastBodyLocationExtension)
-                    .Description("Breast Body Location extension",
-                        new Markdown()
-                            .Paragraph("this extension defines the fields that are used to describe the" +
-                                       "location of an observed item in a breat radiology report")
-                            .Paragraph("Breast radiology exams have specific ways of defining a location that are unique to this field.")
-                            .Todo(
+                        new ConceptDef("RetroaReolar",
+                            "RetroaReolar Region",
+                            new Definition()
+                                .Line("Central location in the anterior third of the breast close to the nipple")
+                            ),
+                        new ConceptDef("AxillaryTail",
+                            "AxillaryTail Region",
+                            new Definition()
+                                .Line("Upper outer region location adjacent to the axilla but within the breast mound")
+                            ),
+                        new ConceptDef("Axilla",
+                            "Axilla Region",
+                            new Definition()
+                                .Line("Upper outer region location in the axilla")
+                            ),
+                        new ConceptDef("InframammaryFold",
+                            "Inframammary Fold Region",
+                            new Definition()
+                                .Line("Inframammary Fold")
+                            ),
+                        new ConceptDef("InSkin",
+                            "In Skin",
+                            new Definition()
+                                .Line("In Skin")
                             )
-                    )
-                    .Kind(StructureDefinition.StructureDefinitionKind.ComplexType)
-                    .Context()
-                    ;
+                        })
+                    );
 
-                //breastBodyLocationMapLinks.Add(new ResourceMap.Link("extension", breastBodyLocationExtension, false));
-
-                e.AddFragRef(await this.HeaderFragment());
-
-                e.Select("url")
-                    .Type("uri")
-                    .Fixed(new FhirUri(e.SDef.Url));
-
-                e.Select("value[x]")
-                    .Zero()
-                    ;
-
-                eGroup = e.Find("extension");
-                topExtension = eGroup.ElementDefinition;
-                topExtension.ConfigureSliceByUrlDiscriminator();
-
-                SliceAndBind("laterality",
-                    "http://hl7.org/fhir/ValueSet/bodysite-laterality",
-                    "Laterality of the body location",
-                    new Markdown().Paragraph("The laterality of the body location"));
-
-                {
-                    CodeSystem cs  = await this.CreateCodeSystem(
+        CSTaskVar BreastLocationQuadrantCS = new CSTaskVar(
+            async () =>
+                await ResourcesMaker.Self.CreateCodeSystem(
                         "BreastLocationQuadrant",
                         "Breast Location Quadrant",
                         "Breast/Location/Quadrant/CodeSystem",
@@ -144,92 +125,13 @@ namespace BreastRadiology.XUnitTests
                             "Lower Inner Quadrant",
                             new Definition()
                                 .Line("Lower inner quadrant of the breast")
-                            ),
-
-                        new ConceptDef("Central",
-                            "Central Quadrant",
-                            new Definition()
-                                .Line("Central quadrant of the breast (behind nipple)")
-                            ),
-
-                        new ConceptDef("Upper Central",
-                            "Upper Central Quadrant",
-                            new Definition()
-                                .Line("Upper Central quadrant of the breast (12 oclock central)")
-                            ),
-
-                        new ConceptDef("Lower Central",
-                            "Lower Central Quadrant",
-                            new Definition()
-                                .Line("Lower Central quadrant of the breast (6 oclock central)")
-                            ),
-
-                        new ConceptDef("Outer Central",
-                            "Outer Central Quadrant",
-                            new Definition()
-                                .Line("Outer Central quadrant of the breast (3 or 9 oclock depending on laterality)")
-                            ),
-
-                        new ConceptDef("Inner Central",
-                            "Inner Central Quadrant",
-                            new Definition()
-                                .Line("Inner Central quadrant of the breast (3 or 9 oclock depending on laterality)")
-                            ),
-
-                        new ConceptDef("RetroaReolar",
-                            "RetroaReolar Quadrant",
-                            new Definition()
-                                .Line("Central location in the anterior third of the breast close to the nipple")
-                            ),
-                        new ConceptDef("AxillaryTail",
-                            "AxillaryTail Quadrant",
-                            new Definition()
-                                .Line("Upper outer quadrant location adjacent to the axilla but within the breast mound")
-                            ),
-                        new ConceptDef("AxillaLevel",
-                            "Axilla Quadrant",
-                            new Definition()
-                                .Line("Upper outer quadrant location in the axilla")
-                            ),
-                        new ConceptDef("InframammaryFold",
-                            "Inframammary Fold",
-                            new Definition()
-                                .Line("Inframammary Fold")
-                            ),
-                        new ConceptDef("InSkin",
-                            "In Skin",
-                            new Definition()
-                                .Line("In Skin")
                             )
-                        });
 
-                    ValueSet binding = await this.CreateValueSet(
-                        "BreastLocationQuadrant",
-                        "Breast Location Quadrant",
-                        "Breast/Location/QuadrantValueSet",
-                        "Breast body location quadrant code system.",
-                        Group_CommonCodes,
-                        cs);
-
-                    {
-                        IntroDoc valueSetIntroDoc = new IntroDoc(Path.Combine(this.pageDir, $"ValueSet-{binding.Name}-intro.xml"));
-                        valueSetIntroDoc
-                            .ReviewedStatus(ReviewStatus.NotReviewed)
-                            .ValueSet(binding);
-                        ;
-                        String outputPath = valueSetIntroDoc.Save();
-                        this.fc?.Mark(outputPath);
-                    }
-
-                    SliceAndBind("quadrant", 
-                        binding.Url,
-                        "Quadrant of the body location",
-                        new Markdown().Paragraph("The quadrant  of the body location"));
-                    AddMapLink(binding);
-                }
-
-                {
-                    CodeSystem cs  = await this.CreateCodeSystem(
+                        })
+            );
+        CSTaskVar BreastLocationClockCS = new CSTaskVar(
+            async () =>
+                await ResourcesMaker.Self.CreateCodeSystem(
                         "BreastLocationClock",
                         "Breast Location Clock",
                         "Breast/Location/Clock/CodeSystem",
@@ -357,35 +259,12 @@ namespace BreastRadiology.XUnitTests
                             new Definition()
                                 .Line("11:30-OClock")
                             )
-                        });
+                        })
+                    );
 
-                    ValueSet binding = await this.CreateValueSet(
-                        "BreastLocationClock",
-                        "Breast Location Clock",
-                        "Breast/Location/ClockValueSet",
-                        "Codes defining breast body location angles expressed in clock-face units.",
-                        Group_CommonCodes,
-                        cs);
-
-                    {
-                        IntroDoc valueSetIntroDoc = new IntroDoc(Path.Combine(this.pageDir, $"ValueSet-{binding.Name}-intro.xml"));
-                        valueSetIntroDoc
-                            .ReviewedStatus(ReviewStatus.NotReviewed)
-                            .ValueSet(binding);
-                        ;
-                        String outputPath = valueSetIntroDoc.Save();
-                        this.fc?.Mark(outputPath);
-                    }
-
-                    SliceAndBind("clockDirection",
-                        binding.Url,
-                        "Clock direction of the body location",
-                        new Markdown().Paragraph("The clock direction of the body location."));
-                    AddMapLink(binding);
-                }
-
-                {
-                    CodeSystem cs  = await this.CreateCodeSystem(
+        CSTaskVar BreastLocationDepthCS = new CSTaskVar(
+            async () =>
+                await ResourcesMaker.Self.CreateCodeSystem(
                         "BreastLocationDepth",
                         "Breast Location Depth",
                         "Breast/Location/Depth/CodeSystem",
@@ -408,14 +287,183 @@ namespace BreastRadiology.XUnitTests
                             new Definition()
                                 .Line("Posterior depth")
                             )
-                        });
+                        })
+            );
+
+        async VTask CreateBreastBodyLocationExtension()
+        {
+            await VTask.Run(async () =>
+            {
+                SDefEditor e;
+                ElementDefGroup eGroup;
+                ElementDefinition topExtension;
+
+                void AddMapLink(ValueSet binding)
+                {
+                    //breastBodyLocationMapLinks.Add(new ResourceMap.Link("valueSet", binding.Url, false));
+                }
+
+                void SliceAndBind(String sliceName,
+                    String bindName,
+                    String shortText,
+                    Markdown definition)
+                {
+                    ElementDefinition extensionElement = e.Clone("extension");
+                    extensionElement
+                        .ElementId($"{topExtension.Path}:{sliceName}")
+                        .SliceName(sliceName)
+                        .ZeroToOne()
+                        ;
+                    ElementDefGroup extensionGroup = e.InsertAfter(eGroup, extensionElement);
+
+                    ElementDefinition sealExtension = e.Clone("extension");
+                    sealExtension
+                        .ElementId($"{topExtension.Path}:{sliceName}.extension")
+                        .Path($"{topExtension.Path}.extension")
+                        .Zero()
+                        ;
+                    extensionGroup.RelatedElements.Add(sealExtension);
+
+                    ElementDefinition elementValue = e.Clone("value[x]")
+                        .Path($"{topExtension.Path}.value[x]")
+                        .ElementId($"{topExtension.Path}:{sliceName}.value[x]")
+                        .Type("CodeableConcept")
+                        .Binding(bindName, BindingStrength.Required)
+                        .Single()
+                        .Short(shortText)
+                        .Definition(definition)
+                        ;
+                    extensionGroup.RelatedElements.Add(elementValue);
+                }
+
+                //breastBodyLocationMapLinks = new List<ResourceMap.Link>();
+
+                e = this.CreateEditor("BreastBodyLocationExtension",
+                    "Breast Body Location Extension",
+                    "Breast Body Loc.",
+                    ExtensionUrl,
+                    $"{Group_ExtensionResources}/BreastBodyLocation",
+                    out this.breastBodyLocationExtension)
+                    .Description("Breast Body Location extension",
+                        new Markdown()
+                            .Paragraph("this extension defines the fields that are used to describe the" +
+                                       "location of an observed item in a breat radiology report")
+                            .Paragraph("Breast radiology exams have specific ways of defining a location that are unique to this field.")
+                            .Todo(
+                            )
+                    )
+                    .Kind(StructureDefinition.StructureDefinitionKind.ComplexType)
+                    .Context()
+                    ;
+
+                //breastBodyLocationMapLinks.Add(new ResourceMap.Link("extension", breastBodyLocationExtension, false));
+
+                e.AddFragRef(await this.HeaderFragment());
+
+                e.Select("url")
+                    .Type("uri")
+                    .Fixed(new FhirUri(e.SDef.Url));
+
+                e.Select("value[x]")
+                    .Zero()
+                    ;
+
+                eGroup = e.Find("extension");
+                topExtension = eGroup.ElementDefinition;
+                topExtension.ConfigureSliceByUrlDiscriminator();
+
+                SliceAndBind("laterality",
+                    "http://hl7.org/fhir/ValueSet/bodysite-laterality",
+                    "Laterality of the body location",
+                    new Markdown().Paragraph("The laterality of the body location"));
+
+                {
+                    ValueSet binding = await this.CreateValueSet(
+                        "BreastLocationQuadrant",
+                        "Breast Location Quadrant",
+                        "Breast/Location/QuadrantValueSet",
+                        "Breast body location quadrant code system.",
+                        Group_CommonCodes,
+                        await BreastLocationQuadrantCS.Value());
+
+                    {
+                        IntroDoc valueSetIntroDoc = new IntroDoc(Path.Combine(this.pageDir, $"ValueSet-{binding.Name}-intro.xml"));
+                        valueSetIntroDoc
+                            .ReviewedStatus(ReviewStatus.NotReviewed)
+                            .ValueSet(binding);
+                        ;
+                        String outputPath = valueSetIntroDoc.Save();
+                        this.fc?.Mark(outputPath);
+                    }
+
+                    SliceAndBind("quadrant",
+                        binding.Url,
+                        "Quadrant of the body location",
+                        new Markdown().Paragraph("The quadrant  of the body location"));
+                    AddMapLink(binding);
+                }
+
+                {
+                    ValueSet binding = await this.CreateValueSet(
+                        "BreastLocationRegion",
+                        "Breast Location Region",
+                        "Breast/Location/RegionValueSet",
+                        "Breast body location region code system.",
+                        Group_CommonCodes,
+                        await BreastLocationRegionCS.Value());
+
+                    {
+                        IntroDoc valueSetIntroDoc = new IntroDoc(Path.Combine(this.pageDir, $"ValueSet-{binding.Name}-intro.xml"));
+                        valueSetIntroDoc
+                            .ReviewedStatus(ReviewStatus.NotReviewed)
+                            .ValueSet(binding);
+                        ;
+                        String outputPath = valueSetIntroDoc.Save();
+                        this.fc?.Mark(outputPath);
+                    }
+
+                    SliceAndBind("region",
+                        binding.Url,
+                        "Region of the body location",
+                        new Markdown().Paragraph("The region  of the body location"));
+                    AddMapLink(binding);
+                }
+                {
+
+                    ValueSet binding = await this.CreateValueSet(
+                        "BreastLocationClock",
+                        "Breast Location Clock",
+                        "Breast/Location/ClockValueSet",
+                        "Codes defining breast body location angles expressed in clock-face units.",
+                        Group_CommonCodes,
+                        await BreastLocationClockCS.Value());
+
+                    {
+                        IntroDoc valueSetIntroDoc = new IntroDoc(Path.Combine(this.pageDir, $"ValueSet-{binding.Name}-intro.xml"));
+                        valueSetIntroDoc
+                            .ReviewedStatus(ReviewStatus.NotReviewed)
+                            .ValueSet(binding);
+                        ;
+                        String outputPath = valueSetIntroDoc.Save();
+                        this.fc?.Mark(outputPath);
+                    }
+
+                    SliceAndBind("clockDirection",
+                        binding.Url,
+                        "Clock direction of the body location",
+                        new Markdown().Paragraph("The clock direction of the body location."));
+                    AddMapLink(binding);
+                }
+
+                {
+
                     ValueSet binding = await this.CreateValueSet(
                         "BreastLocationDepth",
                         "Breast Location Depth",
                         "Breast/Location/DepthValueSet",
                         "Breast body location depth code system.",
                         Group_CommonCodes,
-                        cs);
+                        await BreastLocationDepthCS.Value());
 
 
                     {
@@ -428,7 +476,7 @@ namespace BreastRadiology.XUnitTests
                         this.fc?.Mark(outputPath);
                     }
 
-                    SliceAndBind("depth", 
+                    SliceAndBind("depth",
                         binding.Url,
                         "Depth of the body location",
                         new Markdown().Paragraph("The depth of the body location."));
@@ -447,6 +495,8 @@ namespace BreastRadiology.XUnitTests
                         .ElementId($"{topExtension.Path}:distanceFromNipple.value[x]")
                         .Type("Quantity")
                         .Single()
+                        .Short("Distance from nipple")
+                        .Definition("Distance from nipple to body location")
                         ;
                     distanceFromNippleGroup.RelatedElements.Add(distanceFromNippleValue);
 
@@ -468,12 +518,87 @@ namespace BreastRadiology.XUnitTests
                                 BindingStrength.Required)
                         ;
                     distanceFromNippleGroup.RelatedElements.Add(quantityCode);
-
-                    e.IntroDoc
-                        .ReviewedStatus(ReviewStatus.NotReviewed)
-                        .Extension("Breast Body Location", "define a location in the breast")
-                        ;
                 }
+
+                {
+                    ElementDefinition distanceFromSkin = e.Clone("extension");
+                    distanceFromSkin
+                        .ElementId($"{topExtension.Path}:distanceFromSkin")
+                        .SliceName("distanceFromSkin")
+                        ;
+                    ElementDefGroup distanceFromSkinGroup = e.InsertAfter(eGroup, distanceFromSkin);
+                    ElementDefinition distanceFromSkinValue = e.Clone("value[x]")
+                        .Path($"{topExtension.Path}.value[x]")
+                        .ElementId($"{topExtension.Path}:distanceFromSkin.value[x]")
+                        .Type("Quantity")
+                        .Short("Distance from skin")
+                        .Definition("Distance from skin to body location")
+                        .Single()
+                        ;
+                    distanceFromSkinGroup.RelatedElements.Add(distanceFromSkinValue);
+
+                    ElementDefinition quantitySystem = new ElementDefinition()
+                        .Path($"{topExtension.Path}.value[x].system")
+                        .ElementId($"{topExtension.Path}:distanceFromSkin.value[x].system")
+                        .Type("uri")
+                        .Single()
+                        .Fixed(new FhirUri("http://unitsofmeasure.org"))
+                        ;
+                    distanceFromSkinGroup.RelatedElements.Add(quantitySystem);
+
+                    ElementDefinition quantityCode = new ElementDefinition()
+                        .Path($"{topExtension.Path}.value[x].code")
+                        .ElementId($"{topExtension.Path}:distanceFromSkin.value[x].code")
+                        .Type("uri")
+                        .Single()
+                        .Binding("http://hl7.org/fhir/us/breast-radiology/ValueSet/UnitsOfLengthVS",
+                                BindingStrength.Required)
+                        ;
+                    distanceFromSkinGroup.RelatedElements.Add(quantityCode);
+                }
+
+                {
+                    ElementDefinition distanceFromChestWall = e.Clone("extension");
+                    distanceFromChestWall
+                        .ElementId($"{topExtension.Path}:distanceFromChestWall")
+                        .SliceName("distanceFromChestWall")
+                        ;
+                    ElementDefGroup distanceFromChestWallGroup = e.InsertAfter(eGroup, distanceFromChestWall);
+                    ElementDefinition distanceFromChestWallValue = e.Clone("value[x]")
+                        .Path($"{topExtension.Path}.value[x]")
+                        .ElementId($"{topExtension.Path}:distanceFromChestWall.value[x]")
+                        .Type("Quantity")
+                        .Short("Distance from chest wall")
+                        .Definition("Distance from chest wall to body location")
+                        .Single()
+                        ;
+                    distanceFromChestWallGroup.RelatedElements.Add(distanceFromChestWallValue);
+
+                    ElementDefinition quantitySystem = new ElementDefinition()
+                        .Path($"{topExtension.Path}.value[x].system")
+                        .ElementId($"{topExtension.Path}:distanceFromChestWall.value[x].system")
+                        .Type("uri")
+                        .Single()
+                        .Fixed(new FhirUri("http://unitsofmeasure.org"))
+                        ;
+                    distanceFromChestWallGroup.RelatedElements.Add(quantitySystem);
+
+                    ElementDefinition quantityCode = new ElementDefinition()
+                        .Path($"{topExtension.Path}.value[x].code")
+                        .ElementId($"{topExtension.Path}:distanceFromChestWall.value[x].code")
+                        .Type("uri")
+                        .Single()
+                        .Binding("http://hl7.org/fhir/us/breast-radiology/ValueSet/UnitsOfLengthVS",
+                                BindingStrength.Required)
+                        ;
+                    distanceFromChestWallGroup.RelatedElements.Add(quantityCode);
+
+                }
+
+                e.IntroDoc
+                    .ReviewedStatus(ReviewStatus.NotReviewed)
+                    .Extension("Breast Body Location", "define a location in the breast")
+                    ;
             });
         }
     }

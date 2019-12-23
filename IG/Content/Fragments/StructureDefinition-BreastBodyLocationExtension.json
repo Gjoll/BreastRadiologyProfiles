@@ -127,6 +127,36 @@
         }
       },
       {
+        "id": "Extension.extension:region",
+        "path": "Extension.extension",
+        "sliceName": "region",
+        "min": 0,
+        "max": "1"
+      },
+      {
+        "id": "Extension.extension:region.extension",
+        "path": "Extension.extension.extension",
+        "min": 0,
+        "max": "0"
+      },
+      {
+        "id": "Extension.extension:region.value[x]",
+        "path": "Extension.extension.value[x]",
+        "short": "Region of the body location",
+        "definition": "The region  of the body location",
+        "min": 1,
+        "max": "1",
+        "type": [
+          {
+            "code": "CodeableConcept"
+          }
+        ],
+        "binding": {
+          "strength": "required",
+          "valueSet": "http://hl7.org/fhir/us/breast-radiology/ValueSet/BreastLocationRegionVS"
+        }
+      },
+      {
         "id": "Extension.extension:clockDirection",
         "path": "Extension.extension",
         "sliceName": "clockDirection",
@@ -194,6 +224,8 @@
       {
         "id": "Extension.extension:distanceFromNipple.value[x]",
         "path": "Extension.extension.value[x]",
+        "short": "Distance from nipple",
+        "definition": "Distance from nipple to body location",
         "min": 1,
         "max": "1",
         "type": [
@@ -216,6 +248,96 @@
       },
       {
         "id": "Extension.extension:distanceFromNipple.value[x].code",
+        "path": "Extension.extension.value[x].code",
+        "min": 1,
+        "max": "1",
+        "type": [
+          {
+            "code": "uri"
+          }
+        ],
+        "binding": {
+          "strength": "required",
+          "valueSet": "http://hl7.org/fhir/us/breast-radiology/ValueSet/UnitsOfLengthVS"
+        }
+      },
+      {
+        "id": "Extension.extension:distanceFromSkin",
+        "path": "Extension.extension",
+        "sliceName": "distanceFromSkin"
+      },
+      {
+        "id": "Extension.extension:distanceFromSkin.value[x]",
+        "path": "Extension.extension.value[x]",
+        "short": "Distance from skin",
+        "definition": "Distance from skin to body location",
+        "min": 1,
+        "max": "1",
+        "type": [
+          {
+            "code": "Quantity"
+          }
+        ]
+      },
+      {
+        "id": "Extension.extension:distanceFromSkin.value[x].system",
+        "path": "Extension.extension.value[x].system",
+        "min": 1,
+        "max": "1",
+        "type": [
+          {
+            "code": "uri"
+          }
+        ],
+        "fixedUri": "http://unitsofmeasure.org"
+      },
+      {
+        "id": "Extension.extension:distanceFromSkin.value[x].code",
+        "path": "Extension.extension.value[x].code",
+        "min": 1,
+        "max": "1",
+        "type": [
+          {
+            "code": "uri"
+          }
+        ],
+        "binding": {
+          "strength": "required",
+          "valueSet": "http://hl7.org/fhir/us/breast-radiology/ValueSet/UnitsOfLengthVS"
+        }
+      },
+      {
+        "id": "Extension.extension:distanceFromChestWall",
+        "path": "Extension.extension",
+        "sliceName": "distanceFromChestWall"
+      },
+      {
+        "id": "Extension.extension:distanceFromChestWall.value[x]",
+        "path": "Extension.extension.value[x]",
+        "short": "Distance from chest wall",
+        "definition": "Distance from chest wall to body location",
+        "min": 1,
+        "max": "1",
+        "type": [
+          {
+            "code": "Quantity"
+          }
+        ]
+      },
+      {
+        "id": "Extension.extension:distanceFromChestWall.value[x].system",
+        "path": "Extension.extension.value[x].system",
+        "min": 1,
+        "max": "1",
+        "type": [
+          {
+            "code": "uri"
+          }
+        ],
+        "fixedUri": "http://unitsofmeasure.org"
+      },
+      {
+        "id": "Extension.extension:distanceFromChestWall.value[x].code",
         "path": "Extension.extension.value[x].code",
         "min": 1,
         "max": "1",

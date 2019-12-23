@@ -64,7 +64,7 @@ namespace BreastRadiology.XUnitTests
                     new ProfileTargetSlice(await this.CommonOrientation(), 0, "1"),
                     new ProfileTargetSlice(await this.MRIMassMargin(), 0, "*"),
                     //$new ProfileTargetSlice(await this.MRIMassDensity(), 0, "1"),
-                    new ProfileTargetSlice(await this.CommonObservedChanges(), 0, "*"),
+                    new ProfileTargetSlice(await this.CommonObservedChangeInState(), 0, "*"),
                     //$new ProfileTargetSlice(await this.MRIAssociatedFeatures(), 0, "1", false),
                     };
                     e.Find("hasMember").SliceByUrl(targets);

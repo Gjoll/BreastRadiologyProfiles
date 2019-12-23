@@ -34,7 +34,7 @@ namespace BreastRadiology.XUnitTests
                         "Shape/ValueSet",
                         "Codes defining shape values.",
                         Group_MGCodes,
-                        await this.CommonCSShape());
+                        await this.CommonShapeCS.Value());
                 {
                     IntroDoc valueSetIntroDoc = new IntroDoc(Path.Combine(this.pageDir, $"ValueSet-{binding.Name}-intro.xml"));
                     valueSetIntroDoc

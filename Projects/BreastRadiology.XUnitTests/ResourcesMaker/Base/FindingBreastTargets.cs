@@ -23,11 +23,11 @@ namespace BreastRadiology.XUnitTests
             // ShowChildren = false, to limit depth of resource graph.
             this.findingBreastTargets = new ProfileTargetSlice[]
             {
-                new ProfileTargetSlice(await this.BiRadsAssessmentCategory(), 1, "1", false),
-                new ProfileTargetSlice(await this.FindingMammo(), 0, "*", false),
-                new ProfileTargetSlice(await this.FindingMri(), 0, "*", false),
-                new ProfileTargetSlice(await this.FindingNM(), 0, "*", false),
-                new ProfileTargetSlice(await this.FindingUltraSound(), 0, "*", false)
+                new ProfileTargetSlice(await this.BiRadsAssessmentCategory(), 1, "1"),
+                new ProfileTargetSlice(await this.FindingMammo(), 0, "*"),
+                new ProfileTargetSlice(await this.FindingMri(), 0, "*"),
+                new ProfileTargetSlice(await this.FindingNM(), 0, "*"),
+                new ProfileTargetSlice(await this.FindingUltraSound(), 0, "*")
             };
         }
     }

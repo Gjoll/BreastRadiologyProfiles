@@ -15,7 +15,6 @@ using StringTask = System.Threading.Tasks.Task<string>;
 
 namespace BreastRadiology.XUnitTests
 {
-    using CSTask = System.Threading.Tasks.Task<CodeSystem>;
     using VSTask = System.Threading.Tasks.Task<ValueSet>;
 
     /*
@@ -27,6 +26,9 @@ namespace BreastRadiology.XUnitTests
 
     partial class ResourcesMaker : ConverterBase
     {
+        public static ResourcesMaker Self => ResourcesMaker.self;
+        static ResourcesMaker self;
+
         public const String Group_BaseResources = "BaseResources";
         public const String Group_CommonResources = "CommonResources";
         public const String Group_CommonCodes = "CommonCodes";
@@ -90,6 +92,7 @@ namespace BreastRadiology.XUnitTests
         {
             const String fcn = "ResourcesMaker";
 
+            ResourcesMaker.self = this;
             this.fc = fc;
             this.resourceDir = resourceDir;
             this.pageDir = pageDir;
@@ -211,7 +214,7 @@ namespace BreastRadiology.XUnitTests
             }
         }
 
-        async CSTask CreateCodeSystem(String name,
+        async System.Threading.Tasks.Task<CodeSystem> CreateCodeSystem(String name,
             String title,
             String mapName,
             String description,
@@ -252,6 +255,7 @@ namespace BreastRadiology.XUnitTests
             this.resources.Add(Path.Combine(this.resourceDir, $"CodeSystem-{name}CS.json"), cs);
             return cs;
         }
+
         /// <summary>
         /// Create a value set of all the codes in the passed code system.
         /// </summary>
@@ -285,6 +289,7 @@ namespace BreastRadiology.XUnitTests
             {
                 System = cs.Url
             };
+
             vs.Compose = new ValueSet.ComposeComponent();
             vs.Compose.Include.Add(vsComp);
 

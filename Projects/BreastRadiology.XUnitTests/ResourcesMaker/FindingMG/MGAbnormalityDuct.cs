@@ -23,11 +23,9 @@ namespace BreastRadiology.XUnitTests
         }
         String mgAbnormalityDuct = null;
 
-        async VTask CreateMGAbnormalityDuct()
-        {
-            await VTask.Run(async () =>
-            {
-                CodeSystem cs = await this.CreateCodeSystem(
+        CSTaskVar BreastRadMammoAbnormalityDuctCS = new CSTaskVar(
+            async () =>
+                await ResourcesMaker.Self.CreateCodeSystem(
                        "BreastRadMammoAbnormalityDuct",
                        "Mammography Duct Abnormality Refinement",
                         "Mg Duct Refinement/CodeSystem",
@@ -55,15 +53,19 @@ namespace BreastRadiology.XUnitTests
                                 .CiteEnd(BiRadCitation)
                             )
                         }
+                    )
                     );
-
+        async VTask CreateMGAbnormalityDuct()
+        {
+            await VTask.Run(async () =>
+            {
                 ValueSet binding = await this.CreateValueSet(
                    "BreastRadMammoAbnormalityDuct",
                    "Mammography Duct Abnormality",
                     "Mg Duct/ValueSet",
                    "Codes defining types of mammography duct node abnormalities.",
                     Group_MGCodes,
-                    cs);
+                    await BreastRadMammoAbnormalityDuctCS.Value());
 
 
                 SDefEditor e = this.CreateEditor("BreastRadMammoAbnormalityDuct",

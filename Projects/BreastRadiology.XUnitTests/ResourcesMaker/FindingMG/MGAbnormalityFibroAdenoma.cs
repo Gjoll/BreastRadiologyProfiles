@@ -33,7 +33,7 @@ namespace BreastRadiology.XUnitTests
                         "FibroadenomaValueSet",
                         "Codes defining Fibroadenoma values.",
                         Group_CommonCodes,
-                        await this.CommonCSFibroadenoma());
+                        await this.CommonFibroadenomaCS.Value());
 
                 SDefEditor e = this.CreateEditor("BreastRadMammoAbnormalityFibroadenoma",
                         "Mammography Fibroadenoma Abnormality",

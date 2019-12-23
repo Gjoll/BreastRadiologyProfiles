@@ -10,13 +10,11 @@ namespace BreastRadiology.XUnitTests
         public Int32 Min { get; }
         public String Max { get; }
 
-        public bool ShowChildren { get; }
-        public ProfileTargetSlice(String profile, Int32 min, String max, bool showChildren = true)
+        public ProfileTargetSlice(String profile, Int32 min, String max)
         {
             this.Profile = profile;
             this.Min = min;
             this.Max = max;
-            this.ShowChildren = showChildren;
         }
     }
 }

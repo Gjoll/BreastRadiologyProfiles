@@ -27,11 +27,7 @@
     },
     {
       "url": "http://www.fragment.com/maplink",
-      "valueString": "target|True|http://hl7.org/fhir/us/breast-radiology/StructureDefinition/CommonAbnormalityForeignObject"
-    },
-    {
-      "url": "http://www.fragment.com/maplink",
-      "valueString": "target|True|http://hl7.org/fhir/us/breast-radiology/StructureDefinition/BreastRadMRIMass"
+      "valueString": "target|False|http://hl7.org/fhir/us/breast-radiology/StructureDefinition/BreastRadMRIMass"
     }
   ],
   "url": "http://hl7.org/fhir/us/breast-radiology/StructureDefinition/BreastRadMRIFinding",
@@ -86,26 +82,6 @@
           "min": 0,
           "max": "*"
         }
-      },
-      {
-        "id": "Observation.hasMember:commonAbnormalityForeignObject",
-        "path": "Observation.hasMember",
-        "sliceName": "commonAbnormalityForeignObject",
-        "min": 0,
-        "max": "*",
-        "base": {
-          "path": "Observation.hasMember",
-          "min": 0,
-          "max": "*"
-        },
-        "type": [
-          {
-            "code": "Reference",
-            "targetProfile": [
-              "http://hl7.org/fhir/us/breast-radiology/StructureDefinition/CommonAbnormalityForeignObject"
-            ]
-          }
-        ]
       },
       {
         "id": "Observation.hasMember:breastRadMRIMass",

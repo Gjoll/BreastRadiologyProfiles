@@ -24,11 +24,10 @@ namespace BreastRadiology.XUnitTests
         }
         String usPosteriorAcousticFeatures = null;
 
-        async VTask CreateUSPosteriorAcousticFeatures()
-        {
-            await VTask.Run(async () =>
-            {
-                CodeSystem cs = await this.CreateCodeSystem(
+
+        CSTaskVar BreastRadUSPosteriorAcousticFeaturesCS = new CSTaskVar(
+            async () =>
+                await ResourcesMaker.Self.CreateCodeSystem(
                     "BreastRadUSPosteriorAcousticFeatures",
                     "US Posterior Acoustic Features",
                     "US Posterior Acoustic/Feature CodeSystem",
@@ -83,7 +82,20 @@ namespace BreastRadiology.XUnitTests
                             .Line("acoustic shadowing.")
                         .CiteEnd(BiRadCitation)
                         )
-                        });
+                        })
+                    );
+
+        async VTask CreateUSPosteriorAcousticFeatures()
+        {
+            await VTask.Run(async () =>
+            {
+                ValueSet binding = await this.CreateValueSet(
+                    "BreastRadUSPosteriorAcousticFeatures",
+                    "US Posterior Acoustic Features",
+                    "US Posterior Acoustic/Feature ValueSet",
+                    "Ultra-sound mass Posterior acoustic features code system.",
+                    Group_USCodes,
+                    await BreastRadUSPosteriorAcousticFeaturesCS.Value());
 
                 SDefEditor e = this.CreateEditor("BreastRadUSPosteriorAcousticFeatures",
                         "US Posterior Acoustic Features",
@@ -106,13 +118,6 @@ namespace BreastRadiology.XUnitTests
                     .AddFragRef(await this.ObservationLeafFragment())
                     ;
 
-                ValueSet binding = await this.CreateValueSet(
-                    "BreastRadUSPosteriorAcousticFeatures",
-                    "US Posterior Acoustic Features",
-                    "US Posterior Acoustic/Feature ValueSet",
-                    "Ultra-sound mass Posterior acoustic features code system.",
-                    Group_USCodes,
-                    cs);
                 e.Select("value[x]")
                     .Type("CodeableConcept")
                     .Binding(binding.Url, BindingStrength.Required)

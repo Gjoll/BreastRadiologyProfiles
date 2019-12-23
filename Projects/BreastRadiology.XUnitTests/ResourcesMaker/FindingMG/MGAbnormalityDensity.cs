@@ -23,11 +23,9 @@ namespace BreastRadiology.XUnitTests
         }
         String mgAbnormalityDensity = null;
 
-        async VTask CreateMGAbnormalityDensity()
-        {
-            await VTask.Run(async () =>
-            {
-                CodeSystem cs = await this.CreateCodeSystem(
+        CSTaskVar BreastRadMammoAbnormalityDensityCS = new CSTaskVar(
+            async () =>
+                await ResourcesMaker.Self.CreateCodeSystem(
                        "BreastRadMammoAbnormalityDensity",
                        "Mammography Density Abnormality Refinement",
                         "Mg Density Refinement/CodeSystem",
@@ -51,15 +49,19 @@ namespace BreastRadiology.XUnitTests
                                 .Line("Penrad")
                             )
                         }
+                    )
                     );
-
+        async VTask CreateMGAbnormalityDensity()
+        {
+            await VTask.Run(async () =>
+            {
                 ValueSet binding = await this.CreateValueSet(
                    "BreastRadMammoAbnormalityDensity",
                    "Mammography Density Abnormality",
                     "Mg Density/ValueSet",
                    "Codes defining types of mammography density abnormalities.",
                     Group_MGCodes,
-                    cs);
+                    await BreastRadMammoAbnormalityDensityCS.Value());
 
 
                 SDefEditor e = this.CreateEditor("BreastRadMammoAbnormalityDensity",

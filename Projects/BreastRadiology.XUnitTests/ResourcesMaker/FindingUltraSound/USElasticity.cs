@@ -24,11 +24,9 @@ namespace BreastRadiology.XUnitTests
         }
         String usElasticity = null;
 
-        async VTask CreateUSElasticity()
-        {
-            await VTask.Run(async () =>
-            {
-                CodeSystem cs = await this.CreateCodeSystem(
+        CSTaskVar BreastRadUSElasticityCS = new CSTaskVar(
+            async () =>
+                await ResourcesMaker.Self.CreateCodeSystem(
                     "BreastRadUSElasticity",
                     "US Echo Pattern",
                     "US Elasticity/CodeSystem",
@@ -51,15 +49,20 @@ namespace BreastRadiology.XUnitTests
                         new Definition()
                             .Line("Penrad")
                         )
-                    });
+                    })
+                );
 
+        async VTask CreateUSElasticity()
+        {
+            await VTask.Run(async () =>
+            {
                 ValueSet binding = await this.CreateValueSet(
                     "BreastRadUSElasticity",
                     "US Elasticity",
                     "US Elasticity/ValueSet",
                     "Ultra-sound Elasticity code system.",
                     Group_USCodes,
-                    cs);
+                    await BreastRadUSElasticityCS.Value());
 
                 {
                     IntroDoc valueSetIntroDoc = new IntroDoc(Path.Combine(this.pageDir, $"ValueSet-{binding.Name}-intro.xml"));

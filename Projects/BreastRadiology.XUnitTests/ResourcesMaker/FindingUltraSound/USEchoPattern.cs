@@ -24,11 +24,9 @@ namespace BreastRadiology.XUnitTests
         }
         String usEchoPattern = null;
 
-        async VTask CreateUSEchoPattern()
-        {
-            await VTask.Run(async () =>
-            {
-                CodeSystem cs = await this.CreateCodeSystem(
+        CSTaskVar BreastRadUSEchoPatternCS = new CSTaskVar(
+            async () =>
+                await ResourcesMaker.Self.CreateCodeSystem(
                     "BreastRadUSEchoPattern",
                     "US Echo Pattern",
                     "US Echo Pattern/CodeSystem",
@@ -118,15 +116,19 @@ namespace BreastRadiology.XUnitTests
                         new Definition()
                             .Line("Penrad")
                         )
-                    });
-
+                    })
+                );
+        async VTask CreateUSEchoPattern()
+        {
+            await VTask.Run(async () =>
+            {
                 ValueSet binding = await this.CreateValueSet(
                     "BreastRadUSEchoPattern",
                     "US Echo Pattern",
                     "US Echo Pattern/ValueSet",
                     "Ultra-sound mass echo pattern code system.",
                     Group_USCodes,
-                    cs);
+                    await BreastRadUSEchoPatternCS.Value());
 
                 {
                     IntroDoc valueSetIntroDoc = new IntroDoc(Path.Combine(this.pageDir, $"ValueSet-{binding.Name}-intro.xml"));

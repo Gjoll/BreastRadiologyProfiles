@@ -1,0 +1,33 @@
+{
+  "resourceType": "CodeSystem",
+  "id": "CommonObservedChangeInDefinitionCS",
+  "extension": [
+    {
+      "url": "http://www.fragment.com/fragment",
+      "valueUrl": "http://hl7.org/fhir/us/breast-radiology/StructureDefinition/HeaderFragment"
+    },
+    {
+      "url": "http://www.fragment.com/Group",
+      "valueString": "CommonCodesCS"
+    }
+  ],
+  "url": "http://hl7.org/fhir/us/breast-radiology/CodeSystem/CommonObservedChangeInDefinitionCS",
+  "name": "CommonObservedChangeInDefinitionCS",
+  "title": "Observed Changes CodeSystem",
+  "description": "Codes defining types of observed changes in definition of an abnormality over time.",
+  "caseSensitive": true,
+  "content": "complete",
+  "count": 2,
+  "concept": [
+    {
+      "code": "MoreDefined",
+      "display": "More Defined",
+      "definition": "Item is more defined"
+    },
+    {
+      "code": "LessDefined",
+      "display": "Less Defined",
+      "definition": "Item is less defined"
+    }
+  ]
+}

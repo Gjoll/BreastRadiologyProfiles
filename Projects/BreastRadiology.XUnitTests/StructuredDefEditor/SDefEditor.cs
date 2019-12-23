@@ -278,7 +278,7 @@ namespace BreastRadiology.XUnitTests
         public SDefEditor AddProfileTargets(params ProfileTargetSlice[] targets)
         {
             foreach (ProfileTargetSlice target in targets)
-                this.AddLink("target", target.Profile, target.ShowChildren);
+                this.AddLink("target", target.Profile, false);
             return this;
         }
 

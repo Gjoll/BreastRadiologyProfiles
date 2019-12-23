@@ -27,15 +27,11 @@
     },
     {
       "url": "http://www.fragment.com/maplink",
-      "valueString": "target|True|http://hl7.org/fhir/us/breast-radiology/StructureDefinition/CommonAbnormalityForeignObject"
+      "valueString": "target|False|http://hl7.org/fhir/us/breast-radiology/StructureDefinition/BreastRadUSMass"
     },
     {
       "url": "http://www.fragment.com/maplink",
-      "valueString": "target|True|http://hl7.org/fhir/us/breast-radiology/StructureDefinition/BreastRadUSMass"
-    },
-    {
-      "url": "http://www.fragment.com/maplink",
-      "valueString": "target|True|http://hl7.org/fhir/us/breast-radiology/StructureDefinition/BreastRadUSTissueComposition"
+      "valueString": "target|False|http://hl7.org/fhir/us/breast-radiology/StructureDefinition/BreastRadUSTissueComposition"
     }
   ],
   "url": "http://hl7.org/fhir/us/breast-radiology/StructureDefinition/BreastRadUltraSoundFinding",
@@ -90,26 +86,6 @@
           "min": 0,
           "max": "*"
         }
-      },
-      {
-        "id": "Observation.hasMember:commonAbnormalityForeignObject",
-        "path": "Observation.hasMember",
-        "sliceName": "commonAbnormalityForeignObject",
-        "min": 0,
-        "max": "*",
-        "base": {
-          "path": "Observation.hasMember",
-          "min": 0,
-          "max": "*"
-        },
-        "type": [
-          {
-            "code": "Reference",
-            "targetProfile": [
-              "http://hl7.org/fhir/us/breast-radiology/StructureDefinition/CommonAbnormalityForeignObject"
-            ]
-          }
-        ]
       },
       {
         "id": "Observation.hasMember:breastRadUSMass",

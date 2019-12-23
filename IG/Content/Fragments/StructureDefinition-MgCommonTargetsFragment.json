@@ -23,19 +23,35 @@
     },
     {
       "url": "http://www.fragment.com/maplink",
-      "valueString": "target|True|http://hl7.org/fhir/us/breast-radiology/StructureDefinition/BiRadsAssessmentCategory"
+      "valueString": "target|False|http://hl7.org/fhir/us/breast-radiology/StructureDefinition/BiRadsAssessmentCategory"
     },
     {
       "url": "http://www.fragment.com/maplink",
-      "valueString": "target|True|http://hl7.org/fhir/us/breast-radiology/StructureDefinition/CommonObservedChanges"
+      "valueString": "target|False|http://hl7.org/fhir/us/breast-radiology/StructureDefinition/CommonObservedChangeInDefinition"
     },
     {
       "url": "http://www.fragment.com/maplink",
-      "valueString": "target|True|http://hl7.org/fhir/us/breast-radiology/StructureDefinition/CommonSize"
+      "valueString": "target|False|http://hl7.org/fhir/us/breast-radiology/StructureDefinition/CommonObservedChangeInNumber"
     },
     {
       "url": "http://www.fragment.com/maplink",
-      "valueString": "target|True|http://hl7.org/fhir/us/breast-radiology/StructureDefinition/CommonOrientation"
+      "valueString": "target|False|http://hl7.org/fhir/us/breast-radiology/StructureDefinition/CommonObservedChangeInProminance"
+    },
+    {
+      "url": "http://www.fragment.com/maplink",
+      "valueString": "target|False|http://hl7.org/fhir/us/breast-radiology/StructureDefinition/CommonObservedChangeInSize"
+    },
+    {
+      "url": "http://www.fragment.com/maplink",
+      "valueString": "target|False|http://hl7.org/fhir/us/breast-radiology/StructureDefinition/CommonObservedChangeInState"
+    },
+    {
+      "url": "http://www.fragment.com/maplink",
+      "valueString": "target|False|http://hl7.org/fhir/us/breast-radiology/StructureDefinition/CommonSize"
+    },
+    {
+      "url": "http://www.fragment.com/maplink",
+      "valueString": "target|False|http://hl7.org/fhir/us/breast-radiology/StructureDefinition/CommonOrientation"
     }
   ],
   "url": "http://hl7.org/fhir/us/breast-radiology/StructureDefinition/MgCommonTargetsFragment",
@@ -101,11 +117,11 @@
         ]
       },
       {
-        "id": "Observation.hasMember:commonObservedChanges",
+        "id": "Observation.hasMember:commonObservedChangeInDefinition",
         "path": "Observation.hasMember",
-        "sliceName": "commonObservedChanges",
+        "sliceName": "commonObservedChangeInDefinition",
         "min": 0,
-        "max": "*",
+        "max": "1",
         "base": {
           "path": "Observation.hasMember",
           "min": 0,
@@ -115,7 +131,87 @@
           {
             "code": "Reference",
             "targetProfile": [
-              "http://hl7.org/fhir/us/breast-radiology/StructureDefinition/CommonObservedChanges"
+              "http://hl7.org/fhir/us/breast-radiology/StructureDefinition/CommonObservedChangeInDefinition"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "Observation.hasMember:commonObservedChangeInNumber",
+        "path": "Observation.hasMember",
+        "sliceName": "commonObservedChangeInNumber",
+        "min": 0,
+        "max": "1",
+        "base": {
+          "path": "Observation.hasMember",
+          "min": 0,
+          "max": "*"
+        },
+        "type": [
+          {
+            "code": "Reference",
+            "targetProfile": [
+              "http://hl7.org/fhir/us/breast-radiology/StructureDefinition/CommonObservedChangeInNumber"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "Observation.hasMember:commonObservedChangeInProminance",
+        "path": "Observation.hasMember",
+        "sliceName": "commonObservedChangeInProminance",
+        "min": 0,
+        "max": "1",
+        "base": {
+          "path": "Observation.hasMember",
+          "min": 0,
+          "max": "*"
+        },
+        "type": [
+          {
+            "code": "Reference",
+            "targetProfile": [
+              "http://hl7.org/fhir/us/breast-radiology/StructureDefinition/CommonObservedChangeInProminance"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "Observation.hasMember:commonObservedChangeInSize",
+        "path": "Observation.hasMember",
+        "sliceName": "commonObservedChangeInSize",
+        "min": 0,
+        "max": "1",
+        "base": {
+          "path": "Observation.hasMember",
+          "min": 0,
+          "max": "*"
+        },
+        "type": [
+          {
+            "code": "Reference",
+            "targetProfile": [
+              "http://hl7.org/fhir/us/breast-radiology/StructureDefinition/CommonObservedChangeInSize"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "Observation.hasMember:commonObservedChangeInState",
+        "path": "Observation.hasMember",
+        "sliceName": "commonObservedChangeInState",
+        "min": 0,
+        "max": "1",
+        "base": {
+          "path": "Observation.hasMember",
+          "min": 0,
+          "max": "*"
+        },
+        "type": [
+          {
+            "code": "Reference",
+            "targetProfile": [
+              "http://hl7.org/fhir/us/breast-radiology/StructureDefinition/CommonObservedChangeInState"
             ]
           }
         ]

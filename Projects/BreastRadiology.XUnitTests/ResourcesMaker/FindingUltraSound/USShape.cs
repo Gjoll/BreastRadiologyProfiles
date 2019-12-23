@@ -34,7 +34,7 @@ namespace BreastRadiology.XUnitTests
                         "Shape/ValueSet",
                         "Codes defining shape values.",
                         Group_USCodes,
-                        await this.CommonCSShape());
+                        await this.CommonShapeCS.Value());
                 binding.Remove("Reniform");
                 {
                     IntroDoc valueSetIntroDoc = new IntroDoc(Path.Combine(this.pageDir, $"ValueSet-{binding.Name}-intro.xml"));

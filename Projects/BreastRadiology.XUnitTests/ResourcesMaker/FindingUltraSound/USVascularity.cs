@@ -24,11 +24,9 @@ namespace BreastRadiology.XUnitTests
         }
         String usVascularity = null;
 
-        async VTask CreateUSVascularity()
-        {
-            await VTask.Run(async () =>
-            {
-                CodeSystem cs = await this.CreateCodeSystem(
+        CSTaskVar BreastRadUSVascularityCS = new CSTaskVar(
+            async () =>
+                await ResourcesMaker.Self.CreateCodeSystem(
                     "BreastRadUSVascularity",
                     "US Echo Pattern",
                     "US Vascularity/CodeSystem",
@@ -66,15 +64,19 @@ namespace BreastRadiology.XUnitTests
                         new Definition()
                             .Line("Penrad")
                         )
-                    });
-
+                    })
+                );
+        async VTask CreateUSVascularity()
+        {
+            await VTask.Run(async () =>
+            {
                 ValueSet binding = await this.CreateValueSet(
                     "BreastRadUSVascularity",
                     "US Vascularity",
                     "US Vascularity/ValueSet",
                     "Ultra-sound Vascularity code system.",
                     Group_USCodes,
-                    cs);
+                    await BreastRadUSVascularityCS.Value());
 
                 {
                     IntroDoc valueSetIntroDoc = new IntroDoc(Path.Combine(this.pageDir, $"ValueSet-{binding.Name}-intro.xml"));

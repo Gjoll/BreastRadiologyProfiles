@@ -24,11 +24,9 @@ namespace BreastRadiology.XUnitTests
         }
         String biRadsAssessmentCategory = null;
 
-        async VTask CreateBiRadsAssessmentCategory()
-        {
-            await VTask.Run(async () =>
-            {
-                CodeSystem cs = await this.CreateCodeSystem(
+        CSTaskVar CSBiRadsAssessmentCategories = new CSTaskVar(
+            async () =>
+                await ResourcesMaker.Self.CreateCodeSystem(
                         "BiRadsAssessmentCategories",
                         "BiRads(r) Assessment Category Codes",
                         "BiRads/CodeSystem",
@@ -87,14 +85,19 @@ namespace BreastRadiology.XUnitTests
                                 .Line("Known Biopsy-Proven Malignancy")
                             )
                         })
-                    ;
+                    );
+
+        async VTask CreateBiRadsAssessmentCategory()
+        {
+            await VTask.Run(async () =>
+            {
                 ValueSet binding = await this.CreateValueSet(
                         "BiRadsAssessmentCategories",
                         "BiRads(r) Assessment Category Codes",
                         "BiRads/ValueSet",
                         "BiRads(r) Assessment Category code system.",
                         Group_CommonCodes,
-                        cs);
+                        await CSBiRadsAssessmentCategories.Value());
 
                 {
                     IntroDoc valueSetIntroDoc = new IntroDoc(Path.Combine(this.pageDir, $"ValueSet-{binding.Name}-intro.xml"));

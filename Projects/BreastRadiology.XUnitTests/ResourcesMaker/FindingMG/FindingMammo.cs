@@ -51,7 +51,7 @@ namespace BreastRadiology.XUnitTests
                 {
                     ProfileTargetSlice[] targets = new ProfileTargetSlice[]
                     {
-                    new ProfileTargetSlice(await this.CommonAbnormalityForeignObject(), 0, "*"),
+                    new ProfileTargetSlice(await this.MGAbnormalityForeignObject(), 0, "*"),
                     new ProfileTargetSlice(await this.MGAbnormalityArchitecturalDistortion(), 0, "*"),
                     new ProfileTargetSlice(await this.MGAbnormalityAsymmetry(), 0, "*"),
                     new ProfileTargetSlice(await this.MGAbnormalityCalcification(), 0, "*"),

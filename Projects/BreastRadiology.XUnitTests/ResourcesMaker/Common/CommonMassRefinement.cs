@@ -13,23 +13,11 @@ using VTask = System.Threading.Tasks.Task;
 
 namespace BreastRadiology.XUnitTests
 {
-    using CSTask = System.Threading.Tasks.Task<Hl7.Fhir.Model.CodeSystem>;
-
     partial class ResourcesMaker
     {
-        async CSTask CommonCSMassRefinement()
-        {
-            if (this.commonMassRefinement == null)
-                await this.CreateCommonMassRefinement();
-            return this.commonMassRefinement;
-        }
-        CodeSystem commonMassRefinement = null;
-
-        async VTask CreateCommonMassRefinement()
-        {
-            await VTask.Run(async () =>
-            {
-                this.commonMassRefinement = await this.CreateCodeSystem(
+        CSTaskVar CommonCSMassRefinement = new CSTaskVar(
+            async () =>
+                await ResourcesMaker.Self.CreateCodeSystem(
                         "CommonMassRefinement",
                         "Mass Refinement",
                         "Mass/Refinement/CodeSystem",
@@ -56,8 +44,6 @@ namespace BreastRadiology.XUnitTests
                                .Line("Skin Mass")
                             )
                         })
-                    ;
-            });
-        }
+            );
     }
 }
