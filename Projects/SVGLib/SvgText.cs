@@ -139,17 +139,6 @@ namespace SVGLib
 			set => SetAttributeValue(SvgAttribute._SvgAttribute.attrSpecific_DY, value);
 		}
 
-		/// <summary>
-		/// The supplemental rotation about the current text position that will be applied to all of the glyphs corresponding to each character within this element.
-		/// </summary>
-		[Category("(Specific)")]
-		[Description("The supplemental rotation about the current text position that will be applied to all of the glyphs corresponding to each character within this element.")]
-		public string Rotate
-		{
-			get => GetAttributeStringValue(SvgAttribute._SvgAttribute.attrSpecific_Rotate);
-
-			set => SetAttributeValue(SvgAttribute._SvgAttribute.attrSpecific_Rotate, value);
-		}
 
 		/// <summary>
 		/// The author's computation of the total sum of all of the advance values that correspond to character data within this element, including the advance value on the glyph (horizontal or vertical), the effect of properties 'kerning', 'letter-spacing' and 'word-spacing' and adjustments due to attributes dx and dy on 'tspan' elements. This value is used to calibrate the user agent's own calculations with that of the author.
@@ -224,6 +213,26 @@ namespace SVGLib
 		}
 
 		/// <summary>
+		/// </summary>
+		[Category("Font")]
+		[Description("Set Text Anchor")]
+		public String TextAnchor
+		{
+			get => GetAttributeStringValue(SvgAttribute._SvgAttribute.attrSpecific_TextAnchor);
+			set => SetAttributeValue(SvgAttribute._SvgAttribute.attrSpecific_TextAnchor, value);
+		}
+
+		/// <summary>
+		/// </summary>
+		[Category("Font")]
+		[Description("Set Alignemnt Baseline")]
+		public String AlignmentBaseline
+		{
+			get => GetAttributeStringValue(SvgAttribute._SvgAttribute.attrSpecific_AlignmentBaseline);
+			set => SetAttributeValue(SvgAttribute._SvgAttribute.attrSpecific_AlignmentBaseline, value);
+		}
+
+		/// <summary>
 		/// It constructs a text element with no attribute.
 		/// </summary>
 		/// <param name="doc">SVG document.</param>
@@ -241,9 +250,10 @@ namespace SVGLib
 			AddAttr(SvgAttribute._SvgAttribute.attrSpecific_Y, "");
 			AddAttr(SvgAttribute._SvgAttribute.attrSpecific_DX, "");
 			AddAttr(SvgAttribute._SvgAttribute.attrSpecific_DY, "");
-			AddAttr(SvgAttribute._SvgAttribute.attrSpecific_Rotate, "");
 			AddAttr(SvgAttribute._SvgAttribute.attrSpecific_TextLength, "");
 			AddAttr(SvgAttribute._SvgAttribute.attrSpecific_LengthAdjust, 0);
+			AddAttr(SvgAttribute._SvgAttribute.attrSpecific_TextAnchor, "");
+			AddAttr(SvgAttribute._SvgAttribute.attrSpecific_AlignmentBaseline, "");
 
 			AddAttr(SvgAttribute._SvgAttribute.attrStyle_Class, "");
 			AddAttr(SvgAttribute._SvgAttribute.attrStyle_Style, "");

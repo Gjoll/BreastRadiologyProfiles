@@ -45,12 +45,14 @@ namespace SVGLib
             attrSpecific_Y1,
             attrSpecific_X2,
             attrSpecific_Y2,
-            attrSpecific_Rotate,
+            attrSpecific_Transform,
             attrSpecific_TextLength,
             attrSpecific_LengthAdjust,
             attrSpecific_PathData,
             attrSpecific_PathLength,
             attrSpecific_Points,
+            attrSpecific_TextAnchor,
+            attrSpecific_AlignmentBaseline,
             attrStyle_Class,
             attrStyle_Style,
             attrPaint_Color,
@@ -731,9 +733,9 @@ namespace SVGLib
 
             // ---
             info = new _AttrInfo();
-            info._type = _SvgAttribute.attrSpecific_Rotate;
+            info._type = _SvgAttribute.attrSpecific_Transform;
             info._group = _SvgAttributeGroup.groupElementSpecific;
-            info._name = "rotate";
+            info._name = "transform";
 
             m_mapAttrInfo.Add(info._type, info);
             // ---
@@ -1183,6 +1185,24 @@ namespace SVGLib
             info._type = _SvgAttribute.attrFont_SizeAdjust;
             info._group = _SvgAttributeGroup.groupFont;
             info._name = "font-size-adjust";
+
+            m_mapAttrInfo.Add(info._type, info);
+            // ---
+
+            // ---
+            info = new _AttrInfo();
+            info._type = _SvgAttribute.attrSpecific_TextAnchor;
+            info._group = _SvgAttributeGroup.groupElementSpecific;
+            info._name = "text-anchor";
+
+            m_mapAttrInfo.Add(info._type, info);
+            // ---
+
+            // ---
+            info = new _AttrInfo();
+            info._type = _SvgAttribute.attrSpecific_AlignmentBaseline;
+            info._group = _SvgAttributeGroup.groupElementSpecific;
+            info._name = "alignment-baseline";
 
             m_mapAttrInfo.Add(info._type, info);
             // ---

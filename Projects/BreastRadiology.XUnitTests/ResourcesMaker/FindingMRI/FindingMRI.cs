@@ -55,7 +55,7 @@ namespace BreastRadiology.XUnitTests
 
                 e.IntroDoc
                     .ReviewedStatus(ReviewStatus.NotReviewed)
-                    .ObservationSection("MRI Abnormality")
+                    .ObservationSection("MRI Finding")
                     ;
                 //$e.Find("method")
                 //$     .FixedCodeSlice("method", "http://snomed.info/sct", "115341008")

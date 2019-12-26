@@ -62,7 +62,7 @@ namespace BreastRadiology.XUnitTests
 
                 e.IntroDoc
                     .ReviewedStatus(ReviewStatus.NotReviewed)
-                    .ObservationSection("MRI Abnormality")
+                    .ObservationSection("MG Finding")
                     ;
             });
     }

@@ -17,7 +17,7 @@
   ],
   "url": "http://hl7.org/fhir/us/breast-radiology/ValueSet/BreastRadMammoAbnormalityDensityVS",
   "name": "BreastRadMammoAbnormalityDensityVS",
-  "title": "Mammography Density Abnormality ValueSet",
+  "title": "Mammography Density ValueSet",
   "description": "Codes defining types of mammography density abnormalities.",
   "compose": {
     "include": [

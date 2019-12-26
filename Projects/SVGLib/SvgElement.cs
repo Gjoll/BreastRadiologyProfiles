@@ -59,11 +59,21 @@ namespace SVGLib
             set => SetAttributeValue(SvgAttribute._SvgAttribute.attrCore_Id, value);
         }
 
-        // ---------- PUBLIC PROPERTIES END
+		// ---------- PUBLIC PROPERTIES END
 
-        // ---------- PRIVATE PROPERTIES
+		/// <summary>
+		/// </summary>
+		[Category("(Specific)")]
+		[Description("Svg Transform")]
+		public string Transform
+		{
+			get => GetAttributeStringValue(SvgAttribute._SvgAttribute.attrSpecific_Transform);
 
-        private class CEleComparer : IComparer  
+			set => SetAttributeValue(SvgAttribute._SvgAttribute.attrSpecific_Transform, value);
+		}
+		// ---------- PRIVATE PROPERTIES
+
+		private class CEleComparer : IComparer  
 		{
 			int IComparer.Compare( Object x, Object y )  
 			{
@@ -73,22 +83,14 @@ namespace SVGLib
 				if ( ax.AttributeGroup == ay.AttributeGroup )
 				{
 					if ( ax.AttributeType < ay.AttributeType )
-					{
 						return -1;
-					}
 					else
-					{
 						return 1;
-					}
 				}
 				else if ( ax.AttributeGroup < ay.AttributeGroup )
-				{
 					return -1;
-				}
 				else
-				{
 					return 1;
-				}
 			}
 		}
 
@@ -396,6 +398,7 @@ namespace SVGLib
 			m_attributes = new ArrayList();
 
 			AddAttr(SvgAttribute._SvgAttribute.attrCore_Id, null);
+			AddAttr(SvgAttribute._SvgAttribute.attrSpecific_Transform, "");
 
 			m_Parent = null;
 			m_Child = null;

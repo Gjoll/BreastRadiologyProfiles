@@ -40,7 +40,7 @@ namespace BreastRadiology.XUnitTests
 
                 e.IntroDoc
                     .ReviewedStatus(ReviewStatus.NotReviewed)
-                    .ObservationSection($"Abnormality Left Breast Finding")
+                    .ObservationSection($"Left Breast Finding")
                     ;
             });
     }

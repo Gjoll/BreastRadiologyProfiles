@@ -31,11 +31,11 @@ namespace BreastRadiology.XUnitTests
                 ValueSet binding = ResourcesMaker.Self.MassRefinementValueSetVS.Value();
 
                 SDefEditor e = ResourcesMaker.Self.CreateEditorXX("BreastRadMammoMass",
-                        "Mammography Mass Abnormality",
-                        "Mg Mass Abnormality",
+                        "Mammography Mass",
+                        "Mg Mass",
                         ObservationUrl,
                         $"{Group_MGResources}/MassAbnormality")
-                    .Description("Breast Radiology Mammography Mass Abnormality Observation",
+                    .Description("Breast Radiology Mammography Mass Observation",
                         new Markdown()
                             .MissingObservation("a mass abnormality")
                             .BiradHeader()
@@ -77,7 +77,7 @@ namespace BreastRadiology.XUnitTests
 
                 e.IntroDoc
                     .ReviewedStatus(ReviewStatus.NotReviewed)
-                    .ObservationSection("Mammography Mass Abnormality")
+                    .ObservationSection("Mammography Mass")
                     .Refinement(binding, "Mass")
                     ;
             });

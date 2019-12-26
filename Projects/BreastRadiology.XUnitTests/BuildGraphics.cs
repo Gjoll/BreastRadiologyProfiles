@@ -150,7 +150,7 @@ namespace BreastRadiology.XUnitTests
 
                 SENode findingsNode = new SENode(width, Color.LightBlue)
                     .AddTextLine(name)
-                    .AddTextLine("Abnormality")
+                    .AddTextLine("Finding")
                     .AddTextLine("Observation")
                     ;
 

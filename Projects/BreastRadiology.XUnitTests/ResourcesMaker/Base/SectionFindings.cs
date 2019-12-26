@@ -49,7 +49,7 @@ namespace BreastRadiology.XUnitTests
 
                 e.IntroDoc
                  .ReviewedStatus(ReviewStatus.NotReviewed)
-                 .ObservationSection($"Abnormality Finding")
+                 .ObservationSection($"Finding")
                  ;
             });
     }

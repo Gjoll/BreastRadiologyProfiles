@@ -17,11 +17,11 @@ namespace BreastRadiology.XUnitTests
             (out String s) =>
             {
                 SDefEditor e = ResourcesMaker.Self.CreateEditorXX("BreastRadMammoAbnormalityArchitecturalDistortion",
-                        "Mammography Architectural Distortion Abnormality",
-                        "Mg Arch. Distortion Abnormality",
+                        "Mammography Architectural Distortion",
+                        "Mg Arch. Distortion",
                         ObservationUrl,
                         $"{Group_MGResources}/AbnormalityArchitecturalDistortion")
-                    .Description("Breast Radiology Mammography Architectural Distortion Abnormality Observation",
+                    .Description("Breast Radiology Mammography Architectural Distortion Observation",
                         new Markdown()
                             .MissingObservation("an architectural distortion abnormality")
                             .BiradHeader()
@@ -39,7 +39,6 @@ namespace BreastRadiology.XUnitTests
                     )
                     .AddFragRef(ResourcesMaker.Self.ObservationNoDeviceFragment.Value())
                     .AddFragRef(ResourcesMaker.Self.ObservationNoValueFragment.Value())
-                    .AddFragRef(ResourcesMaker.Self.ObservationLeafFragment.Value())
                     .AddFragRef(ResourcesMaker.Self.MGCommonTargetsFragment.Value())
                     ;
                 s = e.SDef.Url;
@@ -53,7 +52,7 @@ namespace BreastRadiology.XUnitTests
                 }
                 e.IntroDoc
                     .ReviewedStatus(ReviewStatus.NotReviewed)
-                    .ObservationSection($"Architectural Distortion Abnormality")
+                    .ObservationSection($"Architectural Distortion")
                     ;
             });
     }

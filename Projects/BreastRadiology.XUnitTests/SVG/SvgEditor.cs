@@ -28,8 +28,8 @@ namespace BreastRadiology.XUnitTests
 
         String ToPx(float value) => $"{15 * value}";
 
-        float maxWidth;
-        float maxHeight;
+        float maxWidth = 0;
+        float maxHeight = 0;
 
         public SvgEditor()
         {
@@ -79,9 +79,6 @@ namespace BreastRadiology.XUnitTests
         public void Render(SENodeGroup group,
             bool lineFlag)
         {
-            this.maxWidth = 0;
-            this.maxHeight = 0;
-
             if (this.screenX == -1)
                 this.screenX = this.BorderMargin;
             if (this.screenY == -1)
@@ -242,7 +239,7 @@ namespace BreastRadiology.XUnitTests
             width = node.Width * CharMod + 2 * this.BorderMargin;
 
             SvgGroup g = this.doc.AddGroup(parentGroup);
-
+            g.Transform= $"translate({this.ToPx(screenX)} {this.ToPx(screenY)})";
             SvgRect square;
 
             if (node.HRef != null)
@@ -265,14 +262,14 @@ namespace BreastRadiology.XUnitTests
             square.StrokeWidth = this.ToPx(this.BorderWidth);
             square.RX = this.ToPx(this.RectRx);
             square.RY = this.ToPx(this.RectRy);
-            square.X = this.ToPx(screenX);
-            square.Y = this.ToPx(screenY);
+            square.X = "0";
+            square.Y = "0";
             square.Width = this.ToPx(width);
             square.Height = this.ToPx(height);
             square.Fill = node.FillColor;
 
-            float textX = screenX + this.BorderMargin;
-            float textY = screenY + this.BorderMargin + 1;
+            float textX = this.BorderMargin;
+            float textY = this.BorderMargin + 1;
 
             foreach (SEText line in node.TextLines)
             {
@@ -293,8 +290,9 @@ namespace BreastRadiology.XUnitTests
                 {
                     t = this.doc.AddText(g);
                 }
-                t.X = this.ToPx(textX);
+                t.X = this.ToPx(width/2);
                 t.Y = this.ToPx(textY);
+                t.TextAnchor = "middle";
                 t.Value = line.Text;
 
                 textY += this.LineHeight;

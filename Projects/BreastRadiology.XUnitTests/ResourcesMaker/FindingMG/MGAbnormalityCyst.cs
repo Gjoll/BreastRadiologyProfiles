@@ -17,7 +17,7 @@ namespace BreastRadiology.XUnitTests
              () =>
                  ResourcesMaker.Self.CreateCodeSystem(
                         "BreastRadMammoAbnormalityCystRefinement",
-                        "Mammography Cyst Abnormality Refinement",
+                        "Mammography Cyst Refinement",
                          "Mg Cyst Refinement/CodeSystem",
                         "Codes defining types of mammography cyst abnormalities.",
                          Group_MGCodes,
@@ -81,11 +81,11 @@ namespace BreastRadiology.XUnitTests
                 }
 
                 SDefEditor e = ResourcesMaker.Self.CreateEditorXX("BreastRadMammoAbnormalityCyst",
-                        "Mammography Cyst Abnormality",
-                        "Mg Cyst Abnormality",
+                        "Mammography Cyst",
+                        "Mg Cyst",
                         ObservationUrl,
                         $"{Group_MGResources}/AbnormalityCyst")
-                    .Description("Breast Radiology Mammography Cyst Abnormality Observation",
+                    .Description("Breast Radiology Mammography Cyst Observation",
                         new Markdown()
                             .Paragraph("[PR]")
                             .MissingObservation("a cyst")

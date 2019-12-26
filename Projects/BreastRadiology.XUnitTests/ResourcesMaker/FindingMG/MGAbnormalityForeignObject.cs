@@ -41,11 +41,11 @@ namespace BreastRadiology.XUnitTests
                 }
 
                 SDefEditor e = ResourcesMaker.Self.CreateEditorXX("MGAbnormalityForeignObject",
-                        "Foreign Object Abnormality",
-                        "Foreign Object Abnormality",
+                        "Foreign Object",
+                        "Foreign Object",
                         ObservationUrl,
                         $"{Group_MGResources}/AbnormalityForeign")
-                    .Description("Breast Radiology Foreign Object Abnormality Observation",
+                    .Description("Breast Radiology Foreign Object Observation",
                         new Markdown()
                             .Paragraph("These are foreign objects found during a breast radiology exam:")
                             .Todo(

@@ -79,7 +79,7 @@ namespace BreastRadiology.XUnitTests
                 }
                 e.IntroDoc
                     .ReviewedStatus(ReviewStatus.NotReviewed)
-                    .ObservationSection("Ultra-Sound Abnormality")
+                    .ObservationSection("Ultra-Sound Finding")
                     ;
             });
     }

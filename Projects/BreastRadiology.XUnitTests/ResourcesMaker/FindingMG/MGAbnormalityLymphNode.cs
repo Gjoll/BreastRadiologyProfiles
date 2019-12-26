@@ -17,7 +17,7 @@ namespace BreastRadiology.XUnitTests
              () =>
                  ResourcesMaker.Self.CreateCodeSystem(
                         "BreastRadMammoAbnormalityLymphNode",
-                        "Mammography Lymph Node Abnormality Refinement",
+                        "Mammography Lymph Node Refinement",
                          "Mg Lymph Node Refinement/CodeSystem",
                         "Codes defining types of mammography lymph node abnormalities.",
                          Group_MGCodes,
@@ -78,7 +78,7 @@ namespace BreastRadiology.XUnitTests
             () =>
                 ResourcesMaker.Self.CreateValueSet(
                    "BreastRadMammoAbnormalityLymphNode",
-                   "Mammography Lymph Node Abnormality",
+                   "Mammography Lymph Node",
                     "Mg Lymph Node/ValueSet",
                    "Codes defining types of mammography lymph node abnormalities.",
                     Group_MGCodes,
@@ -93,11 +93,11 @@ namespace BreastRadiology.XUnitTests
                 ValueSet binding = ResourcesMaker.Self.MGAbnormalityLymphNodeVS.Value();
 
                 SDefEditor e = ResourcesMaker.Self.CreateEditorXX("BreastRadMammoAbnormalityLymphNode",
-                    "Mammography LymphNode Abnormality",
-                    "Mg Lymph Node Abnormality",
+                    "Mammography LymphNode",
+                    "Mg Lymph Node",
                     ObservationUrl,
                     $"{Group_MGResources}/AbnormalityLymphNode")
-                    .Description("Breast Radiology Mammography LymphNode Abnormality Observation",
+                    .Description("Breast Radiology Mammography LymphNode Observation",
                         new Markdown()
                             .MissingObservation("a lymph node abnormality")
                             .Todo(
@@ -130,7 +130,7 @@ namespace BreastRadiology.XUnitTests
 
                 e.IntroDoc
                     .ReviewedStatus(ReviewStatus.NotReviewed)
-                    .ObservationSection($"Lymph Node Abnormality")
+                    .ObservationSection($"Lymph Node")
                     .Refinement(binding, "LymphNode")
                     ;
             });

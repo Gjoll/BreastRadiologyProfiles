@@ -17,7 +17,7 @@
   ],
   "url": "http://hl7.org/fhir/us/breast-radiology/ValueSet/BreastRadMammoAbnormalityLymphNodeVS",
   "name": "BreastRadMammoAbnormalityLymphNodeVS",
-  "title": "Mammography Lymph Node Abnormality ValueSet",
+  "title": "Mammography Lymph Node ValueSet",
   "description": "Codes defining types of mammography lymph node abnormalities.",
   "compose": {
     "include": [

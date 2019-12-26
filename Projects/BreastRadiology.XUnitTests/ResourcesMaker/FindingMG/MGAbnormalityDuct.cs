@@ -17,7 +17,7 @@ namespace BreastRadiology.XUnitTests
              () =>
                  ResourcesMaker.Self.CreateCodeSystem(
                         "BreastRadMammoAbnormalityDuct",
-                        "Mammography Duct Abnormality Refinement",
+                        "Mammography Duct Refinement",
                          "Mg Duct Refinement/CodeSystem",
                         "Codes defining types of mammography duct abnormalities.",
                          Group_MGCodes,
@@ -51,7 +51,7 @@ namespace BreastRadiology.XUnitTests
             () =>
                 ResourcesMaker.Self.CreateValueSet(
                    "BreastRadMammoAbnormalityDuct",
-                   "Mammography Duct Abnormality",
+                   "Mammography Duct",
                     "Mg Duct/ValueSet",
                    "Codes defining types of mammography duct node abnormalities.",
                     Group_MGCodes,
@@ -65,11 +65,11 @@ namespace BreastRadiology.XUnitTests
             {
                 ValueSet binding = ResourcesMaker.Self.MGAbnormalityDuctVS.Value();
                 SDefEditor e = ResourcesMaker.Self.CreateEditorXX("BreastRadMammoAbnormalityDuct",
-                        "Mammography Duct Abnormality",
-                        "Mg Duct Abnormality",
+                        "Mammography Duct",
+                        "Mg Duct",
                         ObservationUrl,
                         $"{Group_MGResources}/AbnormalityDuct")
-                    .Description("Breat Radiology Mammography Duct Abnormality Observation",
+                    .Description("Breat Radiology Mammography Duct Observation",
                         new Markdown()
                             .MissingObservation("a duct abnormality")
                             .Todo(
@@ -78,7 +78,6 @@ namespace BreastRadiology.XUnitTests
                             )
                     )
                     .AddFragRef(ResourcesMaker.Self.ObservationNoDeviceFragment.Value())
-                    .AddFragRef(ResourcesMaker.Self.ObservationLeafFragment.Value())
                     .AddFragRef(ResourcesMaker.Self.MGCommonTargetsFragment.Value())
                     .AddFragRef(ResourcesMaker.Self.MGShapeTargetsFragment.Value())
                     ;
@@ -102,7 +101,7 @@ namespace BreastRadiology.XUnitTests
 
                 e.IntroDoc
                     .ReviewedStatus(ReviewStatus.NotReviewed)
-                    .ObservationSection($"Duct Abnormality")
+                    .ObservationSection($"Duct")
                     .Refinement(binding, "Duct")
                     ;
             });

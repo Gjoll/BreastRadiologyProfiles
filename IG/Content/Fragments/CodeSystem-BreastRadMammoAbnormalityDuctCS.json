@@ -13,7 +13,7 @@
   ],
   "url": "http://hl7.org/fhir/us/breast-radiology/CodeSystem/BreastRadMammoAbnormalityDuctCS",
   "name": "BreastRadMammoAbnormalityDuctCS",
-  "title": "Mammography Duct Abnormality Refinement CodeSystem",
+  "title": "Mammography Duct Refinement CodeSystem",
   "description": "Codes defining types of mammography duct abnormalities.",
   "caseSensitive": true,
   "content": "complete",

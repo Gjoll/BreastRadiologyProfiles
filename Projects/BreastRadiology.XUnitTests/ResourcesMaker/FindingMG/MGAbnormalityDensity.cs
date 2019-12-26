@@ -18,7 +18,7 @@ namespace BreastRadiology.XUnitTests
              () =>
                  ResourcesMaker.Self.CreateCodeSystem(
                         "BreastRadMammoAbnormalityDensity",
-                        "Mammography Density Abnormality Refinement",
+                        "Mammography Density Refinement",
                          "Mg Density Refinement/CodeSystem",
                         "Codes defining types of mammography density abnormalities.",
                          Group_MGCodes,
@@ -48,7 +48,7 @@ namespace BreastRadiology.XUnitTests
             () =>
                 ResourcesMaker.Self.CreateValueSet(
                    "BreastRadMammoAbnormalityDensity",
-                   "Mammography Density Abnormality",
+                   "Mammography Density",
                     "Mg Density/ValueSet",
                    "Codes defining types of mammography density abnormalities.",
                     Group_MGCodes,
@@ -63,11 +63,11 @@ namespace BreastRadiology.XUnitTests
                 ValueSet binding = ResourcesMaker.Self.MGAbnormalityDensityVS.Value();
 
                 SDefEditor e = ResourcesMaker.Self.CreateEditorXX("BreastRadMammoAbnormalityDensity",
-                        "Mammography Density Abnormality",
-                        "Mg Density Abnormality",
+                        "Mammography Density",
+                        "Mg Density",
                         ObservationUrl,
                         $"{Group_MGResources}/AbnormalityDensity")
-                    .Description("Breat Radiology Mammography Density Abnormality Observation",
+                    .Description("Breat Radiology Mammography Density Observation",
                         new Markdown()
                             .MissingObservation("a Density abnormality")
                             .Todo(
@@ -76,7 +76,6 @@ namespace BreastRadiology.XUnitTests
                             )
                     )
                     .AddFragRef(ResourcesMaker.Self.ObservationNoDeviceFragment.Value())
-                    .AddFragRef(ResourcesMaker.Self.ObservationLeafFragment.Value())
                     .AddFragRef(ResourcesMaker.Self.MGCommonTargetsFragment.Value())
                     .AddFragRef(ResourcesMaker.Self.MGShapeTargetsFragment.Value())
                     ;
@@ -100,7 +99,7 @@ namespace BreastRadiology.XUnitTests
 
                 e.IntroDoc
                     .ReviewedStatus(ReviewStatus.NotReviewed)
-                    .ObservationSection($"Density Abnormality")
+                    .ObservationSection($"Density")
                     .Refinement(binding, "Density")
                     ;
             });

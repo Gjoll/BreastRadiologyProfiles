@@ -13,7 +13,7 @@
   ],
   "url": "http://hl7.org/fhir/us/breast-radiology/CodeSystem/BreastRadMammoAbnormalityCystRefinementCS",
   "name": "BreastRadMammoAbnormalityCystRefinementCS",
-  "title": "Mammography Cyst Abnormality Refinement CodeSystem",
+  "title": "Mammography Cyst Refinement CodeSystem",
   "description": "Codes defining types of mammography cyst abnormalities.",
   "caseSensitive": true,
   "content": "complete",

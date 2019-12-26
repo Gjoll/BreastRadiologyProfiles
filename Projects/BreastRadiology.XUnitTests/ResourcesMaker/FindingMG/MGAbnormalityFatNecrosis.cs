@@ -17,11 +17,11 @@ namespace BreastRadiology.XUnitTests
             (out String s) =>
             {
                 SDefEditor e = ResourcesMaker.Self.CreateEditorXX("BreastRadMammoAbnormalityFatNecrosis",
-                        "Mammography Fat Necrosis Abnormality",
-                        "Mg Fat Necrosis Abnormality",
+                        "Mammography Fat Necrosis",
+                        "Mg Fat Necrosis",
                         ObservationUrl,
                         $"{Group_MGResources}/AbnormalityFatNecrosis")
-                    .Description("Breast Radiology Mammography Fat Necrosis Abnormality Observation",
+                    .Description("Breast Radiology Mammography Fat Necrosis Observation",
                         new Markdown()
                             .Paragraph("[PR]")
                             .MissingObservation("a fat necrosis abnormality")
@@ -48,7 +48,7 @@ namespace BreastRadiology.XUnitTests
 
                 e.IntroDoc
                     .ReviewedStatus(ReviewStatus.NotReviewed)
-                    .ObservationSection("Mammography Fat Necrosis Abnormality")
+                    .ObservationSection("Mammography Fat Necrosis")
                     ;
             });
     }

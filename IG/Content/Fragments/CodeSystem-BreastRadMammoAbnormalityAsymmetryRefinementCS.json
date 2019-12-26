@@ -13,7 +13,7 @@
   ],
   "url": "http://hl7.org/fhir/us/breast-radiology/CodeSystem/BreastRadMammoAbnormalityAsymmetryRefinementCS",
   "name": "BreastRadMammoAbnormalityAsymmetryRefinementCS",
-  "title": "Mammography Asymmetry Abnormality Refinement CodeSystem",
+  "title": "Mammography Asymmetry Refinement CodeSystem",
   "description": "Codes defining types of mammography asymmetry abnormalities.",
   "caseSensitive": true,
   "content": "complete",

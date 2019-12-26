@@ -32,11 +32,11 @@ namespace BreastRadiology.XUnitTests
                 ValueSet binding = ResourcesMaker.Self.MGFibroadenomaVS.Value();
 
                 SDefEditor e = ResourcesMaker.Self.CreateEditorXX("BreastRadMammoAbnormalityFibroadenoma",
-                        "Mammography Fibroadenoma Abnormality",
-                        "Mg Fibroadenoma Abnormality",
+                        "Mammography Fibroadenoma",
+                        "Mg Fibroadenoma",
                         ObservationUrl,
                         $"{Group_MGResources}/AbnormalityFibroadenoma")
-                    .Description("Breast Radiology Mammography Fibroadenoma Abnormality Observation",
+                    .Description("Breast Radiology Mammography Fibroadenoma Observation",
                         new Markdown()
                             .Paragraph("[PR]")
                             .MissingObservation("a fibroadenoma abnormality")

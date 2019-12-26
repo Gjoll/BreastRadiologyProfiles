@@ -17,11 +17,11 @@ namespace BreastRadiology.XUnitTests
             (out String s) =>
             {
                 SDefEditor e = ResourcesMaker.Self.CreateEditorXX("BreastRadMammoAbnormalityCalcification",
-                        "Mammography Calcification Abnormality",
-                        "Mg Calc. Abnormality",
+                        "Mammography Calcification",
+                        "Mg Calc.",
                         ObservationUrl,
                         $"{Group_MGResources}/CalcificationAbnormality")
-                    .Description("Breast Radiology Mammography Calcification Abnormality Observation",
+                    .Description("Breast Radiology Mammography Calcification Observation",
                         new Markdown()
                             .MissingObservation("a calcification")
                             .BiradHeader()
@@ -63,7 +63,7 @@ namespace BreastRadiology.XUnitTests
                 }
                 e.IntroDoc
                     .ReviewedStatus(ReviewStatus.NotReviewed)
-                    .ObservationSection("Mammography Calcification Abnormality")
+                    .ObservationSection("Mammography Calcification")
                     ;
             });
     }
