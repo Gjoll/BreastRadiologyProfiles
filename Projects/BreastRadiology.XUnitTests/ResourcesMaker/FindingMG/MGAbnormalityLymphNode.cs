@@ -13,24 +13,16 @@ namespace BreastRadiology.XUnitTests
 {
     partial class ResourcesMaker : ConverterBase
     {
-        String MGAbnormalityLymphNode()
-        {
-            if (this.mgAbnormalityLymphNode == null)
-                this.CreateMGAbnormalityLymphNode();
-            return this.mgAbnormalityLymphNode;
-        }
-        String mgAbnormalityLymphNode = null;
-
-       CSTaskVar BreastRadMammoAbnormalityLymphNodeCS = new CSTaskVar(
-            () =>
-                ResourcesMaker.Self.CreateCodeSystem(
-                       "BreastRadMammoAbnormalityLymphNode",
-                       "Mammography Lymph Node Abnormality Refinement",
-                        "Mg Lymph Node Refinement/CodeSystem",
-                       "Codes defining types of mammography lymph node abnormalities.",
-                        Group_MGCodes,
-                       new ConceptDef[]
-                        {
+        CSTaskVar BreastRadMammoAbnormalityLymphNodeCS = new CSTaskVar(
+             () =>
+                 ResourcesMaker.Self.CreateCodeSystem(
+                        "BreastRadMammoAbnormalityLymphNode",
+                        "Mammography Lymph Node Abnormality Refinement",
+                         "Mg Lymph Node Refinement/CodeSystem",
+                        "Codes defining types of mammography lymph node abnormalities.",
+                         Group_MGCodes,
+                        new ConceptDef[]
+                         {
                         new ConceptDef("Axillary",
                             "Axillary",
                             new Definition()
@@ -77,9 +69,9 @@ namespace BreastRadiology.XUnitTests
                             new Definition()
                                 .Line("[PR]")
                             )
-                        }
-                    )
-                );
+                         }
+                     )
+                 );
 
 
         VSTaskVar BreastRadMammoAbnormalityLymphNodeVS = new VSTaskVar(
@@ -95,11 +87,12 @@ namespace BreastRadiology.XUnitTests
             );
 
 
-        void CreateMGAbnormalityLymphNode()
-        {
-                ValueSet binding = this.BreastRadMammoAbnormalityLymphNodeVS.Value();
+        StringTaskVar MGAbnormalityLymphNode = new StringTaskVar(
+            (out String s) =>
+            {
+                ValueSet binding = ResourcesMaker.Self.BreastRadMammoAbnormalityLymphNodeVS.Value();
 
-                SDefEditor e = this.CreateEditor("BreastRadMammoAbnormalityLymphNode",
+                SDefEditor e = ResourcesMaker.Self.CreateEditorXX("BreastRadMammoAbnormalityLymphNode",
                     "Mammography LymphNode Abnormality",
                     "Mg Lymph Node Abnormality",
                     ObservationUrl,
@@ -111,25 +104,25 @@ namespace BreastRadiology.XUnitTests
                                 "should this be a leaf node (how about shape, density, location, etc)."
                             )
                     )
-                    .AddFragRef(this.ObservationNoDeviceFragment.Value())
-                    .AddFragRef(this.ObservationCodedValueFragment.Value())
-                    .AddFragRef(this.ObservationSectionFragment.Value())
-                    .AddFragRef(this.MGCommonTargetsFragment.Value())
-                    .AddFragRef(this.MGShapeTargetsFragment.Value())
+                    .AddFragRef(ResourcesMaker.Self.ObservationNoDeviceFragment.Value())
+                    .AddFragRef(ResourcesMaker.Self.ObservationCodedValueFragment.Value())
+                    .AddFragRef(ResourcesMaker.Self.ObservationSectionFragment.Value())
+                    .AddFragRef(ResourcesMaker.Self.MGCommonTargetsFragment.Value())
+                    .AddFragRef(ResourcesMaker.Self.MGShapeTargetsFragment.Value())
                     ;
 
-            this.mgAbnormalityLymphNode = e.SDef.Url;
-            e.Select("value[x]")
-                    .ZeroToOne()
-                    .Type("CodeableConcept")
-                    .Binding(binding.Url, BindingStrength.Required)
-                    ;
+                s = e.SDef.Url;
+                e.Select("value[x]")
+                        .ZeroToOne()
+                        .Type("CodeableConcept")
+                        .Binding(binding.Url, BindingStrength.Required)
+                        ;
                 e.AddValueSetLink(binding);
 
                 {
                     ProfileTargetSlice[] targets = new ProfileTargetSlice[]
                     {
-                    new ProfileTargetSlice(this.CommonObservedCount(), 0, "1"),
+                    new ProfileTargetSlice(ResourcesMaker.Self.CommonObservedCount.Value(), 0, "1"),
                     };
                     e.Find("hasMember").SliceByUrl(targets);
                     e.AddProfileTargets(targets);
@@ -140,6 +133,6 @@ namespace BreastRadiology.XUnitTests
                     .ObservationSection($"Lymph Node Abnormality")
                     .Refinement(binding, "LymphNode")
                     ;
-        }
+            });
     }
 }

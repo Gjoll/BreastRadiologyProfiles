@@ -14,14 +14,6 @@ namespace BreastRadiology.XUnitTests
 {
     partial class ResourcesMaker
     {
-        String CommonHilum()
-        {
-            if (this.commonHilum == null)
-                this.CreateCommonHilum();
-            return this.commonHilum;
-        }
-        String commonHilum = null;
-
         CSTaskVar CommonHilumCS = new CSTaskVar(
              () =>
                  ResourcesMaker.Self.CreateCodeSystem(
@@ -56,47 +48,48 @@ namespace BreastRadiology.XUnitTests
                         ResourcesMaker.Self.CommonHilumCS.Value())
             );
 
-        void CreateCommonHilum()
-        {
-            ValueSet binding = CommonHilumVS.Value();
-
+        StringTaskVar CommonHilum = new StringTaskVar(
+            (out String s) =>
             {
-                IntroDoc valueSetIntroDoc = new IntroDoc(Path.Combine(this.pageDir, $"ValueSet-{binding.Name}-intro.xml"));
-                valueSetIntroDoc
+                ValueSet binding = ResourcesMaker.Self.CommonHilumVS.Value();
+
+                {
+                    IntroDoc valueSetIntroDoc = new IntroDoc(Path.Combine(ResourcesMaker.Self.pageDir, $"ValueSet-{binding.Name}-intro.xml"));
+                    valueSetIntroDoc
+                        .ReviewedStatus(ReviewStatus.NotReviewed)
+                        .ValueSet(binding);
+                    ;
+                    String outputPath = valueSetIntroDoc.Save();
+                    ResourcesMaker.Self.fc?.Mark(outputPath);
+                }
+
+                SDefEditor e = ResourcesMaker.Self.CreateEditorXX("CommonHilum",
+                        "Hilum Shape",
+                        "Hilum/Shape",
+                        ObservationUrl,
+                        $"{Group_CommonResources}/Hilum")
+                    .Description("Breast Radiology Hilum Observation",
+                        new Markdown()
+                            .MissingObservation("a hilum")
+                            .Todo(
+                                "Definition(s) needed"
+                            )
+                    )
+                    .AddFragRef(ResourcesMaker.Self.ObservationNoDeviceFragment.Value())
+                    .AddFragRef(ResourcesMaker.Self.ObservationCodedValueFragment.Value())
+                    .AddFragRef(ResourcesMaker.Self.ObservationLeafFragment.Value())
+                    ;
+
+                s = e.SDef.Url;
+                e.Select("value[x]")
+                    .Type("CodeableConcept")
+                    .Binding(binding.Url, BindingStrength.Required)
+                    ;
+                e.AddValueSetLink(binding);
+                e.IntroDoc
                     .ReviewedStatus(ReviewStatus.NotReviewed)
-                    .ValueSet(binding);
-                ;
-                String outputPath = valueSetIntroDoc.Save();
-                this.fc?.Mark(outputPath);
-            }
-
-            SDefEditor e = this.CreateEditor("CommonHilum",
-                    "Hilum Shape",
-                    "Hilum/Shape",
-                    ObservationUrl,
-                    $"{Group_CommonResources}/Hilum")
-                .Description("Breast Radiology Hilum Observation",
-                    new Markdown()
-                        .MissingObservation("a hilum")
-                        .Todo(
-                            "Definition(s) needed"
-                        )
-                )
-                .AddFragRef(this.ObservationNoDeviceFragment.Value())
-                .AddFragRef(this.ObservationCodedValueFragment.Value())
-                .AddFragRef(this.ObservationLeafFragment.Value())
-                ;
-
-            this.commonHilum = e.SDef.Url;
-            e.Select("value[x]")
-                .Type("CodeableConcept")
-                .Binding(binding.Url, BindingStrength.Required)
-                ;
-            e.AddValueSetLink(binding);
-            e.IntroDoc
-                .ReviewedStatus(ReviewStatus.NotReviewed)
-                .CodedObservationLeafNode("a hilum", binding)
-                ;
-        }
+                    .CodedObservationLeafNode("a hilum", binding)
+                    ;
+            });
     }
 }

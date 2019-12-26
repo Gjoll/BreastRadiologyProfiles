@@ -14,14 +14,6 @@ namespace BreastRadiology.XUnitTests
 {
     partial class ResourcesMaker
     {
-        String CommonObservedChangeInSize()
-        {
-            if (this.commonObservedChangeInSize == null)
-                this.CreateCommonObservedChangeInSize();
-            return this.commonObservedChangeInSize;
-        }
-        String commonObservedChangeInSize = null;
-
         CSTaskVar CommonObservedChangeInSizeCS = new CSTaskVar(
              () =>
                  ResourcesMaker.Self.CreateCodeSystem(
@@ -58,46 +50,47 @@ namespace BreastRadiology.XUnitTests
                     )
             );
 
-        void CreateCommonObservedChangeInSize()
-        {
-            ValueSet binding = this.CommonObservedChangeInSizeVS.Value();
-
+        StringTaskVar CommonObservedChangeInSize = new StringTaskVar(
+            (out String s) =>
             {
-                IntroDoc valueSetIntroDoc = new IntroDoc(Path.Combine(this.pageDir, $"ValueSet-{binding.Name}-intro.xml"));
-                valueSetIntroDoc
+                ValueSet binding = ResourcesMaker.Self.CommonObservedChangeInSizeVS.Value();
+
+                {
+                    IntroDoc valueSetIntroDoc = new IntroDoc(Path.Combine(ResourcesMaker.Self.pageDir, $"ValueSet-{binding.Name}-intro.xml"));
+                    valueSetIntroDoc
+                        .ReviewedStatus(ReviewStatus.NotReviewed)
+                        .ValueSet(binding);
+                    ;
+                    String outputPath = valueSetIntroDoc.Save();
+                    ResourcesMaker.Self.fc?.Mark(outputPath);
+                }
+
+                SDefEditor e = ResourcesMaker.Self.CreateEditorXX("CommonObservedChangeInSize",
+                        "Observed Changes",
+                        "Size Change",
+                        ObservationUrl,
+                        $"{Group_CommonResources}/ObservedChangeInSize")
+                    .Description("Breast Radiology Changes in Size Observation",
+                        new Markdown()
+                            .MissingObservation("an observed change in size")
+                            .Todo(
+                            )
+                    )
+                    .AddFragRef(ResourcesMaker.Self.ObservationNoDeviceFragment.Value())
+                    .AddFragRef(ResourcesMaker.Self.ObservationCodedValueFragment.Value())
+                    .AddFragRef(ResourcesMaker.Self.ObservationLeafFragment.Value())
+                    ;
+
+                s = e.SDef.Url;
+                e.Select("value[x]")
+                    .Type("CodeableConcept")
+                    .Binding(binding.Url, BindingStrength.Required)
+                    ;
+                e.AddValueSetLink(binding);
+                e.IntroDoc
                     .ReviewedStatus(ReviewStatus.NotReviewed)
-                    .ValueSet(binding);
-                ;
-                String outputPath = valueSetIntroDoc.Save();
-                this.fc?.Mark(outputPath);
-            }
-
-            SDefEditor e = this.CreateEditor("CommonObservedChangeInSize",
-                    "Observed Changes",
-                    "Size Change",
-                    ObservationUrl,
-                    $"{Group_CommonResources}/ObservedChangeInSize")
-                .Description("Breast Radiology Changes in Size Observation",
-                    new Markdown()
-                        .MissingObservation("an observed change in size")
-                        .Todo(
-                        )
-                )
-                .AddFragRef(this.ObservationNoDeviceFragment.Value())
-                .AddFragRef(this.ObservationCodedValueFragment.Value())
-                .AddFragRef(this.ObservationLeafFragment.Value())
-                ;
-
-            this.commonObservedChangeInSize = e.SDef.Url;
-            e.Select("value[x]")
-                .Type("CodeableConcept")
-                .Binding(binding.Url, BindingStrength.Required)
-                ;
-            e.AddValueSetLink(binding);
-            e.IntroDoc
-                .ReviewedStatus(ReviewStatus.NotReviewed)
-                .CodedObservationLeafNode("an abnormality observed change in size", binding)
-                ;
-        }
+                    .CodedObservationLeafNode("an abnormality observed change in size", binding)
+                    ;
+            });
     }
 }

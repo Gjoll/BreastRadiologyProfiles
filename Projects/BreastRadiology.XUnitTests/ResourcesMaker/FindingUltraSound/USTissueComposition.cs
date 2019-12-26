@@ -13,15 +13,7 @@ namespace BreastRadiology.XUnitTests
 {
     partial class ResourcesMaker : ConverterBase
     {
-        String USTissueComposition()
-        {
-            if (this.usTissueComposition == null)
-                this.CreateUSTissueComposition();
-            return this.usTissueComposition;
-        }
-        String usTissueComposition = null;
-
-        CSTaskVar BreastRadUSTissueCompositionCS = new CSTaskVar(
+        CSTaskVar USTissueCompositionCS = new CSTaskVar(
              () =>
                  ResourcesMaker.Self.CreateCodeSystem(
                      "BreastRadUSTissueComposition",
@@ -73,56 +65,57 @@ namespace BreastRadiology.XUnitTests
                     "US Tissue/CompositionValueSet",
                     "Ultra-sound breast tissue composition code system.",
                     Group_USCodes,
-                    ResourcesMaker.Self.BreastRadUSTissueCompositionCS.Value()
+                    ResourcesMaker.Self.USTissueCompositionCS.Value()
                     )
             );
 
 
-        void CreateUSTissueComposition()
-        {
-            ValueSet binding = this.BreastRadUSTissueCompositionVS.Value();
+        StringTaskVar USTissueComposition = new StringTaskVar(
+            (out String s) =>
             {
-                IntroDoc valueSetIntroDoc = new IntroDoc(Path.Combine(this.pageDir, $"ValueSet-{binding.Name}-intro.xml"));
-                valueSetIntroDoc
+                ValueSet binding = ResourcesMaker.Self.BreastRadUSTissueCompositionVS.Value();
+                {
+                    IntroDoc valueSetIntroDoc = new IntroDoc(Path.Combine(ResourcesMaker.Self.pageDir, $"ValueSet-{binding.Name}-intro.xml"));
+                    valueSetIntroDoc
+                        .ReviewedStatus(ReviewStatus.NotReviewed)
+                        .ValueSet(binding);
+                    ;
+                    String outputPath = valueSetIntroDoc.Save();
+                    ResourcesMaker.Self.fc?.Mark(outputPath);
+                }
+
+                SDefEditor e = ResourcesMaker.Self.CreateEditorXX("BreastRadUSTissueComposition",
+                        "US Tissue Composition",
+                        "US Tissue/Composition",
+                        ObservationUrl,
+                        $"{Group_USResources}/Mass/TissueComposition")
+                    .Description("Breast Radiology Ultra-Sound Tissue Composition Observation",
+                        new Markdown()
+                            .BiradHeader()
+                            .BlockQuote("The wide normal variability in tissue composition seen on mammograms can also be observed")
+                            .BlockQuote("on US images. Just as increasing breast density diminishes the sensitivity of mammography in the")
+                            .BlockQuote("detection of small masses, heterogeneous background echotexture of the breast may affect the")
+                            .BlockQuote("sensitivity of breast sonograms for lesion detection.")
+                            .BiradFooter()
+                            .Todo(
+                                "can this and mammo breast density be the same?"
+                            )
+                    )
+                    .AddFragRef(ResourcesMaker.Self.ObservationNoDeviceFragment.Value())
+                    .AddFragRef(ResourcesMaker.Self.ObservationCodedValueFragment.Value())
+                    .AddFragRef(ResourcesMaker.Self.ObservationLeafFragment.Value())
+                    ;
+
+                s = e.SDef.Url;
+                e.Select("value[x]")
+                    .Type("CodeableConcept")
+                    .Binding(binding.Url, BindingStrength.Required)
+                    ;
+                e.AddValueSetLink(binding);
+                e.IntroDoc
                     .ReviewedStatus(ReviewStatus.NotReviewed)
-                    .ValueSet(binding);
-                ;
-                String outputPath = valueSetIntroDoc.Save();
-                this.fc?.Mark(outputPath);
-            }
-
-            SDefEditor e = this.CreateEditor("BreastRadUSTissueComposition",
-                    "US Tissue Composition",
-                    "US Tissue/Composition",
-                    ObservationUrl,
-                    $"{Group_USResources}/Mass/TissueComposition")
-                .Description("Breast Radiology Ultra-Sound Tissue Composition Observation",
-                    new Markdown()
-                        .BiradHeader()
-                        .BlockQuote("The wide normal variability in tissue composition seen on mammograms can also be observed")
-                        .BlockQuote("on US images. Just as increasing breast density diminishes the sensitivity of mammography in the")
-                        .BlockQuote("detection of small masses, heterogeneous background echotexture of the breast may affect the")
-                        .BlockQuote("sensitivity of breast sonograms for lesion detection.")
-                        .BiradFooter()
-                        .Todo(
-                            "can this and mammo breast density be the same?"
-                        )
-                )
-                .AddFragRef(this.ObservationNoDeviceFragment.Value())
-                .AddFragRef(this.ObservationCodedValueFragment.Value())
-                .AddFragRef(this.ObservationLeafFragment.Value())
-                ;
-
-            this.usTissueComposition = e.SDef.Url;
-            e.Select("value[x]")
-                .Type("CodeableConcept")
-                .Binding(binding.Url, BindingStrength.Required)
-                ;
-            e.AddValueSetLink(binding);
-            e.IntroDoc
-                .ReviewedStatus(ReviewStatus.NotReviewed)
-                .CodedObservationLeafNode("an ultra-sound tissue composition", binding)
-                ;
-        }
+                    .CodedObservationLeafNode("an ultra-sound tissue composition", binding)
+                    ;
+            });
     }
 }

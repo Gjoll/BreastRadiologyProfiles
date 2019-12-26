@@ -23,11 +23,11 @@ namespace BreastRadiology.XUnitTests
                         )
                      )
                     .AddFragRef(ResourcesMaker.Self.HeaderFragment.Value())
-                    .AddExtensionLink(ResourcesMaker.Self.AimAnnotationPolyLineExtension())
+                    .AddExtensionLink(ResourcesMaker.Self.AimAnnotationPolyLineExtension.Value())
                 ;
                 s = e.SDef.Url;
                 e
-                    .ApplyExtension("polyLineAnnotation", ResourcesMaker.Self.AimAnnotationPolyLineExtension(), true, false)
+                    .ApplyExtension("polyLineAnnotation", ResourcesMaker.Self.AimAnnotationPolyLineExtension.Value(), true, false)
                     .Single()
                     ;
                 e.IntroDoc

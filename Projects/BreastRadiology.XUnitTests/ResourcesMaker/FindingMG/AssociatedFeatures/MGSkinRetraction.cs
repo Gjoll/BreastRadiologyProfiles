@@ -13,41 +13,34 @@ namespace BreastRadiology.XUnitTests
 {
     partial class ResourcesMaker : ConverterBase
     {
-        String MGSkinRetraction()
-        {
-            if (this.mgSkinRetraction == null)
-                this.CreateMGSkinRetraction();
-            return this.mgSkinRetraction;
-        }
-        String mgSkinRetraction = null;
+        StringTaskVar MGSkinRetraction = new StringTaskVar(
+            (out String s) =>
+            {
+                SDefEditor e = ResourcesMaker.Self.CreateEditorXX("BreastRadMammoSkinRetraction",
+                    "Mammography Skin Retraction",
+                    "Mg Skin Retraction",
+                    ObservationUrl,
+                    $"{Group_MGResources}/AssociatedFeature/SkinRetraction")
+                    .Description("Mammography Skin Retraction Observation",
+                        new Markdown()
+                            .Paragraph()
+                            .BiradHeader()
+                            .BlockQuote("The skin is pulled in abnormally")
+                            .BiradFooter()
+                            .MissingObservation("a skin retraction")
+                            .Todo(
+                            )
+                    )
+                    .AddFragRef(ResourcesMaker.Self.ObservationNoDeviceFragment.Value())
+                    .AddFragRef(ResourcesMaker.Self.ObservationNoValueFragment.Value())
+                    .AddFragRef(ResourcesMaker.Self.BreastBodyLocationRequiredFragment.Value())
+                    ;
+                s = e.SDef.Url;
 
-        void CreateMGSkinRetraction()
-        {
-            SDefEditor e = this.CreateEditor("BreastRadMammoSkinRetraction",
-                "Mammography Skin Retraction",
-                "Mg Skin Retraction",
-                ObservationUrl,
-                $"{Group_MGResources}/AssociatedFeature/SkinRetraction")
-                .Description("Mammography Skin Retraction Observation",
-                    new Markdown()
-                        .Paragraph()
-                        .BiradHeader()
-                        .BlockQuote("The skin is pulled in abnormally")
-                        .BiradFooter()
-                        .MissingObservation("a skin retraction")
-                        .Todo(
-                        )
-                )
-                .AddFragRef(this.ObservationNoDeviceFragment.Value())
-                .AddFragRef(this.ObservationNoValueFragment.Value())
-                .AddFragRef(this.BreastBodyLocationRequiredFragment.Value())
-                ;
-            this.mgSkinRetraction = e.SDef.Url;
-
-            e.IntroDoc
-                .ReviewedStatus(ReviewStatus.NotReviewed)
-                .ObservationLeafNode("Skin Retraction")
-                ;
-        }
+                e.IntroDoc
+                    .ReviewedStatus(ReviewStatus.NotReviewed)
+                    .ObservationLeafNode("Skin Retraction")
+                    ;
+            });
     }
 }

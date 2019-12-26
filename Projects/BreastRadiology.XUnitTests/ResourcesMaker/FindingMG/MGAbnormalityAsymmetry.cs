@@ -14,13 +14,6 @@ namespace BreastRadiology.XUnitTests
 {
     partial class ResourcesMaker : ConverterBase
     {
-        String MGAbnormalityAsymmetry()
-        {
-            if (this.mgAbnormalityAsymmetry == null)
-                this.CreateMGAbnormalityAsymmetry();
-            return this.mgAbnormalityAsymmetry;
-        }
-        String mgAbnormalityAsymmetry = null;
 
         CSTaskVar BreastRadMammoAbnormalityAsymmetryRefinementCS = new CSTaskVar(
              () =>
@@ -99,66 +92,67 @@ namespace BreastRadiology.XUnitTests
             );
 
 
-        void CreateMGAbnormalityAsymmetry()
-        {
-            ValueSet binding = this.BreastRadMammoAbnormalityAsymmetriesVS.Value();
-
+        StringTaskVar MGAbnormalityAsymmetry = new StringTaskVar(
+            (out String s) =>
             {
-                IntroDoc valueSetIntroDoc = new IntroDoc(Path.Combine(this.pageDir, $"ValueSet-{binding.Name}-intro.xml"));
-                valueSetIntroDoc
-                    .ReviewedStatus(ReviewStatus.NotReviewed)
-                    .Refinement(binding, "Asymmetry")
-                ;
-                String outputPath = valueSetIntroDoc.Save();
-                this.fc?.Mark(outputPath);
-            }
+                ValueSet binding = ResourcesMaker.Self.BreastRadMammoAbnormalityAsymmetriesVS.Value();
 
-            SDefEditor e = this.CreateEditor("BreastRadMammoAbnormalityAsymmetry",
-                    "Mammography Asymmetry Abnormality",
-                    "Mg Asymmetry Abnormality",
-                    ObservationUrl,
-                    $"{Group_MGResources}/AbnormalityAsymmetry")
-                .Description("Breast Radiology Mammography Asymmetry Abnormality Observation",
-                    new Markdown()
-                        .MissingObservation("an asymmetry")
-                        .BiradHeader()
-                        .BlockQuote("The several types of asymmetry involve a spectrum of mammographic findings that represent")
-                        .BlockQuote("unilateral deposits of fibroglandular tissue not conforming to the definition of a radiodense mass.")
-                        .BlockQuote("The asymmetry, unlike a mass, is visible on only 1 mammographic projection. The other 3 types of")
-                        .BlockQuote("asymmetry, although visible on more than 1 projection, have concave-outward borders and usu-")
-                        .BlockQuote("ally are seen to be interspersed with fat, whereas a radiodense mass displays completely or partially")
-                        .BlockQuote("convex-outward borders and appears to be denser in the center than at the periphery.")
-                        .BiradFooter()
-                        .Todo(
-                        )
-                )
-                .AddFragRef(this.ObservationNoDeviceFragment.Value())
-                .AddFragRef(this.ObservationCodedValueFragment.Value())
-                .AddFragRef(this.ObservationSectionFragment.Value())
-                .AddFragRef(this.MGCommonTargetsFragment.Value())
-            ;
-            this.mgAbnormalityAsymmetry = e.SDef.Url;
-
-            {
-                ProfileTargetSlice[] targets = new ProfileTargetSlice[]
                 {
-                    new ProfileTargetSlice(this.CommonObservedCount(), 0, "1"),
-                    new ProfileTargetSlice(this.MGAssociatedFeatures(), 0, "1")
-                };
-                e.Find("hasMember").SliceByUrl(targets);
-                e.AddProfileTargets(targets);
-            }
+                    IntroDoc valueSetIntroDoc = new IntroDoc(Path.Combine(ResourcesMaker.Self.pageDir, $"ValueSet-{binding.Name}-intro.xml"));
+                    valueSetIntroDoc
+                        .ReviewedStatus(ReviewStatus.NotReviewed)
+                        .Refinement(binding, "Asymmetry")
+                    ;
+                    String outputPath = valueSetIntroDoc.Save();
+                    ResourcesMaker.Self.fc?.Mark(outputPath);
+                }
 
-            e.Select("value[x]")
-                .Type("CodeableConcept")
-                .Binding(binding.Url, BindingStrength.Required)
+                SDefEditor e = ResourcesMaker.Self.CreateEditorXX("BreastRadMammoAbnormalityAsymmetry",
+                        "Mammography Asymmetry Abnormality",
+                        "Mg Asymmetry Abnormality",
+                        ObservationUrl,
+                        $"{Group_MGResources}/AbnormalityAsymmetry")
+                    .Description("Breast Radiology Mammography Asymmetry Abnormality Observation",
+                        new Markdown()
+                            .MissingObservation("an asymmetry")
+                            .BiradHeader()
+                            .BlockQuote("The several types of asymmetry involve a spectrum of mammographic findings that represent")
+                            .BlockQuote("unilateral deposits of fibroglandular tissue not conforming to the definition of a radiodense mass.")
+                            .BlockQuote("The asymmetry, unlike a mass, is visible on only 1 mammographic projection. The other 3 types of")
+                            .BlockQuote("asymmetry, although visible on more than 1 projection, have concave-outward borders and usu-")
+                            .BlockQuote("ally are seen to be interspersed with fat, whereas a radiodense mass displays completely or partially")
+                            .BlockQuote("convex-outward borders and appears to be denser in the center than at the periphery.")
+                            .BiradFooter()
+                            .Todo(
+                            )
+                    )
+                    .AddFragRef(ResourcesMaker.Self.ObservationNoDeviceFragment.Value())
+                    .AddFragRef(ResourcesMaker.Self.ObservationCodedValueFragment.Value())
+                    .AddFragRef(ResourcesMaker.Self.ObservationSectionFragment.Value())
+                    .AddFragRef(ResourcesMaker.Self.MGCommonTargetsFragment.Value())
                 ;
-            e.AddValueSetLink(binding);
-            e.IntroDoc
-                .ReviewedStatus(ReviewStatus.NotReviewed)
-                .ObservationSection("a mammography asymmetry abnormality")
-                .Refinement(binding, "Asymmetry")
-                ;
-        }
+                s = e.SDef.Url;
+
+                {
+                    ProfileTargetSlice[] targets = new ProfileTargetSlice[]
+                    {
+                    new ProfileTargetSlice(ResourcesMaker.Self.CommonObservedCount.Value(), 0, "1"),
+                    new ProfileTargetSlice(ResourcesMaker.Self.MGAssociatedFeatures.Value(), 0, "1")
+                    };
+                    e.Find("hasMember").SliceByUrl(targets);
+                    e.AddProfileTargets(targets);
+                }
+
+                e.Select("value[x]")
+                    .Type("CodeableConcept")
+                    .Binding(binding.Url, BindingStrength.Required)
+                    ;
+                e.AddValueSetLink(binding);
+                e.IntroDoc
+                    .ReviewedStatus(ReviewStatus.NotReviewed)
+                    .ObservationSection("a mammography asymmetry abnormality")
+                    .Refinement(binding, "Asymmetry")
+                    ;
+            });
     }
 }

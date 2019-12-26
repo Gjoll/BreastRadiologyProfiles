@@ -14,15 +14,8 @@ namespace BreastRadiology.XUnitTests
 {
     partial class ResourcesMaker : ConverterBase
     {
-        String USVascularity()
-        {
-            if (this.usVascularity == null)
-                this.CreateUSVascularity();
-            return this.usVascularity;
-        }
-        String usVascularity = null;
 
-        CSTaskVar BreastRadUSVascularityCS = new CSTaskVar(
+        CSTaskVar USVascularityCS = new CSTaskVar(
              () =>
                  ResourcesMaker.Self.CreateCodeSystem(
                      "BreastRadUSVascularity",
@@ -75,52 +68,53 @@ namespace BreastRadiology.XUnitTests
                     "US Vascularity/ValueSet",
                     "Ultra-sound Vascularity code system.",
                     Group_USCodes,
-                    ResourcesMaker.Self.BreastRadUSVascularityCS.Value()
+                    ResourcesMaker.Self.USVascularityCS.Value()
                     )
             );
 
 
 
-        void CreateUSVascularity()
-        {
-            ValueSet binding = this.BreastRadUSVascularityVS.Value();
-
+        StringTaskVar USVascularity = new StringTaskVar(
+            (out String s) =>
             {
-                IntroDoc valueSetIntroDoc = new IntroDoc(Path.Combine(this.pageDir, $"ValueSet-{binding.Name}-intro.xml"));
-                valueSetIntroDoc
-                    .ReviewedStatus(ReviewStatus.NotReviewed)
-                    .ValueSet(binding);
-                ;
-                String outputPath = valueSetIntroDoc.Save();
-                this.fc?.Mark(outputPath);
-            }
+                ValueSet binding = ResourcesMaker.Self.BreastRadUSVascularityVS.Value();
 
-            SDefEditor e = this.CreateEditor("BreastRadUSVascularity",
-                    "US Vascularity",
-                    "US Vascularity",
-                    ObservationUrl,
-                    $"{Group_USResources}/Vascularity")
-                .Description("Breast Radiology Ultra-Sound Vascularity Observation",
-                    new Markdown()
-                        .Paragraph("[PR]")
-                        .Todo(
+                {
+                    IntroDoc valueSetIntroDoc = new IntroDoc(Path.Combine(ResourcesMaker.Self.pageDir, $"ValueSet-{binding.Name}-intro.xml"));
+                    valueSetIntroDoc
+                        .ReviewedStatus(ReviewStatus.NotReviewed)
+                        .ValueSet(binding);
+                    ;
+                    String outputPath = valueSetIntroDoc.Save();
+                    ResourcesMaker.Self.fc?.Mark(outputPath);
+                }
+
+                SDefEditor e = ResourcesMaker.Self.CreateEditorXX("BreastRadUSVascularity",
+                        "US Vascularity",
+                        "US Vascularity",
+                        ObservationUrl,
+                        $"{Group_USResources}/Vascularity")
+                    .Description("Breast Radiology Ultra-Sound Vascularity Observation",
+                        new Markdown()
+                            .Paragraph("[PR]")
+                            .Todo(
+                            )
                         )
-                    )
-                .AddFragRef(this.ObservationNoDeviceFragment.Value())
-                .AddFragRef(this.ObservationCodedValueFragment.Value())
-                .AddFragRef(this.ObservationLeafFragment.Value())
-                ;
+                    .AddFragRef(ResourcesMaker.Self.ObservationNoDeviceFragment.Value())
+                    .AddFragRef(ResourcesMaker.Self.ObservationCodedValueFragment.Value())
+                    .AddFragRef(ResourcesMaker.Self.ObservationLeafFragment.Value())
+                    ;
 
-            this.usVascularity = e.SDef.Url;
-            e.Select("value[x]")
-                .Type("CodeableConcept")
-                .Binding(binding.Url, BindingStrength.Required)
-                ;
-            e.AddValueSetLink(binding);
-            e.IntroDoc
-                .ReviewedStatus(ReviewStatus.NotReviewed)
-                .CodedObservationLeafNode("an ultra-sound vascularity", binding)
-                ;
-        }
+                s = e.SDef.Url;
+                e.Select("value[x]")
+                    .Type("CodeableConcept")
+                    .Binding(binding.Url, BindingStrength.Required)
+                    ;
+                e.AddValueSetLink(binding);
+                e.IntroDoc
+                    .ReviewedStatus(ReviewStatus.NotReviewed)
+                    .CodedObservationLeafNode("an ultra-sound vascularity", binding)
+                    ;
+            });
     }
 }

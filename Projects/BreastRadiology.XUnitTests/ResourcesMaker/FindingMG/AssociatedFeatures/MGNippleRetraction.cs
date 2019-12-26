@@ -13,42 +13,35 @@ namespace BreastRadiology.XUnitTests
 {
     partial class ResourcesMaker : ConverterBase
     {
-        String MGNippleRetraction()
-        {
-            if (this.mgNippleRetraction == null)
-                this.CreateMGNippleRetraction();
-            return this.mgNippleRetraction;
-        }
-        String mgNippleRetraction = null;
+        StringTaskVar MGNippleRetraction = new StringTaskVar(
+            (out String s) =>
+            {
+                SDefEditor e = ResourcesMaker.Self.CreateEditorXX("BreastRadMammoNippleRetraction",
+                    "Mammography Nipple Retraction",
+                    "Mg Nipple Retraction",
+                    ObservationUrl,
+                    $"{Group_MGResources}/AssociatedFeature/NippleRetraction")
+                    .Description("Breast Radiology Mammography Nipple Retraction Observation",
+                        new Markdown()
+                            .MissingObservation("a nipple retraction")
+                            .BiradHeader()
+                            .BlockQuote("The nipple is pulled in. This should not be confused with nipple inversion, which is often bilateral ")
+                            .BlockQuote("and which in the absence of any suspicious findings and when stable for a long period of time, ")
+                            .BlockQuote("is not a sign of malignancy. However, if nipple retraction is new, suspicion for underlying malignancy is increased.")
+                            .BiradFooter()
+                            .Todo(
+                            )
+                    )
+                    .AddFragRef(ResourcesMaker.Self.ObservationNoDeviceFragment.Value())
+                    .AddFragRef(ResourcesMaker.Self.ObservationNoValueFragment.Value())
+                    .AddFragRef(ResourcesMaker.Self.BreastBodyLocationRequiredFragment.Value())
+                    ;
+                s = e.SDef.Url;
 
-        void CreateMGNippleRetraction()
-        {
-            SDefEditor e = this.CreateEditor("BreastRadMammoNippleRetraction",
-                "Mammography Nipple Retraction",
-                "Mg Nipple Retraction",
-                ObservationUrl,
-                $"{Group_MGResources}/AssociatedFeature/NippleRetraction")
-                .Description("Breast Radiology Mammography Nipple Retraction Observation",
-                    new Markdown()
-                        .MissingObservation("a nipple retraction")
-                        .BiradHeader()
-                        .BlockQuote("The nipple is pulled in. This should not be confused with nipple inversion, which is often bilateral ")
-                        .BlockQuote("and which in the absence of any suspicious findings and when stable for a long period of time, ")
-                        .BlockQuote("is not a sign of malignancy. However, if nipple retraction is new, suspicion for underlying malignancy is increased.")
-                        .BiradFooter()
-                        .Todo(
-                        )
-                )
-                .AddFragRef(this.ObservationNoDeviceFragment.Value())
-                .AddFragRef(this.ObservationNoValueFragment.Value())
-                .AddFragRef(this.BreastBodyLocationRequiredFragment.Value())
-                ;
-            this.mgNippleRetraction = e.SDef.Url;
-
-            e.IntroDoc
-                .ReviewedStatus(ReviewStatus.NotReviewed)
-                .ObservationLeafNode("Nipple Retraction")
-                ;
-        }
+                e.IntroDoc
+                    .ReviewedStatus(ReviewStatus.NotReviewed)
+                    .ObservationLeafNode("Nipple Retraction")
+                    ;
+            });
     }
 }

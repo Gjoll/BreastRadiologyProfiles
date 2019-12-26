@@ -13,14 +13,6 @@ namespace BreastRadiology.XUnitTests
 {
     partial class ResourcesMaker : ConverterBase
     {
-        String MGAbnormalityCyst()
-        {
-            if (this.mgAbnormalityCyst == null)
-                this.CreateMGAbnormalityCyst();
-            return this.mgAbnormalityCyst;
-        }
-        String mgAbnormalityCyst = null;
-
         CSTaskVar BreastRadMammoAbnormalityCystRefinementCS = new CSTaskVar(
              () =>
                  ResourcesMaker.Self.CreateCodeSystem(
@@ -74,61 +66,62 @@ namespace BreastRadiology.XUnitTests
             );
 
 
-        void CreateMGAbnormalityCyst()
-        {
-            ValueSet binding = this.BreastRadMammoAbnormalityCystVS.Value();
-
+        StringTaskVar MGAbnormalityCyst = new StringTaskVar(
+            (out String s) =>
             {
-                IntroDoc valueSetIntroDoc = new IntroDoc(Path.Combine(this.pageDir, $"ValueSet-{binding.Name}-intro.xml"));
-                valueSetIntroDoc
-                    .ReviewedStatus(ReviewStatus.NotReviewed)
-                ;
-                String outputPath = valueSetIntroDoc.Save();
-                this.fc?.Mark(outputPath);
-            }
+                ValueSet binding = ResourcesMaker.Self.BreastRadMammoAbnormalityCystVS.Value();
 
-            SDefEditor e = this.CreateEditor("BreastRadMammoAbnormalityCyst",
-                    "Mammography Cyst Abnormality",
-                    "Mg Cyst Abnormality",
-                    ObservationUrl,
-                    $"{Group_MGResources}/AbnormalityCyst")
-                .Description("Breast Radiology Mammography Cyst Abnormality Observation",
-                    new Markdown()
-                        .Paragraph("[PR]")
-                        .MissingObservation("a cyst")
-                        .Todo(
-                        )
-                )
-                .AddFragRef(this.ObservationNoDeviceFragment.Value())
-                .AddFragRef(this.ObservationSectionFragment.Value())
-                .AddFragRef(this.ObservationNoValueFragment.Value())
-                .AddFragRef(this.ImagingStudyFragment.Value())
-                .AddFragRef(this.MGCommonTargetsFragment.Value())
-                .AddFragRef(this.MGShapeTargetsFragment.Value())
-                ;
-            this.mgAbnormalityCyst = e.SDef.Url;
-
-            {
-                ProfileTargetSlice[] targets = new ProfileTargetSlice[]
                 {
-                    new ProfileTargetSlice(this.CommonObservedCount(), 0, "1"),
-                    //new ProfileTargetSlice(this.MGAssociatedFeatures(), 0, "1", false),
-                };
-                e.Find("hasMember").SliceByUrl(targets);
-                e.AddProfileTargets(targets);
-            }
+                    IntroDoc valueSetIntroDoc = new IntroDoc(Path.Combine(ResourcesMaker.Self.pageDir, $"ValueSet-{binding.Name}-intro.xml"));
+                    valueSetIntroDoc
+                        .ReviewedStatus(ReviewStatus.NotReviewed)
+                    ;
+                    String outputPath = valueSetIntroDoc.Save();
+                    ResourcesMaker.Self.fc?.Mark(outputPath);
+                }
 
-            e.Select("value[x]")
-                .Type("CodeableConcept")
-                .Binding(binding.Url, BindingStrength.Required)
-                ;
-            e.AddValueSetLink(binding);
+                SDefEditor e = ResourcesMaker.Self.CreateEditorXX("BreastRadMammoAbnormalityCyst",
+                        "Mammography Cyst Abnormality",
+                        "Mg Cyst Abnormality",
+                        ObservationUrl,
+                        $"{Group_MGResources}/AbnormalityCyst")
+                    .Description("Breast Radiology Mammography Cyst Abnormality Observation",
+                        new Markdown()
+                            .Paragraph("[PR]")
+                            .MissingObservation("a cyst")
+                            .Todo(
+                            )
+                    )
+                    .AddFragRef(ResourcesMaker.Self.ObservationNoDeviceFragment.Value())
+                    .AddFragRef(ResourcesMaker.Self.ObservationSectionFragment.Value())
+                    .AddFragRef(ResourcesMaker.Self.ObservationNoValueFragment.Value())
+                    .AddFragRef(ResourcesMaker.Self.ImagingStudyFragment.Value())
+                    .AddFragRef(ResourcesMaker.Self.MGCommonTargetsFragment.Value())
+                    .AddFragRef(ResourcesMaker.Self.MGShapeTargetsFragment.Value())
+                    ;
+                s = e.SDef.Url;
 
-            e.IntroDoc
-                .ReviewedStatus(ReviewStatus.NotReviewed)
-                .ObservationSection("a mammography asymmetry abnormality")
-                .Refinement(binding, "Cyst")
-                ;
-        }
+                {
+                    ProfileTargetSlice[] targets = new ProfileTargetSlice[]
+                    {
+                    new ProfileTargetSlice(ResourcesMaker.Self.CommonObservedCount.Value(), 0, "1"),
+                        //new ProfileTargetSlice(ResourcesMaker.Self.MGAssociatedFeatures.Value(), 0, "1", false),
+                    };
+                    e.Find("hasMember").SliceByUrl(targets);
+                    e.AddProfileTargets(targets);
+                }
+
+                e.Select("value[x]")
+                    .Type("CodeableConcept")
+                    .Binding(binding.Url, BindingStrength.Required)
+                    ;
+                e.AddValueSetLink(binding);
+
+                e.IntroDoc
+                    .ReviewedStatus(ReviewStatus.NotReviewed)
+                    .ObservationSection("a mammography asymmetry abnormality")
+                    .Refinement(binding, "Cyst")
+                    ;
+            });
     }
 }

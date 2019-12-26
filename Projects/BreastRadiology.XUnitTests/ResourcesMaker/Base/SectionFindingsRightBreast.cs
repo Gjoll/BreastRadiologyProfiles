@@ -13,44 +13,35 @@ namespace BreastRadiology.XUnitTests
 {
     partial class ResourcesMaker : ConverterBase
     {
-        public String SectionFindingsRightBreast()
-        {
-            if (this.sectionFindingsRightBreast == null)
+        StringTaskVar SectionFindingsRightBreast = new StringTaskVar(
+            (out String s) =>
             {
-                this.CreateSectionFindingsRightBreast();
-            }
-            return this.sectionFindingsRightBreast;
-        }
-        String sectionFindingsRightBreast = null;
-
-        void CreateSectionFindingsRightBreast()
-        {
-            SDefEditor e = this.CreateEditor("BreastRadSectionFindingsRightBreast",
-                    "Findings Right Breast",
-                    "Right Breast",
-                    ObservationUrl,
-                    $"{Group_BaseResources}/Findings/RightBreast")
-                .Description("Findings Right Breast Section",
-                    new Markdown()
-                    .Paragraph("This resource is the head of the tree of observations made of the right breast during a breast radiology exam.")
-                    .Paragraph("Child observations are referenced by the 'Observation.hasMember' field.")
-                    .Todo(
+                SDefEditor e = ResourcesMaker.Self.CreateEditorXX("BreastRadSectionFindingsRightBreast",
+                        "Findings Right Breast",
+                        "Right Breast",
+                        ObservationUrl,
+                        $"{Group_BaseResources}/Findings/RightBreast")
+                    .Description("Findings Right Breast Section",
+                        new Markdown()
+                        .Paragraph("This resource is the head of the tree of observations made of the right breast during a breast radiology exam.")
+                        .Paragraph("Child observations are referenced by the 'Observation.hasMember' field.")
+                        .Todo(
+                        )
                     )
-                )
-                .AddFragRef(this.ObservationNoDeviceFragment.Value())
-                .AddFragRef(this.ObservationSectionFragment.Value())
-                .AddFragRef(this.ObservationNoValueFragment.Value())
-                ;
-            this.sectionFindingsRightBreast = e.SDef.Url;
-            e.Select("value[x]").Zero();
-            e.Select("bodySite").Zero();
-            e.Find("hasMember").SliceByUrl(this.FindingBreastTargets());
-            e.AddProfileTargets(this.FindingBreastTargets());
+                    .AddFragRef(ResourcesMaker.Self.ObservationNoDeviceFragment.Value())
+                    .AddFragRef(ResourcesMaker.Self.ObservationSectionFragment.Value())
+                    .AddFragRef(ResourcesMaker.Self.ObservationNoValueFragment.Value())
+                    ;
+                s = e.SDef.Url;
+                e.Select("value[x]").Zero();
+                e.Select("bodySite").Zero();
+                e.Find("hasMember").SliceByUrl(ResourcesMaker.Self.FindingBreastTargets());
+                e.AddProfileTargets(ResourcesMaker.Self.FindingBreastTargets());
 
-            e.IntroDoc
-                 .ReviewedStatus(ReviewStatus.NotReviewed)
-                 .ObservationSection($"Abnormality Right Breast Finding")
-                 ;
-        }
+                e.IntroDoc
+                     .ReviewedStatus(ReviewStatus.NotReviewed)
+                     .ObservationSection($"Abnormality Right Breast Finding")
+                     ;
+            });
     }
 }

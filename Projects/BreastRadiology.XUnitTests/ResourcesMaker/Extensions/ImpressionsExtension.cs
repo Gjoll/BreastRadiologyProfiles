@@ -14,50 +14,43 @@ namespace BreastRadiology.XUnitTests
 {
     partial class ResourcesMaker : ConverterBase
     {
-        String BreastRadiologyImpressionsExtension()
-        {
-            if (this.breastRadiologyImpressionsExtension == null)
-                this.CreateBreastRadiologyImpressionsExtension();
-            return this.breastRadiologyImpressionsExtension;
-        }
-        String breastRadiologyImpressionsExtension = null;
+        StringTaskVar BreastRadiologyImpressionsExtension = new StringTaskVar(
+            (out String s) =>
+            {
+                SDefEditor e = ResourcesMaker.Self.CreateEditorXX("BreastRadImpressionsExtension",
+                    "Impressions Extension",
+                    "Impressions/Extension",
+                    ExtensionUrl,
+                    $"{Group_ExtensionResources}/Impressions")
+                    .Description("Impressions extension",
+                        new Markdown()
+                            .Paragraph("This extension defines the impressions section of a breast radiology report, " +
+                                       "linking a report to the resources that the exam impressions.")
+                            .Todo(
+                            )
+                    )
+                    .Kind(StructureDefinition.StructureDefinitionKind.ComplexType)
+                    .Context()
+                    ;
+                e.AddFragRef(ResourcesMaker.Self.HeaderFragment.Value());
+                s = e.SDef.Url;
 
-        void CreateBreastRadiologyImpressionsExtension()
-        {
-            SDefEditor e = this.CreateEditor("BreastRadImpressionsExtension",
-                "Impressions Extension",
-                "Impressions/Extension",
-                ExtensionUrl,
-                $"{Group_ExtensionResources}/Impressions")
-                .Description("Impressions extension",
-                    new Markdown()
-                        .Paragraph("This extension defines the impressions section of a breast radiology report, " +
-                                   "linking a report to the resources that the exam impressions.")
-                        .Todo(
-                        )
-                )
-                .Kind(StructureDefinition.StructureDefinitionKind.ComplexType)
-                .Context()
-                ;
-            e.AddFragRef(this.HeaderFragment.Value());
-            this.breastRadiologyImpressionsExtension = e.SDef.Url;
+                e.Select("extension").Zero();
+                e.Select("url")
+                    .Type("uri")
+                    .Fixed(new FhirUri(e.SDef.Url));
 
-            e.Select("extension").Zero();
-            e.Select("url")
-                .Type("uri")
-                .Fixed(new FhirUri(e.SDef.Url));
+                e.Select("value[x]")
+                    .TypeReference(ResourcesMaker.Self.BreastRadImpression.Value())
+                    .ZeroToMany()
+                    ;
 
-            e.Select("value[x]")
-                .TypeReference(this.BreastRadImpression())
-                .ZeroToMany()
-                ;
+                e.IntroDoc
+                    .ReviewedStatus(ReviewStatus.NotReviewed)
+                    .Extension("Prior Reports", "include references to prior reports")
+                    ;
 
-            e.IntroDoc
-                .ReviewedStatus(ReviewStatus.NotReviewed)
-                .Extension("Prior Reports", "include references to prior reports")
-                ;
-
-            e.AddLink("target", ClinicalImpressionUrl, false);
-        }
+                e.AddLink("target", ClinicalImpressionUrl, false);
+            });
     }
 }

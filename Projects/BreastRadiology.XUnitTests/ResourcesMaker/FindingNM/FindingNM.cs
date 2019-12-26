@@ -13,17 +13,10 @@ namespace BreastRadiology.XUnitTests
 {
     partial class ResourcesMaker : ConverterBase
     {
-        String FindingNM()
-        {
-            if (this.findingNM == null)
-                this.CreateFindingNM();
-            return this.findingNM;
-        }
-        String findingNM = null;
-
-        void CreateFindingNM()
-        {
-                SDefEditor e = this.CreateEditor("BreastRadNMFinding",
+        StringTaskVar FindingNM = new StringTaskVar(
+            (out String s) =>
+            {
+                SDefEditor e = ResourcesMaker.Self.CreateEditorXX("BreastRadNMFinding",
                         "NM Finding",
                         "NM Finding",
                         ObservationUrl,
@@ -34,11 +27,11 @@ namespace BreastRadiology.XUnitTests
                                 "Device Metrics detailing the observation devices parameters (transducer freq, etc)."
                                 )
                         )
-                    .AddFragRef(this.ObservationSectionFragment.Value())
-                    .AddFragRef(this.ObservationNoValueFragment.Value())
+                    .AddFragRef(ResourcesMaker.Self.ObservationSectionFragment.Value())
+                    .AddFragRef(ResourcesMaker.Self.ObservationNoValueFragment.Value())
                     ;
-            this.findingNM = e.SDef.Url;
-            e.Select("value[x]").Zero();
+                s = e.SDef.Url;
+                e.Select("value[x]").Zero();
                 ////$ todo. Incorrect method!!!
                 //e.Find("method")
                 // .FixedCodeSlice("method", "http://snomed.info/sct", "115341008")
@@ -48,15 +41,15 @@ namespace BreastRadiology.XUnitTests
                 {
                     ProfileTargetSlice[] targets = new ProfileTargetSlice[]
                     {
-                    //new ProfileTargetSlice(this.NMBreastDensity(), 1, "1"),
-                    new ProfileTargetSlice(this.NMMass(), 0, "*"),
-                    //new ProfileTargetSlice(this.NMCalcification(), 0, "*"),
-                    //new ProfileTargetSlice(this.NMArchitecturalDistortion(), 0, "1"),
-                    //new ProfileTargetSlice(this.NMAsymmetries(), 0, "*"),
-                    //new ProfileTargetSlice(this.NMIntramammaryLymphNode(), 0, "1"),
-                    //new ProfileTargetSlice(this.NMSkinLesion(), 0, "*"),
-                    //new ProfileTargetSlice(this.NMSolitaryDilatedDuct(), 0, "1"),
-                    //new ProfileTargetSlice(this.NMAssociatedFeatures(), 0, "1")
+                    //new ProfileTargetSlice(ResourcesMaker.Self.NMBreastDensity(), 1, "1"),
+                    new ProfileTargetSlice(ResourcesMaker.Self.NMMass.Value(), 0, "*"),
+                    //new ProfileTargetSlice(ResourcesMaker.Self.NMCalcification(), 0, "*"),
+                    //new ProfileTargetSlice(ResourcesMaker.Self.NMArchitecturalDistortion(), 0, "1"),
+                    //new ProfileTargetSlice(ResourcesMaker.Self.NMAsymmetries(), 0, "*"),
+                    //new ProfileTargetSlice(ResourcesMaker.Self.NMIntramammaryLymphNode(), 0, "1"),
+                    //new ProfileTargetSlice(ResourcesMaker.Self.NMSkinLesion(), 0, "*"),
+                    //new ProfileTargetSlice(ResourcesMaker.Self.NMSolitaryDilatedDuct(), 0, "1"),
+                    //new ProfileTargetSlice(ResourcesMaker.Self.NMAssociatedFeatures(), 0, "1")
                     };
                     e.Find("hasMember").SliceByUrl(targets);
                     e.AddProfileTargets(targets);
@@ -66,6 +59,6 @@ namespace BreastRadiology.XUnitTests
                     .ReviewedStatus(ReviewStatus.NotReviewed)
                     .ObservationSection("MRI Abnormality")
                     ;
-        }
+            });
     }
 }

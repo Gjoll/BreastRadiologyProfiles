@@ -14,15 +14,6 @@ namespace BreastRadiology.XUnitTests
 {
     partial class ResourcesMaker : ConverterBase
     {
-        String MGMassMargin()
-        {
-            if (this.mgMassMargin == null)
-                this.CreateMGMassMargin();
-            return this.mgMassMargin;
-        }
-        String mgMassMargin = null;
-
-
         VSTaskVar BreastRadMammoMassMarginVS = new VSTaskVar(
             () =>
                 ResourcesMaker.Self.CreateValueSet(
@@ -36,54 +27,55 @@ namespace BreastRadiology.XUnitTests
             );
 
 
-        void CreateMGMassMargin()
-        {
-            ValueSet binding = this.BreastRadMammoMassMarginVS.Value();
-            binding
-                .Remove("IntraductalExtension")
-                .Remove("Lobulated")
-                .Remove("NonCircumscribed")
-                .Remove("Smooth")
-                ;
+        StringTaskVar MGMassMargin = new StringTaskVar(
+            (out String s) =>
             {
-                IntroDoc valueSetIntroDoc = new IntroDoc(Path.Combine(this.pageDir, $"ValueSet-{binding.Name}-intro.xml"));
-                valueSetIntroDoc
+                ValueSet binding = ResourcesMaker.Self.BreastRadMammoMassMarginVS.Value();
+                binding
+                    .Remove("IntraductalExtension")
+                    .Remove("Lobulated")
+                    .Remove("NonCircumscribed")
+                    .Remove("Smooth")
+                    ;
+                {
+                    IntroDoc valueSetIntroDoc = new IntroDoc(Path.Combine(ResourcesMaker.Self.pageDir, $"ValueSet-{binding.Name}-intro.xml"));
+                    valueSetIntroDoc
+                        .ReviewedStatus(ReviewStatus.NotReviewed)
+                        .ValueSet(binding);
+                    ;
+                    String outputPath = valueSetIntroDoc.Save();
+                    ResourcesMaker.Self.fc?.Mark(outputPath);
+                }
+
+                SDefEditor e = ResourcesMaker.Self.CreateEditorXX("BreastRadMammoMassMargin",
+                    "Mammography Mass Margin",
+                    "Mg Mass Margin",
+                    ObservationUrl,
+                    $"{Group_MGResources}/Mass/Margin")
+                    .Description("Breast Radiology Mammography Mass Margin Observation",
+                        new Markdown()
+                            .MissingObservation("a mass margin")
+                            .BiradHeader()
+                            .BlockQuote("The margin is the edge or border of the lesion. The descriptors of margin, like the descriptors of shape, are important predictors of whether a mass is benign or malignant. ")
+                            .BiradFooter()
+                            .Todo(
+                            )
+                    )
+                    .AddFragRef(ResourcesMaker.Self.ObservationNoDeviceFragment.Value())
+                    .AddFragRef(ResourcesMaker.Self.ObservationCodedValueFragment.Value())
+                    .AddFragRef(ResourcesMaker.Self.ObservationLeafFragment.Value())
+                    ;
+                s = e.SDef.Url;
+
+                e.Select("value[x]")
+                    .Type("CodeableConcept")
+                    .Binding(binding.Url, BindingStrength.Required)
+                    ;
+                e.AddValueSetLink(binding);
+                e.IntroDoc
                     .ReviewedStatus(ReviewStatus.NotReviewed)
-                    .ValueSet(binding);
-                ;
-                String outputPath = valueSetIntroDoc.Save();
-                this.fc?.Mark(outputPath);
-            }
-
-            SDefEditor e = this.CreateEditor("BreastRadMammoMassMargin",
-                "Mammography Mass Margin",
-                "Mg Mass Margin",
-                ObservationUrl,
-                $"{Group_MGResources}/Mass/Margin")
-                .Description("Breast Radiology Mammography Mass Margin Observation",
-                    new Markdown()
-                        .MissingObservation("a mass margin")
-                        .BiradHeader()
-                        .BlockQuote("The margin is the edge or border of the lesion. The descriptors of margin, like the descriptors of shape, are important predictors of whether a mass is benign or malignant. ")
-                        .BiradFooter()
-                        .Todo(
-                        )
-                )
-                .AddFragRef(this.ObservationNoDeviceFragment.Value())
-                .AddFragRef(this.ObservationCodedValueFragment.Value())
-                .AddFragRef(this.ObservationLeafFragment.Value())
-                ;
-            this.mgMassMargin = e.SDef.Url;
-
-            e.Select("value[x]")
-                .Type("CodeableConcept")
-                .Binding(binding.Url, BindingStrength.Required)
-                ;
-            e.AddValueSetLink(binding);
-            e.IntroDoc
-                .ReviewedStatus(ReviewStatus.NotReviewed)
-                .CodedObservationLeafNode("a mammography mass margin", binding)
-                ;
-        }
+                    .CodedObservationLeafNode("a mammography mass margin", binding)
+                    ;
+            });
     }
 }

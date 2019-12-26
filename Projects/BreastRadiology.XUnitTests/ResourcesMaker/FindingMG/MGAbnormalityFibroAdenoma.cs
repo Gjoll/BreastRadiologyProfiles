@@ -13,15 +13,6 @@ namespace BreastRadiology.XUnitTests
 {
     partial class ResourcesMaker : ConverterBase
     {
-        String MGAbnormalityFibroadenoma()
-        {
-            if (this.mgAbnormalityFibroadenoma == null)
-                this.CreateMGAbnormalityFibroadenoma();
-            return this.mgAbnormalityFibroadenoma;
-        }
-        String mgAbnormalityFibroadenoma = null;
-
-
         VSTaskVar MammoFibroadenomaVS = new VSTaskVar(
             () =>
                 ResourcesMaker.Self.CreateValueSet(
@@ -35,53 +26,54 @@ namespace BreastRadiology.XUnitTests
             );
 
 
-        void CreateMGAbnormalityFibroadenoma()
-        {
-            ValueSet binding = this.MammoFibroadenomaVS.Value();
-
-            SDefEditor e = this.CreateEditor("BreastRadMammoAbnormalityFibroadenoma",
-                    "Mammography Fibroadenoma Abnormality",
-                    "Mg Fibroadenoma Abnormality",
-                    ObservationUrl,
-                    $"{Group_MGResources}/AbnormalityFibroadenoma")
-                .Description("Breast Radiology Mammography Fibroadenoma Abnormality Observation",
-                    new Markdown()
-                        .Paragraph("[PR]")
-                        .MissingObservation("a fibroadenoma abnormality")
-                        .Todo(
-                        )
-                )
-                .AddFragRef(this.ObservationNoDeviceFragment.Value())
-                .AddFragRef(this.ObservationSectionFragment.Value())
-                .AddFragRef(this.ObservationNoValueFragment.Value())
-                .AddFragRef(this.ImagingStudyFragment.Value())
-                .AddFragRef(this.MGCommonTargetsFragment.Value())
-                .AddFragRef(this.MGShapeTargetsFragment.Value())
-                ;
-
-            this.mgAbnormalityFibroadenoma = e.SDef.Url;
+        StringTaskVar MGAbnormalityFibroadenoma = new StringTaskVar(
+            (out String s) =>
             {
-                ProfileTargetSlice[] targets = new ProfileTargetSlice[]
+                ValueSet binding = ResourcesMaker.Self.MammoFibroadenomaVS.Value();
+
+                SDefEditor e = ResourcesMaker.Self.CreateEditorXX("BreastRadMammoAbnormalityFibroadenoma",
+                        "Mammography Fibroadenoma Abnormality",
+                        "Mg Fibroadenoma Abnormality",
+                        ObservationUrl,
+                        $"{Group_MGResources}/AbnormalityFibroadenoma")
+                    .Description("Breast Radiology Mammography Fibroadenoma Abnormality Observation",
+                        new Markdown()
+                            .Paragraph("[PR]")
+                            .MissingObservation("a fibroadenoma abnormality")
+                            .Todo(
+                            )
+                    )
+                    .AddFragRef(ResourcesMaker.Self.ObservationNoDeviceFragment.Value())
+                    .AddFragRef(ResourcesMaker.Self.ObservationSectionFragment.Value())
+                    .AddFragRef(ResourcesMaker.Self.ObservationNoValueFragment.Value())
+                    .AddFragRef(ResourcesMaker.Self.ImagingStudyFragment.Value())
+                    .AddFragRef(ResourcesMaker.Self.MGCommonTargetsFragment.Value())
+                    .AddFragRef(ResourcesMaker.Self.MGShapeTargetsFragment.Value())
+                    ;
+
+                s = e.SDef.Url;
                 {
-                    new ProfileTargetSlice(this.CommonObservedCount(), 0, "1"),
-                };
+                    ProfileTargetSlice[] targets = new ProfileTargetSlice[]
+                    {
+                    new ProfileTargetSlice(ResourcesMaker.Self.CommonObservedCount.Value(), 0, "1"),
+                    };
 
-                e.Find("hasMember").SliceByUrl(targets);
-                e.AddProfileTargets(targets);
-            }
+                    e.Find("hasMember").SliceByUrl(targets);
+                    e.AddProfileTargets(targets);
+                }
 
-            e.Select("value[x]")
-                .ZeroToOne()
-                .Type("CodeableConcept")
-                .Binding(binding.Url, BindingStrength.Required)
-                ;
-            e.AddValueSetLink(binding);
+                e.Select("value[x]")
+                    .ZeroToOne()
+                    .Type("CodeableConcept")
+                    .Binding(binding.Url, BindingStrength.Required)
+                    ;
+                e.AddValueSetLink(binding);
 
-            e.IntroDoc
-                .ReviewedStatus(ReviewStatus.NotReviewed)
-                .ObservationSection("Mammography Fibroadenoma")
-                .Refinement(binding, "Fibroadenoma")
-                ;
-        }
+                e.IntroDoc
+                    .ReviewedStatus(ReviewStatus.NotReviewed)
+                    .ObservationSection("Mammography Fibroadenoma")
+                    .Refinement(binding, "Fibroadenoma")
+                    ;
+            });
     }
 }

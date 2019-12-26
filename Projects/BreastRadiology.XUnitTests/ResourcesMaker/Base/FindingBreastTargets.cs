@@ -9,9 +9,9 @@ namespace BreastRadiology.XUnitTests
     {
         ProfileTargetSlice[] FindingBreastTargets()
         {
-            if (this.findingBreastTargets == null)
-                this.CreateFindingBreastTargets();
-            return this.findingBreastTargets;
+            if (ResourcesMaker.Self.findingBreastTargets == null)
+                ResourcesMaker.Self.CreateFindingBreastTargets();
+            return ResourcesMaker.Self.findingBreastTargets;
         }
 
         ProfileTargetSlice[] findingBreastTargets = null;
@@ -19,13 +19,13 @@ namespace BreastRadiology.XUnitTests
         void CreateFindingBreastTargets()
         {
             // ShowChildren = false, to limit depth of resource graph.
-            this.findingBreastTargets = new ProfileTargetSlice[]
+            ResourcesMaker.Self.findingBreastTargets = new ProfileTargetSlice[]
             {
-                new ProfileTargetSlice(this.BiRadsAssessmentCategory.Value(), 1, "1"),
-                new ProfileTargetSlice(this.FindingMammo(), 0, "*"),
-                new ProfileTargetSlice(this.FindingMri(), 0, "*"),
-                new ProfileTargetSlice(this.FindingNM(), 0, "*"),
-                new ProfileTargetSlice(this.FindingUltraSound(), 0, "*")
+                new ProfileTargetSlice(ResourcesMaker.Self.BiRadsAssessmentCategory.Value(), 1, "1"),
+                new ProfileTargetSlice(ResourcesMaker.Self.FindingMammo.Value(), 0, "*"),
+                new ProfileTargetSlice(ResourcesMaker.Self.FindingMri.Value(), 0, "*"),
+                new ProfileTargetSlice(ResourcesMaker.Self.FindingNM.Value(), 0, "*"),
+                new ProfileTargetSlice(ResourcesMaker.Self.FindingUltraSound.Value(), 0, "*")
             };
         }
     }

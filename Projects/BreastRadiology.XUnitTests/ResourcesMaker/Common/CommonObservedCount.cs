@@ -14,49 +14,42 @@ namespace BreastRadiology.XUnitTests
 {
     partial class ResourcesMaker : ConverterBase
     {
-        String CommonObservedCount()
-        {
-            if (this.commonObservedCount == null)
-                this.CreateCommonObservedCount();
-            return this.commonObservedCount;
-        }
-        String commonObservedCount = null;
-
-        void CreateCommonObservedCount()
-        {
-            SDefEditor e = this.CreateEditor("CommonCount",
-                    "Count",
-                    "Count",
-                    ObservationUrl,
-                    $"{Group_CommonResources}/ObservedCount")
-                .Description("Breast Radiology Count Observation",
-                    new Markdown()
-                        .Paragraph("This observations describes the number of discrete items in an observed item.")
-                        .MissingObservation("an objects Count")
-                        .Todo(
-                            "Should value[x] be SimpleQuantity.",
-                            "is 'tot' correct ucum units for count?"
+        StringTaskVar CommonObservedCount = new StringTaskVar(
+            (out String s) =>
+            {
+                SDefEditor e = ResourcesMaker.Self.CreateEditorXX("CommonCount",
+                        "Count",
+                        "Count",
+                        ObservationUrl,
+                        $"{Group_CommonResources}/ObservedCount")
+                    .Description("Breast Radiology Count Observation",
+                        new Markdown()
+                            .Paragraph("This observations describes the number of discrete items in an observed item.")
+                            .MissingObservation("an objects Count")
+                            .Todo(
+                                "Should value[x] be SimpleQuantity.",
+                                "is 'tot' correct ucum units for count?"
+                            )
                         )
-                    )
-                .AddFragRef(this.ObservationNoDeviceFragment.Value())
-                .AddFragRef(this.ObservationLeafFragment.Value())
-                ;
-            this.commonObservedCount = e.SDef.Url;
-            e.Select("value[x]")
-                .Types("integer", "Range")
-                .SetCardinality(1, "1")
-                .SetDefinition(new Markdown()
-                    .Paragraph("Count of an object.")
-                    .Paragraph("This is either an integer count, or a Range (min..max) count.")
-                    .Paragraph($"A range value with no maximum specified implies count is min or more.")
-                    .Paragraph($"A range value with no minimum specified implies count is max or less.")
-                 )
-                ;
+                    .AddFragRef(ResourcesMaker.Self.ObservationNoDeviceFragment.Value())
+                    .AddFragRef(ResourcesMaker.Self.ObservationLeafFragment.Value())
+                    ;
+                s = e.SDef.Url;
+                e.Select("value[x]")
+                    .Types("integer", "Range")
+                    .SetCardinality(1, "1")
+                    .SetDefinition(new Markdown()
+                        .Paragraph("Count of an object.")
+                        .Paragraph("This is either an integer count, or a Range (min..max) count.")
+                        .Paragraph($"A range value with no maximum specified implies count is min or more.")
+                        .Paragraph($"A range value with no minimum specified implies count is max or less.")
+                     )
+                    ;
 
-            e.IntroDoc
-                .ReviewedStatus(ReviewStatus.NotReviewed)
-                .ObservationLeafNode($"Count")
-                ;
-        }
+                e.IntroDoc
+                    .ReviewedStatus(ReviewStatus.NotReviewed)
+                    .ObservationLeafNode($"Count")
+                    ;
+            });
     }
 }

@@ -107,7 +107,7 @@ namespace BreastRadiology.XUnitTests
             }
         }
 
-        SDefEditor CreateEditor(String name,
+        SDefEditor CreateEditorXX(String name,
             String title,
             String mapName,
             String baseDefinition,
@@ -145,7 +145,7 @@ namespace BreastRadiology.XUnitTests
             String mapName,
             String baseDefinition)
         {
-            SDefEditor retVal = this.CreateEditor(name,
+            SDefEditor retVal = this.CreateEditorXX(name,
                 title,
                 mapName,
                 baseDefinition,
@@ -307,7 +307,7 @@ namespace BreastRadiology.XUnitTests
             if (Directory.Exists(this.pageDir) == false)
                 Directory.CreateDirectory(this.pageDir);
 
-            this.BreastRadiologyReport();
+            this.BreastRadiologyReport.Value();
 
             this.SaveAll();
         }

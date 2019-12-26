@@ -13,43 +13,34 @@ namespace BreastRadiology.XUnitTests
 {
     partial class ResourcesMaker : ConverterBase
     {
-        public String SectionPatientHistory()
-        {
-            if (this.sectionPatientHistory == null)
+        StringTaskVar SectionPatientHistory = new StringTaskVar(
+            (out String s) =>
             {
-                this.CreateSectionPatientHistory();
-            }
-            return this.sectionPatientHistory;
-        }
-        String sectionPatientHistory = null;
+                SDefEditor e = ResourcesMaker.Self.CreateEditorXX("BreastRadSectionPatientHistory",
+                        "Patient History",
+                        "Patient History",
+                        ObservationUrl,
+                        $"{Group_BaseResources}/PatientHistory")
+                    .Description("Patient History Section",
+                        new Markdown()
+                        .Paragraph("This resource is the head of the tree of previous observations.")
+                        .Paragraph("Child observations are referenced by the 'Observation.hasMember' field.")
+                        .Todo(
+                            "What resources comprise a patient history. Currently we can only reference observations - this is probably inadequate"
+                            )
+                    )
+                    .AddFragRef(ResourcesMaker.Self.ObservationNoDeviceFragment.Value())
+                    .AddFragRef(ResourcesMaker.Self.ObservationSectionFragment.Value())
+                    .AddFragRef(ResourcesMaker.Self.ObservationNoValueFragment.Value())
+                    ;
+                s = e.SDef.Url;
+                e.Select("value[x]").Zero();
+                e.Select("bodySite").Zero();
 
-        void CreateSectionPatientHistory()
-        {
-            SDefEditor e = this.CreateEditor("BreastRadSectionPatientHistory",
-                    "Patient History",
-                    "Patient History",
-                    ObservationUrl,
-                    $"{Group_BaseResources}/PatientHistory")
-                .Description("Patient History Section",
-                    new Markdown()
-                    .Paragraph("This resource is the head of the tree of previous observations.")
-                    .Paragraph("Child observations are referenced by the 'Observation.hasMember' field.")
-                    .Todo(
-                        "What resources comprise a patient history. Currently we can only reference observations - this is probably inadequate"
-                        )
-                )
-                .AddFragRef(this.ObservationNoDeviceFragment.Value())
-                .AddFragRef(this.ObservationSectionFragment.Value())
-                .AddFragRef(this.ObservationNoValueFragment.Value())
-                ;
-            this.sectionPatientHistory = e.SDef.Url;
-            e.Select("value[x]").Zero();
-            e.Select("bodySite").Zero();
-
-            e.IntroDoc
-                 .ReviewedStatus(ReviewStatus.NotReviewed)
-                 .ObservationSection($"Patient History")
-                 ;
-        }
+                e.IntroDoc
+                     .ReviewedStatus(ReviewStatus.NotReviewed)
+                     .ObservationSection($"Patient History")
+                     ;
+            });
     }
 }

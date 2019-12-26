@@ -13,58 +13,51 @@ namespace BreastRadiology.XUnitTests
 {
     partial class ResourcesMaker : ConverterBase
     {
-        String USCyst()
-        {
-            if (this.usCyst == null)
-                this.CreateUSCyst();
-            return this.usCyst;
-        }
-        String usCyst = null;
-
-        void CreateUSCyst()
-        {
-            SDefEditor e = this.CreateEditor("BreastRadUltraSoundCyst",
-                    "UltraSound Cyst",
-                    "US Cyst",
-                    ObservationUrl,
-                    $"{Group_USResources}/Cyst")
-                .Description("Breast Radiology UltraSound Cyst Observation",
-                    new Markdown()
-                        .Paragraph("[PR]")
-                        .MissingObservation("a cyst")
-                        .Todo(
-                        )
-                )
-                .AddFragRef(ResourcesMaker.Self.ObservationNoDeviceFragment.Value())
-                .AddFragRef(ResourcesMaker.Self.BreastBodyLocationRequiredFragment.Value())
-                .AddFragRef(ResourcesMaker.Self.ObservationSectionFragment.Value())
-                .AddFragRef(ResourcesMaker.Self.ObservationNoValueFragment.Value())
-                .AddFragRef(ResourcesMaker.Self.ImagingStudyFragment.Value())
-                ;
-            this.usCyst = e.SDef.Url;
-
+        StringTaskVar USCyst = new StringTaskVar(
+            (out String s) =>
             {
-                ProfileTargetSlice[] targets = new ProfileTargetSlice[]
+                SDefEditor e = ResourcesMaker.Self.CreateEditorXX("BreastRadUltraSoundCyst",
+                        "UltraSound Cyst",
+                        "US Cyst",
+                        ObservationUrl,
+                        $"{Group_USResources}/Cyst")
+                    .Description("Breast Radiology UltraSound Cyst Observation",
+                        new Markdown()
+                            .Paragraph("[PR]")
+                            .MissingObservation("a cyst")
+                            .Todo(
+                            )
+                    )
+                    .AddFragRef(ResourcesMaker.Self.ObservationNoDeviceFragment.Value())
+                    .AddFragRef(ResourcesMaker.Self.BreastBodyLocationRequiredFragment.Value())
+                    .AddFragRef(ResourcesMaker.Self.ObservationSectionFragment.Value())
+                    .AddFragRef(ResourcesMaker.Self.ObservationNoValueFragment.Value())
+                    .AddFragRef(ResourcesMaker.Self.ImagingStudyFragment.Value())
+                    ;
+                s = e.SDef.Url;
+
                 {
+                    ProfileTargetSlice[] targets = new ProfileTargetSlice[]
+                    {
                     new ProfileTargetSlice(ResourcesMaker.Self.BiRadsAssessmentCategory.Value(), 0, "1"),
 
-                    new ProfileTargetSlice(ResourcesMaker.Self.CommonObservedCount(), 0, "1"),
-                    new ProfileTargetSlice(ResourcesMaker.Self.CommonObservedChangeInState(), 0, "*"),
-                    new ProfileTargetSlice(ResourcesMaker.Self.CommonObservedSize(), 0, "1"),
-                    new ProfileTargetSlice(ResourcesMaker.Self.CommonOrientation(), 0, "1"),
+                    new ProfileTargetSlice(ResourcesMaker.Self.CommonObservedCount.Value(), 0, "1"),
+                    new ProfileTargetSlice(ResourcesMaker.Self.CommonObservedChangeInState.Value(), 0, "*"),
+                    new ProfileTargetSlice(ResourcesMaker.Self.CommonObservedSize.Value(), 0, "1"),
+                    new ProfileTargetSlice(ResourcesMaker.Self.CommonOrientation.Value(), 0, "1"),
 
-                    //new ProfileTargetSlice(this.MGMassMargin(), 0, "*"),
-                    //new ProfileTargetSlice(this.MGMassDensity(), 0, "1"),
-                    //new ProfileTargetSlice(this.MGAssociatedFeatures(), 0, "1", false),
-                };
-                e.Find("hasMember").SliceByUrl(targets);
-                e.AddProfileTargets(targets);
-            }
+                        //new ProfileTargetSlice(ResourcesMaker.Self.MGMassMargin.Value(), 0, "*"),
+                        //new ProfileTargetSlice(ResourcesMaker.Self.MGMassDensity.Value(), 0, "1"),
+                        //new ProfileTargetSlice(ResourcesMaker.Self.MGAssociatedFeatures.Value(), 0, "1", false),
+                    };
+                    e.Find("hasMember").SliceByUrl(targets);
+                    e.AddProfileTargets(targets);
+                }
 
-            e.IntroDoc
-                .ReviewedStatus(ReviewStatus.NotReviewed)
-                .ObservationSection("UltraSound Cyst")
-                ;
-        }
+                e.IntroDoc
+                    .ReviewedStatus(ReviewStatus.NotReviewed)
+                    .ObservationSection("UltraSound Cyst")
+                    ;
+            });
     }
 }

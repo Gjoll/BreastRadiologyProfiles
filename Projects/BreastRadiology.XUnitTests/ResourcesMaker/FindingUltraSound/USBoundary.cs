@@ -13,14 +13,6 @@ namespace BreastRadiology.XUnitTests
 {
     partial class ResourcesMaker : ConverterBase
     {
-        String USBoundary()
-        {
-            if (this.usBoundary == null)
-                this.CreateUSBoundary();
-            return this.usBoundary;
-        }
-        String usBoundary = null;
-
         CSTaskVar USBoundaryCS = new CSTaskVar(
              () =>
                  ResourcesMaker.Self.CreateCodeSystem(
@@ -69,47 +61,48 @@ namespace BreastRadiology.XUnitTests
             );
 
 
-        void CreateUSBoundary()
-        {
-            ValueSet binding = this.USBoundaryVS.Value();
-
+        StringTaskVar USBoundary = new StringTaskVar(
+            (out String s) =>
             {
-                IntroDoc valueSetIntroDoc = new IntroDoc(Path.Combine(this.pageDir, $"ValueSet-{binding.Name}-intro.xml"));
-                valueSetIntroDoc
+                ValueSet binding = ResourcesMaker.Self.USBoundaryVS.Value();
+
+                {
+                    IntroDoc valueSetIntroDoc = new IntroDoc(Path.Combine(ResourcesMaker.Self.pageDir, $"ValueSet-{binding.Name}-intro.xml"));
+                    valueSetIntroDoc
+                        .ReviewedStatus(ReviewStatus.NotReviewed)
+                        .ValueSet(binding);
+                    ;
+                    String outputPath = valueSetIntroDoc.Save();
+                    ResourcesMaker.Self.fc?.Mark(outputPath);
+                }
+
+                SDefEditor e = ResourcesMaker.Self.CreateEditorXX("BreastRadUSBoundary",
+                    "Ultra Sound Boundary",
+                    "US Boundary",
+                    ObservationUrl,
+                    $"{Group_USResources}/Boundary")
+                    .Description("Breast Radiology Ultra-Sound Boundary Observation",
+                        new Markdown()
+                            .Paragraph("This resource describes an Ultra-Sound boundary observation.")
+                            .Paragraph("[PR]")
+                            .Todo(
+                            )
+                     )
+                    .AddFragRef(ResourcesMaker.Self.ObservationNoDeviceFragment.Value())
+                    .AddFragRef(ResourcesMaker.Self.ObservationCodedValueFragment.Value())
+                    .AddFragRef(ResourcesMaker.Self.ObservationLeafFragment.Value())
+                    ;
+
+                s = e.SDef.Url;
+                e.Select("value[x]")
+                    .Type("CodeableConcept")
+                    .Binding(binding.Url, BindingStrength.Required)
+                    ;
+                e.AddValueSetLink(binding);
+                e.IntroDoc
                     .ReviewedStatus(ReviewStatus.NotReviewed)
-                    .ValueSet(binding);
-                ;
-                String outputPath = valueSetIntroDoc.Save();
-                this.fc?.Mark(outputPath);
-            }
-
-            SDefEditor e = this.CreateEditor("BreastRadUSBoundary",
-                "Ultra Sound Boundary",
-                "US Boundary",
-                ObservationUrl,
-                $"{Group_USResources}/Boundary")
-                .Description("Breast Radiology Ultra-Sound Boundary Observation",
-                    new Markdown()
-                        .Paragraph("This resource describes an Ultra-Sound boundary observation.")
-                        .Paragraph("[PR]")
-                        .Todo(
-                        )
-                 )
-                .AddFragRef(this.ObservationNoDeviceFragment.Value())
-                .AddFragRef(this.ObservationCodedValueFragment.Value())
-                .AddFragRef(this.ObservationLeafFragment.Value())
-                ;
-
-            this.usBoundary = e.SDef.Url;
-            e.Select("value[x]")
-                .Type("CodeableConcept")
-                .Binding(binding.Url, BindingStrength.Required)
-                ;
-            e.AddValueSetLink(binding);
-            e.IntroDoc
-                .ReviewedStatus(ReviewStatus.NotReviewed)
-                .CodedObservationLeafNode("an UltraSound boundary", binding)
-                ;
-        }
+                    .CodedObservationLeafNode("an UltraSound boundary", binding)
+                    ;
+            });
     }
 }

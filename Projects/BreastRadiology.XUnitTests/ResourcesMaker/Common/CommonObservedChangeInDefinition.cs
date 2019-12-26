@@ -14,13 +14,6 @@ namespace BreastRadiology.XUnitTests
 {
     partial class ResourcesMaker
     {
-        String CommonObservedChangeInDefinition()
-        {
-            if (this.commonObservedChangeInDefinition == null)
-                this.CreateCommonObservedChangeInDefinition();
-            return this.commonObservedChangeInDefinition;
-        }
-        String commonObservedChangeInDefinition = null;
 
         CSTaskVar CommonObservedChangeInDefinitionCS = new CSTaskVar(
              () =>
@@ -57,45 +50,46 @@ namespace BreastRadiology.XUnitTests
             );
 
 
-        void CreateCommonObservedChangeInDefinition()
-        {
-            ValueSet binding = CommonObservedChangeInDefinitionVS.Value();
+        StringTaskVar CommonObservedChangeInDefinition = new StringTaskVar(
+            (out String s) =>
             {
-                IntroDoc valueSetIntroDoc = new IntroDoc(Path.Combine(this.pageDir, $"ValueSet-{binding.Name}-intro.xml"));
-                valueSetIntroDoc
+                ValueSet binding = ResourcesMaker.Self.CommonObservedChangeInDefinitionVS.Value();
+                {
+                    IntroDoc valueSetIntroDoc = new IntroDoc(Path.Combine(ResourcesMaker.Self.pageDir, $"ValueSet-{binding.Name}-intro.xml"));
+                    valueSetIntroDoc
+                        .ReviewedStatus(ReviewStatus.NotReviewed)
+                        .ValueSet(binding);
+                    ;
+                    String outputPath = valueSetIntroDoc.Save();
+                    ResourcesMaker.Self.fc?.Mark(outputPath);
+                }
+
+                SDefEditor e = ResourcesMaker.Self.CreateEditorXX("CommonObservedChangeInDefinition",
+                        "Observed Change in Definition",
+                        "Definition Change",
+                        ObservationUrl,
+                        $"{Group_CommonResources}/ObservedChangeInDefinition")
+                    .Description("Breast Radiology Changes in Definition Observation",
+                        new Markdown()
+                            .MissingObservation("an observed change in definition")
+                            .Todo(
+                            )
+                    )
+                    .AddFragRef(ResourcesMaker.Self.ObservationNoDeviceFragment.Value())
+                    .AddFragRef(ResourcesMaker.Self.ObservationCodedValueFragment.Value())
+                    .AddFragRef(ResourcesMaker.Self.ObservationLeafFragment.Value())
+                    ;
+
+                s = e.SDef.Url;
+                e.Select("value[x]")
+                    .Type("CodeableConcept")
+                    .Binding(binding.Url, BindingStrength.Required)
+                    ;
+                e.AddValueSetLink(binding);
+                e.IntroDoc
                     .ReviewedStatus(ReviewStatus.NotReviewed)
-                    .ValueSet(binding);
-                ;
-                String outputPath = valueSetIntroDoc.Save();
-                this.fc?.Mark(outputPath);
-            }
-
-            SDefEditor e = this.CreateEditor("CommonObservedChangeInDefinition",
-                    "Observed Change in Definition",
-                    "Definition Change",
-                    ObservationUrl,
-                    $"{Group_CommonResources}/ObservedChangeInDefinition")
-                .Description("Breast Radiology Changes in Definition Observation",
-                    new Markdown()
-                        .MissingObservation("an observed change in definition")
-                        .Todo(
-                        )
-                )
-                .AddFragRef(this.ObservationNoDeviceFragment.Value())
-                .AddFragRef(this.ObservationCodedValueFragment.Value())
-                .AddFragRef(this.ObservationLeafFragment.Value())
-                ;
-
-            this.commonObservedChangeInDefinition = e.SDef.Url;
-            e.Select("value[x]")
-                .Type("CodeableConcept")
-                .Binding(binding.Url, BindingStrength.Required)
-                ;
-            e.AddValueSetLink(binding);
-            e.IntroDoc
-                .ReviewedStatus(ReviewStatus.NotReviewed)
-                .CodedObservationLeafNode("an abnormality observed change in definition", binding)
-                ;
-        }
+                    .CodedObservationLeafNode("an abnormality observed change in definition", binding)
+                    ;
+            });
     }
 }

@@ -13,13 +13,6 @@ namespace BreastRadiology.XUnitTests
 {
     partial class ResourcesMaker : ConverterBase
     {
-        String MGAbnormalityDensity()
-        {
-            if (this.mgAbnormalityDensity == null)
-                this.CreateMGAbnormalityDensity();
-            return this.mgAbnormalityDensity;
-        }
-        String mgAbnormalityDensity = null;
 
         CSTaskVar BreastRadMammoAbnormalityDensityCS = new CSTaskVar(
              () =>
@@ -64,51 +57,52 @@ namespace BreastRadiology.XUnitTests
             );
 
 
-        void CreateMGAbnormalityDensity()
-        {
-            ValueSet binding = this.BreastRadMammoAbnormalityDensityVS.Value();
-
-            SDefEditor e = this.CreateEditor("BreastRadMammoAbnormalityDensity",
-                    "Mammography Density Abnormality",
-                    "Mg Density Abnormality",
-                    ObservationUrl,
-                    $"{Group_MGResources}/AbnormalityDensity")
-                .Description("Breat Radiology Mammography Density Abnormality Observation",
-                    new Markdown()
-                        .MissingObservation("a Density abnormality")
-                        .Todo(
-                            "should this be a leaf node (how about shape, density, location, etc).",
-                            "default value? for refinement"
-                        )
-                )
-                .AddFragRef(this.ObservationNoDeviceFragment.Value())
-                .AddFragRef(this.ObservationLeafFragment.Value())
-                .AddFragRef(this.MGCommonTargetsFragment.Value())
-                .AddFragRef(this.MGShapeTargetsFragment.Value())
-                ;
-
-            this.mgAbnormalityDensity = e.SDef.Url;
-            e.Select("value[x]")
-                .ZeroToOne()
-                .Type("CodeableConcept")
-                .Binding(binding.Url, BindingStrength.Required)
-                ;
-            e.AddValueSetLink(binding);
-
+        StringTaskVar MGAbnormalityDensity = new StringTaskVar(
+            (out String s) =>
             {
-                ProfileTargetSlice[] targets = new ProfileTargetSlice[]
-                {
-                    new ProfileTargetSlice(this.CommonObservedCount(), 0, "1"),
-                };
-                e.Find("hasMember").SliceByUrl(targets);
-                e.AddProfileTargets(targets);
-            }
+                ValueSet binding = ResourcesMaker.Self.BreastRadMammoAbnormalityDensityVS.Value();
 
-            e.IntroDoc
-                .ReviewedStatus(ReviewStatus.NotReviewed)
-                .ObservationSection($"Density Abnormality")
-                .Refinement(binding, "Density")
-                ;
-        }
+                SDefEditor e = ResourcesMaker.Self.CreateEditorXX("BreastRadMammoAbnormalityDensity",
+                        "Mammography Density Abnormality",
+                        "Mg Density Abnormality",
+                        ObservationUrl,
+                        $"{Group_MGResources}/AbnormalityDensity")
+                    .Description("Breat Radiology Mammography Density Abnormality Observation",
+                        new Markdown()
+                            .MissingObservation("a Density abnormality")
+                            .Todo(
+                                "should this be a leaf node (how about shape, density, location, etc).",
+                                "default value? for refinement"
+                            )
+                    )
+                    .AddFragRef(ResourcesMaker.Self.ObservationNoDeviceFragment.Value())
+                    .AddFragRef(ResourcesMaker.Self.ObservationLeafFragment.Value())
+                    .AddFragRef(ResourcesMaker.Self.MGCommonTargetsFragment.Value())
+                    .AddFragRef(ResourcesMaker.Self.MGShapeTargetsFragment.Value())
+                    ;
+
+                s = e.SDef.Url;
+                e.Select("value[x]")
+                    .ZeroToOne()
+                    .Type("CodeableConcept")
+                    .Binding(binding.Url, BindingStrength.Required)
+                    ;
+                e.AddValueSetLink(binding);
+
+                {
+                    ProfileTargetSlice[] targets = new ProfileTargetSlice[]
+                    {
+                    new ProfileTargetSlice(ResourcesMaker.Self.CommonObservedCount.Value(), 0, "1"),
+                    };
+                    e.Find("hasMember").SliceByUrl(targets);
+                    e.AddProfileTargets(targets);
+                }
+
+                e.IntroDoc
+                    .ReviewedStatus(ReviewStatus.NotReviewed)
+                    .ObservationSection($"Density Abnormality")
+                    .Refinement(binding, "Density")
+                    ;
+            });
     }
 }

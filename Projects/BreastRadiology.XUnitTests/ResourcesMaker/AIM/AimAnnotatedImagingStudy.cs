@@ -13,17 +13,10 @@ namespace BreastRadiology.XUnitTests
 {
     partial class ResourcesMaker : ConverterBase
     {
-        String AimAnnotatedImagingStudy()
-        {
-            if (this.aimAnnotatedImagingStudy == null)
-                this.CreateAimAnnotatedImagingStudy();
-            return this.aimAnnotatedImagingStudy;
-        }
-        String aimAnnotatedImagingStudy = null;
-
-        void CreateAimAnnotatedImagingStudy()
-        {
-                SDefEditor e = this.CreateEditor("AimAnnotatedImagingStudy",
+        StringTaskVar AimAnnotatedImagingStudy = new StringTaskVar(
+            (out String s) =>
+            {
+                SDefEditor e = ResourcesMaker.Self.CreateEditorXX("AimAnnotatedImagingStudy",
                     "AIM Annotated Imaging Study",
                     "Annotated/Imaging Study",
                     ImagingStudyUrl,
@@ -33,13 +26,13 @@ namespace BreastRadiology.XUnitTests
                             .Todo(
                             )
                     )
-                    .AddFragRef(this.AimHeaderFragment.Value())
-                    .AddFragRef(this.AimAnnotationPolyLineFragment.Value())
+                    .AddFragRef(ResourcesMaker.Self.AimHeaderFragment.Value())
+                    .AddFragRef(ResourcesMaker.Self.AimAnnotationPolyLineFragment.Value())
                     ;
-            this.aimAnnotatedImagingStudy = e.SDef.Url;
+                s = e.SDef.Url;
                 e.IntroDoc
                     .ReviewedStatus(ReviewStatus.NotReviewed)
                     .ObservationLeafNode("AIM Annotated Imaging Study");
-        }
+            });
     }
 }

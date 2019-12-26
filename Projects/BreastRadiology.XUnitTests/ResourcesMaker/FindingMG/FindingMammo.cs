@@ -13,64 +13,57 @@ namespace BreastRadiology.XUnitTests
 {
     partial class ResourcesMaker : ConverterBase
     {
-        String FindingMammo()
-        {
-            if (this.findingMammo == null)
-                this.CreateFindingMammo();
-            return this.findingMammo;
-        }
-        String findingMammo = null;
-
-        void CreateFindingMammo()
-        {
-            SDefEditor e = this.CreateEditor("BreastRadMammoFinding",
-                    "Mammographi Finding",
-                    "Mg Finding",
-                    ObservationUrl,
-                    $"{Group_MGResources}")
-                .Description("Breast Radiology Mammography Finding",
-                    new Markdown()
-                        .Todo(
-                            "Device Metrics detailing the observation devices parameters (transducer freq, etc)."
-                            )
-                    )
-                .AddFragRef(this.ObservationSectionFragment.Value())
-                .AddFragRef(this.ObservationNoValueFragment.Value())
-                ;
-            this.findingMammo = e.SDef.Url;
-            e.Select("value[x]").Zero();
-            ////$ todo. Incorrect method!!!
-            //e.Find("method")
-            // .FixedCodeSlice("method", "http://snomed.info/sct", "115341008")
-            // .Card(1, "*")
-            // ;
-
+        StringTaskVar FindingMammo = new StringTaskVar(
+            (out String s) =>
             {
-                ProfileTargetSlice[] targets = new ProfileTargetSlice[]
-                {
-                    new ProfileTargetSlice(this.MGAbnormalityForeignObject(), 0, "*"),
-                    new ProfileTargetSlice(this.MGAbnormalityArchitecturalDistortion(), 0, "*"),
-                    new ProfileTargetSlice(this.MGAbnormalityAsymmetry(), 0, "*"),
-                    new ProfileTargetSlice(this.MGAbnormalityCalcification(), 0, "*"),
-                    new ProfileTargetSlice(this.MGAbnormalityCyst(), 0, "*"),
-                    new ProfileTargetSlice(this.MGAbnormalityDensity(), 0, "*"),
-                    new ProfileTargetSlice(this.MGAbnormalityDuct(), 0, "*"),
-                    new ProfileTargetSlice(this.MGAbnormalityFatNecrosis(), 0, "*"),
-                    new ProfileTargetSlice(this.MGAbnormalityFibroadenoma(), 0, "*"),
-                    new ProfileTargetSlice(this.MGAbnormalityLymphNode(), 0, "*"),
-                    new ProfileTargetSlice(this.MGAbnormalityMass(), 0, "*"),
-                    new ProfileTargetSlice(this.MGSkinLesion(), 0, "*"),
-                    new ProfileTargetSlice(this.MGAssociatedFeatures(), 0, "*"),
-                    new ProfileTargetSlice(this.MGBreastDensity(), 1, "1")
-                };
-                e.Find("hasMember").SliceByUrl(targets);
-                e.AddProfileTargets(targets);
-            }
+                SDefEditor e = ResourcesMaker.Self.CreateEditorXX("BreastRadMammoFinding",
+                        "Mammographi Finding",
+                        "Mg Finding",
+                        ObservationUrl,
+                        $"{Group_MGResources}")
+                    .Description("Breast Radiology Mammography Finding",
+                        new Markdown()
+                            .Todo(
+                                "Device Metrics detailing the observation devices parameters (transducer freq, etc)."
+                                )
+                        )
+                    .AddFragRef(ResourcesMaker.Self.ObservationSectionFragment.Value())
+                    .AddFragRef(ResourcesMaker.Self.ObservationNoValueFragment.Value())
+                    ;
+                s = e.SDef.Url;
+                e.Select("value[x]").Zero();
+                ////$ todo. Incorrect method!!!
+                //e.Find("method")
+                // .FixedCodeSlice("method", "http://snomed.info/sct", "115341008")
+                // .Card(1, "*")
+                // ;
 
-            e.IntroDoc
-                .ReviewedStatus(ReviewStatus.NotReviewed)
-                .ObservationSection("MRI Abnormality")
-                ;
-        }
+                {
+                    ProfileTargetSlice[] targets = new ProfileTargetSlice[]
+                    {
+                    new ProfileTargetSlice(ResourcesMaker.Self.MGAbnormalityForeignObject.Value(), 0, "*"),
+                    new ProfileTargetSlice(ResourcesMaker.Self.MGAbnormalityArchitecturalDistortion.Value(), 0, "*"),
+                    new ProfileTargetSlice(ResourcesMaker.Self.MGAbnormalityAsymmetry.Value(), 0, "*"),
+                    new ProfileTargetSlice(ResourcesMaker.Self.MGAbnormalityCalcification.Value(), 0, "*"),
+                    new ProfileTargetSlice(ResourcesMaker.Self.MGAbnormalityCyst.Value(), 0, "*"),
+                    new ProfileTargetSlice(ResourcesMaker.Self.MGAbnormalityDensity.Value(), 0, "*"),
+                    new ProfileTargetSlice(ResourcesMaker.Self.MGAbnormalityDuct.Value(), 0, "*"),
+                    new ProfileTargetSlice(ResourcesMaker.Self.MGAbnormalityFatNecrosis.Value(), 0, "*"),
+                    new ProfileTargetSlice(ResourcesMaker.Self.MGAbnormalityFibroadenoma.Value(), 0, "*"),
+                    new ProfileTargetSlice(ResourcesMaker.Self.MGAbnormalityLymphNode.Value(), 0, "*"),
+                    new ProfileTargetSlice(ResourcesMaker.Self.MGAbnormalityMass.Value(), 0, "*"),
+                    new ProfileTargetSlice(ResourcesMaker.Self.MGSkinLesion.Value(), 0, "*"),
+                    new ProfileTargetSlice(ResourcesMaker.Self.MGAssociatedFeatures.Value(), 0, "*"),
+                    new ProfileTargetSlice(ResourcesMaker.Self.MGBreastDensity.Value(), 1, "1")
+                    };
+                    e.Find("hasMember").SliceByUrl(targets);
+                    e.AddProfileTargets(targets);
+                }
+
+                e.IntroDoc
+                    .ReviewedStatus(ReviewStatus.NotReviewed)
+                    .ObservationSection("MRI Abnormality")
+                    ;
+            });
     }
 }

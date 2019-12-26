@@ -14,34 +14,27 @@ namespace BreastRadiology.XUnitTests
 {
     partial class ResourcesMaker
     {
-        String BreastRadImpression()
-        {
-            if (this.breastRadImpression == null)
-                this.CreateBreastRadImpression();
-            return this.breastRadImpression;
-        }
-        String breastRadImpression = null;
-
-        void CreateBreastRadImpression()
-        {
-            SDefEditor e = this.CreateEditor("BreastRadImpression",
-                    "Impression",
-                    "Impression",
-                    ClinicalImpressionUrl,
-                    $"{Group_CommonResources}/BreastRadImpression")
-                .Description("Breast Radiology Impression (ClinicalImpression)",
-                    new Markdown()
-                        .Paragraph("Breast radiology exam clinical impression")
-                        .Todo(
-                        )
-                )
-                .AddFragRef(this.HeaderFragment.Value())
-                ;
-
-            this.breastRadImpression = e.SDef.Url;
-            e.IntroDoc
-                    .ReviewedStatus(ReviewStatus.NotReviewed)
+        StringTaskVar BreastRadImpression = new StringTaskVar(
+            (out String s) =>
+            {
+                SDefEditor e = ResourcesMaker.Self.CreateEditorXX("BreastRadImpression",
+                        "Impression",
+                        "Impression",
+                        ClinicalImpressionUrl,
+                        $"{Group_CommonResources}/BreastRadImpression")
+                    .Description("Breast Radiology Impression (ClinicalImpression)",
+                        new Markdown()
+                            .Paragraph("Breast radiology exam clinical impression")
+                            .Todo(
+                            )
+                    )
+                    .AddFragRef(ResourcesMaker.Self.HeaderFragment.Value())
                     ;
-        }
+
+                s = e.SDef.Url;
+                e.IntroDoc
+                        .ReviewedStatus(ReviewStatus.NotReviewed)
+                        ;
+            });
     }
 }

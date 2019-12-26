@@ -14,15 +14,6 @@ namespace BreastRadiology.XUnitTests
 {
     partial class ResourcesMaker
     {
-        String USShape()
-        {
-            if (this.usShape == null)
-                this.CreateUSShape();
-            return this.usShape;
-        }
-        String usShape = null;
-
-
         VSTaskVar UltraSoundShapeVS = new VSTaskVar(
             () =>
             {
@@ -40,45 +31,46 @@ namespace BreastRadiology.XUnitTests
             );
 
 
-        void CreateUSShape()
-        {
-            ValueSet binding = this.UltraSoundShapeVS.Value();
+        StringTaskVar USShape = new StringTaskVar(
+            (out String s) =>
             {
-                IntroDoc valueSetIntroDoc = new IntroDoc(Path.Combine(this.pageDir, $"ValueSet-{binding.Name}-intro.xml"));
-                valueSetIntroDoc
+                ValueSet binding = ResourcesMaker.Self.UltraSoundShapeVS.Value();
+                {
+                    IntroDoc valueSetIntroDoc = new IntroDoc(Path.Combine(ResourcesMaker.Self.pageDir, $"ValueSet-{binding.Name}-intro.xml"));
+                    valueSetIntroDoc
+                        .ReviewedStatus(ReviewStatus.NotReviewed)
+                        .ValueSet(binding);
+                    ;
+                    String outputPath = valueSetIntroDoc.Save();
+                    ResourcesMaker.Self.fc?.Mark(outputPath);
+                }
+
+                SDefEditor e = ResourcesMaker.Self.CreateEditorXX("UltraSoundShape",
+                        "Shape",
+                        "Shape",
+                        ObservationUrl,
+                        $"{Group_CommonResources}/Shape")
+                    .Description("Breast Radiology Shape Observation",
+                        new Markdown()
+                            .MissingObservation("a shape")
+                            .Todo(
+                            )
+                    )
+                    .AddFragRef(ResourcesMaker.Self.ObservationNoDeviceFragment.Value())
+                    .AddFragRef(ResourcesMaker.Self.ObservationCodedValueFragment.Value())
+                    .AddFragRef(ResourcesMaker.Self.ObservationLeafFragment.Value())
+                    ;
+
+                s = e.SDef.Url;
+                e.Select("value[x]")
+                    .Type("CodeableConcept")
+                    .Binding(binding.Url, BindingStrength.Required)
+                    ;
+                e.AddValueSetLink(binding);
+                e.IntroDoc
                     .ReviewedStatus(ReviewStatus.NotReviewed)
-                    .ValueSet(binding);
-                ;
-                String outputPath = valueSetIntroDoc.Save();
-                this.fc?.Mark(outputPath);
-            }
-
-            SDefEditor e = this.CreateEditor("UltraSoundShape",
-                    "Shape",
-                    "Shape",
-                    ObservationUrl,
-                    $"{Group_CommonResources}/Shape")
-                .Description("Breast Radiology Shape Observation",
-                    new Markdown()
-                        .MissingObservation("a shape")
-                        .Todo(
-                        )
-                )
-                .AddFragRef(this.ObservationNoDeviceFragment.Value())
-                .AddFragRef(this.ObservationCodedValueFragment.Value())
-                .AddFragRef(this.ObservationLeafFragment.Value())
-                ;
-
-            this.usShape = e.SDef.Url;
-            e.Select("value[x]")
-                .Type("CodeableConcept")
-                .Binding(binding.Url, BindingStrength.Required)
-                ;
-            e.AddValueSetLink(binding);
-            e.IntroDoc
-                .ReviewedStatus(ReviewStatus.NotReviewed)
-                .CodedObservationLeafNode("a shape", binding)
-                ;
-        }
+                    .CodedObservationLeafNode("a shape", binding)
+                    ;
+            });
     }
 }

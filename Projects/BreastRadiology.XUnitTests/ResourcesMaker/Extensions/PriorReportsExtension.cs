@@ -14,49 +14,42 @@ namespace BreastRadiology.XUnitTests
 {
     partial class ResourcesMaker : ConverterBase
     {
-        String BreastRadiologyPriorReportsExtension()
-        {
-            if (this.breastRadiologyPriorReportsExtension == null)
-                this.CreateBreastRadiologyPriorReportsExtension();
-            return this.breastRadiologyPriorReportsExtension;
-        }
-        String breastRadiologyPriorReportsExtension = null;
+        StringTaskVar BreastRadiologyPriorReportsExtension = new StringTaskVar(
+            (out String s) =>
+            {
+                SDefEditor e = ResourcesMaker.Self.CreateEditorXX("BreastRadPriorReportsExtension",
+                    "Prior Reports Extension",
+                    "Prior Reports/Extension",
+                    ExtensionUrl,
+                    $"{Group_ExtensionResources}/PriorReports")
+                    .Description("Prior Diagnostic Report extension",
+                        new Markdown()
+                            .Paragraph("This extension defines the prior reports section of a breast radiology report, " +
+                                       "linking a report to the resources that are the prior reports.")
+                            .Todo(
+                            )
+                    )
+                    .Kind(StructureDefinition.StructureDefinitionKind.ComplexType)
+                    .Context()
+                    ;
+                s = e.SDef.Url;
+                e.AddFragRef(ResourcesMaker.Self.HeaderFragment.Value());
 
-        void CreateBreastRadiologyPriorReportsExtension()
-        {
-            SDefEditor e = this.CreateEditor("BreastRadPriorReportsExtension",
-                "Prior Reports Extension",
-                "Prior Reports/Extension",
-                ExtensionUrl,
-                $"{Group_ExtensionResources}/PriorReports")
-                .Description("Prior Diagnostic Report extension",
-                    new Markdown()
-                        .Paragraph("This extension defines the prior reports section of a breast radiology report, " +
-                                   "linking a report to the resources that are the prior reports.")
-                        .Todo(
-                        )
-                )
-                .Kind(StructureDefinition.StructureDefinitionKind.ComplexType)
-                .Context()
-                ;
-            this.breastRadiologyPriorReportsExtension = e.SDef.Url;
-            e.AddFragRef(this.HeaderFragment.Value());
+                e.Select("extension").Zero();
+                e.Select("url")
+                    .Type("uri")
+                    .Fixed(new FhirUri(e.SDef.Url));
 
-            e.Select("extension").Zero();
-            e.Select("url")
-                .Type("uri")
-                .Fixed(new FhirUri(e.SDef.Url));
+                e.Select("value[x]")
+                    .TypeReference(ResourcesMaker.Self.BreastRadiologyReport.Value())
+                    .Single()
+                    ;
 
-            e.Select("value[x]")
-                .TypeReference(this.BreastRadiologyReport())
-                .Single()
-                ;
-
-            e.IntroDoc
-                .ReviewedStatus(ReviewStatus.NotReviewed)
-                .Extension("Prior Reports", "include references to prior reports")
-                ;
-            e.AddLink("target", this.BreastRadiologyReport(), false);
-        }
+                e.IntroDoc
+                    .ReviewedStatus(ReviewStatus.NotReviewed)
+                    .Extension("Prior Reports", "include references to prior reports")
+                    ;
+                e.AddLink("target", ResourcesMaker.Self.BreastRadiologyReport.Value(), false);
+            });
     }
 }

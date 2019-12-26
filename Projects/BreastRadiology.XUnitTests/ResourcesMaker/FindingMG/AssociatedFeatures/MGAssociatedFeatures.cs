@@ -13,51 +13,44 @@ namespace BreastRadiology.XUnitTests
 {
     partial class ResourcesMaker : ConverterBase
     {
-        String MGAssociatedFeatures()
-        {
-            if (this.mgAssociatedFeatures == null)
-                this.CreateMGAssociatedFeatures();
-            return this.mgAssociatedFeatures;
-        }
-        String mgAssociatedFeatures = null;
-
-        void CreateMGAssociatedFeatures()
-        {
-            SDefEditor e = this.CreateEditor("BreastRadMammoAssociatedFeatures",
-                    "Mammography Associated Features",
-                    "Mg Associated/Features",
-                    ObservationUrl,
-                    $"{Group_MGResources}/AssociatedFeature")
-                .Description("Mammography Associated Features Observation",
-                    new Markdown()
-                        .Paragraph("Used with masses, asymmetries, or calcifications, or may stand alone as " +
-                                    "Features when no other abnormality is present.")
-                        .Todo(
-                            "check Cardinality of the following Observation.hasMember targets?"
-                        )
-                 )
-                .AddFragRef(this.ObservationNoDeviceFragment.Value())
-                .AddFragRef(this.ObservationSectionFragment.Value())
-                .AddFragRef(this.ObservationNoValueFragment.Value())
-                ;
-            this.mgAssociatedFeatures = e.SDef.Url;
+        StringTaskVar MGAssociatedFeatures = new StringTaskVar(
+            (out String s) =>
             {
-                ProfileTargetSlice[] targets = new ProfileTargetSlice[]
+                SDefEditor e = ResourcesMaker.Self.CreateEditorXX("BreastRadMammoAssociatedFeatures",
+                        "Mammography Associated Features",
+                        "Mg Associated/Features",
+                        ObservationUrl,
+                        $"{Group_MGResources}/AssociatedFeature")
+                    .Description("Mammography Associated Features Observation",
+                        new Markdown()
+                            .Paragraph("Used with masses, asymmetries, or calcifications, or may stand alone as " +
+                                        "Features when no other abnormality is present.")
+                            .Todo(
+                                "check Cardinality of the following Observation.hasMember targets?"
+                            )
+                     )
+                    .AddFragRef(ResourcesMaker.Self.ObservationNoDeviceFragment.Value())
+                    .AddFragRef(ResourcesMaker.Self.ObservationSectionFragment.Value())
+                    .AddFragRef(ResourcesMaker.Self.ObservationNoValueFragment.Value())
+                    ;
+                s = e.SDef.Url;
                 {
-                    new ProfileTargetSlice(this.MGSkinRetraction(), 0, "1"),
-                    new ProfileTargetSlice(this.MGNippleRetraction(), 0, "1"),
-                    new ProfileTargetSlice(this.MGSkinThickening(), 0, "*"),
-                    new ProfileTargetSlice(this.MGAxillaryAdenopathy(), 0, "1"),
-                    new ProfileTargetSlice(this.MGAbnormalityArchitecturalDistortion(), 0, "*"),
-                    new ProfileTargetSlice(this.MGAbnormalityCalcification(), 0, "*")
-                };
-                e.Find("hasMember").SliceByUrl(targets);
-                e.AddProfileTargets(targets);
-            }
-            e.IntroDoc
-                .ReviewedStatus(ReviewStatus.NotReviewed)
-                .ObservationSection("Mammography Associated Features")
-                ;
-        }
+                    ProfileTargetSlice[] targets = new ProfileTargetSlice[]
+                    {
+                    new ProfileTargetSlice(ResourcesMaker.Self.MGSkinRetraction.Value(), 0, "1"),
+                    new ProfileTargetSlice(ResourcesMaker.Self.MGNippleRetraction.Value(), 0, "1"),
+                    new ProfileTargetSlice(ResourcesMaker.Self.MGSkinThickening.Value(), 0, "*"),
+                    new ProfileTargetSlice(ResourcesMaker.Self.MGAxillaryAdenopathy.Value(), 0, "1"),
+                    new ProfileTargetSlice(ResourcesMaker.Self.MGAbnormalityArchitecturalDistortion.Value(), 0, "*"),
+                    new ProfileTargetSlice(ResourcesMaker.Self.MGAbnormalityCalcification.Value(), 0, "*")
+                    };
+                    e.Find("hasMember").SliceByUrl(targets);
+                    e.AddProfileTargets(targets);
+                }
+                e.IntroDoc
+                    .ReviewedStatus(ReviewStatus.NotReviewed)
+                    .ObservationSection("Mammography Associated Features")
+                    ;
+            });
     }
 }

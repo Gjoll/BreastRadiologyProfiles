@@ -374,7 +374,7 @@ namespace BreastRadiology.XUnitTests
 
                 //breastBodyLocationMapLinks = new List<ResourceMap.Link>();
 
-                e = ResourcesMaker.Self.CreateEditor("BreastBodyLocationExtension",
+                e = ResourcesMaker.Self.CreateEditorXX("BreastBodyLocationExtension",
                     "Breast Body Location Extension",
                     "Breast Body Loc.",
                     ExtensionUrl,

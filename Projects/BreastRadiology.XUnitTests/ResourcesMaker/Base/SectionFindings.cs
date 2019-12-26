@@ -13,53 +13,44 @@ namespace BreastRadiology.XUnitTests
 {
     partial class ResourcesMaker : ConverterBase
     {
-        public String SectionFindings()
-        {
-            if (this.sectionFindings == null)
+        StringTaskVar SectionFindings = new StringTaskVar(
+            (out String s) =>
             {
-                this.CreateSectionFindings();
-            }
-            return this.sectionFindings;
-        }
-        String sectionFindings = null;
-
-        void CreateSectionFindings()
-        {
-            SDefEditor e = this.CreateEditor("BreastRadSectionFindings",
-                    "Findings",
-                    "Findings",
-                    ObservationUrl,
-                    $"{Group_BaseResources}/Findings")
-                .Description("Findings Section",
-                    new Markdown()
-                    .Paragraph("This resource is the head of the tree of observations made during a breast radiology exam.")
-                    .Paragraph("Child observations are referenced by the 'Observation.hasMember' field.")
-                    .Todo(
+                SDefEditor e = ResourcesMaker.Self.CreateEditorXX("BreastRadSectionFindings",
+                        "Findings",
+                        "Findings",
+                        ObservationUrl,
+                        $"{Group_BaseResources}/Findings")
+                    .Description("Findings Section",
+                        new Markdown()
+                        .Paragraph("This resource is the head of the tree of observations made during a breast radiology exam.")
+                        .Paragraph("Child observations are referenced by the 'Observation.hasMember' field.")
+                        .Todo(
+                        )
                     )
-                )
-                .AddFragRef(this.ObservationNoDeviceFragment.Value())
-                .AddFragRef(this.ObservationSectionFragment.Value())
-                .AddFragRef(this.ObservationNoValueFragment.Value())
-                ;
+                    .AddFragRef(ResourcesMaker.Self.ObservationNoDeviceFragment.Value())
+                    .AddFragRef(ResourcesMaker.Self.ObservationSectionFragment.Value())
+                    .AddFragRef(ResourcesMaker.Self.ObservationNoValueFragment.Value())
+                    ;
 
-            this.sectionFindings = e.SDef.Url;
-            e.Select("value[x]").Zero();
-            e.Select("bodySite").Zero();
-            {
-                ProfileTargetSlice[] targets = new ProfileTargetSlice[]
+                s = e.SDef.Url;
+                e.Select("value[x]").Zero();
+                e.Select("bodySite").Zero();
                 {
-                    new ProfileTargetSlice(this.BiRadsAssessmentCategory.Value(), 1, "1"),
-                    new ProfileTargetSlice(this.SectionFindingsLeftBreast(), 1, "1"),
-                    new ProfileTargetSlice(this.SectionFindingsRightBreast(), 1, "1")
-                };
-                e.Find("hasMember").SliceByUrl(targets);
-                e.AddProfileTargets(targets);
-            }
+                    ProfileTargetSlice[] targets = new ProfileTargetSlice[]
+                    {
+                    new ProfileTargetSlice(ResourcesMaker.Self.BiRadsAssessmentCategory.Value(), 1, "1"),
+                    new ProfileTargetSlice(ResourcesMaker.Self.SectionFindingsLeftBreast.Value(), 1, "1"),
+                    new ProfileTargetSlice(ResourcesMaker.Self.SectionFindingsRightBreast.Value(), 1, "1")
+                    };
+                    e.Find("hasMember").SliceByUrl(targets);
+                    e.AddProfileTargets(targets);
+                }
 
-            e.IntroDoc
-             .ReviewedStatus(ReviewStatus.NotReviewed)
-             .ObservationSection($"Abnormality Finding")
-             ;
-        }
+                e.IntroDoc
+                 .ReviewedStatus(ReviewStatus.NotReviewed)
+                 .ObservationSection($"Abnormality Finding")
+                 ;
+            });
     }
 }

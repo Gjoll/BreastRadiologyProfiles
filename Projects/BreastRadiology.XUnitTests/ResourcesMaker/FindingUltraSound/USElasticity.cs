@@ -14,15 +14,7 @@ namespace BreastRadiology.XUnitTests
 {
     partial class ResourcesMaker : ConverterBase
     {
-        String USElasticity()
-        {
-            if (this.usElasticity == null)
-                this.CreateUSElasticity();
-            return this.usElasticity;
-        }
-        String usElasticity = null;
-
-        CSTaskVar BreastRadUSElasticityCS = new CSTaskVar(
+        CSTaskVar USElasticityCS = new CSTaskVar(
              () =>
                  ResourcesMaker.Self.CreateCodeSystem(
                      "BreastRadUSElasticity",
@@ -51,7 +43,7 @@ namespace BreastRadiology.XUnitTests
                  );
 
 
-        VSTaskVar BreastRadUSElasticityVS = new VSTaskVar(
+        VSTaskVar USElasticityVS = new VSTaskVar(
             () =>
                 ResourcesMaker.Self.CreateValueSet(
                     "BreastRadUSElasticity",
@@ -59,48 +51,49 @@ namespace BreastRadiology.XUnitTests
                     "US Elasticity/ValueSet",
                     "Ultra-sound Elasticity code system.",
                     Group_USCodes,
-                    ResourcesMaker.Self.BreastRadUSElasticityCS.Value())
+                    ResourcesMaker.Self.USElasticityCS.Value())
             );
 
-        void CreateUSElasticity()
-        {
-            ValueSet binding = this.BreastRadUSElasticityVS.Value();
+        StringTaskVar USElasticity = new StringTaskVar(
+            (out String s) =>
             {
-                IntroDoc valueSetIntroDoc = new IntroDoc(Path.Combine(this.pageDir, $"ValueSet-{binding.Name}-intro.xml"));
-                valueSetIntroDoc
-                    .ReviewedStatus(ReviewStatus.NotReviewed)
-                    .ValueSet(binding);
-                ;
-                String outputPath = valueSetIntroDoc.Save();
-                this.fc?.Mark(outputPath);
-            }
+                ValueSet binding = ResourcesMaker.Self.USElasticityVS.Value();
+                {
+                    IntroDoc valueSetIntroDoc = new IntroDoc(Path.Combine(ResourcesMaker.Self.pageDir, $"ValueSet-{binding.Name}-intro.xml"));
+                    valueSetIntroDoc
+                        .ReviewedStatus(ReviewStatus.NotReviewed)
+                        .ValueSet(binding);
+                    ;
+                    String outputPath = valueSetIntroDoc.Save();
+                    ResourcesMaker.Self.fc?.Mark(outputPath);
+                }
 
-            SDefEditor e = this.CreateEditor("BreastRadUSElasticity",
-                    "US Elasticity",
-                    "US Elasticity",
-                    ObservationUrl,
-                    $"{Group_USResources}/Elasticity")
-                .Description("Breast Radiology Ultra-Sound Elasticity Observation",
-                    new Markdown()
-                        .Paragraph("[PR]")
-                        .Todo(
+                SDefEditor e = ResourcesMaker.Self.CreateEditorXX("BreastRadUSElasticity",
+                        "US Elasticity",
+                        "US Elasticity",
+                        ObservationUrl,
+                        $"{Group_USResources}/Elasticity")
+                    .Description("Breast Radiology Ultra-Sound Elasticity Observation",
+                        new Markdown()
+                            .Paragraph("[PR]")
+                            .Todo(
+                            )
                         )
-                    )
-                .AddFragRef(this.ObservationNoDeviceFragment.Value())
-                .AddFragRef(this.ObservationCodedValueFragment.Value())
-                .AddFragRef(this.ObservationLeafFragment.Value())
-                ;
-            this.usElasticity = e.SDef.Url;
+                    .AddFragRef(ResourcesMaker.Self.ObservationNoDeviceFragment.Value())
+                    .AddFragRef(ResourcesMaker.Self.ObservationCodedValueFragment.Value())
+                    .AddFragRef(ResourcesMaker.Self.ObservationLeafFragment.Value())
+                    ;
+                s = e.SDef.Url;
 
-            e.Select("value[x]")
-                .Type("CodeableConcept")
-                .Binding(binding.Url, BindingStrength.Required)
-                ;
-            e.AddValueSetLink(binding);
-            e.IntroDoc
-                .ReviewedStatus(ReviewStatus.NotReviewed)
-                .CodedObservationLeafNode("an ultra-sound vascularity", binding)
-                ;
-        }
+                e.Select("value[x]")
+                    .Type("CodeableConcept")
+                    .Binding(binding.Url, BindingStrength.Required)
+                    ;
+                e.AddValueSetLink(binding);
+                e.IntroDoc
+                    .ReviewedStatus(ReviewStatus.NotReviewed)
+                    .CodedObservationLeafNode("an ultra-sound vascularity", binding)
+                    ;
+            });
     }
 }

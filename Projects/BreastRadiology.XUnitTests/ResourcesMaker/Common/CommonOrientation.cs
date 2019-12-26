@@ -14,14 +14,6 @@ namespace BreastRadiology.XUnitTests
 {
     partial class ResourcesMaker : ConverterBase
     {
-        String CommonOrientation()
-        {
-            if (this.orientation == null)
-                this.CreateOrientation();
-            return this.orientation;
-        }
-        String orientation = null;
-
         CSTaskVar CommonOrientationCS = new CSTaskVar(
              () =>
                  ResourcesMaker.Self.CreateCodeSystem(
@@ -67,53 +59,54 @@ namespace BreastRadiology.XUnitTests
                     )
             );
 
-        void CreateOrientation()
-        {
-            ValueSet binding = this.CommonOrientationVS.Value();
+        StringTaskVar CommonOrientation = new StringTaskVar(
+            (out String s) =>
             {
-                IntroDoc valueSetIntroDoc = new IntroDoc(Path.Combine(this.pageDir, $"ValueSet-{binding.Name}-intro.xml"));
-                valueSetIntroDoc
-                    .ReviewedStatus(ReviewStatus.NotReviewed)
-                    .ValueSet(binding);
-                ;
-                String outputPath = valueSetIntroDoc.Save();
-                this.fc?.Mark(outputPath);
-            }
+                ValueSet binding = ResourcesMaker.Self.CommonOrientationVS.Value();
+                {
+                    IntroDoc valueSetIntroDoc = new IntroDoc(Path.Combine(ResourcesMaker.Self.pageDir, $"ValueSet-{binding.Name}-intro.xml"));
+                    valueSetIntroDoc
+                        .ReviewedStatus(ReviewStatus.NotReviewed)
+                        .ValueSet(binding);
+                    ;
+                    String outputPath = valueSetIntroDoc.Save();
+                    ResourcesMaker.Self.fc?.Mark(outputPath);
+                }
 
-            SDefEditor e = this.CreateEditor("CommonOrientation",
-                    "Orientation",
-                    "Orientation",
-                    ObservationUrl,
-                    $"{Group_CommonResources}/Orientation")
-                .Description("Breast Radiology Orientation Observation",
-                    new Markdown()
-                        .MissingObservation("a orientation")
-                        .BiradHeader()
-                        .BlockQuote("Orientation is defined with reference to the skin")
-                        .BlockQuote("line. Obliquely situated masses may follow a radial pattern, and their long axes will help determine")
-                        .BlockQuote("classification as parallel or not parallel. Parallel or \"wider-than-tall\" orientation is a property of most")
-                        .BlockQuote("benign masses, notably fibroadenomas; however, many carcinomas have this orientation as well.")
-                        .BlockQuote("Orientation alone should not be used as an isolated feature in assessing a mass for its likelihood of")
-                        .BlockQuote("malignancy.")
-                        .BiradFooter()
-                        .Todo(
+                SDefEditor e = ResourcesMaker.Self.CreateEditorXX("CommonOrientation",
+                        "Orientation",
+                        "Orientation",
+                        ObservationUrl,
+                        $"{Group_CommonResources}/Orientation")
+                    .Description("Breast Radiology Orientation Observation",
+                        new Markdown()
+                            .MissingObservation("a orientation")
+                            .BiradHeader()
+                            .BlockQuote("Orientation is defined with reference to the skin")
+                            .BlockQuote("line. Obliquely situated masses may follow a radial pattern, and their long axes will help determine")
+                            .BlockQuote("classification as parallel or not parallel. Parallel or \"wider-than-tall\" orientation is a property of most")
+                            .BlockQuote("benign masses, notably fibroadenomas; however, many carcinomas have this orientation as well.")
+                            .BlockQuote("Orientation alone should not be used as an isolated feature in assessing a mass for its likelihood of")
+                            .BlockQuote("malignancy.")
+                            .BiradFooter()
+                            .Todo(
+                            )
                         )
-                    )
-                .AddFragRef(this.ObservationNoDeviceFragment.Value())
-                .AddFragRef(this.ObservationCodedValueFragment.Value())
-                .AddFragRef(this.ObservationLeafFragment.Value())
-                ;
-            this.orientation = e.SDef.Url;
+                    .AddFragRef(ResourcesMaker.Self.ObservationNoDeviceFragment.Value())
+                    .AddFragRef(ResourcesMaker.Self.ObservationCodedValueFragment.Value())
+                    .AddFragRef(ResourcesMaker.Self.ObservationLeafFragment.Value())
+                    ;
+                s = e.SDef.Url;
 
-            e.Select("value[x]")
-                .Type("CodeableConcept")
-                .Binding(binding.Url, BindingStrength.Required)
-                ;
-            e.AddValueSetLink(binding);
-            e.IntroDoc
-                .ReviewedStatus(ReviewStatus.NotReviewed)
-                .CodedObservationLeafNode("an orientation", binding)
-                ;
-        }
+                e.Select("value[x]")
+                    .Type("CodeableConcept")
+                    .Binding(binding.Url, BindingStrength.Required)
+                    ;
+                e.AddValueSetLink(binding);
+                e.IntroDoc
+                    .ReviewedStatus(ReviewStatus.NotReviewed)
+                    .CodedObservationLeafNode("an orientation", binding)
+                    ;
+            });
     }
 }

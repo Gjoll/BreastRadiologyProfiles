@@ -14,14 +14,6 @@ namespace BreastRadiology.XUnitTests
 {
     partial class ResourcesMaker : ConverterBase
     {
-        String NMMassMargin()
-        {
-            if (this.nmMassMargin == null)
-                this.CreateNMMassMargin();
-            return this.nmMassMargin;
-        }
-        String nmMassMargin = null;
-
         CSTaskVar BreastRadNMMassMarginCS = new CSTaskVar(
              () =>
                  ResourcesMaker.Self.CreateCodeSystem(
@@ -57,49 +49,50 @@ namespace BreastRadiology.XUnitTests
             );
 
 
-        void CreateNMMassMargin()
-        {
-            ValueSet binding = this.BreastRadNMMassMarginVS.Value();
-
+        StringTaskVar NMMassMargin = new StringTaskVar(
+            (out String s) =>
             {
-                IntroDoc valueSetIntroDoc = new IntroDoc(Path.Combine(this.pageDir, $"ValueSet-{binding.Name}-intro.xml"));
-                valueSetIntroDoc
+                ValueSet binding = ResourcesMaker.Self.BreastRadNMMassMarginVS.Value();
+
+                {
+                    IntroDoc valueSetIntroDoc = new IntroDoc(Path.Combine(ResourcesMaker.Self.pageDir, $"ValueSet-{binding.Name}-intro.xml"));
+                    valueSetIntroDoc
+                        .ReviewedStatus(ReviewStatus.NotReviewed)
+                        .ValueSet(binding);
+                    ;
+                    String outputPath = valueSetIntroDoc.Save();
+                    ResourcesMaker.Self.fc?.Mark(outputPath);
+                }
+
+                SDefEditor e = ResourcesMaker.Self.CreateEditorXX("BreastRadNMMassMargin",
+                    "NM Mass Margin",
+                    "NM/Mass/Margin",
+                    ObservationUrl,
+                    $"{Group_NMResources}/Mass/Margin")
+                    .Description("Breast Radiology NM Mass Margin Observation",
+                        new Markdown()
+                            .MissingObservation("a mass margin")
+                            .BiradHeader()
+                            .BlockQuote("The margin is the edge or border of the lesion. The descriptors of margin, like the descriptors of shape, are important predictors of whether a mass is benign or malignant. ")
+                            .BiradFooter()
+                            .Todo(
+                            )
+                    )
+                    .AddFragRef(ResourcesMaker.Self.ObservationNoDeviceFragment.Value())
+                    .AddFragRef(ResourcesMaker.Self.ObservationCodedValueFragment.Value())
+                    .AddFragRef(ResourcesMaker.Self.ObservationLeafFragment.Value())
+                    ;
+                s = e.SDef.Url;
+
+                e.Select("value[x]")
+                    .Type("CodeableConcept")
+                    .Binding(binding.Url, BindingStrength.Required)
+                    ;
+                e.AddValueSetLink(binding);
+                e.IntroDoc
                     .ReviewedStatus(ReviewStatus.NotReviewed)
-                    .ValueSet(binding);
-                ;
-                String outputPath = valueSetIntroDoc.Save();
-                this.fc?.Mark(outputPath);
-            }
-
-            SDefEditor e = this.CreateEditor("BreastRadNMMassMargin",
-                "NM Mass Margin",
-                "NM/Mass/Margin",
-                ObservationUrl,
-                $"{Group_NMResources}/Mass/Margin")
-                .Description("Breast Radiology NM Mass Margin Observation",
-                    new Markdown()
-                        .MissingObservation("a mass margin")
-                        .BiradHeader()
-                        .BlockQuote("The margin is the edge or border of the lesion. The descriptors of margin, like the descriptors of shape, are important predictors of whether a mass is benign or malignant. ")
-                        .BiradFooter()
-                        .Todo(
-                        )
-                )
-                .AddFragRef(ResourcesMaker.Self.ObservationNoDeviceFragment.Value())
-                .AddFragRef(ResourcesMaker.Self.ObservationCodedValueFragment.Value())
-                .AddFragRef(ResourcesMaker.Self.ObservationLeafFragment.Value())
-                ;
-            this.nmMassMargin = e.SDef.Url;
-
-            e.Select("value[x]")
-                .Type("CodeableConcept")
-                .Binding(binding.Url, BindingStrength.Required)
-                ;
-            e.AddValueSetLink(binding);
-            e.IntroDoc
-                .ReviewedStatus(ReviewStatus.NotReviewed)
-                .CodedObservationLeafNode("a NM mass margin", binding)
-                ;
-        }
+                    .CodedObservationLeafNode("a NM mass margin", binding)
+                    ;
+            });
     }
 }

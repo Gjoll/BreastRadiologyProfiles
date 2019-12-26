@@ -13,69 +13,62 @@ namespace BreastRadiology.XUnitTests
 {
     partial class ResourcesMaker : ConverterBase
     {
-        String USMass()
-        {
-            if (this.usMass == null)
-                this.CreateUSMass();
-            return this.usMass;
-        }
-        String usMass = null;
-
-        void CreateUSMass()
-        {
-            SDefEditor e = this.CreateEditor("BreastRadUSMass",
-                    "US Mass",
-                    "US Mass",
-                    ObservationUrl,
-                    $"{Group_USResources}/Finding/Mass")
-                .Description("Breast Radiology Mammography Ultra-Sound Mass Observation",
-                    new Markdown()
-                        .MissingObservation("a mass", "and no Shape, Orientation, Margin, Echo Pattern, or Posterior Acoustic Feature observations should be referenced by this observation")
-                        .BiradHeader()
-                        .BlockQuote("A mass is three dimensional and occupies space. With 2-D ultrasound, it should be seen in two")
-                        .BlockQuote("different planes, and in three planes with volumetric acquisitions. Masses can be distinguished")
-                        .BlockQuote("from normal anatomic structures, such as ribs or fat lobules, using two or more projections and")
-                        .BlockQuote("real-time scanning.")
-                        .BiradFooter()
-                        .Todo(
-                            "add mass size measurements (3 dimensional) like US?",
-                            "same for asymmetry, lesion, calcification?"
-                        )
-                )
-                .AddFragRef(this.ObservationNoDeviceFragment.Value())
-                .AddFragRef(this.BreastBodyLocationRequiredFragment.Value())
-                .AddFragRef(this.ObservationSectionFragment.Value())
-                .AddFragRef(this.ObservationNoValueFragment.Value())
-                .AddFragRef(this.ImagingStudyFragment.Value())
-                ;
-            this.usMass = e.SDef.Url;
+        StringTaskVar USMass = new StringTaskVar(
+            (out String s) =>
             {
-                ProfileTargetSlice[] targets = new ProfileTargetSlice[]
+                SDefEditor e = ResourcesMaker.Self.CreateEditorXX("BreastRadUSMass",
+                        "US Mass",
+                        "US Mass",
+                        ObservationUrl,
+                        $"{Group_USResources}/Finding/Mass")
+                    .Description("Breast Radiology Mammography Ultra-Sound Mass Observation",
+                        new Markdown()
+                            .MissingObservation("a mass", "and no Shape, Orientation, Margin, Echo Pattern, or Posterior Acoustic Feature observations should be referenced by this observation")
+                            .BiradHeader()
+                            .BlockQuote("A mass is three dimensional and occupies space. With 2-D ultrasound, it should be seen in two")
+                            .BlockQuote("different planes, and in three planes with volumetric acquisitions. Masses can be distinguished")
+                            .BlockQuote("from normal anatomic structures, such as ribs or fat lobules, using two or more projections and")
+                            .BlockQuote("real-time scanning.")
+                            .BiradFooter()
+                            .Todo(
+                                "add mass size measurements (3 dimensional) like US?",
+                                "same for asymmetry, lesion, calcification?"
+                            )
+                    )
+                    .AddFragRef(ResourcesMaker.Self.ObservationNoDeviceFragment.Value())
+                    .AddFragRef(ResourcesMaker.Self.BreastBodyLocationRequiredFragment.Value())
+                    .AddFragRef(ResourcesMaker.Self.ObservationSectionFragment.Value())
+                    .AddFragRef(ResourcesMaker.Self.ObservationNoValueFragment.Value())
+                    .AddFragRef(ResourcesMaker.Self.ImagingStudyFragment.Value())
+                    ;
+                s = e.SDef.Url;
                 {
-                    new ProfileTargetSlice(this.BiRadsAssessmentCategory.Value(), 0, "1"),
+                    ProfileTargetSlice[] targets = new ProfileTargetSlice[]
+                    {
+                    new ProfileTargetSlice(ResourcesMaker.Self.BiRadsAssessmentCategory.Value(), 0, "1"),
 
-                    new ProfileTargetSlice(this.CommonObservedCount(), 0, "1"),
-                    new ProfileTargetSlice(this.CommonObservedChangeInState(), 0, "*"),
-                    new ProfileTargetSlice(this.CommonObservedSize(), 0, "1"),
-                    new ProfileTargetSlice(this.CommonOrientation(), 0, "1"),
-                    new ProfileTargetSlice(this.CommonHilum(), 0, "1"),
+                    new ProfileTargetSlice(ResourcesMaker.Self.CommonObservedCount.Value(), 0, "1"),
+                    new ProfileTargetSlice(ResourcesMaker.Self.CommonObservedChangeInState.Value(), 0, "*"),
+                    new ProfileTargetSlice(ResourcesMaker.Self.CommonObservedSize.Value(), 0, "1"),
+                    new ProfileTargetSlice(ResourcesMaker.Self.CommonOrientation.Value(), 0, "1"),
+                    new ProfileTargetSlice(ResourcesMaker.Self.CommonHilum.Value(), 0, "1"),
 
-                    new ProfileTargetSlice(this.USBoundary(), 0, "1"),
-                    new ProfileTargetSlice(this.USEchoPattern(), 0, "1"),
-                    new ProfileTargetSlice(this.USElasticity(), 0, "1"),
-                    new ProfileTargetSlice(this.USMargin(), 0, "*"),
-                    new ProfileTargetSlice(this.USPosteriorAcousticFeatures(), 0, "1"),
-                    new ProfileTargetSlice(this.USShape(), 0, "1"),
-                    new ProfileTargetSlice(this.USVascularity(), 0, "1"),
-                };
-                e.Find("hasMember").SliceByUrl(targets);
-                e.AddProfileTargets(targets);
-            }
+                    new ProfileTargetSlice(ResourcesMaker.Self.USBoundary.Value(), 0, "1"),
+                    new ProfileTargetSlice(ResourcesMaker.Self.USEchoPattern.Value(), 0, "1"),
+                    new ProfileTargetSlice(ResourcesMaker.Self.USElasticity.Value(), 0, "1"),
+                    new ProfileTargetSlice(ResourcesMaker.Self.USMargin.Value(), 0, "*"),
+                    new ProfileTargetSlice(ResourcesMaker.Self.USPosteriorAcousticFeatures.Value(), 0, "1"),
+                    new ProfileTargetSlice(ResourcesMaker.Self.USShape.Value(), 0, "1"),
+                    new ProfileTargetSlice(ResourcesMaker.Self.USVascularity.Value(), 0, "1"),
+                    };
+                    e.Find("hasMember").SliceByUrl(targets);
+                    e.AddProfileTargets(targets);
+                }
 
-            e.IntroDoc
-                .ReviewedStatus(ReviewStatus.NotReviewed)
-                .ObservationSection($"Ultra-Sound Mass")
-                ;
-        }
+                e.IntroDoc
+                    .ReviewedStatus(ReviewStatus.NotReviewed)
+                    .ObservationSection($"Ultra-Sound Mass")
+                    ;
+            });
     }
 }

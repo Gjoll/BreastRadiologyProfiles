@@ -34,10 +34,10 @@ namespace BreastRadiology.XUnitTests
             {
                 ProfileTargetSlice[] targets = new ProfileTargetSlice[]
                 {
-                    new ProfileTargetSlice(ResourcesMaker.Self.CommonOrientation(), 0, "*"),
-                    new ProfileTargetSlice(ResourcesMaker.Self.MGShape(), 0, "1"),
-                    new ProfileTargetSlice(ResourcesMaker.Self.MGMassMargin(), 0, "1"),
-                    new ProfileTargetSlice(ResourcesMaker.Self.MGDensity(), 0, "1"),
+                    new ProfileTargetSlice(ResourcesMaker.Self.CommonOrientation.Value(), 0, "*"),
+                    new ProfileTargetSlice(ResourcesMaker.Self.MGShape.Value(), 0, "1"),
+                    new ProfileTargetSlice(ResourcesMaker.Self.MGMassMargin.Value(), 0, "1"),
+                    new ProfileTargetSlice(ResourcesMaker.Self.MGDensity.Value(), 0, "1"),
                 };
                 e.Find("hasMember").SliceByUrl(targets);
                 e.AddProfileTargets(targets);

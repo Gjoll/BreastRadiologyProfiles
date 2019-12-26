@@ -14,24 +14,16 @@ namespace BreastRadiology.XUnitTests
 {
     partial class ResourcesMaker : ConverterBase
     {
-        String MRIMassMargin()
-        {
-            if (this.mriMassMargin == null)
-                this.CreateMRIMassMargin();
-            return this.mriMassMargin;
-        }
-        String mriMassMargin = null;
-
-       CSTaskVar BreastRadMRIMassMarginCS = new CSTaskVar(
-            () =>
-                ResourcesMaker.Self.CreateCodeSystem(
-                    "BreastRadMRIMassMargin",
-                    "MRI Mass Margin",
-                    "MRI Mass/Margin CodeSystem",
-                    "MRI mass margin code system.",
-                    Group_MRICodes,
-                    new ConceptDef[]
-                    {
+        CSTaskVar BreastRadMRIMassMarginCS = new CSTaskVar(
+             () =>
+                 ResourcesMaker.Self.CreateCodeSystem(
+                     "BreastRadMRIMassMargin",
+                     "MRI Mass Margin",
+                     "MRI Mass/Margin CodeSystem",
+                     "MRI mass margin code system.",
+                     Group_MRICodes,
+                     new ConceptDef[]
+                     {
                     new ConceptDef("Irregular",
                         "Irregular Margin",
                         new Definition()
@@ -63,8 +55,8 @@ namespace BreastRadiology.XUnitTests
                             .Line("implies a suspicious finding.")
                         .CiteEnd(BiRadCitation)
                         )
-                    })
-                );
+                     })
+                 );
 
 
         VSTaskVar BreastRadMRIMassMarginVS = new VSTaskVar(
@@ -80,20 +72,21 @@ namespace BreastRadiology.XUnitTests
             );
 
 
-        void CreateMRIMassMargin()
-        {
-                ValueSet binding = this.BreastRadMRIMassMarginVS.Value();
+        StringTaskVar MRIMassMargin = new StringTaskVar(
+            (out String s) =>
+            {
+                ValueSet binding = ResourcesMaker.Self.BreastRadMRIMassMarginVS.Value();
                 {
-                    IntroDoc valueSetIntroDoc = new IntroDoc(Path.Combine(this.pageDir, $"ValueSet-{binding.Name}-intro.xml"));
+                    IntroDoc valueSetIntroDoc = new IntroDoc(Path.Combine(ResourcesMaker.Self.pageDir, $"ValueSet-{binding.Name}-intro.xml"));
                     valueSetIntroDoc
                         .ReviewedStatus(ReviewStatus.NotReviewed)
                         .ValueSet(binding);
                     ;
                     String outputPath = valueSetIntroDoc.Save();
-                    this.fc?.Mark(outputPath);
+                    ResourcesMaker.Self.fc?.Mark(outputPath);
                 }
 
-                SDefEditor e = this.CreateEditor("BreastRadMRIMassMargin",
+                SDefEditor e = ResourcesMaker.Self.CreateEditorXX("BreastRadMRIMassMargin",
                     "MRI Mass Margin",
                     "MRI Mass/Margin",
                     ObservationUrl,
@@ -113,17 +106,17 @@ namespace BreastRadiology.XUnitTests
                     .AddFragRef(ResourcesMaker.Self.ObservationCodedValueFragment.Value())
                     .AddFragRef(ResourcesMaker.Self.ObservationLeafFragment.Value())
                     ;
-            this.mriMassMargin = e.SDef.Url;
+                s = e.SDef.Url;
 
-            e.Select("value[x]")
-                    .Type("CodeableConcept")
-                    .Binding(binding.Url, BindingStrength.Required)
-                    ;
+                e.Select("value[x]")
+                        .Type("CodeableConcept")
+                        .Binding(binding.Url, BindingStrength.Required)
+                        ;
                 e.AddValueSetLink(binding);
                 e.IntroDoc
                     .ReviewedStatus(ReviewStatus.NotReviewed)
                     .CodedObservationLeafNode("a MRI mass margin", binding)
                     ;
-        }
+            });
     }
 }

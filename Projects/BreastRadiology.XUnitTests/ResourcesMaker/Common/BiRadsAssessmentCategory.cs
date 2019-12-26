@@ -28,7 +28,7 @@ namespace BreastRadiology.XUnitTests
                     ResourcesMaker.Self.fc?.Mark(outputPath);
                 }
 
-                SDefEditor e = ResourcesMaker.Self.CreateEditor("BiRadsAssessmentCategory",
+                SDefEditor e = ResourcesMaker.Self.CreateEditorXX("BiRadsAssessmentCategory",
                         "BiRads Assessment Category",
                         "BiRads Code",
                         ObservationUrl,
