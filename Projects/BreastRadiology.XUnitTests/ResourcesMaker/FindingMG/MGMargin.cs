@@ -14,12 +14,12 @@ namespace BreastRadiology.XUnitTests
 {
     partial class ResourcesMaker : ConverterBase
     {
-        VSTaskVar BreastRadMammoMassMarginVS = new VSTaskVar(
+        VSTaskVar MGMarginVS = new VSTaskVar(
             () =>
                 ResourcesMaker.Self.CreateValueSet(
                     "BreastRadMammoMassMargin",
                     "Mammography Mass Margin",
-                    "Mg Mass MarginValueSet",
+                    "Mg MarginValueSet",
                     "Mammography mass margin ValueSet.",
                     Group_MGCodes,
                     ResourcesMaker.Self.CommonMarginCS.Value()
@@ -30,7 +30,7 @@ namespace BreastRadiology.XUnitTests
         StringTaskVar MGMassMargin = new StringTaskVar(
             (out String s) =>
             {
-                ValueSet binding = ResourcesMaker.Self.BreastRadMammoMassMarginVS.Value();
+                ValueSet binding = ResourcesMaker.Self.MGMarginVS.Value();
                 binding
                     .Remove("IntraductalExtension")
                     .Remove("Lobulated")
@@ -48,11 +48,11 @@ namespace BreastRadiology.XUnitTests
                 }
 
                 SDefEditor e = ResourcesMaker.Self.CreateEditorXX("BreastRadMammoMassMargin",
-                    "Mammography Mass Margin",
-                    "Mg Mass Margin",
+                    "Mammography Margin",
+                    "Mg Margin",
                     ObservationUrl,
-                    $"{Group_MGResources}/Mass/Margin")
-                    .Description("Breast Radiology Mammography Mass Margin Observation",
+                    $"{Group_MGResources}/Margin")
+                    .Description("Breast Radiology Mammography Margin Observation",
                         new Markdown()
                             .MissingObservation("a mass margin")
                             .BiradHeader()

@@ -15,7 +15,7 @@ namespace BreastRadiology.XUnitTests
     partial class ResourcesMaker
     {
 
-        VSTaskVar MammoShapeVS = new VSTaskVar(
+        VSTaskVar MGShapeVS = new VSTaskVar(
             () =>
                 ResourcesMaker.Self.CreateValueSet(
                         "MammoShape",
@@ -31,7 +31,7 @@ namespace BreastRadiology.XUnitTests
         StringTaskVar MGShape = new StringTaskVar(
             (out String s) =>
             {
-                ValueSet binding = ResourcesMaker.Self.MammoShapeVS.Value();
+                ValueSet binding = ResourcesMaker.Self.MGShapeVS.Value();
                 {
                     IntroDoc valueSetIntroDoc = new IntroDoc(Path.Combine(ResourcesMaker.Self.pageDir, $"ValueSet-{binding.Name}-intro.xml"));
                     valueSetIntroDoc

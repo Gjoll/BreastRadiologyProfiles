@@ -60,7 +60,7 @@ namespace BreastRadiology.XUnitTests
 
 
 
-        VSTaskVar BreastRadUSVascularityVS = new VSTaskVar(
+        VSTaskVar USVascularityVS = new VSTaskVar(
             () =>
                 ResourcesMaker.Self.CreateValueSet(
                     "BreastRadUSVascularity",
@@ -77,7 +77,7 @@ namespace BreastRadiology.XUnitTests
         StringTaskVar USVascularity = new StringTaskVar(
             (out String s) =>
             {
-                ValueSet binding = ResourcesMaker.Self.BreastRadUSVascularityVS.Value();
+                ValueSet binding = ResourcesMaker.Self.USVascularityVS.Value();
 
                 {
                     IntroDoc valueSetIntroDoc = new IntroDoc(Path.Combine(ResourcesMaker.Self.pageDir, $"ValueSet-{binding.Name}-intro.xml"));

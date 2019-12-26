@@ -81,7 +81,7 @@ namespace BreastRadiology.XUnitTests
              );
 
 
-        VSTaskVar BreastRadMammoBreastDensityVS = new VSTaskVar(
+        VSTaskVar MGBreastDensityVS = new VSTaskVar(
             () =>
                 ResourcesMaker.Self.CreateValueSet(
                     "BreastRadMammoBreastDensity",
@@ -97,7 +97,7 @@ namespace BreastRadiology.XUnitTests
         StringTaskVar MGBreastDensity = new StringTaskVar(
             (out String s) =>
             {
-                ValueSet binding = ResourcesMaker.Self.BreastRadMammoBreastDensityVS.Value();
+                ValueSet binding = ResourcesMaker.Self.MGBreastDensityVS.Value();
 
                 {
                     IntroDoc valueSetIntroDoc = new IntroDoc(Path.Combine(ResourcesMaker.Self.pageDir, $"ValueSet-{binding.Name}-intro.xml"));

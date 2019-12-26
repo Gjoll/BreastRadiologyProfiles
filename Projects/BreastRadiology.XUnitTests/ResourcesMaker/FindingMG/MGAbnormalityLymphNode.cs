@@ -13,7 +13,7 @@ namespace BreastRadiology.XUnitTests
 {
     partial class ResourcesMaker : ConverterBase
     {
-        CSTaskVar BreastRadMammoAbnormalityLymphNodeCS = new CSTaskVar(
+        CSTaskVar MGAbnormalityLymphNodeCS = new CSTaskVar(
              () =>
                  ResourcesMaker.Self.CreateCodeSystem(
                         "BreastRadMammoAbnormalityLymphNode",
@@ -74,7 +74,7 @@ namespace BreastRadiology.XUnitTests
                  );
 
 
-        VSTaskVar BreastRadMammoAbnormalityLymphNodeVS = new VSTaskVar(
+        VSTaskVar MGAbnormalityLymphNodeVS = new VSTaskVar(
             () =>
                 ResourcesMaker.Self.CreateValueSet(
                    "BreastRadMammoAbnormalityLymphNode",
@@ -82,7 +82,7 @@ namespace BreastRadiology.XUnitTests
                     "Mg Lymph Node/ValueSet",
                    "Codes defining types of mammography lymph node abnormalities.",
                     Group_MGCodes,
-                    ResourcesMaker.Self.BreastRadMammoAbnormalityLymphNodeCS.Value()
+                    ResourcesMaker.Self.MGAbnormalityLymphNodeCS.Value()
                     )
             );
 
@@ -90,7 +90,7 @@ namespace BreastRadiology.XUnitTests
         StringTaskVar MGAbnormalityLymphNode = new StringTaskVar(
             (out String s) =>
             {
-                ValueSet binding = ResourcesMaker.Self.BreastRadMammoAbnormalityLymphNodeVS.Value();
+                ValueSet binding = ResourcesMaker.Self.MGAbnormalityLymphNodeVS.Value();
 
                 SDefEditor e = ResourcesMaker.Self.CreateEditorXX("BreastRadMammoAbnormalityLymphNode",
                     "Mammography LymphNode Abnormality",

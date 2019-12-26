@@ -13,7 +13,7 @@ namespace BreastRadiology.XUnitTests
 {
     partial class ResourcesMaker : ConverterBase
     {
-        CSTaskVar MammoCalcificationTypeCS = new CSTaskVar(
+        CSTaskVar MGCalcificationTypeCS = new CSTaskVar(
              () =>
                  ResourcesMaker.Self.CreateCodeSystem(
                      "MammoCalcificationType",
@@ -188,7 +188,7 @@ namespace BreastRadiology.XUnitTests
              );
 
 
-        VSTaskVar MammoCalcificationTypeVS = new VSTaskVar(
+        VSTaskVar MGCalcificationTypeVS = new VSTaskVar(
             () =>
                 ResourcesMaker.Self.CreateValueSet(
                     "MammoCalcificationType",
@@ -196,7 +196,7 @@ namespace BreastRadiology.XUnitTests
                     "Mg Calc. TypeValueSet",
                     "Mammography calcification type code system.",
                     Group_MGCodes,
-                    ResourcesMaker.Self.MammoCalcificationTypeCS.Value()
+                    ResourcesMaker.Self.MGCalcificationTypeCS.Value()
                     )
             );
 
@@ -204,7 +204,7 @@ namespace BreastRadiology.XUnitTests
         StringTaskVar MGCalcificationType = new StringTaskVar(
             (out String s) =>
             {
-                ValueSet binding = ResourcesMaker.Self.MammoCalcificationTypeVS.Value();
+                ValueSet binding = ResourcesMaker.Self.MGCalcificationTypeVS.Value();
 
                 {
                     IntroDoc valueSetIntroDoc = new IntroDoc(Path.Combine(ResourcesMaker.Self.pageDir, $"ValueSet-{binding.Name}-intro.xml"));

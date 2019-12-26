@@ -80,7 +80,7 @@ namespace BreastRadiology.XUnitTests
                  ));
 
 
-        VSTaskVar MammoCalcificationDistributionVS = new VSTaskVar(
+        VSTaskVar MGCalcificationDistributionVS = new VSTaskVar(
             () =>
                 ResourcesMaker.Self.CreateValueSet(
                         "MammoCalcificationDistribution",
@@ -96,7 +96,7 @@ namespace BreastRadiology.XUnitTests
         StringTaskVar MGCalcificationDistribution = new StringTaskVar(
             (out String s) =>
             {
-                ValueSet binding = ResourcesMaker.Self.MammoCalcificationDistributionVS.Value();
+                ValueSet binding = ResourcesMaker.Self.MGCalcificationDistributionVS.Value();
 
                 {
                     IntroDoc valueSetIntroDoc = new IntroDoc(Path.Combine(ResourcesMaker.Self.pageDir, $"ValueSet-{binding.Name}-intro.xml"));

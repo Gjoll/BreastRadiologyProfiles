@@ -14,7 +14,7 @@ namespace BreastRadiology.XUnitTests
 {
     partial class ResourcesMaker : ConverterBase
     {
-        CSTaskVar BreastRadNMMassMarginCS = new CSTaskVar(
+        CSTaskVar NMMassMarginCS = new CSTaskVar(
              () =>
                  ResourcesMaker.Self.CreateCodeSystem(
                      "BreastRadNMMassMargin",
@@ -36,7 +36,7 @@ namespace BreastRadiology.XUnitTests
                  );
 
 
-        VSTaskVar BreastRadNMMassMarginVS = new VSTaskVar(
+        VSTaskVar NMMassMarginVS = new VSTaskVar(
             () =>
                 ResourcesMaker.Self.CreateValueSet(
                         "BreastRadNMMassMargin",
@@ -44,7 +44,7 @@ namespace BreastRadiology.XUnitTests
                         "NM/Mass/Margin/ValueSet",
                         "NM mass margin value set.",
                         Group_NMCodes,
-                        ResourcesMaker.Self.BreastRadNMMassMarginCS.Value()
+                        ResourcesMaker.Self.NMMassMarginCS.Value()
                     )
             );
 
@@ -52,7 +52,7 @@ namespace BreastRadiology.XUnitTests
         StringTaskVar NMMassMargin = new StringTaskVar(
             (out String s) =>
             {
-                ValueSet binding = ResourcesMaker.Self.BreastRadNMMassMarginVS.Value();
+                ValueSet binding = ResourcesMaker.Self.NMMassMarginVS.Value();
 
                 {
                     IntroDoc valueSetIntroDoc = new IntroDoc(Path.Combine(ResourcesMaker.Self.pageDir, $"ValueSet-{binding.Name}-intro.xml"));

@@ -15,7 +15,7 @@ namespace BreastRadiology.XUnitTests
     partial class ResourcesMaker : ConverterBase
     {
 
-        CSTaskVar BreastRadMammoAbnormalityAsymmetryRefinementCS = new CSTaskVar(
+        CSTaskVar MGAbnormalityAsymmetryRefinementCS = new CSTaskVar(
              () =>
                  ResourcesMaker.Self.CreateCodeSystem(
                     "BreastRadMammoAbnormalityAsymmetryRefinement",
@@ -79,7 +79,7 @@ namespace BreastRadiology.XUnitTests
              );
 
 
-        VSTaskVar BreastRadMammoAbnormalityAsymmetriesVS = new VSTaskVar(
+        VSTaskVar MGAbnormalityAsymmetriesVS = new VSTaskVar(
             () =>
                 ResourcesMaker.Self.CreateValueSet(
                    "BreastRadMammoAbnormalityAsymmetries",
@@ -87,7 +87,7 @@ namespace BreastRadiology.XUnitTests
                     "Mg Asymmetry/ValueSet",
                    "Codes defining types of mammography asymmetry abnormalities.",
                     Group_MGCodes,
-                    ResourcesMaker.Self.BreastRadMammoAbnormalityAsymmetryRefinementCS.Value()
+                    ResourcesMaker.Self.MGAbnormalityAsymmetryRefinementCS.Value()
                     )
             );
 
@@ -95,7 +95,7 @@ namespace BreastRadiology.XUnitTests
         StringTaskVar MGAbnormalityAsymmetry = new StringTaskVar(
             (out String s) =>
             {
-                ValueSet binding = ResourcesMaker.Self.BreastRadMammoAbnormalityAsymmetriesVS.Value();
+                ValueSet binding = ResourcesMaker.Self.MGAbnormalityAsymmetriesVS.Value();
 
                 {
                     IntroDoc valueSetIntroDoc = new IntroDoc(Path.Combine(ResourcesMaker.Self.pageDir, $"ValueSet-{binding.Name}-intro.xml"));

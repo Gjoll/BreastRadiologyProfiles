@@ -14,7 +14,7 @@ namespace BreastRadiology.XUnitTests
 {
     partial class ResourcesMaker : ConverterBase
     {
-        VSTaskVar BreastRadUSMarginVS = new VSTaskVar(
+        VSTaskVar USMarginVS = new VSTaskVar(
             () =>
             {
                 ValueSet binding = ResourcesMaker.Self.CreateValueSet(
@@ -36,7 +36,7 @@ namespace BreastRadiology.XUnitTests
         StringTaskVar USMargin = new StringTaskVar(
             (out String s) =>
             {
-                ValueSet binding = ResourcesMaker.Self.BreastRadUSMarginVS.Value();
+                ValueSet binding = ResourcesMaker.Self.USMarginVS.Value();
                 {
                     IntroDoc valueSetIntroDoc = new IntroDoc(Path.Combine(ResourcesMaker.Self.pageDir, $"ValueSet-{binding.Name}-intro.xml"));
                     valueSetIntroDoc

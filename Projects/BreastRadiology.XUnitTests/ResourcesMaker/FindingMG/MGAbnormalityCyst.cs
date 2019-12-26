@@ -13,7 +13,7 @@ namespace BreastRadiology.XUnitTests
 {
     partial class ResourcesMaker : ConverterBase
     {
-        CSTaskVar BreastRadMammoAbnormalityCystRefinementCS = new CSTaskVar(
+        CSTaskVar MGAbnormalityCystRefinementCS = new CSTaskVar(
              () =>
                  ResourcesMaker.Self.CreateCodeSystem(
                         "BreastRadMammoAbnormalityCystRefinement",
@@ -53,7 +53,7 @@ namespace BreastRadiology.XUnitTests
              );
 
 
-        VSTaskVar BreastRadMammoAbnormalityCystVS = new VSTaskVar(
+        VSTaskVar MGAbnormalityCystVS = new VSTaskVar(
             () =>
                 ResourcesMaker.Self.CreateValueSet(
                    "BreastRadMammoAbnormalityCyst",
@@ -61,7 +61,7 @@ namespace BreastRadiology.XUnitTests
                     "Mg Cyst/ValueSet",
                    "Codes defining types of mammography cyst abnormalities.",
                     Group_MGCodes,
-                    ResourcesMaker.Self.BreastRadMammoAbnormalityCystRefinementCS.Value()
+                    ResourcesMaker.Self.MGAbnormalityCystRefinementCS.Value()
                     )
             );
 
@@ -69,7 +69,7 @@ namespace BreastRadiology.XUnitTests
         StringTaskVar MGAbnormalityCyst = new StringTaskVar(
             (out String s) =>
             {
-                ValueSet binding = ResourcesMaker.Self.BreastRadMammoAbnormalityCystVS.Value();
+                ValueSet binding = ResourcesMaker.Self.MGAbnormalityCystVS.Value();
 
                 {
                     IntroDoc valueSetIntroDoc = new IntroDoc(Path.Combine(ResourcesMaker.Self.pageDir, $"ValueSet-{binding.Name}-intro.xml"));

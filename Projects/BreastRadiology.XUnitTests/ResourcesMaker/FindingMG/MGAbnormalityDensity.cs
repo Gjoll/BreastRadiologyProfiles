@@ -14,7 +14,7 @@ namespace BreastRadiology.XUnitTests
     partial class ResourcesMaker : ConverterBase
     {
 
-        CSTaskVar BreastRadMammoAbnormalityDensityCS = new CSTaskVar(
+        CSTaskVar MGAbnormalityDensityCS = new CSTaskVar(
              () =>
                  ResourcesMaker.Self.CreateCodeSystem(
                         "BreastRadMammoAbnormalityDensity",
@@ -44,7 +44,7 @@ namespace BreastRadiology.XUnitTests
                  );
 
 
-        VSTaskVar BreastRadMammoAbnormalityDensityVS = new VSTaskVar(
+        VSTaskVar MGAbnormalityDensityVS = new VSTaskVar(
             () =>
                 ResourcesMaker.Self.CreateValueSet(
                    "BreastRadMammoAbnormalityDensity",
@@ -52,7 +52,7 @@ namespace BreastRadiology.XUnitTests
                     "Mg Density/ValueSet",
                    "Codes defining types of mammography density abnormalities.",
                     Group_MGCodes,
-                    ResourcesMaker.Self.BreastRadMammoAbnormalityDensityCS.Value()
+                    ResourcesMaker.Self.MGAbnormalityDensityCS.Value()
                     )
             );
 
@@ -60,7 +60,7 @@ namespace BreastRadiology.XUnitTests
         StringTaskVar MGAbnormalityDensity = new StringTaskVar(
             (out String s) =>
             {
-                ValueSet binding = ResourcesMaker.Self.BreastRadMammoAbnormalityDensityVS.Value();
+                ValueSet binding = ResourcesMaker.Self.MGAbnormalityDensityVS.Value();
 
                 SDefEditor e = ResourcesMaker.Self.CreateEditorXX("BreastRadMammoAbnormalityDensity",
                         "Mammography Density Abnormality",

@@ -57,7 +57,7 @@ namespace BreastRadiology.XUnitTests
              );
 
 
-        VSTaskVar BreastRadUSTissueCompositionVS = new VSTaskVar(
+        VSTaskVar USTissueCompositionVS = new VSTaskVar(
             () =>
                 ResourcesMaker.Self.CreateValueSet(
                     "BreastRadUSTissueComposition",
@@ -73,7 +73,7 @@ namespace BreastRadiology.XUnitTests
         StringTaskVar USTissueComposition = new StringTaskVar(
             (out String s) =>
             {
-                ValueSet binding = ResourcesMaker.Self.BreastRadUSTissueCompositionVS.Value();
+                ValueSet binding = ResourcesMaker.Self.USTissueCompositionVS.Value();
                 {
                     IntroDoc valueSetIntroDoc = new IntroDoc(Path.Combine(ResourcesMaker.Self.pageDir, $"ValueSet-{binding.Name}-intro.xml"));
                     valueSetIntroDoc

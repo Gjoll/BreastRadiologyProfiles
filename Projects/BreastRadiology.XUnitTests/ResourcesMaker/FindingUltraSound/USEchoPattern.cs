@@ -1,20 +1,14 @@
-using System;
-using System.Collections.Generic;
-using System.Diagnostics;
-using System.IO;
-using System.Linq;
-using System.Text;
 using FhirKhit.Tools;
 using FhirKhit.Tools.R4;
 using Hl7.Fhir.Model;
-using Hl7.Fhir.Serialization;
-using PreFhir;
+using System;
+using System.IO;
 
 namespace BreastRadiology.XUnitTests
 {
     partial class ResourcesMaker : ConverterBase
     {
-        CSTaskVar BreastRadUSEchoPatternCS = new CSTaskVar(
+        CSTaskVar USEchoPatternCS = new CSTaskVar(
              () =>
                  ResourcesMaker.Self.CreateCodeSystem(
                      "BreastRadUSEchoPattern",
@@ -110,7 +104,7 @@ namespace BreastRadiology.XUnitTests
                  );
 
 
-        VSTaskVar BreastRadUSEchoPatternVS = new VSTaskVar(
+        VSTaskVar USEchoPatternVS = new VSTaskVar(
             () =>
                 ResourcesMaker.Self.CreateValueSet(
                     "BreastRadUSEchoPattern",
@@ -118,14 +112,14 @@ namespace BreastRadiology.XUnitTests
                     "US Echo Pattern/ValueSet",
                     "Ultra-sound mass echo pattern code system.",
                     Group_USCodes,
-                    ResourcesMaker.Self.BreastRadUSEchoPatternCS.Value())
+                    ResourcesMaker.Self.USEchoPatternCS.Value())
             );
 
 
         StringTaskVar USEchoPattern = new StringTaskVar(
             (out String s) =>
             {
-                ValueSet binding = ResourcesMaker.Self.BreastRadUSEchoPatternVS.Value();
+                ValueSet binding = ResourcesMaker.Self.USEchoPatternVS.Value();
 
                 {
                     IntroDoc valueSetIntroDoc = new IntroDoc(Path.Combine(ResourcesMaker.Self.pageDir, $"ValueSet-{binding.Name}-intro.xml"));
