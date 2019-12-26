@@ -57,7 +57,7 @@ namespace BreastRadiology.XUnitTests
 
         VSTaskVar CommonOrientationVS = new VSTaskVar(
             () =>
-                ResourcesMaker.Self.CreateValueSetXX(
+                ResourcesMaker.Self.CreateValueSet(
                         "CommonOrientation",
                         "Orientation",
                         "Orientation CodeSystem",
@@ -99,9 +99,9 @@ namespace BreastRadiology.XUnitTests
                         .Todo(
                         )
                     )
-                .AddFragRef(this.ObservationNoDeviceFragment())
-                .AddFragRef(this.ObservationCodedValueFragment())
-                .AddFragRef(this.ObservationLeafFragment())
+                .AddFragRef(this.ObservationNoDeviceFragment.Value())
+                .AddFragRef(this.ObservationCodedValueFragment.Value())
+                .AddFragRef(this.ObservationLeafFragment.Value())
                 ;
             this.orientation = e.SDef.Url;
 

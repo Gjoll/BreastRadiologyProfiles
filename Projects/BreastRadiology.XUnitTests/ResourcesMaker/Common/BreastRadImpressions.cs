@@ -35,7 +35,7 @@ namespace BreastRadiology.XUnitTests
                         .Todo(
                         )
                 )
-                .AddFragRef(this.HeaderFragment())
+                .AddFragRef(this.HeaderFragment.Value())
                 ;
 
             this.breastRadImpression = e.SDef.Url;

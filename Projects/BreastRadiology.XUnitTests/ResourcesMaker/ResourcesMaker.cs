@@ -225,7 +225,7 @@ namespace BreastRadiology.XUnitTests
                 Content = CodeSystem.CodeSystemContentMode.Complete,
                 Count = codes.Count(),
             };
-            cs.AddFragRef(this.HeaderFragment());
+            cs.AddFragRef(this.HeaderFragment.Value());
 
             // store groupPath as an extension. This is an unregistered extension that will be removed before
             // processing is complete.
@@ -252,7 +252,7 @@ namespace BreastRadiology.XUnitTests
         /// <summary>
         /// Create a value set of all the codes in the passed code system.
         /// </summary>
-        ValueSet CreateValueSetXX(String name,
+        ValueSet CreateValueSet(String name,
             String title,
             String mapName,
             String description,
@@ -267,7 +267,7 @@ namespace BreastRadiology.XUnitTests
                 Title = $"{title} ValueSet",
                 Description = new Markdown(description)
             };
-            vs.AddFragRef(this.HeaderFragment());
+            vs.AddFragRef(this.HeaderFragment.Value());
 
             // store groupPath as an extension. This is an unregistered extension that will be removed before
             // processing is complete.

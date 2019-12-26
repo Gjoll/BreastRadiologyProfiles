@@ -46,7 +46,7 @@ namespace BreastRadiology.XUnitTests
 
         VSTaskVar BreastRadNMMassMarginVS = new VSTaskVar(
             () =>
-                ResourcesMaker.Self.CreateValueSetXX(
+                ResourcesMaker.Self.CreateValueSet(
                         "BreastRadNMMassMargin",
                         "NM Mass Margin",
                         "NM/Mass/Margin/ValueSet",
@@ -85,9 +85,9 @@ namespace BreastRadiology.XUnitTests
                         .Todo(
                         )
                 )
-                .AddFragRef(this.ObservationNoDeviceFragment())
-                .AddFragRef(this.ObservationCodedValueFragment())
-                .AddFragRef(this.ObservationLeafFragment())
+                .AddFragRef(ResourcesMaker.Self.ObservationNoDeviceFragment.Value())
+                .AddFragRef(ResourcesMaker.Self.ObservationCodedValueFragment.Value())
+                .AddFragRef(ResourcesMaker.Self.ObservationLeafFragment.Value())
                 ;
             this.nmMassMargin = e.SDef.Url;
 

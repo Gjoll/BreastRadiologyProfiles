@@ -9,44 +9,36 @@ namespace BreastRadiology.XUnitTests
 {
     partial class ResourcesMaker
     {
-        public String ImagingStudyFragment()
-        {
-            if (this.aimImagingStudyFragment == null)
-                this.CreateImagingStudyFragment();
-            return this.aimImagingStudyFragment;
-        }
-        String aimImagingStudyFragment = null;
-
-
-        void CreateImagingStudyFragment()
-        {
-            SDefEditor e = this.CreateFragment("ImagingStudyFragment",
-                    "Imaging Study Fragment",
-                    "ImagingStudy",
-                    ObservationUrl)
-                .Description("Adds references to imaging studies.",
-                    new Markdown()
-                        .Paragraph("Fragment that adds derivedFrom references to imaging studies, including AIM annotated imaaging study.")
-                        .Todo(
-                        )
-                 )
-                ;
-            this.aimImagingStudyFragment = e.SDef.Url;
-
+        StringTaskVar ImagingStudyFragment = new StringTaskVar(
+            (out String s) =>
             {
-                ProfileTargetSlice[] targets = new ProfileTargetSlice[]
-                {
-                    new ProfileTargetSlice(ImagingStudyUrl, 0, "*"),
-                    new ProfileTargetSlice(this.AimAnnotatedImagingStudy(), 0, "1"),
-                };
-                e.Find("derivedFrom").SliceByUrl(targets);
-                e.AddProfileTargets(targets);
-            }
+                SDefEditor e = ResourcesMaker.Self.CreateFragment("ImagingStudyFragment",
+                        "Imaging Study Fragment",
+                        "ImagingStudy",
+                        ObservationUrl)
+                    .Description("Adds references to imaging studies.",
+                        new Markdown()
+                            .Paragraph("Fragment that adds derivedFrom references to imaging studies, including AIM annotated imaaging study.")
+                            .Todo(
+                            )
+                     )
+                    ;
+                s = e.SDef.Url;
 
-            e.IntroDoc
-                .ReviewedStatus(ReviewStatus.NotReviewed)
-                .Fragment($"Imaging Study Fragment")
-                ;
-        }
+                {
+                    ProfileTargetSlice[] targets = new ProfileTargetSlice[]
+                    {
+                    new ProfileTargetSlice(ImagingStudyUrl, 0, "*"),
+                    new ProfileTargetSlice(ResourcesMaker.Self.AimAnnotatedImagingStudy(), 0, "1"),
+                    };
+                    e.Find("derivedFrom").SliceByUrl(targets);
+                    e.AddProfileTargets(targets);
+                }
+
+                e.IntroDoc
+                    .ReviewedStatus(ReviewStatus.NotReviewed)
+                    .Fragment($"Imaging Study Fragment")
+                    ;
+            });
     }
 }

@@ -24,7 +24,7 @@ namespace BreastRadiology.XUnitTests
 
         VSTaskVar MassRefinementValueSetVS = new VSTaskVar(
             () =>
-                ResourcesMaker.Self.CreateValueSetXX(
+                ResourcesMaker.Self.CreateValueSet(
                         "MassRefinementValueSet",
                         "Mass Refinement ValueSet",
                         "Mass Refinement/ValueSet",
@@ -57,12 +57,12 @@ namespace BreastRadiology.XUnitTests
                             "same for asymmetry, lesion, calcification?"
                         )
                 )
-                .AddFragRef(this.ObservationNoDeviceFragment())
-                .AddFragRef(this.ObservationCodedValueFragment())
-                .AddFragRef(this.ObservationSectionFragment())
-                .AddFragRef(this.ImagingStudyFragment())
-                .AddFragRef(this.MGCommonTargetsFragment())
-                .AddFragRef(this.MGShapeTargetsFragment())
+                .AddFragRef(ResourcesMaker.Self.ObservationNoDeviceFragment.Value())
+                .AddFragRef(ResourcesMaker.Self.ObservationCodedValueFragment.Value())
+                .AddFragRef(ResourcesMaker.Self.ObservationSectionFragment.Value())
+                .AddFragRef(ResourcesMaker.Self.ImagingStudyFragment.Value())
+                .AddFragRef(ResourcesMaker.Self.MGCommonTargetsFragment.Value())
+                .AddFragRef(ResourcesMaker.Self.MGShapeTargetsFragment.Value())
                 ;
 
             this.mgAbnormalityMass = e.SDef.Url;

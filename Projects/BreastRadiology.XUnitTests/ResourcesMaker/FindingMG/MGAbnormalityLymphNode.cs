@@ -84,7 +84,7 @@ namespace BreastRadiology.XUnitTests
 
         VSTaskVar BreastRadMammoAbnormalityLymphNodeVS = new VSTaskVar(
             () =>
-                ResourcesMaker.Self.CreateValueSetXX(
+                ResourcesMaker.Self.CreateValueSet(
                    "BreastRadMammoAbnormalityLymphNode",
                    "Mammography Lymph Node Abnormality",
                     "Mg Lymph Node/ValueSet",
@@ -111,11 +111,11 @@ namespace BreastRadiology.XUnitTests
                                 "should this be a leaf node (how about shape, density, location, etc)."
                             )
                     )
-                    .AddFragRef(this.ObservationNoDeviceFragment())
-                    .AddFragRef(this.ObservationCodedValueFragment())
-                    .AddFragRef(this.ObservationSectionFragment())
-                    .AddFragRef(this.MGCommonTargetsFragment())
-                    .AddFragRef(this.MGShapeTargetsFragment())
+                    .AddFragRef(this.ObservationNoDeviceFragment.Value())
+                    .AddFragRef(this.ObservationCodedValueFragment.Value())
+                    .AddFragRef(this.ObservationSectionFragment.Value())
+                    .AddFragRef(this.MGCommonTargetsFragment.Value())
+                    .AddFragRef(this.MGShapeTargetsFragment.Value())
                     ;
 
             this.mgAbnormalityLymphNode = e.SDef.Url;

@@ -39,7 +39,7 @@ namespace BreastRadiology.XUnitTests
                 .Kind(StructureDefinition.StructureDefinitionKind.ComplexType)
                 .Context()
                 ;
-            e.AddFragRef(this.HeaderFragment());
+            e.AddFragRef(this.HeaderFragment.Value());
             this.breastRadiologyImpressionsExtension = e.SDef.Url;
 
             e.Select("extension").Zero();

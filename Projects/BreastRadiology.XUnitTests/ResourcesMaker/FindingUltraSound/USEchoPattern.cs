@@ -120,7 +120,7 @@ namespace BreastRadiology.XUnitTests
 
         VSTaskVar BreastRadUSEchoPatternVS = new VSTaskVar(
             () =>
-                ResourcesMaker.Self.CreateValueSetXX(
+                ResourcesMaker.Self.CreateValueSet(
                     "BreastRadUSEchoPattern",
                     "US Echo Pattern",
                     "US Echo Pattern/ValueSet",
@@ -161,9 +161,9 @@ namespace BreastRadiology.XUnitTests
                         .Todo(
                         )
                     )
-                .AddFragRef(this.ObservationNoDeviceFragment())
-                .AddFragRef(this.ObservationCodedValueFragment())
-                .AddFragRef(this.ObservationLeafFragment())
+                .AddFragRef(this.ObservationNoDeviceFragment.Value())
+                .AddFragRef(this.ObservationCodedValueFragment.Value())
+                .AddFragRef(this.ObservationLeafFragment.Value())
                 ;
             this.usEchoPattern = e.SDef.Url;
 

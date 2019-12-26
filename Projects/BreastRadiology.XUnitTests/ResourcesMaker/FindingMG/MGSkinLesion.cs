@@ -41,10 +41,10 @@ namespace BreastRadiology.XUnitTests
                         .Todo(
                         )
                 )
-                .AddFragRef(this.BreastBodyLocationRequiredFragment())
-                .AddFragRef(this.ObservationNoValueFragment())
-                .AddFragRef(this.ObservationSectionFragment())
-                .AddFragRef(this.MGCommonTargetsFragment())
+                .AddFragRef(this.BreastBodyLocationRequiredFragment.Value())
+                .AddFragRef(this.ObservationNoValueFragment.Value())
+                .AddFragRef(this.ObservationSectionFragment.Value())
+                .AddFragRef(this.MGCommonTargetsFragment.Value())
                 ;
             this.mgSkinLesion = e.SDef.Url;
 

@@ -38,9 +38,9 @@ namespace BreastRadiology.XUnitTests
                         "What resources comprise a patient history. Currently we can only reference observations - this is probably inadequate"
                         )
                 )
-                .AddFragRef(this.ObservationNoDeviceFragment())
-                .AddFragRef(this.ObservationSectionFragment())
-                .AddFragRef(this.ObservationNoValueFragment())
+                .AddFragRef(this.ObservationNoDeviceFragment.Value())
+                .AddFragRef(this.ObservationSectionFragment.Value())
+                .AddFragRef(this.ObservationNoValueFragment.Value())
                 ;
             this.sectionPatientHistory = e.SDef.Url;
             e.Select("value[x]").Zero();

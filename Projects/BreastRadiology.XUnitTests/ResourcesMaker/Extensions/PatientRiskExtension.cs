@@ -41,7 +41,7 @@ namespace BreastRadiology.XUnitTests
                 .Context()
                 ;
             this.breastRadiologyPatientRiskExtension = e.SDef.Url;
-            e.AddFragRef(this.HeaderFragment());
+            e.AddFragRef(this.HeaderFragment.Value());
 
             e.Select("extension").Zero();
             e.Select("url")

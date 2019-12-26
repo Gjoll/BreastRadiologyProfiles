@@ -26,7 +26,7 @@ namespace BreastRadiology.XUnitTests
         VSTaskVar BreastRadUSMarginVS = new VSTaskVar(
             () =>
             {
-                ValueSet binding = ResourcesMaker.Self.CreateValueSetXX(
+                ValueSet binding = ResourcesMaker.Self.CreateValueSet(
                     "BreastRadUSMargin",
                     "US Margin",
                     "US Margin CodeSystem",
@@ -71,9 +71,9 @@ namespace BreastRadiology.XUnitTests
                             "Is non-circumscribed a stand along value, or implied by selection fo on or more non-circumscribed values? "
                         )
                 )
-                .AddFragRef(this.ObservationNoDeviceFragment())
-                .AddFragRef(this.ObservationCodedValueFragment())
-                .AddFragRef(this.ObservationLeafFragment())
+                .AddFragRef(this.ObservationNoDeviceFragment.Value())
+                .AddFragRef(this.ObservationCodedValueFragment.Value())
+                .AddFragRef(this.ObservationLeafFragment.Value())
                 ;
 
             this.usMargin = e.SDef.Url;

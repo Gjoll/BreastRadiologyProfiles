@@ -47,7 +47,7 @@ namespace BreastRadiology.XUnitTests
 
         VSTaskVar CommonObservedChangeInProminanceVS = new VSTaskVar(
             () =>
-                ResourcesMaker.Self.CreateValueSetXX(
+                ResourcesMaker.Self.CreateValueSet(
                     "CommonObservedChangeInProminance",
                     "Observed Prominance Changes",
                     "Observed/Change/ValueSet",
@@ -82,9 +82,9 @@ namespace BreastRadiology.XUnitTests
                         .Todo(
                         )
                 )
-                .AddFragRef(this.ObservationNoDeviceFragment())
-                .AddFragRef(this.ObservationCodedValueFragment())
-                .AddFragRef(this.ObservationLeafFragment())
+                .AddFragRef(this.ObservationNoDeviceFragment.Value())
+                .AddFragRef(this.ObservationCodedValueFragment.Value())
+                .AddFragRef(this.ObservationLeafFragment.Value())
                 ;
 
             this.commonObservedChangeInProminance = e.SDef.Url;

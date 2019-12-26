@@ -13,45 +13,39 @@ namespace BreastRadiology.XUnitTests
 {
     partial class ResourcesMaker : ConverterBase
     {
-        String MGCommonTargetsFragment()
-        {
-            if (this.mgCommonTargetsFragment == null)
-                this.CreateMGCommonTargetsFragment();
-            return this.mgCommonTargetsFragment;
-        }
-        String mgCommonTargetsFragment = null;
-
-        void CreateMGCommonTargetsFragment()
-        {
-            SDefEditor e = this.CreateFragment("MgCommonTargetsFragment",
-                    "Mg Common Targets Fragment",
-                    "Mg Common Targets Fragment",
-                    ObservationUrl)
-                .Description("Mammography Common Targets Fragment",
-                    new Markdown()
-                        .Paragraph("Mammography Common Targets Fragment")
-                        .Todo(
-                        )
-                )
-                .AddFragRef(this.BreastBodyLocationRequiredFragment())
-                ;
-            this.mgCommonTargetsFragment = e.SDef.Url;
-
+        StringTaskVar MGCommonTargetsFragment = new StringTaskVar(
+            (out String s) =>
             {
-                ProfileTargetSlice[] targets = new ProfileTargetSlice[]
+                SDefEditor e = ResourcesMaker.Self.CreateFragment("MgCommonTargetsFragment",
+                        "Mg Common Targets Fragment",
+                        "Mg Common Targets Fragment",
+                        ObservationUrl)
+                    .Description("Mammography Common Targets Fragment",
+                        new Markdown()
+                            .Paragraph("Mammography Common Targets Fragment")
+                            .Todo(
+                            )
+                    )
+                    .AddFragRef(ResourcesMaker.Self.BreastBodyLocationRequiredFragment.Value())
+                    ;
+                s = e.SDef.Url;
+
                 {
-                    new ProfileTargetSlice(this.BiRadsAssessmentCategory(), 0, "1"),
-                    new ProfileTargetSlice(this.CommonObservedChangeInDefinition(), 0, "1"),
-                    new ProfileTargetSlice(this.CommonObservedChangeInNumber(), 0, "1"),
-                    new ProfileTargetSlice(this.CommonObservedChangeInProminance(), 0, "1"),
-                    new ProfileTargetSlice(this.CommonObservedChangeInSize(), 0, "1"),
-                    new ProfileTargetSlice(this.CommonObservedChangeInState(), 0, "1"),
-                    new ProfileTargetSlice(this.CommonObservedSize(), 0, "1"),
-                    new ProfileTargetSlice(this.CommonOrientation(), 0, "1"),
-                };
-                e.Find("hasMember").SliceByUrl(targets);
-                e.AddProfileTargets(targets);
-            }
-        }
+                    ProfileTargetSlice[] targets = new ProfileTargetSlice[]
+                    {
+                    new ProfileTargetSlice(ResourcesMaker.Self.BiRadsAssessmentCategory.Value(), 0, "1"),
+                    new ProfileTargetSlice(ResourcesMaker.Self.CommonObservedChangeInDefinition(), 0, "1"),
+                    new ProfileTargetSlice(ResourcesMaker.Self.CommonObservedChangeInNumber(), 0, "1"),
+                    new ProfileTargetSlice(ResourcesMaker.Self.CommonObservedChangeInProminance(), 0, "1"),
+                    new ProfileTargetSlice(ResourcesMaker.Self.CommonObservedChangeInSize(), 0, "1"),
+                    new ProfileTargetSlice(ResourcesMaker.Self.CommonObservedChangeInState(), 0, "1"),
+                    new ProfileTargetSlice(ResourcesMaker.Self.CommonObservedSize(), 0, "1"),
+                    new ProfileTargetSlice(ResourcesMaker.Self.CommonOrientation(), 0, "1"),
+                    };
+                    e.Find("hasMember").SliceByUrl(targets);
+                    e.AddProfileTargets(targets);
+                }
+            });
+
     }
 }

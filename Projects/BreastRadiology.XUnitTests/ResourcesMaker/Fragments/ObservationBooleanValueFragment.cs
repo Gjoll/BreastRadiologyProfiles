@@ -9,42 +9,32 @@ namespace BreastRadiology.XUnitTests
 {
     partial class ResourcesMaker
     {
-        public String ObservationBooleanValueFragment()
-        {
-            if (this.observationBooleanValueFragment == null)
-                this.CreateObservationBooleanValueFragment();
-            return this.observationBooleanValueFragment;
-        }
-        String observationBooleanValueFragment = null;
+        StringTaskVar BooleanValueObservationFragment = new StringTaskVar(
+            (out String s) =>
+            {
+                SDefEditor e = ResourcesMaker.Self.CreateFragment("BooleanValueObservationFragment",
+                        "BooleanValue Observation Fragment",
+                        "Observation/BooleanValue/Fragment",
+                        ObservationUrl)
+                    .Description("Fragment to define a boolean observation",
+                    new Markdown()
+                        .Paragraph("Fragment that constrains an observation to contains only a boolean value.")
+                        .Todo(
+                        )
+                        )
+                    .AddFragRef(ResourcesMaker.Self.HeaderFragment.Value())
+                    .AddFragRef(ResourcesMaker.Self.ObservationFragment.Value())
+                    ;
+                s = e.SDef.Url;
+                e.Select("value[x]")
+                    .Type("boolean")
+                    ;
 
-        /// <summary>
-        /// Create ObservationBooleanValueFragment.
-        /// </summary>
-        /// <returns></returns>
-        void CreateObservationBooleanValueFragment()
-        {
-            SDefEditor e = this.CreateFragment("BooleanValueObservationFragment",
-                    "BooleanValue Observation Fragment",
-                    "Observation/BooleanValue/Fragment",
-                    ObservationUrl)
-                .Description("Fragment to define a boolean observation",
-                new Markdown()
-                    .Paragraph("Fragment that constrains an observation to contains only a boolean value.")
-                    .Todo(
-                    )
-                    )
-                .AddFragRef(this.HeaderFragment())
-                .AddFragRef(this.ObservationFragment())
-                ;
-            this.observationBooleanValueFragment = e.SDef.Url;
-            e.Select("value[x]")
-                .Type("boolean")
-                ;
+                e.IntroDoc
+                    .ReviewedStatus(ReviewStatus.NotReviewed)
+                    .Fragment($"Resource fragment used to by all observations whose value are a Boolean.")
+                    ;
+            });
 
-            e.IntroDoc
-                .ReviewedStatus(ReviewStatus.NotReviewed)
-                .Fragment($"Resource fragment used to by all observations whose value are a Boolean.")
-                ;
-        }
     }
 }

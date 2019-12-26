@@ -9,36 +9,29 @@ namespace BreastRadiology.XUnitTests
 {
     partial class ResourcesMaker
     {
-        public String ObservationNoValueFragment()
-        {
-            if (this.observationNoValueFragment == null)
-                this.CreateObservationNoValueFragment();
-            return this.observationNoValueFragment;
-        }
-        String observationNoValueFragment = null;
-
-        void CreateObservationNoValueFragment()
-        {
-            SDefEditor e = this.CreateFragment("BreastRadObservationNoValueFragment",
-                "BreastRad Observation NoValue Fragment",
-                    "NoValue/Observation/Fragment",
-                ObservationUrl)
-                .Description("Fragment that constrains Observations to have no explicit value.",
-                    new Markdown()
-                        .Paragraph("Base fragment for all BreastRad observations that have no explicit value.")
-                        .Todo(
-                        )
-                )
-                .AddFragRef(this.ObservationFragment())
-            ;
-            this.observationNoValueFragment = e.SDef.Url;
-            e.Select("value[x]").Zero();
-            e.Select("interpretation").Zero();
-
-            e.IntroDoc
-                .ReviewedStatus(ReviewStatus.NotReviewed)
-                .Fragment($"Resource fragment used by observations that constrain the value[x] element to cardinality 0..0.")
+        StringTaskVar ObservationNoValueFragment = new StringTaskVar(
+            (out String s) =>
+            {
+                SDefEditor e = ResourcesMaker.Self.CreateFragment("BreastRadObservationNoValueFragment",
+                    "BreastRad Observation NoValue Fragment",
+                        "NoValue/Observation/Fragment",
+                    ObservationUrl)
+                    .Description("Fragment that constrains Observations to have no explicit value.",
+                        new Markdown()
+                            .Paragraph("Base fragment for all BreastRad observations that have no explicit value.")
+                            .Todo(
+                            )
+                    )
+                    .AddFragRef(ResourcesMaker.Self.ObservationFragment.Value())
                 ;
-        }
+                s = e.SDef.Url;
+                e.Select("value[x]").Zero();
+                e.Select("interpretation").Zero();
+
+                e.IntroDoc
+                    .ReviewedStatus(ReviewStatus.NotReviewed)
+                    .Fragment($"Resource fragment used by observations that constrain the value[x] element to cardinality 0..0.")
+                    ;
+            });
     }
 }

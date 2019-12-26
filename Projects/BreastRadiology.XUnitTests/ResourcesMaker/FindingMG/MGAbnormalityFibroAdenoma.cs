@@ -24,7 +24,7 @@ namespace BreastRadiology.XUnitTests
 
         VSTaskVar MammoFibroadenomaVS = new VSTaskVar(
             () =>
-                ResourcesMaker.Self.CreateValueSetXX(
+                ResourcesMaker.Self.CreateValueSet(
                         "MammoFibroadenoma",
                         "Fibroadenoma",
                         "FibroadenomaValueSet",
@@ -51,12 +51,12 @@ namespace BreastRadiology.XUnitTests
                         .Todo(
                         )
                 )
-                .AddFragRef(this.ObservationNoDeviceFragment())
-                .AddFragRef(this.ObservationSectionFragment())
-                .AddFragRef(this.ObservationNoValueFragment())
-                .AddFragRef(this.ImagingStudyFragment())
-                .AddFragRef(this.MGCommonTargetsFragment())
-                .AddFragRef(this.MGShapeTargetsFragment())
+                .AddFragRef(this.ObservationNoDeviceFragment.Value())
+                .AddFragRef(this.ObservationSectionFragment.Value())
+                .AddFragRef(this.ObservationNoValueFragment.Value())
+                .AddFragRef(this.ImagingStudyFragment.Value())
+                .AddFragRef(this.MGCommonTargetsFragment.Value())
+                .AddFragRef(this.MGShapeTargetsFragment.Value())
                 ;
 
             this.mgAbnormalityFibroadenoma = e.SDef.Url;

@@ -46,7 +46,7 @@ namespace BreastRadiology.XUnitTests
                 ;
 
             this.aimAnnotationPolyLineExtension = e.SDef.Url;
-            e.AddFragRef(this.AimHeaderFragment());
+            e.AddFragRef(this.AimHeaderFragment.Value());
 
             e.Select("url")
                 .Type("uri")

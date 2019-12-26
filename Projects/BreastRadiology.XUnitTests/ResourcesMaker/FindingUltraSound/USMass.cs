@@ -42,17 +42,17 @@ namespace BreastRadiology.XUnitTests
                             "same for asymmetry, lesion, calcification?"
                         )
                 )
-                .AddFragRef(this.ObservationNoDeviceFragment())
-                .AddFragRef(this.BreastBodyLocationRequiredFragment())
-                .AddFragRef(this.ObservationSectionFragment())
-                .AddFragRef(this.ObservationNoValueFragment())
-                .AddFragRef(this.ImagingStudyFragment())
+                .AddFragRef(this.ObservationNoDeviceFragment.Value())
+                .AddFragRef(this.BreastBodyLocationRequiredFragment.Value())
+                .AddFragRef(this.ObservationSectionFragment.Value())
+                .AddFragRef(this.ObservationNoValueFragment.Value())
+                .AddFragRef(this.ImagingStudyFragment.Value())
                 ;
             this.usMass = e.SDef.Url;
             {
                 ProfileTargetSlice[] targets = new ProfileTargetSlice[]
                 {
-                    new ProfileTargetSlice(this.BiRadsAssessmentCategory(), 0, "1"),
+                    new ProfileTargetSlice(this.BiRadsAssessmentCategory.Value(), 0, "1"),
 
                     new ProfileTargetSlice(this.CommonObservedCount(), 0, "1"),
                     new ProfileTargetSlice(this.CommonObservedChangeInState(), 0, "*"),

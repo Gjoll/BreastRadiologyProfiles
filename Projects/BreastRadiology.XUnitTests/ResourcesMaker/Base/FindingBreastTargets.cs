@@ -21,7 +21,7 @@ namespace BreastRadiology.XUnitTests
             // ShowChildren = false, to limit depth of resource graph.
             this.findingBreastTargets = new ProfileTargetSlice[]
             {
-                new ProfileTargetSlice(this.BiRadsAssessmentCategory(), 1, "1"),
+                new ProfileTargetSlice(this.BiRadsAssessmentCategory.Value(), 1, "1"),
                 new ProfileTargetSlice(this.FindingMammo(), 0, "*"),
                 new ProfileTargetSlice(this.FindingMri(), 0, "*"),
                 new ProfileTargetSlice(this.FindingNM(), 0, "*"),

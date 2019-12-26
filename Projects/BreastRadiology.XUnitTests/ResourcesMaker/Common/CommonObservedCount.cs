@@ -38,8 +38,8 @@ namespace BreastRadiology.XUnitTests
                             "is 'tot' correct ucum units for count?"
                         )
                     )
-                .AddFragRef(this.ObservationNoDeviceFragment())
-                .AddFragRef(this.ObservationLeafFragment())
+                .AddFragRef(this.ObservationNoDeviceFragment.Value())
+                .AddFragRef(this.ObservationLeafFragment.Value())
                 ;
             this.commonObservedCount = e.SDef.Url;
             e.Select("value[x]")

@@ -58,8 +58,8 @@ namespace BreastRadiology.XUnitTests
                             "Can they be aligned?"
                         )
                 )
-                .AddFragRef(this.ObservationSectionFragment())
-                .AddFragRef(this.ObservationNoValueFragment())
+                .AddFragRef(ResourcesMaker.Self.ObservationSectionFragment.Value())
+                .AddFragRef(ResourcesMaker.Self.ObservationNoValueFragment.Value())
                 ;
             this.findingUltraSound = e.SDef.Url;
             this.findingUltraSound = e.SDef.Url;

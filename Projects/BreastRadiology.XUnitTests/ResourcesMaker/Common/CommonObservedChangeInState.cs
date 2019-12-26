@@ -68,7 +68,7 @@ namespace BreastRadiology.XUnitTests
 
         VSTaskVar CommonObservedChangeInStateVS = new VSTaskVar(
             () =>
-                ResourcesMaker.Self.CreateValueSetXX(
+                ResourcesMaker.Self.CreateValueSet(
                     "CommonObservedChangeInState",
                     "Observed Change In State",
                     "Observed/Change/ValueSet",
@@ -103,9 +103,9 @@ namespace BreastRadiology.XUnitTests
                         .Todo(
                         )
                 )
-                .AddFragRef(this.ObservationNoDeviceFragment())
-                .AddFragRef(this.ObservationCodedValueFragment())
-                .AddFragRef(this.ObservationLeafFragment())
+                .AddFragRef(this.ObservationNoDeviceFragment.Value())
+                .AddFragRef(this.ObservationCodedValueFragment.Value())
+                .AddFragRef(this.ObservationLeafFragment.Value())
                 ;
 
             this.commonObservedChangeInState = e.SDef.Url;

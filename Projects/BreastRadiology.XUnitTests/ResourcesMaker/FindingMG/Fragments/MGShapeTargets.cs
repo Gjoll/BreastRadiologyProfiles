@@ -13,17 +13,10 @@ namespace BreastRadiology.XUnitTests
 {
     partial class ResourcesMaker : ConverterBase
     {
-        String MGShapeTargetsFragment()
+        StringTaskVar MGShapeTargetsFragment = new StringTaskVar(
+            (out String s) =>
         {
-            if (this.mgShapeTargetsFragment == null)
-                this.CreateMGShapeTargetsFragment();
-            return this.mgShapeTargetsFragment;
-        }
-        String mgShapeTargetsFragment = null;
-
-        void CreateMGShapeTargetsFragment()
-        {
-            SDefEditor e = this.CreateFragment("MgShapeTargetsFragment",
+            SDefEditor e = ResourcesMaker.Self.CreateFragment("MgShapeTargetsFragment",
                     "Mg Shape Targets Fragment",
                     "Mg Shape Targets Fragment",
                     ObservationUrl)
@@ -34,21 +27,21 @@ namespace BreastRadiology.XUnitTests
                         .Todo(
                         )
                 )
-                .AddFragRef(this.BreastBodyLocationRequiredFragment())
+                .AddFragRef(ResourcesMaker.Self.BreastBodyLocationRequiredFragment.Value())
                 ;
-            this.mgShapeTargetsFragment = e.SDef.Url;
+            s = e.SDef.Url;
 
             {
                 ProfileTargetSlice[] targets = new ProfileTargetSlice[]
                 {
-                    new ProfileTargetSlice(this.CommonOrientation(), 0, "*"),
-                    new ProfileTargetSlice(this.MGShape(), 0, "1"),
-                    new ProfileTargetSlice(this.MGMassMargin(), 0, "1"),
-                    new ProfileTargetSlice(this.MGDensity(), 0, "1"),
+                    new ProfileTargetSlice(ResourcesMaker.Self.CommonOrientation(), 0, "*"),
+                    new ProfileTargetSlice(ResourcesMaker.Self.MGShape(), 0, "1"),
+                    new ProfileTargetSlice(ResourcesMaker.Self.MGMassMargin(), 0, "1"),
+                    new ProfileTargetSlice(ResourcesMaker.Self.MGDensity(), 0, "1"),
                 };
                 e.Find("hasMember").SliceByUrl(targets);
                 e.AddProfileTargets(targets);
             }
-        }
+        });
     }
 }

@@ -37,9 +37,9 @@ namespace BreastRadiology.XUnitTests
                    .Todo(
                    )
                )
-               .AddFragRef(this.ObservationNoDeviceFragment())
-               .AddFragRef(this.ObservationSectionFragment())
-               .AddFragRef(this.ObservationNoValueFragment())
+               .AddFragRef(this.ObservationNoDeviceFragment.Value())
+               .AddFragRef(this.ObservationSectionFragment.Value())
+               .AddFragRef(this.ObservationNoValueFragment.Value())
                ;
             this.sectionFindingsLeftBreast = e.SDef.Url;
             e.Select("value[x]").Zero();

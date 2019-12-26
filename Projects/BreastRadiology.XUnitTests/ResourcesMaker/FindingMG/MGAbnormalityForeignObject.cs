@@ -24,7 +24,7 @@ namespace BreastRadiology.XUnitTests
 
         VSTaskVar MGAbnormalityForeignObjectVS = new VSTaskVar(
             () =>
-                ResourcesMaker.Self.CreateValueSetXX(
+                ResourcesMaker.Self.CreateValueSet(
                         "MGAbnormalities",
                         "Foreign Object",
                         "Foreign/Object/ValueSet",
@@ -63,17 +63,17 @@ namespace BreastRadiology.XUnitTests
                             "are wire and wire fragment codes the same."
                         )
                 )
-                .AddFragRef(this.ObservationNoDeviceFragment())
-                .AddFragRef(this.ObservationCodedValueFragment())
-                .AddFragRef(this.ObservationSectionFragment())
-                .AddFragRef(this.MGCommonTargetsFragment())
+                .AddFragRef(this.ObservationNoDeviceFragment.Value())
+                .AddFragRef(this.ObservationCodedValueFragment.Value())
+                .AddFragRef(this.ObservationSectionFragment.Value())
+                .AddFragRef(this.MGCommonTargetsFragment.Value())
                 ;
 
             this.mgAbnormalityForeignObject = e.SDef.Url;
             {
                 ProfileTargetSlice[] targets = new ProfileTargetSlice[]
                 {
-                    new ProfileTargetSlice(this.BiRadsAssessmentCategory(), 0, "1"),
+                    new ProfileTargetSlice(ResourcesMaker.Self.BiRadsAssessmentCategory.Value(), 0, "1"),
                 };
                 e.Find("hasMember").SliceByUrl(targets);
                 e.AddProfileTargets(targets);

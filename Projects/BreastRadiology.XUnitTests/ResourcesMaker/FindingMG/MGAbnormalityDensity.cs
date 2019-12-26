@@ -53,7 +53,7 @@ namespace BreastRadiology.XUnitTests
 
         VSTaskVar BreastRadMammoAbnormalityDensityVS = new VSTaskVar(
             () =>
-                ResourcesMaker.Self.CreateValueSetXX(
+                ResourcesMaker.Self.CreateValueSet(
                    "BreastRadMammoAbnormalityDensity",
                    "Mammography Density Abnormality",
                     "Mg Density/ValueSet",
@@ -81,10 +81,10 @@ namespace BreastRadiology.XUnitTests
                             "default value? for refinement"
                         )
                 )
-                .AddFragRef(this.ObservationNoDeviceFragment())
-                .AddFragRef(this.ObservationLeafFragment())
-                .AddFragRef(this.MGCommonTargetsFragment())
-                .AddFragRef(this.MGShapeTargetsFragment())
+                .AddFragRef(this.ObservationNoDeviceFragment.Value())
+                .AddFragRef(this.ObservationLeafFragment.Value())
+                .AddFragRef(this.MGCommonTargetsFragment.Value())
+                .AddFragRef(this.MGShapeTargetsFragment.Value())
                 ;
 
             this.mgAbnormalityDensity = e.SDef.Url;

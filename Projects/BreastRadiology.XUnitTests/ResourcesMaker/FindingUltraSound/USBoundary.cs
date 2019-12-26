@@ -58,7 +58,7 @@ namespace BreastRadiology.XUnitTests
 
         VSTaskVar USBoundaryVS = new VSTaskVar(
             () =>
-                ResourcesMaker.Self.CreateValueSetXX(
+                ResourcesMaker.Self.CreateValueSet(
                     "USBoundary",
                     "UltraSound Boundary",
                     "US Boundary/ValueSet",
@@ -95,9 +95,9 @@ namespace BreastRadiology.XUnitTests
                         .Todo(
                         )
                  )
-                .AddFragRef(this.ObservationNoDeviceFragment())
-                .AddFragRef(this.ObservationCodedValueFragment())
-                .AddFragRef(this.ObservationLeafFragment())
+                .AddFragRef(this.ObservationNoDeviceFragment.Value())
+                .AddFragRef(this.ObservationCodedValueFragment.Value())
+                .AddFragRef(this.ObservationLeafFragment.Value())
                 ;
 
             this.usBoundary = e.SDef.Url;

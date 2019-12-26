@@ -40,7 +40,7 @@ namespace BreastRadiology.XUnitTests
                 .Context()
                 ;
             this.breastRadiologyPriorReportsExtension = e.SDef.Url;
-            e.AddFragRef(this.HeaderFragment());
+            e.AddFragRef(this.HeaderFragment.Value());
 
             e.Select("extension").Zero();
             e.Select("url")

@@ -40,9 +40,9 @@ namespace BreastRadiology.XUnitTests
                             "cardinality 0..1 or 0..*?"
                         )
                 )
-                .AddFragRef(this.ObservationNoDeviceFragment())
-                .AddFragRef(this.BreastBodyLocationRequiredFragment())
-                .AddFragRef(this.ObservationNoValueFragment())
+                .AddFragRef(this.ObservationNoDeviceFragment.Value())
+                .AddFragRef(this.BreastBodyLocationRequiredFragment.Value())
+                .AddFragRef(this.ObservationNoValueFragment.Value())
                 ;
             this.mgTrabecularThickening = e.SDef.Url;
             e.IntroDoc

@@ -36,8 +36,8 @@ namespace BreastRadiology.XUnitTests
                             "Add information about contrast enhancement/other observation specific parameters."
                         )
                 )
-                .AddFragRef(this.ObservationSectionFragment())
-                .AddFragRef(this.ObservationNoValueFragment())
+                .AddFragRef(this.ObservationSectionFragment.Value())
+                .AddFragRef(this.ObservationNoValueFragment.Value())
             ;
             this.findingMri = e.SDef.Url;
             e.Select("value[x]").Zero();

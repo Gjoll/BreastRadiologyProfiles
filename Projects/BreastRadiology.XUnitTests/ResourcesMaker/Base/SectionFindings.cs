@@ -37,9 +37,9 @@ namespace BreastRadiology.XUnitTests
                     .Todo(
                     )
                 )
-                .AddFragRef(this.ObservationNoDeviceFragment())
-                .AddFragRef(this.ObservationSectionFragment())
-                .AddFragRef(this.ObservationNoValueFragment())
+                .AddFragRef(this.ObservationNoDeviceFragment.Value())
+                .AddFragRef(this.ObservationSectionFragment.Value())
+                .AddFragRef(this.ObservationNoValueFragment.Value())
                 ;
 
             this.sectionFindings = e.SDef.Url;
@@ -48,7 +48,7 @@ namespace BreastRadiology.XUnitTests
             {
                 ProfileTargetSlice[] targets = new ProfileTargetSlice[]
                 {
-                    new ProfileTargetSlice(this.BiRadsAssessmentCategory(), 1, "1"),
+                    new ProfileTargetSlice(this.BiRadsAssessmentCategory.Value(), 1, "1"),
                     new ProfileTargetSlice(this.SectionFindingsLeftBreast(), 1, "1"),
                     new ProfileTargetSlice(this.SectionFindingsRightBreast(), 1, "1")
                 };

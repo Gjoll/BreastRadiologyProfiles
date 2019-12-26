@@ -198,7 +198,7 @@ namespace BreastRadiology.XUnitTests
 
         VSTaskVar MammoCalcificationTypeVS = new VSTaskVar(
             () =>
-                ResourcesMaker.Self.CreateValueSetXX(
+                ResourcesMaker.Self.CreateValueSet(
                     "MammoCalcificationType",
                     "Mammography Calcification Type",
                     "Mg Calc. TypeValueSet",
@@ -234,9 +234,9 @@ namespace BreastRadiology.XUnitTests
                         .Todo(
                         )
                  )
-                .AddFragRef(this.ObservationNoDeviceFragment())
-                .AddFragRef(this.ObservationCodedValueFragment())
-                .AddFragRef(this.ObservationLeafFragment())
+                .AddFragRef(this.ObservationNoDeviceFragment.Value())
+                .AddFragRef(this.ObservationCodedValueFragment.Value())
+                .AddFragRef(this.ObservationLeafFragment.Value())
                 ;
             this.mgCalcificationType = e.SDef.Url;
 

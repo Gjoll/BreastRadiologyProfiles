@@ -39,9 +39,9 @@ namespace BreastRadiology.XUnitTests
                         .Todo(
                         )
                 )
-                .AddFragRef(this.ObservationNoDeviceFragment())
-                .AddFragRef(this.ObservationNoValueFragment())
-                .AddFragRef(this.BreastBodyLocationRequiredFragment())
+                .AddFragRef(this.ObservationNoDeviceFragment.Value())
+                .AddFragRef(this.ObservationNoValueFragment.Value())
+                .AddFragRef(this.BreastBodyLocationRequiredFragment.Value())
                 ;
             this.mgNippleRetraction = e.SDef.Url;
 

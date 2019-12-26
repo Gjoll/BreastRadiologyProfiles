@@ -33,8 +33,8 @@ namespace BreastRadiology.XUnitTests
                             .Todo(
                             )
                     )
-                    .AddFragRef(this.AimHeaderFragment())
-                    .AddFragRef(this.AimAnnotationPolyLineFragment())
+                    .AddFragRef(this.AimHeaderFragment.Value())
+                    .AddFragRef(this.AimAnnotationPolyLineFragment.Value())
                     ;
             this.aimAnnotatedImagingStudy = e.SDef.Url;
                 e.IntroDoc

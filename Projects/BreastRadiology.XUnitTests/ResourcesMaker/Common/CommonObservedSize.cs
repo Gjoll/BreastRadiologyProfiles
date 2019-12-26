@@ -38,8 +38,8 @@ namespace BreastRadiology.XUnitTests
                         "Should value[x] be SimpleQuantity."
                         )
                  )
-                .AddFragRef(this.ObservationNoDeviceFragment())
-                .AddFragRef(this.ObservationLeafFragment())
+                .AddFragRef(this.ObservationNoDeviceFragment.Value())
+                .AddFragRef(this.ObservationLeafFragment.Value())
                 ;
             this.commonObservedSize = e.SDef.Url;
             e.Select("value[x]")

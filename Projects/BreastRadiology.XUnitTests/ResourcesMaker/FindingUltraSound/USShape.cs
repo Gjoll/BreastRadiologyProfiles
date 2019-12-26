@@ -26,7 +26,7 @@ namespace BreastRadiology.XUnitTests
         VSTaskVar UltraSoundShapeVS = new VSTaskVar(
             () =>
             {
-                ValueSet binding = ResourcesMaker.Self.CreateValueSetXX(
+                ValueSet binding = ResourcesMaker.Self.CreateValueSet(
                         "UltraSoundShape",
                         "Shape",
                         "Shape/ValueSet",
@@ -64,9 +64,9 @@ namespace BreastRadiology.XUnitTests
                         .Todo(
                         )
                 )
-                .AddFragRef(this.ObservationNoDeviceFragment())
-                .AddFragRef(this.ObservationCodedValueFragment())
-                .AddFragRef(this.ObservationLeafFragment())
+                .AddFragRef(this.ObservationNoDeviceFragment.Value())
+                .AddFragRef(this.ObservationCodedValueFragment.Value())
+                .AddFragRef(this.ObservationLeafFragment.Value())
                 ;
 
             this.usShape = e.SDef.Url;

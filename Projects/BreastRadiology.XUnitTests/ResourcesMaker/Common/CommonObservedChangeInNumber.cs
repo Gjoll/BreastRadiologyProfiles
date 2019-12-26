@@ -47,7 +47,7 @@ namespace BreastRadiology.XUnitTests
 
         VSTaskVar CommonObservedChangeInNumberVS = new VSTaskVar(
             () =>
-                ResourcesMaker.Self.CreateValueSetXX(
+                ResourcesMaker.Self.CreateValueSet(
                     "CommonObservedChangeInNumber",
                     "Observed Number Changes",
                     "Observed/Change/ValueSet",
@@ -83,9 +83,9 @@ namespace BreastRadiology.XUnitTests
                         "Is this change in count, or number of calcifications?"
                         )
                 )
-                .AddFragRef(this.ObservationNoDeviceFragment())
-                .AddFragRef(this.ObservationCodedValueFragment())
-                .AddFragRef(this.ObservationLeafFragment())
+                .AddFragRef(this.ObservationNoDeviceFragment.Value())
+                .AddFragRef(this.ObservationCodedValueFragment.Value())
+                .AddFragRef(this.ObservationLeafFragment.Value())
                 ;
 
             this.commonObservedChangeInNumber = e.SDef.Url;

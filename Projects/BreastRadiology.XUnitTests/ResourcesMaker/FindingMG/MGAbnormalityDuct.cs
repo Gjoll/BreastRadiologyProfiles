@@ -57,7 +57,7 @@ namespace BreastRadiology.XUnitTests
 
         VSTaskVar BreastRadMammoAbnormalityDuctVS = new VSTaskVar(
             () =>
-                ResourcesMaker.Self.CreateValueSetXX(
+                ResourcesMaker.Self.CreateValueSet(
                    "BreastRadMammoAbnormalityDuct",
                    "Mammography Duct Abnormality",
                     "Mg Duct/ValueSet",
@@ -84,10 +84,10 @@ namespace BreastRadiology.XUnitTests
                             "make dilated the default value."
                         )
                 )
-                .AddFragRef(this.ObservationNoDeviceFragment())
-                .AddFragRef(this.ObservationLeafFragment())
-                .AddFragRef(this.MGCommonTargetsFragment())
-                .AddFragRef(this.MGShapeTargetsFragment())
+                .AddFragRef(this.ObservationNoDeviceFragment.Value())
+                .AddFragRef(this.ObservationLeafFragment.Value())
+                .AddFragRef(this.MGCommonTargetsFragment.Value())
+                .AddFragRef(this.MGShapeTargetsFragment.Value())
                 ;
 
             this.mgAbnormalityDuct = e.SDef.Url;

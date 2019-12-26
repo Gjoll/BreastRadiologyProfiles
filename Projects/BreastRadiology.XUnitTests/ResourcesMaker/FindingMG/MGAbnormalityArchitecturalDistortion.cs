@@ -44,10 +44,10 @@ namespace BreastRadiology.XUnitTests
                         .Todo(
                         )
                 )
-                .AddFragRef(this.ObservationNoDeviceFragment())
-                .AddFragRef(this.ObservationNoValueFragment())
-                .AddFragRef(this.ObservationLeafFragment())
-                .AddFragRef(this.MGCommonTargetsFragment())
+                .AddFragRef(this.ObservationNoDeviceFragment.Value())
+                .AddFragRef(this.ObservationNoValueFragment.Value())
+                .AddFragRef(this.ObservationLeafFragment.Value())
+                .AddFragRef(this.MGCommonTargetsFragment.Value())
                 ;
             this.mgAbnormalityArchitecturalDistortion = e.SDef.Url;
 

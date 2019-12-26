@@ -47,7 +47,7 @@ namespace BreastRadiology.XUnitTests
 
         VSTaskVar CommonHilumVS = new VSTaskVar(
             () =>
-                ResourcesMaker.Self.CreateValueSetXX(
+                ResourcesMaker.Self.CreateValueSet(
                         "CommonHilum",
                         "Hilum ValueSet",
                         "Hilum/ValueSet",
@@ -82,9 +82,9 @@ namespace BreastRadiology.XUnitTests
                             "Definition(s) needed"
                         )
                 )
-                .AddFragRef(this.ObservationNoDeviceFragment())
-                .AddFragRef(this.ObservationCodedValueFragment())
-                .AddFragRef(this.ObservationLeafFragment())
+                .AddFragRef(this.ObservationNoDeviceFragment.Value())
+                .AddFragRef(this.ObservationCodedValueFragment.Value())
+                .AddFragRef(this.ObservationLeafFragment.Value())
                 ;
 
             this.commonHilum = e.SDef.Url;

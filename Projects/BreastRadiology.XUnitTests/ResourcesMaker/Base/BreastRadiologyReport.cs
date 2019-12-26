@@ -41,8 +41,8 @@ namespace BreastRadiology.XUnitTests
                          .Todo(
                          )
                  )
-                 .AddFragRef(this.HeaderFragment())
-                 .AddFragRef(this.CategoryFragment())
+                 .AddFragRef(this.HeaderFragment.Value())
+                 .AddFragRef(this.CategoryFragment.Value())
                  ;
 
             this.breastRadiologyReport = e.SDef.Url;

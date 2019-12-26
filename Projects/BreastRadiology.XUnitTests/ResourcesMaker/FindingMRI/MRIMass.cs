@@ -43,11 +43,11 @@ namespace BreastRadiology.XUnitTests
                             "same for asymmetry, lesion, calcification?"
                         )
                 )
-                .AddFragRef(this.ObservationNoDeviceFragment())
-                .AddFragRef(this.BreastBodyLocationRequiredFragment())
-                .AddFragRef(this.ObservationSectionFragment())
-                .AddFragRef(this.ObservationNoValueFragment())
-                .AddFragRef(this.ImagingStudyFragment())
+                .AddFragRef(this.ObservationNoDeviceFragment.Value())
+                .AddFragRef(this.BreastBodyLocationRequiredFragment.Value())
+                .AddFragRef(this.ObservationSectionFragment.Value())
+                .AddFragRef(this.ObservationNoValueFragment.Value())
+                .AddFragRef(this.ImagingStudyFragment.Value())
                 ;
             this.mriMass = e.SDef.Url;
 

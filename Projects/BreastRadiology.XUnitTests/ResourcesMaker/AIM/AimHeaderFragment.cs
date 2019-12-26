@@ -13,38 +13,31 @@ namespace BreastRadiology.XUnitTests
 {
     partial class ResourcesMaker : ConverterBase
     {
-        public String AimHeaderFragment()
-        {
-            if (this.aimHeaderFragment == null)
-                this.CreateAimHeaderFragment();
-            return this.aimHeaderFragment;
-        }
-        String aimHeaderFragment = null;
-
-        void CreateAimHeaderFragment()
-        {
-            SDefEditor e = this.CreateFragment("AimHeaderFragment",
-                "Resource",
-                "Common/Header",
-                ResourceUrl);
-            ContactDetail cd = new ContactDetail();
-            cd.Telecom.Add(new ContactPoint
+        StringTaskVar AimHeaderFragment = new StringTaskVar(
+            (out String s) =>
             {
-                System = ContactPoint.ContactPointSystem.Url,
-                Value = contactUrl
+                SDefEditor e = ResourcesMaker.Self.CreateFragment("AimHeaderFragment",
+                    "Resource",
+                    "Common/Header",
+                    ResourceUrl);
+                ContactDetail cd = new ContactDetail();
+                cd.Telecom.Add(new ContactPoint
+                {
+                    System = ContactPoint.ContactPointSystem.Url,
+                    Value = contactUrl
+                });
+
+                s  = e.SDef.Url;
+                e.SDef.Contact.Add(cd);
+                e.SDef.Date = ResourcesMaker.Self.date.ToString();
+                e.SDef.Status = ProfileStatus;
+                e.SDef.Publisher = "Hl7-Clinical Interoperability Council";
+                e.SDef.Version = ProfileVersion;
+
+                e.IntroDoc
+                    .ReviewedStatus(ReviewStatus.NotReviewed)
+                    .Fragment($"Resource fragment used to by all resources to define common values such as Contact and Date.")
+                    ;
             });
-
-            this.aimHeaderFragment = e.SDef.Url;
-            e.SDef.Contact.Add(cd);
-            e.SDef.Date = this.date.ToString();
-            e.SDef.Status = ProfileStatus;
-            e.SDef.Publisher = "Hl7-Clinical Interoperability Council";
-            e.SDef.Version = ProfileVersion;
-
-            e.IntroDoc
-                .ReviewedStatus(ReviewStatus.NotReviewed)
-                .Fragment($"Resource fragment used to by all resources to define common values such as Contact and Date.")
-                ;
-        }
     }
 }

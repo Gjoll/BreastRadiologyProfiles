@@ -67,7 +67,7 @@ namespace BreastRadiology.XUnitTests
 
         VSTaskVar BreastRadUSTissueCompositionVS = new VSTaskVar(
             () =>
-                ResourcesMaker.Self.CreateValueSetXX(
+                ResourcesMaker.Self.CreateValueSet(
                     "BreastRadUSTissueComposition",
                     "US Tissue Composition",
                     "US Tissue/CompositionValueSet",
@@ -108,9 +108,9 @@ namespace BreastRadiology.XUnitTests
                             "can this and mammo breast density be the same?"
                         )
                 )
-                .AddFragRef(this.ObservationNoDeviceFragment())
-                .AddFragRef(this.ObservationCodedValueFragment())
-                .AddFragRef(this.ObservationLeafFragment())
+                .AddFragRef(this.ObservationNoDeviceFragment.Value())
+                .AddFragRef(this.ObservationCodedValueFragment.Value())
+                .AddFragRef(this.ObservationLeafFragment.Value())
                 ;
 
             this.usTissueComposition = e.SDef.Url;

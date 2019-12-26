@@ -69,7 +69,7 @@ namespace BreastRadiology.XUnitTests
 
         VSTaskVar BreastRadUSVascularityVS = new VSTaskVar(
             () =>
-                ResourcesMaker.Self.CreateValueSetXX(
+                ResourcesMaker.Self.CreateValueSet(
                     "BreastRadUSVascularity",
                     "US Vascularity",
                     "US Vascularity/ValueSet",
@@ -106,9 +106,9 @@ namespace BreastRadiology.XUnitTests
                         .Todo(
                         )
                     )
-                .AddFragRef(this.ObservationNoDeviceFragment())
-                .AddFragRef(this.ObservationCodedValueFragment())
-                .AddFragRef(this.ObservationLeafFragment())
+                .AddFragRef(this.ObservationNoDeviceFragment.Value())
+                .AddFragRef(this.ObservationCodedValueFragment.Value())
+                .AddFragRef(this.ObservationLeafFragment.Value())
                 ;
 
             this.usVascularity = e.SDef.Url;

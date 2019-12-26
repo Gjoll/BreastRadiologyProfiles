@@ -53,7 +53,7 @@ namespace BreastRadiology.XUnitTests
 
         VSTaskVar BreastRadUSElasticityVS = new VSTaskVar(
             () =>
-                ResourcesMaker.Self.CreateValueSetXX(
+                ResourcesMaker.Self.CreateValueSet(
                     "BreastRadUSElasticity",
                     "US Elasticity",
                     "US Elasticity/ValueSet",
@@ -86,9 +86,9 @@ namespace BreastRadiology.XUnitTests
                         .Todo(
                         )
                     )
-                .AddFragRef(this.ObservationNoDeviceFragment())
-                .AddFragRef(this.ObservationCodedValueFragment())
-                .AddFragRef(this.ObservationLeafFragment())
+                .AddFragRef(this.ObservationNoDeviceFragment.Value())
+                .AddFragRef(this.ObservationCodedValueFragment.Value())
+                .AddFragRef(this.ObservationLeafFragment.Value())
                 ;
             this.usElasticity = e.SDef.Url;
 

@@ -9,43 +9,32 @@ namespace BreastRadiology.XUnitTests
 {
     partial class ResourcesMaker
     {
-        public String ObservationCodedValueFragment()
-        {
-            if (this.observationCodedValueFragment == null)
-                this.CreateObservationCodedValueFragment();
-            return this.observationCodedValueFragment;
-        }
-        String observationCodedValueFragment = null;
+        StringTaskVar ObservationCodedValueFragment = new StringTaskVar(
+            (out String s) =>
+            {
+                SDefEditor e = ResourcesMaker.Self.CreateFragment("CodedValueObservationFragment",
+                        "CodedValue Observation Fragment",
+                        "Observation/CodedValue/Fragment",
+                        ObservationUrl)
+                    .Description("Fragment that defines values for coded observations",
+                        new Markdown()
+                            .Paragraph("This fragment constrains an observation to only contain coded values.")
+                            .Todo(
+                            )
+                    )
+                    .AddFragRef(ResourcesMaker.Self.HeaderFragment.Value())
+                    .AddFragRef(ResourcesMaker.Self.ObservationFragment.Value())
+                    ;
+                s = e.SDef.Url;
 
-        /// <summary>
-        /// Create ObservationCodedValueFragment.
-        /// </summary>
-        /// <returns></returns>
-        void CreateObservationCodedValueFragment()
-        {
-            SDefEditor e = this.CreateFragment("CodedValueObservationFragment",
-                    "CodedValue Observation Fragment",
-                    "Observation/CodedValue/Fragment",
-                    ObservationUrl)
-                .Description("Fragment that defines values for coded observations",
-                    new Markdown()
-                        .Paragraph("This fragment constrains an observation to only contain coded values.")
-                        .Todo(
-                        )
-                )
-                .AddFragRef(this.HeaderFragment())
-                .AddFragRef(this.ObservationFragment())
-                ;
-            this.observationCodedValueFragment = e.SDef.Url;
+                e.Select("value[x]")
+                    .Type("CodeableConcept")
+                    ;
 
-            e.Select("value[x]")
-                .Type("CodeableConcept")
-                ;
-
-            e.IntroDoc
-                .ReviewedStatus(ReviewStatus.NotReviewed)
-                .Fragment($"Resource fragment used to by all observations whose value are a CodeableConcept.")
-                ;
-        }
+                e.IntroDoc
+                    .ReviewedStatus(ReviewStatus.NotReviewed)
+                    .Fragment($"Resource fragment used to by all observations whose value are a CodeableConcept.")
+                    ;
+            });
     }
 }

@@ -86,7 +86,7 @@ namespace BreastRadiology.XUnitTests
 
         VSTaskVar BreastRadUSPosteriorAcousticFeaturesVS = new VSTaskVar(
             () =>
-                ResourcesMaker.Self.CreateValueSetXX(
+                ResourcesMaker.Self.CreateValueSet(
                     "BreastRadUSPosteriorAcousticFeatures",
                     "US Posterior Acoustic Features",
                     "US Posterior Acoustic/Feature ValueSet",
@@ -116,9 +116,9 @@ namespace BreastRadiology.XUnitTests
                         .Todo(
                         )
                     )
-                .AddFragRef(this.ObservationNoDeviceFragment())
-                .AddFragRef(this.ObservationCodedValueFragment())
-                .AddFragRef(this.ObservationLeafFragment())
+                .AddFragRef(this.ObservationNoDeviceFragment.Value())
+                .AddFragRef(this.ObservationCodedValueFragment.Value())
+                .AddFragRef(this.ObservationLeafFragment.Value())
                 ;
 
             this.usPosteriorAcousticFeatures = e.SDef.Url;

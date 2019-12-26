@@ -88,7 +88,7 @@ namespace BreastRadiology.XUnitTests
 
         VSTaskVar BreastRadMammoAbnormalityAsymmetriesVS = new VSTaskVar(
             () =>
-                ResourcesMaker.Self.CreateValueSetXX(
+                ResourcesMaker.Self.CreateValueSet(
                    "BreastRadMammoAbnormalityAsymmetries",
                    "Mammography AsymmetryAbnormalities",
                     "Mg Asymmetry/ValueSet",
@@ -132,10 +132,10 @@ namespace BreastRadiology.XUnitTests
                         .Todo(
                         )
                 )
-                .AddFragRef(this.ObservationNoDeviceFragment())
-                .AddFragRef(this.ObservationCodedValueFragment())
-                .AddFragRef(this.ObservationSectionFragment())
-                .AddFragRef(this.MGCommonTargetsFragment())
+                .AddFragRef(this.ObservationNoDeviceFragment.Value())
+                .AddFragRef(this.ObservationCodedValueFragment.Value())
+                .AddFragRef(this.ObservationSectionFragment.Value())
+                .AddFragRef(this.MGCommonTargetsFragment.Value())
             ;
             this.mgAbnormalityAsymmetry = e.SDef.Url;
 
