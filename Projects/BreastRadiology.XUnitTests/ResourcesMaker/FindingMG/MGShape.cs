@@ -53,8 +53,7 @@ namespace BreastRadiology.XUnitTests
                     "Shape",
                     "Shape",
                     ObservationUrl,
-                    $"{Group_CommonResources}/Shape",
-                    out this.mgShape)
+                    $"{Group_CommonResources}/Shape")
                 .Description("Breast Radiology Shape Observation",
                     new Markdown()
                         .MissingObservation("a shape")
@@ -65,6 +64,7 @@ namespace BreastRadiology.XUnitTests
                 .AddFragRef(this.ObservationCodedValueFragment())
                 .AddFragRef(this.ObservationLeafFragment())
                 ;
+            this.mgShape = e.SDef.Url;
 
             e.Select("value[x]")
                 .Type("CodeableConcept")

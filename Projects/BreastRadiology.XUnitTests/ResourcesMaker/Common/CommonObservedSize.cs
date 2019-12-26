@@ -28,8 +28,7 @@ namespace BreastRadiology.XUnitTests
                     "Size",
                     "Size",
                     ObservationUrl,
-                    $"{Group_CommonResources}/ObservedSize",
-                    out this.commonObservedSize)
+                    $"{Group_CommonResources}/ObservedSize")
                 .Description("Breast Radiology Size Observation",
                     new Markdown()
                         .Paragraph("This observations describes the size of an observed item.",
@@ -42,6 +41,7 @@ namespace BreastRadiology.XUnitTests
                 .AddFragRef(this.ObservationNoDeviceFragment())
                 .AddFragRef(this.ObservationLeafFragment())
                 ;
+            this.commonObservedSize = e.SDef.Url;
             e.Select("value[x]")
                 .Type("Quantity")
                 .SetCardinality(1, "3")

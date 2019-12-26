@@ -29,8 +29,7 @@ namespace BreastRadiology.XUnitTests
                     "Findings Right Breast",
                     "Right Breast",
                     ObservationUrl,
-                    $"{Group_BaseResources}/Findings/RightBreast",
-                    out this.sectionFindingsRightBreast)
+                    $"{Group_BaseResources}/Findings/RightBreast")
                 .Description("Findings Right Breast Section",
                     new Markdown()
                     .Paragraph("This resource is the head of the tree of observations made of the right breast during a breast radiology exam.")
@@ -42,6 +41,7 @@ namespace BreastRadiology.XUnitTests
                 .AddFragRef(this.ObservationSectionFragment())
                 .AddFragRef(this.ObservationNoValueFragment())
                 ;
+            this.sectionFindingsRightBreast = e.SDef.Url;
             e.Select("value[x]").Zero();
             e.Select("bodySite").Zero();
             e.Find("hasMember").SliceByUrl(this.FindingBreastTargets());

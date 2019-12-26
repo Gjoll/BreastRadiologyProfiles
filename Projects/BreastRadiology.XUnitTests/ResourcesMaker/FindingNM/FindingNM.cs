@@ -27,8 +27,7 @@ namespace BreastRadiology.XUnitTests
                         "NM Finding",
                         "NM Finding",
                         ObservationUrl,
-                        $"{Group_NMResources}",
-                        out this.findingNM)
+                        $"{Group_NMResources}")
                     .Description("Breast Radiology NMgraphy Finding",
                         new Markdown()
                             .Todo(
@@ -38,7 +37,8 @@ namespace BreastRadiology.XUnitTests
                     .AddFragRef(this.ObservationSectionFragment())
                     .AddFragRef(this.ObservationNoValueFragment())
                     ;
-                e.Select("value[x]").Zero();
+            this.findingNM = e.SDef.Url;
+            e.Select("value[x]").Zero();
                 ////$ todo. Incorrect method!!!
                 //e.Find("method")
                 // .FixedCodeSlice("method", "http://snomed.info/sct", "115341008")

@@ -72,8 +72,7 @@ namespace BreastRadiology.XUnitTests
                     "Mammography Density Abnormality",
                     "Mg Density Abnormality",
                     ObservationUrl,
-                    $"{Group_MGResources}/AbnormalityDensity",
-                    out this.mgAbnormalityDensity)
+                    $"{Group_MGResources}/AbnormalityDensity")
                 .Description("Breat Radiology Mammography Density Abnormality Observation",
                     new Markdown()
                         .MissingObservation("a Density abnormality")
@@ -88,6 +87,7 @@ namespace BreastRadiology.XUnitTests
                 .AddFragRef(this.MGShapeTargetsFragment())
                 ;
 
+            this.mgAbnormalityDensity = e.SDef.Url;
             e.Select("value[x]")
                 .ZeroToOne()
                 .Type("CodeableConcept")

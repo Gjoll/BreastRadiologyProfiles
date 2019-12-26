@@ -59,8 +59,7 @@ namespace BreastRadiology.XUnitTests
                     "US Margin",
                     "US Margin",
                     ObservationUrl,
-                    $"{Group_USResources}/Margin",
-                    out this.usMargin)
+                    $"{Group_USResources}/Margin")
                 .Description("Breast Radiology Ultra-Sound Margin Observation",
                     new Markdown()
                         .MissingObservation("a mass margin")
@@ -77,6 +76,7 @@ namespace BreastRadiology.XUnitTests
                 .AddFragRef(this.ObservationLeafFragment())
                 ;
 
+            this.usMargin = e.SDef.Url;
             e.Select("value[x]")
                 .Type("CodeableConcept")
                 .Binding(binding.Url, BindingStrength.Required)

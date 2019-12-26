@@ -43,8 +43,7 @@ namespace BreastRadiology.XUnitTests
                     "Mammography Fibroadenoma Abnormality",
                     "Mg Fibroadenoma Abnormality",
                     ObservationUrl,
-                    $"{Group_MGResources}/AbnormalityFibroadenoma",
-                    out this.mgAbnormalityFibroadenoma)
+                    $"{Group_MGResources}/AbnormalityFibroadenoma")
                 .Description("Breast Radiology Mammography Fibroadenoma Abnormality Observation",
                     new Markdown()
                         .Paragraph("[PR]")
@@ -60,6 +59,7 @@ namespace BreastRadiology.XUnitTests
                 .AddFragRef(this.MGShapeTargetsFragment())
                 ;
 
+            this.mgAbnormalityFibroadenoma = e.SDef.Url;
             {
                 ProfileTargetSlice[] targets = new ProfileTargetSlice[]
                 {

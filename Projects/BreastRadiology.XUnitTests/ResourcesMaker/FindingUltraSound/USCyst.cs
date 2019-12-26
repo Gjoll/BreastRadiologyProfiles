@@ -27,8 +27,7 @@ namespace BreastRadiology.XUnitTests
                     "UltraSound Cyst",
                     "US Cyst",
                     ObservationUrl,
-                    $"{Group_USResources}/Cyst",
-                    out this.usCyst)
+                    $"{Group_USResources}/Cyst")
                 .Description("Breast Radiology UltraSound Cyst Observation",
                     new Markdown()
                         .Paragraph("[PR]")
@@ -42,6 +41,7 @@ namespace BreastRadiology.XUnitTests
                 .AddFragRef(this.ObservationNoValueFragment())
                 .AddFragRef(this.ImagingStudyFragment())
                 ;
+            this.usCyst = e.SDef.Url;
 
             {
                 ProfileTargetSlice[] targets = new ProfileTargetSlice[]

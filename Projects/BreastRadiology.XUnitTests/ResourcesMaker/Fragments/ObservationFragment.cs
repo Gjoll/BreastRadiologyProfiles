@@ -26,8 +26,7 @@ namespace BreastRadiology.XUnitTests
             SDefEditor e = this.CreateFragment("BreastRadObservationFragment",
                 "BreastRad Observation Fragment",
                     "Observation/Fragment",
-                ObservationUrl,
-                out this.observationFragment)
+                ObservationUrl)
                 .Description("Base fragment for all BreastRad observations.",
                     new Markdown()
                         .Paragraph("Base fragment that performs common constrains used in all breast radiology observations.")
@@ -37,6 +36,7 @@ namespace BreastRadiology.XUnitTests
                 .AddFragRef(this.HeaderFragment())
                 .AddFragRef(this.CategoryFragment())
             ;
+            this.observationFragment = e.SDef.Url;
             e.Select("subject").Single();
 
             e.Select("component").Zero();

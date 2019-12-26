@@ -385,8 +385,7 @@ namespace BreastRadiology.XUnitTests
                 "Breast Body Location Extension",
                 "Breast Body Loc.",
                 ExtensionUrl,
-                $"{Group_ExtensionResources}/BreastBodyLocation",
-                out this.breastBodyLocationExtension)
+                $"{Group_ExtensionResources}/BreastBodyLocation")
                 .Description("Breast Body Location extension",
                     new Markdown()
                         .Paragraph("this extension defines the fields that are used to describe the" +
@@ -398,6 +397,7 @@ namespace BreastRadiology.XUnitTests
                 .Kind(StructureDefinition.StructureDefinitionKind.ComplexType)
                 .Context()
                 ;
+            this.breastBodyLocationExtension = e.SDef.Url;
 
             //breastBodyLocationMapLinks.Add(new ResourceMap.Link("extension", breastBodyLocationExtension, false));
 

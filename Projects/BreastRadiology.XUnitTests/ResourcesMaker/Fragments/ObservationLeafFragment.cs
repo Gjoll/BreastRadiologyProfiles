@@ -22,8 +22,7 @@ namespace BreastRadiology.XUnitTests
             SDefEditor e = this.CreateFragment("ObservationLeafFragment",
                 "Observation Leaf Fragment",
                     "Observation/Leaf/Fragment",
-                ObservationUrl,
-                out this.observationLeafFragment)
+                ObservationUrl)
                 .Description("Fragment that contstrains all observations that are leaf nodes.",
                     new Markdown()
                         .Paragraph("Fragment that constrains observations leaf nodes (no hasMembers references).")
@@ -34,6 +33,7 @@ namespace BreastRadiology.XUnitTests
                 .AddFragRef(this.CategoryFragment())
                 .AddFragRef(this.ObservationFragment())
             ;
+            this.observationLeafFragment = e.SDef.Url;
             e.Select("hasMember").Zero();
 
             e.IntroDoc

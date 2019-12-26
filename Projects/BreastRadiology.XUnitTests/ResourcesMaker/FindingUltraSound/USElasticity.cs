@@ -79,8 +79,7 @@ namespace BreastRadiology.XUnitTests
                     "US Elasticity",
                     "US Elasticity",
                     ObservationUrl,
-                    $"{Group_USResources}/Elasticity",
-                    out this.usElasticity)
+                    $"{Group_USResources}/Elasticity")
                 .Description("Breast Radiology Ultra-Sound Elasticity Observation",
                     new Markdown()
                         .Paragraph("[PR]")
@@ -91,6 +90,7 @@ namespace BreastRadiology.XUnitTests
                 .AddFragRef(this.ObservationCodedValueFragment())
                 .AddFragRef(this.ObservationLeafFragment())
                 ;
+            this.usElasticity = e.SDef.Url;
 
             e.Select("value[x]")
                 .Type("CodeableConcept")

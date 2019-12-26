@@ -28,8 +28,7 @@ namespace BreastRadiology.XUnitTests
                 "Impressions Extension",
                 "Impressions/Extension",
                 ExtensionUrl,
-                $"{Group_ExtensionResources}/Impressions",
-                out this.breastRadiologyImpressionsExtension)
+                $"{Group_ExtensionResources}/Impressions")
                 .Description("Impressions extension",
                     new Markdown()
                         .Paragraph("This extension defines the impressions section of a breast radiology report, " +
@@ -41,6 +40,7 @@ namespace BreastRadiology.XUnitTests
                 .Context()
                 ;
             e.AddFragRef(this.HeaderFragment());
+            this.breastRadiologyImpressionsExtension = e.SDef.Url;
 
             e.Select("extension").Zero();
             e.Select("url")

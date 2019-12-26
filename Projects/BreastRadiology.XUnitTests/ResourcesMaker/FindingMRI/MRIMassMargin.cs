@@ -97,8 +97,7 @@ namespace BreastRadiology.XUnitTests
                     "MRI Mass Margin",
                     "MRI Mass/Margin",
                     ObservationUrl,
-                    $"{Group_MRIResources}/Mass/Margin",
-                    out this.mriMassMargin)
+                    $"{Group_MRIResources}/Mass/Margin")
                     .Description("Breast Radiology MRI Mass Margin Observation",
                         new Markdown()
                             .MissingObservation("a mass margin")
@@ -114,8 +113,9 @@ namespace BreastRadiology.XUnitTests
                     .AddFragRef(this.ObservationCodedValueFragment())
                     .AddFragRef(this.ObservationLeafFragment())
                     ;
+            this.mriMassMargin = e.SDef.Url;
 
-                e.Select("value[x]")
+            e.Select("value[x]")
                     .Type("CodeableConcept")
                     .Binding(binding.Url, BindingStrength.Required)
                     ;

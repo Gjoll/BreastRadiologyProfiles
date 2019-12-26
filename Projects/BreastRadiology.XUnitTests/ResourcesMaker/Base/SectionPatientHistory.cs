@@ -29,8 +29,7 @@ namespace BreastRadiology.XUnitTests
                     "Patient History",
                     "Patient History",
                     ObservationUrl,
-                    $"{Group_BaseResources}/PatientHistory",
-                    out this.sectionPatientHistory)
+                    $"{Group_BaseResources}/PatientHistory")
                 .Description("Patient History Section",
                     new Markdown()
                     .Paragraph("This resource is the head of the tree of previous observations.")
@@ -43,6 +42,7 @@ namespace BreastRadiology.XUnitTests
                 .AddFragRef(this.ObservationSectionFragment())
                 .AddFragRef(this.ObservationNoValueFragment())
                 ;
+            this.sectionPatientHistory = e.SDef.Url;
             e.Select("value[x]").Zero();
             e.Select("bodySite").Zero();
 

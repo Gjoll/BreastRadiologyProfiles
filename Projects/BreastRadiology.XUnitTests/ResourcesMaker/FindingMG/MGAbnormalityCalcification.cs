@@ -27,8 +27,7 @@ namespace BreastRadiology.XUnitTests
                     "Mammography Calcification Abnormality",
                     "Mg Calc. Abnormality",
                     ObservationUrl,
-                    $"{Group_MGResources}/CalcificationAbnormality",
-                    out this.mgAbnormalityCalcification)
+                    $"{Group_MGResources}/CalcificationAbnormality")
                 .Description("Breast Radiology Mammography Calcification Abnormality Observation",
                     new Markdown()
                         .MissingObservation("a calcification")
@@ -56,6 +55,7 @@ namespace BreastRadiology.XUnitTests
                 .AddFragRef(this.MGShapeTargetsFragment())
                 ;
 
+            this.mgAbnormalityCalcification = e.SDef.Url;
             {
                 ProfileTargetSlice[] targets = new ProfileTargetSlice[]
                 {

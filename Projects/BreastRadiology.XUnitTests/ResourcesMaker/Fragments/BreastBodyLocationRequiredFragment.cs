@@ -27,8 +27,7 @@ namespace BreastRadiology.XUnitTests
             SDefEditor e = this.CreateFragment("BreastBodyLocationRequiredFragment",
                     "Breast Body Location (Required) Fragment",
                     "Breast/Body/Location/Fragment/(Required)",
-                    ObservationUrl,
-                    out this.breastBodyLocationRequiredFragment)
+                    ObservationUrl)
                 .Description("Fragment definition for a Required Breast Body Location",
                     new Markdown()
                     .Paragraph("This fragment adds the references for the breast body location extension.")
@@ -39,6 +38,7 @@ namespace BreastRadiology.XUnitTests
                 .AddFragRef(this.HeaderFragment())
                 .AddExtensionLink(this.BreastBodyLocationExtension())
             ;
+            this.breastBodyLocationRequiredFragment = e.SDef.Url;
             e
                 .Select("bodySite")
                 .Single()

@@ -75,8 +75,7 @@ namespace BreastRadiology.XUnitTests
                     "Observed Change in Prominance",
                     "Prominance Change",
                     ObservationUrl,
-                    $"{Group_CommonResources}/ObservedChangeInProminance",
-                    out this.commonObservedChangeInProminance)
+                    $"{Group_CommonResources}/ObservedChangeInProminance")
                 .Description("Breast Radiology Changes in Prominance Observation",
                     new Markdown()
                         .MissingObservation("an observed change in Prominance")
@@ -88,6 +87,7 @@ namespace BreastRadiology.XUnitTests
                 .AddFragRef(this.ObservationLeafFragment())
                 ;
 
+            this.commonObservedChangeInProminance = e.SDef.Url;
             e.Select("value[x]")
                 .Type("CodeableConcept")
                 .Binding(binding.Url, BindingStrength.Required)

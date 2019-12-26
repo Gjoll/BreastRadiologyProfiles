@@ -103,8 +103,7 @@ namespace BreastRadiology.XUnitTests
                     "Mammography LymphNode Abnormality",
                     "Mg Lymph Node Abnormality",
                     ObservationUrl,
-                    $"{Group_MGResources}/AbnormalityLymphNode",
-                    out this.mgAbnormalityLymphNode)
+                    $"{Group_MGResources}/AbnormalityLymphNode")
                     .Description("Breast Radiology Mammography LymphNode Abnormality Observation",
                         new Markdown()
                             .MissingObservation("a lymph node abnormality")
@@ -119,7 +118,8 @@ namespace BreastRadiology.XUnitTests
                     .AddFragRef(this.MGShapeTargetsFragment())
                     ;
 
-                e.Select("value[x]")
+            this.mgAbnormalityLymphNode = e.SDef.Url;
+            e.Select("value[x]")
                     .ZeroToOne()
                     .Type("CodeableConcept")
                     .Binding(binding.Url, BindingStrength.Required)

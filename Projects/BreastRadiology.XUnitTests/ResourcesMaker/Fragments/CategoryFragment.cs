@@ -27,8 +27,7 @@ namespace BreastRadiology.XUnitTests
             SDefEditor e = this.CreateFragment("CategoryFragment",
                     "Category Fragment",
                     "Category/Fragment",
-                    ObservationUrl,
-                    out this.findingCategoryFragment)
+                    ObservationUrl)
                 .Description("Fragment definition to define Observation.category",
                     new Markdown()
                         .Paragraph("This fragment slices Observation.category and adds the required observation code value.")
@@ -36,6 +35,7 @@ namespace BreastRadiology.XUnitTests
                         )
                 )
                 ;
+            this.findingCategoryFragment = e.SDef.Url;
             ElementDefGroup eDef = e.Find("category");
             eDef.ElementDefinition.Card(1, eDef.BaseElementDefinition.Max);
             eDef.FixedCodeSlice("category",

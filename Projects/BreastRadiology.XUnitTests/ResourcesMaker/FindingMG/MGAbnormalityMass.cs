@@ -42,8 +42,7 @@ namespace BreastRadiology.XUnitTests
                     "Mammography Mass Abnormality",
                     "Mg Mass Abnormality",
                     ObservationUrl,
-                    $"{Group_MGResources}/MassAbnormality",
-                    out this.mgAbnormalityMass)
+                    $"{Group_MGResources}/MassAbnormality")
                 .Description("Breast Radiology Mammography Mass Abnormality Observation",
                     new Markdown()
                         .MissingObservation("a mass abnormality")
@@ -66,6 +65,7 @@ namespace BreastRadiology.XUnitTests
                 .AddFragRef(this.MGShapeTargetsFragment())
                 ;
 
+            this.mgAbnormalityMass = e.SDef.Url;
             e.Select("value[x]")
                 .ZeroToOne()
                 .Type("CodeableConcept")

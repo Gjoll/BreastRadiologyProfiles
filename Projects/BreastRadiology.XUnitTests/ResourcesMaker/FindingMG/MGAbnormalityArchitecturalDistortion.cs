@@ -27,8 +27,7 @@ namespace BreastRadiology.XUnitTests
                     "Mammography Architectural Distortion Abnormality",
                     "Mg Arch. Distortion Abnormality",
                     ObservationUrl,
-                    $"{Group_MGResources}/AbnormalityArchitecturalDistortion",
-                    out this.mgAbnormalityArchitecturalDistortion)
+                    $"{Group_MGResources}/AbnormalityArchitecturalDistortion")
                 .Description("Breast Radiology Mammography Architectural Distortion Abnormality Observation",
                     new Markdown()
                         .MissingObservation("an architectural distortion abnormality")
@@ -50,6 +49,7 @@ namespace BreastRadiology.XUnitTests
                 .AddFragRef(this.ObservationLeafFragment())
                 .AddFragRef(this.MGCommonTargetsFragment())
                 ;
+            this.mgAbnormalityArchitecturalDistortion = e.SDef.Url;
 
             {
                 ProfileTargetSlice[] targets = new ProfileTargetSlice[]

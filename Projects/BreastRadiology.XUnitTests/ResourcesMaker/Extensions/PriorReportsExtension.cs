@@ -28,8 +28,7 @@ namespace BreastRadiology.XUnitTests
                 "Prior Reports Extension",
                 "Prior Reports/Extension",
                 ExtensionUrl,
-                $"{Group_ExtensionResources}/PriorReports",
-                out this.breastRadiologyPriorReportsExtension)
+                $"{Group_ExtensionResources}/PriorReports")
                 .Description("Prior Diagnostic Report extension",
                     new Markdown()
                         .Paragraph("This extension defines the prior reports section of a breast radiology report, " +
@@ -40,6 +39,7 @@ namespace BreastRadiology.XUnitTests
                 .Kind(StructureDefinition.StructureDefinitionKind.ComplexType)
                 .Context()
                 ;
+            this.breastRadiologyPriorReportsExtension = e.SDef.Url;
             e.AddFragRef(this.HeaderFragment());
 
             e.Select("extension").Zero();

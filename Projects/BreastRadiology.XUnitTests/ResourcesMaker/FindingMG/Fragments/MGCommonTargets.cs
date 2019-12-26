@@ -26,8 +26,7 @@ namespace BreastRadiology.XUnitTests
             SDefEditor e = this.CreateFragment("MgCommonTargetsFragment",
                     "Mg Common Targets Fragment",
                     "Mg Common Targets Fragment",
-                    ObservationUrl,
-                    out this.mgCommonTargetsFragment)
+                    ObservationUrl)
                 .Description("Mammography Common Targets Fragment",
                     new Markdown()
                         .Paragraph("Mammography Common Targets Fragment")
@@ -36,6 +35,7 @@ namespace BreastRadiology.XUnitTests
                 )
                 .AddFragRef(this.BreastBodyLocationRequiredFragment())
                 ;
+            this.mgCommonTargetsFragment = e.SDef.Url;
 
             {
                 ProfileTargetSlice[] targets = new ProfileTargetSlice[]

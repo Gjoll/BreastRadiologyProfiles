@@ -84,8 +84,7 @@ namespace BreastRadiology.XUnitTests
                     "Orientation",
                     "Orientation",
                     ObservationUrl,
-                    $"{Group_CommonResources}/Orientation",
-                    out this.orientation)
+                    $"{Group_CommonResources}/Orientation")
                 .Description("Breast Radiology Orientation Observation",
                     new Markdown()
                         .MissingObservation("a orientation")
@@ -104,6 +103,7 @@ namespace BreastRadiology.XUnitTests
                 .AddFragRef(this.ObservationCodedValueFragment())
                 .AddFragRef(this.ObservationLeafFragment())
                 ;
+            this.orientation = e.SDef.Url;
 
             e.Select("value[x]")
                 .Type("CodeableConcept")

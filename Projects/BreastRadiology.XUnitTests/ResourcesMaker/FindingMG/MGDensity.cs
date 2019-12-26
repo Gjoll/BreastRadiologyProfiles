@@ -102,8 +102,7 @@ namespace BreastRadiology.XUnitTests
                     "Mammography Density",
                     "Mg Density",
                     ObservationUrl,
-                    $"{Group_MGResources}/Density",
-                    out this.mgDensity)
+                    $"{Group_MGResources}/Density")
                 .Description("Breast Radiology Mammography Density Observation",
                     new Markdown()
                         .MissingObservation("a mass density")
@@ -125,6 +124,7 @@ namespace BreastRadiology.XUnitTests
                 .AddFragRef(this.ObservationCodedValueFragment())
                 .AddFragRef(this.ObservationLeafFragment())
                 ;
+            this.mgDensity = e.SDef.Url;
 
             e.Select("value[x]")
                 .Type("CodeableConcept")

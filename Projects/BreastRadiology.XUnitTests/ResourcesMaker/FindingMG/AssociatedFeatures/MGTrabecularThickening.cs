@@ -27,8 +27,7 @@ namespace BreastRadiology.XUnitTests
                 "Mammography Trabecular Thickening",
                 "Mg Trabecular/Thickening",
                 ObservationUrl,
-                $"{Group_MGResources}/AssociatedFeature/TrabecularThickening",
-                out this.mgTrabecularThickening)
+                $"{Group_MGResources}/AssociatedFeature/TrabecularThickening")
                 .Description("Trabecular Thickening Observation",
                     new Markdown()
                         .BiradHeader()
@@ -45,6 +44,7 @@ namespace BreastRadiology.XUnitTests
                 .AddFragRef(this.BreastBodyLocationRequiredFragment())
                 .AddFragRef(this.ObservationNoValueFragment())
                 ;
+            this.mgTrabecularThickening = e.SDef.Url;
             e.IntroDoc
                 .ReviewedStatus(ReviewStatus.NotReviewed)
                 .ObservationLeafNode("Trabecular Thickening")

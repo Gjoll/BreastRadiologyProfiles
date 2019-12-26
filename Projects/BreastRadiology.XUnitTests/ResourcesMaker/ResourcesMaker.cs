@@ -111,8 +111,7 @@ namespace BreastRadiology.XUnitTests
             String title,
             String mapName,
             String baseDefinition,
-            String groupPath,
-            out String url)
+            String groupPath)
         {
             if (name.Contains(" "))
                 throw new Exception("Structure Def name can not contains spaces");
@@ -129,7 +128,6 @@ namespace BreastRadiology.XUnitTests
             retVal.SDef.FhirVersion = FHIRVersion.N4_0_0;
 
             this.Editors.Add(retVal.SDef.Url, retVal);
-            url = retVal.SDef.Url;
 
             // store groupPath as an extension. This is an unregistered extension that will be removed before
             // processing is complete.
@@ -145,15 +143,13 @@ namespace BreastRadiology.XUnitTests
         SDefEditor CreateFragment(String name,
             String title,
             String mapName,
-            String baseDefinition,
-            out String url)
+            String baseDefinition)
         {
             SDefEditor retVal = this.CreateEditor(name,
                 title,
                 mapName,
                 baseDefinition,
-                "Fragment/{name}",
-                out url);
+                "Fragment/{name}");
             retVal.SetIsFrag();
             retVal.SDef.Abstract = true;
             return retVal;

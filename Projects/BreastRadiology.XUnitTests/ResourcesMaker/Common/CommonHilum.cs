@@ -74,8 +74,7 @@ namespace BreastRadiology.XUnitTests
                     "Hilum Shape",
                     "Hilum/Shape",
                     ObservationUrl,
-                    $"{Group_CommonResources}/Hilum",
-                    out this.commonHilum)
+                    $"{Group_CommonResources}/Hilum")
                 .Description("Breast Radiology Hilum Observation",
                     new Markdown()
                         .MissingObservation("a hilum")
@@ -88,6 +87,7 @@ namespace BreastRadiology.XUnitTests
                 .AddFragRef(this.ObservationLeafFragment())
                 ;
 
+            this.commonHilum = e.SDef.Url;
             e.Select("value[x]")
                 .Type("CodeableConcept")
                 .Binding(binding.Url, BindingStrength.Required)

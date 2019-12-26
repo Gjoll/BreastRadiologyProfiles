@@ -26,8 +26,7 @@ namespace BreastRadiology.XUnitTests
             SDefEditor e = this.CreateFragment("CodedValueObservationFragment",
                     "CodedValue Observation Fragment",
                     "Observation/CodedValue/Fragment",
-                    ObservationUrl,
-                    out this.observationCodedValueFragment)
+                    ObservationUrl)
                 .Description("Fragment that defines values for coded observations",
                     new Markdown()
                         .Paragraph("This fragment constrains an observation to only contain coded values.")
@@ -37,6 +36,7 @@ namespace BreastRadiology.XUnitTests
                 .AddFragRef(this.HeaderFragment())
                 .AddFragRef(this.ObservationFragment())
                 ;
+            this.observationCodedValueFragment = e.SDef.Url;
 
             e.Select("value[x]")
                 .Type("CodeableConcept")

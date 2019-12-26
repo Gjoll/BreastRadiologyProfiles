@@ -27,8 +27,7 @@ namespace BreastRadiology.XUnitTests
                 "Mammography Nipple Retraction",
                 "Mg Nipple Retraction",
                 ObservationUrl,
-                $"{Group_MGResources}/AssociatedFeature/NippleRetraction",
-                out this.mgNippleRetraction)
+                $"{Group_MGResources}/AssociatedFeature/NippleRetraction")
                 .Description("Breast Radiology Mammography Nipple Retraction Observation",
                     new Markdown()
                         .MissingObservation("a nipple retraction")
@@ -44,6 +43,7 @@ namespace BreastRadiology.XUnitTests
                 .AddFragRef(this.ObservationNoValueFragment())
                 .AddFragRef(this.BreastBodyLocationRequiredFragment())
                 ;
+            this.mgNippleRetraction = e.SDef.Url;
 
             e.IntroDoc
                 .ReviewedStatus(ReviewStatus.NotReviewed)

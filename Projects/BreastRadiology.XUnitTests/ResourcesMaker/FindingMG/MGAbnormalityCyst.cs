@@ -91,8 +91,7 @@ namespace BreastRadiology.XUnitTests
                     "Mammography Cyst Abnormality",
                     "Mg Cyst Abnormality",
                     ObservationUrl,
-                    $"{Group_MGResources}/AbnormalityCyst",
-                    out this.mgAbnormalityCyst)
+                    $"{Group_MGResources}/AbnormalityCyst")
                 .Description("Breast Radiology Mammography Cyst Abnormality Observation",
                     new Markdown()
                         .Paragraph("[PR]")
@@ -107,6 +106,7 @@ namespace BreastRadiology.XUnitTests
                 .AddFragRef(this.MGCommonTargetsFragment())
                 .AddFragRef(this.MGShapeTargetsFragment())
                 ;
+            this.mgAbnormalityCyst = e.SDef.Url;
 
             {
                 ProfileTargetSlice[] targets = new ProfileTargetSlice[]

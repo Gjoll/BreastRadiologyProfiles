@@ -87,8 +87,7 @@ namespace BreastRadiology.XUnitTests
                 "Ultra Sound Boundary",
                 "US Boundary",
                 ObservationUrl,
-                $"{Group_USResources}/Boundary",
-                out this.usBoundary)
+                $"{Group_USResources}/Boundary")
                 .Description("Breast Radiology Ultra-Sound Boundary Observation",
                     new Markdown()
                         .Paragraph("This resource describes an Ultra-Sound boundary observation.")
@@ -101,6 +100,7 @@ namespace BreastRadiology.XUnitTests
                 .AddFragRef(this.ObservationLeafFragment())
                 ;
 
+            this.usBoundary = e.SDef.Url;
             e.Select("value[x]")
                 .Type("CodeableConcept")
                 .Binding(binding.Url, BindingStrength.Required)

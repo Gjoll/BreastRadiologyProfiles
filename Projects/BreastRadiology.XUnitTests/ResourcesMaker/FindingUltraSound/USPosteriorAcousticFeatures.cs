@@ -105,8 +105,7 @@ namespace BreastRadiology.XUnitTests
                     "US Posterior Acoustic Features",
                     "US Posterior Acoustic/Features",
                     ObservationUrl,
-                    $"{Group_USResources}/PosteriorAcousticFeatures",
-                    out this.usPosteriorAcousticFeatures)
+                    $"{Group_USResources}/PosteriorAcousticFeatures")
                 .Description("Breast Radiology Ultra-Sound Posterior Acoustic Features Observation",
                     new Markdown()
                         .BiradHeader()
@@ -122,6 +121,7 @@ namespace BreastRadiology.XUnitTests
                 .AddFragRef(this.ObservationLeafFragment())
                 ;
 
+            this.usPosteriorAcousticFeatures = e.SDef.Url;
             e.Select("value[x]")
                 .Type("CodeableConcept")
                 .Binding(binding.Url, BindingStrength.Required)

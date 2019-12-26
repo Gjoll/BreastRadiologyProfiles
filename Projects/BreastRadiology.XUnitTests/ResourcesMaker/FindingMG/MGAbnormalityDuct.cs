@@ -75,8 +75,7 @@ namespace BreastRadiology.XUnitTests
                     "Mammography Duct Abnormality",
                     "Mg Duct Abnormality",
                     ObservationUrl,
-                    $"{Group_MGResources}/AbnormalityDuct",
-                    out this.mgAbnormalityDuct)
+                    $"{Group_MGResources}/AbnormalityDuct")
                 .Description("Breat Radiology Mammography Duct Abnormality Observation",
                     new Markdown()
                         .MissingObservation("a duct abnormality")
@@ -91,6 +90,7 @@ namespace BreastRadiology.XUnitTests
                 .AddFragRef(this.MGShapeTargetsFragment())
                 ;
 
+            this.mgAbnormalityDuct = e.SDef.Url;
             e.Select("value[x]")
                 .ZeroToOne()
                 .Type("CodeableConcept")

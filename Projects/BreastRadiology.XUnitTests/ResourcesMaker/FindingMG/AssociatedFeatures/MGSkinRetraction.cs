@@ -27,8 +27,7 @@ namespace BreastRadiology.XUnitTests
                 "Mammography Skin Retraction",
                 "Mg Skin Retraction",
                 ObservationUrl,
-                $"{Group_MGResources}/AssociatedFeature/SkinRetraction",
-                out this.mgSkinRetraction)
+                $"{Group_MGResources}/AssociatedFeature/SkinRetraction")
                 .Description("Mammography Skin Retraction Observation",
                     new Markdown()
                         .Paragraph()
@@ -43,6 +42,7 @@ namespace BreastRadiology.XUnitTests
                 .AddFragRef(this.ObservationNoValueFragment())
                 .AddFragRef(this.BreastBodyLocationRequiredFragment())
                 ;
+            this.mgSkinRetraction = e.SDef.Url;
 
             e.IntroDoc
                 .ReviewedStatus(ReviewStatus.NotReviewed)

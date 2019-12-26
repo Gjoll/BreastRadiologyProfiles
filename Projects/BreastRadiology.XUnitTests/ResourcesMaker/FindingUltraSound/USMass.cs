@@ -27,8 +27,7 @@ namespace BreastRadiology.XUnitTests
                     "US Mass",
                     "US Mass",
                     ObservationUrl,
-                    $"{Group_USResources}/Finding/Mass",
-                    out this.usMass)
+                    $"{Group_USResources}/Finding/Mass")
                 .Description("Breast Radiology Mammography Ultra-Sound Mass Observation",
                     new Markdown()
                         .MissingObservation("a mass", "and no Shape, Orientation, Margin, Echo Pattern, or Posterior Acoustic Feature observations should be referenced by this observation")
@@ -49,6 +48,7 @@ namespace BreastRadiology.XUnitTests
                 .AddFragRef(this.ObservationNoValueFragment())
                 .AddFragRef(this.ImagingStudyFragment())
                 ;
+            this.usMass = e.SDef.Url;
             {
                 ProfileTargetSlice[] targets = new ProfileTargetSlice[]
                 {

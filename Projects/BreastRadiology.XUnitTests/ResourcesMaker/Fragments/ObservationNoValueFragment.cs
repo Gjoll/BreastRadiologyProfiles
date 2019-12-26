@@ -22,8 +22,7 @@ namespace BreastRadiology.XUnitTests
             SDefEditor e = this.CreateFragment("BreastRadObservationNoValueFragment",
                 "BreastRad Observation NoValue Fragment",
                     "NoValue/Observation/Fragment",
-                ObservationUrl,
-                out this.observationNoValueFragment)
+                ObservationUrl)
                 .Description("Fragment that constrains Observations to have no explicit value.",
                     new Markdown()
                         .Paragraph("Base fragment for all BreastRad observations that have no explicit value.")
@@ -32,6 +31,7 @@ namespace BreastRadiology.XUnitTests
                 )
                 .AddFragRef(this.ObservationFragment())
             ;
+            this.observationNoValueFragment = e.SDef.Url;
             e.Select("value[x]").Zero();
             e.Select("interpretation").Zero();
 

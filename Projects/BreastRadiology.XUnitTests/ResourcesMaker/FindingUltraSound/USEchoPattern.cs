@@ -148,8 +148,7 @@ namespace BreastRadiology.XUnitTests
                     "US Echo Pattern",
                     "US Echo Pattern",
                     ObservationUrl,
-                    $"{Group_USResources}/EchoPattern",
-                    out this.usEchoPattern)
+                    $"{Group_USResources}/EchoPattern")
                 .Description("Breast Radiology Ultra-Sound Echo Pattern Observation",
                     new Markdown()
                         .BiradHeader()
@@ -166,6 +165,7 @@ namespace BreastRadiology.XUnitTests
                 .AddFragRef(this.ObservationCodedValueFragment())
                 .AddFragRef(this.ObservationLeafFragment())
                 ;
+            this.usEchoPattern = e.SDef.Url;
 
             e.Select("value[x]")
                 .Type("CodeableConcept")

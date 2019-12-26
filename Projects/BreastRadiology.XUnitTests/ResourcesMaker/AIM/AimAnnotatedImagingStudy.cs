@@ -27,8 +27,7 @@ namespace BreastRadiology.XUnitTests
                     "AIM Annotated Imaging Study",
                     "Annotated/Imaging Study",
                     ImagingStudyUrl,
-                    $"{Group_AimResources}/Aim/AimAnnotatedImagingStudy",
-                    out this.aimAnnotatedImagingStudy)
+                    $"{Group_AimResources}/Aim/AimAnnotatedImagingStudy")
                     .Description("AIM Annotated Imaging Study",
                         new Markdown()
                             .Todo(
@@ -37,6 +36,7 @@ namespace BreastRadiology.XUnitTests
                     .AddFragRef(this.AimHeaderFragment())
                     .AddFragRef(this.AimAnnotationPolyLineFragment())
                     ;
+            this.aimAnnotatedImagingStudy = e.SDef.Url;
                 e.IntroDoc
                     .ReviewedStatus(ReviewStatus.NotReviewed)
                     .ObservationLeafNode("AIM Annotated Imaging Study");

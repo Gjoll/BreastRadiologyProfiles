@@ -27,8 +27,7 @@ namespace BreastRadiology.XUnitTests
                 "Mammography Skin Thickening",
                 "Mg Skin Thickening",
                 ObservationUrl,
-                $"{Group_MGResources}/AssociatedFeature/SkinThickening",
-                out this.mgSkinThickening)
+                $"{Group_MGResources}/AssociatedFeature/SkinThickening")
                 .Description("Mammography Skin Thickening Observation",
                     new Markdown()
                         .BiradHeader()
@@ -46,6 +45,7 @@ namespace BreastRadiology.XUnitTests
                 .AddFragRef(this.ObservationNoValueFragment())
                 .AddFragRef(this.BreastBodyLocationRequiredFragment())
                 ;
+            this.mgSkinThickening = e.SDef.Url;
 
             e.IntroDoc
                 .ReviewedStatus(ReviewStatus.NotReviewed)

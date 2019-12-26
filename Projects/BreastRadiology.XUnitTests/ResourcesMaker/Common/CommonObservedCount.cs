@@ -28,8 +28,7 @@ namespace BreastRadiology.XUnitTests
                     "Count",
                     "Count",
                     ObservationUrl,
-                    $"{Group_CommonResources}/ObservedCount",
-                    out this.commonObservedCount)
+                    $"{Group_CommonResources}/ObservedCount")
                 .Description("Breast Radiology Count Observation",
                     new Markdown()
                         .Paragraph("This observations describes the number of discrete items in an observed item.")
@@ -42,6 +41,7 @@ namespace BreastRadiology.XUnitTests
                 .AddFragRef(this.ObservationNoDeviceFragment())
                 .AddFragRef(this.ObservationLeafFragment())
                 ;
+            this.commonObservedCount = e.SDef.Url;
             e.Select("value[x]")
                 .Types("integer", "Range")
                 .SetCardinality(1, "1")

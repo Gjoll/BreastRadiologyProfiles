@@ -26,8 +26,7 @@ namespace BreastRadiology.XUnitTests
             SDefEditor e = this.CreateFragment("MgShapeTargetsFragment",
                     "Mg Shape Targets Fragment",
                     "Mg Shape Targets Fragment",
-                    ObservationUrl,
-                    out this.mgShapeTargetsFragment)
+                    ObservationUrl)
                 .Description("Mammography Shape Targets Fragment",
                     new Markdown()
                         .Paragraph("Shape Common Targets Fragment")
@@ -37,6 +36,7 @@ namespace BreastRadiology.XUnitTests
                 )
                 .AddFragRef(this.BreastBodyLocationRequiredFragment())
                 ;
+            this.mgShapeTargetsFragment = e.SDef.Url;
 
             {
                 ProfileTargetSlice[] targets = new ProfileTargetSlice[]

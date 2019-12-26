@@ -74,8 +74,7 @@ namespace BreastRadiology.XUnitTests
                     "Observed Change in Definition",
                     "Definition Change",
                     ObservationUrl,
-                    $"{Group_CommonResources}/ObservedChangeInDefinition",
-                    out this.commonObservedChangeInDefinition)
+                    $"{Group_CommonResources}/ObservedChangeInDefinition")
                 .Description("Breast Radiology Changes in Definition Observation",
                     new Markdown()
                         .MissingObservation("an observed change in definition")
@@ -87,6 +86,7 @@ namespace BreastRadiology.XUnitTests
                 .AddFragRef(this.ObservationLeafFragment())
                 ;
 
+            this.commonObservedChangeInDefinition = e.SDef.Url;
             e.Select("value[x]")
                 .Type("CodeableConcept")
                 .Binding(binding.Url, BindingStrength.Required)

@@ -119,8 +119,7 @@ namespace BreastRadiology.XUnitTests
                     "Mammography Calcification Distribution",
                     "Mg Calc./Distribution",
                     ObservationUrl,
-                    $"{Group_MGResources}/Calcification/Distribution",
-                    out this.mgCalcificationDistribution)
+                    $"{Group_MGResources}/Calcification/Distribution")
                 .Description("Breast Radiology Mammography Calcification Distribution Observation",
                     new Markdown()
                         .Paragraph("This resource describes the calcification distribution observed.")
@@ -137,7 +136,8 @@ namespace BreastRadiology.XUnitTests
                 .AddFragRef(this.ObservationCodedValueFragment())
                 .AddFragRef(this.ObservationLeafFragment())
                 ;
-
+            this.mgCalcificationDistribution = e.SDef.Url;
+            this.mgCalcificationDistribution = e.SDef.Url;
             e.Select("value[x]")
                 .Type("CodeableConcept")
                 .Binding(binding.Url, BindingStrength.Required)

@@ -51,8 +51,7 @@ namespace BreastRadiology.XUnitTests
                     "Foreign Object Abnormality",
                     "Foreign Object Abnormality",
                     ObservationUrl,
-                    $"{Group_MGResources}/AbnormalityForeign",
-                    out this.mgAbnormalityForeignObject)
+                    $"{Group_MGResources}/AbnormalityForeign")
                 .Description("Breast Radiology Foreign Object Abnormality Observation",
                     new Markdown()
                         .Paragraph("These are foreign objects found during a breast radiology exam:")
@@ -70,6 +69,7 @@ namespace BreastRadiology.XUnitTests
                 .AddFragRef(this.MGCommonTargetsFragment())
                 ;
 
+            this.mgAbnormalityForeignObject = e.SDef.Url;
             {
                 ProfileTargetSlice[] targets = new ProfileTargetSlice[]
                 {

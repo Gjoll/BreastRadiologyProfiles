@@ -113,8 +113,7 @@ namespace BreastRadiology.XUnitTests
                     "BiRads Assessment Category",
                     "BiRads Code",
                     ObservationUrl,
-                    $"{Group_CommonResources}/BiRads",
-                    out this.biRadsAssessmentCategory)
+                    $"{Group_CommonResources}/BiRads")
                 .Description("BiRads Assessment Category Observation",
                     new Markdown()
                         .BiradHeader()
@@ -137,6 +136,7 @@ namespace BreastRadiology.XUnitTests
                 .AddFragRef(this.ObservationLeafFragment())
                 ;
 
+            this.biRadsAssessmentCategory = e.SDef.Url;
             e.Select("value[x]")
                 .Type("CodeableConcept")
                 .Binding(binding.Url, BindingStrength.Required)

@@ -26,8 +26,7 @@ namespace BreastRadiology.XUnitTests
             SDefEditor e = this.CreateFragment("HeaderFragment",
                 "Resource",
                 "Common",
-                ResourceUrl,
-                out this.findingHeaderFragment);
+                ResourceUrl);
             ContactDetail cd = new ContactDetail();
             cd.Telecom.Add(new ContactPoint
             {
@@ -35,6 +34,7 @@ namespace BreastRadiology.XUnitTests
                 Value = contactUrl
             });
 
+            this.findingHeaderFragment = e.SDef.Url;
             e.SDef.Contact.Add(cd);
             e.SDef.Date = this.date.ToString();
             e.SDef.Status = ProfileStatus;

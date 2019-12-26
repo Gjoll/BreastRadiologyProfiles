@@ -227,8 +227,7 @@ namespace BreastRadiology.XUnitTests
                 "Mammography Calcification Type",
                 "Mg Calc. Type",
                 ObservationUrl,
-                $"{Group_MGResources}/Calcification/Type",
-                out this.mgCalcificationType)
+                $"{Group_MGResources}/Calcification/Type")
                 .Description("Breast Radiology Mammography Calcification Type Observation",
                     new Markdown()
                         .Paragraph("This resource describes the type of calcification observed.")
@@ -239,6 +238,7 @@ namespace BreastRadiology.XUnitTests
                 .AddFragRef(this.ObservationCodedValueFragment())
                 .AddFragRef(this.ObservationLeafFragment())
                 ;
+            this.mgCalcificationType = e.SDef.Url;
 
             e.Select("value[x]")
                 .Type("CodeableConcept")

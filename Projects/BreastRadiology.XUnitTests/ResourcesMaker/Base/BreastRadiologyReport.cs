@@ -30,8 +30,7 @@ namespace BreastRadiology.XUnitTests
                  "Breast Radiology Report",
                  "Breast/Radiology/Report",
                  DiagnosticReportUrl,
-                 Group_BaseResources,
-                 out this.breastRadiologyReport)
+                 Group_BaseResources)
                  .Description("Breast Radiology Diagnostic Report",
                      new Markdown()
                          .Paragraph("This diagnostic report has links to the data that comprise a Breast Radiology Report, including:")
@@ -46,6 +45,7 @@ namespace BreastRadiology.XUnitTests
                  .AddFragRef(this.CategoryFragment())
                  ;
 
+            this.breastRadiologyReport = e.SDef.Url;
             e.Select("code").Pattern = new CodeableConcept(Loinc, "10193-1");
             e.Select("specimen").Zero();
             e.Select("conclusion").Single();

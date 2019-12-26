@@ -28,8 +28,7 @@ namespace BreastRadiology.XUnitTests
                     "Impression",
                     "Impression",
                     ClinicalImpressionUrl,
-                    $"{Group_CommonResources}/BreastRadImpression",
-                    out this.breastRadImpression)
+                    $"{Group_CommonResources}/BreastRadImpression")
                 .Description("Breast Radiology Impression (ClinicalImpression)",
                     new Markdown()
                         .Paragraph("Breast radiology exam clinical impression")
@@ -39,6 +38,7 @@ namespace BreastRadiology.XUnitTests
                 .AddFragRef(this.HeaderFragment())
                 ;
 
+            this.breastRadImpression = e.SDef.Url;
             e.IntroDoc
                     .ReviewedStatus(ReviewStatus.NotReviewed)
                     ;

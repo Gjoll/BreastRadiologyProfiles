@@ -33,8 +33,7 @@ namespace BreastRadiology.XUnitTests
                 "AIM Annotation PolyLine Extension",
                 "Annotation/PolyLine/Location",
                 ExtensionUrl,
-                $"{Group_AimResources}/AimAnnotationPolyLineExtension",
-                out this.aimAnnotationPolyLineExtension)
+                $"{Group_AimResources}/AimAnnotationPolyLineExtension")
                 .Description("AIM Annotation PolyLine Extension",
                     new Markdown()
                         .Paragraph("this extension defines the fields that are used to describe a" +
@@ -46,6 +45,7 @@ namespace BreastRadiology.XUnitTests
                 .Context()
                 ;
 
+            this.aimAnnotationPolyLineExtension = e.SDef.Url;
             e.AddFragRef(this.AimHeaderFragment());
 
             e.Select("url")

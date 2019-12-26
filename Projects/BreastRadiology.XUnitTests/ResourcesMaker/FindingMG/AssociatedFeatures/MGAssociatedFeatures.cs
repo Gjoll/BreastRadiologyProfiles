@@ -27,8 +27,7 @@ namespace BreastRadiology.XUnitTests
                     "Mammography Associated Features",
                     "Mg Associated/Features",
                     ObservationUrl,
-                    $"{Group_MGResources}/AssociatedFeature",
-                    out this.mgAssociatedFeatures)
+                    $"{Group_MGResources}/AssociatedFeature")
                 .Description("Mammography Associated Features Observation",
                     new Markdown()
                         .Paragraph("Used with masses, asymmetries, or calcifications, or may stand alone as " +
@@ -41,6 +40,7 @@ namespace BreastRadiology.XUnitTests
                 .AddFragRef(this.ObservationSectionFragment())
                 .AddFragRef(this.ObservationNoValueFragment())
                 ;
+            this.mgAssociatedFeatures = e.SDef.Url;
             {
                 ProfileTargetSlice[] targets = new ProfileTargetSlice[]
                 {

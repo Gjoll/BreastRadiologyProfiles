@@ -76,8 +76,7 @@ namespace BreastRadiology.XUnitTests
                     "Observed Changes",
                     "Size Change",
                     ObservationUrl,
-                    $"{Group_CommonResources}/ObservedChangeInSize",
-                    out this.commonObservedChangeInSize)
+                    $"{Group_CommonResources}/ObservedChangeInSize")
                 .Description("Breast Radiology Changes in Size Observation",
                     new Markdown()
                         .MissingObservation("an observed change in size")
@@ -89,6 +88,7 @@ namespace BreastRadiology.XUnitTests
                 .AddFragRef(this.ObservationLeafFragment())
                 ;
 
+            this.commonObservedChangeInSize = e.SDef.Url;
             e.Select("value[x]")
                 .Type("CodeableConcept")
                 .Binding(binding.Url, BindingStrength.Required)

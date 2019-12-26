@@ -28,8 +28,7 @@ namespace BreastRadiology.XUnitTests
                     "MRI Finding",
                     "MRI Finding",
                     ObservationUrl,
-                    $"{Group_MRIResources}",
-                    out this.findingMri)
+                    $"{Group_MRIResources}")
                 .Description("Breast Radiology MRI Finding",
                     new Markdown()
                         .Todo(
@@ -40,6 +39,7 @@ namespace BreastRadiology.XUnitTests
                 .AddFragRef(this.ObservationSectionFragment())
                 .AddFragRef(this.ObservationNoValueFragment())
             ;
+            this.findingMri = e.SDef.Url;
             e.Select("value[x]").Zero();
 
             {

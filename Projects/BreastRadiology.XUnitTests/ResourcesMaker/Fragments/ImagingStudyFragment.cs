@@ -23,8 +23,7 @@ namespace BreastRadiology.XUnitTests
             SDefEditor e = this.CreateFragment("ImagingStudyFragment",
                     "Imaging Study Fragment",
                     "ImagingStudy",
-                    ObservationUrl,
-                    out this.aimImagingStudyFragment)
+                    ObservationUrl)
                 .Description("Adds references to imaging studies.",
                     new Markdown()
                         .Paragraph("Fragment that adds derivedFrom references to imaging studies, including AIM annotated imaaging study.")
@@ -32,6 +31,7 @@ namespace BreastRadiology.XUnitTests
                         )
                  )
                 ;
+            this.aimImagingStudyFragment = e.SDef.Url;
 
             {
                 ProfileTargetSlice[] targets = new ProfileTargetSlice[]

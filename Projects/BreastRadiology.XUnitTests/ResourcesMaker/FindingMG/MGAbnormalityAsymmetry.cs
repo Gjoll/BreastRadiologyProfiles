@@ -117,8 +117,7 @@ namespace BreastRadiology.XUnitTests
                     "Mammography Asymmetry Abnormality",
                     "Mg Asymmetry Abnormality",
                     ObservationUrl,
-                    $"{Group_MGResources}/AbnormalityAsymmetry",
-                    out this.mgAbnormalityAsymmetry)
+                    $"{Group_MGResources}/AbnormalityAsymmetry")
                 .Description("Breast Radiology Mammography Asymmetry Abnormality Observation",
                     new Markdown()
                         .MissingObservation("an asymmetry")
@@ -138,6 +137,7 @@ namespace BreastRadiology.XUnitTests
                 .AddFragRef(this.ObservationSectionFragment())
                 .AddFragRef(this.MGCommonTargetsFragment())
             ;
+            this.mgAbnormalityAsymmetry = e.SDef.Url;
 
             {
                 ProfileTargetSlice[] targets = new ProfileTargetSlice[]

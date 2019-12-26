@@ -27,8 +27,7 @@ namespace BreastRadiology.XUnitTests
                     "Mammography Fat Necrosis Abnormality",
                     "Mg Fat Necrosis Abnormality",
                     ObservationUrl,
-                    $"{Group_MGResources}/AbnormalityFatNecrosis",
-                    out this.mgAbnormalityFatNecrosis)
+                    $"{Group_MGResources}/AbnormalityFatNecrosis")
                 .Description("Breast Radiology Mammography Fat Necrosis Abnormality Observation",
                     new Markdown()
                         .Paragraph("[PR]")
@@ -44,6 +43,7 @@ namespace BreastRadiology.XUnitTests
                 .AddFragRef(this.MGShapeTargetsFragment())
                 ;
 
+            this.mgAbnormalityFatNecrosis = e.SDef.Url;
             {
                 ProfileTargetSlice[] targets = new ProfileTargetSlice[]
                 {

@@ -27,8 +27,7 @@ namespace BreastRadiology.XUnitTests
                 "Mammography Skin Lesion",
                 "Mg Skin Lesion",
                 ObservationUrl,
-                $"{Group_MGResources}/SkinLesion",
-                out this.mgSkinLesion)
+                $"{Group_MGResources}/SkinLesion")
                 .Description("Breast Radiology Mammography Skin Lesion Observation",
                     new Markdown()
                         .MissingObservation("a skin lesion")
@@ -47,6 +46,7 @@ namespace BreastRadiology.XUnitTests
                 .AddFragRef(this.ObservationSectionFragment())
                 .AddFragRef(this.MGCommonTargetsFragment())
                 ;
+            this.mgSkinLesion = e.SDef.Url;
 
             {
                 ProfileTargetSlice[] targets = new ProfileTargetSlice[]

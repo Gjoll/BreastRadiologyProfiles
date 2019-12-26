@@ -28,8 +28,7 @@ namespace BreastRadiology.XUnitTests
                     "UltraSound Finding",
                     "US Finding",
                     ObservationUrl,
-                    $"{Group_USResources}",
-                    out this.findingUltraSound)
+                    $"{Group_USResources}")
                 .Description("Breast Radiology Ultra Sound Finding",
                     new Markdown()
                         .Todo(
@@ -62,6 +61,8 @@ namespace BreastRadiology.XUnitTests
                 .AddFragRef(this.ObservationSectionFragment())
                 .AddFragRef(this.ObservationNoValueFragment())
                 ;
+            this.findingUltraSound = e.SDef.Url;
+            this.findingUltraSound = e.SDef.Url;
             e.Select("value[x]").Zero();
             //$e.Find("method")
             //$ .FixedCodeSlice("method", "http://snomed.info/sct", "115341008")

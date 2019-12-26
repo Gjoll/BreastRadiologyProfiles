@@ -95,8 +95,7 @@ namespace BreastRadiology.XUnitTests
                     "US Tissue Composition",
                     "US Tissue/Composition",
                     ObservationUrl,
-                    $"{Group_USResources}/Mass/TissueComposition",
-                    out this.usTissueComposition)
+                    $"{Group_USResources}/Mass/TissueComposition")
                 .Description("Breast Radiology Ultra-Sound Tissue Composition Observation",
                     new Markdown()
                         .BiradHeader()
@@ -114,6 +113,7 @@ namespace BreastRadiology.XUnitTests
                 .AddFragRef(this.ObservationLeafFragment())
                 ;
 
+            this.usTissueComposition = e.SDef.Url;
             e.Select("value[x]")
                 .Type("CodeableConcept")
                 .Binding(binding.Url, BindingStrength.Required)

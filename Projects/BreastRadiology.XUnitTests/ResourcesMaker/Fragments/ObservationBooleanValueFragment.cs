@@ -26,8 +26,7 @@ namespace BreastRadiology.XUnitTests
             SDefEditor e = this.CreateFragment("BooleanValueObservationFragment",
                     "BooleanValue Observation Fragment",
                     "Observation/BooleanValue/Fragment",
-                    ObservationUrl,
-                    out this.observationBooleanValueFragment)
+                    ObservationUrl)
                 .Description("Fragment to define a boolean observation",
                 new Markdown()
                     .Paragraph("Fragment that constrains an observation to contains only a boolean value.")
@@ -37,7 +36,7 @@ namespace BreastRadiology.XUnitTests
                 .AddFragRef(this.HeaderFragment())
                 .AddFragRef(this.ObservationFragment())
                 ;
-
+            this.observationBooleanValueFragment = e.SDef.Url;
             e.Select("value[x]")
                 .Type("boolean")
                 ;

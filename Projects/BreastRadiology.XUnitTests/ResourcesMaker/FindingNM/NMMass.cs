@@ -27,8 +27,7 @@ namespace BreastRadiology.XUnitTests
                     "NM Mass",
                     "NM/Mass",
                     ObservationUrl,
-                    $"{Group_NMResources}/Mass",
-                    out this.nmMass)
+                    $"{Group_NMResources}/Mass")
                 .Description("Breast Radiology NM Mass Observation",
                     new Markdown()
                         .MissingObservation("a mass", "and no Shape, Margin, or Density observations should be referenced by this observation")
@@ -50,6 +49,7 @@ namespace BreastRadiology.XUnitTests
                 .AddFragRef(this.ObservationNoValueFragment())
                 .AddFragRef(this.ImagingStudyFragment())
                 ;
+            this.nmMass = e.SDef.Url;
 
             {
                 ProfileTargetSlice[] targets = new ProfileTargetSlice[]

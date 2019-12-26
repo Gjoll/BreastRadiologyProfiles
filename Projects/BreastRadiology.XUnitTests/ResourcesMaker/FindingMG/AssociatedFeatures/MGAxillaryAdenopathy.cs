@@ -27,8 +27,7 @@ namespace BreastRadiology.XUnitTests
                 "Mammography Axillary Adenopathy",
                 "Mg Axillary/Adenopathy",
                 ObservationUrl,
-                $"{Group_MGResources}/AssociatedFeature/AxillaryAdenopathy",
-                out this.mgAxillaryAdenopathy)
+                $"{Group_MGResources}/AssociatedFeature/AxillaryAdenopathy")
                 .Description("Breast Radiology Mammography Axillary Adenopathy Observation",
                     new Markdown()
                         .MissingObservation("an axillary adenopathy")
@@ -49,6 +48,7 @@ namespace BreastRadiology.XUnitTests
                 .AddFragRef(this.ObservationNoValueFragment())
                 .AddFragRef(this.BreastBodyLocationRequiredFragment())
                 ;
+            this.mgAxillaryAdenopathy = e.SDef.Url;
             e.IntroDoc
             .ReviewedStatus(ReviewStatus.NotReviewed)
             .ObservationLeafNode("Mammography Axillary Adenopathy")

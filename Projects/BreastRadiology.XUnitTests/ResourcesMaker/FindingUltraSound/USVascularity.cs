@@ -99,8 +99,7 @@ namespace BreastRadiology.XUnitTests
                     "US Vascularity",
                     "US Vascularity",
                     ObservationUrl,
-                    $"{Group_USResources}/Vascularity",
-                    out this.usVascularity)
+                    $"{Group_USResources}/Vascularity")
                 .Description("Breast Radiology Ultra-Sound Vascularity Observation",
                     new Markdown()
                         .Paragraph("[PR]")
@@ -112,6 +111,7 @@ namespace BreastRadiology.XUnitTests
                 .AddFragRef(this.ObservationLeafFragment())
                 ;
 
+            this.usVascularity = e.SDef.Url;
             e.Select("value[x]")
                 .Type("CodeableConcept")
                 .Binding(binding.Url, BindingStrength.Required)

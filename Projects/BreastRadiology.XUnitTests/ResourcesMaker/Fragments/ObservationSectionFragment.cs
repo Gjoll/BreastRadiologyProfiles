@@ -23,8 +23,7 @@ namespace BreastRadiology.XUnitTests
             SDefEditor e = this.CreateFragment("ObservationSectionFragment",
                     "Observation Section Fragment",
                     "Section/Fragment",
-                    ObservationUrl,
-                    out this.observationSectionFragment)
+                    ObservationUrl)
                 .Description("Fragment that constrains Observations to be sections.",
                     new Markdown()
                         .Paragraph("this fragment constrains a generic observation to be a observation section.")
@@ -33,7 +32,7 @@ namespace BreastRadiology.XUnitTests
                  )
                 .AddFragRef(this.ObservationFragment())
                 ;
-
+            this.observationSectionFragment = e.SDef.Url;
             e.Select("interpretation").Zero();
             e.Select("note").Zero();
             e.Select("method").Zero();
