@@ -11,12 +11,9 @@ using FhirKhit.Tools.R4;
 using Hl7.Fhir.Model;
 using Hl7.Fhir.Serialization;
 using PreFhir;
-using StringTask = System.Threading.Tasks.Task<string>;
 
 namespace BreastRadiology.XUnitTests
 {
-    using VSTask = System.Threading.Tasks.Task<ValueSet>;
-
     /*
      $ todo. Add negation items (mass, calc, etc).
      $ todo. Add condition that if item is not present, then body site is empty.
@@ -214,7 +211,7 @@ namespace BreastRadiology.XUnitTests
             }
         }
 
-        async System.Threading.Tasks.Task<CodeSystem> CreateCodeSystem(String name,
+        CodeSystem CreateCodeSystem(String name,
             String title,
             String mapName,
             String description,
@@ -232,7 +229,7 @@ namespace BreastRadiology.XUnitTests
                 Content = CodeSystem.CodeSystemContentMode.Complete,
                 Count = codes.Count(),
             };
-            cs.AddFragRef(await this.HeaderFragment());
+            cs.AddFragRef(this.HeaderFragment());
 
             // store groupPath as an extension. This is an unregistered extension that will be removed before
             // processing is complete.
@@ -259,7 +256,7 @@ namespace BreastRadiology.XUnitTests
         /// <summary>
         /// Create a value set of all the codes in the passed code system.
         /// </summary>
-        async VSTask CreateValueSetXX(String name,
+        ValueSet CreateValueSetXX(String name,
             String title,
             String mapName,
             String description,
@@ -274,7 +271,7 @@ namespace BreastRadiology.XUnitTests
                 Title = $"{title} ValueSet",
                 Description = new Markdown(description)
             };
-            vs.AddFragRef(await this.HeaderFragment());
+            vs.AddFragRef(this.HeaderFragment());
 
             // store groupPath as an extension. This is an unregistered extension that will be removed before
             // processing is complete.
@@ -314,7 +311,7 @@ namespace BreastRadiology.XUnitTests
             if (Directory.Exists(this.pageDir) == false)
                 Directory.CreateDirectory(this.pageDir);
 
-            this.BreastRadiologyReport().Wait();
+            this.BreastRadiologyReport();
 
             this.SaveAll();
         }

@@ -8,24 +8,22 @@ using FhirKhit.Tools;
 using FhirKhit.Tools.R4;
 using Hl7.Fhir.Model;
 using Hl7.Fhir.Serialization;
-using VTask = System.Threading.Tasks.Task;
-using StringTask = System.Threading.Tasks.Task<string>;
 
 namespace BreastRadiology.XUnitTests
 {
     partial class ResourcesMaker : ConverterBase
     {
-        async StringTask MGAbnormalityLymphNode()
+        String MGAbnormalityLymphNode()
         {
             if (this.mgAbnormalityLymphNode == null)
-                await this.CreateMGAbnormalityLymphNode();
+                this.CreateMGAbnormalityLymphNode();
             return this.mgAbnormalityLymphNode;
         }
         String mgAbnormalityLymphNode = null;
 
        CSTaskVar BreastRadMammoAbnormalityLymphNodeCS = new CSTaskVar(
-            async () =>
-                await ResourcesMaker.Self.CreateCodeSystem(
+            () =>
+                ResourcesMaker.Self.CreateCodeSystem(
                        "BreastRadMammoAbnormalityLymphNode",
                        "Mammography Lymph Node Abnormality Refinement",
                         "Mg Lymph Node Refinement/CodeSystem",
@@ -85,23 +83,21 @@ namespace BreastRadiology.XUnitTests
 
 
         VSTaskVar BreastRadMammoAbnormalityLymphNodeVS = new VSTaskVar(
-            async () =>
-                await ResourcesMaker.Self.CreateValueSetXX(
+            () =>
+                ResourcesMaker.Self.CreateValueSetXX(
                    "BreastRadMammoAbnormalityLymphNode",
                    "Mammography Lymph Node Abnormality",
                     "Mg Lymph Node/ValueSet",
                    "Codes defining types of mammography lymph node abnormalities.",
                     Group_MGCodes,
-                    await ResourcesMaker.Self.BreastRadMammoAbnormalityLymphNodeCS.Value()
+                    ResourcesMaker.Self.BreastRadMammoAbnormalityLymphNodeCS.Value()
                     )
             );
 
 
-        async VTask CreateMGAbnormalityLymphNode()
+        void CreateMGAbnormalityLymphNode()
         {
-            await VTask.Run(async () =>
-            {
-                ValueSet binding = await this.BreastRadMammoAbnormalityLymphNodeVS.Value();
+                ValueSet binding = this.BreastRadMammoAbnormalityLymphNodeVS.Value();
 
                 SDefEditor e = this.CreateEditor("BreastRadMammoAbnormalityLymphNode",
                     "Mammography LymphNode Abnormality",
@@ -116,11 +112,11 @@ namespace BreastRadiology.XUnitTests
                                 "should this be a leaf node (how about shape, density, location, etc)."
                             )
                     )
-                    .AddFragRef(await this.ObservationNoDeviceFragment())
-                    .AddFragRef(await this.ObservationCodedValueFragment())
-                    .AddFragRef(await this.ObservationSectionFragment())
-                    .AddFragRef(await this.MGCommonTargetsFragment())
-                    .AddFragRef(await this.MGShapeTargetsFragment())
+                    .AddFragRef(this.ObservationNoDeviceFragment())
+                    .AddFragRef(this.ObservationCodedValueFragment())
+                    .AddFragRef(this.ObservationSectionFragment())
+                    .AddFragRef(this.MGCommonTargetsFragment())
+                    .AddFragRef(this.MGShapeTargetsFragment())
                     ;
 
                 e.Select("value[x]")
@@ -133,7 +129,7 @@ namespace BreastRadiology.XUnitTests
                 {
                     ProfileTargetSlice[] targets = new ProfileTargetSlice[]
                     {
-                    new ProfileTargetSlice(await this.CommonObservedCount(), 0, "1"),
+                    new ProfileTargetSlice(this.CommonObservedCount(), 0, "1"),
                     };
                     e.Find("hasMember").SliceByUrl(targets);
                     e.AddProfileTargets(targets);
@@ -144,7 +140,6 @@ namespace BreastRadiology.XUnitTests
                     .ObservationSection($"Lymph Node Abnormality")
                     .Refinement(binding, "LymphNode")
                     ;
-            });
         }
     }
 }

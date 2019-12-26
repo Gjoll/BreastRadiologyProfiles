@@ -8,60 +8,55 @@ using FhirKhit.Tools;
 using FhirKhit.Tools.R4;
 using Hl7.Fhir.Model;
 using Hl7.Fhir.Serialization;
-using VTask = System.Threading.Tasks.Task;
-using StringTask = System.Threading.Tasks.Task<string>;
 
 namespace BreastRadiology.XUnitTests
 {
     partial class ResourcesMaker : ConverterBase
     {
-        async StringTask MGAbnormalityFatNecrosis()
+        String MGAbnormalityFatNecrosis()
         {
             if (this.mgAbnormalityFatNecrosis == null)
-                await this.CreateMGAbnormalityFatNecrosis();
+                this.CreateMGAbnormalityFatNecrosis();
             return this.mgAbnormalityFatNecrosis;
         }
         String mgAbnormalityFatNecrosis = null;
 
-        async VTask CreateMGAbnormalityFatNecrosis()
+        void CreateMGAbnormalityFatNecrosis()
         {
-            await VTask.Run(async () =>
+            SDefEditor e = this.CreateEditor("BreastRadMammoAbnormalityFatNecrosis",
+                    "Mammography Fat Necrosis Abnormality",
+                    "Mg Fat Necrosis Abnormality",
+                    ObservationUrl,
+                    $"{Group_MGResources}/AbnormalityFatNecrosis",
+                    out this.mgAbnormalityFatNecrosis)
+                .Description("Breast Radiology Mammography Fat Necrosis Abnormality Observation",
+                    new Markdown()
+                        .Paragraph("[PR]")
+                        .MissingObservation("a fat necrosis abnormality")
+                        .Todo(
+                        )
+                )
+                .AddFragRef(this.ObservationNoDeviceFragment())
+                .AddFragRef(this.ObservationSectionFragment())
+                .AddFragRef(this.ObservationNoValueFragment())
+                .AddFragRef(this.ImagingStudyFragment())
+                .AddFragRef(this.MGCommonTargetsFragment())
+                .AddFragRef(this.MGShapeTargetsFragment())
+                ;
+
             {
-                SDefEditor e = this.CreateEditor("BreastRadMammoAbnormalityFatNecrosis",
-                        "Mammography Fat Necrosis Abnormality",
-                        "Mg Fat Necrosis Abnormality",
-                        ObservationUrl,
-                        $"{Group_MGResources}/AbnormalityFatNecrosis",
-                        out this.mgAbnormalityFatNecrosis)
-                    .Description("Breast Radiology Mammography Fat Necrosis Abnormality Observation",
-                        new Markdown()
-                            .Paragraph("[PR]")
-                            .MissingObservation("a fat necrosis abnormality")
-                            .Todo(
-                            )
-                    )
-                    .AddFragRef(await this.ObservationNoDeviceFragment())
-                    .AddFragRef(await this.ObservationSectionFragment())
-                    .AddFragRef(await this.ObservationNoValueFragment())
-                    .AddFragRef(await this.ImagingStudyFragment())
-                    .AddFragRef(await this.MGCommonTargetsFragment())
-                    .AddFragRef(await this.MGShapeTargetsFragment())
-                    ;
-
+                ProfileTargetSlice[] targets = new ProfileTargetSlice[]
                 {
-                    ProfileTargetSlice[] targets = new ProfileTargetSlice[]
-                    {
-                    new ProfileTargetSlice(await this.CommonObservedCount(), 0, "1"),
-                    };
-                    e.Find("hasMember").SliceByUrl(targets);
-                    e.AddProfileTargets(targets);
-                }
+                    new ProfileTargetSlice(this.CommonObservedCount(), 0, "1"),
+                };
+                e.Find("hasMember").SliceByUrl(targets);
+                e.AddProfileTargets(targets);
+            }
 
-                e.IntroDoc
-                    .ReviewedStatus(ReviewStatus.NotReviewed)
-                    .ObservationSection("Mammography Fat Necrosis Abnormality")
-                    ;
-            });
+            e.IntroDoc
+                .ReviewedStatus(ReviewStatus.NotReviewed)
+                .ObservationSection("Mammography Fat Necrosis Abnormality")
+                ;
         }
     }
 }

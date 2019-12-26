@@ -8,31 +8,29 @@ using FhirKhit.Tools;
 using FhirKhit.Tools.R4;
 using Hl7.Fhir.Model;
 using Hl7.Fhir.Serialization;
-using VTask = System.Threading.Tasks.Task;
-using StringTask = System.Threading.Tasks.Task<string>;
 
 namespace BreastRadiology.XUnitTests
 {
     partial class ResourcesMaker : ConverterBase
     {
-        async StringTask MGCalcificationDistribution()
+        String MGCalcificationDistribution()
         {
             if (this.mgCalcificationDistribution == null)
-                await this.CreateMGCalcificationDistribution();
+                this.CreateMGCalcificationDistribution();
             return this.mgCalcificationDistribution;
         }
         String mgCalcificationDistribution = null;
 
-       CSTaskVar MGCalcificationDistributionCS = new CSTaskVar(
-            async () =>
-                await ResourcesMaker.Self.CreateCodeSystem(
-                    "MammoCalcificationDistribution",
-                    "Mammography Calcification Distribution",
-                    "Mg Calc./Distribution/CodeSystem",
-                    "Mammography calcification distribution code system.",
-                    Group_MGCodes,
-                    new ConceptDef[]
-                    {
+        CSTaskVar MGCalcificationDistributionCS = new CSTaskVar(
+             () =>
+                 ResourcesMaker.Self.CreateCodeSystem(
+                     "MammoCalcificationDistribution",
+                     "Mammography Calcification Distribution",
+                     "Mg Calc./Distribution/CodeSystem",
+                     "Mammography calcification distribution code system.",
+                     Group_MGCodes,
+                     new ConceptDef[]
+                     {
                     new ConceptDef("Diffuse",
                         "Diffuse Calcification Distribution",
                         new Definition()
@@ -86,72 +84,69 @@ namespace BreastRadiology.XUnitTests
                             .Line("A segmental distribution may elevate the degree of suspicion for calcifications such as punctate or amorphous forms.")
                         .CiteEnd(BiRadCitation)
                     )
-                    }
-                ));
+                     }
+                 ));
 
 
         VSTaskVar MammoCalcificationDistributionVS = new VSTaskVar(
-            async () =>
-                await ResourcesMaker.Self.CreateValueSetXX(
+            () =>
+                ResourcesMaker.Self.CreateValueSetXX(
                         "MammoCalcificationDistribution",
                         "Mammography Calcification Distribution",
                         "Mg Calc./DistributionValueSet",
                         "Mammography calcification distribution code system.",
                         Group_MGCodes,
-                        await ResourcesMaker.Self.MGCalcificationDistributionCS.Value()
+                        ResourcesMaker.Self.MGCalcificationDistributionCS.Value()
                     )
             );
 
 
-        async VTask CreateMGCalcificationDistribution()
+        void CreateMGCalcificationDistribution()
         {
-            await VTask.Run((Func<VTask>)(async () =>
+            ValueSet binding = this.MammoCalcificationDistributionVS.Value();
+
             {
-                ValueSet binding = await this.MammoCalcificationDistributionVS.Value();
-
-                {
-                    IntroDoc valueSetIntroDoc = new IntroDoc(Path.Combine(this.pageDir, $"ValueSet-{binding.Name}-intro.xml"));
-                    valueSetIntroDoc
-                        .ReviewedStatus(ReviewStatus.NotReviewed)
-                        .ValueSet(binding);
-                    ;
-                    String outputPath = valueSetIntroDoc.Save();
-                    this.fc?.Mark(outputPath);
-                }
-
-                SDefEditor e = this.CreateEditor("BreastRadMammoCalcificationDistribution",
-                        "Mammography Calcification Distribution",
-                        "Mg Calc./Distribution",
-                        ObservationUrl,
-                        $"{Group_MGResources}/Calcification/Distribution",
-                        out this.mgCalcificationDistribution)
-                    .Description("Breast Radiology Mammography Calcification Distribution Observation",
-                        new Markdown()
-                            .Paragraph("This resource describes the calcification distribution observed.")
-                            .BiradHeader()
-                            .BlockQuote("These descriptors are used to indicate the arrangement of calcifications in the breast. Multiple")
-                            .BlockQuote("similar groups may be described in the report when there is more than one group of calcifications")
-                            .BlockQuote("that are similar in morphology and distribution. In evaluating the likelihood of malignancy for calcifications, ")
-                            .BlockQuote("distribution is at least as important as morphology.")
-                            .BiradFooter()
-                            .Todo(
-                            )
-                    )
-                    .AddFragRef(await this.ObservationNoDeviceFragment())
-                    .AddFragRef(await this.ObservationCodedValueFragment())
-                    .AddFragRef(await this.ObservationLeafFragment())
-                    ;
-
-                e.Select("value[x]")
-                    .Type("CodeableConcept")
-                    .Binding(binding.Url, BindingStrength.Required)
-                    ;
-                e.AddValueSetLink(binding);
-                e.IntroDoc
+                IntroDoc valueSetIntroDoc = new IntroDoc(Path.Combine(this.pageDir, $"ValueSet-{binding.Name}-intro.xml"));
+                valueSetIntroDoc
                     .ReviewedStatus(ReviewStatus.NotReviewed)
-                    .CodedObservationLeafNode("a mammography calcification distribution", binding)
-                    ;
-            }));
+                    .ValueSet(binding);
+                ;
+                String outputPath = valueSetIntroDoc.Save();
+                this.fc?.Mark(outputPath);
+            }
+
+            SDefEditor e = this.CreateEditor("BreastRadMammoCalcificationDistribution",
+                    "Mammography Calcification Distribution",
+                    "Mg Calc./Distribution",
+                    ObservationUrl,
+                    $"{Group_MGResources}/Calcification/Distribution",
+                    out this.mgCalcificationDistribution)
+                .Description("Breast Radiology Mammography Calcification Distribution Observation",
+                    new Markdown()
+                        .Paragraph("This resource describes the calcification distribution observed.")
+                        .BiradHeader()
+                        .BlockQuote("These descriptors are used to indicate the arrangement of calcifications in the breast. Multiple")
+                        .BlockQuote("similar groups may be described in the report when there is more than one group of calcifications")
+                        .BlockQuote("that are similar in morphology and distribution. In evaluating the likelihood of malignancy for calcifications, ")
+                        .BlockQuote("distribution is at least as important as morphology.")
+                        .BiradFooter()
+                        .Todo(
+                        )
+                )
+                .AddFragRef(this.ObservationNoDeviceFragment())
+                .AddFragRef(this.ObservationCodedValueFragment())
+                .AddFragRef(this.ObservationLeafFragment())
+                ;
+
+            e.Select("value[x]")
+                .Type("CodeableConcept")
+                .Binding(binding.Url, BindingStrength.Required)
+                ;
+            e.AddValueSetLink(binding);
+            e.IntroDoc
+                .ReviewedStatus(ReviewStatus.NotReviewed)
+                .CodedObservationLeafNode("a mammography calcification distribution", binding)
+                ;
         }
     }
 }

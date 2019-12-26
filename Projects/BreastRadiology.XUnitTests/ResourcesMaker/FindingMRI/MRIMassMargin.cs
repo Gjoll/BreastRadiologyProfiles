@@ -9,24 +9,22 @@ using FhirKhit.Tools.R4;
 using Hl7.Fhir.Model;
 using Hl7.Fhir.Serialization;
 using PreFhir;
-using VTask = System.Threading.Tasks.Task;
-using StringTask = System.Threading.Tasks.Task<string>;
 
 namespace BreastRadiology.XUnitTests
 {
     partial class ResourcesMaker : ConverterBase
     {
-        async StringTask MRIMassMargin()
+        String MRIMassMargin()
         {
             if (this.mriMassMargin == null)
-                await this.CreateMRIMassMargin();
+                this.CreateMRIMassMargin();
             return this.mriMassMargin;
         }
         String mriMassMargin = null;
 
        CSTaskVar BreastRadMRIMassMarginCS = new CSTaskVar(
-            async () =>
-                await ResourcesMaker.Self.CreateCodeSystem(
+            () =>
+                ResourcesMaker.Self.CreateCodeSystem(
                     "BreastRadMRIMassMargin",
                     "MRI Mass Margin",
                     "MRI Mass/Margin CodeSystem",
@@ -70,23 +68,21 @@ namespace BreastRadiology.XUnitTests
 
 
         VSTaskVar BreastRadMRIMassMarginVS = new VSTaskVar(
-            async () =>
-                await ResourcesMaker.Self.CreateValueSetXX(
+            () =>
+                ResourcesMaker.Self.CreateValueSetXX(
                     "BreastRadMRIMassMargin",
                     "MRI Mass Margin",
                     "MRI Mass/Margin ValueSet",
                     "MRI mass margin value set.",
                     Group_MRICodes,
-                    await ResourcesMaker.Self.BreastRadMRIMassMarginCS.Value()
+                    ResourcesMaker.Self.BreastRadMRIMassMarginCS.Value()
                     )
             );
 
 
-        async VTask CreateMRIMassMargin()
+        void CreateMRIMassMargin()
         {
-            await VTask.Run(async () =>
-            {
-                ValueSet binding = await this.BreastRadMRIMassMarginVS.Value();
+                ValueSet binding = this.BreastRadMRIMassMarginVS.Value();
                 {
                     IntroDoc valueSetIntroDoc = new IntroDoc(Path.Combine(this.pageDir, $"ValueSet-{binding.Name}-intro.xml"));
                     valueSetIntroDoc
@@ -114,9 +110,9 @@ namespace BreastRadiology.XUnitTests
                                 "Is non-circumscribed a stand along value, or implied by selection fo on or more non-circumscribed values? "
                             )
                     )
-                    .AddFragRef(await this.ObservationNoDeviceFragment())
-                    .AddFragRef(await this.ObservationCodedValueFragment())
-                    .AddFragRef(await this.ObservationLeafFragment())
+                    .AddFragRef(this.ObservationNoDeviceFragment())
+                    .AddFragRef(this.ObservationCodedValueFragment())
+                    .AddFragRef(this.ObservationLeafFragment())
                     ;
 
                 e.Select("value[x]")
@@ -128,7 +124,6 @@ namespace BreastRadiology.XUnitTests
                     .ReviewedStatus(ReviewStatus.NotReviewed)
                     .CodedObservationLeafNode("a MRI mass margin", binding)
                     ;
-            });
         }
     }
 }

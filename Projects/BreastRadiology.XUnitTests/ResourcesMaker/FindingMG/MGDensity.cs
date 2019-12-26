@@ -9,31 +9,29 @@ using FhirKhit.Tools.R4;
 using Hl7.Fhir.Model;
 using Hl7.Fhir.Serialization;
 using PreFhir;
-using VTask = System.Threading.Tasks.Task;
-using StringTask = System.Threading.Tasks.Task<string>;
 
 namespace BreastRadiology.XUnitTests
 {
     partial class ResourcesMaker : ConverterBase
     {
-        async StringTask MGDensity()
+        String MGDensity()
         {
             if (this.mgDensity == null)
-                await this.CreateMGDensity();
+                this.CreateMGDensity();
             return this.mgDensity;
         }
         String mgDensity = null;
 
-       CSTaskVar BreastRadMammoDensityCS = new CSTaskVar(
-            async () =>
-                await ResourcesMaker.Self.CreateCodeSystem(
-                    "BreastRadMammoDensity",
-                    "Mammography Density",
-                    "Mg Density/CodeSystem",
-                    "Mammography density code system.",
-                    Group_MGCodes,
-                    new ConceptDef[]
-                    {
+        CSTaskVar BreastRadMammoDensityCS = new CSTaskVar(
+             () =>
+                 ResourcesMaker.Self.CreateCodeSystem(
+                     "BreastRadMammoDensity",
+                     "Mammography Density",
+                     "Mg Density/CodeSystem",
+                     "Mammography density code system.",
+                     Group_MGCodes,
+                     new ConceptDef[]
+                     {
                     new ConceptDef("HighDensity ",
                         "High Density",
                         new Definition()
@@ -70,76 +68,73 @@ namespace BreastRadiology.XUnitTests
                             .Line("benign mass.")
                         .CiteEnd(BiRadCitation)
                         )
-                    })
-            );
+                     })
+             );
 
 
         VSTaskVar BreastRadMammoDensityVS = new VSTaskVar(
-            async () =>
-                await ResourcesMaker.Self.CreateValueSetXX(
+            () =>
+                ResourcesMaker.Self.CreateValueSetXX(
                     "BreastRadMammoDensity",
                     "Mammography Density",
                     "Mg DensityValueSet",
                     "Mammography density code system.",
                     Group_MGCodes,
-                    await ResourcesMaker.Self.BreastRadMammoDensityCS.Value())
+                    ResourcesMaker.Self.BreastRadMammoDensityCS.Value())
                     );
 
 
-        async VTask CreateMGDensity()
+        void CreateMGDensity()
         {
-            await VTask.Run(async () =>
+            ValueSet binding = this.BreastRadMammoDensityVS.Value();
+
             {
-                ValueSet binding = await this.BreastRadMammoDensityVS.Value();
-
-                {
-                    IntroDoc valueSetIntroDoc = new IntroDoc(Path.Combine(this.pageDir, $"ValueSet-{binding.Name}-intro.xml"));
-                    valueSetIntroDoc
-                        .ReviewedStatus(ReviewStatus.NotReviewed)
-                        .ValueSet(binding);
-                    ;
-                    String outputPath = valueSetIntroDoc.Save();
-                    this.fc?.Mark(outputPath);
-                }
-
-                SDefEditor e = this.CreateEditor("BreastRadMammoDensity",
-                        "Mammography Density",
-                        "Mg Density",
-                        ObservationUrl,
-                        $"{Group_MGResources}/Density",
-                        out this.mgDensity)
-                    .Description("Breast Radiology Mammography Density Observation",
-                        new Markdown()
-                            .MissingObservation("a mass density")
-                            .BiradHeader()
-                            .BlockQuote("Radiographic density is considered an important feature in the evaluation of noncalcified breast masses, yet")
-                            .BlockQuote("no studies assessing its value have been published. The radiographic densities of 91 biopsy-proved, nonfatty,")
-                            .BlockQuote("noncalcified breast masses were evaluated by three mammographers. The density determinations made by")
-                            .BlockQuote("each observer were compared with the histologic outcome for the 51 benign and 40 malignant lesions. With")
-                            .BlockQuote("the kappa statistic, interobserver agreement was relatively poor (0.22 to 0.49), and intraobserver agreement for")
-                            .BlockQuote("one expert mammographer was 0.50. When the majority opinion of the mammographers was used, sensitivity")
-                            .BlockQuote("was 48%, specificity was 80%, and both positive and negative predictive values were 66%. As a solitary feature")
-                            .BlockQuote("in lesion analysis, mammographic density is difficult to assess and is of limited value for the prediction of the")
-                            .BlockQuote("benign or malignant nature of noncalcified breast masses.")
-                            .BiradFooter()
-                            .Todo(
-                            )
-                        )
-                    .AddFragRef(await this.ObservationNoDeviceFragment())
-                    .AddFragRef(await this.ObservationCodedValueFragment())
-                    .AddFragRef(await this.ObservationLeafFragment())
-                    ;
-
-                e.Select("value[x]")
-                    .Type("CodeableConcept")
-                    .Binding(binding.Url, BindingStrength.Required)
-                    ;
-                e.AddValueSetLink(binding);
-                e.IntroDoc
+                IntroDoc valueSetIntroDoc = new IntroDoc(Path.Combine(this.pageDir, $"ValueSet-{binding.Name}-intro.xml"));
+                valueSetIntroDoc
                     .ReviewedStatus(ReviewStatus.NotReviewed)
-                    .CodedObservationLeafNode("a mammography mass density", binding)
-                    ;
-            });
+                    .ValueSet(binding);
+                ;
+                String outputPath = valueSetIntroDoc.Save();
+                this.fc?.Mark(outputPath);
+            }
+
+            SDefEditor e = this.CreateEditor("BreastRadMammoDensity",
+                    "Mammography Density",
+                    "Mg Density",
+                    ObservationUrl,
+                    $"{Group_MGResources}/Density",
+                    out this.mgDensity)
+                .Description("Breast Radiology Mammography Density Observation",
+                    new Markdown()
+                        .MissingObservation("a mass density")
+                        .BiradHeader()
+                        .BlockQuote("Radiographic density is considered an important feature in the evaluation of noncalcified breast masses, yet")
+                        .BlockQuote("no studies assessing its value have been published. The radiographic densities of 91 biopsy-proved, nonfatty,")
+                        .BlockQuote("noncalcified breast masses were evaluated by three mammographers. The density determinations made by")
+                        .BlockQuote("each observer were compared with the histologic outcome for the 51 benign and 40 malignant lesions. With")
+                        .BlockQuote("the kappa statistic, interobserver agreement was relatively poor (0.22 to 0.49), and intraobserver agreement for")
+                        .BlockQuote("one expert mammographer was 0.50. When the majority opinion of the mammographers was used, sensitivity")
+                        .BlockQuote("was 48%, specificity was 80%, and both positive and negative predictive values were 66%. As a solitary feature")
+                        .BlockQuote("in lesion analysis, mammographic density is difficult to assess and is of limited value for the prediction of the")
+                        .BlockQuote("benign or malignant nature of noncalcified breast masses.")
+                        .BiradFooter()
+                        .Todo(
+                        )
+                    )
+                .AddFragRef(this.ObservationNoDeviceFragment())
+                .AddFragRef(this.ObservationCodedValueFragment())
+                .AddFragRef(this.ObservationLeafFragment())
+                ;
+
+            e.Select("value[x]")
+                .Type("CodeableConcept")
+                .Binding(binding.Url, BindingStrength.Required)
+                ;
+            e.AddValueSetLink(binding);
+            e.IntroDoc
+                .ReviewedStatus(ReviewStatus.NotReviewed)
+                .CodedObservationLeafNode("a mammography mass density", binding)
+                ;
         }
     }
 }

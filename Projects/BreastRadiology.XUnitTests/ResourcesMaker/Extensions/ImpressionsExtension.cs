@@ -9,23 +9,20 @@ using FhirKhit.Tools.R4;
 using Hl7.Fhir.Model;
 using Hl7.Fhir.Serialization;
 using PreFhir;
-using VTask = System.Threading.Tasks.Task;
-using StringTask = System.Threading.Tasks.Task<string>;
-
 
 namespace BreastRadiology.XUnitTests
 {
     partial class ResourcesMaker : ConverterBase
     {
-        async StringTask BreastRadiologyImpressionsExtension()
+        String BreastRadiologyImpressionsExtension()
         {
             if (this.breastRadiologyImpressionsExtension == null)
-                await this.CreateBreastRadiologyImpressionsExtension();
+                this.CreateBreastRadiologyImpressionsExtension();
             return this.breastRadiologyImpressionsExtension;
         }
         String breastRadiologyImpressionsExtension = null;
 
-        async VTask CreateBreastRadiologyImpressionsExtension()
+        void CreateBreastRadiologyImpressionsExtension()
         {
             SDefEditor e = this.CreateEditor("BreastRadImpressionsExtension",
                 "Impressions Extension",
@@ -43,7 +40,7 @@ namespace BreastRadiology.XUnitTests
                 .Kind(StructureDefinition.StructureDefinitionKind.ComplexType)
                 .Context()
                 ;
-            e.AddFragRef(await this.HeaderFragment());
+            e.AddFragRef(this.HeaderFragment());
 
             e.Select("extension").Zero();
             e.Select("url")
@@ -51,7 +48,7 @@ namespace BreastRadiology.XUnitTests
                 .Fixed(new FhirUri(e.SDef.Url));
 
             e.Select("value[x]")
-                .TypeReference(await this.BreastRadImpression())
+                .TypeReference(this.BreastRadImpression())
                 .ZeroToMany()
                 ;
 

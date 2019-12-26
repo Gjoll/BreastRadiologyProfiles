@@ -8,31 +8,29 @@ using FhirKhit.Tools;
 using FhirKhit.Tools.R4;
 using Hl7.Fhir.Model;
 using Hl7.Fhir.Serialization;
-using VTask = System.Threading.Tasks.Task;
-using StringTask = System.Threading.Tasks.Task<string>;
 
 namespace BreastRadiology.XUnitTests
 {
     partial class ResourcesMaker : ConverterBase
     {
-        async StringTask MGAbnormalityDuct()
+        String MGAbnormalityDuct()
         {
             if (this.mgAbnormalityDuct == null)
-                await this.CreateMGAbnormalityDuct();
+                this.CreateMGAbnormalityDuct();
             return this.mgAbnormalityDuct;
         }
         String mgAbnormalityDuct = null;
 
-       CSTaskVar BreastRadMammoAbnormalityDuctCS = new CSTaskVar(
-            async () =>
-                await ResourcesMaker.Self.CreateCodeSystem(
-                       "BreastRadMammoAbnormalityDuct",
-                       "Mammography Duct Abnormality Refinement",
-                        "Mg Duct Refinement/CodeSystem",
-                       "Codes defining types of mammography duct abnormalities.",
-                        Group_MGCodes,
-                       new ConceptDef[]
-                        {
+        CSTaskVar BreastRadMammoAbnormalityDuctCS = new CSTaskVar(
+             () =>
+                 ResourcesMaker.Self.CreateCodeSystem(
+                        "BreastRadMammoAbnormalityDuct",
+                        "Mammography Duct Abnormality Refinement",
+                         "Mg Duct Refinement/CodeSystem",
+                        "Codes defining types of mammography duct abnormalities.",
+                         Group_MGCodes,
+                        new ConceptDef[]
+                         {
                         new ConceptDef("Normal",
                             "Normal",
                             new Definition()
@@ -52,71 +50,68 @@ namespace BreastRadiology.XUnitTests
                                 .Line("findings, it has been reported to be associated with noncalcified DCIS.")
                                 .CiteEnd(BiRadCitation)
                             )
-                        }
-                    )
-                );
+                         }
+                     )
+                 );
 
 
         VSTaskVar BreastRadMammoAbnormalityDuctVS = new VSTaskVar(
-            async () =>
-                await ResourcesMaker.Self.CreateValueSetXX(
+            () =>
+                ResourcesMaker.Self.CreateValueSetXX(
                    "BreastRadMammoAbnormalityDuct",
                    "Mammography Duct Abnormality",
                     "Mg Duct/ValueSet",
                    "Codes defining types of mammography duct node abnormalities.",
                     Group_MGCodes,
-                    await ResourcesMaker.Self.BreastRadMammoAbnormalityDuctCS.Value()
+                    ResourcesMaker.Self.BreastRadMammoAbnormalityDuctCS.Value()
                     )
             );
 
 
-        async VTask CreateMGAbnormalityDuct()
+        void CreateMGAbnormalityDuct()
         {
-            await VTask.Run(async () =>
+            ValueSet binding = this.BreastRadMammoAbnormalityDuctVS.Value();
+            SDefEditor e = this.CreateEditor("BreastRadMammoAbnormalityDuct",
+                    "Mammography Duct Abnormality",
+                    "Mg Duct Abnormality",
+                    ObservationUrl,
+                    $"{Group_MGResources}/AbnormalityDuct",
+                    out this.mgAbnormalityDuct)
+                .Description("Breat Radiology Mammography Duct Abnormality Observation",
+                    new Markdown()
+                        .MissingObservation("a duct abnormality")
+                        .Todo(
+                            "should this be a leaf node (how about shape, density, location, etc).",
+                            "make dilated the default value."
+                        )
+                )
+                .AddFragRef(this.ObservationNoDeviceFragment())
+                .AddFragRef(this.ObservationLeafFragment())
+                .AddFragRef(this.MGCommonTargetsFragment())
+                .AddFragRef(this.MGShapeTargetsFragment())
+                ;
+
+            e.Select("value[x]")
+                .ZeroToOne()
+                .Type("CodeableConcept")
+                .Binding(binding.Url, BindingStrength.Required)
+                ;
+            e.AddValueSetLink(binding);
+
             {
-                ValueSet binding = await this.BreastRadMammoAbnormalityDuctVS.Value();
-                SDefEditor e = this.CreateEditor("BreastRadMammoAbnormalityDuct",
-                        "Mammography Duct Abnormality",
-                        "Mg Duct Abnormality",
-                        ObservationUrl,
-                        $"{Group_MGResources}/AbnormalityDuct",
-                        out this.mgAbnormalityDuct)
-                    .Description("Breat Radiology Mammography Duct Abnormality Observation",
-                        new Markdown()
-                            .MissingObservation("a duct abnormality")
-                            .Todo(
-                                "should this be a leaf node (how about shape, density, location, etc).",
-                                "make dilated the default value."
-                            )
-                    )
-                    .AddFragRef(await this.ObservationNoDeviceFragment())
-                    .AddFragRef(await this.ObservationLeafFragment())
-                    .AddFragRef(await this.MGCommonTargetsFragment())
-                    .AddFragRef(await this.MGShapeTargetsFragment())
-                    ;
-
-                e.Select("value[x]")
-                    .ZeroToOne()
-                    .Type("CodeableConcept")
-                    .Binding(binding.Url, BindingStrength.Required)
-                    ;
-                e.AddValueSetLink(binding);
-
+                ProfileTargetSlice[] targets = new ProfileTargetSlice[]
                 {
-                    ProfileTargetSlice[] targets = new ProfileTargetSlice[]
-                    {
-                    new ProfileTargetSlice(await this.CommonObservedCount(), 0, "1"),
-                    };
-                    e.Find("hasMember").SliceByUrl(targets);
-                    e.AddProfileTargets(targets);
-                }
+                    new ProfileTargetSlice(this.CommonObservedCount(), 0, "1"),
+                };
+                e.Find("hasMember").SliceByUrl(targets);
+                e.AddProfileTargets(targets);
+            }
 
-                e.IntroDoc
-                    .ReviewedStatus(ReviewStatus.NotReviewed)
-                    .ObservationSection($"Duct Abnormality")
-                    .Refinement(binding, "Duct")
-                    ;
-            });
+            e.IntroDoc
+                .ReviewedStatus(ReviewStatus.NotReviewed)
+                .ObservationSection($"Duct Abnormality")
+                .Refinement(binding, "Duct")
+                ;
         }
     }
 }

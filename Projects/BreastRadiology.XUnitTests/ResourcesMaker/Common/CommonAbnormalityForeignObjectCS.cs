@@ -12,13 +12,11 @@ using PreFhir;
 
 namespace BreastRadiology.XUnitTests
 {
-    using VTask = System.Threading.Tasks.Task;
-
     partial class ResourcesMaker
     {
        CSTaskVar CommonAbnormalityForeignObjectCS = new CSTaskVar(
-            async () =>
-                await ResourcesMaker.Self.CreateCodeSystem(
+            () =>
+                ResourcesMaker.Self.CreateCodeSystem(
                         "CommonAbnormalities",
                         "Foreign Object",
                         "Foreign/Object/ValueSet",

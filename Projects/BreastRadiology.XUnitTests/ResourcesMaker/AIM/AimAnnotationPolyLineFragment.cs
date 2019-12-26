@@ -4,17 +4,15 @@ using PreFhir;
 using System;
 using System.Collections.Generic;
 using System.Text;
-using VTask = System.Threading.Tasks.Task;
-using StringTask = System.Threading.Tasks.Task<string>;
 
 namespace BreastRadiology.XUnitTests
 {
     partial class ResourcesMaker
     {
-        async StringTask AimAnnotationPolyLineFragment()
+        String AimAnnotationPolyLineFragment()
         {
             if (this.aimAnnotationPolyLineFragment == null)
-                await this.CreateAimAnnotationPolyLineFragment();
+                this.CreateAimAnnotationPolyLineFragment();
             return this.aimAnnotationPolyLineFragment;
         }
         String aimAnnotationPolyLineFragment = null;
@@ -24,10 +22,8 @@ namespace BreastRadiology.XUnitTests
         /// Create BreastBodyLocationFragment.
         /// </summary>
         /// <returns></returns>
-        async VTask CreateAimAnnotationPolyLineFragment()
+        void CreateAimAnnotationPolyLineFragment()
         {
-            await VTask.Run(async () =>
-            {
                 SDefEditor e = this.CreateFragment("AimAnnotationPolyLineFragment",
                         "Aim Annotation PolyLine Fragment",
                         "Annotation/PolyLine/Fragment",
@@ -39,17 +35,16 @@ namespace BreastRadiology.XUnitTests
                         .Todo(
                         )
                      )
-                    .AddFragRef(await this.HeaderFragment())
-                    .AddExtensionLink(await this.AimAnnotationPolyLineExtension())
+                    .AddFragRef(this.HeaderFragment())
+                    .AddExtensionLink(this.AimAnnotationPolyLineExtension())
                 ;
                 e
-                    .ApplyExtension("polyLineAnnotation", await this.AimAnnotationPolyLineExtension(), true, false)
+                    .ApplyExtension("polyLineAnnotation", this.AimAnnotationPolyLineExtension(), true, false)
                     .Single()
                     ;
                 e.IntroDoc
                 .ReviewedStatus(ReviewStatus.NotReviewed)
                 .Fragment($"Resource fragment that includes the Annotation PolyGonLine extension.");
-            });
         }
     }
 }

@@ -9,88 +9,83 @@ using FhirKhit.Tools.R4;
 using Hl7.Fhir.Model;
 using Hl7.Fhir.Serialization;
 using PreFhir;
-using VTask = System.Threading.Tasks.Task;
-using StringTask = System.Threading.Tasks.Task<string>;
 
 namespace BreastRadiology.XUnitTests
 {
     partial class ResourcesMaker : ConverterBase
     {
-        async StringTask USMargin()
+        String USMargin()
         {
             if (this.usMargin == null)
-                await this.CreateUSMargin();
+                this.CreateUSMargin();
             return this.usMargin;
         }
         String usMargin = null;
 
 
         VSTaskVar BreastRadUSMarginVS = new VSTaskVar(
-            async () =>
+            () =>
             {
-                ValueSet binding = await ResourcesMaker.Self.CreateValueSetXX(
+                ValueSet binding = ResourcesMaker.Self.CreateValueSetXX(
                     "BreastRadUSMargin",
                     "US Margin",
                     "US Margin CodeSystem",
                     "Ultra-sound mass margin code system.",
                     Group_USCodes,
-                    await ResourcesMaker.Self.CommonMarginCS.Value());
+                    ResourcesMaker.Self.CommonMarginCS.Value());
                 binding
                     .Remove("Macrolobulated")
                     .Remove("Obscured")
                     ;
                 return binding;
-                }
+            }
             );
 
 
-        async VTask CreateUSMargin()
+        void CreateUSMargin()
         {
-            await VTask.Run(async () =>
+            ValueSet binding = this.BreastRadUSMarginVS.Value();
             {
-                ValueSet binding = await this.BreastRadUSMarginVS.Value();
-                {
-                    IntroDoc valueSetIntroDoc = new IntroDoc(Path.Combine(this.pageDir, $"ValueSet-{binding.Name}-intro.xml"));
-                    valueSetIntroDoc
-                        .ReviewedStatus(ReviewStatus.NotReviewed)
-                        .ValueSet(binding);
-                    ;
-                    String outputPath = valueSetIntroDoc.Save();
-                    this.fc?.Mark(outputPath);
-                }
-
-                SDefEditor e = this.CreateEditor("BreastRadUSMargin",
-                        "US Margin",
-                        "US Margin",
-                        ObservationUrl,
-                        $"{Group_USResources}/Margin",
-                        out this.usMargin)
-                    .Description("Breast Radiology Ultra-Sound Margin Observation",
-                        new Markdown()
-                            .MissingObservation("a mass margin")
-                            .BiradHeader()
-                            .BlockQuote("The margin is the edge or border of the lesion. The descriptors of margin, like the descriptors of shape, are important predictors of whether a mass is benign or malignant. ")
-                            .BiradFooter()
-                            .Todo(
-                                "Is Irregular incorrect? Note from ACR B.3.A. 'Irregular' is not used to group these marginal attributes because irregular describes the shape of a mass.",
-                                "Is non-circumscribed a stand along value, or implied by selection fo on or more non-circumscribed values? "
-                            )
-                    )
-                    .AddFragRef(await this.ObservationNoDeviceFragment())
-                    .AddFragRef(await this.ObservationCodedValueFragment())
-                    .AddFragRef(await this.ObservationLeafFragment())
-                    ;
-
-                e.Select("value[x]")
-                    .Type("CodeableConcept")
-                    .Binding(binding.Url, BindingStrength.Required)
-                    ;
-                e.AddValueSetLink(binding);
-                e.IntroDoc
+                IntroDoc valueSetIntroDoc = new IntroDoc(Path.Combine(this.pageDir, $"ValueSet-{binding.Name}-intro.xml"));
+                valueSetIntroDoc
                     .ReviewedStatus(ReviewStatus.NotReviewed)
-                    .CodedObservationLeafNode("a mammography mass margin", binding)
-                    ;
-            });
+                    .ValueSet(binding);
+                ;
+                String outputPath = valueSetIntroDoc.Save();
+                this.fc?.Mark(outputPath);
+            }
+
+            SDefEditor e = this.CreateEditor("BreastRadUSMargin",
+                    "US Margin",
+                    "US Margin",
+                    ObservationUrl,
+                    $"{Group_USResources}/Margin",
+                    out this.usMargin)
+                .Description("Breast Radiology Ultra-Sound Margin Observation",
+                    new Markdown()
+                        .MissingObservation("a mass margin")
+                        .BiradHeader()
+                        .BlockQuote("The margin is the edge or border of the lesion. The descriptors of margin, like the descriptors of shape, are important predictors of whether a mass is benign or malignant. ")
+                        .BiradFooter()
+                        .Todo(
+                            "Is Irregular incorrect? Note from ACR B.3.A. 'Irregular' is not used to group these marginal attributes because irregular describes the shape of a mass.",
+                            "Is non-circumscribed a stand along value, or implied by selection fo on or more non-circumscribed values? "
+                        )
+                )
+                .AddFragRef(this.ObservationNoDeviceFragment())
+                .AddFragRef(this.ObservationCodedValueFragment())
+                .AddFragRef(this.ObservationLeafFragment())
+                ;
+
+            e.Select("value[x]")
+                .Type("CodeableConcept")
+                .Binding(binding.Url, BindingStrength.Required)
+                ;
+            e.AddValueSetLink(binding);
+            e.IntroDoc
+                .ReviewedStatus(ReviewStatus.NotReviewed)
+                .CodedObservationLeafNode("a mammography mass margin", binding)
+                ;
         }
     }
 }

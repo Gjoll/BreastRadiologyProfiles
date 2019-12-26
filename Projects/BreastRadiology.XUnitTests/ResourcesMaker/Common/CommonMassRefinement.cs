@@ -9,15 +9,14 @@ using FhirKhit.Tools.R4;
 using Hl7.Fhir.Model;
 using Hl7.Fhir.Serialization;
 using PreFhir;
-using VTask = System.Threading.Tasks.Task;
 
 namespace BreastRadiology.XUnitTests
 {
     partial class ResourcesMaker
     {
        CSTaskVar CommonCSMassRefinement = new CSTaskVar(
-            async () =>
-                await ResourcesMaker.Self.CreateCodeSystem(
+            () =>
+                ResourcesMaker.Self.CreateCodeSystem(
                         "CommonMassRefinement",
                         "Mass Refinement",
                         "Mass/Refinement/CodeSystem",

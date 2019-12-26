@@ -8,24 +8,21 @@ using FhirKhit.Tools;
 using FhirKhit.Tools.R4;
 using Hl7.Fhir.Model;
 using Hl7.Fhir.Serialization;
-using VTask = System.Threading.Tasks.Task;
-using StringTask = System.Threading.Tasks.Task<string>;
+
 namespace BreastRadiology.XUnitTests
 {
     partial class ResourcesMaker : ConverterBase
     {
-        async StringTask AimAnnotatedImagingStudy()
+        String AimAnnotatedImagingStudy()
         {
             if (this.aimAnnotatedImagingStudy == null)
-                await this.CreateAimAnnotatedImagingStudy();
+                this.CreateAimAnnotatedImagingStudy();
             return this.aimAnnotatedImagingStudy;
         }
         String aimAnnotatedImagingStudy = null;
 
-        async VTask CreateAimAnnotatedImagingStudy()
+        void CreateAimAnnotatedImagingStudy()
         {
-            await VTask.Run(async () =>
-            {
                 SDefEditor e = this.CreateEditor("AimAnnotatedImagingStudy",
                     "AIM Annotated Imaging Study",
                     "Annotated/Imaging Study",
@@ -37,13 +34,12 @@ namespace BreastRadiology.XUnitTests
                             .Todo(
                             )
                     )
-                    .AddFragRef(await this.AimHeaderFragment())
-                    .AddFragRef(await this.AimAnnotationPolyLineFragment())
+                    .AddFragRef(this.AimHeaderFragment())
+                    .AddFragRef(this.AimAnnotationPolyLineFragment())
                     ;
                 e.IntroDoc
                     .ReviewedStatus(ReviewStatus.NotReviewed)
                     .ObservationLeafNode("AIM Annotated Imaging Study");
-            });
         }
     }
 }

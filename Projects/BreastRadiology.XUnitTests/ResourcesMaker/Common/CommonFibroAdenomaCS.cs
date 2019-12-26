@@ -12,12 +12,11 @@ using PreFhir;
 
 namespace BreastRadiology.XUnitTests
 {
-    using VTask = System.Threading.Tasks.Task;
     partial class ResourcesMaker
     {
        CSTaskVar CommonFibroadenomaCS = new CSTaskVar(
-            async () =>
-                await ResourcesMaker.Self.CreateCodeSystem(
+            () =>
+                ResourcesMaker.Self.CreateCodeSystem(
                         "Fibroadenoma",
                         "Fibroadenoma",
                         "Fibroadenoma/CodeSystem",

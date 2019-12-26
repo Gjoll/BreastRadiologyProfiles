@@ -12,30 +12,29 @@ namespace BreastRadiology.XUnitTests
     class TaskVar<T>
     {
         T value;
-        readonly Func<System.Threading.Tasks.Task<T>> entry;
+        readonly Func<T> entry;
 
-        public async System.Threading.Tasks.Task<T> Value()
+        public T Value()
         {
             if (value == null)
-                this.value = await System.Threading.Tasks.Task<T>.Run(entry);
+                this.value = entry();
             return value;
-
         }
-        public TaskVar(Func<System.Threading.Tasks.Task<T>> entry)
+        public TaskVar(Func<T> entry)
         {
             this.entry = entry;
         }
     }
     class VSTaskVar : TaskVar<ValueSet>
     {
-        public VSTaskVar(Func<System.Threading.Tasks.Task<ValueSet>> entry) : base(entry)
+        public VSTaskVar(Func<ValueSet> entry) : base(entry)
         {
         }
     }
 
     class CSTaskVar : TaskVar<CodeSystem>
     {
-        public CSTaskVar(Func<System.Threading.Tasks.Task<CodeSystem>> entry) : base(entry)
+        public CSTaskVar(Func<CodeSystem> entry) : base(entry)
         {
         }
     }

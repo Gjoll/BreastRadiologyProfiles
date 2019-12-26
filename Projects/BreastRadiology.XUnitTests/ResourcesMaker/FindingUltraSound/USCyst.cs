@@ -8,68 +8,63 @@ using FhirKhit.Tools;
 using FhirKhit.Tools.R4;
 using Hl7.Fhir.Model;
 using Hl7.Fhir.Serialization;
-using VTask = System.Threading.Tasks.Task;
-using StringTask = System.Threading.Tasks.Task<string>;
 
 namespace BreastRadiology.XUnitTests
 {
     partial class ResourcesMaker : ConverterBase
     {
-        async StringTask USCyst()
+        String USCyst()
         {
             if (this.usCyst == null)
-                await this.CreateUSCyst();
+                this.CreateUSCyst();
             return this.usCyst;
         }
         String usCyst = null;
 
-        async VTask CreateUSCyst()
+        void CreateUSCyst()
         {
-            await VTask.Run(async () =>
+            SDefEditor e = this.CreateEditor("BreastRadUltraSoundCyst",
+                    "UltraSound Cyst",
+                    "US Cyst",
+                    ObservationUrl,
+                    $"{Group_USResources}/Cyst",
+                    out this.usCyst)
+                .Description("Breast Radiology UltraSound Cyst Observation",
+                    new Markdown()
+                        .Paragraph("[PR]")
+                        .MissingObservation("a cyst")
+                        .Todo(
+                        )
+                )
+                .AddFragRef(this.ObservationNoDeviceFragment())
+                .AddFragRef(this.BreastBodyLocationRequiredFragment())
+                .AddFragRef(this.ObservationSectionFragment())
+                .AddFragRef(this.ObservationNoValueFragment())
+                .AddFragRef(this.ImagingStudyFragment())
+                ;
+
             {
-                SDefEditor e = this.CreateEditor("BreastRadUltraSoundCyst",
-                        "UltraSound Cyst",
-                        "US Cyst",
-                        ObservationUrl,
-                        $"{Group_USResources}/Cyst",
-                        out this.usCyst)
-                    .Description("Breast Radiology UltraSound Cyst Observation",
-                        new Markdown()
-                            .Paragraph("[PR]")
-                            .MissingObservation("a cyst")
-                            .Todo(
-                            )
-                    )
-                    .AddFragRef(await this.ObservationNoDeviceFragment())
-                    .AddFragRef(await this.BreastBodyLocationRequiredFragment())
-                    .AddFragRef(await this.ObservationSectionFragment())
-                    .AddFragRef(await this.ObservationNoValueFragment())
-                    .AddFragRef(await this.ImagingStudyFragment())
-                    ;
-
+                ProfileTargetSlice[] targets = new ProfileTargetSlice[]
                 {
-                    ProfileTargetSlice[] targets = new ProfileTargetSlice[]
-                    {
-                    new ProfileTargetSlice(await this.BiRadsAssessmentCategory(), 0, "1"),
+                    new ProfileTargetSlice(this.BiRadsAssessmentCategory(), 0, "1"),
 
-                    new ProfileTargetSlice(await this.CommonObservedCount(), 0, "1"),
-                    new ProfileTargetSlice(await this.CommonObservedChangeInState(), 0, "*"),
-                    new ProfileTargetSlice(await this.CommonObservedSize(), 0, "1"),
-                    new ProfileTargetSlice(await this.CommonOrientation(), 0, "1"),
+                    new ProfileTargetSlice(this.CommonObservedCount(), 0, "1"),
+                    new ProfileTargetSlice(this.CommonObservedChangeInState(), 0, "*"),
+                    new ProfileTargetSlice(this.CommonObservedSize(), 0, "1"),
+                    new ProfileTargetSlice(this.CommonOrientation(), 0, "1"),
 
-                    //new ProfileTargetSlice(await this.MGMassMargin(), 0, "*"),
-                    //new ProfileTargetSlice(await this.MGMassDensity(), 0, "1"),
-                    //new ProfileTargetSlice(await this.MGAssociatedFeatures(), 0, "1", false),
-                    };
-                    e.Find("hasMember").SliceByUrl(targets);
-                    e.AddProfileTargets(targets);
-                }
+                    //new ProfileTargetSlice(this.MGMassMargin(), 0, "*"),
+                    //new ProfileTargetSlice(this.MGMassDensity(), 0, "1"),
+                    //new ProfileTargetSlice(this.MGAssociatedFeatures(), 0, "1", false),
+                };
+                e.Find("hasMember").SliceByUrl(targets);
+                e.AddProfileTargets(targets);
+            }
 
-                e.IntroDoc
-                    .ReviewedStatus(ReviewStatus.NotReviewed)
-                    .ObservationSection("UltraSound Cyst")
-                    ;
-            });
+            e.IntroDoc
+                .ReviewedStatus(ReviewStatus.NotReviewed)
+                .ObservationSection("UltraSound Cyst")
+                ;
         }
     }
 }

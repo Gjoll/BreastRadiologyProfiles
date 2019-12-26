@@ -8,31 +8,29 @@ using FhirKhit.Tools;
 using FhirKhit.Tools.R4;
 using Hl7.Fhir.Model;
 using Hl7.Fhir.Serialization;
-using VTask = System.Threading.Tasks.Task;
-using StringTask = System.Threading.Tasks.Task<string>;
 
 namespace BreastRadiology.XUnitTests
 {
     partial class ResourcesMaker : ConverterBase
     {
-        async StringTask MGCalcificationType()
+        String MGCalcificationType()
         {
             if (this.mgCalcificationType == null)
-                await this.CreateMGCalcificationType();
+                this.CreateMGCalcificationType();
             return this.mgCalcificationType;
         }
         String mgCalcificationType = null;
 
-       CSTaskVar MammoCalcificationTypeCS = new CSTaskVar(
-            async () =>
-                await ResourcesMaker.Self.CreateCodeSystem(
-                    "MammoCalcificationType",
-                    "Mammography Calcification Type",
-                    "Mg Calc. Type/CodeSystem",
-                    "Mammography calcification type code system.",
-                    Group_MGCodes,
-                    new ConceptDef[]
-                    {
+        CSTaskVar MammoCalcificationTypeCS = new CSTaskVar(
+             () =>
+                 ResourcesMaker.Self.CreateCodeSystem(
+                     "MammoCalcificationType",
+                     "Mammography Calcification Type",
+                     "Mg Calc. Type/CodeSystem",
+                     "Mammography calcification type code system.",
+                     Group_MGCodes,
+                     new ConceptDef[]
+                     {
                     new ConceptDef("Skin",
                         "Skin Calcification (Typically Benign)",
                         new Definition()
@@ -193,67 +191,64 @@ namespace BreastRadiology.XUnitTests
                             .Line("should be placed in BI-RADS® assessment category 4C (PPV range > 50% to < 95%).")
                         .CiteEnd(BiRadCitation)
                         )
-                    }
-                )
-            );
+                     }
+                 )
+             );
 
 
         VSTaskVar MammoCalcificationTypeVS = new VSTaskVar(
-            async () =>
-                await ResourcesMaker.Self.CreateValueSetXX(
+            () =>
+                ResourcesMaker.Self.CreateValueSetXX(
                     "MammoCalcificationType",
                     "Mammography Calcification Type",
                     "Mg Calc. TypeValueSet",
                     "Mammography calcification type code system.",
                     Group_MGCodes,
-                    await ResourcesMaker.Self.MammoCalcificationTypeCS.Value()
+                    ResourcesMaker.Self.MammoCalcificationTypeCS.Value()
                     )
             );
 
 
-        async VTask CreateMGCalcificationType()
+        void CreateMGCalcificationType()
         {
-            await VTask.Run(async () =>
+            ValueSet binding = this.MammoCalcificationTypeVS.Value();
+
             {
-                ValueSet binding = await this.MammoCalcificationTypeVS.Value();
-
-                {
-                    IntroDoc valueSetIntroDoc = new IntroDoc(Path.Combine(this.pageDir, $"ValueSet-{binding.Name}-intro.xml"));
-                    valueSetIntroDoc
-                        .ReviewedStatus(ReviewStatus.NotReviewed)
-                        .ValueSet(binding);
-                    ;
-                    String outputPath = valueSetIntroDoc.Save();
-                    this.fc?.Mark(outputPath);
-                }
-
-                SDefEditor e = this.CreateEditor("BreastRadMammoCalcificationType",
-                    "Mammography Calcification Type",
-                    "Mg Calc. Type",
-                    ObservationUrl,
-                    $"{Group_MGResources}/Calcification/Type",
-                    out this.mgCalcificationType)
-                    .Description("Breast Radiology Mammography Calcification Type Observation",
-                        new Markdown()
-                            .Paragraph("This resource describes the type of calcification observed.")
-                            .Todo(
-                            )
-                     )
-                    .AddFragRef(await this.ObservationNoDeviceFragment())
-                    .AddFragRef(await this.ObservationCodedValueFragment())
-                    .AddFragRef(await this.ObservationLeafFragment())
-                    ;
-
-                e.Select("value[x]")
-                    .Type("CodeableConcept")
-                    .Binding(binding.Url, BindingStrength.Required)
-                    ;
-                e.AddValueSetLink(binding);
-                e.IntroDoc
+                IntroDoc valueSetIntroDoc = new IntroDoc(Path.Combine(this.pageDir, $"ValueSet-{binding.Name}-intro.xml"));
+                valueSetIntroDoc
                     .ReviewedStatus(ReviewStatus.NotReviewed)
-                    .CodedObservationLeafNode("a mammography calcification type", binding)
-                    ;
-            });
+                    .ValueSet(binding);
+                ;
+                String outputPath = valueSetIntroDoc.Save();
+                this.fc?.Mark(outputPath);
+            }
+
+            SDefEditor e = this.CreateEditor("BreastRadMammoCalcificationType",
+                "Mammography Calcification Type",
+                "Mg Calc. Type",
+                ObservationUrl,
+                $"{Group_MGResources}/Calcification/Type",
+                out this.mgCalcificationType)
+                .Description("Breast Radiology Mammography Calcification Type Observation",
+                    new Markdown()
+                        .Paragraph("This resource describes the type of calcification observed.")
+                        .Todo(
+                        )
+                 )
+                .AddFragRef(this.ObservationNoDeviceFragment())
+                .AddFragRef(this.ObservationCodedValueFragment())
+                .AddFragRef(this.ObservationLeafFragment())
+                ;
+
+            e.Select("value[x]")
+                .Type("CodeableConcept")
+                .Binding(binding.Url, BindingStrength.Required)
+                ;
+            e.AddValueSetLink(binding);
+            e.IntroDoc
+                .ReviewedStatus(ReviewStatus.NotReviewed)
+                .CodedObservationLeafNode("a mammography calcification type", binding)
+                ;
         }
     }
 }

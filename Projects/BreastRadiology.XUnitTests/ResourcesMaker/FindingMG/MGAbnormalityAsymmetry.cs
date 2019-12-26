@@ -9,23 +9,22 @@ using FhirKhit.Tools.R4;
 using Hl7.Fhir.Model;
 using Hl7.Fhir.Serialization;
 using PreFhir;
-using VTask = System.Threading.Tasks.Task;
-using StringTask = System.Threading.Tasks.Task<string>;
+
 namespace BreastRadiology.XUnitTests
 {
     partial class ResourcesMaker : ConverterBase
     {
-        async StringTask MGAbnormalityAsymmetry()
+        String MGAbnormalityAsymmetry()
         {
             if (this.mgAbnormalityAsymmetry == null)
-                await this.CreateMGAbnormalityAsymmetry();
+                this.CreateMGAbnormalityAsymmetry();
             return this.mgAbnormalityAsymmetry;
         }
         String mgAbnormalityAsymmetry = null;
 
         CSTaskVar BreastRadMammoAbnormalityAsymmetryRefinementCS = new CSTaskVar(
-             async () =>
-                 await ResourcesMaker.Self.CreateCodeSystem(
+             () =>
+                 ResourcesMaker.Self.CreateCodeSystem(
                     "BreastRadMammoAbnormalityAsymmetryRefinement",
                     "Mammography Asymmetry Abnormality Refinement",
                      "Mg Asymmetry Refinement/CodeSystem",
@@ -88,21 +87,21 @@ namespace BreastRadiology.XUnitTests
 
 
         VSTaskVar BreastRadMammoAbnormalityAsymmetriesVS = new VSTaskVar(
-            async () =>
-                await ResourcesMaker.Self.CreateValueSetXX(
+            () =>
+                ResourcesMaker.Self.CreateValueSetXX(
                    "BreastRadMammoAbnormalityAsymmetries",
                    "Mammography AsymmetryAbnormalities",
                     "Mg Asymmetry/ValueSet",
                    "Codes defining types of mammography asymmetry abnormalities.",
                     Group_MGCodes,
-                    await ResourcesMaker.Self.BreastRadMammoAbnormalityAsymmetryRefinementCS.Value()
+                    ResourcesMaker.Self.BreastRadMammoAbnormalityAsymmetryRefinementCS.Value()
                     )
             );
 
 
-        async VTask CreateMGAbnormalityAsymmetry()
+        void CreateMGAbnormalityAsymmetry()
         {
-            ValueSet binding = await this.BreastRadMammoAbnormalityAsymmetriesVS.Value();
+            ValueSet binding = this.BreastRadMammoAbnormalityAsymmetriesVS.Value();
 
             {
                 IntroDoc valueSetIntroDoc = new IntroDoc(Path.Combine(this.pageDir, $"ValueSet-{binding.Name}-intro.xml"));
@@ -134,17 +133,17 @@ namespace BreastRadiology.XUnitTests
                         .Todo(
                         )
                 )
-                .AddFragRef(await this.ObservationNoDeviceFragment())
-                .AddFragRef(await this.ObservationCodedValueFragment())
-                .AddFragRef(await this.ObservationSectionFragment())
-                .AddFragRef(await this.MGCommonTargetsFragment())
+                .AddFragRef(this.ObservationNoDeviceFragment())
+                .AddFragRef(this.ObservationCodedValueFragment())
+                .AddFragRef(this.ObservationSectionFragment())
+                .AddFragRef(this.MGCommonTargetsFragment())
             ;
 
             {
                 ProfileTargetSlice[] targets = new ProfileTargetSlice[]
                 {
-                    new ProfileTargetSlice(await this.CommonObservedCount(), 0, "1"),
-                    new ProfileTargetSlice(await this.MGAssociatedFeatures(), 0, "1")
+                    new ProfileTargetSlice(this.CommonObservedCount(), 0, "1"),
+                    new ProfileTargetSlice(this.MGAssociatedFeatures(), 0, "1")
                 };
                 e.Find("hasMember").SliceByUrl(targets);
                 e.AddProfileTargets(targets);

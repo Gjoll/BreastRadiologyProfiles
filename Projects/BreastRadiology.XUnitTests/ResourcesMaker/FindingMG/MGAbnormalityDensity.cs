@@ -8,31 +8,29 @@ using FhirKhit.Tools;
 using FhirKhit.Tools.R4;
 using Hl7.Fhir.Model;
 using Hl7.Fhir.Serialization;
-using VTask = System.Threading.Tasks.Task;
-using StringTask = System.Threading.Tasks.Task<string>;
 
 namespace BreastRadiology.XUnitTests
 {
     partial class ResourcesMaker : ConverterBase
     {
-        async StringTask MGAbnormalityDensity()
+        String MGAbnormalityDensity()
         {
             if (this.mgAbnormalityDensity == null)
-                await this.CreateMGAbnormalityDensity();
+                this.CreateMGAbnormalityDensity();
             return this.mgAbnormalityDensity;
         }
         String mgAbnormalityDensity = null;
 
-       CSTaskVar BreastRadMammoAbnormalityDensityCS = new CSTaskVar(
-            async () =>
-                await ResourcesMaker.Self.CreateCodeSystem(
-                       "BreastRadMammoAbnormalityDensity",
-                       "Mammography Density Abnormality Refinement",
-                        "Mg Density Refinement/CodeSystem",
-                       "Codes defining types of mammography density abnormalities.",
-                        Group_MGCodes,
-                       new ConceptDef[]
-                        {
+        CSTaskVar BreastRadMammoAbnormalityDensityCS = new CSTaskVar(
+             () =>
+                 ResourcesMaker.Self.CreateCodeSystem(
+                        "BreastRadMammoAbnormalityDensity",
+                        "Mammography Density Abnormality Refinement",
+                         "Mg Density Refinement/CodeSystem",
+                        "Codes defining types of mammography density abnormalities.",
+                         Group_MGCodes,
+                        new ConceptDef[]
+                         {
                         new ConceptDef("FocalAsymmetrical",
                             "Focal Asymmetrical",
                             new Definition()
@@ -48,72 +46,69 @@ namespace BreastRadiology.XUnitTests
                             new Definition()
                                 .Line("[PR]")
                             )
-                        }
-                    )
-                );
+                         }
+                     )
+                 );
 
 
         VSTaskVar BreastRadMammoAbnormalityDensityVS = new VSTaskVar(
-            async () =>
-                await ResourcesMaker.Self.CreateValueSetXX(
+            () =>
+                ResourcesMaker.Self.CreateValueSetXX(
                    "BreastRadMammoAbnormalityDensity",
                    "Mammography Density Abnormality",
                     "Mg Density/ValueSet",
                    "Codes defining types of mammography density abnormalities.",
                     Group_MGCodes,
-                    await ResourcesMaker.Self.BreastRadMammoAbnormalityDensityCS.Value()
+                    ResourcesMaker.Self.BreastRadMammoAbnormalityDensityCS.Value()
                     )
             );
 
 
-        async VTask CreateMGAbnormalityDensity()
+        void CreateMGAbnormalityDensity()
         {
-            await VTask.Run(async () =>
+            ValueSet binding = this.BreastRadMammoAbnormalityDensityVS.Value();
+
+            SDefEditor e = this.CreateEditor("BreastRadMammoAbnormalityDensity",
+                    "Mammography Density Abnormality",
+                    "Mg Density Abnormality",
+                    ObservationUrl,
+                    $"{Group_MGResources}/AbnormalityDensity",
+                    out this.mgAbnormalityDensity)
+                .Description("Breat Radiology Mammography Density Abnormality Observation",
+                    new Markdown()
+                        .MissingObservation("a Density abnormality")
+                        .Todo(
+                            "should this be a leaf node (how about shape, density, location, etc).",
+                            "default value? for refinement"
+                        )
+                )
+                .AddFragRef(this.ObservationNoDeviceFragment())
+                .AddFragRef(this.ObservationLeafFragment())
+                .AddFragRef(this.MGCommonTargetsFragment())
+                .AddFragRef(this.MGShapeTargetsFragment())
+                ;
+
+            e.Select("value[x]")
+                .ZeroToOne()
+                .Type("CodeableConcept")
+                .Binding(binding.Url, BindingStrength.Required)
+                ;
+            e.AddValueSetLink(binding);
+
             {
-                ValueSet binding = await this.BreastRadMammoAbnormalityDensityVS.Value();
-
-                SDefEditor e = this.CreateEditor("BreastRadMammoAbnormalityDensity",
-                        "Mammography Density Abnormality",
-                        "Mg Density Abnormality",
-                        ObservationUrl,
-                        $"{Group_MGResources}/AbnormalityDensity",
-                        out this.mgAbnormalityDensity)
-                    .Description("Breat Radiology Mammography Density Abnormality Observation",
-                        new Markdown()
-                            .MissingObservation("a Density abnormality")
-                            .Todo(
-                                "should this be a leaf node (how about shape, density, location, etc).",
-                                "default value? for refinement"
-                            )
-                    )
-                    .AddFragRef(await this.ObservationNoDeviceFragment())
-                    .AddFragRef(await this.ObservationLeafFragment())
-                    .AddFragRef(await this.MGCommonTargetsFragment())
-                    .AddFragRef(await this.MGShapeTargetsFragment())
-                    ;
-
-                e.Select("value[x]")
-                    .ZeroToOne()
-                    .Type("CodeableConcept")
-                    .Binding(binding.Url, BindingStrength.Required)
-                    ;
-                e.AddValueSetLink(binding);
-
+                ProfileTargetSlice[] targets = new ProfileTargetSlice[]
                 {
-                    ProfileTargetSlice[] targets = new ProfileTargetSlice[]
-                    {
-                    new ProfileTargetSlice(await this.CommonObservedCount(), 0, "1"),
-                    };
-                    e.Find("hasMember").SliceByUrl(targets);
-                    e.AddProfileTargets(targets);
-                }
+                    new ProfileTargetSlice(this.CommonObservedCount(), 0, "1"),
+                };
+                e.Find("hasMember").SliceByUrl(targets);
+                e.AddProfileTargets(targets);
+            }
 
-                e.IntroDoc
-                    .ReviewedStatus(ReviewStatus.NotReviewed)
-                    .ObservationSection($"Density Abnormality")
-                    .Refinement(binding, "Density")
-                    ;
-            });
+            e.IntroDoc
+                .ReviewedStatus(ReviewStatus.NotReviewed)
+                .ObservationSection($"Density Abnormality")
+                .Refinement(binding, "Density")
+                ;
         }
     }
 }

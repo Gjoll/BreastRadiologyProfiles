@@ -8,60 +8,56 @@ using FhirKhit.Tools;
 using FhirKhit.Tools.R4;
 using Hl7.Fhir.Model;
 using Hl7.Fhir.Serialization;
-using VTask = System.Threading.Tasks.Task;
-using StringTask = System.Threading.Tasks.Task<string>;
+
 namespace BreastRadiology.XUnitTests
 {
     partial class ResourcesMaker : ConverterBase
     {
-        async StringTask MGAssociatedFeatures()
+        String MGAssociatedFeatures()
         {
             if (this.mgAssociatedFeatures == null)
-                await this.CreateMGAssociatedFeatures();
+                this.CreateMGAssociatedFeatures();
             return this.mgAssociatedFeatures;
         }
         String mgAssociatedFeatures = null;
 
-        async VTask CreateMGAssociatedFeatures()
+        void CreateMGAssociatedFeatures()
         {
-            await VTask.Run(async () =>
+            SDefEditor e = this.CreateEditor("BreastRadMammoAssociatedFeatures",
+                    "Mammography Associated Features",
+                    "Mg Associated/Features",
+                    ObservationUrl,
+                    $"{Group_MGResources}/AssociatedFeature",
+                    out this.mgAssociatedFeatures)
+                .Description("Mammography Associated Features Observation",
+                    new Markdown()
+                        .Paragraph("Used with masses, asymmetries, or calcifications, or may stand alone as " +
+                                    "Features when no other abnormality is present.")
+                        .Todo(
+                            "check Cardinality of the following Observation.hasMember targets?"
+                        )
+                 )
+                .AddFragRef(this.ObservationNoDeviceFragment())
+                .AddFragRef(this.ObservationSectionFragment())
+                .AddFragRef(this.ObservationNoValueFragment())
+                ;
             {
-                SDefEditor e = this.CreateEditor("BreastRadMammoAssociatedFeatures",
-                        "Mammography Associated Features",
-                        "Mg Associated/Features",
-                        ObservationUrl,
-                        $"{Group_MGResources}/AssociatedFeature",
-                        out this.mgAssociatedFeatures)
-                    .Description("Mammography Associated Features Observation",
-                        new Markdown()
-                            .Paragraph("Used with masses, asymmetries, or calcifications, or may stand alone as " +
-                                        "Features when no other abnormality is present.")
-                            .Todo(
-                                "check Cardinality of the following Observation.hasMember targets?"
-                            )
-                     )
-                    .AddFragRef(await this.ObservationNoDeviceFragment())
-                    .AddFragRef(await this.ObservationSectionFragment())
-                    .AddFragRef(await this.ObservationNoValueFragment())
-                    ;
+                ProfileTargetSlice[] targets = new ProfileTargetSlice[]
                 {
-                    ProfileTargetSlice[] targets = new ProfileTargetSlice[]
-                    {
-                    new ProfileTargetSlice(await this.MGSkinRetraction(), 0, "1"),
-                    new ProfileTargetSlice(await this.MGNippleRetraction(), 0, "1"),
-                    new ProfileTargetSlice(await this.MGSkinThickening(), 0, "*"),
-                    new ProfileTargetSlice(await this.MGAxillaryAdenopathy(), 0, "1"),
-                    new ProfileTargetSlice(await this.MGAbnormalityArchitecturalDistortion(), 0, "*"),
-                    new ProfileTargetSlice(await this.MGAbnormalityCalcification(), 0, "*")
-                    };
-                    e.Find("hasMember").SliceByUrl(targets);
-                    e.AddProfileTargets(targets);
-                }
-                e.IntroDoc
-                    .ReviewedStatus(ReviewStatus.NotReviewed)
-                    .ObservationSection("Mammography Associated Features")
-                    ;
-            });
+                    new ProfileTargetSlice(this.MGSkinRetraction(), 0, "1"),
+                    new ProfileTargetSlice(this.MGNippleRetraction(), 0, "1"),
+                    new ProfileTargetSlice(this.MGSkinThickening(), 0, "*"),
+                    new ProfileTargetSlice(this.MGAxillaryAdenopathy(), 0, "1"),
+                    new ProfileTargetSlice(this.MGAbnormalityArchitecturalDistortion(), 0, "*"),
+                    new ProfileTargetSlice(this.MGAbnormalityCalcification(), 0, "*")
+                };
+                e.Find("hasMember").SliceByUrl(targets);
+                e.AddProfileTargets(targets);
+            }
+            e.IntroDoc
+                .ReviewedStatus(ReviewStatus.NotReviewed)
+                .ObservationSection("Mammography Associated Features")
+                ;
         }
     }
 }

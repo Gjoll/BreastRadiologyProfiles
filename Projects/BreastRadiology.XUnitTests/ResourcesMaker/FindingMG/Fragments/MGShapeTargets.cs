@@ -8,51 +8,47 @@ using FhirKhit.Tools;
 using FhirKhit.Tools.R4;
 using Hl7.Fhir.Model;
 using Hl7.Fhir.Serialization;
-using VTask = System.Threading.Tasks.Task;
-using StringTask = System.Threading.Tasks.Task<string>;
+
 namespace BreastRadiology.XUnitTests
 {
     partial class ResourcesMaker : ConverterBase
     {
-        async StringTask MGShapeTargetsFragment()
+        String MGShapeTargetsFragment()
         {
             if (this.mgShapeTargetsFragment == null)
-                await this.CreateMGShapeTargetsFragment();
+                this.CreateMGShapeTargetsFragment();
             return this.mgShapeTargetsFragment;
         }
         String mgShapeTargetsFragment = null;
 
-        async VTask CreateMGShapeTargetsFragment()
+        void CreateMGShapeTargetsFragment()
         {
-            await VTask.Run(async () =>
-            {
-                SDefEditor e = this.CreateFragment("MgShapeTargetsFragment",
-                        "Mg Shape Targets Fragment",
-                        "Mg Shape Targets Fragment",
-                        ObservationUrl,
-                        out this.mgShapeTargetsFragment)
-                    .Description("Mammography Shape Targets Fragment",
-                        new Markdown()
-                            .Paragraph("Shape Common Targets Fragment")
-                            .Paragraph("Adds Orientation, Shape, Margin, Density and Thickening targets")
-                            .Todo(
-                            )
-                    )
-                    .AddFragRef(await this.BreastBodyLocationRequiredFragment())
-                    ;
+            SDefEditor e = this.CreateFragment("MgShapeTargetsFragment",
+                    "Mg Shape Targets Fragment",
+                    "Mg Shape Targets Fragment",
+                    ObservationUrl,
+                    out this.mgShapeTargetsFragment)
+                .Description("Mammography Shape Targets Fragment",
+                    new Markdown()
+                        .Paragraph("Shape Common Targets Fragment")
+                        .Paragraph("Adds Orientation, Shape, Margin, Density and Thickening targets")
+                        .Todo(
+                        )
+                )
+                .AddFragRef(this.BreastBodyLocationRequiredFragment())
+                ;
 
+            {
+                ProfileTargetSlice[] targets = new ProfileTargetSlice[]
                 {
-                    ProfileTargetSlice[] targets = new ProfileTargetSlice[]
-                    {
-                    new ProfileTargetSlice(await this.CommonOrientation(), 0, "*"),
-                    new ProfileTargetSlice(await this.MGShape(), 0, "1"),
-                    new ProfileTargetSlice(await this.MGMassMargin(), 0, "1"),
-                    new ProfileTargetSlice(await this.MGDensity(), 0, "1"),
-                    };
-                    e.Find("hasMember").SliceByUrl(targets);
-                    e.AddProfileTargets(targets);
-                }
-            });
+                    new ProfileTargetSlice(this.CommonOrientation(), 0, "*"),
+                    new ProfileTargetSlice(this.MGShape(), 0, "1"),
+                    new ProfileTargetSlice(this.MGMassMargin(), 0, "1"),
+                    new ProfileTargetSlice(this.MGDensity(), 0, "1"),
+                };
+                e.Find("hasMember").SliceByUrl(targets);
+                e.AddProfileTargets(targets);
+            }
         }
     }
 }

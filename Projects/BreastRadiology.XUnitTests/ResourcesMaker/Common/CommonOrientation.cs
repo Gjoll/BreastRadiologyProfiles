@@ -9,31 +9,29 @@ using FhirKhit.Tools.R4;
 using Hl7.Fhir.Model;
 using Hl7.Fhir.Serialization;
 using PreFhir;
-using VTask = System.Threading.Tasks.Task;
-using StringTask = System.Threading.Tasks.Task<string>;
 
 namespace BreastRadiology.XUnitTests
 {
     partial class ResourcesMaker : ConverterBase
     {
-        async StringTask CommonOrientation()
+        String CommonOrientation()
         {
             if (this.orientation == null)
-                await this.CreateOrientation();
+                this.CreateOrientation();
             return this.orientation;
         }
         String orientation = null;
 
-       CSTaskVar CommonOrientationCS = new CSTaskVar(
-            async () =>
-                await ResourcesMaker.Self.CreateCodeSystem(
-                    "CommonOrientation",
-                    "Orientation",
-                    "Orientation CodeSystem",
-                    "Orientation CodeSystem",
-                    Group_CommonCodes,
-                    new ConceptDef[]
-                    {
+        CSTaskVar CommonOrientationCS = new CSTaskVar(
+             () =>
+                 ResourcesMaker.Self.CreateCodeSystem(
+                     "CommonOrientation",
+                     "Orientation",
+                     "Orientation CodeSystem",
+                     "Orientation CodeSystem",
+                     Group_CommonCodes,
+                     new ConceptDef[]
+                     {
                     new ConceptDef("Parallel ",
                         "Parallel",
                         new Definition()
@@ -53,72 +51,69 @@ namespace BreastRadiology.XUnitTests
                             .Line("obliquely oriented to the skin line. Round masses are NOT PARALLEL in their orientation.")
                         .CiteEnd(BiRadCitation)
                         )
-                    })
-            );
+                     })
+             );
 
 
         VSTaskVar CommonOrientationVS = new VSTaskVar(
-            async () =>
-                await ResourcesMaker.Self.CreateValueSetXX(
+            () =>
+                ResourcesMaker.Self.CreateValueSetXX(
                         "CommonOrientation",
                         "Orientation",
                         "Orientation CodeSystem",
                         "Orientation CodeSystem",
                         Group_CommonCodes,
-                        await ResourcesMaker.Self.CommonOrientationCS.Value()
+                        ResourcesMaker.Self.CommonOrientationCS.Value()
                     )
             );
 
-        async VTask CreateOrientation()
+        void CreateOrientation()
         {
-            await VTask.Run(async () =>
+            ValueSet binding = this.CommonOrientationVS.Value();
             {
-                    ValueSet binding = await this.CommonOrientationVS.Value();
-                {
-                    IntroDoc valueSetIntroDoc = new IntroDoc(Path.Combine(this.pageDir, $"ValueSet-{binding.Name}-intro.xml"));
-                    valueSetIntroDoc
-                        .ReviewedStatus(ReviewStatus.NotReviewed)
-                        .ValueSet(binding);
-                    ;
-                    String outputPath = valueSetIntroDoc.Save();
-                    this.fc?.Mark(outputPath);
-                }
-
-                SDefEditor e = this.CreateEditor("CommonOrientation",
-                        "Orientation",
-                        "Orientation",
-                        ObservationUrl,
-                        $"{Group_CommonResources}/Orientation",
-                        out this.orientation)
-                    .Description("Breast Radiology Orientation Observation",
-                        new Markdown()
-                            .MissingObservation("a orientation")
-                            .BiradHeader()
-                            .BlockQuote("Orientation is defined with reference to the skin")
-                            .BlockQuote("line. Obliquely situated masses may follow a radial pattern, and their long axes will help determine")
-                            .BlockQuote("classification as parallel or not parallel. Parallel or \"wider-than-tall\" orientation is a property of most")
-                            .BlockQuote("benign masses, notably fibroadenomas; however, many carcinomas have this orientation as well.")
-                            .BlockQuote("Orientation alone should not be used as an isolated feature in assessing a mass for its likelihood of")
-                            .BlockQuote("malignancy.")
-                            .BiradFooter()
-                            .Todo(
-                            )
-                        )
-                    .AddFragRef(await this.ObservationNoDeviceFragment())
-                    .AddFragRef(await this.ObservationCodedValueFragment())
-                    .AddFragRef(await this.ObservationLeafFragment())
-                    ;
-
-                e.Select("value[x]")
-                    .Type("CodeableConcept")
-                    .Binding(binding.Url, BindingStrength.Required)
-                    ;
-                e.AddValueSetLink(binding);
-                e.IntroDoc
+                IntroDoc valueSetIntroDoc = new IntroDoc(Path.Combine(this.pageDir, $"ValueSet-{binding.Name}-intro.xml"));
+                valueSetIntroDoc
                     .ReviewedStatus(ReviewStatus.NotReviewed)
-                    .CodedObservationLeafNode("an orientation", binding)
-                    ;
-            });
+                    .ValueSet(binding);
+                ;
+                String outputPath = valueSetIntroDoc.Save();
+                this.fc?.Mark(outputPath);
+            }
+
+            SDefEditor e = this.CreateEditor("CommonOrientation",
+                    "Orientation",
+                    "Orientation",
+                    ObservationUrl,
+                    $"{Group_CommonResources}/Orientation",
+                    out this.orientation)
+                .Description("Breast Radiology Orientation Observation",
+                    new Markdown()
+                        .MissingObservation("a orientation")
+                        .BiradHeader()
+                        .BlockQuote("Orientation is defined with reference to the skin")
+                        .BlockQuote("line. Obliquely situated masses may follow a radial pattern, and their long axes will help determine")
+                        .BlockQuote("classification as parallel or not parallel. Parallel or \"wider-than-tall\" orientation is a property of most")
+                        .BlockQuote("benign masses, notably fibroadenomas; however, many carcinomas have this orientation as well.")
+                        .BlockQuote("Orientation alone should not be used as an isolated feature in assessing a mass for its likelihood of")
+                        .BlockQuote("malignancy.")
+                        .BiradFooter()
+                        .Todo(
+                        )
+                    )
+                .AddFragRef(this.ObservationNoDeviceFragment())
+                .AddFragRef(this.ObservationCodedValueFragment())
+                .AddFragRef(this.ObservationLeafFragment())
+                ;
+
+            e.Select("value[x]")
+                .Type("CodeableConcept")
+                .Binding(binding.Url, BindingStrength.Required)
+                ;
+            e.AddValueSetLink(binding);
+            e.IntroDoc
+                .ReviewedStatus(ReviewStatus.NotReviewed)
+                .CodedObservationLeafNode("an orientation", binding)
+                ;
         }
     }
 }

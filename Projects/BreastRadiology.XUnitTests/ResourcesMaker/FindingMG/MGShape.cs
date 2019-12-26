@@ -9,77 +9,72 @@ using FhirKhit.Tools.R4;
 using Hl7.Fhir.Model;
 using Hl7.Fhir.Serialization;
 using PreFhir;
-using VTask = System.Threading.Tasks.Task;
-using StringTask = System.Threading.Tasks.Task<string>;
 
 namespace BreastRadiology.XUnitTests
 {
     partial class ResourcesMaker
     {
-        async StringTask MGShape()
+        String MGShape()
         {
             if (this.mgShape == null)
-                await this.CreateMammoShape();
+                this.CreateMammoShape();
             return this.mgShape;
         }
         String mgShape = null;
 
 
         VSTaskVar MammoShapeVS = new VSTaskVar(
-            async () =>
-                await ResourcesMaker.Self.CreateValueSetXX(
+            () =>
+                ResourcesMaker.Self.CreateValueSetXX(
                         "MammoShape",
                         "Shape",
                         "Shape/ValueSet",
                         "Codes defining shape values.",
                         Group_MGCodes,
-                        await ResourcesMaker.Self.CommonShapeCS.Value()
+                        ResourcesMaker.Self.CommonShapeCS.Value()
                     )
             );
 
 
-        async VTask CreateMammoShape()
+        void CreateMammoShape()
         {
-            await VTask.Run(async () =>
+            ValueSet binding = this.MammoShapeVS.Value();
             {
-                ValueSet binding = await this.MammoShapeVS.Value();
-                {
-                    IntroDoc valueSetIntroDoc = new IntroDoc(Path.Combine(this.pageDir, $"ValueSet-{binding.Name}-intro.xml"));
-                    valueSetIntroDoc
-                        .ReviewedStatus(ReviewStatus.NotReviewed)
-                        .ValueSet(binding);
-                    ;
-                    String outputPath = valueSetIntroDoc.Save();
-                    this.fc?.Mark(outputPath);
-                }
-
-                SDefEditor e = this.CreateEditor("MammoShape",
-                        "Shape",
-                        "Shape",
-                        ObservationUrl,
-                        $"{Group_CommonResources}/Shape",
-                        out this.mgShape)
-                    .Description("Breast Radiology Shape Observation",
-                        new Markdown()
-                            .MissingObservation("a shape")
-                            .Todo(
-                            )
-                    )
-                    .AddFragRef(await this.ObservationNoDeviceFragment())
-                    .AddFragRef(await this.ObservationCodedValueFragment())
-                    .AddFragRef(await this.ObservationLeafFragment())
-                    ;
-
-                e.Select("value[x]")
-                    .Type("CodeableConcept")
-                    .Binding(binding.Url, BindingStrength.Required)
-                    ;
-                e.AddValueSetLink(binding);
-                e.IntroDoc
+                IntroDoc valueSetIntroDoc = new IntroDoc(Path.Combine(this.pageDir, $"ValueSet-{binding.Name}-intro.xml"));
+                valueSetIntroDoc
                     .ReviewedStatus(ReviewStatus.NotReviewed)
-                    .CodedObservationLeafNode("a shape", binding)
-                    ;
-            });
+                    .ValueSet(binding);
+                ;
+                String outputPath = valueSetIntroDoc.Save();
+                this.fc?.Mark(outputPath);
+            }
+
+            SDefEditor e = this.CreateEditor("MammoShape",
+                    "Shape",
+                    "Shape",
+                    ObservationUrl,
+                    $"{Group_CommonResources}/Shape",
+                    out this.mgShape)
+                .Description("Breast Radiology Shape Observation",
+                    new Markdown()
+                        .MissingObservation("a shape")
+                        .Todo(
+                        )
+                )
+                .AddFragRef(this.ObservationNoDeviceFragment())
+                .AddFragRef(this.ObservationCodedValueFragment())
+                .AddFragRef(this.ObservationLeafFragment())
+                ;
+
+            e.Select("value[x]")
+                .Type("CodeableConcept")
+                .Binding(binding.Url, BindingStrength.Required)
+                ;
+            e.AddValueSetLink(binding);
+            e.IntroDoc
+                .ReviewedStatus(ReviewStatus.NotReviewed)
+                .CodedObservationLeafNode("a shape", binding)
+                ;
         }
     }
 }

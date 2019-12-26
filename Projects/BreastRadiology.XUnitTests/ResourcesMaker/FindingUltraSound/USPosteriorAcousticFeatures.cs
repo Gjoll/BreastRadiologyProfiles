@@ -9,32 +9,30 @@ using FhirKhit.Tools.R4;
 using Hl7.Fhir.Model;
 using Hl7.Fhir.Serialization;
 using PreFhir;
-using VTask = System.Threading.Tasks.Task;
-using StringTask = System.Threading.Tasks.Task<string>;
 
 namespace BreastRadiology.XUnitTests
 {
     partial class ResourcesMaker : ConverterBase
     {
-        async StringTask USPosteriorAcousticFeatures()
+        String USPosteriorAcousticFeatures()
         {
             if (this.usPosteriorAcousticFeatures == null)
-                await this.CreateUSPosteriorAcousticFeatures();
+                this.CreateUSPosteriorAcousticFeatures();
             return this.usPosteriorAcousticFeatures;
         }
         String usPosteriorAcousticFeatures = null;
 
 
-       CSTaskVar BreastRadUSPosteriorAcousticFeaturesCS = new CSTaskVar(
-            async () =>
-                await ResourcesMaker.Self.CreateCodeSystem(
-                    "BreastRadUSPosteriorAcousticFeatures",
-                    "US Posterior Acoustic Features",
-                    "US Posterior Acoustic/Feature CodeSystem",
-                    "Ultra-sound mass Posterior acoustic features code system.",
-                    Group_USCodes,
-                    new ConceptDef[]
-                    {
+        CSTaskVar BreastRadUSPosteriorAcousticFeaturesCS = new CSTaskVar(
+             () =>
+                 ResourcesMaker.Self.CreateCodeSystem(
+                     "BreastRadUSPosteriorAcousticFeatures",
+                     "US Posterior Acoustic Features",
+                     "US Posterior Acoustic/Feature CodeSystem",
+                     "Ultra-sound mass Posterior acoustic features code system.",
+                     Group_USCodes,
+                     new ConceptDef[]
+                     {
                     new ConceptDef("NoPosteriorAcousticFeatures",
                         "No Posterior Acoustic Features",
                         new Definition()
@@ -82,60 +80,57 @@ namespace BreastRadiology.XUnitTests
                             .Line("acoustic shadowing.")
                         .CiteEnd(BiRadCitation)
                         )
-                        })
-                    );
+                         })
+                     );
 
 
         VSTaskVar BreastRadUSPosteriorAcousticFeaturesVS = new VSTaskVar(
-            async () =>
-                await ResourcesMaker.Self.CreateValueSetXX(
+            () =>
+                ResourcesMaker.Self.CreateValueSetXX(
                     "BreastRadUSPosteriorAcousticFeatures",
                     "US Posterior Acoustic Features",
                     "US Posterior Acoustic/Feature ValueSet",
                     "Ultra-sound mass Posterior acoustic features code system.",
                     Group_USCodes,
-                    await ResourcesMaker.Self.BreastRadUSPosteriorAcousticFeaturesCS.Value()
+                    ResourcesMaker.Self.BreastRadUSPosteriorAcousticFeaturesCS.Value()
                     )
             );
 
 
-        async VTask CreateUSPosteriorAcousticFeatures()
+        void CreateUSPosteriorAcousticFeatures()
         {
-            await VTask.Run(async () =>
-            {
-                ValueSet binding = await this.BreastRadUSPosteriorAcousticFeaturesVS.Value();
+            ValueSet binding = this.BreastRadUSPosteriorAcousticFeaturesVS.Value();
 
-                SDefEditor e = this.CreateEditor("BreastRadUSPosteriorAcousticFeatures",
-                        "US Posterior Acoustic Features",
-                        "US Posterior Acoustic/Features",
-                        ObservationUrl,
-                        $"{Group_USResources}/PosteriorAcousticFeatures",
-                        out this.usPosteriorAcousticFeatures)
-                    .Description("Breast Radiology Ultra-Sound Posterior Acoustic Features Observation",
-                        new Markdown()
-                            .BiradHeader()
-                            .BlockQuote("Posterior acoustic features represent the attenuation characteristics of a mass with respect to its")
-                            .BlockQuote("acoustic transmission. Attenuation (shadowing) and enhancement are additional attributes of")
-                            .BlockQuote("masses, mostly of secondary rather than primary predictive value.")
-                            .BiradFooter()
-                            .Todo(
-                            )
+            SDefEditor e = this.CreateEditor("BreastRadUSPosteriorAcousticFeatures",
+                    "US Posterior Acoustic Features",
+                    "US Posterior Acoustic/Features",
+                    ObservationUrl,
+                    $"{Group_USResources}/PosteriorAcousticFeatures",
+                    out this.usPosteriorAcousticFeatures)
+                .Description("Breast Radiology Ultra-Sound Posterior Acoustic Features Observation",
+                    new Markdown()
+                        .BiradHeader()
+                        .BlockQuote("Posterior acoustic features represent the attenuation characteristics of a mass with respect to its")
+                        .BlockQuote("acoustic transmission. Attenuation (shadowing) and enhancement are additional attributes of")
+                        .BlockQuote("masses, mostly of secondary rather than primary predictive value.")
+                        .BiradFooter()
+                        .Todo(
                         )
-                    .AddFragRef(await this.ObservationNoDeviceFragment())
-                    .AddFragRef(await this.ObservationCodedValueFragment())
-                    .AddFragRef(await this.ObservationLeafFragment())
-                    ;
+                    )
+                .AddFragRef(this.ObservationNoDeviceFragment())
+                .AddFragRef(this.ObservationCodedValueFragment())
+                .AddFragRef(this.ObservationLeafFragment())
+                ;
 
-                e.Select("value[x]")
-                    .Type("CodeableConcept")
-                    .Binding(binding.Url, BindingStrength.Required)
-                    ;
-                e.AddValueSetLink(binding);
-                e.IntroDoc
-                    .ReviewedStatus(ReviewStatus.NotReviewed)
-                    .CodedObservationLeafNode("an ultra-sound mass posterior acoustic feature", binding)
-                    ;
-            });
+            e.Select("value[x]")
+                .Type("CodeableConcept")
+                .Binding(binding.Url, BindingStrength.Required)
+                ;
+            e.AddValueSetLink(binding);
+            e.IntroDoc
+                .ReviewedStatus(ReviewStatus.NotReviewed)
+                .CodedObservationLeafNode("an ultra-sound mass posterior acoustic feature", binding)
+                ;
         }
     }
 }
