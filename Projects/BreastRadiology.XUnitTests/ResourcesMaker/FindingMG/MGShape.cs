@@ -21,9 +21,9 @@ namespace BreastRadiology.XUnitTests
                         "MammoShapeVS",
                         "Shape ValueSet",
                         "Shape/ValueSet",
-                        "ValueSet defining shape values.",
+                        "Shape values value set.",
                         Group_MGCodes,
-                        ResourcesMaker.Self.CommonShapeCS.Value()
+                        ResourcesMaker.Self.ShapeCS.Value()
                     )
             );
 

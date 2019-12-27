@@ -50,7 +50,7 @@ namespace BreastRadiology.XUnitTests
                    "MGAbnormalityDensityVS",
                    "Mammography Density ValueSet",
                     "MG Density/ValueSet",
-                   "ValueSet defining types of mammography density abnormalities.",
+                   "Mammography density abnormality types value set.",
                     Group_MGCodes,
                     ResourcesMaker.Self.MGAbnormalityDensityCS.Value()
                     )
@@ -91,7 +91,7 @@ namespace BreastRadiology.XUnitTests
                 {
                     ProfileTargetSlice[] targets = new ProfileTargetSlice[]
                     {
-                    new ProfileTargetSlice(ResourcesMaker.Self.CommonObservedCount.Value(), 0, "1"),
+                    new ProfileTargetSlice(ResourcesMaker.Self.ObservedCount.Value(), 0, "1"),
                     };
                     e.Find("hasMember").SliceByUrl(targets);
                     e.AddProfileTargets(targets);

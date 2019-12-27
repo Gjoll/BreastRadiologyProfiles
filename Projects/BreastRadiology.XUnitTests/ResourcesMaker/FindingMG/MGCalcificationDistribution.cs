@@ -86,7 +86,7 @@ namespace BreastRadiology.XUnitTests
                         "MammoCalcificationDistributionVS",
                         "Mammography Calcification Distribution ValueSet",
                         "MG Calc./DistributionValueSet",
-                        "ValueSet defining Mammography calcification distribution values.",
+                        "Mammography calcification distribution values value set.",
                         Group_MGCodes,
                         ResourcesMaker.Self.MGCalcificationDistributionCS.Value()
                     )

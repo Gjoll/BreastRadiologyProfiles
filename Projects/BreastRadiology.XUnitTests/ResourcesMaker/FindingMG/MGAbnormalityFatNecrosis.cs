@@ -40,7 +40,7 @@ namespace BreastRadiology.XUnitTests
                 {
                     ProfileTargetSlice[] targets = new ProfileTargetSlice[]
                     {
-                    new ProfileTargetSlice(ResourcesMaker.Self.CommonObservedCount.Value(), 0, "1"),
+                    new ProfileTargetSlice(ResourcesMaker.Self.ObservedCount.Value(), 0, "1"),
                     };
                     e.Find("hasMember").SliceByUrl(targets);
                     e.AddProfileTargets(targets);

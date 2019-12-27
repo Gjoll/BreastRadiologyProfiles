@@ -20,7 +20,7 @@ namespace BreastRadiology.XUnitTests
                         "ConsistentWithVS",
                         "ConsistentWith ValueSet",
                         "ConsistentWith/ValueSet",
-                        "Codes for ConsistentWith.",
+                        "ConsistentWith value set.",
                         Group_MGCodes,
                         ResourcesMaker.Self.ConsistentWithCS.Value()
                     )
@@ -32,7 +32,7 @@ namespace BreastRadiology.XUnitTests
                         "ConsistentWithQualifierVS",
                         "ConsistentWithQualifier ValueSet",
                         "ConsistentWithQualifier/ValueSet",
-                        "ValueSet for ConsistentWithQualifier.",
+                        "ConsistentWithQualifier value set.",
                         Group_MGCodes,
                         ResourcesMaker.Self.ConsistentWithQualifierCS.Value()
                     )

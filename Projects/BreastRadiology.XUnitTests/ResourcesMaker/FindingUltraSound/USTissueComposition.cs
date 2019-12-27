@@ -16,7 +16,7 @@ namespace BreastRadiology.XUnitTests
         CSTaskVar USTissueCompositionCS = new CSTaskVar(
              () =>
                  ResourcesMaker.Self.CreateCodeSystem(
-                     "BreastRadUSTissueCompositionCS",
+                     "USTissueCompositionCS",
                      "US Tissue Composition CodeSystem",
                      "US Tissue/Composition/CodeSystem",
                      "Ultra-sound breast tissue composition code system.",
@@ -60,10 +60,10 @@ namespace BreastRadiology.XUnitTests
         VSTaskVar USTissueCompositionVS = new VSTaskVar(
             () =>
                 ResourcesMaker.Self.CreateValueSet(
-                    "BreastRadUSTissueCompositionVS",
+                    "USTissueCompositionVS",
                     "US Tissue Composition ValueSet",
                     "US Tissue/CompositionValueSet",
-                    "ValueSet defining Ultra-sound breast tissue composition codes.",
+                    "Ultra-sound breast tissue composition codes value set.",
                     Group_USCodes,
                     ResourcesMaker.Self.USTissueCompositionCS.Value()
                     )
@@ -84,7 +84,7 @@ namespace BreastRadiology.XUnitTests
                     ResourcesMaker.Self.fc?.Mark(outputPath);
                 }
 
-                SDefEditor e = ResourcesMaker.Self.CreateEditor("BreastRadUSTissueComposition",
+                SDefEditor e = ResourcesMaker.Self.CreateEditor("USTissueComposition",
                         "US Tissue Composition",
                         "US Tissue/Composition",
                         ObservationUrl,

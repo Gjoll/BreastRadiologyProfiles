@@ -17,7 +17,7 @@ namespace BreastRadiology.XUnitTests
         CSTaskVar USPosteriorAcousticFeaturesCS = new CSTaskVar(
              () =>
                  ResourcesMaker.Self.CreateCodeSystem(
-                     "BreastRadUSPosteriorAcousticFeaturesCS",
+                     "USPosteriorAcousticFeaturesCS",
                      "US Posterior Acoustic Features CodeSystem",
                      "US Posterior Acoustic/Feature CodeSystem",
                      "Ultra-sound mass Posterior acoustic features code system.",
@@ -81,7 +81,7 @@ namespace BreastRadiology.XUnitTests
                     "USPosteriorAcousticFeaturesVS",
                     "US Posterior Acoustic Features ValueSet",
                     "US Posterior Acoustic/Feature ValueSet",
-                    "ValueSet defining Ultra-sound mass Posterior acoustic feature codes.",
+                    "Ultra-sound mass Posterior acoustic feature codes value set.",
                     Group_USCodes,
                     ResourcesMaker.Self.USPosteriorAcousticFeaturesCS.Value()
                     )
@@ -93,7 +93,7 @@ namespace BreastRadiology.XUnitTests
             {
                 ValueSet binding = ResourcesMaker.Self.USPosteriorAcousticFeaturesVS.Value();
 
-                SDefEditor e = ResourcesMaker.Self.CreateEditor("BreastRadUSPosteriorAcousticFeatures",
+                SDefEditor e = ResourcesMaker.Self.CreateEditor("USPosteriorAcousticFeatures",
                         "US Posterior Acoustic Features",
                         "US Posterior Acoustic/Features",
                         ObservationUrl,

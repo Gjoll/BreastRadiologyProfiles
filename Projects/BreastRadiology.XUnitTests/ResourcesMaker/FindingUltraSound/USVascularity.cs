@@ -18,7 +18,7 @@ namespace BreastRadiology.XUnitTests
         CSTaskVar USVascularityCS = new CSTaskVar(
              () =>
                  ResourcesMaker.Self.CreateCodeSystem(
-                     "BreastRadUSVascularityCS",
+                     "USVascularityCS",
                      "US Echo Pattern CodeSystem",
                      "US Vascularity/CodeSystem",
                      "Ultra-sound Vascularity code system.",
@@ -63,10 +63,10 @@ namespace BreastRadiology.XUnitTests
         VSTaskVar USVascularityVS = new VSTaskVar(
             () =>
                 ResourcesMaker.Self.CreateValueSet(
-                    "BreastRadUSVascularityVS",
+                    "USVascularityVS",
                     "US Vascularity ValueSet",
                     "US Vascularity/ValueSet",
-                    "ValueSet defining Ultra-sound Vascularity codes.",
+                    "Ultra-sound Vascularity codes value set.",
                     Group_USCodes,
                     ResourcesMaker.Self.USVascularityCS.Value()
                     )
@@ -89,7 +89,7 @@ namespace BreastRadiology.XUnitTests
                     ResourcesMaker.Self.fc?.Mark(outputPath);
                 }
 
-                SDefEditor e = ResourcesMaker.Self.CreateEditor("BreastRadUSVascularity",
+                SDefEditor e = ResourcesMaker.Self.CreateEditor("USVascularity",
                         "US Vascularity",
                         "US Vascularity",
                         ObservationUrl,

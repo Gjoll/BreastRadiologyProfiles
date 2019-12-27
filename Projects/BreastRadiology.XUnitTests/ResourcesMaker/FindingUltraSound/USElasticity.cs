@@ -17,7 +17,7 @@ namespace BreastRadiology.XUnitTests
         CSTaskVar USElasticityCS = new CSTaskVar(
              () =>
                  ResourcesMaker.Self.CreateCodeSystem(
-                     "BreastRadUSElasticityCS",
+                     "USElasticityCS",
                      "US Echo Pattern CodeSystem",
                      "US Elasticity/CodeSystem",
                      "Ultra-sound Elasticity code system.",
@@ -46,10 +46,10 @@ namespace BreastRadiology.XUnitTests
         VSTaskVar USElasticityVS = new VSTaskVar(
             () =>
                 ResourcesMaker.Self.CreateValueSet(
-                    "BreastRadUSElasticityVS",
+                    "USElasticityVS",
                     "US Elasticity ValueSet",
                     "US Elasticity/ValueSet",
-                    "ValueSet defining Ultra-sound Elasticity code system.",
+                    "Ultra-sound Elasticity  value set.",
                     Group_USCodes,
                     ResourcesMaker.Self.USElasticityCS.Value())
             );
@@ -68,7 +68,7 @@ namespace BreastRadiology.XUnitTests
                     ResourcesMaker.Self.fc?.Mark(outputPath);
                 }
 
-                SDefEditor e = ResourcesMaker.Self.CreateEditor("BreastRadUSElasticity",
+                SDefEditor e = ResourcesMaker.Self.CreateEditor("USElasticity",
                         "US Elasticity",
                         "US Elasticity",
                         ObservationUrl,

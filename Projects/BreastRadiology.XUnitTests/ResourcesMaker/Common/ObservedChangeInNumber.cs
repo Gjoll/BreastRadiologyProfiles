@@ -14,46 +14,46 @@ namespace BreastRadiology.XUnitTests
 {
     partial class ResourcesMaker
     {
-
-        CSTaskVar CommonObservedChangeInDefinitionCS = new CSTaskVar(
+        CSTaskVar ObservedChangeInNumberCS = new CSTaskVar(
              () =>
                  ResourcesMaker.Self.CreateCodeSystem(
-                     "CommonObservedChangeInDefinitionCS",
-                     "Observed Changes  CodeSystem",
+                     "ObservedChangeInNumberCS",
+                     "Observed Changes CodeSystem",
                      "Observed/Change/CodeSystem",
-                     "Observed changes in definition of an abnormality over time code system.",
+                     "bserved changes in number of an abnormality over time code system.",
                      Group_CommonCodes,
                      new ConceptDef[]
                      {
-                    new ConceptDef("MoreDefined",
-                        "More Defined",
+                    new ConceptDef("IncrInNumber",
+                        "Increased In Number",
                         new Definition()
-                            .Line("Item is more defined")
+                            .Line("Item(s) have increased in number")
                         ),
-                    new ConceptDef("LessDefined",
-                        "Less Defined",
+                    new ConceptDef("DecrInNumber",
+                        "Decreased In Number",
                         new Definition()
-                            .Line("Item is less defined")
-                        )
+                            .Line("Item(s) have decreased in number")
+                        ),
                      })
                  );
 
-        VSTaskVar CommonObservedChangeInDefinitionVS = new VSTaskVar(
+        VSTaskVar ObservedChangeInNumberVS = new VSTaskVar(
             () =>
                 ResourcesMaker.Self.CreateValueSet(
-                    "CommonObservedChangeInDefinitionVS",
-                    "Observed Definition Changes ValueSet",
+                    "ObservedChangeInNumberVS",
+                    "Observed Number Changes ValueSet",
                     "Observed/Change/ValueSet",
-                    "ValueSet defining types of observed changes in definition of an abnormality over time.",
+                    "Observed changes in number of an abnormality over time value set.",
                     Group_CommonCodes,
-                    ResourcesMaker.Self.CommonObservedChangeInDefinitionCS.Value())
+                    ResourcesMaker.Self.ObservedChangeInNumberCS.Value()
+                    )
             );
 
-
-        StringTaskVar CommonObservedChangeInDefinition = new StringTaskVar(
+        StringTaskVar ObservedChangeInNumber = new StringTaskVar(
             (out String s) =>
             {
-                ValueSet binding = ResourcesMaker.Self.CommonObservedChangeInDefinitionVS.Value();
+                ValueSet binding = ResourcesMaker.Self.ObservedChangeInNumberVS.Value();
+
                 {
                     IntroDoc valueSetIntroDoc = new IntroDoc(Path.Combine(ResourcesMaker.Self.pageDir, $"ValueSet-{binding.Name}-intro.xml"));
                     valueSetIntroDoc
@@ -64,15 +64,16 @@ namespace BreastRadiology.XUnitTests
                     ResourcesMaker.Self.fc?.Mark(outputPath);
                 }
 
-                SDefEditor e = ResourcesMaker.Self.CreateEditor("CommonObservedChangeInDefinition",
-                        "Observed Change in Definition",
-                        "Definition Change",
+                SDefEditor e = ResourcesMaker.Self.CreateEditor("ObservedChangeInNumber",
+                        "Observed Change in Number",
+                        "Number Change",
                         ObservationUrl,
-                        $"{Group_CommonResources}/ObservedChangeInDefinition")
-                    .Description("Breast Radiology Changes in Definition Observation",
+                        $"{Group_CommonResources}/ObservedChangeInNumber")
+                    .Description("Breast Radiology Changes in Number Observation",
                         new Markdown()
-                            .MissingObservation("an observed change in definition")
+                            .MissingObservation("an observed change in number")
                             .Todo(
+                            "Is this change in count, or number of calcifications?"
                             )
                     )
                     .AddFragRef(ResourcesMaker.Self.ObservationNoDeviceFragment.Value())
@@ -88,7 +89,7 @@ namespace BreastRadiology.XUnitTests
                 e.AddValueSetLink(binding);
                 e.IntroDoc
                     .ReviewedStatus(ReviewStatus.NotReviewed)
-                    .CodedObservationLeafNode("an abnormality observed change in definition", binding)
+                    .CodedObservationLeafNode("an abnormality observed change in number", binding)
                     ;
             });
     }

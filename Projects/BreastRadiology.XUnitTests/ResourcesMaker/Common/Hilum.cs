@@ -43,7 +43,7 @@ namespace BreastRadiology.XUnitTests
                         "HilumVS",
                         "Hilum ValueSet",
                         "Hilum/ValueSet",
-                        "ValueSet defining hilum values.",
+                        "Hilum values value set.",
                         Group_CommonCodes,
                         ResourcesMaker.Self.HilumCS.Value())
             );

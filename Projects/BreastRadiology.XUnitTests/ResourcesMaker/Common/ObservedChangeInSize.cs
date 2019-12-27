@@ -14,47 +14,46 @@ namespace BreastRadiology.XUnitTests
 {
     partial class ResourcesMaker
     {
-
-        CSTaskVar CommonObservedChangeInProminanceCS = new CSTaskVar(
+        CSTaskVar ObservedChangeInSizeCS = new CSTaskVar(
              () =>
                  ResourcesMaker.Self.CreateCodeSystem(
-                     "CommonObservedChangeInProminanceCS",
+                     "ObservedChangeInSizeCS",
                      "Observed Changes CodeSystem",
                      "Observed/Change/CodeSystem",
-                     "Observed changes in Prominance of an abnormality over time code system.",
+                     "Observed changes in the size of an abnormality over time code system.",
                      Group_CommonCodes,
                      new ConceptDef[]
                      {
-                    new ConceptDef("MoreProminent",
-                        "More Prominent",
+                    new ConceptDef("IncreaseInSize",
+                        "Increase In Size",
                         new Definition()
-                            .Line("Item is more Prominent")
+                            .Line("Item has increased in size")
                         ),
-                    new ConceptDef("LessProminent",
-                        "Less Prominent",
+                    new ConceptDef("DecreaseInSize",
+                        "Decrease In Size",
                         new Definition()
-                            .Line("Item is less Prominent")
+                            .Line("Item has decreased in size")
                         )
                      })
                  );
 
-        VSTaskVar CommonObservedChangeInProminanceVS = new VSTaskVar(
+
+        VSTaskVar ObservedChangeInSizeVS = new VSTaskVar(
             () =>
                 ResourcesMaker.Self.CreateValueSet(
-                    "CommonObservedChangeInProminanceVS",
-                    "Observed Prominance Changes ValueSet",
+                    "ObservedChangeInSizeVS",
+                    "Observed Changes ValueSet",
                     "Observed/Change/ValueSet",
-                    "ValueSet defining types of observed changes in Prominance of an abnormality over time.",
+                    "Observed changes in the size of an abnormality over time value set.",
                     Group_CommonCodes,
-                    ResourcesMaker.Self.CommonObservedChangeInProminanceCS.Value()
+                    ResourcesMaker.Self.ObservedChangeInSizeCS.Value()
                     )
             );
 
-        StringTaskVar CommonObservedChangeInProminance = new StringTaskVar(
+        StringTaskVar ObservedChangeInSize = new StringTaskVar(
             (out String s) =>
             {
-
-                ValueSet binding = ResourcesMaker.Self.CommonObservedChangeInProminanceVS.Value();
+                ValueSet binding = ResourcesMaker.Self.ObservedChangeInSizeVS.Value();
 
                 {
                     IntroDoc valueSetIntroDoc = new IntroDoc(Path.Combine(ResourcesMaker.Self.pageDir, $"ValueSet-{binding.Name}-intro.xml"));
@@ -66,14 +65,14 @@ namespace BreastRadiology.XUnitTests
                     ResourcesMaker.Self.fc?.Mark(outputPath);
                 }
 
-                SDefEditor e = ResourcesMaker.Self.CreateEditor("CommonObservedChangeInProminance",
-                        "Observed Change in Prominance",
-                        "Prominance Change",
+                SDefEditor e = ResourcesMaker.Self.CreateEditor("ObservedChangeInSize",
+                        "Observed Changes",
+                        "Size Change",
                         ObservationUrl,
-                        $"{Group_CommonResources}/ObservedChangeInProminance")
-                    .Description("Breast Radiology Changes in Prominance Observation",
+                        $"{Group_CommonResources}/ObservedChangeInSize")
+                    .Description("Breast Radiology Changes in Size Observation",
                         new Markdown()
-                            .MissingObservation("an observed change in Prominance")
+                            .MissingObservation("an observed change in size")
                             .Todo(
                             )
                     )
@@ -90,7 +89,7 @@ namespace BreastRadiology.XUnitTests
                 e.AddValueSetLink(binding);
                 e.IntroDoc
                     .ReviewedStatus(ReviewStatus.NotReviewed)
-                    .CodedObservationLeafNode("an abnormality observed change in Prominance", binding)
+                    .CodedObservationLeafNode("an abnormality observed change in size", binding)
                     ;
             });
     }

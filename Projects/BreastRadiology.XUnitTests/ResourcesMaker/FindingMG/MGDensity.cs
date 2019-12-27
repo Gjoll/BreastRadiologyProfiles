@@ -70,7 +70,7 @@ namespace BreastRadiology.XUnitTests
                     "MGDensityVS",
                     "Mammography Density ValueSet",
                     "MG DensityValueSet",
-                    "ValueSet defining Mammography density codes.",
+                    "Mammography density codes value set.",
                     Group_MGCodes,
                     ResourcesMaker.Self.MGDensityCS.Value())
                     );

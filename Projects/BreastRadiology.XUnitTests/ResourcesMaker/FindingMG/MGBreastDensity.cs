@@ -87,7 +87,7 @@ namespace BreastRadiology.XUnitTests
                     "MGBreastDensityVS",
                     "Mammography Breast Density ValueSet",
                     "MG Breast DensityValueSet",
-                    "ValueSet for mammography breast density values.",
+                    "Mammography breast density values value set.",
                     Group_MGCodes,
                     ResourcesMaker.Self.MGBreastDensityCS.Value()
                     )

@@ -85,7 +85,7 @@ namespace BreastRadiology.XUnitTests
                    "MGAbnormalityAsymmetriesVS",
                    "Mammography AsymmetryAbnormalities ValueSet",
                     "MG Asymmetry/ValueSet",
-                   "ValueSet defining types of mammography asymmetry abnormalities.",
+                   "Mammography asymmetry abnormality types value set.",
                     Group_MGCodes,
                     ResourcesMaker.Self.MGAbnormalityAsymmetryRefinementCS.Value()
                     )
@@ -136,7 +136,7 @@ namespace BreastRadiology.XUnitTests
                 {
                     ProfileTargetSlice[] targets = new ProfileTargetSlice[]
                     {
-                    new ProfileTargetSlice(ResourcesMaker.Self.CommonObservedCount.Value(), 0, "1"),
+                    new ProfileTargetSlice(ResourcesMaker.Self.ObservedCount.Value(), 0, "1"),
                     new ProfileTargetSlice(ResourcesMaker.Self.MGAssociatedFeatures.Value(), 0, "1")
                     };
                     e.Find("hasMember").SliceByUrl(targets);

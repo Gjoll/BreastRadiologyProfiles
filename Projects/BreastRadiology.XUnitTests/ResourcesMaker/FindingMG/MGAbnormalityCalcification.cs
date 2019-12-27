@@ -52,7 +52,7 @@ namespace BreastRadiology.XUnitTests
                 {
                     ProfileTargetSlice[] targets = new ProfileTargetSlice[]
                     {
-                    new ProfileTargetSlice(ResourcesMaker.Self.CommonObservedCount.Value(), 0, "1"),
+                    new ProfileTargetSlice(ResourcesMaker.Self.ObservedCount.Value(), 0, "1"),
 
                     new ProfileTargetSlice(ResourcesMaker.Self.MGCalcificationType.Value(), 0, "1"),
                     new ProfileTargetSlice(ResourcesMaker.Self.MGCalcificationDistribution.Value(), 0, "1"),

@@ -19,7 +19,7 @@ namespace BreastRadiology.XUnitTests
                         "MassRefinementValueSetVS",
                         "Mass Refinement ValueSet",
                         "Mass Refinement/ValueSet",
-                        "ValueSet refining mass type.",
+                        "Mass type value set.",
                         Group_MGCodes,
                         ResourcesMaker.Self.CSMassRefinement.Value()
                     )
@@ -68,7 +68,7 @@ namespace BreastRadiology.XUnitTests
                 {
                     ProfileTargetSlice[] targets = new ProfileTargetSlice[]
                     {
-                    new ProfileTargetSlice(ResourcesMaker.Self.CommonObservedCount.Value(), 0, "1"),
+                    new ProfileTargetSlice(ResourcesMaker.Self.ObservedCount.Value(), 0, "1"),
                     new ProfileTargetSlice(ResourcesMaker.Self.MGAssociatedFeatures.Value(), 0, "1"),
                     };
                     e.Find("hasMember").SliceByUrl(targets);

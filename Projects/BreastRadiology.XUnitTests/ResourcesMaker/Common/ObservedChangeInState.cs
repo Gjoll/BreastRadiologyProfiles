@@ -15,10 +15,10 @@ namespace BreastRadiology.XUnitTests
     partial class ResourcesMaker
     {
 
-        CSTaskVar CommonObservedChangeInStateCS = new CSTaskVar(
+        CSTaskVar ObservedChangeInStateCS = new CSTaskVar(
              () =>
                  ResourcesMaker.Self.CreateCodeSystem(
-                     "CommonObservedChangeInStateCS",
+                     "ObservedChangeInStateCS",
                      "Observed Change In State CodeSystem",
                      "Observed/Change/CodeSystem",
                      "Observed changes in state of an abnormality over time code system.",
@@ -59,22 +59,22 @@ namespace BreastRadiology.XUnitTests
                  );
 
 
-        VSTaskVar CommonObservedChangeInStateVS = new VSTaskVar(
+        VSTaskVar ObservedChangeInStateVS = new VSTaskVar(
             () =>
                 ResourcesMaker.Self.CreateValueSet(
-                    "CommonObservedChangeInStateVS",
+                    "ObservedChangeInStateVS",
                     "Observed Change In State ValueSet",
                     "Observed/Change/ValueSet",
-                    "ValueSet defining types of observed changes in state of an abnormality over time.",
+                    "Observed changes in state of an abnormality over time value set.",
                     Group_CommonCodes,
-                    ResourcesMaker.Self.CommonObservedChangeInStateCS.Value()
+                    ResourcesMaker.Self.ObservedChangeInStateCS.Value()
                     )
             );
 
-        StringTaskVar CommonObservedChangeInState = new StringTaskVar(
+        StringTaskVar ObservedChangeInState = new StringTaskVar(
             (out String s) =>
             {
-                ValueSet binding = ResourcesMaker.Self.CommonObservedChangeInStateVS.Value();
+                ValueSet binding = ResourcesMaker.Self.ObservedChangeInStateVS.Value();
 
                 {
                     IntroDoc valueSetIntroDoc = new IntroDoc(Path.Combine(ResourcesMaker.Self.pageDir, $"ValueSet-{binding.Name}-intro.xml"));
@@ -86,7 +86,7 @@ namespace BreastRadiology.XUnitTests
                     ResourcesMaker.Self.fc?.Mark(outputPath);
                 }
 
-                SDefEditor e = ResourcesMaker.Self.CreateEditor("CommonObservedChangeInState",
+                SDefEditor e = ResourcesMaker.Self.CreateEditor("ObservedChangeInState",
                         "Observed Change In State",
                         "State Change",
                         ObservationUrl,

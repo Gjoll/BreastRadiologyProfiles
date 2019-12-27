@@ -47,13 +47,13 @@ namespace BreastRadiology.XUnitTests
                 {
                     ProfileTargetSlice[] targets = new ProfileTargetSlice[]
                     {
-                    new ProfileTargetSlice(ResourcesMaker.Self.CommonObservedSize.Value(), 0, "1"),
-                    new ProfileTargetSlice(ResourcesMaker.Self.CommonObservedCount.Value(), 0, "1"),
-                    //$new ProfileTargetSlice(ResourcesMaker.Self.CommonMassShape.Value(), 0, "1"),
+                    new ProfileTargetSlice(ResourcesMaker.Self.ObservedSize.Value(), 0, "1"),
+                    new ProfileTargetSlice(ResourcesMaker.Self.ObservedCount.Value(), 0, "1"),
+                    //$new ProfileTargetSlice(ResourcesMaker.Self.MassShape.Value(), 0, "1"),
                     new ProfileTargetSlice(ResourcesMaker.Self.Orientation.Value(), 0, "1"),
                     new ProfileTargetSlice(ResourcesMaker.Self.NMMargin.Value(), 0, "*"),
                     //$new ProfileTargetSlice(ResourcesMaker.Self.NMMassDensity.Value(), 0, "1"),
-                    new ProfileTargetSlice(ResourcesMaker.Self.CommonObservedChangeInState.Value(), 0, "*"),
+                    new ProfileTargetSlice(ResourcesMaker.Self.ObservedChangeInState.Value(), 0, "*"),
                         //$new ProfileTargetSlice(ResourcesMaker.Self.NMAssociatedFeatures.Value(), 0, "1", false),
                     };
                     e.Find("hasMember").SliceByUrl(targets);

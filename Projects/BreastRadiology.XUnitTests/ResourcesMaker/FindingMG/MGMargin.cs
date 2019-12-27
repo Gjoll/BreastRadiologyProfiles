@@ -22,7 +22,7 @@ namespace BreastRadiology.XUnitTests
                     "MG MarginValueSet",
                     "Mammography margin ValueSet.",
                     Group_MGCodes,
-                    ResourcesMaker.Self.CommonMarginCS.Value()
+                    ResourcesMaker.Self.MarginCS.Value()
                     )
             );
 

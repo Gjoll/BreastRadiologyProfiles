@@ -285,7 +285,7 @@ namespace BreastRadiology.XUnitTests
                         "BreastLocationRegionVS",
                         "Breast Location Region ValueSet",
                         "Breast/Location/RegionValueSet",
-                        "ValueSet for Breast body location region.",
+                        "Breast body location region value set.",
                         Group_CommonCodes,
                         ResourcesMaker.Self.BreastLocationRegionCS.Value()
                 )
@@ -297,7 +297,7 @@ namespace BreastRadiology.XUnitTests
                         "BreastLocationClockVS",
                         "Breast Location Clock ValueSet",
                         "Breast/Location/ClockValueSet",
-                        "ValueSet defining breast body location angles expressed in clock-face units.",
+                        "Breast body location angles (expressed in clock-face units) value set.",
                         Group_CommonCodes,
                         ResourcesMaker.Self.BreastLocationClockCS.Value()
                 )
@@ -309,7 +309,7 @@ namespace BreastRadiology.XUnitTests
                         "BreastLocationDepthVS",
                         "Breast Location Depth ValueSet",
                         "Breast/Location/DepthValueSet",
-                        "ValueSet defining Breast body location depth.",
+                        "Breast body location depth value set.",
                         Group_CommonCodes,
                         ResourcesMaker.Self.BreastLocationDepthCS.Value()
                 )
@@ -321,7 +321,7 @@ namespace BreastRadiology.XUnitTests
                         "BreastLocationQuadrantVS",
                         "Breast Location Quadrant ValueSet",
                         "Breast/Location/QuadrantValueSet",
-                        "ValueSet defining Breast body location quadrant code system.",
+                        "Breast body location quadrant code system value set.",
                         Group_CommonCodes,
                         ResourcesMaker.Self.BreastLocationQuadrantCS.Value()
                 )

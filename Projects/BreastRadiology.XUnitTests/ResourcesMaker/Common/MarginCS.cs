@@ -14,10 +14,10 @@ namespace BreastRadiology.XUnitTests
 {
     partial class ResourcesMaker
     {
-       CSTaskVar CommonMarginCS = new CSTaskVar(
+       CSTaskVar MarginCS = new CSTaskVar(
             () =>
                 ResourcesMaker.Self.CreateCodeSystem(
-                    "BreastRadMarginCS",
+                    "MarginCS",
                     "MarginCodeSystem",
                     "Margin CodeSystem",
                     "Margin code system.",

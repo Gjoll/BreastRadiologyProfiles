@@ -54,7 +54,7 @@ namespace BreastRadiology.XUnitTests
                     "USBoundaryVS",
                     "UltraSound Boundary ValueSet",
                     "US Boundary/ValueSet",
-                    "ValueSet defining UltraSound Boundary Codes.",
+                    "UltraSound Boundary Codes value set.",
                     Group_USCodes,
                     ResourcesMaker.Self.USBoundaryCS.Value()
                     )
@@ -76,7 +76,7 @@ namespace BreastRadiology.XUnitTests
                     ResourcesMaker.Self.fc?.Mark(outputPath);
                 }
 
-                SDefEditor e = ResourcesMaker.Self.CreateEditor("BreastRadUSBoundary",
+                SDefEditor e = ResourcesMaker.Self.CreateEditor("USBoundary",
                     "Ultra Sound Boundary",
                     "US Boundary",
                     ObservationUrl,

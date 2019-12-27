@@ -21,9 +21,9 @@ namespace BreastRadiology.XUnitTests
                         "UltraSoundShapeVS",
                         "ShapeValueSet",
                         "Shape/ValueSet",
-                        "ValueSet defining shape values.",
+                        "Shape values value set.",
                         Group_USCodes,
-                        ResourcesMaker.Self.CommonShapeCS.Value()
+                        ResourcesMaker.Self.ShapeCS.Value()
                     );
                 binding.Remove("Reniform");
                 return binding;

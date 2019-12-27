@@ -20,7 +20,7 @@ namespace BreastRadiology.XUnitTests
                         "MGAbnormalitiesVS",
                         "Foreign Object ValueSet",
                         "Foreign/Object/ValueSet",
-                        "ValueSet defining defining types of foreign objects observed during a Breast Radiology exam",
+                        "Foreign objects observed during a Breast Radiology exam value set",
                         Group_MGCodes,
                         ResourcesMaker.Self.AbnormalityForeignObjectCS.Value())
             );

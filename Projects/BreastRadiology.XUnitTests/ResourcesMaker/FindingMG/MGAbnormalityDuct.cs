@@ -53,7 +53,7 @@ namespace BreastRadiology.XUnitTests
                    "MGAbnormalityDuctVS",
                    "Mammography Duct ValueSet",
                     "MG Duct/ValueSet",
-                   "ValueSet defining types of mammography duct node abnormalities.",
+                   "Mammography duct node abnormality types value set.",
                     Group_MGCodes,
                     ResourcesMaker.Self.MGAbnormalityDuctCS.Value()
                     )
@@ -93,7 +93,7 @@ namespace BreastRadiology.XUnitTests
                 {
                     ProfileTargetSlice[] targets = new ProfileTargetSlice[]
                     {
-                    new ProfileTargetSlice(ResourcesMaker.Self.CommonObservedCount.Value(), 0, "1"),
+                    new ProfileTargetSlice(ResourcesMaker.Self.ObservedCount.Value(), 0, "1"),
                     };
                     e.Find("hasMember").SliceByUrl(targets);
                     e.AddProfileTargets(targets);

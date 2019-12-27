@@ -41,9 +41,9 @@ namespace BreastRadiology.XUnitTests
                     {
                     new ProfileTargetSlice(ResourcesMaker.Self.BiRadsAssessmentCategory.Value(), 0, "1"),
 
-                    new ProfileTargetSlice(ResourcesMaker.Self.CommonObservedCount.Value(), 0, "1"),
-                    new ProfileTargetSlice(ResourcesMaker.Self.CommonObservedChangeInState.Value(), 0, "*"),
-                    new ProfileTargetSlice(ResourcesMaker.Self.CommonObservedSize.Value(), 0, "1"),
+                    new ProfileTargetSlice(ResourcesMaker.Self.ObservedCount.Value(), 0, "1"),
+                    new ProfileTargetSlice(ResourcesMaker.Self.ObservedChangeInState.Value(), 0, "*"),
+                    new ProfileTargetSlice(ResourcesMaker.Self.ObservedSize.Value(), 0, "1"),
                     new ProfileTargetSlice(ResourcesMaker.Self.Orientation.Value(), 0, "1"),
 
                         //new ProfileTargetSlice(ResourcesMaker.Self.MGMassMargin.Value(), 0, "*"),

@@ -194,7 +194,7 @@ namespace BreastRadiology.XUnitTests
                     "MammoCalcificationTypeVS",
                     "Mammography Calcification Type ValueSet",
                     "MG Calc. TypeValueSet",
-                    "ValueSet defining Mammography calcification codes.",
+                    "Mammography calcification types value set.",
                     Group_MGCodes,
                     ResourcesMaker.Self.MGCalcificationTypeCS.Value()
                     )

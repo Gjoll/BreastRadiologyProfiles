@@ -136,7 +136,7 @@ namespace BreastRadiology.XUnitTests
                         "BiRadsAssessmentCategoriesVS",
                         "BiRads(r) Assessment Category ValueSet",
                         "BiRads/ValueSet",
-                        "BiRads(r) Assessment Category ValueSet.",
+                        "BiRads(r) Assessment Category value set.",
                         Group_CommonCodes,
                         ResourcesMaker.Self.CSBiRadsAssessmentCategories.Value())
             );

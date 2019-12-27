@@ -17,7 +17,7 @@ namespace BreastRadiology.XUnitTests
         StringTaskVar BreastRadiologyImpressionsExtension = new StringTaskVar(
             (out String s) =>
             {
-                SDefEditor e = ResourcesMaker.Self.CreateEditor("BreastRadImpressionsExtension",
+                SDefEditor e = ResourcesMaker.Self.CreateEditor("ImpressionsExtension",
                     "Impressions Extension",
                     "Impressions/Extension",
                     ExtensionUrl,

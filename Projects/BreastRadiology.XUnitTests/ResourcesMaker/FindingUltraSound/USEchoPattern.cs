@@ -11,7 +11,7 @@ namespace BreastRadiology.XUnitTests
         CSTaskVar USEchoPatternCS = new CSTaskVar(
              () =>
                  ResourcesMaker.Self.CreateCodeSystem(
-                     "BreastRadUSEchoPatternCS",
+                     "USEchoPatternCS",
                      "US Echo Pattern CodeSystem",
                      "US Echo Pattern/CodeSystem",
                      "Ultra-sound mass echo pattern code system.",
@@ -107,10 +107,10 @@ namespace BreastRadiology.XUnitTests
         VSTaskVar USEchoPatternVS = new VSTaskVar(
             () =>
                 ResourcesMaker.Self.CreateValueSet(
-                    "BreastRadUSEchoPatternVS",
+                    "USEchoPatternVS",
                     "US Echo Pattern ValueSet",
                     "US Echo Pattern/ValueSet",
-                    "ValueSet defining Ultra-sound mass echo pattern codes.",
+                    "Ultra-sound mass echo pattern codes value set.",
                     Group_USCodes,
                     ResourcesMaker.Self.USEchoPatternCS.Value())
             );
@@ -131,7 +131,7 @@ namespace BreastRadiology.XUnitTests
                     ResourcesMaker.Self.fc?.Mark(outputPath);
                 }
 
-                SDefEditor e = ResourcesMaker.Self.CreateEditor("BreastRadUSEchoPattern",
+                SDefEditor e = ResourcesMaker.Self.CreateEditor("USEchoPattern",
                         "US Echo Pattern",
                         "US Echo Pattern",
                         ObservationUrl,

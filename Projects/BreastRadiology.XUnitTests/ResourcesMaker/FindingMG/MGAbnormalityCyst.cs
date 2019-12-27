@@ -59,7 +59,7 @@ namespace BreastRadiology.XUnitTests
                    "MGAbnormalityCystVS",
                    "Mammography CystAbnormalities ValueSet",
                     "MG Cyst/ValueSet",
-                   "ValueSet defining types of mammography cyst abnormalities.",
+                   "Mammography cyst abnormality types value set.",
                     Group_MGCodes,
                     ResourcesMaker.Self.MGAbnormalityCystRefinementCS.Value()
                     )
@@ -104,7 +104,7 @@ namespace BreastRadiology.XUnitTests
                 {
                     ProfileTargetSlice[] targets = new ProfileTargetSlice[]
                     {
-                    new ProfileTargetSlice(ResourcesMaker.Self.CommonObservedCount.Value(), 0, "1"),
+                    new ProfileTargetSlice(ResourcesMaker.Self.ObservedCount.Value(), 0, "1"),
                         //new ProfileTargetSlice(ResourcesMaker.Self.MGAssociatedFeatures.Value(), 0, "1", false),
                     };
                     e.Find("hasMember").SliceByUrl(targets);
