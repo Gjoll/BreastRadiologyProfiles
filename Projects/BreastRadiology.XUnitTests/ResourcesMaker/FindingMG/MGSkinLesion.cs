@@ -18,7 +18,7 @@ namespace BreastRadiology.XUnitTests
             {
                 SDefEditor e = ResourcesMaker.Self.CreateEditorXX("BreastRadMammoSkinLesion",
                     "Mammography Skin Lesion",
-                    "Mg Skin Lesion",
+                    "MG Skin Lesion",
                     ObservationUrl,
                     $"{Group_MGResources}/SkinLesion")
                     .Description("Breast Radiology Mammography Skin Lesion Observation",

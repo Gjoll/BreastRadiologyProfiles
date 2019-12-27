@@ -18,7 +18,7 @@ namespace BreastRadiology.XUnitTests
                  ResourcesMaker.Self.CreateCodeSystem(
                         "BreastRadMammoAbnormalityLymphNode",
                         "Mammography Lymph Node Refinement",
-                         "Mg Lymph Node Refinement/CodeSystem",
+                         "MG Lymph Node Refinement/CodeSystem",
                         "Codes defining types of mammography lymph node abnormalities.",
                          Group_MGCodes,
                         new ConceptDef[]
@@ -79,7 +79,7 @@ namespace BreastRadiology.XUnitTests
                 ResourcesMaker.Self.CreateValueSet(
                    "BreastRadMammoAbnormalityLymphNode",
                    "Mammography Lymph Node",
-                    "Mg Lymph Node/ValueSet",
+                    "MG Lymph Node/ValueSet",
                    "Codes defining types of mammography lymph node abnormalities.",
                     Group_MGCodes,
                     ResourcesMaker.Self.MGAbnormalityLymphNodeCS.Value()
@@ -94,7 +94,7 @@ namespace BreastRadiology.XUnitTests
 
                 SDefEditor e = ResourcesMaker.Self.CreateEditorXX("BreastRadMammoAbnormalityLymphNode",
                     "Mammography LymphNode",
-                    "Mg Lymph Node",
+                    "MG Lymph Node",
                     ObservationUrl,
                     $"{Group_MGResources}/AbnormalityLymphNode")
                     .Description("Breast Radiology Mammography LymphNode Observation",

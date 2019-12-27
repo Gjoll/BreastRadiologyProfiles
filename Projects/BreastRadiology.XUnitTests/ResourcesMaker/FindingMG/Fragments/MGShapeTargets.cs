@@ -17,8 +17,8 @@ namespace BreastRadiology.XUnitTests
             (out String s) =>
         {
             SDefEditor e = ResourcesMaker.Self.CreateFragment("MgShapeTargetsFragment",
-                    "Mg Shape Targets Fragment",
-                    "Mg Shape Targets Fragment",
+                    "MG Shape Targets Fragment",
+                    "MG Shape Targets Fragment",
                     ObservationUrl)
                 .Description("Mammography Shape Targets Fragment",
                     new Markdown()

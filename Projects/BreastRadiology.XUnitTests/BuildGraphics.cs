@@ -186,10 +186,10 @@ namespace BreastRadiology.XUnitTests
 
             {
                 SENodeGroup g = AbnormalityType("Mammography");
-                AddTarget(g, "Mg Breast Density");
-                AddTarget(g, "Mg Mass");
-                AddTarget(g, "Mg Calcification");
-                AddTarget(g, "Mg Arch. Distortion");
+                AddTarget(g, "MG Breast Density");
+                AddTarget(g, "MG Mass");
+                AddTarget(g, "MG Calcification");
+                AddTarget(g, "MG Arch. Distortion");
                 AddTarget(g, "Intra. Lymph Node");
                 AddTarget(g, "Skin Lesion");
                 AddTarget(g, "Solitary Dilated Duct");

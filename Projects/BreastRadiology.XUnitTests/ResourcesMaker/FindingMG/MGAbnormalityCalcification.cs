@@ -18,7 +18,7 @@ namespace BreastRadiology.XUnitTests
             {
                 SDefEditor e = ResourcesMaker.Self.CreateEditorXX("BreastRadMammoAbnormalityCalcification",
                         "Mammography Calcification",
-                        "Mg Calc.",
+                        "MG Calc.",
                         ObservationUrl,
                         $"{Group_MGResources}/CalcificationAbnormality")
                     .Description("Breast Radiology Mammography Calcification Observation",

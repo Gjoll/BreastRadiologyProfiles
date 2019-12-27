@@ -19,7 +19,7 @@ namespace BreastRadiology.XUnitTests
                 ResourcesMaker.Self.CreateValueSet(
                     "BreastRadMammoMassMargin",
                     "Mammography Mass Margin",
-                    "Mg MarginValueSet",
+                    "MG MarginValueSet",
                     "Mammography mass margin ValueSet.",
                     Group_MGCodes,
                     ResourcesMaker.Self.CommonMarginCS.Value()
@@ -49,7 +49,7 @@ namespace BreastRadiology.XUnitTests
 
                 SDefEditor e = ResourcesMaker.Self.CreateEditorXX("BreastRadMammoMassMargin",
                     "Mammography Margin",
-                    "Mg Margin",
+                    "MG Margin",
                     ObservationUrl,
                     $"{Group_MGResources}/Margin")
                     .Description("Breast Radiology Mammography Margin Observation",

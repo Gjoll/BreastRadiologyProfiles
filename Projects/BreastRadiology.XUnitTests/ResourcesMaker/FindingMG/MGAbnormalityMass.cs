@@ -32,7 +32,7 @@ namespace BreastRadiology.XUnitTests
 
                 SDefEditor e = ResourcesMaker.Self.CreateEditorXX("BreastRadMammoMass",
                         "Mammography Mass",
-                        "Mg Mass",
+                        "MG Mass",
                         ObservationUrl,
                         $"{Group_MGResources}/MassAbnormality")
                     .Description("Breast Radiology Mammography Mass Observation",

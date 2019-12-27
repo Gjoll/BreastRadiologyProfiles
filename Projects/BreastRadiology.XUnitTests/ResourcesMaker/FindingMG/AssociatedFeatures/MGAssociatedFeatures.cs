@@ -18,7 +18,7 @@ namespace BreastRadiology.XUnitTests
             {
                 SDefEditor e = ResourcesMaker.Self.CreateEditorXX("BreastRadMammoAssociatedFeatures",
                         "Mammography Associated Features",
-                        "Mg Associated/Features",
+                        "MG Associated/Features",
                         ObservationUrl,
                         $"{Group_MGResources}/AssociatedFeature")
                     .Description("Mammography Associated Features Observation",

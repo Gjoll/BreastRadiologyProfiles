@@ -18,7 +18,7 @@ namespace BreastRadiology.XUnitTests
                  ResourcesMaker.Self.CreateCodeSystem(
                         "BreastRadMammoAbnormalityDuct",
                         "Mammography Duct Refinement",
-                         "Mg Duct Refinement/CodeSystem",
+                         "MG Duct Refinement/CodeSystem",
                         "Codes defining types of mammography duct abnormalities.",
                          Group_MGCodes,
                         new ConceptDef[]
@@ -52,7 +52,7 @@ namespace BreastRadiology.XUnitTests
                 ResourcesMaker.Self.CreateValueSet(
                    "BreastRadMammoAbnormalityDuct",
                    "Mammography Duct",
-                    "Mg Duct/ValueSet",
+                    "MG Duct/ValueSet",
                    "Codes defining types of mammography duct node abnormalities.",
                     Group_MGCodes,
                     ResourcesMaker.Self.MGAbnormalityDuctCS.Value()
@@ -66,7 +66,7 @@ namespace BreastRadiology.XUnitTests
                 ValueSet binding = ResourcesMaker.Self.MGAbnormalityDuctVS.Value();
                 SDefEditor e = ResourcesMaker.Self.CreateEditorXX("BreastRadMammoAbnormalityDuct",
                         "Mammography Duct",
-                        "Mg Duct",
+                        "MG Duct",
                         ObservationUrl,
                         $"{Group_MGResources}/AbnormalityDuct")
                     .Description("Breat Radiology Mammography Duct Observation",

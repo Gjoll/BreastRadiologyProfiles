@@ -18,7 +18,7 @@ namespace BreastRadiology.XUnitTests
             {
                 SDefEditor e = ResourcesMaker.Self.CreateEditorXX("BreastRadMammoTrabecularThickening",
                     "Mammography Trabecular Thickening",
-                    "Mg Trabecular/Thickening",
+                    "MG Trabecular/Thickening",
                     ObservationUrl,
                     $"{Group_MGResources}/AssociatedFeature/TrabecularThickening")
                     .Description("Trabecular Thickening Observation",

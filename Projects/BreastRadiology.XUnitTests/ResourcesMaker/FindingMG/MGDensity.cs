@@ -19,7 +19,7 @@ namespace BreastRadiology.XUnitTests
                  ResourcesMaker.Self.CreateCodeSystem(
                      "BreastRadMammoDensity",
                      "Mammography Density",
-                     "Mg Density/CodeSystem",
+                     "MG Density/CodeSystem",
                      "Mammography density code system.",
                      Group_MGCodes,
                      new ConceptDef[]
@@ -69,7 +69,7 @@ namespace BreastRadiology.XUnitTests
                 ResourcesMaker.Self.CreateValueSet(
                     "BreastRadMammoDensity",
                     "Mammography Density",
-                    "Mg DensityValueSet",
+                    "MG DensityValueSet",
                     "Mammography density code system.",
                     Group_MGCodes,
                     ResourcesMaker.Self.MGDensityCS.Value())
@@ -93,7 +93,7 @@ namespace BreastRadiology.XUnitTests
 
                 SDefEditor e = ResourcesMaker.Self.CreateEditorXX("BreastRadMammoDensity",
                         "Mammography Density",
-                        "Mg Density",
+                        "MG Density",
                         ObservationUrl,
                         $"{Group_MGResources}/Density")
                     .Description("Breast Radiology Mammography Density Observation",

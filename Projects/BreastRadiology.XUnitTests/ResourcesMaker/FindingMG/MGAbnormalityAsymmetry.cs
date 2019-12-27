@@ -20,7 +20,7 @@ namespace BreastRadiology.XUnitTests
                  ResourcesMaker.Self.CreateCodeSystem(
                     "BreastRadMammoAbnormalityAsymmetryRefinement",
                     "Mammography Asymmetry Refinement",
-                     "Mg Asymmetry Refinement/CodeSystem",
+                     "MG Asymmetry Refinement/CodeSystem",
                     "Codes defining types of mammography asymmetry abnormalities.",
                      Group_MGCodes,
                     new ConceptDef[]
@@ -84,7 +84,7 @@ namespace BreastRadiology.XUnitTests
                 ResourcesMaker.Self.CreateValueSet(
                    "BreastRadMammoAbnormalityAsymmetries",
                    "Mammography AsymmetryAbnormalities",
-                    "Mg Asymmetry/ValueSet",
+                    "MG Asymmetry/ValueSet",
                    "Codes defining types of mammography asymmetry abnormalities.",
                     Group_MGCodes,
                     ResourcesMaker.Self.MGAbnormalityAsymmetryRefinementCS.Value()
@@ -109,7 +109,7 @@ namespace BreastRadiology.XUnitTests
 
                 SDefEditor e = ResourcesMaker.Self.CreateEditorXX("BreastRadMammoAbnormalityAsymmetry",
                         "Mammography Asymmetry",
-                        "Mg Asymmetry",
+                        "MG Asymmetry",
                         ObservationUrl,
                         $"{Group_MGResources}/AbnormalityAsymmetry")
                     .Description("Breast Radiology Mammography Asymmetry Observation",

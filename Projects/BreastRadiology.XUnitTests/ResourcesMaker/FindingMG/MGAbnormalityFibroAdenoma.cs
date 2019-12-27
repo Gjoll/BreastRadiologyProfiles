@@ -33,7 +33,7 @@ namespace BreastRadiology.XUnitTests
 
                 SDefEditor e = ResourcesMaker.Self.CreateEditorXX("BreastRadMammoAbnormalityFibroadenoma",
                         "Mammography Fibroadenoma",
-                        "Mg Fibroadenoma",
+                        "MG Fibroadenoma",
                         ObservationUrl,
                         $"{Group_MGResources}/AbnormalityFibroadenoma")
                     .Description("Breast Radiology Mammography Fibroadenoma Observation",

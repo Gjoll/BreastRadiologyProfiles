@@ -18,7 +18,7 @@ namespace BreastRadiology.XUnitTests
             {
                 SDefEditor e = ResourcesMaker.Self.CreateEditorXX("BreastRadMammoNippleRetraction",
                     "Mammography Nipple Retraction",
-                    "Mg Nipple Retraction",
+                    "MG Nipple Retraction",
                     ObservationUrl,
                     $"{Group_MGResources}/AssociatedFeature/NippleRetraction")
                     .Description("Breast Radiology Mammography Nipple Retraction Observation",

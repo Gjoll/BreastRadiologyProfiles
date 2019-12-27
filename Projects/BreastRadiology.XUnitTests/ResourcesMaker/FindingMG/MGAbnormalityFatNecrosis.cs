@@ -18,7 +18,7 @@ namespace BreastRadiology.XUnitTests
             {
                 SDefEditor e = ResourcesMaker.Self.CreateEditorXX("BreastRadMammoAbnormalityFatNecrosis",
                         "Mammography Fat Necrosis",
-                        "Mg Fat Necrosis",
+                        "MG Fat Necrosis",
                         ObservationUrl,
                         $"{Group_MGResources}/AbnormalityFatNecrosis")
                     .Description("Breast Radiology Mammography Fat Necrosis Observation",

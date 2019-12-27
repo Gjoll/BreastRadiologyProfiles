@@ -18,7 +18,7 @@ namespace BreastRadiology.XUnitTests
             {
                 SDefEditor e = ResourcesMaker.Self.CreateEditorXX("BreastRadMammoFinding",
                         "Mammographi Finding",
-                        "Mg Finding",
+                        "MG Finding",
                         ObservationUrl,
                         $"{Group_MGResources}")
                     .Description("Breast Radiology Mammography Finding",

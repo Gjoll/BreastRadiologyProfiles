@@ -17,8 +17,8 @@ namespace BreastRadiology.XUnitTests
             (out String s) =>
             {
                 SDefEditor e = ResourcesMaker.Self.CreateFragment("MgCommonTargetsFragment",
-                        "Mg Common Targets Fragment",
-                        "Mg Common Targets Fragment",
+                        "MG Common Targets Fragment",
+                        "MG Common Targets Fragment",
                         ObservationUrl)
                     .Description("Mammography Common Targets Fragment",
                         new Markdown()

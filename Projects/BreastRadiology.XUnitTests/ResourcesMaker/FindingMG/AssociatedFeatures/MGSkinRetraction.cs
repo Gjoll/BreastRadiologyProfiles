@@ -18,7 +18,7 @@ namespace BreastRadiology.XUnitTests
             {
                 SDefEditor e = ResourcesMaker.Self.CreateEditorXX("BreastRadMammoSkinRetraction",
                     "Mammography Skin Retraction",
-                    "Mg Skin Retraction",
+                    "MG Skin Retraction",
                     ObservationUrl,
                     $"{Group_MGResources}/AssociatedFeature/SkinRetraction")
                     .Description("Mammography Skin Retraction Observation",

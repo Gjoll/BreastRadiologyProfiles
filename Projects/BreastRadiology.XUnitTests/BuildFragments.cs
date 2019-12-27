@@ -76,6 +76,86 @@ namespace BreastRadiology.XUnitTests
             return true;
         }
 
+        public void WriteCS(String dataFileName,
+            String outputCodePath,
+            String csBlockName)
+        {
+            String App(String s, String t, String sb)
+            {
+                if (String.IsNullOrEmpty(t) == true)
+                    return s;
+
+                // verify we have correct column.
+                if (t != sb)
+                    throw new Exception("Invalid value in App");
+
+                if (String.IsNullOrEmpty(s) == false)
+                    s += " ";
+                s += t;
+                return s;
+            }
+            String CodeValue(String value)
+            {
+                while (true)
+                {
+                    Int32 j = value.IndexOf(' ');
+                    if (j < 0)
+                        break;
+                    String temp = value.Substring(0, j);
+                    while (value[j] == ' ')
+                        j += 1;
+                    temp += Char.ToUpper(value[j]);
+                    temp += value.Substring(j + 1);
+                    value = temp;
+                }
+                return value;
+            }
+
+            String[] values = File.ReadAllLines(Path.Combine("DataFiles", dataFileName));
+            CodeEditor editor = new CodeEditor();
+            editor.Load(Path.Combine(DirHelper.FindParentDir("BreastRadiology.XUnitTests"),
+                "ResourcesMaker",
+                outputCodePath));
+            CodeBlockNested concepts = editor.Blocks.Find(csBlockName);
+            concepts.Clear();
+
+            for (Int32 i = 0; i < values.Length; i++)
+            {
+                String value = values[i];
+                // currently doesnt handle embedded \" and ',' chars.
+                // gg doesnt appear to use theres, so this shoudl work, but if
+                // is stops working, mnake parser more intelligent.
+                if (value.Contains("\""))
+                    throw new Exception("Complex CSV file found. Upgrade simple csv processor");
+                String term = ",";
+                if (i == values.Length - 1)
+                    term = "";
+                String[] parts = value.Split(',');
+                String code = parts[7];
+                String validWith = App("", parts[0], "MG");
+                validWith = App(validWith, parts[1], "MRI");
+                validWith = App(validWith, parts[2], "NM");
+                validWith = App(validWith, parts[3], "US");
+                concepts
+                    .AppendLine($"new ConceptDef(\"{CodeValue(code)}\",")
+                    .AppendLine($"    \"{code}\",")
+                    .AppendLine($"    new Definition()")
+                    .AppendLine($"        .Line(\"[PR] {code}\")")
+                    .AppendLine($"        .Line(\"Valid with following Modalities: {validWith}\")")
+                    .AppendLine($"    ){term}")
+                    ;
+            }
+
+            editor.Save();
+        }
+
+        [TestMethod]
+        public void WriteCode()
+        {
+            WriteCS("ConsistentWith.txt", @"Common\CommonConsistentWithCS.cs", "ConsistentWithCS");
+            WriteCS("ConsistentWith.txt", @"Common\CommonConsistentWithCS.cs", "ConsistentWithQualifierCS");
+        }
+
         [TestMethod]
         public void A_BuildFragments()
         {

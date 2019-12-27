@@ -19,7 +19,7 @@ namespace BreastRadiology.XUnitTests
 
                 SDefEditor e = ResourcesMaker.Self.CreateEditorXX("BreastRadMammoAxillaryAdenopathy",
                     "Mammography Axillary Adenopathy",
-                    "Mg Axillary/Adenopathy",
+                    "MG Axillary/Adenopathy",
                     ObservationUrl,
                     $"{Group_MGResources}/AssociatedFeature/AxillaryAdenopathy")
                     .Description("Breast Radiology Mammography Axillary Adenopathy Observation",

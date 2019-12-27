@@ -18,7 +18,7 @@ namespace BreastRadiology.XUnitTests
             {
                 SDefEditor e = ResourcesMaker.Self.CreateEditorXX("BreastRadMammoAbnormalityArchitecturalDistortion",
                         "Mammography Architectural Distortion",
-                        "Mg Arch. Distortion",
+                        "MG Arch. Distortion",
                         ObservationUrl,
                         $"{Group_MGResources}/AbnormalityArchitecturalDistortion")
                     .Description("Breast Radiology Mammography Architectural Distortion Observation",

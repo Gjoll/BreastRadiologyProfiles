@@ -17,7 +17,7 @@ namespace BreastRadiology.XUnitTests
        CSTaskVar CommonAbnormalityForeignObjectCS = new CSTaskVar(
             () =>
                 ResourcesMaker.Self.CreateCodeSystem(
-                        "CommonAbnormalities",
+                        "CommonForeignObject",
                         "Foreign Object",
                         "Foreign/Object/ValueSet",
                         "Foreign object codes defining types of foreign objects observed during a Breast Radiology exam",

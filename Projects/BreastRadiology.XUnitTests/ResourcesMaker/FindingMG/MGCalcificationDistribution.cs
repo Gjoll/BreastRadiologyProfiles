@@ -18,7 +18,7 @@ namespace BreastRadiology.XUnitTests
                  ResourcesMaker.Self.CreateCodeSystem(
                      "MammoCalcificationDistribution",
                      "Mammography Calcification Distribution",
-                     "Mg Calc./Distribution/CodeSystem",
+                     "MG Calc./Distribution/CodeSystem",
                      "Mammography calcification distribution code system.",
                      Group_MGCodes,
                      new ConceptDef[]
@@ -85,7 +85,7 @@ namespace BreastRadiology.XUnitTests
                 ResourcesMaker.Self.CreateValueSet(
                         "MammoCalcificationDistribution",
                         "Mammography Calcification Distribution",
-                        "Mg Calc./DistributionValueSet",
+                        "MG Calc./DistributionValueSet",
                         "Mammography calcification distribution code system.",
                         Group_MGCodes,
                         ResourcesMaker.Self.MGCalcificationDistributionCS.Value()
@@ -110,7 +110,7 @@ namespace BreastRadiology.XUnitTests
 
                 SDefEditor e = ResourcesMaker.Self.CreateEditorXX("BreastRadMammoCalcificationDistribution",
                         "Mammography Calcification Distribution",
-                        "Mg Calc./Distribution",
+                        "MG Calc./Distribution",
                         ObservationUrl,
                         $"{Group_MGResources}/Calcification/Distribution")
                     .Description("Breast Radiology Mammography Calcification Distribution Observation",

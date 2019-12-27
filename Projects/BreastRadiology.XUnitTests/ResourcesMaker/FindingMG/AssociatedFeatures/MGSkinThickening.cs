@@ -18,7 +18,7 @@ namespace BreastRadiology.XUnitTests
             {
                 SDefEditor e = ResourcesMaker.Self.CreateEditorXX("BreastRadMammoSkinThickening",
                     "Mammography Skin Thickening",
-                    "Mg Skin Thickening",
+                    "MG Skin Thickening",
                     ObservationUrl,
                     $"{Group_MGResources}/AssociatedFeature/SkinThickening")
                     .Description("Mammography Skin Thickening Observation",
