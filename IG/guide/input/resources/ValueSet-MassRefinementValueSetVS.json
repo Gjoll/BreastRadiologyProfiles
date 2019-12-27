@@ -18,11 +18,11 @@
       ]
     }
   ],
-  "description": "Codes refining mass type.",
+  "description": "ValueSet refining mass type.",
   "compose": {
     "include": [
       {
-        "system": "http://hl7.org/fhir/us/breast-radiology/CodeSystem/CommonMassRefinementCS",
+        "system": "http://hl7.org/fhir/us/breast-radiology/CodeSystem/MassRefinementCS",
         "concept": [
           {
             "code": "Solid",

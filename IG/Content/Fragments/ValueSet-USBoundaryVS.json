@@ -8,7 +8,7 @@
     },
     {
       "url": "http://www.fragment.com/Group",
-      "valueString": "USCodesVS"
+      "valueString": "USCodes"
     },
     {
       "url": "http://www.fragment.com/mapname",
@@ -17,8 +17,8 @@
   ],
   "url": "http://hl7.org/fhir/us/breast-radiology/ValueSet/USBoundaryVS",
   "name": "USBoundaryVS",
-  "title": "UltraSound Boundary ValueSet",
-  "description": "UltraSound Boundary Codes.",
+  "title": "UltraSound Boundary ValueSet ValueSet",
+  "description": "ValueSet defining UltraSound Boundary Codes.",
   "compose": {
     "include": [
       {

@@ -17,17 +17,17 @@ namespace BreastRadiology.XUnitTests
         VSTaskVar MGMarginVS = new VSTaskVar(
             () =>
                 ResourcesMaker.Self.CreateValueSet(
-                    "BreastRadMammoMassMargin",
-                    "Mammography Mass Margin",
+                    "MGMarginVS",
+                    "Mammography Margin ValueSet",
                     "MG MarginValueSet",
-                    "Mammography mass margin ValueSet.",
+                    "Mammography margin ValueSet.",
                     Group_MGCodes,
                     ResourcesMaker.Self.CommonMarginCS.Value()
                     )
             );
 
 
-        StringTaskVar MGMassMargin = new StringTaskVar(
+        StringTaskVar MGMargin = new StringTaskVar(
             (out String s) =>
             {
                 ValueSet binding = ResourcesMaker.Self.MGMarginVS.Value();
@@ -47,14 +47,14 @@ namespace BreastRadiology.XUnitTests
                     ResourcesMaker.Self.fc?.Mark(outputPath);
                 }
 
-                SDefEditor e = ResourcesMaker.Self.CreateEditorXX("BreastRadMammoMassMargin",
+                SDefEditor e = ResourcesMaker.Self.CreateEditor("MGMargin",
                     "Mammography Margin",
                     "MG Margin",
                     ObservationUrl,
                     $"{Group_MGResources}/Margin")
                     .Description("Breast Radiology Mammography Margin Observation",
                         new Markdown()
-                            .MissingObservation("a mass margin")
+                            .MissingObservation("a margin")
                             .BiradHeader()
                             .BlockQuote("The margin is the edge or border of the lesion. The descriptors of margin, like the descriptors of shape, are important predictors of whether a mass is benign or malignant. ")
                             .BiradFooter()
@@ -74,7 +74,7 @@ namespace BreastRadiology.XUnitTests
                 e.AddValueSetLink(binding);
                 e.IntroDoc
                     .ReviewedStatus(ReviewStatus.NotReviewed)
-                    .CodedObservationLeafNode("a mammography mass margin", binding)
+                    .CodedObservationLeafNode("a mammography margin", binding)
                     ;
             });
     }

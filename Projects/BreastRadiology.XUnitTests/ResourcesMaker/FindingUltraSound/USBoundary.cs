@@ -16,8 +16,8 @@ namespace BreastRadiology.XUnitTests
         CSTaskVar USBoundaryCS = new CSTaskVar(
              () =>
                  ResourcesMaker.Self.CreateCodeSystem(
-                     "USBoundary",
-                     "UltraSound Boundary",
+                     "USBoundaryCS",
+                     "UltraSound Boundary CodeSystem",
                      "US Boundary/CodeSystem",
                      "Ultra Sound Boundary code system.",
                      Group_USCodes,
@@ -51,10 +51,10 @@ namespace BreastRadiology.XUnitTests
         VSTaskVar USBoundaryVS = new VSTaskVar(
             () =>
                 ResourcesMaker.Self.CreateValueSet(
-                    "USBoundary",
-                    "UltraSound Boundary",
+                    "USBoundaryVS",
+                    "UltraSound Boundary ValueSet",
                     "US Boundary/ValueSet",
-                    "UltraSound Boundary Codes.",
+                    "ValueSet defining UltraSound Boundary Codes.",
                     Group_USCodes,
                     ResourcesMaker.Self.USBoundaryCS.Value()
                     )
@@ -76,7 +76,7 @@ namespace BreastRadiology.XUnitTests
                     ResourcesMaker.Self.fc?.Mark(outputPath);
                 }
 
-                SDefEditor e = ResourcesMaker.Self.CreateEditorXX("BreastRadUSBoundary",
+                SDefEditor e = ResourcesMaker.Self.CreateEditor("BreastRadUSBoundary",
                     "Ultra Sound Boundary",
                     "US Boundary",
                     ObservationUrl,

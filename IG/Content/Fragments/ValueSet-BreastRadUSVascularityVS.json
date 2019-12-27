@@ -8,7 +8,7 @@
     },
     {
       "url": "http://www.fragment.com/Group",
-      "valueString": "USCodesVS"
+      "valueString": "USCodes"
     },
     {
       "url": "http://www.fragment.com/mapname",
@@ -17,8 +17,8 @@
   ],
   "url": "http://hl7.org/fhir/us/breast-radiology/ValueSet/BreastRadUSVascularityVS",
   "name": "BreastRadUSVascularityVS",
-  "title": "US Vascularity ValueSet",
-  "description": "Ultra-sound Vascularity code system.",
+  "title": "US Vascularity ValueSet ValueSet",
+  "description": "ValueSet defining Ultra-sound Vascularity codes.",
   "compose": {
     "include": [
       {

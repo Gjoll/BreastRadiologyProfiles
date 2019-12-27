@@ -1,0 +1,47 @@
+{
+  "resourceType": "ValueSet",
+  "id": "MGBreastDensityVS",
+  "extension": [
+    {
+      "url": "http://www.fragment.com/fragment",
+      "valueUrl": "http://hl7.org/fhir/us/breast-radiology/StructureDefinition/HeaderFragment"
+    },
+    {
+      "url": "http://www.fragment.com/Group",
+      "valueString": "MGCodes"
+    },
+    {
+      "url": "http://www.fragment.com/mapname",
+      "valueString": "MG Breast DensityValueSet"
+    }
+  ],
+  "url": "http://hl7.org/fhir/us/breast-radiology/ValueSet/MGBreastDensityVS",
+  "name": "MGBreastDensityVS",
+  "title": "Mammography Breast Density ValueSet ValueSet",
+  "description": "ValueSet for mammography breast density values.",
+  "compose": {
+    "include": [
+      {
+        "system": "http://hl7.org/fhir/us/breast-radiology/CodeSystem/MGBreastDensityCS",
+        "concept": [
+          {
+            "code": "Fatty",
+            "display": "The breasts are almost entirely fatty"
+          },
+          {
+            "code": "Fibroglandular",
+            "display": "Scattered areas of fibroglandular density"
+          },
+          {
+            "code": "HeterogeneouslyDense",
+            "display": "The breasts are heterogeneously dense, which may obscure detection of small masses"
+          },
+          {
+            "code": "ExtremelyDense",
+            "display": "The breasts are extremely dense, which lowers the sensitivity of mammography."
+          }
+        ]
+      }
+    ]
+  }
+}

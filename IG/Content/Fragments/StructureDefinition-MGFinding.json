@@ -1,0 +1,420 @@
+{
+  "resourceType": "StructureDefinition",
+  "extension": [
+    {
+      "url": "http://www.fragment.com/mapname",
+      "valueString": "MG Finding"
+    },
+    {
+      "url": "http://www.fragment.com/Group",
+      "valueString": "MGResources"
+    },
+    {
+      "url": "http://www.fragment.com/fragment",
+      "valueUrl": "http://hl7.org/fhir/us/breast-radiology/StructureDefinition/ObservationSectionFragment"
+    },
+    {
+      "url": "http://www.fragment.com/maplink",
+      "valueString": "fragment|True|http://hl7.org/fhir/us/breast-radiology/StructureDefinition/ObservationSectionFragment"
+    },
+    {
+      "url": "http://www.fragment.com/fragment",
+      "valueUrl": "http://hl7.org/fhir/us/breast-radiology/StructureDefinition/BreastRadObservationNoValueFragment"
+    },
+    {
+      "url": "http://www.fragment.com/maplink",
+      "valueString": "fragment|True|http://hl7.org/fhir/us/breast-radiology/StructureDefinition/BreastRadObservationNoValueFragment"
+    },
+    {
+      "url": "http://www.fragment.com/maplink",
+      "valueString": "target|False|http://hl7.org/fhir/us/breast-radiology/StructureDefinition/MGAbnormalityForeignObject"
+    },
+    {
+      "url": "http://www.fragment.com/maplink",
+      "valueString": "target|False|http://hl7.org/fhir/us/breast-radiology/StructureDefinition/MGAbnormalityArchitecturalDistortion"
+    },
+    {
+      "url": "http://www.fragment.com/maplink",
+      "valueString": "target|False|http://hl7.org/fhir/us/breast-radiology/StructureDefinition/MGAbnormalityAsymmetry"
+    },
+    {
+      "url": "http://www.fragment.com/maplink",
+      "valueString": "target|False|http://hl7.org/fhir/us/breast-radiology/StructureDefinition/MGAbnormalityCalcification"
+    },
+    {
+      "url": "http://www.fragment.com/maplink",
+      "valueString": "target|False|http://hl7.org/fhir/us/breast-radiology/StructureDefinition/MGAbnormalityCyst"
+    },
+    {
+      "url": "http://www.fragment.com/maplink",
+      "valueString": "target|False|http://hl7.org/fhir/us/breast-radiology/StructureDefinition/MGAbnormalityDensity"
+    },
+    {
+      "url": "http://www.fragment.com/maplink",
+      "valueString": "target|False|http://hl7.org/fhir/us/breast-radiology/StructureDefinition/MGAbnormalityDuct"
+    },
+    {
+      "url": "http://www.fragment.com/maplink",
+      "valueString": "target|False|http://hl7.org/fhir/us/breast-radiology/StructureDefinition/MGAbnormalityFatNecrosis"
+    },
+    {
+      "url": "http://www.fragment.com/maplink",
+      "valueString": "target|False|http://hl7.org/fhir/us/breast-radiology/StructureDefinition/MGAbnormalityFibroadenoma"
+    },
+    {
+      "url": "http://www.fragment.com/maplink",
+      "valueString": "target|False|http://hl7.org/fhir/us/breast-radiology/StructureDefinition/MGAbnormalityLymphNode"
+    },
+    {
+      "url": "http://www.fragment.com/maplink",
+      "valueString": "target|False|http://hl7.org/fhir/us/breast-radiology/StructureDefinition/MGMass"
+    },
+    {
+      "url": "http://www.fragment.com/maplink",
+      "valueString": "target|False|http://hl7.org/fhir/us/breast-radiology/StructureDefinition/MGSkinLesion"
+    },
+    {
+      "url": "http://www.fragment.com/maplink",
+      "valueString": "target|False|http://hl7.org/fhir/us/breast-radiology/StructureDefinition/MGAssociatedFeatures"
+    },
+    {
+      "url": "http://www.fragment.com/maplink",
+      "valueString": "target|False|http://hl7.org/fhir/us/breast-radiology/StructureDefinition/MGBreastDensity"
+    }
+  ],
+  "url": "http://hl7.org/fhir/us/breast-radiology/StructureDefinition/MGFinding",
+  "name": "MGFinding",
+  "title": "Mammographi Finding",
+  "status": "draft",
+  "description": "Breast Radiology Mammography Finding\n\n*** TODO Items ***** Device Metrics detailing the observation devices parameters (transducer freq, etc).",
+  "fhirVersion": "4.0.0",
+  "kind": "resource",
+  "abstract": false,
+  "type": "Observation",
+  "baseDefinition": "http://hl7.org/fhir/StructureDefinition/Observation",
+  "derivation": "constraint",
+  "differential": {
+    "element": [
+      {
+        "id": "Observation",
+        "path": "Observation",
+        "short": "Breast Radiology Mammography Finding",
+        "definition": "*** TODO Items ***** Device Metrics detailing the observation devices parameters (transducer freq, etc).",
+        "min": 0,
+        "max": "*"
+      },
+      {
+        "id": "Observation.value[x]",
+        "path": "Observation.value[x]",
+        "min": 0,
+        "max": "0",
+        "base": {
+          "path": "Observation.value[x]",
+          "min": 0,
+          "max": "1"
+        }
+      },
+      {
+        "id": "Observation.hasMember",
+        "path": "Observation.hasMember",
+        "slicing": {
+          "discriminator": [
+            {
+              "type": "value",
+              "path": "url"
+            }
+          ],
+          "ordered": true,
+          "rules": "openAtEnd"
+        },
+        "min": 0,
+        "max": "*",
+        "base": {
+          "path": "Observation.hasMember",
+          "min": 0,
+          "max": "*"
+        }
+      },
+      {
+        "id": "Observation.hasMember:mGAbnormalityForeignObject",
+        "path": "Observation.hasMember",
+        "sliceName": "mGAbnormalityForeignObject",
+        "min": 0,
+        "max": "*",
+        "base": {
+          "path": "Observation.hasMember",
+          "min": 0,
+          "max": "*"
+        },
+        "type": [
+          {
+            "code": "Reference",
+            "targetProfile": [
+              "http://hl7.org/fhir/us/breast-radiology/StructureDefinition/MGAbnormalityForeignObject"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "Observation.hasMember:mGAbnormalityArchitecturalDistortion",
+        "path": "Observation.hasMember",
+        "sliceName": "mGAbnormalityArchitecturalDistortion",
+        "min": 0,
+        "max": "*",
+        "base": {
+          "path": "Observation.hasMember",
+          "min": 0,
+          "max": "*"
+        },
+        "type": [
+          {
+            "code": "Reference",
+            "targetProfile": [
+              "http://hl7.org/fhir/us/breast-radiology/StructureDefinition/MGAbnormalityArchitecturalDistortion"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "Observation.hasMember:mGAbnormalityAsymmetry",
+        "path": "Observation.hasMember",
+        "sliceName": "mGAbnormalityAsymmetry",
+        "min": 0,
+        "max": "*",
+        "base": {
+          "path": "Observation.hasMember",
+          "min": 0,
+          "max": "*"
+        },
+        "type": [
+          {
+            "code": "Reference",
+            "targetProfile": [
+              "http://hl7.org/fhir/us/breast-radiology/StructureDefinition/MGAbnormalityAsymmetry"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "Observation.hasMember:mGAbnormalityCalcification",
+        "path": "Observation.hasMember",
+        "sliceName": "mGAbnormalityCalcification",
+        "min": 0,
+        "max": "*",
+        "base": {
+          "path": "Observation.hasMember",
+          "min": 0,
+          "max": "*"
+        },
+        "type": [
+          {
+            "code": "Reference",
+            "targetProfile": [
+              "http://hl7.org/fhir/us/breast-radiology/StructureDefinition/MGAbnormalityCalcification"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "Observation.hasMember:mGAbnormalityCyst",
+        "path": "Observation.hasMember",
+        "sliceName": "mGAbnormalityCyst",
+        "min": 0,
+        "max": "*",
+        "base": {
+          "path": "Observation.hasMember",
+          "min": 0,
+          "max": "*"
+        },
+        "type": [
+          {
+            "code": "Reference",
+            "targetProfile": [
+              "http://hl7.org/fhir/us/breast-radiology/StructureDefinition/MGAbnormalityCyst"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "Observation.hasMember:mGAbnormalityDensity",
+        "path": "Observation.hasMember",
+        "sliceName": "mGAbnormalityDensity",
+        "min": 0,
+        "max": "*",
+        "base": {
+          "path": "Observation.hasMember",
+          "min": 0,
+          "max": "*"
+        },
+        "type": [
+          {
+            "code": "Reference",
+            "targetProfile": [
+              "http://hl7.org/fhir/us/breast-radiology/StructureDefinition/MGAbnormalityDensity"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "Observation.hasMember:mGAbnormalityDuct",
+        "path": "Observation.hasMember",
+        "sliceName": "mGAbnormalityDuct",
+        "min": 0,
+        "max": "*",
+        "base": {
+          "path": "Observation.hasMember",
+          "min": 0,
+          "max": "*"
+        },
+        "type": [
+          {
+            "code": "Reference",
+            "targetProfile": [
+              "http://hl7.org/fhir/us/breast-radiology/StructureDefinition/MGAbnormalityDuct"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "Observation.hasMember:mGAbnormalityFatNecrosis",
+        "path": "Observation.hasMember",
+        "sliceName": "mGAbnormalityFatNecrosis",
+        "min": 0,
+        "max": "*",
+        "base": {
+          "path": "Observation.hasMember",
+          "min": 0,
+          "max": "*"
+        },
+        "type": [
+          {
+            "code": "Reference",
+            "targetProfile": [
+              "http://hl7.org/fhir/us/breast-radiology/StructureDefinition/MGAbnormalityFatNecrosis"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "Observation.hasMember:mGAbnormalityFibroadenoma",
+        "path": "Observation.hasMember",
+        "sliceName": "mGAbnormalityFibroadenoma",
+        "min": 0,
+        "max": "*",
+        "base": {
+          "path": "Observation.hasMember",
+          "min": 0,
+          "max": "*"
+        },
+        "type": [
+          {
+            "code": "Reference",
+            "targetProfile": [
+              "http://hl7.org/fhir/us/breast-radiology/StructureDefinition/MGAbnormalityFibroadenoma"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "Observation.hasMember:mGAbnormalityLymphNode",
+        "path": "Observation.hasMember",
+        "sliceName": "mGAbnormalityLymphNode",
+        "min": 0,
+        "max": "*",
+        "base": {
+          "path": "Observation.hasMember",
+          "min": 0,
+          "max": "*"
+        },
+        "type": [
+          {
+            "code": "Reference",
+            "targetProfile": [
+              "http://hl7.org/fhir/us/breast-radiology/StructureDefinition/MGAbnormalityLymphNode"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "Observation.hasMember:mGMass",
+        "path": "Observation.hasMember",
+        "sliceName": "mGMass",
+        "min": 0,
+        "max": "*",
+        "base": {
+          "path": "Observation.hasMember",
+          "min": 0,
+          "max": "*"
+        },
+        "type": [
+          {
+            "code": "Reference",
+            "targetProfile": [
+              "http://hl7.org/fhir/us/breast-radiology/StructureDefinition/MGMass"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "Observation.hasMember:mGSkinLesion",
+        "path": "Observation.hasMember",
+        "sliceName": "mGSkinLesion",
+        "min": 0,
+        "max": "*",
+        "base": {
+          "path": "Observation.hasMember",
+          "min": 0,
+          "max": "*"
+        },
+        "type": [
+          {
+            "code": "Reference",
+            "targetProfile": [
+              "http://hl7.org/fhir/us/breast-radiology/StructureDefinition/MGSkinLesion"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "Observation.hasMember:mGAssociatedFeatures",
+        "path": "Observation.hasMember",
+        "sliceName": "mGAssociatedFeatures",
+        "min": 0,
+        "max": "*",
+        "base": {
+          "path": "Observation.hasMember",
+          "min": 0,
+          "max": "*"
+        },
+        "type": [
+          {
+            "code": "Reference",
+            "targetProfile": [
+              "http://hl7.org/fhir/us/breast-radiology/StructureDefinition/MGAssociatedFeatures"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "Observation.hasMember:mGBreastDensity",
+        "path": "Observation.hasMember",
+        "sliceName": "mGBreastDensity",
+        "min": 1,
+        "max": "1",
+        "base": {
+          "path": "Observation.hasMember",
+          "min": 0,
+          "max": "*"
+        },
+        "type": [
+          {
+            "code": "Reference",
+            "targetProfile": [
+              "http://hl7.org/fhir/us/breast-radiology/StructureDefinition/MGBreastDensity"
+            ]
+          }
+        ]
+      }
+    ]
+  }
+}

@@ -16,7 +16,7 @@ namespace BreastRadiology.XUnitTests
         StringTaskVar AimAnnotatedImagingStudy = new StringTaskVar(
             (out String s) =>
             {
-                SDefEditor e = ResourcesMaker.Self.CreateEditorXX("AimAnnotatedImagingStudy",
+                SDefEditor e = ResourcesMaker.Self.CreateEditor("AimAnnotatedImagingStudy",
                     "AIM Annotated Imaging Study",
                     "Annotated/Imaging Study",
                     ImagingStudyUrl,

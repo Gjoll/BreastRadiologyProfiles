@@ -8,7 +8,7 @@
     },
     {
       "url": "http://www.fragment.com/Group",
-      "valueString": "USCodesVS"
+      "valueString": "USCodes"
     },
     {
       "url": "http://www.fragment.com/mapname",
@@ -17,8 +17,8 @@
   ],
   "url": "http://hl7.org/fhir/us/breast-radiology/ValueSet/UltraSoundShapeVS",
   "name": "UltraSoundShapeVS",
-  "title": "Shape ValueSet",
-  "description": "Codes defining shape values.",
+  "title": "ShapeValueSet ValueSet",
+  "description": "ValueSet defining shape values.",
   "compose": {
     "include": [
       {

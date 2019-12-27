@@ -383,7 +383,7 @@ namespace BreastRadiology.XUnitTests
                         resourceMapMaker.AddLegendItem("Observation", Color.LightSkyBlue);
                         resourceMapMaker.AddLegendItem("ImagingStudy", Color.LightCoral);
 
-                        resourceMapMaker.Create(ResourcesMaker.CreateUrl("BreastRadMammoFinding"),
+                        resourceMapMaker.Create(ResourcesMaker.CreateUrl("MGFinding"),
                             Path.Combine(this.graphicsDir, "MgFindings.svg"));
                     }
 
@@ -394,7 +394,7 @@ namespace BreastRadiology.XUnitTests
                         resourceMapMaker.AddLegendItem("Observation", Color.LightSkyBlue);
                         resourceMapMaker.AddLegendItem("ImagingStudy", Color.LightCoral);
 
-                        resourceMapMaker.Create(ResourcesMaker.CreateUrl("BreastRadMRIFinding"),
+                        resourceMapMaker.Create(ResourcesMaker.CreateUrl("MRIFinding"),
                             Path.Combine(this.graphicsDir, "MRIFindings.svg"));
                     }
 
@@ -405,7 +405,7 @@ namespace BreastRadiology.XUnitTests
                         resourceMapMaker.AddLegendItem("Observation", Color.LightSkyBlue);
                         resourceMapMaker.AddLegendItem("ImagingStudy", Color.LightCoral);
 
-                        resourceMapMaker.Create(ResourcesMaker.CreateUrl("BreastRadNMFinding"),
+                        resourceMapMaker.Create(ResourcesMaker.CreateUrl("NMFinding"),
                             Path.Combine(this.graphicsDir, "NMFindings.svg"));
                     }
 
@@ -416,7 +416,7 @@ namespace BreastRadiology.XUnitTests
                         resourceMapMaker.AddLegendItem("Observation", Color.LightSkyBlue);
                         resourceMapMaker.AddLegendItem("ImagingStudy", Color.LightCoral);
 
-                        resourceMapMaker.Create(ResourcesMaker.CreateUrl("BreastRadUltraSoundFinding"),
+                        resourceMapMaker.Create(ResourcesMaker.CreateUrl("USFinding"),
                             Path.Combine(this.graphicsDir, "USFindings.svg"));
                     }
 

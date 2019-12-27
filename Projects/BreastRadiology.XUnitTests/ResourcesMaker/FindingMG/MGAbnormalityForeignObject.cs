@@ -17,12 +17,12 @@ namespace BreastRadiology.XUnitTests
         VSTaskVar MGAbnormalityForeignObjectVS = new VSTaskVar(
             () =>
                 ResourcesMaker.Self.CreateValueSet(
-                        "MGAbnormalities",
-                        "Foreign Object",
+                        "MGAbnormalitiesVS",
+                        "Foreign Object ValueSet",
                         "Foreign/Object/ValueSet",
-                        "Foreign object codes defining types of foreign objects observed during a Breast Radiology exam",
+                        "ValueSet defining defining types of foreign objects observed during a Breast Radiology exam",
                         Group_MGCodes,
-                        ResourcesMaker.Self.CommonAbnormalityForeignObjectCS.Value())
+                        ResourcesMaker.Self.AbnormalityForeignObjectCS.Value())
             );
 
 
@@ -40,7 +40,7 @@ namespace BreastRadiology.XUnitTests
                     ResourcesMaker.Self.fc?.Mark(outputPath);
                 }
 
-                SDefEditor e = ResourcesMaker.Self.CreateEditorXX("MGAbnormalityForeignObject",
+                SDefEditor e = ResourcesMaker.Self.CreateEditor("MGAbnormalityForeignObject",
                         "Foreign Object",
                         "Foreign Object",
                         ObservationUrl,

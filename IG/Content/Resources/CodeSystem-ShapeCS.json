@@ -8,7 +8,7 @@
     },
     {
       "url": "http://www.fragment.com/Group",
-      "valueString": "CommonCodesCS"
+      "valueString": "CommonCodes"
     },
     {
       "url": "http://www.fragment.com/mapname",
@@ -36,7 +36,7 @@
       ]
     }
   ],
-  "description": "Codes defining shape values.",
+  "description": "Shape values code system.",
   "caseSensitive": true,
   "content": "complete",
   "count": 5,

@@ -1,0 +1,129 @@
+{
+  "resourceType": "StructureDefinition",
+  "extension": [
+    {
+      "url": "http://www.fragment.com/mapname",
+      "valueString": "MG Duct"
+    },
+    {
+      "url": "http://www.fragment.com/Group",
+      "valueString": "MGResources/AbnormalityDuct"
+    },
+    {
+      "url": "http://www.fragment.com/fragment",
+      "valueUrl": "http://hl7.org/fhir/us/breast-radiology/StructureDefinition/BreastRadObservationNoDeviceFragment"
+    },
+    {
+      "url": "http://www.fragment.com/maplink",
+      "valueString": "fragment|True|http://hl7.org/fhir/us/breast-radiology/StructureDefinition/BreastRadObservationNoDeviceFragment"
+    },
+    {
+      "url": "http://www.fragment.com/fragment",
+      "valueUrl": "http://hl7.org/fhir/us/breast-radiology/StructureDefinition/MgCommonTargetsFragment"
+    },
+    {
+      "url": "http://www.fragment.com/maplink",
+      "valueString": "fragment|True|http://hl7.org/fhir/us/breast-radiology/StructureDefinition/MgCommonTargetsFragment"
+    },
+    {
+      "url": "http://www.fragment.com/fragment",
+      "valueUrl": "http://hl7.org/fhir/us/breast-radiology/StructureDefinition/MgShapeTargetsFragment"
+    },
+    {
+      "url": "http://www.fragment.com/maplink",
+      "valueString": "fragment|True|http://hl7.org/fhir/us/breast-radiology/StructureDefinition/MgShapeTargetsFragment"
+    },
+    {
+      "url": "http://www.fragment.com/maplink",
+      "valueString": "valueSet|True|http://hl7.org/fhir/us/breast-radiology/ValueSet/MGAbnormalityDuctVS"
+    },
+    {
+      "url": "http://www.fragment.com/maplink",
+      "valueString": "target|False|http://hl7.org/fhir/us/breast-radiology/StructureDefinition/CommonCount"
+    }
+  ],
+  "url": "http://hl7.org/fhir/us/breast-radiology/StructureDefinition/MGAbnormalityDuct",
+  "name": "MGAbnormalityDuct",
+  "title": "Mammography Duct",
+  "status": "draft",
+  "description": "Breat Radiology Mammography Duct Observation\n\nIf this observation is present, and dataAbsentReason is empty, then a duct abnormality was observed.\n\n\nIf this observation is present, and dataAbsentReason is not empty, then a duct abnormality was not observed and dataAbsentReason contains the reason why.\n\n\n*** TODO Items ***** should this be a leaf node (how about shape, density, location, etc).\n** make dilated the default value.",
+  "fhirVersion": "4.0.0",
+  "kind": "resource",
+  "abstract": false,
+  "type": "Observation",
+  "baseDefinition": "http://hl7.org/fhir/StructureDefinition/Observation",
+  "derivation": "constraint",
+  "differential": {
+    "element": [
+      {
+        "id": "Observation",
+        "path": "Observation",
+        "short": "Breat Radiology Mammography Duct Observation",
+        "definition": "If this observation is present, and dataAbsentReason is empty, then a duct abnormality was observed.\n\n\nIf this observation is present, and dataAbsentReason is not empty, then a duct abnormality was not observed and dataAbsentReason contains the reason why.\n\n\n*** TODO Items ***** should this be a leaf node (how about shape, density, location, etc).\n** make dilated the default value.",
+        "min": 0,
+        "max": "*"
+      },
+      {
+        "id": "Observation.value[x]",
+        "path": "Observation.value[x]",
+        "min": 0,
+        "max": "1",
+        "base": {
+          "path": "Observation.value[x]",
+          "min": 0,
+          "max": "1"
+        },
+        "type": [
+          {
+            "code": "CodeableConcept"
+          }
+        ],
+        "binding": {
+          "strength": "required",
+          "valueSet": "http://hl7.org/fhir/us/breast-radiology/ValueSet/MGAbnormalityDuctVS"
+        }
+      },
+      {
+        "id": "Observation.hasMember",
+        "path": "Observation.hasMember",
+        "slicing": {
+          "discriminator": [
+            {
+              "type": "value",
+              "path": "url"
+            }
+          ],
+          "ordered": true,
+          "rules": "openAtEnd"
+        },
+        "min": 0,
+        "max": "*",
+        "base": {
+          "path": "Observation.hasMember",
+          "min": 0,
+          "max": "*"
+        }
+      },
+      {
+        "id": "Observation.hasMember:commonCount",
+        "path": "Observation.hasMember",
+        "sliceName": "commonCount",
+        "min": 0,
+        "max": "1",
+        "base": {
+          "path": "Observation.hasMember",
+          "min": 0,
+          "max": "*"
+        },
+        "type": [
+          {
+            "code": "Reference",
+            "targetProfile": [
+              "http://hl7.org/fhir/us/breast-radiology/StructureDefinition/CommonCount"
+            ]
+          }
+        ]
+      }
+    ]
+  }
+}

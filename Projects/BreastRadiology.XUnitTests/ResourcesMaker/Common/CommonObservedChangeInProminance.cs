@@ -18,10 +18,10 @@ namespace BreastRadiology.XUnitTests
         CSTaskVar CommonObservedChangeInProminanceCS = new CSTaskVar(
              () =>
                  ResourcesMaker.Self.CreateCodeSystem(
-                     "CommonObservedChangeInProminance",
-                     "Observed Changes",
+                     "CommonObservedChangeInProminanceCS",
+                     "Observed Changes CodeSystem",
                      "Observed/Change/CodeSystem",
-                     "Codes defining types of observed changes in Prominance of an abnormality over time.",
+                     "Observed changes in Prominance of an abnormality over time code system.",
                      Group_CommonCodes,
                      new ConceptDef[]
                      {
@@ -41,10 +41,10 @@ namespace BreastRadiology.XUnitTests
         VSTaskVar CommonObservedChangeInProminanceVS = new VSTaskVar(
             () =>
                 ResourcesMaker.Self.CreateValueSet(
-                    "CommonObservedChangeInProminance",
-                    "Observed Prominance Changes",
+                    "CommonObservedChangeInProminanceVS",
+                    "Observed Prominance Changes ValueSet",
                     "Observed/Change/ValueSet",
-                    "Codes defining types of observed changes in Prominance of an abnormality over time.",
+                    "ValueSet defining types of observed changes in Prominance of an abnormality over time.",
                     Group_CommonCodes,
                     ResourcesMaker.Self.CommonObservedChangeInProminanceCS.Value()
                     )
@@ -66,7 +66,7 @@ namespace BreastRadiology.XUnitTests
                     ResourcesMaker.Self.fc?.Mark(outputPath);
                 }
 
-                SDefEditor e = ResourcesMaker.Self.CreateEditorXX("CommonObservedChangeInProminance",
+                SDefEditor e = ResourcesMaker.Self.CreateEditor("CommonObservedChangeInProminance",
                         "Observed Change in Prominance",
                         "Prominance Change",
                         ObservationUrl,

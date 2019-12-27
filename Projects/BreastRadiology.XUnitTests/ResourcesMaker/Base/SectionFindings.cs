@@ -16,7 +16,7 @@ namespace BreastRadiology.XUnitTests
         StringTaskVar SectionFindings = new StringTaskVar(
             (out String s) =>
             {
-                SDefEditor e = ResourcesMaker.Self.CreateEditorXX("BreastRadSectionFindings",
+                SDefEditor e = ResourcesMaker.Self.CreateEditor("BreastRadSectionFindings",
                         "Findings",
                         "Findings",
                         ObservationUrl,

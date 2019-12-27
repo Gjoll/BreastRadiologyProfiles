@@ -16,8 +16,8 @@ namespace BreastRadiology.XUnitTests
         CSTaskVar MGCalcificationDistributionCS = new CSTaskVar(
              () =>
                  ResourcesMaker.Self.CreateCodeSystem(
-                     "MammoCalcificationDistribution",
-                     "Mammography Calcification Distribution",
+                     "MammoCalcificationDistributionCS",
+                     "Mammography Calcification Distribution CodeSystem",
                      "MG Calc./Distribution/CodeSystem",
                      "Mammography calcification distribution code system.",
                      Group_MGCodes,
@@ -83,10 +83,10 @@ namespace BreastRadiology.XUnitTests
         VSTaskVar MGCalcificationDistributionVS = new VSTaskVar(
             () =>
                 ResourcesMaker.Self.CreateValueSet(
-                        "MammoCalcificationDistribution",
-                        "Mammography Calcification Distribution",
+                        "MammoCalcificationDistributionVS",
+                        "Mammography Calcification Distribution ValueSet",
                         "MG Calc./DistributionValueSet",
-                        "Mammography calcification distribution code system.",
+                        "ValueSet defining Mammography calcification distribution values.",
                         Group_MGCodes,
                         ResourcesMaker.Self.MGCalcificationDistributionCS.Value()
                     )
@@ -108,7 +108,7 @@ namespace BreastRadiology.XUnitTests
                     ResourcesMaker.Self.fc?.Mark(outputPath);
                 }
 
-                SDefEditor e = ResourcesMaker.Self.CreateEditorXX("BreastRadMammoCalcificationDistribution",
+                SDefEditor e = ResourcesMaker.Self.CreateEditor("MGCalcificationDistribution",
                         "Mammography Calcification Distribution",
                         "MG Calc./Distribution",
                         ObservationUrl,

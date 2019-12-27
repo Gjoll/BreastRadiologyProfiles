@@ -16,7 +16,7 @@ namespace BreastRadiology.XUnitTests
         StringTaskVar MRIMass = new StringTaskVar(
             (out String s) =>
             {
-                SDefEditor e = ResourcesMaker.Self.CreateEditorXX("BreastRadMRIMass",
+                SDefEditor e = ResourcesMaker.Self.CreateEditor("MRIMass",
                         "MRI Mass",
                         "MRI Mass",
                         ObservationUrl,
@@ -50,8 +50,8 @@ namespace BreastRadiology.XUnitTests
                     new ProfileTargetSlice(ResourcesMaker.Self.CommonObservedSize.Value(), 0, "1"),
                     new ProfileTargetSlice(ResourcesMaker.Self.CommonObservedCount.Value(), 0, "1"),
                     //$new ProfileTargetSlice(ResourcesMaker.Self.CommonMassShape.Value(), 0, "1"),
-                    new ProfileTargetSlice(ResourcesMaker.Self.CommonOrientation.Value(), 0, "1"),
-                    new ProfileTargetSlice(ResourcesMaker.Self.MRIMassMargin.Value(), 0, "*"),
+                    new ProfileTargetSlice(ResourcesMaker.Self.Orientation.Value(), 0, "1"),
+                    new ProfileTargetSlice(ResourcesMaker.Self.MRIMargin.Value(), 0, "*"),
                     //$new ProfileTargetSlice(ResourcesMaker.Self.MRIMassDensity.Value(), 0, "1"),
                     new ProfileTargetSlice(ResourcesMaker.Self.CommonObservedChangeInState.Value(), 0, "*"),
                         //$new ProfileTargetSlice(ResourcesMaker.Self.MRIAssociatedFeatures.Value(), 0, "1", false),

@@ -39,19 +39,19 @@
     },
     {
       "url": "http://www.fragment.com/maplink",
-      "valueString": "target|False|http://hl7.org/fhir/us/breast-radiology/StructureDefinition/BreastRadMammoFinding"
+      "valueString": "target|False|http://hl7.org/fhir/us/breast-radiology/StructureDefinition/MGFinding"
     },
     {
       "url": "http://www.fragment.com/maplink",
-      "valueString": "target|False|http://hl7.org/fhir/us/breast-radiology/StructureDefinition/BreastRadMRIFinding"
+      "valueString": "target|False|http://hl7.org/fhir/us/breast-radiology/StructureDefinition/MRIFinding"
     },
     {
       "url": "http://www.fragment.com/maplink",
-      "valueString": "target|False|http://hl7.org/fhir/us/breast-radiology/StructureDefinition/BreastRadNMFinding"
+      "valueString": "target|False|http://hl7.org/fhir/us/breast-radiology/StructureDefinition/NMFinding"
     },
     {
       "url": "http://www.fragment.com/maplink",
-      "valueString": "target|False|http://hl7.org/fhir/us/breast-radiology/StructureDefinition/BreastRadUltraSoundFinding"
+      "valueString": "target|False|http://hl7.org/fhir/us/breast-radiology/StructureDefinition/USFinding"
     }
   ],
   "url": "http://hl7.org/fhir/us/breast-radiology/StructureDefinition/BreastRadSectionFindingsLeftBreast",
@@ -139,9 +139,9 @@
         ]
       },
       {
-        "id": "Observation.hasMember:breastRadMammoFinding",
+        "id": "Observation.hasMember:mGFinding",
         "path": "Observation.hasMember",
-        "sliceName": "breastRadMammoFinding",
+        "sliceName": "mGFinding",
         "min": 0,
         "max": "*",
         "base": {
@@ -153,15 +153,15 @@
           {
             "code": "Reference",
             "targetProfile": [
-              "http://hl7.org/fhir/us/breast-radiology/StructureDefinition/BreastRadMammoFinding"
+              "http://hl7.org/fhir/us/breast-radiology/StructureDefinition/MGFinding"
             ]
           }
         ]
       },
       {
-        "id": "Observation.hasMember:breastRadMRIFinding",
+        "id": "Observation.hasMember:mRIFinding",
         "path": "Observation.hasMember",
-        "sliceName": "breastRadMRIFinding",
+        "sliceName": "mRIFinding",
         "min": 0,
         "max": "*",
         "base": {
@@ -173,15 +173,15 @@
           {
             "code": "Reference",
             "targetProfile": [
-              "http://hl7.org/fhir/us/breast-radiology/StructureDefinition/BreastRadMRIFinding"
+              "http://hl7.org/fhir/us/breast-radiology/StructureDefinition/MRIFinding"
             ]
           }
         ]
       },
       {
-        "id": "Observation.hasMember:breastRadNMFinding",
+        "id": "Observation.hasMember:nMFinding",
         "path": "Observation.hasMember",
-        "sliceName": "breastRadNMFinding",
+        "sliceName": "nMFinding",
         "min": 0,
         "max": "*",
         "base": {
@@ -193,15 +193,15 @@
           {
             "code": "Reference",
             "targetProfile": [
-              "http://hl7.org/fhir/us/breast-radiology/StructureDefinition/BreastRadNMFinding"
+              "http://hl7.org/fhir/us/breast-radiology/StructureDefinition/NMFinding"
             ]
           }
         ]
       },
       {
-        "id": "Observation.hasMember:breastRadUltraSoundFinding",
+        "id": "Observation.hasMember:uSFinding",
         "path": "Observation.hasMember",
-        "sliceName": "breastRadUltraSoundFinding",
+        "sliceName": "uSFinding",
         "min": 0,
         "max": "*",
         "base": {
@@ -213,7 +213,7 @@
           {
             "code": "Reference",
             "targetProfile": [
-              "http://hl7.org/fhir/us/breast-radiology/StructureDefinition/BreastRadUltraSoundFinding"
+              "http://hl7.org/fhir/us/breast-radiology/StructureDefinition/USFinding"
             ]
           }
         ]

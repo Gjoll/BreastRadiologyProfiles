@@ -16,8 +16,8 @@ namespace BreastRadiology.XUnitTests
         CSTaskVar MGCalcificationTypeCS = new CSTaskVar(
              () =>
                  ResourcesMaker.Self.CreateCodeSystem(
-                     "MammoCalcificationType",
-                     "Mammography Calcification Type",
+                     "MammoCalcificationTypeCS",
+                     "Mammography Calcification Type CodeSystem",
                      "MG Calc. Type/CodeSystem",
                      "Mammography calcification type code system.",
                      Group_MGCodes,
@@ -191,10 +191,10 @@ namespace BreastRadiology.XUnitTests
         VSTaskVar MGCalcificationTypeVS = new VSTaskVar(
             () =>
                 ResourcesMaker.Self.CreateValueSet(
-                    "MammoCalcificationType",
-                    "Mammography Calcification Type",
+                    "MammoCalcificationTypeVS",
+                    "Mammography Calcification Type ValueSet",
                     "MG Calc. TypeValueSet",
-                    "Mammography calcification type code system.",
+                    "ValueSet defining Mammography calcification codes.",
                     Group_MGCodes,
                     ResourcesMaker.Self.MGCalcificationTypeCS.Value()
                     )
@@ -216,7 +216,7 @@ namespace BreastRadiology.XUnitTests
                     ResourcesMaker.Self.fc?.Mark(outputPath);
                 }
 
-                SDefEditor e = ResourcesMaker.Self.CreateEditorXX("BreastRadMammoCalcificationType",
+                SDefEditor e = ResourcesMaker.Self.CreateEditor("MGCalcificationType",
                     "Mammography Calcification Type",
                     "MG Calc. Type",
                     ObservationUrl,

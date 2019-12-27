@@ -1,0 +1,38 @@
+{
+  "resourceType": "CodeSystem",
+  "id": "MGAbnormalityDensityCS",
+  "extension": [
+    {
+      "url": "http://www.fragment.com/fragment",
+      "valueUrl": "http://hl7.org/fhir/us/breast-radiology/StructureDefinition/HeaderFragment"
+    },
+    {
+      "url": "http://www.fragment.com/Group",
+      "valueString": "MGCodes"
+    }
+  ],
+  "url": "http://hl7.org/fhir/us/breast-radiology/CodeSystem/MGAbnormalityDensityCS",
+  "name": "MGAbnormalityDensityCS",
+  "title": "Mammography Density Refinement CodeSystem",
+  "description": "Mammography density abnormality types code system.",
+  "caseSensitive": true,
+  "content": "complete",
+  "count": 3,
+  "concept": [
+    {
+      "code": "FocalAsymmetrical",
+      "display": "Focal Asymmetrical",
+      "definition": "[PR]"
+    },
+    {
+      "code": "Nodular",
+      "display": "Nodular",
+      "definition": "[PR]"
+    },
+    {
+      "code": "Tubular",
+      "display": "Tubular",
+      "definition": "[PR]"
+    }
+  ]
+}

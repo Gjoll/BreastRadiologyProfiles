@@ -17,7 +17,7 @@ namespace BreastRadiology.XUnitTests
         StringTaskVar CommonObservedCount = new StringTaskVar(
             (out String s) =>
             {
-                SDefEditor e = ResourcesMaker.Self.CreateEditorXX("CommonCount",
+                SDefEditor e = ResourcesMaker.Self.CreateEditor("CommonCount",
                         "Count",
                         "Count",
                         ObservationUrl,

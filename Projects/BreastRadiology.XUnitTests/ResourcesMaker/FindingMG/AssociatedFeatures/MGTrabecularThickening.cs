@@ -16,7 +16,7 @@ namespace BreastRadiology.XUnitTests
         StringTaskVar MGTrabecularThickening = new StringTaskVar(
             (out String s) =>
             {
-                SDefEditor e = ResourcesMaker.Self.CreateEditorXX("BreastRadMammoTrabecularThickening",
+                SDefEditor e = ResourcesMaker.Self.CreateEditor("MGTrabecularThickening",
                     "Mammography Trabecular Thickening",
                     "MG Trabecular/Thickening",
                     ObservationUrl,

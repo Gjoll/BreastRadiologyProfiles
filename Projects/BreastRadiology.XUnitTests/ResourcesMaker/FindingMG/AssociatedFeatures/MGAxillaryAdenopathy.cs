@@ -17,7 +17,7 @@ namespace BreastRadiology.XUnitTests
             (out String s) =>
             {
 
-                SDefEditor e = ResourcesMaker.Self.CreateEditorXX("BreastRadMammoAxillaryAdenopathy",
+                SDefEditor e = ResourcesMaker.Self.CreateEditor("MGAxillaryAdenopathy",
                     "Mammography Axillary Adenopathy",
                     "MG Axillary/Adenopathy",
                     ObservationUrl,

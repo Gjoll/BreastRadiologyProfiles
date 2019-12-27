@@ -3,7 +3,7 @@
   "extension": [
     {
       "url": "http://www.fragment.com/mapname",
-      "valueString": "Mg Common Targets Fragment"
+      "valueString": "MG Common Targets Fragment"
     },
     {
       "url": "http://www.fragment.com/Group",
@@ -51,12 +51,12 @@
     },
     {
       "url": "http://www.fragment.com/maplink",
-      "valueString": "target|False|http://hl7.org/fhir/us/breast-radiology/StructureDefinition/CommonOrientation"
+      "valueString": "target|False|http://hl7.org/fhir/us/breast-radiology/StructureDefinition/Orientation"
     }
   ],
   "url": "http://hl7.org/fhir/us/breast-radiology/StructureDefinition/MgCommonTargetsFragment",
   "name": "MgCommonTargetsFragment",
-  "title": "Mg Common Targets Fragment",
+  "title": "MG Common Targets Fragment",
   "status": "draft",
   "description": "Mammography Common Targets Fragment\n\nMammography Common Targets Fragment",
   "fhirVersion": "4.0.0",
@@ -237,9 +237,9 @@
         ]
       },
       {
-        "id": "Observation.hasMember:commonOrientation",
+        "id": "Observation.hasMember:orientation",
         "path": "Observation.hasMember",
-        "sliceName": "commonOrientation",
+        "sliceName": "orientation",
         "min": 0,
         "max": "1",
         "base": {
@@ -251,7 +251,7 @@
           {
             "code": "Reference",
             "targetProfile": [
-              "http://hl7.org/fhir/us/breast-radiology/StructureDefinition/CommonOrientation"
+              "http://hl7.org/fhir/us/breast-radiology/StructureDefinition/Orientation"
             ]
           }
         ]

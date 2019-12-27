@@ -107,7 +107,7 @@ namespace BreastRadiology.XUnitTests
             }
         }
 
-        SDefEditor CreateEditorXX(String name,
+        SDefEditor CreateEditor(String name,
             String title,
             String mapName,
             String baseDefinition,
@@ -145,7 +145,7 @@ namespace BreastRadiology.XUnitTests
             String mapName,
             String baseDefinition)
         {
-            SDefEditor retVal = this.CreateEditorXX(name,
+            SDefEditor retVal = this.CreateEditor(name,
                 title,
                 mapName,
                 baseDefinition,
@@ -214,12 +214,14 @@ namespace BreastRadiology.XUnitTests
             String groupPath,
             IEnumerable<ConceptDef> codes)
         {
+            Debug.Assert(name.EndsWith("CS"));
+
             CodeSystem cs = new CodeSystem
             {
-                Id = $"{name}CS",
-                Url = $"http://hl7.org/fhir/us/breast-radiology/CodeSystem/{name}CS",
-                Name = $"{name}CS",
-                Title = $"{title} CodeSystem",
+                Id = name,
+                Url = $"http://hl7.org/fhir/us/breast-radiology/CodeSystem/{name}",
+                Name = name,
+                Title = $"{title}",
                 Description = new Markdown(description),
                 CaseSensitive = true,
                 Content = CodeSystem.CodeSystemContentMode.Complete,
@@ -232,7 +234,7 @@ namespace BreastRadiology.XUnitTests
             cs.Extension.Add(new Extension
             {
                 Url = Global.GroupExtensionUrl,
-                Value = new FhirString($"{groupPath}CS")
+                Value = new FhirString(groupPath)
             });
 
             foreach (ConceptDef code in codes)
@@ -245,7 +247,7 @@ namespace BreastRadiology.XUnitTests
                 });
             }
 
-            this.resources.Add(Path.Combine(this.resourceDir, $"CodeSystem-{name}CS.json"), cs);
+            this.resources.Add(Path.Combine(this.resourceDir, $"CodeSystem-{name}.json"), cs);
             return cs;
         }
 
@@ -259,11 +261,12 @@ namespace BreastRadiology.XUnitTests
             String groupPath,
             CodeSystem cs)
         {
+            Debug.Assert(name.EndsWith("VS"));
             ValueSet vs = new ValueSet
             {
-                Id = $"{name}VS",
-                Url = $"http://hl7.org/fhir/us/breast-radiology/ValueSet/{name}VS",
-                Name = $"{name}VS",
+                Id = name,
+                Url = $"http://hl7.org/fhir/us/breast-radiology/ValueSet/{name}",
+                Name = name,
                 Title = $"{title} ValueSet",
                 Description = new Markdown(description)
             };
@@ -274,7 +277,7 @@ namespace BreastRadiology.XUnitTests
             vs.Extension.Add(new Extension
             {
                 Url = Global.GroupExtensionUrl,
-                Value = new FhirString($"{groupPath}VS")
+                Value = new FhirString(groupPath)
             });
 
 
@@ -295,7 +298,7 @@ namespace BreastRadiology.XUnitTests
                 });
             }
 
-            this.resources.Add(Path.Combine(this.resourceDir, $"ValueSet-{name}VS.json"), vs);
+            this.resources.Add(Path.Combine(this.resourceDir, $"ValueSet-{name}.json"), vs);
             vs.AddExtension(Global.ResourceMapNameUrl, new FhirString(mapName));
             return vs;
         }

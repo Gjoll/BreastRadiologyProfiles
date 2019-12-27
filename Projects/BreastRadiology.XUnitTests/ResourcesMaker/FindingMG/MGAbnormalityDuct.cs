@@ -16,10 +16,10 @@ namespace BreastRadiology.XUnitTests
         CSTaskVar MGAbnormalityDuctCS = new CSTaskVar(
              () =>
                  ResourcesMaker.Self.CreateCodeSystem(
-                        "BreastRadMammoAbnormalityDuct",
-                        "Mammography Duct Refinement",
+                        "MGAbnormalityDuctCS",
+                        "Mammography Duct Refinement CodeSystem",
                          "MG Duct Refinement/CodeSystem",
-                        "Codes defining types of mammography duct abnormalities.",
+                        "Mammography duct abnormality types code system.",
                          Group_MGCodes,
                         new ConceptDef[]
                          {
@@ -50,10 +50,10 @@ namespace BreastRadiology.XUnitTests
         VSTaskVar MGAbnormalityDuctVS = new VSTaskVar(
             () =>
                 ResourcesMaker.Self.CreateValueSet(
-                   "BreastRadMammoAbnormalityDuct",
-                   "Mammography Duct",
+                   "MGAbnormalityDuctVS",
+                   "Mammography Duct ValueSet",
                     "MG Duct/ValueSet",
-                   "Codes defining types of mammography duct node abnormalities.",
+                   "ValueSet defining types of mammography duct node abnormalities.",
                     Group_MGCodes,
                     ResourcesMaker.Self.MGAbnormalityDuctCS.Value()
                     )
@@ -64,7 +64,7 @@ namespace BreastRadiology.XUnitTests
             (out String s) =>
             {
                 ValueSet binding = ResourcesMaker.Self.MGAbnormalityDuctVS.Value();
-                SDefEditor e = ResourcesMaker.Self.CreateEditorXX("BreastRadMammoAbnormalityDuct",
+                SDefEditor e = ResourcesMaker.Self.CreateEditor("MGAbnormalityDuct",
                         "Mammography Duct",
                         "MG Duct",
                         ObservationUrl,

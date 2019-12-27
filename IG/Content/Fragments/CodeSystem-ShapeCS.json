@@ -8,13 +8,13 @@
     },
     {
       "url": "http://www.fragment.com/Group",
-      "valueString": "CommonCodesCS"
+      "valueString": "CommonCodes"
     }
   ],
   "url": "http://hl7.org/fhir/us/breast-radiology/CodeSystem/ShapeCS",
   "name": "ShapeCS",
   "title": "Shape CodeSystem",
-  "description": "Codes defining shape values.",
+  "description": "Shape values code system.",
   "caseSensitive": true,
   "content": "complete",
   "count": 5,

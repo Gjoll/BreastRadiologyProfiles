@@ -8,7 +8,7 @@
     },
     {
       "url": "http://www.fragment.com/Group",
-      "valueString": "USCodesVS"
+      "valueString": "USCodes"
     },
     {
       "url": "http://www.fragment.com/mapname",
@@ -26,7 +26,7 @@
   "url": "http://hl7.org/fhir/us/breast-radiology/ValueSet/BreastRadUSTissueCompositionVS",
   "version": "0.0.2",
   "name": "BreastRadUSTissueCompositionVS",
-  "title": "US Tissue Composition ValueSet",
+  "title": "US Tissue Composition ValueSet ValueSet",
   "status": "draft",
   "date": "2019-11-01",
   "publisher": "Hl7-Clinical Interoperability Council",
@@ -40,7 +40,7 @@
       ]
     }
   ],
-  "description": "Ultra-sound breast tissue composition code system.",
+  "description": "ValueSet defining Ultra-sound breast tissue composition codes.",
   "compose": {
     "include": [
       {

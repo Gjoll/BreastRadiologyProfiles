@@ -18,10 +18,10 @@ namespace BreastRadiology.XUnitTests
             () =>
             {
                 ValueSet binding = ResourcesMaker.Self.CreateValueSet(
-                    "BreastRadUSMargin",
-                    "US Margin",
-                    "US Margin CodeSystem",
-                    "Ultra-sound mass margin code system.",
+                    "BreastRadUSMarginVS",
+                    "US Margin ValueSet",
+                    "US Margin ValueSet",
+                    "ValueSet defining Ultra-sound mass margin codes.",
                     Group_USCodes,
                     ResourcesMaker.Self.CommonMarginCS.Value());
                 binding
@@ -47,7 +47,7 @@ namespace BreastRadiology.XUnitTests
                     ResourcesMaker.Self.fc?.Mark(outputPath);
                 }
 
-                SDefEditor e = ResourcesMaker.Self.CreateEditorXX("BreastRadUSMargin",
+                SDefEditor e = ResourcesMaker.Self.CreateEditor("BreastRadUSMargin",
                         "US Margin",
                         "US Margin",
                         ObservationUrl,

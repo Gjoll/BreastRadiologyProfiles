@@ -16,7 +16,7 @@ namespace BreastRadiology.XUnitTests
         StringTaskVar MGAssociatedFeatures = new StringTaskVar(
             (out String s) =>
             {
-                SDefEditor e = ResourcesMaker.Self.CreateEditorXX("BreastRadMammoAssociatedFeatures",
+                SDefEditor e = ResourcesMaker.Self.CreateEditor("MGAssociatedFeatures",
                         "Mammography Associated Features",
                         "MG Associated/Features",
                         ObservationUrl,

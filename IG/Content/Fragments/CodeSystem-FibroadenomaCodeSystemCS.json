@@ -1,0 +1,33 @@
+{
+  "resourceType": "CodeSystem",
+  "id": "FibroadenomaCodeSystemCS",
+  "extension": [
+    {
+      "url": "http://www.fragment.com/fragment",
+      "valueUrl": "http://hl7.org/fhir/us/breast-radiology/StructureDefinition/HeaderFragment"
+    },
+    {
+      "url": "http://www.fragment.com/Group",
+      "valueString": "CommonCodes"
+    }
+  ],
+  "url": "http://hl7.org/fhir/us/breast-radiology/CodeSystem/FibroadenomaCodeSystemCS",
+  "name": "FibroadenomaCodeSystemCS",
+  "title": "Fibroadenoma CodeSystem",
+  "description": "Fibroadenoma values code system.",
+  "caseSensitive": true,
+  "content": "complete",
+  "count": 2,
+  "concept": [
+    {
+      "code": "Normal",
+      "display": "Normal",
+      "definition": "[PR]"
+    },
+    {
+      "code": "Degenerated",
+      "display": "Degenerated",
+      "definition": "[PR]"
+    }
+  ]
+}

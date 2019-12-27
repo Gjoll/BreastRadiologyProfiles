@@ -16,7 +16,7 @@ namespace BreastRadiology.XUnitTests
         StringTaskVar USCyst = new StringTaskVar(
             (out String s) =>
             {
-                SDefEditor e = ResourcesMaker.Self.CreateEditorXX("BreastRadUltraSoundCyst",
+                SDefEditor e = ResourcesMaker.Self.CreateEditor("USCyst",
                         "UltraSound Cyst",
                         "US Cyst",
                         ObservationUrl,
@@ -44,7 +44,7 @@ namespace BreastRadiology.XUnitTests
                     new ProfileTargetSlice(ResourcesMaker.Self.CommonObservedCount.Value(), 0, "1"),
                     new ProfileTargetSlice(ResourcesMaker.Self.CommonObservedChangeInState.Value(), 0, "*"),
                     new ProfileTargetSlice(ResourcesMaker.Self.CommonObservedSize.Value(), 0, "1"),
-                    new ProfileTargetSlice(ResourcesMaker.Self.CommonOrientation.Value(), 0, "1"),
+                    new ProfileTargetSlice(ResourcesMaker.Self.Orientation.Value(), 0, "1"),
 
                         //new ProfileTargetSlice(ResourcesMaker.Self.MGMassMargin.Value(), 0, "*"),
                         //new ProfileTargetSlice(ResourcesMaker.Self.MGMassDensity.Value(), 0, "1"),

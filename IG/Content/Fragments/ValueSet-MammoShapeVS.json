@@ -8,7 +8,7 @@
     },
     {
       "url": "http://www.fragment.com/Group",
-      "valueString": "MGCodesVS"
+      "valueString": "MGCodes"
     },
     {
       "url": "http://www.fragment.com/mapname",
@@ -17,8 +17,8 @@
   ],
   "url": "http://hl7.org/fhir/us/breast-radiology/ValueSet/MammoShapeVS",
   "name": "MammoShapeVS",
-  "title": "Shape ValueSet",
-  "description": "Codes defining shape values.",
+  "title": "Shape ValueSet ValueSet",
+  "description": "ValueSet defining shape values.",
   "compose": {
     "include": [
       {

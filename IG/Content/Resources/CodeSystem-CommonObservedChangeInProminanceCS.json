@@ -8,7 +8,7 @@
     },
     {
       "url": "http://www.fragment.com/Group",
-      "valueString": "CommonCodesCS"
+      "valueString": "CommonCodes"
     },
     {
       "url": "http://www.fragment.com/mapname",
@@ -36,7 +36,7 @@
       ]
     }
   ],
-  "description": "Codes defining types of observed changes in Prominance of an abnormality over time.",
+  "description": "Observed changes in Prominance of an abnormality over time code system.",
   "caseSensitive": true,
   "content": "complete",
   "count": 2,

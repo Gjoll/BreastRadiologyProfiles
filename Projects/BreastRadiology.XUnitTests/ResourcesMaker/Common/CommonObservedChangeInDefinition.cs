@@ -18,10 +18,10 @@ namespace BreastRadiology.XUnitTests
         CSTaskVar CommonObservedChangeInDefinitionCS = new CSTaskVar(
              () =>
                  ResourcesMaker.Self.CreateCodeSystem(
-                     "CommonObservedChangeInDefinition",
-                     "Observed Changes",
+                     "CommonObservedChangeInDefinitionCS",
+                     "Observed Changes  CodeSystem",
                      "Observed/Change/CodeSystem",
-                     "Codes defining types of observed changes in definition of an abnormality over time.",
+                     "Observed changes in definition of an abnormality over time code system.",
                      Group_CommonCodes,
                      new ConceptDef[]
                      {
@@ -41,10 +41,10 @@ namespace BreastRadiology.XUnitTests
         VSTaskVar CommonObservedChangeInDefinitionVS = new VSTaskVar(
             () =>
                 ResourcesMaker.Self.CreateValueSet(
-                    "CommonObservedChangeInDefinition",
-                    "Observed Definition Changes",
+                    "CommonObservedChangeInDefinitionVS",
+                    "Observed Definition Changes ValueSet",
                     "Observed/Change/ValueSet",
-                    "Codes defining types of observed changes in definition of an abnormality over time.",
+                    "ValueSet defining types of observed changes in definition of an abnormality over time.",
                     Group_CommonCodes,
                     ResourcesMaker.Self.CommonObservedChangeInDefinitionCS.Value())
             );
@@ -64,7 +64,7 @@ namespace BreastRadiology.XUnitTests
                     ResourcesMaker.Self.fc?.Mark(outputPath);
                 }
 
-                SDefEditor e = ResourcesMaker.Self.CreateEditorXX("CommonObservedChangeInDefinition",
+                SDefEditor e = ResourcesMaker.Self.CreateEditor("CommonObservedChangeInDefinition",
                         "Observed Change in Definition",
                         "Definition Change",
                         ObservationUrl,

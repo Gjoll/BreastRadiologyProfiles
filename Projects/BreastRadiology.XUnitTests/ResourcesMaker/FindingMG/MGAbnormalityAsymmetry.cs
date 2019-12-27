@@ -18,10 +18,10 @@ namespace BreastRadiology.XUnitTests
         CSTaskVar MGAbnormalityAsymmetryRefinementCS = new CSTaskVar(
              () =>
                  ResourcesMaker.Self.CreateCodeSystem(
-                    "BreastRadMammoAbnormalityAsymmetryRefinement",
-                    "Mammography Asymmetry Refinement",
+                    "MGAbnormalityAsymmetryRefinementCS",
+                    "Mammography Asymmetry Refinement CodeSystem",
                      "MG Asymmetry Refinement/CodeSystem",
-                    "Codes defining types of mammography asymmetry abnormalities.",
+                    "Mammography asymmetry abnormality type code system.",
                      Group_MGCodes,
                     new ConceptDef[]
                      {
@@ -82,10 +82,10 @@ namespace BreastRadiology.XUnitTests
         VSTaskVar MGAbnormalityAsymmetriesVS = new VSTaskVar(
             () =>
                 ResourcesMaker.Self.CreateValueSet(
-                   "BreastRadMammoAbnormalityAsymmetries",
-                   "Mammography AsymmetryAbnormalities",
+                   "MGAbnormalityAsymmetriesVS",
+                   "Mammography AsymmetryAbnormalities ValueSet",
                     "MG Asymmetry/ValueSet",
-                   "Codes defining types of mammography asymmetry abnormalities.",
+                   "ValueSet defining types of mammography asymmetry abnormalities.",
                     Group_MGCodes,
                     ResourcesMaker.Self.MGAbnormalityAsymmetryRefinementCS.Value()
                     )
@@ -107,7 +107,7 @@ namespace BreastRadiology.XUnitTests
                     ResourcesMaker.Self.fc?.Mark(outputPath);
                 }
 
-                SDefEditor e = ResourcesMaker.Self.CreateEditorXX("BreastRadMammoAbnormalityAsymmetry",
+                SDefEditor e = ResourcesMaker.Self.CreateEditor("MGAbnormalityAsymmetry",
                         "Mammography Asymmetry",
                         "MG Asymmetry",
                         ObservationUrl,

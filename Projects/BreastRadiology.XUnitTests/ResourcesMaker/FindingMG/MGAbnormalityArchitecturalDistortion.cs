@@ -16,7 +16,7 @@ namespace BreastRadiology.XUnitTests
         StringTaskVar MGAbnormalityArchitecturalDistortion = new StringTaskVar(
             (out String s) =>
             {
-                SDefEditor e = ResourcesMaker.Self.CreateEditorXX("BreastRadMammoAbnormalityArchitecturalDistortion",
+                SDefEditor e = ResourcesMaker.Self.CreateEditor("MGAbnormalityArchitecturalDistortion",
                         "Mammography Architectural Distortion",
                         "MG Arch. Distortion",
                         ObservationUrl,

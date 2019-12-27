@@ -17,10 +17,10 @@ namespace BreastRadiology.XUnitTests
        CSTaskVar CommonShapeCS = new CSTaskVar(
             () =>
                 ResourcesMaker.Self.CreateCodeSystem(
-                    "Shape",
-                    "Shape",
+                    "ShapeCS",
+                    "Shape CodeSystem",
                     "Shape/CodeSystem",
-                    "Codes defining shape values.",
+                    "Shape values code system.",
                     Group_CommonCodes,
                     new ConceptDef[]
                     {

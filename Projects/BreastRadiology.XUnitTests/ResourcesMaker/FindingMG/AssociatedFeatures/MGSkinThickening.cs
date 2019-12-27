@@ -16,7 +16,7 @@ namespace BreastRadiology.XUnitTests
         StringTaskVar MGSkinThickening = new StringTaskVar(
             (out String s) =>
             {
-                SDefEditor e = ResourcesMaker.Self.CreateEditorXX("BreastRadMammoSkinThickening",
+                SDefEditor e = ResourcesMaker.Self.CreateEditor("MGSkinThickening",
                     "Mammography Skin Thickening",
                     "MG Skin Thickening",
                     ObservationUrl,

@@ -18,10 +18,10 @@ namespace BreastRadiology.XUnitTests
             () =>
             {
                 ValueSet binding = ResourcesMaker.Self.CreateValueSet(
-                        "UltraSoundShape",
-                        "Shape",
+                        "UltraSoundShapeVS",
+                        "ShapeValueSet",
                         "Shape/ValueSet",
-                        "Codes defining shape values.",
+                        "ValueSet defining shape values.",
                         Group_USCodes,
                         ResourcesMaker.Self.CommonShapeCS.Value()
                     );
@@ -45,7 +45,7 @@ namespace BreastRadiology.XUnitTests
                     ResourcesMaker.Self.fc?.Mark(outputPath);
                 }
 
-                SDefEditor e = ResourcesMaker.Self.CreateEditorXX("UltraSoundShape",
+                SDefEditor e = ResourcesMaker.Self.CreateEditor("UltraSoundShape",
                         "Shape",
                         "Shape",
                         ObservationUrl,

@@ -8,17 +8,17 @@
     },
     {
       "url": "http://www.fragment.com/Group",
-      "valueString": "MGCodesVS"
+      "valueString": "MGCodes"
     },
     {
       "url": "http://www.fragment.com/mapname",
-      "valueString": "Mg Calc. TypeValueSet"
+      "valueString": "MG Calc. TypeValueSet"
     }
   ],
   "url": "http://hl7.org/fhir/us/breast-radiology/ValueSet/MammoCalcificationTypeVS",
   "name": "MammoCalcificationTypeVS",
-  "title": "Mammography Calcification Type ValueSet",
-  "description": "Mammography calcification type code system.",
+  "title": "Mammography Calcification Type ValueSet ValueSet",
+  "description": "ValueSet defining Mammography calcification codes.",
   "compose": {
     "include": [
       {

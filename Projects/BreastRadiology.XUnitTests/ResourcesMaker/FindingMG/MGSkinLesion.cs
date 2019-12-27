@@ -16,7 +16,7 @@ namespace BreastRadiology.XUnitTests
         StringTaskVar MGSkinLesion = new StringTaskVar(
             (out String s) =>
             {
-                SDefEditor e = ResourcesMaker.Self.CreateEditorXX("BreastRadMammoSkinLesion",
+                SDefEditor e = ResourcesMaker.Self.CreateEditor("MGSkinLesion",
                     "Mammography Skin Lesion",
                     "MG Skin Lesion",
                     ObservationUrl,

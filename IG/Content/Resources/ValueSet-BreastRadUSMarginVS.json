@@ -8,11 +8,11 @@
     },
     {
       "url": "http://www.fragment.com/Group",
-      "valueString": "USCodesVS"
+      "valueString": "USCodes"
     },
     {
       "url": "http://www.fragment.com/mapname",
-      "valueString": "US Margin CodeSystem"
+      "valueString": "US Margin ValueSet"
     },
     {
       "url": "http://www.fragment.com/mapname",
@@ -26,7 +26,7 @@
   "url": "http://hl7.org/fhir/us/breast-radiology/ValueSet/BreastRadUSMarginVS",
   "version": "0.0.2",
   "name": "BreastRadUSMarginVS",
-  "title": "US Margin ValueSet",
+  "title": "US Margin ValueSet ValueSet",
   "status": "draft",
   "date": "2019-11-01",
   "publisher": "Hl7-Clinical Interoperability Council",
@@ -40,7 +40,7 @@
       ]
     }
   ],
-  "description": "Ultra-sound mass margin code system.",
+  "description": "ValueSet defining Ultra-sound mass margin codes.",
   "compose": {
     "include": [
       {

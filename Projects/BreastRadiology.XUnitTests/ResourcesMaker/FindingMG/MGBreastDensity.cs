@@ -16,10 +16,10 @@ namespace BreastRadiology.XUnitTests
         CSTaskVar MGBreastDensityCS = new CSTaskVar(
              () =>
                  ResourcesMaker.Self.CreateCodeSystem(
-                     "BreastRadMammoBreastDensity",
-                     "Mammography Breast Density",
+                     "MGBreastDensityCS",
+                     "Mammography Breast Density CodeSystem",
                      "MG Breast Density/CodeSystem",
-                     "Codes for mammography breast density values.",
+                     "Mammography breast density values code system.",
                      Group_MGCodes,
                      new ConceptDef[]
                      {
@@ -84,10 +84,10 @@ namespace BreastRadiology.XUnitTests
         VSTaskVar MGBreastDensityVS = new VSTaskVar(
             () =>
                 ResourcesMaker.Self.CreateValueSet(
-                    "BreastRadMammoBreastDensity",
-                    "Mammography Breast Density",
+                    "MGBreastDensityVS",
+                    "Mammography Breast Density ValueSet",
                     "MG Breast DensityValueSet",
-                    "Codes for mammography breast density values.",
+                    "ValueSet for mammography breast density values.",
                     Group_MGCodes,
                     ResourcesMaker.Self.MGBreastDensityCS.Value()
                     )
@@ -109,7 +109,7 @@ namespace BreastRadiology.XUnitTests
                     ResourcesMaker.Self.fc?.Mark(outputPath);
                 }
 
-                SDefEditor e = ResourcesMaker.Self.CreateEditorXX("BreastRadMammoBreastDensity",
+                SDefEditor e = ResourcesMaker.Self.CreateEditor("MGBreastDensity",
                         "Mammography Breast Density",
                         "MG Breast Density",
                         ObservationUrl,

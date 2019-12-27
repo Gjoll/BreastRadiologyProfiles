@@ -17,7 +17,7 @@ namespace BreastRadiology.XUnitTests
             (out String s) =>
             {
                 //$ Fix me. Incorrect method!!!
-                SDefEditor e = ResourcesMaker.Self.CreateEditorXX("BreastRadUltraSoundFinding",
+                SDefEditor e = ResourcesMaker.Self.CreateEditor("USFinding",
                         "UltraSound Finding",
                         "US Finding",
                         ObservationUrl,

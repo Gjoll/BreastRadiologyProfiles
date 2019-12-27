@@ -17,8 +17,8 @@ namespace BreastRadiology.XUnitTests
         CSTaskVar BreastLocationRegionCS = new CSTaskVar(
              () =>
                  ResourcesMaker.Self.CreateCodeSystem(
-                         "BreastLocationRegion",
-                         "Breast Location Region",
+                         "BreastLocationRegionCS",
+                         "Breast Location Region CodeSystem",
                          "Breast/Location/Region/CodeSystem",
                          "Breast body location region code system.",
                          Group_CommonCodes,
@@ -85,8 +85,8 @@ namespace BreastRadiology.XUnitTests
         CSTaskVar BreastLocationQuadrantCS = new CSTaskVar(
              () =>
                  ResourcesMaker.Self.CreateCodeSystem(
-                         "BreastLocationQuadrant",
-                         "Breast Location Quadrant",
+                         "BreastLocationQuadrantCS",
+                         "Breast Location Quadrant CodeSystem",
                          "Breast/Location/Quadrant/CodeSystem",
                          "Breast body location quadrant code system.",
                          Group_CommonCodes,
@@ -121,10 +121,10 @@ namespace BreastRadiology.XUnitTests
         CSTaskVar BreastLocationClockCS = new CSTaskVar(
              () =>
                  ResourcesMaker.Self.CreateCodeSystem(
-                         "BreastLocationClock",
-                         "Breast Location Clock",
+                         "BreastLocationClockCS",
+                         "Breast Location Clock CodeSystem",
                          "Breast/Location/Clock/CodeSystem",
-                         "Codes defining breast body location angles expressed in clock-face units.",
+                         "Breast body location angles (expressed in clock-face units) code system.",
                          Group_CommonCodes,
                          new ConceptDef[]
                          {
@@ -254,8 +254,8 @@ namespace BreastRadiology.XUnitTests
         CSTaskVar BreastLocationDepthCS = new CSTaskVar(
              () =>
                  ResourcesMaker.Self.CreateCodeSystem(
-                         "BreastLocationDepth",
-                         "Breast Location Depth",
+                         "BreastLocationDepthCS",
+                         "Breast Location Depth CodeSystem",
                          "Breast/Location/Depth/CodeSystem",
                          "Breast body location depth code system.",
                          Group_CommonCodes,
@@ -282,10 +282,10 @@ namespace BreastRadiology.XUnitTests
         VSTaskVar BreastLocationRegionVS = new VSTaskVar(
             () =>
                 ResourcesMaker.Self.CreateValueSet(
-                        "BreastLocationRegion",
-                        "Breast Location Region",
+                        "BreastLocationRegionVS",
+                        "Breast Location Region ValueSet",
                         "Breast/Location/RegionValueSet",
-                        "Breast body location region code system.",
+                        "ValueSet for Breast body location region.",
                         Group_CommonCodes,
                         ResourcesMaker.Self.BreastLocationRegionCS.Value()
                 )
@@ -294,10 +294,10 @@ namespace BreastRadiology.XUnitTests
         VSTaskVar BreastLocationClockVS = new VSTaskVar(
             () =>
                 ResourcesMaker.Self.CreateValueSet(
-                        "BreastLocationClock",
-                        "Breast Location Clock",
+                        "BreastLocationClockVS",
+                        "Breast Location Clock ValueSet",
                         "Breast/Location/ClockValueSet",
-                        "Codes defining breast body location angles expressed in clock-face units.",
+                        "ValueSet defining breast body location angles expressed in clock-face units.",
                         Group_CommonCodes,
                         ResourcesMaker.Self.BreastLocationClockCS.Value()
                 )
@@ -306,10 +306,10 @@ namespace BreastRadiology.XUnitTests
         VSTaskVar BreastLocationDepthVS = new VSTaskVar(
             () =>
                 ResourcesMaker.Self.CreateValueSet(
-                        "BreastLocationDepth",
-                        "Breast Location Depth",
+                        "BreastLocationDepthVS",
+                        "Breast Location Depth ValueSet",
                         "Breast/Location/DepthValueSet",
-                        "Breast body location depth code system.",
+                        "ValueSet defining Breast body location depth.",
                         Group_CommonCodes,
                         ResourcesMaker.Self.BreastLocationDepthCS.Value()
                 )
@@ -318,10 +318,10 @@ namespace BreastRadiology.XUnitTests
         VSTaskVar BreastLocationQuadrantVS = new VSTaskVar(
             () =>
                 ResourcesMaker.Self.CreateValueSet(
-                        "BreastLocationQuadrant",
-                        "Breast Location Quadrant",
+                        "BreastLocationQuadrantVS",
+                        "Breast Location Quadrant ValueSet",
                         "Breast/Location/QuadrantValueSet",
-                        "Breast body location quadrant code system.",
+                        "ValueSet defining Breast body location quadrant code system.",
                         Group_CommonCodes,
                         ResourcesMaker.Self.BreastLocationQuadrantCS.Value()
                 )
@@ -374,7 +374,7 @@ namespace BreastRadiology.XUnitTests
 
                 //breastBodyLocationMapLinks = new List<ResourceMap.Link>();
 
-                e = ResourcesMaker.Self.CreateEditorXX("BreastBodyLocationExtension",
+                e = ResourcesMaker.Self.CreateEditor("BreastBodyLocationExtension",
                     "Breast Body Location Extension",
                     "Breast Body Loc.",
                     ExtensionUrl,

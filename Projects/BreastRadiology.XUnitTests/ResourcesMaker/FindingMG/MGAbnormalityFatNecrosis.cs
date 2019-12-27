@@ -16,7 +16,7 @@ namespace BreastRadiology.XUnitTests
         StringTaskVar MGAbnormalityFatNecrosis = new StringTaskVar(
             (out String s) =>
             {
-                SDefEditor e = ResourcesMaker.Self.CreateEditorXX("BreastRadMammoAbnormalityFatNecrosis",
+                SDefEditor e = ResourcesMaker.Self.CreateEditor("MGAbnormalityFatNecrosis",
                         "Mammography Fat Necrosis",
                         "MG Fat Necrosis",
                         ObservationUrl,

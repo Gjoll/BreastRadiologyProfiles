@@ -16,7 +16,7 @@ namespace BreastRadiology.XUnitTests
         StringTaskVar MGAbnormalityCalcification = new StringTaskVar(
             (out String s) =>
             {
-                SDefEditor e = ResourcesMaker.Self.CreateEditorXX("BreastRadMammoAbnormalityCalcification",
+                SDefEditor e = ResourcesMaker.Self.CreateEditor("MGAbnormalityCalcification",
                         "Mammography Calcification",
                         "MG Calc.",
                         ObservationUrl,

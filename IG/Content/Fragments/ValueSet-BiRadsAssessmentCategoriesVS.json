@@ -8,7 +8,7 @@
     },
     {
       "url": "http://www.fragment.com/Group",
-      "valueString": "CommonCodesVS"
+      "valueString": "CommonCodes"
     },
     {
       "url": "http://www.fragment.com/mapname",
@@ -17,8 +17,8 @@
   ],
   "url": "http://hl7.org/fhir/us/breast-radiology/ValueSet/BiRadsAssessmentCategoriesVS",
   "name": "BiRadsAssessmentCategoriesVS",
-  "title": "BiRads(r) Assessment Category Codes ValueSet",
-  "description": "BiRads(r) Assessment Category code system.",
+  "title": "BiRads(r) Assessment Category ValueSet ValueSet",
+  "description": "BiRads(r) Assessment Category ValueSet.",
   "compose": {
     "include": [
       {

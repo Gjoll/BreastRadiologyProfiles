@@ -16,10 +16,10 @@ namespace BreastRadiology.XUnitTests
         CSTaskVar MGAbnormalityLymphNodeCS = new CSTaskVar(
              () =>
                  ResourcesMaker.Self.CreateCodeSystem(
-                        "BreastRadMammoAbnormalityLymphNode",
-                        "Mammography Lymph Node Refinement",
+                        "MGAbnormalityLymphNodeCS",
+                        "Mammography Lymph Node Refinement CodeSystem",
                          "MG Lymph Node Refinement/CodeSystem",
-                        "Codes defining types of mammography lymph node abnormalities.",
+                        "Mammography lymph node abnormality types code system.",
                          Group_MGCodes,
                         new ConceptDef[]
                          {
@@ -77,10 +77,10 @@ namespace BreastRadiology.XUnitTests
         VSTaskVar MGAbnormalityLymphNodeVS = new VSTaskVar(
             () =>
                 ResourcesMaker.Self.CreateValueSet(
-                   "BreastRadMammoAbnormalityLymphNode",
-                   "Mammography Lymph Node",
+                   "MGAbnormalityLymphNodeVS",
+                   "Mammography Lymph Node ValueSet",
                     "MG Lymph Node/ValueSet",
-                   "Codes defining types of mammography lymph node abnormalities.",
+                   "ValueSet defining types of mammography lymph node abnormalities.",
                     Group_MGCodes,
                     ResourcesMaker.Self.MGAbnormalityLymphNodeCS.Value()
                     )
@@ -92,7 +92,7 @@ namespace BreastRadiology.XUnitTests
             {
                 ValueSet binding = ResourcesMaker.Self.MGAbnormalityLymphNodeVS.Value();
 
-                SDefEditor e = ResourcesMaker.Self.CreateEditorXX("BreastRadMammoAbnormalityLymphNode",
+                SDefEditor e = ResourcesMaker.Self.CreateEditor("MGAbnormalityLymphNode",
                     "Mammography LymphNode",
                     "MG Lymph Node",
                     ObservationUrl,

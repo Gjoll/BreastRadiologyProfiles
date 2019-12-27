@@ -8,12 +8,12 @@
     },
     {
       "url": "http://www.fragment.com/Group",
-      "valueString": "CommonCodesCS"
+      "valueString": "CommonCodes"
     }
   ],
   "url": "http://hl7.org/fhir/us/breast-radiology/CodeSystem/BreastRadMarginCS",
   "name": "BreastRadMarginCS",
-  "title": "Margin CodeSystem",
+  "title": "MarginCodeSystem",
   "description": "Margin code system.",
   "caseSensitive": true,
   "content": "complete",

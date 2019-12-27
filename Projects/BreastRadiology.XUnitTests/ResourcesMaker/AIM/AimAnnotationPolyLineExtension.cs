@@ -21,7 +21,7 @@ namespace BreastRadiology.XUnitTests
                 ElementDefGroup eGroup;
                 ElementDefinition topExtension;
 
-                e = ResourcesMaker.Self.CreateEditorXX("AimAnnotationPolyLineExtension",
+                e = ResourcesMaker.Self.CreateEditor("AimAnnotationPolyLineExtension",
                     "AIM Annotation PolyLine Extension",
                     "Annotation/PolyLine/Location",
                     ExtensionUrl,

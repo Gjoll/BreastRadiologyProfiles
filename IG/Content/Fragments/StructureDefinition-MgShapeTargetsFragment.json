@@ -3,7 +3,7 @@
   "extension": [
     {
       "url": "http://www.fragment.com/mapname",
-      "valueString": "Mg Shape Targets Fragment"
+      "valueString": "MG Shape Targets Fragment"
     },
     {
       "url": "http://www.fragment.com/Group",
@@ -23,7 +23,7 @@
     },
     {
       "url": "http://www.fragment.com/maplink",
-      "valueString": "target|False|http://hl7.org/fhir/us/breast-radiology/StructureDefinition/CommonOrientation"
+      "valueString": "target|False|http://hl7.org/fhir/us/breast-radiology/StructureDefinition/Orientation"
     },
     {
       "url": "http://www.fragment.com/maplink",
@@ -31,16 +31,16 @@
     },
     {
       "url": "http://www.fragment.com/maplink",
-      "valueString": "target|False|http://hl7.org/fhir/us/breast-radiology/StructureDefinition/BreastRadMammoMassMargin"
+      "valueString": "target|False|http://hl7.org/fhir/us/breast-radiology/StructureDefinition/MGMargin"
     },
     {
       "url": "http://www.fragment.com/maplink",
-      "valueString": "target|False|http://hl7.org/fhir/us/breast-radiology/StructureDefinition/BreastRadMammoDensity"
+      "valueString": "target|False|http://hl7.org/fhir/us/breast-radiology/StructureDefinition/MGDensity"
     }
   ],
   "url": "http://hl7.org/fhir/us/breast-radiology/StructureDefinition/MgShapeTargetsFragment",
   "name": "MgShapeTargetsFragment",
-  "title": "Mg Shape Targets Fragment",
+  "title": "MG Shape Targets Fragment",
   "status": "draft",
   "description": "Mammography Shape Targets Fragment\n\nShape Common Targets Fragment\n\n\nAdds Orientation, Shape, Margin, Density and Thickening targets",
   "fhirVersion": "4.0.0",
@@ -81,9 +81,9 @@
         }
       },
       {
-        "id": "Observation.hasMember:commonOrientation",
+        "id": "Observation.hasMember:orientation",
         "path": "Observation.hasMember",
-        "sliceName": "commonOrientation",
+        "sliceName": "orientation",
         "min": 0,
         "max": "*",
         "base": {
@@ -95,7 +95,7 @@
           {
             "code": "Reference",
             "targetProfile": [
-              "http://hl7.org/fhir/us/breast-radiology/StructureDefinition/CommonOrientation"
+              "http://hl7.org/fhir/us/breast-radiology/StructureDefinition/Orientation"
             ]
           }
         ]
@@ -121,9 +121,9 @@
         ]
       },
       {
-        "id": "Observation.hasMember:breastRadMammoMassMargin",
+        "id": "Observation.hasMember:mGMargin",
         "path": "Observation.hasMember",
-        "sliceName": "breastRadMammoMassMargin",
+        "sliceName": "mGMargin",
         "min": 0,
         "max": "1",
         "base": {
@@ -135,15 +135,15 @@
           {
             "code": "Reference",
             "targetProfile": [
-              "http://hl7.org/fhir/us/breast-radiology/StructureDefinition/BreastRadMammoMassMargin"
+              "http://hl7.org/fhir/us/breast-radiology/StructureDefinition/MGMargin"
             ]
           }
         ]
       },
       {
-        "id": "Observation.hasMember:breastRadMammoDensity",
+        "id": "Observation.hasMember:mGDensity",
         "path": "Observation.hasMember",
-        "sliceName": "breastRadMammoDensity",
+        "sliceName": "mGDensity",
         "min": 0,
         "max": "1",
         "base": {
@@ -155,7 +155,7 @@
           {
             "code": "Reference",
             "targetProfile": [
-              "http://hl7.org/fhir/us/breast-radiology/StructureDefinition/BreastRadMammoDensity"
+              "http://hl7.org/fhir/us/breast-radiology/StructureDefinition/MGDensity"
             ]
           }
         ]

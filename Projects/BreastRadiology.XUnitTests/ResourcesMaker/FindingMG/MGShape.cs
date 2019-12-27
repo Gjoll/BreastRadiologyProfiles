@@ -18,10 +18,10 @@ namespace BreastRadiology.XUnitTests
         VSTaskVar MGShapeVS = new VSTaskVar(
             () =>
                 ResourcesMaker.Self.CreateValueSet(
-                        "MammoShape",
-                        "Shape",
+                        "MammoShapeVS",
+                        "Shape ValueSet",
                         "Shape/ValueSet",
-                        "Codes defining shape values.",
+                        "ValueSet defining shape values.",
                         Group_MGCodes,
                         ResourcesMaker.Self.CommonShapeCS.Value()
                     )
@@ -42,7 +42,7 @@ namespace BreastRadiology.XUnitTests
                     ResourcesMaker.Self.fc?.Mark(outputPath);
                 }
 
-                SDefEditor e = ResourcesMaker.Self.CreateEditorXX("MammoShape",
+                SDefEditor e = ResourcesMaker.Self.CreateEditor("MammoShape",
                         "Shape",
                         "Shape",
                         ObservationUrl,

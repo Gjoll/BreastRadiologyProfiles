@@ -28,7 +28,7 @@ namespace BreastRadiology.XUnitTests
                     ResourcesMaker.Self.fc?.Mark(outputPath);
                 }
 
-                SDefEditor e = ResourcesMaker.Self.CreateEditorXX("BiRadsAssessmentCategory",
+                SDefEditor e = ResourcesMaker.Self.CreateEditor("BiRadsAssessmentCategory",
                         "BiRads Assessment Category",
                         "BiRads Code",
                         ObservationUrl,
@@ -70,8 +70,8 @@ namespace BreastRadiology.XUnitTests
         CSTaskVar CSBiRadsAssessmentCategories = new CSTaskVar(
             () =>
                 ResourcesMaker.Self.CreateCodeSystem(
-                        "BiRadsAssessmentCategories",
-                        "BiRads(r) Assessment Category Codes",
+                        "BiRadsAssessmentCategoriesCS",
+                        "BiRads(r) Assessment Category Codes CodeSystem",
                         "BiRads/CodeSystem",
                         "BiRads(r) Assessment Category code system.",
                         Group_CommonCodes,
@@ -133,10 +133,10 @@ namespace BreastRadiology.XUnitTests
         VSTaskVar VSBiRadsAssessmentCategories = new VSTaskVar(
             () =>
                 ResourcesMaker.Self.CreateValueSet(
-                        "BiRadsAssessmentCategories",
-                        "BiRads(r) Assessment Category Codes",
+                        "BiRadsAssessmentCategoriesVS",
+                        "BiRads(r) Assessment Category ValueSet",
                         "BiRads/ValueSet",
-                        "BiRads(r) Assessment Category code system.",
+                        "BiRads(r) Assessment Category ValueSet.",
                         Group_CommonCodes,
                         ResourcesMaker.Self.CSBiRadsAssessmentCategories.Value())
             );

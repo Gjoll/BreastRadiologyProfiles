@@ -16,12 +16,12 @@ namespace BreastRadiology.XUnitTests
         VSTaskVar MassRefinementValueSetVS = new VSTaskVar(
             () =>
                 ResourcesMaker.Self.CreateValueSet(
-                        "MassRefinementValueSet",
+                        "MassRefinementValueSetVS",
                         "Mass Refinement ValueSet",
                         "Mass Refinement/ValueSet",
-                        "Codes refining mass type.",
+                        "ValueSet refining mass type.",
                         Group_MGCodes,
-                        ResourcesMaker.Self.CommonCSMassRefinement.Value()
+                        ResourcesMaker.Self.CSMassRefinement.Value()
                     )
             );
 
@@ -30,7 +30,7 @@ namespace BreastRadiology.XUnitTests
             {
                 ValueSet binding = ResourcesMaker.Self.MassRefinementValueSetVS.Value();
 
-                SDefEditor e = ResourcesMaker.Self.CreateEditorXX("BreastRadMammoMass",
+                SDefEditor e = ResourcesMaker.Self.CreateEditor("MGMass",
                         "Mammography Mass",
                         "MG Mass",
                         ObservationUrl,

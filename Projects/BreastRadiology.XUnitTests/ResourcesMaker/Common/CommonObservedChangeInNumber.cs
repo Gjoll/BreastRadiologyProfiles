@@ -17,10 +17,10 @@ namespace BreastRadiology.XUnitTests
         CSTaskVar CommonObservedChangeInNumberCS = new CSTaskVar(
              () =>
                  ResourcesMaker.Self.CreateCodeSystem(
-                     "CommonObservedChangeInNumber",
-                     "Observed Changes",
+                     "CommonObservedChangeInNumberCS",
+                     "Observed Changes CodeSystem",
                      "Observed/Change/CodeSystem",
-                     "Codes defining types of observed changes in number of an abnormality over time.",
+                     "bserved changes in number of an abnormality over time code system.",
                      Group_CommonCodes,
                      new ConceptDef[]
                      {
@@ -40,10 +40,10 @@ namespace BreastRadiology.XUnitTests
         VSTaskVar CommonObservedChangeInNumberVS = new VSTaskVar(
             () =>
                 ResourcesMaker.Self.CreateValueSet(
-                    "CommonObservedChangeInNumber",
-                    "Observed Number Changes",
+                    "CommonObservedChangeInNumberVS",
+                    "Observed Number Changes ValueSet",
                     "Observed/Change/ValueSet",
-                    "Codes defining types of observed changes in number of an abnormality over time.",
+                    "ValueSet defining types of observed changes in number of an abnormality over time.",
                     Group_CommonCodes,
                     ResourcesMaker.Self.CommonObservedChangeInNumberCS.Value()
                     )
@@ -64,7 +64,7 @@ namespace BreastRadiology.XUnitTests
                     ResourcesMaker.Self.fc?.Mark(outputPath);
                 }
 
-                SDefEditor e = ResourcesMaker.Self.CreateEditorXX("CommonObservedChangeInNumber",
+                SDefEditor e = ResourcesMaker.Self.CreateEditor("CommonObservedChangeInNumber",
                         "Observed Change in Number",
                         "Number Change",
                         ObservationUrl,

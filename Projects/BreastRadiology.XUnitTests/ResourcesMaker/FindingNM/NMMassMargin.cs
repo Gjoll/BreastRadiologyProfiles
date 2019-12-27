@@ -14,13 +14,13 @@ namespace BreastRadiology.XUnitTests
 {
     partial class ResourcesMaker : ConverterBase
     {
-        CSTaskVar NMMassMarginCS = new CSTaskVar(
+        CSTaskVar NMMarginCS = new CSTaskVar(
              () =>
                  ResourcesMaker.Self.CreateCodeSystem(
-                     "BreastRadNMMassMargin",
-                     "NM Mass Margin",
-                     "NM/Mass/Margin/CodeSystem",
-                     "NM mass margin code system.",
+                     "NMMarginCS",
+                     "NM Margin CodeSystem",
+                     "NM/Margin/CodeSystem",
+                     "NM margin code system.",
                      Group_NMCodes,
                      new ConceptDef[]
                      {
@@ -36,23 +36,23 @@ namespace BreastRadiology.XUnitTests
                  );
 
 
-        VSTaskVar NMMassMarginVS = new VSTaskVar(
+        VSTaskVar NMMarginVS = new VSTaskVar(
             () =>
                 ResourcesMaker.Self.CreateValueSet(
-                        "BreastRadNMMassMargin",
-                        "NM Mass Margin",
-                        "NM/Mass/Margin/ValueSet",
-                        "NM mass margin value set.",
+                        "NMMarginVS",
+                        "NM Margin ValueSet",
+                        "NM/Margin/ValueSet",
+                        "NM margin value set.",
                         Group_NMCodes,
-                        ResourcesMaker.Self.NMMassMarginCS.Value()
+                        ResourcesMaker.Self.NMMarginCS.Value()
                     )
             );
 
 
-        StringTaskVar NMMassMargin = new StringTaskVar(
+        StringTaskVar NMMargin = new StringTaskVar(
             (out String s) =>
             {
-                ValueSet binding = ResourcesMaker.Self.NMMassMarginVS.Value();
+                ValueSet binding = ResourcesMaker.Self.NMMarginVS.Value();
 
                 {
                     IntroDoc valueSetIntroDoc = new IntroDoc(Path.Combine(ResourcesMaker.Self.pageDir, $"ValueSet-{binding.Name}-intro.xml"));
@@ -64,14 +64,14 @@ namespace BreastRadiology.XUnitTests
                     ResourcesMaker.Self.fc?.Mark(outputPath);
                 }
 
-                SDefEditor e = ResourcesMaker.Self.CreateEditorXX("BreastRadNMMassMargin",
-                    "NM Mass Margin",
-                    "NM/Mass/Margin",
+                SDefEditor e = ResourcesMaker.Self.CreateEditor("NMMargin",
+                    "NM Margin",
+                    "NM/Margin",
                     ObservationUrl,
-                    $"{Group_NMResources}/Mass/Margin")
-                    .Description("Breast Radiology NM Mass Margin Observation",
+                    $"{Group_NMResources}/Margin")
+                    .Description("Breast Radiology NM Margin Observation",
                         new Markdown()
-                            .MissingObservation("a mass margin")
+                            .MissingObservation("a margin")
                             .BiradHeader()
                             .BlockQuote("The margin is the edge or border of the lesion. The descriptors of margin, like the descriptors of shape, are important predictors of whether a mass is benign or malignant. ")
                             .BiradFooter()
@@ -91,7 +91,7 @@ namespace BreastRadiology.XUnitTests
                 e.AddValueSetLink(binding);
                 e.IntroDoc
                     .ReviewedStatus(ReviewStatus.NotReviewed)
-                    .CodedObservationLeafNode("a NM mass margin", binding)
+                    .CodedObservationLeafNode("a NM margin", binding)
                     ;
             });
     }

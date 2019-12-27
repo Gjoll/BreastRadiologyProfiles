@@ -35,7 +35,7 @@
     },
     {
       "url": "http://www.fragment.com/maplink",
-      "valueString": "valueSet|True|http://hl7.org/fhir/us/breast-radiology/ValueSet/BreastRadUSPosteriorAcousticFeaturesVS"
+      "valueString": "valueSet|True|http://hl7.org/fhir/us/breast-radiology/ValueSet/USPosteriorAcousticFeaturesVS"
     },
     {
       "url": "http://www.fragment.com/mapname",
@@ -1212,7 +1212,7 @@
         "isSummary": true,
         "binding": {
           "strength": "required",
-          "valueSet": "http://hl7.org/fhir/us/breast-radiology/ValueSet/BreastRadUSPosteriorAcousticFeaturesVS"
+          "valueSet": "http://hl7.org/fhir/us/breast-radiology/ValueSet/USPosteriorAcousticFeaturesVS"
         },
         "mapping": [
           {
@@ -2567,7 +2567,7 @@
         ],
         "binding": {
           "strength": "required",
-          "valueSet": "http://hl7.org/fhir/us/breast-radiology/ValueSet/BreastRadUSPosteriorAcousticFeaturesVS"
+          "valueSet": "http://hl7.org/fhir/us/breast-radiology/ValueSet/USPosteriorAcousticFeaturesVS"
         }
       },
       {

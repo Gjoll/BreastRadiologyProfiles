@@ -8,7 +8,7 @@
     },
     {
       "url": "http://www.fragment.com/Group",
-      "valueString": "CommonCodesVS"
+      "valueString": "CommonCodes"
     },
     {
       "url": "http://www.fragment.com/mapname",
@@ -17,8 +17,8 @@
   ],
   "url": "http://hl7.org/fhir/us/breast-radiology/ValueSet/BreastLocationRegionVS",
   "name": "BreastLocationRegionVS",
-  "title": "Breast Location Region ValueSet",
-  "description": "Breast body location region code system.",
+  "title": "Breast Location Region ValueSet ValueSet",
+  "description": "ValueSet for Breast body location region.",
   "compose": {
     "include": [
       {

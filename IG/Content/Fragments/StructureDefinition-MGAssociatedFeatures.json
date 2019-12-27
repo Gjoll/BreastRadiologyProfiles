@@ -1,0 +1,225 @@
+{
+  "resourceType": "StructureDefinition",
+  "extension": [
+    {
+      "url": "http://www.fragment.com/mapname",
+      "valueString": "MG Associated/Features"
+    },
+    {
+      "url": "http://www.fragment.com/Group",
+      "valueString": "MGResources/AssociatedFeature"
+    },
+    {
+      "url": "http://www.fragment.com/fragment",
+      "valueUrl": "http://hl7.org/fhir/us/breast-radiology/StructureDefinition/BreastRadObservationNoDeviceFragment"
+    },
+    {
+      "url": "http://www.fragment.com/maplink",
+      "valueString": "fragment|True|http://hl7.org/fhir/us/breast-radiology/StructureDefinition/BreastRadObservationNoDeviceFragment"
+    },
+    {
+      "url": "http://www.fragment.com/fragment",
+      "valueUrl": "http://hl7.org/fhir/us/breast-radiology/StructureDefinition/ObservationSectionFragment"
+    },
+    {
+      "url": "http://www.fragment.com/maplink",
+      "valueString": "fragment|True|http://hl7.org/fhir/us/breast-radiology/StructureDefinition/ObservationSectionFragment"
+    },
+    {
+      "url": "http://www.fragment.com/fragment",
+      "valueUrl": "http://hl7.org/fhir/us/breast-radiology/StructureDefinition/BreastRadObservationNoValueFragment"
+    },
+    {
+      "url": "http://www.fragment.com/maplink",
+      "valueString": "fragment|True|http://hl7.org/fhir/us/breast-radiology/StructureDefinition/BreastRadObservationNoValueFragment"
+    },
+    {
+      "url": "http://www.fragment.com/maplink",
+      "valueString": "target|False|http://hl7.org/fhir/us/breast-radiology/StructureDefinition/MGSkinRetraction"
+    },
+    {
+      "url": "http://www.fragment.com/maplink",
+      "valueString": "target|False|http://hl7.org/fhir/us/breast-radiology/StructureDefinition/MGNippleRetraction"
+    },
+    {
+      "url": "http://www.fragment.com/maplink",
+      "valueString": "target|False|http://hl7.org/fhir/us/breast-radiology/StructureDefinition/MGSkinThickening"
+    },
+    {
+      "url": "http://www.fragment.com/maplink",
+      "valueString": "target|False|http://hl7.org/fhir/us/breast-radiology/StructureDefinition/MGAxillaryAdenopathy"
+    },
+    {
+      "url": "http://www.fragment.com/maplink",
+      "valueString": "target|False|http://hl7.org/fhir/us/breast-radiology/StructureDefinition/MGAbnormalityArchitecturalDistortion"
+    },
+    {
+      "url": "http://www.fragment.com/maplink",
+      "valueString": "target|False|http://hl7.org/fhir/us/breast-radiology/StructureDefinition/MGAbnormalityCalcification"
+    }
+  ],
+  "url": "http://hl7.org/fhir/us/breast-radiology/StructureDefinition/MGAssociatedFeatures",
+  "name": "MGAssociatedFeatures",
+  "title": "Mammography Associated Features",
+  "status": "draft",
+  "description": "Mammography Associated Features Observation\n\nUsed with masses, asymmetries, or calcifications, or may stand alone as Features when no other abnormality is present.\n\n\n*** TODO Items ***** check Cardinality of the following Observation.hasMember targets?",
+  "fhirVersion": "4.0.0",
+  "kind": "resource",
+  "abstract": false,
+  "type": "Observation",
+  "baseDefinition": "http://hl7.org/fhir/StructureDefinition/Observation",
+  "derivation": "constraint",
+  "differential": {
+    "element": [
+      {
+        "id": "Observation",
+        "path": "Observation",
+        "short": "Mammography Associated Features Observation",
+        "definition": "Used with masses, asymmetries, or calcifications, or may stand alone as Features when no other abnormality is present.\n\n\n*** TODO Items ***** check Cardinality of the following Observation.hasMember targets?",
+        "min": 0,
+        "max": "*"
+      },
+      {
+        "id": "Observation.hasMember",
+        "path": "Observation.hasMember",
+        "slicing": {
+          "discriminator": [
+            {
+              "type": "value",
+              "path": "url"
+            }
+          ],
+          "ordered": true,
+          "rules": "openAtEnd"
+        },
+        "min": 0,
+        "max": "*",
+        "base": {
+          "path": "Observation.hasMember",
+          "min": 0,
+          "max": "*"
+        }
+      },
+      {
+        "id": "Observation.hasMember:mGSkinRetraction",
+        "path": "Observation.hasMember",
+        "sliceName": "mGSkinRetraction",
+        "min": 0,
+        "max": "1",
+        "base": {
+          "path": "Observation.hasMember",
+          "min": 0,
+          "max": "*"
+        },
+        "type": [
+          {
+            "code": "Reference",
+            "targetProfile": [
+              "http://hl7.org/fhir/us/breast-radiology/StructureDefinition/MGSkinRetraction"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "Observation.hasMember:mGNippleRetraction",
+        "path": "Observation.hasMember",
+        "sliceName": "mGNippleRetraction",
+        "min": 0,
+        "max": "1",
+        "base": {
+          "path": "Observation.hasMember",
+          "min": 0,
+          "max": "*"
+        },
+        "type": [
+          {
+            "code": "Reference",
+            "targetProfile": [
+              "http://hl7.org/fhir/us/breast-radiology/StructureDefinition/MGNippleRetraction"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "Observation.hasMember:mGSkinThickening",
+        "path": "Observation.hasMember",
+        "sliceName": "mGSkinThickening",
+        "min": 0,
+        "max": "*",
+        "base": {
+          "path": "Observation.hasMember",
+          "min": 0,
+          "max": "*"
+        },
+        "type": [
+          {
+            "code": "Reference",
+            "targetProfile": [
+              "http://hl7.org/fhir/us/breast-radiology/StructureDefinition/MGSkinThickening"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "Observation.hasMember:mGAxillaryAdenopathy",
+        "path": "Observation.hasMember",
+        "sliceName": "mGAxillaryAdenopathy",
+        "min": 0,
+        "max": "1",
+        "base": {
+          "path": "Observation.hasMember",
+          "min": 0,
+          "max": "*"
+        },
+        "type": [
+          {
+            "code": "Reference",
+            "targetProfile": [
+              "http://hl7.org/fhir/us/breast-radiology/StructureDefinition/MGAxillaryAdenopathy"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "Observation.hasMember:mGAbnormalityArchitecturalDistortion",
+        "path": "Observation.hasMember",
+        "sliceName": "mGAbnormalityArchitecturalDistortion",
+        "min": 0,
+        "max": "*",
+        "base": {
+          "path": "Observation.hasMember",
+          "min": 0,
+          "max": "*"
+        },
+        "type": [
+          {
+            "code": "Reference",
+            "targetProfile": [
+              "http://hl7.org/fhir/us/breast-radiology/StructureDefinition/MGAbnormalityArchitecturalDistortion"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "Observation.hasMember:mGAbnormalityCalcification",
+        "path": "Observation.hasMember",
+        "sliceName": "mGAbnormalityCalcification",
+        "min": 0,
+        "max": "*",
+        "base": {
+          "path": "Observation.hasMember",
+          "min": 0,
+          "max": "*"
+        },
+        "type": [
+          {
+            "code": "Reference",
+            "targetProfile": [
+              "http://hl7.org/fhir/us/breast-radiology/StructureDefinition/MGAbnormalityCalcification"
+            ]
+          }
+        ]
+      }
+    ]
+  }
+}

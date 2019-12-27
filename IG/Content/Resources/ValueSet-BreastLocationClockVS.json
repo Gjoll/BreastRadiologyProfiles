@@ -8,7 +8,7 @@
     },
     {
       "url": "http://www.fragment.com/Group",
-      "valueString": "CommonCodesVS"
+      "valueString": "CommonCodes"
     },
     {
       "url": "http://www.fragment.com/mapname",
@@ -26,7 +26,7 @@
   "url": "http://hl7.org/fhir/us/breast-radiology/ValueSet/BreastLocationClockVS",
   "version": "0.0.2",
   "name": "BreastLocationClockVS",
-  "title": "Breast Location Clock ValueSet",
+  "title": "Breast Location Clock ValueSet ValueSet",
   "status": "draft",
   "date": "2019-11-01",
   "publisher": "Hl7-Clinical Interoperability Council",
@@ -40,7 +40,7 @@
       ]
     }
   ],
-  "description": "Codes defining breast body location angles expressed in clock-face units.",
+  "description": "ValueSet defining breast body location angles expressed in clock-face units.",
   "compose": {
     "include": [
       {

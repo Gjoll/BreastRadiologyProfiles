@@ -8,7 +8,7 @@
     },
     {
       "url": "http://www.fragment.com/Group",
-      "valueString": "CommonCodesVS"
+      "valueString": "CommonCodes"
     },
     {
       "url": "http://www.fragment.com/mapname",
@@ -17,8 +17,8 @@
   ],
   "url": "http://hl7.org/fhir/us/breast-radiology/ValueSet/CommonObservedChangeInStateVS",
   "name": "CommonObservedChangeInStateVS",
-  "title": "Observed Change In State ValueSet",
-  "description": "Codes defining types of observed changes in state of an abnormality over time.",
+  "title": "Observed Change In State ValueSet ValueSet",
+  "description": "ValueSet defining types of observed changes in state of an abnormality over time.",
   "compose": {
     "include": [
       {

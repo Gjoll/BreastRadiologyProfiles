@@ -8,17 +8,17 @@
     },
     {
       "url": "http://www.fragment.com/Group",
-      "valueString": "MGCodesVS"
+      "valueString": "MGCodes"
     },
     {
       "url": "http://www.fragment.com/mapname",
-      "valueString": "Mg Calc./DistributionValueSet"
+      "valueString": "MG Calc./DistributionValueSet"
     }
   ],
   "url": "http://hl7.org/fhir/us/breast-radiology/ValueSet/MammoCalcificationDistributionVS",
   "name": "MammoCalcificationDistributionVS",
-  "title": "Mammography Calcification Distribution ValueSet",
-  "description": "Mammography calcification distribution code system.",
+  "title": "Mammography Calcification Distribution ValueSet ValueSet",
+  "description": "ValueSet defining Mammography calcification distribution values.",
   "compose": {
     "include": [
       {

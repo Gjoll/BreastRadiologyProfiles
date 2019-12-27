@@ -16,7 +16,7 @@ namespace BreastRadiology.XUnitTests
         StringTaskVar USMass = new StringTaskVar(
             (out String s) =>
             {
-                SDefEditor e = ResourcesMaker.Self.CreateEditorXX("BreastRadUSMass",
+                SDefEditor e = ResourcesMaker.Self.CreateEditor("BreastRadUSMass",
                         "US Mass",
                         "US Mass",
                         ObservationUrl,
@@ -50,8 +50,8 @@ namespace BreastRadiology.XUnitTests
                     new ProfileTargetSlice(ResourcesMaker.Self.CommonObservedCount.Value(), 0, "1"),
                     new ProfileTargetSlice(ResourcesMaker.Self.CommonObservedChangeInState.Value(), 0, "*"),
                     new ProfileTargetSlice(ResourcesMaker.Self.CommonObservedSize.Value(), 0, "1"),
-                    new ProfileTargetSlice(ResourcesMaker.Self.CommonOrientation.Value(), 0, "1"),
-                    new ProfileTargetSlice(ResourcesMaker.Self.CommonHilum.Value(), 0, "1"),
+                    new ProfileTargetSlice(ResourcesMaker.Self.Orientation.Value(), 0, "1"),
+                    new ProfileTargetSlice(ResourcesMaker.Self.Hilum.Value(), 0, "1"),
 
                     new ProfileTargetSlice(ResourcesMaker.Self.USBoundary.Value(), 0, "1"),
                     new ProfileTargetSlice(ResourcesMaker.Self.USEchoPattern.Value(), 0, "1"),

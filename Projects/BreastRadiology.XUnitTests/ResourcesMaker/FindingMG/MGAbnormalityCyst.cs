@@ -16,10 +16,10 @@ namespace BreastRadiology.XUnitTests
         CSTaskVar MGAbnormalityCystRefinementCS = new CSTaskVar(
              () =>
                  ResourcesMaker.Self.CreateCodeSystem(
-                        "BreastRadMammoAbnormalityCystRefinement",
-                        "Mammography Cyst Refinement",
+                        "MGAbnormalityCystRefinementCS",
+                        "Mammography Cyst Refinement CodeSystem",
                          "MG Cyst Refinement/CodeSystem",
-                        "Codes defining types of mammography cyst abnormalities.",
+                        "Mammography cyst abnormality type CodeSystem.",
                          Group_MGCodes,
                         new ConceptDef[]
                          {
@@ -56,10 +56,10 @@ namespace BreastRadiology.XUnitTests
         VSTaskVar MGAbnormalityCystVS = new VSTaskVar(
             () =>
                 ResourcesMaker.Self.CreateValueSet(
-                   "BreastRadMammoAbnormalityCyst",
-                   "Mammography CystAbnormalities",
+                   "MGAbnormalityCystVS",
+                   "Mammography CystAbnormalities ValueSet",
                     "MG Cyst/ValueSet",
-                   "Codes defining types of mammography cyst abnormalities.",
+                   "ValueSet defining types of mammography cyst abnormalities.",
                     Group_MGCodes,
                     ResourcesMaker.Self.MGAbnormalityCystRefinementCS.Value()
                     )
@@ -80,7 +80,7 @@ namespace BreastRadiology.XUnitTests
                     ResourcesMaker.Self.fc?.Mark(outputPath);
                 }
 
-                SDefEditor e = ResourcesMaker.Self.CreateEditorXX("BreastRadMammoAbnormalityCyst",
+                SDefEditor e = ResourcesMaker.Self.CreateEditor("MGAbnormalityCyst",
                         "Mammography Cyst",
                         "MG Cyst",
                         ObservationUrl,
