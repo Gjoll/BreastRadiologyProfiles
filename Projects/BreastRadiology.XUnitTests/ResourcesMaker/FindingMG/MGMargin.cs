@@ -58,8 +58,7 @@ namespace BreastRadiology.XUnitTests
                             .BiradHeader()
                             .BlockQuote("The margin is the edge or border of the lesion. The descriptors of margin, like the descriptors of shape, are important predictors of whether a mass is benign or malignant. ")
                             .BiradFooter()
-                            .Todo(
-                            )
+                            //.Todo
                     )
                     .AddFragRef(ResourcesMaker.Self.ObservationNoDeviceFragment.Value())
                     .AddFragRef(ResourcesMaker.Self.ObservationCodedValueFragment.Value())

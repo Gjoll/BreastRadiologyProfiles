@@ -76,8 +76,7 @@ namespace BreastRadiology.XUnitTests
                     .Description("Breast Radiology Ultra-Sound Elasticity Observation",
                         new Markdown()
                             .Paragraph("[PR]")
-                            .Todo(
-                            )
+                            //.Todo
                         )
                     .AddFragRef(ResourcesMaker.Self.ObservationNoDeviceFragment.Value())
                     .AddFragRef(ResourcesMaker.Self.ObservationCodedValueFragment.Value())

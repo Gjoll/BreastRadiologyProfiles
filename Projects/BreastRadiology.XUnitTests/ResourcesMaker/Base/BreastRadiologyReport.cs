@@ -28,8 +28,7 @@ namespace BreastRadiology.XUnitTests
                                    "references to the observations of this report",
                                    "references to the recommendations of this report",
                                    "a summary of the report findings in a human readable format")
-                             .Todo(
-                             )
+                             //.Todo
                      )
                      .AddFragRef(ResourcesMaker.Self.HeaderFragment.Value())
                      .AddFragRef(ResourcesMaker.Self.CategoryFragment.Value())

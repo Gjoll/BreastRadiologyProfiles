@@ -73,8 +73,7 @@ namespace BreastRadiology.XUnitTests
                     .Description("Breast Radiology Changes in Size Observation",
                         new Markdown()
                             .MissingObservation("an observed change in size")
-                            .Todo(
-                            )
+                            //.Todo
                     )
                     .AddFragRef(ResourcesMaker.Self.ObservationNoDeviceFragment.Value())
                     .AddFragRef(ResourcesMaker.Self.ObservationCodedValueFragment.Value())

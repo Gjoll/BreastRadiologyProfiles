@@ -19,8 +19,7 @@ namespace BreastRadiology.XUnitTests
                     .Description("Zero's Component.",
                         new Markdown()
                             .Paragraph("Zero's Observation.component.")
-                            .Todo(
-                            )
+                            //.Todo
                     )
                     .AddFragRef(ResourcesMaker.Self.ObservationFragment.Value())
                 ;

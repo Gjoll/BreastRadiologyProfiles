@@ -26,8 +26,7 @@ namespace BreastRadiology.XUnitTests
                         new Markdown()
                             .Paragraph("This extension defines the impressions section of a breast radiology report, " +
                                        "linking a report to the resources that the exam impressions.")
-                            .Todo(
-                            )
+                            //.Todo
                     )
                     .Kind(StructureDefinition.StructureDefinitionKind.ComplexType)
                     .Context()

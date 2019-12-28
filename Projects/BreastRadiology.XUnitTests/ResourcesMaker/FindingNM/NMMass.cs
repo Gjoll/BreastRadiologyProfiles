@@ -32,8 +32,6 @@ namespace BreastRadiology.XUnitTests
                             //$.BiradFooter()
                             .Todo(
                                 "Complete description"
-                            //"add mass size measurements (3 dimensional) like US?",
-                            //"same for asymmetry, lesion, calcification?"
                             )
                     )
                     .AddFragRef(ResourcesMaker.Self.ObservationNoDeviceFragment.Value())

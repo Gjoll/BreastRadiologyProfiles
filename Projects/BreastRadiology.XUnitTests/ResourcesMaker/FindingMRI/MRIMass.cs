@@ -31,9 +31,7 @@ namespace BreastRadiology.XUnitTests
                             .BlockQuote("should be called an \"ASYMMETRY\" until its 3-dimensionality is confirmed")
                             .BiradFooter()
                             .Todo(
-                                "Complete description",
-                                "add mass size measurements (3 dimensional) like US?",
-                                "same for asymmetry, lesion, calcification?"
+                                "Complete description"
                             )
                     )
                     .AddFragRef(ResourcesMaker.Self.ObservationNoDeviceFragment.Value())

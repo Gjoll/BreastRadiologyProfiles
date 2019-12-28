@@ -28,8 +28,7 @@ namespace BreastRadiology.XUnitTests
                             .BlockQuote("The skin is pulled in abnormally")
                             .BiradFooter()
                             .MissingObservation("a skin retraction")
-                            .Todo(
-                            )
+                            //.Todo
                     )
                     .AddFragRef(ResourcesMaker.Self.ObservationNoDeviceFragment.Value())
                     .AddFragRef(ResourcesMaker.Self.ObservationNoValueFragment.Value())

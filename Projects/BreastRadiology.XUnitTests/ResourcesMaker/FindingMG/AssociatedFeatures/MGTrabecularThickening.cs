@@ -27,11 +27,7 @@ namespace BreastRadiology.XUnitTests
                             .BlockQuote("This is a thickening of the fibrous septa of the breast.")
                             .BiradFooter()
                             .MissingObservation("a trabecular thickening")
-                            .Todo(
-                                "Add body location?",
-                                "Add size measurement?",
-                                "cardinality 0..1 or 0..*?"
-                            )
+                            //.Todo
                     )
                     .AddFragRef(ResourcesMaker.Self.ObservationNoDeviceFragment.Value())
                     .AddFragRef(ResourcesMaker.Self.BreastBodyLocationRequiredFragment.Value())

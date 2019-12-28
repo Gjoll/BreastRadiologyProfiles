@@ -100,9 +100,7 @@ namespace BreastRadiology.XUnitTests
                     .Description("Breast Radiology Mammography LymphNode Observation",
                         new Markdown()
                             .MissingObservation("a lymph node abnormality")
-                            .Todo(
-                                "should this be a leaf node (how about shape, density, location, etc)."
-                            )
+                            //.Todo
                     )
                     .AddFragRef(ResourcesMaker.Self.ObservationNoDeviceFragment.Value())
                     .AddFragRef(ResourcesMaker.Self.ObservationCodedValueFragment.Value())

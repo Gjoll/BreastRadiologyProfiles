@@ -99,7 +99,7 @@ namespace BreastRadiology.XUnitTests
                             .BiradFooter()
                             .Todo(
                                 "Is Irregular incorrect? Note from ACR B.3.A. 'Irregular' is not used to group these marginal attributes because irregular describes the shape of a mass.",
-                                "Is non-circumscribed a stand along value, or implied by selection fo on or more non-circumscribed values? "
+                                "Is non-circumscribed a stand along value, or implied by selection of one or more non-circumscribed values? "
                             )
                     )
                     .AddFragRef(ResourcesMaker.Self.ObservationNoDeviceFragment.Value())

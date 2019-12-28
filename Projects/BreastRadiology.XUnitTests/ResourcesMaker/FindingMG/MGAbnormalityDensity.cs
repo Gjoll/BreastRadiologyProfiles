@@ -71,7 +71,6 @@ namespace BreastRadiology.XUnitTests
                         new Markdown()
                             .MissingObservation("a Density abnormality")
                             .Todo(
-                                "should this be a leaf node (how about shape, density, location, etc).",
                                 "default value? for refinement"
                             )
                     )

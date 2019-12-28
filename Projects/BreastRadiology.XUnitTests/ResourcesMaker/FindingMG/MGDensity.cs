@@ -110,8 +110,7 @@ namespace BreastRadiology.XUnitTests
                             .BlockQuote("in lesion analysis, mammographic density is difficult to assess and is of limited value for the prediction of the")
                             .BlockQuote("benign or malignant nature of noncalcified breast masses.")
                             .BiradFooter()
-                            .Todo(
-                            )
+                            //.Todo
                         )
                     .AddFragRef(ResourcesMaker.Self.ObservationNoDeviceFragment.Value())
                     .AddFragRef(ResourcesMaker.Self.ObservationCodedValueFragment.Value())

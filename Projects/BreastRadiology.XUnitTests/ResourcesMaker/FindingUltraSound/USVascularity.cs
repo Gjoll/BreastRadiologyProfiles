@@ -97,8 +97,7 @@ namespace BreastRadiology.XUnitTests
                     .Description("Breast Radiology Ultra-Sound Vascularity Observation",
                         new Markdown()
                             .Paragraph("[PR]")
-                            .Todo(
-                            )
+                            //.Todo
                         )
                     .AddFragRef(ResourcesMaker.Self.ObservationNoDeviceFragment.Value())
                     .AddFragRef(ResourcesMaker.Self.ObservationCodedValueFragment.Value())

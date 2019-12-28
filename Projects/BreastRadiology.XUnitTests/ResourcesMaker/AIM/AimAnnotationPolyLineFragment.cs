@@ -19,8 +19,7 @@ namespace BreastRadiology.XUnitTests
                     .Description("Fragment definition to include AIM Annotation extension",
                         new Markdown()
                         .Paragraph("This fragment adds the references for the AIM Annotation PolyLine extension.")
-                        .Todo(
-                        )
+                        //.Todo
                      )
                     .AddFragRef(ResourcesMaker.Self.HeaderFragment.Value())
                     .AddExtensionLink(ResourcesMaker.Self.AimAnnotationPolyLineExtension.Value())

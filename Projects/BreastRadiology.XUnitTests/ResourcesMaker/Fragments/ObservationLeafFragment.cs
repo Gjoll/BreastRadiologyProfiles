@@ -19,8 +19,7 @@ namespace BreastRadiology.XUnitTests
                     .Description("Fragment that constrains all observations that are leaf nodes.",
                         new Markdown()
                             .Paragraph("Fragment that constrains observations leaf nodes (no hasMembers references).")
-                            .Todo(
-                            )
+                            //.Todo
                     )
                     .AddFragRef(ResourcesMaker.Self.ObservationNoComponentFragment.Value())
                 ;

@@ -25,8 +25,7 @@ namespace BreastRadiology.XUnitTests
                         new Markdown()
                         .Paragraph("This resource is the head of the tree of observations made of the right breast during a breast radiology exam.")
                         .Paragraph("Child observations are referenced by the 'Observation.hasMember' field.")
-                        .Todo(
-                        )
+                        //.Todo
                     )
                     .AddFragRef(ResourcesMaker.Self.ObservationNoDeviceFragment.Value())
                     .AddFragRef(ResourcesMaker.Self.ObservationSectionFragment.Value())

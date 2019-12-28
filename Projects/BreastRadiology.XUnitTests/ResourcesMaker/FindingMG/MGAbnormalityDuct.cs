@@ -73,7 +73,6 @@ namespace BreastRadiology.XUnitTests
                         new Markdown()
                             .MissingObservation("a duct abnormality")
                             .Todo(
-                                "should this be a leaf node (how about shape, density, location, etc).",
                                 "make dilated the default value."
                             )
                     )

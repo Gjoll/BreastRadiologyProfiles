@@ -19,8 +19,7 @@ namespace BreastRadiology.XUnitTests
                     .Description("Fragment to define a boolean observation",
                     new Markdown()
                         .Paragraph("Fragment that constrains an observation to contains only a boolean value.")
-                        .Todo(
-                        )
+                        //.Todo
                         )
                     .AddFragRef(ResourcesMaker.Self.ObservationNoComponentFragment.Value())
                     ;

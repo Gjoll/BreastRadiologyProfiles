@@ -45,10 +45,7 @@ namespace BreastRadiology.XUnitTests
                             .BlockQuote("ation includes a diagnostic imaging examination, a final assessment is rendered for the diagnostic")
                             .BlockQuote("examination, but the screening mammography examination remains assessed as category 0.")
                             .BiradFooter()
-                            .Todo(
-                                "Should each mass/calcification observation have its own optional/required BiRad observation or just the Left/Right/Combined sections?",
-                                "How is this different from CommonObservedState"
-                            )
+                            //.Todo
                     )
                     .AddFragRef(ResourcesMaker.Self.ObservationNoDeviceFragment.Value())
                     .AddFragRef(ResourcesMaker.Self.ObservationCodedValueFragment.Value())

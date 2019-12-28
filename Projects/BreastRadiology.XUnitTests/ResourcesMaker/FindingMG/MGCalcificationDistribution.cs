@@ -122,8 +122,7 @@ namespace BreastRadiology.XUnitTests
                             .BlockQuote("that are similar in morphology and distribution. In evaluating the likelihood of malignancy for calcifications, ")
                             .BlockQuote("distribution is at least as important as morphology.")
                             .BiradFooter()
-                            .Todo(
-                            )
+                            //.Todo
                     )
                     .AddFragRef(ResourcesMaker.Self.ObservationNoDeviceFragment.Value())
                     .AddFragRef(ResourcesMaker.Self.ObservationCodedValueFragment.Value())

@@ -30,10 +30,7 @@ namespace BreastRadiology.XUnitTests
                             .BlockQuote("from normal anatomic structures, such as ribs or fat lobules, using two or more projections and")
                             .BlockQuote("real-time scanning.")
                             .BiradFooter()
-                            .Todo(
-                                "add mass size measurements (3 dimensional) like US?",
-                                "same for asymmetry, lesion, calcification?"
-                            )
+                            //.Todo
                     )
                     .AddFragRef(ResourcesMaker.Self.ObservationNoDeviceFragment.Value())
                     .AddFragRef(ResourcesMaker.Self.BreastBodyLocationRequiredFragment.Value())

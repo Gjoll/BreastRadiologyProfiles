@@ -31,8 +31,7 @@ namespace BreastRadiology.XUnitTests
                             .BlockQuote("should be marked by the technologist with a radiopaque device designated for use as a marker for")
                             .BlockQuote("a skin lesion.")
                             .BiradFooter()
-                            .Todo(
-                            )
+                            //.Todo
                     )
                     .AddFragRef(ResourcesMaker.Self.BreastBodyLocationRequiredFragment.Value())
                     .AddFragRef(ResourcesMaker.Self.ObservationNoValueFragment.Value())

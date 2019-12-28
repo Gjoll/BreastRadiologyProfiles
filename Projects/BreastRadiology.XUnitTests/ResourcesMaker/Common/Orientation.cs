@@ -89,8 +89,7 @@ namespace BreastRadiology.XUnitTests
                             .BlockQuote("Orientation alone should not be used as an isolated feature in assessing a mass for its likelihood of")
                             .BlockQuote("malignancy.")
                             .BiradFooter()
-                            .Todo(
-                            )
+                            //.Todo
                         )
                     .AddFragRef(ResourcesMaker.Self.ObservationNoDeviceFragment.Value())
                     .AddFragRef(ResourcesMaker.Self.ObservationCodedValueFragment.Value())

@@ -23,8 +23,7 @@ namespace BreastRadiology.XUnitTests
                     $"{Group_AimResources}/Aim/AimAnnotatedImagingStudy")
                     .Description("AIM Annotated Imaging Study",
                         new Markdown()
-                            .Todo(
-                            )
+                            //.Todo
                     )
                     .AddFragRef(ResourcesMaker.Self.AimHeaderFragment.Value())
                     .AddFragRef(ResourcesMaker.Self.AimAnnotationPolyLineFragment.Value())

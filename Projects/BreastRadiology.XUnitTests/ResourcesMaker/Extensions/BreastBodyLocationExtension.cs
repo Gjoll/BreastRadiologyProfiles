@@ -30,30 +30,6 @@ namespace BreastRadiology.XUnitTests
                                 .Line("Central region of the breast (behind nipple)")
                             ),
 
-                        new ConceptDef("Upper Central",
-                            "Upper Central Region",
-                            new Definition()
-                                .Line("Upper Central region of the breast (12 oclock central)")
-                            ),
-
-                        new ConceptDef("Lower Central",
-                            "Lower Central Region",
-                            new Definition()
-                                .Line("Lower Central region of the breast (6 oclock central)")
-                            ),
-
-                        new ConceptDef("Outer Central",
-                            "Outer Central Region",
-                            new Definition()
-                                .Line("Outer Central region of the breast (3 or 9 oclock depending on laterality)")
-                            ),
-
-                        new ConceptDef("Inner Central",
-                            "Inner Central Region",
-                            new Definition()
-                                .Line("Inner Central region of the breast (3 or 9 oclock depending on laterality)")
-                            ),
-
                         new ConceptDef("RetroaReolar",
                             "RetroaReolar Region",
                             new Definition()
@@ -133,121 +109,61 @@ namespace BreastRadiology.XUnitTests
                             new Definition()
                                 .Line("12-OClock")
                             ),
-                        new ConceptDef("12:30-OClock",
-                            "12:30-OClock",
-                            new Definition()
-                                .Line("12:30-OClock")
-                            ),
                         new ConceptDef("1:00-OClock",
                             "1:00-OClock",
                             new Definition()
                                 .Line("1:00-OClock")
-                            ),
-                        new ConceptDef("1:30-OClock",
-                            "1:30-OClock",
-                            new Definition()
-                                .Line("1:30-OClock")
                             ),
                         new ConceptDef("2:00-OClock",
                             "2:00-OClock",
                             new Definition()
                                 .Line("2:00-OClock")
                             ),
-                        new ConceptDef("2:30-OClock",
-                            "2:30-OClock",
-                            new Definition()
-                                .Line("2:30-OClock")
-                            ),
                         new ConceptDef("3:00-OClock",
                             "3:00-OClock",
                             new Definition()
                                 .Line("3:00-OClock")
-                            ),
-                        new ConceptDef("3:30-OClock",
-                            "3:30-OClock",
-                            new Definition()
-                                .Line("3:30-OClock")
                             ),
                         new ConceptDef("4:00-OClock",
                             "4:00-OClock",
                             new Definition()
                                 .Line("4:00-OClock")
                             ),
-                        new ConceptDef("4:30-OClock",
-                            "4:30-OClock",
-                            new Definition()
-                                .Line("4:30-OClock")
-                            ),
                         new ConceptDef("5:00-OClock",
                             "5:00-OClock",
                             new Definition()
                                 .Line("5:00-OClock")
-                            ),
-                        new ConceptDef("5:30-OClock",
-                            "5:30-OClock",
-                            new Definition()
-                                .Line("5:30-OClock")
                             ),
                         new ConceptDef("6:00-OClock",
                             "6:00-OClock",
                             new Definition()
                                 .Line("6:00-OClock")
                             ),
-                        new ConceptDef("6:30-OClock",
-                            "6:30-OClock",
-                            new Definition()
-                                .Line("6:30-OClock")
-                            ),
                         new ConceptDef("7:00-OClock",
                             "7:00-OClock",
                             new Definition()
                                 .Line("7:00-OClock")
-                            ),
-                        new ConceptDef("7:30-OClock",
-                            "7:30-OClock",
-                            new Definition()
-                                .Line("7:30-OClock")
                             ),
                         new ConceptDef("8:00-OClock",
                             "8:00-OClock",
                             new Definition()
                                 .Line("8:00-OClock")
                             ),
-                        new ConceptDef("8:30-OClock",
-                            "8:30-OClock",
-                            new Definition()
-                                .Line("8:30-OClock")
-                            ),
                         new ConceptDef("9:00-OClock",
                             "9:00-OClock",
                             new Definition()
                                 .Line("9:00-OClock")
-                            ),
-                        new ConceptDef("9:30-OClock",
-                            "9:30-OClock",
-                            new Definition()
-                                .Line("9:30-OClock")
                             ),
                         new ConceptDef("10:00-OClock",
                             "10:00-OClock",
                             new Definition()
                                 .Line("10:00-OClock")
                             ),
-                        new ConceptDef("10:30-OClock",
-                            "10:30-OClock",
-                            new Definition()
-                                .Line("10:30-OClock")
-                            ),
                         new ConceptDef("11:00-OClock",
                             "11:00-OClock",
                             new Definition()
                                 .Line("11:00-OClock")
                             ),
-                        new ConceptDef("11:30-OClock",
-                            "11:30-OClock",
-                            new Definition()
-                                .Line("11:30-OClock")
-                            )
                          })
                      );
 
@@ -384,8 +300,7 @@ namespace BreastRadiology.XUnitTests
                             .Paragraph("this extension defines the fields that are used to describe the" +
                                        "location of an observed item in a breat radiology report")
                             .Paragraph("Breast radiology exams have specific ways of defining a location that are unique to this field.")
-                            .Todo(
-                            )
+                            //.Todo
                     )
                     .Kind(StructureDefinition.StructureDefinitionKind.ComplexType)
                     .Context()

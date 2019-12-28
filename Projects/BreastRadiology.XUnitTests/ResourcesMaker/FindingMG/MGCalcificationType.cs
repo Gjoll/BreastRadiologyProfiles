@@ -224,8 +224,7 @@ namespace BreastRadiology.XUnitTests
                     .Description("Breast Radiology Mammography Calcification Type Observation",
                         new Markdown()
                             .Paragraph("This resource describes the type of calcification observed.")
-                            .Todo(
-                            )
+                            //.Todo
                      )
                     .AddFragRef(ResourcesMaker.Self.ObservationNoDeviceFragment.Value())
                     .AddFragRef(ResourcesMaker.Self.ObservationCodedValueFragment.Value())
