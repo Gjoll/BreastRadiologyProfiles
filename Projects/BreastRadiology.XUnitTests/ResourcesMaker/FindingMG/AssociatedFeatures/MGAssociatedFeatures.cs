@@ -43,7 +43,7 @@ namespace BreastRadiology.XUnitTests
                     new ProfileTargetSlice(ResourcesMaker.Self.MGAbnormalityArchitecturalDistortion.Value(), 0, "*"),
                     new ProfileTargetSlice(ResourcesMaker.Self.MGAbnormalityCalcification.Value(), 0, "*")
                     };
-                    e.Find("hasMember").SliceByUrl(targets);
+                    e.SliceByUrl("hasMember", targets);
                     e.AddProfileTargets(targets);
                 }
                 e.IntroDoc

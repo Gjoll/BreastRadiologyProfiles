@@ -42,7 +42,7 @@ namespace BreastRadiology.XUnitTests
                     new ProfileTargetSlice(ResourcesMaker.Self.SectionFindingsLeftBreast.Value(), 1, "1"),
                     new ProfileTargetSlice(ResourcesMaker.Self.SectionFindingsRightBreast.Value(), 1, "1")
                     };
-                    e.Find("hasMember").SliceByUrl(targets);
+                    e.SliceByUrl("hasMember", targets);
                     e.AddProfileTargets(targets);
                 }
 

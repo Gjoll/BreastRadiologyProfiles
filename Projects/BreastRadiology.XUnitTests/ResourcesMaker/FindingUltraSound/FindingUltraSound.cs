@@ -73,7 +73,7 @@ namespace BreastRadiology.XUnitTests
                         //new ProfileTargetSlice(ResourcesMaker.Self.MammoSolitaryDilatedDuct, 0, "1"),
                         //new ProfileTargetSlice(ResourcesMaker.Self.MammoAssociatedFeatures, 0, "1")
                     };
-                    e.Find("hasMember").SliceByUrl(targets);
+                    e.SliceByUrl("hasMember", targets);
                     e.AddProfileTargets(targets);
                 }
                 e.IntroDoc

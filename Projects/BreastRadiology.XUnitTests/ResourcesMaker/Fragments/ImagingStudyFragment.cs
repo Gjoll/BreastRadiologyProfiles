@@ -31,7 +31,7 @@ namespace BreastRadiology.XUnitTests
                     new ProfileTargetSlice(ImagingStudyUrl, 0, "*"),
                     new ProfileTargetSlice(ResourcesMaker.Self.AimAnnotatedImagingStudy.Value(), 0, "1"),
                     };
-                    e.Find("derivedFrom").SliceByUrl(targets);
+                    e.SliceByUrl("derivedFrom", targets);
                     e.AddProfileTargets(targets);
                 }
 

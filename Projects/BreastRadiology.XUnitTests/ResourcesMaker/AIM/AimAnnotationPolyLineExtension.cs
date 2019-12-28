@@ -62,7 +62,7 @@ namespace BreastRadiology.XUnitTests
                     )
                     ;
 
-                eGroup = e.Find("extension");
+                eGroup = e.GetOrCreate("extension");
                 topExtension = eGroup.ElementDefinition;
                 topExtension.ConfigureSliceByUrlDiscriminator();
 
@@ -76,11 +76,11 @@ namespace BreastRadiology.XUnitTests
                     ElementDefGroup pointsGroup = e.InsertAfter(eGroup, points);
                     ElementDefinition pointsValue = e.Clone("value[x]")
                         .Path($"{topExtension.Path}.value[x]")
-                        .ElementId($"{topExtension.Path}:points.value[x]")
+                        .ElementId($"{topExtension.Path}:{name}.value[x]")
                         .Type(type)
                         .Single()
                         ;
-                    pointsGroup.RelatedElements.Add(pointsValue);
+                    e.InsertAfter(pointsGroup, pointsValue);
                 }
 
                 Extend("opacity", "string");

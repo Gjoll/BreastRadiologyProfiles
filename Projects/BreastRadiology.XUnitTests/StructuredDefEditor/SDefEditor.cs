@@ -74,10 +74,42 @@ namespace BreastRadiology.XUnitTests
             this.IntroDoc.AddSvgImage(this);
         }
 
+        /// <summary>
+        /// Inserts after the element with the indicated name, and any children of that element.
+        /// </summary>
         public ElementDefGroup InsertAfter(ElementDefGroup at,
             ElementDefinition e)
         {
             return this.AddElementDefinition(at.Index, e, null);
+        }
+
+        /// <summary>
+        /// Inserts after the element with the indicated name, and any children of that element.
+        /// </summary>
+        public ElementDefGroup InsertAfterAllChildren(String path,
+            ElementDefinition insertItem)
+        {
+            if (this.baseElements.TryGetValue(path, out ElementDefGroup baseDefinition) == false)
+                throw new Exception($"{path} not found");
+
+            path = path + ".";
+            Int32 i = this.elementOrder.Count;
+
+            while ((i > 0) && (this.elementOrder[i - 1].Index > baseDefinition.Index))
+                i -= 1;
+
+            while (i < this.elementOrder.Count)
+            {
+                if (this.elementOrder[i].ElementDefinition.ElementId.SkipFirstPathPart().StartsWith(path) == false)
+                    break;
+                i += 1;
+            }
+            ElementDefGroup newE = new ElementDefGroup(baseDefinition.Index, 
+                insertItem, 
+                baseDefinition.ElementDefinition);
+            this.elements.Add(insertItem.ElementId.SkipFirstPathPart(), newE);
+            this.elementOrder.Insert(i, newE);
+            return newE;
         }
 
         /// <summary>
@@ -88,7 +120,7 @@ namespace BreastRadiology.XUnitTests
         /// </summary>
         /// <param name="path"></param>
         /// <returns></returns>
-        public ElementDefGroup Find(String path)
+        public ElementDefGroup GetOrCreate(String path)
         {
             {
                 if (this.elements.TryGetValue(path, out ElementDefGroup e) == true)
@@ -139,7 +171,7 @@ namespace BreastRadiology.XUnitTests
         /// <returns></returns>
         public ElementDefinition Select(String path)
         {
-            return this.Find(path).ElementDefinition;
+            return this.GetOrCreate(path).ElementDefinition;
         }
 
         public ElementDefinition Clone(String path)
@@ -158,10 +190,7 @@ namespace BreastRadiology.XUnitTests
         public bool WriteFragment(out String fragmentName)
         {
             foreach (ElementDefGroup item in this.elementOrder)
-            {
                 this.sDef.Differential.Element.Add(item.ElementDefinition);
-                this.sDef.Differential.Element.AddRange(item.RelatedElements);
-            }
 
             // Patch Path and Id's with correct basePath.
             foreach (ElementDefinition e in this.sDef.Differential.Element)
@@ -192,7 +221,7 @@ namespace BreastRadiology.XUnitTests
         {
             this.AddLink("target", extensionUrl, showChildren);
             this.ConfigureExtensionSlice();
-            return this.Find("extension").SliceByUrl(extensionUrl, name);
+            return this.SliceByUrl("extension", extensionUrl, name);
         }
 
         /// <summary>
@@ -291,6 +320,142 @@ namespace BreastRadiology.XUnitTests
             this.SDef.AddExtension(Global.ResourceMapLinkUrl,
                 new FhirString($"{linkType}|{showChildren}|{url}"));
             return this;
+        }
+
+        public ElementDefinition AppendSlice(String elementName,
+            String sliceName,
+            Int32 min = 0,
+            String max = "*")
+        {
+            ElementDefGroup elementDef = this.GetOrCreate(elementName);
+            ElementDefinition retVal = new ElementDefinition
+            {
+                Path = elementDef.ElementDefinition.Path,
+                ElementId = $"{elementDef.ElementDefinition.Path}:{sliceName}",
+                SliceName = sliceName,
+                Min = min,
+                Max = max
+            };
+            if (elementDef.BaseElementDefinition != null)
+            {
+                retVal.Base = new ElementDefinition.BaseComponent
+                {
+                    Path = elementDef.BaseElementDefinition.Path,
+                    Min = elementDef.BaseElementDefinition.Min,
+                    Max = elementDef.BaseElementDefinition.Max
+                };
+            }
+            this.InsertAfter(elementDef, retVal);
+            return retVal;
+        }
+
+        /// <summary>
+        /// Add the indicated slice by url.
+        /// </summary>
+        public ElementDefinition FixedCodeSlice(ElementDefGroup elementDef,
+            String sliceName,
+            String system,
+            String code)
+        {
+            sliceName = sliceName.UncapFirstLetter();
+            elementDef.ElementDefinition.Slicing = new ElementDefinition.SlicingComponent
+            {
+                Rules = ElementDefinition.SlicingRules.Open
+            };
+
+            elementDef.ElementDefinition.Slicing.Discriminator.Add(new ElementDefinition.DiscriminatorComponent
+            {
+                Type = ElementDefinition.DiscriminatorType.Value,
+                Path = "coding"
+            });
+
+            ElementDefinition coding = new ElementDefinition
+            {
+                ElementId = $"{elementDef.ElementDefinition.Path}.coding",
+                Path = $"{elementDef.ElementDefinition.Path}.coding",
+            };
+            this.InsertAfter(elementDef, coding);
+
+            ElementDefinition slice = new ElementDefinition
+            {
+                ElementId = $"{elementDef.ElementDefinition.Path}.coding:{sliceName}",
+                Path = $"{elementDef.ElementDefinition.Path}.coding",
+                SliceName = sliceName,
+                Min = 1,
+                Max = "1",
+                Pattern = new Coding(system, code),
+                Base = new ElementDefinition.BaseComponent
+                {
+                    Path = $"{elementDef.BaseElementDefinition.Path}",
+                    Min = elementDef.BaseElementDefinition.Min,
+                    Max = elementDef.BaseElementDefinition.Max
+                }
+            };
+            this.InsertAfter(elementDef, slice);
+            return slice;
+        }
+
+
+        /// <summary>
+        /// Add the indicated slice by url.
+        /// </summary>
+        public ElementDefinition SliceByUrl(String elementName,
+            String sliceUrl,
+            String sliceName)
+        {
+            sliceName = sliceName.UncapFirstLetter();
+
+            ElementDefinition extSlice = this.AppendSlice(elementName, sliceName);
+            extSlice.IsModifier = false;
+            extSlice.Type.Add(new ElementDefinition.TypeRefComponent
+            {
+                Code = "Extension",
+                Profile = new String[] { sliceUrl }
+            });
+            return extSlice;
+        }
+
+        public void SliceByPatterns(String elementName,
+            String typeCode,
+            IEnumerable<PatternSlice> patternSlices)
+        {
+            ElementDefGroup elementDef = this.GetOrCreate(elementName);
+            elementDef.ElementDefinition
+                .ConfigureSliceByPatternDiscriminator("$this")
+                .Type(typeCode)
+                ;
+            foreach (PatternSlice patternSlice in patternSlices)
+            {
+                ElementDefinition sliceElement = this.AppendSlice(elementName,
+                        patternSlice.SliceName, 
+                        patternSlice.Min, 
+                        patternSlice.Max)
+                    .Type("CodeableConcept")
+                    .Pattern(patternSlice.Pattern)
+                    .Short(patternSlice.Short)
+                    .Definition(patternSlice.Definition)
+                    .Type(typeCode);
+                ;
+                sliceElement.Mapping.Clear();
+            }
+        }
+
+        public void SliceByUrl(String elementName,
+            IEnumerable<ProfileTargetSlice> targets)
+        {
+            ElementDefGroup elementDef = this.GetOrCreate(elementName);
+            elementDef.ElementDefinition.ConfigureSliceByUrlDiscriminator();
+            foreach (ProfileTargetSlice target in targets)
+            {
+                String sliceName = target.Profile.LastUriPart().UncapFirstLetter();
+                ElementDefinition sliceElement = this.AppendSlice(elementName, sliceName, target.Min, target.Max);
+                sliceElement.Type.Clear();
+                sliceElement.Type.Add(new ElementDefinition.TypeRefComponent
+                {
+                    Code = "Reference",
+                    TargetProfile = new String[] { target.Profile }
+                });
+            }
         }
     }
 }

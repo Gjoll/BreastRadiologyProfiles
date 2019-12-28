@@ -60,7 +60,7 @@ namespace BreastRadiology.XUnitTests
                     new ProfileTargetSlice(ResourcesMaker.Self.USShape.Value(), 0, "1"),
                     new ProfileTargetSlice(ResourcesMaker.Self.USVascularity.Value(), 0, "1"),
                     };
-                    e.Find("hasMember").SliceByUrl(targets);
+                    e.SliceByUrl("hasMember", targets);
                     e.AddProfileTargets(targets);
                 }
 

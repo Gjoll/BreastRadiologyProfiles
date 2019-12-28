@@ -137,94 +137,6 @@
     </resource>
     <resource>
       <reference>
-        <reference value="CodeSystem/BreastRadMarginCS" />
-      </reference>
-      <name value="MarginCodeSystem" />
-      <description value="Margin code system." />
-      <exampleBoolean value="false" />
-    </resource>
-    <resource>
-      <reference>
-        <reference value="CodeSystem/BreastRadUSEchoPatternCS" />
-      </reference>
-      <name value="US Echo Pattern CodeSystem" />
-      <description value="Ultra-sound mass echo pattern code system." />
-      <exampleBoolean value="false" />
-    </resource>
-    <resource>
-      <reference>
-        <reference value="CodeSystem/BreastRadUSElasticityCS" />
-      </reference>
-      <name value="US Echo Pattern CodeSystem" />
-      <description value="Ultra-sound Elasticity code system." />
-      <exampleBoolean value="false" />
-    </resource>
-    <resource>
-      <reference>
-        <reference value="CodeSystem/BreastRadUSPosteriorAcousticFeaturesCS" />
-      </reference>
-      <name value="US Posterior Acoustic Features CodeSystem" />
-      <description value="Ultra-sound mass Posterior acoustic features code system." />
-      <exampleBoolean value="false" />
-    </resource>
-    <resource>
-      <reference>
-        <reference value="CodeSystem/BreastRadUSTissueCompositionCS" />
-      </reference>
-      <name value="US Tissue Composition CodeSystem" />
-      <description value="Ultra-sound breast tissue composition code system." />
-      <exampleBoolean value="false" />
-    </resource>
-    <resource>
-      <reference>
-        <reference value="CodeSystem/BreastRadUSVascularityCS" />
-      </reference>
-      <name value="US Echo Pattern CodeSystem" />
-      <description value="Ultra-sound Vascularity code system." />
-      <exampleBoolean value="false" />
-    </resource>
-    <resource>
-      <reference>
-        <reference value="CodeSystem/CommonObservedChangeInDefinitionCS" />
-      </reference>
-      <name value="Observed Changes  CodeSystem" />
-      <description value="Observed changes in definition of an abnormality over time code system." />
-      <exampleBoolean value="false" />
-    </resource>
-    <resource>
-      <reference>
-        <reference value="CodeSystem/CommonObservedChangeInNumberCS" />
-      </reference>
-      <name value="Observed Changes CodeSystem" />
-      <description value="bserved changes in number of an abnormality over time code system." />
-      <exampleBoolean value="false" />
-    </resource>
-    <resource>
-      <reference>
-        <reference value="CodeSystem/CommonObservedChangeInProminanceCS" />
-      </reference>
-      <name value="Observed Changes CodeSystem" />
-      <description value="Observed changes in Prominance of an abnormality over time code system." />
-      <exampleBoolean value="false" />
-    </resource>
-    <resource>
-      <reference>
-        <reference value="CodeSystem/CommonObservedChangeInSizeCS" />
-      </reference>
-      <name value="Observed Changes CodeSystem" />
-      <description value="Observed changes in the size of an abnormality over time code system." />
-      <exampleBoolean value="false" />
-    </resource>
-    <resource>
-      <reference>
-        <reference value="CodeSystem/CommonObservedChangeInStateCS" />
-      </reference>
-      <name value="Observed Change In State CodeSystem" />
-      <description value="Observed changes in state of an abnormality over time code system." />
-      <exampleBoolean value="false" />
-    </resource>
-    <resource>
-      <reference>
         <reference value="CodeSystem/ConsistentWithCodeSystemCS" />
       </reference>
       <name value="Consistent With CodeSystem" />
@@ -517,86 +429,6 @@
       </reference>
       <name value="Breast Location Region ValueSet ValueSet" />
       <description value="Breast body location region value set." />
-      <exampleBoolean value="false" />
-    </resource>
-    <resource>
-      <reference>
-        <reference value="ValueSet/BreastRadUSEchoPatternVS" />
-      </reference>
-      <name value="US Echo Pattern ValueSet ValueSet" />
-      <description value="ValueSet defining Ultra-sound mass echo pattern codes." />
-      <exampleBoolean value="false" />
-    </resource>
-    <resource>
-      <reference>
-        <reference value="ValueSet/BreastRadUSElasticityVS" />
-      </reference>
-      <name value="US Elasticity ValueSet ValueSet" />
-      <description value="ValueSet defining Ultra-sound Elasticity code system." />
-      <exampleBoolean value="false" />
-    </resource>
-    <resource>
-      <reference>
-        <reference value="ValueSet/BreastRadUSMarginVS" />
-      </reference>
-      <name value="US Margin ValueSet ValueSet" />
-      <description value="ValueSet defining Ultra-sound mass margin codes." />
-      <exampleBoolean value="false" />
-    </resource>
-    <resource>
-      <reference>
-        <reference value="ValueSet/BreastRadUSTissueCompositionVS" />
-      </reference>
-      <name value="US Tissue Composition ValueSet ValueSet" />
-      <description value="ValueSet defining Ultra-sound breast tissue composition codes." />
-      <exampleBoolean value="false" />
-    </resource>
-    <resource>
-      <reference>
-        <reference value="ValueSet/BreastRadUSVascularityVS" />
-      </reference>
-      <name value="US Vascularity ValueSet ValueSet" />
-      <description value="ValueSet defining Ultra-sound Vascularity codes." />
-      <exampleBoolean value="false" />
-    </resource>
-    <resource>
-      <reference>
-        <reference value="ValueSet/CommonObservedChangeInDefinitionVS" />
-      </reference>
-      <name value="Observed Definition Changes ValueSet ValueSet" />
-      <description value="ValueSet defining types of observed changes in definition of an abnormality over time." />
-      <exampleBoolean value="false" />
-    </resource>
-    <resource>
-      <reference>
-        <reference value="ValueSet/CommonObservedChangeInNumberVS" />
-      </reference>
-      <name value="Observed Number Changes ValueSet ValueSet" />
-      <description value="ValueSet defining types of observed changes in number of an abnormality over time." />
-      <exampleBoolean value="false" />
-    </resource>
-    <resource>
-      <reference>
-        <reference value="ValueSet/CommonObservedChangeInProminanceVS" />
-      </reference>
-      <name value="Observed Prominance Changes ValueSet ValueSet" />
-      <description value="ValueSet defining types of observed changes in Prominance of an abnormality over time." />
-      <exampleBoolean value="false" />
-    </resource>
-    <resource>
-      <reference>
-        <reference value="ValueSet/CommonObservedChangeInSizeVS" />
-      </reference>
-      <name value="Observed Changes ValueSet ValueSet" />
-      <description value="ValueSet defining types of observed changes in the size of an abnormality over time." />
-      <exampleBoolean value="false" />
-    </resource>
-    <resource>
-      <reference>
-        <reference value="ValueSet/CommonObservedChangeInStateVS" />
-      </reference>
-      <name value="Observed Change In State ValueSet ValueSet" />
-      <description value="ValueSet defining types of observed changes in state of an abnormality over time." />
       <exampleBoolean value="false" />
     </resource>
     <resource>
@@ -909,24 +741,6 @@
     </resource>
     <resource>
       <reference>
-        <reference value="StructureDefinition/BreastRadSectionFindings" />
-      </reference>
-      <name value="Findings" />
-      <description value="Findings Section" />
-      <exampleBoolean value="false" />
-      <groupingId value="BaseResources" />
-    </resource>
-    <resource>
-      <reference>
-        <reference value="StructureDefinition/BreastRadSectionFindingsLeftBreast" />
-      </reference>
-      <name value="Findings Left Breast" />
-      <description value="Findings Left Breast Section" />
-      <exampleBoolean value="false" />
-      <groupingId value="BaseResources" />
-    </resource>
-    <resource>
-      <reference>
         <reference value="StructureDefinition/SectionFindingsLeftBreast" />
       </reference>
       <name value="Findings Left Breast" />
@@ -936,28 +750,10 @@
     </resource>
     <resource>
       <reference>
-        <reference value="StructureDefinition/BreastRadSectionFindingsRightBreast" />
-      </reference>
-      <name value="Findings Right Breast" />
-      <description value="Findings Right Breast Section" />
-      <exampleBoolean value="false" />
-      <groupingId value="BaseResources" />
-    </resource>
-    <resource>
-      <reference>
         <reference value="StructureDefinition/SectionFindingsRightBreast" />
       </reference>
       <name value="Findings Right Breast" />
       <description value="Findings Right Breast Section" />
-      <exampleBoolean value="false" />
-      <groupingId value="BaseResources" />
-    </resource>
-    <resource>
-      <reference>
-        <reference value="StructureDefinition/BreastRadSectionPatientHistory" />
-      </reference>
-      <name value="Patient History" />
-      <description value="Patient History Section" />
       <exampleBoolean value="false" />
       <groupingId value="BaseResources" />
     </resource>
@@ -982,15 +778,6 @@
     <resource>
       <reference>
         <reference value="StructureDefinition/Impression" />
-      </reference>
-      <name value="Impression" />
-      <description value="Breast Radiology Impression (ClinicalImpression)" />
-      <exampleBoolean value="false" />
-      <groupingId value="CommonResources" />
-    </resource>
-    <resource>
-      <reference>
-        <reference value="StructureDefinition/BreastRadImpression" />
       </reference>
       <name value="Impression" />
       <description value="Breast Radiology Impression (ClinicalImpression)" />
@@ -1026,25 +813,7 @@
     </resource>
     <resource>
       <reference>
-        <reference value="StructureDefinition/CommonObservedChangeInDefinition" />
-      </reference>
-      <name value="Observed Change in Definition" />
-      <description value="Breast Radiology Changes in Definition Observation" />
-      <exampleBoolean value="false" />
-      <groupingId value="CommonResources" />
-    </resource>
-    <resource>
-      <reference>
         <reference value="StructureDefinition/ObservedChangeInNumber" />
-      </reference>
-      <name value="Observed Change in Number" />
-      <description value="Breast Radiology Changes in Number Observation" />
-      <exampleBoolean value="false" />
-      <groupingId value="CommonResources" />
-    </resource>
-    <resource>
-      <reference>
-        <reference value="StructureDefinition/CommonObservedChangeInNumber" />
       </reference>
       <name value="Observed Change in Number" />
       <description value="Breast Radiology Changes in Number Observation" />
@@ -1062,25 +831,7 @@
     </resource>
     <resource>
       <reference>
-        <reference value="StructureDefinition/CommonObservedChangeInProminance" />
-      </reference>
-      <name value="Observed Change in Prominance" />
-      <description value="Breast Radiology Changes in Prominance Observation" />
-      <exampleBoolean value="false" />
-      <groupingId value="CommonResources" />
-    </resource>
-    <resource>
-      <reference>
         <reference value="StructureDefinition/ObservedChangeInSize" />
-      </reference>
-      <name value="Observed Changes" />
-      <description value="Breast Radiology Changes in Size Observation" />
-      <exampleBoolean value="false" />
-      <groupingId value="CommonResources" />
-    </resource>
-    <resource>
-      <reference>
-        <reference value="StructureDefinition/CommonObservedChangeInSize" />
       </reference>
       <name value="Observed Changes" />
       <description value="Breast Radiology Changes in Size Observation" />
@@ -1098,37 +849,10 @@
     </resource>
     <resource>
       <reference>
-        <reference value="StructureDefinition/CommonObservedChangeInState" />
-      </reference>
-      <name value="Observed Change In State" />
-      <description value="Breast Radiology Observed Change In State Observation" />
-      <exampleBoolean value="false" />
-      <groupingId value="CommonResources" />
-    </resource>
-    <resource>
-      <reference>
-        <reference value="StructureDefinition/CommonCount" />
-      </reference>
-      <name value="Count" />
-      <description value="Breast Radiology Count Observation" />
-      <exampleBoolean value="false" />
-      <groupingId value="CommonResources" />
-    </resource>
-    <resource>
-      <reference>
         <reference value="StructureDefinition/ObservedCount" />
       </reference>
       <name value="Count" />
       <description value="Breast Radiology Count Observation" />
-      <exampleBoolean value="false" />
-      <groupingId value="CommonResources" />
-    </resource>
-    <resource>
-      <reference>
-        <reference value="StructureDefinition/CommonSize" />
-      </reference>
-      <name value="Size" />
-      <description value="Breast Radiology Size Observation" />
       <exampleBoolean value="false" />
       <groupingId value="CommonResources" />
     </resource>
@@ -1152,7 +876,7 @@
     </resource>
     <resource>
       <reference>
-        <reference value="StructureDefinition/MammoShape" />
+        <reference value="StructureDefinition/UltraSoundShape" />
       </reference>
       <name value="Shape" />
       <description value="Breast Radiology Shape Observation" />
@@ -1161,7 +885,7 @@
     </resource>
     <resource>
       <reference>
-        <reference value="StructureDefinition/UltraSoundShape" />
+        <reference value="StructureDefinition/MammoShape" />
       </reference>
       <name value="Shape" />
       <description value="Breast Radiology Shape Observation" />
@@ -1188,24 +912,6 @@
     </resource>
     <resource>
       <reference>
-        <reference value="StructureDefinition/BreastRadImpressionsExtension" />
-      </reference>
-      <name value="Impressions Extension" />
-      <description value="Impressions extension" />
-      <exampleBoolean value="false" />
-      <groupingId value="ExtensionResources" />
-    </resource>
-    <resource>
-      <reference>
-        <reference value="StructureDefinition/BreastRadPatientRiskExtension" />
-      </reference>
-      <name value="PatientRisk Extension" />
-      <description value="Patient Risk section extension" />
-      <exampleBoolean value="false" />
-      <groupingId value="ExtensionResources" />
-    </resource>
-    <resource>
-      <reference>
         <reference value="StructureDefinition/PatientRiskExtension" />
       </reference>
       <name value="PatientRisk Extension" />
@@ -1224,25 +930,7 @@
     </resource>
     <resource>
       <reference>
-        <reference value="StructureDefinition/BreastRadPriorReportsExtension" />
-      </reference>
-      <name value="Prior Reports Extension" />
-      <description value="Prior Diagnostic Report extension" />
-      <exampleBoolean value="false" />
-      <groupingId value="ExtensionResources" />
-    </resource>
-    <resource>
-      <reference>
         <reference value="StructureDefinition/RecommendationsExtension" />
-      </reference>
-      <name value="Recommendations Extension" />
-      <description value="Diagnostic Report recommendations section extension" />
-      <exampleBoolean value="false" />
-      <groupingId value="ExtensionResources" />
-    </resource>
-    <resource>
-      <reference>
-        <reference value="StructureDefinition/BreastRadRecommendationsExtension" />
       </reference>
       <name value="Recommendations Extension" />
       <description value="Diagnostic Report recommendations section extension" />
@@ -1527,25 +1215,7 @@
     </resource>
     <resource>
       <reference>
-        <reference value="StructureDefinition/BreastRadUSBoundary" />
-      </reference>
-      <name value="Ultra Sound Boundary" />
-      <description value="Breast Radiology Ultra-Sound Boundary Observation" />
-      <exampleBoolean value="false" />
-      <groupingId value="USResources" />
-    </resource>
-    <resource>
-      <reference>
         <reference value="StructureDefinition/USEchoPattern" />
-      </reference>
-      <name value="US Echo Pattern" />
-      <description value="Breast Radiology Ultra-Sound Echo Pattern Observation" />
-      <exampleBoolean value="false" />
-      <groupingId value="USResources" />
-    </resource>
-    <resource>
-      <reference>
-        <reference value="StructureDefinition/BreastRadUSEchoPattern" />
       </reference>
       <name value="US Echo Pattern" />
       <description value="Breast Radiology Ultra-Sound Echo Pattern Observation" />
@@ -1563,37 +1233,10 @@
     </resource>
     <resource>
       <reference>
-        <reference value="StructureDefinition/BreastRadUSElasticity" />
-      </reference>
-      <name value="US Elasticity" />
-      <description value="Breast Radiology Ultra-Sound Elasticity Observation" />
-      <exampleBoolean value="false" />
-      <groupingId value="USResources" />
-    </resource>
-    <resource>
-      <reference>
-        <reference value="StructureDefinition/BreastRadUSMass" />
-      </reference>
-      <name value="US Mass" />
-      <description value="Breast Radiology Mammography Ultra-Sound Mass Observation" />
-      <exampleBoolean value="false" />
-      <groupingId value="USResources" />
-    </resource>
-    <resource>
-      <reference>
         <reference value="StructureDefinition/USMass" />
       </reference>
       <name value="US Mass" />
       <description value="Breast Radiology Mammography Ultra-Sound Mass Observation" />
-      <exampleBoolean value="false" />
-      <groupingId value="USResources" />
-    </resource>
-    <resource>
-      <reference>
-        <reference value="StructureDefinition/BreastRadUSMargin" />
-      </reference>
-      <name value="US Margin" />
-      <description value="Breast Radiology Ultra-Sound Margin Observation" />
       <exampleBoolean value="false" />
       <groupingId value="USResources" />
     </resource>
@@ -1617,37 +1260,10 @@
     </resource>
     <resource>
       <reference>
-        <reference value="StructureDefinition/BreastRadUSTissueComposition" />
-      </reference>
-      <name value="US Tissue Composition" />
-      <description value="Breast Radiology Ultra-Sound Tissue Composition Observation" />
-      <exampleBoolean value="false" />
-      <groupingId value="USResources" />
-    </resource>
-    <resource>
-      <reference>
         <reference value="StructureDefinition/USPosteriorAcousticFeatures" />
       </reference>
       <name value="US Posterior Acoustic Features" />
       <description value="Breast Radiology Ultra-Sound Posterior Acoustic Features Observation" />
-      <exampleBoolean value="false" />
-      <groupingId value="USResources" />
-    </resource>
-    <resource>
-      <reference>
-        <reference value="StructureDefinition/BreastRadUSPosteriorAcousticFeatures" />
-      </reference>
-      <name value="US Posterior Acoustic Features" />
-      <description value="Breast Radiology Ultra-Sound Posterior Acoustic Features Observation" />
-      <exampleBoolean value="false" />
-      <groupingId value="USResources" />
-    </resource>
-    <resource>
-      <reference>
-        <reference value="StructureDefinition/BreastRadUSVascularity" />
-      </reference>
-      <name value="US Vascularity" />
-      <description value="Breast Radiology Ultra-Sound Vascularity Observation" />
       <exampleBoolean value="false" />
       <groupingId value="USResources" />
     </resource>

@@ -358,7 +358,7 @@ namespace BreastRadiology.XUnitTests
                         .Path($"{topExtension.Path}.extension")
                         .Zero()
                         ;
-                    extensionGroup.RelatedElements.Add(sealExtension);
+                    e.InsertAfter(extensionGroup, sealExtension);
 
                     ElementDefinition elementValue = e.Clone("value[x]")
                         .Path($"{topExtension.Path}.value[x]")
@@ -369,7 +369,7 @@ namespace BreastRadiology.XUnitTests
                         .Short(shortText)
                         .Definition(definition)
                         ;
-                    extensionGroup.RelatedElements.Add(elementValue);
+                    e.InsertAfter(extensionGroup, elementValue);
                 }
 
                 //breastBodyLocationMapLinks = new List<ResourceMap.Link>();
@@ -404,7 +404,7 @@ namespace BreastRadiology.XUnitTests
                     .Zero()
                     ;
 
-                eGroup = e.Find("extension");
+                eGroup = e.GetOrCreate("extension");
                 topExtension = eGroup.ElementDefinition;
                 topExtension.ConfigureSliceByUrlDiscriminator();
 
@@ -508,7 +508,7 @@ namespace BreastRadiology.XUnitTests
                         .Short("Distance from nipple")
                         .Definition("Distance from nipple to body location")
                         ;
-                    distanceFromNippleGroup.RelatedElements.Add(distanceFromNippleValue);
+                    e.InsertAfter(distanceFromNippleGroup, distanceFromNippleValue);
 
                     ElementDefinition quantitySystem = new ElementDefinition()
                         .Path($"{topExtension.Path}.value[x].system")
@@ -517,7 +517,7 @@ namespace BreastRadiology.XUnitTests
                         .Single()
                         .Fixed(new FhirUri("http://unitsofmeasure.org"))
                         ;
-                    distanceFromNippleGroup.RelatedElements.Add(quantitySystem);
+                    e.InsertAfter(distanceFromNippleGroup, quantitySystem);
 
                     ElementDefinition quantityCode = new ElementDefinition()
                         .Path($"{topExtension.Path}.value[x].code")
@@ -527,7 +527,7 @@ namespace BreastRadiology.XUnitTests
                         .Binding("http://hl7.org/fhir/us/breast-radiology/ValueSet/UnitsOfLengthVS",
                                 BindingStrength.Required)
                         ;
-                    distanceFromNippleGroup.RelatedElements.Add(quantityCode);
+                    e.InsertAfter(distanceFromNippleGroup, quantityCode);
                 }
 
                 {
@@ -545,7 +545,7 @@ namespace BreastRadiology.XUnitTests
                         .Definition("Distance from skin to body location")
                         .Single()
                         ;
-                    distanceFromSkinGroup.RelatedElements.Add(distanceFromSkinValue);
+                    e.InsertAfter(distanceFromSkinGroup, distanceFromSkinValue);
 
                     ElementDefinition quantitySystem = new ElementDefinition()
                         .Path($"{topExtension.Path}.value[x].system")
@@ -554,7 +554,7 @@ namespace BreastRadiology.XUnitTests
                         .Single()
                         .Fixed(new FhirUri("http://unitsofmeasure.org"))
                         ;
-                    distanceFromSkinGroup.RelatedElements.Add(quantitySystem);
+                    e.InsertAfter(distanceFromSkinGroup, quantitySystem);
 
                     ElementDefinition quantityCode = new ElementDefinition()
                         .Path($"{topExtension.Path}.value[x].code")
@@ -564,7 +564,7 @@ namespace BreastRadiology.XUnitTests
                         .Binding("http://hl7.org/fhir/us/breast-radiology/ValueSet/UnitsOfLengthVS",
                                 BindingStrength.Required)
                         ;
-                    distanceFromSkinGroup.RelatedElements.Add(quantityCode);
+                    e.InsertAfter(distanceFromSkinGroup, quantityCode);
                 }
 
                 {
@@ -582,7 +582,7 @@ namespace BreastRadiology.XUnitTests
                         .Definition("Distance from chest wall to body location")
                         .Single()
                         ;
-                    distanceFromChestWallGroup.RelatedElements.Add(distanceFromChestWallValue);
+                    e.InsertAfter(distanceFromChestWallGroup, distanceFromChestWallValue);
 
                     ElementDefinition quantitySystem = new ElementDefinition()
                         .Path($"{topExtension.Path}.value[x].system")
@@ -591,7 +591,7 @@ namespace BreastRadiology.XUnitTests
                         .Single()
                         .Fixed(new FhirUri("http://unitsofmeasure.org"))
                         ;
-                    distanceFromChestWallGroup.RelatedElements.Add(quantitySystem);
+                    e.InsertAfter(distanceFromChestWallGroup, quantitySystem);
 
                     ElementDefinition quantityCode = new ElementDefinition()
                         .Path($"{topExtension.Path}.value[x].code")
@@ -601,7 +601,7 @@ namespace BreastRadiology.XUnitTests
                         .Binding("http://hl7.org/fhir/us/breast-radiology/ValueSet/UnitsOfLengthVS",
                                 BindingStrength.Required)
                         ;
-                    distanceFromChestWallGroup.RelatedElements.Add(quantityCode);
+                    e.InsertAfter(distanceFromChestWallGroup, quantityCode);
 
                 }
 

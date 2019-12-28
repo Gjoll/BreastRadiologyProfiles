@@ -44,7 +44,7 @@ namespace BreastRadiology.XUnitTests
                     ProfileTargetSlice[] targets = new ProfileTargetSlice[]
                     {
                     };
-                    e.Find("hasMember").SliceByUrl(targets);
+                    e.SliceByUrl("hasMember", targets);
                     e.AddProfileTargets(targets);
                 }
 

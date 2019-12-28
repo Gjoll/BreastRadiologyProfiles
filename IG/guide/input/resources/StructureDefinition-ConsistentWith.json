@@ -2487,14 +2487,6 @@
             "code": "CodeableConcept"
           }
         ],
-        "patternCodeableConcept": {
-          "coding": [
-            {
-              "system": "http://hl7.org/fhir/us/breast-radiology/CodeSystem/ConsistentWithSliceCS",
-              "code": "value"
-            }
-          ]
-        },
         "isModifier": false,
         "isSummary": true,
         "binding": {
@@ -2534,7 +2526,7 @@
         "definition": "The information determined as a result of making the observation, if the information has a simple value.",
         "comment": "Used when observation has a set of component observations. An observation may have both a value (e.g. an  Apgar score)  and component observations (the observations from which the Apgar score was derived). If a value is present, the datatype for this element should be determined by Observation.code. A CodeableConcept with just a text would be used instead of a string if the field was usually coded, or if the type associated with the Observation.code defines a coded value.  For additional guidance, see the [Notes section](observation.html#notes) below.",
         "requirements": "An observation exists to have a value, though it might not if it is in error, or if it represents a group of observations.",
-        "min": 1,
+        "min": 0,
         "max": "1",
         "base": {
           "path": "Observation.component.value[x]",
@@ -2543,45 +2535,11 @@
         },
         "type": [
           {
-            "code": "Quantity"
-          },
-          {
             "code": "CodeableConcept"
-          },
-          {
-            "code": "string"
-          },
-          {
-            "code": "boolean"
-          },
-          {
-            "code": "integer"
-          },
-          {
-            "code": "Range"
-          },
-          {
-            "code": "Ratio"
-          },
-          {
-            "code": "SampledData"
-          },
-          {
-            "code": "time"
-          },
-          {
-            "code": "dateTime"
-          },
-          {
-            "code": "Period"
           }
         ],
         "isModifier": false,
         "isSummary": true,
-        "binding": {
-          "strength": "extensible",
-          "valueSet": "http://hl7.org/fhir/us/breast-radiology/ValueSet/ConsistentWithVS"
-        },
         "mapping": [
           {
             "identity": "sct-concept",
@@ -2658,7 +2616,7 @@
           "Abnormal Flag"
         ],
         "min": 0,
-        "max": "*",
+        "max": "0",
         "base": {
           "path": "Observation.component.interpretation",
           "min": 0,
@@ -2709,7 +2667,7 @@
         "comment": "Most observations only have one generic reference range. Systems MAY choose to restrict to only supplying the relevant reference range based on knowledge about the patient (e.g., specific to the patient's age, gender, weight and other factors), but this might not be possible or appropriate. Whenever more than one reference range is supplied, the differences between them SHOULD be provided in the reference range and/or age properties.",
         "requirements": "Knowing what values are considered \"normal\" can help evaluate the significance of a particular result. Need to be able to provide multiple reference ranges for different contexts.",
         "min": 0,
-        "max": "*",
+        "max": "0",
         "base": {
           "path": "Observation.component.referenceRange",
           "min": 0,
@@ -3000,47 +2958,6 @@
         ]
       },
       {
-        "id": "Observation.component:qualifier.value[x]:valueCodeableConcept",
-        "path": "Observation.component.value[x]",
-        "sliceName": "valueCodeableConcept",
-        "short": "Actual component result",
-        "definition": "The information determined as a result of making the observation, if the information has a simple value.",
-        "comment": "Used when observation has a set of component observations. An observation may have both a value (e.g. an  Apgar score)  and component observations (the observations from which the Apgar score was derived). If a value is present, the datatype for this element should be determined by Observation.code. A CodeableConcept with just a text would be used instead of a string if the field was usually coded, or if the type associated with the Observation.code defines a coded value.  For additional guidance, see the [Notes section](observation.html#notes) below.",
-        "requirements": "An observation exists to have a value, though it might not if it is in error, or if it represents a group of observations.",
-        "min": 0,
-        "max": "1",
-        "base": {
-          "path": "Observation.component.value[x]",
-          "min": 0,
-          "max": "1"
-        },
-        "type": [
-          {
-            "code": "CodeableConcept"
-          }
-        ],
-        "isModifier": false,
-        "isSummary": true,
-        "mapping": [
-          {
-            "identity": "sct-concept",
-            "map": "363714003 |Interprets| < 441742003 |Evaluation finding|"
-          },
-          {
-            "identity": "v2",
-            "map": "OBX.2, OBX.5, OBX.6"
-          },
-          {
-            "identity": "rim",
-            "map": "value"
-          },
-          {
-            "identity": "sct-attr",
-            "map": "363714003 |Interprets|"
-          }
-        ]
-      },
-      {
         "id": "Observation.component:qualifier.dataAbsentReason",
         "path": "Observation.component.dataAbsentReason",
         "short": "Why the component result is missing",
@@ -3097,7 +3014,7 @@
           "Abnormal Flag"
         ],
         "min": 0,
-        "max": "0",
+        "max": "*",
         "base": {
           "path": "Observation.component.interpretation",
           "min": 0,
@@ -3148,7 +3065,7 @@
         "comment": "Most observations only have one generic reference range. Systems MAY choose to restrict to only supplying the relevant reference range based on knowledge about the patient (e.g., specific to the patient's age, gender, weight and other factors), but this might not be possible or appropriate. Whenever more than one reference range is supplied, the differences between them SHOULD be provided in the reference range and/or age properties.",
         "requirements": "Knowing what values are considered \"normal\" can help evaluate the significance of a particular result. Need to be able to provide multiple reference ranges for different contexts.",
         "min": 0,
-        "max": "0",
+        "max": "*",
         "base": {
           "path": "Observation.component.referenceRange",
           "min": 0,
@@ -3612,14 +3529,6 @@
             "code": "CodeableConcept"
           }
         ],
-        "patternCodeableConcept": {
-          "coding": [
-            {
-              "system": "http://hl7.org/fhir/us/breast-radiology/CodeSystem/ConsistentWithSliceCS",
-              "code": "value"
-            }
-          ]
-        },
         "isModifier": false,
         "isSummary": true,
         "binding": {
@@ -3659,7 +3568,7 @@
         "definition": "The information determined as a result of making the observation, if the information has a simple value.",
         "comment": "Used when observation has a set of component observations. An observation may have both a value (e.g. an  Apgar score)  and component observations (the observations from which the Apgar score was derived). If a value is present, the datatype for this element should be determined by Observation.code. A CodeableConcept with just a text would be used instead of a string if the field was usually coded, or if the type associated with the Observation.code defines a coded value.  For additional guidance, see the [Notes section](observation.html#notes) below.",
         "requirements": "An observation exists to have a value, though it might not if it is in error, or if it represents a group of observations.",
-        "min": 1,
+        "min": 0,
         "max": "1",
         "base": {
           "path": "Observation.component.value[x]",
@@ -3668,45 +3577,11 @@
         },
         "type": [
           {
-            "code": "Quantity"
-          },
-          {
             "code": "CodeableConcept"
-          },
-          {
-            "code": "string"
-          },
-          {
-            "code": "boolean"
-          },
-          {
-            "code": "integer"
-          },
-          {
-            "code": "Range"
-          },
-          {
-            "code": "Ratio"
-          },
-          {
-            "code": "SampledData"
-          },
-          {
-            "code": "time"
-          },
-          {
-            "code": "dateTime"
-          },
-          {
-            "code": "Period"
           }
         ],
         "isModifier": false,
         "isSummary": true,
-        "binding": {
-          "strength": "extensible",
-          "valueSet": "http://hl7.org/fhir/us/breast-radiology/ValueSet/ConsistentWithVS"
-        },
         "mapping": [
           {
             "identity": "sct-concept",
@@ -3783,7 +3658,7 @@
           "Abnormal Flag"
         ],
         "min": 0,
-        "max": "*",
+        "max": "0",
         "base": {
           "path": "Observation.component.interpretation",
           "min": 0,
@@ -3834,7 +3709,7 @@
         "comment": "Most observations only have one generic reference range. Systems MAY choose to restrict to only supplying the relevant reference range based on knowledge about the patient (e.g., specific to the patient's age, gender, weight and other factors), but this might not be possible or appropriate. Whenever more than one reference range is supplied, the differences between them SHOULD be provided in the reference range and/or age properties.",
         "requirements": "Knowing what values are considered \"normal\" can help evaluate the significance of a particular result. Need to be able to provide multiple reference ranges for different contexts.",
         "min": 0,
-        "max": "*",
+        "max": "0",
         "base": {
           "path": "Observation.component.referenceRange",
           "min": 0,
@@ -4125,47 +4000,6 @@
         ]
       },
       {
-        "id": "Observation.component:qualifier.value[x]:valueCodeableConcept",
-        "path": "Observation.component.value[x]",
-        "sliceName": "valueCodeableConcept",
-        "short": "Actual component result",
-        "definition": "The information determined as a result of making the observation, if the information has a simple value.",
-        "comment": "Used when observation has a set of component observations. An observation may have both a value (e.g. an  Apgar score)  and component observations (the observations from which the Apgar score was derived). If a value is present, the datatype for this element should be determined by Observation.code. A CodeableConcept with just a text would be used instead of a string if the field was usually coded, or if the type associated with the Observation.code defines a coded value.  For additional guidance, see the [Notes section](observation.html#notes) below.",
-        "requirements": "An observation exists to have a value, though it might not if it is in error, or if it represents a group of observations.",
-        "min": 0,
-        "max": "1",
-        "base": {
-          "path": "Observation.component.value[x]",
-          "min": 0,
-          "max": "1"
-        },
-        "type": [
-          {
-            "code": "CodeableConcept"
-          }
-        ],
-        "isModifier": false,
-        "isSummary": true,
-        "mapping": [
-          {
-            "identity": "sct-concept",
-            "map": "363714003 |Interprets| < 441742003 |Evaluation finding|"
-          },
-          {
-            "identity": "v2",
-            "map": "OBX.2, OBX.5, OBX.6"
-          },
-          {
-            "identity": "rim",
-            "map": "value"
-          },
-          {
-            "identity": "sct-attr",
-            "map": "363714003 |Interprets|"
-          }
-        ]
-      },
-      {
         "id": "Observation.component:qualifier.dataAbsentReason",
         "path": "Observation.component.dataAbsentReason",
         "short": "Why the component result is missing",
@@ -4222,7 +4056,7 @@
           "Abnormal Flag"
         ],
         "min": 0,
-        "max": "0",
+        "max": "*",
         "base": {
           "path": "Observation.component.interpretation",
           "min": 0,
@@ -4273,7 +4107,7 @@
         "comment": "Most observations only have one generic reference range. Systems MAY choose to restrict to only supplying the relevant reference range based on knowledge about the patient (e.g., specific to the patient's age, gender, weight and other factors), but this might not be possible or appropriate. Whenever more than one reference range is supplied, the differences between them SHOULD be provided in the reference range and/or age properties.",
         "requirements": "Knowing what values are considered \"normal\" can help evaluate the significance of a particular result. Need to be able to provide multiple reference ranges for different contexts.",
         "min": 0,
-        "max": "0",
+        "max": "*",
         "base": {
           "path": "Observation.component.referenceRange",
           "min": 0,

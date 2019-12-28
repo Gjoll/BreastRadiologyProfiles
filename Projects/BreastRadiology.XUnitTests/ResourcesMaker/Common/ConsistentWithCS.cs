@@ -39,7 +39,7 @@ namespace BreastRadiology.XUnitTests
                 e.Select("interpretation").Zero();
                 e.Select("referenceRange").Zero();
 
-                ElementDefGroup component = e.Find("component");
+                ElementDefGroup component = e.GetOrCreate("component");
                 component.ElementDefinition.Min = 1;
                 component.ElementDefinition.Max = "2";
                 e.Select("component.value[x]").Type("CodeableConcept");
@@ -67,7 +67,7 @@ namespace BreastRadiology.XUnitTests
                     String valueSetUrl,
                     BindingStrength bindingStrength)
                 {
-                    ElementDefinition slice = component.AppendSlice(sliceName, 1, "1");
+                    ElementDefinition slice = e.AppendSlice("component", sliceName, 1, "1");
                     {
                         ElementDefinition componentCode = new ElementDefinition
                         {
@@ -79,7 +79,7 @@ namespace BreastRadiology.XUnitTests
                         componentCode
                             .Pattern(new CodeableConcept(csSlice.Url, code))
                             ;
-                        component.RelatedElements.Add(componentCode);
+                        e.InsertAfterAllChildren("component", componentCode);
                     }
                     {
                         ElementDefinition valueX = new ElementDefinition
@@ -92,7 +92,7 @@ namespace BreastRadiology.XUnitTests
                         valueX
                             .Binding(valueSetUrl, bindingStrength)
                             ;
-                        component.RelatedElements.Add(valueX);
+                        e.InsertAfterAllChildren("component", valueX);
                     }
                 }
 
