@@ -1,0 +1,33 @@
+{
+  "resourceType": "CodeSystem",
+  "id": "ConsistentWithSliceCS",
+  "extension": [
+    {
+      "url": "http://www.fragment.com/fragment",
+      "valueUrl": "http://hl7.org/fhir/us/breast-radiology/StructureDefinition/HeaderFragment"
+    },
+    {
+      "url": "http://www.fragment.com/Group",
+      "valueString": "CommonCodes"
+    }
+  ],
+  "url": "http://hl7.org/fhir/us/breast-radiology/CodeSystem/ConsistentWithSliceCS",
+  "name": "ConsistentWithSliceCS",
+  "title": "ConsistentWith Slice CodeSystem",
+  "description": "ConsistentWithSlice code system",
+  "caseSensitive": true,
+  "content": "complete",
+  "count": 2,
+  "concept": [
+    {
+      "code": "value",
+      "display": "Value slice",
+      "definition": "[PR]"
+    },
+    {
+      "code": "qualifier",
+      "display": "qualifier",
+      "definition": "[PR]"
+    }
+  ]
+}

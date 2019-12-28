@@ -106,7 +106,6 @@ namespace BreastRadiology.XUnitTests
                     )
                     .AddFragRef(ResourcesMaker.Self.ObservationNoDeviceFragment.Value())
                     .AddFragRef(ResourcesMaker.Self.ObservationCodedValueFragment.Value())
-                    .AddFragRef(ResourcesMaker.Self.ObservationSectionFragment.Value())
                     .AddFragRef(ResourcesMaker.Self.MGCommonTargetsFragment.Value())
                     .AddFragRef(ResourcesMaker.Self.MGShapeTargetsFragment.Value())
                     ;

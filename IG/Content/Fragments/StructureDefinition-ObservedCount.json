@@ -1,0 +1,72 @@
+{
+  "resourceType": "StructureDefinition",
+  "extension": [
+    {
+      "url": "http://www.fragment.com/mapname",
+      "valueString": "Count"
+    },
+    {
+      "url": "http://www.fragment.com/Group",
+      "valueString": "CommonResources/ObservedCount"
+    },
+    {
+      "url": "http://www.fragment.com/fragment",
+      "valueUrl": "http://hl7.org/fhir/us/breast-radiology/StructureDefinition/BreastRadObservationNoDeviceFragment"
+    },
+    {
+      "url": "http://www.fragment.com/maplink",
+      "valueString": "fragment|True|http://hl7.org/fhir/us/breast-radiology/StructureDefinition/BreastRadObservationNoDeviceFragment"
+    },
+    {
+      "url": "http://www.fragment.com/fragment",
+      "valueUrl": "http://hl7.org/fhir/us/breast-radiology/StructureDefinition/ObservationLeafFragment"
+    },
+    {
+      "url": "http://www.fragment.com/maplink",
+      "valueString": "fragment|True|http://hl7.org/fhir/us/breast-radiology/StructureDefinition/ObservationLeafFragment"
+    }
+  ],
+  "url": "http://hl7.org/fhir/us/breast-radiology/StructureDefinition/ObservedCount",
+  "name": "ObservedCount",
+  "title": "Count",
+  "status": "draft",
+  "description": "Breast Radiology Count Observation\n\nThis observations describes the number of discrete items in an observed item.\n\n\nIf this observation is present, and dataAbsentReason is empty, then an objects Count was observed.\n\n\nIf this observation is present, and dataAbsentReason is not empty, then an objects Count was not observed and dataAbsentReason contains the reason why.\n\n\n*** TODO Items ***** Should value[x] be SimpleQuantity.\n** is 'tot' correct ucum units for count?",
+  "fhirVersion": "4.0.0",
+  "kind": "resource",
+  "abstract": false,
+  "type": "Observation",
+  "baseDefinition": "http://hl7.org/fhir/StructureDefinition/Observation",
+  "derivation": "constraint",
+  "differential": {
+    "element": [
+      {
+        "id": "Observation",
+        "path": "Observation",
+        "short": "Breast Radiology Count Observation",
+        "definition": "This observations describes the number of discrete items in an observed item.\n\n\nIf this observation is present, and dataAbsentReason is empty, then an objects Count was observed.\n\n\nIf this observation is present, and dataAbsentReason is not empty, then an objects Count was not observed and dataAbsentReason contains the reason why.\n\n\n*** TODO Items ***** Should value[x] be SimpleQuantity.\n** is 'tot' correct ucum units for count?",
+        "min": 0,
+        "max": "*"
+      },
+      {
+        "id": "Observation.value[x]",
+        "path": "Observation.value[x]",
+        "definition": "Count of an object.\n\n\nThis is either an integer count, or a Range (min..max) count.\n\n\nA range value with no maximum specified implies count is min or more.\n\n\nA range value with no minimum specified implies count is max or less.",
+        "min": 1,
+        "max": "1",
+        "base": {
+          "path": "Observation.value[x]",
+          "min": 0,
+          "max": "1"
+        },
+        "type": [
+          {
+            "code": "integer"
+          },
+          {
+            "code": "Range"
+          }
+        ]
+      }
+    ]
+  }
+}

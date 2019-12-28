@@ -119,7 +119,7 @@ namespace BreastRadiology.XUnitTests
             CodeBlockNested concepts = editor.Blocks.Find(csBlockName);
             concepts.Clear();
 
-            for (Int32 i = 0; i < values.Length; i++)
+            for (Int32 i = 1; i < values.Length; i++)
             {
                 String value = values[i];
                 // currently doesnt handle embedded \" and ',' chars.
@@ -152,8 +152,8 @@ namespace BreastRadiology.XUnitTests
         [TestMethod]
         public void WriteCode()
         {
-            WriteCS("ConsistentWith.txt", @"Common\CommonConsistentWithCS.cs", "ConsistentWithCS");
-            WriteCS("ConsistentWith.txt", @"Common\CommonConsistentWithCS.cs", "ConsistentWithQualifierCS");
+            WriteCS("ConsistentWith.txt", @"Common\ConsistentWithCS.cs", "ConsistentWithCS");
+            WriteCS("ConsistentWithQualifier.txt", @"Common\ConsistentWithCS.cs", "ConsistentWithQualifierCS");
         }
 
         [TestMethod]

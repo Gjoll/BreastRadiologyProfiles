@@ -1308,7 +1308,7 @@
         "comment": "May include general statements about the observation, or statements about significant, unexpected or unreliable results values, or information about its source when relevant to its interpretation.",
         "requirements": "Need to be able to provide free text additional information.",
         "min": 0,
-        "max": "0",
+        "max": "*",
         "base": {
           "path": "Observation.note",
           "min": 0,
@@ -1390,7 +1390,7 @@
         "comment": "Only used if not implicit in code for Observation.code.",
         "requirements": "In some cases, method can impact results and is thus used for determining whether results can be compared or determining significance of results.",
         "min": 0,
-        "max": "0",
+        "max": "1",
         "base": {
           "path": "Observation.method",
           "min": 0,
@@ -1924,9 +1924,9 @@
         ]
       },
       {
-        "id": "Observation.hasMember:commonCount",
+        "id": "Observation.hasMember:observedCount",
         "path": "Observation.hasMember",
-        "sliceName": "commonCount",
+        "sliceName": "observedCount",
         "short": "Related resource that belongs to the Observation group",
         "definition": "This observation is a group observation (e.g. a battery, a panel of tests, a set of vital sign measurements) that includes the target as a member of the group.",
         "comment": "When using this element, an observation will typically have either a value or a set of related resources, although both may be present in some cases.  For a discussion on the ways Observations can assembled in groups together, see [Notes](observation.html#obsgrouping) below.  Note that a system may calculate results from [QuestionnaireResponse](questionnaireresponse.html)  into a final score and represent the score as an Observation.",
@@ -1941,7 +1941,42 @@
           {
             "code": "Reference",
             "targetProfile": [
-              "http://hl7.org/fhir/us/breast-radiology/StructureDefinition/CommonCount"
+              "http://hl7.org/fhir/us/breast-radiology/StructureDefinition/ObservedCount"
+            ]
+          }
+        ],
+        "isModifier": false,
+        "isSummary": true,
+        "mapping": [
+          {
+            "identity": "v2",
+            "map": "Relationships established by OBX-4 usage"
+          },
+          {
+            "identity": "rim",
+            "map": "outBoundRelationship"
+          }
+        ]
+      },
+      {
+        "id": "Observation.hasMember:consistentWith",
+        "path": "Observation.hasMember",
+        "sliceName": "consistentWith",
+        "short": "Related resource that belongs to the Observation group",
+        "definition": "This observation is a group observation (e.g. a battery, a panel of tests, a set of vital sign measurements) that includes the target as a member of the group.",
+        "comment": "When using this element, an observation will typically have either a value or a set of related resources, although both may be present in some cases.  For a discussion on the ways Observations can assembled in groups together, see [Notes](observation.html#obsgrouping) below.  Note that a system may calculate results from [QuestionnaireResponse](questionnaireresponse.html)  into a final score and represent the score as an Observation.",
+        "min": 0,
+        "max": "*",
+        "base": {
+          "path": "Observation.hasMember",
+          "min": 0,
+          "max": "*"
+        },
+        "type": [
+          {
+            "code": "Reference",
+            "targetProfile": [
+              "http://hl7.org/fhir/us/breast-radiology/StructureDefinition/ConsistentWith"
             ]
           }
         ],
@@ -1994,9 +2029,9 @@
         ]
       },
       {
-        "id": "Observation.hasMember:commonObservedChangeInDefinition",
+        "id": "Observation.hasMember:observedChangeInDefinition",
         "path": "Observation.hasMember",
-        "sliceName": "commonObservedChangeInDefinition",
+        "sliceName": "observedChangeInDefinition",
         "short": "Related resource that belongs to the Observation group",
         "definition": "This observation is a group observation (e.g. a battery, a panel of tests, a set of vital sign measurements) that includes the target as a member of the group.",
         "comment": "When using this element, an observation will typically have either a value or a set of related resources, although both may be present in some cases.  For a discussion on the ways Observations can assembled in groups together, see [Notes](observation.html#obsgrouping) below.  Note that a system may calculate results from [QuestionnaireResponse](questionnaireresponse.html)  into a final score and represent the score as an Observation.",
@@ -2011,7 +2046,7 @@
           {
             "code": "Reference",
             "targetProfile": [
-              "http://hl7.org/fhir/us/breast-radiology/StructureDefinition/CommonObservedChangeInDefinition"
+              "http://hl7.org/fhir/us/breast-radiology/StructureDefinition/ObservedChangeInDefinition"
             ]
           }
         ],
@@ -2029,9 +2064,9 @@
         ]
       },
       {
-        "id": "Observation.hasMember:commonObservedChangeInNumber",
+        "id": "Observation.hasMember:observedChangeInNumber",
         "path": "Observation.hasMember",
-        "sliceName": "commonObservedChangeInNumber",
+        "sliceName": "observedChangeInNumber",
         "short": "Related resource that belongs to the Observation group",
         "definition": "This observation is a group observation (e.g. a battery, a panel of tests, a set of vital sign measurements) that includes the target as a member of the group.",
         "comment": "When using this element, an observation will typically have either a value or a set of related resources, although both may be present in some cases.  For a discussion on the ways Observations can assembled in groups together, see [Notes](observation.html#obsgrouping) below.  Note that a system may calculate results from [QuestionnaireResponse](questionnaireresponse.html)  into a final score and represent the score as an Observation.",
@@ -2046,7 +2081,7 @@
           {
             "code": "Reference",
             "targetProfile": [
-              "http://hl7.org/fhir/us/breast-radiology/StructureDefinition/CommonObservedChangeInNumber"
+              "http://hl7.org/fhir/us/breast-radiology/StructureDefinition/ObservedChangeInNumber"
             ]
           }
         ],
@@ -2064,9 +2099,9 @@
         ]
       },
       {
-        "id": "Observation.hasMember:commonObservedChangeInProminance",
+        "id": "Observation.hasMember:observedChangeInProminance",
         "path": "Observation.hasMember",
-        "sliceName": "commonObservedChangeInProminance",
+        "sliceName": "observedChangeInProminance",
         "short": "Related resource that belongs to the Observation group",
         "definition": "This observation is a group observation (e.g. a battery, a panel of tests, a set of vital sign measurements) that includes the target as a member of the group.",
         "comment": "When using this element, an observation will typically have either a value or a set of related resources, although both may be present in some cases.  For a discussion on the ways Observations can assembled in groups together, see [Notes](observation.html#obsgrouping) below.  Note that a system may calculate results from [QuestionnaireResponse](questionnaireresponse.html)  into a final score and represent the score as an Observation.",
@@ -2081,7 +2116,7 @@
           {
             "code": "Reference",
             "targetProfile": [
-              "http://hl7.org/fhir/us/breast-radiology/StructureDefinition/CommonObservedChangeInProminance"
+              "http://hl7.org/fhir/us/breast-radiology/StructureDefinition/ObservedChangeInProminance"
             ]
           }
         ],
@@ -2099,9 +2134,9 @@
         ]
       },
       {
-        "id": "Observation.hasMember:commonObservedChangeInSize",
+        "id": "Observation.hasMember:observedChangeInSize",
         "path": "Observation.hasMember",
-        "sliceName": "commonObservedChangeInSize",
+        "sliceName": "observedChangeInSize",
         "short": "Related resource that belongs to the Observation group",
         "definition": "This observation is a group observation (e.g. a battery, a panel of tests, a set of vital sign measurements) that includes the target as a member of the group.",
         "comment": "When using this element, an observation will typically have either a value or a set of related resources, although both may be present in some cases.  For a discussion on the ways Observations can assembled in groups together, see [Notes](observation.html#obsgrouping) below.  Note that a system may calculate results from [QuestionnaireResponse](questionnaireresponse.html)  into a final score and represent the score as an Observation.",
@@ -2116,7 +2151,7 @@
           {
             "code": "Reference",
             "targetProfile": [
-              "http://hl7.org/fhir/us/breast-radiology/StructureDefinition/CommonObservedChangeInSize"
+              "http://hl7.org/fhir/us/breast-radiology/StructureDefinition/ObservedChangeInSize"
             ]
           }
         ],
@@ -2134,9 +2169,9 @@
         ]
       },
       {
-        "id": "Observation.hasMember:commonObservedChangeInState",
+        "id": "Observation.hasMember:observedChangeInState",
         "path": "Observation.hasMember",
-        "sliceName": "commonObservedChangeInState",
+        "sliceName": "observedChangeInState",
         "short": "Related resource that belongs to the Observation group",
         "definition": "This observation is a group observation (e.g. a battery, a panel of tests, a set of vital sign measurements) that includes the target as a member of the group.",
         "comment": "When using this element, an observation will typically have either a value or a set of related resources, although both may be present in some cases.  For a discussion on the ways Observations can assembled in groups together, see [Notes](observation.html#obsgrouping) below.  Note that a system may calculate results from [QuestionnaireResponse](questionnaireresponse.html)  into a final score and represent the score as an Observation.",
@@ -2151,7 +2186,7 @@
           {
             "code": "Reference",
             "targetProfile": [
-              "http://hl7.org/fhir/us/breast-radiology/StructureDefinition/CommonObservedChangeInState"
+              "http://hl7.org/fhir/us/breast-radiology/StructureDefinition/ObservedChangeInState"
             ]
           }
         ],
@@ -2169,9 +2204,9 @@
         ]
       },
       {
-        "id": "Observation.hasMember:commonSize",
+        "id": "Observation.hasMember:observedSize",
         "path": "Observation.hasMember",
-        "sliceName": "commonSize",
+        "sliceName": "observedSize",
         "short": "Related resource that belongs to the Observation group",
         "definition": "This observation is a group observation (e.g. a battery, a panel of tests, a set of vital sign measurements) that includes the target as a member of the group.",
         "comment": "When using this element, an observation will typically have either a value or a set of related resources, although both may be present in some cases.  For a discussion on the ways Observations can assembled in groups together, see [Notes](observation.html#obsgrouping) below.  Note that a system may calculate results from [QuestionnaireResponse](questionnaireresponse.html)  into a final score and represent the score as an Observation.",
@@ -2186,7 +2221,7 @@
           {
             "code": "Reference",
             "targetProfile": [
-              "http://hl7.org/fhir/us/breast-radiology/StructureDefinition/CommonSize"
+              "http://hl7.org/fhir/us/breast-radiology/StructureDefinition/ObservedSize"
             ]
           }
         ],
@@ -3115,34 +3150,12 @@
         }
       },
       {
-        "id": "Observation.note",
-        "path": "Observation.note",
-        "min": 0,
-        "max": "0",
-        "base": {
-          "path": "Observation.note",
-          "min": 0,
-          "max": "*"
-        }
-      },
-      {
         "id": "Observation.bodySite",
         "path": "Observation.bodySite",
         "min": 1,
         "max": "1",
         "base": {
           "path": "Observation.bodySite",
-          "min": 0,
-          "max": "1"
-        }
-      },
-      {
-        "id": "Observation.method",
-        "path": "Observation.method",
-        "min": 0,
-        "max": "0",
-        "base": {
-          "path": "Observation.method",
           "min": 0,
           "max": "1"
         }
@@ -3217,9 +3230,9 @@
         }
       },
       {
-        "id": "Observation.hasMember:commonCount",
+        "id": "Observation.hasMember:observedCount",
         "path": "Observation.hasMember",
-        "sliceName": "commonCount",
+        "sliceName": "observedCount",
         "short": "Related resource that belongs to the Observation group",
         "definition": "This observation is a group observation (e.g. a battery, a panel of tests, a set of vital sign measurements) that includes the target as a member of the group.",
         "comment": "When using this element, an observation will typically have either a value or a set of related resources, although both may be present in some cases.  For a discussion on the ways Observations can assembled in groups together, see [Notes](observation.html#obsgrouping) below.  Note that a system may calculate results from [QuestionnaireResponse](questionnaireresponse.html)  into a final score and represent the score as an Observation.",
@@ -3234,7 +3247,42 @@
           {
             "code": "Reference",
             "targetProfile": [
-              "http://hl7.org/fhir/us/breast-radiology/StructureDefinition/CommonCount"
+              "http://hl7.org/fhir/us/breast-radiology/StructureDefinition/ObservedCount"
+            ]
+          }
+        ],
+        "isModifier": false,
+        "isSummary": true,
+        "mapping": [
+          {
+            "identity": "v2",
+            "map": "Relationships established by OBX-4 usage"
+          },
+          {
+            "identity": "rim",
+            "map": "outBoundRelationship"
+          }
+        ]
+      },
+      {
+        "id": "Observation.hasMember:consistentWith",
+        "path": "Observation.hasMember",
+        "sliceName": "consistentWith",
+        "short": "Related resource that belongs to the Observation group",
+        "definition": "This observation is a group observation (e.g. a battery, a panel of tests, a set of vital sign measurements) that includes the target as a member of the group.",
+        "comment": "When using this element, an observation will typically have either a value or a set of related resources, although both may be present in some cases.  For a discussion on the ways Observations can assembled in groups together, see [Notes](observation.html#obsgrouping) below.  Note that a system may calculate results from [QuestionnaireResponse](questionnaireresponse.html)  into a final score and represent the score as an Observation.",
+        "min": 0,
+        "max": "*",
+        "base": {
+          "path": "Observation.hasMember",
+          "min": 0,
+          "max": "*"
+        },
+        "type": [
+          {
+            "code": "Reference",
+            "targetProfile": [
+              "http://hl7.org/fhir/us/breast-radiology/StructureDefinition/ConsistentWith"
             ]
           }
         ],
@@ -3287,9 +3335,9 @@
         ]
       },
       {
-        "id": "Observation.hasMember:commonObservedChangeInDefinition",
+        "id": "Observation.hasMember:observedChangeInDefinition",
         "path": "Observation.hasMember",
-        "sliceName": "commonObservedChangeInDefinition",
+        "sliceName": "observedChangeInDefinition",
         "short": "Related resource that belongs to the Observation group",
         "definition": "This observation is a group observation (e.g. a battery, a panel of tests, a set of vital sign measurements) that includes the target as a member of the group.",
         "comment": "When using this element, an observation will typically have either a value or a set of related resources, although both may be present in some cases.  For a discussion on the ways Observations can assembled in groups together, see [Notes](observation.html#obsgrouping) below.  Note that a system may calculate results from [QuestionnaireResponse](questionnaireresponse.html)  into a final score and represent the score as an Observation.",
@@ -3304,7 +3352,7 @@
           {
             "code": "Reference",
             "targetProfile": [
-              "http://hl7.org/fhir/us/breast-radiology/StructureDefinition/CommonObservedChangeInDefinition"
+              "http://hl7.org/fhir/us/breast-radiology/StructureDefinition/ObservedChangeInDefinition"
             ]
           }
         ],
@@ -3322,9 +3370,9 @@
         ]
       },
       {
-        "id": "Observation.hasMember:commonObservedChangeInNumber",
+        "id": "Observation.hasMember:observedChangeInNumber",
         "path": "Observation.hasMember",
-        "sliceName": "commonObservedChangeInNumber",
+        "sliceName": "observedChangeInNumber",
         "short": "Related resource that belongs to the Observation group",
         "definition": "This observation is a group observation (e.g. a battery, a panel of tests, a set of vital sign measurements) that includes the target as a member of the group.",
         "comment": "When using this element, an observation will typically have either a value or a set of related resources, although both may be present in some cases.  For a discussion on the ways Observations can assembled in groups together, see [Notes](observation.html#obsgrouping) below.  Note that a system may calculate results from [QuestionnaireResponse](questionnaireresponse.html)  into a final score and represent the score as an Observation.",
@@ -3339,7 +3387,7 @@
           {
             "code": "Reference",
             "targetProfile": [
-              "http://hl7.org/fhir/us/breast-radiology/StructureDefinition/CommonObservedChangeInNumber"
+              "http://hl7.org/fhir/us/breast-radiology/StructureDefinition/ObservedChangeInNumber"
             ]
           }
         ],
@@ -3357,9 +3405,9 @@
         ]
       },
       {
-        "id": "Observation.hasMember:commonObservedChangeInProminance",
+        "id": "Observation.hasMember:observedChangeInProminance",
         "path": "Observation.hasMember",
-        "sliceName": "commonObservedChangeInProminance",
+        "sliceName": "observedChangeInProminance",
         "short": "Related resource that belongs to the Observation group",
         "definition": "This observation is a group observation (e.g. a battery, a panel of tests, a set of vital sign measurements) that includes the target as a member of the group.",
         "comment": "When using this element, an observation will typically have either a value or a set of related resources, although both may be present in some cases.  For a discussion on the ways Observations can assembled in groups together, see [Notes](observation.html#obsgrouping) below.  Note that a system may calculate results from [QuestionnaireResponse](questionnaireresponse.html)  into a final score and represent the score as an Observation.",
@@ -3374,7 +3422,7 @@
           {
             "code": "Reference",
             "targetProfile": [
-              "http://hl7.org/fhir/us/breast-radiology/StructureDefinition/CommonObservedChangeInProminance"
+              "http://hl7.org/fhir/us/breast-radiology/StructureDefinition/ObservedChangeInProminance"
             ]
           }
         ],
@@ -3392,9 +3440,9 @@
         ]
       },
       {
-        "id": "Observation.hasMember:commonObservedChangeInSize",
+        "id": "Observation.hasMember:observedChangeInSize",
         "path": "Observation.hasMember",
-        "sliceName": "commonObservedChangeInSize",
+        "sliceName": "observedChangeInSize",
         "short": "Related resource that belongs to the Observation group",
         "definition": "This observation is a group observation (e.g. a battery, a panel of tests, a set of vital sign measurements) that includes the target as a member of the group.",
         "comment": "When using this element, an observation will typically have either a value or a set of related resources, although both may be present in some cases.  For a discussion on the ways Observations can assembled in groups together, see [Notes](observation.html#obsgrouping) below.  Note that a system may calculate results from [QuestionnaireResponse](questionnaireresponse.html)  into a final score and represent the score as an Observation.",
@@ -3409,7 +3457,7 @@
           {
             "code": "Reference",
             "targetProfile": [
-              "http://hl7.org/fhir/us/breast-radiology/StructureDefinition/CommonObservedChangeInSize"
+              "http://hl7.org/fhir/us/breast-radiology/StructureDefinition/ObservedChangeInSize"
             ]
           }
         ],
@@ -3427,9 +3475,9 @@
         ]
       },
       {
-        "id": "Observation.hasMember:commonObservedChangeInState",
+        "id": "Observation.hasMember:observedChangeInState",
         "path": "Observation.hasMember",
-        "sliceName": "commonObservedChangeInState",
+        "sliceName": "observedChangeInState",
         "short": "Related resource that belongs to the Observation group",
         "definition": "This observation is a group observation (e.g. a battery, a panel of tests, a set of vital sign measurements) that includes the target as a member of the group.",
         "comment": "When using this element, an observation will typically have either a value or a set of related resources, although both may be present in some cases.  For a discussion on the ways Observations can assembled in groups together, see [Notes](observation.html#obsgrouping) below.  Note that a system may calculate results from [QuestionnaireResponse](questionnaireresponse.html)  into a final score and represent the score as an Observation.",
@@ -3444,7 +3492,7 @@
           {
             "code": "Reference",
             "targetProfile": [
-              "http://hl7.org/fhir/us/breast-radiology/StructureDefinition/CommonObservedChangeInState"
+              "http://hl7.org/fhir/us/breast-radiology/StructureDefinition/ObservedChangeInState"
             ]
           }
         ],
@@ -3462,9 +3510,9 @@
         ]
       },
       {
-        "id": "Observation.hasMember:commonSize",
+        "id": "Observation.hasMember:observedSize",
         "path": "Observation.hasMember",
-        "sliceName": "commonSize",
+        "sliceName": "observedSize",
         "short": "Related resource that belongs to the Observation group",
         "definition": "This observation is a group observation (e.g. a battery, a panel of tests, a set of vital sign measurements) that includes the target as a member of the group.",
         "comment": "When using this element, an observation will typically have either a value or a set of related resources, although both may be present in some cases.  For a discussion on the ways Observations can assembled in groups together, see [Notes](observation.html#obsgrouping) below.  Note that a system may calculate results from [QuestionnaireResponse](questionnaireresponse.html)  into a final score and represent the score as an Observation.",
@@ -3479,7 +3527,7 @@
           {
             "code": "Reference",
             "targetProfile": [
-              "http://hl7.org/fhir/us/breast-radiology/StructureDefinition/CommonSize"
+              "http://hl7.org/fhir/us/breast-radiology/StructureDefinition/ObservedSize"
             ]
           }
         ],

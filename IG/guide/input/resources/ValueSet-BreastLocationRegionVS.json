@@ -18,7 +18,7 @@
       ]
     }
   ],
-  "description": "ValueSet for Breast body location region.",
+  "description": "Breast body location region value set.",
   "compose": {
     "include": [
       {

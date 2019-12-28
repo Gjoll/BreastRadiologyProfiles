@@ -18,7 +18,7 @@
   "url": "http://hl7.org/fhir/us/breast-radiology/ValueSet/HilumVS",
   "name": "HilumVS",
   "title": "Hilum ValueSet ValueSet",
-  "description": "ValueSet defining hilum values.",
+  "description": "Hilum values value set.",
   "compose": {
     "include": [
       {

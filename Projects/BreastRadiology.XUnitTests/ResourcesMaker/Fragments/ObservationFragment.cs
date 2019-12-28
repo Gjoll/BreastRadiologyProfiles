@@ -28,7 +28,6 @@ namespace BreastRadiology.XUnitTests
                 s = e.SDef.Url;
                 e.Select("subject").Single();
 
-                e.Select("component").Zero();
                 e.Select("interpretation").Zero();
                 e.Select("referenceRange").Zero();
                 e.Select("basedOn").Zero();

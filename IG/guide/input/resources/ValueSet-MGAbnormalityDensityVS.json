@@ -18,7 +18,7 @@
       ]
     }
   ],
-  "description": "ValueSet defining types of mammography density abnormalities.",
+  "description": "Mammography density abnormality types value set.",
   "compose": {
     "include": [
       {

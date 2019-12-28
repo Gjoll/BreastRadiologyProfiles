@@ -40,7 +40,7 @@
       ]
     }
   ],
-  "description": "ValueSet defining Breast body location quadrant code system.",
+  "description": "Breast body location quadrant code system value set.",
   "compose": {
     "include": [
       {

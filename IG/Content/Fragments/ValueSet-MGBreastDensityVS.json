@@ -18,7 +18,7 @@
   "url": "http://hl7.org/fhir/us/breast-radiology/ValueSet/MGBreastDensityVS",
   "name": "MGBreastDensityVS",
   "title": "Mammography Breast Density ValueSet ValueSet",
-  "description": "ValueSet for mammography breast density values.",
+  "description": "Mammography breast density values value set.",
   "compose": {
     "include": [
       {

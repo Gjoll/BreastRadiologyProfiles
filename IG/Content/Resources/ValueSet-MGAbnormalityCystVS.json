@@ -40,7 +40,7 @@
       ]
     }
   ],
-  "description": "ValueSet defining types of mammography cyst abnormalities.",
+  "description": "Mammography cyst abnormality types value set.",
   "compose": {
     "include": [
       {

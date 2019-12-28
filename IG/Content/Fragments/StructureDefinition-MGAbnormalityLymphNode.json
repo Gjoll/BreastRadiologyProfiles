@@ -27,14 +27,6 @@
     },
     {
       "url": "http://www.fragment.com/fragment",
-      "valueUrl": "http://hl7.org/fhir/us/breast-radiology/StructureDefinition/ObservationSectionFragment"
-    },
-    {
-      "url": "http://www.fragment.com/maplink",
-      "valueString": "fragment|True|http://hl7.org/fhir/us/breast-radiology/StructureDefinition/ObservationSectionFragment"
-    },
-    {
-      "url": "http://www.fragment.com/fragment",
       "valueUrl": "http://hl7.org/fhir/us/breast-radiology/StructureDefinition/MgCommonTargetsFragment"
     },
     {
@@ -55,7 +47,7 @@
     },
     {
       "url": "http://www.fragment.com/maplink",
-      "valueString": "target|False|http://hl7.org/fhir/us/breast-radiology/StructureDefinition/CommonCount"
+      "valueString": "target|False|http://hl7.org/fhir/us/breast-radiology/StructureDefinition/ObservedCount"
     }
   ],
   "url": "http://hl7.org/fhir/us/breast-radiology/StructureDefinition/MGAbnormalityLymphNode",
@@ -121,9 +113,9 @@
         }
       },
       {
-        "id": "Observation.hasMember:commonCount",
+        "id": "Observation.hasMember:observedCount",
         "path": "Observation.hasMember",
-        "sliceName": "commonCount",
+        "sliceName": "observedCount",
         "min": 0,
         "max": "1",
         "base": {
@@ -135,7 +127,7 @@
           {
             "code": "Reference",
             "targetProfile": [
-              "http://hl7.org/fhir/us/breast-radiology/StructureDefinition/CommonCount"
+              "http://hl7.org/fhir/us/breast-radiology/StructureDefinition/ObservedCount"
             ]
           }
         ]

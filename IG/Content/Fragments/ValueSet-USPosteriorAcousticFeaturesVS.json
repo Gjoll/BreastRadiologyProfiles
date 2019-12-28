@@ -18,11 +18,11 @@
   "url": "http://hl7.org/fhir/us/breast-radiology/ValueSet/USPosteriorAcousticFeaturesVS",
   "name": "USPosteriorAcousticFeaturesVS",
   "title": "US Posterior Acoustic Features ValueSet ValueSet",
-  "description": "ValueSet defining Ultra-sound mass Posterior acoustic feature codes.",
+  "description": "Ultra-sound mass Posterior acoustic feature codes value set.",
   "compose": {
     "include": [
       {
-        "system": "http://hl7.org/fhir/us/breast-radiology/CodeSystem/BreastRadUSPosteriorAcousticFeaturesCS",
+        "system": "http://hl7.org/fhir/us/breast-radiology/CodeSystem/USPosteriorAcousticFeaturesCS",
         "concept": [
           {
             "code": "NoPosteriorAcousticFeatures",

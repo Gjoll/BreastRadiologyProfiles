@@ -18,7 +18,7 @@
   "url": "http://hl7.org/fhir/us/breast-radiology/ValueSet/UltraSoundShapeVS",
   "name": "UltraSoundShapeVS",
   "title": "ShapeValueSet ValueSet",
-  "description": "ValueSet defining shape values.",
+  "description": "Shape values value set.",
   "compose": {
     "include": [
       {

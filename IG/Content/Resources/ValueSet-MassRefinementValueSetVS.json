@@ -40,7 +40,7 @@
       ]
     }
   ],
-  "description": "ValueSet refining mass type.",
+  "description": "Mass type value set.",
   "compose": {
     "include": [
       {

@@ -42,7 +42,6 @@ namespace BreastRadiology.XUnitTests
                             )
                     )
                     .AddFragRef(ResourcesMaker.Self.ObservationNoDeviceFragment.Value())
-                    .AddFragRef(ResourcesMaker.Self.ObservationSectionFragment.Value())
                     .AddFragRef(ResourcesMaker.Self.ObservationNoValueFragment.Value())
                     .AddFragRef(ResourcesMaker.Self.MGCommonTargetsFragment.Value())
                     .AddFragRef(ResourcesMaker.Self.MGShapeTargetsFragment.Value())
@@ -57,6 +56,7 @@ namespace BreastRadiology.XUnitTests
                     new ProfileTargetSlice(ResourcesMaker.Self.MGCalcificationType.Value(), 0, "1"),
                     new ProfileTargetSlice(ResourcesMaker.Self.MGCalcificationDistribution.Value(), 0, "1"),
                     new ProfileTargetSlice(ResourcesMaker.Self.MGAssociatedFeatures.Value(), 0, "1"),
+                    new ProfileTargetSlice(ResourcesMaker.Self.ConsistentWith.Value(), 0, "*"),
                     };
                     e.Find("hasMember").SliceByUrl(targets);
                     e.AddProfileTargets(targets);

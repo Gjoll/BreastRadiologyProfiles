@@ -18,7 +18,7 @@
   "url": "http://hl7.org/fhir/us/breast-radiology/ValueSet/BreastLocationRegionVS",
   "name": "BreastLocationRegionVS",
   "title": "Breast Location Region ValueSet ValueSet",
-  "description": "ValueSet for Breast body location region.",
+  "description": "Breast body location region value set.",
   "compose": {
     "include": [
       {

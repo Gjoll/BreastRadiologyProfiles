@@ -22,9 +22,7 @@ namespace BreastRadiology.XUnitTests
                             .Todo(
                             )
                     )
-                    .AddFragRef(ResourcesMaker.Self.HeaderFragment.Value())
-                    .AddFragRef(ResourcesMaker.Self.CategoryFragment.Value())
-                    .AddFragRef(ResourcesMaker.Self.ObservationFragment.Value())
+                    .AddFragRef(ResourcesMaker.Self.ObservationNoComponentFragment.Value())
                 ;
                 s = e.SDef.Url;
                 e.Select("hasMember").Zero();

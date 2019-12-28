@@ -18,20 +18,12 @@
       "valueString": "fragment|True|http://hl7.org/fhir/us/breast-radiology/StructureDefinition/ObservationSectionFragment"
     },
     {
-      "url": "http://www.fragment.com/fragment",
-      "valueUrl": "http://hl7.org/fhir/us/breast-radiology/StructureDefinition/BreastRadObservationNoValueFragment"
+      "url": "http://www.fragment.com/maplink",
+      "valueString": "target|False|http://hl7.org/fhir/us/breast-radiology/StructureDefinition/USMass"
     },
     {
       "url": "http://www.fragment.com/maplink",
-      "valueString": "fragment|True|http://hl7.org/fhir/us/breast-radiology/StructureDefinition/BreastRadObservationNoValueFragment"
-    },
-    {
-      "url": "http://www.fragment.com/maplink",
-      "valueString": "target|False|http://hl7.org/fhir/us/breast-radiology/StructureDefinition/BreastRadUSMass"
-    },
-    {
-      "url": "http://www.fragment.com/maplink",
-      "valueString": "target|False|http://hl7.org/fhir/us/breast-radiology/StructureDefinition/BreastRadUSTissueComposition"
+      "valueString": "target|False|http://hl7.org/fhir/us/breast-radiology/StructureDefinition/USTissueComposition"
     }
   ],
   "url": "http://hl7.org/fhir/us/breast-radiology/StructureDefinition/FragmentUSFinding",
@@ -1761,9 +1753,9 @@
         ]
       },
       {
-        "id": "Observation.hasMember:breastRadUSMass",
+        "id": "Observation.hasMember:uSMass",
         "path": "Observation.hasMember",
-        "sliceName": "breastRadUSMass",
+        "sliceName": "uSMass",
         "short": "Related resource that belongs to the Observation group",
         "definition": "This observation is a group observation (e.g. a battery, a panel of tests, a set of vital sign measurements) that includes the target as a member of the group.",
         "comment": "When using this element, an observation will typically have either a value or a set of related resources, although both may be present in some cases.  For a discussion on the ways Observations can assembled in groups together, see [Notes](observation.html#obsgrouping) below.  Note that a system may calculate results from [QuestionnaireResponse](questionnaireresponse.html)  into a final score and represent the score as an Observation.",
@@ -1778,7 +1770,7 @@
           {
             "code": "Reference",
             "targetProfile": [
-              "http://hl7.org/fhir/us/breast-radiology/StructureDefinition/BreastRadUSMass"
+              "http://hl7.org/fhir/us/breast-radiology/StructureDefinition/USMass"
             ]
           }
         ],
@@ -1796,9 +1788,9 @@
         ]
       },
       {
-        "id": "Observation.hasMember:breastRadUSTissueComposition",
+        "id": "Observation.hasMember:uSTissueComposition",
         "path": "Observation.hasMember",
-        "sliceName": "breastRadUSTissueComposition",
+        "sliceName": "uSTissueComposition",
         "short": "Related resource that belongs to the Observation group",
         "definition": "This observation is a group observation (e.g. a battery, a panel of tests, a set of vital sign measurements) that includes the target as a member of the group.",
         "comment": "When using this element, an observation will typically have either a value or a set of related resources, although both may be present in some cases.  For a discussion on the ways Observations can assembled in groups together, see [Notes](observation.html#obsgrouping) below.  Note that a system may calculate results from [QuestionnaireResponse](questionnaireresponse.html)  into a final score and represent the score as an Observation.",
@@ -1813,7 +1805,7 @@
           {
             "code": "Reference",
             "targetProfile": [
-              "http://hl7.org/fhir/us/breast-radiology/StructureDefinition/BreastRadUSTissueComposition"
+              "http://hl7.org/fhir/us/breast-radiology/StructureDefinition/USTissueComposition"
             ]
           }
         ],
@@ -2299,9 +2291,9 @@
         }
       },
       {
-        "id": "Observation.hasMember:breastRadUSMass",
+        "id": "Observation.hasMember:uSMass",
         "path": "Observation.hasMember",
-        "sliceName": "breastRadUSMass",
+        "sliceName": "uSMass",
         "min": 0,
         "max": "*",
         "base": {
@@ -2313,15 +2305,15 @@
           {
             "code": "Reference",
             "targetProfile": [
-              "http://hl7.org/fhir/us/breast-radiology/StructureDefinition/BreastRadUSMass"
+              "http://hl7.org/fhir/us/breast-radiology/StructureDefinition/USMass"
             ]
           }
         ]
       },
       {
-        "id": "Observation.hasMember:breastRadUSTissueComposition",
+        "id": "Observation.hasMember:uSTissueComposition",
         "path": "Observation.hasMember",
-        "sliceName": "breastRadUSTissueComposition",
+        "sliceName": "uSTissueComposition",
         "min": 1,
         "max": "1",
         "base": {
@@ -2333,7 +2325,7 @@
           {
             "code": "Reference",
             "targetProfile": [
-              "http://hl7.org/fhir/us/breast-radiology/StructureDefinition/BreastRadUSTissueComposition"
+              "http://hl7.org/fhir/us/breast-radiology/StructureDefinition/USTissueComposition"
             ]
           }
         ]

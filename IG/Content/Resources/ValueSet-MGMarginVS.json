@@ -44,7 +44,7 @@
   "compose": {
     "include": [
       {
-        "system": "http://hl7.org/fhir/us/breast-radiology/CodeSystem/BreastRadMarginCS",
+        "system": "http://hl7.org/fhir/us/breast-radiology/CodeSystem/MarginCS",
         "concept": [
           {
             "code": "Angular",

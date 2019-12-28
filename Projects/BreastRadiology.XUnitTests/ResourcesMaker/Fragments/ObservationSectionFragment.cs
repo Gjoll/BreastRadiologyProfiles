@@ -23,10 +23,10 @@ namespace BreastRadiology.XUnitTests
                             )
                      )
                     .AddFragRef(ResourcesMaker.Self.ObservationFragment.Value())
+                    .AddFragRef(ResourcesMaker.Self.ObservationNoValueFragment.Value())
                     ;
                 s = e.SDef.Url;
                 e.Select("interpretation").Zero();
-                e.Select("note").Zero();
                 e.Select("method").Zero();
 
                 e.IntroDoc

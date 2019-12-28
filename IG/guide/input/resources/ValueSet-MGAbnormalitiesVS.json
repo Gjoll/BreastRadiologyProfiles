@@ -18,7 +18,7 @@
       ]
     }
   ],
-  "description": "ValueSet defining defining types of foreign objects observed during a Breast Radiology exam",
+  "description": "Foreign objects observed during a Breast Radiology exam value set",
   "compose": {
     "include": [
       {

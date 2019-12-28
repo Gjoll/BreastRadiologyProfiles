@@ -18,7 +18,7 @@
       ]
     }
   ],
-  "description": "ValueSet defining hilum values.",
+  "description": "Hilum values value set.",
   "compose": {
     "include": [
       {

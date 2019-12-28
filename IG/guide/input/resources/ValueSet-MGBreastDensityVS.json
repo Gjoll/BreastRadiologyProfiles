@@ -18,7 +18,7 @@
       ]
     }
   ],
-  "description": "ValueSet for mammography breast density values.",
+  "description": "Mammography breast density values value set.",
   "compose": {
     "include": [
       {

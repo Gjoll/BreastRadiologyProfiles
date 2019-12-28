@@ -18,7 +18,7 @@
       ]
     }
   ],
-  "description": "ValueSet defining breast body location angles expressed in clock-face units.",
+  "description": "Breast body location angles (expressed in clock-face units) value set.",
   "compose": {
     "include": [
       {

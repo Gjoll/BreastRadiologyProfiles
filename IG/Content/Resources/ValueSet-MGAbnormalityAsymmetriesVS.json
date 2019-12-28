@@ -40,7 +40,7 @@
       ]
     }
   ],
-  "description": "ValueSet defining types of mammography asymmetry abnormalities.",
+  "description": "Mammography asymmetry abnormality types value set.",
   "compose": {
     "include": [
       {

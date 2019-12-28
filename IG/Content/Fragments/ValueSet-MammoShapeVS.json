@@ -18,7 +18,7 @@
   "url": "http://hl7.org/fhir/us/breast-radiology/ValueSet/MammoShapeVS",
   "name": "MammoShapeVS",
   "title": "Shape ValueSet ValueSet",
-  "description": "ValueSet defining shape values.",
+  "description": "Shape values value set.",
   "compose": {
     "include": [
       {

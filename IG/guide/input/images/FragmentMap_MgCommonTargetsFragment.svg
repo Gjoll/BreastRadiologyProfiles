@@ -1,6 +1,6 @@
 <?xml version="1.0"?>
 <!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
-<svg xmlns="http://www.w3.org/2000/svg" version="1.1" width="809.99994" height="1402.5">
+<svg xmlns="http://www.w3.org/2000/svg" version="1.1" width="809.99994" height="742.5">
 <defs>
 <marker id="arrowStart" markerWidth="3.75" markerHeight="3.75" markerUnits="px" refX="1.875" refY="1.875">
 <circle fill="Black" stroke-width="0" cx="1.875" cy="1.875" r="1.875" />
@@ -54,143 +54,11 @@
 <line stroke="Black" stroke-width="1.875" marker-end="url(#arrowEnd)" x1="505.49994" y1="573.75" x2="535.49994" y2="573.75" />
 <line stroke="Black" stroke-width="1.875" marker-end="url(#arrowEnd)" x1="505.49994" y1="633.75" x2="535.49994" y2="633.75" />
 <line stroke="Black" stroke-width="1.875" marker-end="url(#arrowEnd)" x1="505.49994" y1="693.75" x2="535.49994" y2="693.75" />
-<line stroke="Black" stroke-width="1.875" marker-end="url(#arrowEnd)" x1="505.49994" y1="753.75" x2="535.49994" y2="753.75" />
-<line stroke="Black" stroke-width="1.875" marker-end="url(#arrowEnd)" x1="505.49994" y1="813.75" x2="535.49994" y2="813.75" />
-<line stroke="Black" stroke-width="1.875" marker-end="url(#arrowEnd)" x1="505.49994" y1="873.75" x2="535.49994" y2="873.75" />
-<line stroke="Black" stroke-width="1.875" marker-end="url(#arrowEnd)" x1="505.49994" y1="933.75" x2="535.49994" y2="933.75" />
-<line stroke="Black" stroke-width="1.875" marker-end="url(#arrowEnd)" x1="505.49994" y1="993.75" x2="535.49994" y2="993.75" />
-<line stroke="Black" stroke-width="1.875" marker-end="url(#arrowEnd)" x1="505.49994" y1="1053.75" x2="535.49994" y2="1053.75" />
-<line stroke="Black" stroke-width="1.875" marker-end="url(#arrowEnd)" x1="505.49994" y1="1113.75" x2="535.49994" y2="1113.75" />
-<line stroke="Black" stroke-width="1.875" marker-end="url(#arrowEnd)" x1="505.49994" y1="1173.75" x2="535.49994" y2="1173.75" />
-<line stroke="Black" stroke-width="1.875" marker-end="url(#arrowEnd)" x1="505.49994" y1="1233.75" x2="535.49994" y2="1233.75" />
-<line stroke="Black" stroke-width="1.875" marker-end="url(#arrowEnd)" x1="505.49994" y1="1293.75" x2="535.49994" y2="1293.75" />
-<line stroke="Black" stroke-width="1.875" marker-end="url(#arrowEnd)" x1="505.49994" y1="1353.75" x2="535.49994" y2="1353.75" />
 <line stroke="Black" stroke-width="1.875" marker-start="url(#arrowStart)" x1="475.49997" y1="24.375" x2="505.49994" y2="24.375" />
-<line stroke="Black" stroke-width="1.875" x1="505.49994" y1="24.375" x2="505.49994" y2="1353.75" />
+<line stroke="Black" stroke-width="1.875" x1="505.49994" y1="24.375" x2="505.49994" y2="693.75" />
 </g>
 <g>
 <g transform="translate(535.49994 7.5)">
-<rect fill="LightBlue" stroke="Black" stroke-width="1.875" x="0" y="0" width="214.5" height="52.5" rx="3.75" ry="3.75" />
-<a href="./StructureDefinition-FragmentBreastRadMammoAbnormalityArchitecturalDistortion.html" target="_blank">
-<title>'Fragment BreastRadMammoAbnormalityArchitecturalDistortion'</title>
-<text x="107.25" y="22.5" text-anchor="middle">Mg Arch. Distortion</text>
-</a>
-<a href="StructureDefinition-BreastRadMammoAbnormalityArchitecturalDistortion.html" target="_blank">
-<title>Resource 'BreastRadMammoAbnormalityArchitecturalDistortion'</title>
-<text x="107.25" y="41.25" text-anchor="middle">[Resource]</text>
-</a>
-</g>
-<g transform="translate(535.49994 67.5)">
-<rect fill="LightBlue" stroke="Black" stroke-width="1.875" x="0" y="0" width="141" height="52.5" rx="3.75" ry="3.75" />
-<a href="./StructureDefinition-FragmentBreastRadMammoAbnormalityAsymmetry.html" target="_blank">
-<title>'Fragment BreastRadMammoAbnormalityAsymmetry'</title>
-<text x="70.5" y="22.5" text-anchor="middle">Mg Asymmetry</text>
-</a>
-<a href="StructureDefinition-BreastRadMammoAbnormalityAsymmetry.html" target="_blank">
-<title>Resource 'BreastRadMammoAbnormalityAsymmetry'</title>
-<text x="70.5" y="41.25" text-anchor="middle">[Resource]</text>
-</a>
-</g>
-<g transform="translate(535.49994 127.5)">
-<rect fill="LightBlue" stroke="Black" stroke-width="1.875" x="0" y="0" width="120" height="52.5" rx="3.75" ry="3.75" />
-<a href="./StructureDefinition-FragmentBreastRadMammoAbnormalityCalcification.html" target="_blank">
-<title>'Fragment BreastRadMammoAbnormalityCalcification'</title>
-<text x="60" y="22.5" text-anchor="middle">Mg Calc.</text>
-</a>
-<a href="StructureDefinition-BreastRadMammoAbnormalityCalcification.html" target="_blank">
-<title>Resource 'BreastRadMammoAbnormalityCalcification'</title>
-<text x="60" y="41.25" text-anchor="middle">[Resource]</text>
-</a>
-</g>
-<g transform="translate(535.49994 187.5)">
-<rect fill="LightBlue" stroke="Black" stroke-width="1.875" x="0" y="0" width="120" height="52.5" rx="3.75" ry="3.75" />
-<a href="./StructureDefinition-FragmentBreastRadMammoAbnormalityCyst.html" target="_blank">
-<title>'Fragment BreastRadMammoAbnormalityCyst'</title>
-<text x="60" y="22.5" text-anchor="middle">Mg Cyst</text>
-</a>
-<a href="StructureDefinition-BreastRadMammoAbnormalityCyst.html" target="_blank">
-<title>Resource 'BreastRadMammoAbnormalityCyst'</title>
-<text x="60" y="41.25" text-anchor="middle">[Resource]</text>
-</a>
-</g>
-<g transform="translate(535.49994 247.5)">
-<rect fill="LightBlue" stroke="Black" stroke-width="1.875" x="0" y="0" width="120" height="52.5" rx="3.75" ry="3.75" />
-<a href="./StructureDefinition-FragmentBreastRadMammoAbnormalityDensity.html" target="_blank">
-<title>'Fragment BreastRadMammoAbnormalityDensity'</title>
-<text x="60" y="22.5" text-anchor="middle">Mg Density</text>
-</a>
-<a href="StructureDefinition-BreastRadMammoAbnormalityDensity.html" target="_blank">
-<title>Resource 'BreastRadMammoAbnormalityDensity'</title>
-<text x="60" y="41.25" text-anchor="middle">[Resource]</text>
-</a>
-</g>
-<g transform="translate(535.49994 307.5)">
-<rect fill="LightBlue" stroke="Black" stroke-width="1.875" x="0" y="0" width="120" height="52.5" rx="3.75" ry="3.75" />
-<a href="./StructureDefinition-FragmentBreastRadMammoAbnormalityDuct.html" target="_blank">
-<title>'Fragment BreastRadMammoAbnormalityDuct'</title>
-<text x="60" y="22.5" text-anchor="middle">Mg Duct</text>
-</a>
-<a href="StructureDefinition-BreastRadMammoAbnormalityDuct.html" target="_blank">
-<title>Resource 'BreastRadMammoAbnormalityDuct'</title>
-<text x="60" y="41.25" text-anchor="middle">[Resource]</text>
-</a>
-</g>
-<g transform="translate(535.49994 367.5)">
-<rect fill="LightBlue" stroke="Black" stroke-width="1.875" x="0" y="0" width="172.5" height="52.5" rx="3.75" ry="3.75" />
-<a href="./StructureDefinition-FragmentBreastRadMammoAbnormalityFatNecrosis.html" target="_blank">
-<title>'Fragment BreastRadMammoAbnormalityFatNecrosis'</title>
-<text x="86.25" y="22.5" text-anchor="middle">Mg Fat Necrosis</text>
-</a>
-<a href="StructureDefinition-BreastRadMammoAbnormalityFatNecrosis.html" target="_blank">
-<title>Resource 'BreastRadMammoAbnormalityFatNecrosis'</title>
-<text x="86.25" y="41.25" text-anchor="middle">[Resource]</text>
-</a>
-</g>
-<g transform="translate(535.49994 427.5)">
-<rect fill="LightBlue" stroke="Black" stroke-width="1.875" x="0" y="0" width="172.5" height="52.5" rx="3.75" ry="3.75" />
-<a href="./StructureDefinition-FragmentBreastRadMammoAbnormalityFibroadenoma.html" target="_blank">
-<title>'Fragment BreastRadMammoAbnormalityFibroadenoma'</title>
-<text x="86.25" y="22.5" text-anchor="middle">Mg Fibroadenoma</text>
-</a>
-<a href="StructureDefinition-BreastRadMammoAbnormalityFibroadenoma.html" target="_blank">
-<title>Resource 'BreastRadMammoAbnormalityFibroadenoma'</title>
-<text x="86.25" y="41.25" text-anchor="middle">[Resource]</text>
-</a>
-</g>
-<g transform="translate(535.49994 487.5)">
-<rect fill="LightBlue" stroke="Black" stroke-width="1.875" x="0" y="0" width="151.49998" height="52.5" rx="3.75" ry="3.75" />
-<a href="./StructureDefinition-FragmentBreastRadMammoAbnormalityLymphNode.html" target="_blank">
-<title>'Fragment BreastRadMammoAbnormalityLymphNode'</title>
-<text x="75.74999" y="22.5" text-anchor="middle">Mg Lymph Node</text>
-</a>
-<a href="StructureDefinition-BreastRadMammoAbnormalityLymphNode.html" target="_blank">
-<title>Resource 'BreastRadMammoAbnormalityLymphNode'</title>
-<text x="75.74999" y="41.25" text-anchor="middle">[Resource]</text>
-</a>
-</g>
-<g transform="translate(535.49994 547.5)">
-<rect fill="LightBlue" stroke="Black" stroke-width="1.875" x="0" y="0" width="120" height="52.5" rx="3.75" ry="3.75" />
-<a href="./StructureDefinition-FragmentBreastRadMammoMass.html" target="_blank">
-<title>'Fragment BreastRadMammoMass'</title>
-<text x="60" y="22.5" text-anchor="middle">Mg Mass</text>
-</a>
-<a href="StructureDefinition-BreastRadMammoMass.html" target="_blank">
-<title>Resource 'BreastRadMammoMass'</title>
-<text x="60" y="41.25" text-anchor="middle">[Resource]</text>
-</a>
-</g>
-<g transform="translate(535.49994 607.5)">
-<rect fill="LightBlue" stroke="Black" stroke-width="1.875" x="0" y="0" width="162" height="52.5" rx="3.75" ry="3.75" />
-<a href="./StructureDefinition-FragmentBreastRadMammoSkinLesion.html" target="_blank">
-<title>'Fragment BreastRadMammoSkinLesion'</title>
-<text x="81" y="22.5" text-anchor="middle">Mg Skin Lesion</text>
-</a>
-<a href="StructureDefinition-BreastRadMammoSkinLesion.html" target="_blank">
-<title>Resource 'BreastRadMammoSkinLesion'</title>
-<text x="81" y="41.25" text-anchor="middle">[Resource]</text>
-</a>
-</g>
-<g transform="translate(535.49994 667.5)">
 <rect fill="LightBlue" stroke="Black" stroke-width="1.875" x="0" y="0" width="214.5" height="52.5" rx="3.75" ry="3.75" />
 <a href="./StructureDefinition-FragmentMGAbnormalityArchitecturalDistortion.html" target="_blank">
 <title>'Fragment MGAbnormalityArchitecturalDistortion'</title>
@@ -201,7 +69,7 @@
 <text x="107.25" y="41.25" text-anchor="middle">[Resource]</text>
 </a>
 </g>
-<g transform="translate(535.49994 727.5)">
+<g transform="translate(535.49994 67.5)">
 <rect fill="LightBlue" stroke="Black" stroke-width="1.875" x="0" y="0" width="141" height="52.5" rx="3.75" ry="3.75" />
 <a href="./StructureDefinition-FragmentMGAbnormalityAsymmetry.html" target="_blank">
 <title>'Fragment MGAbnormalityAsymmetry'</title>
@@ -212,7 +80,7 @@
 <text x="70.5" y="41.25" text-anchor="middle">[Resource]</text>
 </a>
 </g>
-<g transform="translate(535.49994 787.5)">
+<g transform="translate(535.49994 127.5)">
 <rect fill="LightBlue" stroke="Black" stroke-width="1.875" x="0" y="0" width="120" height="52.5" rx="3.75" ry="3.75" />
 <a href="./StructureDefinition-FragmentMGAbnormalityCalcification.html" target="_blank">
 <title>'Fragment MGAbnormalityCalcification'</title>
@@ -223,7 +91,7 @@
 <text x="60" y="41.25" text-anchor="middle">[Resource]</text>
 </a>
 </g>
-<g transform="translate(535.49994 847.5)">
+<g transform="translate(535.49994 187.5)">
 <rect fill="LightBlue" stroke="Black" stroke-width="1.875" x="0" y="0" width="120" height="52.5" rx="3.75" ry="3.75" />
 <a href="./StructureDefinition-FragmentMGAbnormalityCyst.html" target="_blank">
 <title>'Fragment MGAbnormalityCyst'</title>
@@ -234,7 +102,7 @@
 <text x="60" y="41.25" text-anchor="middle">[Resource]</text>
 </a>
 </g>
-<g transform="translate(535.49994 907.5)">
+<g transform="translate(535.49994 247.5)">
 <rect fill="LightBlue" stroke="Black" stroke-width="1.875" x="0" y="0" width="120" height="52.5" rx="3.75" ry="3.75" />
 <a href="./StructureDefinition-FragmentMGAbnormalityDensity.html" target="_blank">
 <title>'Fragment MGAbnormalityDensity'</title>
@@ -245,7 +113,7 @@
 <text x="60" y="41.25" text-anchor="middle">[Resource]</text>
 </a>
 </g>
-<g transform="translate(535.49994 967.5)">
+<g transform="translate(535.49994 307.5)">
 <rect fill="LightBlue" stroke="Black" stroke-width="1.875" x="0" y="0" width="120" height="52.5" rx="3.75" ry="3.75" />
 <a href="./StructureDefinition-FragmentMGAbnormalityDuct.html" target="_blank">
 <title>'Fragment MGAbnormalityDuct'</title>
@@ -256,7 +124,7 @@
 <text x="60" y="41.25" text-anchor="middle">[Resource]</text>
 </a>
 </g>
-<g transform="translate(535.49994 1027.5)">
+<g transform="translate(535.49994 367.5)">
 <rect fill="LightBlue" stroke="Black" stroke-width="1.875" x="0" y="0" width="172.5" height="52.5" rx="3.75" ry="3.75" />
 <a href="./StructureDefinition-FragmentMGAbnormalityFatNecrosis.html" target="_blank">
 <title>'Fragment MGAbnormalityFatNecrosis'</title>
@@ -267,7 +135,7 @@
 <text x="86.25" y="41.25" text-anchor="middle">[Resource]</text>
 </a>
 </g>
-<g transform="translate(535.49994 1087.5)">
+<g transform="translate(535.49994 427.5)">
 <rect fill="LightBlue" stroke="Black" stroke-width="1.875" x="0" y="0" width="172.5" height="52.5" rx="3.75" ry="3.75" />
 <a href="./StructureDefinition-FragmentMGAbnormalityFibroadenoma.html" target="_blank">
 <title>'Fragment MGAbnormalityFibroadenoma'</title>
@@ -278,7 +146,7 @@
 <text x="86.25" y="41.25" text-anchor="middle">[Resource]</text>
 </a>
 </g>
-<g transform="translate(535.49994 1147.5)">
+<g transform="translate(535.49994 487.5)">
 <rect fill="LightBlue" stroke="Black" stroke-width="1.875" x="0" y="0" width="162" height="52.5" rx="3.75" ry="3.75" />
 <a href="./StructureDefinition-FragmentMGAbnormalityForeignObject.html" target="_blank">
 <title>'Fragment MGAbnormalityForeignObject'</title>
@@ -289,7 +157,7 @@
 <text x="81" y="41.25" text-anchor="middle">[Resource]</text>
 </a>
 </g>
-<g transform="translate(535.49994 1207.5)">
+<g transform="translate(535.49994 547.5)">
 <rect fill="LightBlue" stroke="Black" stroke-width="1.875" x="0" y="0" width="151.49998" height="52.5" rx="3.75" ry="3.75" />
 <a href="./StructureDefinition-FragmentMGAbnormalityLymphNode.html" target="_blank">
 <title>'Fragment MGAbnormalityLymphNode'</title>
@@ -300,7 +168,7 @@
 <text x="75.74999" y="41.25" text-anchor="middle">[Resource]</text>
 </a>
 </g>
-<g transform="translate(535.49994 1267.5)">
+<g transform="translate(535.49994 607.5)">
 <rect fill="LightBlue" stroke="Black" stroke-width="1.875" x="0" y="0" width="120" height="52.5" rx="3.75" ry="3.75" />
 <a href="./StructureDefinition-FragmentMGMass.html" target="_blank">
 <title>'Fragment MGMass'</title>
@@ -311,7 +179,7 @@
 <text x="60" y="41.25" text-anchor="middle">[Resource]</text>
 </a>
 </g>
-<g transform="translate(535.49994 1327.5)">
+<g transform="translate(535.49994 667.5)">
 <rect fill="LightBlue" stroke="Black" stroke-width="1.875" x="0" y="0" width="162" height="52.5" rx="3.75" ry="3.75" />
 <a href="./StructureDefinition-FragmentMGSkinLesion.html" target="_blank">
 <title>'Fragment MGSkinLesion'</title>

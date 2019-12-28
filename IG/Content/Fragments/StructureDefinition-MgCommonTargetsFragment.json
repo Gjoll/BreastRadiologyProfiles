@@ -27,27 +27,27 @@
     },
     {
       "url": "http://www.fragment.com/maplink",
-      "valueString": "target|False|http://hl7.org/fhir/us/breast-radiology/StructureDefinition/CommonObservedChangeInDefinition"
+      "valueString": "target|False|http://hl7.org/fhir/us/breast-radiology/StructureDefinition/ObservedChangeInDefinition"
     },
     {
       "url": "http://www.fragment.com/maplink",
-      "valueString": "target|False|http://hl7.org/fhir/us/breast-radiology/StructureDefinition/CommonObservedChangeInNumber"
+      "valueString": "target|False|http://hl7.org/fhir/us/breast-radiology/StructureDefinition/ObservedChangeInNumber"
     },
     {
       "url": "http://www.fragment.com/maplink",
-      "valueString": "target|False|http://hl7.org/fhir/us/breast-radiology/StructureDefinition/CommonObservedChangeInProminance"
+      "valueString": "target|False|http://hl7.org/fhir/us/breast-radiology/StructureDefinition/ObservedChangeInProminance"
     },
     {
       "url": "http://www.fragment.com/maplink",
-      "valueString": "target|False|http://hl7.org/fhir/us/breast-radiology/StructureDefinition/CommonObservedChangeInSize"
+      "valueString": "target|False|http://hl7.org/fhir/us/breast-radiology/StructureDefinition/ObservedChangeInSize"
     },
     {
       "url": "http://www.fragment.com/maplink",
-      "valueString": "target|False|http://hl7.org/fhir/us/breast-radiology/StructureDefinition/CommonObservedChangeInState"
+      "valueString": "target|False|http://hl7.org/fhir/us/breast-radiology/StructureDefinition/ObservedChangeInState"
     },
     {
       "url": "http://www.fragment.com/maplink",
-      "valueString": "target|False|http://hl7.org/fhir/us/breast-radiology/StructureDefinition/CommonSize"
+      "valueString": "target|False|http://hl7.org/fhir/us/breast-radiology/StructureDefinition/ObservedSize"
     },
     {
       "url": "http://www.fragment.com/maplink",
@@ -117,9 +117,9 @@
         ]
       },
       {
-        "id": "Observation.hasMember:commonObservedChangeInDefinition",
+        "id": "Observation.hasMember:observedChangeInDefinition",
         "path": "Observation.hasMember",
-        "sliceName": "commonObservedChangeInDefinition",
+        "sliceName": "observedChangeInDefinition",
         "min": 0,
         "max": "1",
         "base": {
@@ -131,15 +131,15 @@
           {
             "code": "Reference",
             "targetProfile": [
-              "http://hl7.org/fhir/us/breast-radiology/StructureDefinition/CommonObservedChangeInDefinition"
+              "http://hl7.org/fhir/us/breast-radiology/StructureDefinition/ObservedChangeInDefinition"
             ]
           }
         ]
       },
       {
-        "id": "Observation.hasMember:commonObservedChangeInNumber",
+        "id": "Observation.hasMember:observedChangeInNumber",
         "path": "Observation.hasMember",
-        "sliceName": "commonObservedChangeInNumber",
+        "sliceName": "observedChangeInNumber",
         "min": 0,
         "max": "1",
         "base": {
@@ -151,15 +151,15 @@
           {
             "code": "Reference",
             "targetProfile": [
-              "http://hl7.org/fhir/us/breast-radiology/StructureDefinition/CommonObservedChangeInNumber"
+              "http://hl7.org/fhir/us/breast-radiology/StructureDefinition/ObservedChangeInNumber"
             ]
           }
         ]
       },
       {
-        "id": "Observation.hasMember:commonObservedChangeInProminance",
+        "id": "Observation.hasMember:observedChangeInProminance",
         "path": "Observation.hasMember",
-        "sliceName": "commonObservedChangeInProminance",
+        "sliceName": "observedChangeInProminance",
         "min": 0,
         "max": "1",
         "base": {
@@ -171,15 +171,15 @@
           {
             "code": "Reference",
             "targetProfile": [
-              "http://hl7.org/fhir/us/breast-radiology/StructureDefinition/CommonObservedChangeInProminance"
+              "http://hl7.org/fhir/us/breast-radiology/StructureDefinition/ObservedChangeInProminance"
             ]
           }
         ]
       },
       {
-        "id": "Observation.hasMember:commonObservedChangeInSize",
+        "id": "Observation.hasMember:observedChangeInSize",
         "path": "Observation.hasMember",
-        "sliceName": "commonObservedChangeInSize",
+        "sliceName": "observedChangeInSize",
         "min": 0,
         "max": "1",
         "base": {
@@ -191,15 +191,15 @@
           {
             "code": "Reference",
             "targetProfile": [
-              "http://hl7.org/fhir/us/breast-radiology/StructureDefinition/CommonObservedChangeInSize"
+              "http://hl7.org/fhir/us/breast-radiology/StructureDefinition/ObservedChangeInSize"
             ]
           }
         ]
       },
       {
-        "id": "Observation.hasMember:commonObservedChangeInState",
+        "id": "Observation.hasMember:observedChangeInState",
         "path": "Observation.hasMember",
-        "sliceName": "commonObservedChangeInState",
+        "sliceName": "observedChangeInState",
         "min": 0,
         "max": "1",
         "base": {
@@ -211,15 +211,15 @@
           {
             "code": "Reference",
             "targetProfile": [
-              "http://hl7.org/fhir/us/breast-radiology/StructureDefinition/CommonObservedChangeInState"
+              "http://hl7.org/fhir/us/breast-radiology/StructureDefinition/ObservedChangeInState"
             ]
           }
         ]
       },
       {
-        "id": "Observation.hasMember:commonSize",
+        "id": "Observation.hasMember:observedSize",
         "path": "Observation.hasMember",
-        "sliceName": "commonSize",
+        "sliceName": "observedSize",
         "min": 0,
         "max": "1",
         "base": {
@@ -231,7 +231,7 @@
           {
             "code": "Reference",
             "targetProfile": [
-              "http://hl7.org/fhir/us/breast-radiology/StructureDefinition/CommonSize"
+              "http://hl7.org/fhir/us/breast-radiology/StructureDefinition/ObservedSize"
             ]
           }
         ]

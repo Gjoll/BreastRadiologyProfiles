@@ -18,7 +18,7 @@
       ]
     }
   ],
-  "description": "ValueSet defining Mammography density codes.",
+  "description": "Mammography density codes value set.",
   "compose": {
     "include": [
       {

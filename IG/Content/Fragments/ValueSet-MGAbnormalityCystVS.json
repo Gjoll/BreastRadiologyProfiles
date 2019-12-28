@@ -18,7 +18,7 @@
   "url": "http://hl7.org/fhir/us/breast-radiology/ValueSet/MGAbnormalityCystVS",
   "name": "MGAbnormalityCystVS",
   "title": "Mammography CystAbnormalities ValueSet ValueSet",
-  "description": "ValueSet defining types of mammography cyst abnormalities.",
+  "description": "Mammography cyst abnormality types value set.",
   "compose": {
     "include": [
       {

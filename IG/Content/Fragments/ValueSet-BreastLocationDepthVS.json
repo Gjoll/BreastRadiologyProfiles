@@ -18,7 +18,7 @@
   "url": "http://hl7.org/fhir/us/breast-radiology/ValueSet/BreastLocationDepthVS",
   "name": "BreastLocationDepthVS",
   "title": "Breast Location Depth ValueSet ValueSet",
-  "description": "ValueSet defining Breast body location depth.",
+  "description": "Breast body location depth value set.",
   "compose": {
     "include": [
       {

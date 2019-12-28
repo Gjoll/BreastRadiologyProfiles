@@ -40,7 +40,7 @@
       ]
     }
   ],
-  "description": "BiRads(r) Assessment Category ValueSet.",
+  "description": "BiRads(r) Assessment Category value set.",
   "compose": {
     "include": [
       {

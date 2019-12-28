@@ -18,7 +18,7 @@
       ]
     }
   ],
-  "description": "ValueSet defining shape values.",
+  "description": "Shape values value set.",
   "compose": {
     "include": [
       {

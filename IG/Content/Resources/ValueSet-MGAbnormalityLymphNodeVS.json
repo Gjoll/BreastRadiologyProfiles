@@ -40,7 +40,7 @@
       ]
     }
   ],
-  "description": "ValueSet defining types of mammography lymph node abnormalities.",
+  "description": "Mammography lymph node abnormality types value set.",
   "compose": {
     "include": [
       {

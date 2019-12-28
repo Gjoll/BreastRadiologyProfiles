@@ -1,0 +1,74 @@
+{
+  "resourceType": "StructureDefinition",
+  "extension": [
+    {
+      "url": "http://www.fragment.com/mapname",
+      "valueString": "Size"
+    },
+    {
+      "url": "http://www.fragment.com/Group",
+      "valueString": "CommonResources/ObservedSize"
+    },
+    {
+      "url": "http://www.fragment.com/fragment",
+      "valueUrl": "http://hl7.org/fhir/us/breast-radiology/StructureDefinition/BreastRadObservationNoDeviceFragment"
+    },
+    {
+      "url": "http://www.fragment.com/maplink",
+      "valueString": "fragment|True|http://hl7.org/fhir/us/breast-radiology/StructureDefinition/BreastRadObservationNoDeviceFragment"
+    },
+    {
+      "url": "http://www.fragment.com/fragment",
+      "valueUrl": "http://hl7.org/fhir/us/breast-radiology/StructureDefinition/ObservationLeafFragment"
+    },
+    {
+      "url": "http://www.fragment.com/maplink",
+      "valueString": "fragment|True|http://hl7.org/fhir/us/breast-radiology/StructureDefinition/ObservationLeafFragment"
+    }
+  ],
+  "url": "http://hl7.org/fhir/us/breast-radiology/StructureDefinition/ObservedSize",
+  "name": "ObservedSize",
+  "title": "Size",
+  "status": "draft",
+  "description": "Breast Radiology Size Observation\n\nThis observations describes the size of an observed item.\nThe size can be one (length), two (area) or three (volume) dimensions.\n\n\nIf this observation is present, and dataAbsentReason is empty, then an objects size was observed.\n\n\nIf this observation is present, and dataAbsentReason is not empty, then an objects size was not observed and dataAbsentReason contains the reason why.\n\n\n*** TODO Items ***** Should value[x] be SimpleQuantity.",
+  "fhirVersion": "4.0.0",
+  "kind": "resource",
+  "abstract": false,
+  "type": "Observation",
+  "baseDefinition": "http://hl7.org/fhir/StructureDefinition/Observation",
+  "derivation": "constraint",
+  "differential": {
+    "element": [
+      {
+        "id": "Observation",
+        "path": "Observation",
+        "short": "Breast Radiology Size Observation",
+        "definition": "This observations describes the size of an observed item.\nThe size can be one (length), two (area) or three (volume) dimensions.\n\n\nIf this observation is present, and dataAbsentReason is empty, then an objects size was observed.\n\n\nIf this observation is present, and dataAbsentReason is not empty, then an objects size was not observed and dataAbsentReason contains the reason why.\n\n\n*** TODO Items ***** Should value[x] be SimpleQuantity.",
+        "min": 0,
+        "max": "*"
+      },
+      {
+        "id": "Observation.value[x]",
+        "path": "Observation.value[x]",
+        "definition": "Size of an object in centimeters.\n\n\nRecord measurements to the nearest millimeter or centimeter. For example, 0.45 cm–0.49 cm should be rounded up to 0.5 cm and 0.11–0.14 cm should be rounded down to 0.1 cm.\n\n\nWhen possible, three measurements of an object should be given.At least one measurement must be given.The largest measurement should represent the longest axis of the object.The next measurement should be the one perpendicular to the first. The third measurement should be taken from a view orthogonal to the first image, and it should represent a plane different from the first two.",
+        "min": 1,
+        "max": "3",
+        "base": {
+          "path": "Observation.value[x]",
+          "min": 0,
+          "max": "1"
+        },
+        "type": [
+          {
+            "code": "Quantity"
+          }
+        ],
+        "patternQuantity": {
+          "unit": "cm",
+          "system": "http://unitsofmeasure.org",
+          "code": "cm"
+        }
+      }
+    ]
+  }
+}

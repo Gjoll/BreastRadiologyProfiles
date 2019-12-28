@@ -40,7 +40,7 @@
       ]
     }
   ],
-  "description": "ValueSet defining Breast body location depth.",
+  "description": "Breast body location depth value set.",
   "compose": {
     "include": [
       {
