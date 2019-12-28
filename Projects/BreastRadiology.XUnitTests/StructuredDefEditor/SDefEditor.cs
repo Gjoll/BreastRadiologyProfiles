@@ -345,18 +345,19 @@ namespace BreastRadiology.XUnitTests
                     Max = elementDef.BaseElementDefinition.Max
                 };
             }
-            this.InsertAfter(elementDef, retVal);
+            this.InsertAfterAllChildren(elementName, retVal);
             return retVal;
         }
 
         /// <summary>
         /// Add the indicated slice by url.
         /// </summary>
-        public ElementDefinition FixedCodeSlice(ElementDefGroup elementDef,
+        public ElementDefinition FixedCodeSlice(String path,
             String sliceName,
             String system,
             String code)
         {
+            ElementDefGroup elementDef = this.GetOrCreate(path);
             sliceName = sliceName.UncapFirstLetter();
             elementDef.ElementDefinition.Slicing = new ElementDefinition.SlicingComponent
             {
@@ -374,7 +375,7 @@ namespace BreastRadiology.XUnitTests
                 ElementId = $"{elementDef.ElementDefinition.Path}.coding",
                 Path = $"{elementDef.ElementDefinition.Path}.coding",
             };
-            this.InsertAfter(elementDef, coding);
+            this.InsertAfterAllChildren(path, coding);
 
             ElementDefinition slice = new ElementDefinition
             {
@@ -391,7 +392,7 @@ namespace BreastRadiology.XUnitTests
                     Max = elementDef.BaseElementDefinition.Max
                 }
             };
-            this.InsertAfter(elementDef, slice);
+            this.InsertAfterAllChildren(path, slice);
             return slice;
         }
 

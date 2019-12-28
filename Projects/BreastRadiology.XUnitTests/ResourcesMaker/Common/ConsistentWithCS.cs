@@ -42,9 +42,6 @@ namespace BreastRadiology.XUnitTests
                 ElementDefGroup component = e.GetOrCreate("component");
                 component.ElementDefinition.Min = 1;
                 component.ElementDefinition.Max = "2";
-                e.Select("component.value[x]").Type("CodeableConcept");
-                e.Select("component.interpretation").Zero();
-                e.Select("component.referenceRange").Zero();
 
                 component.ElementDefinition.Slicing = new ElementDefinition.SlicingComponent
                 {
@@ -91,8 +88,29 @@ namespace BreastRadiology.XUnitTests
                         };
                         valueX
                             .Binding(valueSetUrl, bindingStrength)
+                            .Type("CodeableConcept");
                             ;
                         e.InsertAfterAllChildren("component", valueX);
+                    }
+                    {
+                        ElementDefinition eDef = new ElementDefinition
+                        {
+                            Path = $"{slice.Path}.interpretation",
+                            ElementId = $"{slice.Path}:{sliceName}.interpretation",
+                            Min = 0,
+                            Max = "0"
+                        };
+                        e.InsertAfterAllChildren("component", eDef);
+                    }
+                    {
+                        ElementDefinition eDef = new ElementDefinition
+                        {
+                            Path = $"{slice.Path}.referenceRange",
+                            ElementId = $"{slice.Path}:{sliceName}.referenceRange",
+                            Min = 0,
+                            Max = "0"
+                        };
+                        e.InsertAfterAllChildren("component", eDef);
                     }
                 }
 

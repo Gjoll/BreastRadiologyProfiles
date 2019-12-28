@@ -109,44 +109,6 @@
         }
       },
       {
-        "id": "Observation.component.value[x]",
-        "path": "Observation.component.value[x]",
-        "min": 0,
-        "max": "1",
-        "base": {
-          "path": "Observation.component.value[x]",
-          "min": 0,
-          "max": "1"
-        },
-        "type": [
-          {
-            "code": "CodeableConcept"
-          }
-        ]
-      },
-      {
-        "id": "Observation.component.interpretation",
-        "path": "Observation.component.interpretation",
-        "min": 0,
-        "max": "0",
-        "base": {
-          "path": "Observation.component.interpretation",
-          "min": 0,
-          "max": "*"
-        }
-      },
-      {
-        "id": "Observation.component.referenceRange",
-        "path": "Observation.component.referenceRange",
-        "min": 0,
-        "max": "0",
-        "base": {
-          "path": "Observation.component.referenceRange",
-          "min": 0,
-          "max": "*"
-        }
-      },
-      {
         "id": "Observation.component:value.code",
         "path": "Observation.component.code",
         "min": 1,
@@ -175,9 +137,36 @@
           "min": 0,
           "max": "*"
         },
+        "type": [
+          {
+            "code": "CodeableConcept"
+          }
+        ],
         "binding": {
           "strength": "extensible",
           "valueSet": "http://hl7.org/fhir/us/breast-radiology/ValueSet/ConsistentWithVS"
+        }
+      },
+      {
+        "id": "Observation.component:value.interpretation",
+        "path": "Observation.component.interpretation",
+        "min": 0,
+        "max": "0",
+        "base": {
+          "path": "Observation.component",
+          "min": 0,
+          "max": "*"
+        }
+      },
+      {
+        "id": "Observation.component:value.referenceRange",
+        "path": "Observation.component.referenceRange",
+        "min": 0,
+        "max": "0",
+        "base": {
+          "path": "Observation.component",
+          "min": 0,
+          "max": "*"
         }
       },
       {
@@ -221,9 +210,36 @@
           "min": 0,
           "max": "*"
         },
+        "type": [
+          {
+            "code": "CodeableConcept"
+          }
+        ],
         "binding": {
           "strength": "required",
           "valueSet": "http://hl7.org/fhir/us/breast-radiology/ValueSet/ConsistentWithQualifierVS"
+        }
+      },
+      {
+        "id": "Observation.component:qualifier.interpretation",
+        "path": "Observation.component.interpretation",
+        "min": 0,
+        "max": "0",
+        "base": {
+          "path": "Observation.component",
+          "min": 0,
+          "max": "*"
+        }
+      },
+      {
+        "id": "Observation.component:qualifier.referenceRange",
+        "path": "Observation.component.referenceRange",
+        "min": 0,
+        "max": "0",
+        "base": {
+          "path": "Observation.component",
+          "min": 0,
+          "max": "*"
         }
       }
     ]

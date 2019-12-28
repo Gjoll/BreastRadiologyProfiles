@@ -1977,7 +1977,12 @@
       },
       {
         "id": "DiagnosticReport.category.coding",
-        "path": "DiagnosticReport.category.coding"
+        "path": "DiagnosticReport.category.coding",
+        "base": {
+          "path": "Observation.category",
+          "min": 0,
+          "max": "*"
+        }
       },
       {
         "id": "DiagnosticReport.category.coding:category",

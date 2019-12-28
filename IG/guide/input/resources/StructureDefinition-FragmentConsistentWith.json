@@ -2327,6 +2327,14 @@
             "code": "CodeableConcept"
           }
         ],
+        "patternCodeableConcept": {
+          "coding": [
+            {
+              "system": "http://hl7.org/fhir/us/breast-radiology/CodeSystem/ConsistentWithSliceCS",
+              "code": "value"
+            }
+          ]
+        },
         "isModifier": false,
         "isSummary": true,
         "binding": {
@@ -2366,7 +2374,7 @@
         "definition": "The information determined as a result of making the observation, if the information has a simple value.",
         "comment": "Used when observation has a set of component observations. An observation may have both a value (e.g. an  Apgar score)  and component observations (the observations from which the Apgar score was derived). If a value is present, the datatype for this element should be determined by Observation.code. A CodeableConcept with just a text would be used instead of a string if the field was usually coded, or if the type associated with the Observation.code defines a coded value.  For additional guidance, see the [Notes section](observation.html#notes) below.",
         "requirements": "An observation exists to have a value, though it might not if it is in error, or if it represents a group of observations.",
-        "min": 0,
+        "min": 1,
         "max": "1",
         "base": {
           "path": "Observation.component.value[x]",
@@ -2380,6 +2388,10 @@
         ],
         "isModifier": false,
         "isSummary": true,
+        "binding": {
+          "strength": "extensible",
+          "valueSet": "http://hl7.org/fhir/us/breast-radiology/ValueSet/ConsistentWithVS"
+        },
         "mapping": [
           {
             "identity": "sct-concept",
@@ -2526,40 +2538,6 @@
             "map": "outboundRelationship[typeCode=REFV]/target[classCode=OBS, moodCode=EVN]"
           }
         ]
-      },
-      {
-        "id": "Observation.component:value.code",
-        "path": "Observation.component.code",
-        "min": 1,
-        "max": "1",
-        "base": {
-          "path": "Observation.component.code",
-          "min": 1,
-          "max": "1"
-        },
-        "patternCodeableConcept": {
-          "coding": [
-            {
-              "system": "http://hl7.org/fhir/us/breast-radiology/CodeSystem/ConsistentWithSliceCS",
-              "code": "value"
-            }
-          ]
-        }
-      },
-      {
-        "id": "Observation.component:value.value[x]",
-        "path": "Observation.component.value[x]",
-        "min": 1,
-        "max": "1",
-        "base": {
-          "path": "Observation.component.value[x]",
-          "min": 1,
-          "max": "1"
-        },
-        "binding": {
-          "strength": "extensible",
-          "valueSet": "http://hl7.org/fhir/us/breast-radiology/ValueSet/ConsistentWithVS"
-        }
       },
       {
         "id": "Observation.component:qualifier",
@@ -2773,37 +2751,7 @@
         },
         "type": [
           {
-            "code": "Quantity"
-          },
-          {
             "code": "CodeableConcept"
-          },
-          {
-            "code": "string"
-          },
-          {
-            "code": "boolean"
-          },
-          {
-            "code": "integer"
-          },
-          {
-            "code": "Range"
-          },
-          {
-            "code": "Ratio"
-          },
-          {
-            "code": "SampledData"
-          },
-          {
-            "code": "time"
-          },
-          {
-            "code": "dateTime"
-          },
-          {
-            "code": "Period"
           }
         ],
         "isModifier": false,
@@ -2888,7 +2836,7 @@
           "Abnormal Flag"
         ],
         "min": 0,
-        "max": "*",
+        "max": "0",
         "base": {
           "path": "Observation.component.interpretation",
           "min": 0,
@@ -2939,7 +2887,7 @@
         "comment": "Most observations only have one generic reference range. Systems MAY choose to restrict to only supplying the relevant reference range based on knowledge about the patient (e.g., specific to the patient's age, gender, weight and other factors), but this might not be possible or appropriate. Whenever more than one reference range is supplied, the differences between them SHOULD be provided in the reference range and/or age properties.",
         "requirements": "Knowing what values are considered \"normal\" can help evaluate the significance of a particular result. Need to be able to provide multiple reference ranges for different contexts.",
         "min": 0,
-        "max": "*",
+        "max": "0",
         "base": {
           "path": "Observation.component.referenceRange",
           "min": 0,
@@ -3041,44 +2989,6 @@
         }
       },
       {
-        "id": "Observation.component.value[x]",
-        "path": "Observation.component.value[x]",
-        "min": 0,
-        "max": "1",
-        "base": {
-          "path": "Observation.component.value[x]",
-          "min": 0,
-          "max": "1"
-        },
-        "type": [
-          {
-            "code": "CodeableConcept"
-          }
-        ]
-      },
-      {
-        "id": "Observation.component.interpretation",
-        "path": "Observation.component.interpretation",
-        "min": 0,
-        "max": "0",
-        "base": {
-          "path": "Observation.component.interpretation",
-          "min": 0,
-          "max": "*"
-        }
-      },
-      {
-        "id": "Observation.component.referenceRange",
-        "path": "Observation.component.referenceRange",
-        "min": 0,
-        "max": "0",
-        "base": {
-          "path": "Observation.component.referenceRange",
-          "min": 0,
-          "max": "*"
-        }
-      },
-      {
         "id": "Observation.component:value.code",
         "path": "Observation.component.code",
         "min": 1,
@@ -3107,9 +3017,36 @@
           "min": 0,
           "max": "*"
         },
+        "type": [
+          {
+            "code": "CodeableConcept"
+          }
+        ],
         "binding": {
           "strength": "extensible",
           "valueSet": "http://hl7.org/fhir/us/breast-radiology/ValueSet/ConsistentWithVS"
+        }
+      },
+      {
+        "id": "Observation.component:value.interpretation",
+        "path": "Observation.component.interpretation",
+        "min": 0,
+        "max": "0",
+        "base": {
+          "path": "Observation.component",
+          "min": 0,
+          "max": "*"
+        }
+      },
+      {
+        "id": "Observation.component:value.referenceRange",
+        "path": "Observation.component.referenceRange",
+        "min": 0,
+        "max": "0",
+        "base": {
+          "path": "Observation.component",
+          "min": 0,
+          "max": "*"
         }
       },
       {
@@ -3153,9 +3090,36 @@
           "min": 0,
           "max": "*"
         },
+        "type": [
+          {
+            "code": "CodeableConcept"
+          }
+        ],
         "binding": {
           "strength": "required",
           "valueSet": "http://hl7.org/fhir/us/breast-radiology/ValueSet/ConsistentWithQualifierVS"
+        }
+      },
+      {
+        "id": "Observation.component:qualifier.interpretation",
+        "path": "Observation.component.interpretation",
+        "min": 0,
+        "max": "0",
+        "base": {
+          "path": "Observation.component",
+          "min": 0,
+          "max": "*"
+        }
+      },
+      {
+        "id": "Observation.component:qualifier.referenceRange",
+        "path": "Observation.component.referenceRange",
+        "min": 0,
+        "max": "0",
+        "base": {
+          "path": "Observation.component",
+          "min": 0,
+          "max": "*"
         }
       }
     ]
