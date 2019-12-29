@@ -29,6 +29,8 @@ namespace BreastRadiology.XUnitTests
                     .Type("CodeableConcept")
                     ;
 
+                e.AddIncompatibleFragment(ResourcesMaker.Self.ObservationNoValueFragment.Value());
+
                 e.IntroDoc
                     .ReviewedStatus(ReviewStatus.NotReviewed)
                     .Fragment($"Resource fragment used to by all observations whose value are a CodeableConcept.")

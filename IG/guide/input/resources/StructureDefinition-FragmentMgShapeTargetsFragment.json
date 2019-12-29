@@ -42,7 +42,7 @@
   "name": "FragmentMgShapeTargetsFragment",
   "title": "MG Shape Targets Fragment",
   "status": "draft",
-  "description": "Mammography Shape Targets Fragment\n\nShape Common Targets Fragment\n\n\nAdds Orientation, Shape, Margin, Density and Thickening targets",
+  "description": "Mammography Shape Targets Fragment\n\nShape Common Targets Fragment\n\n\nAdds Orientation, Shape, Margin, and Density targets",
   "fhirVersion": "4.0.0",
   "kind": "resource",
   "abstract": true,
@@ -55,7 +55,7 @@
         "id": "Observation",
         "path": "Observation",
         "short": "Mammography Shape Targets Fragment",
-        "definition": "Shape Common Targets Fragment\n\n\nAdds Orientation, Shape, Margin, Density and Thickening targets",
+        "definition": "Shape Common Targets Fragment\n\n\nAdds Orientation, Shape, Margin, and Density targets",
         "comment": "Used for simple observations such as device measurements, laboratory atomic results, vital signs, height, weight, smoking status, comments, etc.  Other resources are used to provide context for observations such as laboratory reports, etc.",
         "alias": [
           "Vital Signs",
@@ -2336,7 +2336,7 @@
         "id": "Observation",
         "path": "Observation",
         "short": "Mammography Shape Targets Fragment",
-        "definition": "Shape Common Targets Fragment\n\n\nAdds Orientation, Shape, Margin, Density and Thickening targets",
+        "definition": "Shape Common Targets Fragment\n\n\nAdds Orientation, Shape, Margin, and Density targets",
         "min": 0,
         "max": "*"
       },

@@ -27,7 +27,7 @@ namespace BreastRadiology.XUnitTests
                 s = e.SDef.Url;
                 e.Select("interpretation").Zero();
                 e.Select("method").Zero();
-
+                e.AddIncompatibleFragment(ResourcesMaker.Self.ObservationLeafFragment.Value());
                 e.IntroDoc
                     .ReviewedStatus(ReviewStatus.NotReviewed)
                     .Fragment($"Resource fragment used by observations that are used as report sections.")

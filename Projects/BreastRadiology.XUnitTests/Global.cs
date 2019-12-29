@@ -8,6 +8,7 @@ namespace BreastRadiology.XUnitTests
     {
         public const String FragmentUrl = "http://www.fragment.com/";
         public static String IsFragmentExtensionUrl = $"{FragmentUrl}isFragment";
+        public static String IncompatibleFragmentUrl = $"{FragmentUrl}incompatibleFragment";
         public static String GroupExtensionUrl = $"{FragmentUrl}Group";
 
         public static String ResourceMapNameUrl = $"{FragmentUrl}mapname";

@@ -458,5 +458,10 @@ namespace BreastRadiology.XUnitTests
                 });
             }
         }
+
+        public void AddIncompatibleFragment(String url)
+        {
+            this.SDef.AddExtension(Global.IncompatibleFragmentUrl, new FhirUrl(url));
+        }
     }
 }
