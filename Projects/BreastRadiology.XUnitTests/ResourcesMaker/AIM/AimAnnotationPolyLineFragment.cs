@@ -25,13 +25,15 @@ namespace BreastRadiology.XUnitTests
                     .AddExtensionLink(ResourcesMaker.Self.AimAnnotationPolyLineExtension.Value())
                 ;
                 s = e.SDef.Url;
+                e.IntroDoc
+                    .ReviewedStatus(ReviewStatus.NotReviewed)
+                    .Fragment($"Resource fragment that includes the Annotation PolyGonLine extension.")
+                    ;
+
                 e
                     .ApplyExtension("polyLineAnnotation", ResourcesMaker.Self.AimAnnotationPolyLineExtension.Value(), true, false)
                     .Single()
                     ;
-                e.IntroDoc
-                .ReviewedStatus(ReviewStatus.NotReviewed)
-                .Fragment($"Resource fragment that includes the Annotation PolyGonLine extension.");
             });
 
 

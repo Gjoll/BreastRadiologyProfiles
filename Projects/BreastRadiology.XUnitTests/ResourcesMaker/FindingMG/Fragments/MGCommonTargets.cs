@@ -29,6 +29,7 @@ namespace BreastRadiology.XUnitTests
                     ;
                 s = e.SDef.Url;
 
+                if (ResourcesMaker.Self.Component_HasMember)
                 {
                     ProfileTargetSlice[] targets = new ProfileTargetSlice[]
                     {
@@ -43,6 +44,10 @@ namespace BreastRadiology.XUnitTests
                     };
                     e.SliceByUrl("hasMember", targets);
                     e.AddProfileTargets(targets);
+                }
+                else
+                {
+                    throw new NotImplementedException();
                 }
             });
 

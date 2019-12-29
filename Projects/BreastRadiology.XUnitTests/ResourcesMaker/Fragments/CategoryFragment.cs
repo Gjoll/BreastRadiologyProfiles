@@ -23,16 +23,17 @@ namespace BreastRadiology.XUnitTests
                     )
                     ;
                 s = e.SDef.Url;
-                ElementDefGroup eDef = e.GetOrCreate("category");
-                eDef.ElementDefinition.Card(1, eDef.BaseElementDefinition.Max);
-                e.FixedCodeSlice("category", "category",
-                    "http://terminology.hl7.org/CodeSystem/observation-category",
-                    "imaging");
 
                 e.IntroDoc
                     .ReviewedStatus(ReviewStatus.NotReviewed)
                     .Fragment($"Resource fragment used to by observations to fix the Observation.category field to the 'imaging' fixed value.")
                     ;
+
+                ElementDefGroup eDef = e.GetOrCreate("category");
+                eDef.ElementDefinition.Card(1, eDef.BaseElementDefinition.Max);
+                e.FixedCodeSlice("category", "category",
+                    "http://terminology.hl7.org/CodeSystem/observation-category",
+                    "imaging");
             });
     }
 }

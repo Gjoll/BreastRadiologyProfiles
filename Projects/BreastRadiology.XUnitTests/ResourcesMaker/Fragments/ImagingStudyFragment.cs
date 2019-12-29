@@ -24,6 +24,12 @@ namespace BreastRadiology.XUnitTests
                     ;
                 s = e.SDef.Url;
 
+                e.IntroDoc
+                    .ReviewedStatus(ReviewStatus.NotReviewed)
+                    .Fragment($"Imaging Study Fragment")
+                    ;
+
+                if (ResourcesMaker.Self.Component_HasMember)
                 {
                     ProfileTargetSlice[] targets = new ProfileTargetSlice[]
                     {
@@ -33,11 +39,10 @@ namespace BreastRadiology.XUnitTests
                     e.SliceByUrl("derivedFrom", targets);
                     e.AddProfileTargets(targets);
                 }
-
-                e.IntroDoc
-                    .ReviewedStatus(ReviewStatus.NotReviewed)
-                    .Fragment($"Imaging Study Fragment")
-                    ;
+                else
+                {
+                    throw new NotImplementedException();
+                }
             });
     }
 }

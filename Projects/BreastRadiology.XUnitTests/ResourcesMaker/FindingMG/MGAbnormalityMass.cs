@@ -54,6 +54,13 @@ namespace BreastRadiology.XUnitTests
                     ;
 
                 s = e.SDef.Url;
+
+                e.IntroDoc
+                    .ReviewedStatus(ReviewStatus.NotReviewed)
+                    .ObservationSection("Mammography Mass")
+                    .Refinement(binding, "Mass")
+                    ;
+
                 e.Select("value[x]")
                     .ZeroToOne()
                     .Type("CodeableConcept")
@@ -61,6 +68,7 @@ namespace BreastRadiology.XUnitTests
                     ;
                 e.AddValueSetLink(binding);
 
+                if (ResourcesMaker.Self.Component_HasMember)
                 {
                     ProfileTargetSlice[] targets = new ProfileTargetSlice[]
                     {
@@ -71,12 +79,10 @@ namespace BreastRadiology.XUnitTests
                     e.SliceByUrl("hasMember", targets);
                     e.AddProfileTargets(targets);
                 }
-
-                e.IntroDoc
-                    .ReviewedStatus(ReviewStatus.NotReviewed)
-                    .ObservationSection("Mammography Mass")
-                    .Refinement(binding, "Mass")
-                    ;
+                else
+                {
+                    throw new NotImplementedException();
+                }
             });
     }
 }

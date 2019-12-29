@@ -33,13 +33,14 @@ namespace BreastRadiology.XUnitTests
                     .AddFragRef(ResourcesMaker.Self.ObservationSectionFragment.Value())
                     ;
                 s = e.SDef.Url;
-                e.Select("value[x]").Zero();
-                e.Select("bodySite").Zero();
 
                 e.IntroDoc
                      .ReviewedStatus(ReviewStatus.NotReviewed)
                      .ObservationSection($"Patient History")
                      ;
+
+                e.Select("value[x]").Zero();
+                e.Select("bodySite").Zero();
             });
     }
 }

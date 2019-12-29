@@ -32,8 +32,15 @@ namespace BreastRadiology.XUnitTests
                     ;
 
                 s = e.SDef.Url;
+                e.IntroDoc
+                 .ReviewedStatus(ReviewStatus.NotReviewed)
+                 .ObservationSection($"Finding")
+                 ;
+
                 e.Select("value[x]").Zero();
                 e.Select("bodySite").Zero();
+
+                if (ResourcesMaker.Self.Component_HasMember)
                 {
                     ProfileTargetSlice[] targets = new ProfileTargetSlice[]
                     {
@@ -44,11 +51,10 @@ namespace BreastRadiology.XUnitTests
                     e.SliceByUrl("hasMember", targets);
                     e.AddProfileTargets(targets);
                 }
-
-                e.IntroDoc
-                 .ReviewedStatus(ReviewStatus.NotReviewed)
-                 .ObservationSection($"Finding")
-                 ;
+                else
+                {
+                    throw new NotImplementedException();
+                }
             });
     }
 }

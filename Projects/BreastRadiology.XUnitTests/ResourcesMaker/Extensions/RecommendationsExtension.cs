@@ -32,6 +32,12 @@ namespace BreastRadiology.XUnitTests
                     .Context()
                     ;
                 s = e.SDef.Url;
+
+                e.IntroDoc
+                    .ReviewedStatus(ReviewStatus.NotReviewed)
+                    .Extension("Recommendations", "include references to recommendations")
+                    ;
+
                 e.AddFragRef(ResourcesMaker.Self.HeaderFragment.Value());
 
                 e.Select("extension").Zero();
@@ -44,10 +50,6 @@ namespace BreastRadiology.XUnitTests
                     .Single()
                     ;
 
-                e.IntroDoc
-                    .ReviewedStatus(ReviewStatus.NotReviewed)
-                    .Extension("Recommendations", "include references to recommendations")
-                    ;
                 e.AddLink("target", MedicationRequestUrl, false);
                 e.AddLink("target", ServiceRequestUrl, false);
             });

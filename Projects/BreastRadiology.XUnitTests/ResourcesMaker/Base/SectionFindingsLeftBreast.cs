@@ -31,15 +31,16 @@ namespace BreastRadiology.XUnitTests
                    .AddFragRef(ResourcesMaker.Self.ObservationSectionFragment.Value())
                    ;
                 s = e.SDef.Url;
-                e.Select("value[x]").Zero();
-                e.Select("bodySite").Zero();
-                e.SliceByUrl("hasMember", ResourcesMaker.Self.FindingBreastTargets());
-                e.AddProfileTargets(ResourcesMaker.Self.FindingBreastTargets());
 
                 e.IntroDoc
                     .ReviewedStatus(ReviewStatus.NotReviewed)
                     .ObservationSection($"Left Breast Finding")
                     ;
+
+                e.Select("value[x]").Zero();
+                e.Select("bodySite").Zero();
+                e.SliceByUrl("hasMember", ResourcesMaker.Self.FindingBreastTargets());
+                e.AddProfileTargets(ResourcesMaker.Self.FindingBreastTargets());
             });
     }
 }

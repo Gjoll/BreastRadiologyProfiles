@@ -30,6 +30,12 @@ namespace BreastRadiology.XUnitTests
                     .AddFragRef(ResourcesMaker.Self.ObservationSectionFragment.Value())
                     ;
                 s = e.SDef.Url;
+
+                e.IntroDoc
+                    .ReviewedStatus(ReviewStatus.NotReviewed)
+                    .ObservationSection("MRI Finding")
+                    ;
+
                 e.Select("value[x]").Zero();
                 ////$ todo. Incorrect method!!!
                 //e.Find("method")
@@ -37,27 +43,19 @@ namespace BreastRadiology.XUnitTests
                 // .Card(1, "*")
                 // ;
 
+                if (ResourcesMaker.Self.Component_HasMember)
                 {
                     ProfileTargetSlice[] targets = new ProfileTargetSlice[]
                     {
-                    //new ProfileTargetSlice(ResourcesMaker.Self.NMBreastDensity(), 1, "1"),
                     new ProfileTargetSlice(ResourcesMaker.Self.NMMass.Value(), 0, "*"),
-                    //new ProfileTargetSlice(ResourcesMaker.Self.NMCalcification(), 0, "*"),
-                    //new ProfileTargetSlice(ResourcesMaker.Self.NMArchitecturalDistortion(), 0, "1"),
-                    //new ProfileTargetSlice(ResourcesMaker.Self.NMAsymmetries(), 0, "*"),
-                    //new ProfileTargetSlice(ResourcesMaker.Self.NMIntramammaryLymphNode(), 0, "1"),
-                    //new ProfileTargetSlice(ResourcesMaker.Self.NMSkinLesion(), 0, "*"),
-                    //new ProfileTargetSlice(ResourcesMaker.Self.NMSolitaryDilatedDuct(), 0, "1"),
-                    //new ProfileTargetSlice(ResourcesMaker.Self.NMAssociatedFeatures(), 0, "1")
                     };
                     e.SliceByUrl("hasMember", targets);
                     e.AddProfileTargets(targets);
                 }
-
-                e.IntroDoc
-                    .ReviewedStatus(ReviewStatus.NotReviewed)
-                    .ObservationSection("MRI Finding")
-                    ;
+                else
+                {
+                    throw new NotImplementedException();
+                }
             });
     }
 }

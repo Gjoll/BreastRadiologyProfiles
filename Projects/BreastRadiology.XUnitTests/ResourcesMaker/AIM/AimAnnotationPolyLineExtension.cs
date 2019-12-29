@@ -37,15 +37,6 @@ namespace BreastRadiology.XUnitTests
                     ;
 
                 s = e.SDef.Url;
-                e.AddFragRef(ResourcesMaker.Self.AimHeaderFragment.Value());
-
-                e.Select("url")
-                    .Type("uri")
-                    .Fixed(new FhirUri(e.SDef.Url));
-
-                e.Select("value[x]")
-                    .Zero()
-                    ;
                 e.IntroDoc
                     .ReviewedStatus(ReviewStatus.NotReviewed)
                     .Paragraph("AIM Annotation PolyGon extension resource")
@@ -59,6 +50,16 @@ namespace BreastRadiology.XUnitTests
                         "coordinates- A series of points, each of which is an x,y point of the polygonal line. Each point is a string of the " +
                         "format \"{d},{d}\" where d is a fhir decimal string, and each point is seperated from the next by a space."
                     )
+                    ;
+
+                e.AddFragRef(ResourcesMaker.Self.AimHeaderFragment.Value());
+
+                e.Select("url")
+                    .Type("uri")
+                    .Fixed(new FhirUri(e.SDef.Url));
+
+                e.Select("value[x]")
+                    .Zero()
                     ;
 
                 eGroup = e.GetOrCreate("extension");

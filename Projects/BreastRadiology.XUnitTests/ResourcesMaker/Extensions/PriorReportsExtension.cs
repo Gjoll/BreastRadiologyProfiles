@@ -32,6 +32,12 @@ namespace BreastRadiology.XUnitTests
                     .Context()
                     ;
                 s = e.SDef.Url;
+
+                e.IntroDoc
+                    .ReviewedStatus(ReviewStatus.NotReviewed)
+                    .Extension("Prior Reports", "include references to prior reports")
+                    ;
+
                 e.AddFragRef(ResourcesMaker.Self.HeaderFragment.Value());
 
                 e.Select("extension").Zero();
@@ -44,10 +50,6 @@ namespace BreastRadiology.XUnitTests
                     .Single()
                     ;
 
-                e.IntroDoc
-                    .ReviewedStatus(ReviewStatus.NotReviewed)
-                    .Extension("Prior Reports", "include references to prior reports")
-                    ;
                 e.AddLink("target", ResourcesMaker.Self.BreastRadiologyReport.Value(), false);
             });
     }

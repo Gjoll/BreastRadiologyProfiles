@@ -34,6 +34,11 @@ namespace BreastRadiology.XUnitTests
                 e.AddFragRef(ResourcesMaker.Self.HeaderFragment.Value());
                 s = e.SDef.Url;
 
+                e.IntroDoc
+                    .ReviewedStatus(ReviewStatus.NotReviewed)
+                    .Extension("Prior Reports", "include references to prior reports")
+                    ;
+
                 e.Select("extension").Zero();
                 e.Select("url")
                     .Type("uri")
@@ -42,11 +47,6 @@ namespace BreastRadiology.XUnitTests
                 e.Select("value[x]")
                     .TypeReference(ResourcesMaker.Self.BreastRadImpression.Value())
                     .ZeroToMany()
-                    ;
-
-                e.IntroDoc
-                    .ReviewedStatus(ReviewStatus.NotReviewed)
-                    .Extension("Prior Reports", "include references to prior reports")
                     ;
 
                 e.AddLink("target", ClinicalImpressionUrl, false);

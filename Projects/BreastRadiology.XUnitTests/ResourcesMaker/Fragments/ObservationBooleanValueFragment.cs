@@ -24,16 +24,17 @@ namespace BreastRadiology.XUnitTests
                     .AddFragRef(ResourcesMaker.Self.ObservationNoComponentFragment.Value())
                     ;
                 s = e.SDef.Url;
-                e.Select("value[x]")
-                    .Type("boolean")
-                    ;
-
-                e.AddIncompatibleFragment(ResourcesMaker.Self.ObservationNoValueFragment.Value());
 
                 e.IntroDoc
                     .ReviewedStatus(ReviewStatus.NotReviewed)
                     .Fragment($"Resource fragment used to by all observations whose value are a Boolean.")
                     ;
+
+                e.Select("value[x]")
+                    .Type("boolean")
+                    ;
+
+                e.AddIncompatibleFragment(ResourcesMaker.Self.ObservationNoValueFragment.Value());
             });
 
     }

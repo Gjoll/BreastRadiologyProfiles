@@ -24,12 +24,13 @@ namespace BreastRadiology.XUnitTests
                     .AddFragRef(ResourcesMaker.Self.ObservationFragment.Value())
                 ;
                 s = e.SDef.Url;
-                e.Select("device").Zero();
 
                 e.IntroDoc
                     .ReviewedStatus(ReviewStatus.NotReviewed)
                     .Fragment($"Fragment for all observations that have no device.")
                     ;
+
+                e.Select("device").Zero();
             });
     }
 }

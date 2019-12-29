@@ -32,30 +32,26 @@ namespace BreastRadiology.XUnitTests
                     .AddFragRef(ResourcesMaker.Self.ObservationSectionFragment.Value())
                 ;
                 s = e.SDef.Url;
-                e.Select("value[x]").Zero();
-
-                {
-                    ProfileTargetSlice[] targets = new ProfileTargetSlice[]
-                    {
-                    //new ProfileTargetSlice(ResourcesMaker.Self.MGArchitecturalDistortion(), 0, "1"),
-                    //new ProfileTargetSlice(ResourcesMaker.Self.MGAsymmetries(), 0, "*"),
-                    //new ProfileTargetSlice(ResourcesMaker.Self.MGBreastDensity(), 1, "1"),
-                    //new ProfileTargetSlice(ResourcesMaker.Self.MGCalcification(), 0, "*"),
-                    //$new ProfileTargetSlice(ResourcesMaker.Self.CommonAbnormalityForeignObject(), 0, "*"),
-                    //new ProfileTargetSlice(ResourcesMaker.Self.MGIntramammaryLymphNode(), 0, "1"),
-                    new ProfileTargetSlice(ResourcesMaker.Self.MRIMass.Value(), 0, "*"),
-                        //new ProfileTargetSlice(ResourcesMaker.Self.MGSkinLesion(), 0, "*"),
-                        //new ProfileTargetSlice(ResourcesMaker.Self.MGSolitaryDilatedDuct(), 0, "1"),
-                        //new ProfileTargetSlice(ResourcesMaker.Self.MGAssociatedFeatures(), 0, "1")
-                    };
-                    e.SliceByUrl("hasMember", targets);
-                    e.AddProfileTargets(targets);
-                }
 
                 e.IntroDoc
                     .ReviewedStatus(ReviewStatus.NotReviewed)
                     .ObservationSection("MRI Finding")
                     ;
+
+                if (ResourcesMaker.Self.Component_HasMember)
+                {
+                    ProfileTargetSlice[] targets = new ProfileTargetSlice[]
+                    {
+                    new ProfileTargetSlice(ResourcesMaker.Self.MRIMass.Value(), 0, "*"),
+                    };
+                    e.SliceByUrl("hasMember", targets);
+                    e.AddProfileTargets(targets);
+                }
+                else
+                {
+                    throw new NotImplementedException();
+                }
+
                 //$e.Find("method")
                 //$     .FixedCodeSlice("method", "http://snomed.info/sct", "115341008")
                 //$     .Card(1, "*")

@@ -54,32 +54,32 @@ namespace BreastRadiology.XUnitTests
                     .AddFragRef(ResourcesMaker.Self.ObservationSectionFragment.Value())
                     ;
                 s = e.SDef.Url;
+
+                e.IntroDoc
+                    .ReviewedStatus(ReviewStatus.NotReviewed)
+                    .ObservationSection("Ultra-Sound Finding")
+                    ;
+
                 e.Select("value[x]").Zero();
                 //$e.Find("method")
                 //$ .FixedCodeSlice("method", "http://snomed.info/sct", "115341008")
                 //$ .Card(1, "*")
                 //$ ;
+
+                if (ResourcesMaker.Self.Component_HasMember)
                 {
                     ProfileTargetSlice[] targets = new ProfileTargetSlice[]
                     {
-                        //$new ProfileTargetSlice(ResourcesMaker.Self.CommonAbnormalityForeignObject(), 0, "*"),
                         new ProfileTargetSlice(ResourcesMaker.Self.USMass.Value(), 0, "*"),
                         new ProfileTargetSlice(ResourcesMaker.Self.USTissueComposition.Value(), 1, "1"),
-                        //new ProfileTargetSlice(ResourcesMaker.Self.MammoCalcification, 0, "*"),
-                        //new ProfileTargetSlice(ResourcesMaker.Self.MammoArchitecturalDistortion, 0, "1"),
-                        //new ProfileTargetSlice(ResourcesMaker.Self.MammoAsymmetries, 0, "*"),
-                        //new ProfileTargetSlice(ResourcesMaker.Self.MammoIntramammaryLymphNode, 0, "1"),
-                        //new ProfileTargetSlice(ResourcesMaker.Self.MammoSkinLesion, 0, "*"),
-                        //new ProfileTargetSlice(ResourcesMaker.Self.MammoSolitaryDilatedDuct, 0, "1"),
-                        //new ProfileTargetSlice(ResourcesMaker.Self.MammoAssociatedFeatures, 0, "1")
                     };
                     e.SliceByUrl("hasMember", targets);
                     e.AddProfileTargets(targets);
                 }
-                e.IntroDoc
-                    .ReviewedStatus(ReviewStatus.NotReviewed)
-                    .ObservationSection("Ultra-Sound Finding")
-                    ;
+                else
+                {
+                    throw new NotImplementedException();
+                }
             });
     }
 }

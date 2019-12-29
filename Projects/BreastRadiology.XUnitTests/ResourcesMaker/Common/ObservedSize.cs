@@ -35,6 +35,12 @@ namespace BreastRadiology.XUnitTests
                     .AddFragRef(ResourcesMaker.Self.ObservationLeafFragment.Value())
                     ;
                 s = e.SDef.Url;
+
+                e.IntroDoc
+                    .ReviewedStatus(ReviewStatus.NotReviewed)
+                    .ObservationLeafNode($"Size")
+                    ;
+
                 e.Select("value[x]")
                     .Type("Quantity")
                     .SetCardinality(1, "3")
@@ -56,11 +62,6 @@ namespace BreastRadiology.XUnitTests
                         Code = "cm"
                     }
                     )
-                    ;
-
-                e.IntroDoc
-                    .ReviewedStatus(ReviewStatus.NotReviewed)
-                    .ObservationLeafNode($"Size")
                     ;
             });
     }

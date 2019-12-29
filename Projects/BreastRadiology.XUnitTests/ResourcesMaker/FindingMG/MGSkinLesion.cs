@@ -39,6 +39,12 @@ namespace BreastRadiology.XUnitTests
                     ;
                 s = e.SDef.Url;
 
+                e.IntroDoc
+                    .ReviewedStatus(ReviewStatus.NotReviewed)
+                    .ObservationLeafNode($"Skin Lesion")
+                    ;
+
+                if (ResourcesMaker.Self.Component_HasMember)
                 {
                     ProfileTargetSlice[] targets = new ProfileTargetSlice[]
                     {
@@ -46,11 +52,10 @@ namespace BreastRadiology.XUnitTests
                     e.SliceByUrl("hasMember", targets);
                     e.AddProfileTargets(targets);
                 }
-
-                e.IntroDoc
-                    .ReviewedStatus(ReviewStatus.NotReviewed)
-                    .ObservationLeafNode($"Skin Lesion")
-                    ;
+                else
+                {
+                    throw new NotImplementedException();
+                }
             });
     }
 }

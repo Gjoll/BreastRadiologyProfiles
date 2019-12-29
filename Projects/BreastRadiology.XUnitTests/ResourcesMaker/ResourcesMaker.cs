@@ -71,6 +71,8 @@ namespace BreastRadiology.XUnitTests
 
         Dictionary<String, Resource> resources = new Dictionary<string, Resource>();
 
+        bool Component_HasMember = true;
+
         FileCleaner fc;
         String resourceDir;
         String pageDir;

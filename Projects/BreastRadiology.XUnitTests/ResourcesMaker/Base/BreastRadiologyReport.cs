@@ -28,13 +28,19 @@ namespace BreastRadiology.XUnitTests
                                    "references to the observations of this report",
                                    "references to the recommendations of this report",
                                    "a summary of the report findings in a human readable format")
-                             //.Todo
+                     //.Todo
                      )
                      .AddFragRef(ResourcesMaker.Self.HeaderFragment.Value())
                      .AddFragRef(ResourcesMaker.Self.CategoryFragment.Value())
                      ;
 
                 s = e.SDef.Url;
+                e.IntroDoc
+                     .Paragraph(
+                         $"This resource is the base of the Breast Radiology Report.",
+                         $"Detailed information about the report is contained in sub sections referenced by this resource."
+                         );
+
                 e.Select("code").Pattern = new CodeableConcept(Loinc, "10193-1");
                 e.Select("specimen").Zero();
                 e.Select("conclusion").Single();
@@ -56,19 +62,20 @@ namespace BreastRadiology.XUnitTests
                      .Definition("Patient Risk.")
                      .ZeroToMany();
 
-                ProfileTargetSlice[] targets = new ProfileTargetSlice[]
-                 {
-                    new ProfileTargetSlice(ResourcesMaker.Self.SectionPatientHistory.Value(), 1, "1"),
-                    new ProfileTargetSlice(ResourcesMaker.Self.SectionFindings.Value(), 1, "1"),
-                };
-                e.SliceByUrl("result", targets);
-                e.AddProfileTargets(targets);
-
-                e.IntroDoc
-                     .Paragraph(
-                         $"This resource is the base of the Breast Radiology Report.",
-                         $"Detailed information about the report is contained in sub sections referenced by this resource."
-                         );
+                if (ResourcesMaker.Self.Component_HasMember)
+                {
+                    ProfileTargetSlice[] targets = new ProfileTargetSlice[]
+                    {
+                        new ProfileTargetSlice(ResourcesMaker.Self.SectionPatientHistory.Value(), 1, "1"),
+                        new ProfileTargetSlice(ResourcesMaker.Self.SectionFindings.Value(), 1, "1"),
+                    };
+                    e.SliceByUrl("result", targets);
+                    e.AddProfileTargets(targets);
+                }
+                else
+                {
+                    throw new NotImplementedException();
+                }
             });
     }
 }

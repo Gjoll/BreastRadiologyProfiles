@@ -489,14 +489,6 @@
     </resource>
     <resource>
       <reference>
-        <reference value="ValueSet/MammoFibroadenomaVS" />
-      </reference>
-      <name value="Fibroadenoma ValueSet ValueSet" />
-      <description value="Fibroadenoma values value set." />
-      <exampleBoolean value="false" />
-    </resource>
-    <resource>
-      <reference>
         <reference value="ValueSet/MammoShapeVS" />
       </reference>
       <name value="Shape ValueSet ValueSet" />

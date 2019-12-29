@@ -25,6 +25,11 @@ namespace BreastRadiology.XUnitTests
                     .AddFragRef(ResourcesMaker.Self.CategoryFragment.Value())
                 ;
                 s = e.SDef.Url;
+                e.IntroDoc
+                    .ReviewedStatus(ReviewStatus.NotReviewed)
+                    .Fragment($"Resource fragment used by all BreatRad observations.")
+                    ;
+
                 e.Select("subject").Single();
 
                 e.Select("interpretation").Zero();
@@ -36,10 +41,6 @@ namespace BreastRadiology.XUnitTests
                 e.Select("specimen").Zero();
                 e.Select("contained").Zero();
 
-                e.IntroDoc
-                    .ReviewedStatus(ReviewStatus.NotReviewed)
-                    .Fragment($"Resource fragment used by all BreatRad observations.")
-                    ;
             });
 
     }

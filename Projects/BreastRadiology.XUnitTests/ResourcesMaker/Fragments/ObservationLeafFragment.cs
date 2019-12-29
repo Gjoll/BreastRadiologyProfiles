@@ -24,12 +24,13 @@ namespace BreastRadiology.XUnitTests
                     .AddFragRef(ResourcesMaker.Self.ObservationNoComponentFragment.Value())
                 ;
                 s = e.SDef.Url;
-                e.Select("hasMember").Zero();
 
                 e.IntroDoc
                     .ReviewedStatus(ReviewStatus.NotReviewed)
                     .Fragment($"Resource fragment used by resources that are leaf node observations.")
                     ;
+
+                e.Select("hasMember").Zero();
             });
 
     }

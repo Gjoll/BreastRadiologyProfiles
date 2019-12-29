@@ -129,15 +129,17 @@ namespace BreastRadiology.XUnitTests
                     .AddFragRef(ResourcesMaker.Self.ObservationLeafFragment.Value())
                     ;
                 s = e.SDef.Url;
+
+                e.IntroDoc
+                    .ReviewedStatus(ReviewStatus.NotReviewed)
+                    .CodedObservationLeafNode("a mammography calcification distribution", binding)
+                    ;
+
                 e.Select("value[x]")
                     .Type("CodeableConcept")
                     .Binding(binding.Url, BindingStrength.Required)
                     ;
                 e.AddValueSetLink(binding);
-                e.IntroDoc
-                    .ReviewedStatus(ReviewStatus.NotReviewed)
-                    .CodedObservationLeafNode("a mammography calcification distribution", binding)
-                    ;
             });
     }
 }

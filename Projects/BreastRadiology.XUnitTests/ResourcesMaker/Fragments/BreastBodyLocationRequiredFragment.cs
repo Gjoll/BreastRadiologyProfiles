@@ -26,6 +26,12 @@ namespace BreastRadiology.XUnitTests
                     .AddExtensionLink(ResourcesMaker.Self.BreastBodyLocationExtension.Value())
                 ;
                 s = e.SDef.Url;
+
+                e.IntroDoc
+                    .ReviewedStatus(ReviewStatus.NotReviewed)
+                    .Fragment($"Resource fragment used by various observations to include an required breast body location.")
+                    ;
+
                 e
                     .Select("bodySite")
                     .Single()
@@ -33,10 +39,6 @@ namespace BreastRadiology.XUnitTests
                 e
                     .ApplyExtension("breastBodyLocation", ResourcesMaker.Self.BreastBodyLocationExtension.Value(), true, false)
                     .Single()
-                    ;
-                e.IntroDoc
-                    .ReviewedStatus(ReviewStatus.NotReviewed)
-                    .Fragment($"Resource fragment used by various observations to include an required breast body location.")
                     ;
             });
 

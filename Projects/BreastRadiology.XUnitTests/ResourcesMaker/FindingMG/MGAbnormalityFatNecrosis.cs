@@ -35,6 +35,13 @@ namespace BreastRadiology.XUnitTests
                     ;
 
                 s = e.SDef.Url;
+
+                e.IntroDoc
+                    .ReviewedStatus(ReviewStatus.NotReviewed)
+                    .ObservationSection("Mammography Fat Necrosis")
+                    ;
+
+                if (ResourcesMaker.Self.Component_HasMember)
                 {
                     ProfileTargetSlice[] targets = new ProfileTargetSlice[]
                     {
@@ -44,11 +51,10 @@ namespace BreastRadiology.XUnitTests
                     e.SliceByUrl("hasMember", targets);
                     e.AddProfileTargets(targets);
                 }
-
-                e.IntroDoc
-                    .ReviewedStatus(ReviewStatus.NotReviewed)
-                    .ObservationSection("Mammography Fat Necrosis")
-                    ;
+                else
+                {
+                    throw new NotImplementedException();
+                }
             });
     }
 }

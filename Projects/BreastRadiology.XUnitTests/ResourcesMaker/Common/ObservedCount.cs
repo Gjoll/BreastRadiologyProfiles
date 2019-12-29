@@ -35,6 +35,12 @@ namespace BreastRadiology.XUnitTests
                     .AddFragRef(ResourcesMaker.Self.ObservationLeafFragment.Value())
                     ;
                 s = e.SDef.Url;
+
+                e.IntroDoc
+                    .ReviewedStatus(ReviewStatus.NotReviewed)
+                    .ObservationLeafNode($"Count")
+                    ;
+
                 e.Select("value[x]")
                     .Types("integer", "Range")
                     .SetCardinality(1, "1")
@@ -44,11 +50,6 @@ namespace BreastRadiology.XUnitTests
                         .Paragraph($"A range value with no maximum specified implies count is min or more.")
                         .Paragraph($"A range value with no minimum specified implies count is max or less.")
                      )
-                    ;
-
-                e.IntroDoc
-                    .ReviewedStatus(ReviewStatus.NotReviewed)
-                    .ObservationLeafNode($"Count")
                     ;
             });
     }

@@ -232,15 +232,16 @@ namespace BreastRadiology.XUnitTests
                     ;
                 s = e.SDef.Url;
 
+                e.IntroDoc
+                    .ReviewedStatus(ReviewStatus.NotReviewed)
+                    .CodedObservationLeafNode("a mammography calcification type", binding)
+                    ;
+
                 e.Select("value[x]")
                     .Type("CodeableConcept")
                     .Binding(binding.Url, BindingStrength.Required)
                     ;
                 e.AddValueSetLink(binding);
-                e.IntroDoc
-                    .ReviewedStatus(ReviewStatus.NotReviewed)
-                    .CodedObservationLeafNode("a mammography calcification type", binding)
-                    ;
             });
     }
 }

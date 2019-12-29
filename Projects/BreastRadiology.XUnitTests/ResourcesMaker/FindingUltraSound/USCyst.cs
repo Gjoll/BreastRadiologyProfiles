@@ -34,6 +34,12 @@ namespace BreastRadiology.XUnitTests
                     ;
                 s = e.SDef.Url;
 
+                e.IntroDoc
+                    .ReviewedStatus(ReviewStatus.NotReviewed)
+                    .ObservationSection("UltraSound Cyst")
+                    ;
+
+                if (ResourcesMaker.Self.Component_HasMember)
                 {
                     ProfileTargetSlice[] targets = new ProfileTargetSlice[]
                     {
@@ -43,19 +49,14 @@ namespace BreastRadiology.XUnitTests
                     new ProfileTargetSlice(ResourcesMaker.Self.ObservedChangeInState.Value(), 0, "*"),
                     new ProfileTargetSlice(ResourcesMaker.Self.ObservedSize.Value(), 0, "1"),
                     new ProfileTargetSlice(ResourcesMaker.Self.Orientation.Value(), 0, "1"),
-
-                        //new ProfileTargetSlice(ResourcesMaker.Self.MGMassMargin.Value(), 0, "*"),
-                        //new ProfileTargetSlice(ResourcesMaker.Self.MGMassDensity.Value(), 0, "1"),
-                        //new ProfileTargetSlice(ResourcesMaker.Self.MGAssociatedFeatures.Value(), 0, "1", false),
                     };
                     e.SliceByUrl("hasMember", targets);
                     e.AddProfileTargets(targets);
                 }
-
-                e.IntroDoc
-                    .ReviewedStatus(ReviewStatus.NotReviewed)
-                    .ObservationSection("UltraSound Cyst")
-                    ;
+                else
+                {
+                    throw new NotImplementedException();
+                }
             });
     }
 }

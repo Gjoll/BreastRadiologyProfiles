@@ -37,6 +37,14 @@ namespace BreastRadiology.XUnitTests
                     ;
 
                 s = e.SDef.Url;
+
+                e.IntroDoc
+                    .ReviewedStatus(ReviewStatus.NotReviewed)
+                    .ObservationSection("Mammography Fibroadenoma")
+                    .Refinement(binding, "Fibroadenoma")
+                    ;
+
+                if (ResourcesMaker.Self.Component_HasMember)
                 {
                     ProfileTargetSlice[] targets = new ProfileTargetSlice[]
                     {
@@ -46,6 +54,10 @@ namespace BreastRadiology.XUnitTests
                     e.SliceByUrl("hasMember", targets);
                     e.AddProfileTargets(targets);
                 }
+                else
+                {
+                    throw new NotImplementedException();
+                }
 
                 e.Select("value[x]")
                     .ZeroToOne()
@@ -53,12 +65,6 @@ namespace BreastRadiology.XUnitTests
                     .Binding(binding.Url, BindingStrength.Required)
                     ;
                 e.AddValueSetLink(binding);
-
-                e.IntroDoc
-                    .ReviewedStatus(ReviewStatus.NotReviewed)
-                    .ObservationSection("Mammography Fibroadenoma")
-                    .Refinement(binding, "Fibroadenoma")
-                    ;
             });
     }
 }
