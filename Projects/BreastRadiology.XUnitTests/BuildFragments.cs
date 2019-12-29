@@ -12,6 +12,8 @@ using Hl7.Fhir.Model;
 using System.Collections.Generic;
 using BreastRadiology.XUnitTests;
 using System.Drawing;
+using ExcelDataReader;
+using System.Data;
 
 namespace BreastRadiology.XUnitTests
 {
@@ -76,23 +78,29 @@ namespace BreastRadiology.XUnitTests
             return true;
         }
 
-        public void WriteCS(String dataFileName,
+        public void WriteCS(DataSet ds,
+            String sheetName,
             String outputCodePath,
             String csBlockName)
         {
-            String App(String s, String t, String sb)
+            String App(String s, Object t, String sb)
             {
-                if (String.IsNullOrEmpty(t) == true)
-                    return s;
+                switch (t)
+                {
+                    case DBNull dbNullValue:
+                        return s;
 
-                // verify we have correct column.
-                if (t != sb)
-                    throw new Exception("Invalid value in App");
-
-                if (String.IsNullOrEmpty(s) == false)
-                    s += " ";
-                s += t;
-                return s;
+                    case String stringValue:
+                        // verify we have correct column.
+                        if (stringValue != sb)
+                            throw new Exception("Invalid value in App");
+                        if (String.IsNullOrEmpty(s) == false)
+                            s += " ";
+                        s += t;
+                        return s;
+                        default:
+                        throw new Exception("Invalid excel cell value");
+                }
             }
             String CodeValue(String value)
             {
@@ -111,39 +119,34 @@ namespace BreastRadiology.XUnitTests
                 return value;
             }
 
-            String[] values = File.ReadAllLines(Path.Combine("DataFiles", dataFileName));
+            DataTable dataTbl = ds.Tables[sheetName];
             CodeEditor editor = new CodeEditor();
             editor.Load(Path.Combine(DirHelper.FindParentDir("BreastRadiology.XUnitTests"),
-                "ResourcesMaker",
-                outputCodePath));
+                        "ResourcesMaker",
+                        outputCodePath));
             CodeBlockNested concepts = editor.Blocks.Find(csBlockName);
             concepts.Clear();
 
-            for (Int32 i = 1; i < values.Length; i++)
+            for (Int32 i = 1; i < dataTbl.Rows.Count; i++)
             {
-                String value = values[i];
-                // currently doesnt handle embedded \" and ',' chars.
-                // gg doesnt appear to use theres, so this shoudl work, but if
-                // is stops working, mnake parser more intelligent.
-                if (value.Contains("\""))
-                    throw new Exception("Complex CSV file found. Upgrade simple csv processor");
                 String term = ",";
-                if (i == values.Length - 1)
+                if (i == dataTbl.Rows.Count - 1)
                     term = "";
-                String[] parts = value.Split(',');
-                String code = parts[7];
-                String validWith = App("", parts[0], "MG");
-                validWith = App(validWith, parts[1], "MRI");
-                validWith = App(validWith, parts[2], "NM");
-                validWith = App(validWith, parts[3], "US");
+
+                DataRow row = dataTbl.Rows[i];
+                String code = (String)row[7];
+                String validWith = App("", row[0], "MG");
+                validWith = App(validWith, row[1], "MRI");
+                validWith = App(validWith, row[2], "NM");
+                validWith = App(validWith, row[3], "US");
                 concepts
                     .AppendLine($"new ConceptDef(\"{CodeValue(code)}\",")
-                    .AppendLine($"    \"{code}\",")
-                    .AppendLine($"    new Definition()")
-                    .AppendLine($"        .Line(\"[PR] {code}\")")
-                    .AppendLine($"        .Line(\"Valid with following Modalities: {validWith}\")")
-                    .AppendLine($"    ){term}")
-                    ;
+                                .AppendLine($"    \"{code}\",")
+                                .AppendLine($"    new Definition()")
+                                .AppendLine($"        .Line(\"[PR] {code}\")")
+                                .AppendLine($"        .Line(\"Valid with following Modalities: {validWith}\")")
+                                .AppendLine($"    ){term}")
+                                ;
             }
 
             editor.Save();
@@ -152,8 +155,31 @@ namespace BreastRadiology.XUnitTests
         [TestMethod]
         public void WriteCode()
         {
-            WriteCS("ConsistentWith.txt", @"Common\ConsistentWithCS.cs", "ConsistentWithCS");
-            WriteCS("ConsistentWithQualifier.txt", @"Common\ConsistentWithCS.cs", "ConsistentWithQualifierCS");
+            DataSet ds = this.ReadGregDS();
+
+            WriteCS(ds, "ConsistentWith", @"Common\ConsistentWithCS.cs", "ConsistentWithCS");
+            WriteCS(ds, "ConsistentWithQualifier", @"Common\ConsistentWithCS.cs", "ConsistentWithQualifierCS");
+        }
+        public DataSet ReadGregDS()
+        {
+            String filePath = Path.Combine(DirHelper.FindParentDir(baseDir),
+                "Documents",
+                "Breast-Reporting Value-sets GG V2.xlsx");
+
+            Encoding.RegisterProvider(CodePagesEncodingProvider.Instance);
+            Encoding enc1252 = CodePagesEncodingProvider.Instance.GetEncoding(1252);
+
+            using (var stream = File.Open(filePath, FileMode.Open, FileAccess.Read))
+            {
+                // Auto-detect format, supports:
+                //  - Binary Excel files (2.0-2003 format; *.xls)
+                //  - OpenXml Excel files (2007 format; *.xlsx)
+
+                using (var reader = ExcelReaderFactory.CreateReader(stream))
+                {
+                    return reader.AsDataSet();
+                }
+            }
         }
 
         [TestMethod]
