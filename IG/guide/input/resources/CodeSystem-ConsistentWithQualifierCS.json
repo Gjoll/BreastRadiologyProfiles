@@ -26,22 +26,22 @@
     {
       "code": "LikelyRepresents",
       "display": "Likely represents",
-      "definition": "[PR] Likely represents\r\nValid with following Modalities: MG MRI NM US"
+      "definition": "[PR] Likely represents\r\nValid for the following modalities: MG MRI NM US."
     },
     {
       "code": "MostLikely",
       "display": "Most likely",
-      "definition": "[PR] Most likely\r\nValid with following Modalities: MG US"
+      "definition": "[PR] Most likely\r\nValid for the following modalities: MG US."
     },
     {
       "code": "Resembles",
       "display": "Resembles",
-      "definition": "[PR] Resembles\r\nValid with following Modalities: MG MRI NM US"
+      "definition": "[PR] Resembles\r\nValid for the following modalities: MG MRI NM US."
     },
     {
       "code": "w/differentialDiagnosis",
       "display": "w/differential diagnosis",
-      "definition": "[PR] w/differential diagnosis\r\nValid with following Modalities: MG MRI NM US"
+      "definition": "[PR] w/differential diagnosis\r\nValid for the following modalities: MG MRI NM US."
     }
   ]
 }

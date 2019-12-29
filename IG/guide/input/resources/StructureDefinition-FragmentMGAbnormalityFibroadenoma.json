@@ -55,7 +55,7 @@
     },
     {
       "url": "http://www.fragment.com/maplink",
-      "valueString": "valueSet|True|http://hl7.org/fhir/us/breast-radiology/ValueSet/MammoFibroadenomaVS"
+      "valueString": "valueSet|True|http://hl7.org/fhir/us/breast-radiology/ValueSet/FibroadenomaVS"
     }
   ],
   "url": "http://hl7.org/fhir/us/breast-radiology/StructureDefinition/FragmentMGAbnormalityFibroadenoma",
@@ -1015,7 +1015,7 @@
         "isSummary": true,
         "binding": {
           "strength": "required",
-          "valueSet": "http://hl7.org/fhir/us/breast-radiology/ValueSet/MammoFibroadenomaVS"
+          "valueSet": "http://hl7.org/fhir/us/breast-radiology/ValueSet/FibroadenomaVS"
         },
         "mapping": [
           {
@@ -2246,7 +2246,7 @@
         ],
         "binding": {
           "strength": "required",
-          "valueSet": "http://hl7.org/fhir/us/breast-radiology/ValueSet/MammoFibroadenomaVS"
+          "valueSet": "http://hl7.org/fhir/us/breast-radiology/ValueSet/FibroadenomaVS"
         }
       },
       {

@@ -13,23 +13,10 @@ namespace BreastRadiology.XUnitTests
 {
     partial class ResourcesMaker : ConverterBase
     {
-        VSTaskVar MGFibroadenomaVS = new VSTaskVar(
-            () =>
-                ResourcesMaker.Self.CreateValueSet(
-                        "MammoFibroadenomaVS",
-                        "Fibroadenoma ValueSet",
-                        "FibroadenomaValueSet",
-                        "Fibroadenoma values value set.",
-                        Group_CommonCodes,
-                        ResourcesMaker.Self.FibroadenomaCS.Value()
-                    )
-            );
-
-
         StringTaskVar MGAbnormalityFibroadenoma = new StringTaskVar(
             (out String s) =>
             {
-                ValueSet binding = ResourcesMaker.Self.MGFibroadenomaVS.Value();
+                ValueSet binding = ResourcesMaker.Self.FibroadenomaVS.Value();
 
                 SDefEditor e = ResourcesMaker.Self.CreateEditor("MGAbnormalityFibroadenoma",
                         "Mammography Fibroadenoma",

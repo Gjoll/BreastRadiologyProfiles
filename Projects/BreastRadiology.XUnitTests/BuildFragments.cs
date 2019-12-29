@@ -95,10 +95,11 @@ namespace BreastRadiology.XUnitTests
                         if (stringValue != sb)
                             throw new Exception("Invalid value in App");
                         if (String.IsNullOrEmpty(s) == false)
-                            s += " ";
-                        s += t;
+                            s += ", ";
+                        s += $"Modalities.{t}";
                         return s;
-                        default:
+
+                    default:
                         throw new Exception("Invalid excel cell value");
                 }
             }
@@ -144,7 +145,7 @@ namespace BreastRadiology.XUnitTests
                                 .AppendLine($"    \"{code}\",")
                                 .AppendLine($"    new Definition()")
                                 .AppendLine($"        .Line(\"[PR] {code}\")")
-                                .AppendLine($"        .Line(\"Valid with following Modalities: {validWith}\")")
+                                .AppendLine($"        .ValidModalities({validWith})")
                                 .AppendLine($"    ){term}")
                                 ;
             }
@@ -159,6 +160,7 @@ namespace BreastRadiology.XUnitTests
 
             WriteCS(ds, "ConsistentWith", @"Common\ConsistentWithCS.cs", "ConsistentWithCS");
             WriteCS(ds, "ConsistentWithQualifier", @"Common\ConsistentWithCS.cs", "ConsistentWithQualifierCS");
+            //WriteCS(ds, "Fibroadenoma", @"Common\Fibroadenoma.cs", "FibroadenomaCS");
         }
         public DataSet ReadGregDS()
         {

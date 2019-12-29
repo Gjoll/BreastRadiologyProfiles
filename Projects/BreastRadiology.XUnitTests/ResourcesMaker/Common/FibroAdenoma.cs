@@ -36,5 +36,17 @@ namespace BreastRadiology.XUnitTests
                                 )
                         })
                     );
+
+        VSTaskVar FibroadenomaVS = new VSTaskVar(
+            () =>
+                ResourcesMaker.Self.CreateValueSet(
+                        "FibroadenomaVS",
+                        "Fibroadenoma ValueSet",
+                        "FibroadenomaValueSet",
+                        "Fibroadenoma values value set.",
+                        Group_CommonCodes,
+                        ResourcesMaker.Self.FibroadenomaCS.Value()
+                    )
+            );
     }
 }

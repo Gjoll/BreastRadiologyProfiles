@@ -177,6 +177,15 @@ namespace BreastRadiology.XUnitTests
                 return this;
             }
 
+            public Definition ValidModalities(params Modalities[] modalities)
+            {
+                this.sb.Append("Valid for the following modalities:");
+                foreach (Modalities m in modalities)
+                    this.sb.Append($" {m.ToString()}");
+                this.sb.AppendLine(".");
+                return this;
+            }
+
             public String ToText()
             {
                 return this.sb.ToString();
