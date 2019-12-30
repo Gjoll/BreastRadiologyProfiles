@@ -12,32 +12,30 @@ namespace BreastRadiology.XUnitTests
         StringTaskVar ImagingStudyFragment = new StringTaskVar(
             (out String s) =>
             {
-                SDefEditor e = ResourcesMaker.Self.CreateFragment("ImagingStudyFragment",
+                SDefEditor e = Self.CreateFragment("ImagingStudyFragment",
                         "Imaging Study Fragment",
                         "ImagingStudy",
                         ObservationUrl)
                     .Description("Adds references to imaging studies.",
                         new Markdown()
                             .Paragraph("Fragment that adds derivedFrom references to imaging studies, including AIM annotated imaaging study.")
-                            //.Todo
+                     //.Todo
                      )
                     ;
                 s = e.SDef.Url;
-
-                {
-                    ProfileTargetSlice[] targets = new ProfileTargetSlice[]
-                    {
-                    new ProfileTargetSlice(ImagingStudyUrl, 0, "*"),
-                    new ProfileTargetSlice(ResourcesMaker.Self.AimAnnotatedImagingStudy.Value(), 0, "1"),
-                    };
-                    e.SliceByUrl("derivedFrom", targets);
-                    e.AddProfileTargets(targets);
-                }
 
                 e.IntroDoc
                     .ReviewedStatus(ReviewStatus.NotReviewed)
                     .Fragment($"Imaging Study Fragment")
                     ;
+
+                ProfileTargetSlice[] targets = new ProfileTargetSlice[]
+                {
+                    new ProfileTargetSlice(ImagingStudyUrl, 0, "*"),
+                    new ProfileTargetSlice(Self.AimAnnotatedImagingStudy.Value(), 0, "1"),
+                };
+                e.SliceByUrl("derivedFrom", targets);
+                e.AddProfileTargets(targets);
             });
     }
 }

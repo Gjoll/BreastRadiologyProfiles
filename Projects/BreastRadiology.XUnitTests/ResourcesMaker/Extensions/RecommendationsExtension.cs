@@ -17,7 +17,7 @@ namespace BreastRadiology.XUnitTests
         StringTaskVar BreastRadiologyRecommendationsExtension = new StringTaskVar(
             (out String s) =>
             {
-                SDefEditor e = ResourcesMaker.Self.CreateEditor("RecommendationsExtension",
+                SDefEditor e = Self.CreateEditor("RecommendationsExtension",
                     "Recommendations Extension",
                     "Recommendations/Extension",
                     ExtensionUrl,
@@ -32,7 +32,13 @@ namespace BreastRadiology.XUnitTests
                     .Context()
                     ;
                 s = e.SDef.Url;
-                e.AddFragRef(ResourcesMaker.Self.HeaderFragment.Value());
+
+                e.IntroDoc
+                    .ReviewedStatus(ReviewStatus.NotReviewed)
+                    .Extension("Recommendations", "include references to recommendations")
+                    ;
+
+                e.AddFragRef(Self.HeaderFragment.Value());
 
                 e.Select("extension").Zero();
                 e.Select("url")
@@ -44,10 +50,6 @@ namespace BreastRadiology.XUnitTests
                     .Single()
                     ;
 
-                e.IntroDoc
-                    .ReviewedStatus(ReviewStatus.NotReviewed)
-                    .Extension("Recommendations", "include references to recommendations")
-                    ;
                 e.AddLink("target", MedicationRequestUrl, false);
                 e.AddLink("target", ServiceRequestUrl, false);
             });

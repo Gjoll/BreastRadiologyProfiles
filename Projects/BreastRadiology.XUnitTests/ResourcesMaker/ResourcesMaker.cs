@@ -23,8 +23,75 @@ namespace BreastRadiology.XUnitTests
 
     partial class ResourcesMaker : ConverterBase
     {
-        public static ResourcesMaker Self => ResourcesMaker.self;
-        static ResourcesMaker self;
+        class Definition
+        {
+            StringBuilder sb = new StringBuilder();
+            //bool citeFlag = false;
+
+            public Definition CiteStart()
+            {
+                return this;
+            }
+
+            public Definition CiteEnd(String citationSource)
+            {
+                this.sb.AppendLine($"    -- {citationSource}");
+                return this;
+            }
+
+            public Definition Line(String line)
+            {
+                this.sb.AppendLine(line);
+                return this;
+            }
+
+            public Definition ValidModalities(params Modalities[] modalities)
+            {
+                this.sb.Append("Valid for the following modalities:");
+                foreach (Modalities m in modalities)
+                    this.sb.Append($" {m.ToString()}");
+                this.sb.AppendLine(".");
+                return this;
+            }
+
+            public String ToText()
+            {
+                return this.sb.ToString();
+            }
+        }
+
+        class ConceptDef
+        {
+            public String Code;
+            public String Display;
+            public String Definition;
+
+            public ConceptDef(String code, String display, String definition)
+            {
+                if (String.IsNullOrWhiteSpace(code) == true)
+                    throw new Exception("Empty code");
+                if (String.IsNullOrWhiteSpace(display) == true)
+                    throw new Exception("Empty Display");
+                if (String.IsNullOrWhiteSpace(definition) == true)
+                    throw new Exception("Empty definition");
+                this.Code = code;
+                this.Display = display;
+                this.Definition = definition;
+            }
+
+            public ConceptDef(Coding code, String definition)
+            {
+                this.Code = code.Code;
+                this.Display = code.Display;
+                this.Definition = definition;
+            }
+
+            public ConceptDef(String code, String display, Definition definition) : this(code, display, definition.ToText())
+            {
+            }
+        }
+
+        public static ResourcesMaker Self {get; set; }
 
         public const String Group_BaseResources = "BaseResources";
         public const String Group_CommonResources = "CommonResources";
@@ -71,6 +138,8 @@ namespace BreastRadiology.XUnitTests
 
         Dictionary<String, Resource> resources = new Dictionary<string, Resource>();
 
+        bool Component_HasMember = false;
+
         FileCleaner fc;
         String resourceDir;
         String pageDir;
@@ -89,7 +158,7 @@ namespace BreastRadiology.XUnitTests
         {
             const String fcn = "ResourcesMaker";
 
-            ResourcesMaker.self = this;
+            Self = this;
             this.fc = fc;
             this.resourceDir = resourceDir;
             this.pageDir = pageDir;
@@ -155,66 +224,7 @@ namespace BreastRadiology.XUnitTests
             return retVal;
         }
 
-        class Definition
-        {
-            StringBuilder sb = new StringBuilder();
-            //bool citeFlag = false;
-
-            public Definition CiteStart()
-            {
-                return this;
-            }
-
-            public Definition CiteEnd(String citationSource)
-            {
-                this.sb.AppendLine($"    -- {citationSource}");
-                return this;
-            }
-
-            public Definition Line(String line)
-            {
-                this.sb.AppendLine(line);
-                return this;
-            }
-
-            public Definition ValidModalities(params Modalities[] modalities)
-            {
-                this.sb.Append("Valid for the following modalities:");
-                foreach (Modalities m in modalities)
-                    this.sb.Append($" {m.ToString()}");
-                this.sb.AppendLine(".");
-                return this;
-            }
-
-            public String ToText()
-            {
-                return this.sb.ToString();
-            }
-        }
-
-        class ConceptDef
-        {
-            public String Code;
-            public String Display;
-            public String Definition;
-
-            public ConceptDef(String code, String display, String definition)
-            {
-                if (String.IsNullOrWhiteSpace(code) == true)
-                    throw new Exception("Empty code");
-                if (String.IsNullOrWhiteSpace(display) == true)
-                    throw new Exception("Empty Display");
-                if (String.IsNullOrWhiteSpace(definition) == true)
-                    throw new Exception("Empty definition");
-                this.Code = code;
-                this.Display = display;
-                this.Definition = definition;
-            }
-
-            public ConceptDef(String code, String display, Definition definition) : this(code, display, definition.ToText())
-            {
-            }
-        }
+        String CodeSystemUrl(String name) => $"http://hl7.org/fhir/us/breast-radiology/CodeSystem/{name}";
 
         CodeSystem CreateCodeSystem(String name,
             String title,
@@ -228,7 +238,7 @@ namespace BreastRadiology.XUnitTests
             CodeSystem cs = new CodeSystem
             {
                 Id = name,
-                Url = $"http://hl7.org/fhir/us/breast-radiology/CodeSystem/{name}",
+                Url = CodeSystemUrl(name),
                 Name = name,
                 Title = $"{title}",
                 Description = new Markdown(description),
@@ -352,5 +362,103 @@ namespace BreastRadiology.XUnitTests
 
             System.Threading.Tasks.Task.WaitAll(tasks.ToArray());
         }
+
+        void ComponentMGCalcificationType(SDefEditor e)
+        {
+            ElementDefGroup component = e.StartComponentSliceing();
+
+            e.ComponentSliceCodeableConcept("calcificationType",
+                Self.MGCodeCalcificationType.ToCodeableConcept(),
+                Self.MGCalcificationTypeCS.Value().Url,
+                BindingStrength.Required,
+                0,
+                "1");
+        }
+
+        void ComponentMGCalcificationDistribution(SDefEditor e)
+        {
+            ElementDefGroup component = e.StartComponentSliceing();
+
+            e.ComponentSliceCodeableConcept("calcificationDistribution",
+                Self.MGCodeCalcificationDistribution.ToCodeableConcept(),
+                Self.MGCalcificationDistributionCS.Value().Url,
+                BindingStrength.Required,
+                0,
+                "1");
+        }
+
+        void ComponentSliceBiRads(SDefEditor e)
+        {
+            ElementDefGroup component = e.StartComponentSliceing();
+
+            e.ComponentSliceCodeableConcept("biRadsAssessmentCategory",
+                Self.CodeBiRads.ToCodeableConcept(),
+                Self.BiRadsAssessmentCategoriesCS.Value().Url,
+                BindingStrength.Required,
+                0,
+                "1");
+        }
+
+        void ComponentSliceObservedCount(SDefEditor e)
+        {
+            ElementDefGroup component = e.StartComponentSliceing();
+
+            String sliceName = "observedCount";
+
+            ElementDefinition slice = e.AppendSlice("component", sliceName, 0, "1");
+            {
+                ElementDefinition valueX = new ElementDefinition
+                {
+                    Path = $"{slice.Path}.value[x]",
+                    ElementId = $"{slice.Path}:{sliceName}.value[x]"
+                };
+
+                valueX
+                    .Types("integer", "Range")
+                    .SetCardinality(1, "1")
+                    .SetDefinition(new Markdown()
+                        .Paragraph("Count of an object.")
+                        .Paragraph("This is either an integer count, or a Range (min..max) count.")
+                        .Paragraph($"A range value with no maximum specified implies count is min or more.")
+                        .Paragraph($"A range value with no minimum specified implies count is max or less.")
+                     )
+                    ;
+                ;
+                e.InsertAfterAllChildren("component", valueX);
+            }
+            {
+                ElementDefinition eDef = new ElementDefinition
+                {
+                    Path = $"{slice.Path}.interpretation",
+                    ElementId = $"{slice.Path}:{sliceName}.interpretation",
+                    Min = 0,
+                    Max = "0"
+                };
+                e.InsertAfterAllChildren("component", eDef);
+            }
+            {
+                ElementDefinition eDef = new ElementDefinition
+                {
+                    Path = $"{slice.Path}.referenceRange",
+                    ElementId = $"{slice.Path}:{sliceName}.referenceRange",
+                    Min = 0,
+                    Max = "0"
+                };
+                e.InsertAfterAllChildren("component", eDef);
+            }
+        }
+
+        void ComponentSliceConsistentWith(SDefEditor e)
+        {
+            ElementDefGroup component = e.StartComponentSliceing();
+
+            e.ComponentSliceCodeableConcept("consistentWith",
+                Self.CodeBiRads.ToCodeableConcept(),
+                Self.ConsistentWithCS.Value().Url,
+                BindingStrength.Extensible,
+                0,
+                "*");
+        }
+
     }
 }

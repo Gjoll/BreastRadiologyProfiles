@@ -7,26 +7,37 @@ namespace BreastRadiology.XUnitTests
 {
     partial class ResourcesMaker : ConverterBase
     {
-        ProfileTargetSlice[] FindingBreastTargets()
+        void AddFindingBreastTargets(SDefEditor e)
         {
-            if (ResourcesMaker.Self.findingBreastTargets == null)
-                ResourcesMaker.Self.CreateFindingBreastTargets();
-            return ResourcesMaker.Self.findingBreastTargets;
-        }
-
-        ProfileTargetSlice[] findingBreastTargets = null;
-
-        void CreateFindingBreastTargets()
-        {
-            // ShowChildren = false, to limit depth of resource graph.
-            ResourcesMaker.Self.findingBreastTargets = new ProfileTargetSlice[]
+            if (Self.Component_HasMember)
             {
-                new ProfileTargetSlice(ResourcesMaker.Self.BiRadsAssessmentCategory.Value(), 1, "1"),
-                new ProfileTargetSlice(ResourcesMaker.Self.FindingMammo.Value(), 0, "*"),
-                new ProfileTargetSlice(ResourcesMaker.Self.FindingMri.Value(), 0, "*"),
-                new ProfileTargetSlice(ResourcesMaker.Self.FindingNM.Value(), 0, "*"),
-                new ProfileTargetSlice(ResourcesMaker.Self.FindingUltraSound.Value(), 0, "*")
-            };
+                ProfileTargetSlice[] findingBreastTargets = new ProfileTargetSlice[]
+                {
+                new ProfileTargetSlice(Self.BiRadsAssessmentCategory.Value(), 1, "1"),
+                new ProfileTargetSlice(Self.FindingMammo.Value(), 0, "*"),
+                new ProfileTargetSlice(Self.FindingMri.Value(), 0, "*"),
+                new ProfileTargetSlice(Self.FindingNM.Value(), 0, "*"),
+                new ProfileTargetSlice(Self.FindingUltraSound.Value(), 0, "*")
+                };
+
+                e.SliceByUrl("hasMember", findingBreastTargets);
+                e.AddProfileTargets(findingBreastTargets);
+            }
+            else
+            {
+                ProfileTargetSlice[] findingBreastTargets = new ProfileTargetSlice[]
+                {
+                new ProfileTargetSlice(Self.FindingMammo.Value(), 0, "*"),
+                new ProfileTargetSlice(Self.FindingMri.Value(), 0, "*"),
+                new ProfileTargetSlice(Self.FindingNM.Value(), 0, "*"),
+                new ProfileTargetSlice(Self.FindingUltraSound.Value(), 0, "*")
+                };
+
+                e.SliceByUrl("hasMember", findingBreastTargets);
+                e.AddProfileTargets(findingBreastTargets);
+
+                Self.ComponentSliceConsistentWith(e);
+            }
         }
     }
 }

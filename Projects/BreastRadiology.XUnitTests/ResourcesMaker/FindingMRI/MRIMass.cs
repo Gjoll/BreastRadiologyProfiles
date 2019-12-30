@@ -16,7 +16,7 @@ namespace BreastRadiology.XUnitTests
         StringTaskVar MRIMass = new StringTaskVar(
             (out String s) =>
             {
-                SDefEditor e = ResourcesMaker.Self.CreateEditor("MRIMass",
+                SDefEditor e = Self.CreateEditor("MRIMass",
                         "MRI Mass",
                         "MRI Mass",
                         ObservationUrl,
@@ -34,33 +34,36 @@ namespace BreastRadiology.XUnitTests
                                 "Complete description"
                             )
                     )
-                    .AddFragRef(ResourcesMaker.Self.ObservationNoDeviceFragment.Value())
-                    .AddFragRef(ResourcesMaker.Self.BreastBodyLocationRequiredFragment.Value())
-                    .AddFragRef(ResourcesMaker.Self.ObservationNoValueFragment.Value())
-                    .AddFragRef(ResourcesMaker.Self.ImagingStudyFragment.Value())
+                    .AddFragRef(Self.ObservationNoDeviceFragment.Value())
+                    .AddFragRef(Self.BreastBodyLocationRequiredFragment.Value())
+                    .AddFragRef(Self.ObservationNoValueFragment.Value())
+                    .AddFragRef(Self.ImagingStudyFragment.Value())
                     ;
                 s = e.SDef.Url;
-
-                {
-                    ProfileTargetSlice[] targets = new ProfileTargetSlice[]
-                    {
-                    new ProfileTargetSlice(ResourcesMaker.Self.ObservedSize.Value(), 0, "1"),
-                    new ProfileTargetSlice(ResourcesMaker.Self.ObservedCount.Value(), 0, "1"),
-                    //$new ProfileTargetSlice(ResourcesMaker.Self.MassShape.Value(), 0, "1"),
-                    new ProfileTargetSlice(ResourcesMaker.Self.Orientation.Value(), 0, "1"),
-                    new ProfileTargetSlice(ResourcesMaker.Self.MRIMargin.Value(), 0, "*"),
-                    //$new ProfileTargetSlice(ResourcesMaker.Self.MRIMassDensity.Value(), 0, "1"),
-                    new ProfileTargetSlice(ResourcesMaker.Self.ObservedChangeInState.Value(), 0, "*"),
-                        //$new ProfileTargetSlice(ResourcesMaker.Self.MRIAssociatedFeatures.Value(), 0, "1", false),
-                    };
-                    e.SliceByUrl("hasMember", targets);
-                    e.AddProfileTargets(targets);
-                }
 
                 e.IntroDoc
                     .ReviewedStatus(ReviewStatus.NotReviewed)
                     .ObservationSection("MRI Mass")
                     ;
+
+                if (Self.Component_HasMember)
+                {
+                    ProfileTargetSlice[] targets = new ProfileTargetSlice[]
+                    {
+                    new ProfileTargetSlice(Self.ObservedSize.Value(), 0, "1"),
+                    new ProfileTargetSlice(Self.ObservedCount.Value(), 0, "1"),
+                    new ProfileTargetSlice(Self.Orientation.Value(), 0, "1"),
+                    new ProfileTargetSlice(Self.MRIMargin.Value(), 0, "*"),
+                    new ProfileTargetSlice(Self.ObservedChangeInState.Value(), 0, "*"),
+                    };
+                    e.SliceByUrl("hasMember", targets);
+                    e.AddProfileTargets(targets);
+                }
+                else
+                {
+                    //$ XXYYZ-Slice
+                    Self.ComponentSliceObservedCount(e);
+                }
             });
     }
 }

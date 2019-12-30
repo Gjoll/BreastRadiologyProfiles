@@ -16,7 +16,7 @@ namespace BreastRadiology.XUnitTests
         StringTaskVar MGSkinThickening = new StringTaskVar(
             (out String s) =>
             {
-                SDefEditor e = ResourcesMaker.Self.CreateEditor("MGSkinThickening",
+                SDefEditor e = Self.CreateEditor("MGSkinThickening",
                     "Mammography Skin Thickening",
                     "MG Skin Thickening",
                     ObservationUrl,
@@ -31,9 +31,9 @@ namespace BreastRadiology.XUnitTests
                                 "Add choice for focal or diffuse (see definition)?"
                             )
                     )
-                    .AddFragRef(ResourcesMaker.Self.ObservationNoDeviceFragment.Value())
-                    .AddFragRef(ResourcesMaker.Self.ObservationNoValueFragment.Value())
-                    .AddFragRef(ResourcesMaker.Self.BreastBodyLocationRequiredFragment.Value())
+                    .AddFragRef(Self.ObservationNoDeviceFragment.Value())
+                    .AddFragRef(Self.ObservationNoValueFragment.Value())
+                    .AddFragRef(Self.BreastBodyLocationRequiredFragment.Value())
                     ;
                 s = e.SDef.Url;
 

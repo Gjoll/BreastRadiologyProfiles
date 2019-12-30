@@ -17,7 +17,7 @@ namespace BreastRadiology.XUnitTests
             (out String s) =>
             {
 
-                SDefEditor e = ResourcesMaker.Self.CreateEditor("MGAxillaryAdenopathy",
+                SDefEditor e = Self.CreateEditor("MGAxillaryAdenopathy",
                     "Mammography Axillary Adenopathy",
                     "MG Axillary/Adenopathy",
                     ObservationUrl,
@@ -34,9 +34,9 @@ namespace BreastRadiology.XUnitTests
                             .BiradFooter()
                             //.Todo
                     )
-                    .AddFragRef(ResourcesMaker.Self.ObservationNoDeviceFragment.Value())
-                    .AddFragRef(ResourcesMaker.Self.ObservationNoValueFragment.Value())
-                    .AddFragRef(ResourcesMaker.Self.BreastBodyLocationRequiredFragment.Value())
+                    .AddFragRef(Self.ObservationNoDeviceFragment.Value())
+                    .AddFragRef(Self.ObservationNoValueFragment.Value())
+                    .AddFragRef(Self.BreastBodyLocationRequiredFragment.Value())
                     ;
                 s = e.SDef.Url;
                 e.IntroDoc

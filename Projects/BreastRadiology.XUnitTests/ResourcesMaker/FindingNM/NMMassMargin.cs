@@ -16,7 +16,7 @@ namespace BreastRadiology.XUnitTests
     {
         CSTaskVar NMMarginCS = new CSTaskVar(
              () =>
-                 ResourcesMaker.Self.CreateCodeSystem(
+                 Self.CreateCodeSystem(
                      "NMMarginCS",
                      "NM Margin CodeSystem",
                      "NM/Margin/CodeSystem",
@@ -38,13 +38,13 @@ namespace BreastRadiology.XUnitTests
 
         VSTaskVar NMMarginVS = new VSTaskVar(
             () =>
-                ResourcesMaker.Self.CreateValueSet(
+                Self.CreateValueSet(
                         "NMMarginVS",
                         "NM Margin ValueSet",
                         "NM/Margin/ValueSet",
                         "NM margin value set.",
                         Group_NMCodes,
-                        ResourcesMaker.Self.NMMarginCS.Value()
+                        Self.NMMarginCS.Value()
                     )
             );
 
@@ -52,19 +52,19 @@ namespace BreastRadiology.XUnitTests
         StringTaskVar NMMargin = new StringTaskVar(
             (out String s) =>
             {
-                ValueSet binding = ResourcesMaker.Self.NMMarginVS.Value();
+                ValueSet binding = Self.NMMarginVS.Value();
 
                 {
-                    IntroDoc valueSetIntroDoc = new IntroDoc(Path.Combine(ResourcesMaker.Self.pageDir, $"ValueSet-{binding.Name}-intro.xml"));
+                    IntroDoc valueSetIntroDoc = new IntroDoc(Path.Combine(Self.pageDir, $"ValueSet-{binding.Name}-intro.xml"));
                     valueSetIntroDoc
                         .ReviewedStatus(ReviewStatus.NotReviewed)
                         .ValueSet(binding);
                     ;
                     String outputPath = valueSetIntroDoc.Save();
-                    ResourcesMaker.Self.fc?.Mark(outputPath);
+                    Self.fc?.Mark(outputPath);
                 }
 
-                SDefEditor e = ResourcesMaker.Self.CreateEditor("NMMargin",
+                SDefEditor e = Self.CreateEditor("NMMargin",
                     "NM Margin",
                     "NM/Margin",
                     ObservationUrl,
@@ -78,21 +78,22 @@ namespace BreastRadiology.XUnitTests
                             .Todo(
                             )
                     )
-                    .AddFragRef(ResourcesMaker.Self.ObservationNoDeviceFragment.Value())
-                    .AddFragRef(ResourcesMaker.Self.ObservationCodedValueFragment.Value())
-                    .AddFragRef(ResourcesMaker.Self.ObservationLeafFragment.Value())
+                    .AddFragRef(Self.ObservationNoDeviceFragment.Value())
+                    .AddFragRef(Self.ObservationCodedValueFragment.Value())
+                    .AddFragRef(Self.ObservationLeafFragment.Value())
                     ;
                 s = e.SDef.Url;
+
+                e.IntroDoc
+                    .ReviewedStatus(ReviewStatus.NotReviewed)
+                    .CodedObservationLeafNode("a NM margin", binding)
+                    ;
 
                 e.Select("value[x]")
                     .Type("CodeableConcept")
                     .Binding(binding.Url, BindingStrength.Required)
                     ;
                 e.AddValueSetLink(binding);
-                e.IntroDoc
-                    .ReviewedStatus(ReviewStatus.NotReviewed)
-                    .CodedObservationLeafNode("a NM margin", binding)
-                    ;
             });
     }
 }

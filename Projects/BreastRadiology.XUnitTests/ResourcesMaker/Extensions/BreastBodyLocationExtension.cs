@@ -16,7 +16,7 @@ namespace BreastRadiology.XUnitTests
     {
         CSTaskVar BreastLocationRegionCS = new CSTaskVar(
              () =>
-                 ResourcesMaker.Self.CreateCodeSystem(
+                 Self.CreateCodeSystem(
                          "BreastLocationRegionCS",
                          "Breast Location Region CodeSystem",
                          "Breast/Location/Region/CodeSystem",
@@ -60,7 +60,7 @@ namespace BreastRadiology.XUnitTests
 
         CSTaskVar BreastLocationQuadrantCS = new CSTaskVar(
              () =>
-                 ResourcesMaker.Self.CreateCodeSystem(
+                 Self.CreateCodeSystem(
                          "BreastLocationQuadrantCS",
                          "Breast Location Quadrant CodeSystem",
                          "Breast/Location/Quadrant/CodeSystem",
@@ -96,7 +96,7 @@ namespace BreastRadiology.XUnitTests
              );
         CSTaskVar BreastLocationClockCS = new CSTaskVar(
              () =>
-                 ResourcesMaker.Self.CreateCodeSystem(
+                 Self.CreateCodeSystem(
                          "BreastLocationClockCS",
                          "Breast Location Clock CodeSystem",
                          "Breast/Location/Clock/CodeSystem",
@@ -169,7 +169,7 @@ namespace BreastRadiology.XUnitTests
 
         CSTaskVar BreastLocationDepthCS = new CSTaskVar(
              () =>
-                 ResourcesMaker.Self.CreateCodeSystem(
+                 Self.CreateCodeSystem(
                          "BreastLocationDepthCS",
                          "Breast Location Depth CodeSystem",
                          "Breast/Location/Depth/CodeSystem",
@@ -197,49 +197,49 @@ namespace BreastRadiology.XUnitTests
 
         VSTaskVar BreastLocationRegionVS = new VSTaskVar(
             () =>
-                ResourcesMaker.Self.CreateValueSet(
+                Self.CreateValueSet(
                         "BreastLocationRegionVS",
                         "Breast Location Region ValueSet",
                         "Breast/Location/RegionValueSet",
                         "Breast body location region value set.",
                         Group_CommonCodes,
-                        ResourcesMaker.Self.BreastLocationRegionCS.Value()
+                        Self.BreastLocationRegionCS.Value()
                 )
             );
 
         VSTaskVar BreastLocationClockVS = new VSTaskVar(
             () =>
-                ResourcesMaker.Self.CreateValueSet(
+                Self.CreateValueSet(
                         "BreastLocationClockVS",
                         "Breast Location Clock ValueSet",
                         "Breast/Location/ClockValueSet",
                         "Breast body location angles (expressed in clock-face units) value set.",
                         Group_CommonCodes,
-                        ResourcesMaker.Self.BreastLocationClockCS.Value()
+                        Self.BreastLocationClockCS.Value()
                 )
             );
 
         VSTaskVar BreastLocationDepthVS = new VSTaskVar(
             () =>
-                ResourcesMaker.Self.CreateValueSet(
+                Self.CreateValueSet(
                         "BreastLocationDepthVS",
                         "Breast Location Depth ValueSet",
                         "Breast/Location/DepthValueSet",
                         "Breast body location depth value set.",
                         Group_CommonCodes,
-                        ResourcesMaker.Self.BreastLocationDepthCS.Value()
+                        Self.BreastLocationDepthCS.Value()
                 )
             );
 
         VSTaskVar BreastLocationQuadrantVS = new VSTaskVar(
             () =>
-                ResourcesMaker.Self.CreateValueSet(
+                Self.CreateValueSet(
                         "BreastLocationQuadrantVS",
                         "Breast Location Quadrant ValueSet",
                         "Breast/Location/QuadrantValueSet",
                         "Breast body location quadrant code system value set.",
                         Group_CommonCodes,
-                        ResourcesMaker.Self.BreastLocationQuadrantCS.Value()
+                        Self.BreastLocationQuadrantCS.Value()
                 )
             );
 
@@ -290,7 +290,7 @@ namespace BreastRadiology.XUnitTests
 
                 //breastBodyLocationMapLinks = new List<ResourceMap.Link>();
 
-                e = ResourcesMaker.Self.CreateEditor("BreastBodyLocationExtension",
+                e = Self.CreateEditor("BreastBodyLocationExtension",
                     "Breast Body Location Extension",
                     "Breast Body Loc.",
                     ExtensionUrl,
@@ -309,7 +309,7 @@ namespace BreastRadiology.XUnitTests
 
                 //breastBodyLocationMapLinks.Add(new ResourceMap.Link("extension", breastBodyLocationExtension, false));
 
-                e.AddFragRef(ResourcesMaker.Self.HeaderFragment.Value());
+                e.AddFragRef(Self.HeaderFragment.Value());
 
                 e.Select("url")
                     .Type("uri")
@@ -329,16 +329,16 @@ namespace BreastRadiology.XUnitTests
                     new Markdown().Paragraph("The laterality of the body location"));
 
                 {
-                    ValueSet binding = ResourcesMaker.Self.BreastLocationQuadrantVS.Value();
+                    ValueSet binding = Self.BreastLocationQuadrantVS.Value();
 
                     {
-                        IntroDoc valueSetIntroDoc = new IntroDoc(Path.Combine(ResourcesMaker.Self.pageDir, $"ValueSet-{binding.Name}-intro.xml"));
+                        IntroDoc valueSetIntroDoc = new IntroDoc(Path.Combine(Self.pageDir, $"ValueSet-{binding.Name}-intro.xml"));
                         valueSetIntroDoc
                             .ReviewedStatus(ReviewStatus.NotReviewed)
                             .ValueSet(binding);
                         ;
                         String outputPath = valueSetIntroDoc.Save();
-                        ResourcesMaker.Self.fc?.Mark(outputPath);
+                        Self.fc?.Mark(outputPath);
                     }
 
                     SliceAndBind("quadrant",
@@ -349,16 +349,16 @@ namespace BreastRadiology.XUnitTests
                 }
 
                 {
-                    ValueSet binding = ResourcesMaker.Self.BreastLocationRegionVS.Value();
+                    ValueSet binding = Self.BreastLocationRegionVS.Value();
 
                     {
-                        IntroDoc valueSetIntroDoc = new IntroDoc(Path.Combine(ResourcesMaker.Self.pageDir, $"ValueSet-{binding.Name}-intro.xml"));
+                        IntroDoc valueSetIntroDoc = new IntroDoc(Path.Combine(Self.pageDir, $"ValueSet-{binding.Name}-intro.xml"));
                         valueSetIntroDoc
                             .ReviewedStatus(ReviewStatus.NotReviewed)
                             .ValueSet(binding);
                         ;
                         String outputPath = valueSetIntroDoc.Save();
-                        ResourcesMaker.Self.fc?.Mark(outputPath);
+                        Self.fc?.Mark(outputPath);
                     }
 
                     SliceAndBind("region",
@@ -369,16 +369,16 @@ namespace BreastRadiology.XUnitTests
                 }
                 {
 
-                    ValueSet binding = ResourcesMaker.Self.BreastLocationClockVS.Value();
+                    ValueSet binding = Self.BreastLocationClockVS.Value();
 
                     {
-                        IntroDoc valueSetIntroDoc = new IntroDoc(Path.Combine(ResourcesMaker.Self.pageDir, $"ValueSet-{binding.Name}-intro.xml"));
+                        IntroDoc valueSetIntroDoc = new IntroDoc(Path.Combine(Self.pageDir, $"ValueSet-{binding.Name}-intro.xml"));
                         valueSetIntroDoc
                             .ReviewedStatus(ReviewStatus.NotReviewed)
                             .ValueSet(binding);
                         ;
                         String outputPath = valueSetIntroDoc.Save();
-                        ResourcesMaker.Self.fc?.Mark(outputPath);
+                        Self.fc?.Mark(outputPath);
                     }
 
                     SliceAndBind("clockDirection",
@@ -390,15 +390,15 @@ namespace BreastRadiology.XUnitTests
 
                 {
 
-                    ValueSet binding = ResourcesMaker.Self.BreastLocationDepthVS.Value();
+                    ValueSet binding = Self.BreastLocationDepthVS.Value();
                     {
-                        IntroDoc valueSetIntroDoc = new IntroDoc(Path.Combine(ResourcesMaker.Self.pageDir, $"ValueSet-{binding.Name}-intro.xml"));
+                        IntroDoc valueSetIntroDoc = new IntroDoc(Path.Combine(Self.pageDir, $"ValueSet-{binding.Name}-intro.xml"));
                         valueSetIntroDoc
                             .ReviewedStatus(ReviewStatus.NotReviewed)
                             .ValueSet(binding);
                         ;
                         String outputPath = valueSetIntroDoc.Save();
-                        ResourcesMaker.Self.fc?.Mark(outputPath);
+                        Self.fc?.Mark(outputPath);
                     }
 
                     SliceAndBind("depth",

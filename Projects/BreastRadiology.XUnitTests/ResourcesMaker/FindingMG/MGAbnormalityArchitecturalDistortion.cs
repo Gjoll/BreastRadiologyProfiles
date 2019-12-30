@@ -16,7 +16,7 @@ namespace BreastRadiology.XUnitTests
         StringTaskVar MGAbnormalityArchitecturalDistortion = new StringTaskVar(
             (out String s) =>
             {
-                SDefEditor e = ResourcesMaker.Self.CreateEditor("MGAbnormalityArchitecturalDistortion",
+                SDefEditor e = Self.CreateEditor("MGAbnormalityArchitecturalDistortion",
                         "Mammography Architectural Distortion",
                         "MG Arch. Distortion",
                         ObservationUrl,
@@ -36,24 +36,30 @@ namespace BreastRadiology.XUnitTests
                             .BiradFooter()
                             //.Todo
                     )
-                    .AddFragRef(ResourcesMaker.Self.ObservationNoDeviceFragment.Value())
-                    .AddFragRef(ResourcesMaker.Self.ObservationNoValueFragment.Value())
-                    .AddFragRef(ResourcesMaker.Self.MGCommonTargetsFragment.Value())
+                    .AddFragRef(Self.ObservationNoDeviceFragment.Value())
+                    .AddFragRef(Self.ObservationNoValueFragment.Value())
+                    .AddFragRef(Self.MGCommonTargetsFragment.Value())
                     ;
                 s = e.SDef.Url;
 
-                {
-                    ProfileTargetSlice[] targets = new ProfileTargetSlice[]
-                    {
-                    new ProfileTargetSlice(ResourcesMaker.Self.ConsistentWith.Value(), 0, "*"),
-                    };
-                    e.SliceByUrl("hasMember", targets);
-                    e.AddProfileTargets(targets);
-                }
                 e.IntroDoc
                     .ReviewedStatus(ReviewStatus.NotReviewed)
                     .ObservationSection($"Architectural Distortion")
                     ;
+
+                if (Self.Component_HasMember)
+                {
+                    ProfileTargetSlice[] targets = new ProfileTargetSlice[]
+                    {
+                    new ProfileTargetSlice(Self.ConsistentWith.Value(), 0, "*"),
+                    };
+                    e.SliceByUrl("hasMember", targets);
+                    e.AddProfileTargets(targets);
+                }
+                else
+                {
+                    Self.ComponentSliceConsistentWith(e);
+                }
             });
     }
 }

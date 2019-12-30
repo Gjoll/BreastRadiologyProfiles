@@ -35,14 +35,6 @@
     },
     {
       "url": "http://www.fragment.com/maplink",
-      "valueString": "target|False|http://hl7.org/fhir/us/breast-radiology/StructureDefinition/BiRadsAssessmentCategory"
-    },
-    {
-      "url": "http://www.fragment.com/maplink",
-      "valueString": "target|False|http://hl7.org/fhir/us/breast-radiology/StructureDefinition/ConsistentWith"
-    },
-    {
-      "url": "http://www.fragment.com/maplink",
       "valueString": "valueSet|True|http://hl7.org/fhir/us/breast-radiology/ValueSet/MGAbnormalitiesVS"
     }
   ],
@@ -88,65 +80,170 @@
         }
       },
       {
-        "id": "Observation.hasMember",
-        "path": "Observation.hasMember",
+        "id": "Observation.component",
+        "path": "Observation.component",
         "slicing": {
           "discriminator": [
             {
-              "type": "value",
-              "path": "url"
+              "type": "pattern",
+              "path": "code"
             }
           ],
-          "ordered": true,
-          "rules": "openAtEnd"
+          "rules": "open"
         },
         "min": 0,
         "max": "*",
         "base": {
-          "path": "Observation.hasMember",
+          "path": "Observation.component",
           "min": 0,
           "max": "*"
         }
       },
       {
-        "id": "Observation.hasMember:biRadsAssessmentCategory",
-        "path": "Observation.hasMember",
+        "id": "Observation.component:biRadsAssessmentCategory",
+        "path": "Observation.component",
         "sliceName": "biRadsAssessmentCategory",
         "min": 0,
         "max": "1",
         "base": {
-          "path": "Observation.hasMember",
+          "path": "Observation.component",
+          "min": 0,
+          "max": "*"
+        }
+      },
+      {
+        "id": "Observation.component:biRadsAssessmentCategory.code",
+        "path": "Observation.component.code",
+        "min": 1,
+        "max": "1",
+        "base": {
+          "path": "Observation.component",
+          "min": 0,
+          "max": "*"
+        },
+        "patternCodeableConcept": {
+          "coding": [
+            {
+              "system": "http://hl7.org/fhir/us/breast-radiology/CodeSystem/ComponentSliceCodes",
+              "code": "targetBiRads"
+            }
+          ]
+        }
+      },
+      {
+        "id": "Observation.component:biRadsAssessmentCategory.value[x]",
+        "path": "Observation.component.value[x]",
+        "min": 1,
+        "max": "1",
+        "base": {
+          "path": "Observation.component",
           "min": 0,
           "max": "*"
         },
         "type": [
           {
-            "code": "Reference",
-            "targetProfile": [
-              "http://hl7.org/fhir/us/breast-radiology/StructureDefinition/BiRadsAssessmentCategory"
-            ]
+            "code": "CodeableConcept"
           }
-        ]
+        ],
+        "binding": {
+          "strength": "required",
+          "valueSet": "http://hl7.org/fhir/us/breast-radiology/CodeSystem/BiRadsAssessmentCategoriesCS"
+        }
       },
       {
-        "id": "Observation.hasMember:consistentWith",
-        "path": "Observation.hasMember",
+        "id": "Observation.component:biRadsAssessmentCategory.interpretation",
+        "path": "Observation.component.interpretation",
+        "min": 0,
+        "max": "0",
+        "base": {
+          "path": "Observation.component",
+          "min": 0,
+          "max": "*"
+        }
+      },
+      {
+        "id": "Observation.component:biRadsAssessmentCategory.referenceRange",
+        "path": "Observation.component.referenceRange",
+        "min": 0,
+        "max": "0",
+        "base": {
+          "path": "Observation.component",
+          "min": 0,
+          "max": "*"
+        }
+      },
+      {
+        "id": "Observation.component:consistentWith",
+        "path": "Observation.component",
         "sliceName": "consistentWith",
         "min": 0,
         "max": "*",
         "base": {
-          "path": "Observation.hasMember",
+          "path": "Observation.component",
+          "min": 0,
+          "max": "*"
+        }
+      },
+      {
+        "id": "Observation.component:consistentWith.code",
+        "path": "Observation.component.code",
+        "min": 1,
+        "max": "1",
+        "base": {
+          "path": "Observation.component",
+          "min": 0,
+          "max": "*"
+        },
+        "patternCodeableConcept": {
+          "coding": [
+            {
+              "system": "http://hl7.org/fhir/us/breast-radiology/CodeSystem/ComponentSliceCodes",
+              "code": "targetBiRads"
+            }
+          ]
+        }
+      },
+      {
+        "id": "Observation.component:consistentWith.value[x]",
+        "path": "Observation.component.value[x]",
+        "min": 1,
+        "max": "1",
+        "base": {
+          "path": "Observation.component",
           "min": 0,
           "max": "*"
         },
         "type": [
           {
-            "code": "Reference",
-            "targetProfile": [
-              "http://hl7.org/fhir/us/breast-radiology/StructureDefinition/ConsistentWith"
-            ]
+            "code": "CodeableConcept"
           }
-        ]
+        ],
+        "binding": {
+          "strength": "extensible",
+          "valueSet": "http://hl7.org/fhir/us/breast-radiology/CodeSystem/ConsistentWithCodeSystemCS"
+        }
+      },
+      {
+        "id": "Observation.component:consistentWith.interpretation",
+        "path": "Observation.component.interpretation",
+        "min": 0,
+        "max": "0",
+        "base": {
+          "path": "Observation.component",
+          "min": 0,
+          "max": "*"
+        }
+      },
+      {
+        "id": "Observation.component:consistentWith.referenceRange",
+        "path": "Observation.component.referenceRange",
+        "min": 0,
+        "max": "0",
+        "base": {
+          "path": "Observation.component",
+          "min": 0,
+          "max": "*"
+        }
       }
     ]
   }

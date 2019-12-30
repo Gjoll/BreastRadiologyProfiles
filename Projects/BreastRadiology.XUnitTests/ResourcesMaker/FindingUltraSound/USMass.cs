@@ -16,7 +16,7 @@ namespace BreastRadiology.XUnitTests
         StringTaskVar USMass = new StringTaskVar(
             (out String s) =>
             {
-                SDefEditor e = ResourcesMaker.Self.CreateEditor("USMass",
+                SDefEditor e = Self.CreateEditor("USMass",
                         "US Mass",
                         "US Mass",
                         ObservationUrl,
@@ -32,39 +32,46 @@ namespace BreastRadiology.XUnitTests
                             .BiradFooter()
                             //.Todo
                     )
-                    .AddFragRef(ResourcesMaker.Self.ObservationNoDeviceFragment.Value())
-                    .AddFragRef(ResourcesMaker.Self.BreastBodyLocationRequiredFragment.Value())
-                    .AddFragRef(ResourcesMaker.Self.ObservationNoValueFragment.Value())
-                    .AddFragRef(ResourcesMaker.Self.ImagingStudyFragment.Value())
+                    .AddFragRef(Self.ObservationNoDeviceFragment.Value())
+                    .AddFragRef(Self.BreastBodyLocationRequiredFragment.Value())
+                    .AddFragRef(Self.ObservationNoValueFragment.Value())
+                    .AddFragRef(Self.ImagingStudyFragment.Value())
                     ;
                 s = e.SDef.Url;
-                {
-                    ProfileTargetSlice[] targets = new ProfileTargetSlice[]
-                    {
-                    new ProfileTargetSlice(ResourcesMaker.Self.BiRadsAssessmentCategory.Value(), 0, "1"),
-
-                    new ProfileTargetSlice(ResourcesMaker.Self.ObservedCount.Value(), 0, "1"),
-                    new ProfileTargetSlice(ResourcesMaker.Self.ObservedChangeInState.Value(), 0, "*"),
-                    new ProfileTargetSlice(ResourcesMaker.Self.ObservedSize.Value(), 0, "1"),
-                    new ProfileTargetSlice(ResourcesMaker.Self.Orientation.Value(), 0, "1"),
-                    new ProfileTargetSlice(ResourcesMaker.Self.Hilum.Value(), 0, "1"),
-
-                    new ProfileTargetSlice(ResourcesMaker.Self.USBoundary.Value(), 0, "1"),
-                    new ProfileTargetSlice(ResourcesMaker.Self.USEchoPattern.Value(), 0, "1"),
-                    new ProfileTargetSlice(ResourcesMaker.Self.USElasticity.Value(), 0, "1"),
-                    new ProfileTargetSlice(ResourcesMaker.Self.USMargin.Value(), 0, "*"),
-                    new ProfileTargetSlice(ResourcesMaker.Self.USPosteriorAcousticFeatures.Value(), 0, "1"),
-                    new ProfileTargetSlice(ResourcesMaker.Self.USShape.Value(), 0, "1"),
-                    new ProfileTargetSlice(ResourcesMaker.Self.USVascularity.Value(), 0, "1"),
-                    };
-                    e.SliceByUrl("hasMember", targets);
-                    e.AddProfileTargets(targets);
-                }
 
                 e.IntroDoc
                     .ReviewedStatus(ReviewStatus.NotReviewed)
                     .ObservationSection($"Ultra-Sound Mass")
                     ;
+
+                if (Self.Component_HasMember)
+                {
+                    ProfileTargetSlice[] targets = new ProfileTargetSlice[]
+                    {
+                    new ProfileTargetSlice(Self.BiRadsAssessmentCategory.Value(), 0, "1"),
+
+                    new ProfileTargetSlice(Self.ObservedCount.Value(), 0, "1"),
+                    new ProfileTargetSlice(Self.ObservedChangeInState.Value(), 0, "*"),
+                    new ProfileTargetSlice(Self.ObservedSize.Value(), 0, "1"),
+                    new ProfileTargetSlice(Self.Orientation.Value(), 0, "1"),
+                    new ProfileTargetSlice(Self.Hilum.Value(), 0, "1"),
+
+                    new ProfileTargetSlice(Self.USBoundary.Value(), 0, "1"),
+                    new ProfileTargetSlice(Self.USEchoPattern.Value(), 0, "1"),
+                    new ProfileTargetSlice(Self.USElasticity.Value(), 0, "1"),
+                    new ProfileTargetSlice(Self.USMargin.Value(), 0, "*"),
+                    new ProfileTargetSlice(Self.USPosteriorAcousticFeatures.Value(), 0, "1"),
+                    new ProfileTargetSlice(Self.USShape.Value(), 0, "1"),
+                    new ProfileTargetSlice(Self.USVascularity.Value(), 0, "1"),
+                    };
+                    e.SliceByUrl("hasMember", targets);
+                    e.AddProfileTargets(targets);
+                }
+                else
+                {
+                    //$ XXYYZ-Slice
+                    Self.ComponentSliceObservedCount(e);
+                }
             });
     }
 }

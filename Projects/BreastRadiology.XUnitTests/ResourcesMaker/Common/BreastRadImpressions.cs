@@ -17,7 +17,7 @@ namespace BreastRadiology.XUnitTests
         StringTaskVar BreastRadImpression = new StringTaskVar(
             (out String s) =>
             {
-                SDefEditor e = ResourcesMaker.Self.CreateEditor("Impression",
+                SDefEditor e = Self.CreateEditor("Impression",
                         "Impression",
                         "Impression",
                         ClinicalImpressionUrl,
@@ -27,7 +27,7 @@ namespace BreastRadiology.XUnitTests
                             .Paragraph("Breast radiology exam clinical impression")
                             //.Todo
                     )
-                    .AddFragRef(ResourcesMaker.Self.HeaderFragment.Value())
+                    .AddFragRef(Self.HeaderFragment.Value())
                     ;
 
                 s = e.SDef.Url;

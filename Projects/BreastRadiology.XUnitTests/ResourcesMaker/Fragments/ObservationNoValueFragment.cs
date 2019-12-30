@@ -12,7 +12,7 @@ namespace BreastRadiology.XUnitTests
         StringTaskVar ObservationNoValueFragment = new StringTaskVar(
             (out String s) =>
             {
-                SDefEditor e = ResourcesMaker.Self.CreateFragment("BreastRadObservationNoValueFragment",
+                SDefEditor e = Self.CreateFragment("BreastRadObservationNoValueFragment",
                     "BreastRad Observation NoValue Fragment",
                         "NoValue/Observation/Fragment",
                     ObservationUrl)
@@ -21,17 +21,18 @@ namespace BreastRadiology.XUnitTests
                             .Paragraph("Base fragment for all BreastRad observations that have no explicit value.")
                             //.Todo
                     )
-                    .AddFragRef(ResourcesMaker.Self.ObservationFragment.Value())
-                    .AddFragRef(ResourcesMaker.Self.ObservationNoComponentFragment.Value())
+                    .AddFragRef(Self.ObservationFragment.Value())
+                    .AddFragRef(Self.ObservationNoComponentFragment.Value())
                 ;
                 s = e.SDef.Url;
-                e.Select("value[x]").Zero();
-                e.Select("interpretation").Zero();
 
                 e.IntroDoc
                     .ReviewedStatus(ReviewStatus.NotReviewed)
                     .Fragment($"Resource fragment used by observations that constrain the value[x] element to cardinality 0..0.")
                     ;
+
+                e.Select("value[x]").Zero();
+                e.Select("interpretation").Zero();
             });
     }
 }

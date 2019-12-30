@@ -12,7 +12,7 @@ namespace BreastRadiology.XUnitTests
         StringTaskVar ObservationLeafFragment = new StringTaskVar(
             (out String s) =>
             {
-                SDefEditor e = ResourcesMaker.Self.CreateFragment("ObservationLeafFragment",
+                SDefEditor e = Self.CreateFragment("ObservationLeafFragment",
                     "Observation Leaf Fragment",
                         "Observation/Leaf/Fragment",
                     ObservationUrl)
@@ -21,15 +21,16 @@ namespace BreastRadiology.XUnitTests
                             .Paragraph("Fragment that constrains observations leaf nodes (no hasMembers references).")
                             //.Todo
                     )
-                    .AddFragRef(ResourcesMaker.Self.ObservationNoComponentFragment.Value())
+                    .AddFragRef(Self.ObservationNoComponentFragment.Value())
                 ;
                 s = e.SDef.Url;
-                e.Select("hasMember").Zero();
 
                 e.IntroDoc
                     .ReviewedStatus(ReviewStatus.NotReviewed)
                     .Fragment($"Resource fragment used by resources that are leaf node observations.")
                     ;
+
+                e.Select("hasMember").Zero();
             });
 
     }

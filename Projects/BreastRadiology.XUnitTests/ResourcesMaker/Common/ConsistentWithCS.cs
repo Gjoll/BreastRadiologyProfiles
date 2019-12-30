@@ -14,13 +14,10 @@ namespace BreastRadiology.XUnitTests
 {
     partial class ResourcesMaker
     {
-        const String CodeValue = "value";
-        const String CodeQualifier = "qualifier";
-
         StringTaskVar ConsistentWith = new StringTaskVar(
             (out String s) =>
             {
-                SDefEditor e = ResourcesMaker.Self.CreateEditor("ConsistentWith",
+                SDefEditor e = Self.CreateEditor("ConsistentWith",
                         "Consistent With",
                         "Consistent/With",
                         ObservationUrl,
@@ -32,90 +29,26 @@ namespace BreastRadiology.XUnitTests
                             "There is a CodeSystem and ValueSet created solely to identify the the component slices. Is this appropriate"
                             )
                     )
-                    .AddFragRef(ResourcesMaker.Self.ObservationNoDeviceFragment.Value())
+                    .AddFragRef(Self.ObservationNoDeviceFragment.Value())
                     ;
                 s = e.SDef.Url;
                 e.Select("value[x]").Zero();
                 e.Select("interpretation").Zero();
                 e.Select("referenceRange").Zero();
 
-                ElementDefGroup component = e.GetOrCreate("component");
-                component.ElementDefinition.Min = 1;
-                component.ElementDefinition.Max = "2";
-
-                component.ElementDefinition.Slicing = new ElementDefinition.SlicingComponent
-                {
-                    Rules = ElementDefinition.SlicingRules.Open
-                };
-
-                component.ElementDefinition.Slicing.Discriminator.Add(new ElementDefinition.DiscriminatorComponent
-                {
-                    Type = ElementDefinition.DiscriminatorType.Pattern,
-                    Path = "code"
-                });
-
-                CodeSystem csSlice = ResourcesMaker.Self.ConsistentWithSliceCS.Value();
-                ValueSet vsSlice = ResourcesMaker.Self.ConsistentWithSliceVS.Value();
-
-                component.ElementDefinition.Binding(vsSlice.Url, BindingStrength.Required);
-
-                void Slice(String sliceName,
-                    String code,
-                    String valueSetUrl,
-                    BindingStrength bindingStrength)
-                {
-                    ElementDefinition slice = e.AppendSlice("component", sliceName, 1, "1");
-                    {
-                        ElementDefinition componentCode = new ElementDefinition
-                        {
-                            Path = $"{slice.Path}.code",
-                            ElementId = $"{slice.Path}:{sliceName}.code",
-                            Min = 1,
-                            Max = "1"
-                        };
-                        componentCode
-                            .Pattern(new CodeableConcept(csSlice.Url, code))
-                            ;
-                        e.InsertAfterAllChildren("component", componentCode);
-                    }
-                    {
-                        ElementDefinition valueX = new ElementDefinition
-                        {
-                            Path = $"{slice.Path}.value[x]",
-                            ElementId = $"{slice.Path}:{sliceName}.value[x]",
-                            Min = 1,
-                            Max = "1"
-                        };
-                        valueX
-                            .Binding(valueSetUrl, bindingStrength)
-                            .Type("CodeableConcept");
-                            ;
-                        e.InsertAfterAllChildren("component", valueX);
-                    }
-                    {
-                        ElementDefinition eDef = new ElementDefinition
-                        {
-                            Path = $"{slice.Path}.interpretation",
-                            ElementId = $"{slice.Path}:{sliceName}.interpretation",
-                            Min = 0,
-                            Max = "0"
-                        };
-                        e.InsertAfterAllChildren("component", eDef);
-                    }
-                    {
-                        ElementDefinition eDef = new ElementDefinition
-                        {
-                            Path = $"{slice.Path}.referenceRange",
-                            ElementId = $"{slice.Path}:{sliceName}.referenceRange",
-                            Min = 0,
-                            Max = "0"
-                        };
-                        e.InsertAfterAllChildren("component", eDef);
-                    }
-                }
-
-                Slice("value", CodeValue, ResourcesMaker.Self.ConsistentWithVS.Value().Url, BindingStrength.Extensible);
-                Slice("qualifier", CodeQualifier, ResourcesMaker.Self.ConsistentWithQualifierVS.Value().Url, BindingStrength.Required);
+                ElementDefGroup component = e.StartComponentSliceing();
+                e.ComponentSliceCodeableConcept("value",
+                    Self.ConsistentWithCodeValue.ToCodeableConcept(),
+                    Self.ConsistentWithVS.Value().Url,
+                    BindingStrength.Extensible,
+                    1,
+                    "1");
+                e.ComponentSliceCodeableConcept("qualifier",
+                    Self.ConsistentWithCodeQualifier.ToCodeableConcept(),
+                    Self.ConsistentWithQualifierVS.Value().Url,
+                    BindingStrength.Required,
+                    0,
+                    "1");
 
                 e.IntroDoc
                     .ReviewedStatus(ReviewStatus.NotReviewed)
@@ -123,60 +56,33 @@ namespace BreastRadiology.XUnitTests
                     ;
             });
 
-        CSTaskVar ConsistentWithSliceCS = new CSTaskVar(
-             () =>
-                 ResourcesMaker.Self.CreateCodeSystem(
-                        "ConsistentWithSliceCS",
-                        "ConsistentWith Slice CodeSystem",
-                        "ConsistentWithSlice/ValueSet",
-                        "ConsistentWithSlice code system",
-                        Group_CommonCodes,
-                        new ConceptDef[]
-                        {
-                            new ConceptDef(CodeValue, "Value slice", new Definition().Line("[PR]")),
-                            new ConceptDef(CodeQualifier, "qualifier", new Definition().Line("[PR]"))
-                        })
-             );
-
-        VSTaskVar ConsistentWithSliceVS = new VSTaskVar(
-            () =>
-                ResourcesMaker.Self.CreateValueSet(
-                        "ConsistentWithSliceVS",
-                        "ConsistentWithSlice ValueSet",
-                        "ConsistentWithSlice/ValueSet",
-                        "ConsistentWithSlice value set.",
-                        Group_MGCodes,
-                        ResourcesMaker.Self.ConsistentWithSliceCS.Value()
-                    )
-            );
-
         VSTaskVar ConsistentWithVS = new VSTaskVar(
             () =>
-                ResourcesMaker.Self.CreateValueSet(
+                Self.CreateValueSet(
                         "ConsistentWithVS",
                         "ConsistentWith ValueSet",
                         "ConsistentWith/ValueSet",
                         "ConsistentWith value set.",
                         Group_MGCodes,
-                        ResourcesMaker.Self.ConsistentWithCS.Value()
+                        Self.ConsistentWithCS.Value()
                     )
             );
 
         VSTaskVar ConsistentWithQualifierVS = new VSTaskVar(
             () =>
-                ResourcesMaker.Self.CreateValueSet(
+                Self.CreateValueSet(
                         "ConsistentWithQualifierVS",
                         "ConsistentWithQualifier ValueSet",
                         "ConsistentWithQualifier/ValueSet",
                         "ConsistentWithQualifier value set.",
                         Group_MGCodes,
-                        ResourcesMaker.Self.ConsistentWithQualifierCS.Value()
+                        Self.ConsistentWithQualifierCS.Value()
                     )
             );
 
         CSTaskVar ConsistentWithCS = new CSTaskVar(
             () =>
-                ResourcesMaker.Self.CreateCodeSystem(
+                Self.CreateCodeSystem(
                         "ConsistentWithCodeSystemCS",
                         "Consistent With CodeSystem",
                         "ConsistentWith/CodeSystem",
@@ -636,7 +542,7 @@ namespace BreastRadiology.XUnitTests
 
         CSTaskVar ConsistentWithQualifierCS = new CSTaskVar(
              () =>
-                 ResourcesMaker.Self.CreateCodeSystem(
+                 Self.CreateCodeSystem(
                         "ConsistentWithQualifierCS",
                         "ConsistentWith Qualifier CodeSystem",
                         "ConsistentWithQualifier/ValueSet",

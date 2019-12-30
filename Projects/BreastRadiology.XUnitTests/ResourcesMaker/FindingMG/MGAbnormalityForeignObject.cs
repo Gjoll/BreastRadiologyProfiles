@@ -16,31 +16,31 @@ namespace BreastRadiology.XUnitTests
     {
         VSTaskVar MGAbnormalityForeignObjectVS = new VSTaskVar(
             () =>
-                ResourcesMaker.Self.CreateValueSet(
+                Self.CreateValueSet(
                         "MGAbnormalitiesVS",
                         "Foreign Object ValueSet",
                         "Foreign/Object/ValueSet",
                         "Foreign objects observed during a Breast Radiology exam value set",
                         Group_MGCodes,
-                        ResourcesMaker.Self.AbnormalityForeignObjectCS.Value())
+                        Self.AbnormalityForeignObjectCS.Value())
             );
 
 
         StringTaskVar MGAbnormalityForeignObject = new StringTaskVar(
             (out String s) =>
             {
-                ValueSet binding = ResourcesMaker.Self.MGAbnormalityForeignObjectVS.Value();
+                ValueSet binding = Self.MGAbnormalityForeignObjectVS.Value();
                 {
-                    IntroDoc valueSetIntroDoc = new IntroDoc(Path.Combine(ResourcesMaker.Self.pageDir, $"ValueSet-{binding.Name}-intro.xml"));
+                    IntroDoc valueSetIntroDoc = new IntroDoc(Path.Combine(Self.pageDir, $"ValueSet-{binding.Name}-intro.xml"));
                     valueSetIntroDoc
                         .ReviewedStatus(ReviewStatus.NotReviewed)
                         .ValueSet(binding);
                     ;
                     String outputPath = valueSetIntroDoc.Save();
-                    ResourcesMaker.Self.fc?.Mark(outputPath);
+                    Self.fc?.Mark(outputPath);
                 }
 
-                SDefEditor e = ResourcesMaker.Self.CreateEditor("MGAbnormalityForeignObject",
+                SDefEditor e = Self.CreateEditor("MGAbnormalityForeignObject",
                         "Foreign Object",
                         "Foreign Object",
                         ObservationUrl,
@@ -56,20 +56,32 @@ namespace BreastRadiology.XUnitTests
                                 "are wire and wire fragment codes the same."
                             )
                     )
-                    .AddFragRef(ResourcesMaker.Self.ObservationNoDeviceFragment.Value())
-                    .AddFragRef(ResourcesMaker.Self.ObservationCodedValueFragment.Value())
-                    .AddFragRef(ResourcesMaker.Self.MGCommonTargetsFragment.Value())
+                    .AddFragRef(Self.ObservationNoDeviceFragment.Value())
+                    .AddFragRef(Self.ObservationCodedValueFragment.Value())
+                    .AddFragRef(Self.MGCommonTargetsFragment.Value())
                     ;
 
                 s = e.SDef.Url;
+
+                e.IntroDoc
+                    .ReviewedStatus(ReviewStatus.NotReviewed)
+                    .CodedObservationLeafNode("a foreign object abnormality", binding)
+                    ;
+
+                if (Self.Component_HasMember)
                 {
                     ProfileTargetSlice[] targets = new ProfileTargetSlice[]
                     {
-                    new ProfileTargetSlice(ResourcesMaker.Self.BiRadsAssessmentCategory.Value(), 0, "1"),
-                    new ProfileTargetSlice(ResourcesMaker.Self.ConsistentWith.Value(), 0, "*"),
+                    new ProfileTargetSlice(Self.BiRadsAssessmentCategory.Value(), 0, "1"),
+                    new ProfileTargetSlice(Self.ConsistentWith.Value(), 0, "*"),
                     };
                     e.SliceByUrl("hasMember", targets);
                     e.AddProfileTargets(targets);
+                }
+                else
+                {
+                    Self.ComponentSliceBiRads(e);
+                    Self.ComponentSliceConsistentWith(e);
                 }
 
                 e.Select("value[x]")
@@ -77,10 +89,6 @@ namespace BreastRadiology.XUnitTests
                     .Binding(binding.Url, BindingStrength.Required)
                     ;
                 e.AddValueSetLink(binding);
-                e.IntroDoc
-                    .ReviewedStatus(ReviewStatus.NotReviewed)
-                    .CodedObservationLeafNode("a foreign object abnormality", binding)
-                    ;
             });
     }
 }

@@ -12,7 +12,7 @@ namespace BreastRadiology.XUnitTests
         StringTaskVar AimAnnotationPolyLineFragment = new StringTaskVar(
             (out String s) =>
             {
-                SDefEditor e = ResourcesMaker.Self.CreateFragment("AimAnnotationPolyLineFragment",
+                SDefEditor e = Self.CreateFragment("AimAnnotationPolyLineFragment",
                         "Aim Annotation PolyLine Fragment",
                         "Annotation/PolyLine/Fragment",
                         ObservationUrl)
@@ -21,17 +21,19 @@ namespace BreastRadiology.XUnitTests
                         .Paragraph("This fragment adds the references for the AIM Annotation PolyLine extension.")
                         //.Todo
                      )
-                    .AddFragRef(ResourcesMaker.Self.HeaderFragment.Value())
-                    .AddExtensionLink(ResourcesMaker.Self.AimAnnotationPolyLineExtension.Value())
+                    .AddFragRef(Self.HeaderFragment.Value())
+                    .AddExtensionLink(Self.AimAnnotationPolyLineExtension.Value())
                 ;
                 s = e.SDef.Url;
+                e.IntroDoc
+                    .ReviewedStatus(ReviewStatus.NotReviewed)
+                    .Fragment($"Resource fragment that includes the Annotation PolyGonLine extension.")
+                    ;
+
                 e
-                    .ApplyExtension("polyLineAnnotation", ResourcesMaker.Self.AimAnnotationPolyLineExtension.Value(), true, false)
+                    .ApplyExtension("polyLineAnnotation", Self.AimAnnotationPolyLineExtension.Value(), true, false)
                     .Single()
                     ;
-                e.IntroDoc
-                .ReviewedStatus(ReviewStatus.NotReviewed)
-                .Fragment($"Resource fragment that includes the Annotation PolyGonLine extension.");
             });
 
 

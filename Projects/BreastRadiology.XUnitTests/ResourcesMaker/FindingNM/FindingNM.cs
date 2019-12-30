@@ -16,7 +16,7 @@ namespace BreastRadiology.XUnitTests
         StringTaskVar FindingNM = new StringTaskVar(
             (out String s) =>
             {
-                SDefEditor e = ResourcesMaker.Self.CreateEditor("NMFinding",
+                SDefEditor e = Self.CreateEditor("NMFinding",
                         "NM Finding",
                         "NM Finding",
                         ObservationUrl,
@@ -27,9 +27,15 @@ namespace BreastRadiology.XUnitTests
                                 "Device Metrics detailing the observation devices parameters (transducer freq, etc)."
                                 )
                         )
-                    .AddFragRef(ResourcesMaker.Self.ObservationSectionFragment.Value())
+                    .AddFragRef(Self.ObservationSectionFragment.Value())
                     ;
                 s = e.SDef.Url;
+
+                e.IntroDoc
+                    .ReviewedStatus(ReviewStatus.NotReviewed)
+                    .ObservationSection("MRI Finding")
+                    ;
+
                 e.Select("value[x]").Zero();
                 ////$ todo. Incorrect method!!!
                 //e.Find("method")
@@ -37,27 +43,19 @@ namespace BreastRadiology.XUnitTests
                 // .Card(1, "*")
                 // ;
 
+                if (Self.Component_HasMember)
                 {
                     ProfileTargetSlice[] targets = new ProfileTargetSlice[]
                     {
-                    //new ProfileTargetSlice(ResourcesMaker.Self.NMBreastDensity(), 1, "1"),
-                    new ProfileTargetSlice(ResourcesMaker.Self.NMMass.Value(), 0, "*"),
-                    //new ProfileTargetSlice(ResourcesMaker.Self.NMCalcification(), 0, "*"),
-                    //new ProfileTargetSlice(ResourcesMaker.Self.NMArchitecturalDistortion(), 0, "1"),
-                    //new ProfileTargetSlice(ResourcesMaker.Self.NMAsymmetries(), 0, "*"),
-                    //new ProfileTargetSlice(ResourcesMaker.Self.NMIntramammaryLymphNode(), 0, "1"),
-                    //new ProfileTargetSlice(ResourcesMaker.Self.NMSkinLesion(), 0, "*"),
-                    //new ProfileTargetSlice(ResourcesMaker.Self.NMSolitaryDilatedDuct(), 0, "1"),
-                    //new ProfileTargetSlice(ResourcesMaker.Self.NMAssociatedFeatures(), 0, "1")
+                    new ProfileTargetSlice(Self.NMMass.Value(), 0, "*"),
                     };
                     e.SliceByUrl("hasMember", targets);
                     e.AddProfileTargets(targets);
                 }
-
-                e.IntroDoc
-                    .ReviewedStatus(ReviewStatus.NotReviewed)
-                    .ObservationSection("MRI Finding")
-                    ;
+                else
+                {
+                    //$ XXYYZ-Slice
+                }
             });
     }
 }

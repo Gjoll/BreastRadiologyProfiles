@@ -16,7 +16,7 @@ namespace BreastRadiology.XUnitTests
         StringTaskVar MGAssociatedFeatures = new StringTaskVar(
             (out String s) =>
             {
-                SDefEditor e = ResourcesMaker.Self.CreateEditor("MGAssociatedFeatures",
+                SDefEditor e = Self.CreateEditor("MGAssociatedFeatures",
                         "Mammography Associated Features",
                         "MG Associated/Features",
                         ObservationUrl,
@@ -29,27 +29,27 @@ namespace BreastRadiology.XUnitTests
                                 "check Cardinality of the following Observation.hasMember targets?"
                             )
                      )
-                    .AddFragRef(ResourcesMaker.Self.ObservationNoDeviceFragment.Value())
-                    .AddFragRef(ResourcesMaker.Self.ObservationNoValueFragment.Value())
+                    .AddFragRef(Self.ObservationNoDeviceFragment.Value())
+                    .AddFragRef(Self.ObservationNoValueFragment.Value())
                     ;
                 s = e.SDef.Url;
-                {
-                    ProfileTargetSlice[] targets = new ProfileTargetSlice[]
-                    {
-                    new ProfileTargetSlice(ResourcesMaker.Self.MGSkinRetraction.Value(), 0, "1"),
-                    new ProfileTargetSlice(ResourcesMaker.Self.MGNippleRetraction.Value(), 0, "1"),
-                    new ProfileTargetSlice(ResourcesMaker.Self.MGSkinThickening.Value(), 0, "*"),
-                    new ProfileTargetSlice(ResourcesMaker.Self.MGAxillaryAdenopathy.Value(), 0, "1"),
-                    new ProfileTargetSlice(ResourcesMaker.Self.MGAbnormalityArchitecturalDistortion.Value(), 0, "*"),
-                    new ProfileTargetSlice(ResourcesMaker.Self.MGAbnormalityCalcification.Value(), 0, "*")
-                    };
-                    e.SliceByUrl("hasMember", targets);
-                    e.AddProfileTargets(targets);
-                }
+
                 e.IntroDoc
                     .ReviewedStatus(ReviewStatus.NotReviewed)
                     .ObservationSection("Mammography Associated Features")
                     ;
+
+                ProfileTargetSlice[] targets = new ProfileTargetSlice[]
+                {
+                    new ProfileTargetSlice(Self.MGSkinRetraction.Value(), 0, "1"),
+                    new ProfileTargetSlice(Self.MGNippleRetraction.Value(), 0, "1"),
+                    new ProfileTargetSlice(Self.MGSkinThickening.Value(), 0, "*"),
+                    new ProfileTargetSlice(Self.MGAxillaryAdenopathy.Value(), 0, "1"),
+                    new ProfileTargetSlice(Self.MGAbnormalityArchitecturalDistortion.Value(), 0, "*"),
+                    new ProfileTargetSlice(Self.MGAbnormalityCalcification.Value(), 0, "*")
+                };
+                e.SliceByUrl("hasMember", targets);
+                e.AddProfileTargets(targets);
             });
     }
 }

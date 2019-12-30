@@ -17,18 +17,18 @@ namespace BreastRadiology.XUnitTests
         StringTaskVar BiRadsAssessmentCategory = new StringTaskVar(
             (out String s) =>
             {
-                ValueSet binding = ResourcesMaker.Self.VSBiRadsAssessmentCategories.Value();
+                ValueSet binding = Self.BiRadsAssessmentCategoriesVS.Value();
                 {
-                    IntroDoc valueSetIntroDoc = new IntroDoc(Path.Combine(ResourcesMaker.Self.pageDir, $"ValueSet-{binding.Name}-intro.xml"));
+                    IntroDoc valueSetIntroDoc = new IntroDoc(Path.Combine(Self.pageDir, $"ValueSet-{binding.Name}-intro.xml"));
                     valueSetIntroDoc
                         .ReviewedStatus(ReviewStatus.NotReviewed)
                         .ValueSet(binding);
                     ;
                     String outputPath = valueSetIntroDoc.Save();
-                    ResourcesMaker.Self.fc?.Mark(outputPath);
+                    Self.fc?.Mark(outputPath);
                 }
 
-                SDefEditor e = ResourcesMaker.Self.CreateEditor("BiRadsAssessmentCategory",
+                SDefEditor e = Self.CreateEditor("BiRadsAssessmentCategory",
                         "BiRads Assessment Category",
                         "BiRads Code",
                         ObservationUrl,
@@ -47,26 +47,28 @@ namespace BreastRadiology.XUnitTests
                             .BiradFooter()
                             //.Todo
                     )
-                    .AddFragRef(ResourcesMaker.Self.ObservationNoDeviceFragment.Value())
-                    .AddFragRef(ResourcesMaker.Self.ObservationCodedValueFragment.Value())
-                    .AddFragRef(ResourcesMaker.Self.ObservationLeafFragment.Value())
+                    .AddFragRef(Self.ObservationNoDeviceFragment.Value())
+                    .AddFragRef(Self.ObservationCodedValueFragment.Value())
+                    .AddFragRef(Self.ObservationLeafFragment.Value())
                     ;
 
                 s = e.SDef.Url;
+
+                e.IntroDoc
+                    .ReviewedStatus(ReviewStatus.NotReviewed)
+                    .CodedObservationLeafNode("a BiRad Assessment Category", binding);
+
                 e.Select("value[x]")
                     .Type("CodeableConcept")
                     .Binding(binding.Url, BindingStrength.Required)
                     ;
                 e.AddValueSetLink(binding);
-                e.IntroDoc
-                    .ReviewedStatus(ReviewStatus.NotReviewed)
-                    .CodedObservationLeafNode("a BiRad Assessment Category", binding);
             });
 
 
-        CSTaskVar CSBiRadsAssessmentCategories = new CSTaskVar(
+        CSTaskVar BiRadsAssessmentCategoriesCS = new CSTaskVar(
             () =>
-                ResourcesMaker.Self.CreateCodeSystem(
+                Self.CreateCodeSystem(
                         "BiRadsAssessmentCategoriesCS",
                         "BiRads(r) Assessment Category Codes CodeSystem",
                         "BiRads/CodeSystem",
@@ -127,15 +129,15 @@ namespace BreastRadiology.XUnitTests
                         })
                     );
 
-        VSTaskVar VSBiRadsAssessmentCategories = new VSTaskVar(
+        VSTaskVar BiRadsAssessmentCategoriesVS = new VSTaskVar(
             () =>
-                ResourcesMaker.Self.CreateValueSet(
+                Self.CreateValueSet(
                         "BiRadsAssessmentCategoriesVS",
                         "BiRads(r) Assessment Category ValueSet",
                         "BiRads/ValueSet",
                         "BiRads(r) Assessment Category value set.",
                         Group_CommonCodes,
-                        ResourcesMaker.Self.CSBiRadsAssessmentCategories.Value())
+                        Self.BiRadsAssessmentCategoriesCS.Value())
             );
     }
 }

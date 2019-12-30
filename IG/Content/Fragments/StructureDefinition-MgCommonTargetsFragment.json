@@ -20,38 +20,6 @@
     {
       "url": "http://www.fragment.com/maplink",
       "valueString": "fragment|True|http://hl7.org/fhir/us/breast-radiology/StructureDefinition/BreastBodyLocationRequiredFragment"
-    },
-    {
-      "url": "http://www.fragment.com/maplink",
-      "valueString": "target|False|http://hl7.org/fhir/us/breast-radiology/StructureDefinition/BiRadsAssessmentCategory"
-    },
-    {
-      "url": "http://www.fragment.com/maplink",
-      "valueString": "target|False|http://hl7.org/fhir/us/breast-radiology/StructureDefinition/ObservedChangeInDefinition"
-    },
-    {
-      "url": "http://www.fragment.com/maplink",
-      "valueString": "target|False|http://hl7.org/fhir/us/breast-radiology/StructureDefinition/ObservedChangeInNumber"
-    },
-    {
-      "url": "http://www.fragment.com/maplink",
-      "valueString": "target|False|http://hl7.org/fhir/us/breast-radiology/StructureDefinition/ObservedChangeInProminance"
-    },
-    {
-      "url": "http://www.fragment.com/maplink",
-      "valueString": "target|False|http://hl7.org/fhir/us/breast-radiology/StructureDefinition/ObservedChangeInSize"
-    },
-    {
-      "url": "http://www.fragment.com/maplink",
-      "valueString": "target|False|http://hl7.org/fhir/us/breast-radiology/StructureDefinition/ObservedChangeInState"
-    },
-    {
-      "url": "http://www.fragment.com/maplink",
-      "valueString": "target|False|http://hl7.org/fhir/us/breast-radiology/StructureDefinition/ObservedSize"
-    },
-    {
-      "url": "http://www.fragment.com/maplink",
-      "valueString": "target|False|http://hl7.org/fhir/us/breast-radiology/StructureDefinition/Orientation"
     }
   ],
   "url": "http://hl7.org/fhir/us/breast-radiology/StructureDefinition/MgCommonTargetsFragment",
@@ -76,185 +44,585 @@
         "max": "*"
       },
       {
-        "id": "Observation.hasMember",
-        "path": "Observation.hasMember",
+        "id": "Observation.component",
+        "path": "Observation.component",
         "slicing": {
           "discriminator": [
             {
-              "type": "value",
-              "path": "url"
+              "type": "pattern",
+              "path": "code"
             }
           ],
-          "ordered": true,
-          "rules": "openAtEnd"
+          "rules": "open"
         },
         "min": 0,
         "max": "*",
         "base": {
-          "path": "Observation.hasMember",
+          "path": "Observation.component",
           "min": 0,
           "max": "*"
         }
       },
       {
-        "id": "Observation.hasMember:biRadsAssessmentCategory",
-        "path": "Observation.hasMember",
+        "id": "Observation.component:biRadsAssessmentCategory",
+        "path": "Observation.component",
         "sliceName": "biRadsAssessmentCategory",
         "min": 0,
         "max": "1",
         "base": {
-          "path": "Observation.hasMember",
+          "path": "Observation.component",
+          "min": 0,
+          "max": "*"
+        }
+      },
+      {
+        "id": "Observation.component:biRadsAssessmentCategory.code",
+        "path": "Observation.component.code",
+        "min": 1,
+        "max": "1",
+        "base": {
+          "path": "Observation.component",
+          "min": 0,
+          "max": "*"
+        },
+        "patternCodeableConcept": {
+          "coding": [
+            {
+              "system": "http://hl7.org/fhir/us/breast-radiology/CodeSystem/ComponentSliceCodes",
+              "code": "targetBiRads"
+            }
+          ]
+        }
+      },
+      {
+        "id": "Observation.component:biRadsAssessmentCategory.value[x]",
+        "path": "Observation.component.value[x]",
+        "min": 1,
+        "max": "1",
+        "base": {
+          "path": "Observation.component",
           "min": 0,
           "max": "*"
         },
         "type": [
           {
-            "code": "Reference",
-            "targetProfile": [
-              "http://hl7.org/fhir/us/breast-radiology/StructureDefinition/BiRadsAssessmentCategory"
-            ]
+            "code": "CodeableConcept"
           }
-        ]
+        ],
+        "binding": {
+          "strength": "required",
+          "valueSet": "http://hl7.org/fhir/us/breast-radiology/CodeSystem/BiRadsAssessmentCategoriesCS"
+        }
       },
       {
-        "id": "Observation.hasMember:observedChangeInDefinition",
-        "path": "Observation.hasMember",
+        "id": "Observation.component:biRadsAssessmentCategory.interpretation",
+        "path": "Observation.component.interpretation",
+        "min": 0,
+        "max": "0",
+        "base": {
+          "path": "Observation.component",
+          "min": 0,
+          "max": "*"
+        }
+      },
+      {
+        "id": "Observation.component:biRadsAssessmentCategory.referenceRange",
+        "path": "Observation.component.referenceRange",
+        "min": 0,
+        "max": "0",
+        "base": {
+          "path": "Observation.component",
+          "min": 0,
+          "max": "*"
+        }
+      },
+      {
+        "id": "Observation.component:observedChangeInDefinition",
+        "path": "Observation.component",
         "sliceName": "observedChangeInDefinition",
         "min": 0,
         "max": "1",
         "base": {
-          "path": "Observation.hasMember",
+          "path": "Observation.component",
+          "min": 0,
+          "max": "*"
+        }
+      },
+      {
+        "id": "Observation.component:observedChangeInDefinition.code",
+        "path": "Observation.component.code",
+        "min": 1,
+        "max": "1",
+        "base": {
+          "path": "Observation.component",
+          "min": 0,
+          "max": "*"
+        },
+        "patternCodeableConcept": {
+          "coding": [
+            {
+              "system": "http://hl7.org/fhir/us/breast-radiology/CodeSystem/ComponentSliceCodes",
+              "code": "observedChangeInDefinition"
+            }
+          ]
+        }
+      },
+      {
+        "id": "Observation.component:observedChangeInDefinition.value[x]",
+        "path": "Observation.component.value[x]",
+        "min": 1,
+        "max": "1",
+        "base": {
+          "path": "Observation.component",
           "min": 0,
           "max": "*"
         },
         "type": [
           {
-            "code": "Reference",
-            "targetProfile": [
-              "http://hl7.org/fhir/us/breast-radiology/StructureDefinition/ObservedChangeInDefinition"
-            ]
+            "code": "CodeableConcept"
           }
-        ]
+        ],
+        "binding": {
+          "strength": "required",
+          "valueSet": "http://hl7.org/fhir/us/breast-radiology/CodeSystem/ObservedChangeInDefinitionCS"
+        }
       },
       {
-        "id": "Observation.hasMember:observedChangeInNumber",
-        "path": "Observation.hasMember",
+        "id": "Observation.component:observedChangeInDefinition.interpretation",
+        "path": "Observation.component.interpretation",
+        "min": 0,
+        "max": "0",
+        "base": {
+          "path": "Observation.component",
+          "min": 0,
+          "max": "*"
+        }
+      },
+      {
+        "id": "Observation.component:observedChangeInDefinition.referenceRange",
+        "path": "Observation.component.referenceRange",
+        "min": 0,
+        "max": "0",
+        "base": {
+          "path": "Observation.component",
+          "min": 0,
+          "max": "*"
+        }
+      },
+      {
+        "id": "Observation.component:observedChangeInNumber",
+        "path": "Observation.component",
         "sliceName": "observedChangeInNumber",
         "min": 0,
         "max": "1",
         "base": {
-          "path": "Observation.hasMember",
+          "path": "Observation.component",
+          "min": 0,
+          "max": "*"
+        }
+      },
+      {
+        "id": "Observation.component:observedChangeInNumber.code",
+        "path": "Observation.component.code",
+        "min": 1,
+        "max": "1",
+        "base": {
+          "path": "Observation.component",
+          "min": 0,
+          "max": "*"
+        },
+        "patternCodeableConcept": {
+          "coding": [
+            {
+              "system": "http://hl7.org/fhir/us/breast-radiology/CodeSystem/ComponentSliceCodes",
+              "code": "observedChangeInNumber"
+            }
+          ]
+        }
+      },
+      {
+        "id": "Observation.component:observedChangeInNumber.value[x]",
+        "path": "Observation.component.value[x]",
+        "min": 1,
+        "max": "1",
+        "base": {
+          "path": "Observation.component",
           "min": 0,
           "max": "*"
         },
         "type": [
           {
-            "code": "Reference",
-            "targetProfile": [
-              "http://hl7.org/fhir/us/breast-radiology/StructureDefinition/ObservedChangeInNumber"
-            ]
+            "code": "CodeableConcept"
           }
-        ]
+        ],
+        "binding": {
+          "strength": "required",
+          "valueSet": "http://hl7.org/fhir/us/breast-radiology/CodeSystem/ObservedChangeInNumberCS"
+        }
       },
       {
-        "id": "Observation.hasMember:observedChangeInProminance",
-        "path": "Observation.hasMember",
+        "id": "Observation.component:observedChangeInNumber.interpretation",
+        "path": "Observation.component.interpretation",
+        "min": 0,
+        "max": "0",
+        "base": {
+          "path": "Observation.component",
+          "min": 0,
+          "max": "*"
+        }
+      },
+      {
+        "id": "Observation.component:observedChangeInNumber.referenceRange",
+        "path": "Observation.component.referenceRange",
+        "min": 0,
+        "max": "0",
+        "base": {
+          "path": "Observation.component",
+          "min": 0,
+          "max": "*"
+        }
+      },
+      {
+        "id": "Observation.component:observedChangeInProminance",
+        "path": "Observation.component",
         "sliceName": "observedChangeInProminance",
         "min": 0,
         "max": "1",
         "base": {
-          "path": "Observation.hasMember",
+          "path": "Observation.component",
+          "min": 0,
+          "max": "*"
+        }
+      },
+      {
+        "id": "Observation.component:observedChangeInProminance.code",
+        "path": "Observation.component.code",
+        "min": 1,
+        "max": "1",
+        "base": {
+          "path": "Observation.component",
+          "min": 0,
+          "max": "*"
+        },
+        "patternCodeableConcept": {
+          "coding": [
+            {
+              "system": "http://hl7.org/fhir/us/breast-radiology/CodeSystem/ComponentSliceCodes",
+              "code": "observedChangeInProminance"
+            }
+          ]
+        }
+      },
+      {
+        "id": "Observation.component:observedChangeInProminance.value[x]",
+        "path": "Observation.component.value[x]",
+        "min": 1,
+        "max": "1",
+        "base": {
+          "path": "Observation.component",
           "min": 0,
           "max": "*"
         },
         "type": [
           {
-            "code": "Reference",
-            "targetProfile": [
-              "http://hl7.org/fhir/us/breast-radiology/StructureDefinition/ObservedChangeInProminance"
-            ]
+            "code": "CodeableConcept"
           }
-        ]
+        ],
+        "binding": {
+          "strength": "required",
+          "valueSet": "http://hl7.org/fhir/us/breast-radiology/CodeSystem/ObservedChangeInProminanceCS"
+        }
       },
       {
-        "id": "Observation.hasMember:observedChangeInSize",
-        "path": "Observation.hasMember",
+        "id": "Observation.component:observedChangeInProminance.interpretation",
+        "path": "Observation.component.interpretation",
+        "min": 0,
+        "max": "0",
+        "base": {
+          "path": "Observation.component",
+          "min": 0,
+          "max": "*"
+        }
+      },
+      {
+        "id": "Observation.component:observedChangeInProminance.referenceRange",
+        "path": "Observation.component.referenceRange",
+        "min": 0,
+        "max": "0",
+        "base": {
+          "path": "Observation.component",
+          "min": 0,
+          "max": "*"
+        }
+      },
+      {
+        "id": "Observation.component:observedChangeInSize",
+        "path": "Observation.component",
         "sliceName": "observedChangeInSize",
         "min": 0,
         "max": "1",
         "base": {
-          "path": "Observation.hasMember",
+          "path": "Observation.component",
+          "min": 0,
+          "max": "*"
+        }
+      },
+      {
+        "id": "Observation.component:observedChangeInSize.code",
+        "path": "Observation.component.code",
+        "min": 1,
+        "max": "1",
+        "base": {
+          "path": "Observation.component",
+          "min": 0,
+          "max": "*"
+        },
+        "patternCodeableConcept": {
+          "coding": [
+            {
+              "system": "http://hl7.org/fhir/us/breast-radiology/CodeSystem/ComponentSliceCodes",
+              "code": "observedChangeInSize"
+            }
+          ]
+        }
+      },
+      {
+        "id": "Observation.component:observedChangeInSize.value[x]",
+        "path": "Observation.component.value[x]",
+        "min": 1,
+        "max": "1",
+        "base": {
+          "path": "Observation.component",
           "min": 0,
           "max": "*"
         },
         "type": [
           {
-            "code": "Reference",
-            "targetProfile": [
-              "http://hl7.org/fhir/us/breast-radiology/StructureDefinition/ObservedChangeInSize"
-            ]
+            "code": "CodeableConcept"
           }
-        ]
+        ],
+        "binding": {
+          "strength": "required",
+          "valueSet": "http://hl7.org/fhir/us/breast-radiology/CodeSystem/ObservedChangeInSizeCS"
+        }
       },
       {
-        "id": "Observation.hasMember:observedChangeInState",
-        "path": "Observation.hasMember",
+        "id": "Observation.component:observedChangeInSize.interpretation",
+        "path": "Observation.component.interpretation",
+        "min": 0,
+        "max": "0",
+        "base": {
+          "path": "Observation.component",
+          "min": 0,
+          "max": "*"
+        }
+      },
+      {
+        "id": "Observation.component:observedChangeInSize.referenceRange",
+        "path": "Observation.component.referenceRange",
+        "min": 0,
+        "max": "0",
+        "base": {
+          "path": "Observation.component",
+          "min": 0,
+          "max": "*"
+        }
+      },
+      {
+        "id": "Observation.component:observedChangeInState",
+        "path": "Observation.component",
         "sliceName": "observedChangeInState",
         "min": 0,
         "max": "1",
         "base": {
-          "path": "Observation.hasMember",
+          "path": "Observation.component",
+          "min": 0,
+          "max": "*"
+        }
+      },
+      {
+        "id": "Observation.component:observedChangeInState.code",
+        "path": "Observation.component.code",
+        "min": 1,
+        "max": "1",
+        "base": {
+          "path": "Observation.component",
+          "min": 0,
+          "max": "*"
+        },
+        "patternCodeableConcept": {
+          "coding": [
+            {
+              "system": "http://hl7.org/fhir/us/breast-radiology/CodeSystem/ComponentSliceCodes",
+              "code": "observedChangeInState"
+            }
+          ]
+        }
+      },
+      {
+        "id": "Observation.component:observedChangeInState.value[x]",
+        "path": "Observation.component.value[x]",
+        "min": 1,
+        "max": "1",
+        "base": {
+          "path": "Observation.component",
           "min": 0,
           "max": "*"
         },
         "type": [
           {
-            "code": "Reference",
-            "targetProfile": [
-              "http://hl7.org/fhir/us/breast-radiology/StructureDefinition/ObservedChangeInState"
-            ]
+            "code": "CodeableConcept"
           }
-        ]
+        ],
+        "binding": {
+          "strength": "required",
+          "valueSet": "http://hl7.org/fhir/us/breast-radiology/CodeSystem/ObservedChangeInStateCS"
+        }
       },
       {
-        "id": "Observation.hasMember:observedSize",
-        "path": "Observation.hasMember",
+        "id": "Observation.component:observedChangeInState.interpretation",
+        "path": "Observation.component.interpretation",
+        "min": 0,
+        "max": "0",
+        "base": {
+          "path": "Observation.component",
+          "min": 0,
+          "max": "*"
+        }
+      },
+      {
+        "id": "Observation.component:observedChangeInState.referenceRange",
+        "path": "Observation.component.referenceRange",
+        "min": 0,
+        "max": "0",
+        "base": {
+          "path": "Observation.component",
+          "min": 0,
+          "max": "*"
+        }
+      },
+      {
+        "id": "Observation.component:observedSize",
+        "path": "Observation.component",
         "sliceName": "observedSize",
         "min": 0,
         "max": "1",
         "base": {
-          "path": "Observation.hasMember",
+          "path": "Observation.component",
+          "min": 0,
+          "max": "*"
+        }
+      },
+      {
+        "id": "Observation.component:observedSize.value[x]",
+        "path": "Observation.component.value[x]",
+        "min": 1,
+        "max": "1",
+        "base": {
+          "path": "Observation.component",
           "min": 0,
           "max": "*"
         },
         "type": [
           {
-            "code": "Reference",
-            "targetProfile": [
-              "http://hl7.org/fhir/us/breast-radiology/StructureDefinition/ObservedSize"
-            ]
+            "code": "Quantity"
           }
         ]
       },
       {
-        "id": "Observation.hasMember:orientation",
-        "path": "Observation.hasMember",
+        "id": "Observation.component:observedSize.interpretation",
+        "path": "Observation.component.interpretation",
+        "min": 0,
+        "max": "0",
+        "base": {
+          "path": "Observation.component",
+          "min": 0,
+          "max": "*"
+        }
+      },
+      {
+        "id": "Observation.component:observedSize.referenceRange",
+        "path": "Observation.component.referenceRange",
+        "min": 0,
+        "max": "0",
+        "base": {
+          "path": "Observation.component",
+          "min": 0,
+          "max": "*"
+        }
+      },
+      {
+        "id": "Observation.component:orientation",
+        "path": "Observation.component",
         "sliceName": "orientation",
         "min": 0,
         "max": "1",
         "base": {
-          "path": "Observation.hasMember",
+          "path": "Observation.component",
+          "min": 0,
+          "max": "*"
+        }
+      },
+      {
+        "id": "Observation.component:orientation.code",
+        "path": "Observation.component.code",
+        "min": 1,
+        "max": "1",
+        "base": {
+          "path": "Observation.component",
+          "min": 0,
+          "max": "*"
+        },
+        "patternCodeableConcept": {
+          "coding": [
+            {
+              "system": "http://hl7.org/fhir/us/breast-radiology/CodeSystem/ComponentSliceCodes",
+              "code": "orientation"
+            }
+          ]
+        }
+      },
+      {
+        "id": "Observation.component:orientation.value[x]",
+        "path": "Observation.component.value[x]",
+        "min": 1,
+        "max": "1",
+        "base": {
+          "path": "Observation.component",
           "min": 0,
           "max": "*"
         },
         "type": [
           {
-            "code": "Reference",
-            "targetProfile": [
-              "http://hl7.org/fhir/us/breast-radiology/StructureDefinition/Orientation"
-            ]
+            "code": "CodeableConcept"
           }
-        ]
+        ],
+        "binding": {
+          "strength": "required",
+          "valueSet": "http://hl7.org/fhir/us/breast-radiology/CodeSystem/OrientationCS"
+        }
+      },
+      {
+        "id": "Observation.component:orientation.interpretation",
+        "path": "Observation.component.interpretation",
+        "min": 0,
+        "max": "0",
+        "base": {
+          "path": "Observation.component",
+          "min": 0,
+          "max": "*"
+        }
+      },
+      {
+        "id": "Observation.component:orientation.referenceRange",
+        "path": "Observation.component.referenceRange",
+        "min": 0,
+        "max": "0",
+        "base": {
+          "path": "Observation.component",
+          "min": 0,
+          "max": "*"
+        }
       }
     ]
   }

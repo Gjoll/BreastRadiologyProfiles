@@ -12,7 +12,7 @@ namespace BreastRadiology.XUnitTests
         StringTaskVar BooleanValueObservationFragment = new StringTaskVar(
             (out String s) =>
             {
-                SDefEditor e = ResourcesMaker.Self.CreateFragment("BooleanValueObservationFragment",
+                SDefEditor e = Self.CreateFragment("BooleanValueObservationFragment",
                         "BooleanValue Observation Fragment",
                         "Observation/BooleanValue/Fragment",
                         ObservationUrl)
@@ -21,19 +21,20 @@ namespace BreastRadiology.XUnitTests
                         .Paragraph("Fragment that constrains an observation to contains only a boolean value.")
                         //.Todo
                         )
-                    .AddFragRef(ResourcesMaker.Self.ObservationNoComponentFragment.Value())
+                    .AddFragRef(Self.ObservationNoComponentFragment.Value())
                     ;
                 s = e.SDef.Url;
-                e.Select("value[x]")
-                    .Type("boolean")
-                    ;
-
-                e.AddIncompatibleFragment(ResourcesMaker.Self.ObservationNoValueFragment.Value());
 
                 e.IntroDoc
                     .ReviewedStatus(ReviewStatus.NotReviewed)
                     .Fragment($"Resource fragment used to by all observations whose value are a Boolean.")
                     ;
+
+                e.Select("value[x]")
+                    .Type("boolean")
+                    ;
+
+                e.AddIncompatibleFragment(Self.ObservationNoValueFragment.Value());
             });
 
     }

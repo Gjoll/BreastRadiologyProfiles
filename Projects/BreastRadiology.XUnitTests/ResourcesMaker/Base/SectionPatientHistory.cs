@@ -16,7 +16,7 @@ namespace BreastRadiology.XUnitTests
         StringTaskVar SectionPatientHistory = new StringTaskVar(
             (out String s) =>
             {
-                SDefEditor e = ResourcesMaker.Self.CreateEditor("SectionPatientHistory",
+                SDefEditor e = Self.CreateEditor("SectionPatientHistory",
                         "Patient History",
                         "Patient History",
                         ObservationUrl,
@@ -29,17 +29,18 @@ namespace BreastRadiology.XUnitTests
                             "What resources comprise a patient history. Currently we can only reference observations - this is probably inadequate"
                             )
                     )
-                    .AddFragRef(ResourcesMaker.Self.ObservationNoDeviceFragment.Value())
-                    .AddFragRef(ResourcesMaker.Self.ObservationSectionFragment.Value())
+                    .AddFragRef(Self.ObservationNoDeviceFragment.Value())
+                    .AddFragRef(Self.ObservationSectionFragment.Value())
                     ;
                 s = e.SDef.Url;
-                e.Select("value[x]").Zero();
-                e.Select("bodySite").Zero();
 
                 e.IntroDoc
                      .ReviewedStatus(ReviewStatus.NotReviewed)
                      .ObservationSection($"Patient History")
                      ;
+
+                e.Select("value[x]").Zero();
+                e.Select("bodySite").Zero();
             });
     }
 }

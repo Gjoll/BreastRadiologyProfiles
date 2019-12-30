@@ -145,22 +145,6 @@
     </resource>
     <resource>
       <reference>
-        <reference value="CodeSystem/ConsistentWithQualifierCS" />
-      </reference>
-      <name value="ConsistentWith Qualifier CodeSystem" />
-      <description value="ConsistentWithQualifier  code system" />
-      <exampleBoolean value="false" />
-    </resource>
-    <resource>
-      <reference>
-        <reference value="CodeSystem/ConsistentWithSliceCS" />
-      </reference>
-      <name value="ConsistentWith Slice CodeSystem" />
-      <description value="ConsistentWithSlice code system" />
-      <exampleBoolean value="false" />
-    </resource>
-    <resource>
-      <reference>
         <reference value="CodeSystem/FibroadenomaCodeSystemCS" />
       </reference>
       <name value="Fibroadenoma CodeSystem" />
@@ -173,14 +157,6 @@
       </reference>
       <name value="Foreign Object CodeSystem" />
       <description value="Foreign objects observed during a Breast Radiology exam code system." />
-      <exampleBoolean value="false" />
-    </resource>
-    <resource>
-      <reference>
-        <reference value="CodeSystem/HilumCodeSystemCS" />
-      </reference>
-      <name value="Hilum CodeSystem" />
-      <description value="Hilum values code system." />
       <exampleBoolean value="false" />
     </resource>
     <resource>
@@ -273,22 +249,6 @@
     </resource>
     <resource>
       <reference>
-        <reference value="CodeSystem/MRIMarginCS" />
-      </reference>
-      <name value="MRI Margin CodeSystem" />
-      <description value="MRI margin code system." />
-      <exampleBoolean value="false" />
-    </resource>
-    <resource>
-      <reference>
-        <reference value="CodeSystem/NMMarginCS" />
-      </reference>
-      <name value="NM Margin CodeSystem" />
-      <description value="NM margin code system." />
-      <exampleBoolean value="false" />
-    </resource>
-    <resource>
-      <reference>
         <reference value="CodeSystem/ObservedChangeInDefinitionCS" />
       </reference>
       <name value="Observed Changes  CodeSystem" />
@@ -345,62 +305,6 @@
     </resource>
     <resource>
       <reference>
-        <reference value="CodeSystem/USBoundaryCS" />
-      </reference>
-      <name value="UltraSound Boundary CodeSystem" />
-      <description value="Ultra Sound Boundary code system." />
-      <exampleBoolean value="false" />
-    </resource>
-    <resource>
-      <reference>
-        <reference value="CodeSystem/USEchoPatternCS" />
-      </reference>
-      <name value="US Echo Pattern CodeSystem" />
-      <description value="Ultra-sound mass echo pattern code system." />
-      <exampleBoolean value="false" />
-    </resource>
-    <resource>
-      <reference>
-        <reference value="CodeSystem/USElasticityCS" />
-      </reference>
-      <name value="US Echo Pattern CodeSystem" />
-      <description value="Ultra-sound Elasticity code system." />
-      <exampleBoolean value="false" />
-    </resource>
-    <resource>
-      <reference>
-        <reference value="CodeSystem/USPosteriorAcousticFeaturesCS" />
-      </reference>
-      <name value="US Posterior Acoustic Features CodeSystem" />
-      <description value="Ultra-sound mass Posterior acoustic features code system." />
-      <exampleBoolean value="false" />
-    </resource>
-    <resource>
-      <reference>
-        <reference value="CodeSystem/USTissueCompositionCS" />
-      </reference>
-      <name value="US Tissue Composition CodeSystem" />
-      <description value="Ultra-sound breast tissue composition code system." />
-      <exampleBoolean value="false" />
-    </resource>
-    <resource>
-      <reference>
-        <reference value="CodeSystem/USVascularityCS" />
-      </reference>
-      <name value="US Echo Pattern CodeSystem" />
-      <description value="Ultra-sound Vascularity code system." />
-      <exampleBoolean value="false" />
-    </resource>
-    <resource>
-      <reference>
-        <reference value="ValueSet/BiRadsAssessmentCategoriesVS" />
-      </reference>
-      <name value="BiRads(r) Assessment Category ValueSet ValueSet" />
-      <description value="BiRads(r) Assessment Category value set." />
-      <exampleBoolean value="false" />
-    </resource>
-    <resource>
-      <reference>
         <reference value="ValueSet/BreastLocationClockVS" />
       </reference>
       <name value="Breast Location Clock ValueSet ValueSet" />
@@ -433,74 +337,10 @@
     </resource>
     <resource>
       <reference>
-        <reference value="ValueSet/ConsistentWithQualifierVS" />
-      </reference>
-      <name value="ConsistentWithQualifier ValueSet ValueSet" />
-      <description value="ConsistentWithQualifier value set." />
-      <exampleBoolean value="false" />
-    </resource>
-    <resource>
-      <reference>
-        <reference value="ValueSet/ConsistentWithSliceVS" />
-      </reference>
-      <name value="ConsistentWithSlice ValueSet ValueSet" />
-      <description value="ConsistentWithSlice value set." />
-      <exampleBoolean value="false" />
-    </resource>
-    <resource>
-      <reference>
-        <reference value="ValueSet/ConsistentWithVS" />
-      </reference>
-      <name value="ConsistentWith ValueSet ValueSet" />
-      <description value="ConsistentWith value set." />
-      <exampleBoolean value="false" />
-    </resource>
-    <resource>
-      <reference>
         <reference value="ValueSet/FibroadenomaVS" />
       </reference>
       <name value="Fibroadenoma ValueSet ValueSet" />
       <description value="Fibroadenoma values value set." />
-      <exampleBoolean value="false" />
-    </resource>
-    <resource>
-      <reference>
-        <reference value="ValueSet/HilumVS" />
-      </reference>
-      <name value="Hilum ValueSet ValueSet" />
-      <description value="Hilum values value set." />
-      <exampleBoolean value="false" />
-    </resource>
-    <resource>
-      <reference>
-        <reference value="ValueSet/MammoCalcificationDistributionVS" />
-      </reference>
-      <name value="Mammography Calcification Distribution ValueSet ValueSet" />
-      <description value="Mammography calcification distribution values value set." />
-      <exampleBoolean value="false" />
-    </resource>
-    <resource>
-      <reference>
-        <reference value="ValueSet/MammoCalcificationTypeVS" />
-      </reference>
-      <name value="Mammography Calcification Type ValueSet ValueSet" />
-      <description value="Mammography calcification types value set." />
-      <exampleBoolean value="false" />
-    </resource>
-    <resource>
-      <reference>
-        <reference value="ValueSet/MammoFibroadenomaVS" />
-      </reference>
-      <name value="Fibroadenoma ValueSet ValueSet" />
-      <description value="Fibroadenoma values value set." />
-      <exampleBoolean value="false" />
-    </resource>
-    <resource>
-      <reference>
-        <reference value="ValueSet/MammoShapeVS" />
-      </reference>
-      <name value="Shape ValueSet ValueSet" />
-      <description value="Shape values value set." />
       <exampleBoolean value="false" />
     </resource>
     <resource>
@@ -569,150 +409,6 @@
     </resource>
     <resource>
       <reference>
-        <reference value="ValueSet/MGDensityVS" />
-      </reference>
-      <name value="Mammography Density ValueSet ValueSet" />
-      <description value="Mammography density codes value set." />
-      <exampleBoolean value="false" />
-    </resource>
-    <resource>
-      <reference>
-        <reference value="ValueSet/MGMarginVS" />
-      </reference>
-      <name value="Mammography Margin ValueSet ValueSet" />
-      <description value="Mammography margin ValueSet." />
-      <exampleBoolean value="false" />
-    </resource>
-    <resource>
-      <reference>
-        <reference value="ValueSet/MRIMarginVS" />
-      </reference>
-      <name value="MRI Margin ValueSet ValueSet" />
-      <description value="MRI margin value set." />
-      <exampleBoolean value="false" />
-    </resource>
-    <resource>
-      <reference>
-        <reference value="ValueSet/NMMarginVS" />
-      </reference>
-      <name value="NM Margin ValueSet ValueSet" />
-      <description value="NM margin value set." />
-      <exampleBoolean value="false" />
-    </resource>
-    <resource>
-      <reference>
-        <reference value="ValueSet/ObservedChangeInDefinitionVS" />
-      </reference>
-      <name value="Observed Definition Changes ValueSet ValueSet" />
-      <description value="Observed changes in definition of an abnormality over time value set." />
-      <exampleBoolean value="false" />
-    </resource>
-    <resource>
-      <reference>
-        <reference value="ValueSet/ObservedChangeInNumberVS" />
-      </reference>
-      <name value="Observed Number Changes ValueSet ValueSet" />
-      <description value="Observed changes in number of an abnormality over time value set." />
-      <exampleBoolean value="false" />
-    </resource>
-    <resource>
-      <reference>
-        <reference value="ValueSet/ObservedChangeInProminanceVS" />
-      </reference>
-      <name value="Observed Prominance Changes ValueSet ValueSet" />
-      <description value="Observed changes in Prominance of an abnormality over time value set." />
-      <exampleBoolean value="false" />
-    </resource>
-    <resource>
-      <reference>
-        <reference value="ValueSet/ObservedChangeInSizeVS" />
-      </reference>
-      <name value="Observed Changes ValueSet ValueSet" />
-      <description value="Observed changes in the size of an abnormality over time value set." />
-      <exampleBoolean value="false" />
-    </resource>
-    <resource>
-      <reference>
-        <reference value="ValueSet/ObservedChangeInStateVS" />
-      </reference>
-      <name value="Observed Change In State ValueSet ValueSet" />
-      <description value="Observed changes in state of an abnormality over time value set." />
-      <exampleBoolean value="false" />
-    </resource>
-    <resource>
-      <reference>
-        <reference value="ValueSet/OrientationVS" />
-      </reference>
-      <name value="Orientation ValueSet ValueSet" />
-      <description value="Orientation ValueSet" />
-      <exampleBoolean value="false" />
-    </resource>
-    <resource>
-      <reference>
-        <reference value="ValueSet/UltraSoundShapeVS" />
-      </reference>
-      <name value="ShapeValueSet ValueSet" />
-      <description value="Shape values value set." />
-      <exampleBoolean value="false" />
-    </resource>
-    <resource>
-      <reference>
-        <reference value="ValueSet/USBoundaryVS" />
-      </reference>
-      <name value="UltraSound Boundary ValueSet ValueSet" />
-      <description value="UltraSound Boundary Codes value set." />
-      <exampleBoolean value="false" />
-    </resource>
-    <resource>
-      <reference>
-        <reference value="ValueSet/USEchoPatternVS" />
-      </reference>
-      <name value="US Echo Pattern ValueSet ValueSet" />
-      <description value="Ultra-sound mass echo pattern codes value set." />
-      <exampleBoolean value="false" />
-    </resource>
-    <resource>
-      <reference>
-        <reference value="ValueSet/USElasticityVS" />
-      </reference>
-      <name value="US Elasticity ValueSet ValueSet" />
-      <description value="Ultra-sound Elasticity  value set." />
-      <exampleBoolean value="false" />
-    </resource>
-    <resource>
-      <reference>
-        <reference value="ValueSet/USMarginVS" />
-      </reference>
-      <name value="US Margin ValueSet ValueSet" />
-      <description value="Ultra-sound mass margin codes value set." />
-      <exampleBoolean value="false" />
-    </resource>
-    <resource>
-      <reference>
-        <reference value="ValueSet/USPosteriorAcousticFeaturesVS" />
-      </reference>
-      <name value="US Posterior Acoustic Features ValueSet ValueSet" />
-      <description value="Ultra-sound mass Posterior acoustic feature codes value set." />
-      <exampleBoolean value="false" />
-    </resource>
-    <resource>
-      <reference>
-        <reference value="ValueSet/USTissueCompositionVS" />
-      </reference>
-      <name value="US Tissue Composition ValueSet ValueSet" />
-      <description value="Ultra-sound breast tissue composition codes value set." />
-      <exampleBoolean value="false" />
-    </resource>
-    <resource>
-      <reference>
-        <reference value="ValueSet/USVascularityVS" />
-      </reference>
-      <name value="US Vascularity ValueSet ValueSet" />
-      <description value="Ultra-sound Vascularity codes value set." />
-      <exampleBoolean value="false" />
-    </resource>
-    <resource>
-      <reference>
         <reference value="StructureDefinition/AimAnnotatedImagingStudy" />
       </reference>
       <name value="AIM Annotated Imaging Study" />
@@ -776,127 +472,10 @@
     </resource>
     <resource>
       <reference>
-        <reference value="StructureDefinition/BiRadsAssessmentCategory" />
-      </reference>
-      <name value="BiRads Assessment Category" />
-      <description value="BiRads Assessment Category Observation" />
-      <exampleBoolean value="false" />
-      <groupingId value="CommonResources" />
-    </resource>
-    <resource>
-      <reference>
         <reference value="StructureDefinition/Impression" />
       </reference>
       <name value="Impression" />
       <description value="Breast Radiology Impression (ClinicalImpression)" />
-      <exampleBoolean value="false" />
-      <groupingId value="CommonResources" />
-    </resource>
-    <resource>
-      <reference>
-        <reference value="StructureDefinition/ConsistentWith" />
-      </reference>
-      <name value="Consistent With" />
-      <description value="Breast Radiology 'Consistent With' Observation" />
-      <exampleBoolean value="false" />
-      <groupingId value="CommonResources" />
-    </resource>
-    <resource>
-      <reference>
-        <reference value="StructureDefinition/Hilum" />
-      </reference>
-      <name value="Hilum Shape" />
-      <description value="Breast Radiology Hilum Observation" />
-      <exampleBoolean value="false" />
-      <groupingId value="CommonResources" />
-    </resource>
-    <resource>
-      <reference>
-        <reference value="StructureDefinition/ObservedChangeInDefinition" />
-      </reference>
-      <name value="Observed Change in Definition" />
-      <description value="Breast Radiology Changes in Definition Observation" />
-      <exampleBoolean value="false" />
-      <groupingId value="CommonResources" />
-    </resource>
-    <resource>
-      <reference>
-        <reference value="StructureDefinition/ObservedChangeInNumber" />
-      </reference>
-      <name value="Observed Change in Number" />
-      <description value="Breast Radiology Changes in Number Observation" />
-      <exampleBoolean value="false" />
-      <groupingId value="CommonResources" />
-    </resource>
-    <resource>
-      <reference>
-        <reference value="StructureDefinition/ObservedChangeInProminance" />
-      </reference>
-      <name value="Observed Change in Prominance" />
-      <description value="Breast Radiology Changes in Prominance Observation" />
-      <exampleBoolean value="false" />
-      <groupingId value="CommonResources" />
-    </resource>
-    <resource>
-      <reference>
-        <reference value="StructureDefinition/ObservedChangeInSize" />
-      </reference>
-      <name value="Observed Changes" />
-      <description value="Breast Radiology Changes in Size Observation" />
-      <exampleBoolean value="false" />
-      <groupingId value="CommonResources" />
-    </resource>
-    <resource>
-      <reference>
-        <reference value="StructureDefinition/ObservedChangeInState" />
-      </reference>
-      <name value="Observed Change In State" />
-      <description value="Breast Radiology Observed Change In State Observation" />
-      <exampleBoolean value="false" />
-      <groupingId value="CommonResources" />
-    </resource>
-    <resource>
-      <reference>
-        <reference value="StructureDefinition/ObservedCount" />
-      </reference>
-      <name value="Count" />
-      <description value="Breast Radiology Count Observation" />
-      <exampleBoolean value="false" />
-      <groupingId value="CommonResources" />
-    </resource>
-    <resource>
-      <reference>
-        <reference value="StructureDefinition/ObservedSize" />
-      </reference>
-      <name value="Size" />
-      <description value="Breast Radiology Size Observation" />
-      <exampleBoolean value="false" />
-      <groupingId value="CommonResources" />
-    </resource>
-    <resource>
-      <reference>
-        <reference value="StructureDefinition/Orientation" />
-      </reference>
-      <name value="Orientation" />
-      <description value="Breast Radiology Orientation Observation" />
-      <exampleBoolean value="false" />
-      <groupingId value="CommonResources" />
-    </resource>
-    <resource>
-      <reference>
-        <reference value="StructureDefinition/UltraSoundShape" />
-      </reference>
-      <name value="Shape" />
-      <description value="Breast Radiology Shape Observation" />
-      <exampleBoolean value="false" />
-      <groupingId value="CommonResources" />
-    </resource>
-    <resource>
-      <reference>
-        <reference value="StructureDefinition/MammoShape" />
-      </reference>
-      <name value="Shape" />
-      <description value="Breast Radiology Shape Observation" />
       <exampleBoolean value="false" />
       <groupingId value="CommonResources" />
     </resource>
@@ -1091,46 +670,10 @@
     </resource>
     <resource>
       <reference>
-        <reference value="StructureDefinition/MGCalcificationDistribution" />
-      </reference>
-      <name value="Mammography Calcification Distribution" />
-      <description value="Breast Radiology Mammography Calcification Distribution Observation" />
-      <exampleBoolean value="false" />
-      <groupingId value="MGResources" />
-    </resource>
-    <resource>
-      <reference>
-        <reference value="StructureDefinition/MGCalcificationType" />
-      </reference>
-      <name value="Mammography Calcification Type" />
-      <description value="Breast Radiology Mammography Calcification Type Observation" />
-      <exampleBoolean value="false" />
-      <groupingId value="MGResources" />
-    </resource>
-    <resource>
-      <reference>
         <reference value="StructureDefinition/MGAbnormalityCalcification" />
       </reference>
       <name value="Mammography Calcification" />
       <description value="Breast Radiology Mammography Calcification Observation" />
-      <exampleBoolean value="false" />
-      <groupingId value="MGResources" />
-    </resource>
-    <resource>
-      <reference>
-        <reference value="StructureDefinition/MGDensity" />
-      </reference>
-      <name value="Mammography Density" />
-      <description value="Breast Radiology Mammography Density Observation" />
-      <exampleBoolean value="false" />
-      <groupingId value="MGResources" />
-    </resource>
-    <resource>
-      <reference>
-        <reference value="StructureDefinition/MGMargin" />
-      </reference>
-      <name value="Mammography Margin" />
-      <description value="Breast Radiology Mammography Margin Observation" />
       <exampleBoolean value="false" />
       <groupingId value="MGResources" />
     </resource>
@@ -1163,24 +706,6 @@
     </resource>
     <resource>
       <reference>
-        <reference value="StructureDefinition/MRIMargin" />
-      </reference>
-      <name value="MRI Margin" />
-      <description value="Breast Radiology MRI Margin Observation" />
-      <exampleBoolean value="false" />
-      <groupingId value="MRIResources" />
-    </resource>
-    <resource>
-      <reference>
-        <reference value="StructureDefinition/MRIMass" />
-      </reference>
-      <name value="MRI Mass" />
-      <description value="Breast Radiology MRIgraphy Mass Observation" />
-      <exampleBoolean value="false" />
-      <groupingId value="MRIResources" />
-    </resource>
-    <resource>
-      <reference>
         <reference value="StructureDefinition/NMFinding" />
       </reference>
       <name value="NM Finding" />
@@ -1189,98 +714,10 @@
     </resource>
     <resource>
       <reference>
-        <reference value="StructureDefinition/NMMargin" />
-      </reference>
-      <name value="NM Margin" />
-      <description value="Breast Radiology NM Margin Observation" />
-      <exampleBoolean value="false" />
-    </resource>
-    <resource>
-      <reference>
-        <reference value="StructureDefinition/NMMass" />
-      </reference>
-      <name value="NM Mass" />
-      <description value="Breast Radiology NM Mass Observation" />
-      <exampleBoolean value="false" />
-    </resource>
-    <resource>
-      <reference>
         <reference value="StructureDefinition/USFinding" />
       </reference>
       <name value="UltraSound Finding" />
       <description value="Breast Radiology Ultra Sound Finding" />
-      <exampleBoolean value="false" />
-      <groupingId value="USResources" />
-    </resource>
-    <resource>
-      <reference>
-        <reference value="StructureDefinition/USBoundary" />
-      </reference>
-      <name value="Ultra Sound Boundary" />
-      <description value="Breast Radiology Ultra-Sound Boundary Observation" />
-      <exampleBoolean value="false" />
-      <groupingId value="USResources" />
-    </resource>
-    <resource>
-      <reference>
-        <reference value="StructureDefinition/USEchoPattern" />
-      </reference>
-      <name value="US Echo Pattern" />
-      <description value="Breast Radiology Ultra-Sound Echo Pattern Observation" />
-      <exampleBoolean value="false" />
-      <groupingId value="USResources" />
-    </resource>
-    <resource>
-      <reference>
-        <reference value="StructureDefinition/USElasticity" />
-      </reference>
-      <name value="US Elasticity" />
-      <description value="Breast Radiology Ultra-Sound Elasticity Observation" />
-      <exampleBoolean value="false" />
-      <groupingId value="USResources" />
-    </resource>
-    <resource>
-      <reference>
-        <reference value="StructureDefinition/USMass" />
-      </reference>
-      <name value="US Mass" />
-      <description value="Breast Radiology Mammography Ultra-Sound Mass Observation" />
-      <exampleBoolean value="false" />
-      <groupingId value="USResources" />
-    </resource>
-    <resource>
-      <reference>
-        <reference value="StructureDefinition/USMargin" />
-      </reference>
-      <name value="US Margin" />
-      <description value="Breast Radiology Ultra-Sound Margin Observation" />
-      <exampleBoolean value="false" />
-      <groupingId value="USResources" />
-    </resource>
-    <resource>
-      <reference>
-        <reference value="StructureDefinition/USTissueComposition" />
-      </reference>
-      <name value="US Tissue Composition" />
-      <description value="Breast Radiology Ultra-Sound Tissue Composition Observation" />
-      <exampleBoolean value="false" />
-      <groupingId value="USResources" />
-    </resource>
-    <resource>
-      <reference>
-        <reference value="StructureDefinition/USPosteriorAcousticFeatures" />
-      </reference>
-      <name value="US Posterior Acoustic Features" />
-      <description value="Breast Radiology Ultra-Sound Posterior Acoustic Features Observation" />
-      <exampleBoolean value="false" />
-      <groupingId value="USResources" />
-    </resource>
-    <resource>
-      <reference>
-        <reference value="StructureDefinition/USVascularity" />
-      </reference>
-      <name value="US Vascularity" />
-      <description value="Breast Radiology Ultra-Sound Vascularity Observation" />
       <exampleBoolean value="false" />
       <groupingId value="USResources" />
     </resource>
@@ -1317,15 +754,6 @@
       </reference>
       <name value="Resource" />
       <description value="Fragment 'Base Resource'" />
-      <exampleBoolean value="false" />
-      <groupingId value="Fragments" />
-    </resource>
-    <resource>
-      <reference>
-        <reference value="StructureDefinition/FragmentBiRadsAssessmentCategory" />
-      </reference>
-      <name value="BiRads Assessment Category" />
-      <description value="Fragment 'BiRads Assessment Category Observation'" />
       <exampleBoolean value="false" />
       <groupingId value="Fragments" />
     </resource>
@@ -1412,28 +840,10 @@
     </resource>
     <resource>
       <reference>
-        <reference value="StructureDefinition/FragmentConsistentWith" />
-      </reference>
-      <name value="Consistent With" />
-      <description value="Fragment 'Breast Radiology 'Consistent With' Observation'" />
-      <exampleBoolean value="false" />
-      <groupingId value="Fragments" />
-    </resource>
-    <resource>
-      <reference>
         <reference value="StructureDefinition/FragmentHeaderFragment" />
       </reference>
       <name value="Resource" />
       <description value="Fragment 'Base Resource'" />
-      <exampleBoolean value="false" />
-      <groupingId value="Fragments" />
-    </resource>
-    <resource>
-      <reference>
-        <reference value="StructureDefinition/FragmentHilum" />
-      </reference>
-      <name value="Hilum Shape" />
-      <description value="Fragment 'Breast Radiology Hilum Observation'" />
       <exampleBoolean value="false" />
       <groupingId value="Fragments" />
     </resource>
@@ -1461,15 +871,6 @@
       </reference>
       <name value="Impressions Extension" />
       <description value="Fragment 'Impressions extension'" />
-      <exampleBoolean value="false" />
-      <groupingId value="Fragments" />
-    </resource>
-    <resource>
-      <reference>
-        <reference value="StructureDefinition/FragmentMammoShape" />
-      </reference>
-      <name value="Shape" />
-      <description value="Fragment 'Breast Radiology Shape Observation'" />
       <exampleBoolean value="false" />
       <groupingId value="Fragments" />
     </resource>
@@ -1592,24 +993,6 @@
     </resource>
     <resource>
       <reference>
-        <reference value="StructureDefinition/FragmentMGCalcificationDistribution" />
-      </reference>
-      <name value="Mammography Calcification Distribution" />
-      <description value="Fragment 'Breast Radiology Mammography Calcification Distribution Observation'" />
-      <exampleBoolean value="false" />
-      <groupingId value="Fragments" />
-    </resource>
-    <resource>
-      <reference>
-        <reference value="StructureDefinition/FragmentMGCalcificationType" />
-      </reference>
-      <name value="Mammography Calcification Type" />
-      <description value="Fragment 'Breast Radiology Mammography Calcification Type Observation'" />
-      <exampleBoolean value="false" />
-      <groupingId value="Fragments" />
-    </resource>
-    <resource>
-      <reference>
         <reference value="StructureDefinition/FragmentMgCommonTargetsFragment" />
       </reference>
       <name value="MG Common Targets Fragment" />
@@ -1619,28 +1002,10 @@
     </resource>
     <resource>
       <reference>
-        <reference value="StructureDefinition/FragmentMGDensity" />
-      </reference>
-      <name value="Mammography Density" />
-      <description value="Fragment 'Breast Radiology Mammography Density Observation'" />
-      <exampleBoolean value="false" />
-      <groupingId value="Fragments" />
-    </resource>
-    <resource>
-      <reference>
         <reference value="StructureDefinition/FragmentMGFinding" />
       </reference>
       <name value="Mammographi Finding" />
       <description value="Fragment 'Breast Radiology Mammography Finding'" />
-      <exampleBoolean value="false" />
-      <groupingId value="Fragments" />
-    </resource>
-    <resource>
-      <reference>
-        <reference value="StructureDefinition/FragmentMGMargin" />
-      </reference>
-      <name value="Mammography Margin" />
-      <description value="Fragment 'Breast Radiology Mammography Margin Observation'" />
       <exampleBoolean value="false" />
       <groupingId value="Fragments" />
     </resource>
@@ -1709,46 +1074,10 @@
     </resource>
     <resource>
       <reference>
-        <reference value="StructureDefinition/FragmentMRIMargin" />
-      </reference>
-      <name value="MRI Margin" />
-      <description value="Fragment 'Breast Radiology MRI Margin Observation'" />
-      <exampleBoolean value="false" />
-      <groupingId value="Fragments" />
-    </resource>
-    <resource>
-      <reference>
-        <reference value="StructureDefinition/FragmentMRIMass" />
-      </reference>
-      <name value="MRI Mass" />
-      <description value="Fragment 'Breast Radiology MRIgraphy Mass Observation'" />
-      <exampleBoolean value="false" />
-      <groupingId value="Fragments" />
-    </resource>
-    <resource>
-      <reference>
         <reference value="StructureDefinition/FragmentNMFinding" />
       </reference>
       <name value="NM Finding" />
       <description value="Fragment 'Breast Radiology NMgraphy Finding'" />
-      <exampleBoolean value="false" />
-      <groupingId value="Fragments" />
-    </resource>
-    <resource>
-      <reference>
-        <reference value="StructureDefinition/FragmentNMMargin" />
-      </reference>
-      <name value="NM Margin" />
-      <description value="Fragment 'Breast Radiology NM Margin Observation'" />
-      <exampleBoolean value="false" />
-      <groupingId value="Fragments" />
-    </resource>
-    <resource>
-      <reference>
-        <reference value="StructureDefinition/FragmentNMMass" />
-      </reference>
-      <name value="NM Mass" />
-      <description value="Fragment 'Breast Radiology NM Mass Observation'" />
       <exampleBoolean value="false" />
       <groupingId value="Fragments" />
     </resource>
@@ -1767,78 +1096,6 @@
       </reference>
       <name value="Observation Section Fragment" />
       <description value="Fragment 'Fragment that constrains Observations to be sections.'" />
-      <exampleBoolean value="false" />
-      <groupingId value="Fragments" />
-    </resource>
-    <resource>
-      <reference>
-        <reference value="StructureDefinition/FragmentObservedChangeInDefinition" />
-      </reference>
-      <name value="Observed Change in Definition" />
-      <description value="Fragment 'Breast Radiology Changes in Definition Observation'" />
-      <exampleBoolean value="false" />
-      <groupingId value="Fragments" />
-    </resource>
-    <resource>
-      <reference>
-        <reference value="StructureDefinition/FragmentObservedChangeInNumber" />
-      </reference>
-      <name value="Observed Change in Number" />
-      <description value="Fragment 'Breast Radiology Changes in Number Observation'" />
-      <exampleBoolean value="false" />
-      <groupingId value="Fragments" />
-    </resource>
-    <resource>
-      <reference>
-        <reference value="StructureDefinition/FragmentObservedChangeInProminance" />
-      </reference>
-      <name value="Observed Change in Prominance" />
-      <description value="Fragment 'Breast Radiology Changes in Prominance Observation'" />
-      <exampleBoolean value="false" />
-      <groupingId value="Fragments" />
-    </resource>
-    <resource>
-      <reference>
-        <reference value="StructureDefinition/FragmentObservedChangeInSize" />
-      </reference>
-      <name value="Observed Changes" />
-      <description value="Fragment 'Breast Radiology Changes in Size Observation'" />
-      <exampleBoolean value="false" />
-      <groupingId value="Fragments" />
-    </resource>
-    <resource>
-      <reference>
-        <reference value="StructureDefinition/FragmentObservedChangeInState" />
-      </reference>
-      <name value="Observed Change In State" />
-      <description value="Fragment 'Breast Radiology Observed Change In State Observation'" />
-      <exampleBoolean value="false" />
-      <groupingId value="Fragments" />
-    </resource>
-    <resource>
-      <reference>
-        <reference value="StructureDefinition/FragmentObservedCount" />
-      </reference>
-      <name value="Count" />
-      <description value="Fragment 'Breast Radiology Count Observation'" />
-      <exampleBoolean value="false" />
-      <groupingId value="Fragments" />
-    </resource>
-    <resource>
-      <reference>
-        <reference value="StructureDefinition/FragmentObservedSize" />
-      </reference>
-      <name value="Size" />
-      <description value="Fragment 'Breast Radiology Size Observation'" />
-      <exampleBoolean value="false" />
-      <groupingId value="Fragments" />
-    </resource>
-    <resource>
-      <reference>
-        <reference value="StructureDefinition/FragmentOrientation" />
-      </reference>
-      <name value="Orientation" />
-      <description value="Fragment 'Breast Radiology Orientation Observation'" />
       <exampleBoolean value="false" />
       <groupingId value="Fragments" />
     </resource>
@@ -1907,91 +1164,10 @@
     </resource>
     <resource>
       <reference>
-        <reference value="StructureDefinition/FragmentUltraSoundShape" />
-      </reference>
-      <name value="Shape" />
-      <description value="Fragment 'Breast Radiology Shape Observation'" />
-      <exampleBoolean value="false" />
-      <groupingId value="Fragments" />
-    </resource>
-    <resource>
-      <reference>
-        <reference value="StructureDefinition/FragmentUSBoundary" />
-      </reference>
-      <name value="Ultra Sound Boundary" />
-      <description value="Fragment 'Breast Radiology Ultra-Sound Boundary Observation'" />
-      <exampleBoolean value="false" />
-      <groupingId value="Fragments" />
-    </resource>
-    <resource>
-      <reference>
-        <reference value="StructureDefinition/FragmentUSEchoPattern" />
-      </reference>
-      <name value="US Echo Pattern" />
-      <description value="Fragment 'Breast Radiology Ultra-Sound Echo Pattern Observation'" />
-      <exampleBoolean value="false" />
-      <groupingId value="Fragments" />
-    </resource>
-    <resource>
-      <reference>
-        <reference value="StructureDefinition/FragmentUSElasticity" />
-      </reference>
-      <name value="US Elasticity" />
-      <description value="Fragment 'Breast Radiology Ultra-Sound Elasticity Observation'" />
-      <exampleBoolean value="false" />
-      <groupingId value="Fragments" />
-    </resource>
-    <resource>
-      <reference>
         <reference value="StructureDefinition/FragmentUSFinding" />
       </reference>
       <name value="UltraSound Finding" />
       <description value="Fragment 'Breast Radiology Ultra Sound Finding'" />
-      <exampleBoolean value="false" />
-      <groupingId value="Fragments" />
-    </resource>
-    <resource>
-      <reference>
-        <reference value="StructureDefinition/FragmentUSMargin" />
-      </reference>
-      <name value="US Margin" />
-      <description value="Fragment 'Breast Radiology Ultra-Sound Margin Observation'" />
-      <exampleBoolean value="false" />
-      <groupingId value="Fragments" />
-    </resource>
-    <resource>
-      <reference>
-        <reference value="StructureDefinition/FragmentUSMass" />
-      </reference>
-      <name value="US Mass" />
-      <description value="Fragment 'Breast Radiology Mammography Ultra-Sound Mass Observation'" />
-      <exampleBoolean value="false" />
-      <groupingId value="Fragments" />
-    </resource>
-    <resource>
-      <reference>
-        <reference value="StructureDefinition/FragmentUSPosteriorAcousticFeatures" />
-      </reference>
-      <name value="US Posterior Acoustic Features" />
-      <description value="Fragment 'Breast Radiology Ultra-Sound Posterior Acoustic Features Observation'" />
-      <exampleBoolean value="false" />
-      <groupingId value="Fragments" />
-    </resource>
-    <resource>
-      <reference>
-        <reference value="StructureDefinition/FragmentUSTissueComposition" />
-      </reference>
-      <name value="US Tissue Composition" />
-      <description value="Fragment 'Breast Radiology Ultra-Sound Tissue Composition Observation'" />
-      <exampleBoolean value="false" />
-      <groupingId value="Fragments" />
-    </resource>
-    <resource>
-      <reference>
-        <reference value="StructureDefinition/FragmentUSVascularity" />
-      </reference>
-      <name value="US Vascularity" />
-      <description value="Fragment 'Breast Radiology Ultra-Sound Vascularity Observation'" />
       <exampleBoolean value="false" />
       <groupingId value="Fragments" />
     </resource>

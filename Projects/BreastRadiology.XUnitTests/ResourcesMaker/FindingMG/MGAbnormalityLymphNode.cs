@@ -15,7 +15,7 @@ namespace BreastRadiology.XUnitTests
     {
         CSTaskVar MGAbnormalityLymphNodeCS = new CSTaskVar(
              () =>
-                 ResourcesMaker.Self.CreateCodeSystem(
+                 Self.CreateCodeSystem(
                         "MGAbnormalityLymphNodeCS",
                         "Mammography Lymph Node Refinement CodeSystem",
                          "MG Lymph Node Refinement/CodeSystem",
@@ -76,13 +76,13 @@ namespace BreastRadiology.XUnitTests
 
         VSTaskVar MGAbnormalityLymphNodeVS = new VSTaskVar(
             () =>
-                ResourcesMaker.Self.CreateValueSet(
+                Self.CreateValueSet(
                    "MGAbnormalityLymphNodeVS",
                    "Mammography Lymph Node ValueSet",
                     "MG Lymph Node/ValueSet",
                    "Mammography lymph node abnormality types value set.",
                     Group_MGCodes,
-                    ResourcesMaker.Self.MGAbnormalityLymphNodeCS.Value()
+                    Self.MGAbnormalityLymphNodeCS.Value()
                     )
             );
 
@@ -90,9 +90,9 @@ namespace BreastRadiology.XUnitTests
         StringTaskVar MGAbnormalityLymphNode = new StringTaskVar(
             (out String s) =>
             {
-                ValueSet binding = ResourcesMaker.Self.MGAbnormalityLymphNodeVS.Value();
+                ValueSet binding = Self.MGAbnormalityLymphNodeVS.Value();
 
-                SDefEditor e = ResourcesMaker.Self.CreateEditor("MGAbnormalityLymphNode",
+                SDefEditor e = Self.CreateEditor("MGAbnormalityLymphNode",
                     "Mammography LymphNode",
                     "MG Lymph Node",
                     ObservationUrl,
@@ -102,13 +102,20 @@ namespace BreastRadiology.XUnitTests
                             .MissingObservation("a lymph node abnormality")
                             //.Todo
                     )
-                    .AddFragRef(ResourcesMaker.Self.ObservationNoDeviceFragment.Value())
-                    .AddFragRef(ResourcesMaker.Self.ObservationCodedValueFragment.Value())
-                    .AddFragRef(ResourcesMaker.Self.MGCommonTargetsFragment.Value())
-                    .AddFragRef(ResourcesMaker.Self.MGShapeTargetsFragment.Value())
+                    .AddFragRef(Self.ObservationNoDeviceFragment.Value())
+                    .AddFragRef(Self.ObservationCodedValueFragment.Value())
+                    .AddFragRef(Self.MGCommonTargetsFragment.Value())
+                    .AddFragRef(Self.MGShapeTargetsFragment.Value())
                     ;
 
                 s = e.SDef.Url;
+
+                e.IntroDoc
+                    .ReviewedStatus(ReviewStatus.NotReviewed)
+                    .ObservationSection($"Lymph Node")
+                    .Refinement(binding, "LymphNode")
+                    ;
+
                 e.Select("value[x]")
                         .ZeroToOne()
                         .Type("CodeableConcept")
@@ -116,20 +123,19 @@ namespace BreastRadiology.XUnitTests
                         ;
                 e.AddValueSetLink(binding);
 
+                if (Self.Component_HasMember)
                 {
                     ProfileTargetSlice[] targets = new ProfileTargetSlice[]
                     {
-                    new ProfileTargetSlice(ResourcesMaker.Self.ObservedCount.Value(), 0, "1"),
+                    new ProfileTargetSlice(Self.ObservedCount.Value(), 0, "1"),
                     };
                     e.SliceByUrl("hasMember", targets);
                     e.AddProfileTargets(targets);
                 }
-
-                e.IntroDoc
-                    .ReviewedStatus(ReviewStatus.NotReviewed)
-                    .ObservationSection($"Lymph Node")
-                    .Refinement(binding, "LymphNode")
-                    ;
+                else
+                {
+                    Self.ComponentSliceObservedCount(e);
+                }
             });
     }
 }

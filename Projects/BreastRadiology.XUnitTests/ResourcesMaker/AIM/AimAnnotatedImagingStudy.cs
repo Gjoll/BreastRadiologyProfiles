@@ -16,7 +16,7 @@ namespace BreastRadiology.XUnitTests
         StringTaskVar AimAnnotatedImagingStudy = new StringTaskVar(
             (out String s) =>
             {
-                SDefEditor e = ResourcesMaker.Self.CreateEditor("AimAnnotatedImagingStudy",
+                SDefEditor e = Self.CreateEditor("AimAnnotatedImagingStudy",
                     "AIM Annotated Imaging Study",
                     "Annotated/Imaging Study",
                     ImagingStudyUrl,
@@ -25,8 +25,8 @@ namespace BreastRadiology.XUnitTests
                         new Markdown()
                             //.Todo
                     )
-                    .AddFragRef(ResourcesMaker.Self.AimHeaderFragment.Value())
-                    .AddFragRef(ResourcesMaker.Self.AimAnnotationPolyLineFragment.Value())
+                    .AddFragRef(Self.AimHeaderFragment.Value())
+                    .AddFragRef(Self.AimAnnotationPolyLineFragment.Value())
                     ;
                 s = e.SDef.Url;
                 e.IntroDoc

@@ -17,7 +17,7 @@ namespace BreastRadiology.XUnitTests
 
         CSTaskVar ObservedChangeInProminanceCS = new CSTaskVar(
              () =>
-                 ResourcesMaker.Self.CreateCodeSystem(
+                 Self.CreateCodeSystem(
                      "ObservedChangeInProminanceCS",
                      "Observed Changes CodeSystem",
                      "Observed/Change/CodeSystem",
@@ -40,13 +40,13 @@ namespace BreastRadiology.XUnitTests
 
         VSTaskVar ObservedChangeInProminanceVS = new VSTaskVar(
             () =>
-                ResourcesMaker.Self.CreateValueSet(
+                Self.CreateValueSet(
                     "ObservedChangeInProminanceVS",
                     "Observed Prominance Changes ValueSet",
                     "Observed/Change/ValueSet",
                     "Observed changes in Prominance of an abnormality over time value set.",
                     Group_CommonCodes,
-                    ResourcesMaker.Self.ObservedChangeInProminanceCS.Value()
+                    Self.ObservedChangeInProminanceCS.Value()
                     )
             );
 
@@ -54,19 +54,19 @@ namespace BreastRadiology.XUnitTests
             (out String s) =>
             {
 
-                ValueSet binding = ResourcesMaker.Self.ObservedChangeInProminanceVS.Value();
+                ValueSet binding = Self.ObservedChangeInProminanceVS.Value();
 
                 {
-                    IntroDoc valueSetIntroDoc = new IntroDoc(Path.Combine(ResourcesMaker.Self.pageDir, $"ValueSet-{binding.Name}-intro.xml"));
+                    IntroDoc valueSetIntroDoc = new IntroDoc(Path.Combine(Self.pageDir, $"ValueSet-{binding.Name}-intro.xml"));
                     valueSetIntroDoc
                         .ReviewedStatus(ReviewStatus.NotReviewed)
                         .ValueSet(binding);
                     ;
                     String outputPath = valueSetIntroDoc.Save();
-                    ResourcesMaker.Self.fc?.Mark(outputPath);
+                    Self.fc?.Mark(outputPath);
                 }
 
-                SDefEditor e = ResourcesMaker.Self.CreateEditor("ObservedChangeInProminance",
+                SDefEditor e = Self.CreateEditor("ObservedChangeInProminance",
                         "Observed Change in Prominance",
                         "Prominance Change",
                         ObservationUrl,
@@ -76,21 +76,23 @@ namespace BreastRadiology.XUnitTests
                             .MissingObservation("an observed change in Prominance")
                             //.Todo
                     )
-                    .AddFragRef(ResourcesMaker.Self.ObservationNoDeviceFragment.Value())
-                    .AddFragRef(ResourcesMaker.Self.ObservationCodedValueFragment.Value())
-                    .AddFragRef(ResourcesMaker.Self.ObservationLeafFragment.Value())
+                    .AddFragRef(Self.ObservationNoDeviceFragment.Value())
+                    .AddFragRef(Self.ObservationCodedValueFragment.Value())
+                    .AddFragRef(Self.ObservationLeafFragment.Value())
                     ;
 
                 s = e.SDef.Url;
+
+                e.IntroDoc
+                    .ReviewedStatus(ReviewStatus.NotReviewed)
+                    .CodedObservationLeafNode("an abnormality observed change in Prominance", binding)
+                    ;
+
                 e.Select("value[x]")
                     .Type("CodeableConcept")
                     .Binding(binding.Url, BindingStrength.Required)
                     ;
                 e.AddValueSetLink(binding);
-                e.IntroDoc
-                    .ReviewedStatus(ReviewStatus.NotReviewed)
-                    .CodedObservationLeafNode("an abnormality observed change in Prominance", binding)
-                    ;
             });
     }
 }

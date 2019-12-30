@@ -15,7 +15,7 @@ namespace BreastRadiology.XUnitTests
     {
         static Type sDefType = typeof(SDefEditor);
 
-        public IntroDoc IntroDoc {get; }
+        public IntroDoc IntroDoc { get; }
 
         public StructureDefinition SDef => this.sDef;
         StructureDefinition baseSDef;
@@ -23,6 +23,7 @@ namespace BreastRadiology.XUnitTests
         String basePath;
         String fragmentDir;
         String pageDir;
+        ElementDefGroup componentSlicing = null;
 
         Dictionary<String, ElementDefGroup> baseElements = new Dictionary<string, ElementDefGroup>();
         Dictionary<String, ElementDefGroup> elements = new Dictionary<string, ElementDefGroup>();
@@ -104,8 +105,8 @@ namespace BreastRadiology.XUnitTests
                     break;
                 i += 1;
             }
-            ElementDefGroup newE = new ElementDefGroup(baseDefinition.Index, 
-                insertItem, 
+            ElementDefGroup newE = new ElementDefGroup(baseDefinition.Index,
+                insertItem,
                 baseDefinition.ElementDefinition);
             this.elements.Add(insertItem.ElementId.SkipFirstPathPart(), newE);
             this.elementOrder.Insert(i, newE);
@@ -387,7 +388,7 @@ namespace BreastRadiology.XUnitTests
                 Pattern = new Coding(system, code),
                 Base = new ElementDefinition.BaseComponent
                 {
-                    Path = $"{elementDef.BaseElementDefinition.Path}",
+                    Path = $"{elementDef.BaseElementDefinition.Path}.coding",
                     Min = elementDef.BaseElementDefinition.Min,
                     Max = elementDef.BaseElementDefinition.Max
                 }
@@ -428,8 +429,8 @@ namespace BreastRadiology.XUnitTests
             foreach (PatternSlice patternSlice in patternSlices)
             {
                 ElementDefinition sliceElement = this.AppendSlice(elementName,
-                        patternSlice.SliceName, 
-                        patternSlice.Min, 
+                        patternSlice.SliceName,
+                        patternSlice.Min,
                         patternSlice.Max)
                     .Type("CodeableConcept")
                     .Pattern(patternSlice.Pattern)
@@ -462,6 +463,124 @@ namespace BreastRadiology.XUnitTests
         public void AddIncompatibleFragment(String url)
         {
             this.SDef.AddExtension(Global.IncompatibleFragmentUrl, new FhirUrl(url));
+        }
+
+        public ElementDefGroup StartComponentSliceing()
+        {
+            if (this.componentSlicing != null)
+                return this.componentSlicing;
+            this.componentSlicing = this.GetOrCreate("component");
+
+            this.componentSlicing.ElementDefinition.Slicing = new ElementDefinition.SlicingComponent
+            {
+                Rules = ElementDefinition.SlicingRules.Open
+            };
+
+            this.componentSlicing.ElementDefinition.Slicing.Discriminator.Add(new ElementDefinition.DiscriminatorComponent
+            {
+                Type = ElementDefinition.DiscriminatorType.Pattern,
+                Path = "code"
+            });
+
+            return this.componentSlicing;
+        }
+
+        public void ComponentSliceQuantity(String sliceName,
+            CodeableConcept pattern,
+            Int32 minCardinality,
+            String maxCardinality)
+        {
+            ElementDefinition slice = this.AppendSlice("component", sliceName, minCardinality, maxCardinality);
+            {
+                ElementDefinition valueX = new ElementDefinition
+                {
+                    Path = $"{slice.Path}.value[x]",
+                    ElementId = $"{slice.Path}:{sliceName}.value[x]",
+                    Min = 1,
+                    Max = "1"
+                };
+                valueX
+                    .Type("Quantity");
+                ;
+                this.InsertAfterAllChildren("component", valueX);
+            }
+            {
+                ElementDefinition eDef = new ElementDefinition
+                {
+                    Path = $"{slice.Path}.interpretation",
+                    ElementId = $"{slice.Path}:{sliceName}.interpretation",
+                    Min = 0,
+                    Max = "0"
+                };
+                this.InsertAfterAllChildren("component", eDef);
+            }
+            {
+                ElementDefinition eDef = new ElementDefinition
+                {
+                    Path = $"{slice.Path}.referenceRange",
+                    ElementId = $"{slice.Path}:{sliceName}.referenceRange",
+                    Min = 0,
+                    Max = "0"
+                };
+                this.InsertAfterAllChildren("component", eDef);
+            }
+        }
+
+        public void ComponentSliceCodeableConcept(String sliceName,
+            CodeableConcept pattern,
+            String valueSetUrl,
+            BindingStrength bindingStrength,
+            Int32 minCardinality,
+            String maxCardinality)
+        {
+            ElementDefinition slice = this.AppendSlice("component", sliceName, minCardinality, maxCardinality);
+            {
+                ElementDefinition componentCode = new ElementDefinition
+                {
+                    Path = $"{slice.Path}.code",
+                    ElementId = $"{slice.Path}:{sliceName}.code",
+                    Min = 1,
+                    Max = "1"
+                };
+                componentCode
+                    .Pattern(pattern)
+                    ;
+                this.InsertAfterAllChildren("component", componentCode);
+            }
+            {
+                ElementDefinition valueX = new ElementDefinition
+                {
+                    Path = $"{slice.Path}.value[x]",
+                    ElementId = $"{slice.Path}:{sliceName}.value[x]",
+                    Min = 1,
+                    Max = "1"
+                };
+                valueX
+                    .Binding(valueSetUrl, bindingStrength)
+                    .Type("CodeableConcept");
+                ;
+                this.InsertAfterAllChildren("component", valueX);
+            }
+            {
+                ElementDefinition eDef = new ElementDefinition
+                {
+                    Path = $"{slice.Path}.interpretation",
+                    ElementId = $"{slice.Path}:{sliceName}.interpretation",
+                    Min = 0,
+                    Max = "0"
+                };
+                this.InsertAfterAllChildren("component", eDef);
+            }
+            {
+                ElementDefinition eDef = new ElementDefinition
+                {
+                    Path = $"{slice.Path}.referenceRange",
+                    ElementId = $"{slice.Path}:{sliceName}.referenceRange",
+                    Min = 0,
+                    Max = "0"
+                };
+                this.InsertAfterAllChildren("component", eDef);
+            }
         }
     }
 }

@@ -17,13 +17,13 @@ namespace BreastRadiology.XUnitTests
         VSTaskVar USMarginVS = new VSTaskVar(
             () =>
             {
-                ValueSet binding = ResourcesMaker.Self.CreateValueSet(
+                ValueSet binding = Self.CreateValueSet(
                     "USMarginVS",
                     "US Margin ValueSet",
                     "US Margin ValueSet",
                     "Ultra-sound mass margin codes value set.",
                     Group_USCodes,
-                    ResourcesMaker.Self.MarginCS.Value());
+                    Self.MarginCS.Value());
                 binding
                     .Remove("Macrolobulated")
                     .Remove("Obscured")
@@ -36,18 +36,18 @@ namespace BreastRadiology.XUnitTests
         StringTaskVar USMargin = new StringTaskVar(
             (out String s) =>
             {
-                ValueSet binding = ResourcesMaker.Self.USMarginVS.Value();
+                ValueSet binding = Self.USMarginVS.Value();
                 {
-                    IntroDoc valueSetIntroDoc = new IntroDoc(Path.Combine(ResourcesMaker.Self.pageDir, $"ValueSet-{binding.Name}-intro.xml"));
+                    IntroDoc valueSetIntroDoc = new IntroDoc(Path.Combine(Self.pageDir, $"ValueSet-{binding.Name}-intro.xml"));
                     valueSetIntroDoc
                         .ReviewedStatus(ReviewStatus.NotReviewed)
                         .ValueSet(binding);
                     ;
                     String outputPath = valueSetIntroDoc.Save();
-                    ResourcesMaker.Self.fc?.Mark(outputPath);
+                    Self.fc?.Mark(outputPath);
                 }
 
-                SDefEditor e = ResourcesMaker.Self.CreateEditor("USMargin",
+                SDefEditor e = Self.CreateEditor("USMargin",
                         "US Margin",
                         "US Margin",
                         ObservationUrl,
@@ -63,21 +63,23 @@ namespace BreastRadiology.XUnitTests
                                 "Is non-circumscribed a stand along value, or implied by selection fo on or more non-circumscribed values? "
                             )
                     )
-                    .AddFragRef(ResourcesMaker.Self.ObservationNoDeviceFragment.Value())
-                    .AddFragRef(ResourcesMaker.Self.ObservationCodedValueFragment.Value())
-                    .AddFragRef(ResourcesMaker.Self.ObservationLeafFragment.Value())
+                    .AddFragRef(Self.ObservationNoDeviceFragment.Value())
+                    .AddFragRef(Self.ObservationCodedValueFragment.Value())
+                    .AddFragRef(Self.ObservationLeafFragment.Value())
                     ;
 
                 s = e.SDef.Url;
+
+                e.IntroDoc
+                    .ReviewedStatus(ReviewStatus.NotReviewed)
+                    .CodedObservationLeafNode("a mammography mass margin", binding)
+                    ;
+
                 e.Select("value[x]")
                     .Type("CodeableConcept")
                     .Binding(binding.Url, BindingStrength.Required)
                     ;
                 e.AddValueSetLink(binding);
-                e.IntroDoc
-                    .ReviewedStatus(ReviewStatus.NotReviewed)
-                    .CodedObservationLeafNode("a mammography mass margin", binding)
-                    ;
             });
     }
 }

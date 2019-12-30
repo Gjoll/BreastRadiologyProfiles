@@ -16,7 +16,7 @@ namespace BreastRadiology.XUnitTests
         StringTaskVar SectionFindings = new StringTaskVar(
             (out String s) =>
             {
-                SDefEditor e = ResourcesMaker.Self.CreateEditor("SectionFindings",
+                SDefEditor e = Self.CreateEditor("SectionFindings",
                         "Findings",
                         "Findings",
                         ObservationUrl,
@@ -27,28 +27,42 @@ namespace BreastRadiology.XUnitTests
                         .Paragraph("Child observations are referenced by the 'Observation.hasMember' field.")
                         //.Todo
                     )
-                    .AddFragRef(ResourcesMaker.Self.ObservationNoDeviceFragment.Value())
-                    .AddFragRef(ResourcesMaker.Self.ObservationSectionFragment.Value())
+                    .AddFragRef(Self.ObservationNoDeviceFragment.Value())
+                    .AddFragRef(Self.ObservationSectionFragment.Value())
                     ;
 
                 s = e.SDef.Url;
-                e.Select("value[x]").Zero();
-                e.Select("bodySite").Zero();
-                {
-                    ProfileTargetSlice[] targets = new ProfileTargetSlice[]
-                    {
-                    new ProfileTargetSlice(ResourcesMaker.Self.BiRadsAssessmentCategory.Value(), 1, "1"),
-                    new ProfileTargetSlice(ResourcesMaker.Self.SectionFindingsLeftBreast.Value(), 1, "1"),
-                    new ProfileTargetSlice(ResourcesMaker.Self.SectionFindingsRightBreast.Value(), 1, "1")
-                    };
-                    e.SliceByUrl("hasMember", targets);
-                    e.AddProfileTargets(targets);
-                }
-
                 e.IntroDoc
                  .ReviewedStatus(ReviewStatus.NotReviewed)
                  .ObservationSection($"Finding")
                  ;
+
+                e.Select("value[x]").Zero();
+                e.Select("bodySite").Zero();
+
+                if (Self.Component_HasMember)
+                {
+                    ProfileTargetSlice[] targets = new ProfileTargetSlice[]
+                    {
+                    new ProfileTargetSlice(Self.BiRadsAssessmentCategory.Value(), 1, "1"),
+                    new ProfileTargetSlice(Self.SectionFindingsLeftBreast.Value(), 1, "1"),
+                    new ProfileTargetSlice(Self.SectionFindingsRightBreast.Value(), 1, "1")
+                    };
+                    e.SliceByUrl("hasMember", targets);
+                    e.AddProfileTargets(targets);
+                }
+                else
+                {
+                    ProfileTargetSlice[] targets = new ProfileTargetSlice[]
+                    {
+                    new ProfileTargetSlice(Self.SectionFindingsLeftBreast.Value(), 1, "1"),
+                    new ProfileTargetSlice(Self.SectionFindingsRightBreast.Value(), 1, "1")
+                    };
+                    e.SliceByUrl("hasMember", targets);
+                    e.AddProfileTargets(targets);
+
+                    Self.ComponentSliceBiRads(e);
+                }
             });
     }
 }

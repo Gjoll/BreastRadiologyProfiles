@@ -16,7 +16,7 @@ namespace BreastRadiology.XUnitTests
     {
         CSTaskVar ObservedChangeInNumberCS = new CSTaskVar(
              () =>
-                 ResourcesMaker.Self.CreateCodeSystem(
+                 Self.CreateCodeSystem(
                      "ObservedChangeInNumberCS",
                      "Observed Changes CodeSystem",
                      "Observed/Change/CodeSystem",
@@ -39,32 +39,32 @@ namespace BreastRadiology.XUnitTests
 
         VSTaskVar ObservedChangeInNumberVS = new VSTaskVar(
             () =>
-                ResourcesMaker.Self.CreateValueSet(
+                Self.CreateValueSet(
                     "ObservedChangeInNumberVS",
                     "Observed Number Changes ValueSet",
                     "Observed/Change/ValueSet",
                     "Observed changes in number of an abnormality over time value set.",
                     Group_CommonCodes,
-                    ResourcesMaker.Self.ObservedChangeInNumberCS.Value()
+                    Self.ObservedChangeInNumberCS.Value()
                     )
             );
 
         StringTaskVar ObservedChangeInNumber = new StringTaskVar(
             (out String s) =>
             {
-                ValueSet binding = ResourcesMaker.Self.ObservedChangeInNumberVS.Value();
+                ValueSet binding = Self.ObservedChangeInNumberVS.Value();
 
                 {
-                    IntroDoc valueSetIntroDoc = new IntroDoc(Path.Combine(ResourcesMaker.Self.pageDir, $"ValueSet-{binding.Name}-intro.xml"));
+                    IntroDoc valueSetIntroDoc = new IntroDoc(Path.Combine(Self.pageDir, $"ValueSet-{binding.Name}-intro.xml"));
                     valueSetIntroDoc
                         .ReviewedStatus(ReviewStatus.NotReviewed)
                         .ValueSet(binding);
                     ;
                     String outputPath = valueSetIntroDoc.Save();
-                    ResourcesMaker.Self.fc?.Mark(outputPath);
+                    Self.fc?.Mark(outputPath);
                 }
 
-                SDefEditor e = ResourcesMaker.Self.CreateEditor("ObservedChangeInNumber",
+                SDefEditor e = Self.CreateEditor("ObservedChangeInNumber",
                         "Observed Change in Number",
                         "Number Change",
                         ObservationUrl,
@@ -76,21 +76,23 @@ namespace BreastRadiology.XUnitTests
                             "Is this change in count, or number of calcifications?"
                             )
                     )
-                    .AddFragRef(ResourcesMaker.Self.ObservationNoDeviceFragment.Value())
-                    .AddFragRef(ResourcesMaker.Self.ObservationCodedValueFragment.Value())
-                    .AddFragRef(ResourcesMaker.Self.ObservationLeafFragment.Value())
+                    .AddFragRef(Self.ObservationNoDeviceFragment.Value())
+                    .AddFragRef(Self.ObservationCodedValueFragment.Value())
+                    .AddFragRef(Self.ObservationLeafFragment.Value())
                     ;
 
                 s = e.SDef.Url;
+
+                e.IntroDoc
+                    .ReviewedStatus(ReviewStatus.NotReviewed)
+                    .CodedObservationLeafNode("an abnormality observed change in number", binding)
+                    ;
+
                 e.Select("value[x]")
                     .Type("CodeableConcept")
                     .Binding(binding.Url, BindingStrength.Required)
                     ;
                 e.AddValueSetLink(binding);
-                e.IntroDoc
-                    .ReviewedStatus(ReviewStatus.NotReviewed)
-                    .CodedObservationLeafNode("an abnormality observed change in number", binding)
-                    ;
             });
     }
 }

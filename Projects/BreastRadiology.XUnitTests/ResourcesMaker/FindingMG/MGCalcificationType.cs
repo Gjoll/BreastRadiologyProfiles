@@ -15,7 +15,7 @@ namespace BreastRadiology.XUnitTests
     {
         CSTaskVar MGCalcificationTypeCS = new CSTaskVar(
              () =>
-                 ResourcesMaker.Self.CreateCodeSystem(
+                 Self.CreateCodeSystem(
                      "MammoCalcificationTypeCS",
                      "Mammography Calcification Type CodeSystem",
                      "MG Calc. Type/CodeSystem",
@@ -190,13 +190,13 @@ namespace BreastRadiology.XUnitTests
 
         VSTaskVar MGCalcificationTypeVS = new VSTaskVar(
             () =>
-                ResourcesMaker.Self.CreateValueSet(
+                Self.CreateValueSet(
                     "MammoCalcificationTypeVS",
                     "Mammography Calcification Type ValueSet",
                     "MG Calc. TypeValueSet",
                     "Mammography calcification types value set.",
                     Group_MGCodes,
-                    ResourcesMaker.Self.MGCalcificationTypeCS.Value()
+                    Self.MGCalcificationTypeCS.Value()
                     )
             );
 
@@ -204,19 +204,19 @@ namespace BreastRadiology.XUnitTests
         StringTaskVar MGCalcificationType = new StringTaskVar(
             (out String s) =>
             {
-                ValueSet binding = ResourcesMaker.Self.MGCalcificationTypeVS.Value();
+                ValueSet binding = Self.MGCalcificationTypeVS.Value();
 
                 {
-                    IntroDoc valueSetIntroDoc = new IntroDoc(Path.Combine(ResourcesMaker.Self.pageDir, $"ValueSet-{binding.Name}-intro.xml"));
+                    IntroDoc valueSetIntroDoc = new IntroDoc(Path.Combine(Self.pageDir, $"ValueSet-{binding.Name}-intro.xml"));
                     valueSetIntroDoc
                         .ReviewedStatus(ReviewStatus.NotReviewed)
                         .ValueSet(binding);
                     ;
                     String outputPath = valueSetIntroDoc.Save();
-                    ResourcesMaker.Self.fc?.Mark(outputPath);
+                    Self.fc?.Mark(outputPath);
                 }
 
-                SDefEditor e = ResourcesMaker.Self.CreateEditor("MGCalcificationType",
+                SDefEditor e = Self.CreateEditor("MGCalcificationType",
                     "Mammography Calcification Type",
                     "MG Calc. Type",
                     ObservationUrl,
@@ -226,21 +226,22 @@ namespace BreastRadiology.XUnitTests
                             .Paragraph("This resource describes the type of calcification observed.")
                             //.Todo
                      )
-                    .AddFragRef(ResourcesMaker.Self.ObservationNoDeviceFragment.Value())
-                    .AddFragRef(ResourcesMaker.Self.ObservationCodedValueFragment.Value())
-                    .AddFragRef(ResourcesMaker.Self.ObservationLeafFragment.Value())
+                    .AddFragRef(Self.ObservationNoDeviceFragment.Value())
+                    .AddFragRef(Self.ObservationCodedValueFragment.Value())
+                    .AddFragRef(Self.ObservationLeafFragment.Value())
                     ;
                 s = e.SDef.Url;
+
+                e.IntroDoc
+                    .ReviewedStatus(ReviewStatus.NotReviewed)
+                    .CodedObservationLeafNode("a mammography calcification type", binding)
+                    ;
 
                 e.Select("value[x]")
                     .Type("CodeableConcept")
                     .Binding(binding.Url, BindingStrength.Required)
                     ;
                 e.AddValueSetLink(binding);
-                e.IntroDoc
-                    .ReviewedStatus(ReviewStatus.NotReviewed)
-                    .CodedObservationLeafNode("a mammography calcification type", binding)
-                    ;
             });
     }
 }

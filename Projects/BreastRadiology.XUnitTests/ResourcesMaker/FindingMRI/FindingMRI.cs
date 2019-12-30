@@ -17,7 +17,7 @@ namespace BreastRadiology.XUnitTests
             (out String s) =>
             {
                 //$ Fix me. Incorrect method!!!
-                SDefEditor e = ResourcesMaker.Self.CreateEditor("MRIFinding",
+                SDefEditor e = Self.CreateEditor("MRIFinding",
                         "MRI Finding",
                         "MRI Finding",
                         ObservationUrl,
@@ -29,33 +29,29 @@ namespace BreastRadiology.XUnitTests
                                 "Add information about contrast enhancement/other observation specific parameters."
                             )
                     )
-                    .AddFragRef(ResourcesMaker.Self.ObservationSectionFragment.Value())
+                    .AddFragRef(Self.ObservationSectionFragment.Value())
                 ;
                 s = e.SDef.Url;
-                e.Select("value[x]").Zero();
-
-                {
-                    ProfileTargetSlice[] targets = new ProfileTargetSlice[]
-                    {
-                    //new ProfileTargetSlice(ResourcesMaker.Self.MGArchitecturalDistortion(), 0, "1"),
-                    //new ProfileTargetSlice(ResourcesMaker.Self.MGAsymmetries(), 0, "*"),
-                    //new ProfileTargetSlice(ResourcesMaker.Self.MGBreastDensity(), 1, "1"),
-                    //new ProfileTargetSlice(ResourcesMaker.Self.MGCalcification(), 0, "*"),
-                    //$new ProfileTargetSlice(ResourcesMaker.Self.CommonAbnormalityForeignObject(), 0, "*"),
-                    //new ProfileTargetSlice(ResourcesMaker.Self.MGIntramammaryLymphNode(), 0, "1"),
-                    new ProfileTargetSlice(ResourcesMaker.Self.MRIMass.Value(), 0, "*"),
-                        //new ProfileTargetSlice(ResourcesMaker.Self.MGSkinLesion(), 0, "*"),
-                        //new ProfileTargetSlice(ResourcesMaker.Self.MGSolitaryDilatedDuct(), 0, "1"),
-                        //new ProfileTargetSlice(ResourcesMaker.Self.MGAssociatedFeatures(), 0, "1")
-                    };
-                    e.SliceByUrl("hasMember", targets);
-                    e.AddProfileTargets(targets);
-                }
 
                 e.IntroDoc
                     .ReviewedStatus(ReviewStatus.NotReviewed)
                     .ObservationSection("MRI Finding")
                     ;
+
+                if (Self.Component_HasMember)
+                {
+                    ProfileTargetSlice[] targets = new ProfileTargetSlice[]
+                    {
+                    new ProfileTargetSlice(Self.MRIMass.Value(), 0, "*"),
+                    };
+                    e.SliceByUrl("hasMember", targets);
+                    e.AddProfileTargets(targets);
+                }
+                else
+                {
+                    //$ XXYYZ-Slice
+                }
+
                 //$e.Find("method")
                 //$     .FixedCodeSlice("method", "http://snomed.info/sct", "115341008")
                 //$     .Card(1, "*")

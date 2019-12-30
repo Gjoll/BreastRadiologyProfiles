@@ -16,7 +16,7 @@ namespace BreastRadiology.XUnitTests
         StringTaskVar AimHeaderFragment = new StringTaskVar(
             (out String s) =>
             {
-                SDefEditor e = ResourcesMaker.Self.CreateFragment("AimHeaderFragment",
+                SDefEditor e = Self.CreateFragment("AimHeaderFragment",
                     "Resource",
                     "Common/Header",
                     ResourceUrl);
@@ -28,16 +28,17 @@ namespace BreastRadiology.XUnitTests
                 });
 
                 s  = e.SDef.Url;
-                e.SDef.Contact.Add(cd);
-                e.SDef.Date = ResourcesMaker.Self.date.ToString();
-                e.SDef.Status = ProfileStatus;
-                e.SDef.Publisher = "Hl7-Clinical Interoperability Council";
-                e.SDef.Version = ProfileVersion;
 
                 e.IntroDoc
                     .ReviewedStatus(ReviewStatus.NotReviewed)
                     .Fragment($"Resource fragment used to by all resources to define common values such as Contact and Date.")
                     ;
+
+                e.SDef.Contact.Add(cd);
+                e.SDef.Date = Self.date.ToString();
+                e.SDef.Status = ProfileStatus;
+                e.SDef.Publisher = "Hl7-Clinical Interoperability Council";
+                e.SDef.Version = ProfileVersion;
             });
     }
 }

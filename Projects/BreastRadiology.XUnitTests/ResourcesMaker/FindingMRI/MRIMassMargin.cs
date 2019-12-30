@@ -16,7 +16,7 @@ namespace BreastRadiology.XUnitTests
     {
         CSTaskVar MRIMarginCS = new CSTaskVar(
              () =>
-                 ResourcesMaker.Self.CreateCodeSystem(
+                 Self.CreateCodeSystem(
                      "MRIMarginCS",
                      "MRI Margin CodeSystem",
                      "MRI/Margin CodeSystem",
@@ -61,13 +61,13 @@ namespace BreastRadiology.XUnitTests
 
         VSTaskVar MRIMarginVS = new VSTaskVar(
             () =>
-                ResourcesMaker.Self.CreateValueSet(
+                Self.CreateValueSet(
                     "MRIMarginVS",
                     "MRI Margin ValueSet",
                     "MRI/Margin ValueSet",
                     "MRI margin value set.",
                     Group_MRICodes,
-                    ResourcesMaker.Self.MRIMarginCS.Value()
+                    Self.MRIMarginCS.Value()
                     )
             );
 
@@ -75,18 +75,18 @@ namespace BreastRadiology.XUnitTests
         StringTaskVar MRIMargin = new StringTaskVar(
             (out String s) =>
             {
-                ValueSet binding = ResourcesMaker.Self.MRIMarginVS.Value();
+                ValueSet binding = Self.MRIMarginVS.Value();
                 {
-                    IntroDoc valueSetIntroDoc = new IntroDoc(Path.Combine(ResourcesMaker.Self.pageDir, $"ValueSet-{binding.Name}-intro.xml"));
+                    IntroDoc valueSetIntroDoc = new IntroDoc(Path.Combine(Self.pageDir, $"ValueSet-{binding.Name}-intro.xml"));
                     valueSetIntroDoc
                         .ReviewedStatus(ReviewStatus.NotReviewed)
                         .ValueSet(binding);
                     ;
                     String outputPath = valueSetIntroDoc.Save();
-                    ResourcesMaker.Self.fc?.Mark(outputPath);
+                    Self.fc?.Mark(outputPath);
                 }
 
-                SDefEditor e = ResourcesMaker.Self.CreateEditor("MRIMargin",
+                SDefEditor e = Self.CreateEditor("MRIMargin",
                     "MRI Margin",
                     "MRI/Margin",
                     ObservationUrl,
@@ -102,21 +102,22 @@ namespace BreastRadiology.XUnitTests
                                 "Is non-circumscribed a stand along value, or implied by selection of one or more non-circumscribed values? "
                             )
                     )
-                    .AddFragRef(ResourcesMaker.Self.ObservationNoDeviceFragment.Value())
-                    .AddFragRef(ResourcesMaker.Self.ObservationCodedValueFragment.Value())
-                    .AddFragRef(ResourcesMaker.Self.ObservationLeafFragment.Value())
+                    .AddFragRef(Self.ObservationNoDeviceFragment.Value())
+                    .AddFragRef(Self.ObservationCodedValueFragment.Value())
+                    .AddFragRef(Self.ObservationLeafFragment.Value())
                     ;
                 s = e.SDef.Url;
+
+                e.IntroDoc
+                    .ReviewedStatus(ReviewStatus.NotReviewed)
+                    .CodedObservationLeafNode("a MRI margin", binding)
+                    ;
 
                 e.Select("value[x]")
                         .Type("CodeableConcept")
                         .Binding(binding.Url, BindingStrength.Required)
                         ;
                 e.AddValueSetLink(binding);
-                e.IntroDoc
-                    .ReviewedStatus(ReviewStatus.NotReviewed)
-                    .CodedObservationLeafNode("a MRI margin", binding)
-                    ;
             });
     }
 }

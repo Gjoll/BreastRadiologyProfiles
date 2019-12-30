@@ -16,7 +16,7 @@ namespace BreastRadiology.XUnitTests
         StringTaskVar SectionFindingsLeftBreast = new StringTaskVar(
             (out String s) =>
             {
-                SDefEditor e = ResourcesMaker.Self.CreateEditor("SectionFindingsLeftBreast",
+                SDefEditor e = Self.CreateEditor("SectionFindingsLeftBreast",
                        "Findings Left Breast",
                        "Left Breast",
                        ObservationUrl,
@@ -27,19 +27,19 @@ namespace BreastRadiology.XUnitTests
                        .Paragraph("Child observations are referenced by the 'Observation.hasMember' field.")
                        //.Todo
                    )
-                   .AddFragRef(ResourcesMaker.Self.ObservationNoDeviceFragment.Value())
-                   .AddFragRef(ResourcesMaker.Self.ObservationSectionFragment.Value())
+                   .AddFragRef(Self.ObservationNoDeviceFragment.Value())
+                   .AddFragRef(Self.ObservationSectionFragment.Value())
                    ;
                 s = e.SDef.Url;
-                e.Select("value[x]").Zero();
-                e.Select("bodySite").Zero();
-                e.SliceByUrl("hasMember", ResourcesMaker.Self.FindingBreastTargets());
-                e.AddProfileTargets(ResourcesMaker.Self.FindingBreastTargets());
 
                 e.IntroDoc
                     .ReviewedStatus(ReviewStatus.NotReviewed)
                     .ObservationSection($"Left Breast Finding")
                     ;
+
+                e.Select("value[x]").Zero();
+                e.Select("bodySite").Zero();
+                Self.AddFindingBreastTargets(e);
             });
     }
 }

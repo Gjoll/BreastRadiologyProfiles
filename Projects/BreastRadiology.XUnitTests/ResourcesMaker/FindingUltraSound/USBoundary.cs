@@ -15,7 +15,7 @@ namespace BreastRadiology.XUnitTests
     {
         CSTaskVar USBoundaryCS = new CSTaskVar(
              () =>
-                 ResourcesMaker.Self.CreateCodeSystem(
+                 Self.CreateCodeSystem(
                      "USBoundaryCS",
                      "UltraSound Boundary CodeSystem",
                      "US Boundary/CodeSystem",
@@ -50,13 +50,13 @@ namespace BreastRadiology.XUnitTests
 
         VSTaskVar USBoundaryVS = new VSTaskVar(
             () =>
-                ResourcesMaker.Self.CreateValueSet(
+                Self.CreateValueSet(
                     "USBoundaryVS",
                     "UltraSound Boundary ValueSet",
                     "US Boundary/ValueSet",
                     "UltraSound Boundary Codes value set.",
                     Group_USCodes,
-                    ResourcesMaker.Self.USBoundaryCS.Value()
+                    Self.USBoundaryCS.Value()
                     )
             );
 
@@ -64,19 +64,19 @@ namespace BreastRadiology.XUnitTests
         StringTaskVar USBoundary = new StringTaskVar(
             (out String s) =>
             {
-                ValueSet binding = ResourcesMaker.Self.USBoundaryVS.Value();
+                ValueSet binding = Self.USBoundaryVS.Value();
 
                 {
-                    IntroDoc valueSetIntroDoc = new IntroDoc(Path.Combine(ResourcesMaker.Self.pageDir, $"ValueSet-{binding.Name}-intro.xml"));
+                    IntroDoc valueSetIntroDoc = new IntroDoc(Path.Combine(Self.pageDir, $"ValueSet-{binding.Name}-intro.xml"));
                     valueSetIntroDoc
                         .ReviewedStatus(ReviewStatus.NotReviewed)
                         .ValueSet(binding);
                     ;
                     String outputPath = valueSetIntroDoc.Save();
-                    ResourcesMaker.Self.fc?.Mark(outputPath);
+                    Self.fc?.Mark(outputPath);
                 }
 
-                SDefEditor e = ResourcesMaker.Self.CreateEditor("USBoundary",
+                SDefEditor e = Self.CreateEditor("USBoundary",
                     "Ultra Sound Boundary",
                     "US Boundary",
                     ObservationUrl,
@@ -87,21 +87,23 @@ namespace BreastRadiology.XUnitTests
                             .Paragraph("[PR]")
                             //.Todo
                      )
-                    .AddFragRef(ResourcesMaker.Self.ObservationNoDeviceFragment.Value())
-                    .AddFragRef(ResourcesMaker.Self.ObservationCodedValueFragment.Value())
-                    .AddFragRef(ResourcesMaker.Self.ObservationLeafFragment.Value())
+                    .AddFragRef(Self.ObservationNoDeviceFragment.Value())
+                    .AddFragRef(Self.ObservationCodedValueFragment.Value())
+                    .AddFragRef(Self.ObservationLeafFragment.Value())
                     ;
 
                 s = e.SDef.Url;
+
+                e.IntroDoc
+                    .ReviewedStatus(ReviewStatus.NotReviewed)
+                    .CodedObservationLeafNode("an UltraSound boundary", binding)
+                    ;
+
                 e.Select("value[x]")
                     .Type("CodeableConcept")
                     .Binding(binding.Url, BindingStrength.Required)
                     ;
                 e.AddValueSetLink(binding);
-                e.IntroDoc
-                    .ReviewedStatus(ReviewStatus.NotReviewed)
-                    .CodedObservationLeafNode("an UltraSound boundary", binding)
-                    ;
             });
     }
 }

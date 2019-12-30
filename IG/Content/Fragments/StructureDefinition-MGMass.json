@@ -55,15 +55,7 @@
     },
     {
       "url": "http://www.fragment.com/maplink",
-      "valueString": "target|False|http://hl7.org/fhir/us/breast-radiology/StructureDefinition/ObservedCount"
-    },
-    {
-      "url": "http://www.fragment.com/maplink",
       "valueString": "target|False|http://hl7.org/fhir/us/breast-radiology/StructureDefinition/MGAssociatedFeatures"
-    },
-    {
-      "url": "http://www.fragment.com/maplink",
-      "valueString": "target|False|http://hl7.org/fhir/us/breast-radiology/StructureDefinition/ConsistentWith"
     }
   ],
   "url": "http://hl7.org/fhir/us/breast-radiology/StructureDefinition/MGMass",
@@ -129,26 +121,6 @@
         }
       },
       {
-        "id": "Observation.hasMember:observedCount",
-        "path": "Observation.hasMember",
-        "sliceName": "observedCount",
-        "min": 0,
-        "max": "1",
-        "base": {
-          "path": "Observation.hasMember",
-          "min": 0,
-          "max": "*"
-        },
-        "type": [
-          {
-            "code": "Reference",
-            "targetProfile": [
-              "http://hl7.org/fhir/us/breast-radiology/StructureDefinition/ObservedCount"
-            ]
-          }
-        ]
-      },
-      {
         "id": "Observation.hasMember:mGAssociatedFeatures",
         "path": "Observation.hasMember",
         "sliceName": "mGAssociatedFeatures",
@@ -169,24 +141,151 @@
         ]
       },
       {
-        "id": "Observation.hasMember:consistentWith",
-        "path": "Observation.hasMember",
-        "sliceName": "consistentWith",
+        "id": "Observation.component",
+        "path": "Observation.component",
+        "slicing": {
+          "discriminator": [
+            {
+              "type": "pattern",
+              "path": "code"
+            }
+          ],
+          "rules": "open"
+        },
         "min": 0,
         "max": "*",
         "base": {
-          "path": "Observation.hasMember",
+          "path": "Observation.component",
+          "min": 0,
+          "max": "*"
+        }
+      },
+      {
+        "id": "Observation.component:observedCount",
+        "path": "Observation.component",
+        "sliceName": "observedCount",
+        "min": 0,
+        "max": "1",
+        "base": {
+          "path": "Observation.component",
+          "min": 0,
+          "max": "*"
+        }
+      },
+      {
+        "id": "Observation.component:observedCount.value[x]",
+        "path": "Observation.component.value[x]",
+        "definition": "Count of an object.\n\n\nThis is either an integer count, or a Range (min..max) count.\n\n\nA range value with no maximum specified implies count is min or more.\n\n\nA range value with no minimum specified implies count is max or less.",
+        "min": 1,
+        "max": "1",
+        "base": {
+          "path": "Observation.component",
           "min": 0,
           "max": "*"
         },
         "type": [
           {
-            "code": "Reference",
-            "targetProfile": [
-              "http://hl7.org/fhir/us/breast-radiology/StructureDefinition/ConsistentWith"
-            ]
+            "code": "integer"
+          },
+          {
+            "code": "Range"
           }
         ]
+      },
+      {
+        "id": "Observation.component:observedCount.interpretation",
+        "path": "Observation.component.interpretation",
+        "min": 0,
+        "max": "0",
+        "base": {
+          "path": "Observation.component",
+          "min": 0,
+          "max": "*"
+        }
+      },
+      {
+        "id": "Observation.component:observedCount.referenceRange",
+        "path": "Observation.component.referenceRange",
+        "min": 0,
+        "max": "0",
+        "base": {
+          "path": "Observation.component",
+          "min": 0,
+          "max": "*"
+        }
+      },
+      {
+        "id": "Observation.component:consistentWith",
+        "path": "Observation.component",
+        "sliceName": "consistentWith",
+        "min": 0,
+        "max": "*",
+        "base": {
+          "path": "Observation.component",
+          "min": 0,
+          "max": "*"
+        }
+      },
+      {
+        "id": "Observation.component:consistentWith.code",
+        "path": "Observation.component.code",
+        "min": 1,
+        "max": "1",
+        "base": {
+          "path": "Observation.component",
+          "min": 0,
+          "max": "*"
+        },
+        "patternCodeableConcept": {
+          "coding": [
+            {
+              "system": "http://hl7.org/fhir/us/breast-radiology/CodeSystem/ComponentSliceCodes",
+              "code": "targetBiRads"
+            }
+          ]
+        }
+      },
+      {
+        "id": "Observation.component:consistentWith.value[x]",
+        "path": "Observation.component.value[x]",
+        "min": 1,
+        "max": "1",
+        "base": {
+          "path": "Observation.component",
+          "min": 0,
+          "max": "*"
+        },
+        "type": [
+          {
+            "code": "CodeableConcept"
+          }
+        ],
+        "binding": {
+          "strength": "extensible",
+          "valueSet": "http://hl7.org/fhir/us/breast-radiology/CodeSystem/ConsistentWithCodeSystemCS"
+        }
+      },
+      {
+        "id": "Observation.component:consistentWith.interpretation",
+        "path": "Observation.component.interpretation",
+        "min": 0,
+        "max": "0",
+        "base": {
+          "path": "Observation.component",
+          "min": 0,
+          "max": "*"
+        }
+      },
+      {
+        "id": "Observation.component:consistentWith.referenceRange",
+        "path": "Observation.component.referenceRange",
+        "min": 0,
+        "max": "0",
+        "base": {
+          "path": "Observation.component",
+          "min": 0,
+          "max": "*"
+        }
       }
     ]
   }

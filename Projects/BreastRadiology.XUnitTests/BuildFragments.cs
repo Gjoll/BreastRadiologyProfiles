@@ -351,6 +351,9 @@ namespace BreastRadiology.XUnitTests
         {
             try
             {
+                if (Directory.Exists(this.graphicsDir) == false)
+                    Directory.CreateDirectory(this.graphicsDir);
+
                 {
                     ResourceMap map = new ResourceMap();
                     map.AddDir(this.fragmentDir, "*.json");
@@ -360,9 +363,6 @@ namespace BreastRadiology.XUnitTests
                 }
 
                 {
-                    if (Directory.Exists(this.graphicsDir) == false)
-                        Directory.CreateDirectory(this.graphicsDir);
-
                     ResourceMap map = new ResourceMap();
                     map.CreateMapNode(ResourcesMaker.ClinicalImpressionUrl,
                         new string[] { "Clinical", "Impression" },
@@ -467,6 +467,9 @@ namespace BreastRadiology.XUnitTests
             try
             {
                 String outputDir = Path.Combine(this.guideDir, "input");
+                if (Directory.Exists(outputDir) == false)
+                    Directory.CreateDirectory(outputDir);
+
                 IGBuilder p = new IGBuilder(this.fc, outputDir);
                 p.StatusErrors += this.StatusErrors;
                 p.StatusInfo += this.StatusInfo;

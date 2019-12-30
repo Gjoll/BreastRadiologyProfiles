@@ -16,7 +16,7 @@ namespace BreastRadiology.XUnitTests
         StringTaskVar MGTrabecularThickening = new StringTaskVar(
             (out String s) =>
             {
-                SDefEditor e = ResourcesMaker.Self.CreateEditor("MGTrabecularThickening",
+                SDefEditor e = Self.CreateEditor("MGTrabecularThickening",
                     "Mammography Trabecular Thickening",
                     "MG Trabecular/Thickening",
                     ObservationUrl,
@@ -29,9 +29,9 @@ namespace BreastRadiology.XUnitTests
                             .MissingObservation("a trabecular thickening")
                             //.Todo
                     )
-                    .AddFragRef(ResourcesMaker.Self.ObservationNoDeviceFragment.Value())
-                    .AddFragRef(ResourcesMaker.Self.BreastBodyLocationRequiredFragment.Value())
-                    .AddFragRef(ResourcesMaker.Self.ObservationNoValueFragment.Value())
+                    .AddFragRef(Self.ObservationNoDeviceFragment.Value())
+                    .AddFragRef(Self.BreastBodyLocationRequiredFragment.Value())
+                    .AddFragRef(Self.ObservationNoValueFragment.Value())
                     ;
                 s = e.SDef.Url;
                 e.IntroDoc

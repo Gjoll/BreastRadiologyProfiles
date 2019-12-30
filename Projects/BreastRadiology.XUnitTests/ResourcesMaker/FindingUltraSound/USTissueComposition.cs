@@ -15,7 +15,7 @@ namespace BreastRadiology.XUnitTests
     {
         CSTaskVar USTissueCompositionCS = new CSTaskVar(
              () =>
-                 ResourcesMaker.Self.CreateCodeSystem(
+                 Self.CreateCodeSystem(
                      "USTissueCompositionCS",
                      "US Tissue Composition CodeSystem",
                      "US Tissue/Composition/CodeSystem",
@@ -59,13 +59,13 @@ namespace BreastRadiology.XUnitTests
 
         VSTaskVar USTissueCompositionVS = new VSTaskVar(
             () =>
-                ResourcesMaker.Self.CreateValueSet(
+                Self.CreateValueSet(
                     "USTissueCompositionVS",
                     "US Tissue Composition ValueSet",
                     "US Tissue/CompositionValueSet",
                     "Ultra-sound breast tissue composition codes value set.",
                     Group_USCodes,
-                    ResourcesMaker.Self.USTissueCompositionCS.Value()
+                    Self.USTissueCompositionCS.Value()
                     )
             );
 
@@ -73,18 +73,18 @@ namespace BreastRadiology.XUnitTests
         StringTaskVar USTissueComposition = new StringTaskVar(
             (out String s) =>
             {
-                ValueSet binding = ResourcesMaker.Self.USTissueCompositionVS.Value();
+                ValueSet binding = Self.USTissueCompositionVS.Value();
                 {
-                    IntroDoc valueSetIntroDoc = new IntroDoc(Path.Combine(ResourcesMaker.Self.pageDir, $"ValueSet-{binding.Name}-intro.xml"));
+                    IntroDoc valueSetIntroDoc = new IntroDoc(Path.Combine(Self.pageDir, $"ValueSet-{binding.Name}-intro.xml"));
                     valueSetIntroDoc
                         .ReviewedStatus(ReviewStatus.NotReviewed)
                         .ValueSet(binding);
                     ;
                     String outputPath = valueSetIntroDoc.Save();
-                    ResourcesMaker.Self.fc?.Mark(outputPath);
+                    Self.fc?.Mark(outputPath);
                 }
 
-                SDefEditor e = ResourcesMaker.Self.CreateEditor("USTissueComposition",
+                SDefEditor e = Self.CreateEditor("USTissueComposition",
                         "US Tissue Composition",
                         "US Tissue/Composition",
                         ObservationUrl,
@@ -101,21 +101,23 @@ namespace BreastRadiology.XUnitTests
                                 "can this and mammo breast density be the same?"
                             )
                     )
-                    .AddFragRef(ResourcesMaker.Self.ObservationNoDeviceFragment.Value())
-                    .AddFragRef(ResourcesMaker.Self.ObservationCodedValueFragment.Value())
-                    .AddFragRef(ResourcesMaker.Self.ObservationLeafFragment.Value())
+                    .AddFragRef(Self.ObservationNoDeviceFragment.Value())
+                    .AddFragRef(Self.ObservationCodedValueFragment.Value())
+                    .AddFragRef(Self.ObservationLeafFragment.Value())
                     ;
 
                 s = e.SDef.Url;
+
+                e.IntroDoc
+                    .ReviewedStatus(ReviewStatus.NotReviewed)
+                    .CodedObservationLeafNode("an ultra-sound tissue composition", binding)
+                    ;
+
                 e.Select("value[x]")
                     .Type("CodeableConcept")
                     .Binding(binding.Url, BindingStrength.Required)
                     ;
                 e.AddValueSetLink(binding);
-                e.IntroDoc
-                    .ReviewedStatus(ReviewStatus.NotReviewed)
-                    .CodedObservationLeafNode("an ultra-sound tissue composition", binding)
-                    ;
             });
     }
 }
