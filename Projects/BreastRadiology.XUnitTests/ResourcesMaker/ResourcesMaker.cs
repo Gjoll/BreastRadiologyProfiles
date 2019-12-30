@@ -23,8 +23,75 @@ namespace BreastRadiology.XUnitTests
 
     partial class ResourcesMaker : ConverterBase
     {
-        public static ResourcesMaker Self => ResourcesMaker.self;
-        static ResourcesMaker self;
+        class Definition
+        {
+            StringBuilder sb = new StringBuilder();
+            //bool citeFlag = false;
+
+            public Definition CiteStart()
+            {
+                return this;
+            }
+
+            public Definition CiteEnd(String citationSource)
+            {
+                this.sb.AppendLine($"    -- {citationSource}");
+                return this;
+            }
+
+            public Definition Line(String line)
+            {
+                this.sb.AppendLine(line);
+                return this;
+            }
+
+            public Definition ValidModalities(params Modalities[] modalities)
+            {
+                this.sb.Append("Valid for the following modalities:");
+                foreach (Modalities m in modalities)
+                    this.sb.Append($" {m.ToString()}");
+                this.sb.AppendLine(".");
+                return this;
+            }
+
+            public String ToText()
+            {
+                return this.sb.ToString();
+            }
+        }
+
+        class ConceptDef
+        {
+            public String Code;
+            public String Display;
+            public String Definition;
+
+            public ConceptDef(String code, String display, String definition)
+            {
+                if (String.IsNullOrWhiteSpace(code) == true)
+                    throw new Exception("Empty code");
+                if (String.IsNullOrWhiteSpace(display) == true)
+                    throw new Exception("Empty Display");
+                if (String.IsNullOrWhiteSpace(definition) == true)
+                    throw new Exception("Empty definition");
+                this.Code = code;
+                this.Display = display;
+                this.Definition = definition;
+            }
+
+            public ConceptDef(Coding code, String definition)
+            {
+                this.Code = code.Code;
+                this.Display = code.Display;
+                this.Definition = definition;
+            }
+
+            public ConceptDef(String code, String display, Definition definition) : this(code, display, definition.ToText())
+            {
+            }
+        }
+
+        public static ResourcesMaker Self {get; set; }
 
         public const String Group_BaseResources = "BaseResources";
         public const String Group_CommonResources = "CommonResources";
@@ -91,7 +158,7 @@ namespace BreastRadiology.XUnitTests
         {
             const String fcn = "ResourcesMaker";
 
-            ResourcesMaker.self = this;
+            Self = this;
             this.fc = fc;
             this.resourceDir = resourceDir;
             this.pageDir = pageDir;
@@ -155,67 +222,6 @@ namespace BreastRadiology.XUnitTests
             retVal.SetIsFrag();
             retVal.SDef.Abstract = true;
             return retVal;
-        }
-
-        class Definition
-        {
-            StringBuilder sb = new StringBuilder();
-            //bool citeFlag = false;
-
-            public Definition CiteStart()
-            {
-                return this;
-            }
-
-            public Definition CiteEnd(String citationSource)
-            {
-                this.sb.AppendLine($"    -- {citationSource}");
-                return this;
-            }
-
-            public Definition Line(String line)
-            {
-                this.sb.AppendLine(line);
-                return this;
-            }
-
-            public Definition ValidModalities(params Modalities[] modalities)
-            {
-                this.sb.Append("Valid for the following modalities:");
-                foreach (Modalities m in modalities)
-                    this.sb.Append($" {m.ToString()}");
-                this.sb.AppendLine(".");
-                return this;
-            }
-
-            public String ToText()
-            {
-                return this.sb.ToString();
-            }
-        }
-
-        class ConceptDef
-        {
-            public String Code;
-            public String Display;
-            public String Definition;
-
-            public ConceptDef(String code, String display, String definition)
-            {
-                if (String.IsNullOrWhiteSpace(code) == true)
-                    throw new Exception("Empty code");
-                if (String.IsNullOrWhiteSpace(display) == true)
-                    throw new Exception("Empty Display");
-                if (String.IsNullOrWhiteSpace(definition) == true)
-                    throw new Exception("Empty definition");
-                this.Code = code;
-                this.Display = display;
-                this.Definition = definition;
-            }
-
-            public ConceptDef(String code, String display, Definition definition) : this(code, display, definition.ToText())
-            {
-            }
         }
 
         CodeSystem CreateCodeSystem(String name,

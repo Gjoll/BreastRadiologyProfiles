@@ -17,13 +17,13 @@ namespace BreastRadiology.XUnitTests
 
         VSTaskVar MGShapeVS = new VSTaskVar(
             () =>
-                ResourcesMaker.Self.CreateValueSet(
+                Self.CreateValueSet(
                         "MammoShapeVS",
                         "Shape ValueSet",
                         "Shape/ValueSet",
                         "Shape values value set.",
                         Group_MGCodes,
-                        ResourcesMaker.Self.ShapeCS.Value()
+                        Self.ShapeCS.Value()
                     )
             );
 
@@ -31,18 +31,18 @@ namespace BreastRadiology.XUnitTests
         StringTaskVar MGShape = new StringTaskVar(
             (out String s) =>
             {
-                ValueSet binding = ResourcesMaker.Self.MGShapeVS.Value();
+                ValueSet binding = Self.MGShapeVS.Value();
                 {
-                    IntroDoc valueSetIntroDoc = new IntroDoc(Path.Combine(ResourcesMaker.Self.pageDir, $"ValueSet-{binding.Name}-intro.xml"));
+                    IntroDoc valueSetIntroDoc = new IntroDoc(Path.Combine(Self.pageDir, $"ValueSet-{binding.Name}-intro.xml"));
                     valueSetIntroDoc
                         .ReviewedStatus(ReviewStatus.NotReviewed)
                         .ValueSet(binding);
                     ;
                     String outputPath = valueSetIntroDoc.Save();
-                    ResourcesMaker.Self.fc?.Mark(outputPath);
+                    Self.fc?.Mark(outputPath);
                 }
 
-                SDefEditor e = ResourcesMaker.Self.CreateEditor("MammoShape",
+                SDefEditor e = Self.CreateEditor("MammoShape",
                         "Shape",
                         "Shape",
                         ObservationUrl,
@@ -52,9 +52,9 @@ namespace BreastRadiology.XUnitTests
                             .MissingObservation("a shape")
                             //.Todo
                     )
-                    .AddFragRef(ResourcesMaker.Self.ObservationNoDeviceFragment.Value())
-                    .AddFragRef(ResourcesMaker.Self.ObservationCodedValueFragment.Value())
-                    .AddFragRef(ResourcesMaker.Self.ObservationLeafFragment.Value())
+                    .AddFragRef(Self.ObservationNoDeviceFragment.Value())
+                    .AddFragRef(Self.ObservationCodedValueFragment.Value())
+                    .AddFragRef(Self.ObservationLeafFragment.Value())
                     ;
                 s = e.SDef.Url;
 

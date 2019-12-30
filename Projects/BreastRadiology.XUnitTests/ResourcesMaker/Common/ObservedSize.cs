@@ -17,7 +17,7 @@ namespace BreastRadiology.XUnitTests
         StringTaskVar ObservedSize = new StringTaskVar(
             (out String s) =>
             {
-                SDefEditor e = ResourcesMaker.Self.CreateEditor("ObservedSize",
+                SDefEditor e = Self.CreateEditor("ObservedSize",
                         "Size",
                         "Size",
                         ObservationUrl,
@@ -31,8 +31,8 @@ namespace BreastRadiology.XUnitTests
                             "Should value[x] be SimpleQuantity."
                             )
                      )
-                    .AddFragRef(ResourcesMaker.Self.ObservationNoDeviceFragment.Value())
-                    .AddFragRef(ResourcesMaker.Self.ObservationLeafFragment.Value())
+                    .AddFragRef(Self.ObservationNoDeviceFragment.Value())
+                    .AddFragRef(Self.ObservationLeafFragment.Value())
                     ;
                 s = e.SDef.Url;
 

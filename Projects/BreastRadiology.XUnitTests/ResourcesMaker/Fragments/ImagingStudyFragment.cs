@@ -12,7 +12,7 @@ namespace BreastRadiology.XUnitTests
         StringTaskVar ImagingStudyFragment = new StringTaskVar(
             (out String s) =>
             {
-                SDefEditor e = ResourcesMaker.Self.CreateFragment("ImagingStudyFragment",
+                SDefEditor e = Self.CreateFragment("ImagingStudyFragment",
                         "Imaging Study Fragment",
                         "ImagingStudy",
                         ObservationUrl)
@@ -29,12 +29,12 @@ namespace BreastRadiology.XUnitTests
                     .Fragment($"Imaging Study Fragment")
                     ;
 
-                if (ResourcesMaker.Self.Component_HasMember)
+                if (Self.Component_HasMember)
                 {
                     ProfileTargetSlice[] targets = new ProfileTargetSlice[]
                     {
                     new ProfileTargetSlice(ImagingStudyUrl, 0, "*"),
-                    new ProfileTargetSlice(ResourcesMaker.Self.AimAnnotatedImagingStudy.Value(), 0, "1"),
+                    new ProfileTargetSlice(Self.AimAnnotatedImagingStudy.Value(), 0, "1"),
                     };
                     e.SliceByUrl("derivedFrom", targets);
                     e.AddProfileTargets(targets);

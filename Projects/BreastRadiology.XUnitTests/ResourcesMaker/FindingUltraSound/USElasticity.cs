@@ -16,7 +16,7 @@ namespace BreastRadiology.XUnitTests
     {
         CSTaskVar USElasticityCS = new CSTaskVar(
              () =>
-                 ResourcesMaker.Self.CreateCodeSystem(
+                 Self.CreateCodeSystem(
                      "USElasticityCS",
                      "US Echo Pattern CodeSystem",
                      "US Elasticity/CodeSystem",
@@ -45,30 +45,30 @@ namespace BreastRadiology.XUnitTests
 
         VSTaskVar USElasticityVS = new VSTaskVar(
             () =>
-                ResourcesMaker.Self.CreateValueSet(
+                Self.CreateValueSet(
                     "USElasticityVS",
                     "US Elasticity ValueSet",
                     "US Elasticity/ValueSet",
                     "Ultra-sound Elasticity  value set.",
                     Group_USCodes,
-                    ResourcesMaker.Self.USElasticityCS.Value())
+                    Self.USElasticityCS.Value())
             );
 
         StringTaskVar USElasticity = new StringTaskVar(
             (out String s) =>
             {
-                ValueSet binding = ResourcesMaker.Self.USElasticityVS.Value();
+                ValueSet binding = Self.USElasticityVS.Value();
                 {
-                    IntroDoc valueSetIntroDoc = new IntroDoc(Path.Combine(ResourcesMaker.Self.pageDir, $"ValueSet-{binding.Name}-intro.xml"));
+                    IntroDoc valueSetIntroDoc = new IntroDoc(Path.Combine(Self.pageDir, $"ValueSet-{binding.Name}-intro.xml"));
                     valueSetIntroDoc
                         .ReviewedStatus(ReviewStatus.NotReviewed)
                         .ValueSet(binding);
                     ;
                     String outputPath = valueSetIntroDoc.Save();
-                    ResourcesMaker.Self.fc?.Mark(outputPath);
+                    Self.fc?.Mark(outputPath);
                 }
 
-                SDefEditor e = ResourcesMaker.Self.CreateEditor("USElasticity",
+                SDefEditor e = Self.CreateEditor("USElasticity",
                         "US Elasticity",
                         "US Elasticity",
                         ObservationUrl,
@@ -78,9 +78,9 @@ namespace BreastRadiology.XUnitTests
                             .Paragraph("[PR]")
                             //.Todo
                         )
-                    .AddFragRef(ResourcesMaker.Self.ObservationNoDeviceFragment.Value())
-                    .AddFragRef(ResourcesMaker.Self.ObservationCodedValueFragment.Value())
-                    .AddFragRef(ResourcesMaker.Self.ObservationLeafFragment.Value())
+                    .AddFragRef(Self.ObservationNoDeviceFragment.Value())
+                    .AddFragRef(Self.ObservationCodedValueFragment.Value())
+                    .AddFragRef(Self.ObservationLeafFragment.Value())
                     ;
                 s = e.SDef.Url;
 

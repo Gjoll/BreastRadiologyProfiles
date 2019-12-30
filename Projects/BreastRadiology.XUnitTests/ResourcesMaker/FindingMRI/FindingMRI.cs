@@ -17,7 +17,7 @@ namespace BreastRadiology.XUnitTests
             (out String s) =>
             {
                 //$ Fix me. Incorrect method!!!
-                SDefEditor e = ResourcesMaker.Self.CreateEditor("MRIFinding",
+                SDefEditor e = Self.CreateEditor("MRIFinding",
                         "MRI Finding",
                         "MRI Finding",
                         ObservationUrl,
@@ -29,7 +29,7 @@ namespace BreastRadiology.XUnitTests
                                 "Add information about contrast enhancement/other observation specific parameters."
                             )
                     )
-                    .AddFragRef(ResourcesMaker.Self.ObservationSectionFragment.Value())
+                    .AddFragRef(Self.ObservationSectionFragment.Value())
                 ;
                 s = e.SDef.Url;
 
@@ -38,11 +38,11 @@ namespace BreastRadiology.XUnitTests
                     .ObservationSection("MRI Finding")
                     ;
 
-                if (ResourcesMaker.Self.Component_HasMember)
+                if (Self.Component_HasMember)
                 {
                     ProfileTargetSlice[] targets = new ProfileTargetSlice[]
                     {
-                    new ProfileTargetSlice(ResourcesMaker.Self.MRIMass.Value(), 0, "*"),
+                    new ProfileTargetSlice(Self.MRIMass.Value(), 0, "*"),
                     };
                     e.SliceByUrl("hasMember", targets);
                     e.AddProfileTargets(targets);

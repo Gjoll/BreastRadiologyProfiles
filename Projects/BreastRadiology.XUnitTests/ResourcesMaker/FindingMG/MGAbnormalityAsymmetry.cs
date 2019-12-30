@@ -17,7 +17,7 @@ namespace BreastRadiology.XUnitTests
 
         CSTaskVar MGAbnormalityAsymmetryRefinementCS = new CSTaskVar(
              () =>
-                 ResourcesMaker.Self.CreateCodeSystem(
+                 Self.CreateCodeSystem(
                     "MGAbnormalityAsymmetryRefinementCS",
                     "Mammography Asymmetry Refinement CodeSystem",
                      "MG Asymmetry Refinement/CodeSystem",
@@ -81,13 +81,13 @@ namespace BreastRadiology.XUnitTests
 
         VSTaskVar MGAbnormalityAsymmetriesVS = new VSTaskVar(
             () =>
-                ResourcesMaker.Self.CreateValueSet(
+                Self.CreateValueSet(
                    "MGAbnormalityAsymmetriesVS",
                    "Mammography AsymmetryAbnormalities ValueSet",
                     "MG Asymmetry/ValueSet",
                    "Mammography asymmetry abnormality types value set.",
                     Group_MGCodes,
-                    ResourcesMaker.Self.MGAbnormalityAsymmetryRefinementCS.Value()
+                    Self.MGAbnormalityAsymmetryRefinementCS.Value()
                     )
             );
 
@@ -95,19 +95,19 @@ namespace BreastRadiology.XUnitTests
         StringTaskVar MGAbnormalityAsymmetry = new StringTaskVar(
             (out String s) =>
             {
-                ValueSet binding = ResourcesMaker.Self.MGAbnormalityAsymmetriesVS.Value();
+                ValueSet binding = Self.MGAbnormalityAsymmetriesVS.Value();
 
                 {
-                    IntroDoc valueSetIntroDoc = new IntroDoc(Path.Combine(ResourcesMaker.Self.pageDir, $"ValueSet-{binding.Name}-intro.xml"));
+                    IntroDoc valueSetIntroDoc = new IntroDoc(Path.Combine(Self.pageDir, $"ValueSet-{binding.Name}-intro.xml"));
                     valueSetIntroDoc
                         .ReviewedStatus(ReviewStatus.NotReviewed)
                         .Refinement(binding, "Asymmetry")
                     ;
                     String outputPath = valueSetIntroDoc.Save();
-                    ResourcesMaker.Self.fc?.Mark(outputPath);
+                    Self.fc?.Mark(outputPath);
                 }
 
-                SDefEditor e = ResourcesMaker.Self.CreateEditor("MGAbnormalityAsymmetry",
+                SDefEditor e = Self.CreateEditor("MGAbnormalityAsymmetry",
                         "Mammography Asymmetry",
                         "MG Asymmetry",
                         ObservationUrl,
@@ -125,9 +125,9 @@ namespace BreastRadiology.XUnitTests
                             .BiradFooter()
                             //.Todo
                     )
-                    .AddFragRef(ResourcesMaker.Self.ObservationNoDeviceFragment.Value())
-                    .AddFragRef(ResourcesMaker.Self.ObservationCodedValueFragment.Value())
-                    .AddFragRef(ResourcesMaker.Self.MGCommonTargetsFragment.Value())
+                    .AddFragRef(Self.ObservationNoDeviceFragment.Value())
+                    .AddFragRef(Self.ObservationCodedValueFragment.Value())
+                    .AddFragRef(Self.MGCommonTargetsFragment.Value())
                 ;
                 s = e.SDef.Url;
 
@@ -137,13 +137,13 @@ namespace BreastRadiology.XUnitTests
                     .Refinement(binding, "Asymmetry")
                     ;
 
-                if (ResourcesMaker.Self.Component_HasMember)
+                if (Self.Component_HasMember)
                 {
                     ProfileTargetSlice[] targets = new ProfileTargetSlice[]
                     {
-                    new ProfileTargetSlice(ResourcesMaker.Self.ObservedCount.Value(), 0, "1"),
-                    new ProfileTargetSlice(ResourcesMaker.Self.MGAssociatedFeatures.Value(), 0, "1"),
-                    new ProfileTargetSlice(ResourcesMaker.Self.ConsistentWith.Value(), 0, "*"),
+                    new ProfileTargetSlice(Self.ObservedCount.Value(), 0, "1"),
+                    new ProfileTargetSlice(Self.MGAssociatedFeatures.Value(), 0, "1"),
+                    new ProfileTargetSlice(Self.ConsistentWith.Value(), 0, "*"),
                     };
                     e.SliceByUrl("hasMember", targets);
                     e.AddProfileTargets(targets);

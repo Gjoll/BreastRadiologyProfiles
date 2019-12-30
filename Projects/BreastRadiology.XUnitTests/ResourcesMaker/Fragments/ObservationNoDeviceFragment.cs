@@ -12,7 +12,7 @@ namespace BreastRadiology.XUnitTests
         StringTaskVar ObservationNoDeviceFragment = new StringTaskVar(
             (out String s) =>
             {
-                SDefEditor e = ResourcesMaker.Self.CreateFragment("BreastRadObservationNoDeviceFragment",
+                SDefEditor e = Self.CreateFragment("BreastRadObservationNoDeviceFragment",
                     "BreastRad Observation NoDevice Fragment",
                         "NoDevice/Observation/Fragment",
                     ObservationUrl)
@@ -21,7 +21,7 @@ namespace BreastRadiology.XUnitTests
                             .Paragraph("Fragment for all observations that have no device.")
                             //.Todo
                     )
-                    .AddFragRef(ResourcesMaker.Self.ObservationFragment.Value())
+                    .AddFragRef(Self.ObservationFragment.Value())
                 ;
                 s = e.SDef.Url;
 

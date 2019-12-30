@@ -17,7 +17,7 @@ namespace BreastRadiology.XUnitTests
         StringTaskVar ObservedCount = new StringTaskVar(
             (out String s) =>
             {
-                SDefEditor e = ResourcesMaker.Self.CreateEditor("ObservedCount",
+                SDefEditor e = Self.CreateEditor("ObservedCount",
                         "Count",
                         "Count",
                         ObservationUrl,
@@ -31,8 +31,8 @@ namespace BreastRadiology.XUnitTests
                                 "is 'tot' correct ucum units for count?"
                             )
                         )
-                    .AddFragRef(ResourcesMaker.Self.ObservationNoDeviceFragment.Value())
-                    .AddFragRef(ResourcesMaker.Self.ObservationLeafFragment.Value())
+                    .AddFragRef(Self.ObservationNoDeviceFragment.Value())
+                    .AddFragRef(Self.ObservationLeafFragment.Value())
                     ;
                 s = e.SDef.Url;
 

@@ -17,7 +17,7 @@ namespace BreastRadiology.XUnitTests
 
         CSTaskVar USVascularityCS = new CSTaskVar(
              () =>
-                 ResourcesMaker.Self.CreateCodeSystem(
+                 Self.CreateCodeSystem(
                      "USVascularityCS",
                      "US Echo Pattern CodeSystem",
                      "US Vascularity/CodeSystem",
@@ -62,13 +62,13 @@ namespace BreastRadiology.XUnitTests
 
         VSTaskVar USVascularityVS = new VSTaskVar(
             () =>
-                ResourcesMaker.Self.CreateValueSet(
+                Self.CreateValueSet(
                     "USVascularityVS",
                     "US Vascularity ValueSet",
                     "US Vascularity/ValueSet",
                     "Ultra-sound Vascularity codes value set.",
                     Group_USCodes,
-                    ResourcesMaker.Self.USVascularityCS.Value()
+                    Self.USVascularityCS.Value()
                     )
             );
 
@@ -77,19 +77,19 @@ namespace BreastRadiology.XUnitTests
         StringTaskVar USVascularity = new StringTaskVar(
             (out String s) =>
             {
-                ValueSet binding = ResourcesMaker.Self.USVascularityVS.Value();
+                ValueSet binding = Self.USVascularityVS.Value();
 
                 {
-                    IntroDoc valueSetIntroDoc = new IntroDoc(Path.Combine(ResourcesMaker.Self.pageDir, $"ValueSet-{binding.Name}-intro.xml"));
+                    IntroDoc valueSetIntroDoc = new IntroDoc(Path.Combine(Self.pageDir, $"ValueSet-{binding.Name}-intro.xml"));
                     valueSetIntroDoc
                         .ReviewedStatus(ReviewStatus.NotReviewed)
                         .ValueSet(binding);
                     ;
                     String outputPath = valueSetIntroDoc.Save();
-                    ResourcesMaker.Self.fc?.Mark(outputPath);
+                    Self.fc?.Mark(outputPath);
                 }
 
-                SDefEditor e = ResourcesMaker.Self.CreateEditor("USVascularity",
+                SDefEditor e = Self.CreateEditor("USVascularity",
                         "US Vascularity",
                         "US Vascularity",
                         ObservationUrl,
@@ -99,9 +99,9 @@ namespace BreastRadiology.XUnitTests
                             .Paragraph("[PR]")
                             //.Todo
                         )
-                    .AddFragRef(ResourcesMaker.Self.ObservationNoDeviceFragment.Value())
-                    .AddFragRef(ResourcesMaker.Self.ObservationCodedValueFragment.Value())
-                    .AddFragRef(ResourcesMaker.Self.ObservationLeafFragment.Value())
+                    .AddFragRef(Self.ObservationNoDeviceFragment.Value())
+                    .AddFragRef(Self.ObservationCodedValueFragment.Value())
+                    .AddFragRef(Self.ObservationLeafFragment.Value())
                     ;
 
                 s = e.SDef.Url;

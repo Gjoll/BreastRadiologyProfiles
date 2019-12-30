@@ -16,7 +16,7 @@ namespace BreastRadiology.XUnitTests
         StringTaskVar MGAbnormalityCalcification = new StringTaskVar(
             (out String s) =>
             {
-                SDefEditor e = ResourcesMaker.Self.CreateEditor("MGAbnormalityCalcification",
+                SDefEditor e = Self.CreateEditor("MGAbnormalityCalcification",
                         "Mammography Calcification",
                         "MG Calc.",
                         ObservationUrl,
@@ -40,10 +40,10 @@ namespace BreastRadiology.XUnitTests
                             .BiradFooter()
                             //.Todo
                     )
-                    .AddFragRef(ResourcesMaker.Self.ObservationNoDeviceFragment.Value())
-                    .AddFragRef(ResourcesMaker.Self.ObservationNoValueFragment.Value())
-                    .AddFragRef(ResourcesMaker.Self.MGCommonTargetsFragment.Value())
-                    .AddFragRef(ResourcesMaker.Self.MGShapeTargetsFragment.Value())
+                    .AddFragRef(Self.ObservationNoDeviceFragment.Value())
+                    .AddFragRef(Self.ObservationNoValueFragment.Value())
+                    .AddFragRef(Self.MGCommonTargetsFragment.Value())
+                    .AddFragRef(Self.MGShapeTargetsFragment.Value())
                     ;
 
                 s = e.SDef.Url;
@@ -53,16 +53,16 @@ namespace BreastRadiology.XUnitTests
                     .ObservationSection("Mammography Calcification")
                     ;
 
-                if (ResourcesMaker.Self.Component_HasMember)
+                if (Self.Component_HasMember)
                 {
                     ProfileTargetSlice[] targets = new ProfileTargetSlice[]
                     {
-                    new ProfileTargetSlice(ResourcesMaker.Self.ObservedCount.Value(), 0, "1"),
+                    new ProfileTargetSlice(Self.ObservedCount.Value(), 0, "1"),
 
-                    new ProfileTargetSlice(ResourcesMaker.Self.MGCalcificationType.Value(), 0, "1"),
-                    new ProfileTargetSlice(ResourcesMaker.Self.MGCalcificationDistribution.Value(), 0, "1"),
-                    new ProfileTargetSlice(ResourcesMaker.Self.MGAssociatedFeatures.Value(), 0, "1"),
-                    new ProfileTargetSlice(ResourcesMaker.Self.ConsistentWith.Value(), 0, "*"),
+                    new ProfileTargetSlice(Self.MGCalcificationType.Value(), 0, "1"),
+                    new ProfileTargetSlice(Self.MGCalcificationDistribution.Value(), 0, "1"),
+                    new ProfileTargetSlice(Self.MGAssociatedFeatures.Value(), 0, "1"),
+                    new ProfileTargetSlice(Self.ConsistentWith.Value(), 0, "*"),
                     };
                     e.SliceByUrl("hasMember", targets);
                     e.AddProfileTargets(targets);

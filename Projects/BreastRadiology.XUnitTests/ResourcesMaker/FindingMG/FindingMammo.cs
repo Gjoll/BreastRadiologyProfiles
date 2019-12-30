@@ -16,7 +16,7 @@ namespace BreastRadiology.XUnitTests
         StringTaskVar FindingMammo = new StringTaskVar(
             (out String s) =>
             {
-                SDefEditor e = ResourcesMaker.Self.CreateEditor("MGFinding",
+                SDefEditor e = Self.CreateEditor("MGFinding",
                         "Mammographi Finding",
                         "MG Finding",
                         ObservationUrl,
@@ -27,7 +27,7 @@ namespace BreastRadiology.XUnitTests
                                 "Device Metrics detailing the observation devices parameters (transducer freq, etc)."
                                 )
                         )
-                    .AddFragRef(ResourcesMaker.Self.ObservationSectionFragment.Value())
+                    .AddFragRef(Self.ObservationSectionFragment.Value())
                     ;
                 s = e.SDef.Url;
                 e.Select("value[x]").Zero();
@@ -37,24 +37,24 @@ namespace BreastRadiology.XUnitTests
                 // .Card(1, "*")
                 // ;
 
-                if (ResourcesMaker.Self.Component_HasMember)
+                if (Self.Component_HasMember)
                 {
                     ProfileTargetSlice[] targets = new ProfileTargetSlice[]
                     {
-                    new ProfileTargetSlice(ResourcesMaker.Self.MGAbnormalityForeignObject.Value(), 0, "*"),
-                    new ProfileTargetSlice(ResourcesMaker.Self.MGAbnormalityArchitecturalDistortion.Value(), 0, "*"),
-                    new ProfileTargetSlice(ResourcesMaker.Self.MGAbnormalityAsymmetry.Value(), 0, "*"),
-                    new ProfileTargetSlice(ResourcesMaker.Self.MGAbnormalityCalcification.Value(), 0, "*"),
-                    new ProfileTargetSlice(ResourcesMaker.Self.MGAbnormalityCyst.Value(), 0, "*"),
-                    new ProfileTargetSlice(ResourcesMaker.Self.MGAbnormalityDensity.Value(), 0, "*"),
-                    new ProfileTargetSlice(ResourcesMaker.Self.MGAbnormalityDuct.Value(), 0, "*"),
-                    new ProfileTargetSlice(ResourcesMaker.Self.MGAbnormalityFatNecrosis.Value(), 0, "*"),
-                    new ProfileTargetSlice(ResourcesMaker.Self.MGAbnormalityFibroadenoma.Value(), 0, "*"),
-                    new ProfileTargetSlice(ResourcesMaker.Self.MGAbnormalityLymphNode.Value(), 0, "*"),
-                    new ProfileTargetSlice(ResourcesMaker.Self.MGAbnormalityMass.Value(), 0, "*"),
-                    new ProfileTargetSlice(ResourcesMaker.Self.MGSkinLesion.Value(), 0, "*"),
-                    new ProfileTargetSlice(ResourcesMaker.Self.MGAssociatedFeatures.Value(), 0, "*"),
-                    new ProfileTargetSlice(ResourcesMaker.Self.MGBreastDensity.Value(), 1, "1")
+                    new ProfileTargetSlice(Self.MGAbnormalityForeignObject.Value(), 0, "*"),
+                    new ProfileTargetSlice(Self.MGAbnormalityArchitecturalDistortion.Value(), 0, "*"),
+                    new ProfileTargetSlice(Self.MGAbnormalityAsymmetry.Value(), 0, "*"),
+                    new ProfileTargetSlice(Self.MGAbnormalityCalcification.Value(), 0, "*"),
+                    new ProfileTargetSlice(Self.MGAbnormalityCyst.Value(), 0, "*"),
+                    new ProfileTargetSlice(Self.MGAbnormalityDensity.Value(), 0, "*"),
+                    new ProfileTargetSlice(Self.MGAbnormalityDuct.Value(), 0, "*"),
+                    new ProfileTargetSlice(Self.MGAbnormalityFatNecrosis.Value(), 0, "*"),
+                    new ProfileTargetSlice(Self.MGAbnormalityFibroadenoma.Value(), 0, "*"),
+                    new ProfileTargetSlice(Self.MGAbnormalityLymphNode.Value(), 0, "*"),
+                    new ProfileTargetSlice(Self.MGAbnormalityMass.Value(), 0, "*"),
+                    new ProfileTargetSlice(Self.MGSkinLesion.Value(), 0, "*"),
+                    new ProfileTargetSlice(Self.MGAssociatedFeatures.Value(), 0, "*"),
+                    new ProfileTargetSlice(Self.MGBreastDensity.Value(), 1, "1")
                     };
                     e.SliceByUrl("hasMember", targets);
                     e.AddProfileTargets(targets);

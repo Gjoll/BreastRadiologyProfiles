@@ -16,7 +16,7 @@ namespace BreastRadiology.XUnitTests
     {
        CSTaskVar ShapeCS = new CSTaskVar(
             () =>
-                ResourcesMaker.Self.CreateCodeSystem(
+                Self.CreateCodeSystem(
                     "ShapeCS",
                     "Shape CodeSystem",
                     "Shape/CodeSystem",

@@ -16,9 +16,9 @@ namespace BreastRadiology.XUnitTests
         StringTaskVar MGAbnormalityFibroadenoma = new StringTaskVar(
             (out String s) =>
             {
-                ValueSet binding = ResourcesMaker.Self.FibroadenomaVS.Value();
+                ValueSet binding = Self.FibroadenomaVS.Value();
 
-                SDefEditor e = ResourcesMaker.Self.CreateEditor("MGAbnormalityFibroadenoma",
+                SDefEditor e = Self.CreateEditor("MGAbnormalityFibroadenoma",
                         "Mammography Fibroadenoma",
                         "MG Fibroadenoma",
                         ObservationUrl,
@@ -29,11 +29,11 @@ namespace BreastRadiology.XUnitTests
                             .MissingObservation("a fibroadenoma abnormality")
                             //.Todo
                     )
-                    .AddFragRef(ResourcesMaker.Self.ObservationNoDeviceFragment.Value())
-                    .AddFragRef(ResourcesMaker.Self.ObservationNoValueFragment.Value())
-                    .AddFragRef(ResourcesMaker.Self.ImagingStudyFragment.Value())
-                    .AddFragRef(ResourcesMaker.Self.MGCommonTargetsFragment.Value())
-                    .AddFragRef(ResourcesMaker.Self.MGShapeTargetsFragment.Value())
+                    .AddFragRef(Self.ObservationNoDeviceFragment.Value())
+                    .AddFragRef(Self.ObservationNoValueFragment.Value())
+                    .AddFragRef(Self.ImagingStudyFragment.Value())
+                    .AddFragRef(Self.MGCommonTargetsFragment.Value())
+                    .AddFragRef(Self.MGShapeTargetsFragment.Value())
                     ;
 
                 s = e.SDef.Url;
@@ -44,11 +44,11 @@ namespace BreastRadiology.XUnitTests
                     .Refinement(binding, "Fibroadenoma")
                     ;
 
-                if (ResourcesMaker.Self.Component_HasMember)
+                if (Self.Component_HasMember)
                 {
                     ProfileTargetSlice[] targets = new ProfileTargetSlice[]
                     {
-                    new ProfileTargetSlice(ResourcesMaker.Self.ObservedCount.Value(), 0, "1"),
+                    new ProfileTargetSlice(Self.ObservedCount.Value(), 0, "1"),
                     };
 
                     e.SliceByUrl("hasMember", targets);

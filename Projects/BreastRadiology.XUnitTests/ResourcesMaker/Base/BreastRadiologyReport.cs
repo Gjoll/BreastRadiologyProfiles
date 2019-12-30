@@ -16,7 +16,7 @@ namespace BreastRadiology.XUnitTests
         StringTaskVar BreastRadiologyReport = new StringTaskVar(
             (out String s) =>
             {
-                SDefEditor e = ResourcesMaker.Self.CreateEditor("BreastRadReport",
+                SDefEditor e = Self.CreateEditor("BreastRadReport",
                      "Breast Radiology Report",
                      "Breast/Radiology/Report",
                      DiagnosticReportUrl,
@@ -30,8 +30,8 @@ namespace BreastRadiology.XUnitTests
                                    "a summary of the report findings in a human readable format")
                      //.Todo
                      )
-                     .AddFragRef(ResourcesMaker.Self.HeaderFragment.Value())
-                     .AddFragRef(ResourcesMaker.Self.CategoryFragment.Value())
+                     .AddFragRef(Self.HeaderFragment.Value())
+                     .AddFragRef(Self.CategoryFragment.Value())
                      ;
 
                 s = e.SDef.Url;
@@ -45,29 +45,29 @@ namespace BreastRadiology.XUnitTests
                 e.Select("specimen").Zero();
                 e.Select("conclusion").Single();
                 e.Select("conclusionCode").Single();
-                e.ApplyExtension("Recommendations", ResourcesMaker.Self.BreastRadiologyRecommendationsExtension.Value())
+                e.ApplyExtension("Recommendations", Self.BreastRadiologyRecommendationsExtension.Value())
                      .Short("Recommendations for future care")
                      .Definition("Recommendations for future care")
                      .ZeroToMany();
-                e.ApplyExtension("PriorReports", ResourcesMaker.Self.BreastRadiologyPriorReportsExtension.Value())
+                e.ApplyExtension("PriorReports", Self.BreastRadiologyPriorReportsExtension.Value())
                      .Short("Prior breast radiology reports")
                      .Definition("Prior breast radiology reports")
                      .ZeroToMany();
-                e.ApplyExtension("Impressions", ResourcesMaker.Self.BreastRadiologyImpressionsExtension.Value())
+                e.ApplyExtension("Impressions", Self.BreastRadiologyImpressionsExtension.Value())
                      .Short("Exam impressions")
                      .Definition("Exam impressions.")
                      .ZeroToMany();
-                e.ApplyExtension("PatientRisk", ResourcesMaker.Self.BreastRadiologyPatientRiskExtension.Value())
+                e.ApplyExtension("PatientRisk", Self.BreastRadiologyPatientRiskExtension.Value())
                      .Short("Patient Risk")
                      .Definition("Patient Risk.")
                      .ZeroToMany();
 
-                if (ResourcesMaker.Self.Component_HasMember)
+                if (Self.Component_HasMember)
                 {
                     ProfileTargetSlice[] targets = new ProfileTargetSlice[]
                     {
-                        new ProfileTargetSlice(ResourcesMaker.Self.SectionPatientHistory.Value(), 1, "1"),
-                        new ProfileTargetSlice(ResourcesMaker.Self.SectionFindings.Value(), 1, "1"),
+                        new ProfileTargetSlice(Self.SectionPatientHistory.Value(), 1, "1"),
+                        new ProfileTargetSlice(Self.SectionFindings.Value(), 1, "1"),
                     };
                     e.SliceByUrl("result", targets);
                     e.AddProfileTargets(targets);

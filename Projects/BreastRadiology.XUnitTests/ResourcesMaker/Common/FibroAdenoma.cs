@@ -16,7 +16,7 @@ namespace BreastRadiology.XUnitTests
     {
        CSTaskVar FibroadenomaCS = new CSTaskVar(
             () =>
-                ResourcesMaker.Self.CreateCodeSystem(
+                Self.CreateCodeSystem(
                         "FibroadenomaCodeSystemCS",
                         "Fibroadenoma CodeSystem",
                         "Fibroadenoma/CodeSystem",
@@ -39,13 +39,13 @@ namespace BreastRadiology.XUnitTests
 
         VSTaskVar FibroadenomaVS = new VSTaskVar(
             () =>
-                ResourcesMaker.Self.CreateValueSet(
+                Self.CreateValueSet(
                         "FibroadenomaVS",
                         "Fibroadenoma ValueSet",
                         "FibroadenomaValueSet",
                         "Fibroadenoma values value set.",
                         Group_CommonCodes,
-                        ResourcesMaker.Self.FibroadenomaCS.Value()
+                        Self.FibroadenomaCS.Value()
                     )
             );
     }

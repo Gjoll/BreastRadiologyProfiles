@@ -12,7 +12,7 @@ namespace BreastRadiology.XUnitTests
         StringTaskVar CategoryFragment = new StringTaskVar(
             (out String s) =>
             {
-                SDefEditor e = ResourcesMaker.Self.CreateFragment("CategoryFragment",
+                SDefEditor e = Self.CreateFragment("CategoryFragment",
                         "Category Fragment",
                         "Category/Fragment",
                         ObservationUrl)

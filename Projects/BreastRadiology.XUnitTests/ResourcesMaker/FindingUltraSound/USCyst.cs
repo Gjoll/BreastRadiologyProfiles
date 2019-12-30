@@ -16,7 +16,7 @@ namespace BreastRadiology.XUnitTests
         StringTaskVar USCyst = new StringTaskVar(
             (out String s) =>
             {
-                SDefEditor e = ResourcesMaker.Self.CreateEditor("USCyst",
+                SDefEditor e = Self.CreateEditor("USCyst",
                         "UltraSound Cyst",
                         "US Cyst",
                         ObservationUrl,
@@ -27,10 +27,10 @@ namespace BreastRadiology.XUnitTests
                             .MissingObservation("a cyst")
                             //.Todo
                     )
-                    .AddFragRef(ResourcesMaker.Self.ObservationNoDeviceFragment.Value())
-                    .AddFragRef(ResourcesMaker.Self.BreastBodyLocationRequiredFragment.Value())
-                    .AddFragRef(ResourcesMaker.Self.ObservationNoValueFragment.Value())
-                    .AddFragRef(ResourcesMaker.Self.ImagingStudyFragment.Value())
+                    .AddFragRef(Self.ObservationNoDeviceFragment.Value())
+                    .AddFragRef(Self.BreastBodyLocationRequiredFragment.Value())
+                    .AddFragRef(Self.ObservationNoValueFragment.Value())
+                    .AddFragRef(Self.ImagingStudyFragment.Value())
                     ;
                 s = e.SDef.Url;
 
@@ -39,16 +39,16 @@ namespace BreastRadiology.XUnitTests
                     .ObservationSection("UltraSound Cyst")
                     ;
 
-                if (ResourcesMaker.Self.Component_HasMember)
+                if (Self.Component_HasMember)
                 {
                     ProfileTargetSlice[] targets = new ProfileTargetSlice[]
                     {
-                    new ProfileTargetSlice(ResourcesMaker.Self.BiRadsAssessmentCategory.Value(), 0, "1"),
+                    new ProfileTargetSlice(Self.BiRadsAssessmentCategory.Value(), 0, "1"),
 
-                    new ProfileTargetSlice(ResourcesMaker.Self.ObservedCount.Value(), 0, "1"),
-                    new ProfileTargetSlice(ResourcesMaker.Self.ObservedChangeInState.Value(), 0, "*"),
-                    new ProfileTargetSlice(ResourcesMaker.Self.ObservedSize.Value(), 0, "1"),
-                    new ProfileTargetSlice(ResourcesMaker.Self.Orientation.Value(), 0, "1"),
+                    new ProfileTargetSlice(Self.ObservedCount.Value(), 0, "1"),
+                    new ProfileTargetSlice(Self.ObservedChangeInState.Value(), 0, "*"),
+                    new ProfileTargetSlice(Self.ObservedSize.Value(), 0, "1"),
+                    new ProfileTargetSlice(Self.Orientation.Value(), 0, "1"),
                     };
                     e.SliceByUrl("hasMember", targets);
                     e.AddProfileTargets(targets);

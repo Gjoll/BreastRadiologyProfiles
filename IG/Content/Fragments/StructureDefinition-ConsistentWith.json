@@ -84,16 +84,12 @@
           ],
           "rules": "open"
         },
-        "min": 1,
-        "max": "2",
+        "min": 0,
+        "max": "*",
         "base": {
           "path": "Observation.component",
           "min": 0,
           "max": "*"
-        },
-        "binding": {
-          "strength": "required",
-          "valueSet": "http://hl7.org/fhir/us/breast-radiology/ValueSet/ConsistentWithSliceVS"
         }
       },
       {

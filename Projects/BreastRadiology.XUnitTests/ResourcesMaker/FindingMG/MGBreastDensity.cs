@@ -15,7 +15,7 @@ namespace BreastRadiology.XUnitTests
     {
         CSTaskVar MGBreastDensityCS = new CSTaskVar(
              () =>
-                 ResourcesMaker.Self.CreateCodeSystem(
+                 Self.CreateCodeSystem(
                      "MGBreastDensityCS",
                      "Mammography Breast Density CodeSystem",
                      "MG Breast Density/CodeSystem",
@@ -83,13 +83,13 @@ namespace BreastRadiology.XUnitTests
 
         VSTaskVar MGBreastDensityVS = new VSTaskVar(
             () =>
-                ResourcesMaker.Self.CreateValueSet(
+                Self.CreateValueSet(
                     "MGBreastDensityVS",
                     "Mammography Breast Density ValueSet",
                     "MG Breast DensityValueSet",
                     "Mammography breast density values value set.",
                     Group_MGCodes,
-                    ResourcesMaker.Self.MGBreastDensityCS.Value()
+                    Self.MGBreastDensityCS.Value()
                     )
             );
 
@@ -97,19 +97,19 @@ namespace BreastRadiology.XUnitTests
         StringTaskVar MGBreastDensity = new StringTaskVar(
             (out String s) =>
             {
-                ValueSet binding = ResourcesMaker.Self.MGBreastDensityVS.Value();
+                ValueSet binding = Self.MGBreastDensityVS.Value();
 
                 {
-                    IntroDoc valueSetIntroDoc = new IntroDoc(Path.Combine(ResourcesMaker.Self.pageDir, $"ValueSet-{binding.Name}-intro.xml"));
+                    IntroDoc valueSetIntroDoc = new IntroDoc(Path.Combine(Self.pageDir, $"ValueSet-{binding.Name}-intro.xml"));
                     valueSetIntroDoc
                         .ReviewedStatus(ReviewStatus.NotReviewed)
                         .ValueSet(binding);
                     ;
                     String outputPath = valueSetIntroDoc.Save();
-                    ResourcesMaker.Self.fc?.Mark(outputPath);
+                    Self.fc?.Mark(outputPath);
                 }
 
-                SDefEditor e = ResourcesMaker.Self.CreateEditor("MGBreastDensity",
+                SDefEditor e = Self.CreateEditor("MGBreastDensity",
                         "Mammography Breast Density",
                         "MG Breast Density",
                         ObservationUrl,
@@ -130,9 +130,9 @@ namespace BreastRadiology.XUnitTests
                             "can this and US tissue composition be the same?"
                             )
                     )
-                    .AddFragRef(ResourcesMaker.Self.ObservationNoDeviceFragment.Value())
-                    .AddFragRef(ResourcesMaker.Self.ObservationCodedValueFragment.Value())
-                    .AddFragRef(ResourcesMaker.Self.ObservationLeafFragment.Value())
+                    .AddFragRef(Self.ObservationNoDeviceFragment.Value())
+                    .AddFragRef(Self.ObservationCodedValueFragment.Value())
+                    .AddFragRef(Self.ObservationLeafFragment.Value())
                     ;
 
                 s = e.SDef.Url;

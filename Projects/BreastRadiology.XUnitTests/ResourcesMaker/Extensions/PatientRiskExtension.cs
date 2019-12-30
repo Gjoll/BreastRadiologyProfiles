@@ -17,7 +17,7 @@ namespace BreastRadiology.XUnitTests
         StringTaskVar BreastRadiologyPatientRiskExtension = new StringTaskVar(
             (out String s) =>
             {
-                SDefEditor e = ResourcesMaker.Self.CreateEditor("PatientRiskExtension",
+                SDefEditor e = Self.CreateEditor("PatientRiskExtension",
                     "PatientRisk Extension",
                     "PatientRisk/Extension",
                     ExtensionUrl,
@@ -40,7 +40,7 @@ namespace BreastRadiology.XUnitTests
                     .Extension("PatientRisk", "include references to PatientRisk")
                     ;
 
-                e.AddFragRef(ResourcesMaker.Self.HeaderFragment.Value());
+                e.AddFragRef(Self.HeaderFragment.Value());
 
                 e.Select("extension").Zero();
                 e.Select("url")

@@ -16,7 +16,7 @@ namespace BreastRadiology.XUnitTests
         StringTaskVar HeaderFragment = new StringTaskVar(
             (out String s) =>
             {
-                SDefEditor e = ResourcesMaker.Self.CreateFragment("HeaderFragment",
+                SDefEditor e = Self.CreateFragment("HeaderFragment",
                     "Resource",
                     "Common",
                     ResourceUrl);
@@ -35,7 +35,7 @@ namespace BreastRadiology.XUnitTests
                     ;
 
                 e.SDef.Contact.Add(cd);
-                e.SDef.Date = ResourcesMaker.Self.date.ToString();
+                e.SDef.Date = Self.date.ToString();
                 e.SDef.Status = ProfileStatus;
                 e.SDef.Publisher = "Hl7-Clinical Interoperability Council";
                 e.SDef.Version = ProfileVersion;

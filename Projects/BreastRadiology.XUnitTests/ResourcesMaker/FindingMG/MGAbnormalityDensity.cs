@@ -16,7 +16,7 @@ namespace BreastRadiology.XUnitTests
 
         CSTaskVar MGAbnormalityDensityCS = new CSTaskVar(
              () =>
-                 ResourcesMaker.Self.CreateCodeSystem(
+                 Self.CreateCodeSystem(
                         "MGAbnormalityDensityCS",
                         "Mammography Density Refinement CodeSystem",
                          "MG Density Refinement/CodeSystem",
@@ -46,13 +46,13 @@ namespace BreastRadiology.XUnitTests
 
         VSTaskVar MGAbnormalityDensityVS = new VSTaskVar(
             () =>
-                ResourcesMaker.Self.CreateValueSet(
+                Self.CreateValueSet(
                    "MGAbnormalityDensityVS",
                    "Mammography Density ValueSet",
                     "MG Density/ValueSet",
                    "Mammography density abnormality types value set.",
                     Group_MGCodes,
-                    ResourcesMaker.Self.MGAbnormalityDensityCS.Value()
+                    Self.MGAbnormalityDensityCS.Value()
                     )
             );
 
@@ -60,9 +60,9 @@ namespace BreastRadiology.XUnitTests
         StringTaskVar MGAbnormalityDensity = new StringTaskVar(
             (out String s) =>
             {
-                ValueSet binding = ResourcesMaker.Self.MGAbnormalityDensityVS.Value();
+                ValueSet binding = Self.MGAbnormalityDensityVS.Value();
 
-                SDefEditor e = ResourcesMaker.Self.CreateEditor("MGAbnormalityDensity",
+                SDefEditor e = Self.CreateEditor("MGAbnormalityDensity",
                         "Mammography Density",
                         "MG Density",
                         ObservationUrl,
@@ -74,9 +74,9 @@ namespace BreastRadiology.XUnitTests
                                 "default value? for refinement"
                             )
                     )
-                    .AddFragRef(ResourcesMaker.Self.ObservationNoDeviceFragment.Value())
-                    .AddFragRef(ResourcesMaker.Self.MGCommonTargetsFragment.Value())
-                    .AddFragRef(ResourcesMaker.Self.MGShapeTargetsFragment.Value())
+                    .AddFragRef(Self.ObservationNoDeviceFragment.Value())
+                    .AddFragRef(Self.MGCommonTargetsFragment.Value())
+                    .AddFragRef(Self.MGShapeTargetsFragment.Value())
                     ;
 
                 s = e.SDef.Url;
@@ -94,12 +94,12 @@ namespace BreastRadiology.XUnitTests
                     ;
                 e.AddValueSetLink(binding);
 
-                if (ResourcesMaker.Self.Component_HasMember)
+                if (Self.Component_HasMember)
                 {
                     ProfileTargetSlice[] targets = new ProfileTargetSlice[]
                     {
-                    new ProfileTargetSlice(ResourcesMaker.Self.ObservedCount.Value(), 0, "1"),
-                    new ProfileTargetSlice(ResourcesMaker.Self.ConsistentWith.Value(), 0, "*"),
+                    new ProfileTargetSlice(Self.ObservedCount.Value(), 0, "1"),
+                    new ProfileTargetSlice(Self.ConsistentWith.Value(), 0, "*"),
                     };
                     e.SliceByUrl("hasMember", targets);
                     e.AddProfileTargets(targets);

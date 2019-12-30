@@ -16,7 +16,7 @@ namespace BreastRadiology.XUnitTests
     {
         CSTaskVar ObservedChangeInSizeCS = new CSTaskVar(
              () =>
-                 ResourcesMaker.Self.CreateCodeSystem(
+                 Self.CreateCodeSystem(
                      "ObservedChangeInSizeCS",
                      "Observed Changes CodeSystem",
                      "Observed/Change/CodeSystem",
@@ -40,32 +40,32 @@ namespace BreastRadiology.XUnitTests
 
         VSTaskVar ObservedChangeInSizeVS = new VSTaskVar(
             () =>
-                ResourcesMaker.Self.CreateValueSet(
+                Self.CreateValueSet(
                     "ObservedChangeInSizeVS",
                     "Observed Changes ValueSet",
                     "Observed/Change/ValueSet",
                     "Observed changes in the size of an abnormality over time value set.",
                     Group_CommonCodes,
-                    ResourcesMaker.Self.ObservedChangeInSizeCS.Value()
+                    Self.ObservedChangeInSizeCS.Value()
                     )
             );
 
         StringTaskVar ObservedChangeInSize = new StringTaskVar(
             (out String s) =>
             {
-                ValueSet binding = ResourcesMaker.Self.ObservedChangeInSizeVS.Value();
+                ValueSet binding = Self.ObservedChangeInSizeVS.Value();
 
                 {
-                    IntroDoc valueSetIntroDoc = new IntroDoc(Path.Combine(ResourcesMaker.Self.pageDir, $"ValueSet-{binding.Name}-intro.xml"));
+                    IntroDoc valueSetIntroDoc = new IntroDoc(Path.Combine(Self.pageDir, $"ValueSet-{binding.Name}-intro.xml"));
                     valueSetIntroDoc
                         .ReviewedStatus(ReviewStatus.NotReviewed)
                         .ValueSet(binding);
                     ;
                     String outputPath = valueSetIntroDoc.Save();
-                    ResourcesMaker.Self.fc?.Mark(outputPath);
+                    Self.fc?.Mark(outputPath);
                 }
 
-                SDefEditor e = ResourcesMaker.Self.CreateEditor("ObservedChangeInSize",
+                SDefEditor e = Self.CreateEditor("ObservedChangeInSize",
                         "Observed Changes",
                         "Size Change",
                         ObservationUrl,
@@ -75,9 +75,9 @@ namespace BreastRadiology.XUnitTests
                             .MissingObservation("an observed change in size")
                             //.Todo
                     )
-                    .AddFragRef(ResourcesMaker.Self.ObservationNoDeviceFragment.Value())
-                    .AddFragRef(ResourcesMaker.Self.ObservationCodedValueFragment.Value())
-                    .AddFragRef(ResourcesMaker.Self.ObservationLeafFragment.Value())
+                    .AddFragRef(Self.ObservationNoDeviceFragment.Value())
+                    .AddFragRef(Self.ObservationCodedValueFragment.Value())
+                    .AddFragRef(Self.ObservationLeafFragment.Value())
                     ;
 
                 s = e.SDef.Url;

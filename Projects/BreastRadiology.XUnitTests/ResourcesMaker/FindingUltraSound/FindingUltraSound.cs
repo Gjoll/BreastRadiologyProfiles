@@ -17,7 +17,7 @@ namespace BreastRadiology.XUnitTests
             (out String s) =>
             {
                 //$ Fix me. Incorrect method!!!
-                SDefEditor e = ResourcesMaker.Self.CreateEditor("USFinding",
+                SDefEditor e = Self.CreateEditor("USFinding",
                         "UltraSound Finding",
                         "US Finding",
                         ObservationUrl,
@@ -51,7 +51,7 @@ namespace BreastRadiology.XUnitTests
                                 "Can they be aligned?"
                             )
                     )
-                    .AddFragRef(ResourcesMaker.Self.ObservationSectionFragment.Value())
+                    .AddFragRef(Self.ObservationSectionFragment.Value())
                     ;
                 s = e.SDef.Url;
 
@@ -66,12 +66,12 @@ namespace BreastRadiology.XUnitTests
                 //$ .Card(1, "*")
                 //$ ;
 
-                if (ResourcesMaker.Self.Component_HasMember)
+                if (Self.Component_HasMember)
                 {
                     ProfileTargetSlice[] targets = new ProfileTargetSlice[]
                     {
-                        new ProfileTargetSlice(ResourcesMaker.Self.USMass.Value(), 0, "*"),
-                        new ProfileTargetSlice(ResourcesMaker.Self.USTissueComposition.Value(), 1, "1"),
+                        new ProfileTargetSlice(Self.USMass.Value(), 0, "*"),
+                        new ProfileTargetSlice(Self.USTissueComposition.Value(), 1, "1"),
                     };
                     e.SliceByUrl("hasMember", targets);
                     e.AddProfileTargets(targets);

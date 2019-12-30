@@ -16,7 +16,7 @@ namespace BreastRadiology.XUnitTests
     {
         CSTaskVar USPosteriorAcousticFeaturesCS = new CSTaskVar(
              () =>
-                 ResourcesMaker.Self.CreateCodeSystem(
+                 Self.CreateCodeSystem(
                      "USPosteriorAcousticFeaturesCS",
                      "US Posterior Acoustic Features CodeSystem",
                      "US Posterior Acoustic/Feature CodeSystem",
@@ -77,13 +77,13 @@ namespace BreastRadiology.XUnitTests
 
         VSTaskVar USPosteriorAcousticFeaturesVS = new VSTaskVar(
             () =>
-                ResourcesMaker.Self.CreateValueSet(
+                Self.CreateValueSet(
                     "USPosteriorAcousticFeaturesVS",
                     "US Posterior Acoustic Features ValueSet",
                     "US Posterior Acoustic/Feature ValueSet",
                     "Ultra-sound mass Posterior acoustic feature codes value set.",
                     Group_USCodes,
-                    ResourcesMaker.Self.USPosteriorAcousticFeaturesCS.Value()
+                    Self.USPosteriorAcousticFeaturesCS.Value()
                     )
             );
 
@@ -91,9 +91,9 @@ namespace BreastRadiology.XUnitTests
         StringTaskVar USPosteriorAcousticFeatures = new StringTaskVar(
             (out String s) =>
             {
-                ValueSet binding = ResourcesMaker.Self.USPosteriorAcousticFeaturesVS.Value();
+                ValueSet binding = Self.USPosteriorAcousticFeaturesVS.Value();
 
-                SDefEditor e = ResourcesMaker.Self.CreateEditor("USPosteriorAcousticFeatures",
+                SDefEditor e = Self.CreateEditor("USPosteriorAcousticFeatures",
                         "US Posterior Acoustic Features",
                         "US Posterior Acoustic/Features",
                         ObservationUrl,
@@ -107,9 +107,9 @@ namespace BreastRadiology.XUnitTests
                             .BiradFooter()
                             //.Todo
                         )
-                    .AddFragRef(ResourcesMaker.Self.ObservationNoDeviceFragment.Value())
-                    .AddFragRef(ResourcesMaker.Self.ObservationCodedValueFragment.Value())
-                    .AddFragRef(ResourcesMaker.Self.ObservationLeafFragment.Value())
+                    .AddFragRef(Self.ObservationNoDeviceFragment.Value())
+                    .AddFragRef(Self.ObservationCodedValueFragment.Value())
+                    .AddFragRef(Self.ObservationLeafFragment.Value())
                     ;
 
                 s = e.SDef.Url;

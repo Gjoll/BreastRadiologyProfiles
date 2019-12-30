@@ -16,7 +16,7 @@ namespace BreastRadiology.XUnitTests
         StringTaskVar FindingNM = new StringTaskVar(
             (out String s) =>
             {
-                SDefEditor e = ResourcesMaker.Self.CreateEditor("NMFinding",
+                SDefEditor e = Self.CreateEditor("NMFinding",
                         "NM Finding",
                         "NM Finding",
                         ObservationUrl,
@@ -27,7 +27,7 @@ namespace BreastRadiology.XUnitTests
                                 "Device Metrics detailing the observation devices parameters (transducer freq, etc)."
                                 )
                         )
-                    .AddFragRef(ResourcesMaker.Self.ObservationSectionFragment.Value())
+                    .AddFragRef(Self.ObservationSectionFragment.Value())
                     ;
                 s = e.SDef.Url;
 
@@ -43,11 +43,11 @@ namespace BreastRadiology.XUnitTests
                 // .Card(1, "*")
                 // ;
 
-                if (ResourcesMaker.Self.Component_HasMember)
+                if (Self.Component_HasMember)
                 {
                     ProfileTargetSlice[] targets = new ProfileTargetSlice[]
                     {
-                    new ProfileTargetSlice(ResourcesMaker.Self.NMMass.Value(), 0, "*"),
+                    new ProfileTargetSlice(Self.NMMass.Value(), 0, "*"),
                     };
                     e.SliceByUrl("hasMember", targets);
                     e.AddProfileTargets(targets);

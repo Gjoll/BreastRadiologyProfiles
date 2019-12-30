@@ -16,13 +16,13 @@ namespace BreastRadiology.XUnitTests
     {
         VSTaskVar MGMarginVS = new VSTaskVar(
             () =>
-                ResourcesMaker.Self.CreateValueSet(
+                Self.CreateValueSet(
                     "MGMarginVS",
                     "Mammography Margin ValueSet",
                     "MG MarginValueSet",
                     "Mammography margin ValueSet.",
                     Group_MGCodes,
-                    ResourcesMaker.Self.MarginCS.Value()
+                    Self.MarginCS.Value()
                     )
             );
 
@@ -30,7 +30,7 @@ namespace BreastRadiology.XUnitTests
         StringTaskVar MGMargin = new StringTaskVar(
             (out String s) =>
             {
-                ValueSet binding = ResourcesMaker.Self.MGMarginVS.Value();
+                ValueSet binding = Self.MGMarginVS.Value();
                 binding
                     .Remove("IntraductalExtension")
                     .Remove("Lobulated")
@@ -38,16 +38,16 @@ namespace BreastRadiology.XUnitTests
                     .Remove("Smooth")
                     ;
                 {
-                    IntroDoc valueSetIntroDoc = new IntroDoc(Path.Combine(ResourcesMaker.Self.pageDir, $"ValueSet-{binding.Name}-intro.xml"));
+                    IntroDoc valueSetIntroDoc = new IntroDoc(Path.Combine(Self.pageDir, $"ValueSet-{binding.Name}-intro.xml"));
                     valueSetIntroDoc
                         .ReviewedStatus(ReviewStatus.NotReviewed)
                         .ValueSet(binding);
                     ;
                     String outputPath = valueSetIntroDoc.Save();
-                    ResourcesMaker.Self.fc?.Mark(outputPath);
+                    Self.fc?.Mark(outputPath);
                 }
 
-                SDefEditor e = ResourcesMaker.Self.CreateEditor("MGMargin",
+                SDefEditor e = Self.CreateEditor("MGMargin",
                     "Mammography Margin",
                     "MG Margin",
                     ObservationUrl,
@@ -60,9 +60,9 @@ namespace BreastRadiology.XUnitTests
                             .BiradFooter()
                             //.Todo
                     )
-                    .AddFragRef(ResourcesMaker.Self.ObservationNoDeviceFragment.Value())
-                    .AddFragRef(ResourcesMaker.Self.ObservationCodedValueFragment.Value())
-                    .AddFragRef(ResourcesMaker.Self.ObservationLeafFragment.Value())
+                    .AddFragRef(Self.ObservationNoDeviceFragment.Value())
+                    .AddFragRef(Self.ObservationCodedValueFragment.Value())
+                    .AddFragRef(Self.ObservationLeafFragment.Value())
                     ;
                 s = e.SDef.Url;
 

@@ -16,7 +16,7 @@ namespace BreastRadiology.XUnitTests
     {
         CSTaskVar MGDensityCS = new CSTaskVar(
              () =>
-                 ResourcesMaker.Self.CreateCodeSystem(
+                 Self.CreateCodeSystem(
                      "MGDensityCS",
                      "Mammography Density CodeSystem",
                      "MG Density/CodeSystem",
@@ -66,32 +66,32 @@ namespace BreastRadiology.XUnitTests
 
         VSTaskVar MGDensityVS = new VSTaskVar(
             () =>
-                ResourcesMaker.Self.CreateValueSet(
+                Self.CreateValueSet(
                     "MGDensityVS",
                     "Mammography Density ValueSet",
                     "MG DensityValueSet",
                     "Mammography density codes value set.",
                     Group_MGCodes,
-                    ResourcesMaker.Self.MGDensityCS.Value())
+                    Self.MGDensityCS.Value())
                     );
 
 
         StringTaskVar MGDensity = new StringTaskVar(
             (out String s) =>
             {
-                ValueSet binding = ResourcesMaker.Self.MGDensityVS.Value();
+                ValueSet binding = Self.MGDensityVS.Value();
 
                 {
-                    IntroDoc valueSetIntroDoc = new IntroDoc(Path.Combine(ResourcesMaker.Self.pageDir, $"ValueSet-{binding.Name}-intro.xml"));
+                    IntroDoc valueSetIntroDoc = new IntroDoc(Path.Combine(Self.pageDir, $"ValueSet-{binding.Name}-intro.xml"));
                     valueSetIntroDoc
                         .ReviewedStatus(ReviewStatus.NotReviewed)
                         .ValueSet(binding);
                     ;
                     String outputPath = valueSetIntroDoc.Save();
-                    ResourcesMaker.Self.fc?.Mark(outputPath);
+                    Self.fc?.Mark(outputPath);
                 }
 
-                SDefEditor e = ResourcesMaker.Self.CreateEditor("MGDensity",
+                SDefEditor e = Self.CreateEditor("MGDensity",
                         "Mammography Density",
                         "MG Density",
                         ObservationUrl,
@@ -112,9 +112,9 @@ namespace BreastRadiology.XUnitTests
                             .BiradFooter()
                             //.Todo
                         )
-                    .AddFragRef(ResourcesMaker.Self.ObservationNoDeviceFragment.Value())
-                    .AddFragRef(ResourcesMaker.Self.ObservationCodedValueFragment.Value())
-                    .AddFragRef(ResourcesMaker.Self.ObservationLeafFragment.Value())
+                    .AddFragRef(Self.ObservationNoDeviceFragment.Value())
+                    .AddFragRef(Self.ObservationCodedValueFragment.Value())
+                    .AddFragRef(Self.ObservationLeafFragment.Value())
                     ;
                 s = e.SDef.Url;
 

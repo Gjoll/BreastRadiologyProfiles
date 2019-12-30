@@ -16,7 +16,7 @@ namespace BreastRadiology.XUnitTests
         StringTaskVar MGSkinLesion = new StringTaskVar(
             (out String s) =>
             {
-                SDefEditor e = ResourcesMaker.Self.CreateEditor("MGSkinLesion",
+                SDefEditor e = Self.CreateEditor("MGSkinLesion",
                     "Mammography Skin Lesion",
                     "MG Skin Lesion",
                     ObservationUrl,
@@ -33,9 +33,9 @@ namespace BreastRadiology.XUnitTests
                             .BiradFooter()
                             //.Todo
                     )
-                    .AddFragRef(ResourcesMaker.Self.BreastBodyLocationRequiredFragment.Value())
-                    .AddFragRef(ResourcesMaker.Self.ObservationNoValueFragment.Value())
-                    .AddFragRef(ResourcesMaker.Self.MGCommonTargetsFragment.Value())
+                    .AddFragRef(Self.BreastBodyLocationRequiredFragment.Value())
+                    .AddFragRef(Self.ObservationNoValueFragment.Value())
+                    .AddFragRef(Self.MGCommonTargetsFragment.Value())
                     ;
                 s = e.SDef.Url;
 
@@ -44,7 +44,7 @@ namespace BreastRadiology.XUnitTests
                     .ObservationLeafNode($"Skin Lesion")
                     ;
 
-                if (ResourcesMaker.Self.Component_HasMember)
+                if (Self.Component_HasMember)
                 {
                     ProfileTargetSlice[] targets = new ProfileTargetSlice[]
                     {

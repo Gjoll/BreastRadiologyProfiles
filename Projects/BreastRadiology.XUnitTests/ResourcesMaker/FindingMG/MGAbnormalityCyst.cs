@@ -15,7 +15,7 @@ namespace BreastRadiology.XUnitTests
     {
         CSTaskVar MGAbnormalityCystRefinementCS = new CSTaskVar(
              () =>
-                 ResourcesMaker.Self.CreateCodeSystem(
+                 Self.CreateCodeSystem(
                         "MGAbnormalityCystRefinementCS",
                         "Mammography Cyst Refinement CodeSystem",
                          "MG Cyst Refinement/CodeSystem",
@@ -55,13 +55,13 @@ namespace BreastRadiology.XUnitTests
 
         VSTaskVar MGAbnormalityCystVS = new VSTaskVar(
             () =>
-                ResourcesMaker.Self.CreateValueSet(
+                Self.CreateValueSet(
                    "MGAbnormalityCystVS",
                    "Mammography CystAbnormalities ValueSet",
                     "MG Cyst/ValueSet",
                    "Mammography cyst abnormality types value set.",
                     Group_MGCodes,
-                    ResourcesMaker.Self.MGAbnormalityCystRefinementCS.Value()
+                    Self.MGAbnormalityCystRefinementCS.Value()
                     )
             );
 
@@ -69,18 +69,18 @@ namespace BreastRadiology.XUnitTests
         StringTaskVar MGAbnormalityCyst = new StringTaskVar(
             (out String s) =>
             {
-                ValueSet binding = ResourcesMaker.Self.MGAbnormalityCystVS.Value();
+                ValueSet binding = Self.MGAbnormalityCystVS.Value();
 
                 {
-                    IntroDoc valueSetIntroDoc = new IntroDoc(Path.Combine(ResourcesMaker.Self.pageDir, $"ValueSet-{binding.Name}-intro.xml"));
+                    IntroDoc valueSetIntroDoc = new IntroDoc(Path.Combine(Self.pageDir, $"ValueSet-{binding.Name}-intro.xml"));
                     valueSetIntroDoc
                         .ReviewedStatus(ReviewStatus.NotReviewed)
                     ;
                     String outputPath = valueSetIntroDoc.Save();
-                    ResourcesMaker.Self.fc?.Mark(outputPath);
+                    Self.fc?.Mark(outputPath);
                 }
 
-                SDefEditor e = ResourcesMaker.Self.CreateEditor("MGAbnormalityCyst",
+                SDefEditor e = Self.CreateEditor("MGAbnormalityCyst",
                         "Mammography Cyst",
                         "MG Cyst",
                         ObservationUrl,
@@ -91,11 +91,11 @@ namespace BreastRadiology.XUnitTests
                             .MissingObservation("a cyst")
                             //.Todo
                     )
-                    .AddFragRef(ResourcesMaker.Self.ObservationNoDeviceFragment.Value())
-                    .AddFragRef(ResourcesMaker.Self.ObservationNoValueFragment.Value())
-                    .AddFragRef(ResourcesMaker.Self.ImagingStudyFragment.Value())
-                    .AddFragRef(ResourcesMaker.Self.MGCommonTargetsFragment.Value())
-                    .AddFragRef(ResourcesMaker.Self.MGShapeTargetsFragment.Value())
+                    .AddFragRef(Self.ObservationNoDeviceFragment.Value())
+                    .AddFragRef(Self.ObservationNoValueFragment.Value())
+                    .AddFragRef(Self.ImagingStudyFragment.Value())
+                    .AddFragRef(Self.MGCommonTargetsFragment.Value())
+                    .AddFragRef(Self.MGShapeTargetsFragment.Value())
                     ;
                 s = e.SDef.Url;
 
@@ -105,13 +105,13 @@ namespace BreastRadiology.XUnitTests
                     .Refinement(binding, "Cyst")
                     ;
 
-                if (ResourcesMaker.Self.Component_HasMember)
+                if (Self.Component_HasMember)
                 {
                     ProfileTargetSlice[] targets = new ProfileTargetSlice[]
                     {
-                    new ProfileTargetSlice(ResourcesMaker.Self.ObservedCount.Value(), 0, "1"),
-                        //new ProfileTargetSlice(ResourcesMaker.Self.MGAssociatedFeatures.Value(), 0, "1", false),
-                    new ProfileTargetSlice(ResourcesMaker.Self.ConsistentWith.Value(), 0, "*"),
+                    new ProfileTargetSlice(Self.ObservedCount.Value(), 0, "1"),
+                        //new ProfileTargetSlice(Self.MGAssociatedFeatures.Value(), 0, "1", false),
+                    new ProfileTargetSlice(Self.ConsistentWith.Value(), 0, "*"),
                     };
                     e.SliceByUrl("hasMember", targets);
                     e.AddProfileTargets(targets);

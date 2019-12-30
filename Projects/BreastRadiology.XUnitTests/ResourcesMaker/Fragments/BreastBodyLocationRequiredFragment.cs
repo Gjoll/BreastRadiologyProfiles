@@ -12,7 +12,7 @@ namespace BreastRadiology.XUnitTests
         StringTaskVar BreastBodyLocationRequiredFragment = new StringTaskVar(
             (out String s) =>
             {
-                SDefEditor e = ResourcesMaker.Self.CreateFragment("BreastBodyLocationRequiredFragment",
+                SDefEditor e = Self.CreateFragment("BreastBodyLocationRequiredFragment",
                         "Breast Body Location (Required) Fragment",
                         "Breast/Body/Location/Fragment/(Required)",
                         ObservationUrl)
@@ -22,8 +22,8 @@ namespace BreastRadiology.XUnitTests
                         .Paragraph("The references are required, meaning that the breast body location must exist.")
                         //.Todo
                      )
-                    .AddFragRef(ResourcesMaker.Self.HeaderFragment.Value())
-                    .AddExtensionLink(ResourcesMaker.Self.BreastBodyLocationExtension.Value())
+                    .AddFragRef(Self.HeaderFragment.Value())
+                    .AddExtensionLink(Self.BreastBodyLocationExtension.Value())
                 ;
                 s = e.SDef.Url;
 
@@ -37,7 +37,7 @@ namespace BreastRadiology.XUnitTests
                     .Single()
                     ;
                 e
-                    .ApplyExtension("breastBodyLocation", ResourcesMaker.Self.BreastBodyLocationExtension.Value(), true, false)
+                    .ApplyExtension("breastBodyLocation", Self.BreastBodyLocationExtension.Value(), true, false)
                     .Single()
                     ;
             });

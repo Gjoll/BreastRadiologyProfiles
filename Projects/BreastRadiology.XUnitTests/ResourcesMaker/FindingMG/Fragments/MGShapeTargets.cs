@@ -16,7 +16,7 @@ namespace BreastRadiology.XUnitTests
         StringTaskVar MGShapeTargetsFragment = new StringTaskVar(
             (out String s) =>
         {
-            SDefEditor e = ResourcesMaker.Self.CreateFragment("MgShapeTargetsFragment",
+            SDefEditor e = Self.CreateFragment("MgShapeTargetsFragment",
                     "MG Shape Targets Fragment",
                     "MG Shape Targets Fragment",
                     ObservationUrl)
@@ -26,18 +26,18 @@ namespace BreastRadiology.XUnitTests
                         .Paragraph("Adds Orientation, Shape, Margin, and Density targets")
                         //.Todo
                 )
-                .AddFragRef(ResourcesMaker.Self.BreastBodyLocationRequiredFragment.Value())
+                .AddFragRef(Self.BreastBodyLocationRequiredFragment.Value())
                 ;
             s = e.SDef.Url;
 
-            if (ResourcesMaker.Self.Component_HasMember)
+            if (Self.Component_HasMember)
             {
                 ProfileTargetSlice[] targets = new ProfileTargetSlice[]
                 {
-                    new ProfileTargetSlice(ResourcesMaker.Self.Orientation.Value(), 0, "*"),
-                    new ProfileTargetSlice(ResourcesMaker.Self.MGShape.Value(), 0, "1"),
-                    new ProfileTargetSlice(ResourcesMaker.Self.MGMargin.Value(), 0, "1"),
-                    new ProfileTargetSlice(ResourcesMaker.Self.MGDensity.Value(), 0, "1"),
+                    new ProfileTargetSlice(Self.Orientation.Value(), 0, "*"),
+                    new ProfileTargetSlice(Self.MGShape.Value(), 0, "1"),
+                    new ProfileTargetSlice(Self.MGMargin.Value(), 0, "1"),
+                    new ProfileTargetSlice(Self.MGDensity.Value(), 0, "1"),
                 };
                 e.SliceByUrl("hasMember", targets);
                 e.AddProfileTargets(targets);

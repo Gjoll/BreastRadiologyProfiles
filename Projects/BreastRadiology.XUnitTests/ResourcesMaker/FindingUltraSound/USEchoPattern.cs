@@ -10,7 +10,7 @@ namespace BreastRadiology.XUnitTests
     {
         CSTaskVar USEchoPatternCS = new CSTaskVar(
              () =>
-                 ResourcesMaker.Self.CreateCodeSystem(
+                 Self.CreateCodeSystem(
                      "USEchoPatternCS",
                      "US Echo Pattern CodeSystem",
                      "US Echo Pattern/CodeSystem",
@@ -106,32 +106,32 @@ namespace BreastRadiology.XUnitTests
 
         VSTaskVar USEchoPatternVS = new VSTaskVar(
             () =>
-                ResourcesMaker.Self.CreateValueSet(
+                Self.CreateValueSet(
                     "USEchoPatternVS",
                     "US Echo Pattern ValueSet",
                     "US Echo Pattern/ValueSet",
                     "Ultra-sound mass echo pattern codes value set.",
                     Group_USCodes,
-                    ResourcesMaker.Self.USEchoPatternCS.Value())
+                    Self.USEchoPatternCS.Value())
             );
 
 
         StringTaskVar USEchoPattern = new StringTaskVar(
             (out String s) =>
             {
-                ValueSet binding = ResourcesMaker.Self.USEchoPatternVS.Value();
+                ValueSet binding = Self.USEchoPatternVS.Value();
 
                 {
-                    IntroDoc valueSetIntroDoc = new IntroDoc(Path.Combine(ResourcesMaker.Self.pageDir, $"ValueSet-{binding.Name}-intro.xml"));
+                    IntroDoc valueSetIntroDoc = new IntroDoc(Path.Combine(Self.pageDir, $"ValueSet-{binding.Name}-intro.xml"));
                     valueSetIntroDoc
                         .ReviewedStatus(ReviewStatus.NotReviewed)
                         .ValueSet(binding);
                     ;
                     String outputPath = valueSetIntroDoc.Save();
-                    ResourcesMaker.Self.fc?.Mark(outputPath);
+                    Self.fc?.Mark(outputPath);
                 }
 
-                SDefEditor e = ResourcesMaker.Self.CreateEditor("USEchoPattern",
+                SDefEditor e = Self.CreateEditor("USEchoPattern",
                         "US Echo Pattern",
                         "US Echo Pattern",
                         ObservationUrl,
@@ -147,9 +147,9 @@ namespace BreastRadiology.XUnitTests
                             .BiradFooter()
                             //.Todo
                         )
-                    .AddFragRef(ResourcesMaker.Self.ObservationNoDeviceFragment.Value())
-                    .AddFragRef(ResourcesMaker.Self.ObservationCodedValueFragment.Value())
-                    .AddFragRef(ResourcesMaker.Self.ObservationLeafFragment.Value())
+                    .AddFragRef(Self.ObservationNoDeviceFragment.Value())
+                    .AddFragRef(Self.ObservationCodedValueFragment.Value())
+                    .AddFragRef(Self.ObservationLeafFragment.Value())
                     ;
                 s = e.SDef.Url;
 
