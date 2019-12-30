@@ -80,7 +80,8 @@ namespace BreastRadiology.XUnitTests
                 }
                 else
                 {
-                    throw new NotImplementedException();
+                    Self.ComponentSliceBiRads(e);
+                    Self.ComponentSliceConsistentWith(e);
                 }
 
                 e.Select("value[x]")

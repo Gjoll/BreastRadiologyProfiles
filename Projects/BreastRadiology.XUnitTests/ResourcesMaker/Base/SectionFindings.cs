@@ -53,7 +53,15 @@ namespace BreastRadiology.XUnitTests
                 }
                 else
                 {
-                    throw new NotImplementedException();
+                    ProfileTargetSlice[] targets = new ProfileTargetSlice[]
+                    {
+                    new ProfileTargetSlice(Self.SectionFindingsLeftBreast.Value(), 1, "1"),
+                    new ProfileTargetSlice(Self.SectionFindingsRightBreast.Value(), 1, "1")
+                    };
+                    e.SliceByUrl("hasMember", targets);
+                    e.AddProfileTargets(targets);
+
+                    Self.ComponentSliceBiRads(e);
                 }
             });
     }

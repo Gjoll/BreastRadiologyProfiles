@@ -62,20 +62,13 @@ namespace BreastRadiology.XUnitTests
                      .Definition("Patient Risk.")
                      .ZeroToMany();
 
-                if (Self.Component_HasMember)
+                ProfileTargetSlice[] targets = new ProfileTargetSlice[]
                 {
-                    ProfileTargetSlice[] targets = new ProfileTargetSlice[]
-                    {
                         new ProfileTargetSlice(Self.SectionPatientHistory.Value(), 1, "1"),
                         new ProfileTargetSlice(Self.SectionFindings.Value(), 1, "1"),
-                    };
-                    e.SliceByUrl("result", targets);
-                    e.AddProfileTargets(targets);
-                }
-                else
-                {
-                    throw new NotImplementedException();
-                }
+                };
+                e.SliceByUrl("result", targets);
+                e.AddProfileTargets(targets);
             });
     }
 }

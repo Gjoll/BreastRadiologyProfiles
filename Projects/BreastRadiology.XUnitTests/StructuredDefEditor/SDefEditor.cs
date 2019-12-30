@@ -15,7 +15,7 @@ namespace BreastRadiology.XUnitTests
     {
         static Type sDefType = typeof(SDefEditor);
 
-        public IntroDoc IntroDoc {get; }
+        public IntroDoc IntroDoc { get; }
 
         public StructureDefinition SDef => this.sDef;
         StructureDefinition baseSDef;
@@ -23,6 +23,7 @@ namespace BreastRadiology.XUnitTests
         String basePath;
         String fragmentDir;
         String pageDir;
+        ElementDefGroup componentSlicing = null;
 
         Dictionary<String, ElementDefGroup> baseElements = new Dictionary<string, ElementDefGroup>();
         Dictionary<String, ElementDefGroup> elements = new Dictionary<string, ElementDefGroup>();
@@ -104,8 +105,8 @@ namespace BreastRadiology.XUnitTests
                     break;
                 i += 1;
             }
-            ElementDefGroup newE = new ElementDefGroup(baseDefinition.Index, 
-                insertItem, 
+            ElementDefGroup newE = new ElementDefGroup(baseDefinition.Index,
+                insertItem,
                 baseDefinition.ElementDefinition);
             this.elements.Add(insertItem.ElementId.SkipFirstPathPart(), newE);
             this.elementOrder.Insert(i, newE);
@@ -387,7 +388,7 @@ namespace BreastRadiology.XUnitTests
                 Pattern = new Coding(system, code),
                 Base = new ElementDefinition.BaseComponent
                 {
-                    Path = $"{elementDef.BaseElementDefinition.Path}",
+                    Path = $"{elementDef.BaseElementDefinition.Path}.coding",
                     Min = elementDef.BaseElementDefinition.Min,
                     Max = elementDef.BaseElementDefinition.Max
                 }
@@ -428,8 +429,8 @@ namespace BreastRadiology.XUnitTests
             foreach (PatternSlice patternSlice in patternSlices)
             {
                 ElementDefinition sliceElement = this.AppendSlice(elementName,
-                        patternSlice.SliceName, 
-                        patternSlice.Min, 
+                        patternSlice.SliceName,
+                        patternSlice.Min,
                         patternSlice.Max)
                     .Type("CodeableConcept")
                     .Pattern(patternSlice.Pattern)
@@ -466,20 +467,22 @@ namespace BreastRadiology.XUnitTests
 
         public ElementDefGroup StartComponentSliceing()
         {
-            ElementDefGroup component = this.GetOrCreate("component");
+            if (this.componentSlicing != null)
+                return this.componentSlicing;
+            this.componentSlicing = this.GetOrCreate("component");
 
-            component.ElementDefinition.Slicing = new ElementDefinition.SlicingComponent
+            this.componentSlicing.ElementDefinition.Slicing = new ElementDefinition.SlicingComponent
             {
                 Rules = ElementDefinition.SlicingRules.Open
             };
 
-            component.ElementDefinition.Slicing.Discriminator.Add(new ElementDefinition.DiscriminatorComponent
+            this.componentSlicing.ElementDefinition.Slicing.Discriminator.Add(new ElementDefinition.DiscriminatorComponent
             {
                 Type = ElementDefinition.DiscriminatorType.Pattern,
                 Path = "code"
             });
 
-            return component;
+            return this.componentSlicing;
         }
 
         public void ComponentSliceQuantity(String sliceName,

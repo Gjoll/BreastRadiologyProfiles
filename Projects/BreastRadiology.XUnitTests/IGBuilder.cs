@@ -32,6 +32,15 @@ namespace BreastRadiology.XUnitTests
         public IGBuilder(FileCleaner fc, String outputDir)
         {
             this.outputDir = outputDir;
+            if (Directory.Exists(resourceDir) == false)
+                Directory.CreateDirectory(resourceDir);
+
+            if (Directory.Exists(pagecontentDir) == false)
+                Directory.CreateDirectory(pagecontentDir);
+
+            if (Directory.Exists(imagesDir) == false)
+                Directory.CreateDirectory(imagesDir);
+
             this.fc = fc;
         }
 

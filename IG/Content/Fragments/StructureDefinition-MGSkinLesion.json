@@ -54,27 +54,6 @@
         "definition": "If this observation is present, and dataAbsentReason is empty, then a skin lesion was observed.\n\n\nIf this observation is present, and dataAbsentReason is not empty, then a skin lesion was not observed and dataAbsentReason contains the reason why.\n\n\nThis finding may be described in the mammography report or annotated on the mammographic\nimage when it projects over the breast (especially on 2 different projections), and may be mistaken\nfor an intramammary lesion. A raised skin lesion sufficiently large to be seen at mammography\nshould be marked by the technologist with a radiopaque device designated for use as a marker for\na skin lesion.\n-- Bi-Rads® Atlas — Mammography Fifth Ed. 2013",
         "min": 0,
         "max": "*"
-      },
-      {
-        "id": "Observation.hasMember",
-        "path": "Observation.hasMember",
-        "slicing": {
-          "discriminator": [
-            {
-              "type": "value",
-              "path": "url"
-            }
-          ],
-          "ordered": true,
-          "rules": "openAtEnd"
-        },
-        "min": 0,
-        "max": "*",
-        "base": {
-          "path": "Observation.hasMember",
-          "min": 0,
-          "max": "*"
-        }
       }
     ]
   }

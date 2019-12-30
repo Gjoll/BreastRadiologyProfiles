@@ -7,26 +7,37 @@ namespace BreastRadiology.XUnitTests
 {
     partial class ResourcesMaker : ConverterBase
     {
-        ProfileTargetSlice[] FindingBreastTargets()
+        void AddFindingBreastTargets(SDefEditor e)
         {
-            if (Self.findingBreastTargets == null)
-                Self.CreateFindingBreastTargets();
-            return Self.findingBreastTargets;
-        }
-
-        ProfileTargetSlice[] findingBreastTargets = null;
-
-        void CreateFindingBreastTargets()
-        {
-            // ShowChildren = false, to limit depth of resource graph.
-            Self.findingBreastTargets = new ProfileTargetSlice[]
+            if (Self.Component_HasMember)
             {
+                ProfileTargetSlice[] findingBreastTargets = new ProfileTargetSlice[]
+                {
                 new ProfileTargetSlice(Self.BiRadsAssessmentCategory.Value(), 1, "1"),
                 new ProfileTargetSlice(Self.FindingMammo.Value(), 0, "*"),
                 new ProfileTargetSlice(Self.FindingMri.Value(), 0, "*"),
                 new ProfileTargetSlice(Self.FindingNM.Value(), 0, "*"),
                 new ProfileTargetSlice(Self.FindingUltraSound.Value(), 0, "*")
-            };
+                };
+
+                e.SliceByUrl("hasMember", findingBreastTargets);
+                e.AddProfileTargets(findingBreastTargets);
+            }
+            else
+            {
+                ProfileTargetSlice[] findingBreastTargets = new ProfileTargetSlice[]
+                {
+                new ProfileTargetSlice(Self.FindingMammo.Value(), 0, "*"),
+                new ProfileTargetSlice(Self.FindingMri.Value(), 0, "*"),
+                new ProfileTargetSlice(Self.FindingNM.Value(), 0, "*"),
+                new ProfileTargetSlice(Self.FindingUltraSound.Value(), 0, "*")
+                };
+
+                e.SliceByUrl("hasMember", findingBreastTargets);
+                e.AddProfileTargets(findingBreastTargets);
+
+                Self.ComponentSliceConsistentWith(e);
+            }
         }
     }
 }

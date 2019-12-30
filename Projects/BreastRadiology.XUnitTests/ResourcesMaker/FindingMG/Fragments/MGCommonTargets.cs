@@ -47,52 +47,45 @@ namespace BreastRadiology.XUnitTests
                 }
                 else
                 {
-                    ElementDefGroup component = e.StartComponentSliceing();
-
-                    e.ComponentSliceCodeableConcept("biRadsAssessmentCategory",
-                        Self.CommonTargetCodeBiRads.ToCodeableConcept(),
-                        Self.BiRadsAssessmentCategoriesCS.Value().Url,
-                        BindingStrength.Required,
-                        0,
-                        "1");
+                    Self.ComponentSliceBiRads(e);
 
                     e.ComponentSliceCodeableConcept("observedChangeInDefinition",
-                        Self.CommonTargetCodeObservedChangeInDefinition.ToCodeableConcept(),
+                        Self.CodeObservedChangeInDefinition.ToCodeableConcept(),
                         Self.ObservedChangeInDefinitionCS.Value().Url,
                         BindingStrength.Required,
                         0,
                         "1");
 
                     e.ComponentSliceCodeableConcept("observedChangeInNumber",
-                        Self.CommonTargetCodeObservedChangeInNumber.ToCodeableConcept(),
+                        Self.CodeObservedChangeInNumber.ToCodeableConcept(),
                         Self.ObservedChangeInNumberCS.Value().Url,
                         BindingStrength.Required,
                         0,
                         "1");
                     e.ComponentSliceCodeableConcept("observedChangeInProminance",
-                        Self.CommonTargetCodeObservedChangeInProminance.ToCodeableConcept(),
+                        Self.CodeObservedChangeInProminance.ToCodeableConcept(),
                         Self.ObservedChangeInProminanceCS.Value().Url,
                         BindingStrength.Required,
                         0,
                         "1");
                     e.ComponentSliceCodeableConcept("observedChangeInSize",
-                        Self.CommonTargetCodeObservedChangeInSize.ToCodeableConcept(),
+                        Self.CodeObservedChangeInSize.ToCodeableConcept(),
                         Self.ObservedChangeInSizeCS.Value().Url,
                         BindingStrength.Required,
                         0,
                         "1");
                     e.ComponentSliceCodeableConcept("observedChangeInState",
-                        Self.CommonTargetCodeObservedChangeInState.ToCodeableConcept(),
+                        Self.CodeObservedChangeInState.ToCodeableConcept(),
                         Self.ObservedChangeInStateCS.Value().Url,
                         BindingStrength.Required,
                         0,
                         "1");
                     e.ComponentSliceQuantity("observedSize",
-                        Self.CommonTargetCodeObservedSize.ToCodeableConcept(),
+                        Self.CodeObservedSize.ToCodeableConcept(),
                         0,
                         "1");
                     e.ComponentSliceCodeableConcept("orientation",
-                        Self.CommonTargetCodeOrientation.ToCodeableConcept(),
+                        Self.CodeOrientation.ToCodeableConcept(),
                         Self.OrientationCS.Value().Url,
                         BindingStrength.Required,
                         0,

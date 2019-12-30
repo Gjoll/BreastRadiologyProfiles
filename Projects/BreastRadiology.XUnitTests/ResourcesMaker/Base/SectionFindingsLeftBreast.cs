@@ -39,8 +39,7 @@ namespace BreastRadiology.XUnitTests
 
                 e.Select("value[x]").Zero();
                 e.Select("bodySite").Zero();
-                e.SliceByUrl("hasMember", Self.FindingBreastTargets());
-                e.AddProfileTargets(Self.FindingBreastTargets());
+                Self.AddFindingBreastTargets(e);
             });
     }
 }

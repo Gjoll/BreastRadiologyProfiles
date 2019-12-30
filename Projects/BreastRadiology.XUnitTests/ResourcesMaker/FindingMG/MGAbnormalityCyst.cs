@@ -110,7 +110,6 @@ namespace BreastRadiology.XUnitTests
                     ProfileTargetSlice[] targets = new ProfileTargetSlice[]
                     {
                     new ProfileTargetSlice(Self.ObservedCount.Value(), 0, "1"),
-                        //new ProfileTargetSlice(Self.MGAssociatedFeatures.Value(), 0, "1", false),
                     new ProfileTargetSlice(Self.ConsistentWith.Value(), 0, "*"),
                     };
                     e.SliceByUrl("hasMember", targets);
@@ -118,7 +117,8 @@ namespace BreastRadiology.XUnitTests
                 }
                 else
                 {
-                    throw new NotImplementedException();
+                    Self.ComponentSliceObservedCount(e);
+                    Self.ComponentSliceConsistentWith(e);
                 }
 
                 e.Select("value[x]")

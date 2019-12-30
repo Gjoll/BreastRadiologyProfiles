@@ -134,7 +134,7 @@ namespace BreastRadiology.XUnitTests
                 }
                 else
                 {
-                    throw new NotImplementedException();
+                    Self.ComponentSliceObservedCount(e);
                 }
             });
     }

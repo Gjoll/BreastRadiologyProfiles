@@ -138,7 +138,7 @@ namespace BreastRadiology.XUnitTests
 
         Dictionary<String, Resource> resources = new Dictionary<string, Resource>();
 
-        bool Component_HasMember = true;
+        bool Component_HasMember = false;
 
         FileCleaner fc;
         String resourceDir;
@@ -224,6 +224,8 @@ namespace BreastRadiology.XUnitTests
             return retVal;
         }
 
+        String CodeSystemUrl(String name) => $"http://hl7.org/fhir/us/breast-radiology/CodeSystem/{name}";
+
         CodeSystem CreateCodeSystem(String name,
             String title,
             String mapName,
@@ -236,7 +238,7 @@ namespace BreastRadiology.XUnitTests
             CodeSystem cs = new CodeSystem
             {
                 Id = name,
-                Url = $"http://hl7.org/fhir/us/breast-radiology/CodeSystem/{name}",
+                Url = CodeSystemUrl(name),
                 Name = name,
                 Title = $"{title}",
                 Description = new Markdown(description),
@@ -360,5 +362,103 @@ namespace BreastRadiology.XUnitTests
 
             System.Threading.Tasks.Task.WaitAll(tasks.ToArray());
         }
+
+        void ComponentMGCalcificationType(SDefEditor e)
+        {
+            ElementDefGroup component = e.StartComponentSliceing();
+
+            e.ComponentSliceCodeableConcept("calcificationType",
+                Self.MGCodeCalcificationType.ToCodeableConcept(),
+                Self.MGCalcificationTypeCS.Value().Url,
+                BindingStrength.Required,
+                0,
+                "1");
+        }
+
+        void ComponentMGCalcificationDistribution(SDefEditor e)
+        {
+            ElementDefGroup component = e.StartComponentSliceing();
+
+            e.ComponentSliceCodeableConcept("calcificationDistribution",
+                Self.MGCodeCalcificationDistribution.ToCodeableConcept(),
+                Self.MGCalcificationDistributionCS.Value().Url,
+                BindingStrength.Required,
+                0,
+                "1");
+        }
+
+        void ComponentSliceBiRads(SDefEditor e)
+        {
+            ElementDefGroup component = e.StartComponentSliceing();
+
+            e.ComponentSliceCodeableConcept("biRadsAssessmentCategory",
+                Self.CodeBiRads.ToCodeableConcept(),
+                Self.BiRadsAssessmentCategoriesCS.Value().Url,
+                BindingStrength.Required,
+                0,
+                "1");
+        }
+
+        void ComponentSliceObservedCount(SDefEditor e)
+        {
+            ElementDefGroup component = e.StartComponentSliceing();
+
+            String sliceName = "observedCount";
+
+            ElementDefinition slice = e.AppendSlice("component", sliceName, 0, "1");
+            {
+                ElementDefinition valueX = new ElementDefinition
+                {
+                    Path = $"{slice.Path}.value[x]",
+                    ElementId = $"{slice.Path}:{sliceName}.value[x]"
+                };
+
+                valueX
+                    .Types("integer", "Range")
+                    .SetCardinality(1, "1")
+                    .SetDefinition(new Markdown()
+                        .Paragraph("Count of an object.")
+                        .Paragraph("This is either an integer count, or a Range (min..max) count.")
+                        .Paragraph($"A range value with no maximum specified implies count is min or more.")
+                        .Paragraph($"A range value with no minimum specified implies count is max or less.")
+                     )
+                    ;
+                ;
+                e.InsertAfterAllChildren("component", valueX);
+            }
+            {
+                ElementDefinition eDef = new ElementDefinition
+                {
+                    Path = $"{slice.Path}.interpretation",
+                    ElementId = $"{slice.Path}:{sliceName}.interpretation",
+                    Min = 0,
+                    Max = "0"
+                };
+                e.InsertAfterAllChildren("component", eDef);
+            }
+            {
+                ElementDefinition eDef = new ElementDefinition
+                {
+                    Path = $"{slice.Path}.referenceRange",
+                    ElementId = $"{slice.Path}:{sliceName}.referenceRange",
+                    Min = 0,
+                    Max = "0"
+                };
+                e.InsertAfterAllChildren("component", eDef);
+            }
+        }
+
+        void ComponentSliceConsistentWith(SDefEditor e)
+        {
+            ElementDefGroup component = e.StartComponentSliceing();
+
+            e.ComponentSliceCodeableConcept("consistentWith",
+                Self.CodeBiRads.ToCodeableConcept(),
+                Self.ConsistentWithCS.Value().Url,
+                BindingStrength.Extensible,
+                0,
+                "*");
+        }
+
     }
 }

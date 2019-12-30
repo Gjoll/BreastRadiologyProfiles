@@ -81,7 +81,15 @@ namespace BreastRadiology.XUnitTests
                 }
                 else
                 {
-                    throw new NotImplementedException();
+                    ProfileTargetSlice[] targets = new ProfileTargetSlice[]
+                    {
+                    new ProfileTargetSlice(Self.MGAssociatedFeatures.Value(), 0, "1"),
+                    };
+                    e.SliceByUrl("hasMember", targets);
+                    e.AddProfileTargets(targets);
+
+                    Self.ComponentSliceObservedCount(e);
+                    Self.ComponentSliceConsistentWith(e);
                 }
             });
     }

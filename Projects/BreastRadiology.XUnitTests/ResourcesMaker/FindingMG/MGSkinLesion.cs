@@ -46,15 +46,14 @@ namespace BreastRadiology.XUnitTests
 
                 if (Self.Component_HasMember)
                 {
-                    ProfileTargetSlice[] targets = new ProfileTargetSlice[]
-                    {
-                    };
-                    e.SliceByUrl("hasMember", targets);
-                    e.AddProfileTargets(targets);
+                    //ProfileTargetSlice[] targets = new ProfileTargetSlice[]
+                    //{
+                    //};
+                    //e.SliceByUrl("hasMember", targets);
+                    //e.AddProfileTargets(targets);
                 }
                 else
                 {
-                    throw new NotImplementedException();
                 }
             });
     }

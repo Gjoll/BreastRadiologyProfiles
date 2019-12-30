@@ -37,10 +37,8 @@ namespace BreastRadiology.XUnitTests
                 // .Card(1, "*")
                 // ;
 
-                if (Self.Component_HasMember)
+                ProfileTargetSlice[] targets = new ProfileTargetSlice[]
                 {
-                    ProfileTargetSlice[] targets = new ProfileTargetSlice[]
-                    {
                     new ProfileTargetSlice(Self.MGAbnormalityForeignObject.Value(), 0, "*"),
                     new ProfileTargetSlice(Self.MGAbnormalityArchitecturalDistortion.Value(), 0, "*"),
                     new ProfileTargetSlice(Self.MGAbnormalityAsymmetry.Value(), 0, "*"),
@@ -55,14 +53,9 @@ namespace BreastRadiology.XUnitTests
                     new ProfileTargetSlice(Self.MGSkinLesion.Value(), 0, "*"),
                     new ProfileTargetSlice(Self.MGAssociatedFeatures.Value(), 0, "*"),
                     new ProfileTargetSlice(Self.MGBreastDensity.Value(), 1, "1")
-                    };
-                    e.SliceByUrl("hasMember", targets);
-                    e.AddProfileTargets(targets);
-                }
-                else
-                {
-                    throw new NotImplementedException();
-                }
+                };
+                e.SliceByUrl("hasMember", targets);
+                e.AddProfileTargets(targets);
 
                 e.IntroDoc
                     .ReviewedStatus(ReviewStatus.NotReviewed)

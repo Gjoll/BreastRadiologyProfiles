@@ -19,7 +19,7 @@ namespace BreastRadiology.XUnitTests
                     .Description("Adds references to imaging studies.",
                         new Markdown()
                             .Paragraph("Fragment that adds derivedFrom references to imaging studies, including AIM annotated imaaging study.")
-                            //.Todo
+                     //.Todo
                      )
                     ;
                 s = e.SDef.Url;
@@ -29,20 +29,13 @@ namespace BreastRadiology.XUnitTests
                     .Fragment($"Imaging Study Fragment")
                     ;
 
-                if (Self.Component_HasMember)
+                ProfileTargetSlice[] targets = new ProfileTargetSlice[]
                 {
-                    ProfileTargetSlice[] targets = new ProfileTargetSlice[]
-                    {
                     new ProfileTargetSlice(ImagingStudyUrl, 0, "*"),
                     new ProfileTargetSlice(Self.AimAnnotatedImagingStudy.Value(), 0, "1"),
-                    };
-                    e.SliceByUrl("derivedFrom", targets);
-                    e.AddProfileTargets(targets);
-                }
-                else
-                {
-                    throw new NotImplementedException();
-                }
+                };
+                e.SliceByUrl("derivedFrom", targets);
+                e.AddProfileTargets(targets);
             });
     }
 }

@@ -17,7 +17,7 @@ namespace BreastRadiology.XUnitTests
         StringTaskVar BiRadsAssessmentCategory = new StringTaskVar(
             (out String s) =>
             {
-                ValueSet binding = Self.VSBiRadsAssessmentCategories.Value();
+                ValueSet binding = Self.BiRadsAssessmentCategoriesVS.Value();
                 {
                     IntroDoc valueSetIntroDoc = new IntroDoc(Path.Combine(Self.pageDir, $"ValueSet-{binding.Name}-intro.xml"));
                     valueSetIntroDoc
@@ -129,7 +129,7 @@ namespace BreastRadiology.XUnitTests
                         })
                     );
 
-        VSTaskVar VSBiRadsAssessmentCategories = new VSTaskVar(
+        VSTaskVar BiRadsAssessmentCategoriesVS = new VSTaskVar(
             () =>
                 Self.CreateValueSet(
                         "BiRadsAssessmentCategoriesVS",

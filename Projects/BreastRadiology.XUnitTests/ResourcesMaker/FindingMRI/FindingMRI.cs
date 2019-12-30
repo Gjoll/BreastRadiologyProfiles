@@ -49,7 +49,7 @@ namespace BreastRadiology.XUnitTests
                 }
                 else
                 {
-                    throw new NotImplementedException();
+                    //$ XXYYZ-Slice
                 }
 
                 //$e.Find("method")

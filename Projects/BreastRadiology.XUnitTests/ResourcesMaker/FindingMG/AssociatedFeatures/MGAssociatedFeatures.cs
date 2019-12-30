@@ -39,24 +39,17 @@ namespace BreastRadiology.XUnitTests
                     .ObservationSection("Mammography Associated Features")
                     ;
 
-                if (Self.Component_HasMember)
+                ProfileTargetSlice[] targets = new ProfileTargetSlice[]
                 {
-                    ProfileTargetSlice[] targets = new ProfileTargetSlice[]
-                    {
                     new ProfileTargetSlice(Self.MGSkinRetraction.Value(), 0, "1"),
                     new ProfileTargetSlice(Self.MGNippleRetraction.Value(), 0, "1"),
                     new ProfileTargetSlice(Self.MGSkinThickening.Value(), 0, "*"),
                     new ProfileTargetSlice(Self.MGAxillaryAdenopathy.Value(), 0, "1"),
                     new ProfileTargetSlice(Self.MGAbnormalityArchitecturalDistortion.Value(), 0, "*"),
                     new ProfileTargetSlice(Self.MGAbnormalityCalcification.Value(), 0, "*")
-                    };
-                    e.SliceByUrl("hasMember", targets);
-                    e.AddProfileTargets(targets);
-                }
-                else
-                {
-                    throw new NotImplementedException();
-                }
+                };
+                e.SliceByUrl("hasMember", targets);
+                e.AddProfileTargets(targets);
             });
     }
 }

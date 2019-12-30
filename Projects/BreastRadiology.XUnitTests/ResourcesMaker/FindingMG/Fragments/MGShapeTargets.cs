@@ -34,9 +34,9 @@ namespace BreastRadiology.XUnitTests
             {
                 ProfileTargetSlice[] targets = new ProfileTargetSlice[]
                 {
-                    new ProfileTargetSlice(Self.Orientation.Value(), 0, "*"),
-                    new ProfileTargetSlice(Self.MGShape.Value(), 0, "1"),
-                    new ProfileTargetSlice(Self.MGMargin.Value(), 0, "1"),
+                    new ProfileTargetSlice(Self.Orientation.Value(), 0, "1"),
+                    new ProfileTargetSlice(Self.Shape.Value(), 0, "1"),
+                    new ProfileTargetSlice(Self.Margin.Value(), 0, "1"),
                     new ProfileTargetSlice(Self.MGDensity.Value(), 0, "1"),
                 };
                 e.SliceByUrl("hasMember", targets);
@@ -44,7 +44,35 @@ namespace BreastRadiology.XUnitTests
             }
             else
             {
-                throw new NotImplementedException();
+                ElementDefGroup component = e.StartComponentSliceing();
+
+                e.ComponentSliceCodeableConcept("orientation",
+                    Self.CodeOrientation.ToCodeableConcept(),
+                    Self.OrientationCS.Value().Url,
+                    BindingStrength.Required,
+                    0,
+                    "1");
+
+                e.ComponentSliceCodeableConcept("shape",
+                    Self.CodeShape.ToCodeableConcept(),
+                    Self.ShapeCS.Value().Url,
+                    BindingStrength.Required,
+                    0,
+                    "1");
+
+                e.ComponentSliceCodeableConcept("margin",
+                    Self.CodeMargin.ToCodeableConcept(),
+                    Self.MarginCS.Value().Url,
+                    BindingStrength.Required,
+                    0,
+                    "1");
+
+                e.ComponentSliceCodeableConcept("mgDensity",
+                    Self.CodeMGDensity.ToCodeableConcept(),
+                    Self.MGDensityCS.Value().Url,
+                    BindingStrength.Required,
+                    0,
+                    "1");
             }
         });
     }
