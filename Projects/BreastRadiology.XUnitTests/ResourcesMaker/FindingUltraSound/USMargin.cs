@@ -22,7 +22,7 @@ namespace BreastRadiology.XUnitTests
                     "US Margin ValueSet",
                     "US Margin ValueSet",
                     "Ultra-sound mass margin codes value set.",
-                    Group_USCodes,
+                    Group_USCodesVS,
                     Self.MarginCS.Value());
                 binding
                     .Remove("Macrolobulated")

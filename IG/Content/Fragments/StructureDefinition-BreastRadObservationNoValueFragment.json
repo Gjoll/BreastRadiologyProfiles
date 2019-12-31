@@ -48,8 +48,11 @@
         "path": "Observation",
         "short": "Fragment that constrains Observations to have no explicit value.",
         "definition": "Base fragment for all BreastRad observations that have no explicit value.",
-        "min": 0,
-        "max": "*"
+        "base": {
+          "path": "Observation",
+          "min": 0,
+          "max": "*"
+        }
       },
       {
         "id": "Observation.value[x]",

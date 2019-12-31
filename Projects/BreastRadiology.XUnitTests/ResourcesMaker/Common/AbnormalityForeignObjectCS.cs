@@ -21,7 +21,7 @@ namespace BreastRadiology.XUnitTests
                         "Foreign Object CodeSystem",
                         "Foreign/Object/ CodeSystem",
                         "Foreign objects observed during a Breast Radiology exam code system.",
-                        Group_CommonCodes,
+                        Group_CommonCodesCS,
                         new ConceptDef[]
                         {
                         new ConceptDef("BB",

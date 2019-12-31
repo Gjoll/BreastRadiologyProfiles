@@ -20,7 +20,7 @@ namespace BreastRadiology.XUnitTests
                      "Mammography Breast Density CodeSystem",
                      "MG Breast Density/CodeSystem",
                      "Mammography breast density values code system.",
-                     Group_MGCodes,
+                     Group_MGCodesCS,
                      new ConceptDef[]
                      {
                     new ConceptDef("Fatty",
@@ -88,7 +88,7 @@ namespace BreastRadiology.XUnitTests
                     "Mammography Breast Density ValueSet",
                     "MG Breast DensityValueSet",
                     "Mammography breast density values value set.",
-                    Group_MGCodes,
+                    Group_MGCodesVS,
                     Self.MGBreastDensityCS.Value()
                     )
             );

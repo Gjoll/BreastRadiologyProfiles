@@ -20,7 +20,7 @@ namespace BreastRadiology.XUnitTests
                      "Mammography Calcification Distribution CodeSystem",
                      "MG Calc./Distribution/CodeSystem",
                      "Mammography calcification distribution code system.",
-                     Group_MGCodes,
+                     Group_MGCodesCS,
                      new ConceptDef[]
                      {
                     new ConceptDef("Diffuse",
@@ -87,7 +87,7 @@ namespace BreastRadiology.XUnitTests
                         "Mammography Calcification Distribution ValueSet",
                         "MG Calc./DistributionValueSet",
                         "Mammography calcification distribution values value set.",
-                        Group_MGCodes,
+                        Group_MGCodesVS,
                         Self.MGCalcificationDistributionCS.Value()
                     )
             );

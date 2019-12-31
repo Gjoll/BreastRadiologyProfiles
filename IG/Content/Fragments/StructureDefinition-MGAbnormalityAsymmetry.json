@@ -60,14 +60,15 @@
         "path": "Observation",
         "short": "Breast Radiology Mammography Asymmetry Observation",
         "definition": "If this observation is present, and dataAbsentReason is empty, then an asymmetry was observed.\n\n\nIf this observation is present, and dataAbsentReason is not empty, then an asymmetry was not observed and dataAbsentReason contains the reason why.\n\n\nThe several types of asymmetry involve a spectrum of mammographic findings that represent\nunilateral deposits of fibroglandular tissue not conforming to the definition of a radiodense mass.\nThe asymmetry, unlike a mass, is visible on only 1 mammographic projection. The other 3 types of\nasymmetry, although visible on more than 1 projection, have concave-outward borders and usu-\nally are seen to be interspersed with fat, whereas a radiodense mass displays completely or partially\nconvex-outward borders and appears to be denser in the center than at the periphery.\n-- Bi-Rads® Atlas — Mammography Fifth Ed. 2013",
-        "min": 0,
-        "max": "*"
+        "base": {
+          "path": "Observation",
+          "min": 0,
+          "max": "*"
+        }
       },
       {
         "id": "Observation.value[x]",
         "path": "Observation.value[x]",
-        "min": 0,
-        "max": "1",
         "base": {
           "path": "Observation.value[x]",
           "min": 0,
@@ -96,8 +97,6 @@
           "ordered": true,
           "rules": "openAtEnd"
         },
-        "min": 0,
-        "max": "*",
         "base": {
           "path": "Observation.hasMember",
           "min": 0,
@@ -136,8 +135,6 @@
           ],
           "rules": "open"
         },
-        "min": 0,
-        "max": "*",
         "base": {
           "path": "Observation.component",
           "min": 0,
@@ -163,9 +160,9 @@
         "min": 1,
         "max": "1",
         "base": {
-          "path": "Observation.component",
+          "path": "Observation.component.value[x]",
           "min": 0,
-          "max": "*"
+          "max": "1"
         },
         "type": [
           {
@@ -175,28 +172,6 @@
             "code": "Range"
           }
         ]
-      },
-      {
-        "id": "Observation.component:observedCount.interpretation",
-        "path": "Observation.component.interpretation",
-        "min": 0,
-        "max": "0",
-        "base": {
-          "path": "Observation.component",
-          "min": 0,
-          "max": "*"
-        }
-      },
-      {
-        "id": "Observation.component:observedCount.referenceRange",
-        "path": "Observation.component.referenceRange",
-        "min": 0,
-        "max": "0",
-        "base": {
-          "path": "Observation.component",
-          "min": 0,
-          "max": "*"
-        }
       },
       {
         "id": "Observation.component:consistentWith",
@@ -216,9 +191,9 @@
         "min": 1,
         "max": "1",
         "base": {
-          "path": "Observation.component",
-          "min": 0,
-          "max": "*"
+          "path": "Observation.component.code",
+          "min": 1,
+          "max": "1"
         },
         "patternCodeableConcept": {
           "coding": [
@@ -235,9 +210,9 @@
         "min": 1,
         "max": "1",
         "base": {
-          "path": "Observation.component",
+          "path": "Observation.component.value[x]",
           "min": 0,
-          "max": "*"
+          "max": "1"
         },
         "type": [
           {
@@ -247,28 +222,6 @@
         "binding": {
           "strength": "extensible",
           "valueSet": "http://hl7.org/fhir/us/breast-radiology/CodeSystem/ConsistentWithCodeSystemCS"
-        }
-      },
-      {
-        "id": "Observation.component:consistentWith.interpretation",
-        "path": "Observation.component.interpretation",
-        "min": 0,
-        "max": "0",
-        "base": {
-          "path": "Observation.component",
-          "min": 0,
-          "max": "*"
-        }
-      },
-      {
-        "id": "Observation.component:consistentWith.referenceRange",
-        "path": "Observation.component.referenceRange",
-        "min": 0,
-        "max": "0",
-        "base": {
-          "path": "Observation.component",
-          "min": 0,
-          "max": "*"
         }
       }
     ]

@@ -2638,7 +2638,7 @@
           "Abnormal Flag"
         ],
         "min": 0,
-        "max": "0",
+        "max": "*",
         "base": {
           "path": "Observation.component.interpretation",
           "min": 0,
@@ -2689,7 +2689,7 @@
         "comment": "Most observations only have one generic reference range. Systems MAY choose to restrict to only supplying the relevant reference range based on knowledge about the patient (e.g., specific to the patient's age, gender, weight and other factors), but this might not be possible or appropriate. Whenever more than one reference range is supplied, the differences between them SHOULD be provided in the reference range and/or age properties.",
         "requirements": "Knowing what values are considered \"normal\" can help evaluate the significance of a particular result. Need to be able to provide multiple reference ranges for different contexts.",
         "min": 0,
-        "max": "0",
+        "max": "*",
         "base": {
           "path": "Observation.component.referenceRange",
           "min": 0,
@@ -2718,8 +2718,11 @@
         "path": "Observation",
         "short": "Findings Right Breast Section",
         "definition": "This resource is the head of the tree of observations made of the right breast during a breast radiology exam.\n\n\nChild observations are referenced by the 'Observation.hasMember' field.",
-        "min": 0,
-        "max": "*"
+        "base": {
+          "path": "Observation",
+          "min": 0,
+          "max": "*"
+        }
       },
       {
         "id": "Observation.value[x]",
@@ -2756,8 +2759,6 @@
           "ordered": true,
           "rules": "openAtEnd"
         },
-        "min": 0,
-        "max": "*",
         "base": {
           "path": "Observation.hasMember",
           "min": 0,
@@ -2856,8 +2857,6 @@
           ],
           "rules": "open"
         },
-        "min": 0,
-        "max": "*",
         "base": {
           "path": "Observation.component",
           "min": 0,
@@ -2882,9 +2881,9 @@
         "min": 1,
         "max": "1",
         "base": {
-          "path": "Observation.component",
-          "min": 0,
-          "max": "*"
+          "path": "Observation.component.code",
+          "min": 1,
+          "max": "1"
         },
         "patternCodeableConcept": {
           "coding": [
@@ -2901,9 +2900,9 @@
         "min": 1,
         "max": "1",
         "base": {
-          "path": "Observation.component",
+          "path": "Observation.component.value[x]",
           "min": 0,
-          "max": "*"
+          "max": "1"
         },
         "type": [
           {
@@ -2913,28 +2912,6 @@
         "binding": {
           "strength": "extensible",
           "valueSet": "http://hl7.org/fhir/us/breast-radiology/CodeSystem/ConsistentWithCodeSystemCS"
-        }
-      },
-      {
-        "id": "Observation.component:consistentWith.interpretation",
-        "path": "Observation.component.interpretation",
-        "min": 0,
-        "max": "0",
-        "base": {
-          "path": "Observation.component",
-          "min": 0,
-          "max": "*"
-        }
-      },
-      {
-        "id": "Observation.component:consistentWith.referenceRange",
-        "path": "Observation.component.referenceRange",
-        "min": 0,
-        "max": "0",
-        "base": {
-          "path": "Observation.component",
-          "min": 0,
-          "max": "*"
         }
       }
     ]

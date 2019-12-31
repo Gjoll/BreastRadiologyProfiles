@@ -2167,8 +2167,11 @@
         "path": "Observation",
         "short": "Breast Radiology MRI Finding",
         "definition": "*** TODO Items ***** Device Metrics detailing the observation devices parameters.\n** Add information about contrast enhancement/other observation specific parameters.",
-        "min": 0,
-        "max": "*"
+        "base": {
+          "path": "Observation",
+          "min": 0,
+          "max": "*"
+        }
       }
     ]
   }

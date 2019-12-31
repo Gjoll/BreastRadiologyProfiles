@@ -21,7 +21,7 @@ namespace BreastRadiology.XUnitTests
                      "MRI Margin CodeSystem",
                      "MRI/Margin CodeSystem",
                      "MRI margin code system.",
-                     Group_MRICodes,
+                     Group_MRICodesCS,
                      new ConceptDef[]
                      {
                     new ConceptDef("Irregular",
@@ -66,7 +66,7 @@ namespace BreastRadiology.XUnitTests
                     "MRI Margin ValueSet",
                     "MRI/Margin ValueSet",
                     "MRI margin value set.",
-                    Group_MRICodes,
+                    Group_MRICodesVS,
                     Self.MRIMarginCS.Value()
                     )
             );

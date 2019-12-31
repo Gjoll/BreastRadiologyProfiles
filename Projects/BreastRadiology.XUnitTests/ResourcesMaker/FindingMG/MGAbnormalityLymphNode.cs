@@ -20,7 +20,7 @@ namespace BreastRadiology.XUnitTests
                         "Mammography Lymph Node Refinement CodeSystem",
                          "MG Lymph Node Refinement/CodeSystem",
                         "Mammography lymph node abnormality types code system.",
-                         Group_MGCodes,
+                         Group_MGCodesCS,
                         new ConceptDef[]
                          {
                         new ConceptDef("Axillary",
@@ -81,7 +81,7 @@ namespace BreastRadiology.XUnitTests
                    "Mammography Lymph Node ValueSet",
                     "MG Lymph Node/ValueSet",
                    "Mammography lymph node abnormality types value set.",
-                    Group_MGCodes,
+                    Group_MGCodesVS,
                     Self.MGAbnormalityLymphNodeCS.Value()
                     )
             );

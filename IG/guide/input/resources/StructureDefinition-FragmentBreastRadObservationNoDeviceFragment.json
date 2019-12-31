@@ -2171,8 +2171,11 @@
         "path": "Observation",
         "short": "Fragment that constrains Observations to have not device data.",
         "definition": "Fragment for all observations that have no device.",
-        "min": 0,
-        "max": "*"
+        "base": {
+          "path": "Observation",
+          "min": 0,
+          "max": "*"
+        }
       },
       {
         "id": "Observation.device",

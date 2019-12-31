@@ -2181,8 +2181,11 @@
         "id": "ImagingStudy",
         "path": "ImagingStudy",
         "short": "AIM Annotated Imaging Study",
-        "min": 0,
-        "max": "*"
+        "base": {
+          "path": "ImagingStudy",
+          "min": 0,
+          "max": "*"
+        }
       }
     ]
   }

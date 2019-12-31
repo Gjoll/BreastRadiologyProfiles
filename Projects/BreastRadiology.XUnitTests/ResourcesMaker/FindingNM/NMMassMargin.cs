@@ -21,7 +21,7 @@ namespace BreastRadiology.XUnitTests
                      "NM Margin CodeSystem",
                      "NM/Margin/CodeSystem",
                      "NM margin code system.",
-                     Group_NMCodes,
+                     Group_NMCodesCS,
                      new ConceptDef[]
                      {
                     new ConceptDef("Circumscribed ",
@@ -43,7 +43,7 @@ namespace BreastRadiology.XUnitTests
                         "NM Margin ValueSet",
                         "NM/Margin/ValueSet",
                         "NM margin value set.",
-                        Group_NMCodes,
+                        Group_NMCodesVS,
                         Self.NMMarginCS.Value()
                     )
             );

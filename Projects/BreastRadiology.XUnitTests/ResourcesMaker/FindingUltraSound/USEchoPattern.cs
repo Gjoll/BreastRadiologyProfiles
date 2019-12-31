@@ -15,7 +15,7 @@ namespace BreastRadiology.XUnitTests
                      "US Echo Pattern CodeSystem",
                      "US Echo Pattern/CodeSystem",
                      "Ultra-sound mass echo pattern code system.",
-                     Group_USCodes,
+                     Group_USCodesCS,
                      new ConceptDef[]
                      {
                     new ConceptDef("Anechoic",
@@ -111,7 +111,7 @@ namespace BreastRadiology.XUnitTests
                     "US Echo Pattern ValueSet",
                     "US Echo Pattern/ValueSet",
                     "Ultra-sound mass echo pattern codes value set.",
-                    Group_USCodes,
+                    Group_USCodesVS,
                     Self.USEchoPatternCS.Value())
             );
 

@@ -21,7 +21,7 @@ namespace BreastRadiology.XUnitTests
                         "Mass Refinement CodeSystem",
                         "Mass/Refinement/CodeSystem",
                         "Codes defining mass refinements.",
-                        Group_CommonCodes,
+                        Group_CommonCodesCS,
                         new ConceptDef[]
                         {
                         new ConceptDef("Solid",

@@ -92,8 +92,11 @@
         "path": "Observation",
         "short": "Breast Radiology Mammography Finding",
         "definition": "*** TODO Items ***** Device Metrics detailing the observation devices parameters (transducer freq, etc).",
-        "min": 0,
-        "max": "*"
+        "base": {
+          "path": "Observation",
+          "min": 0,
+          "max": "*"
+        }
       },
       {
         "id": "Observation.value[x]",
@@ -119,8 +122,6 @@
           "ordered": true,
           "rules": "openAtEnd"
         },
-        "min": 0,
-        "max": "*",
         "base": {
           "path": "Observation.hasMember",
           "min": 0,

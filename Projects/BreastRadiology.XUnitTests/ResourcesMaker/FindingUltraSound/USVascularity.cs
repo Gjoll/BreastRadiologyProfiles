@@ -22,7 +22,7 @@ namespace BreastRadiology.XUnitTests
                      "US Echo Pattern CodeSystem",
                      "US Vascularity/CodeSystem",
                      "Ultra-sound Vascularity code system.",
-                     Group_USCodes,
+                     Group_USCodesCS,
                      new ConceptDef[]
                      {
                     new ConceptDef("Adjacent",
@@ -67,7 +67,7 @@ namespace BreastRadiology.XUnitTests
                     "US Vascularity ValueSet",
                     "US Vascularity/ValueSet",
                     "Ultra-sound Vascularity codes value set.",
-                    Group_USCodes,
+                    Group_USCodesVS,
                     Self.USVascularityCS.Value()
                     )
             );

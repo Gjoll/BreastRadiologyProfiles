@@ -21,7 +21,7 @@ namespace BreastRadiology.XUnitTests
                          "Breast Location Region CodeSystem",
                          "Breast/Location/Region/CodeSystem",
                          "Breast body location region code system.",
-                         Group_CommonCodes,
+                         Group_CommonCodesCS,
                          new ConceptDef[]
                          {
                         new ConceptDef("Central",
@@ -65,7 +65,7 @@ namespace BreastRadiology.XUnitTests
                          "Breast Location Quadrant CodeSystem",
                          "Breast/Location/Quadrant/CodeSystem",
                          "Breast body location quadrant code system.",
-                         Group_CommonCodes,
+                         Group_CommonCodesCS,
                          new ConceptDef[]
                          {
                         new ConceptDef("UpperOuter",
@@ -101,7 +101,7 @@ namespace BreastRadiology.XUnitTests
                          "Breast Location Clock CodeSystem",
                          "Breast/Location/Clock/CodeSystem",
                          "Breast body location angles (expressed in clock-face units) code system.",
-                         Group_CommonCodes,
+                         Group_CommonCodesCS,
                          new ConceptDef[]
                          {
                         new ConceptDef("12-OClock",
@@ -174,7 +174,7 @@ namespace BreastRadiology.XUnitTests
                          "Breast Location Depth CodeSystem",
                          "Breast/Location/Depth/CodeSystem",
                          "Breast body location depth code system.",
-                         Group_CommonCodes,
+                         Group_CommonCodesCS,
                          new ConceptDef[]
                          {
                         new ConceptDef("Anterior",
@@ -202,7 +202,7 @@ namespace BreastRadiology.XUnitTests
                         "Breast Location Region ValueSet",
                         "Breast/Location/RegionValueSet",
                         "Breast body location region value set.",
-                        Group_CommonCodes,
+                        Group_CommonCodesVS,
                         Self.BreastLocationRegionCS.Value()
                 )
             );
@@ -214,7 +214,7 @@ namespace BreastRadiology.XUnitTests
                         "Breast Location Clock ValueSet",
                         "Breast/Location/ClockValueSet",
                         "Breast body location angles (expressed in clock-face units) value set.",
-                        Group_CommonCodes,
+                        Group_CommonCodesVS,
                         Self.BreastLocationClockCS.Value()
                 )
             );
@@ -226,7 +226,7 @@ namespace BreastRadiology.XUnitTests
                         "Breast Location Depth ValueSet",
                         "Breast/Location/DepthValueSet",
                         "Breast body location depth value set.",
-                        Group_CommonCodes,
+                        Group_CommonCodesVS,
                         Self.BreastLocationDepthCS.Value()
                 )
             );
@@ -238,21 +238,55 @@ namespace BreastRadiology.XUnitTests
                         "Breast Location Quadrant ValueSet",
                         "Breast/Location/QuadrantValueSet",
                         "Breast body location quadrant code system value set.",
-                        Group_CommonCodes,
+                        Group_CommonCodesVS,
                         Self.BreastLocationQuadrantCS.Value()
                 )
             );
 
-        StringTaskVar BreastBodyLocationExtension = new StringTaskVar(
+        //$ Fix: complex extension is wrong - subslices are not identified.
+        public StringTaskVar BreastBodyLocationExtension = new StringTaskVar(
             (out String s) =>
             {
                 SDefEditor e;
-                ElementDefGroup eGroup;
-                ElementDefinition topExtension;
+                ElementTreeNode extensionNode;
 
-                void AddMapLink(ValueSet binding)
+                //void AddMapLink(ValueSet binding)
+                //{
+                //    breastBodyLocationMapLinks.Add(new ResourceMap.Link("valueSet", binding.Url, false));
+                //}
+
+                ElementTreeNode Slice(String sliceName,
+                    String shortText,
+                    Markdown definition)
                 {
-                    //breastBodyLocationMapLinks.Add(new ResourceMap.Link("valueSet", binding.Url, false));
+                    ElementTreeSlice extensionElement = extensionNode.CreateSlice(sliceName);
+                    extensionElement.ElementDefinition
+                        .ElementId($"{extensionNode.ElementDefinition.Path}:{sliceName}")
+                        .SliceName(sliceName)
+                        .Short(shortText)
+                        .Definition(definition)
+                        .SetCardinality(0, "1")
+                        ;
+                    extensionElement.ElementDefinition.Type = null;
+                    extensionElement.ElementDefinition.Type = null;
+
+                    ElementDefinition sealExtension = new ElementDefinition
+                    {
+                        ElementId = $"{extensionNode.ElementDefinition.Path}:{sliceName}.extension",
+                        Path = $"{extensionNode.ElementDefinition.Path}.extension"
+                    };
+
+                    sealExtension
+                        .Zero()
+                        ;
+                    extensionElement.CreateNode(sealExtension);
+
+                    ElementDefinition valueBase = e.Get("value[x]").ElementDefinition;
+                    ElementDefinition elementValue = new ElementDefinition()
+                        .Path($"{extensionNode.ElementDefinition.Path}.value[x]")
+                        .ElementId($"{extensionNode.ElementDefinition.Path}:{sliceName}.value[x]")
+                        ;
+                    return extensionElement.CreateNode(elementValue);
                 }
 
                 void SliceAndBind(String sliceName,
@@ -260,32 +294,43 @@ namespace BreastRadiology.XUnitTests
                     String shortText,
                     Markdown definition)
                 {
-                    ElementDefinition extensionElement = e.Clone("extension");
-                    extensionElement
-                        .ElementId($"{topExtension.Path}:{sliceName}")
-                        .SliceName(sliceName)
-                        .ZeroToOne()
-                        ;
-                    ElementDefGroup extensionGroup = e.InsertAfter(eGroup, extensionElement);
-
-                    ElementDefinition sealExtension = e.Clone("extension");
-                    sealExtension
-                        .ElementId($"{topExtension.Path}:{sliceName}.extension")
-                        .Path($"{topExtension.Path}.extension")
-                        .Zero()
-                        ;
-                    e.InsertAfter(extensionGroup, sealExtension);
-
-                    ElementDefinition elementValue = e.Clone("value[x]")
-                        .Path($"{topExtension.Path}.value[x]")
-                        .ElementId($"{topExtension.Path}:{sliceName}.value[x]")
+                    ElementDefinition elementValue = Slice(sliceName, shortText, definition).ElementDefinition;
+                    elementValue
                         .Type("CodeableConcept")
                         .Binding(bindName, BindingStrength.Required)
                         .Single()
-                        .Short(shortText)
-                        .Definition(definition)
                         ;
-                    e.InsertAfter(extensionGroup, elementValue);
+                }
+
+                void SliceDistance(String sliceName,
+                    String shortText,
+                    Markdown definition)
+                {
+                    ElementTreeNode sliceNode = Slice(sliceName, shortText, definition);
+
+                    sliceNode.ElementDefinition
+                        .Type("Quantity")
+                        .Single()
+                        ;
+
+                    ElementDefinition quantitySystem = new ElementDefinition()
+                        .Path($"{extensionNode.ElementDefinition.Path}.value[x].system")
+                        .ElementId($"{extensionNode.ElementDefinition.Path}:{sliceName}.value[x].system")
+                        .Type("uri")
+                        .Single()
+                        .Fixed(new FhirUri("http://unitsofmeasure.org"))
+                        ;
+                    sliceNode.DefaultSlice.CreateNode(quantitySystem);
+
+                    ElementDefinition quantityCode = new ElementDefinition()
+                        .Path($"{extensionNode.ElementDefinition.Path}.value[x].code")
+                        .ElementId($"{extensionNode.ElementDefinition.Path}:{sliceName}.value[x].code")
+                        .Type("uri")
+                        .Single()
+                        .Binding("http://hl7.org/fhir/us/breast-radiology/ValueSet/UnitsOfLengthVS",
+                                BindingStrength.Required)
+                        ;
+                    sliceNode.DefaultSlice.CreateNode(quantityCode);
                 }
 
                 //breastBodyLocationMapLinks = new List<ResourceMap.Link>();
@@ -319,9 +364,7 @@ namespace BreastRadiology.XUnitTests
                     .Zero()
                     ;
 
-                eGroup = e.GetOrCreate("extension");
-                topExtension = eGroup.ElementDefinition;
-                topExtension.ConfigureSliceByUrlDiscriminator();
+                extensionNode = e.ConfigureSliceByUrlDiscriminator("extension", true);
 
                 SliceAndBind("laterality",
                     "http://hl7.org/fhir/ValueSet/bodysite-laterality",
@@ -345,7 +388,7 @@ namespace BreastRadiology.XUnitTests
                         binding.Url,
                         "Quadrant of the body location",
                         new Markdown().Paragraph("The quadrant  of the body location"));
-                    AddMapLink(binding);
+                    //AddMapLink(binding);
                 }
 
                 {
@@ -365,10 +408,10 @@ namespace BreastRadiology.XUnitTests
                         binding.Url,
                         "Region of the body location",
                         new Markdown().Paragraph("The region  of the body location"));
-                    AddMapLink(binding);
+                    //AddMapLink(binding);
                 }
-                {
 
+                {
                     ValueSet binding = Self.BreastLocationClockVS.Value();
 
                     {
@@ -385,11 +428,10 @@ namespace BreastRadiology.XUnitTests
                         binding.Url,
                         "Clock direction of the body location",
                         new Markdown().Paragraph("The clock direction of the body location."));
-                    AddMapLink(binding);
+                    //AddMapLink(binding);
                 }
 
                 {
-
                     ValueSet binding = Self.BreastLocationDepthVS.Value();
                     {
                         IntroDoc valueSetIntroDoc = new IntroDoc(Path.Combine(Self.pageDir, $"ValueSet-{binding.Name}-intro.xml"));
@@ -405,120 +447,20 @@ namespace BreastRadiology.XUnitTests
                         binding.Url,
                         "Depth of the body location",
                         new Markdown().Paragraph("The depth of the body location."));
-                    AddMapLink(binding);
+                    //AddMapLink(binding);
                 }
 
-                {
-                    ElementDefinition distanceFromNipple = e.Clone("extension");
-                    distanceFromNipple
-                        .ElementId($"{topExtension.Path}:distanceFromNipple")
-                        .SliceName("distanceFromNipple")
-                        ;
-                    ElementDefGroup distanceFromNippleGroup = e.InsertAfter(eGroup, distanceFromNipple);
-                    ElementDefinition distanceFromNippleValue = e.Clone("value[x]")
-                        .Path($"{topExtension.Path}.value[x]")
-                        .ElementId($"{topExtension.Path}:distanceFromNipple.value[x]")
-                        .Type("Quantity")
-                        .Single()
-                        .Short("Distance from nipple")
-                        .Definition("Distance from nipple to body location")
-                        ;
-                    e.InsertAfter(distanceFromNippleGroup, distanceFromNippleValue);
+                SliceDistance("distanceFromNipple",
+                    "Distance from nipple",
+                    new Markdown("Distance from nipple to body location"));
 
-                    ElementDefinition quantitySystem = new ElementDefinition()
-                        .Path($"{topExtension.Path}.value[x].system")
-                        .ElementId($"{topExtension.Path}:distanceFromNipple.value[x].system")
-                        .Type("uri")
-                        .Single()
-                        .Fixed(new FhirUri("http://unitsofmeasure.org"))
-                        ;
-                    e.InsertAfter(distanceFromNippleGroup, quantitySystem);
+                SliceDistance("distanceFromSkin",
+                    "Distance from skin",
+                    new Markdown("Distance from skin to body location"));
 
-                    ElementDefinition quantityCode = new ElementDefinition()
-                        .Path($"{topExtension.Path}.value[x].code")
-                        .ElementId($"{topExtension.Path}:distanceFromNipple.value[x].code")
-                        .Type("uri")
-                        .Single()
-                        .Binding("http://hl7.org/fhir/us/breast-radiology/ValueSet/UnitsOfLengthVS",
-                                BindingStrength.Required)
-                        ;
-                    e.InsertAfter(distanceFromNippleGroup, quantityCode);
-                }
-
-                {
-                    ElementDefinition distanceFromSkin = e.Clone("extension");
-                    distanceFromSkin
-                        .ElementId($"{topExtension.Path}:distanceFromSkin")
-                        .SliceName("distanceFromSkin")
-                        ;
-                    ElementDefGroup distanceFromSkinGroup = e.InsertAfter(eGroup, distanceFromSkin);
-                    ElementDefinition distanceFromSkinValue = e.Clone("value[x]")
-                        .Path($"{topExtension.Path}.value[x]")
-                        .ElementId($"{topExtension.Path}:distanceFromSkin.value[x]")
-                        .Type("Quantity")
-                        .Short("Distance from skin")
-                        .Definition("Distance from skin to body location")
-                        .Single()
-                        ;
-                    e.InsertAfter(distanceFromSkinGroup, distanceFromSkinValue);
-
-                    ElementDefinition quantitySystem = new ElementDefinition()
-                        .Path($"{topExtension.Path}.value[x].system")
-                        .ElementId($"{topExtension.Path}:distanceFromSkin.value[x].system")
-                        .Type("uri")
-                        .Single()
-                        .Fixed(new FhirUri("http://unitsofmeasure.org"))
-                        ;
-                    e.InsertAfter(distanceFromSkinGroup, quantitySystem);
-
-                    ElementDefinition quantityCode = new ElementDefinition()
-                        .Path($"{topExtension.Path}.value[x].code")
-                        .ElementId($"{topExtension.Path}:distanceFromSkin.value[x].code")
-                        .Type("uri")
-                        .Single()
-                        .Binding("http://hl7.org/fhir/us/breast-radiology/ValueSet/UnitsOfLengthVS",
-                                BindingStrength.Required)
-                        ;
-                    e.InsertAfter(distanceFromSkinGroup, quantityCode);
-                }
-
-                {
-                    ElementDefinition distanceFromChestWall = e.Clone("extension");
-                    distanceFromChestWall
-                        .ElementId($"{topExtension.Path}:distanceFromChestWall")
-                        .SliceName("distanceFromChestWall")
-                        ;
-                    ElementDefGroup distanceFromChestWallGroup = e.InsertAfter(eGroup, distanceFromChestWall);
-                    ElementDefinition distanceFromChestWallValue = e.Clone("value[x]")
-                        .Path($"{topExtension.Path}.value[x]")
-                        .ElementId($"{topExtension.Path}:distanceFromChestWall.value[x]")
-                        .Type("Quantity")
-                        .Short("Distance from chest wall")
-                        .Definition("Distance from chest wall to body location")
-                        .Single()
-                        ;
-                    e.InsertAfter(distanceFromChestWallGroup, distanceFromChestWallValue);
-
-                    ElementDefinition quantitySystem = new ElementDefinition()
-                        .Path($"{topExtension.Path}.value[x].system")
-                        .ElementId($"{topExtension.Path}:distanceFromChestWall.value[x].system")
-                        .Type("uri")
-                        .Single()
-                        .Fixed(new FhirUri("http://unitsofmeasure.org"))
-                        ;
-                    e.InsertAfter(distanceFromChestWallGroup, quantitySystem);
-
-                    ElementDefinition quantityCode = new ElementDefinition()
-                        .Path($"{topExtension.Path}.value[x].code")
-                        .ElementId($"{topExtension.Path}:distanceFromChestWall.value[x].code")
-                        .Type("uri")
-                        .Single()
-                        .Binding("http://hl7.org/fhir/us/breast-radiology/ValueSet/UnitsOfLengthVS",
-                                BindingStrength.Required)
-                        ;
-                    e.InsertAfter(distanceFromChestWallGroup, quantityCode);
-
-                }
+                SliceDistance("distanceFromChestWall",
+                    "Distance from chest wall",
+                    new Markdown("Distance from chest wall to body location"));
 
                 e.IntroDoc
                     .ReviewedStatus(ReviewStatus.NotReviewed)

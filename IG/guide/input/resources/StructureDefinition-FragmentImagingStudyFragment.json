@@ -2247,8 +2247,11 @@
         "path": "Observation",
         "short": "Adds references to imaging studies.",
         "definition": "Fragment that adds derivedFrom references to imaging studies, including AIM annotated imaaging study.",
-        "min": 0,
-        "max": "*"
+        "base": {
+          "path": "Observation",
+          "min": 0,
+          "max": "*"
+        }
       },
       {
         "id": "Observation.derivedFrom",
@@ -2263,8 +2266,6 @@
           "ordered": true,
           "rules": "openAtEnd"
         },
-        "min": 0,
-        "max": "*",
         "base": {
           "path": "Observation.derivedFrom",
           "min": 0,

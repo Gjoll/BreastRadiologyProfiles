@@ -66,12 +66,20 @@ namespace BreastRadiology.XUnitTests
             if (msg.Contains(" does not resolve"))
                 return true;
 
+            if (msg.Contains("http://www.fragment.com"))
+                return true;
+
+            if (msg.Contains("Unknown Code System"))
+                return true;
+
             this.Message("Info", className, method, msg);
             return true;
         }
         private bool StatusErrors(string className, string method, string msg)
         {
             if (msg.Contains(" does not resolve"))
+                return true;
+            if (msg.Contains("Unknown Code System"))
                 return true;
 
             this.Message("Error", className, method, msg);
@@ -181,6 +189,32 @@ namespace BreastRadiology.XUnitTests
                 {
                     return reader.AsDataSet();
                 }
+            }
+        }
+
+        [TestMethod]
+        public void TestFragment()
+        {
+            try
+            {
+                ResourcesMaker pc = new ResourcesMaker(this.fc, this.fragmentDir, this.pageDir, this.cacheDir);
+                pc.StatusErrors += this.StatusErrors;
+                pc.StatusInfo += this.StatusInfo;
+                pc.StatusWarnings += this.StatusWarnings;
+                pc.BreastBodyLocationExtension.Value();
+                pc.SaveAll();
+                if (pc.HasErrors)
+                {
+                    StringBuilder sb = new StringBuilder();
+                    pc.FormatErrorMessages(sb);
+                    Trace.WriteLine(sb.ToString());
+                    Debug.Assert(false);
+                }
+            }
+            catch (Exception err)
+            {
+                Trace.WriteLine(err.Message);
+                Assert.IsTrue(false);
             }
         }
 
@@ -479,24 +513,28 @@ namespace BreastRadiology.XUnitTests
                 p.AddGrouping($"{ResourcesMaker.Group_BaseResources}", "Main Resources", "This section contains the main top level resources that are used in a Breast Radiology Report.");
 
                 p.AddGrouping($"{ResourcesMaker.Group_CommonResources}", "Common Resources", "This section contains resources that are commonly used throughout a Breast Radiology Report");
-                p.AddGrouping($"{ResourcesMaker.Group_CommonCodes}VS", "Common ValueSets ", "This section contains value sets that are commonly used throughout a Breast Radiology Report");
-                p.AddGrouping($"{ResourcesMaker.Group_CommonCodes}CS", "Common CodeSystems", "This section contains code systems that are commonly used throughout a Breast Radiology Report");
+                p.AddGrouping($"{ResourcesMaker.Group_CommonCodesVS}", "Common ValueSets ", "This section contains value sets that are commonly used throughout a Breast Radiology Report");
+                p.AddGrouping($"{ResourcesMaker.Group_CommonCodesCS}", "Common CodeSystems", "This section contains code systems that are commonly used throughout a Breast Radiology Report");
 
                 p.AddGrouping($"{ResourcesMaker.Group_MGResources}", "Mammography Resources", "This section contains resources used specifically in a Mammography exam");
-                p.AddGrouping($"{ResourcesMaker.Group_MGCodes}VS", "Mammography ValueSets", "This section contains value sets used specifically in a Mammography exam");
-                p.AddGrouping($"{ResourcesMaker.Group_MGCodes}CS", "Mammography CodeSystems", "This section contains code systems used specifically in a Mammography exam");
+                p.AddGrouping($"{ResourcesMaker.Group_MGCodesVS}", "Mammography ValueSets", "This section contains value sets used specifically in a Mammography exam");
+                p.AddGrouping($"{ResourcesMaker.Group_MGCodesCS}", "Mammography CodeSystems", "This section contains code systems used specifically in a Mammography exam");
 
                 p.AddGrouping($"{ResourcesMaker.Group_MRIResources}", "MRI Resources", "This section contains resources used specifically in a MRI exam");
-                p.AddGrouping($"{ResourcesMaker.Group_MRICodes}VS", "MRI ValueSets", "This section contains value sets used specifically in a MRI exam");
-                p.AddGrouping($"{ResourcesMaker.Group_MRICodes}CS", "MRI CodeSystems", "This section contains code systems used specifically in a MRI exam");
+                p.AddGrouping($"{ResourcesMaker.Group_MRICodesVS}", "MRI ValueSets", "This section contains value sets used specifically in a MRI exam");
+                p.AddGrouping($"{ResourcesMaker.Group_MRICodesCS}", "MRI CodeSystems", "This section contains code systems used specifically in a MRI exam");
 
-                p.AddGrouping($"{ResourcesMaker.Group_USResources}", "UltraSound Resources", "This section contains resources used specifically in a Ultra-Sound exam");
-                p.AddGrouping($"{ResourcesMaker.Group_USCodes}VS", "UltraSound ValueSets", "This section contains value sets used specifically in a UltraSound exam");
-                p.AddGrouping($"{ResourcesMaker.Group_USCodes}CS", "UltraSound CodeSystems", "This section contains code systems used specifically in a UltraSound exam");
+                p.AddGrouping($"{ResourcesMaker.Group_USResources}", "Ultra-Sound Resources", "This section contains resources used specifically in a Ultra-Sound exam");
+                p.AddGrouping($"{ResourcesMaker.Group_USCodesVS}", "Ultra-Sound ValueSets", "This section contains value sets used specifically in a Ultra-Sound exam");
+                p.AddGrouping($"{ResourcesMaker.Group_USCodesCS}", "Ultra-Sound CodeSystems", "This section contains code systems used specifically in a Ultra-Sound exam");
+
+                p.AddGrouping($"{ResourcesMaker.Group_NMResources}", "Nuclear Medicine Resources", "This section contains resources used specifically in a Nuclear Medicine exam");
+                p.AddGrouping($"{ResourcesMaker.Group_NMCodesVS}", "Nuclear Medicine ValueSets", "This section contains value sets used specifically in a Nuclear Medicine exam");
+                p.AddGrouping($"{ResourcesMaker.Group_NMCodesCS}", "Nuclear Medicine CodeSystems", "This section contains code systems used specifically in a Nuclear Medicine exam");
 
                 p.AddGrouping($"{ResourcesMaker.Group_AimResources}", "AIM Resources", "This section contains resources used specifically by AIM");
-                p.AddGrouping($"{ResourcesMaker.Group_AimCodes}VS", "AIM ValueSets", "This section contains value sets used specifically by AIM");
-                p.AddGrouping($"{ResourcesMaker.Group_AimCodes}CS", "AIM CodeSystems", "This section contains code systems used specifically by AIM");
+                p.AddGrouping($"{ResourcesMaker.Group_AimCodesVS}", "AIM ValueSets", "This section contains value sets used specifically by AIM");
+                p.AddGrouping($"{ResourcesMaker.Group_AimCodesCS}", "AIM CodeSystems", "This section contains code systems used specifically by AIM");
 
                 p.AddGrouping($"{ResourcesMaker.Group_Fragments}", "Fragments", "This section the fragments that are used to define the resources");
 

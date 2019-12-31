@@ -2175,8 +2175,11 @@
         "path": "Observation",
         "short": "Patient History Section",
         "definition": "This resource is the head of the tree of previous observations.\n\n\nChild observations are referenced by the 'Observation.hasMember' field.\n\n\n*** TODO Items ***** What resources comprise a patient history. Currently we can only reference observations - this is probably inadequate",
-        "min": 0,
-        "max": "*"
+        "base": {
+          "path": "Observation",
+          "min": 0,
+          "max": "*"
+        }
       },
       {
         "id": "Observation.value[x]",

@@ -20,7 +20,7 @@ namespace BreastRadiology.XUnitTests
                         "Mammography Cyst Refinement CodeSystem",
                          "MG Cyst Refinement/CodeSystem",
                         "Mammography cyst abnormality type CodeSystem.",
-                         Group_MGCodes,
+                         Group_MGCodesCS,
                         new ConceptDef[]
                          {
                         new ConceptDef("Complex",
@@ -60,7 +60,7 @@ namespace BreastRadiology.XUnitTests
                    "Mammography CystAbnormalities ValueSet",
                     "MG Cyst/ValueSet",
                    "Mammography cyst abnormality types value set.",
-                    Group_MGCodes,
+                    Group_MGCodesVS,
                     Self.MGAbnormalityCystRefinementCS.Value()
                     )
             );

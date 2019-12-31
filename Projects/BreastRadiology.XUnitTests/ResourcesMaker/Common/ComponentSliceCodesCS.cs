@@ -42,7 +42,7 @@ namespace BreastRadiology.XUnitTests
                         "Component Slice Codes CodeSystem",
                         "ComponentSliceCodes/ValueSet",
                         "Component Slice Codes code system",
-                        Group_CommonCodes,
+                        Group_CommonCodesCS,
                         new ConceptDef[]
                         {
                             new ConceptDef(Self.ConsistentWithCodeValue, "Slicing Component Code - CodeValue"),
@@ -69,7 +69,7 @@ namespace BreastRadiology.XUnitTests
                         "ConsistentWithSlice ValueSet",
                         "ConsistentWithSlice/ValueSet",
                         "ConsistentWithSlice value set.",
-                        Group_CommonCodes,
+                        Group_CommonCodesVS,
                         Self.ComponentSliceCodesCS.Value()
                     )
             );

@@ -53,9 +53,9 @@ namespace BreastRadiology.XUnitTests
                 }
 
                 //$e.Find("method")
-                //$     .FixedCodeSlice("method", "http://snomed.info/sct", "115341008")
-                //$     .Card(1, "*")
-                //$     ;
+                //     .FixedCodeSlice("method", "http://snomed.info/sct", "115341008")
+                //     .Card(1, "*")
+                //     ;
             });
     }
 }

@@ -48,8 +48,11 @@
         "path": "Observation",
         "short": "Fragment definition to include AIM Annotation extension",
         "definition": "This fragment adds the references for the AIM Annotation PolyLine extension.",
-        "min": 0,
-        "max": "*"
+        "base": {
+          "path": "Observation",
+          "min": 0,
+          "max": "*"
+        }
       },
       {
         "id": "Observation.extension",
@@ -64,8 +67,6 @@
           "ordered": true,
           "rules": "openAtEnd"
         },
-        "min": 0,
-        "max": "*",
         "base": {
           "path": "Observation.extension",
           "min": 0,

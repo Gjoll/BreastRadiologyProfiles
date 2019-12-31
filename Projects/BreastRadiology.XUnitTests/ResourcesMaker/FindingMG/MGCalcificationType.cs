@@ -20,7 +20,7 @@ namespace BreastRadiology.XUnitTests
                      "Mammography Calcification Type CodeSystem",
                      "MG Calc. Type/CodeSystem",
                      "Mammography calcification type code system.",
-                     Group_MGCodes,
+                     Group_MGCodesCS,
                      new ConceptDef[]
                      {
                     new ConceptDef("Skin",
@@ -195,7 +195,7 @@ namespace BreastRadiology.XUnitTests
                     "Mammography Calcification Type ValueSet",
                     "MG Calc. TypeValueSet",
                     "Mammography calcification types value set.",
-                    Group_MGCodes,
+                    Group_MGCodesVS,
                     Self.MGCalcificationTypeCS.Value()
                     )
             );

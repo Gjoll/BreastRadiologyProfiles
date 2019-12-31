@@ -64,16 +64,28 @@
       <description value="This section contains code systems used specifically in a MRI exam" />
     </grouping>
     <grouping id="USResources">
-      <name value="UltraSound Resources" />
+      <name value="Ultra-Sound Resources" />
       <description value="This section contains resources used specifically in a Ultra-Sound exam" />
     </grouping>
     <grouping id="USCodesVS">
-      <name value="UltraSound ValueSets" />
-      <description value="This section contains value sets used specifically in a UltraSound exam" />
+      <name value="Ultra-Sound ValueSets" />
+      <description value="This section contains value sets used specifically in a Ultra-Sound exam" />
     </grouping>
     <grouping id="USCodesCS">
-      <name value="UltraSound CodeSystems" />
-      <description value="This section contains code systems used specifically in a UltraSound exam" />
+      <name value="Ultra-Sound CodeSystems" />
+      <description value="This section contains code systems used specifically in a Ultra-Sound exam" />
+    </grouping>
+    <grouping id="NMResources">
+      <name value="Nuclear Medicine Resources" />
+      <description value="This section contains resources used specifically in a Nuclear Medicine exam" />
+    </grouping>
+    <grouping id="NMCodesVS">
+      <name value="Nuclear Medicine ValueSets" />
+      <description value="This section contains value sets used specifically in a Nuclear Medicine exam" />
+    </grouping>
+    <grouping id="NMCodesCS">
+      <name value="Nuclear Medicine CodeSystems" />
+      <description value="This section contains code systems used specifically in a Nuclear Medicine exam" />
     </grouping>
     <grouping id="AimResources">
       <name value="AIM Resources" />
@@ -102,6 +114,7 @@
       <name value="BiRads(r) Assessment Category Codes CodeSystem" />
       <description value="BiRads(r) Assessment Category code system." />
       <exampleBoolean value="false" />
+      <groupingId value="CommonCodesCS" />
     </resource>
     <resource>
       <reference>
@@ -110,6 +123,7 @@
       <name value="Breast Location Clock CodeSystem" />
       <description value="Breast body location angles (expressed in clock-face units) code system." />
       <exampleBoolean value="false" />
+      <groupingId value="CommonCodesCS" />
     </resource>
     <resource>
       <reference>
@@ -118,6 +132,7 @@
       <name value="Breast Location Depth CodeSystem" />
       <description value="Breast body location depth code system." />
       <exampleBoolean value="false" />
+      <groupingId value="CommonCodesCS" />
     </resource>
     <resource>
       <reference>
@@ -126,6 +141,7 @@
       <name value="Breast Location Quadrant CodeSystem" />
       <description value="Breast body location quadrant code system." />
       <exampleBoolean value="false" />
+      <groupingId value="CommonCodesCS" />
     </resource>
     <resource>
       <reference>
@@ -134,6 +150,7 @@
       <name value="Breast Location Region CodeSystem" />
       <description value="Breast body location region code system." />
       <exampleBoolean value="false" />
+      <groupingId value="CommonCodesCS" />
     </resource>
     <resource>
       <reference>
@@ -142,6 +159,7 @@
       <name value="Consistent With CodeSystem" />
       <description value="ConsistentWith code system" />
       <exampleBoolean value="false" />
+      <groupingId value="CommonCodesCS" />
     </resource>
     <resource>
       <reference>
@@ -150,6 +168,7 @@
       <name value="Fibroadenoma CodeSystem" />
       <description value="Fibroadenoma values code system." />
       <exampleBoolean value="false" />
+      <groupingId value="CommonCodesCS" />
     </resource>
     <resource>
       <reference>
@@ -158,6 +177,7 @@
       <name value="Foreign Object CodeSystem" />
       <description value="Foreign objects observed during a Breast Radiology exam code system." />
       <exampleBoolean value="false" />
+      <groupingId value="CommonCodesCS" />
     </resource>
     <resource>
       <reference>
@@ -166,6 +186,7 @@
       <name value="Mammography Calcification Distribution CodeSystem" />
       <description value="Mammography calcification distribution code system." />
       <exampleBoolean value="false" />
+      <groupingId value="MGCodesCS" />
     </resource>
     <resource>
       <reference>
@@ -174,6 +195,7 @@
       <name value="Mammography Calcification Type CodeSystem" />
       <description value="Mammography calcification type code system." />
       <exampleBoolean value="false" />
+      <groupingId value="MGCodesCS" />
     </resource>
     <resource>
       <reference>
@@ -182,6 +204,7 @@
       <name value="MarginCodeSystem" />
       <description value="Margin code system." />
       <exampleBoolean value="false" />
+      <groupingId value="CommonCodesCS" />
     </resource>
     <resource>
       <reference>
@@ -190,6 +213,7 @@
       <name value="Mass Refinement CodeSystem" />
       <description value="Codes defining mass refinements." />
       <exampleBoolean value="false" />
+      <groupingId value="CommonCodesCS" />
     </resource>
     <resource>
       <reference>
@@ -198,6 +222,7 @@
       <name value="Mammography Asymmetry Refinement CodeSystem" />
       <description value="Mammography asymmetry abnormality type code system." />
       <exampleBoolean value="false" />
+      <groupingId value="MGCodesCS" />
     </resource>
     <resource>
       <reference>
@@ -206,6 +231,7 @@
       <name value="Mammography Cyst Refinement CodeSystem" />
       <description value="Mammography cyst abnormality type CodeSystem." />
       <exampleBoolean value="false" />
+      <groupingId value="MGCodesCS" />
     </resource>
     <resource>
       <reference>
@@ -214,6 +240,7 @@
       <name value="Mammography Density Refinement CodeSystem" />
       <description value="Mammography density abnormality types code system." />
       <exampleBoolean value="false" />
+      <groupingId value="MGCodesCS" />
     </resource>
     <resource>
       <reference>
@@ -222,6 +249,7 @@
       <name value="Mammography Duct Refinement CodeSystem" />
       <description value="Mammography duct abnormality types code system." />
       <exampleBoolean value="false" />
+      <groupingId value="MGCodesCS" />
     </resource>
     <resource>
       <reference>
@@ -230,6 +258,7 @@
       <name value="Mammography Lymph Node Refinement CodeSystem" />
       <description value="Mammography lymph node abnormality types code system." />
       <exampleBoolean value="false" />
+      <groupingId value="MGCodesCS" />
     </resource>
     <resource>
       <reference>
@@ -238,6 +267,7 @@
       <name value="Mammography Breast Density CodeSystem" />
       <description value="Mammography breast density values code system." />
       <exampleBoolean value="false" />
+      <groupingId value="MGCodesCS" />
     </resource>
     <resource>
       <reference>
@@ -246,6 +276,7 @@
       <name value="Mammography Density CodeSystem" />
       <description value="Mammography density code system." />
       <exampleBoolean value="false" />
+      <groupingId value="MGCodesCS" />
     </resource>
     <resource>
       <reference>
@@ -254,6 +285,7 @@
       <name value="Observed Changes  CodeSystem" />
       <description value="Observed changes in definition of an abnormality over time code system." />
       <exampleBoolean value="false" />
+      <groupingId value="CommonCodesCS" />
     </resource>
     <resource>
       <reference>
@@ -262,6 +294,7 @@
       <name value="Observed Changes CodeSystem" />
       <description value="bserved changes in number of an abnormality over time code system." />
       <exampleBoolean value="false" />
+      <groupingId value="CommonCodesCS" />
     </resource>
     <resource>
       <reference>
@@ -270,6 +303,7 @@
       <name value="Observed Changes CodeSystem" />
       <description value="Observed changes in Prominance of an abnormality over time code system." />
       <exampleBoolean value="false" />
+      <groupingId value="CommonCodesCS" />
     </resource>
     <resource>
       <reference>
@@ -278,6 +312,7 @@
       <name value="Observed Changes CodeSystem" />
       <description value="Observed changes in the size of an abnormality over time code system." />
       <exampleBoolean value="false" />
+      <groupingId value="CommonCodesCS" />
     </resource>
     <resource>
       <reference>
@@ -286,6 +321,7 @@
       <name value="Observed Change In State CodeSystem" />
       <description value="Observed changes in state of an abnormality over time code system." />
       <exampleBoolean value="false" />
+      <groupingId value="CommonCodesCS" />
     </resource>
     <resource>
       <reference>
@@ -294,6 +330,7 @@
       <name value="Orientation CodeSystem" />
       <description value="Orientation CodeSystem" />
       <exampleBoolean value="false" />
+      <groupingId value="CommonCodesCS" />
     </resource>
     <resource>
       <reference>
@@ -302,6 +339,7 @@
       <name value="Shape CodeSystem" />
       <description value="Shape values code system." />
       <exampleBoolean value="false" />
+      <groupingId value="CommonCodesCS" />
     </resource>
     <resource>
       <reference>
@@ -310,6 +348,7 @@
       <name value="Breast Location Clock ValueSet ValueSet" />
       <description value="Breast body location angles (expressed in clock-face units) value set." />
       <exampleBoolean value="false" />
+      <groupingId value="CommonCodesVS" />
     </resource>
     <resource>
       <reference>
@@ -318,6 +357,7 @@
       <name value="Breast Location Depth ValueSet ValueSet" />
       <description value="Breast body location depth value set." />
       <exampleBoolean value="false" />
+      <groupingId value="CommonCodesVS" />
     </resource>
     <resource>
       <reference>
@@ -326,6 +366,7 @@
       <name value="Breast Location Quadrant ValueSet ValueSet" />
       <description value="Breast body location quadrant code system value set." />
       <exampleBoolean value="false" />
+      <groupingId value="CommonCodesVS" />
     </resource>
     <resource>
       <reference>
@@ -334,6 +375,7 @@
       <name value="Breast Location Region ValueSet ValueSet" />
       <description value="Breast body location region value set." />
       <exampleBoolean value="false" />
+      <groupingId value="CommonCodesVS" />
     </resource>
     <resource>
       <reference>
@@ -342,6 +384,7 @@
       <name value="Fibroadenoma ValueSet ValueSet" />
       <description value="Fibroadenoma values value set." />
       <exampleBoolean value="false" />
+      <groupingId value="CommonCodesVS" />
     </resource>
     <resource>
       <reference>
@@ -350,6 +393,7 @@
       <name value="Mass Refinement ValueSet ValueSet" />
       <description value="Mass type value set." />
       <exampleBoolean value="false" />
+      <groupingId value="MGCodesVS" />
     </resource>
     <resource>
       <reference>
@@ -358,6 +402,7 @@
       <name value="Foreign Object ValueSet ValueSet" />
       <description value="Foreign objects observed during a Breast Radiology exam value set" />
       <exampleBoolean value="false" />
+      <groupingId value="MGCodesVS" />
     </resource>
     <resource>
       <reference>
@@ -366,6 +411,7 @@
       <name value="Mammography AsymmetryAbnormalities ValueSet ValueSet" />
       <description value="Mammography asymmetry abnormality types value set." />
       <exampleBoolean value="false" />
+      <groupingId value="MGCodesVS" />
     </resource>
     <resource>
       <reference>
@@ -374,6 +420,7 @@
       <name value="Mammography CystAbnormalities ValueSet ValueSet" />
       <description value="Mammography cyst abnormality types value set." />
       <exampleBoolean value="false" />
+      <groupingId value="MGCodesVS" />
     </resource>
     <resource>
       <reference>
@@ -382,6 +429,7 @@
       <name value="Mammography Density ValueSet ValueSet" />
       <description value="Mammography density abnormality types value set." />
       <exampleBoolean value="false" />
+      <groupingId value="MGCodesVS" />
     </resource>
     <resource>
       <reference>
@@ -390,6 +438,7 @@
       <name value="Mammography Duct ValueSet ValueSet" />
       <description value="Mammography duct node abnormality types value set." />
       <exampleBoolean value="false" />
+      <groupingId value="MGCodesVS" />
     </resource>
     <resource>
       <reference>
@@ -398,6 +447,7 @@
       <name value="Mammography Lymph Node ValueSet ValueSet" />
       <description value="Mammography lymph node abnormality types value set." />
       <exampleBoolean value="false" />
+      <groupingId value="MGCodesVS" />
     </resource>
     <resource>
       <reference>
@@ -406,6 +456,7 @@
       <name value="Mammography Breast Density ValueSet ValueSet" />
       <description value="Mammography breast density values value set." />
       <exampleBoolean value="false" />
+      <groupingId value="MGCodesVS" />
     </resource>
     <resource>
       <reference>
@@ -711,6 +762,7 @@
       <name value="NM Finding" />
       <description value="Breast Radiology NMgraphy Finding" />
       <exampleBoolean value="false" />
+      <groupingId value="NMResources" />
     </resource>
     <resource>
       <reference>

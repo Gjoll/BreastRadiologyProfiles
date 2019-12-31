@@ -21,7 +21,7 @@ namespace BreastRadiology.XUnitTests
                          "Hilum CodeSystem",
                          "Hilum/CodeSystem",
                          "Hilum values code system.",
-                         Group_CommonCodes,
+                         Group_CommonCodesCS,
                          new ConceptDef[]
                          {
                         new ConceptDef("HilumFatty",
@@ -44,7 +44,7 @@ namespace BreastRadiology.XUnitTests
                         "Hilum ValueSet",
                         "Hilum/ValueSet",
                         "Hilum values value set.",
-                        Group_CommonCodes,
+                        Group_CommonCodesVS,
                         Self.HilumCS.Value())
             );
 

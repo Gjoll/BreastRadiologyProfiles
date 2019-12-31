@@ -22,7 +22,7 @@ namespace BreastRadiology.XUnitTests
                      "Observed Change In State CodeSystem",
                      "Observed/Change/CodeSystem",
                      "Observed changes in state of an abnormality over time code system.",
-                     Group_CommonCodes,
+                     Group_CommonCodesCS,
                      new ConceptDef[]
                      {
                     new ConceptDef("New",
@@ -66,7 +66,7 @@ namespace BreastRadiology.XUnitTests
                     "Observed Change In State ValueSet",
                     "Observed/Change/ValueSet",
                     "Observed changes in state of an abnormality over time value set.",
-                    Group_CommonCodes,
+                    Group_CommonCodesVS,
                     Self.ObservedChangeInStateCS.Value()
                     )
             );

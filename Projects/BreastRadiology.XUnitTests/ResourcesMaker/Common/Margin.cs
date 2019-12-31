@@ -21,7 +21,7 @@ namespace BreastRadiology.XUnitTests
                     "Margin ValueSet",
                     "MarginValueSet",
                     "Margin ValueSet.",
-                    Group_CommonCodes,
+                    Group_CommonCodesVS,
                     Self.MarginCS.Value()
                     )
             );
@@ -85,7 +85,7 @@ namespace BreastRadiology.XUnitTests
                      "MarginCodeSystem",
                      "Margin CodeSystem",
                      "Margin code system.",
-                     Group_CommonCodes,
+                     Group_CommonCodesCS,
                      new ConceptDef[]
                      {
                     new ConceptDef("Angular",

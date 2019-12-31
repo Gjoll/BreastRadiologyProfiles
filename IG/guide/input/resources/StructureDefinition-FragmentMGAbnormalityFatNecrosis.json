@@ -2487,7 +2487,7 @@
           "Abnormal Flag"
         ],
         "min": 0,
-        "max": "0",
+        "max": "*",
         "base": {
           "path": "Observation.component.interpretation",
           "min": 0,
@@ -2538,7 +2538,7 @@
         "comment": "Most observations only have one generic reference range. Systems MAY choose to restrict to only supplying the relevant reference range based on knowledge about the patient (e.g., specific to the patient's age, gender, weight and other factors), but this might not be possible or appropriate. Whenever more than one reference range is supplied, the differences between them SHOULD be provided in the reference range and/or age properties.",
         "requirements": "Knowing what values are considered \"normal\" can help evaluate the significance of a particular result. Need to be able to provide multiple reference ranges for different contexts.",
         "min": 0,
-        "max": "0",
+        "max": "*",
         "base": {
           "path": "Observation.component.referenceRange",
           "min": 0,
@@ -2855,7 +2855,7 @@
           "Abnormal Flag"
         ],
         "min": 0,
-        "max": "0",
+        "max": "*",
         "base": {
           "path": "Observation.component.interpretation",
           "min": 0,
@@ -2906,7 +2906,7 @@
         "comment": "Most observations only have one generic reference range. Systems MAY choose to restrict to only supplying the relevant reference range based on knowledge about the patient (e.g., specific to the patient's age, gender, weight and other factors), but this might not be possible or appropriate. Whenever more than one reference range is supplied, the differences between them SHOULD be provided in the reference range and/or age properties.",
         "requirements": "Knowing what values are considered \"normal\" can help evaluate the significance of a particular result. Need to be able to provide multiple reference ranges for different contexts.",
         "min": 0,
-        "max": "0",
+        "max": "*",
         "base": {
           "path": "Observation.component.referenceRange",
           "min": 0,
@@ -2935,8 +2935,11 @@
         "path": "Observation",
         "short": "Breast Radiology Mammography Fat Necrosis Observation",
         "definition": "[PR]\n\n\nIf this observation is present, and dataAbsentReason is empty, then a fat necrosis abnormality was observed.\n\n\nIf this observation is present, and dataAbsentReason is not empty, then a fat necrosis abnormality was not observed and dataAbsentReason contains the reason why.",
-        "min": 0,
-        "max": "*"
+        "base": {
+          "path": "Observation",
+          "min": 0,
+          "max": "*"
+        }
       },
       {
         "id": "Observation.component",
@@ -2950,8 +2953,6 @@
           ],
           "rules": "open"
         },
-        "min": 0,
-        "max": "*",
         "base": {
           "path": "Observation.component",
           "min": 0,
@@ -2977,9 +2978,9 @@
         "min": 1,
         "max": "1",
         "base": {
-          "path": "Observation.component",
+          "path": "Observation.component.value[x]",
           "min": 0,
-          "max": "*"
+          "max": "1"
         },
         "type": [
           {
@@ -2989,28 +2990,6 @@
             "code": "Range"
           }
         ]
-      },
-      {
-        "id": "Observation.component:observedCount.interpretation",
-        "path": "Observation.component.interpretation",
-        "min": 0,
-        "max": "0",
-        "base": {
-          "path": "Observation.component",
-          "min": 0,
-          "max": "*"
-        }
-      },
-      {
-        "id": "Observation.component:observedCount.referenceRange",
-        "path": "Observation.component.referenceRange",
-        "min": 0,
-        "max": "0",
-        "base": {
-          "path": "Observation.component",
-          "min": 0,
-          "max": "*"
-        }
       },
       {
         "id": "Observation.component:consistentWith",
@@ -3030,9 +3009,9 @@
         "min": 1,
         "max": "1",
         "base": {
-          "path": "Observation.component",
-          "min": 0,
-          "max": "*"
+          "path": "Observation.component.code",
+          "min": 1,
+          "max": "1"
         },
         "patternCodeableConcept": {
           "coding": [
@@ -3049,9 +3028,9 @@
         "min": 1,
         "max": "1",
         "base": {
-          "path": "Observation.component",
+          "path": "Observation.component.value[x]",
           "min": 0,
-          "max": "*"
+          "max": "1"
         },
         "type": [
           {
@@ -3061,28 +3040,6 @@
         "binding": {
           "strength": "extensible",
           "valueSet": "http://hl7.org/fhir/us/breast-radiology/CodeSystem/ConsistentWithCodeSystemCS"
-        }
-      },
-      {
-        "id": "Observation.component:consistentWith.interpretation",
-        "path": "Observation.component.interpretation",
-        "min": 0,
-        "max": "0",
-        "base": {
-          "path": "Observation.component",
-          "min": 0,
-          "max": "*"
-        }
-      },
-      {
-        "id": "Observation.component:consistentWith.referenceRange",
-        "path": "Observation.component.referenceRange",
-        "min": 0,
-        "max": "0",
-        "base": {
-          "path": "Observation.component",
-          "min": 0,
-          "max": "*"
         }
       }
     ]

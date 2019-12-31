@@ -52,8 +52,11 @@
         "path": "Observation",
         "short": "Breast Radiology Mammography Architectural Distortion Observation",
         "definition": "If this observation is present, and dataAbsentReason is empty, then an architectural distortion abnormality was observed.\n\n\nIf this observation is present, and dataAbsentReason is not empty, then an architectural distortion abnormality was not observed and dataAbsentReason contains the reason why.\n\n\nThe parenchyma is distorted with no definite mass visible. For mammography, this includes thin\nstraight lines or spiculations radiating from a point, and focal retraction, distortion or straightening\nat the anterior or posterior edge of the parenchyma. Architectural distortion may also be associ-\nated with a mass, asymmetry, or calcifications. In the absence of appropriate history of trauma or\nsurgery, architectural distortion is suspicious for malignancy or radial scar, and tissue diagnosis is\nappropriate.\nAs an ASSOCIATED FEATURE, architectural distortion may be used in conjunction with another\nfinding to indicate that the parenchyma is distorted or retracted adjacent to the FINDING\n-- Bi-Rads® Atlas — Mammography Fifth Ed. 2013",
-        "min": 0,
-        "max": "*"
+        "base": {
+          "path": "Observation",
+          "min": 0,
+          "max": "*"
+        }
       },
       {
         "id": "Observation.component",
@@ -67,8 +70,6 @@
           ],
           "rules": "open"
         },
-        "min": 0,
-        "max": "*",
         "base": {
           "path": "Observation.component",
           "min": 0,
@@ -93,9 +94,9 @@
         "min": 1,
         "max": "1",
         "base": {
-          "path": "Observation.component",
-          "min": 0,
-          "max": "*"
+          "path": "Observation.component.code",
+          "min": 1,
+          "max": "1"
         },
         "patternCodeableConcept": {
           "coding": [
@@ -112,9 +113,9 @@
         "min": 1,
         "max": "1",
         "base": {
-          "path": "Observation.component",
+          "path": "Observation.component.value[x]",
           "min": 0,
-          "max": "*"
+          "max": "1"
         },
         "type": [
           {
@@ -124,28 +125,6 @@
         "binding": {
           "strength": "extensible",
           "valueSet": "http://hl7.org/fhir/us/breast-radiology/CodeSystem/ConsistentWithCodeSystemCS"
-        }
-      },
-      {
-        "id": "Observation.component:consistentWith.interpretation",
-        "path": "Observation.component.interpretation",
-        "min": 0,
-        "max": "0",
-        "base": {
-          "path": "Observation.component",
-          "min": 0,
-          "max": "*"
-        }
-      },
-      {
-        "id": "Observation.component:consistentWith.referenceRange",
-        "path": "Observation.component.referenceRange",
-        "min": 0,
-        "max": "0",
-        "base": {
-          "path": "Observation.component",
-          "min": 0,
-          "max": "*"
         }
       }
     ]

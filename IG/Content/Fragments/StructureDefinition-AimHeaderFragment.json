@@ -36,15 +36,5 @@
   "abstract": true,
   "type": "Resource",
   "baseDefinition": "http://hl7.org/fhir/StructureDefinition/Resource",
-  "derivation": "constraint",
-  "differential": {
-    "element": [
-      {
-        "id": "Resource",
-        "path": "Resource",
-        "min": 0,
-        "max": "*"
-      }
-    ]
-  }
+  "derivation": "constraint"
 }

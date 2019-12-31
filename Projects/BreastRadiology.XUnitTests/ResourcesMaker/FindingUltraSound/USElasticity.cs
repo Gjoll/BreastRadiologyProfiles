@@ -21,7 +21,7 @@ namespace BreastRadiology.XUnitTests
                      "US Echo Pattern CodeSystem",
                      "US Elasticity/CodeSystem",
                      "Ultra-sound Elasticity code system.",
-                     Group_USCodes,
+                     Group_USCodesCS,
                      new ConceptDef[]
                      {
                     new ConceptDef("Soft",
@@ -50,7 +50,7 @@ namespace BreastRadiology.XUnitTests
                     "US Elasticity ValueSet",
                     "US Elasticity/ValueSet",
                     "Ultra-sound Elasticity  value set.",
-                    Group_USCodes,
+                    Group_USCodesVS,
                     Self.USElasticityCS.Value())
             );
 

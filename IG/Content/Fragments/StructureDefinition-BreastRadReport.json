@@ -68,8 +68,11 @@
         "path": "DiagnosticReport",
         "short": "Breast Radiology Diagnostic Report",
         "definition": "This diagnostic report has links to the data that comprise a Breast Radiology Report, including:\n\n\n** references to prior breast radiology reports for this patient\n** references to the observations of this report\n** references to the recommendations of this report\n** a summary of the report findings in a human readable format",
-        "min": 0,
-        "max": "*"
+        "base": {
+          "path": "DiagnosticReport",
+          "min": 0,
+          "max": "*"
+        }
       },
       {
         "id": "DiagnosticReport.extension",
@@ -84,8 +87,6 @@
           "ordered": true,
           "rules": "openAtEnd"
         },
-        "min": 0,
-        "max": "*",
         "base": {
           "path": "DiagnosticReport.extension",
           "min": 0,
@@ -187,8 +188,6 @@
       {
         "id": "DiagnosticReport.code",
         "path": "DiagnosticReport.code",
-        "min": 1,
-        "max": "1",
         "base": {
           "path": "DiagnosticReport.code",
           "min": 1,
@@ -227,8 +226,6 @@
           "ordered": true,
           "rules": "openAtEnd"
         },
-        "min": 0,
-        "max": "*",
         "base": {
           "path": "DiagnosticReport.result",
           "min": 0,

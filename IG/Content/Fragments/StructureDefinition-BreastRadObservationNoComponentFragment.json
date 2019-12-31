@@ -40,8 +40,11 @@
         "path": "Observation",
         "short": "Zero's Component.",
         "definition": "Zero's Observation.component.",
-        "min": 0,
-        "max": "*"
+        "base": {
+          "path": "Observation",
+          "min": 0,
+          "max": "*"
+        }
       },
       {
         "id": "Observation.component",

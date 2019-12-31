@@ -22,7 +22,7 @@ namespace BreastRadiology.XUnitTests
                         "Shape ValueSet",
                         "Shape/ValueSet",
                         "Shape values value set.",
-                        Group_CommonCodes,
+                        Group_CommonCodesVS,
                         Self.ShapeCS.Value()
                     )
             );
@@ -77,7 +77,7 @@ namespace BreastRadiology.XUnitTests
                      "Shape CodeSystem",
                      "Shape/CodeSystem",
                      "Shape values code system.",
-                     Group_CommonCodes,
+                     Group_CommonCodesCS,
                      new ConceptDef[]
                      {
                         new ConceptDef("Irregular",

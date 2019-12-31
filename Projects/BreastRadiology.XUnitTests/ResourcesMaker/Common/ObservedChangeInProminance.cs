@@ -22,7 +22,7 @@ namespace BreastRadiology.XUnitTests
                      "Observed Changes CodeSystem",
                      "Observed/Change/CodeSystem",
                      "Observed changes in Prominance of an abnormality over time code system.",
-                     Group_CommonCodes,
+                     Group_CommonCodesCS,
                      new ConceptDef[]
                      {
                     new ConceptDef("MoreProminent",
@@ -45,7 +45,7 @@ namespace BreastRadiology.XUnitTests
                     "Observed Prominance Changes ValueSet",
                     "Observed/Change/ValueSet",
                     "Observed changes in Prominance of an abnormality over time value set.",
-                    Group_CommonCodes,
+                    Group_CommonCodesVS,
                     Self.ObservedChangeInProminanceCS.Value()
                     )
             );

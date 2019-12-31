@@ -52,8 +52,11 @@
         "path": "Observation",
         "short": "Findings Section",
         "definition": "This resource is the head of the tree of observations made during a breast radiology exam.\n\n\nChild observations are referenced by the 'Observation.hasMember' field.",
-        "min": 0,
-        "max": "*"
+        "base": {
+          "path": "Observation",
+          "min": 0,
+          "max": "*"
+        }
       },
       {
         "id": "Observation.value[x]",
@@ -90,8 +93,6 @@
           "ordered": true,
           "rules": "openAtEnd"
         },
-        "min": 0,
-        "max": "*",
         "base": {
           "path": "Observation.hasMember",
           "min": 0,
@@ -150,8 +151,6 @@
           ],
           "rules": "open"
         },
-        "min": 0,
-        "max": "*",
         "base": {
           "path": "Observation.component",
           "min": 0,
@@ -176,9 +175,9 @@
         "min": 1,
         "max": "1",
         "base": {
-          "path": "Observation.component",
-          "min": 0,
-          "max": "*"
+          "path": "Observation.component.code",
+          "min": 1,
+          "max": "1"
         },
         "patternCodeableConcept": {
           "coding": [
@@ -195,9 +194,9 @@
         "min": 1,
         "max": "1",
         "base": {
-          "path": "Observation.component",
+          "path": "Observation.component.value[x]",
           "min": 0,
-          "max": "*"
+          "max": "1"
         },
         "type": [
           {
@@ -207,28 +206,6 @@
         "binding": {
           "strength": "required",
           "valueSet": "http://hl7.org/fhir/us/breast-radiology/CodeSystem/BiRadsAssessmentCategoriesCS"
-        }
-      },
-      {
-        "id": "Observation.component:biRadsAssessmentCategory.interpretation",
-        "path": "Observation.component.interpretation",
-        "min": 0,
-        "max": "0",
-        "base": {
-          "path": "Observation.component",
-          "min": 0,
-          "max": "*"
-        }
-      },
-      {
-        "id": "Observation.component:biRadsAssessmentCategory.referenceRange",
-        "path": "Observation.component.referenceRange",
-        "min": 0,
-        "max": "0",
-        "base": {
-          "path": "Observation.component",
-          "min": 0,
-          "max": "*"
         }
       }
     ]

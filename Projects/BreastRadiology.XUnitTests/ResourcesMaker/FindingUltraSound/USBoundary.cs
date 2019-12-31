@@ -20,7 +20,7 @@ namespace BreastRadiology.XUnitTests
                      "UltraSound Boundary CodeSystem",
                      "US Boundary/CodeSystem",
                      "Ultra Sound Boundary code system.",
-                     Group_USCodes,
+                     Group_USCodesCS,
                      new ConceptDef[]
                      {
                     new ConceptDef("WellDefined",
@@ -55,7 +55,7 @@ namespace BreastRadiology.XUnitTests
                     "UltraSound Boundary ValueSet",
                     "US Boundary/ValueSet",
                     "UltraSound Boundary Codes value set.",
-                    Group_USCodes,
+                    Group_USCodesVS,
                     Self.USBoundaryCS.Value()
                     )
             );

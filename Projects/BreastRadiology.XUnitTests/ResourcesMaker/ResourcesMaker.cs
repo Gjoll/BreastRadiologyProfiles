@@ -91,28 +91,34 @@ namespace BreastRadiology.XUnitTests
             }
         }
 
-        public static ResourcesMaker Self {get; set; }
+        public static ResourcesMaker Self { get; set; }
 
         public const String Group_BaseResources = "BaseResources";
         public const String Group_CommonResources = "CommonResources";
-        public const String Group_CommonCodes = "CommonCodes";
+        public const String Group_CommonCodesCS = "CommonCodesCS";
+        public const String Group_CommonCodesVS = "CommonCodesVS";
 
         public const String Group_Fragments = "Fragments";
 
         public const String Group_AimResources = "AimResources";
-        public const String Group_AimCodes = "AimCodes";
+        public const String Group_AimCodesCS = "AimCodesCS";
+        public const String Group_AimCodesVS = "AimCodesVS";
 
         public const String Group_MGResources = "MGResources";
-        public const String Group_MGCodes = "MGCodes";
+        public const String Group_MGCodesVS = "MGCodesVS";
+        public const String Group_MGCodesCS = "MGCodesCS";
 
         public const String Group_MRIResources = "MRIResources";
-        public const String Group_MRICodes = "MRICodes";
+        public const String Group_MRICodesVS = "MRICodesVS";
+        public const String Group_MRICodesCS = "MRICodesCS";
 
         public const String Group_NMResources = "NMResources";
-        public const String Group_NMCodes = "NMCodes";
+        public const String Group_NMCodesVS = "NMCodesVS";
+        public const String Group_NMCodesCS = "NMCodesCS";
 
         public const String Group_USResources = "USResources";
-        public const String Group_USCodes = "USCodes";
+        public const String Group_USCodesVS = "USCodesVS";
+        public const String Group_USCodesCS = "USCodesCS";
 
         public const String Group_ExtensionResources = "ExtensionResources";
 
@@ -185,7 +191,7 @@ namespace BreastRadiology.XUnitTests
             if (name.Contains(" "))
                 throw new Exception("Structure Def name can not contains spaces");
 
-            SDefEditor retVal = new SDefEditor(name, CreateUrl(name), baseDefinition, mapName, this.resourceDir, this.pageDir)
+            SDefEditor retVal = new SDefEditor(this, name, CreateUrl(name), baseDefinition, mapName, this.resourceDir, this.pageDir)
                 .Title(title)
                 .Derivation(StructureDefinition.TypeDerivationRule.Constraint)
                 .Abstract(false)
@@ -233,8 +239,6 @@ namespace BreastRadiology.XUnitTests
             String groupPath,
             IEnumerable<ConceptDef> codes)
         {
-            Debug.Assert(name.EndsWith("CS"));
-
             CodeSystem cs = new CodeSystem
             {
                 Id = name,
@@ -280,7 +284,6 @@ namespace BreastRadiology.XUnitTests
             String groupPath,
             CodeSystem cs)
         {
-            Debug.Assert(name.EndsWith("VS"));
             ValueSet vs = new ValueSet
             {
                 Id = name,
@@ -334,38 +337,30 @@ namespace BreastRadiology.XUnitTests
             this.SaveAll();
         }
 
-        void SaveAll()
+        public void SaveAll()
         {
-            List<System.Threading.Tasks.Task> tasks = new List<System.Threading.Tasks.Task>();
             foreach (KeyValuePair<string, Resource> resourceItem in this.resources)
             {
-                System.Threading.Tasks.Task t = resourceItem.Value.SaveJsonAsync(resourceItem.Key);
+                resourceItem.Value.SaveJson(resourceItem.Key);
                 this.fc?.Mark(resourceItem.Key);
-                tasks.Add(t);
             }
 
-            foreach (SDefEditor ce in this.Editors.Values)
+            foreach (SDefEditor sDefEditor in this.Editors.Values)
             {
-                System.Threading.Tasks.Task t = System.Threading.Tasks.Task.Run(() =>
-                   {
-                       if (ce.WriteFragment(out String fragmentName))
-                           this.fc?.Mark(fragmentName);
+                if (sDefEditor.WriteFragment(out String fragmentName))
+                    this.fc?.Mark(fragmentName);
 
-                       if (ce.IntroDoc != null)
-                       {
-                           String path = ce.IntroDoc.Save();
-                           this.fc?.Mark(path);
-                       }
-                   });
-                tasks.Add(t);
+                if (sDefEditor.IntroDoc != null)
+                {
+                    String path = sDefEditor.IntroDoc.Save();
+                    this.fc?.Mark(path);
+                }
             }
-
-            System.Threading.Tasks.Task.WaitAll(tasks.ToArray());
         }
 
         void ComponentMGCalcificationType(SDefEditor e)
         {
-            ElementDefGroup component = e.StartComponentSliceing();
+            e.StartComponentSliceing();
 
             e.ComponentSliceCodeableConcept("calcificationType",
                 Self.MGCodeCalcificationType.ToCodeableConcept(),
@@ -377,7 +372,7 @@ namespace BreastRadiology.XUnitTests
 
         void ComponentMGCalcificationDistribution(SDefEditor e)
         {
-            ElementDefGroup component = e.StartComponentSliceing();
+            e.StartComponentSliceing();
 
             e.ComponentSliceCodeableConcept("calcificationDistribution",
                 Self.MGCodeCalcificationDistribution.ToCodeableConcept(),
@@ -389,7 +384,7 @@ namespace BreastRadiology.XUnitTests
 
         void ComponentSliceBiRads(SDefEditor e)
         {
-            ElementDefGroup component = e.StartComponentSliceing();
+            e.StartComponentSliceing();
 
             e.ComponentSliceCodeableConcept("biRadsAssessmentCategory",
                 Self.CodeBiRads.ToCodeableConcept(),
@@ -401,16 +396,16 @@ namespace BreastRadiology.XUnitTests
 
         void ComponentSliceObservedCount(SDefEditor e)
         {
-            ElementDefGroup component = e.StartComponentSliceing();
+            e.StartComponentSliceing();
 
             String sliceName = "observedCount";
 
-            ElementDefinition slice = e.AppendSlice("component", sliceName, 0, "1");
+            ElementTreeSlice slice = e.AppendSlice("component", sliceName, 0, "1");
             {
                 ElementDefinition valueX = new ElementDefinition
                 {
-                    Path = $"{slice.Path}.value[x]",
-                    ElementId = $"{slice.Path}:{sliceName}.value[x]"
+                    Path = $"{slice.ElementDefinition.Path}.value[x]",
+                    ElementId = $"{slice.ElementDefinition.Path}:{sliceName}.value[x]"
                 };
 
                 valueX
@@ -424,33 +419,13 @@ namespace BreastRadiology.XUnitTests
                      )
                     ;
                 ;
-                e.InsertAfterAllChildren("component", valueX);
-            }
-            {
-                ElementDefinition eDef = new ElementDefinition
-                {
-                    Path = $"{slice.Path}.interpretation",
-                    ElementId = $"{slice.Path}:{sliceName}.interpretation",
-                    Min = 0,
-                    Max = "0"
-                };
-                e.InsertAfterAllChildren("component", eDef);
-            }
-            {
-                ElementDefinition eDef = new ElementDefinition
-                {
-                    Path = $"{slice.Path}.referenceRange",
-                    ElementId = $"{slice.Path}:{sliceName}.referenceRange",
-                    Min = 0,
-                    Max = "0"
-                };
-                e.InsertAfterAllChildren("component", eDef);
+                slice.CreateNode(valueX);
             }
         }
 
         void ComponentSliceConsistentWith(SDefEditor e)
         {
-            ElementDefGroup component = e.StartComponentSliceing();
+            e.StartComponentSliceing();
 
             e.ComponentSliceCodeableConcept("consistentWith",
                 Self.CodeBiRads.ToCodeableConcept(),

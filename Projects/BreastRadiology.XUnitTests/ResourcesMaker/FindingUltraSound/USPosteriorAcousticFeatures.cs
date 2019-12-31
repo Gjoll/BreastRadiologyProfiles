@@ -21,7 +21,7 @@ namespace BreastRadiology.XUnitTests
                      "US Posterior Acoustic Features CodeSystem",
                      "US Posterior Acoustic/Feature CodeSystem",
                      "Ultra-sound mass Posterior acoustic features code system.",
-                     Group_USCodes,
+                     Group_USCodesCS,
                      new ConceptDef[]
                      {
                     new ConceptDef("NoPosteriorAcousticFeatures",
@@ -82,7 +82,7 @@ namespace BreastRadiology.XUnitTests
                     "US Posterior Acoustic Features ValueSet",
                     "US Posterior Acoustic/Feature ValueSet",
                     "Ultra-sound mass Posterior acoustic feature codes value set.",
-                    Group_USCodes,
+                    Group_USCodesVS,
                     Self.USPosteriorAcousticFeaturesCS.Value()
                     )
             );

@@ -25,11 +25,11 @@ namespace BreastRadiology.XUnitTests
                         new Markdown()
                             .MissingObservation("a mass", "and no Shape, Margin, or Density observations should be referenced by this observation")
                             //$.BiradHeader()
-                            //$.BlockQuote("\"MASS\" is three dimensional and occupies space. It is seen on two different pro-")
-                            //$.BlockQuote("jections. It has completely or partially convex-outward borders and (when radiodense) appears")
-                            //$.BlockQuote("denser in the center than at the periphery. If a potential mass is seen only on a single projection, it")
-                            //$.BlockQuote("should be called an \"ASYMMETRY\" until its 3-dimensionality is confirmed")
-                            //$.BiradFooter()
+                            //.BlockQuote("\"MASS\" is three dimensional and occupies space. It is seen on two different pro-")
+                            //.BlockQuote("jections. It has completely or partially convex-outward borders and (when radiodense) appears")
+                            //.BlockQuote("denser in the center than at the periphery. If a potential mass is seen only on a single projection, it")
+                            //.BlockQuote("should be called an \"ASYMMETRY\" until its 3-dimensionality is confirmed")
+                            //.BiradFooter()
                             .Todo(
                                 "Complete description"
                             )

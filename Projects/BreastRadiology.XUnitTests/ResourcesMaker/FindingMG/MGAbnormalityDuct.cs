@@ -20,7 +20,7 @@ namespace BreastRadiology.XUnitTests
                         "Mammography Duct Refinement CodeSystem",
                          "MG Duct Refinement/CodeSystem",
                         "Mammography duct abnormality types code system.",
-                         Group_MGCodes,
+                         Group_MGCodesCS,
                         new ConceptDef[]
                          {
                         new ConceptDef("Normal",
@@ -54,7 +54,7 @@ namespace BreastRadiology.XUnitTests
                    "Mammography Duct ValueSet",
                     "MG Duct/ValueSet",
                    "Mammography duct node abnormality types value set.",
-                    Group_MGCodes,
+                    Group_MGCodesVS,
                     Self.MGAbnormalityDuctCS.Value()
                     )
             );

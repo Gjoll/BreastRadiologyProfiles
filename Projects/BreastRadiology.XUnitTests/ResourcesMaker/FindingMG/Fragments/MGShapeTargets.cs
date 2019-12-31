@@ -44,7 +44,7 @@ namespace BreastRadiology.XUnitTests
             }
             else
             {
-                ElementDefGroup component = e.StartComponentSliceing();
+                e.StartComponentSliceing();
 
                 e.ComponentSliceCodeableConcept("orientation",
                     Self.CodeOrientation.ToCodeableConcept(),

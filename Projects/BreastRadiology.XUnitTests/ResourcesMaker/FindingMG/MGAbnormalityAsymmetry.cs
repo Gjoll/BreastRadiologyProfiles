@@ -22,7 +22,7 @@ namespace BreastRadiology.XUnitTests
                     "Mammography Asymmetry Refinement CodeSystem",
                      "MG Asymmetry Refinement/CodeSystem",
                     "Mammography asymmetry abnormality type code system.",
-                     Group_MGCodes,
+                     Group_MGCodesCS,
                     new ConceptDef[]
                      {
                         new ConceptDef("Asymmetry",
@@ -86,7 +86,7 @@ namespace BreastRadiology.XUnitTests
                    "Mammography AsymmetryAbnormalities ValueSet",
                     "MG Asymmetry/ValueSet",
                    "Mammography asymmetry abnormality types value set.",
-                    Group_MGCodes,
+                    Group_MGCodesVS,
                     Self.MGAbnormalityAsymmetryRefinementCS.Value()
                     )
             );

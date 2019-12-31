@@ -20,7 +20,7 @@ namespace BreastRadiology.XUnitTests
                         "Mass Refinement ValueSet",
                         "Mass Refinement/ValueSet",
                         "Mass type value set.",
-                        Group_MGCodes,
+                        Group_MGCodesVS,
                         Self.CSMassRefinement.Value()
                     )
             );

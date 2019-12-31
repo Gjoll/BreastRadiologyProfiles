@@ -2171,8 +2171,11 @@
         "path": "Observation",
         "short": "Fragment that constrains all observations that are leaf nodes.",
         "definition": "Fragment that constrains observations leaf nodes (no hasMembers references).",
-        "min": 0,
-        "max": "*"
+        "base": {
+          "path": "Observation",
+          "min": 0,
+          "max": "*"
+        }
       },
       {
         "id": "Observation.hasMember",

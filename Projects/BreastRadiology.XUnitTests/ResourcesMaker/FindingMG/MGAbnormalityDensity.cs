@@ -21,7 +21,7 @@ namespace BreastRadiology.XUnitTests
                         "Mammography Density Refinement CodeSystem",
                          "MG Density Refinement/CodeSystem",
                         "Mammography density abnormality types code system.",
-                         Group_MGCodes,
+                         Group_MGCodesCS,
                         new ConceptDef[]
                          {
                         new ConceptDef("FocalAsymmetrical",
@@ -51,7 +51,7 @@ namespace BreastRadiology.XUnitTests
                    "Mammography Density ValueSet",
                     "MG Density/ValueSet",
                    "Mammography density abnormality types value set.",
-                    Group_MGCodes,
+                    Group_MGCodesVS,
                     Self.MGAbnormalityDensityCS.Value()
                     )
             );

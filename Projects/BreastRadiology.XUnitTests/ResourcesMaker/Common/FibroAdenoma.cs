@@ -21,7 +21,7 @@ namespace BreastRadiology.XUnitTests
                         "Fibroadenoma CodeSystem",
                         "Fibroadenoma/CodeSystem",
                         "Fibroadenoma values code system.",
-                        Group_CommonCodes,
+                        Group_CommonCodesCS,
                         new ConceptDef[]
                         {
                             new ConceptDef("Normal",
@@ -44,7 +44,7 @@ namespace BreastRadiology.XUnitTests
                         "Fibroadenoma ValueSet",
                         "FibroadenomaValueSet",
                         "Fibroadenoma values value set.",
-                        Group_CommonCodes,
+                        Group_CommonCodesVS,
                         Self.FibroadenomaCS.Value()
                     )
             );

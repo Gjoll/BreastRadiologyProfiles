@@ -2167,8 +2167,11 @@
         "path": "Observation",
         "short": "Breast Radiology NMgraphy Finding",
         "definition": "*** TODO Items ***** Device Metrics detailing the observation devices parameters (transducer freq, etc).",
-        "min": 0,
-        "max": "*"
+        "base": {
+          "path": "Observation",
+          "min": 0,
+          "max": "*"
+        }
       },
       {
         "id": "Observation.value[x]",

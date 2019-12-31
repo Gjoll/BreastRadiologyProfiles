@@ -17,11 +17,7 @@ namespace BreastRadiology.XUnitTests
         StringTaskVar AimAnnotationPolyLineExtension = new StringTaskVar(
             (out String s) =>
             {
-                SDefEditor e;
-                ElementDefGroup eGroup;
-                ElementDefinition topExtension;
-
-                e = Self.CreateEditor("AimAnnotationPolyLineExtension",
+                SDefEditor e = Self.CreateEditor("AimAnnotationPolyLineExtension",
                     "AIM Annotation PolyLine Extension",
                     "Annotation/PolyLine/Location",
                     ExtensionUrl,
@@ -62,25 +58,18 @@ namespace BreastRadiology.XUnitTests
                     .Zero()
                     ;
 
-                eGroup = e.GetOrCreate("extension");
-                topExtension = eGroup.ElementDefinition;
-                topExtension.ConfigureSliceByUrlDiscriminator();
+                ElementTreeNode extensionNode = e.ConfigureSliceByUrlDiscriminator("extension", true);
 
                 void Extend(String name, String type)
                 {
-                    ElementDefinition points = e.Clone("extension");
-                    points
-                        .ElementId($"{topExtension.Path}:{name}")
-                        .SliceName(name)
-                        ;
-                    ElementDefGroup pointsGroup = e.InsertAfter(eGroup, points);
-                    ElementDefinition pointsValue = e.Clone("value[x]")
-                        .Path($"{topExtension.Path}.value[x]")
-                        .ElementId($"{topExtension.Path}:{name}.value[x]")
+                    ElementTreeSlice slice = extensionNode.CreateSlice(name);
+                    ElementDefinition valueDef = e.Clone("value[x]")
+                        .Path($"{extensionNode.ElementDefinition.Path}.value[x]")
+                        .ElementId($"{extensionNode.ElementDefinition.Path}:{name}.value[x]")
                         .Type(type)
                         .Single()
                         ;
-                    e.InsertAfter(pointsGroup, pointsValue);
+                    slice.CreateNode(valueDef);
                 }
 
                 Extend("opacity", "string");

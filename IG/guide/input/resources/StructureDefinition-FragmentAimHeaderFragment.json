@@ -164,15 +164,5 @@
         }
       }
     ]
-  },
-  "differential": {
-    "element": [
-      {
-        "id": "Resource",
-        "path": "Resource",
-        "min": 0,
-        "max": "*"
-      }
-    ]
   }
 }

@@ -21,7 +21,7 @@ namespace BreastRadiology.XUnitTests
                      "Orientation CodeSystem",
                      "Orientation CodeSystem",
                      "Orientation CodeSystem",
-                     Group_CommonCodes,
+                     Group_CommonCodesCS,
                      new ConceptDef[]
                      {
                     new ConceptDef("Parallel ",
@@ -54,7 +54,7 @@ namespace BreastRadiology.XUnitTests
                         "Orientation ValueSet",
                         "Orientation ValueSet",
                         "Orientation ValueSet",
-                        Group_CommonCodes,
+                        Group_CommonCodesVS,
                         Self.OrientationCS.Value()
                     )
             );

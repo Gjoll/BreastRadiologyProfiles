@@ -20,7 +20,7 @@ namespace BreastRadiology.XUnitTests
                      "US Tissue Composition CodeSystem",
                      "US Tissue/Composition/CodeSystem",
                      "Ultra-sound breast tissue composition code system.",
-                     Group_USCodes,
+                     Group_USCodesCS,
                      new ConceptDef[]
                      {
                     new ConceptDef("Fat",
@@ -64,7 +64,7 @@ namespace BreastRadiology.XUnitTests
                     "US Tissue Composition ValueSet",
                     "US Tissue/CompositionValueSet",
                     "Ultra-sound breast tissue composition codes value set.",
-                    Group_USCodes,
+                    Group_USCodesVS,
                     Self.USTissueCompositionCS.Value()
                     )
             );

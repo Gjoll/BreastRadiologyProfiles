@@ -21,7 +21,7 @@ namespace BreastRadiology.XUnitTests
                      "Mammography Density CodeSystem",
                      "MG Density/CodeSystem",
                      "Mammography density code system.",
-                     Group_MGCodes,
+                     Group_MGCodesCS,
                      new ConceptDef[]
                      {
                     new ConceptDef("HighDensity ",
@@ -71,7 +71,7 @@ namespace BreastRadiology.XUnitTests
                     "Mammography Density ValueSet",
                     "MG DensityValueSet",
                     "Mammography density codes value set.",
-                    Group_MGCodes,
+                    Group_MGCodesVS,
                     Self.MGDensityCS.Value())
                     );
 

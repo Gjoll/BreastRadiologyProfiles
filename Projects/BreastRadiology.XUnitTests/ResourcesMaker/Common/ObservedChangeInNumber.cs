@@ -21,7 +21,7 @@ namespace BreastRadiology.XUnitTests
                      "Observed Changes CodeSystem",
                      "Observed/Change/CodeSystem",
                      "bserved changes in number of an abnormality over time code system.",
-                     Group_CommonCodes,
+                     Group_CommonCodesCS,
                      new ConceptDef[]
                      {
                     new ConceptDef("IncrInNumber",
@@ -44,7 +44,7 @@ namespace BreastRadiology.XUnitTests
                     "Observed Number Changes ValueSet",
                     "Observed/Change/ValueSet",
                     "Observed changes in number of an abnormality over time value set.",
-                    Group_CommonCodes,
+                    Group_CommonCodesVS,
                     Self.ObservedChangeInNumberCS.Value()
                     )
             );

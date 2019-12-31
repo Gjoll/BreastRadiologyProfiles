@@ -36,7 +36,7 @@ namespace BreastRadiology.XUnitTests
                 e.Select("interpretation").Zero();
                 e.Select("referenceRange").Zero();
 
-                ElementDefGroup component = e.StartComponentSliceing();
+                e.StartComponentSliceing();
                 e.ComponentSliceCodeableConcept("value",
                     Self.ConsistentWithCodeValue.ToCodeableConcept(),
                     Self.ConsistentWithVS.Value().Url,
@@ -63,7 +63,7 @@ namespace BreastRadiology.XUnitTests
                         "ConsistentWith ValueSet",
                         "ConsistentWith/ValueSet",
                         "ConsistentWith value set.",
-                        Group_MGCodes,
+                        Group_MGCodesVS,
                         Self.ConsistentWithCS.Value()
                     )
             );
@@ -75,7 +75,7 @@ namespace BreastRadiology.XUnitTests
                         "ConsistentWithQualifier ValueSet",
                         "ConsistentWithQualifier/ValueSet",
                         "ConsistentWithQualifier value set.",
-                        Group_MGCodes,
+                        Group_MGCodesVS,
                         Self.ConsistentWithQualifierCS.Value()
                     )
             );
@@ -87,7 +87,7 @@ namespace BreastRadiology.XUnitTests
                         "Consistent With CodeSystem",
                         "ConsistentWith/CodeSystem",
                         "ConsistentWith code system",
-                        Group_CommonCodes,
+                        Group_CommonCodesCS,
                         new ConceptDef[]
                         {
                             //+ ConsistentWithCS
@@ -547,7 +547,7 @@ namespace BreastRadiology.XUnitTests
                         "ConsistentWith Qualifier CodeSystem",
                         "ConsistentWithQualifier/ValueSet",
                         "ConsistentWithQualifier  code system",
-                        Group_CommonCodes,
+                        Group_CommonCodesCS,
                         new ConceptDef[]
                         {
                             //+ ConsistentWithQualifierCS

@@ -73,7 +73,7 @@ namespace BreastRadiology.XUnitTests
                         "BiRads(r) Assessment Category Codes CodeSystem",
                         "BiRads/CodeSystem",
                         "BiRads(r) Assessment Category code system.",
-                        Group_CommonCodes,
+                        Group_CommonCodesCS,
                         new ConceptDef[]
                         {
                         new ConceptDef("Category-0",
@@ -136,7 +136,7 @@ namespace BreastRadiology.XUnitTests
                         "BiRads(r) Assessment Category ValueSet",
                         "BiRads/ValueSet",
                         "BiRads(r) Assessment Category value set.",
-                        Group_CommonCodes,
+                        Group_CommonCodesVS,
                         Self.BiRadsAssessmentCategoriesCS.Value())
             );
     }

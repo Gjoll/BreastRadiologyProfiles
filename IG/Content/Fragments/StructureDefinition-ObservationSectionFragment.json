@@ -52,8 +52,11 @@
         "path": "Observation",
         "short": "Fragment that constrains Observations to be sections.",
         "definition": "this fragment constrains a generic observation to be a observation section.",
-        "min": 0,
-        "max": "*"
+        "base": {
+          "path": "Observation",
+          "min": 0,
+          "max": "*"
+        }
       },
       {
         "id": "Observation.interpretation",

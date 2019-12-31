@@ -22,7 +22,7 @@ namespace BreastRadiology.XUnitTests
                         "ShapeValueSet",
                         "Shape/ValueSet",
                         "Shape values value set.",
-                        Group_USCodes,
+                        Group_USCodesVS,
                         Self.ShapeCS.Value()
                     );
                 binding.Remove("Reniform");

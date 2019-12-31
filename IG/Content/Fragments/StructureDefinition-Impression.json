@@ -36,8 +36,11 @@
         "path": "ClinicalImpression",
         "short": "Breast Radiology Impression (ClinicalImpression)",
         "definition": "Breast radiology exam clinical impression",
-        "min": 0,
-        "max": "*"
+        "base": {
+          "path": "ClinicalImpression",
+          "min": 0,
+          "max": "*"
+        }
       }
     ]
   }

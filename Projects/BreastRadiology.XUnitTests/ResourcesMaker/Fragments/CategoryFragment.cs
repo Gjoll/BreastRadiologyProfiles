@@ -19,9 +19,8 @@ namespace BreastRadiology.XUnitTests
                     .Description("Fragment definition to define Observation.category",
                         new Markdown()
                             .Paragraph("This fragment slices Observation.category and adds the required observation code value.")
-                            //.Todo
-                    )
-                    ;
+                    //.Todo
+                    );
                 s = e.SDef.Url;
 
                 e.IntroDoc
@@ -29,8 +28,8 @@ namespace BreastRadiology.XUnitTests
                     .Fragment($"Resource fragment used to by observations to fix the Observation.category field to the 'imaging' fixed value.")
                     ;
 
-                ElementDefGroup eDef = e.GetOrCreate("category");
-                eDef.ElementDefinition.Card(1, eDef.BaseElementDefinition.Max);
+                ElementTreeNode eDef = e.Get("category");
+                eDef.ElementDefinition.Card(1, eDef.ElementDefinition.Max);
                 e.FixedCodeSlice("category", "category",
                     "http://terminology.hl7.org/CodeSystem/observation-category",
                     "imaging");
