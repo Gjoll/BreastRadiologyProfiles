@@ -1,59 +1,5 @@
 {
   "resourceType": "StructureDefinition",
-  "extension": [
-    {
-      "url": "http://www.fragment.com/mapname",
-      "valueString": "MG Cyst"
-    },
-    {
-      "url": "http://www.fragment.com/Group",
-      "valueString": "MGResources/AbnormalityCyst"
-    },
-    {
-      "url": "http://www.fragment.com/fragment",
-      "valueUrl": "http://hl7.org/fhir/us/breast-radiology/StructureDefinition/BreastRadObservationNoDeviceFragment"
-    },
-    {
-      "url": "http://www.fragment.com/maplink",
-      "valueString": "fragment|True|http://hl7.org/fhir/us/breast-radiology/StructureDefinition/BreastRadObservationNoDeviceFragment"
-    },
-    {
-      "url": "http://www.fragment.com/fragment",
-      "valueUrl": "http://hl7.org/fhir/us/breast-radiology/StructureDefinition/BreastRadObservationNoValueFragment"
-    },
-    {
-      "url": "http://www.fragment.com/maplink",
-      "valueString": "fragment|True|http://hl7.org/fhir/us/breast-radiology/StructureDefinition/BreastRadObservationNoValueFragment"
-    },
-    {
-      "url": "http://www.fragment.com/fragment",
-      "valueUrl": "http://hl7.org/fhir/us/breast-radiology/StructureDefinition/ImagingStudyFragment"
-    },
-    {
-      "url": "http://www.fragment.com/maplink",
-      "valueString": "fragment|True|http://hl7.org/fhir/us/breast-radiology/StructureDefinition/ImagingStudyFragment"
-    },
-    {
-      "url": "http://www.fragment.com/fragment",
-      "valueUrl": "http://hl7.org/fhir/us/breast-radiology/StructureDefinition/MgCommonTargetsFragment"
-    },
-    {
-      "url": "http://www.fragment.com/maplink",
-      "valueString": "fragment|True|http://hl7.org/fhir/us/breast-radiology/StructureDefinition/MgCommonTargetsFragment"
-    },
-    {
-      "url": "http://www.fragment.com/fragment",
-      "valueUrl": "http://hl7.org/fhir/us/breast-radiology/StructureDefinition/MgShapeTargetsFragment"
-    },
-    {
-      "url": "http://www.fragment.com/maplink",
-      "valueString": "fragment|True|http://hl7.org/fhir/us/breast-radiology/StructureDefinition/MgShapeTargetsFragment"
-    },
-    {
-      "url": "http://www.fragment.com/maplink",
-      "valueString": "valueSet|True|http://hl7.org/fhir/us/breast-radiology/ValueSet/MGAbnormalityCystVS"
-    }
-  ],
   "url": "http://hl7.org/fhir/us/breast-radiology/StructureDefinition/FragmentMGAbnormalityCyst",
   "name": "FragmentMGAbnormalityCyst",
   "title": "Mammography Cyst",
@@ -2755,7 +2701,7 @@
         "isSummary": true,
         "binding": {
           "strength": "extensible",
-          "valueSet": "http://hl7.org/fhir/us/breast-radiology/CodeSystem/ConsistentWithCodeSystemCS"
+          "valueSet": "http://hl7.org/fhir/us/breast-radiology/ValueSet/ConsistentWithVS"
         },
         "mapping": [
           {
@@ -3035,7 +2981,7 @@
         ],
         "binding": {
           "strength": "extensible",
-          "valueSet": "http://hl7.org/fhir/us/breast-radiology/CodeSystem/ConsistentWithCodeSystemCS"
+          "valueSet": "http://hl7.org/fhir/us/breast-radiology/ValueSet/ConsistentWithVS"
         }
       }
     ]

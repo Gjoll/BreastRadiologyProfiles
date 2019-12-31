@@ -1,23 +1,5 @@
 {
   "resourceType": "StructureDefinition",
-  "extension": [
-    {
-      "url": "http://www.fragment.com/mapname",
-      "valueString": "Impressions/Extension"
-    },
-    {
-      "url": "http://www.fragment.com/Group",
-      "valueString": "ExtensionResources/Impressions"
-    },
-    {
-      "url": "http://www.fragment.com/fragment",
-      "valueUrl": "http://hl7.org/fhir/us/breast-radiology/StructureDefinition/HeaderFragment"
-    },
-    {
-      "url": "http://www.fragment.com/maplink",
-      "valueString": "fragment|True|http://hl7.org/fhir/us/breast-radiology/StructureDefinition/HeaderFragment"
-    }
-  ],
   "url": "http://hl7.org/fhir/us/breast-radiology/StructureDefinition/FragmentImpressionsExtension",
   "name": "FragmentImpressionsExtension",
   "title": "Impressions Extension",

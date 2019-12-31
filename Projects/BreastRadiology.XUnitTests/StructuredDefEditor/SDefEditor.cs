@@ -447,7 +447,7 @@ namespace BreastRadiology.XUnitTests
 
         public void ComponentSliceCodeableConcept(String sliceName,
             CodeableConcept pattern,
-            String valueSetUrl,
+            ValueSet valueSet,
             BindingStrength bindingStrength,
             Int32 minCardinality,
             String maxCardinality)
@@ -475,7 +475,7 @@ namespace BreastRadiology.XUnitTests
                     Max = "1"
                 };
                 valueX
-                    .Binding(valueSetUrl, bindingStrength)
+                    .Binding(valueSet.Url, bindingStrength)
                     .Type("CodeableConcept");
                 ;
                 slice.CreateNode(valueX);

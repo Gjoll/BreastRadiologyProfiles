@@ -78,6 +78,9 @@ namespace BreastRadiology.XUnitTests
 
         SENode CreateNode(ResourceMap.Node mapNode, Color color, bool linkFlag)
         {
+            if (this.map.TryGetNode(mapNode.ResourceUrl, out var dummy) == false)
+                throw new Exception($"Referenced node {mapNode.ResourceUrl} not found in map");
+
             SENode node = new SENode(0, color);
             foreach (String titlePart in mapNode.MapName)
             {
@@ -199,6 +202,7 @@ namespace BreastRadiology.XUnitTests
             this.fragmentsEditor.BlockEndTerm = "-->";
             this.fragmentsEditor.Load(Path.Combine(this.pageTemplateDir, "fragments.xml"));
             this.fragmentsBlock = this.fragmentsEditor.Blocks.Find("Block");
+            this.fragmentsBlock.Clear();
 
             this.SelectNodes();
             this.CreateNodes();

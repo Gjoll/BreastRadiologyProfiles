@@ -364,7 +364,7 @@ namespace BreastRadiology.XUnitTests
 
             e.ComponentSliceCodeableConcept("calcificationType",
                 Self.MGCodeCalcificationType.ToCodeableConcept(),
-                Self.MGCalcificationTypeCS.Value().Url,
+                Self.MGCalcificationTypeVS.Value(),
                 BindingStrength.Required,
                 0,
                 "1");
@@ -376,7 +376,7 @@ namespace BreastRadiology.XUnitTests
 
             e.ComponentSliceCodeableConcept("calcificationDistribution",
                 Self.MGCodeCalcificationDistribution.ToCodeableConcept(),
-                Self.MGCalcificationDistributionCS.Value().Url,
+                Self.MGCalcificationDistributionVS.Value(),
                 BindingStrength.Required,
                 0,
                 "1");
@@ -388,7 +388,7 @@ namespace BreastRadiology.XUnitTests
 
             e.ComponentSliceCodeableConcept("biRadsAssessmentCategory",
                 Self.CodeBiRads.ToCodeableConcept(),
-                Self.BiRadsAssessmentCategoriesCS.Value().Url,
+                Self.BiRadsAssessmentCategoriesVS.Value(),
                 BindingStrength.Required,
                 0,
                 "1");
@@ -429,7 +429,7 @@ namespace BreastRadiology.XUnitTests
 
             e.ComponentSliceCodeableConcept("consistentWith",
                 Self.CodeBiRads.ToCodeableConcept(),
-                Self.ConsistentWithCS.Value().Url,
+                Self.ConsistentWithVS.Value(),
                 BindingStrength.Extensible,
                 0,
                 "*");

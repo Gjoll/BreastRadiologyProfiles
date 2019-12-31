@@ -51,32 +51,32 @@ namespace BreastRadiology.XUnitTests
 
                     e.ComponentSliceCodeableConcept("observedChangeInDefinition",
                         Self.CodeObservedChangeInDefinition.ToCodeableConcept(),
-                        Self.ObservedChangeInDefinitionCS.Value().Url,
+                        Self.ObservedChangeInDefinitionVS.Value(),
                         BindingStrength.Required,
                         0,
                         "1");
 
                     e.ComponentSliceCodeableConcept("observedChangeInNumber",
                         Self.CodeObservedChangeInNumber.ToCodeableConcept(),
-                        Self.ObservedChangeInNumberCS.Value().Url,
+                        Self.ObservedChangeInNumberVS.Value(),
                         BindingStrength.Required,
                         0,
                         "1");
                     e.ComponentSliceCodeableConcept("observedChangeInProminance",
                         Self.CodeObservedChangeInProminance.ToCodeableConcept(),
-                        Self.ObservedChangeInProminanceCS.Value().Url,
+                        Self.ObservedChangeInProminanceVS.Value(),
                         BindingStrength.Required,
                         0,
                         "1");
                     e.ComponentSliceCodeableConcept("observedChangeInSize",
                         Self.CodeObservedChangeInSize.ToCodeableConcept(),
-                        Self.ObservedChangeInSizeCS.Value().Url,
+                        Self.ObservedChangeInSizeVS.Value(),
                         BindingStrength.Required,
                         0,
                         "1");
                     e.ComponentSliceCodeableConcept("observedChangeInState",
                         Self.CodeObservedChangeInState.ToCodeableConcept(),
-                        Self.ObservedChangeInStateCS.Value().Url,
+                        Self.ObservedChangeInStateVS.Value(),
                         BindingStrength.Required,
                         0,
                         "1");
@@ -86,7 +86,7 @@ namespace BreastRadiology.XUnitTests
                         "1");
                     e.ComponentSliceCodeableConcept("orientation",
                         Self.CodeOrientation.ToCodeableConcept(),
-                        Self.OrientationCS.Value().Url,
+                        Self.OrientationVS.Value(),
                         BindingStrength.Required,
                         0,
                         "1");

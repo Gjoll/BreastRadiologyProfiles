@@ -48,28 +48,28 @@ namespace BreastRadiology.XUnitTests
 
                 e.ComponentSliceCodeableConcept("orientation",
                     Self.CodeOrientation.ToCodeableConcept(),
-                    Self.OrientationCS.Value().Url,
+                    Self.OrientationVS.Value(),
                     BindingStrength.Required,
                     0,
                     "1");
 
                 e.ComponentSliceCodeableConcept("shape",
                     Self.CodeShape.ToCodeableConcept(),
-                    Self.ShapeCS.Value().Url,
+                    Self.ShapeVS.Value(),
                     BindingStrength.Required,
                     0,
                     "1");
 
                 e.ComponentSliceCodeableConcept("margin",
                     Self.CodeMargin.ToCodeableConcept(),
-                    Self.MarginCS.Value().Url,
+                    Self.MarginVS.Value(),
                     BindingStrength.Required,
                     0,
                     "1");
 
                 e.ComponentSliceCodeableConcept("mgDensity",
                     Self.CodeMGDensity.ToCodeableConcept(),
-                    Self.MGDensityCS.Value().Url,
+                    Self.MGDensityVS.Value(),
                     BindingStrength.Required,
                     0,
                     "1");

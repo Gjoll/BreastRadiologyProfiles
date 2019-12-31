@@ -1,0 +1,51 @@
+{
+  "resourceType": "ValueSet",
+  "id": "ShapeVS",
+  "extension": [
+    {
+      "url": "http://www.fragment.com/fragment",
+      "valueUrl": "http://hl7.org/fhir/us/breast-radiology/StructureDefinition/HeaderFragment"
+    },
+    {
+      "url": "http://www.fragment.com/Group",
+      "valueString": "CommonCodesVS"
+    },
+    {
+      "url": "http://www.fragment.com/mapname",
+      "valueString": "Shape/ValueSet"
+    }
+  ],
+  "url": "http://hl7.org/fhir/us/breast-radiology/ValueSet/ShapeVS",
+  "name": "ShapeVS",
+  "title": "Shape ValueSet ValueSet",
+  "description": "Shape values value set.",
+  "compose": {
+    "include": [
+      {
+        "system": "http://hl7.org/fhir/us/breast-radiology/CodeSystem/ShapeCS",
+        "concept": [
+          {
+            "code": "Irregular",
+            "display": "Irregular Shape"
+          },
+          {
+            "code": "Lobulated",
+            "display": "Lobulated Shape"
+          },
+          {
+            "code": "Oval",
+            "display": "Elliptical/Egg-shaped"
+          },
+          {
+            "code": "Reniform",
+            "display": "Reniform Shape"
+          },
+          {
+            "code": "Round",
+            "display": "Round Shape"
+          }
+        ]
+      }
+    ]
+  }
+}

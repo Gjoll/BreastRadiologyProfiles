@@ -1,43 +1,5 @@
 {
   "resourceType": "StructureDefinition",
-  "extension": [
-    {
-      "url": "http://www.fragment.com/mapname",
-      "valueString": "Foreign Object"
-    },
-    {
-      "url": "http://www.fragment.com/Group",
-      "valueString": "MGResources/AbnormalityForeign"
-    },
-    {
-      "url": "http://www.fragment.com/fragment",
-      "valueUrl": "http://hl7.org/fhir/us/breast-radiology/StructureDefinition/BreastRadObservationNoDeviceFragment"
-    },
-    {
-      "url": "http://www.fragment.com/maplink",
-      "valueString": "fragment|True|http://hl7.org/fhir/us/breast-radiology/StructureDefinition/BreastRadObservationNoDeviceFragment"
-    },
-    {
-      "url": "http://www.fragment.com/fragment",
-      "valueUrl": "http://hl7.org/fhir/us/breast-radiology/StructureDefinition/CodedValueObservationFragment"
-    },
-    {
-      "url": "http://www.fragment.com/maplink",
-      "valueString": "fragment|True|http://hl7.org/fhir/us/breast-radiology/StructureDefinition/CodedValueObservationFragment"
-    },
-    {
-      "url": "http://www.fragment.com/fragment",
-      "valueUrl": "http://hl7.org/fhir/us/breast-radiology/StructureDefinition/MgCommonTargetsFragment"
-    },
-    {
-      "url": "http://www.fragment.com/maplink",
-      "valueString": "fragment|True|http://hl7.org/fhir/us/breast-radiology/StructureDefinition/MgCommonTargetsFragment"
-    },
-    {
-      "url": "http://www.fragment.com/maplink",
-      "valueString": "valueSet|True|http://hl7.org/fhir/us/breast-radiology/ValueSet/MGAbnormalitiesVS"
-    }
-  ],
   "url": "http://hl7.org/fhir/us/breast-radiology/StructureDefinition/FragmentMGAbnormalityForeignObject",
   "name": "FragmentMGAbnormalityForeignObject",
   "title": "Foreign Object",
@@ -2380,7 +2342,7 @@
         "isSummary": true,
         "binding": {
           "strength": "required",
-          "valueSet": "http://hl7.org/fhir/us/breast-radiology/CodeSystem/BiRadsAssessmentCategoriesCS"
+          "valueSet": "http://hl7.org/fhir/us/breast-radiology/ValueSet/BiRadsAssessmentCategoriesVS"
         },
         "mapping": [
           {
@@ -2748,7 +2710,7 @@
         "isSummary": true,
         "binding": {
           "strength": "extensible",
-          "valueSet": "http://hl7.org/fhir/us/breast-radiology/CodeSystem/ConsistentWithCodeSystemCS"
+          "valueSet": "http://hl7.org/fhir/us/breast-radiology/ValueSet/ConsistentWithVS"
         },
         "mapping": [
           {
@@ -2996,7 +2958,7 @@
         ],
         "binding": {
           "strength": "required",
-          "valueSet": "http://hl7.org/fhir/us/breast-radiology/CodeSystem/BiRadsAssessmentCategoriesCS"
+          "valueSet": "http://hl7.org/fhir/us/breast-radiology/ValueSet/BiRadsAssessmentCategoriesVS"
         }
       },
       {
@@ -3047,7 +3009,7 @@
         ],
         "binding": {
           "strength": "extensible",
-          "valueSet": "http://hl7.org/fhir/us/breast-radiology/CodeSystem/ConsistentWithCodeSystemCS"
+          "valueSet": "http://hl7.org/fhir/us/breast-radiology/ValueSet/ConsistentWithVS"
         }
       }
     ]

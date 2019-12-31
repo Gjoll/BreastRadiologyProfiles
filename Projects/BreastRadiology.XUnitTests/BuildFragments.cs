@@ -193,32 +193,6 @@ namespace BreastRadiology.XUnitTests
         }
 
         [TestMethod]
-        public void TestFragment()
-        {
-            try
-            {
-                ResourcesMaker pc = new ResourcesMaker(this.fc, this.fragmentDir, this.pageDir, this.cacheDir);
-                pc.StatusErrors += this.StatusErrors;
-                pc.StatusInfo += this.StatusInfo;
-                pc.StatusWarnings += this.StatusWarnings;
-                pc.BreastBodyLocationExtension.Value();
-                pc.SaveAll();
-                if (pc.HasErrors)
-                {
-                    StringBuilder sb = new StringBuilder();
-                    pc.FormatErrorMessages(sb);
-                    Trace.WriteLine(sb.ToString());
-                    Debug.Assert(false);
-                }
-            }
-            catch (Exception err)
-            {
-                Trace.WriteLine(err.Message);
-                Assert.IsTrue(false);
-            }
-        }
-
-        [TestMethod]
         public void A_BuildFragments()
         {
             try
@@ -285,32 +259,6 @@ namespace BreastRadiology.XUnitTests
 
                 TimeSpan executionTime = DateTime.Now - start;
                 Trace.WriteLine($"***** PreFhir execution Time {executionTime.ToString()}");
-            }
-            catch (Exception err)
-            {
-                Trace.WriteLine(err.Message);
-                Assert.IsTrue(false);
-            }
-        }
-
-        [TestMethod]
-        public void TestBuildResource()
-        {
-            try
-            {
-                if (Directory.Exists(this.resourcesDir) == false)
-                    Directory.CreateDirectory(this.resourcesDir);
-
-                if (Directory.Exists(this.mergedDir) == false)
-                    Directory.CreateDirectory(this.mergedDir);
-
-                PreFhirGenerator preFhir = new PreFhirGenerator(this.fc, this.cacheDir);
-                preFhir.StatusErrors += this.StatusErrors;
-                preFhir.StatusInfo += this.StatusInfo;
-                preFhir.StatusWarnings += this.StatusWarnings;
-                preFhir.MergedDir = this.mergedDir;
-                preFhir.ProcessOne(this.fragmentDir, "USMassMargin", true);
-                preFhir.SaveResources(this.resourcesDir);
             }
             catch (Exception err)
             {

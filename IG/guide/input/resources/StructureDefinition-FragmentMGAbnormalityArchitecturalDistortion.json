@@ -1,39 +1,5 @@
 {
   "resourceType": "StructureDefinition",
-  "extension": [
-    {
-      "url": "http://www.fragment.com/mapname",
-      "valueString": "MG Arch. Distortion"
-    },
-    {
-      "url": "http://www.fragment.com/Group",
-      "valueString": "MGResources/AbnormalityArchitecturalDistortion"
-    },
-    {
-      "url": "http://www.fragment.com/fragment",
-      "valueUrl": "http://hl7.org/fhir/us/breast-radiology/StructureDefinition/BreastRadObservationNoDeviceFragment"
-    },
-    {
-      "url": "http://www.fragment.com/maplink",
-      "valueString": "fragment|True|http://hl7.org/fhir/us/breast-radiology/StructureDefinition/BreastRadObservationNoDeviceFragment"
-    },
-    {
-      "url": "http://www.fragment.com/fragment",
-      "valueUrl": "http://hl7.org/fhir/us/breast-radiology/StructureDefinition/BreastRadObservationNoValueFragment"
-    },
-    {
-      "url": "http://www.fragment.com/maplink",
-      "valueString": "fragment|True|http://hl7.org/fhir/us/breast-radiology/StructureDefinition/BreastRadObservationNoValueFragment"
-    },
-    {
-      "url": "http://www.fragment.com/fragment",
-      "valueUrl": "http://hl7.org/fhir/us/breast-radiology/StructureDefinition/MgCommonTargetsFragment"
-    },
-    {
-      "url": "http://www.fragment.com/maplink",
-      "valueString": "fragment|True|http://hl7.org/fhir/us/breast-radiology/StructureDefinition/MgCommonTargetsFragment"
-    }
-  ],
   "url": "http://hl7.org/fhir/us/breast-radiology/StructureDefinition/FragmentMGAbnormalityArchitecturalDistortion",
   "name": "FragmentMGAbnormalityArchitecturalDistortion",
   "title": "Mammography Architectural Distortion",
@@ -2402,7 +2368,7 @@
         "isSummary": true,
         "binding": {
           "strength": "extensible",
-          "valueSet": "http://hl7.org/fhir/us/breast-radiology/CodeSystem/ConsistentWithCodeSystemCS"
+          "valueSet": "http://hl7.org/fhir/us/breast-radiology/ValueSet/ConsistentWithVS"
         },
         "mapping": [
           {
@@ -2632,7 +2598,7 @@
         ],
         "binding": {
           "strength": "extensible",
-          "valueSet": "http://hl7.org/fhir/us/breast-radiology/CodeSystem/ConsistentWithCodeSystemCS"
+          "valueSet": "http://hl7.org/fhir/us/breast-radiology/ValueSet/ConsistentWithVS"
         }
       }
     ]

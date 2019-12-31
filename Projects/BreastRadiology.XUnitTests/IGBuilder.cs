@@ -100,6 +100,16 @@ namespace BreastRadiology.XUnitTests
             this.groupIds.Add(groupId);
         }
 
+        void RemoveFragmentExtensions(DomainResource r)
+        {
+            foreach (Extension e in r.Extension.ToArray())
+            {
+                if (e.Url.StartsWith(Global.FragmentUrl))
+                    r.Extension.Remove(e);
+            }
+        }
+
+
         public void AddResources(params String[] inputDirs)
         {
             const String fcn = "AddResources";
@@ -133,12 +143,7 @@ namespace BreastRadiology.XUnitTests
 
             void Save(DomainResource r, String outputName)
             {
-                foreach (Extension e in r.Extension.ToArray())
-                {
-                    if (e.Url.StartsWith(Global.FragmentUrl))
-                        r.Extension.Remove(e);
-                }
-
+                RemoveFragmentExtensions(r);
                 String outputPath = Path.Combine(this.resourceDir, outputName);
                 r.SaveJson(outputPath);
                 this.fc?.Mark(outputPath);
@@ -226,8 +231,10 @@ namespace BreastRadiology.XUnitTests
         {
             //const String fcn = "AddFragments";
 
-            void Save(Resource r, String outputName)
+            void Save(DomainResource r, String outputName)
             {
+                RemoveFragmentExtensions(r);
+
                 String outputPath = Path.Combine(this.resourceDir, outputName);
                 r.SaveJson(outputPath);
                 this.fc?.Mark(outputPath);

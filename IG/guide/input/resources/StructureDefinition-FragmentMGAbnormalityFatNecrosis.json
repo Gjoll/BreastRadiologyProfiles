@@ -1,55 +1,5 @@
 {
   "resourceType": "StructureDefinition",
-  "extension": [
-    {
-      "url": "http://www.fragment.com/mapname",
-      "valueString": "MG Fat Necrosis"
-    },
-    {
-      "url": "http://www.fragment.com/Group",
-      "valueString": "MGResources/AbnormalityFatNecrosis"
-    },
-    {
-      "url": "http://www.fragment.com/fragment",
-      "valueUrl": "http://hl7.org/fhir/us/breast-radiology/StructureDefinition/BreastRadObservationNoDeviceFragment"
-    },
-    {
-      "url": "http://www.fragment.com/maplink",
-      "valueString": "fragment|True|http://hl7.org/fhir/us/breast-radiology/StructureDefinition/BreastRadObservationNoDeviceFragment"
-    },
-    {
-      "url": "http://www.fragment.com/fragment",
-      "valueUrl": "http://hl7.org/fhir/us/breast-radiology/StructureDefinition/BreastRadObservationNoValueFragment"
-    },
-    {
-      "url": "http://www.fragment.com/maplink",
-      "valueString": "fragment|True|http://hl7.org/fhir/us/breast-radiology/StructureDefinition/BreastRadObservationNoValueFragment"
-    },
-    {
-      "url": "http://www.fragment.com/fragment",
-      "valueUrl": "http://hl7.org/fhir/us/breast-radiology/StructureDefinition/ImagingStudyFragment"
-    },
-    {
-      "url": "http://www.fragment.com/maplink",
-      "valueString": "fragment|True|http://hl7.org/fhir/us/breast-radiology/StructureDefinition/ImagingStudyFragment"
-    },
-    {
-      "url": "http://www.fragment.com/fragment",
-      "valueUrl": "http://hl7.org/fhir/us/breast-radiology/StructureDefinition/MgCommonTargetsFragment"
-    },
-    {
-      "url": "http://www.fragment.com/maplink",
-      "valueString": "fragment|True|http://hl7.org/fhir/us/breast-radiology/StructureDefinition/MgCommonTargetsFragment"
-    },
-    {
-      "url": "http://www.fragment.com/fragment",
-      "valueUrl": "http://hl7.org/fhir/us/breast-radiology/StructureDefinition/MgShapeTargetsFragment"
-    },
-    {
-      "url": "http://www.fragment.com/maplink",
-      "valueString": "fragment|True|http://hl7.org/fhir/us/breast-radiology/StructureDefinition/MgShapeTargetsFragment"
-    }
-  ],
   "url": "http://hl7.org/fhir/us/breast-radiology/StructureDefinition/FragmentMGAbnormalityFatNecrosis",
   "name": "FragmentMGAbnormalityFatNecrosis",
   "title": "Mammography Fat Necrosis",
@@ -2777,7 +2727,7 @@
         "isSummary": true,
         "binding": {
           "strength": "extensible",
-          "valueSet": "http://hl7.org/fhir/us/breast-radiology/CodeSystem/ConsistentWithCodeSystemCS"
+          "valueSet": "http://hl7.org/fhir/us/breast-radiology/ValueSet/ConsistentWithVS"
         },
         "mapping": [
           {
@@ -3039,7 +2989,7 @@
         ],
         "binding": {
           "strength": "extensible",
-          "valueSet": "http://hl7.org/fhir/us/breast-radiology/CodeSystem/ConsistentWithCodeSystemCS"
+          "valueSet": "http://hl7.org/fhir/us/breast-radiology/ValueSet/ConsistentWithVS"
         }
       }
     ]

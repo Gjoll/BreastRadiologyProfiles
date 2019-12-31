@@ -1,51 +1,5 @@
 {
   "resourceType": "StructureDefinition",
-  "extension": [
-    {
-      "url": "http://www.fragment.com/mapname",
-      "valueString": "MG Calc."
-    },
-    {
-      "url": "http://www.fragment.com/Group",
-      "valueString": "MGResources/CalcificationAbnormality"
-    },
-    {
-      "url": "http://www.fragment.com/fragment",
-      "valueUrl": "http://hl7.org/fhir/us/breast-radiology/StructureDefinition/BreastRadObservationNoDeviceFragment"
-    },
-    {
-      "url": "http://www.fragment.com/maplink",
-      "valueString": "fragment|True|http://hl7.org/fhir/us/breast-radiology/StructureDefinition/BreastRadObservationNoDeviceFragment"
-    },
-    {
-      "url": "http://www.fragment.com/fragment",
-      "valueUrl": "http://hl7.org/fhir/us/breast-radiology/StructureDefinition/BreastRadObservationNoValueFragment"
-    },
-    {
-      "url": "http://www.fragment.com/maplink",
-      "valueString": "fragment|True|http://hl7.org/fhir/us/breast-radiology/StructureDefinition/BreastRadObservationNoValueFragment"
-    },
-    {
-      "url": "http://www.fragment.com/fragment",
-      "valueUrl": "http://hl7.org/fhir/us/breast-radiology/StructureDefinition/MgCommonTargetsFragment"
-    },
-    {
-      "url": "http://www.fragment.com/maplink",
-      "valueString": "fragment|True|http://hl7.org/fhir/us/breast-radiology/StructureDefinition/MgCommonTargetsFragment"
-    },
-    {
-      "url": "http://www.fragment.com/fragment",
-      "valueUrl": "http://hl7.org/fhir/us/breast-radiology/StructureDefinition/MgShapeTargetsFragment"
-    },
-    {
-      "url": "http://www.fragment.com/maplink",
-      "valueString": "fragment|True|http://hl7.org/fhir/us/breast-radiology/StructureDefinition/MgShapeTargetsFragment"
-    },
-    {
-      "url": "http://www.fragment.com/maplink",
-      "valueString": "target|False|http://hl7.org/fhir/us/breast-radiology/StructureDefinition/MGAssociatedFeatures"
-    }
-  ],
   "url": "http://hl7.org/fhir/us/breast-radiology/StructureDefinition/FragmentMGAbnormalityCalcification",
   "name": "FragmentMGAbnormalityCalcification",
   "title": "Mammography Calcification",
@@ -2818,7 +2772,7 @@
         "isSummary": true,
         "binding": {
           "strength": "extensible",
-          "valueSet": "http://hl7.org/fhir/us/breast-radiology/CodeSystem/ConsistentWithCodeSystemCS"
+          "valueSet": "http://hl7.org/fhir/us/breast-radiology/ValueSet/ConsistentWithVS"
         },
         "mapping": [
           {
@@ -3186,7 +3140,7 @@
         "isSummary": true,
         "binding": {
           "strength": "required",
-          "valueSet": "http://hl7.org/fhir/us/breast-radiology/CodeSystem/MammoCalcificationTypeCS"
+          "valueSet": "http://hl7.org/fhir/us/breast-radiology/ValueSet/MammoCalcificationTypeVS"
         },
         "mapping": [
           {
@@ -3554,7 +3508,7 @@
         "isSummary": true,
         "binding": {
           "strength": "required",
-          "valueSet": "http://hl7.org/fhir/us/breast-radiology/CodeSystem/MammoCalcificationDistributionCS"
+          "valueSet": "http://hl7.org/fhir/us/breast-radiology/ValueSet/MammoCalcificationDistributionVS"
         },
         "mapping": [
           {
@@ -3855,7 +3809,7 @@
         ],
         "binding": {
           "strength": "extensible",
-          "valueSet": "http://hl7.org/fhir/us/breast-radiology/CodeSystem/ConsistentWithCodeSystemCS"
+          "valueSet": "http://hl7.org/fhir/us/breast-radiology/ValueSet/ConsistentWithVS"
         }
       },
       {
@@ -3906,7 +3860,7 @@
         ],
         "binding": {
           "strength": "required",
-          "valueSet": "http://hl7.org/fhir/us/breast-radiology/CodeSystem/MammoCalcificationTypeCS"
+          "valueSet": "http://hl7.org/fhir/us/breast-radiology/ValueSet/MammoCalcificationTypeVS"
         }
       },
       {
@@ -3957,7 +3911,7 @@
         ],
         "binding": {
           "strength": "required",
-          "valueSet": "http://hl7.org/fhir/us/breast-radiology/CodeSystem/MammoCalcificationDistributionCS"
+          "valueSet": "http://hl7.org/fhir/us/breast-radiology/ValueSet/MammoCalcificationDistributionVS"
         }
       }
     ]

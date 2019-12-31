@@ -1,55 +1,5 @@
 {
   "resourceType": "StructureDefinition",
-  "extension": [
-    {
-      "url": "http://www.fragment.com/mapname",
-      "valueString": "Breast/Radiology/Report"
-    },
-    {
-      "url": "http://www.fragment.com/Group",
-      "valueString": "BaseResources"
-    },
-    {
-      "url": "http://www.fragment.com/fragment",
-      "valueUrl": "http://hl7.org/fhir/us/breast-radiology/StructureDefinition/HeaderFragment"
-    },
-    {
-      "url": "http://www.fragment.com/maplink",
-      "valueString": "fragment|True|http://hl7.org/fhir/us/breast-radiology/StructureDefinition/HeaderFragment"
-    },
-    {
-      "url": "http://www.fragment.com/fragment",
-      "valueUrl": "http://hl7.org/fhir/us/breast-radiology/StructureDefinition/CategoryFragment"
-    },
-    {
-      "url": "http://www.fragment.com/maplink",
-      "valueString": "fragment|True|http://hl7.org/fhir/us/breast-radiology/StructureDefinition/CategoryFragment"
-    },
-    {
-      "url": "http://www.fragment.com/maplink",
-      "valueString": "target|True|http://hl7.org/fhir/us/breast-radiology/StructureDefinition/RecommendationsExtension"
-    },
-    {
-      "url": "http://www.fragment.com/maplink",
-      "valueString": "target|True|http://hl7.org/fhir/us/breast-radiology/StructureDefinition/PriorReportsExtension"
-    },
-    {
-      "url": "http://www.fragment.com/maplink",
-      "valueString": "target|True|http://hl7.org/fhir/us/breast-radiology/StructureDefinition/ImpressionsExtension"
-    },
-    {
-      "url": "http://www.fragment.com/maplink",
-      "valueString": "target|True|http://hl7.org/fhir/us/breast-radiology/StructureDefinition/PatientRiskExtension"
-    },
-    {
-      "url": "http://www.fragment.com/maplink",
-      "valueString": "target|False|http://hl7.org/fhir/us/breast-radiology/StructureDefinition/SectionPatientHistory"
-    },
-    {
-      "url": "http://www.fragment.com/maplink",
-      "valueString": "target|False|http://hl7.org/fhir/us/breast-radiology/StructureDefinition/SectionFindings"
-    }
-  ],
   "url": "http://hl7.org/fhir/us/breast-radiology/StructureDefinition/FragmentBreastRadReport",
   "name": "FragmentBreastRadReport",
   "title": "Breast Radiology Report",

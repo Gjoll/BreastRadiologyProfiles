@@ -1,35 +1,5 @@
 {
   "resourceType": "StructureDefinition",
-  "extension": [
-    {
-      "url": "http://www.fragment.com/mapname",
-      "valueString": "Annotation/PolyLine/Fragment"
-    },
-    {
-      "url": "http://www.fragment.com/Group",
-      "valueString": "Fragment/{name}"
-    },
-    {
-      "url": "http://www.fragment.com/isFragment",
-      "valueBoolean": true
-    },
-    {
-      "url": "http://www.fragment.com/fragment",
-      "valueUrl": "http://hl7.org/fhir/us/breast-radiology/StructureDefinition/HeaderFragment"
-    },
-    {
-      "url": "http://www.fragment.com/maplink",
-      "valueString": "fragment|True|http://hl7.org/fhir/us/breast-radiology/StructureDefinition/HeaderFragment"
-    },
-    {
-      "url": "http://www.fragment.com/maplink",
-      "valueString": "extension|True|http://hl7.org/fhir/us/breast-radiology/StructureDefinition/AimAnnotationPolyLineExtension"
-    },
-    {
-      "url": "http://www.fragment.com/maplink",
-      "valueString": "target|True|http://hl7.org/fhir/us/breast-radiology/StructureDefinition/AimAnnotationPolyLineExtension"
-    }
-  ],
   "url": "http://hl7.org/fhir/us/breast-radiology/StructureDefinition/FragmentAimAnnotationPolyLineFragment",
   "name": "FragmentAimAnnotationPolyLineFragment",
   "title": "Aim Annotation PolyLine Fragment",

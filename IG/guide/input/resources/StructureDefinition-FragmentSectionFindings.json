@@ -1,39 +1,5 @@
 {
   "resourceType": "StructureDefinition",
-  "extension": [
-    {
-      "url": "http://www.fragment.com/mapname",
-      "valueString": "Findings"
-    },
-    {
-      "url": "http://www.fragment.com/Group",
-      "valueString": "BaseResources/Findings"
-    },
-    {
-      "url": "http://www.fragment.com/fragment",
-      "valueUrl": "http://hl7.org/fhir/us/breast-radiology/StructureDefinition/BreastRadObservationNoDeviceFragment"
-    },
-    {
-      "url": "http://www.fragment.com/maplink",
-      "valueString": "fragment|True|http://hl7.org/fhir/us/breast-radiology/StructureDefinition/BreastRadObservationNoDeviceFragment"
-    },
-    {
-      "url": "http://www.fragment.com/fragment",
-      "valueUrl": "http://hl7.org/fhir/us/breast-radiology/StructureDefinition/ObservationSectionFragment"
-    },
-    {
-      "url": "http://www.fragment.com/maplink",
-      "valueString": "fragment|True|http://hl7.org/fhir/us/breast-radiology/StructureDefinition/ObservationSectionFragment"
-    },
-    {
-      "url": "http://www.fragment.com/maplink",
-      "valueString": "target|False|http://hl7.org/fhir/us/breast-radiology/StructureDefinition/SectionFindingsLeftBreast"
-    },
-    {
-      "url": "http://www.fragment.com/maplink",
-      "valueString": "target|False|http://hl7.org/fhir/us/breast-radiology/StructureDefinition/SectionFindingsRightBreast"
-    }
-  ],
   "url": "http://hl7.org/fhir/us/breast-radiology/StructureDefinition/FragmentSectionFindings",
   "name": "FragmentSectionFindings",
   "title": "Findings",
@@ -2482,7 +2448,7 @@
         "isSummary": true,
         "binding": {
           "strength": "required",
-          "valueSet": "http://hl7.org/fhir/us/breast-radiology/CodeSystem/BiRadsAssessmentCategoriesCS"
+          "valueSet": "http://hl7.org/fhir/us/breast-radiology/ValueSet/BiRadsAssessmentCategoriesVS"
         },
         "mapping": [
           {
@@ -2793,7 +2759,7 @@
         ],
         "binding": {
           "strength": "required",
-          "valueSet": "http://hl7.org/fhir/us/breast-radiology/CodeSystem/BiRadsAssessmentCategoriesCS"
+          "valueSet": "http://hl7.org/fhir/us/breast-radiology/ValueSet/BiRadsAssessmentCategoriesVS"
         }
       }
     ]

@@ -112,7 +112,7 @@
         ],
         "binding": {
           "strength": "required",
-          "valueSet": "http://hl7.org/fhir/us/breast-radiology/CodeSystem/BiRadsAssessmentCategoriesCS"
+          "valueSet": "http://hl7.org/fhir/us/breast-radiology/ValueSet/BiRadsAssessmentCategoriesVS"
         }
       },
       {
@@ -163,7 +163,7 @@
         ],
         "binding": {
           "strength": "required",
-          "valueSet": "http://hl7.org/fhir/us/breast-radiology/CodeSystem/ObservedChangeInDefinitionCS"
+          "valueSet": "http://hl7.org/fhir/us/breast-radiology/ValueSet/ObservedChangeInDefinitionVS"
         }
       },
       {
@@ -214,7 +214,7 @@
         ],
         "binding": {
           "strength": "required",
-          "valueSet": "http://hl7.org/fhir/us/breast-radiology/CodeSystem/ObservedChangeInNumberCS"
+          "valueSet": "http://hl7.org/fhir/us/breast-radiology/ValueSet/ObservedChangeInNumberVS"
         }
       },
       {
@@ -265,7 +265,7 @@
         ],
         "binding": {
           "strength": "required",
-          "valueSet": "http://hl7.org/fhir/us/breast-radiology/CodeSystem/ObservedChangeInProminanceCS"
+          "valueSet": "http://hl7.org/fhir/us/breast-radiology/ValueSet/ObservedChangeInProminanceVS"
         }
       },
       {
@@ -316,7 +316,7 @@
         ],
         "binding": {
           "strength": "required",
-          "valueSet": "http://hl7.org/fhir/us/breast-radiology/CodeSystem/ObservedChangeInSizeCS"
+          "valueSet": "http://hl7.org/fhir/us/breast-radiology/ValueSet/ObservedChangeInSizeVS"
         }
       },
       {
@@ -367,7 +367,7 @@
         ],
         "binding": {
           "strength": "required",
-          "valueSet": "http://hl7.org/fhir/us/breast-radiology/CodeSystem/ObservedChangeInStateCS"
+          "valueSet": "http://hl7.org/fhir/us/breast-radiology/ValueSet/ObservedChangeInStateVS"
         }
       },
       {
@@ -446,7 +446,7 @@
         ],
         "binding": {
           "strength": "required",
-          "valueSet": "http://hl7.org/fhir/us/breast-radiology/CodeSystem/OrientationCS"
+          "valueSet": "http://hl7.org/fhir/us/breast-radiology/ValueSet/OrientationVS"
         }
       }
     ]

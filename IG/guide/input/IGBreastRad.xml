@@ -343,6 +343,15 @@
     </resource>
     <resource>
       <reference>
+        <reference value="ValueSet/BiRadsAssessmentCategoriesVS" />
+      </reference>
+      <name value="BiRads(r) Assessment Category ValueSet ValueSet" />
+      <description value="BiRads(r) Assessment Category value set." />
+      <exampleBoolean value="false" />
+      <groupingId value="CommonCodesVS" />
+    </resource>
+    <resource>
+      <reference>
         <reference value="ValueSet/BreastLocationClockVS" />
       </reference>
       <name value="Breast Location Clock ValueSet ValueSet" />
@@ -379,10 +388,46 @@
     </resource>
     <resource>
       <reference>
+        <reference value="ValueSet/ConsistentWithVS" />
+      </reference>
+      <name value="ConsistentWith ValueSet ValueSet" />
+      <description value="ConsistentWith value set." />
+      <exampleBoolean value="false" />
+      <groupingId value="MGCodesVS" />
+    </resource>
+    <resource>
+      <reference>
         <reference value="ValueSet/FibroadenomaVS" />
       </reference>
       <name value="Fibroadenoma ValueSet ValueSet" />
       <description value="Fibroadenoma values value set." />
+      <exampleBoolean value="false" />
+      <groupingId value="CommonCodesVS" />
+    </resource>
+    <resource>
+      <reference>
+        <reference value="ValueSet/MammoCalcificationDistributionVS" />
+      </reference>
+      <name value="Mammography Calcification Distribution ValueSet ValueSet" />
+      <description value="Mammography calcification distribution values value set." />
+      <exampleBoolean value="false" />
+      <groupingId value="MGCodesVS" />
+    </resource>
+    <resource>
+      <reference>
+        <reference value="ValueSet/MammoCalcificationTypeVS" />
+      </reference>
+      <name value="Mammography Calcification Type ValueSet ValueSet" />
+      <description value="Mammography calcification types value set." />
+      <exampleBoolean value="false" />
+      <groupingId value="MGCodesVS" />
+    </resource>
+    <resource>
+      <reference>
+        <reference value="ValueSet/MarginVS" />
+      </reference>
+      <name value="Margin ValueSet ValueSet" />
+      <description value="Margin ValueSet." />
       <exampleBoolean value="false" />
       <groupingId value="CommonCodesVS" />
     </resource>
@@ -457,6 +502,78 @@
       <description value="Mammography breast density values value set." />
       <exampleBoolean value="false" />
       <groupingId value="MGCodesVS" />
+    </resource>
+    <resource>
+      <reference>
+        <reference value="ValueSet/MGDensityVS" />
+      </reference>
+      <name value="Mammography Density ValueSet ValueSet" />
+      <description value="Mammography density codes value set." />
+      <exampleBoolean value="false" />
+      <groupingId value="MGCodesVS" />
+    </resource>
+    <resource>
+      <reference>
+        <reference value="ValueSet/ObservedChangeInDefinitionVS" />
+      </reference>
+      <name value="Observed Definition Changes ValueSet ValueSet" />
+      <description value="Observed changes in definition of an abnormality over time value set." />
+      <exampleBoolean value="false" />
+      <groupingId value="CommonCodesVS" />
+    </resource>
+    <resource>
+      <reference>
+        <reference value="ValueSet/ObservedChangeInNumberVS" />
+      </reference>
+      <name value="Observed Number Changes ValueSet ValueSet" />
+      <description value="Observed changes in number of an abnormality over time value set." />
+      <exampleBoolean value="false" />
+      <groupingId value="CommonCodesVS" />
+    </resource>
+    <resource>
+      <reference>
+        <reference value="ValueSet/ObservedChangeInProminanceVS" />
+      </reference>
+      <name value="Observed Prominance Changes ValueSet ValueSet" />
+      <description value="Observed changes in Prominance of an abnormality over time value set." />
+      <exampleBoolean value="false" />
+      <groupingId value="CommonCodesVS" />
+    </resource>
+    <resource>
+      <reference>
+        <reference value="ValueSet/ObservedChangeInSizeVS" />
+      </reference>
+      <name value="Observed Changes ValueSet ValueSet" />
+      <description value="Observed changes in the size of an abnormality over time value set." />
+      <exampleBoolean value="false" />
+      <groupingId value="CommonCodesVS" />
+    </resource>
+    <resource>
+      <reference>
+        <reference value="ValueSet/ObservedChangeInStateVS" />
+      </reference>
+      <name value="Observed Change In State ValueSet ValueSet" />
+      <description value="Observed changes in state of an abnormality over time value set." />
+      <exampleBoolean value="false" />
+      <groupingId value="CommonCodesVS" />
+    </resource>
+    <resource>
+      <reference>
+        <reference value="ValueSet/OrientationVS" />
+      </reference>
+      <name value="Orientation ValueSet ValueSet" />
+      <description value="Orientation ValueSet" />
+      <exampleBoolean value="false" />
+      <groupingId value="CommonCodesVS" />
+    </resource>
+    <resource>
+      <reference>
+        <reference value="ValueSet/ShapeVS" />
+      </reference>
+      <name value="Shape ValueSet ValueSet" />
+      <description value="Shape values value set." />
+      <exampleBoolean value="false" />
+      <groupingId value="CommonCodesVS" />
     </resource>
     <resource>
       <reference>

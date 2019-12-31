@@ -1,19 +1,5 @@
 {
   "resourceType": "StructureDefinition",
-  "extension": [
-    {
-      "url": "http://www.fragment.com/mapname",
-      "valueString": "Common/Header"
-    },
-    {
-      "url": "http://www.fragment.com/Group",
-      "valueString": "Fragment/{name}"
-    },
-    {
-      "url": "http://www.fragment.com/isFragment",
-      "valueBoolean": true
-    }
-  ],
   "url": "http://hl7.org/fhir/us/breast-radiology/StructureDefinition/FragmentAimHeaderFragment",
   "version": "0.0.2",
   "name": "FragmentAimHeaderFragment",

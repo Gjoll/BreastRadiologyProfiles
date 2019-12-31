@@ -112,7 +112,7 @@
         ],
         "binding": {
           "strength": "required",
-          "valueSet": "http://hl7.org/fhir/us/breast-radiology/CodeSystem/OrientationCS"
+          "valueSet": "http://hl7.org/fhir/us/breast-radiology/ValueSet/OrientationVS"
         }
       },
       {
@@ -163,7 +163,7 @@
         ],
         "binding": {
           "strength": "required",
-          "valueSet": "http://hl7.org/fhir/us/breast-radiology/CodeSystem/ShapeCS"
+          "valueSet": "http://hl7.org/fhir/us/breast-radiology/ValueSet/ShapeVS"
         }
       },
       {
@@ -214,7 +214,7 @@
         ],
         "binding": {
           "strength": "required",
-          "valueSet": "http://hl7.org/fhir/us/breast-radiology/CodeSystem/MarginCS"
+          "valueSet": "http://hl7.org/fhir/us/breast-radiology/ValueSet/MarginVS"
         }
       },
       {
@@ -265,7 +265,7 @@
         ],
         "binding": {
           "strength": "required",
-          "valueSet": "http://hl7.org/fhir/us/breast-radiology/CodeSystem/MGDensityCS"
+          "valueSet": "http://hl7.org/fhir/us/breast-radiology/ValueSet/MGDensityVS"
         }
       }
     ]

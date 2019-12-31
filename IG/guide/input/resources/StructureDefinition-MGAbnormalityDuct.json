@@ -2562,7 +2562,7 @@
         "isSummary": true,
         "binding": {
           "strength": "extensible",
-          "valueSet": "http://hl7.org/fhir/us/breast-radiology/CodeSystem/ConsistentWithCodeSystemCS"
+          "valueSet": "http://hl7.org/fhir/us/breast-radiology/ValueSet/ConsistentWithVS"
         },
         "mapping": [
           {
@@ -3289,7 +3289,7 @@
         "isSummary": true,
         "binding": {
           "strength": "required",
-          "valueSet": "http://hl7.org/fhir/us/breast-radiology/CodeSystem/BiRadsAssessmentCategoriesCS"
+          "valueSet": "http://hl7.org/fhir/us/breast-radiology/ValueSet/BiRadsAssessmentCategoriesVS"
         },
         "mapping": [
           {
@@ -3657,7 +3657,7 @@
         "isSummary": true,
         "binding": {
           "strength": "required",
-          "valueSet": "http://hl7.org/fhir/us/breast-radiology/CodeSystem/ObservedChangeInDefinitionCS"
+          "valueSet": "http://hl7.org/fhir/us/breast-radiology/ValueSet/ObservedChangeInDefinitionVS"
         },
         "mapping": [
           {
@@ -4025,7 +4025,7 @@
         "isSummary": true,
         "binding": {
           "strength": "required",
-          "valueSet": "http://hl7.org/fhir/us/breast-radiology/CodeSystem/ObservedChangeInNumberCS"
+          "valueSet": "http://hl7.org/fhir/us/breast-radiology/ValueSet/ObservedChangeInNumberVS"
         },
         "mapping": [
           {
@@ -4393,7 +4393,7 @@
         "isSummary": true,
         "binding": {
           "strength": "required",
-          "valueSet": "http://hl7.org/fhir/us/breast-radiology/CodeSystem/ObservedChangeInProminanceCS"
+          "valueSet": "http://hl7.org/fhir/us/breast-radiology/ValueSet/ObservedChangeInProminanceVS"
         },
         "mapping": [
           {
@@ -4761,7 +4761,7 @@
         "isSummary": true,
         "binding": {
           "strength": "required",
-          "valueSet": "http://hl7.org/fhir/us/breast-radiology/CodeSystem/ObservedChangeInSizeCS"
+          "valueSet": "http://hl7.org/fhir/us/breast-radiology/ValueSet/ObservedChangeInSizeVS"
         },
         "mapping": [
           {
@@ -5129,7 +5129,7 @@
         "isSummary": true,
         "binding": {
           "strength": "required",
-          "valueSet": "http://hl7.org/fhir/us/breast-radiology/CodeSystem/ObservedChangeInStateCS"
+          "valueSet": "http://hl7.org/fhir/us/breast-radiology/ValueSet/ObservedChangeInStateVS"
         },
         "mapping": [
           {
@@ -5853,7 +5853,7 @@
         "isSummary": true,
         "binding": {
           "strength": "required",
-          "valueSet": "http://hl7.org/fhir/us/breast-radiology/CodeSystem/OrientationCS"
+          "valueSet": "http://hl7.org/fhir/us/breast-radiology/ValueSet/OrientationVS"
         },
         "mapping": [
           {
@@ -6221,7 +6221,7 @@
         "isSummary": true,
         "binding": {
           "strength": "required",
-          "valueSet": "http://hl7.org/fhir/us/breast-radiology/CodeSystem/ShapeCS"
+          "valueSet": "http://hl7.org/fhir/us/breast-radiology/ValueSet/ShapeVS"
         },
         "mapping": [
           {
@@ -6589,7 +6589,7 @@
         "isSummary": true,
         "binding": {
           "strength": "required",
-          "valueSet": "http://hl7.org/fhir/us/breast-radiology/CodeSystem/MarginCS"
+          "valueSet": "http://hl7.org/fhir/us/breast-radiology/ValueSet/MarginVS"
         },
         "mapping": [
           {
@@ -6957,7 +6957,7 @@
         "isSummary": true,
         "binding": {
           "strength": "required",
-          "valueSet": "http://hl7.org/fhir/us/breast-radiology/CodeSystem/MGDensityCS"
+          "valueSet": "http://hl7.org/fhir/us/breast-radiology/ValueSet/MGDensityVS"
         },
         "mapping": [
           {
@@ -7567,7 +7567,7 @@
         "isSummary": true,
         "binding": {
           "strength": "extensible",
-          "valueSet": "http://hl7.org/fhir/us/breast-radiology/CodeSystem/ConsistentWithCodeSystemCS"
+          "valueSet": "http://hl7.org/fhir/us/breast-radiology/ValueSet/ConsistentWithVS"
         },
         "mapping": [
           {
@@ -8294,7 +8294,7 @@
         "isSummary": true,
         "binding": {
           "strength": "required",
-          "valueSet": "http://hl7.org/fhir/us/breast-radiology/CodeSystem/BiRadsAssessmentCategoriesCS"
+          "valueSet": "http://hl7.org/fhir/us/breast-radiology/ValueSet/BiRadsAssessmentCategoriesVS"
         },
         "mapping": [
           {
@@ -8662,7 +8662,7 @@
         "isSummary": true,
         "binding": {
           "strength": "required",
-          "valueSet": "http://hl7.org/fhir/us/breast-radiology/CodeSystem/ObservedChangeInDefinitionCS"
+          "valueSet": "http://hl7.org/fhir/us/breast-radiology/ValueSet/ObservedChangeInDefinitionVS"
         },
         "mapping": [
           {
@@ -9030,7 +9030,7 @@
         "isSummary": true,
         "binding": {
           "strength": "required",
-          "valueSet": "http://hl7.org/fhir/us/breast-radiology/CodeSystem/ObservedChangeInNumberCS"
+          "valueSet": "http://hl7.org/fhir/us/breast-radiology/ValueSet/ObservedChangeInNumberVS"
         },
         "mapping": [
           {
@@ -9398,7 +9398,7 @@
         "isSummary": true,
         "binding": {
           "strength": "required",
-          "valueSet": "http://hl7.org/fhir/us/breast-radiology/CodeSystem/ObservedChangeInProminanceCS"
+          "valueSet": "http://hl7.org/fhir/us/breast-radiology/ValueSet/ObservedChangeInProminanceVS"
         },
         "mapping": [
           {
@@ -9766,7 +9766,7 @@
         "isSummary": true,
         "binding": {
           "strength": "required",
-          "valueSet": "http://hl7.org/fhir/us/breast-radiology/CodeSystem/ObservedChangeInSizeCS"
+          "valueSet": "http://hl7.org/fhir/us/breast-radiology/ValueSet/ObservedChangeInSizeVS"
         },
         "mapping": [
           {
@@ -10134,7 +10134,7 @@
         "isSummary": true,
         "binding": {
           "strength": "required",
-          "valueSet": "http://hl7.org/fhir/us/breast-radiology/CodeSystem/ObservedChangeInStateCS"
+          "valueSet": "http://hl7.org/fhir/us/breast-radiology/ValueSet/ObservedChangeInStateVS"
         },
         "mapping": [
           {
@@ -10858,7 +10858,7 @@
         "isSummary": true,
         "binding": {
           "strength": "required",
-          "valueSet": "http://hl7.org/fhir/us/breast-radiology/CodeSystem/OrientationCS"
+          "valueSet": "http://hl7.org/fhir/us/breast-radiology/ValueSet/OrientationVS"
         },
         "mapping": [
           {
@@ -11226,7 +11226,7 @@
         "isSummary": true,
         "binding": {
           "strength": "required",
-          "valueSet": "http://hl7.org/fhir/us/breast-radiology/CodeSystem/ShapeCS"
+          "valueSet": "http://hl7.org/fhir/us/breast-radiology/ValueSet/ShapeVS"
         },
         "mapping": [
           {
@@ -11594,7 +11594,7 @@
         "isSummary": true,
         "binding": {
           "strength": "required",
-          "valueSet": "http://hl7.org/fhir/us/breast-radiology/CodeSystem/MarginCS"
+          "valueSet": "http://hl7.org/fhir/us/breast-radiology/ValueSet/MarginVS"
         },
         "mapping": [
           {
@@ -11962,7 +11962,7 @@
         "isSummary": true,
         "binding": {
           "strength": "required",
-          "valueSet": "http://hl7.org/fhir/us/breast-radiology/CodeSystem/MGDensityCS"
+          "valueSet": "http://hl7.org/fhir/us/breast-radiology/ValueSet/MGDensityVS"
         },
         "mapping": [
           {
