@@ -286,6 +286,12 @@ namespace BreastRadiology.XUnitTests
                         .Path($"{extensionNode.ElementDefinition.Path}.value[x]")
                         .ElementId($"{extensionNode.ElementDefinition.Path}:{sliceName}.value[x]")
                         ;
+
+                    ElementDefinition elementUrl = new ElementDefinition()
+                        .Path($"{extensionNode.ElementDefinition.Path}.url")
+                        .ElementId($"{extensionNode.ElementDefinition.Path}:{sliceName}.url")
+                        .Value(new FhirUrl(sliceName))
+                        ;
                     return extensionElement.CreateNode(elementValue);
                 }
 
