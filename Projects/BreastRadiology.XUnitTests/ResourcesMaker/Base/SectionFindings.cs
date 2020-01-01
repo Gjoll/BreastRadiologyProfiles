@@ -61,6 +61,7 @@ namespace BreastRadiology.XUnitTests
                     e.SliceByUrl("hasMember", targets);
                     e.AddProfileTargets(targets);
 
+                    e.StartComponentSliceing();
                     Self.ComponentSliceBiRads(e);
                 }
             });

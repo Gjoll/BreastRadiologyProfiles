@@ -363,8 +363,6 @@ namespace BreastRadiology.XUnitTests
 
         void ComponentMGCalcificationType(SDefEditor e)
         {
-            e.StartComponentSliceing();
-
             e.ComponentSliceCodeableConcept("calcificationType",
                 Self.MGCodeCalcificationType.ToCodeableConcept(),
                 Self.MGCalcificationTypeVS.Value(),
@@ -376,8 +374,6 @@ namespace BreastRadiology.XUnitTests
 
         void ComponentMGCalcificationDistribution(SDefEditor e)
         {
-            e.StartComponentSliceing();
-
             e.ComponentSliceCodeableConcept("calcificationDistribution",
                 Self.MGCodeCalcificationDistribution.ToCodeableConcept(),
                 Self.MGCalcificationDistributionVS.Value(),
@@ -389,8 +385,6 @@ namespace BreastRadiology.XUnitTests
 
         void ComponentSliceBiRads(SDefEditor e)
         {
-            e.StartComponentSliceing();
-
             e.ComponentSliceCodeableConcept("biRadsAssessmentCategory",
                 Self.CodeBiRads.ToCodeableConcept(),
                 Self.BiRadsAssessmentCategoriesVS.Value(),
@@ -402,8 +396,6 @@ namespace BreastRadiology.XUnitTests
 
         void ComponentSliceObservedCount(SDefEditor e)
         {
-            e.StartComponentSliceing();
-
             String sliceName = "observedCount";
 
             ElementTreeSlice slice = e.AppendSlice("component", sliceName, 0, "1");
@@ -432,8 +424,6 @@ namespace BreastRadiology.XUnitTests
 
         void ComponentSliceConsistentWith(SDefEditor e)
         {
-            e.StartComponentSliceing();
-
             e.ComponentSliceCodeableConcept("consistentWith",
                 Self.CodeBiRads.ToCodeableConcept(),
                 Self.ConsistentWithVS.Value(),

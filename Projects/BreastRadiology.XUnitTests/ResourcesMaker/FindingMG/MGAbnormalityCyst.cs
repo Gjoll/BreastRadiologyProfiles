@@ -117,6 +117,7 @@ namespace BreastRadiology.XUnitTests
                 }
                 else
                 {
+                    e.StartComponentSliceing();
                     Self.ComponentSliceObservedCount(e);
                     Self.ComponentSliceConsistentWith(e);
                 }

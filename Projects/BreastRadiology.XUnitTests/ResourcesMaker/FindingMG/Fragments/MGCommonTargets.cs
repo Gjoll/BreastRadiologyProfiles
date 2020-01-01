@@ -47,6 +47,8 @@ namespace BreastRadiology.XUnitTests
                 }
                 else
                 {
+                    e.StartComponentSliceing();
+
                     Self.ComponentSliceBiRads(e);
 
                     e.ComponentSliceCodeableConcept("observedChangeInDefinition",

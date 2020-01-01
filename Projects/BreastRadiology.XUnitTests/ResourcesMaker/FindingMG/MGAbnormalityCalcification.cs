@@ -76,6 +76,8 @@ namespace BreastRadiology.XUnitTests
                     e.SliceByUrl("hasMember", targets);
                     e.AddProfileTargets(targets);
 
+                    e.StartComponentSliceing();
+                    e.StartComponentSliceing();
                     Self.ComponentSliceObservedCount(e);
                     Self.ComponentSliceConsistentWith(e);
                     Self.ComponentMGCalcificationType(e);

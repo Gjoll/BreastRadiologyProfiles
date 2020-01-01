@@ -147,6 +147,12 @@ namespace BreastRadiology.XUnitTests
                     };
                     e.SliceByUrl("hasMember", targets);
                     e.AddProfileTargets(targets);
+
+                    e.Select("value[x]")
+                        .Type("CodeableConcept")
+                        .Binding(binding.Url, BindingStrength.Required)
+                        ;
+                    e.AddValueSetLink(binding);
                 }
                 else
                 {
@@ -157,15 +163,16 @@ namespace BreastRadiology.XUnitTests
                     e.SliceByUrl("hasMember", targets);
                     e.AddProfileTargets(targets);
 
+                    e.StartComponentSliceing();
                     Self.ComponentSliceObservedCount(e);
                     Self.ComponentSliceConsistentWith(e);
-                }
 
-                e.Select("value[x]")
-                    .Type("CodeableConcept")
-                    .Binding(binding.Url, BindingStrength.Required)
-                    ;
-                e.AddValueSetLink(binding);
+                    e.Select("value[x]")
+                        .Type("CodeableConcept")
+                        .Binding(binding.Url, BindingStrength.Required)
+                        ;
+                    e.AddValueSetLink(binding);
+                }
             });
     }
 }
