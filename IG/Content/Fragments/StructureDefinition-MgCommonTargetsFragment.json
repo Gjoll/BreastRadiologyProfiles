@@ -20,6 +20,38 @@
     {
       "url": "http://www.fragment.com/maplink",
       "valueString": "fragment|True|http://hl7.org/fhir/us/breast-radiology/StructureDefinition/BreastBodyLocationRequiredFragment"
+    },
+    {
+      "url": "http://www.fragment.com/maplink",
+      "valueString": "component|True|BiRads Assessment Category^CodeableConcept^http://hl7.org/fhir/us/breast-radiology/ValueSet/BiRadsAssessmentCategoriesVS"
+    },
+    {
+      "url": "http://www.fragment.com/maplink",
+      "valueString": "component|True|Change In Definition^CodeableConcept^http://hl7.org/fhir/us/breast-radiology/ValueSet/ObservedChangeInDefinitionVS"
+    },
+    {
+      "url": "http://www.fragment.com/maplink",
+      "valueString": "component|True|Change In Number^CodeableConcept^http://hl7.org/fhir/us/breast-radiology/ValueSet/ObservedChangeInNumberVS"
+    },
+    {
+      "url": "http://www.fragment.com/maplink",
+      "valueString": "component|True|Change In Prominance^CodeableConcept^http://hl7.org/fhir/us/breast-radiology/ValueSet/ObservedChangeInProminanceVS"
+    },
+    {
+      "url": "http://www.fragment.com/maplink",
+      "valueString": "component|True|Change In Size^CodeableConcept^http://hl7.org/fhir/us/breast-radiology/ValueSet/ObservedChangeInSizeVS"
+    },
+    {
+      "url": "http://www.fragment.com/maplink",
+      "valueString": "component|True|Change In State^CodeableConcept^http://hl7.org/fhir/us/breast-radiology/ValueSet/ObservedChangeInStateVS"
+    },
+    {
+      "url": "http://www.fragment.com/maplink",
+      "valueString": "component|True|Size^Quantity"
+    },
+    {
+      "url": "http://www.fragment.com/maplink",
+      "valueString": "component|True|Orientation^CodeableConcept^http://hl7.org/fhir/us/breast-radiology/ValueSet/OrientationVS"
     }
   ],
   "url": "http://hl7.org/fhir/us/breast-radiology/StructureDefinition/MgCommonTargetsFragment",

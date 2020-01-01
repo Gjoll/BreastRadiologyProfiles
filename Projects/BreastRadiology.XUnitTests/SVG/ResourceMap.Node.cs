@@ -54,46 +54,11 @@ namespace BreastRadiology.XUnitTests
                 }
             }
 
-            public void AddFragmentLink(String url, bool showChildren = true)
-            {
-                this.AddLink("fragment", url, showChildren);
-            }
-
-            public void AddTargetLink(String url, bool showChildren = true)
-            {
-                this.AddLink("target", url, showChildren);
-            }
-
-            public void AddExtensionLink(String url, bool showChildren = true)
-            {
-                this.AddLink("extension", url, showChildren);
-            }
-
-            public void AddValueSetLink(String url, bool showChildren = true)
-            {
-                this.AddLink("valueSet", url, showChildren);
-            }
-
-            public void AddProfileTargets(params ProfileTargetSlice[] targets)
-            {
-                foreach (ProfileTargetSlice target in targets)
-                    this.AddLink("target", target.Profile, false);
-            }
-
-            public void AddLink(String linkType,
-                String url,
-                bool showChildren)
-            {
-                if (url.StartsWith("http://hl7.org/fhir/StructureDefinition/") == true)
-                    return;
-                this.AddLink(new Link(linkType, url, showChildren));
-            }
-
             public void AddLink(Link link)
             {
-                if (this.links.TryGetValue(link.ResourceUrl, out Link temp) == true)
+                if (this.links.TryGetValue(link.LinkTarget, out Link temp) == true)
                     return;
-                this.links.Add(link.ResourceUrl, link);
+                this.links.Add(link.LinkTarget, link);
             }
         }
     }

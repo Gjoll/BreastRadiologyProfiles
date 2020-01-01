@@ -66,7 +66,7 @@ namespace BreastRadiology.XUnitTests
 
                 foreach (ResourceMap.Link link in this.FragmentLinks(focusMapNode))
                 {
-                    ResourceMap.Node referencedMapNode = this.map.GetNode(link.ResourceUrl);
+                    ResourceMap.Node referencedMapNode = this.map.GetNode(link.LinkTarget);
                     fragmentFocusNode.Parents.Add(referencedMapNode);
 
                     if (this.fragmentNodes.TryGetValue(referencedMapNode.Name, out FragmentNode fragmentParentNode) == false)
@@ -167,7 +167,7 @@ namespace BreastRadiology.XUnitTests
         /// </summary>
         void SelectNodes()
         {
-            foreach (ResourceMap.Node mapNode in this.map.MapNodes)
+            foreach (ResourceMap.Node mapNode in this.map.Nodes)
             {
                 switch (mapNode.StructureName)
                 {

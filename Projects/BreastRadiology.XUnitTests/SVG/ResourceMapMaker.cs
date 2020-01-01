@@ -82,7 +82,7 @@ namespace BreastRadiology.XUnitTests
                 ResourceMap.Link link2 = links2[i];
                 if (link1.LinkType != link2.LinkType)
                     return true;
-                if (link1.ResourceUrl != link2.ResourceUrl)
+                if (link1.LinkTarget != link2.LinkTarget)
                     return true;
             }
             return false;
@@ -111,7 +111,7 @@ namespace BreastRadiology.XUnitTests
                 {
                     ResourceMap.Link[] childMapLinks = null;
 
-                    ResourceMap.Node childMapNode = this.map.GetNode(link.ResourceUrl);
+                    ResourceMap.Node childMapNode = this.map.GetNode(link.LinkTarget);
                     if (link.ShowChildren)
                     {
                         childMapLinks = childMapNode.LinksByName(linkNames).ToArray();
@@ -132,7 +132,7 @@ namespace BreastRadiology.XUnitTests
                     }
 
                     {
-                        if (this.map.TryGetNode(link.ResourceUrl, out ResourceMap.Node linkTargetNode) == false)
+                        if (this.map.TryGetNode(link.LinkTarget, out ResourceMap.Node linkTargetNode) == false)
                             throw new Exception("ResourceMap.Node '{link.ResourceUrl}' not found");
                         SENode node = this.CreateNode(linkTargetNode);
                         groupChild.Nodes.Add(node);

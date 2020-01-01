@@ -44,6 +44,10 @@
     {
       "url": "http://www.fragment.com/maplink",
       "valueString": "valueSet|True|http://hl7.org/fhir/us/breast-radiology/ValueSet/MGAbnormalityLymphNodeVS"
+    },
+    {
+      "url": "http://www.fragment.com/maplink",
+      "valueString": "component|True|Observed Count^Integer or Range"
     }
   ],
   "url": "http://hl7.org/fhir/us/breast-radiology/StructureDefinition/MGAbnormalityLymphNode",

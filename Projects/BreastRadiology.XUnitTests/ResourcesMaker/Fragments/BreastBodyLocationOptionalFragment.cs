@@ -23,7 +23,6 @@ namespace BreastRadiology.XUnitTests
                         //.Todo
                      )
                     .AddFragRef(Self.HeaderFragment.Value())
-                    .AddExtensionLink(Self.BreastBodyLocationExtension.Value())
                     ;
                 s = e.SDef.Url;
 

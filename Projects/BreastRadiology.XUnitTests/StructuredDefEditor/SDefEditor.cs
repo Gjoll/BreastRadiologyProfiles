@@ -194,7 +194,7 @@ namespace BreastRadiology.XUnitTests
 
         public ElementDefinition ApplyExtension(String name, String extensionUrl, bool showChildren = true, bool addLink = true)
         {
-            this.AddLink("target", extensionUrl, showChildren);
+            this.AddExtensionLink(extensionUrl, showChildren);
             this.ConfigureSliceByUrlDiscriminator("extension", true);
 
             String sliceName = name.UncapFirstLetter();
@@ -283,6 +283,18 @@ namespace BreastRadiology.XUnitTests
             return this;
         }
 
+        public SDefEditor AddComponentLink(String url, bool showChildren = true)
+        {
+            this.AddLink("component", url, showChildren);
+            return this;
+        }
+
+        public SDefEditor AddTargetLink(String url, bool showChildren = true)
+        {
+            this.AddLink("target", url, showChildren);
+            return this;
+        }
+
         public SDefEditor AddValueSetLink(ValueSet vs, bool showChildren = true)
         {
             this.AddLink("valueSet", vs.Url, showChildren);
@@ -293,7 +305,7 @@ namespace BreastRadiology.XUnitTests
         public SDefEditor AddProfileTargets(params ProfileTargetSlice[] targets)
         {
             foreach (ProfileTargetSlice target in targets)
-                this.AddLink("target", target.Profile, false);
+                this.AddTargetLink(target.Profile, false);
             return this;
         }
 
@@ -427,7 +439,8 @@ namespace BreastRadiology.XUnitTests
         public void ComponentSliceQuantity(String sliceName,
             CodeableConcept pattern,
             Int32 minCardinality,
-            String maxCardinality)
+            String maxCardinality,
+            String componentName)
         {
             ElementTreeSlice slice = this.AppendSlice("component", sliceName, minCardinality, maxCardinality);
             {
@@ -443,6 +456,7 @@ namespace BreastRadiology.XUnitTests
                 ;
                 slice.CreateNode(valueX);
             }
+            this.AddComponentLink($"{componentName}^Quantity");
         }
 
         public void ComponentSliceCodeableConcept(String sliceName,
@@ -450,7 +464,8 @@ namespace BreastRadiology.XUnitTests
             ValueSet valueSet,
             BindingStrength bindingStrength,
             Int32 minCardinality,
-            String maxCardinality)
+            String maxCardinality,
+            String componentName)
         {
             ElementTreeSlice slice = this.AppendSlice("component", sliceName, minCardinality, maxCardinality);
             {
@@ -480,6 +495,8 @@ namespace BreastRadiology.XUnitTests
                 ;
                 slice.CreateNode(valueX);
             }
+
+            this.AddComponentLink($"{componentName}^CodeableConcept^{valueSet.Url}");
         }
     }
 }

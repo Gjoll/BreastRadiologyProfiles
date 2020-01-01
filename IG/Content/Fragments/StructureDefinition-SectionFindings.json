@@ -32,6 +32,10 @@
     {
       "url": "http://www.fragment.com/maplink",
       "valueString": "target|False|http://hl7.org/fhir/us/breast-radiology/StructureDefinition/SectionFindingsRightBreast"
+    },
+    {
+      "url": "http://www.fragment.com/maplink",
+      "valueString": "component|True|BiRads Assessment Category^CodeableConcept^http://hl7.org/fhir/us/breast-radiology/ValueSet/BiRadsAssessmentCategoriesVS"
     }
   ],
   "url": "http://hl7.org/fhir/us/breast-radiology/StructureDefinition/SectionFindings",

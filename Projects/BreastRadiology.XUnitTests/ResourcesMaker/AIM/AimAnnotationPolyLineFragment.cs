@@ -22,8 +22,8 @@ namespace BreastRadiology.XUnitTests
                         //.Todo
                      )
                     .AddFragRef(Self.HeaderFragment.Value())
-                    .AddExtensionLink(Self.AimAnnotationPolyLineExtension.Value())
                 ;
+
                 s = e.SDef.Url;
                 e.IntroDoc
                     .ReviewedStatus(ReviewStatus.NotReviewed)

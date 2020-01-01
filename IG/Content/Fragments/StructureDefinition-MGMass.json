@@ -56,6 +56,14 @@
     {
       "url": "http://www.fragment.com/maplink",
       "valueString": "target|False|http://hl7.org/fhir/us/breast-radiology/StructureDefinition/MGAssociatedFeatures"
+    },
+    {
+      "url": "http://www.fragment.com/maplink",
+      "valueString": "component|True|Observed Count^Integer or Range"
+    },
+    {
+      "url": "http://www.fragment.com/maplink",
+      "valueString": "component|True|Consistent With^CodeableConcept^http://hl7.org/fhir/us/breast-radiology/ValueSet/ConsistentWithVS"
     }
   ],
   "url": "http://hl7.org/fhir/us/breast-radiology/StructureDefinition/MGMass",

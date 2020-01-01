@@ -332,6 +332,9 @@ namespace BreastRadiology.XUnitTests
             if (Directory.Exists(this.pageDir) == false)
                 Directory.CreateDirectory(this.pageDir);
 
+            // we have to manually force the creation of the following to get
+            // all the necessary objects to be created.
+            this.ComponentSliceCodesCS.Value();
             this.BreastRadiologyReport.Value();
 
             this.SaveAll();
@@ -367,7 +370,8 @@ namespace BreastRadiology.XUnitTests
                 Self.MGCalcificationTypeVS.Value(),
                 BindingStrength.Required,
                 0,
-                "1");
+                "1",
+                "Calcification Type");
         }
 
         void ComponentMGCalcificationDistribution(SDefEditor e)
@@ -379,7 +383,8 @@ namespace BreastRadiology.XUnitTests
                 Self.MGCalcificationDistributionVS.Value(),
                 BindingStrength.Required,
                 0,
-                "1");
+                "1",
+                "Calcification Distribution");
         }
 
         void ComponentSliceBiRads(SDefEditor e)
@@ -391,7 +396,8 @@ namespace BreastRadiology.XUnitTests
                 Self.BiRadsAssessmentCategoriesVS.Value(),
                 BindingStrength.Required,
                 0,
-                "1");
+                "1",
+                "BiRads Assessment Category");
         }
 
         void ComponentSliceObservedCount(SDefEditor e)
@@ -420,6 +426,7 @@ namespace BreastRadiology.XUnitTests
                     ;
                 ;
                 slice.CreateNode(valueX);
+                e.AddComponentLink("Observed Count^Integer or Range");
             }
         }
 
@@ -432,7 +439,8 @@ namespace BreastRadiology.XUnitTests
                 Self.ConsistentWithVS.Value(),
                 BindingStrength.Extensible,
                 0,
-                "*");
+                "*",
+                "Consistent With");
         }
 
     }

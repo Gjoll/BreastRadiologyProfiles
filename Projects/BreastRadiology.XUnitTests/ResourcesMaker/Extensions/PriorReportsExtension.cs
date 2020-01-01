@@ -50,7 +50,7 @@ namespace BreastRadiology.XUnitTests
                     .Single()
                     ;
 
-                e.AddLink("target", Self.BreastRadiologyReport.Value(), false);
+                e.AddTargetLink(Self.BreastRadiologyReport.Value(), false);
             });
     }
 }

@@ -16,23 +16,20 @@ namespace BreastRadiology.XUnitTests
             public string LinkType;
 
             /// <summary>
-            /// Url of ResourceMap.Node that this links to.
+            /// Link Source.
+            /// This may be a resource url, or it may just be a string name.
+            /// (LinkType dependent)
             /// </summary>
-            public String ResourceUrl;
+            public String LinkSource;
+
+            /// <summary>
+            /// Target that this links to.
+            /// This may e a resource url, or it may just be a string name.
+            /// (LinkType dependent)
+            /// </summary>
+            public String LinkTarget;
 
             public bool ShowChildren;
-
-            public Link(String linkType,
-                String resourceUrl,
-                bool showChildren)
-            {
-                if (String.IsNullOrEmpty(resourceUrl))
-                    throw new Exception("Url can not be empty");
-
-                this.LinkType = linkType;
-                this.ResourceUrl = resourceUrl;
-                this.ShowChildren = showChildren;
-            }
         }
     }
 }

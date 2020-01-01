@@ -42,13 +42,15 @@ namespace BreastRadiology.XUnitTests
                     Self.ConsistentWithVS.Value(),
                     BindingStrength.Extensible,
                     1,
-                    "1");
+                    "1",
+                    "Value");
                 e.ComponentSliceCodeableConcept("qualifier",
                     Self.ConsistentWithCodeQualifier.ToCodeableConcept(),
                     Self.ConsistentWithQualifierVS.Value(),
                     BindingStrength.Required,
                     0,
-                    "1");
+                    "1",
+                    "Qualifier");
 
                 e.IntroDoc
                     .ReviewedStatus(ReviewStatus.NotReviewed)

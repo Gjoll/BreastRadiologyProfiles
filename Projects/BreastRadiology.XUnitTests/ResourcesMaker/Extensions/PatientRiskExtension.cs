@@ -52,7 +52,7 @@ namespace BreastRadiology.XUnitTests
                     .Single()
                     ;
 
-                e.AddLink("target", RiskAssessmentUrl, false);
+                e.AddTargetLink(RiskAssessmentUrl, false);
             });
     }
 }

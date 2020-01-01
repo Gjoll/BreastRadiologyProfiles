@@ -10,7 +10,11 @@ namespace BreastRadiology.XUnitTests
 {
     partial class ResourceMap
     {
-        Dictionary<String, ResourceMap.Node> resources = new Dictionary<string, ResourceMap.Node>();
+        public IEnumerable<ResourceMap.Node> Nodes => this.nodes.Values;
+        Dictionary<String, ResourceMap.Node> nodes = new Dictionary<string, ResourceMap.Node>();
+
+        public IEnumerable<ResourceMap.Link> Links => this.links;
+        List<ResourceMap.Link> links = new List<ResourceMap.Link>();
 
         public ResourceMap()
         {
@@ -50,21 +54,55 @@ namespace BreastRadiology.XUnitTests
             ResourceMap.Node node = this.CreateMapNode(r);
             if (node == null)
                 return;
-            this.resources.Add(node.ResourceUrl, node);
+            this.nodes.Add(node.ResourceUrl, node);
         }
-
-        public IEnumerable<ResourceMap.Node> MapNodes => this.resources.Values;
 
         public bool TryGetNode(String url, out ResourceMap.Node node)
         {
-            return this.resources.TryGetValue(url, out node);
+            return this.nodes.TryGetValue(url, out node);
         }
 
         public ResourceMap.Node GetNode(String url)
         {
-            if (this.resources.TryGetValue(url, out ResourceMap.Node node) == false)
+            if (this.nodes.TryGetValue(url, out ResourceMap.Node node) == false)
                 throw new Exception($"Map node {url} not found");
             return node;
+        }
+
+        public IEnumerable<ResourceMap.Link> TargetLinks(String target)
+        {
+            foreach (ResourceMap.Link link in this.Links)
+            {
+                if (link.LinkTarget == target)
+                    yield return link;
+            }
+        }
+
+        public IEnumerable<ResourceMap.Link> SourceLinks(String source)
+        {
+            foreach (ResourceMap.Link link in this.Links)
+            {
+                if (link.LinkSource == source)
+                    yield return link;
+            }
+        }
+
+        public Link CreateLink(String linkType,
+            String linkSource,
+            String linkTarget,
+            bool showChildren)
+        {
+            Link retVal = new Link
+            {
+                LinkType = linkType,
+                LinkTarget = linkTarget,
+                LinkSource = linkSource,
+                ShowChildren = showChildren
+            };
+
+            this.links.Add(retVal);
+
+            return retVal;
         }
 
         ResourceMap.Node CreateMapNode(DomainResource r)
@@ -94,16 +132,17 @@ namespace BreastRadiology.XUnitTests
 
             Extension isFragmentExtension = r.GetExtension(Global.IsFragmentExtensionUrl);
 
-            ResourceMap.Node retVal =  this.CreateMapNode(resourceUrl, 
-                mapNameArray, 
-                structureName, 
+            ResourceMap.Node retVal = this.CreateMapNode(resourceUrl,
+                mapNameArray,
+                structureName,
                 baseName,
                 isFragmentExtension != null);
+
             foreach (Extension link in r.GetExtensions(Global.ResourceMapLinkUrl))
             {
-                FhirString s = (FhirString) link.Value;
+                FhirString s = (FhirString)link.Value;
                 String[] parts = s.Value.Split('|');
-                ResourceMap.Link mapLink = new ResourceMap.Link(parts[0], parts[2], Boolean.Parse(parts[1]));
+                ResourceMap.Link mapLink = this.CreateLink(parts[0], resourceUrl, parts[2], Boolean.Parse(parts[1]));
                 retVal.AddLink(mapLink);
             }
             return retVal;
@@ -112,7 +151,7 @@ namespace BreastRadiology.XUnitTests
 
         public ResourceMap.Node CreateMapNode(String url, String[] mapName, String structureName, String baseName, bool fragment)
         {
-            if (this.resources.TryGetValue(url, out ResourceMap.Node retVal) == true)
+            if (this.nodes.TryGetValue(url, out ResourceMap.Node retVal) == true)
                 throw new Exception($"Map node {url} already exists");
             retVal = new Node(url, mapName, structureName, baseName, fragment);
             return retVal;

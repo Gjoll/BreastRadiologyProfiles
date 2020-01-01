@@ -20,6 +20,22 @@
     {
       "url": "http://www.fragment.com/maplink",
       "valueString": "fragment|True|http://hl7.org/fhir/us/breast-radiology/StructureDefinition/BreastBodyLocationRequiredFragment"
+    },
+    {
+      "url": "http://www.fragment.com/maplink",
+      "valueString": "component|True|Orientation^CodeableConcept^http://hl7.org/fhir/us/breast-radiology/ValueSet/OrientationVS"
+    },
+    {
+      "url": "http://www.fragment.com/maplink",
+      "valueString": "component|True|Shape^CodeableConcept^http://hl7.org/fhir/us/breast-radiology/ValueSet/ShapeVS"
+    },
+    {
+      "url": "http://www.fragment.com/maplink",
+      "valueString": "component|True|Margin^CodeableConcept^http://hl7.org/fhir/us/breast-radiology/ValueSet/MarginVS"
+    },
+    {
+      "url": "http://www.fragment.com/maplink",
+      "valueString": "component|True|Density^CodeableConcept^http://hl7.org/fhir/us/breast-radiology/ValueSet/MGDensityVS"
     }
   ],
   "url": "http://hl7.org/fhir/us/breast-radiology/StructureDefinition/MgShapeTargetsFragment",

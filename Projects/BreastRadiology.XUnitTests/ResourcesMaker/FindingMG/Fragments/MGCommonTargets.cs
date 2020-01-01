@@ -54,42 +54,49 @@ namespace BreastRadiology.XUnitTests
                         Self.ObservedChangeInDefinitionVS.Value(),
                         BindingStrength.Required,
                         0,
-                        "1");
+                        "1",
+                        "Change In Definition");
 
                     e.ComponentSliceCodeableConcept("observedChangeInNumber",
                         Self.CodeObservedChangeInNumber.ToCodeableConcept(),
                         Self.ObservedChangeInNumberVS.Value(),
                         BindingStrength.Required,
                         0,
-                        "1");
+                        "1",
+                        "Change In Number");
                     e.ComponentSliceCodeableConcept("observedChangeInProminance",
                         Self.CodeObservedChangeInProminance.ToCodeableConcept(),
                         Self.ObservedChangeInProminanceVS.Value(),
                         BindingStrength.Required,
                         0,
-                        "1");
+                        "1",
+                        "Change In Prominance");
                     e.ComponentSliceCodeableConcept("observedChangeInSize",
                         Self.CodeObservedChangeInSize.ToCodeableConcept(),
                         Self.ObservedChangeInSizeVS.Value(),
                         BindingStrength.Required,
                         0,
-                        "1");
+                        "1",
+                        "Change In Size");
                     e.ComponentSliceCodeableConcept("observedChangeInState",
                         Self.CodeObservedChangeInState.ToCodeableConcept(),
                         Self.ObservedChangeInStateVS.Value(),
                         BindingStrength.Required,
                         0,
-                        "1");
+                        "1",
+                        "Change In State");
                     e.ComponentSliceQuantity("observedSize",
                         Self.CodeObservedSize.ToCodeableConcept(),
                         0,
-                        "1");
+                        "1",
+                        "Size");
                     e.ComponentSliceCodeableConcept("orientation",
                         Self.CodeOrientation.ToCodeableConcept(),
                         Self.OrientationVS.Value(),
                         BindingStrength.Required,
                         0,
-                        "1");
+                        "1",
+                        "Orientation");
                 }
             });
     }

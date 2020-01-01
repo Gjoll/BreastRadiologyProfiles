@@ -27,19 +27,19 @@
     },
     {
       "url": "http://www.fragment.com/maplink",
-      "valueString": "target|True|http://hl7.org/fhir/us/breast-radiology/StructureDefinition/RecommendationsExtension"
+      "valueString": "extension|True|http://hl7.org/fhir/us/breast-radiology/StructureDefinition/RecommendationsExtension"
     },
     {
       "url": "http://www.fragment.com/maplink",
-      "valueString": "target|True|http://hl7.org/fhir/us/breast-radiology/StructureDefinition/PriorReportsExtension"
+      "valueString": "extension|True|http://hl7.org/fhir/us/breast-radiology/StructureDefinition/PriorReportsExtension"
     },
     {
       "url": "http://www.fragment.com/maplink",
-      "valueString": "target|True|http://hl7.org/fhir/us/breast-radiology/StructureDefinition/ImpressionsExtension"
+      "valueString": "extension|True|http://hl7.org/fhir/us/breast-radiology/StructureDefinition/ImpressionsExtension"
     },
     {
       "url": "http://www.fragment.com/maplink",
-      "valueString": "target|True|http://hl7.org/fhir/us/breast-radiology/StructureDefinition/PatientRiskExtension"
+      "valueString": "extension|True|http://hl7.org/fhir/us/breast-radiology/StructureDefinition/PatientRiskExtension"
     },
     {
       "url": "http://www.fragment.com/maplink",

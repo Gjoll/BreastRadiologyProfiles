@@ -49,7 +49,7 @@ namespace BreastRadiology.XUnitTests
                     .ZeroToMany()
                     ;
 
-                e.AddLink("target", ClinicalImpressionUrl, false);
+                e.AddTargetLink(ClinicalImpressionUrl, false);
             });
     }
 }

@@ -15,15 +15,7 @@ namespace BreastRadiology.XUnitTests
     /// </summary>
     class FocusMapMaker
     {
-        class FocusNode
-        {
-            public ResourceMap.Node Focus;
-            public List<ResourceMap.Node> Parents = new List<ResourceMap.Node>();
-            public List<ResourceMap.Node> Children = new List<ResourceMap.Node>();
-        }
-
         ResourceMap map;
-        ConcurrentDictionary<String, FocusNode> focusNodes = new ConcurrentDictionary<string, FocusNode>();
         String graphicsDir;
         String contentDir;
         FileCleaner fc;
@@ -44,26 +36,25 @@ namespace BreastRadiology.XUnitTests
         public static String FocusMapName(String name) => $"Focus-{name}.svg";
         String IntroName(ResourceMap.Node mapNode) => $"{mapNode.StructureName}-{mapNode.Name}-intro.xml";
 
-        void LinkNodes()
-        {
-            foreach (ResourceMap.Node focusMapNode in this.map.MapNodes)
-            {
-                if (this.focusNodes.TryGetValue(focusMapNode.Name, out FocusNode fragmentFocusNode) == false)
-                    throw new Exception($"Internal error. Cant find Focus FocusNode '{focusMapNode.Name}' ");
+        //void LinkNodes()
+        //{
+        //    foreach (ResourceMap.Node focusMapNode in this.map.MapNodes)
+        //    {
+        //        if (this.focusNodes.TryGetValue(focusMapNode.Name, out FocusNode focusNode) == false)
+        //            throw new Exception($"Internal error. Cant find Focus FocusNode '{focusMapNode.Name}' ");
 
-                foreach (ResourceMap.Link link in focusMapNode.LinksByName("valueSet", "target", "extension"))
-                {
-                    ResourceMap.Node referencedMapNode = this.map.GetNode(link.ResourceUrl);
-                    fragmentFocusNode.Parents.Add(referencedMapNode);
+        //        foreach (ResourceMap.Link link in focusMapNode.LinksByName("valueSet", "target", "extension", "component"))
+        //        {
+        //            if (this.map.TryGetNode(link.LinkTarget, out ResourceMap.Node referencedMapNode) == true)
+        //                focusNode.Parents.Add(referencedMapNode);
 
-                    if (this.focusNodes.TryGetValue(referencedMapNode.Name, out FocusNode fragmentParentNode) == false)
-                        throw new Exception($"Internal error. Cant find FocusNode '{referencedMapNode.Name}' ");
-                    fragmentParentNode.Children.Add(focusMapNode);
-                }
-            }
-        }
+        //            if (this.focusNodes.TryGetValue(referencedMapNode.Name, out FocusNode parentNode) == true)
+        //                parentNode.Children.Add(focusMapNode);
+        //        }
+        //    }
+        //}
 
-        SENode CreateNode(ResourceMap.Node mapNode, Color color, bool linkFlag)
+        SENode CreateResourceNode(ResourceMap.Node mapNode, Color color, bool linkFlag)
         {
             SENode node = new SENode(0, color);
 
@@ -83,8 +74,11 @@ namespace BreastRadiology.XUnitTests
             return node;
         }
 
-        void GraphNode(FocusNode fragmentNode)
+        void GraphNode(ResourceMap.Node focusNode)
         {
+            if (focusNode.Name.Contains("Fragment") == true)
+                return;
+
             SvgEditor e = new SvgEditor();
             SENodeGroup parentsGroup = new SENodeGroup("parents");
             SENodeGroup focusGroup = new SENodeGroup("focus");
@@ -93,62 +87,171 @@ namespace BreastRadiology.XUnitTests
             focusGroup.Children.Add(childrenGroup);
 
             {
-                SENode node = this.CreateNode(fragmentNode.Focus, Color.LightGreen, false);
+                SENode node = this.CreateResourceNode(focusNode, Color.White, false);
                 focusGroup.Nodes.Add(node);
             }
 
-            foreach (ResourceMap.Node childNode in fragmentNode.Children)
+            Color extensionColor = Color.LightBlue;
+            Color valueSetColor = Color.LightGreen;
+            Color targetColor = Color.LightCyan;
+            Color componentColor = Color.LightYellow;
+
             {
-                SENode node = this.CreateNode(childNode, Color.LightBlue, true);
-                parentsGroup.Nodes.Add(node);
+                List<SENode> extensionParents = new List<SENode>();
+                List<SENode> valueSetParents = new List<SENode>();
+                List<SENode> targetParents = new List<SENode>();
+
+                foreach (ResourceMap.Link link in this.map.TargetLinks(focusNode.ResourceUrl))
+                {
+                    switch (link.LinkType)
+                    {
+                        case "fragment":
+                        case "component":
+                            break;
+
+                        case "extension":
+                            {
+                                if (this.map.TryGetNode(link.LinkSource, out ResourceMap.Node parentNode) == true)
+                                {
+                                    SENode node = this.CreateResourceNode(parentNode, extensionColor, true);
+                                    extensionParents.Add(node);
+                                }
+                            }
+                            break;
+
+                        case "valueSet":
+                            {
+                                if (this.map.TryGetNode(link.LinkSource, out ResourceMap.Node parentNode) == true)
+                                {
+                                    SENode node = this.CreateResourceNode(parentNode, valueSetColor, true);
+                                    valueSetParents.Add(node);
+                                }
+                            }
+                            break;
+
+                        case "target":
+                            {
+                                if (this.map.TryGetNode(link.LinkSource, out ResourceMap.Node parentNode) == true)
+                                {
+                                    SENode node = this.CreateResourceNode(parentNode, targetColor, true);
+                                    targetParents.Add(node);
+                                }
+                            }
+                            break;
+
+                        default:
+                            throw new NotImplementedException($"Unknown link type {link.LinkType}");
+                    }
+                }
+
+                parentsGroup.Nodes.AddRange(targetParents);
+                parentsGroup.Nodes.AddRange(valueSetParents);
+                parentsGroup.Nodes.AddRange(extensionParents);
             }
 
-            foreach (ResourceMap.Node parentNode in fragmentNode.Parents)
             {
-                SENode node = this.CreateNode(parentNode, Color.LightSalmon, true);
-                childrenGroup.Nodes.Add(node);
+                List<SENode> extensionChildren = new List<SENode>();
+                List<SENode> valueSetChildren = new List<SENode>();
+                List<SENode> targetChildren = new List<SENode>();
+                List<SENode> componentChildren = new List<SENode>();
+
+                foreach (ResourceMap.Link link in this.map.SourceLinks(focusNode.ResourceUrl))
+                {
+                    switch (link.LinkType)
+                    {
+                        case "fragment":
+                            break;
+
+                        case "component":
+                            {
+                                SENode node = new SENode(0, componentColor);
+                                String[] lines = link.LinkTarget.Split("^");
+                                node.AddTextLine(lines[0]);
+                                if (lines.Length > 1)
+                                    node.AddTextLine(lines[1]);
+                                if (lines.Length > 2)
+                                {
+                                    if (this.map.TryGetNode(lines[2], out ResourceMap.Node mapNode) == false)
+                                        throw new Exception($"Component resource '{lines[2]}' not found!");
+
+                                    String hRef = null;
+                                    String title = null;
+                                    hRef = $"./{mapNode.StructureName}-{mapNode.Name}.html";
+                                    title = $"'{mapNode.Name}'";
+                                    String s = mapNode.Name.Trim();
+                                    node.AddTextLine(s, hRef, title);
+                                }
+                                extensionChildren.Add(node);
+                            }
+                            break;
+
+                        case "extension":
+                            {
+                                if (this.map.TryGetNode(link.LinkTarget, out ResourceMap.Node childNode) == true)
+                                {
+                                    SENode node = this.CreateResourceNode(childNode, extensionColor, true);
+                                    extensionChildren.Add(node);
+                                }
+                            }
+                            break;
+
+                        case "valueSet":
+                            {
+                                if (this.map.TryGetNode(link.LinkTarget, out ResourceMap.Node childNode) == true)
+                                {
+                                    SENode node = this.CreateResourceNode(childNode, valueSetColor, true);
+                                    valueSetChildren.Add(node);
+                                }
+                            }
+                            break;
+
+                        case "target":
+                            {
+                                if (this.map.TryGetNode(link.LinkTarget, out ResourceMap.Node childNode) == true)
+                                {
+                                    SENode node = this.CreateResourceNode(childNode, targetColor, true);
+                                    targetChildren.Add(node);
+                                }
+                            }
+                            break;
+
+                        default:
+                            throw new NotImplementedException($"Unknown link type {link.LinkType}");
+                    }
+                }
+
+                childrenGroup.Nodes.AddRange(targetChildren);
+                childrenGroup.Nodes.AddRange(componentChildren);
+                childrenGroup.Nodes.AddRange(valueSetChildren);
+                childrenGroup.Nodes.AddRange(extensionChildren);
             }
 
             e.Render(parentsGroup, true);
-            String outputPath = Path.Combine(this.graphicsDir, FocusMapName(fragmentNode.Focus));
+            String outputPath = Path.Combine(this.graphicsDir, FocusMapName(focusNode));
             fc?.Mark(outputPath);
             e.Save(outputPath);
         }
 
 
-        void GraphNodes()
-        {
-            List<Task> tasks = new List<Task>();
-
-            foreach (FocusNode fragmentNode in this.focusNodes.Values)
-            {
-                if (fragmentNode.Focus.Name.Contains("Fragment") == false)
-                {
-                    Task t = Task.Run(() => this.GraphNode(fragmentNode));
-                    tasks.Add(t);
-                }
-            }
-            Task.WaitAll(tasks.ToArray());
-        }
-
-        void CreateNodes()
-        {
-            foreach (ResourceMap.Node mapNode in this.map.MapNodes)
-            {
-                FocusNode fNode = new FocusNode
-                {
-                    Focus = mapNode
-                };
-                if (this.focusNodes.TryAdd(mapNode.Name, fNode) == false)
-                    throw new Exception("Error inserting node into focus node dictionary");
-            }
-        }
-
         public void Create()
         {
-            this.CreateNodes();
-            this.LinkNodes();
-            this.GraphNodes();
+            //foreach (ResourceMap.Node focusNode in this.map.Nodes)
+            //{
+            //    switch (focusNode.Name)
+            //    {
+            //        case "MGAbnormalityAsymmetry":
+            //            this.GraphNode(focusNode);
+            //            break;
+            //    }
+            //}
+
+            List<Task> tasks = new List<Task>();
+            foreach (ResourceMap.Node focusNode in this.map.Nodes)
+            {
+                Task t = Task.Run(() => this.GraphNode(focusNode));
+                tasks.Add(t);
+            }
+            Task.WaitAll(tasks.ToArray());
         }
     }
 }

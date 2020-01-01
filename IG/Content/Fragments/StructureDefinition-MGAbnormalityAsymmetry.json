@@ -39,6 +39,14 @@
     },
     {
       "url": "http://www.fragment.com/maplink",
+      "valueString": "component|True|Observed Count^Integer or Range"
+    },
+    {
+      "url": "http://www.fragment.com/maplink",
+      "valueString": "component|True|Consistent With^CodeableConcept^http://hl7.org/fhir/us/breast-radiology/ValueSet/ConsistentWithVS"
+    },
+    {
+      "url": "http://www.fragment.com/maplink",
       "valueString": "valueSet|True|http://hl7.org/fhir/us/breast-radiology/ValueSet/MGAbnormalityAsymmetriesVS"
     }
   ],

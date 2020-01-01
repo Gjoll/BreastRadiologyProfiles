@@ -26,7 +26,7 @@ namespace BreastRadiology.XUnitTests
         Coding CodeOrientation => new Coding(ComponentSliceCodesUrl, "orientation");
         Coding CodeShape => new Coding(ComponentSliceCodesUrl, "shape");
         Coding CodeMargin => new Coding(ComponentSliceCodesUrl, "margin");
-        Coding CodeMGDensity=> new Coding(ComponentSliceCodesUrl, "mgDensity");
+        Coding CodeMGDensity => new Coding(ComponentSliceCodesUrl, "mgDensity");
 
         Coding ConsistentWithCodeValue => new Coding(ComponentSliceCodesUrl, "consistentWithValue");
         Coding ConsistentWithCodeQualifier => new Coding(ComponentSliceCodesUrl, "consistentWithQualifier");
@@ -59,6 +59,9 @@ namespace BreastRadiology.XUnitTests
                             new ConceptDef(Self.CodeShape, "Slicing Component Code - Shape"),
                             new ConceptDef(Self.CodeMargin, "Slicing Component Code - Margin"),
                             new ConceptDef(Self.CodeMGDensity, "Slicing Component Code - MGDensity"),
+
+                            new ConceptDef(Self.MGCodeCalcificationType, "Slicing Component Code - MGCalcificationType"),
+                            new ConceptDef(Self.MGCodeCalcificationDistribution, "Slicing Component Code - MGCalcificationDistribution")
                         })
              );
 

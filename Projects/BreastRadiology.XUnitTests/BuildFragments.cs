@@ -338,14 +338,6 @@ namespace BreastRadiology.XUnitTests
 
                 {
                     ResourceMap map = new ResourceMap();
-                    map.AddDir(this.fragmentDir, "*.json");
-
-                    FragmentMapMaker fragmentMapMaker = new FragmentMapMaker(this.fc, map, this.graphicsDir, this.pageDir, this.pageTemplateDir);
-                    fragmentMapMaker.Create();
-                }
-
-                {
-                    ResourceMap map = new ResourceMap();
                     map.CreateMapNode(ResourcesMaker.ClinicalImpressionUrl,
                         new string[] { "Clinical", "Impression" },
                         "StructureDefinition",
@@ -371,6 +363,12 @@ namespace BreastRadiology.XUnitTests
                         false);
 
                     map.AddDir(this.resourcesDir, "*.json");
+
+                    {
+                        FocusMapMaker focusMapMaker = new FocusMapMaker(this.fc, map, this.graphicsDir, this.pageDir);
+                        focusMapMaker.Create();
+                    }
+
                     {
                         ResourceMapMaker resourceMapMaker = new ResourceMapMaker(this.fc, map);
                         resourceMapMaker.AddLegendItem("DiagnosticReport", Color.LightGreen);
@@ -429,12 +427,16 @@ namespace BreastRadiology.XUnitTests
                         resourceMapMaker.Create(ResourcesMaker.CreateUrl("USFinding"),
                             Path.Combine(this.graphicsDir, "USFindings.svg"));
                     }
-
-                    {
-                        FocusMapMaker focusMapMaker = new FocusMapMaker(this.fc, map, this.graphicsDir, this.pageDir);
-                        focusMapMaker.Create();
-                    }
                 }
+
+                {
+                    ResourceMap map = new ResourceMap();
+                    map.AddDir(this.fragmentDir, "*.json");
+
+                    FragmentMapMaker fragmentMapMaker = new FragmentMapMaker(this.fc, map, this.graphicsDir, this.pageDir, this.pageTemplateDir);
+                    fragmentMapMaker.Create();
+                }
+
             }
             catch (Exception err)
             {
