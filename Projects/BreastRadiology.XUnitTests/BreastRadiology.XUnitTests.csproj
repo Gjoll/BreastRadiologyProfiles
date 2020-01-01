@@ -90,4 +90,8 @@
     </None>
   </ItemGroup>
 
+  <Target Name="PostBuild" AfterTargets="PostBuildEvent">
+    <Exec Command="copy $(SolutionDir)\Lib\Specification.zip $(TargetDir)" />
+  </Target>
+
 </Project>
