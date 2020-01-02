@@ -55,6 +55,7 @@ namespace BreastRadiology.XUnitTests
 
                 if (Self.Component_HasMember)
                 {
+                    e.Select("value[x]").Zero();
                     ProfileTargetSlice[] targets = new ProfileTargetSlice[]
                     {
                     new ProfileTargetSlice(Self.ObservedCount.Value(), 0, "1"),
@@ -69,6 +70,7 @@ namespace BreastRadiology.XUnitTests
                 }
                 else
                 {
+                    e.Select("value[x]").Zero();
                     ProfileTargetSlice[] targets = new ProfileTargetSlice[]
                     {
                     new ProfileTargetSlice(Self.MGAssociatedFeatures.Value(), 0, "1"),
@@ -77,11 +79,10 @@ namespace BreastRadiology.XUnitTests
                     e.AddProfileTargets(targets);
 
                     e.StartComponentSliceing();
-                    e.StartComponentSliceing();
-                    Self.ComponentSliceObservedCount(e);
-                    Self.ComponentSliceConsistentWith(e);
                     Self.ComponentMGCalcificationType(e);
                     Self.ComponentMGCalcificationDistribution(e);
+                    Self.ComponentSliceObservedCount(e);
+                    Self.ComponentSliceConsistentWith(e);
                 }
             });
     }

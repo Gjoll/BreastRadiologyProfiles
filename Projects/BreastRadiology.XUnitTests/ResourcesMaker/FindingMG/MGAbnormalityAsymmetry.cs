@@ -15,12 +15,12 @@ namespace BreastRadiology.XUnitTests
     partial class ResourcesMaker : ConverterBase
     {
 
-        CSTaskVar MGAbnormalityAsymmetryRefinementCS = new CSTaskVar(
+        CSTaskVar MGAbnormalityAsymmetryTypeCS = new CSTaskVar(
              () =>
                  Self.CreateCodeSystem(
-                    "MGAbnormalityAsymmetryRefinementCS",
-                    "Mammography Asymmetry Refinement CodeSystem",
-                     "MG Asymmetry Refinement/CodeSystem",
+                    "MGAbnormalityAsymmetryTypeCS",
+                    "Mammography Asymmetry Type CodeSystem",
+                     "MG Asymmetry Type/CodeSystem",
                     "Mammography asymmetry abnormality type code system.",
                      Group_MGCodesCS,
                     new ConceptDef[]
@@ -87,7 +87,7 @@ namespace BreastRadiology.XUnitTests
                     "MG Asymmetry/ValueSet",
                    "Mammography asymmetry abnormality types value set.",
                     Group_MGCodesVS,
-                    Self.MGAbnormalityAsymmetryRefinementCS.Value()
+                    Self.MGAbnormalityAsymmetryTypeCS.Value()
                     )
             );
 
@@ -163,15 +163,17 @@ namespace BreastRadiology.XUnitTests
                     e.SliceByUrl("hasMember", targets);
                     e.AddProfileTargets(targets);
 
+                    e.Select("value[x]").Zero();
                     e.StartComponentSliceing();
+                    e.ComponentSliceCodeableConcept("mgAbnormalityAsymmetryType",
+                        Self.MGCodeAbnormalityAsymmetryType.ToCodeableConcept(),
+                        binding,
+                        BindingStrength.Required,
+                        1,
+                        "1",
+                        "MG AbnormalityAsymmetry Type");
                     Self.ComponentSliceObservedCount(e);
                     Self.ComponentSliceConsistentWith(e);
-
-                    e.Select("value[x]")
-                        .Type("CodeableConcept")
-                        .Binding(binding.Url, BindingStrength.Required)
-                        ;
-                    e.AddValueSetLink(binding);
                 }
             });
     }

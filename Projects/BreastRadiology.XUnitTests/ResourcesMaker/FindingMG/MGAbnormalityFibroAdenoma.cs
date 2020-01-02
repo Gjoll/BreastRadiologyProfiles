@@ -53,19 +53,28 @@ namespace BreastRadiology.XUnitTests
 
                     e.SliceByUrl("hasMember", targets);
                     e.AddProfileTargets(targets);
+
+                    e.Select("value[x]")
+                        .ZeroToOne()
+                        .Type("CodeableConcept")
+                        .Binding(binding.Url, BindingStrength.Required)
+                        ;
+                    e.AddValueSetLink(binding);
                 }
                 else
                 {
+                    e.Select("value[x]").Zero();
+
                     e.StartComponentSliceing();
+                    e.ComponentSliceCodeableConcept("mgAbnormalityFibroAdenomaType",
+                        Self.MGCodeAbnormalityFibroAdenomaType.ToCodeableConcept(),
+                        binding,
+                        BindingStrength.Required,
+                        1,
+                        "1",
+                        "MG AbnormalityFibroAdenoma Type");
                     Self.ComponentSliceObservedCount(e);
                 }
-
-                e.Select("value[x]")
-                    .ZeroToOne()
-                    .Type("CodeableConcept")
-                    .Binding(binding.Url, BindingStrength.Required)
-                    ;
-                e.AddValueSetLink(binding);
             });
     }
 }

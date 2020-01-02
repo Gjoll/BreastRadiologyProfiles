@@ -17,8 +17,8 @@ namespace BreastRadiology.XUnitTests
              () =>
                  Self.CreateCodeSystem(
                         "MGAbnormalityLymphNodeCS",
-                        "Mammography Lymph Node Refinement CodeSystem",
-                         "MG Lymph Node Refinement/CodeSystem",
+                        "Mammography Lymph Node Type CodeSystem",
+                         "MG Lymph Node Type/CodeSystem",
                         "Mammography lymph node abnormality types code system.",
                          Group_MGCodesCS,
                         new ConceptDef[]
@@ -116,13 +116,6 @@ namespace BreastRadiology.XUnitTests
                     .Refinement(binding, "LymphNode")
                     ;
 
-                e.Select("value[x]")
-                        .ZeroToOne()
-                        .Type("CodeableConcept")
-                        .Binding(binding.Url, BindingStrength.Required)
-                        ;
-                e.AddValueSetLink(binding);
-
                 if (Self.Component_HasMember)
                 {
                     ProfileTargetSlice[] targets = new ProfileTargetSlice[]
@@ -131,10 +124,25 @@ namespace BreastRadiology.XUnitTests
                     };
                     e.SliceByUrl("hasMember", targets);
                     e.AddProfileTargets(targets);
+
+                    e.Select("value[x]")
+                            .ZeroToOne()
+                            .Type("CodeableConcept")
+                            .Binding(binding.Url, BindingStrength.Required)
+                            ;
+                    e.AddValueSetLink(binding);
                 }
                 else
                 {
+                    e.Select("value[x]").Zero();
                     e.StartComponentSliceing();
+                    e.ComponentSliceCodeableConcept("mgAbnormalityLymphNodeType",
+                        Self.MGCodeAbnormalityLymphNodeType.ToCodeableConcept(),
+                        binding,
+                        BindingStrength.Required,
+                        1,
+                        "1",
+                        "MG AbnormalityAsymmetry Type");
                     Self.ComponentSliceObservedCount(e);
                 }
             });

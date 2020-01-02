@@ -50,12 +50,14 @@ namespace BreastRadiology.XUnitTests
                     };
                     e.SliceByUrl("hasMember", targets);
                     e.AddProfileTargets(targets);
+                    e.Select("value[x]").Zero();
                 }
                 else
                 {
                     e.StartComponentSliceing();
                     Self.ComponentSliceObservedCount(e);
                     Self.ComponentSliceConsistentWith(e);
+                    e.Select("value[x]").Zero();
                 }
             });
     }

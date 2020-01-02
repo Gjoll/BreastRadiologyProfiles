@@ -13,12 +13,12 @@ namespace BreastRadiology.XUnitTests
 {
     partial class ResourcesMaker : ConverterBase
     {
-        CSTaskVar MGAbnormalityCystRefinementCS = new CSTaskVar(
+        CSTaskVar MGAbnormalityCystTypeCS = new CSTaskVar(
              () =>
                  Self.CreateCodeSystem(
-                        "MGAbnormalityCystRefinementCS",
-                        "Mammography Cyst Refinement CodeSystem",
-                         "MG Cyst Refinement/CodeSystem",
+                        "MGAbnormalityCystTypeCS",
+                        "Mammography Cyst Type CodeSystem",
+                         "MG Cyst Type/CodeSystem",
                         "Mammography cyst abnormality type CodeSystem.",
                          Group_MGCodesCS,
                         new ConceptDef[]
@@ -61,7 +61,7 @@ namespace BreastRadiology.XUnitTests
                     "MG Cyst/ValueSet",
                    "Mammography cyst abnormality types value set.",
                     Group_MGCodesVS,
-                    Self.MGAbnormalityCystRefinementCS.Value()
+                    Self.MGAbnormalityCystTypeCS.Value()
                     )
             );
 
@@ -114,18 +114,27 @@ namespace BreastRadiology.XUnitTests
                     };
                     e.SliceByUrl("hasMember", targets);
                     e.AddProfileTargets(targets);
+
+                    e.Select("value[x]")
+                        .Type("CodeableConcept")
+                        .Binding(binding.Url, BindingStrength.Required)
+                        ;
                 }
                 else
                 {
+                    e.Select("value[x]").Zero();
                     e.StartComponentSliceing();
+                    e.ComponentSliceCodeableConcept("mgAbnormalityCystType",
+                        Self.MGCodeAbnormalityCystType.ToCodeableConcept(),
+                        binding,
+                        BindingStrength.Required,
+                        1,
+                        "1",
+                        "MG AbnormalityCyst Type");
                     Self.ComponentSliceObservedCount(e);
                     Self.ComponentSliceConsistentWith(e);
                 }
 
-                e.Select("value[x]")
-                    .Type("CodeableConcept")
-                    .Binding(binding.Url, BindingStrength.Required)
-                    ;
                 e.AddValueSetLink(binding);
             });
     }

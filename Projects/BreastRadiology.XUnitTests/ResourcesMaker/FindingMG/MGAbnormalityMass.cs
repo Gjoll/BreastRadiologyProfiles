@@ -13,22 +13,22 @@ namespace BreastRadiology.XUnitTests
 {
     partial class ResourcesMaker : ConverterBase
     {
-        VSTaskVar MassRefinementValueSetVS = new VSTaskVar(
+        VSTaskVar MassTypeValueSetVS = new VSTaskVar(
             () =>
                 Self.CreateValueSet(
-                        "MassRefinementValueSetVS",
-                        "Mass Refinement ValueSet",
-                        "Mass Refinement/ValueSet",
+                        "MassTypeValueSetVS",
+                        "Mass Type ValueSet",
+                        "Mass Type/ValueSet",
                         "Mass type value set.",
                         Group_MGCodesVS,
-                        Self.CSMassRefinement.Value()
+                        Self.CSMassType.Value()
                     )
             );
 
         StringTaskVar MGAbnormalityMass = new StringTaskVar(
             (out String s) =>
             {
-                ValueSet binding = Self.MassRefinementValueSetVS.Value();
+                ValueSet binding = Self.MassTypeValueSetVS.Value();
 
                 SDefEditor e = Self.CreateEditor("MGMass",
                         "Mammography Mass",
@@ -61,13 +61,6 @@ namespace BreastRadiology.XUnitTests
                     .Refinement(binding, "Mass")
                     ;
 
-                e.Select("value[x]")
-                    .ZeroToOne()
-                    .Type("CodeableConcept")
-                    .Binding(binding.Url, BindingStrength.Required)
-                    ;
-                e.AddValueSetLink(binding);
-
                 if (Self.Component_HasMember)
                 {
                     ProfileTargetSlice[] targets = new ProfileTargetSlice[]
@@ -78,6 +71,13 @@ namespace BreastRadiology.XUnitTests
                     };
                     e.SliceByUrl("hasMember", targets);
                     e.AddProfileTargets(targets);
+
+                    e.Select("value[x]")
+                        .ZeroToOne()
+                        .Type("CodeableConcept")
+                        .Binding(binding.Url, BindingStrength.Required)
+                        ;
+                    e.AddValueSetLink(binding);
                 }
                 else
                 {
@@ -88,7 +88,16 @@ namespace BreastRadiology.XUnitTests
                     e.SliceByUrl("hasMember", targets);
                     e.AddProfileTargets(targets);
 
+                    e.Select("value[x]").Zero();
+
                     e.StartComponentSliceing();
+                    e.ComponentSliceCodeableConcept("mgAbnormalityMassType",
+                        Self.MGCodeAbnormalityMassType.ToCodeableConcept(),
+                        binding,
+                        BindingStrength.Required,
+                        1,
+                        "1",
+                        "MG AbnormalityMass Type");
                     Self.ComponentSliceObservedCount(e);
                     Self.ComponentSliceConsistentWith(e);
                 }

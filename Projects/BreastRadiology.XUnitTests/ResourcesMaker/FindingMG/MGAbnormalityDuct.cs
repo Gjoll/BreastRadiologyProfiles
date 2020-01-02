@@ -17,8 +17,8 @@ namespace BreastRadiology.XUnitTests
              () =>
                  Self.CreateCodeSystem(
                         "MGAbnormalityDuctCS",
-                        "Mammography Duct Refinement CodeSystem",
-                         "MG Duct Refinement/CodeSystem",
+                        "Mammography Duct Type CodeSystem",
+                         "MG Duct Type/CodeSystem",
                         "Mammography duct abnormality types code system.",
                          Group_MGCodesCS,
                         new ConceptDef[]
@@ -89,13 +89,6 @@ namespace BreastRadiology.XUnitTests
                     .Refinement(binding, "Duct")
                     ;
 
-                e.Select("value[x]")
-                    .ZeroToOne()
-                    .Type("CodeableConcept")
-                    .Binding(binding.Url, BindingStrength.Required)
-                    ;
-                e.AddValueSetLink(binding);
-
                 if (Self.Component_HasMember)
                 {
                     ProfileTargetSlice[] targets = new ProfileTargetSlice[]
@@ -105,10 +98,26 @@ namespace BreastRadiology.XUnitTests
                     };
                     e.SliceByUrl("hasMember", targets);
                     e.AddProfileTargets(targets);
+
+                    e.Select("value[x]")
+                        .ZeroToOne()
+                        .Type("CodeableConcept")
+                        .Binding(binding.Url, BindingStrength.Required)
+                        ;
+                    e.AddValueSetLink(binding);
                 }
                 else
                 {
+                    e.Select("value[x]").Zero();
+
                     e.StartComponentSliceing();
+                    e.ComponentSliceCodeableConcept("mgAbnormalityDuctType",
+                        Self.MGCodeAbnormalityDuctType.ToCodeableConcept(),
+                        binding,
+                        BindingStrength.Required,
+                        1,
+                        "1",
+                        "MG AbnormalityDuct Type");
                     Self.ComponentSliceConsistentWith(e);
                     Self.ComponentSliceObservedCount(e);
                 }

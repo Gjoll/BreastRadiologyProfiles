@@ -49,6 +49,7 @@ namespace BreastRadiology.XUnitTests
 
                 if (Self.Component_HasMember)
                 {
+                    e.Select("value[x]").Zero();
                     ProfileTargetSlice[] targets = new ProfileTargetSlice[]
                     {
                     new ProfileTargetSlice(Self.ConsistentWith.Value(), 0, "*"),
@@ -58,6 +59,7 @@ namespace BreastRadiology.XUnitTests
                 }
                 else
                 {
+                    e.Select("value[x]").Zero();
                     e.StartComponentSliceing();
                     Self.ComponentSliceConsistentWith(e);
                 }

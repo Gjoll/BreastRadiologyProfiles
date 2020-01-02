@@ -14,12 +14,12 @@ namespace BreastRadiology.XUnitTests
 {
     partial class ResourcesMaker
     {
-       CSTaskVar CSMassRefinement = new CSTaskVar(
+       CSTaskVar CSMassType = new CSTaskVar(
             () =>
                 Self.CreateCodeSystem(
-                        "MassRefinementCS",
-                        "Mass Refinement CodeSystem",
-                        "Mass/Refinement/CodeSystem",
+                        "MassTypeCS",
+                        "Mass Type CodeSystem",
+                        "Mass/Type/CodeSystem",
                         "Codes defining mass refinements.",
                         Group_CommonCodesCS,
                         new ConceptDef[]

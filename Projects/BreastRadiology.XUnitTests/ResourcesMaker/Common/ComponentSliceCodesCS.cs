@@ -34,6 +34,20 @@ namespace BreastRadiology.XUnitTests
         Coding MGCodeCalcificationType => new Coding(ComponentSliceCodesUrl, "mgCalcificationType");
         Coding MGCodeCalcificationDistribution => new Coding(ComponentSliceCodesUrl, "mgCalcificationDistribution");
 
+        Coding MGCodeAbnormalityAsymmetryType => new Coding(ComponentSliceCodesUrl, "mgAbnormalityAsymmetryType");
+        Coding MGCodeAbnormalityDensityType => new Coding(ComponentSliceCodesUrl, "mgAbnormalityDensityType");
+        Coding MGCodeAbnormalityMassType => new Coding(ComponentSliceCodesUrl, "mgAbnormalityMassType");
+        Coding MGCodeAbnormalityLymphNodeType => new Coding(ComponentSliceCodesUrl, "mgAbnormalityLymphNodeType");
+        Coding MGCodeAbnormalityForeignObjectType => new Coding(ComponentSliceCodesUrl, "mgAbnormalityForeignObjectType");
+        Coding MGCodeAbnormalityFibroAdenomaType => new Coding(ComponentSliceCodesUrl, "mgAbnormalityFibroAdenomaType");
+        Coding MGCodeAbnormalityDuctType => new Coding(ComponentSliceCodesUrl, "mgAbnormalityDuctType");
+        Coding MGCodeAbnormalityCystType => new Coding(ComponentSliceCodesUrl, "mgAbnormalityCystType");
+        Coding MGCodeAbnormalityXXYYZType => new Coding(ComponentSliceCodesUrl, "mgAbnormalityXXYYZType");
+        //Coding MGCodeAbnormalityXXYYZType => new Coding(ComponentSliceCodesUrl, "mgAbnormalityXXYYZType");
+        //Coding MGCodeAbnormalityXXYYZType => new Coding(ComponentSliceCodesUrl, "mgAbnormalityXXYYZType");
+        //Coding MGCodeAbnormalityXXYYZType => new Coding(ComponentSliceCodesUrl, "mgAbnormalityXXYYZType");
+
+
 
         CSTaskVar ComponentSliceCodesCS = new CSTaskVar(
              () =>

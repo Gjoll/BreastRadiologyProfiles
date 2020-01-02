@@ -1,26 +1,21 @@
-using System;
-using System.Collections.Generic;
-using System.Diagnostics;
-using System.IO;
-using System.Linq;
-using System.Text;
 using FhirKhit.Tools;
 using FhirKhit.Tools.R4;
 using Hl7.Fhir.Model;
-using Hl7.Fhir.Serialization;
+using System;
+using System.Linq;
 
 namespace BreastRadiology.XUnitTests
 {
     partial class ResourcesMaker : ConverterBase
     {
 
-        CSTaskVar MGAbnormalityDensityCS = new CSTaskVar(
+        CSTaskVar MGAbnormalityDensityTypeCS = new CSTaskVar(
              () =>
                  Self.CreateCodeSystem(
-                        "MGAbnormalityDensityCS",
-                        "Mammography Density Refinement CodeSystem",
-                         "MG Density Refinement/CodeSystem",
-                        "Mammography density abnormality types code system.",
+                        "MGAbnormalityDensityTypeCS",
+                        "Mammography Density Type CodeSystem",
+                         "MG Density Type/CodeSystem",
+                        "Mammography density abnormality refinement types code system.",
                          Group_MGCodesCS,
                         new ConceptDef[]
                          {
@@ -44,15 +39,15 @@ namespace BreastRadiology.XUnitTests
                  );
 
 
-        VSTaskVar MGAbnormalityDensityVS = new VSTaskVar(
+        VSTaskVar MGAbnormalityDensityTypeVS = new VSTaskVar(
             () =>
                 Self.CreateValueSet(
-                   "MGAbnormalityDensityVS",
-                   "Mammography Density ValueSet",
-                    "MG Density/ValueSet",
-                   "Mammography density abnormality types value set.",
+                   "MGAbnormalityDensityTypeVS",
+                   "Mammography Density Type ValueSet",
+                    "MG Density Type/ValueSet",
+                   "Mammography density abnormality refinement value set.",
                     Group_MGCodesVS,
-                    Self.MGAbnormalityDensityCS.Value()
+                    Self.MGAbnormalityDensityTypeCS.Value()
                     )
             );
 
@@ -60,7 +55,7 @@ namespace BreastRadiology.XUnitTests
         StringTaskVar MGAbnormalityDensity = new StringTaskVar(
             (out String s) =>
             {
-                ValueSet binding = Self.MGAbnormalityDensityVS.Value();
+                ValueSet binding = Self.MGAbnormalityDensityTypeVS.Value();
 
                 SDefEditor e = Self.CreateEditor("MGAbnormalityDensity",
                         "Mammography Density",
@@ -87,13 +82,6 @@ namespace BreastRadiology.XUnitTests
                     .Refinement(binding, "Density")
                     ;
 
-                e.Select("value[x]")
-                    .ZeroToOne()
-                    .Type("CodeableConcept")
-                    .Binding(binding.Url, BindingStrength.Required)
-                    ;
-                e.AddValueSetLink(binding);
-
                 if (Self.Component_HasMember)
                 {
                     ProfileTargetSlice[] targets = new ProfileTargetSlice[]
@@ -103,10 +91,26 @@ namespace BreastRadiology.XUnitTests
                     };
                     e.SliceByUrl("hasMember", targets);
                     e.AddProfileTargets(targets);
+
+                    e.Select("value[x]")
+                        .Single()
+                        .Type("CodeableConcept")
+                        .Binding(binding.Url, BindingStrength.Required)
+                        ;
+                    e.AddValueSetLink(binding);
                 }
                 else
                 {
+                    e.Select("value[x]").Zero();
+                    e.AddValueSetLink(binding);
                     e.StartComponentSliceing();
+                    e.ComponentSliceCodeableConcept("mgAbnormalityDensityType",
+                        Self.MGCodeAbnormalityDensityType.ToCodeableConcept(),
+                        binding,
+                        BindingStrength.Required,
+                        1,
+                        "1",
+                        "MG AbnormalityDensity Type");
                     Self.ComponentSliceObservedCount(e);
                     Self.ComponentSliceConsistentWith(e);
                 }
