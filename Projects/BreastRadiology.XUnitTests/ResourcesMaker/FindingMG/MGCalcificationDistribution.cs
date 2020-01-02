@@ -93,53 +93,53 @@ namespace BreastRadiology.XUnitTests
             );
 
 
-        StringTaskVar MGCalcificationDistribution = new StringTaskVar(
-            (out String s) =>
-            {
-                ValueSet binding = Self.MGCalcificationDistributionVS.Value();
+        //#StringTaskVar MGCalcificationDistribution = new StringTaskVar(
+        //    (out String s) =>
+        //    {
+        //        ValueSet binding = Self.MGCalcificationDistributionVS.Value();
 
-                {
-                    IntroDoc valueSetIntroDoc = new IntroDoc(Path.Combine(Self.pageDir, $"ValueSet-{binding.Name}-intro.xml"));
-                    valueSetIntroDoc
-                        .ReviewedStatus(ReviewStatus.NotReviewed)
-                        .ValueSet(binding);
-                    ;
-                    String outputPath = valueSetIntroDoc.Save();
-                    Self.fc?.Mark(outputPath);
-                }
+        //        {
+        //            IntroDoc valueSetIntroDoc = new IntroDoc(Path.Combine(Self.pageDir, $"ValueSet-{binding.Name}-intro.xml"));
+        //            valueSetIntroDoc
+        //                .ReviewedStatus(ReviewStatus.NotReviewed)
+        //                .ValueSet(binding);
+        //            ;
+        //            String outputPath = valueSetIntroDoc.Save();
+        //            Self.fc?.Mark(outputPath);
+        //        }
 
-                SDefEditor e = Self.CreateEditor("MGCalcificationDistribution",
-                        "Mammography Calcification Distribution",
-                        "MG Calc./Distribution",
-                        ObservationUrl,
-                        $"{Group_MGResources}/Calcification/Distribution")
-                    .Description("Breast Radiology Mammography Calcification Distribution Observation",
-                        new Markdown()
-                            .Paragraph("This resource describes the calcification distribution observed.")
-                            .BiradHeader()
-                            .BlockQuote("These descriptors are used to indicate the arrangement of calcifications in the breast. Multiple")
-                            .BlockQuote("similar groups may be described in the report when there is more than one group of calcifications")
-                            .BlockQuote("that are similar in morphology and distribution. In evaluating the likelihood of malignancy for calcifications, ")
-                            .BlockQuote("distribution is at least as important as morphology.")
-                            .BiradFooter()
-                            //.Todo
-                    )
-                    .AddFragRef(Self.ObservationNoDeviceFragment.Value())
-                    .AddFragRef(Self.ObservationCodedValueFragment.Value())
-                    .AddFragRef(Self.ObservationLeafFragment.Value())
-                    ;
-                s = e.SDef.Url;
+        //        SDefEditor e = Self.CreateEditor("MGCalcificationDistribution",
+        //                "Mammography Calcification Distribution",
+        //                "MG Calc./Distribution",
+        //                ObservationUrl,
+        //                $"{Group_MGResources}/Calcification/Distribution")
+        //            .Description("Breast Radiology Mammography Calcification Distribution Observation",
+        //                new Markdown()
+        //                    .Paragraph("This resource describes the calcification distribution observed.")
+        //                    .BiradHeader()
+        //                    .BlockQuote("These descriptors are used to indicate the arrangement of calcifications in the breast. Multiple")
+        //                    .BlockQuote("similar groups may be described in the report when there is more than one group of calcifications")
+        //                    .BlockQuote("that are similar in morphology and distribution. In evaluating the likelihood of malignancy for calcifications, ")
+        //                    .BlockQuote("distribution is at least as important as morphology.")
+        //                    .BiradFooter()
+        //                    //.Todo
+        //            )
+        //            .AddFragRef(Self.ObservationNoDeviceFragment.Value())
+        //            .AddFragRef(Self.ObservationCodedValueFragment.Value())
+        //            .AddFragRef(Self.ObservationLeafFragment.Value())
+        //            ;
+        //        s = e.SDef.Url;
 
-                e.IntroDoc
-                    .ReviewedStatus(ReviewStatus.NotReviewed)
-                    .CodedObservationLeafNode("a mammography calcification distribution", binding)
-                    ;
+        //        e.IntroDoc
+        //            .ReviewedStatus(ReviewStatus.NotReviewed)
+        //            .CodedObservationLeafNode("a mammography calcification distribution", binding)
+        //            ;
 
-                e.Select("value[x]")
-                    .Type("CodeableConcept")
-                    .Binding(binding.Url, BindingStrength.Required)
-                    ;
-                e.AddValueSetLink(binding);
-            });
+        //        e.Select("value[x]")
+        //            .Type("CodeableConcept")
+        //            .Binding(binding.Url, BindingStrength.Required)
+        //            ;
+        //        e.AddValueSetLink(binding);
+        //    });
     }
 }

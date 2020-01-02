@@ -76,7 +76,7 @@ namespace BreastRadiology.XUnitTests
 
         void GraphNode(ResourceMap.Node focusNode)
         {
-            if (focusNode.Name.Contains("Fragment") == true)
+            if (focusNode.Name.Contains("Fragment", new StringComparison()) == true)
                 return;
 
             SvgEditor e = new SvgEditor();

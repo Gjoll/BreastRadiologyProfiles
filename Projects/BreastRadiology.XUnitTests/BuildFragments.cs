@@ -14,11 +14,12 @@ using BreastRadiology.XUnitTests;
 using System.Drawing;
 using ExcelDataReader;
 using System.Data;
+using System.Globalization;
 
 namespace BreastRadiology.XUnitTests
 {
     [TestClass]
-    public class BuildFragments
+    public sealed class BuildFragments : IDisposable
     {
         const String baseDir = "BreastRadiology2020FebBallot";
 
@@ -33,6 +34,10 @@ namespace BreastRadiology.XUnitTests
         String pageTemplateDir;
         String mergedDir;
 
+        public void Dispose()
+        {
+            this.fc?.Dispose();
+        }
 
         public BuildFragments()
         {
@@ -55,7 +60,7 @@ namespace BreastRadiology.XUnitTests
 
         private bool StatusWarnings(string className, string method, string msg)
         {
-            if (msg.Contains(" does not resolve"))
+            if (msg.Contains(" does not resolve", new System.StringComparison()))
                 return true;
 
             this.Message("Warn", className, method, msg);
@@ -63,13 +68,13 @@ namespace BreastRadiology.XUnitTests
         }
         private bool StatusInfo(string className, string method, string msg)
         {
-            if (msg.Contains(" does not resolve"))
+            if (msg.Contains(" does not resolve", new System.StringComparison()))
                 return true;
 
-            if (msg.Contains("http://www.fragment.com"))
+            if (msg.Contains("http://www.fragment.com", new System.StringComparison()))
                 return true;
 
-            if (msg.Contains("Unknown Code System"))
+            if (msg.Contains("Unknown Code System", new System.StringComparison()))
                 return true;
 
             this.Message("Info", className, method, msg);
@@ -77,9 +82,9 @@ namespace BreastRadiology.XUnitTests
         }
         private bool StatusErrors(string className, string method, string msg)
         {
-            if (msg.Contains(" does not resolve"))
+            if (msg.Contains(" does not resolve", new System.StringComparison()))
                 return true;
-            if (msg.Contains("Unknown Code System"))
+            if (msg.Contains("Unknown Code System", new System.StringComparison()))
                 return true;
 
             this.Message("Error", className, method, msg);
@@ -115,13 +120,13 @@ namespace BreastRadiology.XUnitTests
             {
                 while (true)
                 {
-                    Int32 j = value.IndexOf(' ');
+                    Int32 j = value.IndexOf(' ', new StringComparison());
                     if (j < 0)
                         break;
                     String temp = value.Substring(0, j);
                     while (value[j] == ' ')
                         j += 1;
-                    temp += Char.ToUpper(value[j]);
+                    temp += Char.ToUpper(value[j], CultureInfo.InvariantCulture);
                     temp += value.Substring(j + 1);
                     value = temp;
                 }
@@ -314,18 +319,18 @@ namespace BreastRadiology.XUnitTests
         [TestMethod]
         public void FullBuild()
         {
-            fc = new FileCleaner();
-            this.fc?.Add(this.graphicsDir, "*.svg");
-            this.fc?.Add(this.pageDir, "*.xml");
-            this.fc?.Add(this.fragmentDir, "*.json");
-            this.fc?.Add(this.resourcesDir, "*.json");
+            using (this.fc = new FileCleaner())
+            {
+                this.fc?.Add(this.graphicsDir, "*.svg");
+                this.fc?.Add(this.pageDir, "*.xml");
+                this.fc?.Add(this.fragmentDir, "*.json");
+                this.fc?.Add(this.resourcesDir, "*.json");
 
-            this.A_BuildFragments();
-            this.B_BuildResources();
-            this.C_BuildGraphics();
-            this.D_BuildIG();
-
-            this.fc?.DeleteUnMarkedFiles();
+                this.A_BuildFragments();
+                this.B_BuildResources();
+                this.C_BuildGraphics();
+                this.D_BuildIG();
+            }
         }
 
         [TestMethod]

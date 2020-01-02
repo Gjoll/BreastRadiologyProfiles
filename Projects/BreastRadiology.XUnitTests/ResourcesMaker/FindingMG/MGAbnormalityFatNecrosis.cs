@@ -41,10 +41,16 @@ namespace BreastRadiology.XUnitTests
                     .ObservationSection("Mammography Fat Necrosis")
                     ;
 
+                e.Select("value[x]").Zero();
+                ProfileTargetSlice[] targets = new ProfileTargetSlice[]
+                {
+                    new ProfileTargetSlice(Self.ConsistentWith.Value(), 0, "*"),
+                };
+                e.SliceByUrl("hasMember", targets);
+                e.AddProfileTargets(targets);
+
                 e.StartComponentSliceing();
                 Self.ComponentSliceObservedCount(e);
-                Self.ComponentSliceConsistentWith(e);
-                e.Select("value[x]").Zero();
             });
     }
 }

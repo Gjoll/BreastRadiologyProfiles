@@ -201,47 +201,47 @@ namespace BreastRadiology.XUnitTests
             );
 
 
-        StringTaskVar MGCalcificationType = new StringTaskVar(
-            (out String s) =>
-            {
-                ValueSet binding = Self.MGCalcificationTypeVS.Value();
+        //#StringTaskVar MGCalcificationType = new StringTaskVar(
+        //    (out String s) =>
+        //    {
+        //        ValueSet binding = Self.MGCalcificationTypeVS.Value();
 
-                {
-                    IntroDoc valueSetIntroDoc = new IntroDoc(Path.Combine(Self.pageDir, $"ValueSet-{binding.Name}-intro.xml"));
-                    valueSetIntroDoc
-                        .ReviewedStatus(ReviewStatus.NotReviewed)
-                        .ValueSet(binding);
-                    ;
-                    String outputPath = valueSetIntroDoc.Save();
-                    Self.fc?.Mark(outputPath);
-                }
+        //        {
+        //            IntroDoc valueSetIntroDoc = new IntroDoc(Path.Combine(Self.pageDir, $"ValueSet-{binding.Name}-intro.xml"));
+        //            valueSetIntroDoc
+        //                .ReviewedStatus(ReviewStatus.NotReviewed)
+        //                .ValueSet(binding);
+        //            ;
+        //            String outputPath = valueSetIntroDoc.Save();
+        //            Self.fc?.Mark(outputPath);
+        //        }
 
-                SDefEditor e = Self.CreateEditor("MGCalcificationType",
-                    "Mammography Calcification Type",
-                    "MG Calc. Type",
-                    ObservationUrl,
-                    $"{Group_MGResources}/Calcification/Type")
-                    .Description("Breast Radiology Mammography Calcification Type Observation",
-                        new Markdown()
-                            .Paragraph("This resource describes the type of calcification observed.")
-                            //.Todo
-                     )
-                    .AddFragRef(Self.ObservationNoDeviceFragment.Value())
-                    .AddFragRef(Self.ObservationCodedValueFragment.Value())
-                    .AddFragRef(Self.ObservationLeafFragment.Value())
-                    ;
-                s = e.SDef.Url;
+        //        SDefEditor e = Self.CreateEditor("MGCalcificationType",
+        //            "Mammography Calcification Type",
+        //            "MG Calc. Type",
+        //            ObservationUrl,
+        //            $"{Group_MGResources}/Calcification/Type")
+        //            .Description("Breast Radiology Mammography Calcification Type Observation",
+        //                new Markdown()
+        //                    .Paragraph("This resource describes the type of calcification observed.")
+        //                    //.Todo
+        //             )
+        //            .AddFragRef(Self.ObservationNoDeviceFragment.Value())
+        //            .AddFragRef(Self.ObservationCodedValueFragment.Value())
+        //            .AddFragRef(Self.ObservationLeafFragment.Value())
+        //            ;
+        //        s = e.SDef.Url;
 
-                e.IntroDoc
-                    .ReviewedStatus(ReviewStatus.NotReviewed)
-                    .CodedObservationLeafNode("a mammography calcification type", binding)
-                    ;
+        //        e.IntroDoc
+        //            .ReviewedStatus(ReviewStatus.NotReviewed)
+        //            .CodedObservationLeafNode("a mammography calcification type", binding)
+        //            ;
 
-                e.Select("value[x]")
-                    .Type("CodeableConcept")
-                    .Binding(binding.Url, BindingStrength.Required)
-                    ;
-                e.AddValueSetLink(binding);
-            });
+        //        e.Select("value[x]")
+        //            .Type("CodeableConcept")
+        //            .Binding(binding.Url, BindingStrength.Required)
+        //            ;
+        //        e.AddValueSetLink(binding);
+        //    });
     }
 }

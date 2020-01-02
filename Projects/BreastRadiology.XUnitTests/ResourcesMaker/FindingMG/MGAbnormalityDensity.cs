@@ -83,7 +83,14 @@ namespace BreastRadiology.XUnitTests
                     ;
 
                 e.Select("value[x]").Zero();
-                e.AddValueSetLink(binding);
+
+                ProfileTargetSlice[] targets = new ProfileTargetSlice[]
+                {
+                    new ProfileTargetSlice(Self.ConsistentWith.Value(), 0, "*")
+                };
+                e.SliceByUrl("hasMember", targets);
+                e.AddProfileTargets(targets);
+
                 e.StartComponentSliceing();
                 e.ComponentSliceCodeableConcept("mgAbnormalityDensityType",
                     Self.MGCodeAbnormalityDensityType.ToCodeableConcept(),
@@ -93,7 +100,6 @@ namespace BreastRadiology.XUnitTests
                     "1",
                     "MG AbnormalityDensity Type");
                 Self.ComponentSliceObservedCount(e);
-                Self.ComponentSliceConsistentWith(e);
             });
     }
 }

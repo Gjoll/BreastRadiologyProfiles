@@ -9,7 +9,7 @@ namespace BreastRadiology.XUnitTests
     {
 
         public String SliceName { get; }
-        public String Short { get; }
+        public String ShortDefinition { get; }
         public Markdown Definition { get; }
         public Element Pattern { get; }
         public Int32 Min { get; }
@@ -23,7 +23,7 @@ namespace BreastRadiology.XUnitTests
             String max)
         {
             this.SliceName = sliceName;
-            this.Short = shortStr;
+            this.ShortDefinition = shortStr;
             this.Definition = definition;
             this.Pattern = pattern;
             this.Min = min;

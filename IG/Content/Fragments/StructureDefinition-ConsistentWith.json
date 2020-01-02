@@ -1,0 +1,208 @@
+{
+  "resourceType": "StructureDefinition",
+  "extension": [
+    {
+      "url": "http://www.fragment.com/mapname",
+      "valueString": "Consistent/With"
+    },
+    {
+      "url": "http://www.fragment.com/Group",
+      "valueString": "CommonResources/ConsistentWith"
+    },
+    {
+      "url": "http://www.fragment.com/fragment",
+      "valueUrl": "http://hl7.org/fhir/us/breast-radiology/StructureDefinition/BreastRadObservationNoDeviceFragment"
+    },
+    {
+      "url": "http://www.fragment.com/maplink",
+      "valueString": "fragment|True|http://hl7.org/fhir/us/breast-radiology/StructureDefinition/BreastRadObservationNoDeviceFragment"
+    },
+    {
+      "url": "http://www.fragment.com/maplink",
+      "valueString": "component|True|Value^CodeableConcept^http://hl7.org/fhir/us/breast-radiology/ValueSet/ConsistentWithVS"
+    },
+    {
+      "url": "http://www.fragment.com/maplink",
+      "valueString": "component|True|Qualifier^CodeableConcept^http://hl7.org/fhir/us/breast-radiology/ValueSet/ConsistentWithQualifierVS"
+    }
+  ],
+  "url": "http://hl7.org/fhir/us/breast-radiology/StructureDefinition/ConsistentWith",
+  "name": "ConsistentWith",
+  "title": "Consistent With",
+  "status": "draft",
+  "description": "Breast Radiology 'Consistent With' Observation\n\nIf this observation is present, and dataAbsentReason is empty, then a consistentWith was observed.\n\n\nIf this observation is present, and dataAbsentReason is not empty, then a consistentWith was not observed and dataAbsentReason contains the reason why.\n\n\n*** TODO Items ***** There is a CodeSystem and ValueSet created solely to identify the the component slices. Is this appropriate",
+  "fhirVersion": "4.0.0",
+  "kind": "resource",
+  "abstract": false,
+  "type": "Observation",
+  "baseDefinition": "http://hl7.org/fhir/StructureDefinition/Observation",
+  "derivation": "constraint",
+  "differential": {
+    "element": [
+      {
+        "id": "Observation",
+        "path": "Observation",
+        "short": "Breast Radiology 'Consistent With' Observation",
+        "definition": "If this observation is present, and dataAbsentReason is empty, then a consistentWith was observed.\n\n\nIf this observation is present, and dataAbsentReason is not empty, then a consistentWith was not observed and dataAbsentReason contains the reason why.\n\n\n*** TODO Items ***** There is a CodeSystem and ValueSet created solely to identify the the component slices. Is this appropriate",
+        "base": {
+          "path": "Observation",
+          "min": 0,
+          "max": "*"
+        }
+      },
+      {
+        "id": "Observation.value[x]",
+        "path": "Observation.value[x]",
+        "min": 0,
+        "max": "0",
+        "base": {
+          "path": "Observation.value[x]",
+          "min": 0,
+          "max": "1"
+        }
+      },
+      {
+        "id": "Observation.interpretation",
+        "path": "Observation.interpretation",
+        "min": 0,
+        "max": "0",
+        "base": {
+          "path": "Observation.interpretation",
+          "min": 0,
+          "max": "*"
+        }
+      },
+      {
+        "id": "Observation.referenceRange",
+        "path": "Observation.referenceRange",
+        "min": 0,
+        "max": "0",
+        "base": {
+          "path": "Observation.referenceRange",
+          "min": 0,
+          "max": "*"
+        }
+      },
+      {
+        "id": "Observation.component",
+        "path": "Observation.component",
+        "slicing": {
+          "discriminator": [
+            {
+              "type": "pattern",
+              "path": "code"
+            }
+          ],
+          "rules": "open"
+        },
+        "base": {
+          "path": "Observation.component",
+          "min": 0,
+          "max": "*"
+        }
+      },
+      {
+        "id": "Observation.component:value",
+        "path": "Observation.component",
+        "sliceName": "value",
+        "min": 1,
+        "max": "1",
+        "base": {
+          "path": "Observation.component",
+          "min": 0,
+          "max": "*"
+        }
+      },
+      {
+        "id": "Observation.component:value.code",
+        "path": "Observation.component.code",
+        "min": 1,
+        "max": "1",
+        "base": {
+          "path": "Observation.component.code",
+          "min": 1,
+          "max": "1"
+        },
+        "patternCodeableConcept": {
+          "coding": [
+            {
+              "system": "http://hl7.org/fhir/us/breast-radiology/CodeSystem/ComponentSliceCodes",
+              "code": "consistentWithValue"
+            }
+          ]
+        }
+      },
+      {
+        "id": "Observation.component:value.value[x]",
+        "path": "Observation.component.value[x]",
+        "min": 1,
+        "max": "1",
+        "base": {
+          "path": "Observation.component.value[x]",
+          "min": 0,
+          "max": "1"
+        },
+        "type": [
+          {
+            "code": "CodeableConcept"
+          }
+        ],
+        "binding": {
+          "strength": "extensible",
+          "valueSet": "http://hl7.org/fhir/us/breast-radiology/ValueSet/ConsistentWithVS"
+        }
+      },
+      {
+        "id": "Observation.component:qualifier",
+        "path": "Observation.component",
+        "sliceName": "qualifier",
+        "min": 0,
+        "max": "1",
+        "base": {
+          "path": "Observation.component",
+          "min": 0,
+          "max": "*"
+        }
+      },
+      {
+        "id": "Observation.component:qualifier.code",
+        "path": "Observation.component.code",
+        "min": 1,
+        "max": "1",
+        "base": {
+          "path": "Observation.component.code",
+          "min": 1,
+          "max": "1"
+        },
+        "patternCodeableConcept": {
+          "coding": [
+            {
+              "system": "http://hl7.org/fhir/us/breast-radiology/CodeSystem/ComponentSliceCodes",
+              "code": "consistentWithQualifier"
+            }
+          ]
+        }
+      },
+      {
+        "id": "Observation.component:qualifier.value[x]",
+        "path": "Observation.component.value[x]",
+        "min": 1,
+        "max": "1",
+        "base": {
+          "path": "Observation.component.value[x]",
+          "min": 0,
+          "max": "1"
+        },
+        "type": [
+          {
+            "code": "CodeableConcept"
+          }
+        ],
+        "binding": {
+          "strength": "required",
+          "valueSet": "http://hl7.org/fhir/us/breast-radiology/ValueSet/ConsistentWithQualifierVS"
+        }
+      }
+    ]
+  }
+}

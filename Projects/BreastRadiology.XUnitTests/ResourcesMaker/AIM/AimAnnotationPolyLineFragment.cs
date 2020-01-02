@@ -31,7 +31,7 @@ namespace BreastRadiology.XUnitTests
                     ;
 
                 e
-                    .ApplyExtension("polyLineAnnotation", Self.AimAnnotationPolyLineExtension.Value(), true, false)
+                    .ApplyExtension("polyLineAnnotation", Self.AimAnnotationPolyLineExtension.Value(), true)
                     .Single()
                     ;
             });

@@ -15,48 +15,48 @@ namespace BreastRadiology.XUnitTests
     partial class ResourcesMaker
     {
         StringTaskVar ConsistentWith = new StringTaskVar(
-            (out String s) =>
-            {
-                SDefEditor e = Self.CreateEditor("ConsistentWith",
-                        "Consistent With",
-                        "Consistent/With",
-                        ObservationUrl,
-                        $"{Group_CommonResources}/ConsistentWith")
-                    .Description("Breast Radiology 'Consistent With' Observation",
-                        new Markdown()
-                            .MissingObservation("a consistentWith")
-                            .Todo(
-                            "There is a CodeSystem and ValueSet created solely to identify the the component slices. Is this appropriate"
-                            )
-                    )
-                    .AddFragRef(Self.ObservationNoDeviceFragment.Value())
-                    ;
-                s = e.SDef.Url;
-                e.Select("value[x]").Zero();
-                e.Select("interpretation").Zero();
-                e.Select("referenceRange").Zero();
+               (out String s) =>
+                   {
+                       SDefEditor e = Self.CreateEditor("ConsistentWith",
+                               "Consistent With",
+                               "Consistent/With",
+                               ObservationUrl,
+                               $"{Group_CommonResources}/ConsistentWith")
+                           .Description("Breast Radiology 'Consistent With' Observation",
+                               new Markdown()
+                                   .MissingObservation("a consistentWith")
+                                   .Todo(
+                                   "There is a CodeSystem and ValueSet created solely to identify the the component slices. Is this appropriate"
+                                   )
+                           )
+                           .AddFragRef(Self.ObservationNoDeviceFragment.Value())
+                           ;
+                       s = e.SDef.Url;
+                       e.Select("value[x]").Zero();
+                       e.Select("interpretation").Zero();
+                       e.Select("referenceRange").Zero();
 
-                e.StartComponentSliceing();
-                e.ComponentSliceCodeableConcept("value",
-                    Self.ConsistentWithCodeValue.ToCodeableConcept(),
-                    Self.ConsistentWithVS.Value(),
-                    BindingStrength.Extensible,
-                    1,
-                    "1",
-                    "Value");
-                e.ComponentSliceCodeableConcept("qualifier",
-                    Self.ConsistentWithCodeQualifier.ToCodeableConcept(),
-                    Self.ConsistentWithQualifierVS.Value(),
-                    BindingStrength.Required,
-                    0,
-                    "1",
-                    "Qualifier");
+                       e.StartComponentSliceing();
+                       e.ComponentSliceCodeableConcept("value",
+                           Self.ConsistentWithCodeValue.ToCodeableConcept(),
+                           Self.ConsistentWithVS.Value(),
+                           BindingStrength.Extensible,
+                           1,
+                           "1",
+                           "Value");
+                       e.ComponentSliceCodeableConcept("qualifier",
+                           Self.ConsistentWithCodeQualifier.ToCodeableConcept(),
+                           Self.ConsistentWithQualifierVS.Value(),
+                           BindingStrength.Required,
+                           0,
+                           "1",
+                           "Qualifier");
 
-                e.IntroDoc
-                    .ReviewedStatus(ReviewStatus.NotReviewed)
-                    .ObservationSection("Mammography Calcification")
-                    ;
-            });
+                       e.IntroDoc
+                           .ReviewedStatus(ReviewStatus.NotReviewed)
+                           .ObservationSection("Mammography Calcification")
+                           ;
+                   });
 
         VSTaskVar ConsistentWithVS = new VSTaskVar(
             () =>

@@ -61,14 +61,14 @@ namespace BreastRadiology.XUnitTests
                     .Refinement(binding, "Mass")
                     ;
 
+                e.Select("value[x]").Zero();
                 ProfileTargetSlice[] targets = new ProfileTargetSlice[]
                 {
                     new ProfileTargetSlice(Self.MGAssociatedFeatures.Value(), 0, "1"),
+                    new ProfileTargetSlice(Self.ConsistentWith.Value(), 0, "*"),
                 };
                 e.SliceByUrl("hasMember", targets);
                 e.AddProfileTargets(targets);
-
-                e.Select("value[x]").Zero();
 
                 e.StartComponentSliceing();
                 e.ComponentSliceCodeableConcept("mgAbnormalityMassType",
@@ -79,7 +79,6 @@ namespace BreastRadiology.XUnitTests
                     "1",
                     "MG AbnormalityMass Type");
                 Self.ComponentSliceObservedCount(e);
-                Self.ComponentSliceConsistentWith(e);
             });
     }
 }

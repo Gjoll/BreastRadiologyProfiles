@@ -73,7 +73,7 @@ namespace BreastRadiology.XUnitTests
         {
             this.Paragraph(
                 $"This resource is an leaf-node observation of a {leafNode}.",
-                $"It is referenced by an parent Observation section that references other information about this specific abnormality."
+                $"It is referenced by a parent Observation."
                 );
             return this;
         }
@@ -111,16 +111,13 @@ namespace BreastRadiology.XUnitTests
         }
 
 
-        public IntroDoc CodedObservationLeafNode(String leafNode,
-            ValueSet binding)
+        public IntroDoc CodedObservationLeafNode(String leafNode)
         {
             this
                 .Paragraph(
                     $"This resource is an leaf-node observation of a {leafNode}.",
-                    $"It is referenced by an parent Observation section that references other information about this specific abnormality",
-                    $"Observation.value[x] is a single codeableConcept, and is bound to one of the following values"
+                    $"It is referenced by a parent Observation."
                 )
-                .List(binding)
                 ;
             return this;
         }

@@ -141,6 +141,11 @@
     <Content Include="ReleaseNote.txt" />
     <Content Include="SVG elements list.txt" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="..\..\.editorconfig">
+      <Link>.editorconfig</Link>
+    </None>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <PropertyGroup>
     <PreBuildEvent />

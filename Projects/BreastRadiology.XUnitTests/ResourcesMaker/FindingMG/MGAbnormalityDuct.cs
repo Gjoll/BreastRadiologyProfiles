@@ -91,6 +91,14 @@ namespace BreastRadiology.XUnitTests
 
                 e.Select("value[x]").Zero();
 
+                e.Select("value[x]").Zero();
+                ProfileTargetSlice[] targets = new ProfileTargetSlice[]
+                {
+                    new ProfileTargetSlice(Self.ConsistentWith.Value(), 0, "*"),
+                };
+                e.SliceByUrl("hasMember", targets);
+                e.AddProfileTargets(targets);
+
                 e.StartComponentSliceing();
                 e.ComponentSliceCodeableConcept("mgAbnormalityDuctType",
                     Self.MGCodeAbnormalityDuctType.ToCodeableConcept(),
@@ -99,7 +107,6 @@ namespace BreastRadiology.XUnitTests
                     1,
                     "1",
                     "MG AbnormalityDuct Type");
-                Self.ComponentSliceConsistentWith(e);
                 Self.ComponentSliceObservedCount(e);
             });
     }

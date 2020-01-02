@@ -3,6 +3,7 @@ using Hl7.Fhir.Model;
 using Hl7.Fhir.Serialization;
 using System;
 using System.Collections.Generic;
+using System.Globalization;
 using System.IO;
 using System.Text;
 
@@ -32,7 +33,7 @@ namespace BreastRadiology.XUnitTests
         public void AddResource(String path)
         {
             DomainResource r;
-            switch (Path.GetExtension(path).ToUpper())
+            switch (Path.GetExtension(path).ToUpper(CultureInfo.InvariantCulture))
             {
                 case ".XML":
                     {

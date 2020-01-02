@@ -104,7 +104,7 @@ namespace BreastRadiology.XUnitTests
         {
             foreach (Extension e in r.Extension.ToArray())
             {
-                if (e.Url.StartsWith(Global.FragmentUrl))
+                if (e.Url.StartsWith(Global.FragmentUrl, new StringComparison()))
                     r.Extension.Remove(e);
             }
         }
@@ -180,9 +180,9 @@ namespace BreastRadiology.XUnitTests
                 }
             }
 
-            structureDefinitions.Sort((a, b) => String.Compare(Group(a), Group(b)));
-            valueSets.Sort((a, b) => String.Compare(a.Name, b.Name));
-            codeSystems.Sort((a, b) => String.Compare(a.Name, b.Name));
+            structureDefinitions.Sort((a, b) => String.Compare(Group(a), Group(b), new System.StringComparison()));
+            valueSets.Sort((a, b) => String.Compare(a.Name, b.Name, new System.StringComparison()));
+            codeSystems.Sort((a, b) => String.Compare(a.Name, b.Name, new System.StringComparison()));
 
             foreach (CodeSystem codeSystem in codeSystems)
             {
@@ -257,7 +257,7 @@ namespace BreastRadiology.XUnitTests
                 }
             }
 
-            structureDefinitions.Sort((a, b) => String.Compare(a.Url, b.Url));
+            structureDefinitions.Sort((a, b) => String.Compare(a.Url, b.Url, new System.StringComparison()));
 
             foreach (StructureDefinition structureDefinition in structureDefinitions)
             {

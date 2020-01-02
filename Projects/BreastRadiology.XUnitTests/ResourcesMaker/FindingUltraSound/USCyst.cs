@@ -13,45 +13,45 @@ namespace BreastRadiology.XUnitTests
 {
     partial class ResourcesMaker : ConverterBase
     {
-        StringTaskVar USCyst = new StringTaskVar(
-            (out String s) =>
-            {
-                SDefEditor e = Self.CreateEditor("USCyst",
-                        "UltraSound Cyst",
-                        "US Cyst",
-                        ObservationUrl,
-                        $"{Group_USResources}/Cyst")
-                    .Description("Breast Radiology UltraSound Cyst Observation",
-                        new Markdown()
-                            .Paragraph("[PR]")
-                            .MissingObservation("a cyst")
-                    //.Todo
-                    )
-                    .AddFragRef(Self.ObservationNoDeviceFragment.Value())
-                    .AddFragRef(Self.BreastBodyLocationRequiredFragment.Value())
-                    .AddFragRef(Self.ObservationNoValueFragment.Value())
-                    .AddFragRef(Self.ImagingStudyFragment.Value())
-                    ;
-                s = e.SDef.Url;
+        //#StringTaskVar USCyst = new StringTaskVar(
+        //    (out String s) =>
+        //    {
+        //        SDefEditor e = Self.CreateEditor("USCyst",
+        //                "UltraSound Cyst",
+        //                "US Cyst",
+        //                ObservationUrl,
+        //                $"{Group_USResources}/Cyst")
+        //            .Description("Breast Radiology UltraSound Cyst Observation",
+        //                new Markdown()
+        //                    .Paragraph("[PR]")
+        //                    .MissingObservation("a cyst")
+        //            //.Todo
+        //            )
+        //            .AddFragRef(Self.ObservationNoDeviceFragment.Value())
+        //            .AddFragRef(Self.BreastBodyLocationRequiredFragment.Value())
+        //            .AddFragRef(Self.ObservationNoValueFragment.Value())
+        //            .AddFragRef(Self.ImagingStudyFragment.Value())
+        //            ;
+        //        s = e.SDef.Url;
 
-                e.IntroDoc
-                    .ReviewedStatus(ReviewStatus.NotReviewed)
-                    .ObservationSection("UltraSound Cyst")
-                    ;
+        //        e.IntroDoc
+        //            .ReviewedStatus(ReviewStatus.NotReviewed)
+        //            .ObservationSection("UltraSound Cyst")
+        //            ;
 
-                //ProfileTargetSlice[] targets = new ProfileTargetSlice[]
-                //{
-                //new ProfileTargetSlice(Self.BiRadsAssessmentCategory.Value(), 0, "1"),
+        //        //ProfileTargetSlice[] targets = new ProfileTargetSlice[]
+        //        //{
+        //        //new ProfileTargetSlice(Self.BiRadsAssessmentCategory.Value(), 0, "1"),
 
-                //new ProfileTargetSlice(Self.ObservedCount.Value(), 0, "1"),
-                //new ProfileTargetSlice(Self.ObservedChangeInState.Value(), 0, "*"),
-                //new ProfileTargetSlice(Self.ObservedSize.Value(), 0, "1"),
-                //new ProfileTargetSlice(Self.Orientation.Value(), 0, "1"),
-                //};
-                //e.SliceByUrl("hasMember", targets);
-                //e.AddProfileTargets(targets);
-                e.StartComponentSliceing();
-                Self.ComponentSliceObservedCount(e);
-            });
+        //        //new ProfileTargetSlice(Self.ObservedCount.Value(), 0, "1"),
+        //        //new ProfileTargetSlice(Self.ObservedChangeInState.Value(), 0, "*"),
+        //        //new ProfileTargetSlice(Self.ObservedSize.Value(), 0, "1"),
+        //        //new ProfileTargetSlice(Self.Orientation.Value(), 0, "1"),
+        //        //};
+        //        //e.SliceByUrl("hasMember", targets);
+        //        //e.AddProfileTargets(targets);
+        //        e.StartComponentSliceing();
+        //        Self.ComponentSliceObservedCount(e);
+        //    });
     }
 }

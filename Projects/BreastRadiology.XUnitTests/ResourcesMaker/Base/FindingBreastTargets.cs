@@ -19,9 +19,6 @@ namespace BreastRadiology.XUnitTests
 
             e.SliceByUrl("hasMember", findingBreastTargets);
             e.AddProfileTargets(findingBreastTargets);
-
-            e.StartComponentSliceing();
-            Self.ComponentSliceConsistentWith(e);
         }
     }
 }

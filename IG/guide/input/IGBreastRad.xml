@@ -172,6 +172,15 @@
     </resource>
     <resource>
       <reference>
+        <reference value="CodeSystem/ConsistentWithQualifierCS" />
+      </reference>
+      <name value="ConsistentWith Qualifier CodeSystem" />
+      <description value="ConsistentWithQualifier  code system" />
+      <exampleBoolean value="false" />
+      <groupingId value="CommonCodesCS" />
+    </resource>
+    <resource>
+      <reference>
         <reference value="CodeSystem/FibroadenomaCodeSystemCS" />
       </reference>
       <name value="Fibroadenoma CodeSystem" />
@@ -430,6 +439,15 @@
       <description value="Breast body location region value set." />
       <exampleBoolean value="false" />
       <groupingId value="CommonCodesVS" />
+    </resource>
+    <resource>
+      <reference>
+        <reference value="ValueSet/ConsistentWithQualifierVS" />
+      </reference>
+      <name value="ConsistentWithQualifier ValueSet ValueSet" />
+      <description value="ConsistentWithQualifier value set." />
+      <exampleBoolean value="false" />
+      <groupingId value="MGCodesVS" />
     </resource>
     <resource>
       <reference>
@@ -707,6 +725,15 @@
       </reference>
       <name value="Impression" />
       <description value="Breast Radiology Impression (ClinicalImpression)" />
+      <exampleBoolean value="false" />
+      <groupingId value="CommonResources" />
+    </resource>
+    <resource>
+      <reference>
+        <reference value="StructureDefinition/ConsistentWith" />
+      </reference>
+      <name value="Consistent With" />
+      <description value="Breast Radiology 'Consistent With' Observation" />
       <exampleBoolean value="false" />
       <groupingId value="CommonResources" />
     </resource>
@@ -1067,6 +1094,15 @@
       </reference>
       <name value="CodedValue Observation Fragment" />
       <description value="Fragment 'Fragment that defines values for coded observations'" />
+      <exampleBoolean value="false" />
+      <groupingId value="Fragments" />
+    </resource>
+    <resource>
+      <reference>
+        <reference value="StructureDefinition/FragmentConsistentWith" />
+      </reference>
+      <name value="Consistent With" />
+      <description value="Fragment 'Breast Radiology 'Consistent With' Observation'" />
       <exampleBoolean value="false" />
       <groupingId value="Fragments" />
     </resource>

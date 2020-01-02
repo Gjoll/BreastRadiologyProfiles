@@ -36,7 +36,7 @@ namespace BreastRadiology.XUnitTests
                     .Single()
                     ;
                 e
-                    .ApplyExtension("breastBodyLocation", Self.BreastBodyLocationExtension.Value(), true, false)
+                    .ApplyExtension("breastBodyLocation", Self.BreastBodyLocationExtension.Value(), true)
                     .Single()
                     ;
             });

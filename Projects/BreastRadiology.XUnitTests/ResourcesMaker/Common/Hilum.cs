@@ -14,84 +14,84 @@ namespace BreastRadiology.XUnitTests
 {
     partial class ResourcesMaker
     {
-        CSTaskVar HilumCS = new CSTaskVar(
-             () =>
-                 Self.CreateCodeSystem(
-                         "HilumCodeSystemCS",
-                         "Hilum CodeSystem",
-                         "Hilum/CodeSystem",
-                         "Hilum values code system.",
-                         Group_CommonCodesCS,
-                         new ConceptDef[]
-                         {
-                        new ConceptDef("HilumFatty",
-                            "Hilum Fatty",
-                            new Definition()
-                                .Line("Definition needed")
-                            ),
-                        new ConceptDef("Hilum Not Fatty",
-                            "Hilum Not Fatty",
-                            new Definition()
-                                .Line("Definition needed")
-                            )
-                         })
-                     );
+        //#CSTaskVar HilumCS = new CSTaskVar(
+        //     () =>
+        //         Self.CreateCodeSystem(
+        //                 "HilumCodeSystemCS",
+        //                 "Hilum CodeSystem",
+        //                 "Hilum/CodeSystem",
+        //                 "Hilum values code system.",
+        //                 Group_CommonCodesCS,
+        //                 new ConceptDef[]
+        //                 {
+        //                new ConceptDef("HilumFatty",
+        //                    "Hilum Fatty",
+        //                    new Definition()
+        //                        .Line("Definition needed")
+        //                    ),
+        //                new ConceptDef("Hilum Not Fatty",
+        //                    "Hilum Not Fatty",
+        //                    new Definition()
+        //                        .Line("Definition needed")
+        //                    )
+        //                 })
+        //             );
 
-        VSTaskVar HilumVS = new VSTaskVar(
-            () =>
-                Self.CreateValueSet(
-                        "HilumVS",
-                        "Hilum ValueSet",
-                        "Hilum/ValueSet",
-                        "Hilum values value set.",
-                        Group_CommonCodesVS,
-                        Self.HilumCS.Value())
-            );
+        //#VSTaskVar HilumVS = new VSTaskVar(
+        //    () =>
+        //        Self.CreateValueSet(
+        //                "HilumVS",
+        //                "Hilum ValueSet",
+        //                "Hilum/ValueSet",
+        //                "Hilum values value set.",
+        //                Group_CommonCodesVS,
+        //                Self.HilumCS.Value())
+        //    );
 
-        StringTaskVar Hilum = new StringTaskVar(
-            (out String s) =>
-            {
-                ValueSet binding = Self.HilumVS.Value();
+        //#StringTaskVar Hilum = new StringTaskVar(
+        //    (out String s) =>
+        //    {
+        //        ValueSet binding = Self.HilumVS.Value();
 
-                {
-                    IntroDoc valueSetIntroDoc = new IntroDoc(Path.Combine(Self.pageDir, $"ValueSet-{binding.Name}-intro.xml"));
-                    valueSetIntroDoc
-                        .ReviewedStatus(ReviewStatus.NotReviewed)
-                        .ValueSet(binding);
-                    ;
-                    String outputPath = valueSetIntroDoc.Save();
-                    Self.fc?.Mark(outputPath);
-                }
+        //        {
+        //            IntroDoc valueSetIntroDoc = new IntroDoc(Path.Combine(Self.pageDir, $"ValueSet-{binding.Name}-intro.xml"));
+        //            valueSetIntroDoc
+        //                .ReviewedStatus(ReviewStatus.NotReviewed)
+        //                .ValueSet(binding);
+        //            ;
+        //            String outputPath = valueSetIntroDoc.Save();
+        //            Self.fc?.Mark(outputPath);
+        //        }
 
-                SDefEditor e = Self.CreateEditor("Hilum",
-                        "Hilum Shape",
-                        "Hilum/Shape",
-                        ObservationUrl,
-                        $"{Group_CommonResources}/Hilum")
-                    .Description("Breast Radiology Hilum Observation",
-                        new Markdown()
-                            .MissingObservation("a hilum")
-                            .Todo(
-                                "Definition(s) needed"
-                            )
-                    )
-                    .AddFragRef(Self.ObservationNoDeviceFragment.Value())
-                    .AddFragRef(Self.ObservationCodedValueFragment.Value())
-                    .AddFragRef(Self.ObservationLeafFragment.Value())
-                    ;
+        //        SDefEditor e = Self.CreateEditor("Hilum",
+        //                "Hilum Shape",
+        //                "Hilum/Shape",
+        //                ObservationUrl,
+        //                $"{Group_CommonResources}/Hilum")
+        //            .Description("Breast Radiology Hilum Observation",
+        //                new Markdown()
+        //                    .MissingObservation("a hilum")
+        //                    .Todo(
+        //                        "Definition(s) needed"
+        //                    )
+        //            )
+        //            .AddFragRef(Self.ObservationNoDeviceFragment.Value())
+        //            .AddFragRef(Self.ObservationCodedValueFragment.Value())
+        //            .AddFragRef(Self.ObservationLeafFragment.Value())
+        //            ;
 
-                s = e.SDef.Url;
+        //        s = e.SDef.Url;
 
-                e.IntroDoc
-                    .ReviewedStatus(ReviewStatus.NotReviewed)
-                    .CodedObservationLeafNode("a hilum", binding)
-                    ;
+        //        e.IntroDoc
+        //            .ReviewedStatus(ReviewStatus.NotReviewed)
+        //            .CodedObservationLeafNode("a hilum", binding)
+        //            ;
 
-                e.Select("value[x]")
-                    .Type("CodeableConcept")
-                    .Binding(binding.Url, BindingStrength.Required)
-                    ;
-                e.AddValueSetLink(binding);
-            });
+        //        e.Select("value[x]")
+        //            .Type("CodeableConcept")
+        //            .Binding(binding.Url, BindingStrength.Required)
+        //            ;
+        //        e.AddValueSetLink(binding);
+        //    });
     }
 }

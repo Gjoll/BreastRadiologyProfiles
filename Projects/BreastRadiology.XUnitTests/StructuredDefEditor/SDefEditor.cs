@@ -13,8 +13,6 @@ namespace BreastRadiology.XUnitTests
 {
     class SDefEditor
     {
-        static Type sDefType = typeof(SDefEditor);
-
         public IntroDoc IntroDoc { get; }
 
         public StructureDefinition SDef => this.sDef;
@@ -192,7 +190,9 @@ namespace BreastRadiology.XUnitTests
             return extDef;
         }
 
-        public ElementDefinition ApplyExtension(String name, String extensionUrl, bool showChildren = true, bool addLink = true)
+        public ElementDefinition ApplyExtension(String name,
+            String extensionUrl,
+            bool showChildren = true)
         {
             this.AddExtensionLink(extensionUrl, showChildren);
             this.ConfigureSliceByUrlDiscriminator("extension", true);
@@ -313,7 +313,7 @@ namespace BreastRadiology.XUnitTests
             String url,
             bool showChildren)
         {
-            if (url.StartsWith("http://hl7.org/fhir/StructureDefinition/") == true)
+            if (url.StartsWith("http://hl7.org/fhir/StructureDefinition/", new StringComparison()) == true)
                 return this;
             this.SDef.AddExtension(Global.ResourceMapLinkUrl,
                 new FhirString($"{linkType}|{showChildren}|{url}"));
@@ -386,7 +386,7 @@ namespace BreastRadiology.XUnitTests
                     .SetCardinality(patternSlice.Min, patternSlice.Max)
                     .Type("CodeableConcept")
                     .Pattern(patternSlice.Pattern)
-                    .Short(patternSlice.Short)
+                    .Short(patternSlice.ShortDefinition)
                     .Definition(patternSlice.Definition)
                     .Type(typeCode);
                 ;
@@ -442,19 +442,34 @@ namespace BreastRadiology.XUnitTests
             String maxCardinality,
             String componentName)
         {
-            ElementTreeSlice slice = this.AppendSlice("component", sliceName, minCardinality, maxCardinality);
             {
-                ElementDefinition valueX = new ElementDefinition
+                ElementTreeSlice slice = this.AppendSlice("component", sliceName, minCardinality, maxCardinality);
                 {
-                    Path = $"{slice.ElementDefinition.Path}.value[x]",
-                    ElementId = $"{slice.ElementDefinition.Path}:{sliceName}.value[x]",
-                    Min = 1,
-                    Max = "1"
-                };
-                valueX
-                    .Type("Quantity");
-                ;
-                slice.CreateNode(valueX);
+                    ElementDefinition componentCode = new ElementDefinition
+                    {
+                        Path = $"{slice.ElementDefinition.Path}.code",
+                        ElementId = $"{slice.ElementDefinition.Path}:{sliceName}.code",
+                        Min = 1,
+                        Max = "1"
+                    };
+                    componentCode
+                        .Pattern(pattern)
+                        ;
+                    slice.CreateNode(componentCode);
+                }
+                {
+                    ElementDefinition valueX = new ElementDefinition
+                    {
+                        Path = $"{slice.ElementDefinition.Path}.value[x]",
+                        ElementId = $"{slice.ElementDefinition.Path}:{sliceName}.value[x]",
+                        Min = 1,
+                        Max = "1"
+                    };
+                    valueX
+                        .Type("Quantity");
+                    ;
+                    slice.CreateNode(valueX);
+                }
             }
             this.AddComponentLink($"{componentName}^Quantity");
         }

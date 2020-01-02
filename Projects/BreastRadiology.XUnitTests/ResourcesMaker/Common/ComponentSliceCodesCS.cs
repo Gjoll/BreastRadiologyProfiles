@@ -79,16 +79,16 @@ namespace BreastRadiology.XUnitTests
                         })
              );
 
-        VSTaskVar ComponentSliceCodesVS = new VSTaskVar(
-            () =>
-                Self.CreateValueSet(
-                        "ConsistentWithSliceVS",
-                        "ConsistentWithSlice ValueSet",
-                        "ConsistentWithSlice/ValueSet",
-                        "ConsistentWithSlice value set.",
-                        Group_CommonCodesVS,
-                        Self.ComponentSliceCodesCS.Value()
-                    )
-            );
+        //#VSTaskVar ComponentSliceCodesVS = new VSTaskVar(
+        //    () =>
+        //        Self.CreateValueSet(
+        //                "ConsistentWithSliceVS",
+        //                "ConsistentWithSlice ValueSet",
+        //                "ConsistentWithSlice/ValueSet",
+        //                "ConsistentWithSlice value set.",
+        //                Group_CommonCodesVS,
+        //                Self.ComponentSliceCodesCS.Value()
+        //            )
+        //    );
     }
 }

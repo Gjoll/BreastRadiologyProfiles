@@ -57,6 +57,7 @@ namespace BreastRadiology.XUnitTests
                 ProfileTargetSlice[] targets = new ProfileTargetSlice[]
                 {
                     new ProfileTargetSlice(Self.MGAssociatedFeatures.Value(), 0, "1"),
+                    new ProfileTargetSlice(Self.ConsistentWith.Value(), 0, "*"),
                 };
                 e.SliceByUrl("hasMember", targets);
                 e.AddProfileTargets(targets);
@@ -65,7 +66,6 @@ namespace BreastRadiology.XUnitTests
                 Self.ComponentMGCalcificationType(e);
                 Self.ComponentMGCalcificationDistribution(e);
                 Self.ComponentSliceObservedCount(e);
-                Self.ComponentSliceConsistentWith(e);
             });
     }
 }

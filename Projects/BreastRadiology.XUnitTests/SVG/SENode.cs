@@ -9,11 +9,12 @@ namespace BreastRadiology.XUnitTests
     [DebuggerDisplay("{AllText()}]")]
     public class SENode
     {
-        public float Width;
+        private float width;
         public List<SEText> TextLines = new List<SEText>();
         public Color FillColor { get; }
         public String HRef {get; }
         public String Title {get; }
+        public float Width { get => this.width; set => this.width = value; }
 
         public SENode(float width,
             Color fillColor,

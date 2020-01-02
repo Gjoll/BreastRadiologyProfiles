@@ -13,31 +13,31 @@ namespace BreastRadiology.XUnitTests
 {
     partial class ResourcesMaker : ConverterBase
     {
-        StringTaskVar MGTrabecularThickening = new StringTaskVar(
-            (out String s) =>
-            {
-                SDefEditor e = Self.CreateEditor("MGTrabecularThickening",
-                    "Mammography Trabecular Thickening",
-                    "MG Trabecular/Thickening",
-                    ObservationUrl,
-                    $"{Group_MGResources}/AssociatedFeature/TrabecularThickening")
-                    .Description("Trabecular Thickening Observation",
-                        new Markdown()
-                            .BiradHeader()
-                            .BlockQuote("This is a thickening of the fibrous septa of the breast.")
-                            .BiradFooter()
-                            .MissingObservation("a trabecular thickening")
-                            //.Todo
-                    )
-                    .AddFragRef(Self.ObservationNoDeviceFragment.Value())
-                    .AddFragRef(Self.BreastBodyLocationRequiredFragment.Value())
-                    .AddFragRef(Self.ObservationNoValueFragment.Value())
-                    ;
-                s = e.SDef.Url;
-                e.IntroDoc
-                    .ReviewedStatus(ReviewStatus.NotReviewed)
-                    .ObservationLeafNode("Trabecular Thickening")
-                    ;
-            });
+        //#StringTaskVar MGTrabecularThickening = new StringTaskVar(
+        //    (out String s) =>
+        //    {
+        //        SDefEditor e = Self.CreateEditor("MGTrabecularThickening",
+        //            "Mammography Trabecular Thickening",
+        //            "MG Trabecular/Thickening",
+        //            ObservationUrl,
+        //            $"{Group_MGResources}/AssociatedFeature/TrabecularThickening")
+        //            .Description("Trabecular Thickening Observation",
+        //                new Markdown()
+        //                    .BiradHeader()
+        //                    .BlockQuote("This is a thickening of the fibrous septa of the breast.")
+        //                    .BiradFooter()
+        //                    .MissingObservation("a trabecular thickening")
+        //                    //.Todo
+        //            )
+        //            .AddFragRef(Self.ObservationNoDeviceFragment.Value())
+        //            .AddFragRef(Self.BreastBodyLocationRequiredFragment.Value())
+        //            .AddFragRef(Self.ObservationNoValueFragment.Value())
+        //            ;
+        //        s = e.SDef.Url;
+        //        e.IntroDoc
+        //            .ReviewedStatus(ReviewStatus.NotReviewed)
+        //            .ObservationLeafNode("Trabecular Thickening")
+        //            ;
+        //    });
     }
 }

@@ -27,56 +27,56 @@ namespace BreastRadiology.XUnitTests
             );
 
 
-        StringTaskVar Margin = new StringTaskVar(
-            (out String s) =>
-            {
-                ValueSet binding = Self.MarginVS.Value();
-                binding
-                    .Remove("IntraductalExtension")
-                    .Remove("Lobulated")
-                    .Remove("NonCircumscribed")
-                    .Remove("Smooth")
-                    ;
-                {
-                    IntroDoc valueSetIntroDoc = new IntroDoc(Path.Combine(Self.pageDir, $"ValueSet-{binding.Name}-intro.xml"));
-                    valueSetIntroDoc
-                        .ReviewedStatus(ReviewStatus.NotReviewed)
-                        .ValueSet(binding);
-                    ;
-                    String outputPath = valueSetIntroDoc.Save();
-                    Self.fc?.Mark(outputPath);
-                }
+        //#StringTaskVar Margin = new StringTaskVar(
+        //    (out String s) =>
+        //    {
+        //        ValueSet binding = Self.MarginVS.Value();
+        //        binding
+        //            .Remove("IntraductalExtension")
+        //            .Remove("Lobulated")
+        //            .Remove("NonCircumscribed")
+        //            .Remove("Smooth")
+        //            ;
+        //        {
+        //            IntroDoc valueSetIntroDoc = new IntroDoc(Path.Combine(Self.pageDir, $"ValueSet-{binding.Name}-intro.xml"));
+        //            valueSetIntroDoc
+        //                .ReviewedStatus(ReviewStatus.NotReviewed)
+        //                .ValueSet(binding);
+        //            ;
+        //            String outputPath = valueSetIntroDoc.Save();
+        //            Self.fc?.Mark(outputPath);
+        //        }
 
-                SDefEditor e = Self.CreateEditor("Margin",
-                    "Margin",
-                    "Margin",
-                    ObservationUrl,
-                    $"{Group_CommonResources}/Margin")
-                    .Description("Breast Radiology Mammography Margin Observation",
-                        new Markdown()
-                            .MissingObservation("a margin")
-                            .BiradHeader()
-                            .BlockQuote("The margin is the edge or border of the lesion. The descriptors of margin, like the descriptors of shape, are important predictors of whether a mass is benign or malignant. ")
-                            .BiradFooter()
-                            //.Todo
-                    )
-                    .AddFragRef(Self.ObservationNoDeviceFragment.Value())
-                    .AddFragRef(Self.ObservationCodedValueFragment.Value())
-                    .AddFragRef(Self.ObservationLeafFragment.Value())
-                    ;
-                s = e.SDef.Url;
+        //        SDefEditor e = Self.CreateEditor("Margin",
+        //            "Margin",
+        //            "Margin",
+        //            ObservationUrl,
+        //            $"{Group_CommonResources}/Margin")
+        //            .Description("Breast Radiology Mammography Margin Observation",
+        //                new Markdown()
+        //                    .MissingObservation("a margin")
+        //                    .BiradHeader()
+        //                    .BlockQuote("The margin is the edge or border of the lesion. The descriptors of margin, like the descriptors of shape, are important predictors of whether a mass is benign or malignant. ")
+        //                    .BiradFooter()
+        //                    //.Todo
+        //            )
+        //            .AddFragRef(Self.ObservationNoDeviceFragment.Value())
+        //            .AddFragRef(Self.ObservationCodedValueFragment.Value())
+        //            .AddFragRef(Self.ObservationLeafFragment.Value())
+        //            ;
+        //        s = e.SDef.Url;
 
-                e.IntroDoc
-                    .ReviewedStatus(ReviewStatus.NotReviewed)
-                    .CodedObservationLeafNode("a mammography margin", binding)
-                    ;
+        //        e.IntroDoc
+        //            .ReviewedStatus(ReviewStatus.NotReviewed)
+        //            .CodedObservationLeafNode("a mammography margin", binding)
+        //            ;
 
-                e.Select("value[x]")
-                    .Type("CodeableConcept")
-                    .Binding(binding.Url, BindingStrength.Required)
-                    ;
-                e.AddValueSetLink(binding);
-            });
+        //        e.Select("value[x]")
+        //            .Type("CodeableConcept")
+        //            .Binding(binding.Url, BindingStrength.Required)
+        //            ;
+        //        e.AddValueSetLink(binding);
+        //    });
 
         CSTaskVar MarginCS = new CSTaskVar(
              () =>

@@ -106,6 +106,14 @@ namespace BreastRadiology.XUnitTests
                     ;
 
                 e.Select("value[x]").Zero();
+
+                ProfileTargetSlice[] targets = new ProfileTargetSlice[]
+                {
+                    new ProfileTargetSlice(Self.ConsistentWith.Value(), 0, "*")
+                };
+                e.SliceByUrl("hasMember", targets);
+                e.AddProfileTargets(targets);
+
                 e.StartComponentSliceing();
                 e.ComponentSliceCodeableConcept("mgAbnormalityCystType",
                     Self.MGCodeAbnormalityCystType.ToCodeableConcept(),
@@ -115,9 +123,6 @@ namespace BreastRadiology.XUnitTests
                     "1",
                     "MG AbnormalityCyst Type");
                 Self.ComponentSliceObservedCount(e);
-                Self.ComponentSliceConsistentWith(e);
-
-                e.AddValueSetLink(binding);
             });
     }
 }

@@ -144,15 +144,15 @@ namespace BreastRadiology.XUnitTests
         public void Create(String reportUrl, String outputPath)
         {
             SvgEditor svgEditor = new SvgEditor();
-            SENodeGroup legendGroup = this.CreateLegend(svgEditor);
-            SENodeGroup rootGroup = this.CreateNodes(reportUrl, svgEditor);
+            SENodeGroup legendGroup = this.CreateLegend();
+            SENodeGroup rootGroup = this.CreateNodes(reportUrl);
             svgEditor.Render(legendGroup, false);
             svgEditor.Render(rootGroup, true);
             svgEditor.Save(outputPath);
             fc?.Mark(outputPath);
         }
 
-        SENodeGroup CreateLegend(SvgEditor svgEditor)
+        SENodeGroup CreateLegend()
         {
             SENodeGroup legendGroup = new SENodeGroup("legend");
             Int32 i = 0;
@@ -189,7 +189,7 @@ namespace BreastRadiology.XUnitTests
             //return legendGroup;
         }
 
-        SENodeGroup CreateNodes(String reportUrl, SvgEditor svgEditor)
+        SENodeGroup CreateNodes(String reportUrl)
         {
             ResourceMap.Node mapNode = this.map.GetNode(reportUrl);
             SENodeGroup rootGroup = new SENodeGroup("root");

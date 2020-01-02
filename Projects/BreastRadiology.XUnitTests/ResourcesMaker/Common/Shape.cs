@@ -28,47 +28,47 @@ namespace BreastRadiology.XUnitTests
             );
 
 
-        StringTaskVar Shape = new StringTaskVar(
-            (out String s) =>
-            {
-                ValueSet binding = Self.ShapeVS.Value();
-                {
-                    IntroDoc valueSetIntroDoc = new IntroDoc(Path.Combine(Self.pageDir, $"ValueSet-{binding.Name}-intro.xml"));
-                    valueSetIntroDoc
-                        .ReviewedStatus(ReviewStatus.NotReviewed)
-                        .ValueSet(binding);
-                    ;
-                    String outputPath = valueSetIntroDoc.Save();
-                    Self.fc?.Mark(outputPath);
-                }
+        //#StringTaskVar Shape = new StringTaskVar(
+        //    (out String s) =>
+        //    {
+        //        ValueSet binding = Self.ShapeVS.Value();
+        //        {
+        //            IntroDoc valueSetIntroDoc = new IntroDoc(Path.Combine(Self.pageDir, $"ValueSet-{binding.Name}-intro.xml"));
+        //            valueSetIntroDoc
+        //                .ReviewedStatus(ReviewStatus.NotReviewed)
+        //                .ValueSet(binding);
+        //            ;
+        //            String outputPath = valueSetIntroDoc.Save();
+        //            Self.fc?.Mark(outputPath);
+        //        }
 
-                SDefEditor e = Self.CreateEditor("Shape",
-                        "Shape",
-                        "Shape",
-                        ObservationUrl,
-                        $"{Group_CommonResources}/Shape")
-                    .Description("Breast Radiology Shape Observation",
-                        new Markdown()
-                            .MissingObservation("a shape")
-                            //.Todo
-                    )
-                    .AddFragRef(Self.ObservationNoDeviceFragment.Value())
-                    .AddFragRef(Self.ObservationCodedValueFragment.Value())
-                    .AddFragRef(Self.ObservationLeafFragment.Value())
-                    ;
-                s = e.SDef.Url;
+        //        SDefEditor e = Self.CreateEditor("Shape",
+        //                "Shape",
+        //                "Shape",
+        //                ObservationUrl,
+        //                $"{Group_CommonResources}/Shape")
+        //            .Description("Breast Radiology Shape Observation",
+        //                new Markdown()
+        //                    .MissingObservation("a shape")
+        //                    //.Todo
+        //            )
+        //            .AddFragRef(Self.ObservationNoDeviceFragment.Value())
+        //            .AddFragRef(Self.ObservationCodedValueFragment.Value())
+        //            .AddFragRef(Self.ObservationLeafFragment.Value())
+        //            ;
+        //        s = e.SDef.Url;
 
-                e.IntroDoc
-                    .ReviewedStatus(ReviewStatus.NotReviewed)
-                    .CodedObservationLeafNode("a shape", binding)
-                    ;
+        //        e.IntroDoc
+        //            .ReviewedStatus(ReviewStatus.NotReviewed)
+        //            .CodedObservationLeafNode("a shape", binding)
+        //            ;
 
-                e.Select("value[x]")
-                    .Type("CodeableConcept")
-                    .Binding(binding.Url, BindingStrength.Required)
-                    ;
-                e.AddValueSetLink(binding);
-            });
+        //        e.Select("value[x]")
+        //            .Type("CodeableConcept")
+        //            .Binding(binding.Url, BindingStrength.Required)
+        //            ;
+        //        e.AddValueSetLink(binding);
+        //    });
 
         CSTaskVar ShapeCS = new CSTaskVar(
              () =>

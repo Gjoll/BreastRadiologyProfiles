@@ -123,7 +123,7 @@ namespace BreastRadiology.XUnitTests
         public const String Group_ExtensionResources = "ExtensionResources";
 
         public static String BiRadCitation = "Bi-Rads® Atlas — Mammography Fifth Ed. 2013";
-        const FHIRVersion FVersion = FHIRVersion.N4_0_0;
+        //#const FHIRVersion FVersion = FHIRVersion.N4_0_0;
 
         const String ProfileVersion = "0.0.2";
         const PublicationStatus ProfileStatus = PublicationStatus.Draft;
@@ -186,7 +186,7 @@ namespace BreastRadiology.XUnitTests
             String baseDefinition,
             String groupPath)
         {
-            if (name.Contains(" "))
+            if (name.Contains(" ", new StringComparison()))
                 throw new Exception("Structure Def name can not contains spaces");
 
             SDefEditor retVal = new SDefEditor(this, name, CreateUrl(name), baseDefinition, mapName, this.resourceDir, this.pageDir)
@@ -419,17 +419,5 @@ namespace BreastRadiology.XUnitTests
                 e.AddComponentLink("Observed Count^Integer or Range");
             }
         }
-
-        void ComponentSliceConsistentWith(SDefEditor e)
-        {
-            e.ComponentSliceCodeableConcept("consistentWith",
-                Self.CodeBiRads.ToCodeableConcept(),
-                Self.ConsistentWithVS.Value(),
-                BindingStrength.Extensible,
-                0,
-                "*",
-                "Consistent With");
-        }
-
     }
 }

@@ -71,48 +71,48 @@ namespace BreastRadiology.XUnitTests
                     )
             );
 
-        StringTaskVar ObservedChangeInState = new StringTaskVar(
-            (out String s) =>
-            {
-                ValueSet binding = Self.ObservedChangeInStateVS.Value();
+        //#StringTaskVar ObservedChangeInState = new StringTaskVar(
+        //    (out String s) =>
+        //    {
+        //        ValueSet binding = Self.ObservedChangeInStateVS.Value();
 
-                {
-                    IntroDoc valueSetIntroDoc = new IntroDoc(Path.Combine(Self.pageDir, $"ValueSet-{binding.Name}-intro.xml"));
-                    valueSetIntroDoc
-                        .ReviewedStatus(ReviewStatus.NotReviewed)
-                        .ValueSet(binding);
-                    ;
-                    String outputPath = valueSetIntroDoc.Save();
-                    Self.fc?.Mark(outputPath);
-                }
+        //        {
+        //            IntroDoc valueSetIntroDoc = new IntroDoc(Path.Combine(Self.pageDir, $"ValueSet-{binding.Name}-intro.xml"));
+        //            valueSetIntroDoc
+        //                .ReviewedStatus(ReviewStatus.NotReviewed)
+        //                .ValueSet(binding);
+        //            ;
+        //            String outputPath = valueSetIntroDoc.Save();
+        //            Self.fc?.Mark(outputPath);
+        //        }
 
-                SDefEditor e = Self.CreateEditor("ObservedChangeInState",
-                        "Observed Change In State",
-                        "State Change",
-                        ObservationUrl,
-                        $"{Group_CommonResources}/ObservedChangeInState")
-                    .Description("Breast Radiology Observed Change In State Observation",
-                        new Markdown()
-                            .MissingObservation("an observed change")
-                            //.Todo
-                    )
-                    .AddFragRef(Self.ObservationNoDeviceFragment.Value())
-                    .AddFragRef(Self.ObservationCodedValueFragment.Value())
-                    .AddFragRef(Self.ObservationLeafFragment.Value())
-                    ;
+        //        SDefEditor e = Self.CreateEditor("ObservedChangeInState",
+        //                "Observed Change In State",
+        //                "State Change",
+        //                ObservationUrl,
+        //                $"{Group_CommonResources}/ObservedChangeInState")
+        //            .Description("Breast Radiology Observed Change In State Observation",
+        //                new Markdown()
+        //                    .MissingObservation("an observed change")
+        //                    //.Todo
+        //            )
+        //            .AddFragRef(Self.ObservationNoDeviceFragment.Value())
+        //            .AddFragRef(Self.ObservationCodedValueFragment.Value())
+        //            .AddFragRef(Self.ObservationLeafFragment.Value())
+        //            ;
 
-                s = e.SDef.Url;
+        //        s = e.SDef.Url;
 
-                e.IntroDoc
-                    .ReviewedStatus(ReviewStatus.NotReviewed)
-                    .CodedObservationLeafNode("an abnormality observed change", binding)
-                    ;
+        //        e.IntroDoc
+        //            .ReviewedStatus(ReviewStatus.NotReviewed)
+        //            .CodedObservationLeafNode("an abnormality observed change", binding)
+        //            ;
 
-                e.Select("value[x]")
-                    .Type("CodeableConcept")
-                    .Binding(binding.Url, BindingStrength.Required)
-                    ;
-                e.AddValueSetLink(binding);
-            });
+        //        e.Select("value[x]")
+        //            .Type("CodeableConcept")
+        //            .Binding(binding.Url, BindingStrength.Required)
+        //            ;
+        //        e.AddValueSetLink(binding);
+        //    });
     }
 }

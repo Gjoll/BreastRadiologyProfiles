@@ -4851,6 +4851,14 @@
             "code": "CodeableConcept"
           }
         ],
+        "patternCodeableConcept": {
+          "coding": [
+            {
+              "system": "http://hl7.org/fhir/us/breast-radiology/CodeSystem/ComponentSliceCodes",
+              "code": "observedSize"
+            }
+          ]
+        },
         "isModifier": false,
         "isSummary": true,
         "binding": {
@@ -8009,6 +8017,14 @@
             "code": "CodeableConcept"
           }
         ],
+        "patternCodeableConcept": {
+          "coding": [
+            {
+              "system": "http://hl7.org/fhir/us/breast-radiology/CodeSystem/ComponentSliceCodes",
+              "code": "observedSize"
+            }
+          ]
+        },
         "isModifier": false,
         "isSummary": true,
         "binding": {

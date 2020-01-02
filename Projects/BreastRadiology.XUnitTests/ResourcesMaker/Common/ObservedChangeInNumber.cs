@@ -49,50 +49,50 @@ namespace BreastRadiology.XUnitTests
                     )
             );
 
-        StringTaskVar ObservedChangeInNumber = new StringTaskVar(
-            (out String s) =>
-            {
-                ValueSet binding = Self.ObservedChangeInNumberVS.Value();
+        //#StringTaskVar ObservedChangeInNumber = new StringTaskVar(
+        //    (out String s) =>
+        //    {
+        //        ValueSet binding = Self.ObservedChangeInNumberVS.Value();
 
-                {
-                    IntroDoc valueSetIntroDoc = new IntroDoc(Path.Combine(Self.pageDir, $"ValueSet-{binding.Name}-intro.xml"));
-                    valueSetIntroDoc
-                        .ReviewedStatus(ReviewStatus.NotReviewed)
-                        .ValueSet(binding);
-                    ;
-                    String outputPath = valueSetIntroDoc.Save();
-                    Self.fc?.Mark(outputPath);
-                }
+        //        {
+        //            IntroDoc valueSetIntroDoc = new IntroDoc(Path.Combine(Self.pageDir, $"ValueSet-{binding.Name}-intro.xml"));
+        //            valueSetIntroDoc
+        //                .ReviewedStatus(ReviewStatus.NotReviewed)
+        //                .ValueSet(binding);
+        //            ;
+        //            String outputPath = valueSetIntroDoc.Save();
+        //            Self.fc?.Mark(outputPath);
+        //        }
 
-                SDefEditor e = Self.CreateEditor("ObservedChangeInNumber",
-                        "Observed Change in Number",
-                        "Number Change",
-                        ObservationUrl,
-                        $"{Group_CommonResources}/ObservedChangeInNumber")
-                    .Description("Breast Radiology Changes in Number Observation",
-                        new Markdown()
-                            .MissingObservation("an observed change in number")
-                            .Todo(
-                            "Is this change in count, or number of calcifications?"
-                            )
-                    )
-                    .AddFragRef(Self.ObservationNoDeviceFragment.Value())
-                    .AddFragRef(Self.ObservationCodedValueFragment.Value())
-                    .AddFragRef(Self.ObservationLeafFragment.Value())
-                    ;
+        //        SDefEditor e = Self.CreateEditor("ObservedChangeInNumber",
+        //                "Observed Change in Number",
+        //                "Number Change",
+        //                ObservationUrl,
+        //                $"{Group_CommonResources}/ObservedChangeInNumber")
+        //            .Description("Breast Radiology Changes in Number Observation",
+        //                new Markdown()
+        //                    .MissingObservation("an observed change in number")
+        //                    .Todo(
+        //                    "Is this change in count, or number of calcifications?"
+        //                    )
+        //            )
+        //            .AddFragRef(Self.ObservationNoDeviceFragment.Value())
+        //            .AddFragRef(Self.ObservationCodedValueFragment.Value())
+        //            .AddFragRef(Self.ObservationLeafFragment.Value())
+        //            ;
 
-                s = e.SDef.Url;
+        //        s = e.SDef.Url;
 
-                e.IntroDoc
-                    .ReviewedStatus(ReviewStatus.NotReviewed)
-                    .CodedObservationLeafNode("an abnormality observed change in number", binding)
-                    ;
+        //        e.IntroDoc
+        //            .ReviewedStatus(ReviewStatus.NotReviewed)
+        //            .CodedObservationLeafNode("an abnormality observed change in number", binding)
+        //            ;
 
-                e.Select("value[x]")
-                    .Type("CodeableConcept")
-                    .Binding(binding.Url, BindingStrength.Required)
-                    ;
-                e.AddValueSetLink(binding);
-            });
+        //        e.Select("value[x]")
+        //            .Type("CodeableConcept")
+        //            .Binding(binding.Url, BindingStrength.Required)
+        //            ;
+        //        e.AddValueSetLink(binding);
+        //    });
     }
 }

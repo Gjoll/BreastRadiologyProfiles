@@ -14,72 +14,72 @@ namespace BreastRadiology.XUnitTests
 {
     partial class ResourcesMaker : ConverterBase
     {
-        VSTaskVar USMarginVS = new VSTaskVar(
-            () =>
-            {
-                ValueSet binding = Self.CreateValueSet(
-                    "USMarginVS",
-                    "US Margin ValueSet",
-                    "US Margin ValueSet",
-                    "Ultra-sound mass margin codes value set.",
-                    Group_USCodesVS,
-                    Self.MarginCS.Value());
-                binding
-                    .Remove("Macrolobulated")
-                    .Remove("Obscured")
-                    ;
-                return binding;
-            }
-            );
+        //#VSTaskVar USMarginVS = new VSTaskVar(
+        //    () =>
+        //    {
+        //        ValueSet binding = Self.CreateValueSet(
+        //            "USMarginVS",
+        //            "US Margin ValueSet",
+        //            "US Margin ValueSet",
+        //            "Ultra-sound mass margin codes value set.",
+        //            Group_USCodesVS,
+        //            Self.MarginCS.Value());
+        //        binding
+        //            .Remove("Macrolobulated")
+        //            .Remove("Obscured")
+        //            ;
+        //        return binding;
+        //    }
+        //    );
 
 
-        StringTaskVar USMargin = new StringTaskVar(
-            (out String s) =>
-            {
-                ValueSet binding = Self.USMarginVS.Value();
-                {
-                    IntroDoc valueSetIntroDoc = new IntroDoc(Path.Combine(Self.pageDir, $"ValueSet-{binding.Name}-intro.xml"));
-                    valueSetIntroDoc
-                        .ReviewedStatus(ReviewStatus.NotReviewed)
-                        .ValueSet(binding);
-                    ;
-                    String outputPath = valueSetIntroDoc.Save();
-                    Self.fc?.Mark(outputPath);
-                }
+        //#StringTaskVar USMargin = new StringTaskVar(
+        //    (out String s) =>
+        //    {
+        //        ValueSet binding = Self.USMarginVS.Value();
+        //        {
+        //            IntroDoc valueSetIntroDoc = new IntroDoc(Path.Combine(Self.pageDir, $"ValueSet-{binding.Name}-intro.xml"));
+        //            valueSetIntroDoc
+        //                .ReviewedStatus(ReviewStatus.NotReviewed)
+        //                .ValueSet(binding);
+        //            ;
+        //            String outputPath = valueSetIntroDoc.Save();
+        //            Self.fc?.Mark(outputPath);
+        //        }
 
-                SDefEditor e = Self.CreateEditor("USMargin",
-                        "US Margin",
-                        "US Margin",
-                        ObservationUrl,
-                        $"{Group_USResources}/Margin")
-                    .Description("Breast Radiology Ultra-Sound Margin Observation",
-                        new Markdown()
-                            .MissingObservation("a mass margin")
-                            .BiradHeader()
-                            .BlockQuote("The margin is the edge or border of the lesion. The descriptors of margin, like the descriptors of shape, are important predictors of whether a mass is benign or malignant. ")
-                            .BiradFooter()
-                            .Todo(
-                                "Is Irregular incorrect? Note from ACR B.3.A. 'Irregular' is not used to group these marginal attributes because irregular describes the shape of a mass.",
-                                "Is non-circumscribed a stand along value, or implied by selection fo on or more non-circumscribed values? "
-                            )
-                    )
-                    .AddFragRef(Self.ObservationNoDeviceFragment.Value())
-                    .AddFragRef(Self.ObservationCodedValueFragment.Value())
-                    .AddFragRef(Self.ObservationLeafFragment.Value())
-                    ;
+        //        SDefEditor e = Self.CreateEditor("USMargin",
+        //                "US Margin",
+        //                "US Margin",
+        //                ObservationUrl,
+        //                $"{Group_USResources}/Margin")
+        //            .Description("Breast Radiology Ultra-Sound Margin Observation",
+        //                new Markdown()
+        //                    .MissingObservation("a mass margin")
+        //                    .BiradHeader()
+        //                    .BlockQuote("The margin is the edge or border of the lesion. The descriptors of margin, like the descriptors of shape, are important predictors of whether a mass is benign or malignant. ")
+        //                    .BiradFooter()
+        //                    .Todo(
+        //                        "Is Irregular incorrect? Note from ACR B.3.A. 'Irregular' is not used to group these marginal attributes because irregular describes the shape of a mass.",
+        //                        "Is non-circumscribed a stand along value, or implied by selection fo on or more non-circumscribed values? "
+        //                    )
+        //            )
+        //            .AddFragRef(Self.ObservationNoDeviceFragment.Value())
+        //            .AddFragRef(Self.ObservationCodedValueFragment.Value())
+        //            .AddFragRef(Self.ObservationLeafFragment.Value())
+        //            ;
 
-                s = e.SDef.Url;
+        //        s = e.SDef.Url;
 
-                e.IntroDoc
-                    .ReviewedStatus(ReviewStatus.NotReviewed)
-                    .CodedObservationLeafNode("a mammography mass margin", binding)
-                    ;
+        //        e.IntroDoc
+        //            .ReviewedStatus(ReviewStatus.NotReviewed)
+        //            .CodedObservationLeafNode("a mammography mass margin", binding)
+        //            ;
 
-                e.Select("value[x]")
-                    .Type("CodeableConcept")
-                    .Binding(binding.Url, BindingStrength.Required)
-                    ;
-                e.AddValueSetLink(binding);
-            });
+        //        e.Select("value[x]")
+        //            .Type("CodeableConcept")
+        //            .Binding(binding.Url, BindingStrength.Required)
+        //            ;
+        //        e.AddValueSetLink(binding);
+        //    });
     }
 }

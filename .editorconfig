@@ -1,0 +1,13 @@
+﻿[*.cs]
+
+# CA1051: Do not declare visible instance fields
+dotnet_diagnostic.CA1051.severity = none
+
+# CA1717: Only FlagsAttribute enums should have plural names
+dotnet_diagnostic.CA1717.severity = none
+
+# CA1062: Validate arguments of public methods
+dotnet_diagnostic.CA1062.severity = none
+
+# IDE0040: Add accessibility modifiers
+dotnet_style_require_accessibility_modifiers = never:silent

@@ -65,10 +65,17 @@ namespace BreastRadiology.XUnitTests
 
                 e.IntroDoc
                     .ReviewedStatus(ReviewStatus.NotReviewed)
-                    .CodedObservationLeafNode("a foreign object abnormality", binding)
+                    .CodedObservationLeafNode("a foreign object abnormality")
                     ;
 
                 e.Select("value[x]").Zero();
+                ProfileTargetSlice[] targets = new ProfileTargetSlice[]
+                {
+                    new ProfileTargetSlice(Self.ConsistentWith.Value(), 0, "*"),
+                };
+                e.SliceByUrl("hasMember", targets);
+                e.AddProfileTargets(targets);
+
                 e.StartComponentSliceing();
                 e.ComponentSliceCodeableConcept("mgAbnormalityForeignObjectType",
                     Self.MGCodeAbnormalityForeignObjectType.ToCodeableConcept(),
@@ -78,7 +85,6 @@ namespace BreastRadiology.XUnitTests
                     "1",
                     "MG AbnormalityForeignObject Type");
                 Self.ComponentSliceBiRads(e);
-                Self.ComponentSliceConsistentWith(e);
             });
     }
 }

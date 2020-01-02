@@ -50,49 +50,49 @@ namespace BreastRadiology.XUnitTests
                     )
             );
 
-        StringTaskVar ObservedChangeInProminance = new StringTaskVar(
-            (out String s) =>
-            {
+        //#StringTaskVar ObservedChangeInProminance = new StringTaskVar(
+        //    (out String s) =>
+        //    {
 
-                ValueSet binding = Self.ObservedChangeInProminanceVS.Value();
+        //        ValueSet binding = Self.ObservedChangeInProminanceVS.Value();
 
-                {
-                    IntroDoc valueSetIntroDoc = new IntroDoc(Path.Combine(Self.pageDir, $"ValueSet-{binding.Name}-intro.xml"));
-                    valueSetIntroDoc
-                        .ReviewedStatus(ReviewStatus.NotReviewed)
-                        .ValueSet(binding);
-                    ;
-                    String outputPath = valueSetIntroDoc.Save();
-                    Self.fc?.Mark(outputPath);
-                }
+        //        {
+        //            IntroDoc valueSetIntroDoc = new IntroDoc(Path.Combine(Self.pageDir, $"ValueSet-{binding.Name}-intro.xml"));
+        //            valueSetIntroDoc
+        //                .ReviewedStatus(ReviewStatus.NotReviewed)
+        //                .ValueSet(binding);
+        //            ;
+        //            String outputPath = valueSetIntroDoc.Save();
+        //            Self.fc?.Mark(outputPath);
+        //        }
 
-                SDefEditor e = Self.CreateEditor("ObservedChangeInProminance",
-                        "Observed Change in Prominance",
-                        "Prominance Change",
-                        ObservationUrl,
-                        $"{Group_CommonResources}/ObservedChangeInProminance")
-                    .Description("Breast Radiology Changes in Prominance Observation",
-                        new Markdown()
-                            .MissingObservation("an observed change in Prominance")
-                            //.Todo
-                    )
-                    .AddFragRef(Self.ObservationNoDeviceFragment.Value())
-                    .AddFragRef(Self.ObservationCodedValueFragment.Value())
-                    .AddFragRef(Self.ObservationLeafFragment.Value())
-                    ;
+        //        SDefEditor e = Self.CreateEditor("ObservedChangeInProminance",
+        //                "Observed Change in Prominance",
+        //                "Prominance Change",
+        //                ObservationUrl,
+        //                $"{Group_CommonResources}/ObservedChangeInProminance")
+        //            .Description("Breast Radiology Changes in Prominance Observation",
+        //                new Markdown()
+        //                    .MissingObservation("an observed change in Prominance")
+        //                    //.Todo
+        //            )
+        //            .AddFragRef(Self.ObservationNoDeviceFragment.Value())
+        //            .AddFragRef(Self.ObservationCodedValueFragment.Value())
+        //            .AddFragRef(Self.ObservationLeafFragment.Value())
+        //            ;
 
-                s = e.SDef.Url;
+        //        s = e.SDef.Url;
 
-                e.IntroDoc
-                    .ReviewedStatus(ReviewStatus.NotReviewed)
-                    .CodedObservationLeafNode("an abnormality observed change in Prominance", binding)
-                    ;
+        //        e.IntroDoc
+        //            .ReviewedStatus(ReviewStatus.NotReviewed)
+        //            .CodedObservationLeafNode("an abnormality observed change in Prominance", binding)
+        //            ;
 
-                e.Select("value[x]")
-                    .Type("CodeableConcept")
-                    .Binding(binding.Url, BindingStrength.Required)
-                    ;
-                e.AddValueSetLink(binding);
-            });
+        //        e.Select("value[x]")
+        //            .Type("CodeableConcept")
+        //            .Binding(binding.Url, BindingStrength.Required)
+        //            ;
+        //        e.AddValueSetLink(binding);
+        //    });
     }
 }

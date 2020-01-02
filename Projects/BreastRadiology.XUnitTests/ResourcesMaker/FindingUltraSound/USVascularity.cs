@@ -15,107 +15,105 @@ namespace BreastRadiology.XUnitTests
     partial class ResourcesMaker : ConverterBase
     {
 
-        CSTaskVar USVascularityCS = new CSTaskVar(
-             () =>
-                 Self.CreateCodeSystem(
-                     "USVascularityCS",
-                     "US Echo Pattern CodeSystem",
-                     "US Vascularity/CodeSystem",
-                     "Ultra-sound Vascularity code system.",
-                     Group_USCodesCS,
-                     new ConceptDef[]
-                     {
-                    new ConceptDef("Adjacent",
-                        "Adjacent",
-                        new Definition()
-                            .Line("[PR]")
-                        ),
-                    new ConceptDef("IncreaseSurround",
-                        "Increase Surround",
-                        new Definition()
-                            .Line("[PR]")
-                        ),
-                    new ConceptDef("Increased",
-                        "Increased",
-                        new Definition()
-                            .Line("[PR]")
-                        ),
-                    new ConceptDef("NoIncrease",
-                        "No increase",
-                        new Definition()
-                            .Line("[PR]")
-                        ),
-                    new ConceptDef("NotPresent",
-                        "Not present",
-                        new Definition()
-                            .Line("[PR]")
-                        ),
-                    new ConceptDef("Present",
-                        "Present",
-                        new Definition()
-                            .Line("[PR]")
-                        )
-                     })
-                 );
+        //#CSTaskVar USVascularityCS = new CSTaskVar(
+        //     () =>
+        //         Self.CreateCodeSystem(
+        //             "USVascularityCS",
+        //             "US Echo Pattern CodeSystem",
+        //             "US Vascularity/CodeSystem",
+        //             "Ultra-sound Vascularity code system.",
+        //             Group_USCodesCS,
+        //             new ConceptDef[]
+        //             {
+        //            new ConceptDef("Adjacent",
+        //                "Adjacent",
+        //                new Definition()
+        //                    .Line("[PR]")
+        //                ),
+        //            new ConceptDef("IncreaseSurround",
+        //                "Increase Surround",
+        //                new Definition()
+        //                    .Line("[PR]")
+        //                ),
+        //            new ConceptDef("Increased",
+        //                "Increased",
+        //                new Definition()
+        //                    .Line("[PR]")
+        //                ),
+        //            new ConceptDef("NoIncrease",
+        //                "No increase",
+        //                new Definition()
+        //                    .Line("[PR]")
+        //                ),
+        //            new ConceptDef("NotPresent",
+        //                "Not present",
+        //                new Definition()
+        //                    .Line("[PR]")
+        //                ),
+        //            new ConceptDef("Present",
+        //                "Present",
+        //                new Definition()
+        //                    .Line("[PR]")
+        //                )
+        //             })
+        //         );
 
 
 
-        VSTaskVar USVascularityVS = new VSTaskVar(
-            () =>
-                Self.CreateValueSet(
-                    "USVascularityVS",
-                    "US Vascularity ValueSet",
-                    "US Vascularity/ValueSet",
-                    "Ultra-sound Vascularity codes value set.",
-                    Group_USCodesVS,
-                    Self.USVascularityCS.Value()
-                    )
-            );
+        //#VSTaskVar USVascularityVS = new VSTaskVar(
+        //    () =>
+        //        Self.CreateValueSet(
+        //            "USVascularityVS",
+        //            "US Vascularity ValueSet",
+        //            "US Vascularity/ValueSet",
+        //            "Ultra-sound Vascularity codes value set.",
+        //            Group_USCodesVS,
+        //            Self.USVascularityCS.Value()
+        //            )
+        //    );
 
+        //#    StringTaskVar USVascularity = new StringTaskVar(
+        //        (out String s) =>
+        //        {
+        //            ValueSet binding = Self.USVascularityVS.Value();
 
+        //            {
+        //                IntroDoc valueSetIntroDoc = new IntroDoc(Path.Combine(Self.pageDir, $"ValueSet-{binding.Name}-intro.xml"));
+        //                valueSetIntroDoc
+        //                    .ReviewedStatus(ReviewStatus.NotReviewed)
+        //                    .ValueSet(binding);
+        //                ;
+        //                String outputPath = valueSetIntroDoc.Save();
+        //                Self.fc?.Mark(outputPath);
+        //            }
 
-        StringTaskVar USVascularity = new StringTaskVar(
-            (out String s) =>
-            {
-                ValueSet binding = Self.USVascularityVS.Value();
+        //            SDefEditor e = Self.CreateEditor("USVascularity",
+        //                    "US Vascularity",
+        //                    "US Vascularity",
+        //                    ObservationUrl,
+        //                    $"{Group_USResources}/Vascularity")
+        //                .Description("Breast Radiology Ultra-Sound Vascularity Observation",
+        //                    new Markdown()
+        //                        .Paragraph("[PR]")
+        //                        //.Todo
+        //                    )
+        //                .AddFragRef(Self.ObservationNoDeviceFragment.Value())
+        //                .AddFragRef(Self.ObservationCodedValueFragment.Value())
+        //                .AddFragRef(Self.ObservationLeafFragment.Value())
+        //                ;
 
-                {
-                    IntroDoc valueSetIntroDoc = new IntroDoc(Path.Combine(Self.pageDir, $"ValueSet-{binding.Name}-intro.xml"));
-                    valueSetIntroDoc
-                        .ReviewedStatus(ReviewStatus.NotReviewed)
-                        .ValueSet(binding);
-                    ;
-                    String outputPath = valueSetIntroDoc.Save();
-                    Self.fc?.Mark(outputPath);
-                }
+        //            s = e.SDef.Url;
 
-                SDefEditor e = Self.CreateEditor("USVascularity",
-                        "US Vascularity",
-                        "US Vascularity",
-                        ObservationUrl,
-                        $"{Group_USResources}/Vascularity")
-                    .Description("Breast Radiology Ultra-Sound Vascularity Observation",
-                        new Markdown()
-                            .Paragraph("[PR]")
-                            //.Todo
-                        )
-                    .AddFragRef(Self.ObservationNoDeviceFragment.Value())
-                    .AddFragRef(Self.ObservationCodedValueFragment.Value())
-                    .AddFragRef(Self.ObservationLeafFragment.Value())
-                    ;
+        //            e.IntroDoc
+        //                .ReviewedStatus(ReviewStatus.NotReviewed)
+        //                .CodedObservationLeafNode("an ultra-sound vascularity", binding)
+        //                ;
 
-                s = e.SDef.Url;
-
-                e.IntroDoc
-                    .ReviewedStatus(ReviewStatus.NotReviewed)
-                    .CodedObservationLeafNode("an ultra-sound vascularity", binding)
-                    ;
-
-                e.Select("value[x]")
-                    .Type("CodeableConcept")
-                    .Binding(binding.Url, BindingStrength.Required)
-                    ;
-                e.AddValueSetLink(binding);
-            });
+        //            e.Select("value[x]")
+        //                .Type("CodeableConcept")
+        //                .Binding(binding.Url, BindingStrength.Required)
+        //                ;
+        //            e.AddValueSetLink(binding);
+        //        });
     }
 }

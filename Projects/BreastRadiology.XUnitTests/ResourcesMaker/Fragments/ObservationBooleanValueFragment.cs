@@ -9,33 +9,33 @@ namespace BreastRadiology.XUnitTests
 {
     partial class ResourcesMaker
     {
-        StringTaskVar BooleanValueObservationFragment = new StringTaskVar(
-            (out String s) =>
-            {
-                SDefEditor e = Self.CreateFragment("BooleanValueObservationFragment",
-                        "BooleanValue Observation Fragment",
-                        "Observation/BooleanValue/Fragment",
-                        ObservationUrl)
-                    .Description("Fragment to define a boolean observation",
-                    new Markdown()
-                        .Paragraph("Fragment that constrains an observation to contains only a boolean value.")
-                        //.Todo
-                        )
-                    .AddFragRef(Self.ObservationNoComponentFragment.Value())
-                    ;
-                s = e.SDef.Url;
+        //#StringTaskVar BooleanValueObservationFragment = new StringTaskVar(
+        //    (out String s) =>
+        //    {
+        //        SDefEditor e = Self.CreateFragment("BooleanValueObservationFragment",
+        //                "BooleanValue Observation Fragment",
+        //                "Observation/BooleanValue/Fragment",
+        //                ObservationUrl)
+        //            .Description("Fragment to define a boolean observation",
+        //            new Markdown()
+        //                .Paragraph("Fragment that constrains an observation to contains only a boolean value.")
+        //                //.Todo
+        //                )
+        //            .AddFragRef(Self.ObservationNoComponentFragment.Value())
+        //            ;
+        //        s = e.SDef.Url;
 
-                e.IntroDoc
-                    .ReviewedStatus(ReviewStatus.NotReviewed)
-                    .Fragment($"Resource fragment used to by all observations whose value are a Boolean.")
-                    ;
+        //        e.IntroDoc
+        //            .ReviewedStatus(ReviewStatus.NotReviewed)
+        //            .Fragment($"Resource fragment used to by all observations whose value are a Boolean.")
+        //            ;
 
-                e.Select("value[x]")
-                    .Type("boolean")
-                    ;
+        //        e.Select("value[x]")
+        //            .Type("boolean")
+        //            ;
 
-                e.AddIncompatibleFragment(Self.ObservationNoValueFragment.Value());
-            });
+        //        e.AddIncompatibleFragment(Self.ObservationNoValueFragment.Value());
+        //    });
 
     }
 }
