@@ -58,8 +58,8 @@ namespace BreastRadiology.XUnitTests
                 e.AddProfileTargets(targets);
 
                 e.IntroDoc
-                    .ReviewedStatus(ReviewStatus.NotReviewed)
                     .ObservationSection("MG Finding")
+                    .ReviewedStatus(ReviewStatus.NotReviewed)
                     ;
             });
     }

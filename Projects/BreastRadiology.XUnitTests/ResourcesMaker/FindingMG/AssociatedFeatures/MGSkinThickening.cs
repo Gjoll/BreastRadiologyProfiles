@@ -39,7 +39,7 @@ namespace BreastRadiology.XUnitTests
 
                 e.IntroDoc
                     .ReviewedStatus(ReviewStatus.NotReviewed)
-                    .ObservationLeafNode("Skin Thickening")
+                    .Observation("Skin Thickening")
                     ;
             });
     }

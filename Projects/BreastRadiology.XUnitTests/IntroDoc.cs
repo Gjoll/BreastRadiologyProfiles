@@ -35,6 +35,16 @@ namespace BreastRadiology.XUnitTests
                 ;
         }
 
+        public IntroDoc Header3(String header,
+            String anchor)
+        {
+            this
+                .Append($"<a name=\"{anchor}\"> </a>")
+                .Append($"<h3 id=\"{anchor}\">{header}</h3>")
+                ;
+            return this;
+        }
+
         public IntroDoc AddSvgImage(SDefEditor e)
         {
             this.AddSvgImage(FocusMapMaker.FocusMapName(e.SDef.Url.LastUriPart()));
@@ -43,10 +53,10 @@ namespace BreastRadiology.XUnitTests
 
         public IntroDoc AddSvgImage(String svgFileName)
         {
-            this.sb
-                .AppendLine($"    <object data=\"{svgFileName}\" type=\"image/svg+xml\">")
-                .AppendLine($"        <img src=\"{svgFileName}\" alt=\"image/svg+xml\" />")
-                .AppendLine($"    </object>")
+            this
+                .Append($"<object data=\"{svgFileName}\" type=\"image/svg+xml\">")
+                .Append($"    <img src=\"{svgFileName}\" alt=\"image/svg+xml\" />")
+                .Append($"</object>")
                 ;
 
             return this;
@@ -54,26 +64,31 @@ namespace BreastRadiology.XUnitTests
 
         public IntroDoc Refinement(ValueSet vs, String name)
         {
-            this.Paragraph($"The type of this {name} may be further refined to be one of the following:");
-            this.List(vs);
+            this
+                .Header3("Refinement", "refinement")
+                .Paragraph($"The type of this {name} may be further refined to be one of the following {name} sub-types:")
+                .List(vs)
+                ;
             return this;
         }
 
-        public IntroDoc ObservationSection(String name)
+        public IntroDoc ObservationSection(String name, String article = "a")
         {
             this.Paragraph(
-                $"This resource is an '{name}' section.",
-                $"Information about the finding is contained in this observation and observations",
+                $"This Observation profile is {article} '{name}' section.",
+                $"Information about the finding is contained in the observations",
                 $"referenced by this resource's hasMember field."
                 );
             return this;
         }
 
-        public IntroDoc ObservationLeafNode(String leafNode)
+        public IntroDoc Observation(String name, String article = "a")
         {
             this.Paragraph(
-                $"This resource is an leaf-node observation of a {leafNode}.",
-                $"It is referenced by a parent Observation."
+                $"This Observation profile is {article} {name} observation.",
+                $"It is referenced by a parent Observation, and contains details of the " +
+                $"{name} observation in this resource (generally in component fields) and in" +
+                $"seperate observatiosn referenced by this resources hasMember field."
                 );
             return this;
         }
@@ -81,25 +96,40 @@ namespace BreastRadiology.XUnitTests
 
         public IntroDoc ReviewedStatus(ReviewStatus reviewStatus)
         {
-            this.sb.AppendLine($"<p>ReviewStatus: {reviewStatus}</p>");
+            this
+                .Append($"<h3 id=\"reviewStatus\">Review Status</h3>")
+                .Append($"<p><b>{reviewStatus}</b></p>")
+                ;
             return this;
         }
 
 
-        public IntroDoc Fragment(String purpose)
+        public IntroDoc Introduction(String purpose)
         {
-            this.Paragraph($"{purpose}.");
-            return this;
+            return this
+                .Header3("Introduction", "intro")
+                .Paragraph(purpose)
+                ;
         }
 
-        public IntroDoc Extension(String name, String purpose)
+        public IntroDoc IntroGeneral(String purpose)
         {
-            this.Paragraph($"{name} Extension Resource used to {purpose}.");
-            return this;
+            return this.Introduction(purpose);
         }
 
-        public IntroDoc ValueSet(ValueSet binding)
+        public IntroDoc IntroFragment(String purpose)
         {
+            return this.Introduction(purpose);
+        }
+
+        public IntroDoc IntroExtension(String name, String purpose)
+        {
+            return this.Introduction($"{name} Extension Resource used to {purpose}.");
+        }
+
+        public IntroDoc IntroValueSet(ValueSet binding)
+        {
+            this.Introduction($"Value set {binding.Name}");
             this.AddSvgImage(FocusMapMaker.FocusMapName(binding.Name));
             //this
             //    .Paragraph(
@@ -111,7 +141,7 @@ namespace BreastRadiology.XUnitTests
         }
 
 
-        public IntroDoc CodedObservationLeafNode(String leafNode)
+        public IntroDoc IntroCodedObservationLeafNode(String leafNode)
         {
             this
                 .Paragraph(
@@ -122,48 +152,52 @@ namespace BreastRadiology.XUnitTests
             return this;
         }
 
+        public IntroDoc Append(String line)
+        {
+            this.sb.AppendLine($"    {line}");
+            return this;
+        }
+
         public IntroDoc Paragraph(params String[] lines)
         {
-            this.sb.AppendLine("    <p>");
+            this.Append("<p>");
             foreach (String line in lines)
-            {
-                this.sb.AppendLine($"{line}");
-            }
-            this.sb.AppendLine("    </p>");
+                this.Append(line);
+            this.Append("</p>");
             return this;
         }
 
         public IntroDoc List(params String[] items)
         {
-            this.sb.AppendLine("    <ul>");
+            this.Append("<ul>");
             foreach (var item in items)
-                this.sb.AppendLine($"        <li>{item}</li>");
-            this.sb.AppendLine("    </ul>");
+                this.Append($"    <li>{item}</li>");
+            this.Append("</ul>");
             return this;
         }
 
         public IntroDoc List(ValueSet binding)
         {
-            this.sb.AppendLine("    <ul>");
+            this.Append("<ul>");
             foreach (var include in binding.Compose.Include)
             {
                 switch (include)
                 {
                     case ValueSet.ConceptSetComponent compose:
                         foreach (ValueSet.ConceptReferenceComponent concept in include.Concept)
-                            this.sb.AppendLine($"        <li>{concept.Code} - {concept.Display}</li>");
+                            this.Append($"    <li>{concept.Code} - {concept.Display}</li>");
                         break;
                     default:
                         throw new NotImplementedException();
                 }
             }
-            this.sb.AppendLine("    </ul>");
+            this.Append("</ul>");
             return this;
         }
 
         public String Render()
         {
-            this.sb.AppendLine("</div>");
+            this.Append("</div>");
             return this.sb.ToString();
         }
 

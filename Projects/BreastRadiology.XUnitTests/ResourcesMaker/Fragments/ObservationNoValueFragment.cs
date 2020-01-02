@@ -27,8 +27,8 @@ namespace BreastRadiology.XUnitTests
                 s = e.SDef.Url;
 
                 e.IntroDoc
+                    .IntroFragment($"Resource fragment used by observations that constrain the value[x] element to cardinality 0..0.")
                     .ReviewedStatus(ReviewStatus.NotReviewed)
-                    .Fragment($"Resource fragment used by observations that constrain the value[x] element to cardinality 0..0.")
                     ;
 
                 e.Select("value[x]").Zero();

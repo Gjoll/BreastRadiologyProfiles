@@ -1,7 +1,12 @@
 <div xmlns="http://www.w3.org/1999/xhtml"
     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
     xsi:schemaLocation="http://hl7.org/fhir ../../src-generated/schemas/fhir-single.xsd">
+    <a name="focusGraph"> </a>
+    <h3 id="focusGraph">Graphical Overview</h3>
+    <p>
+    This graph provides an overview of how and where {name} is referenced,and what items {name} itself referenced.
+    </p>
     <object data="FragmentMap_ImpressionsExtension.svg" type="image/svg+xml">
         <img src="FragmentMap_ImpressionsExtension.svg" alt="image/svg+xml" />
     </object>
-</div>
+    </div>

@@ -26,8 +26,8 @@ namespace BreastRadiology.XUnitTests
                 s = e.SDef.Url;
 
                 e.IntroDoc
+                    .IntroFragment($"Fragment for all observations that have no device.")
                     .ReviewedStatus(ReviewStatus.NotReviewed)
-                    .Fragment($"Fragment for all observations that have no device.")
                     ;
 
                 e.Select("device").Zero();

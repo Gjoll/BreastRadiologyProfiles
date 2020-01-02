@@ -39,8 +39,8 @@ namespace BreastRadiology.XUnitTests
                 s = e.SDef.Url;
 
                 e.IntroDoc
+                    .ObservationSection("Fibroadenoma")
                     .ReviewedStatus(ReviewStatus.NotReviewed)
-                    .ObservationSection("Mammography Fibroadenoma")
                     .Refinement(binding, "Fibroadenoma")
                     ;
 

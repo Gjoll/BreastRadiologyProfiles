@@ -30,8 +30,9 @@ namespace BreastRadiology.XUnitTests
                     ;
                 s = e.SDef.Url;
                 e.IntroDoc
+                    .Observation("AIM Annotated Imaging Study", "an")
                     .ReviewedStatus(ReviewStatus.NotReviewed)
-                    .ObservationLeafNode("AIM Annotated Imaging Study");
+                    ;
             });
     }
 }

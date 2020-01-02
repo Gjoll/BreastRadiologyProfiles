@@ -84,8 +84,8 @@ namespace BreastRadiology.XUnitTests
                 s = e.SDef.Url;
 
                 e.IntroDoc
-                    .ReviewedStatus(ReviewStatus.NotReviewed)
                     .ObservationSection($"Duct")
+                    .ReviewedStatus(ReviewStatus.NotReviewed)
                     .Refinement(binding, "Duct")
                     ;
 

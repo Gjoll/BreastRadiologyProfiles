@@ -26,8 +26,8 @@ namespace BreastRadiology.XUnitTests
                 s = e.SDef.Url;
 
                 e.IntroDoc
+                    .IntroFragment($"Resource fragment used by resources that are leaf node observations.")
                     .ReviewedStatus(ReviewStatus.NotReviewed)
-                    .Fragment($"Resource fragment used by resources that are leaf node observations.")
                     ;
 
                 e.Select("hasMember").Zero();

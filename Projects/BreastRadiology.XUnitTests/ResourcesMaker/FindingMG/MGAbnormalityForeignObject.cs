@@ -33,8 +33,8 @@ namespace BreastRadiology.XUnitTests
                 {
                     IntroDoc valueSetIntroDoc = new IntroDoc(Path.Combine(Self.pageDir, $"ValueSet-{binding.Name}-intro.xml"));
                     valueSetIntroDoc
+                        .IntroValueSet(binding)
                         .ReviewedStatus(ReviewStatus.NotReviewed)
-                        .ValueSet(binding);
                     ;
                     String outputPath = valueSetIntroDoc.Save();
                     Self.fc?.Mark(outputPath);
@@ -64,8 +64,9 @@ namespace BreastRadiology.XUnitTests
                 s = e.SDef.Url;
 
                 e.IntroDoc
+                    .IntroCodedObservationLeafNode("a foreign object abnormality")
                     .ReviewedStatus(ReviewStatus.NotReviewed)
-                    .CodedObservationLeafNode("a foreign object abnormality")
+                    .Refinement(binding, "Foreign Object")
                     ;
 
                 e.Select("value[x]").Zero();

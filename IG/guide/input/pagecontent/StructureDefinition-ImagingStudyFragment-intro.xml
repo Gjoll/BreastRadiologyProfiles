@@ -1,11 +1,19 @@
 <div xmlns="http://www.w3.org/1999/xhtml"
     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
     xsi:schemaLocation="http://hl7.org/fhir ../../src-generated/schemas/fhir-single.xsd">
+    <a name="focusGraph"> </a>
+    <h3 id="focusGraph">Graphical Overview</h3>
+    <p>
+    This graph provides an overview of how and where {name} is referenced,and what items {name} itself referenced.
+    </p>
     <object data="Focus-ImagingStudyFragment.svg" type="image/svg+xml">
         <img src="Focus-ImagingStudyFragment.svg" alt="image/svg+xml" />
     </object>
-<p>ReviewStatus: NotReviewed</p>
+    <a name="intro"> </a>
+    <h3 id="intro">Introduction</h3>
     <p>
-Imaging Study Fragment.
+    Imaging Study Fragment
     </p>
-</div>
+    <h3 id="reviewStatus">Review Status</h3>
+    <p><b>NotReviewed</b></p>
+    </div>

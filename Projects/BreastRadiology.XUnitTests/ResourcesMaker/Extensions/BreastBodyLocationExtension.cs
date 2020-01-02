@@ -383,8 +383,8 @@ namespace BreastRadiology.XUnitTests
                     {
                         IntroDoc valueSetIntroDoc = new IntroDoc(Path.Combine(Self.pageDir, $"ValueSet-{binding.Name}-intro.xml"));
                         valueSetIntroDoc
+                            .IntroValueSet(binding)
                             .ReviewedStatus(ReviewStatus.NotReviewed)
-                            .ValueSet(binding);
                         ;
                         String outputPath = valueSetIntroDoc.Save();
                         Self.fc?.Mark(outputPath);
@@ -403,8 +403,8 @@ namespace BreastRadiology.XUnitTests
                     {
                         IntroDoc valueSetIntroDoc = new IntroDoc(Path.Combine(Self.pageDir, $"ValueSet-{binding.Name}-intro.xml"));
                         valueSetIntroDoc
+                            .IntroValueSet(binding)
                             .ReviewedStatus(ReviewStatus.NotReviewed)
-                            .ValueSet(binding);
                         ;
                         String outputPath = valueSetIntroDoc.Save();
                         Self.fc?.Mark(outputPath);
@@ -423,8 +423,8 @@ namespace BreastRadiology.XUnitTests
                     {
                         IntroDoc valueSetIntroDoc = new IntroDoc(Path.Combine(Self.pageDir, $"ValueSet-{binding.Name}-intro.xml"));
                         valueSetIntroDoc
+                            .IntroValueSet(binding)
                             .ReviewedStatus(ReviewStatus.NotReviewed)
-                            .ValueSet(binding);
                         ;
                         String outputPath = valueSetIntroDoc.Save();
                         Self.fc?.Mark(outputPath);
@@ -442,8 +442,8 @@ namespace BreastRadiology.XUnitTests
                     {
                         IntroDoc valueSetIntroDoc = new IntroDoc(Path.Combine(Self.pageDir, $"ValueSet-{binding.Name}-intro.xml"));
                         valueSetIntroDoc
+                            .IntroValueSet(binding)
                             .ReviewedStatus(ReviewStatus.NotReviewed)
-                            .ValueSet(binding);
                         ;
                         String outputPath = valueSetIntroDoc.Save();
                         Self.fc?.Mark(outputPath);
@@ -469,8 +469,8 @@ namespace BreastRadiology.XUnitTests
                     new Markdown("Distance from chest wall to body location"));
 
                 e.IntroDoc
+                    .IntroExtension("Breast Body Location", "define a location in the breast")
                     .ReviewedStatus(ReviewStatus.NotReviewed)
-                    .Extension("Breast Body Location", "define a location in the breast")
                     ;
             });
     }

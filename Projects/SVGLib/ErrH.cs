@@ -61,7 +61,7 @@ namespace SVGLib
 
 			sMessageToLog = Priority(prio) + Where(sClass, sMethod) + sMessage + ".";
 
-			Trace.WriteLine(sMessageToLog);
+			//Trace.WriteLine(sMessageToLog);
 
 			if ( bLogToEventLog )
 			{
@@ -82,7 +82,7 @@ namespace SVGLib
 
 			sMessageToLog = Priority(prio) + Where() + sMessage + ".";
 
-			Trace.WriteLine(sMessageToLog);
+			//Trace.WriteLine(sMessageToLog);
 
 			if ( bLogToEventLog )
 			{

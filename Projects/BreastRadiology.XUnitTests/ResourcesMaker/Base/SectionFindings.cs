@@ -33,8 +33,8 @@ namespace BreastRadiology.XUnitTests
 
                 s = e.SDef.Url;
                 e.IntroDoc
-                 .ReviewedStatus(ReviewStatus.NotReviewed)
                  .ObservationSection($"Finding")
+                 .ReviewedStatus(ReviewStatus.NotReviewed)
                  ;
 
                 e.Select("value[x]").Zero();

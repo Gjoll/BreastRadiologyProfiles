@@ -32,8 +32,8 @@ namespace BreastRadiology.XUnitTests
                 s = e.SDef.Url;
 
                 e.IntroDoc
-                    .ReviewedStatus(ReviewStatus.NotReviewed)
                     .ObservationSection("MRI Finding")
+                    .ReviewedStatus(ReviewStatus.NotReviewed)
                     ;
 
                 e.Select("value[x]").Zero();

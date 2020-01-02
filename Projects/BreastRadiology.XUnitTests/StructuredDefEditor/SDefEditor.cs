@@ -62,7 +62,11 @@ namespace BreastRadiology.XUnitTests
             this.SDef.AddExtension(Global.ResourceMapNameUrl, new FhirString(mapName));
 
             this.IntroDoc = new IntroDoc(Path.Combine(this.pageDir, $"StructureDefinition-{name}-intro.xml"));
-            this.IntroDoc.AddSvgImage(this);
+            this.IntroDoc
+                .Header3($"Graphical Overview", "focusGraph")
+                .Paragraph("This graph provides an overview of how and where {name} is referenced," +
+                        "and what items {name} itself referenced.")
+                .AddSvgImage(FocusMapMaker.FocusMapName(this.SDef.Url.LastUriPart()));
         }
 
         /// <summary>

@@ -40,8 +40,8 @@ namespace BreastRadiology.XUnitTests
                 s = e.SDef.Url;
 
                 e.IntroDoc
+                    .Observation($"Skin Lesion")
                     .ReviewedStatus(ReviewStatus.NotReviewed)
-                    .ObservationLeafNode($"Skin Lesion")
                     ;
 
             });

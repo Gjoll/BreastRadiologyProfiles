@@ -1,12 +1,44 @@
 <div xmlns="http://www.w3.org/1999/xhtml"
     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
     xsi:schemaLocation="http://hl7.org/fhir ../../src-generated/schemas/fhir-single.xsd">
+    <a name="focusGraph"> </a>
+    <h3 id="focusGraph">Graphical Overview</h3>
+    <p>
+    This graph provides an overview of how and where {name} is referenced,and what items {name} itself referenced.
+    </p>
     <object data="Focus-MGAbnormalityForeignObject.svg" type="image/svg+xml">
         <img src="Focus-MGAbnormalityForeignObject.svg" alt="image/svg+xml" />
     </object>
-<p>ReviewStatus: NotReviewed</p>
     <p>
-This resource is an leaf-node observation of a a foreign object abnormality.
-It is referenced by a parent Observation.
+    This resource is an leaf-node observation of a a foreign object abnormality.
+    It is referenced by a parent Observation.
     </p>
-</div>
+    <h3 id="reviewStatus">Review Status</h3>
+    <p><b>NotReviewed</b></p>
+    <a name="refinement"> </a>
+    <h3 id="refinement">Refinement</h3>
+    <p>
+    The type of this Foreign Object may be further refined to be one of the following Foreign Object sub-types:
+    </p>
+    <ul>
+        <li>BB - BB</li>
+        <li>BiopsyClip - Biopsy Clip</li>
+        <li>BiopsyClipTitanium - Biopsy Clip Titanium</li>
+        <li>CatheterSleeve - Catheter Sleeve</li>
+        <li>ChemotherapyPort - Chemotherapy Port</li>
+        <li>Coil - Coil</li>
+        <li>GunShotWound - Gun Shot Wound</li>
+        <li>Metal - Metal</li>
+        <li>MetallicObjects - Metallic Objects</li>
+        <li>Needle - Needle</li>
+        <li>NippleJewelery - Nipple Jewelery</li>
+        <li>NonMetallicBody - Non Metallic Body</li>
+        <li>PaceMaker - Pace Maker</li>
+        <li>RadioactivePellet - Radioactive Pellet</li>
+        <li>Sponge - Sponge</li>
+        <li>SurgicalClip - Surgical Clip</li>
+        <li>Swab - Swab</li>
+        <li>Wire - Wire</li>
+        <li>WireFragment - Wire Fragment</li>
+    </ul>
+    </div>

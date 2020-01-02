@@ -27,8 +27,8 @@ namespace BreastRadiology.XUnitTests
                 s = e.SDef.Url;
 
                 e.IntroDoc
+                    .IntroFragment($"Resource fragment used by observations that are used as report sections.")
                     .ReviewedStatus(ReviewStatus.NotReviewed)
-                    .Fragment($"Resource fragment used by observations that are used as report sections.")
                     ;
 
                 e.Select("interpretation").Zero();

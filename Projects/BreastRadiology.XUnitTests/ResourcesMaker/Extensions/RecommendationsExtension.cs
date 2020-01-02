@@ -34,8 +34,8 @@ namespace BreastRadiology.XUnitTests
                 s = e.SDef.Url;
 
                 e.IntroDoc
+                    .IntroExtension("Recommendations", "include references to recommendations")
                     .ReviewedStatus(ReviewStatus.NotReviewed)
-                    .Extension("Recommendations", "include references to recommendations")
                     ;
 
                 e.AddFragRef(Self.HeaderFragment.Value());

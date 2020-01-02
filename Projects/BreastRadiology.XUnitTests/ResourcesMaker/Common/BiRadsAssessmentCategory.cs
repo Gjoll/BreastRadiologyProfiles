@@ -21,8 +21,8 @@ namespace BreastRadiology.XUnitTests
         //        {
         //            IntroDoc valueSetIntroDoc = new IntroDoc(Path.Combine(Self.pageDir, $"ValueSet-{binding.Name}-intro.xml"));
         //            valueSetIntroDoc
-        //                .ReviewedStatus(ReviewStatus.NotReviewed)
         //                .ValueSet(binding);
+        //                .ReviewedStatus(ReviewStatus.NotReviewed)
         //            ;
         //            String outputPath = valueSetIntroDoc.Save();
         //            Self.fc?.Mark(outputPath);
@@ -55,8 +55,9 @@ namespace BreastRadiology.XUnitTests
         //        s = e.SDef.Url;
 
         //        e.IntroDoc
+        //            .CodedObservationLeafNode("a BiRad Assessment Category", binding)
         //            .ReviewedStatus(ReviewStatus.NotReviewed)
-        //            .CodedObservationLeafNode("a BiRad Assessment Category", binding);
+        //          ;
 
         //        e.Select("value[x]")
         //            .Type("CodeableConcept")

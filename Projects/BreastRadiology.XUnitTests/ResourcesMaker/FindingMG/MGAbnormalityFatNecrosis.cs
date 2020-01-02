@@ -37,8 +37,8 @@ namespace BreastRadiology.XUnitTests
                 s = e.SDef.Url;
 
                 e.IntroDoc
+                    .ObservationSection("Fat Necrosis")
                     .ReviewedStatus(ReviewStatus.NotReviewed)
-                    .ObservationSection("Mammography Fat Necrosis")
                     ;
 
                 e.Select("value[x]").Zero();

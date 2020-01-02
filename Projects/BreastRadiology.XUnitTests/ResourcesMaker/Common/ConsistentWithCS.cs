@@ -53,8 +53,8 @@ namespace BreastRadiology.XUnitTests
                            "Qualifier");
 
                        e.IntroDoc
+                           .Observation("Consistent With")
                            .ReviewedStatus(ReviewStatus.NotReviewed)
-                           .ObservationSection("Mammography Calcification")
                            ;
                    });
 

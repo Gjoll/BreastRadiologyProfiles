@@ -34,7 +34,7 @@ namespace BreastRadiology.XUnitTests
 
                 s = e.SDef.Url;
                 e.IntroDoc
-                    .ReviewedStatus(ReviewStatus.NotReviewed)
+                    .Paragraph()
                     .Paragraph("AIM Annotation PolyGon extension resource")
                     .Paragraph("This extension defines a polygon line annotation to an image")
                     .Paragraph("It contains the following fields")
@@ -46,6 +46,7 @@ namespace BreastRadiology.XUnitTests
                         "coordinates- A series of points, each of which is an x,y point of the polygonal line. Each point is a string of the " +
                         "format \"{d},{d}\" where d is a fhir decimal string, and each point is seperated from the next by a space."
                     )
+                    .ReviewedStatus(ReviewStatus.NotReviewed)
                     ;
 
                 e.AddFragRef(Self.AimHeaderFragment.Value());

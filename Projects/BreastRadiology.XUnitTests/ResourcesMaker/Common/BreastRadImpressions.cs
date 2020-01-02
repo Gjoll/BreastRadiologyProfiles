@@ -32,8 +32,9 @@ namespace BreastRadiology.XUnitTests
 
                 s = e.SDef.Url;
                 e.IntroDoc
-                        .ReviewedStatus(ReviewStatus.NotReviewed)
-                        ;
+                    .IntroGeneral($"Breast Radiology Impressions Resource")
+                    .ReviewedStatus(ReviewStatus.NotReviewed)
+                    ;
             });
     }
 }

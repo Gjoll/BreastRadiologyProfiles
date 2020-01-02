@@ -111,8 +111,8 @@ namespace BreastRadiology.XUnitTests
                 s = e.SDef.Url;
 
                 e.IntroDoc
-                    .ReviewedStatus(ReviewStatus.NotReviewed)
                     .ObservationSection($"Lymph Node")
+                    .ReviewedStatus(ReviewStatus.NotReviewed)
                     .Refinement(binding, "LymphNode")
                     ;
 

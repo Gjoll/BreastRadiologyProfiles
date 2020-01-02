@@ -68,16 +68,16 @@ namespace BreastRadiology.XUnitTests
         }
         private bool StatusInfo(string className, string method, string msg)
         {
-            if (msg.Contains(" does not resolve", new System.StringComparison()))
-                return true;
+            //if (msg.Contains(" does not resolve", new System.StringComparison()))
+            //    return true;
 
-            if (msg.Contains("http://www.fragment.com", new System.StringComparison()))
-                return true;
+            //if (msg.Contains("http://www.fragment.com", new System.StringComparison()))
+            //    return true;
 
-            if (msg.Contains("Unknown Code System", new System.StringComparison()))
-                return true;
+            //if (msg.Contains("Unknown Code System", new System.StringComparison()))
+            //    return true;
 
-            this.Message("Info", className, method, msg);
+            //this.Message("Info", className, method, msg);
             return true;
         }
         private bool StatusErrors(string className, string method, string msg)
@@ -200,6 +200,8 @@ namespace BreastRadiology.XUnitTests
         [TestMethod]
         public void A_BuildFragments()
         {
+            DateTime start = DateTime.Now;
+            Trace.WriteLine("Starting A_BuildFragments");
             try
             {
                 ResourcesMaker pc = new ResourcesMaker(this.fc, this.fragmentDir, this.pageDir, this.cacheDir);
@@ -220,16 +222,19 @@ namespace BreastRadiology.XUnitTests
                 Trace.WriteLine(err.Message);
                 Assert.IsTrue(false);
             }
+            TimeSpan span = DateTime.Now - start;
+            Trace.WriteLine($"Ending A_BuildFragments [{(Int32) span.TotalSeconds}]");
         }
 
         [TestMethod]
         public void B_BuildResources()
         {
+            DateTime start = DateTime.Now;
+            Trace.WriteLine("Starting B_BuildResources");
             bool saveMergedFiles = false;
 
             try
             {
-                DateTime start = DateTime.Now;
                 if (Directory.Exists(this.resourcesDir) == false)
                     Directory.CreateDirectory(this.resourcesDir);
 
@@ -261,15 +266,15 @@ namespace BreastRadiology.XUnitTests
                     Trace.WriteLine(sb.ToString());
                     Debug.Assert(false);
                 }
-
-                TimeSpan executionTime = DateTime.Now - start;
-                Trace.WriteLine($"***** PreFhir execution Time {executionTime.ToString()}");
             }
             catch (Exception err)
             {
                 Trace.WriteLine(err.Message);
                 Assert.IsTrue(false);
             }
+
+            TimeSpan span = DateTime.Now - start;
+            Trace.WriteLine($"Ending B_BuildResources [{(Int32)span.TotalSeconds}]");
         }
 
         [TestMethod]
@@ -336,6 +341,8 @@ namespace BreastRadiology.XUnitTests
         [TestMethod]
         public void C_BuildGraphics()
         {
+            DateTime start = DateTime.Now;
+            Trace.WriteLine("Starting C_BuildGraphics");
             try
             {
                 if (Directory.Exists(this.graphicsDir) == false)
@@ -448,11 +455,15 @@ namespace BreastRadiology.XUnitTests
                 Trace.WriteLine(err.Message);
                 Assert.IsTrue(false);
             }
+            TimeSpan span = DateTime.Now - start;
+            Trace.WriteLine($"Ending C_BuildGraphics [{(Int32)span.TotalSeconds}]");
         }
 
         [TestMethod]
         public void D_BuildIG()
         {
+            DateTime start = DateTime.Now;
+            Trace.WriteLine("Starting D_BuildIG");
             try
             {
                 String outputDir = Path.Combine(this.guideDir, "input");
@@ -515,6 +526,8 @@ namespace BreastRadiology.XUnitTests
                 Trace.WriteLine(err.Message);
                 Assert.IsTrue(false);
             }
+            TimeSpan span = DateTime.Now - start;
+            Trace.WriteLine($"Ending D_BuildIG [{(Int32)span.TotalSeconds}]");
         }
     }
 }

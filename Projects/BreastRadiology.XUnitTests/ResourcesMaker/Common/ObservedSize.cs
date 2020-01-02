@@ -37,8 +37,8 @@ namespace BreastRadiology.XUnitTests
         //        s = e.SDef.Url;
 
         //        e.IntroDoc
-        //            .ReviewedStatus(ReviewStatus.NotReviewed)
         //            .ObservationLeafNode($"Size")
+        //            .ReviewedStatus(ReviewStatus.NotReviewed)
         //            ;
 
         //        e.Select("value[x]")

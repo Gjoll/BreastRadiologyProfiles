@@ -36,8 +36,8 @@ namespace BreastRadiology.XUnitTests
                 s = e.SDef.Url;
 
                 e.IntroDoc
+                    .IntroExtension("PatientRisk", "include references to PatientRisk")
                     .ReviewedStatus(ReviewStatus.NotReviewed)
-                    .Extension("PatientRisk", "include references to PatientRisk")
                     ;
 
                 e.AddFragRef(Self.HeaderFragment.Value());

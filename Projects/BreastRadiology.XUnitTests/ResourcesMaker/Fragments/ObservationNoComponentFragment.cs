@@ -28,8 +28,8 @@ namespace BreastRadiology.XUnitTests
                 e.Select("component").Zero();
 
                 e.IntroDoc
+                    .IntroFragment($"Resource fragment used by all BreastRad observations that do not have components.")
                     .ReviewedStatus(ReviewStatus.NotReviewed)
-                    .Fragment($"Resource fragment used by all BreastRad observations that do not have components.")
                     ;
             });
 

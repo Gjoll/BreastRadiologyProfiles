@@ -26,8 +26,8 @@ namespace BreastRadiology.XUnitTests
         //        s = e.SDef.Url;
 
         //        e.IntroDoc
-        //            .ReviewedStatus(ReviewStatus.NotReviewed)
         //            .Fragment($"Resource fragment used to by all observations whose value are a Boolean.")
+        //            .ReviewedStatus(ReviewStatus.NotReviewed)
         //            ;
 
         //        e.Select("value[x]")

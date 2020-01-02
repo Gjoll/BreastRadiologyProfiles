@@ -24,8 +24,8 @@ namespace BreastRadiology.XUnitTests
                 s = e.SDef.Url;
 
                 e.IntroDoc
+                    .IntroFragment($"Resource fragment used to by observations to fix the Observation.category field to the 'imaging' fixed value.")
                     .ReviewedStatus(ReviewStatus.NotReviewed)
-                    .Fragment($"Resource fragment used to by observations to fix the Observation.category field to the 'imaging' fixed value.")
                     ;
 
                 ElementTreeNode eDef = e.Get("category");

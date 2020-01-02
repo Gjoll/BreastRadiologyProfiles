@@ -140,8 +140,10 @@ namespace BreastRadiology.XUnitTests
             {
                 IntroDoc doc = new IntroDoc(Path.Combine(pageDir, $"StructureDefinition-Fragment{fragmentNode.Focus.Name}-intro.xml"));
                 doc
-                    .AddSvgImage($"FragmentMap_{fragmentNode.Focus.Name}.svg")
-                    ;
+                    .Header3($"Graphical Overview", "focusGraph")
+                    .Paragraph("This graph provides an overview of how and where {name} is referenced," +
+                        "and what items {name} itself referenced.")
+                    .AddSvgImage($"FragmentMap_{fragmentNode.Focus.Name}.svg");
                 String outputDocPath = doc.Save();
                 this.fc?.Mark(outputDocPath);
             }

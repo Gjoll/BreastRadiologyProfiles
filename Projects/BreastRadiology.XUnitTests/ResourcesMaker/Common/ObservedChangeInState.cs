@@ -79,8 +79,8 @@ namespace BreastRadiology.XUnitTests
         //        {
         //            IntroDoc valueSetIntroDoc = new IntroDoc(Path.Combine(Self.pageDir, $"ValueSet-{binding.Name}-intro.xml"));
         //            valueSetIntroDoc
-        //                .ReviewedStatus(ReviewStatus.NotReviewed)
         //                .ValueSet(binding);
+        //                .ReviewedStatus(ReviewStatus.NotReviewed)
         //            ;
         //            String outputPath = valueSetIntroDoc.Save();
         //            Self.fc?.Mark(outputPath);
@@ -104,8 +104,8 @@ namespace BreastRadiology.XUnitTests
         //        s = e.SDef.Url;
 
         //        e.IntroDoc
-        //            .ReviewedStatus(ReviewStatus.NotReviewed)
         //            .CodedObservationLeafNode("an abnormality observed change", binding)
+        //            .ReviewedStatus(ReviewStatus.NotReviewed)
         //            ;
 
         //        e.Select("value[x]")

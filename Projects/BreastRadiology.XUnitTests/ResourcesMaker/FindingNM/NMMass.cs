@@ -42,8 +42,8 @@ namespace BreastRadiology.XUnitTests
         //        s = e.SDef.Url;
 
         //        e.IntroDoc
-        //            .ReviewedStatus(ReviewStatus.NotReviewed)
         //            .ObservationSection("NM Mass")
+        //            .ReviewedStatus(ReviewStatus.NotReviewed)
         //            ;
 
         //        //ProfileTargetSlice[] targets = new ProfileTargetSlice[]

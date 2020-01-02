@@ -77,8 +77,8 @@ namespace BreastRadiology.XUnitTests
                 s = e.SDef.Url;
 
                 e.IntroDoc
-                    .ReviewedStatus(ReviewStatus.NotReviewed)
                     .ObservationSection($"Density")
+                    .ReviewedStatus(ReviewStatus.NotReviewed)
                     .Refinement(binding, "Density")
                     ;
 

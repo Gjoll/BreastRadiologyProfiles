@@ -56,8 +56,8 @@ namespace BreastRadiology.XUnitTests
                 s = e.SDef.Url;
 
                 e.IntroDoc
+                    .ObservationSection("Mass")
                     .ReviewedStatus(ReviewStatus.NotReviewed)
-                    .ObservationSection("Mammography Mass")
                     .Refinement(binding, "Mass")
                     ;
 

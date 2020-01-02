@@ -37,8 +37,8 @@ namespace BreastRadiology.XUnitTests
                 s = e.SDef.Url;
 
                 e.IntroDoc
+                    .Observation("Skin Retraction")
                     .ReviewedStatus(ReviewStatus.NotReviewed)
-                    .ObservationLeafNode("Skin Retraction")
                     ;
             });
     }

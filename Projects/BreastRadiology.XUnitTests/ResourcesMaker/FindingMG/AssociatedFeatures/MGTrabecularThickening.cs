@@ -35,8 +35,8 @@ namespace BreastRadiology.XUnitTests
         //            ;
         //        s = e.SDef.Url;
         //        e.IntroDoc
-        //            .ReviewedStatus(ReviewStatus.NotReviewed)
         //            .ObservationLeafNode("Trabecular Thickening")
+        //            .ReviewedStatus(ReviewStatus.NotReviewed)
         //            ;
         //    });
     }

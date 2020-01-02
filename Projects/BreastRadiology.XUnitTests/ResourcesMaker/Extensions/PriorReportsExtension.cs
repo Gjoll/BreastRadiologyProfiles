@@ -34,8 +34,8 @@ namespace BreastRadiology.XUnitTests
                 s = e.SDef.Url;
 
                 e.IntroDoc
+                    .IntroExtension("Prior Reports", "include references to prior reports")
                     .ReviewedStatus(ReviewStatus.NotReviewed)
-                    .Extension("Prior Reports", "include references to prior reports")
                     ;
 
                 e.AddFragRef(Self.HeaderFragment.Value());

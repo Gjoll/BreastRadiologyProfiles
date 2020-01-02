@@ -43,8 +43,8 @@ namespace BreastRadiology.XUnitTests
                 s = e.SDef.Url;
 
                 e.IntroDoc
+                    .ObservationSection($"Architectural Distortion", "an")
                     .ReviewedStatus(ReviewStatus.NotReviewed)
-                    .ObservationSection($"Architectural Distortion")
                     ;
 
                 e.Select("value[x]").Zero();

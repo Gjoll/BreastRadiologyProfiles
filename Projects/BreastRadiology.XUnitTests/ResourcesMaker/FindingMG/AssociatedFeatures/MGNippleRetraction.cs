@@ -38,8 +38,8 @@ namespace BreastRadiology.XUnitTests
                 s = e.SDef.Url;
 
                 e.IntroDoc
+                    .Observation("Nipple Retraction")
                     .ReviewedStatus(ReviewStatus.NotReviewed)
-                    .ObservationLeafNode("Nipple Retraction")
                     ;
             });
     }

@@ -56,8 +56,8 @@ namespace BreastRadiology.XUnitTests
                 s = e.SDef.Url;
 
                 e.IntroDoc
-                    .ReviewedStatus(ReviewStatus.NotReviewed)
                     .ObservationSection("Ultra-Sound Finding")
+                    .ReviewedStatus(ReviewStatus.NotReviewed)
                     ;
 
                 e.Select("value[x]").Zero();

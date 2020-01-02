@@ -100,8 +100,8 @@ namespace BreastRadiology.XUnitTests
                 {
                     IntroDoc valueSetIntroDoc = new IntroDoc(Path.Combine(Self.pageDir, $"ValueSet-{binding.Name}-intro.xml"));
                     valueSetIntroDoc
+                        .IntroValueSet(binding)
                         .ReviewedStatus(ReviewStatus.NotReviewed)
-                        .Refinement(binding, "Asymmetry")
                     ;
                     String outputPath = valueSetIntroDoc.Save();
                     Self.fc?.Mark(outputPath);
@@ -132,8 +132,8 @@ namespace BreastRadiology.XUnitTests
                 s = e.SDef.Url;
 
                 e.IntroDoc
+                    .ObservationSection("Mammography Asymmetry")
                     .ReviewedStatus(ReviewStatus.NotReviewed)
-                    .ObservationSection("a mammography asymmetry abnormality")
                     .Refinement(binding, "Asymmetry")
                     ;
 

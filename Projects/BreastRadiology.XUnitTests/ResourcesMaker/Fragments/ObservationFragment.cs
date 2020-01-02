@@ -26,8 +26,8 @@ namespace BreastRadiology.XUnitTests
                 ;
                 s = e.SDef.Url;
                 e.IntroDoc
+                    .IntroFragment($"Resource fragment used by all BreatRad observations.")
                     .ReviewedStatus(ReviewStatus.NotReviewed)
-                    .Fragment($"Resource fragment used by all BreatRad observations.")
                     ;
 
                 e.Select("subject").Single();
