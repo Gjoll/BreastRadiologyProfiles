@@ -1,6 +1,6 @@
 {
   "resourceType": "CodeSystem",
-  "id": "MGAbnormalityCystRefinementCS",
+  "id": "MGAbnormalityCystTypeCS",
   "extension": [
     {
       "url": "http://www.fragment.com/fragment",
@@ -9,11 +9,33 @@
     {
       "url": "http://www.fragment.com/Group",
       "valueString": "MGCodesCS"
+    },
+    {
+      "url": "http://www.fragment.com/mapname",
+      "valueString": "Common"
+    },
+    {
+      "url": "http://www.fragment.com/Group",
+      "valueString": "Fragment/{name}"
     }
   ],
-  "url": "http://hl7.org/fhir/us/breast-radiology/CodeSystem/MGAbnormalityCystRefinementCS",
-  "name": "MGAbnormalityCystRefinementCS",
-  "title": "Mammography Cyst Refinement CodeSystem",
+  "url": "http://hl7.org/fhir/us/breast-radiology/CodeSystem/MGAbnormalityCystTypeCS",
+  "version": "0.0.2",
+  "name": "MGAbnormalityCystTypeCS",
+  "title": "Mammography Cyst Type CodeSystem",
+  "status": "draft",
+  "date": "2019-11-01",
+  "publisher": "Hl7-Clinical Interoperability Council",
+  "contact": [
+    {
+      "telecom": [
+        {
+          "system": "url",
+          "value": "http://www.hl7.org/Special/committees/cic"
+        }
+      ]
+    }
+  ],
   "description": "Mammography cyst abnormality type CodeSystem.",
   "caseSensitive": true,
   "content": "complete",

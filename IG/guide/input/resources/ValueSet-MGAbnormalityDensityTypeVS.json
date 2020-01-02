@@ -1,0 +1,43 @@
+{
+  "resourceType": "ValueSet",
+  "id": "MGAbnormalityDensityTypeVS",
+  "url": "http://hl7.org/fhir/us/breast-radiology/ValueSet/MGAbnormalityDensityTypeVS",
+  "version": "0.0.2",
+  "name": "MGAbnormalityDensityTypeVS",
+  "title": "Mammography Density Type ValueSet ValueSet",
+  "status": "draft",
+  "date": "2019-11-01",
+  "publisher": "Hl7-Clinical Interoperability Council",
+  "contact": [
+    {
+      "telecom": [
+        {
+          "system": "url",
+          "value": "http://www.hl7.org/Special/committees/cic"
+        }
+      ]
+    }
+  ],
+  "description": "Mammography density abnormality refinement value set.",
+  "compose": {
+    "include": [
+      {
+        "system": "http://hl7.org/fhir/us/breast-radiology/CodeSystem/MGAbnormalityDensityTypeCS",
+        "concept": [
+          {
+            "code": "FocalAsymmetrical",
+            "display": "Focal Asymmetrical"
+          },
+          {
+            "code": "Nodular",
+            "display": "Nodular"
+          },
+          {
+            "code": "Tubular",
+            "display": "Tubular"
+          }
+        ]
+      }
+    ]
+  }
+}

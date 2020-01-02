@@ -226,9 +226,27 @@
     </resource>
     <resource>
       <reference>
+        <reference value="CodeSystem/MassTypeCS" />
+      </reference>
+      <name value="Mass Type CodeSystem" />
+      <description value="Codes defining mass refinements." />
+      <exampleBoolean value="false" />
+      <groupingId value="CommonCodesCS" />
+    </resource>
+    <resource>
+      <reference>
         <reference value="CodeSystem/MGAbnormalityAsymmetryRefinementCS" />
       </reference>
       <name value="Mammography Asymmetry Refinement CodeSystem" />
+      <description value="Mammography asymmetry abnormality type code system." />
+      <exampleBoolean value="false" />
+      <groupingId value="MGCodesCS" />
+    </resource>
+    <resource>
+      <reference>
+        <reference value="CodeSystem/MGAbnormalityAsymmetryTypeCS" />
+      </reference>
+      <name value="Mammography Asymmetry Type CodeSystem" />
       <description value="Mammography asymmetry abnormality type code system." />
       <exampleBoolean value="false" />
       <groupingId value="MGCodesCS" />
@@ -244,6 +262,15 @@
     </resource>
     <resource>
       <reference>
+        <reference value="CodeSystem/MGAbnormalityCystTypeCS" />
+      </reference>
+      <name value="Mammography Cyst Type CodeSystem" />
+      <description value="Mammography cyst abnormality type CodeSystem." />
+      <exampleBoolean value="false" />
+      <groupingId value="MGCodesCS" />
+    </resource>
+    <resource>
+      <reference>
         <reference value="CodeSystem/MGAbnormalityDensityCS" />
       </reference>
       <name value="Mammography Density Refinement CodeSystem" />
@@ -253,9 +280,18 @@
     </resource>
     <resource>
       <reference>
+        <reference value="CodeSystem/MGAbnormalityDensityTypeCS" />
+      </reference>
+      <name value="Mammography Density Type CodeSystem" />
+      <description value="Mammography density abnormality refinement types code system." />
+      <exampleBoolean value="false" />
+      <groupingId value="MGCodesCS" />
+    </resource>
+    <resource>
+      <reference>
         <reference value="CodeSystem/MGAbnormalityDuctCS" />
       </reference>
-      <name value="Mammography Duct Refinement CodeSystem" />
+      <name value="Mammography Duct Type CodeSystem" />
       <description value="Mammography duct abnormality types code system." />
       <exampleBoolean value="false" />
       <groupingId value="MGCodesCS" />
@@ -264,7 +300,7 @@
       <reference>
         <reference value="CodeSystem/MGAbnormalityLymphNodeCS" />
       </reference>
-      <name value="Mammography Lymph Node Refinement CodeSystem" />
+      <name value="Mammography Lymph Node Type CodeSystem" />
       <description value="Mammography lymph node abnormality types code system." />
       <exampleBoolean value="false" />
       <groupingId value="MGCodesCS" />
@@ -451,6 +487,15 @@
     </resource>
     <resource>
       <reference>
+        <reference value="ValueSet/MassTypeValueSetVS" />
+      </reference>
+      <name value="Mass Type ValueSet ValueSet" />
+      <description value="Mass type value set." />
+      <exampleBoolean value="false" />
+      <groupingId value="MGCodesVS" />
+    </resource>
+    <resource>
+      <reference>
         <reference value="ValueSet/MGAbnormalitiesVS" />
       </reference>
       <name value="Foreign Object ValueSet ValueSet" />
@@ -473,6 +518,15 @@
       </reference>
       <name value="Mammography CystAbnormalities ValueSet ValueSet" />
       <description value="Mammography cyst abnormality types value set." />
+      <exampleBoolean value="false" />
+      <groupingId value="MGCodesVS" />
+    </resource>
+    <resource>
+      <reference>
+        <reference value="ValueSet/MGAbnormalityDensityTypeVS" />
+      </reference>
+      <name value="Mammography Density Type ValueSet ValueSet" />
+      <description value="Mammography density abnormality refinement value set." />
       <exampleBoolean value="false" />
       <groupingId value="MGCodesVS" />
     </resource>

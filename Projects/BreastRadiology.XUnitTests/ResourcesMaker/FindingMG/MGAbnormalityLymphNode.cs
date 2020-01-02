@@ -100,7 +100,7 @@ namespace BreastRadiology.XUnitTests
                     .Description("Breast Radiology Mammography LymphNode Observation",
                         new Markdown()
                             .MissingObservation("a lymph node abnormality")
-                            //.Todo
+                    //.Todo
                     )
                     .AddFragRef(Self.ObservationNoDeviceFragment.Value())
                     .AddFragRef(Self.ObservationCodedValueFragment.Value())
@@ -116,35 +116,16 @@ namespace BreastRadiology.XUnitTests
                     .Refinement(binding, "LymphNode")
                     ;
 
-                if (Self.Component_HasMember)
-                {
-                    ProfileTargetSlice[] targets = new ProfileTargetSlice[]
-                    {
-                    new ProfileTargetSlice(Self.ObservedCount.Value(), 0, "1"),
-                    };
-                    e.SliceByUrl("hasMember", targets);
-                    e.AddProfileTargets(targets);
-
-                    e.Select("value[x]")
-                            .ZeroToOne()
-                            .Type("CodeableConcept")
-                            .Binding(binding.Url, BindingStrength.Required)
-                            ;
-                    e.AddValueSetLink(binding);
-                }
-                else
-                {
-                    e.Select("value[x]").Zero();
-                    e.StartComponentSliceing();
-                    e.ComponentSliceCodeableConcept("mgAbnormalityLymphNodeType",
-                        Self.MGCodeAbnormalityLymphNodeType.ToCodeableConcept(),
-                        binding,
-                        BindingStrength.Required,
-                        1,
-                        "1",
-                        "MG AbnormalityAsymmetry Type");
-                    Self.ComponentSliceObservedCount(e);
-                }
+                e.Select("value[x]").Zero();
+                e.StartComponentSliceing();
+                e.ComponentSliceCodeableConcept("mgAbnormalityLymphNodeType",
+                    Self.MGCodeAbnormalityLymphNodeType.ToCodeableConcept(),
+                    binding,
+                    BindingStrength.Required,
+                    1,
+                    "1",
+                    "MG AbnormalityAsymmetry Type");
+                Self.ComponentSliceObservedCount(e);
             });
     }
 }

@@ -38,19 +38,12 @@ namespace BreastRadiology.XUnitTests
                     .ObservationSection("MRI Finding")
                     ;
 
-                if (Self.Component_HasMember)
-                {
-                    //ProfileTargetSlice[] targets = new ProfileTargetSlice[]
-                    //{
-                    //new ProfileTargetSlice(Self.MRIMass.Value(), 0, "*"),
-                    //};
-                    //e.SliceByUrl("hasMember", targets);
-                    //e.AddProfileTargets(targets);
-                }
-                else
-                {
-                    //$ XXYYZ-Slice
-                }
+                //ProfileTargetSlice[] targets = new ProfileTargetSlice[]
+                //{
+                //new ProfileTargetSlice(Self.MRIMass.Value(), 0, "*"),
+                //};
+                //e.SliceByUrl("hasMember", targets);
+                //e.AddProfileTargets(targets);
 
                 //$e.Find("method")
                 //     .FixedCodeSlice("method", "http://snomed.info/sct", "115341008")

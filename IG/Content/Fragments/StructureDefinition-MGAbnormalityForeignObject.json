@@ -35,15 +35,15 @@
     },
     {
       "url": "http://www.fragment.com/maplink",
+      "valueString": "component|True|MG AbnormalityForeignObject Type^CodeableConcept^http://hl7.org/fhir/us/breast-radiology/ValueSet/MGAbnormalitiesVS"
+    },
+    {
+      "url": "http://www.fragment.com/maplink",
       "valueString": "component|True|BiRads Assessment Category^CodeableConcept^http://hl7.org/fhir/us/breast-radiology/ValueSet/BiRadsAssessmentCategoriesVS"
     },
     {
       "url": "http://www.fragment.com/maplink",
       "valueString": "component|True|Consistent With^CodeableConcept^http://hl7.org/fhir/us/breast-radiology/ValueSet/ConsistentWithVS"
-    },
-    {
-      "url": "http://www.fragment.com/maplink",
-      "valueString": "valueSet|True|http://hl7.org/fhir/us/breast-radiology/ValueSet/MGAbnormalitiesVS"
     }
   ],
   "url": "http://hl7.org/fhir/us/breast-radiology/StructureDefinition/MGAbnormalityForeignObject",
@@ -73,19 +73,12 @@
       {
         "id": "Observation.value[x]",
         "path": "Observation.value[x]",
+        "min": 0,
+        "max": "0",
         "base": {
           "path": "Observation.value[x]",
           "min": 0,
           "max": "1"
-        },
-        "type": [
-          {
-            "code": "CodeableConcept"
-          }
-        ],
-        "binding": {
-          "strength": "required",
-          "valueSet": "http://hl7.org/fhir/us/breast-radiology/ValueSet/MGAbnormalitiesVS"
         }
       },
       {
@@ -104,6 +97,57 @@
           "path": "Observation.component",
           "min": 0,
           "max": "*"
+        }
+      },
+      {
+        "id": "Observation.component:mgAbnormalityForeignObjectType",
+        "path": "Observation.component",
+        "sliceName": "mgAbnormalityForeignObjectType",
+        "min": 1,
+        "max": "1",
+        "base": {
+          "path": "Observation.component",
+          "min": 0,
+          "max": "*"
+        }
+      },
+      {
+        "id": "Observation.component:mgAbnormalityForeignObjectType.code",
+        "path": "Observation.component.code",
+        "min": 1,
+        "max": "1",
+        "base": {
+          "path": "Observation.component.code",
+          "min": 1,
+          "max": "1"
+        },
+        "patternCodeableConcept": {
+          "coding": [
+            {
+              "system": "http://hl7.org/fhir/us/breast-radiology/CodeSystem/ComponentSliceCodes",
+              "code": "mgAbnormalityForeignObjectType"
+            }
+          ]
+        }
+      },
+      {
+        "id": "Observation.component:mgAbnormalityForeignObjectType.value[x]",
+        "path": "Observation.component.value[x]",
+        "min": 1,
+        "max": "1",
+        "base": {
+          "path": "Observation.component.value[x]",
+          "min": 0,
+          "max": "1"
+        },
+        "type": [
+          {
+            "code": "CodeableConcept"
+          }
+        ],
+        "binding": {
+          "strength": "required",
+          "valueSet": "http://hl7.org/fhir/us/breast-radiology/ValueSet/MGAbnormalitiesVS"
         }
       },
       {

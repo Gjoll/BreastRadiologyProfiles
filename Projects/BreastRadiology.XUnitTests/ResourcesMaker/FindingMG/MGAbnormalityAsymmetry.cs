@@ -123,7 +123,7 @@ namespace BreastRadiology.XUnitTests
                             .BlockQuote("ally are seen to be interspersed with fat, whereas a radiodense mass displays completely or partially")
                             .BlockQuote("convex-outward borders and appears to be denser in the center than at the periphery.")
                             .BiradFooter()
-                            //.Todo
+                    //.Todo
                     )
                     .AddFragRef(Self.ObservationNoDeviceFragment.Value())
                     .AddFragRef(Self.ObservationCodedValueFragment.Value())
@@ -137,44 +137,24 @@ namespace BreastRadiology.XUnitTests
                     .Refinement(binding, "Asymmetry")
                     ;
 
-                if (Self.Component_HasMember)
+                ProfileTargetSlice[] targets = new ProfileTargetSlice[]
                 {
-                    ProfileTargetSlice[] targets = new ProfileTargetSlice[]
-                    {
-                    new ProfileTargetSlice(Self.ObservedCount.Value(), 0, "1"),
                     new ProfileTargetSlice(Self.MGAssociatedFeatures.Value(), 0, "1"),
-                    new ProfileTargetSlice(Self.ConsistentWith.Value(), 0, "*"),
-                    };
-                    e.SliceByUrl("hasMember", targets);
-                    e.AddProfileTargets(targets);
+                };
+                e.SliceByUrl("hasMember", targets);
+                e.AddProfileTargets(targets);
 
-                    e.Select("value[x]")
-                        .Type("CodeableConcept")
-                        .Binding(binding.Url, BindingStrength.Required)
-                        ;
-                    e.AddValueSetLink(binding);
-                }
-                else
-                {
-                    ProfileTargetSlice[] targets = new ProfileTargetSlice[]
-                    {
-                    new ProfileTargetSlice(Self.MGAssociatedFeatures.Value(), 0, "1"),
-                    };
-                    e.SliceByUrl("hasMember", targets);
-                    e.AddProfileTargets(targets);
-
-                    e.Select("value[x]").Zero();
-                    e.StartComponentSliceing();
-                    e.ComponentSliceCodeableConcept("mgAbnormalityAsymmetryType",
-                        Self.MGCodeAbnormalityAsymmetryType.ToCodeableConcept(),
-                        binding,
-                        BindingStrength.Required,
-                        1,
-                        "1",
-                        "MG AbnormalityAsymmetry Type");
-                    Self.ComponentSliceObservedCount(e);
-                    Self.ComponentSliceConsistentWith(e);
-                }
+                e.Select("value[x]").Zero();
+                e.StartComponentSliceing();
+                e.ComponentSliceCodeableConcept("mgAbnormalityAsymmetryType",
+                    Self.MGCodeAbnormalityAsymmetryType.ToCodeableConcept(),
+                    binding,
+                    BindingStrength.Required,
+                    1,
+                    "1",
+                    "MG AbnormalityAsymmetry Type");
+                Self.ComponentSliceObservedCount(e);
+                Self.ComponentSliceConsistentWith(e);
             });
     }
 }

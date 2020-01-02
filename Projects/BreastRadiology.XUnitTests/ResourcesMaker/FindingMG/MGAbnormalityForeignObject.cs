@@ -68,36 +68,17 @@ namespace BreastRadiology.XUnitTests
                     .CodedObservationLeafNode("a foreign object abnormality", binding)
                     ;
 
-                if (Self.Component_HasMember)
-                {
-                    ProfileTargetSlice[] targets = new ProfileTargetSlice[]
-                    {
-                    new ProfileTargetSlice(Self.BiRadsAssessmentCategory.Value(), 0, "1"),
-                    new ProfileTargetSlice(Self.ConsistentWith.Value(), 0, "*"),
-                    };
-                    e.SliceByUrl("hasMember", targets);
-                    e.AddProfileTargets(targets);
-
-                    e.Select("value[x]")
-                        .Type("CodeableConcept")
-                        .Binding(binding.Url, BindingStrength.Required)
-                        ;
-                    e.AddValueSetLink(binding);
-                }
-                else
-                {
-                    e.Select("value[x]").Zero();
-                    e.StartComponentSliceing();
-                    e.ComponentSliceCodeableConcept("mgAbnormalityForeignObjectType",
-                        Self.MGCodeAbnormalityForeignObjectType.ToCodeableConcept(),
-                        binding,
-                        BindingStrength.Required,
-                        1,
-                        "1",
-                        "MG AbnormalityForeignObject Type");
-                    Self.ComponentSliceBiRads(e);
-                    Self.ComponentSliceConsistentWith(e);
-                }
+                e.Select("value[x]").Zero();
+                e.StartComponentSliceing();
+                e.ComponentSliceCodeableConcept("mgAbnormalityForeignObjectType",
+                    Self.MGCodeAbnormalityForeignObjectType.ToCodeableConcept(),
+                    binding,
+                    BindingStrength.Required,
+                    1,
+                    "1",
+                    "MG AbnormalityForeignObject Type");
+                Self.ComponentSliceBiRads(e);
+                Self.ComponentSliceConsistentWith(e);
             });
     }
 }

@@ -38,7 +38,7 @@ namespace BreastRadiology.XUnitTests
                             .BlockQuote("As an ASSOCIATED FEATURE, this may be used in conjunction with one or more other FINDING(S)")
                             .BlockQuote("to describe calcifications within or immediately adjacent to the finding(s)")
                             .BiradFooter()
-                            //.Todo
+                    //.Todo
                     )
                     .AddFragRef(Self.ObservationNoDeviceFragment.Value())
                     .AddFragRef(Self.ObservationNoValueFragment.Value())
@@ -53,37 +53,19 @@ namespace BreastRadiology.XUnitTests
                     .ObservationSection("Mammography Calcification")
                     ;
 
-                if (Self.Component_HasMember)
+                e.Select("value[x]").Zero();
+                ProfileTargetSlice[] targets = new ProfileTargetSlice[]
                 {
-                    e.Select("value[x]").Zero();
-                    ProfileTargetSlice[] targets = new ProfileTargetSlice[]
-                    {
-                    new ProfileTargetSlice(Self.ObservedCount.Value(), 0, "1"),
-
-                    new ProfileTargetSlice(Self.MGCalcificationType.Value(), 0, "1"),
-                    new ProfileTargetSlice(Self.MGCalcificationDistribution.Value(), 0, "1"),
                     new ProfileTargetSlice(Self.MGAssociatedFeatures.Value(), 0, "1"),
-                    new ProfileTargetSlice(Self.ConsistentWith.Value(), 0, "*"),
-                    };
-                    e.SliceByUrl("hasMember", targets);
-                    e.AddProfileTargets(targets);
-                }
-                else
-                {
-                    e.Select("value[x]").Zero();
-                    ProfileTargetSlice[] targets = new ProfileTargetSlice[]
-                    {
-                    new ProfileTargetSlice(Self.MGAssociatedFeatures.Value(), 0, "1"),
-                    };
-                    e.SliceByUrl("hasMember", targets);
-                    e.AddProfileTargets(targets);
+                };
+                e.SliceByUrl("hasMember", targets);
+                e.AddProfileTargets(targets);
 
-                    e.StartComponentSliceing();
-                    Self.ComponentMGCalcificationType(e);
-                    Self.ComponentMGCalcificationDistribution(e);
-                    Self.ComponentSliceObservedCount(e);
-                    Self.ComponentSliceConsistentWith(e);
-                }
+                e.StartComponentSliceing();
+                Self.ComponentMGCalcificationType(e);
+                Self.ComponentMGCalcificationDistribution(e);
+                Self.ComponentSliceObservedCount(e);
+                Self.ComponentSliceConsistentWith(e);
             });
     }
 }

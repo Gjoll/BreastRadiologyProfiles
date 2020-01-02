@@ -46,25 +46,18 @@ namespace BreastRadiology.XUnitTests
                     .ObservationSection("MRI Mass")
                     ;
 
-                if (Self.Component_HasMember)
-                {
-                    ProfileTargetSlice[] targets = new ProfileTargetSlice[]
-                    {
-                    new ProfileTargetSlice(Self.ObservedSize.Value(), 0, "1"),
-                    new ProfileTargetSlice(Self.ObservedCount.Value(), 0, "1"),
-                    new ProfileTargetSlice(Self.Orientation.Value(), 0, "1"),
-                    new ProfileTargetSlice(Self.MRIMargin.Value(), 0, "*"),
-                    new ProfileTargetSlice(Self.ObservedChangeInState.Value(), 0, "*"),
-                    };
-                    e.SliceByUrl("hasMember", targets);
-                    e.AddProfileTargets(targets);
-                }
-                else
-                {
-                    //$ XXYYZ-Slice
-                    e.StartComponentSliceing();
-                    Self.ComponentSliceObservedCount(e);
-                }
+                //ProfileTargetSlice[] targets = new ProfileTargetSlice[]
+                //{
+                //new ProfileTargetSlice(Self.ObservedSize.Value(), 0, "1"),
+                //new ProfileTargetSlice(Self.ObservedCount.Value(), 0, "1"),
+                //new ProfileTargetSlice(Self.Orientation.Value(), 0, "1"),
+                //new ProfileTargetSlice(Self.MRIMargin.Value(), 0, "*"),
+                //new ProfileTargetSlice(Self.ObservedChangeInState.Value(), 0, "*"),
+                //};
+                //e.SliceByUrl("hasMember", targets);
+                //e.AddProfileTargets(targets);
+                e.StartComponentSliceing();
+                Self.ComponentSliceObservedCount(e);
             });
     }
 }

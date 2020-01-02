@@ -24,60 +24,45 @@ namespace BreastRadiology.XUnitTests
                     new Markdown()
                         .Paragraph("Shape Common Targets Fragment")
                         .Paragraph("Adds Orientation, Shape, Margin, and Density targets")
-                        //.Todo
+                //.Todo
                 )
                 .AddFragRef(Self.BreastBodyLocationRequiredFragment.Value())
                 ;
             s = e.SDef.Url;
 
-            if (Self.Component_HasMember)
-            {
-                ProfileTargetSlice[] targets = new ProfileTargetSlice[]
-                {
-                    new ProfileTargetSlice(Self.Orientation.Value(), 0, "1"),
-                    new ProfileTargetSlice(Self.Shape.Value(), 0, "1"),
-                    new ProfileTargetSlice(Self.Margin.Value(), 0, "1"),
-                    new ProfileTargetSlice(Self.MGDensity.Value(), 0, "1"),
-                };
-                e.SliceByUrl("hasMember", targets);
-                e.AddProfileTargets(targets);
-            }
-            else
-            {
-                e.StartComponentSliceing();
+            e.StartComponentSliceing();
 
-                e.ComponentSliceCodeableConcept("orientation",
-                    Self.CodeOrientation.ToCodeableConcept(),
-                    Self.OrientationVS.Value(),
-                    BindingStrength.Required,
-                    0,
-                    "1",
-                    "Orientation");
+            e.ComponentSliceCodeableConcept("orientation",
+                Self.CodeOrientation.ToCodeableConcept(),
+                Self.OrientationVS.Value(),
+                BindingStrength.Required,
+                0,
+                "1",
+                "Orientation");
 
-                e.ComponentSliceCodeableConcept("shape",
-                    Self.CodeShape.ToCodeableConcept(),
-                    Self.ShapeVS.Value(),
-                    BindingStrength.Required,
-                    0,
-                    "1",
-                    "Shape");
+            e.ComponentSliceCodeableConcept("shape",
+                Self.CodeShape.ToCodeableConcept(),
+                Self.ShapeVS.Value(),
+                BindingStrength.Required,
+                0,
+                "1",
+                "Shape");
 
-                e.ComponentSliceCodeableConcept("margin",
-                    Self.CodeMargin.ToCodeableConcept(),
-                    Self.MarginVS.Value(),
-                    BindingStrength.Required,
-                    0,
-                    "1",
-                    "Margin");
+            e.ComponentSliceCodeableConcept("margin",
+                Self.CodeMargin.ToCodeableConcept(),
+                Self.MarginVS.Value(),
+                BindingStrength.Required,
+                0,
+                "1",
+                "Margin");
 
-                e.ComponentSliceCodeableConcept("mgDensity",
-                    Self.CodeMGDensity.ToCodeableConcept(),
-                    Self.MGDensityVS.Value(),
-                    BindingStrength.Required,
-                    0,
-                    "1",
-                    "Density");
-            }
+            e.ComponentSliceCodeableConcept("mgDensity",
+                Self.CodeMGDensity.ToCodeableConcept(),
+                Self.MGDensityVS.Value(),
+                BindingStrength.Required,
+                0,
+                "1",
+                "Density");
         });
     }
 }

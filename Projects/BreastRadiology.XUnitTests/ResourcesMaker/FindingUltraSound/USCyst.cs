@@ -25,7 +25,7 @@ namespace BreastRadiology.XUnitTests
                         new Markdown()
                             .Paragraph("[PR]")
                             .MissingObservation("a cyst")
-                            //.Todo
+                    //.Todo
                     )
                     .AddFragRef(Self.ObservationNoDeviceFragment.Value())
                     .AddFragRef(Self.BreastBodyLocationRequiredFragment.Value())
@@ -39,26 +39,19 @@ namespace BreastRadiology.XUnitTests
                     .ObservationSection("UltraSound Cyst")
                     ;
 
-                if (Self.Component_HasMember)
-                {
-                    ProfileTargetSlice[] targets = new ProfileTargetSlice[]
-                    {
-                    new ProfileTargetSlice(Self.BiRadsAssessmentCategory.Value(), 0, "1"),
+                //ProfileTargetSlice[] targets = new ProfileTargetSlice[]
+                //{
+                //new ProfileTargetSlice(Self.BiRadsAssessmentCategory.Value(), 0, "1"),
 
-                    new ProfileTargetSlice(Self.ObservedCount.Value(), 0, "1"),
-                    new ProfileTargetSlice(Self.ObservedChangeInState.Value(), 0, "*"),
-                    new ProfileTargetSlice(Self.ObservedSize.Value(), 0, "1"),
-                    new ProfileTargetSlice(Self.Orientation.Value(), 0, "1"),
-                    };
-                    e.SliceByUrl("hasMember", targets);
-                    e.AddProfileTargets(targets);
-                }
-                else
-                {
-                    //$ XXYYZ-Slice
-                    e.StartComponentSliceing();
-                    Self.ComponentSliceObservedCount(e);
-                }
+                //new ProfileTargetSlice(Self.ObservedCount.Value(), 0, "1"),
+                //new ProfileTargetSlice(Self.ObservedChangeInState.Value(), 0, "*"),
+                //new ProfileTargetSlice(Self.ObservedSize.Value(), 0, "1"),
+                //new ProfileTargetSlice(Self.Orientation.Value(), 0, "1"),
+                //};
+                //e.SliceByUrl("hasMember", targets);
+                //e.AddProfileTargets(targets);
+                e.StartComponentSliceing();
+                Self.ComponentSliceObservedCount(e);
             });
     }
 }

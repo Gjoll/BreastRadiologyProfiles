@@ -25,7 +25,7 @@ namespace BreastRadiology.XUnitTests
                         new Markdown()
                         .Paragraph("This resource is the head of the tree of observations made during a breast radiology exam.")
                         .Paragraph("Child observations are referenced by the 'Observation.hasMember' field.")
-                        //.Todo
+                    //.Todo
                     )
                     .AddFragRef(Self.ObservationNoDeviceFragment.Value())
                     .AddFragRef(Self.ObservationSectionFragment.Value())
@@ -40,30 +40,16 @@ namespace BreastRadiology.XUnitTests
                 e.Select("value[x]").Zero();
                 e.Select("bodySite").Zero();
 
-                if (Self.Component_HasMember)
+                ProfileTargetSlice[] targets = new ProfileTargetSlice[]
                 {
-                    ProfileTargetSlice[] targets = new ProfileTargetSlice[]
-                    {
-                    new ProfileTargetSlice(Self.BiRadsAssessmentCategory.Value(), 1, "1"),
                     new ProfileTargetSlice(Self.SectionFindingsLeftBreast.Value(), 1, "1"),
                     new ProfileTargetSlice(Self.SectionFindingsRightBreast.Value(), 1, "1")
-                    };
-                    e.SliceByUrl("hasMember", targets);
-                    e.AddProfileTargets(targets);
-                }
-                else
-                {
-                    ProfileTargetSlice[] targets = new ProfileTargetSlice[]
-                    {
-                    new ProfileTargetSlice(Self.SectionFindingsLeftBreast.Value(), 1, "1"),
-                    new ProfileTargetSlice(Self.SectionFindingsRightBreast.Value(), 1, "1")
-                    };
-                    e.SliceByUrl("hasMember", targets);
-                    e.AddProfileTargets(targets);
+                };
+                e.SliceByUrl("hasMember", targets);
+                e.AddProfileTargets(targets);
 
-                    e.StartComponentSliceing();
-                    Self.ComponentSliceBiRads(e);
-                }
+                e.StartComponentSliceing();
+                Self.ComponentSliceBiRads(e);
             });
     }
 }

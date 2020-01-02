@@ -1,6 +1,6 @@
 {
   "resourceType": "ValueSet",
-  "id": "MGAbnormalityDensityVS",
+  "id": "MGAbnormalityDensityTypeVS",
   "extension": [
     {
       "url": "http://www.fragment.com/fragment",
@@ -12,17 +12,17 @@
     },
     {
       "url": "http://www.fragment.com/mapname",
-      "valueString": "MG Density/ValueSet"
+      "valueString": "MG Density Type/ValueSet"
     }
   ],
-  "url": "http://hl7.org/fhir/us/breast-radiology/ValueSet/MGAbnormalityDensityVS",
-  "name": "MGAbnormalityDensityVS",
-  "title": "Mammography Density ValueSet ValueSet",
-  "description": "Mammography density abnormality types value set.",
+  "url": "http://hl7.org/fhir/us/breast-radiology/ValueSet/MGAbnormalityDensityTypeVS",
+  "name": "MGAbnormalityDensityTypeVS",
+  "title": "Mammography Density Type ValueSet ValueSet",
+  "description": "Mammography density abnormality refinement value set.",
   "compose": {
     "include": [
       {
-        "system": "http://hl7.org/fhir/us/breast-radiology/CodeSystem/MGAbnormalityDensityCS",
+        "system": "http://hl7.org/fhir/us/breast-radiology/CodeSystem/MGAbnormalityDensityTypeCS",
         "concept": [
           {
             "code": "FocalAsymmetrical",

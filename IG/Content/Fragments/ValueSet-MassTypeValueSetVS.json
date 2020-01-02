@@ -1,6 +1,6 @@
 {
   "resourceType": "ValueSet",
-  "id": "MassRefinementValueSetVS",
+  "id": "MassTypeValueSetVS",
   "extension": [
     {
       "url": "http://www.fragment.com/fragment",
@@ -12,17 +12,17 @@
     },
     {
       "url": "http://www.fragment.com/mapname",
-      "valueString": "Mass Refinement/ValueSet"
+      "valueString": "Mass Type/ValueSet"
     }
   ],
-  "url": "http://hl7.org/fhir/us/breast-radiology/ValueSet/MassRefinementValueSetVS",
-  "name": "MassRefinementValueSetVS",
-  "title": "Mass Refinement ValueSet ValueSet",
+  "url": "http://hl7.org/fhir/us/breast-radiology/ValueSet/MassTypeValueSetVS",
+  "name": "MassTypeValueSetVS",
+  "title": "Mass Type ValueSet ValueSet",
   "description": "Mass type value set.",
   "compose": {
     "include": [
       {
-        "system": "http://hl7.org/fhir/us/breast-radiology/CodeSystem/MassRefinementCS",
+        "system": "http://hl7.org/fhir/us/breast-radiology/CodeSystem/MassTypeCS",
         "concept": [
           {
             "code": "Solid",

@@ -51,11 +51,11 @@
     },
     {
       "url": "http://www.fragment.com/maplink",
-      "valueString": "valueSet|True|http://hl7.org/fhir/us/breast-radiology/ValueSet/MassRefinementValueSetVS"
+      "valueString": "target|False|http://hl7.org/fhir/us/breast-radiology/StructureDefinition/MGAssociatedFeatures"
     },
     {
       "url": "http://www.fragment.com/maplink",
-      "valueString": "target|False|http://hl7.org/fhir/us/breast-radiology/StructureDefinition/MGAssociatedFeatures"
+      "valueString": "component|True|MG AbnormalityMass Type^CodeableConcept^http://hl7.org/fhir/us/breast-radiology/ValueSet/MassTypeValueSetVS"
     },
     {
       "url": "http://www.fragment.com/maplink",
@@ -93,19 +93,12 @@
       {
         "id": "Observation.value[x]",
         "path": "Observation.value[x]",
+        "min": 0,
+        "max": "0",
         "base": {
           "path": "Observation.value[x]",
           "min": 0,
           "max": "1"
-        },
-        "type": [
-          {
-            "code": "CodeableConcept"
-          }
-        ],
-        "binding": {
-          "strength": "required",
-          "valueSet": "http://hl7.org/fhir/us/breast-radiology/ValueSet/MassRefinementValueSetVS"
         }
       },
       {
@@ -163,6 +156,57 @@
           "path": "Observation.component",
           "min": 0,
           "max": "*"
+        }
+      },
+      {
+        "id": "Observation.component:mgAbnormalityMassType",
+        "path": "Observation.component",
+        "sliceName": "mgAbnormalityMassType",
+        "min": 1,
+        "max": "1",
+        "base": {
+          "path": "Observation.component",
+          "min": 0,
+          "max": "*"
+        }
+      },
+      {
+        "id": "Observation.component:mgAbnormalityMassType.code",
+        "path": "Observation.component.code",
+        "min": 1,
+        "max": "1",
+        "base": {
+          "path": "Observation.component.code",
+          "min": 1,
+          "max": "1"
+        },
+        "patternCodeableConcept": {
+          "coding": [
+            {
+              "system": "http://hl7.org/fhir/us/breast-radiology/CodeSystem/ComponentSliceCodes",
+              "code": "mgAbnormalityMassType"
+            }
+          ]
+        }
+      },
+      {
+        "id": "Observation.component:mgAbnormalityMassType.value[x]",
+        "path": "Observation.component.value[x]",
+        "min": 1,
+        "max": "1",
+        "base": {
+          "path": "Observation.component.value[x]",
+          "min": 0,
+          "max": "1"
+        },
+        "type": [
+          {
+            "code": "CodeableConcept"
+          }
+        ],
+        "binding": {
+          "strength": "required",
+          "valueSet": "http://hl7.org/fhir/us/breast-radiology/ValueSet/MassTypeValueSetVS"
         }
       },
       {

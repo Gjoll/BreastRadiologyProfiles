@@ -34,7 +34,7 @@ namespace BreastRadiology.XUnitTests
                             .BlockQuote("As an ASSOCIATED FEATURE, architectural distortion may be used in conjunction with another")
                             .BlockQuote("finding to indicate that the parenchyma is distorted or retracted adjacent to the FINDING")
                             .BiradFooter()
-                            //.Todo
+                    //.Todo
                     )
                     .AddFragRef(Self.ObservationNoDeviceFragment.Value())
                     .AddFragRef(Self.ObservationNoValueFragment.Value())
@@ -47,22 +47,9 @@ namespace BreastRadiology.XUnitTests
                     .ObservationSection($"Architectural Distortion")
                     ;
 
-                if (Self.Component_HasMember)
-                {
-                    e.Select("value[x]").Zero();
-                    ProfileTargetSlice[] targets = new ProfileTargetSlice[]
-                    {
-                    new ProfileTargetSlice(Self.ConsistentWith.Value(), 0, "*"),
-                    };
-                    e.SliceByUrl("hasMember", targets);
-                    e.AddProfileTargets(targets);
-                }
-                else
-                {
-                    e.Select("value[x]").Zero();
-                    e.StartComponentSliceing();
-                    Self.ComponentSliceConsistentWith(e);
-                }
+                e.Select("value[x]").Zero();
+                e.StartComponentSliceing();
+                Self.ComponentSliceConsistentWith(e);
             });
     }
 }

@@ -89,7 +89,7 @@ namespace BreastRadiology.XUnitTests
                         new Markdown()
                             .Paragraph("[PR]")
                             .MissingObservation("a cyst")
-                            //.Todo
+                    //.Todo
                     )
                     .AddFragRef(Self.ObservationNoDeviceFragment.Value())
                     .AddFragRef(Self.ObservationNoValueFragment.Value())
@@ -105,35 +105,17 @@ namespace BreastRadiology.XUnitTests
                     .Refinement(binding, "Cyst")
                     ;
 
-                if (Self.Component_HasMember)
-                {
-                    ProfileTargetSlice[] targets = new ProfileTargetSlice[]
-                    {
-                    new ProfileTargetSlice(Self.ObservedCount.Value(), 0, "1"),
-                    new ProfileTargetSlice(Self.ConsistentWith.Value(), 0, "*"),
-                    };
-                    e.SliceByUrl("hasMember", targets);
-                    e.AddProfileTargets(targets);
-
-                    e.Select("value[x]")
-                        .Type("CodeableConcept")
-                        .Binding(binding.Url, BindingStrength.Required)
-                        ;
-                }
-                else
-                {
-                    e.Select("value[x]").Zero();
-                    e.StartComponentSliceing();
-                    e.ComponentSliceCodeableConcept("mgAbnormalityCystType",
-                        Self.MGCodeAbnormalityCystType.ToCodeableConcept(),
-                        binding,
-                        BindingStrength.Required,
-                        1,
-                        "1",
-                        "MG AbnormalityCyst Type");
-                    Self.ComponentSliceObservedCount(e);
-                    Self.ComponentSliceConsistentWith(e);
-                }
+                e.Select("value[x]").Zero();
+                e.StartComponentSliceing();
+                e.ComponentSliceCodeableConcept("mgAbnormalityCystType",
+                    Self.MGCodeAbnormalityCystType.ToCodeableConcept(),
+                    binding,
+                    BindingStrength.Required,
+                    1,
+                    "1",
+                    "MG AbnormalityCyst Type");
+                Self.ComponentSliceObservedCount(e);
+                Self.ComponentSliceConsistentWith(e);
 
                 e.AddValueSetLink(binding);
             });

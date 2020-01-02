@@ -25,7 +25,7 @@ namespace BreastRadiology.XUnitTests
                         new Markdown()
                             .Paragraph("[PR]")
                             .MissingObservation("a fat necrosis abnormality")
-                            //.Todo
+                    //.Todo
                     )
                     .AddFragRef(Self.ObservationNoDeviceFragment.Value())
                     .AddFragRef(Self.ObservationNoValueFragment.Value())
@@ -41,24 +41,10 @@ namespace BreastRadiology.XUnitTests
                     .ObservationSection("Mammography Fat Necrosis")
                     ;
 
-                if (Self.Component_HasMember)
-                {
-                    ProfileTargetSlice[] targets = new ProfileTargetSlice[]
-                    {
-                    new ProfileTargetSlice(Self.ObservedCount.Value(), 0, "1"),
-                    new ProfileTargetSlice(Self.ConsistentWith.Value(), 0, "*"),
-                    };
-                    e.SliceByUrl("hasMember", targets);
-                    e.AddProfileTargets(targets);
-                    e.Select("value[x]").Zero();
-                }
-                else
-                {
-                    e.StartComponentSliceing();
-                    Self.ComponentSliceObservedCount(e);
-                    Self.ComponentSliceConsistentWith(e);
-                    e.Select("value[x]").Zero();
-                }
+                e.StartComponentSliceing();
+                Self.ComponentSliceObservedCount(e);
+                Self.ComponentSliceConsistentWith(e);
+                e.Select("value[x]").Zero();
             });
     }
 }

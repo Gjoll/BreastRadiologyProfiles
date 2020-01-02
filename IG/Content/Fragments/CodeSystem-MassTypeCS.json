@@ -1,6 +1,6 @@
 {
   "resourceType": "CodeSystem",
-  "id": "MassRefinementCS",
+  "id": "MassTypeCS",
   "extension": [
     {
       "url": "http://www.fragment.com/fragment",
@@ -11,9 +11,9 @@
       "valueString": "CommonCodesCS"
     }
   ],
-  "url": "http://hl7.org/fhir/us/breast-radiology/CodeSystem/MassRefinementCS",
-  "name": "MassRefinementCS",
-  "title": "Mass Refinement CodeSystem",
+  "url": "http://hl7.org/fhir/us/breast-radiology/CodeSystem/MassTypeCS",
+  "name": "MassTypeCS",
+  "title": "Mass Type CodeSystem",
   "description": "Codes defining mass refinements.",
   "caseSensitive": true,
   "content": "complete",

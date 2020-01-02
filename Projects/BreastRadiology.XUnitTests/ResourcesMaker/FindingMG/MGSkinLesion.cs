@@ -44,17 +44,6 @@ namespace BreastRadiology.XUnitTests
                     .ObservationLeafNode($"Skin Lesion")
                     ;
 
-                if (Self.Component_HasMember)
-                {
-                    //ProfileTargetSlice[] targets = new ProfileTargetSlice[]
-                    //{
-                    //};
-                    //e.SliceByUrl("hasMember", targets);
-                    //e.AddProfileTargets(targets);
-                }
-                else
-                {
-                }
             });
     }
 }

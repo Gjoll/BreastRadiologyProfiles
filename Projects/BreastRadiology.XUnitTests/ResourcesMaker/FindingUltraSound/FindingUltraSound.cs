@@ -66,20 +66,13 @@ namespace BreastRadiology.XUnitTests
                 // .Card(1, "*")
                 // ;
 
-                if (Self.Component_HasMember)
-                {
-                    //ProfileTargetSlice[] targets = new ProfileTargetSlice[]
-                    //{
-                    //    new ProfileTargetSlice(Self.USMass.Value(), 0, "*"),
-                    //    new ProfileTargetSlice(Self.USTissueComposition.Value(), 1, "1"),
-                    //};
-                    //e.SliceByUrl("hasMember", targets);
-                    //e.AddProfileTargets(targets);
-                }
-                else
-                {
-                    //$ XXYYZ-Slice
-                }
+                //ProfileTargetSlice[] targets = new ProfileTargetSlice[]
+                //{
+                //    new ProfileTargetSlice(Self.USMass.Value(), 0, "*"),
+                //    new ProfileTargetSlice(Self.USTissueComposition.Value(), 1, "1"),
+                //};
+                //e.SliceByUrl("hasMember", targets);
+                //e.AddProfileTargets(targets);
             });
     }
 }

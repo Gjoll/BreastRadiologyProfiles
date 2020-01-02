@@ -9,36 +9,19 @@ namespace BreastRadiology.XUnitTests
     {
         void AddFindingBreastTargets(SDefEditor e)
         {
-            if (Self.Component_HasMember)
+            ProfileTargetSlice[] findingBreastTargets = new ProfileTargetSlice[]
             {
-                ProfileTargetSlice[] findingBreastTargets = new ProfileTargetSlice[]
-                {
-                new ProfileTargetSlice(Self.BiRadsAssessmentCategory.Value(), 1, "1"),
                 new ProfileTargetSlice(Self.FindingMammo.Value(), 0, "*"),
                 new ProfileTargetSlice(Self.FindingMri.Value(), 0, "*"),
                 new ProfileTargetSlice(Self.FindingNM.Value(), 0, "*"),
                 new ProfileTargetSlice(Self.FindingUltraSound.Value(), 0, "*")
-                };
+            };
 
-                e.SliceByUrl("hasMember", findingBreastTargets);
-                e.AddProfileTargets(findingBreastTargets);
-            }
-            else
-            {
-                ProfileTargetSlice[] findingBreastTargets = new ProfileTargetSlice[]
-                {
-                new ProfileTargetSlice(Self.FindingMammo.Value(), 0, "*"),
-                new ProfileTargetSlice(Self.FindingMri.Value(), 0, "*"),
-                new ProfileTargetSlice(Self.FindingNM.Value(), 0, "*"),
-                new ProfileTargetSlice(Self.FindingUltraSound.Value(), 0, "*")
-                };
+            e.SliceByUrl("hasMember", findingBreastTargets);
+            e.AddProfileTargets(findingBreastTargets);
 
-                e.SliceByUrl("hasMember", findingBreastTargets);
-                e.AddProfileTargets(findingBreastTargets);
-
-                e.StartComponentSliceing();
-                Self.ComponentSliceConsistentWith(e);
-            }
+            e.StartComponentSliceing();
+            Self.ComponentSliceConsistentWith(e);
         }
     }
 }

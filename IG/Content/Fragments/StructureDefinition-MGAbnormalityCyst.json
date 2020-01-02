@@ -51,6 +51,10 @@
     },
     {
       "url": "http://www.fragment.com/maplink",
+      "valueString": "component|True|MG AbnormalityCyst Type^CodeableConcept^http://hl7.org/fhir/us/breast-radiology/ValueSet/MGAbnormalityCystVS"
+    },
+    {
+      "url": "http://www.fragment.com/maplink",
       "valueString": "component|True|Observed Count^Integer or Range"
     },
     {
@@ -89,19 +93,12 @@
       {
         "id": "Observation.value[x]",
         "path": "Observation.value[x]",
+        "min": 0,
+        "max": "0",
         "base": {
           "path": "Observation.value[x]",
           "min": 0,
           "max": "1"
-        },
-        "type": [
-          {
-            "code": "CodeableConcept"
-          }
-        ],
-        "binding": {
-          "strength": "required",
-          "valueSet": "http://hl7.org/fhir/us/breast-radiology/ValueSet/MGAbnormalityCystVS"
         }
       },
       {
@@ -120,6 +117,57 @@
           "path": "Observation.component",
           "min": 0,
           "max": "*"
+        }
+      },
+      {
+        "id": "Observation.component:mgAbnormalityCystType",
+        "path": "Observation.component",
+        "sliceName": "mgAbnormalityCystType",
+        "min": 1,
+        "max": "1",
+        "base": {
+          "path": "Observation.component",
+          "min": 0,
+          "max": "*"
+        }
+      },
+      {
+        "id": "Observation.component:mgAbnormalityCystType.code",
+        "path": "Observation.component.code",
+        "min": 1,
+        "max": "1",
+        "base": {
+          "path": "Observation.component.code",
+          "min": 1,
+          "max": "1"
+        },
+        "patternCodeableConcept": {
+          "coding": [
+            {
+              "system": "http://hl7.org/fhir/us/breast-radiology/CodeSystem/ComponentSliceCodes",
+              "code": "mgAbnormalityCystType"
+            }
+          ]
+        }
+      },
+      {
+        "id": "Observation.component:mgAbnormalityCystType.value[x]",
+        "path": "Observation.component.value[x]",
+        "min": 1,
+        "max": "1",
+        "base": {
+          "path": "Observation.component.value[x]",
+          "min": 0,
+          "max": "1"
+        },
+        "type": [
+          {
+            "code": "CodeableConcept"
+          }
+        ],
+        "binding": {
+          "strength": "required",
+          "valueSet": "http://hl7.org/fhir/us/breast-radiology/ValueSet/MGAbnormalityCystVS"
         }
       },
       {

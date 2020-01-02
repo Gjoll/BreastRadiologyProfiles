@@ -1,6 +1,6 @@
 {
   "resourceType": "CodeSystem",
-  "id": "MGAbnormalityDensityCS",
+  "id": "MGAbnormalityDensityTypeCS",
   "extension": [
     {
       "url": "http://www.fragment.com/fragment",
@@ -11,10 +11,10 @@
       "valueString": "MGCodesCS"
     }
   ],
-  "url": "http://hl7.org/fhir/us/breast-radiology/CodeSystem/MGAbnormalityDensityCS",
-  "name": "MGAbnormalityDensityCS",
-  "title": "Mammography Density Refinement CodeSystem",
-  "description": "Mammography density abnormality types code system.",
+  "url": "http://hl7.org/fhir/us/breast-radiology/CodeSystem/MGAbnormalityDensityTypeCS",
+  "name": "MGAbnormalityDensityTypeCS",
+  "title": "Mammography Density Type CodeSystem",
+  "description": "Mammography density abnormality refinement types code system.",
   "caseSensitive": true,
   "content": "complete",
   "count": 3,

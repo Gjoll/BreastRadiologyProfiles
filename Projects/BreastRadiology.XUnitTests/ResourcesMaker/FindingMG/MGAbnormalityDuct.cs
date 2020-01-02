@@ -89,38 +89,18 @@ namespace BreastRadiology.XUnitTests
                     .Refinement(binding, "Duct")
                     ;
 
-                if (Self.Component_HasMember)
-                {
-                    ProfileTargetSlice[] targets = new ProfileTargetSlice[]
-                    {
-                    new ProfileTargetSlice(Self.ObservedCount.Value(), 0, "1"),
-                    new ProfileTargetSlice(Self.ConsistentWith.Value(), 0, "*"),
-                    };
-                    e.SliceByUrl("hasMember", targets);
-                    e.AddProfileTargets(targets);
+                e.Select("value[x]").Zero();
 
-                    e.Select("value[x]")
-                        .ZeroToOne()
-                        .Type("CodeableConcept")
-                        .Binding(binding.Url, BindingStrength.Required)
-                        ;
-                    e.AddValueSetLink(binding);
-                }
-                else
-                {
-                    e.Select("value[x]").Zero();
-
-                    e.StartComponentSliceing();
-                    e.ComponentSliceCodeableConcept("mgAbnormalityDuctType",
-                        Self.MGCodeAbnormalityDuctType.ToCodeableConcept(),
-                        binding,
-                        BindingStrength.Required,
-                        1,
-                        "1",
-                        "MG AbnormalityDuct Type");
-                    Self.ComponentSliceConsistentWith(e);
-                    Self.ComponentSliceObservedCount(e);
-                }
+                e.StartComponentSliceing();
+                e.ComponentSliceCodeableConcept("mgAbnormalityDuctType",
+                    Self.MGCodeAbnormalityDuctType.ToCodeableConcept(),
+                    binding,
+                    BindingStrength.Required,
+                    1,
+                    "1",
+                    "MG AbnormalityDuct Type");
+                Self.ComponentSliceConsistentWith(e);
+                Self.ComponentSliceObservedCount(e);
             });
     }
 }

@@ -44,7 +44,7 @@ namespace BreastRadiology.XUnitTests
                             .BlockQuote("denser in the center than at the periphery. If a potential mass is seen only on a single projection, it")
                             .BlockQuote("should be called an \"ASYMMETRY\" until its 3-dimensionality is confirmed")
                             .BiradFooter()
-                            //.Todo
+                    //.Todo
                     )
                     .AddFragRef(Self.ObservationNoDeviceFragment.Value())
                     .AddFragRef(Self.ObservationCodedValueFragment.Value())
@@ -61,46 +61,25 @@ namespace BreastRadiology.XUnitTests
                     .Refinement(binding, "Mass")
                     ;
 
-                if (Self.Component_HasMember)
+                ProfileTargetSlice[] targets = new ProfileTargetSlice[]
                 {
-                    ProfileTargetSlice[] targets = new ProfileTargetSlice[]
-                    {
-                    new ProfileTargetSlice(Self.ObservedCount.Value(), 0, "1"),
                     new ProfileTargetSlice(Self.MGAssociatedFeatures.Value(), 0, "1"),
-                    new ProfileTargetSlice(Self.ConsistentWith.Value(), 0, "*"),
-                    };
-                    e.SliceByUrl("hasMember", targets);
-                    e.AddProfileTargets(targets);
+                };
+                e.SliceByUrl("hasMember", targets);
+                e.AddProfileTargets(targets);
 
-                    e.Select("value[x]")
-                        .ZeroToOne()
-                        .Type("CodeableConcept")
-                        .Binding(binding.Url, BindingStrength.Required)
-                        ;
-                    e.AddValueSetLink(binding);
-                }
-                else
-                {
-                    ProfileTargetSlice[] targets = new ProfileTargetSlice[]
-                    {
-                    new ProfileTargetSlice(Self.MGAssociatedFeatures.Value(), 0, "1"),
-                    };
-                    e.SliceByUrl("hasMember", targets);
-                    e.AddProfileTargets(targets);
+                e.Select("value[x]").Zero();
 
-                    e.Select("value[x]").Zero();
-
-                    e.StartComponentSliceing();
-                    e.ComponentSliceCodeableConcept("mgAbnormalityMassType",
-                        Self.MGCodeAbnormalityMassType.ToCodeableConcept(),
-                        binding,
-                        BindingStrength.Required,
-                        1,
-                        "1",
-                        "MG AbnormalityMass Type");
-                    Self.ComponentSliceObservedCount(e);
-                    Self.ComponentSliceConsistentWith(e);
-                }
+                e.StartComponentSliceing();
+                e.ComponentSliceCodeableConcept("mgAbnormalityMassType",
+                    Self.MGCodeAbnormalityMassType.ToCodeableConcept(),
+                    binding,
+                    BindingStrength.Required,
+                    1,
+                    "1",
+                    "MG AbnormalityMass Type");
+                Self.ComponentSliceObservedCount(e);
+                Self.ComponentSliceConsistentWith(e);
             });
     }
 }

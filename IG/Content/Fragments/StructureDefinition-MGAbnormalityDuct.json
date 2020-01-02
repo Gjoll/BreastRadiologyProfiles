@@ -35,7 +35,7 @@
     },
     {
       "url": "http://www.fragment.com/maplink",
-      "valueString": "valueSet|True|http://hl7.org/fhir/us/breast-radiology/ValueSet/MGAbnormalityDuctVS"
+      "valueString": "component|True|MG AbnormalityDuct Type^CodeableConcept^http://hl7.org/fhir/us/breast-radiology/ValueSet/MGAbnormalityDuctVS"
     },
     {
       "url": "http://www.fragment.com/maplink",
@@ -73,19 +73,12 @@
       {
         "id": "Observation.value[x]",
         "path": "Observation.value[x]",
+        "min": 0,
+        "max": "0",
         "base": {
           "path": "Observation.value[x]",
           "min": 0,
           "max": "1"
-        },
-        "type": [
-          {
-            "code": "CodeableConcept"
-          }
-        ],
-        "binding": {
-          "strength": "required",
-          "valueSet": "http://hl7.org/fhir/us/breast-radiology/ValueSet/MGAbnormalityDuctVS"
         }
       },
       {
@@ -104,6 +97,57 @@
           "path": "Observation.component",
           "min": 0,
           "max": "*"
+        }
+      },
+      {
+        "id": "Observation.component:mgAbnormalityDuctType",
+        "path": "Observation.component",
+        "sliceName": "mgAbnormalityDuctType",
+        "min": 1,
+        "max": "1",
+        "base": {
+          "path": "Observation.component",
+          "min": 0,
+          "max": "*"
+        }
+      },
+      {
+        "id": "Observation.component:mgAbnormalityDuctType.code",
+        "path": "Observation.component.code",
+        "min": 1,
+        "max": "1",
+        "base": {
+          "path": "Observation.component.code",
+          "min": 1,
+          "max": "1"
+        },
+        "patternCodeableConcept": {
+          "coding": [
+            {
+              "system": "http://hl7.org/fhir/us/breast-radiology/CodeSystem/ComponentSliceCodes",
+              "code": "mgAbnormalityDuctType"
+            }
+          ]
+        }
+      },
+      {
+        "id": "Observation.component:mgAbnormalityDuctType.value[x]",
+        "path": "Observation.component.value[x]",
+        "min": 1,
+        "max": "1",
+        "base": {
+          "path": "Observation.component.value[x]",
+          "min": 0,
+          "max": "1"
+        },
+        "type": [
+          {
+            "code": "CodeableConcept"
+          }
+        ],
+        "binding": {
+          "strength": "required",
+          "valueSet": "http://hl7.org/fhir/us/breast-radiology/ValueSet/MGAbnormalityDuctVS"
         }
       },
       {
