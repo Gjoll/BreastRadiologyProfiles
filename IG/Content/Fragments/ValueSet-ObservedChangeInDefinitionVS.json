@@ -17,7 +17,7 @@
   ],
   "url": "http://hl7.org/fhir/us/breast-radiology/ValueSet/ObservedChangeInDefinitionVS",
   "name": "ObservedChangeInDefinitionVS",
-  "title": "Observed Definition Changes ValueSet ValueSet",
+  "title": "Observed Definition Changes ValueSet",
   "description": "Observed changes in definition of an abnormality over time value set.",
   "compose": {
     "include": [

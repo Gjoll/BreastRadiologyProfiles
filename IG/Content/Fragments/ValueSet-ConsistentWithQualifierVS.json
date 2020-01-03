@@ -17,7 +17,7 @@
   ],
   "url": "http://hl7.org/fhir/us/breast-radiology/ValueSet/ConsistentWithQualifierVS",
   "name": "ConsistentWithQualifierVS",
-  "title": "ConsistentWithQualifier ValueSet ValueSet",
+  "title": "ConsistentWithQualifier ValueSet",
   "description": "ConsistentWithQualifier value set.",
   "compose": {
     "include": [

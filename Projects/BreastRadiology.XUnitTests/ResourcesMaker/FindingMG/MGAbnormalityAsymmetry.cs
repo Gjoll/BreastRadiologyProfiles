@@ -96,9 +96,8 @@ namespace BreastRadiology.XUnitTests
             (out String s) =>
             {
                 ValueSet binding = Self.MGAbnormalityAsymmetriesVS.Value();
-
                 {
-                    IntroDoc valueSetIntroDoc = new IntroDoc(Path.Combine(Self.pageDir, $"ValueSet-{binding.Name}-intro.xml"));
+                    IntroDoc valueSetIntroDoc = Self.CreateIntroDocVS(binding);
                     valueSetIntroDoc
                         .IntroValueSet(binding)
                         .ReviewedStatus(ReviewStatus.NotReviewed)
@@ -107,10 +106,9 @@ namespace BreastRadiology.XUnitTests
                     Self.fc?.Mark(outputPath);
                 }
 
-                SDefEditor e = Self.CreateEditor("MGAbnormalityAsymmetry",
+                SDefEditor e = Self.CreateEditorObservationLeaf("MGAbnormalityAsymmetry",
                         "Mammography Asymmetry",
                         "MG Asymmetry",
-                        ObservationUrl,
                         $"{Group_MGResources}/AbnormalityAsymmetry")
                     .Description("Breast Radiology Mammography Asymmetry Observation",
                         new Markdown()
@@ -131,11 +129,11 @@ namespace BreastRadiology.XUnitTests
                 ;
                 s = e.SDef.Url;
 
-                e.IntroDoc
-                    .ObservationSection("Mammography Asymmetry")
-                    .ReviewedStatus(ReviewStatus.NotReviewed)
-                    .Refinement(binding, "Asymmetry")
-                    ;
+                //$e.IntroDoc
+                //    .ObservationSection("Mammography Asymmetry")
+                //    .ReviewedStatus(ReviewStatus.NotReviewed)
+                //    .Refinement(binding, "Asymmetry")
+                //    ;
 
                 ProfileTargetSlice[] targets = new ProfileTargetSlice[]
                 {

@@ -16,10 +16,9 @@ namespace BreastRadiology.XUnitTests
         StringTaskVar MGAbnormalityFatNecrosis = new StringTaskVar(
             (out String s) =>
             {
-                SDefEditor e = Self.CreateEditor("MGAbnormalityFatNecrosis",
+                SDefEditor e = Self.CreateEditorObservationLeaf("MGAbnormalityFatNecrosis",
                         "Mammography Fat Necrosis",
                         "MG Fat Necrosis",
-                        ObservationUrl,
                         $"{Group_MGResources}/AbnormalityFatNecrosis")
                     .Description("Breast Radiology Mammography Fat Necrosis Observation",
                         new Markdown()
@@ -36,10 +35,10 @@ namespace BreastRadiology.XUnitTests
 
                 s = e.SDef.Url;
 
-                e.IntroDoc
-                    .ObservationSection("Fat Necrosis")
-                    .ReviewedStatus(ReviewStatus.NotReviewed)
-                    ;
+                //$e.IntroDoc
+                //    .ObservationSection("Fat Necrosis")
+                //    .ReviewedStatus(ReviewStatus.NotReviewed)
+                //    ;
 
                 e.Select("value[x]").Zero();
                 ProfileTargetSlice[] targets = new ProfileTargetSlice[]

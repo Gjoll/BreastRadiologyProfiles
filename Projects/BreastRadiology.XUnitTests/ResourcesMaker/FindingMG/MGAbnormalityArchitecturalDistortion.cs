@@ -16,10 +16,9 @@ namespace BreastRadiology.XUnitTests
         StringTaskVar MGAbnormalityArchitecturalDistortion = new StringTaskVar(
             (out String s) =>
             {
-                SDefEditor e = Self.CreateEditor("MGAbnormalityArchitecturalDistortion",
+                SDefEditor e = Self.CreateEditorObservationLeaf("MGAbnormalityArchitecturalDistortion",
                         "Mammography Architectural Distortion",
                         "MG Arch. Distortion",
-                        ObservationUrl,
                         $"{Group_MGResources}/AbnormalityArchitecturalDistortion")
                     .Description("Breast Radiology Mammography Architectural Distortion Observation",
                         new Markdown()
@@ -42,10 +41,10 @@ namespace BreastRadiology.XUnitTests
                     ;
                 s = e.SDef.Url;
 
-                e.IntroDoc
-                    .ObservationSection($"Architectural Distortion", "an")
-                    .ReviewedStatus(ReviewStatus.NotReviewed)
-                    ;
+                //$e.IntroDoc
+                //    .ObservationSection($"Architectural Distortion", "an")
+                //    .ReviewedStatus(ReviewStatus.NotReviewed)
+                //    ;
 
                 e.Select("value[x]").Zero();
                 ProfileTargetSlice[] targets = new ProfileTargetSlice[]

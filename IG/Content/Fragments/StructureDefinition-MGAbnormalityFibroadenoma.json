@@ -115,6 +115,9 @@
         "id": "Observation.component:mgAbnormalityFibroAdenomaType",
         "path": "Observation.component",
         "sliceName": "mgAbnormalityFibroAdenomaType",
+        "short": "MG AbnormalityFibroAdenoma Type component",
+        "definition": "This component slice contains the MG AbnormalityFibroAdenoma Type value",
+        "comment": "This is one component of a group of components that comprise the observation.",
         "min": 1,
         "max": "1",
         "base": {
@@ -126,6 +129,8 @@
       {
         "id": "Observation.component:mgAbnormalityFibroAdenomaType.code",
         "path": "Observation.component.code",
+        "short": "MG AbnormalityFibroAdenoma Type component code",
+        "definition": "This code identifies the MG AbnormalityFibroAdenoma Type value",
         "min": 1,
         "max": "1",
         "base": {
@@ -145,6 +150,8 @@
       {
         "id": "Observation.component:mgAbnormalityFibroAdenomaType.value[x]",
         "path": "Observation.component.value[x]",
+        "short": "MG AbnormalityFibroAdenoma Type component value",
+        "definition": "The value of the MG AbnormalityFibroAdenoma Type component",
         "min": 1,
         "max": "1",
         "base": {

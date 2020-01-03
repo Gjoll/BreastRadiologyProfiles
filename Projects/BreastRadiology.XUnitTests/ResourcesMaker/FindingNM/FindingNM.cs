@@ -16,10 +16,9 @@ namespace BreastRadiology.XUnitTests
         StringTaskVar FindingNM = new StringTaskVar(
             (out String s) =>
             {
-                SDefEditor e = Self.CreateEditor("NMFinding",
+                SDefEditor e = Self.CreateEditorObservationSection("NMFinding",
                         "NM Finding",
                         "NM Finding",
-                        ObservationUrl,
                         $"{Group_NMResources}")
                     .Description("Breast Radiology NMgraphy Finding",
                         new Markdown()
@@ -31,10 +30,10 @@ namespace BreastRadiology.XUnitTests
                     ;
                 s = e.SDef.Url;
 
-                e.IntroDoc
-                    .ObservationSection("MRI Finding")
-                    .ReviewedStatus(ReviewStatus.NotReviewed)
-                    ;
+                //$e.IntroDoc
+                //    .ObservationSection("MRI Finding")
+                //    .ReviewedStatus(ReviewStatus.NotReviewed)
+                //    ;
 
                 e.Select("value[x]").Zero();
                 ////$ todo. Incorrect method!!!

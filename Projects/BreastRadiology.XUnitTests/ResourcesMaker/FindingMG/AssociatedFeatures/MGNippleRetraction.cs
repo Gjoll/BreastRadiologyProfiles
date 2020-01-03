@@ -16,10 +16,9 @@ namespace BreastRadiology.XUnitTests
         StringTaskVar MGNippleRetraction = new StringTaskVar(
             (out String s) =>
             {
-                SDefEditor e = Self.CreateEditor("MGNippleRetraction",
+                SDefEditor e = Self.CreateEditorObservationLeaf("MGNippleRetraction",
                     "Mammography Nipple Retraction",
                     "MG Nipple Retraction",
-                    ObservationUrl,
                     $"{Group_MGResources}/AssociatedFeature/NippleRetraction")
                     .Description("Breast Radiology Mammography Nipple Retraction Observation",
                         new Markdown()
@@ -37,10 +36,10 @@ namespace BreastRadiology.XUnitTests
                     ;
                 s = e.SDef.Url;
 
-                e.IntroDoc
-                    .Observation("Nipple Retraction")
-                    .ReviewedStatus(ReviewStatus.NotReviewed)
-                    ;
+                //$e.IntroDoc
+                //    .Observation("Nipple Retraction")
+                //    .ReviewedStatus(ReviewStatus.NotReviewed)
+                //    ;
             });
     }
 }

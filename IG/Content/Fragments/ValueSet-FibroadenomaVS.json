@@ -17,8 +17,8 @@
   ],
   "url": "http://hl7.org/fhir/us/breast-radiology/ValueSet/FibroadenomaVS",
   "name": "FibroadenomaVS",
-  "title": "Fibroadenoma ValueSet ValueSet",
-  "description": "Fibroadenoma values value set.",
+  "title": "Fibroadenoma ValueSet",
+  "description": "Fibroadenoma value set.",
   "compose": {
     "include": [
       {

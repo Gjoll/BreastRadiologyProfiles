@@ -345,7 +345,8 @@ namespace BreastRadiology.XUnitTests
                     "Breast Body Location Extension",
                     "Breast Body Loc.",
                     ExtensionUrl,
-                    $"{Group_ExtensionResources}/BreastBodyLocation")
+                    $"{Group_ExtensionResources}/BreastBodyLocation",
+                    "BreastBodyLocationExtension")
                     .Description("Breast Body Location extension",
                         new Markdown()
                             .Paragraph("this extension defines the fields that are used to describe the" +
@@ -381,7 +382,7 @@ namespace BreastRadiology.XUnitTests
                     ValueSet binding = Self.BreastLocationQuadrantVS.Value();
 
                     {
-                        IntroDoc valueSetIntroDoc = new IntroDoc(Path.Combine(Self.pageDir, $"ValueSet-{binding.Name}-intro.xml"));
+                        IntroDoc valueSetIntroDoc = Self.CreateIntroDocVS(binding);
                         valueSetIntroDoc
                             .IntroValueSet(binding)
                             .ReviewedStatus(ReviewStatus.NotReviewed)
@@ -401,7 +402,7 @@ namespace BreastRadiology.XUnitTests
                     ValueSet binding = Self.BreastLocationRegionVS.Value();
 
                     {
-                        IntroDoc valueSetIntroDoc = new IntroDoc(Path.Combine(Self.pageDir, $"ValueSet-{binding.Name}-intro.xml"));
+                        IntroDoc valueSetIntroDoc = Self.CreateIntroDocVS(binding);
                         valueSetIntroDoc
                             .IntroValueSet(binding)
                             .ReviewedStatus(ReviewStatus.NotReviewed)
@@ -421,7 +422,7 @@ namespace BreastRadiology.XUnitTests
                     ValueSet binding = Self.BreastLocationClockVS.Value();
 
                     {
-                        IntroDoc valueSetIntroDoc = new IntroDoc(Path.Combine(Self.pageDir, $"ValueSet-{binding.Name}-intro.xml"));
+                        IntroDoc valueSetIntroDoc = Self.CreateIntroDocVS(binding);
                         valueSetIntroDoc
                             .IntroValueSet(binding)
                             .ReviewedStatus(ReviewStatus.NotReviewed)
@@ -440,7 +441,7 @@ namespace BreastRadiology.XUnitTests
                 {
                     ValueSet binding = Self.BreastLocationDepthVS.Value();
                     {
-                        IntroDoc valueSetIntroDoc = new IntroDoc(Path.Combine(Self.pageDir, $"ValueSet-{binding.Name}-intro.xml"));
+                        IntroDoc valueSetIntroDoc = Self.CreateIntroDocVS(binding);
                         valueSetIntroDoc
                             .IntroValueSet(binding)
                             .ReviewedStatus(ReviewStatus.NotReviewed)
@@ -468,10 +469,10 @@ namespace BreastRadiology.XUnitTests
                     "Distance from chest wall",
                     new Markdown("Distance from chest wall to body location"));
 
-                e.IntroDoc
-                    .IntroExtension("Breast Body Location", "define a location in the breast")
-                    .ReviewedStatus(ReviewStatus.NotReviewed)
-                    ;
+                //$e.IntroDoc
+                //    .IntroExtension("Breast Body Location", "define a location in the breast")
+                //    .ReviewedStatus(ReviewStatus.NotReviewed)
+                //    ;
             });
     }
 }

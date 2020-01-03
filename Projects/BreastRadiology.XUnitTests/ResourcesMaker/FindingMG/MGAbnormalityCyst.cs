@@ -72,7 +72,7 @@ namespace BreastRadiology.XUnitTests
                 ValueSet binding = Self.MGAbnormalityCystVS.Value();
 
                 {
-                    IntroDoc valueSetIntroDoc = new IntroDoc(Path.Combine(Self.pageDir, $"ValueSet-{binding.Name}-intro.xml"));
+                    IntroDoc valueSetIntroDoc = Self.CreateIntroDocVS(binding);
                     valueSetIntroDoc
                         .IntroValueSet(binding)
                         .ReviewedStatus(ReviewStatus.NotReviewed)
@@ -81,10 +81,9 @@ namespace BreastRadiology.XUnitTests
                     Self.fc?.Mark(outputPath);
                 }
 
-                SDefEditor e = Self.CreateEditor("MGAbnormalityCyst",
+                SDefEditor e = Self.CreateEditorObservationLeaf("MGAbnormalityCyst",
                         "Mammography Cyst",
                         "MG Cyst",
-                        ObservationUrl,
                         $"{Group_MGResources}/AbnormalityCyst")
                     .Description("Breast Radiology Mammography Cyst Observation",
                         new Markdown()
@@ -100,11 +99,11 @@ namespace BreastRadiology.XUnitTests
                     ;
                 s = e.SDef.Url;
 
-                e.IntroDoc
-                    .ObservationSection("Cyst")
-                    .ReviewedStatus(ReviewStatus.NotReviewed)
-                    .Refinement(binding, "Cyst")
-                    ;
+                //$e.IntroDoc
+                //    .ObservationSection("Cyst")
+                //    .ReviewedStatus(ReviewStatus.NotReviewed)
+                //    .Refinement(binding, "Cyst")
+                //    ;
 
                 e.Select("value[x]").Zero();
 

@@ -21,12 +21,13 @@ namespace BreastRadiology.XUnitTests
                     "Impressions Extension",
                     "Impressions/Extension",
                     ExtensionUrl,
-                    $"{Group_ExtensionResources}/Impressions")
+                    $"{Group_ExtensionResources}/Impressions",
+                    "ImpressionsExtension")
                     .Description("Impressions extension",
                         new Markdown()
                             .Paragraph("This extension defines the impressions section of a breast radiology report, " +
                                        "linking a report to the resources that the exam impressions.")
-                            //.Todo
+                    //.Todo
                     )
                     .Kind(StructureDefinition.StructureDefinitionKind.ComplexType)
                     .Context()
@@ -34,10 +35,10 @@ namespace BreastRadiology.XUnitTests
                 e.AddFragRef(Self.HeaderFragment.Value());
                 s = e.SDef.Url;
 
-                e.IntroDoc
-                    .IntroExtension("Prior Reports", "include references to prior reports")
-                    .ReviewedStatus(ReviewStatus.NotReviewed)
-                    ;
+                //$e.IntroDoc
+                //    .IntroExtension("Prior Reports", "include references to prior reports")
+                //    .ReviewedStatus(ReviewStatus.NotReviewed)
+                //    ;
 
                 e.Select("extension").Zero();
                 e.Select("url")

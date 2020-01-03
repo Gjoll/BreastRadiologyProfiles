@@ -86,7 +86,7 @@ namespace BreastRadiology.XUnitTests
                         "MammoCalcificationDistributionVS",
                         "Mammography Calcification Distribution ValueSet",
                         "MG Calc./DistributionValueSet",
-                        "Mammography calcification distribution values value set.",
+                        "Mammography calcification distribution value set.",
                         Group_MGCodesVS,
                         Self.MGCalcificationDistributionCS.Value()
                     )
@@ -99,7 +99,7 @@ namespace BreastRadiology.XUnitTests
         //        ValueSet binding = Self.MGCalcificationDistributionVS.Value();
 
         //        {
-        //            IntroDoc valueSetIntroDoc = new IntroDoc(Path.Combine(Self.pageDir, $"ValueSet-{binding.Name}-intro.xml"));
+        //            IntroDoc valueSetIntroDoc = Self.CreateIntroDocVS(binding);
         //            valueSetIntroDoc
         //                .ValueSet(binding);
         //                .ReviewedStatus(ReviewStatus.NotReviewed)

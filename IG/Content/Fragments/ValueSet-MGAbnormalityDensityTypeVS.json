@@ -17,7 +17,7 @@
   ],
   "url": "http://hl7.org/fhir/us/breast-radiology/ValueSet/MGAbnormalityDensityTypeVS",
   "name": "MGAbnormalityDensityTypeVS",
-  "title": "Mammography Density Type ValueSet ValueSet",
+  "title": "Mammography Density Type ValueSet",
   "description": "Mammography density abnormality refinement value set.",
   "compose": {
     "include": [

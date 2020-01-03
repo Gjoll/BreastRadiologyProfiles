@@ -17,7 +17,7 @@
   ],
   "url": "http://hl7.org/fhir/us/breast-radiology/ValueSet/MGAbnormalityDuctVS",
   "name": "MGAbnormalityDuctVS",
-  "title": "Mammography Duct ValueSet ValueSet",
+  "title": "Mammography Duct ValueSet",
   "description": "Mammography duct node abnormality types value set.",
   "compose": {
     "include": [

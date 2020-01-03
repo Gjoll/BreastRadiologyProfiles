@@ -17,7 +17,7 @@
   ],
   "url": "http://hl7.org/fhir/us/breast-radiology/ValueSet/MarginVS",
   "name": "MarginVS",
-  "title": "Margin ValueSet ValueSet",
+  "title": "Margin ValueSet",
   "description": "Margin ValueSet.",
   "compose": {
     "include": [

@@ -16,10 +16,9 @@ namespace BreastRadiology.XUnitTests
         StringTaskVar MGAssociatedFeatures = new StringTaskVar(
             (out String s) =>
             {
-                SDefEditor e = Self.CreateEditor("MGAssociatedFeatures",
+                SDefEditor e = Self.CreateEditorObservationSection("MGAssociatedFeatures",
                         "Mammography Associated Features",
                         "MG Associated/Features",
-                        ObservationUrl,
                         $"{Group_MGResources}/AssociatedFeature")
                     .Description("Mammography Associated Features Observation",
                         new Markdown()
@@ -34,10 +33,10 @@ namespace BreastRadiology.XUnitTests
                     ;
                 s = e.SDef.Url;
 
-                e.IntroDoc
-                    .ObservationSection("Mammography Associated Features")
-                    .ReviewedStatus(ReviewStatus.NotReviewed)
-                    ;
+                //$e.IntroDoc
+                //    .ObservationSection("Mammography Associated Features")
+                //    .ReviewedStatus(ReviewStatus.NotReviewed)
+                //    ;
 
                 ProfileTargetSlice[] targets = new ProfileTargetSlice[]
                 {

@@ -17,7 +17,7 @@
   ],
   "url": "http://hl7.org/fhir/us/breast-radiology/ValueSet/BreastLocationClockVS",
   "name": "BreastLocationClockVS",
-  "title": "Breast Location Clock ValueSet ValueSet",
+  "title": "Breast Location Clock ValueSet",
   "description": "Breast body location angles (expressed in clock-face units) value set.",
   "compose": {
     "include": [

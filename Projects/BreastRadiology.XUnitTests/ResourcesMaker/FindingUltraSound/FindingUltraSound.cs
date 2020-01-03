@@ -17,10 +17,9 @@ namespace BreastRadiology.XUnitTests
             (out String s) =>
             {
                 //$ Fix me. Incorrect method!!!
-                SDefEditor e = Self.CreateEditor("USFinding",
+                SDefEditor e = Self.CreateEditorObservationSection("USFinding",
                         "UltraSound Finding",
                         "US Finding",
-                        ObservationUrl,
                         $"{Group_USResources}")
                     .Description("Breast Radiology Ultra Sound Finding",
                         new Markdown()
@@ -55,10 +54,10 @@ namespace BreastRadiology.XUnitTests
                     ;
                 s = e.SDef.Url;
 
-                e.IntroDoc
-                    .ObservationSection("Ultra-Sound Finding")
-                    .ReviewedStatus(ReviewStatus.NotReviewed)
-                    ;
+                //$e.IntroDoc
+                //    .ObservationSection("Ultra-Sound Finding")
+                //    .ReviewedStatus(ReviewStatus.NotReviewed)
+                //    ;
 
                 e.Select("value[x]").Zero();
                 //$e.Find("method")

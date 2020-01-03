@@ -12,12 +12,12 @@
     },
     {
       "url": "http://www.fragment.com/mapname",
-      "valueString": "MG DensityValueSet"
+      "valueString": "MG Density ValueSet"
     }
   ],
   "url": "http://hl7.org/fhir/us/breast-radiology/ValueSet/MGDensityVS",
   "name": "MGDensityVS",
-  "title": "Mammography Density ValueSet ValueSet",
+  "title": "Mammography Density ValueSet",
   "description": "Mammography density codes value set.",
   "compose": {
     "include": [

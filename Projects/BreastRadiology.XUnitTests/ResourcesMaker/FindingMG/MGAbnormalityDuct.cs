@@ -64,10 +64,9 @@ namespace BreastRadiology.XUnitTests
             (out String s) =>
             {
                 ValueSet binding = Self.MGAbnormalityDuctVS.Value();
-                SDefEditor e = Self.CreateEditor("MGAbnormalityDuct",
+                SDefEditor e = Self.CreateEditorObservationLeaf("MGAbnormalityDuct",
                         "Mammography Duct",
                         "MG Duct",
-                        ObservationUrl,
                         $"{Group_MGResources}/AbnormalityDuct")
                     .Description("Breat Radiology Mammography Duct Observation",
                         new Markdown()
@@ -83,11 +82,11 @@ namespace BreastRadiology.XUnitTests
 
                 s = e.SDef.Url;
 
-                e.IntroDoc
-                    .ObservationSection($"Duct")
-                    .ReviewedStatus(ReviewStatus.NotReviewed)
-                    .Refinement(binding, "Duct")
-                    ;
+                //$e.IntroDoc
+                //    .ObservationSection($"Duct")
+                //    .ReviewedStatus(ReviewStatus.NotReviewed)
+                //    .Refinement(binding, "Duct")
+                //    ;
 
                 e.Select("value[x]").Zero();
 

@@ -180,15 +180,43 @@ namespace BreastRadiology.XUnitTests
             }
         }
 
+        SDefEditor CreateEditorObservationLeaf(String name,
+            String title,
+            String mapName,
+            String groupPath)
+        {
+            return CreateEditor(name,
+                title,
+                mapName,
+                ObservationUrl,
+                groupPath,
+                "ObservationLeaf");
+        }
+
+        SDefEditor CreateEditorObservationSection(String name,
+            String title,
+            String mapName,
+            String groupPath)
+        {
+            return CreateEditor(name,
+                title,
+                mapName,
+                ObservationUrl,
+                groupPath,
+                "ObservationSection");
+        }
+
         SDefEditor CreateEditor(String name,
             String title,
             String mapName,
             String baseDefinition,
-            String groupPath)
+            String groupPath,
+            String docTemplateName)
         {
             if (name.Contains(" ", new StringComparison()))
                 throw new Exception("Structure Def name can not contains spaces");
 
+            title = title.Trim();
             SDefEditor retVal = new SDefEditor(this, name, CreateUrl(name), baseDefinition, mapName, this.resourceDir, this.pageDir)
                 .Title(title)
                 .Derivation(StructureDefinition.TypeDerivationRule.Constraint)
@@ -210,6 +238,34 @@ namespace BreastRadiology.XUnitTests
                 Value = new FhirString(groupPath)
             });
 
+            retVal.IntroDoc = new IntroDoc();
+
+            String titleArticle;
+            switch (Char.ToLower(title[0]))
+            {
+                case 'a':
+                case 'e':
+                case 'i':
+                case 'o':
+                case 'u':
+                    titleArticle = "an";
+                    break;
+                default:
+                    titleArticle = "a";
+                    break;
+            }
+
+            retVal.IntroDoc.TryAddUserMacro("FocusPath", FocusMapMaker.FocusMapName(retVal.SDef.Url.LastUriPart()));
+            retVal.IntroDoc.TryAddUserMacro("TitleArticle", titleArticle);
+            retVal.IntroDoc.TryAddUserMacro("Title", title);
+            retVal.IntroDoc.Load(docTemplateName, Path.Combine(this.pageDir, $"StructureDefinition-{name}-intro.xml"));
+
+            //$this.IntroDoc
+            //    .Header3($"Graphical Overview", "focusGraph")
+            //    .Paragraph("This graph provides an overview of how and where {name} is referenced," +
+            //            "and what items {name} itself referenced.")
+            //    .AddSvgImage(FocusMapMaker.FocusMapName(this.SDef.Url.LastUriPart()));
+
             return retVal;
         }
 
@@ -222,7 +278,8 @@ namespace BreastRadiology.XUnitTests
                 title,
                 mapName,
                 baseDefinition,
-                "Fragment/{name}");
+                "Fragment/{name}",
+                "Fragment");
             retVal.SetIsFrag();
             retVal.SDef.Abstract = true;
             return retVal;
@@ -242,7 +299,7 @@ namespace BreastRadiology.XUnitTests
                 Id = name,
                 Url = CodeSystemUrl(name),
                 Name = name,
-                Title = $"{title}",
+                Title = title,
                 Description = new Markdown(description),
                 CaseSensitive = true,
                 Content = CodeSystem.CodeSystemContentMode.Complete,
@@ -287,7 +344,7 @@ namespace BreastRadiology.XUnitTests
                 Id = name,
                 Url = $"http://hl7.org/fhir/us/breast-radiology/ValueSet/{name}",
                 Name = name,
-                Title = $"{title} ValueSet",
+                Title = title,
                 Description = new Markdown(description)
             };
             vs.AddFragRef(this.HeaderFragment.Value());
@@ -359,28 +416,6 @@ namespace BreastRadiology.XUnitTests
             }
         }
 
-        void ComponentMGCalcificationType(SDefEditor e)
-        {
-            e.ComponentSliceCodeableConcept("calcificationType",
-                Self.MGCodeCalcificationType.ToCodeableConcept(),
-                Self.MGCalcificationTypeVS.Value(),
-                BindingStrength.Required,
-                0,
-                "1",
-                "Calcification Type");
-        }
-
-        void ComponentMGCalcificationDistribution(SDefEditor e)
-        {
-            e.ComponentSliceCodeableConcept("calcificationDistribution",
-                Self.MGCodeCalcificationDistribution.ToCodeableConcept(),
-                Self.MGCalcificationDistributionVS.Value(),
-                BindingStrength.Required,
-                0,
-                "1",
-                "Calcification Distribution");
-        }
-
         void ComponentSliceBiRads(SDefEditor e)
         {
             e.ComponentSliceCodeableConcept("biRadsAssessmentCategory",
@@ -418,6 +453,14 @@ namespace BreastRadiology.XUnitTests
                 slice.CreateNode(valueX);
                 e.AddComponentLink("Observed Count^Integer or Range");
             }
+        }
+
+        IntroDoc CreateIntroDocVS(ValueSet binding)
+        {
+            IntroDoc doc = new IntroDoc();
+            doc.Load("ValueSet",
+                Path.Combine(Self.pageDir, $"ValueSet-{binding.Name}-intro.xml"));
+            return doc;
         }
     }
 }

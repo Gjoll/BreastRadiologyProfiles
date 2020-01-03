@@ -84,6 +84,9 @@
         "id": "Observation.component:orientation",
         "path": "Observation.component",
         "sliceName": "orientation",
+        "short": "Orientation component",
+        "definition": "This component slice contains the Orientation value",
+        "comment": "This is one component of a group of components that comprise the observation.",
         "min": 0,
         "max": "1",
         "base": {
@@ -95,6 +98,8 @@
       {
         "id": "Observation.component:orientation.code",
         "path": "Observation.component.code",
+        "short": "Orientation component code",
+        "definition": "This code identifies the Orientation value",
         "min": 1,
         "max": "1",
         "base": {
@@ -114,6 +119,8 @@
       {
         "id": "Observation.component:orientation.value[x]",
         "path": "Observation.component.value[x]",
+        "short": "Orientation component value",
+        "definition": "The value of the Orientation component",
         "min": 1,
         "max": "1",
         "base": {
@@ -135,6 +142,9 @@
         "id": "Observation.component:shape",
         "path": "Observation.component",
         "sliceName": "shape",
+        "short": "Shape component",
+        "definition": "This component slice contains the Shape value",
+        "comment": "This is one component of a group of components that comprise the observation.",
         "min": 0,
         "max": "1",
         "base": {
@@ -146,6 +156,8 @@
       {
         "id": "Observation.component:shape.code",
         "path": "Observation.component.code",
+        "short": "Shape component code",
+        "definition": "This code identifies the Shape value",
         "min": 1,
         "max": "1",
         "base": {
@@ -165,6 +177,8 @@
       {
         "id": "Observation.component:shape.value[x]",
         "path": "Observation.component.value[x]",
+        "short": "Shape component value",
+        "definition": "The value of the Shape component",
         "min": 1,
         "max": "1",
         "base": {
@@ -186,6 +200,9 @@
         "id": "Observation.component:margin",
         "path": "Observation.component",
         "sliceName": "margin",
+        "short": "Margin component",
+        "definition": "This component slice contains the Margin value",
+        "comment": "This is one component of a group of components that comprise the observation.",
         "min": 0,
         "max": "1",
         "base": {
@@ -197,6 +214,8 @@
       {
         "id": "Observation.component:margin.code",
         "path": "Observation.component.code",
+        "short": "Margin component code",
+        "definition": "This code identifies the Margin value",
         "min": 1,
         "max": "1",
         "base": {
@@ -216,6 +235,8 @@
       {
         "id": "Observation.component:margin.value[x]",
         "path": "Observation.component.value[x]",
+        "short": "Margin component value",
+        "definition": "The value of the Margin component",
         "min": 1,
         "max": "1",
         "base": {
@@ -237,6 +258,9 @@
         "id": "Observation.component:mgDensity",
         "path": "Observation.component",
         "sliceName": "mgDensity",
+        "short": "Density component",
+        "definition": "This component slice contains the Density value",
+        "comment": "This is one component of a group of components that comprise the observation.",
         "min": 0,
         "max": "1",
         "base": {
@@ -248,6 +272,8 @@
       {
         "id": "Observation.component:mgDensity.code",
         "path": "Observation.component.code",
+        "short": "Density component code",
+        "definition": "This code identifies the Density value",
         "min": 1,
         "max": "1",
         "base": {
@@ -267,6 +293,8 @@
       {
         "id": "Observation.component:mgDensity.value[x]",
         "path": "Observation.component.value[x]",
+        "short": "Density component value",
+        "definition": "The value of the Density component",
         "min": 1,
         "max": "1",
         "base": {

@@ -25,10 +25,10 @@ namespace BreastRadiology.XUnitTests
                     .AddFragRef(Self.CategoryFragment.Value())
                 ;
                 s = e.SDef.Url;
-                e.IntroDoc
-                    .IntroFragment($"Resource fragment used by all BreatRad observations.")
-                    .ReviewedStatus(ReviewStatus.NotReviewed)
-                    ;
+                //$e.IntroDoc
+                //    .IntroFragment($"Resource fragment used by all BreatRad observations.")
+                //    .ReviewedStatus(ReviewStatus.NotReviewed)
+                //    ;
 
                 e.Select("subject").Single();
 

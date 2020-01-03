@@ -16,10 +16,9 @@ namespace BreastRadiology.XUnitTests
         StringTaskVar MGAbnormalityCalcification = new StringTaskVar(
             (out String s) =>
             {
-                SDefEditor e = Self.CreateEditor("MGAbnormalityCalcification",
+                SDefEditor e = Self.CreateEditorObservationLeaf("MGAbnormalityCalcification",
                         "Mammography Calcification",
                         "MG Calc.",
-                        ObservationUrl,
                         $"{Group_MGResources}/CalcificationAbnormality")
                     .Description("Breast Radiology Mammography Calcification Observation",
                         new Markdown()
@@ -48,10 +47,10 @@ namespace BreastRadiology.XUnitTests
 
                 s = e.SDef.Url;
 
-                e.IntroDoc
-                    .ObservationSection("Mammography Calcification")
-                    .ReviewedStatus(ReviewStatus.NotReviewed)
-                    ;
+                //$e.IntroDoc
+                //    .ObservationSection("Mammography Calcification")
+                //    .ReviewedStatus(ReviewStatus.NotReviewed)
+                //    ;
 
                 e.Select("value[x]").Zero();
                 ProfileTargetSlice[] targets = new ProfileTargetSlice[]
@@ -63,8 +62,23 @@ namespace BreastRadiology.XUnitTests
                 e.AddProfileTargets(targets);
 
                 e.StartComponentSliceing();
-                Self.ComponentMGCalcificationType(e);
-                Self.ComponentMGCalcificationDistribution(e);
+
+                e.ComponentSliceCodeableConcept("calcificationType",
+                    Self.MGCodeCalcificationType.ToCodeableConcept(),
+                    Self.MGCalcificationTypeVS.Value(),
+                    BindingStrength.Required,
+                    0,
+                    "1",
+                    "Calcification Type");
+
+                e.ComponentSliceCodeableConcept("calcificationDistribution",
+                    Self.MGCodeCalcificationDistribution.ToCodeableConcept(),
+                    Self.MGCalcificationDistributionVS.Value(),
+                    BindingStrength.Required,
+                    0,
+                    "1",
+                    "Calcification Distribution");
+
                 Self.ComponentSliceObservedCount(e);
             });
     }

@@ -20,7 +20,8 @@ namespace BreastRadiology.XUnitTests
                      "Breast Radiology Report",
                      "Breast/Radiology/Report",
                      DiagnosticReportUrl,
-                     Group_BaseResources)
+                     Group_BaseResources,
+                     "BreastRadiologyReport")
                      .Description("Breast Radiology Diagnostic Report",
                          new Markdown()
                              .Paragraph("This diagnostic report has links to the data that comprise a Breast Radiology Report, including:")
@@ -35,11 +36,11 @@ namespace BreastRadiology.XUnitTests
                      ;
 
                 s = e.SDef.Url;
-                e.IntroDoc
-                     .Paragraph(
-                         $"This resource is the base of the Breast Radiology Report.",
-                         $"Detailed information about the report is contained in sub sections referenced by this resource."
-                         );
+                //$e.IntroDoc
+                //     .Paragraph(
+                //         $"This resource is the base of the Breast Radiology Report.",
+                //         $"Detailed information about the report is contained in sub sections referenced by this resource."
+                //         );
 
                 e.Select("code").Pattern = new CodeableConcept(Loinc, "10193-1");
                 e.Select("specimen").Zero();

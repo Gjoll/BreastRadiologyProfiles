@@ -18,10 +18,9 @@ namespace BreastRadiology.XUnitTests
             {
                 ValueSet binding = Self.FibroadenomaVS.Value();
 
-                SDefEditor e = Self.CreateEditor("MGAbnormalityFibroadenoma",
+                SDefEditor e = Self.CreateEditorObservationLeaf("MGAbnormalityFibroadenoma",
                         "Mammography Fibroadenoma",
                         "MG Fibroadenoma",
-                        ObservationUrl,
                         $"{Group_MGResources}/AbnormalityFibroadenoma")
                     .Description("Breast Radiology Mammography Fibroadenoma Observation",
                         new Markdown()
@@ -38,11 +37,11 @@ namespace BreastRadiology.XUnitTests
 
                 s = e.SDef.Url;
 
-                e.IntroDoc
-                    .ObservationSection("Fibroadenoma")
-                    .ReviewedStatus(ReviewStatus.NotReviewed)
-                    .Refinement(binding, "Fibroadenoma")
-                    ;
+                //$e.IntroDoc
+                //    .ObservationSection("Fibroadenoma")
+                //    .ReviewedStatus(ReviewStatus.NotReviewed)
+                //    .Refinement(binding, "Fibroadenoma")
+                //    ;
 
                 e.Select("value[x]").Zero();
 

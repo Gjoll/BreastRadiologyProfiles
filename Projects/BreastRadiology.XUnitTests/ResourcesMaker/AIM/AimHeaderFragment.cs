@@ -29,10 +29,10 @@ namespace BreastRadiology.XUnitTests
 
                 s  = e.SDef.Url;
 
-                e.IntroDoc
-                    .IntroFragment($"Resource fragment used to by all resources to define common values such as Contact and Date.")
-                    .ReviewedStatus(ReviewStatus.NotReviewed)
-                    ;
+                //e.IntroDoc
+                //    .IntroFragment($"Resource fragment used to by all resources to define common values such as Contact and Date.")
+                //    .ReviewedStatus(ReviewStatus.NotReviewed)
+                //    ;
 
                 e.SDef.Contact.Add(cd);
                 e.SDef.Date = Self.date.ToString();

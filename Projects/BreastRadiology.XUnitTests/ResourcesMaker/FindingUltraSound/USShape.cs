@@ -21,7 +21,7 @@ namespace BreastRadiology.XUnitTests
         //                "UltraSoundShapeVS",
         //                "ShapeValueSet",
         //                "Shape/ValueSet",
-        //                "Shape values value set.",
+        //                "Shape value set.",
         //                Group_USCodesVS,
         //                Self.ShapeCS.Value()
         //            );
@@ -36,7 +36,7 @@ namespace BreastRadiology.XUnitTests
         //    {
         //        ValueSet binding = Self.UltraSoundShapeVS.Value();
         //        {
-        //            IntroDoc valueSetIntroDoc = new IntroDoc(Path.Combine(Self.pageDir, $"ValueSet-{binding.Name}-intro.xml"));
+        //            IntroDoc valueSetIntroDoc = Self.CreateIntroDocVS(binding);
         //            valueSetIntroDoc
         //                .ValueSet(binding);
         //                .ReviewedStatus(ReviewStatus.NotReviewed)

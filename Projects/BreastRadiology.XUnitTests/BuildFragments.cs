@@ -223,7 +223,7 @@ namespace BreastRadiology.XUnitTests
                 Assert.IsTrue(false);
             }
             TimeSpan span = DateTime.Now - start;
-            Trace.WriteLine($"Ending A_BuildFragments [{(Int32) span.TotalSeconds}]");
+            Trace.WriteLine($"Ending A_BuildFragments [{(Int32)span.TotalSeconds}]");
         }
 
         [TestMethod]
@@ -333,13 +333,43 @@ namespace BreastRadiology.XUnitTests
 
                 this.A_BuildFragments();
                 this.B_BuildResources();
-                this.C_BuildGraphics();
-                this.D_BuildIG();
+                this.C_PatchIntroDocs();
+                this.D_BuildGraphics();
+                this.E_BuildIG();
             }
         }
 
         [TestMethod]
-        public void C_BuildGraphics()
+        public void C_PatchIntroDocs()
+        {
+            DateTime start = DateTime.Now;
+            Trace.WriteLine("Starting A_BuildFragments");
+            try
+            {
+                IntroDocPatcher docPatcher = new IntroDocPatcher(this.resourcesDir, this.pageDir);
+                docPatcher.StatusErrors += this.StatusErrors;
+                docPatcher.StatusInfo += this.StatusInfo;
+                docPatcher.StatusWarnings += this.StatusWarnings;
+                docPatcher.Patch();
+                if (docPatcher.HasErrors)
+                {
+                    StringBuilder sb = new StringBuilder();
+                    docPatcher.FormatErrorMessages(sb);
+                    Trace.WriteLine(sb.ToString());
+                    Debug.Assert(false);
+                }
+            }
+            catch (Exception err)
+            {
+                Trace.WriteLine(err.Message);
+                Assert.IsTrue(false);
+            }
+            TimeSpan span = DateTime.Now - start;
+            Trace.WriteLine($"Ending A_BuildFragments [{(Int32)span.TotalSeconds}]");
+        }
+
+        [TestMethod]
+        public void D_BuildGraphics()
         {
             DateTime start = DateTime.Now;
             Trace.WriteLine("Starting C_BuildGraphics");
@@ -460,7 +490,7 @@ namespace BreastRadiology.XUnitTests
         }
 
         [TestMethod]
-        public void D_BuildIG()
+        public void E_BuildIG()
         {
             DateTime start = DateTime.Now;
             Trace.WriteLine("Starting D_BuildIG");

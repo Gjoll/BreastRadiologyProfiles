@@ -92,10 +92,9 @@ namespace BreastRadiology.XUnitTests
             {
                 ValueSet binding = Self.MGAbnormalityLymphNodeVS.Value();
 
-                SDefEditor e = Self.CreateEditor("MGAbnormalityLymphNode",
+                SDefEditor e = Self.CreateEditorObservationLeaf("MGAbnormalityLymphNode",
                     "Mammography LymphNode",
                     "MG Lymph Node",
-                    ObservationUrl,
                     $"{Group_MGResources}/AbnormalityLymphNode")
                     .Description("Breast Radiology Mammography LymphNode Observation",
                         new Markdown()
@@ -110,11 +109,11 @@ namespace BreastRadiology.XUnitTests
 
                 s = e.SDef.Url;
 
-                e.IntroDoc
-                    .ObservationSection($"Lymph Node")
-                    .ReviewedStatus(ReviewStatus.NotReviewed)
-                    .Refinement(binding, "LymphNode")
-                    ;
+                //$e.IntroDoc
+                //    .ObservationSection($"Lymph Node")
+                //    .ReviewedStatus(ReviewStatus.NotReviewed)
+                //    .Refinement(binding, "LymphNode")
+                //    ;
 
                 e.Select("value[x]").Zero();
                 e.StartComponentSliceing();

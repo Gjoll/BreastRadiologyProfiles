@@ -43,7 +43,7 @@ namespace BreastRadiology.XUnitTests
         //                "HilumVS",
         //                "Hilum ValueSet",
         //                "Hilum/ValueSet",
-        //                "Hilum values value set.",
+        //                "Hilum value set.",
         //                Group_CommonCodesVS,
         //                Self.HilumCS.Value())
         //    );
@@ -54,7 +54,7 @@ namespace BreastRadiology.XUnitTests
         //        ValueSet binding = Self.HilumVS.Value();
 
         //        {
-        //            IntroDoc valueSetIntroDoc = new IntroDoc(Path.Combine(Self.pageDir, $"ValueSet-{binding.Name}-intro.xml"));
+        //            IntroDoc valueSetIntroDoc = Self.CreateIntroDocVS(binding);
         //            valueSetIntroDoc
         //                .ValueSet(binding);
         //                .ReviewedStatus(ReviewStatus.NotReviewed)

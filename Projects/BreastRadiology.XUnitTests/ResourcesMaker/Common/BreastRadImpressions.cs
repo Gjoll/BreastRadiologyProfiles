@@ -21,7 +21,8 @@ namespace BreastRadiology.XUnitTests
                         "Impression",
                         "Impression",
                         ClinicalImpressionUrl,
-                        $"{Group_CommonResources}/BreastRadImpression")
+                        $"{Group_CommonResources}/BreastRadImpression",
+                        "BreastRadImpressions")
                     .Description("Breast Radiology Impression (ClinicalImpression)",
                         new Markdown()
                             .Paragraph("Breast radiology exam clinical impression")
@@ -31,10 +32,10 @@ namespace BreastRadiology.XUnitTests
                     ;
 
                 s = e.SDef.Url;
-                e.IntroDoc
-                    .IntroGeneral($"Breast Radiology Impressions Resource")
-                    .ReviewedStatus(ReviewStatus.NotReviewed)
-                    ;
+                //e.IntroDoc
+                //    .IntroGeneral($"Breast Radiology Impressions Resource")
+                //    .ReviewedStatus(ReviewStatus.NotReviewed)
+                //    ;
             });
     }
 }

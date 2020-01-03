@@ -64,7 +64,7 @@ namespace BreastRadiology.XUnitTests
         //    {
         //        ValueSet binding = Self.OrientationVS.Value();
         //        {
-        //            IntroDoc valueSetIntroDoc = new IntroDoc(Path.Combine(Self.pageDir, $"ValueSet-{binding.Name}-intro.xml"));
+        //            IntroDoc valueSetIntroDoc = Self.CreateIntroDocVS(binding);
         //            valueSetIntroDoc
         //                .ValueSet(binding);
         //                .ReviewedStatus(ReviewStatus.NotReviewed)

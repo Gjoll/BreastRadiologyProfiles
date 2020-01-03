@@ -100,6 +100,9 @@
         "id": "Observation.component:biRadsAssessmentCategory",
         "path": "Observation.component",
         "sliceName": "biRadsAssessmentCategory",
+        "short": "BiRads Assessment Category component",
+        "definition": "This component slice contains the BiRads Assessment Category value",
+        "comment": "This is one component of a group of components that comprise the observation.",
         "min": 0,
         "max": "1",
         "base": {
@@ -111,6 +114,8 @@
       {
         "id": "Observation.component:biRadsAssessmentCategory.code",
         "path": "Observation.component.code",
+        "short": "BiRads Assessment Category component code",
+        "definition": "This code identifies the BiRads Assessment Category value",
         "min": 1,
         "max": "1",
         "base": {
@@ -130,6 +135,8 @@
       {
         "id": "Observation.component:biRadsAssessmentCategory.value[x]",
         "path": "Observation.component.value[x]",
+        "short": "BiRads Assessment Category component value",
+        "definition": "The value of the BiRads Assessment Category component",
         "min": 1,
         "max": "1",
         "base": {
@@ -151,6 +158,9 @@
         "id": "Observation.component:observedChangeInDefinition",
         "path": "Observation.component",
         "sliceName": "observedChangeInDefinition",
+        "short": "Change In Definition component",
+        "definition": "This component slice contains the Change In Definition value",
+        "comment": "This is one component of a group of components that comprise the observation.",
         "min": 0,
         "max": "1",
         "base": {
@@ -162,6 +172,8 @@
       {
         "id": "Observation.component:observedChangeInDefinition.code",
         "path": "Observation.component.code",
+        "short": "Change In Definition component code",
+        "definition": "This code identifies the Change In Definition value",
         "min": 1,
         "max": "1",
         "base": {
@@ -181,6 +193,8 @@
       {
         "id": "Observation.component:observedChangeInDefinition.value[x]",
         "path": "Observation.component.value[x]",
+        "short": "Change In Definition component value",
+        "definition": "The value of the Change In Definition component",
         "min": 1,
         "max": "1",
         "base": {
@@ -202,6 +216,9 @@
         "id": "Observation.component:observedChangeInNumber",
         "path": "Observation.component",
         "sliceName": "observedChangeInNumber",
+        "short": "Change In Number component",
+        "definition": "This component slice contains the Change In Number value",
+        "comment": "This is one component of a group of components that comprise the observation.",
         "min": 0,
         "max": "1",
         "base": {
@@ -213,6 +230,8 @@
       {
         "id": "Observation.component:observedChangeInNumber.code",
         "path": "Observation.component.code",
+        "short": "Change In Number component code",
+        "definition": "This code identifies the Change In Number value",
         "min": 1,
         "max": "1",
         "base": {
@@ -232,6 +251,8 @@
       {
         "id": "Observation.component:observedChangeInNumber.value[x]",
         "path": "Observation.component.value[x]",
+        "short": "Change In Number component value",
+        "definition": "The value of the Change In Number component",
         "min": 1,
         "max": "1",
         "base": {
@@ -253,6 +274,9 @@
         "id": "Observation.component:observedChangeInProminance",
         "path": "Observation.component",
         "sliceName": "observedChangeInProminance",
+        "short": "Change In Prominance component",
+        "definition": "This component slice contains the Change In Prominance value",
+        "comment": "This is one component of a group of components that comprise the observation.",
         "min": 0,
         "max": "1",
         "base": {
@@ -264,6 +288,8 @@
       {
         "id": "Observation.component:observedChangeInProminance.code",
         "path": "Observation.component.code",
+        "short": "Change In Prominance component code",
+        "definition": "This code identifies the Change In Prominance value",
         "min": 1,
         "max": "1",
         "base": {
@@ -283,6 +309,8 @@
       {
         "id": "Observation.component:observedChangeInProminance.value[x]",
         "path": "Observation.component.value[x]",
+        "short": "Change In Prominance component value",
+        "definition": "The value of the Change In Prominance component",
         "min": 1,
         "max": "1",
         "base": {
@@ -304,6 +332,9 @@
         "id": "Observation.component:observedChangeInSize",
         "path": "Observation.component",
         "sliceName": "observedChangeInSize",
+        "short": "Change In Size component",
+        "definition": "This component slice contains the Change In Size value",
+        "comment": "This is one component of a group of components that comprise the observation.",
         "min": 0,
         "max": "1",
         "base": {
@@ -315,6 +346,8 @@
       {
         "id": "Observation.component:observedChangeInSize.code",
         "path": "Observation.component.code",
+        "short": "Change In Size component code",
+        "definition": "This code identifies the Change In Size value",
         "min": 1,
         "max": "1",
         "base": {
@@ -334,6 +367,8 @@
       {
         "id": "Observation.component:observedChangeInSize.value[x]",
         "path": "Observation.component.value[x]",
+        "short": "Change In Size component value",
+        "definition": "The value of the Change In Size component",
         "min": 1,
         "max": "1",
         "base": {
@@ -355,6 +390,9 @@
         "id": "Observation.component:observedChangeInState",
         "path": "Observation.component",
         "sliceName": "observedChangeInState",
+        "short": "Change In State component",
+        "definition": "This component slice contains the Change In State value",
+        "comment": "This is one component of a group of components that comprise the observation.",
         "min": 0,
         "max": "1",
         "base": {
@@ -366,6 +404,8 @@
       {
         "id": "Observation.component:observedChangeInState.code",
         "path": "Observation.component.code",
+        "short": "Change In State component code",
+        "definition": "This code identifies the Change In State value",
         "min": 1,
         "max": "1",
         "base": {
@@ -385,6 +425,8 @@
       {
         "id": "Observation.component:observedChangeInState.value[x]",
         "path": "Observation.component.value[x]",
+        "short": "Change In State component value",
+        "definition": "The value of the Change In State component",
         "min": 1,
         "max": "1",
         "base": {
@@ -453,6 +495,9 @@
         "id": "Observation.component:orientation",
         "path": "Observation.component",
         "sliceName": "orientation",
+        "short": "Orientation component",
+        "definition": "This component slice contains the Orientation value",
+        "comment": "This is one component of a group of components that comprise the observation.",
         "min": 0,
         "max": "1",
         "base": {
@@ -464,6 +509,8 @@
       {
         "id": "Observation.component:orientation.code",
         "path": "Observation.component.code",
+        "short": "Orientation component code",
+        "definition": "This code identifies the Orientation value",
         "min": 1,
         "max": "1",
         "base": {
@@ -483,6 +530,8 @@
       {
         "id": "Observation.component:orientation.value[x]",
         "path": "Observation.component.value[x]",
+        "short": "Orientation component value",
+        "definition": "The value of the Orientation component",
         "min": 1,
         "max": "1",
         "base": {

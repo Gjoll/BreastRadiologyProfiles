@@ -25,10 +25,10 @@ namespace BreastRadiology.XUnitTests
                     ;
                 s = e.SDef.Url;
 
-                e.IntroDoc
-                    .IntroFragment($"Resource fragment used to by all observations whose value are a CodeableConcept.")
-                    .ReviewedStatus(ReviewStatus.NotReviewed)
-                    ;
+                //$e.IntroDoc
+                //    .IntroFragment($"Resource fragment used to by all observations whose value are a CodeableConcept.")
+                //    .ReviewedStatus(ReviewStatus.NotReviewed)
+                //    ;
 
                 e.Select("value[x]")
                     .Type("CodeableConcept")

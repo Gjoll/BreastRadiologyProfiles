@@ -87,7 +87,7 @@ namespace BreastRadiology.XUnitTests
                     "MGBreastDensityVS",
                     "Mammography Breast Density ValueSet",
                     "MG Breast DensityValueSet",
-                    "Mammography breast density values value set.",
+                    "Mammography breast density value set.",
                     Group_MGCodesVS,
                     Self.MGBreastDensityCS.Value()
                     )
@@ -100,7 +100,7 @@ namespace BreastRadiology.XUnitTests
                 ValueSet binding = Self.MGBreastDensityVS.Value();
 
                 {
-                    IntroDoc valueSetIntroDoc = new IntroDoc(Path.Combine(Self.pageDir, $"ValueSet-{binding.Name}-intro.xml"));
+                    IntroDoc valueSetIntroDoc = Self.CreateIntroDocVS(binding);
                     valueSetIntroDoc
                         .IntroValueSet(binding)
                         .ReviewedStatus(ReviewStatus.NotReviewed)
@@ -109,10 +109,9 @@ namespace BreastRadiology.XUnitTests
                     Self.fc?.Mark(outputPath);
                 }
 
-                SDefEditor e = Self.CreateEditor("MGBreastDensity",
+                SDefEditor e = Self.CreateEditorObservationLeaf("MGBreastDensity",
                         "Mammography Breast Density",
                         "MG Breast Density",
-                        ObservationUrl,
                         $"{Group_MGResources}/BreastDensity")
                     .Description("Breast Radiology Mammography Breast Density Observation",
                         new Markdown()
@@ -137,10 +136,10 @@ namespace BreastRadiology.XUnitTests
 
                 s = e.SDef.Url;
 
-                e.IntroDoc
-                    .IntroCodedObservationLeafNode("a mammography breast density")
-                    .ReviewedStatus(ReviewStatus.NotReviewed)
-                    ;
+                //$e.IntroDoc
+                //    .IntroCodedObservationLeafNode("a mammography breast density")
+                //    .ReviewedStatus(ReviewStatus.NotReviewed)
+                //    ;
                 e.Select("value[x]")
                     .Type("CodeableConcept")
                     .Binding(binding.Url, BindingStrength.Required)

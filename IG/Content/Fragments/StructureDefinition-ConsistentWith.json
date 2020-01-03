@@ -105,6 +105,9 @@
         "id": "Observation.component:value",
         "path": "Observation.component",
         "sliceName": "value",
+        "short": "Value component",
+        "definition": "This component slice contains the Value value",
+        "comment": "This is one component of a group of components that comprise the observation.",
         "min": 1,
         "max": "1",
         "base": {
@@ -116,6 +119,8 @@
       {
         "id": "Observation.component:value.code",
         "path": "Observation.component.code",
+        "short": "Value component code",
+        "definition": "This code identifies the Value value",
         "min": 1,
         "max": "1",
         "base": {
@@ -135,6 +140,8 @@
       {
         "id": "Observation.component:value.value[x]",
         "path": "Observation.component.value[x]",
+        "short": "Value component value",
+        "definition": "The value of the Value component",
         "min": 1,
         "max": "1",
         "base": {
@@ -156,6 +163,9 @@
         "id": "Observation.component:qualifier",
         "path": "Observation.component",
         "sliceName": "qualifier",
+        "short": "Qualifier component",
+        "definition": "This component slice contains the Qualifier value",
+        "comment": "This is one component of a group of components that comprise the observation.",
         "min": 0,
         "max": "1",
         "base": {
@@ -167,6 +177,8 @@
       {
         "id": "Observation.component:qualifier.code",
         "path": "Observation.component.code",
+        "short": "Qualifier component code",
+        "definition": "This code identifies the Qualifier value",
         "min": 1,
         "max": "1",
         "base": {
@@ -186,6 +198,8 @@
       {
         "id": "Observation.component:qualifier.value[x]",
         "path": "Observation.component.value[x]",
+        "short": "Qualifier component value",
+        "definition": "The value of the Qualifier component",
         "min": 1,
         "max": "1",
         "base": {

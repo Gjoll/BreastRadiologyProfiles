@@ -21,7 +21,8 @@ namespace BreastRadiology.XUnitTests
                     "Recommendations Extension",
                     "Recommendations/Extension",
                     ExtensionUrl,
-                     $"{Group_ExtensionResources}/Recommendations")
+                     $"{Group_ExtensionResources}/Recommendations",
+                     "Recommendations")
                     .Description("Diagnostic Report recommendations section extension",
                     new Markdown()
                         .Paragraph("This extension defines the recommendations section of a breast radiology report, " +
@@ -33,10 +34,10 @@ namespace BreastRadiology.XUnitTests
                     ;
                 s = e.SDef.Url;
 
-                e.IntroDoc
-                    .IntroExtension("Recommendations", "include references to recommendations")
-                    .ReviewedStatus(ReviewStatus.NotReviewed)
-                    ;
+                //$e.IntroDoc
+                //    .IntroExtension("Recommendations", "include references to recommendations")
+                //    .ReviewedStatus(ReviewStatus.NotReviewed)
+                //    ;
 
                 e.AddFragRef(Self.HeaderFragment.Value());
 

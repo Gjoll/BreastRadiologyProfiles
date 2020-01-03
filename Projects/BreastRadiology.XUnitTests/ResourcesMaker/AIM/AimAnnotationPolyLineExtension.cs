@@ -21,7 +21,8 @@ namespace BreastRadiology.XUnitTests
                     "AIM Annotation PolyLine Extension",
                     "Annotation/PolyLine/Location",
                     ExtensionUrl,
-                    $"{Group_AimResources}/AimAnnotationPolyLineExtension")
+                    $"{Group_AimResources}/AimAnnotationPolyLineExtension",
+                    "AimAnnotatedPolyLineExtension")
                     .Description("AIM Annotation PolyLine Extension",
                         new Markdown()
                             .Paragraph("this extension defines the fields that are used to describe a" +
@@ -33,21 +34,21 @@ namespace BreastRadiology.XUnitTests
                     ;
 
                 s = e.SDef.Url;
-                e.IntroDoc
-                    .Paragraph()
-                    .Paragraph("AIM Annotation PolyGon extension resource")
-                    .Paragraph("This extension defines a polygon line annotation to an image")
-                    .Paragraph("It contains the following fields")
-                    .List(
-                        "opacity - this is the optical opacity of the line. What are its units and range???",
-                        "color- this is the color of the line. What are its units and range???",
-                        "style - this is the style of the line. What are its units and range???",
-                        "thickness- this is the thicknedd of the line. What are its units and range???",
-                        "coordinates- A series of points, each of which is an x,y point of the polygonal line. Each point is a string of the " +
-                        "format \"{d},{d}\" where d is a fhir decimal string, and each point is seperated from the next by a space."
-                    )
-                    .ReviewedStatus(ReviewStatus.NotReviewed)
-                    ;
+                //$e.IntroDoc
+                //    .Paragraph()
+                //    .Paragraph("AIM Annotation PolyGon extension resource")
+                //    .Paragraph("This extension defines a polygon line annotation to an image")
+                //    .Paragraph("It contains the following fields")
+                //    .List(
+                //        "opacity - this is the optical opacity of the line. What are its units and range???",
+                //        "color- this is the color of the line. What are its units and range???",
+                //        "style - this is the style of the line. What are its units and range???",
+                //        "thickness- this is the thicknedd of the line. What are its units and range???",
+                //        "coordinates- A series of points, each of which is an x,y point of the polygonal line. Each point is a string of the " +
+                //        "format \"{d},{d}\" where d is a fhir decimal string, and each point is seperated from the next by a space."
+                //    )
+                //    .ReviewedStatus(ReviewStatus.NotReviewed)
+                //    ;
 
                 e.AddFragRef(Self.AimHeaderFragment.Value());
 

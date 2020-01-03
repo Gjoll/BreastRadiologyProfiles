@@ -17,10 +17,9 @@ namespace BreastRadiology.XUnitTests
             (out String s) =>
             {
                 //$ Fix me. Incorrect method!!!
-                SDefEditor e = Self.CreateEditor("MRIFinding",
+                SDefEditor e = Self.CreateEditorObservationSection("MRIFinding",
                         "MRI Finding",
                         "MRI Finding",
-                        ObservationUrl,
                         $"{Group_MRIResources}")
                     .Description("Breast Radiology MRI Finding",
                         new Markdown()
@@ -33,10 +32,10 @@ namespace BreastRadiology.XUnitTests
                 ;
                 s = e.SDef.Url;
 
-                e.IntroDoc
-                    .ObservationSection("MRI Finding")
-                    .ReviewedStatus(ReviewStatus.NotReviewed)
-                    ;
+                //$e.IntroDoc
+                //    .ObservationSection("MRI Finding")
+                //    .ReviewedStatus(ReviewStatus.NotReviewed)
+                //    ;
 
                 //ProfileTargetSlice[] targets = new ProfileTargetSlice[]
                 //{

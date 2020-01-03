@@ -17,8 +17,8 @@
   ],
   "url": "http://hl7.org/fhir/us/breast-radiology/ValueSet/ShapeVS",
   "name": "ShapeVS",
-  "title": "Shape ValueSet ValueSet",
-  "description": "Shape values value set.",
+  "title": "Shape ValueSet",
+  "description": "Shape value set.",
   "compose": {
     "include": [
       {

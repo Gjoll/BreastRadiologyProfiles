@@ -24,10 +24,10 @@ namespace BreastRadiology.XUnitTests
                     ;
                 s = e.SDef.Url;
 
-                e.IntroDoc
-                    .IntroFragment($"Imaging Study Fragment")
-                    .ReviewedStatus(ReviewStatus.NotReviewed)
-                    ;
+                //$e.IntroDoc
+                //    .IntroFragment($"Imaging Study Fragment")
+                //    .ReviewedStatus(ReviewStatus.NotReviewed)
+                //    ;
 
                 ProfileTargetSlice[] targets = new ProfileTargetSlice[]
                 {

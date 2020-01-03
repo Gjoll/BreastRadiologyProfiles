@@ -21,7 +21,7 @@ namespace BreastRadiology.XUnitTests
                         "ShapeVS",
                         "Shape ValueSet",
                         "Shape/ValueSet",
-                        "Shape values value set.",
+                        "Shape value set.",
                         Group_CommonCodesVS,
                         Self.ShapeCS.Value()
                     )
@@ -33,7 +33,7 @@ namespace BreastRadiology.XUnitTests
         //    {
         //        ValueSet binding = Self.ShapeVS.Value();
         //        {
-        //            IntroDoc valueSetIntroDoc = new IntroDoc(Path.Combine(Self.pageDir, $"ValueSet-{binding.Name}-intro.xml"));
+        //            IntroDoc valueSetIntroDoc = Self.CreateIntroDocVS(binding);
         //            valueSetIntroDoc
         //                .ValueSet(binding);
         //                .ReviewedStatus(ReviewStatus.NotReviewed)

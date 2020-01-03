@@ -16,10 +16,9 @@ namespace BreastRadiology.XUnitTests
         StringTaskVar SectionPatientHistory = new StringTaskVar(
             (out String s) =>
             {
-                SDefEditor e = Self.CreateEditor("SectionPatientHistory",
+                SDefEditor e = Self.CreateEditorObservationSection("SectionPatientHistory",
                         "Patient History",
                         "Patient History",
-                        ObservationUrl,
                         $"{Group_BaseResources}/PatientHistory")
                     .Description("Patient History Section",
                         new Markdown()
@@ -34,10 +33,10 @@ namespace BreastRadiology.XUnitTests
                     ;
                 s = e.SDef.Url;
 
-                e.IntroDoc
-                     .ObservationSection($"Patient History")
-                     .ReviewedStatus(ReviewStatus.NotReviewed)
-                     ;
+                //e.IntroDoc
+                //     .ObservationSection($"Patient History")
+                //     .ReviewedStatus(ReviewStatus.NotReviewed)
+                //     ;
 
                 e.Select("value[x]").Zero();
                 e.Select("bodySite").Zero();

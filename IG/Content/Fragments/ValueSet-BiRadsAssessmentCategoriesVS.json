@@ -17,7 +17,7 @@
   ],
   "url": "http://hl7.org/fhir/us/breast-radiology/ValueSet/BiRadsAssessmentCategoriesVS",
   "name": "BiRadsAssessmentCategoriesVS",
-  "title": "BiRads(r) Assessment Category ValueSet ValueSet",
+  "title": "BiRads(r) Assessment Category ValueSet",
   "description": "BiRads(r) Assessment Category value set.",
   "compose": {
     "include": [

@@ -17,7 +17,7 @@
   ],
   "url": "http://hl7.org/fhir/us/breast-radiology/ValueSet/OrientationVS",
   "name": "OrientationVS",
-  "title": "Orientation ValueSet ValueSet",
+  "title": "Orientation ValueSet",
   "description": "Orientation ValueSet",
   "compose": {
     "include": [

@@ -17,11 +17,10 @@ namespace BreastRadiology.XUnitTests
         StringTaskVar ConsistentWith = new StringTaskVar(
                (out String s) =>
                    {
-                       SDefEditor e = Self.CreateEditor("ConsistentWith",
-                               "Consistent With",
-                               "Consistent/With",
-                               ObservationUrl,
-                               $"{Group_CommonResources}/ConsistentWith")
+                       SDefEditor e = Self.CreateEditorObservationLeaf("ConsistentWith",
+                        "Consistent With",
+                        "Consistent/With",
+                        $"{Group_CommonResources}/ConsistentWith")
                            .Description("Breast Radiology 'Consistent With' Observation",
                                new Markdown()
                                    .MissingObservation("a consistentWith")
@@ -52,10 +51,10 @@ namespace BreastRadiology.XUnitTests
                            "1",
                            "Qualifier");
 
-                       e.IntroDoc
-                           .Observation("Consistent With")
-                           .ReviewedStatus(ReviewStatus.NotReviewed)
-                           ;
+                       //$e.IntroDoc
+                       //    .Observation("Consistent With")
+                       //    .ReviewedStatus(ReviewStatus.NotReviewed)
+                       //    ;
                    });
 
         VSTaskVar ConsistentWithVS = new VSTaskVar(

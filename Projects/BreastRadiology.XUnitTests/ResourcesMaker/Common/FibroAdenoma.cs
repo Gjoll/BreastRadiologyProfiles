@@ -43,7 +43,7 @@ namespace BreastRadiology.XUnitTests
                         "FibroadenomaVS",
                         "Fibroadenoma ValueSet",
                         "FibroadenomaValueSet",
-                        "Fibroadenoma values value set.",
+                        "Fibroadenoma value set.",
                         Group_CommonCodesVS,
                         Self.FibroadenomaCS.Value()
                     )

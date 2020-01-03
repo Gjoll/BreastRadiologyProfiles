@@ -16,10 +16,9 @@ namespace BreastRadiology.XUnitTests
         StringTaskVar MGSkinThickening = new StringTaskVar(
             (out String s) =>
             {
-                SDefEditor e = Self.CreateEditor("MGSkinThickening",
+                SDefEditor e = Self.CreateEditorObservationLeaf("MGSkinThickening",
                     "Mammography Skin Thickening",
                     "MG Skin Thickening",
-                    ObservationUrl,
                     $"{Group_MGResources}/AssociatedFeature/SkinThickening")
                     .Description("Mammography Skin Thickening Observation",
                         new Markdown()
@@ -37,10 +36,10 @@ namespace BreastRadiology.XUnitTests
                     ;
                 s = e.SDef.Url;
 
-                e.IntroDoc
-                    .ReviewedStatus(ReviewStatus.NotReviewed)
-                    .Observation("Skin Thickening")
-                    ;
+                //$e.IntroDoc
+                //    .ReviewedStatus(ReviewStatus.NotReviewed)
+                //    .Observation("Skin Thickening")
+                //    ;
             });
     }
 }

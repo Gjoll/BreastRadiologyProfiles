@@ -17,8 +17,8 @@
   ],
   "url": "http://hl7.org/fhir/us/breast-radiology/ValueSet/MammoCalcificationDistributionVS",
   "name": "MammoCalcificationDistributionVS",
-  "title": "Mammography Calcification Distribution ValueSet ValueSet",
-  "description": "Mammography calcification distribution values value set.",
+  "title": "Mammography Calcification Distribution ValueSet",
+  "description": "Mammography calcification distribution value set.",
   "compose": {
     "include": [
       {

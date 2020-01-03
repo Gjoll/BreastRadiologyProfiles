@@ -30,10 +30,9 @@ namespace BreastRadiology.XUnitTests
             {
                 ValueSet binding = Self.MassTypeValueSetVS.Value();
 
-                SDefEditor e = Self.CreateEditor("MGMass",
+                SDefEditor e = Self.CreateEditorObservationLeaf("MGMass",
                         "Mammography Mass",
                         "MG Mass",
-                        ObservationUrl,
                         $"{Group_MGResources}/MassAbnormality")
                     .Description("Breast Radiology Mammography Mass Observation",
                         new Markdown()
@@ -55,11 +54,11 @@ namespace BreastRadiology.XUnitTests
 
                 s = e.SDef.Url;
 
-                e.IntroDoc
-                    .ObservationSection("Mass")
-                    .ReviewedStatus(ReviewStatus.NotReviewed)
-                    .Refinement(binding, "Mass")
-                    ;
+                //$e.IntroDoc
+                //    .ObservationSection("Mass")
+                //    .ReviewedStatus(ReviewStatus.NotReviewed)
+                //    .Refinement(binding, "Mass")
+                //    ;
 
                 e.Select("value[x]").Zero();
                 ProfileTargetSlice[] targets = new ProfileTargetSlice[]

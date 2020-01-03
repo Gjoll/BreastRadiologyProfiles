@@ -1,16 +1,28 @@
 <div xmlns="http://www.w3.org/1999/xhtml"
     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
     xsi:schemaLocation="http://hl7.org/fhir ../../src-generated/schemas/fhir-single.xsd">
-    <a name="focusGraph"> </a>
-    <h3 id="focusGraph">Graphical Overview</h3>
-    <p>
-    This graph provides an overview of how and where {name} is referenced,and what items {name} itself referenced.
-    </p>
-    <object data="Focus-BreastRadReport.svg" type="image/svg+xml">
-        <img src="Focus-BreastRadReport.svg" alt="image/svg+xml" />
-    </object>
-    <p>
-    This resource is the base of the Breast Radiology Report.
-    Detailed information about the report is contained in sub sections referenced by this resource.
-    </p>
-    </div>
+  <!-- +intro-->
+  <a name="intro"></a>
+  <h3 id="intro">Introduction</h3>
+  <!-- +body-->
+  This resource is an observation of %article% %name%.
+  It is referenced by a parent Observation.
+  <!-- -body-->
+  <!-- -intro-->
+  <!-- +components-->
+  <a name="components"></a>
+  <h3 id="components">Member Fields</h3>
+  The following are fields of this observation. Each field contains one data item. Each field is
+  stored in the Observation.component element.
+  <!-- +body-->
+  <!-- -body-->
+  <!-- -components-->
+  <!-- +hasMember-->
+  <a name="hasMembers"></a>
+  <h3 id="hasMember">Member Observations</h3>
+  The following are fields of this observation that are stored in seperate observation resources.
+  Each field referenced is stored as an item in the Observation.hasMember element.
+  <!-- +body-->
+  <!-- -body-->
+  <!-- -hasMember-->
+</div>

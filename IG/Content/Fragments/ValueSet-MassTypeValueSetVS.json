@@ -17,7 +17,7 @@
   ],
   "url": "http://hl7.org/fhir/us/breast-radiology/ValueSet/MassTypeValueSetVS",
   "name": "MassTypeValueSetVS",
-  "title": "Mass Type ValueSet ValueSet",
+  "title": "Mass Type ValueSet",
   "description": "Mass type value set.",
   "compose": {
     "include": [

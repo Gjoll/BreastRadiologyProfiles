@@ -16,10 +16,9 @@ namespace BreastRadiology.XUnitTests
         StringTaskVar FindingMammo = new StringTaskVar(
             (out String s) =>
             {
-                SDefEditor e = Self.CreateEditor("MGFinding",
+                SDefEditor e = Self.CreateEditorObservationSection("MGFinding",
                         "Mammographi Finding",
                         "MG Finding",
-                        ObservationUrl,
                         $"{Group_MGResources}")
                     .Description("Breast Radiology Mammography Finding",
                         new Markdown()
@@ -37,6 +36,7 @@ namespace BreastRadiology.XUnitTests
                 // .Card(1, "*")
                 // ;
 
+                /*
                 ProfileTargetSlice[] targets = new ProfileTargetSlice[]
                 {
                     new ProfileTargetSlice(Self.MGAbnormalityForeignObject.Value(), 0, "*"),
@@ -56,11 +56,12 @@ namespace BreastRadiology.XUnitTests
                 };
                 e.SliceByUrl("hasMember", targets);
                 e.AddProfileTargets(targets);
+                */
 
-                e.IntroDoc
-                    .ObservationSection("MG Finding")
-                    .ReviewedStatus(ReviewStatus.NotReviewed)
-                    ;
+                //$e.IntroDoc
+                //    .ObservationSection("MG Finding")
+                //    .ReviewedStatus(ReviewStatus.NotReviewed)
+                //    ;
             });
     }
 }

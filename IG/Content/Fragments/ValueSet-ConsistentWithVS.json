@@ -17,7 +17,7 @@
   ],
   "url": "http://hl7.org/fhir/us/breast-radiology/ValueSet/ConsistentWithVS",
   "name": "ConsistentWithVS",
-  "title": "ConsistentWith ValueSet ValueSet",
+  "title": "ConsistentWith ValueSet",
   "description": "ConsistentWith value set.",
   "compose": {
     "include": [

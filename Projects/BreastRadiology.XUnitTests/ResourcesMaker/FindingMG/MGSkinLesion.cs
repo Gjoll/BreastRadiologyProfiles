@@ -16,10 +16,9 @@ namespace BreastRadiology.XUnitTests
         StringTaskVar MGSkinLesion = new StringTaskVar(
             (out String s) =>
             {
-                SDefEditor e = Self.CreateEditor("MGSkinLesion",
+                SDefEditor e = Self.CreateEditorObservationLeaf("MGSkinLesion",
                     "Mammography Skin Lesion",
                     "MG Skin Lesion",
-                    ObservationUrl,
                     $"{Group_MGResources}/SkinLesion")
                     .Description("Breast Radiology Mammography Skin Lesion Observation",
                         new Markdown()
@@ -39,10 +38,10 @@ namespace BreastRadiology.XUnitTests
                     ;
                 s = e.SDef.Url;
 
-                e.IntroDoc
-                    .Observation($"Skin Lesion")
-                    .ReviewedStatus(ReviewStatus.NotReviewed)
-                    ;
+                //$e.IntroDoc
+                //    .Observation($"Skin Lesion")
+                //    .ReviewedStatus(ReviewStatus.NotReviewed)
+                //    ;
 
             });
     }

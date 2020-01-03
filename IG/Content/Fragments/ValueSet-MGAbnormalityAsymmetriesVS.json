@@ -17,7 +17,7 @@
   ],
   "url": "http://hl7.org/fhir/us/breast-radiology/ValueSet/MGAbnormalityAsymmetriesVS",
   "name": "MGAbnormalityAsymmetriesVS",
-  "title": "Mammography AsymmetryAbnormalities ValueSet ValueSet",
+  "title": "Mammography AsymmetryAbnormalities ValueSet",
   "description": "Mammography asymmetry abnormality types value set.",
   "compose": {
     "include": [

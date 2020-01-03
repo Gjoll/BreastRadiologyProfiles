@@ -13,8 +13,6 @@ namespace BreastRadiology.XUnitTests
 {
     class SDefEditor
     {
-        public IntroDoc IntroDoc { get; }
-
         public StructureDefinition SDef => this.sDef;
         StructureDefinition baseSDef;
         StructureDefinition sDef;
@@ -24,6 +22,7 @@ namespace BreastRadiology.XUnitTests
         ElementTreeNode snapNode;
         ElementTreeNode snapNodeOriginal;
         IConversionInfo info;
+        public IntroDoc IntroDoc { get; set; }
 
         /// <summary>
         /// Create structure definition editor
@@ -60,13 +59,6 @@ namespace BreastRadiology.XUnitTests
             };
 
             this.SDef.AddExtension(Global.ResourceMapNameUrl, new FhirString(mapName));
-
-            this.IntroDoc = new IntroDoc(Path.Combine(this.pageDir, $"StructureDefinition-{name}-intro.xml"));
-            this.IntroDoc
-                .Header3($"Graphical Overview", "focusGraph")
-                .Paragraph("This graph provides an overview of how and where {name} is referenced," +
-                        "and what items {name} itself referenced.")
-                .AddSvgImage(FocusMapMaker.FocusMapName(this.SDef.Url.LastUriPart()));
         }
 
         /// <summary>
@@ -486,14 +478,25 @@ namespace BreastRadiology.XUnitTests
             String maxCardinality,
             String componentName)
         {
+            String compStr = maxCardinality == "1" ? compStr = "component" : "components";
+            String valueStr = maxCardinality == "1" ? compStr = "value" : "values";
+
             ElementTreeSlice slice = this.AppendSlice("component", sliceName, minCardinality, maxCardinality);
+            slice.ElementDefinition
+                .SetShort($"{componentName} component")
+                .SetDefinition(new Markdown($"This component slice contains the {componentName} {valueStr}"))
+                .SetComment(new Markdown($"This is one component of a group of components that comprise the observation."))
+                ;
+
             {
                 ElementDefinition componentCode = new ElementDefinition
                 {
                     Path = $"{slice.ElementDefinition.Path}.code",
                     ElementId = $"{slice.ElementDefinition.Path}:{sliceName}.code",
                     Min = 1,
-                    Max = "1"
+                    Max = "1",
+                    Short = $"{componentName} component code",
+                    Definition = new Markdown($"This code identifies the {componentName} {compStr}")
                 };
                 componentCode
                     .Pattern(pattern)
@@ -506,7 +509,9 @@ namespace BreastRadiology.XUnitTests
                     Path = $"{slice.ElementDefinition.Path}.value[x]",
                     ElementId = $"{slice.ElementDefinition.Path}:{sliceName}.value[x]",
                     Min = 1,
-                    Max = "1"
+                    Max = "1",
+                    Short = $"{componentName} component value",
+                    Definition = new Markdown($"The value of the {componentName} component")
                 };
                 valueX
                     .Binding(valueSet.Url, bindingStrength)

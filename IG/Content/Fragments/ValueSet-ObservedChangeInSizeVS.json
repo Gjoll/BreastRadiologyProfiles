@@ -17,7 +17,7 @@
   ],
   "url": "http://hl7.org/fhir/us/breast-radiology/ValueSet/ObservedChangeInSizeVS",
   "name": "ObservedChangeInSizeVS",
-  "title": "Observed Changes ValueSet ValueSet",
+  "title": "Observed Changes ValueSet",
   "description": "Observed changes in the size of an abnormality over time value set.",
   "compose": {
     "include": [

@@ -17,7 +17,7 @@
   ],
   "url": "http://hl7.org/fhir/us/breast-radiology/ValueSet/ObservedChangeInStateVS",
   "name": "ObservedChangeInStateVS",
-  "title": "Observed Change In State ValueSet ValueSet",
+  "title": "Observed Change In State ValueSet",
   "description": "Observed changes in state of an abnormality over time value set.",
   "compose": {
     "include": [

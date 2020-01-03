@@ -57,10 +57,9 @@ namespace BreastRadiology.XUnitTests
             {
                 ValueSet binding = Self.MGAbnormalityDensityTypeVS.Value();
 
-                SDefEditor e = Self.CreateEditor("MGAbnormalityDensity",
+                SDefEditor e = Self.CreateEditorObservationLeaf("MGAbnormalityDensity",
                         "Mammography Density",
                         "MG Density",
-                        ObservationUrl,
                         $"{Group_MGResources}/AbnormalityDensity")
                     .Description("Breat Radiology Mammography Density Observation",
                         new Markdown()
@@ -76,11 +75,11 @@ namespace BreastRadiology.XUnitTests
 
                 s = e.SDef.Url;
 
-                e.IntroDoc
-                    .ObservationSection($"Density")
-                    .ReviewedStatus(ReviewStatus.NotReviewed)
-                    .Refinement(binding, "Density")
-                    ;
+                //$e.IntroDoc
+                //    .ObservationSection($"Density")
+                //    .ReviewedStatus(ReviewStatus.NotReviewed)
+                //    .Refinement(binding, "Density")
+                //    ;
 
                 e.Select("value[x]").Zero();
 

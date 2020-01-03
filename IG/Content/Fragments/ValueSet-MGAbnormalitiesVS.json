@@ -17,7 +17,7 @@
   ],
   "url": "http://hl7.org/fhir/us/breast-radiology/ValueSet/MGAbnormalitiesVS",
   "name": "MGAbnormalitiesVS",
-  "title": "Foreign Object ValueSet ValueSet",
+  "title": "Foreign Object ValueSet",
   "description": "Foreign objects observed during a Breast Radiology exam value set",
   "compose": {
     "include": [

@@ -17,7 +17,7 @@
   ],
   "url": "http://hl7.org/fhir/us/breast-radiology/ValueSet/ObservedChangeInNumberVS",
   "name": "ObservedChangeInNumberVS",
-  "title": "Observed Number Changes ValueSet ValueSet",
+  "title": "Observed Number Changes ValueSet",
   "description": "Observed changes in number of an abnormality over time value set.",
   "compose": {
     "include": [

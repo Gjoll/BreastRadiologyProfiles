@@ -17,7 +17,7 @@
   ],
   "url": "http://hl7.org/fhir/us/breast-radiology/ValueSet/MammoCalcificationTypeVS",
   "name": "MammoCalcificationTypeVS",
-  "title": "Mammography Calcification Type ValueSet ValueSet",
+  "title": "Mammography Calcification Type ValueSet",
   "description": "Mammography calcification types value set.",
   "compose": {
     "include": [

@@ -16,10 +16,9 @@ namespace BreastRadiology.XUnitTests
         StringTaskVar MGSkinRetraction = new StringTaskVar(
             (out String s) =>
             {
-                SDefEditor e = Self.CreateEditor("MGSkinRetraction",
+                SDefEditor e = Self.CreateEditorObservationLeaf("MGSkinRetraction",
                     "Mammography Skin Retraction",
                     "MG Skin Retraction",
-                    ObservationUrl,
                     $"{Group_MGResources}/AssociatedFeature/SkinRetraction")
                     .Description("Mammography Skin Retraction Observation",
                         new Markdown()
@@ -36,10 +35,10 @@ namespace BreastRadiology.XUnitTests
                     ;
                 s = e.SDef.Url;
 
-                e.IntroDoc
-                    .Observation("Skin Retraction")
-                    .ReviewedStatus(ReviewStatus.NotReviewed)
-                    ;
+                //$e.IntroDoc
+                //    .Observation("Skin Retraction")
+                //    .ReviewedStatus(ReviewStatus.NotReviewed)
+                //    ;
             });
     }
 }

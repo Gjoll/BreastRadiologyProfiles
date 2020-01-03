@@ -20,7 +20,8 @@ namespace BreastRadiology.XUnitTests
                     "AIM Annotated Imaging Study",
                     "Annotated/Imaging Study",
                     ImagingStudyUrl,
-                    $"{Group_AimResources}/Aim/AimAnnotatedImagingStudy")
+                    $"{Group_AimResources}/Aim/AimAnnotatedImagingStudy",
+                    "AimAnnotatedImagingStudy")
                     .Description("AIM Annotated Imaging Study",
                         new Markdown()
                             //.Todo
@@ -29,10 +30,10 @@ namespace BreastRadiology.XUnitTests
                     .AddFragRef(Self.AimAnnotationPolyLineFragment.Value())
                     ;
                 s = e.SDef.Url;
-                e.IntroDoc
-                    .Observation("AIM Annotated Imaging Study", "an")
-                    .ReviewedStatus(ReviewStatus.NotReviewed)
-                    ;
+                //$e.IntroDoc
+                //    .Observation("AIM Annotated Imaging Study", "an")
+                //    .ReviewedStatus(ReviewStatus.NotReviewed)
+                //    ;
             });
     }
 }

@@ -21,7 +21,8 @@ namespace BreastRadiology.XUnitTests
                     "PatientRisk Extension",
                     "PatientRisk/Extension",
                     ExtensionUrl,
-                     $"{Group_ExtensionResources}/PatientRisk")
+                     $"{Group_ExtensionResources}/PatientRisk",
+                     "PatientRiskExtension")
                     .Description("Patient Risk section extension",
                     new Markdown()
                         .Paragraph("This extension defines the PatientRisk section of a breast radiology report, " +
@@ -35,10 +36,10 @@ namespace BreastRadiology.XUnitTests
                     ;
                 s = e.SDef.Url;
 
-                e.IntroDoc
-                    .IntroExtension("PatientRisk", "include references to PatientRisk")
-                    .ReviewedStatus(ReviewStatus.NotReviewed)
-                    ;
+                //$e.IntroDoc
+                //    .IntroExtension("PatientRisk", "include references to PatientRisk")
+                //    .ReviewedStatus(ReviewStatus.NotReviewed)
+                //    ;
 
                 e.AddFragRef(Self.HeaderFragment.Value());
 

@@ -17,10 +17,9 @@ namespace BreastRadiology.XUnitTests
             (out String s) =>
             {
 
-                SDefEditor e = Self.CreateEditor("MGAxillaryAdenopathy",
+                SDefEditor e = Self.CreateEditorObservationLeaf("MGAxillaryAdenopathy",
                     "Mammography Axillary Adenopathy",
                     "MG Axillary/Adenopathy",
-                    ObservationUrl,
                     $"{Group_MGResources}/AssociatedFeature/AxillaryAdenopathy")
                     .Description("Breast Radiology Mammography Axillary Adenopathy Observation",
                         new Markdown()
@@ -39,10 +38,10 @@ namespace BreastRadiology.XUnitTests
                     .AddFragRef(Self.BreastBodyLocationRequiredFragment.Value())
                     ;
                 s = e.SDef.Url;
-                e.IntroDoc
-                    .Observation("Axillary Adenopathy")
-                    .ReviewedStatus(ReviewStatus.NotReviewed)
-                    ;
+                //$e.IntroDoc
+                //    .Observation("Axillary Adenopathy")
+                //    .ReviewedStatus(ReviewStatus.NotReviewed)
+                //    ;
             });
     }
 }

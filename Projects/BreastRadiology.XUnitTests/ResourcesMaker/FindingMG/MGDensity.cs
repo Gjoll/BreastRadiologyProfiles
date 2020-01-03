@@ -69,7 +69,7 @@ namespace BreastRadiology.XUnitTests
                 Self.CreateValueSet(
                     "MGDensityVS",
                     "Mammography Density ValueSet",
-                    "MG DensityValueSet",
+                    "MG Density ValueSet",
                     "Mammography density codes value set.",
                     Group_MGCodesVS,
                     Self.MGDensityCS.Value())
@@ -82,7 +82,7 @@ namespace BreastRadiology.XUnitTests
         //        ValueSet binding = Self.MGDensityVS.Value();
 
         //        {
-        //            IntroDoc valueSetIntroDoc = new IntroDoc(Path.Combine(Self.pageDir, $"ValueSet-{binding.Name}-intro.xml"));
+        //            IntroDoc valueSetIntroDoc = Self.CreateIntroDocVS(binding);
         //            valueSetIntroDoc
         //                .ValueSet(binding);
         //                .ReviewedStatus(ReviewStatus.NotReviewed)

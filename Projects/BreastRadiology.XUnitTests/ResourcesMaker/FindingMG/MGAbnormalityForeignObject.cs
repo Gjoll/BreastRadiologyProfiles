@@ -31,7 +31,7 @@ namespace BreastRadiology.XUnitTests
             {
                 ValueSet binding = Self.MGAbnormalityForeignObjectVS.Value();
                 {
-                    IntroDoc valueSetIntroDoc = new IntroDoc(Path.Combine(Self.pageDir, $"ValueSet-{binding.Name}-intro.xml"));
+                    IntroDoc valueSetIntroDoc = Self.CreateIntroDocVS(binding);
                     valueSetIntroDoc
                         .IntroValueSet(binding)
                         .ReviewedStatus(ReviewStatus.NotReviewed)
@@ -40,10 +40,9 @@ namespace BreastRadiology.XUnitTests
                     Self.fc?.Mark(outputPath);
                 }
 
-                SDefEditor e = Self.CreateEditor("MGAbnormalityForeignObject",
+                SDefEditor e = Self.CreateEditorObservationSection("MGAbnormalityForeignObject",
                         "Foreign Object",
                         "Foreign Object",
-                        ObservationUrl,
                         $"{Group_MGResources}/AbnormalityForeign")
                     .Description("Breast Radiology Foreign Object Observation",
                         new Markdown()
@@ -63,11 +62,11 @@ namespace BreastRadiology.XUnitTests
 
                 s = e.SDef.Url;
 
-                e.IntroDoc
-                    .IntroCodedObservationLeafNode("a foreign object abnormality")
-                    .ReviewedStatus(ReviewStatus.NotReviewed)
-                    .Refinement(binding, "Foreign Object")
-                    ;
+                //$e.IntroDoc
+                //    .IntroCodedObservationLeafNode("a foreign object abnormality")
+                //    .ReviewedStatus(ReviewStatus.NotReviewed)
+                //    .Refinement(binding, "Foreign Object")
+                //    ;
 
                 e.Select("value[x]").Zero();
                 ProfileTargetSlice[] targets = new ProfileTargetSlice[]

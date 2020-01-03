@@ -19,9 +19,8 @@ namespace BreastRadiology.XUnitTests
         //    {
         //        ValueSet binding = Self.BiRadsAssessmentCategoriesVS.Value();
         //        {
-        //            IntroDoc valueSetIntroDoc = new IntroDoc(Path.Combine(Self.pageDir, $"ValueSet-{binding.Name}-intro.xml"));
+        //            IntroDoc valueSetIntroDoc = Self.CreateIntroDocVS(binding));
         //            valueSetIntroDoc
-        //                .ValueSet(binding);
         //                .ReviewedStatus(ReviewStatus.NotReviewed)
         //            ;
         //            String outputPath = valueSetIntroDoc.Save();

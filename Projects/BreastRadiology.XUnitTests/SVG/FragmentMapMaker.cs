@@ -138,12 +138,15 @@ namespace BreastRadiology.XUnitTests
             e.Save(outputSvgPath);
 
             {
-                IntroDoc doc = new IntroDoc(Path.Combine(pageDir, $"StructureDefinition-Fragment{fragmentNode.Focus.Name}-intro.xml"));
-                doc
-                    .Header3($"Graphical Overview", "focusGraph")
-                    .Paragraph("This graph provides an overview of how and where {name} is referenced," +
-                        "and what items {name} itself referenced.")
-                    .AddSvgImage($"FragmentMap_{fragmentNode.Focus.Name}.svg");
+                IntroDoc doc = new IntroDoc();
+                doc.Load("Fragment",
+                    Path.Combine(pageDir, $"StructureDefinition-Fragment{fragmentNode.Focus.Name}-intro.xml"));
+
+                //$doc
+                //    .Header3($"Graphical Overview", "focusGraph")
+                //    .Paragraph("This graph provides an overview of how and where {name} is referenced," +
+                //        "and what items {name} itself referenced.")
+                //    .AddSvgImage($"FragmentMap_{fragmentNode.Focus.Name}.svg");
                 String outputDocPath = doc.Save();
                 this.fc?.Mark(outputDocPath);
             }
@@ -197,11 +200,8 @@ namespace BreastRadiology.XUnitTests
 
         public void Create()
         {
-            this.fragmentsEditor = new CodeEditor();
-            this.fragmentsEditor.BlockStart = "<!-- +";
-            this.fragmentsEditor.BlockStartTerm = "-->";
-            this.fragmentsEditor.BlockEnd = "<!-- -";
-            this.fragmentsEditor.BlockEndTerm = "-->";
+            this.fragmentsEditor = new CodeEditorXml();
+            this.fragmentsEditor.IgnoreMacrosInQuotedStrings = false;
             this.fragmentsEditor.Load(Path.Combine(this.pageTemplateDir, "fragments.xml"));
             this.fragmentsBlock = this.fragmentsEditor.Blocks.Find("Block");
             this.fragmentsBlock.Clear();
