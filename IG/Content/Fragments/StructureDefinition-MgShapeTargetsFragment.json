@@ -120,7 +120,7 @@
         "id": "Observation.component:orientation.value[x]",
         "path": "Observation.component.value[x]",
         "short": "Orientation component value",
-        "definition": "The value of the Orientation component",
+        "definition": "Count of an object.\n\n\nThis is either an integer count, or a Range (min..max) count.\n\n\nA range value with no maximum specified implies count is min or more.\n\n\nA range value with no minimum specified implies count is max or less.",
         "min": 1,
         "max": "1",
         "base": {
@@ -178,7 +178,7 @@
         "id": "Observation.component:shape.value[x]",
         "path": "Observation.component.value[x]",
         "short": "Shape component value",
-        "definition": "The value of the Shape component",
+        "definition": "Count of an object.\n\n\nThis is either an integer count, or a Range (min..max) count.\n\n\nA range value with no maximum specified implies count is min or more.\n\n\nA range value with no minimum specified implies count is max or less.",
         "min": 1,
         "max": "1",
         "base": {
@@ -236,7 +236,7 @@
         "id": "Observation.component:margin.value[x]",
         "path": "Observation.component.value[x]",
         "short": "Margin component value",
-        "definition": "The value of the Margin component",
+        "definition": "Count of an object.\n\n\nThis is either an integer count, or a Range (min..max) count.\n\n\nA range value with no maximum specified implies count is min or more.\n\n\nA range value with no minimum specified implies count is max or less.",
         "min": 1,
         "max": "1",
         "base": {
@@ -294,7 +294,7 @@
         "id": "Observation.component:mgDensity.value[x]",
         "path": "Observation.component.value[x]",
         "short": "Density component value",
-        "definition": "The value of the Density component",
+        "definition": "Count of an object.\n\n\nThis is either an integer count, or a Range (min..max) count.\n\n\nA range value with no maximum specified implies count is min or more.\n\n\nA range value with no minimum specified implies count is max or less.",
         "min": 1,
         "max": "1",
         "base": {

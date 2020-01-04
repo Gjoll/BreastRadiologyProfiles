@@ -23,6 +23,7 @@ namespace BreastRadiology.XUnitTests
         Coding CodeObservedChangeInSize => new Coding(ComponentSliceCodesUrl, "observedChangeInSize");
         Coding CodeObservedChangeInState => new Coding(ComponentSliceCodesUrl, "observedChangeInState");
         Coding CodeObservedSize => new Coding(ComponentSliceCodesUrl, "observedSize");
+        Coding CodeObservedCount => new Coding(ComponentSliceCodesUrl, "observedCount");
         Coding CodeOrientation => new Coding(ComponentSliceCodesUrl, "orientation");
         Coding CodeShape => new Coding(ComponentSliceCodesUrl, "shape");
         Coding CodeMargin => new Coding(ComponentSliceCodesUrl, "margin");
@@ -43,11 +44,6 @@ namespace BreastRadiology.XUnitTests
         Coding MGCodeAbnormalityDuctType => new Coding(ComponentSliceCodesUrl, "mgAbnormalityDuctType");
         Coding MGCodeAbnormalityCystType => new Coding(ComponentSliceCodesUrl, "mgAbnormalityCystType");
         Coding MGCodeAbnormalityXXYYZType => new Coding(ComponentSliceCodesUrl, "mgAbnormalityXXYYZType");
-        //Coding MGCodeAbnormalityXXYYZType => new Coding(ComponentSliceCodesUrl, "mgAbnormalityXXYYZType");
-        //Coding MGCodeAbnormalityXXYYZType => new Coding(ComponentSliceCodesUrl, "mgAbnormalityXXYYZType");
-        //Coding MGCodeAbnormalityXXYYZType => new Coding(ComponentSliceCodesUrl, "mgAbnormalityXXYYZType");
-
-
 
         CSTaskVar ComponentSliceCodesCS = new CSTaskVar(
              (out CodeSystem cs) =>
@@ -68,6 +64,7 @@ namespace BreastRadiology.XUnitTests
                             new ConceptDef(Self.CodeObservedChangeInSize, "Slicing Component Code - ChangeInSize"),
                             new ConceptDef(Self.CodeObservedChangeInState, "Slicing Component Code - ChangeInState"),
                             new ConceptDef(Self.CodeObservedSize, "Slicing Component Code - ObservedSize"),
+                            new ConceptDef(Self.CodeObservedCount, "Slicing Component Code - ObservedCount"),
 
                             new ConceptDef(Self.CodeOrientation, "Slicing Component Code - Orientation"),
                             new ConceptDef(Self.CodeShape, "Slicing Component Code - Shape"),

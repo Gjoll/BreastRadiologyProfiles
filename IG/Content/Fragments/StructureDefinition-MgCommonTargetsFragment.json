@@ -136,7 +136,7 @@
         "id": "Observation.component:biRadsAssessmentCategory.value[x]",
         "path": "Observation.component.value[x]",
         "short": "BiRads Assessment Category component value",
-        "definition": "The value of the BiRads Assessment Category component",
+        "definition": "Count of an object.\n\n\nThis is either an integer count, or a Range (min..max) count.\n\n\nA range value with no maximum specified implies count is min or more.\n\n\nA range value with no minimum specified implies count is max or less.",
         "min": 1,
         "max": "1",
         "base": {
@@ -194,7 +194,7 @@
         "id": "Observation.component:observedChangeInDefinition.value[x]",
         "path": "Observation.component.value[x]",
         "short": "Change In Definition component value",
-        "definition": "The value of the Change In Definition component",
+        "definition": "Count of an object.\n\n\nThis is either an integer count, or a Range (min..max) count.\n\n\nA range value with no maximum specified implies count is min or more.\n\n\nA range value with no minimum specified implies count is max or less.",
         "min": 1,
         "max": "1",
         "base": {
@@ -252,7 +252,7 @@
         "id": "Observation.component:observedChangeInNumber.value[x]",
         "path": "Observation.component.value[x]",
         "short": "Change In Number component value",
-        "definition": "The value of the Change In Number component",
+        "definition": "Count of an object.\n\n\nThis is either an integer count, or a Range (min..max) count.\n\n\nA range value with no maximum specified implies count is min or more.\n\n\nA range value with no minimum specified implies count is max or less.",
         "min": 1,
         "max": "1",
         "base": {
@@ -310,7 +310,7 @@
         "id": "Observation.component:observedChangeInProminance.value[x]",
         "path": "Observation.component.value[x]",
         "short": "Change In Prominance component value",
-        "definition": "The value of the Change In Prominance component",
+        "definition": "Count of an object.\n\n\nThis is either an integer count, or a Range (min..max) count.\n\n\nA range value with no maximum specified implies count is min or more.\n\n\nA range value with no minimum specified implies count is max or less.",
         "min": 1,
         "max": "1",
         "base": {
@@ -368,7 +368,7 @@
         "id": "Observation.component:observedChangeInSize.value[x]",
         "path": "Observation.component.value[x]",
         "short": "Change In Size component value",
-        "definition": "The value of the Change In Size component",
+        "definition": "Count of an object.\n\n\nThis is either an integer count, or a Range (min..max) count.\n\n\nA range value with no maximum specified implies count is min or more.\n\n\nA range value with no minimum specified implies count is max or less.",
         "min": 1,
         "max": "1",
         "base": {
@@ -426,7 +426,7 @@
         "id": "Observation.component:observedChangeInState.value[x]",
         "path": "Observation.component.value[x]",
         "short": "Change In State component value",
-        "definition": "The value of the Change In State component",
+        "definition": "Count of an object.\n\n\nThis is either an integer count, or a Range (min..max) count.\n\n\nA range value with no maximum specified implies count is min or more.\n\n\nA range value with no minimum specified implies count is max or less.",
         "min": 1,
         "max": "1",
         "base": {
@@ -534,7 +534,7 @@
         "id": "Observation.component:orientation.value[x]",
         "path": "Observation.component.value[x]",
         "short": "Orientation component value",
-        "definition": "The value of the Orientation component",
+        "definition": "Count of an object.\n\n\nThis is either an integer count, or a Range (min..max) count.\n\n\nA range value with no maximum specified implies count is min or more.\n\n\nA range value with no minimum specified implies count is max or less.",
         "min": 1,
         "max": "1",
         "base": {

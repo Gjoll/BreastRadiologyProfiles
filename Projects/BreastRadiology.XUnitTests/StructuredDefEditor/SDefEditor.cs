@@ -428,6 +428,50 @@ namespace BreastRadiology.XUnitTests
             componentNode.ApplySlicing(slicingComponent, false);
         }
 
+        public void ComponentSliceCount(String sliceName,
+            CodeableConcept pattern,
+            Int32 minCardinality,
+            String maxCardinality,
+            String componentName)
+        {
+            {
+                ElementTreeSlice slice = this.AppendSlice("component", sliceName, minCardinality, maxCardinality);
+                slice.ElementDefinition
+                    .SetShort($"{componentName} component")
+                    .SetDefinition(new Markdown($"This component slice contains the {componentName} quantity"))
+                    .SetComment(new Markdown($"This is one component of a group of components that comprise the observation."))
+                    ;
+
+                {
+                    ElementDefinition componentCode = new ElementDefinition
+                    {
+                        Path = $"{slice.ElementDefinition.Path}.code",
+                        ElementId = $"{slice.ElementDefinition.Path}:{sliceName}.code",
+                        Min = 1,
+                        Max = "1"
+                    };
+                    componentCode
+                        .Pattern(pattern)
+                        ;
+                    slice.CreateNode(componentCode);
+                }
+                {
+                    ElementDefinition valueX = new ElementDefinition
+                    {
+                        Path = $"{slice.ElementDefinition.Path}.value[x]",
+                        ElementId = $"{slice.ElementDefinition.Path}:{sliceName}.value[x]",
+                        Min = 1,
+                        Max = "1"
+                    };
+                    valueX
+                        .Types("integer", "Range")
+                        ;
+                    slice.CreateNode(valueX);
+                }
+            }
+            this.AddComponentLink($"{componentName}^Quantity");
+        }
+
         public void ComponentSliceQuantity(String sliceName,
             CodeableConcept pattern,
             Int32 minCardinality,
@@ -513,11 +557,16 @@ namespace BreastRadiology.XUnitTests
                     Min = 1,
                     Max = "1",
                     Short = $"{componentName} component value",
-                    Definition = new Markdown($"The value of the {componentName} component")
                 };
                 valueX
                     .Binding(valueSet.Url, bindingStrength)
-                    .Type("CodeableConcept");
+                    .Type("CodeableConcept")
+                    .SetDefinition(new Markdown()
+                        .Paragraph("Count of an object.")
+                        .Paragraph("This is either an integer count, or a Range (min..max) count.")
+                        .Paragraph($"A range value with no maximum specified implies count is min or more.")
+                        .Paragraph($"A range value with no minimum specified implies count is max or less.")
+                     )
                 ;
                 slice.CreateNode(valueX);
             }

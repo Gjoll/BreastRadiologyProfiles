@@ -441,35 +441,11 @@ namespace BreastRadiology.XUnitTests
 
         void ComponentSliceObservedCount(SDefEditor e)
         {
-            String sliceName = "observedCount";
-
-            ElementTreeSlice slice = e.AppendSlice("component", sliceName, 0, "1");
-            slice.ElementDefinition
-                .SetShort($"ObservedCount component")
-                .SetDefinition(new Markdown($"This component slice contains the Observed Count value"))
-                .SetComment(new Markdown($"This is one component of a group of components that comprise the observation."))
-                ;
-            {
-                ElementDefinition valueX = new ElementDefinition
-                {
-                    Path = $"{slice.ElementDefinition.Path}.value[x]",
-                    ElementId = $"{slice.ElementDefinition.Path}:{sliceName}.value[x]"
-                };
-
-                valueX
-                    .Types("integer", "Range")
-                    .SetCardinality(1, "1")
-                    .SetDefinition(new Markdown()
-                        .Paragraph("Count of an object.")
-                        .Paragraph("This is either an integer count, or a Range (min..max) count.")
-                        .Paragraph($"A range value with no maximum specified implies count is min or more.")
-                        .Paragraph($"A range value with no minimum specified implies count is max or less.")
-                     )
-                    ;
-                ;
-                slice.CreateNode(valueX);
-                e.AddComponentLink("Observed Count^Integer or Range");
-            }
+            e.ComponentSliceCount("observedCount",
+                Self.CodeObservedSize.ToCodeableConcept(),
+                0,
+                "1",
+                "Observed Count");
         }
 
         IntroDoc CreateIntroDocVS(ValueSet binding)

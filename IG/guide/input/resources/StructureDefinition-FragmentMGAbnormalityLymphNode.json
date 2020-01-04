@@ -2349,7 +2349,7 @@
         "id": "Observation.component:mgAbnormalityLymphNodeType.value[x]",
         "path": "Observation.component.value[x]",
         "short": "MG AbnormalityAsymmetry Type component value",
-        "definition": "The value of the MG AbnormalityAsymmetry Type component",
+        "definition": "Count of an object.\n\n\nThis is either an integer count, or a Range (min..max) count.\n\n\nA range value with no maximum specified implies count is min or more.\n\n\nA range value with no minimum specified implies count is max or less.",
         "comment": "Used when observation has a set of component observations. An observation may have both a value (e.g. an  Apgar score)  and component observations (the observations from which the Apgar score was derived). If a value is present, the datatype for this element should be determined by Observation.code. A CodeableConcept with just a text would be used instead of a string if the field was usually coded, or if the type associated with the Observation.code defines a coded value.  For additional guidance, see the [Notes section](observation.html#notes) below.",
         "requirements": "An observation exists to have a value, though it might not if it is in error, or if it represents a group of observations.",
         "min": 1,
@@ -2521,8 +2521,8 @@
         "id": "Observation.component:observedCount",
         "path": "Observation.component",
         "sliceName": "observedCount",
-        "short": "ObservedCount component",
-        "definition": "This component slice contains the Observed Count value",
+        "short": "Observed Count component",
+        "definition": "This component slice contains the Observed Count quantity",
         "comment": "This is one component of a group of components that comprise the observation.",
         "requirements": "Component observations share the same attributes in the Observation resource as the primary observation and are always treated a part of a single observation (they are not separable).   However, the reference range for the primary observation value is not inherited by the component values and is required when appropriate for each component observation.",
         "min": 0,
@@ -2673,6 +2673,14 @@
             "code": "CodeableConcept"
           }
         ],
+        "patternCodeableConcept": {
+          "coding": [
+            {
+              "system": "http://hl7.org/fhir/us/breast-radiology/CodeSystem/ComponentSliceCodes",
+              "code": "observedSize"
+            }
+          ]
+        },
         "isModifier": false,
         "isSummary": true,
         "binding": {
@@ -2709,7 +2717,7 @@
         "id": "Observation.component:observedCount.value[x]",
         "path": "Observation.component.value[x]",
         "short": "Actual component result",
-        "definition": "Count of an object.\n\n\nThis is either an integer count, or a Range (min..max) count.\n\n\nA range value with no maximum specified implies count is min or more.\n\n\nA range value with no minimum specified implies count is max or less.",
+        "definition": "The information determined as a result of making the observation, if the information has a simple value.",
         "comment": "Used when observation has a set of component observations. An observation may have both a value (e.g. an  Apgar score)  and component observations (the observations from which the Apgar score was derived). If a value is present, the datatype for this element should be determined by Observation.code. A CodeableConcept with just a text would be used instead of a string if the field was usually coded, or if the type associated with the Observation.code defines a coded value.  For additional guidance, see the [Notes section](observation.html#notes) below.",
         "requirements": "An observation exists to have a value, though it might not if it is in error, or if it represents a group of observations.",
         "min": 1,
@@ -2960,7 +2968,7 @@
         "id": "Observation.component:mgAbnormalityLymphNodeType.value[x]",
         "path": "Observation.component.value[x]",
         "short": "MG AbnormalityAsymmetry Type component value",
-        "definition": "The value of the MG AbnormalityAsymmetry Type component",
+        "definition": "Count of an object.\n\n\nThis is either an integer count, or a Range (min..max) count.\n\n\nA range value with no maximum specified implies count is min or more.\n\n\nA range value with no minimum specified implies count is max or less.",
         "min": 1,
         "max": "1",
         "base": {
@@ -2982,8 +2990,8 @@
         "id": "Observation.component:observedCount",
         "path": "Observation.component",
         "sliceName": "observedCount",
-        "short": "ObservedCount component",
-        "definition": "This component slice contains the Observed Count value",
+        "short": "Observed Count component",
+        "definition": "This component slice contains the Observed Count quantity",
         "comment": "This is one component of a group of components that comprise the observation.",
         "min": 0,
         "max": "1",
@@ -2994,9 +3002,27 @@
         }
       },
       {
+        "id": "Observation.component:observedCount.code",
+        "path": "Observation.component.code",
+        "min": 1,
+        "max": "1",
+        "base": {
+          "path": "Observation.component.code",
+          "min": 1,
+          "max": "1"
+        },
+        "patternCodeableConcept": {
+          "coding": [
+            {
+              "system": "http://hl7.org/fhir/us/breast-radiology/CodeSystem/ComponentSliceCodes",
+              "code": "observedSize"
+            }
+          ]
+        }
+      },
+      {
         "id": "Observation.component:observedCount.value[x]",
         "path": "Observation.component.value[x]",
-        "definition": "Count of an object.\n\n\nThis is either an integer count, or a Range (min..max) count.\n\n\nA range value with no maximum specified implies count is min or more.\n\n\nA range value with no minimum specified implies count is max or less.",
         "min": 1,
         "max": "1",
         "base": {

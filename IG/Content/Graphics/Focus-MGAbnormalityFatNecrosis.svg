@@ -68,9 +68,9 @@
 </a>
 </g>
 <g transform="translate(420 127.5)">
-<rect fill="LightYellow" stroke="Black" stroke-width="1.875" x="0" y="0" width="183" height="52.5" rx="3.75" ry="3.75" />
-<text x="91.5" y="22.5" text-anchor="middle">Observed Count</text>
-<text x="91.5" y="41.25" text-anchor="middle">Integer or Range</text>
+<rect fill="LightYellow" stroke="Black" stroke-width="1.875" x="0" y="0" width="162" height="52.5" rx="3.75" ry="3.75" />
+<text x="81" y="22.5" text-anchor="middle">Observed Count</text>
+<text x="81" y="41.25" text-anchor="middle">Quantity</text>
 </g>
 <g transform="translate(420 187.5)">
 <rect fill="LightYellow" stroke="Black" stroke-width="1.875" x="0" y="0" width="309" height="71.25" rx="3.75" ry="3.75" />

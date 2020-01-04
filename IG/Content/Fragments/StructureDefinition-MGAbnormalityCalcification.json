@@ -59,7 +59,7 @@
     },
     {
       "url": "http://www.fragment.com/maplink",
-      "valueString": "component|True|Observed Count^Integer or Range"
+      "valueString": "component|True|Observed Count^Quantity"
     }
   ],
   "url": "http://hl7.org/fhir/us/breast-radiology/StructureDefinition/MGAbnormalityCalcification",
@@ -218,7 +218,7 @@
         "id": "Observation.component:calcificationType.value[x]",
         "path": "Observation.component.value[x]",
         "short": "Calcification Type component value",
-        "definition": "The value of the Calcification Type component",
+        "definition": "Count of an object.\n\n\nThis is either an integer count, or a Range (min..max) count.\n\n\nA range value with no maximum specified implies count is min or more.\n\n\nA range value with no minimum specified implies count is max or less.",
         "min": 1,
         "max": "1",
         "base": {
@@ -276,7 +276,7 @@
         "id": "Observation.component:calcificationDistribution.value[x]",
         "path": "Observation.component.value[x]",
         "short": "Calcification Distribution component value",
-        "definition": "The value of the Calcification Distribution component",
+        "definition": "Count of an object.\n\n\nThis is either an integer count, or a Range (min..max) count.\n\n\nA range value with no maximum specified implies count is min or more.\n\n\nA range value with no minimum specified implies count is max or less.",
         "min": 1,
         "max": "1",
         "base": {
@@ -298,8 +298,8 @@
         "id": "Observation.component:observedCount",
         "path": "Observation.component",
         "sliceName": "observedCount",
-        "short": "ObservedCount component",
-        "definition": "This component slice contains the Observed Count value",
+        "short": "Observed Count component",
+        "definition": "This component slice contains the Observed Count quantity",
         "comment": "This is one component of a group of components that comprise the observation.",
         "min": 0,
         "max": "1",
@@ -310,9 +310,27 @@
         }
       },
       {
+        "id": "Observation.component:observedCount.code",
+        "path": "Observation.component.code",
+        "min": 1,
+        "max": "1",
+        "base": {
+          "path": "Observation.component.code",
+          "min": 1,
+          "max": "1"
+        },
+        "patternCodeableConcept": {
+          "coding": [
+            {
+              "system": "http://hl7.org/fhir/us/breast-radiology/CodeSystem/ComponentSliceCodes",
+              "code": "observedSize"
+            }
+          ]
+        }
+      },
+      {
         "id": "Observation.component:observedCount.value[x]",
         "path": "Observation.component.value[x]",
-        "definition": "Count of an object.\n\n\nThis is either an integer count, or a Range (min..max) count.\n\n\nA range value with no maximum specified implies count is min or more.\n\n\nA range value with no minimum specified implies count is max or less.",
         "min": 1,
         "max": "1",
         "base": {

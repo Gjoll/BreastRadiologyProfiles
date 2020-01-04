@@ -25,8 +25,8 @@
         "system": "http://hl7.org/fhir/us/breast-radiology/CodeSystem/BreastLocationClockCS",
         "concept": [
           {
-            "code": "12-OClock",
-            "display": "12-OClock"
+            "code": "12:00-OClock",
+            "display": "12:00-OClock"
           },
           {
             "code": "1:00-OClock",

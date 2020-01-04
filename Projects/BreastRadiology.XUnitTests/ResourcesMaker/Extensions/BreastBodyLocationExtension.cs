@@ -104,8 +104,8 @@ namespace BreastRadiology.XUnitTests
                          Group_CommonCodesCS,
                          new ConceptDef[]
                          {
-                        new ConceptDef("12-OClock",
-                            "12-OClock",
+                        new ConceptDef("12:00-OClock",
+                            "12:00-OClock",
                             new Definition()
                                 .Line("12-OClock")
                             ),
