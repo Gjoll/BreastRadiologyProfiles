@@ -14,8 +14,8 @@ namespace BreastRadiology.XUnitTests
 {
     partial class ResourcesMaker : ConverterBase
     {
-        StringTaskVar AimAnnotationPolyLineExtension = new StringTaskVar(
-            (out String s) =>
+        SDTaskVar AimAnnotationPolyLineExtension = new SDTaskVar(
+            (out StructureDefinition  s) =>
             {
                 SDefEditor e = Self.CreateEditor("AimAnnotationPolyLineExtension",
                     "AIM Annotation PolyLine Extension",
@@ -33,24 +33,12 @@ namespace BreastRadiology.XUnitTests
                     .Context()
                     ;
 
-                s = e.SDef.Url;
-                //$e.IntroDoc
-                //    .Paragraph()
-                //    .Paragraph("AIM Annotation PolyGon extension resource")
-                //    .Paragraph("This extension defines a polygon line annotation to an image")
-                //    .Paragraph("It contains the following fields")
-                //    .List(
-                //        "opacity - this is the optical opacity of the line. What are its units and range???",
-                //        "color- this is the color of the line. What are its units and range???",
-                //        "style - this is the style of the line. What are its units and range???",
-                //        "thickness- this is the thicknedd of the line. What are its units and range???",
-                //        "coordinates- A series of points, each of which is an x,y point of the polygonal line. Each point is a string of the " +
-                //        "format \"{d},{d}\" where d is a fhir decimal string, and each point is seperated from the next by a space."
-                //    )
-                //    .ReviewedStatus(ReviewStatus.NotReviewed)
-                //    ;
+                s = e.SDef;
+                e.IntroDoc
+                    .ReviewedStatus(ReviewStatus.NotReviewed)
+                    ;
 
-                e.AddFragRef(Self.AimHeaderFragment.Value());
+                e.AddFragRef(Self.AimHeaderFragment.Value().Url);
 
                 e.Select("url")
                     .Type("uri")

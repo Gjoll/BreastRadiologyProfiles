@@ -10,8 +10,8 @@ namespace BreastRadiology.XUnitTests
     {
 
         CSTaskVar MGAbnormalityDensityTypeCS = new CSTaskVar(
-             () =>
-                 Self.CreateCodeSystem(
+             (out CodeSystem cs) =>
+                 cs = Self.CreateCodeSystem(
                         "MGAbnormalityDensityTypeCS",
                         "Mammography Density Type CodeSystem",
                          "MG Density Type/CodeSystem",
@@ -40,8 +40,8 @@ namespace BreastRadiology.XUnitTests
 
 
         VSTaskVar MGAbnormalityDensityTypeVS = new VSTaskVar(
-            () =>
-                Self.CreateValueSet(
+            (out ValueSet vs) =>
+                vs = Self.CreateValueSet(
                    "MGAbnormalityDensityTypeVS",
                    "Mammography Density Type ValueSet",
                     "MG Density Type/ValueSet",
@@ -52,8 +52,8 @@ namespace BreastRadiology.XUnitTests
             );
 
 
-        StringTaskVar MGAbnormalityDensity = new StringTaskVar(
-            (out String s) =>
+        SDTaskVar MGAbnormalityDensity = new SDTaskVar(
+            (out StructureDefinition  s) =>
             {
                 ValueSet binding = Self.MGAbnormalityDensityTypeVS.Value();
 
@@ -68,27 +68,21 @@ namespace BreastRadiology.XUnitTests
                                 "default value? for refinement"
                             )
                     )
-                    .AddFragRef(Self.ObservationNoDeviceFragment.Value())
-                    .AddFragRef(Self.MGCommonTargetsFragment.Value())
-                    .AddFragRef(Self.MGShapeTargetsFragment.Value())
+                    .AddFragRef(Self.ObservationNoDeviceFragment.Value().Url)
+                    .AddFragRef(Self.MGCommonTargetsFragment.Value().Url)
+                    .AddFragRef(Self.MGShapeTargetsFragment.Value().Url)
                     ;
 
-                s = e.SDef.Url;
+                s = e.SDef;
 
-                //$e.IntroDoc
-                //    .ObservationSection($"Density")
-                //    .ReviewedStatus(ReviewStatus.NotReviewed)
-                //    .Refinement(binding, "Density")
-                //    ;
+                e.IntroDoc
+                    .ReviewedStatus(ReviewStatus.NotReviewed)
+                    ;
 
                 e.Select("value[x]").Zero();
 
-                ProfileTargetSlice[] targets = new ProfileTargetSlice[]
-                {
-                    new ProfileTargetSlice(Self.ConsistentWith.Value(), 0, "*")
-                };
-                e.SliceByUrl("hasMember", targets);
-                e.AddProfileTargets(targets);
+                PreFhir.ElementTreeNode sliceElementDef = e.ConfigureSliceByUrlDiscriminator("hasMember", false);
+                Self.SliceTargetReference(e, sliceElementDef, Self.ConsistentWith.Value(), 0, "*");
 
                 e.StartComponentSliceing();
                 e.ComponentSliceCodeableConcept("mgAbnormalityDensityType",

@@ -14,8 +14,8 @@ namespace BreastRadiology.XUnitTests
 {
     partial class ResourcesMaker : ConverterBase
     {
-        StringTaskVar BreastRadiologyImpressionsExtension = new StringTaskVar(
-            (out String s) =>
+        SDTaskVar BreastRadiologyImpressionsExtension = new SDTaskVar(
+            (out StructureDefinition  s) =>
             {
                 SDefEditor e = Self.CreateEditor("ImpressionsExtension",
                     "Impressions Extension",
@@ -32,13 +32,12 @@ namespace BreastRadiology.XUnitTests
                     .Kind(StructureDefinition.StructureDefinitionKind.ComplexType)
                     .Context()
                     ;
-                e.AddFragRef(Self.HeaderFragment.Value());
-                s = e.SDef.Url;
+                e.AddFragRef(Self.HeaderFragment.Value().Url);
+                s = e.SDef;
 
-                //$e.IntroDoc
-                //    .IntroExtension("Prior Reports", "include references to prior reports")
-                //    .ReviewedStatus(ReviewStatus.NotReviewed)
-                //    ;
+                e.IntroDoc
+                    .ReviewedStatus(ReviewStatus.NotReviewed)
+                    ;
 
                 e.Select("extension").Zero();
                 e.Select("url")
@@ -46,7 +45,7 @@ namespace BreastRadiology.XUnitTests
                     .Fixed(new FhirUri(e.SDef.Url));
 
                 e.Select("value[x]")
-                    .TypeReference(Self.BreastRadImpression.Value())
+                    .TypeReference(Self.BreastRadImpression.Value().Url)
                     .ZeroToMany()
                     ;
 

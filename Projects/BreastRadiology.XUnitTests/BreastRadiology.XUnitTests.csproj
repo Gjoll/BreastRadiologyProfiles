@@ -127,9 +127,6 @@
     <None Update="IntroDocTemplates\ObservationLeaf.template">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
-    <None Update="IntroDocTemplates\IntroDoc.template">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </None>
   </ItemGroup>
 
   <Target Name="PostBuild" AfterTargets="PostBuildEvent">

@@ -13,12 +13,12 @@ namespace BreastRadiology.XUnitTests
 {
     partial class ResourcesMaker : ConverterBase
     {
-        StringTaskVar FindingUltraSound = new StringTaskVar(
-            (out String s) =>
+        SDTaskVar FindingUltraSound = new SDTaskVar(
+            (out StructureDefinition s) =>
             {
                 //$ Fix me. Incorrect method!!!
                 SDefEditor e = Self.CreateEditorObservationSection("USFinding",
-                        "UltraSound Finding",
+                        "Ultra-Sound Finding",
                         "US Finding",
                         $"{Group_USResources}")
                     .Description("Breast Radiology Ultra Sound Finding",
@@ -50,14 +50,13 @@ namespace BreastRadiology.XUnitTests
                                 "Can they be aligned?"
                             )
                     )
-                    .AddFragRef(Self.ObservationSectionFragment.Value())
+                    .AddFragRef(Self.ObservationSectionFragment.Value().Url)
                     ;
-                s = e.SDef.Url;
+                s = e.SDef;
 
-                //$e.IntroDoc
-                //    .ObservationSection("Ultra-Sound Finding")
-                //    .ReviewedStatus(ReviewStatus.NotReviewed)
-                //    ;
+                e.IntroDoc
+                    .ReviewedStatus(ReviewStatus.NotReviewed)
+                    ;
 
                 e.Select("value[x]").Zero();
                 //$e.Find("method")
@@ -67,8 +66,8 @@ namespace BreastRadiology.XUnitTests
 
                 //ProfileTargetSlice[] targets = new ProfileTargetSlice[]
                 //{
-                //    new ProfileTargetSlice(Self.USMass.Value(), 0, "*"),
-                //    new ProfileTargetSlice(Self.USTissueComposition.Value(), 1, "1"),
+                //    new ProfileTargetSelf.Slice(e, sliceElementDef, Self.USMass.Value(), 0, "*"),
+                //    new ProfileTargetSelf.Slice(e, sliceElementDef, Self.USTissueComposition.Value(), 1, "1"),
                 //};
                 //e.SliceByUrl("hasMember", targets);
                 //e.AddProfileTargets(targets);

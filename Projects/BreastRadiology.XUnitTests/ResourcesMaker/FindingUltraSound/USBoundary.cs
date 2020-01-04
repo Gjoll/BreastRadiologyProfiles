@@ -15,9 +15,9 @@ namespace BreastRadiology.XUnitTests
     {
         //#CSTaskVar USBoundaryCS = new CSTaskVar(
         //     () =>
-        //         Self.CreateCodeSystem(
+        //         cs = Self.CreateCodeSystem(
         //             "USBoundaryCS",
-        //             "UltraSound Boundary CodeSystem",
+        //             "Ultra-Sound Boundary CodeSystem",
         //             "US Boundary/CodeSystem",
         //             "Ultra Sound Boundary code system.",
         //             Group_USCodesCS,
@@ -50,19 +50,19 @@ namespace BreastRadiology.XUnitTests
 
         //#VSTaskVar USBoundaryVS = new VSTaskVar(
         //    () =>
-        //        Self.CreateValueSet(
+        //        vs = Self.CreateValueSet(
         //            "USBoundaryVS",
-        //            "UltraSound Boundary ValueSet",
+        //            "Ultra-Sound Boundary ValueSet",
         //            "US Boundary/ValueSet",
-        //            "UltraSound Boundary Codes value set.",
+        //            "Ultra-Sound Boundary Codes value set.",
         //            Group_USCodesVS,
         //            Self.USBoundaryCS.Value()
         //            )
         //    );
 
 
-        //#StringTaskVar USBoundary = new StringTaskVar(
-        //    (out String s) =>
+        //#SDTaskVar USBoundary = new SDTaskVar(
+        //    (out StructureDefinition  s) =>
         //    {
         //        ValueSet binding = Self.USBoundaryVS.Value();
 

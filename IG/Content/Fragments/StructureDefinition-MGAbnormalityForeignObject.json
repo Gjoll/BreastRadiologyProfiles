@@ -104,6 +104,8 @@
         "id": "Observation.hasMember:consistentWith",
         "path": "Observation.hasMember",
         "sliceName": "consistentWith",
+        "short": "'Consistent With' reference",
+        "definition": "This slice references the target 'Consistent With'",
         "min": 0,
         "max": "*",
         "base": {

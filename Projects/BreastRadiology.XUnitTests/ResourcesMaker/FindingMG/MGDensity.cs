@@ -15,8 +15,8 @@ namespace BreastRadiology.XUnitTests
     partial class ResourcesMaker : ConverterBase
     {
         CSTaskVar MGDensityCS = new CSTaskVar(
-             () =>
-                 Self.CreateCodeSystem(
+             (out CodeSystem cs) =>
+                 cs = Self.CreateCodeSystem(
                      "MGDensityCS",
                      "Mammography Density CodeSystem",
                      "MG Density/CodeSystem",
@@ -65,8 +65,8 @@ namespace BreastRadiology.XUnitTests
 
 
         VSTaskVar MGDensityVS = new VSTaskVar(
-            () =>
-                Self.CreateValueSet(
+            (out ValueSet vs) =>
+                vs = Self.CreateValueSet(
                     "MGDensityVS",
                     "Mammography Density ValueSet",
                     "MG Density ValueSet",
@@ -76,8 +76,8 @@ namespace BreastRadiology.XUnitTests
                     );
 
 
-        //#StringTaskVar MGDensity = new StringTaskVar(
-        //    (out String s) =>
+        //#SDTaskVar MGDensity = new SDTaskVar(
+        //    (out StructureDefinition  s) =>
         //    {
         //        ValueSet binding = Self.MGDensityVS.Value();
 

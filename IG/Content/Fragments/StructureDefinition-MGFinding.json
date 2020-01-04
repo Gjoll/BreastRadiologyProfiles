@@ -132,6 +132,8 @@
         "id": "Observation.hasMember:mGAbnormalityForeignObject",
         "path": "Observation.hasMember",
         "sliceName": "mGAbnormalityForeignObject",
+        "short": "'Foreign Object' reference",
+        "definition": "This slice references the target 'Foreign Object'",
         "min": 0,
         "max": "*",
         "base": {
@@ -152,6 +154,8 @@
         "id": "Observation.hasMember:mGAbnormalityArchitecturalDistortion",
         "path": "Observation.hasMember",
         "sliceName": "mGAbnormalityArchitecturalDistortion",
+        "short": "'Mammography Architectural Distortion' reference",
+        "definition": "This slice references the target 'Mammography Architectural Distortion'",
         "min": 0,
         "max": "*",
         "base": {
@@ -172,6 +176,8 @@
         "id": "Observation.hasMember:mGAbnormalityAsymmetry",
         "path": "Observation.hasMember",
         "sliceName": "mGAbnormalityAsymmetry",
+        "short": "'Mammography Asymmetry' reference",
+        "definition": "This slice references the target 'Mammography Asymmetry'",
         "min": 0,
         "max": "*",
         "base": {
@@ -192,6 +198,8 @@
         "id": "Observation.hasMember:mGAbnormalityCalcification",
         "path": "Observation.hasMember",
         "sliceName": "mGAbnormalityCalcification",
+        "short": "'Mammography Calcification' reference",
+        "definition": "This slice references the target 'Mammography Calcification'",
         "min": 0,
         "max": "*",
         "base": {
@@ -212,6 +220,8 @@
         "id": "Observation.hasMember:mGAbnormalityCyst",
         "path": "Observation.hasMember",
         "sliceName": "mGAbnormalityCyst",
+        "short": "'Mammography Cyst' reference",
+        "definition": "This slice references the target 'Mammography Cyst'",
         "min": 0,
         "max": "*",
         "base": {
@@ -232,6 +242,8 @@
         "id": "Observation.hasMember:mGAbnormalityDensity",
         "path": "Observation.hasMember",
         "sliceName": "mGAbnormalityDensity",
+        "short": "'Mammography Density' reference",
+        "definition": "This slice references the target 'Mammography Density'",
         "min": 0,
         "max": "*",
         "base": {
@@ -252,6 +264,8 @@
         "id": "Observation.hasMember:mGAbnormalityDuct",
         "path": "Observation.hasMember",
         "sliceName": "mGAbnormalityDuct",
+        "short": "'Mammography Duct' reference",
+        "definition": "This slice references the target 'Mammography Duct'",
         "min": 0,
         "max": "*",
         "base": {
@@ -272,6 +286,8 @@
         "id": "Observation.hasMember:mGAbnormalityFatNecrosis",
         "path": "Observation.hasMember",
         "sliceName": "mGAbnormalityFatNecrosis",
+        "short": "'Mammography Fat Necrosis' reference",
+        "definition": "This slice references the target 'Mammography Fat Necrosis'",
         "min": 0,
         "max": "*",
         "base": {
@@ -292,6 +308,8 @@
         "id": "Observation.hasMember:mGAbnormalityFibroadenoma",
         "path": "Observation.hasMember",
         "sliceName": "mGAbnormalityFibroadenoma",
+        "short": "'Mammography Fibroadenoma' reference",
+        "definition": "This slice references the target 'Mammography Fibroadenoma'",
         "min": 0,
         "max": "*",
         "base": {
@@ -312,6 +330,8 @@
         "id": "Observation.hasMember:mGAbnormalityLymphNode",
         "path": "Observation.hasMember",
         "sliceName": "mGAbnormalityLymphNode",
+        "short": "'Mammography LymphNode' reference",
+        "definition": "This slice references the target 'Mammography LymphNode'",
         "min": 0,
         "max": "*",
         "base": {
@@ -332,6 +352,8 @@
         "id": "Observation.hasMember:mGMass",
         "path": "Observation.hasMember",
         "sliceName": "mGMass",
+        "short": "'Mammography Mass' reference",
+        "definition": "This slice references the target 'Mammography Mass'",
         "min": 0,
         "max": "*",
         "base": {
@@ -352,6 +374,8 @@
         "id": "Observation.hasMember:mGSkinLesion",
         "path": "Observation.hasMember",
         "sliceName": "mGSkinLesion",
+        "short": "'Mammography Skin Lesion' reference",
+        "definition": "This slice references the target 'Mammography Skin Lesion'",
         "min": 0,
         "max": "*",
         "base": {
@@ -372,6 +396,8 @@
         "id": "Observation.hasMember:mGAssociatedFeatures",
         "path": "Observation.hasMember",
         "sliceName": "mGAssociatedFeatures",
+        "short": "'Mammography Associated Features' reference",
+        "definition": "This slice references the target 'Mammography Associated Features'",
         "min": 0,
         "max": "*",
         "base": {
@@ -392,6 +418,8 @@
         "id": "Observation.hasMember:mGBreastDensity",
         "path": "Observation.hasMember",
         "sliceName": "mGBreastDensity",
+        "short": "'Mammography Breast Density' reference",
+        "definition": "This slice references the target 'Mammography Breast Density'",
         "min": 1,
         "max": "1",
         "base": {

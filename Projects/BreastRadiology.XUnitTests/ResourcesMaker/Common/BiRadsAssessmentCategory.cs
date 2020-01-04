@@ -14,8 +14,8 @@ namespace BreastRadiology.XUnitTests
 {
     partial class ResourcesMaker
     {
-        //#StringTaskVar BiRadsAssessmentCategory = new StringTaskVar(
-        //    (out String s) =>
+        //#SDTaskVar BiRadsAssessmentCategory = new SDTaskVar(
+        //    (out StructureDefinition  s) =>
         //    {
         //        ValueSet binding = Self.BiRadsAssessmentCategoriesVS.Value();
         //        {
@@ -67,8 +67,8 @@ namespace BreastRadiology.XUnitTests
 
 
         CSTaskVar BiRadsAssessmentCategoriesCS = new CSTaskVar(
-            () =>
-                Self.CreateCodeSystem(
+            (out CodeSystem cs) =>
+                cs = Self.CreateCodeSystem(
                         "BiRadsAssessmentCategoriesCS",
                         "BiRads(r) Assessment Category Codes CodeSystem",
                         "BiRads/CodeSystem",
@@ -130,8 +130,8 @@ namespace BreastRadiology.XUnitTests
                     );
 
         VSTaskVar BiRadsAssessmentCategoriesVS = new VSTaskVar(
-            () =>
-                Self.CreateValueSet(
+            (out ValueSet vs) =>
+                vs = Self.CreateValueSet(
                         "BiRadsAssessmentCategoriesVS",
                         "BiRads(r) Assessment Category ValueSet",
                         "BiRads/ValueSet",

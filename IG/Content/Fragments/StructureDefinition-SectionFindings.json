@@ -107,6 +107,8 @@
         "id": "Observation.hasMember:sectionFindingsLeftBreast",
         "path": "Observation.hasMember",
         "sliceName": "sectionFindingsLeftBreast",
+        "short": "'Findings Left Breast' reference",
+        "definition": "This slice references the target 'Findings Left Breast'",
         "min": 1,
         "max": "1",
         "base": {
@@ -127,6 +129,8 @@
         "id": "Observation.hasMember:sectionFindingsRightBreast",
         "path": "Observation.hasMember",
         "sliceName": "sectionFindingsRightBreast",
+        "short": "'Findings Right Breast' reference",
+        "definition": "This slice references the target 'Findings Right Breast'",
         "min": 1,
         "max": "1",
         "base": {

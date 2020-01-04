@@ -13,8 +13,8 @@ namespace BreastRadiology.XUnitTests
 {
     partial class ResourcesMaker : ConverterBase
     {
-        StringTaskVar MGCommonTargetsFragment = new StringTaskVar(
-            (out String s) =>
+        SDTaskVar MGCommonTargetsFragment = new SDTaskVar(
+            (out StructureDefinition  s) =>
             {
                 SDefEditor e = Self.CreateFragment("MgCommonTargetsFragment",
                         "MG Common Targets Fragment",
@@ -25,9 +25,9 @@ namespace BreastRadiology.XUnitTests
                             .Paragraph("Mammography Common Targets Fragment")
                     //.Todo
                     )
-                    .AddFragRef(Self.BreastBodyLocationRequiredFragment.Value())
+                    .AddFragRef(Self.BreastBodyLocationRequiredFragment.Value().Url)
                     ;
-                s = e.SDef.Url;
+                s = e.SDef;
 
                 e.StartComponentSliceing();
 

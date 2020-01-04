@@ -13,8 +13,8 @@ namespace BreastRadiology.XUnitTests
 {
     partial class ResourcesMaker : ConverterBase
     {
-        StringTaskVar FindingNM = new StringTaskVar(
-            (out String s) =>
+        SDTaskVar FindingNM = new SDTaskVar(
+            (out StructureDefinition  s) =>
             {
                 SDefEditor e = Self.CreateEditorObservationSection("NMFinding",
                         "NM Finding",
@@ -26,14 +26,13 @@ namespace BreastRadiology.XUnitTests
                                 "Device Metrics detailing the observation devices parameters (transducer freq, etc)."
                                 )
                         )
-                    .AddFragRef(Self.ObservationSectionFragment.Value())
+                    .AddFragRef(Self.ObservationSectionFragment.Value().Url)
                     ;
-                s = e.SDef.Url;
+                s = e.SDef;
 
-                //$e.IntroDoc
-                //    .ObservationSection("MRI Finding")
-                //    .ReviewedStatus(ReviewStatus.NotReviewed)
-                //    ;
+                e.IntroDoc
+                    .ReviewedStatus(ReviewStatus.NotReviewed)
+                    ;
 
                 e.Select("value[x]").Zero();
                 ////$ todo. Incorrect method!!!
@@ -44,7 +43,7 @@ namespace BreastRadiology.XUnitTests
 
                 //ProfileTargetSlice[] targets = new ProfileTargetSlice[]
                 //{
-                //new ProfileTargetSlice(Self.NMMass.Value(), 0, "*"),
+                //new ProfileTargetSelf.Slice(e, sliceElementDef, Self.NMMass.Value(), 0, "*"),
                 //};
                 //e.SliceByUrl("hasMember", targets);
                 //e.AddProfileTargets(targets);

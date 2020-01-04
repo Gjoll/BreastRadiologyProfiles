@@ -16,8 +16,8 @@ namespace BreastRadiology.XUnitTests
     {
 
         CSTaskVar ObservedChangeInProminanceCS = new CSTaskVar(
-             () =>
-                 Self.CreateCodeSystem(
+             (out CodeSystem cs) =>
+                 cs = Self.CreateCodeSystem(
                      "ObservedChangeInProminanceCS",
                      "Observed Changes CodeSystem",
                      "Observed/Change/CodeSystem",
@@ -39,8 +39,8 @@ namespace BreastRadiology.XUnitTests
                  );
 
         VSTaskVar ObservedChangeInProminanceVS = new VSTaskVar(
-            () =>
-                Self.CreateValueSet(
+            (out ValueSet vs) =>
+                vs = Self.CreateValueSet(
                     "ObservedChangeInProminanceVS",
                     "Observed Prominance Changes ValueSet",
                     "Observed/Change/ValueSet",
@@ -50,8 +50,8 @@ namespace BreastRadiology.XUnitTests
                     )
             );
 
-        //#StringTaskVar ObservedChangeInProminance = new StringTaskVar(
-        //    (out String s) =>
+        //#SDTaskVar ObservedChangeInProminance = new SDTaskVar(
+        //    (out StructureDefinition  s) =>
         //    {
 
         //        ValueSet binding = Self.ObservedChangeInProminanceVS.Value();

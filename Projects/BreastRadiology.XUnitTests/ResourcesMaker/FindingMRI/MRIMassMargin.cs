@@ -15,8 +15,8 @@ namespace BreastRadiology.XUnitTests
     partial class ResourcesMaker : ConverterBase
     {
         //#CSTaskVar MRIMarginCS = new CSTaskVar(
-        //     () =>
-        //         Self.CreateCodeSystem(
+        //     (out CodeSystem cs) =>
+        //         cs = Self.CreateCodeSystem(
         //             "MRIMarginCS",
         //             "MRI Margin CodeSystem",
         //             "MRI/Margin CodeSystem",
@@ -60,8 +60,8 @@ namespace BreastRadiology.XUnitTests
 
 
         //#VSTaskVar MRIMarginVS = new VSTaskVar(
-        //    () =>
-        //        Self.CreateValueSet(
+        //    (out CodeSystem cs) =>
+        //        vs = Self.CreateValueSet(
         //            "MRIMarginVS",
         //            "MRI Margin ValueSet",
         //            "MRI/Margin ValueSet",
@@ -72,8 +72,8 @@ namespace BreastRadiology.XUnitTests
         //    );
 
 
-        //#StringTaskVar MRIMargin = new StringTaskVar(
-        //    (out String s) =>
+        //#SDTaskVar MRIMargin = new SDTaskVar(
+        //    (out StructureDefinition  s) =>
         //    {
         //        ValueSet binding = Self.MRIMarginVS.Value();
         //        {

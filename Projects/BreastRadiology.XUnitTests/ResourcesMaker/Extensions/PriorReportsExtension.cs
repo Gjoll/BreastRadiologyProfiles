@@ -14,8 +14,8 @@ namespace BreastRadiology.XUnitTests
 {
     partial class ResourcesMaker : ConverterBase
     {
-        StringTaskVar BreastRadiologyPriorReportsExtension = new StringTaskVar(
-            (out String s) =>
+        SDTaskVar BreastRadiologyPriorReportsExtension = new SDTaskVar(
+            (out StructureDefinition  s) =>
             {
                 SDefEditor e = Self.CreateEditor("PriorReportsExtension",
                     "Prior Reports Extension",
@@ -32,14 +32,13 @@ namespace BreastRadiology.XUnitTests
                     .Kind(StructureDefinition.StructureDefinitionKind.ComplexType)
                     .Context()
                     ;
-                s = e.SDef.Url;
+                s = e.SDef;
 
-                //$e.IntroDoc
-                //    .IntroExtension("Prior Reports", "include references to prior reports")
-                //    .ReviewedStatus(ReviewStatus.NotReviewed)
-                //    ;
+                e.IntroDoc
+                    .ReviewedStatus(ReviewStatus.NotReviewed)
+                    ;
 
-                e.AddFragRef(Self.HeaderFragment.Value());
+                e.AddFragRef(Self.HeaderFragment.Value().Url);
 
                 e.Select("extension").Zero();
                 e.Select("url")
@@ -47,11 +46,11 @@ namespace BreastRadiology.XUnitTests
                     .Fixed(new FhirUri(e.SDef.Url));
 
                 e.Select("value[x]")
-                    .TypeReference(Self.BreastRadiologyReport.Value())
+                    .TypeReference(Self.BreastRadiologyReport.Value().Url)
                     .Single()
                     ;
 
-                e.AddTargetLink(Self.BreastRadiologyReport.Value(), false);
+                e.AddTargetLink(Self.BreastRadiologyReport.Value().Url, false);
             });
     }
 }

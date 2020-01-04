@@ -14,8 +14,8 @@ namespace BreastRadiology.XUnitTests
     partial class ResourcesMaker : ConverterBase
     {
         CSTaskVar MGBreastDensityCS = new CSTaskVar(
-             () =>
-                 Self.CreateCodeSystem(
+             (out CodeSystem cs) =>
+                 cs = Self.CreateCodeSystem(
                      "MGBreastDensityCS",
                      "Mammography Breast Density CodeSystem",
                      "MG Breast Density/CodeSystem",
@@ -82,8 +82,8 @@ namespace BreastRadiology.XUnitTests
 
 
         VSTaskVar MGBreastDensityVS = new VSTaskVar(
-            () =>
-                Self.CreateValueSet(
+            (out ValueSet vs) =>
+                vs = Self.CreateValueSet(
                     "MGBreastDensityVS",
                     "Mammography Breast Density ValueSet",
                     "MG Breast DensityValueSet",
@@ -94,15 +94,14 @@ namespace BreastRadiology.XUnitTests
             );
 
 
-        StringTaskVar MGBreastDensity = new StringTaskVar(
-            (out String s) =>
+        SDTaskVar MGBreastDensity = new SDTaskVar(
+            (out StructureDefinition  s) =>
             {
                 ValueSet binding = Self.MGBreastDensityVS.Value();
 
                 {
                     IntroDoc valueSetIntroDoc = Self.CreateIntroDocVS(binding);
                     valueSetIntroDoc
-                        .IntroValueSet(binding)
                         .ReviewedStatus(ReviewStatus.NotReviewed)
                     ;
                     String outputPath = valueSetIntroDoc.Save();
@@ -129,17 +128,16 @@ namespace BreastRadiology.XUnitTests
                             "can this and US tissue composition be the same?"
                             )
                     )
-                    .AddFragRef(Self.ObservationNoDeviceFragment.Value())
-                    .AddFragRef(Self.ObservationCodedValueFragment.Value())
-                    .AddFragRef(Self.ObservationLeafFragment.Value())
+                    .AddFragRef(Self.ObservationNoDeviceFragment.Value().Url)
+                    .AddFragRef(Self.ObservationCodedValueFragment.Value().Url)
+                    .AddFragRef(Self.ObservationLeafFragment.Value().Url)
                     ;
 
-                s = e.SDef.Url;
+                s = e.SDef;
 
-                //$e.IntroDoc
-                //    .IntroCodedObservationLeafNode("a mammography breast density")
-                //    .ReviewedStatus(ReviewStatus.NotReviewed)
-                //    ;
+                e.IntroDoc
+                    .ReviewedStatus(ReviewStatus.NotReviewed)
+                    ;
                 e.Select("value[x]")
                     .Type("CodeableConcept")
                     .Binding(binding.Url, BindingStrength.Required)

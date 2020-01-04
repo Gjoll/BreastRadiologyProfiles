@@ -16,7 +16,7 @@ namespace BreastRadiology.XUnitTests
     {
         //#CSTaskVar USPosteriorAcousticFeaturesCS = new CSTaskVar(
         //     () =>
-        //         Self.CreateCodeSystem(
+        //         cs = Self.CreateCodeSystem(
         //             "USPosteriorAcousticFeaturesCS",
         //             "US Posterior Acoustic Features CodeSystem",
         //             "US Posterior Acoustic/Feature CodeSystem",
@@ -77,7 +77,7 @@ namespace BreastRadiology.XUnitTests
 
         //#VSTaskVar USPosteriorAcousticFeaturesVS = new VSTaskVar(
         //    () =>
-        //        Self.CreateValueSet(
+        //        vs = Self.CreateValueSet(
         //            "USPosteriorAcousticFeaturesVS",
         //            "US Posterior Acoustic Features ValueSet",
         //            "US Posterior Acoustic/Feature ValueSet",
@@ -88,8 +88,8 @@ namespace BreastRadiology.XUnitTests
         //    );
 
 
-        //#StringTaskVar USPosteriorAcousticFeatures = new StringTaskVar(
-        //    (out String s) =>
+        //#SDTaskVar USPosteriorAcousticFeatures = new SDTaskVar(
+        //    (out StructureDefinition  s) =>
         //    {
         //        ValueSet binding = Self.USPosteriorAcousticFeaturesVS.Value();
 

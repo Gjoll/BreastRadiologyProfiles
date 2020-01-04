@@ -14,8 +14,8 @@ namespace BreastRadiology.XUnitTests
 {
     partial class ResourcesMaker
     {
-        StringTaskVar BreastRadImpression = new StringTaskVar(
-            (out String s) =>
+        SDTaskVar BreastRadImpression = new SDTaskVar(
+            (out StructureDefinition  s) =>
             {
                 SDefEditor e = Self.CreateEditor("Impression",
                         "Impression",
@@ -28,14 +28,13 @@ namespace BreastRadiology.XUnitTests
                             .Paragraph("Breast radiology exam clinical impression")
                             //.Todo
                     )
-                    .AddFragRef(Self.HeaderFragment.Value())
+                    .AddFragRef(Self.HeaderFragment.Value().Url)
                     ;
 
-                s = e.SDef.Url;
-                //e.IntroDoc
-                //    .IntroGeneral($"Breast Radiology Impressions Resource")
-                //    .ReviewedStatus(ReviewStatus.NotReviewed)
-                //    ;
+                s = e.SDef;
+                e.IntroDoc
+                    .ReviewedStatus(ReviewStatus.NotReviewed)
+                    ;
             });
     }
 }

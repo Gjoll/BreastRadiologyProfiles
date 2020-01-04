@@ -14,8 +14,8 @@ namespace BreastRadiology.XUnitTests
     partial class ResourcesMaker : ConverterBase
     {
         CSTaskVar MGCalcificationDistributionCS = new CSTaskVar(
-             () =>
-                 Self.CreateCodeSystem(
+             (out CodeSystem cs) =>
+                 cs = Self.CreateCodeSystem(
                      "MammoCalcificationDistributionCS",
                      "Mammography Calcification Distribution CodeSystem",
                      "MG Calc./Distribution/CodeSystem",
@@ -81,8 +81,8 @@ namespace BreastRadiology.XUnitTests
 
 
         VSTaskVar MGCalcificationDistributionVS = new VSTaskVar(
-            () =>
-                Self.CreateValueSet(
+            (out ValueSet vs) =>
+                vs = Self.CreateValueSet(
                         "MammoCalcificationDistributionVS",
                         "Mammography Calcification Distribution ValueSet",
                         "MG Calc./DistributionValueSet",
@@ -93,8 +93,8 @@ namespace BreastRadiology.XUnitTests
             );
 
 
-        //#StringTaskVar MGCalcificationDistribution = new StringTaskVar(
-        //    (out String s) =>
+        //#SDTaskVar MGCalcificationDistribution = new SDTaskVar(
+        //    (out StructureDefinition  s) =>
         //    {
         //        ValueSet binding = Self.MGCalcificationDistributionVS.Value();
 

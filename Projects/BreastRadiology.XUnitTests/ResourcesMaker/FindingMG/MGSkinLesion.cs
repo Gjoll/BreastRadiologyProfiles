@@ -13,8 +13,8 @@ namespace BreastRadiology.XUnitTests
 {
     partial class ResourcesMaker : ConverterBase
     {
-        StringTaskVar MGSkinLesion = new StringTaskVar(
-            (out String s) =>
+        SDTaskVar MGSkinLesion = new SDTaskVar(
+            (out StructureDefinition  s) =>
             {
                 SDefEditor e = Self.CreateEditorObservationLeaf("MGSkinLesion",
                     "Mammography Skin Lesion",
@@ -32,16 +32,15 @@ namespace BreastRadiology.XUnitTests
                             .BiradFooter()
                             //.Todo
                     )
-                    .AddFragRef(Self.BreastBodyLocationRequiredFragment.Value())
-                    .AddFragRef(Self.ObservationNoValueFragment.Value())
-                    .AddFragRef(Self.MGCommonTargetsFragment.Value())
+                    .AddFragRef(Self.BreastBodyLocationRequiredFragment.Value().Url)
+                    .AddFragRef(Self.ObservationNoValueFragment.Value().Url)
+                    .AddFragRef(Self.MGCommonTargetsFragment.Value().Url)
                     ;
-                s = e.SDef.Url;
+                s = e.SDef;
 
-                //$e.IntroDoc
-                //    .Observation($"Skin Lesion")
-                //    .ReviewedStatus(ReviewStatus.NotReviewed)
-                //    ;
+                e.IntroDoc
+                    .ReviewedStatus(ReviewStatus.NotReviewed)
+                    ;
 
             });
     }

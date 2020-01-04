@@ -13,11 +13,11 @@ namespace BreastRadiology.XUnitTests
 {
     partial class ResourcesMaker : ConverterBase
     {
-        //#StringTaskVar USCyst = new StringTaskVar(
-        //    (out String s) =>
+        //#SDTaskVar USCyst = new SDTaskVar(
+        //    (out StructureDefinition  s) =>
         //    {
         //        SDefEditor e = Self.CreateEditor("USCyst",
-        //                "UltraSound Cyst",
+        //                "Ultra-Sound Cyst",
         //                "US Cyst",
         //                ObservationUrl,
         //                $"{Group_USResources}/Cyst")
@@ -41,12 +41,12 @@ namespace BreastRadiology.XUnitTests
 
         //        //ProfileTargetSlice[] targets = new ProfileTargetSlice[]
         //        //{
-        //        //new ProfileTargetSlice(Self.BiRadsAssessmentCategory.Value(), 0, "1"),
+        //        //new ProfileTargetSelf.Slice(e, sliceElementDef, Self.BiRadsAssessmentCategory.Value(), 0, "1"),
 
-        //        //new ProfileTargetSlice(Self.ObservedCount.Value(), 0, "1"),
-        //        //new ProfileTargetSlice(Self.ObservedChangeInState.Value(), 0, "*"),
-        //        //new ProfileTargetSlice(Self.ObservedSize.Value(), 0, "1"),
-        //        //new ProfileTargetSlice(Self.Orientation.Value(), 0, "1"),
+        //        //new ProfileTargetSelf.Slice(e, sliceElementDef, Self.ObservedCount.Value(), 0, "1"),
+        //        //new ProfileTargetSelf.Slice(e, sliceElementDef, Self.ObservedChangeInState.Value(), 0, "*"),
+        //        //new ProfileTargetSelf.Slice(e, sliceElementDef, Self.ObservedSize.Value(), 0, "1"),
+        //        //new ProfileTargetSelf.Slice(e, sliceElementDef, Self.Orientation.Value(), 0, "1"),
         //        //};
         //        //e.SliceByUrl("hasMember", targets);
         //        //e.AddProfileTargets(targets);

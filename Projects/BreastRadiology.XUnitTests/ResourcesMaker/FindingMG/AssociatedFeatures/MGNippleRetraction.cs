@@ -13,8 +13,8 @@ namespace BreastRadiology.XUnitTests
 {
     partial class ResourcesMaker : ConverterBase
     {
-        StringTaskVar MGNippleRetraction = new StringTaskVar(
-            (out String s) =>
+        SDTaskVar MGNippleRetraction = new SDTaskVar(
+            (out StructureDefinition  s) =>
             {
                 SDefEditor e = Self.CreateEditorObservationLeaf("MGNippleRetraction",
                     "Mammography Nipple Retraction",
@@ -30,16 +30,15 @@ namespace BreastRadiology.XUnitTests
                             .BiradFooter()
                             //.Todo
                     )
-                    .AddFragRef(Self.ObservationNoDeviceFragment.Value())
-                    .AddFragRef(Self.ObservationNoValueFragment.Value())
-                    .AddFragRef(Self.BreastBodyLocationRequiredFragment.Value())
+                    .AddFragRef(Self.ObservationNoDeviceFragment.Value().Url)
+                    .AddFragRef(Self.ObservationNoValueFragment.Value().Url)
+                    .AddFragRef(Self.BreastBodyLocationRequiredFragment.Value().Url)
                     ;
-                s = e.SDef.Url;
+                s = e.SDef;
 
-                //$e.IntroDoc
-                //    .Observation("Nipple Retraction")
-                //    .ReviewedStatus(ReviewStatus.NotReviewed)
-                //    ;
+                e.IntroDoc
+                    .ReviewedStatus(ReviewStatus.NotReviewed)
+                    ;
             });
     }
 }

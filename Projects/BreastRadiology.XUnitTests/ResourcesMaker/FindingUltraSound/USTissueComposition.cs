@@ -15,7 +15,7 @@ namespace BreastRadiology.XUnitTests
     {
         //#CSTaskVar USTissueCompositionCS = new CSTaskVar(
         //     () =>
-        //         Self.CreateCodeSystem(
+        //         cs = Self.CreateCodeSystem(
         //             "USTissueCompositionCS",
         //             "US Tissue Composition CodeSystem",
         //             "US Tissue/Composition/CodeSystem",
@@ -59,7 +59,7 @@ namespace BreastRadiology.XUnitTests
 
         //#VSTaskVar USTissueCompositionVS = new VSTaskVar(
         //    () =>
-        //        Self.CreateValueSet(
+        //        vs = Self.CreateValueSet(
         //            "USTissueCompositionVS",
         //            "US Tissue Composition ValueSet",
         //            "US Tissue/CompositionValueSet",
@@ -70,8 +70,8 @@ namespace BreastRadiology.XUnitTests
         //    );
 
 
-        //#StringTaskVar USTissueComposition = new StringTaskVar(
-        //    (out String s) =>
+        //#SDTaskVar USTissueComposition = new SDTaskVar(
+        //    (out StructureDefinition  s) =>
         //    {
         //        ValueSet binding = Self.USTissueCompositionVS.Value();
         //        {

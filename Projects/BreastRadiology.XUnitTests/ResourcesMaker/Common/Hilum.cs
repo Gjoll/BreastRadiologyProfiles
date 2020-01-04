@@ -15,8 +15,8 @@ namespace BreastRadiology.XUnitTests
     partial class ResourcesMaker
     {
         //#CSTaskVar HilumCS = new CSTaskVar(
-        //     () =>
-        //         Self.CreateCodeSystem(
+        //     (out CodeSystem cs) =>
+        //         cs = Self.CreateCodeSystem(
         //                 "HilumCodeSystemCS",
         //                 "Hilum CodeSystem",
         //                 "Hilum/CodeSystem",
@@ -38,8 +38,8 @@ namespace BreastRadiology.XUnitTests
         //             );
 
         //#VSTaskVar HilumVS = new VSTaskVar(
-        //    () =>
-        //        Self.CreateValueSet(
+        //    (out ValueSet vs) =>
+        //        vs = Self.CreateValueSet(
         //                "HilumVS",
         //                "Hilum ValueSet",
         //                "Hilum/ValueSet",
@@ -48,8 +48,8 @@ namespace BreastRadiology.XUnitTests
         //                Self.HilumCS.Value())
         //    );
 
-        //#StringTaskVar Hilum = new StringTaskVar(
-        //    (out String s) =>
+        //#SDTaskVar Hilum = new SDTaskVar(
+        //    (out StructureDefinition  s) =>
         //    {
         //        ValueSet binding = Self.HilumVS.Value();
 

@@ -8,13 +8,14 @@ using FhirKhit.Tools;
 using FhirKhit.Tools.R4;
 using Hl7.Fhir.Model;
 using Hl7.Fhir.Serialization;
+using PreFhir;
 
 namespace BreastRadiology.XUnitTests
 {
     partial class ResourcesMaker : ConverterBase
     {
-        StringTaskVar MGAssociatedFeatures = new StringTaskVar(
-            (out String s) =>
+        SDTaskVar MGAssociatedFeatures = new SDTaskVar(
+            (out StructureDefinition  s) =>
             {
                 SDefEditor e = Self.CreateEditorObservationSection("MGAssociatedFeatures",
                         "Mammography Associated Features",
@@ -28,27 +29,23 @@ namespace BreastRadiology.XUnitTests
                                 "check Cardinality of the following Observation.hasMember targets?"
                             )
                      )
-                    .AddFragRef(Self.ObservationNoDeviceFragment.Value())
-                    .AddFragRef(Self.ObservationNoValueFragment.Value())
+                    .AddFragRef(Self.ObservationNoDeviceFragment.Value().Url)
+                    .AddFragRef(Self.ObservationNoValueFragment.Value().Url)
                     ;
-                s = e.SDef.Url;
+                s = e.SDef;
 
-                //$e.IntroDoc
-                //    .ObservationSection("Mammography Associated Features")
-                //    .ReviewedStatus(ReviewStatus.NotReviewed)
-                //    ;
+                e.IntroDoc
+                    .ReviewedStatus(ReviewStatus.NotReviewed)
+                    ;
 
-                ProfileTargetSlice[] targets = new ProfileTargetSlice[]
-                {
-                    new ProfileTargetSlice(Self.MGSkinRetraction.Value(), 0, "1"),
-                    new ProfileTargetSlice(Self.MGNippleRetraction.Value(), 0, "1"),
-                    new ProfileTargetSlice(Self.MGSkinThickening.Value(), 0, "*"),
-                    new ProfileTargetSlice(Self.MGAxillaryAdenopathy.Value(), 0, "1"),
-                    new ProfileTargetSlice(Self.MGAbnormalityArchitecturalDistortion.Value(), 0, "*"),
-                    new ProfileTargetSlice(Self.MGAbnormalityCalcification.Value(), 0, "*")
-                };
-                e.SliceByUrl("hasMember", targets);
-                e.AddProfileTargets(targets);
+                ElementTreeNode sliceElementDef = e.ConfigureSliceByUrlDiscriminator("hasMember", false);
+
+                Self.SliceTargetReference(e, sliceElementDef, Self.MGSkinRetraction.Value(), 0, "1");
+                Self.SliceTargetReference(e, sliceElementDef, Self.MGNippleRetraction.Value(), 0, "1");
+                Self.SliceTargetReference(e, sliceElementDef, Self.MGSkinThickening.Value(), 0, "*");
+                Self.SliceTargetReference(e, sliceElementDef, Self.MGAxillaryAdenopathy.Value(), 0, "1");
+                Self.SliceTargetReference(e, sliceElementDef, Self.MGAbnormalityArchitecturalDistortion.Value(), 0, "*");
+                Self.SliceTargetReference(e, sliceElementDef, Self.MGAbnormalityCalcification.Value(), 0, "*");
             });
     }
 }

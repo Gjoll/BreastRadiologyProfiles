@@ -73,6 +73,9 @@
         "id": "Observation.extension:polyLineAnnotation",
         "path": "Observation.extension",
         "sliceName": "polyLineAnnotation",
+        "short": "polyLineAnnotation extension",
+        "definition": "This extension slice contains the polyLineAnnotation extension",
+        "comment": "This is one component of a group of components that comprise the observation.",
         "min": 1,
         "max": "1",
         "base": {

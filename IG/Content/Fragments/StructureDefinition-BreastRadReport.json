@@ -99,6 +99,7 @@
         "sliceName": "recommendations",
         "short": "Recommendations for future care",
         "definition": "Recommendations for future care",
+        "comment": "This is one component of a group of components that comprise the observation.",
         "min": 0,
         "max": "*",
         "base": {
@@ -122,6 +123,7 @@
         "sliceName": "priorReports",
         "short": "Prior breast radiology reports",
         "definition": "Prior breast radiology reports",
+        "comment": "This is one component of a group of components that comprise the observation.",
         "min": 0,
         "max": "*",
         "base": {
@@ -145,6 +147,7 @@
         "sliceName": "impressions",
         "short": "Exam impressions",
         "definition": "Exam impressions.",
+        "comment": "This is one component of a group of components that comprise the observation.",
         "min": 0,
         "max": "*",
         "base": {
@@ -168,6 +171,7 @@
         "sliceName": "patientRisk",
         "short": "Patient Risk",
         "definition": "Patient Risk.",
+        "comment": "This is one component of a group of components that comprise the observation.",
         "min": 0,
         "max": "*",
         "base": {
@@ -236,6 +240,8 @@
         "id": "DiagnosticReport.result:sectionPatientHistory",
         "path": "DiagnosticReport.result",
         "sliceName": "sectionPatientHistory",
+        "short": "'Patient History' reference",
+        "definition": "This slice references the target 'Patient History'",
         "min": 1,
         "max": "1",
         "base": {
@@ -256,6 +262,8 @@
         "id": "DiagnosticReport.result:sectionFindings",
         "path": "DiagnosticReport.result",
         "sliceName": "sectionFindings",
+        "short": "'Findings' reference",
+        "definition": "This slice references the target 'Findings'",
         "min": 1,
         "max": "1",
         "base": {

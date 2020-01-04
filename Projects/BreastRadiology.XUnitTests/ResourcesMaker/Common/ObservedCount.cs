@@ -14,8 +14,8 @@ namespace BreastRadiology.XUnitTests
 {
     partial class ResourcesMaker : ConverterBase
     {
-        //#StringTaskVar ObservedCount = new StringTaskVar(
-        //    (out String s) =>
+        //#SDTaskVar ObservedCount = new SDTaskVar(
+        //    (out StructureDefinition  s) =>
         //    {
         //        SDefEditor e = Self.CreateEditor("ObservedCount",
         //                "Count",

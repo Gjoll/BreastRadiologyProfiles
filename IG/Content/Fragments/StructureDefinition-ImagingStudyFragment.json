@@ -43,8 +43,8 @@
         }
       },
       {
-        "id": "Observation.derivedFrom",
-        "path": "Observation.derivedFrom",
+        "id": "Observation.hasMember",
+        "path": "Observation.hasMember",
         "slicing": {
           "discriminator": [
             {
@@ -56,19 +56,21 @@
           "rules": "openAtEnd"
         },
         "base": {
-          "path": "Observation.derivedFrom",
+          "path": "Observation.hasMember",
           "min": 0,
           "max": "*"
         }
       },
       {
-        "id": "Observation.derivedFrom:imagingStudy",
-        "path": "Observation.derivedFrom",
+        "id": "Observation.hasMember:imagingStudy",
+        "path": "Observation.hasMember",
         "sliceName": "imagingStudy",
+        "short": "'ImagingStudy' reference",
+        "definition": "This slice references the target 'ImagingStudy'",
         "min": 0,
         "max": "*",
         "base": {
-          "path": "Observation.derivedFrom",
+          "path": "Observation.hasMember",
           "min": 0,
           "max": "*"
         },
@@ -82,13 +84,15 @@
         ]
       },
       {
-        "id": "Observation.derivedFrom:aimAnnotatedImagingStudy",
-        "path": "Observation.derivedFrom",
+        "id": "Observation.hasMember:aimAnnotatedImagingStudy",
+        "path": "Observation.hasMember",
         "sliceName": "aimAnnotatedImagingStudy",
+        "short": "'AIM Annotated Imaging Study' reference",
+        "definition": "This slice references the target 'AIM Annotated Imaging Study'",
         "min": 0,
         "max": "1",
         "base": {
-          "path": "Observation.derivedFrom",
+          "path": "Observation.hasMember",
           "min": 0,
           "max": "*"
         },

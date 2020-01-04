@@ -16,8 +16,8 @@ namespace BreastRadiology.XUnitTests
     {
 
         VSTaskVar ShapeVS = new VSTaskVar(
-            () =>
-                Self.CreateValueSet(
+            (out ValueSet vs) =>
+                vs = Self.CreateValueSet(
                         "ShapeVS",
                         "Shape ValueSet",
                         "Shape/ValueSet",
@@ -28,8 +28,8 @@ namespace BreastRadiology.XUnitTests
             );
 
 
-        //#StringTaskVar Shape = new StringTaskVar(
-        //    (out String s) =>
+        //#SDTaskVar Shape = new SDTaskVar(
+        //    (out StructureDefinition  s) =>
         //    {
         //        ValueSet binding = Self.ShapeVS.Value();
         //        {
@@ -71,8 +71,8 @@ namespace BreastRadiology.XUnitTests
         //    });
 
         CSTaskVar ShapeCS = new CSTaskVar(
-             () =>
-                 Self.CreateCodeSystem(
+             (out CodeSystem cs) =>
+                 cs = Self.CreateCodeSystem(
                      "ShapeCS",
                      "Shape CodeSystem",
                      "Shape/CodeSystem",

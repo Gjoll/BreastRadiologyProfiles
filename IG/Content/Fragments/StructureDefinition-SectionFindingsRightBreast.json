@@ -111,6 +111,8 @@
         "id": "Observation.hasMember:mGFinding",
         "path": "Observation.hasMember",
         "sliceName": "mGFinding",
+        "short": "'Mammographi Finding' reference",
+        "definition": "This slice references the target 'Mammographi Finding'",
         "min": 0,
         "max": "*",
         "base": {
@@ -131,6 +133,8 @@
         "id": "Observation.hasMember:mRIFinding",
         "path": "Observation.hasMember",
         "sliceName": "mRIFinding",
+        "short": "'MRI Finding' reference",
+        "definition": "This slice references the target 'MRI Finding'",
         "min": 0,
         "max": "*",
         "base": {
@@ -151,6 +155,8 @@
         "id": "Observation.hasMember:nMFinding",
         "path": "Observation.hasMember",
         "sliceName": "nMFinding",
+        "short": "'NM Finding' reference",
+        "definition": "This slice references the target 'NM Finding'",
         "min": 0,
         "max": "*",
         "base": {
@@ -171,6 +177,8 @@
         "id": "Observation.hasMember:uSFinding",
         "path": "Observation.hasMember",
         "sliceName": "uSFinding",
+        "short": "'Ultra-Sound Finding' reference",
+        "definition": "This slice references the target 'Ultra-Sound Finding'",
         "min": 0,
         "max": "*",
         "base": {

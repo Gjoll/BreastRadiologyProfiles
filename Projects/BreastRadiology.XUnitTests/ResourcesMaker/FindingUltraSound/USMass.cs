@@ -13,8 +13,8 @@ namespace BreastRadiology.XUnitTests
 {
     partial class ResourcesMaker : ConverterBase
     {
-        //#StringTaskVar USMass = new StringTaskVar(
-        //    (out String s) =>
+        //#SDTaskVar USMass = new SDTaskVar(
+        //    (out StructureDefinition  s) =>
         //    {
         //        SDefEditor e = Self.CreateEditor("USMass",
         //                "US Mass",
@@ -46,21 +46,21 @@ namespace BreastRadiology.XUnitTests
 
         //        //ProfileTargetSlice[] targets = new ProfileTargetSlice[]
         //        //{
-        //        //new ProfileTargetSlice(Self.BiRadsAssessmentCategory.Value(), 0, "1"),
+        //        //new ProfileTargetSelf.Slice(e, sliceElementDef, Self.BiRadsAssessmentCategory.Value(), 0, "1"),
 
-        //        //new ProfileTargetSlice(Self.ObservedCount.Value(), 0, "1"),
-        //        //new ProfileTargetSlice(Self.ObservedChangeInState.Value(), 0, "*"),
-        //        //new ProfileTargetSlice(Self.ObservedSize.Value(), 0, "1"),
-        //        //new ProfileTargetSlice(Self.Orientation.Value(), 0, "1"),
-        //        //new ProfileTargetSlice(Self.Hilum.Value(), 0, "1"),
+        //        //new ProfileTargetSelf.Slice(e, sliceElementDef, Self.ObservedCount.Value(), 0, "1"),
+        //        //new ProfileTargetSelf.Slice(e, sliceElementDef, Self.ObservedChangeInState.Value(), 0, "*"),
+        //        //new ProfileTargetSelf.Slice(e, sliceElementDef, Self.ObservedSize.Value(), 0, "1"),
+        //        //new ProfileTargetSelf.Slice(e, sliceElementDef, Self.Orientation.Value(), 0, "1"),
+        //        //new ProfileTargetSelf.Slice(e, sliceElementDef, Self.Hilum.Value(), 0, "1"),
 
-        //        //new ProfileTargetSlice(Self.USBoundary.Value(), 0, "1"),
-        //        //new ProfileTargetSlice(Self.USEchoPattern.Value(), 0, "1"),
-        //        //new ProfileTargetSlice(Self.USElasticity.Value(), 0, "1"),
-        //        //new ProfileTargetSlice(Self.USMargin.Value(), 0, "*"),
-        //        //new ProfileTargetSlice(Self.USPosteriorAcousticFeatures.Value(), 0, "1"),
-        //        //new ProfileTargetSlice(Self.USShape.Value(), 0, "1"),
-        //        //new ProfileTargetSlice(Self.USVascularity.Value(), 0, "1"),
+        //        //new ProfileTargetSelf.Slice(e, sliceElementDef, Self.USBoundary.Value(), 0, "1"),
+        //        //new ProfileTargetSelf.Slice(e, sliceElementDef, Self.USEchoPattern.Value(), 0, "1"),
+        //        //new ProfileTargetSelf.Slice(e, sliceElementDef, Self.USElasticity.Value(), 0, "1"),
+        //        //new ProfileTargetSelf.Slice(e, sliceElementDef, Self.USMargin.Value(), 0, "*"),
+        //        //new ProfileTargetSelf.Slice(e, sliceElementDef, Self.USPosteriorAcousticFeatures.Value(), 0, "1"),
+        //        //new ProfileTargetSelf.Slice(e, sliceElementDef, Self.USShape.Value(), 0, "1"),
+        //        //new ProfileTargetSelf.Slice(e, sliceElementDef, Self.USVascularity.Value(), 0, "1"),
         //        //};
         //        //e.SliceByUrl("hasMember", targets);
         //        //e.AddProfileTargets(targets);

@@ -14,8 +14,8 @@ namespace BreastRadiology.XUnitTests
     partial class ResourcesMaker : ConverterBase
     {
         CSTaskVar MGAbnormalityDuctCS = new CSTaskVar(
-             () =>
-                 Self.CreateCodeSystem(
+             (out CodeSystem cs) =>
+                 cs = Self.CreateCodeSystem(
                         "MGAbnormalityDuctCS",
                         "Mammography Duct Type CodeSystem",
                          "MG Duct Type/CodeSystem",
@@ -48,8 +48,8 @@ namespace BreastRadiology.XUnitTests
 
 
         VSTaskVar MGAbnormalityDuctVS = new VSTaskVar(
-            () =>
-                Self.CreateValueSet(
+            (out ValueSet vs) =>
+                vs = Self.CreateValueSet(
                    "MGAbnormalityDuctVS",
                    "Mammography Duct ValueSet",
                     "MG Duct/ValueSet",
@@ -60,8 +60,8 @@ namespace BreastRadiology.XUnitTests
             );
 
 
-        StringTaskVar MGAbnormalityDuct = new StringTaskVar(
-            (out String s) =>
+        SDTaskVar MGAbnormalityDuct = new SDTaskVar(
+            (out StructureDefinition  s) =>
             {
                 ValueSet binding = Self.MGAbnormalityDuctVS.Value();
                 SDefEditor e = Self.CreateEditorObservationLeaf("MGAbnormalityDuct",
@@ -75,28 +75,22 @@ namespace BreastRadiology.XUnitTests
                                 "make dilated the default value."
                             )
                     )
-                    .AddFragRef(Self.ObservationNoDeviceFragment.Value())
-                    .AddFragRef(Self.MGCommonTargetsFragment.Value())
-                    .AddFragRef(Self.MGShapeTargetsFragment.Value())
+                    .AddFragRef(Self.ObservationNoDeviceFragment.Value().Url)
+                    .AddFragRef(Self.MGCommonTargetsFragment.Value().Url)
+                    .AddFragRef(Self.MGShapeTargetsFragment.Value().Url)
                     ;
 
-                s = e.SDef.Url;
+                s = e.SDef;
 
-                //$e.IntroDoc
-                //    .ObservationSection($"Duct")
-                //    .ReviewedStatus(ReviewStatus.NotReviewed)
-                //    .Refinement(binding, "Duct")
-                //    ;
+                e.IntroDoc
+                    .ReviewedStatus(ReviewStatus.NotReviewed)
+                    ;
 
                 e.Select("value[x]").Zero();
 
                 e.Select("value[x]").Zero();
-                ProfileTargetSlice[] targets = new ProfileTargetSlice[]
-                {
-                    new ProfileTargetSlice(Self.ConsistentWith.Value(), 0, "*"),
-                };
-                e.SliceByUrl("hasMember", targets);
-                e.AddProfileTargets(targets);
+                PreFhir.ElementTreeNode sliceElementDef = e.ConfigureSliceByUrlDiscriminator("hasMember", false);
+                Self.SliceTargetReference(e, sliceElementDef, Self.ConsistentWith.Value(), 0, "*");
 
                 e.StartComponentSliceing();
                 e.ComponentSliceCodeableConcept("mgAbnormalityDuctType",

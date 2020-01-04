@@ -8,13 +8,14 @@ using FhirKhit.Tools;
 using FhirKhit.Tools.R4;
 using Hl7.Fhir.Model;
 using Hl7.Fhir.Serialization;
+using PreFhir;
 
 namespace BreastRadiology.XUnitTests
 {
     partial class ResourcesMaker : ConverterBase
     {
-        StringTaskVar SectionFindings = new StringTaskVar(
-            (out String s) =>
+        SDTaskVar SectionFindings = new SDTaskVar(
+            (out StructureDefinition s) =>
             {
                 SDefEditor e = Self.CreateEditorObservationSection("SectionFindings",
                         "Findings",
@@ -26,26 +27,22 @@ namespace BreastRadiology.XUnitTests
                         .Paragraph("Child observations are referenced by the 'Observation.hasMember' field.")
                     //.Todo
                     )
-                    .AddFragRef(Self.ObservationNoDeviceFragment.Value())
-                    .AddFragRef(Self.ObservationSectionFragment.Value())
+                    .AddFragRef(Self.ObservationNoDeviceFragment.Value().Url)
+                    .AddFragRef(Self.ObservationSectionFragment.Value().Url)
                     ;
 
-                s = e.SDef.Url;
-                //$e.IntroDoc
-                // .ObservationSection($"Finding")
-                // .ReviewedStatus(ReviewStatus.NotReviewed)
-                // ;
+                s = e.SDef;
+                e.IntroDoc
+                     .ReviewedStatus(ReviewStatus.NotReviewed)
+                     ;
 
                 e.Select("value[x]").Zero();
                 e.Select("bodySite").Zero();
 
-                ProfileTargetSlice[] targets = new ProfileTargetSlice[]
-                {
-                    new ProfileTargetSlice(Self.SectionFindingsLeftBreast.Value(), 1, "1"),
-                    new ProfileTargetSlice(Self.SectionFindingsRightBreast.Value(), 1, "1")
-                };
-                e.SliceByUrl("hasMember", targets);
-                e.AddProfileTargets(targets);
+                ElementTreeNode sliceElementDef = e.ConfigureSliceByUrlDiscriminator("hasMember", false);
+
+                Self.SliceTargetReference(e, sliceElementDef, Self.SectionFindingsLeftBreast.Value(), 1, "1");
+                Self.SliceTargetReference(e, sliceElementDef, Self.SectionFindingsRightBreast.Value(), 1, "1");
 
                 e.StartComponentSliceing();
                 Self.ComponentSliceBiRads(e);

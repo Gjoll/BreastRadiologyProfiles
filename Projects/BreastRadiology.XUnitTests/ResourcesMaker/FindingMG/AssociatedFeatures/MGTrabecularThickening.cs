@@ -13,8 +13,8 @@ namespace BreastRadiology.XUnitTests
 {
     partial class ResourcesMaker : ConverterBase
     {
-        //#StringTaskVar MGTrabecularThickening = new StringTaskVar(
-        //    (out String s) =>
+        //#SDTaskVar MGTrabecularThickening = new SDTaskVar(
+        //    (out StructureDefinition  s) =>
         //    {
         //        SDefEditor e = Self.CreateEditor("MGTrabecularThickening",
         //            "Mammography Trabecular Thickening",

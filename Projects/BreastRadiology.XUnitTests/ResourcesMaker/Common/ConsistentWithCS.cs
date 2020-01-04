@@ -14,8 +14,8 @@ namespace BreastRadiology.XUnitTests
 {
     partial class ResourcesMaker
     {
-        StringTaskVar ConsistentWith = new StringTaskVar(
-               (out String s) =>
+        SDTaskVar ConsistentWith = new SDTaskVar(
+               (out StructureDefinition  s) =>
                    {
                        SDefEditor e = Self.CreateEditorObservationLeaf("ConsistentWith",
                         "Consistent With",
@@ -28,9 +28,9 @@ namespace BreastRadiology.XUnitTests
                                    "There is a CodeSystem and ValueSet created solely to identify the the component slices. Is this appropriate"
                                    )
                            )
-                           .AddFragRef(Self.ObservationNoDeviceFragment.Value())
+                           .AddFragRef(Self.ObservationNoDeviceFragment.Value().Url)
                            ;
-                       s = e.SDef.Url;
+                       s = e.SDef;
                        e.Select("value[x]").Zero();
                        e.Select("interpretation").Zero();
                        e.Select("referenceRange").Zero();
@@ -51,15 +51,14 @@ namespace BreastRadiology.XUnitTests
                            "1",
                            "Qualifier");
 
-                       //$e.IntroDoc
-                       //    .Observation("Consistent With")
-                       //    .ReviewedStatus(ReviewStatus.NotReviewed)
-                       //    ;
+                       e.IntroDoc
+                           .ReviewedStatus(ReviewStatus.NotReviewed)
+                           ;
                    });
 
         VSTaskVar ConsistentWithVS = new VSTaskVar(
-            () =>
-                Self.CreateValueSet(
+            (out ValueSet vs) =>
+                vs = Self.CreateValueSet(
                         "ConsistentWithVS",
                         "ConsistentWith ValueSet",
                         "ConsistentWith/ValueSet",
@@ -70,8 +69,8 @@ namespace BreastRadiology.XUnitTests
             );
 
         VSTaskVar ConsistentWithQualifierVS = new VSTaskVar(
-            () =>
-                Self.CreateValueSet(
+            (out ValueSet vs) =>
+                vs = Self.CreateValueSet(
                         "ConsistentWithQualifierVS",
                         "ConsistentWithQualifier ValueSet",
                         "ConsistentWithQualifier/ValueSet",
@@ -82,8 +81,8 @@ namespace BreastRadiology.XUnitTests
             );
 
         CSTaskVar ConsistentWithCS = new CSTaskVar(
-            () =>
-                Self.CreateCodeSystem(
+            (out CodeSystem cs) =>
+                cs = Self.CreateCodeSystem(
                         "ConsistentWithCodeSystemCS",
                         "Consistent With CodeSystem",
                         "ConsistentWith/CodeSystem",
@@ -542,8 +541,8 @@ namespace BreastRadiology.XUnitTests
 
 
         CSTaskVar ConsistentWithQualifierCS = new CSTaskVar(
-             () =>
-                 Self.CreateCodeSystem(
+             (out CodeSystem cs) =>
+                 cs = Self.CreateCodeSystem(
                         "ConsistentWithQualifierCS",
                         "ConsistentWith Qualifier CodeSystem",
                         "ConsistentWithQualifier/ValueSet",

@@ -50,8 +50,8 @@ namespace BreastRadiology.XUnitTests
 
 
         CSTaskVar ComponentSliceCodesCS = new CSTaskVar(
-             () =>
-                 Self.CreateCodeSystem(
+             (out CodeSystem cs) =>
+                 cs = Self.CreateCodeSystem(
                         "ComponentSliceCodes",
                         "Component Slice Codes CodeSystem",
                         "ComponentSliceCodes/ValueSet",
@@ -80,8 +80,8 @@ namespace BreastRadiology.XUnitTests
              );
 
         //#VSTaskVar ComponentSliceCodesVS = new VSTaskVar(
-        //    () =>
-        //        Self.CreateValueSet(
+        //    (out ValueSet vs) =>
+        //        vs = Self.CreateValueSet(
         //                "ConsistentWithSliceVS",
         //                "ConsistentWithSlice ValueSet",
         //                "ConsistentWithSlice/ValueSet",

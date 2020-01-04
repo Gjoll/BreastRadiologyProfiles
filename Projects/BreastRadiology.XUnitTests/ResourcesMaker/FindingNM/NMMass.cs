@@ -13,8 +13,8 @@ namespace BreastRadiology.XUnitTests
 {
     partial class ResourcesMaker : ConverterBase
     {
-        //#StringTaskVar NMMass = new StringTaskVar(
-        //    (out String s) =>
+        //#SDTaskVar NMMass = new SDTaskVar(
+        //    (out StructureDefinition  s) =>
         //    {
         //        SDefEditor e = Self.CreateEditor("NMMass",
         //                "NM Mass",
@@ -48,11 +48,11 @@ namespace BreastRadiology.XUnitTests
 
         //        //ProfileTargetSlice[] targets = new ProfileTargetSlice[]
         //        //{
-        //        //new ProfileTargetSlice(Self.ObservedSize.Value(), 0, "1"),
-        //        //new ProfileTargetSlice(Self.ObservedCount.Value(), 0, "1"),
-        //        //new ProfileTargetSlice(Self.Orientation.Value(), 0, "1"),
-        //        //new ProfileTargetSlice(Self.NMMargin.Value(), 0, "*"),
-        //        //new ProfileTargetSlice(Self.ObservedChangeInState.Value(), 0, "*"),
+        //        //new ProfileTargetSelf.Slice(e, sliceElementDef, Self.ObservedSize.Value(), 0, "1"),
+        //        //new ProfileTargetSelf.Slice(e, sliceElementDef, Self.ObservedCount.Value(), 0, "1"),
+        //        //new ProfileTargetSelf.Slice(e, sliceElementDef, Self.Orientation.Value(), 0, "1"),
+        //        //new ProfileTargetSelf.Slice(e, sliceElementDef, Self.NMMargin.Value(), 0, "*"),
+        //        //new ProfileTargetSelf.Slice(e, sliceElementDef, Self.ObservedChangeInState.Value(), 0, "*"),
         //        //};
         //        //e.SliceByUrl("hasMember", targets);
         //        //e.AddProfileTargets(targets);

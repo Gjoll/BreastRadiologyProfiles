@@ -13,8 +13,8 @@ namespace BreastRadiology.XUnitTests
 {
     partial class ResourcesMaker : ConverterBase
     {
-        StringTaskVar MGSkinRetraction = new StringTaskVar(
-            (out String s) =>
+        SDTaskVar MGSkinRetraction = new SDTaskVar(
+            (out StructureDefinition  s) =>
             {
                 SDefEditor e = Self.CreateEditorObservationLeaf("MGSkinRetraction",
                     "Mammography Skin Retraction",
@@ -29,16 +29,15 @@ namespace BreastRadiology.XUnitTests
                             .MissingObservation("a skin retraction")
                             //.Todo
                     )
-                    .AddFragRef(Self.ObservationNoDeviceFragment.Value())
-                    .AddFragRef(Self.ObservationNoValueFragment.Value())
-                    .AddFragRef(Self.BreastBodyLocationRequiredFragment.Value())
+                    .AddFragRef(Self.ObservationNoDeviceFragment.Value().Url)
+                    .AddFragRef(Self.ObservationNoValueFragment.Value().Url)
+                    .AddFragRef(Self.BreastBodyLocationRequiredFragment.Value().Url)
                     ;
-                s = e.SDef.Url;
+                s = e.SDef;
 
-                //$e.IntroDoc
-                //    .Observation("Skin Retraction")
-                //    .ReviewedStatus(ReviewStatus.NotReviewed)
-                //    ;
+                e.IntroDoc
+                    .ReviewedStatus(ReviewStatus.NotReviewed)
+                    ;
             });
     }
 }

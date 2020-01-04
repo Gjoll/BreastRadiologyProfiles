@@ -16,8 +16,8 @@ namespace BreastRadiology.XUnitTests
     {
 
         CSTaskVar MGAbnormalityAsymmetryTypeCS = new CSTaskVar(
-             () =>
-                 Self.CreateCodeSystem(
+             (out CodeSystem cs) =>
+                 cs = Self.CreateCodeSystem(
                     "MGAbnormalityAsymmetryTypeCS",
                     "Mammography Asymmetry Type CodeSystem",
                      "MG Asymmetry Type/CodeSystem",
@@ -80,8 +80,8 @@ namespace BreastRadiology.XUnitTests
 
 
         VSTaskVar MGAbnormalityAsymmetriesVS = new VSTaskVar(
-            () =>
-                Self.CreateValueSet(
+            (out ValueSet vs) =>
+                vs = Self.CreateValueSet(
                    "MGAbnormalityAsymmetriesVS",
                    "Mammography AsymmetryAbnormalities ValueSet",
                     "MG Asymmetry/ValueSet",
@@ -92,14 +92,13 @@ namespace BreastRadiology.XUnitTests
             );
 
 
-        StringTaskVar MGAbnormalityAsymmetry = new StringTaskVar(
-            (out String s) =>
+        SDTaskVar MGAbnormalityAsymmetry = new SDTaskVar(
+            (out StructureDefinition  s) =>
             {
                 ValueSet binding = Self.MGAbnormalityAsymmetriesVS.Value();
                 {
                     IntroDoc valueSetIntroDoc = Self.CreateIntroDocVS(binding);
                     valueSetIntroDoc
-                        .IntroValueSet(binding)
                         .ReviewedStatus(ReviewStatus.NotReviewed)
                     ;
                     String outputPath = valueSetIntroDoc.Save();
@@ -123,25 +122,19 @@ namespace BreastRadiology.XUnitTests
                             .BiradFooter()
                     //.Todo
                     )
-                    .AddFragRef(Self.ObservationNoDeviceFragment.Value())
-                    .AddFragRef(Self.ObservationCodedValueFragment.Value())
-                    .AddFragRef(Self.MGCommonTargetsFragment.Value())
+                    .AddFragRef(Self.ObservationNoDeviceFragment.Value().Url)
+                    .AddFragRef(Self.ObservationCodedValueFragment.Value().Url)
+                    .AddFragRef(Self.MGCommonTargetsFragment.Value().Url)
                 ;
-                s = e.SDef.Url;
+                s = e.SDef;
 
-                //$e.IntroDoc
-                //    .ObservationSection("Mammography Asymmetry")
-                //    .ReviewedStatus(ReviewStatus.NotReviewed)
-                //    .Refinement(binding, "Asymmetry")
-                //    ;
+                e.IntroDoc
+                    .ReviewedStatus(ReviewStatus.NotReviewed)
+                    ;
 
-                ProfileTargetSlice[] targets = new ProfileTargetSlice[]
-                {
-                    new ProfileTargetSlice(Self.MGAssociatedFeatures.Value(), 0, "1"),
-                    new ProfileTargetSlice(Self.ConsistentWith.Value(), 0, "*")
-                };
-                e.SliceByUrl("hasMember", targets);
-                e.AddProfileTargets(targets);
+                PreFhir.ElementTreeNode sliceElementDef = e.ConfigureSliceByUrlDiscriminator("hasMember", false);
+                Self.SliceTargetReference(e, sliceElementDef, Self.MGAssociatedFeatures.Value(), 0, "1");
+                Self.SliceTargetReference(e, sliceElementDef, Self.ConsistentWith.Value(), 0, "*");
 
                 e.Select("value[x]").Zero();
                 e.StartComponentSliceing();

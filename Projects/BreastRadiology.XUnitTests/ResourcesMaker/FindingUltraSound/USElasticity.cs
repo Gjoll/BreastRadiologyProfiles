@@ -16,7 +16,7 @@ namespace BreastRadiology.XUnitTests
     {
         //#CSTaskVar USElasticityCS = new CSTaskVar(
         //     () =>
-        //         Self.CreateCodeSystem(
+        //         cs = Self.CreateCodeSystem(
         //             "USElasticityCS",
         //             "US Echo Pattern CodeSystem",
         //             "US Elasticity/CodeSystem",
@@ -45,7 +45,7 @@ namespace BreastRadiology.XUnitTests
 
         //#VSTaskVar USElasticityVS = new VSTaskVar(
         //    () =>
-        //        Self.CreateValueSet(
+        //        vs = Self.CreateValueSet(
         //            "USElasticityVS",
         //            "US Elasticity ValueSet",
         //            "US Elasticity/ValueSet",
@@ -54,8 +54,8 @@ namespace BreastRadiology.XUnitTests
         //            Self.USElasticityCS.Value())
         //    );
 
-        //#StringTaskVar USElasticity = new StringTaskVar(
-        //    (out String s) =>
+        //#SDTaskVar USElasticity = new SDTaskVar(
+        //    (out StructureDefinition  s) =>
         //    {
         //        ValueSet binding = Self.USElasticityVS.Value();
         //        {

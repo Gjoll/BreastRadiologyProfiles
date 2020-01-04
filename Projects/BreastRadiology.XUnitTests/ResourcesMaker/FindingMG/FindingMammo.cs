@@ -8,13 +8,14 @@ using FhirKhit.Tools;
 using FhirKhit.Tools.R4;
 using Hl7.Fhir.Model;
 using Hl7.Fhir.Serialization;
+using PreFhir;
 
 namespace BreastRadiology.XUnitTests
 {
     partial class ResourcesMaker : ConverterBase
     {
-        StringTaskVar FindingMammo = new StringTaskVar(
-            (out String s) =>
+        SDTaskVar FindingMammo = new SDTaskVar(
+            (out StructureDefinition s) =>
             {
                 SDefEditor e = Self.CreateEditorObservationSection("MGFinding",
                         "Mammographi Finding",
@@ -26,9 +27,9 @@ namespace BreastRadiology.XUnitTests
                                 "Device Metrics detailing the observation devices parameters (transducer freq, etc)."
                                 )
                         )
-                    .AddFragRef(Self.ObservationSectionFragment.Value())
+                    .AddFragRef(Self.ObservationSectionFragment.Value().Url)
                     ;
-                s = e.SDef.Url;
+                s = e.SDef;
                 e.Select("value[x]").Zero();
                 ////$ todo. Incorrect method!!!
                 //e.Find("method")
@@ -36,32 +37,24 @@ namespace BreastRadiology.XUnitTests
                 // .Card(1, "*")
                 // ;
 
-                /*
-                ProfileTargetSlice[] targets = new ProfileTargetSlice[]
-                {
-                    new ProfileTargetSlice(Self.MGAbnormalityForeignObject.Value(), 0, "*"),
-                    new ProfileTargetSlice(Self.MGAbnormalityArchitecturalDistortion.Value(), 0, "*"),
-                    new ProfileTargetSlice(Self.MGAbnormalityAsymmetry.Value(), 0, "*"),
-                    new ProfileTargetSlice(Self.MGAbnormalityCalcification.Value(), 0, "*"),
-                    new ProfileTargetSlice(Self.MGAbnormalityCyst.Value(), 0, "*"),
-                    new ProfileTargetSlice(Self.MGAbnormalityDensity.Value(), 0, "*"),
-                    new ProfileTargetSlice(Self.MGAbnormalityDuct.Value(), 0, "*"),
-                    new ProfileTargetSlice(Self.MGAbnormalityFatNecrosis.Value(), 0, "*"),
-                    new ProfileTargetSlice(Self.MGAbnormalityFibroadenoma.Value(), 0, "*"),
-                    new ProfileTargetSlice(Self.MGAbnormalityLymphNode.Value(), 0, "*"),
-                    new ProfileTargetSlice(Self.MGAbnormalityMass.Value(), 0, "*"),
-                    new ProfileTargetSlice(Self.MGSkinLesion.Value(), 0, "*"),
-                    new ProfileTargetSlice(Self.MGAssociatedFeatures.Value(), 0, "*"),
-                    new ProfileTargetSlice(Self.MGBreastDensity.Value(), 1, "1")
-                };
-                e.SliceByUrl("hasMember", targets);
-                e.AddProfileTargets(targets);
-                */
-
-                //$e.IntroDoc
-                //    .ObservationSection("MG Finding")
-                //    .ReviewedStatus(ReviewStatus.NotReviewed)
-                //    ;
+                ElementTreeNode sliceElementDef = e.ConfigureSliceByUrlDiscriminator("hasMember", false);
+                Self.SliceTargetReference(e, sliceElementDef, Self.MGAbnormalityForeignObject.Value());
+                Self.SliceTargetReference(e, sliceElementDef, Self.MGAbnormalityArchitecturalDistortion.Value());
+                Self.SliceTargetReference(e, sliceElementDef, Self.MGAbnormalityAsymmetry.Value());
+                Self.SliceTargetReference(e, sliceElementDef, Self.MGAbnormalityCalcification.Value());
+                Self.SliceTargetReference(e, sliceElementDef, Self.MGAbnormalityCyst.Value());
+                Self.SliceTargetReference(e, sliceElementDef, Self.MGAbnormalityDensity.Value());
+                Self.SliceTargetReference(e, sliceElementDef, Self.MGAbnormalityDuct.Value());
+                Self.SliceTargetReference(e, sliceElementDef, Self.MGAbnormalityFatNecrosis.Value());
+                Self.SliceTargetReference(e, sliceElementDef, Self.MGAbnormalityFibroadenoma.Value());
+                Self.SliceTargetReference(e, sliceElementDef, Self.MGAbnormalityLymphNode.Value());
+                Self.SliceTargetReference(e, sliceElementDef, Self.MGAbnormalityMass.Value());
+                Self.SliceTargetReference(e, sliceElementDef, Self.MGSkinLesion.Value());
+                Self.SliceTargetReference(e, sliceElementDef, Self.MGAssociatedFeatures.Value());
+                Self.SliceTargetReference(e, sliceElementDef, Self.MGBreastDensity.Value(), 1, "1");
+                e.IntroDoc
+                    .ReviewedStatus(ReviewStatus.NotReviewed)
+                    ;
             });
     }
 }

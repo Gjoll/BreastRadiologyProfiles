@@ -13,8 +13,8 @@ namespace BreastRadiology.XUnitTests
 {
     partial class ResourcesMaker : ConverterBase
     {
-        StringTaskVar FindingMri = new StringTaskVar(
-            (out String s) =>
+        SDTaskVar FindingMri = new SDTaskVar(
+            (out StructureDefinition  s) =>
             {
                 //$ Fix me. Incorrect method!!!
                 SDefEditor e = Self.CreateEditorObservationSection("MRIFinding",
@@ -28,18 +28,17 @@ namespace BreastRadiology.XUnitTests
                                 "Add information about contrast enhancement/other observation specific parameters."
                             )
                     )
-                    .AddFragRef(Self.ObservationSectionFragment.Value())
+                    .AddFragRef(Self.ObservationSectionFragment.Value().Url)
                 ;
-                s = e.SDef.Url;
+                s = e.SDef;
 
-                //$e.IntroDoc
-                //    .ObservationSection("MRI Finding")
-                //    .ReviewedStatus(ReviewStatus.NotReviewed)
-                //    ;
+                e.IntroDoc
+                    .ReviewedStatus(ReviewStatus.NotReviewed)
+                    ;
 
                 //ProfileTargetSlice[] targets = new ProfileTargetSlice[]
                 //{
-                //new ProfileTargetSlice(Self.MRIMass.Value(), 0, "*"),
+                //new ProfileTargetSelf.Slice(e, sliceElementDef, Self.MRIMass.Value(), 0, "*"),
                 //};
                 //e.SliceByUrl("hasMember", targets);
                 //e.AddProfileTargets(targets);

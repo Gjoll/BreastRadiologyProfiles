@@ -17,7 +17,7 @@ namespace BreastRadiology.XUnitTests
 
         //#CSTaskVar USVascularityCS = new CSTaskVar(
         //     () =>
-        //         Self.CreateCodeSystem(
+        //         cs = Self.CreateCodeSystem(
         //             "USVascularityCS",
         //             "US Echo Pattern CodeSystem",
         //             "US Vascularity/CodeSystem",
@@ -62,7 +62,7 @@ namespace BreastRadiology.XUnitTests
 
         //#VSTaskVar USVascularityVS = new VSTaskVar(
         //    () =>
-        //        Self.CreateValueSet(
+        //        vs = Self.CreateValueSet(
         //            "USVascularityVS",
         //            "US Vascularity ValueSet",
         //            "US Vascularity/ValueSet",
@@ -72,8 +72,8 @@ namespace BreastRadiology.XUnitTests
         //            )
         //    );
 
-        //#    StringTaskVar USVascularity = new StringTaskVar(
-        //        (out String s) =>
+        //#    SDTaskVar USVascularity = new SDTaskVar(
+        //        (out StructureDefinition  s) =>
         //        {
         //            ValueSet binding = Self.USVascularityVS.Value();
 

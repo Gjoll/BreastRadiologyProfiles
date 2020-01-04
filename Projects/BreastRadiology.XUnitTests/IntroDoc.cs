@@ -22,7 +22,7 @@ namespace BreastRadiology.XUnitTests
     /// </summary>
     class IntroDoc
     {
-        String outputPath;
+        public String OutputPath { get; set; }
         CodeEditorXml codeEditor;
 
         public IntroDoc()
@@ -39,117 +39,35 @@ namespace BreastRadiology.XUnitTests
         public void Load(String templateName,
             String outputPath)
         {
-            this.outputPath = outputPath;
+            this.OutputPath = outputPath;
             String fullPath = Path.Combine("IntroDocTemplates", $"{templateName}.template");
             codeEditor.Load(fullPath);
         }
 
-        //public IntroDoc Header3(String header,
-        //    String anchor)
-        //{
-        //    this
-        //        .Append($"<a name=\"{anchor}\"> </a>")
-        //        .Append($"<h3 id=\"{anchor}\">{header}</h3>")
-        //        ;
-        //    return this;
-        //}
-
-        public IntroDoc Refinement(ValueSet vs, String name)
+        public IntroDoc Intro(params String[] lines)
         {
-            //this
-            //    .Header3("Refinement", "refinement")
-            //    .Paragraph($"The type of this {name} may be further refined to be one of the following {name} sub-types:")
-            //    .List(vs)
-            //    ;
-            return this;
-        }
+            CodeBlockNested b = this.codeEditor.Blocks.Find("intro");
+            if (b == null)
+                throw new Exception($"intro block missing");
 
-        public IntroDoc ObservationSection(String name, String article = "a")
-        {
-            //$this.Paragraph(
-            //    $"This Observation profile is {article} '{name}' section.",
-            //    $"Information about the finding is contained in the observations",
-            //    $"referenced by this resource's hasMember field."
-            //    );
-            return this;
-        }
+            foreach (String line in lines)
+                b.AppendRaw($"<p>{line}</p>");
 
-        public IntroDoc Observation(String name, String article = "a")
-        {
-            //$this.Paragraph(
-            //    $"This Observation profile is {article} {name} observation.",
-            //    $"It is referenced by a parent Observation, and contains details of the " +
-            //    $"{name} observation in this resource (generally in component fields) and in" +
-            //    $"seperate observatiosn referenced by this resources hasMember field."
-            //    );
             return this;
         }
 
 
         public IntroDoc ReviewedStatus(ReviewStatus reviewStatus)
         {
-            //$this
-            //    .Append($"<h3 id=\"reviewStatus\">Review Status</h3>")
-            //    .Append($"<p><b>{reviewStatus}</b></p>")
-            //    ;
-            return this;
-        }
+            CodeBlockNested b = this.codeEditor.Blocks.Find("reviewStatus");
+            if (b == null)
+                throw new Exception($"reviewStatus block missing");
 
-
-        public IntroDoc Introduction(String purpose)
-        {
-            CodeBlockNested intro = this.codeEditor.Blocks.Find("intro");
-            if (intro == null)
-                throw new Exception("Missing intro code block");
-            CodeBlockNested introBody = intro.Find("body");
-            introBody
-                .AppendRaw("    <p>")
-                .AppendRaw("    " + purpose)
-                .AppendRaw("    </p>")
+            b
+                .AppendRaw($"<h3 id=\"reviewStatus\">Review Status</h3>")
+                .AppendRaw($"<p><b>{reviewStatus}</b></p>")
                 ;
-            return this;
-        }
 
-        public IntroDoc IntroGeneral(String purpose)
-        {
-            //return this.Introduction(purpose);
-            return this;
-        }
-
-        public IntroDoc IntroFragment(String purpose)
-        {
-            //return this.Introduction(purpose);
-            return this;
-        }
-
-        public IntroDoc IntroExtension(String name, String purpose)
-        {
-            //return this.Introduction($"{name} Extension Resource used to {purpose}.");
-            return this;
-        }
-
-        public IntroDoc IntroValueSet(ValueSet binding)
-        {
-            this.Introduction($"Value set {binding.Name}");
-            //$this.AddSvgImage(FocusMapMaker.FocusMapName(binding.Name));
-            //this
-            //    .Paragraph(
-            //        $"This resource is a ValueSet."
-            //    )
-            //    .List(binding)
-            //    ;
-            return this;
-        }
-
-
-        public IntroDoc IntroCodedObservationLeafNode(String leafNode)
-        {
-            //$this
-            //    .Paragraph(
-            //        $"This resource is an leaf-node observation of a {leafNode}.",
-            //        $"It is referenced by a parent Observation."
-            //    )
-            //    ;
             return this;
         }
 
@@ -198,8 +116,8 @@ namespace BreastRadiology.XUnitTests
         public String Save()
         {
             String introHtml = this.Render();
-            File.WriteAllText(this.outputPath, introHtml);
-            return this.outputPath;
+            File.WriteAllText(this.OutputPath, introHtml);
+            return this.OutputPath;
         }
     }
 }

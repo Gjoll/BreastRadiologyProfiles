@@ -9,8 +9,8 @@ namespace BreastRadiology.XUnitTests
 {
     partial class ResourcesMaker
     {
-        StringTaskVar ObservationNoValueFragment = new StringTaskVar(
-            (out String s) =>
+        SDTaskVar ObservationNoValueFragment = new SDTaskVar(
+            (out StructureDefinition  s) =>
             {
                 SDefEditor e = Self.CreateFragment("BreastRadObservationNoValueFragment",
                     "BreastRad Observation NoValue Fragment",
@@ -21,15 +21,15 @@ namespace BreastRadiology.XUnitTests
                             .Paragraph("Base fragment for all BreastRad observations that have no explicit value.")
                             //.Todo
                     )
-                    .AddFragRef(Self.ObservationFragment.Value())
-                    .AddFragRef(Self.ObservationNoComponentFragment.Value())
+                    .AddFragRef(Self.ObservationFragment.Value().Url)
+                    .AddFragRef(Self.ObservationNoComponentFragment.Value().Url)
                 ;
-                s = e.SDef.Url;
+                s = e.SDef;
 
-                //$e.IntroDoc
-                //    .IntroFragment($"Resource fragment used by observations that constrain the value[x] element to cardinality 0..0.")
-                //    .ReviewedStatus(ReviewStatus.NotReviewed)
-                //    ;
+                e.IntroDoc
+                    .Intro($"Resource fragment used by observations that constrain the value[x] element to cardinality 0..0.")
+                    .ReviewedStatus(ReviewStatus.NotReviewed)
+                    ;
 
                 e.Select("value[x]").Zero();
                 e.Select("interpretation").Zero();

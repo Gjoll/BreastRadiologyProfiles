@@ -14,8 +14,8 @@ namespace BreastRadiology.XUnitTests
     partial class ResourcesMaker : ConverterBase
     {
         CSTaskVar MGAbnormalityLymphNodeCS = new CSTaskVar(
-             () =>
-                 Self.CreateCodeSystem(
+             (out CodeSystem cs) =>
+                 cs = Self.CreateCodeSystem(
                         "MGAbnormalityLymphNodeCS",
                         "Mammography Lymph Node Type CodeSystem",
                          "MG Lymph Node Type/CodeSystem",
@@ -75,8 +75,8 @@ namespace BreastRadiology.XUnitTests
 
 
         VSTaskVar MGAbnormalityLymphNodeVS = new VSTaskVar(
-            () =>
-                Self.CreateValueSet(
+            (out ValueSet vs) =>
+                vs = Self.CreateValueSet(
                    "MGAbnormalityLymphNodeVS",
                    "Mammography Lymph Node ValueSet",
                     "MG Lymph Node/ValueSet",
@@ -87,8 +87,8 @@ namespace BreastRadiology.XUnitTests
             );
 
 
-        StringTaskVar MGAbnormalityLymphNode = new StringTaskVar(
-            (out String s) =>
+        SDTaskVar MGAbnormalityLymphNode = new SDTaskVar(
+            (out StructureDefinition  s) =>
             {
                 ValueSet binding = Self.MGAbnormalityLymphNodeVS.Value();
 
@@ -101,19 +101,17 @@ namespace BreastRadiology.XUnitTests
                             .MissingObservation("a lymph node abnormality")
                     //.Todo
                     )
-                    .AddFragRef(Self.ObservationNoDeviceFragment.Value())
-                    .AddFragRef(Self.ObservationCodedValueFragment.Value())
-                    .AddFragRef(Self.MGCommonTargetsFragment.Value())
-                    .AddFragRef(Self.MGShapeTargetsFragment.Value())
+                    .AddFragRef(Self.ObservationNoDeviceFragment.Value().Url)
+                    .AddFragRef(Self.ObservationCodedValueFragment.Value().Url)
+                    .AddFragRef(Self.MGCommonTargetsFragment.Value().Url)
+                    .AddFragRef(Self.MGShapeTargetsFragment.Value().Url)
                     ;
 
-                s = e.SDef.Url;
+                s = e.SDef;
 
-                //$e.IntroDoc
-                //    .ObservationSection($"Lymph Node")
-                //    .ReviewedStatus(ReviewStatus.NotReviewed)
-                //    .Refinement(binding, "LymphNode")
-                //    ;
+                e.IntroDoc
+                    .ReviewedStatus(ReviewStatus.NotReviewed)
+                    ;
 
                 e.Select("value[x]").Zero();
                 e.StartComponentSliceing();

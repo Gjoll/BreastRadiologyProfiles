@@ -9,8 +9,8 @@ namespace BreastRadiology.XUnitTests
 {
     partial class ResourcesMaker
     {
-        StringTaskVar ImagingStudyFragment = new StringTaskVar(
-            (out String s) =>
+        SDTaskVar ImagingStudyFragment = new SDTaskVar(
+            (out StructureDefinition  s) =>
             {
                 SDefEditor e = Self.CreateFragment("ImagingStudyFragment",
                         "Imaging Study Fragment",
@@ -22,20 +22,16 @@ namespace BreastRadiology.XUnitTests
                      //.Todo
                      )
                     ;
-                s = e.SDef.Url;
+                s = e.SDef;
 
-                //$e.IntroDoc
-                //    .IntroFragment($"Imaging Study Fragment")
-                //    .ReviewedStatus(ReviewStatus.NotReviewed)
-                //    ;
+                e.IntroDoc
+                    .Intro($"Imaging Study Fragment")
+                    .ReviewedStatus(ReviewStatus.NotReviewed)
+                    ;
 
-                ProfileTargetSlice[] targets = new ProfileTargetSlice[]
-                {
-                    new ProfileTargetSlice(ImagingStudyUrl, 0, "*"),
-                    new ProfileTargetSlice(Self.AimAnnotatedImagingStudy.Value(), 0, "1"),
-                };
-                e.SliceByUrl("derivedFrom", targets);
-                e.AddProfileTargets(targets);
+                PreFhir.ElementTreeNode sliceElementDef = e.ConfigureSliceByUrlDiscriminator("hasMember", false);
+                Self.SliceTargetReference(e, sliceElementDef, ImagingStudyUrl, "ImagingStudy", 0, "*");
+                Self.SliceTargetReference(e, sliceElementDef, Self.AimAnnotatedImagingStudy.Value(), 0, "1");
             });
     }
 }

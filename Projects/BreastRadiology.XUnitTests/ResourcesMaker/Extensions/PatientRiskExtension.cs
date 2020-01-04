@@ -14,8 +14,8 @@ namespace BreastRadiology.XUnitTests
 {
     partial class ResourcesMaker : ConverterBase
     {
-        StringTaskVar BreastRadiologyPatientRiskExtension = new StringTaskVar(
-            (out String s) =>
+        SDTaskVar BreastRadiologyPatientRiskExtension = new SDTaskVar(
+            (out StructureDefinition  s) =>
             {
                 SDefEditor e = Self.CreateEditor("PatientRiskExtension",
                     "PatientRisk Extension",
@@ -34,14 +34,13 @@ namespace BreastRadiology.XUnitTests
                     .Kind(StructureDefinition.StructureDefinitionKind.ComplexType)
                     .Context()
                     ;
-                s = e.SDef.Url;
+                s = e.SDef;
 
-                //$e.IntroDoc
-                //    .IntroExtension("PatientRisk", "include references to PatientRisk")
-                //    .ReviewedStatus(ReviewStatus.NotReviewed)
-                //    ;
+                e.IntroDoc
+                    .ReviewedStatus(ReviewStatus.NotReviewed)
+                    ;
 
-                e.AddFragRef(Self.HeaderFragment.Value());
+                e.AddFragRef(Self.HeaderFragment.Value().Url);
 
                 e.Select("extension").Zero();
                 e.Select("url")

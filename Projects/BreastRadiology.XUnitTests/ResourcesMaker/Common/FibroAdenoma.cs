@@ -15,8 +15,8 @@ namespace BreastRadiology.XUnitTests
     partial class ResourcesMaker
     {
        CSTaskVar FibroadenomaCS = new CSTaskVar(
-            () =>
-                Self.CreateCodeSystem(
+            (out CodeSystem cs) =>
+                cs = Self.CreateCodeSystem(
                         "FibroadenomaCodeSystemCS",
                         "Fibroadenoma CodeSystem",
                         "Fibroadenoma/CodeSystem",
@@ -38,8 +38,8 @@ namespace BreastRadiology.XUnitTests
                     );
 
         VSTaskVar FibroadenomaVS = new VSTaskVar(
-            () =>
-                Self.CreateValueSet(
+            (out ValueSet vs) =>
+                vs = Self.CreateValueSet(
                         "FibroadenomaVS",
                         "Fibroadenoma ValueSet",
                         "FibroadenomaValueSet",

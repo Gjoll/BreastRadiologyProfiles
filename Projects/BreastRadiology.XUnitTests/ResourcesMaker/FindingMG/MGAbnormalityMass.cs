@@ -14,8 +14,8 @@ namespace BreastRadiology.XUnitTests
     partial class ResourcesMaker : ConverterBase
     {
         VSTaskVar MassTypeValueSetVS = new VSTaskVar(
-            () =>
-                Self.CreateValueSet(
+            (out ValueSet vs) =>
+                vs = Self.CreateValueSet(
                         "MassTypeValueSetVS",
                         "Mass Type ValueSet",
                         "Mass Type/ValueSet",
@@ -25,8 +25,8 @@ namespace BreastRadiology.XUnitTests
                     )
             );
 
-        StringTaskVar MGAbnormalityMass = new StringTaskVar(
-            (out String s) =>
+        SDTaskVar MGAbnormalityMass = new SDTaskVar(
+            (out StructureDefinition  s) =>
             {
                 ValueSet binding = Self.MassTypeValueSetVS.Value();
 
@@ -45,29 +45,24 @@ namespace BreastRadiology.XUnitTests
                             .BiradFooter()
                     //.Todo
                     )
-                    .AddFragRef(Self.ObservationNoDeviceFragment.Value())
-                    .AddFragRef(Self.ObservationCodedValueFragment.Value())
-                    .AddFragRef(Self.ImagingStudyFragment.Value())
-                    .AddFragRef(Self.MGCommonTargetsFragment.Value())
-                    .AddFragRef(Self.MGShapeTargetsFragment.Value())
+                    .AddFragRef(Self.ObservationNoDeviceFragment.Value().Url)
+                    .AddFragRef(Self.ObservationCodedValueFragment.Value().Url)
+                    .AddFragRef(Self.ImagingStudyFragment.Value().Url)
+                    .AddFragRef(Self.MGCommonTargetsFragment.Value().Url)
+                    .AddFragRef(Self.MGShapeTargetsFragment.Value().Url)
                     ;
 
-                s = e.SDef.Url;
+                s = e.SDef;
 
-                //$e.IntroDoc
-                //    .ObservationSection("Mass")
-                //    .ReviewedStatus(ReviewStatus.NotReviewed)
-                //    .Refinement(binding, "Mass")
-                //    ;
+                e.IntroDoc
+                    .ReviewedStatus(ReviewStatus.NotReviewed)
+                    ;
 
                 e.Select("value[x]").Zero();
-                ProfileTargetSlice[] targets = new ProfileTargetSlice[]
-                {
-                    new ProfileTargetSlice(Self.MGAssociatedFeatures.Value(), 0, "1"),
-                    new ProfileTargetSlice(Self.ConsistentWith.Value(), 0, "*"),
-                };
-                e.SliceByUrl("hasMember", targets);
-                e.AddProfileTargets(targets);
+
+                PreFhir.ElementTreeNode sliceElementDef = e.ConfigureSliceByUrlDiscriminator("hasMember", false);
+                Self.SliceTargetReference(e, sliceElementDef, Self.MGAssociatedFeatures.Value(), 0, "1");
+                Self.SliceTargetReference(e, sliceElementDef, Self.ConsistentWith.Value(), 0, "*");
 
                 e.StartComponentSliceing();
                 e.ComponentSliceCodeableConcept("mgAbnormalityMassType",

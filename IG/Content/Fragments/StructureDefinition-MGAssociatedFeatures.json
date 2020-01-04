@@ -97,6 +97,8 @@
         "id": "Observation.hasMember:mGSkinRetraction",
         "path": "Observation.hasMember",
         "sliceName": "mGSkinRetraction",
+        "short": "'Mammography Skin Retraction' reference",
+        "definition": "This slice references the target 'Mammography Skin Retraction'",
         "min": 0,
         "max": "1",
         "base": {
@@ -117,6 +119,8 @@
         "id": "Observation.hasMember:mGNippleRetraction",
         "path": "Observation.hasMember",
         "sliceName": "mGNippleRetraction",
+        "short": "'Mammography Nipple Retraction' reference",
+        "definition": "This slice references the target 'Mammography Nipple Retraction'",
         "min": 0,
         "max": "1",
         "base": {
@@ -137,6 +141,8 @@
         "id": "Observation.hasMember:mGSkinThickening",
         "path": "Observation.hasMember",
         "sliceName": "mGSkinThickening",
+        "short": "'Mammography Skin Thickening' reference",
+        "definition": "This slice references the target 'Mammography Skin Thickening'",
         "min": 0,
         "max": "*",
         "base": {
@@ -157,6 +163,8 @@
         "id": "Observation.hasMember:mGAxillaryAdenopathy",
         "path": "Observation.hasMember",
         "sliceName": "mGAxillaryAdenopathy",
+        "short": "'Mammography Axillary Adenopathy' reference",
+        "definition": "This slice references the target 'Mammography Axillary Adenopathy'",
         "min": 0,
         "max": "1",
         "base": {
@@ -177,6 +185,8 @@
         "id": "Observation.hasMember:mGAbnormalityArchitecturalDistortion",
         "path": "Observation.hasMember",
         "sliceName": "mGAbnormalityArchitecturalDistortion",
+        "short": "'Mammography Architectural Distortion' reference",
+        "definition": "This slice references the target 'Mammography Architectural Distortion'",
         "min": 0,
         "max": "*",
         "base": {
@@ -197,6 +207,8 @@
         "id": "Observation.hasMember:mGAbnormalityCalcification",
         "path": "Observation.hasMember",
         "sliceName": "mGAbnormalityCalcification",
+        "short": "'Mammography Calcification' reference",
+        "definition": "This slice references the target 'Mammography Calcification'",
         "min": 0,
         "max": "*",
         "base": {

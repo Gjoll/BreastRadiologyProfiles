@@ -448,6 +448,9 @@
         "id": "Observation.component:observedSize",
         "path": "Observation.component",
         "sliceName": "observedSize",
+        "short": "Size component",
+        "definition": "This component slice contains the Size quantity",
+        "comment": "This is one component of a group of components that comprise the observation.",
         "min": 0,
         "max": "1",
         "base": {

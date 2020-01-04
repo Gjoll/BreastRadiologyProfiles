@@ -9,8 +9,8 @@ namespace BreastRadiology.XUnitTests
 {
     partial class ResourcesMaker
     {
-        StringTaskVar ObservationSectionFragment = new StringTaskVar(
-            (out String s) =>
+        SDTaskVar ObservationSectionFragment = new SDTaskVar(
+            (out StructureDefinition  s) =>
             {
                 SDefEditor e = Self.CreateFragment("ObservationSectionFragment",
                         "Observation Section Fragment",
@@ -21,19 +21,19 @@ namespace BreastRadiology.XUnitTests
                             .Paragraph("this fragment constrains a generic observation to be a observation section.")
                             //.Todo
                      )
-                    .AddFragRef(Self.ObservationFragment.Value())
-                    .AddFragRef(Self.ObservationNoValueFragment.Value())
+                    .AddFragRef(Self.ObservationFragment.Value().Url)
+                    .AddFragRef(Self.ObservationNoValueFragment.Value().Url)
                     ;
-                s = e.SDef.Url;
+                s = e.SDef;
 
-                //$e.IntroDoc
-                //    .IntroFragment($"Resource fragment used by observations that are used as report sections.")
-                //    .ReviewedStatus(ReviewStatus.NotReviewed)
-                //    ;
+                e.IntroDoc
+                    .Intro($"Resource fragment used by observations that are used as report sections.")
+                    .ReviewedStatus(ReviewStatus.NotReviewed)
+                    ;
 
                 e.Select("interpretation").Zero();
                 e.Select("method").Zero();
-                e.AddIncompatibleFragment(Self.ObservationLeafFragment.Value());
+                e.AddIncompatibleFragment(Self.ObservationLeafFragment.Value().Url);
             });
 
     }

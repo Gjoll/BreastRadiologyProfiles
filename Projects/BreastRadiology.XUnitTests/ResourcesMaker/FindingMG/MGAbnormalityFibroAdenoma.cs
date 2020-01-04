@@ -13,8 +13,8 @@ namespace BreastRadiology.XUnitTests
 {
     partial class ResourcesMaker : ConverterBase
     {
-        StringTaskVar MGAbnormalityFibroadenoma = new StringTaskVar(
-            (out String s) =>
+        SDTaskVar MGAbnormalityFibroadenoma = new SDTaskVar(
+            (out StructureDefinition  s) =>
             {
                 ValueSet binding = Self.FibroadenomaVS.Value();
 
@@ -28,20 +28,18 @@ namespace BreastRadiology.XUnitTests
                             .MissingObservation("a fibroadenoma abnormality")
                     //.Todo
                     )
-                    .AddFragRef(Self.ObservationNoDeviceFragment.Value())
-                    .AddFragRef(Self.ObservationNoValueFragment.Value())
-                    .AddFragRef(Self.ImagingStudyFragment.Value())
-                    .AddFragRef(Self.MGCommonTargetsFragment.Value())
-                    .AddFragRef(Self.MGShapeTargetsFragment.Value())
+                    .AddFragRef(Self.ObservationNoDeviceFragment.Value().Url)
+                    .AddFragRef(Self.ObservationNoValueFragment.Value().Url)
+                    .AddFragRef(Self.ImagingStudyFragment.Value().Url)
+                    .AddFragRef(Self.MGCommonTargetsFragment.Value().Url)
+                    .AddFragRef(Self.MGShapeTargetsFragment.Value().Url)
                     ;
 
-                s = e.SDef.Url;
+                s = e.SDef;
 
-                //$e.IntroDoc
-                //    .ObservationSection("Fibroadenoma")
-                //    .ReviewedStatus(ReviewStatus.NotReviewed)
-                //    .Refinement(binding, "Fibroadenoma")
-                //    ;
+                e.IntroDoc
+                    .ReviewedStatus(ReviewStatus.NotReviewed)
+                    ;
 
                 e.Select("value[x]").Zero();
 

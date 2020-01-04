@@ -9,8 +9,8 @@ namespace BreastRadiology.XUnitTests
 {
     partial class ResourcesMaker
     {
-        //#StringTaskVar BreastBodyLocationOptionalFragment = new StringTaskVar(
-        //    (out String s) =>
+        //#SDTaskVar BreastBodyLocationOptionalFragment = new SDTaskVar(
+        //    (out StructureDefinition  s) =>
         //    {
         //        SDefEditor e = Self.CreateFragment("BreastBodyLocationOptionalFragment",
         //                            "Breast Body Location (Optional) Fragment",

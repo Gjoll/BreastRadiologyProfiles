@@ -15,8 +15,8 @@ namespace BreastRadiology.XUnitTests
     partial class ResourcesMaker : ConverterBase
     {
         CSTaskVar OrientationCS = new CSTaskVar(
-             () =>
-                 Self.CreateCodeSystem(
+             (out CodeSystem cs) =>
+                 cs = Self.CreateCodeSystem(
                      "OrientationCS",
                      "Orientation CodeSystem",
                      "Orientation CodeSystem",
@@ -48,8 +48,8 @@ namespace BreastRadiology.XUnitTests
 
 
         VSTaskVar OrientationVS = new VSTaskVar(
-            () =>
-                Self.CreateValueSet(
+            (out ValueSet vs) =>
+                vs = Self.CreateValueSet(
                         "OrientationVS",
                         "Orientation ValueSet",
                         "Orientation ValueSet",
@@ -59,8 +59,8 @@ namespace BreastRadiology.XUnitTests
                     )
             );
 
-        //#StringTaskVar Orientation = new StringTaskVar(
-        //    (out String s) =>
+        //#SDTaskVar Orientation = new SDTaskVar(
+        //    (out StructureDefinition  s) =>
         //    {
         //        ValueSet binding = Self.OrientationVS.Value();
         //        {

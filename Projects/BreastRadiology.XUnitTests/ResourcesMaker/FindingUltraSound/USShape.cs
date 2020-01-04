@@ -31,8 +31,8 @@ namespace BreastRadiology.XUnitTests
         //    );
 
 
-        //#StringTaskVar USShape = new StringTaskVar(
-        //    (out String s) =>
+        //#SDTaskVar USShape = new SDTaskVar(
+        //    (out StructureDefinition  s) =>
         //    {
         //        ValueSet binding = Self.UltraSoundShapeVS.Value();
         //        {

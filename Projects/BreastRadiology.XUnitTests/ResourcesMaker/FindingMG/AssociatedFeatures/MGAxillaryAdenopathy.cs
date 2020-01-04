@@ -13,8 +13,8 @@ namespace BreastRadiology.XUnitTests
 {
     partial class ResourcesMaker : ConverterBase
     {
-        StringTaskVar MGAxillaryAdenopathy = new StringTaskVar(
-            (out String s) =>
+        SDTaskVar MGAxillaryAdenopathy = new SDTaskVar(
+            (out StructureDefinition  s) =>
             {
 
                 SDefEditor e = Self.CreateEditorObservationLeaf("MGAxillaryAdenopathy",
@@ -33,15 +33,14 @@ namespace BreastRadiology.XUnitTests
                             .BiradFooter()
                             //.Todo
                     )
-                    .AddFragRef(Self.ObservationNoDeviceFragment.Value())
-                    .AddFragRef(Self.ObservationNoValueFragment.Value())
-                    .AddFragRef(Self.BreastBodyLocationRequiredFragment.Value())
+                    .AddFragRef(Self.ObservationNoDeviceFragment.Value().Url)
+                    .AddFragRef(Self.ObservationNoValueFragment.Value().Url)
+                    .AddFragRef(Self.BreastBodyLocationRequiredFragment.Value().Url)
                     ;
-                s = e.SDef.Url;
-                //$e.IntroDoc
-                //    .Observation("Axillary Adenopathy")
-                //    .ReviewedStatus(ReviewStatus.NotReviewed)
-                //    ;
+                s = e.SDef;
+                e.IntroDoc
+                    .ReviewedStatus(ReviewStatus.NotReviewed)
+                    ;
             });
     }
 }

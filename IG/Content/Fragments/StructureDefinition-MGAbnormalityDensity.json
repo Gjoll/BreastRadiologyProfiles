@@ -104,6 +104,8 @@
         "id": "Observation.hasMember:consistentWith",
         "path": "Observation.hasMember",
         "sliceName": "consistentWith",
+        "short": "'Consistent With' reference",
+        "definition": "This slice references the target 'Consistent With'",
         "min": 0,
         "max": "*",
         "base": {
@@ -200,6 +202,9 @@
         "id": "Observation.component:observedCount",
         "path": "Observation.component",
         "sliceName": "observedCount",
+        "short": "ObservedCount component",
+        "definition": "This component slice contains the Observed Count value",
+        "comment": "This is one component of a group of components that comprise the observation.",
         "min": 0,
         "max": "1",
         "base": {

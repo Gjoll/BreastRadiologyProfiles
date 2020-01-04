@@ -13,8 +13,8 @@ namespace BreastRadiology.XUnitTests
 {
     partial class ResourcesMaker : ConverterBase
     {
-        StringTaskVar SectionPatientHistory = new StringTaskVar(
-            (out String s) =>
+        SDTaskVar SectionPatientHistory = new SDTaskVar(
+            (out StructureDefinition s) =>
             {
                 SDefEditor e = Self.CreateEditorObservationSection("SectionPatientHistory",
                         "Patient History",
@@ -28,15 +28,14 @@ namespace BreastRadiology.XUnitTests
                             "What resources comprise a patient history. Currently we can only reference observations - this is probably inadequate"
                             )
                     )
-                    .AddFragRef(Self.ObservationNoDeviceFragment.Value())
-                    .AddFragRef(Self.ObservationSectionFragment.Value())
+                    .AddFragRef(Self.ObservationNoDeviceFragment.Value().Url)
+                    .AddFragRef(Self.ObservationSectionFragment.Value().Url)
                     ;
-                s = e.SDef.Url;
+                s = e.SDef;
 
-                //e.IntroDoc
-                //     .ObservationSection($"Patient History")
-                //     .ReviewedStatus(ReviewStatus.NotReviewed)
-                //     ;
+                e.IntroDoc
+                     .ReviewedStatus(ReviewStatus.NotReviewed)
+                     ;
 
                 e.Select("value[x]").Zero();
                 e.Select("bodySite").Zero();

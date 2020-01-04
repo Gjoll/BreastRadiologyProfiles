@@ -16,7 +16,7 @@ namespace BreastRadiology.XUnitTests
     {
         //#CSTaskVar NMMarginCS = new CSTaskVar(
         //     () =>
-        //         Self.CreateCodeSystem(
+        //         cs = Self.CreateCodeSystem(
         //             "NMMarginCS",
         //             "NM Margin CodeSystem",
         //             "NM/Margin/CodeSystem",
@@ -38,7 +38,7 @@ namespace BreastRadiology.XUnitTests
 
         //#VSTaskVar NMMarginVS = new VSTaskVar(
         //    () =>
-        //        Self.CreateValueSet(
+        //        vs = Self.CreateValueSet(
         //                "NMMarginVS",
         //                "NM Margin ValueSet",
         //                "NM/Margin/ValueSet",
@@ -49,8 +49,8 @@ namespace BreastRadiology.XUnitTests
         //    );
 
 
-        //#StringTaskVar NMMargin = new StringTaskVar(
-        //    (out String s) =>
+        //#SDTaskVar NMMargin = new SDTaskVar(
+        //    (out StructureDefinition  s) =>
         //    {
         //        ValueSet binding = Self.NMMarginVS.Value();
 

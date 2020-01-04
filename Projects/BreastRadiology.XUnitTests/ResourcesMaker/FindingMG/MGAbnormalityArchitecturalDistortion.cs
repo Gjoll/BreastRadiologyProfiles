@@ -8,13 +8,14 @@ using FhirKhit.Tools;
 using FhirKhit.Tools.R4;
 using Hl7.Fhir.Model;
 using Hl7.Fhir.Serialization;
+using PreFhir;
 
 namespace BreastRadiology.XUnitTests
 {
     partial class ResourcesMaker : ConverterBase
     {
-        StringTaskVar MGAbnormalityArchitecturalDistortion = new StringTaskVar(
-            (out String s) =>
+        SDTaskVar MGAbnormalityArchitecturalDistortion = new SDTaskVar(
+            (out StructureDefinition  s) =>
             {
                 SDefEditor e = Self.CreateEditorObservationLeaf("MGAbnormalityArchitecturalDistortion",
                         "Mammography Architectural Distortion",
@@ -35,25 +36,21 @@ namespace BreastRadiology.XUnitTests
                             .BiradFooter()
                     //.Todo
                     )
-                    .AddFragRef(Self.ObservationNoDeviceFragment.Value())
-                    .AddFragRef(Self.ObservationNoValueFragment.Value())
-                    .AddFragRef(Self.MGCommonTargetsFragment.Value())
+                    .AddFragRef(Self.ObservationNoDeviceFragment.Value().Url)
+                    .AddFragRef(Self.ObservationNoValueFragment.Value().Url)
+                    .AddFragRef(Self.MGCommonTargetsFragment.Value().Url)
                     ;
-                s = e.SDef.Url;
+                s = e.SDef;
 
-                //$e.IntroDoc
-                //    .ObservationSection($"Architectural Distortion", "an")
-                //    .ReviewedStatus(ReviewStatus.NotReviewed)
-                //    ;
+                e.IntroDoc
+                    .ReviewedStatus(ReviewStatus.NotReviewed)
+                    ;
 
                 e.Select("value[x]").Zero();
-                ProfileTargetSlice[] targets = new ProfileTargetSlice[]
-                {
-                    new ProfileTargetSlice(Self.MGAssociatedFeatures.Value(), 0, "1"),
-                    new ProfileTargetSlice(Self.ConsistentWith.Value(), 0, "*")
-                };
-                e.SliceByUrl("hasMember", targets);
-                e.AddProfileTargets(targets);
+
+                PreFhir.ElementTreeNode sliceElementDef = e.ConfigureSliceByUrlDiscriminator("hasMember", false);
+                Self.SliceTargetReference(e, sliceElementDef, Self.MGAssociatedFeatures.Value(), 0, "1");
+                Self.SliceTargetReference(e, sliceElementDef, Self.ConsistentWith.Value(), 0, "*");
             });
     }
 }

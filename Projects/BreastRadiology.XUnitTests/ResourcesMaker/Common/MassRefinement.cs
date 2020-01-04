@@ -15,8 +15,8 @@ namespace BreastRadiology.XUnitTests
     partial class ResourcesMaker
     {
        CSTaskVar CSMassType = new CSTaskVar(
-            () =>
-                Self.CreateCodeSystem(
+            (out CodeSystem cs) =>
+                cs = Self.CreateCodeSystem(
                         "MassTypeCS",
                         "Mass Type CodeSystem",
                         "Mass/Type/CodeSystem",

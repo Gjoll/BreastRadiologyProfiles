@@ -210,8 +210,7 @@ namespace BreastRadiology.XUnitTests
             String title,
             String mapName,
             String baseDefinition,
-            String groupPath,
-            String docTemplateName)
+            String groupPath)
         {
             if (name.Contains(" ", new StringComparison()))
                 throw new Exception("Structure Def name can not contains spaces");
@@ -238,9 +237,11 @@ namespace BreastRadiology.XUnitTests
                 Value = new FhirString(groupPath)
             });
 
-            retVal.IntroDoc = new IntroDoc();
+            return retVal;
+        }
 
-            String titleArticle;
+        String Article(String title)
+        {
             switch (Char.ToLower(title[0]))
             {
                 case 'a':
@@ -248,23 +249,28 @@ namespace BreastRadiology.XUnitTests
                 case 'i':
                 case 'o':
                 case 'u':
-                    titleArticle = "an";
-                    break;
-                default:
-                    titleArticle = "a";
-                    break;
-            }
+                    return "an";
 
+                default:
+                    return "a";
+            }
+        }
+
+        SDefEditor CreateEditor(String name,
+            String title,
+            String mapName,
+            String baseDefinition,
+            String groupPath,
+            String docTemplateName)
+        {
+            title = title.Trim();
+            SDefEditor retVal = CreateEditor(name, title, mapName, baseDefinition, groupPath);
+
+            retVal.IntroDoc = new IntroDoc();
             retVal.IntroDoc.TryAddUserMacro("FocusPath", FocusMapMaker.FocusMapName(retVal.SDef.Url.LastUriPart()));
-            retVal.IntroDoc.TryAddUserMacro("TitleArticle", titleArticle);
+            retVal.IntroDoc.TryAddUserMacro("TitleArticle", Article(title));
             retVal.IntroDoc.TryAddUserMacro("Title", title);
             retVal.IntroDoc.Load(docTemplateName, Path.Combine(this.pageDir, $"StructureDefinition-{name}-intro.xml"));
-
-            //$this.IntroDoc
-            //    .Header3($"Graphical Overview", "focusGraph")
-            //    .Paragraph("This graph provides an overview of how and where {name} is referenced," +
-            //            "and what items {name} itself referenced.")
-            //    .AddSvgImage(FocusMapMaker.FocusMapName(this.SDef.Url.LastUriPart()));
 
             return retVal;
         }
@@ -278,10 +284,17 @@ namespace BreastRadiology.XUnitTests
                 title,
                 mapName,
                 baseDefinition,
-                "Fragment/{name}",
-                "Fragment");
+                "Fragment/{name}");
             retVal.SetIsFrag();
             retVal.SDef.Abstract = true;
+
+            retVal.IntroDoc = new IntroDoc();
+            retVal.IntroDoc.TryAddUserMacro("FragPath", FragmentMapMaker.FragmentMapName(retVal.SDef.Url.LastUriPart()));
+            retVal.IntroDoc.TryAddUserMacro("TitleArticle", Article(title));
+            retVal.IntroDoc.TryAddUserMacro("Title", title);
+            retVal.IntroDoc.Load("Fragment",
+                Path.Combine(pageDir, $"StructureDefinition-Fragment{name}-intro.xml"));
+
             return retVal;
         }
 
@@ -407,7 +420,6 @@ namespace BreastRadiology.XUnitTests
             {
                 if (sDefEditor.WriteFragment(out String fragmentName))
                     this.fc?.Mark(fragmentName);
-
                 if (sDefEditor.IntroDoc != null)
                 {
                     String path = sDefEditor.IntroDoc.Save();
@@ -432,6 +444,11 @@ namespace BreastRadiology.XUnitTests
             String sliceName = "observedCount";
 
             ElementTreeSlice slice = e.AppendSlice("component", sliceName, 0, "1");
+            slice.ElementDefinition
+                .SetShort($"ObservedCount component")
+                .SetDefinition(new Markdown($"This component slice contains the Observed Count value"))
+                .SetComment(new Markdown($"This is one component of a group of components that comprise the observation."))
+                ;
             {
                 ElementDefinition valueX = new ElementDefinition
                 {
@@ -458,9 +475,42 @@ namespace BreastRadiology.XUnitTests
         IntroDoc CreateIntroDocVS(ValueSet binding)
         {
             IntroDoc doc = new IntroDoc();
+            doc.TryAddUserMacro("TitleArticle", Article(binding.Title));
+            doc.TryAddUserMacro("Title", binding.Title);
+            doc.TryAddUserMacro("FocusPath", FocusMapMaker.FocusMapName(binding.Name));
             doc.Load("ValueSet",
                 Path.Combine(Self.pageDir, $"ValueSet-{binding.Name}-intro.xml"));
             return doc;
         }
+
+        void SliceTargetReference(SDefEditor e,
+            ElementTreeNode sliceElementDef,
+            StructureDefinition profile,
+            Int32 min = 0,
+            String max = "*")
+        {
+            String baseName = sliceElementDef.ElementDefinition.Path.LastPathPart();
+            e.SliceByUrlTarget(sliceElementDef, profile.Url, min, max).ElementDefinition
+                .SetShort($"'{profile.Title}' reference")
+                .SetDefinition(new Markdown($"This slice references the target '{profile.Title}'"))
+            ;
+            e.AddTargetLink(profile.Url, false);
+        }
+
+        void SliceTargetReference(SDefEditor e,
+            ElementTreeNode sliceElementDef,
+            String profile, 
+            String title,
+            Int32 min = 0,
+            String max = "*")
+        {
+            String baseName = sliceElementDef.ElementDefinition.Path.LastPathPart();
+            e.SliceByUrlTarget(sliceElementDef, profile, min, max).ElementDefinition
+                .SetShort($"'{title}' reference")
+                .SetDefinition(new Markdown($"This slice references the target '{title}'"))
+            ;
+            e.AddTargetLink(profile, false);
+        }
+
     }
 }

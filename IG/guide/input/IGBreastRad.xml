@@ -921,7 +921,7 @@
       <reference>
         <reference value="StructureDefinition/USFinding" />
       </reference>
-      <name value="UltraSound Finding" />
+      <name value="Ultra-Sound Finding" />
       <description value="Breast Radiology Ultra Sound Finding" />
       <exampleBoolean value="false" />
       <groupingId value="USResources" />
@@ -1380,7 +1380,7 @@
       <reference>
         <reference value="StructureDefinition/FragmentUSFinding" />
       </reference>
-      <name value="UltraSound Finding" />
+      <name value="Ultra-Sound Finding" />
       <description value="Fragment 'Breast Radiology Ultra Sound Finding'" />
       <exampleBoolean value="false" />
       <groupingId value="Fragments" />

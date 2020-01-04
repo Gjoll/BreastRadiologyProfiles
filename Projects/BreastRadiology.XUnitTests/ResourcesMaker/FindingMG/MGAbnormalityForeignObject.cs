@@ -15,8 +15,8 @@ namespace BreastRadiology.XUnitTests
     partial class ResourcesMaker
     {
         VSTaskVar MGAbnormalityForeignObjectVS = new VSTaskVar(
-            () =>
-                Self.CreateValueSet(
+            (out ValueSet vs) =>
+                vs = Self.CreateValueSet(
                         "MGAbnormalitiesVS",
                         "Foreign Object ValueSet",
                         "Foreign/Object/ValueSet",
@@ -26,14 +26,13 @@ namespace BreastRadiology.XUnitTests
             );
 
 
-        StringTaskVar MGAbnormalityForeignObject = new StringTaskVar(
-            (out String s) =>
+        SDTaskVar MGAbnormalityForeignObject = new SDTaskVar(
+            (out StructureDefinition  s) =>
             {
                 ValueSet binding = Self.MGAbnormalityForeignObjectVS.Value();
                 {
                     IntroDoc valueSetIntroDoc = Self.CreateIntroDocVS(binding);
                     valueSetIntroDoc
-                        .IntroValueSet(binding)
                         .ReviewedStatus(ReviewStatus.NotReviewed)
                     ;
                     String outputPath = valueSetIntroDoc.Save();
@@ -55,26 +54,21 @@ namespace BreastRadiology.XUnitTests
                                 "are wire and wire fragment codes the same."
                             )
                     )
-                    .AddFragRef(Self.ObservationNoDeviceFragment.Value())
-                    .AddFragRef(Self.ObservationCodedValueFragment.Value())
-                    .AddFragRef(Self.MGCommonTargetsFragment.Value())
+                    .AddFragRef(Self.ObservationNoDeviceFragment.Value().Url)
+                    .AddFragRef(Self.ObservationCodedValueFragment.Value().Url)
+                    .AddFragRef(Self.MGCommonTargetsFragment.Value().Url)
                     ;
 
-                s = e.SDef.Url;
+                s = e.SDef;
 
-                //$e.IntroDoc
-                //    .IntroCodedObservationLeafNode("a foreign object abnormality")
-                //    .ReviewedStatus(ReviewStatus.NotReviewed)
-                //    .Refinement(binding, "Foreign Object")
-                //    ;
+                e.IntroDoc
+                    .ReviewedStatus(ReviewStatus.NotReviewed)
+                    ;
 
                 e.Select("value[x]").Zero();
-                ProfileTargetSlice[] targets = new ProfileTargetSlice[]
-                {
-                    new ProfileTargetSlice(Self.ConsistentWith.Value(), 0, "*"),
-                };
-                e.SliceByUrl("hasMember", targets);
-                e.AddProfileTargets(targets);
+
+                PreFhir.ElementTreeNode sliceElementDef = e.ConfigureSliceByUrlDiscriminator("hasMember", false);
+                Self.SliceTargetReference(e, sliceElementDef, Self.ConsistentWith.Value(), 0, "*");
 
                 e.StartComponentSliceing();
                 e.ComponentSliceCodeableConcept("mgAbnormalityForeignObjectType",

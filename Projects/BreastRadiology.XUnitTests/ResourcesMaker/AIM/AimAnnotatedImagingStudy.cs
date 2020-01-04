@@ -13,8 +13,8 @@ namespace BreastRadiology.XUnitTests
 {
     partial class ResourcesMaker : ConverterBase
     {
-        StringTaskVar AimAnnotatedImagingStudy = new StringTaskVar(
-            (out String s) =>
+        SDTaskVar AimAnnotatedImagingStudy = new SDTaskVar(
+            (out StructureDefinition  s) =>
             {
                 SDefEditor e = Self.CreateEditor("AimAnnotatedImagingStudy",
                     "AIM Annotated Imaging Study",
@@ -26,14 +26,13 @@ namespace BreastRadiology.XUnitTests
                         new Markdown()
                             //.Todo
                     )
-                    .AddFragRef(Self.AimHeaderFragment.Value())
-                    .AddFragRef(Self.AimAnnotationPolyLineFragment.Value())
+                    .AddFragRef(Self.AimHeaderFragment.Value().Url)
+                    .AddFragRef(Self.AimAnnotationPolyLineFragment.Value().Url)
                     ;
-                s = e.SDef.Url;
-                //$e.IntroDoc
-                //    .Observation("AIM Annotated Imaging Study", "an")
-                //    .ReviewedStatus(ReviewStatus.NotReviewed)
-                //    ;
+                s = e.SDef;
+                e.IntroDoc
+                    .ReviewedStatus(ReviewStatus.NotReviewed)
+                    ;
             });
     }
 }

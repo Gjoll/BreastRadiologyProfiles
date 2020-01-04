@@ -9,8 +9,8 @@ namespace BreastRadiology.XUnitTests
 {
     partial class ResourcesMaker
     {
-        StringTaskVar ObservationFragment = new StringTaskVar(
-            (out String s) =>
+        SDTaskVar ObservationFragment = new SDTaskVar(
+            (out StructureDefinition  s) =>
             {
                 SDefEditor e = Self.CreateFragment("BreastRadObservationFragment",
                     "BreastRad Observation Fragment",
@@ -21,14 +21,14 @@ namespace BreastRadiology.XUnitTests
                             .Paragraph("Base fragment that performs common constrains used in all breast radiology observations.")
                             //.Todo
                     )
-                    .AddFragRef(Self.HeaderFragment.Value())
-                    .AddFragRef(Self.CategoryFragment.Value())
+                    .AddFragRef(Self.HeaderFragment.Value().Url)
+                    .AddFragRef(Self.CategoryFragment.Value().Url)
                 ;
-                s = e.SDef.Url;
-                //$e.IntroDoc
-                //    .IntroFragment($"Resource fragment used by all BreatRad observations.")
-                //    .ReviewedStatus(ReviewStatus.NotReviewed)
-                //    ;
+                s = e.SDef;
+                e.IntroDoc
+                    .Intro($"Resource fragment used by all BreatRad observations.")
+                    .ReviewedStatus(ReviewStatus.NotReviewed)
+                    ;
 
                 e.Select("subject").Single();
 

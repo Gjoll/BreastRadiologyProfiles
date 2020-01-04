@@ -14,8 +14,8 @@ namespace BreastRadiology.XUnitTests
 {
     partial class ResourcesMaker : ConverterBase
     {
-        //#StringTaskVar ObservedSize = new StringTaskVar(
-        //    (out String s) =>
+        //#SDTaskVar ObservedSize = new SDTaskVar(
+        //    (out StructureDefinition  s) =>
         //    {
         //        SDefEditor e = Self.CreateEditor("ObservedSize",
         //                "Size",

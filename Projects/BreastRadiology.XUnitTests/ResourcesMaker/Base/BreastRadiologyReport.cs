@@ -8,13 +8,14 @@ using FhirKhit.Tools;
 using FhirKhit.Tools.R4;
 using Hl7.Fhir.Model;
 using Hl7.Fhir.Serialization;
+using PreFhir;
 
 namespace BreastRadiology.XUnitTests
 {
     partial class ResourcesMaker : ConverterBase
     {
-        StringTaskVar BreastRadiologyReport = new StringTaskVar(
-            (out String s) =>
+        SDTaskVar BreastRadiologyReport = new SDTaskVar(
+            (out StructureDefinition  s) =>
             {
                 SDefEditor e = Self.CreateEditor("BreastRadReport",
                      "Breast Radiology Report",
@@ -31,45 +32,39 @@ namespace BreastRadiology.XUnitTests
                                    "a summary of the report findings in a human readable format")
                      //.Todo
                      )
-                     .AddFragRef(Self.HeaderFragment.Value())
-                     .AddFragRef(Self.CategoryFragment.Value())
+                     .AddFragRef(Self.HeaderFragment.Value().Url)
+                     .AddFragRef(Self.CategoryFragment.Value().Url)
                      ;
 
-                s = e.SDef.Url;
-                //$e.IntroDoc
-                //     .Paragraph(
-                //         $"This resource is the base of the Breast Radiology Report.",
-                //         $"Detailed information about the report is contained in sub sections referenced by this resource."
-                //         );
+                s = e.SDef;
+                e.IntroDoc
+                     .ReviewedStatus(ReviewStatus.NotReviewed)
+                     ;
 
                 e.Select("code").Pattern = new CodeableConcept(Loinc, "10193-1");
                 e.Select("specimen").Zero();
                 e.Select("conclusion").Single();
                 e.Select("conclusionCode").Single();
-                e.ApplyExtension("Recommendations", Self.BreastRadiologyRecommendationsExtension.Value())
+                e.ApplyExtension("Recommendations", Self.BreastRadiologyRecommendationsExtension.Value().Url)
                      .Short("Recommendations for future care")
                      .Definition("Recommendations for future care")
                      .ZeroToMany();
-                e.ApplyExtension("PriorReports", Self.BreastRadiologyPriorReportsExtension.Value())
+                e.ApplyExtension("PriorReports", Self.BreastRadiologyPriorReportsExtension.Value().Url)
                      .Short("Prior breast radiology reports")
                      .Definition("Prior breast radiology reports")
                      .ZeroToMany();
-                e.ApplyExtension("Impressions", Self.BreastRadiologyImpressionsExtension.Value())
+                e.ApplyExtension("Impressions", Self.BreastRadiologyImpressionsExtension.Value().Url)
                      .Short("Exam impressions")
                      .Definition("Exam impressions.")
                      .ZeroToMany();
-                e.ApplyExtension("PatientRisk", Self.BreastRadiologyPatientRiskExtension.Value())
+                e.ApplyExtension("PatientRisk", Self.BreastRadiologyPatientRiskExtension.Value().Url)
                      .Short("Patient Risk")
                      .Definition("Patient Risk.")
                      .ZeroToMany();
 
-                ProfileTargetSlice[] targets = new ProfileTargetSlice[]
-                {
-                        new ProfileTargetSlice(Self.SectionPatientHistory.Value(), 1, "1"),
-                        new ProfileTargetSlice(Self.SectionFindings.Value(), 1, "1"),
-                };
-                e.SliceByUrl("result", targets);
-                e.AddProfileTargets(targets);
+                ElementTreeNode sliceElementDef = e.ConfigureSliceByUrlDiscriminator("result", false);
+                Self.SliceTargetReference(e, sliceElementDef, Self.SectionPatientHistory.Value(), 1, "1");
+                Self.SliceTargetReference(e, sliceElementDef, Self.SectionFindings.Value(), 1, "1");
             });
     }
 }

@@ -10,7 +10,7 @@ namespace BreastRadiology.XUnitTests
     {
         //CSTaskVar USEchoPatternCS = new CSTaskVar(
         //     () =>
-        //         Self.CreateCodeSystem(
+        //         cs = Self.CreateCodeSystem(
         //             "USEchoPatternCS",
         //             "US Echo Pattern CodeSystem",
         //             "US Echo Pattern/CodeSystem",
@@ -106,7 +106,7 @@ namespace BreastRadiology.XUnitTests
 
         //#VSTaskVar USEchoPatternVS = new VSTaskVar(
         //    () =>
-        //        Self.CreateValueSet(
+        //        vs = Self.CreateValueSet(
         //            "USEchoPatternVS",
         //            "US Echo Pattern ValueSet",
         //            "US Echo Pattern/ValueSet",
@@ -116,8 +116,8 @@ namespace BreastRadiology.XUnitTests
         //    );
 
 
-        //#StringTaskVar USEchoPattern = new StringTaskVar(
-        //    (out String s) =>
+        //#SDTaskVar USEchoPattern = new SDTaskVar(
+        //    (out StructureDefinition  s) =>
         //    {
         //        ValueSet binding = Self.USEchoPatternVS.Value();
 

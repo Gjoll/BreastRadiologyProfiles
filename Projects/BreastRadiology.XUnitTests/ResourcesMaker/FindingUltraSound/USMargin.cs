@@ -33,8 +33,8 @@ namespace BreastRadiology.XUnitTests
         //    );
 
 
-        //#StringTaskVar USMargin = new StringTaskVar(
-        //    (out String s) =>
+        //#SDTaskVar USMargin = new SDTaskVar(
+        //    (out StructureDefinition  s) =>
         //    {
         //        ValueSet binding = Self.USMarginVS.Value();
         //        {

@@ -15,8 +15,8 @@ namespace BreastRadiology.XUnitTests
     partial class ResourcesMaker : ConverterBase
     {
         CSTaskVar BreastLocationRegionCS = new CSTaskVar(
-             () =>
-                 Self.CreateCodeSystem(
+             (out CodeSystem cs) =>
+                 cs = Self.CreateCodeSystem(
                          "BreastLocationRegionCS",
                          "Breast Location Region CodeSystem",
                          "Breast/Location/Region/CodeSystem",
@@ -59,8 +59,8 @@ namespace BreastRadiology.XUnitTests
                      );
 
         CSTaskVar BreastLocationQuadrantCS = new CSTaskVar(
-             () =>
-                 Self.CreateCodeSystem(
+             (out CodeSystem cs) =>
+                 cs = Self.CreateCodeSystem(
                          "BreastLocationQuadrantCS",
                          "Breast Location Quadrant CodeSystem",
                          "Breast/Location/Quadrant/CodeSystem",
@@ -95,8 +95,8 @@ namespace BreastRadiology.XUnitTests
                          })
              );
         CSTaskVar BreastLocationClockCS = new CSTaskVar(
-             () =>
-                 Self.CreateCodeSystem(
+             (out CodeSystem cs) =>
+                 cs = Self.CreateCodeSystem(
                          "BreastLocationClockCS",
                          "Breast Location Clock CodeSystem",
                          "Breast/Location/Clock/CodeSystem",
@@ -168,8 +168,8 @@ namespace BreastRadiology.XUnitTests
                      );
 
         CSTaskVar BreastLocationDepthCS = new CSTaskVar(
-             () =>
-                 Self.CreateCodeSystem(
+             (out CodeSystem cs) =>
+                 cs = Self.CreateCodeSystem(
                          "BreastLocationDepthCS",
                          "Breast Location Depth CodeSystem",
                          "Breast/Location/Depth/CodeSystem",
@@ -196,8 +196,8 @@ namespace BreastRadiology.XUnitTests
              );
 
         VSTaskVar BreastLocationRegionVS = new VSTaskVar(
-            () =>
-                Self.CreateValueSet(
+            (out ValueSet vs) =>
+                vs = Self.CreateValueSet(
                         "BreastLocationRegionVS",
                         "Breast Location Region ValueSet",
                         "Breast/Location/RegionValueSet",
@@ -208,8 +208,8 @@ namespace BreastRadiology.XUnitTests
             );
 
         VSTaskVar BreastLocationClockVS = new VSTaskVar(
-            () =>
-                Self.CreateValueSet(
+            (out ValueSet vs) =>
+                vs = Self.CreateValueSet(
                         "BreastLocationClockVS",
                         "Breast Location Clock ValueSet",
                         "Breast/Location/ClockValueSet",
@@ -220,8 +220,8 @@ namespace BreastRadiology.XUnitTests
             );
 
         VSTaskVar BreastLocationDepthVS = new VSTaskVar(
-            () =>
-                Self.CreateValueSet(
+            (out ValueSet vs) =>
+                vs = Self.CreateValueSet(
                         "BreastLocationDepthVS",
                         "Breast Location Depth ValueSet",
                         "Breast/Location/DepthValueSet",
@@ -232,8 +232,8 @@ namespace BreastRadiology.XUnitTests
             );
 
         VSTaskVar BreastLocationQuadrantVS = new VSTaskVar(
-            () =>
-                Self.CreateValueSet(
+            (out ValueSet vs) =>
+                vs = Self.CreateValueSet(
                         "BreastLocationQuadrantVS",
                         "Breast Location Quadrant ValueSet",
                         "Breast/Location/QuadrantValueSet",
@@ -244,8 +244,8 @@ namespace BreastRadiology.XUnitTests
             );
 
         //$ Fix: complex extension is wrong - subslices are not identified.
-        public StringTaskVar BreastBodyLocationExtension = new StringTaskVar(
-            (out String s) =>
+        public SDTaskVar BreastBodyLocationExtension = new SDTaskVar(
+            (out StructureDefinition  s) =>
             {
                 SDefEditor e;
                 ElementTreeNode extensionNode;
@@ -357,11 +357,11 @@ namespace BreastRadiology.XUnitTests
                     .Kind(StructureDefinition.StructureDefinitionKind.ComplexType)
                     .Context()
                     ;
-                s = e.SDef.Url;
+                s = e.SDef;
 
                 //breastBodyLocationMapLinks.Add(new ResourceMap.Link("extension", breastBodyLocationExtension, false));
 
-                e.AddFragRef(Self.HeaderFragment.Value());
+                e.AddFragRef(Self.HeaderFragment.Value().Url);
 
                 e.Select("url")
                     .Type("uri")
@@ -384,7 +384,6 @@ namespace BreastRadiology.XUnitTests
                     {
                         IntroDoc valueSetIntroDoc = Self.CreateIntroDocVS(binding);
                         valueSetIntroDoc
-                            .IntroValueSet(binding)
                             .ReviewedStatus(ReviewStatus.NotReviewed)
                         ;
                         String outputPath = valueSetIntroDoc.Save();
@@ -404,7 +403,6 @@ namespace BreastRadiology.XUnitTests
                     {
                         IntroDoc valueSetIntroDoc = Self.CreateIntroDocVS(binding);
                         valueSetIntroDoc
-                            .IntroValueSet(binding)
                             .ReviewedStatus(ReviewStatus.NotReviewed)
                         ;
                         String outputPath = valueSetIntroDoc.Save();
@@ -424,7 +422,6 @@ namespace BreastRadiology.XUnitTests
                     {
                         IntroDoc valueSetIntroDoc = Self.CreateIntroDocVS(binding);
                         valueSetIntroDoc
-                            .IntroValueSet(binding)
                             .ReviewedStatus(ReviewStatus.NotReviewed)
                         ;
                         String outputPath = valueSetIntroDoc.Save();
@@ -443,7 +440,6 @@ namespace BreastRadiology.XUnitTests
                     {
                         IntroDoc valueSetIntroDoc = Self.CreateIntroDocVS(binding);
                         valueSetIntroDoc
-                            .IntroValueSet(binding)
                             .ReviewedStatus(ReviewStatus.NotReviewed)
                         ;
                         String outputPath = valueSetIntroDoc.Save();
@@ -473,6 +469,9 @@ namespace BreastRadiology.XUnitTests
                 //    .IntroExtension("Breast Body Location", "define a location in the breast")
                 //    .ReviewedStatus(ReviewStatus.NotReviewed)
                 //    ;
+                e.IntroDoc
+                    .ReviewedStatus(ReviewStatus.NotReviewed)
+                    ;
             });
     }
 }

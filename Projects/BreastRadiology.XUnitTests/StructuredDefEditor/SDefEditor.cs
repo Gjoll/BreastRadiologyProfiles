@@ -195,14 +195,20 @@ namespace BreastRadiology.XUnitTests
 
             String sliceName = name.UncapFirstLetter();
 
-            ElementTreeSlice extSlice = this.AppendSlice("extension", sliceName);
-            extSlice.ElementDefinition.IsModifier = false;
-            extSlice.ElementDefinition.Type.Add(new ElementDefinition.TypeRefComponent
+            ElementTreeSlice slice = this.AppendSlice("extension", sliceName);
+            slice.ElementDefinition
+                .SetShort($"{name} extension")
+                .SetDefinition(new Markdown($"This extension slice contains the {name} extension"))
+                .SetComment(new Markdown($"This is one component of a group of components that comprise the observation."))
+                ;
+
+            slice.ElementDefinition.IsModifier = false;
+            slice.ElementDefinition.Type.Add(new ElementDefinition.TypeRefComponent
             {
                 Code = "Extension",
                 Profile = new String[] { extensionUrl }
             });
-            return extSlice.ElementDefinition;
+            return slice.ElementDefinition;
         }
 
         /// <summary>
@@ -297,14 +303,6 @@ namespace BreastRadiology.XUnitTests
             return this;
         }
 
-
-        public SDefEditor AddProfileTargets(params ProfileTargetSlice[] targets)
-        {
-            foreach (ProfileTargetSlice target in targets)
-                this.AddTargetLink(target.Profile, false);
-            return this;
-        }
-
         public SDefEditor AddLink(String linkType,
             String url,
             bool showChildren)
@@ -390,23 +388,21 @@ namespace BreastRadiology.XUnitTests
             }
         }
 
-        public void SliceByUrl(String elementName,
-            IEnumerable<ProfileTargetSlice> targets)
+        public ElementTreeSlice SliceByUrlTarget(ElementTreeNode sliceElementDef,
+            String profileUrl,
+            Int32 min,
+            String max)
         {
-            ElementTreeNode elementDef = this.ConfigureSliceByUrlDiscriminator(elementName, false);
-
-            foreach (ProfileTargetSlice target in targets)
+            String sliceName = profileUrl.LastUriPart().UncapFirstLetter();
+            ElementTreeSlice slice = sliceElementDef.CreateSlice(sliceName);
+            slice.ElementDefinition.SetCardinality(min, max);
+            slice.ElementDefinition.Type.Clear();
+            slice.ElementDefinition.Type.Add(new ElementDefinition.TypeRefComponent
             {
-                String sliceName = target.Profile.LastUriPart().UncapFirstLetter();
-                ElementTreeSlice slice = elementDef.CreateSlice(sliceName);
-                slice.ElementDefinition.SetCardinality(target.Min, target.Max);
-                slice.ElementDefinition.Type.Clear();
-                slice.ElementDefinition.Type.Add(new ElementDefinition.TypeRefComponent
-                {
-                    Code = "Reference",
-                    TargetProfile = new String[] { target.Profile }
-                });
-            }
+                Code = "Reference",
+                TargetProfile = new String[] { profileUrl }
+            });
+            return slice;
         }
 
         public void AddIncompatibleFragment(String url)
@@ -440,6 +436,12 @@ namespace BreastRadiology.XUnitTests
         {
             {
                 ElementTreeSlice slice = this.AppendSlice("component", sliceName, minCardinality, maxCardinality);
+                slice.ElementDefinition
+                    .SetShort($"{componentName} component")
+                    .SetDefinition(new Markdown($"This component slice contains the {componentName} quantity"))
+                    .SetComment(new Markdown($"This is one component of a group of components that comprise the observation."))
+                    ;
+
                 {
                     ElementDefinition componentCode = new ElementDefinition
                     {

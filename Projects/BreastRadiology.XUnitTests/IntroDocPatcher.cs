@@ -40,6 +40,13 @@ namespace BreastRadiology.XUnitTests
             FhirJsonParser parser = new FhirJsonParser();
             StructureDefinition sd = parser.Parse<StructureDefinition>(File.ReadAllText(path));
 
+            Extension isFragmentExtension = sd.GetExtension(Global.IsFragmentExtensionUrl);
+            if (isFragmentExtension != null)
+            {
+                PatchStructDefFragment(path, sd);
+                return;
+            }
+
             switch (sd.BaseDefinition)
             {
                 case ResourcesMaker.ObservationUrl:
@@ -48,8 +55,13 @@ namespace BreastRadiology.XUnitTests
             }
         }
 
-        public void PatchStructDefObservation(String path,
+        public void PatchStructDefFragment(String path,
             StructureDefinition sd)
+        {
+        }
+
+        public void PatchStructDefObservation(String path,
+        StructureDefinition sd)
         {
             const String fcn = "PatchStructDefObservation";
 
@@ -113,6 +125,7 @@ namespace BreastRadiology.XUnitTests
             List<String> hasMembersItems = CollateHasMembers();
 
             c.TryAddUserMacro("ComponentList", componentItems);
+            c.TryAddUserMacro("HasMemberList", hasMembersItems);
 
             String introName = Path.GetFileNameWithoutExtension(path);
 
@@ -131,8 +144,19 @@ namespace BreastRadiology.XUnitTests
                 return;
             }
 
+            CodeBlockNested hasMemberBlock = c.Blocks.Find("hasMember");
+            if (hasMemberBlock == null)
+            {
+                this.ConversionWarn(this.GetType().Name,
+                fcn,
+                $"Missing 'hasMember' block in '{path}' ({hasMembersItems.Count} references exist)");
+                return;
+            }
+
             if (componentItems.Count == 0)
                 componentBlock.Clear();
+            if (hasMembersItems.Count == 0)
+                hasMemberBlock.Clear();
 
             c.Save();
         }

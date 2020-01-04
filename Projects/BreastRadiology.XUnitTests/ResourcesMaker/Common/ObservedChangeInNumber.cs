@@ -15,8 +15,8 @@ namespace BreastRadiology.XUnitTests
     partial class ResourcesMaker
     {
         CSTaskVar ObservedChangeInNumberCS = new CSTaskVar(
-             () =>
-                 Self.CreateCodeSystem(
+             (out CodeSystem cs) =>
+                 cs = Self.CreateCodeSystem(
                      "ObservedChangeInNumberCS",
                      "Observed Changes CodeSystem",
                      "Observed/Change/CodeSystem",
@@ -38,8 +38,8 @@ namespace BreastRadiology.XUnitTests
                  );
 
         VSTaskVar ObservedChangeInNumberVS = new VSTaskVar(
-            () =>
-                Self.CreateValueSet(
+            (out ValueSet vs) =>
+                vs = Self.CreateValueSet(
                     "ObservedChangeInNumberVS",
                     "Observed Number Changes ValueSet",
                     "Observed/Change/ValueSet",
@@ -49,8 +49,8 @@ namespace BreastRadiology.XUnitTests
                     )
             );
 
-        //#StringTaskVar ObservedChangeInNumber = new StringTaskVar(
-        //    (out String s) =>
+        //#SDTaskVar ObservedChangeInNumber = new SDTaskVar(
+        //    (out StructureDefinition  s) =>
         //    {
         //        ValueSet binding = Self.ObservedChangeInNumberVS.Value();
 

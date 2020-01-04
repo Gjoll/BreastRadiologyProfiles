@@ -15,8 +15,8 @@ namespace BreastRadiology.XUnitTests
     partial class ResourcesMaker
     {
        CSTaskVar AbnormalityForeignObjectCS = new CSTaskVar(
-            () =>
-                Self.CreateCodeSystem(
+            (out CodeSystem vs) =>
+                vs = Self.CreateCodeSystem(
                         "ForeignObjectCS",
                         "Foreign Object CodeSystem",
                         "Foreign/Object/ CodeSystem",

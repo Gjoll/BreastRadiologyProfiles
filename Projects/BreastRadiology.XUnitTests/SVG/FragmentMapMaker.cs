@@ -42,7 +42,8 @@ namespace BreastRadiology.XUnitTests
             this.pageTemplateDir = pageTemplateDir;
         }
 
-        String FragmentMapName(ResourceMap.Node mapNode) => $"FragmentMap_{mapNode.Name}.svg";
+        public static String FragmentMapName(String name) => $"FragmentMap_{name}.svg";
+        public static String FragmentMapName(ResourceMap.Node mapNode) => $"FragmentMap_{mapNode.Name}.svg";
 
         IEnumerable<ResourceMap.Link> FragmentLinks(ResourceMap.Node n)
         {
@@ -132,24 +133,10 @@ namespace BreastRadiology.XUnitTests
             }
 
             e.Render(parentsGroup, true);
-            String svgName = this.FragmentMapName(fragmentNode.Focus);
+            String svgName = FragmentMapName(fragmentNode.Focus);
             String outputSvgPath = Path.Combine(this.graphicsDir, svgName);
             this.fc?.Mark(outputSvgPath);
             e.Save(outputSvgPath);
-
-            {
-                IntroDoc doc = new IntroDoc();
-                doc.Load("Fragment",
-                    Path.Combine(pageDir, $"StructureDefinition-Fragment{fragmentNode.Focus.Name}-intro.xml"));
-
-                //$doc
-                //    .Header3($"Graphical Overview", "focusGraph")
-                //    .Paragraph("This graph provides an overview of how and where {name} is referenced," +
-                //        "and what items {name} itself referenced.")
-                //    .AddSvgImage($"FragmentMap_{fragmentNode.Focus.Name}.svg");
-                String outputDocPath = doc.Save();
-                this.fc?.Mark(outputDocPath);
-            }
 
             this.fragmentsBlock
                 .AppendLine($"<p>")

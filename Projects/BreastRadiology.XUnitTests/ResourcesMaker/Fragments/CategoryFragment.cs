@@ -9,8 +9,8 @@ namespace BreastRadiology.XUnitTests
 {
     partial class ResourcesMaker
     {
-        StringTaskVar CategoryFragment = new StringTaskVar(
-            (out String s) =>
+        SDTaskVar CategoryFragment = new SDTaskVar(
+            (out StructureDefinition  s) =>
             {
                 SDefEditor e = Self.CreateFragment("CategoryFragment",
                         "Category Fragment",
@@ -21,12 +21,12 @@ namespace BreastRadiology.XUnitTests
                             .Paragraph("This fragment slices Observation.category and adds the required observation code value.")
                     //.Todo
                     );
-                s = e.SDef.Url;
+                s = e.SDef;
 
-                //$e.IntroDoc
-                //    .IntroFragment($"Resource fragment used to by observations to fix the Observation.category field to the 'imaging' fixed value.")
-                //    .ReviewedStatus(ReviewStatus.NotReviewed)
-                //    ;
+                e.IntroDoc
+                   .Intro($"Resource fragment used to by observations to fix the Observation.category field to the 'imaging' fixed value.")
+                   .ReviewedStatus(ReviewStatus.NotReviewed)
+                   ;
 
                 ElementTreeNode eDef = e.Get("category");
                 eDef.ElementDefinition.Card(1, eDef.ElementDefinition.Max);

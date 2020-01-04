@@ -14,8 +14,8 @@ namespace BreastRadiology.XUnitTests
     partial class ResourcesMaker : ConverterBase
     {
         CSTaskVar MGAbnormalityCystTypeCS = new CSTaskVar(
-             () =>
-                 Self.CreateCodeSystem(
+             (out CodeSystem cs) =>
+                 cs = Self.CreateCodeSystem(
                         "MGAbnormalityCystTypeCS",
                         "Mammography Cyst Type CodeSystem",
                          "MG Cyst Type/CodeSystem",
@@ -54,8 +54,8 @@ namespace BreastRadiology.XUnitTests
 
 
         VSTaskVar MGAbnormalityCystVS = new VSTaskVar(
-            () =>
-                Self.CreateValueSet(
+            (out ValueSet vs) =>
+                vs = Self.CreateValueSet(
                    "MGAbnormalityCystVS",
                    "Mammography CystAbnormalities ValueSet",
                     "MG Cyst/ValueSet",
@@ -66,15 +66,14 @@ namespace BreastRadiology.XUnitTests
             );
 
 
-        StringTaskVar MGAbnormalityCyst = new StringTaskVar(
-            (out String s) =>
+        SDTaskVar MGAbnormalityCyst = new SDTaskVar(
+            (out StructureDefinition  s) =>
             {
                 ValueSet binding = Self.MGAbnormalityCystVS.Value();
 
                 {
                     IntroDoc valueSetIntroDoc = Self.CreateIntroDocVS(binding);
                     valueSetIntroDoc
-                        .IntroValueSet(binding)
                         .ReviewedStatus(ReviewStatus.NotReviewed)
                     ;
                     String outputPath = valueSetIntroDoc.Save();
@@ -91,28 +90,22 @@ namespace BreastRadiology.XUnitTests
                             .MissingObservation("a cyst")
                     //.Todo
                     )
-                    .AddFragRef(Self.ObservationNoDeviceFragment.Value())
-                    .AddFragRef(Self.ObservationNoValueFragment.Value())
-                    .AddFragRef(Self.ImagingStudyFragment.Value())
-                    .AddFragRef(Self.MGCommonTargetsFragment.Value())
-                    .AddFragRef(Self.MGShapeTargetsFragment.Value())
+                    .AddFragRef(Self.ObservationNoDeviceFragment.Value().Url)
+                    .AddFragRef(Self.ObservationNoValueFragment.Value().Url)
+                    .AddFragRef(Self.ImagingStudyFragment.Value().Url)
+                    .AddFragRef(Self.MGCommonTargetsFragment.Value().Url)
+                    .AddFragRef(Self.MGShapeTargetsFragment.Value().Url)
                     ;
-                s = e.SDef.Url;
+                s = e.SDef;
 
-                //$e.IntroDoc
-                //    .ObservationSection("Cyst")
-                //    .ReviewedStatus(ReviewStatus.NotReviewed)
-                //    .Refinement(binding, "Cyst")
-                //    ;
+                e.IntroDoc
+                    .ReviewedStatus(ReviewStatus.NotReviewed)
+                    ;
 
                 e.Select("value[x]").Zero();
 
-                ProfileTargetSlice[] targets = new ProfileTargetSlice[]
-                {
-                    new ProfileTargetSlice(Self.ConsistentWith.Value(), 0, "*")
-                };
-                e.SliceByUrl("hasMember", targets);
-                e.AddProfileTargets(targets);
+                PreFhir.ElementTreeNode sliceElementDef = e.ConfigureSliceByUrlDiscriminator("hasMember", false);
+                Self.SliceTargetReference(e, sliceElementDef, Self.ConsistentWith.Value(), 0, "*");
 
                 e.StartComponentSliceing();
                 e.ComponentSliceCodeableConcept("mgAbnormalityCystType",

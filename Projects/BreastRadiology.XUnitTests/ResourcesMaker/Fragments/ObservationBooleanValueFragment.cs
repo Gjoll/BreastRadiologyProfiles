@@ -9,8 +9,8 @@ namespace BreastRadiology.XUnitTests
 {
     partial class ResourcesMaker
     {
-        //#StringTaskVar BooleanValueObservationFragment = new StringTaskVar(
-        //    (out String s) =>
+        //#SDTaskVar BooleanValueObservationFragment = new SDTaskVar(
+        //    (out StructureDefinition  s) =>
         //    {
         //        SDefEditor e = Self.CreateFragment("BooleanValueObservationFragment",
         //                "BooleanValue Observation Fragment",

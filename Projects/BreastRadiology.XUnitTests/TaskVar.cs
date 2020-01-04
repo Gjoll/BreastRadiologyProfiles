@@ -11,54 +11,40 @@ namespace BreastRadiology.XUnitTests
     /// </summary>
     class TaskVar<T>
     {
+        public delegate void Fcn(out T s);
+
         T value;
-        readonly Func<T> entry;
+        readonly Fcn entry;
 
         public T Value()
         {
             if (value == null)
-                this.value = entry();
+                entry(out this.value);
             return value;
         }
-        public TaskVar(Func<T> entry)
+        public TaskVar(Fcn entry)
         {
             this.entry = entry;
         }
     }
     class VSTaskVar : TaskVar<ValueSet>
     {
-        public VSTaskVar(Func<ValueSet> entry) : base(entry)
+        public VSTaskVar(Fcn entry) : base(entry)
         {
         }
     }
 
     class CSTaskVar : TaskVar<CodeSystem>
     {
-        public CSTaskVar(Func<CodeSystem> entry) : base(entry)
+        public CSTaskVar(Fcn entry) : base(entry)
         {
         }
     }
 
-    /// <summary>
-    /// Class that created a code system asynchronously, and lazy loads it into
-    /// saved var for future use.
-    /// </summary>
-    class StringTaskVar
+    class SDTaskVar : TaskVar<StructureDefinition>
     {
-        public delegate void CreateDel(out String value);
-        String value;
-        readonly CreateDel entry;
-
-        public String Value()
+        public SDTaskVar(Fcn entry) : base(entry)
         {
-            if (this.value == null)
-                entry(out this.value);
-            return this.value;
-        }
-
-        public StringTaskVar(CreateDel entry)
-        {
-            this.entry = entry;
         }
     }
 }

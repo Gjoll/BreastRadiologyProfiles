@@ -13,8 +13,8 @@ namespace BreastRadiology.XUnitTests
 {
     partial class ResourcesMaker : ConverterBase
     {
-        StringTaskVar HeaderFragment = new StringTaskVar(
-            (out String s) =>
+        SDTaskVar HeaderFragment = new SDTaskVar(
+            (out StructureDefinition  s) =>
             {
                 SDefEditor e = Self.CreateFragment("HeaderFragment",
                     "Resource",
@@ -27,12 +27,12 @@ namespace BreastRadiology.XUnitTests
                     Value = contactUrl
                 });
 
-                s = e.SDef.Url;
+                s = e.SDef;
 
-                //$e.IntroDoc
-                //    .IntroFragment($"Resource fragment used to by all resources to define common values such as Contact and Date.")
-                //    .ReviewedStatus(ReviewStatus.NotReviewed)
-                //    ;
+                e.IntroDoc
+                    .Intro($"Resource fragment used to by all resources to define common values such as Contact and Date.")
+                    .ReviewedStatus(ReviewStatus.NotReviewed)
+                    ;
 
                 e.SDef.Contact.Add(cd);
                 e.SDef.Date = Self.date.ToString();

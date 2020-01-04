@@ -9,8 +9,8 @@ namespace BreastRadiology.XUnitTests
 {
     partial class ResourcesMaker
     {
-        StringTaskVar ObservationCodedValueFragment = new StringTaskVar(
-            (out String s) =>
+        SDTaskVar ObservationCodedValueFragment = new SDTaskVar(
+            (out StructureDefinition  s) =>
             {
                 SDefEditor e = Self.CreateFragment("CodedValueObservationFragment",
                         "CodedValue Observation Fragment",
@@ -21,20 +21,20 @@ namespace BreastRadiology.XUnitTests
                             .Paragraph("This fragment constrains an observation to only contain coded values.")
                             //.Todo
                     )
-                    .AddFragRef(Self.ObservationNoComponentFragment.Value())
+                    .AddFragRef(Self.ObservationNoComponentFragment.Value().Url)
                     ;
-                s = e.SDef.Url;
+                s = e.SDef;
 
-                //$e.IntroDoc
-                //    .IntroFragment($"Resource fragment used to by all observations whose value are a CodeableConcept.")
-                //    .ReviewedStatus(ReviewStatus.NotReviewed)
-                //    ;
+                e.IntroDoc
+                    .Intro($"Resource fragment used to by all observations whose value are a CodeableConcept.")
+                    .ReviewedStatus(ReviewStatus.NotReviewed)
+                    ;
 
                 e.Select("value[x]")
                     .Type("CodeableConcept")
                     ;
 
-                e.AddIncompatibleFragment(Self.ObservationNoValueFragment.Value());
+                e.AddIncompatibleFragment(Self.ObservationNoValueFragment.Value().Url);
             });
     }
 }

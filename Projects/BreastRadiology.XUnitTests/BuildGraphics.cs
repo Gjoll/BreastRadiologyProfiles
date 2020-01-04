@@ -200,7 +200,7 @@ namespace BreastRadiology.XUnitTests
             }
 
             {
-                SENodeGroup g = AbnormalityType("UltraSound");
+                SENodeGroup g = AbnormalityType("Ultra-Sound");
             }
 
             e.Render(rootGroup, true);
