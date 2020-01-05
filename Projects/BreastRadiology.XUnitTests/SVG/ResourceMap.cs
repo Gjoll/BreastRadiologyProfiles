@@ -1,4 +1,5 @@
 ﻿using FhirKhit.Tools;
+using FhirKhit.Tools.R4;
 using Hl7.Fhir.Model;
 using Hl7.Fhir.Serialization;
 using PreFhir;
@@ -79,12 +80,31 @@ namespace BreastRadiology.XUnitTests
 
         public bool TryGetNode(String url, out ResourceMap.Node node)
         {
-            return this.nodes.TryGetValue(url, out node);
+            if (this.nodes.TryGetValue(url, out node) == true)
+                return true;
+            if (url.StartsWith("http://hl7.org/fhir/StructureDefinition"))
+            {
+                StructureDefinition fhirResource = ZipFhirSource.Source.ResolveByUri(url) as StructureDefinition;
+                if (fhirResource != null)
+                {
+                    String name = fhirResource.Url.LastUriPart();
+                    node = this.CreateMapNode(fhirResource.Url,
+                        name,
+                        new String[] {name },
+                        "StructureDefinition",
+                        "FhirResource",
+                        false);
+
+                    return true;
+                }
+
+            }
+            return false;
         }
 
         public ResourceMap.Node GetNode(String url)
         {
-            if (this.nodes.TryGetValue(url, out ResourceMap.Node node) == false)
+            if (this.TryGetNode(url, out ResourceMap.Node node) == false)
                 throw new Exception($"Map node {url} not found");
             return node;
         }
@@ -178,12 +198,12 @@ namespace BreastRadiology.XUnitTests
             String title,
             String[] mapName, 
             String structureName, 
-            String baseName, 
+            String legendName, 
             bool fragment)
         {
             if (this.nodes.TryGetValue(url, out ResourceMap.Node retVal) == true)
                 throw new Exception($"Map node {url} already exists");
-            retVal = new Node(url, title, mapName, structureName, baseName, fragment);
+            retVal = new Node(url, title, mapName, structureName, legendName, fragment);
             return retVal;
         }
     }

@@ -48,8 +48,8 @@ namespace BreastRadiology.XUnitTests
             switch (mapNode.StructureName)
             {
                 case "StructureDefinition":
-                    if (this.legendItems.TryGetValue(mapNode.BaseName, out legendItem) == false)
-                        throw new Exception($"No legend item defined for Base {mapNode.BaseName}");
+                    if (this.legendItems.TryGetValue(mapNode.LegendName, out legendItem) == false)
+                        throw new Exception($"No legend item defined for Base {mapNode.LegendName}");
                     break;
 
                 default:

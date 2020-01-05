@@ -396,33 +396,6 @@ namespace BreastRadiology.XUnitTests
 
                 {
                     ResourceMap map = new ResourceMap();
-                    map.CreateMapNode(ResourcesMaker.ClinicalImpressionUrl,
-                        "Clinical Impression",
-                        new string[] { "Clinical", "Impression" },
-                        "StructureDefinition",
-                        "ClinicalImpression",
-                        false);
-
-                    map.CreateMapNode(ResourcesMaker.MedicationRequestUrl,
-                        "Medication Request",
-                        new string[] { "Medication", "Request" },
-                        "StructureDefinition",
-                        "MedicationRequest",
-                        false);
-
-                    map.CreateMapNode(ResourcesMaker.ServiceRequestUrl,
-                        "Service Request",
-                        new string[] { "Service", "Request" },
-                        "StructureDefinition",
-                        "ServiceRequest",
-                        false);
-
-                    map.CreateMapNode(ResourcesMaker.RiskAssessmentUrl,
-                        "Risk Assessment",
-                        new string[] { "Risk", "Assessment" },
-                        "StructureDefinition",
-                        "RiskAssessment",
-                        false);
 
                     map.AddDir(this.resourcesDir, "*.json");
 
@@ -436,11 +409,7 @@ namespace BreastRadiology.XUnitTests
                         resourceMapMaker.AddLegendItem("DiagnosticReport", Color.LightGreen);
                         resourceMapMaker.AddLegendItem("Extension", Color.LightSalmon);
                         resourceMapMaker.AddLegendItem("Observation", Color.LightSkyBlue);
-                        //resourceMapMaker.AddLegendItem("MedicationRequest", Color.LightPink);
-                        resourceMapMaker.AddLegendItem("ServiceRequest", Color.LightBlue);
-                        //resourceMapMaker.AddLegendItem("RiskAssessment", Color.LightGray);
-                        //resourceMapMaker.AddLegendItem("ClinicalImpression", Color.LightGoldenrodYellow);
-                        //resourceMapMaker.AddLegendItem("ImagingStudy", Color.LightCoral);
+                        resourceMapMaker.AddLegendItem("FhirResource", Color.LightBlue);
 
                         resourceMapMaker.Create(ResourcesMaker.CreateUrl("BreastRadReport"),
                             Path.Combine(this.graphicsDir, "ProfileOverview.svg"));
@@ -452,6 +421,7 @@ namespace BreastRadiology.XUnitTests
                         resourceMapMaker.AddLegendItem("Extension", Color.LightSalmon);
                         resourceMapMaker.AddLegendItem("Observation", Color.LightSkyBlue);
                         resourceMapMaker.AddLegendItem("ImagingStudy", Color.LightCoral);
+                        resourceMapMaker.AddLegendItem("FhirResource", Color.LightBlue);
 
                         resourceMapMaker.Create(ResourcesMaker.CreateUrl("MGFinding"),
                             Path.Combine(this.graphicsDir, "MgFindings.svg"));
@@ -463,6 +433,7 @@ namespace BreastRadiology.XUnitTests
                         resourceMapMaker.AddLegendItem("Extension", Color.LightSalmon);
                         resourceMapMaker.AddLegendItem("Observation", Color.LightSkyBlue);
                         resourceMapMaker.AddLegendItem("ImagingStudy", Color.LightCoral);
+                        resourceMapMaker.AddLegendItem("FhirResource", Color.LightBlue);
 
                         resourceMapMaker.Create(ResourcesMaker.CreateUrl("MRIFinding"),
                             Path.Combine(this.graphicsDir, "MRIFindings.svg"));
@@ -474,6 +445,7 @@ namespace BreastRadiology.XUnitTests
                         resourceMapMaker.AddLegendItem("Extension", Color.LightSalmon);
                         resourceMapMaker.AddLegendItem("Observation", Color.LightSkyBlue);
                         resourceMapMaker.AddLegendItem("ImagingStudy", Color.LightCoral);
+                        resourceMapMaker.AddLegendItem("FhirResource", Color.LightBlue);
 
                         resourceMapMaker.Create(ResourcesMaker.CreateUrl("NMFinding"),
                             Path.Combine(this.graphicsDir, "NMFindings.svg"));
@@ -485,6 +457,7 @@ namespace BreastRadiology.XUnitTests
                         resourceMapMaker.AddLegendItem("Extension", Color.LightSalmon);
                         resourceMapMaker.AddLegendItem("Observation", Color.LightSkyBlue);
                         resourceMapMaker.AddLegendItem("ImagingStudy", Color.LightCoral);
+                        resourceMapMaker.AddLegendItem("FhirResource", Color.LightBlue);
 
                         resourceMapMaker.Create(ResourcesMaker.CreateUrl("USFinding"),
                             Path.Combine(this.graphicsDir, "USFindings.svg"));

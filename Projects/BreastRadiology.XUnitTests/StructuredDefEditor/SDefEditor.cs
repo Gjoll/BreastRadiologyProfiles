@@ -307,8 +307,6 @@ namespace BreastRadiology.XUnitTests
             String url,
             bool showChildren)
         {
-            if (url.StartsWith("http://hl7.org/fhir/StructureDefinition/", new StringComparison()) == true)
-                return this;
             this.SDef.AddExtension(Global.ResourceMapLinkUrl,
                 new FhirString($"{linkType}|{showChildren}|{url}"));
             return this;
