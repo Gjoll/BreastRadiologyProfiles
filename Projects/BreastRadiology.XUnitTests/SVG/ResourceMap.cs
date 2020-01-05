@@ -1,6 +1,7 @@
 ﻿using FhirKhit.Tools;
 using Hl7.Fhir.Model;
 using Hl7.Fhir.Serialization;
+using PreFhir;
 using System;
 using System.Collections.Generic;
 using System.Globalization;
@@ -11,6 +12,8 @@ namespace BreastRadiology.XUnitTests
 {
     partial class ResourceMap
     {
+        Dictionary<String, DomainResource> resources = new Dictionary<string, DomainResource>();
+
         public IEnumerable<ResourceMap.Node> Nodes => this.nodes.Values;
         Dictionary<String, ResourceMap.Node> nodes = new Dictionary<string, ResourceMap.Node>();
 
@@ -21,41 +24,57 @@ namespace BreastRadiology.XUnitTests
         {
         }
 
-        public void AddDir(String path, String searchPattern)
+        public delegate bool VerifyDel(DomainResource r);
+
+        public void AddDir(String path,
+            String searchPattern,
+            VerifyDel verifyDel = null)
         {
             foreach (String filePath in Directory.GetFiles(path, searchPattern))
-                this.AddResource(filePath);
+                this.AddResource(filePath, verifyDel);
 
             foreach (String subDir in Directory.GetDirectories(path))
-                this.AddDir(subDir, searchPattern);
+                this.AddDir(subDir, searchPattern, verifyDel);
         }
 
-        public void AddResource(String path)
+        public void AddResource(String path,
+            VerifyDel verifyDel)
         {
-            DomainResource r;
+            DomainResource domainResource;
             switch (Path.GetExtension(path).ToUpper(CultureInfo.InvariantCulture))
             {
                 case ".XML":
                     {
                         FhirXmlParser parser = new FhirXmlParser();
-                        r = parser.Parse<DomainResource>(File.ReadAllText(path));
+                        domainResource = parser.Parse<DomainResource>(File.ReadAllText(path));
                         break;
                     }
 
                 case ".JSON":
                     {
                         FhirJsonParser parser = new FhirJsonParser();
-                        r = parser.Parse<DomainResource>(File.ReadAllText(path));
+                        domainResource = parser.Parse<DomainResource>(File.ReadAllText(path));
                         break;
                     }
 
                 default:
                     throw new Exception($"Unknown extension for serialized fhir resource '{path}'");
             }
-            ResourceMap.Node node = this.CreateMapNode(r);
+            if (verifyDel != null)
+            {
+                if (verifyDel(domainResource) == false)
+                    return;
+            }
+            ResourceMap.Node node = this.CreateMapNode(domainResource);
             if (node == null)
                 return;
             this.nodes.Add(node.ResourceUrl, node);
+            this.resources.Add(domainResource.GetUrl(), domainResource);
+        }
+
+        public bool TryGetResource(String url, out DomainResource resource)
+        {
+            return this.resources.TryGetValue(url, out resource);
         }
 
         public bool TryGetNode(String url, out ResourceMap.Node node)
@@ -111,15 +130,19 @@ namespace BreastRadiology.XUnitTests
             String structureName = r.TypeName;
             String resourceUrl;
             String baseName = null;
+            String title;
+
             switch (r)
             {
                 case ValueSet vs:
                     resourceUrl = vs.Url;
+                    title = vs.Title;
                     break;
 
                 case StructureDefinition sd:
                     resourceUrl = sd.Url;
                     baseName = sd.BaseDefinition.LastUriPart();
+                    title = sd.Title;
                     break;
 
                 default:
@@ -134,6 +157,7 @@ namespace BreastRadiology.XUnitTests
             Extension isFragmentExtension = r.GetExtension(Global.IsFragmentExtensionUrl);
 
             ResourceMap.Node retVal = this.CreateMapNode(resourceUrl,
+                title,
                 mapNameArray,
                 structureName,
                 baseName,
@@ -150,11 +174,16 @@ namespace BreastRadiology.XUnitTests
         }
 
 
-        public ResourceMap.Node CreateMapNode(String url, String[] mapName, String structureName, String baseName, bool fragment)
+        public ResourceMap.Node CreateMapNode(String url,
+            String title,
+            String[] mapName, 
+            String structureName, 
+            String baseName, 
+            bool fragment)
         {
             if (this.nodes.TryGetValue(url, out ResourceMap.Node retVal) == true)
                 throw new Exception($"Map node {url} already exists");
-            retVal = new Node(url, mapName, structureName, baseName, fragment);
+            retVal = new Node(url, title, mapName, structureName, baseName, fragment);
             return retVal;
         }
     }

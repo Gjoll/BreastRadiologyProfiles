@@ -21,7 +21,18 @@ namespace BreastRadiology.XUnitTests
     [TestClass]
     public sealed class BuildFragments : IDisposable
     {
-        const String baseDir = "BreastRadiology2020FebBallot";
+        const String BaseDirName = "BreastRadiologyProfiles";
+
+        String BaseDir
+        {
+            get
+            {
+                if (baseDirFull == null)
+                    baseDirFull = DirHelper.FindParentDir(BaseDirName);
+                return baseDirFull;
+            }
+        }
+        String baseDirFull;
 
         String cacheDir;
         String contentDir;
@@ -41,9 +52,9 @@ namespace BreastRadiology.XUnitTests
 
         public BuildFragments()
         {
-            this.cacheDir = Path.Combine(DirHelper.FindParentDir(baseDir), "Cache");
-            this.contentDir = Path.Combine(DirHelper.FindParentDir(baseDir), "IG", "Content");
-            this.guideDir = Path.Combine(DirHelper.FindParentDir(baseDir), "IG", "Guide");
+            this.cacheDir = Path.Combine(BaseDir, "Cache");
+            this.contentDir = Path.Combine(BaseDir, "IG", "Content");
+            this.guideDir = Path.Combine(BaseDir, "IG", "Guide");
 
             this.graphicsDir = Path.Combine(this.contentDir, "Graphics");
             this.fragmentDir = Path.Combine(this.contentDir, "Fragments");
@@ -177,7 +188,7 @@ namespace BreastRadiology.XUnitTests
         }
         public DataSet ReadGregDS()
         {
-            String filePath = Path.Combine(DirHelper.FindParentDir(baseDir),
+            String filePath = Path.Combine(BaseDir,
                 "Documents",
                 "Breast-Reporting Value-sets GG V2.xlsx");
 
@@ -346,10 +357,15 @@ namespace BreastRadiology.XUnitTests
             Trace.WriteLine("Starting A_BuildFragments");
             try
             {
-                IntroDocPatcher docPatcher = new IntroDocPatcher(this.resourcesDir, this.pageDir);
+                ResourceMap map = new ResourceMap();
+                map.AddDir(this.resourcesDir, "*.json");
+
+                IntroDocPatcher docPatcher = new IntroDocPatcher(this.pageDir);
                 docPatcher.StatusErrors += this.StatusErrors;
                 docPatcher.StatusInfo += this.StatusInfo;
                 docPatcher.StatusWarnings += this.StatusWarnings;
+                docPatcher.AddResourceDir(this.resourcesDir);
+                docPatcher.AddFragDir(this.fragmentDir);
                 docPatcher.Patch();
                 if (docPatcher.HasErrors)
                 {
@@ -381,24 +397,28 @@ namespace BreastRadiology.XUnitTests
                 {
                     ResourceMap map = new ResourceMap();
                     map.CreateMapNode(ResourcesMaker.ClinicalImpressionUrl,
+                        "Clinical Impression",
                         new string[] { "Clinical", "Impression" },
                         "StructureDefinition",
                         "ClinicalImpression",
                         false);
 
                     map.CreateMapNode(ResourcesMaker.MedicationRequestUrl,
+                        "Medication Request",
                         new string[] { "Medication", "Request" },
                         "StructureDefinition",
                         "MedicationRequest",
                         false);
 
                     map.CreateMapNode(ResourcesMaker.ServiceRequestUrl,
+                        "Service Request",
                         new string[] { "Service", "Request" },
                         "StructureDefinition",
                         "ServiceRequest",
                         false);
 
                     map.CreateMapNode(ResourcesMaker.RiskAssessmentUrl,
+                        "Risk Assessment",
                         new string[] { "Risk", "Assessment" },
                         "StructureDefinition",
                         "RiskAssessment",

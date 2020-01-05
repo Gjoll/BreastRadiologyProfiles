@@ -7,7 +7,7 @@
     },
     {
       "url": "http://www.fragment.com/Group",
-      "valueString": "Fragment/{name}"
+      "valueString": "Fragment/HeaderFragment"
     },
     {
       "url": "http://www.fragment.com/isFragment",
@@ -17,7 +17,7 @@
   "url": "http://hl7.org/fhir/us/breast-radiology/StructureDefinition/HeaderFragment",
   "version": "0.0.2",
   "name": "HeaderFragment",
-  "title": "Resource",
+  "title": "Header Fragment",
   "status": "draft",
   "date": "2019-11-01",
   "publisher": "Hl7-Clinical Interoperability Council",

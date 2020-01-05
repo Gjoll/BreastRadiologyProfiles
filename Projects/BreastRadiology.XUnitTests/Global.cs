@@ -6,12 +6,13 @@ namespace BreastRadiology.XUnitTests
 {
     class Global
     {
-        public const String FragmentUrl = "http://www.fragment.com/";
-        public static String IsFragmentExtensionUrl = $"{FragmentUrl}isFragment";
-        public static String IncompatibleFragmentUrl = $"{FragmentUrl}incompatibleFragment";
-        public static String GroupExtensionUrl = $"{FragmentUrl}Group";
+        public const String BaseFragmentUrl = "http://www.fragment.com/";
+        public static String FragmentUrl = $"{BaseFragmentUrl}fragment";
+        public static String IsFragmentExtensionUrl = $"{BaseFragmentUrl}isFragment";
+        public static String IncompatibleFragmentUrl = $"{BaseFragmentUrl}incompatibleFragment";
+        public static String GroupExtensionUrl = $"{BaseFragmentUrl}Group";
 
-        public static String ResourceMapNameUrl = $"{FragmentUrl}mapname";
-        public static String ResourceMapLinkUrl = $"{FragmentUrl}maplink";
+        public static String ResourceMapNameUrl = $"{BaseFragmentUrl}mapname";
+        public static String ResourceMapLinkUrl = $"{BaseFragmentUrl}maplink";
     }
 }

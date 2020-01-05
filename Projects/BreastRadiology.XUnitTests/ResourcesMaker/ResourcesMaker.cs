@@ -284,7 +284,7 @@ namespace BreastRadiology.XUnitTests
                 title,
                 mapName,
                 baseDefinition,
-                "Fragment/{name}");
+                $"Fragment/{name}");
             retVal.SetIsFrag();
             retVal.SDef.Abstract = true;
 
@@ -293,7 +293,7 @@ namespace BreastRadiology.XUnitTests
             retVal.IntroDoc.TryAddUserMacro("TitleArticle", Article(title));
             retVal.IntroDoc.TryAddUserMacro("Title", title);
             retVal.IntroDoc.Load("Fragment",
-                Path.Combine(pageDir, $"StructureDefinition-Fragment{name}-intro.xml"));
+                Path.Combine(pageDir, $"StructureDefinition-{name}-intro.xml"));
 
             return retVal;
         }

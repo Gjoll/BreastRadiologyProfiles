@@ -20,7 +20,7 @@
     },
     {
       "url": "http://www.fragment.com/Group",
-      "valueString": "Fragment/{name}"
+      "valueString": "Fragment/HeaderFragment"
     }
   ],
   "url": "http://hl7.org/fhir/us/breast-radiology/ValueSet/ObservedChangeInDefinitionVS",

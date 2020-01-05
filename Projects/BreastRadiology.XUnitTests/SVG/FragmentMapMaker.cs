@@ -42,8 +42,8 @@ namespace BreastRadiology.XUnitTests
             this.pageTemplateDir = pageTemplateDir;
         }
 
-        public static String FragmentMapName(String name) => $"FragmentMap_{name}.svg";
-        public static String FragmentMapName(ResourceMap.Node mapNode) => $"FragmentMap_{mapNode.Name}.svg";
+        public static String FragmentMapName(String name) => $"Frag-{name}.svg";
+        public static String FragmentMapName(ResourceMap.Node mapNode) => $"Frag-{mapNode.Name}.svg";
 
         IEnumerable<ResourceMap.Link> FragmentLinks(ResourceMap.Node n)
         {
@@ -89,20 +89,14 @@ namespace BreastRadiology.XUnitTests
                 String title = null;
                 if (linkFlag)
                 {
-                    String fragMapName = $"{mapNode.StructureName}-Fragment{mapNode.Name}.html";
+                    String fragMapName = $"{mapNode.StructureName}-{mapNode.Name}.html";
                     hRef = $"./{fragMapName}";
-                    title = $"'Fragment {mapNode.Name}'";
+                    title = $"'{mapNode.Name}'";
                 }
                 String s = titlePart.Trim();
                 node.AddTextLine(s, hRef, title);
             }
 
-            if (mapNode.IsFragment == false)
-            {
-                String hRef = $"{mapNode.StructureName}-{mapNode.Name}.html";
-                String title = $"Resource '{mapNode.Name}'";
-                node.AddTextLine("[Resource]", hRef, title);
-            }
             return node;
         }
 

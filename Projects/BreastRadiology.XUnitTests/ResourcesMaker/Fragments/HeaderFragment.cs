@@ -17,7 +17,7 @@ namespace BreastRadiology.XUnitTests
             (out StructureDefinition  s) =>
             {
                 SDefEditor e = Self.CreateFragment("HeaderFragment",
-                    "Resource",
+                    "Header Fragment",
                     "Common",
                     ResourceUrl);
                 ContactDetail cd = new ContactDetail();

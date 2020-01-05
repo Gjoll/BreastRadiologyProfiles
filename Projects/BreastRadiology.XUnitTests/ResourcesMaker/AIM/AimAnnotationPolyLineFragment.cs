@@ -29,9 +29,6 @@ namespace BreastRadiology.XUnitTests
                     .ReviewedStatus(ReviewStatus.NotReviewed)
                     ;
                 s = e.SDef;
-                e.IntroDoc
-                    .ReviewedStatus(ReviewStatus.NotReviewed)
-                    ;
 
                 e
                     .ApplyExtension("polyLineAnnotation", Self.AimAnnotationPolyLineExtension.Value().Url, true)

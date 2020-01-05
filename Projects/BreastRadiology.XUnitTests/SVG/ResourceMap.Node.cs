@@ -12,6 +12,7 @@ namespace BreastRadiology.XUnitTests
         {
             public String Name => this.ResourceUrl.LastUriPart();
             public String StructureName { get; }
+            public String Title { get; }
 
             public String[] MapName { get; }
             public String BaseName { get; }
@@ -30,6 +31,7 @@ namespace BreastRadiology.XUnitTests
             Dictionary<String, Link> links = new Dictionary<String, Link>();
 
             public Node(String resourceUrl,
+                String title,
                 String[] mapName,
                 String structureName,
                 String baseName,
@@ -40,6 +42,7 @@ namespace BreastRadiology.XUnitTests
                 this.StructureName = structureName;
                 this.BaseName = baseName;
                 this.IsFragment = isFragment;
+                this.Title = title;
             }
 
             public IEnumerable<Link> LinksByName(params String[] linkTypes)

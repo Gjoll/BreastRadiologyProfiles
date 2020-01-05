@@ -23,7 +23,7 @@
     },
     {
       "url": "http://www.fragment.com/Group",
-      "valueString": "Fragment/{name}"
+      "valueString": "Fragment/ObservationSectionFragment"
     },
     {
       "url": "http://www.fragment.com/maplink",
@@ -42,6 +42,10 @@
       "valueString": "Observation/Fragment"
     },
     {
+      "url": "http://www.fragment.com/Group",
+      "valueString": "Fragment/BreastRadObservationFragment"
+    },
+    {
       "url": "http://www.fragment.com/maplink",
       "valueString": "fragment|True|http://hl7.org/fhir/us/breast-radiology/StructureDefinition/HeaderFragment"
     },
@@ -54,12 +58,24 @@
       "valueString": "Common"
     },
     {
+      "url": "http://www.fragment.com/Group",
+      "valueString": "Fragment/HeaderFragment"
+    },
+    {
       "url": "http://www.fragment.com/mapname",
       "valueString": "Category/Fragment"
     },
     {
+      "url": "http://www.fragment.com/Group",
+      "valueString": "Fragment/CategoryFragment"
+    },
+    {
       "url": "http://www.fragment.com/mapname",
       "valueString": "NoValue/Observation/Fragment"
+    },
+    {
+      "url": "http://www.fragment.com/Group",
+      "valueString": "Fragment/BreastRadObservationNoValueFragment"
     },
     {
       "url": "http://www.fragment.com/maplink",
@@ -68,6 +84,10 @@
     {
       "url": "http://www.fragment.com/mapname",
       "valueString": "Observation/No Component/Fragment"
+    },
+    {
+      "url": "http://www.fragment.com/Group",
+      "valueString": "Fragment/BreastRadObservationNoComponentFragment"
     }
   ],
   "url": "http://hl7.org/fhir/us/breast-radiology/StructureDefinition/MRIFinding",

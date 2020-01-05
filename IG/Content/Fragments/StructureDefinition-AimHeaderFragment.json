@@ -7,7 +7,7 @@
     },
     {
       "url": "http://www.fragment.com/Group",
-      "valueString": "Fragment/{name}"
+      "valueString": "Fragment/AimHeaderFragment"
     },
     {
       "url": "http://www.fragment.com/isFragment",
@@ -17,7 +17,7 @@
   "url": "http://hl7.org/fhir/us/breast-radiology/StructureDefinition/AimHeaderFragment",
   "version": "0.0.2",
   "name": "AimHeaderFragment",
-  "title": "Resource",
+  "title": "Aim Header Fragment",
   "status": "draft",
   "date": "2019-11-01",
   "publisher": "Hl7-Clinical Interoperability Council",

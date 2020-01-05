@@ -104,7 +104,7 @@ namespace BreastRadiology.XUnitTests
         {
             foreach (Extension e in r.Extension.ToArray())
             {
-                if (e.Url.StartsWith(Global.FragmentUrl, new StringComparison()))
+                if (e.Url.StartsWith(Global.BaseFragmentUrl, new StringComparison()))
                     r.Extension.Remove(e);
             }
         }
@@ -204,10 +204,8 @@ namespace BreastRadiology.XUnitTests
 
                 if (structureDefinition.Snapshot == null)
                     SnapshotCreator.Create(structureDefinition);
-                Extension isFragmentExtension = structureDefinition.GetExtension(Global.IsFragmentExtensionUrl);
-                if (isFragmentExtension != null)
-                    structureDefinition.RemoveExtension(Global.IsFragmentExtensionUrl);
 
+                Extension isFragmentExtension = structureDefinition.GetExtension(Global.IsFragmentExtensionUrl);
                 // Dont add fragments to IG.
                 if (isFragmentExtension == null)
                 {
@@ -249,10 +247,13 @@ namespace BreastRadiology.XUnitTests
                 switch (resource)
                 {
                     case StructureDefinition structureDefinition:
-                        Int32 index = structureDefinition.Url.LastIndexOf('/');
-                        structureDefinition.Url = structureDefinition.Url.Insert(index + 1, "Fragment");
-                        structureDefinition.Name = $"Fragment{structureDefinition.Name}";
-                        structureDefinitions.Add(structureDefinition);
+                        Extension isFragmentExtension = structureDefinition.GetExtension(Global.IsFragmentExtensionUrl);
+                        // Onlu add fragments to IG.
+                        if (isFragmentExtension != null)
+                        {
+                            Int32 index = structureDefinition.Url.LastIndexOf('/');
+                            structureDefinitions.Add(structureDefinition);
+                        }
                         break;
                 }
             }

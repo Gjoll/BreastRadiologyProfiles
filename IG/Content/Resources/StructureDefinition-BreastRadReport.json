@@ -55,11 +55,15 @@
     },
     {
       "url": "http://www.fragment.com/Group",
-      "valueString": "Fragment/{name}"
+      "valueString": "Fragment/HeaderFragment"
     },
     {
       "url": "http://www.fragment.com/mapname",
       "valueString": "Category/Fragment"
+    },
+    {
+      "url": "http://www.fragment.com/Group",
+      "valueString": "Fragment/CategoryFragment"
     }
   ],
   "url": "http://hl7.org/fhir/us/breast-radiology/StructureDefinition/BreastRadReport",
