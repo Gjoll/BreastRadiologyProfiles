@@ -12,26 +12,26 @@
 <g>
 <g transform="translate(7.5 7.5)">
 <rect fill="LightCyan" stroke="Black" stroke-width="1.875" x="0" y="0" width="78" height="52.5" rx="3.75" ry="3.75" />
-<a href="./StructureDefinition-AimHeaderFragment.html" target="_blank">
+<a href="./StructureDefinition-AimHeaderFragment.html" target="_top">
 <title>'AimHeaderFragment'</title>
 <text x="39" y="22.5" text-anchor="middle">Common</text>
 </a>
-<a href="./StructureDefinition-AimHeaderFragment.html" target="_blank">
+<a href="./StructureDefinition-AimHeaderFragment.html" target="_top">
 <title>'AimHeaderFragment'</title>
 <text x="39" y="41.25" text-anchor="middle">Header</text>
 </a>
 </g>
 <g transform="translate(7.5 67.5)">
 <rect fill="LightCyan" stroke="Black" stroke-width="1.875" x="0" y="0" width="120" height="71.25" rx="3.75" ry="3.75" />
-<a href="./StructureDefinition-AimAnnotationPolyLineFragment.html" target="_blank">
+<a href="./StructureDefinition-AimAnnotationPolyLineFragment.html" target="_top">
 <title>'AimAnnotationPolyLineFragment'</title>
 <text x="60" y="22.5" text-anchor="middle">Annotation</text>
 </a>
-<a href="./StructureDefinition-AimAnnotationPolyLineFragment.html" target="_blank">
+<a href="./StructureDefinition-AimAnnotationPolyLineFragment.html" target="_top">
 <title>'AimAnnotationPolyLineFragment'</title>
 <text x="60" y="41.25" text-anchor="middle">PolyLine</text>
 </a>
-<a href="./StructureDefinition-AimAnnotationPolyLineFragment.html" target="_blank">
+<a href="./StructureDefinition-AimAnnotationPolyLineFragment.html" target="_top">
 <title>'AimAnnotationPolyLineFragment'</title>
 <text x="60" y="60" text-anchor="middle">Fragment</text>
 </a>

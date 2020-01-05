@@ -245,7 +245,7 @@ namespace BreastRadiology.XUnitTests
             if (node.HRef != null)
             {
                 SvgHyperLink l = this.doc.AddHyperLink(g);
-                l.Target = "_blank";
+                l.Target = "_top";
                 l.HRef = node.HRef.ToString();
                 if (node.Title != null)
                 {
@@ -278,7 +278,7 @@ namespace BreastRadiology.XUnitTests
                 {
                     SvgHyperLink l = this.doc.AddHyperLink(g);
                     l.HRef = line.HRef;
-                    l.Target = "_blank";
+                    l.Target = "_top";
                     if (line.Title != null)
                     {
                         SvgTitle title = this.doc.AddTitle(l);

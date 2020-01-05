@@ -12,15 +12,15 @@
 <g>
 <g transform="translate(7.5 7.5)">
 <rect fill="LightCyan" stroke="Black" stroke-width="1.875" x="0" y="0" width="141" height="71.25" rx="3.75" ry="3.75" />
-<a href="./StructureDefinition-BreastRadObservationNoComponentFragment.html" target="_blank">
+<a href="./StructureDefinition-BreastRadObservationNoComponentFragment.html" target="_top">
 <title>'BreastRadObservationNoComponentFragment'</title>
 <text x="70.5" y="22.5" text-anchor="middle">Observation</text>
 </a>
-<a href="./StructureDefinition-BreastRadObservationNoComponentFragment.html" target="_blank">
+<a href="./StructureDefinition-BreastRadObservationNoComponentFragment.html" target="_top">
 <title>'BreastRadObservationNoComponentFragment'</title>
 <text x="70.5" y="41.25" text-anchor="middle">No Component</text>
 </a>
-<a href="./StructureDefinition-BreastRadObservationNoComponentFragment.html" target="_blank">
+<a href="./StructureDefinition-BreastRadObservationNoComponentFragment.html" target="_top">
 <title>'BreastRadObservationNoComponentFragment'</title>
 <text x="70.5" y="60" text-anchor="middle">Fragment</text>
 </a>
@@ -47,35 +47,35 @@
 <g>
 <g transform="translate(398.99997 7.5)">
 <rect fill="LightBlue" stroke="Black" stroke-width="1.875" x="0" y="0" width="141" height="33.75" rx="3.75" ry="3.75" />
-<a href="./StructureDefinition-MGAbnormalityAsymmetry.html" target="_blank">
+<a href="./StructureDefinition-MGAbnormalityAsymmetry.html" target="_top">
 <title>'MGAbnormalityAsymmetry'</title>
 <text x="70.5" y="22.5" text-anchor="middle">MG Asymmetry</text>
 </a>
 </g>
 <g transform="translate(398.99997 48.75)">
 <rect fill="LightBlue" stroke="Black" stroke-width="1.875" x="0" y="0" width="162" height="33.75" rx="3.75" ry="3.75" />
-<a href="./StructureDefinition-MGAbnormalityForeignObject.html" target="_blank">
+<a href="./StructureDefinition-MGAbnormalityForeignObject.html" target="_top">
 <title>'MGAbnormalityForeignObject'</title>
 <text x="81" y="22.5" text-anchor="middle">Foreign Object</text>
 </a>
 </g>
 <g transform="translate(398.99997 90)">
 <rect fill="LightBlue" stroke="Black" stroke-width="1.875" x="0" y="0" width="151.49998" height="33.75" rx="3.75" ry="3.75" />
-<a href="./StructureDefinition-MGAbnormalityLymphNode.html" target="_blank">
+<a href="./StructureDefinition-MGAbnormalityLymphNode.html" target="_top">
 <title>'MGAbnormalityLymphNode'</title>
 <text x="75.74999" y="22.5" text-anchor="middle">MG Lymph Node</text>
 </a>
 </g>
 <g transform="translate(398.99997 131.25)">
 <rect fill="LightBlue" stroke="Black" stroke-width="1.875" x="0" y="0" width="193.5" height="33.75" rx="3.75" ry="3.75" />
-<a href="./StructureDefinition-MGBreastDensity.html" target="_blank">
+<a href="./StructureDefinition-MGBreastDensity.html" target="_top">
 <title>'MGBreastDensity'</title>
 <text x="96.75" y="22.5" text-anchor="middle">MG Breast Density</text>
 </a>
 </g>
 <g transform="translate(398.99997 172.5)">
 <rect fill="LightBlue" stroke="Black" stroke-width="1.875" x="0" y="0" width="88.5" height="33.75" rx="3.75" ry="3.75" />
-<a href="./StructureDefinition-MGMass.html" target="_blank">
+<a href="./StructureDefinition-MGMass.html" target="_top">
 <title>'MGMass'</title>
 <text x="44.25" y="22.5" text-anchor="middle">MG Mass</text>
 </a>
