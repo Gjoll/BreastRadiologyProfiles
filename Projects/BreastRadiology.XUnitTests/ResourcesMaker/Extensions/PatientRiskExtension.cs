@@ -19,7 +19,7 @@ namespace BreastRadiology.XUnitTests
             {
                 SDefEditor e = Self.CreateEditor("PatientRiskExtension",
                     "PatientRisk Extension",
-                    "PatientRisk/Extension",
+                    "Patient Risk/Extension",
                     ExtensionUrl,
                      $"{Group_ExtensionResources}/PatientRisk",
                      "PatientRiskExtension")

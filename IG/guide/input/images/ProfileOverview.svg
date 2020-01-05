@@ -154,22 +154,22 @@
 </g>
 <g>
 <g transform="translate(176.99998 307.5)">
-<rect fill="LightSalmon" stroke="Black" stroke-width="1.875" x="0" y="0" width="130.5" height="52.5" rx="3.75" ry="3.75" />
+<rect fill="LightSalmon" stroke="Black" stroke-width="1.875" x="0" y="0" width="141" height="52.5" rx="3.75" ry="3.75" />
 <a href="./StructureDefinition-PatientRiskExtension.html" target="_top">
 <title>PatientRiskExtension</title>
-<text x="65.25" y="22.5" text-anchor="middle">PatientRisk</text>
+<text x="70.5" y="22.5" text-anchor="middle">Patient Risk</text>
 </a>
 <a href="./StructureDefinition-PatientRiskExtension.html" target="_top">
 <title>PatientRiskExtension</title>
-<text x="65.25" y="41.25" text-anchor="middle">Extension</text>
+<text x="70.5" y="41.25" text-anchor="middle">Extension</text>
 </a>
 </g>
-<line stroke="Black" stroke-width="1.875" marker-end="url(#arrowEnd)" x1="337.5" y1="324.375" x2="367.5" y2="324.375" />
-<line stroke="Black" stroke-width="1.875" marker-start="url(#arrowStart)" x1="307.5" y1="333.75" x2="337.5" y2="333.75" />
-<line stroke="Black" stroke-width="1.875" x1="337.5" y1="324.375" x2="337.5" y2="333.75" />
+<line stroke="Black" stroke-width="1.875" marker-end="url(#arrowEnd)" x1="347.99997" y1="324.375" x2="377.99997" y2="324.375" />
+<line stroke="Black" stroke-width="1.875" marker-start="url(#arrowStart)" x1="317.99997" y1="333.75" x2="347.99997" y2="333.75" />
+<line stroke="Black" stroke-width="1.875" x1="347.99997" y1="324.375" x2="347.99997" y2="333.75" />
 </g>
 <g>
-<g transform="translate(367.5 307.5)">
+<g transform="translate(377.99997 307.5)">
 <rect fill="LightBlue" stroke="Black" stroke-width="1.875" x="0" y="0" width="162" height="33.75" rx="3.75" ry="3.75" />
 <a href="./StructureDefinition-RiskAssessment.html" target="_top">
 <title>RiskAssessment</title>

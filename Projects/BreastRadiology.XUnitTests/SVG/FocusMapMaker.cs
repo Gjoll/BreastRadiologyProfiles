@@ -162,7 +162,7 @@ namespace BreastRadiology.XUnitTests
                                     String s = mapNode.Name.Trim();
                                     node.AddTextLine(s, hRef, title);
                                 }
-                                extensionChildren.Add(node);
+                                componentChildren.Add(node);
                             }
                             break;
 
