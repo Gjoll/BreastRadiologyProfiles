@@ -19,7 +19,6 @@ namespace BreastRadiology.XUnitTests
                     .Description("Fragment that constrains Observations to have not device data.",
                         new Markdown()
                             .Paragraph("Fragment for all observations that have no device.")
-                            //.Todo
                     )
                     .AddFragRef(Self.ObservationFragment.Value().Url)
                 ;

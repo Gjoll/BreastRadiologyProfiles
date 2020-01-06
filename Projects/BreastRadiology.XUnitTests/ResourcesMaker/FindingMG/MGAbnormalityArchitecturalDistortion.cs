@@ -34,7 +34,6 @@ namespace BreastRadiology.XUnitTests
                             .BlockQuote("As an ASSOCIATED FEATURE, architectural distortion may be used in conjunction with another")
                             .BlockQuote("finding to indicate that the parenchyma is distorted or retracted adjacent to the FINDING")
                             .BiradFooter()
-                    //.Todo
                     )
                     .AddFragRef(Self.ObservationNoDeviceFragment.Value().Url)
                     .AddFragRef(Self.ObservationNoValueFragment.Value().Url)

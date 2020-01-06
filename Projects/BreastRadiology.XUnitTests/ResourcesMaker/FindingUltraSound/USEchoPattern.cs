@@ -145,7 +145,6 @@ namespace BreastRadiology.XUnitTests
         //                    .BlockQuote("contributes with other feature categories to the assessment of a breast lesion, echogenicity")
         //                    .BlockQuote("alone has little specificity.")
         //                    .BiradFooter()
-        //                    //.Todo
         //                )
         //            .AddFragRef(Self.ObservationNoDeviceFragment.Value())
         //            .AddFragRef(Self.ObservationCodedValueFragment.Value())

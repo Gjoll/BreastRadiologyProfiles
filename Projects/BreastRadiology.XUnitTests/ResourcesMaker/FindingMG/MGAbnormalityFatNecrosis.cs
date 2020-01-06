@@ -24,7 +24,6 @@ namespace BreastRadiology.XUnitTests
                         new Markdown()
                             .Paragraph("[PR]")
                             .MissingObservation("a fat necrosis abnormality")
-                    //.Todo
                     )
                     .AddFragRef(Self.ObservationNoDeviceFragment.Value().Url)
                     .AddFragRef(Self.ObservationNoValueFragment.Value().Url)

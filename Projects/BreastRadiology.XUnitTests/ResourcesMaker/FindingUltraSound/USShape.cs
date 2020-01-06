@@ -53,7 +53,6 @@ namespace BreastRadiology.XUnitTests
         //            .Description("Breast Radiology Shape Observation",
         //                new Markdown()
         //                    .MissingObservation("a shape")
-        //                    //.Todo
         //            )
         //            .AddFragRef(Self.ObservationNoDeviceFragment.Value())
         //            .AddFragRef(Self.ObservationCodedValueFragment.Value())

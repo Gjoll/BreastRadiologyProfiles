@@ -14,13 +14,6 @@ using PreFhir;
 
 namespace BreastRadiology.XUnitTests
 {
-    /*
-     $ todo. Add negation items (mass, calc, etc).
-     $ todo. Add condition that if item is not present, then body site is empty.
-     $ todo. Add condition that if body site is empty, then breast body site extension is
-             also empty and vice versa.
-     */
-
     partial class ResourcesMaker : ConverterBase
     {
         class Definition
@@ -186,11 +179,13 @@ namespace BreastRadiology.XUnitTests
             String groupPath)
         {
             return CreateEditor(name,
-                title,
-                mapName,
-                ObservationUrl,
-                groupPath,
-                "ObservationLeaf");
+                    title,
+                    mapName,
+                    ObservationUrl,
+                    groupPath,
+                    "ObservationLeaf")
+                .AddFragRef(Self.ObservationLeafFragment.Value().Url)
+                ;
         }
 
         SDefEditor CreateEditorObservationSection(String name,
@@ -199,11 +194,13 @@ namespace BreastRadiology.XUnitTests
             String groupPath)
         {
             return CreateEditor(name,
-                title,
-                mapName,
-                ObservationUrl,
-                groupPath,
-                "ObservationSection");
+                    title,
+                    mapName,
+                    ObservationUrl,
+                    groupPath,
+                    "ObservationSection")
+                .AddFragRef(Self.ObservationSectionFragment.Value().Url)
+                ;
         }
 
         SDefEditor CreateEditor(String name,

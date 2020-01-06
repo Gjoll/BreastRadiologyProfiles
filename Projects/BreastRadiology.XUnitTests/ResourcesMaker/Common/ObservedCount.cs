@@ -26,10 +26,6 @@ namespace BreastRadiology.XUnitTests
         //                new Markdown()
         //                    .Paragraph("This observations describes the number of discrete items in an observed item.")
         //                    .MissingObservation("an objects Count")
-        //                    .Todo(
-        //                        "Should value[x] be SimpleQuantity.",
-        //                        "is 'tot' correct ucum units for count?"
-        //                    )
         //                )
         //            .AddFragRef(Self.ObservationNoDeviceFragment.Value())
         //            .AddFragRef(Self.ObservationLeafFragment.Value())

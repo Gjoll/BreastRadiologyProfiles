@@ -24,7 +24,6 @@ namespace BreastRadiology.XUnitTests
                     new Markdown()
                         .Paragraph("Shape Common Targets Fragment")
                         .Paragraph("Adds Orientation, Shape, Margin, and Density targets")
-                //.Todo
                 )
                 .AddFragRef(Self.BreastBodyLocationRequiredFragment.Value().Url)
                 ;

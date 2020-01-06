@@ -74,7 +74,6 @@ namespace BreastRadiology.XUnitTests
         //            .Description("Breast Radiology Changes in Prominance Observation",
         //                new Markdown()
         //                    .MissingObservation("an observed change in Prominance")
-        //                    //.Todo
         //            )
         //            .AddFragRef(Self.ObservationNoDeviceFragment.Value())
         //            .AddFragRef(Self.ObservationCodedValueFragment.Value())

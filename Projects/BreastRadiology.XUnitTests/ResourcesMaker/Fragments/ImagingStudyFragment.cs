@@ -19,7 +19,6 @@ namespace BreastRadiology.XUnitTests
                     .Description("Adds references to imaging studies.",
                         new Markdown()
                             .Paragraph("Fragment that adds derivedFrom references to imaging studies, including AIM annotated imaaging study.")
-                     //.Todo
                      )
                     ;
                 s = e.SDef;

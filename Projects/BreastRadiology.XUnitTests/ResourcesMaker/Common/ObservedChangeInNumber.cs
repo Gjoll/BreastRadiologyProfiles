@@ -72,7 +72,6 @@ namespace BreastRadiology.XUnitTests
         //            .Description("Breast Radiology Changes in Number Observation",
         //                new Markdown()
         //                    .MissingObservation("an observed change in number")
-        //                    .Todo(
         //                    "Is this change in count, or number of calcifications?"
         //                    )
         //            )

@@ -71,9 +71,6 @@ namespace BreastRadiology.XUnitTests
                     .Description("Breat Radiology Mammography Duct Observation",
                         new Markdown()
                             .MissingObservation("a duct abnormality")
-                            .Todo(
-                                "make dilated the default value."
-                            )
                     )
                     .AddFragRef(Self.ObservationNoDeviceFragment.Value().Url)
                     .AddFragRef(Self.MGCommonTargetsFragment.Value().Url)

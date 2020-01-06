@@ -19,7 +19,6 @@ namespace BreastRadiology.XUnitTests
                     .Description("Fragment that constrains Observations to be sections.",
                         new Markdown()
                             .Paragraph("this fragment constrains a generic observation to be a observation section.")
-                            //.Todo
                      )
                     .AddFragRef(Self.ObservationFragment.Value().Url)
                     .AddFragRef(Self.ObservationNoValueFragment.Value().Url)

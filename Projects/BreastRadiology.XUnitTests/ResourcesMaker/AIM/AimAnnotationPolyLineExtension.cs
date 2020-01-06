@@ -27,7 +27,6 @@ namespace BreastRadiology.XUnitTests
                         new Markdown()
                             .Paragraph("this extension defines the fields that are used to describe a" +
                                        "polygon line annotation of an image")
-                            //.Todo
                     )
                     .Kind(StructureDefinition.StructureDefinitionKind.ComplexType)
                     .Context()

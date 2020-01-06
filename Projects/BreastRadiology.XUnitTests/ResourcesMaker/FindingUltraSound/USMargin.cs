@@ -58,10 +58,6 @@ namespace BreastRadiology.XUnitTests
         //                    .BiradHeader()
         //                    .BlockQuote("The margin is the edge or border of the lesion. The descriptors of margin, like the descriptors of shape, are important predictors of whether a mass is benign or malignant. ")
         //                    .BiradFooter()
-        //                    .Todo(
-        //                        "Is Irregular incorrect? Note from ACR B.3.A. 'Irregular' is not used to group these marginal attributes because irregular describes the shape of a mass.",
-        //                        "Is non-circumscribed a stand along value, or implied by selection fo on or more non-circumscribed values? "
-        //                    )
         //            )
         //            .AddFragRef(Self.ObservationNoDeviceFragment.Value())
         //            .AddFragRef(Self.ObservationCodedValueFragment.Value())

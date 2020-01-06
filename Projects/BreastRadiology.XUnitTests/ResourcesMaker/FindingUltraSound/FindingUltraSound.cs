@@ -23,34 +23,7 @@ namespace BreastRadiology.XUnitTests
                         $"{Group_USResources}")
                     .Description("Breast Radiology Ultra Sound Finding",
                         new Markdown()
-                            .Todo(
-                                "Device Metrics detailing the observation devices parameters (transducer freq, etc).",
-                                "BiRads US calcifications are only listed as " +
-                                "- calc in a mass " +
-                                "- calc outside a mass " +
-                                "- intraductal calcification. " +
-                                "Can we use the Mammo calcification structure instead?",
-                                "US Special cases (page 155 E.). How to handle?",
-                                "Associated features: " +
-                                $"{Group_MGResources}/Ultra-Sound/MRI associated fetures are similar. Can we merge?" +
-                                "us has" +
-                                "- Edema" +
-                                "- Vascularity" +
-                                "- Elasticity Assessment" +
-                                "Mammo has" +
-                                "- Trabecular thickening" +
-                                "- Axillary adenopathy" +
-                                "mri has" +
-                                "- Skin INvasion" +
-                                "- Nipple Invasion",
-                                $"{Group_MGResources}/Ultra-Sound/MRI Mass Margin are different." +
-                                "Not Circumscribed differently." +
-                                "Can they be aligned?",
-                                $"{Group_MGResources}/Ultra-Sound/MRI Breast Density similar but not same." +
-                                "Can they be aligned?"
-                            )
                     )
-                    .AddFragRef(Self.ObservationSectionFragment.Value().Url)
                     ;
                 s = e.SDef;
 

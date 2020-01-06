@@ -22,11 +22,7 @@ namespace BreastRadiology.XUnitTests
                         $"{Group_NMResources}")
                     .Description("Breast Radiology NMgraphy Finding",
                         new Markdown()
-                            .Todo(
-                                "Device Metrics detailing the observation devices parameters (transducer freq, etc)."
-                                )
                         )
-                    .AddFragRef(Self.ObservationSectionFragment.Value().Url)
                     ;
                 s = e.SDef;
 

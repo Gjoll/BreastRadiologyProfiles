@@ -25,7 +25,6 @@ namespace BreastRadiology.XUnitTests
         //                new Markdown()
         //                    .Paragraph("[PR]")
         //                    .MissingObservation("a cyst")
-        //            //.Todo
         //            )
         //            .AddFragRef(Self.ObservationNoDeviceFragment.Value())
         //            .AddFragRef(Self.BreastBodyLocationRequiredFragment.Value())

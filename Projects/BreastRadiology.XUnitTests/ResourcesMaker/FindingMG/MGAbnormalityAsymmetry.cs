@@ -120,7 +120,6 @@ namespace BreastRadiology.XUnitTests
                             .BlockQuote("ally are seen to be interspersed with fat, whereas a radiodense mass displays completely or partially")
                             .BlockQuote("convex-outward borders and appears to be denser in the center than at the periphery.")
                             .BiradFooter()
-                    //.Todo
                     )
                     .AddFragRef(Self.ObservationNoDeviceFragment.Value().Url)
                     .AddFragRef(Self.ObservationCodedValueFragment.Value().Url)

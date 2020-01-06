@@ -27,9 +27,6 @@ namespace BreastRadiology.XUnitTests
         //                    .Paragraph("This observations describes the size of an observed item.",
         //                               "The size can be one (length), two (area) or three (volume) dimensions.")
         //                    .MissingObservation("an objects size")
-        //                    .Todo(
-        //                    "Should value[x] be SimpleQuantity."
-        //                    )
         //             )
         //            .AddFragRef(Self.ObservationNoDeviceFragment.Value())
         //            .AddFragRef(Self.ObservationLeafFragment.Value())

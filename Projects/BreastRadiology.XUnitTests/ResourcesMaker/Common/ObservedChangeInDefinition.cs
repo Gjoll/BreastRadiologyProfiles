@@ -72,7 +72,6 @@ namespace BreastRadiology.XUnitTests
         //            .Description("Breast Radiology Changes in Definition Observation",
         //                new Markdown()
         //                    .MissingObservation("an observed change in definition")
-        //                    //.Todo
         //            )
         //            .AddFragRef(Self.ObservationNoDeviceFragment.Value())
         //            .AddFragRef(Self.ObservationCodedValueFragment.Value())

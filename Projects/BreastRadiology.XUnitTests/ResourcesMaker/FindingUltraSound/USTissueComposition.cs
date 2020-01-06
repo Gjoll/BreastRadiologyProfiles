@@ -97,9 +97,6 @@ namespace BreastRadiology.XUnitTests
         //                    .BlockQuote("detection of small masses, heterogeneous background echotexture of the breast may affect the")
         //                    .BlockQuote("sensitivity of breast sonograms for lesion detection.")
         //                    .BiradFooter()
-        //                    .Todo(
-        //                        "can this and mammo breast density be the same?"
-        //                    )
         //            )
         //            .AddFragRef(Self.ObservationNoDeviceFragment.Value())
         //            .AddFragRef(Self.ObservationCodedValueFragment.Value())

@@ -25,9 +25,6 @@ namespace BreastRadiology.XUnitTests
                         new Markdown()
                             .Paragraph("Used with masses, asymmetries, or calcifications, or may stand alone as " +
                                         "Features when no other abnormality is present.")
-                            .Todo(
-                                "check Cardinality of the following Observation.hasMember targets?"
-                            )
                      )
                     .AddFragRef(Self.ObservationNoDeviceFragment.Value().Url)
                     .AddFragRef(Self.ObservationNoValueFragment.Value().Url)

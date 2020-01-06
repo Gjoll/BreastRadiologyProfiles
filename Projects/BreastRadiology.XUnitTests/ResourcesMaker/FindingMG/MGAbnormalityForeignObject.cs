@@ -46,13 +46,6 @@ namespace BreastRadiology.XUnitTests
                     .Description("Breast Radiology Foreign Object Observation",
                         new Markdown()
                             .Paragraph("These are foreign objects found during a breast radiology exam:")
-                            .Todo(
-                                "there is no way to say that the following abnormalities do not exist, only that one does exist.",
-                                "fill in code descriptions",
-                                "How are metal and metallic codes different",
-                                "body jewelery codes",
-                                "are wire and wire fragment codes the same."
-                            )
                     )
                     .AddFragRef(Self.ObservationNoDeviceFragment.Value().Url)
                     .AddFragRef(Self.ObservationCodedValueFragment.Value().Url)

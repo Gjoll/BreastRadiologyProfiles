@@ -352,7 +352,6 @@ namespace BreastRadiology.XUnitTests
                             .Paragraph("this extension defines the fields that are used to describe the" +
                                        "location of an observed item in a breat radiology report")
                             .Paragraph("Breast radiology exams have specific ways of defining a location that are unique to this field.")
-                            //.Todo
                     )
                     .Kind(StructureDefinition.StructureDefinitionKind.ComplexType)
                     .Context()

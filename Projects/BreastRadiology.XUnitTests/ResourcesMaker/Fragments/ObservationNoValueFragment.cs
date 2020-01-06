@@ -19,7 +19,6 @@ namespace BreastRadiology.XUnitTests
                     .Description("Fragment that constrains Observations to have no explicit value.",
                         new Markdown()
                             .Paragraph("Base fragment for all BreastRad observations that have no explicit value.")
-                            //.Todo
                     )
                     .AddFragRef(Self.ObservationFragment.Value().Url)
                     .AddFragRef(Self.ObservationNoComponentFragment.Value().Url)

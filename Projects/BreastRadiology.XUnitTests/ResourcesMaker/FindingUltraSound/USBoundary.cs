@@ -85,7 +85,6 @@ namespace BreastRadiology.XUnitTests
         //                new Markdown()
         //                    .Paragraph("This resource describes an Ultra-Sound boundary observation.")
         //                    .Paragraph("[PR]")
-        //                    //.Todo
         //             )
         //            .AddFragRef(Self.ObservationNoDeviceFragment.Value())
         //            .AddFragRef(Self.ObservationCodedValueFragment.Value())

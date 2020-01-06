@@ -23,7 +23,6 @@ namespace BreastRadiology.XUnitTests
                     .Description("Mammography Common Targets Fragment",
                         new Markdown()
                             .Paragraph("Mammography Common Targets Fragment")
-                    //.Todo
                     )
                     .AddFragRef(Self.BreastBodyLocationRequiredFragment.Value().Url)
                     ;

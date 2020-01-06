@@ -105,7 +105,6 @@ namespace BreastRadiology.XUnitTests
         //                    .BlockQuote("acoustic transmission. Attenuation (shadowing) and enhancement are additional attributes of")
         //                    .BlockQuote("masses, mostly of secondary rather than primary predictive value.")
         //                    .BiradFooter()
-        //                    //.Todo
         //                )
         //            .AddFragRef(Self.ObservationNoDeviceFragment.Value())
         //            .AddFragRef(Self.ObservationCodedValueFragment.Value())

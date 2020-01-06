@@ -64,9 +64,6 @@ namespace BreastRadiology.XUnitTests
                     .Description("Breat Radiology Mammography Density Observation",
                         new Markdown()
                             .MissingObservation("a Density abnormality")
-                            .Todo(
-                                "default value? for refinement"
-                            )
                     )
                     .AddFragRef(Self.ObservationNoDeviceFragment.Value().Url)
                     .AddFragRef(Self.MGCommonTargetsFragment.Value().Url)

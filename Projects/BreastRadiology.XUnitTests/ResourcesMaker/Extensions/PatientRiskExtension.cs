@@ -27,9 +27,6 @@ namespace BreastRadiology.XUnitTests
                     new Markdown()
                         .Paragraph("This extension defines the PatientRisk section of a breast radiology report, " +
                                     "linking a report to the resources that are its PatientRisk.")
-                        .Todo(
-                            "Do we need a BreastRadiologyPatientRisk (Tyrer Cuzack, etc) Profile"
-                        )
                     )
                     .Kind(StructureDefinition.StructureDefinitionKind.ComplexType)
                     .Context()

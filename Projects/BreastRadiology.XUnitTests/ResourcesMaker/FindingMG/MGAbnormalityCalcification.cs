@@ -37,7 +37,6 @@ namespace BreastRadiology.XUnitTests
                             .BlockQuote("As an ASSOCIATED FEATURE, this may be used in conjunction with one or more other FINDING(S)")
                             .BlockQuote("to describe calcifications within or immediately adjacent to the finding(s)")
                             .BiradFooter()
-                    //.Todo
                     )
                     .AddFragRef(Self.ObservationNoDeviceFragment.Value().Url)
                     .AddFragRef(Self.ObservationNoValueFragment.Value().Url)

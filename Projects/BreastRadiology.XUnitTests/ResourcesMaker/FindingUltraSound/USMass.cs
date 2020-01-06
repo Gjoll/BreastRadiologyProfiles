@@ -30,7 +30,6 @@ namespace BreastRadiology.XUnitTests
         //                    .BlockQuote("from normal anatomic structures, such as ribs or fat lobules, using two or more projections and")
         //                    .BlockQuote("real-time scanning.")
         //                    .BiradFooter()
-        //            //.Todo
         //            )
         //            .AddFragRef(Self.ObservationNoDeviceFragment.Value())
         //            .AddFragRef(Self.BreastBodyLocationRequiredFragment.Value())

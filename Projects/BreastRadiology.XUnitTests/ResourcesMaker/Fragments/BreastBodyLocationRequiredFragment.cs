@@ -20,7 +20,6 @@ namespace BreastRadiology.XUnitTests
                         new Markdown()
                         .Paragraph("This fragment adds the references for the breast body location extension.")
                         .Paragraph("The references are required, meaning that the breast body location must exist.")
-                        //.Todo
                      )
                     .AddFragRef(Self.HeaderFragment.Value().Url)
                 ;

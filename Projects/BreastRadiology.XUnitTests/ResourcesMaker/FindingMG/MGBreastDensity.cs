@@ -123,14 +123,9 @@ namespace BreastRadiology.XUnitTests
                             .BlockQuote("in a lower-density category and the least dense breast in the next-higher-density category. These factors limit the clinical relevance of breast density categorization for the ")
                             .BlockQuote("individual woman. ")
                             .BiradFooter()
-                            .Todo(
-                            "Do we need statement that breast density is required now?",
-                            "can this and US tissue composition be the same?"
-                            )
                     )
                     .AddFragRef(Self.ObservationNoDeviceFragment.Value().Url)
                     .AddFragRef(Self.ObservationCodedValueFragment.Value().Url)
-                    .AddFragRef(Self.ObservationLeafFragment.Value().Url)
                     ;
 
                 s = e.SDef;

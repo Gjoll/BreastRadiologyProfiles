@@ -24,9 +24,6 @@ namespace BreastRadiology.XUnitTests
                            .Description("Breast Radiology 'Consistent With' Observation",
                                new Markdown()
                                    .MissingObservation("a consistentWith")
-                                   .Todo(
-                                   "There is a CodeSystem and ValueSet created solely to identify the the component slices. Is this appropriate"
-                                   )
                            )
                            .AddFragRef(Self.ObservationNoDeviceFragment.Value().Url)
                            ;

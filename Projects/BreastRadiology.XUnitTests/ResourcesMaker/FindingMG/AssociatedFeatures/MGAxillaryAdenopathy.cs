@@ -31,7 +31,6 @@ namespace BreastRadiology.XUnitTests
                             .BlockQuote("recommendation for additional evaluation. When one or more large axillary nodes are ")
                             .BlockQuote("substantially composed of fat, this is a normal variant.")
                             .BiradFooter()
-                            //.Todo
                     )
                     .AddFragRef(Self.ObservationNoDeviceFragment.Value().Url)
                     .AddFragRef(Self.ObservationNoValueFragment.Value().Url)

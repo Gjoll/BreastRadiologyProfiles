@@ -19,7 +19,6 @@ namespace BreastRadiology.XUnitTests
                     .Description("Fragment that defines values for coded observations",
                         new Markdown()
                             .Paragraph("This fragment constrains an observation to only contain coded values.")
-                            //.Todo
                     )
                     .AddFragRef(Self.ObservationNoComponentFragment.Value().Url)
                     ;

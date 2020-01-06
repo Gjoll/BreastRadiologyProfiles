@@ -71,7 +71,6 @@ namespace BreastRadiology.XUnitTests
         //            .Description("Breast Radiology Hilum Observation",
         //                new Markdown()
         //                    .MissingObservation("a hilum")
-        //                    .Todo(
         //                        "Definition(s) needed"
         //                    )
         //            )

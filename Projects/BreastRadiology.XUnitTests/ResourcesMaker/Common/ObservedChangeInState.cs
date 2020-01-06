@@ -94,7 +94,6 @@ namespace BreastRadiology.XUnitTests
         //            .Description("Breast Radiology Observed Change In State Observation",
         //                new Markdown()
         //                    .MissingObservation("an observed change")
-        //                    //.Todo
         //            )
         //            .AddFragRef(Self.ObservationNoDeviceFragment.Value())
         //            .AddFragRef(Self.ObservationCodedValueFragment.Value())

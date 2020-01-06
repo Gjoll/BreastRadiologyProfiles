@@ -23,12 +23,7 @@ namespace BreastRadiology.XUnitTests
                         $"{Group_MRIResources}")
                     .Description("Breast Radiology MRI Finding",
                         new Markdown()
-                            .Todo(
-                                "Device Metrics detailing the observation devices parameters.",
-                                "Add information about contrast enhancement/other observation specific parameters."
-                            )
                     )
-                    .AddFragRef(Self.ObservationSectionFragment.Value().Url)
                 ;
                 s = e.SDef;
 

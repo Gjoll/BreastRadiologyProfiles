@@ -26,9 +26,6 @@ namespace BreastRadiology.XUnitTests
                             .BlockQuote("Skin thickening may be focal or diffuse, and is defined as being greater than 2 mm in thickness. This ")
                             .BlockQuote("finding is of particular concern if it represents a change from previous mammography examinations. ").BlockQuote("However, unilateral skin thickening is an expected finding after radiation therapy.")
                             .BiradFooter()
-                            .Todo(
-                                "Add choice for focal or diffuse (see definition)?"
-                            )
                     )
                     .AddFragRef(Self.ObservationNoDeviceFragment.Value().Url)
                     .AddFragRef(Self.ObservationNoValueFragment.Value().Url)

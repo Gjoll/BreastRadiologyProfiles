@@ -44,7 +44,6 @@ namespace BreastRadiology.XUnitTests
         //                    .BlockQuote("ation includes a diagnostic imaging examination, a final assessment is rendered for the diagnostic")
         //                    .BlockQuote("examination, but the screening mammography examination remains assessed as category 0.")
         //                    .BiradFooter()
-        //                    //.Todo
         //            )
         //            .AddFragRef(Self.ObservationNoDeviceFragment.Value())
         //            .AddFragRef(Self.ObservationCodedValueFragment.Value())
