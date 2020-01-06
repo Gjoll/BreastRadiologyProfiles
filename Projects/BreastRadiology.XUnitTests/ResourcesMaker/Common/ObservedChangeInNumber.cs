@@ -18,7 +18,7 @@ namespace BreastRadiology.XUnitTests
              (out CodeSystem cs) =>
                  cs = Self.CreateCodeSystem(
                      "ObservedChangeInNumberCS",
-                     "Observed Changes CodeSystem",
+                     "Observed Changes In Number CodeSystem",
                      "Observed/Change/CodeSystem",
                      "bserved changes in number of an abnormality over time code system.",
                      Group_CommonCodesCS,
@@ -48,50 +48,5 @@ namespace BreastRadiology.XUnitTests
                     Self.ObservedChangeInNumberCS.Value()
                     )
             );
-
-        //#SDTaskVar ObservedChangeInNumber = new SDTaskVar(
-        //    (out StructureDefinition  s) =>
-        //    {
-        //        ValueSet binding = Self.ObservedChangeInNumberVS.Value();
-
-        //        {
-        //            IntroDoc valueSetIntroDoc = Self.CreateIntroDocVS(binding);
-        //            valueSetIntroDoc
-        //                .ValueSet(binding);
-        //                .ReviewedStatus(ReviewStatus.NotReviewed)
-        //            ;
-        //            String outputPath = valueSetIntroDoc.Save();
-        //            Self.fc?.Mark(outputPath);
-        //        }
-
-        //        SDefEditor e = Self.CreateEditor("ObservedChangeInNumber",
-        //                "Observed Change in Number",
-        //                "Number Change",
-        //                ObservationUrl,
-        //                $"{Group_CommonResources}/ObservedChangeInNumber")
-        //            .Description("Breast Radiology Changes in Number Observation",
-        //                new Markdown()
-        //                    .MissingObservation("an observed change in number")
-        //                    "Is this change in count, or number of calcifications?"
-        //                    )
-        //            )
-        //            .AddFragRef(Self.ObservationNoDeviceFragment.Value())
-        //            .AddFragRef(Self.ObservationCodedValueFragment.Value())
-        //            .AddFragRef(Self.ObservationLeafFragment.Value())
-        //            ;
-
-        //        s = e.SDef.Url;
-
-        //        e.IntroDoc
-        //            .CodedObservationLeafNode("an abnormality observed change in number", binding)
-        //            .ReviewedStatus(ReviewStatus.NotReviewed)
-        //            ;
-
-        //        e.Select("value[x]")
-        //            .Type("CodeableConcept")
-        //            .Binding(binding.Url, BindingStrength.Required)
-        //            ;
-        //        e.AddValueSetLink(binding);
-        //    });
     }
 }

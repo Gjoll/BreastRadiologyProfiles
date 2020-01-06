@@ -62,8 +62,8 @@ namespace BreastRadiology.XUnitTests
                      .ZeroToMany();
 
                 ElementTreeNode sliceElementDef = e.ConfigureSliceByUrlDiscriminator("result", false);
-                Self.SliceTargetReference(e, sliceElementDef, Self.SectionPatientHistory.Value(), 1, "1");
                 Self.SliceTargetReference(e, sliceElementDef, Self.SectionFindings.Value(), 1, "1");
+                Self.SliceTargetReference(e, sliceElementDef, Self.SectionPatientHistory.Value(), 1, "1");
             });
     }
 }

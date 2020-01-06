@@ -70,48 +70,5 @@ namespace BreastRadiology.XUnitTests
                     Self.ObservedChangeInStateCS.Value()
                     )
             );
-
-        //#SDTaskVar ObservedChangeInState = new SDTaskVar(
-        //    (out StructureDefinition  s) =>
-        //    {
-        //        ValueSet binding = Self.ObservedChangeInStateVS.Value();
-
-        //        {
-        //            IntroDoc valueSetIntroDoc = Self.CreateIntroDocVS(binding);
-        //            valueSetIntroDoc
-        //                .ValueSet(binding);
-        //                .ReviewedStatus(ReviewStatus.NotReviewed)
-        //            ;
-        //            String outputPath = valueSetIntroDoc.Save();
-        //            Self.fc?.Mark(outputPath);
-        //        }
-
-        //        SDefEditor e = Self.CreateEditor("ObservedChangeInState",
-        //                "Observed Change In State",
-        //                "State Change",
-        //                ObservationUrl,
-        //                $"{Group_CommonResources}/ObservedChangeInState")
-        //            .Description("Breast Radiology Observed Change In State Observation",
-        //                new Markdown()
-        //                    .MissingObservation("an observed change")
-        //            )
-        //            .AddFragRef(Self.ObservationNoDeviceFragment.Value())
-        //            .AddFragRef(Self.ObservationCodedValueFragment.Value())
-        //            .AddFragRef(Self.ObservationLeafFragment.Value())
-        //            ;
-
-        //        s = e.SDef.Url;
-
-        //        e.IntroDoc
-        //            .CodedObservationLeafNode("an abnormality observed change", binding)
-        //            .ReviewedStatus(ReviewStatus.NotReviewed)
-        //            ;
-
-        //        e.Select("value[x]")
-        //            .Type("CodeableConcept")
-        //            .Binding(binding.Url, BindingStrength.Required)
-        //            ;
-        //        e.AddValueSetLink(binding);
-        //    });
     }
 }

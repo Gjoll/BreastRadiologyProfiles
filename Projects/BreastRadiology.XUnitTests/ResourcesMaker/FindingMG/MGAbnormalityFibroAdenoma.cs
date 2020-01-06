@@ -41,6 +41,8 @@ namespace BreastRadiology.XUnitTests
                     ;
 
                 e.Select("value[x]").Zero();
+                PreFhir.ElementTreeNode sliceElementDef = e.ConfigureSliceByUrlDiscriminator("hasMember", false);
+                Self.SliceTargetReference(e, sliceElementDef, Self.MGAssociatedFeatures.Value(), 0, "1");
 
                 e.StartComponentSliceing();
                 e.ComponentSliceCodeableConcept("mgAbnormalityFibroAdenomaType",

@@ -58,54 +58,5 @@ namespace BreastRadiology.XUnitTests
                         Self.OrientationCS.Value()
                     )
             );
-
-        //#SDTaskVar Orientation = new SDTaskVar(
-        //    (out StructureDefinition  s) =>
-        //    {
-        //        ValueSet binding = Self.OrientationVS.Value();
-        //        {
-        //            IntroDoc valueSetIntroDoc = Self.CreateIntroDocVS(binding);
-        //            valueSetIntroDoc
-        //                .ValueSet(binding);
-        //                .ReviewedStatus(ReviewStatus.NotReviewed)
-        //            ;
-        //            String outputPath = valueSetIntroDoc.Save();
-        //            Self.fc?.Mark(outputPath);
-        //        }
-
-        //        SDefEditor e = Self.CreateEditor("Orientation",
-        //                "Orientation",
-        //                "Orientation",
-        //                ObservationUrl,
-        //                $"{Group_CommonResources}/Orientation")
-        //            .Description("Breast Radiology Orientation Observation",
-        //                new Markdown()
-        //                    .MissingObservation("a orientation")
-        //                    .BiradHeader()
-        //                    .BlockQuote("Orientation is defined with reference to the skin")
-        //                    .BlockQuote("line. Obliquely situated masses may follow a radial pattern, and their long axes will help determine")
-        //                    .BlockQuote("classification as parallel or not parallel. Parallel or \"wider-than-tall\" orientation is a property of most")
-        //                    .BlockQuote("benign masses, notably fibroadenomas; however, many carcinomas have this orientation as well.")
-        //                    .BlockQuote("Orientation alone should not be used as an isolated feature in assessing a mass for its likelihood of")
-        //                    .BlockQuote("malignancy.")
-        //                    .BiradFooter()
-        //                )
-        //            .AddFragRef(Self.ObservationNoDeviceFragment.Value())
-        //            .AddFragRef(Self.ObservationCodedValueFragment.Value())
-        //            .AddFragRef(Self.ObservationLeafFragment.Value())
-        //            ;
-        //        s = e.SDef.Url;
-
-        //        e.IntroDoc
-        //            .CodedObservationLeafNode("an orientation", binding)
-        //            .ReviewedStatus(ReviewStatus.NotReviewed)
-        //            ;
-
-        //        e.Select("value[x]")
-        //            .Type("CodeableConcept")
-        //            .Binding(binding.Url, BindingStrength.Required)
-        //            ;
-        //        e.AddValueSetLink(binding);
-        //    });
     }
 }

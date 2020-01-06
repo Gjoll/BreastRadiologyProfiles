@@ -19,7 +19,7 @@ namespace BreastRadiology.XUnitTests
              (out CodeSystem cs) =>
                  cs = Self.CreateCodeSystem(
                      "ObservedChangeInProminanceCS",
-                     "Observed Changes CodeSystem",
+                     "Observed Changes In Prominance CodeSystem",
                      "Observed/Change/CodeSystem",
                      "Observed changes in Prominance of an abnormality over time code system.",
                      Group_CommonCodesCS,
@@ -49,49 +49,5 @@ namespace BreastRadiology.XUnitTests
                     Self.ObservedChangeInProminanceCS.Value()
                     )
             );
-
-        //#SDTaskVar ObservedChangeInProminance = new SDTaskVar(
-        //    (out StructureDefinition  s) =>
-        //    {
-
-        //        ValueSet binding = Self.ObservedChangeInProminanceVS.Value();
-
-        //        {
-        //            IntroDoc valueSetIntroDoc = Self.CreateIntroDocVS(binding);
-        //            valueSetIntroDoc
-        //                .ValueSet(binding);
-        //                .ReviewedStatus(ReviewStatus.NotReviewed)
-        //            ;
-        //            String outputPath = valueSetIntroDoc.Save();
-        //            Self.fc?.Mark(outputPath);
-        //        }
-
-        //        SDefEditor e = Self.CreateEditor("ObservedChangeInProminance",
-        //                "Observed Change in Prominance",
-        //                "Prominance Change",
-        //                ObservationUrl,
-        //                $"{Group_CommonResources}/ObservedChangeInProminance")
-        //            .Description("Breast Radiology Changes in Prominance Observation",
-        //                new Markdown()
-        //                    .MissingObservation("an observed change in Prominance")
-        //            )
-        //            .AddFragRef(Self.ObservationNoDeviceFragment.Value())
-        //            .AddFragRef(Self.ObservationCodedValueFragment.Value())
-        //            .AddFragRef(Self.ObservationLeafFragment.Value())
-        //            ;
-
-        //        s = e.SDef.Url;
-
-        //        e.IntroDoc
-        //            .CodedObservationLeafNode("an abnormality observed change in Prominance", binding)
-        //            .ReviewedStatus(ReviewStatus.NotReviewed)
-        //            ;
-
-        //        e.Select("value[x]")
-        //            .Type("CodeableConcept")
-        //            .Binding(binding.Url, BindingStrength.Required)
-        //            ;
-        //        e.AddValueSetLink(binding);
-        //    });
     }
 }

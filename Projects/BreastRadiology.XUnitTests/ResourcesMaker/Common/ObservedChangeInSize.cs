@@ -18,7 +18,7 @@ namespace BreastRadiology.XUnitTests
              (out CodeSystem cs) =>
                  cs = Self.CreateCodeSystem(
                      "ObservedChangeInSizeCS",
-                     "Observed Changes CodeSystem",
+                     "Observed Changes In Size CodeSystem",
                      "Observed/Change/CodeSystem",
                      "Observed changes in the size of an abnormality over time code system.",
                      Group_CommonCodesCS,
@@ -49,48 +49,5 @@ namespace BreastRadiology.XUnitTests
                     Self.ObservedChangeInSizeCS.Value()
                     )
             );
-
-        //#SDTaskVar ObservedChangeInSize = new SDTaskVar(
-        //    (out StructureDefinition  s) =>
-        //    {
-        //        ValueSet binding = Self.ObservedChangeInSizeVS.Value();
-
-        //        {
-        //            IntroDoc valueSetIntroDoc = Self.CreateIntroDocVS(binding);
-        //            valueSetIntroDoc
-        //                .ValueSet(binding);
-        //                .ReviewedStatus(ReviewStatus.NotReviewed)
-        //            ;
-        //            String outputPath = valueSetIntroDoc.Save();
-        //            Self.fc?.Mark(outputPath);
-        //        }
-
-        //        SDefEditor e = Self.CreateEditor("ObservedChangeInSize",
-        //                "Observed Changes",
-        //                "Size Change",
-        //                ObservationUrl,
-        //                $"{Group_CommonResources}/ObservedChangeInSize")
-        //            .Description("Breast Radiology Changes in Size Observation",
-        //                new Markdown()
-        //                    .MissingObservation("an observed change in size")
-        //            )
-        //            .AddFragRef(Self.ObservationNoDeviceFragment.Value())
-        //            .AddFragRef(Self.ObservationCodedValueFragment.Value())
-        //            .AddFragRef(Self.ObservationLeafFragment.Value())
-        //            ;
-
-        //        s = e.SDef.Url;
-
-        //        e.IntroDoc
-        //            .CodedObservationLeafNode("an abnormality observed change in size", binding)
-        //            .ReviewedStatus(ReviewStatus.NotReviewed)
-        //            ;
-
-        //        e.Select("value[x]")
-        //            .Type("CodeableConcept")
-        //            .Binding(binding.Url, BindingStrength.Required)
-        //            ;
-        //        e.AddValueSetLink(binding);
-        //    });
     }
 }
