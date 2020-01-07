@@ -62,7 +62,7 @@ namespace BreastRadiology.XUnitTests
 
         public void PatchStructDef(StructureDefinition sd)
         {
-            const String fcn = "PatchStructDefObservation";
+            //const String fcn = "PatchStructDefObservation";
 
             CodeEditorXml c = new CodeEditorXml();
             c.IgnoreMacrosInQuotedStrings = false;

@@ -32,54 +32,27 @@ namespace BreastRadiology.XUnitTests
 
                 Self.ComponentSliceBiRads(e);
 
-                e.ComponentSliceCodeableConcept("observedChangeInDefinition",
-                    Self.CodeObservedChangeInDefinition.ToCodeableConcept(),
-                    Self.ObservedChangeInDefinitionVS.Value(),
+                e.ComponentSliceCodeableConcept("observedChanges",
+                    Self.CodeObservedChanges.ToCodeableConcept(),
+                    Self.ObservedChangesVS.Value(),
                     BindingStrength.Required,
                     0,
-                    "1",
-                    "Change In Definition");
+                    "*",
+                    "Observed Change In Abnormality");
 
-                e.ComponentSliceCodeableConcept("observedChangeInNumber",
-                    Self.CodeObservedChangeInNumber.ToCodeableConcept(),
-                    Self.ObservedChangeInNumberVS.Value(),
-                    BindingStrength.Required,
-                    0,
-                    "1",
-                    "Change In Number");
-                e.ComponentSliceCodeableConcept("observedChangeInProminance",
-                    Self.CodeObservedChangeInProminance.ToCodeableConcept(),
-                    Self.ObservedChangeInProminanceVS.Value(),
-                    BindingStrength.Required,
-                    0,
-                    "1",
-                    "Change In Prominance");
-                e.ComponentSliceCodeableConcept("observedChangeInSize",
-                    Self.CodeObservedChangeInSize.ToCodeableConcept(),
-                    Self.ObservedChangeInSizeVS.Value(),
-                    BindingStrength.Required,
-                    0,
-                    "1",
-                    "Change In Size");
-                e.ComponentSliceCodeableConcept("observedChangeInState",
-                    Self.CodeObservedChangeInState.ToCodeableConcept(),
-                    Self.ObservedChangeInStateVS.Value(),
-                    BindingStrength.Required,
-                    0,
-                    "1",
-                    "Change In State");
                 e.ComponentSliceQuantity("observedSize",
                     Self.CodeObservedSize.ToCodeableConcept(),
                     0,
                     "1",
-                    "Size");
+                    "Size of an abnormality");
+
                 e.ComponentSliceCodeableConcept("orientation",
                     Self.CodeOrientation.ToCodeableConcept(),
                     Self.OrientationVS.Value(),
                     BindingStrength.Required,
                     0,
                     "1",
-                    "Orientation");
+                    "Orientation of an abnormality");
             });
     }
 }

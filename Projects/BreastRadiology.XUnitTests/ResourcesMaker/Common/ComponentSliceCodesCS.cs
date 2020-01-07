@@ -17,11 +17,7 @@ namespace BreastRadiology.XUnitTests
         String ComponentSliceCodesUrl => CodeSystemUrl("ComponentSliceCodes");
 
         Coding CodeBiRads => new Coding(ComponentSliceCodesUrl, "targetBiRads");
-        Coding CodeObservedChangeInDefinition => new Coding(ComponentSliceCodesUrl, "observedChangeInDefinition");
-        Coding CodeObservedChangeInNumber => new Coding(ComponentSliceCodesUrl, "observedChangeInNumber");
-        Coding CodeObservedChangeInProminance => new Coding(ComponentSliceCodesUrl, "observedChangeInProminance");
-        Coding CodeObservedChangeInSize => new Coding(ComponentSliceCodesUrl, "observedChangeInSize");
-        Coding CodeObservedChangeInState => new Coding(ComponentSliceCodesUrl, "observedChangeInState");
+        Coding CodeObservedChanges => new Coding(ComponentSliceCodesUrl, "observedChanges");
         Coding CodeObservedSize => new Coding(ComponentSliceCodesUrl, "observedSize");
         Coding CodeObservedCount => new Coding(ComponentSliceCodesUrl, "observedCount");
         Coding CodeOrientation => new Coding(ComponentSliceCodesUrl, "orientation");
@@ -58,11 +54,7 @@ namespace BreastRadiology.XUnitTests
                             new ConceptDef(Self.ConsistentWithCodeValue, "Slicing Component Code - CodeValue"),
                             new ConceptDef(Self.ConsistentWithCodeQualifier, "Slicing Component Code - CodeQualifier"),
                             new ConceptDef(Self.CodeBiRads, "Slicing Component Code - BiRads"),
-                            new ConceptDef(Self.CodeObservedChangeInDefinition, "Slicing Component Code - ChangeInDefinition"),
-                            new ConceptDef(Self.CodeObservedChangeInNumber, "Slicing Component Code - ChangeInNumber"),
-                            new ConceptDef(Self.CodeObservedChangeInProminance, "Slicing Component Code - ChangeInProminance"),
-                            new ConceptDef(Self.CodeObservedChangeInSize, "Slicing Component Code - ChangeInSize"),
-                            new ConceptDef(Self.CodeObservedChangeInState, "Slicing Component Code - ChangeInState"),
+                            new ConceptDef(Self.CodeObservedChanges, "Slicing Component Code - Observed Changes"),
                             new ConceptDef(Self.CodeObservedSize, "Slicing Component Code - ObservedSize"),
                             new ConceptDef(Self.CodeObservedCount, "Slicing Component Code - ObservedCount"),
 
