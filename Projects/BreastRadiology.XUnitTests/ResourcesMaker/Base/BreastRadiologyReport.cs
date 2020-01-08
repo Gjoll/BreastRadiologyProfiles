@@ -44,19 +44,19 @@ namespace BreastRadiology.XUnitTests
                 e.Select("specimen").Zero();
                 e.Select("conclusion").Single();
                 e.Select("conclusionCode").Single();
-                e.ApplyExtension("Recommendations", Self.BreastRadiologyRecommendationsExtension.Value().Url)
+                e.ApplyExtension("Recommendations", Self.RecommendationsExtension.Value().Url)
                      .Short("Recommendations for future care")
                      .Definition("Recommendations for future care")
                      .ZeroToMany();
-                e.ApplyExtension("PriorReports", Self.BreastRadiologyPriorReportsExtension.Value().Url)
+                e.ApplyExtension("PriorReports", Self.PriorReportsExtension.Value().Url)
                      .Short("Prior breast radiology reports")
                      .Definition("Prior breast radiology reports")
                      .ZeroToMany();
-                e.ApplyExtension("Impressions", Self.BreastRadiologyImpressionsExtension.Value().Url)
+                e.ApplyExtension("Impressions", Self.ImpressionsExtension.Value().Url)
                      .Short("Exam impressions")
                      .Definition("Exam impressions.")
                      .ZeroToMany();
-                e.ApplyExtension("PatientRisk", Self.BreastRadiologyPatientRiskExtension.Value().Url)
+                e.ApplyExtension("PatientRisk", Self.PatientRiskExtension.Value().Url)
                      .Short("Patient Risk")
                      .Definition("Patient Risk.")
                      .ZeroToMany();

@@ -14,7 +14,7 @@ namespace BreastRadiology.XUnitTests
 {
     partial class ResourcesMaker : ConverterBase
     {
-        SDTaskVar BreastRadiologyRecommendationsExtension = new SDTaskVar(
+        SDTaskVar RecommendationsExtension = new SDTaskVar(
             (out StructureDefinition  s) =>
             {
                 SDefEditor e = Self.CreateEditor("RecommendationsExtension",

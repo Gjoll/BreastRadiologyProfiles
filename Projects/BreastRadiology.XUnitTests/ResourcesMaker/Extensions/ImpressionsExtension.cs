@@ -14,7 +14,7 @@ namespace BreastRadiology.XUnitTests
 {
     partial class ResourcesMaker : ConverterBase
     {
-        SDTaskVar BreastRadiologyImpressionsExtension = new SDTaskVar(
+        SDTaskVar ImpressionsExtension = new SDTaskVar(
             (out StructureDefinition  s) =>
             {
                 SDefEditor e = Self.CreateEditor("ImpressionsExtension",
@@ -25,8 +25,7 @@ namespace BreastRadiology.XUnitTests
                     "ImpressionsExtension")
                     .Description("Impressions extension",
                         new Markdown()
-                            .Paragraph("This extension defines the impressions section of a breast radiology report, " +
-                                       "linking a report to the resources that the exam impressions.")
+                            .Paragraph("This extension defines the impressions section of a breast radiology report.")
                     )
                     .Kind(StructureDefinition.StructureDefinitionKind.ComplexType)
                     .Context()

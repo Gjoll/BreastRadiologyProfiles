@@ -14,7 +14,7 @@ namespace BreastRadiology.XUnitTests
 {
     partial class ResourcesMaker : ConverterBase
     {
-        SDTaskVar BreastRadiologyPatientRiskExtension = new SDTaskVar(
+        SDTaskVar PatientRiskExtension = new SDTaskVar(
             (out StructureDefinition  s) =>
             {
                 SDefEditor e = Self.CreateEditor("PatientRiskExtension",
@@ -45,7 +45,7 @@ namespace BreastRadiology.XUnitTests
                     .Fixed(new FhirUri(e.SDef.Url));
 
                 e.Select("value[x]")
-                    .TypeReference(MedicationRequestUrl, ServiceRequestUrl)
+                    .TypeReference(RiskAssessmentUrl)
                     .Single()
                     ;
 
