@@ -86,7 +86,7 @@ namespace BreastRadiology.XUnitTests
 
                 foreach (ElementTreeSlice slice in node.Slices.Skip(1))
                 {
-                    String shortDesc = slice.ElementDefinition.Short;
+                    String shortDesc = $"{slice.ElementDefinition.Short} [{slice.ElementDefinition.Min}..{slice.ElementDefinition.Max}]";
                     String anchor = $"StructureDefinition-{sd.Name}-definitions.html#Observation.component:{slice.ElementDefinition.SliceName}";
                     items.Add(shortDesc, $"<a href=\"{anchor}\">{shortDesc}</a>");
                 }
@@ -123,7 +123,7 @@ namespace BreastRadiology.XUnitTests
 
                 foreach (ElementTreeSlice slice in node.Slices.Skip(1))
                 {
-                    String shortDesc = slice.ElementDefinition.Short;
+                    String shortDesc = $"{slice.ElementDefinition.Short} [{slice.ElementDefinition.Min}..{slice.ElementDefinition.Max}]";
                     String anchor = $"StructureDefinition-{sd.Name}-definitions.html#Observation.hasMember:{slice.ElementDefinition.SliceName}";
                     items.Add(shortDesc, $"<a href=\"{anchor}\">{shortDesc}</a>");
                 }
