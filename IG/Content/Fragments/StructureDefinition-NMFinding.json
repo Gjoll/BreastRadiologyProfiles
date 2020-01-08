@@ -22,7 +22,7 @@
   "name": "NMFinding",
   "title": "NM Finding",
   "status": "draft",
-  "description": "Breast Radiology NMgraphy Finding\n\n*** TODO Items ***** Device Metrics detailing the observation devices parameters (transducer freq, etc).",
+  "description": "Breast Radiology NMgraphy Finding",
   "fhirVersion": "4.0.0",
   "kind": "resource",
   "abstract": false,
@@ -35,7 +35,6 @@
         "id": "Observation",
         "path": "Observation",
         "short": "Breast Radiology NMgraphy Finding",
-        "definition": "*** TODO Items ***** Device Metrics detailing the observation devices parameters (transducer freq, etc).",
         "base": {
           "path": "Observation",
           "min": 0,

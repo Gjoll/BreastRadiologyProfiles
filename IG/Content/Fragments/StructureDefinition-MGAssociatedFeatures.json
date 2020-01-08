@@ -11,6 +11,14 @@
     },
     {
       "url": "http://www.fragment.com/fragment",
+      "valueUrl": "http://hl7.org/fhir/us/breast-radiology/StructureDefinition/ObservationSectionFragment"
+    },
+    {
+      "url": "http://www.fragment.com/maplink",
+      "valueString": "fragment|True|http://hl7.org/fhir/us/breast-radiology/StructureDefinition/ObservationSectionFragment"
+    },
+    {
+      "url": "http://www.fragment.com/fragment",
       "valueUrl": "http://hl7.org/fhir/us/breast-radiology/StructureDefinition/BreastRadObservationNoDeviceFragment"
     },
     {
@@ -27,15 +35,11 @@
     },
     {
       "url": "http://www.fragment.com/maplink",
-      "valueString": "target|False|http://hl7.org/fhir/us/breast-radiology/StructureDefinition/MGSkinRetraction"
+      "valueString": "target|False|http://hl7.org/fhir/us/breast-radiology/StructureDefinition/MGAbnormalityArchitecturalDistortion"
     },
     {
       "url": "http://www.fragment.com/maplink",
-      "valueString": "target|False|http://hl7.org/fhir/us/breast-radiology/StructureDefinition/MGNippleRetraction"
-    },
-    {
-      "url": "http://www.fragment.com/maplink",
-      "valueString": "target|False|http://hl7.org/fhir/us/breast-radiology/StructureDefinition/MGSkinThickening"
+      "valueString": "target|False|http://hl7.org/fhir/us/breast-radiology/StructureDefinition/MGAbnormalityCalcification"
     },
     {
       "url": "http://www.fragment.com/maplink",
@@ -43,18 +47,22 @@
     },
     {
       "url": "http://www.fragment.com/maplink",
-      "valueString": "target|False|http://hl7.org/fhir/us/breast-radiology/StructureDefinition/MGAbnormalityArchitecturalDistortion"
+      "valueString": "target|False|http://hl7.org/fhir/us/breast-radiology/StructureDefinition/MGNippleRetraction"
     },
     {
       "url": "http://www.fragment.com/maplink",
-      "valueString": "target|False|http://hl7.org/fhir/us/breast-radiology/StructureDefinition/MGAbnormalityCalcification"
+      "valueString": "target|False|http://hl7.org/fhir/us/breast-radiology/StructureDefinition/MGSkinRetraction"
+    },
+    {
+      "url": "http://www.fragment.com/maplink",
+      "valueString": "target|False|http://hl7.org/fhir/us/breast-radiology/StructureDefinition/MGSkinThickening"
     }
   ],
   "url": "http://hl7.org/fhir/us/breast-radiology/StructureDefinition/MGAssociatedFeatures",
   "name": "MGAssociatedFeatures",
   "title": "Mammography Associated Features",
   "status": "draft",
-  "description": "Mammography Associated Features Observation\n\nUsed with masses, asymmetries, or calcifications, or may stand alone as Features when no other abnormality is present.\n\n\n*** TODO Items ***** check Cardinality of the following Observation.hasMember targets?",
+  "description": "Mammography Associated Features Observation\n\nUsed with masses, asymmetries, or calcifications, or may stand alone as Features when no other abnormality is present.",
   "fhirVersion": "4.0.0",
   "kind": "resource",
   "abstract": false,
@@ -67,7 +75,7 @@
         "id": "Observation",
         "path": "Observation",
         "short": "Mammography Associated Features Observation",
-        "definition": "Used with masses, asymmetries, or calcifications, or may stand alone as Features when no other abnormality is present.\n\n\n*** TODO Items ***** check Cardinality of the following Observation.hasMember targets?",
+        "definition": "Used with masses, asymmetries, or calcifications, or may stand alone as Features when no other abnormality is present.",
         "base": {
           "path": "Observation",
           "min": 0,
@@ -92,94 +100,6 @@
           "min": 0,
           "max": "*"
         }
-      },
-      {
-        "id": "Observation.hasMember:mGSkinRetraction",
-        "path": "Observation.hasMember",
-        "sliceName": "mGSkinRetraction",
-        "short": "'Mammography Skin Retraction' reference",
-        "definition": "This slice references the target 'Mammography Skin Retraction'",
-        "min": 0,
-        "max": "1",
-        "base": {
-          "path": "Observation.hasMember",
-          "min": 0,
-          "max": "*"
-        },
-        "type": [
-          {
-            "code": "Reference",
-            "targetProfile": [
-              "http://hl7.org/fhir/us/breast-radiology/StructureDefinition/MGSkinRetraction"
-            ]
-          }
-        ]
-      },
-      {
-        "id": "Observation.hasMember:mGNippleRetraction",
-        "path": "Observation.hasMember",
-        "sliceName": "mGNippleRetraction",
-        "short": "'Mammography Nipple Retraction' reference",
-        "definition": "This slice references the target 'Mammography Nipple Retraction'",
-        "min": 0,
-        "max": "1",
-        "base": {
-          "path": "Observation.hasMember",
-          "min": 0,
-          "max": "*"
-        },
-        "type": [
-          {
-            "code": "Reference",
-            "targetProfile": [
-              "http://hl7.org/fhir/us/breast-radiology/StructureDefinition/MGNippleRetraction"
-            ]
-          }
-        ]
-      },
-      {
-        "id": "Observation.hasMember:mGSkinThickening",
-        "path": "Observation.hasMember",
-        "sliceName": "mGSkinThickening",
-        "short": "'Mammography Skin Thickening' reference",
-        "definition": "This slice references the target 'Mammography Skin Thickening'",
-        "min": 0,
-        "max": "*",
-        "base": {
-          "path": "Observation.hasMember",
-          "min": 0,
-          "max": "*"
-        },
-        "type": [
-          {
-            "code": "Reference",
-            "targetProfile": [
-              "http://hl7.org/fhir/us/breast-radiology/StructureDefinition/MGSkinThickening"
-            ]
-          }
-        ]
-      },
-      {
-        "id": "Observation.hasMember:mGAxillaryAdenopathy",
-        "path": "Observation.hasMember",
-        "sliceName": "mGAxillaryAdenopathy",
-        "short": "'Mammography Axillary Adenopathy' reference",
-        "definition": "This slice references the target 'Mammography Axillary Adenopathy'",
-        "min": 0,
-        "max": "1",
-        "base": {
-          "path": "Observation.hasMember",
-          "min": 0,
-          "max": "*"
-        },
-        "type": [
-          {
-            "code": "Reference",
-            "targetProfile": [
-              "http://hl7.org/fhir/us/breast-radiology/StructureDefinition/MGAxillaryAdenopathy"
-            ]
-          }
-        ]
       },
       {
         "id": "Observation.hasMember:mGAbnormalityArchitecturalDistortion",
@@ -221,6 +141,94 @@
             "code": "Reference",
             "targetProfile": [
               "http://hl7.org/fhir/us/breast-radiology/StructureDefinition/MGAbnormalityCalcification"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "Observation.hasMember:mGAxillaryAdenopathy",
+        "path": "Observation.hasMember",
+        "sliceName": "mGAxillaryAdenopathy",
+        "short": "'Mammography Axillary Adenopathy' reference",
+        "definition": "This slice references the target 'Mammography Axillary Adenopathy'",
+        "min": 0,
+        "max": "1",
+        "base": {
+          "path": "Observation.hasMember",
+          "min": 0,
+          "max": "*"
+        },
+        "type": [
+          {
+            "code": "Reference",
+            "targetProfile": [
+              "http://hl7.org/fhir/us/breast-radiology/StructureDefinition/MGAxillaryAdenopathy"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "Observation.hasMember:mGNippleRetraction",
+        "path": "Observation.hasMember",
+        "sliceName": "mGNippleRetraction",
+        "short": "'Mammography Nipple Retraction' reference",
+        "definition": "This slice references the target 'Mammography Nipple Retraction'",
+        "min": 0,
+        "max": "1",
+        "base": {
+          "path": "Observation.hasMember",
+          "min": 0,
+          "max": "*"
+        },
+        "type": [
+          {
+            "code": "Reference",
+            "targetProfile": [
+              "http://hl7.org/fhir/us/breast-radiology/StructureDefinition/MGNippleRetraction"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "Observation.hasMember:mGSkinRetraction",
+        "path": "Observation.hasMember",
+        "sliceName": "mGSkinRetraction",
+        "short": "'Mammography Skin Retraction' reference",
+        "definition": "This slice references the target 'Mammography Skin Retraction'",
+        "min": 0,
+        "max": "1",
+        "base": {
+          "path": "Observation.hasMember",
+          "min": 0,
+          "max": "*"
+        },
+        "type": [
+          {
+            "code": "Reference",
+            "targetProfile": [
+              "http://hl7.org/fhir/us/breast-radiology/StructureDefinition/MGSkinRetraction"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "Observation.hasMember:mGSkinThickening",
+        "path": "Observation.hasMember",
+        "sliceName": "mGSkinThickening",
+        "short": "'Mammography Skin Thickening' reference",
+        "definition": "This slice references the target 'Mammography Skin Thickening'",
+        "min": 0,
+        "max": "*",
+        "base": {
+          "path": "Observation.hasMember",
+          "min": 0,
+          "max": "*"
+        },
+        "type": [
+          {
+            "code": "Reference",
+            "targetProfile": [
+              "http://hl7.org/fhir/us/breast-radiology/StructureDefinition/MGSkinThickening"
             ]
           }
         ]

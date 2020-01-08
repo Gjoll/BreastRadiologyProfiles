@@ -11,6 +11,14 @@
     },
     {
       "url": "http://www.fragment.com/fragment",
+      "valueUrl": "http://hl7.org/fhir/us/breast-radiology/StructureDefinition/ObservationLeafFragment"
+    },
+    {
+      "url": "http://www.fragment.com/maplink",
+      "valueString": "fragment|True|http://hl7.org/fhir/us/breast-radiology/StructureDefinition/ObservationLeafFragment"
+    },
+    {
+      "url": "http://www.fragment.com/fragment",
       "valueUrl": "http://hl7.org/fhir/us/breast-radiology/StructureDefinition/BreastRadObservationNoDeviceFragment"
     },
     {
@@ -35,6 +43,10 @@
     },
     {
       "url": "http://www.fragment.com/maplink",
+      "valueString": "target|False|http://hl7.org/fhir/us/breast-radiology/StructureDefinition/MGAssociatedFeatures"
+    },
+    {
+      "url": "http://www.fragment.com/maplink",
       "valueString": "target|False|http://hl7.org/fhir/us/breast-radiology/StructureDefinition/ConsistentWith"
     },
     {
@@ -50,7 +62,7 @@
   "name": "MGAbnormalityDensity",
   "title": "Mammography Density",
   "status": "draft",
-  "description": "Breat Radiology Mammography Density Observation\n\nIf this observation is present, and dataAbsentReason is empty, then a Density abnormality was observed.\n\n\nIf this observation is present, and dataAbsentReason is not empty, then a Density abnormality was not observed and dataAbsentReason contains the reason why.\n\n\n*** TODO Items ***** default value? for refinement",
+  "description": "Breat Radiology Mammography Density Observation\n\nIf this observation is present, and dataAbsentReason is empty, then a Density abnormality was observed.\n\n\nIf this observation is present, and dataAbsentReason is not empty, then a Density abnormality was not observed and dataAbsentReason contains the reason why.",
   "fhirVersion": "4.0.0",
   "kind": "resource",
   "abstract": false,
@@ -63,7 +75,7 @@
         "id": "Observation",
         "path": "Observation",
         "short": "Breat Radiology Mammography Density Observation",
-        "definition": "If this observation is present, and dataAbsentReason is empty, then a Density abnormality was observed.\n\n\nIf this observation is present, and dataAbsentReason is not empty, then a Density abnormality was not observed and dataAbsentReason contains the reason why.\n\n\n*** TODO Items ***** default value? for refinement",
+        "definition": "If this observation is present, and dataAbsentReason is empty, then a Density abnormality was observed.\n\n\nIf this observation is present, and dataAbsentReason is not empty, then a Density abnormality was not observed and dataAbsentReason contains the reason why.",
         "base": {
           "path": "Observation",
           "min": 0,
@@ -99,6 +111,28 @@
           "min": 0,
           "max": "*"
         }
+      },
+      {
+        "id": "Observation.hasMember:mGAssociatedFeatures",
+        "path": "Observation.hasMember",
+        "sliceName": "mGAssociatedFeatures",
+        "short": "'Mammography Associated Features' reference",
+        "definition": "This slice references the target 'Mammography Associated Features'",
+        "min": 0,
+        "max": "1",
+        "base": {
+          "path": "Observation.hasMember",
+          "min": 0,
+          "max": "*"
+        },
+        "type": [
+          {
+            "code": "Reference",
+            "targetProfile": [
+              "http://hl7.org/fhir/us/breast-radiology/StructureDefinition/MGAssociatedFeatures"
+            ]
+          }
+        ]
       },
       {
         "id": "Observation.hasMember:consistentWith",

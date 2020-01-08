@@ -22,7 +22,7 @@
   "name": "MRIFinding",
   "title": "MRI Finding",
   "status": "draft",
-  "description": "Breast Radiology MRI Finding\n\n*** TODO Items ***** Device Metrics detailing the observation devices parameters.\n** Add information about contrast enhancement/other observation specific parameters.",
+  "description": "Breast Radiology MRI Finding",
   "fhirVersion": "4.0.0",
   "kind": "resource",
   "abstract": false,
@@ -35,7 +35,6 @@
         "id": "Observation",
         "path": "Observation",
         "short": "Breast Radiology MRI Finding",
-        "definition": "*** TODO Items ***** Device Metrics detailing the observation devices parameters.\n** Add information about contrast enhancement/other observation specific parameters.",
         "base": {
           "path": "Observation",
           "min": 0,

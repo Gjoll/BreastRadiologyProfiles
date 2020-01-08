@@ -27,31 +27,15 @@
     },
     {
       "url": "http://www.fragment.com/maplink",
-      "valueString": "component|True|Change In Definition^CodeableConcept^http://hl7.org/fhir/us/breast-radiology/ValueSet/ObservedChangeInDefinitionVS"
+      "valueString": "component|True|Observed Change In Abnormality^CodeableConcept^http://hl7.org/fhir/us/breast-radiology/ValueSet/ObservedChangesVS"
     },
     {
       "url": "http://www.fragment.com/maplink",
-      "valueString": "component|True|Change In Number^CodeableConcept^http://hl7.org/fhir/us/breast-radiology/ValueSet/ObservedChangeInNumberVS"
+      "valueString": "component|True|Size of an abnormality^Quantity"
     },
     {
       "url": "http://www.fragment.com/maplink",
-      "valueString": "component|True|Change In Prominance^CodeableConcept^http://hl7.org/fhir/us/breast-radiology/ValueSet/ObservedChangeInProminanceVS"
-    },
-    {
-      "url": "http://www.fragment.com/maplink",
-      "valueString": "component|True|Change In Size^CodeableConcept^http://hl7.org/fhir/us/breast-radiology/ValueSet/ObservedChangeInSizeVS"
-    },
-    {
-      "url": "http://www.fragment.com/maplink",
-      "valueString": "component|True|Change In State^CodeableConcept^http://hl7.org/fhir/us/breast-radiology/ValueSet/ObservedChangeInStateVS"
-    },
-    {
-      "url": "http://www.fragment.com/maplink",
-      "valueString": "component|True|Size^Quantity"
-    },
-    {
-      "url": "http://www.fragment.com/maplink",
-      "valueString": "component|True|Orientation^CodeableConcept^http://hl7.org/fhir/us/breast-radiology/ValueSet/OrientationVS"
+      "valueString": "component|True|Orientation of an abnormality^CodeableConcept^http://hl7.org/fhir/us/breast-radiology/ValueSet/OrientationVS"
     }
   ],
   "url": "http://hl7.org/fhir/us/breast-radiology/StructureDefinition/MgCommonTargetsFragment",
@@ -155,14 +139,14 @@
         }
       },
       {
-        "id": "Observation.component:observedChangeInDefinition",
+        "id": "Observation.component:observedChanges",
         "path": "Observation.component",
-        "sliceName": "observedChangeInDefinition",
-        "short": "Change In Definition component",
-        "definition": "This component slice contains the Change In Definition value",
+        "sliceName": "observedChanges",
+        "short": "Observed Change In Abnormality component",
+        "definition": "This component slice contains the Observed Change In Abnormality values",
         "comment": "This is one component of a group of components that comprise the observation.",
         "min": 0,
-        "max": "1",
+        "max": "*",
         "base": {
           "path": "Observation.component",
           "min": 0,
@@ -170,10 +154,10 @@
         }
       },
       {
-        "id": "Observation.component:observedChangeInDefinition.code",
+        "id": "Observation.component:observedChanges.code",
         "path": "Observation.component.code",
-        "short": "Change In Definition component code",
-        "definition": "This code identifies the Change In Definition value",
+        "short": "Observed Change In Abnormality component code",
+        "definition": "This code identifies the Observed Change In Abnormality components",
         "min": 1,
         "max": "1",
         "base": {
@@ -185,15 +169,15 @@
           "coding": [
             {
               "system": "http://hl7.org/fhir/us/breast-radiology/CodeSystem/ComponentSliceCodes",
-              "code": "observedChangeInDefinition"
+              "code": "observedChanges"
             }
           ]
         }
       },
       {
-        "id": "Observation.component:observedChangeInDefinition.value[x]",
+        "id": "Observation.component:observedChanges.value[x]",
         "path": "Observation.component.value[x]",
-        "short": "Change In Definition component value",
+        "short": "Observed Change In Abnormality component value",
         "definition": "Count of an object.\n\n\nThis is either an integer count, or a Range (min..max) count.\n\n\nA range value with no maximum specified implies count is min or more.\n\n\nA range value with no minimum specified implies count is max or less.",
         "min": 1,
         "max": "1",
@@ -209,247 +193,15 @@
         ],
         "binding": {
           "strength": "required",
-          "valueSet": "http://hl7.org/fhir/us/breast-radiology/ValueSet/ObservedChangeInDefinitionVS"
-        }
-      },
-      {
-        "id": "Observation.component:observedChangeInNumber",
-        "path": "Observation.component",
-        "sliceName": "observedChangeInNumber",
-        "short": "Change In Number component",
-        "definition": "This component slice contains the Change In Number value",
-        "comment": "This is one component of a group of components that comprise the observation.",
-        "min": 0,
-        "max": "1",
-        "base": {
-          "path": "Observation.component",
-          "min": 0,
-          "max": "*"
-        }
-      },
-      {
-        "id": "Observation.component:observedChangeInNumber.code",
-        "path": "Observation.component.code",
-        "short": "Change In Number component code",
-        "definition": "This code identifies the Change In Number value",
-        "min": 1,
-        "max": "1",
-        "base": {
-          "path": "Observation.component.code",
-          "min": 1,
-          "max": "1"
-        },
-        "patternCodeableConcept": {
-          "coding": [
-            {
-              "system": "http://hl7.org/fhir/us/breast-radiology/CodeSystem/ComponentSliceCodes",
-              "code": "observedChangeInNumber"
-            }
-          ]
-        }
-      },
-      {
-        "id": "Observation.component:observedChangeInNumber.value[x]",
-        "path": "Observation.component.value[x]",
-        "short": "Change In Number component value",
-        "definition": "Count of an object.\n\n\nThis is either an integer count, or a Range (min..max) count.\n\n\nA range value with no maximum specified implies count is min or more.\n\n\nA range value with no minimum specified implies count is max or less.",
-        "min": 1,
-        "max": "1",
-        "base": {
-          "path": "Observation.component.value[x]",
-          "min": 0,
-          "max": "1"
-        },
-        "type": [
-          {
-            "code": "CodeableConcept"
-          }
-        ],
-        "binding": {
-          "strength": "required",
-          "valueSet": "http://hl7.org/fhir/us/breast-radiology/ValueSet/ObservedChangeInNumberVS"
-        }
-      },
-      {
-        "id": "Observation.component:observedChangeInProminance",
-        "path": "Observation.component",
-        "sliceName": "observedChangeInProminance",
-        "short": "Change In Prominance component",
-        "definition": "This component slice contains the Change In Prominance value",
-        "comment": "This is one component of a group of components that comprise the observation.",
-        "min": 0,
-        "max": "1",
-        "base": {
-          "path": "Observation.component",
-          "min": 0,
-          "max": "*"
-        }
-      },
-      {
-        "id": "Observation.component:observedChangeInProminance.code",
-        "path": "Observation.component.code",
-        "short": "Change In Prominance component code",
-        "definition": "This code identifies the Change In Prominance value",
-        "min": 1,
-        "max": "1",
-        "base": {
-          "path": "Observation.component.code",
-          "min": 1,
-          "max": "1"
-        },
-        "patternCodeableConcept": {
-          "coding": [
-            {
-              "system": "http://hl7.org/fhir/us/breast-radiology/CodeSystem/ComponentSliceCodes",
-              "code": "observedChangeInProminance"
-            }
-          ]
-        }
-      },
-      {
-        "id": "Observation.component:observedChangeInProminance.value[x]",
-        "path": "Observation.component.value[x]",
-        "short": "Change In Prominance component value",
-        "definition": "Count of an object.\n\n\nThis is either an integer count, or a Range (min..max) count.\n\n\nA range value with no maximum specified implies count is min or more.\n\n\nA range value with no minimum specified implies count is max or less.",
-        "min": 1,
-        "max": "1",
-        "base": {
-          "path": "Observation.component.value[x]",
-          "min": 0,
-          "max": "1"
-        },
-        "type": [
-          {
-            "code": "CodeableConcept"
-          }
-        ],
-        "binding": {
-          "strength": "required",
-          "valueSet": "http://hl7.org/fhir/us/breast-radiology/ValueSet/ObservedChangeInProminanceVS"
-        }
-      },
-      {
-        "id": "Observation.component:observedChangeInSize",
-        "path": "Observation.component",
-        "sliceName": "observedChangeInSize",
-        "short": "Change In Size component",
-        "definition": "This component slice contains the Change In Size value",
-        "comment": "This is one component of a group of components that comprise the observation.",
-        "min": 0,
-        "max": "1",
-        "base": {
-          "path": "Observation.component",
-          "min": 0,
-          "max": "*"
-        }
-      },
-      {
-        "id": "Observation.component:observedChangeInSize.code",
-        "path": "Observation.component.code",
-        "short": "Change In Size component code",
-        "definition": "This code identifies the Change In Size value",
-        "min": 1,
-        "max": "1",
-        "base": {
-          "path": "Observation.component.code",
-          "min": 1,
-          "max": "1"
-        },
-        "patternCodeableConcept": {
-          "coding": [
-            {
-              "system": "http://hl7.org/fhir/us/breast-radiology/CodeSystem/ComponentSliceCodes",
-              "code": "observedChangeInSize"
-            }
-          ]
-        }
-      },
-      {
-        "id": "Observation.component:observedChangeInSize.value[x]",
-        "path": "Observation.component.value[x]",
-        "short": "Change In Size component value",
-        "definition": "Count of an object.\n\n\nThis is either an integer count, or a Range (min..max) count.\n\n\nA range value with no maximum specified implies count is min or more.\n\n\nA range value with no minimum specified implies count is max or less.",
-        "min": 1,
-        "max": "1",
-        "base": {
-          "path": "Observation.component.value[x]",
-          "min": 0,
-          "max": "1"
-        },
-        "type": [
-          {
-            "code": "CodeableConcept"
-          }
-        ],
-        "binding": {
-          "strength": "required",
-          "valueSet": "http://hl7.org/fhir/us/breast-radiology/ValueSet/ObservedChangeInSizeVS"
-        }
-      },
-      {
-        "id": "Observation.component:observedChangeInState",
-        "path": "Observation.component",
-        "sliceName": "observedChangeInState",
-        "short": "Change In State component",
-        "definition": "This component slice contains the Change In State value",
-        "comment": "This is one component of a group of components that comprise the observation.",
-        "min": 0,
-        "max": "1",
-        "base": {
-          "path": "Observation.component",
-          "min": 0,
-          "max": "*"
-        }
-      },
-      {
-        "id": "Observation.component:observedChangeInState.code",
-        "path": "Observation.component.code",
-        "short": "Change In State component code",
-        "definition": "This code identifies the Change In State value",
-        "min": 1,
-        "max": "1",
-        "base": {
-          "path": "Observation.component.code",
-          "min": 1,
-          "max": "1"
-        },
-        "patternCodeableConcept": {
-          "coding": [
-            {
-              "system": "http://hl7.org/fhir/us/breast-radiology/CodeSystem/ComponentSliceCodes",
-              "code": "observedChangeInState"
-            }
-          ]
-        }
-      },
-      {
-        "id": "Observation.component:observedChangeInState.value[x]",
-        "path": "Observation.component.value[x]",
-        "short": "Change In State component value",
-        "definition": "Count of an object.\n\n\nThis is either an integer count, or a Range (min..max) count.\n\n\nA range value with no maximum specified implies count is min or more.\n\n\nA range value with no minimum specified implies count is max or less.",
-        "min": 1,
-        "max": "1",
-        "base": {
-          "path": "Observation.component.value[x]",
-          "min": 0,
-          "max": "1"
-        },
-        "type": [
-          {
-            "code": "CodeableConcept"
-          }
-        ],
-        "binding": {
-          "strength": "required",
-          "valueSet": "http://hl7.org/fhir/us/breast-radiology/ValueSet/ObservedChangeInStateVS"
+          "valueSet": "http://hl7.org/fhir/us/breast-radiology/ValueSet/ObservedChangesVS"
         }
       },
       {
         "id": "Observation.component:observedSize",
         "path": "Observation.component",
         "sliceName": "observedSize",
-        "short": "Size component",
-        "definition": "This component slice contains the Size quantity",
+        "short": "Size of an abnormality component",
+        "definition": "This component slice contains the Size of an abnormality quantity",
         "comment": "This is one component of a group of components that comprise the observation.",
         "min": 0,
         "max": "1",
@@ -498,8 +250,8 @@
         "id": "Observation.component:orientation",
         "path": "Observation.component",
         "sliceName": "orientation",
-        "short": "Orientation component",
-        "definition": "This component slice contains the Orientation value",
+        "short": "Orientation of an abnormality component",
+        "definition": "This component slice contains the Orientation of an abnormality value",
         "comment": "This is one component of a group of components that comprise the observation.",
         "min": 0,
         "max": "1",
@@ -512,8 +264,8 @@
       {
         "id": "Observation.component:orientation.code",
         "path": "Observation.component.code",
-        "short": "Orientation component code",
-        "definition": "This code identifies the Orientation value",
+        "short": "Orientation of an abnormality component code",
+        "definition": "This code identifies the Orientation of an abnormality value",
         "min": 1,
         "max": "1",
         "base": {
@@ -533,7 +285,7 @@
       {
         "id": "Observation.component:orientation.value[x]",
         "path": "Observation.component.value[x]",
-        "short": "Orientation component value",
+        "short": "Orientation of an abnormality component value",
         "definition": "Count of an object.\n\n\nThis is either an integer count, or a Range (min..max) count.\n\n\nA range value with no maximum specified implies count is min or more.\n\n\nA range value with no minimum specified implies count is max or less.",
         "min": 1,
         "max": "1",

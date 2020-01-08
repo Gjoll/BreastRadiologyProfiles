@@ -1,0 +1,95 @@
+{
+  "resourceType": "ValueSet",
+  "id": "ObservedChangesVS",
+  "extension": [
+    {
+      "url": "http://www.fragment.com/fragment",
+      "valueUrl": "http://hl7.org/fhir/us/breast-radiology/StructureDefinition/HeaderFragment"
+    },
+    {
+      "url": "http://www.fragment.com/Group",
+      "valueString": "CommonCodesVS"
+    },
+    {
+      "url": "http://www.fragment.com/mapname",
+      "valueString": "Observed/Change/ValueSet"
+    }
+  ],
+  "url": "http://hl7.org/fhir/us/breast-radiology/ValueSet/ObservedChangesVS",
+  "name": "ObservedChangesVS",
+  "title": "Observed Changes ValueSet",
+  "description": "Observed changes in an abnormality value set.",
+  "compose": {
+    "include": [
+      {
+        "system": "http://hl7.org/fhir/us/breast-radiology/CodeSystem/ObservedChangesCS",
+        "concept": [
+          {
+            "code": "IncreaseInSize",
+            "display": "Increase In Size"
+          },
+          {
+            "code": "DecreaseInSize",
+            "display": "Decrease In Size"
+          },
+          {
+            "code": "MoreProminent",
+            "display": "More Prominent"
+          },
+          {
+            "code": "LessProminent",
+            "display": "Less Prominent"
+          },
+          {
+            "code": "MoreDefined",
+            "display": "More Defined"
+          },
+          {
+            "code": "LessDefined",
+            "display": "Less Defined"
+          },
+          {
+            "code": "IncrInNumber",
+            "display": "Increased In Number"
+          },
+          {
+            "code": "DecrInNumber",
+            "display": "Decreased In Number"
+          },
+          {
+            "code": "IncrInNumberOfCalcifications",
+            "display": "Increased In Number Of Calcifications"
+          },
+          {
+            "code": "DecrInNumberOfCalcifications",
+            "display": "Decreased In Number Of Calcifications"
+          },
+          {
+            "code": "New",
+            "display": "New Observation"
+          },
+          {
+            "code": "Stable",
+            "display": "Stable"
+          },
+          {
+            "code": "NotSigChanged",
+            "display": "Not Significantly Changed"
+          },
+          {
+            "code": "NoLongerSeen",
+            "display": "No Longer Seen"
+          },
+          {
+            "code": "IncidentalFind",
+            "display": "Incidental Find"
+          },
+          {
+            "code": "RepresentsChange",
+            "display": "Represents Change"
+          }
+        ]
+      }
+    ]
+  }
+}

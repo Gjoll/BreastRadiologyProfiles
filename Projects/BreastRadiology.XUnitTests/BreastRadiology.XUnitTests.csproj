@@ -97,9 +97,6 @@
     <None Update="IntroDocTemplates\ValueSet.template">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
-    <None Update="IntroDocTemplates\PatientRiskExtension.template">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </None>
     <None Update="IntroDocTemplates\ImpressionsExtension.template">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
@@ -118,7 +115,7 @@
     <None Update="IntroDocTemplates\Recommendations.template">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
-    <None Update="IntroDocTemplates\PriorReports.template">
+    <None Update="IntroDocTemplates\RelatedClinicalResources.template">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
     <None Update="IntroDocTemplates\ObservationSection.template">

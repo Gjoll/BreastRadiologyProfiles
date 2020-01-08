@@ -132,6 +132,7 @@ namespace BreastRadiology.XUnitTests
         public const String ResourceUrl = "http://hl7.org/fhir/StructureDefinition/Resource";
         public const String RiskAssessmentUrl = "http://hl7.org/fhir/StructureDefinition/RiskAssessment";
         public const String ServiceRequestUrl = "http://hl7.org/fhir/StructureDefinition/ServiceRequest";
+        public const String DomainResourceUrl = "http://hl7.org/fhir/StructureDefinition/DomainResource";
 
         public const String contactUrl = "http://www.hl7.org/Special/committees/cic";
 

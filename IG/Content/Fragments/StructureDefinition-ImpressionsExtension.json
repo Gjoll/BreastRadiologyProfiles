@@ -26,7 +26,7 @@
   "name": "ImpressionsExtension",
   "title": "Impressions Extension",
   "status": "draft",
-  "description": "Impressions extension\n\nThis extension defines the impressions section of a breast radiology report, linking a report to the resources that the exam impressions.",
+  "description": "Impressions extension\n\nThis extension defines the impressions section of a breast radiology report.",
   "fhirVersion": "4.0.0",
   "kind": "complex-type",
   "abstract": false,
@@ -55,7 +55,7 @@
         ],
         "path": "Extension",
         "short": "Impressions extension",
-        "definition": "This extension defines the impressions section of a breast radiology report, linking a report to the resources that the exam impressions.",
+        "definition": "This extension defines the impressions section of a breast radiology report.",
         "base": {
           "path": "Extension",
           "min": 0,

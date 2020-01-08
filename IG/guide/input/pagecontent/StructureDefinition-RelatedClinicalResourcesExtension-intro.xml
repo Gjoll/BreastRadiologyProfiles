@@ -9,8 +9,8 @@
     This graph provides an overview of how and where this resource is
     referenced.
   </p>
-  <object data="Focus-PatientRiskExtension.svg" type="image/svg+xml">
-    <img src="Focus-PatientRiskExtension.svg" alt="image/svg+xml" />
+  <object data="Focus-RelatedClinicalResourcesExtension.svg" type="image/svg+xml">
+    <img src="Focus-RelatedClinicalResourcesExtension.svg" alt="image/svg+xml" />
   </object>
   <!-- +reviewStatus-->
 <h3 id="reviewStatus">Review Status</h3>

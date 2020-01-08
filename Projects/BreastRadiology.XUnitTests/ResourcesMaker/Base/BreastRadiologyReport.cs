@@ -48,22 +48,17 @@ namespace BreastRadiology.XUnitTests
                      .Short("Recommendations for future care")
                      .Definition("Recommendations for future care")
                      .ZeroToMany();
-                e.ApplyExtension("PriorReports", Self.PriorReportsExtension.Value().Url)
-                     .Short("Prior breast radiology reports")
-                     .Definition("Prior breast radiology reports")
-                     .ZeroToMany();
                 e.ApplyExtension("Impressions", Self.ImpressionsExtension.Value().Url)
                      .Short("Exam impressions")
                      .Definition("Exam impressions.")
                      .ZeroToMany();
-                e.ApplyExtension("PatientRisk", Self.PatientRiskExtension.Value().Url)
+                e.ApplyExtension("PatientRisk", Self.RelatedClinicalResourcesExtension.Value().Url)
                      .Short("Patient Risk")
                      .Definition("Patient Risk.")
                      .ZeroToMany();
 
                 ElementTreeNode sliceElementDef = e.ConfigureSliceByUrlDiscriminator("result", false);
                 Self.SliceTargetReference(e, sliceElementDef, Self.SectionFindings.Value(), 1, "1");
-                Self.SliceTargetReference(e, sliceElementDef, Self.SectionPatientHistory.Value(), 1, "1");
             });
     }
 }

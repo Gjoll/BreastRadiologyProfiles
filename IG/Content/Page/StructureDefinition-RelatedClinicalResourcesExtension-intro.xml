@@ -1,4 +1,4 @@
-﻿<div xmlns="http://www.w3.org/1999/xhtml"
+<div xmlns="http://www.w3.org/1999/xhtml"
     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
     xsi:schemaLocation="http://hl7.org/fhir ../../src-generated/schemas/fhir-single.xsd">
   <a name="intro"></a>
@@ -9,10 +9,12 @@
     This graph provides an overview of how and where this resource is
     referenced.
   </p>
-  <object data="%FocusPath%" type="image/svg+xml">
-    <img src="%FocusPath%" alt="image/svg+xml" />
+  <object data="Focus-RelatedClinicalResourcesExtension.svg" type="image/svg+xml">
+    <img src="Focus-RelatedClinicalResourcesExtension.svg" alt="image/svg+xml" />
   </object>
   <!-- +reviewStatus-->
+<h3 id="reviewStatus">Review Status</h3>
+<p><b>NotReviewed</b></p>
   <!-- -reviewStatus-->
   <!-- +profileFragments-->
   <h3 id="profileFragments">Profile Fragments</h3>
@@ -21,7 +23,8 @@
     the hierarchy and commonality of disparate profiles..
   </p>
   <ul>
-    %FragmentList:noexpand:prefix=<li>:suffix=</li>:lb%
+    
+<li><a href="./StructureDefinition-HeaderFragment.html">Header Fragment</a></li>
   </ul>
   <!-- -profileFragments-->
 </div>

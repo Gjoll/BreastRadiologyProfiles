@@ -14,19 +14,25 @@ namespace BreastRadiology.XUnitTests
 {
     partial class ResourcesMaker : ConverterBase
     {
-        SDTaskVar PatientRiskExtension = new SDTaskVar(
+        SDTaskVar RelatedClinicalResourcesExtension = new SDTaskVar(
             (out StructureDefinition  s) =>
             {
-                SDefEditor e = Self.CreateEditor("PatientRiskExtension",
-                    "PatientRisk Extension",
-                    "Patient Risk/Extension",
+                SDefEditor e = Self.CreateEditor("RelatedClinicalResourcesExtension",
+                    "Related Clinical Resources Extension",
+                    "RelatedClinicalResources/Extension",
                     ExtensionUrl,
                      $"{Group_ExtensionResources}/PatientRisk",
-                     "PatientRiskExtension")
-                    .Description("Patient Risk section extension",
+                     "RelatedClinicalResources")
+                    .Description("Related Clinical Resources section extension",
                     new Markdown()
-                        .Paragraph("This extension defines the PatientRisk section of a breast radiology report, " +
-                                    "linking a report to the resources that are its PatientRisk.")
+                        .Paragraph("This extension defines the RelatedClinicalResources section of a breast radiology report, " +
+                                    "linking a report to external resources that are referenced as part of the exam.")
+                        .Paragraph("This resources include, but are not limited to:")
+                        .List(
+                            "Patient Risk Resources",
+                            "Prir Breast Radiology Reports",
+                            "Various Patient History Resources"
+                            )
                     )
                     .Kind(StructureDefinition.StructureDefinitionKind.ComplexType)
                     .Context()
@@ -45,11 +51,12 @@ namespace BreastRadiology.XUnitTests
                     .Fixed(new FhirUri(e.SDef.Url));
 
                 e.Select("value[x]")
-                    .TypeReference(RiskAssessmentUrl)
-                    .Single()
+                    .Type("Reference")
                     ;
 
+                e.AddTargetLink(Self.BreastRadiologyReport.Value().Url, false);
                 e.AddTargetLink(RiskAssessmentUrl, false);
+                e.AddTargetLink(DomainResourceUrl, false);
             });
     }
 }

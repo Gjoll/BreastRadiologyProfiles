@@ -3,7 +3,7 @@
   "extension": [
     {
       "url": "http://www.fragment.com/mapname",
-      "valueString": "Patient Risk/Extension"
+      "valueString": "RelatedClinicalResources/Extension"
     },
     {
       "url": "http://www.fragment.com/Group",
@@ -19,14 +19,22 @@
     },
     {
       "url": "http://www.fragment.com/maplink",
+      "valueString": "target|False|http://hl7.org/fhir/us/breast-radiology/StructureDefinition/BreastRadReport"
+    },
+    {
+      "url": "http://www.fragment.com/maplink",
       "valueString": "target|False|http://hl7.org/fhir/StructureDefinition/RiskAssessment"
+    },
+    {
+      "url": "http://www.fragment.com/maplink",
+      "valueString": "target|False|http://hl7.org/fhir/StructureDefinition/DomainResource"
     }
   ],
-  "url": "http://hl7.org/fhir/us/breast-radiology/StructureDefinition/PatientRiskExtension",
-  "name": "PatientRiskExtension",
-  "title": "PatientRisk Extension",
+  "url": "http://hl7.org/fhir/us/breast-radiology/StructureDefinition/RelatedClinicalResourcesExtension",
+  "name": "RelatedClinicalResourcesExtension",
+  "title": "Related Clinical Resources Extension",
   "status": "draft",
-  "description": "Patient Risk section extension\n\nThis extension defines the PatientRisk section of a breast radiology report, linking a report to the resources that are its PatientRisk.\n\n\n*** TODO Items ***** Do we need a BreastRadiologyPatientRisk (Tyrer Cuzack, etc) Profile",
+  "description": "Related Clinical Resources section extension\n\nThis extension defines the RelatedClinicalResources section of a breast radiology report, linking a report to external resources that are referenced as part of the exam.\n\n\nThis resources include, but are not limited to:\n\n\n** Patient Risk Resources\n** Prir Breast Radiology Reports\n** Various Patient History Resources",
   "fhirVersion": "4.0.0",
   "kind": "complex-type",
   "abstract": false,
@@ -54,8 +62,8 @@
           }
         ],
         "path": "Extension",
-        "short": "Patient Risk section extension",
-        "definition": "This extension defines the PatientRisk section of a breast radiology report, linking a report to the resources that are its PatientRisk.\n\n\n*** TODO Items ***** Do we need a BreastRadiologyPatientRisk (Tyrer Cuzack, etc) Profile",
+        "short": "Related Clinical Resources section extension",
+        "definition": "This extension defines the RelatedClinicalResources section of a breast radiology report, linking a report to external resources that are referenced as part of the exam.\n\n\nThis resources include, but are not limited to:\n\n\n** Patient Risk Resources\n** Prir Breast Radiology Reports\n** Various Patient History Resources",
         "base": {
           "path": "Extension",
           "min": 0,
@@ -86,13 +94,11 @@
             "code": "uri"
           }
         ],
-        "fixedUri": "http://hl7.org/fhir/us/breast-radiology/StructureDefinition/PatientRiskExtension"
+        "fixedUri": "http://hl7.org/fhir/us/breast-radiology/StructureDefinition/RelatedClinicalResourcesExtension"
       },
       {
         "id": "Extension.value[x]",
         "path": "Extension.value[x]",
-        "min": 1,
-        "max": "1",
         "base": {
           "path": "Extension.value[x]",
           "min": 0,
@@ -100,11 +106,7 @@
         },
         "type": [
           {
-            "code": "Reference",
-            "targetProfile": [
-              "http://hl7.org/fhir/StructureDefinition/MedicationRequest",
-              "http://hl7.org/fhir/StructureDefinition/ServiceRequest"
-            ]
+            "code": "Reference"
           }
         ]
       }

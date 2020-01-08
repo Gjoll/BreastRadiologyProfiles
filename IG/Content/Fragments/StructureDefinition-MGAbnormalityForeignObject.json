@@ -11,6 +11,14 @@
     },
     {
       "url": "http://www.fragment.com/fragment",
+      "valueUrl": "http://hl7.org/fhir/us/breast-radiology/StructureDefinition/ObservationSectionFragment"
+    },
+    {
+      "url": "http://www.fragment.com/maplink",
+      "valueString": "fragment|True|http://hl7.org/fhir/us/breast-radiology/StructureDefinition/ObservationSectionFragment"
+    },
+    {
+      "url": "http://www.fragment.com/fragment",
       "valueUrl": "http://hl7.org/fhir/us/breast-radiology/StructureDefinition/BreastRadObservationNoDeviceFragment"
     },
     {
@@ -39,6 +47,10 @@
     },
     {
       "url": "http://www.fragment.com/maplink",
+      "valueString": "target|False|http://hl7.org/fhir/us/breast-radiology/StructureDefinition/MGAssociatedFeatures"
+    },
+    {
+      "url": "http://www.fragment.com/maplink",
       "valueString": "component|True|MG AbnormalityForeignObject Type^CodeableConcept^http://hl7.org/fhir/us/breast-radiology/ValueSet/MGAbnormalitiesVS"
     },
     {
@@ -50,7 +62,7 @@
   "name": "MGAbnormalityForeignObject",
   "title": "Foreign Object",
   "status": "draft",
-  "description": "Breast Radiology Foreign Object Observation\n\nThese are foreign objects found during a breast radiology exam:\n\n\n*** TODO Items ***** there is no way to say that the following abnormalities do not exist, only that one does exist.\n** fill in code descriptions\n** How are metal and metallic codes different\n** body jewelery codes\n** are wire and wire fragment codes the same.",
+  "description": "Breast Radiology Foreign Object Observation\n\nThese are foreign objects found during a breast radiology exam:",
   "fhirVersion": "4.0.0",
   "kind": "resource",
   "abstract": false,
@@ -63,7 +75,7 @@
         "id": "Observation",
         "path": "Observation",
         "short": "Breast Radiology Foreign Object Observation",
-        "definition": "These are foreign objects found during a breast radiology exam:\n\n\n*** TODO Items ***** there is no way to say that the following abnormalities do not exist, only that one does exist.\n** fill in code descriptions\n** How are metal and metallic codes different\n** body jewelery codes\n** are wire and wire fragment codes the same.",
+        "definition": "These are foreign objects found during a breast radiology exam:",
         "base": {
           "path": "Observation",
           "min": 0,
@@ -118,6 +130,28 @@
             "code": "Reference",
             "targetProfile": [
               "http://hl7.org/fhir/us/breast-radiology/StructureDefinition/ConsistentWith"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "Observation.hasMember:mGAssociatedFeatures",
+        "path": "Observation.hasMember",
+        "sliceName": "mGAssociatedFeatures",
+        "short": "'Mammography Associated Features' reference",
+        "definition": "This slice references the target 'Mammography Associated Features'",
+        "min": 0,
+        "max": "1",
+        "base": {
+          "path": "Observation.hasMember",
+          "min": 0,
+          "max": "*"
+        },
+        "type": [
+          {
+            "code": "Reference",
+            "targetProfile": [
+              "http://hl7.org/fhir/us/breast-radiology/StructureDefinition/MGAssociatedFeatures"
             ]
           }
         ]
