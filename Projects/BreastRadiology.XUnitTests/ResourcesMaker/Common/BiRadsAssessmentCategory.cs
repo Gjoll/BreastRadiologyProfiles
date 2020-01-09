@@ -14,57 +14,6 @@ namespace BreastRadiology.XUnitTests
 {
     partial class ResourcesMaker
     {
-        //#SDTaskVar BiRadsAssessmentCategory = new SDTaskVar(
-        //    (out StructureDefinition  s) =>
-        //    {
-        //        ValueSet binding = Self.BiRadsAssessmentCategoriesVS.Value();
-        //        {
-        //            IntroDoc valueSetIntroDoc = Self.CreateIntroDocVS(binding));
-        //            valueSetIntroDoc
-        //                .ReviewedStatus(ReviewStatus.NotReviewed)
-        //            ;
-        //            String outputPath = valueSetIntroDoc.Save();
-        //            Self.fc?.Mark(outputPath);
-        //        }
-
-        //        SDefEditor e = Self.CreateEditor("BiRadsAssessmentCategory",
-        //                "BiRads Assessment Category",
-        //                "BiRads Code",
-        //                ObservationUrl,
-        //                $"{Group_CommonResources}/BiRads")
-        //            .Description("BiRads Assessment Category Observation",
-        //                new Markdown()
-        //                    .BiradHeader()
-        //                    .BlockQuote("BI-RADS® assessments are divided into incomplete (category 0) and final assessment categories")
-        //                    .BlockQuote("(categories 1, 2, 3, 4, 5 and 6). An incomplete mammography assessment, usually rendered at batch-")
-        //                    .BlockQuote("read screening mammography, requires further evaluation with additional mammographic views,")
-        //                    .BlockQuote("ultrasound, and/or comparison mammography examination(s). If the additional evaluation involves")
-        //                    .BlockQuote("only comparison with previous mammography examination(s) that then leads to a final assessment,")
-        //                    .BlockQuote("the incomplete screening assessment is replaced by this final assessment. If the additional evalu-")
-        //                    .BlockQuote("ation includes a diagnostic imaging examination, a final assessment is rendered for the diagnostic")
-        //                    .BlockQuote("examination, but the screening mammography examination remains assessed as category 0.")
-        //                    .BiradFooter()
-        //            )
-        //            .AddFragRef(Self.ObservationNoDeviceFragment.Value())
-        //            .AddFragRef(Self.ObservationCodedValueFragment.Value())
-        //            .AddFragRef(Self.ObservationLeafFragment.Value())
-        //            ;
-
-        //        s = e.SDef.Url;
-
-        //        e.IntroDoc
-        //            .CodedObservationLeafNode("a BiRad Assessment Category", binding)
-        //            .ReviewedStatus(ReviewStatus.NotReviewed)
-        //          ;
-
-        //        e.Select("value[x]")
-        //            .Type("CodeableConcept")
-        //            .Binding(binding.Url, BindingStrength.Required)
-        //            ;
-        //        e.AddValueSetLink(binding);
-        //    });
-
-
         CSTaskVar BiRadsAssessmentCategoriesCS = new CSTaskVar(
             (out CodeSystem cs) =>
                 cs = Self.CreateCodeSystem(

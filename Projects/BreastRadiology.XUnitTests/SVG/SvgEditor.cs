@@ -84,7 +84,9 @@ namespace BreastRadiology.XUnitTests
             if (this.screenY == -1)
                 this.screenY = this.BorderMargin;
 
-            this.RenderGroup(group, this.screenX, this.screenY, lineFlag, out float width, out float height, out List<PointF> endConnectors);
+            List<PointF> endConnectors = new List<PointF>();
+
+            this.RenderGroup(group, this.screenX, this.screenY, lineFlag, out float width, out float height, endConnectors);
             this.root.Width = $"{this.ToPx(this.maxWidth + this.NodeGapX)}";
             this.root.Height = $"{this.ToPx(this.maxHeight + this.NodeGapY)}";
             this.screenY = this.maxHeight + 4 * this.BorderMargin;
@@ -128,7 +130,34 @@ namespace BreastRadiology.XUnitTests
             bool lineFlag,
             out float colWidth,
             out float colHeight,
-            out List<PointF> endConnectors)
+            List<PointF> endConnectors)
+        {
+            colWidth = 0;
+            colHeight = 0;
+
+            if (group.Nodes.Count > 0)
+                RenderSimpleGroup(group, screenX, screenY, lineFlag, out colWidth, out colHeight, endConnectors);
+            else if (group.Children.Count > 0)
+            {
+                foreach (SENodeGroup childGroup in group.Children)
+                {
+                    RenderGroup(childGroup, screenX, screenY, lineFlag, out float tColWidth, out float tColHeight, endConnectors);
+                    colHeight += tColHeight;
+                    screenY += tColHeight;
+                    if (colWidth < tColWidth)
+                        colWidth = tColWidth;
+                }
+            }
+        }
+
+
+        void RenderSimpleGroup(SENodeGroup group,
+            float screenX,
+            float screenY,
+            bool lineFlag,
+            out float colWidth,
+            out float colHeight,
+            List<PointF> endConnectors)
         {
             colWidth = 0;
             colHeight = 0;
@@ -142,7 +171,6 @@ namespace BreastRadiology.XUnitTests
             float topConnectorY = float.MaxValue;
             float bottomConnectorY = float.MinValue;
 
-            endConnectors = new List<PointF>();
             List<PointF> startConnectors = new List<PointF>();
 
             foreach (SENode node in group.Nodes)
@@ -174,13 +202,15 @@ namespace BreastRadiology.XUnitTests
             bool endConnectorFlag = false;
             foreach (SENodeGroup child in group.Children)
             {
+                List<PointF> col2EndConnectors = new List<PointF>();
+
                 this.RenderGroup(child,
                     col2ScreenX,
                     col2ScreenY,
                     lineFlag,
                     out float col2GroupWidth,
                     out float col2GroupHeight,
-                    out List<PointF> col2EndConnectors);
+                    col2EndConnectors);
                 col2ScreenY += col2GroupHeight;
                 col2Height += col2GroupHeight;
 
@@ -239,7 +269,7 @@ namespace BreastRadiology.XUnitTests
             width = node.Width * CharMod + 2 * this.BorderMargin;
 
             SvgGroup g = this.doc.AddGroup(parentGroup);
-            g.Transform= $"translate({this.ToPx(screenX)} {this.ToPx(screenY)})";
+            g.Transform = $"translate({this.ToPx(screenX)} {this.ToPx(screenY)})";
             SvgRect square;
 
             if (node.HRef != null)
@@ -290,7 +320,7 @@ namespace BreastRadiology.XUnitTests
                 {
                     t = this.doc.AddText(g);
                 }
-                t.X = this.ToPx(width/2);
+                t.X = this.ToPx(width / 2);
                 t.Y = this.ToPx(textY);
                 t.TextAnchor = "middle";
                 t.Value = line.Text;

@@ -131,13 +131,20 @@ namespace BreastRadiology.XUnitTests
             }
 
             {
-                List<SENode> extensionChildren = new List<SENode>();
-                List<SENode> valueSetChildren = new List<SENode>();
-                List<SENode> targetChildren = new List<SENode>();
-                List<SENode> componentChildren = new List<SENode>();
+                SENodeGroup extensionChildren = new SENodeGroup("");
+                SENodeGroup valueSetChildren = new SENodeGroup("");
+                SENodeGroup targetChildren = new SENodeGroup("");
+                SENodeGroup componentChildren = new SENodeGroup("");
+
+                childrenGroup.Children.Add(targetChildren);
+                childrenGroup.Children.Add(componentChildren);
+                childrenGroup.Children.Add(valueSetChildren);
+                childrenGroup.Children.Add(extensionChildren);
 
                 foreach (ResourceMap.Link link in this.map.SourceLinks(focusNode.ResourceUrl))
                 {
+                    SENodeGroup nodeGroup = new SENodeGroup("");
+
                     switch (link.LinkType)
                     {
                         case "fragment":
@@ -145,8 +152,11 @@ namespace BreastRadiology.XUnitTests
 
                         case "component":
                             {
+                                componentChildren.Children.Add(nodeGroup);
                                 SENode node = new SENode(0, componentColor);
                                 String[] lines = link.LinkTarget.Split("^");
+                                nodeGroup.Nodes.Add(node);
+
                                 node.AddTextLine(lines[0]);
                                 if (lines.Length > 1)
                                     node.AddTextLine(lines[1]);
@@ -155,14 +165,18 @@ namespace BreastRadiology.XUnitTests
                                     if (this.map.TryGetNode(lines[2], out ResourceMap.Node mapNode) == false)
                                         throw new Exception($"Component resource '{lines[2]}' not found!");
 
+                                    SENodeGroup vsGroup = new SENodeGroup("vs");
+                                    nodeGroup.Children.Add(vsGroup);
+                                    SENode vsNode = new SENode(0, valueSetColor);
+                                    vsGroup.Nodes.Add(vsNode);
+
                                     String hRef = null;
                                     String title = null;
                                     hRef = $"./{mapNode.StructureName}-{mapNode.Name}.html";
                                     title = $"'{mapNode.Name}'";
                                     String s = mapNode.Name.Trim();
-                                    node.AddTextLine(s, hRef, title);
+                                    vsNode.AddTextLine(s, hRef, title);
                                 }
-                                componentChildren.Add(node);
                             }
                             break;
 
@@ -170,8 +184,10 @@ namespace BreastRadiology.XUnitTests
                             {
                                 if (this.map.TryGetNode(link.LinkTarget, out ResourceMap.Node childNode) == true)
                                 {
+                                    extensionChildren.Children.Add(nodeGroup);
+
                                     SENode node = this.CreateResourceNode(childNode, extensionColor, true);
-                                    extensionChildren.Add(node);
+                                    nodeGroup.Nodes.Add(node);
                                 }
                             }
                             break;
@@ -180,8 +196,9 @@ namespace BreastRadiology.XUnitTests
                             {
                                 if (this.map.TryGetNode(link.LinkTarget, out ResourceMap.Node childNode) == true)
                                 {
+                                    valueSetChildren.Children.Add(nodeGroup);
                                     SENode node = this.CreateResourceNode(childNode, valueSetColor, true);
-                                    valueSetChildren.Add(node);
+                                    nodeGroup.Nodes.Add(node);
                                 }
                             }
                             break;
@@ -190,8 +207,9 @@ namespace BreastRadiology.XUnitTests
                             {
                                 if (this.map.TryGetNode(link.LinkTarget, out ResourceMap.Node childNode) == false)
                                     throw new Exception($"Child target {link.LinkTarget} not found in map");
+                                targetChildren.Children.Add(nodeGroup);
                                 SENode node = this.CreateResourceNode(childNode, targetColor, true);
-                                targetChildren.Add(node);
+                                nodeGroup.Nodes.Add(node);
                             }
                             break;
 
@@ -199,11 +217,6 @@ namespace BreastRadiology.XUnitTests
                             throw new NotImplementedException($"Unknown link type {link.LinkType}");
                     }
                 }
-
-                childrenGroup.Nodes.AddRange(targetChildren);
-                childrenGroup.Nodes.AddRange(componentChildren);
-                childrenGroup.Nodes.AddRange(valueSetChildren);
-                childrenGroup.Nodes.AddRange(extensionChildren);
             }
 
             e.Render(parentsGroup, true);
