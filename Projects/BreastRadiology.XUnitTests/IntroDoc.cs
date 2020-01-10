@@ -44,6 +44,17 @@ namespace BreastRadiology.XUnitTests
             codeEditor.Load(fullPath);
         }
 
+        public IntroDoc Intro(Markdown markDown)
+        {
+            CodeBlockNested b = this.codeEditor.Blocks.Find("intro");
+            if (b == null)
+                throw new Exception($"intro block missing");
+
+            b.AppendRaw(markDown.ToString());
+
+            return this;
+        }
+
         public IntroDoc Intro(params String[] lines)
         {
             CodeBlockNested b = this.codeEditor.Blocks.Find("intro");
@@ -64,6 +75,8 @@ namespace BreastRadiology.XUnitTests
                 throw new Exception($"reviewStatus block missing");
 
             b
+                .AppendRaw($"Comments and Suggested changes to this implementation guide should be added to the ")
+                .AppendRaw($"[Git Hub Project] https://github.com/HL7/fhir-breast-radiology-ig/projects/1)")
                 .AppendRaw($"<h3 id=\"reviewStatus\">Review Status</h3>")
                 .AppendRaw($"<p><b>{reviewStatus}</b></p>")
                 ;

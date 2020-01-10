@@ -66,7 +66,7 @@ namespace BreastRadiology.XUnitTests
                     "Body Dist. From",
                     ExtensionUrl,
                     $"{Group_ExtensionResources}/BreastBodyLocation",
-                    "BodyDistanceFromExtension")
+                    "Extension")
                     .Description("Body Distance From extension",
                         new Markdown()
                             .Paragraph("this extension defines the fields that are used to describe the" +
@@ -142,6 +142,7 @@ namespace BreastRadiology.XUnitTests
 
                 e.IntroDoc
                     .ReviewedStatus(ReviewStatus.NotReviewed)
+                    .Intro("#Add Content")
                     ;
             });
     }

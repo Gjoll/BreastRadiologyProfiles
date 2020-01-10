@@ -88,22 +88,10 @@
     <None Update="DataFiles\ConsistentWith.txt">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
-    <None Update="IntroDocTemplates\AimAnnotatedImagingStudy.template">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </None>
-    <None Update="IntroDocTemplates\AimAnnotatedPolyLineExtension.template">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </None>
-    <None Update="IntroDocTemplates\BodyDistanceFromExtension.template">
+    <None Update="IntroDocTemplates\Extension.template">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
     <None Update="IntroDocTemplates\ValueSet.template">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </None>
-    <None Update="IntroDocTemplates\ImpressionsExtension.template">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </None>
-    <None Update="IntroDocTemplates\BreastBodyLocationExtension.template">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
     <None Update="IntroDocTemplates\BreastRadImpressions.template">

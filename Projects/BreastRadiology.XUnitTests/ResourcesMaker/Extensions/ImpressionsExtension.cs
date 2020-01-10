@@ -22,7 +22,7 @@ namespace BreastRadiology.XUnitTests
                     "Impressions/Extension",
                     ExtensionUrl,
                     $"{Group_ExtensionResources}/Impressions",
-                    "ImpressionsExtension")
+                    "Extension")
                     .Description("Impressions extension",
                         new Markdown()
                             .Paragraph("This extension defines the impressions section of a breast radiology report.")
@@ -35,6 +35,7 @@ namespace BreastRadiology.XUnitTests
 
                 e.IntroDoc
                     .ReviewedStatus(ReviewStatus.NotReviewed)
+                    .Intro("#Add Content")
                     ;
 
                 e.Select("extension").Zero();

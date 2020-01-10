@@ -355,7 +355,7 @@ namespace BreastRadiology.XUnitTests
                     "Breast Body Loc.",
                     ExtensionUrl,
                     $"{Group_ExtensionResources}/BreastBodyLocation",
-                    "BreastBodyLocationExtension")
+                    "Extension")
                     .Description("Breast Body Location extension",
                         new Markdown()
                             .Paragraph("this extension defines the fields that are used to describe the" +
@@ -393,6 +393,7 @@ namespace BreastRadiology.XUnitTests
                         IntroDoc valueSetIntroDoc = Self.CreateIntroDocVS(binding);
                         valueSetIntroDoc
                             .ReviewedStatus(ReviewStatus.NotReviewed)
+                            .Intro(binding.Description)
                         ;
                         String outputPath = valueSetIntroDoc.Save();
                         Self.fc?.Mark(outputPath);
@@ -411,6 +412,7 @@ namespace BreastRadiology.XUnitTests
                         IntroDoc valueSetIntroDoc = Self.CreateIntroDocVS(binding);
                         valueSetIntroDoc
                             .ReviewedStatus(ReviewStatus.NotReviewed)
+                            .Intro(binding.Description)
                         ;
                         String outputPath = valueSetIntroDoc.Save();
                         Self.fc?.Mark(outputPath);
@@ -430,6 +432,7 @@ namespace BreastRadiology.XUnitTests
                         IntroDoc valueSetIntroDoc = Self.CreateIntroDocVS(binding);
                         valueSetIntroDoc
                             .ReviewedStatus(ReviewStatus.NotReviewed)
+                            .Intro(binding.Description)
                         ;
                         String outputPath = valueSetIntroDoc.Save();
                         Self.fc?.Mark(outputPath);
@@ -447,6 +450,7 @@ namespace BreastRadiology.XUnitTests
                         IntroDoc valueSetIntroDoc = Self.CreateIntroDocVS(binding);
                         valueSetIntroDoc
                             .ReviewedStatus(ReviewStatus.NotReviewed)
+                            .Intro(binding.Description)
                         ;
                         String outputPath = valueSetIntroDoc.Save();
                         Self.fc?.Mark(outputPath);
@@ -465,6 +469,7 @@ namespace BreastRadiology.XUnitTests
 
                 e.IntroDoc
                     .ReviewedStatus(ReviewStatus.NotReviewed)
+                    .Intro("#Add Content")
                     ;
             });
     }

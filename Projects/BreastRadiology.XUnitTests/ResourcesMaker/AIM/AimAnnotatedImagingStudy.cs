@@ -21,7 +21,7 @@ namespace BreastRadiology.XUnitTests
                     "Annotated/Imaging Study",
                     ImagingStudyUrl,
                     $"{Group_AimResources}/Aim/AimAnnotatedImagingStudy",
-                    "AimAnnotatedImagingStudy")
+                    "Extension")
                     .Description("AIM Annotated Imaging Study",
                         new Markdown()
                     )
@@ -31,6 +31,7 @@ namespace BreastRadiology.XUnitTests
                 s = e.SDef;
                 e.IntroDoc
                     .ReviewedStatus(ReviewStatus.NotReviewed)
+                    .Intro("#Add Content")
                     ;
             });
     }

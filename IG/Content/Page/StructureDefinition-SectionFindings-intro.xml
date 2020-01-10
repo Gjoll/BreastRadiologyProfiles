@@ -9,6 +9,8 @@
   <p>
     This profile contains references to multiple sub-observation pieces of this observation..
   </p>
+  <!-- +intro-->
+  <!-- -intro-->
   <h3 id="focusGraph">Graphical Overview</h3>
   <p>
     This graph provides an overview of:
@@ -21,6 +23,8 @@
     <img src="Focus-SectionFindings.svg" alt="image/svg+xml" />
   </object>
   <!-- +reviewStatus-->
+Comments and Suggested changes to this implementation guide should be added to the 
+[Git Hub Project] https://github.com/HL7/fhir-breast-radiology-ig/projects/1)
 <h3 id="reviewStatus">Review Status</h3>
 <p><b>NotReviewed</b></p>
   <!-- -reviewStatus-->

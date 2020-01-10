@@ -20,6 +20,8 @@
     <img src="Frag-ObservationSectionFragment.svg" alt="image/svg+xml" />
   </object>
   <!-- +reviewStatus-->
+Comments and Suggested changes to this implementation guide should be added to the 
+[Git Hub Project] https://github.com/HL7/fhir-breast-radiology-ig/projects/1)
 <h3 id="reviewStatus">Review Status</h3>
 <p><b>NotReviewed</b></p>
   <!-- -reviewStatus-->
