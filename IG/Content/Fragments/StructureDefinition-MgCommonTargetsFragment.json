@@ -39,6 +39,7 @@
     }
   ],
   "url": "http://hl7.org/fhir/us/breast-radiology/StructureDefinition/MgCommonTargetsFragment",
+  "version": "Fragment",
   "name": "MgCommonTargetsFragment",
   "title": "MG Common Targets Fragment",
   "status": "draft",

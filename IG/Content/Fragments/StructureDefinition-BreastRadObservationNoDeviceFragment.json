@@ -23,6 +23,7 @@
     }
   ],
   "url": "http://hl7.org/fhir/us/breast-radiology/StructureDefinition/BreastRadObservationNoDeviceFragment",
+  "version": "Fragment",
   "name": "BreastRadObservationNoDeviceFragment",
   "title": "BreastRad Observation NoDevice Fragment",
   "status": "draft",

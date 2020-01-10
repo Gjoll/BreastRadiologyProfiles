@@ -293,6 +293,8 @@ namespace BreastRadiology.XUnitTests
             retVal.IntroDoc.Load("Fragment",
                 Path.Combine(pageDir, $"StructureDefinition-{name}-intro.xml"));
 
+            retVal.SDef.Version = "Fragment";       // this will get stripped out when unfrag'd.
+
             return retVal;
         }
 

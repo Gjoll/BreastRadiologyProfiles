@@ -39,6 +39,7 @@
     }
   ],
   "url": "http://hl7.org/fhir/us/breast-radiology/StructureDefinition/MgShapeTargetsFragment",
+  "version": "Fragment",
   "name": "MgShapeTargetsFragment",
   "title": "MG Shape Targets Fragment",
   "status": "draft",

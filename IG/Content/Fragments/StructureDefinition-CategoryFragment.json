@@ -15,6 +15,7 @@
     }
   ],
   "url": "http://hl7.org/fhir/us/breast-radiology/StructureDefinition/CategoryFragment",
+  "version": "Fragment",
   "name": "CategoryFragment",
   "title": "Category Fragment",
   "status": "draft",

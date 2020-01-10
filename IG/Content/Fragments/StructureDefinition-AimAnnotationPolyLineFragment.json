@@ -27,6 +27,7 @@
     }
   ],
   "url": "http://hl7.org/fhir/us/breast-radiology/StructureDefinition/AimAnnotationPolyLineFragment",
+  "version": "Fragment",
   "name": "AimAnnotationPolyLineFragment",
   "title": "Aim Annotation PolyLine Fragment",
   "status": "draft",
