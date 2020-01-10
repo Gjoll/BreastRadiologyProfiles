@@ -16,6 +16,26 @@
     {
       "url": "http://www.fragment.com/maplink",
       "valueString": "fragment|True|http://hl7.org/fhir/us/breast-radiology/StructureDefinition/HeaderFragment"
+    },
+    {
+      "url": "http://www.fragment.com/maplink",
+      "valueString": "valueSet|True|http://hl7.org/fhir/us/breast-radiology/ValueSet/BreastLocationQuadrantVS"
+    },
+    {
+      "url": "http://www.fragment.com/maplink",
+      "valueString": "valueSet|True|http://hl7.org/fhir/us/breast-radiology/ValueSet/BreastLocationRegionVS"
+    },
+    {
+      "url": "http://www.fragment.com/maplink",
+      "valueString": "valueSet|True|http://hl7.org/fhir/us/breast-radiology/ValueSet/BreastLocationClockVS"
+    },
+    {
+      "url": "http://www.fragment.com/maplink",
+      "valueString": "valueSet|True|http://hl7.org/fhir/us/breast-radiology/ValueSet/BreastLocationDepthVS"
+    },
+    {
+      "url": "http://www.fragment.com/maplink",
+      "valueString": "extension|True|http://hl7.org/fhir/us/breast-radiology/StructureDefinition/BodyDistanceFromExtension"
     }
   ],
   "url": "http://hl7.org/fhir/us/breast-radiology/StructureDefinition/BreastBodyLocationExtension",
@@ -253,178 +273,28 @@
         }
       },
       {
-        "id": "Extension.extension:distanceFromNipple",
+        "id": "Extension.extension:distanceFromLandmark",
         "path": "Extension.extension",
-        "sliceName": "distanceFromNipple",
-        "short": "Distance from nipple",
-        "definition": "Distance from nipple to body location",
-        "min": 0,
+        "sliceName": "distanceFromLandmark",
+        "short": "distanceFromLandmark extension",
+        "definition": "This extension slice contains the distanceFromLandmark extension",
+        "comment": "This is one component of a group of components that comprise the observation.",
+        "min": 1,
         "max": "1",
         "base": {
           "path": "Extension.extension",
           "min": 0,
           "max": "*"
-        }
-      },
-      {
-        "id": "Extension.extension:distanceFromNipple.extension",
-        "path": "Extension.extension.extension",
-        "min": 0,
-        "max": "0"
-      },
-      {
-        "id": "Extension.extension:distanceFromNipple.value[x]",
-        "path": "Extension.extension.value[x]",
-        "min": 1,
-        "max": "1",
+        },
         "type": [
           {
-            "code": "Quantity"
-          }
-        ]
-      },
-      {
-        "id": "Extension.extension:distanceFromNipple.value[x].system",
-        "path": "Extension.extension.value[x].system",
-        "min": 1,
-        "max": "1",
-        "type": [
-          {
-            "code": "uri"
+            "code": "Extension",
+            "profile": [
+              "http://hl7.org/fhir/us/breast-radiology/StructureDefinition/BodyDistanceFromExtension"
+            ]
           }
         ],
-        "fixedUri": "http://unitsofmeasure.org"
-      },
-      {
-        "id": "Extension.extension:distanceFromNipple.value[x].code",
-        "path": "Extension.extension.value[x].code",
-        "min": 1,
-        "max": "1",
-        "type": [
-          {
-            "code": "uri"
-          }
-        ],
-        "binding": {
-          "strength": "required",
-          "valueSet": "http://hl7.org/fhir/us/breast-radiology/ValueSet/UnitsOfLengthVS"
-        }
-      },
-      {
-        "id": "Extension.extension:distanceFromSkin",
-        "path": "Extension.extension",
-        "sliceName": "distanceFromSkin",
-        "short": "Distance from skin",
-        "definition": "Distance from skin to body location",
-        "min": 0,
-        "max": "1",
-        "base": {
-          "path": "Extension.extension",
-          "min": 0,
-          "max": "*"
-        }
-      },
-      {
-        "id": "Extension.extension:distanceFromSkin.extension",
-        "path": "Extension.extension.extension",
-        "min": 0,
-        "max": "0"
-      },
-      {
-        "id": "Extension.extension:distanceFromSkin.value[x]",
-        "path": "Extension.extension.value[x]",
-        "min": 1,
-        "max": "1",
-        "type": [
-          {
-            "code": "Quantity"
-          }
-        ]
-      },
-      {
-        "id": "Extension.extension:distanceFromSkin.value[x].system",
-        "path": "Extension.extension.value[x].system",
-        "min": 1,
-        "max": "1",
-        "type": [
-          {
-            "code": "uri"
-          }
-        ],
-        "fixedUri": "http://unitsofmeasure.org"
-      },
-      {
-        "id": "Extension.extension:distanceFromSkin.value[x].code",
-        "path": "Extension.extension.value[x].code",
-        "min": 1,
-        "max": "1",
-        "type": [
-          {
-            "code": "uri"
-          }
-        ],
-        "binding": {
-          "strength": "required",
-          "valueSet": "http://hl7.org/fhir/us/breast-radiology/ValueSet/UnitsOfLengthVS"
-        }
-      },
-      {
-        "id": "Extension.extension:distanceFromChestWall",
-        "path": "Extension.extension",
-        "sliceName": "distanceFromChestWall",
-        "short": "Distance from chest wall",
-        "definition": "Distance from chest wall to body location",
-        "min": 0,
-        "max": "1",
-        "base": {
-          "path": "Extension.extension",
-          "min": 0,
-          "max": "*"
-        }
-      },
-      {
-        "id": "Extension.extension:distanceFromChestWall.extension",
-        "path": "Extension.extension.extension",
-        "min": 0,
-        "max": "0"
-      },
-      {
-        "id": "Extension.extension:distanceFromChestWall.value[x]",
-        "path": "Extension.extension.value[x]",
-        "min": 1,
-        "max": "1",
-        "type": [
-          {
-            "code": "Quantity"
-          }
-        ]
-      },
-      {
-        "id": "Extension.extension:distanceFromChestWall.value[x].system",
-        "path": "Extension.extension.value[x].system",
-        "min": 1,
-        "max": "1",
-        "type": [
-          {
-            "code": "uri"
-          }
-        ],
-        "fixedUri": "http://unitsofmeasure.org"
-      },
-      {
-        "id": "Extension.extension:distanceFromChestWall.value[x].code",
-        "path": "Extension.extension.value[x].code",
-        "min": 1,
-        "max": "1",
-        "type": [
-          {
-            "code": "uri"
-          }
-        ],
-        "binding": {
-          "strength": "required",
-          "valueSet": "http://hl7.org/fhir/us/breast-radiology/ValueSet/UnitsOfLengthVS"
-        }
+        "isModifier": false
       },
       {
         "id": "Extension.url",

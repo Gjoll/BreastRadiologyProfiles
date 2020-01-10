@@ -295,7 +295,7 @@ namespace BreastRadiology.XUnitTests
                     return extensionElement.CreateNode(elementValue);
                 }
 
-                void SliceAndBind(String sliceName,
+                void SliceAndBindUrl(String sliceName,
                     String bindName,
                     String shortText,
                     Markdown definition)
@@ -306,6 +306,15 @@ namespace BreastRadiology.XUnitTests
                         .Binding(bindName, BindingStrength.Required)
                         .Single()
                         ;
+                }
+
+                void SliceAndBindVS(String sliceName,
+                    ValueSet binding,
+                    String shortText,
+                    Markdown definition)
+                {
+                    SliceAndBindUrl(sliceName, binding.Url, shortText, definition);
+                    e.AddValueSetLink(binding);
                 }
 
                 void SliceDistance(String sliceName,
@@ -372,7 +381,7 @@ namespace BreastRadiology.XUnitTests
 
                 extensionNode = e.ConfigureSliceByUrlDiscriminator("extension", true);
 
-                SliceAndBind("laterality",
+                SliceAndBindUrl("laterality",
                     "http://hl7.org/fhir/ValueSet/bodysite-laterality",
                     "Laterality of the body location",
                     new Markdown().Paragraph("The laterality of the body location"));
@@ -389,11 +398,10 @@ namespace BreastRadiology.XUnitTests
                         Self.fc?.Mark(outputPath);
                     }
 
-                    SliceAndBind("quadrant",
-                        binding.Url,
+                    SliceAndBindVS("quadrant",
+                        binding,
                         "Quadrant of the body location",
                         new Markdown().Paragraph("The quadrant  of the body location"));
-                    //AddMapLink(binding);
                 }
 
                 {
@@ -408,8 +416,8 @@ namespace BreastRadiology.XUnitTests
                         Self.fc?.Mark(outputPath);
                     }
 
-                    SliceAndBind("region",
-                        binding.Url,
+                    SliceAndBindVS("region",
+                        binding,
                         "Region of the body location",
                         new Markdown().Paragraph("The region  of the body location"));
                     //AddMapLink(binding);
@@ -427,11 +435,10 @@ namespace BreastRadiology.XUnitTests
                         Self.fc?.Mark(outputPath);
                     }
 
-                    SliceAndBind("clockDirection",
-                        binding.Url,
+                    SliceAndBindVS("clockDirection",
+                        binding,
                         "Clock direction of the body location",
                         new Markdown().Paragraph("The clock direction of the body location."));
-                    //AddMapLink(binding);
                 }
 
                 {
@@ -445,29 +452,17 @@ namespace BreastRadiology.XUnitTests
                         Self.fc?.Mark(outputPath);
                     }
 
-                    SliceAndBind("depth",
-                        binding.Url,
+                    SliceAndBindVS("depth",
+                        binding,
                         "Depth of the body location",
                         new Markdown().Paragraph("The depth of the body location."));
-                    //AddMapLink(binding);
                 }
 
-                SliceDistance("distanceFromNipple",
-                    "Distance from nipple",
-                    new Markdown("Distance from nipple to body location"));
+                e
+                    .ApplyExtension("distanceFromLandmark", Self.BodyDistanceFromExtension.Value().Url, true)
+                    .Single()
+                    ;
 
-                SliceDistance("distanceFromSkin",
-                    "Distance from skin",
-                    new Markdown("Distance from skin to body location"));
-
-                SliceDistance("distanceFromChestWall",
-                    "Distance from chest wall",
-                    new Markdown("Distance from chest wall to body location"));
-
-                //$e.IntroDoc
-                //    .IntroExtension("Breast Body Location", "define a location in the breast")
-                //    .ReviewedStatus(ReviewStatus.NotReviewed)
-                //    ;
                 e.IntroDoc
                     .ReviewedStatus(ReviewStatus.NotReviewed)
                     ;

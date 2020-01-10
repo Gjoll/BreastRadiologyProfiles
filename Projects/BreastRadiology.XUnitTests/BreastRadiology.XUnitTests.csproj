@@ -94,6 +94,9 @@
     <None Update="IntroDocTemplates\AimAnnotatedPolyLineExtension.template">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
+    <None Update="IntroDocTemplates\BodyDistanceFromExtension.template">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
     <None Update="IntroDocTemplates\ValueSet.template">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
