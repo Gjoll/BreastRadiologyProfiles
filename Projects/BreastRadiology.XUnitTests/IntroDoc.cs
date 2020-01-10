@@ -75,10 +75,10 @@ namespace BreastRadiology.XUnitTests
                 throw new Exception($"reviewStatus block missing");
 
             b
-                .AppendRaw($"Comments and Suggested changes to this implementation guide should be added to the ")
-                .AppendRaw($"[Git Hub Project] https://github.com/HL7/fhir-breast-radiology-ig/projects/1)")
                 .AppendRaw($"<h3 id=\"reviewStatus\">Review Status</h3>")
                 .AppendRaw($"<p><b>{reviewStatus}</b></p>")
+                .AppendRaw($"Comments and Suggested changes to this implementation guide van be made ")
+                .AppendRaw($"<a href=\"https://github.com/HL7/fhir-breast-radiology-ig/projects/1\">here</a>")
                 ;
 
             return this;
