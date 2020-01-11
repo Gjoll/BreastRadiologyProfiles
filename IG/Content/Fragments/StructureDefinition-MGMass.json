@@ -43,11 +43,11 @@
     },
     {
       "url": "http://www.fragment.com/fragment",
-      "valueUrl": "http://hl7.org/fhir/us/breast-radiology/StructureDefinition/MgCommonTargetsFragment"
+      "valueUrl": "http://hl7.org/fhir/us/breast-radiology/StructureDefinition/CommonTargetsFragment"
     },
     {
       "url": "http://www.fragment.com/maplink",
-      "valueString": "fragment|True|http://hl7.org/fhir/us/breast-radiology/StructureDefinition/MgCommonTargetsFragment"
+      "valueString": "fragment|True|http://hl7.org/fhir/us/breast-radiology/StructureDefinition/CommonTargetsFragment"
     },
     {
       "url": "http://www.fragment.com/fragment",
@@ -59,11 +59,11 @@
     },
     {
       "url": "http://www.fragment.com/maplink",
-      "valueString": "target|False|http://hl7.org/fhir/us/breast-radiology/StructureDefinition/ConsistentWith"
+      "valueString": "target|False|http://hl7.org/fhir/us/breast-radiology/StructureDefinition/AssociatedFeatures"
     },
     {
       "url": "http://www.fragment.com/maplink",
-      "valueString": "target|False|http://hl7.org/fhir/us/breast-radiology/StructureDefinition/MGAssociatedFeatures"
+      "valueString": "target|False|http://hl7.org/fhir/us/breast-radiology/StructureDefinition/ConsistentWith"
     },
     {
       "url": "http://www.fragment.com/maplink",
@@ -78,7 +78,7 @@
   "name": "MGMass",
   "title": "Mammography Mass",
   "status": "draft",
-  "description": "Breast Radiology Mammography Mass Observation\n\nIf this observation is present, and dataAbsentReason is empty, then a mass abnormality was observed.\n\n\nIf this observation is present, and dataAbsentReason is not empty, then a mass abnormality was not observed and dataAbsentReason contains the reason why.\n\n\n\"MASS\" is three dimensional and occupies space. It is seen on two different mammographic pro-\njections. It has completely or partially convex-outward borders and (when radiodense) appears\ndenser in the center than at the periphery. If a potential mass is seen only on a single projection, it\nshould be called an \"ASYMMETRY\" until its 3-dimensionality is confirmed\n-- Bi-Rads® Atlas — Mammography Fifth Ed. 2013",
+  "description": "Mass Observation\n\nIf this observation is present, and dataAbsentReason is empty, then a mass abnormality was observed.\n\n\nIf this observation is present, and dataAbsentReason is not empty, then a mass abnormality was not observed and dataAbsentReason contains the reason why.\n\n\n\"MASS\" is three dimensional and occupies space. It is seen on two different mammographic pro-\njections. It has completely or partially convex-outward borders and (when radiodense) appears\ndenser in the center than at the periphery. If a potential mass is seen only on a single projection, it\nshould be called an \"ASYMMETRY\" until its 3-dimensionality is confirmed\n-- Bi-Rads® Atlas — Mammography Fifth Ed. 2013",
   "fhirVersion": "4.0.0",
   "kind": "resource",
   "abstract": false,
@@ -90,7 +90,7 @@
       {
         "id": "Observation",
         "path": "Observation",
-        "short": "Breast Radiology Mammography Mass Observation",
+        "short": "Mass Observation",
         "definition": "If this observation is present, and dataAbsentReason is empty, then a mass abnormality was observed.\n\n\nIf this observation is present, and dataAbsentReason is not empty, then a mass abnormality was not observed and dataAbsentReason contains the reason why.\n\n\n\"MASS\" is three dimensional and occupies space. It is seen on two different mammographic pro-\njections. It has completely or partially convex-outward borders and (when radiodense) appears\ndenser in the center than at the periphery. If a potential mass is seen only on a single projection, it\nshould be called an \"ASYMMETRY\" until its 3-dimensionality is confirmed\n-- Bi-Rads® Atlas — Mammography Fifth Ed. 2013",
         "base": {
           "path": "Observation",
@@ -129,6 +129,28 @@
         }
       },
       {
+        "id": "Observation.hasMember:associatedFeatures",
+        "path": "Observation.hasMember",
+        "sliceName": "associatedFeatures",
+        "short": "'Associated Features' reference",
+        "definition": "This slice references the target 'Associated Features'",
+        "min": 0,
+        "max": "1",
+        "base": {
+          "path": "Observation.hasMember",
+          "min": 0,
+          "max": "*"
+        },
+        "type": [
+          {
+            "code": "Reference",
+            "targetProfile": [
+              "http://hl7.org/fhir/us/breast-radiology/StructureDefinition/AssociatedFeatures"
+            ]
+          }
+        ]
+      },
+      {
         "id": "Observation.hasMember:consistentWith",
         "path": "Observation.hasMember",
         "sliceName": "consistentWith",
@@ -146,28 +168,6 @@
             "code": "Reference",
             "targetProfile": [
               "http://hl7.org/fhir/us/breast-radiology/StructureDefinition/ConsistentWith"
-            ]
-          }
-        ]
-      },
-      {
-        "id": "Observation.hasMember:mGAssociatedFeatures",
-        "path": "Observation.hasMember",
-        "sliceName": "mGAssociatedFeatures",
-        "short": "'Mammography Associated Features' reference",
-        "definition": "This slice references the target 'Mammography Associated Features'",
-        "min": 0,
-        "max": "1",
-        "base": {
-          "path": "Observation.hasMember",
-          "min": 0,
-          "max": "*"
-        },
-        "type": [
-          {
-            "code": "Reference",
-            "targetProfile": [
-              "http://hl7.org/fhir/us/breast-radiology/StructureDefinition/MGAssociatedFeatures"
             ]
           }
         ]

@@ -136,7 +136,7 @@ namespace BreastRadiology.XUnitTests
         //                "US Echo Pattern",
         //                ObservationUrl,
         //                $"{Group_USResources}/EchoPattern")
-        //            .Description("Breast Radiology Ultra-Sound Echo Pattern Observation",
+        //            .Description("Ultra-Sound Echo Pattern Observation",
         //                new Markdown()
         //                    .BiradHeader()
         //                    .BlockQuote("The echogenicity of most benign and malignant masses is hypoechoic compared with ")

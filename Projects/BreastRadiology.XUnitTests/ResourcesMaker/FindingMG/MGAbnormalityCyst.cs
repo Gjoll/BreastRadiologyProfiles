@@ -85,7 +85,7 @@ namespace BreastRadiology.XUnitTests
                         "Mammography Cyst",
                         "MG Cyst",
                         $"{Group_MGResources}/AbnormalityCyst")
-                    .Description("Breast Radiology Mammography Cyst Observation",
+                    .Description("Cyst Observation",
                         new Markdown()
                             .Paragraph("[PR]")
                             .MissingObservation("a cyst")
@@ -93,7 +93,7 @@ namespace BreastRadiology.XUnitTests
                     .AddFragRef(Self.ObservationNoDeviceFragment.Value().Url)
                     .AddFragRef(Self.ObservationNoValueFragment.Value().Url)
                     .AddFragRef(Self.ImagingStudyFragment.Value().Url)
-                    .AddFragRef(Self.MGCommonTargetsFragment.Value().Url)
+                    .AddFragRef(Self.CommonTargetsFragment.Value().Url)
                     .AddFragRef(Self.MGShapeTargetsFragment.Value().Url)
                     ;
                 s = e.SDef;
@@ -105,7 +105,7 @@ namespace BreastRadiology.XUnitTests
                 e.Select("value[x]").Zero();
 
                 PreFhir.ElementTreeNode sliceElementDef = e.ConfigureSliceByUrlDiscriminator("hasMember", false);
-                Self.SliceTargetReference(e, sliceElementDef, Self.MGAssociatedFeatures.Value(), 0, "1");
+                Self.SliceTargetReference(e, sliceElementDef, Self.AssociatedFeatures.Value(), 0, "1");
                 Self.SliceTargetReference(e, sliceElementDef, Self.ConsistentWith.Value(), 0, "*");
 
                 e.StartComponentSliceing();

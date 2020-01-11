@@ -21,7 +21,7 @@ namespace BreastRadiology.XUnitTests
                         "Mammography Architectural Distortion",
                         "MG Arch. Distortion",
                         $"{Group_MGResources}/AbnormalityArchitecturalDistortion")
-                    .Description("Breast Radiology Mammography Architectural Distortion Observation",
+                    .Description("Architectural Distortion Observation",
                         new Markdown()
                             .MissingObservation("an architectural distortion abnormality")
                             .BiradHeader()
@@ -37,7 +37,7 @@ namespace BreastRadiology.XUnitTests
                     )
                     .AddFragRef(Self.ObservationNoDeviceFragment.Value().Url)
                     .AddFragRef(Self.ObservationNoValueFragment.Value().Url)
-                    .AddFragRef(Self.MGCommonTargetsFragment.Value().Url)
+                    .AddFragRef(Self.CommonTargetsFragment.Value().Url)
                     ;
                 s = e.SDef;
 
@@ -48,7 +48,7 @@ namespace BreastRadiology.XUnitTests
                 e.Select("value[x]").Zero();
 
                 PreFhir.ElementTreeNode sliceElementDef = e.ConfigureSliceByUrlDiscriminator("hasMember", false);
-                Self.SliceTargetReference(e, sliceElementDef, Self.MGAssociatedFeatures.Value(), 0, "1");
+                Self.SliceTargetReference(e, sliceElementDef, Self.AssociatedFeatures.Value(), 0, "1");
                 Self.SliceTargetReference(e, sliceElementDef, Self.ConsistentWith.Value(), 0, "*");
             });
     }

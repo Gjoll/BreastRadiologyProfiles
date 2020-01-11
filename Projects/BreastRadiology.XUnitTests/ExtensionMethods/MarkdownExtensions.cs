@@ -60,5 +60,26 @@ namespace BreastRadiology.XUnitTests
             ;
             return md;
         }
+
+        public static Markdown ValidModalities(this Markdown md,
+            Modalities modalities)
+        {
+            List<String> s = new List<string>();
+
+            void Add(Modalities flag)
+            {
+                if ((modalities & flag) == flag)
+                    s.Add($" {flag.ToString()}");
+            }
+
+            md.Paragraph("Valid for the following modalities:");
+            Add(Modalities.MG);
+            Add(Modalities.US);
+            Add(Modalities.MRI);
+            Add(Modalities.NM);
+            md.List(s.ToArray());
+            return md;
+        }
+
     }
 }

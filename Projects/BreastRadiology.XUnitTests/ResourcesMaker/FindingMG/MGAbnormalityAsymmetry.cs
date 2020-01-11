@@ -110,7 +110,7 @@ namespace BreastRadiology.XUnitTests
                         "Mammography Asymmetry",
                         "MG Asymmetry",
                         $"{Group_MGResources}/AbnormalityAsymmetry")
-                    .Description("Breast Radiology Mammography Asymmetry Observation",
+                    .Description("Asymmetry Observation",
                         new Markdown()
                             .MissingObservation("an asymmetry")
                             .BiradHeader()
@@ -124,7 +124,7 @@ namespace BreastRadiology.XUnitTests
                     )
                     .AddFragRef(Self.ObservationNoDeviceFragment.Value().Url)
                     .AddFragRef(Self.ObservationCodedValueFragment.Value().Url)
-                    .AddFragRef(Self.MGCommonTargetsFragment.Value().Url)
+                    .AddFragRef(Self.CommonTargetsFragment.Value().Url)
                 ;
                 s = e.SDef;
 
@@ -133,7 +133,7 @@ namespace BreastRadiology.XUnitTests
                     ;
 
                 PreFhir.ElementTreeNode sliceElementDef = e.ConfigureSliceByUrlDiscriminator("hasMember", false);
-                Self.SliceTargetReference(e, sliceElementDef, Self.MGAssociatedFeatures.Value(), 0, "1");
+                Self.SliceTargetReference(e, sliceElementDef, Self.AssociatedFeatures.Value(), 0, "1");
                 Self.SliceTargetReference(e, sliceElementDef, Self.ConsistentWith.Value(), 0, "*");
 
                 e.Select("value[x]").Zero();

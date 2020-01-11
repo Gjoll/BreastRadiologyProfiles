@@ -81,7 +81,7 @@ namespace BreastRadiology.XUnitTests
         //            "US Boundary",
         //            ObservationUrl,
         //            $"{Group_USResources}/Boundary")
-        //            .Description("Breast Radiology Ultra-Sound Boundary Observation",
+        //            .Description("Ultra-Sound Boundary Observation",
         //                new Markdown()
         //                    .Paragraph("This resource describes an Ultra-Sound boundary observation.")
         //                    .Paragraph("[PR]")

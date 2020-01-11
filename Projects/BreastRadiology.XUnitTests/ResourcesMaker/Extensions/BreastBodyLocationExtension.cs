@@ -317,38 +317,6 @@ namespace BreastRadiology.XUnitTests
                     e.AddValueSetLink(binding);
                 }
 
-                void SliceDistance(String sliceName,
-                    String shortText,
-                    Markdown definition)
-                {
-                    ElementTreeNode sliceNode = Slice(sliceName, shortText, definition);
-
-                    sliceNode.ElementDefinition
-                        .Type("Quantity")
-                        .Single()
-                        ;
-
-                    ElementDefinition quantitySystem = new ElementDefinition()
-                        .Path($"{extensionNode.ElementDefinition.Path}.value[x].system")
-                        .ElementId($"{extensionNode.ElementDefinition.Path}:{sliceName}.value[x].system")
-                        .Type("uri")
-                        .Single()
-                        .Fixed(new FhirUri("http://unitsofmeasure.org"))
-                        ;
-                    sliceNode.DefaultSlice.CreateNode(quantitySystem);
-
-                    ElementDefinition quantityCode = new ElementDefinition()
-                        .Path($"{extensionNode.ElementDefinition.Path}.value[x].code")
-                        .ElementId($"{extensionNode.ElementDefinition.Path}:{sliceName}.value[x].code")
-                        .Type("uri")
-                        .Single()
-                        .Binding("http://hl7.org/fhir/us/breast-radiology/ValueSet/UnitsOfLengthVS",
-                                BindingStrength.Required)
-                        ;
-                    sliceNode.DefaultSlice.CreateNode(quantityCode);
-                }
-
-                //breastBodyLocationMapLinks = new List<ResourceMap.Link>();
 
                 e = Self.CreateEditor("BreastBodyLocationExtension",
                     "Breast Body Location Extension",
@@ -469,7 +437,9 @@ namespace BreastRadiology.XUnitTests
 
                 e.IntroDoc
                     .ReviewedStatus(ReviewStatus.NotReviewed)
-                    .Intro("#Add Content")
+                    .Intro(
+                        "This complex extension adds fields that specify a location for use in a  breast radiology exam."
+                        )
                     ;
             });
     }

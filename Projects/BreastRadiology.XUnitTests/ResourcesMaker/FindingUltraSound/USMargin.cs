@@ -52,7 +52,7 @@ namespace BreastRadiology.XUnitTests
         //                "US Margin",
         //                ObservationUrl,
         //                $"{Group_USResources}/Margin")
-        //            .Description("Breast Radiology Ultra-Sound Margin Observation",
+        //            .Description("Ultra-Sound Margin Observation",
         //                new Markdown()
         //                    .MissingObservation("a mass margin")
         //                    .BiradHeader()

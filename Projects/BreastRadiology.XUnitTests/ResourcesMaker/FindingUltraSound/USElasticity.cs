@@ -73,7 +73,7 @@ namespace BreastRadiology.XUnitTests
         //                "US Elasticity",
         //                ObservationUrl,
         //                $"{Group_USResources}/Elasticity")
-        //            .Description("Breast Radiology Ultra-Sound Elasticity Observation",
+        //            .Description("Ultra-Sound Elasticity Observation",
         //                new Markdown()
         //                    .Paragraph("[PR]")
         //                )

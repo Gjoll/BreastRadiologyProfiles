@@ -19,7 +19,11 @@
     },
     {
       "url": "http://www.fragment.com/maplink",
-      "valueString": "target|False|http://hl7.org/fhir/us/breast-radiology/StructureDefinition/MGAbnormalityForeignObject"
+      "valueString": "target|False|http://hl7.org/fhir/us/breast-radiology/StructureDefinition/AbnormalityForeignObject"
+    },
+    {
+      "url": "http://www.fragment.com/maplink",
+      "valueString": "target|False|http://hl7.org/fhir/us/breast-radiology/StructureDefinition/AssociatedFeatures"
     },
     {
       "url": "http://www.fragment.com/maplink",
@@ -63,20 +67,12 @@
     },
     {
       "url": "http://www.fragment.com/maplink",
-      "valueString": "target|False|http://hl7.org/fhir/us/breast-radiology/StructureDefinition/MGAssociatedFeatures"
-    },
-    {
-      "url": "http://www.fragment.com/maplink",
       "valueString": "target|False|http://hl7.org/fhir/us/breast-radiology/StructureDefinition/MGBreastDensity"
-    },
-    {
-      "url": "http://www.fragment.com/maplink",
-      "valueString": "target|False|http://hl7.org/fhir/us/breast-radiology/StructureDefinition/MGSkinLesion"
     }
   ],
   "url": "http://hl7.org/fhir/us/breast-radiology/StructureDefinition/MGFinding",
   "name": "MGFinding",
-  "title": "Mammographi Finding",
+  "title": "Mammography Finding",
   "status": "draft",
   "description": "Breast Radiology Mammography Finding",
   "fhirVersion": "4.0.0",
@@ -128,9 +124,9 @@
         }
       },
       {
-        "id": "Observation.hasMember:mGAbnormalityForeignObject",
+        "id": "Observation.hasMember:abnormalityForeignObject",
         "path": "Observation.hasMember",
-        "sliceName": "mGAbnormalityForeignObject",
+        "sliceName": "abnormalityForeignObject",
         "short": "'Foreign Object' reference",
         "definition": "This slice references the target 'Foreign Object'",
         "min": 0,
@@ -144,7 +140,29 @@
           {
             "code": "Reference",
             "targetProfile": [
-              "http://hl7.org/fhir/us/breast-radiology/StructureDefinition/MGAbnormalityForeignObject"
+              "http://hl7.org/fhir/us/breast-radiology/StructureDefinition/AbnormalityForeignObject"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "Observation.hasMember:associatedFeatures",
+        "path": "Observation.hasMember",
+        "sliceName": "associatedFeatures",
+        "short": "'Associated Features' reference",
+        "definition": "This slice references the target 'Associated Features'",
+        "min": 0,
+        "max": "*",
+        "base": {
+          "path": "Observation.hasMember",
+          "min": 0,
+          "max": "*"
+        },
+        "type": [
+          {
+            "code": "Reference",
+            "targetProfile": [
+              "http://hl7.org/fhir/us/breast-radiology/StructureDefinition/AssociatedFeatures"
             ]
           }
         ]
@@ -370,28 +388,6 @@
         ]
       },
       {
-        "id": "Observation.hasMember:mGAssociatedFeatures",
-        "path": "Observation.hasMember",
-        "sliceName": "mGAssociatedFeatures",
-        "short": "'Mammography Associated Features' reference",
-        "definition": "This slice references the target 'Mammography Associated Features'",
-        "min": 0,
-        "max": "*",
-        "base": {
-          "path": "Observation.hasMember",
-          "min": 0,
-          "max": "*"
-        },
-        "type": [
-          {
-            "code": "Reference",
-            "targetProfile": [
-              "http://hl7.org/fhir/us/breast-radiology/StructureDefinition/MGAssociatedFeatures"
-            ]
-          }
-        ]
-      },
-      {
         "id": "Observation.hasMember:mGBreastDensity",
         "path": "Observation.hasMember",
         "sliceName": "mGBreastDensity",
@@ -409,28 +405,6 @@
             "code": "Reference",
             "targetProfile": [
               "http://hl7.org/fhir/us/breast-radiology/StructureDefinition/MGBreastDensity"
-            ]
-          }
-        ]
-      },
-      {
-        "id": "Observation.hasMember:mGSkinLesion",
-        "path": "Observation.hasMember",
-        "sliceName": "mGSkinLesion",
-        "short": "'Mammography Skin Lesion' reference",
-        "definition": "This slice references the target 'Mammography Skin Lesion'",
-        "min": 0,
-        "max": "*",
-        "base": {
-          "path": "Observation.hasMember",
-          "min": 0,
-          "max": "*"
-        },
-        "type": [
-          {
-            "code": "Reference",
-            "targetProfile": [
-              "http://hl7.org/fhir/us/breast-radiology/StructureDefinition/MGSkinLesion"
             ]
           }
         ]

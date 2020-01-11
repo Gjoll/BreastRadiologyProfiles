@@ -38,7 +38,7 @@
   "name": "ConsistentWith",
   "title": "Consistent With",
   "status": "draft",
-  "description": "Breast Radiology 'Consistent With' Observation\n\nIf this observation is present, and dataAbsentReason is empty, then a consistentWith was observed.\n\n\nIf this observation is present, and dataAbsentReason is not empty, then a consistentWith was not observed and dataAbsentReason contains the reason why.",
+  "description": "'Consistent With' Observation\n\nIf this observation is present, and dataAbsentReason is empty, then a consistentWith was observed.\n\n\nIf this observation is present, and dataAbsentReason is not empty, then a consistentWith was not observed and dataAbsentReason contains the reason why.",
   "fhirVersion": "4.0.0",
   "kind": "resource",
   "abstract": false,
@@ -50,7 +50,7 @@
       {
         "id": "Observation",
         "path": "Observation",
-        "short": "Breast Radiology 'Consistent With' Observation",
+        "short": "'Consistent With' Observation",
         "definition": "If this observation is present, and dataAbsentReason is empty, then a consistentWith was observed.\n\n\nIf this observation is present, and dataAbsentReason is not empty, then a consistentWith was not observed and dataAbsentReason contains the reason why.",
         "base": {
           "path": "Observation",

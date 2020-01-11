@@ -27,11 +27,11 @@
     },
     {
       "url": "http://www.fragment.com/fragment",
-      "valueUrl": "http://hl7.org/fhir/us/breast-radiology/StructureDefinition/MgCommonTargetsFragment"
+      "valueUrl": "http://hl7.org/fhir/us/breast-radiology/StructureDefinition/CommonTargetsFragment"
     },
     {
       "url": "http://www.fragment.com/maplink",
-      "valueString": "fragment|True|http://hl7.org/fhir/us/breast-radiology/StructureDefinition/MgCommonTargetsFragment"
+      "valueString": "fragment|True|http://hl7.org/fhir/us/breast-radiology/StructureDefinition/CommonTargetsFragment"
     },
     {
       "url": "http://www.fragment.com/fragment",
@@ -119,11 +119,11 @@
     },
     {
       "url": "http://www.fragment.com/mapname",
-      "valueString": "MG Common Targets Fragment"
+      "valueString": "Common Targets Fragment"
     },
     {
       "url": "http://www.fragment.com/Group",
-      "valueString": "Fragment/MgCommonTargetsFragment"
+      "valueString": "Fragment/CommonTargetsFragment"
     },
     {
       "url": "http://www.fragment.com/maplink",

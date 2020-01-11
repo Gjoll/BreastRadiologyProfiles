@@ -22,7 +22,7 @@ namespace BreastRadiology.XUnitTests
                         "Mammography Fibroadenoma",
                         "MG Fibroadenoma",
                         $"{Group_MGResources}/AbnormalityFibroadenoma")
-                    .Description("Breast Radiology Mammography Fibroadenoma Observation",
+                    .Description("Fibroadenoma Observation",
                         new Markdown()
                             .Paragraph("[PR]")
                             .MissingObservation("a fibroadenoma abnormality")
@@ -30,7 +30,7 @@ namespace BreastRadiology.XUnitTests
                     .AddFragRef(Self.ObservationNoDeviceFragment.Value().Url)
                     .AddFragRef(Self.ObservationNoValueFragment.Value().Url)
                     .AddFragRef(Self.ImagingStudyFragment.Value().Url)
-                    .AddFragRef(Self.MGCommonTargetsFragment.Value().Url)
+                    .AddFragRef(Self.CommonTargetsFragment.Value().Url)
                     .AddFragRef(Self.MGShapeTargetsFragment.Value().Url)
                     ;
 
@@ -42,7 +42,7 @@ namespace BreastRadiology.XUnitTests
 
                 e.Select("value[x]").Zero();
                 PreFhir.ElementTreeNode sliceElementDef = e.ConfigureSliceByUrlDiscriminator("hasMember", false);
-                Self.SliceTargetReference(e, sliceElementDef, Self.MGAssociatedFeatures.Value(), 0, "1");
+                Self.SliceTargetReference(e, sliceElementDef, Self.AssociatedFeatures.Value(), 0, "1");
 
                 e.StartComponentSliceing();
                 e.ComponentSliceCodeableConcept("mgAbnormalityFibroAdenomaType",

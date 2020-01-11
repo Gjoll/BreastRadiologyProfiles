@@ -113,7 +113,7 @@ namespace BreastRadiology.XUnitTests
         //                "MG Calc./Distribution",
         //                ObservationUrl,
         //                $"{Group_MGResources}/Calcification/Distribution")
-        //            .Description("Breast Radiology Mammography Calcification Distribution Observation",
+        //            .Description("Calcification Distribution Observation",
         //                new Markdown()
         //                    .Paragraph("This resource describes the calcification distribution observed.")
         //                    .BiradHeader()

@@ -21,7 +21,7 @@ namespace BreastRadiology.XUnitTests
                         "Consistent With",
                         "Consistent/With",
                         $"{Group_CommonResources}/ConsistentWith")
-                           .Description("Breast Radiology 'Consistent With' Observation",
+                           .Description("'Consistent With' Observation",
                                new Markdown()
                                    .MissingObservation("a consistentWith")
                            )
@@ -92,13 +92,13 @@ namespace BreastRadiology.XUnitTests
                                 "Abscess",
                                 new Definition()
                                     .Line("[PR] Abscess")
-                                    .ValidModalities(Modalities.MG, Modalities.MRI, Modalities.US)
+                                    .ValidModalities(Modalities.MG | Modalities.MRI | Modalities.US)
                                 ),
                             new ConceptDef("Angiolipoma",
                                 "Angiolipoma",
                                 new Definition()
                                     .Line("[PR] Angiolipoma")
-                                    .ValidModalities(Modalities.MRI, Modalities.US)
+                                    .ValidModalities(Modalities.MRI | Modalities.US)
                                 ),
                             new ConceptDef("ApocrineMetaplasia",
                                 "Apocrine metaplasia",
@@ -128,43 +128,43 @@ namespace BreastRadiology.XUnitTests
                                 "Carcinoma",
                                 new Definition()
                                     .Line("[PR] Carcinoma")
-                                    .ValidModalities(Modalities.MG, Modalities.MRI, Modalities.NM, Modalities.US)
+                                    .ValidModalities(Modalities.MG | Modalities.MRI | Modalities.NM | Modalities.US)
                                 ),
                             new ConceptDef("CarcinomaKnown",
                                 "Carcinoma known",
                                 new Definition()
                                     .Line("[PR] Carcinoma known")
-                                    .ValidModalities(Modalities.MG, Modalities.MRI, Modalities.US)
+                                    .ValidModalities(Modalities.MG | Modalities.MRI | Modalities.US)
                                 ),
                             new ConceptDef("ClusterOfCysts",
                                 "Cluster of cysts",
                                 new Definition()
                                     .Line("[PR] Cluster of cysts")
-                                    .ValidModalities(Modalities.MG, Modalities.MRI, Modalities.US)
+                                    .ValidModalities(Modalities.MG | Modalities.MRI | Modalities.US)
                                 ),
                             new ConceptDef("Cyst",
                                 "Cyst",
                                 new Definition()
                                     .Line("[PR] Cyst")
-                                    .ValidModalities(Modalities.MG, Modalities.MRI)
+                                    .ValidModalities(Modalities.MG | Modalities.MRI)
                                 ),
                             new ConceptDef("CystComplex",
                                 "Cyst complex",
                                 new Definition()
                                     .Line("[PR] Cyst complex")
-                                    .ValidModalities(Modalities.MRI, Modalities.US)
+                                    .ValidModalities(Modalities.MRI | Modalities.US)
                                 ),
                             new ConceptDef("CystComplicated",
                                 "Cyst complicated",
                                 new Definition()
                                     .Line("[PR] Cyst complicated")
-                                    .ValidModalities(Modalities.MRI, Modalities.US)
+                                    .ValidModalities(Modalities.MRI | Modalities.US)
                                 ),
                             new ConceptDef("CystOil",
                                 "Cyst oil",
                                 new Definition()
                                     .Line("[PR] Cyst oil")
-                                    .ValidModalities(Modalities.MG, Modalities.US)
+                                    .ValidModalities(Modalities.MG | Modalities.US)
                                 ),
                             new ConceptDef("CystSebaceous",
                                 "Cyst sebaceous",
@@ -176,19 +176,19 @@ namespace BreastRadiology.XUnitTests
                                 "Cyst simple",
                                 new Definition()
                                     .Line("[PR] Cyst simple")
-                                    .ValidModalities(Modalities.MRI, Modalities.US)
+                                    .ValidModalities(Modalities.MRI | Modalities.US)
                                 ),
                             new ConceptDef("CystsComplex",
                                 "Cysts complex",
                                 new Definition()
                                     .Line("[PR] Cysts complex")
-                                    .ValidModalities(Modalities.MRI, Modalities.US)
+                                    .ValidModalities(Modalities.MRI | Modalities.US)
                                 ),
                             new ConceptDef("CystsComplicated",
                                 "Cysts complicated",
                                 new Definition()
                                     .Line("[PR] Cysts complicated")
-                                    .ValidModalities(Modalities.MRI, Modalities.US)
+                                    .ValidModalities(Modalities.MRI | Modalities.US)
                                 ),
                             new ConceptDef("CystsMicroClustered",
                                 "Cysts micro clustered",
@@ -200,13 +200,13 @@ namespace BreastRadiology.XUnitTests
                                 "DCIS",
                                 new Definition()
                                     .Line("[PR] DCIS")
-                                    .ValidModalities(Modalities.MG, Modalities.MRI, Modalities.NM, Modalities.US)
+                                    .ValidModalities(Modalities.MG | Modalities.MRI | Modalities.NM | Modalities.US)
                                 ),
                             new ConceptDef("Debris",
                                 "Debris",
                                 new Definition()
                                     .Line("[PR] Debris")
-                                    .ValidModalities(Modalities.MG, Modalities.US)
+                                    .ValidModalities(Modalities.MG | Modalities.US)
                                 ),
                             new ConceptDef("Deodorant",
                                 "Deodorant",
@@ -224,13 +224,13 @@ namespace BreastRadiology.XUnitTests
                                 "Duct ectasia",
                                 new Definition()
                                     .Line("[PR] Duct ectasia")
-                                    .ValidModalities(Modalities.MRI, Modalities.US)
+                                    .ValidModalities(Modalities.MRI | Modalities.US)
                                 ),
                             new ConceptDef("Edema",
                                 "Edema",
                                 new Definition()
                                     .Line("[PR] Edema")
-                                    .ValidModalities(Modalities.MRI, Modalities.US)
+                                    .ValidModalities(Modalities.MRI | Modalities.US)
                                 ),
                             new ConceptDef("FatLobule",
                                 "Fat lobule",
@@ -242,19 +242,19 @@ namespace BreastRadiology.XUnitTests
                                 "Fat necrosis",
                                 new Definition()
                                     .Line("[PR] Fat necrosis")
-                                    .ValidModalities(Modalities.MG, Modalities.MRI, Modalities.US)
+                                    .ValidModalities(Modalities.MG | Modalities.MRI | Modalities.US)
                                 ),
                             new ConceptDef("Fibroadenolipoma",
                                 "Fibroadenolipoma",
                                 new Definition()
                                     .Line("[PR] Fibroadenolipoma")
-                                    .ValidModalities(Modalities.MG, Modalities.US)
+                                    .ValidModalities(Modalities.MG | Modalities.US)
                                 ),
                             new ConceptDef("Fibroadenoma",
                                 "Fibroadenoma",
                                 new Definition()
                                     .Line("[PR] Fibroadenoma")
-                                    .ValidModalities(Modalities.MG, Modalities.MRI, Modalities.NM, Modalities.US)
+                                    .ValidModalities(Modalities.MG | Modalities.MRI | Modalities.NM | Modalities.US)
                                 ),
                             new ConceptDef("FibroadenomaDegenerating",
                                 "Fibroadenoma degenerating",
@@ -266,19 +266,19 @@ namespace BreastRadiology.XUnitTests
                                 "Fibrocystic change",
                                 new Definition()
                                     .Line("[PR] Fibrocystic change")
-                                    .ValidModalities(Modalities.MG, Modalities.MRI, Modalities.US)
+                                    .ValidModalities(Modalities.MG | Modalities.MRI | Modalities.US)
                                 ),
                             new ConceptDef("FibroglandularTissue",
                                 "Fibroglandular tissue",
                                 new Definition()
                                     .Line("[PR] Fibroglandular tissue")
-                                    .ValidModalities(Modalities.MG, Modalities.MRI, Modalities.US)
+                                    .ValidModalities(Modalities.MG | Modalities.MRI | Modalities.US)
                                 ),
                             new ConceptDef("Fibrosis",
                                 "Fibrosis",
                                 new Definition()
                                     .Line("[PR] Fibrosis")
-                                    .ValidModalities(Modalities.MG, Modalities.MRI, Modalities.US)
+                                    .ValidModalities(Modalities.MG | Modalities.MRI | Modalities.US)
                                 ),
                             new ConceptDef("FibrousRidge",
                                 "Fibrous ridge",
@@ -302,13 +302,13 @@ namespace BreastRadiology.XUnitTests
                                 "Hamartoma",
                                 new Definition()
                                     .Line("[PR] Hamartoma")
-                                    .ValidModalities(Modalities.MG, Modalities.MRI, Modalities.US)
+                                    .ValidModalities(Modalities.MG | Modalities.MRI | Modalities.US)
                                 ),
                             new ConceptDef("Hematoma",
                                 "Hematoma",
                                 new Definition()
                                     .Line("[PR] Hematoma")
-                                    .ValidModalities(Modalities.MG, Modalities.MRI, Modalities.US)
+                                    .ValidModalities(Modalities.MG | Modalities.MRI | Modalities.US)
                                 ),
                             new ConceptDef("HormonalStimulation",
                                 "Hormonal stimulation",
@@ -326,19 +326,19 @@ namespace BreastRadiology.XUnitTests
                                 "Intramammary node",
                                 new Definition()
                                     .Line("[PR] Intramammary node")
-                                    .ValidModalities(Modalities.MG, Modalities.NM)
+                                    .ValidModalities(Modalities.MG | Modalities.NM)
                                 ),
                             new ConceptDef("Lipoma",
                                 "Lipoma",
                                 new Definition()
                                     .Line("[PR] Lipoma")
-                                    .ValidModalities(Modalities.MG, Modalities.MRI, Modalities.US)
+                                    .ValidModalities(Modalities.MG | Modalities.MRI | Modalities.US)
                                 ),
                             new ConceptDef("LumpectomyCavity",
                                 "Lumpectomy cavity",
                                 new Definition()
                                     .Line("[PR] Lumpectomy cavity")
-                                    .ValidModalities(Modalities.MRI, Modalities.US)
+                                    .ValidModalities(Modalities.MRI | Modalities.US)
                                 ),
                             new ConceptDef("LumpectomySite",
                                 "Lumpectomy site",
@@ -350,19 +350,19 @@ namespace BreastRadiology.XUnitTests
                                 "Lymph node",
                                 new Definition()
                                     .Line("[PR] Lymph node")
-                                    .ValidModalities(Modalities.MG, Modalities.MRI, Modalities.NM, Modalities.US)
+                                    .ValidModalities(Modalities.MG | Modalities.MRI | Modalities.NM | Modalities.US)
                                 ),
                             new ConceptDef("LymphNodeEnlarged",
                                 "Lymph node enlarged",
                                 new Definition()
                                     .Line("[PR] Lymph node enlarged")
-                                    .ValidModalities(Modalities.MRI, Modalities.US)
+                                    .ValidModalities(Modalities.MRI | Modalities.US)
                                 ),
                             new ConceptDef("LymphNodeNormal",
                                 "Lymph node normal",
                                 new Definition()
                                     .Line("[PR] Lymph node normal")
-                                    .ValidModalities(Modalities.MG, Modalities.MRI, Modalities.US)
+                                    .ValidModalities(Modalities.MG | Modalities.MRI | Modalities.US)
                                 ),
                             new ConceptDef("LymphNodePathological",
                                 "Lymph node pathological",
@@ -374,7 +374,7 @@ namespace BreastRadiology.XUnitTests
                                 "Mass solid",
                                 new Definition()
                                     .Line("[PR] Mass solid")
-                                    .ValidModalities(Modalities.MG, Modalities.MRI, Modalities.US)
+                                    .ValidModalities(Modalities.MG | Modalities.MRI | Modalities.US)
                                 ),
                             new ConceptDef("MassSolidW/tumorVasc",
                                 "Mass solid w/tumor vasc",
@@ -386,7 +386,7 @@ namespace BreastRadiology.XUnitTests
                                 "Mastitis",
                                 new Definition()
                                     .Line("[PR] Mastitis")
-                                    .ValidModalities(Modalities.MG, Modalities.MRI, Modalities.US)
+                                    .ValidModalities(Modalities.MG | Modalities.MRI | Modalities.US)
                                 ),
                             new ConceptDef("MilkOfCalcium",
                                 "Milk of calcium",
@@ -404,19 +404,19 @@ namespace BreastRadiology.XUnitTests
                                 "Papillary lesion",
                                 new Definition()
                                     .Line("[PR] Papillary lesion")
-                                    .ValidModalities(Modalities.MG, Modalities.US)
+                                    .ValidModalities(Modalities.MG | Modalities.US)
                                 ),
                             new ConceptDef("Papilloma",
                                 "Papilloma",
                                 new Definition()
                                     .Line("[PR] Papilloma")
-                                    .ValidModalities(Modalities.MG, Modalities.MRI, Modalities.US)
+                                    .ValidModalities(Modalities.MG | Modalities.MRI | Modalities.US)
                                 ),
                             new ConceptDef("PhyllodesTumor",
                                 "Phyllodes tumor",
                                 new Definition()
                                     .Line("[PR] Phyllodes tumor")
-                                    .ValidModalities(Modalities.MRI, Modalities.US)
+                                    .ValidModalities(Modalities.MRI | Modalities.US)
                                 ),
                             new ConceptDef("PostLumpectomyScar",
                                 "Post lumpectomy scar",
@@ -428,7 +428,7 @@ namespace BreastRadiology.XUnitTests
                                 "Post surgical scar",
                                 new Definition()
                                     .Line("[PR] Post surgical scar")
-                                    .ValidModalities(Modalities.MG, Modalities.NM)
+                                    .ValidModalities(Modalities.MG | Modalities.NM)
                                 ),
                             new ConceptDef("PreviousBiopsy",
                                 "Previous biopsy",
@@ -452,7 +452,7 @@ namespace BreastRadiology.XUnitTests
                                 "Radial scar",
                                 new Definition()
                                     .Line("[PR] Radial scar")
-                                    .ValidModalities(Modalities.MG, Modalities.US)
+                                    .ValidModalities(Modalities.MG | Modalities.US)
                                 ),
                             new ConceptDef("RadiationChanges",
                                 "Radiation changes",
@@ -470,13 +470,13 @@ namespace BreastRadiology.XUnitTests
                                 "Scar",
                                 new Definition()
                                     .Line("[PR] Scar")
-                                    .ValidModalities(Modalities.MRI, Modalities.US)
+                                    .ValidModalities(Modalities.MRI | Modalities.US)
                                 ),
                             new ConceptDef("ScarWithShadowing",
                                 "Scar with shadowing",
                                 new Definition()
                                     .Line("[PR] Scar with shadowing")
-                                    .ValidModalities(Modalities.MRI, Modalities.US)
+                                    .ValidModalities(Modalities.MRI | Modalities.US)
                                 ),
                             new ConceptDef("SclerosingAdenosis",
                                 "Sclerosing adenosis",
@@ -500,7 +500,7 @@ namespace BreastRadiology.XUnitTests
                                 "Seroma",
                                 new Definition()
                                     .Line("[PR] Seroma")
-                                    .ValidModalities(Modalities.MG, Modalities.MRI, Modalities.US)
+                                    .ValidModalities(Modalities.MG | Modalities.MRI | Modalities.US)
                                 ),
                             new ConceptDef("SkinLesion",
                                 "Skin lesion",
@@ -552,25 +552,25 @@ namespace BreastRadiology.XUnitTests
                                 "Likely represents",
                                 new Definition()
                                     .Line("[PR] Likely represents")
-                                    .ValidModalities(Modalities.MG, Modalities.MRI, Modalities.NM, Modalities.US)
+                                    .ValidModalities(Modalities.MG | Modalities.MRI | Modalities.NM | Modalities.US)
                                 ),
                             new ConceptDef("MostLikely",
                                 "Most likely",
                                 new Definition()
                                     .Line("[PR] Most likely")
-                                    .ValidModalities(Modalities.MG, Modalities.US)
+                                    .ValidModalities(Modalities.MG | Modalities.US)
                                 ),
                             new ConceptDef("Resembles",
                                 "Resembles",
                                 new Definition()
                                     .Line("[PR] Resembles")
-                                    .ValidModalities(Modalities.MG, Modalities.MRI, Modalities.NM, Modalities.US)
+                                    .ValidModalities(Modalities.MG | Modalities.MRI | Modalities.NM | Modalities.US)
                                 ),
                             new ConceptDef("w/differentialDiagnosis",
                                 "w/differential diagnosis",
                                 new Definition()
                                     .Line("[PR] w/differential diagnosis")
-                                    .ValidModalities(Modalities.MG, Modalities.MRI, Modalities.NM, Modalities.US)
+                                    .ValidModalities(Modalities.MG | Modalities.MRI | Modalities.NM | Modalities.US)
                                 )
                             //- ConsistentWithQualifierCS
                         })

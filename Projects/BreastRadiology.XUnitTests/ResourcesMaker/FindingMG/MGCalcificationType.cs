@@ -221,7 +221,7 @@ namespace BreastRadiology.XUnitTests
         //            "MG Calc. Type",
         //            ObservationUrl,
         //            $"{Group_MGResources}/Calcification/Type")
-        //            .Description("Breast Radiology Mammography Calcification Type Observation",
+        //            .Description("Calcification Type Observation",
         //                new Markdown()
         //                    .Paragraph("This resource describes the type of calcification observed.")
         //             )

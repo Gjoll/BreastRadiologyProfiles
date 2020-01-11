@@ -27,11 +27,11 @@
     },
     {
       "url": "http://www.fragment.com/fragment",
-      "valueUrl": "http://hl7.org/fhir/us/breast-radiology/StructureDefinition/MgCommonTargetsFragment"
+      "valueUrl": "http://hl7.org/fhir/us/breast-radiology/StructureDefinition/CommonTargetsFragment"
     },
     {
       "url": "http://www.fragment.com/maplink",
-      "valueString": "fragment|True|http://hl7.org/fhir/us/breast-radiology/StructureDefinition/MgCommonTargetsFragment"
+      "valueString": "fragment|True|http://hl7.org/fhir/us/breast-radiology/StructureDefinition/CommonTargetsFragment"
     },
     {
       "url": "http://www.fragment.com/fragment",
@@ -43,7 +43,7 @@
     },
     {
       "url": "http://www.fragment.com/maplink",
-      "valueString": "target|False|http://hl7.org/fhir/us/breast-radiology/StructureDefinition/MGAssociatedFeatures"
+      "valueString": "target|False|http://hl7.org/fhir/us/breast-radiology/StructureDefinition/AssociatedFeatures"
     },
     {
       "url": "http://www.fragment.com/maplink",
@@ -123,11 +123,11 @@
     },
     {
       "url": "http://www.fragment.com/mapname",
-      "valueString": "MG Common Targets Fragment"
+      "valueString": "Common Targets Fragment"
     },
     {
       "url": "http://www.fragment.com/Group",
-      "valueString": "Fragment/MgCommonTargetsFragment"
+      "valueString": "Fragment/CommonTargetsFragment"
     },
     {
       "url": "http://www.fragment.com/maplink",
@@ -2133,11 +2133,11 @@
         ]
       },
       {
-        "id": "Observation.hasMember:mGAssociatedFeatures",
+        "id": "Observation.hasMember:associatedFeatures",
         "path": "Observation.hasMember",
-        "sliceName": "mGAssociatedFeatures",
-        "short": "'Mammography Associated Features' reference",
-        "definition": "This slice references the target 'Mammography Associated Features'",
+        "sliceName": "associatedFeatures",
+        "short": "'Associated Features' reference",
+        "definition": "This slice references the target 'Associated Features'",
         "comment": "When using this element, an observation will typically have either a value or a set of related resources, although both may be present in some cases.  For a discussion on the ways Observations can assembled in groups together, see [Notes](observation.html#obsgrouping) below.  Note that a system may calculate results from [QuestionnaireResponse](questionnaireresponse.html)  into a final score and represent the score as an Observation.",
         "min": 0,
         "max": "1",
@@ -2150,7 +2150,7 @@
           {
             "code": "Reference",
             "targetProfile": [
-              "http://hl7.org/fhir/us/breast-radiology/StructureDefinition/MGAssociatedFeatures"
+              "http://hl7.org/fhir/us/breast-radiology/StructureDefinition/AssociatedFeatures"
             ]
           }
         ],
@@ -6184,11 +6184,11 @@
         }
       },
       {
-        "id": "Observation.hasMember:mGAssociatedFeatures",
+        "id": "Observation.hasMember:associatedFeatures",
         "path": "Observation.hasMember",
-        "sliceName": "mGAssociatedFeatures",
-        "short": "'Mammography Associated Features' reference",
-        "definition": "This slice references the target 'Mammography Associated Features'",
+        "sliceName": "associatedFeatures",
+        "short": "'Associated Features' reference",
+        "definition": "This slice references the target 'Associated Features'",
         "comment": "When using this element, an observation will typically have either a value or a set of related resources, although both may be present in some cases.  For a discussion on the ways Observations can assembled in groups together, see [Notes](observation.html#obsgrouping) below.  Note that a system may calculate results from [QuestionnaireResponse](questionnaireresponse.html)  into a final score and represent the score as an Observation.",
         "min": 0,
         "max": "1",
@@ -6201,7 +6201,7 @@
           {
             "code": "Reference",
             "targetProfile": [
-              "http://hl7.org/fhir/us/breast-radiology/StructureDefinition/MGAssociatedFeatures"
+              "http://hl7.org/fhir/us/breast-radiology/StructureDefinition/AssociatedFeatures"
             ]
           }
         ],

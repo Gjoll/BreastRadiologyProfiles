@@ -35,15 +35,15 @@
     },
     {
       "url": "http://www.fragment.com/fragment",
-      "valueUrl": "http://hl7.org/fhir/us/breast-radiology/StructureDefinition/MgCommonTargetsFragment"
+      "valueUrl": "http://hl7.org/fhir/us/breast-radiology/StructureDefinition/CommonTargetsFragment"
     },
     {
       "url": "http://www.fragment.com/maplink",
-      "valueString": "fragment|True|http://hl7.org/fhir/us/breast-radiology/StructureDefinition/MgCommonTargetsFragment"
+      "valueString": "fragment|True|http://hl7.org/fhir/us/breast-radiology/StructureDefinition/CommonTargetsFragment"
     },
     {
       "url": "http://www.fragment.com/maplink",
-      "valueString": "target|False|http://hl7.org/fhir/us/breast-radiology/StructureDefinition/MGAssociatedFeatures"
+      "valueString": "target|False|http://hl7.org/fhir/us/breast-radiology/StructureDefinition/AssociatedFeatures"
     },
     {
       "url": "http://www.fragment.com/maplink",
@@ -62,7 +62,7 @@
   "name": "MGAbnormalityAsymmetry",
   "title": "Mammography Asymmetry",
   "status": "draft",
-  "description": "Breast Radiology Mammography Asymmetry Observation\n\nIf this observation is present, and dataAbsentReason is empty, then an asymmetry was observed.\n\n\nIf this observation is present, and dataAbsentReason is not empty, then an asymmetry was not observed and dataAbsentReason contains the reason why.\n\n\nThe several types of asymmetry involve a spectrum of mammographic findings that represent\nunilateral deposits of fibroglandular tissue not conforming to the definition of a radiodense mass.\nThe asymmetry, unlike a mass, is visible on only 1 mammographic projection. The other 3 types of\nasymmetry, although visible on more than 1 projection, have concave-outward borders and usu-\nally are seen to be interspersed with fat, whereas a radiodense mass displays completely or partially\nconvex-outward borders and appears to be denser in the center than at the periphery.\n-- Bi-Rads® Atlas — Mammography Fifth Ed. 2013",
+  "description": "Asymmetry Observation\n\nIf this observation is present, and dataAbsentReason is empty, then an asymmetry was observed.\n\n\nIf this observation is present, and dataAbsentReason is not empty, then an asymmetry was not observed and dataAbsentReason contains the reason why.\n\n\nThe several types of asymmetry involve a spectrum of mammographic findings that represent\nunilateral deposits of fibroglandular tissue not conforming to the definition of a radiodense mass.\nThe asymmetry, unlike a mass, is visible on only 1 mammographic projection. The other 3 types of\nasymmetry, although visible on more than 1 projection, have concave-outward borders and usu-\nally are seen to be interspersed with fat, whereas a radiodense mass displays completely or partially\nconvex-outward borders and appears to be denser in the center than at the periphery.\n-- Bi-Rads® Atlas — Mammography Fifth Ed. 2013",
   "fhirVersion": "4.0.0",
   "kind": "resource",
   "abstract": false,
@@ -74,7 +74,7 @@
       {
         "id": "Observation",
         "path": "Observation",
-        "short": "Breast Radiology Mammography Asymmetry Observation",
+        "short": "Asymmetry Observation",
         "definition": "If this observation is present, and dataAbsentReason is empty, then an asymmetry was observed.\n\n\nIf this observation is present, and dataAbsentReason is not empty, then an asymmetry was not observed and dataAbsentReason contains the reason why.\n\n\nThe several types of asymmetry involve a spectrum of mammographic findings that represent\nunilateral deposits of fibroglandular tissue not conforming to the definition of a radiodense mass.\nThe asymmetry, unlike a mass, is visible on only 1 mammographic projection. The other 3 types of\nasymmetry, although visible on more than 1 projection, have concave-outward borders and usu-\nally are seen to be interspersed with fat, whereas a radiodense mass displays completely or partially\nconvex-outward borders and appears to be denser in the center than at the periphery.\n-- Bi-Rads® Atlas — Mammography Fifth Ed. 2013",
         "base": {
           "path": "Observation",
@@ -113,11 +113,11 @@
         }
       },
       {
-        "id": "Observation.hasMember:mGAssociatedFeatures",
+        "id": "Observation.hasMember:associatedFeatures",
         "path": "Observation.hasMember",
-        "sliceName": "mGAssociatedFeatures",
-        "short": "'Mammography Associated Features' reference",
-        "definition": "This slice references the target 'Mammography Associated Features'",
+        "sliceName": "associatedFeatures",
+        "short": "'Associated Features' reference",
+        "definition": "This slice references the target 'Associated Features'",
         "min": 0,
         "max": "1",
         "base": {
@@ -129,7 +129,7 @@
           {
             "code": "Reference",
             "targetProfile": [
-              "http://hl7.org/fhir/us/breast-radiology/StructureDefinition/MGAssociatedFeatures"
+              "http://hl7.org/fhir/us/breast-radiology/StructureDefinition/AssociatedFeatures"
             ]
           }
         ]

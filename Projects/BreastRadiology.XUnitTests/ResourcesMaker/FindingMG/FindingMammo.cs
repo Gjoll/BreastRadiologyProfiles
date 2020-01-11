@@ -18,7 +18,7 @@ namespace BreastRadiology.XUnitTests
             (out StructureDefinition s) =>
             {
                 SDefEditor e = Self.CreateEditorObservationSection("MGFinding",
-                        "Mammographi Finding",
+                        "Mammography Finding",
                         "MG Finding",
                         $"{Group_MGResources}")
                     .Description("Breast Radiology Mammography Finding",
@@ -34,7 +34,8 @@ namespace BreastRadiology.XUnitTests
                 // ;
 
                 ElementTreeNode sliceElementDef = e.ConfigureSliceByUrlDiscriminator("hasMember", false);
-                Self.SliceTargetReference(e, sliceElementDef, Self.MGAbnormalityForeignObject.Value());
+                Self.SliceTargetReference(e, sliceElementDef, Self.AbnormalityForeignObject.Value());
+                Self.SliceTargetReference(e, sliceElementDef, Self.AssociatedFeatures.Value());
                 Self.SliceTargetReference(e, sliceElementDef, Self.MGAbnormalityArchitecturalDistortion.Value());
                 Self.SliceTargetReference(e, sliceElementDef, Self.MGAbnormalityAsymmetry.Value());
                 Self.SliceTargetReference(e, sliceElementDef, Self.MGAbnormalityCalcification.Value());
@@ -45,9 +46,7 @@ namespace BreastRadiology.XUnitTests
                 Self.SliceTargetReference(e, sliceElementDef, Self.MGAbnormalityFibroadenoma.Value());
                 Self.SliceTargetReference(e, sliceElementDef, Self.MGAbnormalityLymphNode.Value());
                 Self.SliceTargetReference(e, sliceElementDef, Self.MGAbnormalityMass.Value());
-                Self.SliceTargetReference(e, sliceElementDef, Self.MGAssociatedFeatures.Value());
                 Self.SliceTargetReference(e, sliceElementDef, Self.MGBreastDensity.Value(), 1, "1");
-                Self.SliceTargetReference(e, sliceElementDef, Self.MGSkinLesion.Value());
                 e.IntroDoc
                     .ReviewedStatus(ReviewStatus.NotReviewed)
                     ;

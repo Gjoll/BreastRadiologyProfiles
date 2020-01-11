@@ -73,7 +73,7 @@ namespace BreastRadiology.XUnitTests
                             .MissingObservation("a duct abnormality")
                     )
                     .AddFragRef(Self.ObservationNoDeviceFragment.Value().Url)
-                    .AddFragRef(Self.MGCommonTargetsFragment.Value().Url)
+                    .AddFragRef(Self.CommonTargetsFragment.Value().Url)
                     .AddFragRef(Self.MGShapeTargetsFragment.Value().Url)
                     ;
 

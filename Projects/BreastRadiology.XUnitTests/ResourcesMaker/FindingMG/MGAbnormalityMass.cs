@@ -34,7 +34,7 @@ namespace BreastRadiology.XUnitTests
                         "Mammography Mass",
                         "MG Mass",
                         $"{Group_MGResources}/MassAbnormality")
-                    .Description("Breast Radiology Mammography Mass Observation",
+                    .Description("Mass Observation",
                         new Markdown()
                             .MissingObservation("a mass abnormality")
                             .BiradHeader()
@@ -47,7 +47,7 @@ namespace BreastRadiology.XUnitTests
                     .AddFragRef(Self.ObservationNoDeviceFragment.Value().Url)
                     .AddFragRef(Self.ObservationCodedValueFragment.Value().Url)
                     .AddFragRef(Self.ImagingStudyFragment.Value().Url)
-                    .AddFragRef(Self.MGCommonTargetsFragment.Value().Url)
+                    .AddFragRef(Self.CommonTargetsFragment.Value().Url)
                     .AddFragRef(Self.MGShapeTargetsFragment.Value().Url)
                     ;
 
@@ -60,8 +60,8 @@ namespace BreastRadiology.XUnitTests
                 e.Select("value[x]").Zero();
 
                 PreFhir.ElementTreeNode sliceElementDef = e.ConfigureSliceByUrlDiscriminator("hasMember", false);
+                Self.SliceTargetReference(e, sliceElementDef, Self.AssociatedFeatures.Value(), 0, "1");
                 Self.SliceTargetReference(e, sliceElementDef, Self.ConsistentWith.Value(), 0, "*");
-                Self.SliceTargetReference(e, sliceElementDef, Self.MGAssociatedFeatures.Value(), 0, "1");
 
                 e.StartComponentSliceing();
                 e.ComponentSliceCodeableConcept("mgAbnormalityMassType",

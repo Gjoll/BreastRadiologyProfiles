@@ -21,7 +21,7 @@ namespace BreastRadiology.XUnitTests
         //                "MRI Mass",
         //                ObservationUrl,
         //                $"{Group_MRIResources}/Mass")
-        //            .Description("Breast Radiology MRIgraphy Mass Observation",
+        //            .Description("MRI Mass Observation",
         //                new Markdown()
         //                    .MissingObservation("a mass", "and no Shape, Margin, or Density observations should be referenced by this observation")
         //                    .BiradHeader()

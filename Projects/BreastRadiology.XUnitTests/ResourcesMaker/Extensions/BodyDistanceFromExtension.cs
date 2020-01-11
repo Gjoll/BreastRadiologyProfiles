@@ -142,7 +142,11 @@ namespace BreastRadiology.XUnitTests
 
                 e.IntroDoc
                     .ReviewedStatus(ReviewStatus.NotReviewed)
-                    .Intro("#Add Content")
+                    .Intro(
+                        "This complex extension adds fields that form a distance measurement from a specified body landmark.",
+                        "The body landmark is defined by a codeable concept",
+                        "The distance is defined by a quantity of metric distance units (cm, mm, etc)."
+                        )
                     ;
             });
     }

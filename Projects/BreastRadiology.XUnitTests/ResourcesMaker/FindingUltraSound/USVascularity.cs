@@ -92,7 +92,7 @@ namespace BreastRadiology.XUnitTests
         //                    "US Vascularity",
         //                    ObservationUrl,
         //                    $"{Group_USResources}/Vascularity")
-        //                .Description("Breast Radiology Ultra-Sound Vascularity Observation",
+        //                .Description("Ultra-Sound Vascularity Observation",
         //                    new Markdown()
         //                        .Paragraph("[PR]")
         //                    )

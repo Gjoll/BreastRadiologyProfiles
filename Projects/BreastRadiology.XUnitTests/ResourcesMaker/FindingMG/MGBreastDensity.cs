@@ -113,7 +113,7 @@ namespace BreastRadiology.XUnitTests
                         "Mammography Breast Density",
                         "MG Breast Density",
                         $"{Group_MGResources}/BreastDensity")
-                    .Description("Breast Radiology Mammography Breast Density Observation",
+                    .Description("Breast Density Observation",
                         new Markdown()
                             .BiradHeader()
                             .BlockQuote("The following four categories of breast composition are defined by the visually estimated content of fibroglandular-density tissue within the breasts. Please note that the ")

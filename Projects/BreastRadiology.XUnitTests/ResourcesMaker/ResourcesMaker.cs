@@ -38,11 +38,19 @@ namespace BreastRadiology.XUnitTests
                 return this;
             }
 
-            public Definition ValidModalities(params Modalities[] modalities)
+            public Definition ValidModalities(Modalities modalities)
             {
+                void Add(Modalities flag)
+                {
+                    if ((modalities & flag) == flag)
+                        this.sb.Append($" {flag.ToString()}");
+                }
+
                 this.sb.Append("Valid for the following modalities:");
-                foreach (Modalities m in modalities)
-                    this.sb.Append($" {m.ToString()}");
+                Add(Modalities.MG);
+                Add(Modalities.US);
+                Add(Modalities.MRI);
+                Add(Modalities.NM);
                 this.sb.AppendLine(".");
                 return this;
             }
@@ -468,7 +476,27 @@ namespace BreastRadiology.XUnitTests
             String baseName = sliceElementDef.ElementDefinition.Path.LastPathPart();
             e.SliceByUrlTarget(sliceElementDef, profile.Url, min, max).ElementDefinition
                 .SetShort($"'{profile.Title}' reference")
-                .SetDefinition(new Markdown($"This slice references the target '{profile.Title}'"))
+                .SetDefinition(
+                    new Markdown($"This slice references the target '{profile.Title}'")
+                    )
+            ;
+            e.AddTargetLink(profile.Url, false);
+        }
+
+        void SliceTargetReference(SDefEditor e,
+            ElementTreeNode sliceElementDef,
+            StructureDefinition profile,
+            Modalities modalities,
+            Int32 min = 0,
+            String max = "*")
+        {
+            String baseName = sliceElementDef.ElementDefinition.Path.LastPathPart();
+            e.SliceByUrlTarget(sliceElementDef, profile.Url, min, max).ElementDefinition
+                .SetShort($"'{profile.Title}' reference")
+                .SetDefinition(
+                    new Markdown($"This slice references the target '{profile.Title}'")
+                    .ValidModalities(Modalities.MG)
+                    )
             ;
             e.AddTargetLink(profile.Url, false);
         }

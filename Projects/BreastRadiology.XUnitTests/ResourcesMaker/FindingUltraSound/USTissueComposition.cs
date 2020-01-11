@@ -89,7 +89,7 @@ namespace BreastRadiology.XUnitTests
         //                "US Tissue/Composition",
         //                ObservationUrl,
         //                $"{Group_USResources}/Mass/TissueComposition")
-        //            .Description("Breast Radiology Ultra-Sound Tissue Composition Observation",
+        //            .Description("Ultra-Sound Tissue Composition Observation",
         //                new Markdown()
         //                    .BiradHeader()
         //                    .BlockQuote("The wide normal variability in tissue composition seen on mammograms can also be observed")

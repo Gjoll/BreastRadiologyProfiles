@@ -96,7 +96,7 @@ namespace BreastRadiology.XUnitTests
         //                "MG Density",
         //                ObservationUrl,
         //                $"{Group_MGResources}/Density")
-        //            .Description("Breast Radiology Mammography Density Observation",
+        //            .Description("Density Observation",
         //                new Markdown()
         //                    .MissingObservation("a mass density")
         //                    .BiradHeader()

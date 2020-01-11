@@ -111,8 +111,8 @@
         "id": "Observation.hasMember:mGFinding",
         "path": "Observation.hasMember",
         "sliceName": "mGFinding",
-        "short": "'Mammographi Finding' reference",
-        "definition": "This slice references the target 'Mammographi Finding'",
+        "short": "'Mammography Finding' reference",
+        "definition": "This slice references the target 'Mammography Finding'",
         "min": 0,
         "max": "*",
         "base": {

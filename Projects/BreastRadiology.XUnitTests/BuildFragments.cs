@@ -105,8 +105,12 @@ namespace BreastRadiology.XUnitTests
         public void WriteCS(DataSet ds,
             String sheetName,
             String outputCodePath,
-            String csBlockName)
+            String csBlockName,
+            List<String> itemsToIgnore = null)
         {
+            if (itemsToIgnore == null)
+                itemsToIgnore = new List<string>();
+
             String App(String s, Object t, String sb)
             {
                 switch (t)
@@ -117,16 +121,17 @@ namespace BreastRadiology.XUnitTests
                     case String stringValue:
                         // verify we have correct column.
                         if (stringValue != sb)
-                            throw new Exception("Invalid value in App");
+                            Trace.WriteLine($"Invalid Modality '{stringValue}'. Expected {sb}");
                         if (String.IsNullOrEmpty(s) == false)
-                            s += ", ";
-                        s += $"Modalities.{t}";
+                            s += " | ";
+                        s += $"Modalities.{sb}";
                         return s;
 
                     default:
                         throw new Exception("Invalid excel cell value");
                 }
             }
+
             String CodeValue(String value)
             {
                 while (true)
@@ -160,18 +165,21 @@ namespace BreastRadiology.XUnitTests
 
                 DataRow row = dataTbl.Rows[i];
                 String code = (String)row[7];
-                String validWith = App("", row[0], "MG");
-                validWith = App(validWith, row[1], "MRI");
-                validWith = App(validWith, row[2], "NM");
-                validWith = App(validWith, row[3], "US");
-                concepts
-                    .AppendLine($"new ConceptDef(\"{CodeValue(code)}\",")
-                                .AppendLine($"    \"{code}\",")
-                                .AppendLine($"    new Definition()")
-                                .AppendLine($"        .Line(\"[PR] {code}\")")
-                                .AppendLine($"        .ValidModalities({validWith})")
-                                .AppendLine($"    ){term}")
-                                ;
+                if (itemsToIgnore.Contains(code.Trim().ToUpper()) == false)
+                {
+                    String validWith = App("", row[0], "MG");
+                    validWith = App(validWith, row[1], "MRI");
+                    validWith = App(validWith, row[2], "NM");
+                    validWith = App(validWith, row[3], "US");
+                    concepts
+                        .AppendLine($"new ConceptDef(\"{CodeValue(code)}\",")
+                                    .AppendLine($"    \"{code}\",")
+                                    .AppendLine($"    new Definition()")
+                                    .AppendLine($"        .Line(\"[PR] {code}\")")
+                                    .AppendLine($"        .ValidModalities({validWith})")
+                                    .AppendLine($"    ){term}")
+                                    ;
+                }
             }
 
             editor.Save();
@@ -184,12 +192,21 @@ namespace BreastRadiology.XUnitTests
 
             WriteCS(ds, "ConsistentWith", @"Common\ConsistentWithCS.cs", "ConsistentWithCS");
             WriteCS(ds, "ConsistentWithQualifier", @"Common\ConsistentWithCS.cs", "ConsistentWithQualifierCS");
+            WriteCS(ds, "ForeignBody", @"Common\AbnormalityForeignObject.cs", "ForeignObjectCS");
+
+            // Observed features has been hand modified. Run again and comments will be lost.
+            //List<String> itemsToIgnore = new List<string>();
+            //itemsToIgnore.Add("ARCHITECTURAL DISTORTION");
+
+            //WriteCS(ds, "AssocFindings", @"Common\AssociatedFeatures\ObservedFeature.cs", "ObservedFeatureCS", itemsToIgnore);
+
             //WriteCS(ds, "Fibroadenoma", @"Common\Fibroadenoma.cs", "FibroadenomaCS");
         }
         public DataSet ReadGregDS()
         {
             String filePath = Path.Combine(BaseDir,
-                "Documents",
+                "..",
+                "BRDocs",
                 "Breast-Reporting Value-sets GG V2.xlsx");
 
             Encoding.RegisterProvider(CodePagesEncodingProvider.Instance);

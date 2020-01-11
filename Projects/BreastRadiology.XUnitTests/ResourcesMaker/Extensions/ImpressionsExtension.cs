@@ -35,7 +35,9 @@ namespace BreastRadiology.XUnitTests
 
                 e.IntroDoc
                     .ReviewedStatus(ReviewStatus.NotReviewed)
-                    .Intro("#Add Content")
+                    .Intro(
+                        "This extension adds fields to link a Breast Radiology Document to a series of clinical impressions."
+                        )
                     ;
 
                 e.Select("extension").Zero();

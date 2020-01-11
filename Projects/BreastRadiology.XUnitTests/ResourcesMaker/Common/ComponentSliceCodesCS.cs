@@ -16,10 +16,13 @@ namespace BreastRadiology.XUnitTests
     {
         String ComponentSliceCodesUrl => CodeSystemUrl("ComponentSliceCodes");
 
+        Coding CodeAbnormalityForeignObjectType => new Coding(ComponentSliceCodesUrl, "abnormalityForeignObjectType");
+
         Coding CodeBiRads => new Coding(ComponentSliceCodesUrl, "targetBiRads");
         Coding CodeObservedChanges => new Coding(ComponentSliceCodesUrl, "observedChanges");
         Coding CodeObservedSize => new Coding(ComponentSliceCodesUrl, "observedSize");
         Coding CodeObservedCount => new Coding(ComponentSliceCodesUrl, "observedCount");
+        Coding CodeObservedFeatureType => new Coding(ComponentSliceCodesUrl, "featureType");
         Coding CodeOrientation => new Coding(ComponentSliceCodesUrl, "orientation");
         Coding CodeShape => new Coding(ComponentSliceCodesUrl, "shape");
         Coding CodeMargin => new Coding(ComponentSliceCodesUrl, "margin");
@@ -33,7 +36,6 @@ namespace BreastRadiology.XUnitTests
         Coding MGCodeAbnormalityDensityType => new Coding(ComponentSliceCodesUrl, "mgAbnormalityDensityType");
         Coding MGCodeAbnormalityDuctType => new Coding(ComponentSliceCodesUrl, "mgAbnormalityDuctType");
         Coding MGCodeAbnormalityFibroAdenomaType => new Coding(ComponentSliceCodesUrl, "mgAbnormalityFibroAdenomaType");
-        Coding MGCodeAbnormalityForeignObjectType => new Coding(ComponentSliceCodesUrl, "mgAbnormalityForeignObjectType");
         Coding MGCodeAbnormalityLymphNodeType => new Coding(ComponentSliceCodesUrl, "mgAbnormalityLymphNodeType");
         Coding MGCodeAbnormalityMassType => new Coding(ComponentSliceCodesUrl, "mgAbnormalityMassType");
 
@@ -52,10 +54,13 @@ namespace BreastRadiology.XUnitTests
                         Group_CommonCodesCS,
                         new ConceptDef[]
                         {
+                            new ConceptDef(Self.CodeAbnormalityForeignObjectType, "Slicing Component Code - CodeAbnormalityForeignObjectType"),
+
                             new ConceptDef(Self.CodeBiRads, "Slicing Component Code - BiRads"),
                             new ConceptDef(Self.CodeObservedChanges, "Slicing Component Code - Observed Changes"),
                             new ConceptDef(Self.CodeObservedSize, "Slicing Component Code - ObservedSize"),
                             new ConceptDef(Self.CodeObservedCount, "Slicing Component Code - ObservedCount"),
+                            new ConceptDef(Self.CodeObservedFeatureType, "Slicing Component Code - ObservedFeatureType"),
 
                             new ConceptDef(Self.CodeOrientation, "Slicing Component Code - Orientation"),
                             new ConceptDef(Self.CodeShape, "Slicing Component Code - Shape"),
@@ -70,7 +75,6 @@ namespace BreastRadiology.XUnitTests
                             new ConceptDef(Self.MGCodeAbnormalityDensityType, "Slicing Component Code - MGCodeAbnormalityDensityType"),
                             new ConceptDef(Self.MGCodeAbnormalityDuctType, "Slicing Component Code - MGCodeAbnormalityDuctType"),
                             new ConceptDef(Self.MGCodeAbnormalityFibroAdenomaType, "Slicing Component Code - MGCodeAbnormalityFibroAdenomaType"),
-                            new ConceptDef(Self.MGCodeAbnormalityForeignObjectType, "Slicing Component Code - MGCodeAbnormalityForeignObjectType"),
                             new ConceptDef(Self.MGCodeAbnormalityLymphNodeType, "Slicing Component Code - MGCodeAbnormalityLymphNodeType"),
                             new ConceptDef(Self.MGCodeAbnormalityMassType, "Slicing Component Code - MGCodeAbnormalityMassType"),
 

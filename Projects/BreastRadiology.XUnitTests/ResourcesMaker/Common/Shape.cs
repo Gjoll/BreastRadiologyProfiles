@@ -47,7 +47,7 @@ namespace BreastRadiology.XUnitTests
         //                "Shape",
         //                ObservationUrl,
         //                $"{Group_CommonResources}/Shape")
-        //            .Description("Breast Radiology Shape Observation",
+        //            .Description("Shape Observation",
         //                new Markdown()
         //                    .MissingObservation("a shape")
         //            )

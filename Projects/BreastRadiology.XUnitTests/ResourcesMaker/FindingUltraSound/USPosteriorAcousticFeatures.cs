@@ -98,7 +98,7 @@ namespace BreastRadiology.XUnitTests
         //                "US Posterior Acoustic/Features",
         //                ObservationUrl,
         //                $"{Group_USResources}/PosteriorAcousticFeatures")
-        //            .Description("Breast Radiology Ultra-Sound Posterior Acoustic Features Observation",
+        //            .Description("Ultra-Sound Posterior Acoustic Features Observation",
         //                new Markdown()
         //                    .BiradHeader()
         //                    .BlockQuote("Posterior acoustic features represent the attenuation characteristics of a mass with respect to its")

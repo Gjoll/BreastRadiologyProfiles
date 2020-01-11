@@ -21,7 +21,7 @@ namespace BreastRadiology.XUnitTests
         //                "US Mass",
         //                ObservationUrl,
         //                $"{Group_USResources}/Finding/Mass")
-        //            .Description("Breast Radiology Mammography Ultra-Sound Mass Observation",
+        //            .Description("Ultra-Sound Mass Observation",
         //                new Markdown()
         //                    .MissingObservation("a mass", "and no Shape, Orientation, Margin, Echo Pattern, or Posterior Acoustic Feature observations should be referenced by this observation")
         //                    .BiradHeader()

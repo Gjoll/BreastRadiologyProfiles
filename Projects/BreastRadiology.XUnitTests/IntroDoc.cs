@@ -84,43 +84,6 @@ namespace BreastRadiology.XUnitTests
             return this;
         }
 
-        //public IntroDoc Paragraph(params String[] lines)
-        //{
-        //    this.Append("<p>");
-        //    foreach (String line in lines)
-        //        this.Append(line);
-        //    this.Append("</p>");
-        //    return this;
-        //}
-
-        //public IntroDoc List(params String[] items)
-        //{
-        //    this.Append("<ul>");
-        //    foreach (var item in items)
-        //        this.Append($"    <li>{item}</li>");
-        //    this.Append("</ul>");
-        //    return this;
-        //}
-
-        //public IntroDoc List(ValueSet binding)
-        //{
-        //    this.Append("<ul>");
-        //    foreach (var include in binding.Compose.Include)
-        //    {
-        //        switch (include)
-        //        {
-        //            case ValueSet.ConceptSetComponent compose:
-        //                foreach (ValueSet.ConceptReferenceComponent concept in include.Concept)
-        //                    this.Append($"    <li>{concept.Code} - {concept.Display}</li>");
-        //                break;
-        //            default:
-        //                throw new NotImplementedException();
-        //        }
-        //    }
-        //    this.Append("</ul>");
-        //    return this;
-        //}
-
         public String Render()
         {
             return this.codeEditor.ToString();

@@ -66,7 +66,7 @@ namespace BreastRadiology.XUnitTests
                             .MissingObservation("a Density abnormality")
                     )
                     .AddFragRef(Self.ObservationNoDeviceFragment.Value().Url)
-                    .AddFragRef(Self.MGCommonTargetsFragment.Value().Url)
+                    .AddFragRef(Self.CommonTargetsFragment.Value().Url)
                     .AddFragRef(Self.MGShapeTargetsFragment.Value().Url)
                     ;
 
@@ -79,7 +79,7 @@ namespace BreastRadiology.XUnitTests
                 e.Select("value[x]").Zero();
 
                 PreFhir.ElementTreeNode sliceElementDef = e.ConfigureSliceByUrlDiscriminator("hasMember", false);
-                Self.SliceTargetReference(e, sliceElementDef, Self.MGAssociatedFeatures.Value(), 0, "1");
+                Self.SliceTargetReference(e, sliceElementDef, Self.AssociatedFeatures.Value(), 0, "1");
                 Self.SliceTargetReference(e, sliceElementDef, Self.ConsistentWith.Value(), 0, "*");
 
                 e.StartComponentSliceing();
