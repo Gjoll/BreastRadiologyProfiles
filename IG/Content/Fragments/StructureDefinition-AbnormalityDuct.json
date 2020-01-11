@@ -1,0 +1,264 @@
+{
+  "resourceType": "StructureDefinition",
+  "extension": [
+    {
+      "url": "http://www.fragment.com/mapname",
+      "valueString": "Duct"
+    },
+    {
+      "url": "http://www.fragment.com/Group",
+      "valueString": "CommonResources/AbnormalityDuct"
+    },
+    {
+      "url": "http://www.fragment.com/fragment",
+      "valueUrl": "http://hl7.org/fhir/us/breast-radiology/StructureDefinition/ObservationLeafFragment"
+    },
+    {
+      "url": "http://www.fragment.com/maplink",
+      "valueString": "fragment|True|http://hl7.org/fhir/us/breast-radiology/StructureDefinition/ObservationLeafFragment"
+    },
+    {
+      "url": "http://www.fragment.com/fragment",
+      "valueUrl": "http://hl7.org/fhir/us/breast-radiology/StructureDefinition/BreastRadObservationNoDeviceFragment"
+    },
+    {
+      "url": "http://www.fragment.com/maplink",
+      "valueString": "fragment|True|http://hl7.org/fhir/us/breast-radiology/StructureDefinition/BreastRadObservationNoDeviceFragment"
+    },
+    {
+      "url": "http://www.fragment.com/fragment",
+      "valueUrl": "http://hl7.org/fhir/us/breast-radiology/StructureDefinition/CommonTargetsFragment"
+    },
+    {
+      "url": "http://www.fragment.com/maplink",
+      "valueString": "fragment|True|http://hl7.org/fhir/us/breast-radiology/StructureDefinition/CommonTargetsFragment"
+    },
+    {
+      "url": "http://www.fragment.com/fragment",
+      "valueUrl": "http://hl7.org/fhir/us/breast-radiology/StructureDefinition/ShapeTargetsFragment"
+    },
+    {
+      "url": "http://www.fragment.com/maplink",
+      "valueString": "fragment|True|http://hl7.org/fhir/us/breast-radiology/StructureDefinition/ShapeTargetsFragment"
+    },
+    {
+      "url": "http://www.fragment.com/maplink",
+      "valueString": "target|False|http://hl7.org/fhir/us/breast-radiology/StructureDefinition/ConsistentWith"
+    },
+    {
+      "url": "http://www.fragment.com/maplink",
+      "valueString": "component|True|AbnormalityDuct Type^CodeableConcept^http://hl7.org/fhir/us/breast-radiology/ValueSet/AbnormalityDuctVS"
+    },
+    {
+      "url": "http://www.fragment.com/maplink",
+      "valueString": "component|True|Observed Count^Quantity"
+    }
+  ],
+  "url": "http://hl7.org/fhir/us/breast-radiology/StructureDefinition/AbnormalityDuct",
+  "name": "AbnormalityDuct",
+  "title": "Duct",
+  "status": "draft",
+  "description": "Breat Radiology Duct Observation\n\nIf this observation is present, and dataAbsentReason is empty, then a duct abnormality was observed.\n\n\nIf this observation is present, and dataAbsentReason is not empty, then a duct abnormality was not observed and dataAbsentReason contains the reason why.",
+  "fhirVersion": "4.0.0",
+  "kind": "resource",
+  "abstract": false,
+  "type": "Observation",
+  "baseDefinition": "http://hl7.org/fhir/StructureDefinition/Observation",
+  "derivation": "constraint",
+  "differential": {
+    "element": [
+      {
+        "id": "Observation",
+        "path": "Observation",
+        "short": "Breat Radiology Duct Observation",
+        "definition": "If this observation is present, and dataAbsentReason is empty, then a duct abnormality was observed.\n\n\nIf this observation is present, and dataAbsentReason is not empty, then a duct abnormality was not observed and dataAbsentReason contains the reason why.",
+        "base": {
+          "path": "Observation",
+          "min": 0,
+          "max": "*"
+        }
+      },
+      {
+        "id": "Observation.value[x]",
+        "path": "Observation.value[x]",
+        "min": 0,
+        "max": "0",
+        "base": {
+          "path": "Observation.value[x]",
+          "min": 0,
+          "max": "1"
+        }
+      },
+      {
+        "id": "Observation.hasMember",
+        "path": "Observation.hasMember",
+        "slicing": {
+          "discriminator": [
+            {
+              "type": "value",
+              "path": "url"
+            }
+          ],
+          "ordered": true,
+          "rules": "openAtEnd"
+        },
+        "base": {
+          "path": "Observation.hasMember",
+          "min": 0,
+          "max": "*"
+        }
+      },
+      {
+        "id": "Observation.hasMember:consistentWith",
+        "path": "Observation.hasMember",
+        "sliceName": "consistentWith",
+        "short": "'Consistent With' reference",
+        "definition": "This slice references the target 'Consistent With'",
+        "min": 0,
+        "max": "*",
+        "base": {
+          "path": "Observation.hasMember",
+          "min": 0,
+          "max": "*"
+        },
+        "type": [
+          {
+            "code": "Reference",
+            "targetProfile": [
+              "http://hl7.org/fhir/us/breast-radiology/StructureDefinition/ConsistentWith"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "Observation.component",
+        "path": "Observation.component",
+        "slicing": {
+          "discriminator": [
+            {
+              "type": "pattern",
+              "path": "code"
+            }
+          ],
+          "rules": "open"
+        },
+        "base": {
+          "path": "Observation.component",
+          "min": 0,
+          "max": "*"
+        }
+      },
+      {
+        "id": "Observation.component:ductType",
+        "path": "Observation.component",
+        "sliceName": "ductType",
+        "short": "AbnormalityDuct Type component",
+        "definition": "This component slice contains the AbnormalityDuct Type value",
+        "comment": "This is one component of a group of components that comprise the observation.",
+        "min": 1,
+        "max": "1",
+        "base": {
+          "path": "Observation.component",
+          "min": 0,
+          "max": "*"
+        }
+      },
+      {
+        "id": "Observation.component:ductType.code",
+        "path": "Observation.component.code",
+        "short": "AbnormalityDuct Type component code",
+        "definition": "This code identifies the AbnormalityDuct Type value",
+        "min": 1,
+        "max": "1",
+        "base": {
+          "path": "Observation.component.code",
+          "min": 1,
+          "max": "1"
+        },
+        "patternCodeableConcept": {
+          "coding": [
+            {
+              "system": "http://hl7.org/fhir/us/breast-radiology/CodeSystem/ComponentSliceCodes",
+              "code": "abnormalityDuctType"
+            }
+          ]
+        }
+      },
+      {
+        "id": "Observation.component:ductType.value[x]",
+        "path": "Observation.component.value[x]",
+        "short": "AbnormalityDuct Type component value",
+        "definition": "Value si a codeable concept.",
+        "min": 1,
+        "max": "1",
+        "base": {
+          "path": "Observation.component.value[x]",
+          "min": 0,
+          "max": "1"
+        },
+        "type": [
+          {
+            "code": "CodeableConcept"
+          }
+        ],
+        "binding": {
+          "strength": "required",
+          "valueSet": "http://hl7.org/fhir/us/breast-radiology/ValueSet/AbnormalityDuctVS"
+        }
+      },
+      {
+        "id": "Observation.component:observedCount",
+        "path": "Observation.component",
+        "sliceName": "observedCount",
+        "short": "Observed Count component",
+        "definition": "This component slice contains the Observed Count quantity",
+        "comment": "This is one component of a group of components that comprise the observation.",
+        "min": 0,
+        "max": "1",
+        "base": {
+          "path": "Observation.component",
+          "min": 0,
+          "max": "*"
+        }
+      },
+      {
+        "id": "Observation.component:observedCount.code",
+        "path": "Observation.component.code",
+        "min": 1,
+        "max": "1",
+        "base": {
+          "path": "Observation.component.code",
+          "min": 1,
+          "max": "1"
+        },
+        "patternCodeableConcept": {
+          "coding": [
+            {
+              "system": "http://hl7.org/fhir/us/breast-radiology/CodeSystem/ComponentSliceCodes",
+              "code": "observedSize"
+            }
+          ]
+        }
+      },
+      {
+        "id": "Observation.component:observedCount.value[x]",
+        "path": "Observation.component.value[x]",
+        "min": 1,
+        "max": "1",
+        "base": {
+          "path": "Observation.component.value[x]",
+          "min": 0,
+          "max": "1"
+        },
+        "type": [
+          {
+            "code": "integer"
+          },
+          {
+            "code": "Range"
+          }
+        ]
+      }
+    ]
+  }
+}

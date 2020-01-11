@@ -34,18 +34,18 @@ namespace BreastRadiology.XUnitTests
                 // ;
 
                 ElementTreeNode sliceElementDef = e.ConfigureSliceByUrlDiscriminator("hasMember", false);
+                Self.SliceTargetReference(e, sliceElementDef, Self.AbnormalityCyst.Value());
+                Self.SliceTargetReference(e, sliceElementDef, Self.AbnormalityDuct.Value());
                 Self.SliceTargetReference(e, sliceElementDef, Self.AbnormalityForeignObject.Value());
+                Self.SliceTargetReference(e, sliceElementDef, Self.AbnormalityLymphNode.Value());
+                Self.SliceTargetReference(e, sliceElementDef, Self.AbnormalityMass.Value());
                 Self.SliceTargetReference(e, sliceElementDef, Self.AssociatedFeatures.Value());
+                Self.SliceTargetReference(e, sliceElementDef, Self.AbnormalityFibroadenoma.Value());
                 Self.SliceTargetReference(e, sliceElementDef, Self.MGAbnormalityArchitecturalDistortion.Value());
                 Self.SliceTargetReference(e, sliceElementDef, Self.MGAbnormalityAsymmetry.Value());
                 Self.SliceTargetReference(e, sliceElementDef, Self.MGAbnormalityCalcification.Value());
-                Self.SliceTargetReference(e, sliceElementDef, Self.MGAbnormalityCyst.Value());
                 Self.SliceTargetReference(e, sliceElementDef, Self.MGAbnormalityDensity.Value());
-                Self.SliceTargetReference(e, sliceElementDef, Self.MGAbnormalityDuct.Value());
                 Self.SliceTargetReference(e, sliceElementDef, Self.MGAbnormalityFatNecrosis.Value());
-                Self.SliceTargetReference(e, sliceElementDef, Self.MGAbnormalityFibroadenoma.Value());
-                Self.SliceTargetReference(e, sliceElementDef, Self.MGAbnormalityLymphNode.Value());
-                Self.SliceTargetReference(e, sliceElementDef, Self.MGAbnormalityMass.Value());
                 Self.SliceTargetReference(e, sliceElementDef, Self.MGBreastDensity.Value(), 1, "1");
                 e.IntroDoc
                     .ReviewedStatus(ReviewStatus.NotReviewed)

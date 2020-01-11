@@ -192,7 +192,7 @@ namespace BreastRadiology.XUnitTests
 
             WriteCS(ds, "ConsistentWith", @"Common\ConsistentWithCS.cs", "ConsistentWithCS");
             WriteCS(ds, "ConsistentWithQualifier", @"Common\ConsistentWithCS.cs", "ConsistentWithQualifierCS");
-            WriteCS(ds, "ForeignBody", @"Common\AbnormalityForeignObject.cs", "ForeignObjectCS");
+            WriteCS(ds, "ForeignBody", @"Common\Abnormalities\AbnormalityForeignObject.cs", "ForeignObjectCS");
 
             // Observed features has been hand modified. Run again and comments will be lost.
             //List<String> itemsToIgnore = new List<string>();

@@ -8,7 +8,7 @@
     },
     {
       "url": "http://www.fragment.com/Group",
-      "valueString": "MGCodesVS"
+      "valueString": "CommonCodesVS"
     },
     {
       "url": "http://www.fragment.com/mapname",
@@ -27,6 +27,10 @@
           {
             "code": "Solid",
             "display": "Solid Mass"
+          },
+          {
+            "code": "Intraductal",
+            "display": "Intraductal Mass"
           },
           {
             "code": "PartiallySolid",

@@ -43,11 +43,11 @@
     },
     {
       "url": "http://www.fragment.com/fragment",
-      "valueUrl": "http://hl7.org/fhir/us/breast-radiology/StructureDefinition/MgShapeTargetsFragment"
+      "valueUrl": "http://hl7.org/fhir/us/breast-radiology/StructureDefinition/ShapeTargetsFragment"
     },
     {
       "url": "http://www.fragment.com/maplink",
-      "valueString": "fragment|True|http://hl7.org/fhir/us/breast-radiology/StructureDefinition/MgShapeTargetsFragment"
+      "valueString": "fragment|True|http://hl7.org/fhir/us/breast-radiology/StructureDefinition/ShapeTargetsFragment"
     },
     {
       "url": "http://www.fragment.com/maplink",
@@ -226,7 +226,7 @@
         "id": "Observation.component:calcificationType.value[x]",
         "path": "Observation.component.value[x]",
         "short": "Calcification Type component value",
-        "definition": "Count of an object.\n\n\nThis is either an integer count, or a Range (min..max) count.\n\n\nA range value with no maximum specified implies count is min or more.\n\n\nA range value with no minimum specified implies count is max or less.",
+        "definition": "Value si a codeable concept.",
         "min": 1,
         "max": "1",
         "base": {
@@ -284,7 +284,7 @@
         "id": "Observation.component:calcificationDistribution.value[x]",
         "path": "Observation.component.value[x]",
         "short": "Calcification Distribution component value",
-        "definition": "Count of an object.\n\n\nThis is either an integer count, or a Range (min..max) count.\n\n\nA range value with no maximum specified implies count is min or more.\n\n\nA range value with no minimum specified implies count is max or less.",
+        "definition": "Value si a codeable concept.",
         "min": 1,
         "max": "1",
         "base": {

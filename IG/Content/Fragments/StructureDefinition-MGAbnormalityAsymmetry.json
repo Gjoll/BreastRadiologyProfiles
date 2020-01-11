@@ -214,7 +214,7 @@
         "id": "Observation.component:mgAbnormalityAsymmetryType.value[x]",
         "path": "Observation.component.value[x]",
         "short": "MG AbnormalityAsymmetry Type component value",
-        "definition": "Count of an object.\n\n\nThis is either an integer count, or a Range (min..max) count.\n\n\nA range value with no maximum specified implies count is min or more.\n\n\nA range value with no minimum specified implies count is max or less.",
+        "definition": "Value si a codeable concept.",
         "min": 1,
         "max": "1",
         "base": {

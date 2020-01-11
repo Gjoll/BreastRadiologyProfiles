@@ -520,7 +520,8 @@ namespace BreastRadiology.XUnitTests
             BindingStrength bindingStrength,
             Int32 minCardinality,
             String maxCardinality,
-            String componentName)
+            String componentName,
+            Modalities modalities = Modalities.All)
         {
             String compStr = maxCardinality == "1" ? compStr = "component" : "components";
             String valueStr = maxCardinality == "1" ? compStr = "value" : "values";
@@ -531,6 +532,12 @@ namespace BreastRadiology.XUnitTests
                 .SetDefinition(new Markdown($"This component slice contains the {componentName} {valueStr}"))
                 .SetComment(new Markdown($"This is one component of a group of components that comprise the observation."))
                 ;
+
+            if (modalities != Modalities.All)
+            {
+                slice.ElementDefinition.Definition
+                    .ValidModalities(modalities);
+            }
 
             {
                 ElementDefinition componentCode = new ElementDefinition
@@ -560,10 +567,7 @@ namespace BreastRadiology.XUnitTests
                     .Binding(valueSet.Url, bindingStrength)
                     .Type("CodeableConcept")
                     .SetDefinition(new Markdown()
-                        .Paragraph("Count of an object.")
-                        .Paragraph("This is either an integer count, or a Range (min..max) count.")
-                        .Paragraph($"A range value with no maximum specified implies count is min or more.")
-                        .Paragraph($"A range value with no minimum specified implies count is max or less.")
+                        .Paragraph("Value si a codeable concept.")
                      )
                 ;
                 slice.CreateNode(valueX);

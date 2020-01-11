@@ -74,59 +74,5 @@ namespace BreastRadiology.XUnitTests
                     Group_MGCodesVS,
                     Self.MGDensityCS.Value())
                     );
-
-
-        //#SDTaskVar MGDensity = new SDTaskVar(
-        //    (out StructureDefinition  s) =>
-        //    {
-        //        ValueSet binding = Self.MGDensityVS.Value();
-
-        //        {
-        //            IntroDoc valueSetIntroDoc = Self.CreateIntroDocVS(binding);
-        //            valueSetIntroDoc
-        //                .ValueSet(binding);
-        //                .ReviewedStatus(ReviewStatus.NotReviewed)
-        //            ;
-        //            String outputPath = valueSetIntroDoc.Save();
-        //            Self.fc?.Mark(outputPath);
-        //        }
-
-        //        SDefEditor e = Self.CreateEditor("MGDensity",
-        //                "Mammography Density",
-        //                "MG Density",
-        //                ObservationUrl,
-        //                $"{Group_MGResources}/Density")
-        //            .Description("Density Observation",
-        //                new Markdown()
-        //                    .MissingObservation("a mass density")
-        //                    .BiradHeader()
-        //                    .BlockQuote("Radiographic density is considered an important feature in the evaluation of noncalcified breast masses, yet")
-        //                    .BlockQuote("no studies assessing its value have been published. The radiographic densities of 91 biopsy-proved, nonfatty,")
-        //                    .BlockQuote("noncalcified breast masses were evaluated by three mammographers. The density determinations made by")
-        //                    .BlockQuote("each observer were compared with the histologic outcome for the 51 benign and 40 malignant lesions. With")
-        //                    .BlockQuote("the kappa statistic, interobserver agreement was relatively poor (0.22 to 0.49), and intraobserver agreement for")
-        //                    .BlockQuote("one expert mammographer was 0.50. When the majority opinion of the mammographers was used, sensitivity")
-        //                    .BlockQuote("was 48%, specificity was 80%, and both positive and negative predictive values were 66%. As a solitary feature")
-        //                    .BlockQuote("in lesion analysis, mammographic density is difficult to assess and is of limited value for the prediction of the")
-        //                    .BlockQuote("benign or malignant nature of noncalcified breast masses.")
-        //                    .BiradFooter()
-        //                )
-        //            .AddFragRef(Self.ObservationNoDeviceFragment.Value())
-        //            .AddFragRef(Self.ObservationCodedValueFragment.Value())
-        //            .AddFragRef(Self.ObservationLeafFragment.Value())
-        //            ;
-        //        s = e.SDef.Url;
-
-        //        e.IntroDoc
-        //            .CodedObservationLeafNode("a mammography mass density", binding)
-        //            .ReviewedStatus(ReviewStatus.NotReviewed)
-        //            ;
-
-        //        e.Select("value[x]")
-        //            .Type("CodeableConcept")
-        //            .Binding(binding.Url, BindingStrength.Required)
-        //            ;
-        //        e.AddValueSetLink(binding);
-        //    });
     }
 }

@@ -1,0 +1,272 @@
+{
+  "resourceType": "StructureDefinition",
+  "extension": [
+    {
+      "url": "http://www.fragment.com/mapname",
+      "valueString": "Lymph Node"
+    },
+    {
+      "url": "http://www.fragment.com/Group",
+      "valueString": "CommonResources/AbnormalityLymphNode"
+    },
+    {
+      "url": "http://www.fragment.com/fragment",
+      "valueUrl": "http://hl7.org/fhir/us/breast-radiology/StructureDefinition/ObservationLeafFragment"
+    },
+    {
+      "url": "http://www.fragment.com/maplink",
+      "valueString": "fragment|True|http://hl7.org/fhir/us/breast-radiology/StructureDefinition/ObservationLeafFragment"
+    },
+    {
+      "url": "http://www.fragment.com/fragment",
+      "valueUrl": "http://hl7.org/fhir/us/breast-radiology/StructureDefinition/BreastRadObservationNoDeviceFragment"
+    },
+    {
+      "url": "http://www.fragment.com/maplink",
+      "valueString": "fragment|True|http://hl7.org/fhir/us/breast-radiology/StructureDefinition/BreastRadObservationNoDeviceFragment"
+    },
+    {
+      "url": "http://www.fragment.com/fragment",
+      "valueUrl": "http://hl7.org/fhir/us/breast-radiology/StructureDefinition/CodedValueObservationFragment"
+    },
+    {
+      "url": "http://www.fragment.com/maplink",
+      "valueString": "fragment|True|http://hl7.org/fhir/us/breast-radiology/StructureDefinition/CodedValueObservationFragment"
+    },
+    {
+      "url": "http://www.fragment.com/fragment",
+      "valueUrl": "http://hl7.org/fhir/us/breast-radiology/StructureDefinition/CommonTargetsFragment"
+    },
+    {
+      "url": "http://www.fragment.com/maplink",
+      "valueString": "fragment|True|http://hl7.org/fhir/us/breast-radiology/StructureDefinition/CommonTargetsFragment"
+    },
+    {
+      "url": "http://www.fragment.com/fragment",
+      "valueUrl": "http://hl7.org/fhir/us/breast-radiology/StructureDefinition/ShapeTargetsFragment"
+    },
+    {
+      "url": "http://www.fragment.com/maplink",
+      "valueString": "fragment|True|http://hl7.org/fhir/us/breast-radiology/StructureDefinition/ShapeTargetsFragment"
+    },
+    {
+      "url": "http://www.fragment.com/maplink",
+      "valueString": "target|False|http://hl7.org/fhir/us/breast-radiology/StructureDefinition/AssociatedFeatures"
+    },
+    {
+      "url": "http://www.fragment.com/maplink",
+      "valueString": "component|True|LymphNode Type^CodeableConcept^http://hl7.org/fhir/us/breast-radiology/ValueSet/AbnormalityLymphNodeVS"
+    },
+    {
+      "url": "http://www.fragment.com/maplink",
+      "valueString": "component|True|Observed Count^Quantity"
+    }
+  ],
+  "url": "http://hl7.org/fhir/us/breast-radiology/StructureDefinition/AbnormalityLymphNode",
+  "name": "AbnormalityLymphNode",
+  "title": "LymphNode",
+  "status": "draft",
+  "description": "LymphNode Observation\n\nIf this observation is present, and dataAbsentReason is empty, then a lymph node abnormality was observed.\n\n\nIf this observation is present, and dataAbsentReason is not empty, then a lymph node abnormality was not observed and dataAbsentReason contains the reason why.",
+  "fhirVersion": "4.0.0",
+  "kind": "resource",
+  "abstract": false,
+  "type": "Observation",
+  "baseDefinition": "http://hl7.org/fhir/StructureDefinition/Observation",
+  "derivation": "constraint",
+  "differential": {
+    "element": [
+      {
+        "id": "Observation",
+        "path": "Observation",
+        "short": "LymphNode Observation",
+        "definition": "If this observation is present, and dataAbsentReason is empty, then a lymph node abnormality was observed.\n\n\nIf this observation is present, and dataAbsentReason is not empty, then a lymph node abnormality was not observed and dataAbsentReason contains the reason why.",
+        "base": {
+          "path": "Observation",
+          "min": 0,
+          "max": "*"
+        }
+      },
+      {
+        "id": "Observation.value[x]",
+        "path": "Observation.value[x]",
+        "min": 0,
+        "max": "0",
+        "base": {
+          "path": "Observation.value[x]",
+          "min": 0,
+          "max": "1"
+        }
+      },
+      {
+        "id": "Observation.hasMember",
+        "path": "Observation.hasMember",
+        "slicing": {
+          "discriminator": [
+            {
+              "type": "value",
+              "path": "url"
+            }
+          ],
+          "ordered": true,
+          "rules": "openAtEnd"
+        },
+        "base": {
+          "path": "Observation.hasMember",
+          "min": 0,
+          "max": "*"
+        }
+      },
+      {
+        "id": "Observation.hasMember:associatedFeatures",
+        "path": "Observation.hasMember",
+        "sliceName": "associatedFeatures",
+        "short": "'Associated Features' reference",
+        "definition": "This slice references the target 'Associated Features'",
+        "min": 0,
+        "max": "1",
+        "base": {
+          "path": "Observation.hasMember",
+          "min": 0,
+          "max": "*"
+        },
+        "type": [
+          {
+            "code": "Reference",
+            "targetProfile": [
+              "http://hl7.org/fhir/us/breast-radiology/StructureDefinition/AssociatedFeatures"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "Observation.component",
+        "path": "Observation.component",
+        "slicing": {
+          "discriminator": [
+            {
+              "type": "pattern",
+              "path": "code"
+            }
+          ],
+          "rules": "open"
+        },
+        "base": {
+          "path": "Observation.component",
+          "min": 0,
+          "max": "*"
+        }
+      },
+      {
+        "id": "Observation.component:lymphNodeType",
+        "path": "Observation.component",
+        "sliceName": "lymphNodeType",
+        "short": "LymphNode Type component",
+        "definition": "This component slice contains the LymphNode Type value",
+        "comment": "This is one component of a group of components that comprise the observation.",
+        "min": 1,
+        "max": "1",
+        "base": {
+          "path": "Observation.component",
+          "min": 0,
+          "max": "*"
+        }
+      },
+      {
+        "id": "Observation.component:lymphNodeType.code",
+        "path": "Observation.component.code",
+        "short": "LymphNode Type component code",
+        "definition": "This code identifies the LymphNode Type value",
+        "min": 1,
+        "max": "1",
+        "base": {
+          "path": "Observation.component.code",
+          "min": 1,
+          "max": "1"
+        },
+        "patternCodeableConcept": {
+          "coding": [
+            {
+              "system": "http://hl7.org/fhir/us/breast-radiology/CodeSystem/ComponentSliceCodes",
+              "code": "abnormalityLymphNodeType"
+            }
+          ]
+        }
+      },
+      {
+        "id": "Observation.component:lymphNodeType.value[x]",
+        "path": "Observation.component.value[x]",
+        "short": "LymphNode Type component value",
+        "definition": "Value si a codeable concept.",
+        "min": 1,
+        "max": "1",
+        "base": {
+          "path": "Observation.component.value[x]",
+          "min": 0,
+          "max": "1"
+        },
+        "type": [
+          {
+            "code": "CodeableConcept"
+          }
+        ],
+        "binding": {
+          "strength": "required",
+          "valueSet": "http://hl7.org/fhir/us/breast-radiology/ValueSet/AbnormalityLymphNodeVS"
+        }
+      },
+      {
+        "id": "Observation.component:observedCount",
+        "path": "Observation.component",
+        "sliceName": "observedCount",
+        "short": "Observed Count component",
+        "definition": "This component slice contains the Observed Count quantity",
+        "comment": "This is one component of a group of components that comprise the observation.",
+        "min": 0,
+        "max": "1",
+        "base": {
+          "path": "Observation.component",
+          "min": 0,
+          "max": "*"
+        }
+      },
+      {
+        "id": "Observation.component:observedCount.code",
+        "path": "Observation.component.code",
+        "min": 1,
+        "max": "1",
+        "base": {
+          "path": "Observation.component.code",
+          "min": 1,
+          "max": "1"
+        },
+        "patternCodeableConcept": {
+          "coding": [
+            {
+              "system": "http://hl7.org/fhir/us/breast-radiology/CodeSystem/ComponentSliceCodes",
+              "code": "observedSize"
+            }
+          ]
+        }
+      },
+      {
+        "id": "Observation.component:observedCount.value[x]",
+        "path": "Observation.component.value[x]",
+        "min": 1,
+        "max": "1",
+        "base": {
+          "path": "Observation.component.value[x]",
+          "min": 0,
+          "max": "1"
+        },
+        "type": [
+          {
+            "code": "integer"
+          },
+          {
+            "code": "Range"
+          }
+        ]
+      }
+    ]
+  }
+}

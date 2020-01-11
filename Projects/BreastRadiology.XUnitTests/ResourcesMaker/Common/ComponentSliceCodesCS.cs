@@ -16,28 +16,28 @@ namespace BreastRadiology.XUnitTests
     {
         String ComponentSliceCodesUrl => CodeSystemUrl("ComponentSliceCodes");
 
+        Coding CodeAbnormalityCystType => new Coding(ComponentSliceCodesUrl, "abnormalityCystType");
+        Coding CodeAbnormalityDuctType => new Coding(ComponentSliceCodesUrl, "abnormalityDuctType");
+        Coding CodeAbnormalityFibroAdenomaType => new Coding(ComponentSliceCodesUrl, "mgAbnormalityFibroAdenomaType");
         Coding CodeAbnormalityForeignObjectType => new Coding(ComponentSliceCodesUrl, "abnormalityForeignObjectType");
+        Coding CodeAbnormalityLymphNodeType => new Coding(ComponentSliceCodesUrl, "abnormalityLymphNodeType");
+        Coding CodeAbnormalityMassType => new Coding(ComponentSliceCodesUrl, "abnormalityMassType");
 
         Coding CodeBiRads => new Coding(ComponentSliceCodesUrl, "targetBiRads");
         Coding CodeObservedChanges => new Coding(ComponentSliceCodesUrl, "observedChanges");
+        Coding CodeMargin => new Coding(ComponentSliceCodesUrl, "margin");
+        Coding CodeMGDensity => new Coding(ComponentSliceCodesUrl, "mgDensity");
         Coding CodeObservedSize => new Coding(ComponentSliceCodesUrl, "observedSize");
         Coding CodeObservedCount => new Coding(ComponentSliceCodesUrl, "observedCount");
         Coding CodeObservedFeatureType => new Coding(ComponentSliceCodesUrl, "featureType");
         Coding CodeOrientation => new Coding(ComponentSliceCodesUrl, "orientation");
         Coding CodeShape => new Coding(ComponentSliceCodesUrl, "shape");
-        Coding CodeMargin => new Coding(ComponentSliceCodesUrl, "margin");
-        Coding CodeMGDensity => new Coding(ComponentSliceCodesUrl, "mgDensity");
 
         Coding ConsistentWithCodeValue => new Coding(ComponentSliceCodesUrl, "consistentWithValue");
         Coding ConsistentWithCodeQualifier => new Coding(ComponentSliceCodesUrl, "consistentWithQualifier");
 
         Coding MGCodeAbnormalityAsymmetryType => new Coding(ComponentSliceCodesUrl, "mgAbnormalityAsymmetryType");
-        Coding MGCodeAbnormalityCystType => new Coding(ComponentSliceCodesUrl, "mgAbnormalityCystType");
         Coding MGCodeAbnormalityDensityType => new Coding(ComponentSliceCodesUrl, "mgAbnormalityDensityType");
-        Coding MGCodeAbnormalityDuctType => new Coding(ComponentSliceCodesUrl, "mgAbnormalityDuctType");
-        Coding MGCodeAbnormalityFibroAdenomaType => new Coding(ComponentSliceCodesUrl, "mgAbnormalityFibroAdenomaType");
-        Coding MGCodeAbnormalityLymphNodeType => new Coding(ComponentSliceCodesUrl, "mgAbnormalityLymphNodeType");
-        Coding MGCodeAbnormalityMassType => new Coding(ComponentSliceCodesUrl, "mgAbnormalityMassType");
 
         Coding MGCodeCalcificationType => new Coding(ComponentSliceCodesUrl, "mgCalcificationType");
         Coding MGCodeCalcificationDistribution => new Coding(ComponentSliceCodesUrl, "mgCalcificationDistribution");
@@ -54,7 +54,12 @@ namespace BreastRadiology.XUnitTests
                         Group_CommonCodesCS,
                         new ConceptDef[]
                         {
+                            new ConceptDef(Self.CodeAbnormalityCystType, "Slicing Component Code - AbnormalityCystType"),
+                            new ConceptDef(Self.CodeAbnormalityDuctType, "Slicing Component Code - CodeAbnormalityDuctType"),
+                            new ConceptDef(Self.CodeAbnormalityFibroAdenomaType, "Slicing Component Code - CodeAbnormalityFibroAdenomaType"),
                             new ConceptDef(Self.CodeAbnormalityForeignObjectType, "Slicing Component Code - CodeAbnormalityForeignObjectType"),
+                            new ConceptDef(Self.CodeAbnormalityLymphNodeType, "Slicing Component Code - CodeAbnormalityLymphNodeType"),
+                            new ConceptDef(Self.CodeAbnormalityMassType, "Slicing Component Code - CodeAbnormalityMassType"),
 
                             new ConceptDef(Self.CodeBiRads, "Slicing Component Code - BiRads"),
                             new ConceptDef(Self.CodeObservedChanges, "Slicing Component Code - Observed Changes"),
@@ -71,28 +76,11 @@ namespace BreastRadiology.XUnitTests
                             new ConceptDef(Self.ConsistentWithCodeQualifier, "Slicing Component Code - CodeQualifier"),
 
                             new ConceptDef(Self.MGCodeAbnormalityAsymmetryType, "Slicing Component Code - MGCodeAbnormalityAsymmetryType"),
-                            new ConceptDef(Self.MGCodeAbnormalityCystType, "Slicing Component Code - XXYYZ"),
                             new ConceptDef(Self.MGCodeAbnormalityDensityType, "Slicing Component Code - MGCodeAbnormalityDensityType"),
-                            new ConceptDef(Self.MGCodeAbnormalityDuctType, "Slicing Component Code - MGCodeAbnormalityDuctType"),
-                            new ConceptDef(Self.MGCodeAbnormalityFibroAdenomaType, "Slicing Component Code - MGCodeAbnormalityFibroAdenomaType"),
-                            new ConceptDef(Self.MGCodeAbnormalityLymphNodeType, "Slicing Component Code - MGCodeAbnormalityLymphNodeType"),
-                            new ConceptDef(Self.MGCodeAbnormalityMassType, "Slicing Component Code - MGCodeAbnormalityMassType"),
 
                             new ConceptDef(Self.MGCodeCalcificationType, "Slicing Component Code - MGCalcificationType"),
                             new ConceptDef(Self.MGCodeCalcificationDistribution, "Slicing Component Code - MGCalcificationDistribution")
                         })
              );
-
-        //#VSTaskVar ComponentSliceCodesVS = new VSTaskVar(
-        //    (out ValueSet vs) =>
-        //        vs = Self.CreateValueSet(
-        //                "ConsistentWithSliceVS",
-        //                "ConsistentWithSlice ValueSet",
-        //                "ConsistentWithSlice/ValueSet",
-        //                "ConsistentWithSlice value set.",
-        //                Group_CommonCodesVS,
-        //                Self.ComponentSliceCodesCS.Value()
-        //            )
-        //    );
     }
 }
