@@ -130,6 +130,12 @@
 	    <img src="Frag-CodedValueObservationFragment.svg" alt="CodedValueObservationFragment"/>
 	</object>
 	<p>
+	Fragment Diagram CommonComponentsFragment
+	</p>
+	<object data="Frag-CommonComponentsFragment.svg" type="image/svg+xml">
+	    <img src="Frag-CommonComponentsFragment.svg" alt="CommonComponentsFragment"/>
+	</object>
+	<p>
 	Fragment Diagram CommonTargetsFragment
 	</p>
 	<object data="Frag-CommonTargetsFragment.svg" type="image/svg+xml">
@@ -226,6 +232,12 @@
 	    <img src="Frag-NMFinding.svg" alt="NMFinding"/>
 	</object>
 	<p>
+	Fragment Diagram NotPreviouslySeenComponentFragment
+	</p>
+	<object data="Frag-NotPreviouslySeenComponentFragment.svg" type="image/svg+xml">
+	    <img src="Frag-NotPreviouslySeenComponentFragment.svg" alt="NotPreviouslySeenComponentFragment"/>
+	</object>
+	<p>
 	Fragment Diagram ObservationLeafFragment
 	</p>
 	<object data="Frag-ObservationLeafFragment.svg" type="image/svg+xml">
@@ -274,10 +286,22 @@
 	    <img src="Frag-SectionFindingsRightBreast.svg" alt="SectionFindingsRightBreast"/>
 	</object>
 	<p>
+	Fragment Diagram ShapeComponentsFragment
+	</p>
+	<object data="Frag-ShapeComponentsFragment.svg" type="image/svg+xml">
+	    <img src="Frag-ShapeComponentsFragment.svg" alt="ShapeComponentsFragment"/>
+	</object>
+	<p>
 	Fragment Diagram ShapeTargetsFragment
 	</p>
 	<object data="Frag-ShapeTargetsFragment.svg" type="image/svg+xml">
 	    <img src="Frag-ShapeTargetsFragment.svg" alt="ShapeTargetsFragment"/>
+	</object>
+	<p>
+	Fragment Diagram TumorQualifierComponentFragment
+	</p>
+	<object data="Frag-TumorQualifierComponentFragment.svg" type="image/svg+xml">
+	    <img src="Frag-TumorQualifierComponentFragment.svg" alt="TumorQualifierComponentFragment"/>
 	</object>
 	<p>
 	Fragment Diagram USFinding

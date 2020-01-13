@@ -1,0 +1,58 @@
+{
+  "resourceType": "CodeSystem",
+  "id": "NotPreviouslySeenCodeSystemCS",
+  "extension": [
+    {
+      "url": "http://www.fragment.com/fragment",
+      "valueUrl": "http://hl7.org/fhir/us/breast-radiology/StructureDefinition/HeaderFragment"
+    },
+    {
+      "url": "http://www.fragment.com/Group",
+      "valueString": "CommonCodesCS"
+    }
+  ],
+  "url": "http://hl7.org/fhir/us/breast-radiology/CodeSystem/NotPreviouslySeenCodeSystemCS",
+  "name": "NotPreviouslySeenCodeSystemCS",
+  "title": "Not Previously Seen CodeSystem",
+  "description": "NotPreviouslySeen code system",
+  "caseSensitive": true,
+  "content": "complete",
+  "count": 7,
+  "concept": [
+    {
+      "code": "ClinicalExam",
+      "display": "Clinical exam",
+      "definition": "[PR] Clinical exam\r\nValid for the following modalities: MG US MRI NM."
+    },
+    {
+      "code": "Ductogram",
+      "display": "Ductogram",
+      "definition": "[PR] Ductogram\r\nValid for the following modalities: MG US MRI NM."
+    },
+    {
+      "code": "Mammogram",
+      "display": "Mammogram",
+      "definition": "[PR] Mammogram\r\nValid for the following modalities: MG US MRI NM."
+    },
+    {
+      "code": "MRI",
+      "display": "MRI",
+      "definition": "[PR] MRI\r\nValid for the following modalities: MG US MRI NM."
+    },
+    {
+      "code": "OutsideExam",
+      "display": "Outside exam",
+      "definition": "[PR] Outside exam\r\nValid for the following modalities: MG."
+    },
+    {
+      "code": "Scintimammography",
+      "display": "Scintimammography",
+      "definition": "[PR] Scintimammography\r\nValid for the following modalities: NM."
+    },
+    {
+      "code": "Ultrasound",
+      "display": "Ultrasound",
+      "definition": "[PR] Ultrasound\r\nValid for the following modalities: MG US MRI NM."
+    }
+  ]
+}

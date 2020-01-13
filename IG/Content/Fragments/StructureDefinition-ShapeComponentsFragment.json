@@ -3,11 +3,11 @@
   "extension": [
     {
       "url": "http://www.fragment.com/mapname",
-      "valueString": "Shape Targets Fragment"
+      "valueString": "Shape Components Fragment"
     },
     {
       "url": "http://www.fragment.com/Group",
-      "valueString": "Fragment/ShapeTargetsFragment"
+      "valueString": "Fragment/ShapeComponentsFragment"
     },
     {
       "url": "http://www.fragment.com/isFragment",
@@ -38,12 +38,12 @@
       "valueString": "component|True|Density^CodeableConcept^http://hl7.org/fhir/us/breast-radiology/ValueSet/MGDensityVS"
     }
   ],
-  "url": "http://hl7.org/fhir/us/breast-radiology/StructureDefinition/ShapeTargetsFragment",
+  "url": "http://hl7.org/fhir/us/breast-radiology/StructureDefinition/ShapeComponentsFragment",
   "version": "Fragment",
-  "name": "ShapeTargetsFragment",
-  "title": "Shape Targets Fragment",
+  "name": "ShapeComponentsFragment",
+  "title": "Shape Components Fragment",
   "status": "draft",
-  "description": "Mammography Shape Targets Fragment\n\nShape Common Targets Fragment\n\n\nAdds Orientation, Shape, Margin, and Density targets",
+  "description": "Shape Components Fragment\n\nShape Common Components Fragment\n\n\nAdds Orientation, Shape, Margin, and Density Components",
   "fhirVersion": "4.0.0",
   "kind": "resource",
   "abstract": true,
@@ -55,8 +55,8 @@
       {
         "id": "Observation",
         "path": "Observation",
-        "short": "Mammography Shape Targets Fragment",
-        "definition": "Shape Common Targets Fragment\n\n\nAdds Orientation, Shape, Margin, and Density targets",
+        "short": "Shape Components Fragment",
+        "definition": "Shape Common Components Fragment\n\n\nAdds Orientation, Shape, Margin, and Density Components",
         "base": {
           "path": "Observation",
           "min": 0,

@@ -6,17 +6,17 @@ namespace BreastRadiology.XUnitTests
 {
     partial class ResourcesMaker : ConverterBase
     {
-        SDTaskVar ShapeTargetsFragment = new SDTaskVar(
+        SDTaskVar ShapeComponentsFragment = new SDTaskVar(
             (out StructureDefinition  s) =>
         {
-            SDefEditor e = Self.CreateFragment("ShapeTargetsFragment",
-                    "Shape Targets Fragment",
-                    "Shape Targets Fragment",
+            SDefEditor e = Self.CreateFragment("ShapeComponentsFragment",
+                    "Shape Components Fragment",
+                    "Shape Components Fragment",
                     ObservationUrl)
-                .Description("Mammography Shape Targets Fragment",
+                .Description("Shape Components Fragment",
                     new Markdown()
-                        .Paragraph("Shape Common Targets Fragment")
-                        .Paragraph("Adds Orientation, Shape, Margin, and Density targets")
+                        .Paragraph("Shape Common Components Fragment")
+                        .Paragraph("Adds Orientation, Shape, Margin, and Density Components")
                 )
                 .AddFragRef(Self.BreastBodyLocationRequiredFragment.Value().Url)
                 ;

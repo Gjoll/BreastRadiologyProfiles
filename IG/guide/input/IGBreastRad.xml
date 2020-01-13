@@ -298,6 +298,15 @@
     </resource>
     <resource>
       <reference>
+        <reference value="CodeSystem/NotPreviouslySeenCodeSystemCS" />
+      </reference>
+      <name value="Not Previously Seen CodeSystem" />
+      <description value="NotPreviouslySeen code system" />
+      <exampleBoolean value="false" />
+      <groupingId value="CommonCodesCS" />
+    </resource>
+    <resource>
+      <reference>
         <reference value="CodeSystem/ObservedChangesCS" />
       </reference>
       <name value="Observed Changes CodeSystem" />
@@ -329,6 +338,15 @@
       </reference>
       <name value="Shape CodeSystem" />
       <description value="Shape values code system." />
+      <exampleBoolean value="false" />
+      <groupingId value="CommonCodesCS" />
+    </resource>
+    <resource>
+      <reference>
+        <reference value="CodeSystem/TumorQualifierCodeSystemCS" />
+      </reference>
+      <name value="Tumor Qualifier CodeSystem" />
+      <description value="TumorQualifier code system" />
       <exampleBoolean value="false" />
       <groupingId value="CommonCodesCS" />
     </resource>
@@ -514,6 +532,15 @@
     </resource>
     <resource>
       <reference>
+        <reference value="ValueSet/NotPreviouslySeenVS" />
+      </reference>
+      <name value="NotPreviouslySeen ValueSet" />
+      <description value="NotPreviouslySeen value set." />
+      <exampleBoolean value="false" />
+      <groupingId value="MGCodesVS" />
+    </resource>
+    <resource>
+      <reference>
         <reference value="ValueSet/ObservedChangesVS" />
       </reference>
       <name value="Observed Changes ValueSet" />
@@ -547,6 +574,15 @@
       <description value="Shape value set." />
       <exampleBoolean value="false" />
       <groupingId value="CommonCodesVS" />
+    </resource>
+    <resource>
+      <reference>
+        <reference value="ValueSet/TumorQualifierVS" />
+      </reference>
+      <name value="TumorQualifier ValueSet" />
+      <description value="TumorQualifier value set." />
+      <exampleBoolean value="false" />
+      <groupingId value="MGCodesVS" />
     </resource>
     <resource>
       <reference>
@@ -910,6 +946,15 @@
     </resource>
     <resource>
       <reference>
+        <reference value="StructureDefinition/CommonComponentsFragment" />
+      </reference>
+      <name value="Common Components Fragment" />
+      <description value="Fragment 'Common Components Fragment'" />
+      <exampleBoolean value="false" />
+      <groupingId value="Fragments" />
+    </resource>
+    <resource>
+      <reference>
         <reference value="StructureDefinition/CommonTargetsFragment" />
       </reference>
       <name value="Common Targets Fragment" />
@@ -937,6 +982,15 @@
     </resource>
     <resource>
       <reference>
+        <reference value="StructureDefinition/NotPreviouslySeenComponentFragment" />
+      </reference>
+      <name value="Not Previously Seen Component Fragment" />
+      <description value="Fragment 'Not Previously SeenComponent Fragment'" />
+      <exampleBoolean value="false" />
+      <groupingId value="Fragments" />
+    </resource>
+    <resource>
+      <reference>
         <reference value="StructureDefinition/ObservationLeafFragment" />
       </reference>
       <name value="Observation Leaf Fragment" />
@@ -955,10 +1009,28 @@
     </resource>
     <resource>
       <reference>
+        <reference value="StructureDefinition/ShapeComponentsFragment" />
+      </reference>
+      <name value="Shape Components Fragment" />
+      <description value="Fragment 'Shape Components Fragment'" />
+      <exampleBoolean value="false" />
+      <groupingId value="Fragments" />
+    </resource>
+    <resource>
+      <reference>
         <reference value="StructureDefinition/ShapeTargetsFragment" />
       </reference>
       <name value="Shape Targets Fragment" />
       <description value="Fragment 'Mammography Shape Targets Fragment'" />
+      <exampleBoolean value="false" />
+      <groupingId value="Fragments" />
+    </resource>
+    <resource>
+      <reference>
+        <reference value="StructureDefinition/TumorQualifierComponentFragment" />
+      </reference>
+      <name value="Tumor Qualifier Component Fragment" />
+      <description value="Fragment 'Tumor Qualifier Component Fragment'" />
       <exampleBoolean value="false" />
       <groupingId value="Fragments" />
     </resource>

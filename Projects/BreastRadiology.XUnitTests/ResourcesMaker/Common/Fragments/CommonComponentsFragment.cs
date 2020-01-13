@@ -13,16 +13,16 @@ namespace BreastRadiology.XUnitTests
 {
     partial class ResourcesMaker : ConverterBase
     {
-        SDTaskVar CommonTargetsFragment = new SDTaskVar(
+        SDTaskVar CommonComponentsFragment = new SDTaskVar(
             (out StructureDefinition  s) =>
             {
-                SDefEditor e = Self.CreateFragment("CommonTargetsFragment",
-                        "Common Targets Fragment",
-                        "Common Targets Fragment",
+                SDefEditor e = Self.CreateFragment("CommonComponentsFragment",
+                        "Common Components Fragment",
+                        "Common Components Fragment",
                         ObservationUrl)
-                    .Description("Common Targets Fragment",
+                    .Description("Common Components Fragment",
                         new Markdown()
-                            .Paragraph("Common Targets Fragment. Adds ")
+                            .Paragraph("Common Components Fragment. Adds ")
                             .List("Changes", "Size", "Orientation")
                     )
                     .AddFragRef(Self.BreastBodyLocationRequiredFragment.Value().Url)

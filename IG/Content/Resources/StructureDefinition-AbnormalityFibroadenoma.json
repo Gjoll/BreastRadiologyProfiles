@@ -43,19 +43,19 @@
     },
     {
       "url": "http://www.fragment.com/fragment",
-      "valueUrl": "http://hl7.org/fhir/us/breast-radiology/StructureDefinition/CommonTargetsFragment"
+      "valueUrl": "http://hl7.org/fhir/us/breast-radiology/StructureDefinition/CommonComponentsFragment"
     },
     {
       "url": "http://www.fragment.com/maplink",
-      "valueString": "fragment|True|http://hl7.org/fhir/us/breast-radiology/StructureDefinition/CommonTargetsFragment"
+      "valueString": "fragment|True|http://hl7.org/fhir/us/breast-radiology/StructureDefinition/CommonComponentsFragment"
     },
     {
       "url": "http://www.fragment.com/fragment",
-      "valueUrl": "http://hl7.org/fhir/us/breast-radiology/StructureDefinition/ShapeTargetsFragment"
+      "valueUrl": "http://hl7.org/fhir/us/breast-radiology/StructureDefinition/ShapeComponentsFragment"
     },
     {
       "url": "http://www.fragment.com/maplink",
-      "valueString": "fragment|True|http://hl7.org/fhir/us/breast-radiology/StructureDefinition/ShapeTargetsFragment"
+      "valueString": "fragment|True|http://hl7.org/fhir/us/breast-radiology/StructureDefinition/ShapeComponentsFragment"
     },
     {
       "url": "http://www.fragment.com/maplink",
@@ -159,11 +159,11 @@
     },
     {
       "url": "http://www.fragment.com/mapname",
-      "valueString": "Common Targets Fragment"
+      "valueString": "Common Components Fragment"
     },
     {
       "url": "http://www.fragment.com/Group",
-      "valueString": "Fragment/CommonTargetsFragment"
+      "valueString": "Fragment/CommonComponentsFragment"
     },
     {
       "url": "http://www.fragment.com/maplink",
@@ -199,11 +199,11 @@
     },
     {
       "url": "http://www.fragment.com/mapname",
-      "valueString": "Shape Targets Fragment"
+      "valueString": "Shape Components Fragment"
     },
     {
       "url": "http://www.fragment.com/Group",
-      "valueString": "Fragment/ShapeTargetsFragment"
+      "valueString": "Fragment/ShapeComponentsFragment"
     },
     {
       "url": "http://www.fragment.com/maplink",

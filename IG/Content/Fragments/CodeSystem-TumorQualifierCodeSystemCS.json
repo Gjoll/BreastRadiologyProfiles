@@ -1,0 +1,33 @@
+{
+  "resourceType": "CodeSystem",
+  "id": "TumorQualifierCodeSystemCS",
+  "extension": [
+    {
+      "url": "http://www.fragment.com/fragment",
+      "valueUrl": "http://hl7.org/fhir/us/breast-radiology/StructureDefinition/HeaderFragment"
+    },
+    {
+      "url": "http://www.fragment.com/Group",
+      "valueString": "CommonCodesCS"
+    }
+  ],
+  "url": "http://hl7.org/fhir/us/breast-radiology/CodeSystem/TumorQualifierCodeSystemCS",
+  "name": "TumorQualifierCodeSystemCS",
+  "title": "Tumor Qualifier CodeSystem",
+  "description": "TumorQualifier code system",
+  "caseSensitive": true,
+  "content": "complete",
+  "count": 2,
+  "concept": [
+    {
+      "code": "Index",
+      "display": "Index",
+      "definition": "[PR] Index\r\nValid for the following modalities: MG US MRI."
+    },
+    {
+      "code": "Satellite",
+      "display": "Satellite",
+      "definition": "[PR] Satellite\r\nValid for the following modalities: MG US MRI."
+    }
+  ]
+}

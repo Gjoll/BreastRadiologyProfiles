@@ -3,11 +3,11 @@
   "extension": [
     {
       "url": "http://www.fragment.com/mapname",
-      "valueString": "Common Targets Fragment"
+      "valueString": "Common Components Fragment"
     },
     {
       "url": "http://www.fragment.com/Group",
-      "valueString": "Fragment/CommonTargetsFragment"
+      "valueString": "Fragment/CommonComponentsFragment"
     },
     {
       "url": "http://www.fragment.com/isFragment",
@@ -38,12 +38,12 @@
       "valueString": "component|True|Orientation of an abnormality^CodeableConcept^http://hl7.org/fhir/us/breast-radiology/ValueSet/OrientationVS"
     }
   ],
-  "url": "http://hl7.org/fhir/us/breast-radiology/StructureDefinition/CommonTargetsFragment",
+  "url": "http://hl7.org/fhir/us/breast-radiology/StructureDefinition/CommonComponentsFragment",
   "version": "Fragment",
-  "name": "CommonTargetsFragment",
-  "title": "Common Targets Fragment",
+  "name": "CommonComponentsFragment",
+  "title": "Common Components Fragment",
   "status": "draft",
-  "description": "Common Targets Fragment\n\nCommon Targets Fragment. Adds \n\n\n** Changes\n** Size\n** Orientation",
+  "description": "Common Components Fragment\n\nCommon Components Fragment. Adds \n\n\n** Changes\n** Size\n** Orientation",
   "fhirVersion": "4.0.0",
   "kind": "resource",
   "abstract": true,
@@ -55,8 +55,8 @@
       {
         "id": "Observation",
         "path": "Observation",
-        "short": "Common Targets Fragment",
-        "definition": "Common Targets Fragment. Adds \n\n\n** Changes\n** Size\n** Orientation",
+        "short": "Common Components Fragment",
+        "definition": "Common Components Fragment. Adds \n\n\n** Changes\n** Size\n** Orientation",
         "base": {
           "path": "Observation",
           "min": 0,

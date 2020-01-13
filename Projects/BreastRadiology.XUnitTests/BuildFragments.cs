@@ -150,6 +150,9 @@ namespace BreastRadiology.XUnitTests
             }
 
             DataTable dataTbl = ds.Tables[sheetName];
+            if (dataTbl == null)
+                throw new Exception($"Table {sheetName} not found");
+
             CodeEditor editor = new CodeEditor();
             editor.Load(Path.Combine(DirHelper.FindParentDir("BreastRadiology.XUnitTests"),
                         "ResourcesMaker",
@@ -164,13 +167,34 @@ namespace BreastRadiology.XUnitTests
                     term = "";
 
                 DataRow row = dataTbl.Rows[i];
-                String code = (String)row[7];
+                String code = row[7].ToString();
                 if (itemsToIgnore.Contains(code.Trim().ToUpper()) == false)
                 {
                     String validWith = App("", row[0], "MG");
                     validWith = App(validWith, row[1], "MRI");
                     validWith = App(validWith, row[2], "NM");
                     validWith = App(validWith, row[3], "US");
+
+                    void AppIfNotNull(String name, Object value)
+                    {
+                        if (value is System.DBNull)
+                            return;
+
+                        String sValue = value.ToString();
+                        if (String.IsNullOrEmpty(sValue) == false)
+                            concepts
+                                .AppendLine($"// {name}: {sValue}");
+                    }
+
+                    AppIfNotNull("DICOM", row[9]);
+                    AppIfNotNull("CODE", row[10]);
+                    AppIfNotNull("SNOMED Code", row[11]);
+                    AppIfNotNull("oneToMany", row[12]);
+                    AppIfNotNull("SNOMED Description", row[13]);
+                    AppIfNotNull("ICD10", row[11]);
+                    AppIfNotNull("Comment", row[15]);
+                    AppIfNotNull("UMLS", row[16]);
+
                     concepts
                         .AppendLine($"new ConceptDef(\"{CodeValue(code)}\",")
                                     .AppendLine($"    \"{code}\",")
@@ -193,6 +217,8 @@ namespace BreastRadiology.XUnitTests
             WriteCS(ds, "ConsistentWith", @"Common\ConsistentWithCS.cs", "ConsistentWithCS");
             WriteCS(ds, "ConsistentWithQualifier", @"Common\ConsistentWithCS.cs", "ConsistentWithQualifierCS");
             WriteCS(ds, "ForeignBody", @"Common\Abnormalities\AbnormalityForeignObject.cs", "ForeignObjectCS");
+            WriteCS(ds, "NotPreviousSeen", @"Common\NotPreviouslySeen.cs", "NotPreviouslySeenCS");
+            WriteCS(ds, "Qualifier", @"Common\TumorQualifier.cs", "TumorQualifierCS");
 
             // Observed features has been hand modified. Run again and comments will be lost.
             //List<String> itemsToIgnore = new List<string>();
