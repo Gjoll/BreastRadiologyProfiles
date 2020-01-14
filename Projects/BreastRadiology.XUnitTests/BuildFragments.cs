@@ -214,6 +214,7 @@ namespace BreastRadiology.XUnitTests
         {
             DataSet ds = this.ReadGregDS();
 
+            WriteCS(ds, "CorrspondsWith", @"Common\CorrespondsWithCS.cs", "CorrespondsWithCS");
             WriteCS(ds, "ConsistentWith", @"Common\ConsistentWithCS.cs", "ConsistentWithCS");
             WriteCS(ds, "ConsistentWithQualifier", @"Common\ConsistentWithCS.cs", "ConsistentWithQualifierCS");
             WriteCS(ds, "ForeignBody", @"Common\Abnormalities\AbnormalityForeignObject.cs", "ForeignObjectCS");

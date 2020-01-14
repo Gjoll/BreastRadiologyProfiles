@@ -1,0 +1,124 @@
+{
+  "resourceType": "StructureDefinition",
+  "extension": [
+    {
+      "url": "http://www.fragment.com/mapname",
+      "valueString": "CorrespondsWith Fragment"
+    },
+    {
+      "url": "http://www.fragment.com/Group",
+      "valueString": "Fragment/CorrespondsWithFragment"
+    },
+    {
+      "url": "http://www.fragment.com/isFragment",
+      "valueBoolean": true
+    },
+    {
+      "url": "http://www.fragment.com/maplink",
+      "valueString": "component|True|correspondsWith^CodeableConcept^http://hl7.org/fhir/us/breast-radiology/ValueSet/CorrespondsWithVS"
+    }
+  ],
+  "url": "http://hl7.org/fhir/us/breast-radiology/StructureDefinition/CorrespondsWithFragment",
+  "version": "Fragment",
+  "name": "CorrespondsWithFragment",
+  "title": "CorrespondsWith Fragment",
+  "status": "draft",
+  "description": "'Consistent With' Observation\n\nIf this observation is present, and dataAbsentReason is empty, then a CorrespondsWith was observed.\n\n\nIf this observation is present, and dataAbsentReason is not empty, then a CorrespondsWith was not observed and dataAbsentReason contains the reason why.",
+  "fhirVersion": "4.0.0",
+  "kind": "resource",
+  "abstract": true,
+  "type": "Observation",
+  "baseDefinition": "http://hl7.org/fhir/StructureDefinition/Observation",
+  "derivation": "constraint",
+  "differential": {
+    "element": [
+      {
+        "id": "Observation",
+        "path": "Observation",
+        "short": "'Consistent With' Observation",
+        "definition": "If this observation is present, and dataAbsentReason is empty, then a CorrespondsWith was observed.\n\n\nIf this observation is present, and dataAbsentReason is not empty, then a CorrespondsWith was not observed and dataAbsentReason contains the reason why.",
+        "base": {
+          "path": "Observation",
+          "min": 0,
+          "max": "*"
+        }
+      },
+      {
+        "id": "Observation.component",
+        "path": "Observation.component",
+        "slicing": {
+          "discriminator": [
+            {
+              "type": "pattern",
+              "path": "code"
+            }
+          ],
+          "rules": "open"
+        },
+        "base": {
+          "path": "Observation.component",
+          "min": 0,
+          "max": "*"
+        }
+      },
+      {
+        "id": "Observation.component:correspondsWith",
+        "path": "Observation.component",
+        "sliceName": "correspondsWith",
+        "short": "correspondsWith component",
+        "definition": "This component slice contains the correspondsWith value",
+        "comment": "This is one component of a group of components that comprise the observation.",
+        "min": 1,
+        "max": "1",
+        "base": {
+          "path": "Observation.component",
+          "min": 0,
+          "max": "*"
+        }
+      },
+      {
+        "id": "Observation.component:correspondsWith.code",
+        "path": "Observation.component.code",
+        "short": "correspondsWith component code",
+        "definition": "This code identifies the correspondsWith value",
+        "min": 1,
+        "max": "1",
+        "base": {
+          "path": "Observation.component.code",
+          "min": 1,
+          "max": "1"
+        },
+        "patternCodeableConcept": {
+          "coding": [
+            {
+              "system": "http://hl7.org/fhir/us/breast-radiology/CodeSystem/ComponentSliceCodes",
+              "code": "correspondsWith"
+            }
+          ]
+        }
+      },
+      {
+        "id": "Observation.component:correspondsWith.value[x]",
+        "path": "Observation.component.value[x]",
+        "short": "correspondsWith component value",
+        "definition": "Value si a codeable concept.",
+        "min": 1,
+        "max": "1",
+        "base": {
+          "path": "Observation.component.value[x]",
+          "min": 0,
+          "max": "1"
+        },
+        "type": [
+          {
+            "code": "CodeableConcept"
+          }
+        ],
+        "binding": {
+          "strength": "extensible",
+          "valueSet": "http://hl7.org/fhir/us/breast-radiology/ValueSet/CorrespondsWithVS"
+        }
+      }
+    ]
+  }
+}

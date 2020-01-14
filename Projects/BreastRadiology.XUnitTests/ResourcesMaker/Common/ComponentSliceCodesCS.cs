@@ -26,6 +26,7 @@ namespace BreastRadiology.XUnitTests
         Coding CodeBiRads => new Coding(ComponentSliceCodesUrl, "targetBiRads");
         Coding CodeConsistentWithValue => new Coding(ComponentSliceCodesUrl, "consistentWithValue");
         Coding CodeConsistentWithQualifier => new Coding(ComponentSliceCodesUrl, "consistentWithQualifier");
+        Coding CodeCorrespondsWith => new Coding(ComponentSliceCodesUrl, "correspondsWith");
         Coding CodeObservedChanges => new Coding(ComponentSliceCodesUrl, "observedChanges");
         Coding CodeMargin => new Coding(ComponentSliceCodesUrl, "margin");
         Coding CodeMGDensity => new Coding(ComponentSliceCodesUrl, "mgDensity");

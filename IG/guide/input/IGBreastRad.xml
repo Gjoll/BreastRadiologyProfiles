@@ -208,6 +208,15 @@
     </resource>
     <resource>
       <reference>
+        <reference value="CodeSystem/CorrespondsWithCodeSystemCS" />
+      </reference>
+      <name value="Consistent With CodeSystem" />
+      <description value="CorrespondsWith code system" />
+      <exampleBoolean value="false" />
+      <groupingId value="CommonCodesCS" />
+    </resource>
+    <resource>
+      <reference>
         <reference value="CodeSystem/FibroadenomaCodeSystemCS" />
       </reference>
       <name value="Fibroadenoma CodeSystem" />
@@ -446,6 +455,15 @@
       </reference>
       <name value="ConsistentWith ValueSet" />
       <description value="ConsistentWith value set." />
+      <exampleBoolean value="false" />
+      <groupingId value="MGCodesVS" />
+    </resource>
+    <resource>
+      <reference>
+        <reference value="ValueSet/CorrespondsWithVS" />
+      </reference>
+      <name value="CorrespondsWith ValueSet" />
+      <description value="CorrespondsWith value set." />
       <exampleBoolean value="false" />
       <groupingId value="MGCodesVS" />
     </resource>
@@ -721,6 +739,15 @@
     </resource>
     <resource>
       <reference>
+        <reference value="StructureDefinition/CorrespondsWith" />
+      </reference>
+      <name value="Consistent With" />
+      <description value="'Consistent With' Observation" />
+      <exampleBoolean value="false" />
+      <groupingId value="CommonResources" />
+    </resource>
+    <resource>
+      <reference>
         <reference value="StructureDefinition/Mass" />
       </reference>
       <name value="Mass" />
@@ -730,19 +757,19 @@
     </resource>
     <resource>
       <reference>
-        <reference value="StructureDefinition/BodyDistanceFromExtension" />
+        <reference value="StructureDefinition/BreastBodyLocationExtension" />
       </reference>
-      <name value="Body Distance From Extension" />
-      <description value="Body Distance From extension" />
+      <name value="Breast Body Location Extension" />
+      <description value="Breast Body Location extension" />
       <exampleBoolean value="false" />
       <groupingId value="ExtensionResources" />
     </resource>
     <resource>
       <reference>
-        <reference value="StructureDefinition/BreastBodyLocationExtension" />
+        <reference value="StructureDefinition/BodyDistanceFromExtension" />
       </reference>
-      <name value="Breast Body Location Extension" />
-      <description value="Breast Body Location extension" />
+      <name value="Body Distance From Extension" />
+      <description value="Body Distance From extension" />
       <exampleBoolean value="false" />
       <groupingId value="ExtensionResources" />
     </resource>
@@ -950,6 +977,15 @@
       </reference>
       <name value="Common Components Fragment" />
       <description value="Fragment 'Common Components Fragment'" />
+      <exampleBoolean value="false" />
+      <groupingId value="Fragments" />
+    </resource>
+    <resource>
+      <reference>
+        <reference value="StructureDefinition/CorrespondsWithFragment" />
+      </reference>
+      <name value="CorrespondsWith Fragment" />
+      <description value="Fragment ''Consistent With' Observation'" />
       <exampleBoolean value="false" />
       <groupingId value="Fragments" />
     </resource>

@@ -98,6 +98,7 @@ namespace BreastRadiology.XUnitTests
                     .AddFragRef(Self.CommonComponentsFragment.Value().Url)
                     .AddFragRef(Self.ShapeComponentsFragment.Value().Url)
                     .AddFragRef(Self.NotPreviouslySeenComponentsFragment.Value().Url)
+                    .AddFragRef(Self.CorrespondsWith.Value().Url)
                     ;
                 s = e.SDef;
 
