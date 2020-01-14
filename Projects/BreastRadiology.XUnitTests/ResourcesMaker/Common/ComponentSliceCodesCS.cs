@@ -66,6 +66,7 @@ namespace BreastRadiology.XUnitTests
                             new ConceptDef(Self.CodeBiRads, "Slicing Component Code - BiRads"),
                             new ConceptDef(Self.CodeConsistentWithValue, "Slicing Component Code - ConsistentWithValue"),
                             new ConceptDef(Self.CodeConsistentWithQualifier, "Slicing Component Code - ConsistentWithQualifier"),
+                            new ConceptDef(Self.CodeCorrespondsWith, "Slicing Component Code - CorrespondsWith"),
 
                             new ConceptDef(Self.CodeMargin, "Slicing Component Code - Margin"),
                             new ConceptDef(Self.CodeMGDensity, "Slicing Component Code - MGDensity"),

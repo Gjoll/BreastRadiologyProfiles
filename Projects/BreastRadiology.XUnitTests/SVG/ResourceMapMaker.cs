@@ -42,6 +42,13 @@ namespace BreastRadiology.XUnitTests
                 });
         }
 
+        String HRef(ResourceMap.Node mapNode)
+        {
+            if (mapNode.ResourceUrl.StartsWith("http://hl7.org/fhir/StructureDefinition/"))
+                return mapNode.ResourceUrl;
+            return $"./{mapNode.StructureName}-{mapNode.Name}.html";
+        }
+
         SENode CreateNode(ResourceMap.Node mapNode)
         {
             LegendItem legendItem;
@@ -56,15 +63,12 @@ namespace BreastRadiology.XUnitTests
                     throw new Exception($"No legend item defined for Structure {mapNode.StructureName}");
             }
 
-            SENode node = new SENode(0, legendItem.Color);
-
-            String url = mapNode.ResourceUrl;
+            String hRef = HRef(mapNode);
+            SENode node = new SENode(0, legendItem.Color, hRef, mapNode.Name);
             foreach (String titlePart in mapNode.MapName)
             {
-                String hRef = $"./{mapNode.StructureName}-{url.LastUriPart()}.html";
-                String title = $"{url.LastUriPart()}";
                 String s = titlePart.Trim();
-                node.AddTextLine(s, hRef, title);
+                node.AddTextLine(s, hRef);
             }
             return node;
         }

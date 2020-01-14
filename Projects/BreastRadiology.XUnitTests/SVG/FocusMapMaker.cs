@@ -37,21 +37,25 @@ namespace BreastRadiology.XUnitTests
         public static String FocusMapName(String name) => $"Focus-{name}.svg";
         String IntroName(ResourceMap.Node mapNode) => $"{mapNode.StructureName}-{mapNode.Name}-intro.xml";
 
+        String HRef(ResourceMap.Node mapNode)
+        {
+            if (mapNode.ResourceUrl.StartsWith("http://hl7.org/fhir/StructureDefinition/"))
+                return mapNode.ResourceUrl;
+            return $"./{mapNode.StructureName}-{mapNode.Name}.html";
+        }
+
         SENode CreateResourceNode(ResourceMap.Node mapNode, Color color, bool linkFlag)
         {
-            SENode node = new SENode(0, color);
+            String hRef = null;
+            if (linkFlag)
+                hRef = HRef(mapNode);
+
+            SENode node = new SENode(0, color, hRef);
 
             foreach (String titlePart in mapNode.MapName)
             {
-                String hRef = null;
-                String title = null;
-                if (linkFlag)
-                {
-                    hRef = $"./{mapNode.StructureName}-{mapNode.Name}.html";
-                    title = $"'{mapNode.Name}'";
-                }
                 String s = titlePart.Trim();
-                node.AddTextLine(s, hRef, title);
+                node.AddTextLine(s, hRef);
             }
 
             return node;
@@ -167,15 +171,11 @@ namespace BreastRadiology.XUnitTests
 
                                     SENodeGroup vsGroup = new SENodeGroup("vs");
                                     nodeGroup.Children.Add(vsGroup);
-                                    SENode vsNode = new SENode(0, valueSetColor);
+                                    String hRef = HRef(mapNode);
+                                    SENode vsNode = new SENode(0, valueSetColor, hRef);
                                     vsGroup.Nodes.Add(vsNode);
-
-                                    String hRef = null;
-                                    String title = null;
-                                    hRef = $"./{mapNode.StructureName}-{mapNode.Name}.html";
-                                    title = $"'{mapNode.Name}'";
                                     String s = mapNode.Name.Trim();
-                                    vsNode.AddTextLine(s, hRef, title);
+                                    vsNode.AddTextLine(s, hRef);
                                 }
                             }
                             break;
