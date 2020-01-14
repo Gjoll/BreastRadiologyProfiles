@@ -426,49 +426,23 @@ namespace BreastRadiology.XUnitTests
             componentNode.ApplySlicing(slicingComponent, false);
         }
 
-        public void ComponentSliceCount(String sliceName,
-            CodeableConcept pattern,
-            Int32 minCardinality,
-            String maxCardinality,
-            String componentName)
+        public void StartComponentTypeSlicing(ElementTreeSlice parentSlice,
+            String type)
         {
+            ElementDefinition.SlicingComponent slicingComponent = new ElementDefinition.SlicingComponent
             {
-                ElementTreeSlice slice = this.AppendSlice("component", sliceName, minCardinality, maxCardinality);
-                slice.ElementDefinition
-                    .SetShort($"{componentName} component")
-                    .SetDefinition(new Markdown($"This component slice contains the {componentName} quantity"))
-                    .SetComment(new Markdown($"This is one component of a group of components that comprise the observation."))
-                    ;
+                Rules = ElementDefinition.SlicingRules.Closed
+            };
 
-                {
-                    ElementDefinition componentCode = new ElementDefinition
-                    {
-                        Path = $"{slice.ElementDefinition.Path}.code",
-                        ElementId = $"{slice.ElementDefinition.Path}:{sliceName}.code",
-                        Min = 1,
-                        Max = "1"
-                    };
-                    componentCode
-                        .Pattern(pattern)
-                        ;
-                    slice.CreateNode(componentCode);
-                }
-                {
-                    ElementDefinition valueX = new ElementDefinition
-                    {
-                        Path = $"{slice.ElementDefinition.Path}.value[x]",
-                        ElementId = $"{slice.ElementDefinition.Path}:{sliceName}.value[x]",
-                        Min = 1,
-                        Max = "1"
-                    };
-                    valueX
-                        .Types("integer", "Range")
-                        ;
-                    slice.CreateNode(valueX);
-                }
-            }
-            this.AddComponentLink($"{componentName}^Quantity");
+            slicingComponent.Discriminator.Add(new ElementDefinition.DiscriminatorComponent
+            {
+                Type = ElementDefinition.DiscriminatorType.Type,
+                Path = "value[x]"
+            });
+
+            parentSlice.ElementDefinition.ApplySlicing(slicingComponent, false);
         }
+
 
         public void ComponentSliceQuantity(String sliceName,
             CodeableConcept pattern,

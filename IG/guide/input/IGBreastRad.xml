@@ -955,15 +955,6 @@
     </resource>
     <resource>
       <reference>
-        <reference value="StructureDefinition/CommonTargetsFragment" />
-      </reference>
-      <name value="Common Targets Fragment" />
-      <description value="Fragment 'Common Targets Fragment'" />
-      <exampleBoolean value="false" />
-      <groupingId value="Fragments" />
-    </resource>
-    <resource>
-      <reference>
         <reference value="StructureDefinition/HeaderFragment" />
       </reference>
       <name value="Header Fragment" />
@@ -1013,15 +1004,6 @@
       </reference>
       <name value="Shape Components Fragment" />
       <description value="Fragment 'Shape Components Fragment'" />
-      <exampleBoolean value="false" />
-      <groupingId value="Fragments" />
-    </resource>
-    <resource>
-      <reference>
-        <reference value="StructureDefinition/ShapeTargetsFragment" />
-      </reference>
-      <name value="Shape Targets Fragment" />
-      <description value="Fragment 'Mammography Shape Targets Fragment'" />
       <exampleBoolean value="false" />
       <groupingId value="Fragments" />
     </resource>

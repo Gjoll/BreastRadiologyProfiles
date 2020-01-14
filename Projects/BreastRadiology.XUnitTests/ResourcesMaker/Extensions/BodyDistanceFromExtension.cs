@@ -118,17 +118,13 @@ namespace BreastRadiology.XUnitTests
                     sliceNode.ElementDefinition
                         .Type("Quantity")
                         .Single()
+                        .Pattern(
+                            new Quantity
+                            {
+                                System = "http://unitsofmeasure.org",
+                                Code = "cm"
+                            })
                         ;
-
-                    ElementDefinition quantitySystem = new ElementDefinition()
-                        .Path($"{extensionNode.ElementDefinition.Path}.value[x].system")
-                        .ElementId($"{extensionNode.ElementDefinition.Path}:{sliceName}.value[x].system")
-                        .Type("uri")
-                        .Single()
-                        .Fixed(new FhirUri("http://unitsofmeasure.org"))
-                        ;
-                    sliceNode.DefaultSlice.CreateNode(quantitySystem);
-
                     ElementDefinition quantityCode = new ElementDefinition()
                         .Path($"{extensionNode.ElementDefinition.Path}.value[x].code")
                         .ElementId($"{extensionNode.ElementDefinition.Path}:{sliceName}.value[x].code")

@@ -87,7 +87,11 @@
     },
     {
       "url": "http://www.fragment.com/maplink",
-      "valueString": "component|True|Observed Count^Quantity"
+      "valueString": "component|True|Observed Size^Quantity"
+    },
+    {
+      "url": "http://www.fragment.com/maplink",
+      "valueString": "component|True|Observed Size^Range"
     },
     {
       "url": "http://www.fragment.com/mapname",
@@ -224,10 +228,6 @@
     {
       "url": "http://www.fragment.com/maplink",
       "valueString": "component|True|Observed Change In Abnormality^CodeableConcept^http://hl7.org/fhir/us/breast-radiology/ValueSet/ObservedChangesVS"
-    },
-    {
-      "url": "http://www.fragment.com/maplink",
-      "valueString": "component|True|Size of an abnormality^Quantity"
     },
     {
       "url": "http://www.fragment.com/maplink",
@@ -3131,8 +3131,8 @@
         "id": "Observation.component:observedCount",
         "path": "Observation.component",
         "sliceName": "observedCount",
-        "short": "Observed Count component",
-        "definition": "This component slice contains the Observed Count quantity",
+        "short": "observedCount component",
+        "definition": "This component slice contains the observedCount quantity",
         "comment": "This is one component of a group of components that comprise the observation.",
         "requirements": "Component observations share the same attributes in the Observation resource as the primary observation and are always treated a part of a single observation (they are not separable).   However, the reference range for the primary observation value is not inherited by the component values and is required when appropriate for each component observation.",
         "min": 0,
@@ -3287,7 +3287,7 @@
           "coding": [
             {
               "system": "http://hl7.org/fhir/us/breast-radiology/CodeSystem/ComponentSliceCodes",
-              "code": "observedSize"
+              "code": "observedCount"
             }
           ]
         },
@@ -3326,6 +3326,15 @@
       {
         "id": "Observation.component:observedCount.value[x]",
         "path": "Observation.component.value[x]",
+        "slicing": {
+          "discriminator": [
+            {
+              "type": "type",
+              "path": "$this"
+            }
+          ],
+          "rules": "closed"
+        },
         "short": "Actual component result",
         "definition": "The information determined as a result of making the observation, if the information has a simple value.",
         "comment": "Used when observation has a set of component observations. An observation may have both a value (e.g. an  Apgar score)  and component observations (the observations from which the Apgar score was derived). If a value is present, the datatype for this element should be determined by Observation.code. A CodeableConcept with just a text would be used instead of a string if the field was usually coded, or if the type associated with the Observation.code defines a coded value.  For additional guidance, see the [Notes section](observation.html#notes) below.",
@@ -3339,12 +3348,108 @@
         },
         "type": [
           {
-            "code": "integer"
+            "code": "Quantity"
           },
           {
             "code": "Range"
           }
         ],
+        "isModifier": false,
+        "isSummary": true,
+        "mapping": [
+          {
+            "identity": "sct-concept",
+            "map": "363714003 |Interprets| < 441742003 |Evaluation finding|"
+          },
+          {
+            "identity": "v2",
+            "map": "OBX.2, OBX.5, OBX.6"
+          },
+          {
+            "identity": "rim",
+            "map": "value"
+          },
+          {
+            "identity": "sct-attr",
+            "map": "363714003 |Interprets|"
+          }
+        ]
+      },
+      {
+        "id": "Observation.component:observedCount.value[x]:observedCount/quantity",
+        "path": "Observation.component.value[x]",
+        "sliceName": "observedCount/quantity",
+        "short": "Actual component result",
+        "definition": "The information determined as a result of making the observation, if the information has a simple value.",
+        "comment": "Used when observation has a set of component observations. An observation may have both a value (e.g. an  Apgar score)  and component observations (the observations from which the Apgar score was derived). If a value is present, the datatype for this element should be determined by Observation.code. A CodeableConcept with just a text would be used instead of a string if the field was usually coded, or if the type associated with the Observation.code defines a coded value.  For additional guidance, see the [Notes section](observation.html#notes) below.",
+        "requirements": "An observation exists to have a value, though it might not if it is in error, or if it represents a group of observations.",
+        "min": 0,
+        "max": "1",
+        "base": {
+          "path": "Observation.component.value[x]",
+          "min": 0,
+          "max": "1"
+        },
+        "type": [
+          {
+            "code": "Quantity"
+          }
+        ],
+        "patternQuantity": {
+          "system": "http://unitsofmeasure.org",
+          "code": "tot"
+        },
+        "isModifier": false,
+        "isSummary": true,
+        "mapping": [
+          {
+            "identity": "sct-concept",
+            "map": "363714003 |Interprets| < 441742003 |Evaluation finding|"
+          },
+          {
+            "identity": "v2",
+            "map": "OBX.2, OBX.5, OBX.6"
+          },
+          {
+            "identity": "rim",
+            "map": "value"
+          },
+          {
+            "identity": "sct-attr",
+            "map": "363714003 |Interprets|"
+          }
+        ]
+      },
+      {
+        "id": "Observation.component:observedCount.value[x]:observedCount/range",
+        "path": "Observation.component.value[x]",
+        "sliceName": "observedCount/range",
+        "short": "Actual component result",
+        "definition": "The information determined as a result of making the observation, if the information has a simple value.",
+        "comment": "Used when observation has a set of component observations. An observation may have both a value (e.g. an  Apgar score)  and component observations (the observations from which the Apgar score was derived). If a value is present, the datatype for this element should be determined by Observation.code. A CodeableConcept with just a text would be used instead of a string if the field was usually coded, or if the type associated with the Observation.code defines a coded value.  For additional guidance, see the [Notes section](observation.html#notes) below.",
+        "requirements": "An observation exists to have a value, though it might not if it is in error, or if it represents a group of observations.",
+        "min": 0,
+        "max": "1",
+        "base": {
+          "path": "Observation.component.value[x]",
+          "min": 0,
+          "max": "1"
+        },
+        "type": [
+          {
+            "code": "Range"
+          }
+        ],
+        "patternRange": {
+          "low": {
+            "system": "http://unitsofmeasure.org",
+            "code": "tot"
+          },
+          "high": {
+            "system": "http://unitsofmeasure.org",
+            "code": "tot"
+          }
+        },
         "isModifier": false,
         "isSummary": true,
         "mapping": [
@@ -4602,8 +4707,8 @@
         "id": "Observation.component:observedSize",
         "path": "Observation.component",
         "sliceName": "observedSize",
-        "short": "Size of an abnormality component",
-        "definition": "This component slice contains the Size of an abnormality quantity",
+        "short": "observedSize component",
+        "definition": "This component slice contains the observedSize quantity",
         "comment": "This is one component of a group of components that comprise the observation.",
         "requirements": "Component observations share the same attributes in the Observation resource as the primary observation and are always treated a part of a single observation (they are not separable).   However, the reference range for the primary observation value is not inherited by the component values and is required when appropriate for each component observation.",
         "min": 0,
@@ -4797,6 +4902,15 @@
       {
         "id": "Observation.component:observedSize.value[x]",
         "path": "Observation.component.value[x]",
+        "slicing": {
+          "discriminator": [
+            {
+              "type": "type",
+              "path": "$this"
+            }
+          ],
+          "rules": "closed"
+        },
         "short": "Actual component result",
         "definition": "The information determined as a result of making the observation, if the information has a simple value.",
         "comment": "Used when observation has a set of component observations. An observation may have both a value (e.g. an  Apgar score)  and component observations (the observations from which the Apgar score was derived). If a value is present, the datatype for this element should be determined by Observation.code. A CodeableConcept with just a text would be used instead of a string if the field was usually coded, or if the type associated with the Observation.code defines a coded value.  For additional guidance, see the [Notes section](observation.html#notes) below.",
@@ -4811,8 +4925,107 @@
         "type": [
           {
             "code": "Quantity"
+          },
+          {
+            "code": "Range"
           }
         ],
+        "isModifier": false,
+        "isSummary": true,
+        "mapping": [
+          {
+            "identity": "sct-concept",
+            "map": "363714003 |Interprets| < 441742003 |Evaluation finding|"
+          },
+          {
+            "identity": "v2",
+            "map": "OBX.2, OBX.5, OBX.6"
+          },
+          {
+            "identity": "rim",
+            "map": "value"
+          },
+          {
+            "identity": "sct-attr",
+            "map": "363714003 |Interprets|"
+          }
+        ]
+      },
+      {
+        "id": "Observation.component:observedSize.value[x]:observedSize/quantity",
+        "path": "Observation.component.value[x]",
+        "sliceName": "observedSize/quantity",
+        "short": "Actual component result",
+        "definition": "The information determined as a result of making the observation, if the information has a simple value.",
+        "comment": "Used when observation has a set of component observations. An observation may have both a value (e.g. an  Apgar score)  and component observations (the observations from which the Apgar score was derived). If a value is present, the datatype for this element should be determined by Observation.code. A CodeableConcept with just a text would be used instead of a string if the field was usually coded, or if the type associated with the Observation.code defines a coded value.  For additional guidance, see the [Notes section](observation.html#notes) below.",
+        "requirements": "An observation exists to have a value, though it might not if it is in error, or if it represents a group of observations.",
+        "min": 0,
+        "max": "1",
+        "base": {
+          "path": "Observation.component.value[x]",
+          "min": 0,
+          "max": "1"
+        },
+        "type": [
+          {
+            "code": "Quantity"
+          }
+        ],
+        "patternQuantity": {
+          "system": "http://unitsofmeasure.org",
+          "code": "cm"
+        },
+        "isModifier": false,
+        "isSummary": true,
+        "mapping": [
+          {
+            "identity": "sct-concept",
+            "map": "363714003 |Interprets| < 441742003 |Evaluation finding|"
+          },
+          {
+            "identity": "v2",
+            "map": "OBX.2, OBX.5, OBX.6"
+          },
+          {
+            "identity": "rim",
+            "map": "value"
+          },
+          {
+            "identity": "sct-attr",
+            "map": "363714003 |Interprets|"
+          }
+        ]
+      },
+      {
+        "id": "Observation.component:observedSize.value[x]:observedSize/range",
+        "path": "Observation.component.value[x]",
+        "sliceName": "observedSize/range",
+        "short": "Actual component result",
+        "definition": "The information determined as a result of making the observation, if the information has a simple value.",
+        "comment": "Used when observation has a set of component observations. An observation may have both a value (e.g. an  Apgar score)  and component observations (the observations from which the Apgar score was derived). If a value is present, the datatype for this element should be determined by Observation.code. A CodeableConcept with just a text would be used instead of a string if the field was usually coded, or if the type associated with the Observation.code defines a coded value.  For additional guidance, see the [Notes section](observation.html#notes) below.",
+        "requirements": "An observation exists to have a value, though it might not if it is in error, or if it represents a group of observations.",
+        "min": 0,
+        "max": "1",
+        "base": {
+          "path": "Observation.component.value[x]",
+          "min": 0,
+          "max": "1"
+        },
+        "type": [
+          {
+            "code": "Range"
+          }
+        ],
+        "patternRange": {
+          "low": {
+            "system": "http://unitsofmeasure.org",
+            "code": "cm"
+          },
+          "high": {
+            "system": "http://unitsofmeasure.org",
+            "code": "cm"
+          }
+        },
         "isModifier": false,
         "isSummary": true,
         "mapping": [
@@ -7554,8 +7767,8 @@
         "id": "Observation.component:observedCount",
         "path": "Observation.component",
         "sliceName": "observedCount",
-        "short": "Observed Count component",
-        "definition": "This component slice contains the Observed Count quantity",
+        "short": "observedCount component",
+        "definition": "This component slice contains the observedCount quantity",
         "comment": "This is one component of a group of components that comprise the observation.",
         "requirements": "Component observations share the same attributes in the Observation resource as the primary observation and are always treated a part of a single observation (they are not separable).   However, the reference range for the primary observation value is not inherited by the component values and is required when appropriate for each component observation.",
         "min": 0,
@@ -7710,7 +7923,7 @@
           "coding": [
             {
               "system": "http://hl7.org/fhir/us/breast-radiology/CodeSystem/ComponentSliceCodes",
-              "code": "observedSize"
+              "code": "observedCount"
             }
           ]
         },
@@ -7749,6 +7962,15 @@
       {
         "id": "Observation.component:observedCount.value[x]",
         "path": "Observation.component.value[x]",
+        "slicing": {
+          "discriminator": [
+            {
+              "type": "type",
+              "path": "$this"
+            }
+          ],
+          "rules": "closed"
+        },
         "short": "Actual component result",
         "definition": "The information determined as a result of making the observation, if the information has a simple value.",
         "comment": "Used when observation has a set of component observations. An observation may have both a value (e.g. an  Apgar score)  and component observations (the observations from which the Apgar score was derived). If a value is present, the datatype for this element should be determined by Observation.code. A CodeableConcept with just a text would be used instead of a string if the field was usually coded, or if the type associated with the Observation.code defines a coded value.  For additional guidance, see the [Notes section](observation.html#notes) below.",
@@ -7762,12 +7984,108 @@
         },
         "type": [
           {
-            "code": "integer"
+            "code": "Quantity"
           },
           {
             "code": "Range"
           }
         ],
+        "isModifier": false,
+        "isSummary": true,
+        "mapping": [
+          {
+            "identity": "sct-concept",
+            "map": "363714003 |Interprets| < 441742003 |Evaluation finding|"
+          },
+          {
+            "identity": "v2",
+            "map": "OBX.2, OBX.5, OBX.6"
+          },
+          {
+            "identity": "rim",
+            "map": "value"
+          },
+          {
+            "identity": "sct-attr",
+            "map": "363714003 |Interprets|"
+          }
+        ]
+      },
+      {
+        "id": "Observation.component:observedCount.value[x]:observedCount/quantity",
+        "path": "Observation.component.value[x]",
+        "sliceName": "observedCount/quantity",
+        "short": "Actual component result",
+        "definition": "The information determined as a result of making the observation, if the information has a simple value.",
+        "comment": "Used when observation has a set of component observations. An observation may have both a value (e.g. an  Apgar score)  and component observations (the observations from which the Apgar score was derived). If a value is present, the datatype for this element should be determined by Observation.code. A CodeableConcept with just a text would be used instead of a string if the field was usually coded, or if the type associated with the Observation.code defines a coded value.  For additional guidance, see the [Notes section](observation.html#notes) below.",
+        "requirements": "An observation exists to have a value, though it might not if it is in error, or if it represents a group of observations.",
+        "min": 0,
+        "max": "1",
+        "base": {
+          "path": "Observation.component.value[x]",
+          "min": 0,
+          "max": "1"
+        },
+        "type": [
+          {
+            "code": "Quantity"
+          }
+        ],
+        "patternQuantity": {
+          "system": "http://unitsofmeasure.org",
+          "code": "tot"
+        },
+        "isModifier": false,
+        "isSummary": true,
+        "mapping": [
+          {
+            "identity": "sct-concept",
+            "map": "363714003 |Interprets| < 441742003 |Evaluation finding|"
+          },
+          {
+            "identity": "v2",
+            "map": "OBX.2, OBX.5, OBX.6"
+          },
+          {
+            "identity": "rim",
+            "map": "value"
+          },
+          {
+            "identity": "sct-attr",
+            "map": "363714003 |Interprets|"
+          }
+        ]
+      },
+      {
+        "id": "Observation.component:observedCount.value[x]:observedCount/range",
+        "path": "Observation.component.value[x]",
+        "sliceName": "observedCount/range",
+        "short": "Actual component result",
+        "definition": "The information determined as a result of making the observation, if the information has a simple value.",
+        "comment": "Used when observation has a set of component observations. An observation may have both a value (e.g. an  Apgar score)  and component observations (the observations from which the Apgar score was derived). If a value is present, the datatype for this element should be determined by Observation.code. A CodeableConcept with just a text would be used instead of a string if the field was usually coded, or if the type associated with the Observation.code defines a coded value.  For additional guidance, see the [Notes section](observation.html#notes) below.",
+        "requirements": "An observation exists to have a value, though it might not if it is in error, or if it represents a group of observations.",
+        "min": 0,
+        "max": "1",
+        "base": {
+          "path": "Observation.component.value[x]",
+          "min": 0,
+          "max": "1"
+        },
+        "type": [
+          {
+            "code": "Range"
+          }
+        ],
+        "patternRange": {
+          "low": {
+            "system": "http://unitsofmeasure.org",
+            "code": "tot"
+          },
+          "high": {
+            "system": "http://unitsofmeasure.org",
+            "code": "tot"
+          }
+        },
         "isModifier": false,
         "isSummary": true,
         "mapping": [
@@ -9025,8 +9343,8 @@
         "id": "Observation.component:observedSize",
         "path": "Observation.component",
         "sliceName": "observedSize",
-        "short": "Size of an abnormality component",
-        "definition": "This component slice contains the Size of an abnormality quantity",
+        "short": "observedSize component",
+        "definition": "This component slice contains the observedSize quantity",
         "comment": "This is one component of a group of components that comprise the observation.",
         "requirements": "Component observations share the same attributes in the Observation resource as the primary observation and are always treated a part of a single observation (they are not separable).   However, the reference range for the primary observation value is not inherited by the component values and is required when appropriate for each component observation.",
         "min": 0,
@@ -9220,6 +9538,15 @@
       {
         "id": "Observation.component:observedSize.value[x]",
         "path": "Observation.component.value[x]",
+        "slicing": {
+          "discriminator": [
+            {
+              "type": "type",
+              "path": "$this"
+            }
+          ],
+          "rules": "closed"
+        },
         "short": "Actual component result",
         "definition": "The information determined as a result of making the observation, if the information has a simple value.",
         "comment": "Used when observation has a set of component observations. An observation may have both a value (e.g. an  Apgar score)  and component observations (the observations from which the Apgar score was derived). If a value is present, the datatype for this element should be determined by Observation.code. A CodeableConcept with just a text would be used instead of a string if the field was usually coded, or if the type associated with the Observation.code defines a coded value.  For additional guidance, see the [Notes section](observation.html#notes) below.",
@@ -9234,8 +9561,107 @@
         "type": [
           {
             "code": "Quantity"
+          },
+          {
+            "code": "Range"
           }
         ],
+        "isModifier": false,
+        "isSummary": true,
+        "mapping": [
+          {
+            "identity": "sct-concept",
+            "map": "363714003 |Interprets| < 441742003 |Evaluation finding|"
+          },
+          {
+            "identity": "v2",
+            "map": "OBX.2, OBX.5, OBX.6"
+          },
+          {
+            "identity": "rim",
+            "map": "value"
+          },
+          {
+            "identity": "sct-attr",
+            "map": "363714003 |Interprets|"
+          }
+        ]
+      },
+      {
+        "id": "Observation.component:observedSize.value[x]:observedSize/quantity",
+        "path": "Observation.component.value[x]",
+        "sliceName": "observedSize/quantity",
+        "short": "Actual component result",
+        "definition": "The information determined as a result of making the observation, if the information has a simple value.",
+        "comment": "Used when observation has a set of component observations. An observation may have both a value (e.g. an  Apgar score)  and component observations (the observations from which the Apgar score was derived). If a value is present, the datatype for this element should be determined by Observation.code. A CodeableConcept with just a text would be used instead of a string if the field was usually coded, or if the type associated with the Observation.code defines a coded value.  For additional guidance, see the [Notes section](observation.html#notes) below.",
+        "requirements": "An observation exists to have a value, though it might not if it is in error, or if it represents a group of observations.",
+        "min": 0,
+        "max": "1",
+        "base": {
+          "path": "Observation.component.value[x]",
+          "min": 0,
+          "max": "1"
+        },
+        "type": [
+          {
+            "code": "Quantity"
+          }
+        ],
+        "patternQuantity": {
+          "system": "http://unitsofmeasure.org",
+          "code": "cm"
+        },
+        "isModifier": false,
+        "isSummary": true,
+        "mapping": [
+          {
+            "identity": "sct-concept",
+            "map": "363714003 |Interprets| < 441742003 |Evaluation finding|"
+          },
+          {
+            "identity": "v2",
+            "map": "OBX.2, OBX.5, OBX.6"
+          },
+          {
+            "identity": "rim",
+            "map": "value"
+          },
+          {
+            "identity": "sct-attr",
+            "map": "363714003 |Interprets|"
+          }
+        ]
+      },
+      {
+        "id": "Observation.component:observedSize.value[x]:observedSize/range",
+        "path": "Observation.component.value[x]",
+        "sliceName": "observedSize/range",
+        "short": "Actual component result",
+        "definition": "The information determined as a result of making the observation, if the information has a simple value.",
+        "comment": "Used when observation has a set of component observations. An observation may have both a value (e.g. an  Apgar score)  and component observations (the observations from which the Apgar score was derived). If a value is present, the datatype for this element should be determined by Observation.code. A CodeableConcept with just a text would be used instead of a string if the field was usually coded, or if the type associated with the Observation.code defines a coded value.  For additional guidance, see the [Notes section](observation.html#notes) below.",
+        "requirements": "An observation exists to have a value, though it might not if it is in error, or if it represents a group of observations.",
+        "min": 0,
+        "max": "1",
+        "base": {
+          "path": "Observation.component.value[x]",
+          "min": 0,
+          "max": "1"
+        },
+        "type": [
+          {
+            "code": "Range"
+          }
+        ],
+        "patternRange": {
+          "low": {
+            "system": "http://unitsofmeasure.org",
+            "code": "cm"
+          },
+          "high": {
+            "system": "http://unitsofmeasure.org",
+            "code": "cm"
+          }
+        },
         "isModifier": false,
         "isSummary": true,
         "mapping": [

@@ -98,7 +98,7 @@ namespace BreastRadiology.XUnitTests
                     1,
                     "1",
                     "AbnormalityDuct Type");
-                Self.ComponentSliceObservedCount(e);
+                Self.ComponentSliceObservedCountRange(e);
             });
     }
 }

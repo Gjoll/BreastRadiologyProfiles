@@ -91,7 +91,7 @@ namespace BreastRadiology.XUnitTests
                     1,
                     "1",
                     "MG AbnormalityDensity Type");
-                Self.ComponentSliceObservedCount(e);
+                Self.ComponentSliceObservedCountRange(e);
             });
     }
 }

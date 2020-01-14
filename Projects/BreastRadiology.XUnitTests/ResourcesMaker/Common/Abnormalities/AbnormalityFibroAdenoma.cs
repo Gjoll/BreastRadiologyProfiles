@@ -88,7 +88,7 @@ namespace BreastRadiology.XUnitTests
                     1,
                     "1",
                     "AbnormalityFibroAdenoma Type");
-                Self.ComponentSliceObservedCount(e);
+                Self.ComponentSliceObservedCountRange(e);
             });
     }
 }

@@ -112,7 +112,7 @@ namespace BreastRadiology.XUnitTests
                     1,
                     "1",
                     "AbnormalityMass Type");
-                Self.ComponentSliceObservedCount(e);
+                Self.ComponentSliceObservedCountRange(e);
             });
     }
 }

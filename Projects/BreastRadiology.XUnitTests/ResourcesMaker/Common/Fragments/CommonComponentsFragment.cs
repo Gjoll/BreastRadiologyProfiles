@@ -41,11 +41,7 @@ namespace BreastRadiology.XUnitTests
                     "*",
                     "Observed Change In Abnormality");
 
-                e.ComponentSliceQuantity("observedSize",
-                    Self.CodeObservedSize.ToCodeableConcept(),
-                    0,
-                    "1",
-                    "Size of an abnormality");
+                Self.ComponentSliceObservedSize(e);
 
                 e.ComponentSliceCodeableConcept("orientation",
                     Self.CodeOrientation.ToCodeableConcept(),

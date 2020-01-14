@@ -45,7 +45,7 @@ namespace BreastRadiology.XUnitTests
                 Self.SliceTargetReference(e, sliceElementDef, Self.ConsistentWith.Value(), 0, "*");
 
                 e.StartComponentSliceing();
-                Self.ComponentSliceObservedCount(e);
+                Self.ComponentSliceObservedCountRange(e);
             });
     }
 }

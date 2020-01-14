@@ -147,7 +147,7 @@ namespace BreastRadiology.XUnitTests
                     1,
                     "1",
                     "MG AbnormalityAsymmetry Type");
-                Self.ComponentSliceObservedCount(e);
+                Self.ComponentSliceObservedCountRange(e);
             });
     }
 }

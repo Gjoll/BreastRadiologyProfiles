@@ -75,7 +75,11 @@
     },
     {
       "url": "http://www.fragment.com/maplink",
-      "valueString": "component|True|Observed Count^Quantity"
+      "valueString": "component|True|Observed Size^Quantity"
+    },
+    {
+      "url": "http://www.fragment.com/maplink",
+      "valueString": "component|True|Observed Size^Range"
     }
   ],
   "url": "http://hl7.org/fhir/us/breast-radiology/StructureDefinition/AbnormalityLymphNode",
@@ -234,8 +238,8 @@
         "id": "Observation.component:observedCount",
         "path": "Observation.component",
         "sliceName": "observedCount",
-        "short": "Observed Count component",
-        "definition": "This component slice contains the Observed Count quantity",
+        "short": "observedCount component",
+        "definition": "This component slice contains the observedCount quantity",
         "comment": "This is one component of a group of components that comprise the observation.",
         "min": 0,
         "max": "1",
@@ -259,7 +263,7 @@
           "coding": [
             {
               "system": "http://hl7.org/fhir/us/breast-radiology/CodeSystem/ComponentSliceCodes",
-              "code": "observedSize"
+              "code": "observedCount"
             }
           ]
         }
@@ -267,6 +271,15 @@
       {
         "id": "Observation.component:observedCount.value[x]",
         "path": "Observation.component.value[x]",
+        "slicing": {
+          "discriminator": [
+            {
+              "type": "type",
+              "path": "$this"
+            }
+          ],
+          "rules": "closed"
+        },
         "min": 1,
         "max": "1",
         "base": {
@@ -276,12 +289,60 @@
         },
         "type": [
           {
-            "code": "integer"
+            "code": "Quantity"
           },
           {
             "code": "Range"
           }
         ]
+      },
+      {
+        "id": "Observation.component:observedCount.value[x]:observedCount/quantity",
+        "path": "Observation.component.value[x]",
+        "sliceName": "observedCount/quantity",
+        "min": 0,
+        "max": "1",
+        "base": {
+          "path": "Observation.component.value[x]",
+          "min": 0,
+          "max": "1"
+        },
+        "type": [
+          {
+            "code": "Quantity"
+          }
+        ],
+        "patternQuantity": {
+          "system": "http://unitsofmeasure.org",
+          "code": "tot"
+        }
+      },
+      {
+        "id": "Observation.component:observedCount.value[x]:observedCount/range",
+        "path": "Observation.component.value[x]",
+        "sliceName": "observedCount/range",
+        "min": 0,
+        "max": "1",
+        "base": {
+          "path": "Observation.component.value[x]",
+          "min": 0,
+          "max": "1"
+        },
+        "type": [
+          {
+            "code": "Range"
+          }
+        ],
+        "patternRange": {
+          "low": {
+            "system": "http://unitsofmeasure.org",
+            "code": "tot"
+          },
+          "high": {
+            "system": "http://unitsofmeasure.org",
+            "code": "tot"
+          }
+        }
       }
     ]
   }

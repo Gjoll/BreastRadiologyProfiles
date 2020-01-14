@@ -340,7 +340,7 @@ namespace BreastRadiology.XUnitTests
                     "1",
                     "Calcification Distribution");
 
-                Self.ComponentSliceObservedCount(e);
+                Self.ComponentSliceObservedCountRange(e);
             });
     }
 }
