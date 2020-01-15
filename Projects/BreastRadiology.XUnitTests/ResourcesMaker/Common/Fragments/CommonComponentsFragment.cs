@@ -23,7 +23,7 @@ namespace BreastRadiology.XUnitTests
                     .Description("Common Components Fragment",
                         new Markdown()
                             .Paragraph("Common Components Fragment. Adds ")
-                            .List("Changes", "Size", "Orientation")
+                            .List("Changes", "Size")
                     )
                     .AddFragRef(Self.BreastBodyLocationRequiredFragment.Value())
                     ;
@@ -46,19 +46,6 @@ namespace BreastRadiology.XUnitTests
                     );
 
                 Self.ComponentSliceObservedSize(e);
-
-                //$ defined twice =
-                e.ComponentSliceCodeableConcept("orientation",
-                    Self.CodeOrientation.ToCodeableConcept(),
-                    Self.OrientationVS.Value(),
-                    BindingStrength.Required,
-                    0,
-                    "1",
-                    "Orientation of an abnormality",
-                    new Markdown()
-                        .Paragraph($"This slice contains the optional component that define the orientation of the abnormality.",
-                                    $"The value of this component is a codeable concept chosen from the {Self.OrientationVS.Value().Name} valueset.")
-                    );
             });
     }
 }
