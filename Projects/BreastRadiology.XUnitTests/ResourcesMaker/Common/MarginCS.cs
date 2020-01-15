@@ -27,56 +27,6 @@ namespace BreastRadiology.XUnitTests
             );
 
 
-        //#SDTaskVar Margin = new SDTaskVar(
-        //    (out StructureDefinition  s) =>
-        //    {
-        //        ValueSet binding = Self.MarginVS.Value();
-        //        binding
-        //            .Remove("IntraductalExtension")
-        //            .Remove("Lobulated")
-        //            .Remove("NonCircumscribed")
-        //            .Remove("Smooth")
-        //            ;
-        //        {
-        //            IntroDoc valueSetIntroDoc = Self.CreateIntroDocVS(binding);
-        //            valueSetIntroDoc
-        //                .ValueSet(binding);
-        //                .ReviewedStatus(ReviewStatus.NotReviewed)
-        //            ;
-        //            String outputPath = valueSetIntroDoc.Save();
-        //            Self.fc?.Mark(outputPath);
-        //        }
-
-        //        SDefEditor e = Self.CreateEditor("Margin",
-        //            "Margin",
-        //            "Margin",
-        //            ObservationUrl,
-        //            $"{Group_CommonResources}/Margin")
-        //            .Description("Margin Observation",
-        //                new Markdown()
-        //                    .MissingObservation("a margin")
-        //                    .BiradHeader()
-        //                    .BlockQuote("The margin is the edge or border of the lesion. The descriptors of margin, like the descriptors of shape, are important predictors of whether a mass is benign or malignant. ")
-        //                    .BiradFooter()
-        //            )
-        //            .AddFragRef(Self.ObservationNoDeviceFragment.Value())
-        //            .AddFragRef(Self.ObservationCodedValueFragment.Value())
-        //            .AddFragRef(Self.ObservationLeafFragment.Value())
-        //            ;
-        //        s = e.SDef.Url;
-
-        //        e.IntroDoc
-        //            .CodedObservationLeafNode("a mammography margin", binding)
-        //            .ReviewedStatus(ReviewStatus.NotReviewed)
-        //            ;
-
-        //        e.Select("value[x]")
-        //            .Type("CodeableConcept")
-        //            .Binding(binding.Url, BindingStrength.Required)
-        //            ;
-        //        e.AddValueSetLink(binding);
-        //    });
-
         CSTaskVar MarginCS = new CSTaskVar(
              (out CodeSystem cs) =>
                  cs = Self.CreateCodeSystem(
