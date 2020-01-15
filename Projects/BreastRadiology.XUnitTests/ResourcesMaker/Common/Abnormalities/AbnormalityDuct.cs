@@ -96,9 +96,13 @@ namespace BreastRadiology.XUnitTests
                     Self.CodeAbnormalityDuctType.ToCodeableConcept(),
                     binding,
                     BindingStrength.Required,
-                    1,
+                    0,
                     "1",
-                    "AbnormalityDuct Type");
+                    "AbnormalityDuct Type",
+                    new Markdown()
+                        .Paragraph($"This slice contains the optional component that refines the duct type.",
+                                    $"The value of this component is a codeable concept chosen from the {binding.Name} valueset.")
+                    );
                 Self.ComponentSliceObservedCountRange(e);
             });
     }

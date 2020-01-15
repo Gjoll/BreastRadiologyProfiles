@@ -110,9 +110,13 @@ namespace BreastRadiology.XUnitTests
                     Self.CodeAbnormalityMassType.ToCodeableConcept(),
                     binding,
                     BindingStrength.Required,
-                    1,
+                    0,
                     "1",
-                    "AbnormalityMass Type");
+                    "AbnormalityMass Type",
+                    new Markdown()
+                        .Paragraph($"This slice contains the optional component that refines the mass type.",
+                                    $"The value of this component is a codeable concept chosen from the {binding.Name} valueset.")
+                    );
                 Self.ComponentSliceObservedCountRange(e);
             });
     }

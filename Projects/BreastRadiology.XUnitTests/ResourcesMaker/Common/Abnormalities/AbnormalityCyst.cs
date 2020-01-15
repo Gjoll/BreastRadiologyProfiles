@@ -117,9 +117,13 @@ namespace BreastRadiology.XUnitTests
                     Self.CodeAbnormalityCystType.ToCodeableConcept(),
                     binding,
                     BindingStrength.Required,
-                    1,
+                    0,
                     "1",
-                    "AbnormalityCyst Type");
+                    "AbnormalityCyst Type",
+                    new Markdown()
+                        .Paragraph($"This slice contains the optional component that refines the cyst type.",
+                                    $"The value of this component is a codeable concept chosen from the {binding.Name} valueset.")
+                );
                 Self.ComponentSliceObservedCountRange(e);
             });
     }

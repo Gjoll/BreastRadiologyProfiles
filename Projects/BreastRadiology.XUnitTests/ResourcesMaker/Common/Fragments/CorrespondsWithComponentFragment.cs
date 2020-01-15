@@ -30,7 +30,11 @@ namespace BreastRadiology.XUnitTests
                 BindingStrength.Required,
                 0,
                 "*",
-                "CorrespondsWith");
+                "CorrespondsWith",
+                    new Markdown()
+                        .Paragraph($"This slice contains zero or more components that define correspondences with this abnormality.",
+                                    $"The value of this component is a codeable concept chosen from the {Self.CorrespondsWithVS.Value().Name} valueset.")
+                );
         });
     }
 }

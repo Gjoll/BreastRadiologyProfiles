@@ -242,7 +242,11 @@ namespace BreastRadiology.XUnitTests
                     BindingStrength.Required,
                     1,
                     "1",
-                    "Observed Feature Type");
+                    "Observed Feature Type",
+                    new Markdown()
+                        .Paragraph($"This slice contains the required component that defines the observed feature.",
+                                    $"The value of this component is a codeable concept chosen from the {binding.Name} valueset.")
+                    );
                 Self.ComponentSliceObservedCountRange(e);
             });
     }

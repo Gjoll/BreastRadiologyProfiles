@@ -39,17 +39,26 @@ namespace BreastRadiology.XUnitTests
                     BindingStrength.Required,
                     0,
                     "*",
-                    "Observed Change In Abnormality");
+                    "Observed Change In Abnormality",
+                    new Markdown()
+                        .Paragraph($"This slice contains zero or more components that define observed changes in this abnormality.",
+                                    $"The value of this component is a codeable concept chosen from the {Self.ObservedChangesVS.Value().Name} valueset.")
+                    );
 
                 Self.ComponentSliceObservedSize(e);
 
+                //$ defined twice =
                 e.ComponentSliceCodeableConcept("orientation",
                     Self.CodeOrientation.ToCodeableConcept(),
                     Self.OrientationVS.Value(),
                     BindingStrength.Required,
                     0,
                     "1",
-                    "Orientation of an abnormality");
+                    "Orientation of an abnormality",
+                    new Markdown()
+                        .Paragraph($"This slice contains the optional component that define the orientation of the abnormality.",
+                                    $"The value of this component is a codeable concept chosen from the {Self.OrientationVS.Value().Name} valueset.")
+                    );
             });
     }
 }

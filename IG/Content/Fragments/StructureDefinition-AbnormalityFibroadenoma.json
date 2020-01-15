@@ -173,9 +173,9 @@
         "path": "Observation.component",
         "sliceName": "fibroAdenomaType",
         "short": "AbnormalityFibroAdenoma Type component",
-        "definition": "This component slice contains the AbnormalityFibroAdenoma Type value",
+        "definition": "This slice contains the optional component that refines the fibroadenema type.\nThe value of this component is a codeable concept chosen from the FibroadenomaVS valueset.",
         "comment": "This is one component of a group of components that comprise the observation.",
-        "min": 1,
+        "min": 0,
         "max": "1",
         "base": {
           "path": "Observation.component",
@@ -187,7 +187,7 @@
         "id": "Observation.component:fibroAdenomaType.code",
         "path": "Observation.component.code",
         "short": "AbnormalityFibroAdenoma Type component code",
-        "definition": "This code identifies the AbnormalityFibroAdenoma Type value",
+        "definition": "This code identifies the AbnormalityFibroAdenoma Type component",
         "min": 1,
         "max": "1",
         "base": {

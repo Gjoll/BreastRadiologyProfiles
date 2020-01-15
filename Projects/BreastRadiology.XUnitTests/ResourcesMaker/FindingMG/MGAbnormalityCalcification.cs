@@ -331,7 +331,11 @@ namespace BreastRadiology.XUnitTests
                     BindingStrength.Required,
                     0,
                     "1",
-                    "Calcification Type");
+                    "Calcification Type",
+                    new Markdown()
+                        .Paragraph($"This slice contains the optional component that refines the calcification type.",
+                                    $"The value of this component is a codeable concept chosen from the {Self.MGCalcificationTypeVS.Value().Name} valueset.")
+                    );
 
                 e.ComponentSliceCodeableConcept("calcificationDistribution",
                     Self.MGCodeCalcificationDistribution.ToCodeableConcept(),
@@ -339,7 +343,11 @@ namespace BreastRadiology.XUnitTests
                     BindingStrength.Required,
                     0,
                     "1",
-                    "Calcification Distribution");
+                    "Calcification Distribution",
+                    new Markdown()
+                        .Paragraph($"This slice contains the optional component that defines the calcification distribution.",
+                                    $"The value of this component is a codeable concept chosen from the {Self.MGCalcificationDistributionVS.Value().Name} valueset.")
+                    );
 
                 Self.ComponentSliceObservedCountRange(e);
             });

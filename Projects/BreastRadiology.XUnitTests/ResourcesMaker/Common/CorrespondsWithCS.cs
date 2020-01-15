@@ -33,9 +33,13 @@ namespace BreastRadiology.XUnitTests
                            Self.CodeCorrespondsWith.ToCodeableConcept(),
                            Self.CorrespondsWithVS.Value(),
                            BindingStrength.Extensible,
-                           1,
-                           "1",
-                           "correspondsWith");
+                           0,
+                           "*",
+                           "correspondsWith",
+                            new Markdown()
+                                .Paragraph($"This slice contains zero or more components that defines what this observation correspomnds with.",
+                                            $"The value of this component is a codeable concept chosen from the {Self.CorrespondsWithVS.Value().Name} valueset.")
+                           );
                        e.IntroDoc
                            .ReviewedStatus(ReviewStatus.NotReviewed)
                            ;

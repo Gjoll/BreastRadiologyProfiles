@@ -85,9 +85,13 @@ namespace BreastRadiology.XUnitTests
                     Self.CodeAbnormalityFibroAdenomaType.ToCodeableConcept(),
                     binding,
                     BindingStrength.Required,
-                    1,
+                    0,
                     "1",
-                    "AbnormalityFibroAdenoma Type");
+                    "AbnormalityFibroAdenoma Type",
+                    new Markdown()
+                        .Paragraph($"This slice contains the optional component that refines the fibroadenema type.",
+                                    $"The value of this component is a codeable concept chosen from the {binding.Name} valueset.")
+                    );
                 Self.ComponentSliceObservedCountRange(e);
             });
     }

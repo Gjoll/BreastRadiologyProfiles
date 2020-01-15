@@ -289,7 +289,11 @@ namespace BreastRadiology.XUnitTests
                     BindingStrength.Required,
                     1,
                     "1",
-                    "AbnormalityForeignObject Type");
+                    "AbnormalityForeignObject Type",
+                    new Markdown()
+                        .Paragraph($"This slice contains the required component that refines the foreign object type.",
+                                    $"The value of this component is a codeable concept chosen from the {binding.Name} valueset.")
+                    );
                 Self.ComponentSliceBiRads(e);
             });
     }

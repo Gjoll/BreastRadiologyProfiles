@@ -500,6 +500,7 @@ namespace BreastRadiology.XUnitTests
             this.AddComponentLink($"{componentName}^Quantity");
         }
 
+        [Obsolete]
         public void ComponentSliceCodeableConcept(String sliceName,
             CodeableConcept pattern,
             ValueSet valueSet,
@@ -512,10 +513,33 @@ namespace BreastRadiology.XUnitTests
             String compStr = maxCardinality == "1" ? compStr = "component" : "components";
             String valueStr = maxCardinality == "1" ? compStr = "value" : "values";
 
+            ComponentSliceCodeableConcept(sliceName, 
+                pattern, 
+                valueSet, 
+                bindingStrength, 
+                minCardinality, 
+                maxCardinality, 
+                componentName,
+                new Markdown($"This component slice contains the {componentName} {valueStr}"),
+                modalities);
+        }
+
+        public void ComponentSliceCodeableConcept(String sliceName,
+                CodeableConcept pattern,
+                ValueSet valueSet,
+                BindingStrength bindingStrength,
+                Int32 minCardinality,
+                String maxCardinality,
+                String componentName,
+                Markdown sliceDefinition,
+                Modalities modalities = Modalities.All)
+        {
+            String compStr = maxCardinality == "1" ? compStr = "component" : "components";
+
             ElementTreeSlice slice = this.AppendSlice("component", sliceName, minCardinality, maxCardinality);
             slice.ElementDefinition
                 .SetShort($"{componentName} component")
-                .SetDefinition(new Markdown($"This component slice contains the {componentName} {valueStr}"))
+                .SetDefinition(sliceDefinition)
                 .SetComment(new Markdown($"This is one component of a group of components that comprise the observation."))
                 ;
 

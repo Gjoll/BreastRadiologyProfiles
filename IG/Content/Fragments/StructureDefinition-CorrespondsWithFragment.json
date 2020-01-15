@@ -66,10 +66,10 @@
         "path": "Observation.component",
         "sliceName": "correspondsWith",
         "short": "correspondsWith component",
-        "definition": "This component slice contains the correspondsWith value",
+        "definition": "This slice contains zero or more components that defines what this observation correspomnds with.\nThe value of this component is a codeable concept chosen from the CorrespondsWithVS valueset.",
         "comment": "This is one component of a group of components that comprise the observation.",
-        "min": 1,
-        "max": "1",
+        "min": 0,
+        "max": "*",
         "base": {
           "path": "Observation.component",
           "min": 0,
@@ -80,7 +80,7 @@
         "id": "Observation.component:correspondsWith.code",
         "path": "Observation.component.code",
         "short": "correspondsWith component code",
-        "definition": "This code identifies the correspondsWith value",
+        "definition": "This code identifies the correspondsWith components",
         "min": 1,
         "max": "1",
         "base": {

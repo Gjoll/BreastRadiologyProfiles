@@ -145,9 +145,13 @@ namespace BreastRadiology.XUnitTests
                     Self.MGCodeAbnormalityAsymmetryType.ToCodeableConcept(),
                     binding,
                     BindingStrength.Required,
-                    1,
+                    0,
                     "1",
-                    "MG AbnormalityAsymmetry Type");
+                    "MG AbnormalityAsymmetry Type",
+                    new Markdown()
+                        .Paragraph($"This slice contains the optional component that refines the asymmetry type.",
+                                    $"The value of this component is a codeable concept chosen from the {binding.Name} valueset.")
+                    );
                 Self.ComponentSliceObservedCountRange(e);
             });
     }

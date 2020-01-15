@@ -39,14 +39,22 @@ namespace BreastRadiology.XUnitTests
                            BindingStrength.Extensible,
                            1,
                            "1",
-                           "Value");
+                           "Value",
+                            new Markdown()
+                                .Paragraph($"This slice contains the required component that defines what this observation is consistent with.",
+                                            $"The value of this component is a codeable concept chosen from the {Self.ConsistentWithVS.Value().Name} valueset.")
+                       );
                        e.ComponentSliceCodeableConcept("qualifier",
                            Self.CodeConsistentWithQualifier.ToCodeableConcept(),
                            Self.ConsistentWithQualifierVS.Value(),
                            BindingStrength.Required,
                            0,
-                           "1",
-                           "Qualifier");
+                           "*",
+                           "Qualifier",
+                            new Markdown()
+                                .Paragraph($"This slice contains zero or more components that qualify the consistent with slice component value.",
+                                            $"The value of this component is a codeable concept chosen from the {Self.ConsistentWithVS.Value().Name} valueset.")
+                           );
 
                        e.IntroDoc
                            .ReviewedStatus(ReviewStatus.NotReviewed)

@@ -30,7 +30,11 @@ namespace BreastRadiology.XUnitTests
                 BindingStrength.Required,
                 0,
                 "1",
-                "Orientation");
+                "Orientation",
+                new Markdown()
+                    .Paragraph($"This slice contains the optional component that define the orientation of the abnormality.",
+                                $"The value of this component is a codeable concept chosen from the {Self.OrientationVS.Value().Name} valueset.")
+                );
 
             e.ComponentSliceCodeableConcept("shape",
                 Self.CodeShape.ToCodeableConcept(),
@@ -38,7 +42,11 @@ namespace BreastRadiology.XUnitTests
                 BindingStrength.Required,
                 0,
                 "1",
-                "Shape");
+                "Shape",
+                new Markdown()
+                    .Paragraph($"This slice contains the optional component that defines the shape of the abnormality.",
+                                $"The value of this component is a codeable concept chosen from the {Self.ShapeVS.Value().Name} valueset.")
+                );
 
             e.ComponentSliceCodeableConcept("margin",
                 Self.CodeMargin.ToCodeableConcept(),
@@ -46,7 +54,11 @@ namespace BreastRadiology.XUnitTests
                 BindingStrength.Required,
                 0,
                 "1",
-                "Margin");
+                "Margin",
+                new Markdown()
+                    .Paragraph($"This slice contains the optional component that defines the observed margin of the abnormality.",
+                                $"The value of this component is a codeable concept chosen from the {Self.MarginVS.Value().Name} valueset.")
+                );
 
             e.ComponentSliceCodeableConcept("mgDensity",
                 Self.CodeMGDensity.ToCodeableConcept(),
@@ -55,7 +67,11 @@ namespace BreastRadiology.XUnitTests
                 0,
                 "1",
                 "Density",
-                Modalities.MG);
+                new Markdown()
+                    .Paragraph($"This slice contains the optional component that defines the observed density of the breast tissue.",
+                                $"The value of this component is a codeable concept chosen from the {Self.MGDensityVS.Value().Name} valueset."),
+                Modalities.MG
+                );
         });
     }
 }

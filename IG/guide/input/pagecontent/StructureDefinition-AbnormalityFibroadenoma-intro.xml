@@ -37,7 +37,7 @@ Comments and Suggested changes to this implementation guide van be made
   </p>
   <ul>
     
-<li><a href="StructureDefinition-AbnormalityFibroadenoma-definitions.html#Observation.component:fibroAdenomaType">AbnormalityFibroAdenoma Type component [1..1]</a></li>
+<li><a href="StructureDefinition-AbnormalityFibroadenoma-definitions.html#Observation.component:fibroAdenomaType">AbnormalityFibroAdenoma Type component [0..1]</a></li>
 <li><a href="StructureDefinition-AbnormalityFibroadenoma-definitions.html#Observation.component:biRadsAssessmentCategory">BiRads Assessment Category component [0..1]</a></li>
 <li><a href="StructureDefinition-AbnormalityFibroadenoma-definitions.html#Observation.component:mgDensity">Density component [0..1]</a></li>
 <li><a href="StructureDefinition-AbnormalityFibroadenoma-definitions.html#Observation.component:margin">Margin component [0..1]</a></li>

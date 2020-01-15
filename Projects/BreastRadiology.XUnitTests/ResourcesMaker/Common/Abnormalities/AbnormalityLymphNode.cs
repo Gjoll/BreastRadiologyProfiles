@@ -125,9 +125,13 @@ namespace BreastRadiology.XUnitTests
                     Self.CodeAbnormalityLymphNodeType.ToCodeableConcept(),
                     binding,
                     BindingStrength.Required,
-                    1,
+                    0,
                     "1",
-                    "LymphNode Type");
+                    "LymphNode Type",
+                    new Markdown()
+                        .Paragraph($"This slice contains the optional component that refines the lymph node type.",
+                                    $"The value of this component is a codeable concept chosen from the {binding.Name} valueset.")
+                    );
                 Self.ComponentSliceObservedCountRange(e);
             });
     }

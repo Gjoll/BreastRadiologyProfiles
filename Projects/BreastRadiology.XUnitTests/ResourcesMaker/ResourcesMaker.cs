@@ -444,7 +444,11 @@ namespace BreastRadiology.XUnitTests
                 BindingStrength.Required,
                 0,
                 "1",
-                "BiRads Assessment Category");
+                "BiRads Assessment Category",
+                    new Markdown()
+                        .Paragraph($"This slice contains the optional component that defines the BiRAD risk code.",
+                                    $"The value of this component is a codeable concept chosen from the {Self.BiRadsAssessmentCategoriesVS.Value().Name} valueset.")
+                );
         }
 
         void FixComponentCode(ElementTreeSlice slice,

@@ -104,7 +104,7 @@
         "path": "Observation.component",
         "sliceName": "featureType",
         "short": "Observed Feature Type component",
-        "definition": "This component slice contains the Observed Feature Type value",
+        "definition": "This slice contains the required component that defines the observed feature.\nThe value of this component is a codeable concept chosen from the ObservedFeatureVS valueset.",
         "comment": "This is one component of a group of components that comprise the observation.",
         "min": 1,
         "max": "1",
@@ -118,7 +118,7 @@
         "id": "Observation.component:featureType.code",
         "path": "Observation.component.code",
         "short": "Observed Feature Type component code",
-        "definition": "This code identifies the Observed Feature Type value",
+        "definition": "This code identifies the Observed Feature Type component",
         "min": 1,
         "max": "1",
         "base": {

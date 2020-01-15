@@ -30,7 +30,11 @@ namespace BreastRadiology.XUnitTests
                 BindingStrength.Required,
                 0,
                 "*",
-                "NotPreviouslySeen");
+                "NotPreviouslySeen",
+                    new Markdown()
+                        .Paragraph($"This slice contains zero or more components that define prevous encounters in which this abnormality was not seen.",
+                                    $"The value of this component is a codeable concept chosen from the {Self.NotPreviouslySeenVS.Value().Name} valueset.")
+                );
         });
     }
 }

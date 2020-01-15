@@ -223,9 +223,9 @@
         "path": "Observation.component",
         "sliceName": "massType",
         "short": "AbnormalityMass Type component",
-        "definition": "This component slice contains the AbnormalityMass Type value",
+        "definition": "This slice contains the optional component that refines the mass type.\nThe value of this component is a codeable concept chosen from the MassTypeValueSetVS valueset.",
         "comment": "This is one component of a group of components that comprise the observation.",
-        "min": 1,
+        "min": 0,
         "max": "1",
         "base": {
           "path": "Observation.component",
@@ -237,7 +237,7 @@
         "id": "Observation.component:massType.code",
         "path": "Observation.component.code",
         "short": "AbnormalityMass Type component code",
-        "definition": "This code identifies the AbnormalityMass Type value",
+        "definition": "This code identifies the AbnormalityMass Type component",
         "min": 1,
         "max": "1",
         "base": {

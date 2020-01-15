@@ -91,7 +91,11 @@ namespace BreastRadiology.XUnitTests
                     BindingStrength.Required,
                     1,
                     "1",
-                    "MG AbnormalityDensity Type");
+                    "MG AbnormalityDensity Type",
+                    new Markdown()
+                        .Paragraph($"This slice contains the optional component that refines the density type.",
+                                    $"The value of this component is a codeable concept chosen from the {Self.MGCalcificationTypeVS.Value().Name} valueset.")
+                    );
                 Self.ComponentSliceObservedCountRange(e);
             });
     }
