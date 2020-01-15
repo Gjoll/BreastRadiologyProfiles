@@ -36,10 +36,6 @@
     {
       "url": "http://www.fragment.com/maplink",
       "valueString": "component|True|Observed Size^Range"
-    },
-    {
-      "url": "http://www.fragment.com/maplink",
-      "valueString": "component|True|Orientation of an abnormality^CodeableConcept^http://hl7.org/fhir/us/breast-radiology/ValueSet/OrientationVS"
     }
   ],
   "url": "http://hl7.org/fhir/us/breast-radiology/StructureDefinition/CommonComponentsFragment",
@@ -47,7 +43,7 @@
   "name": "CommonComponentsFragment",
   "title": "Common Components Fragment",
   "status": "draft",
-  "description": "Common Components Fragment\n\nCommon Components Fragment. Adds \n\n\n** Changes\n** Size\n** Orientation",
+  "description": "<b>Common Components Fragment</b>\n\n<p>Common Components Fragment. Adds \n</p><ul><li>Changes</li>\n<li>Size</li>\n</ul>",
   "fhirVersion": "4.0.0",
   "kind": "resource",
   "abstract": true,
@@ -60,7 +56,7 @@
         "id": "Observation",
         "path": "Observation",
         "short": "Common Components Fragment",
-        "definition": "Common Components Fragment. Adds \n\n\n** Changes\n** Size\n** Orientation",
+        "definition": "<p>Common Components Fragment. Adds \n</p><ul><li>Changes</li>\n<li>Size</li>\n</ul>",
         "base": {
           "path": "Observation",
           "min": 0,
@@ -90,7 +86,7 @@
         "path": "Observation.component",
         "sliceName": "biRadsAssessmentCategory",
         "short": "BiRads Assessment Category component",
-        "definition": "This slice contains the optional component that defines the BiRAD risk code.\nThe value of this component is a codeable concept chosen from the BiRadsAssessmentCategoriesVS valueset.",
+        "definition": "<p>This slice contains the optional component that defines the BiRAD risk code.\nThe value of this component is a codeable concept chosen from the BiRadsAssessmentCategoriesVS valueset.\n</p>",
         "comment": "This is one component of a group of components that comprise the observation.",
         "min": 0,
         "max": "1",
@@ -125,7 +121,7 @@
         "id": "Observation.component:biRadsAssessmentCategory.value[x]",
         "path": "Observation.component.value[x]",
         "short": "BiRads Assessment Category component value",
-        "definition": "Value si a codeable concept.",
+        "definition": "<p>Value si a codeable concept.\n</p>",
         "min": 1,
         "max": "1",
         "base": {
@@ -148,7 +144,7 @@
         "path": "Observation.component",
         "sliceName": "observedChanges",
         "short": "Observed Change In Abnormality component",
-        "definition": "This slice contains zero or more components that define observed changes in this abnormality.\nThe value of this component is a codeable concept chosen from the ObservedChangesVS valueset.",
+        "definition": "<p>This slice contains zero or more components that define observed changes in this abnormality.\nThe value of this component is a codeable concept chosen from the ObservedChangesVS valueset.\n</p>",
         "comment": "This is one component of a group of components that comprise the observation.",
         "min": 0,
         "max": "*",
@@ -183,7 +179,7 @@
         "id": "Observation.component:observedChanges.value[x]",
         "path": "Observation.component.value[x]",
         "short": "Observed Change In Abnormality component value",
-        "definition": "Value si a codeable concept.",
+        "definition": "<p>Value si a codeable concept.\n</p>",
         "min": 1,
         "max": "1",
         "base": {
@@ -309,64 +305,6 @@
             "system": "http://unitsofmeasure.org",
             "code": "cm"
           }
-        }
-      },
-      {
-        "id": "Observation.component:orientation",
-        "path": "Observation.component",
-        "sliceName": "orientation",
-        "short": "Orientation of an abnormality component",
-        "definition": "This slice contains the optional component that define the orientation of the abnormality.\nThe value of this component is a codeable concept chosen from the OrientationVS valueset.",
-        "comment": "This is one component of a group of components that comprise the observation.",
-        "min": 0,
-        "max": "1",
-        "base": {
-          "path": "Observation.component",
-          "min": 0,
-          "max": "*"
-        }
-      },
-      {
-        "id": "Observation.component:orientation.code",
-        "path": "Observation.component.code",
-        "short": "Orientation of an abnormality component code",
-        "definition": "This code identifies the Orientation of an abnormality component",
-        "min": 1,
-        "max": "1",
-        "base": {
-          "path": "Observation.component.code",
-          "min": 1,
-          "max": "1"
-        },
-        "patternCodeableConcept": {
-          "coding": [
-            {
-              "system": "http://hl7.org/fhir/us/breast-radiology/CodeSystem/ComponentSliceCodes",
-              "code": "orientation"
-            }
-          ]
-        }
-      },
-      {
-        "id": "Observation.component:orientation.value[x]",
-        "path": "Observation.component.value[x]",
-        "short": "Orientation of an abnormality component value",
-        "definition": "Value si a codeable concept.",
-        "min": 1,
-        "max": "1",
-        "base": {
-          "path": "Observation.component.value[x]",
-          "min": 0,
-          "max": "1"
-        },
-        "type": [
-          {
-            "code": "CodeableConcept"
-          }
-        ],
-        "binding": {
-          "strength": "required",
-          "valueSet": "http://hl7.org/fhir/us/breast-radiology/ValueSet/OrientationVS"
         }
       }
     ]

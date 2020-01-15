@@ -22,7 +22,7 @@ namespace BreastRadiology.XUnitTests
                         "Impression",
                         ClinicalImpressionUrl,
                         $"{Group_CommonResources}/BreastRadImpression",
-                        "BreastRadImpressions")
+                        "Resource")
                     .Description("Breast Radiology Impression (ClinicalImpression)",
                         new Markdown()
                             .Paragraph("Breast radiology exam clinical impression")

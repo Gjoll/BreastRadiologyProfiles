@@ -30,7 +30,7 @@
   "name": "AimAnnotatedImagingStudy",
   "title": "AIM Annotated Imaging Study",
   "status": "draft",
-  "description": "AIM Annotated Imaging Study",
+  "description": "<b>AIM Annotated Imaging Study</b>",
   "fhirVersion": "4.0.0",
   "kind": "resource",
   "abstract": false,

@@ -22,7 +22,7 @@
   "name": "USFinding",
   "title": "Ultra-Sound Finding",
   "status": "draft",
-  "description": "Breast Radiology Ultra Sound Finding",
+  "description": "<b>Breast Radiology Ultra Sound Finding</b>",
   "fhirVersion": "4.0.0",
   "kind": "resource",
   "abstract": false,

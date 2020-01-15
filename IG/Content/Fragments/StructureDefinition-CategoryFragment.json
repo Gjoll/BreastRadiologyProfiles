@@ -19,7 +19,7 @@
   "name": "CategoryFragment",
   "title": "Category Fragment",
   "status": "draft",
-  "description": "Fragment definition to define Observation.category\n\nThis fragment slices Observation.category and adds the required observation code value.",
+  "description": "<b>Fragment definition to define Observation.category</b>\n\n<p>This fragment slices Observation.category and adds the required observation code value.\n</p>",
   "fhirVersion": "4.0.0",
   "kind": "resource",
   "abstract": true,
@@ -32,7 +32,7 @@
         "id": "Observation",
         "path": "Observation",
         "short": "Fragment definition to define Observation.category",
-        "definition": "This fragment slices Observation.category and adds the required observation code value.",
+        "definition": "<p>This fragment slices Observation.category and adds the required observation code value.\n</p>",
         "base": {
           "path": "Observation",
           "min": 0,

@@ -75,7 +75,7 @@
       ]
     }
   ],
-  "description": "Breast Radiology Diagnostic Report\n\nThis diagnostic report has links to the data that comprise a Breast Radiology Report, including:\n\n\n** references to prior breast radiology reports for this patient\n** references to the observations of this report\n** references to the recommendations of this report\n** a summary of the report findings in a human readable format",
+  "description": "<b>Breast Radiology Diagnostic Report</b>\n\n<p>This resource is the base resource of the Breast Diagnostic Report.\nAll components of this report are stored in or referenced by this fhir instance.\n</p><p>This resource is a profile of the Fhir DiagnosticReport base resource.\n</p><p>Items referenced by this resource include:\n</p><ul><li>references to prior breast radiology reports for this patient</li>\n<li>references to the observations of this report</li>\n<li>references to the recommendations of this report</li>\n<li>a summary of the report findings in a human readable format</li>\n</ul>",
   "fhirVersion": "4.0.0",
   "kind": "resource",
   "abstract": false,
@@ -88,7 +88,7 @@
         "id": "DiagnosticReport",
         "path": "DiagnosticReport",
         "short": "Breast Radiology Diagnostic Report",
-        "definition": "This diagnostic report has links to the data that comprise a Breast Radiology Report, including:\n\n\n** references to prior breast radiology reports for this patient\n** references to the observations of this report\n** references to the recommendations of this report\n** a summary of the report findings in a human readable format",
+        "definition": "<p>This resource is the base resource of the Breast Diagnostic Report.\nAll components of this report are stored in or referenced by this fhir instance.\n</p><p>This resource is a profile of the Fhir DiagnosticReport base resource.\n</p><p>Items referenced by this resource include:\n</p><ul><li>references to prior breast radiology reports for this patient</li>\n<li>references to the observations of this report</li>\n<li>references to the recommendations of this report</li>\n<li>a summary of the report findings in a human readable format</li>\n</ul>",
         "comment": "This is intended to capture a single report and is not suitable for use in displaying summary information that covers multiple reports.  For example, this resource has not been designed for laboratory cumulative reporting formats nor detailed structured reports for sequencing.",
         "alias": [
           "Report",
@@ -458,11 +458,11 @@
         ]
       },
       {
-        "id": "DiagnosticReport.extension:patientRisk",
+        "id": "DiagnosticReport.extension:related",
         "path": "DiagnosticReport.extension",
-        "sliceName": "patientRisk",
-        "short": "Patient Risk",
-        "definition": "Patient Risk.",
+        "sliceName": "related",
+        "short": "Related Clinical Resources",
+        "definition": "References to FHIR clinical resoruces used during the exam or referenced by this report.",
         "comment": "This is one component of a group of components that comprise the observation.",
         "alias": [
           "extensions",
@@ -1358,6 +1358,7 @@
             ]
           }
         ],
+        "mustSupport": true,
         "isModifier": false,
         "isSummary": false,
         "mapping": [
@@ -1713,7 +1714,7 @@
         "id": "DiagnosticReport",
         "path": "DiagnosticReport",
         "short": "Breast Radiology Diagnostic Report",
-        "definition": "This diagnostic report has links to the data that comprise a Breast Radiology Report, including:\n\n\n** references to prior breast radiology reports for this patient\n** references to the observations of this report\n** references to the recommendations of this report\n** a summary of the report findings in a human readable format",
+        "definition": "<p>This resource is the base resource of the Breast Diagnostic Report.\nAll components of this report are stored in or referenced by this fhir instance.\n</p><p>This resource is a profile of the Fhir DiagnosticReport base resource.\n</p><p>Items referenced by this resource include:\n</p><ul><li>references to prior breast radiology reports for this patient</li>\n<li>references to the observations of this report</li>\n<li>references to the recommendations of this report</li>\n<li>a summary of the report findings in a human readable format</li>\n</ul>",
         "base": {
           "path": "DiagnosticReport",
           "min": 0,
@@ -1810,11 +1811,11 @@
         ]
       },
       {
-        "id": "DiagnosticReport.extension:patientRisk",
+        "id": "DiagnosticReport.extension:related",
         "path": "DiagnosticReport.extension",
-        "sliceName": "patientRisk",
-        "short": "Patient Risk",
-        "definition": "Patient Risk.",
+        "sliceName": "related",
+        "short": "Related Clinical Resources",
+        "definition": "References to FHIR clinical resoruces used during the exam or referenced by this report.",
         "comment": "This is one component of a group of components that comprise the observation.",
         "alias": [
           "extensions",
@@ -1960,6 +1961,7 @@
             ]
           }
         ],
+        "mustSupport": true,
         "isModifier": false,
         "isSummary": false,
         "mapping": [

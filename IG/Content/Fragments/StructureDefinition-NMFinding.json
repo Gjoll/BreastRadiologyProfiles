@@ -22,7 +22,7 @@
   "name": "NMFinding",
   "title": "NM Finding",
   "status": "draft",
-  "description": "Breast Radiology NMgraphy Finding",
+  "description": "<b>Breast Radiology NMgraphy Finding</b>",
   "fhirVersion": "4.0.0",
   "kind": "resource",
   "abstract": false,

@@ -91,25 +91,13 @@
     <None Update="IntroDocTemplates\Extension.template">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
-    <None Update="IntroDocTemplates\ServiceRecommendation.template">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </None>
     <None Update="IntroDocTemplates\ValueSet.template">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </None>
-    <None Update="IntroDocTemplates\BreastRadImpressions.template">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
     <None Update="IntroDocTemplates\Fragment.template">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
-    <None Update="IntroDocTemplates\BreastRadiologyReport.template">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </None>
-    <None Update="IntroDocTemplates\Recommendations.template">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </None>
-    <None Update="IntroDocTemplates\RelatedClinicalResources.template">
+    <None Update="IntroDocTemplates\Resource.template">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
     <None Update="IntroDocTemplates\ObservationSection.template">

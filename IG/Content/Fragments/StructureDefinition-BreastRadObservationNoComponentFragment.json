@@ -27,7 +27,7 @@
   "name": "BreastRadObservationNoComponentFragment",
   "title": "BreastRad Observation No Component Fragment",
   "status": "draft",
-  "description": "Zero's Component.\n\nZero's Observation.component.",
+  "description": "<b>Zero's Component.</b>\n\n<p>Zero's Observation.component.\n</p>",
   "fhirVersion": "4.0.0",
   "kind": "resource",
   "abstract": true,
@@ -40,7 +40,7 @@
         "id": "Observation",
         "path": "Observation",
         "short": "Zero's Component.",
-        "definition": "Zero's Observation.component.",
+        "definition": "<p>Zero's Observation.component.\n</p>",
         "base": {
           "path": "Observation",
           "min": 0,

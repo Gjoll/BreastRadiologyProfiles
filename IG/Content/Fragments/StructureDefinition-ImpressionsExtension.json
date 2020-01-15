@@ -26,7 +26,7 @@
   "name": "ImpressionsExtension",
   "title": "Impressions Extension",
   "status": "draft",
-  "description": "Impressions extension\n\nThis extension defines the impressions section of a breast radiology report.",
+  "description": "<b>Impressions extension</b>\n\n<p>This extension defines the impressions section of a breast radiology report.\n</p>",
   "fhirVersion": "4.0.0",
   "kind": "complex-type",
   "abstract": false,
@@ -55,7 +55,7 @@
         ],
         "path": "Extension",
         "short": "Impressions extension",
-        "definition": "This extension defines the impressions section of a breast radiology report.",
+        "definition": "<p>This extension defines the impressions section of a breast radiology report.\n</p>",
         "base": {
           "path": "Extension",
           "min": 0,
@@ -105,7 +105,8 @@
               "http://hl7.org/fhir/us/breast-radiology/StructureDefinition/Impression"
             ]
           }
-        ]
+        ],
+        "mustSupport": true
       }
     ]
   }

@@ -35,7 +35,7 @@
   "name": "BreastRadObservationNoValueFragment",
   "title": "BreastRad Observation NoValue Fragment",
   "status": "draft",
-  "description": "Fragment that constrains Observations to have no explicit value.\n\nBase fragment for all BreastRad observations that have no explicit value.",
+  "description": "<b>Fragment that constrains Observations to have no explicit value.</b>\n\n<p>Base fragment for all BreastRad observations that have no explicit value.\n</p>",
   "fhirVersion": "4.0.0",
   "kind": "resource",
   "abstract": true,
@@ -48,7 +48,7 @@
         "id": "Observation",
         "path": "Observation",
         "short": "Fragment that constrains Observations to have no explicit value.",
-        "definition": "Base fragment for all BreastRad observations that have no explicit value.",
+        "definition": "<p>Base fragment for all BreastRad observations that have no explicit value.\n</p>",
         "base": {
           "path": "Observation",
           "min": 0,

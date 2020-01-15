@@ -74,7 +74,7 @@
   "name": "MGFinding",
   "title": "Mammography Finding",
   "status": "draft",
-  "description": "Breast Radiology Mammography Finding",
+  "description": "<b>Breast Radiology Mammography Finding</b>",
   "fhirVersion": "4.0.0",
   "kind": "resource",
   "abstract": false,

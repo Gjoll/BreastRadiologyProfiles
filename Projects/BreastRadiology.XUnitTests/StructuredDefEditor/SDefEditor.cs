@@ -229,7 +229,7 @@ namespace BreastRadiology.XUnitTests
         {
             {
                 Markdown description = new Markdown();
-                description.Value += $"{descriptionHeader}\n\n";
+                description.Value += $"<b>{descriptionHeader}</b>\n\n";
                 description.Value += value.Value;
                 this.sDef.Description(description);
             }

@@ -22,7 +22,7 @@ namespace BreastRadiology.XUnitTests
                     "RelatedClinicalResources/Extension",
                     ExtensionUrl,
                      $"{Group_ExtensionResources}/PatientRisk",
-                     "RelatedClinicalResources")
+                     "Extension")
                     .Description("Related Clinical Resources section extension",
                     new Markdown()
                         .Paragraph("This extension defines the RelatedClinicalResources section of a breast radiology report, " +

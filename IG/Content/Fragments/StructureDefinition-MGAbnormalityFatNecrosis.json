@@ -94,7 +94,7 @@
   "name": "MGAbnormalityFatNecrosis",
   "title": "Mammography Fat Necrosis",
   "status": "draft",
-  "description": "Fat Necrosis Observation\n\n[PR]\n\n\nIf this observation is present, and dataAbsentReason is empty, then a fat necrosis abnormality was observed.\n\n\nIf this observation is present, and dataAbsentReason is not empty, then a fat necrosis abnormality was not observed and dataAbsentReason contains the reason why.",
+  "description": "<b>Fat Necrosis Observation</b>\n\n<p>[PR]\n</p><p>If this observation is present, and dataAbsentReason is empty, then a fat necrosis abnormality was observed.\n</p><p>If this observation is present, and dataAbsentReason is not empty, then a fat necrosis abnormality was not observed and dataAbsentReason contains the reason why.\n</p>",
   "fhirVersion": "4.0.0",
   "kind": "resource",
   "abstract": false,
@@ -107,7 +107,7 @@
         "id": "Observation",
         "path": "Observation",
         "short": "Fat Necrosis Observation",
-        "definition": "[PR]\n\n\nIf this observation is present, and dataAbsentReason is empty, then a fat necrosis abnormality was observed.\n\n\nIf this observation is present, and dataAbsentReason is not empty, then a fat necrosis abnormality was not observed and dataAbsentReason contains the reason why.",
+        "definition": "<p>[PR]\n</p><p>If this observation is present, and dataAbsentReason is empty, then a fat necrosis abnormality was observed.\n</p><p>If this observation is present, and dataAbsentReason is not empty, then a fat necrosis abnormality was not observed and dataAbsentReason contains the reason why.\n</p>",
         "base": {
           "path": "Observation",
           "min": 0,

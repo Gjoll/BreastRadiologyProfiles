@@ -42,7 +42,7 @@
   "name": "BreastBodyLocationExtension",
   "title": "Breast Body Location Extension",
   "status": "draft",
-  "description": "Breast Body Location extension\n\nthis extension defines the fields that are used to describe thelocation of an observed item in a breat radiology report\n\n\nBreast radiology exams have specific ways of defining a location that are unique to this field.",
+  "description": "<b>Breast Body Location extension</b>\n\n<p>this extension defines the fields that are used to describe thelocation of an observed item in a breat radiology report\n</p><p>Breast radiology exams have specific ways of defining a location that are unique to this field.\n</p>",
   "fhirVersion": "4.0.0",
   "kind": "complex-type",
   "abstract": false,
@@ -71,7 +71,7 @@
         ],
         "path": "Extension",
         "short": "Breast Body Location extension",
-        "definition": "this extension defines the fields that are used to describe thelocation of an observed item in a breat radiology report\n\n\nBreast radiology exams have specific ways of defining a location that are unique to this field.",
+        "definition": "<p>this extension defines the fields that are used to describe thelocation of an observed item in a breat radiology report\n</p><p>Breast radiology exams have specific ways of defining a location that are unique to this field.\n</p>",
         "base": {
           "path": "Extension",
           "min": 0,
@@ -102,7 +102,7 @@
         "path": "Extension.extension",
         "sliceName": "laterality",
         "short": "Laterality of the body location",
-        "definition": "The laterality of the body location",
+        "definition": "<p>The laterality of the body location\n</p>",
         "min": 0,
         "max": "1",
         "base": {
@@ -137,7 +137,7 @@
         "path": "Extension.extension",
         "sliceName": "quadrant",
         "short": "Quadrant of the body location",
-        "definition": "The quadrant  of the body location",
+        "definition": "<p>The quadrant  of the body location\n</p>",
         "min": 0,
         "max": "1",
         "base": {
@@ -172,7 +172,7 @@
         "path": "Extension.extension",
         "sliceName": "region",
         "short": "Region of the body location",
-        "definition": "The region  of the body location",
+        "definition": "<p>The region  of the body location\n</p>",
         "min": 0,
         "max": "1",
         "base": {
@@ -207,7 +207,7 @@
         "path": "Extension.extension",
         "sliceName": "clockDirection",
         "short": "Clock direction of the body location",
-        "definition": "The clock direction of the body location.",
+        "definition": "<p>The clock direction of the body location.\n</p>",
         "min": 0,
         "max": "1",
         "base": {
@@ -242,7 +242,7 @@
         "path": "Extension.extension",
         "sliceName": "depth",
         "short": "Depth of the body location",
-        "definition": "The depth of the body location.",
+        "definition": "<p>The depth of the body location.\n</p>",
         "min": 0,
         "max": "1",
         "base": {

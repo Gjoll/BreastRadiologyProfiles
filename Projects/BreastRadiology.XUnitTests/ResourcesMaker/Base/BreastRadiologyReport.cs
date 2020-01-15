@@ -22,10 +22,13 @@ namespace BreastRadiology.XUnitTests
                      "Breast/Radiology/Report",
                      DiagnosticReportUrl,
                      Group_BaseResources,
-                     "BreastRadiologyReport")
+                     "Resource")
                      .Description("Breast Radiology Diagnostic Report",
                          new Markdown()
-                             .Paragraph("This diagnostic report has links to the data that comprise a Breast Radiology Report, including:")
+                             .Paragraph("This resource is the base resource of the Breast Diagnostic Report.",
+                             "All components of this report are stored in or referenced by this fhir instance.")
+                             .Paragraph("This resource is a profile of the Fhir DiagnosticReport base resource.")
+                             .Paragraph("Items referenced by this resource include:")
                              .List("references to prior breast radiology reports for this patient",
                                    "references to the observations of this report",
                                    "references to the recommendations of this report",
@@ -52,13 +55,16 @@ namespace BreastRadiology.XUnitTests
                      .Short("Exam impressions")
                      .Definition("Exam impressions.")
                      .ZeroToMany();
-                e.ApplyExtension("PatientRisk", Self.RelatedClinicalResourcesExtension.Value())
-                     .Short("Patient Risk")
-                     .Definition("Patient Risk.")
+                e.ApplyExtension("Related", Self.RelatedClinicalResourcesExtension.Value())
+                     .Short("Related Clinical Resources")
+                     .Definition("References to FHIR clinical resoruces used during the exam or referenced by this report.")
                      .ZeroToMany();
 
                 ElementTreeNode sliceElementDef = e.ConfigureSliceByUrlDiscriminator("result", false);
-                Self.SliceTargetReference(e, sliceElementDef, Self.SectionFindings.Value(), 1, "1");
+                {
+                    ElementTreeSlice slice = Self.SliceTargetReference(e, sliceElementDef, Self.SectionFindings.Value(), 1, "1");
+                    slice.ElementDefinition.MustSupport = true;
+                }
             });
     }
 }

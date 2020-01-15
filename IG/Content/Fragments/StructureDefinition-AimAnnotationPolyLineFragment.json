@@ -31,7 +31,7 @@
   "name": "AimAnnotationPolyLineFragment",
   "title": "Aim Annotation PolyLine Fragment",
   "status": "draft",
-  "description": "Fragment definition to include AIM Annotation extension\n\nThis fragment adds the references for the AIM Annotation PolyLine extension.",
+  "description": "<b>Fragment definition to include AIM Annotation extension</b>\n\n<p>This fragment adds the references for the AIM Annotation PolyLine extension.\n</p>",
   "fhirVersion": "4.0.0",
   "kind": "resource",
   "abstract": true,
@@ -44,7 +44,7 @@
         "id": "Observation",
         "path": "Observation",
         "short": "Fragment definition to include AIM Annotation extension",
-        "definition": "This fragment adds the references for the AIM Annotation PolyLine extension.",
+        "definition": "<p>This fragment adds the references for the AIM Annotation PolyLine extension.\n</p>",
         "base": {
           "path": "Observation",
           "min": 0,

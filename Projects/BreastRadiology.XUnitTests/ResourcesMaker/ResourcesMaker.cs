@@ -644,20 +644,23 @@ namespace BreastRadiology.XUnitTests
             return doc;
         }
 
-        void SliceTargetReference(SDefEditor e,
+        ElementTreeSlice SliceTargetReference(SDefEditor e,
             ElementTreeNode sliceElementDef,
             StructureDefinition profile,
             Int32 min = 0,
             String max = "*")
         {
             String baseName = sliceElementDef.ElementDefinition.Path.LastPathPart();
-            e.SliceByUrlTarget(sliceElementDef, profile.Url, min, max).ElementDefinition
+            ElementTreeSlice retVal = e.SliceByUrlTarget(sliceElementDef, profile.Url, min, max);
+            retVal.ElementDefinition
                 .SetShort($"'{profile.Title}' reference")
                 .SetDefinition(
                     new Markdown($"This slice references the target '{profile.Title}'")
                     )
             ;
             e.AddTargetLink(profile.Url, false);
+
+            return retVal;
         }
 
         void SliceTargetReference(SDefEditor e,
