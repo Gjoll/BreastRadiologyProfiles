@@ -18,7 +18,7 @@ namespace BreastRadiology.XUnitTests
                         .Paragraph("Not Previously Seen Component Fragment")
                         .Paragraph("Adds NotPreviously Seen Component")
                 )
-                .AddFragRef(Self.BreastBodyLocationRequiredFragment.Value().Url)
+                .AddFragRef(Self.BreastBodyLocationRequiredFragment.Value())
                 ;
             s = e.SDef;
 

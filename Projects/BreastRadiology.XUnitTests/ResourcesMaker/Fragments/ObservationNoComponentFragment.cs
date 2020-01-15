@@ -20,7 +20,7 @@ namespace BreastRadiology.XUnitTests
                         new Markdown()
                             .Paragraph("Zero's Observation.component.")
                     )
-                    .AddFragRef(Self.ObservationFragment.Value().Url)
+                    .AddFragRef(Self.ObservationFragment.Value())
                 ;
                 s = e.SDef;
 

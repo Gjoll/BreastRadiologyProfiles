@@ -20,7 +20,7 @@ namespace BreastRadiology.XUnitTests
                         new Markdown()
                             .Paragraph("Fragment for all observations that have no device.")
                     )
-                    .AddFragRef(Self.ObservationFragment.Value().Url)
+                    .AddFragRef(Self.ObservationFragment.Value())
                 ;
                 s = e.SDef;
 

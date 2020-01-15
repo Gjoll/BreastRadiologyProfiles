@@ -30,7 +30,7 @@ namespace BreastRadiology.XUnitTests
                     .Kind(StructureDefinition.StructureDefinitionKind.ComplexType)
                     .Context()
                     ;
-                e.AddFragRef(Self.HeaderFragment.Value().Url);
+                e.AddFragRef(Self.HeaderFragment.Value());
                 s = e.SDef;
 
                 e.IntroDoc

@@ -337,7 +337,7 @@ namespace BreastRadiology.XUnitTests
 
                 //breastBodyLocationMapLinks.Add(new ResourceMap.Link("extension", breastBodyLocationExtension, false));
 
-                e.AddFragRef(Self.HeaderFragment.Value().Url);
+                e.AddFragRef(Self.HeaderFragment.Value());
 
                 e.Select("url")
                     .Type("uri")
@@ -431,7 +431,7 @@ namespace BreastRadiology.XUnitTests
                 }
 
                 e
-                    .ApplyExtension("distanceFromLandmark", Self.BodyDistanceFromExtension.Value().Url, true)
+                    .ApplyExtension("distanceFromLandmark", Self.BodyDistanceFromExtension.Value(), true)
                     .Single()
                     ;
 

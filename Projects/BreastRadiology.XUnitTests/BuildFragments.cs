@@ -214,6 +214,7 @@ namespace BreastRadiology.XUnitTests
         {
             DataSet ds = this.ReadGregDS();
 
+            WriteCS(ds, "Recommendation", @"Base\ServiceRecommendation.cs", "RecommendationsCS");
             WriteCS(ds, "CorrspondsWith", @"Common\CorrespondsWithCS.cs", "CorrespondsWithCS");
             WriteCS(ds, "ConsistentWith", @"Common\ConsistentWithCS.cs", "ConsistentWithCS");
             WriteCS(ds, "ConsistentWithQualifier", @"Common\ConsistentWithCS.cs", "ConsistentWithQualifierCS");
@@ -451,6 +452,7 @@ namespace BreastRadiology.XUnitTests
                     {
                         ResourceMapMaker resourceMapMaker = new ResourceMapMaker(this.fc, map);
                         resourceMapMaker.AddLegendItem("DiagnosticReport", Color.LightGreen);
+                        resourceMapMaker.AddLegendItem("ServiceRequest", Color.LightPink);
                         resourceMapMaker.AddLegendItem("Extension", Color.LightSalmon);
                         resourceMapMaker.AddLegendItem("Observation", Color.LightSkyBlue);
                         resourceMapMaker.AddLegendItem("FhirResource", Color.LightBlue);
@@ -458,7 +460,6 @@ namespace BreastRadiology.XUnitTests
                         resourceMapMaker.Create(ResourcesMaker.CreateUrl("BreastRadReport"),
                             Path.Combine(this.graphicsDir, "ProfileOverview.svg"));
                     }
-
                     {
                         ResourceMapMaker resourceMapMaker = new ResourceMapMaker(this.fc, map);
                         resourceMapMaker.AddLegendItem("DiagnosticReport", Color.LightGreen);

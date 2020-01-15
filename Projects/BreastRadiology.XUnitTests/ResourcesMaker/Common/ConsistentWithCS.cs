@@ -25,7 +25,7 @@ namespace BreastRadiology.XUnitTests
                                new Markdown()
                                    .MissingObservation("a consistentWith")
                            )
-                           .AddFragRef(Self.ObservationNoDeviceFragment.Value().Url)
+                           .AddFragRef(Self.ObservationNoDeviceFragment.Value())
                            ;
                        s = e.SDef;
                        e.Select("value[x]").Zero();

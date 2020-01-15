@@ -20,8 +20,8 @@ namespace BreastRadiology.XUnitTests
                         new Markdown()
                             .Paragraph("Base fragment for all BreastRad observations that have no explicit value.")
                     )
-                    .AddFragRef(Self.ObservationFragment.Value().Url)
-                    .AddFragRef(Self.ObservationNoComponentFragment.Value().Url)
+                    .AddFragRef(Self.ObservationFragment.Value())
+                    .AddFragRef(Self.ObservationNoComponentFragment.Value())
                 ;
                 s = e.SDef;
 

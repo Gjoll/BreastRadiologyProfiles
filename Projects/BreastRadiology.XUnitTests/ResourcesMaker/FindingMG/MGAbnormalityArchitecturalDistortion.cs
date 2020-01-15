@@ -35,12 +35,12 @@ namespace BreastRadiology.XUnitTests
                             .BlockQuote("finding to indicate that the parenchyma is distorted or retracted adjacent to the FINDING")
                             .BiradFooter()
                     )
-                    .AddFragRef(Self.ObservationNoDeviceFragment.Value().Url)
-                    .AddFragRef(Self.ObservationNoValueFragment.Value().Url)
-                    .AddFragRef(Self.CommonComponentsFragment.Value().Url)
-                    .AddFragRef(Self.ShapeComponentsFragment.Value().Url)
-                    .AddFragRef(Self.NotPreviouslySeenComponentsFragment.Value().Url)
-                    .AddFragRef(Self.CorrespondsWith.Value().Url)
+                    .AddFragRef(Self.ObservationNoDeviceFragment.Value())
+                    .AddFragRef(Self.ObservationNoValueFragment.Value())
+                    .AddFragRef(Self.CommonComponentsFragment.Value())
+                    .AddFragRef(Self.ShapeComponentsFragment.Value())
+                    .AddFragRef(Self.NotPreviouslySeenComponentsFragment.Value())
+                    .AddFragRef(Self.CorrespondsWith.Value())
                     ;
                 s = e.SDef;
 

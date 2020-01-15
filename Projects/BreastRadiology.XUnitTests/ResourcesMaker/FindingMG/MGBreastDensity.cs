@@ -125,8 +125,8 @@ namespace BreastRadiology.XUnitTests
                             .BlockQuote("individual woman. ")
                             .BiradFooter()
                     )
-                    .AddFragRef(Self.ObservationNoDeviceFragment.Value().Url)
-                    .AddFragRef(Self.ObservationCodedValueFragment.Value().Url)
+                    .AddFragRef(Self.ObservationNoDeviceFragment.Value())
+                    .AddFragRef(Self.ObservationCodedValueFragment.Value())
                     ;
 
                 s = e.SDef;

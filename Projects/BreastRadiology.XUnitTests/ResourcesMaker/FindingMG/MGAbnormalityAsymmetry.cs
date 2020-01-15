@@ -122,12 +122,12 @@ namespace BreastRadiology.XUnitTests
                             .BlockQuote("convex-outward borders and appears to be denser in the center than at the periphery.")
                             .BiradFooter()
                     )
-                    .AddFragRef(Self.ObservationNoDeviceFragment.Value().Url)
-                    .AddFragRef(Self.ObservationCodedValueFragment.Value().Url)
-                    .AddFragRef(Self.CommonComponentsFragment.Value().Url)
-                    .AddFragRef(Self.ShapeComponentsFragment.Value().Url)
-                    .AddFragRef(Self.NotPreviouslySeenComponentsFragment.Value().Url)
-                    .AddFragRef(Self.CorrespondsWith.Value().Url)
+                    .AddFragRef(Self.ObservationNoDeviceFragment.Value())
+                    .AddFragRef(Self.ObservationCodedValueFragment.Value())
+                    .AddFragRef(Self.CommonComponentsFragment.Value())
+                    .AddFragRef(Self.ShapeComponentsFragment.Value())
+                    .AddFragRef(Self.NotPreviouslySeenComponentsFragment.Value())
+                    .AddFragRef(Self.CorrespondsWith.Value())
                 ;
                 s = e.SDef;
 

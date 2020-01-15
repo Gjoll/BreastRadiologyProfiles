@@ -26,7 +26,7 @@ namespace BreastRadiology.XUnitTests
                         .Paragraph("Child observations are referenced by the 'Observation.hasMember' field.")
                         //.Todo
                     )
-                    .AddFragRef(Self.ObservationNoDeviceFragment.Value().Url)
+                    .AddFragRef(Self.ObservationNoDeviceFragment.Value())
                     ;
                 s = e.SDef;
 

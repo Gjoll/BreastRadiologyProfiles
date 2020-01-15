@@ -31,8 +31,8 @@ namespace BreastRadiology.XUnitTests
                                    "references to the recommendations of this report",
                                    "a summary of the report findings in a human readable format")
                      )
-                     .AddFragRef(Self.HeaderFragment.Value().Url)
-                     .AddFragRef(Self.CategoryFragment.Value().Url)
+                     .AddFragRef(Self.HeaderFragment.Value())
+                     .AddFragRef(Self.CategoryFragment.Value())
                      ;
 
                 s = e.SDef;
@@ -44,15 +44,15 @@ namespace BreastRadiology.XUnitTests
                 e.Select("specimen").Zero();
                 e.Select("conclusion").Single();
                 e.Select("conclusionCode").Single();
-                e.ApplyExtension("Recommendations", Self.RecommendationsExtension.Value().Url)
+                e.ApplyExtension("Recommendations", Self.RecommendationsExtension.Value())
                      .Short("Recommendations for future care")
                      .Definition("Recommendations for future care")
                      .ZeroToMany();
-                e.ApplyExtension("Impressions", Self.ImpressionsExtension.Value().Url)
+                e.ApplyExtension("Impressions", Self.ImpressionsExtension.Value())
                      .Short("Exam impressions")
                      .Definition("Exam impressions.")
                      .ZeroToMany();
-                e.ApplyExtension("PatientRisk", Self.RelatedClinicalResourcesExtension.Value().Url)
+                e.ApplyExtension("PatientRisk", Self.RelatedClinicalResourcesExtension.Value())
                      .Short("Patient Risk")
                      .Definition("Patient Risk.")
                      .ZeroToMany();

@@ -77,7 +77,7 @@ namespace BreastRadiology.XUnitTests
                     ;
                 s = e.SDef;
 
-                e.AddFragRef(Self.HeaderFragment.Value().Url);
+                e.AddFragRef(Self.HeaderFragment.Value());
 
                 e.Select("url")
                     .Type("uri")

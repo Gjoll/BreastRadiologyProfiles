@@ -100,14 +100,14 @@ namespace BreastRadiology.XUnitTests
                         new Markdown()
                             .MissingObservation("a lymph node abnormality")
                     )
-                    .AddFragRef(Self.ObservationNoDeviceFragment.Value().Url)
-                    .AddFragRef(Self.ObservationCodedValueFragment.Value().Url)
-                    .AddFragRef(Self.CommonComponentsFragment.Value().Url)
-                    .AddFragRef(Self.ShapeComponentsFragment.Value().Url)
+                    .AddFragRef(Self.ObservationNoDeviceFragment.Value())
+                    .AddFragRef(Self.ObservationCodedValueFragment.Value())
+                    .AddFragRef(Self.CommonComponentsFragment.Value())
+                    .AddFragRef(Self.ShapeComponentsFragment.Value())
 
-                    .AddFragRef(Self.TumorQualifierComponentsFragment.Value().Url)
-                    .AddFragRef(Self.NotPreviouslySeenComponentsFragment.Value().Url)
-                    .AddFragRef(Self.CorrespondsWith.Value().Url)
+                    .AddFragRef(Self.TumorQualifierComponentsFragment.Value())
+                    .AddFragRef(Self.NotPreviouslySeenComponentsFragment.Value())
+                    .AddFragRef(Self.CorrespondsWith.Value())
                     ;
 
                 s = e.SDef;

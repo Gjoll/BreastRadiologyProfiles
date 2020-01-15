@@ -18,7 +18,7 @@ namespace BreastRadiology.XUnitTests
                         .Paragraph("Shape Common Components Fragment")
                         .Paragraph("Adds Orientation, Shape, Margin, and Density Components")
                 )
-                .AddFragRef(Self.BreastBodyLocationRequiredFragment.Value().Url)
+                .AddFragRef(Self.BreastBodyLocationRequiredFragment.Value())
                 ;
             s = e.SDef;
 

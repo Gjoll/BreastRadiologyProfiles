@@ -26,8 +26,8 @@ namespace BreastRadiology.XUnitTests
                             .Paragraph("Used with masses, asymmetries, or calcifications, or may stand alone as " +
                                         "Features when no other abnormality is present.")
                      )
-                    .AddFragRef(Self.ObservationNoDeviceFragment.Value().Url)
-                    .AddFragRef(Self.ObservationNoValueFragment.Value().Url)
+                    .AddFragRef(Self.ObservationNoDeviceFragment.Value())
+                    .AddFragRef(Self.ObservationNoValueFragment.Value())
                     ;
                 s = e.SDef;
 

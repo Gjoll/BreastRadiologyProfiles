@@ -20,7 +20,7 @@ namespace BreastRadiology.XUnitTests
                         new Markdown()
                         .Paragraph("This fragment adds the references for the AIM Annotation PolyLine extension.")
                      )
-                    .AddFragRef(Self.HeaderFragment.Value().Url)
+                    .AddFragRef(Self.HeaderFragment.Value())
                 ;
 
                 e.IntroDoc
@@ -30,7 +30,7 @@ namespace BreastRadiology.XUnitTests
                 s = e.SDef;
 
                 e
-                    .ApplyExtension("polyLineAnnotation", Self.AimAnnotationPolyLineExtension.Value().Url, true)
+                    .ApplyExtension("polyLineAnnotation", Self.AimAnnotationPolyLineExtension.Value(), true)
                     .Single()
                     ;
             });

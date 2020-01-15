@@ -18,7 +18,7 @@ namespace BreastRadiology.XUnitTests
                         .Paragraph("Corresponds With Component Fragment")
                         .Paragraph("Adds Corresponds With Component")
                 )
-                .AddFragRef(Self.BreastBodyLocationRequiredFragment.Value().Url)
+                .AddFragRef(Self.BreastBodyLocationRequiredFragment.Value())
                 ;
             s = e.SDef;
 

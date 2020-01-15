@@ -304,11 +304,11 @@ namespace BreastRadiology.XUnitTests
                             .BlockQuote("to describe calcifications within or immediately adjacent to the finding(s)")
                             .BiradFooter()
                     )
-                    .AddFragRef(Self.ObservationNoDeviceFragment.Value().Url)
-                    .AddFragRef(Self.ObservationNoValueFragment.Value().Url)
-                    .AddFragRef(Self.CommonComponentsFragment.Value().Url)
-                    .AddFragRef(Self.NotPreviouslySeenComponentsFragment.Value().Url)
-                    .AddFragRef(Self.CorrespondsWith.Value().Url)
+                    .AddFragRef(Self.ObservationNoDeviceFragment.Value())
+                    .AddFragRef(Self.ObservationNoValueFragment.Value())
+                    .AddFragRef(Self.CommonComponentsFragment.Value())
+                    .AddFragRef(Self.NotPreviouslySeenComponentsFragment.Value())
+                    .AddFragRef(Self.CorrespondsWith.Value())
                     ;
 
                 s = e.SDef;

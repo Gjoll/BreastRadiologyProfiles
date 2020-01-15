@@ -91,6 +91,9 @@
     <None Update="IntroDocTemplates\Extension.template">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
+    <None Update="IntroDocTemplates\ServiceRecommendation.template">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
     <None Update="IntroDocTemplates\ValueSet.template">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>

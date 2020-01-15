@@ -26,7 +26,7 @@ namespace BreastRadiology.XUnitTests
                         .Paragraph("This resource is the head of the tree of observations made during a breast radiology exam.")
                         .Paragraph("Child observations are referenced by the 'Observation.hasMember' field.")
                     )
-                    .AddFragRef(Self.ObservationNoDeviceFragment.Value().Url)
+                    .AddFragRef(Self.ObservationNoDeviceFragment.Value())
                     ;
 
                 s = e.SDef;

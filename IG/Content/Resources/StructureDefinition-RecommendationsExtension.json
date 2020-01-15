@@ -26,6 +26,10 @@
       "valueString": "target|False|http://hl7.org/fhir/StructureDefinition/ServiceRequest"
     },
     {
+      "url": "http://www.fragment.com/maplink",
+      "valueString": "target|False|http://hl7.org/fhir/us/breast-radiology/StructureDefinition/ServiceRecommendation"
+    },
+    {
       "url": "http://www.fragment.com/mapname",
       "valueString": "Common"
     },
@@ -238,7 +242,8 @@
             "code": "Reference",
             "targetProfile": [
               "http://hl7.org/fhir/StructureDefinition/MedicationRequest",
-              "http://hl7.org/fhir/StructureDefinition/ServiceRequest"
+              "http://hl7.org/fhir/StructureDefinition/ServiceRequest",
+              "http://hl7.org/fhir/us/breast-radiology/StructureDefinition/ServiceRecommendation"
             ]
           }
         ],
@@ -317,7 +322,8 @@
             "code": "Reference",
             "targetProfile": [
               "http://hl7.org/fhir/StructureDefinition/MedicationRequest",
-              "http://hl7.org/fhir/StructureDefinition/ServiceRequest"
+              "http://hl7.org/fhir/StructureDefinition/ServiceRequest",
+              "http://hl7.org/fhir/us/breast-radiology/StructureDefinition/ServiceRecommendation"
             ]
           }
         ]

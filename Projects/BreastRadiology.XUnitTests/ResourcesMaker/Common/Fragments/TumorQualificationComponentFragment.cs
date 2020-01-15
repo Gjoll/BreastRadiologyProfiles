@@ -18,7 +18,7 @@ namespace BreastRadiology.XUnitTests
                         .Paragraph("Tumor Qualifier Component Fragment")
                         .Paragraph("Adds Tumor Qualifier Component")
                 )
-                .AddFragRef(Self.BreastBodyLocationRequiredFragment.Value().Url)
+                .AddFragRef(Self.BreastBodyLocationRequiredFragment.Value())
                 ;
             s = e.SDef;
 

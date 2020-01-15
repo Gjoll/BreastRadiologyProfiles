@@ -27,7 +27,7 @@ namespace BreastRadiology.XUnitTests
                         new Markdown()
                             .Paragraph("Breast radiology exam clinical impression")
                     )
-                    .AddFragRef(Self.HeaderFragment.Value().Url)
+                    .AddFragRef(Self.HeaderFragment.Value())
                     ;
 
                 s = e.SDef;

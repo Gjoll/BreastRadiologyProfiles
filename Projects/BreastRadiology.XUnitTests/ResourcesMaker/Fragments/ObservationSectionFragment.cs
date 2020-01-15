@@ -20,8 +20,8 @@ namespace BreastRadiology.XUnitTests
                         new Markdown()
                             .Paragraph("this fragment constrains a generic observation to be a observation section.")
                      )
-                    .AddFragRef(Self.ObservationFragment.Value().Url)
-                    .AddFragRef(Self.ObservationNoValueFragment.Value().Url)
+                    .AddFragRef(Self.ObservationFragment.Value())
+                    .AddFragRef(Self.ObservationNoValueFragment.Value())
                     ;
                 s = e.SDef;
 

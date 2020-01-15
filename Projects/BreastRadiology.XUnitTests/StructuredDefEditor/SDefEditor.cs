@@ -187,8 +187,15 @@ namespace BreastRadiology.XUnitTests
         }
 
         public ElementDefinition ApplyExtension(String name,
-            String extensionUrl,
+            StructureDefinition sd,
             bool showChildren = true)
+        {
+            return ApplyExtension(name, sd.Url, showChildren);
+        }
+
+        public ElementDefinition ApplyExtension(String name,
+        String extensionUrl,
+        bool showChildren = true)
         {
             this.AddExtensionLink(extensionUrl, showChildren);
             this.ConfigureSliceByUrlDiscriminator("extension", true);
@@ -257,6 +264,11 @@ namespace BreastRadiology.XUnitTests
                 Value = new FhirBoolean(true)
             });
             return this;
+        }
+
+        public SDefEditor AddFragRef(StructureDefinition sd)
+        {
+            return AddFragRef(sd.Url);
         }
 
         public SDefEditor AddFragRef(String fragRef)

@@ -226,8 +226,8 @@ namespace BreastRadiology.XUnitTests
                         new Markdown()
                             .Paragraph("The feature observed is defined by the codeable concept in the value[x] field.")
                     )
-                    .AddFragRef(Self.ObservationNoDeviceFragment.Value().Url)
-                    .AddFragRef(Self.BreastBodyLocationRequiredFragment.Value().Url)
+                    .AddFragRef(Self.ObservationNoDeviceFragment.Value())
+                    .AddFragRef(Self.BreastBodyLocationRequiredFragment.Value())
                     ;
                 s = e.SDef;
                 e.Select("value[x]").Zero();

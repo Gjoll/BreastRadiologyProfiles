@@ -63,11 +63,11 @@ namespace BreastRadiology.XUnitTests
                             .MissingObservation("a fibroadenoma abnormality")
                             .ValidModalities(Modalities.MG | Modalities.US)
                     )
-                    .AddFragRef(Self.ObservationNoDeviceFragment.Value().Url)
-                    .AddFragRef(Self.ObservationNoValueFragment.Value().Url)
-                    .AddFragRef(Self.ImagingStudyFragment.Value().Url)
-                    .AddFragRef(Self.CommonComponentsFragment.Value().Url)
-                    .AddFragRef(Self.ShapeComponentsFragment.Value().Url)
+                    .AddFragRef(Self.ObservationNoDeviceFragment.Value())
+                    .AddFragRef(Self.ObservationNoValueFragment.Value())
+                    .AddFragRef(Self.ImagingStudyFragment.Value())
+                    .AddFragRef(Self.CommonComponentsFragment.Value())
+                    .AddFragRef(Self.ShapeComponentsFragment.Value())
                     ;
 
                 s = e.SDef;

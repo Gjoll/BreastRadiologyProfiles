@@ -37,7 +37,7 @@ namespace BreastRadiology.XUnitTests
                     .ReviewedStatus(ReviewStatus.NotReviewed)
                     ;
 
-                e.AddFragRef(Self.HeaderFragment.Value().Url);
+                e.AddFragRef(Self.HeaderFragment.Value());
 
                 e.Select("extension").Zero();
                 e.Select("url")
@@ -45,12 +45,15 @@ namespace BreastRadiology.XUnitTests
                     .Fixed(new FhirUri(e.SDef.Url));
 
                 e.Select("value[x]")
-                    .TypeReference(MedicationRequestUrl, ServiceRequestUrl)
+                    .TypeReference(MedicationRequestUrl, 
+                        ServiceRequestUrl, 
+                        Self.ServiceRecommendation.Value().Url)
                     .Single()
                     ;
 
                 e.AddTargetLink(MedicationRequestUrl, false);
                 e.AddTargetLink(ServiceRequestUrl, false);
+                e.AddTargetLink(Self.ServiceRecommendation.Value().Url, false);
             });
     }
 }

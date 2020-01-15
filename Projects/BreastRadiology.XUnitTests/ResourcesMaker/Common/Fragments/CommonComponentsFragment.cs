@@ -25,7 +25,7 @@ namespace BreastRadiology.XUnitTests
                             .Paragraph("Common Components Fragment. Adds ")
                             .List("Changes", "Size", "Orientation")
                     )
-                    .AddFragRef(Self.BreastBodyLocationRequiredFragment.Value().Url)
+                    .AddFragRef(Self.BreastBodyLocationRequiredFragment.Value())
                     ;
                 s = e.SDef;
 

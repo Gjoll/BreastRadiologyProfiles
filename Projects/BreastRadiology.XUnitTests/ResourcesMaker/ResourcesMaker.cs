@@ -133,6 +133,7 @@ namespace BreastRadiology.XUnitTests
 
         public const String ClinicalImpressionUrl = "http://hl7.org/fhir/StructureDefinition/ClinicalImpression";
         public const String DiagnosticReportUrl = "http://hl7.org/fhir/StructureDefinition/DiagnosticReport";
+        public const String DomainResourceUrl = "http://hl7.org/fhir/StructureDefinition/DomainResource";
         public const String ExtensionUrl = "http://hl7.org/fhir/StructureDefinition/Extension";
         public const String ImagingStudyUrl = "http://hl7.org/fhir/StructureDefinition/ImagingStudy";
         public const String MedicationRequestUrl = "http://hl7.org/fhir/StructureDefinition/MedicationRequest";
@@ -140,7 +141,6 @@ namespace BreastRadiology.XUnitTests
         public const String ResourceUrl = "http://hl7.org/fhir/StructureDefinition/Resource";
         public const String RiskAssessmentUrl = "http://hl7.org/fhir/StructureDefinition/RiskAssessment";
         public const String ServiceRequestUrl = "http://hl7.org/fhir/StructureDefinition/ServiceRequest";
-        public const String DomainResourceUrl = "http://hl7.org/fhir/StructureDefinition/DomainResource";
 
         public const String contactUrl = "http://www.hl7.org/Special/committees/cic";
 
@@ -193,7 +193,7 @@ namespace BreastRadiology.XUnitTests
                     ObservationUrl,
                     groupPath,
                     "ObservationLeaf")
-                .AddFragRef(Self.ObservationLeafFragment.Value().Url)
+                .AddFragRef(Self.ObservationLeafFragment.Value())
                 ;
         }
 
@@ -208,7 +208,7 @@ namespace BreastRadiology.XUnitTests
                     ObservationUrl,
                     groupPath,
                     "ObservationSection")
-                .AddFragRef(Self.ObservationSectionFragment.Value().Url)
+                .AddFragRef(Self.ObservationSectionFragment.Value())
                 ;
         }
 

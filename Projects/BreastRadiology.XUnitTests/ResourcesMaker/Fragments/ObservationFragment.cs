@@ -20,8 +20,8 @@ namespace BreastRadiology.XUnitTests
                         new Markdown()
                             .Paragraph("Base fragment that performs common constrains used in all breast radiology observations.")
                     )
-                    .AddFragRef(Self.HeaderFragment.Value().Url)
-                    .AddFragRef(Self.CategoryFragment.Value().Url)
+                    .AddFragRef(Self.HeaderFragment.Value())
+                    .AddFragRef(Self.CategoryFragment.Value())
                 ;
                 s = e.SDef;
                 e.IntroDoc

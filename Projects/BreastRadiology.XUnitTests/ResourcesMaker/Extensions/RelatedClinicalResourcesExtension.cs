@@ -43,7 +43,7 @@ namespace BreastRadiology.XUnitTests
                     .ReviewedStatus(ReviewStatus.NotReviewed)
                     ;
 
-                e.AddFragRef(Self.HeaderFragment.Value().Url);
+                e.AddFragRef(Self.HeaderFragment.Value());
 
                 e.Select("extension").Zero();
                 e.Select("url")

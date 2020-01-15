@@ -25,8 +25,8 @@ namespace BreastRadiology.XUnitTests
                     .Description("AIM Annotated Imaging Study",
                         new Markdown()
                     )
-                    .AddFragRef(Self.AimHeaderFragment.Value().Url)
-                    .AddFragRef(Self.AimAnnotationPolyLineFragment.Value().Url)
+                    .AddFragRef(Self.AimHeaderFragment.Value())
+                    .AddFragRef(Self.AimAnnotationPolyLineFragment.Value())
                     ;
                 s = e.SDef;
                 e.IntroDoc
