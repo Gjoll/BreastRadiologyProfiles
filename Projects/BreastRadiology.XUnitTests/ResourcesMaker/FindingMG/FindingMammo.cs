@@ -17,16 +17,19 @@ namespace BreastRadiology.XUnitTests
         SDTaskVar FindingMammo = new SDTaskVar(
             (out StructureDefinition s) =>
             {
-                SDefEditor e = Self.CreateEditorObservationSection("MGFinding",
+                SDefEditor e = Self.CreateEditor("MGFinding",
                         "Mammography Finding",
                         "MG Finding",
-                        $"{Group_MGResources}")
+                        ObservationUrl,
+                        $"{Group_MGResources}",
+                        "ObservationSection")
                     .Description("Breast Radiology Mammography Finding",
                         new Markdown()
-                        )
+                    )
+                    .AddFragRef(Self.ObservationSectionFragment.Value())
                     ;
                 s = e.SDef;
-                e.Select("value[x]").Zero();
+
                 ////$ todo. Incorrect method!!!
                 //e.Find("method")
                 // .FixedCodeSlice("method", Snomed, "115341008")

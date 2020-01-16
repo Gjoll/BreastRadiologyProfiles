@@ -73,6 +73,7 @@ namespace BreastRadiology.XUnitTests
                             .MissingObservation("a duct abnormality")
                     )
                     .AddFragRef(Self.ObservationNoDeviceFragment.Value())
+                    .AddFragRef(Self.ObservationNoValueFragment.Value())
                     .AddFragRef(Self.CommonComponentsFragment.Value())
                     .AddFragRef(Self.ShapeComponentsFragment.Value())
                     .AddFragRef(Self.NotPreviouslySeenComponentsFragment.Value())
@@ -85,9 +86,6 @@ namespace BreastRadiology.XUnitTests
                     .ReviewedStatus(ReviewStatus.NotReviewed)
                     ;
 
-                e.Select("value[x]").Zero();
-
-                e.Select("value[x]").Zero();
                 PreFhir.ElementTreeNode sliceElementDef = e.ConfigureSliceByUrlDiscriminator("hasMember", false);
                 Self.SliceTargetReference(e, sliceElementDef, Self.ConsistentWith.Value(), 0, "*");
 

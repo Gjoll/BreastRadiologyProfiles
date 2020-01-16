@@ -11,14 +11,6 @@
     },
     {
       "url": "http://www.fragment.com/fragment",
-      "valueUrl": "http://hl7.org/fhir/us/breast-radiology/StructureDefinition/ObservationSectionFragment"
-    },
-    {
-      "url": "http://www.fragment.com/maplink",
-      "valueString": "fragment|True|http://hl7.org/fhir/us/breast-radiology/StructureDefinition/ObservationSectionFragment"
-    },
-    {
-      "url": "http://www.fragment.com/fragment",
       "valueUrl": "http://hl7.org/fhir/us/breast-radiology/StructureDefinition/BreastRadObservationNoDeviceFragment"
     },
     {
@@ -27,11 +19,11 @@
     },
     {
       "url": "http://www.fragment.com/fragment",
-      "valueUrl": "http://hl7.org/fhir/us/breast-radiology/StructureDefinition/CodedValueObservationFragment"
+      "valueUrl": "http://hl7.org/fhir/us/breast-radiology/StructureDefinition/BreastRadObservationNoValueFragment"
     },
     {
       "url": "http://www.fragment.com/maplink",
-      "valueString": "fragment|True|http://hl7.org/fhir/us/breast-radiology/StructureDefinition/CodedValueObservationFragment"
+      "valueString": "fragment|True|http://hl7.org/fhir/us/breast-radiology/StructureDefinition/BreastRadObservationNoValueFragment"
     },
     {
       "url": "http://www.fragment.com/fragment",
@@ -78,7 +70,7 @@
   "name": "AbnormalityForeignObject",
   "title": "Foreign Object",
   "status": "draft",
-  "description": "<b>Foreign Object Observation</b>\n\n<p>These are foreign objects found during a breast radiology exam:\n</p>",
+  "description": "<b>Foreign Object Observation</b>\n\nThese are foreign objects found during a breast radiology exam:",
   "fhirVersion": "4.0.0",
   "kind": "resource",
   "abstract": false,
@@ -91,22 +83,11 @@
         "id": "Observation",
         "path": "Observation",
         "short": "Foreign Object Observation",
-        "definition": "<p>These are foreign objects found during a breast radiology exam:\n</p>",
+        "definition": "These are foreign objects found during a breast radiology exam:",
         "base": {
           "path": "Observation",
           "min": 0,
           "max": "*"
-        }
-      },
-      {
-        "id": "Observation.value[x]",
-        "path": "Observation.value[x]",
-        "min": 0,
-        "max": "0",
-        "base": {
-          "path": "Observation.value[x]",
-          "min": 0,
-          "max": "1"
         }
       },
       {
@@ -195,7 +176,7 @@
         "path": "Observation.component",
         "sliceName": "abnormalityForeignObjectType",
         "short": "AbnormalityForeignObject Type component",
-        "definition": "<p>This slice contains the required component that refines the foreign object type.\nThe value of this component is a codeable concept chosen from the AbnormalitiesVS valueset.\n</p>",
+        "definition": "This slice contains the required component that refines the foreign object type.The value of this component is a codeable concept chosen from the AbnormalitiesVS valueset.",
         "comment": "This is one component of a group of components that comprise the observation.",
         "min": 1,
         "max": "1",
@@ -230,7 +211,7 @@
         "id": "Observation.component:abnormalityForeignObjectType.value[x]",
         "path": "Observation.component.value[x]",
         "short": "AbnormalityForeignObject Type component value",
-        "definition": "<p>Value is a codeable concept.\n</p>",
+        "definition": "Value is a codeable concept.",
         "min": 1,
         "max": "1",
         "base": {
@@ -253,7 +234,7 @@
         "path": "Observation.component",
         "sliceName": "biRadsAssessmentCategory",
         "short": "BiRads Assessment Category component",
-        "definition": "<p>This slice contains the optional component that defines the BiRAD risk code.\nThe value of this component is a codeable concept chosen from the BiRadsAssessmentCategoriesVS valueset.\n</p>",
+        "definition": "This slice contains the optional component that defines the BiRAD risk code.The value of this component is a codeable concept chosen from the BiRadsAssessmentCategoriesVS valueset.",
         "comment": "This is one component of a group of components that comprise the observation.",
         "min": 0,
         "max": "1",
@@ -288,7 +269,7 @@
         "id": "Observation.component:biRadsAssessmentCategory.value[x]",
         "path": "Observation.component.value[x]",
         "short": "BiRads Assessment Category component value",
-        "definition": "<p>Value is a codeable concept.\n</p>",
+        "definition": "Value is a codeable concept.",
         "min": 1,
         "max": "1",
         "base": {

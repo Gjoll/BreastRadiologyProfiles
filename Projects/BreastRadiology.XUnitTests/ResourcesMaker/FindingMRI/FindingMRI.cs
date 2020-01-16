@@ -17,13 +17,16 @@ namespace BreastRadiology.XUnitTests
             (out StructureDefinition  s) =>
             {
                 //$ Fix me. Incorrect method!!!
-                SDefEditor e = Self.CreateEditorObservationSection("MRIFinding",
+                SDefEditor e = Self.CreateEditor("MRIFinding",
                         "MRI Finding",
                         "MRI Finding",
-                        $"{Group_MRIResources}")
+                        ObservationUrl,
+                        $"{Group_MRIResources}",
+                        "ObservationSection")
                     .Description("Breast Radiology MRI Finding",
                         new Markdown()
                     )
+                    .AddFragRef(Self.ObservationSectionFragment.Value())
                 ;
                 s = e.SDef;
 

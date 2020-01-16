@@ -973,15 +973,6 @@
     </resource>
     <resource>
       <reference>
-        <reference value="StructureDefinition/CodedValueObservationFragment" />
-      </reference>
-      <name value="CodedValue Observation Fragment" />
-      <description value="Fragment 'Coded Value Observation Fragment'" />
-      <exampleBoolean value="false" />
-      <groupingId value="Fragments" />
-    </resource>
-    <resource>
-      <reference>
         <reference value="StructureDefinition/CommonComponentsFragment" />
       </reference>
       <name value="Common Components Fragment" />

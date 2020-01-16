@@ -317,8 +317,6 @@ namespace BreastRadiology.XUnitTests
                     .ReviewedStatus(ReviewStatus.NotReviewed)
                     ;
 
-                e.Select("value[x]").Zero();
-
                 PreFhir.ElementTreeNode sliceElementDef = e.ConfigureSliceByUrlDiscriminator("hasMember", false);
                 Self.SliceTargetReference(e, sliceElementDef, Self.AssociatedFeatures.Value(), 0, "1");
                 Self.SliceTargetReference(e, sliceElementDef, Self.ConsistentWith.Value(), 0, "*");

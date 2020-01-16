@@ -198,21 +198,6 @@ namespace BreastRadiology.XUnitTests
                 ;
         }
 
-        SDefEditor CreateEditorObservationSection(String name,
-            String title,
-            String mapName,
-            String groupPath)
-        {
-            return CreateEditor(name,
-                    title,
-                    mapName,
-                    ObservationUrl,
-                    groupPath,
-                    "ObservationSection")
-                .AddFragRef(Self.ObservationSectionFragment.Value())
-                ;
-        }
-
         SDefEditor CreateEditor(String name,
             String title,
             String mapName,

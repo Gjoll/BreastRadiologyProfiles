@@ -69,7 +69,7 @@ Comments and Suggested changes to this implementation guide van be made
   <ul>
     
 <li><a href="./StructureDefinition-BreastRadObservationNoDeviceFragment.html">BreastRad Observation NoDevice Fragment</a></li>
-<li><a href="./StructureDefinition-CodedValueObservationFragment.html">CodedValue Observation Fragment</a></li>
+<li><a href="./StructureDefinition-BreastRadObservationNoValueFragment.html">BreastRad Observation NoValue Fragment</a></li>
 <li><a href="./StructureDefinition-CommonComponentsFragment.html">Common Components Fragment</a></li>
 <li><a href="./StructureDefinition-CorrespondsWithFragment.html">CorrespondsWith Fragment</a></li>
 <li><a href="./StructureDefinition-ImagingStudyFragment.html">Imaging Study Fragment</a></li>

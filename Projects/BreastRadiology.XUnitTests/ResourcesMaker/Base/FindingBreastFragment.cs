@@ -29,7 +29,12 @@ namespace BreastRadiology.XUnitTests
                            .ReviewedStatus(ReviewStatus.NotReviewed)
                            ;
 
-                       e.Select("value[x]").Zero();
+                       e.Select("value[x]")
+                           .Single()
+                           .Type("CodeableConcept")
+                           .Binding(Self.BiRadsAssessmentCategoriesVS.Value(), BindingStrength.Required)
+                           .MustSupport()
+                           ;
 
                        PreFhir.ElementTreeNode sliceElementDef = e.ConfigureSliceByUrlDiscriminator("hasMember", false);
 

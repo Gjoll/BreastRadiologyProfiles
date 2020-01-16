@@ -26,6 +26,14 @@
       "valueString": "fragment|True|http://hl7.org/fhir/us/breast-radiology/StructureDefinition/BreastRadObservationNoDeviceFragment"
     },
     {
+      "url": "http://www.fragment.com/fragment",
+      "valueUrl": "http://hl7.org/fhir/us/breast-radiology/StructureDefinition/BreastRadObservationNoValueFragment"
+    },
+    {
+      "url": "http://www.fragment.com/maplink",
+      "valueString": "fragment|True|http://hl7.org/fhir/us/breast-radiology/StructureDefinition/BreastRadObservationNoValueFragment"
+    },
+    {
       "url": "http://www.fragment.com/maplink",
       "valueString": "component|True|Value^CodeableConcept^http://hl7.org/fhir/us/breast-radiology/ValueSet/ConsistentWithVS"
     },
@@ -38,7 +46,7 @@
   "name": "ConsistentWith",
   "title": "Consistent With",
   "status": "draft",
-  "description": "<b>'Consistent With' Observation</b>\n\n<p>If this observation is present, and dataAbsentReason is empty, then a consistentWith was observed.\n</p><p>If this observation is present, and dataAbsentReason is not empty, then a consistentWith was not observed and dataAbsentReason contains the reason why.\n</p>",
+  "description": "<b>'Consistent With' Observation</b>\n\nIf this observation is present, and dataAbsentReason is empty, then a consistentWith was observed.\nIf this observation is present, and dataAbsentReason is not empty, then a consistentWith was not observed and dataAbsentReason contains the reason why.",
   "fhirVersion": "4.0.0",
   "kind": "resource",
   "abstract": false,
@@ -51,42 +59,9 @@
         "id": "Observation",
         "path": "Observation",
         "short": "'Consistent With' Observation",
-        "definition": "<p>If this observation is present, and dataAbsentReason is empty, then a consistentWith was observed.\n</p><p>If this observation is present, and dataAbsentReason is not empty, then a consistentWith was not observed and dataAbsentReason contains the reason why.\n</p>",
+        "definition": "If this observation is present, and dataAbsentReason is empty, then a consistentWith was observed.\nIf this observation is present, and dataAbsentReason is not empty, then a consistentWith was not observed and dataAbsentReason contains the reason why.",
         "base": {
           "path": "Observation",
-          "min": 0,
-          "max": "*"
-        }
-      },
-      {
-        "id": "Observation.value[x]",
-        "path": "Observation.value[x]",
-        "min": 0,
-        "max": "0",
-        "base": {
-          "path": "Observation.value[x]",
-          "min": 0,
-          "max": "1"
-        }
-      },
-      {
-        "id": "Observation.interpretation",
-        "path": "Observation.interpretation",
-        "min": 0,
-        "max": "0",
-        "base": {
-          "path": "Observation.interpretation",
-          "min": 0,
-          "max": "*"
-        }
-      },
-      {
-        "id": "Observation.referenceRange",
-        "path": "Observation.referenceRange",
-        "min": 0,
-        "max": "0",
-        "base": {
-          "path": "Observation.referenceRange",
           "min": 0,
           "max": "*"
         }
@@ -114,7 +89,7 @@
         "path": "Observation.component",
         "sliceName": "value",
         "short": "Value component",
-        "definition": "<p>This slice contains the required component that defines what this observation is consistent with.\nThe value of this component is a codeable concept chosen from the ConsistentWithVS valueset.\n</p>",
+        "definition": "This slice contains the required component that defines what this observation is consistent with.The value of this component is a codeable concept chosen from the ConsistentWithVS valueset.",
         "comment": "This is one component of a group of components that comprise the observation.",
         "min": 1,
         "max": "1",
@@ -149,7 +124,7 @@
         "id": "Observation.component:value.value[x]",
         "path": "Observation.component.value[x]",
         "short": "Value component value",
-        "definition": "<p>Value is a codeable concept.\n</p>",
+        "definition": "Value is a codeable concept.",
         "min": 1,
         "max": "1",
         "base": {
@@ -172,7 +147,7 @@
         "path": "Observation.component",
         "sliceName": "qualifier",
         "short": "Qualifier component",
-        "definition": "<p>This slice contains zero or more components that qualify the consistent with slice component value.\nThe value of this component is a codeable concept chosen from the ConsistentWithVS valueset.\n</p>",
+        "definition": "This slice contains zero or more components that qualify the consistent with slice component value.The value of this component is a codeable concept chosen from the ConsistentWithVS valueset.",
         "comment": "This is one component of a group of components that comprise the observation.",
         "min": 0,
         "max": "*",
@@ -207,7 +182,7 @@
         "id": "Observation.component:qualifier.value[x]",
         "path": "Observation.component.value[x]",
         "short": "Qualifier component value",
-        "definition": "<p>Value is a codeable concept.\n</p>",
+        "definition": "Value is a codeable concept.",
         "min": 1,
         "max": "1",
         "base": {

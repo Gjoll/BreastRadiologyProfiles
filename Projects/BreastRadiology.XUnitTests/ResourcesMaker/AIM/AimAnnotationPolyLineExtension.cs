@@ -43,9 +43,7 @@ namespace BreastRadiology.XUnitTests
                     .Type("uri")
                     .Fixed(new FhirUri(e.SDef.Url));
 
-                e.Select("value[x]")
-                    .Zero()
-                    ;
+                e.Select("value[x]").Zero();
 
                 ElementTreeNode extensionNode = e.ConfigureSliceByUrlDiscriminator("extension", true);
 

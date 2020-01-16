@@ -16,10 +16,12 @@ namespace BreastRadiology.XUnitTests
         SDTaskVar SectionFindingsRightBreast = new SDTaskVar(
             (out StructureDefinition  s) =>
             {
-                SDefEditor e = Self.CreateEditorObservationSection("SectionFindingsRightBreast",
+                SDefEditor e = Self.CreateEditor("SectionFindingsRightBreast",
                         "Findings Right Breast",
                         "Findings/Right Breast",
-                        $"{Group_BaseResources}/Findings/RightBreast")
+                        ObservationUrl,
+                        $"{Group_BaseResources}/Findings/RightBreast",
+                        "ObservationSection")
                     .Description("Findings Right Breast Section",
                         new Markdown()
                         .Paragraph("This resource is the head of the tree of observations made of the right breast during a breast radiology exam.")
@@ -32,6 +34,12 @@ namespace BreastRadiology.XUnitTests
                 e.Select("bodySite")
                     .Pattern(new Coding(Snomed, "73056007", " Right breast structure (body structure) "));
 
+                e.Select("value[x]")
+                    .Definition(new Markdown()
+                         .Paragraph("Composite BiRad value for Right Breast.")
+                         .Paragraph("Typically this is the most severe of all the BiRad codes set in any of the child observations.")
+                    )
+                    ;
                 e.IntroDoc
                      .ReviewedStatus(ReviewStatus.Alpha)
                      ;

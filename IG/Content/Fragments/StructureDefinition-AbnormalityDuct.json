@@ -27,6 +27,14 @@
     },
     {
       "url": "http://www.fragment.com/fragment",
+      "valueUrl": "http://hl7.org/fhir/us/breast-radiology/StructureDefinition/BreastRadObservationNoValueFragment"
+    },
+    {
+      "url": "http://www.fragment.com/maplink",
+      "valueString": "fragment|True|http://hl7.org/fhir/us/breast-radiology/StructureDefinition/BreastRadObservationNoValueFragment"
+    },
+    {
+      "url": "http://www.fragment.com/fragment",
       "valueUrl": "http://hl7.org/fhir/us/breast-radiology/StructureDefinition/CommonComponentsFragment"
     },
     {
@@ -78,7 +86,7 @@
   "name": "AbnormalityDuct",
   "title": "Duct",
   "status": "draft",
-  "description": "<b>Breat Radiology Duct Observation</b>\n\n<p>If this observation is present, and dataAbsentReason is empty, then a duct abnormality was observed.\n</p><p>If this observation is present, and dataAbsentReason is not empty, then a duct abnormality was not observed and dataAbsentReason contains the reason why.\n</p>",
+  "description": "<b>Breat Radiology Duct Observation</b>\n\nIf this observation is present, and dataAbsentReason is empty, then a duct abnormality was observed.\nIf this observation is present, and dataAbsentReason is not empty, then a duct abnormality was not observed and dataAbsentReason contains the reason why.",
   "fhirVersion": "4.0.0",
   "kind": "resource",
   "abstract": false,
@@ -91,22 +99,11 @@
         "id": "Observation",
         "path": "Observation",
         "short": "Breat Radiology Duct Observation",
-        "definition": "<p>If this observation is present, and dataAbsentReason is empty, then a duct abnormality was observed.\n</p><p>If this observation is present, and dataAbsentReason is not empty, then a duct abnormality was not observed and dataAbsentReason contains the reason why.\n</p>",
+        "definition": "If this observation is present, and dataAbsentReason is empty, then a duct abnormality was observed.\nIf this observation is present, and dataAbsentReason is not empty, then a duct abnormality was not observed and dataAbsentReason contains the reason why.",
         "base": {
           "path": "Observation",
           "min": 0,
           "max": "*"
-        }
-      },
-      {
-        "id": "Observation.value[x]",
-        "path": "Observation.value[x]",
-        "min": 0,
-        "max": "0",
-        "base": {
-          "path": "Observation.value[x]",
-          "min": 0,
-          "max": "1"
         }
       },
       {
@@ -173,7 +170,7 @@
         "path": "Observation.component",
         "sliceName": "ductType",
         "short": "AbnormalityDuct Type component",
-        "definition": "<p>This slice contains the optional component that refines the duct type.\nThe value of this component is a codeable concept chosen from the AbnormalityDuctVS valueset.\n</p>",
+        "definition": "This slice contains the optional component that refines the duct type.The value of this component is a codeable concept chosen from the AbnormalityDuctVS valueset.",
         "comment": "This is one component of a group of components that comprise the observation.",
         "min": 0,
         "max": "1",
@@ -208,7 +205,7 @@
         "id": "Observation.component:ductType.value[x]",
         "path": "Observation.component.value[x]",
         "short": "AbnormalityDuct Type component value",
-        "definition": "<p>Value is a codeable concept.\n</p>",
+        "definition": "Value is a codeable concept.",
         "min": 1,
         "max": "1",
         "base": {

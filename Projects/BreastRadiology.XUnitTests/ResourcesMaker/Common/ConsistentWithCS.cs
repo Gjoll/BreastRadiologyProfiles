@@ -26,11 +26,9 @@ namespace BreastRadiology.XUnitTests
                                    .MissingObservation("a consistentWith")
                            )
                            .AddFragRef(Self.ObservationNoDeviceFragment.Value())
+                           .AddFragRef(Self.ObservationNoValueFragment.Value())
                            ;
                        s = e.SDef;
-                       e.Select("value[x]").Zero();
-                       e.Select("interpretation").Zero();
-                       e.Select("referenceRange").Zero();
 
                        e.StartComponentSliceing();
                        e.ComponentSliceCodeableConcept("value",

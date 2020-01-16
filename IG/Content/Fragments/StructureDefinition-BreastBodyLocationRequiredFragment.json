@@ -31,7 +31,7 @@
   "name": "BreastBodyLocationRequiredFragment",
   "title": "Breast Body Location (Required) Fragment",
   "status": "draft",
-  "description": "<b>Required Breast Body Location fragment</b>\n\n<p>This fragment adds the references for the breast body location extension.\n</p><p>The references are required, meaning that the breast body location must exist.\n</p>",
+  "description": "<b>Required Breast Body Location fragment</b>\n\nThis fragment adds the references for the breast body location extension.\nThe references are required, meaning that the breast body location must exist.",
   "fhirVersion": "4.0.0",
   "kind": "resource",
   "abstract": true,
@@ -44,7 +44,7 @@
         "id": "Observation",
         "path": "Observation",
         "short": "Required Breast Body Location fragment",
-        "definition": "<p>This fragment adds the references for the breast body location extension.\n</p><p>The references are required, meaning that the breast body location must exist.\n</p>",
+        "definition": "This fragment adds the references for the breast body location extension.\nThe references are required, meaning that the breast body location must exist.",
         "base": {
           "path": "Observation",
           "min": 0,

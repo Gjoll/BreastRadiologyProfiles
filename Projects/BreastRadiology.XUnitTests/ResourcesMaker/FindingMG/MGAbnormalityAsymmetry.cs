@@ -122,7 +122,7 @@ namespace BreastRadiology.XUnitTests
                             .BiradFooter()
                     )
                     .AddFragRef(Self.ObservationNoDeviceFragment.Value())
-                    .AddFragRef(Self.ObservationCodedValueFragment.Value())
+                    .AddFragRef(Self.ObservationNoValueFragment.Value())
                     .AddFragRef(Self.CommonComponentsFragment.Value())
                     .AddFragRef(Self.ShapeComponentsFragment.Value())
                     .AddFragRef(Self.NotPreviouslySeenComponentsFragment.Value())
@@ -138,7 +138,6 @@ namespace BreastRadiology.XUnitTests
                 Self.SliceTargetReference(e, sliceElementDef, Self.AssociatedFeatures.Value(), 0, "1");
                 Self.SliceTargetReference(e, sliceElementDef, Self.ConsistentWith.Value(), 0, "*");
 
-                e.Select("value[x]").Zero();
                 e.StartComponentSliceing();
                 e.ComponentSliceCodeableConcept("mgAbnormalityAsymmetryType",
                     Self.MGCodeAbnormalityAsymmetryType.ToCodeableConcept(),

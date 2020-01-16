@@ -32,6 +32,7 @@ namespace BreastRadiology.XUnitTests
         //                    .BiradFooter()
         //            )
         //            .AddFragRef(Self.ObservationNoDeviceFragment.Value())
+        //            .AddFragRef(Self.ObservationNoValueFragment.Value())
         //            .AddFragRef(Self.BreastBodyLocationRequiredFragment.Value())
         //            .AddFragRef(Self.ObservationNoValueFragment.Value())
         //            .AddFragRef(Self.ImagingStudyFragment.Value())

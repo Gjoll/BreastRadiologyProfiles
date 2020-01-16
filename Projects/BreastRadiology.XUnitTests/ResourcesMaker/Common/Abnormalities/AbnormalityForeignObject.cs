@@ -254,16 +254,18 @@ namespace BreastRadiology.XUnitTests
             {
                 ValueSet binding = Self.AbnormalityForeignObjectVS.Value();
 
-                SDefEditor e = Self.CreateEditorObservationSection("AbnormalityForeignObject",
+                SDefEditor e = Self.CreateEditor("AbnormalityForeignObject",
                         "Foreign Object",
                         "Foreign Object",
-                        $"{Group_CommonResources}/AbnormalityForeign")
+                        ObservationUrl,
+                        $"{Group_CommonResources}/AbnormalityForeign",
+                        "ObservationSection")
                     .Description("Foreign Object Observation",
                         new Markdown()
                             .Paragraph("These are foreign objects found during a breast radiology exam:")
                     )
                     .AddFragRef(Self.ObservationNoDeviceFragment.Value())
-                    .AddFragRef(Self.ObservationCodedValueFragment.Value())
+                    .AddFragRef(Self.ObservationNoValueFragment.Value())
                     .AddFragRef(Self.CommonComponentsFragment.Value())
                     .AddFragRef(Self.NotPreviouslySeenComponentsFragment.Value())
                     .AddFragRef(Self.CorrespondsWith.Value())
@@ -274,8 +276,6 @@ namespace BreastRadiology.XUnitTests
                 e.IntroDoc
                     .ReviewedStatus(ReviewStatus.NotReviewed)
                     ;
-
-                e.Select("value[x]").Zero();
 
                 PreFhir.ElementTreeNode sliceElementDef = e.ConfigureSliceByUrlDiscriminator("hasMember", false);
                 Self.SliceTargetReference(e, sliceElementDef, Self.ConsistentWith.Value(), 0, "*");

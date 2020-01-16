@@ -101,7 +101,7 @@ namespace BreastRadiology.XUnitTests
                             .MissingObservation("a lymph node abnormality")
                     )
                     .AddFragRef(Self.ObservationNoDeviceFragment.Value())
-                    .AddFragRef(Self.ObservationCodedValueFragment.Value())
+                    .AddFragRef(Self.ObservationNoValueFragment.Value())
                     .AddFragRef(Self.CommonComponentsFragment.Value())
                     .AddFragRef(Self.ShapeComponentsFragment.Value())
 
@@ -116,7 +116,6 @@ namespace BreastRadiology.XUnitTests
                     .ReviewedStatus(ReviewStatus.NotReviewed)
                     ;
 
-                e.Select("value[x]").Zero();
                 PreFhir.ElementTreeNode sliceElementDef = e.ConfigureSliceByUrlDiscriminator("hasMember", false);
                 Self.SliceTargetReference(e, sliceElementDef, Self.AssociatedFeatures.Value(), 0, "1");
 

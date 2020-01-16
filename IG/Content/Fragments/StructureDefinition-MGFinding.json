@@ -94,17 +94,6 @@
         }
       },
       {
-        "id": "Observation.value[x]",
-        "path": "Observation.value[x]",
-        "min": 0,
-        "max": "0",
-        "base": {
-          "path": "Observation.value[x]",
-          "min": 0,
-          "max": "1"
-        }
-      },
-      {
         "id": "Observation.hasMember",
         "path": "Observation.hasMember",
         "slicing": {

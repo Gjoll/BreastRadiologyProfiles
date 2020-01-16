@@ -63,7 +63,7 @@
       ]
     }
   ],
-  "description": "<b>Breast Body Location extension</b>\n\n<p>this extension defines the fields that are used to describe thelocation of an observed item in a breat radiology report\n</p><p>Breast radiology exams have specific ways of defining a location that are unique to this field.\n</p>",
+  "description": "<b>Breast Body Location extension</b>\n\nthis extension defines the fields that are used to describe thelocation of an observed item in a breat radiology report\nBreast radiology exams have specific ways of defining a location that are unique to this field.",
   "fhirVersion": "4.0.0",
   "kind": "complex-type",
   "abstract": false,
@@ -92,7 +92,7 @@
         ],
         "path": "Extension",
         "short": "Breast Body Location extension",
-        "definition": "<p>this extension defines the fields that are used to describe thelocation of an observed item in a breat radiology report\n</p><p>Breast radiology exams have specific ways of defining a location that are unique to this field.\n</p>",
+        "definition": "this extension defines the fields that are used to describe thelocation of an observed item in a breat radiology report\nBreast radiology exams have specific ways of defining a location that are unique to this field.",
         "min": 0,
         "max": "*",
         "base": {
@@ -208,7 +208,7 @@
         "path": "Extension.extension",
         "sliceName": "laterality",
         "short": "Laterality of the body location",
-        "definition": "<p>The laterality of the body location\n</p>",
+        "definition": "The laterality of the body location",
         "comment": "There can be no stigma associated with the use of extensions by any application, project, or standard - regardless of the institution or jurisdiction that uses or defines the extensions.  The use of extensions is what allows the FHIR specification to retain a core level of simplicity for everyone.",
         "alias": [
           "extensions",
@@ -390,7 +390,7 @@
         "path": "Extension.extension",
         "sliceName": "quadrant",
         "short": "Quadrant of the body location",
-        "definition": "<p>The quadrant  of the body location\n</p>",
+        "definition": "The quadrant  of the body location",
         "comment": "There can be no stigma associated with the use of extensions by any application, project, or standard - regardless of the institution or jurisdiction that uses or defines the extensions.  The use of extensions is what allows the FHIR specification to retain a core level of simplicity for everyone.",
         "alias": [
           "extensions",
@@ -572,7 +572,7 @@
         "path": "Extension.extension",
         "sliceName": "region",
         "short": "Region of the body location",
-        "definition": "<p>The region  of the body location\n</p>",
+        "definition": "The region  of the body location",
         "comment": "There can be no stigma associated with the use of extensions by any application, project, or standard - regardless of the institution or jurisdiction that uses or defines the extensions.  The use of extensions is what allows the FHIR specification to retain a core level of simplicity for everyone.",
         "alias": [
           "extensions",
@@ -754,7 +754,7 @@
         "path": "Extension.extension",
         "sliceName": "clockDirection",
         "short": "Clock direction of the body location",
-        "definition": "<p>The clock direction of the body location.\n</p>",
+        "definition": "The clock direction of the body location.",
         "comment": "There can be no stigma associated with the use of extensions by any application, project, or standard - regardless of the institution or jurisdiction that uses or defines the extensions.  The use of extensions is what allows the FHIR specification to retain a core level of simplicity for everyone.",
         "alias": [
           "extensions",
@@ -936,7 +936,7 @@
         "path": "Extension.extension",
         "sliceName": "depth",
         "short": "Depth of the body location",
-        "definition": "<p>The depth of the body location.\n</p>",
+        "definition": "The depth of the body location.",
         "comment": "There can be no stigma associated with the use of extensions by any application, project, or standard - regardless of the institution or jurisdiction that uses or defines the extensions.  The use of extensions is what allows the FHIR specification to retain a core level of simplicity for everyone.",
         "alias": [
           "extensions",
@@ -1367,7 +1367,7 @@
         ],
         "path": "Extension",
         "short": "Breast Body Location extension",
-        "definition": "<p>this extension defines the fields that are used to describe thelocation of an observed item in a breat radiology report\n</p><p>Breast radiology exams have specific ways of defining a location that are unique to this field.\n</p>",
+        "definition": "this extension defines the fields that are used to describe thelocation of an observed item in a breat radiology report\nBreast radiology exams have specific ways of defining a location that are unique to this field.",
         "base": {
           "path": "Extension",
           "min": 0,
@@ -1399,7 +1399,7 @@
         "path": "Extension.extension",
         "sliceName": "laterality",
         "short": "Laterality of the body location",
-        "definition": "<p>The laterality of the body location\n</p>",
+        "definition": "The laterality of the body location",
         "comment": "There can be no stigma associated with the use of extensions by any application, project, or standard - regardless of the institution or jurisdiction that uses or defines the extensions.  The use of extensions is what allows the FHIR specification to retain a core level of simplicity for everyone.",
         "alias": [
           "extensions",
@@ -1581,7 +1581,7 @@
         "path": "Extension.extension",
         "sliceName": "quadrant",
         "short": "Quadrant of the body location",
-        "definition": "<p>The quadrant  of the body location\n</p>",
+        "definition": "The quadrant  of the body location",
         "comment": "There can be no stigma associated with the use of extensions by any application, project, or standard - regardless of the institution or jurisdiction that uses or defines the extensions.  The use of extensions is what allows the FHIR specification to retain a core level of simplicity for everyone.",
         "alias": [
           "extensions",
@@ -1763,7 +1763,7 @@
         "path": "Extension.extension",
         "sliceName": "region",
         "short": "Region of the body location",
-        "definition": "<p>The region  of the body location\n</p>",
+        "definition": "The region  of the body location",
         "comment": "There can be no stigma associated with the use of extensions by any application, project, or standard - regardless of the institution or jurisdiction that uses or defines the extensions.  The use of extensions is what allows the FHIR specification to retain a core level of simplicity for everyone.",
         "alias": [
           "extensions",
@@ -1945,7 +1945,7 @@
         "path": "Extension.extension",
         "sliceName": "clockDirection",
         "short": "Clock direction of the body location",
-        "definition": "<p>The clock direction of the body location.\n</p>",
+        "definition": "The clock direction of the body location.",
         "comment": "There can be no stigma associated with the use of extensions by any application, project, or standard - regardless of the institution or jurisdiction that uses or defines the extensions.  The use of extensions is what allows the FHIR specification to retain a core level of simplicity for everyone.",
         "alias": [
           "extensions",
@@ -2127,7 +2127,7 @@
         "path": "Extension.extension",
         "sliceName": "depth",
         "short": "Depth of the body location",
-        "definition": "<p>The depth of the body location.\n</p>",
+        "definition": "The depth of the body location.",
         "comment": "There can be no stigma associated with the use of extensions by any application, project, or standard - regardless of the institution or jurisdiction that uses or defines the extensions.  The use of extensions is what allows the FHIR specification to retain a core level of simplicity for everyone.",
         "alias": [
           "extensions",

@@ -27,6 +27,7 @@ namespace BreastRadiology.XUnitTests
         //                    .MissingObservation("a cyst")
         //            )
         //            .AddFragRef(Self.ObservationNoDeviceFragment.Value())
+        //            .AddFragRef(Self.ObservationNoValueFragment.Value())
         //            .AddFragRef(Self.BreastBodyLocationRequiredFragment.Value())
         //            .AddFragRef(Self.ObservationNoValueFragment.Value())
         //            .AddFragRef(Self.ImagingStudyFragment.Value())

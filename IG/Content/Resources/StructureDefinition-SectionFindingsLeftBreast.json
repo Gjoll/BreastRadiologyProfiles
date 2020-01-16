@@ -11,14 +11,6 @@
     },
     {
       "url": "http://www.fragment.com/fragment",
-      "valueUrl": "http://hl7.org/fhir/us/breast-radiology/StructureDefinition/ObservationSectionFragment"
-    },
-    {
-      "url": "http://www.fragment.com/maplink",
-      "valueString": "fragment|True|http://hl7.org/fhir/us/breast-radiology/StructureDefinition/ObservationSectionFragment"
-    },
-    {
-      "url": "http://www.fragment.com/fragment",
       "valueUrl": "http://hl7.org/fhir/us/breast-radiology/StructureDefinition/FindingBreastFragment"
     },
     {
@@ -27,83 +19,15 @@
     },
     {
       "url": "http://www.fragment.com/mapname",
-      "valueString": "Section/Fragment"
-    },
-    {
-      "url": "http://www.fragment.com/Group",
-      "valueString": "Fragment/ObservationSectionFragment"
-    },
-    {
-      "url": "http://www.fragment.com/maplink",
-      "valueString": "fragment|True|http://hl7.org/fhir/us/breast-radiology/StructureDefinition/BreastRadObservationFragment"
-    },
-    {
-      "url": "http://www.fragment.com/maplink",
-      "valueString": "fragment|True|http://hl7.org/fhir/us/breast-radiology/StructureDefinition/BreastRadObservationNoValueFragment"
-    },
-    {
-      "url": "http://www.fragment.com/incompatibleFragment",
-      "valueUrl": "http://hl7.org/fhir/us/breast-radiology/StructureDefinition/ObservationLeafFragment"
-    },
-    {
-      "url": "http://www.fragment.com/mapname",
-      "valueString": "Observation/Fragment"
-    },
-    {
-      "url": "http://www.fragment.com/Group",
-      "valueString": "Fragment/BreastRadObservationFragment"
-    },
-    {
-      "url": "http://www.fragment.com/maplink",
-      "valueString": "fragment|True|http://hl7.org/fhir/us/breast-radiology/StructureDefinition/HeaderFragment"
-    },
-    {
-      "url": "http://www.fragment.com/maplink",
-      "valueString": "fragment|True|http://hl7.org/fhir/us/breast-radiology/StructureDefinition/CategoryFragment"
-    },
-    {
-      "url": "http://www.fragment.com/mapname",
-      "valueString": "Common"
-    },
-    {
-      "url": "http://www.fragment.com/Group",
-      "valueString": "Fragment/HeaderFragment"
-    },
-    {
-      "url": "http://www.fragment.com/mapname",
-      "valueString": "Category/Fragment"
-    },
-    {
-      "url": "http://www.fragment.com/Group",
-      "valueString": "Fragment/CategoryFragment"
-    },
-    {
-      "url": "http://www.fragment.com/mapname",
-      "valueString": "NoValue/Observation/Fragment"
-    },
-    {
-      "url": "http://www.fragment.com/Group",
-      "valueString": "Fragment/BreastRadObservationNoValueFragment"
-    },
-    {
-      "url": "http://www.fragment.com/maplink",
-      "valueString": "fragment|True|http://hl7.org/fhir/us/breast-radiology/StructureDefinition/BreastRadObservationNoComponentFragment"
-    },
-    {
-      "url": "http://www.fragment.com/mapname",
-      "valueString": "Observation/No Component/Fragment"
-    },
-    {
-      "url": "http://www.fragment.com/Group",
-      "valueString": "Fragment/BreastRadObservationNoComponentFragment"
-    },
-    {
-      "url": "http://www.fragment.com/mapname",
       "valueString": "Finding/Breast/Fragment"
     },
     {
       "url": "http://www.fragment.com/Group",
       "valueString": "Fragment/FindingBreastFragment"
+    },
+    {
+      "url": "http://www.fragment.com/maplink",
+      "valueString": "fragment|True|http://hl7.org/fhir/us/breast-radiology/StructureDefinition/HeaderFragment"
     },
     {
       "url": "http://www.fragment.com/maplink",
@@ -127,11 +51,43 @@
     },
     {
       "url": "http://www.fragment.com/mapname",
+      "valueString": "Common"
+    },
+    {
+      "url": "http://www.fragment.com/Group",
+      "valueString": "Fragment/HeaderFragment"
+    },
+    {
+      "url": "http://www.fragment.com/mapname",
       "valueString": "NoDevice/Observation/Fragment"
     },
     {
       "url": "http://www.fragment.com/Group",
       "valueString": "Fragment/BreastRadObservationNoDeviceFragment"
+    },
+    {
+      "url": "http://www.fragment.com/maplink",
+      "valueString": "fragment|True|http://hl7.org/fhir/us/breast-radiology/StructureDefinition/BreastRadObservationFragment"
+    },
+    {
+      "url": "http://www.fragment.com/mapname",
+      "valueString": "Observation/Fragment"
+    },
+    {
+      "url": "http://www.fragment.com/Group",
+      "valueString": "Fragment/BreastRadObservationFragment"
+    },
+    {
+      "url": "http://www.fragment.com/maplink",
+      "valueString": "fragment|True|http://hl7.org/fhir/us/breast-radiology/StructureDefinition/CategoryFragment"
+    },
+    {
+      "url": "http://www.fragment.com/mapname",
+      "valueString": "Category/Fragment"
+    },
+    {
+      "url": "http://www.fragment.com/Group",
+      "valueString": "Fragment/CategoryFragment"
     }
   ],
   "url": "http://hl7.org/fhir/us/breast-radiology/StructureDefinition/SectionFindingsLeftBreast",
@@ -151,7 +107,7 @@
       ]
     }
   ],
-  "description": "<b>Findings Left Breast Section</b>\n\n<p>This resource is the head of the tree of observations made of the left breast during a breast radiology exam.\n</p><p>Child observations are referenced by the 'Observation.hasMember' field.\n</p>",
+  "description": "<b>Findings Left Breast Section</b>\n\nThis resource is the head of the tree of observations made of the left breast during a breast radiology exam.\nChild observations are referenced by the 'Observation.hasMember' field.",
   "fhirVersion": "4.0.0",
   "kind": "resource",
   "abstract": false,
@@ -164,7 +120,7 @@
         "id": "Observation",
         "path": "Observation",
         "short": "Findings Left Breast Section",
-        "definition": "<p>This resource is the head of the tree of observations made of the left breast during a breast radiology exam.\n</p><p>Child observations are referenced by the 'Observation.hasMember' field.\n</p>",
+        "definition": "This resource is the head of the tree of observations made of the left breast during a breast radiology exam.\nChild observations are referenced by the 'Observation.hasMember' field.",
         "comment": "Used for simple observations such as device measurements, laboratory atomic results, vital signs, height, weight, smoking status, comments, etc.  Other resources are used to provide context for observations such as laboratory reports, etc.",
         "alias": [
           "Vital Signs",
@@ -1244,11 +1200,11 @@
         "id": "Observation.value[x]",
         "path": "Observation.value[x]",
         "short": "Actual result",
-        "definition": "The information determined as a result of making the observation, if the information has a simple value.",
+        "definition": "Composite BiRad value for Left Breast.\nTypically this is the most severe of all the BiRad codes set in any of the child observations.",
         "comment": "An observation may have; 1)  a single value here, 2)  both a value and a set of related or component values,  or 3)  only a set of related or component values. If a value is present, the datatype for this element should be determined by Observation.code.  A CodeableConcept with just a text would be used instead of a string if the field was usually coded, or if the type associated with the Observation.code defines a coded value.  For additional guidance, see the [Notes section](observation.html#notes) below.",
         "requirements": "An observation exists to have a value, though it might not if it is in error, or if it represents a group of observations.",
-        "min": 0,
-        "max": "0",
+        "min": 1,
+        "max": "1",
         "base": {
           "path": "Observation.value[x]",
           "min": 0,
@@ -1256,37 +1212,7 @@
         },
         "type": [
           {
-            "code": "Quantity"
-          },
-          {
             "code": "CodeableConcept"
-          },
-          {
-            "code": "string"
-          },
-          {
-            "code": "boolean"
-          },
-          {
-            "code": "integer"
-          },
-          {
-            "code": "Range"
-          },
-          {
-            "code": "Ratio"
-          },
-          {
-            "code": "SampledData"
-          },
-          {
-            "code": "time"
-          },
-          {
-            "code": "dateTime"
-          },
-          {
-            "code": "Period"
           }
         ],
         "condition": [
@@ -1294,6 +1220,10 @@
         ],
         "isModifier": false,
         "isSummary": true,
+        "binding": {
+          "strength": "required",
+          "valueSet": "http://hl7.org/fhir/us/breast-radiology/ValueSet/BiRadsAssessmentCategoriesVS"
+        },
         "mapping": [
           {
             "identity": "sct-concept",
@@ -1463,14 +1393,10 @@
             "code": "CodeableConcept"
           }
         ],
-        "patternCodeableConcept": {
-          "coding": [
-            {
-              "system": "http://snomed.info/sct",
-              "code": "80248007"
-            }
-          ],
-          "text": "Left breast structure (body structure)"
+        "patternCoding": {
+          "system": "http://snomed.info/sct",
+          "code": "80248007",
+          "display": "Left breast structure (body structure)"
         },
         "isModifier": false,
         "isSummary": false,
@@ -1512,7 +1438,7 @@
         "comment": "Only used if not implicit in code for Observation.code.",
         "requirements": "In some cases, method can impact results and is thus used for determining whether results can be compared or determining significance of results.",
         "min": 0,
-        "max": "0",
+        "max": "1",
         "base": {
           "path": "Observation.method",
           "min": 0,
@@ -2235,7 +2161,7 @@
         "comment": "For a discussion on the ways Observations can be assembled in groups together see [Notes](observation.html#notes) below.",
         "requirements": "Component observations share the same attributes in the Observation resource as the primary observation and are always treated a part of a single observation (they are not separable).   However, the reference range for the primary observation value is not inherited by the component values and is required when appropriate for each component observation.",
         "min": 0,
-        "max": "0",
+        "max": "*",
         "base": {
           "path": "Observation.component",
           "min": 0,
@@ -2620,7 +2546,7 @@
         "id": "Observation",
         "path": "Observation",
         "short": "Findings Left Breast Section",
-        "definition": "<p>This resource is the head of the tree of observations made of the left breast during a breast radiology exam.\n</p><p>Child observations are referenced by the 'Observation.hasMember' field.\n</p>",
+        "definition": "This resource is the head of the tree of observations made of the left breast during a breast radiology exam.\nChild observations are referenced by the 'Observation.hasMember' field.",
         "base": {
           "path": "Observation",
           "min": 0,
@@ -2726,12 +2652,22 @@
       {
         "id": "Observation.value[x]",
         "path": "Observation.value[x]",
-        "min": 0,
-        "max": "0",
+        "definition": "Composite BiRad value for Left Breast.\nTypically this is the most severe of all the BiRad codes set in any of the child observations.",
+        "min": 1,
+        "max": "1",
         "base": {
           "path": "Observation.value[x]",
           "min": 0,
           "max": "1"
+        },
+        "type": [
+          {
+            "code": "CodeableConcept"
+          }
+        ],
+        "binding": {
+          "strength": "required",
+          "valueSet": "http://hl7.org/fhir/us/breast-radiology/ValueSet/BiRadsAssessmentCategoriesVS"
         }
       },
       {
@@ -2753,25 +2689,10 @@
           "min": 0,
           "max": "1"
         },
-        "patternCodeableConcept": {
-          "coding": [
-            {
-              "system": "http://snomed.info/sct",
-              "code": "80248007"
-            }
-          ],
-          "text": "Left breast structure (body structure)"
-        }
-      },
-      {
-        "id": "Observation.method",
-        "path": "Observation.method",
-        "min": 0,
-        "max": "0",
-        "base": {
-          "path": "Observation.method",
-          "min": 0,
-          "max": "1"
+        "patternCoding": {
+          "system": "http://snomed.info/sct",
+          "code": "80248007",
+          "display": "Left breast structure (body structure)"
         }
       },
       {
@@ -2969,17 +2890,6 @@
             "map": "outBoundRelationship"
           }
         ]
-      },
-      {
-        "id": "Observation.component",
-        "path": "Observation.component",
-        "min": 0,
-        "max": "0",
-        "base": {
-          "path": "Observation.component",
-          "min": 0,
-          "max": "*"
-        }
       }
     ]
   }

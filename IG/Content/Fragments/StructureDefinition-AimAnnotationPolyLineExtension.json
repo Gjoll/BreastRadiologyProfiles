@@ -22,7 +22,7 @@
   "name": "AimAnnotationPolyLineExtension",
   "title": "AIM Annotation PolyLine Extension",
   "status": "draft",
-  "description": "<b>AIM Annotation PolyLine Extension</b>\n\n<p>this extension defines the fields that are used to describe apolygon line annotation of an image\n</p>",
+  "description": "<b>AIM Annotation PolyLine Extension</b>\n\nthis extension defines the fields that are used to describe apolygon line annotation of an image",
   "fhirVersion": "4.0.0",
   "kind": "complex-type",
   "abstract": false,
@@ -51,7 +51,7 @@
         ],
         "path": "Extension",
         "short": "AIM Annotation PolyLine Extension",
-        "definition": "<p>this extension defines the fields that are used to describe apolygon line annotation of an image\n</p>",
+        "definition": "this extension defines the fields that are used to describe apolygon line annotation of an image",
         "base": {
           "path": "Extension",
           "min": 0,

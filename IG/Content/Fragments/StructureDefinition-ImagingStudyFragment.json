@@ -27,7 +27,7 @@
   "name": "ImagingStudyFragment",
   "title": "Imaging Study Fragment",
   "status": "draft",
-  "description": "<b>Imaging studies fragment</b>\n\n<p>Fragment that adds derivedFrom references to imaging studies, including AIM annotated imaging study.\n</p>",
+  "description": "<b>Imaging studies fragment</b>\n\nFragment that adds derivedFrom references to imaging studies, including AIM annotated imaging study.",
   "fhirVersion": "4.0.0",
   "kind": "resource",
   "abstract": true,
@@ -40,7 +40,7 @@
         "id": "Observation",
         "path": "Observation",
         "short": "Imaging studies fragment",
-        "definition": "<p>Fragment that adds derivedFrom references to imaging studies, including AIM annotated imaging study.\n</p>",
+        "definition": "Fragment that adds derivedFrom references to imaging studies, including AIM annotated imaging study.",
         "base": {
           "path": "Observation",
           "min": 0,

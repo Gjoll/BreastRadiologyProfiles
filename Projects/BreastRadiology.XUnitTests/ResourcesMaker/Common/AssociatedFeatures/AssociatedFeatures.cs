@@ -17,17 +17,18 @@ namespace BreastRadiology.XUnitTests
         SDTaskVar AssociatedFeatures = new SDTaskVar(
             (out StructureDefinition  s) =>
             {
-                SDefEditor e = Self.CreateEditorObservationSection("AssociatedFeatures",
+                SDefEditor e = Self.CreateEditor("AssociatedFeatures",
                         "Associated Features",
                         "Associated/Features",
-                        $"{Group_CommonResources}/AssociatedFeature")
+                        ObservationUrl,
+                        $"{Group_CommonResources}/AssociatedFeature",
+                        "ObservationSection")
                     .Description("Associated Features Observation",
                         new Markdown()
                             .Paragraph("Used with masses, asymmetries, or calcifications, or may stand alone as " +
                                         "Features when no other abnormality is present.")
                      )
-                    .AddFragRef(Self.ObservationNoDeviceFragment.Value())
-                    .AddFragRef(Self.ObservationNoValueFragment.Value())
+                    .AddFragRef(Self.ObservationSectionFragment.Value())
                     ;
                 s = e.SDef;
 

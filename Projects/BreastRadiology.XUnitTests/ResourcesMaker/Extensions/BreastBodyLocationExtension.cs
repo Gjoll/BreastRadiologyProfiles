@@ -276,9 +276,7 @@ namespace BreastRadiology.XUnitTests
                         Path = $"{extensionNode.ElementDefinition.Path}.extension"
                     };
 
-                    sealExtension
-                        .Zero()
-                        ;
+                    sealExtension.Zero();
                     extensionElement.CreateNode(sealExtension);
 
                     ElementDefinition valueBase = e.Get("value[x]").ElementDefinition;
@@ -343,9 +341,7 @@ namespace BreastRadiology.XUnitTests
                     .Type("uri")
                     .Fixed(new FhirUri(e.SDef.Url));
 
-                e.Select("value[x]")
-                    .Zero()
-                    ;
+                e.Select("value[x]").Zero();
 
                 extensionNode = e.ConfigureSliceByUrlDiscriminator("extension", true);
 

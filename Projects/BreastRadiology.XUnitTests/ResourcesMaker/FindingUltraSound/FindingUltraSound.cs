@@ -17,21 +17,23 @@ namespace BreastRadiology.XUnitTests
             (out StructureDefinition s) =>
             {
                 //$ Fix me. Incorrect method!!!
-                SDefEditor e = Self.CreateEditorObservationSection("USFinding",
+                SDefEditor e = Self.CreateEditor("USFinding",
                         "Ultra-Sound Finding",
                         "US Finding",
-                        $"{Group_USResources}")
-                    .Description("Breast Radiology Ultra Sound Finding",
-                        new Markdown()
-                    )
-                    ;
+                        ObservationUrl,
+                        $"{Group_USResources}",
+                        "ObservationSection")
+                        .Description("Breast Radiology Ultra Sound Finding",
+                            new Markdown()
+                        )
+                     .AddFragRef(Self.ObservationSectionFragment.Value())
+                   ;
                 s = e.SDef;
 
                 e.IntroDoc
                     .ReviewedStatus(ReviewStatus.NotReviewed)
                     ;
 
-                e.Select("value[x]").Zero();
                 //$e.Find("method")
                 // .FixedCodeSlice("method", Snomed, "115341008")
                 // .Card(1, "*")

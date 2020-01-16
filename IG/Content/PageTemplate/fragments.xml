@@ -124,12 +124,6 @@
 	    <img src="Frag-CategoryFragment.svg" alt="CategoryFragment"/>
 	</object>
 	<p>
-	Fragment Diagram CodedValueObservationFragment
-	</p>
-	<object data="Frag-CodedValueObservationFragment.svg" type="image/svg+xml">
-	    <img src="Frag-CodedValueObservationFragment.svg" alt="CodedValueObservationFragment"/>
-	</object>
-	<p>
 	Fragment Diagram CommonComponentsFragment
 	</p>
 	<object data="Frag-CommonComponentsFragment.svg" type="image/svg+xml">

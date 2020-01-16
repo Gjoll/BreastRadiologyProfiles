@@ -125,7 +125,6 @@ namespace BreastRadiology.XUnitTests
                             .BiradFooter()
                     )
                     .AddFragRef(Self.ObservationNoDeviceFragment.Value())
-                    .AddFragRef(Self.ObservationCodedValueFragment.Value())
                     ;
 
                 s = e.SDef;

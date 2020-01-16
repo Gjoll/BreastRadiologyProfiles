@@ -11,14 +11,6 @@
     },
     {
       "url": "http://www.fragment.com/fragment",
-      "valueUrl": "http://hl7.org/fhir/us/breast-radiology/StructureDefinition/ObservationSectionFragment"
-    },
-    {
-      "url": "http://www.fragment.com/maplink",
-      "valueString": "fragment|True|http://hl7.org/fhir/us/breast-radiology/StructureDefinition/ObservationSectionFragment"
-    },
-    {
-      "url": "http://www.fragment.com/fragment",
       "valueUrl": "http://hl7.org/fhir/us/breast-radiology/StructureDefinition/FindingBreastFragment"
     },
     {
@@ -30,7 +22,7 @@
   "name": "SectionFindingsLeftBreast",
   "title": "Findings Left Breast",
   "status": "draft",
-  "description": "<b>Findings Left Breast Section</b>\n\n<p>This resource is the head of the tree of observations made of the left breast during a breast radiology exam.\n</p><p>Child observations are referenced by the 'Observation.hasMember' field.\n</p>",
+  "description": "<b>Findings Left Breast Section</b>\n\nThis resource is the head of the tree of observations made of the left breast during a breast radiology exam.\nChild observations are referenced by the 'Observation.hasMember' field.",
   "fhirVersion": "4.0.0",
   "kind": "resource",
   "abstract": false,
@@ -43,11 +35,21 @@
         "id": "Observation",
         "path": "Observation",
         "short": "Findings Left Breast Section",
-        "definition": "<p>This resource is the head of the tree of observations made of the left breast during a breast radiology exam.\n</p><p>Child observations are referenced by the 'Observation.hasMember' field.\n</p>",
+        "definition": "This resource is the head of the tree of observations made of the left breast during a breast radiology exam.\nChild observations are referenced by the 'Observation.hasMember' field.",
         "base": {
           "path": "Observation",
           "min": 0,
           "max": "*"
+        }
+      },
+      {
+        "id": "Observation.value[x]",
+        "path": "Observation.value[x]",
+        "definition": "Composite BiRad value for Left Breast.\nTypically this is the most severe of all the BiRad codes set in any of the child observations.",
+        "base": {
+          "path": "Observation.value[x]",
+          "min": 0,
+          "max": "1"
         }
       },
       {
@@ -58,14 +60,10 @@
           "min": 0,
           "max": "1"
         },
-        "patternCodeableConcept": {
-          "coding": [
-            {
-              "system": "http://snomed.info/sct",
-              "code": "80248007"
-            }
-          ],
-          "text": "Left breast structure (body structure)"
+        "patternCoding": {
+          "system": "http://snomed.info/sct",
+          "code": "80248007",
+          "display": "Left breast structure (body structure)"
         }
       }
     ]

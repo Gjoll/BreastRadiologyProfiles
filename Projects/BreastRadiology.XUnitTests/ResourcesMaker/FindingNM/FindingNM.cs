@@ -16,13 +16,16 @@ namespace BreastRadiology.XUnitTests
         SDTaskVar FindingNM = new SDTaskVar(
             (out StructureDefinition  s) =>
             {
-                SDefEditor e = Self.CreateEditorObservationSection("NMFinding",
+                SDefEditor e = Self.CreateEditor("NMFinding",
                         "NM Finding",
                         "NM Finding",
-                        $"{Group_NMResources}")
+                        ObservationUrl,
+                        $"{Group_NMResources}",
+                        "ObservationSection")
                     .Description("Breast Radiology NMgraphy Finding",
                         new Markdown()
                         )
+                        .AddFragRef(Self.ObservationSectionFragment.Value())
                     ;
                 s = e.SDef;
 
@@ -30,7 +33,6 @@ namespace BreastRadiology.XUnitTests
                     .ReviewedStatus(ReviewStatus.NotReviewed)
                     ;
 
-                e.Select("value[x]").Zero();
                 ////$ todo. Incorrect method!!!
                 //e.Find("method")
                 // .FixedCodeSlice("method", Snomed, "115341008")

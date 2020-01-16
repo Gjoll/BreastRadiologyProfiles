@@ -26,14 +26,6 @@
       "valueString": "fragment|True|http://hl7.org/fhir/us/breast-radiology/StructureDefinition/BreastRadObservationNoDeviceFragment"
     },
     {
-      "url": "http://www.fragment.com/fragment",
-      "valueUrl": "http://hl7.org/fhir/us/breast-radiology/StructureDefinition/CodedValueObservationFragment"
-    },
-    {
-      "url": "http://www.fragment.com/maplink",
-      "valueString": "fragment|True|http://hl7.org/fhir/us/breast-radiology/StructureDefinition/CodedValueObservationFragment"
-    },
-    {
       "url": "http://www.fragment.com/maplink",
       "valueString": "valueSet|True|http://hl7.org/fhir/us/breast-radiology/ValueSet/MGBreastDensityVS"
     },
@@ -100,18 +92,6 @@
     {
       "url": "http://www.fragment.com/Group",
       "valueString": "Fragment/BreastRadObservationNoDeviceFragment"
-    },
-    {
-      "url": "http://www.fragment.com/mapname",
-      "valueString": "Observation/CodedValue/Fragment"
-    },
-    {
-      "url": "http://www.fragment.com/Group",
-      "valueString": "Fragment/CodedValueObservationFragment"
-    },
-    {
-      "url": "http://www.fragment.com/incompatibleFragment",
-      "valueUrl": "http://hl7.org/fhir/us/breast-radiology/StructureDefinition/BreastRadObservationNoValueFragment"
     }
   ],
   "url": "http://hl7.org/fhir/us/breast-radiology/StructureDefinition/MGBreastDensity",
