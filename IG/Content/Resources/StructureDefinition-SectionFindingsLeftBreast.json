@@ -19,27 +19,11 @@
     },
     {
       "url": "http://www.fragment.com/fragment",
-      "valueUrl": "http://hl7.org/fhir/us/breast-radiology/StructureDefinition/BreastRadObservationNoDeviceFragment"
+      "valueUrl": "http://hl7.org/fhir/us/breast-radiology/StructureDefinition/FindingBreastFragment"
     },
     {
       "url": "http://www.fragment.com/maplink",
-      "valueString": "fragment|True|http://hl7.org/fhir/us/breast-radiology/StructureDefinition/BreastRadObservationNoDeviceFragment"
-    },
-    {
-      "url": "http://www.fragment.com/maplink",
-      "valueString": "target|False|http://hl7.org/fhir/us/breast-radiology/StructureDefinition/MGFinding"
-    },
-    {
-      "url": "http://www.fragment.com/maplink",
-      "valueString": "target|False|http://hl7.org/fhir/us/breast-radiology/StructureDefinition/MRIFinding"
-    },
-    {
-      "url": "http://www.fragment.com/maplink",
-      "valueString": "target|False|http://hl7.org/fhir/us/breast-radiology/StructureDefinition/NMFinding"
-    },
-    {
-      "url": "http://www.fragment.com/maplink",
-      "valueString": "target|False|http://hl7.org/fhir/us/breast-radiology/StructureDefinition/USFinding"
+      "valueString": "fragment|True|http://hl7.org/fhir/us/breast-radiology/StructureDefinition/FindingBreastFragment"
     },
     {
       "url": "http://www.fragment.com/mapname",
@@ -112,6 +96,34 @@
     {
       "url": "http://www.fragment.com/Group",
       "valueString": "Fragment/BreastRadObservationNoComponentFragment"
+    },
+    {
+      "url": "http://www.fragment.com/mapname",
+      "valueString": "Finding/Breast/Fragment"
+    },
+    {
+      "url": "http://www.fragment.com/Group",
+      "valueString": "Fragment/FindingBreastFragment"
+    },
+    {
+      "url": "http://www.fragment.com/maplink",
+      "valueString": "fragment|True|http://hl7.org/fhir/us/breast-radiology/StructureDefinition/BreastRadObservationNoDeviceFragment"
+    },
+    {
+      "url": "http://www.fragment.com/maplink",
+      "valueString": "target|False|http://hl7.org/fhir/us/breast-radiology/StructureDefinition/MGFinding"
+    },
+    {
+      "url": "http://www.fragment.com/maplink",
+      "valueString": "target|False|http://hl7.org/fhir/us/breast-radiology/StructureDefinition/MRIFinding"
+    },
+    {
+      "url": "http://www.fragment.com/maplink",
+      "valueString": "target|False|http://hl7.org/fhir/us/breast-radiology/StructureDefinition/NMFinding"
+    },
+    {
+      "url": "http://www.fragment.com/maplink",
+      "valueString": "target|False|http://hl7.org/fhir/us/breast-radiology/StructureDefinition/USFinding"
     },
     {
       "url": "http://www.fragment.com/mapname",
@@ -1440,7 +1452,7 @@
         "definition": "Indicates the site on the subject's body where the observation was made (i.e. the target site).",
         "comment": "Only used if not implicit in code found in Observation.code.  In many systems, this may be represented as a related observation instead of an inline component.   \n\nIf the use case requires BodySite to be handled as a separate resource (e.g. to identify and track separately) then use the standard extension[ bodySite](extension-bodysite.html).",
         "min": 0,
-        "max": "0",
+        "max": "1",
         "base": {
           "path": "Observation.bodySite",
           "min": 0,
@@ -1451,6 +1463,15 @@
             "code": "CodeableConcept"
           }
         ],
+        "patternCodeableConcept": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "80248007"
+            }
+          ],
+          "text": "Left breast structure (body structure)"
+        },
         "isModifier": false,
         "isSummary": false,
         "binding": {
@@ -2045,6 +2066,7 @@
             ]
           }
         ],
+        "mustSupport": true,
         "isModifier": false,
         "isSummary": true,
         "mapping": [
@@ -2080,6 +2102,7 @@
             ]
           }
         ],
+        "mustSupport": true,
         "isModifier": false,
         "isSummary": true,
         "mapping": [
@@ -2115,6 +2138,7 @@
             ]
           }
         ],
+        "mustSupport": true,
         "isModifier": false,
         "isSummary": true,
         "mapping": [
@@ -2150,6 +2174,7 @@
             ]
           }
         ],
+        "mustSupport": true,
         "isModifier": false,
         "isSummary": true,
         "mapping": [
@@ -2723,12 +2748,19 @@
       {
         "id": "Observation.bodySite",
         "path": "Observation.bodySite",
-        "min": 0,
-        "max": "0",
         "base": {
           "path": "Observation.bodySite",
           "min": 0,
           "max": "1"
+        },
+        "patternCodeableConcept": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "80248007"
+            }
+          ],
+          "text": "Left breast structure (body structure)"
         }
       },
       {
@@ -2816,6 +2848,7 @@
             ]
           }
         ],
+        "mustSupport": true,
         "isModifier": false,
         "isSummary": true,
         "mapping": [
@@ -2851,6 +2884,7 @@
             ]
           }
         ],
+        "mustSupport": true,
         "isModifier": false,
         "isSummary": true,
         "mapping": [
@@ -2886,6 +2920,7 @@
             ]
           }
         ],
+        "mustSupport": true,
         "isModifier": false,
         "isSummary": true,
         "mapping": [
@@ -2921,6 +2956,7 @@
             ]
           }
         ],
+        "mustSupport": true,
         "isModifier": false,
         "isSummary": true,
         "mapping": [

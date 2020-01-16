@@ -29,7 +29,7 @@ namespace BreastRadiology.XUnitTests
                 e.Select("value[x]").Zero();
                 ////$ todo. Incorrect method!!!
                 //e.Find("method")
-                // .FixedCodeSlice("method", "http://snomed.info/sct", "115341008")
+                // .FixedCodeSlice("method", Snomed, "115341008")
                 // .Card(1, "*")
                 // ;
 

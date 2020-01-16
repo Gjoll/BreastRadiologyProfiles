@@ -148,6 +148,12 @@
 	    <img src="Frag-CorrespondsWithFragment.svg" alt="CorrespondsWithFragment"/>
 	</object>
 	<p>
+	Fragment Diagram FindingBreastFragment
+	</p>
+	<object data="Frag-FindingBreastFragment.svg" type="image/svg+xml">
+	    <img src="Frag-FindingBreastFragment.svg" alt="FindingBreastFragment"/>
+	</object>
+	<p>
 	Fragment Diagram HeaderFragment
 	</p>
 	<object data="Frag-HeaderFragment.svg" type="image/svg+xml">

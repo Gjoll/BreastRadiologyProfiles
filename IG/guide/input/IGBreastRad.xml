@@ -1000,6 +1000,15 @@
     </resource>
     <resource>
       <reference>
+        <reference value="StructureDefinition/FindingBreastFragment" />
+      </reference>
+      <name value="Finding Breast Fragment" />
+      <description value="Fragment 'Fragment definition for finding section of left or right breast'" />
+      <exampleBoolean value="false" />
+      <groupingId value="Fragments" />
+    </resource>
+    <resource>
+      <reference>
         <reference value="StructureDefinition/HeaderFragment" />
       </reference>
       <name value="Header Fragment" />

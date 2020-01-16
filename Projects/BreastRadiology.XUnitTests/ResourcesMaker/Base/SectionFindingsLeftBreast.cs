@@ -25,17 +25,16 @@ namespace BreastRadiology.XUnitTests
                        .Paragraph("This resource is the head of the tree of observations made of the left breast during a breast radiology exam.")
                        .Paragraph("Child observations are referenced by the 'Observation.hasMember' field.")
                    )
-                   .AddFragRef(Self.ObservationNoDeviceFragment.Value())
+                   .AddFragRef(Self.FindingBreastFragment.Value())
                    ;
                 s = e.SDef;
 
-                e.IntroDoc
-                    .ReviewedStatus(ReviewStatus.NotReviewed)
-                    ;
+                e.Select("bodySite")
+                    .Pattern(new Coding(Snomed, "80248007", "Left breast structure (body structure)"));
 
-                e.Select("value[x]").Zero();
-                e.Select("bodySite").Zero();
-                Self.AddFindingBreastTargets(e);
+                e.IntroDoc
+                     .ReviewedStatus(ReviewStatus.Alpha)
+                    ;
             });
     }
 }

@@ -130,6 +130,7 @@ namespace BreastRadiology.XUnitTests
         const PublicationStatus ProfileStatus = PublicationStatus.Draft;
 
         const String Loinc = "http://loinc.org";
+        const String Snomed = "http://snomed.info/sct";
 
         public const String ClinicalImpressionUrl = "http://hl7.org/fhir/StructureDefinition/ClinicalImpression";
         public const String DiagnosticReportUrl = "http://hl7.org/fhir/StructureDefinition/DiagnosticReport";
