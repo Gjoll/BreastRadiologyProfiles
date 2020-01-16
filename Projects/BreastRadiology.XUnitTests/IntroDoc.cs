@@ -11,6 +11,7 @@ namespace BreastRadiology.XUnitTests
     public enum ReviewStatus
     {
         NotReviewed,
+        Alpha,
         Preliminary,
         Completed
     };

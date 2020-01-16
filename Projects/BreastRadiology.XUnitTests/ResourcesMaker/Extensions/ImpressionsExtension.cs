@@ -48,7 +48,6 @@ namespace BreastRadiology.XUnitTests
                 e.Select("value[x]")
                     .TypeReference(Self.BreastRadImpression.Value().Url)
                     .ZeroToMany()
-                    .MustSupport()
                     ;
 
                 e.AddTargetLink(ClinicalImpressionUrl, false);

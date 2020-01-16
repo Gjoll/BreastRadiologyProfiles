@@ -121,7 +121,7 @@
         "id": "Observation.component:orientation.value[x]",
         "path": "Observation.component.value[x]",
         "short": "Orientation component value",
-        "definition": "<p>Value si a codeable concept.\n</p>",
+        "definition": "<p>Value is a codeable concept.\n</p>",
         "min": 1,
         "max": "1",
         "base": {
@@ -179,7 +179,7 @@
         "id": "Observation.component:shape.value[x]",
         "path": "Observation.component.value[x]",
         "short": "Shape component value",
-        "definition": "<p>Value si a codeable concept.\n</p>",
+        "definition": "<p>Value is a codeable concept.\n</p>",
         "min": 1,
         "max": "1",
         "base": {
@@ -237,7 +237,7 @@
         "id": "Observation.component:margin.value[x]",
         "path": "Observation.component.value[x]",
         "short": "Margin component value",
-        "definition": "<p>Value si a codeable concept.\n</p>",
+        "definition": "<p>Value is a codeable concept.\n</p>",
         "min": 1,
         "max": "1",
         "base": {
@@ -295,7 +295,7 @@
         "id": "Observation.component:mgDensity.value[x]",
         "path": "Observation.component.value[x]",
         "short": "Density component value",
-        "definition": "<p>Value si a codeable concept.\n</p>",
+        "definition": "<p>Value is a codeable concept.\n</p>",
         "min": 1,
         "max": "1",
         "base": {

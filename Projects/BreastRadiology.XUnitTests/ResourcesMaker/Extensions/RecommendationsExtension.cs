@@ -55,7 +55,6 @@ namespace BreastRadiology.XUnitTests
                         ServiceRequestUrl, 
                         Self.ServiceRecommendation.Value().Url)
                     .Single()
-                    .MustSupport()
                     ;
                 e.AddTargetLink(MedicationRequestUrl, false);
                 e.AddTargetLink(ServiceRequestUrl, false);

@@ -18,7 +18,7 @@ namespace BreastRadiology.XUnitTests
             {
                 SDefEditor e = Self.CreateEditorObservationSection("SectionFindingsRightBreast",
                         "Findings Right Breast",
-                        "Right Breast",
+                        "Findings/Right Breast",
                         $"{Group_BaseResources}/Findings/RightBreast")
                     .Description("Findings Right Breast Section",
                         new Markdown()

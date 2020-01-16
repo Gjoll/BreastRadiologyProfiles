@@ -39,14 +39,18 @@
     },
     {
       "url": "http://www.fragment.com/maplink",
-      "valueString": "target|False|http://hl7.org/fhir/us/breast-radiology/StructureDefinition/SectionFindings"
+      "valueString": "target|False|http://hl7.org/fhir/us/breast-radiology/StructureDefinition/SectionFindingsLeftBreast"
+    },
+    {
+      "url": "http://www.fragment.com/maplink",
+      "valueString": "target|False|http://hl7.org/fhir/us/breast-radiology/StructureDefinition/SectionFindingsRightBreast"
     }
   ],
   "url": "http://hl7.org/fhir/us/breast-radiology/StructureDefinition/BreastRadReport",
   "name": "BreastRadReport",
   "title": "Breast Radiology Report",
   "status": "draft",
-  "description": "<b>Breast Radiology Diagnostic Report</b>\n\n<p>This resource is the base resource of the Breast Diagnostic Report.\nAll components of this report are stored in or referenced by this fhir instance.\n</p><p>This resource is a profile of the Fhir DiagnosticReport base resource.\n</p><p>Items referenced by this resource include:\n</p><ul><li>references to prior breast radiology reports for this patient</li>\n<li>references to the observations of this report</li>\n<li>references to the recommendations of this report</li>\n<li>a summary of the report findings in a human readable format</li>\n</ul>",
+  "description": "<b>Breast Radiology Diagnostic Report</b>\n\n<p>This resource is the base resource of the Breast Diagnostic Report.\nAll components of this report are stored in or referenced by this fhir instance.\n</p><p>This resource is a profile of the Fhir DiagnosticReport base resource.\n</p><p>Items referenced by this resource include:\n</p><ul><li>Prior breast radiology reports for this patient</li>\n<li>Left breast findings</li>\n<li>Right breast findings</li>\n<li>Recommendations of this report</li>\n<li>Report findings in a human readable format</li>\n</ul>",
   "fhirVersion": "4.0.0",
   "kind": "resource",
   "abstract": false,
@@ -59,7 +63,7 @@
         "id": "DiagnosticReport",
         "path": "DiagnosticReport",
         "short": "Breast Radiology Diagnostic Report",
-        "definition": "<p>This resource is the base resource of the Breast Diagnostic Report.\nAll components of this report are stored in or referenced by this fhir instance.\n</p><p>This resource is a profile of the Fhir DiagnosticReport base resource.\n</p><p>Items referenced by this resource include:\n</p><ul><li>references to prior breast radiology reports for this patient</li>\n<li>references to the observations of this report</li>\n<li>references to the recommendations of this report</li>\n<li>a summary of the report findings in a human readable format</li>\n</ul>",
+        "definition": "<p>This resource is the base resource of the Breast Diagnostic Report.\nAll components of this report are stored in or referenced by this fhir instance.\n</p><p>This resource is a profile of the Fhir DiagnosticReport base resource.\n</p><p>Items referenced by this resource include:\n</p><ul><li>Prior breast radiology reports for this patient</li>\n<li>Left breast findings</li>\n<li>Right breast findings</li>\n<li>Recommendations of this report</li>\n<li>Report findings in a human readable format</li>\n</ul>",
         "base": {
           "path": "DiagnosticReport",
           "min": 0,
@@ -107,6 +111,7 @@
             ]
           }
         ],
+        "mustSupport": true,
         "isModifier": false
       },
       {
@@ -131,6 +136,7 @@
             ]
           }
         ],
+        "mustSupport": true,
         "isModifier": false
       },
       {
@@ -205,12 +211,12 @@
         }
       },
       {
-        "id": "DiagnosticReport.result:sectionFindings",
+        "id": "DiagnosticReport.result:sectionFindingsLeftBreast",
         "path": "DiagnosticReport.result",
-        "sliceName": "sectionFindings",
-        "short": "'Findings' reference",
-        "definition": "This slice references the target 'Findings'",
-        "min": 1,
+        "sliceName": "sectionFindingsLeftBreast",
+        "short": "'Findings Left Breast' reference",
+        "definition": "This slice references the target 'Findings Left Breast'",
+        "min": 0,
         "max": "1",
         "base": {
           "path": "DiagnosticReport.result",
@@ -221,7 +227,30 @@
           {
             "code": "Reference",
             "targetProfile": [
-              "http://hl7.org/fhir/us/breast-radiology/StructureDefinition/SectionFindings"
+              "http://hl7.org/fhir/us/breast-radiology/StructureDefinition/SectionFindingsLeftBreast"
+            ]
+          }
+        ],
+        "mustSupport": true
+      },
+      {
+        "id": "DiagnosticReport.result:sectionFindingsRightBreast",
+        "path": "DiagnosticReport.result",
+        "sliceName": "sectionFindingsRightBreast",
+        "short": "'Findings Right Breast' reference",
+        "definition": "This slice references the target 'Findings Right Breast'",
+        "min": 0,
+        "max": "1",
+        "base": {
+          "path": "DiagnosticReport.result",
+          "min": 0,
+          "max": "*"
+        },
+        "type": [
+          {
+            "code": "Reference",
+            "targetProfile": [
+              "http://hl7.org/fhir/us/breast-radiology/StructureDefinition/SectionFindingsRightBreast"
             ]
           }
         ],
@@ -247,6 +276,11 @@
           "path": "DiagnosticReport.conclusionCode",
           "min": 0,
           "max": "*"
+        },
+        "mustSupport": true,
+        "binding": {
+          "strength": "required",
+          "valueSet": "http://hl7.org/fhir/us/breast-radiology/ValueSet/BiRadsAssessmentCategoriesVS"
         }
       }
     ]

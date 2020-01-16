@@ -105,8 +105,7 @@
               "http://hl7.org/fhir/us/breast-radiology/StructureDefinition/Impression"
             ]
           }
-        ],
-        "mustSupport": true
+        ]
       }
     ]
   }

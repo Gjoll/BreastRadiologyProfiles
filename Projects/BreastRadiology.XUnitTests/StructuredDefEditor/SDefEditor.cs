@@ -577,7 +577,7 @@ namespace BreastRadiology.XUnitTests
                     .Binding(valueSet.Url, bindingStrength)
                     .Type("CodeableConcept")
                     .SetDefinition(new Markdown()
-                        .Paragraph("Value si a codeable concept.")
+                        .Paragraph("Value is a codeable concept.")
                      )
                 ;
                 slice.CreateNode(valueX);

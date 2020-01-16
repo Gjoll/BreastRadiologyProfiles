@@ -238,7 +238,7 @@
         "id": "Observation.component:calcificationType.value[x]",
         "path": "Observation.component.value[x]",
         "short": "Calcification Type component value",
-        "definition": "<p>Value si a codeable concept.\n</p>",
+        "definition": "<p>Value is a codeable concept.\n</p>",
         "min": 1,
         "max": "1",
         "base": {
@@ -296,7 +296,7 @@
         "id": "Observation.component:calcificationDistribution.value[x]",
         "path": "Observation.component.value[x]",
         "short": "Calcification Distribution component value",
-        "definition": "<p>Value si a codeable concept.\n</p>",
+        "definition": "<p>Value is a codeable concept.\n</p>",
         "min": 1,
         "max": "1",
         "base": {

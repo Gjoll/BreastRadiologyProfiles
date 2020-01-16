@@ -39,7 +39,11 @@
     },
     {
       "url": "http://www.fragment.com/maplink",
-      "valueString": "target|False|http://hl7.org/fhir/us/breast-radiology/StructureDefinition/SectionFindings"
+      "valueString": "target|False|http://hl7.org/fhir/us/breast-radiology/StructureDefinition/SectionFindingsLeftBreast"
+    },
+    {
+      "url": "http://www.fragment.com/maplink",
+      "valueString": "target|False|http://hl7.org/fhir/us/breast-radiology/StructureDefinition/SectionFindingsRightBreast"
     },
     {
       "url": "http://www.fragment.com/mapname",
@@ -75,7 +79,7 @@
       ]
     }
   ],
-  "description": "<b>Breast Radiology Diagnostic Report</b>\n\n<p>This resource is the base resource of the Breast Diagnostic Report.\nAll components of this report are stored in or referenced by this fhir instance.\n</p><p>This resource is a profile of the Fhir DiagnosticReport base resource.\n</p><p>Items referenced by this resource include:\n</p><ul><li>references to prior breast radiology reports for this patient</li>\n<li>references to the observations of this report</li>\n<li>references to the recommendations of this report</li>\n<li>a summary of the report findings in a human readable format</li>\n</ul>",
+  "description": "<b>Breast Radiology Diagnostic Report</b>\n\n<p>This resource is the base resource of the Breast Diagnostic Report.\nAll components of this report are stored in or referenced by this fhir instance.\n</p><p>This resource is a profile of the Fhir DiagnosticReport base resource.\n</p><p>Items referenced by this resource include:\n</p><ul><li>Prior breast radiology reports for this patient</li>\n<li>Left breast findings</li>\n<li>Right breast findings</li>\n<li>Recommendations of this report</li>\n<li>Report findings in a human readable format</li>\n</ul>",
   "fhirVersion": "4.0.0",
   "kind": "resource",
   "abstract": false,
@@ -88,7 +92,7 @@
         "id": "DiagnosticReport",
         "path": "DiagnosticReport",
         "short": "Breast Radiology Diagnostic Report",
-        "definition": "<p>This resource is the base resource of the Breast Diagnostic Report.\nAll components of this report are stored in or referenced by this fhir instance.\n</p><p>This resource is a profile of the Fhir DiagnosticReport base resource.\n</p><p>Items referenced by this resource include:\n</p><ul><li>references to prior breast radiology reports for this patient</li>\n<li>references to the observations of this report</li>\n<li>references to the recommendations of this report</li>\n<li>a summary of the report findings in a human readable format</li>\n</ul>",
+        "definition": "<p>This resource is the base resource of the Breast Diagnostic Report.\nAll components of this report are stored in or referenced by this fhir instance.\n</p><p>This resource is a profile of the Fhir DiagnosticReport base resource.\n</p><p>Items referenced by this resource include:\n</p><ul><li>Prior breast radiology reports for this patient</li>\n<li>Left breast findings</li>\n<li>Right breast findings</li>\n<li>Recommendations of this report</li>\n<li>Report findings in a human readable format</li>\n</ul>",
         "comment": "This is intended to capture a single report and is not suitable for use in displaying summary information that covers multiple reports.  For example, this resource has not been designed for laboratory cumulative reporting formats nor detailed structured reports for sequencing.",
         "alias": [
           "Report",
@@ -413,6 +417,7 @@
             ]
           }
         ],
+        "mustSupport": true,
         "isModifier": false,
         "isSummary": false,
         "mapping": [
@@ -448,6 +453,7 @@
             ]
           }
         ],
+        "mustSupport": true,
         "isModifier": false,
         "isSummary": false,
         "mapping": [
@@ -1325,11 +1331,11 @@
         ]
       },
       {
-        "id": "DiagnosticReport.result:sectionFindings",
+        "id": "DiagnosticReport.result:sectionFindingsLeftBreast",
         "path": "DiagnosticReport.result",
-        "sliceName": "sectionFindings",
-        "short": "'Findings' reference",
-        "definition": "This slice references the target 'Findings'",
+        "sliceName": "sectionFindingsLeftBreast",
+        "short": "'Findings Left Breast' reference",
+        "definition": "This slice references the target 'Findings Left Breast'",
         "comment": "Observations can contain observations.",
         "requirements": "Need to support individual results, or  groups of results, where the result grouping is arbitrary, but meaningful.",
         "alias": [
@@ -1343,7 +1349,7 @@
           "Battery",
           "Organizer"
         ],
-        "min": 1,
+        "min": 0,
         "max": "1",
         "base": {
           "path": "DiagnosticReport.result",
@@ -1354,7 +1360,55 @@
           {
             "code": "Reference",
             "targetProfile": [
-              "http://hl7.org/fhir/us/breast-radiology/StructureDefinition/SectionFindings"
+              "http://hl7.org/fhir/us/breast-radiology/StructureDefinition/SectionFindingsLeftBreast"
+            ]
+          }
+        ],
+        "mustSupport": true,
+        "isModifier": false,
+        "isSummary": false,
+        "mapping": [
+          {
+            "identity": "v2",
+            "map": "OBXs"
+          },
+          {
+            "identity": "rim",
+            "map": "outboundRelationship[typeCode=COMP].target"
+          }
+        ]
+      },
+      {
+        "id": "DiagnosticReport.result:sectionFindingsRightBreast",
+        "path": "DiagnosticReport.result",
+        "sliceName": "sectionFindingsRightBreast",
+        "short": "'Findings Right Breast' reference",
+        "definition": "This slice references the target 'Findings Right Breast'",
+        "comment": "Observations can contain observations.",
+        "requirements": "Need to support individual results, or  groups of results, where the result grouping is arbitrary, but meaningful.",
+        "alias": [
+          "Data",
+          "Atomic Value",
+          "Result",
+          "Atomic result",
+          "Data",
+          "Test",
+          "Analyte",
+          "Battery",
+          "Organizer"
+        ],
+        "min": 0,
+        "max": "1",
+        "base": {
+          "path": "DiagnosticReport.result",
+          "min": 0,
+          "max": "*"
+        },
+        "type": [
+          {
+            "code": "Reference",
+            "targetProfile": [
+              "http://hl7.org/fhir/us/breast-radiology/StructureDefinition/SectionFindingsRightBreast"
             ]
           }
         ],
@@ -1650,18 +1704,13 @@
             "code": "CodeableConcept"
           }
         ],
+        "mustSupport": true,
         "isModifier": false,
         "isSummary": false,
         "binding": {
-          "extension": [
-            {
-              "url": "http://hl7.org/fhir/StructureDefinition/elementdefinition-bindingName",
-              "valueString": "AdjunctDiagnosis"
-            }
-          ],
-          "strength": "example",
+          "strength": "required",
           "description": "Diagnosis codes provided as adjuncts to the report.",
-          "valueSet": "http://hl7.org/fhir/ValueSet/clinical-findings"
+          "valueSet": "http://hl7.org/fhir/us/breast-radiology/ValueSet/BiRadsAssessmentCategoriesVS"
         },
         "mapping": [
           {
@@ -1714,7 +1763,7 @@
         "id": "DiagnosticReport",
         "path": "DiagnosticReport",
         "short": "Breast Radiology Diagnostic Report",
-        "definition": "<p>This resource is the base resource of the Breast Diagnostic Report.\nAll components of this report are stored in or referenced by this fhir instance.\n</p><p>This resource is a profile of the Fhir DiagnosticReport base resource.\n</p><p>Items referenced by this resource include:\n</p><ul><li>references to prior breast radiology reports for this patient</li>\n<li>references to the observations of this report</li>\n<li>references to the recommendations of this report</li>\n<li>a summary of the report findings in a human readable format</li>\n</ul>",
+        "definition": "<p>This resource is the base resource of the Breast Diagnostic Report.\nAll components of this report are stored in or referenced by this fhir instance.\n</p><p>This resource is a profile of the Fhir DiagnosticReport base resource.\n</p><p>Items referenced by this resource include:\n</p><ul><li>Prior breast radiology reports for this patient</li>\n<li>Left breast findings</li>\n<li>Right breast findings</li>\n<li>Recommendations of this report</li>\n<li>Report findings in a human readable format</li>\n</ul>",
         "base": {
           "path": "DiagnosticReport",
           "min": 0,
@@ -1766,6 +1815,7 @@
             ]
           }
         ],
+        "mustSupport": true,
         "isModifier": false,
         "isSummary": false,
         "mapping": [
@@ -1801,6 +1851,7 @@
             ]
           }
         ],
+        "mustSupport": true,
         "isModifier": false,
         "isSummary": false,
         "mapping": [
@@ -1928,11 +1979,11 @@
         }
       },
       {
-        "id": "DiagnosticReport.result:sectionFindings",
+        "id": "DiagnosticReport.result:sectionFindingsLeftBreast",
         "path": "DiagnosticReport.result",
-        "sliceName": "sectionFindings",
-        "short": "'Findings' reference",
-        "definition": "This slice references the target 'Findings'",
+        "sliceName": "sectionFindingsLeftBreast",
+        "short": "'Findings Left Breast' reference",
+        "definition": "This slice references the target 'Findings Left Breast'",
         "comment": "Observations can contain observations.",
         "requirements": "Need to support individual results, or  groups of results, where the result grouping is arbitrary, but meaningful.",
         "alias": [
@@ -1946,7 +1997,7 @@
           "Battery",
           "Organizer"
         ],
-        "min": 1,
+        "min": 0,
         "max": "1",
         "base": {
           "path": "DiagnosticReport.result",
@@ -1957,7 +2008,55 @@
           {
             "code": "Reference",
             "targetProfile": [
-              "http://hl7.org/fhir/us/breast-radiology/StructureDefinition/SectionFindings"
+              "http://hl7.org/fhir/us/breast-radiology/StructureDefinition/SectionFindingsLeftBreast"
+            ]
+          }
+        ],
+        "mustSupport": true,
+        "isModifier": false,
+        "isSummary": false,
+        "mapping": [
+          {
+            "identity": "v2",
+            "map": "OBXs"
+          },
+          {
+            "identity": "rim",
+            "map": "outboundRelationship[typeCode=COMP].target"
+          }
+        ]
+      },
+      {
+        "id": "DiagnosticReport.result:sectionFindingsRightBreast",
+        "path": "DiagnosticReport.result",
+        "sliceName": "sectionFindingsRightBreast",
+        "short": "'Findings Right Breast' reference",
+        "definition": "This slice references the target 'Findings Right Breast'",
+        "comment": "Observations can contain observations.",
+        "requirements": "Need to support individual results, or  groups of results, where the result grouping is arbitrary, but meaningful.",
+        "alias": [
+          "Data",
+          "Atomic Value",
+          "Result",
+          "Atomic result",
+          "Data",
+          "Test",
+          "Analyte",
+          "Battery",
+          "Organizer"
+        ],
+        "min": 0,
+        "max": "1",
+        "base": {
+          "path": "DiagnosticReport.result",
+          "min": 0,
+          "max": "*"
+        },
+        "type": [
+          {
+            "code": "Reference",
+            "targetProfile": [
+              "http://hl7.org/fhir/us/breast-radiology/StructureDefinition/SectionFindingsRightBreast"
             ]
           }
         ],
@@ -1995,6 +2094,12 @@
           "path": "DiagnosticReport.conclusionCode",
           "min": 0,
           "max": "*"
+        },
+        "mustSupport": true,
+        "binding": {
+          "strength": "required",
+          "description": "Diagnosis codes provided as adjuncts to the report.",
+          "valueSet": "http://hl7.org/fhir/us/breast-radiology/ValueSet/BiRadsAssessmentCategoriesVS"
         }
       }
     ]
