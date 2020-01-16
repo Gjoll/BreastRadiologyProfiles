@@ -19,7 +19,10 @@ namespace BreastRadiology.XUnitTests
                 SDefEditor e = Self.CreateFragment("AimHeaderFragment",
                     "Aim Header Fragment",
                     "Common/Header",
-                    ResourceUrl);
+                    ResourceUrl)
+                    .Description($"AIM Header fragment",
+                        new Markdown("Resource fragment used to by all AIM resources to define common values such as Contact and Date.")
+                     );
                 ContactDetail cd = new ContactDetail();
                 cd.Telecom.Add(new ContactPoint
                 {
@@ -30,7 +33,6 @@ namespace BreastRadiology.XUnitTests
                 s  = e.SDef;
 
                 e.IntroDoc
-                    .Intro($"Resource fragment used to by all resources to define common values such as Contact and Date.")
                     .ReviewedStatus(ReviewStatus.NotReviewed)
                     ;
 

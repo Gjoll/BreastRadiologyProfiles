@@ -23,7 +23,7 @@
   "name": "CorrespondsWithFragment",
   "title": "CorrespondsWith Fragment",
   "status": "draft",
-  "description": "<b>'Consistent With' Observation</b>\n\n<p>If this observation is present, and dataAbsentReason is empty, then a CorrespondsWith was observed.\n</p><p>If this observation is present, and dataAbsentReason is not empty, then a CorrespondsWith was not observed and dataAbsentReason contains the reason why.\n</p>",
+  "description": "<b>Observation 'Consistent With' Component Fragment</b>\n\n<p>If this observation is present, and dataAbsentReason is empty, then Adds component slice for 'ConsistentWith' value was observed.\n</p><p>If this observation is present, and dataAbsentReason is not empty, then Adds component slice for 'ConsistentWith' value was not observed and dataAbsentReason contains the reason why.\n</p>",
   "fhirVersion": "4.0.0",
   "kind": "resource",
   "abstract": true,
@@ -35,8 +35,8 @@
       {
         "id": "Observation",
         "path": "Observation",
-        "short": "'Consistent With' Observation",
-        "definition": "<p>If this observation is present, and dataAbsentReason is empty, then a CorrespondsWith was observed.\n</p><p>If this observation is present, and dataAbsentReason is not empty, then a CorrespondsWith was not observed and dataAbsentReason contains the reason why.\n</p>",
+        "short": "Observation 'Consistent With' Component Fragment",
+        "definition": "<p>If this observation is present, and dataAbsentReason is empty, then Adds component slice for 'ConsistentWith' value was observed.\n</p><p>If this observation is present, and dataAbsentReason is not empty, then Adds component slice for 'ConsistentWith' value was not observed and dataAbsentReason contains the reason why.\n</p>",
         "base": {
           "path": "Observation",
           "min": 0,

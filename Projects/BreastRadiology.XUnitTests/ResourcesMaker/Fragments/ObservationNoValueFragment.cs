@@ -16,7 +16,7 @@ namespace BreastRadiology.XUnitTests
                     "BreastRad Observation NoValue Fragment",
                         "NoValue/Observation/Fragment",
                     ObservationUrl)
-                    .Description("Fragment that constrains Observations to have no explicit value.",
+                    .Description("Observation No Value fragment",
                         new Markdown()
                             .Paragraph("Base fragment for all BreastRad observations that have no explicit value.")
                     )
@@ -26,7 +26,6 @@ namespace BreastRadiology.XUnitTests
                 s = e.SDef;
 
                 e.IntroDoc
-                    .Intro($"Resource fragment used by observations that constrain the value[x] element to cardinality 0..0.")
                     .ReviewedStatus(ReviewStatus.NotReviewed)
                     ;
 

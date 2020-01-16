@@ -243,7 +243,6 @@ namespace BreastRadiology.XUnitTests
                         IntroDoc valueSetIntroDoc = Self.CreateIntroDocVS(vs);
                         valueSetIntroDoc
                             .ReviewedStatus(ReviewStatus.NotReviewed)
-                            .Intro(vs.Description)
                         ;
                         String outputPath = valueSetIntroDoc.Save();
                         Self.fc?.Mark(outputPath);

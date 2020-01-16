@@ -13,9 +13,8 @@ namespace BreastRadiology.XUnitTests
                     "Shape Components Fragment",
                     "Shape Components Fragment",
                     ObservationUrl)
-                .Description("Shape Components Fragment",
+                .Description("Shape component slice fragment",
                     new Markdown()
-                        .Paragraph("Shape Common Components Fragment")
                         .Paragraph("Adds Orientation, Shape, Margin, and Density Components")
                 )
                 .AddFragRef(Self.BreastBodyLocationRequiredFragment.Value())

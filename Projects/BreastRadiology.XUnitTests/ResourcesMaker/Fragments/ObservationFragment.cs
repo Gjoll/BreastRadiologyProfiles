@@ -16,7 +16,7 @@ namespace BreastRadiology.XUnitTests
                     "BreastRad Observation Fragment",
                         "Observation/Fragment",
                     ObservationUrl)
-                    .Description("Base fragment for all BreastRad observations.",
+                    .Description("Observation base fragment",
                         new Markdown()
                             .Paragraph("Base fragment that performs common constrains used in all breast radiology observations.")
                     )
@@ -25,7 +25,6 @@ namespace BreastRadiology.XUnitTests
                 ;
                 s = e.SDef;
                 e.IntroDoc
-                    .Intro($"Resource fragment used by all Breast Radiology observations.")
                     .ReviewedStatus(ReviewStatus.NotReviewed)
                     ;
 

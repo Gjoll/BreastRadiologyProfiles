@@ -20,9 +20,9 @@ namespace BreastRadiology.XUnitTests
                         "Common Components Fragment",
                         "Common Components Fragment",
                         ObservationUrl)
-                    .Description("Common Components Fragment",
+                    .Description("Common Components fragment",
                         new Markdown()
-                            .Paragraph("Common Components Fragment. Adds ")
+                            .Paragraph("Adds commonly used component slice values, including:")
                             .List("Changes", "Size")
                     )
                     .AddFragRef(Self.BreastBodyLocationRequiredFragment.Value())

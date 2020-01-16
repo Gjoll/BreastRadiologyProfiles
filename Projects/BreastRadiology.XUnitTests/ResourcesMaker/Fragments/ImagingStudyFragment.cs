@@ -16,15 +16,14 @@ namespace BreastRadiology.XUnitTests
                         "Imaging Study Fragment",
                         "ImagingStudy",
                         ObservationUrl)
-                    .Description("Adds references to imaging studies.",
+                    .Description("Imaging studies fragment",
                         new Markdown()
-                            .Paragraph("Fragment that adds derivedFrom references to imaging studies, including AIM annotated imaaging study.")
+                            .Paragraph("Fragment that adds derivedFrom references to imaging studies, including AIM annotated imaging study.")
                      )
                     ;
                 s = e.SDef;
 
                 e.IntroDoc
-                    .Intro($"Imaging Study Fragment")
                     .ReviewedStatus(ReviewStatus.NotReviewed)
                     ;
 

@@ -16,16 +16,15 @@ namespace BreastRadiology.XUnitTests
                         "CodedValue Observation Fragment",
                         "Observation/CodedValue/Fragment",
                         ObservationUrl)
-                    .Description("Fragment that defines values for coded observations",
+                    .Description("Coded Value Observation Fragment",
                         new Markdown()
-                            .Paragraph("This fragment constrains an observation to only contain coded values.")
+                            .Paragraph("Resource fragment used to by all observations whose value are a CodeableConcept.")
                     )
                     .AddFragRef(Self.ObservationNoComponentFragment.Value())
                     ;
                 s = e.SDef;
 
                 e.IntroDoc
-                    .Intro($"Resource fragment used to by all observations whose value are a CodeableConcept.")
                     .ReviewedStatus(ReviewStatus.NotReviewed)
                     ;
 

@@ -45,30 +45,6 @@ namespace BreastRadiology.XUnitTests
             codeEditor.Load(fullPath);
         }
 
-        public IntroDoc Intro(Markdown markDown)
-        {
-            CodeBlockNested b = this.codeEditor.Blocks.Find("intro");
-            if (b == null)
-                throw new Exception($"intro block missing");
-
-            b.AppendRaw(markDown.ToString());
-
-            return this;
-        }
-
-        public IntroDoc Intro(params String[] lines)
-        {
-            CodeBlockNested b = this.codeEditor.Blocks.Find("intro");
-            if (b == null)
-                throw new Exception($"intro block missing");
-
-            foreach (String line in lines)
-                b.AppendRaw($"<p>{line}</p>");
-
-            return this;
-        }
-
-
         public IntroDoc ReviewedStatus(ReviewStatus reviewStatus)
         {
             CodeBlockNested b = this.codeEditor.Blocks.Find("reviewStatus");

@@ -16,7 +16,7 @@ namespace BreastRadiology.XUnitTests
                     "BreastRad Observation NoDevice Fragment",
                         "NoDevice/Observation/Fragment",
                     ObservationUrl)
-                    .Description("Fragment that constrains Observations to have not device data.",
+                    .Description("Observations No Device Data fragment.",
                         new Markdown()
                             .Paragraph("Fragment for all observations that have no device.")
                     )
@@ -25,7 +25,6 @@ namespace BreastRadiology.XUnitTests
                 s = e.SDef;
 
                 e.IntroDoc
-                    .Intro($"Fragment for all observations that have no device.")
                     .ReviewedStatus(ReviewStatus.NotReviewed)
                     ;
 

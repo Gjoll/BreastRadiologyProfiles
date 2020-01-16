@@ -16,9 +16,13 @@ namespace BreastRadiology.XUnitTests
                     "BreastRad Observation No Component Fragment",
                     "Observation/No Component/Fragment",
                     ObservationUrl)
-                    .Description("Zero's Component.",
+                    .Description("Observation No Component fragment",
                         new Markdown()
                             .Paragraph("Zero's Observation.component.")
+                    )
+                    .Description("Observation NoComponent Fragment.",
+                        new Markdown()
+                            .Paragraph("Resource fragment used by all BreastRad observations that do not have components.")
                     )
                     .AddFragRef(Self.ObservationFragment.Value())
                 ;
@@ -27,7 +31,6 @@ namespace BreastRadiology.XUnitTests
                 e.Select("component").Zero();
 
                 e.IntroDoc
-                    .Intro($"Resource fragment used by all BreastRad observations that do not have components.")
                     .ReviewedStatus(ReviewStatus.NotReviewed)
                     ;
             });

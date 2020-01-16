@@ -21,9 +21,9 @@ namespace BreastRadiology.XUnitTests
                                "CorrespondsWith Fragment",
                                "CorrespondsWith Fragment",
                                ObservationUrl)
-                           .Description("'Consistent With' Observation",
+                           .Description("Observation 'Consistent With' Component Fragment",
                                new Markdown()
-                                   .MissingObservation("a CorrespondsWith")
+                                   .MissingObservation("Adds component slice for 'ConsistentWith' value")
                            )
                            ;
                        s = e.SDef;

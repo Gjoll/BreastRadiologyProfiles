@@ -22,7 +22,7 @@
   "name": "BodyDistanceFromExtension",
   "title": "Body Distance From Extension",
   "status": "draft",
-  "description": "<b>Body Distance From extension</b>\n\n<p>this extension defines the fields that are used to describe thedistance of an observed item from a body landmark\n</p>",
+  "description": "<b>Body Distance From extension</b>\n\n<p>This complex extension adds fields that form a distance measurement from a specified body landmark.\nThe body landmark is defined by a codeable concept\nThe distance is defined by a quantity of metric distance units (cm, mm, etc).\n</p>",
   "fhirVersion": "4.0.0",
   "kind": "complex-type",
   "abstract": false,
@@ -51,7 +51,7 @@
         ],
         "path": "Extension",
         "short": "Body Distance From extension",
-        "definition": "<p>this extension defines the fields that are used to describe thedistance of an observed item from a body landmark\n</p>",
+        "definition": "<p>This complex extension adds fields that form a distance measurement from a specified body landmark.\nThe body landmark is defined by a codeable concept\nThe distance is defined by a quantity of metric distance units (cm, mm, etc).\n</p>",
         "base": {
           "path": "Extension",
           "min": 0,

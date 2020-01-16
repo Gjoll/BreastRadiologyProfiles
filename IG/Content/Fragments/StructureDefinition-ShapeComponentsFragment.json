@@ -43,7 +43,7 @@
   "name": "ShapeComponentsFragment",
   "title": "Shape Components Fragment",
   "status": "draft",
-  "description": "<b>Shape Components Fragment</b>\n\n<p>Shape Common Components Fragment\n</p><p>Adds Orientation, Shape, Margin, and Density Components\n</p>",
+  "description": "<b>Shape component slice fragment</b>\n\n<p>Adds Orientation, Shape, Margin, and Density Components\n</p>",
   "fhirVersion": "4.0.0",
   "kind": "resource",
   "abstract": true,
@@ -55,8 +55,8 @@
       {
         "id": "Observation",
         "path": "Observation",
-        "short": "Shape Components Fragment",
-        "definition": "<p>Shape Common Components Fragment\n</p><p>Adds Orientation, Shape, Margin, and Density Components\n</p>",
+        "short": "Shape component slice fragment",
+        "definition": "<p>Adds Orientation, Shape, Margin, and Density Components\n</p>",
         "base": {
           "path": "Observation",
           "min": 0,

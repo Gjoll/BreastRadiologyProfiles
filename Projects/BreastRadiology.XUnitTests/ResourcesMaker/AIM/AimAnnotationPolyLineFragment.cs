@@ -16,7 +16,7 @@ namespace BreastRadiology.XUnitTests
                         "Aim Annotation PolyLine Fragment",
                         "Annotation/PolyLine/Fragment",
                         ObservationUrl)
-                    .Description("Fragment definition to include AIM Annotation extension",
+                    .Description("AIM Annotation PolyLine fragment",
                         new Markdown()
                         .Paragraph("This fragment adds the references for the AIM Annotation PolyLine extension.")
                      )
@@ -24,7 +24,6 @@ namespace BreastRadiology.XUnitTests
                 ;
 
                 e.IntroDoc
-                    .Intro($"Resource fragment that includes the Annotation PolyGonLine extension.")
                     .ReviewedStatus(ReviewStatus.NotReviewed)
                     ;
                 s = e.SDef;

@@ -31,10 +31,26 @@
       ]
     }
   ],
+  "description": "<b>Common Header Fragment</b>\n\nResource fragment used to by all resources to define common values such as Contact and Date.",
   "fhirVersion": "4.0.0",
   "kind": "resource",
   "abstract": true,
   "type": "Resource",
   "baseDefinition": "http://hl7.org/fhir/StructureDefinition/Resource",
-  "derivation": "constraint"
+  "derivation": "constraint",
+  "differential": {
+    "element": [
+      {
+        "id": "Resource",
+        "path": "Resource",
+        "short": "Common Header Fragment",
+        "definition": "Resource fragment used to by all resources to define common values such as Contact and Date.",
+        "base": {
+          "path": "Resource",
+          "min": 0,
+          "max": "*"
+        }
+      }
+    ]
+  }
 }

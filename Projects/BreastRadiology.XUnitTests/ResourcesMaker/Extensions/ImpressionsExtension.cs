@@ -25,7 +25,8 @@ namespace BreastRadiology.XUnitTests
                     "Extension")
                     .Description("Impressions extension",
                         new Markdown()
-                            .Paragraph("This extension defines the impressions section of a breast radiology report.")
+                            .Paragraph("This extension defines the impressions section of a breast radiology report.",
+                                        "It adds references to a series of clinical impressions.")
                     )
                     .Kind(StructureDefinition.StructureDefinitionKind.ComplexType)
                     .Context()
@@ -35,9 +36,6 @@ namespace BreastRadiology.XUnitTests
 
                 e.IntroDoc
                     .ReviewedStatus(ReviewStatus.NotReviewed)
-                    .Intro(
-                        "This extension adds fields to link a Breast Radiology Document to a series of clinical impressions."
-                        )
                     ;
 
                 e.Select("extension").Zero();

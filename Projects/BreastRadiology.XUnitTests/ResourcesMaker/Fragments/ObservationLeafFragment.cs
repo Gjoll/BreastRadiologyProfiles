@@ -16,7 +16,7 @@ namespace BreastRadiology.XUnitTests
                     "Observation Leaf Fragment",
                         "Observation/Leaf/Fragment",
                     ObservationUrl)
-                    .Description("Fragment that constrains all observations that are leaf nodes.",
+                    .Description("Observation Leaf Node Fragment",
                         new Markdown()
                             .Paragraph("Fragment that constrains observations leaf nodes (no hasMembers references).")
                     )
@@ -25,7 +25,6 @@ namespace BreastRadiology.XUnitTests
                 s = e.SDef;
 
                 e.IntroDoc
-                    .Intro($"Resource fragment used by resources that are leaf node observations.")
                     .ReviewedStatus(ReviewStatus.NotReviewed)
                     ;
 

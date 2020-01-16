@@ -16,7 +16,7 @@ namespace BreastRadiology.XUnitTests
                         "Observation Section Fragment",
                         "Section/Fragment",
                         ObservationUrl)
-                    .Description("Fragment that constrains Observations to be sections.",
+                    .Description("Observation section fragment",
                         new Markdown()
                             .Paragraph("this fragment constrains a generic observation to be a observation section.")
                      )
@@ -26,7 +26,6 @@ namespace BreastRadiology.XUnitTests
                 s = e.SDef;
 
                 e.IntroDoc
-                    .Intro($"Resource fragment used by observations that are used as report sections.")
                     .ReviewedStatus(ReviewStatus.NotReviewed)
                     ;
 

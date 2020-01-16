@@ -17,7 +17,7 @@
       ]
     }
   ],
-  "description": "<b>Impressions extension</b>\n\n<p>This extension defines the impressions section of a breast radiology report.\n</p>",
+  "description": "<b>Impressions extension</b>\n\n<p>This extension defines the impressions section of a breast radiology report.\nIt adds references to a series of clinical impressions.\n</p>",
   "fhirVersion": "4.0.0",
   "kind": "complex-type",
   "abstract": false,
@@ -46,7 +46,7 @@
         ],
         "path": "Extension",
         "short": "Impressions extension",
-        "definition": "<p>This extension defines the impressions section of a breast radiology report.\n</p>",
+        "definition": "<p>This extension defines the impressions section of a breast radiology report.\nIt adds references to a series of clinical impressions.\n</p>",
         "min": 0,
         "max": "*",
         "base": {
@@ -234,7 +234,7 @@
         ],
         "path": "Extension",
         "short": "Impressions extension",
-        "definition": "<p>This extension defines the impressions section of a breast radiology report.\n</p>",
+        "definition": "<p>This extension defines the impressions section of a breast radiology report.\nIt adds references to a series of clinical impressions.\n</p>",
         "base": {
           "path": "Extension",
           "min": 0,

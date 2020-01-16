@@ -35,7 +35,6 @@ namespace BreastRadiology.XUnitTests
                 s = e.SDef;
                 e.IntroDoc
                     .ReviewedStatus(ReviewStatus.NotReviewed)
-                    .Intro("#Add Content")
                     ;
 
                 e.AddFragRef(Self.AimHeaderFragment.Value());

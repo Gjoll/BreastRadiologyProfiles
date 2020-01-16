@@ -31,7 +31,7 @@
   "name": "CodedValueObservationFragment",
   "title": "CodedValue Observation Fragment",
   "status": "draft",
-  "description": "<b>Fragment that defines values for coded observations</b>\n\n<p>This fragment constrains an observation to only contain coded values.\n</p>",
+  "description": "<b>Coded Value Observation Fragment</b>\n\n<p>Resource fragment used to by all observations whose value are a CodeableConcept.\n</p>",
   "fhirVersion": "4.0.0",
   "kind": "resource",
   "abstract": true,
@@ -43,8 +43,8 @@
       {
         "id": "Observation",
         "path": "Observation",
-        "short": "Fragment that defines values for coded observations",
-        "definition": "<p>This fragment constrains an observation to only contain coded values.\n</p>",
+        "short": "Coded Value Observation Fragment",
+        "definition": "<p>Resource fragment used to by all observations whose value are a CodeableConcept.\n</p>",
         "base": {
           "path": "Observation",
           "min": 0,

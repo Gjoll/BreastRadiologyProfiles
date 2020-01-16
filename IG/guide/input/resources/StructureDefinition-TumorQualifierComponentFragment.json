@@ -5,7 +5,7 @@
   "name": "TumorQualifierComponentFragment",
   "title": "Tumor Qualifier Component Fragment",
   "status": "draft",
-  "description": "<b>Tumor Qualifier Component Fragment</b>\n\n<p>Tumor Qualifier Component Fragment\n</p><p>Adds Tumor Qualifier Component\n</p>",
+  "description": "<b>Tumor Qualifier component slice fragment</b>\n\n<p>Adds Tumor Qualifier Component\n</p>",
   "fhirVersion": "4.0.0",
   "kind": "resource",
   "abstract": true,
@@ -17,8 +17,8 @@
       {
         "id": "Observation",
         "path": "Observation",
-        "short": "Tumor Qualifier Component Fragment",
-        "definition": "<p>Tumor Qualifier Component Fragment\n</p><p>Adds Tumor Qualifier Component\n</p>",
+        "short": "Tumor Qualifier component slice fragment",
+        "definition": "<p>Adds Tumor Qualifier Component\n</p>",
         "comment": "Used for simple observations such as device measurements, laboratory atomic results, vital signs, height, weight, smoking status, comments, etc.  Other resources are used to provide context for observations such as laboratory reports, etc.",
         "alias": [
           "Vital Signs",
@@ -2525,8 +2525,8 @@
       {
         "id": "Observation",
         "path": "Observation",
-        "short": "Tumor Qualifier Component Fragment",
-        "definition": "<p>Tumor Qualifier Component Fragment\n</p><p>Adds Tumor Qualifier Component\n</p>",
+        "short": "Tumor Qualifier component slice fragment",
+        "definition": "<p>Adds Tumor Qualifier Component\n</p>",
         "base": {
           "path": "Observation",
           "min": 0,

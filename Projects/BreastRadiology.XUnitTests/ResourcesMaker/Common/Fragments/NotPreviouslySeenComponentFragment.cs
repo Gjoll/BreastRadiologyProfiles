@@ -13,10 +13,9 @@ namespace BreastRadiology.XUnitTests
                     "Not Previously Seen Component Fragment",
                     "Not Previously Seen Component Fragment",
                     ObservationUrl)
-                .Description("Not Previously SeenComponent Fragment",
+                .Description("Not Previously Seen component slice fragment",
                     new Markdown()
-                        .Paragraph("Not Previously Seen Component Fragment")
-                        .Paragraph("Adds NotPreviously Seen Component")
+                        .Paragraph("Adds NotPreviously Seen Component slice")
                 )
                 .AddFragRef(Self.BreastBodyLocationRequiredFragment.Value())
                 ;

@@ -5,7 +5,7 @@
   "name": "NotPreviouslySeenComponentFragment",
   "title": "Not Previously Seen Component Fragment",
   "status": "draft",
-  "description": "<b>Not Previously SeenComponent Fragment</b>\n\n<p>Not Previously Seen Component Fragment\n</p><p>Adds NotPreviously Seen Component\n</p>",
+  "description": "<b>Not Previously Seen component slice fragment</b>\n\n<p>Adds NotPreviously Seen Component slice\n</p>",
   "fhirVersion": "4.0.0",
   "kind": "resource",
   "abstract": true,
@@ -17,8 +17,8 @@
       {
         "id": "Observation",
         "path": "Observation",
-        "short": "Not Previously SeenComponent Fragment",
-        "definition": "<p>Not Previously Seen Component Fragment\n</p><p>Adds NotPreviously Seen Component\n</p>",
+        "short": "Not Previously Seen component slice fragment",
+        "definition": "<p>Adds NotPreviously Seen Component slice\n</p>",
         "comment": "Used for simple observations such as device measurements, laboratory atomic results, vital signs, height, weight, smoking status, comments, etc.  Other resources are used to provide context for observations such as laboratory reports, etc.",
         "alias": [
           "Vital Signs",
@@ -2525,8 +2525,8 @@
       {
         "id": "Observation",
         "path": "Observation",
-        "short": "Not Previously SeenComponent Fragment",
-        "definition": "<p>Not Previously Seen Component Fragment\n</p><p>Adds NotPreviously Seen Component\n</p>",
+        "short": "Not Previously Seen component slice fragment",
+        "definition": "<p>Adds NotPreviously Seen Component slice\n</p>",
         "base": {
           "path": "Observation",
           "min": 0,

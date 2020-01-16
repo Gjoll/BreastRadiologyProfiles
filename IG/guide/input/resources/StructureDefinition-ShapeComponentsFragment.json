@@ -5,7 +5,7 @@
   "name": "ShapeComponentsFragment",
   "title": "Shape Components Fragment",
   "status": "draft",
-  "description": "<b>Shape Components Fragment</b>\n\n<p>Shape Common Components Fragment\n</p><p>Adds Orientation, Shape, Margin, and Density Components\n</p>",
+  "description": "<b>Shape component slice fragment</b>\n\n<p>Adds Orientation, Shape, Margin, and Density Components\n</p>",
   "fhirVersion": "4.0.0",
   "kind": "resource",
   "abstract": true,
@@ -17,8 +17,8 @@
       {
         "id": "Observation",
         "path": "Observation",
-        "short": "Shape Components Fragment",
-        "definition": "<p>Shape Common Components Fragment\n</p><p>Adds Orientation, Shape, Margin, and Density Components\n</p>",
+        "short": "Shape component slice fragment",
+        "definition": "<p>Adds Orientation, Shape, Margin, and Density Components\n</p>",
         "comment": "Used for simple observations such as device measurements, laboratory atomic results, vital signs, height, weight, smoking status, comments, etc.  Other resources are used to provide context for observations such as laboratory reports, etc.",
         "alias": [
           "Vital Signs",
@@ -3629,8 +3629,8 @@
       {
         "id": "Observation",
         "path": "Observation",
-        "short": "Shape Components Fragment",
-        "definition": "<p>Shape Common Components Fragment\n</p><p>Adds Orientation, Shape, Margin, and Density Components\n</p>",
+        "short": "Shape component slice fragment",
+        "definition": "<p>Adds Orientation, Shape, Margin, and Density Components\n</p>",
         "base": {
           "path": "Observation",
           "min": 0,

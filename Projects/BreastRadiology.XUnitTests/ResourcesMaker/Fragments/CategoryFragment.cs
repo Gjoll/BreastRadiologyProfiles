@@ -16,14 +16,13 @@ namespace BreastRadiology.XUnitTests
                         "Category Fragment",
                         "Category/Fragment",
                         ObservationUrl)
-                    .Description("Fragment definition to define Observation.category",
+                    .Description("Fix Observation.category Fragment",
                         new Markdown()
-                            .Paragraph("This fragment slices Observation.category and adds the required observation code value.")
+                            .Paragraph("This fragment slices Observation.category and fixes the observation.code value to 'imaging'.")
                     );
                 s = e.SDef;
 
                 e.IntroDoc
-                   .Intro($"Resource fragment used to by observations to fix the Observation.category field to the 'imaging' fixed value.")
                    .ReviewedStatus(ReviewStatus.NotReviewed)
                    ;
 

@@ -361,7 +361,6 @@ namespace BreastRadiology.XUnitTests
                         IntroDoc valueSetIntroDoc = Self.CreateIntroDocVS(binding);
                         valueSetIntroDoc
                             .ReviewedStatus(ReviewStatus.NotReviewed)
-                            .Intro(binding.Description)
                         ;
                         String outputPath = valueSetIntroDoc.Save();
                         Self.fc?.Mark(outputPath);
@@ -380,7 +379,6 @@ namespace BreastRadiology.XUnitTests
                         IntroDoc valueSetIntroDoc = Self.CreateIntroDocVS(binding);
                         valueSetIntroDoc
                             .ReviewedStatus(ReviewStatus.NotReviewed)
-                            .Intro(binding.Description)
                         ;
                         String outputPath = valueSetIntroDoc.Save();
                         Self.fc?.Mark(outputPath);
@@ -400,7 +398,6 @@ namespace BreastRadiology.XUnitTests
                         IntroDoc valueSetIntroDoc = Self.CreateIntroDocVS(binding);
                         valueSetIntroDoc
                             .ReviewedStatus(ReviewStatus.NotReviewed)
-                            .Intro(binding.Description)
                         ;
                         String outputPath = valueSetIntroDoc.Save();
                         Self.fc?.Mark(outputPath);
@@ -418,7 +415,6 @@ namespace BreastRadiology.XUnitTests
                         IntroDoc valueSetIntroDoc = Self.CreateIntroDocVS(binding);
                         valueSetIntroDoc
                             .ReviewedStatus(ReviewStatus.NotReviewed)
-                            .Intro(binding.Description)
                         ;
                         String outputPath = valueSetIntroDoc.Save();
                         Self.fc?.Mark(outputPath);
@@ -437,9 +433,6 @@ namespace BreastRadiology.XUnitTests
 
                 e.IntroDoc
                     .ReviewedStatus(ReviewStatus.NotReviewed)
-                    .Intro(
-                        "This complex extension adds fields that specify a location for use in a  breast radiology exam."
-                        )
                     ;
             });
     }
