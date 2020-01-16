@@ -80,14 +80,16 @@ namespace BreastRadiology.XUnitTests
                     Self.fc?.Mark(outputPath);
                 }
 
-                SDefEditor e = Self.CreateEditorObservationLeaf("AbnormalityCyst",
+                SDefEditor e = Self.CreateEditor("AbnormalityCyst",
                         "Cyst",
                         "Cyst",
-                        $"{Group_CommonResources}/AbnormalityCyst")
-                    .Description("Cyst Observation",
+                        ObservationUrl,
+                        $"{Group_CommonResources}/AbnormalityCyst",
+                        "ObservationLeaf")
+                   .AddFragRef(Self.ObservationLeafFragment.Value())
+                   .Description("Cyst Observation",
                         new Markdown()
                             .Paragraph("[PR]")
-                            .MissingObservation("a cyst")
                     )
                     .AddFragRef(Self.ObservationNoDeviceFragment.Value())
                     .AddFragRef(Self.ObservationNoValueFragment.Value())

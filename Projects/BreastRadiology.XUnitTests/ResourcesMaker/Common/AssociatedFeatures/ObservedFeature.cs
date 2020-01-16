@@ -217,10 +217,13 @@ namespace BreastRadiology.XUnitTests
             {
                 ValueSet binding = Self.ObservedFeatureVS.Value();
 
-                SDefEditor e = Self.CreateEditorObservationLeaf("ObservedFeature",
+                SDefEditor e = Self.CreateEditor("ObservedFeature",
                     "Observed Feature",
                     "Observed Feature",
-                    $"{Group_CommonResources}/AssociatedFeature/ObservedFeature")
+                    ObservationUrl,
+                    $"{Group_CommonResources}/AssociatedFeature/ObservedFeature",
+                        "ObservationLeaf")
+                    .AddFragRef(Self.ObservationLeafFragment.Value())
                     .Description("Observed Feature Observation",
                         new Markdown()
                             .Paragraph("The feature observed is defined by the codeable concept in the value[x] field.")

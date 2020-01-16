@@ -105,13 +105,15 @@ namespace BreastRadiology.XUnitTests
                     Self.fc?.Mark(outputPath);
                 }
 
-                SDefEditor e = Self.CreateEditorObservationLeaf("MGAbnormalityAsymmetry",
+                SDefEditor e = Self.CreateEditor("MGAbnormalityAsymmetry",
                         "Mammography Asymmetry",
                         "MG Asymmetry",
-                        $"{Group_MGResources}/AbnormalityAsymmetry")
+                        ObservationUrl,
+                        $"{Group_MGResources}/AbnormalityAsymmetry",
+                        "ObservationLeaf")
+                    .AddFragRef(Self.ObservationLeafFragment.Value())
                     .Description("Asymmetry Observation",
                         new Markdown()
-                            .MissingObservation("an asymmetry")
                             .BiradHeader()
                             .BlockQuote("The several types of asymmetry involve a spectrum of mammographic findings that represent")
                             .BlockQuote("unilateral deposits of fibroglandular tissue not conforming to the definition of a radiodense mass.")

@@ -108,10 +108,13 @@ namespace BreastRadiology.XUnitTests
                     Self.fc?.Mark(outputPath);
                 }
 
-                SDefEditor e = Self.CreateEditorObservationLeaf("MGBreastDensity",
+                SDefEditor e = Self.CreateEditor("MGBreastDensity",
                         "Mammography Breast Density",
                         "MG Breast Density",
-                        $"{Group_MGResources}/BreastDensity")
+                        ObservationUrl,
+                        $"{Group_MGResources}/BreastDensity",
+                        "ObservationLeaf")
+                    .AddFragRef(Self.ObservationLeafFragment.Value())
                     .Description("Breast Density Observation",
                         new Markdown()
                             .BiradHeader()

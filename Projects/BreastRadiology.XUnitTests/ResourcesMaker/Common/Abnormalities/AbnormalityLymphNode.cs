@@ -88,17 +88,19 @@ namespace BreastRadiology.XUnitTests
 
 
         SDTaskVar AbnormalityLymphNode = new SDTaskVar(
-            (out StructureDefinition  s) =>
+            (out StructureDefinition s) =>
             {
                 ValueSet binding = Self.AbnormalityLymphNodeVS.Value();
 
-                SDefEditor e = Self.CreateEditorObservationLeaf("AbnormalityLymphNode",
+                SDefEditor e = Self.CreateEditor("AbnormalityLymphNode",
                     "LymphNode",
                     "Lymph Node",
-                    $"{Group_CommonResources}/AbnormalityLymphNode")
+                    ObservationUrl,
+                    $"{Group_CommonResources}/AbnormalityLymphNode",
+                        "ObservationLeaf")
+                    .AddFragRef(Self.ObservationLeafFragment.Value())
                     .Description("LymphNode Observation",
                         new Markdown()
-                            .MissingObservation("a lymph node abnormality")
                     )
                     .AddFragRef(Self.ObservationNoDeviceFragment.Value())
                     .AddFragRef(Self.ObservationNoValueFragment.Value())

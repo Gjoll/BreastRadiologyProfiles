@@ -282,13 +282,15 @@ namespace BreastRadiology.XUnitTests
         SDTaskVar MGAbnormalityCalcification = new SDTaskVar(
             (out StructureDefinition  s) =>
             {
-                SDefEditor e = Self.CreateEditorObservationLeaf("MGAbnormalityCalcification",
+                SDefEditor e = Self.CreateEditor("MGAbnormalityCalcification",
                         "Mammography Calcification",
                         "MG Calc.",
-                        $"{Group_MGResources}/CalcificationAbnormality")
+                        ObservationUrl,
+                        $"{Group_MGResources}/CalcificationAbnormality",
+                        "ObservationLeaf")
+                    .AddFragRef(Self.ObservationLeafFragment.Value())
                     .Description("Calcification Observation",
                         new Markdown()
-                            .MissingObservation("a calcification")
                             .BiradHeader()
                             .BlockQuote("Calcifications that are assessed as benign at mammography are typically larger, coarser, round with")
                             .BlockQuote("smooth margins, and more easily seen than malignant calcifications. Calcifications associated with")

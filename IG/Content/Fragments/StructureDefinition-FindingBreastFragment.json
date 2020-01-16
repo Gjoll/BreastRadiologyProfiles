@@ -51,7 +51,7 @@
   "name": "FindingBreastFragment",
   "title": "Finding Breast Fragment",
   "status": "draft",
-  "description": "<b>Fragment definition for finding section of left or right breast</b>\n\nThis fragment defines the elements of a finding section of a left or right breast.",
+  "description": "<b>Fragment definition for finding section of left or right breast</b>\n\nThis fragment defines the elements of a finding section of a left or right breast.<br/>",
   "fhirVersion": "4.0.0",
   "kind": "resource",
   "abstract": true,
@@ -64,7 +64,7 @@
         "id": "Observation",
         "path": "Observation",
         "short": "Fragment definition for finding section of left or right breast",
-        "definition": "This fragment defines the elements of a finding section of a left or right breast.",
+        "definition": "This fragment defines the elements of a finding section of a left or right breast.<br/>",
         "base": {
           "path": "Observation",
           "min": 0,

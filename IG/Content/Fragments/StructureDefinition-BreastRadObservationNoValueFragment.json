@@ -35,7 +35,7 @@
   "name": "BreastRadObservationNoValueFragment",
   "title": "BreastRad Observation NoValue Fragment",
   "status": "draft",
-  "description": "<b>Observation No Value fragment</b>\n\nBase fragment for all BreastRad observations that have no explicit value.",
+  "description": "<b>Observation No Value fragment</b>\n\nBase fragment for all BreastRad observations that have no explicit value.<br/>",
   "fhirVersion": "4.0.0",
   "kind": "resource",
   "abstract": true,
@@ -48,7 +48,7 @@
         "id": "Observation",
         "path": "Observation",
         "short": "Observation No Value fragment",
-        "definition": "Base fragment for all BreastRad observations that have no explicit value.",
+        "definition": "Base fragment for all BreastRad observations that have no explicit value.<br/>",
         "base": {
           "path": "Observation",
           "min": 0,
@@ -62,6 +62,17 @@
         "max": "0",
         "base": {
           "path": "Observation.value[x]",
+          "min": 0,
+          "max": "1"
+        }
+      },
+      {
+        "id": "Observation.dataAbsentReason",
+        "path": "Observation.dataAbsentReason",
+        "min": 0,
+        "max": "0",
+        "base": {
+          "path": "Observation.dataAbsentReason",
           "min": 0,
           "max": "1"
         }

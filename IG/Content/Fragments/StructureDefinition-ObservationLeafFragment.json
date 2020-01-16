@@ -27,7 +27,7 @@
   "name": "ObservationLeafFragment",
   "title": "Observation Leaf Fragment",
   "status": "draft",
-  "description": "<b>Observation Leaf Node Fragment</b>\n\nFragment that constrains observations leaf nodes (no hasMembers references).",
+  "description": "<b>Observation Leaf Node Fragment</b>\n\nFragment that constrains observations leaf nodes (no hasMembers references).<br/>",
   "fhirVersion": "4.0.0",
   "kind": "resource",
   "abstract": true,
@@ -40,7 +40,7 @@
         "id": "Observation",
         "path": "Observation",
         "short": "Observation Leaf Node Fragment",
-        "definition": "Fragment that constrains observations leaf nodes (no hasMembers references).",
+        "definition": "Fragment that constrains observations leaf nodes (no hasMembers references).<br/>",
         "base": {
           "path": "Observation",
           "min": 0,

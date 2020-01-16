@@ -51,16 +51,6 @@ namespace BreastRadiology.XUnitTests
             return md;
         }
 
-        public static Markdown MissingObservation(this Markdown md, String articleAndName, String term = ".")
-        {
-            md
-                .Paragraph($"If this observation is present, and dataAbsentReason is empty, then {articleAndName} was observed.")
-                .Paragraph($"If this observation is present, and dataAbsentReason is not empty, then {articleAndName} " +
-                           $"was not observed and dataAbsentReason contains the reason why{term}")
-            ;
-            return md;
-        }
-
         public static Markdown ValidModalities(this Markdown md,
             Modalities modalities)
         {

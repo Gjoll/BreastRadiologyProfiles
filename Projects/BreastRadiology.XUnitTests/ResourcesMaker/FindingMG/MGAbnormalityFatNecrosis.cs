@@ -16,14 +16,16 @@ namespace BreastRadiology.XUnitTests
         SDTaskVar MGAbnormalityFatNecrosis = new SDTaskVar(
             (out StructureDefinition s) =>
             {
-                SDefEditor e = Self.CreateEditorObservationLeaf("MGAbnormalityFatNecrosis",
+                SDefEditor e = Self.CreateEditor("MGAbnormalityFatNecrosis",
                         "Mammography Fat Necrosis",
                         "MG Fat Necrosis",
-                        $"{Group_MGResources}/AbnormalityFatNecrosis")
+                        ObservationUrl,
+                        $"{Group_MGResources}/AbnormalityFatNecrosis",
+                        "ObservationLeaf")
+                    .AddFragRef(Self.ObservationLeafFragment.Value())
                     .Description("Fat Necrosis Observation",
                         new Markdown()
                             .Paragraph("[PR]")
-                            .MissingObservation("a fat necrosis abnormality")
                     )
                     .AddFragRef(Self.ObservationNoDeviceFragment.Value())
                     .AddFragRef(Self.ObservationNoValueFragment.Value())

@@ -17,13 +17,15 @@ namespace BreastRadiology.XUnitTests
         SDTaskVar ConsistentWith = new SDTaskVar(
                (out StructureDefinition  s) =>
                    {
-                       SDefEditor e = Self.CreateEditorObservationLeaf("ConsistentWith",
+                       SDefEditor e = Self.CreateEditor("ConsistentWith",
                         "Consistent With",
                         "Consistent/With",
-                        $"{Group_CommonResources}/ConsistentWith")
+                        ObservationUrl,
+                        $"{Group_CommonResources}/ConsistentWith",
+                        "ObservationLeaf")
+                           .AddFragRef(Self.ObservationLeafFragment.Value())
                            .Description("'Consistent With' Observation",
                                new Markdown()
-                                   .MissingObservation("a consistentWith")
                            )
                            .AddFragRef(Self.ObservationNoDeviceFragment.Value())
                            .AddFragRef(Self.ObservationNoValueFragment.Value())

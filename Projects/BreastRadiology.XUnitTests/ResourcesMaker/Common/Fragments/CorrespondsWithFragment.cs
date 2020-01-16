@@ -23,7 +23,6 @@ namespace BreastRadiology.XUnitTests
                                ObservationUrl)
                            .Description("Observation 'Consistent With' Component Fragment",
                                new Markdown()
-                                   .MissingObservation("Adds component slice for 'ConsistentWith' value")
                            )
                            ;
                        s = e.SDef;

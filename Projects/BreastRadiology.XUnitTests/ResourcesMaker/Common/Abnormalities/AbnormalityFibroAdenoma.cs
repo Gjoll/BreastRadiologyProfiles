@@ -53,14 +53,16 @@ namespace BreastRadiology.XUnitTests
             {
                 ValueSet binding = Self.FibroadenomaVS.Value();
 
-                SDefEditor e = Self.CreateEditorObservationLeaf("AbnormalityFibroadenoma",
+                SDefEditor e = Self.CreateEditor("AbnormalityFibroadenoma",
                         "Fibroadenoma",
                         "Fibroadenoma",
-                        $"{Group_CommonResources}/AbnormalityFibroadenoma")
+                        ObservationUrl,
+                        $"{Group_CommonResources}/AbnormalityFibroadenoma",
+                        "ObservationLeaf")
+                    .AddFragRef(Self.ObservationLeafFragment.Value())
                     .Description("Fibroadenoma Observation",
                         new Markdown()
                             .Paragraph("[PR]")
-                            .MissingObservation("a fibroadenoma abnormality")
                             .ValidModalities(Modalities.MG | Modalities.US)
                     )
                     .AddFragRef(Self.ObservationNoDeviceFragment.Value())

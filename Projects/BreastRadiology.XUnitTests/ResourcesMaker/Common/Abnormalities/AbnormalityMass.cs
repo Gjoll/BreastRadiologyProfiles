@@ -68,13 +68,15 @@ namespace BreastRadiology.XUnitTests
             {
                 ValueSet binding = Self.MassTypeValueSetVS.Value();
 
-                SDefEditor e = Self.CreateEditorObservationLeaf("Mass",
+                SDefEditor e = Self.CreateEditor("Mass",
                         "Mass",
                         "Mass",
-                        $"{Group_CommonResources}/MassAbnormality")
+                        ObservationUrl,
+                        $"{Group_CommonResources}/MassAbnormality",
+                        "ObservationLeaf")
+                    .AddFragRef(Self.ObservationLeafFragment.Value())
                     .Description("Mass Observation",
                         new Markdown()
-                            .MissingObservation("a mass abnormality")
                             .BiradHeader()
                             .BlockQuote("\"MASS\" is three dimensional and occupies space. It is seen on two different mammographic pro-")
                             .BlockQuote("jections. It has completely or partially convex-outward borders and (when radiodense) appears")

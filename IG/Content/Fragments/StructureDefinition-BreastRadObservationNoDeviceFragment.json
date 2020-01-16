@@ -27,7 +27,7 @@
   "name": "BreastRadObservationNoDeviceFragment",
   "title": "BreastRad Observation NoDevice Fragment",
   "status": "draft",
-  "description": "<b>Observations No Device Data fragment.</b>\n\nFragment for all observations that have no device.",
+  "description": "<b>Observations No Device Data fragment.</b>\n\nFragment for all observations that have no device.<br/>",
   "fhirVersion": "4.0.0",
   "kind": "resource",
   "abstract": true,
@@ -40,7 +40,7 @@
         "id": "Observation",
         "path": "Observation",
         "short": "Observations No Device Data fragment.",
-        "definition": "Fragment for all observations that have no device.",
+        "definition": "Fragment for all observations that have no device.<br/>",
         "base": {
           "path": "Observation",
           "min": 0,

@@ -17,13 +17,15 @@ namespace BreastRadiology.XUnitTests
         SDTaskVar MGAbnormalityArchitecturalDistortion = new SDTaskVar(
             (out StructureDefinition  s) =>
             {
-                SDefEditor e = Self.CreateEditorObservationLeaf("MGAbnormalityArchitecturalDistortion",
+                SDefEditor e = Self.CreateEditor("MGAbnormalityArchitecturalDistortion",
                         "Mammography Architectural Distortion",
                         "MG Arch. Distortion",
-                        $"{Group_MGResources}/AbnormalityArchitecturalDistortion")
+                        ObservationUrl,
+                        $"{Group_MGResources}/AbnormalityArchitecturalDistortion",
+                        "ObservationLeaf")
+                    .AddFragRef(Self.ObservationLeafFragment.Value())
                     .Description("Architectural Distortion Observation",
                         new Markdown()
-                            .MissingObservation("an architectural distortion abnormality")
                             .BiradHeader()
                             .BlockQuote("The parenchyma is distorted with no definite mass visible. For mammography, this includes thin")
                             .BlockQuote("straight lines or spiculations radiating from a point, and focal retraction, distortion or straightening")

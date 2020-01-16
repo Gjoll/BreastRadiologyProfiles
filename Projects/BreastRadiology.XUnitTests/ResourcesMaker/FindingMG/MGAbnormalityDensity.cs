@@ -57,13 +57,15 @@ namespace BreastRadiology.XUnitTests
             {
                 ValueSet binding = Self.MGAbnormalityDensityTypeVS.Value();
 
-                SDefEditor e = Self.CreateEditorObservationLeaf("MGAbnormalityDensity",
+                SDefEditor e = Self.CreateEditor("MGAbnormalityDensity",
                         "Mammography Density",
                         "MG Density",
-                        $"{Group_MGResources}/AbnormalityDensity")
+                        ObservationUrl,
+                        $"{Group_MGResources}/AbnormalityDensity",
+                        "ObservationLeaf")
+                    .AddFragRef(Self.ObservationLeafFragment.Value())
                     .Description("Breat Radiology Mammography Density Observation",
                         new Markdown()
-                            .MissingObservation("a Density abnormality")
                     )
                     .AddFragRef(Self.ObservationNoDeviceFragment.Value())
                     .AddFragRef(Self.ObservationNoValueFragment.Value())

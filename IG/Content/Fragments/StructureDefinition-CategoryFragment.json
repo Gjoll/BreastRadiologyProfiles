@@ -19,7 +19,7 @@
   "name": "CategoryFragment",
   "title": "Category Fragment",
   "status": "draft",
-  "description": "<b>Fix Observation.category Fragment</b>\n\nThis fragment slices Observation.category and fixes the observation.code value to 'imaging'.",
+  "description": "<b>Fix Observation.category Fragment</b>\n\nThis fragment slices Observation.category and fixes the observation.code value to 'imaging'.<br/>",
   "fhirVersion": "4.0.0",
   "kind": "resource",
   "abstract": true,
@@ -32,7 +32,7 @@
         "id": "Observation",
         "path": "Observation",
         "short": "Fix Observation.category Fragment",
-        "definition": "This fragment slices Observation.category and fixes the observation.code value to 'imaging'.",
+        "definition": "This fragment slices Observation.category and fixes the observation.code value to 'imaging'.<br/>",
         "base": {
           "path": "Observation",
           "min": 0,

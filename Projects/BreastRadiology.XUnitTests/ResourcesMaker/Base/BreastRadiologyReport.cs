@@ -26,7 +26,7 @@ namespace BreastRadiology.XUnitTests
                      .Description("Breast Radiology Diagnostic Report",
                          new Markdown()
                              .Paragraph("This resource is the base resource of the Breast Diagnostic Report.",
-                             "All components of this report are stored in or referenced by this fhir instance.")
+                                         "All components of this report are stored in or referenced by this fhir instance.")
                              .Paragraph("This resource is a profile of the Fhir DiagnosticReport base resource.")
                              .Paragraph("Items referenced by this resource include:")
                              .List("Prior breast radiology reports for this patient",

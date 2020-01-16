@@ -64,13 +64,15 @@ namespace BreastRadiology.XUnitTests
             (out StructureDefinition  s) =>
             {
                 ValueSet binding = Self.AbnormalityDuctVS.Value();
-                SDefEditor e = Self.CreateEditorObservationLeaf("AbnormalityDuct",
+                SDefEditor e = Self.CreateEditor("AbnormalityDuct",
                         "Duct",
                         "Duct",
-                        $"{Group_CommonResources}/AbnormalityDuct")
+                        ObservationUrl,
+                        $"{Group_CommonResources}/AbnormalityDuct",
+                        "ObservationLeaf")
+                    .AddFragRef(Self.ObservationLeafFragment.Value())
                     .Description("Breat Radiology Duct Observation",
                         new Markdown()
-                            .MissingObservation("a duct abnormality")
                     )
                     .AddFragRef(Self.ObservationNoDeviceFragment.Value())
                     .AddFragRef(Self.ObservationNoValueFragment.Value())
