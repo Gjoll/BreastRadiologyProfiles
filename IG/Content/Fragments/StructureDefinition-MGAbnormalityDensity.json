@@ -90,7 +90,7 @@
   "name": "MGAbnormalityDensity",
   "title": "Mammography Density",
   "status": "draft",
-  "description": "<b>Breat Radiology Mammography Density Observation</b>",
+  "description": "<b>Mammography Density Observation</b>",
   "fhirVersion": "4.0.0",
   "kind": "resource",
   "abstract": false,
@@ -102,7 +102,7 @@
       {
         "id": "Observation",
         "path": "Observation",
-        "short": "Breat Radiology Mammography Density Observation",
+        "short": "Mammography Density Observation",
         "base": {
           "path": "Observation",
           "min": 0,

@@ -89,22 +89,4 @@
     {
       "code": "Amorphous",
       "display": "Amorphous Calcification (Suspicious Morphology)",
-      "definition": "(historically, \"indistinct\")\r\nThese are sufficiently small and/or hazy in appearance that a more specific particle shape\r\ncannot be determined. Amorphous calcifications in a grouped, linear, or segmental distribution\r\nare suspicious and generally warrant biopsy. Bilateral, diffuse amorphous calcifications\r\nusually may be dismissed as benign, although baseline magnification views may be helpful.\r\nThe positive predictive value (PPV) of amorphous calcifications is reported to be\r\napproximately 20%. Therefore, calcifications of this morphology appropriately\r\nshould be placed into BI-RADS® assessment category 4B (PPV range > 10% to ? 50%).\r\n    -- Bi-Rads® Atlas — Mammography Fifth Ed. 2013"
-    },
-    {
-      "code": "CoarseHeterogeneous",
-      "display": "Coarse Heterogeneous Calcification (Suspicious Morphology)",
-      "definition": "These are irregular, conspicuous calcifications that are generally between 0.5 mm and 1 mm\r\nand tend to coalesce, but are smaller than dystrophic calcifications. They may be associated\r\nwith malignancy but more frequently are present in a fibroadenoma or in areas of fibrosis or\r\ntrauma representing evolving dystrophic calcifications. Numerous bilateral groups of coarse\r\nheterogeneous calcifications usually may be dismissed as benign, although baseline magnification\r\nviews may be helpful. However, a single group of coarse heterogeneous calcifications has a positive\r\npredictive value of slightly less than 15%, and therefore this finding should be\r\nplaced in BI-RADS® assessment category 4B (PPV range > 10% to ? 50%).\r\n    -- Bi-Rads® Atlas — Mammography Fifth Ed. 2013"
-    },
-    {
-      "code": "Fine Pleomorphic",
-      "display": "Fine Pleomorphic Calcification (Suspicious Morphology)",
-      "definition": "These calcifications are usually more conspicuous than amorphous forms and are seen to have\r\ndiscrete shapes. These irregular calcifications are distinguished from fine linear and fine-linear\r\nbranching forms by the absence of fine-linear particles. Fine pleomorphic calcifications vary in\r\nsize and shape and are usually smaller than 0.5 mm in diameter. They have a somewhat higher\r\nPPV for malignancy (29%) than amorphous or coarse heterogeneous calcifications,\r\nbut also should be placed in BI-RADS® assessment category 4B (PPV range > 10% to ? 50%).\r\n    -- Bi-Rads® Atlas — Mammography Fifth Ed. 2013"
-    },
-    {
-      "code": "FineLinear",
-      "display": "Fine Linear or Fine-Linear Branching Calcification (Suspicious Morphology)",
-      "definition": "These are thin, linear, irregular calcifications, which may be discontinuous and which are\r\nsmaller than 0.5 mm in caliber. Occasionally, branching forms may be seen. Their\r\nappearance suggests filling of the lumen of a duct or ducts involved irregularly by\r\nbreast cancer. Among the suspicious calcifications, fine linear and fine-linear\r\nbranching calcifications have the highest PPV (70%). Therefore, these calcifications\r\nshould be placed in BI-RADS® assessment category 4C (PPV range > 50% to < 95%).\r\n    -- Bi-Rads® Atlas — Mammography Fifth Ed. 2013"
-    }
-  ]
-}
+      "definition": "(historically, \"indistinct\")\r\nThese are sufficiently small and/or hazy in appearance that a more specific particle shape\r\ncannot be determined. Amorphous calcifications in a grouped, linear, or segmental distribution\r\nare suspicious and generally warrant biopsy. Bilateral, diffuse amorphous calcifications\r\nusually may be dismissed as benign, although baseline magnification views may be helpful.\r\nThe positive predictive value (PPV) of amorphous calcifications is reported to be\r\napproximately 20%. Therefore, calcifications of this morphology appropriately\r\nshould be placed into BI-RADS® assessment category 4B (PPV range > 10% to ? 50%).

@@ -23,7 +23,7 @@ namespace BreastRadiology.XUnitTests
                         ObservationUrl,
                         $"{Group_MGResources}",
                         "ObservationSection")
-                    .Description("Breast Radiology Mammography Finding",
+                    .Description("Mammography Finding",
                         new Markdown()
                              .Paragraph("This resource is the Section Head for all Mammography findings.")
                              .Paragraph("All mammography observation findings are referenced by this resoruces Observation.hasMember field")

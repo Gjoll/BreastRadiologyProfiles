@@ -64,7 +64,7 @@ namespace BreastRadiology.XUnitTests
                         $"{Group_MGResources}/AbnormalityDensity",
                         "ObservationLeaf")
                     .AddFragRef(Self.ObservationLeafFragment.Value())
-                    .Description("Breat Radiology Mammography Density Observation",
+                    .Description("Mammography Density Observation",
                         new Markdown()
                     )
                     .AddFragRef(Self.ObservationNoDeviceFragment.Value())

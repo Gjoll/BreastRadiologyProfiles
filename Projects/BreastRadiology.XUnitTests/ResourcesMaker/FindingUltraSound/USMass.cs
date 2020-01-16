@@ -23,7 +23,6 @@ namespace BreastRadiology.XUnitTests
         //                $"{Group_USResources}/Finding/Mass")
         //            .Description("Ultra-Sound Mass Observation",
         //                new Markdown()
-        //                    .MissingObservation("a mass", "and no Shape, Orientation, Margin, Echo Pattern, or Posterior Acoustic Feature observations should be referenced by this observation")
         //                    .BiradHeader()
         //                    .BlockQuote("A mass is three dimensional and occupies space. With 2-D ultrasound, it should be seen in two")
         //                    .BlockQuote("different planes, and in three planes with volumetric acquisitions. Masses can be distinguished")

@@ -22,7 +22,7 @@ namespace BreastRadiology.XUnitTests
                         ObservationUrl,
                         $"{Group_NMResources}",
                         "ObservationSection")
-                    .Description("Breast Radiology NMgraphy Finding",
+                    .Description("NM Finding",
                         new Markdown()
                         )
                         .AddFragRef(Self.ObservationSectionFragment.Value())

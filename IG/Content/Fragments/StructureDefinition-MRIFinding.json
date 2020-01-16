@@ -22,7 +22,7 @@
   "name": "MRIFinding",
   "title": "MRI Finding",
   "status": "draft",
-  "description": "<b>Breast Radiology MRI Finding</b>",
+  "description": "<b>MRI Finding</b>",
   "fhirVersion": "4.0.0",
   "kind": "resource",
   "abstract": false,
@@ -34,7 +34,7 @@
       {
         "id": "Observation",
         "path": "Observation",
-        "short": "Breast Radiology MRI Finding",
+        "short": "MRI Finding",
         "base": {
           "path": "Observation",
           "min": 0,

@@ -23,7 +23,7 @@ namespace BreastRadiology.XUnitTests
                         ObservationUrl,
                         $"{Group_USResources}",
                         "ObservationSection")
-                        .Description("Breast Radiology Ultra Sound Finding",
+                        .Description("Ultra Sound Finding",
                             new Markdown()
                         )
                      .AddFragRef(Self.ObservationSectionFragment.Value())

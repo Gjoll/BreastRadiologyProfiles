@@ -21,10 +21,9 @@ namespace BreastRadiology.XUnitTests
         //                "US Cyst",
         //                ObservationUrl,
         //                $"{Group_USResources}/Cyst")
-        //            .Description("Breast Radiology UltraSound Cyst Observation",
+        //            .Description("UltraSound Cyst Observation",
         //                new Markdown()
         //                    .Paragraph("[PR]")
-        //                    .MissingObservation("a cyst")
         //            )
         //            .AddFragRef(Self.ObservationNoDeviceFragment.Value())
         //            .AddFragRef(Self.ObservationNoValueFragment.Value())

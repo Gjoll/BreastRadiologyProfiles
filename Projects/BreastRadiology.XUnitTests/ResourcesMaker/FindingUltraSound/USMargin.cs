@@ -54,7 +54,6 @@ namespace BreastRadiology.XUnitTests
         //                $"{Group_USResources}/Margin")
         //            .Description("Ultra-Sound Margin Observation",
         //                new Markdown()
-        //                    .MissingObservation("a mass margin")
         //                    .BiradHeader()
         //                    .BlockQuote("The margin is the edge or border of the lesion. The descriptors of margin, like the descriptors of shape, are important predictors of whether a mass is benign or malignant. ")
         //                    .BiradFooter()

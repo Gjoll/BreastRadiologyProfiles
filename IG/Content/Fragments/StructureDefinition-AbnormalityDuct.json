@@ -86,7 +86,7 @@
   "name": "AbnormalityDuct",
   "title": "Duct",
   "status": "draft",
-  "description": "<b>Breat Radiology Duct Observation</b>",
+  "description": "<b>Duct Observation</b>",
   "fhirVersion": "4.0.0",
   "kind": "resource",
   "abstract": false,
@@ -98,7 +98,7 @@
       {
         "id": "Observation",
         "path": "Observation",
-        "short": "Breat Radiology Duct Observation",
+        "short": "Duct Observation",
         "base": {
           "path": "Observation",
           "min": 0,

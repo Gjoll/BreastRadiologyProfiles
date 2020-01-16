@@ -70,7 +70,6 @@ namespace BreastRadiology.XUnitTests
         //                $"{Group_CommonResources}/Hilum")
         //            .Description("Hilum Observation",
         //                new Markdown()
-        //                    .MissingObservation("a hilum")
         //                        "Definition(s) needed"
         //                    )
         //            )

@@ -71,7 +71,7 @@ namespace BreastRadiology.XUnitTests
                         $"{Group_CommonResources}/AbnormalityDuct",
                         "ObservationLeaf")
                     .AddFragRef(Self.ObservationLeafFragment.Value())
-                    .Description("Breat Radiology Duct Observation",
+                    .Description("Duct Observation",
                         new Markdown()
                     )
                     .AddFragRef(Self.ObservationNoDeviceFragment.Value())

@@ -23,7 +23,7 @@ namespace BreastRadiology.XUnitTests
                         ObservationUrl,
                         $"{Group_MRIResources}",
                         "ObservationSection")
-                    .Description("Breast Radiology MRI Finding",
+                    .Description("MRI Finding",
                         new Markdown()
                     )
                     .AddFragRef(Self.ObservationSectionFragment.Value())

@@ -93,8 +93,6 @@ namespace BreastRadiology.XUnitTests
                     )
                     .AddFragRef(Self.ObservationNoDeviceFragment.Value())
                     .AddFragRef(Self.ObservationNoValueFragment.Value())
-                    .AddFragRef(Self.ImagingStudyFragment.Value())
-
                     .AddFragRef(Self.TumorQualifierComponentsFragment.Value())
                     .AddFragRef(Self.CommonComponentsFragment.Value())
                     .AddFragRef(Self.ShapeComponentsFragment.Value())

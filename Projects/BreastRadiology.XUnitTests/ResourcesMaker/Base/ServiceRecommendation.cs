@@ -26,7 +26,7 @@ namespace BreastRadiology.XUnitTests
                      .Description("Service Recommendation",
                          new Markdown()
                             .Paragraph("This resource is a profile of ServiceRequest. It's ServiceRequest.code is bound to a value set of common",
-                                        "Breast Radiology Exam recommendations. It is not meant to be a comprehensive list, just a common list.")
+                                        "breast radiology recommendations. It is not meant to be a comprehensive list, just a common list.")
                             .Paragraph("The Breast Radiology Report contains references to zero or more recommendations, which may include ServiceRecommendation instances",
                                         "but is not limited to only ServiceRecommendation instances.")
                      )

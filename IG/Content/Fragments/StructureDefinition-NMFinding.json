@@ -22,7 +22,7 @@
   "name": "NMFinding",
   "title": "NM Finding",
   "status": "draft",
-  "description": "<b>Breast Radiology NMgraphy Finding</b>",
+  "description": "<b>NM Finding</b>",
   "fhirVersion": "4.0.0",
   "kind": "resource",
   "abstract": false,
@@ -34,7 +34,7 @@
       {
         "id": "Observation",
         "path": "Observation",
-        "short": "Breast Radiology NMgraphy Finding",
+        "short": "NM Finding",
         "base": {
           "path": "Observation",
           "min": 0,

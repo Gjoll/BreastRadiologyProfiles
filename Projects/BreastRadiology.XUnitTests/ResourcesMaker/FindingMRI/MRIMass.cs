@@ -23,7 +23,6 @@ namespace BreastRadiology.XUnitTests
         //                $"{Group_MRIResources}/Mass")
         //            .Description("MRI Mass Observation",
         //                new Markdown()
-        //                    .MissingObservation("a mass", "and no Shape, Margin, or Density observations should be referenced by this observation")
         //                    .BiradHeader()
         //                    .BlockQuote("\"MASS\" is three dimensional and occupies space. It is seen on two different pro-")
         //                    .BlockQuote("jections. It has completely or partially convex-outward borders and (when radiodense) appears")

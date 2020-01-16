@@ -91,9 +91,8 @@ namespace BreastRadiology.XUnitTests
         //            "MRI/Margin",
         //            ObservationUrl,
         //            $"{Group_MRIResources}/Margin")
-        //            .Description("Breast Radiology MRI Margin Observation",
+        //            .Description("MRI Margin Observation",
         //                new Markdown()
-        //                    .MissingObservation("a margin")
         //                    .BiradHeader()
         //                    .BlockQuote("The margin is the edge or border of the lesion. The descriptors of margin, like the descriptors of shape, are important predictors of whether a mass is benign or malignant. ")
         //                    .BiradFooter()
