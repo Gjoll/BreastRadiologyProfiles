@@ -109,7 +109,7 @@ namespace BreastRadiology.XUnitTests
 
                     .AddFragRef(Self.TumorQualifierComponentsFragment.Value())
                     .AddFragRef(Self.NotPreviouslySeenComponentsFragment.Value())
-                    .AddFragRef(Self.CorrespondsWith.Value())
+                    .AddFragRef(Self.CorrespondsWithFragment.Value())
                     ;
 
                 s = e.SDef;

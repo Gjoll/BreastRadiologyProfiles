@@ -56,37 +56,109 @@ namespace BreastRadiology.XUnitTests
                         Group_CommonCodesCS,
                         new ConceptDef[]
                         {
-                            new ConceptDef(Self.CodeAbnormalityCystType, "Slicing Component Code - AbnormalityCystType"),
-                            new ConceptDef(Self.CodeAbnormalityDuctType, "Slicing Component Code - CodeAbnormalityDuctType"),
-                            new ConceptDef(Self.CodeAbnormalityFibroAdenomaType, "Slicing Component Code - CodeAbnormalityFibroAdenomaType"),
-                            new ConceptDef(Self.CodeAbnormalityForeignObjectType, "Slicing Component Code - CodeAbnormalityForeignObjectType"),
-                            new ConceptDef(Self.CodeAbnormalityLymphNodeType, "Slicing Component Code - CodeAbnormalityLymphNodeType"),
-                            new ConceptDef(Self.CodeAbnormalityMassType, "Slicing Component Code - CodeAbnormalityMassType"),
+                            new ConceptDef(Self.CodeAbnormalityCystType,
+                                new Definition()
+                                    .Line("Slicing Component Code - AbnormalityCystType")
+                                ),
+                            new ConceptDef(Self.CodeAbnormalityDuctType,
+                                new Definition()
+                                    .Line("Slicing Component Code - CodeAbnormalityDuctType")
+                                ),
+                            new ConceptDef(Self.CodeAbnormalityFibroAdenomaType,
+                                new Definition()
+                                    .Line("Slicing Component Code - CodeAbnormalityFibroAdenomaType")
+                                ),
+                            new ConceptDef(Self.CodeAbnormalityForeignObjectType,
+                                new Definition()
+                                    .Line("Slicing Component Code - CodeAbnormalityForeignObjectType")
+                                ),
+                            new ConceptDef(Self.CodeAbnormalityLymphNodeType,
+                                new Definition()
+                                    .Line("Slicing Component Code - CodeAbnormalityLymphNodeType")
+                                ),
+                            new ConceptDef(Self.CodeAbnormalityMassType,
+                                new Definition()
+                                    .Line("Slicing Component Code - CodeAbnormalityMassType")
+                                ),
 
-                            new ConceptDef(Self.CodeBiRads, "Slicing Component Code - BiRads"),
-                            new ConceptDef(Self.CodeConsistentWithValue, "Slicing Component Code - ConsistentWithValue"),
-                            new ConceptDef(Self.CodeConsistentWithQualifier, "Slicing Component Code - ConsistentWithQualifier"),
-                            new ConceptDef(Self.CodeCorrespondsWith, "Slicing Component Code - CorrespondsWith"),
+                            new ConceptDef(Self.CodeBiRads,
+                                new Definition()
+                                    .Line("Slicing Component Code - BiRads")
+                                ),
+                            new ConceptDef(Self.CodeConsistentWithValue,
+                                new Definition()
+                                    .Line("Slicing Component Code - ConsistentWithValue")
+                                ),
+                            new ConceptDef(Self.CodeConsistentWithQualifier,
+                                new Definition()
+                                    .Line("Slicing Component Code - ConsistentWithQualifier")
+                                ),
+                            new ConceptDef(Self.CodeCorrespondsWith,
+                                new Definition()
+                                    .Line("Slicing Component Code - CorrespondsWith")
+                                ),
 
-                            new ConceptDef(Self.CodeMargin, "Slicing Component Code - Margin"),
-                            new ConceptDef(Self.CodeMGDensity, "Slicing Component Code - MGDensity"),
-                            new ConceptDef(Self.CodeNotPreviouslySeen, "Slicing Component Code - Not Previously Seen"),
-                            new ConceptDef(Self.CodeObservedChanges, "Slicing Component Code - Observed Changes"),
-                            new ConceptDef(Self.CodeObservedSize, "Slicing Component Code - ObservedSize"),
-                            new ConceptDef(Self.CodeObservedCount, "Slicing Component Code - ObservedCount"),
-                            new ConceptDef(Self.CodeObservedFeatureType, "Slicing Component Code - ObservedFeatureType"),
+                            new ConceptDef(Self.CodeMargin,
+                                new Definition()
+                                    .Line("Slicing Component Code - Margin")
+                                ),
+                            new ConceptDef(Self.CodeMGDensity,
+                                new Definition()
+                                    .Line("Slicing Component Code - MGDensity")
+                                ),
+                            new ConceptDef(Self.CodeNotPreviouslySeen,
+                                new Definition()
+                                    .Line("Slicing Component Code - Not Previously Seen")
+                                ),
+                            new ConceptDef(Self.CodeObservedChanges,
+                                new Definition()
+                                    .Line("Slicing Component Code - Observed Changes")
+                                ),
+                            new ConceptDef(Self.CodeObservedSize,
+                                new Definition()
+                                    .Line("Slicing Component Code - ObservedSize")
+                                ),
+                            new ConceptDef(Self.CodeObservedCount,
+                                new Definition()
+                                    .Line("Slicing Component Code - ObservedCount")
+                                ),
+                            new ConceptDef(Self.CodeObservedFeatureType,
+                                new Definition()
+                                    .Line("Slicing Component Code - ObservedFeatureType")
+                                ),
 
-                            new ConceptDef(Self.CodeOrientation, "Slicing Component Code - Orientation"),
-                            new ConceptDef(Self.CodeShape, "Slicing Component Code - Shape"),
+                            new ConceptDef(Self.CodeOrientation,
+                                new Definition()
+                                    .Line("Slicing Component Code - Orientation")
+                                ),
+                            new ConceptDef(Self.CodeShape,
+                                new Definition()
+                                    .Line("Slicing Component Code - Shape")
+                                ),
 
-                            new ConceptDef(Self.CodeTumorQualifier, "Slicing Component Code - TumorQualifier"),
+                            new ConceptDef(Self.CodeTumorQualifier,
+                                new Definition()
+                                    .Line("Slicing Component Code - TumorQualifier")
+                                ),
 
 
-                            new ConceptDef(Self.MGCodeAbnormalityAsymmetryType, "Slicing Component Code - MGCodeAbnormalityAsymmetryType"),
-                            new ConceptDef(Self.MGCodeAbnormalityDensityType, "Slicing Component Code - MGCodeAbnormalityDensityType"),
+                            new ConceptDef(Self.MGCodeAbnormalityAsymmetryType,
+                                new Definition()
+                                    .Line("Slicing Component Code - MGCodeAbnormalityAsymmetryType")
+                                ),
+                            new ConceptDef(Self.MGCodeAbnormalityDensityType,
+                                new Definition()
+                                    .Line("Slicing Component Code - MGCodeAbnormalityDensityType")
+                                ),
 
-                            new ConceptDef(Self.MGCodeCalcificationType, "Slicing Component Code - MGCalcificationType"),
-                            new ConceptDef(Self.MGCodeCalcificationDistribution, "Slicing Component Code - MGCalcificationDistribution"),
+                            new ConceptDef(Self.MGCodeCalcificationType,
+                                new Definition()
+                                    .Line("Slicing Component Code - MGCalcificationType")
+                                ),
+                            new ConceptDef(Self.MGCodeCalcificationDistribution,
+                                new Definition()
+                                    .Line("Slicing Component Code - MGCalcificationDistribution")
+                                ),
                        })
              );
     }

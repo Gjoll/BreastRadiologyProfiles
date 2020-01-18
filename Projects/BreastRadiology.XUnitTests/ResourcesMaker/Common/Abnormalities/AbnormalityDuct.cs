@@ -79,7 +79,7 @@ namespace BreastRadiology.XUnitTests
                     .AddFragRef(Self.CommonComponentsFragment.Value())
                     .AddFragRef(Self.ShapeComponentsFragment.Value())
                     .AddFragRef(Self.NotPreviouslySeenComponentsFragment.Value())
-                    .AddFragRef(Self.CorrespondsWith.Value())
+                    .AddFragRef(Self.CorrespondsWithFragment.Value())
                     ;
 
                 s = e.SDef;
@@ -98,7 +98,7 @@ namespace BreastRadiology.XUnitTests
                     BindingStrength.Required,
                     0,
                     "1",
-                    "AbnormalityDuct Type",
+                    "Duct Type",
                     new Markdown()
                         .Paragraph($"This slice contains the optional component that refines the duct type.",
                                     $"The value of this component is a codeable concept chosen from the {binding.Name} valueset.")

@@ -500,30 +500,6 @@ namespace BreastRadiology.XUnitTests
             this.AddComponentLink($"{componentName}^Quantity");
         }
 
-        [Obsolete]
-        public void ComponentSliceCodeableConcept(String sliceName,
-            CodeableConcept pattern,
-            ValueSet valueSet,
-            BindingStrength bindingStrength,
-            Int32 minCardinality,
-            String maxCardinality,
-            String componentName,
-            Modalities modalities = Modalities.All)
-        {
-            String compStr = maxCardinality == "1" ? compStr = "component" : "components";
-            String valueStr = maxCardinality == "1" ? compStr = "value" : "values";
-
-            ComponentSliceCodeableConcept(sliceName, 
-                pattern, 
-                valueSet, 
-                bindingStrength, 
-                minCardinality, 
-                maxCardinality, 
-                componentName,
-                new Markdown($"This component slice contains the {componentName} {valueStr}"),
-                modalities);
-        }
-
         public void ComponentSliceCodeableConcept(String sliceName,
                 CodeableConcept pattern,
                 ValueSet valueSet,

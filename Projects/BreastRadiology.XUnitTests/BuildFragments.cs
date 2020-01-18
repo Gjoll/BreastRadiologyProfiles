@@ -196,13 +196,16 @@ namespace BreastRadiology.XUnitTests
                     AppIfNotNull("UMLS", row[16]);
 
                     concepts
-                        .AppendLine($"new ConceptDef(\"{CodeValue(code)}\",")
-                                    .AppendLine($"    \"{code}\",")
-                                    .AppendLine($"    new Definition()")
-                                    .AppendLine($"        .Line(\"[PR] {code}\")")
-                                    .AppendLine($"        .ValidModalities({validWith})")
-                                    .AppendLine($"    ){term}")
-                                    ;
+                        .AppendLine($"//+ {code}")
+                        .AppendLine($"new ConceptDef()")
+                        .AppendLine($"    .SetCode(\"{CodeValue(code)}\")")
+                        .AppendLine($"    .SetDisplay(\"{code}\")")
+                        .AppendLine($"    .SetDefinition(new Definition()")
+                        .AppendLine($"        .Line(\"[PR] {code}\")")
+                        .AppendLine($"        .ValidModalities({validWith})")
+                        .AppendLine($"    )){term}")
+                        .AppendLine($"//- {code}")
+                        ;
                 }
             }
 

@@ -14,7 +14,7 @@ namespace BreastRadiology.XUnitTests
 {
     partial class ResourcesMaker
     {
-        SDTaskVar CorrespondsWith = new SDTaskVar(
+        SDTaskVar CorrespondsWithFragment = new SDTaskVar(
                (out StructureDefinition s) =>
                    {
                        SDefEditor e = Self.CreateFragment("CorrespondsWithFragment",
@@ -34,7 +34,7 @@ namespace BreastRadiology.XUnitTests
                            BindingStrength.Extensible,
                            0,
                            "*",
-                           "correspondsWith",
+                           "Corresponds With",
                             new Markdown()
                                 .Paragraph($"This slice contains zero or more components that defines what this observation correspomnds with.",
                                             $"The value of this component is a codeable concept chosen from the {Self.CorrespondsWithVS.Value().Name} valueset.")

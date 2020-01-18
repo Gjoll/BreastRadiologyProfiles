@@ -268,7 +268,7 @@ namespace BreastRadiology.XUnitTests
                     .AddFragRef(Self.ObservationNoValueFragment.Value())
                     .AddFragRef(Self.CommonComponentsFragment.Value())
                     .AddFragRef(Self.NotPreviouslySeenComponentsFragment.Value())
-                    .AddFragRef(Self.CorrespondsWith.Value())
+                    .AddFragRef(Self.CorrespondsWithFragment.Value())
                     ;
 
                 s = e.SDef;
@@ -288,7 +288,7 @@ namespace BreastRadiology.XUnitTests
                     BindingStrength.Required,
                     1,
                     "1",
-                    "AbnormalityForeignObject Type",
+                    "ForeignObject Type",
                     new Markdown()
                         .Paragraph($"This slice contains the required component that refines the foreign object type.",
                                     $"The value of this component is a codeable concept chosen from the {binding.Name} valueset.")

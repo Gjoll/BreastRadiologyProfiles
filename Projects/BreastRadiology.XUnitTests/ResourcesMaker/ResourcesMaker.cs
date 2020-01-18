@@ -67,28 +67,47 @@ namespace BreastRadiology.XUnitTests
             public String Display;
             public String Definition;
 
-            public ConceptDef(String code, String display, String definition)
+            public ConceptDef()
             {
+            }
+
+            public ConceptDef SetCode(String value)
+            {
+                this.Code = value;
+                return this;
+            }
+
+            public ConceptDef SetDisplay(String value)
+            {
+                this.Display= value;
+                return this;
+            }
+
+            public ConceptDef SetDefinition(Definition def)
+            {
+                this.Definition = def.ToString();
+                return this;
+            }
+
+            public ConceptDef(Coding code, Definition definition)
+            {
+                this.Code = code.Code;
+                this.Display = code.Display;
+                this.Definition = definition.ToString();
+            }
+
+            public ConceptDef(String code, String display, Definition definition)
+            {
+                String definitionStr = definition.ToString();
                 if (String.IsNullOrWhiteSpace(code) == true)
                     throw new Exception("Empty code");
                 if (String.IsNullOrWhiteSpace(display) == true)
                     throw new Exception("Empty Display");
-                if (String.IsNullOrWhiteSpace(definition) == true)
+                if (String.IsNullOrWhiteSpace(definitionStr) == true)
                     throw new Exception("Empty definition");
                 this.Code = code;
                 this.Display = display;
-                this.Definition = definition;
-            }
-
-            public ConceptDef(Coding code, String definition)
-            {
-                this.Code = code.Code;
-                this.Display = code.Display;
-                this.Definition = definition;
-            }
-
-            public ConceptDef(String code, String display, Definition definition) : this(code, display, definition.ToText())
-            {
+                this.Definition = definitionStr;
             }
         }
 
