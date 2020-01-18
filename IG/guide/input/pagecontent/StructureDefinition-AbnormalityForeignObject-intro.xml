@@ -34,6 +34,7 @@ Comments and Suggested changes to this implementation guide van be made
 <li><a href="StructureDefinition-AbnormalityForeignObject-definitions.html#Observation.component:correspondsWith">Corresponds With component [0..*]</a></li>
 <li><a href="StructureDefinition-AbnormalityForeignObject-definitions.html#Observation.component:abnormalityForeignObjectType">Foreign Object Type component [1..1]</a></li>
 <li><a href="StructureDefinition-AbnormalityForeignObject-definitions.html#Observation.component:notPreviouslySeen">Not Previously Seen component [0..*]</a></li>
+<li><a href="StructureDefinition-AbnormalityForeignObject-definitions.html#Observation.component:observedArea">Observed Area component [0..1]</a></li>
 <li><a href="StructureDefinition-AbnormalityForeignObject-definitions.html#Observation.component:observedChanges">Observed Change In Abnormality component [0..*]</a></li>
 <li><a href="StructureDefinition-AbnormalityForeignObject-definitions.html#Observation.component:observedSize">Observed Size component [0..1]</a></li>
   </ul>
@@ -61,6 +62,7 @@ Comments and Suggested changes to this implementation guide van be made
   </p>
   <ul>
     
+<li><a href="./StructureDefinition-BiRadFragment.html">BiRad Fragment</a></li>
 <li><a href="./StructureDefinition-BreastRadObservationNoDeviceFragment.html">BreastRad Observation NoDevice Fragment</a></li>
 <li><a href="./StructureDefinition-BreastRadObservationNoValueFragment.html">BreastRad Observation NoValue Fragment</a></li>
 <li><a href="./StructureDefinition-CommonComponentsFragment.html">Common Components Fragment</a></li>

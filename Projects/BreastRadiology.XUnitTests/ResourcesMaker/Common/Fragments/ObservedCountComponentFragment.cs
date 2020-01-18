@@ -33,7 +33,13 @@ namespace BreastRadiology.XUnitTests
                        ElementTreeSlice slice = e.AppendSlice("component", sliceName, 0, "1");
                        slice.ElementDefinition
                            .SetShort($"Observed Count component")
-                           .SetDefinition(new Markdown($"This component slice contains the observedCount quantity"))
+                           .SetDefinition(new Markdown()
+                                .Paragraph($"This component slice contains the number of items observed.",
+                                            $"This can be a quantity (i.e. 5), or a range (1 to 5).",
+                                            $"If the lower bound of the range is set but not the upper bound, then it means {{lower bound}} or more.",
+                                            $"If the lower bound of the range is not set but not the upper bound is, then it means {{upper bound}} or less."
+                                            )
+                                )
                            .SetComment(new Markdown($"This is one component of a group of components that comprise the observation."))
                            ;
 

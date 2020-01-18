@@ -373,6 +373,7 @@ namespace BreastRadiology.XUnitTests
                     .AddFragRef(Self.CommonComponentsFragment.Value())
                     .AddFragRef(Self.NotPreviouslySeenComponentsFragment.Value())
                     .AddFragRef(Self.CorrespondsWithComponentFragment.Value())
+                    .AddFragRef(Self.BiRadComponentFragment.Value())
                     ;
 
                 s = e.SDef;
@@ -397,7 +398,6 @@ namespace BreastRadiology.XUnitTests
                         .Paragraph($"This slice contains the required component that refines the foreign object type.",
                                     $"The value of this component is a codeable concept chosen from the {binding.Name} valueset.")
                     );
-                Self.ComponentSliceBiRads(e);
             });
     }
 }

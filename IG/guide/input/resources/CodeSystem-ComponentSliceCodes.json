@@ -21,7 +21,7 @@
   "description": "Component Slice Codes code system",
   "caseSensitive": true,
   "content": "complete",
-  "count": 24,
+  "count": 25,
   "concept": [
     {
       "code": "abnormalityCystType",
@@ -81,6 +81,10 @@
     },
     {
       "code": "observedSize",
+      "definition": "BreastRadiology.XUnitTests.ResourcesMaker+Definition"
+    },
+    {
+      "code": "observedArea",
       "definition": "BreastRadiology.XUnitTests.ResourcesMaker+Definition"
     },
     {

@@ -1,0 +1,175 @@
+{
+  "resourceType": "StructureDefinition",
+  "extension": [
+    {
+      "url": "http://www.fragment.com/mapname",
+      "valueString": "ObservedSize Fragment"
+    },
+    {
+      "url": "http://www.fragment.com/Group",
+      "valueString": "Fragment/ObservedSizeFragment"
+    },
+    {
+      "url": "http://www.fragment.com/isFragment",
+      "valueBoolean": true
+    },
+    {
+      "url": "http://www.fragment.com/maplink",
+      "valueString": "component|True|Observed Size^Quantity or Range"
+    }
+  ],
+  "url": "http://hl7.org/fhir/us/breast-radiology/StructureDefinition/ObservedSizeFragment",
+  "version": "Fragment",
+  "name": "ObservedSizeFragment",
+  "title": "ObservedSize Fragment",
+  "status": "draft",
+  "description": "<b>Fragment that adds 'Observed Size' element to profile.</b>",
+  "fhirVersion": "4.0.0",
+  "kind": "resource",
+  "abstract": true,
+  "type": "Observation",
+  "baseDefinition": "http://hl7.org/fhir/StructureDefinition/Observation",
+  "derivation": "constraint",
+  "differential": {
+    "element": [
+      {
+        "id": "Observation",
+        "path": "Observation",
+        "short": "Fragment that adds 'Observed Size' element to profile.",
+        "base": {
+          "path": "Observation",
+          "min": 0,
+          "max": "*"
+        }
+      },
+      {
+        "id": "Observation.component",
+        "path": "Observation.component",
+        "slicing": {
+          "discriminator": [
+            {
+              "type": "pattern",
+              "path": "code"
+            }
+          ],
+          "rules": "open"
+        },
+        "base": {
+          "path": "Observation.component",
+          "min": 0,
+          "max": "*"
+        }
+      },
+      {
+        "id": "Observation.component:observedSize",
+        "path": "Observation.component",
+        "sliceName": "observedSize",
+        "short": "Observed Size component",
+        "definition": "This component slice contains the observed size of an item in cemtimeters.This can be a quantity (i.e. 5 cm), or a range (1 cm to 5 cm).If the lower bound of the range is set but not the upper bound, then it means {lower bound} cm or more.If the lower bound of the range is not set but not the upper bound is, then it means {upper bound} cm or less.<br/>",
+        "comment": "This is one component of a group of components that comprise the observation.",
+        "min": 0,
+        "max": "1",
+        "base": {
+          "path": "Observation.component",
+          "min": 0,
+          "max": "*"
+        }
+      },
+      {
+        "id": "Observation.component:observedSize.code",
+        "path": "Observation.component.code",
+        "min": 1,
+        "max": "1",
+        "base": {
+          "path": "Observation.component.code",
+          "min": 1,
+          "max": "1"
+        },
+        "patternCodeableConcept": {
+          "coding": [
+            {
+              "system": "http://hl7.org/fhir/us/breast-radiology/CodeSystem/ComponentSliceCodes",
+              "code": "observedSize"
+            }
+          ]
+        }
+      },
+      {
+        "id": "Observation.component:observedSize.value[x]",
+        "path": "Observation.component.value[x]",
+        "slicing": {
+          "discriminator": [
+            {
+              "type": "type",
+              "path": "$this"
+            }
+          ],
+          "rules": "closed"
+        },
+        "min": 1,
+        "max": "1",
+        "base": {
+          "path": "Observation.component.value[x]",
+          "min": 0,
+          "max": "1"
+        },
+        "type": [
+          {
+            "code": "Quantity"
+          },
+          {
+            "code": "Range"
+          }
+        ]
+      },
+      {
+        "id": "Observation.component:observedSize.value[x]:observedSize/quantity",
+        "path": "Observation.component.value[x]",
+        "sliceName": "observedSize/quantity",
+        "min": 0,
+        "max": "1",
+        "base": {
+          "path": "Observation.component.value[x]",
+          "min": 0,
+          "max": "1"
+        },
+        "type": [
+          {
+            "code": "Quantity"
+          }
+        ],
+        "patternQuantity": {
+          "system": "http://unitsofmeasure.org",
+          "code": "cm"
+        }
+      },
+      {
+        "id": "Observation.component:observedSize.value[x]:observedSize/range",
+        "path": "Observation.component.value[x]",
+        "sliceName": "observedSize/range",
+        "min": 0,
+        "max": "1",
+        "base": {
+          "path": "Observation.component.value[x]",
+          "min": 0,
+          "max": "1"
+        },
+        "type": [
+          {
+            "code": "Range"
+          }
+        ],
+        "patternRange": {
+          "low": {
+            "system": "http://unitsofmeasure.org",
+            "code": "cm"
+          },
+          "high": {
+            "system": "http://unitsofmeasure.org",
+            "code": "cm"
+          }
+        }
+      }
+    ]
+  }
+}

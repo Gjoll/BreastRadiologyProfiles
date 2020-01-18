@@ -883,6 +883,15 @@
     </resource>
     <resource>
       <reference>
+        <reference value="StructureDefinition/BiRadFragment" />
+      </reference>
+      <name value="BiRad Fragment" />
+      <description value="Fragment 'Fragment that adds 'BiRad code' element to profile.'" />
+      <exampleBoolean value="false" />
+      <groupingId value="Fragments" />
+    </resource>
+    <resource>
+      <reference>
         <reference value="StructureDefinition/BreastBodyLocationRequiredFragment" />
       </reference>
       <name value="Breast Body Location (Required) Fragment" />
@@ -1000,10 +1009,37 @@
     </resource>
     <resource>
       <reference>
+        <reference value="StructureDefinition/ObservedAreaFragment" />
+      </reference>
+      <name value="ObservedArea Fragment" />
+      <description value="Fragment 'Fragment that adds 'Observed Area' element to profile.'" />
+      <exampleBoolean value="false" />
+      <groupingId value="Fragments" />
+    </resource>
+    <resource>
+      <reference>
+        <reference value="StructureDefinition/ObservedChangesFragment" />
+      </reference>
+      <name value="ObservedChanges Fragment" />
+      <description value="Fragment 'Fragment that adds 'Observed Changes' element to profile.'" />
+      <exampleBoolean value="false" />
+      <groupingId value="Fragments" />
+    </resource>
+    <resource>
+      <reference>
         <reference value="StructureDefinition/ObservedCountFragment" />
       </reference>
       <name value="ObservedCount Fragment" />
       <description value="Fragment 'Fragment that adds 'Observed Count' element to profile.'" />
+      <exampleBoolean value="false" />
+      <groupingId value="Fragments" />
+    </resource>
+    <resource>
+      <reference>
+        <reference value="StructureDefinition/ObservedSizeFragment" />
+      </reference>
+      <name value="ObservedSize Fragment" />
+      <description value="Fragment 'Fragment that adds 'Observed Size' element to profile.'" />
       <exampleBoolean value="false" />
       <groupingId value="Fragments" />
     </resource>

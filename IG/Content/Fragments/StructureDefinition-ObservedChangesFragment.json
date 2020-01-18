@@ -1,0 +1,123 @@
+{
+  "resourceType": "StructureDefinition",
+  "extension": [
+    {
+      "url": "http://www.fragment.com/mapname",
+      "valueString": "ObservedChanges Fragment"
+    },
+    {
+      "url": "http://www.fragment.com/Group",
+      "valueString": "Fragment/ObservedChangesFragment"
+    },
+    {
+      "url": "http://www.fragment.com/isFragment",
+      "valueBoolean": true
+    },
+    {
+      "url": "http://www.fragment.com/maplink",
+      "valueString": "component|True|Observed Change In Abnormality^CodeableConcept^http://hl7.org/fhir/us/breast-radiology/ValueSet/ObservedChangesVS"
+    }
+  ],
+  "url": "http://hl7.org/fhir/us/breast-radiology/StructureDefinition/ObservedChangesFragment",
+  "version": "Fragment",
+  "name": "ObservedChangesFragment",
+  "title": "ObservedChanges Fragment",
+  "status": "draft",
+  "description": "<b>Fragment that adds 'Observed Changes' element to profile.</b>",
+  "fhirVersion": "4.0.0",
+  "kind": "resource",
+  "abstract": true,
+  "type": "Observation",
+  "baseDefinition": "http://hl7.org/fhir/StructureDefinition/Observation",
+  "derivation": "constraint",
+  "differential": {
+    "element": [
+      {
+        "id": "Observation",
+        "path": "Observation",
+        "short": "Fragment that adds 'Observed Changes' element to profile.",
+        "base": {
+          "path": "Observation",
+          "min": 0,
+          "max": "*"
+        }
+      },
+      {
+        "id": "Observation.component",
+        "path": "Observation.component",
+        "slicing": {
+          "discriminator": [
+            {
+              "type": "pattern",
+              "path": "code"
+            }
+          ],
+          "rules": "open"
+        },
+        "base": {
+          "path": "Observation.component",
+          "min": 0,
+          "max": "*"
+        }
+      },
+      {
+        "id": "Observation.component:observedChanges",
+        "path": "Observation.component",
+        "sliceName": "observedChanges",
+        "short": "Observed Change In Abnormality component",
+        "definition": "This slice contains zero or more components that define observed changes in this abnormality.The value of this component is a codeable concept chosen from the ObservedChangesVS valueset.<br/>",
+        "comment": "This is one component of a group of components that comprise the observation.",
+        "min": 0,
+        "max": "*",
+        "base": {
+          "path": "Observation.component",
+          "min": 0,
+          "max": "*"
+        }
+      },
+      {
+        "id": "Observation.component:observedChanges.code",
+        "path": "Observation.component.code",
+        "short": "Observed Change In Abnormality component code",
+        "definition": "This code identifies the Observed Change In Abnormality components",
+        "min": 1,
+        "max": "1",
+        "base": {
+          "path": "Observation.component.code",
+          "min": 1,
+          "max": "1"
+        },
+        "patternCodeableConcept": {
+          "coding": [
+            {
+              "system": "http://hl7.org/fhir/us/breast-radiology/CodeSystem/ComponentSliceCodes",
+              "code": "observedChanges"
+            }
+          ]
+        }
+      },
+      {
+        "id": "Observation.component:observedChanges.value[x]",
+        "path": "Observation.component.value[x]",
+        "short": "Observed Change In Abnormality component value",
+        "definition": "Value is a codeable concept.<br/>",
+        "min": 1,
+        "max": "1",
+        "base": {
+          "path": "Observation.component.value[x]",
+          "min": 0,
+          "max": "1"
+        },
+        "type": [
+          {
+            "code": "CodeableConcept"
+          }
+        ],
+        "binding": {
+          "strength": "required",
+          "valueSet": "http://hl7.org/fhir/us/breast-radiology/ValueSet/ObservedChangesVS"
+        }
+      }
+    ]
+  }
+}

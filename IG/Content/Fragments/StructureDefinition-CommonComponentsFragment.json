@@ -22,16 +22,36 @@
       "valueString": "fragment|True|http://hl7.org/fhir/us/breast-radiology/StructureDefinition/BreastBodyLocationRequiredFragment"
     },
     {
-      "url": "http://www.fragment.com/maplink",
-      "valueString": "component|True|BiRads Assessment Category^CodeableConcept^http://hl7.org/fhir/us/breast-radiology/ValueSet/BiRadsAssessmentCategoriesVS"
+      "url": "http://www.fragment.com/fragment",
+      "valueUrl": "http://hl7.org/fhir/us/breast-radiology/StructureDefinition/ObservedChangesFragment"
     },
     {
       "url": "http://www.fragment.com/maplink",
-      "valueString": "component|True|Observed Change In Abnormality^CodeableConcept^http://hl7.org/fhir/us/breast-radiology/ValueSet/ObservedChangesVS"
+      "valueString": "fragment|True|http://hl7.org/fhir/us/breast-radiology/StructureDefinition/ObservedChangesFragment"
+    },
+    {
+      "url": "http://www.fragment.com/fragment",
+      "valueUrl": "http://hl7.org/fhir/us/breast-radiology/StructureDefinition/ObservedSizeFragment"
     },
     {
       "url": "http://www.fragment.com/maplink",
-      "valueString": "component|True|Observed Size^Quantity or Range"
+      "valueString": "fragment|True|http://hl7.org/fhir/us/breast-radiology/StructureDefinition/ObservedSizeFragment"
+    },
+    {
+      "url": "http://www.fragment.com/fragment",
+      "valueUrl": "http://hl7.org/fhir/us/breast-radiology/StructureDefinition/ObservedAreaFragment"
+    },
+    {
+      "url": "http://www.fragment.com/maplink",
+      "valueString": "fragment|True|http://hl7.org/fhir/us/breast-radiology/StructureDefinition/ObservedAreaFragment"
+    },
+    {
+      "url": "http://www.fragment.com/fragment",
+      "valueUrl": "http://hl7.org/fhir/us/breast-radiology/StructureDefinition/BiRadFragment"
+    },
+    {
+      "url": "http://www.fragment.com/maplink",
+      "valueString": "fragment|True|http://hl7.org/fhir/us/breast-radiology/StructureDefinition/BiRadFragment"
     }
   ],
   "url": "http://hl7.org/fhir/us/breast-radiology/StructureDefinition/CommonComponentsFragment",
@@ -75,232 +95,6 @@
           "path": "Observation.component",
           "min": 0,
           "max": "*"
-        }
-      },
-      {
-        "id": "Observation.component:biRadsAssessmentCategory",
-        "path": "Observation.component",
-        "sliceName": "biRadsAssessmentCategory",
-        "short": "BiRads Assessment Category component",
-        "definition": "This slice contains the optional component that defines the BiRAD risk code.The value of this component is a codeable concept chosen from the BiRadsAssessmentCategoriesVS valueset.<br/>",
-        "comment": "This is one component of a group of components that comprise the observation.",
-        "min": 0,
-        "max": "1",
-        "base": {
-          "path": "Observation.component",
-          "min": 0,
-          "max": "*"
-        }
-      },
-      {
-        "id": "Observation.component:biRadsAssessmentCategory.code",
-        "path": "Observation.component.code",
-        "short": "BiRads Assessment Category component code",
-        "definition": "This code identifies the BiRads Assessment Category component",
-        "min": 1,
-        "max": "1",
-        "base": {
-          "path": "Observation.component.code",
-          "min": 1,
-          "max": "1"
-        },
-        "patternCodeableConcept": {
-          "coding": [
-            {
-              "system": "http://hl7.org/fhir/us/breast-radiology/CodeSystem/ComponentSliceCodes",
-              "code": "targetBiRads"
-            }
-          ]
-        }
-      },
-      {
-        "id": "Observation.component:biRadsAssessmentCategory.value[x]",
-        "path": "Observation.component.value[x]",
-        "short": "BiRads Assessment Category component value",
-        "definition": "Value is a codeable concept.<br/>",
-        "min": 1,
-        "max": "1",
-        "base": {
-          "path": "Observation.component.value[x]",
-          "min": 0,
-          "max": "1"
-        },
-        "type": [
-          {
-            "code": "CodeableConcept"
-          }
-        ],
-        "binding": {
-          "strength": "required",
-          "valueSet": "http://hl7.org/fhir/us/breast-radiology/ValueSet/BiRadsAssessmentCategoriesVS"
-        }
-      },
-      {
-        "id": "Observation.component:observedChanges",
-        "path": "Observation.component",
-        "sliceName": "observedChanges",
-        "short": "Observed Change In Abnormality component",
-        "definition": "This slice contains zero or more components that define observed changes in this abnormality.The value of this component is a codeable concept chosen from the ObservedChangesVS valueset.<br/>",
-        "comment": "This is one component of a group of components that comprise the observation.",
-        "min": 0,
-        "max": "*",
-        "base": {
-          "path": "Observation.component",
-          "min": 0,
-          "max": "*"
-        }
-      },
-      {
-        "id": "Observation.component:observedChanges.code",
-        "path": "Observation.component.code",
-        "short": "Observed Change In Abnormality component code",
-        "definition": "This code identifies the Observed Change In Abnormality components",
-        "min": 1,
-        "max": "1",
-        "base": {
-          "path": "Observation.component.code",
-          "min": 1,
-          "max": "1"
-        },
-        "patternCodeableConcept": {
-          "coding": [
-            {
-              "system": "http://hl7.org/fhir/us/breast-radiology/CodeSystem/ComponentSliceCodes",
-              "code": "observedChanges"
-            }
-          ]
-        }
-      },
-      {
-        "id": "Observation.component:observedChanges.value[x]",
-        "path": "Observation.component.value[x]",
-        "short": "Observed Change In Abnormality component value",
-        "definition": "Value is a codeable concept.<br/>",
-        "min": 1,
-        "max": "1",
-        "base": {
-          "path": "Observation.component.value[x]",
-          "min": 0,
-          "max": "1"
-        },
-        "type": [
-          {
-            "code": "CodeableConcept"
-          }
-        ],
-        "binding": {
-          "strength": "required",
-          "valueSet": "http://hl7.org/fhir/us/breast-radiology/ValueSet/ObservedChangesVS"
-        }
-      },
-      {
-        "id": "Observation.component:observedSize",
-        "path": "Observation.component",
-        "sliceName": "observedSize",
-        "short": "Observed Size component",
-        "definition": "This component slice contains the observedSize quantity",
-        "comment": "This is one component of a group of components that comprise the observation.",
-        "min": 0,
-        "max": "1",
-        "base": {
-          "path": "Observation.component",
-          "min": 0,
-          "max": "*"
-        }
-      },
-      {
-        "id": "Observation.component:observedSize.code",
-        "path": "Observation.component.code",
-        "min": 1,
-        "max": "1",
-        "base": {
-          "path": "Observation.component.code",
-          "min": 1,
-          "max": "1"
-        },
-        "patternCodeableConcept": {
-          "coding": [
-            {
-              "system": "http://hl7.org/fhir/us/breast-radiology/CodeSystem/ComponentSliceCodes",
-              "code": "observedSize"
-            }
-          ]
-        }
-      },
-      {
-        "id": "Observation.component:observedSize.value[x]",
-        "path": "Observation.component.value[x]",
-        "slicing": {
-          "discriminator": [
-            {
-              "type": "type",
-              "path": "$this"
-            }
-          ],
-          "rules": "closed"
-        },
-        "min": 1,
-        "max": "1",
-        "base": {
-          "path": "Observation.component.value[x]",
-          "min": 0,
-          "max": "1"
-        },
-        "type": [
-          {
-            "code": "Quantity"
-          },
-          {
-            "code": "Range"
-          }
-        ]
-      },
-      {
-        "id": "Observation.component:observedSize.value[x]:observedSize/quantity",
-        "path": "Observation.component.value[x]",
-        "sliceName": "observedSize/quantity",
-        "min": 0,
-        "max": "1",
-        "base": {
-          "path": "Observation.component.value[x]",
-          "min": 0,
-          "max": "1"
-        },
-        "type": [
-          {
-            "code": "Quantity"
-          }
-        ],
-        "patternQuantity": {
-          "system": "http://unitsofmeasure.org",
-          "code": "cm"
-        }
-      },
-      {
-        "id": "Observation.component:observedSize.value[x]:observedSize/range",
-        "path": "Observation.component.value[x]",
-        "sliceName": "observedSize/range",
-        "min": 0,
-        "max": "1",
-        "base": {
-          "path": "Observation.component.value[x]",
-          "min": 0,
-          "max": "1"
-        },
-        "type": [
-          {
-            "code": "Range"
-          }
-        ],
-        "patternRange": {
-          "low": {
-            "system": "http://unitsofmeasure.org",
-            "code": "cm"
-          },
-          "high": {
-            "system": "http://unitsofmeasure.org",
-            "code": "cm"
-          }
         }
       }
     ]

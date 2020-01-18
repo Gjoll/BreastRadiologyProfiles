@@ -1,0 +1,175 @@
+{
+  "resourceType": "StructureDefinition",
+  "extension": [
+    {
+      "url": "http://www.fragment.com/mapname",
+      "valueString": "ObservedArea Fragment"
+    },
+    {
+      "url": "http://www.fragment.com/Group",
+      "valueString": "Fragment/ObservedAreaFragment"
+    },
+    {
+      "url": "http://www.fragment.com/isFragment",
+      "valueBoolean": true
+    },
+    {
+      "url": "http://www.fragment.com/maplink",
+      "valueString": "component|True|Observed Area^Quantity or Range"
+    }
+  ],
+  "url": "http://hl7.org/fhir/us/breast-radiology/StructureDefinition/ObservedAreaFragment",
+  "version": "Fragment",
+  "name": "ObservedAreaFragment",
+  "title": "ObservedArea Fragment",
+  "status": "draft",
+  "description": "<b>Fragment that adds 'Observed Area' element to profile.</b>",
+  "fhirVersion": "4.0.0",
+  "kind": "resource",
+  "abstract": true,
+  "type": "Observation",
+  "baseDefinition": "http://hl7.org/fhir/StructureDefinition/Observation",
+  "derivation": "constraint",
+  "differential": {
+    "element": [
+      {
+        "id": "Observation",
+        "path": "Observation",
+        "short": "Fragment that adds 'Observed Area' element to profile.",
+        "base": {
+          "path": "Observation",
+          "min": 0,
+          "max": "*"
+        }
+      },
+      {
+        "id": "Observation.component",
+        "path": "Observation.component",
+        "slicing": {
+          "discriminator": [
+            {
+              "type": "pattern",
+              "path": "code"
+            }
+          ],
+          "rules": "open"
+        },
+        "base": {
+          "path": "Observation.component",
+          "min": 0,
+          "max": "*"
+        }
+      },
+      {
+        "id": "Observation.component:observedArea",
+        "path": "Observation.component",
+        "sliceName": "observedArea",
+        "short": "Observed Area component",
+        "definition": "This component slice contains the spherical area of an item observed.If an area component is included in an observation, then what is being observed is not a single item,but some number of items contained in the area of the observation<br/>The size is the diameter of the area. The units are always cm.This can be a quantity (i.e. 5 cm area ), or a range (1 to 5 cm area).If the lower bound of the range is set but not the upper bound, then it means {lower bound} or more.If the lower bound of the range is not set but not the upper bound is, then it means {upper bound} or less.<br/>",
+        "comment": "This is one component of a group of components that comprise the observation.",
+        "min": 0,
+        "max": "1",
+        "base": {
+          "path": "Observation.component",
+          "min": 0,
+          "max": "*"
+        }
+      },
+      {
+        "id": "Observation.component:observedArea.code",
+        "path": "Observation.component.code",
+        "min": 1,
+        "max": "1",
+        "base": {
+          "path": "Observation.component.code",
+          "min": 1,
+          "max": "1"
+        },
+        "patternCodeableConcept": {
+          "coding": [
+            {
+              "system": "http://hl7.org/fhir/us/breast-radiology/CodeSystem/ComponentSliceCodes",
+              "code": "observedArea"
+            }
+          ]
+        }
+      },
+      {
+        "id": "Observation.component:observedArea.value[x]",
+        "path": "Observation.component.value[x]",
+        "slicing": {
+          "discriminator": [
+            {
+              "type": "type",
+              "path": "$this"
+            }
+          ],
+          "rules": "closed"
+        },
+        "min": 1,
+        "max": "1",
+        "base": {
+          "path": "Observation.component.value[x]",
+          "min": 0,
+          "max": "1"
+        },
+        "type": [
+          {
+            "code": "Quantity"
+          },
+          {
+            "code": "Range"
+          }
+        ]
+      },
+      {
+        "id": "Observation.component:observedArea.value[x]:observedArea/quantity",
+        "path": "Observation.component.value[x]",
+        "sliceName": "observedArea/quantity",
+        "min": 0,
+        "max": "1",
+        "base": {
+          "path": "Observation.component.value[x]",
+          "min": 0,
+          "max": "1"
+        },
+        "type": [
+          {
+            "code": "Quantity"
+          }
+        ],
+        "patternQuantity": {
+          "system": "http://unitsofmeasure.org",
+          "code": "tot"
+        }
+      },
+      {
+        "id": "Observation.component:observedArea.value[x]:observedArea/range",
+        "path": "Observation.component.value[x]",
+        "sliceName": "observedArea/range",
+        "min": 0,
+        "max": "1",
+        "base": {
+          "path": "Observation.component.value[x]",
+          "min": 0,
+          "max": "1"
+        },
+        "type": [
+          {
+            "code": "Range"
+          }
+        ],
+        "patternRange": {
+          "low": {
+            "system": "http://unitsofmeasure.org",
+            "code": "tot"
+          },
+          "high": {
+            "system": "http://unitsofmeasure.org",
+            "code": "tot"
+          }
+        }
+      }
+    ]
+  }
+}
