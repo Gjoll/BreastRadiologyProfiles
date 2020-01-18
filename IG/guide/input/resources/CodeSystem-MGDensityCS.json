@@ -1,0 +1,47 @@
+{
+  "resourceType": "CodeSystem",
+  "id": "MGDensityCS",
+  "url": "http://hl7.org/fhir/us/breast-radiology/CodeSystem/MGDensityCS",
+  "version": "0.0.2",
+  "name": "MGDensityCS",
+  "title": "Mammography Density CodeSystem",
+  "status": "draft",
+  "date": "2019-11-01",
+  "publisher": "Hl7-Clinical Interoperability Council",
+  "contact": [
+    {
+      "telecom": [
+        {
+          "system": "url",
+          "value": "http://www.hl7.org/Special/committees/cic"
+        }
+      ]
+    }
+  ],
+  "description": "Mammography density code system.",
+  "caseSensitive": true,
+  "content": "complete",
+  "count": 4,
+  "concept": [
+    {
+      "code": "HighDensity",
+      "display": "High Density",
+      "definition": "BreastRadiology.XUnitTests.ResourcesMaker+Definition"
+    },
+    {
+      "code": "EqualDensity",
+      "display": "Equal Density",
+      "definition": "BreastRadiology.XUnitTests.ResourcesMaker+Definition"
+    },
+    {
+      "code": "LowDensity",
+      "display": "Low Density",
+      "definition": "BreastRadiology.XUnitTests.ResourcesMaker+Definition"
+    },
+    {
+      "code": "FatContaining",
+      "display": "Fat Containing",
+      "definition": "BreastRadiology.XUnitTests.ResourcesMaker+Definition"
+    }
+  ]
+}

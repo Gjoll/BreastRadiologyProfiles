@@ -106,24 +106,24 @@ namespace BreastRadiology.XUnitTests
             SENodeGroup parentsGroup = new SENodeGroup("parents");
             SENodeGroup focusGroup = new SENodeGroup("focus");
             SENodeGroup childrenGroup = new SENodeGroup("children");
-            parentsGroup.Children.Add(focusGroup);
-            focusGroup.Children.Add(childrenGroup);
+            parentsGroup.AppendChild(focusGroup);
+            focusGroup.AppendChild(childrenGroup);
 
             {
                 SENode node = this.CreateNode(fragmentNode.Focus, Color.Green, false);
-                focusGroup.Nodes.Add(node);
+                focusGroup.AppendNode(node);
             }
 
             foreach (ResourceMap.Node childNode in fragmentNode.Children)
             {
                 SENode node = this.CreateNode(childNode, Color.LightBlue, true);
-                childrenGroup.Nodes.Add(node);
+                childrenGroup.AppendNode(node);
             }
 
             foreach (ResourceMap.Node parentNode in fragmentNode.Parents)
             {
                 SENode node = this.CreateNode(parentNode, Color.LightCyan, true);
-                parentsGroup.Nodes.Add(node);
+                parentsGroup.AppendNode(node);
             }
 
             e.Render(parentsGroup, true);

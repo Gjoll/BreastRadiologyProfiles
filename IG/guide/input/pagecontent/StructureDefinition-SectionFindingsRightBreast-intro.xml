@@ -1,0 +1,52 @@
+<div xmlns="http://www.w3.org/1999/xhtml"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://hl7.org/fhir ../../src-generated/schemas/fhir-single.xsd">
+  <a name="intro"></a>
+  <h3 id="focusGraph">Graphical Overview</h3>
+  <p>
+    This graph provides an overview of:
+    <ul>
+      <li>what resources reference Findings Right Breast</li>
+      <li>what resources Findings Right Breast references</li>
+    </ul>
+  </p>
+  <object data="Focus-SectionFindingsRightBreast.svg" type="image/svg+xml">
+    <img src="Focus-SectionFindingsRightBreast.svg" alt="image/svg+xml" />
+  </object>
+  <!-- +reviewStatus-->
+<h3 id="reviewStatus">Review Status</h3>
+<p><b>Alpha</b></p>
+Comments and Suggested changes to this implementation guide van be made 
+<a href="https://github.com/HL7/fhir-breast-radiology-ig/projects/1">here</a>
+  <!-- -reviewStatus-->
+  <!-- +components-->
+  <!-- -components-->
+  <!-- +hasMember-->
+  <a name="hasMembers"></a>
+  <h3 id="hasMember">Member Observations</h3>
+  <p>
+    The following are parts of this observation that are stored in seperate observation resources.
+  </p>
+  <p>
+    The reference to each external observation is stored as an item in the Observation.hasMember element.
+  </p>
+  <ul>
+    
+<li><a href="StructureDefinition-SectionFindingsRightBreast-definitions.html#Observation.hasMember:mGFinding">'Mammography Finding' reference [0..*]</a></li>
+<li><a href="StructureDefinition-SectionFindingsRightBreast-definitions.html#Observation.hasMember:mRIFinding">'MRI Finding' reference [0..*]</a></li>
+<li><a href="StructureDefinition-SectionFindingsRightBreast-definitions.html#Observation.hasMember:nMFinding">'NM Finding' reference [0..*]</a></li>
+<li><a href="StructureDefinition-SectionFindingsRightBreast-definitions.html#Observation.hasMember:uSFinding">'Ultra-Sound Finding' reference [0..*]</a></li>
+  </ul>
+  <!-- -hasMember-->
+  <!-- +profileFragments-->
+  <h3 id="profileFragments">Profile Fragments</h3>
+  <p>
+    The following are the fragments that are included in this profile. This is included for developers use to understand
+    the hierarchy and commonality of disparate profiles..
+  </p>
+  <ul>
+    
+<li><a href="./StructureDefinition-FindingBreastFragment.html">Finding Breast Fragment</a></li>
+  </ul>
+  <!-- -profileFragments-->
+</div>

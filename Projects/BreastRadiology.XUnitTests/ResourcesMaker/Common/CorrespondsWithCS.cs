@@ -38,7 +38,6 @@ namespace BreastRadiology.XUnitTests
                         new ConceptDef[]
                         {
                             //+ CorrespondsWithCS
-                            // SNOMED Description: Procedure | 287572003 | Diagnostic aspiration of breast cyst (Procedure)
                             //+ Aspiration
                             new ConceptDef()
                                 .SetCode("Aspiration")
@@ -46,9 +45,10 @@ namespace BreastRadiology.XUnitTests
                                 .SetDefinition(new Definition()
                                     .Line("[PR] Aspiration")
                                     .ValidModalities(Modalities.MG | Modalities.US)
-                                ),
+                                )
+                                .SetSnomedDescription("Procedure | 287572003 | Diagnostic aspiration of breast cyst (Procedure)")
                             //- Aspiration
-                            // SNOMED Description: Procedure | 122548005 | Biopsy of breast (Procedure)
+                            ,
                             //+ Biopsy
                             new ConceptDef()
                                 .SetCode("Biopsy")
@@ -56,8 +56,10 @@ namespace BreastRadiology.XUnitTests
                                 .SetDefinition(new Definition()
                                     .Line("[PR] Biopsy")
                                     .ValidModalities(Modalities.MG)
-                                ),
+                                )
+                                .SetSnomedDescription("Procedure | 122548005 | Biopsy of breast (Procedure)")
                             //- Biopsy
+                            ,
                             //+ Concern
                             new ConceptDef()
                                 .SetCode("Concern")
@@ -65,9 +67,9 @@ namespace BreastRadiology.XUnitTests
                                 .SetDefinition(new Definition()
                                     .Line("[PR] Concern")
                                     .ValidModalities(Modalities.MG | Modalities.MRI | Modalities.NM | Modalities.US)
-                                ),
+                                )
                             //- Concern
-                            // SNOMED Description: Procedure | 420131003 | Fluoroscopic mammary ductography (Procedure) 
+                            ,
                             //+ Ductogram
                             new ConceptDef()
                                 .SetCode("Ductogram")
@@ -75,8 +77,10 @@ namespace BreastRadiology.XUnitTests
                                 .SetDefinition(new Definition()
                                     .Line("[PR] Ductogram")
                                     .ValidModalities(Modalities.MG)
-                                ),
+                                )
+                                .SetSnomedDescription("Procedure | 420131003 | Fluoroscopic mammary ductography (Procedure) ")
                             //- Ductogram
+                            ,
                             //+ IncidentalFinding
                             new ConceptDef()
                                 .SetCode("IncidentalFinding")
@@ -84,8 +88,9 @@ namespace BreastRadiology.XUnitTests
                                 .SetDefinition(new Definition()
                                     .Line("[PR] Incidental finding")
                                     .ValidModalities(Modalities.MG | Modalities.MRI | Modalities.NM | Modalities.US)
-                                ),
+                                )
                             //- IncidentalFinding
+                            ,
                             //+ Mammogram
                             new ConceptDef()
                                 .SetCode("Mammogram")
@@ -93,9 +98,9 @@ namespace BreastRadiology.XUnitTests
                                 .SetDefinition(new Definition()
                                     .Line("[PR] Mammogram")
                                     .ValidModalities(Modalities.MRI | Modalities.NM | Modalities.US)
-                                ),
+                                )
                             //- Mammogram
-                            // SNOMED Description: Procedure | 241615005 | Magnetic resonance imaging of breast (Procedure)
+                            ,
                             //+ MRI
                             new ConceptDef()
                                 .SetCode("MRI")
@@ -103,9 +108,10 @@ namespace BreastRadiology.XUnitTests
                                 .SetDefinition(new Definition()
                                     .Line("[PR] MRI")
                                     .ValidModalities(Modalities.MG | Modalities.MRI | Modalities.NM | Modalities.US)
-                                ),
+                                )
+                                .SetSnomedDescription("Procedure | 241615005 | Magnetic resonance imaging of breast (Procedure)")
                             //- MRI
-                            // SNOMED Description: ClinicalFinding | 162166009 | Nipple discharge present (Disorder) | [0/0] | N64.52 |
+                            ,
                             //+ NippleDischarge
                             new ConceptDef()
                                 .SetCode("NippleDischarge")
@@ -113,8 +119,10 @@ namespace BreastRadiology.XUnitTests
                                 .SetDefinition(new Definition()
                                     .Line("[PR] Nipple discharge")
                                     .ValidModalities(Modalities.MG | Modalities.US)
-                                ),
+                                )
+                                .SetSnomedDescription("ClinicalFinding | 162166009 | Nipple discharge present (Disorder) | [0/0] | N64.52 |")
                             //- NippleDischarge
+                            ,
                             //+ OutsideExam
                             new ConceptDef()
                                 .SetCode("OutsideExam")
@@ -122,8 +130,9 @@ namespace BreastRadiology.XUnitTests
                                 .SetDefinition(new Definition()
                                     .Line("[PR] Outside exam")
                                     .ValidModalities(Modalities.MG)
-                                ),
+                                )
                             //- OutsideExam
+                            ,
                             //+ Pain
                             new ConceptDef()
                                 .SetCode("Pain")
@@ -131,8 +140,9 @@ namespace BreastRadiology.XUnitTests
                                 .SetDefinition(new Definition()
                                     .Line("[PR] Pain")
                                     .ValidModalities(Modalities.MG | Modalities.MRI | Modalities.NM | Modalities.US)
-                                ),
+                                )
                             //- Pain
+                            ,
                             //+ Palpated
                             new ConceptDef()
                                 .SetCode("Palpated")
@@ -140,9 +150,9 @@ namespace BreastRadiology.XUnitTests
                                 .SetDefinition(new Definition()
                                     .Line("[PR] Palpated")
                                     .ValidModalities(Modalities.MG | Modalities.MRI | Modalities.NM | Modalities.US)
-                                ),
+                                )
                             //- Palpated
-                            // SNOMED Description: BodyStructure | 312285003 | Post-surgical breast structure
+                            ,
                             //+ Post-operative
                             new ConceptDef()
                                 .SetCode("Post-operative")
@@ -150,9 +160,10 @@ namespace BreastRadiology.XUnitTests
                                 .SetDefinition(new Definition()
                                     .Line("[PR] Post-operative")
                                     .ValidModalities(Modalities.MG)
-                                ),
+                                )
+                                .SetSnomedDescription("BodyStructure | 312285003 | Post-surgical breast structure")
                             //- Post-operative
-                            // SNOMED Description: Procedure | 122548005 | Biopsy of breast (Procedure)
+                            ,
                             //+ PreviousBiopsy
                             new ConceptDef()
                                 .SetCode("PreviousBiopsy")
@@ -160,8 +171,10 @@ namespace BreastRadiology.XUnitTests
                                 .SetDefinition(new Definition()
                                     .Line("[PR] Previous biopsy")
                                     .ValidModalities(Modalities.MRI | Modalities.US)
-                                ),
+                                )
+                                .SetSnomedDescription("Procedure | 122548005 | Biopsy of breast (Procedure)")
                             //- PreviousBiopsy
+                            ,
                             //+ PriorExam
                             new ConceptDef()
                                 .SetCode("PriorExam")
@@ -169,8 +182,9 @@ namespace BreastRadiology.XUnitTests
                                 .SetDefinition(new Definition()
                                     .Line("[PR] Prior exam")
                                     .ValidModalities(Modalities.MG)
-                                ),
+                                )
                             //- PriorExam
+                            ,
                             //+ Redness
                             new ConceptDef()
                                 .SetCode("Redness")
@@ -178,8 +192,9 @@ namespace BreastRadiology.XUnitTests
                                 .SetDefinition(new Definition()
                                     .Line("[PR] Redness")
                                     .ValidModalities(Modalities.MG | Modalities.US)
-                                ),
+                                )
                             //- Redness
+                            ,
                             //+ Scinti
                             new ConceptDef()
                                 .SetCode("Scinti")
@@ -187,8 +202,9 @@ namespace BreastRadiology.XUnitTests
                                 .SetDefinition(new Definition()
                                     .Line("[PR] Scinti")
                                     .ValidModalities(Modalities.MG)
-                                ),
+                                )
                             //- Scinti
+                            ,
                             //+ size<Mammo
                             new ConceptDef()
                                 .SetCode("size<Mammo")
@@ -196,8 +212,9 @@ namespace BreastRadiology.XUnitTests
                                 .SetDefinition(new Definition()
                                     .Line("[PR] size < mammo")
                                     .ValidModalities(Modalities.MRI | Modalities.NM | Modalities.US)
-                                ),
+                                )
                             //- size<Mammo
+                            ,
                             //+ size<MRI
                             new ConceptDef()
                                 .SetCode("size<MRI")
@@ -205,8 +222,9 @@ namespace BreastRadiology.XUnitTests
                                 .SetDefinition(new Definition()
                                     .Line("[PR] size < MRI")
                                     .ValidModalities(Modalities.MG)
-                                ),
+                                )
                             //- size<MRI
+                            ,
                             //+ size<Palp
                             new ConceptDef()
                                 .SetCode("size<Palp")
@@ -214,8 +232,9 @@ namespace BreastRadiology.XUnitTests
                                 .SetDefinition(new Definition()
                                     .Line("[PR] size < palp")
                                     .ValidModalities(Modalities.MG | Modalities.MRI | Modalities.US)
-                                ),
+                                )
                             //- size<Palp
+                            ,
                             //+ size<US
                             new ConceptDef()
                                 .SetCode("size<US")
@@ -223,8 +242,9 @@ namespace BreastRadiology.XUnitTests
                                 .SetDefinition(new Definition()
                                     .Line("[PR] size < US")
                                     .ValidModalities(Modalities.MG | Modalities.MRI | Modalities.NM | Modalities.US)
-                                ),
+                                )
                             //- size<US
+                            ,
                             //+ size>Mammo
                             new ConceptDef()
                                 .SetCode("size>Mammo")
@@ -232,8 +252,9 @@ namespace BreastRadiology.XUnitTests
                                 .SetDefinition(new Definition()
                                     .Line("[PR] size > mammo")
                                     .ValidModalities(Modalities.MRI | Modalities.NM | Modalities.US)
-                                ),
+                                )
                             //- size>Mammo
+                            ,
                             //+ size>MRI
                             new ConceptDef()
                                 .SetCode("size>MRI")
@@ -241,8 +262,9 @@ namespace BreastRadiology.XUnitTests
                                 .SetDefinition(new Definition()
                                     .Line("[PR] size > MRI")
                                     .ValidModalities(Modalities.MG)
-                                ),
+                                )
                             //- size>MRI
+                            ,
                             //+ size>Palp
                             new ConceptDef()
                                 .SetCode("size>Palp")
@@ -250,8 +272,9 @@ namespace BreastRadiology.XUnitTests
                                 .SetDefinition(new Definition()
                                     .Line("[PR] size > palp")
                                     .ValidModalities(Modalities.MG | Modalities.MRI | Modalities.US)
-                                ),
+                                )
                             //- size>Palp
+                            ,
                             //+ size>US
                             new ConceptDef()
                                 .SetCode("size>US")
@@ -259,9 +282,9 @@ namespace BreastRadiology.XUnitTests
                                 .SetDefinition(new Definition()
                                     .Line("[PR] size > US")
                                     .ValidModalities(Modalities.MRI | Modalities.NM | Modalities.US)
-                                ),
+                                )
                             //- size>US
-                            // SNOMED Description: PhysicalObject | 706314007 | Imaging lesion localization marker (Object) 
+                            ,
                             //+ SkinMarker
                             new ConceptDef()
                                 .SetCode("SkinMarker")
@@ -269,9 +292,10 @@ namespace BreastRadiology.XUnitTests
                                 .SetDefinition(new Definition()
                                     .Line("[PR] Skin marker")
                                     .ValidModalities(Modalities.MG)
-                                ),
+                                )
+                                .SetSnomedDescription("PhysicalObject | 706314007 | Imaging lesion localization marker (Object) ")
                             //- SkinMarker
-                            // SNOMED Description: Procedure | 274331003 | Surgical biopsy of breast (Procedure)
+                            ,
                             //+ Surgery
                             new ConceptDef()
                                 .SetCode("Surgery")
@@ -279,8 +303,10 @@ namespace BreastRadiology.XUnitTests
                                 .SetDefinition(new Definition()
                                     .Line("[PR] Surgery")
                                     .ValidModalities(Modalities.MG)
-                                ),
+                                )
+                                .SetSnomedDescription("Procedure | 274331003 | Surgical biopsy of breast (Procedure)")
                             //- Surgery
+                            ,
                             //+ SurgicalSite
                             new ConceptDef()
                                 .SetCode("SurgicalSite")
@@ -288,9 +314,9 @@ namespace BreastRadiology.XUnitTests
                                 .SetDefinition(new Definition()
                                     .Line("[PR] Surgical site")
                                     .ValidModalities(Modalities.MRI)
-                                ),
+                                )
                             //- SurgicalSite
-                            // SNOMED Description: ClinicalFinding | 290080002 | Localized tenderness of breast (Finding) | [0/0] | N64.4 
+                            ,
                             //+ Tenderness
                             new ConceptDef()
                                 .SetCode("Tenderness")
@@ -298,9 +324,10 @@ namespace BreastRadiology.XUnitTests
                                 .SetDefinition(new Definition()
                                     .Line("[PR] Tenderness")
                                     .ValidModalities(Modalities.MG)
-                                ),
+                                )
+                                .SetSnomedDescription("ClinicalFinding | 290080002 | Localized tenderness of breast (Finding) | [0/0] | N64.4 ")
                             //- Tenderness
-                            // SNOMED Description: BodyStructure | 134190002 | Trigger point (BodyStructure)
+                            ,
                             //+ TriggerPoint
                             new ConceptDef()
                                 .SetCode("TriggerPoint")
@@ -308,8 +335,10 @@ namespace BreastRadiology.XUnitTests
                                 .SetDefinition(new Definition()
                                     .Line("[PR] Trigger point")
                                     .ValidModalities(Modalities.US)
-                                ),
+                                )
+                                .SetSnomedDescription("BodyStructure | 134190002 | Trigger point (BodyStructure)")
                             //- TriggerPoint
+                            ,
                             //+ US
                             new ConceptDef()
                                 .SetCode("US")
@@ -319,6 +348,7 @@ namespace BreastRadiology.XUnitTests
                                     .ValidModalities(Modalities.MG | Modalities.MRI | Modalities.NM | Modalities.US)
                                 )
                             //- US
+                            
                             //- CorrespondsWithCS
                         })
             );

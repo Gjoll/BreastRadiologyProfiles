@@ -1,0 +1,522 @@
+{
+  "resourceType": "CodeSystem",
+  "id": "RecommendationsCodeSystemCS",
+  "url": "http://hl7.org/fhir/us/breast-radiology/CodeSystem/RecommendationsCodeSystemCS",
+  "version": "0.0.2",
+  "name": "RecommendationsCodeSystemCS",
+  "title": "Recommendations CodeSystem",
+  "status": "draft",
+  "date": "2019-11-01",
+  "publisher": "Hl7-Clinical Interoperability Council",
+  "contact": [
+    {
+      "telecom": [
+        {
+          "system": "url",
+          "value": "http://www.hl7.org/Special/committees/cic"
+        }
+      ]
+    }
+  ],
+  "description": "Recommendations code system",
+  "caseSensitive": true,
+  "content": "complete",
+  "count": 99,
+  "concept": [
+    {
+      "code": "3DImaging",
+      "display": "3D Imaging",
+      "definition": "BreastRadiology.XUnitTests.ResourcesMaker+Definition"
+    },
+    {
+      "code": "3DSpotCC",
+      "display": "3D spot CC",
+      "definition": "BreastRadiology.XUnitTests.ResourcesMaker+Definition"
+    },
+    {
+      "code": "3DSpotLM",
+      "display": "3D spot LM",
+      "definition": "BreastRadiology.XUnitTests.ResourcesMaker+Definition"
+    },
+    {
+      "code": "3DSpotML",
+      "display": "3D spot ML",
+      "definition": "BreastRadiology.XUnitTests.ResourcesMaker+Definition"
+    },
+    {
+      "code": "3DSpotMLO",
+      "display": "3D spot MLO",
+      "definition": "BreastRadiology.XUnitTests.ResourcesMaker+Definition"
+    },
+    {
+      "code": "AdditionalViews",
+      "display": "Additional views",
+      "definition": "BreastRadiology.XUnitTests.ResourcesMaker+Definition"
+    },
+    {
+      "code": "AddlitionalViewsWithPossibleUltrasound",
+      "display": "Addlitional views with possible ultrasound",
+      "definition": "BreastRadiology.XUnitTests.ResourcesMaker+Definition"
+    },
+    {
+      "code": "AxillaView",
+      "display": "Axilla view",
+      "definition": "BreastRadiology.XUnitTests.ResourcesMaker+Definition"
+    },
+    {
+      "code": "AxillaryTailView",
+      "display": "Axillary tail view",
+      "definition": "BreastRadiology.XUnitTests.ResourcesMaker+Definition"
+    },
+    {
+      "code": "Biopsy",
+      "display": "Biopsy",
+      "definition": "BreastRadiology.XUnitTests.ResourcesMaker+Definition"
+    },
+    {
+      "code": "BiopsyBaseOnClinical",
+      "display": "Biopsy base on clinical",
+      "definition": "BreastRadiology.XUnitTests.ResourcesMaker+Definition"
+    },
+    {
+      "code": "CaudocranialView",
+      "display": "Caudocranial view",
+      "definition": "BreastRadiology.XUnitTests.ResourcesMaker+Definition"
+    },
+    {
+      "code": "CCWithCompressionView",
+      "display": "CC with compression view",
+      "definition": "BreastRadiology.XUnitTests.ResourcesMaker+Definition"
+    },
+    {
+      "code": "CCWithMagnificationView",
+      "display": "CC with magnification view",
+      "definition": "BreastRadiology.XUnitTests.ResourcesMaker+Definition"
+    },
+    {
+      "code": "CleavageView",
+      "display": "Cleavage view",
+      "definition": "BreastRadiology.XUnitTests.ResourcesMaker+Definition"
+    },
+    {
+      "code": "ClinicalConsultation",
+      "display": "Clinical consultation",
+      "definition": "BreastRadiology.XUnitTests.ResourcesMaker+Definition"
+    },
+    {
+      "code": "ClinicalCorrelation",
+      "display": "Clinical correlation",
+      "definition": "BreastRadiology.XUnitTests.ResourcesMaker+Definition"
+    },
+    {
+      "code": "ClinicalFollow-up",
+      "display": "Clinical follow-up",
+      "definition": "BreastRadiology.XUnitTests.ResourcesMaker+Definition"
+    },
+    {
+      "code": "CompareToPriorExams",
+      "display": "Compare to prior exams",
+      "definition": "BreastRadiology.XUnitTests.ResourcesMaker+Definition"
+    },
+    {
+      "code": "CompressionViews",
+      "display": "Compression views",
+      "definition": "BreastRadiology.XUnitTests.ResourcesMaker+Definition"
+    },
+    {
+      "code": "ConeCompression",
+      "display": "Cone compression",
+      "definition": "BreastRadiology.XUnitTests.ResourcesMaker+Definition"
+    },
+    {
+      "code": "CoreBiopsy",
+      "display": "Core Biopsy",
+      "definition": "BreastRadiology.XUnitTests.ResourcesMaker+Definition"
+    },
+    {
+      "code": "CraniocaudalView",
+      "display": "Craniocaudal view",
+      "definition": "BreastRadiology.XUnitTests.ResourcesMaker+Definition"
+    },
+    {
+      "code": "Cryoablation",
+      "display": "Cryoablation",
+      "definition": "BreastRadiology.XUnitTests.ResourcesMaker+Definition"
+    },
+    {
+      "code": "CystAspiration",
+      "display": "Cyst aspiration",
+      "definition": "BreastRadiology.XUnitTests.ResourcesMaker+Definition"
+    },
+    {
+      "code": "CystAspirationForRelief",
+      "display": "Cyst aspiration for relief",
+      "definition": "BreastRadiology.XUnitTests.ResourcesMaker+Definition"
+    },
+    {
+      "code": "DiagnosticAspiration",
+      "display": "Diagnostic aspiration",
+      "definition": "BreastRadiology.XUnitTests.ResourcesMaker+Definition"
+    },
+    {
+      "code": "DiagnosticMammogram",
+      "display": "Diagnostic Mammogram",
+      "definition": "BreastRadiology.XUnitTests.ResourcesMaker+Definition"
+    },
+    {
+      "code": "DrainageTube",
+      "display": "Drainage tube",
+      "definition": "BreastRadiology.XUnitTests.ResourcesMaker+Definition"
+    },
+    {
+      "code": "Ductography",
+      "display": "Ductography",
+      "definition": "BreastRadiology.XUnitTests.ResourcesMaker+Definition"
+    },
+    {
+      "code": "ExaggeratedCCViews",
+      "display": "Exaggerated CC views",
+      "definition": "BreastRadiology.XUnitTests.ResourcesMaker+Definition"
+    },
+    {
+      "code": "FNABiopsy",
+      "display": "FNA biopsy",
+      "definition": "BreastRadiology.XUnitTests.ResourcesMaker+Definition"
+    },
+    {
+      "code": "Follow-up",
+      "display": "Follow-up",
+      "definition": "BreastRadiology.XUnitTests.ResourcesMaker+Definition"
+    },
+    {
+      "code": "Followup3Months",
+      "display": "Followup 3 months",
+      "definition": "BreastRadiology.XUnitTests.ResourcesMaker+Definition"
+    },
+    {
+      "code": "Followup6Months",
+      "display": "Followup 6 months",
+      "definition": "BreastRadiology.XUnitTests.ResourcesMaker+Definition"
+    },
+    {
+      "code": "IfPreviousShowNoChange",
+      "display": "If previous show no change",
+      "definition": "BreastRadiology.XUnitTests.ResourcesMaker+Definition"
+    },
+    {
+      "code": "LateralMagnificaionView",
+      "display": "Lateral magnificaion view",
+      "definition": "BreastRadiology.XUnitTests.ResourcesMaker+Definition"
+    },
+    {
+      "code": "LateralMedialView",
+      "display": "Lateral medial view",
+      "definition": "BreastRadiology.XUnitTests.ResourcesMaker+Definition"
+    },
+    {
+      "code": "LateralView",
+      "display": "Lateral view",
+      "definition": "BreastRadiology.XUnitTests.ResourcesMaker+Definition"
+    },
+    {
+      "code": "LateralWithCompressionView",
+      "display": "Lateral with compression view",
+      "definition": "BreastRadiology.XUnitTests.ResourcesMaker+Definition"
+    },
+    {
+      "code": "LateromedialObliqueSPELLING",
+      "display": "Lateromedial oblique SPELLING",
+      "definition": "BreastRadiology.XUnitTests.ResourcesMaker+Definition"
+    },
+    {
+      "code": "LateromedialViewSPELLING",
+      "display": "Lateromedial view SPELLING",
+      "definition": "BreastRadiology.XUnitTests.ResourcesMaker+Definition"
+    },
+    {
+      "code": "LymphNodeAssessment",
+      "display": "Lymph node assessment",
+      "definition": "BreastRadiology.XUnitTests.ResourcesMaker+Definition"
+    },
+    {
+      "code": "MagnificationViews",
+      "display": "Magnification views",
+      "definition": "BreastRadiology.XUnitTests.ResourcesMaker+Definition"
+    },
+    {
+      "code": "Mammogram",
+      "display": "Mammogram",
+      "definition": "BreastRadiology.XUnitTests.ResourcesMaker+Definition"
+    },
+    {
+      "code": "Mammogram3MonthFollow-up",
+      "display": "Mammogram 3 month follow-up",
+      "definition": "BreastRadiology.XUnitTests.ResourcesMaker+Definition"
+    },
+    {
+      "code": "Mammogram6MonthFollow-up",
+      "display": "Mammogram 6 month follow-up",
+      "definition": "BreastRadiology.XUnitTests.ResourcesMaker+Definition"
+    },
+    {
+      "code": "MammogramAndUltrasound3MonthFollow-up",
+      "display": "Mammogram and ultrasound 3 month follow-up",
+      "definition": "BreastRadiology.XUnitTests.ResourcesMaker+Definition"
+    },
+    {
+      "code": "MammogramAndUltrasound6MonthFollow-up",
+      "display": "Mammogram and ultrasound 6 month follow-up",
+      "definition": "BreastRadiology.XUnitTests.ResourcesMaker+Definition"
+    },
+    {
+      "code": "MediolateralObliqueView",
+      "display": "Mediolateral oblique view",
+      "definition": "BreastRadiology.XUnitTests.ResourcesMaker+Definition"
+    },
+    {
+      "code": "MediolateralView",
+      "display": "Mediolateral view",
+      "definition": "BreastRadiology.XUnitTests.ResourcesMaker+Definition"
+    },
+    {
+      "code": "MLOWithCompressionView",
+      "display": "MLO with compression view",
+      "definition": "BreastRadiology.XUnitTests.ResourcesMaker+Definition"
+    },
+    {
+      "code": "MLOWithMagnificationView",
+      "display": "MLO with magnification view",
+      "definition": "BreastRadiology.XUnitTests.ResourcesMaker+Definition"
+    },
+    {
+      "code": "MRI",
+      "display": "MRI",
+      "definition": "BreastRadiology.XUnitTests.ResourcesMaker+Definition"
+    },
+    {
+      "code": "MRIBiopsy",
+      "display": "MRI biopsy",
+      "definition": "BreastRadiology.XUnitTests.ResourcesMaker+Definition"
+    },
+    {
+      "code": "MRIFollow-up",
+      "display": "MRI follow-up",
+      "definition": "BreastRadiology.XUnitTests.ResourcesMaker+Definition"
+    },
+    {
+      "code": "NeedleLocationAndSurgicalBiopsy",
+      "display": "Needle location and surgical biopsy",
+      "definition": "BreastRadiology.XUnitTests.ResourcesMaker+Definition"
+    },
+    {
+      "code": "NippleInProfileView",
+      "display": "Nipple in profile view",
+      "definition": "BreastRadiology.XUnitTests.ResourcesMaker+Definition"
+    },
+    {
+      "code": "OffAngleCCView",
+      "display": "Off angle CC view",
+      "definition": "BreastRadiology.XUnitTests.ResourcesMaker+Definition"
+    },
+    {
+      "code": "OffAngleMLOView",
+      "display": "Off angle MLO view",
+      "definition": "BreastRadiology.XUnitTests.ResourcesMaker+Definition"
+    },
+    {
+      "code": "Poss.StereotacticBx",
+      "display": "Poss. Stereotactic Bx",
+      "definition": "BreastRadiology.XUnitTests.ResourcesMaker+Definition"
+    },
+    {
+      "code": "PossibleCoreBiopsy",
+      "display": "Possible core biopsy",
+      "definition": "BreastRadiology.XUnitTests.ResourcesMaker+Definition"
+    },
+    {
+      "code": "PossibleDiagnosticMammogram",
+      "display": "Possible Diagnostic Mammogram",
+      "definition": "BreastRadiology.XUnitTests.ResourcesMaker+Definition"
+    },
+    {
+      "code": "PossibleStereotacticVacuumBiopsy",
+      "display": "Possible stereotactic vacuum biopsy",
+      "definition": "BreastRadiology.XUnitTests.ResourcesMaker+Definition"
+    },
+    {
+      "code": "PossibleSurgicalConsult",
+      "display": "Possible surgical consult",
+      "definition": "BreastRadiology.XUnitTests.ResourcesMaker+Definition"
+    },
+    {
+      "code": "PossibleSurgicalEvaluation",
+      "display": "Possible surgical evaluation",
+      "definition": "BreastRadiology.XUnitTests.ResourcesMaker+Definition"
+    },
+    {
+      "code": "PossibleUltrasound",
+      "display": "Possible ultrasound",
+      "definition": "BreastRadiology.XUnitTests.ResourcesMaker+Definition"
+    },
+    {
+      "code": "PossibleUltrasoundGuidedBiopsy",
+      "display": "Possible ultrasound guided biopsy",
+      "definition": "BreastRadiology.XUnitTests.ResourcesMaker+Definition"
+    },
+    {
+      "code": "PossibleVacuumBiopsy",
+      "display": "Possible vacuum biopsy",
+      "definition": "BreastRadiology.XUnitTests.ResourcesMaker+Definition"
+    },
+    {
+      "code": "RepeatCCView",
+      "display": "Repeat CC view",
+      "definition": "BreastRadiology.XUnitTests.ResourcesMaker+Definition"
+    },
+    {
+      "code": "RepeatMLOView",
+      "display": "Repeat MLO view",
+      "definition": "BreastRadiology.XUnitTests.ResourcesMaker+Definition"
+    },
+    {
+      "code": "RolledLateralView",
+      "display": "Rolled lateral view",
+      "definition": "BreastRadiology.XUnitTests.ResourcesMaker+Definition"
+    },
+    {
+      "code": "RolledMedialView",
+      "display": "Rolled medial view",
+      "definition": "BreastRadiology.XUnitTests.ResourcesMaker+Definition"
+    },
+    {
+      "code": "ScintiBiopsy",
+      "display": "Scinti biopsy",
+      "definition": "BreastRadiology.XUnitTests.ResourcesMaker+Definition"
+    },
+    {
+      "code": "Scintimammography",
+      "display": "Scintimammography",
+      "definition": "BreastRadiology.XUnitTests.ResourcesMaker+Definition"
+    },
+    {
+      "code": "SpotCompression",
+      "display": "Spot compression",
+      "definition": "BreastRadiology.XUnitTests.ResourcesMaker+Definition"
+    },
+    {
+      "code": "SpotMagnificationViews",
+      "display": "Spot magnification views",
+      "definition": "BreastRadiology.XUnitTests.ResourcesMaker+Definition"
+    },
+    {
+      "code": "StereotacticBx",
+      "display": "Stereotactic bx",
+      "definition": "BreastRadiology.XUnitTests.ResourcesMaker+Definition"
+    },
+    {
+      "code": "SuperolateralIOView",
+      "display": "Superolateral IO view",
+      "definition": "BreastRadiology.XUnitTests.ResourcesMaker+Definition"
+    },
+    {
+      "code": "SurgicalBiopsy",
+      "display": "Surgical biopsy",
+      "definition": "BreastRadiology.XUnitTests.ResourcesMaker+Definition"
+    },
+    {
+      "code": "SurgicalConsult",
+      "display": "Surgical consult",
+      "definition": "BreastRadiology.XUnitTests.ResourcesMaker+Definition"
+    },
+    {
+      "code": "SurgicalConsultAndBiopsy",
+      "display": "Surgical consult and biopsy",
+      "definition": "BreastRadiology.XUnitTests.ResourcesMaker+Definition"
+    },
+    {
+      "code": "SurgicalEvaluation",
+      "display": "Surgical evaluation",
+      "definition": "BreastRadiology.XUnitTests.ResourcesMaker+Definition"
+    },
+    {
+      "code": "SurgicalExcision",
+      "display": "Surgical excision",
+      "definition": "BreastRadiology.XUnitTests.ResourcesMaker+Definition"
+    },
+    {
+      "code": "SurgicalOncologicEvaluation",
+      "display": "Surgical oncologic evaluation",
+      "definition": "BreastRadiology.XUnitTests.ResourcesMaker+Definition"
+    },
+    {
+      "code": "SurgicalOncologicalConsult",
+      "display": "Surgical oncological consult",
+      "definition": "BreastRadiology.XUnitTests.ResourcesMaker+Definition"
+    },
+    {
+      "code": "TangentialView",
+      "display": "Tangential view",
+      "definition": "BreastRadiology.XUnitTests.ResourcesMaker+Definition"
+    },
+    {
+      "code": "TangentialViews",
+      "display": "Tangential views",
+      "definition": "BreastRadiology.XUnitTests.ResourcesMaker+Definition"
+    },
+    {
+      "code": "Ultrasound",
+      "display": "Ultrasound",
+      "definition": "BreastRadiology.XUnitTests.ResourcesMaker+Definition"
+    },
+    {
+      "code": "Ultrasound2ndLook",
+      "display": "Ultrasound 2nd Look",
+      "definition": "BreastRadiology.XUnitTests.ResourcesMaker+Definition"
+    },
+    {
+      "code": "Ultrasound3MonthFollow-up",
+      "display": "Ultrasound 3 month follow-up",
+      "definition": "BreastRadiology.XUnitTests.ResourcesMaker+Definition"
+    },
+    {
+      "code": "Ultrasound6MonthFollow-up",
+      "display": "Ultrasound 6 month follow-up",
+      "definition": "BreastRadiology.XUnitTests.ResourcesMaker+Definition"
+    },
+    {
+      "code": "UltrasoundGuidedBx",
+      "display": "Ultrasound guided bx",
+      "definition": "BreastRadiology.XUnitTests.ResourcesMaker+Definition"
+    },
+    {
+      "code": "UltrasoundLocationAndSurgicalBiopsy",
+      "display": "Ultrasound location and surgical biopsy",
+      "definition": "BreastRadiology.XUnitTests.ResourcesMaker+Definition"
+    },
+    {
+      "code": "UltrasoundWithPossibleAddlitonalViews",
+      "display": "Ultrasound with possible addlitonal views",
+      "definition": "BreastRadiology.XUnitTests.ResourcesMaker+Definition"
+    },
+    {
+      "code": "UnlessPreviousShowNoChange",
+      "display": "Unless previous show no change",
+      "definition": "BreastRadiology.XUnitTests.ResourcesMaker+Definition"
+    },
+    {
+      "code": "Unspecified-Other",
+      "display": "Unspecified - other",
+      "definition": "BreastRadiology.XUnitTests.ResourcesMaker+Definition"
+    },
+    {
+      "code": "Unspecified/Other",
+      "display": "Unspecified / other",
+      "definition": "BreastRadiology.XUnitTests.ResourcesMaker+Definition"
+    },
+    {
+      "code": "VacuumBx",
+      "display": "Vacuum Bx",
+      "definition": "BreastRadiology.XUnitTests.ResourcesMaker+Definition"
+    }
+  ]
+}

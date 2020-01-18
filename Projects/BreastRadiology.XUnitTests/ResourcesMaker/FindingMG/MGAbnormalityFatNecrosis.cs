@@ -32,7 +32,8 @@ namespace BreastRadiology.XUnitTests
                     .AddFragRef(Self.CommonComponentsFragment.Value())
                     .AddFragRef(Self.ShapeComponentsFragment.Value())
                     .AddFragRef(Self.NotPreviouslySeenComponentsFragment.Value())
-                    .AddFragRef(Self.CorrespondsWithFragment.Value())
+                    .AddFragRef(Self.ObservedCountComponentFragment.Value())
+                    .AddFragRef(Self.CorrespondsWithComponentFragment.Value())
                     ;
 
                 s = e.SDef;
@@ -46,7 +47,6 @@ namespace BreastRadiology.XUnitTests
                 Self.SliceTargetReference(e, sliceElementDef, Self.ConsistentWith.Value(), 0, "*");
 
                 e.StartComponentSliceing();
-                Self.ComponentSliceObservedCountRange(e);
             });
     }
 }

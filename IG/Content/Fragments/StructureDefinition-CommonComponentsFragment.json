@@ -31,11 +31,7 @@
     },
     {
       "url": "http://www.fragment.com/maplink",
-      "valueString": "component|True|Observed Size^Quantity"
-    },
-    {
-      "url": "http://www.fragment.com/maplink",
-      "valueString": "component|True|Observed Size^Range"
+      "valueString": "component|True|Observed Size^Quantity or Range"
     }
   ],
   "url": "http://hl7.org/fhir/us/breast-radiology/StructureDefinition/CommonComponentsFragment",
@@ -201,7 +197,7 @@
         "id": "Observation.component:observedSize",
         "path": "Observation.component",
         "sliceName": "observedSize",
-        "short": "observedSize component",
+        "short": "Observed Size component",
         "definition": "This component slice contains the observedSize quantity",
         "comment": "This is one component of a group of components that comprise the observation.",
         "min": 0,

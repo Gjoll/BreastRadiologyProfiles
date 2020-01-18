@@ -1,0 +1,92 @@
+{
+  "resourceType": "CodeSystem",
+  "id": "MammoCalcificationTypeCS",
+  "url": "http://hl7.org/fhir/us/breast-radiology/CodeSystem/MammoCalcificationTypeCS",
+  "version": "0.0.2",
+  "name": "MammoCalcificationTypeCS",
+  "title": "Mammography Calcification Type CodeSystem",
+  "status": "draft",
+  "date": "2019-11-01",
+  "publisher": "Hl7-Clinical Interoperability Council",
+  "contact": [
+    {
+      "telecom": [
+        {
+          "system": "url",
+          "value": "http://www.hl7.org/Special/committees/cic"
+        }
+      ]
+    }
+  ],
+  "description": "Mammography calcification type code system.",
+  "caseSensitive": true,
+  "content": "complete",
+  "count": 13,
+  "concept": [
+    {
+      "code": "Skin",
+      "display": "Skin Calcification (Typically Benign)",
+      "definition": "BreastRadiology.XUnitTests.ResourcesMaker+Definition"
+    },
+    {
+      "code": "Vascular",
+      "display": "Vascular Calcification (Typically Benign)",
+      "definition": "BreastRadiology.XUnitTests.ResourcesMaker+Definition"
+    },
+    {
+      "code": "Coarse",
+      "display": "Coarse or \"Popcorn-like\" Calcification (Typically Benign)",
+      "definition": "BreastRadiology.XUnitTests.ResourcesMaker+Definition"
+    },
+    {
+      "code": "LargeRodLike",
+      "display": "Large Rod-Like Calcification (Typically Benign)",
+      "definition": "BreastRadiology.XUnitTests.ResourcesMaker+Definition"
+    },
+    {
+      "code": "Round",
+      "display": "Round (Typically Benign)",
+      "definition": "BreastRadiology.XUnitTests.ResourcesMaker+Definition"
+    },
+    {
+      "code": "Rim",
+      "display": "Rim  Calcification (Typically Benign)",
+      "definition": "BreastRadiology.XUnitTests.ResourcesMaker+Definition"
+    },
+    {
+      "code": "Dystrophic",
+      "display": "Dystrophic Calcification (Typically Benign)",
+      "definition": "BreastRadiology.XUnitTests.ResourcesMaker+Definition"
+    },
+    {
+      "code": "MilkOfCalcium",
+      "display": "Milk of Calcium Calcification (Typically Benign)",
+      "definition": "BreastRadiology.XUnitTests.ResourcesMaker+Definition"
+    },
+    {
+      "code": "Suture",
+      "display": "Suture Calcification (Typically Benign)",
+      "definition": "BreastRadiology.XUnitTests.ResourcesMaker+Definition"
+    },
+    {
+      "code": "Amorphous",
+      "display": "Amorphous Calcification (Suspicious Morphology)",
+      "definition": "BreastRadiology.XUnitTests.ResourcesMaker+Definition"
+    },
+    {
+      "code": "CoarseHeterogeneous",
+      "display": "Coarse Heterogeneous Calcification (Suspicious Morphology)",
+      "definition": "BreastRadiology.XUnitTests.ResourcesMaker+Definition"
+    },
+    {
+      "code": "Fine Pleomorphic",
+      "display": "Fine Pleomorphic Calcification (Suspicious Morphology)",
+      "definition": "BreastRadiology.XUnitTests.ResourcesMaker+Definition"
+    },
+    {
+      "code": "FineLinear",
+      "display": "Fine Linear or Fine-Linear Branching Calcification (Suspicious Morphology)",
+      "definition": "BreastRadiology.XUnitTests.ResourcesMaker+Definition"
+    }
+  ]
+}

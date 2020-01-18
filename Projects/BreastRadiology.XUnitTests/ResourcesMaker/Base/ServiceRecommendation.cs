@@ -66,7 +66,6 @@ namespace BreastRadiology.XUnitTests
                         new ConceptDef[]
                         {
                             //+ RecommendationsCS
-                            // SNOMED Description: Procedure | 450566007 | Digital breast tomosynthesis (Procedure) +
                             //+ 3DImaging
                             new ConceptDef()
                                 .SetCode("3DImaging")
@@ -74,9 +73,10 @@ namespace BreastRadiology.XUnitTests
                                 .SetDefinition(new Definition()
                                     .Line("[PR] 3D Imaging")
                                     .ValidModalities(Modalities.MG | Modalities.MRI | Modalities.US)
-                                ),
+                                )
+                                .SetSnomedDescription("Procedure | 450566007 | Digital breast tomosynthesis (Procedure) +")
                             //- 3DImaging
-                            // SNOMED Description: Procedure | 450566007 | Digital breast tomosynthesis (Procedure) + QualifierValue | 399162004 | Cranio-caudal projection (Qualifier) + SPOT
+                            ,
                             //+ 3DSpotCC
                             new ConceptDef()
                                 .SetCode("3DSpotCC")
@@ -84,9 +84,10 @@ namespace BreastRadiology.XUnitTests
                                 .SetDefinition(new Definition()
                                     .Line("[PR] 3D spot CC")
                                     .ValidModalities(Modalities.MG)
-                                ),
+                                )
+                                .SetSnomedDescription("Procedure | 450566007 | Digital breast tomosynthesis (Procedure) + QualifierValue | 399162004 | Cranio-caudal projection (Qualifier) + SPOT")
                             //- 3DSpotCC
-                            // SNOMED Description: Procedure | 450566007 | Digital breast tomosynthesis (Procedure) + QualifierValue | 399352003 | Lateral-medial projection (Qualifier) + SPOT
+                            ,
                             //+ 3DSpotLM
                             new ConceptDef()
                                 .SetCode("3DSpotLM")
@@ -94,9 +95,10 @@ namespace BreastRadiology.XUnitTests
                                 .SetDefinition(new Definition()
                                     .Line("[PR] 3D spot LM")
                                     .ValidModalities(Modalities.MG)
-                                ),
+                                )
+                                .SetSnomedDescription("Procedure | 450566007 | Digital breast tomosynthesis (Procedure) + QualifierValue | 399352003 | Lateral-medial projection (Qualifier) + SPOT")
                             //- 3DSpotLM
-                            // SNOMED Description: Procedure | 450566007 | Digital breast tomosynthesis (Procedure) + QualifierValue | 399260004 | Medial-lateral projection (Qualifier) + SPOT
+                            ,
                             //+ 3DSpotML
                             new ConceptDef()
                                 .SetCode("3DSpotML")
@@ -104,9 +106,10 @@ namespace BreastRadiology.XUnitTests
                                 .SetDefinition(new Definition()
                                     .Line("[PR] 3D spot ML")
                                     .ValidModalities(Modalities.MG)
-                                ),
+                                )
+                                .SetSnomedDescription("Procedure | 450566007 | Digital breast tomosynthesis (Procedure) + QualifierValue | 399260004 | Medial-lateral projection (Qualifier) + SPOT")
                             //- 3DSpotML
-                            // SNOMED Description: Procedure | 450566007 | Digital breast tomosynthesis (Procedure) + QualifierValue | 399368009 | Medio-lateral oblique projection (Qualifier) + SPOT
+                            ,
                             //+ 3DSpotMLO
                             new ConceptDef()
                                 .SetCode("3DSpotMLO")
@@ -114,8 +117,10 @@ namespace BreastRadiology.XUnitTests
                                 .SetDefinition(new Definition()
                                     .Line("[PR] 3D spot MLO")
                                     .ValidModalities(Modalities.MG)
-                                ),
+                                )
+                                .SetSnomedDescription("Procedure | 450566007 | Digital breast tomosynthesis (Procedure) + QualifierValue | 399368009 | Medio-lateral oblique projection (Qualifier) + SPOT")
                             //- 3DSpotMLO
+                            ,
                             //+ AdditionalViews
                             new ConceptDef()
                                 .SetCode("AdditionalViews")
@@ -123,9 +128,9 @@ namespace BreastRadiology.XUnitTests
                                 .SetDefinition(new Definition()
                                     .Line("[PR] Additional views")
                                     .ValidModalities(Modalities.MG | Modalities.MRI | Modalities.US)
-                                ),
+                                )
                             //- AdditionalViews
-                            // SNOMED Description: Procedure | 47079000 | Ultrasonography of breast (Procedure)
+                            ,
                             //+ AddlitionalViewsWithPossibleUltrasound
                             new ConceptDef()
                                 .SetCode("AddlitionalViewsWithPossibleUltrasound")
@@ -133,8 +138,10 @@ namespace BreastRadiology.XUnitTests
                                 .SetDefinition(new Definition()
                                     .Line("[PR] Addlitional views with possible ultrasound")
                                     .ValidModalities(Modalities.MG | Modalities.MRI | Modalities.US)
-                                ),
+                                )
+                                .SetSnomedDescription("Procedure | 47079000 | Ultrasonography of breast (Procedure)")
                             //- AddlitionalViewsWithPossibleUltrasound
+                            ,
                             //+ AxillaView
                             new ConceptDef()
                                 .SetCode("AxillaView")
@@ -142,9 +149,9 @@ namespace BreastRadiology.XUnitTests
                                 .SetDefinition(new Definition()
                                     .Line("[PR] Axilla view")
                                     .ValidModalities(Modalities.MG | Modalities.US)
-                                ),
+                                )
                             //- AxillaView
-                            // SNOMED Description: Procedure | 241055006 | Mammogram - symptomatic (Procedure) + QualifierValue | 442580003 | Axillary tissue mammography view (Qualifier)
+                            ,
                             //+ AxillaryTailView
                             new ConceptDef()
                                 .SetCode("AxillaryTailView")
@@ -152,8 +159,10 @@ namespace BreastRadiology.XUnitTests
                                 .SetDefinition(new Definition()
                                     .Line("[PR] Axillary tail view")
                                     .ValidModalities(Modalities.MG | Modalities.US)
-                                ),
+                                )
+                                .SetSnomedDescription("Procedure | 241055006 | Mammogram - symptomatic (Procedure) + QualifierValue | 442580003 | Axillary tissue mammography view (Qualifier)")
                             //- AxillaryTailView
+                            ,
                             //+ Biopsy
                             new ConceptDef()
                                 .SetCode("Biopsy")
@@ -161,8 +170,9 @@ namespace BreastRadiology.XUnitTests
                                 .SetDefinition(new Definition()
                                     .Line("[PR] Biopsy")
                                     .ValidModalities(Modalities.MG | Modalities.MRI | Modalities.NM | Modalities.US)
-                                ),
+                                )
                             //- Biopsy
+                            ,
                             //+ BiopsyBaseOnClinical
                             new ConceptDef()
                                 .SetCode("BiopsyBaseOnClinical")
@@ -170,8 +180,9 @@ namespace BreastRadiology.XUnitTests
                                 .SetDefinition(new Definition()
                                     .Line("[PR] Biopsy base on clinical")
                                     .ValidModalities(Modalities.MG | Modalities.MRI | Modalities.US)
-                                ),
+                                )
                             //- BiopsyBaseOnClinical
+                            ,
                             //+ CaudocranialView
                             new ConceptDef()
                                 .SetCode("CaudocranialView")
@@ -179,9 +190,9 @@ namespace BreastRadiology.XUnitTests
                                 .SetDefinition(new Definition()
                                     .Line("[PR] Caudocranial view")
                                     .ValidModalities(Modalities.MG | Modalities.US)
-                                ),
+                                )
                             //- CaudocranialView
-                            // SNOMED Description: Procedure | 439324009 | Mammogram in compression view (Procedure)+ QualifierValue | 399162004 | Cranio-caudal projection (Qualifier)
+                            ,
                             //+ CCWithCompressionView
                             new ConceptDef()
                                 .SetCode("CCWithCompressionView")
@@ -189,9 +200,10 @@ namespace BreastRadiology.XUnitTests
                                 .SetDefinition(new Definition()
                                     .Line("[PR] CC with compression view")
                                     .ValidModalities(Modalities.MG | Modalities.US)
-                                ),
+                                )
+                                .SetSnomedDescription("Procedure | 439324009 | Mammogram in compression view (Procedure)+ QualifierValue | 399162004 | Cranio-caudal projection (Qualifier)")
                             //- CCWithCompressionView
-                            // SNOMED Description: Procedure | 241058008 | Mammogram magnification (Procedure) + QualifierValue | 399162004 | Cranio-caudal projection (Qualifier)
+                            ,
                             //+ CCWithMagnificationView
                             new ConceptDef()
                                 .SetCode("CCWithMagnificationView")
@@ -199,9 +211,10 @@ namespace BreastRadiology.XUnitTests
                                 .SetDefinition(new Definition()
                                     .Line("[PR] CC with magnification view")
                                     .ValidModalities(Modalities.MG | Modalities.US)
-                                ),
+                                )
+                                .SetSnomedDescription("Procedure | 241058008 | Mammogram magnification (Procedure) + QualifierValue | 399162004 | Cranio-caudal projection (Qualifier)")
                             //- CCWithMagnificationView
-                            // SNOMED Description: Procedure | 241055006 | Mammogram - symptomatic (Procedure) + QualifierValue | 399161006 | Cleavage mammography view (Qualifier)
+                            ,
                             //+ CleavageView
                             new ConceptDef()
                                 .SetCode("CleavageView")
@@ -209,8 +222,10 @@ namespace BreastRadiology.XUnitTests
                                 .SetDefinition(new Definition()
                                     .Line("[PR] Cleavage view")
                                     .ValidModalities(Modalities.MG | Modalities.US)
-                                ),
+                                )
+                                .SetSnomedDescription("Procedure | 241055006 | Mammogram - symptomatic (Procedure) + QualifierValue | 399161006 | Cleavage mammography view (Qualifier)")
                             //- CleavageView
+                            ,
                             //+ ClinicalConsultation
                             new ConceptDef()
                                 .SetCode("ClinicalConsultation")
@@ -218,8 +233,9 @@ namespace BreastRadiology.XUnitTests
                                 .SetDefinition(new Definition()
                                     .Line("[PR] Clinical consultation")
                                     .ValidModalities(Modalities.MG | Modalities.MRI | Modalities.US)
-                                ),
+                                )
                             //- ClinicalConsultation
+                            ,
                             //+ ClinicalCorrelation
                             new ConceptDef()
                                 .SetCode("ClinicalCorrelation")
@@ -227,8 +243,9 @@ namespace BreastRadiology.XUnitTests
                                 .SetDefinition(new Definition()
                                     .Line("[PR] Clinical correlation")
                                     .ValidModalities(Modalities.MG | Modalities.MRI | Modalities.US)
-                                ),
+                                )
                             //- ClinicalCorrelation
+                            ,
                             //+ ClinicalFollow-up
                             new ConceptDef()
                                 .SetCode("ClinicalFollow-up")
@@ -236,8 +253,9 @@ namespace BreastRadiology.XUnitTests
                                 .SetDefinition(new Definition()
                                     .Line("[PR] Clinical follow-up")
                                     .ValidModalities(Modalities.MG | Modalities.MRI | Modalities.US)
-                                ),
+                                )
                             //- ClinicalFollow-up
+                            ,
                             //+ CompareToPriorExams
                             new ConceptDef()
                                 .SetCode("CompareToPriorExams")
@@ -245,9 +263,9 @@ namespace BreastRadiology.XUnitTests
                                 .SetDefinition(new Definition()
                                     .Line("[PR] Compare to prior exams")
                                     .ValidModalities(Modalities.MG | Modalities.US)
-                                ),
+                                )
                             //- CompareToPriorExams
-                            // SNOMED Description: Procedure | 439324009 | Mammogram in compression view (Procedure) 
+                            ,
                             //+ CompressionViews
                             new ConceptDef()
                                 .SetCode("CompressionViews")
@@ -255,9 +273,10 @@ namespace BreastRadiology.XUnitTests
                                 .SetDefinition(new Definition()
                                     .Line("[PR] Compression views")
                                     .ValidModalities(Modalities.MG | Modalities.US)
-                                ),
+                                )
+                                .SetSnomedDescription("Procedure | 439324009 | Mammogram in compression view (Procedure) ")
                             //- CompressionViews
-                            // SNOMED Description: Procedure | 439324009 | Mammogram in compression view (Procedure) 
+                            ,
                             //+ ConeCompression
                             new ConceptDef()
                                 .SetCode("ConeCompression")
@@ -265,9 +284,10 @@ namespace BreastRadiology.XUnitTests
                                 .SetDefinition(new Definition()
                                     .Line("[PR] Cone compression")
                                     .ValidModalities(Modalities.MG | Modalities.US)
-                                ),
+                                )
+                                .SetSnomedDescription("Procedure | 439324009 | Mammogram in compression view (Procedure) ")
                             //- ConeCompression
-                            // SNOMED Description: Procedure | 44578009 | Core needle biopsy of breast (Procedure)
+                            ,
                             //+ CoreBiopsy
                             new ConceptDef()
                                 .SetCode("CoreBiopsy")
@@ -275,9 +295,10 @@ namespace BreastRadiology.XUnitTests
                                 .SetDefinition(new Definition()
                                     .Line("[PR] Core Biopsy")
                                     .ValidModalities(Modalities.MG | Modalities.MRI | Modalities.US)
-                                ),
+                                )
+                                .SetSnomedDescription("Procedure | 44578009 | Core needle biopsy of breast (Procedure)")
                             //- CoreBiopsy
-                            // SNOMED Description: Procedure | 241055006 | Mammogram - symptomatic (Procedure) + QualifierValue | 399162004 | Cranio-caudal projection (Qualifier)
+                            ,
                             //+ CraniocaudalView
                             new ConceptDef()
                                 .SetCode("CraniocaudalView")
@@ -285,8 +306,10 @@ namespace BreastRadiology.XUnitTests
                                 .SetDefinition(new Definition()
                                     .Line("[PR] Craniocaudal view")
                                     .ValidModalities(Modalities.MG)
-                                ),
+                                )
+                                .SetSnomedDescription("Procedure | 241055006 | Mammogram - symptomatic (Procedure) + QualifierValue | 399162004 | Cranio-caudal projection (Qualifier)")
                             //- CraniocaudalView
+                            ,
                             //+ Cryoablation
                             new ConceptDef()
                                 .SetCode("Cryoablation")
@@ -294,9 +317,9 @@ namespace BreastRadiology.XUnitTests
                                 .SetDefinition(new Definition()
                                     .Line("[PR] Cryoablation")
                                     .ValidModalities(Modalities.MG | Modalities.US)
-                                ),
+                                )
                             //- Cryoablation
-                            // SNOMED Description: Procedure | 287572003 | Diagnostic aspiration of breast cyst (Procedure)
+                            ,
                             //+ CystAspiration
                             new ConceptDef()
                                 .SetCode("CystAspiration")
@@ -304,9 +327,10 @@ namespace BreastRadiology.XUnitTests
                                 .SetDefinition(new Definition()
                                     .Line("[PR] Cyst aspiration")
                                     .ValidModalities(Modalities.MG | Modalities.MRI | Modalities.US)
-                                ),
+                                )
+                                .SetSnomedDescription("Procedure | 287572003 | Diagnostic aspiration of breast cyst (Procedure)")
                             //- CystAspiration
-                            // SNOMED Description: Procedure | 287572003 | Diagnostic aspiration of breast cyst (Procedure)
+                            ,
                             //+ CystAspirationForRelief
                             new ConceptDef()
                                 .SetCode("CystAspirationForRelief")
@@ -314,9 +338,10 @@ namespace BreastRadiology.XUnitTests
                                 .SetDefinition(new Definition()
                                     .Line("[PR] Cyst aspiration for relief")
                                     .ValidModalities(Modalities.US)
-                                ),
+                                )
+                                .SetSnomedDescription("Procedure | 287572003 | Diagnostic aspiration of breast cyst (Procedure)")
                             //- CystAspirationForRelief
-                            // SNOMED Description: Procedure | 287572003 | Diagnostic aspiration of breast cyst (Procedure)
+                            ,
                             //+ DiagnosticAspiration
                             new ConceptDef()
                                 .SetCode("DiagnosticAspiration")
@@ -324,8 +349,10 @@ namespace BreastRadiology.XUnitTests
                                 .SetDefinition(new Definition()
                                     .Line("[PR] Diagnostic aspiration")
                                     .ValidModalities(Modalities.MG | Modalities.MRI | Modalities.US)
-                                ),
+                                )
+                                .SetSnomedDescription("Procedure | 287572003 | Diagnostic aspiration of breast cyst (Procedure)")
                             //- DiagnosticAspiration
+                            ,
                             //+ DiagnosticMammogram
                             new ConceptDef()
                                 .SetCode("DiagnosticMammogram")
@@ -333,8 +360,9 @@ namespace BreastRadiology.XUnitTests
                                 .SetDefinition(new Definition()
                                     .Line("[PR] Diagnostic Mammogram")
                                     .ValidModalities(Modalities.MG)
-                                ),
+                                )
                             //- DiagnosticMammogram
+                            ,
                             //+ DrainageTube
                             new ConceptDef()
                                 .SetCode("DrainageTube")
@@ -342,9 +370,9 @@ namespace BreastRadiology.XUnitTests
                                 .SetDefinition(new Definition()
                                     .Line("[PR] Drainage tube")
                                     .ValidModalities(Modalities.MG | Modalities.MRI | Modalities.US)
-                                ),
+                                )
                             //- DrainageTube
-                            // SNOMED Description: Procedure | 420131003 | Fluoroscopic mammary ductography (Procedure) 
+                            ,
                             //+ Ductography
                             new ConceptDef()
                                 .SetCode("Ductography")
@@ -352,9 +380,10 @@ namespace BreastRadiology.XUnitTests
                                 .SetDefinition(new Definition()
                                     .Line("[PR] Ductography")
                                     .ValidModalities(Modalities.MG | Modalities.MRI | Modalities.US)
-                                ),
+                                )
+                                .SetSnomedDescription("Procedure | 420131003 | Fluoroscopic mammary ductography (Procedure) ")
                             //- Ductography
-                            // SNOMED Description: Procedure | 241055006 | Mammogram - symptomatic (Procedure) + QualifierValue | 399265009 | Exaggerated cranio-caudal projection (Qualifier)
+                            ,
                             //+ ExaggeratedCCViews
                             new ConceptDef()
                                 .SetCode("ExaggeratedCCViews")
@@ -362,9 +391,10 @@ namespace BreastRadiology.XUnitTests
                                 .SetDefinition(new Definition()
                                     .Line("[PR] Exaggerated CC views")
                                     .ValidModalities(Modalities.MG | Modalities.US)
-                                ),
+                                )
+                                .SetSnomedDescription("Procedure | 241055006 | Mammogram - symptomatic (Procedure) + QualifierValue | 399265009 | Exaggerated cranio-caudal projection (Qualifier)")
                             //- ExaggeratedCCViews
-                            // SNOMED Description: not matching
+                            ,
                             //+ FNABiopsy
                             new ConceptDef()
                                 .SetCode("FNABiopsy")
@@ -372,8 +402,10 @@ namespace BreastRadiology.XUnitTests
                                 .SetDefinition(new Definition()
                                     .Line("[PR] FNA biopsy")
                                     .ValidModalities(Modalities.MG | Modalities.US)
-                                ),
+                                )
+                                .SetSnomedDescription("not matching")
                             //- FNABiopsy
+                            ,
                             //+ Follow-up
                             new ConceptDef()
                                 .SetCode("Follow-up")
@@ -381,8 +413,9 @@ namespace BreastRadiology.XUnitTests
                                 .SetDefinition(new Definition()
                                     .Line("[PR] Follow-up")
                                     .ValidModalities(Modalities.US)
-                                ),
+                                )
                             //- Follow-up
+                            ,
                             //+ Followup3Months
                             new ConceptDef()
                                 .SetCode("Followup3Months")
@@ -390,8 +423,9 @@ namespace BreastRadiology.XUnitTests
                                 .SetDefinition(new Definition()
                                     .Line("[PR] Followup 3 months")
                                     .ValidModalities(Modalities.MG | Modalities.US)
-                                ),
+                                )
                             //- Followup3Months
+                            ,
                             //+ Followup6Months
                             new ConceptDef()
                                 .SetCode("Followup6Months")
@@ -399,8 +433,9 @@ namespace BreastRadiology.XUnitTests
                                 .SetDefinition(new Definition()
                                     .Line("[PR] Followup 6 months")
                                     .ValidModalities(Modalities.MG | Modalities.MRI | Modalities.US)
-                                ),
+                                )
                             //- Followup6Months
+                            ,
                             //+ IfPreviousShowNoChange
                             new ConceptDef()
                                 .SetCode("IfPreviousShowNoChange")
@@ -408,9 +443,9 @@ namespace BreastRadiology.XUnitTests
                                 .SetDefinition(new Definition()
                                     .Line("[PR] If previous show no change")
                                     .ValidModalities(Modalities.MRI | Modalities.US)
-                                ),
+                                )
                             //- IfPreviousShowNoChange
-                            // SNOMED Description: Procedure | 241058008 | Mammogram magnification (Procedure) + QualifierValue | 399067008 | Lateral projection (Qualifier)
+                            ,
                             //+ LateralMagnificaionView
                             new ConceptDef()
                                 .SetCode("LateralMagnificaionView")
@@ -418,9 +453,10 @@ namespace BreastRadiology.XUnitTests
                                 .SetDefinition(new Definition()
                                     .Line("[PR] Lateral magnificaion view")
                                     .ValidModalities(Modalities.MG)
-                                ),
+                                )
+                                .SetSnomedDescription("Procedure | 241058008 | Mammogram magnification (Procedure) + QualifierValue | 399067008 | Lateral projection (Qualifier)")
                             //- LateralMagnificaionView
-                            // SNOMED Description: Procedure | 241055006 | Mammogram - symptomatic (Procedure) + QualifierValue | 399352003 | Lateral-medial projection (Qualifier)
+                            ,
                             //+ LateralMedialView
                             new ConceptDef()
                                 .SetCode("LateralMedialView")
@@ -428,9 +464,10 @@ namespace BreastRadiology.XUnitTests
                                 .SetDefinition(new Definition()
                                     .Line("[PR] Lateral medial view")
                                     .ValidModalities(Modalities.MG | Modalities.US)
-                                ),
+                                )
+                                .SetSnomedDescription("Procedure | 241055006 | Mammogram - symptomatic (Procedure) + QualifierValue | 399352003 | Lateral-medial projection (Qualifier)")
                             //- LateralMedialView
-                            // SNOMED Description: Procedure | 241055006 | Mammogram - symptomatic (Procedure) + QualifierValue | 399067008 | Lateral projection (Qualifier)
+                            ,
                             //+ LateralView
                             new ConceptDef()
                                 .SetCode("LateralView")
@@ -438,9 +475,10 @@ namespace BreastRadiology.XUnitTests
                                 .SetDefinition(new Definition()
                                     .Line("[PR] Lateral view")
                                     .ValidModalities(Modalities.MG | Modalities.US)
-                                ),
+                                )
+                                .SetSnomedDescription("Procedure | 241055006 | Mammogram - symptomatic (Procedure) + QualifierValue | 399067008 | Lateral projection (Qualifier)")
                             //- LateralView
-                            // SNOMED Description: Procedure | 439324009 | Mammogram in compression view (Procedure) + QualifierValue | 399067008 | Lateral projection (Qualifier)
+                            ,
                             //+ LateralWithCompressionView
                             new ConceptDef()
                                 .SetCode("LateralWithCompressionView")
@@ -448,9 +486,10 @@ namespace BreastRadiology.XUnitTests
                                 .SetDefinition(new Definition()
                                     .Line("[PR] Lateral with compression view")
                                     .ValidModalities(Modalities.MG | Modalities.US)
-                                ),
+                                )
+                                .SetSnomedDescription("Procedure | 439324009 | Mammogram in compression view (Procedure) + QualifierValue | 399067008 | Lateral projection (Qualifier)")
                             //- LateralWithCompressionView
-                            // SNOMED Description: Procedure | 241055006 | Mammogram - symptomatic (Procedure)+ QualifierValue | 399352003 | Lateral-medial projection (Qualifier)
+                            ,
                             //+ LateromedialObliqueSPELLING
                             new ConceptDef()
                                 .SetCode("LateromedialObliqueSPELLING")
@@ -458,9 +497,10 @@ namespace BreastRadiology.XUnitTests
                                 .SetDefinition(new Definition()
                                     .Line("[PR] Lateromedial oblique SPELLING")
                                     .ValidModalities(Modalities.MG | Modalities.US)
-                                ),
+                                )
+                                .SetSnomedDescription("Procedure | 241055006 | Mammogram - symptomatic (Procedure)+ QualifierValue | 399352003 | Lateral-medial projection (Qualifier)")
                             //- LateromedialObliqueSPELLING
-                            // SNOMED Description: Procedure | 241055006 | Mammogram - symptomatic (Procedure) + QualifierValue | 399352003 | Lateral-medial projection (Qualifier)
+                            ,
                             //+ LateromedialViewSPELLING
                             new ConceptDef()
                                 .SetCode("LateromedialViewSPELLING")
@@ -468,8 +508,10 @@ namespace BreastRadiology.XUnitTests
                                 .SetDefinition(new Definition()
                                     .Line("[PR] Lateromedial view SPELLING")
                                     .ValidModalities(Modalities.MG | Modalities.US)
-                                ),
+                                )
+                                .SetSnomedDescription("Procedure | 241055006 | Mammogram - symptomatic (Procedure) + QualifierValue | 399352003 | Lateral-medial projection (Qualifier)")
                             //- LateromedialViewSPELLING
+                            ,
                             //+ LymphNodeAssessment
                             new ConceptDef()
                                 .SetCode("LymphNodeAssessment")
@@ -477,9 +519,9 @@ namespace BreastRadiology.XUnitTests
                                 .SetDefinition(new Definition()
                                     .Line("[PR] Lymph node assessment")
                                     .ValidModalities(Modalities.MG)
-                                ),
+                                )
                             //- LymphNodeAssessment
-                            // SNOMED Description: Procedure | 241058008 | Mammogram magnification (Procedure)
+                            ,
                             //+ MagnificationViews
                             new ConceptDef()
                                 .SetCode("MagnificationViews")
@@ -487,9 +529,10 @@ namespace BreastRadiology.XUnitTests
                                 .SetDefinition(new Definition()
                                     .Line("[PR] Magnification views")
                                     .ValidModalities(Modalities.MG | Modalities.MRI | Modalities.NM | Modalities.US)
-                                ),
+                                )
+                                .SetSnomedDescription("Procedure | 241058008 | Mammogram magnification (Procedure)")
                             //- MagnificationViews
-                            // SNOMED Description: Procedure | 241055006 | Mammogram - symptomatic (Procedure)
+                            ,
                             //+ Mammogram
                             new ConceptDef()
                                 .SetCode("Mammogram")
@@ -497,8 +540,10 @@ namespace BreastRadiology.XUnitTests
                                 .SetDefinition(new Definition()
                                     .Line("[PR] Mammogram")
                                     .ValidModalities(Modalities.MRI)
-                                ),
+                                )
+                                .SetSnomedDescription("Procedure | 241055006 | Mammogram - symptomatic (Procedure)")
                             //- Mammogram
+                            ,
                             //+ Mammogram3MonthFollow-up
                             new ConceptDef()
                                 .SetCode("Mammogram3MonthFollow-up")
@@ -506,8 +551,9 @@ namespace BreastRadiology.XUnitTests
                                 .SetDefinition(new Definition()
                                     .Line("[PR] Mammogram 3 month follow-up")
                                     .ValidModalities(Modalities.MG | Modalities.US)
-                                ),
+                                )
                             //- Mammogram3MonthFollow-up
+                            ,
                             //+ Mammogram6MonthFollow-up
                             new ConceptDef()
                                 .SetCode("Mammogram6MonthFollow-up")
@@ -515,8 +561,9 @@ namespace BreastRadiology.XUnitTests
                                 .SetDefinition(new Definition()
                                     .Line("[PR] Mammogram 6 month follow-up")
                                     .ValidModalities(Modalities.MG | Modalities.US)
-                                ),
+                                )
                             //- Mammogram6MonthFollow-up
+                            ,
                             //+ MammogramAndUltrasound3MonthFollow-up
                             new ConceptDef()
                                 .SetCode("MammogramAndUltrasound3MonthFollow-up")
@@ -524,8 +571,9 @@ namespace BreastRadiology.XUnitTests
                                 .SetDefinition(new Definition()
                                     .Line("[PR] Mammogram and ultrasound 3 month follow-up")
                                     .ValidModalities(Modalities.MG | Modalities.US)
-                                ),
+                                )
                             //- MammogramAndUltrasound3MonthFollow-up
+                            ,
                             //+ MammogramAndUltrasound6MonthFollow-up
                             new ConceptDef()
                                 .SetCode("MammogramAndUltrasound6MonthFollow-up")
@@ -533,9 +581,9 @@ namespace BreastRadiology.XUnitTests
                                 .SetDefinition(new Definition()
                                     .Line("[PR] Mammogram and ultrasound 6 month follow-up")
                                     .ValidModalities(Modalities.MG | Modalities.US)
-                                ),
+                                )
                             //- MammogramAndUltrasound6MonthFollow-up
-                            // SNOMED Description: Procedure | 241055006 | Mammogram - symptomatic (Procedure) + QualifierValue | 399368009 | Medio-lateral oblique projection (Qualifier)
+                            ,
                             //+ MediolateralObliqueView
                             new ConceptDef()
                                 .SetCode("MediolateralObliqueView")
@@ -543,9 +591,10 @@ namespace BreastRadiology.XUnitTests
                                 .SetDefinition(new Definition()
                                     .Line("[PR] Mediolateral oblique view")
                                     .ValidModalities(Modalities.MG)
-                                ),
+                                )
+                                .SetSnomedDescription("Procedure | 241055006 | Mammogram - symptomatic (Procedure) + QualifierValue | 399368009 | Medio-lateral oblique projection (Qualifier)")
                             //- MediolateralObliqueView
-                            // SNOMED Description: Procedure | 241055006 | Mammogram - symptomatic (Procedure) + QualifierValue | 399260004 | Medial-lateral projection (Qualifier)
+                            ,
                             //+ MediolateralView
                             new ConceptDef()
                                 .SetCode("MediolateralView")
@@ -553,9 +602,10 @@ namespace BreastRadiology.XUnitTests
                                 .SetDefinition(new Definition()
                                     .Line("[PR] Mediolateral view")
                                     .ValidModalities(Modalities.MG)
-                                ),
+                                )
+                                .SetSnomedDescription("Procedure | 241055006 | Mammogram - symptomatic (Procedure) + QualifierValue | 399260004 | Medial-lateral projection (Qualifier)")
                             //- MediolateralView
-                            // SNOMED Description: Procedure | 439324009 | Mammogram in compression view (Procedure) + QualifierValue | 399368009 | Medio-lateral oblique projection (Qualifier)
+                            ,
                             //+ MLOWithCompressionView
                             new ConceptDef()
                                 .SetCode("MLOWithCompressionView")
@@ -563,9 +613,10 @@ namespace BreastRadiology.XUnitTests
                                 .SetDefinition(new Definition()
                                     .Line("[PR] MLO with compression view")
                                     .ValidModalities(Modalities.MG | Modalities.US)
-                                ),
+                                )
+                                .SetSnomedDescription("Procedure | 439324009 | Mammogram in compression view (Procedure) + QualifierValue | 399368009 | Medio-lateral oblique projection (Qualifier)")
                             //- MLOWithCompressionView
-                            // SNOMED Description: Procedure | 241058008 | Mammogram magnification (Procedure) + QualifierValue | 399368009 | Medio-lateral oblique projection (Qualifier)
+                            ,
                             //+ MLOWithMagnificationView
                             new ConceptDef()
                                 .SetCode("MLOWithMagnificationView")
@@ -573,9 +624,10 @@ namespace BreastRadiology.XUnitTests
                                 .SetDefinition(new Definition()
                                     .Line("[PR] MLO with magnification view")
                                     .ValidModalities(Modalities.MG | Modalities.US)
-                                ),
+                                )
+                                .SetSnomedDescription("Procedure | 241058008 | Mammogram magnification (Procedure) + QualifierValue | 399368009 | Medio-lateral oblique projection (Qualifier)")
                             //- MLOWithMagnificationView
-                            // SNOMED Description: Procedure | 241615005 | Magnetic resonance imaging of breast (Procedure)
+                            ,
                             //+ MRI
                             new ConceptDef()
                                 .SetCode("MRI")
@@ -583,9 +635,10 @@ namespace BreastRadiology.XUnitTests
                                 .SetDefinition(new Definition()
                                     .Line("[PR] MRI")
                                     .ValidModalities(Modalities.MG | Modalities.US)
-                                ),
+                                )
+                                .SetSnomedDescription("Procedure | 241615005 | Magnetic resonance imaging of breast (Procedure)")
                             //- MRI
-                            // SNOMED Description: Procedure | 433008009 | Core needle biopsy of breast using magnetic resonance imaging guidance (Procedure)
+                            ,
                             //+ MRIBiopsy
                             new ConceptDef()
                                 .SetCode("MRIBiopsy")
@@ -593,8 +646,10 @@ namespace BreastRadiology.XUnitTests
                                 .SetDefinition(new Definition()
                                     .Line("[PR] MRI biopsy")
                                     .ValidModalities(Modalities.MG | Modalities.MRI | Modalities.NM | Modalities.US)
-                                ),
+                                )
+                                .SetSnomedDescription("Procedure | 433008009 | Core needle biopsy of breast using magnetic resonance imaging guidance (Procedure)")
                             //- MRIBiopsy
+                            ,
                             //+ MRIFollow-up
                             new ConceptDef()
                                 .SetCode("MRIFollow-up")
@@ -602,8 +657,9 @@ namespace BreastRadiology.XUnitTests
                                 .SetDefinition(new Definition()
                                     .Line("[PR] MRI follow-up")
                                     .ValidModalities(Modalities.MRI | Modalities.NM)
-                                ),
+                                )
                             //- MRIFollow-up
+                            ,
                             //+ NeedleLocationAndSurgicalBiopsy
                             new ConceptDef()
                                 .SetCode("NeedleLocationAndSurgicalBiopsy")
@@ -611,9 +667,9 @@ namespace BreastRadiology.XUnitTests
                                 .SetDefinition(new Definition()
                                     .Line("[PR] Needle location and surgical biopsy")
                                     .ValidModalities(Modalities.MG | Modalities.MRI | Modalities.US)
-                                ),
+                                )
                             //- NeedleLocationAndSurgicalBiopsy
-                            // SNOMED Description: Procedure | 241055006 | Mammogram - symptomatic (Procedure) + QualifierValue | 442581004 | Nipple in profile mammography view (Qualifier)
+                            ,
                             //+ NippleInProfileView
                             new ConceptDef()
                                 .SetCode("NippleInProfileView")
@@ -621,9 +677,10 @@ namespace BreastRadiology.XUnitTests
                                 .SetDefinition(new Definition()
                                     .Line("[PR] Nipple in profile view")
                                     .ValidModalities(Modalities.MG)
-                                ),
+                                )
+                                .SetSnomedDescription("Procedure | 241055006 | Mammogram - symptomatic (Procedure) + QualifierValue | 442581004 | Nipple in profile mammography view (Qualifier)")
                             //- NippleInProfileView
-                            // SNOMED Description: Procedure | 241055006 | Mammogram - symptomatic (Procedure) + QualifierValue | 399162004 | Cranio-caudal projection (Qualifier)
+                            ,
                             //+ OffAngleCCView
                             new ConceptDef()
                                 .SetCode("OffAngleCCView")
@@ -631,9 +688,10 @@ namespace BreastRadiology.XUnitTests
                                 .SetDefinition(new Definition()
                                     .Line("[PR] Off angle CC view")
                                     .ValidModalities(Modalities.MG | Modalities.US)
-                                ),
+                                )
+                                .SetSnomedDescription("Procedure | 241055006 | Mammogram - symptomatic (Procedure) + QualifierValue | 399162004 | Cranio-caudal projection (Qualifier)")
                             //- OffAngleCCView
-                            // SNOMED Description: Procedure | 241055006 | Mammogram - symptomatic (Procedure) + QualifierValue | 399368009 | Medio-lateral oblique projection (Qualifier) +++++
+                            ,
                             //+ OffAngleMLOView
                             new ConceptDef()
                                 .SetCode("OffAngleMLOView")
@@ -641,9 +699,10 @@ namespace BreastRadiology.XUnitTests
                                 .SetDefinition(new Definition()
                                     .Line("[PR] Off angle MLO view")
                                     .ValidModalities(Modalities.MG | Modalities.US)
-                                ),
+                                )
+                                .SetSnomedDescription("Procedure | 241055006 | Mammogram - symptomatic (Procedure) + QualifierValue | 399368009 | Medio-lateral oblique projection (Qualifier) +++++")
                             //- OffAngleMLOView
-                            // SNOMED Description: Procedure | 116334007 | Stereotactically guided core needle biopsy of breast (Procedure) ++ POSSILE
+                            ,
                             //+ Poss.StereotacticBx
                             new ConceptDef()
                                 .SetCode("Poss.StereotacticBx")
@@ -651,9 +710,10 @@ namespace BreastRadiology.XUnitTests
                                 .SetDefinition(new Definition()
                                     .Line("[PR] Poss. Stereotactic Bx")
                                     .ValidModalities(Modalities.MG)
-                                ),
+                                )
+                                .SetSnomedDescription("Procedure | 116334007 | Stereotactically guided core needle biopsy of breast (Procedure) ++ POSSILE")
                             //- Poss.StereotacticBx
-                            // SNOMED Description: Procedure | 44578009 | Core needle biopsy of breast (Procedure) ++ POSSIBLE
+                            ,
                             //+ PossibleCoreBiopsy
                             new ConceptDef()
                                 .SetCode("PossibleCoreBiopsy")
@@ -661,8 +721,10 @@ namespace BreastRadiology.XUnitTests
                                 .SetDefinition(new Definition()
                                     .Line("[PR] Possible core biopsy")
                                     .ValidModalities(Modalities.MG | Modalities.US)
-                                ),
+                                )
+                                .SetSnomedDescription("Procedure | 44578009 | Core needle biopsy of breast (Procedure) ++ POSSIBLE")
                             //- PossibleCoreBiopsy
+                            ,
                             //+ PossibleDiagnosticMammogram
                             new ConceptDef()
                                 .SetCode("PossibleDiagnosticMammogram")
@@ -670,8 +732,9 @@ namespace BreastRadiology.XUnitTests
                                 .SetDefinition(new Definition()
                                     .Line("[PR] Possible Diagnostic Mammogram")
                                     .ValidModalities(Modalities.MG)
-                                ),
+                                )
                             //- PossibleDiagnosticMammogram
+                            ,
                             //+ PossibleStereotacticVacuumBiopsy
                             new ConceptDef()
                                 .SetCode("PossibleStereotacticVacuumBiopsy")
@@ -679,8 +742,9 @@ namespace BreastRadiology.XUnitTests
                                 .SetDefinition(new Definition()
                                     .Line("[PR] Possible stereotactic vacuum biopsy")
                                     .ValidModalities(Modalities.MG)
-                                ),
+                                )
                             //- PossibleStereotacticVacuumBiopsy
+                            ,
                             //+ PossibleSurgicalConsult
                             new ConceptDef()
                                 .SetCode("PossibleSurgicalConsult")
@@ -688,8 +752,9 @@ namespace BreastRadiology.XUnitTests
                                 .SetDefinition(new Definition()
                                     .Line("[PR] Possible surgical consult")
                                     .ValidModalities(Modalities.NM)
-                                ),
+                                )
                             //- PossibleSurgicalConsult
+                            ,
                             //+ PossibleSurgicalEvaluation
                             new ConceptDef()
                                 .SetCode("PossibleSurgicalEvaluation")
@@ -697,8 +762,9 @@ namespace BreastRadiology.XUnitTests
                                 .SetDefinition(new Definition()
                                     .Line("[PR] Possible surgical evaluation")
                                     .ValidModalities(Modalities.NM)
-                                ),
+                                )
                             //- PossibleSurgicalEvaluation
+                            ,
                             //+ PossibleUltrasound
                             new ConceptDef()
                                 .SetCode("PossibleUltrasound")
@@ -706,9 +772,9 @@ namespace BreastRadiology.XUnitTests
                                 .SetDefinition(new Definition()
                                     .Line("[PR] Possible ultrasound")
                                     .ValidModalities(Modalities.MG)
-                                ),
+                                )
                             //- PossibleUltrasound
-                            // SNOMED Description: Procedure | 432550005 | Core needle biopsy of breast using ultrasound guidance (Procedure) +++ POSSIBLE
+                            ,
                             //+ PossibleUltrasoundGuidedBiopsy
                             new ConceptDef()
                                 .SetCode("PossibleUltrasoundGuidedBiopsy")
@@ -716,8 +782,10 @@ namespace BreastRadiology.XUnitTests
                                 .SetDefinition(new Definition()
                                     .Line("[PR] Possible ultrasound guided biopsy")
                                     .ValidModalities(Modalities.MG)
-                                ),
+                                )
+                                .SetSnomedDescription("Procedure | 432550005 | Core needle biopsy of breast using ultrasound guidance (Procedure) +++ POSSIBLE")
                             //- PossibleUltrasoundGuidedBiopsy
+                            ,
                             //+ PossibleVacuumBiopsy
                             new ConceptDef()
                                 .SetCode("PossibleVacuumBiopsy")
@@ -725,9 +793,9 @@ namespace BreastRadiology.XUnitTests
                                 .SetDefinition(new Definition()
                                     .Line("[PR] Possible vacuum biopsy")
                                     .ValidModalities(Modalities.MG)
-                                ),
+                                )
                             //- PossibleVacuumBiopsy
-                            // SNOMED Description: Procedure | 241055006 | Mammogram - symptomatic (Procedure) + QualifierValue | 399162004 | Cranio-caudal projection (Qualifier)
+                            ,
                             //+ RepeatCCView
                             new ConceptDef()
                                 .SetCode("RepeatCCView")
@@ -735,9 +803,10 @@ namespace BreastRadiology.XUnitTests
                                 .SetDefinition(new Definition()
                                     .Line("[PR] Repeat CC view")
                                     .ValidModalities(Modalities.MG)
-                                ),
+                                )
+                                .SetSnomedDescription("Procedure | 241055006 | Mammogram - symptomatic (Procedure) + QualifierValue | 399162004 | Cranio-caudal projection (Qualifier)")
                             //- RepeatCCView
-                            // SNOMED Description: Procedure | 241055006 | Mammogram - symptomatic (Procedure) + QualifierValue | 399368009 | Medio-lateral oblique projection (Qualifier)
+                            ,
                             //+ RepeatMLOView
                             new ConceptDef()
                                 .SetCode("RepeatMLOView")
@@ -745,9 +814,10 @@ namespace BreastRadiology.XUnitTests
                                 .SetDefinition(new Definition()
                                     .Line("[PR] Repeat MLO view")
                                     .ValidModalities(Modalities.MG)
-                                ),
+                                )
+                                .SetSnomedDescription("Procedure | 241055006 | Mammogram - symptomatic (Procedure) + QualifierValue | 399368009 | Medio-lateral oblique projection (Qualifier)")
                             //- RepeatMLOView
-                            // SNOMED Description: Procedure | 399197002 | Lateral rolling of breast (Procedure)
+                            ,
                             //+ RolledLateralView
                             new ConceptDef()
                                 .SetCode("RolledLateralView")
@@ -755,9 +825,10 @@ namespace BreastRadiology.XUnitTests
                                 .SetDefinition(new Definition()
                                     .Line("[PR] Rolled lateral view")
                                     .ValidModalities(Modalities.MG | Modalities.US)
-                                ),
+                                )
+                                .SetSnomedDescription("Procedure | 399197002 | Lateral rolling of breast (Procedure)")
                             //- RolledLateralView
-                            // SNOMED Description: Procedure | 399226006 | Medial rolling of breast (Procedure)
+                            ,
                             //+ RolledMedialView
                             new ConceptDef()
                                 .SetCode("RolledMedialView")
@@ -765,8 +836,10 @@ namespace BreastRadiology.XUnitTests
                                 .SetDefinition(new Definition()
                                     .Line("[PR] Rolled medial view")
                                     .ValidModalities(Modalities.MG | Modalities.US)
-                                ),
+                                )
+                                .SetSnomedDescription("Procedure | 399226006 | Medial rolling of breast (Procedure)")
                             //- RolledMedialView
+                            ,
                             //+ ScintiBiopsy
                             new ConceptDef()
                                 .SetCode("ScintiBiopsy")
@@ -774,8 +847,9 @@ namespace BreastRadiology.XUnitTests
                                 .SetDefinition(new Definition()
                                     .Line("[PR] Scinti biopsy")
                                     .ValidModalities(Modalities.MG)
-                                ),
+                                )
                             //- ScintiBiopsy
+                            ,
                             //+ Scintimammography
                             new ConceptDef()
                                 .SetCode("Scintimammography")
@@ -783,9 +857,9 @@ namespace BreastRadiology.XUnitTests
                                 .SetDefinition(new Definition()
                                     .Line("[PR] Scintimammography")
                                     .ValidModalities(Modalities.MG | Modalities.MRI | Modalities.US)
-                                ),
+                                )
                             //- Scintimammography
-                            // SNOMED Description: Procedure | 439324009 | Mammogram in compression view (Procedure)
+                            ,
                             //+ SpotCompression
                             new ConceptDef()
                                 .SetCode("SpotCompression")
@@ -793,9 +867,10 @@ namespace BreastRadiology.XUnitTests
                                 .SetDefinition(new Definition()
                                     .Line("[PR] Spot compression")
                                     .ValidModalities(Modalities.MG | Modalities.NM | Modalities.US)
-                                ),
+                                )
+                                .SetSnomedDescription("Procedure | 439324009 | Mammogram in compression view (Procedure)")
                             //- SpotCompression
-                            // SNOMED Description: Procedure | 241058008 | Mammogram magnification (Procedure) +++++
+                            ,
                             //+ SpotMagnificationViews
                             new ConceptDef()
                                 .SetCode("SpotMagnificationViews")
@@ -803,9 +878,10 @@ namespace BreastRadiology.XUnitTests
                                 .SetDefinition(new Definition()
                                     .Line("[PR] Spot magnification views")
                                     .ValidModalities(Modalities.MG)
-                                ),
+                                )
+                                .SetSnomedDescription("Procedure | 241058008 | Mammogram magnification (Procedure) +++++")
                             //- SpotMagnificationViews
-                            // SNOMED Description: Procedure | 116334007 | Stereotactically guided core needle biopsy of breast (Procedure)
+                            ,
                             //+ StereotacticBx
                             new ConceptDef()
                                 .SetCode("StereotacticBx")
@@ -813,8 +889,10 @@ namespace BreastRadiology.XUnitTests
                                 .SetDefinition(new Definition()
                                     .Line("[PR] Stereotactic bx")
                                     .ValidModalities(Modalities.MG | Modalities.MRI | Modalities.NM | Modalities.US)
-                                ),
+                                )
+                                .SetSnomedDescription("Procedure | 116334007 | Stereotactically guided core needle biopsy of breast (Procedure)")
                             //- StereotacticBx
+                            ,
                             //+ SuperolateralIOView
                             new ConceptDef()
                                 .SetCode("SuperolateralIOView")
@@ -822,9 +900,9 @@ namespace BreastRadiology.XUnitTests
                                 .SetDefinition(new Definition()
                                     .Line("[PR] Superolateral IO view")
                                     .ValidModalities(Modalities.MG | Modalities.US)
-                                ),
+                                )
                             //- SuperolateralIOView
-                            // SNOMED Description: Procedure | 274331003 | Surgical biopsy of breast (Procedure)
+                            ,
                             //+ SurgicalBiopsy
                             new ConceptDef()
                                 .SetCode("SurgicalBiopsy")
@@ -832,8 +910,10 @@ namespace BreastRadiology.XUnitTests
                                 .SetDefinition(new Definition()
                                     .Line("[PR] Surgical biopsy")
                                     .ValidModalities(Modalities.NM)
-                                ),
+                                )
+                                .SetSnomedDescription("Procedure | 274331003 | Surgical biopsy of breast (Procedure)")
                             //- SurgicalBiopsy
+                            ,
                             //+ SurgicalConsult
                             new ConceptDef()
                                 .SetCode("SurgicalConsult")
@@ -841,9 +921,9 @@ namespace BreastRadiology.XUnitTests
                                 .SetDefinition(new Definition()
                                     .Line("[PR] Surgical consult")
                                     .ValidModalities(Modalities.MG | Modalities.MRI | Modalities.NM | Modalities.US)
-                                ),
+                                )
                             //- SurgicalConsult
-                            // SNOMED Description: Procedure | 274331003 | Surgical biopsy of breast (Procedure) ++++
+                            ,
                             //+ SurgicalConsultAndBiopsy
                             new ConceptDef()
                                 .SetCode("SurgicalConsultAndBiopsy")
@@ -851,8 +931,10 @@ namespace BreastRadiology.XUnitTests
                                 .SetDefinition(new Definition()
                                     .Line("[PR] Surgical consult and biopsy")
                                     .ValidModalities(Modalities.MG | Modalities.MRI | Modalities.US)
-                                ),
+                                )
+                                .SetSnomedDescription("Procedure | 274331003 | Surgical biopsy of breast (Procedure) ++++")
                             //- SurgicalConsultAndBiopsy
+                            ,
                             //+ SurgicalEvaluation
                             new ConceptDef()
                                 .SetCode("SurgicalEvaluation")
@@ -860,9 +942,9 @@ namespace BreastRadiology.XUnitTests
                                 .SetDefinition(new Definition()
                                     .Line("[PR] Surgical evaluation")
                                     .ValidModalities(Modalities.NM)
-                                ),
+                                )
                             //- SurgicalEvaluation
-                            // SNOMED Description: Procedure | 237372000 | Excisional biopsy of breast (Procedure)
+                            ,
                             //+ SurgicalExcision
                             new ConceptDef()
                                 .SetCode("SurgicalExcision")
@@ -870,8 +952,10 @@ namespace BreastRadiology.XUnitTests
                                 .SetDefinition(new Definition()
                                     .Line("[PR] Surgical excision")
                                     .ValidModalities(Modalities.NM)
-                                ),
+                                )
+                                .SetSnomedDescription("Procedure | 237372000 | Excisional biopsy of breast (Procedure)")
                             //- SurgicalExcision
+                            ,
                             //+ SurgicalOncologicEvaluation
                             new ConceptDef()
                                 .SetCode("SurgicalOncologicEvaluation")
@@ -879,8 +963,9 @@ namespace BreastRadiology.XUnitTests
                                 .SetDefinition(new Definition()
                                     .Line("[PR] Surgical oncologic evaluation")
                                     .ValidModalities(Modalities.NM)
-                                ),
+                                )
                             //- SurgicalOncologicEvaluation
+                            ,
                             //+ SurgicalOncologicalConsult
                             new ConceptDef()
                                 .SetCode("SurgicalOncologicalConsult")
@@ -888,8 +973,9 @@ namespace BreastRadiology.XUnitTests
                                 .SetDefinition(new Definition()
                                     .Line("[PR] Surgical oncological consult")
                                     .ValidModalities(Modalities.MG | Modalities.MRI | Modalities.NM | Modalities.US)
-                                ),
+                                )
                             //- SurgicalOncologicalConsult
+                            ,
                             //+ TangentialView
                             new ConceptDef()
                                 .SetCode("TangentialView")
@@ -897,8 +983,9 @@ namespace BreastRadiology.XUnitTests
                                 .SetDefinition(new Definition()
                                     .Line("[PR] Tangential view")
                                     .ValidModalities(Modalities.MG | Modalities.US)
-                                ),
+                                )
                             //- TangentialView
+                            ,
                             //+ TangentialViews
                             new ConceptDef()
                                 .SetCode("TangentialViews")
@@ -906,9 +993,9 @@ namespace BreastRadiology.XUnitTests
                                 .SetDefinition(new Definition()
                                     .Line("[PR] Tangential views")
                                     .ValidModalities(Modalities.MG | Modalities.US)
-                                ),
+                                )
                             //- TangentialViews
-                            // SNOMED Description: Procedure | 47079000 | Ultrasonography of breast (Procedure)
+                            ,
                             //+ Ultrasound
                             new ConceptDef()
                                 .SetCode("Ultrasound")
@@ -916,8 +1003,10 @@ namespace BreastRadiology.XUnitTests
                                 .SetDefinition(new Definition()
                                     .Line("[PR] Ultrasound")
                                     .ValidModalities(Modalities.MG | Modalities.MRI | Modalities.NM)
-                                ),
+                                )
+                                .SetSnomedDescription("Procedure | 47079000 | Ultrasonography of breast (Procedure)")
                             //- Ultrasound
+                            ,
                             //+ Ultrasound2ndLook
                             new ConceptDef()
                                 .SetCode("Ultrasound2ndLook")
@@ -925,8 +1014,9 @@ namespace BreastRadiology.XUnitTests
                                 .SetDefinition(new Definition()
                                     .Line("[PR] Ultrasound 2nd Look")
                                     .ValidModalities(Modalities.MG | Modalities.MRI | Modalities.NM | Modalities.US)
-                                ),
+                                )
                             //- Ultrasound2ndLook
+                            ,
                             //+ Ultrasound3MonthFollow-up
                             new ConceptDef()
                                 .SetCode("Ultrasound3MonthFollow-up")
@@ -934,8 +1024,9 @@ namespace BreastRadiology.XUnitTests
                                 .SetDefinition(new Definition()
                                     .Line("[PR] Ultrasound 3 month follow-up")
                                     .ValidModalities(Modalities.MG | Modalities.US)
-                                ),
+                                )
                             //- Ultrasound3MonthFollow-up
+                            ,
                             //+ Ultrasound6MonthFollow-up
                             new ConceptDef()
                                 .SetCode("Ultrasound6MonthFollow-up")
@@ -943,9 +1034,9 @@ namespace BreastRadiology.XUnitTests
                                 .SetDefinition(new Definition()
                                     .Line("[PR] Ultrasound 6 month follow-up")
                                     .ValidModalities(Modalities.MG | Modalities.US)
-                                ),
+                                )
                             //- Ultrasound6MonthFollow-up
-                            // SNOMED Description: Procedure | 432550005 | Core needle biopsy of breast using ultrasound guidance (Procedure)
+                            ,
                             //+ UltrasoundGuidedBx
                             new ConceptDef()
                                 .SetCode("UltrasoundGuidedBx")
@@ -953,9 +1044,10 @@ namespace BreastRadiology.XUnitTests
                                 .SetDefinition(new Definition()
                                     .Line("[PR] Ultrasound guided bx")
                                     .ValidModalities(Modalities.MG | Modalities.MRI | Modalities.NM | Modalities.US)
-                                ),
+                                )
+                                .SetSnomedDescription("Procedure | 432550005 | Core needle biopsy of breast using ultrasound guidance (Procedure)")
                             //- UltrasoundGuidedBx
-                            // SNOMED Description: Procedure | 274331003 | Surgical biopsy of breast (Procedure)++++++++++++
+                            ,
                             //+ UltrasoundLocationAndSurgicalBiopsy
                             new ConceptDef()
                                 .SetCode("UltrasoundLocationAndSurgicalBiopsy")
@@ -963,8 +1055,10 @@ namespace BreastRadiology.XUnitTests
                                 .SetDefinition(new Definition()
                                     .Line("[PR] Ultrasound location and surgical biopsy")
                                     .ValidModalities(Modalities.MG | Modalities.US)
-                                ),
+                                )
+                                .SetSnomedDescription("Procedure | 274331003 | Surgical biopsy of breast (Procedure)++++++++++++")
                             //- UltrasoundLocationAndSurgicalBiopsy
+                            ,
                             //+ UltrasoundWithPossibleAddlitonalViews
                             new ConceptDef()
                                 .SetCode("UltrasoundWithPossibleAddlitonalViews")
@@ -972,8 +1066,9 @@ namespace BreastRadiology.XUnitTests
                                 .SetDefinition(new Definition()
                                     .Line("[PR] Ultrasound with possible addlitonal views")
                                     .ValidModalities(Modalities.MG)
-                                ),
+                                )
                             //- UltrasoundWithPossibleAddlitonalViews
+                            ,
                             //+ UnlessPreviousShowNoChange
                             new ConceptDef()
                                 .SetCode("UnlessPreviousShowNoChange")
@@ -981,8 +1076,9 @@ namespace BreastRadiology.XUnitTests
                                 .SetDefinition(new Definition()
                                     .Line("[PR] Unless previous show no change")
                                     .ValidModalities(Modalities.MG)
-                                ),
+                                )
                             //- UnlessPreviousShowNoChange
+                            ,
                             //+ Unspecified-Other
                             new ConceptDef()
                                 .SetCode("Unspecified-Other")
@@ -990,8 +1086,9 @@ namespace BreastRadiology.XUnitTests
                                 .SetDefinition(new Definition()
                                     .Line("[PR] Unspecified - other")
                                     .ValidModalities(Modalities.MG)
-                                ),
+                                )
                             //- Unspecified-Other
+                            ,
                             //+ Unspecified/Other
                             new ConceptDef()
                                 .SetCode("Unspecified/Other")
@@ -999,8 +1096,9 @@ namespace BreastRadiology.XUnitTests
                                 .SetDefinition(new Definition()
                                     .Line("[PR] Unspecified / other")
                                     .ValidModalities(Modalities.MRI | Modalities.US)
-                                ),
+                                )
                             //- Unspecified/Other
+                            ,
                             //+ VacuumBx
                             new ConceptDef()
                                 .SetCode("VacuumBx")
@@ -1010,6 +1108,7 @@ namespace BreastRadiology.XUnitTests
                                     .ValidModalities(Modalities.MG | Modalities.US)
                                 )
                             //- VacuumBx
+                            
                             //- RecommendationsCS
                         })
             );

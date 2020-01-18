@@ -72,7 +72,8 @@ namespace BreastRadiology.XUnitTests
                     .AddFragRef(Self.CommonComponentsFragment.Value())
                     .AddFragRef(Self.ShapeComponentsFragment.Value())
                     .AddFragRef(Self.NotPreviouslySeenComponentsFragment.Value())
-                    .AddFragRef(Self.CorrespondsWithFragment.Value())
+                    .AddFragRef(Self.ObservedCountComponentFragment.Value())
+                    .AddFragRef(Self.CorrespondsWithComponentFragment.Value())
                     ;
 
                 s = e.SDef;
@@ -88,7 +89,7 @@ namespace BreastRadiology.XUnitTests
                 Self.SliceTargetReference(e, sliceElementDef, Self.ConsistentWith.Value(), 0, "*");
 
                 e.StartComponentSliceing();
-                e.ComponentSliceCodeableConcept("mgAbnormalityDensityType",
+                e.ComponentSliceCodeableConcept("densityType",
                     Self.MGCodeAbnormalityDensityType.ToCodeableConcept(),
                     binding,
                     BindingStrength.Required,
@@ -99,7 +100,6 @@ namespace BreastRadiology.XUnitTests
                         .Paragraph($"This slice contains the optional component that refines the density type.",
                                     $"The value of this component is a codeable concept chosen from the {Self.MGCalcificationTypeVS.Value().Name} valueset.")
                     );
-                Self.ComponentSliceObservedCountRange(e);
             });
     }
 }

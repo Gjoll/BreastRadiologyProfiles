@@ -37,7 +37,6 @@ namespace BreastRadiology.XUnitTests
                         new ConceptDef[]
                         {
                             //+ TumorQualifierCS
-                            // SNOMED Description: ObservableEntity | 399687005 | Primary tumor site (Observable) 
                             //+ Index
                             new ConceptDef()
                                 .SetCode("Index")
@@ -45,9 +44,10 @@ namespace BreastRadiology.XUnitTests
                                 .SetDefinition(new Definition()
                                     .Line("[PR] Index")
                                     .ValidModalities(Modalities.MG | Modalities.MRI | Modalities.US)
-                                ),
+                                )
+                                .SetSnomedDescription("ObservableEntity | 399687005 | Primary tumor site (Observable) ")
                             //- Index
-                            // SNOMED Description: ObservableEntity | 399462009 | Secondary tumor site (Observable)
+                            ,
                             //+ Satellite
                             new ConceptDef()
                                 .SetCode("Satellite")
@@ -56,7 +56,9 @@ namespace BreastRadiology.XUnitTests
                                     .Line("[PR] Satellite")
                                     .ValidModalities(Modalities.MG | Modalities.MRI | Modalities.US)
                                 )
+                                .SetSnomedDescription("ObservableEntity | 399462009 | Secondary tumor site (Observable)")
                             //- Satellite
+                            
                             //- TumorQualifierCS
                         })
             );

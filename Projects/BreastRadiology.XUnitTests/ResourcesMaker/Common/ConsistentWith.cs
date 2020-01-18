@@ -39,7 +39,7 @@ namespace BreastRadiology.XUnitTests
                            BindingStrength.Extensible,
                            1,
                            "1",
-                           "Value",
+                           "Consistent With Value",
                             new Markdown()
                                 .Paragraph($"This slice contains the required component that defines what this observation is consistent with.",
                                             $"The value of this component is a codeable concept chosen from the {Self.ConsistentWithVS.Value().Name} valueset.")
@@ -50,7 +50,7 @@ namespace BreastRadiology.XUnitTests
                            BindingStrength.Required,
                            0,
                            "*",
-                           "Qualifier",
+                           "Consistent With Qualifier",
                             new Markdown()
                                 .Paragraph($"This slice contains zero or more components that qualify the consistent with slice component value.",
                                             $"The value of this component is a codeable concept chosen from the {Self.ConsistentWithVS.Value().Name} valueset.")
@@ -103,11 +103,9 @@ namespace BreastRadiology.XUnitTests
                                 .SetDefinition(new Definition()
                                     .Line("[PR] Abscess")
                                     .ValidModalities(Modalities.MG | Modalities.MRI | Modalities.US)
-                                ),
+                                )
                             //- Abscess
-                            // SNOMED Code: 404057003
-                            // SNOMED Description: ClinicalFinding | Angiolipoma (Disorder)
-                            // ICD10: 404057003
+                            ,
                             //+ Angiolipoma
                             new ConceptDef()
                                 .SetCode("Angiolipoma")
@@ -115,9 +113,12 @@ namespace BreastRadiology.XUnitTests
                                 .SetDefinition(new Definition()
                                     .Line("[PR] Angiolipoma")
                                     .ValidModalities(Modalities.MRI | Modalities.US)
-                                ),
+                                )
+                                .SetSnomedCode("404057003")
+                                .SetSnomedDescription("ClinicalFinding | Angiolipoma (Disorder)")
+                                .SetICD10("404057003")
                             //- Angiolipoma
-                            // SNOMED Description: ClinicalFinding | 37009001 | Apocrine metaplasia of breast (Disorder) | [0/0] | N60.89
+                            ,
                             //+ ApocrineMetaplasia
                             new ConceptDef()
                                 .SetCode("ApocrineMetaplasia")
@@ -125,8 +126,10 @@ namespace BreastRadiology.XUnitTests
                                 .SetDefinition(new Definition()
                                     .Line("[PR] Apocrine metaplasia")
                                     .ValidModalities(Modalities.US)
-                                ),
+                                )
+                                .SetSnomedDescription("ClinicalFinding | 37009001 | Apocrine metaplasia of breast (Disorder) | [0/0] | N60.89")
                             //- ApocrineMetaplasia
+                            ,
                             //+ Artifact
                             new ConceptDef()
                                 .SetCode("Artifact")
@@ -134,8 +137,9 @@ namespace BreastRadiology.XUnitTests
                                 .SetDefinition(new Definition()
                                     .Line("[PR] Artifact")
                                     .ValidModalities(Modalities.NM)
-                                ),
+                                )
                             //- Artifact
+                            ,
                             //+ AtypicalHyperplasia
                             new ConceptDef()
                                 .SetCode("AtypicalHyperplasia")
@@ -143,9 +147,9 @@ namespace BreastRadiology.XUnitTests
                                 .SetDefinition(new Definition()
                                     .Line("[PR] Atypical hyperplasia")
                                     .ValidModalities(Modalities.MRI)
-                                ),
+                                )
                             //- AtypicalHyperplasia
-                            // SNOMED Description: BodyStructure | 245269009 | Axillary lymph node group (Bodypart)
+                            ,
                             //+ AxillaryLymphNode
                             new ConceptDef()
                                 .SetCode("AxillaryLymphNode")
@@ -153,9 +157,10 @@ namespace BreastRadiology.XUnitTests
                                 .SetDefinition(new Definition()
                                     .Line("[PR] Axillary lymph node")
                                     .ValidModalities(Modalities.NM)
-                                ),
+                                )
+                                .SetSnomedDescription("BodyStructure | 245269009 | Axillary lymph node group (Bodypart)")
                             //- AxillaryLymphNode
-                            // SNOMED Description: ClinicalFinding | 254838004 | Carcinoma of breast (Disorder) | [4/33] | C50.929
+                            ,
                             //+ Carcinoma
                             new ConceptDef()
                                 .SetCode("Carcinoma")
@@ -163,9 +168,10 @@ namespace BreastRadiology.XUnitTests
                                 .SetDefinition(new Definition()
                                     .Line("[PR] Carcinoma")
                                     .ValidModalities(Modalities.MG | Modalities.MRI | Modalities.NM | Modalities.US)
-                                ),
+                                )
+                                .SetSnomedDescription("ClinicalFinding | 254838004 | Carcinoma of breast (Disorder) | [4/33] | C50.929")
                             //- Carcinoma
-                            // SNOMED Description: ClinicalFinding | 254838004 | Carcinoma of breast (Disorder) | [4/33] | C50.929
+                            ,
                             //+ CarcinomaKnown
                             new ConceptDef()
                                 .SetCode("CarcinomaKnown")
@@ -173,13 +179,10 @@ namespace BreastRadiology.XUnitTests
                                 .SetDefinition(new Definition()
                                     .Line("[PR] Carcinoma known")
                                     .ValidModalities(Modalities.MG | Modalities.MRI | Modalities.US)
-                                ),
+                                )
+                                .SetSnomedDescription("ClinicalFinding | 254838004 | Carcinoma of breast (Disorder) | [4/33] | C50.929")
                             //- CarcinomaKnown
-                            // SNOMED Code: 399294002
-                            // oneToMany: one
-                            // SNOMED Description: ClinicalFinding |Cyst of breast (Disorder) ++++++
-                            // ICD10: 399294002
-                            // Comment: BodyStructure | 125291005 | Multiple cysts (Morphologic-Abnormality
+                            ,
                             //+ ClusterOfCysts
                             new ConceptDef()
                                 .SetCode("ClusterOfCysts")
@@ -187,12 +190,14 @@ namespace BreastRadiology.XUnitTests
                                 .SetDefinition(new Definition()
                                     .Line("[PR] Cluster of cysts")
                                     .ValidModalities(Modalities.MG | Modalities.MRI | Modalities.US)
-                                ),
+                                )
+                                .SetSnomedCode("399294002")
+                                .SetOneToMany("one")
+                                .SetSnomedDescription("ClinicalFinding |Cyst of breast (Disorder) ++++++")
+                                .SetICD10("399294002")
+                                .SetComment("BodyStructure | 125291005 | Multiple cysts (Morphologic-Abnormality")
                             //- ClusterOfCysts
-                            // SNOMED Code: 399294002
-                            // oneToMany: one
-                            // SNOMED Description: ClinicalFinding |Cyst of breast (Disorder) 
-                            // ICD10: 399294002
+                            ,
                             //+ Cyst
                             new ConceptDef()
                                 .SetCode("Cyst")
@@ -200,12 +205,13 @@ namespace BreastRadiology.XUnitTests
                                 .SetDefinition(new Definition()
                                     .Line("[PR] Cyst")
                                     .ValidModalities(Modalities.MG | Modalities.MRI)
-                                ),
+                                )
+                                .SetSnomedCode("399294002")
+                                .SetOneToMany("one")
+                                .SetSnomedDescription("ClinicalFinding |Cyst of breast (Disorder) ")
+                                .SetICD10("399294002")
                             //- Cyst
-                            // SNOMED Code: 449837001
-                            // oneToMany: one
-                            // SNOMED Description: ClinicalFinding | Complex cyst of breast (Disorder)
-                            // ICD10: 449837001
+                            ,
                             //+ CystComplex
                             new ConceptDef()
                                 .SetCode("CystComplex")
@@ -213,9 +219,13 @@ namespace BreastRadiology.XUnitTests
                                 .SetDefinition(new Definition()
                                     .Line("[PR] Cyst complex")
                                     .ValidModalities(Modalities.MRI | Modalities.US)
-                                ),
+                                )
+                                .SetSnomedCode("449837001")
+                                .SetOneToMany("one")
+                                .SetSnomedDescription("ClinicalFinding | Complex cyst of breast (Disorder)")
+                                .SetICD10("449837001")
                             //- CystComplex
-                            // Comment: NO CORRECT TERM
+                            ,
                             //+ CystComplicated
                             new ConceptDef()
                                 .SetCode("CystComplicated")
@@ -223,9 +233,10 @@ namespace BreastRadiology.XUnitTests
                                 .SetDefinition(new Definition()
                                     .Line("[PR] Cyst complicated")
                                     .ValidModalities(Modalities.MRI | Modalities.US)
-                                ),
+                                )
+                                .SetComment("NO CORRECT TERM")
                             //- CystComplicated
-                            // Comment: NO OIL CYST
+                            ,
                             //+ CystOil
                             new ConceptDef()
                                 .SetCode("CystOil")
@@ -233,12 +244,10 @@ namespace BreastRadiology.XUnitTests
                                 .SetDefinition(new Definition()
                                     .Line("[PR] Cyst oil")
                                     .ValidModalities(Modalities.MG | Modalities.US)
-                                ),
+                                )
+                                .SetComment("NO OIL CYST")
                             //- CystOil
-                            // SNOMED Code: 76649007
-                            // oneToMany: one
-                            // SNOMED Description: ClinicalFinding | Sebaceous cyst of skin of breast (Disorder)
-                            // ICD10: 76649007
+                            ,
                             //+ CystSebaceous
                             new ConceptDef()
                                 .SetCode("CystSebaceous")
@@ -246,12 +255,13 @@ namespace BreastRadiology.XUnitTests
                                 .SetDefinition(new Definition()
                                     .Line("[PR] Cyst sebaceous")
                                     .ValidModalities(Modalities.US)
-                                ),
+                                )
+                                .SetSnomedCode("76649007")
+                                .SetOneToMany("one")
+                                .SetSnomedDescription("ClinicalFinding | Sebaceous cyst of skin of breast (Disorder)")
+                                .SetICD10("76649007")
                             //- CystSebaceous
-                            // SNOMED Code: 399253005
-                            // oneToMany: one
-                            // SNOMED Description: ClinicalFinding | Simple cyst of breast (Disorder)
-                            // ICD10: 399253005
+                            ,
                             //+ CystSimple
                             new ConceptDef()
                                 .SetCode("CystSimple")
@@ -259,12 +269,13 @@ namespace BreastRadiology.XUnitTests
                                 .SetDefinition(new Definition()
                                     .Line("[PR] Cyst simple")
                                     .ValidModalities(Modalities.MRI | Modalities.US)
-                                ),
+                                )
+                                .SetSnomedCode("399253005")
+                                .SetOneToMany("one")
+                                .SetSnomedDescription("ClinicalFinding | Simple cyst of breast (Disorder)")
+                                .SetICD10("399253005")
                             //- CystSimple
-                            // SNOMED Code: 449837001
-                            // oneToMany: Many
-                            // SNOMED Description: ClinicalFinding | Complex cyst of breast (Disorder)
-                            // ICD10: 449837001
+                            ,
                             //+ CystsComplex
                             new ConceptDef()
                                 .SetCode("CystsComplex")
@@ -272,9 +283,13 @@ namespace BreastRadiology.XUnitTests
                                 .SetDefinition(new Definition()
                                     .Line("[PR] Cysts complex")
                                     .ValidModalities(Modalities.MRI | Modalities.US)
-                                ),
+                                )
+                                .SetSnomedCode("449837001")
+                                .SetOneToMany("Many")
+                                .SetSnomedDescription("ClinicalFinding | Complex cyst of breast (Disorder)")
+                                .SetICD10("449837001")
                             //- CystsComplex
-                            // Comment: NO CORRECT TERM
+                            ,
                             //+ CystsComplicated
                             new ConceptDef()
                                 .SetCode("CystsComplicated")
@@ -282,9 +297,10 @@ namespace BreastRadiology.XUnitTests
                                 .SetDefinition(new Definition()
                                     .Line("[PR] Cysts complicated")
                                     .ValidModalities(Modalities.MRI | Modalities.US)
-                                ),
+                                )
+                                .SetComment("NO CORRECT TERM")
                             //- CystsComplicated
-                            // Comment: NO CORRECT TERM
+                            ,
                             //+ CystsMicroClustered
                             new ConceptDef()
                                 .SetCode("CystsMicroClustered")
@@ -292,10 +308,10 @@ namespace BreastRadiology.XUnitTests
                                 .SetDefinition(new Definition()
                                     .Line("[PR] Cysts micro clustered")
                                     .ValidModalities(Modalities.US)
-                                ),
+                                )
+                                .SetComment("NO CORRECT TERM")
                             //- CystsMicroClustered
-                            // oneToMany: ?????
-                            // SNOMED Description: BodyStructure | 399935008 | Ductal carcinoma in situ - category (Morphologic-Abnormality)
+                            ,
                             //+ DCIS
                             new ConceptDef()
                                 .SetCode("DCIS")
@@ -303,8 +319,11 @@ namespace BreastRadiology.XUnitTests
                                 .SetDefinition(new Definition()
                                     .Line("[PR] DCIS")
                                     .ValidModalities(Modalities.MG | Modalities.MRI | Modalities.NM | Modalities.US)
-                                ),
+                                )
+                                .SetOneToMany("?????")
+                                .SetSnomedDescription("BodyStructure | 399935008 | Ductal carcinoma in situ - category (Morphologic-Abnormality)")
                             //- DCIS
+                            ,
                             //+ Debris
                             new ConceptDef()
                                 .SetCode("Debris")
@@ -312,11 +331,9 @@ namespace BreastRadiology.XUnitTests
                                 .SetDefinition(new Definition()
                                     .Line("[PR] Debris")
                                     .ValidModalities(Modalities.MG | Modalities.US)
-                                ),
+                                )
                             //- Debris
-                            // SNOMED Code: 39432004
-                            // SNOMED Description: PharmaceuticalBiologicProduct | Deodorant (Product)
-                            // ICD10: 39432004
+                            ,
                             //+ Deodorant
                             new ConceptDef()
                                 .SetCode("Deodorant")
@@ -324,8 +341,12 @@ namespace BreastRadiology.XUnitTests
                                 .SetDefinition(new Definition()
                                     .Line("[PR] Deodorant")
                                     .ValidModalities(Modalities.MG)
-                                ),
+                                )
+                                .SetSnomedCode("39432004")
+                                .SetSnomedDescription("PharmaceuticalBiologicProduct | Deodorant (Product)")
+                                .SetICD10("39432004")
                             //- Deodorant
+                            ,
                             //+ DermalCalcification
                             new ConceptDef()
                                 .SetCode("DermalCalcification")
@@ -333,9 +354,9 @@ namespace BreastRadiology.XUnitTests
                                 .SetDefinition(new Definition()
                                     .Line("[PR] Dermal calcification")
                                     .ValidModalities(Modalities.MG)
-                                ),
+                                )
                             //- DermalCalcification
-                            // SNOMED Description: ClinicalFinding | 22049009 | Mammary duct ectasia (Disorder) | [0/0] | N60.49 
+                            ,
                             //+ DuctEctasia
                             new ConceptDef()
                                 .SetCode("DuctEctasia")
@@ -343,11 +364,10 @@ namespace BreastRadiology.XUnitTests
                                 .SetDefinition(new Definition()
                                     .Line("[PR] Duct ectasia")
                                     .ValidModalities(Modalities.MRI | Modalities.US)
-                                ),
+                                )
+                                .SetSnomedDescription("ClinicalFinding | 22049009 | Mammary duct ectasia (Disorder) | [0/0] | N60.49 ")
                             //- DuctEctasia
-                            // SNOMED Code: 290077003
-                            // SNOMED Description: ClinicalFinding | Edema of breast (Finding)
-                            // ICD10: 290077003
+                            ,
                             //+ Edema
                             new ConceptDef()
                                 .SetCode("Edema")
@@ -355,9 +375,12 @@ namespace BreastRadiology.XUnitTests
                                 .SetDefinition(new Definition()
                                     .Line("[PR] Edema")
                                     .ValidModalities(Modalities.MRI | Modalities.US)
-                                ),
+                                )
+                                .SetSnomedCode("290077003")
+                                .SetSnomedDescription("ClinicalFinding | Edema of breast (Finding)")
+                                .SetICD10("290077003")
                             //- Edema
-                            // SNOMED Description: no direct match possible fat necrosis?
+                            ,
                             //+ FatLobule
                             new ConceptDef()
                                 .SetCode("FatLobule")
@@ -365,11 +388,10 @@ namespace BreastRadiology.XUnitTests
                                 .SetDefinition(new Definition()
                                     .Line("[PR] Fat lobule")
                                     .ValidModalities(Modalities.US)
-                                ),
+                                )
+                                .SetSnomedDescription("no direct match possible fat necrosis?")
                             //- FatLobule
-                            // SNOMED Code: 21381006
-                            // SNOMED Description: ClinicalFinding | Fat necrosis of breast (Disorder) 
-                            // ICD10: 21381006
+                            ,
                             //+ FatNecrosis
                             new ConceptDef()
                                 .SetCode("FatNecrosis")
@@ -377,9 +399,12 @@ namespace BreastRadiology.XUnitTests
                                 .SetDefinition(new Definition()
                                     .Line("[PR] Fat necrosis")
                                     .ValidModalities(Modalities.MG | Modalities.MRI | Modalities.US)
-                                ),
+                                )
+                                .SetSnomedCode("21381006")
+                                .SetSnomedDescription("ClinicalFinding | Fat necrosis of breast (Disorder) ")
+                                .SetICD10("21381006")
                             //- FatNecrosis
-                            // Comment: NO CORRECT TERM
+                            ,
                             //+ Fibroadenolipoma
                             new ConceptDef()
                                 .SetCode("Fibroadenolipoma")
@@ -387,8 +412,10 @@ namespace BreastRadiology.XUnitTests
                                 .SetDefinition(new Definition()
                                     .Line("[PR] Fibroadenolipoma")
                                     .ValidModalities(Modalities.MG | Modalities.US)
-                                ),
+                                )
+                                .SetComment("NO CORRECT TERM")
                             //- Fibroadenolipoma
+                            ,
                             //+ Fibroadenoma
                             new ConceptDef()
                                 .SetCode("Fibroadenoma")
@@ -396,8 +423,9 @@ namespace BreastRadiology.XUnitTests
                                 .SetDefinition(new Definition()
                                     .Line("[PR] Fibroadenoma")
                                     .ValidModalities(Modalities.MG | Modalities.MRI | Modalities.NM | Modalities.US)
-                                ),
+                                )
                             //- Fibroadenoma
+                            ,
                             //+ FibroadenomaDegenerating
                             new ConceptDef()
                                 .SetCode("FibroadenomaDegenerating")
@@ -405,12 +433,9 @@ namespace BreastRadiology.XUnitTests
                                 .SetDefinition(new Definition()
                                     .Line("[PR] Fibroadenoma degenerating")
                                     .ValidModalities(Modalities.MG)
-                                ),
+                                )
                             //- FibroadenomaDegenerating
-                            // SNOMED Code: 367647000
-                            // SNOMED Description: BodyStructure | Fibrocystic change 
-                            // ICD10: 367647000
-                            // Comment: right/left/bilateral choices
+                            ,
                             //+ FibrocysticChange
                             new ConceptDef()
                                 .SetCode("FibrocysticChange")
@@ -418,8 +443,13 @@ namespace BreastRadiology.XUnitTests
                                 .SetDefinition(new Definition()
                                     .Line("[PR] Fibrocystic change")
                                     .ValidModalities(Modalities.MG | Modalities.MRI | Modalities.US)
-                                ),
+                                )
+                                .SetSnomedCode("367647000")
+                                .SetSnomedDescription("BodyStructure | Fibrocystic change ")
+                                .SetICD10("367647000")
+                                .SetComment("right/left/bilateral choices")
                             //- FibrocysticChange
+                            ,
                             //+ FibroglandularTissue
                             new ConceptDef()
                                 .SetCode("FibroglandularTissue")
@@ -427,9 +457,9 @@ namespace BreastRadiology.XUnitTests
                                 .SetDefinition(new Definition()
                                     .Line("[PR] Fibroglandular tissue")
                                     .ValidModalities(Modalities.MG | Modalities.MRI | Modalities.US)
-                                ),
+                                )
                             //- FibroglandularTissue
-                            // SNOMED Description: ???????????
+                            ,
                             //+ Fibrosis
                             new ConceptDef()
                                 .SetCode("Fibrosis")
@@ -437,8 +467,10 @@ namespace BreastRadiology.XUnitTests
                                 .SetDefinition(new Definition()
                                     .Line("[PR] Fibrosis")
                                     .ValidModalities(Modalities.MG | Modalities.MRI | Modalities.US)
-                                ),
+                                )
+                                .SetSnomedDescription("???????????")
                             //- Fibrosis
+                            ,
                             //+ FibrousRidge
                             new ConceptDef()
                                 .SetCode("FibrousRidge")
@@ -446,9 +478,9 @@ namespace BreastRadiology.XUnitTests
                                 .SetDefinition(new Definition()
                                     .Line("[PR] Fibrous ridge")
                                     .ValidModalities(Modalities.US)
-                                ),
+                                )
                             //- FibrousRidge
-                            // SNOMED Description: ClinicalFinding | 13600006 | Folliculitis (Disorder) | [6/113] | L73.9 
+                            ,
                             //+ Folliculitis
                             new ConceptDef()
                                 .SetCode("Folliculitis")
@@ -456,8 +488,10 @@ namespace BreastRadiology.XUnitTests
                                 .SetDefinition(new Definition()
                                     .Line("[PR] Folliculitis")
                                     .ValidModalities(Modalities.US)
-                                ),
+                                )
+                                .SetSnomedDescription("ClinicalFinding | 13600006 | Folliculitis (Disorder) | [6/113] | L73.9 ")
                             //- Folliculitis
+                            ,
                             //+ Gynecomastia
                             new ConceptDef()
                                 .SetCode("Gynecomastia")
@@ -465,11 +499,9 @@ namespace BreastRadiology.XUnitTests
                                 .SetDefinition(new Definition()
                                     .Line("[PR] Gynecomastia")
                                     .ValidModalities(Modalities.US)
-                                ),
+                                )
                             //- Gynecomastia
-                            // SNOMED Code: 51398009
-                            // SNOMED Description: BodyStructure | Hamartoma (Morphologic-Abnormality)
-                            // ICD10: 51398009
+                            ,
                             //+ Hamartoma
                             new ConceptDef()
                                 .SetCode("Hamartoma")
@@ -477,11 +509,12 @@ namespace BreastRadiology.XUnitTests
                                 .SetDefinition(new Definition()
                                     .Line("[PR] Hamartoma")
                                     .ValidModalities(Modalities.MG | Modalities.MRI | Modalities.US)
-                                ),
+                                )
+                                .SetSnomedCode("51398009")
+                                .SetSnomedDescription("BodyStructure | Hamartoma (Morphologic-Abnormality)")
+                                .SetICD10("51398009")
                             //- Hamartoma
-                            // SNOMED Code: 302924003
-                            // SNOMED Description: ClinicalFinding | Breast hematoma (Disorder) | N64.89
-                            // ICD10: 302924003
+                            ,
                             //+ Hematoma
                             new ConceptDef()
                                 .SetCode("Hematoma")
@@ -489,8 +522,12 @@ namespace BreastRadiology.XUnitTests
                                 .SetDefinition(new Definition()
                                     .Line("[PR] Hematoma")
                                     .ValidModalities(Modalities.MG | Modalities.MRI | Modalities.US)
-                                ),
+                                )
+                                .SetSnomedCode("302924003")
+                                .SetSnomedDescription("ClinicalFinding | Breast hematoma (Disorder) | N64.89")
+                                .SetICD10("302924003")
                             //- Hematoma
+                            ,
                             //+ HormonalStimulation
                             new ConceptDef()
                                 .SetCode("HormonalStimulation")
@@ -498,8 +535,9 @@ namespace BreastRadiology.XUnitTests
                                 .SetDefinition(new Definition()
                                     .Line("[PR] Hormonal stimulation")
                                     .ValidModalities(Modalities.US)
-                                ),
+                                )
                             //- HormonalStimulation
+                            ,
                             //+ IntracysticLesion
                             new ConceptDef()
                                 .SetCode("IntracysticLesion")
@@ -507,9 +545,9 @@ namespace BreastRadiology.XUnitTests
                                 .SetDefinition(new Definition()
                                     .Line("[PR] Intracystic lesion")
                                     .ValidModalities(Modalities.US)
-                                ),
+                                )
                             //- IntracysticLesion
-                            // SNOMED Description: BodyStructure | 443159006 | Intramammary lymph node group (Bodypart)
+                            ,
                             //+ IntramammaryNode
                             new ConceptDef()
                                 .SetCode("IntramammaryNode")
@@ -517,11 +555,10 @@ namespace BreastRadiology.XUnitTests
                                 .SetDefinition(new Definition()
                                     .Line("[PR] Intramammary node")
                                     .ValidModalities(Modalities.MG | Modalities.NM)
-                                ),
+                                )
+                                .SetSnomedDescription("BodyStructure | 443159006 | Intramammary lymph node group (Bodypart)")
                             //- IntramammaryNode
-                            // SNOMED Code: 276891009
-                            // SNOMED Description: ClinicalFinding | Lipoma of breast (Disorder)
-                            // ICD10: 276891009
+                            ,
                             //+ Lipoma
                             new ConceptDef()
                                 .SetCode("Lipoma")
@@ -529,10 +566,12 @@ namespace BreastRadiology.XUnitTests
                                 .SetDefinition(new Definition()
                                     .Line("[PR] Lipoma")
                                     .ValidModalities(Modalities.MG | Modalities.MRI | Modalities.US)
-                                ),
+                                )
+                                .SetSnomedCode("276891009")
+                                .SetSnomedDescription("ClinicalFinding | Lipoma of breast (Disorder)")
+                                .SetICD10("276891009")
                             //- Lipoma
-                            // SNOMED Description: BodyStructure | 261719000 | Breast cavity (Morphologic-Abnormality) 
-                            // Comment: Need to create
+                            ,
                             //+ LumpectomyCavity
                             new ConceptDef()
                                 .SetCode("LumpectomyCavity")
@@ -540,10 +579,11 @@ namespace BreastRadiology.XUnitTests
                                 .SetDefinition(new Definition()
                                     .Line("[PR] Lumpectomy cavity")
                                     .ValidModalities(Modalities.MRI | Modalities.US)
-                                ),
+                                )
+                                .SetSnomedDescription("BodyStructure | 261719000 | Breast cavity (Morphologic-Abnormality) ")
+                                .SetComment("Need to create")
                             //- LumpectomyCavity
-                            // SNOMED Description: BodyStructure | 261719000 | Breast cavity (Morphologic-Abnormality)
-                            // Comment: needs better
+                            ,
                             //+ LumpectomySite
                             new ConceptDef()
                                 .SetCode("LumpectomySite")
@@ -551,8 +591,11 @@ namespace BreastRadiology.XUnitTests
                                 .SetDefinition(new Definition()
                                     .Line("[PR] Lumpectomy site")
                                     .ValidModalities(Modalities.MRI)
-                                ),
+                                )
+                                .SetSnomedDescription("BodyStructure | 261719000 | Breast cavity (Morphologic-Abnormality)")
+                                .SetComment("needs better")
                             //- LumpectomySite
+                            ,
                             //+ LymphNode
                             new ConceptDef()
                                 .SetCode("LymphNode")
@@ -560,11 +603,9 @@ namespace BreastRadiology.XUnitTests
                                 .SetDefinition(new Definition()
                                     .Line("[PR] Lymph node")
                                     .ValidModalities(Modalities.MG | Modalities.MRI | Modalities.NM | Modalities.US)
-                                ),
+                                )
                             //- LymphNode
-                            // SNOMED Code: 274741002 
-                            // SNOMED Description: ClinicalFinding | Generalized enlarged lymph nodes (Disorder) | [0/0] | R59.1
-                            // ICD10: 274741002 
+                            ,
                             //+ LymphNodeEnlarged
                             new ConceptDef()
                                 .SetCode("LymphNodeEnlarged")
@@ -572,8 +613,12 @@ namespace BreastRadiology.XUnitTests
                                 .SetDefinition(new Definition()
                                     .Line("[PR] Lymph node enlarged")
                                     .ValidModalities(Modalities.MRI | Modalities.US)
-                                ),
+                                )
+                                .SetSnomedCode("274741002 ")
+                                .SetSnomedDescription("ClinicalFinding | Generalized enlarged lymph nodes (Disorder) | [0/0] | R59.1")
+                                .SetICD10("274741002 ")
                             //- LymphNodeEnlarged
+                            ,
                             //+ LymphNodeNormal
                             new ConceptDef()
                                 .SetCode("LymphNodeNormal")
@@ -581,8 +626,9 @@ namespace BreastRadiology.XUnitTests
                                 .SetDefinition(new Definition()
                                     .Line("[PR] Lymph node normal")
                                     .ValidModalities(Modalities.MG | Modalities.MRI | Modalities.US)
-                                ),
+                                )
                             //- LymphNodeNormal
+                            ,
                             //+ LymphNodePathological
                             new ConceptDef()
                                 .SetCode("LymphNodePathological")
@@ -590,8 +636,9 @@ namespace BreastRadiology.XUnitTests
                                 .SetDefinition(new Definition()
                                     .Line("[PR] Lymph node pathological")
                                     .ValidModalities(Modalities.MRI)
-                                ),
+                                )
                             //- LymphNodePathological
+                            ,
                             //+ MassSolid
                             new ConceptDef()
                                 .SetCode("MassSolid")
@@ -599,8 +646,9 @@ namespace BreastRadiology.XUnitTests
                                 .SetDefinition(new Definition()
                                     .Line("[PR] Mass solid")
                                     .ValidModalities(Modalities.MG | Modalities.MRI | Modalities.US)
-                                ),
+                                )
                             //- MassSolid
+                            ,
                             //+ MassSolidW/tumorVasc
                             new ConceptDef()
                                 .SetCode("MassSolidW/tumorVasc")
@@ -608,9 +656,9 @@ namespace BreastRadiology.XUnitTests
                                 .SetDefinition(new Definition()
                                     .Line("[PR] Mass solid w/tumor vasc")
                                     .ValidModalities(Modalities.MRI)
-                                ),
+                                )
                             //- MassSolidW/tumorVasc
-                            // SNOMED Description: ClinicalFinding | 45198002 | Mastitis (Disorder) | [3/51] | P39.0 | Neonatal infective mastitis | N61 | Inflammatory disorders of breast | 
+                            ,
                             //+ Mastitis
                             new ConceptDef()
                                 .SetCode("Mastitis")
@@ -618,12 +666,10 @@ namespace BreastRadiology.XUnitTests
                                 .SetDefinition(new Definition()
                                     .Line("[PR] Mastitis")
                                     .ValidModalities(Modalities.MG | Modalities.MRI | Modalities.US)
-                                ),
+                                )
+                                .SetSnomedDescription("ClinicalFinding | 45198002 | Mastitis (Disorder) | [3/51] | P39.0 | Neonatal infective mastitis | N61 | Inflammatory disorders of breast | ")
                             //- Mastitis
-                            // DICOM: F-01765
-                            // SNOMED Code: 129753004
-                            // SNOMED Description: ClinicalFinding | 129753004 | Milk of calcium radiographic calcification (Finding)
-                            // ICD10: 129753004
+                            ,
                             //+ MilkOfCalcium
                             new ConceptDef()
                                 .SetCode("MilkOfCalcium")
@@ -631,8 +677,13 @@ namespace BreastRadiology.XUnitTests
                                 .SetDefinition(new Definition()
                                     .Line("[PR] Milk of calcium")
                                     .ValidModalities(Modalities.MG)
-                                ),
+                                )
+                                .SetDicom("F-01765")
+                                .SetSnomedCode("129753004")
+                                .SetSnomedDescription("ClinicalFinding | 129753004 | Milk of calcium radiographic calcification (Finding)")
+                                .SetICD10("129753004")
                             //- MilkOfCalcium
+                            ,
                             //+ Multi-focalCancer
                             new ConceptDef()
                                 .SetCode("Multi-focalCancer")
@@ -640,9 +691,9 @@ namespace BreastRadiology.XUnitTests
                                 .SetDefinition(new Definition()
                                     .Line("[PR] Multi-focal cancer")
                                     .ValidModalities(Modalities.NM)
-                                ),
+                                )
                             //- Multi-focalCancer
-                            // SNOMED Description: need help
+                            ,
                             //+ PapillaryLesion
                             new ConceptDef()
                                 .SetCode("PapillaryLesion")
@@ -650,12 +701,10 @@ namespace BreastRadiology.XUnitTests
                                 .SetDefinition(new Definition()
                                     .Line("[PR] Papillary lesion")
                                     .ValidModalities(Modalities.MG | Modalities.US)
-                                ),
+                                )
+                                .SetSnomedDescription("need help")
                             //- PapillaryLesion
-                            // SNOMED Code: 99571000119102
-                            // SNOMED Description: ClinicalFinding | Papilloma of breast (Disorder)
-                            // ICD10: 99571000119102
-                            // Comment: US SM NUMBER
+                            ,
                             //+ Papilloma
                             new ConceptDef()
                                 .SetCode("Papilloma")
@@ -663,9 +712,13 @@ namespace BreastRadiology.XUnitTests
                                 .SetDefinition(new Definition()
                                     .Line("[PR] Papilloma")
                                     .ValidModalities(Modalities.MG | Modalities.MRI | Modalities.US)
-                                ),
+                                )
+                                .SetSnomedCode("99571000119102")
+                                .SetSnomedDescription("ClinicalFinding | Papilloma of breast (Disorder)")
+                                .SetICD10("99571000119102")
+                                .SetComment("US SM NUMBER")
                             //- Papilloma
-                            // SNOMED Description: ClinicalFinding | 712989008 | Phyllodes tumor of breast (Disorder) | D48.6 |
+                            ,
                             //+ PhyllodesTumor
                             new ConceptDef()
                                 .SetCode("PhyllodesTumor")
@@ -673,10 +726,10 @@ namespace BreastRadiology.XUnitTests
                                 .SetDefinition(new Definition()
                                     .Line("[PR] Phyllodes tumor")
                                     .ValidModalities(Modalities.MRI | Modalities.US)
-                                ),
+                                )
+                                .SetSnomedDescription("ClinicalFinding | 712989008 | Phyllodes tumor of breast (Disorder) | D48.6 |")
                             //- PhyllodesTumor
-                            // oneToMany: ???
-                            // SNOMED Description: BodyStructure | 63130001 | Surgical scar (Morphologic-Abnormality)
+                            ,
                             //+ PostLumpectomyScar
                             new ConceptDef()
                                 .SetCode("PostLumpectomyScar")
@@ -684,9 +737,11 @@ namespace BreastRadiology.XUnitTests
                                 .SetDefinition(new Definition()
                                     .Line("[PR] Post lumpectomy scar")
                                     .ValidModalities(Modalities.MG)
-                                ),
+                                )
+                                .SetOneToMany("???")
+                                .SetSnomedDescription("BodyStructure | 63130001 | Surgical scar (Morphologic-Abnormality)")
                             //- PostLumpectomyScar
-                            // SNOMED Description: BodyStructure | 63130001 | Surgical scar (Morphologic-Abnormality)
+                            ,
                             //+ PostSurgicalScar
                             new ConceptDef()
                                 .SetCode("PostSurgicalScar")
@@ -694,8 +749,10 @@ namespace BreastRadiology.XUnitTests
                                 .SetDefinition(new Definition()
                                     .Line("[PR] Post surgical scar")
                                     .ValidModalities(Modalities.MG | Modalities.NM)
-                                ),
+                                )
+                                .SetSnomedDescription("BodyStructure | 63130001 | Surgical scar (Morphologic-Abnormality)")
                             //- PostSurgicalScar
+                            ,
                             //+ PreviousBiopsy
                             new ConceptDef()
                                 .SetCode("PreviousBiopsy")
@@ -703,8 +760,9 @@ namespace BreastRadiology.XUnitTests
                                 .SetDefinition(new Definition()
                                     .Line("[PR] Previous biopsy")
                                     .ValidModalities(Modalities.MG)
-                                ),
+                                )
                             //- PreviousBiopsy
+                            ,
                             //+ PreviousSurgery
                             new ConceptDef()
                                 .SetCode("PreviousSurgery")
@@ -712,10 +770,9 @@ namespace BreastRadiology.XUnitTests
                                 .SetDefinition(new Definition()
                                     .Line("[PR] Previous surgery")
                                     .ValidModalities(Modalities.MG)
-                                ),
+                                )
                             //- PreviousSurgery
-                            // SNOMED Description: ClinicalFinding | 62112002 | Injury of breast (Disorder) | [4/41] | S29.9XX?
-                            // Comment: NEED TO INDICATE PREVIOUS
+                            ,
                             //+ PreviousTrauma
                             new ConceptDef()
                                 .SetCode("PreviousTrauma")
@@ -723,11 +780,11 @@ namespace BreastRadiology.XUnitTests
                                 .SetDefinition(new Definition()
                                     .Line("[PR] Previous trauma")
                                     .ValidModalities(Modalities.MG)
-                                ),
+                                )
+                                .SetSnomedDescription("ClinicalFinding | 62112002 | Injury of breast (Disorder) | [4/41] | S29.9XX?")
+                                .SetComment("NEED TO INDICATE PREVIOUS")
                             //- PreviousTrauma
-                            // SNOMED Code: 390787006
-                            // SNOMED Description: ClinicalFinding | Radial scar of breast (Finding)
-                            // ICD10: 390787006
+                            ,
                             //+ RadialScar
                             new ConceptDef()
                                 .SetCode("RadialScar")
@@ -735,11 +792,12 @@ namespace BreastRadiology.XUnitTests
                                 .SetDefinition(new Definition()
                                     .Line("[PR] Radial scar")
                                     .ValidModalities(Modalities.MG | Modalities.US)
-                                ),
+                                )
+                                .SetSnomedCode("390787006")
+                                .SetSnomedDescription("ClinicalFinding | Radial scar of breast (Finding)")
+                                .SetICD10("390787006")
                             //- RadialScar
-                            // SNOMED Code: 143501000119107
-                            // SNOMED Description: SituationWithExplicitContext  | History of radiation therapy to breast area (Situation)
-                            // ICD10: 143501000119107
+                            ,
                             //+ RadiationChanges
                             new ConceptDef()
                                 .SetCode("RadiationChanges")
@@ -747,11 +805,12 @@ namespace BreastRadiology.XUnitTests
                                 .SetDefinition(new Definition()
                                     .Line("[PR] Radiation changes")
                                     .ValidModalities(Modalities.MRI)
-                                ),
+                                )
+                                .SetSnomedCode("143501000119107")
+                                .SetSnomedDescription("SituationWithExplicitContext  | History of radiation therapy to breast area (Situation)")
+                                .SetICD10("143501000119107")
                             //- RadiationChanges
-                            // SNOMED Code: 429479009
-                            // SNOMED Description: SituationWithExplicitContext | History of radiation therapy (Situation)
-                            // ICD10: 429479009
+                            ,
                             //+ RadiationTherapy
                             new ConceptDef()
                                 .SetCode("RadiationTherapy")
@@ -759,8 +818,12 @@ namespace BreastRadiology.XUnitTests
                                 .SetDefinition(new Definition()
                                     .Line("[PR] Radiation therapy")
                                     .ValidModalities(Modalities.MRI)
-                                ),
+                                )
+                                .SetSnomedCode("429479009")
+                                .SetSnomedDescription("SituationWithExplicitContext | History of radiation therapy (Situation)")
+                                .SetICD10("429479009")
                             //- RadiationTherapy
+                            ,
                             //+ Scar
                             new ConceptDef()
                                 .SetCode("Scar")
@@ -768,8 +831,9 @@ namespace BreastRadiology.XUnitTests
                                 .SetDefinition(new Definition()
                                     .Line("[PR] Scar")
                                     .ValidModalities(Modalities.MRI | Modalities.US)
-                                ),
+                                )
                             //- Scar
+                            ,
                             //+ ScarWithShadowing
                             new ConceptDef()
                                 .SetCode("ScarWithShadowing")
@@ -777,8 +841,9 @@ namespace BreastRadiology.XUnitTests
                                 .SetDefinition(new Definition()
                                     .Line("[PR] Scar with shadowing")
                                     .ValidModalities(Modalities.MRI | Modalities.US)
-                                ),
+                                )
                             //- ScarWithShadowing
+                            ,
                             //+ SclerosingAdenosis
                             new ConceptDef()
                                 .SetCode("SclerosingAdenosis")
@@ -786,9 +851,9 @@ namespace BreastRadiology.XUnitTests
                                 .SetDefinition(new Definition()
                                     .Line("[PR] Sclerosing adenosis")
                                     .ValidModalities(Modalities.MG)
-                                ),
+                                )
                             //- SclerosingAdenosis
-                            // SNOMED Description: ??????????????
+                            ,
                             //+ SecretoryCalcification
                             new ConceptDef()
                                 .SetCode("SecretoryCalcification")
@@ -796,8 +861,10 @@ namespace BreastRadiology.XUnitTests
                                 .SetDefinition(new Definition()
                                     .Line("[PR] Secretory calcification")
                                     .ValidModalities(Modalities.MG)
-                                ),
+                                )
+                                .SetSnomedDescription("??????????????")
                             //- SecretoryCalcification
+                            ,
                             //+ SentinelNode
                             new ConceptDef()
                                 .SetCode("SentinelNode")
@@ -805,11 +872,9 @@ namespace BreastRadiology.XUnitTests
                                 .SetDefinition(new Definition()
                                     .Line("[PR] Sentinel node")
                                     .ValidModalities(Modalities.NM)
-                                ),
+                                )
                             //- SentinelNode
-                            // SNOMED Code: 297178008
-                            // SNOMED Description: ClinicalFinding | Breast seroma (Disorder)
-                            // ICD10: 297178008
+                            ,
                             //+ Seroma
                             new ConceptDef()
                                 .SetCode("Seroma")
@@ -817,11 +882,12 @@ namespace BreastRadiology.XUnitTests
                                 .SetDefinition(new Definition()
                                     .Line("[PR] Seroma")
                                     .ValidModalities(Modalities.MG | Modalities.MRI | Modalities.US)
-                                ),
+                                )
+                                .SetSnomedCode("297178008")
+                                .SetSnomedDescription("ClinicalFinding | Breast seroma (Disorder)")
+                                .SetICD10("297178008")
                             //- Seroma
-                            // SNOMED Code: 126510002
-                            // SNOMED Description: ClinicalFinding | Neoplasm of skin of breast (Disorder)
-                            // ICD10: 126510002
+                            ,
                             //+ SkinLesion
                             new ConceptDef()
                                 .SetCode("SkinLesion")
@@ -829,8 +895,12 @@ namespace BreastRadiology.XUnitTests
                                 .SetDefinition(new Definition()
                                     .Line("[PR] Skin lesion")
                                     .ValidModalities(Modalities.MG)
-                                ),
+                                )
+                                .SetSnomedCode("126510002")
+                                .SetSnomedDescription("ClinicalFinding | Neoplasm of skin of breast (Disorder)")
+                                .SetICD10("126510002")
                             //- SkinLesion
+                            ,
                             //+ Surgery
                             new ConceptDef()
                                 .SetCode("Surgery")
@@ -838,10 +908,9 @@ namespace BreastRadiology.XUnitTests
                                 .SetDefinition(new Definition()
                                     .Line("[PR] Surgery")
                                     .ValidModalities(Modalities.MRI)
-                                ),
+                                )
                             //- Surgery
-                            // SNOMED Description: ClinicalFinding | 62112002 | Injury of breast (Disorder) 
-                            // Comment: Need help no direct match
+                            ,
                             //+ Trauma
                             new ConceptDef()
                                 .SetCode("Trauma")
@@ -849,9 +918,11 @@ namespace BreastRadiology.XUnitTests
                                 .SetDefinition(new Definition()
                                     .Line("[PR] Trauma")
                                     .ValidModalities(Modalities.MRI)
-                                ),
+                                )
+                                .SetSnomedDescription("ClinicalFinding | 62112002 | Injury of breast (Disorder) ")
+                                .SetComment("Need help no direct match")
                             //- Trauma
-                            // SNOMED Description: ClinicalFinding | 396779001 | Breast arterial calcification (Finding) | [0/0] | R92.1 
+                            ,
                             //+ VascularCalcifications
                             new ConceptDef()
                                 .SetCode("VascularCalcifications")
@@ -859,9 +930,10 @@ namespace BreastRadiology.XUnitTests
                                 .SetDefinition(new Definition()
                                     .Line("[PR] Vascular calcifications")
                                     .ValidModalities(Modalities.MG)
-                                ),
+                                )
+                                .SetSnomedDescription("ClinicalFinding | 396779001 | Breast arterial calcification (Finding) | [0/0] | R92.1 ")
                             //- VascularCalcifications
-                            // SNOMED Description: ClinicalFinding | 71897006 | Venous stasis (Finding) | [0/0] | I87.8
+                            ,
                             //+ VenousStasis
                             new ConceptDef()
                                 .SetCode("VenousStasis")
@@ -870,7 +942,9 @@ namespace BreastRadiology.XUnitTests
                                     .Line("[PR] Venous stasis")
                                     .ValidModalities(Modalities.NM)
                                 )
+                                .SetSnomedDescription("ClinicalFinding | 71897006 | Venous stasis (Finding) | [0/0] | I87.8")
                             //- VenousStasis
+                            
                             //- ConsistentWithCS
                         })
             );
@@ -887,7 +961,6 @@ namespace BreastRadiology.XUnitTests
                         new ConceptDef[]
                         {
                             //+ ConsistentWithQualifierCS
-                            // CODE: Qualifier
                             //+ LikelyRepresents
                             new ConceptDef()
                                 .SetCode("LikelyRepresents")
@@ -895,9 +968,10 @@ namespace BreastRadiology.XUnitTests
                                 .SetDefinition(new Definition()
                                     .Line("[PR] Likely represents")
                                     .ValidModalities(Modalities.MG | Modalities.MRI | Modalities.NM | Modalities.US)
-                                ),
+                                )
+                                .SetPenCode("Qualifier")
                             //- LikelyRepresents
-                            // CODE: Qualifier
+                            ,
                             //+ MostLikely
                             new ConceptDef()
                                 .SetCode("MostLikely")
@@ -905,9 +979,10 @@ namespace BreastRadiology.XUnitTests
                                 .SetDefinition(new Definition()
                                     .Line("[PR] Most likely")
                                     .ValidModalities(Modalities.MG | Modalities.US)
-                                ),
+                                )
+                                .SetPenCode("Qualifier")
                             //- MostLikely
-                            // CODE: Qualifier
+                            ,
                             //+ Resembles
                             new ConceptDef()
                                 .SetCode("Resembles")
@@ -915,9 +990,10 @@ namespace BreastRadiology.XUnitTests
                                 .SetDefinition(new Definition()
                                     .Line("[PR] Resembles")
                                     .ValidModalities(Modalities.MG | Modalities.MRI | Modalities.NM | Modalities.US)
-                                ),
+                                )
+                                .SetPenCode("Qualifier")
                             //- Resembles
-                            // CODE: Qualifier
+                            ,
                             //+ w/differentialDiagnosis
                             new ConceptDef()
                                 .SetCode("w/differentialDiagnosis")
@@ -926,7 +1002,9 @@ namespace BreastRadiology.XUnitTests
                                     .Line("[PR] w/differential diagnosis")
                                     .ValidModalities(Modalities.MG | Modalities.MRI | Modalities.NM | Modalities.US)
                                 )
+                                .SetPenCode("Qualifier")
                             //- w/differentialDiagnosis
+                            
                             //- ConsistentWithQualifierCS
                         })
              );

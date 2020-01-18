@@ -1,0 +1,87 @@
+{
+  "resourceType": "CodeSystem",
+  "id": "BreastLocationClockCS",
+  "url": "http://hl7.org/fhir/us/breast-radiology/CodeSystem/BreastLocationClockCS",
+  "version": "0.0.2",
+  "name": "BreastLocationClockCS",
+  "title": "Breast Location Clock CodeSystem",
+  "status": "draft",
+  "date": "2019-11-01",
+  "publisher": "Hl7-Clinical Interoperability Council",
+  "contact": [
+    {
+      "telecom": [
+        {
+          "system": "url",
+          "value": "http://www.hl7.org/Special/committees/cic"
+        }
+      ]
+    }
+  ],
+  "description": "Breast body location angles (expressed in clock-face units) code system.",
+  "caseSensitive": true,
+  "content": "complete",
+  "count": 12,
+  "concept": [
+    {
+      "code": "12:00-OClock",
+      "display": "12:00-OClock",
+      "definition": "BreastRadiology.XUnitTests.ResourcesMaker+Definition"
+    },
+    {
+      "code": "1:00-OClock",
+      "display": "1:00-OClock",
+      "definition": "BreastRadiology.XUnitTests.ResourcesMaker+Definition"
+    },
+    {
+      "code": "2:00-OClock",
+      "display": "2:00-OClock",
+      "definition": "BreastRadiology.XUnitTests.ResourcesMaker+Definition"
+    },
+    {
+      "code": "3:00-OClock",
+      "display": "3:00-OClock",
+      "definition": "BreastRadiology.XUnitTests.ResourcesMaker+Definition"
+    },
+    {
+      "code": "4:00-OClock",
+      "display": "4:00-OClock",
+      "definition": "BreastRadiology.XUnitTests.ResourcesMaker+Definition"
+    },
+    {
+      "code": "5:00-OClock",
+      "display": "5:00-OClock",
+      "definition": "BreastRadiology.XUnitTests.ResourcesMaker+Definition"
+    },
+    {
+      "code": "6:00-OClock",
+      "display": "6:00-OClock",
+      "definition": "BreastRadiology.XUnitTests.ResourcesMaker+Definition"
+    },
+    {
+      "code": "7:00-OClock",
+      "display": "7:00-OClock",
+      "definition": "BreastRadiology.XUnitTests.ResourcesMaker+Definition"
+    },
+    {
+      "code": "8:00-OClock",
+      "display": "8:00-OClock",
+      "definition": "BreastRadiology.XUnitTests.ResourcesMaker+Definition"
+    },
+    {
+      "code": "9:00-OClock",
+      "display": "9:00-OClock",
+      "definition": "BreastRadiology.XUnitTests.ResourcesMaker+Definition"
+    },
+    {
+      "code": "10:00-OClock",
+      "display": "10:00-OClock",
+      "definition": "BreastRadiology.XUnitTests.ResourcesMaker+Definition"
+    },
+    {
+      "code": "11:00-OClock",
+      "display": "11:00-OClock",
+      "definition": "BreastRadiology.XUnitTests.ResourcesMaker+Definition"
+    }
+  ]
+}

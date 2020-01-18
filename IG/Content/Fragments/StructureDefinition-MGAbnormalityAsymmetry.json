@@ -59,6 +59,14 @@
     },
     {
       "url": "http://www.fragment.com/fragment",
+      "valueUrl": "http://hl7.org/fhir/us/breast-radiology/StructureDefinition/ObservedCountFragment"
+    },
+    {
+      "url": "http://www.fragment.com/maplink",
+      "valueString": "fragment|True|http://hl7.org/fhir/us/breast-radiology/StructureDefinition/ObservedCountFragment"
+    },
+    {
+      "url": "http://www.fragment.com/fragment",
       "valueUrl": "http://hl7.org/fhir/us/breast-radiology/StructureDefinition/CorrespondsWithFragment"
     },
     {
@@ -76,14 +84,6 @@
     {
       "url": "http://www.fragment.com/maplink",
       "valueString": "component|True|Asymmetry Type^CodeableConcept^http://hl7.org/fhir/us/breast-radiology/ValueSet/MGAbnormalityAsymmetriesVS"
-    },
-    {
-      "url": "http://www.fragment.com/maplink",
-      "valueString": "component|True|Observed Size^Quantity"
-    },
-    {
-      "url": "http://www.fragment.com/maplink",
-      "valueString": "component|True|Observed Size^Range"
     }
   ],
   "url": "http://hl7.org/fhir/us/breast-radiology/StructureDefinition/MGAbnormalityAsymmetry",
@@ -192,9 +192,9 @@
         }
       },
       {
-        "id": "Observation.component:mgAbnormalityAsymmetryType",
+        "id": "Observation.component:asymmetryType",
         "path": "Observation.component",
-        "sliceName": "mgAbnormalityAsymmetryType",
+        "sliceName": "asymmetryType",
         "short": "Asymmetry Type component",
         "definition": "This slice contains the optional component that refines the asymmetry type.The value of this component is a codeable concept chosen from the MGAbnormalityAsymmetriesVS valueset.<br/>",
         "comment": "This is one component of a group of components that comprise the observation.",
@@ -207,7 +207,7 @@
         }
       },
       {
-        "id": "Observation.component:mgAbnormalityAsymmetryType.code",
+        "id": "Observation.component:asymmetryType.code",
         "path": "Observation.component.code",
         "short": "Asymmetry Type component code",
         "definition": "This code identifies the Asymmetry Type component",
@@ -228,7 +228,7 @@
         }
       },
       {
-        "id": "Observation.component:mgAbnormalityAsymmetryType.value[x]",
+        "id": "Observation.component:asymmetryType.value[x]",
         "path": "Observation.component.value[x]",
         "short": "Asymmetry Type component value",
         "definition": "Value is a codeable concept.<br/>",
@@ -247,116 +247,6 @@
         "binding": {
           "strength": "required",
           "valueSet": "http://hl7.org/fhir/us/breast-radiology/ValueSet/MGAbnormalityAsymmetriesVS"
-        }
-      },
-      {
-        "id": "Observation.component:observedCount",
-        "path": "Observation.component",
-        "sliceName": "observedCount",
-        "short": "observedCount component",
-        "definition": "This component slice contains the observedCount quantity",
-        "comment": "This is one component of a group of components that comprise the observation.",
-        "min": 0,
-        "max": "1",
-        "base": {
-          "path": "Observation.component",
-          "min": 0,
-          "max": "*"
-        }
-      },
-      {
-        "id": "Observation.component:observedCount.code",
-        "path": "Observation.component.code",
-        "min": 1,
-        "max": "1",
-        "base": {
-          "path": "Observation.component.code",
-          "min": 1,
-          "max": "1"
-        },
-        "patternCodeableConcept": {
-          "coding": [
-            {
-              "system": "http://hl7.org/fhir/us/breast-radiology/CodeSystem/ComponentSliceCodes",
-              "code": "observedCount"
-            }
-          ]
-        }
-      },
-      {
-        "id": "Observation.component:observedCount.value[x]",
-        "path": "Observation.component.value[x]",
-        "slicing": {
-          "discriminator": [
-            {
-              "type": "type",
-              "path": "$this"
-            }
-          ],
-          "rules": "closed"
-        },
-        "min": 1,
-        "max": "1",
-        "base": {
-          "path": "Observation.component.value[x]",
-          "min": 0,
-          "max": "1"
-        },
-        "type": [
-          {
-            "code": "Quantity"
-          },
-          {
-            "code": "Range"
-          }
-        ]
-      },
-      {
-        "id": "Observation.component:observedCount.value[x]:observedCount/quantity",
-        "path": "Observation.component.value[x]",
-        "sliceName": "observedCount/quantity",
-        "min": 0,
-        "max": "1",
-        "base": {
-          "path": "Observation.component.value[x]",
-          "min": 0,
-          "max": "1"
-        },
-        "type": [
-          {
-            "code": "Quantity"
-          }
-        ],
-        "patternQuantity": {
-          "system": "http://unitsofmeasure.org",
-          "code": "tot"
-        }
-      },
-      {
-        "id": "Observation.component:observedCount.value[x]:observedCount/range",
-        "path": "Observation.component.value[x]",
-        "sliceName": "observedCount/range",
-        "min": 0,
-        "max": "1",
-        "base": {
-          "path": "Observation.component.value[x]",
-          "min": 0,
-          "max": "1"
-        },
-        "type": [
-          {
-            "code": "Range"
-          }
-        ],
-        "patternRange": {
-          "low": {
-            "system": "http://unitsofmeasure.org",
-            "code": "tot"
-          },
-          "high": {
-            "system": "http://unitsofmeasure.org",
-            "code": "tot"
-          }
         }
       }
     ]

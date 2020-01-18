@@ -35,11 +35,11 @@
     },
     {
       "url": "http://www.fragment.com/maplink",
-      "valueString": "component|True|Value^CodeableConcept^http://hl7.org/fhir/us/breast-radiology/ValueSet/ConsistentWithVS"
+      "valueString": "component|True|Consistent With Value^CodeableConcept^http://hl7.org/fhir/us/breast-radiology/ValueSet/ConsistentWithVS"
     },
     {
       "url": "http://www.fragment.com/maplink",
-      "valueString": "component|True|Qualifier^CodeableConcept^http://hl7.org/fhir/us/breast-radiology/ValueSet/ConsistentWithQualifierVS"
+      "valueString": "component|True|Consistent With Qualifier^CodeableConcept^http://hl7.org/fhir/us/breast-radiology/ValueSet/ConsistentWithQualifierVS"
     },
     {
       "url": "http://www.fragment.com/mapname",
@@ -2442,7 +2442,7 @@
         "id": "Observation.component:value",
         "path": "Observation.component",
         "sliceName": "value",
-        "short": "Value component",
+        "short": "Consistent With Value component",
         "definition": "This slice contains the required component that defines what this observation is consistent with.The value of this component is a codeable concept chosen from the ConsistentWithVS valueset.<br/>",
         "comment": "This is one component of a group of components that comprise the observation.",
         "requirements": "Component observations share the same attributes in the Observation resource as the primary observation and are always treated a part of a single observation (they are not separable).   However, the reference range for the primary observation value is not inherited by the component values and is required when appropriate for each component observation.",
@@ -2578,8 +2578,8 @@
       {
         "id": "Observation.component:value.code",
         "path": "Observation.component.code",
-        "short": "Value component code",
-        "definition": "This code identifies the Value component",
+        "short": "Consistent With Value component code",
+        "definition": "This code identifies the Consistent With Value component",
         "comment": "*All* code-value and  component.code-component.value pairs need to be taken into account to correctly understand the meaning of the observation.",
         "requirements": "Knowing what kind of observation is being made is essential to understanding the observation.",
         "min": 1,
@@ -2637,7 +2637,7 @@
       {
         "id": "Observation.component:value.value[x]",
         "path": "Observation.component.value[x]",
-        "short": "Value component value",
+        "short": "Consistent With Value component value",
         "definition": "Value is a codeable concept.<br/>",
         "comment": "Used when observation has a set of component observations. An observation may have both a value (e.g. an  Apgar score)  and component observations (the observations from which the Apgar score was derived). If a value is present, the datatype for this element should be determined by Observation.code. A CodeableConcept with just a text would be used instead of a string if the field was usually coded, or if the type associated with the Observation.code defines a coded value.  For additional guidance, see the [Notes section](observation.html#notes) below.",
         "requirements": "An observation exists to have a value, though it might not if it is in error, or if it represents a group of observations.",
@@ -2810,7 +2810,7 @@
         "id": "Observation.component:qualifier",
         "path": "Observation.component",
         "sliceName": "qualifier",
-        "short": "Qualifier component",
+        "short": "Consistent With Qualifier component",
         "definition": "This slice contains zero or more components that qualify the consistent with slice component value.The value of this component is a codeable concept chosen from the ConsistentWithVS valueset.<br/>",
         "comment": "This is one component of a group of components that comprise the observation.",
         "requirements": "Component observations share the same attributes in the Observation resource as the primary observation and are always treated a part of a single observation (they are not separable).   However, the reference range for the primary observation value is not inherited by the component values and is required when appropriate for each component observation.",
@@ -2946,8 +2946,8 @@
       {
         "id": "Observation.component:qualifier.code",
         "path": "Observation.component.code",
-        "short": "Qualifier component code",
-        "definition": "This code identifies the Qualifier components",
+        "short": "Consistent With Qualifier component code",
+        "definition": "This code identifies the Consistent With Qualifier components",
         "comment": "*All* code-value and  component.code-component.value pairs need to be taken into account to correctly understand the meaning of the observation.",
         "requirements": "Knowing what kind of observation is being made is essential to understanding the observation.",
         "min": 1,
@@ -3005,7 +3005,7 @@
       {
         "id": "Observation.component:qualifier.value[x]",
         "path": "Observation.component.value[x]",
-        "short": "Qualifier component value",
+        "short": "Consistent With Qualifier component value",
         "definition": "Value is a codeable concept.<br/>",
         "comment": "Used when observation has a set of component observations. An observation may have both a value (e.g. an  Apgar score)  and component observations (the observations from which the Apgar score was derived). If a value is present, the datatype for this element should be determined by Observation.code. A CodeableConcept with just a text would be used instead of a string if the field was usually coded, or if the type associated with the Observation.code defines a coded value.  For additional guidance, see the [Notes section](observation.html#notes) below.",
         "requirements": "An observation exists to have a value, though it might not if it is in error, or if it represents a group of observations.",
@@ -3385,7 +3385,7 @@
         "id": "Observation.component:value",
         "path": "Observation.component",
         "sliceName": "value",
-        "short": "Value component",
+        "short": "Consistent With Value component",
         "definition": "This slice contains the required component that defines what this observation is consistent with.The value of this component is a codeable concept chosen from the ConsistentWithVS valueset.<br/>",
         "comment": "This is one component of a group of components that comprise the observation.",
         "requirements": "Component observations share the same attributes in the Observation resource as the primary observation and are always treated a part of a single observation (they are not separable).   However, the reference range for the primary observation value is not inherited by the component values and is required when appropriate for each component observation.",
@@ -3521,8 +3521,8 @@
       {
         "id": "Observation.component:value.code",
         "path": "Observation.component.code",
-        "short": "Value component code",
-        "definition": "This code identifies the Value component",
+        "short": "Consistent With Value component code",
+        "definition": "This code identifies the Consistent With Value component",
         "comment": "*All* code-value and  component.code-component.value pairs need to be taken into account to correctly understand the meaning of the observation.",
         "requirements": "Knowing what kind of observation is being made is essential to understanding the observation.",
         "min": 1,
@@ -3580,7 +3580,7 @@
       {
         "id": "Observation.component:value.value[x]",
         "path": "Observation.component.value[x]",
-        "short": "Value component value",
+        "short": "Consistent With Value component value",
         "definition": "Value is a codeable concept.<br/>",
         "comment": "Used when observation has a set of component observations. An observation may have both a value (e.g. an  Apgar score)  and component observations (the observations from which the Apgar score was derived). If a value is present, the datatype for this element should be determined by Observation.code. A CodeableConcept with just a text would be used instead of a string if the field was usually coded, or if the type associated with the Observation.code defines a coded value.  For additional guidance, see the [Notes section](observation.html#notes) below.",
         "requirements": "An observation exists to have a value, though it might not if it is in error, or if it represents a group of observations.",
@@ -3753,7 +3753,7 @@
         "id": "Observation.component:qualifier",
         "path": "Observation.component",
         "sliceName": "qualifier",
-        "short": "Qualifier component",
+        "short": "Consistent With Qualifier component",
         "definition": "This slice contains zero or more components that qualify the consistent with slice component value.The value of this component is a codeable concept chosen from the ConsistentWithVS valueset.<br/>",
         "comment": "This is one component of a group of components that comprise the observation.",
         "requirements": "Component observations share the same attributes in the Observation resource as the primary observation and are always treated a part of a single observation (they are not separable).   However, the reference range for the primary observation value is not inherited by the component values and is required when appropriate for each component observation.",
@@ -3889,8 +3889,8 @@
       {
         "id": "Observation.component:qualifier.code",
         "path": "Observation.component.code",
-        "short": "Qualifier component code",
-        "definition": "This code identifies the Qualifier components",
+        "short": "Consistent With Qualifier component code",
+        "definition": "This code identifies the Consistent With Qualifier components",
         "comment": "*All* code-value and  component.code-component.value pairs need to be taken into account to correctly understand the meaning of the observation.",
         "requirements": "Knowing what kind of observation is being made is essential to understanding the observation.",
         "min": 1,
@@ -3948,7 +3948,7 @@
       {
         "id": "Observation.component:qualifier.value[x]",
         "path": "Observation.component.value[x]",
-        "short": "Qualifier component value",
+        "short": "Consistent With Qualifier component value",
         "definition": "Value is a codeable concept.<br/>",
         "comment": "Used when observation has a set of component observations. An observation may have both a value (e.g. an  Apgar score)  and component observations (the observations from which the Apgar score was derived). If a value is present, the datatype for this element should be determined by Observation.code. A CodeableConcept with just a text would be used instead of a string if the field was usually coded, or if the type associated with the Observation.code defines a coded value.  For additional guidance, see the [Notes section](observation.html#notes) below.",
         "requirements": "An observation exists to have a value, though it might not if it is in error, or if it represents a group of observations.",

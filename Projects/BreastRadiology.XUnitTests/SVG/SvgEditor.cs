@@ -3,6 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.Drawing;
 using System.IO;
+using System.Linq;
 using System.Text;
 
 namespace BreastRadiology.XUnitTests
@@ -135,9 +136,9 @@ namespace BreastRadiology.XUnitTests
             colWidth = 0;
             colHeight = 0;
 
-            if (group.Nodes.Count > 0)
+            if (group.Nodes.Count() > 0)
                 RenderSimpleGroup(group, screenX, screenY, lineFlag, out colWidth, out colHeight, endConnectors);
-            else if (group.Children.Count > 0)
+            else if (group.Children.Count() > 0)
             {
                 foreach (SENodeGroup childGroup in group.Children)
                 {
@@ -240,7 +241,7 @@ namespace BreastRadiology.XUnitTests
                     this.CreateArrow(g, true, false, stubStart.X, stubStart.Y, screenX + col1Width + this.NodeGapX, stubStart.Y);
 
                 // Make vertical line that connects all stubs.
-                if (group.Children.Count > 0)
+                if (group.Children.Count() > 0)
                 {
                     float x = screenX + col1Width + this.NodeGapX;
                     this.CreateLine(g, x, topConnectorY, x, bottomConnectorY);

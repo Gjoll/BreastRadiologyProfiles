@@ -1,0 +1,67 @@
+{
+  "resourceType": "CodeSystem",
+  "id": "AbnormalityLymphNodeCS",
+  "url": "http://hl7.org/fhir/us/breast-radiology/CodeSystem/AbnormalityLymphNodeCS",
+  "version": "0.0.2",
+  "name": "AbnormalityLymphNodeCS",
+  "title": "Lymph Node Type CodeSystem",
+  "status": "draft",
+  "date": "2019-11-01",
+  "publisher": "Hl7-Clinical Interoperability Council",
+  "contact": [
+    {
+      "telecom": [
+        {
+          "system": "url",
+          "value": "http://www.hl7.org/Special/committees/cic"
+        }
+      ]
+    }
+  ],
+  "description": "Lymph node abnormality types code system.",
+  "caseSensitive": true,
+  "content": "complete",
+  "count": 8,
+  "concept": [
+    {
+      "code": "Axillary",
+      "display": "Axillary",
+      "definition": "BreastRadiology.XUnitTests.ResourcesMaker+Definition"
+    },
+    {
+      "code": "Enlarged",
+      "display": "Enlarged",
+      "definition": "BreastRadiology.XUnitTests.ResourcesMaker+Definition"
+    },
+    {
+      "code": "FocalCortex",
+      "display": "FocalCortex",
+      "definition": "BreastRadiology.XUnitTests.ResourcesMaker+Definition"
+    },
+    {
+      "code": "UniformThickness",
+      "display": "UniformThickness",
+      "definition": "BreastRadiology.XUnitTests.ResourcesMaker+Definition"
+    },
+    {
+      "code": "Intramammory",
+      "display": "Intramammory",
+      "definition": "BreastRadiology.XUnitTests.ResourcesMaker+Definition"
+    },
+    {
+      "code": "InternalMargin",
+      "display": "Internal Margin",
+      "definition": "BreastRadiology.XUnitTests.ResourcesMaker+Definition"
+    },
+    {
+      "code": "Normal",
+      "display": "Normal",
+      "definition": "BreastRadiology.XUnitTests.ResourcesMaker+Definition"
+    },
+    {
+      "code": "PathLymphNode",
+      "display": "Path Lymph Node",
+      "definition": "BreastRadiology.XUnitTests.ResourcesMaker+Definition"
+    }
+  ]
+}

@@ -1,0 +1,57 @@
+{
+  "resourceType": "CodeSystem",
+  "id": "BreastLocationRegionCS",
+  "url": "http://hl7.org/fhir/us/breast-radiology/CodeSystem/BreastLocationRegionCS",
+  "version": "0.0.2",
+  "name": "BreastLocationRegionCS",
+  "title": "Breast Location Region CodeSystem",
+  "status": "draft",
+  "date": "2019-11-01",
+  "publisher": "Hl7-Clinical Interoperability Council",
+  "contact": [
+    {
+      "telecom": [
+        {
+          "system": "url",
+          "value": "http://www.hl7.org/Special/committees/cic"
+        }
+      ]
+    }
+  ],
+  "description": "Breast body location region code system.",
+  "caseSensitive": true,
+  "content": "complete",
+  "count": 6,
+  "concept": [
+    {
+      "code": "Central",
+      "display": "Central Region",
+      "definition": "BreastRadiology.XUnitTests.ResourcesMaker+Definition"
+    },
+    {
+      "code": "RetroaReolar",
+      "display": "RetroaReolar Region",
+      "definition": "BreastRadiology.XUnitTests.ResourcesMaker+Definition"
+    },
+    {
+      "code": "AxillaryTail",
+      "display": "AxillaryTail Region",
+      "definition": "BreastRadiology.XUnitTests.ResourcesMaker+Definition"
+    },
+    {
+      "code": "Axilla",
+      "display": "Axilla Region",
+      "definition": "BreastRadiology.XUnitTests.ResourcesMaker+Definition"
+    },
+    {
+      "code": "InframammaryFold",
+      "display": "Inframammary Fold Region",
+      "definition": "BreastRadiology.XUnitTests.ResourcesMaker+Definition"
+    },
+    {
+      "code": "InSkin",
+      "display": "In Skin",
+      "definition": "BreastRadiology.XUnitTests.ResourcesMaker+Definition"
+    }
+  ]
+}

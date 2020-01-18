@@ -183,17 +183,8 @@ namespace BreastRadiology.XUnitTests
                         String sValue = value.ToString();
                         if (String.IsNullOrEmpty(sValue) == false)
                             concepts
-                                .AppendLine($"// {name}: {sValue}");
+                                .AppendLine($"    .{name}(\"{sValue}\")");
                     }
-
-                    AppIfNotNull("DICOM", row[9]);
-                    AppIfNotNull("CODE", row[10]);
-                    AppIfNotNull("SNOMED Code", row[11]);
-                    AppIfNotNull("oneToMany", row[12]);
-                    AppIfNotNull("SNOMED Description", row[13]);
-                    AppIfNotNull("ICD10", row[11]);
-                    AppIfNotNull("Comment", row[15]);
-                    AppIfNotNull("UMLS", row[16]);
 
                     String codeClean = CodeValue(code);
                     concepts
@@ -204,8 +195,21 @@ namespace BreastRadiology.XUnitTests
                         .AppendLine($"    .SetDefinition(new Definition()")
                         .AppendLine($"        .Line(\"[PR] {code}\")")
                         .AppendLine($"        .ValidModalities({validWith})")
-                        .AppendLine($"    ){term}")
+                        .AppendLine($"    )")
+                        ;
+
+                    AppIfNotNull("SetDicom", row[9]);
+                    AppIfNotNull("SetPenCode", row[10]);
+                    AppIfNotNull("SetSnomedCode", row[11]);
+                    AppIfNotNull("SetOneToMany", row[12]);
+                    AppIfNotNull("SetSnomedDescription", row[13]);
+                    AppIfNotNull("SetICD10", row[11]);
+                    AppIfNotNull("SetComment", row[15]);
+                    AppIfNotNull("SetUMLS", row[16]);
+
+                    concepts
                         .AppendLine($"//- {codeClean}")
+                        .AppendLine(term)
                         ;
                 }
             }

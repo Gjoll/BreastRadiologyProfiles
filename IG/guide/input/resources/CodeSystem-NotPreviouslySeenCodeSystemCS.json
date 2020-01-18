@@ -1,0 +1,62 @@
+{
+  "resourceType": "CodeSystem",
+  "id": "NotPreviouslySeenCodeSystemCS",
+  "url": "http://hl7.org/fhir/us/breast-radiology/CodeSystem/NotPreviouslySeenCodeSystemCS",
+  "version": "0.0.2",
+  "name": "NotPreviouslySeenCodeSystemCS",
+  "title": "Not Previously Seen CodeSystem",
+  "status": "draft",
+  "date": "2019-11-01",
+  "publisher": "Hl7-Clinical Interoperability Council",
+  "contact": [
+    {
+      "telecom": [
+        {
+          "system": "url",
+          "value": "http://www.hl7.org/Special/committees/cic"
+        }
+      ]
+    }
+  ],
+  "description": "NotPreviouslySeen code system",
+  "caseSensitive": true,
+  "content": "complete",
+  "count": 7,
+  "concept": [
+    {
+      "code": "ClinicalExam",
+      "display": "Clinical exam",
+      "definition": "BreastRadiology.XUnitTests.ResourcesMaker+Definition"
+    },
+    {
+      "code": "Ductogram",
+      "display": "Ductogram",
+      "definition": "BreastRadiology.XUnitTests.ResourcesMaker+Definition"
+    },
+    {
+      "code": "Mammogram",
+      "display": "Mammogram",
+      "definition": "BreastRadiology.XUnitTests.ResourcesMaker+Definition"
+    },
+    {
+      "code": "MRI",
+      "display": "MRI",
+      "definition": "BreastRadiology.XUnitTests.ResourcesMaker+Definition"
+    },
+    {
+      "code": "OutsideExam",
+      "display": "Outside exam",
+      "definition": "BreastRadiology.XUnitTests.ResourcesMaker+Definition"
+    },
+    {
+      "code": "Scintimammography",
+      "display": "Scintimammography",
+      "definition": "BreastRadiology.XUnitTests.ResourcesMaker+Definition"
+    },
+    {
+      "code": "Ultrasound",
+      "display": "Ultrasound",
+      "definition": "BreastRadiology.XUnitTests.ResourcesMaker+Definition"
+    }
+  ]
+}

@@ -670,7 +670,7 @@
         <reference value="StructureDefinition/AbnormalityDuct" />
       </reference>
       <name value="Duct" />
-      <description value="Breat Radiology Duct Observation" />
+      <description value="Duct Observation" />
       <exampleBoolean value="false" />
       <groupingId value="CommonResources" />
     </resource>
@@ -724,7 +724,7 @@
         <reference value="StructureDefinition/Impression" />
       </reference>
       <name value="Impression" />
-      <description value="Breast Radiology Impression (ClinicalImpression)" />
+      <description value="Impression (ClinicalImpression)" />
       <exampleBoolean value="false" />
       <groupingId value="CommonResources" />
     </resource>
@@ -796,7 +796,7 @@
         <reference value="StructureDefinition/MGFinding" />
       </reference>
       <name value="Mammography Finding" />
-      <description value="Breast Radiology Mammography Finding" />
+      <description value="Mammography Finding" />
       <exampleBoolean value="false" />
       <groupingId value="MGResources" />
     </resource>
@@ -823,7 +823,7 @@
         <reference value="StructureDefinition/MGAbnormalityDensity" />
       </reference>
       <name value="Mammography Density" />
-      <description value="Breat Radiology Mammography Density Observation" />
+      <description value="Mammography Density Observation" />
       <exampleBoolean value="false" />
       <groupingId value="MGResources" />
     </resource>
@@ -859,7 +859,7 @@
         <reference value="StructureDefinition/MRIFinding" />
       </reference>
       <name value="MRI Finding" />
-      <description value="Breast Radiology MRI Finding" />
+      <description value="MRI Finding" />
       <exampleBoolean value="false" />
       <groupingId value="MRIResources" />
     </resource>
@@ -868,7 +868,7 @@
         <reference value="StructureDefinition/NMFinding" />
       </reference>
       <name value="NM Finding" />
-      <description value="Breast Radiology NMgraphy Finding" />
+      <description value="NM Finding" />
       <exampleBoolean value="false" />
       <groupingId value="NMResources" />
     </resource>
@@ -877,7 +877,7 @@
         <reference value="StructureDefinition/USFinding" />
       </reference>
       <name value="Ultra-Sound Finding" />
-      <description value="Breast Radiology Ultra Sound Finding" />
+      <description value="Ultra Sound Finding" />
       <exampleBoolean value="false" />
       <groupingId value="USResources" />
     </resource>
@@ -995,6 +995,15 @@
       </reference>
       <name value="Observation Section Fragment" />
       <description value="Fragment 'Observation section fragment'" />
+      <exampleBoolean value="false" />
+      <groupingId value="Fragments" />
+    </resource>
+    <resource>
+      <reference>
+        <reference value="StructureDefinition/ObservedCountFragment" />
+      </reference>
+      <name value="ObservedCount Fragment" />
+      <description value="Fragment 'Fragment that adds 'Observed Count' element to profile.'" />
       <exampleBoolean value="false" />
       <groupingId value="Fragments" />
     </resource>

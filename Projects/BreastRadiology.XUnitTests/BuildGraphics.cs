@@ -49,7 +49,7 @@ namespace BreastRadiology.XUnitTests
                     .AddTextLine("Radiology")
                     .AddTextLine("Report")
                     ;
-                rootGroup.Nodes.Add(node);
+                rootGroup.AppendNode(node);
             }
 
             {
@@ -60,7 +60,7 @@ namespace BreastRadiology.XUnitTests
                         .AddTextLine("Findings")
                         .AddTextLine("Section")
                         ;
-                    sectionFindingsGroup.Nodes.Add(findingsNode);
+                    sectionFindingsGroup.AppendNode(findingsNode);
                     {
                         SENodeGroup sectionFindingsRightGroup = sectionFindingsGroup.AppendChild("findings right");
                         {
@@ -69,7 +69,7 @@ namespace BreastRadiology.XUnitTests
                                 .AddTextLine("Right Breast")
                                 .AddTextLine("Section")
                                 ;
-                            sectionFindingsRightGroup.Nodes.Add(node);
+                            sectionFindingsRightGroup.AppendNode(node);
                         }
                         {
                             SENodeGroup sectionFindingsLeftGroup = sectionFindingsGroup.AppendChild("findings left");
@@ -79,7 +79,7 @@ namespace BreastRadiology.XUnitTests
                                     .AddTextLine("Left Breast")
                                     .AddTextLine("Section")
                                     ;
-                                sectionFindingsRightGroup.Nodes.Add(node);
+                                sectionFindingsRightGroup.AppendNode(node);
                             }
                         }
                     }
@@ -90,7 +90,7 @@ namespace BreastRadiology.XUnitTests
                         .AddTextLine("Impressions")
                         .AddTextLine("Section")
                         ;
-                    sectionImpressionsGroup.Nodes.Add(node);
+                    sectionImpressionsGroup.AppendNode(node);
                 }
 
                 {
@@ -99,7 +99,7 @@ namespace BreastRadiology.XUnitTests
                         .AddTextLine("Recommendations")
                         .AddTextLine("Section")
                         ;
-                    sectionRecommendationsGroup.Nodes.Add(node);
+                    sectionRecommendationsGroup.AppendNode(node);
                 }
 
                 {
@@ -107,14 +107,14 @@ namespace BreastRadiology.XUnitTests
                     SENode node = new SENode(sectionNodeWidth, Color.Coral)
                         .AddTextLine("Patient Risk Section")
                         ;
-                    sectionRiskGroup.Nodes.Add(node);
+                    sectionRiskGroup.AppendNode(node);
                 }
                 {
                     SENodeGroup sectionPriorGroup = rootGroup.AppendChild("prior");
                     SENode node = new SENode(sectionNodeWidth, Color.Coral)
                         .AddTextLine("Prior Studies")
                         ;
-                    sectionPriorGroup.Nodes.Add(node);
+                    sectionPriorGroup.AppendNode(node);
                 }
             }
 
@@ -145,8 +145,7 @@ namespace BreastRadiology.XUnitTests
             SENodeGroup AbnormalityType(String name)
             {
                 float width = 12;
-                SENodeGroup findingsGroup = new SENodeGroup(name);
-                rootGroup.Children.Add(findingsGroup);
+                SENodeGroup findingsGroup = rootGroup.AppendChild(name);
 
                 SENode findingsNode = new SENode(width, Color.LightBlue)
                     .AddTextLine(name)
@@ -154,12 +153,9 @@ namespace BreastRadiology.XUnitTests
                     .AddTextLine("Observation")
                     ;
 
-                findingsGroup.Nodes.Add(findingsNode);
+                findingsGroup.AppendNode(findingsNode);
 
-                SENodeGroup g = new SENodeGroup(name);
-                findingsGroup.Children.Add(g);
-
-                return g;
+                return findingsGroup.AppendChild(name);
             }
 
             void AddTarget(SENodeGroup g, String name)
@@ -168,7 +164,7 @@ namespace BreastRadiology.XUnitTests
                     .AddTextLine(name)
                     ;
 
-                g.Nodes.Add(targetNode);
+                g.AppendNode(targetNode);
             }
 
             SvgEditor e = new SvgEditor();
@@ -181,7 +177,7 @@ namespace BreastRadiology.XUnitTests
                     .AddTextLine($"{name} Breast")
                     .AddTextLine("Section")
                     ;
-                rootGroup.Nodes.Add(node);
+                rootGroup.AppendNode(node);
             }
 
             {
@@ -221,14 +217,14 @@ namespace BreastRadiology.XUnitTests
                     .AddTextLine("Node1.1 2")
                     .AddTextLine("Node1.1 3")
                     ;
-                group1.Nodes.Add(node);
+                group1.AppendNode(node);
             }
 
             {
                 SENode node = new SENode(nodeWidth, Color.Coral)
                     .AddTextLine("Node1.2 1")
                     ;
-                group1.Nodes.Add(node);
+                group1.AppendNode(node);
             }
 
             {
@@ -239,22 +235,22 @@ namespace BreastRadiology.XUnitTests
                         .AddTextLine("Node2.1 2")
                         .AddTextLine("Node2.1 3")
                         ;
-                    group2.Nodes.Add(node);
+                    group2.AppendNode(node);
                 }
                 {
                     SENode node = new SENode(nodeWidth, Color.Coral)
                         .AddTextLine("Node2.2 1")
                         ;
-                    group2.Nodes.Add(node);
+                    group2.AppendNode(node);
                 }
 
                 {
                     SENode node = new SENode(nodeWidth, Color.Coral)
                         .AddTextLine("Node2.3 1")
                         ;
-                    group2.Nodes.Add(node);
+                    group2.AppendNode(node);
                 }
-                group1.Children.Add(group2);
+                group1.AppendChild(group2);
             }
 
             e.Render(group1, true);

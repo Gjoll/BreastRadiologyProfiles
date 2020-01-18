@@ -1,0 +1,142 @@
+{
+  "resourceType": "CodeSystem",
+  "id": "ObservedFeatureCS",
+  "url": "http://hl7.org/fhir/us/breast-radiology/CodeSystem/ObservedFeatureCS",
+  "version": "0.0.2",
+  "name": "ObservedFeatureCS",
+  "title": "Observed Feature CodeSystem",
+  "status": "draft",
+  "date": "2019-11-01",
+  "publisher": "Hl7-Clinical Interoperability Council",
+  "contact": [
+    {
+      "telecom": [
+        {
+          "system": "url",
+          "value": "http://www.hl7.org/Special/committees/cic"
+        }
+      ]
+    }
+  ],
+  "description": "Observed Feature seen during a breast examination.",
+  "caseSensitive": true,
+  "content": "complete",
+  "count": 23,
+  "concept": [
+    {
+      "code": "AxillaryAdenopathy",
+      "display": "Axillary adenopathy",
+      "definition": "BreastRadiology.XUnitTests.ResourcesMaker+Definition"
+    },
+    {
+      "code": "BiopsyClip",
+      "display": "Biopsy clip",
+      "definition": "BreastRadiology.XUnitTests.ResourcesMaker+Definition"
+    },
+    {
+      "code": "BrachytherapyTube",
+      "display": "Brachytherapy tube",
+      "definition": "BreastRadiology.XUnitTests.ResourcesMaker+Definition"
+    },
+    {
+      "code": "ChestWallInvasion",
+      "display": "Chest wall invasion",
+      "definition": "BreastRadiology.XUnitTests.ResourcesMaker+Definition"
+    },
+    {
+      "code": "CooperDistorted",
+      "display": "Cooper distorted",
+      "definition": "BreastRadiology.XUnitTests.ResourcesMaker+Definition"
+    },
+    {
+      "code": "CooperThickened",
+      "display": "Cooper thickened",
+      "definition": "BreastRadiology.XUnitTests.ResourcesMaker+Definition"
+    },
+    {
+      "code": "Edema",
+      "display": "Edema",
+      "definition": "BreastRadiology.XUnitTests.ResourcesMaker+Definition"
+    },
+    {
+      "code": "EdemaAdj",
+      "display": "Edema adj",
+      "definition": "BreastRadiology.XUnitTests.ResourcesMaker+Definition"
+    },
+    {
+      "code": "GoldSeed",
+      "display": "Gold Seed",
+      "definition": "BreastRadiology.XUnitTests.ResourcesMaker+Definition"
+    },
+    {
+      "code": "Hematoma",
+      "display": "Hematoma",
+      "definition": "BreastRadiology.XUnitTests.ResourcesMaker+Definition"
+    },
+    {
+      "code": "NippleRetraction",
+      "display": "Nipple retraction",
+      "definition": "BreastRadiology.XUnitTests.ResourcesMaker+Definition"
+    },
+    {
+      "code": "NOChestWallInvasion",
+      "display": "NO Chest wall invasion",
+      "definition": "BreastRadiology.XUnitTests.ResourcesMaker+Definition"
+    },
+    {
+      "code": "PectoralisMuscleInvasion",
+      "display": "Pectoralis muscle invasion",
+      "definition": "BreastRadiology.XUnitTests.ResourcesMaker+Definition"
+    },
+    {
+      "code": "PectoralisMuscleInvolvement",
+      "display": "Pectoralis muscle involvement",
+      "definition": "BreastRadiology.XUnitTests.ResourcesMaker+Definition"
+    },
+    {
+      "code": "PectoralisMuscleTenting",
+      "display": "Pectoralis muscle tenting",
+      "definition": "BreastRadiology.XUnitTests.ResourcesMaker+Definition"
+    },
+    {
+      "code": "PostSurgicalScar",
+      "display": "Post surgical scar",
+      "definition": "BreastRadiology.XUnitTests.ResourcesMaker+Definition"
+    },
+    {
+      "code": "Seroma",
+      "display": "Seroma",
+      "definition": "BreastRadiology.XUnitTests.ResourcesMaker+Definition"
+    },
+    {
+      "code": "SkinInvolvement",
+      "display": "Skin involvement",
+      "definition": "BreastRadiology.XUnitTests.ResourcesMaker+Definition"
+    },
+    {
+      "code": "SkinLesion",
+      "display": "Skin lesion",
+      "definition": "BreastRadiology.XUnitTests.ResourcesMaker+Definition"
+    },
+    {
+      "code": "SkinRetraction",
+      "display": "Skin retraction",
+      "definition": "BreastRadiology.XUnitTests.ResourcesMaker+Definition"
+    },
+    {
+      "code": "SkinThickening",
+      "display": "Skin thickening",
+      "definition": "BreastRadiology.XUnitTests.ResourcesMaker+Definition"
+    },
+    {
+      "code": "SurgicalClip",
+      "display": "Surgical clip",
+      "definition": "BreastRadiology.XUnitTests.ResourcesMaker+Definition"
+    },
+    {
+      "code": "TrabecularThickening",
+      "display": "Trabecular thickening",
+      "definition": "BreastRadiology.XUnitTests.ResourcesMaker+Definition"
+    }
+  ]
+}

@@ -51,11 +51,11 @@
     },
     {
       "url": "http://www.fragment.com/fragment",
-      "valueUrl": "http://hl7.org/fhir/us/breast-radiology/StructureDefinition/TumorQualifierComponentFragment"
+      "valueUrl": "http://hl7.org/fhir/us/breast-radiology/StructureDefinition/ObservedCountFragment"
     },
     {
       "url": "http://www.fragment.com/maplink",
-      "valueString": "fragment|True|http://hl7.org/fhir/us/breast-radiology/StructureDefinition/TumorQualifierComponentFragment"
+      "valueString": "fragment|True|http://hl7.org/fhir/us/breast-radiology/StructureDefinition/ObservedCountFragment"
     },
     {
       "url": "http://www.fragment.com/fragment",
@@ -64,6 +64,14 @@
     {
       "url": "http://www.fragment.com/maplink",
       "valueString": "fragment|True|http://hl7.org/fhir/us/breast-radiology/StructureDefinition/NotPreviouslySeenComponentFragment"
+    },
+    {
+      "url": "http://www.fragment.com/fragment",
+      "valueUrl": "http://hl7.org/fhir/us/breast-radiology/StructureDefinition/TumorQualifierComponentFragment"
+    },
+    {
+      "url": "http://www.fragment.com/maplink",
+      "valueString": "fragment|True|http://hl7.org/fhir/us/breast-radiology/StructureDefinition/TumorQualifierComponentFragment"
     },
     {
       "url": "http://www.fragment.com/fragment",
@@ -79,15 +87,7 @@
     },
     {
       "url": "http://www.fragment.com/maplink",
-      "valueString": "component|True|LymphNode Type^CodeableConcept^http://hl7.org/fhir/us/breast-radiology/ValueSet/AbnormalityLymphNodeVS"
-    },
-    {
-      "url": "http://www.fragment.com/maplink",
-      "valueString": "component|True|Observed Size^Quantity"
-    },
-    {
-      "url": "http://www.fragment.com/maplink",
-      "valueString": "component|True|Observed Size^Range"
+      "valueString": "component|True|Lymph Node Type^CodeableConcept^http://hl7.org/fhir/us/breast-radiology/ValueSet/AbnormalityLymphNodeVS"
     }
   ],
   "url": "http://hl7.org/fhir/us/breast-radiology/StructureDefinition/AbnormalityLymphNode",
@@ -176,7 +176,7 @@
         "id": "Observation.component:lymphNodeType",
         "path": "Observation.component",
         "sliceName": "lymphNodeType",
-        "short": "LymphNode Type component",
+        "short": "Lymph Node Type component",
         "definition": "This slice contains the optional component that refines the lymph node type.The value of this component is a codeable concept chosen from the AbnormalityLymphNodeVS valueset.<br/>",
         "comment": "This is one component of a group of components that comprise the observation.",
         "min": 0,
@@ -190,8 +190,8 @@
       {
         "id": "Observation.component:lymphNodeType.code",
         "path": "Observation.component.code",
-        "short": "LymphNode Type component code",
-        "definition": "This code identifies the LymphNode Type component",
+        "short": "Lymph Node Type component code",
+        "definition": "This code identifies the Lymph Node Type component",
         "min": 1,
         "max": "1",
         "base": {
@@ -211,7 +211,7 @@
       {
         "id": "Observation.component:lymphNodeType.value[x]",
         "path": "Observation.component.value[x]",
-        "short": "LymphNode Type component value",
+        "short": "Lymph Node Type component value",
         "definition": "Value is a codeable concept.<br/>",
         "min": 1,
         "max": "1",
@@ -228,116 +228,6 @@
         "binding": {
           "strength": "required",
           "valueSet": "http://hl7.org/fhir/us/breast-radiology/ValueSet/AbnormalityLymphNodeVS"
-        }
-      },
-      {
-        "id": "Observation.component:observedCount",
-        "path": "Observation.component",
-        "sliceName": "observedCount",
-        "short": "observedCount component",
-        "definition": "This component slice contains the observedCount quantity",
-        "comment": "This is one component of a group of components that comprise the observation.",
-        "min": 0,
-        "max": "1",
-        "base": {
-          "path": "Observation.component",
-          "min": 0,
-          "max": "*"
-        }
-      },
-      {
-        "id": "Observation.component:observedCount.code",
-        "path": "Observation.component.code",
-        "min": 1,
-        "max": "1",
-        "base": {
-          "path": "Observation.component.code",
-          "min": 1,
-          "max": "1"
-        },
-        "patternCodeableConcept": {
-          "coding": [
-            {
-              "system": "http://hl7.org/fhir/us/breast-radiology/CodeSystem/ComponentSliceCodes",
-              "code": "observedCount"
-            }
-          ]
-        }
-      },
-      {
-        "id": "Observation.component:observedCount.value[x]",
-        "path": "Observation.component.value[x]",
-        "slicing": {
-          "discriminator": [
-            {
-              "type": "type",
-              "path": "$this"
-            }
-          ],
-          "rules": "closed"
-        },
-        "min": 1,
-        "max": "1",
-        "base": {
-          "path": "Observation.component.value[x]",
-          "min": 0,
-          "max": "1"
-        },
-        "type": [
-          {
-            "code": "Quantity"
-          },
-          {
-            "code": "Range"
-          }
-        ]
-      },
-      {
-        "id": "Observation.component:observedCount.value[x]:observedCount/quantity",
-        "path": "Observation.component.value[x]",
-        "sliceName": "observedCount/quantity",
-        "min": 0,
-        "max": "1",
-        "base": {
-          "path": "Observation.component.value[x]",
-          "min": 0,
-          "max": "1"
-        },
-        "type": [
-          {
-            "code": "Quantity"
-          }
-        ],
-        "patternQuantity": {
-          "system": "http://unitsofmeasure.org",
-          "code": "tot"
-        }
-      },
-      {
-        "id": "Observation.component:observedCount.value[x]:observedCount/range",
-        "path": "Observation.component.value[x]",
-        "sliceName": "observedCount/range",
-        "min": 0,
-        "max": "1",
-        "base": {
-          "path": "Observation.component.value[x]",
-          "min": 0,
-          "max": "1"
-        },
-        "type": [
-          {
-            "code": "Range"
-          }
-        ],
-        "patternRange": {
-          "low": {
-            "system": "http://unitsofmeasure.org",
-            "code": "tot"
-          },
-          "high": {
-            "system": "http://unitsofmeasure.org",
-            "code": "tot"
-          }
         }
       }
     ]

@@ -1,0 +1,107 @@
+{
+  "resourceType": "CodeSystem",
+  "id": "ObservedChangesCS",
+  "url": "http://hl7.org/fhir/us/breast-radiology/CodeSystem/ObservedChangesCS",
+  "version": "0.0.2",
+  "name": "ObservedChangesCS",
+  "title": "Observed Changes CodeSystem",
+  "status": "draft",
+  "date": "2019-11-01",
+  "publisher": "Hl7-Clinical Interoperability Council",
+  "contact": [
+    {
+      "telecom": [
+        {
+          "system": "url",
+          "value": "http://www.hl7.org/Special/committees/cic"
+        }
+      ]
+    }
+  ],
+  "description": "Observed changes in an abnormality code system.",
+  "caseSensitive": true,
+  "content": "complete",
+  "count": 16,
+  "concept": [
+    {
+      "code": "IncreaseInSize",
+      "display": "Increase In Size",
+      "definition": "BreastRadiology.XUnitTests.ResourcesMaker+Definition"
+    },
+    {
+      "code": "DecreaseInSize",
+      "display": "Decrease In Size",
+      "definition": "BreastRadiology.XUnitTests.ResourcesMaker+Definition"
+    },
+    {
+      "code": "MoreProminent",
+      "display": "More Prominent",
+      "definition": "BreastRadiology.XUnitTests.ResourcesMaker+Definition"
+    },
+    {
+      "code": "LessProminent",
+      "display": "Less Prominent",
+      "definition": "BreastRadiology.XUnitTests.ResourcesMaker+Definition"
+    },
+    {
+      "code": "MoreDefined",
+      "display": "More Defined",
+      "definition": "BreastRadiology.XUnitTests.ResourcesMaker+Definition"
+    },
+    {
+      "code": "LessDefined",
+      "display": "Less Defined",
+      "definition": "BreastRadiology.XUnitTests.ResourcesMaker+Definition"
+    },
+    {
+      "code": "IncrInNumber",
+      "display": "Increased In Number",
+      "definition": "BreastRadiology.XUnitTests.ResourcesMaker+Definition"
+    },
+    {
+      "code": "DecrInNumber",
+      "display": "Decreased In Number",
+      "definition": "BreastRadiology.XUnitTests.ResourcesMaker+Definition"
+    },
+    {
+      "code": "IncrInNumberOfCalcifications",
+      "display": "Increased In Number Of Calcifications",
+      "definition": "BreastRadiology.XUnitTests.ResourcesMaker+Definition"
+    },
+    {
+      "code": "DecrInNumberOfCalcifications",
+      "display": "Decreased In Number Of Calcifications",
+      "definition": "BreastRadiology.XUnitTests.ResourcesMaker+Definition"
+    },
+    {
+      "code": "New",
+      "display": "New Observation",
+      "definition": "BreastRadiology.XUnitTests.ResourcesMaker+Definition"
+    },
+    {
+      "code": "Stable",
+      "display": "Stable",
+      "definition": "BreastRadiology.XUnitTests.ResourcesMaker+Definition"
+    },
+    {
+      "code": "NotSigChanged",
+      "display": "Not Significantly Changed",
+      "definition": "BreastRadiology.XUnitTests.ResourcesMaker+Definition"
+    },
+    {
+      "code": "NoLongerSeen",
+      "display": "No Longer Seen",
+      "definition": "BreastRadiology.XUnitTests.ResourcesMaker+Definition"
+    },
+    {
+      "code": "IncidentalFind",
+      "display": "Incidental Find",
+      "definition": "BreastRadiology.XUnitTests.ResourcesMaker+Definition"
+    },
+    {
+      "code": "RepresentsChange",
+      "display": "Represents Change",
+      "definition": "BreastRadiology.XUnitTests.ResourcesMaker+Definition"
+    }
+  ]
+}

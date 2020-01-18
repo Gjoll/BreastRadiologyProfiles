@@ -1,0 +1,397 @@
+{
+  "resourceType": "CodeSystem",
+  "id": "ConsistentWithCodeSystemCS",
+  "url": "http://hl7.org/fhir/us/breast-radiology/CodeSystem/ConsistentWithCodeSystemCS",
+  "version": "0.0.2",
+  "name": "ConsistentWithCodeSystemCS",
+  "title": "Consistent With CodeSystem",
+  "status": "draft",
+  "date": "2019-11-01",
+  "publisher": "Hl7-Clinical Interoperability Council",
+  "contact": [
+    {
+      "telecom": [
+        {
+          "system": "url",
+          "value": "http://www.hl7.org/Special/committees/cic"
+        }
+      ]
+    }
+  ],
+  "description": "ConsistentWith code system",
+  "caseSensitive": true,
+  "content": "complete",
+  "count": 74,
+  "concept": [
+    {
+      "code": "Abscess",
+      "display": "Abscess",
+      "definition": "BreastRadiology.XUnitTests.ResourcesMaker+Definition"
+    },
+    {
+      "code": "Angiolipoma",
+      "display": "Angiolipoma",
+      "definition": "BreastRadiology.XUnitTests.ResourcesMaker+Definition"
+    },
+    {
+      "code": "ApocrineMetaplasia",
+      "display": "Apocrine metaplasia",
+      "definition": "BreastRadiology.XUnitTests.ResourcesMaker+Definition"
+    },
+    {
+      "code": "Artifact",
+      "display": "Artifact",
+      "definition": "BreastRadiology.XUnitTests.ResourcesMaker+Definition"
+    },
+    {
+      "code": "AtypicalHyperplasia",
+      "display": "Atypical hyperplasia",
+      "definition": "BreastRadiology.XUnitTests.ResourcesMaker+Definition"
+    },
+    {
+      "code": "AxillaryLymphNode",
+      "display": "Axillary lymph node",
+      "definition": "BreastRadiology.XUnitTests.ResourcesMaker+Definition"
+    },
+    {
+      "code": "Carcinoma",
+      "display": "Carcinoma",
+      "definition": "BreastRadiology.XUnitTests.ResourcesMaker+Definition"
+    },
+    {
+      "code": "CarcinomaKnown",
+      "display": "Carcinoma known",
+      "definition": "BreastRadiology.XUnitTests.ResourcesMaker+Definition"
+    },
+    {
+      "code": "ClusterOfCysts",
+      "display": "Cluster of cysts",
+      "definition": "BreastRadiology.XUnitTests.ResourcesMaker+Definition"
+    },
+    {
+      "code": "Cyst",
+      "display": "Cyst",
+      "definition": "BreastRadiology.XUnitTests.ResourcesMaker+Definition"
+    },
+    {
+      "code": "CystComplex",
+      "display": "Cyst complex",
+      "definition": "BreastRadiology.XUnitTests.ResourcesMaker+Definition"
+    },
+    {
+      "code": "CystComplicated",
+      "display": "Cyst complicated",
+      "definition": "BreastRadiology.XUnitTests.ResourcesMaker+Definition"
+    },
+    {
+      "code": "CystOil",
+      "display": "Cyst oil",
+      "definition": "BreastRadiology.XUnitTests.ResourcesMaker+Definition"
+    },
+    {
+      "code": "CystSebaceous",
+      "display": "Cyst sebaceous",
+      "definition": "BreastRadiology.XUnitTests.ResourcesMaker+Definition"
+    },
+    {
+      "code": "CystSimple",
+      "display": "Cyst simple",
+      "definition": "BreastRadiology.XUnitTests.ResourcesMaker+Definition"
+    },
+    {
+      "code": "CystsComplex",
+      "display": "Cysts complex",
+      "definition": "BreastRadiology.XUnitTests.ResourcesMaker+Definition"
+    },
+    {
+      "code": "CystsComplicated",
+      "display": "Cysts complicated",
+      "definition": "BreastRadiology.XUnitTests.ResourcesMaker+Definition"
+    },
+    {
+      "code": "CystsMicroClustered",
+      "display": "Cysts micro clustered",
+      "definition": "BreastRadiology.XUnitTests.ResourcesMaker+Definition"
+    },
+    {
+      "code": "DCIS",
+      "display": "DCIS",
+      "definition": "BreastRadiology.XUnitTests.ResourcesMaker+Definition"
+    },
+    {
+      "code": "Debris",
+      "display": "Debris",
+      "definition": "BreastRadiology.XUnitTests.ResourcesMaker+Definition"
+    },
+    {
+      "code": "Deodorant",
+      "display": "Deodorant",
+      "definition": "BreastRadiology.XUnitTests.ResourcesMaker+Definition"
+    },
+    {
+      "code": "DermalCalcification",
+      "display": "Dermal calcification",
+      "definition": "BreastRadiology.XUnitTests.ResourcesMaker+Definition"
+    },
+    {
+      "code": "DuctEctasia",
+      "display": "Duct ectasia",
+      "definition": "BreastRadiology.XUnitTests.ResourcesMaker+Definition"
+    },
+    {
+      "code": "Edema",
+      "display": "Edema",
+      "definition": "BreastRadiology.XUnitTests.ResourcesMaker+Definition"
+    },
+    {
+      "code": "FatLobule",
+      "display": "Fat lobule",
+      "definition": "BreastRadiology.XUnitTests.ResourcesMaker+Definition"
+    },
+    {
+      "code": "FatNecrosis",
+      "display": "Fat necrosis",
+      "definition": "BreastRadiology.XUnitTests.ResourcesMaker+Definition"
+    },
+    {
+      "code": "Fibroadenolipoma",
+      "display": "Fibroadenolipoma",
+      "definition": "BreastRadiology.XUnitTests.ResourcesMaker+Definition"
+    },
+    {
+      "code": "Fibroadenoma",
+      "display": "Fibroadenoma",
+      "definition": "BreastRadiology.XUnitTests.ResourcesMaker+Definition"
+    },
+    {
+      "code": "FibroadenomaDegenerating",
+      "display": "Fibroadenoma degenerating",
+      "definition": "BreastRadiology.XUnitTests.ResourcesMaker+Definition"
+    },
+    {
+      "code": "FibrocysticChange",
+      "display": "Fibrocystic change",
+      "definition": "BreastRadiology.XUnitTests.ResourcesMaker+Definition"
+    },
+    {
+      "code": "FibroglandularTissue",
+      "display": "Fibroglandular tissue",
+      "definition": "BreastRadiology.XUnitTests.ResourcesMaker+Definition"
+    },
+    {
+      "code": "Fibrosis",
+      "display": "Fibrosis",
+      "definition": "BreastRadiology.XUnitTests.ResourcesMaker+Definition"
+    },
+    {
+      "code": "FibrousRidge",
+      "display": "Fibrous ridge",
+      "definition": "BreastRadiology.XUnitTests.ResourcesMaker+Definition"
+    },
+    {
+      "code": "Folliculitis",
+      "display": "Folliculitis",
+      "definition": "BreastRadiology.XUnitTests.ResourcesMaker+Definition"
+    },
+    {
+      "code": "Gynecomastia",
+      "display": "Gynecomastia",
+      "definition": "BreastRadiology.XUnitTests.ResourcesMaker+Definition"
+    },
+    {
+      "code": "Hamartoma",
+      "display": "Hamartoma",
+      "definition": "BreastRadiology.XUnitTests.ResourcesMaker+Definition"
+    },
+    {
+      "code": "Hematoma",
+      "display": "Hematoma",
+      "definition": "BreastRadiology.XUnitTests.ResourcesMaker+Definition"
+    },
+    {
+      "code": "HormonalStimulation",
+      "display": "Hormonal stimulation",
+      "definition": "BreastRadiology.XUnitTests.ResourcesMaker+Definition"
+    },
+    {
+      "code": "IntracysticLesion",
+      "display": "Intracystic lesion",
+      "definition": "BreastRadiology.XUnitTests.ResourcesMaker+Definition"
+    },
+    {
+      "code": "IntramammaryNode",
+      "display": "Intramammary node",
+      "definition": "BreastRadiology.XUnitTests.ResourcesMaker+Definition"
+    },
+    {
+      "code": "Lipoma",
+      "display": "Lipoma",
+      "definition": "BreastRadiology.XUnitTests.ResourcesMaker+Definition"
+    },
+    {
+      "code": "LumpectomyCavity",
+      "display": "Lumpectomy cavity",
+      "definition": "BreastRadiology.XUnitTests.ResourcesMaker+Definition"
+    },
+    {
+      "code": "LumpectomySite",
+      "display": "Lumpectomy site",
+      "definition": "BreastRadiology.XUnitTests.ResourcesMaker+Definition"
+    },
+    {
+      "code": "LymphNode",
+      "display": "Lymph node",
+      "definition": "BreastRadiology.XUnitTests.ResourcesMaker+Definition"
+    },
+    {
+      "code": "LymphNodeEnlarged",
+      "display": "Lymph node enlarged",
+      "definition": "BreastRadiology.XUnitTests.ResourcesMaker+Definition"
+    },
+    {
+      "code": "LymphNodeNormal",
+      "display": "Lymph node normal",
+      "definition": "BreastRadiology.XUnitTests.ResourcesMaker+Definition"
+    },
+    {
+      "code": "LymphNodePathological",
+      "display": "Lymph node pathological",
+      "definition": "BreastRadiology.XUnitTests.ResourcesMaker+Definition"
+    },
+    {
+      "code": "MassSolid",
+      "display": "Mass solid",
+      "definition": "BreastRadiology.XUnitTests.ResourcesMaker+Definition"
+    },
+    {
+      "code": "MassSolidW/tumorVasc",
+      "display": "Mass solid w/tumor vasc",
+      "definition": "BreastRadiology.XUnitTests.ResourcesMaker+Definition"
+    },
+    {
+      "code": "Mastitis",
+      "display": "Mastitis",
+      "definition": "BreastRadiology.XUnitTests.ResourcesMaker+Definition"
+    },
+    {
+      "code": "MilkOfCalcium",
+      "display": "Milk of calcium",
+      "definition": "BreastRadiology.XUnitTests.ResourcesMaker+Definition"
+    },
+    {
+      "code": "Multi-focalCancer",
+      "display": "Multi-focal cancer",
+      "definition": "BreastRadiology.XUnitTests.ResourcesMaker+Definition"
+    },
+    {
+      "code": "PapillaryLesion",
+      "display": "Papillary lesion",
+      "definition": "BreastRadiology.XUnitTests.ResourcesMaker+Definition"
+    },
+    {
+      "code": "Papilloma",
+      "display": "Papilloma",
+      "definition": "BreastRadiology.XUnitTests.ResourcesMaker+Definition"
+    },
+    {
+      "code": "PhyllodesTumor",
+      "display": "Phyllodes tumor",
+      "definition": "BreastRadiology.XUnitTests.ResourcesMaker+Definition"
+    },
+    {
+      "code": "PostLumpectomyScar",
+      "display": "Post lumpectomy scar",
+      "definition": "BreastRadiology.XUnitTests.ResourcesMaker+Definition"
+    },
+    {
+      "code": "PostSurgicalScar",
+      "display": "Post surgical scar",
+      "definition": "BreastRadiology.XUnitTests.ResourcesMaker+Definition"
+    },
+    {
+      "code": "PreviousBiopsy",
+      "display": "Previous biopsy",
+      "definition": "BreastRadiology.XUnitTests.ResourcesMaker+Definition"
+    },
+    {
+      "code": "PreviousSurgery",
+      "display": "Previous surgery",
+      "definition": "BreastRadiology.XUnitTests.ResourcesMaker+Definition"
+    },
+    {
+      "code": "PreviousTrauma",
+      "display": "Previous trauma",
+      "definition": "BreastRadiology.XUnitTests.ResourcesMaker+Definition"
+    },
+    {
+      "code": "RadialScar",
+      "display": "Radial scar",
+      "definition": "BreastRadiology.XUnitTests.ResourcesMaker+Definition"
+    },
+    {
+      "code": "RadiationChanges",
+      "display": "Radiation changes",
+      "definition": "BreastRadiology.XUnitTests.ResourcesMaker+Definition"
+    },
+    {
+      "code": "RadiationTherapy",
+      "display": "Radiation therapy",
+      "definition": "BreastRadiology.XUnitTests.ResourcesMaker+Definition"
+    },
+    {
+      "code": "Scar",
+      "display": "Scar",
+      "definition": "BreastRadiology.XUnitTests.ResourcesMaker+Definition"
+    },
+    {
+      "code": "ScarWithShadowing",
+      "display": "Scar with shadowing",
+      "definition": "BreastRadiology.XUnitTests.ResourcesMaker+Definition"
+    },
+    {
+      "code": "SclerosingAdenosis",
+      "display": "Sclerosing adenosis",
+      "definition": "BreastRadiology.XUnitTests.ResourcesMaker+Definition"
+    },
+    {
+      "code": "SecretoryCalcification",
+      "display": "Secretory calcification",
+      "definition": "BreastRadiology.XUnitTests.ResourcesMaker+Definition"
+    },
+    {
+      "code": "SentinelNode",
+      "display": "Sentinel node",
+      "definition": "BreastRadiology.XUnitTests.ResourcesMaker+Definition"
+    },
+    {
+      "code": "Seroma",
+      "display": "Seroma",
+      "definition": "BreastRadiology.XUnitTests.ResourcesMaker+Definition"
+    },
+    {
+      "code": "SkinLesion",
+      "display": "Skin lesion",
+      "definition": "BreastRadiology.XUnitTests.ResourcesMaker+Definition"
+    },
+    {
+      "code": "Surgery",
+      "display": "Surgery",
+      "definition": "BreastRadiology.XUnitTests.ResourcesMaker+Definition"
+    },
+    {
+      "code": "Trauma",
+      "display": "Trauma",
+      "definition": "BreastRadiology.XUnitTests.ResourcesMaker+Definition"
+    },
+    {
+      "code": "VascularCalcifications",
+      "display": "Vascular calcifications",
+      "definition": "BreastRadiology.XUnitTests.ResourcesMaker+Definition"
+    },
+    {
+      "code": "VenousStasis",
+      "display": "Venous stasis",
+      "definition": "BreastRadiology.XUnitTests.ResourcesMaker+Definition"
+    }
+  ]
+}

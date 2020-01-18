@@ -25,8 +25,6 @@ namespace BreastRadiology.XUnitTests
                          new ConceptDef[]
                          {
                             //+ ForeignObjectCS
-                            // oneToMany: many
-                            // SNOMED Description: ClinicalFinding | 283574001 | Pellet wound of breast (Disorder) | [0/0] | S21.039? 
                             //+ BBPellet
                             new ConceptDef()
                                 .SetCode("BBPellet")
@@ -34,11 +32,11 @@ namespace BreastRadiology.XUnitTests
                                 .SetDefinition(new Definition()
                                     .Line("[PR] BB pellet")
                                     .ValidModalities(Modalities.MG | Modalities.MRI | Modalities.US)
-                                ),
+                                )
+                                .SetOneToMany("many")
+                                .SetSnomedDescription("ClinicalFinding | 283574001 | Pellet wound of breast (Disorder) | [0/0] | S21.039? ")
                             //- BBPellet
-                            // SNOMED Code: 470272007
-                            // SNOMED Description: PhysicalObject | Implantable lesion localization marker (Object)
-                            // ICD10: 470272007
+                            ,
                             //+ BiopsyClip
                             new ConceptDef()
                                 .SetCode("BiopsyClip")
@@ -46,11 +44,12 @@ namespace BreastRadiology.XUnitTests
                                 .SetDefinition(new Definition()
                                     .Line("[PR] Biopsy clip")
                                     .ValidModalities(Modalities.MG | Modalities.MRI | Modalities.US)
-                                ),
+                                )
+                                .SetSnomedCode("470272007")
+                                .SetSnomedDescription("PhysicalObject | Implantable lesion localization marker (Object)")
+                                .SetICD10("470272007")
                             //- BiopsyClip
-                            // SNOMED Code: 470272007
-                            // SNOMED Description: PhysicalObject | Implantable lesion localization marker (Object)
-                            // ICD10: 470272007
+                            ,
                             //+ BreastMarker
                             new ConceptDef()
                                 .SetCode("BreastMarker")
@@ -58,8 +57,12 @@ namespace BreastRadiology.XUnitTests
                                 .SetDefinition(new Definition()
                                     .Line("[PR] Breast marker")
                                     .ValidModalities(Modalities.MRI)
-                                ),
+                                )
+                                .SetSnomedCode("470272007")
+                                .SetSnomedDescription("PhysicalObject | Implantable lesion localization marker (Object)")
+                                .SetICD10("470272007")
                             //- BreastMarker
+                            ,
                             //+ Calcification
                             new ConceptDef()
                                 .SetCode("Calcification")
@@ -67,8 +70,9 @@ namespace BreastRadiology.XUnitTests
                                 .SetDefinition(new Definition()
                                     .Line("[PR] Calcification")
                                     .ValidModalities(Modalities.MRI)
-                                ),
+                                )
                             //- Calcification
+                            ,
                             //+ CatheterSleeves
                             new ConceptDef()
                                 .SetCode("CatheterSleeves")
@@ -76,8 +80,9 @@ namespace BreastRadiology.XUnitTests
                                 .SetDefinition(new Definition()
                                     .Line("[PR] Catheter sleeves")
                                     .ValidModalities(Modalities.MG | Modalities.MRI | Modalities.US)
-                                ),
+                                )
                             //- CatheterSleeves
+                            ,
                             //+ ChemotherapyPort
                             new ConceptDef()
                                 .SetCode("ChemotherapyPort")
@@ -85,12 +90,9 @@ namespace BreastRadiology.XUnitTests
                                 .SetDefinition(new Definition()
                                     .Line("[PR] Chemotherapy port")
                                     .ValidModalities(Modalities.MG)
-                                ),
+                                )
                             //- ChemotherapyPort
-                            // SNOMED Code: 470342004
-                            // oneToMany: many
-                            // SNOMED Description: PhysicalObject | Implantable tissue clip (Object)
-                            // ICD10: 470342004
+                            ,
                             //+ Clip
                             new ConceptDef()
                                 .SetCode("Clip")
@@ -98,12 +100,13 @@ namespace BreastRadiology.XUnitTests
                                 .SetDefinition(new Definition()
                                     .Line("[PR] Clip")
                                     .ValidModalities(Modalities.MG | Modalities.MRI | Modalities.US)
-                                ),
+                                )
+                                .SetSnomedCode("470342004")
+                                .SetOneToMany("many")
+                                .SetSnomedDescription("PhysicalObject | Implantable tissue clip (Object)")
+                                .SetICD10("470342004")
                             //- Clip
-                            // SNOMED Code: 470342004
-                            // oneToMany: one
-                            // SNOMED Description: PhysicalObject | Implantable tissue clip (Object)
-                            // ICD10: 470342004
+                            ,
                             //+ Coil
                             new ConceptDef()
                                 .SetCode("Coil")
@@ -111,11 +114,13 @@ namespace BreastRadiology.XUnitTests
                                 .SetDefinition(new Definition()
                                     .Line("[PR] Coil")
                                     .ValidModalities(Modalities.MG | Modalities.MRI | Modalities.US)
-                                ),
+                                )
+                                .SetSnomedCode("470342004")
+                                .SetOneToMany("one")
+                                .SetSnomedDescription("PhysicalObject | Implantable tissue clip (Object)")
+                                .SetICD10("470342004")
                             //- Coil
-                            // SNOMED Code: 283258005
-                            // SNOMED Description: ClinicalFinding | Glass in breast (Disorder)
-                            // ICD10: 283258005
+                            ,
                             //+ Glass
                             new ConceptDef()
                                 .SetCode("Glass")
@@ -123,8 +128,12 @@ namespace BreastRadiology.XUnitTests
                                 .SetDefinition(new Definition()
                                     .Line("[PR] Glass")
                                     .ValidModalities(Modalities.MG | Modalities.MRI | Modalities.US)
-                                ),
+                                )
+                                .SetSnomedCode("283258005")
+                                .SetSnomedDescription("ClinicalFinding | Glass in breast (Disorder)")
+                                .SetICD10("283258005")
                             //- Glass
+                            ,
                             //+ GoldSeed
                             new ConceptDef()
                                 .SetCode("GoldSeed")
@@ -132,9 +141,9 @@ namespace BreastRadiology.XUnitTests
                                 .SetDefinition(new Definition()
                                     .Line("[PR] Gold seed")
                                     .ValidModalities(Modalities.MG | Modalities.MRI | Modalities.US)
-                                ),
+                                )
                             //- GoldSeed
-                            // SNOMED Description: ClinicalFinding | 425055008 | Gunshot entry wound (Disorder) | [0/0] | T14.8
+                            ,
                             //+ GunshotWound
                             new ConceptDef()
                                 .SetCode("GunshotWound")
@@ -142,11 +151,10 @@ namespace BreastRadiology.XUnitTests
                                 .SetDefinition(new Definition()
                                     .Line("[PR] Gunshot wound")
                                     .ValidModalities(Modalities.MG | Modalities.MRI | Modalities.US)
-                                ),
+                                )
+                                .SetSnomedDescription("ClinicalFinding | 425055008 | Gunshot entry wound (Disorder) | [0/0] | T14.8")
                             //- GunshotWound
-                            // SNOMED Code: 470272007
-                            // SNOMED Description: PhysicalObject | Implantable lesion localization marker (Object)
-                            // ICD10: 470272007
+                            ,
                             //+ MarkerClip
                             new ConceptDef()
                                 .SetCode("MarkerClip")
@@ -154,11 +162,12 @@ namespace BreastRadiology.XUnitTests
                                 .SetDefinition(new Definition()
                                     .Line("[PR] Marker clip")
                                     .ValidModalities(Modalities.MG)
-                                ),
+                                )
+                                .SetSnomedCode("470272007")
+                                .SetSnomedDescription("PhysicalObject | Implantable lesion localization marker (Object)")
+                                .SetICD10("470272007")
                             //- MarkerClip
-                            // SNOMED Code: 283169003
-                            // SNOMED Description: ClinicalFinding | Metal foreign body in breast (Disorder)
-                            // ICD10: 283169003
+                            ,
                             //+ Metal
                             new ConceptDef()
                                 .SetCode("Metal")
@@ -166,11 +175,12 @@ namespace BreastRadiology.XUnitTests
                                 .SetDefinition(new Definition()
                                     .Line("[PR] Metal")
                                     .ValidModalities(Modalities.MG | Modalities.MRI | Modalities.US)
-                                ),
+                                )
+                                .SetSnomedCode("283169003")
+                                .SetSnomedDescription("ClinicalFinding | Metal foreign body in breast (Disorder)")
+                                .SetICD10("283169003")
                             //- Metal
-                            // SNOMED Code: 470272007
-                            // SNOMED Description: PhysicalObject | Implantable lesion localization marker (Object)
-                            // ICD10: 470272007
+                            ,
                             //+ MetallicMarker
                             new ConceptDef()
                                 .SetCode("MetallicMarker")
@@ -178,8 +188,12 @@ namespace BreastRadiology.XUnitTests
                                 .SetDefinition(new Definition()
                                     .Line("[PR] Metallic marker")
                                     .ValidModalities(Modalities.MRI)
-                                ),
+                                )
+                                .SetSnomedCode("470272007")
+                                .SetSnomedDescription("PhysicalObject | Implantable lesion localization marker (Object)")
+                                .SetICD10("470272007")
                             //- MetallicMarker
+                            ,
                             //+ Needle
                             new ConceptDef()
                                 .SetCode("Needle")
@@ -187,12 +201,9 @@ namespace BreastRadiology.XUnitTests
                                 .SetDefinition(new Definition()
                                     .Line("[PR] Needle")
                                     .ValidModalities(Modalities.MG)
-                                ),
+                                )
                             //- Needle
-                            // SNOMED Code: 80919006
-                            // SNOMED Description: PhysicalObject | Jewelry (Object)
-                            // ICD10: 80919006
-                            // Comment: NEEDED ADD NIPPLE LOCATION
+                            ,
                             //+ NippleJewelry
                             new ConceptDef()
                                 .SetCode("NippleJewelry")
@@ -200,8 +211,13 @@ namespace BreastRadiology.XUnitTests
                                 .SetDefinition(new Definition()
                                     .Line("[PR] Nipple jewelry")
                                     .ValidModalities(Modalities.MG)
-                                ),
+                                )
+                                .SetSnomedCode("80919006")
+                                .SetSnomedDescription("PhysicalObject | Jewelry (Object)")
+                                .SetICD10("80919006")
+                                .SetComment("NEEDED ADD NIPPLE LOCATION")
                             //- NippleJewelry
+                            ,
                             //+ Non-metallicBody
                             new ConceptDef()
                                 .SetCode("Non-metallicBody")
@@ -209,8 +225,9 @@ namespace BreastRadiology.XUnitTests
                                 .SetDefinition(new Definition()
                                     .Line("[PR] Non-metallic body")
                                     .ValidModalities(Modalities.MG)
-                                ),
+                                )
                             //- Non-metallicBody
+                            ,
                             //+ Pacemaker
                             new ConceptDef()
                                 .SetCode("Pacemaker")
@@ -218,8 +235,9 @@ namespace BreastRadiology.XUnitTests
                                 .SetDefinition(new Definition()
                                     .Line("[PR] Pacemaker")
                                     .ValidModalities(Modalities.MG | Modalities.MRI | Modalities.US)
-                                ),
+                                )
                             //- Pacemaker
+                            ,
                             //+ SiliconeGranuloma
                             new ConceptDef()
                                 .SetCode("SiliconeGranuloma")
@@ -227,9 +245,9 @@ namespace BreastRadiology.XUnitTests
                                 .SetDefinition(new Definition()
                                     .Line("[PR] Silicone granuloma")
                                     .ValidModalities(Modalities.MG | Modalities.MRI | Modalities.US)
-                                ),
+                                )
                             //- SiliconeGranuloma
-                            // SNOMED Description: PhysicalObject | 706640008 | Sponge (Object)
+                            ,
                             //+ Sponge
                             new ConceptDef()
                                 .SetCode("Sponge")
@@ -237,12 +255,10 @@ namespace BreastRadiology.XUnitTests
                                 .SetDefinition(new Definition()
                                     .Line("[PR] Sponge")
                                     .ValidModalities(Modalities.MG | Modalities.MRI | Modalities.US)
-                                ),
+                                )
+                                .SetSnomedDescription("PhysicalObject | 706640008 | Sponge (Object)")
                             //- Sponge
-                            // SNOMED Code: 470342004
-                            // oneToMany: one
-                            // SNOMED Description: PhysicalObject | Implantable tissue clip (Object)
-                            // ICD10: 470342004
+                            ,
                             //+ SurgicalClip
                             new ConceptDef()
                                 .SetCode("SurgicalClip")
@@ -250,9 +266,13 @@ namespace BreastRadiology.XUnitTests
                                 .SetDefinition(new Definition()
                                     .Line("[PR] Surgical clip")
                                     .ValidModalities(Modalities.MG | Modalities.MRI | Modalities.US)
-                                ),
+                                )
+                                .SetSnomedCode("470342004")
+                                .SetOneToMany("one")
+                                .SetSnomedDescription("PhysicalObject | Implantable tissue clip (Object)")
+                                .SetICD10("470342004")
                             //- SurgicalClip
-                            // SNOMED Description: PhysicalObject | 408098004 | Swab (Object
+                            ,
                             //+ Swab
                             new ConceptDef()
                                 .SetCode("Swab")
@@ -260,12 +280,10 @@ namespace BreastRadiology.XUnitTests
                                 .SetDefinition(new Definition()
                                     .Line("[PR] Swab")
                                     .ValidModalities(Modalities.MG | Modalities.MRI | Modalities.US)
-                                ),
+                                )
+                                .SetSnomedDescription("PhysicalObject | 408098004 | Swab (Object")
                             //- Swab
-                            // SNOMED Code: 470272007
-                            // oneToMany: one
-                            // SNOMED Description: PhysicalObject | Implantable lesion localization marker (Object)
-                            // ICD10: 470272007
+                            ,
                             //+ TitaniumClip
                             new ConceptDef()
                                 .SetCode("TitaniumClip")
@@ -273,8 +291,13 @@ namespace BreastRadiology.XUnitTests
                                 .SetDefinition(new Definition()
                                     .Line("[PR] Titanium clip")
                                     .ValidModalities(Modalities.MG | Modalities.MRI | Modalities.US)
-                                ),
+                                )
+                                .SetSnomedCode("470272007")
+                                .SetOneToMany("one")
+                                .SetSnomedDescription("PhysicalObject | Implantable lesion localization marker (Object)")
+                                .SetICD10("470272007")
                             //- TitaniumClip
+                            ,
                             //+ TitaniumMarkerClip
                             new ConceptDef()
                                 .SetCode("TitaniumMarkerClip")
@@ -282,8 +305,9 @@ namespace BreastRadiology.XUnitTests
                                 .SetDefinition(new Definition()
                                     .Line("[PR] Titanium marker clip")
                                     .ValidModalities(Modalities.MG)
-                                ),
+                                )
                             //- TitaniumMarkerClip
+                            ,
                             //+ Wire
                             new ConceptDef()
                                 .SetCode("Wire")
@@ -291,8 +315,9 @@ namespace BreastRadiology.XUnitTests
                                 .SetDefinition(new Definition()
                                     .Line("[PR] Wire")
                                     .ValidModalities(Modalities.MG | Modalities.MRI | Modalities.US)
-                                ),
+                                )
                             //- Wire
+                            ,
                             //+ WireFragment
                             new ConceptDef()
                                 .SetCode("WireFragment")
@@ -302,6 +327,7 @@ namespace BreastRadiology.XUnitTests
                                     .ValidModalities(Modalities.MG | Modalities.MRI | Modalities.US)
                                 )
                             //- WireFragment
+                            
                              //- ForeignObjectCS
                          })
              );
@@ -346,7 +372,7 @@ namespace BreastRadiology.XUnitTests
                     .AddFragRef(Self.ObservationNoValueFragment.Value())
                     .AddFragRef(Self.CommonComponentsFragment.Value())
                     .AddFragRef(Self.NotPreviouslySeenComponentsFragment.Value())
-                    .AddFragRef(Self.CorrespondsWithFragment.Value())
+                    .AddFragRef(Self.CorrespondsWithComponentFragment.Value())
                     ;
 
                 s = e.SDef;
@@ -366,7 +392,7 @@ namespace BreastRadiology.XUnitTests
                     BindingStrength.Required,
                     1,
                     "1",
-                    "ForeignObject Type",
+                    "Foreign Object Type",
                     new Markdown()
                         .Paragraph($"This slice contains the required component that refines the foreign object type.",
                                     $"The value of this component is a codeable concept chosen from the {binding.Name} valueset.")

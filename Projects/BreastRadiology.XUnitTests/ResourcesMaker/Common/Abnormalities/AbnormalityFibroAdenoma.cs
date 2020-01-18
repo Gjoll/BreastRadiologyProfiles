@@ -69,6 +69,7 @@ namespace BreastRadiology.XUnitTests
                     .AddFragRef(Self.ObservationNoValueFragment.Value())
                     .AddFragRef(Self.CommonComponentsFragment.Value())
                     .AddFragRef(Self.ShapeComponentsFragment.Value())
+                    .AddFragRef(Self.ObservedCountComponentFragment.Value())
                     ;
 
                 s = e.SDef;
@@ -92,7 +93,6 @@ namespace BreastRadiology.XUnitTests
                         .Paragraph($"This slice contains the optional component that refines the fibroadenema type.",
                                     $"The value of this component is a codeable concept chosen from the {binding.Name} valueset.")
                     );
-                Self.ComponentSliceObservedCountRange(e);
             });
     }
 }

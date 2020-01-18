@@ -1,0 +1,52 @@
+{
+  "resourceType": "CodeSystem",
+  "id": "ShapeCS",
+  "url": "http://hl7.org/fhir/us/breast-radiology/CodeSystem/ShapeCS",
+  "version": "0.0.2",
+  "name": "ShapeCS",
+  "title": "Shape CodeSystem",
+  "status": "draft",
+  "date": "2019-11-01",
+  "publisher": "Hl7-Clinical Interoperability Council",
+  "contact": [
+    {
+      "telecom": [
+        {
+          "system": "url",
+          "value": "http://www.hl7.org/Special/committees/cic"
+        }
+      ]
+    }
+  ],
+  "description": "Shape values code system.",
+  "caseSensitive": true,
+  "content": "complete",
+  "count": 5,
+  "concept": [
+    {
+      "code": "Irregular",
+      "display": "Irregular Shape",
+      "definition": "BreastRadiology.XUnitTests.ResourcesMaker+Definition"
+    },
+    {
+      "code": "Lobulated",
+      "display": "Lobulated Shape",
+      "definition": "BreastRadiology.XUnitTests.ResourcesMaker+Definition"
+    },
+    {
+      "code": "Oval",
+      "display": "Elliptical/Egg-shaped",
+      "definition": "BreastRadiology.XUnitTests.ResourcesMaker+Definition"
+    },
+    {
+      "code": "Reniform",
+      "display": "Reniform Shape",
+      "definition": "BreastRadiology.XUnitTests.ResourcesMaker+Definition"
+    },
+    {
+      "code": "Round",
+      "display": "Round Shape",
+      "definition": "BreastRadiology.XUnitTests.ResourcesMaker+Definition"
+    }
+  ]
+}

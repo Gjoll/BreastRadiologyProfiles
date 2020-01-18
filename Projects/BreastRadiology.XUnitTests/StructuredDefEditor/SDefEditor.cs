@@ -319,6 +319,9 @@ namespace BreastRadiology.XUnitTests
             String url,
             bool showChildren)
         {
+            if (linkType.Contains('|'))
+                throw new Exception("linkType can not contain a '|' character");
+
             this.SDef.AddExtension(Global.ResourceMapLinkUrl,
                 new FhirString($"{linkType}|{showChildren}|{url}"));
             return this;

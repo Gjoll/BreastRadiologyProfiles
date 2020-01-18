@@ -310,7 +310,8 @@ namespace BreastRadiology.XUnitTests
                     .AddFragRef(Self.ObservationNoValueFragment.Value())
                     .AddFragRef(Self.CommonComponentsFragment.Value())
                     .AddFragRef(Self.NotPreviouslySeenComponentsFragment.Value())
-                    .AddFragRef(Self.CorrespondsWithFragment.Value())
+                    .AddFragRef(Self.ObservedCountComponentFragment.Value())
+                    .AddFragRef(Self.CorrespondsWithComponentFragment.Value())
                     ;
 
                 s = e.SDef;
@@ -348,8 +349,6 @@ namespace BreastRadiology.XUnitTests
                         .Paragraph($"This slice contains the optional component that defines the calcification distribution.",
                                     $"The value of this component is a codeable concept chosen from the {Self.MGCalcificationDistributionVS.Value().Name} valueset.")
                     );
-
-                Self.ComponentSliceObservedCountRange(e);
             });
     }
 }

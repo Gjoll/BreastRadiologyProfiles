@@ -1,0 +1,52 @@
+{
+  "resourceType": "CodeSystem",
+  "id": "MammoCalcificationDistributionCS",
+  "url": "http://hl7.org/fhir/us/breast-radiology/CodeSystem/MammoCalcificationDistributionCS",
+  "version": "0.0.2",
+  "name": "MammoCalcificationDistributionCS",
+  "title": "Mammography Calcification Distribution CodeSystem",
+  "status": "draft",
+  "date": "2019-11-01",
+  "publisher": "Hl7-Clinical Interoperability Council",
+  "contact": [
+    {
+      "telecom": [
+        {
+          "system": "url",
+          "value": "http://www.hl7.org/Special/committees/cic"
+        }
+      ]
+    }
+  ],
+  "description": "Mammography calcification distribution code system.",
+  "caseSensitive": true,
+  "content": "complete",
+  "count": 5,
+  "concept": [
+    {
+      "code": "Diffuse",
+      "display": "Diffuse Calcification Distribution",
+      "definition": "BreastRadiology.XUnitTests.ResourcesMaker+Definition"
+    },
+    {
+      "code": "Regional",
+      "display": "Regional  Calcification Distribution",
+      "definition": "BreastRadiology.XUnitTests.ResourcesMaker+Definition"
+    },
+    {
+      "code": "Grouped",
+      "display": "Grouped  Calcification Distribution",
+      "definition": "BreastRadiology.XUnitTests.ResourcesMaker+Definition"
+    },
+    {
+      "code": "Linear",
+      "display": "Linear  Calcification Distribution",
+      "definition": "BreastRadiology.XUnitTests.ResourcesMaker+Definition"
+    },
+    {
+      "code": "Segmental",
+      "display": "Segmental Calcification Distribution",
+      "definition": "BreastRadiology.XUnitTests.ResourcesMaker+Definition"
+    }
+  ]
+}

@@ -1,0 +1,52 @@
+{
+  "resourceType": "CodeSystem",
+  "id": "AbnormalityCystTypeCS",
+  "url": "http://hl7.org/fhir/us/breast-radiology/CodeSystem/AbnormalityCystTypeCS",
+  "version": "0.0.2",
+  "name": "AbnormalityCystTypeCS",
+  "title": "Cyst Type CodeSystem",
+  "status": "draft",
+  "date": "2019-11-01",
+  "publisher": "Hl7-Clinical Interoperability Council",
+  "contact": [
+    {
+      "telecom": [
+        {
+          "system": "url",
+          "value": "http://www.hl7.org/Special/committees/cic"
+        }
+      ]
+    }
+  ],
+  "description": "Cyst abnormality type CodeSystem.",
+  "caseSensitive": true,
+  "content": "complete",
+  "count": 5,
+  "concept": [
+    {
+      "code": "Complex",
+      "display": "Complex cyst",
+      "definition": "BreastRadiology.XUnitTests.ResourcesMaker+Definition"
+    },
+    {
+      "code": "Oil",
+      "display": "Oil cyst",
+      "definition": "BreastRadiology.XUnitTests.ResourcesMaker+Definition"
+    },
+    {
+      "code": "Simple",
+      "display": "Simple cyst",
+      "definition": "BreastRadiology.XUnitTests.ResourcesMaker+Definition"
+    },
+    {
+      "code": "Complicated",
+      "display": "Complicated cyst",
+      "definition": "BreastRadiology.XUnitTests.ResourcesMaker+Definition"
+    },
+    {
+      "code": "WithDebris",
+      "display": "Cyst With Debris",
+      "definition": "BreastRadiology.XUnitTests.ResourcesMaker+Definition"
+    }
+  ]
+}

@@ -1,0 +1,47 @@
+{
+  "resourceType": "CodeSystem",
+  "id": "BreastLocationQuadrantCS",
+  "url": "http://hl7.org/fhir/us/breast-radiology/CodeSystem/BreastLocationQuadrantCS",
+  "version": "0.0.2",
+  "name": "BreastLocationQuadrantCS",
+  "title": "Breast Location Quadrant CodeSystem",
+  "status": "draft",
+  "date": "2019-11-01",
+  "publisher": "Hl7-Clinical Interoperability Council",
+  "contact": [
+    {
+      "telecom": [
+        {
+          "system": "url",
+          "value": "http://www.hl7.org/Special/committees/cic"
+        }
+      ]
+    }
+  ],
+  "description": "Breast body location quadrant code system.",
+  "caseSensitive": true,
+  "content": "complete",
+  "count": 4,
+  "concept": [
+    {
+      "code": "UpperOuter",
+      "display": "Upper Outer Quadrant",
+      "definition": "BreastRadiology.XUnitTests.ResourcesMaker+Definition"
+    },
+    {
+      "code": "UpperInner",
+      "display": "Upper Inner Quadrant",
+      "definition": "BreastRadiology.XUnitTests.ResourcesMaker+Definition"
+    },
+    {
+      "code": "LowerOuter",
+      "display": "Lower Outer Quadrant",
+      "definition": "BreastRadiology.XUnitTests.ResourcesMaker+Definition"
+    },
+    {
+      "code": "LowerInner",
+      "display": "Lower Inner Quadrant",
+      "definition": "BreastRadiology.XUnitTests.ResourcesMaker+Definition"
+    }
+  ]
+}

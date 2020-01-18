@@ -6,7 +6,7 @@ using System.Text;
 
 namespace BreastRadiology.XUnitTests
 {
-    [DebuggerDisplay("{AllText()}]")]
+    [DebuggerDisplay("{AllText()}")]
     public class SENode
     {
         private float width;

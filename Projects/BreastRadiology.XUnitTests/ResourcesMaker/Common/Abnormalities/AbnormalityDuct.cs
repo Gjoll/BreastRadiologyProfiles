@@ -78,8 +78,9 @@ namespace BreastRadiology.XUnitTests
                     .AddFragRef(Self.ObservationNoValueFragment.Value())
                     .AddFragRef(Self.CommonComponentsFragment.Value())
                     .AddFragRef(Self.ShapeComponentsFragment.Value())
+                    .AddFragRef(Self.ObservedCountComponentFragment.Value())
                     .AddFragRef(Self.NotPreviouslySeenComponentsFragment.Value())
-                    .AddFragRef(Self.CorrespondsWithFragment.Value())
+                    .AddFragRef(Self.CorrespondsWithComponentFragment.Value())
                     ;
 
                 s = e.SDef;
@@ -103,7 +104,6 @@ namespace BreastRadiology.XUnitTests
                         .Paragraph($"This slice contains the optional component that refines the duct type.",
                                     $"The value of this component is a codeable concept chosen from the {binding.Name} valueset.")
                     );
-                Self.ComponentSliceObservedCountRange(e);
             });
     }
 }

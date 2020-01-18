@@ -14,7 +14,7 @@ namespace BreastRadiology.XUnitTests
 {
     partial class ResourcesMaker
     {
-        SDTaskVar CorrespondsWithFragment = new SDTaskVar(
+        SDTaskVar CorrespondsWithComponentFragment = new SDTaskVar(
                (out StructureDefinition s) =>
                    {
                        SDefEditor e = Self.CreateFragment("CorrespondsWithFragment",

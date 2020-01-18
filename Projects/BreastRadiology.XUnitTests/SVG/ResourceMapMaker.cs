@@ -139,7 +139,7 @@ namespace BreastRadiology.XUnitTests
                         if (this.map.TryGetNode(link.LinkTarget, out ResourceMap.Node linkTargetNode) == false)
                             throw new Exception("ResourceMap.Node '{link.ResourceUrl}' not found");
                         SENode node = this.CreateNode(linkTargetNode);
-                        groupChild.Nodes.Add(node);
+                        groupChild.AppendNode(node);
                     }
                 }
             }
@@ -170,7 +170,7 @@ namespace BreastRadiology.XUnitTests
                     LegendItem legendItem = legendItems[i];
                     SENodeGroup nextGroup = lastGroup.AppendChild("Legend");
                     SENode node = new SENode(0, legendItem.Color);
-                    nextGroup.Nodes.Add(node);
+                    nextGroup.AppendNode(node);
                     node.AddTextLine(legendItem.ResourceType);
                     lastGroup = nextGroup;
 
@@ -186,7 +186,7 @@ namespace BreastRadiology.XUnitTests
             //{
             //    SENodeGroup nextGroup = lastGroup.AppendChild("Legend");
             //    SENode node = new SENode(0, legendItem.Color);
-            //    nextGroup.Nodes.Add(node);
+            //    nextGroup.AppendNode(node);
             //    node.AddTextLine(legendItem.ResourceType);
             //    lastGroup = nextGroup;
             //}
@@ -198,7 +198,7 @@ namespace BreastRadiology.XUnitTests
             ResourceMap.Node mapNode = this.map.GetNode(reportUrl);
             SENodeGroup rootGroup = new SENodeGroup("root");
             SENode rootNode = this.CreateNode(mapNode);
-            rootGroup.Nodes.Add(rootNode);
+            rootGroup.AppendNode(rootNode);
             this.AddChildren(mapNode, rootGroup);
             return rootGroup;
         }

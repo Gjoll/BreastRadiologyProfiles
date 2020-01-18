@@ -128,7 +128,8 @@ namespace BreastRadiology.XUnitTests
                     .AddFragRef(Self.CommonComponentsFragment.Value())
                     .AddFragRef(Self.ShapeComponentsFragment.Value())
                     .AddFragRef(Self.NotPreviouslySeenComponentsFragment.Value())
-                    .AddFragRef(Self.CorrespondsWithFragment.Value())
+                    .AddFragRef(Self.ObservedCountComponentFragment.Value())
+                    .AddFragRef(Self.CorrespondsWithComponentFragment.Value())
                 ;
                 s = e.SDef;
 
@@ -141,7 +142,7 @@ namespace BreastRadiology.XUnitTests
                 Self.SliceTargetReference(e, sliceElementDef, Self.ConsistentWith.Value(), 0, "*");
 
                 e.StartComponentSliceing();
-                e.ComponentSliceCodeableConcept("mgAbnormalityAsymmetryType",
+                e.ComponentSliceCodeableConcept("asymmetryType",
                     Self.MGCodeAbnormalityAsymmetryType.ToCodeableConcept(),
                     binding,
                     BindingStrength.Required,
@@ -152,7 +153,6 @@ namespace BreastRadiology.XUnitTests
                         .Paragraph($"This slice contains the optional component that refines the asymmetry type.",
                                     $"The value of this component is a codeable concept chosen from the {binding.Name} valueset.")
                     );
-                Self.ComponentSliceObservedCountRange(e);
             });
     }
 }

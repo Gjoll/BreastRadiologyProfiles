@@ -231,6 +231,7 @@ namespace BreastRadiology.XUnitTests
                     .AddFragRef(Self.ObservationNoDeviceFragment.Value())
                     .AddFragRef(Self.ObservationNoValueFragment.Value())
                     .AddFragRef(Self.BreastBodyLocationRequiredFragment.Value())
+                    .AddFragRef(Self.ObservedCountComponentFragment.Value())
                     ;
                 s = e.SDef;
                 e.IntroDoc
@@ -249,7 +250,6 @@ namespace BreastRadiology.XUnitTests
                         .Paragraph($"This slice contains the required component that defines the observed feature.",
                                     $"The value of this component is a codeable concept chosen from the {binding.Name} valueset.")
                     );
-                Self.ComponentSliceObservedCountRange(e);
             });
     }
 }
