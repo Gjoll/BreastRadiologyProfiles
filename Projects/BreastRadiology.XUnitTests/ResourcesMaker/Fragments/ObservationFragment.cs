@@ -13,7 +13,7 @@ namespace BreastRadiology.XUnitTests
             (out StructureDefinition  s) =>
             {
                 SDefEditor e = Self.CreateFragment("BreastRadObservationFragment",
-                    "BreastRad Observation Fragment",
+                    "Observation Fragment",
                         "Observation/Fragment",
                     ObservationUrl)
                     .Description("Observation base fragment",
