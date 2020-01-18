@@ -83,7 +83,7 @@
     },
     {
       "url": "http://www.fragment.com/maplink",
-      "valueString": "component|True|AbnormalityMass Type^CodeableConcept^http://hl7.org/fhir/us/breast-radiology/ValueSet/MassTypeValueSetVS"
+      "valueString": "component|True|Mass Type^CodeableConcept^http://hl7.org/fhir/us/breast-radiology/ValueSet/MassTypeValueSetVS"
     },
     {
       "url": "http://www.fragment.com/maplink",
@@ -203,7 +203,7 @@
         "id": "Observation.component:massType",
         "path": "Observation.component",
         "sliceName": "massType",
-        "short": "AbnormalityMass Type component",
+        "short": "Mass Type component",
         "definition": "This slice contains the optional component that refines the mass type.The value of this component is a codeable concept chosen from the MassTypeValueSetVS valueset.<br/>",
         "comment": "This is one component of a group of components that comprise the observation.",
         "min": 0,
@@ -217,8 +217,8 @@
       {
         "id": "Observation.component:massType.code",
         "path": "Observation.component.code",
-        "short": "AbnormalityMass Type component code",
-        "definition": "This code identifies the AbnormalityMass Type component",
+        "short": "Mass Type component code",
+        "definition": "This code identifies the Mass Type component",
         "min": 1,
         "max": "1",
         "base": {
@@ -238,7 +238,7 @@
       {
         "id": "Observation.component:massType.value[x]",
         "path": "Observation.component.value[x]",
-        "short": "AbnormalityMass Type component value",
+        "short": "Mass Type component value",
         "definition": "Value is a codeable concept.<br/>",
         "min": 1,
         "max": "1",

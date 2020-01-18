@@ -159,7 +159,7 @@
       ]
     }
   ],
-  "description": "<b>Breast Radiology Mammography Finding</b>\n\nThis resource is the Section Head for all Mammography findings.<br/>All mammography observation findings are referenced by this resoruces Observation.hasMember field<br/>",
+  "description": "<b>Mammography Finding</b>\n\nThis resource is the Section Head for all Mammography findings.<br/>All mammography observation findings are referenced by this resoruces Observation.hasMember field<br/>",
   "fhirVersion": "4.0.0",
   "kind": "resource",
   "abstract": false,
@@ -171,7 +171,7 @@
       {
         "id": "Observation",
         "path": "Observation",
-        "short": "Breast Radiology Mammography Finding",
+        "short": "Mammography Finding",
         "definition": "This resource is the Section Head for all Mammography findings.<br/>All mammography observation findings are referenced by this resoruces Observation.hasMember field<br/>",
         "comment": "Used for simple observations such as device measurements, laboratory atomic results, vital signs, height, weight, smoking status, comments, etc.  Other resources are used to provide context for observations such as laboratory reports, etc.",
         "alias": [
@@ -2929,7 +2929,7 @@
       {
         "id": "Observation",
         "path": "Observation",
-        "short": "Breast Radiology Mammography Finding",
+        "short": "Mammography Finding",
         "definition": "This resource is the Section Head for all Mammography findings.<br/>All mammography observation findings are referenced by this resoruces Observation.hasMember field<br/>",
         "base": {
           "path": "Observation",

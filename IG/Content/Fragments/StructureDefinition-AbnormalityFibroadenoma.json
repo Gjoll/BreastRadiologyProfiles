@@ -55,7 +55,7 @@
     },
     {
       "url": "http://www.fragment.com/maplink",
-      "valueString": "component|True|AbnormalityFibroAdenoma Type^CodeableConcept^http://hl7.org/fhir/us/breast-radiology/ValueSet/FibroadenomaVS"
+      "valueString": "component|True|FibroAdenoma Type^CodeableConcept^http://hl7.org/fhir/us/breast-radiology/ValueSet/FibroadenomaVS"
     },
     {
       "url": "http://www.fragment.com/maplink",
@@ -153,7 +153,7 @@
         "id": "Observation.component:fibroAdenomaType",
         "path": "Observation.component",
         "sliceName": "fibroAdenomaType",
-        "short": "AbnormalityFibroAdenoma Type component",
+        "short": "FibroAdenoma Type component",
         "definition": "This slice contains the optional component that refines the fibroadenema type.The value of this component is a codeable concept chosen from the FibroadenomaVS valueset.<br/>",
         "comment": "This is one component of a group of components that comprise the observation.",
         "min": 0,
@@ -167,8 +167,8 @@
       {
         "id": "Observation.component:fibroAdenomaType.code",
         "path": "Observation.component.code",
-        "short": "AbnormalityFibroAdenoma Type component code",
-        "definition": "This code identifies the AbnormalityFibroAdenoma Type component",
+        "short": "FibroAdenoma Type component code",
+        "definition": "This code identifies the FibroAdenoma Type component",
         "min": 1,
         "max": "1",
         "base": {
@@ -188,7 +188,7 @@
       {
         "id": "Observation.component:fibroAdenomaType.value[x]",
         "path": "Observation.component.value[x]",
-        "short": "AbnormalityFibroAdenoma Type component value",
+        "short": "FibroAdenoma Type component value",
         "definition": "Value is a codeable concept.<br/>",
         "min": 1,
         "max": "1",

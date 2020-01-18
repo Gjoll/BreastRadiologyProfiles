@@ -75,7 +75,7 @@
     },
     {
       "url": "http://www.fragment.com/maplink",
-      "valueString": "component|True|MG AbnormalityAsymmetry Type^CodeableConcept^http://hl7.org/fhir/us/breast-radiology/ValueSet/MGAbnormalityAsymmetriesVS"
+      "valueString": "component|True|Asymmetry Type^CodeableConcept^http://hl7.org/fhir/us/breast-radiology/ValueSet/MGAbnormalityAsymmetriesVS"
     },
     {
       "url": "http://www.fragment.com/maplink",
@@ -195,7 +195,7 @@
         "id": "Observation.component:mgAbnormalityAsymmetryType",
         "path": "Observation.component",
         "sliceName": "mgAbnormalityAsymmetryType",
-        "short": "MG AbnormalityAsymmetry Type component",
+        "short": "Asymmetry Type component",
         "definition": "This slice contains the optional component that refines the asymmetry type.The value of this component is a codeable concept chosen from the MGAbnormalityAsymmetriesVS valueset.<br/>",
         "comment": "This is one component of a group of components that comprise the observation.",
         "min": 0,
@@ -209,8 +209,8 @@
       {
         "id": "Observation.component:mgAbnormalityAsymmetryType.code",
         "path": "Observation.component.code",
-        "short": "MG AbnormalityAsymmetry Type component code",
-        "definition": "This code identifies the MG AbnormalityAsymmetry Type component",
+        "short": "Asymmetry Type component code",
+        "definition": "This code identifies the Asymmetry Type component",
         "min": 1,
         "max": "1",
         "base": {
@@ -230,7 +230,7 @@
       {
         "id": "Observation.component:mgAbnormalityAsymmetryType.value[x]",
         "path": "Observation.component.value[x]",
-        "short": "MG AbnormalityAsymmetry Type component value",
+        "short": "Asymmetry Type component value",
         "definition": "Value is a codeable concept.<br/>",
         "min": 1,
         "max": "1",

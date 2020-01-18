@@ -19,30 +19,8 @@ Comments and Suggested changes to this implementation guide van be made
 <a href="https://github.com/HL7/fhir-breast-radiology-ig/projects/1">here</a>
   <!-- -reviewStatus-->
   <!-- +components-->
-  <a name="components"></a>
-  <h3 id="components">Member Fields</h3>
-  <p>
-    The following are parts of this observation that are contained within this resource.
-  </p>
-  <p>
-    Each field contains one data item and is stored as an item (slice) in the Observation.component element.
-  </p>
-  <ul>
-    %ComponentList:noexpand:prefix=<li>:suffix=</li>:lb%
-  </ul>
   <!-- -components-->
   <!-- +hasMember-->
-  <a name="hasMembers"></a>
-  <h3 id="hasMember">Member Observations</h3>
-  <p>
-    The following are parts of this observation that are stored in seperate observation resources.
-  </p>
-  <p>
-    The reference to each external observation is stored as an item in the Observation.hasMember element.
-  </p>
-  <ul>
-    %HasMemberList:noexpand:prefix=<li>:suffix=</li>:lb%
-  </ul>
   <!-- -hasMember-->
   <!-- +profileFragments-->
   <h3 id="profileFragments">Profile Fragments</h3>
@@ -51,7 +29,9 @@ Comments and Suggested changes to this implementation guide van be made
     the hierarchy and commonality of disparate profiles..
   </p>
   <ul>
-    %FragmentList:noexpand:prefix=<li>:suffix=</li>:lb%
+    
+<li><a href="./StructureDefinition-BreastRadObservationNoDeviceFragment.html">BreastRad Observation NoDevice Fragment</a></li>
+<li><a href="./StructureDefinition-ObservationLeafFragment.html">Observation Leaf Fragment</a></li>
   </ul>
   <!-- -profileFragments-->
 </div>

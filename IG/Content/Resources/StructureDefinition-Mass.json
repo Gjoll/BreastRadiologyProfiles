@@ -83,7 +83,7 @@
     },
     {
       "url": "http://www.fragment.com/maplink",
-      "valueString": "component|True|AbnormalityMass Type^CodeableConcept^http://hl7.org/fhir/us/breast-radiology/ValueSet/MassTypeValueSetVS"
+      "valueString": "component|True|Mass Type^CodeableConcept^http://hl7.org/fhir/us/breast-radiology/ValueSet/MassTypeValueSetVS"
     },
     {
       "url": "http://www.fragment.com/maplink",
@@ -179,7 +179,7 @@
     },
     {
       "url": "http://www.fragment.com/maplink",
-      "valueString": "component|True|TumorQualifier^CodeableConcept^http://hl7.org/fhir/us/breast-radiology/ValueSet/TumorQualifierVS"
+      "valueString": "component|True|Tumor Qualifier^CodeableConcept^http://hl7.org/fhir/us/breast-radiology/ValueSet/TumorQualifierVS"
     },
     {
       "url": "http://www.fragment.com/mapname",
@@ -243,7 +243,7 @@
     },
     {
       "url": "http://www.fragment.com/maplink",
-      "valueString": "component|True|NotPreviouslySeen^CodeableConcept^http://hl7.org/fhir/us/breast-radiology/ValueSet/NotPreviouslySeenVS"
+      "valueString": "component|True|Not Previously Seen^CodeableConcept^http://hl7.org/fhir/us/breast-radiology/ValueSet/NotPreviouslySeenVS"
     },
     {
       "url": "http://www.fragment.com/mapname",
@@ -255,7 +255,7 @@
     },
     {
       "url": "http://www.fragment.com/maplink",
-      "valueString": "component|True|correspondsWith^CodeableConcept^http://hl7.org/fhir/us/breast-radiology/ValueSet/CorrespondsWithVS"
+      "valueString": "component|True|Corresponds With^CodeableConcept^http://hl7.org/fhir/us/breast-radiology/ValueSet/CorrespondsWithVS"
     }
   ],
   "url": "http://hl7.org/fhir/us/breast-radiology/StructureDefinition/Mass",
@@ -2711,7 +2711,7 @@
         "id": "Observation.component:massType",
         "path": "Observation.component",
         "sliceName": "massType",
-        "short": "AbnormalityMass Type component",
+        "short": "Mass Type component",
         "definition": "This slice contains the optional component that refines the mass type.The value of this component is a codeable concept chosen from the MassTypeValueSetVS valueset.<br/>",
         "comment": "This is one component of a group of components that comprise the observation.",
         "requirements": "Component observations share the same attributes in the Observation resource as the primary observation and are always treated a part of a single observation (they are not separable).   However, the reference range for the primary observation value is not inherited by the component values and is required when appropriate for each component observation.",
@@ -2847,8 +2847,8 @@
       {
         "id": "Observation.component:massType.code",
         "path": "Observation.component.code",
-        "short": "AbnormalityMass Type component code",
-        "definition": "This code identifies the AbnormalityMass Type component",
+        "short": "Mass Type component code",
+        "definition": "This code identifies the Mass Type component",
         "comment": "*All* code-value and  component.code-component.value pairs need to be taken into account to correctly understand the meaning of the observation.",
         "requirements": "Knowing what kind of observation is being made is essential to understanding the observation.",
         "min": 1,
@@ -2906,7 +2906,7 @@
       {
         "id": "Observation.component:massType.value[x]",
         "path": "Observation.component.value[x]",
-        "short": "AbnormalityMass Type component value",
+        "short": "Mass Type component value",
         "definition": "Value is a codeable concept.<br/>",
         "comment": "Used when observation has a set of component observations. An observation may have both a value (e.g. an  Apgar score)  and component observations (the observations from which the Apgar score was derived). If a value is present, the datatype for this element should be determined by Observation.code. A CodeableConcept with just a text would be used instead of a string if the field was usually coded, or if the type associated with the Observation.code defines a coded value.  For additional guidance, see the [Notes section](observation.html#notes) below.",
         "requirements": "An observation exists to have a value, though it might not if it is in error, or if it represents a group of observations.",
@@ -3551,7 +3551,7 @@
         "id": "Observation.component:tumorQualifier",
         "path": "Observation.component",
         "sliceName": "tumorQualifier",
-        "short": "TumorQualifier component",
+        "short": "Tumor Qualifier component",
         "definition": "This slice contains the optional component that defines if a tumour is the index (primary) tumour or a satellite tumour.The value of this component is a codeable concept chosen from the TumorQualifierVS valueset.<br/>",
         "comment": "This is one component of a group of components that comprise the observation.",
         "requirements": "Component observations share the same attributes in the Observation resource as the primary observation and are always treated a part of a single observation (they are not separable).   However, the reference range for the primary observation value is not inherited by the component values and is required when appropriate for each component observation.",
@@ -3687,8 +3687,8 @@
       {
         "id": "Observation.component:tumorQualifier.code",
         "path": "Observation.component.code",
-        "short": "TumorQualifier component code",
-        "definition": "This code identifies the TumorQualifier component",
+        "short": "Tumor Qualifier component code",
+        "definition": "This code identifies the Tumor Qualifier component",
         "comment": "*All* code-value and  component.code-component.value pairs need to be taken into account to correctly understand the meaning of the observation.",
         "requirements": "Knowing what kind of observation is being made is essential to understanding the observation.",
         "min": 1,
@@ -3746,7 +3746,7 @@
       {
         "id": "Observation.component:tumorQualifier.value[x]",
         "path": "Observation.component.value[x]",
-        "short": "TumorQualifier component value",
+        "short": "Tumor Qualifier component value",
         "definition": "Value is a codeable concept.<br/>",
         "comment": "Used when observation has a set of component observations. An observation may have both a value (e.g. an  Apgar score)  and component observations (the observations from which the Apgar score was derived). If a value is present, the datatype for this element should be determined by Observation.code. A CodeableConcept with just a text would be used instead of a string if the field was usually coded, or if the type associated with the Observation.code defines a coded value.  For additional guidance, see the [Notes section](observation.html#notes) below.",
         "requirements": "An observation exists to have a value, though it might not if it is in error, or if it represents a group of observations.",
@@ -6599,7 +6599,7 @@
         "id": "Observation.component:notPreviouslySeen",
         "path": "Observation.component",
         "sliceName": "notPreviouslySeen",
-        "short": "NotPreviouslySeen component",
+        "short": "Not Previously Seen component",
         "definition": "This slice contains zero or more components that define prevous encounters in which this abnormality was not seen.The value of this component is a codeable concept chosen from the NotPreviouslySeenVS valueset.<br/>",
         "comment": "This is one component of a group of components that comprise the observation.",
         "requirements": "Component observations share the same attributes in the Observation resource as the primary observation and are always treated a part of a single observation (they are not separable).   However, the reference range for the primary observation value is not inherited by the component values and is required when appropriate for each component observation.",
@@ -6735,8 +6735,8 @@
       {
         "id": "Observation.component:notPreviouslySeen.code",
         "path": "Observation.component.code",
-        "short": "NotPreviouslySeen component code",
-        "definition": "This code identifies the NotPreviouslySeen components",
+        "short": "Not Previously Seen component code",
+        "definition": "This code identifies the Not Previously Seen components",
         "comment": "*All* code-value and  component.code-component.value pairs need to be taken into account to correctly understand the meaning of the observation.",
         "requirements": "Knowing what kind of observation is being made is essential to understanding the observation.",
         "min": 1,
@@ -6794,7 +6794,7 @@
       {
         "id": "Observation.component:notPreviouslySeen.value[x]",
         "path": "Observation.component.value[x]",
-        "short": "NotPreviouslySeen component value",
+        "short": "Not Previously Seen component value",
         "definition": "Value is a codeable concept.<br/>",
         "comment": "Used when observation has a set of component observations. An observation may have both a value (e.g. an  Apgar score)  and component observations (the observations from which the Apgar score was derived). If a value is present, the datatype for this element should be determined by Observation.code. A CodeableConcept with just a text would be used instead of a string if the field was usually coded, or if the type associated with the Observation.code defines a coded value.  For additional guidance, see the [Notes section](observation.html#notes) below.",
         "requirements": "An observation exists to have a value, though it might not if it is in error, or if it represents a group of observations.",
@@ -6967,7 +6967,7 @@
         "id": "Observation.component:correspondsWith",
         "path": "Observation.component",
         "sliceName": "correspondsWith",
-        "short": "correspondsWith component",
+        "short": "Corresponds With component",
         "definition": "This slice contains zero or more components that defines what this observation correspomnds with.The value of this component is a codeable concept chosen from the CorrespondsWithVS valueset.<br/>",
         "comment": "This is one component of a group of components that comprise the observation.",
         "requirements": "Component observations share the same attributes in the Observation resource as the primary observation and are always treated a part of a single observation (they are not separable).   However, the reference range for the primary observation value is not inherited by the component values and is required when appropriate for each component observation.",
@@ -7103,8 +7103,8 @@
       {
         "id": "Observation.component:correspondsWith.code",
         "path": "Observation.component.code",
-        "short": "correspondsWith component code",
-        "definition": "This code identifies the correspondsWith components",
+        "short": "Corresponds With component code",
+        "definition": "This code identifies the Corresponds With components",
         "comment": "*All* code-value and  component.code-component.value pairs need to be taken into account to correctly understand the meaning of the observation.",
         "requirements": "Knowing what kind of observation is being made is essential to understanding the observation.",
         "min": 1,
@@ -7162,7 +7162,7 @@
       {
         "id": "Observation.component:correspondsWith.value[x]",
         "path": "Observation.component.value[x]",
-        "short": "correspondsWith component value",
+        "short": "Corresponds With component value",
         "definition": "Value is a codeable concept.<br/>",
         "comment": "Used when observation has a set of component observations. An observation may have both a value (e.g. an  Apgar score)  and component observations (the observations from which the Apgar score was derived). If a value is present, the datatype for this element should be determined by Observation.code. A CodeableConcept with just a text would be used instead of a string if the field was usually coded, or if the type associated with the Observation.code defines a coded value.  For additional guidance, see the [Notes section](observation.html#notes) below.",
         "requirements": "An observation exists to have a value, though it might not if it is in error, or if it represents a group of observations.",
@@ -7688,7 +7688,7 @@
         "id": "Observation.component:massType",
         "path": "Observation.component",
         "sliceName": "massType",
-        "short": "AbnormalityMass Type component",
+        "short": "Mass Type component",
         "definition": "This slice contains the optional component that refines the mass type.The value of this component is a codeable concept chosen from the MassTypeValueSetVS valueset.<br/>",
         "comment": "This is one component of a group of components that comprise the observation.",
         "requirements": "Component observations share the same attributes in the Observation resource as the primary observation and are always treated a part of a single observation (they are not separable).   However, the reference range for the primary observation value is not inherited by the component values and is required when appropriate for each component observation.",
@@ -7824,8 +7824,8 @@
       {
         "id": "Observation.component:massType.code",
         "path": "Observation.component.code",
-        "short": "AbnormalityMass Type component code",
-        "definition": "This code identifies the AbnormalityMass Type component",
+        "short": "Mass Type component code",
+        "definition": "This code identifies the Mass Type component",
         "comment": "*All* code-value and  component.code-component.value pairs need to be taken into account to correctly understand the meaning of the observation.",
         "requirements": "Knowing what kind of observation is being made is essential to understanding the observation.",
         "min": 1,
@@ -7883,7 +7883,7 @@
       {
         "id": "Observation.component:massType.value[x]",
         "path": "Observation.component.value[x]",
-        "short": "AbnormalityMass Type component value",
+        "short": "Mass Type component value",
         "definition": "Value is a codeable concept.<br/>",
         "comment": "Used when observation has a set of component observations. An observation may have both a value (e.g. an  Apgar score)  and component observations (the observations from which the Apgar score was derived). If a value is present, the datatype for this element should be determined by Observation.code. A CodeableConcept with just a text would be used instead of a string if the field was usually coded, or if the type associated with the Observation.code defines a coded value.  For additional guidance, see the [Notes section](observation.html#notes) below.",
         "requirements": "An observation exists to have a value, though it might not if it is in error, or if it represents a group of observations.",
@@ -8528,7 +8528,7 @@
         "id": "Observation.component:tumorQualifier",
         "path": "Observation.component",
         "sliceName": "tumorQualifier",
-        "short": "TumorQualifier component",
+        "short": "Tumor Qualifier component",
         "definition": "This slice contains the optional component that defines if a tumour is the index (primary) tumour or a satellite tumour.The value of this component is a codeable concept chosen from the TumorQualifierVS valueset.<br/>",
         "comment": "This is one component of a group of components that comprise the observation.",
         "requirements": "Component observations share the same attributes in the Observation resource as the primary observation and are always treated a part of a single observation (they are not separable).   However, the reference range for the primary observation value is not inherited by the component values and is required when appropriate for each component observation.",
@@ -8664,8 +8664,8 @@
       {
         "id": "Observation.component:tumorQualifier.code",
         "path": "Observation.component.code",
-        "short": "TumorQualifier component code",
-        "definition": "This code identifies the TumorQualifier component",
+        "short": "Tumor Qualifier component code",
+        "definition": "This code identifies the Tumor Qualifier component",
         "comment": "*All* code-value and  component.code-component.value pairs need to be taken into account to correctly understand the meaning of the observation.",
         "requirements": "Knowing what kind of observation is being made is essential to understanding the observation.",
         "min": 1,
@@ -8723,7 +8723,7 @@
       {
         "id": "Observation.component:tumorQualifier.value[x]",
         "path": "Observation.component.value[x]",
-        "short": "TumorQualifier component value",
+        "short": "Tumor Qualifier component value",
         "definition": "Value is a codeable concept.<br/>",
         "comment": "Used when observation has a set of component observations. An observation may have both a value (e.g. an  Apgar score)  and component observations (the observations from which the Apgar score was derived). If a value is present, the datatype for this element should be determined by Observation.code. A CodeableConcept with just a text would be used instead of a string if the field was usually coded, or if the type associated with the Observation.code defines a coded value.  For additional guidance, see the [Notes section](observation.html#notes) below.",
         "requirements": "An observation exists to have a value, though it might not if it is in error, or if it represents a group of observations.",
@@ -11576,7 +11576,7 @@
         "id": "Observation.component:notPreviouslySeen",
         "path": "Observation.component",
         "sliceName": "notPreviouslySeen",
-        "short": "NotPreviouslySeen component",
+        "short": "Not Previously Seen component",
         "definition": "This slice contains zero or more components that define prevous encounters in which this abnormality was not seen.The value of this component is a codeable concept chosen from the NotPreviouslySeenVS valueset.<br/>",
         "comment": "This is one component of a group of components that comprise the observation.",
         "requirements": "Component observations share the same attributes in the Observation resource as the primary observation and are always treated a part of a single observation (they are not separable).   However, the reference range for the primary observation value is not inherited by the component values and is required when appropriate for each component observation.",
@@ -11712,8 +11712,8 @@
       {
         "id": "Observation.component:notPreviouslySeen.code",
         "path": "Observation.component.code",
-        "short": "NotPreviouslySeen component code",
-        "definition": "This code identifies the NotPreviouslySeen components",
+        "short": "Not Previously Seen component code",
+        "definition": "This code identifies the Not Previously Seen components",
         "comment": "*All* code-value and  component.code-component.value pairs need to be taken into account to correctly understand the meaning of the observation.",
         "requirements": "Knowing what kind of observation is being made is essential to understanding the observation.",
         "min": 1,
@@ -11771,7 +11771,7 @@
       {
         "id": "Observation.component:notPreviouslySeen.value[x]",
         "path": "Observation.component.value[x]",
-        "short": "NotPreviouslySeen component value",
+        "short": "Not Previously Seen component value",
         "definition": "Value is a codeable concept.<br/>",
         "comment": "Used when observation has a set of component observations. An observation may have both a value (e.g. an  Apgar score)  and component observations (the observations from which the Apgar score was derived). If a value is present, the datatype for this element should be determined by Observation.code. A CodeableConcept with just a text would be used instead of a string if the field was usually coded, or if the type associated with the Observation.code defines a coded value.  For additional guidance, see the [Notes section](observation.html#notes) below.",
         "requirements": "An observation exists to have a value, though it might not if it is in error, or if it represents a group of observations.",
@@ -11944,7 +11944,7 @@
         "id": "Observation.component:correspondsWith",
         "path": "Observation.component",
         "sliceName": "correspondsWith",
-        "short": "correspondsWith component",
+        "short": "Corresponds With component",
         "definition": "This slice contains zero or more components that defines what this observation correspomnds with.The value of this component is a codeable concept chosen from the CorrespondsWithVS valueset.<br/>",
         "comment": "This is one component of a group of components that comprise the observation.",
         "min": 0,
@@ -11958,8 +11958,8 @@
       {
         "id": "Observation.component:correspondsWith.code",
         "path": "Observation.component.code",
-        "short": "correspondsWith component code",
-        "definition": "This code identifies the correspondsWith components",
+        "short": "Corresponds With component code",
+        "definition": "This code identifies the Corresponds With components",
         "min": 1,
         "max": "1",
         "base": {
@@ -11979,7 +11979,7 @@
       {
         "id": "Observation.component:correspondsWith.value[x]",
         "path": "Observation.component.value[x]",
-        "short": "correspondsWith component value",
+        "short": "Corresponds With component value",
         "definition": "Value is a codeable concept.<br/>",
         "min": 1,
         "max": "1",

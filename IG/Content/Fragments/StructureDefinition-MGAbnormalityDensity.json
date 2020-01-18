@@ -75,7 +75,7 @@
     },
     {
       "url": "http://www.fragment.com/maplink",
-      "valueString": "component|True|MG AbnormalityDensity Type^CodeableConcept^http://hl7.org/fhir/us/breast-radiology/ValueSet/MGAbnormalityDensityTypeVS"
+      "valueString": "component|True|Density Type^CodeableConcept^http://hl7.org/fhir/us/breast-radiology/ValueSet/MGAbnormalityDensityTypeVS"
     },
     {
       "url": "http://www.fragment.com/maplink",
@@ -205,7 +205,7 @@
         "id": "Observation.component:mgAbnormalityDensityType",
         "path": "Observation.component",
         "sliceName": "mgAbnormalityDensityType",
-        "short": "MG AbnormalityDensity Type component",
+        "short": "Density Type component",
         "definition": "This slice contains the optional component that refines the density type.The value of this component is a codeable concept chosen from the MammoCalcificationTypeVS valueset.<br/>",
         "comment": "This is one component of a group of components that comprise the observation.",
         "min": 1,
@@ -219,8 +219,8 @@
       {
         "id": "Observation.component:mgAbnormalityDensityType.code",
         "path": "Observation.component.code",
-        "short": "MG AbnormalityDensity Type component code",
-        "definition": "This code identifies the MG AbnormalityDensity Type component",
+        "short": "Density Type component code",
+        "definition": "This code identifies the Density Type component",
         "min": 1,
         "max": "1",
         "base": {
@@ -240,7 +240,7 @@
       {
         "id": "Observation.component:mgAbnormalityDensityType.value[x]",
         "path": "Observation.component.value[x]",
-        "short": "MG AbnormalityDensity Type component value",
+        "short": "Density Type component value",
         "definition": "Value is a codeable concept.<br/>",
         "min": 1,
         "max": "1",

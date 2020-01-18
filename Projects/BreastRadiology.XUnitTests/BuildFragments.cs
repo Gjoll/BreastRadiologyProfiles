@@ -195,16 +195,17 @@ namespace BreastRadiology.XUnitTests
                     AppIfNotNull("Comment", row[15]);
                     AppIfNotNull("UMLS", row[16]);
 
+                    String codeClean = CodeValue(code);
                     concepts
-                        .AppendLine($"//+ {code}")
+                        .AppendLine($"//+ {codeClean}")
                         .AppendLine($"new ConceptDef()")
-                        .AppendLine($"    .SetCode(\"{CodeValue(code)}\")")
+                        .AppendLine($"    .SetCode(\"{codeClean}\")")
                         .AppendLine($"    .SetDisplay(\"{code}\")")
                         .AppendLine($"    .SetDefinition(new Definition()")
                         .AppendLine($"        .Line(\"[PR] {code}\")")
                         .AppendLine($"        .ValidModalities({validWith})")
-                        .AppendLine($"    )){term}")
-                        .AppendLine($"//- {code}")
+                        .AppendLine($"    ){term}")
+                        .AppendLine($"//- {codeClean}")
                         ;
                 }
             }
@@ -219,11 +220,11 @@ namespace BreastRadiology.XUnitTests
 
             WriteCS(ds, "Recommendation", @"Base\ServiceRecommendation.cs", "RecommendationsCS");
             WriteCS(ds, "CorrspondsWith", @"Common\CorrespondsWithCS.cs", "CorrespondsWithCS");
-            WriteCS(ds, "ConsistentWith", @"Common\ConsistentWithCS.cs", "ConsistentWithCS");
-            WriteCS(ds, "ConsistentWithQualifier", @"Common\ConsistentWithCS.cs", "ConsistentWithQualifierCS");
+            WriteCS(ds, "ConsistentWith", @"Common\ConsistentWith.cs", "ConsistentWithCS");
+            WriteCS(ds, "ConsistentWithQualifier", @"Common\ConsistentWith.cs", "ConsistentWithQualifierCS");
             WriteCS(ds, "ForeignBody", @"Common\Abnormalities\AbnormalityForeignObject.cs", "ForeignObjectCS");
-            WriteCS(ds, "NotPreviousSeen", @"Common\NotPreviouslySeen.cs", "NotPreviouslySeenCS");
-            WriteCS(ds, "Qualifier", @"Common\TumorQualifier.cs", "TumorQualifierCS");
+            WriteCS(ds, "NotPreviousSeen", @"Common\NotPreviouslySeenCS.cs", "NotPreviouslySeenCS");
+            WriteCS(ds, "Qualifier", @"Common\TumorQualifierCS.cs", "TumorQualifierCS");
 
             // Observed features has been hand modified. Run again and comments will be lost.
             //List<String> itemsToIgnore = new List<string>();

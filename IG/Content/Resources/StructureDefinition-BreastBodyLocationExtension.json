@@ -63,7 +63,7 @@
       ]
     }
   ],
-  "description": "<b>Breast Body Location extension</b>\n\nthis extension defines the fields that are used to describe thelocation of an observed item in a breat radiology report<br/>Breast radiology exams have specific ways of defining a location that are unique to this field.<br/>",
+  "description": "<b>Breast Body Location extension</b>\n\nthis extension defines the fields that are used to describe thelocation of an observed item in a breast radiology report<br/>Breast radiology exams have specific ways of defining a location that are unique to this field.<br/>",
   "fhirVersion": "4.0.0",
   "kind": "complex-type",
   "abstract": false,
@@ -92,7 +92,7 @@
         ],
         "path": "Extension",
         "short": "Breast Body Location extension",
-        "definition": "this extension defines the fields that are used to describe thelocation of an observed item in a breat radiology report<br/>Breast radiology exams have specific ways of defining a location that are unique to this field.<br/>",
+        "definition": "this extension defines the fields that are used to describe thelocation of an observed item in a breast radiology report<br/>Breast radiology exams have specific ways of defining a location that are unique to this field.<br/>",
         "min": 0,
         "max": "*",
         "base": {
@@ -1367,7 +1367,7 @@
         ],
         "path": "Extension",
         "short": "Breast Body Location extension",
-        "definition": "this extension defines the fields that are used to describe thelocation of an observed item in a breat radiology report<br/>Breast radiology exams have specific ways of defining a location that are unique to this field.<br/>",
+        "definition": "this extension defines the fields that are used to describe thelocation of an observed item in a breast radiology report<br/>Breast radiology exams have specific ways of defining a location that are unique to this field.<br/>",
         "base": {
           "path": "Extension",
           "min": 0,

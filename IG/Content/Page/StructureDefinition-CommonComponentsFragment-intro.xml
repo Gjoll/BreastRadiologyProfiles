@@ -21,7 +21,8 @@
     the hierarchy and commonality of disparate profiles..
   </p>
   <ul>
-    %FragmentList:noexpand:prefix=<li>:suffix=</li>:lb%
+    
+<li><a href="./StructureDefinition-BreastBodyLocationRequiredFragment.html">Breast Body Location (Required) Fragment</a></li>
   </ul>
   <!-- -profileFragments-->
 </div>

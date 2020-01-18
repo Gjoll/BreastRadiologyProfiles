@@ -15,7 +15,7 @@
     },
     {
       "url": "http://www.fragment.com/maplink",
-      "valueString": "component|True|correspondsWith^CodeableConcept^http://hl7.org/fhir/us/breast-radiology/ValueSet/CorrespondsWithVS"
+      "valueString": "component|True|Corresponds With^CodeableConcept^http://hl7.org/fhir/us/breast-radiology/ValueSet/CorrespondsWithVS"
     }
   ],
   "url": "http://hl7.org/fhir/us/breast-radiology/StructureDefinition/CorrespondsWithFragment",
@@ -64,7 +64,7 @@
         "id": "Observation.component:correspondsWith",
         "path": "Observation.component",
         "sliceName": "correspondsWith",
-        "short": "correspondsWith component",
+        "short": "Corresponds With component",
         "definition": "This slice contains zero or more components that defines what this observation correspomnds with.The value of this component is a codeable concept chosen from the CorrespondsWithVS valueset.<br/>",
         "comment": "This is one component of a group of components that comprise the observation.",
         "min": 0,
@@ -78,8 +78,8 @@
       {
         "id": "Observation.component:correspondsWith.code",
         "path": "Observation.component.code",
-        "short": "correspondsWith component code",
-        "definition": "This code identifies the correspondsWith components",
+        "short": "Corresponds With component code",
+        "definition": "This code identifies the Corresponds With components",
         "min": 1,
         "max": "1",
         "base": {
@@ -99,7 +99,7 @@
       {
         "id": "Observation.component:correspondsWith.value[x]",
         "path": "Observation.component.value[x]",
-        "short": "correspondsWith component value",
+        "short": "Corresponds With component value",
         "definition": "Value is a codeable concept.<br/>",
         "min": 1,
         "max": "1",

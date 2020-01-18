@@ -23,7 +23,7 @@
     },
     {
       "url": "http://www.fragment.com/maplink",
-      "valueString": "component|True|TumorQualifier^CodeableConcept^http://hl7.org/fhir/us/breast-radiology/ValueSet/TumorQualifierVS"
+      "valueString": "component|True|Tumor Qualifier^CodeableConcept^http://hl7.org/fhir/us/breast-radiology/ValueSet/TumorQualifierVS"
     }
   ],
   "url": "http://hl7.org/fhir/us/breast-radiology/StructureDefinition/TumorQualifierComponentFragment",
@@ -73,7 +73,7 @@
         "id": "Observation.component:tumorQualifier",
         "path": "Observation.component",
         "sliceName": "tumorQualifier",
-        "short": "TumorQualifier component",
+        "short": "Tumor Qualifier component",
         "definition": "This slice contains the optional component that defines if a tumour is the index (primary) tumour or a satellite tumour.The value of this component is a codeable concept chosen from the TumorQualifierVS valueset.<br/>",
         "comment": "This is one component of a group of components that comprise the observation.",
         "min": 0,
@@ -87,8 +87,8 @@
       {
         "id": "Observation.component:tumorQualifier.code",
         "path": "Observation.component.code",
-        "short": "TumorQualifier component code",
-        "definition": "This code identifies the TumorQualifier component",
+        "short": "Tumor Qualifier component code",
+        "definition": "This code identifies the Tumor Qualifier component",
         "min": 1,
         "max": "1",
         "base": {
@@ -108,7 +108,7 @@
       {
         "id": "Observation.component:tumorQualifier.value[x]",
         "path": "Observation.component.value[x]",
-        "short": "TumorQualifier component value",
+        "short": "Tumor Qualifier component value",
         "definition": "Value is a codeable concept.<br/>",
         "min": 1,
         "max": "1",

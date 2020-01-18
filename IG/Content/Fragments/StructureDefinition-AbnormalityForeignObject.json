@@ -59,7 +59,7 @@
     },
     {
       "url": "http://www.fragment.com/maplink",
-      "valueString": "component|True|AbnormalityForeignObject Type^CodeableConcept^http://hl7.org/fhir/us/breast-radiology/ValueSet/AbnormalitiesVS"
+      "valueString": "component|True|ForeignObject Type^CodeableConcept^http://hl7.org/fhir/us/breast-radiology/ValueSet/AbnormalitiesVS"
     },
     {
       "url": "http://www.fragment.com/maplink",
@@ -175,7 +175,7 @@
         "id": "Observation.component:abnormalityForeignObjectType",
         "path": "Observation.component",
         "sliceName": "abnormalityForeignObjectType",
-        "short": "AbnormalityForeignObject Type component",
+        "short": "ForeignObject Type component",
         "definition": "This slice contains the required component that refines the foreign object type.The value of this component is a codeable concept chosen from the AbnormalitiesVS valueset.<br/>",
         "comment": "This is one component of a group of components that comprise the observation.",
         "min": 1,
@@ -189,8 +189,8 @@
       {
         "id": "Observation.component:abnormalityForeignObjectType.code",
         "path": "Observation.component.code",
-        "short": "AbnormalityForeignObject Type component code",
-        "definition": "This code identifies the AbnormalityForeignObject Type component",
+        "short": "ForeignObject Type component code",
+        "definition": "This code identifies the ForeignObject Type component",
         "min": 1,
         "max": "1",
         "base": {
@@ -210,7 +210,7 @@
       {
         "id": "Observation.component:abnormalityForeignObjectType.value[x]",
         "path": "Observation.component.value[x]",
-        "short": "AbnormalityForeignObject Type component value",
+        "short": "ForeignObject Type component value",
         "definition": "Value is a codeable concept.<br/>",
         "min": 1,
         "max": "1",

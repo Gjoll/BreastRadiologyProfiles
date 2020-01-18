@@ -75,7 +75,7 @@
     },
     {
       "url": "http://www.fragment.com/maplink",
-      "valueString": "component|True|MG AbnormalityDensity Type^CodeableConcept^http://hl7.org/fhir/us/breast-radiology/ValueSet/MGAbnormalityDensityTypeVS"
+      "valueString": "component|True|Density Type^CodeableConcept^http://hl7.org/fhir/us/breast-radiology/ValueSet/MGAbnormalityDensityTypeVS"
     },
     {
       "url": "http://www.fragment.com/maplink",
@@ -223,7 +223,7 @@
     },
     {
       "url": "http://www.fragment.com/maplink",
-      "valueString": "component|True|NotPreviouslySeen^CodeableConcept^http://hl7.org/fhir/us/breast-radiology/ValueSet/NotPreviouslySeenVS"
+      "valueString": "component|True|Not Previously Seen^CodeableConcept^http://hl7.org/fhir/us/breast-radiology/ValueSet/NotPreviouslySeenVS"
     },
     {
       "url": "http://www.fragment.com/mapname",
@@ -235,7 +235,7 @@
     },
     {
       "url": "http://www.fragment.com/maplink",
-      "valueString": "component|True|correspondsWith^CodeableConcept^http://hl7.org/fhir/us/breast-radiology/ValueSet/CorrespondsWithVS"
+      "valueString": "component|True|Corresponds With^CodeableConcept^http://hl7.org/fhir/us/breast-radiology/ValueSet/CorrespondsWithVS"
     }
   ],
   "url": "http://hl7.org/fhir/us/breast-radiology/StructureDefinition/MGAbnormalityDensity",
@@ -255,7 +255,7 @@
       ]
     }
   ],
-  "description": "<b>Breat Radiology Mammography Density Observation</b>",
+  "description": "<b>Mammography Density Observation</b>",
   "fhirVersion": "4.0.0",
   "kind": "resource",
   "abstract": false,
@@ -267,7 +267,7 @@
       {
         "id": "Observation",
         "path": "Observation",
-        "short": "Breat Radiology Mammography Density Observation",
+        "short": "Mammography Density Observation",
         "definition": "Measurements and simple assertions made about a patient, device or other subject.",
         "comment": "Used for simple observations such as device measurements, laboratory atomic results, vital signs, height, weight, smoking status, comments, etc.  Other resources are used to provide context for observations such as laboratory reports, etc.",
         "alias": [
@@ -2691,7 +2691,7 @@
         "id": "Observation.component:mgAbnormalityDensityType",
         "path": "Observation.component",
         "sliceName": "mgAbnormalityDensityType",
-        "short": "MG AbnormalityDensity Type component",
+        "short": "Density Type component",
         "definition": "This slice contains the optional component that refines the density type.The value of this component is a codeable concept chosen from the MammoCalcificationTypeVS valueset.<br/>",
         "comment": "This is one component of a group of components that comprise the observation.",
         "requirements": "Component observations share the same attributes in the Observation resource as the primary observation and are always treated a part of a single observation (they are not separable).   However, the reference range for the primary observation value is not inherited by the component values and is required when appropriate for each component observation.",
@@ -2827,8 +2827,8 @@
       {
         "id": "Observation.component:mgAbnormalityDensityType.code",
         "path": "Observation.component.code",
-        "short": "MG AbnormalityDensity Type component code",
-        "definition": "This code identifies the MG AbnormalityDensity Type component",
+        "short": "Density Type component code",
+        "definition": "This code identifies the Density Type component",
         "comment": "*All* code-value and  component.code-component.value pairs need to be taken into account to correctly understand the meaning of the observation.",
         "requirements": "Knowing what kind of observation is being made is essential to understanding the observation.",
         "min": 1,
@@ -2886,7 +2886,7 @@
       {
         "id": "Observation.component:mgAbnormalityDensityType.value[x]",
         "path": "Observation.component.value[x]",
-        "short": "MG AbnormalityDensity Type component value",
+        "short": "Density Type component value",
         "definition": "Value is a codeable concept.<br/>",
         "comment": "Used when observation has a set of component observations. An observation may have both a value (e.g. an  Apgar score)  and component observations (the observations from which the Apgar score was derived). If a value is present, the datatype for this element should be determined by Observation.code. A CodeableConcept with just a text would be used instead of a string if the field was usually coded, or if the type associated with the Observation.code defines a coded value.  For additional guidance, see the [Notes section](observation.html#notes) below.",
         "requirements": "An observation exists to have a value, though it might not if it is in error, or if it represents a group of observations.",
@@ -6211,7 +6211,7 @@
         "id": "Observation.component:notPreviouslySeen",
         "path": "Observation.component",
         "sliceName": "notPreviouslySeen",
-        "short": "NotPreviouslySeen component",
+        "short": "Not Previously Seen component",
         "definition": "This slice contains zero or more components that define prevous encounters in which this abnormality was not seen.The value of this component is a codeable concept chosen from the NotPreviouslySeenVS valueset.<br/>",
         "comment": "This is one component of a group of components that comprise the observation.",
         "requirements": "Component observations share the same attributes in the Observation resource as the primary observation and are always treated a part of a single observation (they are not separable).   However, the reference range for the primary observation value is not inherited by the component values and is required when appropriate for each component observation.",
@@ -6347,8 +6347,8 @@
       {
         "id": "Observation.component:notPreviouslySeen.code",
         "path": "Observation.component.code",
-        "short": "NotPreviouslySeen component code",
-        "definition": "This code identifies the NotPreviouslySeen components",
+        "short": "Not Previously Seen component code",
+        "definition": "This code identifies the Not Previously Seen components",
         "comment": "*All* code-value and  component.code-component.value pairs need to be taken into account to correctly understand the meaning of the observation.",
         "requirements": "Knowing what kind of observation is being made is essential to understanding the observation.",
         "min": 1,
@@ -6406,7 +6406,7 @@
       {
         "id": "Observation.component:notPreviouslySeen.value[x]",
         "path": "Observation.component.value[x]",
-        "short": "NotPreviouslySeen component value",
+        "short": "Not Previously Seen component value",
         "definition": "Value is a codeable concept.<br/>",
         "comment": "Used when observation has a set of component observations. An observation may have both a value (e.g. an  Apgar score)  and component observations (the observations from which the Apgar score was derived). If a value is present, the datatype for this element should be determined by Observation.code. A CodeableConcept with just a text would be used instead of a string if the field was usually coded, or if the type associated with the Observation.code defines a coded value.  For additional guidance, see the [Notes section](observation.html#notes) below.",
         "requirements": "An observation exists to have a value, though it might not if it is in error, or if it represents a group of observations.",
@@ -6579,7 +6579,7 @@
         "id": "Observation.component:correspondsWith",
         "path": "Observation.component",
         "sliceName": "correspondsWith",
-        "short": "correspondsWith component",
+        "short": "Corresponds With component",
         "definition": "This slice contains zero or more components that defines what this observation correspomnds with.The value of this component is a codeable concept chosen from the CorrespondsWithVS valueset.<br/>",
         "comment": "This is one component of a group of components that comprise the observation.",
         "requirements": "Component observations share the same attributes in the Observation resource as the primary observation and are always treated a part of a single observation (they are not separable).   However, the reference range for the primary observation value is not inherited by the component values and is required when appropriate for each component observation.",
@@ -6715,8 +6715,8 @@
       {
         "id": "Observation.component:correspondsWith.code",
         "path": "Observation.component.code",
-        "short": "correspondsWith component code",
-        "definition": "This code identifies the correspondsWith components",
+        "short": "Corresponds With component code",
+        "definition": "This code identifies the Corresponds With components",
         "comment": "*All* code-value and  component.code-component.value pairs need to be taken into account to correctly understand the meaning of the observation.",
         "requirements": "Knowing what kind of observation is being made is essential to understanding the observation.",
         "min": 1,
@@ -6774,7 +6774,7 @@
       {
         "id": "Observation.component:correspondsWith.value[x]",
         "path": "Observation.component.value[x]",
-        "short": "correspondsWith component value",
+        "short": "Corresponds With component value",
         "definition": "Value is a codeable concept.<br/>",
         "comment": "Used when observation has a set of component observations. An observation may have both a value (e.g. an  Apgar score)  and component observations (the observations from which the Apgar score was derived). If a value is present, the datatype for this element should be determined by Observation.code. A CodeableConcept with just a text would be used instead of a string if the field was usually coded, or if the type associated with the Observation.code defines a coded value.  For additional guidance, see the [Notes section](observation.html#notes) below.",
         "requirements": "An observation exists to have a value, though it might not if it is in error, or if it represents a group of observations.",
@@ -6950,7 +6950,7 @@
       {
         "id": "Observation",
         "path": "Observation",
-        "short": "Breat Radiology Mammography Density Observation",
+        "short": "Mammography Density Observation",
         "base": {
           "path": "Observation",
           "min": 0,
@@ -7299,7 +7299,7 @@
         "id": "Observation.component:mgAbnormalityDensityType",
         "path": "Observation.component",
         "sliceName": "mgAbnormalityDensityType",
-        "short": "MG AbnormalityDensity Type component",
+        "short": "Density Type component",
         "definition": "This slice contains the optional component that refines the density type.The value of this component is a codeable concept chosen from the MammoCalcificationTypeVS valueset.<br/>",
         "comment": "This is one component of a group of components that comprise the observation.",
         "requirements": "Component observations share the same attributes in the Observation resource as the primary observation and are always treated a part of a single observation (they are not separable).   However, the reference range for the primary observation value is not inherited by the component values and is required when appropriate for each component observation.",
@@ -7435,8 +7435,8 @@
       {
         "id": "Observation.component:mgAbnormalityDensityType.code",
         "path": "Observation.component.code",
-        "short": "MG AbnormalityDensity Type component code",
-        "definition": "This code identifies the MG AbnormalityDensity Type component",
+        "short": "Density Type component code",
+        "definition": "This code identifies the Density Type component",
         "comment": "*All* code-value and  component.code-component.value pairs need to be taken into account to correctly understand the meaning of the observation.",
         "requirements": "Knowing what kind of observation is being made is essential to understanding the observation.",
         "min": 1,
@@ -7494,7 +7494,7 @@
       {
         "id": "Observation.component:mgAbnormalityDensityType.value[x]",
         "path": "Observation.component.value[x]",
-        "short": "MG AbnormalityDensity Type component value",
+        "short": "Density Type component value",
         "definition": "Value is a codeable concept.<br/>",
         "comment": "Used when observation has a set of component observations. An observation may have both a value (e.g. an  Apgar score)  and component observations (the observations from which the Apgar score was derived). If a value is present, the datatype for this element should be determined by Observation.code. A CodeableConcept with just a text would be used instead of a string if the field was usually coded, or if the type associated with the Observation.code defines a coded value.  For additional guidance, see the [Notes section](observation.html#notes) below.",
         "requirements": "An observation exists to have a value, though it might not if it is in error, or if it represents a group of observations.",
@@ -10819,7 +10819,7 @@
         "id": "Observation.component:notPreviouslySeen",
         "path": "Observation.component",
         "sliceName": "notPreviouslySeen",
-        "short": "NotPreviouslySeen component",
+        "short": "Not Previously Seen component",
         "definition": "This slice contains zero or more components that define prevous encounters in which this abnormality was not seen.The value of this component is a codeable concept chosen from the NotPreviouslySeenVS valueset.<br/>",
         "comment": "This is one component of a group of components that comprise the observation.",
         "requirements": "Component observations share the same attributes in the Observation resource as the primary observation and are always treated a part of a single observation (they are not separable).   However, the reference range for the primary observation value is not inherited by the component values and is required when appropriate for each component observation.",
@@ -10955,8 +10955,8 @@
       {
         "id": "Observation.component:notPreviouslySeen.code",
         "path": "Observation.component.code",
-        "short": "NotPreviouslySeen component code",
-        "definition": "This code identifies the NotPreviouslySeen components",
+        "short": "Not Previously Seen component code",
+        "definition": "This code identifies the Not Previously Seen components",
         "comment": "*All* code-value and  component.code-component.value pairs need to be taken into account to correctly understand the meaning of the observation.",
         "requirements": "Knowing what kind of observation is being made is essential to understanding the observation.",
         "min": 1,
@@ -11014,7 +11014,7 @@
       {
         "id": "Observation.component:notPreviouslySeen.value[x]",
         "path": "Observation.component.value[x]",
-        "short": "NotPreviouslySeen component value",
+        "short": "Not Previously Seen component value",
         "definition": "Value is a codeable concept.<br/>",
         "comment": "Used when observation has a set of component observations. An observation may have both a value (e.g. an  Apgar score)  and component observations (the observations from which the Apgar score was derived). If a value is present, the datatype for this element should be determined by Observation.code. A CodeableConcept with just a text would be used instead of a string if the field was usually coded, or if the type associated with the Observation.code defines a coded value.  For additional guidance, see the [Notes section](observation.html#notes) below.",
         "requirements": "An observation exists to have a value, though it might not if it is in error, or if it represents a group of observations.",
@@ -11187,7 +11187,7 @@
         "id": "Observation.component:correspondsWith",
         "path": "Observation.component",
         "sliceName": "correspondsWith",
-        "short": "correspondsWith component",
+        "short": "Corresponds With component",
         "definition": "This slice contains zero or more components that defines what this observation correspomnds with.The value of this component is a codeable concept chosen from the CorrespondsWithVS valueset.<br/>",
         "comment": "This is one component of a group of components that comprise the observation.",
         "min": 0,
@@ -11201,8 +11201,8 @@
       {
         "id": "Observation.component:correspondsWith.code",
         "path": "Observation.component.code",
-        "short": "correspondsWith component code",
-        "definition": "This code identifies the correspondsWith components",
+        "short": "Corresponds With component code",
+        "definition": "This code identifies the Corresponds With components",
         "min": 1,
         "max": "1",
         "base": {
@@ -11222,7 +11222,7 @@
       {
         "id": "Observation.component:correspondsWith.value[x]",
         "path": "Observation.component.value[x]",
-        "short": "correspondsWith component value",
+        "short": "Corresponds With component value",
         "definition": "Value is a codeable concept.<br/>",
         "min": 1,
         "max": "1",

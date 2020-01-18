@@ -37,51 +37,72 @@ namespace BreastRadiology.XUnitTests
                         new ConceptDef[]
                         {
                             //+ NotPreviouslySeenCS
-                            new ConceptDef("ClinicalExam",
-                                "Clinical exam",
-                                new Definition()
+                            //+ ClinicalExam
+                            new ConceptDef()
+                                .SetCode("ClinicalExam")
+                                .SetDisplay("Clinical exam")
+                                .SetDefinition(new Definition()
                                     .Line("[PR] Clinical exam")
                                     .ValidModalities(Modalities.MG | Modalities.MRI | Modalities.NM | Modalities.US)
                                 ),
+                            //- ClinicalExam
                             // SNOMED Description: Procedure | 420131003 | Fluoroscopic mammary ductography (Procedure) 
-                            new ConceptDef("Ductogram",
-                                "Ductogram",
-                                new Definition()
+                            //+ Ductogram
+                            new ConceptDef()
+                                .SetCode("Ductogram")
+                                .SetDisplay("Ductogram")
+                                .SetDefinition(new Definition()
                                     .Line("[PR] Ductogram")
                                     .ValidModalities(Modalities.MG | Modalities.MRI | Modalities.NM | Modalities.US)
                                 ),
-                            new ConceptDef("Mammogram",
-                                "Mammogram",
-                                new Definition()
+                            //- Ductogram
+                            //+ Mammogram
+                            new ConceptDef()
+                                .SetCode("Mammogram")
+                                .SetDisplay("Mammogram")
+                                .SetDefinition(new Definition()
                                     .Line("[PR] Mammogram")
                                     .ValidModalities(Modalities.MG | Modalities.MRI | Modalities.NM | Modalities.US)
                                 ),
+                            //- Mammogram
                             // SNOMED Description: Procedure | 241615005 | Magnetic resonance imaging of breast (Procedure)
-                            new ConceptDef("MRI",
-                                "MRI",
-                                new Definition()
+                            //+ MRI
+                            new ConceptDef()
+                                .SetCode("MRI")
+                                .SetDisplay("MRI")
+                                .SetDefinition(new Definition()
                                     .Line("[PR] MRI")
                                     .ValidModalities(Modalities.MG | Modalities.MRI | Modalities.NM | Modalities.US)
                                 ),
-                            new ConceptDef("OutsideExam",
-                                "Outside exam",
-                                new Definition()
+                            //- MRI
+                            //+ OutsideExam
+                            new ConceptDef()
+                                .SetCode("OutsideExam")
+                                .SetDisplay("Outside exam")
+                                .SetDefinition(new Definition()
                                     .Line("[PR] Outside exam")
                                     .ValidModalities(Modalities.MG)
                                 ),
-                            new ConceptDef("Scintimammography",
-                                "Scintimammography",
-                                new Definition()
+                            //- OutsideExam
+                            //+ Scintimammography
+                            new ConceptDef()
+                                .SetCode("Scintimammography")
+                                .SetDisplay("Scintimammography")
+                                .SetDefinition(new Definition()
                                     .Line("[PR] Scintimammography")
                                     .ValidModalities(Modalities.NM)
                                 ),
+                            //- Scintimammography
                             // SNOMED Description: Procedure | 47079000 | Ultrasonography of breast (Procedure)
-                            new ConceptDef("Ultrasound",
-                                "Ultrasound",
-                                new Definition()
+                            //+ Ultrasound
+                            new ConceptDef()
+                                .SetCode("Ultrasound")
+                                .SetDisplay("Ultrasound")
+                                .SetDefinition(new Definition()
                                     .Line("[PR] Ultrasound")
                                     .ValidModalities(Modalities.MG | Modalities.MRI | Modalities.NM | Modalities.US)
                                 )
+                            //- Ultrasound
                             //- NotPreviouslySeenCS
                         })
             );

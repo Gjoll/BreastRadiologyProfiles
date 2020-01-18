@@ -38,19 +38,25 @@ namespace BreastRadiology.XUnitTests
                         {
                             //+ TumorQualifierCS
                             // SNOMED Description: ObservableEntity | 399687005 | Primary tumor site (Observable) 
-                            new ConceptDef("Index",
-                                "Index",
-                                new Definition()
+                            //+ Index
+                            new ConceptDef()
+                                .SetCode("Index")
+                                .SetDisplay("Index")
+                                .SetDefinition(new Definition()
                                     .Line("[PR] Index")
                                     .ValidModalities(Modalities.MG | Modalities.MRI | Modalities.US)
                                 ),
+                            //- Index
                             // SNOMED Description: ObservableEntity | 399462009 | Secondary tumor site (Observable)
-                            new ConceptDef("Satellite",
-                                "Satellite",
-                                new Definition()
+                            //+ Satellite
+                            new ConceptDef()
+                                .SetCode("Satellite")
+                                .SetDisplay("Satellite")
+                                .SetDefinition(new Definition()
                                     .Line("[PR] Satellite")
                                     .ValidModalities(Modalities.MG | Modalities.MRI | Modalities.US)
                                 )
+                            //- Satellite
                             //- TumorQualifierCS
                         })
             );
