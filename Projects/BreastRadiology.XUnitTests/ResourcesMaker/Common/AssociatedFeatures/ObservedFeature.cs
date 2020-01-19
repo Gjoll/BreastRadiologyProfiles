@@ -23,53 +23,6 @@ namespace BreastRadiology.XUnitTests
                          Group_CommonCodesCS,
                          new ConceptDef[]
                          {
-#if NEVER
-                             new ConceptDef("AxillaryAdenopathy",
-                                "Axillary adenopathy",
-                                new Definition()
-                                    .Line("[PR] Axillary adenopathy")
-                                    .CiteStart()
-                                    .Line("Enlarged axillary lymph nodes may warrant comment, clinical correlation, and additional ")
-                                    .Line("evaluation, especially if new or considerably larger or rounder when compared to previous examination.")
-                                    .Line("A review of the patient�s medical history may elucidate the cause for axillary adenopathy, averting")
-                                    .Line("recommendation for additional evaluation. When one or more large axillary nodes are ")
-                                    .Line("substantially composed of fat, this is a normal variant.")
-                                    .CiteEnd(BiRadCitation)
-                                    .ValidModalities(Modalities.MG | Modalities.MRI)
-                                ),
-                            new ConceptDef("NippleRetraction",
-                                "Nipple retraction",
-                                new Definition()
-                                    .CiteStart()
-                                    .Line("The nipple is pulled in. This should not be confused with nipple inversion, which is often bilateral ")
-                                    .Line("and which in the absence of any suspicious findings and when stable for a long period of time, ")
-                                    .Line("is not a sign of malignancy. However, if nipple retraction is new, suspicion for underlying malignancy is increased.")
-                                    .CiteEnd(BiRadCitation)
-                                   .ValidModalities(Modalities.MG | Modalities.MRI)
-                                ),
-                            new ConceptDef("SkinLesion",
-                                "Skin lesion",
-                                new Definition()
-                                    .CiteStart()
-                                    .Line("This finding may be described in the mammography report or annotated on the mammographic")
-                                    .Line("image when it projects over the breast (especially on 2 different projections), and may be mistaken")
-                                    .Line("for an intramammary lesion. A raised skin lesion sufficiently large to be seen at mammography")
-                                    .Line("should be marked by the technologist with a radiopaque device designated for use as a marker for")
-                                    .Line("a skin lesion.")
-                                    .CiteEnd(BiRadCitation)
-                                    .ValidModalities(Modalities.MG)
-                                ),
-                            new ConceptDef("SkinThickening",
-                                "Skin thickening",
-                                new Definition()
-                                    .CiteStart()
-                                    .Line("Skin thickening may be focal or diffuse, and is defined as being greater than 2 mm in thickness. This ")
-                                    .Line("finding is of particular concern if it represents a change from previous mammography examinations. ")
-                                    .Line("However, unilateral skin thickening is an expected finding after radiation therapy.")
-                                    .CiteEnd(BiRadCitation)
-                                    .ValidModalities(Modalities.MG | Modalities.MRI | Modalities.US)
-                                ),
-#endif
                             //+ ObservedFeatureCS
                             //+ AxillaryAdenopathy
                             //+ AutoGen
@@ -81,7 +34,16 @@ namespace BreastRadiology.XUnitTests
                                     .ValidModalities(Modalities.MG | Modalities.MRI)
                                 )
                             //- AutoGen
-                            ,
+                                .SetDefinition(new Definition()
+                                    .Line("Axillary adenopathy")
+                                    .CiteStart()
+                                    .Line("Enlarged axillary lymph nodes may warrant comment, clinical correlation, and additional ")
+                                    .Line("evaluation, especially if new or considerably larger or rounder when compared to previous examination.")
+                                    .Line("A review of the patient�s medical history may elucidate the cause for axillary adenopathy, averting")
+                                    .Line("recommendation for additional evaluation. When one or more large axillary nodes are ")
+                                    .Line("substantially composed of fat, this is a normal variant.")
+                                    .CiteEnd(BiRadCitation)
+                                ),
                             //- AxillaryAdenopathy
                             //+ BiopsyClip
                             //+ AutoGen
@@ -238,6 +200,14 @@ namespace BreastRadiology.XUnitTests
                                 .SetICD10("31845005")
                                 .SetComment("ClinicalFinding | 254239000 | Congenital retraction of nipple (Disorder) | [0/0] | Q83.8")
                             //- AutoGen
+                                .SetDefinition(new Definition()
+                                    .Line("Nipple retraction")
+                                    .CiteStart()
+                                    .Line("The nipple is pulled in. This should not be confused with nipple inversion, which is often bilateral ")
+                                    .Line("and which in the absence of any suspicious findings and when stable for a long period of time, ")
+                                    .Line("is not a sign of malignancy. However, if nipple retraction is new, suspicion for underlying malignancy is increased.")
+                                    .CiteEnd(BiRadCitation)
+                                )
                             ,
                             //- NippleRetraction
                             //+ NOChestWallInvasion
@@ -346,6 +316,17 @@ namespace BreastRadiology.XUnitTests
                                 .SetSnomedDescription("ClinicalFinding | Neoplasm of skin of breast (Disorder)")
                                 .SetICD10("126510002")
                             //- AutoGen
+                                .SetDefinition(new Definition()
+                                    .Line("Skin lesion")
+                                    .CiteStart()
+                                    .Line("This finding may be described in the mammography report or annotated on the mammographic")
+                                    .Line("image when it projects over the breast (especially on 2 different projections), and may be mistaken")
+                                    .Line("for an intramammary lesion. A raised skin lesion sufficiently large to be seen at mammography")
+                                    .Line("should be marked by the technologist with a radiopaque device designated for use as a marker for")
+                                    .Line("a skin lesion.")
+                                    .CiteEnd(BiRadCitation)
+                                    .ValidModalities(Modalities.MG)
+                                )
                             ,
                             //- SkinLesion
                             //+ SkinRetraction
@@ -373,6 +354,14 @@ namespace BreastRadiology.XUnitTests
                                 .SetSnomedDescription("ClinicalFinding | 129797000 | Mammographic skin thickening of breast (Finding) | [0/0] | R92")
                                 .SetComment("450848006??")
                             //- AutoGen
+                                .SetDefinition(new Definition()
+                                    .Line("Skin thickening")
+                                    .CiteStart()
+                                    .Line("Skin thickening may be focal or diffuse, and is defined as being greater than 2 mm in thickness. This ")
+                                    .Line("finding is of particular concern if it represents a change from previous mammography examinations. ")
+                                    .Line("However, unilateral skin thickening is an expected finding after radiation therapy.")
+                                    .CiteEnd(BiRadCitation)
+                                )
                             ,
                             //- SkinThickening
                             //+ SurgicalClip
@@ -422,10 +411,10 @@ namespace BreastRadiology.XUnitTests
                                 .SetComment("only mammo chioce")
                             //- AutoGen
                                 .SetDefinition(new Definition()
+                                    .Line("Trabecular thickening")
                                     .CiteStart()
                                     .Line("This is a thickening of the fibrous septa of the breast.")
                                     .CiteEnd(BiRadCitation)
-                                    .ValidModalities(Modalities.MG)
                                 )
                             //- TrabecularThickening
                             //- ObservedFeatureCS
