@@ -38,23 +38,6 @@ namespace BreastRadiology.XUnitTests
                 return this;
             }
 
-            public Definition ValidModalities(Modalities modalities)
-            {
-                void Add(Modalities flag)
-                {
-                    if ((modalities & flag) == flag)
-                        this.sb.Append($" {flag.ToString()}");
-                }
-
-                this.sb.Append("Valid for the following modalities:");
-                Add(Modalities.MG);
-                Add(Modalities.US);
-                Add(Modalities.MRI);
-                Add(Modalities.NM);
-                this.sb.AppendLine(".");
-                return this;
-            }
-
             public String ToText()
             {
                 return this.sb.ToString();

@@ -325,7 +325,6 @@ namespace BreastRadiology.XUnitTests
                                     .Line("should be marked by the technologist with a radiopaque device designated for use as a marker for")
                                     .Line("a skin lesion.")
                                     .CiteEnd(BiRadCitation)
-                                    .ValidModalities(Modalities.MG)
                                 )
                             ,
                             //- SkinLesion
