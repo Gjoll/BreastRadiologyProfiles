@@ -159,10 +159,10 @@ namespace BreastRadiology.XUnitTests
                                 componentHRef = componentHRef.Replace("{SDName}", link.LinkSource.LastUriPart());
 
                                 SENode node = new SENode(0, componentColor, componentHRef);
-                                node.AddTextLine(lines[0]);
+                                node.AddTextLine(lines[0], componentHRef);
 
                                 if (lines.Length > 2)
-                                    node.AddTextLine(lines[2]);
+                                    node.AddTextLine(lines[2], componentHRef);
 
                                 SENodeGroup nodeGroup = new SENodeGroup(node.AllText());
                                 componentChildren.AppendChild(nodeGroup);

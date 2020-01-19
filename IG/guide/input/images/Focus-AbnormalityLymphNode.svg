@@ -63,8 +63,12 @@
 <a href="StructureDefinition-AbnormalityLymphNode-definitions.html#Observation.component:biRadsAssessmentCategory" target="_top">
 <rect fill="LightYellow" stroke="Black" stroke-width="1.875" x="0" y="0" width="287.99997" height="52.5" rx="3.75" ry="3.75" />
 </a>
+<a href="StructureDefinition-AbnormalityLymphNode-definitions.html#Observation.component:biRadsAssessmentCategory" target="_top">
 <text x="143.99998" y="22.5" text-anchor="middle">BiRads Assessment Category</text>
+</a>
+<a href="StructureDefinition-AbnormalityLymphNode-definitions.html#Observation.component:biRadsAssessmentCategory" target="_top">
 <text x="143.99998" y="41.25" text-anchor="middle">CodeableConcept</text>
+</a>
 </g>
 <line stroke="Black" stroke-width="1.875" marker-end="url(#arrowEnd)" x1="685.49994" y1="84.375" x2="715.49994" y2="84.375" />
 <line stroke="Black" stroke-width="1.875" marker-start="url(#arrowStart)" x1="655.49994" y1="93.75" x2="685.49994" y2="93.75" />
@@ -85,8 +89,12 @@
 <a href="StructureDefinition-AbnormalityLymphNode-definitions.html#Observation.component:correspondsWith" target="_top">
 <rect fill="LightYellow" stroke="Black" stroke-width="1.875" x="0" y="0" width="183" height="52.5" rx="3.75" ry="3.75" />
 </a>
+<a href="StructureDefinition-AbnormalityLymphNode-definitions.html#Observation.component:correspondsWith" target="_top">
 <text x="91.5" y="22.5" text-anchor="middle">Corresponds With</text>
+</a>
+<a href="StructureDefinition-AbnormalityLymphNode-definitions.html#Observation.component:correspondsWith" target="_top">
 <text x="91.5" y="41.25" text-anchor="middle">CodeableConcept</text>
+</a>
 </g>
 <line stroke="Black" stroke-width="1.875" marker-end="url(#arrowEnd)" x1="580.5" y1="144.375" x2="610.5" y2="144.375" />
 <line stroke="Black" stroke-width="1.875" marker-start="url(#arrowStart)" x1="550.5" y1="153.75" x2="580.5" y2="153.75" />
@@ -107,8 +115,12 @@
 <a href="StructureDefinition-AbnormalityLymphNode-definitions.html#Observation.component:mgDensity" target="_top">
 <rect fill="LightYellow" stroke="Black" stroke-width="1.875" x="0" y="0" width="172.5" height="52.5" rx="3.75" ry="3.75" />
 </a>
+<a href="StructureDefinition-AbnormalityLymphNode-definitions.html#Observation.component:mgDensity" target="_top">
 <text x="86.25" y="22.5" text-anchor="middle">Density</text>
+</a>
+<a href="StructureDefinition-AbnormalityLymphNode-definitions.html#Observation.component:mgDensity" target="_top">
 <text x="86.25" y="41.25" text-anchor="middle">CodeableConcept</text>
+</a>
 </g>
 <line stroke="Black" stroke-width="1.875" marker-end="url(#arrowEnd)" x1="570" y1="204.375" x2="600" y2="204.375" />
 <line stroke="Black" stroke-width="1.875" marker-start="url(#arrowStart)" x1="540" y1="213.75" x2="570" y2="213.75" />
@@ -129,8 +141,12 @@
 <a href="StructureDefinition-AbnormalityLymphNode-definitions.html#Observation.component:lymphNodeType" target="_top">
 <rect fill="LightYellow" stroke="Black" stroke-width="1.875" x="0" y="0" width="172.5" height="52.5" rx="3.75" ry="3.75" />
 </a>
+<a href="StructureDefinition-AbnormalityLymphNode-definitions.html#Observation.component:lymphNodeType" target="_top">
 <text x="86.25" y="22.5" text-anchor="middle">Lymph Node Type</text>
+</a>
+<a href="StructureDefinition-AbnormalityLymphNode-definitions.html#Observation.component:lymphNodeType" target="_top">
 <text x="86.25" y="41.25" text-anchor="middle">CodeableConcept</text>
+</a>
 </g>
 <line stroke="Black" stroke-width="1.875" marker-end="url(#arrowEnd)" x1="570" y1="264.375" x2="600" y2="264.375" />
 <line stroke="Black" stroke-width="1.875" marker-start="url(#arrowStart)" x1="540" y1="273.75" x2="570" y2="273.75" />
@@ -151,8 +167,12 @@
 <a href="StructureDefinition-AbnormalityLymphNode-definitions.html#Observation.component:margin" target="_top">
 <rect fill="LightYellow" stroke="Black" stroke-width="1.875" x="0" y="0" width="172.5" height="52.5" rx="3.75" ry="3.75" />
 </a>
+<a href="StructureDefinition-AbnormalityLymphNode-definitions.html#Observation.component:margin" target="_top">
 <text x="86.25" y="22.5" text-anchor="middle">Margin</text>
+</a>
+<a href="StructureDefinition-AbnormalityLymphNode-definitions.html#Observation.component:margin" target="_top">
 <text x="86.25" y="41.25" text-anchor="middle">CodeableConcept</text>
+</a>
 </g>
 <line stroke="Black" stroke-width="1.875" marker-end="url(#arrowEnd)" x1="570" y1="324.375" x2="600" y2="324.375" />
 <line stroke="Black" stroke-width="1.875" marker-start="url(#arrowStart)" x1="540" y1="333.75" x2="570" y2="333.75" />
@@ -173,8 +193,12 @@
 <a href="StructureDefinition-AbnormalityLymphNode-definitions.html#Observation.component:notPreviouslySeen" target="_top">
 <rect fill="LightYellow" stroke="Black" stroke-width="1.875" x="0" y="0" width="214.5" height="52.5" rx="3.75" ry="3.75" />
 </a>
+<a href="StructureDefinition-AbnormalityLymphNode-definitions.html#Observation.component:notPreviouslySeen" target="_top">
 <text x="107.25" y="22.5" text-anchor="middle">Not Previously Seen</text>
+</a>
+<a href="StructureDefinition-AbnormalityLymphNode-definitions.html#Observation.component:notPreviouslySeen" target="_top">
 <text x="107.25" y="41.25" text-anchor="middle">CodeableConcept</text>
+</a>
 </g>
 <line stroke="Black" stroke-width="1.875" marker-end="url(#arrowEnd)" x1="612" y1="384.375" x2="642" y2="384.375" />
 <line stroke="Black" stroke-width="1.875" marker-start="url(#arrowStart)" x1="582" y1="393.75" x2="612" y2="393.75" />
@@ -195,8 +219,12 @@
 <a href="StructureDefinition-AbnormalityLymphNode-definitions.html#Observation.component:observedArea" target="_top">
 <rect fill="LightYellow" stroke="Black" stroke-width="1.875" x="0" y="0" width="193.5" height="52.5" rx="3.75" ry="3.75" />
 </a>
+<a href="StructureDefinition-AbnormalityLymphNode-definitions.html#Observation.component:observedArea" target="_top">
 <text x="96.75" y="22.5" text-anchor="middle">Observed Area</text>
+</a>
+<a href="StructureDefinition-AbnormalityLymphNode-definitions.html#Observation.component:observedArea" target="_top">
 <text x="96.75" y="41.25" text-anchor="middle">Quantity or Range</text>
+</a>
 </g>
 </g>
 <g>
@@ -204,8 +232,12 @@
 <a href="StructureDefinition-AbnormalityLymphNode-definitions.html#Observation.component:observedChanges" target="_top">
 <rect fill="LightYellow" stroke="Black" stroke-width="1.875" x="0" y="0" width="330" height="52.5" rx="3.75" ry="3.75" />
 </a>
+<a href="StructureDefinition-AbnormalityLymphNode-definitions.html#Observation.component:observedChanges" target="_top">
 <text x="165" y="22.5" text-anchor="middle">Observed Change In Abnormality</text>
+</a>
+<a href="StructureDefinition-AbnormalityLymphNode-definitions.html#Observation.component:observedChanges" target="_top">
 <text x="165" y="41.25" text-anchor="middle">CodeableConcept</text>
+</a>
 </g>
 <line stroke="Black" stroke-width="1.875" marker-end="url(#arrowEnd)" x1="727.5" y1="504.375" x2="757.5" y2="504.375" />
 <line stroke="Black" stroke-width="1.875" marker-start="url(#arrowStart)" x1="697.5" y1="513.75" x2="727.5" y2="513.75" />
@@ -226,8 +258,12 @@
 <a href="StructureDefinition-AbnormalityLymphNode-definitions.html#Observation.component:observedCount" target="_top">
 <rect fill="LightYellow" stroke="Black" stroke-width="1.875" x="0" y="0" width="193.5" height="52.5" rx="3.75" ry="3.75" />
 </a>
+<a href="StructureDefinition-AbnormalityLymphNode-definitions.html#Observation.component:observedCount" target="_top">
 <text x="96.75" y="22.5" text-anchor="middle">Observed Count</text>
+</a>
+<a href="StructureDefinition-AbnormalityLymphNode-definitions.html#Observation.component:observedCount" target="_top">
 <text x="96.75" y="41.25" text-anchor="middle">Quantity or Range</text>
+</a>
 </g>
 </g>
 <g>
@@ -235,8 +271,12 @@
 <a href="StructureDefinition-AbnormalityLymphNode-definitions.html#Observation.component:observedSize" target="_top">
 <rect fill="LightYellow" stroke="Black" stroke-width="1.875" x="0" y="0" width="193.5" height="52.5" rx="3.75" ry="3.75" />
 </a>
+<a href="StructureDefinition-AbnormalityLymphNode-definitions.html#Observation.component:observedSize" target="_top">
 <text x="96.75" y="22.5" text-anchor="middle">Observed Size</text>
+</a>
+<a href="StructureDefinition-AbnormalityLymphNode-definitions.html#Observation.component:observedSize" target="_top">
 <text x="96.75" y="41.25" text-anchor="middle">Quantity or Range</text>
+</a>
 </g>
 </g>
 <g>
@@ -244,8 +284,12 @@
 <a href="StructureDefinition-AbnormalityLymphNode-definitions.html#Observation.component:orientation" target="_top">
 <rect fill="LightYellow" stroke="Black" stroke-width="1.875" x="0" y="0" width="172.5" height="52.5" rx="3.75" ry="3.75" />
 </a>
+<a href="StructureDefinition-AbnormalityLymphNode-definitions.html#Observation.component:orientation" target="_top">
 <text x="86.25" y="22.5" text-anchor="middle">Orientation</text>
+</a>
+<a href="StructureDefinition-AbnormalityLymphNode-definitions.html#Observation.component:orientation" target="_top">
 <text x="86.25" y="41.25" text-anchor="middle">CodeableConcept</text>
+</a>
 </g>
 <line stroke="Black" stroke-width="1.875" marker-end="url(#arrowEnd)" x1="570" y1="684.375" x2="600" y2="684.375" />
 <line stroke="Black" stroke-width="1.875" marker-start="url(#arrowStart)" x1="540" y1="693.75" x2="570" y2="693.75" />
@@ -266,8 +310,12 @@
 <a href="StructureDefinition-AbnormalityLymphNode-definitions.html#Observation.component:shape" target="_top">
 <rect fill="LightYellow" stroke="Black" stroke-width="1.875" x="0" y="0" width="172.5" height="52.5" rx="3.75" ry="3.75" />
 </a>
+<a href="StructureDefinition-AbnormalityLymphNode-definitions.html#Observation.component:shape" target="_top">
 <text x="86.25" y="22.5" text-anchor="middle">Shape</text>
+</a>
+<a href="StructureDefinition-AbnormalityLymphNode-definitions.html#Observation.component:shape" target="_top">
 <text x="86.25" y="41.25" text-anchor="middle">CodeableConcept</text>
+</a>
 </g>
 <line stroke="Black" stroke-width="1.875" marker-end="url(#arrowEnd)" x1="570" y1="744.375" x2="600" y2="744.375" />
 <line stroke="Black" stroke-width="1.875" marker-start="url(#arrowStart)" x1="540" y1="753.75" x2="570" y2="753.75" />
@@ -288,8 +336,12 @@
 <a href="StructureDefinition-AbnormalityLymphNode-definitions.html#Observation.component:tumorQualifier" target="_top">
 <rect fill="LightYellow" stroke="Black" stroke-width="1.875" x="0" y="0" width="172.5" height="52.5" rx="3.75" ry="3.75" />
 </a>
+<a href="StructureDefinition-AbnormalityLymphNode-definitions.html#Observation.component:tumorQualifier" target="_top">
 <text x="86.25" y="22.5" text-anchor="middle">Tumor Qualifier</text>
+</a>
+<a href="StructureDefinition-AbnormalityLymphNode-definitions.html#Observation.component:tumorQualifier" target="_top">
 <text x="86.25" y="41.25" text-anchor="middle">CodeableConcept</text>
+</a>
 </g>
 <line stroke="Black" stroke-width="1.875" marker-end="url(#arrowEnd)" x1="570" y1="804.375" x2="600" y2="804.375" />
 <line stroke="Black" stroke-width="1.875" marker-start="url(#arrowStart)" x1="540" y1="813.75" x2="570" y2="813.75" />

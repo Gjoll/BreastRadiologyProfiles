@@ -85,8 +85,12 @@
 <a href="StructureDefinition-MGAbnormalityCalcification-definitions.html#Observation.component:biRadsAssessmentCategory" target="_top">
 <rect fill="LightYellow" stroke="Black" stroke-width="1.875" x="0" y="0" width="287.99997" height="52.5" rx="3.75" ry="3.75" />
 </a>
+<a href="StructureDefinition-MGAbnormalityCalcification-definitions.html#Observation.component:biRadsAssessmentCategory" target="_top">
 <text x="143.99998" y="22.5" text-anchor="middle">BiRads Assessment Category</text>
+</a>
+<a href="StructureDefinition-MGAbnormalityCalcification-definitions.html#Observation.component:biRadsAssessmentCategory" target="_top">
 <text x="143.99998" y="41.25" text-anchor="middle">CodeableConcept</text>
+</a>
 </g>
 <line stroke="Black" stroke-width="1.875" marker-end="url(#arrowEnd)" x1="664.5" y1="144.375" x2="694.5" y2="144.375" />
 <line stroke="Black" stroke-width="1.875" marker-start="url(#arrowStart)" x1="634.5" y1="153.75" x2="664.5" y2="153.75" />
@@ -107,8 +111,12 @@
 <a href="StructureDefinition-MGAbnormalityCalcification-definitions.html#Observation.component:calcificationDistribution" target="_top">
 <rect fill="LightYellow" stroke="Black" stroke-width="1.875" x="0" y="0" width="287.99997" height="52.5" rx="3.75" ry="3.75" />
 </a>
+<a href="StructureDefinition-MGAbnormalityCalcification-definitions.html#Observation.component:calcificationDistribution" target="_top">
 <text x="143.99998" y="22.5" text-anchor="middle">Calcification Distribution</text>
+</a>
+<a href="StructureDefinition-MGAbnormalityCalcification-definitions.html#Observation.component:calcificationDistribution" target="_top">
 <text x="143.99998" y="41.25" text-anchor="middle">CodeableConcept</text>
+</a>
 </g>
 <line stroke="Black" stroke-width="1.875" marker-end="url(#arrowEnd)" x1="664.5" y1="204.375" x2="694.5" y2="204.375" />
 <line stroke="Black" stroke-width="1.875" marker-start="url(#arrowStart)" x1="634.5" y1="213.75" x2="664.5" y2="213.75" />
@@ -129,8 +137,12 @@
 <a href="StructureDefinition-MGAbnormalityCalcification-definitions.html#Observation.component:calcificationType" target="_top">
 <rect fill="LightYellow" stroke="Black" stroke-width="1.875" x="0" y="0" width="203.99998" height="52.5" rx="3.75" ry="3.75" />
 </a>
+<a href="StructureDefinition-MGAbnormalityCalcification-definitions.html#Observation.component:calcificationType" target="_top">
 <text x="101.99999" y="22.5" text-anchor="middle">Calcification Type</text>
+</a>
+<a href="StructureDefinition-MGAbnormalityCalcification-definitions.html#Observation.component:calcificationType" target="_top">
 <text x="101.99999" y="41.25" text-anchor="middle">CodeableConcept</text>
+</a>
 </g>
 <line stroke="Black" stroke-width="1.875" marker-end="url(#arrowEnd)" x1="580.5" y1="264.375" x2="610.5" y2="264.375" />
 <line stroke="Black" stroke-width="1.875" marker-start="url(#arrowStart)" x1="550.5" y1="273.75" x2="580.5" y2="273.75" />
@@ -151,8 +163,12 @@
 <a href="StructureDefinition-MGAbnormalityCalcification-definitions.html#Observation.component:correspondsWith" target="_top">
 <rect fill="LightYellow" stroke="Black" stroke-width="1.875" x="0" y="0" width="183" height="52.5" rx="3.75" ry="3.75" />
 </a>
+<a href="StructureDefinition-MGAbnormalityCalcification-definitions.html#Observation.component:correspondsWith" target="_top">
 <text x="91.5" y="22.5" text-anchor="middle">Corresponds With</text>
+</a>
+<a href="StructureDefinition-MGAbnormalityCalcification-definitions.html#Observation.component:correspondsWith" target="_top">
 <text x="91.5" y="41.25" text-anchor="middle">CodeableConcept</text>
+</a>
 </g>
 <line stroke="Black" stroke-width="1.875" marker-end="url(#arrowEnd)" x1="559.5" y1="324.375" x2="589.5" y2="324.375" />
 <line stroke="Black" stroke-width="1.875" marker-start="url(#arrowStart)" x1="529.5" y1="333.75" x2="559.5" y2="333.75" />
@@ -173,8 +189,12 @@
 <a href="StructureDefinition-MGAbnormalityCalcification-definitions.html#Observation.component:notPreviouslySeen" target="_top">
 <rect fill="LightYellow" stroke="Black" stroke-width="1.875" x="0" y="0" width="214.5" height="52.5" rx="3.75" ry="3.75" />
 </a>
+<a href="StructureDefinition-MGAbnormalityCalcification-definitions.html#Observation.component:notPreviouslySeen" target="_top">
 <text x="107.25" y="22.5" text-anchor="middle">Not Previously Seen</text>
+</a>
+<a href="StructureDefinition-MGAbnormalityCalcification-definitions.html#Observation.component:notPreviouslySeen" target="_top">
 <text x="107.25" y="41.25" text-anchor="middle">CodeableConcept</text>
+</a>
 </g>
 <line stroke="Black" stroke-width="1.875" marker-end="url(#arrowEnd)" x1="591" y1="384.375" x2="621" y2="384.375" />
 <line stroke="Black" stroke-width="1.875" marker-start="url(#arrowStart)" x1="561" y1="393.75" x2="591" y2="393.75" />
@@ -195,8 +215,12 @@
 <a href="StructureDefinition-MGAbnormalityCalcification-definitions.html#Observation.component:observedArea" target="_top">
 <rect fill="LightYellow" stroke="Black" stroke-width="1.875" x="0" y="0" width="193.5" height="52.5" rx="3.75" ry="3.75" />
 </a>
+<a href="StructureDefinition-MGAbnormalityCalcification-definitions.html#Observation.component:observedArea" target="_top">
 <text x="96.75" y="22.5" text-anchor="middle">Observed Area</text>
+</a>
+<a href="StructureDefinition-MGAbnormalityCalcification-definitions.html#Observation.component:observedArea" target="_top">
 <text x="96.75" y="41.25" text-anchor="middle">Quantity or Range</text>
+</a>
 </g>
 </g>
 <g>
@@ -204,8 +228,12 @@
 <a href="StructureDefinition-MGAbnormalityCalcification-definitions.html#Observation.component:observedChanges" target="_top">
 <rect fill="LightYellow" stroke="Black" stroke-width="1.875" x="0" y="0" width="330" height="52.5" rx="3.75" ry="3.75" />
 </a>
+<a href="StructureDefinition-MGAbnormalityCalcification-definitions.html#Observation.component:observedChanges" target="_top">
 <text x="165" y="22.5" text-anchor="middle">Observed Change In Abnormality</text>
+</a>
+<a href="StructureDefinition-MGAbnormalityCalcification-definitions.html#Observation.component:observedChanges" target="_top">
 <text x="165" y="41.25" text-anchor="middle">CodeableConcept</text>
+</a>
 </g>
 <line stroke="Black" stroke-width="1.875" marker-end="url(#arrowEnd)" x1="706.5" y1="504.375" x2="736.5" y2="504.375" />
 <line stroke="Black" stroke-width="1.875" marker-start="url(#arrowStart)" x1="676.5" y1="513.75" x2="706.5" y2="513.75" />
@@ -226,8 +254,12 @@
 <a href="StructureDefinition-MGAbnormalityCalcification-definitions.html#Observation.component:observedCount" target="_top">
 <rect fill="LightYellow" stroke="Black" stroke-width="1.875" x="0" y="0" width="193.5" height="52.5" rx="3.75" ry="3.75" />
 </a>
+<a href="StructureDefinition-MGAbnormalityCalcification-definitions.html#Observation.component:observedCount" target="_top">
 <text x="96.75" y="22.5" text-anchor="middle">Observed Count</text>
+</a>
+<a href="StructureDefinition-MGAbnormalityCalcification-definitions.html#Observation.component:observedCount" target="_top">
 <text x="96.75" y="41.25" text-anchor="middle">Quantity or Range</text>
+</a>
 </g>
 </g>
 <g>
@@ -235,8 +267,12 @@
 <a href="StructureDefinition-MGAbnormalityCalcification-definitions.html#Observation.component:observedSize" target="_top">
 <rect fill="LightYellow" stroke="Black" stroke-width="1.875" x="0" y="0" width="193.5" height="52.5" rx="3.75" ry="3.75" />
 </a>
+<a href="StructureDefinition-MGAbnormalityCalcification-definitions.html#Observation.component:observedSize" target="_top">
 <text x="96.75" y="22.5" text-anchor="middle">Observed Size</text>
+</a>
+<a href="StructureDefinition-MGAbnormalityCalcification-definitions.html#Observation.component:observedSize" target="_top">
 <text x="96.75" y="41.25" text-anchor="middle">Quantity or Range</text>
+</a>
 </g>
 </g>
 <g>
