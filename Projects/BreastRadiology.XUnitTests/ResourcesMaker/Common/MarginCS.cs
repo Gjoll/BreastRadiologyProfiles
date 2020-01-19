@@ -45,8 +45,8 @@ namespace BreastRadiology.XUnitTests
                          .SetDisplay("Angular margin")
                          .SetDefinition(new Definition()
                              .Line("[PR] Angular margin")
-                             .ValidModalities(Modalities.US)
                          )
+                         .ValidModalities(Modalities.US)
                          .SetComment("NOT FOUND")
                      //- AutoGen
                          .SetDefinition(new Definition()
@@ -65,8 +65,8 @@ namespace BreastRadiology.XUnitTests
                          .SetDisplay("Circumscribed margin")
                          .SetDefinition(new Definition()
                              .Line("[PR] Circumscribed margin")
-                             .ValidModalities(Modalities.MG | Modalities.NM | Modalities.US)
                          )
+                         .ValidModalities(Modalities.MG | Modalities.NM | Modalities.US)
                          .SetSnomedCode("129738007")
                          .SetSnomedDescription("ClinicalFinding | Lesion with circumscribed margin (Finding)")
                          .SetICD10("129738007")
@@ -89,8 +89,8 @@ namespace BreastRadiology.XUnitTests
                          .SetDisplay("Indistinct margin")
                          .SetDefinition(new Definition()
                              .Line("[PR] Indistinct margin")
-                             .ValidModalities(Modalities.MG | Modalities.US)
                          )
+                         .ValidModalities(Modalities.MG | Modalities.US)
                          .SetSnomedCode("129741003")
                          .SetSnomedDescription("ClinicalFinding | Lesion with indistinct margin (Finding)")
                          .SetICD10("129741003")
@@ -114,8 +114,8 @@ namespace BreastRadiology.XUnitTests
                          .SetDisplay("Intraductal extension")
                          .SetDefinition(new Definition()
                              .Line("[PR] Intraductal extension")
-                             .ValidModalities(Modalities.US)
                          )
+                         .ValidModalities(Modalities.US)
                      //- AutoGen
                      ,
                      //- IntraductalExtension
@@ -126,8 +126,8 @@ namespace BreastRadiology.XUnitTests
                          .SetDisplay("Irregular margin")
                          .SetDefinition(new Definition()
                              .Line("[PR] Irregular margin")
-                             .ValidModalities(Modalities.MG | Modalities.MRI | Modalities.US)
                          )
+                         .ValidModalities(Modalities.MG | Modalities.MRI | Modalities.US)
                          .SetComment("NOT FOUND")
                      //- AutoGen
                      ,
@@ -139,8 +139,8 @@ namespace BreastRadiology.XUnitTests
                          .SetDisplay("Lobulated margin")
                          .SetDefinition(new Definition()
                              .Line("[PR] Lobulated margin")
-                             .ValidModalities(Modalities.US)
                          )
+                         .ValidModalities(Modalities.US)
                          .SetComment("NOT FOUND")
                      //- AutoGen
                      ,
@@ -152,8 +152,8 @@ namespace BreastRadiology.XUnitTests
                          .SetDisplay("Macrolobulated margin")
                          .SetDefinition(new Definition()
                              .Line("[PR] Macrolobulated margin")
-                             .ValidModalities(Modalities.MG)
                          )
+                         .ValidModalities(Modalities.MG)
                      //- AutoGen
                      ,
                      //- MacrolobulatedMargin
@@ -164,8 +164,8 @@ namespace BreastRadiology.XUnitTests
                          .SetDisplay("Microlobulated margin")
                          .SetDefinition(new Definition()
                              .Line("[PR] Microlobulated margin")
-                             .ValidModalities(Modalities.MG | Modalities.US)
                          )
+                         .ValidModalities(Modalities.MG | Modalities.US)
                          .SetSnomedCode("129739004")
                          .SetSnomedDescription("ClinicalFinding | Lesion with microlobulated margin (Finding)")
                          .SetICD10("129739004")
@@ -186,8 +186,8 @@ namespace BreastRadiology.XUnitTests
                          .SetDisplay("Non circumscribed margin")
                          .SetDefinition(new Definition()
                              .Line("[PR] Non circumscribed margin")
-                             .ValidModalities(Modalities.MRI | Modalities.US)
                          )
+                         .ValidModalities(Modalities.MRI | Modalities.US)
                          .SetSnomedDescription("ClinicalFinding | 129738007 | Lesion with circumscribed margin (Finding)")
                          .SetComment("NEED NOT")
                      //- AutoGen
@@ -200,8 +200,8 @@ namespace BreastRadiology.XUnitTests
                          .SetDisplay("Obscured margin")
                          .SetDefinition(new Definition()
                              .Line("[PR] Obscured margin")
-                             .ValidModalities(Modalities.MG)
                          )
+                         .ValidModalities(Modalities.MG)
                          .SetSnomedCode("129740002")
                          .SetSnomedDescription("ClinicalFinding | Lesion with obscured margin (Finding)")
                          .SetICD10("129740002")
@@ -222,8 +222,8 @@ namespace BreastRadiology.XUnitTests
                          .SetDisplay("Smooth margin")
                          .SetDefinition(new Definition()
                              .Line("[PR] Smooth margin")
-                             .ValidModalities(Modalities.MRI | Modalities.US)
                          )
+                         .ValidModalities(Modalities.MRI | Modalities.US)
                          .SetComment("NOT FOUND")
                      //- AutoGen
                      ,
@@ -235,8 +235,8 @@ namespace BreastRadiology.XUnitTests
                          .SetDisplay("Spiculated margin")
                          .SetDefinition(new Definition()
                              .Line("[PR] Spiculated margin")
-                             .ValidModalities(Modalities.MG | Modalities.MRI | Modalities.US)
                          )
+                         .ValidModalities(Modalities.MG | Modalities.MRI | Modalities.US)
                          .SetSnomedCode("129742005")
                          .SetSnomedDescription("ClinicalFinding | Lesion with spiculated margin (Finding)")
                          .SetICD10("129742005")

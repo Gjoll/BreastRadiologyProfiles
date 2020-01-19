@@ -44,8 +44,8 @@ namespace BreastRadiology.XUnitTests
                                 .SetDisplay("Clinical exam")
                                 .SetDefinition(new Definition()
                                     .Line("[PR] Clinical exam")
-                                    .ValidModalities(Modalities.MG | Modalities.MRI | Modalities.NM | Modalities.US)
                                 )
+                                .ValidModalities(Modalities.MG | Modalities.MRI | Modalities.NM | Modalities.US)
                             //- AutoGen
                             //- ClinicalExam
                             ,
@@ -56,8 +56,8 @@ namespace BreastRadiology.XUnitTests
                                 .SetDisplay("Ductogram")
                                 .SetDefinition(new Definition()
                                     .Line("[PR] Ductogram")
-                                    .ValidModalities(Modalities.MG | Modalities.MRI | Modalities.NM | Modalities.US)
                                 )
+                                .ValidModalities(Modalities.MG | Modalities.MRI | Modalities.NM | Modalities.US)
                                 .SetSnomedDescription("Procedure | 420131003 | Fluoroscopic mammary ductography (Procedure) ")
                             //- AutoGen
                             //- Ductogram
@@ -69,8 +69,8 @@ namespace BreastRadiology.XUnitTests
                                 .SetDisplay("Mammogram")
                                 .SetDefinition(new Definition()
                                     .Line("[PR] Mammogram")
-                                    .ValidModalities(Modalities.MG | Modalities.MRI | Modalities.NM | Modalities.US)
                                 )
+                                .ValidModalities(Modalities.MG | Modalities.MRI | Modalities.NM | Modalities.US)
                             //- AutoGen
                             //- Mammogram
                             ,
@@ -81,8 +81,8 @@ namespace BreastRadiology.XUnitTests
                                 .SetDisplay("MRI")
                                 .SetDefinition(new Definition()
                                     .Line("[PR] MRI")
-                                    .ValidModalities(Modalities.MG | Modalities.MRI | Modalities.NM | Modalities.US)
                                 )
+                                .ValidModalities(Modalities.MG | Modalities.MRI | Modalities.NM | Modalities.US)
                                 .SetSnomedDescription("Procedure | 241615005 | Magnetic resonance imaging of breast (Procedure)")
                             //- AutoGen
                             //- MRI
@@ -94,8 +94,8 @@ namespace BreastRadiology.XUnitTests
                                 .SetDisplay("Outside exam")
                                 .SetDefinition(new Definition()
                                     .Line("[PR] Outside exam")
-                                    .ValidModalities(Modalities.MG)
                                 )
+                                .ValidModalities(Modalities.MG)
                             //- AutoGen
                             //- OutsideExam
                             ,
@@ -106,8 +106,8 @@ namespace BreastRadiology.XUnitTests
                                 .SetDisplay("Scintimammography")
                                 .SetDefinition(new Definition()
                                     .Line("[PR] Scintimammography")
-                                    .ValidModalities(Modalities.NM)
                                 )
+                                .ValidModalities(Modalities.NM)
                             //- AutoGen
                             //- Scintimammography
                             ,
@@ -118,8 +118,8 @@ namespace BreastRadiology.XUnitTests
                                 .SetDisplay("Ultrasound")
                                 .SetDefinition(new Definition()
                                     .Line("[PR] Ultrasound")
-                                    .ValidModalities(Modalities.MG | Modalities.MRI | Modalities.NM | Modalities.US)
                                 )
+                                .ValidModalities(Modalities.MG | Modalities.MRI | Modalities.NM | Modalities.US)
                                 .SetSnomedDescription("Procedure | 47079000 | Ultrasonography of breast (Procedure)")
                             //- AutoGen
                             //- Ultrasound

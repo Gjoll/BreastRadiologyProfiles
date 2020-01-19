@@ -209,8 +209,8 @@ namespace BreastRadiology.XUnitTests
                         .AppendLine($"    .SetDisplay(\"{code}\")")
                         .AppendLine($"    .SetDefinition(new Definition()")
                         .AppendLine($"        .Line(\"[PR] {code}\")")
-                        .AppendLine($"        .ValidModalities({validWith})")
                         .AppendLine($"    )")
+                        .AppendLine($"    .ValidModalities({validWith})")
                         ;
 
                     AppIfNotNull("SetDicom", row[9]);

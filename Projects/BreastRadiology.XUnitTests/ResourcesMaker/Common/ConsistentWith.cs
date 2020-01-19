@@ -103,8 +103,8 @@ namespace BreastRadiology.XUnitTests
                                 .SetDisplay("Abscess")
                                 .SetDefinition(new Definition()
                                     .Line("[PR] Abscess")
-                                    .ValidModalities(Modalities.MG | Modalities.MRI | Modalities.US)
                                 )
+                                .ValidModalities(Modalities.MG | Modalities.MRI | Modalities.US)
                             //- AutoGen
                             //- Abscess
                             ,
@@ -115,8 +115,8 @@ namespace BreastRadiology.XUnitTests
                                 .SetDisplay("Angiolipoma")
                                 .SetDefinition(new Definition()
                                     .Line("[PR] Angiolipoma")
-                                    .ValidModalities(Modalities.MRI | Modalities.US)
                                 )
+                                .ValidModalities(Modalities.MRI | Modalities.US)
                                 .SetSnomedCode("404057003")
                                 .SetSnomedDescription("ClinicalFinding | Angiolipoma (Disorder)")
                                 .SetICD10("404057003")
@@ -130,8 +130,8 @@ namespace BreastRadiology.XUnitTests
                                 .SetDisplay("Apocrine metaplasia")
                                 .SetDefinition(new Definition()
                                     .Line("[PR] Apocrine metaplasia")
-                                    .ValidModalities(Modalities.US)
                                 )
+                                .ValidModalities(Modalities.US)
                                 .SetSnomedDescription("ClinicalFinding | 37009001 | Apocrine metaplasia of breast (Disorder) | [0/0] | N60.89")
                             //- AutoGen
                             //- ApocrineMetaplasia
@@ -143,8 +143,8 @@ namespace BreastRadiology.XUnitTests
                                 .SetDisplay("Artifact")
                                 .SetDefinition(new Definition()
                                     .Line("[PR] Artifact")
-                                    .ValidModalities(Modalities.NM)
                                 )
+                                .ValidModalities(Modalities.NM)
                             //- AutoGen
                             //- Artifact
                             ,
@@ -155,8 +155,8 @@ namespace BreastRadiology.XUnitTests
                                 .SetDisplay("Atypical hyperplasia")
                                 .SetDefinition(new Definition()
                                     .Line("[PR] Atypical hyperplasia")
-                                    .ValidModalities(Modalities.MRI)
                                 )
+                                .ValidModalities(Modalities.MRI)
                             //- AutoGen
                             //- AtypicalHyperplasia
                             ,
@@ -167,8 +167,8 @@ namespace BreastRadiology.XUnitTests
                                 .SetDisplay("Axillary lymph node")
                                 .SetDefinition(new Definition()
                                     .Line("[PR] Axillary lymph node")
-                                    .ValidModalities(Modalities.NM)
                                 )
+                                .ValidModalities(Modalities.NM)
                                 .SetSnomedDescription("BodyStructure | 245269009 | Axillary lymph node group (Bodypart)")
                             //- AutoGen
                             //- AxillaryLymphNode
@@ -180,8 +180,8 @@ namespace BreastRadiology.XUnitTests
                                 .SetDisplay("Carcinoma")
                                 .SetDefinition(new Definition()
                                     .Line("[PR] Carcinoma")
-                                    .ValidModalities(Modalities.MG | Modalities.MRI | Modalities.NM | Modalities.US)
                                 )
+                                .ValidModalities(Modalities.MG | Modalities.MRI | Modalities.NM | Modalities.US)
                                 .SetSnomedDescription("ClinicalFinding | 254838004 | Carcinoma of breast (Disorder) | [4/33] | C50.929")
                             //- AutoGen
                             //- Carcinoma
@@ -193,8 +193,8 @@ namespace BreastRadiology.XUnitTests
                                 .SetDisplay("Carcinoma known")
                                 .SetDefinition(new Definition()
                                     .Line("[PR] Carcinoma known")
-                                    .ValidModalities(Modalities.MG | Modalities.MRI | Modalities.US)
                                 )
+                                .ValidModalities(Modalities.MG | Modalities.MRI | Modalities.US)
                                 .SetSnomedDescription("ClinicalFinding | 254838004 | Carcinoma of breast (Disorder) | [4/33] | C50.929")
                             //- AutoGen
                             //- CarcinomaKnown
@@ -206,8 +206,8 @@ namespace BreastRadiology.XUnitTests
                                 .SetDisplay("Cluster of cysts")
                                 .SetDefinition(new Definition()
                                     .Line("[PR] Cluster of cysts")
-                                    .ValidModalities(Modalities.MG | Modalities.MRI | Modalities.US)
                                 )
+                                .ValidModalities(Modalities.MG | Modalities.MRI | Modalities.US)
                                 .SetSnomedCode("399294002")
                                 .SetOneToMany("one")
                                 .SetSnomedDescription("ClinicalFinding |Cyst of breast (Disorder) ++++++")
@@ -223,8 +223,8 @@ namespace BreastRadiology.XUnitTests
                                 .SetDisplay("Cyst")
                                 .SetDefinition(new Definition()
                                     .Line("[PR] Cyst")
-                                    .ValidModalities(Modalities.MG | Modalities.MRI)
                                 )
+                                .ValidModalities(Modalities.MG | Modalities.MRI)
                                 .SetSnomedCode("399294002")
                                 .SetOneToMany("one")
                                 .SetSnomedDescription("ClinicalFinding |Cyst of breast (Disorder) ")
@@ -239,8 +239,8 @@ namespace BreastRadiology.XUnitTests
                                 .SetDisplay("Cyst complex")
                                 .SetDefinition(new Definition()
                                     .Line("[PR] Cyst complex")
-                                    .ValidModalities(Modalities.MRI | Modalities.US)
                                 )
+                                .ValidModalities(Modalities.MRI | Modalities.US)
                                 .SetSnomedCode("449837001")
                                 .SetOneToMany("one")
                                 .SetSnomedDescription("ClinicalFinding | Complex cyst of breast (Disorder)")
@@ -255,8 +255,8 @@ namespace BreastRadiology.XUnitTests
                                 .SetDisplay("Cyst complicated")
                                 .SetDefinition(new Definition()
                                     .Line("[PR] Cyst complicated")
-                                    .ValidModalities(Modalities.MRI | Modalities.US)
                                 )
+                                .ValidModalities(Modalities.MRI | Modalities.US)
                                 .SetComment("NO CORRECT TERM")
                             //- AutoGen
                             //- CystComplicated
@@ -268,8 +268,8 @@ namespace BreastRadiology.XUnitTests
                                 .SetDisplay("Cyst oil")
                                 .SetDefinition(new Definition()
                                     .Line("[PR] Cyst oil")
-                                    .ValidModalities(Modalities.MG | Modalities.US)
                                 )
+                                .ValidModalities(Modalities.MG | Modalities.US)
                                 .SetComment("NO OIL CYST")
                             //- AutoGen
                             //- CystOil
@@ -281,8 +281,8 @@ namespace BreastRadiology.XUnitTests
                                 .SetDisplay("Cyst sebaceous")
                                 .SetDefinition(new Definition()
                                     .Line("[PR] Cyst sebaceous")
-                                    .ValidModalities(Modalities.US)
                                 )
+                                .ValidModalities(Modalities.US)
                                 .SetSnomedCode("76649007")
                                 .SetOneToMany("one")
                                 .SetSnomedDescription("ClinicalFinding | Sebaceous cyst of skin of breast (Disorder)")
@@ -297,8 +297,8 @@ namespace BreastRadiology.XUnitTests
                                 .SetDisplay("Cyst simple")
                                 .SetDefinition(new Definition()
                                     .Line("[PR] Cyst simple")
-                                    .ValidModalities(Modalities.MRI | Modalities.US)
                                 )
+                                .ValidModalities(Modalities.MRI | Modalities.US)
                                 .SetSnomedCode("399253005")
                                 .SetOneToMany("one")
                                 .SetSnomedDescription("ClinicalFinding | Simple cyst of breast (Disorder)")
@@ -313,8 +313,8 @@ namespace BreastRadiology.XUnitTests
                                 .SetDisplay("Cysts complex")
                                 .SetDefinition(new Definition()
                                     .Line("[PR] Cysts complex")
-                                    .ValidModalities(Modalities.MRI | Modalities.US)
                                 )
+                                .ValidModalities(Modalities.MRI | Modalities.US)
                                 .SetSnomedCode("449837001")
                                 .SetOneToMany("Many")
                                 .SetSnomedDescription("ClinicalFinding | Complex cyst of breast (Disorder)")
@@ -329,8 +329,8 @@ namespace BreastRadiology.XUnitTests
                                 .SetDisplay("Cysts complicated")
                                 .SetDefinition(new Definition()
                                     .Line("[PR] Cysts complicated")
-                                    .ValidModalities(Modalities.MRI | Modalities.US)
                                 )
+                                .ValidModalities(Modalities.MRI | Modalities.US)
                                 .SetComment("NO CORRECT TERM")
                             //- AutoGen
                             //- CystsComplicated
@@ -342,8 +342,8 @@ namespace BreastRadiology.XUnitTests
                                 .SetDisplay("Cysts micro clustered")
                                 .SetDefinition(new Definition()
                                     .Line("[PR] Cysts micro clustered")
-                                    .ValidModalities(Modalities.US)
                                 )
+                                .ValidModalities(Modalities.US)
                                 .SetComment("NO CORRECT TERM")
                             //- AutoGen
                             //- CystsMicroClustered
@@ -355,8 +355,8 @@ namespace BreastRadiology.XUnitTests
                                 .SetDisplay("DCIS")
                                 .SetDefinition(new Definition()
                                     .Line("[PR] DCIS")
-                                    .ValidModalities(Modalities.MG | Modalities.MRI | Modalities.NM | Modalities.US)
                                 )
+                                .ValidModalities(Modalities.MG | Modalities.MRI | Modalities.NM | Modalities.US)
                                 .SetOneToMany("?????")
                                 .SetSnomedDescription("BodyStructure | 399935008 | Ductal carcinoma in situ - category (Morphologic-Abnormality)")
                             //- AutoGen
@@ -369,8 +369,8 @@ namespace BreastRadiology.XUnitTests
                                 .SetDisplay("Debris")
                                 .SetDefinition(new Definition()
                                     .Line("[PR] Debris")
-                                    .ValidModalities(Modalities.MG | Modalities.US)
                                 )
+                                .ValidModalities(Modalities.MG | Modalities.US)
                             //- AutoGen
                             //- Debris
                             ,
@@ -381,8 +381,8 @@ namespace BreastRadiology.XUnitTests
                                 .SetDisplay("Deodorant")
                                 .SetDefinition(new Definition()
                                     .Line("[PR] Deodorant")
-                                    .ValidModalities(Modalities.MG)
                                 )
+                                .ValidModalities(Modalities.MG)
                                 .SetSnomedCode("39432004")
                                 .SetSnomedDescription("PharmaceuticalBiologicProduct | Deodorant (Product)")
                                 .SetICD10("39432004")
@@ -396,8 +396,8 @@ namespace BreastRadiology.XUnitTests
                                 .SetDisplay("Dermal calcification")
                                 .SetDefinition(new Definition()
                                     .Line("[PR] Dermal calcification")
-                                    .ValidModalities(Modalities.MG)
                                 )
+                                .ValidModalities(Modalities.MG)
                             //- AutoGen
                             //- DermalCalcification
                             ,
@@ -408,8 +408,8 @@ namespace BreastRadiology.XUnitTests
                                 .SetDisplay("Duct ectasia")
                                 .SetDefinition(new Definition()
                                     .Line("[PR] Duct ectasia")
-                                    .ValidModalities(Modalities.MRI | Modalities.US)
                                 )
+                                .ValidModalities(Modalities.MRI | Modalities.US)
                                 .SetSnomedDescription("ClinicalFinding | 22049009 | Mammary duct ectasia (Disorder) | [0/0] | N60.49 ")
                             //- AutoGen
                             //- DuctEctasia
@@ -421,8 +421,8 @@ namespace BreastRadiology.XUnitTests
                                 .SetDisplay("Edema")
                                 .SetDefinition(new Definition()
                                     .Line("[PR] Edema")
-                                    .ValidModalities(Modalities.MRI | Modalities.US)
                                 )
+                                .ValidModalities(Modalities.MRI | Modalities.US)
                                 .SetSnomedCode("290077003")
                                 .SetSnomedDescription("ClinicalFinding | Edema of breast (Finding)")
                                 .SetICD10("290077003")
@@ -436,8 +436,8 @@ namespace BreastRadiology.XUnitTests
                                 .SetDisplay("Fat lobule")
                                 .SetDefinition(new Definition()
                                     .Line("[PR] Fat lobule")
-                                    .ValidModalities(Modalities.US)
                                 )
+                                .ValidModalities(Modalities.US)
                                 .SetSnomedDescription("no direct match possible fat necrosis?")
                             //- AutoGen
                             //- FatLobule
@@ -449,8 +449,8 @@ namespace BreastRadiology.XUnitTests
                                 .SetDisplay("Fat necrosis")
                                 .SetDefinition(new Definition()
                                     .Line("[PR] Fat necrosis")
-                                    .ValidModalities(Modalities.MG | Modalities.MRI | Modalities.US)
                                 )
+                                .ValidModalities(Modalities.MG | Modalities.MRI | Modalities.US)
                                 .SetSnomedCode("21381006")
                                 .SetSnomedDescription("ClinicalFinding | Fat necrosis of breast (Disorder) ")
                                 .SetICD10("21381006")
@@ -464,8 +464,8 @@ namespace BreastRadiology.XUnitTests
                                 .SetDisplay("Fibroadenolipoma")
                                 .SetDefinition(new Definition()
                                     .Line("[PR] Fibroadenolipoma")
-                                    .ValidModalities(Modalities.MG | Modalities.US)
                                 )
+                                .ValidModalities(Modalities.MG | Modalities.US)
                                 .SetComment("NO CORRECT TERM")
                             //- AutoGen
                             //- Fibroadenolipoma
@@ -477,8 +477,8 @@ namespace BreastRadiology.XUnitTests
                                 .SetDisplay("Fibroadenoma")
                                 .SetDefinition(new Definition()
                                     .Line("[PR] Fibroadenoma")
-                                    .ValidModalities(Modalities.MG | Modalities.MRI | Modalities.NM | Modalities.US)
                                 )
+                                .ValidModalities(Modalities.MG | Modalities.MRI | Modalities.NM | Modalities.US)
                             //- AutoGen
                             //- Fibroadenoma
                             ,
@@ -489,8 +489,8 @@ namespace BreastRadiology.XUnitTests
                                 .SetDisplay("Fibroadenoma degenerating")
                                 .SetDefinition(new Definition()
                                     .Line("[PR] Fibroadenoma degenerating")
-                                    .ValidModalities(Modalities.MG)
                                 )
+                                .ValidModalities(Modalities.MG)
                             //- AutoGen
                             //- FibroadenomaDegenerating
                             ,
@@ -501,8 +501,8 @@ namespace BreastRadiology.XUnitTests
                                 .SetDisplay("Fibrocystic change")
                                 .SetDefinition(new Definition()
                                     .Line("[PR] Fibrocystic change")
-                                    .ValidModalities(Modalities.MG | Modalities.MRI | Modalities.US)
                                 )
+                                .ValidModalities(Modalities.MG | Modalities.MRI | Modalities.US)
                                 .SetSnomedCode("367647000")
                                 .SetSnomedDescription("BodyStructure | Fibrocystic change ")
                                 .SetICD10("367647000")
@@ -517,8 +517,8 @@ namespace BreastRadiology.XUnitTests
                                 .SetDisplay("Fibroglandular tissue")
                                 .SetDefinition(new Definition()
                                     .Line("[PR] Fibroglandular tissue")
-                                    .ValidModalities(Modalities.MG | Modalities.MRI | Modalities.US)
                                 )
+                                .ValidModalities(Modalities.MG | Modalities.MRI | Modalities.US)
                             //- AutoGen
                             //- FibroglandularTissue
                             ,
@@ -529,8 +529,8 @@ namespace BreastRadiology.XUnitTests
                                 .SetDisplay("Fibrosis")
                                 .SetDefinition(new Definition()
                                     .Line("[PR] Fibrosis")
-                                    .ValidModalities(Modalities.MG | Modalities.MRI | Modalities.US)
                                 )
+                                .ValidModalities(Modalities.MG | Modalities.MRI | Modalities.US)
                                 .SetSnomedDescription("???????????")
                             //- AutoGen
                             //- Fibrosis
@@ -542,8 +542,8 @@ namespace BreastRadiology.XUnitTests
                                 .SetDisplay("Fibrous ridge")
                                 .SetDefinition(new Definition()
                                     .Line("[PR] Fibrous ridge")
-                                    .ValidModalities(Modalities.US)
                                 )
+                                .ValidModalities(Modalities.US)
                             //- AutoGen
                             //- FibrousRidge
                             ,
@@ -554,8 +554,8 @@ namespace BreastRadiology.XUnitTests
                                 .SetDisplay("Folliculitis")
                                 .SetDefinition(new Definition()
                                     .Line("[PR] Folliculitis")
-                                    .ValidModalities(Modalities.US)
                                 )
+                                .ValidModalities(Modalities.US)
                                 .SetSnomedDescription("ClinicalFinding | 13600006 | Folliculitis (Disorder) | [6/113] | L73.9 ")
                             //- AutoGen
                             //- Folliculitis
@@ -567,8 +567,8 @@ namespace BreastRadiology.XUnitTests
                                 .SetDisplay("Gynecomastia")
                                 .SetDefinition(new Definition()
                                     .Line("[PR] Gynecomastia")
-                                    .ValidModalities(Modalities.US)
                                 )
+                                .ValidModalities(Modalities.US)
                             //- AutoGen
                             //- Gynecomastia
                             ,
@@ -579,8 +579,8 @@ namespace BreastRadiology.XUnitTests
                                 .SetDisplay("Hamartoma")
                                 .SetDefinition(new Definition()
                                     .Line("[PR] Hamartoma")
-                                    .ValidModalities(Modalities.MG | Modalities.MRI | Modalities.US)
                                 )
+                                .ValidModalities(Modalities.MG | Modalities.MRI | Modalities.US)
                                 .SetSnomedCode("51398009")
                                 .SetSnomedDescription("BodyStructure | Hamartoma (Morphologic-Abnormality)")
                                 .SetICD10("51398009")
@@ -594,8 +594,8 @@ namespace BreastRadiology.XUnitTests
                                 .SetDisplay("Hematoma")
                                 .SetDefinition(new Definition()
                                     .Line("[PR] Hematoma")
-                                    .ValidModalities(Modalities.MG | Modalities.MRI | Modalities.US)
                                 )
+                                .ValidModalities(Modalities.MG | Modalities.MRI | Modalities.US)
                                 .SetSnomedCode("302924003")
                                 .SetSnomedDescription("ClinicalFinding | Breast hematoma (Disorder) | N64.89")
                                 .SetICD10("302924003")
@@ -609,8 +609,8 @@ namespace BreastRadiology.XUnitTests
                                 .SetDisplay("Hormonal stimulation")
                                 .SetDefinition(new Definition()
                                     .Line("[PR] Hormonal stimulation")
-                                    .ValidModalities(Modalities.US)
                                 )
+                                .ValidModalities(Modalities.US)
                             //- AutoGen
                             //- HormonalStimulation
                             ,
@@ -621,8 +621,8 @@ namespace BreastRadiology.XUnitTests
                                 .SetDisplay("Intracystic lesion")
                                 .SetDefinition(new Definition()
                                     .Line("[PR] Intracystic lesion")
-                                    .ValidModalities(Modalities.US)
                                 )
+                                .ValidModalities(Modalities.US)
                             //- AutoGen
                             //- IntracysticLesion
                             ,
@@ -633,8 +633,8 @@ namespace BreastRadiology.XUnitTests
                                 .SetDisplay("Intramammary node")
                                 .SetDefinition(new Definition()
                                     .Line("[PR] Intramammary node")
-                                    .ValidModalities(Modalities.MG | Modalities.NM)
                                 )
+                                .ValidModalities(Modalities.MG | Modalities.NM)
                                 .SetSnomedDescription("BodyStructure | 443159006 | Intramammary lymph node group (Bodypart)")
                             //- AutoGen
                             //- IntramammaryNode
@@ -646,8 +646,8 @@ namespace BreastRadiology.XUnitTests
                                 .SetDisplay("Lipoma")
                                 .SetDefinition(new Definition()
                                     .Line("[PR] Lipoma")
-                                    .ValidModalities(Modalities.MG | Modalities.MRI | Modalities.US)
                                 )
+                                .ValidModalities(Modalities.MG | Modalities.MRI | Modalities.US)
                                 .SetSnomedCode("276891009")
                                 .SetSnomedDescription("ClinicalFinding | Lipoma of breast (Disorder)")
                                 .SetICD10("276891009")
@@ -661,8 +661,8 @@ namespace BreastRadiology.XUnitTests
                                 .SetDisplay("Lumpectomy cavity")
                                 .SetDefinition(new Definition()
                                     .Line("[PR] Lumpectomy cavity")
-                                    .ValidModalities(Modalities.MRI | Modalities.US)
                                 )
+                                .ValidModalities(Modalities.MRI | Modalities.US)
                                 .SetSnomedDescription("BodyStructure | 261719000 | Breast cavity (Morphologic-Abnormality) ")
                                 .SetComment("Need to create")
                             //- AutoGen
@@ -675,8 +675,8 @@ namespace BreastRadiology.XUnitTests
                                 .SetDisplay("Lumpectomy site")
                                 .SetDefinition(new Definition()
                                     .Line("[PR] Lumpectomy site")
-                                    .ValidModalities(Modalities.MRI)
                                 )
+                                .ValidModalities(Modalities.MRI)
                                 .SetSnomedDescription("BodyStructure | 261719000 | Breast cavity (Morphologic-Abnormality)")
                                 .SetComment("needs better")
                             //- AutoGen
@@ -689,8 +689,8 @@ namespace BreastRadiology.XUnitTests
                                 .SetDisplay("Lymph node")
                                 .SetDefinition(new Definition()
                                     .Line("[PR] Lymph node")
-                                    .ValidModalities(Modalities.MG | Modalities.MRI | Modalities.NM | Modalities.US)
                                 )
+                                .ValidModalities(Modalities.MG | Modalities.MRI | Modalities.NM | Modalities.US)
                             //- AutoGen
                             //- LymphNode
                             ,
@@ -701,8 +701,8 @@ namespace BreastRadiology.XUnitTests
                                 .SetDisplay("Lymph node enlarged")
                                 .SetDefinition(new Definition()
                                     .Line("[PR] Lymph node enlarged")
-                                    .ValidModalities(Modalities.MRI | Modalities.US)
                                 )
+                                .ValidModalities(Modalities.MRI | Modalities.US)
                                 .SetSnomedCode("274741002 ")
                                 .SetSnomedDescription("ClinicalFinding | Generalized enlarged lymph nodes (Disorder) | [0/0] | R59.1")
                                 .SetICD10("274741002 ")
@@ -716,8 +716,8 @@ namespace BreastRadiology.XUnitTests
                                 .SetDisplay("Lymph node normal")
                                 .SetDefinition(new Definition()
                                     .Line("[PR] Lymph node normal")
-                                    .ValidModalities(Modalities.MG | Modalities.MRI | Modalities.US)
                                 )
+                                .ValidModalities(Modalities.MG | Modalities.MRI | Modalities.US)
                             //- AutoGen
                             //- LymphNodeNormal
                             ,
@@ -728,8 +728,8 @@ namespace BreastRadiology.XUnitTests
                                 .SetDisplay("Lymph node pathological")
                                 .SetDefinition(new Definition()
                                     .Line("[PR] Lymph node pathological")
-                                    .ValidModalities(Modalities.MRI)
                                 )
+                                .ValidModalities(Modalities.MRI)
                             //- AutoGen
                             //- LymphNodePathological
                             ,
@@ -740,8 +740,8 @@ namespace BreastRadiology.XUnitTests
                                 .SetDisplay("Mass solid")
                                 .SetDefinition(new Definition()
                                     .Line("[PR] Mass solid")
-                                    .ValidModalities(Modalities.MG | Modalities.MRI | Modalities.US)
                                 )
+                                .ValidModalities(Modalities.MG | Modalities.MRI | Modalities.US)
                             //- AutoGen
                             //- MassSolid
                             ,
@@ -752,8 +752,8 @@ namespace BreastRadiology.XUnitTests
                                 .SetDisplay("Mass solid w/tumor vasc")
                                 .SetDefinition(new Definition()
                                     .Line("[PR] Mass solid w/tumor vasc")
-                                    .ValidModalities(Modalities.MRI)
                                 )
+                                .ValidModalities(Modalities.MRI)
                             //- AutoGen
                             //- MassSolidW/tumorVasc
                             ,
@@ -764,8 +764,8 @@ namespace BreastRadiology.XUnitTests
                                 .SetDisplay("Mastitis")
                                 .SetDefinition(new Definition()
                                     .Line("[PR] Mastitis")
-                                    .ValidModalities(Modalities.MG | Modalities.MRI | Modalities.US)
                                 )
+                                .ValidModalities(Modalities.MG | Modalities.MRI | Modalities.US)
                                 .SetSnomedDescription("ClinicalFinding | 45198002 | Mastitis (Disorder) | [3/51] | P39.0 | Neonatal infective mastitis | N61 | Inflammatory disorders of breast | ")
                             //- AutoGen
                             //- Mastitis
@@ -777,8 +777,8 @@ namespace BreastRadiology.XUnitTests
                                 .SetDisplay("Milk of calcium")
                                 .SetDefinition(new Definition()
                                     .Line("[PR] Milk of calcium")
-                                    .ValidModalities(Modalities.MG)
                                 )
+                                .ValidModalities(Modalities.MG)
                                 .SetDicom("F-01765")
                                 .SetSnomedCode("129753004")
                                 .SetSnomedDescription("ClinicalFinding | 129753004 | Milk of calcium radiographic calcification (Finding)")
@@ -793,8 +793,8 @@ namespace BreastRadiology.XUnitTests
                                 .SetDisplay("Multi-focal cancer")
                                 .SetDefinition(new Definition()
                                     .Line("[PR] Multi-focal cancer")
-                                    .ValidModalities(Modalities.NM)
                                 )
+                                .ValidModalities(Modalities.NM)
                             //- AutoGen
                             //- Multi-focalCancer
                             ,
@@ -805,8 +805,8 @@ namespace BreastRadiology.XUnitTests
                                 .SetDisplay("Papillary lesion")
                                 .SetDefinition(new Definition()
                                     .Line("[PR] Papillary lesion")
-                                    .ValidModalities(Modalities.MG | Modalities.US)
                                 )
+                                .ValidModalities(Modalities.MG | Modalities.US)
                                 .SetSnomedDescription("need help")
                             //- AutoGen
                             //- PapillaryLesion
@@ -818,8 +818,8 @@ namespace BreastRadiology.XUnitTests
                                 .SetDisplay("Papilloma")
                                 .SetDefinition(new Definition()
                                     .Line("[PR] Papilloma")
-                                    .ValidModalities(Modalities.MG | Modalities.MRI | Modalities.US)
                                 )
+                                .ValidModalities(Modalities.MG | Modalities.MRI | Modalities.US)
                                 .SetSnomedCode("99571000119102")
                                 .SetSnomedDescription("ClinicalFinding | Papilloma of breast (Disorder)")
                                 .SetICD10("99571000119102")
@@ -834,8 +834,8 @@ namespace BreastRadiology.XUnitTests
                                 .SetDisplay("Phyllodes tumor")
                                 .SetDefinition(new Definition()
                                     .Line("[PR] Phyllodes tumor")
-                                    .ValidModalities(Modalities.MRI | Modalities.US)
                                 )
+                                .ValidModalities(Modalities.MRI | Modalities.US)
                                 .SetSnomedDescription("ClinicalFinding | 712989008 | Phyllodes tumor of breast (Disorder) | D48.6 |")
                             //- AutoGen
                             //- PhyllodesTumor
@@ -847,8 +847,8 @@ namespace BreastRadiology.XUnitTests
                                 .SetDisplay("Post lumpectomy scar")
                                 .SetDefinition(new Definition()
                                     .Line("[PR] Post lumpectomy scar")
-                                    .ValidModalities(Modalities.MG)
                                 )
+                                .ValidModalities(Modalities.MG)
                                 .SetOneToMany("???")
                                 .SetSnomedDescription("BodyStructure | 63130001 | Surgical scar (Morphologic-Abnormality)")
                             //- AutoGen
@@ -861,8 +861,8 @@ namespace BreastRadiology.XUnitTests
                                 .SetDisplay("Post surgical scar")
                                 .SetDefinition(new Definition()
                                     .Line("[PR] Post surgical scar")
-                                    .ValidModalities(Modalities.MG | Modalities.NM)
                                 )
+                                .ValidModalities(Modalities.MG | Modalities.NM)
                                 .SetSnomedDescription("BodyStructure | 63130001 | Surgical scar (Morphologic-Abnormality)")
                             //- AutoGen
                             //- PostSurgicalScar
@@ -874,8 +874,8 @@ namespace BreastRadiology.XUnitTests
                                 .SetDisplay("Previous biopsy")
                                 .SetDefinition(new Definition()
                                     .Line("[PR] Previous biopsy")
-                                    .ValidModalities(Modalities.MG)
                                 )
+                                .ValidModalities(Modalities.MG)
                             //- AutoGen
                             //- PreviousBiopsy
                             ,
@@ -886,8 +886,8 @@ namespace BreastRadiology.XUnitTests
                                 .SetDisplay("Previous surgery")
                                 .SetDefinition(new Definition()
                                     .Line("[PR] Previous surgery")
-                                    .ValidModalities(Modalities.MG)
                                 )
+                                .ValidModalities(Modalities.MG)
                             //- AutoGen
                             //- PreviousSurgery
                             ,
@@ -898,8 +898,8 @@ namespace BreastRadiology.XUnitTests
                                 .SetDisplay("Previous trauma")
                                 .SetDefinition(new Definition()
                                     .Line("[PR] Previous trauma")
-                                    .ValidModalities(Modalities.MG)
                                 )
+                                .ValidModalities(Modalities.MG)
                                 .SetSnomedDescription("ClinicalFinding | 62112002 | Injury of breast (Disorder) | [4/41] | S29.9XX?")
                                 .SetComment("NEED TO INDICATE PREVIOUS")
                             //- AutoGen
@@ -912,8 +912,8 @@ namespace BreastRadiology.XUnitTests
                                 .SetDisplay("Radial scar")
                                 .SetDefinition(new Definition()
                                     .Line("[PR] Radial scar")
-                                    .ValidModalities(Modalities.MG | Modalities.US)
                                 )
+                                .ValidModalities(Modalities.MG | Modalities.US)
                                 .SetSnomedCode("390787006")
                                 .SetSnomedDescription("ClinicalFinding | Radial scar of breast (Finding)")
                                 .SetICD10("390787006")
@@ -927,8 +927,8 @@ namespace BreastRadiology.XUnitTests
                                 .SetDisplay("Radiation changes")
                                 .SetDefinition(new Definition()
                                     .Line("[PR] Radiation changes")
-                                    .ValidModalities(Modalities.MRI)
                                 )
+                                .ValidModalities(Modalities.MRI)
                                 .SetSnomedCode("143501000119107")
                                 .SetSnomedDescription("SituationWithExplicitContext  | History of radiation therapy to breast area (Situation)")
                                 .SetICD10("143501000119107")
@@ -942,8 +942,8 @@ namespace BreastRadiology.XUnitTests
                                 .SetDisplay("Radiation therapy")
                                 .SetDefinition(new Definition()
                                     .Line("[PR] Radiation therapy")
-                                    .ValidModalities(Modalities.MRI)
                                 )
+                                .ValidModalities(Modalities.MRI)
                                 .SetSnomedCode("429479009")
                                 .SetSnomedDescription("SituationWithExplicitContext | History of radiation therapy (Situation)")
                                 .SetICD10("429479009")
@@ -957,8 +957,8 @@ namespace BreastRadiology.XUnitTests
                                 .SetDisplay("Scar")
                                 .SetDefinition(new Definition()
                                     .Line("[PR] Scar")
-                                    .ValidModalities(Modalities.MRI | Modalities.US)
                                 )
+                                .ValidModalities(Modalities.MRI | Modalities.US)
                             //- AutoGen
                             //- Scar
                             ,
@@ -969,8 +969,8 @@ namespace BreastRadiology.XUnitTests
                                 .SetDisplay("Scar with shadowing")
                                 .SetDefinition(new Definition()
                                     .Line("[PR] Scar with shadowing")
-                                    .ValidModalities(Modalities.MRI | Modalities.US)
                                 )
+                                .ValidModalities(Modalities.MRI | Modalities.US)
                             //- AutoGen
                             //- ScarWithShadowing
                             ,
@@ -981,8 +981,8 @@ namespace BreastRadiology.XUnitTests
                                 .SetDisplay("Sclerosing adenosis")
                                 .SetDefinition(new Definition()
                                     .Line("[PR] Sclerosing adenosis")
-                                    .ValidModalities(Modalities.MG)
                                 )
+                                .ValidModalities(Modalities.MG)
                             //- AutoGen
                             //- SclerosingAdenosis
                             ,
@@ -993,8 +993,8 @@ namespace BreastRadiology.XUnitTests
                                 .SetDisplay("Secretory calcification")
                                 .SetDefinition(new Definition()
                                     .Line("[PR] Secretory calcification")
-                                    .ValidModalities(Modalities.MG)
                                 )
+                                .ValidModalities(Modalities.MG)
                                 .SetSnomedDescription("??????????????")
                             //- AutoGen
                             //- SecretoryCalcification
@@ -1006,8 +1006,8 @@ namespace BreastRadiology.XUnitTests
                                 .SetDisplay("Sentinel node")
                                 .SetDefinition(new Definition()
                                     .Line("[PR] Sentinel node")
-                                    .ValidModalities(Modalities.NM)
                                 )
+                                .ValidModalities(Modalities.NM)
                             //- AutoGen
                             //- SentinelNode
                             ,
@@ -1018,8 +1018,8 @@ namespace BreastRadiology.XUnitTests
                                 .SetDisplay("Seroma")
                                 .SetDefinition(new Definition()
                                     .Line("[PR] Seroma")
-                                    .ValidModalities(Modalities.MG | Modalities.MRI | Modalities.US)
                                 )
+                                .ValidModalities(Modalities.MG | Modalities.MRI | Modalities.US)
                                 .SetSnomedCode("297178008")
                                 .SetSnomedDescription("ClinicalFinding | Breast seroma (Disorder)")
                                 .SetICD10("297178008")
@@ -1033,8 +1033,8 @@ namespace BreastRadiology.XUnitTests
                                 .SetDisplay("Skin lesion")
                                 .SetDefinition(new Definition()
                                     .Line("[PR] Skin lesion")
-                                    .ValidModalities(Modalities.MG)
                                 )
+                                .ValidModalities(Modalities.MG)
                                 .SetSnomedCode("126510002")
                                 .SetSnomedDescription("ClinicalFinding | Neoplasm of skin of breast (Disorder)")
                                 .SetICD10("126510002")
@@ -1048,8 +1048,8 @@ namespace BreastRadiology.XUnitTests
                                 .SetDisplay("Surgery")
                                 .SetDefinition(new Definition()
                                     .Line("[PR] Surgery")
-                                    .ValidModalities(Modalities.MRI)
                                 )
+                                .ValidModalities(Modalities.MRI)
                             //- AutoGen
                             //- Surgery
                             ,
@@ -1060,8 +1060,8 @@ namespace BreastRadiology.XUnitTests
                                 .SetDisplay("Trauma")
                                 .SetDefinition(new Definition()
                                     .Line("[PR] Trauma")
-                                    .ValidModalities(Modalities.MRI)
                                 )
+                                .ValidModalities(Modalities.MRI)
                                 .SetSnomedDescription("ClinicalFinding | 62112002 | Injury of breast (Disorder) ")
                                 .SetComment("Need help no direct match")
                             //- AutoGen
@@ -1074,8 +1074,8 @@ namespace BreastRadiology.XUnitTests
                                 .SetDisplay("Vascular calcifications")
                                 .SetDefinition(new Definition()
                                     .Line("[PR] Vascular calcifications")
-                                    .ValidModalities(Modalities.MG)
                                 )
+                                .ValidModalities(Modalities.MG)
                                 .SetSnomedDescription("ClinicalFinding | 396779001 | Breast arterial calcification (Finding) | [0/0] | R92.1 ")
                             //- AutoGen
                             //- VascularCalcifications
@@ -1087,8 +1087,8 @@ namespace BreastRadiology.XUnitTests
                                 .SetDisplay("Venous stasis")
                                 .SetDefinition(new Definition()
                                     .Line("[PR] Venous stasis")
-                                    .ValidModalities(Modalities.NM)
                                 )
+                                .ValidModalities(Modalities.NM)
                                 .SetSnomedDescription("ClinicalFinding | 71897006 | Venous stasis (Finding) | [0/0] | I87.8")
                             //- AutoGen
                             //- VenousStasis
@@ -1116,8 +1116,8 @@ namespace BreastRadiology.XUnitTests
                                 .SetDisplay("Likely represents")
                                 .SetDefinition(new Definition()
                                     .Line("[PR] Likely represents")
-                                    .ValidModalities(Modalities.MG | Modalities.MRI | Modalities.NM | Modalities.US)
                                 )
+                                .ValidModalities(Modalities.MG | Modalities.MRI | Modalities.NM | Modalities.US)
                                 .SetPenCode("Qualifier")
                             //- AutoGen
                             //- LikelyRepresents
@@ -1129,8 +1129,8 @@ namespace BreastRadiology.XUnitTests
                                 .SetDisplay("Most likely")
                                 .SetDefinition(new Definition()
                                     .Line("[PR] Most likely")
-                                    .ValidModalities(Modalities.MG | Modalities.US)
                                 )
+                                .ValidModalities(Modalities.MG | Modalities.US)
                                 .SetPenCode("Qualifier")
                             //- AutoGen
                             //- MostLikely
@@ -1142,8 +1142,8 @@ namespace BreastRadiology.XUnitTests
                                 .SetDisplay("Resembles")
                                 .SetDefinition(new Definition()
                                     .Line("[PR] Resembles")
-                                    .ValidModalities(Modalities.MG | Modalities.MRI | Modalities.NM | Modalities.US)
                                 )
+                                .ValidModalities(Modalities.MG | Modalities.MRI | Modalities.NM | Modalities.US)
                                 .SetPenCode("Qualifier")
                             //- AutoGen
                             //- Resembles
@@ -1155,8 +1155,8 @@ namespace BreastRadiology.XUnitTests
                                 .SetDisplay("w/differential diagnosis")
                                 .SetDefinition(new Definition()
                                     .Line("[PR] w/differential diagnosis")
-                                    .ValidModalities(Modalities.MG | Modalities.MRI | Modalities.NM | Modalities.US)
                                 )
+                                .ValidModalities(Modalities.MG | Modalities.MRI | Modalities.NM | Modalities.US)
                                 .SetPenCode("Qualifier")
                             //- AutoGen
                             //- w/differentialDiagnosis

@@ -63,9 +63,22 @@ namespace BreastRadiology.XUnitTests
 
         class ConceptDef
         {
-            public String Code;
-            public String Display;
-            public String Definition;
+            public String Code { get; set; }
+            public String Display { get; set; }
+            public String Definition
+            {
+                get
+                {
+                    StringBuilder sb = new StringBuilder();
+                    sb.Append(definitionText);
+                    if (String.IsNullOrEmpty(modalities) == false)
+                        sb.AppendLine(modalities);
+                    return sb.ToString();
+                }
+            }
+            String modalities { get; set; }
+
+            String definitionText;
 
             public ConceptDef()
             {
@@ -85,7 +98,7 @@ namespace BreastRadiology.XUnitTests
 
             public ConceptDef SetDefinition(Definition def)
             {
-                this.Definition = def.ToString();
+                this.definitionText = def.ToString();
                 return this;
             }
 
@@ -93,7 +106,7 @@ namespace BreastRadiology.XUnitTests
             {
                 this.Code = code.Code;
                 this.Display = code.Display;
-                this.Definition = definition.ToString();
+                this.definitionText = definition.ToString();
             }
 
             public ConceptDef(String code, String display, Definition definition)
@@ -107,7 +120,26 @@ namespace BreastRadiology.XUnitTests
                     throw new Exception("Empty definition");
                 this.Code = code;
                 this.Display = display;
-                this.Definition = definitionStr;
+                this.definitionText = definitionStr;
+            }
+
+            public ConceptDef ValidModalities(Modalities modalities)
+            {
+                StringBuilder sb = new StringBuilder();
+                void Add(Modalities flag)
+                {
+                    if ((modalities & flag) == flag)
+                        sb.Append($" {flag.ToString()}");
+                }
+
+                sb.Append("Valid for the following modalities:");
+                Add(Modalities.MG);
+                Add(Modalities.US);
+                Add(Modalities.MRI);
+                Add(Modalities.NM);
+                sb.AppendLine(".");
+                this.modalities = sb.ToString();
+                return this;
             }
 
             public ConceptDef SetDicom(String value)

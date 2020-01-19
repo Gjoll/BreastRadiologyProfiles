@@ -32,8 +32,8 @@ namespace BreastRadiology.XUnitTests
                                 .SetDisplay("BB pellet")
                                 .SetDefinition(new Definition()
                                     .Line("[PR] BB pellet")
-                                    .ValidModalities(Modalities.MG | Modalities.MRI | Modalities.US)
                                 )
+                                .ValidModalities(Modalities.MG | Modalities.MRI | Modalities.US)
                                 .SetOneToMany("many")
                                 .SetSnomedDescription("ClinicalFinding | 283574001 | Pellet wound of breast (Disorder) | [0/0] | S21.039? ")
                             //- AutoGen
@@ -46,8 +46,8 @@ namespace BreastRadiology.XUnitTests
                                 .SetDisplay("Biopsy clip")
                                 .SetDefinition(new Definition()
                                     .Line("[PR] Biopsy clip")
-                                    .ValidModalities(Modalities.MG | Modalities.MRI | Modalities.US)
                                 )
+                                .ValidModalities(Modalities.MG | Modalities.MRI | Modalities.US)
                                 .SetSnomedCode("470272007")
                                 .SetSnomedDescription("PhysicalObject | Implantable lesion localization marker (Object)")
                                 .SetICD10("470272007")
@@ -61,8 +61,8 @@ namespace BreastRadiology.XUnitTests
                                 .SetDisplay("Breast marker")
                                 .SetDefinition(new Definition()
                                     .Line("[PR] Breast marker")
-                                    .ValidModalities(Modalities.MRI)
                                 )
+                                .ValidModalities(Modalities.MRI)
                                 .SetSnomedCode("470272007")
                                 .SetSnomedDescription("PhysicalObject | Implantable lesion localization marker (Object)")
                                 .SetICD10("470272007")
@@ -76,8 +76,8 @@ namespace BreastRadiology.XUnitTests
                                 .SetDisplay("Calcification")
                                 .SetDefinition(new Definition()
                                     .Line("[PR] Calcification")
-                                    .ValidModalities(Modalities.MRI)
                                 )
+                                .ValidModalities(Modalities.MRI)
                             //- AutoGen
                             //- Calcification
                             ,
@@ -88,8 +88,8 @@ namespace BreastRadiology.XUnitTests
                                 .SetDisplay("Catheter sleeves")
                                 .SetDefinition(new Definition()
                                     .Line("[PR] Catheter sleeves")
-                                    .ValidModalities(Modalities.MG | Modalities.MRI | Modalities.US)
                                 )
+                                .ValidModalities(Modalities.MG | Modalities.MRI | Modalities.US)
                             //- AutoGen
                             //- CatheterSleeves
                             ,
@@ -100,8 +100,8 @@ namespace BreastRadiology.XUnitTests
                                 .SetDisplay("Chemotherapy port")
                                 .SetDefinition(new Definition()
                                     .Line("[PR] Chemotherapy port")
-                                    .ValidModalities(Modalities.MG)
                                 )
+                                .ValidModalities(Modalities.MG)
                             //- AutoGen
                             //- ChemotherapyPort
                             ,
@@ -112,8 +112,8 @@ namespace BreastRadiology.XUnitTests
                                 .SetDisplay("Clip")
                                 .SetDefinition(new Definition()
                                     .Line("[PR] Clip")
-                                    .ValidModalities(Modalities.MG | Modalities.MRI | Modalities.US)
                                 )
+                                .ValidModalities(Modalities.MG | Modalities.MRI | Modalities.US)
                                 .SetSnomedCode("470342004")
                                 .SetOneToMany("many")
                                 .SetSnomedDescription("PhysicalObject | Implantable tissue clip (Object)")
@@ -128,8 +128,8 @@ namespace BreastRadiology.XUnitTests
                                 .SetDisplay("Coil")
                                 .SetDefinition(new Definition()
                                     .Line("[PR] Coil")
-                                    .ValidModalities(Modalities.MG | Modalities.MRI | Modalities.US)
                                 )
+                                .ValidModalities(Modalities.MG | Modalities.MRI | Modalities.US)
                                 .SetSnomedCode("470342004")
                                 .SetOneToMany("one")
                                 .SetSnomedDescription("PhysicalObject | Implantable tissue clip (Object)")
@@ -144,8 +144,8 @@ namespace BreastRadiology.XUnitTests
                                 .SetDisplay("Glass")
                                 .SetDefinition(new Definition()
                                     .Line("[PR] Glass")
-                                    .ValidModalities(Modalities.MG | Modalities.MRI | Modalities.US)
                                 )
+                                .ValidModalities(Modalities.MG | Modalities.MRI | Modalities.US)
                                 .SetSnomedCode("283258005")
                                 .SetSnomedDescription("ClinicalFinding | Glass in breast (Disorder)")
                                 .SetICD10("283258005")
@@ -159,8 +159,8 @@ namespace BreastRadiology.XUnitTests
                                 .SetDisplay("Gold seed")
                                 .SetDefinition(new Definition()
                                     .Line("[PR] Gold seed")
-                                    .ValidModalities(Modalities.MG | Modalities.MRI | Modalities.US)
                                 )
+                                .ValidModalities(Modalities.MG | Modalities.MRI | Modalities.US)
                             //- AutoGen
                             //- GoldSeed
                             ,
@@ -171,8 +171,8 @@ namespace BreastRadiology.XUnitTests
                                 .SetDisplay("Gunshot wound")
                                 .SetDefinition(new Definition()
                                     .Line("[PR] Gunshot wound")
-                                    .ValidModalities(Modalities.MG | Modalities.MRI | Modalities.US)
                                 )
+                                .ValidModalities(Modalities.MG | Modalities.MRI | Modalities.US)
                                 .SetSnomedDescription("ClinicalFinding | 425055008 | Gunshot entry wound (Disorder) | [0/0] | T14.8")
                             //- AutoGen
                             //- GunshotWound
@@ -184,8 +184,8 @@ namespace BreastRadiology.XUnitTests
                                 .SetDisplay("Marker clip")
                                 .SetDefinition(new Definition()
                                     .Line("[PR] Marker clip")
-                                    .ValidModalities(Modalities.MG)
                                 )
+                                .ValidModalities(Modalities.MG)
                                 .SetSnomedCode("470272007")
                                 .SetSnomedDescription("PhysicalObject | Implantable lesion localization marker (Object)")
                                 .SetICD10("470272007")
@@ -199,8 +199,8 @@ namespace BreastRadiology.XUnitTests
                                 .SetDisplay("Metal")
                                 .SetDefinition(new Definition()
                                     .Line("[PR] Metal")
-                                    .ValidModalities(Modalities.MG | Modalities.MRI | Modalities.US)
                                 )
+                                .ValidModalities(Modalities.MG | Modalities.MRI | Modalities.US)
                                 .SetSnomedCode("283169003")
                                 .SetSnomedDescription("ClinicalFinding | Metal foreign body in breast (Disorder)")
                                 .SetICD10("283169003")
@@ -214,8 +214,8 @@ namespace BreastRadiology.XUnitTests
                                 .SetDisplay("Metallic marker")
                                 .SetDefinition(new Definition()
                                     .Line("[PR] Metallic marker")
-                                    .ValidModalities(Modalities.MRI)
                                 )
+                                .ValidModalities(Modalities.MRI)
                                 .SetSnomedCode("470272007")
                                 .SetSnomedDescription("PhysicalObject | Implantable lesion localization marker (Object)")
                                 .SetICD10("470272007")
@@ -229,8 +229,8 @@ namespace BreastRadiology.XUnitTests
                                 .SetDisplay("Needle")
                                 .SetDefinition(new Definition()
                                     .Line("[PR] Needle")
-                                    .ValidModalities(Modalities.MG)
                                 )
+                                .ValidModalities(Modalities.MG)
                             //- AutoGen
                             //- Needle
                             ,
@@ -241,8 +241,8 @@ namespace BreastRadiology.XUnitTests
                                 .SetDisplay("Nipple jewelry")
                                 .SetDefinition(new Definition()
                                     .Line("[PR] Nipple jewelry")
-                                    .ValidModalities(Modalities.MG)
                                 )
+                                .ValidModalities(Modalities.MG)
                                 .SetSnomedCode("80919006")
                                 .SetSnomedDescription("PhysicalObject | Jewelry (Object)")
                                 .SetICD10("80919006")
@@ -257,8 +257,8 @@ namespace BreastRadiology.XUnitTests
                                 .SetDisplay("Non-metallic body")
                                 .SetDefinition(new Definition()
                                     .Line("[PR] Non-metallic body")
-                                    .ValidModalities(Modalities.MG)
                                 )
+                                .ValidModalities(Modalities.MG)
                             //- AutoGen
                             //- Non-metallicBody
                             ,
@@ -269,8 +269,8 @@ namespace BreastRadiology.XUnitTests
                                 .SetDisplay("Pacemaker")
                                 .SetDefinition(new Definition()
                                     .Line("[PR] Pacemaker")
-                                    .ValidModalities(Modalities.MG | Modalities.MRI | Modalities.US)
                                 )
+                                .ValidModalities(Modalities.MG | Modalities.MRI | Modalities.US)
                             //- AutoGen
                             //- Pacemaker
                             ,
@@ -281,8 +281,8 @@ namespace BreastRadiology.XUnitTests
                                 .SetDisplay("Silicone granuloma")
                                 .SetDefinition(new Definition()
                                     .Line("[PR] Silicone granuloma")
-                                    .ValidModalities(Modalities.MG | Modalities.MRI | Modalities.US)
                                 )
+                                .ValidModalities(Modalities.MG | Modalities.MRI | Modalities.US)
                             //- AutoGen
                             //- SiliconeGranuloma
                             ,
@@ -293,8 +293,8 @@ namespace BreastRadiology.XUnitTests
                                 .SetDisplay("Sponge")
                                 .SetDefinition(new Definition()
                                     .Line("[PR] Sponge")
-                                    .ValidModalities(Modalities.MG | Modalities.MRI | Modalities.US)
                                 )
+                                .ValidModalities(Modalities.MG | Modalities.MRI | Modalities.US)
                                 .SetSnomedDescription("PhysicalObject | 706640008 | Sponge (Object)")
                             //- AutoGen
                             //- Sponge
@@ -306,8 +306,8 @@ namespace BreastRadiology.XUnitTests
                                 .SetDisplay("Surgical clip")
                                 .SetDefinition(new Definition()
                                     .Line("[PR] Surgical clip")
-                                    .ValidModalities(Modalities.MG | Modalities.MRI | Modalities.US)
                                 )
+                                .ValidModalities(Modalities.MG | Modalities.MRI | Modalities.US)
                                 .SetSnomedCode("470342004")
                                 .SetOneToMany("one")
                                 .SetSnomedDescription("PhysicalObject | Implantable tissue clip (Object)")
@@ -322,8 +322,8 @@ namespace BreastRadiology.XUnitTests
                                 .SetDisplay("Swab")
                                 .SetDefinition(new Definition()
                                     .Line("[PR] Swab")
-                                    .ValidModalities(Modalities.MG | Modalities.MRI | Modalities.US)
                                 )
+                                .ValidModalities(Modalities.MG | Modalities.MRI | Modalities.US)
                                 .SetSnomedDescription("PhysicalObject | 408098004 | Swab (Object")
                             //- AutoGen
                             //- Swab
@@ -335,8 +335,8 @@ namespace BreastRadiology.XUnitTests
                                 .SetDisplay("Titanium clip")
                                 .SetDefinition(new Definition()
                                     .Line("[PR] Titanium clip")
-                                    .ValidModalities(Modalities.MG | Modalities.MRI | Modalities.US)
                                 )
+                                .ValidModalities(Modalities.MG | Modalities.MRI | Modalities.US)
                                 .SetSnomedCode("470272007")
                                 .SetOneToMany("one")
                                 .SetSnomedDescription("PhysicalObject | Implantable lesion localization marker (Object)")
@@ -351,8 +351,8 @@ namespace BreastRadiology.XUnitTests
                                 .SetDisplay("Titanium marker clip")
                                 .SetDefinition(new Definition()
                                     .Line("[PR] Titanium marker clip")
-                                    .ValidModalities(Modalities.MG)
                                 )
+                                .ValidModalities(Modalities.MG)
                             //- AutoGen
                             //- TitaniumMarkerClip
                             ,
@@ -363,8 +363,8 @@ namespace BreastRadiology.XUnitTests
                                 .SetDisplay("Wire")
                                 .SetDefinition(new Definition()
                                     .Line("[PR] Wire")
-                                    .ValidModalities(Modalities.MG | Modalities.MRI | Modalities.US)
                                 )
+                                .ValidModalities(Modalities.MG | Modalities.MRI | Modalities.US)
                             //- AutoGen
                             //- Wire
                             ,
@@ -375,8 +375,8 @@ namespace BreastRadiology.XUnitTests
                                 .SetDisplay("Wire fragment")
                                 .SetDefinition(new Definition()
                                     .Line("[PR] Wire fragment")
-                                    .ValidModalities(Modalities.MG | Modalities.MRI | Modalities.US)
                                 )
+                                .ValidModalities(Modalities.MG | Modalities.MRI | Modalities.US)
                             //- AutoGen
                             //- WireFragment
                             
