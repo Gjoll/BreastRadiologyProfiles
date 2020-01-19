@@ -189,6 +189,7 @@ namespace BreastRadiology.XUnitTests
                     String codeClean = CodeValue(code);
                     concepts
                         .AppendLine($"//+ {codeClean}")
+                        .AppendLine($"//+ AutoGen")
                         .AppendLine($"new ConceptDef()")
                         .AppendLine($"    .SetCode(\"{codeClean}\")")
                         .AppendLine($"    .SetDisplay(\"{code}\")")
@@ -208,6 +209,7 @@ namespace BreastRadiology.XUnitTests
                     AppIfNotNull("SetUMLS", row[16]);
 
                     concepts
+                        .AppendLine($"//- AutoGen")
                         .AppendLine($"//- {codeClean}")
                         .AppendLine(term)
                         ;
@@ -229,11 +231,9 @@ namespace BreastRadiology.XUnitTests
             WriteCS(ds, "ForeignBody", @"Common\Abnormalities\AbnormalityForeignObject.cs", "ForeignObjectCS");
             WriteCS(ds, "NotPreviousSeen", @"Common\NotPreviouslySeenCS.cs", "NotPreviouslySeenCS");
 
-            // Observed features has been hand modified. Run again and comments will be lost.
-            //List<String> itemsToIgnore = new List<string>();
-            //itemsToIgnore.Add("ARCHITECTURAL DISTORTION");
+            List<String> itemsToIgnore = new List<string>();
+            itemsToIgnore.Add("ARCHITECTURAL DISTORTION");
             //WriteCS(ds, "AssocFindings", @"Common\AssociatedFeatures\ObservedFeature.cs", "ObservedFeatureCS", itemsToIgnore);
-
         }
         public DataSet ReadGregDS()
         {

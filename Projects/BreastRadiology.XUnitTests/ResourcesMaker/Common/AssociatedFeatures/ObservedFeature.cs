@@ -23,7 +23,6 @@ namespace BreastRadiology.XUnitTests
                          Group_CommonCodesCS,
                          new ConceptDef[]
                          {
-                            //+ ObservedFeatureCS
                             new ConceptDef("AxillaryAdenopathy",
                                 "Axillary adenopathy",
                                 new Definition()
@@ -187,7 +186,8 @@ namespace BreastRadiology.XUnitTests
                                     .CiteEnd(BiRadCitation)
                                     .ValidModalities(Modalities.MG)
                                 )
-                             //- ObservedFeatureCS
+                            //+ ObservedFeatureCS
+                            //- ObservedFeatureCS
                          })
              );
 
