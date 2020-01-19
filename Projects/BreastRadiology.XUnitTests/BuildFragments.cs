@@ -238,6 +238,7 @@ namespace BreastRadiology.XUnitTests
             WriteCS(ds, "ConsistentWithQualifier", @"Common\ConsistentWith.cs", "ConsistentWithQualifierCS");
             WriteCS(ds, "ForeignBody", @"Common\Abnormalities\AbnormalityForeignObject.cs", "ForeignObjectCS");
             WriteCS(ds, "NotPreviousSeen", @"Common\NotPreviouslySeenCS.cs", "NotPreviouslySeenCS");
+            WriteCS(ds, "Margin", @"Common\MarginCS.cs", "MarginCS");
 
             List<String> itemsToIgnore = new List<string>();
             itemsToIgnore.Add("ARCHITECTURAL DISTORTION");
