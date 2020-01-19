@@ -91,9 +91,10 @@ namespace BreastRadiology.XUnitTests
                         new Markdown()
                             .Paragraph("[PR]")
                     )
+                    .AddFragRef(Self.TumorSatelliteFragment.Value())
+
                     .AddFragRef(Self.ObservationNoDeviceFragment.Value())
                     .AddFragRef(Self.ObservationNoValueFragment.Value())
-                    .AddFragRef(Self.TumorQualifierComponentsFragment.Value())
                     .AddFragRef(Self.CommonComponentsFragment.Value())
                     .AddFragRef(Self.ShapeComponentsFragment.Value())
                     .AddFragRef(Self.ObservedCountComponentFragment.Value())

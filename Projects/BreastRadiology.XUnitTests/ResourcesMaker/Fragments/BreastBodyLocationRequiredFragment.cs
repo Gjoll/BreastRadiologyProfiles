@@ -38,6 +38,5 @@ namespace BreastRadiology.XUnitTests
                     .Single()
                     ;
             });
-
     }
 }

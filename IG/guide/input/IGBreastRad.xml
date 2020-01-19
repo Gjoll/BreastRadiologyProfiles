@@ -793,6 +793,15 @@
     </resource>
     <resource>
       <reference>
+        <reference value="StructureDefinition/TumorSatelliteExtension" />
+      </reference>
+      <name value="Tumor Satellite Extension" />
+      <description value="Tumor Satellite Extension" />
+      <exampleBoolean value="false" />
+      <groupingId value="ExtensionResources" />
+    </resource>
+    <resource>
+      <reference>
         <reference value="StructureDefinition/MGFinding" />
       </reference>
       <name value="Mammography Finding" />
@@ -1058,6 +1067,15 @@
       </reference>
       <name value="Tumor Qualifier Component Fragment" />
       <description value="Fragment 'Tumor Qualifier component slice fragment'" />
+      <exampleBoolean value="false" />
+      <groupingId value="Fragments" />
+    </resource>
+    <resource>
+      <reference>
+        <reference value="StructureDefinition/TumorSatelliteFragment" />
+      </reference>
+      <name value="Tumor Satellite Fragment" />
+      <description value="Fragment 'Tumor Satellite fragment'" />
       <exampleBoolean value="false" />
       <groupingId value="Fragments" />
     </resource>
