@@ -241,7 +241,7 @@ namespace BreastRadiology.XUnitTests
 
             List<String> itemsToIgnore = new List<string>();
             itemsToIgnore.Add("ARCHITECTURAL DISTORTION");
-            //WriteCS(ds, "AssocFindings", @"Common\AssociatedFeatures\ObservedFeature.cs", "ObservedFeatureCS", itemsToIgnore);
+            WriteCS(ds, "AssocFindings", @"Common\AssociatedFeatures\ObservedFeature.cs", "ObservedFeatureCS", itemsToIgnore);
         }
         public DataSet ReadGregDS()
         {
