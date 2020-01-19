@@ -158,7 +158,7 @@ namespace BreastRadiology.XUnitTests
                         "ResourcesMaker",
                         outputCodePath));
             CodeBlockNested concepts = editor.Blocks.Find(csBlockName);
-            concepts.Clear();
+            CodeBlockNested concept = null;
 
             for (Int32 i = 1; i < dataTbl.Rows.Count; i++)
             {
@@ -182,16 +182,30 @@ namespace BreastRadiology.XUnitTests
 
                         String sValue = value.ToString();
                         if (String.IsNullOrEmpty(sValue) == false)
-                            concepts
+                            concept
                                 .AppendLine($"    .{name}(\"{sValue}\")");
                     }
 
-                    String codeClean = CodeValue(code);
-                    concepts
-                        .AppendLine($"//+ {codeClean}")
-                        .AppendLine($"//+ AutoGen")
+                    String conceptBlockName = CodeValue(code);
+                    CodeBlockNested conceptOuter = concepts.Find(conceptBlockName);
+                    if (conceptOuter == null)
+                    {
+                        conceptOuter = concepts.AppendBlock(conceptBlockName);
+                        concept = conceptOuter.AppendBlock("AutoGen");
+                        conceptOuter
+                            .AppendLine(term)
+                            ;
+                    }
+                    else
+                    {
+                        concept = conceptOuter.Find("AutoGen");
+                        concept.Clear();
+                    }
+
+
+                    concept
                         .AppendLine($"new ConceptDef()")
-                        .AppendLine($"    .SetCode(\"{codeClean}\")")
+                        .AppendLine($"    .SetCode(\"{conceptBlockName}\")")
                         .AppendLine($"    .SetDisplay(\"{code}\")")
                         .AppendLine($"    .SetDefinition(new Definition()")
                         .AppendLine($"        .Line(\"[PR] {code}\")")
@@ -207,12 +221,6 @@ namespace BreastRadiology.XUnitTests
                     AppIfNotNull("SetICD10", row[11]);
                     AppIfNotNull("SetComment", row[15]);
                     AppIfNotNull("SetUMLS", row[16]);
-
-                    concepts
-                        .AppendLine($"//- AutoGen")
-                        .AppendLine($"//- {codeClean}")
-                        .AppendLine(term)
-                        ;
                 }
             }
 
