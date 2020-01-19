@@ -22,7 +22,7 @@
   "name": "Impression",
   "title": "Impression",
   "status": "draft",
-  "description": "<b>Impression (ClinicalImpression)</b>\n\nClinical Impression<br/>",
+  "description": "<b>Impression (ClinicalImpression)</b>\n\nClinical Impression",
   "fhirVersion": "4.0.0",
   "kind": "resource",
   "abstract": false,
@@ -35,7 +35,7 @@
         "id": "ClinicalImpression",
         "path": "ClinicalImpression",
         "short": "Impression (ClinicalImpression)",
-        "definition": "Clinical Impression<br/>",
+        "definition": "Clinical Impression",
         "base": {
           "path": "ClinicalImpression",
           "min": 0,

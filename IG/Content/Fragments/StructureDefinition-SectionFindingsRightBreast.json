@@ -22,7 +22,7 @@
   "name": "SectionFindingsRightBreast",
   "title": "Findings Right Breast",
   "status": "draft",
-  "description": "<b>Findings Right Breast Section</b>\n\nThis resource is the head of the tree of observations made of the right breast during a breast radiology exam.<br/>Child observations are referenced by the 'Observation.hasMember' field.<br/>",
+  "description": "<b>Findings Right Breast Section</b>\n\nThis resource is the head of the tree of observations made of the right breast during a breast radiology exam.\n\nChild observations are referenced by the 'Observation.hasMember' field.",
   "fhirVersion": "4.0.0",
   "kind": "resource",
   "abstract": false,
@@ -35,7 +35,7 @@
         "id": "Observation",
         "path": "Observation",
         "short": "Findings Right Breast Section",
-        "definition": "This resource is the head of the tree of observations made of the right breast during a breast radiology exam.<br/>Child observations are referenced by the 'Observation.hasMember' field.<br/>",
+        "definition": "This resource is the head of the tree of observations made of the right breast during a breast radiology exam.\n\nChild observations are referenced by the 'Observation.hasMember' field.",
         "base": {
           "path": "Observation",
           "min": 0,
@@ -45,7 +45,7 @@
       {
         "id": "Observation.value[x]",
         "path": "Observation.value[x]",
-        "definition": "Composite BiRad value for Right Breast.<br/>Typically this is the most severe of all the BiRad codes set in any of the child observations.<br/>",
+        "definition": "Composite BiRad value for Right Breast.\n\nTypically this is the most severe of all the BiRad codes set in any of the child observations.",
         "base": {
           "path": "Observation.value[x]",
           "min": 0,

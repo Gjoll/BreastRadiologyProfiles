@@ -67,14 +67,14 @@
     },
     {
       "url": "http://www.fragment.com/maplink",
-      "valueString": "component|True|Foreign Object Type^CodeableConcept^http://hl7.org/fhir/us/breast-radiology/ValueSet/AbnormalitiesVS"
+      "valueString": "component|True|Foreign Object Type^StructureDefinition-{SDName}-definitions.html#Observation.component:abnormalityForeignObjectType^CodeableConcept^http://hl7.org/fhir/us/breast-radiology/ValueSet/AbnormalitiesVS"
     }
   ],
   "url": "http://hl7.org/fhir/us/breast-radiology/StructureDefinition/AbnormalityForeignObject",
   "name": "AbnormalityForeignObject",
   "title": "Foreign Object",
   "status": "draft",
-  "description": "<b>Foreign Object Observation</b>\n\nThese are foreign objects found during a breast radiology exam:<br/>",
+  "description": "<b>Foreign Object Observation</b>\n\nThese are foreign objects found during a breast radiology exam:",
   "fhirVersion": "4.0.0",
   "kind": "resource",
   "abstract": false,
@@ -87,7 +87,7 @@
         "id": "Observation",
         "path": "Observation",
         "short": "Foreign Object Observation",
-        "definition": "These are foreign objects found during a breast radiology exam:<br/>",
+        "definition": "These are foreign objects found during a breast radiology exam:",
         "base": {
           "path": "Observation",
           "min": 0,
@@ -180,7 +180,7 @@
         "path": "Observation.component",
         "sliceName": "abnormalityForeignObjectType",
         "short": "Foreign Object Type component",
-        "definition": "This slice contains the required component that refines the foreign object type.The value of this component is a codeable concept chosen from the AbnormalitiesVS valueset.<br/>",
+        "definition": "This slice contains the required component that refines the foreign object type.\nThe value of this component is a codeable concept chosen from the AbnormalitiesVS valueset.",
         "comment": "This is one component of a group of components that comprise the observation.",
         "min": 1,
         "max": "1",
@@ -215,7 +215,7 @@
         "id": "Observation.component:abnormalityForeignObjectType.value[x]",
         "path": "Observation.component.value[x]",
         "short": "Foreign Object Type component value",
-        "definition": "Value is a codeable concept.<br/>",
+        "definition": "Value is a codeable concept.",
         "min": 1,
         "max": "1",
         "base": {

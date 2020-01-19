@@ -63,11 +63,11 @@ Comments and Suggested changes to this implementation guide van be made
   <ul>
     
 <li><a href="./StructureDefinition-BiRadFragment.html">BiRad Fragment</a></li>
-<li><a href="./StructureDefinition-BreastRadObservationNoDeviceFragment.html">BreastRad Observation NoDevice Fragment</a></li>
-<li><a href="./StructureDefinition-BreastRadObservationNoValueFragment.html">BreastRad Observation NoValue Fragment</a></li>
 <li><a href="./StructureDefinition-CommonComponentsFragment.html">Common Components Fragment</a></li>
 <li><a href="./StructureDefinition-CorrespondsWithFragment.html">CorrespondsWith Fragment</a></li>
 <li><a href="./StructureDefinition-NotPreviouslySeenComponentFragment.html">Not Previously Seen Component Fragment</a></li>
+<li><a href="./StructureDefinition-BreastRadObservationNoDeviceFragment.html">Observation NoDevice Fragment</a></li>
+<li><a href="./StructureDefinition-BreastRadObservationNoValueFragment.html">Observation NoValue Fragment</a></li>
   </ul>
   <!-- -profileFragments-->
 </div>

@@ -87,7 +87,7 @@
     },
     {
       "url": "http://www.fragment.com/mapname",
-      "valueString": "NoDevice/Observation/Fragment"
+      "valueString": "Observation/NoDevice/Fragment"
     },
     {
       "url": "http://www.fragment.com/Group",

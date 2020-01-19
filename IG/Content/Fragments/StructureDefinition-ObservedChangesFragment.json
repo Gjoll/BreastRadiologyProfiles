@@ -15,7 +15,7 @@
     },
     {
       "url": "http://www.fragment.com/maplink",
-      "valueString": "component|True|Observed Change In Abnormality^CodeableConcept^http://hl7.org/fhir/us/breast-radiology/ValueSet/ObservedChangesVS"
+      "valueString": "component|True|Observed Change In Abnormality^StructureDefinition-{SDName}-definitions.html#Observation.component:observedChanges^CodeableConcept^http://hl7.org/fhir/us/breast-radiology/ValueSet/ObservedChangesVS"
     }
   ],
   "url": "http://hl7.org/fhir/us/breast-radiology/StructureDefinition/ObservedChangesFragment",
@@ -65,7 +65,7 @@
         "path": "Observation.component",
         "sliceName": "observedChanges",
         "short": "Observed Change In Abnormality component",
-        "definition": "This slice contains zero or more components that define observed changes in this abnormality.The value of this component is a codeable concept chosen from the ObservedChangesVS valueset.<br/>",
+        "definition": "This slice contains zero or more components that define observed changes in this abnormality.\nThe value of this component is a codeable concept chosen from the ObservedChangesVS valueset.",
         "comment": "This is one component of a group of components that comprise the observation.",
         "min": 0,
         "max": "*",
@@ -100,7 +100,7 @@
         "id": "Observation.component:observedChanges.value[x]",
         "path": "Observation.component.value[x]",
         "short": "Observed Change In Abnormality component value",
-        "definition": "Value is a codeable concept.<br/>",
+        "definition": "Value is a codeable concept.",
         "min": 1,
         "max": "1",
         "base": {

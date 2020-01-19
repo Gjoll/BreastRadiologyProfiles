@@ -79,7 +79,7 @@
     },
     {
       "url": "http://www.fragment.com/maplink",
-      "valueString": "component|True|Duct Type^CodeableConcept^http://hl7.org/fhir/us/breast-radiology/ValueSet/AbnormalityDuctVS"
+      "valueString": "component|True|Duct Type^StructureDefinition-{SDName}-definitions.html#Observation.component:ductType^CodeableConcept^http://hl7.org/fhir/us/breast-radiology/ValueSet/AbnormalityDuctVS"
     }
   ],
   "url": "http://hl7.org/fhir/us/breast-radiology/StructureDefinition/AbnormalityDuct",
@@ -169,7 +169,7 @@
         "path": "Observation.component",
         "sliceName": "ductType",
         "short": "Duct Type component",
-        "definition": "This slice contains the optional component that refines the duct type.The value of this component is a codeable concept chosen from the AbnormalityDuctVS valueset.<br/>",
+        "definition": "This slice contains the optional component that refines the duct type.\nThe value of this component is a codeable concept chosen from the AbnormalityDuctVS valueset.",
         "comment": "This is one component of a group of components that comprise the observation.",
         "min": 0,
         "max": "1",
@@ -204,7 +204,7 @@
         "id": "Observation.component:ductType.value[x]",
         "path": "Observation.component.value[x]",
         "short": "Duct Type component value",
-        "definition": "Value is a codeable concept.<br/>",
+        "definition": "Value is a codeable concept.",
         "min": 1,
         "max": "1",
         "base": {

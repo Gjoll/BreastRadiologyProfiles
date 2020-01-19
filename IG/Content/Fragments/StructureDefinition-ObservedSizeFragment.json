@@ -15,7 +15,7 @@
     },
     {
       "url": "http://www.fragment.com/maplink",
-      "valueString": "component|True|Observed Size^Quantity or Range"
+      "valueString": "component|True|Observed Size^StructureDefinition-{SDName}-definitions.html#Observation.component:observedSize^Quantity or Range"
     }
   ],
   "url": "http://hl7.org/fhir/us/breast-radiology/StructureDefinition/ObservedSizeFragment",
@@ -65,7 +65,7 @@
         "path": "Observation.component",
         "sliceName": "observedSize",
         "short": "Observed Size component",
-        "definition": "This component slice contains the observed size of an item in cemtimeters.This can be a quantity (i.e. 5 cm), or a range (1 cm to 5 cm).If the lower bound of the range is set but not the upper bound, then it means {lower bound} cm or more.If the lower bound of the range is not set but not the upper bound is, then it means {upper bound} cm or less.<br/>",
+        "definition": "This component slice contains the observed size of an item in cemtimeters.\nThis can be a quantity (i.e. 5 cm), or a range (1 cm to 5 cm).\nIf the lower bound of the range is set but not the upper bound, then it means {lower bound} cm or more.\nIf the lower bound of the range is not set but not the upper bound is, then it means {upper bound} cm or less.",
         "comment": "This is one component of a group of components that comprise the observation.",
         "min": 0,
         "max": "1",

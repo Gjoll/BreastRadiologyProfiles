@@ -87,7 +87,7 @@ namespace BreastRadiology.XUnitTests
                 foreach (ElementTreeSlice slice in node.Slices.Skip(1))
                 {
                     String shortDesc = $"{slice.ElementDefinition.Short} [{slice.ElementDefinition.Min}..{slice.ElementDefinition.Max}]";
-                    String anchor = $"StructureDefinition-{sd.Name}-definitions.html#Observation.component:{slice.ElementDefinition.SliceName}";
+                    String anchor = Global.ComponentAnchor(sd.Name, slice.ElementDefinition.SliceName);
                     items.Add(shortDesc, $"<a href=\"{anchor}\">{shortDesc}</a>");
                 }
                 return items.Values.ToArray();

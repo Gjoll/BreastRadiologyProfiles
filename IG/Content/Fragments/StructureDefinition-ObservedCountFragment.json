@@ -15,7 +15,7 @@
     },
     {
       "url": "http://www.fragment.com/maplink",
-      "valueString": "component|True|Observed Count^Quantity or Range"
+      "valueString": "component|True|Observed Count^StructureDefinition-{SDName}-definitions.html#Observation.component:observedCount^Quantity or Range"
     }
   ],
   "url": "http://hl7.org/fhir/us/breast-radiology/StructureDefinition/ObservedCountFragment",
@@ -65,7 +65,7 @@
         "path": "Observation.component",
         "sliceName": "observedCount",
         "short": "Observed Count component",
-        "definition": "This component slice contains the number of items observed.This can be a quantity (i.e. 5), or a range (1 to 5).If the lower bound of the range is set but not the upper bound, then it means {lower bound} or more.If the lower bound of the range is not set but not the upper bound is, then it means {upper bound} or less.<br/>",
+        "definition": "This component slice contains the number of items observed.\nThis can be a quantity (i.e. 5), or a range (1 to 5).\nIf the lower bound of the range is set but not the upper bound, then it means {lower bound} or more.\nIf the lower bound of the range is not set but not the upper bound is, then it means {upper bound} or less.",
         "comment": "This is one component of a group of components that comprise the observation.",
         "min": 0,
         "max": "1",

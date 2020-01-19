@@ -3,7 +3,7 @@
   "extension": [
     {
       "url": "http://www.fragment.com/mapname",
-      "valueString": "NoDevice/Observation/Fragment"
+      "valueString": "Observation/NoDevice/Fragment"
     },
     {
       "url": "http://www.fragment.com/Group",
@@ -25,9 +25,9 @@
   "url": "http://hl7.org/fhir/us/breast-radiology/StructureDefinition/BreastRadObservationNoDeviceFragment",
   "version": "Fragment",
   "name": "BreastRadObservationNoDeviceFragment",
-  "title": "BreastRad Observation NoDevice Fragment",
+  "title": "Observation NoDevice Fragment",
   "status": "draft",
-  "description": "<b>Observations No Device Data fragment.</b>\n\nFragment for all observations that have no device.<br/>",
+  "description": "<b>Observations No Device Data fragment.</b>\n\nFragment for all observations that have no device.",
   "fhirVersion": "4.0.0",
   "kind": "resource",
   "abstract": true,
@@ -40,7 +40,7 @@
         "id": "Observation",
         "path": "Observation",
         "short": "Observations No Device Data fragment.",
-        "definition": "Fragment for all observations that have no device.<br/>",
+        "definition": "Fragment for all observations that have no device.",
         "base": {
           "path": "Observation",
           "min": 0,

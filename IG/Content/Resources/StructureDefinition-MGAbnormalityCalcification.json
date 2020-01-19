@@ -75,11 +75,11 @@
     },
     {
       "url": "http://www.fragment.com/maplink",
-      "valueString": "component|True|Calcification Type^CodeableConcept^http://hl7.org/fhir/us/breast-radiology/ValueSet/MammoCalcificationTypeVS"
+      "valueString": "component|True|Calcification Type^StructureDefinition-{SDName}-definitions.html#Observation.component:calcificationType^CodeableConcept^http://hl7.org/fhir/us/breast-radiology/ValueSet/MammoCalcificationTypeVS"
     },
     {
       "url": "http://www.fragment.com/maplink",
-      "valueString": "component|True|Calcification Distribution^CodeableConcept^http://hl7.org/fhir/us/breast-radiology/ValueSet/MammoCalcificationDistributionVS"
+      "valueString": "component|True|Calcification Distribution^StructureDefinition-{SDName}-definitions.html#Observation.component:calcificationDistribution^CodeableConcept^http://hl7.org/fhir/us/breast-radiology/ValueSet/MammoCalcificationDistributionVS"
     },
     {
       "url": "http://www.fragment.com/mapname",
@@ -139,7 +139,7 @@
     },
     {
       "url": "http://www.fragment.com/mapname",
-      "valueString": "NoDevice/Observation/Fragment"
+      "valueString": "Observation/NoDevice/Fragment"
     },
     {
       "url": "http://www.fragment.com/Group",
@@ -147,7 +147,7 @@
     },
     {
       "url": "http://www.fragment.com/mapname",
-      "valueString": "NoValue/Observation/Fragment"
+      "valueString": "Observation/NoValue/Fragment"
     },
     {
       "url": "http://www.fragment.com/Group",
@@ -183,7 +183,7 @@
     },
     {
       "url": "http://www.fragment.com/mapname",
-      "valueString": "Breast/Body/Location/Fragment/(Required)"
+      "valueString": "Breast Body Location/Fragment (Required)"
     },
     {
       "url": "http://www.fragment.com/Group",
@@ -203,7 +203,7 @@
     },
     {
       "url": "http://www.fragment.com/maplink",
-      "valueString": "component|True|Observed Change In Abnormality^CodeableConcept^http://hl7.org/fhir/us/breast-radiology/ValueSet/ObservedChangesVS"
+      "valueString": "component|True|Observed Change In Abnormality^StructureDefinition-{SDName}-definitions.html#Observation.component:observedChanges^CodeableConcept^http://hl7.org/fhir/us/breast-radiology/ValueSet/ObservedChangesVS"
     },
     {
       "url": "http://www.fragment.com/mapname",
@@ -215,7 +215,7 @@
     },
     {
       "url": "http://www.fragment.com/maplink",
-      "valueString": "component|True|Observed Size^Quantity or Range"
+      "valueString": "component|True|Observed Size^StructureDefinition-{SDName}-definitions.html#Observation.component:observedSize^Quantity or Range"
     },
     {
       "url": "http://www.fragment.com/mapname",
@@ -227,7 +227,7 @@
     },
     {
       "url": "http://www.fragment.com/maplink",
-      "valueString": "component|True|Observed Area^Quantity or Range"
+      "valueString": "component|True|Observed Area^StructureDefinition-{SDName}-definitions.html#Observation.component:observedArea^Quantity or Range"
     },
     {
       "url": "http://www.fragment.com/mapname",
@@ -239,7 +239,7 @@
     },
     {
       "url": "http://www.fragment.com/maplink",
-      "valueString": "component|True|BiRads Assessment Category^CodeableConcept^http://hl7.org/fhir/us/breast-radiology/ValueSet/BiRadsAssessmentCategoriesVS"
+      "valueString": "component|True|BiRads Assessment Category^StructureDefinition-{SDName}-definitions.html#Observation.component:biRadsAssessmentCategory^CodeableConcept^http://hl7.org/fhir/us/breast-radiology/ValueSet/BiRadsAssessmentCategoriesVS"
     },
     {
       "url": "http://www.fragment.com/mapname",
@@ -251,7 +251,7 @@
     },
     {
       "url": "http://www.fragment.com/maplink",
-      "valueString": "component|True|Not Previously Seen^CodeableConcept^http://hl7.org/fhir/us/breast-radiology/ValueSet/NotPreviouslySeenVS"
+      "valueString": "component|True|Not Previously Seen^StructureDefinition-{SDName}-definitions.html#Observation.component:notPreviouslySeen^CodeableConcept^http://hl7.org/fhir/us/breast-radiology/ValueSet/NotPreviouslySeenVS"
     },
     {
       "url": "http://www.fragment.com/mapname",
@@ -263,7 +263,7 @@
     },
     {
       "url": "http://www.fragment.com/maplink",
-      "valueString": "component|True|Observed Count^Quantity or Range"
+      "valueString": "component|True|Observed Count^StructureDefinition-{SDName}-definitions.html#Observation.component:observedCount^Quantity or Range"
     },
     {
       "url": "http://www.fragment.com/mapname",
@@ -275,7 +275,7 @@
     },
     {
       "url": "http://www.fragment.com/maplink",
-      "valueString": "component|True|Corresponds With^CodeableConcept^http://hl7.org/fhir/us/breast-radiology/ValueSet/CorrespondsWithVS"
+      "valueString": "component|True|Corresponds With^StructureDefinition-{SDName}-definitions.html#Observation.component:correspondsWith^CodeableConcept^http://hl7.org/fhir/us/breast-radiology/ValueSet/CorrespondsWithVS"
     }
   ],
   "url": "http://hl7.org/fhir/us/breast-radiology/StructureDefinition/MGAbnormalityCalcification",
@@ -2732,7 +2732,7 @@
         "path": "Observation.component",
         "sliceName": "calcificationType",
         "short": "Calcification Type component",
-        "definition": "This slice contains the optional component that refines the calcification type.The value of this component is a codeable concept chosen from the MammoCalcificationTypeVS valueset.<br/>",
+        "definition": "This slice contains the optional component that refines the calcification type.\nThe value of this component is a codeable concept chosen from the MammoCalcificationTypeVS valueset.",
         "comment": "This is one component of a group of components that comprise the observation.",
         "requirements": "Component observations share the same attributes in the Observation resource as the primary observation and are always treated a part of a single observation (they are not separable).   However, the reference range for the primary observation value is not inherited by the component values and is required when appropriate for each component observation.",
         "min": 0,
@@ -2927,7 +2927,7 @@
         "id": "Observation.component:calcificationType.value[x]",
         "path": "Observation.component.value[x]",
         "short": "Calcification Type component value",
-        "definition": "Value is a codeable concept.<br/>",
+        "definition": "Value is a codeable concept.",
         "comment": "Used when observation has a set of component observations. An observation may have both a value (e.g. an  Apgar score)  and component observations (the observations from which the Apgar score was derived). If a value is present, the datatype for this element should be determined by Observation.code. A CodeableConcept with just a text would be used instead of a string if the field was usually coded, or if the type associated with the Observation.code defines a coded value.  For additional guidance, see the [Notes section](observation.html#notes) below.",
         "requirements": "An observation exists to have a value, though it might not if it is in error, or if it represents a group of observations.",
         "min": 1,
@@ -3100,7 +3100,7 @@
         "path": "Observation.component",
         "sliceName": "calcificationDistribution",
         "short": "Calcification Distribution component",
-        "definition": "This slice contains the optional component that defines the calcification distribution.The value of this component is a codeable concept chosen from the MammoCalcificationDistributionVS valueset.<br/>",
+        "definition": "This slice contains the optional component that defines the calcification distribution.\nThe value of this component is a codeable concept chosen from the MammoCalcificationDistributionVS valueset.",
         "comment": "This is one component of a group of components that comprise the observation.",
         "requirements": "Component observations share the same attributes in the Observation resource as the primary observation and are always treated a part of a single observation (they are not separable).   However, the reference range for the primary observation value is not inherited by the component values and is required when appropriate for each component observation.",
         "min": 0,
@@ -3295,7 +3295,7 @@
         "id": "Observation.component:calcificationDistribution.value[x]",
         "path": "Observation.component.value[x]",
         "short": "Calcification Distribution component value",
-        "definition": "Value is a codeable concept.<br/>",
+        "definition": "Value is a codeable concept.",
         "comment": "Used when observation has a set of component observations. An observation may have both a value (e.g. an  Apgar score)  and component observations (the observations from which the Apgar score was derived). If a value is present, the datatype for this element should be determined by Observation.code. A CodeableConcept with just a text would be used instead of a string if the field was usually coded, or if the type associated with the Observation.code defines a coded value.  For additional guidance, see the [Notes section](observation.html#notes) below.",
         "requirements": "An observation exists to have a value, though it might not if it is in error, or if it represents a group of observations.",
         "min": 1,
@@ -3468,7 +3468,7 @@
         "path": "Observation.component",
         "sliceName": "observedChanges",
         "short": "Observed Change In Abnormality component",
-        "definition": "This slice contains zero or more components that define observed changes in this abnormality.The value of this component is a codeable concept chosen from the ObservedChangesVS valueset.<br/>",
+        "definition": "This slice contains zero or more components that define observed changes in this abnormality.\nThe value of this component is a codeable concept chosen from the ObservedChangesVS valueset.",
         "comment": "This is one component of a group of components that comprise the observation.",
         "requirements": "Component observations share the same attributes in the Observation resource as the primary observation and are always treated a part of a single observation (they are not separable).   However, the reference range for the primary observation value is not inherited by the component values and is required when appropriate for each component observation.",
         "min": 0,
@@ -3663,7 +3663,7 @@
         "id": "Observation.component:observedChanges.value[x]",
         "path": "Observation.component.value[x]",
         "short": "Observed Change In Abnormality component value",
-        "definition": "Value is a codeable concept.<br/>",
+        "definition": "Value is a codeable concept.",
         "comment": "Used when observation has a set of component observations. An observation may have both a value (e.g. an  Apgar score)  and component observations (the observations from which the Apgar score was derived). If a value is present, the datatype for this element should be determined by Observation.code. A CodeableConcept with just a text would be used instead of a string if the field was usually coded, or if the type associated with the Observation.code defines a coded value.  For additional guidance, see the [Notes section](observation.html#notes) below.",
         "requirements": "An observation exists to have a value, though it might not if it is in error, or if it represents a group of observations.",
         "min": 1,
@@ -3836,7 +3836,7 @@
         "path": "Observation.component",
         "sliceName": "observedSize",
         "short": "Observed Size component",
-        "definition": "This component slice contains the observed size of an item in cemtimeters.This can be a quantity (i.e. 5 cm), or a range (1 cm to 5 cm).If the lower bound of the range is set but not the upper bound, then it means {lower bound} cm or more.If the lower bound of the range is not set but not the upper bound is, then it means {upper bound} cm or less.<br/>",
+        "definition": "This component slice contains the observed size of an item in cemtimeters.\nThis can be a quantity (i.e. 5 cm), or a range (1 cm to 5 cm).\nIf the lower bound of the range is set but not the upper bound, then it means {lower bound} cm or more.\nIf the lower bound of the range is not set but not the upper bound is, then it means {upper bound} cm or less.",
         "comment": "This is one component of a group of components that comprise the observation.",
         "requirements": "Component observations share the same attributes in the Observation resource as the primary observation and are always treated a part of a single observation (they are not separable).   However, the reference range for the primary observation value is not inherited by the component values and is required when appropriate for each component observation.",
         "min": 0,
@@ -4308,7 +4308,7 @@
         "path": "Observation.component",
         "sliceName": "observedArea",
         "short": "Observed Area component",
-        "definition": "This component slice contains the spherical area of an item observed.If an area component is included in an observation, then what is being observed is not a single item,but some number of items contained in the area of the observation<br/>The size is the diameter of the area. The units are always cm.This can be a quantity (i.e. 5 cm area ), or a range (1 to 5 cm area).If the lower bound of the range is set but not the upper bound, then it means {lower bound} or more.If the lower bound of the range is not set but not the upper bound is, then it means {upper bound} or less.<br/>",
+        "definition": "This component slice contains the spherical area of an item observed.\nIf an area component is included in an observation, then what is being observed is not a single item,\nbut some number of items contained in the area of the observation\n\nThe size is the diameter of the area. The units are always cm.\nThis can be a quantity (i.e. 5 cm area ), or a range (1 to 5 cm area).\nIf the lower bound of the range is set but not the upper bound, then it means {lower bound} or more.\nIf the lower bound of the range is not set but not the upper bound is, then it means {upper bound} or less.",
         "comment": "This is one component of a group of components that comprise the observation.",
         "requirements": "Component observations share the same attributes in the Observation resource as the primary observation and are always treated a part of a single observation (they are not separable).   However, the reference range for the primary observation value is not inherited by the component values and is required when appropriate for each component observation.",
         "min": 0,
@@ -4780,7 +4780,7 @@
         "path": "Observation.component",
         "sliceName": "biRadsAssessmentCategory",
         "short": "BiRads Assessment Category component",
-        "definition": "This slice contains the optional component that defines the BiRAD risk code.The value of this component is a codeable concept chosen from the BiRadsAssessmentCategoriesVS valueset.<br/>",
+        "definition": "This slice contains the optional component that defines the BiRAD risk code.\nThe value of this component is a codeable concept chosen from the BiRadsAssessmentCategoriesVS valueset.",
         "comment": "This is one component of a group of components that comprise the observation.",
         "requirements": "Component observations share the same attributes in the Observation resource as the primary observation and are always treated a part of a single observation (they are not separable).   However, the reference range for the primary observation value is not inherited by the component values and is required when appropriate for each component observation.",
         "min": 0,
@@ -4975,7 +4975,7 @@
         "id": "Observation.component:biRadsAssessmentCategory.value[x]",
         "path": "Observation.component.value[x]",
         "short": "BiRads Assessment Category component value",
-        "definition": "Value is a codeable concept.<br/>",
+        "definition": "Value is a codeable concept.",
         "comment": "Used when observation has a set of component observations. An observation may have both a value (e.g. an  Apgar score)  and component observations (the observations from which the Apgar score was derived). If a value is present, the datatype for this element should be determined by Observation.code. A CodeableConcept with just a text would be used instead of a string if the field was usually coded, or if the type associated with the Observation.code defines a coded value.  For additional guidance, see the [Notes section](observation.html#notes) below.",
         "requirements": "An observation exists to have a value, though it might not if it is in error, or if it represents a group of observations.",
         "min": 1,
@@ -5148,7 +5148,7 @@
         "path": "Observation.component",
         "sliceName": "notPreviouslySeen",
         "short": "Not Previously Seen component",
-        "definition": "This slice contains zero or more components that define prevous encounters in which this abnormality was not seen.The value of this component is a codeable concept chosen from the NotPreviouslySeenVS valueset.<br/>",
+        "definition": "This slice contains zero or more components that define prevous encounters in which this abnormality was not seen.\nThe value of this component is a codeable concept chosen from the NotPreviouslySeenVS valueset.",
         "comment": "This is one component of a group of components that comprise the observation.",
         "requirements": "Component observations share the same attributes in the Observation resource as the primary observation and are always treated a part of a single observation (they are not separable).   However, the reference range for the primary observation value is not inherited by the component values and is required when appropriate for each component observation.",
         "min": 0,
@@ -5343,7 +5343,7 @@
         "id": "Observation.component:notPreviouslySeen.value[x]",
         "path": "Observation.component.value[x]",
         "short": "Not Previously Seen component value",
-        "definition": "Value is a codeable concept.<br/>",
+        "definition": "Value is a codeable concept.",
         "comment": "Used when observation has a set of component observations. An observation may have both a value (e.g. an  Apgar score)  and component observations (the observations from which the Apgar score was derived). If a value is present, the datatype for this element should be determined by Observation.code. A CodeableConcept with just a text would be used instead of a string if the field was usually coded, or if the type associated with the Observation.code defines a coded value.  For additional guidance, see the [Notes section](observation.html#notes) below.",
         "requirements": "An observation exists to have a value, though it might not if it is in error, or if it represents a group of observations.",
         "min": 1,
@@ -5516,7 +5516,7 @@
         "path": "Observation.component",
         "sliceName": "observedCount",
         "short": "Observed Count component",
-        "definition": "This component slice contains the number of items observed.This can be a quantity (i.e. 5), or a range (1 to 5).If the lower bound of the range is set but not the upper bound, then it means {lower bound} or more.If the lower bound of the range is not set but not the upper bound is, then it means {upper bound} or less.<br/>",
+        "definition": "This component slice contains the number of items observed.\nThis can be a quantity (i.e. 5), or a range (1 to 5).\nIf the lower bound of the range is set but not the upper bound, then it means {lower bound} or more.\nIf the lower bound of the range is not set but not the upper bound is, then it means {upper bound} or less.",
         "comment": "This is one component of a group of components that comprise the observation.",
         "requirements": "Component observations share the same attributes in the Observation resource as the primary observation and are always treated a part of a single observation (they are not separable).   However, the reference range for the primary observation value is not inherited by the component values and is required when appropriate for each component observation.",
         "min": 0,
@@ -5988,7 +5988,7 @@
         "path": "Observation.component",
         "sliceName": "correspondsWith",
         "short": "Corresponds With component",
-        "definition": "This slice contains zero or more components that defines what this observation correspomnds with.The value of this component is a codeable concept chosen from the CorrespondsWithVS valueset.<br/>",
+        "definition": "This slice contains zero or more components that defines what this observation correspomnds with.\nThe value of this component is a codeable concept chosen from the CorrespondsWithVS valueset.",
         "comment": "This is one component of a group of components that comprise the observation.",
         "requirements": "Component observations share the same attributes in the Observation resource as the primary observation and are always treated a part of a single observation (they are not separable).   However, the reference range for the primary observation value is not inherited by the component values and is required when appropriate for each component observation.",
         "min": 0,
@@ -6183,7 +6183,7 @@
         "id": "Observation.component:correspondsWith.value[x]",
         "path": "Observation.component.value[x]",
         "short": "Corresponds With component value",
-        "definition": "Value is a codeable concept.<br/>",
+        "definition": "Value is a codeable concept.",
         "comment": "Used when observation has a set of component observations. An observation may have both a value (e.g. an  Apgar score)  and component observations (the observations from which the Apgar score was derived). If a value is present, the datatype for this element should be determined by Observation.code. A CodeableConcept with just a text would be used instead of a string if the field was usually coded, or if the type associated with the Observation.code defines a coded value.  For additional guidance, see the [Notes section](observation.html#notes) below.",
         "requirements": "An observation exists to have a value, though it might not if it is in error, or if it represents a group of observations.",
         "min": 1,
@@ -6709,7 +6709,7 @@
         "path": "Observation.component",
         "sliceName": "calcificationType",
         "short": "Calcification Type component",
-        "definition": "This slice contains the optional component that refines the calcification type.The value of this component is a codeable concept chosen from the MammoCalcificationTypeVS valueset.<br/>",
+        "definition": "This slice contains the optional component that refines the calcification type.\nThe value of this component is a codeable concept chosen from the MammoCalcificationTypeVS valueset.",
         "comment": "This is one component of a group of components that comprise the observation.",
         "requirements": "Component observations share the same attributes in the Observation resource as the primary observation and are always treated a part of a single observation (they are not separable).   However, the reference range for the primary observation value is not inherited by the component values and is required when appropriate for each component observation.",
         "min": 0,
@@ -6904,7 +6904,7 @@
         "id": "Observation.component:calcificationType.value[x]",
         "path": "Observation.component.value[x]",
         "short": "Calcification Type component value",
-        "definition": "Value is a codeable concept.<br/>",
+        "definition": "Value is a codeable concept.",
         "comment": "Used when observation has a set of component observations. An observation may have both a value (e.g. an  Apgar score)  and component observations (the observations from which the Apgar score was derived). If a value is present, the datatype for this element should be determined by Observation.code. A CodeableConcept with just a text would be used instead of a string if the field was usually coded, or if the type associated with the Observation.code defines a coded value.  For additional guidance, see the [Notes section](observation.html#notes) below.",
         "requirements": "An observation exists to have a value, though it might not if it is in error, or if it represents a group of observations.",
         "min": 1,
@@ -7077,7 +7077,7 @@
         "path": "Observation.component",
         "sliceName": "calcificationDistribution",
         "short": "Calcification Distribution component",
-        "definition": "This slice contains the optional component that defines the calcification distribution.The value of this component is a codeable concept chosen from the MammoCalcificationDistributionVS valueset.<br/>",
+        "definition": "This slice contains the optional component that defines the calcification distribution.\nThe value of this component is a codeable concept chosen from the MammoCalcificationDistributionVS valueset.",
         "comment": "This is one component of a group of components that comprise the observation.",
         "requirements": "Component observations share the same attributes in the Observation resource as the primary observation and are always treated a part of a single observation (they are not separable).   However, the reference range for the primary observation value is not inherited by the component values and is required when appropriate for each component observation.",
         "min": 0,
@@ -7272,7 +7272,7 @@
         "id": "Observation.component:calcificationDistribution.value[x]",
         "path": "Observation.component.value[x]",
         "short": "Calcification Distribution component value",
-        "definition": "Value is a codeable concept.<br/>",
+        "definition": "Value is a codeable concept.",
         "comment": "Used when observation has a set of component observations. An observation may have both a value (e.g. an  Apgar score)  and component observations (the observations from which the Apgar score was derived). If a value is present, the datatype for this element should be determined by Observation.code. A CodeableConcept with just a text would be used instead of a string if the field was usually coded, or if the type associated with the Observation.code defines a coded value.  For additional guidance, see the [Notes section](observation.html#notes) below.",
         "requirements": "An observation exists to have a value, though it might not if it is in error, or if it represents a group of observations.",
         "min": 1,
@@ -7445,7 +7445,7 @@
         "path": "Observation.component",
         "sliceName": "observedChanges",
         "short": "Observed Change In Abnormality component",
-        "definition": "This slice contains zero or more components that define observed changes in this abnormality.The value of this component is a codeable concept chosen from the ObservedChangesVS valueset.<br/>",
+        "definition": "This slice contains zero or more components that define observed changes in this abnormality.\nThe value of this component is a codeable concept chosen from the ObservedChangesVS valueset.",
         "comment": "This is one component of a group of components that comprise the observation.",
         "min": 0,
         "max": "*",
@@ -7480,7 +7480,7 @@
         "id": "Observation.component:observedChanges.value[x]",
         "path": "Observation.component.value[x]",
         "short": "Observed Change In Abnormality component value",
-        "definition": "Value is a codeable concept.<br/>",
+        "definition": "Value is a codeable concept.",
         "min": 1,
         "max": "1",
         "base": {
@@ -7503,7 +7503,7 @@
         "path": "Observation.component",
         "sliceName": "observedSize",
         "short": "Observed Size component",
-        "definition": "This component slice contains the observed size of an item in cemtimeters.This can be a quantity (i.e. 5 cm), or a range (1 cm to 5 cm).If the lower bound of the range is set but not the upper bound, then it means {lower bound} cm or more.If the lower bound of the range is not set but not the upper bound is, then it means {upper bound} cm or less.<br/>",
+        "definition": "This component slice contains the observed size of an item in cemtimeters.\nThis can be a quantity (i.e. 5 cm), or a range (1 cm to 5 cm).\nIf the lower bound of the range is set but not the upper bound, then it means {lower bound} cm or more.\nIf the lower bound of the range is not set but not the upper bound is, then it means {upper bound} cm or less.",
         "comment": "This is one component of a group of components that comprise the observation.",
         "min": 0,
         "max": "1",
@@ -7613,7 +7613,7 @@
         "path": "Observation.component",
         "sliceName": "observedArea",
         "short": "Observed Area component",
-        "definition": "This component slice contains the spherical area of an item observed.If an area component is included in an observation, then what is being observed is not a single item,but some number of items contained in the area of the observation<br/>The size is the diameter of the area. The units are always cm.This can be a quantity (i.e. 5 cm area ), or a range (1 to 5 cm area).If the lower bound of the range is set but not the upper bound, then it means {lower bound} or more.If the lower bound of the range is not set but not the upper bound is, then it means {upper bound} or less.<br/>",
+        "definition": "This component slice contains the spherical area of an item observed.\nIf an area component is included in an observation, then what is being observed is not a single item,\nbut some number of items contained in the area of the observation\n\nThe size is the diameter of the area. The units are always cm.\nThis can be a quantity (i.e. 5 cm area ), or a range (1 to 5 cm area).\nIf the lower bound of the range is set but not the upper bound, then it means {lower bound} or more.\nIf the lower bound of the range is not set but not the upper bound is, then it means {upper bound} or less.",
         "comment": "This is one component of a group of components that comprise the observation.",
         "min": 0,
         "max": "1",
@@ -7723,7 +7723,7 @@
         "path": "Observation.component",
         "sliceName": "biRadsAssessmentCategory",
         "short": "BiRads Assessment Category component",
-        "definition": "This slice contains the optional component that defines the BiRAD risk code.The value of this component is a codeable concept chosen from the BiRadsAssessmentCategoriesVS valueset.<br/>",
+        "definition": "This slice contains the optional component that defines the BiRAD risk code.\nThe value of this component is a codeable concept chosen from the BiRadsAssessmentCategoriesVS valueset.",
         "comment": "This is one component of a group of components that comprise the observation.",
         "min": 0,
         "max": "1",
@@ -7758,7 +7758,7 @@
         "id": "Observation.component:biRadsAssessmentCategory.value[x]",
         "path": "Observation.component.value[x]",
         "short": "BiRads Assessment Category component value",
-        "definition": "Value is a codeable concept.<br/>",
+        "definition": "Value is a codeable concept.",
         "min": 1,
         "max": "1",
         "base": {
@@ -7781,7 +7781,7 @@
         "path": "Observation.component",
         "sliceName": "notPreviouslySeen",
         "short": "Not Previously Seen component",
-        "definition": "This slice contains zero or more components that define prevous encounters in which this abnormality was not seen.The value of this component is a codeable concept chosen from the NotPreviouslySeenVS valueset.<br/>",
+        "definition": "This slice contains zero or more components that define prevous encounters in which this abnormality was not seen.\nThe value of this component is a codeable concept chosen from the NotPreviouslySeenVS valueset.",
         "comment": "This is one component of a group of components that comprise the observation.",
         "requirements": "Component observations share the same attributes in the Observation resource as the primary observation and are always treated a part of a single observation (they are not separable).   However, the reference range for the primary observation value is not inherited by the component values and is required when appropriate for each component observation.",
         "min": 0,
@@ -7976,7 +7976,7 @@
         "id": "Observation.component:notPreviouslySeen.value[x]",
         "path": "Observation.component.value[x]",
         "short": "Not Previously Seen component value",
-        "definition": "Value is a codeable concept.<br/>",
+        "definition": "Value is a codeable concept.",
         "comment": "Used when observation has a set of component observations. An observation may have both a value (e.g. an  Apgar score)  and component observations (the observations from which the Apgar score was derived). If a value is present, the datatype for this element should be determined by Observation.code. A CodeableConcept with just a text would be used instead of a string if the field was usually coded, or if the type associated with the Observation.code defines a coded value.  For additional guidance, see the [Notes section](observation.html#notes) below.",
         "requirements": "An observation exists to have a value, though it might not if it is in error, or if it represents a group of observations.",
         "min": 1,
@@ -8149,7 +8149,7 @@
         "path": "Observation.component",
         "sliceName": "observedCount",
         "short": "Observed Count component",
-        "definition": "This component slice contains the number of items observed.This can be a quantity (i.e. 5), or a range (1 to 5).If the lower bound of the range is set but not the upper bound, then it means {lower bound} or more.If the lower bound of the range is not set but not the upper bound is, then it means {upper bound} or less.<br/>",
+        "definition": "This component slice contains the number of items observed.\nThis can be a quantity (i.e. 5), or a range (1 to 5).\nIf the lower bound of the range is set but not the upper bound, then it means {lower bound} or more.\nIf the lower bound of the range is not set but not the upper bound is, then it means {upper bound} or less.",
         "comment": "This is one component of a group of components that comprise the observation.",
         "min": 0,
         "max": "1",
@@ -8259,7 +8259,7 @@
         "path": "Observation.component",
         "sliceName": "correspondsWith",
         "short": "Corresponds With component",
-        "definition": "This slice contains zero or more components that defines what this observation correspomnds with.The value of this component is a codeable concept chosen from the CorrespondsWithVS valueset.<br/>",
+        "definition": "This slice contains zero or more components that defines what this observation correspomnds with.\nThe value of this component is a codeable concept chosen from the CorrespondsWithVS valueset.",
         "comment": "This is one component of a group of components that comprise the observation.",
         "min": 0,
         "max": "*",
@@ -8294,7 +8294,7 @@
         "id": "Observation.component:correspondsWith.value[x]",
         "path": "Observation.component.value[x]",
         "short": "Corresponds With component value",
-        "definition": "Value is a codeable concept.<br/>",
+        "definition": "Value is a codeable concept.",
         "min": 1,
         "max": "1",
         "base": {

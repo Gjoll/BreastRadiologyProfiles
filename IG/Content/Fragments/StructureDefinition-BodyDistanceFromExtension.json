@@ -22,7 +22,7 @@
   "name": "BodyDistanceFromExtension",
   "title": "Body Distance From Extension",
   "status": "draft",
-  "description": "<b>Body Distance From extension</b>\n\nThis complex extension adds fields that form a distance measurement from a specified body landmark.The body landmark is defined by a codeable conceptThe distance is defined by a quantity of metric distance units (cm, mm, etc).<br/>",
+  "description": "<b>Body Distance From extension</b>\n\nThis complex extension adds fields that form a distance measurement from a specified body landmark.\nThe body landmark is defined by a codeable concept\nThe distance is defined by a quantity of metric distance units (cm, mm, etc).",
   "fhirVersion": "4.0.0",
   "kind": "complex-type",
   "abstract": false,
@@ -51,7 +51,7 @@
         ],
         "path": "Extension",
         "short": "Body Distance From extension",
-        "definition": "This complex extension adds fields that form a distance measurement from a specified body landmark.The body landmark is defined by a codeable conceptThe distance is defined by a quantity of metric distance units (cm, mm, etc).<br/>",
+        "definition": "This complex extension adds fields that form a distance measurement from a specified body landmark.\nThe body landmark is defined by a codeable concept\nThe distance is defined by a quantity of metric distance units (cm, mm, etc).",
         "base": {
           "path": "Extension",
           "min": 0,
@@ -82,7 +82,7 @@
         "path": "Extension.extension",
         "sliceName": "landMark",
         "short": "Body landmark. Origin of distance measurement.",
-        "definition": "Body landmark which defines the origin of the measurement<br/>Currently the value set this is bound to does not contain the requiored breast landmarks like nipple.<br/>",
+        "definition": "Body landmark which defines the origin of the measurement\n\nCurrently the value set this is bound to does not contain the requiored breast landmarks like nipple.",
         "min": 0,
         "max": "1",
         "base": {

@@ -83,7 +83,7 @@
     },
     {
       "url": "http://www.fragment.com/mapname",
-      "valueString": "NoValue/Observation/Fragment"
+      "valueString": "Observation/NoValue/Fragment"
     },
     {
       "url": "http://www.fragment.com/Group",
@@ -119,7 +119,7 @@
       ]
     }
   ],
-  "description": "<b>Associated Features Observation</b>\n\nUsed with masses, asymmetries, or calcifications, or may stand alone as Features when no other abnormality is present.<br/>",
+  "description": "<b>Associated Features Observation</b>\n\nUsed with masses, asymmetries, or calcifications, or may stand alone as Features when no other abnormality is present.",
   "fhirVersion": "4.0.0",
   "kind": "resource",
   "abstract": false,
@@ -132,7 +132,7 @@
         "id": "Observation",
         "path": "Observation",
         "short": "Associated Features Observation",
-        "definition": "Used with masses, asymmetries, or calcifications, or may stand alone as Features when no other abnormality is present.<br/>",
+        "definition": "Used with masses, asymmetries, or calcifications, or may stand alone as Features when no other abnormality is present.",
         "comment": "Used for simple observations such as device measurements, laboratory atomic results, vital signs, height, weight, smoking status, comments, etc.  Other resources are used to provide context for observations such as laboratory reports, etc.",
         "alias": [
           "Vital Signs",
@@ -2008,7 +2008,7 @@
         "path": "Observation.hasMember",
         "sliceName": "mGAbnormalityArchitecturalDistortion",
         "short": "'Mammography Architectural Distortion' reference",
-        "definition": "This slice references the target 'Mammography Architectural Distortion'Valid for the following modalities:<br/><ul><li> MG</li>\n</ul>",
+        "definition": "This slice references the target 'Mammography Architectural Distortion'Valid for the following modalities:\n\n<ul><li> MG</li>\n</ul>",
         "comment": "When using this element, an observation will typically have either a value or a set of related resources, although both may be present in some cases.  For a discussion on the ways Observations can assembled in groups together, see [Notes](observation.html#obsgrouping) below.  Note that a system may calculate results from [QuestionnaireResponse](questionnaireresponse.html)  into a final score and represent the score as an Observation.",
         "min": 0,
         "max": "*",
@@ -2043,7 +2043,7 @@
         "path": "Observation.hasMember",
         "sliceName": "mGAbnormalityCalcification",
         "short": "'Mammography Calcification' reference",
-        "definition": "This slice references the target 'Mammography Calcification'Valid for the following modalities:<br/><ul><li> MG</li>\n</ul>",
+        "definition": "This slice references the target 'Mammography Calcification'Valid for the following modalities:\n\n<ul><li> MG</li>\n</ul>",
         "comment": "When using this element, an observation will typically have either a value or a set of related resources, although both may be present in some cases.  For a discussion on the ways Observations can assembled in groups together, see [Notes](observation.html#obsgrouping) below.  Note that a system may calculate results from [QuestionnaireResponse](questionnaireresponse.html)  into a final score and represent the score as an Observation.",
         "min": 0,
         "max": "*",
@@ -2078,7 +2078,7 @@
         "path": "Observation.hasMember",
         "sliceName": "observedFeature",
         "short": "'Observed Feature' reference",
-        "definition": "This slice references the target 'Observed Feature'Valid for the following modalities:<br/><ul><li> MG</li>\n</ul>",
+        "definition": "This slice references the target 'Observed Feature'Valid for the following modalities:\n\n<ul><li> MG</li>\n</ul>",
         "comment": "When using this element, an observation will typically have either a value or a set of related resources, although both may be present in some cases.  For a discussion on the ways Observations can assembled in groups together, see [Notes](observation.html#obsgrouping) below.  Note that a system may calculate results from [QuestionnaireResponse](questionnaireresponse.html)  into a final score and represent the score as an Observation.",
         "min": 0,
         "max": "*",
@@ -2540,7 +2540,7 @@
         "id": "Observation",
         "path": "Observation",
         "short": "Associated Features Observation",
-        "definition": "Used with masses, asymmetries, or calcifications, or may stand alone as Features when no other abnormality is present.<br/>",
+        "definition": "Used with masses, asymmetries, or calcifications, or may stand alone as Features when no other abnormality is present.",
         "base": {
           "path": "Observation",
           "min": 0,
@@ -2733,7 +2733,7 @@
         "path": "Observation.hasMember",
         "sliceName": "mGAbnormalityArchitecturalDistortion",
         "short": "'Mammography Architectural Distortion' reference",
-        "definition": "This slice references the target 'Mammography Architectural Distortion'Valid for the following modalities:<br/><ul><li> MG</li>\n</ul>",
+        "definition": "This slice references the target 'Mammography Architectural Distortion'Valid for the following modalities:\n\n<ul><li> MG</li>\n</ul>",
         "comment": "When using this element, an observation will typically have either a value or a set of related resources, although both may be present in some cases.  For a discussion on the ways Observations can assembled in groups together, see [Notes](observation.html#obsgrouping) below.  Note that a system may calculate results from [QuestionnaireResponse](questionnaireresponse.html)  into a final score and represent the score as an Observation.",
         "min": 0,
         "max": "*",
@@ -2768,7 +2768,7 @@
         "path": "Observation.hasMember",
         "sliceName": "mGAbnormalityCalcification",
         "short": "'Mammography Calcification' reference",
-        "definition": "This slice references the target 'Mammography Calcification'Valid for the following modalities:<br/><ul><li> MG</li>\n</ul>",
+        "definition": "This slice references the target 'Mammography Calcification'Valid for the following modalities:\n\n<ul><li> MG</li>\n</ul>",
         "comment": "When using this element, an observation will typically have either a value or a set of related resources, although both may be present in some cases.  For a discussion on the ways Observations can assembled in groups together, see [Notes](observation.html#obsgrouping) below.  Note that a system may calculate results from [QuestionnaireResponse](questionnaireresponse.html)  into a final score and represent the score as an Observation.",
         "min": 0,
         "max": "*",
@@ -2803,7 +2803,7 @@
         "path": "Observation.hasMember",
         "sliceName": "observedFeature",
         "short": "'Observed Feature' reference",
-        "definition": "This slice references the target 'Observed Feature'Valid for the following modalities:<br/><ul><li> MG</li>\n</ul>",
+        "definition": "This slice references the target 'Observed Feature'Valid for the following modalities:\n\n<ul><li> MG</li>\n</ul>",
         "comment": "When using this element, an observation will typically have either a value or a set of related resources, although both may be present in some cases.  For a discussion on the ways Observations can assembled in groups together, see [Notes](observation.html#obsgrouping) below.  Note that a system may calculate results from [QuestionnaireResponse](questionnaireresponse.html)  into a final score and represent the score as an Observation.",
         "min": 0,
         "max": "*",

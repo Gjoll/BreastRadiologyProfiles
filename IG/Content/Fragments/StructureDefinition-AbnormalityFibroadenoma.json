@@ -63,14 +63,14 @@
     },
     {
       "url": "http://www.fragment.com/maplink",
-      "valueString": "component|True|FibroAdenoma Type^CodeableConcept^http://hl7.org/fhir/us/breast-radiology/ValueSet/FibroadenomaVS"
+      "valueString": "component|True|FibroAdenoma Type^StructureDefinition-{SDName}-definitions.html#Observation.component:fibroAdenomaType^CodeableConcept^http://hl7.org/fhir/us/breast-radiology/ValueSet/FibroadenomaVS"
     }
   ],
   "url": "http://hl7.org/fhir/us/breast-radiology/StructureDefinition/AbnormalityFibroadenoma",
   "name": "AbnormalityFibroadenoma",
   "title": "Fibroadenoma",
   "status": "draft",
-  "description": "<b>Fibroadenoma Observation</b>\n\n[PR]<br/>Valid for the following modalities:<br/><ul><li> MG</li>\n<li> US</li>\n</ul>",
+  "description": "<b>Fibroadenoma Observation</b>\n\n[PR]\n\nValid for the following modalities:\n\n<ul><li> MG</li>\n<li> US</li>\n</ul>",
   "fhirVersion": "4.0.0",
   "kind": "resource",
   "abstract": false,
@@ -83,7 +83,7 @@
         "id": "Observation",
         "path": "Observation",
         "short": "Fibroadenoma Observation",
-        "definition": "[PR]<br/>Valid for the following modalities:<br/><ul><li> MG</li>\n<li> US</li>\n</ul>",
+        "definition": "[PR]\n\nValid for the following modalities:\n\n<ul><li> MG</li>\n<li> US</li>\n</ul>",
         "base": {
           "path": "Observation",
           "min": 0,
@@ -154,7 +154,7 @@
         "path": "Observation.component",
         "sliceName": "fibroAdenomaType",
         "short": "FibroAdenoma Type component",
-        "definition": "This slice contains the optional component that refines the fibroadenema type.The value of this component is a codeable concept chosen from the FibroadenomaVS valueset.<br/>",
+        "definition": "This slice contains the optional component that refines the fibroadenema type.\nThe value of this component is a codeable concept chosen from the FibroadenomaVS valueset.",
         "comment": "This is one component of a group of components that comprise the observation.",
         "min": 0,
         "max": "1",
@@ -189,7 +189,7 @@
         "id": "Observation.component:fibroAdenomaType.value[x]",
         "path": "Observation.component.value[x]",
         "short": "FibroAdenoma Type component value",
-        "definition": "Value is a codeable concept.<br/>",
+        "definition": "Value is a codeable concept.",
         "min": 1,
         "max": "1",
         "base": {

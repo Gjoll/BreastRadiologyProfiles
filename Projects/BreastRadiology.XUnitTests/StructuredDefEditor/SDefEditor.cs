@@ -297,9 +297,12 @@ namespace BreastRadiology.XUnitTests
             return this;
         }
 
-        public SDefEditor AddComponentLink(String url, bool showChildren = true)
+        public SDefEditor AddComponentLink(String url, String componentRef, String types, String vs = null, bool showChildren = true)
         {
-            this.AddLink("component", url, showChildren);
+            String temp = $"{url}^{componentRef}^{types}";
+            if (String.IsNullOrEmpty(vs) == false)
+                temp += $"^{vs}";
+            this.AddLink("component", temp, showChildren);
             return this;
         }
 
@@ -500,7 +503,8 @@ namespace BreastRadiology.XUnitTests
                     slice.CreateNode(valueX);
                 }
             }
-            this.AddComponentLink($"{componentName}^Quantity");
+            String componentRef = Global.ComponentAnchor(this.SDef.Name, sliceName);
+            this.AddComponentLink(componentName, componentRef, "Quantity");
         }
 
         public void ComponentSliceCodeableConcept(String sliceName,
@@ -562,7 +566,8 @@ namespace BreastRadiology.XUnitTests
                 slice.CreateNode(valueX);
             }
 
-            this.AddComponentLink($"{componentName}^CodeableConcept^{valueSet.Url}");
+            String componentRef = Global.ComponentAnchor("{SDName}", sliceName);
+            this.AddComponentLink(componentName, componentRef, "CodeableConcept", valueSet.Url);
         }
     }
 }

@@ -23,7 +23,7 @@
     },
     {
       "url": "http://www.fragment.com/maplink",
-      "valueString": "component|True|Tumor Qualifier^CodeableConcept^http://hl7.org/fhir/us/breast-radiology/ValueSet/TumorQualifierVS"
+      "valueString": "component|True|Tumor Qualifier^StructureDefinition-{SDName}-definitions.html#Observation.component:tumorQualifier^CodeableConcept^http://hl7.org/fhir/us/breast-radiology/ValueSet/TumorQualifierVS"
     }
   ],
   "url": "http://hl7.org/fhir/us/breast-radiology/StructureDefinition/TumorQualifierComponentFragment",
@@ -31,7 +31,7 @@
   "name": "TumorQualifierComponentFragment",
   "title": "Tumor Qualifier Component Fragment",
   "status": "draft",
-  "description": "<b>Tumor Qualifier component slice fragment</b>\n\nAdds Tumor Qualifier Component<br/>",
+  "description": "<b>Tumor Qualifier component slice fragment</b>\n\nAdds Tumor Qualifier Component",
   "fhirVersion": "4.0.0",
   "kind": "resource",
   "abstract": true,
@@ -44,7 +44,7 @@
         "id": "Observation",
         "path": "Observation",
         "short": "Tumor Qualifier component slice fragment",
-        "definition": "Adds Tumor Qualifier Component<br/>",
+        "definition": "Adds Tumor Qualifier Component",
         "base": {
           "path": "Observation",
           "min": 0,
@@ -74,7 +74,7 @@
         "path": "Observation.component",
         "sliceName": "tumorQualifier",
         "short": "Tumor Qualifier component",
-        "definition": "This slice contains the optional component that defines if a tumour is the index (primary) tumour or a satellite tumour.The value of this component is a codeable concept chosen from the TumorQualifierVS valueset.<br/>",
+        "definition": "This slice contains the optional component that defines if a tumour is the index (primary) tumour or a satellite tumour.\nThe value of this component is a codeable concept chosen from the TumorQualifierVS valueset.",
         "comment": "This is one component of a group of components that comprise the observation.",
         "min": 0,
         "max": "1",
@@ -109,7 +109,7 @@
         "id": "Observation.component:tumorQualifier.value[x]",
         "path": "Observation.component.value[x]",
         "short": "Tumor Qualifier component value",
-        "definition": "Value is a codeable concept.<br/>",
+        "definition": "Value is a codeable concept.",
         "min": 1,
         "max": "1",
         "base": {

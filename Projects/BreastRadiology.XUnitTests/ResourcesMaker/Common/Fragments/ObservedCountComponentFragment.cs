@@ -96,7 +96,8 @@ namespace BreastRadiology.XUnitTests
                            valueXNode.CreateSlice($"{sliceName}/range", valueX);
                        }
 
-                       e.AddComponentLink($"Observed Count^Quantity or Range");
+                       String componentRef = Global.ComponentAnchor("{SDName}", sliceName);
+                       e.AddComponentLink($"Observed Count", componentRef, "Quantity or Range");
                    });
     }
 }

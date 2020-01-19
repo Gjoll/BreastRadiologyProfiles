@@ -75,11 +75,11 @@
     },
     {
       "url": "http://www.fragment.com/maplink",
-      "valueString": "component|True|Calcification Type^CodeableConcept^http://hl7.org/fhir/us/breast-radiology/ValueSet/MammoCalcificationTypeVS"
+      "valueString": "component|True|Calcification Type^StructureDefinition-{SDName}-definitions.html#Observation.component:calcificationType^CodeableConcept^http://hl7.org/fhir/us/breast-radiology/ValueSet/MammoCalcificationTypeVS"
     },
     {
       "url": "http://www.fragment.com/maplink",
-      "valueString": "component|True|Calcification Distribution^CodeableConcept^http://hl7.org/fhir/us/breast-radiology/ValueSet/MammoCalcificationDistributionVS"
+      "valueString": "component|True|Calcification Distribution^StructureDefinition-{SDName}-definitions.html#Observation.component:calcificationDistribution^CodeableConcept^http://hl7.org/fhir/us/breast-radiology/ValueSet/MammoCalcificationDistributionVS"
     }
   ],
   "url": "http://hl7.org/fhir/us/breast-radiology/StructureDefinition/MGAbnormalityCalcification",
@@ -192,7 +192,7 @@
         "path": "Observation.component",
         "sliceName": "calcificationType",
         "short": "Calcification Type component",
-        "definition": "This slice contains the optional component that refines the calcification type.The value of this component is a codeable concept chosen from the MammoCalcificationTypeVS valueset.<br/>",
+        "definition": "This slice contains the optional component that refines the calcification type.\nThe value of this component is a codeable concept chosen from the MammoCalcificationTypeVS valueset.",
         "comment": "This is one component of a group of components that comprise the observation.",
         "min": 0,
         "max": "1",
@@ -227,7 +227,7 @@
         "id": "Observation.component:calcificationType.value[x]",
         "path": "Observation.component.value[x]",
         "short": "Calcification Type component value",
-        "definition": "Value is a codeable concept.<br/>",
+        "definition": "Value is a codeable concept.",
         "min": 1,
         "max": "1",
         "base": {
@@ -250,7 +250,7 @@
         "path": "Observation.component",
         "sliceName": "calcificationDistribution",
         "short": "Calcification Distribution component",
-        "definition": "This slice contains the optional component that defines the calcification distribution.The value of this component is a codeable concept chosen from the MammoCalcificationDistributionVS valueset.<br/>",
+        "definition": "This slice contains the optional component that defines the calcification distribution.\nThe value of this component is a codeable concept chosen from the MammoCalcificationDistributionVS valueset.",
         "comment": "This is one component of a group of components that comprise the observation.",
         "min": 0,
         "max": "1",
@@ -285,7 +285,7 @@
         "id": "Observation.component:calcificationDistribution.value[x]",
         "path": "Observation.component.value[x]",
         "short": "Calcification Distribution component value",
-        "definition": "Value is a codeable concept.<br/>",
+        "definition": "Value is a codeable concept.",
         "min": 1,
         "max": "1",
         "base": {

@@ -35,11 +35,11 @@
     },
     {
       "url": "http://www.fragment.com/maplink",
-      "valueString": "component|True|Consistent With Value^CodeableConcept^http://hl7.org/fhir/us/breast-radiology/ValueSet/ConsistentWithVS"
+      "valueString": "component|True|Consistent With Value^StructureDefinition-{SDName}-definitions.html#Observation.component:value^CodeableConcept^http://hl7.org/fhir/us/breast-radiology/ValueSet/ConsistentWithVS"
     },
     {
       "url": "http://www.fragment.com/maplink",
-      "valueString": "component|True|Consistent With Qualifier^CodeableConcept^http://hl7.org/fhir/us/breast-radiology/ValueSet/ConsistentWithQualifierVS"
+      "valueString": "component|True|Consistent With Qualifier^StructureDefinition-{SDName}-definitions.html#Observation.component:qualifier^CodeableConcept^http://hl7.org/fhir/us/breast-radiology/ValueSet/ConsistentWithQualifierVS"
     }
   ],
   "url": "http://hl7.org/fhir/us/breast-radiology/StructureDefinition/ConsistentWith",
@@ -88,7 +88,7 @@
         "path": "Observation.component",
         "sliceName": "value",
         "short": "Consistent With Value component",
-        "definition": "This slice contains the required component that defines what this observation is consistent with.The value of this component is a codeable concept chosen from the ConsistentWithVS valueset.<br/>",
+        "definition": "This slice contains the required component that defines what this observation is consistent with.\nThe value of this component is a codeable concept chosen from the ConsistentWithVS valueset.",
         "comment": "This is one component of a group of components that comprise the observation.",
         "min": 1,
         "max": "1",
@@ -123,7 +123,7 @@
         "id": "Observation.component:value.value[x]",
         "path": "Observation.component.value[x]",
         "short": "Consistent With Value component value",
-        "definition": "Value is a codeable concept.<br/>",
+        "definition": "Value is a codeable concept.",
         "min": 1,
         "max": "1",
         "base": {
@@ -146,7 +146,7 @@
         "path": "Observation.component",
         "sliceName": "qualifier",
         "short": "Consistent With Qualifier component",
-        "definition": "This slice contains zero or more components that qualify the consistent with slice component value.The value of this component is a codeable concept chosen from the ConsistentWithVS valueset.<br/>",
+        "definition": "This slice contains zero or more components that qualify the consistent with slice component value.\nThe value of this component is a codeable concept chosen from the ConsistentWithVS valueset.",
         "comment": "This is one component of a group of components that comprise the observation.",
         "min": 0,
         "max": "*",
@@ -181,7 +181,7 @@
         "id": "Observation.component:qualifier.value[x]",
         "path": "Observation.component.value[x]",
         "short": "Consistent With Qualifier component value",
-        "definition": "Value is a codeable concept.<br/>",
+        "definition": "Value is a codeable concept.",
         "min": 1,
         "max": "1",
         "base": {

@@ -15,7 +15,7 @@
     },
     {
       "url": "http://www.fragment.com/maplink",
-      "valueString": "component|True|Observed Area^Quantity or Range"
+      "valueString": "component|True|Observed Area^StructureDefinition-{SDName}-definitions.html#Observation.component:observedArea^Quantity or Range"
     }
   ],
   "url": "http://hl7.org/fhir/us/breast-radiology/StructureDefinition/ObservedAreaFragment",
@@ -65,7 +65,7 @@
         "path": "Observation.component",
         "sliceName": "observedArea",
         "short": "Observed Area component",
-        "definition": "This component slice contains the spherical area of an item observed.If an area component is included in an observation, then what is being observed is not a single item,but some number of items contained in the area of the observation<br/>The size is the diameter of the area. The units are always cm.This can be a quantity (i.e. 5 cm area ), or a range (1 to 5 cm area).If the lower bound of the range is set but not the upper bound, then it means {lower bound} or more.If the lower bound of the range is not set but not the upper bound is, then it means {upper bound} or less.<br/>",
+        "definition": "This component slice contains the spherical area of an item observed.\nIf an area component is included in an observation, then what is being observed is not a single item,\nbut some number of items contained in the area of the observation\n\nThe size is the diameter of the area. The units are always cm.\nThis can be a quantity (i.e. 5 cm area ), or a range (1 to 5 cm area).\nIf the lower bound of the range is set but not the upper bound, then it means {lower bound} or more.\nIf the lower bound of the range is not set but not the upper bound is, then it means {upper bound} or less.",
         "comment": "This is one component of a group of components that comprise the observation.",
         "min": 0,
         "max": "1",

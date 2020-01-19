@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Hl7.Fhir.Model;
+using System;
 using System.Collections.Generic;
 using System.Text;
 
@@ -14,5 +15,10 @@ namespace BreastRadiology.XUnitTests
 
         public static String ResourceMapNameUrl = $"{BaseFragmentUrl}mapname";
         public static String ResourceMapLinkUrl = $"{BaseFragmentUrl}maplink";
+
+        public static String ComponentAnchor(String sdName, String sliceName)
+        {
+            return $"StructureDefinition-" + sdName + "-definitions.html#Observation.component:" + sliceName;
+        }
     }
 }

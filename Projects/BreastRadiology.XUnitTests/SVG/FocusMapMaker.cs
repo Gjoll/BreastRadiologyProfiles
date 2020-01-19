@@ -154,21 +154,24 @@ namespace BreastRadiology.XUnitTests
 
                         case "component":
                             {
-                                SENode node = new SENode(0, componentColor);
                                 String[] lines = link.LinkTarget.Split("^");
+                                String componentHRef = lines[1];
+                                componentHRef = componentHRef.Replace("{SDName}", link.LinkSource.LastUriPart());
 
+                                SENode node = new SENode(0, componentColor, componentHRef);
                                 node.AddTextLine(lines[0]);
-                                if (lines.Length > 1)
-                                    node.AddTextLine(lines[1]);
+
+                                if (lines.Length > 2)
+                                    node.AddTextLine(lines[2]);
 
                                 SENodeGroup nodeGroup = new SENodeGroup(node.AllText());
                                 componentChildren.AppendChild(nodeGroup);
                                 nodeGroup.AppendNode(node);
 
-                                if (lines.Length > 2)
+                                if (lines.Length > 3)
                                 {
-                                    if (this.map.TryGetNode(lines[2], out ResourceMap.Node mapNode) == false)
-                                        throw new Exception($"Component resource '{lines[2]}' not found!");
+                                    if (this.map.TryGetNode(lines[3], out ResourceMap.Node mapNode) == false)
+                                        throw new Exception($"Component resource '{lines[3]}' not found!");
 
                                     SENodeGroup vsGroup = new SENodeGroup("vs");
                                     nodeGroup.AppendChild(vsGroup);

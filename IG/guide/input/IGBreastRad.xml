@@ -903,7 +903,7 @@
       <reference>
         <reference value="StructureDefinition/BreastRadObservationFragment" />
       </reference>
-      <name value="BreastRad Observation Fragment" />
+      <name value="Observation Fragment" />
       <description value="Fragment 'Observation base fragment'" />
       <exampleBoolean value="false" />
       <groupingId value="Fragments" />
@@ -912,7 +912,7 @@
       <reference>
         <reference value="StructureDefinition/BreastRadObservationNoComponentFragment" />
       </reference>
-      <name value="BreastRad Observation No Component Fragment" />
+      <name value="Observation No Component Fragment" />
       <description value="Fragment 'Observation NoComponent Fragment.'" />
       <exampleBoolean value="false" />
       <groupingId value="Fragments" />
@@ -921,7 +921,7 @@
       <reference>
         <reference value="StructureDefinition/BreastRadObservationNoDeviceFragment" />
       </reference>
-      <name value="BreastRad Observation NoDevice Fragment" />
+      <name value="Observation NoDevice Fragment" />
       <description value="Fragment 'Observations No Device Data fragment.'" />
       <exampleBoolean value="false" />
       <groupingId value="Fragments" />
@@ -930,7 +930,7 @@
       <reference>
         <reference value="StructureDefinition/BreastRadObservationNoValueFragment" />
       </reference>
-      <name value="BreastRad Observation NoValue Fragment" />
+      <name value="Observation NoValue Fragment" />
       <description value="Fragment 'Observation No Value fragment'" />
       <exampleBoolean value="false" />
       <groupingId value="Fragments" />

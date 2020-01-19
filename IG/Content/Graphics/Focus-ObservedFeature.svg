@@ -38,14 +38,18 @@
 </g>
 <g>
 <g transform="translate(430.5 7.5)">
+<a href="StructureDefinition-ObservedFeature-definitions.html#Observation.component:observedCount" target="_top">
 <rect fill="LightYellow" stroke="Black" stroke-width="1.875" x="0" y="0" width="193.5" height="52.5" rx="3.75" ry="3.75" />
+</a>
 <text x="96.75" y="22.5" text-anchor="middle">Observed Count</text>
 <text x="96.75" y="41.25" text-anchor="middle">Quantity or Range</text>
 </g>
 </g>
 <g>
 <g transform="translate(430.5 67.5)">
+<a href="StructureDefinition-ObservedFeature-definitions.html#Observation.component:featureType" target="_top">
 <rect fill="LightYellow" stroke="Black" stroke-width="1.875" x="0" y="0" width="235.5" height="52.5" rx="3.75" ry="3.75" />
+</a>
 <text x="117.75" y="22.5" text-anchor="middle">Observed Feature Type</text>
 <text x="117.75" y="41.25" text-anchor="middle">CodeableConcept</text>
 </g>

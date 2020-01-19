@@ -86,7 +86,7 @@
   "name": "MGAbnormalityFatNecrosis",
   "title": "Mammography Fat Necrosis",
   "status": "draft",
-  "description": "<b>Fat Necrosis Observation</b>\n\n[PR]<br/>",
+  "description": "<b>Fat Necrosis Observation</b>\n\n[PR]",
   "fhirVersion": "4.0.0",
   "kind": "resource",
   "abstract": false,
@@ -99,7 +99,7 @@
         "id": "Observation",
         "path": "Observation",
         "short": "Fat Necrosis Observation",
-        "definition": "[PR]<br/>",
+        "definition": "[PR]",
         "base": {
           "path": "Observation",
           "min": 0,
