@@ -26,12 +26,14 @@ namespace BreastRadiology.XUnitTests
                             new ConceptDef("Normal",
                                 "Normal",
                                 new Definition()
-                                    .Line("[PR]")
-                                ),
+                                   .Line("[PR]")
+                                   .ValidModalities(Modalities.MG | Modalities.MRI | Modalities.NM | Modalities.US)
+                                ) ,
                             new ConceptDef("Degenerated",
                                 "Degenerated",
                                 new Definition()
-                                    .Line("[PR]")
+                                   .Line("[PR]")
+                                   .ValidModalities(Modalities.MG)
                                 )
                          })
                      );

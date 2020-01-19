@@ -228,15 +228,12 @@ namespace BreastRadiology.XUnitTests
             WriteCS(ds, "ConsistentWithQualifier", @"Common\ConsistentWith.cs", "ConsistentWithQualifierCS");
             WriteCS(ds, "ForeignBody", @"Common\Abnormalities\AbnormalityForeignObject.cs", "ForeignObjectCS");
             WriteCS(ds, "NotPreviousSeen", @"Common\NotPreviouslySeenCS.cs", "NotPreviouslySeenCS");
-            WriteCS(ds, "Qualifier", @"Common\TumorQualifierCS.cs", "TumorQualifierCS");
 
             // Observed features has been hand modified. Run again and comments will be lost.
             //List<String> itemsToIgnore = new List<string>();
             //itemsToIgnore.Add("ARCHITECTURAL DISTORTION");
-
             //WriteCS(ds, "AssocFindings", @"Common\AssociatedFeatures\ObservedFeature.cs", "ObservedFeatureCS", itemsToIgnore);
 
-            //WriteCS(ds, "Fibroadenoma", @"Common\Fibroadenoma.cs", "FibroadenomaCS");
         }
         public DataSet ReadGregDS()
         {
