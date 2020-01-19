@@ -48,11 +48,6 @@ namespace BreastRadiology.XUnitTests
                 e.Select("specimen").Zero();
                 e.Select("conclusion").Single();
                 e.Select("conclusionCode").Single();
-                e.ApplyExtension("Recommendations", Self.RecommendationsExtension.Value())
-                     .Short("Recommendations for future care")
-                     .Definition("Recommendations for future care")
-                     .ZeroToMany()
-                     .MustSupport();
                 e.ApplyExtension("Impressions", Self.ImpressionsExtension.Value())
                      .Short("Exam impressions")
                      .Definition("Exam impressions.")
@@ -62,13 +57,16 @@ namespace BreastRadiology.XUnitTests
                      .Short("Related Clinical Resources")
                      .Definition("References to FHIR clinical resoruces used during the exam or referenced by this report.")
                      .ZeroToMany();
-
-                e.Select("conclusionCode")
-                    .Single()
-                    .Binding(Self.BiRadsAssessmentCategoriesVS.Value(), BindingStrength.Required)
-                    .MustSupport()
-                    ;
-
+                {
+                    ValueSet binding = Self.BiRadsAssessmentCategoriesVS.Value();
+                    e.Select("conclusionCode")
+                        .Single()
+                        .Binding(binding, BindingStrength.Required)
+                        .MustSupport()
+                        ;
+                    String componentRef = Global.ElementAnchor("conclusionCode");
+                    e.AddComponentLink("conclusionCode", componentRef, "CodeableConcept", binding.Url);
+                }
                 ElementTreeNode sliceElementDef = e.ConfigureSliceByUrlDiscriminator("result", false);
                 {
                     ElementTreeSlice slice = Self.SliceTargetReference(e, sliceElementDef, Self.SectionFindingsLeftBreast.Value(), 0, "1");

@@ -1,9 +1,47 @@
 {
   "resourceType": "StructureDefinition",
-  "url": "http://hl7.org/fhir/us/breast-radiology/StructureDefinition/RecommendationsExtension",
+  "extension": [
+    {
+      "url": "http://www.fragment.com/mapname",
+      "valueString": "Service Recommendation/Extension"
+    },
+    {
+      "url": "http://www.fragment.com/Group",
+      "valueString": "ExtensionResources/ServiceRecommendation"
+    },
+    {
+      "url": "http://www.fragment.com/fragment",
+      "valueUrl": "http://hl7.org/fhir/us/breast-radiology/StructureDefinition/HeaderFragment"
+    },
+    {
+      "url": "http://www.fragment.com/maplink",
+      "valueString": "fragment|True|http://hl7.org/fhir/us/breast-radiology/StructureDefinition/HeaderFragment"
+    },
+    {
+      "url": "http://www.fragment.com/maplink",
+      "valueString": "target|False|http://hl7.org/fhir/StructureDefinition/MedicationRequest"
+    },
+    {
+      "url": "http://www.fragment.com/maplink",
+      "valueString": "target|False|http://hl7.org/fhir/StructureDefinition/ServiceRequest"
+    },
+    {
+      "url": "http://www.fragment.com/maplink",
+      "valueString": "target|False|http://hl7.org/fhir/us/breast-radiology/StructureDefinition/ServiceRecommendation"
+    },
+    {
+      "url": "http://www.fragment.com/mapname",
+      "valueString": "Common"
+    },
+    {
+      "url": "http://www.fragment.com/Group",
+      "valueString": "Fragment/HeaderFragment"
+    }
+  ],
+  "url": "http://hl7.org/fhir/us/breast-radiology/StructureDefinition/ServiceRecommendationExtension",
   "version": "0.0.2",
-  "name": "RecommendationsExtension",
-  "title": "Recommendations Extension",
+  "name": "ServiceRecommendationExtension",
+  "title": "Service Recommendation Extension",
   "status": "draft",
   "date": "2019-11-01",
   "publisher": "Hl7-Clinical Interoperability Council",
@@ -17,7 +55,7 @@
       ]
     }
   ],
-  "description": "<b>Diagnostic Report recommendations section extension</b>\n\nThis extension adds references to FHIR clinical recommendation resources resulting from this exam.\n\nEach recommendation is stored as a seperate Fhir resource instance, with a reference to that instance in this extension.\n\nThis extension can accept references to the following fhir resources:\n\n<ul><li>Medication Request (FHIR base resource)</li>\n<li>Service Request (FHIR base resource)</li>\n<li>Service Recommendation (Profile of Service Request tailored to typical Breast Radiology Service Requests)</li>\n</ul>",
+  "description": "<b>Diagnostic Report Service Recommendation extension</b>\n\nThis extension adds references to FHIR clinical recommendation resources resulting from this exam.\n\nEach recommendation is stored as a seperate Fhir resource instance, with a reference to that instance in this extension.\n\nThis extension can accept references to the following fhir resources:\n\n<ul><li>Medication Request (FHIR base resource)</li>\n<li>Service Request (FHIR base resource)</li>\n<li>Service Recommendation (Profile of Service Request tailored to typical Breast Radiology Service Requests)</li>\n</ul>",
   "fhirVersion": "4.0.0",
   "kind": "complex-type",
   "abstract": false,
@@ -45,7 +83,7 @@
           }
         ],
         "path": "Extension",
-        "short": "Diagnostic Report recommendations section extension",
+        "short": "Diagnostic Report Service Recommendation extension",
         "definition": "This extension adds references to FHIR clinical recommendation resources resulting from this exam.\n\nEach recommendation is stored as a seperate Fhir resource instance, with a reference to that instance in this extension.\n\nThis extension can accept references to the following fhir resources:\n\n<ul><li>Medication Request (FHIR base resource)</li>\n<li>Service Request (FHIR base resource)</li>\n<li>Service Recommendation (Profile of Service Request tailored to typical Breast Radiology Service Requests)</li>\n</ul>",
         "min": 0,
         "max": "*",
@@ -177,7 +215,7 @@
             "code": "uri"
           }
         ],
-        "fixedUri": "http://hl7.org/fhir/us/breast-radiology/StructureDefinition/RecommendationsExtension",
+        "fixedUri": "http://hl7.org/fhir/us/breast-radiology/StructureDefinition/ServiceRecommendationExtension",
         "isModifier": false,
         "isSummary": false,
         "mapping": [
@@ -235,7 +273,7 @@
           }
         ],
         "path": "Extension",
-        "short": "Diagnostic Report recommendations section extension",
+        "short": "Diagnostic Report Service Recommendation extension",
         "definition": "This extension adds references to FHIR clinical recommendation resources resulting from this exam.\n\nEach recommendation is stored as a seperate Fhir resource instance, with a reference to that instance in this extension.\n\nThis extension can accept references to the following fhir resources:\n\n<ul><li>Medication Request (FHIR base resource)</li>\n<li>Service Request (FHIR base resource)</li>\n<li>Service Recommendation (Profile of Service Request tailored to typical Breast Radiology Service Requests)</li>\n</ul>",
         "base": {
           "path": "Extension",
@@ -267,7 +305,7 @@
             "code": "uri"
           }
         ],
-        "fixedUri": "http://hl7.org/fhir/us/breast-radiology/StructureDefinition/RecommendationsExtension"
+        "fixedUri": "http://hl7.org/fhir/us/breast-radiology/StructureDefinition/ServiceRecommendationExtension"
       },
       {
         "id": "Extension.value[x]",

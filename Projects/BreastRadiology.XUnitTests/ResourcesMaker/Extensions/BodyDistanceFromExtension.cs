@@ -95,7 +95,6 @@ namespace BreastRadiology.XUnitTests
                             .Paragraph("Body landmark which defines the origin of the measurement")
                             .Paragraph("Currently the value set this is bound to does not contain the requiored breast landmarks like nipple.")
                             )
-
                         .ElementDefinition
                         .Binding("http://hl7.org/fhir/ValueSet/body-site", BindingStrength.Extensible)
                         ;

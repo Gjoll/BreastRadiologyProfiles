@@ -16,6 +16,10 @@
     {
       "url": "http://www.fragment.com/maplink",
       "valueString": "fragment|True|http://hl7.org/fhir/us/breast-radiology/StructureDefinition/HeaderFragment"
+    },
+    {
+      "url": "http://www.fragment.com/maplink",
+      "valueString": "component|True|code^StructureDefinition-{SDName}-definitions.html#Observation.code^CodeableConcept^http://hl7.org/fhir/us/breast-radiology/ValueSet/RecommendationsVS"
     }
   ],
   "url": "http://hl7.org/fhir/us/breast-radiology/StructureDefinition/ServiceRecommendation",

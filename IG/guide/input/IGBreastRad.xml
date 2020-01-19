@@ -361,15 +361,6 @@
     </resource>
     <resource>
       <reference>
-        <reference value="CodeSystem/TumorQualifierCodeSystemCS" />
-      </reference>
-      <name value="Tumor Qualifier CodeSystem" />
-      <description value="TumorQualifier code system" />
-      <exampleBoolean value="false" />
-      <groupingId value="CommonCodesCS" />
-    </resource>
-    <resource>
-      <reference>
         <reference value="ValueSet/AbnormalitiesVS" />
       </reference>
       <name value="Foreign Object ValueSet" />
@@ -613,15 +604,6 @@
     </resource>
     <resource>
       <reference>
-        <reference value="ValueSet/TumorQualifierVS" />
-      </reference>
-      <name value="TumorQualifier ValueSet" />
-      <description value="TumorQualifier value set." />
-      <exampleBoolean value="false" />
-      <groupingId value="MGCodesVS" />
-    </resource>
-    <resource>
-      <reference>
         <reference value="StructureDefinition/BreastRadReport" />
       </reference>
       <name value="Breast Radiology Report" />
@@ -784,10 +766,10 @@
     </resource>
     <resource>
       <reference>
-        <reference value="StructureDefinition/RecommendationsExtension" />
+        <reference value="StructureDefinition/ServiceRecommendationExtension" />
       </reference>
-      <name value="Recommendations Extension" />
-      <description value="Diagnostic Report recommendations section extension" />
+      <name value="Service Recommendation Extension" />
+      <description value="Diagnostic Report Service Recommendation extension" />
       <exampleBoolean value="false" />
       <groupingId value="ExtensionResources" />
     </resource>
@@ -1054,19 +1036,19 @@
     </resource>
     <resource>
       <reference>
-        <reference value="StructureDefinition/ShapeComponentsFragment" />
+        <reference value="StructureDefinition/ServiceRecommendationFragment" />
       </reference>
-      <name value="Shape Components Fragment" />
-      <description value="Fragment 'Shape component slice fragment'" />
+      <name value="Service Recommendation Fragment" />
+      <description value="Fragment 'Service Recommendation Fragment fragment'" />
       <exampleBoolean value="false" />
       <groupingId value="Fragments" />
     </resource>
     <resource>
       <reference>
-        <reference value="StructureDefinition/TumorQualifierComponentFragment" />
+        <reference value="StructureDefinition/ShapeComponentsFragment" />
       </reference>
-      <name value="Tumor Qualifier Component Fragment" />
-      <description value="Fragment 'Tumor Qualifier component slice fragment'" />
+      <name value="Shape Components Fragment" />
+      <description value="Fragment 'Shape component slice fragment'" />
       <exampleBoolean value="false" />
       <groupingId value="Fragments" />
     </resource>

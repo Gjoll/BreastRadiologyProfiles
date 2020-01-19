@@ -5,7 +5,7 @@
   "name": "CommonComponentsFragment",
   "title": "Common Components Fragment",
   "status": "draft",
-  "description": "<b>Common Components fragment</b>\n\nAdds commonly used component slice values, including:\n\n<ul><li>Changes</li>\n<li>Size</li>\n</ul>",
+  "description": "<b>Common Components fragment</b>\n\nAdds commonly used component slice values, including:\n\n<ul><li>Location</li>\n<li>Changes</li>\n<li>Size</li>\n<li>Area</li>\n<li>BiRad Code</li>\n<li>Recommendations</li>\n</ul>",
   "fhirVersion": "4.0.0",
   "kind": "resource",
   "abstract": true,
@@ -18,7 +18,7 @@
         "id": "Observation",
         "path": "Observation",
         "short": "Common Components fragment",
-        "definition": "Adds commonly used component slice values, including:\n\n<ul><li>Changes</li>\n<li>Size</li>\n</ul>",
+        "definition": "Adds commonly used component slice values, including:\n\n<ul><li>Location</li>\n<li>Changes</li>\n<li>Size</li>\n<li>Area</li>\n<li>BiRad Code</li>\n<li>Recommendations</li>\n</ul>",
         "comment": "Used for simple observations such as device measurements, laboratory atomic results, vital signs, height, weight, smoking status, comments, etc.  Other resources are used to provide context for observations such as laboratory reports, etc.",
         "alias": [
           "Vital Signs",
@@ -2158,7 +2158,7 @@
         "id": "Observation",
         "path": "Observation",
         "short": "Common Components fragment",
-        "definition": "Adds commonly used component slice values, including:\n\n<ul><li>Changes</li>\n<li>Size</li>\n</ul>",
+        "definition": "Adds commonly used component slice values, including:\n\n<ul><li>Location</li>\n<li>Changes</li>\n<li>Size</li>\n<li>Area</li>\n<li>BiRad Code</li>\n<li>Recommendations</li>\n</ul>",
         "base": {
           "path": "Observation",
           "min": 0,

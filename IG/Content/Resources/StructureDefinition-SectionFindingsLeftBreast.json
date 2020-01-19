@@ -35,6 +35,10 @@
     },
     {
       "url": "http://www.fragment.com/maplink",
+      "valueString": "component|True|value[x]^StructureDefinition-{SDName}-definitions.html#Observation.value[x]^CodeableConcept^http://hl7.org/fhir/us/breast-radiology/ValueSet/BiRadsAssessmentCategoriesVS"
+    },
+    {
+      "url": "http://www.fragment.com/maplink",
       "valueString": "target|False|http://hl7.org/fhir/us/breast-radiology/StructureDefinition/MGFinding"
     },
     {

@@ -25,13 +25,14 @@ namespace BreastRadiology.XUnitTests
                     .Description("Common Components fragment",
                         new Markdown()
                             .Paragraph("Adds commonly used component slice values, including:")
-                            .List("Changes", "Size")
+                            .List("Location", "Changes", "Size", "Area", "BiRad Code", "Recommendations")
                     )
                     .AddFragRef(Self.BreastBodyLocationRequiredFragment.Value())
                     .AddFragRef(Self.ObservedChangesComponentFragment.Value())
                     .AddFragRef(Self.ObservedSizeComponentFragment.Value())
                     .AddFragRef(Self.ObservedAreaComponentFragment.Value())
                     .AddFragRef(Self.BiRadComponentFragment.Value())
+                    .AddFragRef(Self.ServiceRecommendationFragment.Value())
                     ;
                 s = e.SDef;
 

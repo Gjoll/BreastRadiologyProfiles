@@ -268,11 +268,10 @@ namespace BreastRadiology.XUnitTests
 
         public SDefEditor AddFragRef(StructureDefinition sd)
         {
-            return AddFragRef(sd.Url);
-        }
+            if (sd.IsFragment() == false)
+                throw new Exception("Expected a fragment");
 
-        public SDefEditor AddFragRef(String fragRef)
-        {
+            String fragRef = sd.Url;
             if (String.IsNullOrWhiteSpace(fragRef))
                 throw new Exception($"Fragment Url must not be empty");
             this.SDef.Extension.Add(new Extension
@@ -503,7 +502,7 @@ namespace BreastRadiology.XUnitTests
                     slice.CreateNode(valueX);
                 }
             }
-            String componentRef = Global.ComponentAnchor(this.SDef.Name, sliceName);
+            String componentRef = Global.ComponentAnchor(sliceName);
             this.AddComponentLink(componentName, componentRef, "Quantity");
         }
 
@@ -557,7 +556,7 @@ namespace BreastRadiology.XUnitTests
                     Short = $"{componentName} component value",
                 };
                 valueX
-                    .Binding(valueSet.Url, bindingStrength)
+                    .Binding(valueSet, bindingStrength)
                     .Type("CodeableConcept")
                     .SetDefinition(new Markdown()
                         .Paragraph("Value is a codeable concept.")
@@ -566,7 +565,7 @@ namespace BreastRadiology.XUnitTests
                 slice.CreateNode(valueX);
             }
 
-            String componentRef = Global.ComponentAnchor("{SDName}", sliceName);
+            String componentRef = Global.ComponentAnchor(sliceName);
             this.AddComponentLink(componentName, componentRef, "CodeableConcept", valueSet.Url);
         }
     }

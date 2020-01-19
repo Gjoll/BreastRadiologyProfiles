@@ -16,9 +16,14 @@ namespace BreastRadiology.XUnitTests
         public static String ResourceMapNameUrl = $"{BaseFragmentUrl}mapname";
         public static String ResourceMapLinkUrl = $"{BaseFragmentUrl}maplink";
 
-        public static String ComponentAnchor(String sdName, String sliceName)
+        public static String ElementAnchor(String elementName)
         {
-            return $"StructureDefinition-" + sdName + "-definitions.html#Observation.component:" + sliceName;
+            return $"StructureDefinition-" + "{SDName}" + $"-definitions.html#Observation.{elementName}";
+        }
+
+        public static String ComponentAnchor(String sliceName)
+        {
+            return $"StructureDefinition-" + "{SDName}" + "-definitions.html#Observation.component:" + sliceName;
         }
     }
 }

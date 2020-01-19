@@ -27,6 +27,10 @@
     },
     {
       "url": "http://www.fragment.com/maplink",
+      "valueString": "component|True|value[x]^StructureDefinition-{SDName}-definitions.html#Observation.value[x]^CodeableConcept^http://hl7.org/fhir/us/breast-radiology/ValueSet/MGBreastDensityVS"
+    },
+    {
+      "url": "http://www.fragment.com/maplink",
       "valueString": "valueSet|True|http://hl7.org/fhir/us/breast-radiology/ValueSet/MGBreastDensityVS"
     }
   ],

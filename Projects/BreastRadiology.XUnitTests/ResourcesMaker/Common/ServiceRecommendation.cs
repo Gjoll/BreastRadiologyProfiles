@@ -37,10 +37,13 @@ namespace BreastRadiology.XUnitTests
                 e.IntroDoc
                      .ReviewedStatus(ReviewStatus.NotReviewed)
                      ;
+                {
+                    ValueSet binding = Self.RecommendationsVS.Value();
+                    e.Select("code").Binding(binding, BindingStrength.Extensible);
 
-                e.Select("code")
-                    .Binding(Self.RecommendationsVS.Value(), BindingStrength.Extensible)
-                    ;
+                    String componentRef = Global.ElementAnchor("code");
+                    e.AddComponentLink("code", componentRef, "CodeableConcept", binding.Url);
+                }
             });
 
         VSTaskVar RecommendationsVS = new VSTaskVar(

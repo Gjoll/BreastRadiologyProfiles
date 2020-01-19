@@ -28,14 +28,18 @@ namespace BreastRadiology.XUnitTests
                        e.IntroDoc
                            .ReviewedStatus(ReviewStatus.NotReviewed)
                            ;
+                       {
+                           ValueSet binding = Self.BiRadsAssessmentCategoriesVS.Value();
+                           e.Select("value[x]")
+                               .Single()
+                               .Type("CodeableConcept")
+                               .Binding(binding, BindingStrength.Required)
+                               .MustSupport()
+                               ;
 
-                       e.Select("value[x]")
-                           .Single()
-                           .Type("CodeableConcept")
-                           .Binding(Self.BiRadsAssessmentCategoriesVS.Value(), BindingStrength.Required)
-                           .MustSupport()
-                           ;
-
+                           String componentRef = Global.ElementAnchor("value[x]");
+                           e.AddComponentLink("value[x]", componentRef, "CodeableConcept", binding.Url);
+                       }
                        PreFhir.ElementTreeNode sliceElementDef = e.ConfigureSliceByUrlDiscriminator("hasMember", false);
 
                        {

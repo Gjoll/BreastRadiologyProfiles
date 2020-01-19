@@ -232,7 +232,7 @@ namespace BreastRadiology.XUnitTests
         {
             DataSet ds = this.ReadGregDS();
 
-            WriteCS(ds, "Recommendation", @"Base\ServiceRecommendation.cs", "RecommendationsCS");
+            WriteCS(ds, "Recommendation", @"Common\ServiceRecommendation.cs", "RecommendationsCS");
             WriteCS(ds, "CorrspondsWith", @"Common\CorrespondsWithCS.cs", "CorrespondsWithCS");
             WriteCS(ds, "ConsistentWith", @"Common\ConsistentWith.cs", "ConsistentWithCS");
             WriteCS(ds, "ConsistentWithQualifier", @"Common\ConsistentWith.cs", "ConsistentWithQualifierCS");

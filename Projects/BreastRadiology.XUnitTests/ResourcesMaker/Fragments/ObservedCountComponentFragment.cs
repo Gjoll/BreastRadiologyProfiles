@@ -14,15 +14,15 @@ namespace BreastRadiology.XUnitTests
 {
     partial class ResourcesMaker
     {
-        SDTaskVar ObservedAreaComponentFragment = new SDTaskVar(
+        SDTaskVar ObservedCountComponentFragment = new SDTaskVar(
                (out StructureDefinition s) =>
                    {
-                       const String sliceName = "observedArea";
-                       SDefEditor e = Self.CreateFragment("ObservedAreaFragment",
-                               "ObservedArea Fragment",
-                               "ObservedArea Fragment",
+                       const String sliceName = "observedCount";
+                       SDefEditor e = Self.CreateFragment("ObservedCountFragment",
+                               "ObservedCount Fragment",
+                               "ObservedCount Fragment",
                                ObservationUrl)
-                           .Description("Fragment that adds 'Observed Area' element to profile.",
+                           .Description("Fragment that adds 'Observed Count' element to profile.",
                                new Markdown()
                            )
                            ;
@@ -32,22 +32,19 @@ namespace BreastRadiology.XUnitTests
 
                        ElementTreeSlice slice = e.AppendSlice("component", sliceName, 0, "1");
                        slice.ElementDefinition
-                           .SetShort($"Observed Area component")
+                           .SetShort($"Observed Count component")
                            .SetDefinition(new Markdown()
-                                .Paragraph("This component slice contains the spherical area of an item observed.",
-                                            "If an area component is included in an observation, then what is being observed is not a single item,",
-                                            "but some number of items contained in the area of the observation")
-                                .Paragraph("The size is the diameter of the area. The units are always cm.",
-                                            "This can be a quantity (i.e. 5 cm area ), or a range (1 to 5 cm area).",
-                                            "If the lower bound of the range is set but not the upper bound, then it means {lower bound} or more.",
-                                            "If the lower bound of the range is not set but not the upper bound is, then it means {upper bound} or less."
+                                .Paragraph($"This component slice contains the number of items observed.",
+                                            $"This can be a quantity (i.e. 5), or a range (1 to 5).",
+                                            $"If the lower bound of the range is set but not the upper bound, then it means {{lower bound}} or more.",
+                                            $"If the lower bound of the range is not set but not the upper bound is, then it means {{upper bound}} or less."
                                             )
                                 )
                            .SetComment(new Markdown($"This is one component of a group of components that comprise the observation."))
                            ;
 
                        // Fix component code
-                       Self.FixComponentCode(slice, sliceName, Self.CodeObservedArea.ToCodeableConcept());
+                       Self.FixComponentCode(slice, sliceName, Self.CodeObservedCount.ToCodeableConcept());
                        ElementTreeNode valueXNode = Self.FixComponentValueX(slice, sliceName, new string[] { "Quantity", "Range" });
 
                        {
@@ -99,8 +96,8 @@ namespace BreastRadiology.XUnitTests
                            valueXNode.CreateSlice($"{sliceName}/range", valueX);
                        }
 
-                       String componentRef = Global.ComponentAnchor("{SDName}", sliceName);
-                       e.AddComponentLink("Observed Area", componentRef, "Quantity or Range");
+                       String componentRef = Global.ComponentAnchor(sliceName);
+                       e.AddComponentLink($"Observed Count", componentRef, "Quantity or Range");
                    });
     }
 }

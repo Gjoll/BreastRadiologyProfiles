@@ -182,6 +182,10 @@
       "valueString": "fragment|True|http://hl7.org/fhir/us/breast-radiology/StructureDefinition/BiRadFragment"
     },
     {
+      "url": "http://www.fragment.com/maplink",
+      "valueString": "fragment|True|http://hl7.org/fhir/us/breast-radiology/StructureDefinition/ServiceRecommendationFragment"
+    },
+    {
       "url": "http://www.fragment.com/mapname",
       "valueString": "Breast Body Location/Fragment (Required)"
     },
@@ -240,6 +244,18 @@
     {
       "url": "http://www.fragment.com/maplink",
       "valueString": "component|True|BiRads Assessment Category^StructureDefinition-{SDName}-definitions.html#Observation.component:biRadsAssessmentCategory^CodeableConcept^http://hl7.org/fhir/us/breast-radiology/ValueSet/BiRadsAssessmentCategoriesVS"
+    },
+    {
+      "url": "http://www.fragment.com/mapname",
+      "valueString": "Service Recommendation/Fragment"
+    },
+    {
+      "url": "http://www.fragment.com/Group",
+      "valueString": "Fragment/ServiceRecommendationFragment"
+    },
+    {
+      "url": "http://www.fragment.com/maplink",
+      "valueString": "extension|True|http://hl7.org/fhir/us/breast-radiology/StructureDefinition/ServiceRecommendationExtension"
     },
     {
       "url": "http://www.fragment.com/mapname",
@@ -646,6 +662,41 @@
             "code": "Extension",
             "profile": [
               "http://hl7.org/fhir/us/breast-radiology/StructureDefinition/BreastBodyLocationExtension"
+            ]
+          }
+        ],
+        "isModifier": false,
+        "isSummary": false,
+        "mapping": [
+          {
+            "identity": "rim",
+            "map": "N/A"
+          }
+        ]
+      },
+      {
+        "id": "Observation.extension:serviceRecommendation",
+        "path": "Observation.extension",
+        "sliceName": "serviceRecommendation",
+        "short": "serviceRecommendation extension",
+        "definition": "This extension slice contains the serviceRecommendation extension",
+        "comment": "This is one component of a group of components that comprise the observation.",
+        "alias": [
+          "extensions",
+          "user content"
+        ],
+        "min": 1,
+        "max": "1",
+        "base": {
+          "path": "DomainResource.extension",
+          "min": 0,
+          "max": "*"
+        },
+        "type": [
+          {
+            "code": "Extension",
+            "profile": [
+              "http://hl7.org/fhir/us/breast-radiology/StructureDefinition/ServiceRecommendationExtension"
             ]
           }
         ],
@@ -6419,6 +6470,41 @@
             "code": "Extension",
             "profile": [
               "http://hl7.org/fhir/us/breast-radiology/StructureDefinition/BreastBodyLocationExtension"
+            ]
+          }
+        ],
+        "isModifier": false,
+        "isSummary": false,
+        "mapping": [
+          {
+            "identity": "rim",
+            "map": "N/A"
+          }
+        ]
+      },
+      {
+        "id": "Observation.extension:serviceRecommendation",
+        "path": "Observation.extension",
+        "sliceName": "serviceRecommendation",
+        "short": "serviceRecommendation extension",
+        "definition": "This extension slice contains the serviceRecommendation extension",
+        "comment": "This is one component of a group of components that comprise the observation.",
+        "alias": [
+          "extensions",
+          "user content"
+        ],
+        "min": 1,
+        "max": "1",
+        "base": {
+          "path": "Observation.extension",
+          "min": 0,
+          "max": "*"
+        },
+        "type": [
+          {
+            "code": "Extension",
+            "profile": [
+              "http://hl7.org/fhir/us/breast-radiology/StructureDefinition/ServiceRecommendationExtension"
             ]
           }
         ],

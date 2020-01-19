@@ -139,6 +139,8 @@ namespace BreastRadiology.XUnitTests
                     .Type("CodeableConcept")
                     .Binding(binding.Url, BindingStrength.Required)
                     ;
+                String componentRef = Global.ElementAnchor("value[x]");
+                e.AddComponentLink("value[x]", componentRef, "CodeableConcept", binding.Url);
                 e.AddValueSetLink(binding);
             });
     }

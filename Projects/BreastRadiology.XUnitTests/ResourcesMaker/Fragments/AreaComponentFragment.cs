@@ -14,14 +14,15 @@ namespace BreastRadiology.XUnitTests
 {
     partial class ResourcesMaker
     {
-        SDTaskVar ObservedSizeComponentFragment = new SDTaskVar(
+        SDTaskVar ObservedAreaComponentFragment = new SDTaskVar(
                (out StructureDefinition s) =>
                    {
-                       SDefEditor e = Self.CreateFragment("ObservedSizeFragment",
-                               "ObservedSize Fragment",
-                               "ObservedSize Fragment",
+                       const String sliceName = "observedArea";
+                       SDefEditor e = Self.CreateFragment("ObservedAreaFragment",
+                               "ObservedArea Fragment",
+                               "ObservedArea Fragment",
                                ObservationUrl)
-                           .Description("Fragment that adds 'Observed Size' element to profile.",
+                           .Description("Fragment that adds 'Observed Area' element to profile.",
                                new Markdown()
                            )
                            ;
@@ -29,29 +30,31 @@ namespace BreastRadiology.XUnitTests
 
                        e.StartComponentSliceing();
 
-                       const String sliceName = "observedSize";
-
                        ElementTreeSlice slice = e.AppendSlice("component", sliceName, 0, "1");
                        slice.ElementDefinition
-                           .SetShort($"Observed Size component")
+                           .SetShort($"Observed Area component")
                            .SetDefinition(new Markdown()
-                                               .Paragraph($"This component slice contains the observed size of an item in cemtimeters.",
-                                                          $"This can be a quantity (i.e. 5 cm), or a range (1 cm to 5 cm).",
-                                                          $"If the lower bound of the range is set but not the upper bound, then it means {{lower bound}} cm or more.",
-                                                          $"If the lower bound of the range is not set but not the upper bound is, then it means {{upper bound}} cm or less."
-                                           ))
+                                .Paragraph("This component slice contains the spherical area of an item observed.",
+                                            "If an area component is included in an observation, then what is being observed is not a single item,",
+                                            "but some number of items contained in the area of the observation")
+                                .Paragraph("The size is the diameter of the area. The units are always cm.",
+                                            "This can be a quantity (i.e. 5 cm area ), or a range (1 to 5 cm area).",
+                                            "If the lower bound of the range is set but not the upper bound, then it means {lower bound} or more.",
+                                            "If the lower bound of the range is not set but not the upper bound is, then it means {upper bound} or less."
+                                            )
+                                )
                            .SetComment(new Markdown($"This is one component of a group of components that comprise the observation."))
                            ;
 
                        // Fix component code
-                       Self.FixComponentCode(slice, sliceName, Self.CodeObservedSize.ToCodeableConcept());
+                       Self.FixComponentCode(slice, sliceName, Self.CodeObservedArea.ToCodeableConcept());
                        ElementTreeNode valueXNode = Self.FixComponentValueX(slice, sliceName, new string[] { "Quantity", "Range" });
 
                        {
                            Hl7.Fhir.Model.Quantity q = new Hl7.Fhir.Model.Quantity
                            {
                                System = "http://unitsofmeasure.org",
-                               Code = "cm"
+                               Code = "tot"
                            };
 
                            ElementDefinition valueX = new ElementDefinition
@@ -74,12 +77,12 @@ namespace BreastRadiology.XUnitTests
                                Low = new SimpleQuantity
                                {
                                    System = "http://unitsofmeasure.org",
-                                   Code = "cm"
+                                   Code = "tot"
                                },
                                High = new SimpleQuantity
                                {
                                    System = "http://unitsofmeasure.org",
-                                   Code = "cm"
+                                   Code = "tot"
                                }
                            };
                            ElementDefinition valueX = new ElementDefinition
@@ -96,8 +99,8 @@ namespace BreastRadiology.XUnitTests
                            valueXNode.CreateSlice($"{sliceName}/range", valueX);
                        }
 
-                       String componentRef = Global.ComponentAnchor("{SDName}", sliceName);
-                       e.AddComponentLink($"Observed Size", componentRef, "Quantity or Range");
+                       String componentRef = Global.ComponentAnchor(sliceName);
+                       e.AddComponentLink("Observed Area", componentRef, "Quantity or Range");
                    });
     }
 }
