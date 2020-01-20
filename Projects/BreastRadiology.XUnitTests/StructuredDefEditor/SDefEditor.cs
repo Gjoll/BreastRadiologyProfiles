@@ -169,7 +169,11 @@ namespace BreastRadiology.XUnitTests
         public ElementTreeNode ConfigureSliceByUrlDiscriminator(String path, bool overrideExistingSliceDiscriminator)
         {
             ElementTreeNode extDef = this.Get(path);
+            return this.ConfigureSliceByUrlDiscriminator(extDef, overrideExistingSliceDiscriminator);
+        }
 
+        public ElementTreeNode ConfigureSliceByUrlDiscriminator(ElementTreeNode extDef, bool overrideExistingSliceDiscriminator)
+        {
             ElementDefinition.SlicingComponent slicingComponent = new ElementDefinition.SlicingComponent
             {
                 Ordered = true,
@@ -193,16 +197,35 @@ namespace BreastRadiology.XUnitTests
             return ApplyExtension(name, sd.Url, showChildren);
         }
 
+        public ElementDefinition ApplyExtension(ElementTreeNode extDef, 
+            String name,
+            StructureDefinition sd,
+            bool showChildren = true)
+        {
+            return ApplyExtension(extDef, name, sd.Url, showChildren);
+        }
+
         public ElementDefinition ApplyExtension(String name,
         String extensionUrl,
         bool showChildren = true)
         {
-            this.AddExtensionLink(extensionUrl, showChildren);
-            this.ConfigureSliceByUrlDiscriminator("extension", true);
+            return this.ApplyExtension(this.Get("extension"), name, extensionUrl, showChildren);
+        }
 
+        public ElementDefinition ApplyExtension(ElementTreeNode extDef,
+            String name,
+            String extensionUrl,
+            bool showChildren = true)
+        {
             String sliceName = name.UncapFirstLetter();
+            this.AddExtensionLink(extensionUrl, showChildren);
+            this.ConfigureSliceByUrlDiscriminator(extDef, true);
 
-            ElementTreeSlice slice = this.AppendSlice("extension", sliceName);
+
+            ElementTreeSlice slice = extDef.CreateSlice(sliceName);
+            slice.ElementDefinition.Min = 0;
+            slice.ElementDefinition.Max = "*";
+
             slice.ElementDefinition
                 .SetShort($"{name} extension")
                 .SetDefinition(new Markdown($"This extension slice contains the {name} extension"))

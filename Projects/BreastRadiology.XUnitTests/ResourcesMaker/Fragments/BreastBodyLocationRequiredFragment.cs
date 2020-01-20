@@ -10,7 +10,7 @@ namespace BreastRadiology.XUnitTests
     partial class ResourcesMaker
     {
         SDTaskVar BreastBodyLocationRequiredFragment = new SDTaskVar(
-            (out StructureDefinition  s) =>
+            (out StructureDefinition s) =>
             {
                 SDefEditor e = Self.CreateFragment("BreastBodyLocationRequiredFragment",
                         "Breast Body Location (Required) Fragment",
@@ -33,8 +33,23 @@ namespace BreastRadiology.XUnitTests
                     .Select("bodySite")
                     .Single()
                     ;
-                e
-                    .ApplyExtension("breastBodyLocation", Self.BreastBodyLocationExtension.Value(), true)
+                //e
+                //    .ApplyExtension("breastBodyLocation", Self.BreastBodyLocationExtension.Value(), true)
+                //    .Single()
+                    ;
+                //extensionNode = e.ConfigureSliceByUrlDiscriminator("extension", true);
+
+                ElementDefinition extension = new ElementDefinition
+                {
+                    ElementId = "Observation.bodySite.extension",
+                    Path = "Observation.bodySite.extension",
+                }
+                .ZeroToMany()
+                .Type("Extension")
+                ;
+                ElementTreeNode bodySiteNode = e.Get("bodySite");
+                ElementTreeNode extensionNode = bodySiteNode.DefaultSlice.CreateNode(extension);
+                e.ApplyExtension(extensionNode, "breastBodyLocation", Self.BreastBodyLocationExtension.Value(), true)
                     .Single()
                     ;
             });
