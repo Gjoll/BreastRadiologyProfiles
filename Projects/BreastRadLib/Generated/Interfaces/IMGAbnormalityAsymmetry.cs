@@ -7,8 +7,11 @@ using System.Text;
 using Hl7.Fhir.Model;
 using Hl7.Fhir.Serialization;
 
-//+ Header
-public interface IMGAbnormalityAsymmetry
-//- Header
+namespace BreastRadLib
 {
+	//+ Header
+	public interface IMGAbnormalityAsymmetry  : IObservationLeafFragment, IBreastRadObservationNoDeviceFragment, IBreastRadObservationNoValueFragment, ICommonComponentsFragment, IShapeComponentsFragment, INotPreviouslySeenComponentFragment, IObservedCountFragment, ICorrespondsWithFragment
+	//- Header
+	{
+	}
 }

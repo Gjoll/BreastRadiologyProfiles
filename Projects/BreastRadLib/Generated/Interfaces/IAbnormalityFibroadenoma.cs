@@ -7,8 +7,11 @@ using System.Text;
 using Hl7.Fhir.Model;
 using Hl7.Fhir.Serialization;
 
-//+ Header
-public interface IAbnormalityFibroadenoma
-//- Header
+namespace BreastRadLib
 {
+	//+ Header
+	public interface IAbnormalityFibroadenoma  : IObservationLeafFragment, IBreastRadObservationNoDeviceFragment, IBreastRadObservationNoValueFragment, ICommonComponentsFragment, IShapeComponentsFragment, IObservedCountFragment
+	//- Header
+	{
+	}
 }

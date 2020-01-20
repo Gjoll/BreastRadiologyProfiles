@@ -7,8 +7,11 @@ using System.Text;
 using Hl7.Fhir.Model;
 using Hl7.Fhir.Serialization;
 
-//+ Header
-public interface IBreastBodyLocationRequiredFragment
-//- Header
+namespace BreastRadLib
 {
+	//+ Header
+	public interface IBreastBodyLocationRequiredFragment  : IHeaderFragment
+	//- Header
+	{
+	}
 }

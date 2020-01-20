@@ -42,7 +42,10 @@
   </ItemGroup>
 
   <ItemGroup>
-    <None Update="FragmentTemplate.txt">
+    <None Update="TemplateClass.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="TemplateInterface.txt">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
   </ItemGroup>

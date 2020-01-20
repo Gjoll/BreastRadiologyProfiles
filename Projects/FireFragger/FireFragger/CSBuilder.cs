@@ -13,8 +13,10 @@ namespace FireFragger
     {
         class FragInfo
         {
+            public List<FragInfo> ReferencedFragments = new List<FragInfo>();
             public StructureDefinition StructDef;
             public CodeEditor InterfaceCode;
+            public CodeEditor ClassCode;
         };
 
         public String OutputDir { get; set; } = ".";
@@ -68,10 +70,12 @@ namespace FireFragger
                         FragInfo fi = new FragInfo
                         {
                             StructDef = sd,
-                            InterfaceCode = new CodeEditor()
+                            InterfaceCode = new CodeEditor(),
+                            ClassCode = new CodeEditor()
                         };
-                        fi.InterfaceCode.Load("FragmentTemplate.txt");
-                        this.sdFragments.Add(sd.Url, fi);
+                        fi.InterfaceCode.Load("TemplateInterface.txt");
+                        fi.ClassCode.Load("TemplateClass.txt");
+                        this.sdFragments.Add(sd.Url.ToLower().Trim(), fi);
                     }
                     break;
 
@@ -96,10 +100,28 @@ namespace FireFragger
 
         void BuildHeader(FragInfo fi)
         {
-            CodeBlockNested hdr = fi.InterfaceCode.Blocks.Find("Header");
-            hdr.Clear();
-            hdr
-                .AppendLine($"public interface I{fi.StructDef.Name}")
+            CodeBlockNested iHdr = fi.InterfaceCode.Blocks.Find("Header");
+            CodeBlockNested cHdr = fi.ClassCode.Blocks.Find("Header");
+            StringBuilder interfaces = new StringBuilder();
+            String comma = "";
+            if (fi.ReferencedFragments.Count > 0)
+            {
+                interfaces.Append(" : ");
+                foreach (FragInfo refFrag in fi.ReferencedFragments)
+                {
+                    interfaces.Append($"{comma}I{refFrag.StructDef.Name}");
+                    comma = ", ";
+                }
+            }
+
+            iHdr.Clear();
+            iHdr
+                .AppendLine($"public interface I{fi.StructDef.Name} {interfaces.ToString()}")
+                ;
+
+            cHdr.Clear();
+            cHdr
+                .AppendLine($"public class {fi.StructDef.Name} : BreastRadBase, I{fi.StructDef.Name}")
                 ;
         }
 
@@ -107,6 +129,7 @@ namespace FireFragger
         void Save(FragInfo fi)
         {
             Save(fi.InterfaceCode, Path.Combine(this.OutputDir, "Generated", "Interfaces", $"I{fi.StructDef.Name}.cs"));
+            Save(fi.ClassCode, Path.Combine(this.OutputDir, "Generated", "Class", $"{fi.StructDef.Name}.cs"));
         }
 
         void Save(CodeEditor code, String path)
@@ -141,10 +164,38 @@ namespace FireFragger
                 fc.Add(Path.Combine(this.OutputDir, "Generated"));
             }
 
+            BuildReferences();
             BuildFragments();
             SaveAll();
 
             fc?.Dispose();
+        }
+
+        void BuildReferences()
+        {
+            const String fcn = "BuildReferences";
+
+            foreach (FragInfo fi in this.sdFragments.Values)
+            {
+                foreach (Extension e in fi.StructDef.Extension.ToArray())
+                {
+                    if (e.Url.ToLower().Trim() == Global.FragmentUrl)
+                    {
+                        FhirUrl extUrl = (FhirUrl)e.Value;
+                        String url = extUrl.Value.ToLower().Trim();
+                        if (sdFragments.TryGetValue(url, out FragInfo reference) == false)
+                        {
+                            this.ConversionError(this.GetType().Name,
+                               fcn,
+                               $"Cant find fragment {extUrl}");
+                        }
+                        else
+                        {
+                            fi.ReferencedFragments.Add(reference);
+                        }
+                    }
+                }
+            }
         }
 
         bool IsFragment(DomainResource r)

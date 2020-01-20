@@ -7,8 +7,11 @@ using System.Text;
 using Hl7.Fhir.Model;
 using Hl7.Fhir.Serialization;
 
-//+ Header
-public interface IObservedFeature
-//- Header
+namespace BreastRadLib
 {
+	//+ Header
+	public interface IObservedFeature  : IObservationLeafFragment, IBreastRadObservationNoDeviceFragment, IBreastRadObservationNoValueFragment, IBreastBodyLocationRequiredFragment, IObservedCountFragment
+	//- Header
+	{
+	}
 }

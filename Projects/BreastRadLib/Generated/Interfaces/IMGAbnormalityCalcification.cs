@@ -7,8 +7,11 @@ using System.Text;
 using Hl7.Fhir.Model;
 using Hl7.Fhir.Serialization;
 
-//+ Header
-public interface IMGAbnormalityCalcification
-//- Header
+namespace BreastRadLib
 {
+	//+ Header
+	public interface IMGAbnormalityCalcification  : IObservationLeafFragment, IBreastRadObservationNoDeviceFragment, IBreastRadObservationNoValueFragment, ICommonComponentsFragment, INotPreviouslySeenComponentFragment, IObservedCountFragment, ICorrespondsWithFragment
+	//- Header
+	{
+	}
 }
