@@ -10,6 +10,19 @@ namespace BreastRadiology.XUnitTests
         [DebuggerDisplay("{LinkType}:{ResourceUrl}")]
         public class Link
         {
+            public Link(string linkType,
+                    String linkSource,
+                    String linkTarget,
+                    String cardinality,
+                    bool showChildren)
+            {
+                this.LinkType = linkType;
+                this.LinkSource = linkSource;
+                this.LinkTarget = linkTarget;
+                this.Cardinality = cardinality;
+                this.ShowChildren = showChildren;
+            }
+
             /// <summary>
             /// What type of link this.
             /// </summary>
@@ -28,6 +41,8 @@ namespace BreastRadiology.XUnitTests
             /// (LinkType dependent)
             /// </summary>
             public String LinkTarget;
+
+            public String Cardinality;
 
             public bool ShowChildren;
         }

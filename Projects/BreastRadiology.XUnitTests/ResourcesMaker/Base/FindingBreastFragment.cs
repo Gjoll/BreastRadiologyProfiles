@@ -38,7 +38,11 @@ namespace BreastRadiology.XUnitTests
                                ;
 
                            String componentRef = Global.ElementAnchor("value[x]");
-                           e.AddComponentLink("value[x]", componentRef, "CodeableConcept", binding.Url);
+                           e.AddComponentLink("value[x]",
+                               new SDefEditor.Cardinality(e.Select("value[x]")), 
+                               componentRef, 
+                               "CodeableConcept", 
+                               binding.Url);
                        }
                        PreFhir.ElementTreeNode sliceElementDef = e.ConfigureSliceByUrlDiscriminator("hasMember", false);
 

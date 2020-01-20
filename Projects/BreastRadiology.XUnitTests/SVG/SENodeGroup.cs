@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Diagnostics;
+using System.Linq;
 using System.Text;
 
 namespace BreastRadiology.XUnitTests
@@ -11,7 +12,31 @@ namespace BreastRadiology.XUnitTests
         /// <summary>
         /// For debugging only.
         /// </summary>
-        public String Title {get; set; }
+        public bool ShowCardinalities
+        {
+            get
+            {
+                if (this.showCardinalities == true)
+                    return this.showCardinalities;
+
+                foreach (SENodeGroup child in this.Children)
+                {
+                    if (child.ShowCardinalities == true)
+                        return true;
+                }
+                return false;
+            }
+            set
+            {
+                this.showCardinalities = value;
+            }
+        }
+        bool showCardinalities = true;
+
+        /// <summary>
+        /// For debugging only.
+        /// </summary>
+        public String Title { get; set; }
 
         public IEnumerable<SENode> Nodes => nodes;
         List<SENode> nodes = new List<SENode>();
@@ -19,8 +44,9 @@ namespace BreastRadiology.XUnitTests
         public IEnumerable<SENodeGroup> Children => children;
         List<SENodeGroup> children = new List<SENodeGroup>();
 
-        public SENodeGroup(String title)
+        public SENodeGroup(String title, bool showCardinalities)
         {
+            this.ShowCardinalities = showCardinalities;
             if (title == null)
                 throw new Exception("Title must be non empty for sorting");
             this.Title = title;
@@ -53,9 +79,9 @@ namespace BreastRadiology.XUnitTests
             this.children.Add(nodeGroup);
         }
 
-        public SENodeGroup AppendChild(String title)
+        public SENodeGroup AppendChild(String title, bool showCardinality)
         {
-            SENodeGroup retVal = new SENodeGroup(title);
+            SENodeGroup retVal = new SENodeGroup(title, showCardinality);
             this.children.Add(retVal);
             return retVal;
         }

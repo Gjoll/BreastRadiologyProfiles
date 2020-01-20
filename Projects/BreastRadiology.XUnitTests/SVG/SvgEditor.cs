@@ -1,6 +1,7 @@
 ﻿using SVGLib;
 using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Drawing;
 using System.IO;
 using System.Linq;
@@ -10,6 +11,12 @@ namespace BreastRadiology.XUnitTests
 {
     class SvgEditor
     {
+        struct EndPoint
+        {
+            public PointF Location;
+            public String Annotation;
+        }
+
         const String ArrowStart = "arrowStart";
         const String ArrowEnd = "arrowEnd";
 
@@ -22,7 +29,9 @@ namespace BreastRadiology.XUnitTests
         public float BorderWidth { get; set; } = 0.125f;
         public float LineHeight { get; set; } = 1.25f;
         public float BorderMargin { get; set; } = 0.5f;
-        public float NodeGapX { get; set; } = 2.0f;
+        public float NodeGapStartX { get; set; } = 1.0f;
+        public float NodeGapNoCardEndX { get; set; } = 2.0f;
+        public float NodeGapCardEndX { get; set; } = 3.0f;
         public float NodeGapY { get; set; } = 0.5f;
         public float RectRx { get; set; } = 0.25f;
         public float RectRy { get; set; } = 0.25f;
@@ -77,6 +86,14 @@ namespace BreastRadiology.XUnitTests
             c.StrokeWidth = "0";
         }
 
+
+        public float NodeGapEndX(SENodeGroup g)
+        {
+            if (g.ShowCardinalities == true)
+                return NodeGapCardEndX;
+            return NodeGapNoCardEndX;
+        }
+
         public void Render(SENodeGroup group,
             bool lineFlag)
         {
@@ -85,11 +102,11 @@ namespace BreastRadiology.XUnitTests
             if (this.screenY == -1)
                 this.screenY = this.BorderMargin;
 
-            List<PointF> endConnectors = new List<PointF>();
+            List<EndPoint> endConnectors = new List<EndPoint>();
 
             this.RenderGroup(group, this.screenX, this.screenY, lineFlag, out float width, out float height, endConnectors);
-            this.root.Width = $"{this.ToPx(this.maxWidth + this.NodeGapX)}";
-            this.root.Height = $"{this.ToPx(this.maxHeight + this.NodeGapY)}";
+            this.root.Width = $"{this.ToPx(this.maxWidth + this.NodeGapStartX + this.NodeGapEndX(group))}";
+            this.root.Height = $"{this.ToPx(this.maxHeight + 2 * this.NodeGapY)}";
             this.screenY = this.maxHeight + 4 * this.BorderMargin;
         }
 
@@ -131,7 +148,7 @@ namespace BreastRadiology.XUnitTests
             bool lineFlag,
             out float colWidth,
             out float colHeight,
-            List<PointF> endConnectors)
+            List<EndPoint> endConnectors)
         {
             colWidth = 0;
             colHeight = 0;
@@ -151,14 +168,13 @@ namespace BreastRadiology.XUnitTests
             }
         }
 
-
         void RenderSimpleGroup(SENodeGroup group,
             float screenX,
             float screenY,
             bool lineFlag,
             out float colWidth,
             out float colHeight,
-            List<PointF> endConnectors)
+            List<EndPoint> endConnectors)
         {
             colWidth = 0;
             colHeight = 0;
@@ -186,24 +202,29 @@ namespace BreastRadiology.XUnitTests
                 if (bottomConnectorY < connectorY)
                     bottomConnectorY = connectorY;
                 startConnectors.Add(new PointF(screenX + nodeWidth, col1ScreenY + nodeHeight / 2));
-                endConnectors.Add(new PointF(screenX, col1ScreenY + nodeHeight / 2));
+                Debug.Assert(String.IsNullOrEmpty(node.Annotation) || node.Annotation.Contains(".."));
+                endConnectors.Add(new EndPoint
+                    {
+                        Location = new PointF(screenX, col1ScreenY + nodeHeight / 2),
+                        Annotation = node.Annotation
+                    });
                 col1Height += nodeHeight + this.NodeGapY;
                 col1ScreenY += nodeHeight + this.NodeGapY;
             }
 
-            if (this.maxWidth < col1ScreenX + col1Width + this.NodeGapX)
-                this.maxWidth = col1ScreenX + col1Width + this.NodeGapX;
+            if (this.maxWidth < col1ScreenX + col1Width)
+                this.maxWidth = col1ScreenX + col1Width;
             if (this.maxHeight < col1ScreenY)
                 this.maxHeight = col1ScreenY;
 
-            float col2ScreenX = screenX + col1Width + 2 * this.NodeGapX;
+            float col2ScreenX = screenX + col1Width + this.NodeGapStartX + this.NodeGapEndX(group);
             float col2ScreenY = screenY;
 
             float col2Height = 0;
             bool endConnectorFlag = false;
             foreach (SENodeGroup child in group.Children)
             {
-                List<PointF> col2EndConnectors = new List<PointF>();
+                List<EndPoint> col2EndConnectors = new List<EndPoint>();
 
                 this.RenderGroup(child,
                     col2ScreenX,
@@ -217,39 +238,52 @@ namespace BreastRadiology.XUnitTests
 
                 if ((lineFlag) && (startConnectors.Count > 0))
                 {
-                    foreach (PointF stubEnd in col2EndConnectors)
+                    for (Int32 i = 0; i < col2EndConnectors.Count; i++)
                     {
+                        EndPoint stubEnd = col2EndConnectors[i];
                         endConnectorFlag = true;
-                        this.CreateArrow(g, false, true, screenX + col1Width + this.NodeGapX, stubEnd.Y, stubEnd.X, stubEnd.Y);
-                        if (topConnectorY > stubEnd.Y)
-                            topConnectorY = stubEnd.Y;
-                        if (bottomConnectorY < stubEnd.Y)
-                            bottomConnectorY = stubEnd.Y;
+                        float xStart = screenX + col1Width + this.NodeGapStartX;
+                        this.CreateArrow(g, false, true, xStart, stubEnd.Location.Y, stubEnd.Location.X, stubEnd.Location.Y);
+
+                        Debug.Assert(String.IsNullOrEmpty(stubEnd.Annotation) || stubEnd.Annotation.Contains(".."));
+                        if (child.ShowCardinalities == true)
+                        {
+                            SvgText t = this.doc.AddText(g);
+                            t.X = this.ToPx(xStart + 0.25f);
+                            t.Y = this.ToPx(stubEnd.Location.Y - 0.25f);
+                            t.TextAnchor = "left";
+                            t.Value = stubEnd.Annotation;
+                        }
+
+                        if (topConnectorY > stubEnd.Location.Y)
+                            topConnectorY = stubEnd.Location.Y;
+                        if (bottomConnectorY < stubEnd.Location.Y)
+                            bottomConnectorY = stubEnd.Location.Y;
                     }
                 }
-                float width = col1Width + 2 * this.NodeGapX + col2GroupWidth;
+                float width = col1Width + this.NodeGapStartX + this.NodeGapEndX(group) + col2GroupWidth;
                 if (colWidth < width)
                     colWidth = width;
 
-                if (this.maxWidth < col2ScreenX + col2GroupWidth + this.NodeGapX)
-                    this.maxWidth = col2ScreenX + col2GroupWidth + this.NodeGapX;
+                if (this.maxWidth < col2ScreenX + col2GroupWidth)
+                    this.maxWidth = col2ScreenX + col2GroupWidth;
             }
 
             if ((lineFlag) && (endConnectorFlag == true))
             {
                 foreach (PointF stubStart in startConnectors)
-                    this.CreateArrow(g, true, false, stubStart.X, stubStart.Y, screenX + col1Width + this.NodeGapX, stubStart.Y);
+                    this.CreateArrow(g, true, false, stubStart.X, stubStart.Y, screenX + col1Width + this.NodeGapStartX, stubStart.Y);
 
                 // Make vertical line that connects all stubs.
                 if (group.Children.Count() > 0)
                 {
-                    float x = screenX + col1Width + this.NodeGapX;
+                    float x = screenX + col1Width + this.NodeGapStartX;
                     this.CreateLine(g, x, topConnectorY, x, bottomConnectorY);
                 }
             }
 
-            if (this.maxHeight < col2ScreenY + this.NodeGapY)
-                this.maxHeight = col2ScreenY + this.NodeGapY;
+            if (this.maxHeight < col2ScreenY)
+                this.maxHeight = col2ScreenY;
 
             if (colHeight < col1Height)
                 colHeight = col1Height;

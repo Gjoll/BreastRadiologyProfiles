@@ -19,11 +19,11 @@
     },
     {
       "url": "http://www.fragment.com/maplink",
-      "valueString": "fragment|True|http://hl7.org/fhir/us/breast-radiology/StructureDefinition/BreastBodyLocationRequiredFragment"
+      "valueString": "fragment||True|http://hl7.org/fhir/us/breast-radiology/StructureDefinition/BreastBodyLocationRequiredFragment"
     },
     {
       "url": "http://www.fragment.com/maplink",
-      "valueString": "component|True|Not Previously Seen^StructureDefinition-{SDName}-definitions.html#Observation.component:notPreviouslySeen^CodeableConcept^http://hl7.org/fhir/us/breast-radiology/ValueSet/NotPreviouslySeenVS"
+      "valueString": "component|0..*|True|Not Previously Seen^StructureDefinition-{SDName}-definitions.html#Observation.component:notPreviouslySeen^CodeableConcept^http://hl7.org/fhir/us/breast-radiology/ValueSet/NotPreviouslySeenVS"
     }
   ],
   "url": "http://hl7.org/fhir/us/breast-radiology/StructureDefinition/NotPreviouslySeenComponentFragment",

@@ -48,15 +48,21 @@ namespace BreastRadiology.XUnitTests
                 e.Select("specimen").Zero();
                 e.Select("conclusion").Single();
                 e.Select("conclusionCode").Single();
-                e.ApplyExtension("Impressions", Self.ImpressionsExtension.Value())
-                     .Short("Exam impressions")
-                     .Definition("Exam impressions.")
-                     .ZeroToMany()
-                     .MustSupport();
-                e.ApplyExtension("Related", Self.RelatedClinicalResourcesExtension.Value())
-                     .Short("Related Clinical Resources")
-                     .Definition("References to FHIR clinical resoruces used during the exam or referenced by this report.")
-                     .ZeroToMany();
+                {
+                    ElementDefinition extensionDef = e.ApplyExtension("Impressions", Self.ImpressionsExtension.Value())
+                         .Short("Exam impressions")
+                         .Definition("Exam impressions.")
+                         .ZeroToMany()
+                         .MustSupport();
+                    e.AddExtensionLink(extensionDef);
+                }
+                {
+                    ElementDefinition extensionDef =  e.ApplyExtension("Related", Self.RelatedClinicalResourcesExtension.Value())
+                         .Short("Related Clinical Resources")
+                         .Definition("References to FHIR clinical resoruces used during the exam or referenced by this report.")
+                         .ZeroToMany();
+                    e.AddExtensionLink(extensionDef);
+                }
                 {
                     ValueSet binding = Self.BiRadsAssessmentCategoriesVS.Value();
                     e.Select("conclusionCode")
@@ -65,7 +71,11 @@ namespace BreastRadiology.XUnitTests
                         .MustSupport()
                         ;
                     String componentRef = Global.ElementAnchor("conclusionCode");
-                    e.AddComponentLink("conclusionCode", componentRef, "CodeableConcept", binding.Url);
+                    e.AddComponentLink("conclusionCode",
+                        new SDefEditor.Cardinality(e.Select("conclusionCode")),
+                        componentRef, 
+                        "CodeableConcept", 
+                        binding.Url);
                 }
                 ElementTreeNode sliceElementDef = e.ConfigureSliceByUrlDiscriminator("result", false);
                 {

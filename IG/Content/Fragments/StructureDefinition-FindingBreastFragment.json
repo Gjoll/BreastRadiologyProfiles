@@ -19,7 +19,7 @@
     },
     {
       "url": "http://www.fragment.com/maplink",
-      "valueString": "fragment|True|http://hl7.org/fhir/us/breast-radiology/StructureDefinition/HeaderFragment"
+      "valueString": "fragment||True|http://hl7.org/fhir/us/breast-radiology/StructureDefinition/HeaderFragment"
     },
     {
       "url": "http://www.fragment.com/fragment",
@@ -27,27 +27,27 @@
     },
     {
       "url": "http://www.fragment.com/maplink",
-      "valueString": "fragment|True|http://hl7.org/fhir/us/breast-radiology/StructureDefinition/BreastRadObservationNoDeviceFragment"
+      "valueString": "fragment||True|http://hl7.org/fhir/us/breast-radiology/StructureDefinition/BreastRadObservationNoDeviceFragment"
     },
     {
       "url": "http://www.fragment.com/maplink",
-      "valueString": "component|True|value[x]^StructureDefinition-{SDName}-definitions.html#Observation.value[x]^CodeableConcept^http://hl7.org/fhir/us/breast-radiology/ValueSet/BiRadsAssessmentCategoriesVS"
+      "valueString": "component|1..1|True|value[x]^StructureDefinition-{SDName}-definitions.html#Observation.value[x]^CodeableConcept^http://hl7.org/fhir/us/breast-radiology/ValueSet/BiRadsAssessmentCategoriesVS"
     },
     {
       "url": "http://www.fragment.com/maplink",
-      "valueString": "target|False|http://hl7.org/fhir/us/breast-radiology/StructureDefinition/MGFinding"
+      "valueString": "target|0..*|False|http://hl7.org/fhir/us/breast-radiology/StructureDefinition/MGFinding"
     },
     {
       "url": "http://www.fragment.com/maplink",
-      "valueString": "target|False|http://hl7.org/fhir/us/breast-radiology/StructureDefinition/MRIFinding"
+      "valueString": "target|0..*|False|http://hl7.org/fhir/us/breast-radiology/StructureDefinition/MRIFinding"
     },
     {
       "url": "http://www.fragment.com/maplink",
-      "valueString": "target|False|http://hl7.org/fhir/us/breast-radiology/StructureDefinition/NMFinding"
+      "valueString": "target|0..*|False|http://hl7.org/fhir/us/breast-radiology/StructureDefinition/NMFinding"
     },
     {
       "url": "http://www.fragment.com/maplink",
-      "valueString": "target|False|http://hl7.org/fhir/us/breast-radiology/StructureDefinition/USFinding"
+      "valueString": "target|0..*|False|http://hl7.org/fhir/us/breast-radiology/StructureDefinition/USFinding"
     }
   ],
   "url": "http://hl7.org/fhir/us/breast-radiology/StructureDefinition/FindingBreastFragment",

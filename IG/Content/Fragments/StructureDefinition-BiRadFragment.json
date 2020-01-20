@@ -15,7 +15,7 @@
     },
     {
       "url": "http://www.fragment.com/maplink",
-      "valueString": "component|True|BiRads Assessment Category^StructureDefinition-{SDName}-definitions.html#Observation.component:biRadsAssessmentCategory^CodeableConcept^http://hl7.org/fhir/us/breast-radiology/ValueSet/BiRadsAssessmentCategoriesVS"
+      "valueString": "component|0..1|True|BiRads Assessment Category^StructureDefinition-{SDName}-definitions.html#Observation.component:biRadsAssessmentCategory^CodeableConcept^http://hl7.org/fhir/us/breast-radiology/ValueSet/BiRadsAssessmentCategoriesVS"
     }
   ],
   "url": "http://hl7.org/fhir/us/breast-radiology/StructureDefinition/BiRadFragment",

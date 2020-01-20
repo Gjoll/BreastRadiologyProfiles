@@ -49,7 +49,7 @@ namespace BreastRadiology.XUnitTests
             return $"./{mapNode.StructureName}-{mapNode.Name}.html";
         }
 
-        SENode CreateNode(ResourceMap.Node mapNode)
+        SENode CreateNode(ResourceMap.Node mapNode, String annotation)
         {
             LegendItem legendItem;
             switch (mapNode.StructureName)
@@ -64,7 +64,7 @@ namespace BreastRadiology.XUnitTests
             }
 
             String hRef = HRef(mapNode);
-            SENode node = new SENode(0, legendItem.Color, hRef, mapNode.Name);
+            SENode node = new SENode(0, legendItem.Color, annotation, hRef, mapNode.Name);
             foreach (String titlePart in mapNode.MapName)
             {
                 String s = titlePart.Trim();
@@ -72,6 +72,7 @@ namespace BreastRadiology.XUnitTests
             }
             return node;
         }
+
         bool DifferentChildren(ResourceMap.Link[] links1, ResourceMap.Link[] links2)
         {
             if (links1 == null)
@@ -127,7 +128,7 @@ namespace BreastRadiology.XUnitTests
 
                     if (previousChildLinks == null)
                     {
-                        groupChild = group.AppendChild("");
+                        groupChild = group.AppendChild("", false);
                         if (link.ShowChildren)
                         {
                             this.AddChildren(childMapNode, childMapLinks, groupChild);
@@ -138,7 +139,7 @@ namespace BreastRadiology.XUnitTests
                     {
                         if (this.map.TryGetNode(link.LinkTarget, out ResourceMap.Node linkTargetNode) == false)
                             throw new Exception("ResourceMap.Node '{link.ResourceUrl}' not found");
-                        SENode node = this.CreateNode(linkTargetNode);
+                        SENode node = this.CreateNode(linkTargetNode, link.Cardinality?.ToString());
                         groupChild.AppendNode(node);
                     }
                 }
@@ -158,7 +159,7 @@ namespace BreastRadiology.XUnitTests
 
         SENodeGroup CreateLegend()
         {
-            SENodeGroup legendGroup = new SENodeGroup("legend");
+            SENodeGroup legendGroup = new SENodeGroup("legend", false);
             Int32 i = 0;
             LegendItem[] legendItems = this.legendItems.Values.ToArray();
             while (i < this.legendItems.Values.Count)
@@ -168,8 +169,8 @@ namespace BreastRadiology.XUnitTests
                 while ((counter > 0) && (i < this.legendItems.Values.Count))
                 {
                     LegendItem legendItem = legendItems[i];
-                    SENodeGroup nextGroup = lastGroup.AppendChild("Legend");
-                    SENode node = new SENode(0, legendItem.Color);
+                    SENodeGroup nextGroup = lastGroup.AppendChild("Legend", false);
+                    SENode node = new SENode(0, legendItem.Color, null);
                     nextGroup.AppendNode(node);
                     node.AddTextLine(legendItem.ResourceType);
                     lastGroup = nextGroup;
@@ -196,8 +197,8 @@ namespace BreastRadiology.XUnitTests
         SENodeGroup CreateNodes(String reportUrl)
         {
             ResourceMap.Node mapNode = this.map.GetNode(reportUrl);
-            SENodeGroup rootGroup = new SENodeGroup("root");
-            SENode rootNode = this.CreateNode(mapNode);
+            SENodeGroup rootGroup = new SENodeGroup("root", false);
+            SENode rootNode = this.CreateNode(mapNode, null);
             rootGroup.AppendNode(rootNode);
             this.AddChildren(mapNode, rootGroup);
             return rootGroup;

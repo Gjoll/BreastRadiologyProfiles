@@ -42,7 +42,11 @@ namespace BreastRadiology.XUnitTests
                     e.Select("code").Binding(binding, BindingStrength.Extensible);
 
                     String componentRef = Global.ElementAnchor("code");
-                    e.AddComponentLink("code", componentRef, "CodeableConcept", binding.Url);
+                    e.AddComponentLink("code",
+                        new SDefEditor.Cardinality(0, "*"),
+                        componentRef,
+                        "CodeableConcept",
+                        binding.Url);
                 }
             });
 

@@ -16,13 +16,18 @@ namespace BreastRadiology.XUnitTests
         public String Title {get; }
         public float Width { get => this.width; set => this.width = value; }
 
+        public String Annotation { get; }
+
         public SENode(float width,
             Color fillColor,
+            String annotation,
             String hRef = null,
             String title = null)
         {
             this.Width = width;
             this.FillColor = fillColor;
+            Debug.Assert(String.IsNullOrEmpty(annotation) || annotation.Contains(".."));
+            this.Annotation = annotation;
             this.HRef = hRef;
             this.Title = title;
         }

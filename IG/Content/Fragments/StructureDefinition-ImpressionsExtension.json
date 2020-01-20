@@ -15,11 +15,11 @@
     },
     {
       "url": "http://www.fragment.com/maplink",
-      "valueString": "fragment|True|http://hl7.org/fhir/us/breast-radiology/StructureDefinition/HeaderFragment"
+      "valueString": "fragment||True|http://hl7.org/fhir/us/breast-radiology/StructureDefinition/HeaderFragment"
     },
     {
       "url": "http://www.fragment.com/maplink",
-      "valueString": "target|False|http://hl7.org/fhir/StructureDefinition/ClinicalImpression"
+      "valueString": "target|0..*|False|http://hl7.org/fhir/StructureDefinition/ClinicalImpression"
     }
   ],
   "url": "http://hl7.org/fhir/us/breast-radiology/StructureDefinition/ImpressionsExtension",

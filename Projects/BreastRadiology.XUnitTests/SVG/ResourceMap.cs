@@ -130,18 +130,11 @@ namespace BreastRadiology.XUnitTests
         public Link CreateLink(String linkType,
             String linkSource,
             String linkTarget,
+            String cardinality,
             bool showChildren)
         {
-            Link retVal = new Link
-            {
-                LinkType = linkType,
-                LinkTarget = linkTarget,
-                LinkSource = linkSource,
-                ShowChildren = showChildren
-            };
-
+            Link retVal = new Link(linkType, linkSource, linkTarget, cardinality, showChildren);
             this.links.Add(retVal);
-
             return retVal;
         }
 
@@ -187,7 +180,7 @@ namespace BreastRadiology.XUnitTests
             {
                 FhirString s = (FhirString)link.Value;
                 String[] parts = s.Value.Split('|');
-                ResourceMap.Link mapLink = this.CreateLink(parts[0], resourceUrl, parts[2], Boolean.Parse(parts[1]));
+                ResourceMap.Link mapLink = this.CreateLink(parts[0], resourceUrl, parts[3], parts[1], Boolean.Parse(parts[2]));
                 retVal.AddLink(mapLink);
             }
             return retVal;

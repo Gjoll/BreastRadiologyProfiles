@@ -15,7 +15,7 @@
     },
     {
       "url": "http://www.fragment.com/maplink",
-      "valueString": "component|True|Observed Change In Abnormality^StructureDefinition-{SDName}-definitions.html#Observation.component:observedChanges^CodeableConcept^http://hl7.org/fhir/us/breast-radiology/ValueSet/ObservedChangesVS"
+      "valueString": "component|0..*|True|Observed Change In Abnormality^StructureDefinition-{SDName}-definitions.html#Observation.component:observedChanges^CodeableConcept^http://hl7.org/fhir/us/breast-radiology/ValueSet/ObservedChangesVS"
     }
   ],
   "url": "http://hl7.org/fhir/us/breast-radiology/StructureDefinition/ObservedChangesFragment",

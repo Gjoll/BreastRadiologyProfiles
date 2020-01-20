@@ -197,28 +197,25 @@ namespace BreastRadiology.XUnitTests
             return ApplyExtension(name, sd.Url, showChildren);
         }
 
-        public ElementDefinition ApplyExtension(ElementTreeNode extDef, 
+        public ElementDefinition ApplyExtension(ElementTreeNode extDef,
             String name,
-            StructureDefinition sd,
-            bool showChildren = true)
+            StructureDefinition sd)
         {
-            return ApplyExtension(extDef, name, sd.Url, showChildren);
+            return ApplyExtension(extDef, name, sd.Url);
         }
 
         public ElementDefinition ApplyExtension(String name,
         String extensionUrl,
         bool showChildren = true)
         {
-            return this.ApplyExtension(this.Get("extension"), name, extensionUrl, showChildren);
+            return this.ApplyExtension(this.Get("extension"), name, extensionUrl);
         }
 
         public ElementDefinition ApplyExtension(ElementTreeNode extDef,
             String name,
-            String extensionUrl,
-            bool showChildren = true)
+            String extensionUrl)
         {
             String sliceName = name.UncapFirstLetter();
-            this.AddExtensionLink(extensionUrl, showChildren);
             this.ConfigureSliceByUrlDiscriminator(extDef, true);
 
 
@@ -309,46 +306,76 @@ namespace BreastRadiology.XUnitTests
 
         public SDefEditor AddFragmentLink(String url, bool showChildren = true)
         {
-            this.AddLink("fragment", url, showChildren);
+            this.AddLink("fragment", url, null, showChildren);
             return this;
         }
 
-        public SDefEditor AddExtensionLink(String url, bool showChildren = true)
+        public SDefEditor AddExtensionLink(ElementDefinition extensionDef,
+            bool showChildren = true)
         {
-            this.AddLink("extension", url, showChildren);
+            String url = extensionDef.Type[0].Profile.First();
+            return AddExtensionLink(url, new Cardinality(extensionDef), showChildren);
+        }
+
+        public SDefEditor AddExtensionLink(String url, Cardinality cardinality, bool showChildren = true)
+        {
+            this.AddLink("extension", url, cardinality, showChildren);
             return this;
         }
 
-        public SDefEditor AddComponentLink(String url, String componentRef, String types, String vs = null, bool showChildren = true)
+        public class Cardinality
+        {
+            public Int32 Min;
+            public String Max;
+
+            public Cardinality(Int32 min, String max)
+            {
+                this.Min = min;
+                this.Max = max;
+            }
+            public Cardinality(ElementDefinition e)
+            {
+                this.Min = e.Min.Value;
+                this.Max = e.Max;
+            }
+
+            public override string ToString() => $"{Min}..{Max}";
+        }
+
+        public SDefEditor AddComponentLink(String url,
+            Cardinality cardinality,
+            String componentRef,
+            String types, String vs = null, bool showChildren = true)
         {
             String temp = $"{url}^{componentRef}^{types}";
             if (String.IsNullOrEmpty(vs) == false)
                 temp += $"^{vs}";
-            this.AddLink("component", temp, showChildren);
+            this.AddLink("component", temp, cardinality, showChildren);
             return this;
         }
 
-        public SDefEditor AddTargetLink(String url, bool showChildren = true)
+        public SDefEditor AddTargetLink(String url, Cardinality cardinality, bool showChildren = true)
         {
-            this.AddLink("target", url, showChildren);
+            this.AddLink("target", url, cardinality, showChildren);
             return this;
         }
 
         public SDefEditor AddValueSetLink(ValueSet vs, bool showChildren = true)
         {
-            this.AddLink("valueSet", vs.Url, showChildren);
+            this.AddLink("valueSet", vs.Url, null, showChildren);
             return this;
         }
 
         public SDefEditor AddLink(String linkType,
             String url,
+            Cardinality cardinality,
             bool showChildren)
         {
             if (linkType.Contains('|'))
                 throw new Exception("linkType can not contain a '|' character");
 
             this.SDef.AddExtension(Global.ResourceMapLinkUrl,
-                new FhirString($"{linkType}|{showChildren}|{url}"));
+                new FhirString($"{linkType}|{cardinality}|{showChildren}|{url}"));
             return this;
         }
 
@@ -490,43 +517,44 @@ namespace BreastRadiology.XUnitTests
             String maxCardinality,
             String componentName)
         {
-            {
-                ElementTreeSlice slice = this.AppendSlice("component", sliceName, minCardinality, maxCardinality);
-                slice.ElementDefinition
-                    .SetShort($"{componentName} component")
-                    .SetDefinition(new Markdown($"This component slice contains the {componentName} quantity"))
-                    .SetComment(new Markdown($"This is one component of a group of components that comprise the observation."))
-                    ;
+            ElementTreeSlice slice = this.AppendSlice("component", sliceName, minCardinality, maxCardinality);
+            slice.ElementDefinition
+                .SetShort($"{componentName} component")
+                .SetDefinition(new Markdown($"This component slice contains the {componentName} quantity"))
+                .SetComment(new Markdown($"This is one component of a group of components that comprise the observation."))
+                ;
 
+            {
+                ElementDefinition componentCode = new ElementDefinition
                 {
-                    ElementDefinition componentCode = new ElementDefinition
-                    {
-                        Path = $"{slice.ElementDefinition.Path}.code",
-                        ElementId = $"{slice.ElementDefinition.Path}:{sliceName}.code",
-                        Min = 1,
-                        Max = "1"
-                    };
-                    componentCode
-                        .Pattern(pattern)
-                        ;
-                    slice.CreateNode(componentCode);
-                }
-                {
-                    ElementDefinition valueX = new ElementDefinition
-                    {
-                        Path = $"{slice.ElementDefinition.Path}.value[x]",
-                        ElementId = $"{slice.ElementDefinition.Path}:{sliceName}.value[x]",
-                        Min = 1,
-                        Max = "1"
-                    };
-                    valueX
-                        .Type("Quantity");
+                    Path = $"{slice.ElementDefinition.Path}.code",
+                    ElementId = $"{slice.ElementDefinition.Path}:{sliceName}.code",
+                    Min = 1,
+                    Max = "1"
+                };
+                componentCode
+                    .Pattern(pattern)
                     ;
-                    slice.CreateNode(valueX);
-                }
+                slice.CreateNode(componentCode);
+            }
+            {
+                ElementDefinition valueX = new ElementDefinition
+                {
+                    Path = $"{slice.ElementDefinition.Path}.value[x]",
+                    ElementId = $"{slice.ElementDefinition.Path}:{sliceName}.value[x]",
+                    Min = 1,
+                    Max = "1"
+                };
+                valueX
+                    .Type("Quantity");
+                ;
+                slice.CreateNode(valueX);
             }
             String componentRef = Global.ComponentAnchor(sliceName);
-            this.AddComponentLink(componentName, componentRef, "Quantity");
+            this.AddComponentLink(componentName,
+                new SDefEditor.Cardinality(slice.ElementDefinition),
+                componentRef,
+                "Quantity");
         }
 
         public void ComponentSliceCodeableConcept(String sliceName,
@@ -589,7 +617,11 @@ namespace BreastRadiology.XUnitTests
             }
 
             String componentRef = Global.ComponentAnchor(sliceName);
-            this.AddComponentLink(componentName, componentRef, "CodeableConcept", valueSet.Url);
+            this.AddComponentLink(componentName,
+                new SDefEditor.Cardinality(minCardinality, maxCardinality),
+                componentRef,
+                "CodeableConcept",
+                valueSet.Url);
         }
     }
 }

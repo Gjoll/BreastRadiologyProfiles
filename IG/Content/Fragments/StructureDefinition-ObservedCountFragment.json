@@ -15,7 +15,7 @@
     },
     {
       "url": "http://www.fragment.com/maplink",
-      "valueString": "component|True|Observed Count^StructureDefinition-{SDName}-definitions.html#Observation.component:observedCount^Quantity or Range"
+      "valueString": "component|0..1|True|Observed Count^StructureDefinition-{SDName}-definitions.html#Observation.component:observedCount^Quantity or Range"
     }
   ],
   "url": "http://hl7.org/fhir/us/breast-radiology/StructureDefinition/ObservedCountFragment",

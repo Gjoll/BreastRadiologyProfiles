@@ -333,8 +333,6 @@ namespace BreastRadiology.XUnitTests
                     ;
                 s = e.SDef;
 
-                //breastBodyLocationMapLinks.Add(new ResourceMap.Link("extension", breastBodyLocationExtension, false));
-
                 e.AddFragRef(Self.HeaderFragment.Value());
 
                 e.Select("url")
@@ -384,7 +382,6 @@ namespace BreastRadiology.XUnitTests
                         binding,
                         "Region of the body location",
                         new Markdown().Paragraph("The region  of the body location"));
-                    //AddMapLink(binding);
                 }
 
                 {
@@ -421,12 +418,13 @@ namespace BreastRadiology.XUnitTests
                         "Depth of the body location",
                         new Markdown().Paragraph("The depth of the body location."));
                 }
-
-                e
-                    .ApplyExtension("distanceFromLandmark", Self.BodyDistanceFromExtension.Value(), true)
-                    .Single()
-                    ;
-
+                {
+                    ElementDefinition extensionDef = e
+                        .ApplyExtension("distanceFromLandmark", Self.BodyDistanceFromExtension.Value(), true)
+                        .Single()
+                        ;
+                    e.AddExtensionLink(extensionDef);
+                }
                 e.IntroDoc
                     .ReviewedStatus(ReviewStatus.NotReviewed)
                     ;

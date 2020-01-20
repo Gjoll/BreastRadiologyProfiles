@@ -54,9 +54,15 @@ namespace BreastRadiology.XUnitTests
                     .Type("Reference")
                     ;
 
-                e.AddTargetLink(Self.BreastRadiologyReport.Value().Url, false);
-                e.AddTargetLink(RiskAssessmentUrl, false);
-                e.AddTargetLink(DomainResourceUrl, false);
+                e.AddTargetLink(Self.BreastRadiologyReport.Value().Url,
+                    new SDefEditor.Cardinality(0, "*"), 
+                    false);
+                e.AddTargetLink(RiskAssessmentUrl, 
+                    new SDefEditor.Cardinality(0, "*"), 
+                    false);
+                e.AddTargetLink(DomainResourceUrl, 
+                    new SDefEditor.Cardinality(0, "*"),
+                    false);
             });
     }
 }

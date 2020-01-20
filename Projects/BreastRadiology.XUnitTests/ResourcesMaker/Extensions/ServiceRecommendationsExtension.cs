@@ -56,9 +56,9 @@ namespace BreastRadiology.XUnitTests
                         Self.ServiceRecommendation.Value().Url)
                     .Single()
                     ;
-                e.AddTargetLink(MedicationRequestUrl, false);
-                e.AddTargetLink(ServiceRequestUrl, false);
-                e.AddTargetLink(Self.ServiceRecommendation.Value().Url, false);
+                e.AddTargetLink(MedicationRequestUrl, new SDefEditor.Cardinality(0, "*"), false);
+                e.AddTargetLink(ServiceRequestUrl, new SDefEditor.Cardinality(0, "*"), false);
+                e.AddTargetLink(Self.ServiceRecommendation.Value().Url, new SDefEditor.Cardinality(0, "*"), false);
             });
     }
 }

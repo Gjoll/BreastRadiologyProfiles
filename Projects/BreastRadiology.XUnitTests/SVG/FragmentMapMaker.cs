@@ -82,7 +82,7 @@ namespace BreastRadiology.XUnitTests
             if (this.map.TryGetNode(mapNode.ResourceUrl, out var dummy) == false)
                 throw new Exception($"Referenced node {mapNode.ResourceUrl} not found in map");
 
-            SENode node = new SENode(0, color);
+            SENode node = new SENode(0, color, null);
             foreach (String titlePart in mapNode.MapName)
             {
                 String hRef = null;
@@ -103,9 +103,9 @@ namespace BreastRadiology.XUnitTests
         void GraphNode(FragmentNode fragmentNode)
         {
             SvgEditor e = new SvgEditor();
-            SENodeGroup parentsGroup = new SENodeGroup("parents");
-            SENodeGroup focusGroup = new SENodeGroup("focus");
-            SENodeGroup childrenGroup = new SENodeGroup("children");
+            SENodeGroup parentsGroup = new SENodeGroup("parents", false);
+            SENodeGroup focusGroup = new SENodeGroup("focus", false);
+            SENodeGroup childrenGroup = new SENodeGroup("children", false);
             parentsGroup.AppendChild(focusGroup);
             focusGroup.AppendChild(childrenGroup);
 

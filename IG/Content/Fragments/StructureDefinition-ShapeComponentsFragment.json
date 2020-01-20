@@ -19,23 +19,23 @@
     },
     {
       "url": "http://www.fragment.com/maplink",
-      "valueString": "fragment|True|http://hl7.org/fhir/us/breast-radiology/StructureDefinition/BreastBodyLocationRequiredFragment"
+      "valueString": "fragment||True|http://hl7.org/fhir/us/breast-radiology/StructureDefinition/BreastBodyLocationRequiredFragment"
     },
     {
       "url": "http://www.fragment.com/maplink",
-      "valueString": "component|True|Orientation^StructureDefinition-{SDName}-definitions.html#Observation.component:orientation^CodeableConcept^http://hl7.org/fhir/us/breast-radiology/ValueSet/OrientationVS"
+      "valueString": "component|0..1|True|Orientation^StructureDefinition-{SDName}-definitions.html#Observation.component:orientation^CodeableConcept^http://hl7.org/fhir/us/breast-radiology/ValueSet/OrientationVS"
     },
     {
       "url": "http://www.fragment.com/maplink",
-      "valueString": "component|True|Shape^StructureDefinition-{SDName}-definitions.html#Observation.component:shape^CodeableConcept^http://hl7.org/fhir/us/breast-radiology/ValueSet/ShapeVS"
+      "valueString": "component|0..1|True|Shape^StructureDefinition-{SDName}-definitions.html#Observation.component:shape^CodeableConcept^http://hl7.org/fhir/us/breast-radiology/ValueSet/ShapeVS"
     },
     {
       "url": "http://www.fragment.com/maplink",
-      "valueString": "component|True|Margin^StructureDefinition-{SDName}-definitions.html#Observation.component:margin^CodeableConcept^http://hl7.org/fhir/us/breast-radiology/ValueSet/MarginVS"
+      "valueString": "component|0..1|True|Margin^StructureDefinition-{SDName}-definitions.html#Observation.component:margin^CodeableConcept^http://hl7.org/fhir/us/breast-radiology/ValueSet/MarginVS"
     },
     {
       "url": "http://www.fragment.com/maplink",
-      "valueString": "component|True|Density^StructureDefinition-{SDName}-definitions.html#Observation.component:mgDensity^CodeableConcept^http://hl7.org/fhir/us/breast-radiology/ValueSet/MGDensityVS"
+      "valueString": "component|0..1|True|Density^StructureDefinition-{SDName}-definitions.html#Observation.component:mgDensity^CodeableConcept^http://hl7.org/fhir/us/breast-radiology/ValueSet/MGDensityVS"
     }
   ],
   "url": "http://hl7.org/fhir/us/breast-radiology/StructureDefinition/ShapeComponentsFragment",

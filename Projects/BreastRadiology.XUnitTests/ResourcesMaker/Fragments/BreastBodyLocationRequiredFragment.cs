@@ -33,11 +33,6 @@ namespace BreastRadiology.XUnitTests
                     .Select("bodySite")
                     .Single()
                     ;
-                //e
-                //    .ApplyExtension("breastBodyLocation", Self.BreastBodyLocationExtension.Value(), true)
-                //    .Single()
-                    ;
-                //extensionNode = e.ConfigureSliceByUrlDiscriminator("extension", true);
 
                 ElementDefinition extension = new ElementDefinition
                 {
@@ -49,9 +44,12 @@ namespace BreastRadiology.XUnitTests
                 ;
                 ElementTreeNode bodySiteNode = e.Get("bodySite");
                 ElementTreeNode extensionNode = bodySiteNode.DefaultSlice.CreateNode(extension);
-                e.ApplyExtension(extensionNode, "breastBodyLocation", Self.BreastBodyLocationExtension.Value(), true)
-                    .Single()
-                    ;
+                {
+                    ElementDefinition extensionDef = e.ApplyExtension(extensionNode, "breastBodyLocation", Self.BreastBodyLocationExtension.Value())
+                        .Single()
+                        ;
+                    e.AddExtensionLink(extensionDef);
+                }
             });
     }
 }

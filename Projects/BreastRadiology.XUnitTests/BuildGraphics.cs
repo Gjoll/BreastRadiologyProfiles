@@ -42,9 +42,9 @@ namespace BreastRadiology.XUnitTests
 
             SvgEditor e = new SvgEditor();
 
-            SENodeGroup rootGroup = new SENodeGroup("root");
+            SENodeGroup rootGroup = new SENodeGroup("root", false);
             {
-                SENode node = new SENode(nodeWidth, Color.LightGreen)
+                SENode node = new SENode(nodeWidth, Color.LightGreen, null)
                     .AddTextLine("Breast")
                     .AddTextLine("Radiology")
                     .AddTextLine("Report")
@@ -55,14 +55,14 @@ namespace BreastRadiology.XUnitTests
             {
                 float sectionNodeWidth = 12;
                 {
-                    SENodeGroup sectionFindingsGroup = rootGroup.AppendChild("findings");
-                    SENode findingsNode = new SENode(sectionNodeWidth, Color.LightBlue)
+                    SENodeGroup sectionFindingsGroup = rootGroup.AppendChild("findings", false);
+                    SENode findingsNode = new SENode(sectionNodeWidth, Color.LightBlue, null)
                         .AddTextLine("Findings")
                         .AddTextLine("Section")
                         ;
                     sectionFindingsGroup.AppendNode(findingsNode);
                     {
-                        SENodeGroup sectionFindingsRightGroup = sectionFindingsGroup.AppendChild("findings right");
+                        SENodeGroup sectionFindingsRightGroup = sectionFindingsGroup.AppendChild("findings right", false);
                         {
                             SENode node = new SENode(sectionNodeWidth, Color.LightBlue, FindingsRightBreast)
                                 .AddTextLine("Findings")
@@ -72,7 +72,7 @@ namespace BreastRadiology.XUnitTests
                             sectionFindingsRightGroup.AppendNode(node);
                         }
                         {
-                            SENodeGroup sectionFindingsLeftGroup = sectionFindingsGroup.AppendChild("findings left");
+                            SENodeGroup sectionFindingsLeftGroup = sectionFindingsGroup.AppendChild("findings left", false);
                             {
                                 SENode node = new SENode(sectionNodeWidth, Color.LightBlue, FindingsLeftBreast)
                                     .AddTextLine("Findings")
@@ -85,8 +85,8 @@ namespace BreastRadiology.XUnitTests
                     }
                 }
                 {
-                    SENodeGroup sectionImpressionsGroup = rootGroup.AppendChild("impressions");
-                    SENode node = new SENode(sectionNodeWidth, Color.Coral)
+                    SENodeGroup sectionImpressionsGroup = rootGroup.AppendChild("impressions", true);
+                    SENode node = new SENode(sectionNodeWidth, Color.Coral, null)
                         .AddTextLine("Impressions")
                         .AddTextLine("Section")
                         ;
@@ -94,8 +94,8 @@ namespace BreastRadiology.XUnitTests
                 }
 
                 {
-                    SENodeGroup sectionRecommendationsGroup = rootGroup.AppendChild("recommendations");
-                    SENode node = new SENode(sectionNodeWidth, Color.Coral)
+                    SENodeGroup sectionRecommendationsGroup = rootGroup.AppendChild("recommendations", true);
+                    SENode node = new SENode(sectionNodeWidth, Color.Coral, null)
                         .AddTextLine("Recommendations")
                         .AddTextLine("Section")
                         ;
@@ -103,15 +103,15 @@ namespace BreastRadiology.XUnitTests
                 }
 
                 {
-                    SENodeGroup sectionRiskGroup = rootGroup.AppendChild("risk");
-                    SENode node = new SENode(sectionNodeWidth, Color.Coral)
+                    SENodeGroup sectionRiskGroup = rootGroup.AppendChild("risk", true);
+                    SENode node = new SENode(sectionNodeWidth, Color.Coral, null)
                         .AddTextLine("Patient Risk Section")
                         ;
                     sectionRiskGroup.AppendNode(node);
                 }
                 {
-                    SENodeGroup sectionPriorGroup = rootGroup.AppendChild("prior");
-                    SENode node = new SENode(sectionNodeWidth, Color.Coral)
+                    SENodeGroup sectionPriorGroup = rootGroup.AppendChild("prior", true);
+                    SENode node = new SENode(sectionNodeWidth, Color.Coral, null)
                         .AddTextLine("Prior Studies")
                         ;
                     sectionPriorGroup.AppendNode(node);
@@ -145,9 +145,9 @@ namespace BreastRadiology.XUnitTests
             SENodeGroup AbnormalityType(String name)
             {
                 float width = 12;
-                SENodeGroup findingsGroup = rootGroup.AppendChild(name);
+                SENodeGroup findingsGroup = rootGroup.AppendChild(name, false);
 
-                SENode findingsNode = new SENode(width, Color.LightBlue)
+                SENode findingsNode = new SENode(width, Color.LightBlue, null)
                     .AddTextLine(name)
                     .AddTextLine("Finding")
                     .AddTextLine("Observation")
@@ -155,12 +155,12 @@ namespace BreastRadiology.XUnitTests
 
                 findingsGroup.AppendNode(findingsNode);
 
-                return findingsGroup.AppendChild(name);
+                return findingsGroup.AppendChild(name, false);
             }
 
             void AddTarget(SENodeGroup g, String name)
             {
-                SENode targetNode = new SENode(14, Color.LightBlue)
+                SENode targetNode = new SENode(14, Color.LightBlue, null)
                     .AddTextLine(name)
                     ;
 
@@ -169,7 +169,7 @@ namespace BreastRadiology.XUnitTests
 
             SvgEditor e = new SvgEditor();
 
-            rootGroup = new SENodeGroup("root");
+            rootGroup = new SENodeGroup("root", false);
             {
                 float nodeWidth = 8;
                 SENode node = new SENode(nodeWidth, Color.LightGreen, Overview)
@@ -210,9 +210,9 @@ namespace BreastRadiology.XUnitTests
 
             SvgEditor e = new SvgEditor();
 
-            SENodeGroup group1 = new SENodeGroup("test");
+            SENodeGroup group1 = new SENodeGroup("test", false);
             {
-                SENode node = new SENode(nodeWidth, Color.LightBlue)
+                SENode node = new SENode(nodeWidth, Color.LightBlue, null)
                     .AddTextLine("Node1.1 1", "http://www.google.com")
                     .AddTextLine("Node1.1 2")
                     .AddTextLine("Node1.1 3")
@@ -221,16 +221,16 @@ namespace BreastRadiology.XUnitTests
             }
 
             {
-                SENode node = new SENode(nodeWidth, Color.Coral)
+                SENode node = new SENode(nodeWidth, Color.Coral, null)
                     .AddTextLine("Node1.2 1")
                     ;
                 group1.AppendNode(node);
             }
 
             {
-                SENodeGroup group2 = new SENodeGroup("test2");
+                SENodeGroup group2 = new SENodeGroup("test2", false);
                 {
-                    SENode node = new SENode(nodeWidth, Color.LightBlue)
+                    SENode node = new SENode(nodeWidth, Color.LightBlue, null)
                         .AddTextLine("Node2.1 1", "http://www.google.com")
                         .AddTextLine("Node2.1 2")
                         .AddTextLine("Node2.1 3")
@@ -238,14 +238,14 @@ namespace BreastRadiology.XUnitTests
                     group2.AppendNode(node);
                 }
                 {
-                    SENode node = new SENode(nodeWidth, Color.Coral)
+                    SENode node = new SENode(nodeWidth, Color.Coral, null)
                         .AddTextLine("Node2.2 1")
                         ;
                     group2.AppendNode(node);
                 }
 
                 {
-                    SENode node = new SENode(nodeWidth, Color.Coral)
+                    SENode node = new SENode(nodeWidth, Color.Coral, null)
                         .AddTextLine("Node2.3 1")
                         ;
                     group2.AppendNode(node);

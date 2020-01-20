@@ -553,7 +553,9 @@ namespace BreastRadiology.XUnitTests
                     new Markdown($"This slice references the target '{profile.Title}'")
                     )
             ;
-            e.AddTargetLink(profile.Url, false);
+            e.AddTargetLink(profile.Url.Trim(),
+                new SDefEditor.Cardinality(min, max),
+                false);
 
             return retVal;
         }
@@ -573,7 +575,9 @@ namespace BreastRadiology.XUnitTests
                     .ValidModalities(Modalities.MG)
                     )
             ;
-            e.AddTargetLink(profile.Url, false);
+            e.AddTargetLink(profile.Url,
+                new SDefEditor.Cardinality(min, max),
+                false);
         }
 
         void SliceTargetReference(SDefEditor e,
@@ -588,7 +592,9 @@ namespace BreastRadiology.XUnitTests
                 .SetShort($"'{title}' reference")
                 .SetDefinition(new Markdown($"This slice references the target '{title}'"))
             ;
-            e.AddTargetLink(profile, false);
+            e.AddTargetLink(profile,
+                new SDefEditor.Cardinality(min, max),
+                false);
         }
 
     }

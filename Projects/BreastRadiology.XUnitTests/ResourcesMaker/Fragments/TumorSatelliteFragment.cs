@@ -28,10 +28,11 @@ namespace BreastRadiology.XUnitTests
                     .ReviewedStatus(ReviewStatus.NotReviewed)
                     ;
 
-                e
+                ElementDefinition extensionDef = e
                     .ApplyExtension("tumorSatellite", Self.TumorSatelliteExtension.Value(), true)
                     .ZeroToOne()
                     ;
+                e.AddExtensionLink(extensionDef);
             });
     }
 }

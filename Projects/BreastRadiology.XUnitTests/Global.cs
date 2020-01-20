@@ -1,4 +1,5 @@
 ﻿using Hl7.Fhir.Model;
+using PreFhir;
 using System;
 using System.Collections.Generic;
 using System.Text;
@@ -25,5 +26,11 @@ namespace BreastRadiology.XUnitTests
         {
             return $"StructureDefinition-" + "{SDName}" + "-definitions.html#Observation.component:" + sliceName;
         }
+
+        //public static String Cardinality(ElementDefinition extDef)
+        //{
+        //    return $"{extDef.Min}..{extDef.Max}";
+        //}
+
     }
 }

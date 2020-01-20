@@ -15,27 +15,27 @@
     },
     {
       "url": "http://www.fragment.com/maplink",
-      "valueString": "fragment|True|http://hl7.org/fhir/us/breast-radiology/StructureDefinition/HeaderFragment"
+      "valueString": "fragment||True|http://hl7.org/fhir/us/breast-radiology/StructureDefinition/HeaderFragment"
     },
     {
       "url": "http://www.fragment.com/maplink",
-      "valueString": "valueSet|True|http://hl7.org/fhir/us/breast-radiology/ValueSet/BreastLocationQuadrantVS"
+      "valueString": "valueSet||True|http://hl7.org/fhir/us/breast-radiology/ValueSet/BreastLocationQuadrantVS"
     },
     {
       "url": "http://www.fragment.com/maplink",
-      "valueString": "valueSet|True|http://hl7.org/fhir/us/breast-radiology/ValueSet/BreastLocationRegionVS"
+      "valueString": "valueSet||True|http://hl7.org/fhir/us/breast-radiology/ValueSet/BreastLocationRegionVS"
     },
     {
       "url": "http://www.fragment.com/maplink",
-      "valueString": "valueSet|True|http://hl7.org/fhir/us/breast-radiology/ValueSet/BreastLocationClockVS"
+      "valueString": "valueSet||True|http://hl7.org/fhir/us/breast-radiology/ValueSet/BreastLocationClockVS"
     },
     {
       "url": "http://www.fragment.com/maplink",
-      "valueString": "valueSet|True|http://hl7.org/fhir/us/breast-radiology/ValueSet/BreastLocationDepthVS"
+      "valueString": "valueSet||True|http://hl7.org/fhir/us/breast-radiology/ValueSet/BreastLocationDepthVS"
     },
     {
       "url": "http://www.fragment.com/maplink",
-      "valueString": "extension|True|http://hl7.org/fhir/us/breast-radiology/StructureDefinition/BodyDistanceFromExtension"
+      "valueString": "extension|1..1|True|http://hl7.org/fhir/us/breast-radiology/StructureDefinition/BodyDistanceFromExtension"
     }
   ],
   "url": "http://hl7.org/fhir/us/breast-radiology/StructureDefinition/BreastBodyLocationExtension",

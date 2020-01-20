@@ -48,7 +48,9 @@ namespace BreastRadiology.XUnitTests
                     .ZeroToMany()
                     ;
 
-                e.AddTargetLink(ClinicalImpressionUrl, false);
+                e.AddTargetLink(ClinicalImpressionUrl,
+                    new SDefEditor.Cardinality(e.Select("value[x]")),
+                    false);
             });
     }
 }
