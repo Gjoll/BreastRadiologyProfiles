@@ -1,8 +1,0 @@
-{
-  "profiles": {
-    "FireWall": {
-      "commandName": "Project",
-      "commandLineArgs": "-d -out \"c:\\Temp\\FireWall\" -frags \"C:\\Development\\HL7\\BreastRadiologyProfiles\\IG\\Content\\Fragments\""
-    }
-  }
-}
