@@ -139,10 +139,9 @@ namespace BreastRadiology.XUnitTests
                     .Type("CodeableConcept")
                     .Binding(binding.Url, BindingStrength.Required)
                     ;
-                String componentRef = Global.ElementAnchor("value[x]");
-                e.AddComponentLink("value[x]",
+                e.AddComponentLink("Breast Density Value",
                     new SDefEditor.Cardinality(e.Select("value[x]")),
-                    componentRef, 
+                    Global.ElementAnchor("value[x]"), 
                     "CodeableConcept", 
                     binding.Url);
                 e.AddValueSetLink(binding);

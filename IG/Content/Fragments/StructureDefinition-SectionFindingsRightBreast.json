@@ -15,7 +15,7 @@
     },
     {
       "url": "http://www.fragment.com/maplink",
-      "valueString": "fragment||True|http://hl7.org/fhir/us/breast-radiology/StructureDefinition/FindingBreastFragment"
+      "valueString": "fragment||False|http://hl7.org/fhir/us/breast-radiology/StructureDefinition/FindingBreastFragment"
     }
   ],
   "url": "http://hl7.org/fhir/us/breast-radiology/StructureDefinition/SectionFindingsRightBreast",

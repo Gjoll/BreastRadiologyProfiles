@@ -41,10 +41,9 @@ namespace BreastRadiology.XUnitTests
                     ValueSet binding = Self.RecommendationsVS.Value();
                     e.Select("code").Binding(binding, BindingStrength.Extensible);
 
-                    String componentRef = Global.ElementAnchor("code");
-                    e.AddComponentLink("code",
+                    e.AddComponentLink("Service Recommendation Code",
                         new SDefEditor.Cardinality(0, "*"),
-                        componentRef,
+                        Global.ElementAnchor("code"),
                         "CodeableConcept",
                         binding.Url);
                 }

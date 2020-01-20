@@ -19,11 +19,11 @@
     },
     {
       "url": "http://www.fragment.com/maplink",
-      "valueString": "fragment||True|http://hl7.org/fhir/us/breast-radiology/StructureDefinition/HeaderFragment"
+      "valueString": "fragment||False|http://hl7.org/fhir/us/breast-radiology/StructureDefinition/HeaderFragment"
     },
     {
       "url": "http://www.fragment.com/maplink",
-      "valueString": "extension|1..1|True|http://hl7.org/fhir/us/breast-radiology/StructureDefinition/ServiceRecommendationExtension"
+      "valueString": "extension|0..*|True|http://hl7.org/fhir/us/breast-radiology/StructureDefinition/ServiceRecommendationExtension"
     }
   ],
   "url": "http://hl7.org/fhir/us/breast-radiology/StructureDefinition/ServiceRecommendationFragment",
@@ -77,8 +77,8 @@
         "short": "serviceRecommendation extension",
         "definition": "This extension slice contains the serviceRecommendation extension",
         "comment": "This is one component of a group of components that comprise the observation.",
-        "min": 1,
-        "max": "1",
+        "min": 0,
+        "max": "*",
         "base": {
           "path": "Observation.extension",
           "min": 0,

@@ -55,7 +55,7 @@
 <line stroke="Black" stroke-width="1.875" marker-end="url(#arrowEnd)" x1="343.5" y1="813.75" x2="388.5" y2="813.75" />
 <text x="347.25" y="810" text-anchor="left">0..1</text>
 <line stroke="Black" stroke-width="1.875" marker-end="url(#arrowEnd)" x1="343.5" y1="864.375" x2="388.5" y2="864.375" />
-<text x="347.25" y="860.625" text-anchor="left">0..*</text>
+<text x="347.25" y="860.625" text-anchor="left">1..1</text>
 <line stroke="Black" stroke-width="1.875" marker-end="url(#arrowEnd)" x1="343.5" y1="915" x2="388.5" y2="915" />
 <text x="347.25" y="911.25" text-anchor="left">0..*</text>
 <line stroke="Black" stroke-width="1.875" marker-start="url(#arrowStart)" x1="328.5" y1="24.375" x2="343.5" y2="24.375" />

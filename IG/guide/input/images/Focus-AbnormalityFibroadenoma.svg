@@ -49,7 +49,7 @@
 <line stroke="Black" stroke-width="1.875" marker-end="url(#arrowEnd)" x1="343.5" y1="633.75" x2="388.5" y2="633.75" />
 <text x="347.25" y="630" text-anchor="left">0..1</text>
 <line stroke="Black" stroke-width="1.875" marker-end="url(#arrowEnd)" x1="343.5" y1="684.375" x2="388.5" y2="684.375" />
-<text x="347.25" y="680.625" text-anchor="left">0..*</text>
+<text x="347.25" y="680.625" text-anchor="left">1..1</text>
 <line stroke="Black" stroke-width="1.875" marker-end="url(#arrowEnd)" x1="343.5" y1="735" x2="388.5" y2="735" />
 <text x="347.25" y="731.25" text-anchor="left">0..*</text>
 <line stroke="Black" stroke-width="1.875" marker-start="url(#arrowStart)" x1="328.5" y1="24.375" x2="343.5" y2="24.375" />

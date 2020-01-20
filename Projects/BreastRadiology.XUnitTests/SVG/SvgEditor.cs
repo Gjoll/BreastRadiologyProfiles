@@ -11,10 +11,10 @@ namespace BreastRadiology.XUnitTests
 {
     class SvgEditor
     {
-        struct EndPoint
+        class EndPoint
         {
-            public PointF Location;
-            public String Annotation;
+            public PointF Location { get; set; }
+            public String Annotation { get; set; }
         }
 
         const String ArrowStart = "arrowStart";

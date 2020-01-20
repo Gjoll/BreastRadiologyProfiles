@@ -15,7 +15,7 @@
     },
     {
       "url": "http://www.fragment.com/maplink",
-      "valueString": "fragment||True|http://hl7.org/fhir/us/breast-radiology/StructureDefinition/BreastRadObservationNoDeviceFragment"
+      "valueString": "fragment||False|http://hl7.org/fhir/us/breast-radiology/StructureDefinition/BreastRadObservationNoDeviceFragment"
     },
     {
       "url": "http://www.fragment.com/fragment",
@@ -23,7 +23,7 @@
     },
     {
       "url": "http://www.fragment.com/maplink",
-      "valueString": "fragment||True|http://hl7.org/fhir/us/breast-radiology/StructureDefinition/BreastRadObservationNoValueFragment"
+      "valueString": "fragment||False|http://hl7.org/fhir/us/breast-radiology/StructureDefinition/BreastRadObservationNoValueFragment"
     },
     {
       "url": "http://www.fragment.com/fragment",
@@ -31,7 +31,7 @@
     },
     {
       "url": "http://www.fragment.com/maplink",
-      "valueString": "fragment||True|http://hl7.org/fhir/us/breast-radiology/StructureDefinition/CommonComponentsFragment"
+      "valueString": "fragment||False|http://hl7.org/fhir/us/breast-radiology/StructureDefinition/CommonComponentsFragment"
     },
     {
       "url": "http://www.fragment.com/fragment",
@@ -39,7 +39,7 @@
     },
     {
       "url": "http://www.fragment.com/maplink",
-      "valueString": "fragment||True|http://hl7.org/fhir/us/breast-radiology/StructureDefinition/NotPreviouslySeenComponentFragment"
+      "valueString": "fragment||False|http://hl7.org/fhir/us/breast-radiology/StructureDefinition/NotPreviouslySeenComponentFragment"
     },
     {
       "url": "http://www.fragment.com/fragment",
@@ -47,7 +47,7 @@
     },
     {
       "url": "http://www.fragment.com/maplink",
-      "valueString": "fragment||True|http://hl7.org/fhir/us/breast-radiology/StructureDefinition/CorrespondsWithFragment"
+      "valueString": "fragment||False|http://hl7.org/fhir/us/breast-radiology/StructureDefinition/CorrespondsWithFragment"
     },
     {
       "url": "http://www.fragment.com/fragment",
@@ -55,7 +55,7 @@
     },
     {
       "url": "http://www.fragment.com/maplink",
-      "valueString": "fragment||True|http://hl7.org/fhir/us/breast-radiology/StructureDefinition/BiRadFragment"
+      "valueString": "fragment||False|http://hl7.org/fhir/us/breast-radiology/StructureDefinition/BiRadFragment"
     },
     {
       "url": "http://www.fragment.com/maplink",
@@ -79,7 +79,7 @@
     },
     {
       "url": "http://www.fragment.com/maplink",
-      "valueString": "fragment||True|http://hl7.org/fhir/us/breast-radiology/StructureDefinition/BreastRadObservationFragment"
+      "valueString": "fragment||False|http://hl7.org/fhir/us/breast-radiology/StructureDefinition/BreastRadObservationFragment"
     },
     {
       "url": "http://www.fragment.com/mapname",
@@ -91,11 +91,11 @@
     },
     {
       "url": "http://www.fragment.com/maplink",
-      "valueString": "fragment||True|http://hl7.org/fhir/us/breast-radiology/StructureDefinition/HeaderFragment"
+      "valueString": "fragment||False|http://hl7.org/fhir/us/breast-radiology/StructureDefinition/HeaderFragment"
     },
     {
       "url": "http://www.fragment.com/maplink",
-      "valueString": "fragment||True|http://hl7.org/fhir/us/breast-radiology/StructureDefinition/CategoryFragment"
+      "valueString": "fragment||False|http://hl7.org/fhir/us/breast-radiology/StructureDefinition/CategoryFragment"
     },
     {
       "url": "http://www.fragment.com/mapname",
@@ -123,7 +123,7 @@
     },
     {
       "url": "http://www.fragment.com/maplink",
-      "valueString": "fragment||True|http://hl7.org/fhir/us/breast-radiology/StructureDefinition/BreastRadObservationNoComponentFragment"
+      "valueString": "fragment||False|http://hl7.org/fhir/us/breast-radiology/StructureDefinition/BreastRadObservationNoComponentFragment"
     },
     {
       "url": "http://www.fragment.com/mapname",
@@ -143,23 +143,23 @@
     },
     {
       "url": "http://www.fragment.com/maplink",
-      "valueString": "fragment||True|http://hl7.org/fhir/us/breast-radiology/StructureDefinition/BreastBodyLocationRequiredFragment"
+      "valueString": "fragment||False|http://hl7.org/fhir/us/breast-radiology/StructureDefinition/BreastBodyLocationRequiredFragment"
     },
     {
       "url": "http://www.fragment.com/maplink",
-      "valueString": "fragment||True|http://hl7.org/fhir/us/breast-radiology/StructureDefinition/ObservedChangesFragment"
+      "valueString": "fragment||False|http://hl7.org/fhir/us/breast-radiology/StructureDefinition/ObservedChangesFragment"
     },
     {
       "url": "http://www.fragment.com/maplink",
-      "valueString": "fragment||True|http://hl7.org/fhir/us/breast-radiology/StructureDefinition/ObservedSizeFragment"
+      "valueString": "fragment||False|http://hl7.org/fhir/us/breast-radiology/StructureDefinition/ObservedSizeFragment"
     },
     {
       "url": "http://www.fragment.com/maplink",
-      "valueString": "fragment||True|http://hl7.org/fhir/us/breast-radiology/StructureDefinition/ObservedAreaFragment"
+      "valueString": "fragment||False|http://hl7.org/fhir/us/breast-radiology/StructureDefinition/ObservedAreaFragment"
     },
     {
       "url": "http://www.fragment.com/maplink",
-      "valueString": "fragment||True|http://hl7.org/fhir/us/breast-radiology/StructureDefinition/ServiceRecommendationFragment"
+      "valueString": "fragment||False|http://hl7.org/fhir/us/breast-radiology/StructureDefinition/ServiceRecommendationFragment"
     },
     {
       "url": "http://www.fragment.com/mapname",
@@ -171,7 +171,7 @@
     },
     {
       "url": "http://www.fragment.com/maplink",
-      "valueString": "extension|0..*|True|http://hl7.org/fhir/us/breast-radiology/StructureDefinition/BreastBodyLocationExtension"
+      "valueString": "extension|1..1|True|http://hl7.org/fhir/us/breast-radiology/StructureDefinition/BreastBodyLocationExtension"
     },
     {
       "url": "http://www.fragment.com/mapname",
@@ -614,8 +614,8 @@
           "extensions",
           "user content"
         ],
-        "min": 1,
-        "max": "1",
+        "min": 0,
+        "max": "*",
         "base": {
           "path": "DomainResource.extension",
           "min": 0,
@@ -5731,8 +5731,8 @@
           "extensions",
           "user content"
         ],
-        "min": 1,
-        "max": "1",
+        "min": 0,
+        "max": "*",
         "base": {
           "path": "Observation.extension",
           "min": 0,

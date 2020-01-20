@@ -34,7 +34,7 @@
 <line stroke="Black" stroke-width="1.875" marker-end="url(#arrowEnd)" x1="385.5" y1="93.75" x2="430.5" y2="93.75" />
 <text x="389.25" y="90" text-anchor="left">1..1</text>
 <line stroke="Black" stroke-width="1.875" marker-end="url(#arrowEnd)" x1="385.5" y1="144.375" x2="430.5" y2="144.375" />
-<text x="389.25" y="140.625" text-anchor="left">0..*</text>
+<text x="389.25" y="140.625" text-anchor="left">1..1</text>
 <line stroke="Black" stroke-width="1.875" marker-start="url(#arrowStart)" x1="370.5" y1="24.375" x2="385.5" y2="24.375" />
 <line stroke="Black" stroke-width="1.875" x1="385.5" y1="24.375" x2="385.5" y2="144.375" />
 </g>

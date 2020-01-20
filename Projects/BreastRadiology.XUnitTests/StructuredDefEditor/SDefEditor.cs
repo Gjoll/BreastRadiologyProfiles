@@ -299,14 +299,7 @@ namespace BreastRadiology.XUnitTests
                 Url = PreFhirGenerator.FragmentUrl,
                 Value = new FhirUrl(fragRef)
             });
-            this.AddFragmentLink(fragRef);
-            return this;
-        }
-
-
-        public SDefEditor AddFragmentLink(String url, bool showChildren = true)
-        {
-            this.AddLink("fragment", url, null, showChildren);
+            this.AddLink("fragment", sd.Url, null, false);
             return this;
         }
 
@@ -314,12 +307,7 @@ namespace BreastRadiology.XUnitTests
             bool showChildren = true)
         {
             String url = extensionDef.Type[0].Profile.First();
-            return AddExtensionLink(url, new Cardinality(extensionDef), showChildren);
-        }
-
-        public SDefEditor AddExtensionLink(String url, Cardinality cardinality, bool showChildren = true)
-        {
-            this.AddLink("extension", url, cardinality, showChildren);
+            this.AddLink("extension", url, new Cardinality(extensionDef), showChildren);
             return this;
         }
 

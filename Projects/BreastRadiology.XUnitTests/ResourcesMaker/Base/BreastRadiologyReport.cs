@@ -70,10 +70,9 @@ namespace BreastRadiology.XUnitTests
                         .Binding(binding, BindingStrength.Required)
                         .MustSupport()
                         ;
-                    String componentRef = Global.ElementAnchor("conclusionCode");
-                    e.AddComponentLink("conclusionCode",
+                    e.AddComponentLink("Conclusion Code",
                         new SDefEditor.Cardinality(e.Select("conclusionCode")),
-                        componentRef, 
+                        Global.ElementAnchor("conclusionCode"), 
                         "CodeableConcept", 
                         binding.Url);
                 }

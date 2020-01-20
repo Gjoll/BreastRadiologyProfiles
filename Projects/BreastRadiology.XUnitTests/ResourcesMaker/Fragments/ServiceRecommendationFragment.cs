@@ -34,7 +34,7 @@ namespace BreastRadiology.XUnitTests
                     ;
                 ElementDefinition extensionDef = e
                     .ApplyExtension("serviceRecommendation", Self.ServiceRecommendationExtension.Value(), true)
-                    .Single()
+                    .ZeroToMany()
                     ;
                 e.AddExtensionLink(extensionDef);
             });
