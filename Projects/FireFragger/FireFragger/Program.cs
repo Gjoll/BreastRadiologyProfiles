@@ -29,6 +29,9 @@ namespace FireFragger
             return retVal;
         }
 
+        /*
+        -d -out "c:\Temp\FireWall" -c -f "C:\Development\HL7\BreastRadiologyProfiles\IG\Content\Fragments"
+        */
         void ParseArgs(string[] args)
         {
             Int32 i = 0;
@@ -37,6 +40,12 @@ namespace FireFragger
                 String arg = args[i++];
                 switch (arg.Trim().ToLower())
                 {
+                    case "-d":
+                    case "-debug":
+                        csBuilder.DebugFlag = true;
+                        break;
+
+                    case "-f":
                     case "-frags":
                         {
                             String dir = GetArg(arg, args, ref i);
@@ -48,6 +57,7 @@ namespace FireFragger
                         csBuilder.CleanFlag = true;
                         break;
 
+                    case "-o":
                     case "-out":
                         csBuilder.OutputDir = GetArg(arg, args, ref i);
                         break;

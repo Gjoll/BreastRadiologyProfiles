@@ -11,6 +11,7 @@ namespace FireFragger
 {
     class CSBuilder : ConverterBase, IDisposable
     {
+        public bool DebugFlag = false;
         public String OutputDir { get; set; } = ".";
         public bool CleanFlag { get; set; } = false;
         FileCleaner fc = new FileCleaner();
@@ -78,7 +79,7 @@ namespace FireFragger
                $"Processing fragment {sdFrag.Name}");
 
             CodeEditor code = new CodeEditor();
-            code.Load("FragmentTemplate");
+            code.Load("FragmentTemplate.txt");
 
             code.Save(Path.Combine(this.OutputDir, $"I{sdFrag.Name}"));
         }
