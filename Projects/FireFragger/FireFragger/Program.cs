@@ -1,5 +1,7 @@
-﻿using System;
+﻿using FhirKhit.Tools;
+using System;
 using System.Drawing;
+using System.IO;
 
 namespace FireFragger
 {
@@ -29,6 +31,21 @@ namespace FireFragger
             return retVal;
         }
 
+        String ParseDir(String path)
+        {
+            path = path.Trim();
+            if (path.StartsWith("^"))
+            {
+                path = path.Substring(1);
+                Int32 index = path.IndexOf('\\');
+                String relDir = path.Substring(0, index);
+                relDir = DirHelper.FindParentDir(relDir);
+                path = path.Substring(index + 1);
+                path = Path.Combine(relDir, path);
+            }
+            return path;
+        }
+
         /*
         -d -out "c:\Temp\FireWall" -c -f "C:\Development\HL7\BreastRadiologyProfiles\IG\Content\Fragments"
         */
@@ -40,17 +57,9 @@ namespace FireFragger
                 String arg = args[i++];
                 switch (arg.Trim().ToLower())
                 {
-                    case "-d":
-                    case "-debug":
-                        csBuilder.DebugFlag = true;
-                        break;
-
                     case "-f":
                     case "-frags":
-                        {
-                            String dir = GetArg(arg, args, ref i);
-                            csBuilder.AddFragmentDir(dir, filter);
-                        }
+                        csBuilder.AddFragmentDir(ParseDir(GetArg(arg, args, ref i)), filter);
                         break;
 
                     case "-c":
@@ -59,7 +68,7 @@ namespace FireFragger
 
                     case "-o":
                     case "-out":
-                        csBuilder.OutputDir = GetArg(arg, args, ref i);
+                        csBuilder.OutputDir = ParseDir(GetArg(arg, args, ref i));
                         break;
 
                     default:

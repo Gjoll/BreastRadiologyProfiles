@@ -11,12 +11,17 @@ namespace FireFragger
 {
     class CSBuilder : ConverterBase, IDisposable
     {
-        public bool DebugFlag = false;
+        class FragInfo
+        {
+            public StructureDefinition StructDef;
+            public CodeEditor InterfaceCode;
+        };
+
         public String OutputDir { get; set; } = ".";
         public bool CleanFlag { get; set; } = false;
         FileCleaner fc = new FileCleaner();
 
-        Dictionary<String, StructureDefinition> sdFragments = new Dictionary<string, StructureDefinition>();
+        Dictionary<String, FragInfo> sdFragments = new Dictionary<string, FragInfo>();
 
         /// <summary>
         /// Add all fragment resources in indicated directory.
@@ -59,7 +64,15 @@ namespace FireFragger
             switch (domainResource)
             {
                 case StructureDefinition sd:
-                    this.sdFragments.Add(sd.Url, sd);
+                    {
+                        FragInfo fi = new FragInfo
+                        {
+                            StructDef = sd,
+                            InterfaceCode = new CodeEditor()
+                        };
+                        fi.InterfaceCode.Load("FragmentTemplate.txt");
+                        this.sdFragments.Add(sd.Url, fi);
+                    }
                     break;
 
                 default:
@@ -70,24 +83,51 @@ namespace FireFragger
             }
         }
 
-        void BuildFragment(StructureDefinition sdFrag)
+        void BuildFragment(FragInfo fi)
         {
             const String fcn = "BuildFragment";
 
             this.ConversionInfo(this.GetType().Name,
                fcn,
-               $"Processing fragment {sdFrag.Name}");
+               $"Processing fragment {fi.StructDef.Name}");
 
-            CodeEditor code = new CodeEditor();
-            code.Load("FragmentTemplate.txt");
+            BuildHeader(fi);
+        }
 
-            code.Save(Path.Combine(this.OutputDir, $"I{sdFrag.Name}"));
+        void BuildHeader(FragInfo fi)
+        {
+            CodeBlockNested hdr = fi.InterfaceCode.Blocks.Find("Header");
+            hdr.Clear();
+            hdr
+                .AppendLine($"public interface I{fi.StructDef.Name}")
+                ;
+        }
+
+
+        void Save(FragInfo fi)
+        {
+            Save(fi.InterfaceCode, Path.Combine(this.OutputDir, "Generated", "Interfaces", $"I{fi.StructDef.Name}.cs"));
+        }
+
+        void Save(CodeEditor code, String path)
+        {
+            String dir = Path.GetDirectoryName(path);
+            if (Directory.Exists(dir) == false)
+                Directory.CreateDirectory(dir);
+            this.fc.Mark(path);
+            code.Save(path);
         }
 
         void BuildFragments()
         {
-            foreach (StructureDefinition sdFrag in this.sdFragments.Values)
-                BuildFragment(sdFrag);
+            foreach (FragInfo fi in this.sdFragments.Values)
+                BuildFragment(fi);
+        }
+
+        void SaveAll()
+        {
+            foreach (FragInfo fi in this.sdFragments.Values)
+                Save(fi);
         }
 
         public void Build()
@@ -98,10 +138,13 @@ namespace FireFragger
             if (this.CleanFlag)
             {
                 this.fc = new FileCleaner();
-                fc.Add(this.OutputDir);
+                fc.Add(Path.Combine(this.OutputDir, "Generated"));
             }
 
             BuildFragments();
+            SaveAll();
+
+            fc?.Dispose();
         }
 
         bool IsFragment(DomainResource r)

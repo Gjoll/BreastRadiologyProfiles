@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Globalization;
 using System.IO;
@@ -8,6 +8,7 @@ using Hl7.Fhir.Model;
 using Hl7.Fhir.Serialization;
 
 //+ Header
+public interface IBreastRadReport
 //- Header
 {
 }
