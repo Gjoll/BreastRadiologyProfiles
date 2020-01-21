@@ -13,5 +13,7 @@ namespace BreastRadLib
 	public interface IBreastBodyLocationExtension  : IHeaderFragment
 	//- Header
 	{
+		//+ Fields
+		//- Fields
 	}
 }

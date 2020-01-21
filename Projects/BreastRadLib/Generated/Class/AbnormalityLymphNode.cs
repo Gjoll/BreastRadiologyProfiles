@@ -13,5 +13,8 @@ namespace BreastRadLib
 	public class AbnormalityLymphNode : BreastRadBase, IAbnormalityLymphNode
 	//- Header
 	{
+		//+ Fields
+		public List<AssociatedFeatures> associatedFeatures;
+		//- Fields
 	}
 }

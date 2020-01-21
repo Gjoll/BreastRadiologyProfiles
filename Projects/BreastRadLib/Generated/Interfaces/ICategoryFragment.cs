@@ -13,5 +13,7 @@ namespace BreastRadLib
 	public interface ICategoryFragment 
 	//- Header
 	{
+		//+ Fields
+		//- Fields
 	}
 }

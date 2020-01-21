@@ -13,5 +13,7 @@ namespace BreastRadLib
 	public interface IMGFinding  : IObservationSectionFragment
 	//- Header
 	{
+		//+ Fields
+		//- Fields
 	}
 }

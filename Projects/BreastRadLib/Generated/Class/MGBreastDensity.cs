@@ -13,5 +13,7 @@ namespace BreastRadLib
 	public class MGBreastDensity : BreastRadBase, IMGBreastDensity
 	//- Header
 	{
+		//+ Fields
+		//- Fields
 	}
 }

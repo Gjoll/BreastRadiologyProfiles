@@ -13,5 +13,7 @@ namespace BreastRadLib
 	public interface IBreastRadReport  : IHeaderFragment, ICategoryFragment
 	//- Header
 	{
+		//+ Fields
+		//- Fields
 	}
 }

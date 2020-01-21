@@ -13,5 +13,10 @@ namespace BreastRadLib
 	public class AssociatedFeatures : BreastRadBase, IAssociatedFeatures
 	//- Header
 	{
+		//+ Fields
+		public List<MGAbnormalityArchitecturalDistortion> mGAbnormalityArchitecturalDistortion;
+		public List<MGAbnormalityCalcification> mGAbnormalityCalcification;
+		public List<ObservedFeature> observedFeature;
+		//- Fields
 	}
 }

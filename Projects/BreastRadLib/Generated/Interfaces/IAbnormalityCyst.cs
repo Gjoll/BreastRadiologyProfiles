@@ -13,5 +13,7 @@ namespace BreastRadLib
 	public interface IAbnormalityCyst  : IObservationLeafFragment, ITumorSatelliteFragment, IBreastRadObservationNoDeviceFragment, IBreastRadObservationNoValueFragment, ICommonComponentsFragment, IShapeComponentsFragment, IObservedCountFragment, INotPreviouslySeenComponentFragment, ICorrespondsWithFragment
 	//- Header
 	{
+		//+ Fields
+		//- Fields
 	}
 }

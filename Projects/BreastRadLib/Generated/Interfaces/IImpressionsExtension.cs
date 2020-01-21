@@ -13,5 +13,7 @@ namespace BreastRadLib
 	public interface IImpressionsExtension  : IHeaderFragment
 	//- Header
 	{
+		//+ Fields
+		//- Fields
 	}
 }

@@ -13,5 +13,7 @@ namespace BreastRadLib
 	public class BodyDistanceFromExtension : BreastRadBase, IBodyDistanceFromExtension
 	//- Header
 	{
+		//+ Fields
+		//- Fields
 	}
 }

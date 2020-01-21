@@ -13,5 +13,7 @@ namespace BreastRadLib
 	public class ConsistentWith : BreastRadBase, IConsistentWith
 	//- Header
 	{
+		//+ Fields
+		//- Fields
 	}
 }

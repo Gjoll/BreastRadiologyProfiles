@@ -13,5 +13,7 @@ namespace BreastRadLib
 	public interface IObservedFeature  : IObservationLeafFragment, IBreastRadObservationNoDeviceFragment, IBreastRadObservationNoValueFragment, IBreastBodyLocationRequiredFragment, IObservedCountFragment
 	//- Header
 	{
+		//+ Fields
+		//- Fields
 	}
 }

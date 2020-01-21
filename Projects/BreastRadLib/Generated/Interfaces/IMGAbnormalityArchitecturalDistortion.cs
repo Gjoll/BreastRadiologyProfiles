@@ -13,5 +13,7 @@ namespace BreastRadLib
 	public interface IMGAbnormalityArchitecturalDistortion  : IObservationLeafFragment, IBreastRadObservationNoDeviceFragment, IBreastRadObservationNoValueFragment, ICommonComponentsFragment, IShapeComponentsFragment, INotPreviouslySeenComponentFragment, ICorrespondsWithFragment
 	//- Header
 	{
+		//+ Fields
+		//- Fields
 	}
 }

@@ -13,5 +13,7 @@ namespace BreastRadLib
 	public interface IRelatedClinicalResourcesExtension  : IHeaderFragment
 	//- Header
 	{
+		//+ Fields
+		//- Fields
 	}
 }

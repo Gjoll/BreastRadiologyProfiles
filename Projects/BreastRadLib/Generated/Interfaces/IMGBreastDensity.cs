@@ -13,5 +13,7 @@ namespace BreastRadLib
 	public interface IMGBreastDensity  : IObservationLeafFragment, IBreastRadObservationNoDeviceFragment
 	//- Header
 	{
+		//+ Fields
+		//- Fields
 	}
 }

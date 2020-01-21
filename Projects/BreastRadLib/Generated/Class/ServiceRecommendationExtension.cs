@@ -13,5 +13,7 @@ namespace BreastRadLib
 	public class ServiceRecommendationExtension : BreastRadBase, IServiceRecommendationExtension
 	//- Header
 	{
+		//+ Fields
+		//- Fields
 	}
 }

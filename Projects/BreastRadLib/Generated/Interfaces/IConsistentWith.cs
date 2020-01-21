@@ -13,5 +13,7 @@ namespace BreastRadLib
 	public interface IConsistentWith  : IObservationLeafFragment, IBreastRadObservationNoDeviceFragment, IBreastRadObservationNoValueFragment
 	//- Header
 	{
+		//+ Fields
+		//- Fields
 	}
 }

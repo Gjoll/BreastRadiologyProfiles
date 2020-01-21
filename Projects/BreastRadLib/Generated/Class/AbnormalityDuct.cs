@@ -13,5 +13,8 @@ namespace BreastRadLib
 	public class AbnormalityDuct : BreastRadBase, IAbnormalityDuct
 	//- Header
 	{
+		//+ Fields
+		public List<ConsistentWith> consistentWith;
+		//- Fields
 	}
 }

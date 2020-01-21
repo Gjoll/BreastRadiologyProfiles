@@ -13,5 +13,9 @@ namespace BreastRadLib
 	public class AbnormalityForeignObject : BreastRadBase, IAbnormalityForeignObject
 	//- Header
 	{
+		//+ Fields
+		public List<ConsistentWith> consistentWith;
+		public List<AssociatedFeatures> associatedFeatures;
+		//- Fields
 	}
 }

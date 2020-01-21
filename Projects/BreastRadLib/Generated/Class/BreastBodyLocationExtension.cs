@@ -13,5 +13,7 @@ namespace BreastRadLib
 	public class BreastBodyLocationExtension : BreastRadBase, IBreastBodyLocationExtension
 	//- Header
 	{
+		//+ Fields
+		//- Fields
 	}
 }

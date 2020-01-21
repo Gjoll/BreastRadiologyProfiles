@@ -13,5 +13,9 @@ namespace BreastRadLib
 	public class MGAbnormalityDensity : BreastRadBase, IMGAbnormalityDensity
 	//- Header
 	{
+		//+ Fields
+		public List<AssociatedFeatures> associatedFeatures;
+		public List<ConsistentWith> consistentWith;
+		//- Fields
 	}
 }

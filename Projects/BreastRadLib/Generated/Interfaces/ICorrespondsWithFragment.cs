@@ -13,5 +13,7 @@ namespace BreastRadLib
 	public interface ICorrespondsWithFragment 
 	//- Header
 	{
+		//+ Fields
+		//- Fields
 	}
 }

@@ -13,5 +13,7 @@ namespace BreastRadLib
 	public class BreastRadReport : BreastRadBase, IBreastRadReport
 	//- Header
 	{
+		//+ Fields
+		//- Fields
 	}
 }

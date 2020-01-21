@@ -13,5 +13,7 @@ namespace BreastRadLib
 	public class MRIFinding : BreastRadBase, IMRIFinding
 	//- Header
 	{
+		//+ Fields
+		//- Fields
 	}
 }

@@ -13,5 +13,7 @@ namespace BreastRadLib
 	public class TumorSatelliteExtension : BreastRadBase, ITumorSatelliteExtension
 	//- Header
 	{
+		//+ Fields
+		//- Fields
 	}
 }

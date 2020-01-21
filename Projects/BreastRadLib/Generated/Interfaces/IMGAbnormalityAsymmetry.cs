@@ -13,5 +13,7 @@ namespace BreastRadLib
 	public interface IMGAbnormalityAsymmetry  : IObservationLeafFragment, IBreastRadObservationNoDeviceFragment, IBreastRadObservationNoValueFragment, ICommonComponentsFragment, IShapeComponentsFragment, INotPreviouslySeenComponentFragment, IObservedCountFragment, ICorrespondsWithFragment
 	//- Header
 	{
+		//+ Fields
+		//- Fields
 	}
 }

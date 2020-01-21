@@ -13,5 +13,8 @@ namespace BreastRadLib
 	public class AbnormalityFibroadenoma : BreastRadBase, IAbnormalityFibroadenoma
 	//- Header
 	{
+		//+ Fields
+		public List<AssociatedFeatures> associatedFeatures;
+		//- Fields
 	}
 }

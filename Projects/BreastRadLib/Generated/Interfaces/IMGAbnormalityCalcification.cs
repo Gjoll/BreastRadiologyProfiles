@@ -13,5 +13,7 @@ namespace BreastRadLib
 	public interface IMGAbnormalityCalcification  : IObservationLeafFragment, IBreastRadObservationNoDeviceFragment, IBreastRadObservationNoValueFragment, ICommonComponentsFragment, INotPreviouslySeenComponentFragment, IObservedCountFragment, ICorrespondsWithFragment
 	//- Header
 	{
+		//+ Fields
+		//- Fields
 	}
 }

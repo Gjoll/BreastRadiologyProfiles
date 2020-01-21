@@ -13,5 +13,7 @@ namespace BreastRadLib
 	public interface ITumorSatelliteFragment  : IHeaderFragment
 	//- Header
 	{
+		//+ Fields
+		//- Fields
 	}
 }

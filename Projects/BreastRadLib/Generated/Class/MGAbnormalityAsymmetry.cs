@@ -13,5 +13,9 @@ namespace BreastRadLib
 	public class MGAbnormalityAsymmetry : BreastRadBase, IMGAbnormalityAsymmetry
 	//- Header
 	{
+		//+ Fields
+		public List<AssociatedFeatures> associatedFeatures;
+		public List<ConsistentWith> consistentWith;
+		//- Fields
 	}
 }

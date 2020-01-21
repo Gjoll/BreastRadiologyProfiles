@@ -43,7 +43,7 @@ namespace BreastRadiology.XUnitTests
                                "CodeableConcept", 
                                binding.Url);
                        }
-                       PreFhir.ElementTreeNode sliceElementDef = e.ConfigureSliceByUrlDiscriminator("hasMember", false);
+                       ElementTreeNode sliceElementDef = e.ConfigureSliceByUrlDiscriminator("hasMember", false);
 
                        {
                            ElementTreeSlice slice = Self.SliceTargetReference(e, sliceElementDef, Self.FindingMammo.Value(), 0, "*");

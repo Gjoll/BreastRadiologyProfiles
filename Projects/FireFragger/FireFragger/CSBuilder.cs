@@ -4,8 +4,10 @@ using Hl7.Fhir.Model;
 using Hl7.Fhir.Serialization;
 using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Globalization;
 using System.IO;
+using System.Linq;
 using System.Text;
 
 namespace FireFragger
@@ -18,7 +20,7 @@ namespace FireFragger
             public StructureDefinition StructDef;
             public CodeEditor InterfaceCode;
             public CodeEditor ClassCode;
-            public ElementTreeNode SnapNodes;
+            public ElementTreeNode DiffNodes;
         };
 
         public String OutputDir { get; set; } = ".";
@@ -26,12 +28,14 @@ namespace FireFragger
         FileCleaner fc = new FileCleaner();
 
         Dictionary<String, FragInfo> sdFragments = new Dictionary<string, FragInfo>();
+        String InterfaceName(FragInfo fi) => $"I{fi.StructDef.Name}";
+        String ClassName(FragInfo fi) => $"{fi.StructDef.Name}";
 
         /// <summary>
         /// Add all fragment resources in indicated directory.
         /// </summary>
         public void AddFragmentDir(String fragDir,
-            String searchPattern)
+                String searchPattern)
         {
             foreach (String filePath in Directory.GetFiles(fragDir, searchPattern))
             {
@@ -81,11 +85,15 @@ namespace FireFragger
                         {
                             StructDef = sd,
                             InterfaceCode = new CodeEditor(),
-                            ClassCode = new CodeEditor(),
-                            SnapNodes = l.Create(sd.Differential.Element)
+                            DiffNodes = l.Create(sd.Differential.Element)
                         };
                         fi.InterfaceCode.Load("TemplateInterface.txt");
-                        fi.ClassCode.Load("TemplateClass.txt");
+
+                        if (this.IsFragment(sd) == false)
+                        {
+                            fi.ClassCode = new CodeEditor();
+                            fi.ClassCode.Load("TemplateClass.txt");
+                        }
                         this.sdFragments.Add(sd.Url.ToLower().Trim(), fi);
                     }
                     break;
@@ -113,12 +121,45 @@ namespace FireFragger
         {
             HashSet<string> items = new HashSet<string>();
 
+            void Build2(FragInfo fi, ElementTreeSlice slice)
+            {
+                if (slice.ElementDefinition.Type.Count != 1)
+                    throw new Exception($"invalid hasMember type count");
+                if (slice.ElementDefinition.Type[0].Code != "Reference")
+                    throw new Exception($"invalid hasMember type");
+                if (slice.ElementDefinition.Type[0].TargetProfile.Count() != 1)
+                    throw new Exception($"invalid hasMember targetProfile count");
+                String reference = slice.ElementDefinition.Type[0].TargetProfile.First();
+                if (this.sdFragments.TryGetValue(reference.ToLower().Trim(), out FragInfo refFrag) == false)
+                    throw new Exception($"missing hasMember reference {reference}");
+                if (items.Contains(slice.Name))
+                    return;
+                items.Add(slice.Name);
+
+                String refClassName = ClassName(refFrag);
+                String refInterfaceName = InterfaceName(refFrag);
+                String fieldName = slice.Name;
+
+                if (fi.ClassCode != null)
+                {
+                    fi.ClassCode.Blocks.Find("Fields")
+                        .AppendLine($"public List<{refClassName}> {fieldName};")
+                        ;
+                }
+            }
+
             void Build(FragInfo fi)
             {
                 if (fi.StructDef.BaseDefinition != Global.ObservationUrl)
                     return;
-
+                if (fi.DiffNodes.TryGetElementNode("Observation.hasMember", out ElementTreeNode hasMemberNode) == false)
+                    return;
+                if (hasMemberNode.Slices.Count <= 1)
+                    return;
+                foreach (ElementTreeSlice slice in hasMemberNode.Slices.Skip(1))
+                    Build2(fi, slice);
             }
+
 
             VisitFragments(Build, fi);
         }
@@ -126,7 +167,6 @@ namespace FireFragger
         void BuildHeader(FragInfo fi)
         {
             CodeBlockNested iHdr = fi.InterfaceCode.Blocks.Find("Header");
-            CodeBlockNested cHdr = fi.ClassCode.Blocks.Find("Header");
             StringBuilder interfaces = new StringBuilder();
             String comma = "";
             if (fi.ReferencedFragments.Count > 0)
@@ -134,27 +174,32 @@ namespace FireFragger
                 interfaces.Append(" : ");
                 foreach (FragInfo refFrag in fi.ReferencedFragments)
                 {
-                    interfaces.Append($"{comma}I{refFrag.StructDef.Name}");
+                    interfaces.Append($"{comma}{InterfaceName(refFrag)}");
                     comma = ", ";
                 }
             }
 
             iHdr.Clear();
             iHdr
-                .AppendLine($"public interface I{fi.StructDef.Name} {interfaces.ToString()}")
+                .AppendLine($"public interface {InterfaceName(fi)} {interfaces.ToString()}")
                 ;
 
-            cHdr.Clear();
-            cHdr
-                .AppendLine($"public class {fi.StructDef.Name} : BreastRadBase, I{fi.StructDef.Name}")
-                ;
+            if (fi.ClassCode != null)
+            {
+                CodeBlockNested cHdr = fi.ClassCode.Blocks.Find("Header");
+                cHdr.Clear();
+                cHdr
+                    .AppendLine($"public class {ClassName(fi)} : BreastRadBase, {InterfaceName(fi)}")
+                    ;
+            }
         }
 
 
         void Save(FragInfo fi)
         {
-            Save(fi.InterfaceCode, Path.Combine(this.OutputDir, "Generated", "Interfaces", $"I{fi.StructDef.Name}.cs"));
-            Save(fi.ClassCode, Path.Combine(this.OutputDir, "Generated", "Class", $"{fi.StructDef.Name}.cs"));
+            Save(fi.InterfaceCode, Path.Combine(this.OutputDir, "Generated", "Interfaces", $"{InterfaceName(fi)}.cs"));
+            if (fi.ClassCode != null)
+                Save(fi.ClassCode, Path.Combine(this.OutputDir, "Generated", "Class", $"{ClassName(fi)}.cs"));
         }
 
         void Save(CodeEditor code, String path)

@@ -13,5 +13,7 @@ namespace BreastRadLib
 	public class NMFinding : BreastRadBase, INMFinding
 	//- Header
 	{
+		//+ Fields
+		//- Fields
 	}
 }

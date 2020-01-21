@@ -13,5 +13,7 @@ namespace BreastRadLib
 	public class SectionFindingsLeftBreast : BreastRadBase, ISectionFindingsLeftBreast
 	//- Header
 	{
+		//+ Fields
+		//- Fields
 	}
 }

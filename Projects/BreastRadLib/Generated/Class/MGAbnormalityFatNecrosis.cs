@@ -13,5 +13,9 @@ namespace BreastRadLib
 	public class MGAbnormalityFatNecrosis : BreastRadBase, IMGAbnormalityFatNecrosis
 	//- Header
 	{
+		//+ Fields
+		public List<AssociatedFeatures> associatedFeatures;
+		public List<ConsistentWith> consistentWith;
+		//- Fields
 	}
 }

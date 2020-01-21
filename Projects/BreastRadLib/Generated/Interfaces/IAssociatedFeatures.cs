@@ -13,5 +13,7 @@ namespace BreastRadLib
 	public interface IAssociatedFeatures  : IObservationSectionFragment
 	//- Header
 	{
+		//+ Fields
+		//- Fields
 	}
 }

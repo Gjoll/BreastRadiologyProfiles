@@ -13,5 +13,7 @@ namespace BreastRadLib
 	public class ObservedFeature : BreastRadBase, IObservedFeature
 	//- Header
 	{
+		//+ Fields
+		//- Fields
 	}
 }

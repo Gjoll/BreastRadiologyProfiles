@@ -13,5 +13,7 @@ namespace BreastRadLib
 	public class RelatedClinicalResourcesExtension : BreastRadBase, IRelatedClinicalResourcesExtension
 	//- Header
 	{
+		//+ Fields
+		//- Fields
 	}
 }

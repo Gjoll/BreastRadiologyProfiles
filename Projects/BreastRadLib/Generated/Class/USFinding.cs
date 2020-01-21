@@ -13,5 +13,7 @@ namespace BreastRadLib
 	public class USFinding : BreastRadBase, IUSFinding
 	//- Header
 	{
+		//+ Fields
+		//- Fields
 	}
 }

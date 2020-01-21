@@ -13,5 +13,7 @@ namespace BreastRadLib
 	public interface IBreastRadObservationNoValueFragment  : IBreastRadObservationFragment, IBreastRadObservationNoComponentFragment
 	//- Header
 	{
+		//+ Fields
+		//- Fields
 	}
 }

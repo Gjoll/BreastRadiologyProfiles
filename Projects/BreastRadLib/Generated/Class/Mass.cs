@@ -13,5 +13,9 @@ namespace BreastRadLib
 	public class Mass : BreastRadBase, IMass
 	//- Header
 	{
+		//+ Fields
+		public List<AssociatedFeatures> associatedFeatures;
+		public List<ConsistentWith> consistentWith;
+		//- Fields
 	}
 }

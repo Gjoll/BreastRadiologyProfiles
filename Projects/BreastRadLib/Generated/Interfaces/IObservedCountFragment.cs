@@ -13,5 +13,7 @@ namespace BreastRadLib
 	public interface IObservedCountFragment 
 	//- Header
 	{
+		//+ Fields
+		//- Fields
 	}
 }

@@ -13,5 +13,7 @@ namespace BreastRadLib
 	public interface INotPreviouslySeenComponentFragment  : IBreastBodyLocationRequiredFragment
 	//- Header
 	{
+		//+ Fields
+		//- Fields
 	}
 }

@@ -13,5 +13,7 @@ namespace BreastRadLib
 	public class Impression : BreastRadBase, IImpression
 	//- Header
 	{
+		//+ Fields
+		//- Fields
 	}
 }

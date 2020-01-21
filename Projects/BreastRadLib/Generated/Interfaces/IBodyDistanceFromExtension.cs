@@ -13,5 +13,7 @@ namespace BreastRadLib
 	public interface IBodyDistanceFromExtension  : IHeaderFragment
 	//- Header
 	{
+		//+ Fields
+		//- Fields
 	}
 }

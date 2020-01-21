@@ -13,5 +13,7 @@ namespace BreastRadLib
 	public interface IShapeComponentsFragment  : IBreastBodyLocationRequiredFragment
 	//- Header
 	{
+		//+ Fields
+		//- Fields
 	}
 }

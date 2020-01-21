@@ -13,5 +13,7 @@ namespace BreastRadLib
 	public interface ICommonComponentsFragment  : IBreastBodyLocationRequiredFragment, IObservedChangesFragment, IObservedSizeFragment, IObservedAreaFragment, IBiRadFragment, IServiceRecommendationFragment
 	//- Header
 	{
+		//+ Fields
+		//- Fields
 	}
 }
