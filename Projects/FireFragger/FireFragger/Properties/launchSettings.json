@@ -2,7 +2,7 @@
   "profiles": {
     "FireWall": {
       "commandName": "Project",
-      "commandLineArgs": "-c -out \"^Projects\\BreastRadLib\" -c -f \"^BreastRadiologyProfiles\\IG\\Content\\Fragments\" \"^BreastRadiologyProfiles\\IG\\Content\\Resources\""
+      "commandLineArgs": "-c -out \"^Projects\\BreastRadLib\" -c -f \"^BreastRadiologyProfiles\\IG\\Content\\Fragments\""
     }
   }
 }

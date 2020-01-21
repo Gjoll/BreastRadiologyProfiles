@@ -1,4 +1,5 @@
 ﻿using FhirKhit.Tools;
+using FhirKhit.Tools.R4;
 using Hl7.Fhir.Model;
 using Hl7.Fhir.Serialization;
 using System;
@@ -15,9 +16,9 @@ namespace FireFragger
         {
             public List<FragInfo> ReferencedFragments = new List<FragInfo>();
             public StructureDefinition StructDef;
-            public StructureDefinition StructDefMerged;
             public CodeEditor InterfaceCode;
             public CodeEditor ClassCode;
+            public ElementTreeNode SnapNodes;
         };
 
         public String OutputDir { get; set; } = ".";
@@ -30,35 +31,24 @@ namespace FireFragger
         /// Add all fragment resources in indicated directory.
         /// </summary>
         public void AddFragmentDir(String fragDir,
-            String mergedDir,
             String searchPattern)
         {
             foreach (String filePath in Directory.GetFiles(fragDir, searchPattern))
             {
-                String mergedPath = Path.Combine(
-                    mergedDir,
-                    Path.GetFileName(fragDir)
-                    );
-                this.AddFragment(filePath, filePath);
+                this.AddFragment(filePath);
             }
 
             foreach (String subDir in Directory.GetDirectories(fragDir))
             {
-                String mergedSubDir = Path.Combine(
-                    mergedDir,
-                    Path.GetFileName(subDir)
-                    );
-                this.AddFragmentDir(subDir, mergedSubDir, searchPattern);
+                this.AddFragmentDir(subDir, searchPattern);
             }
         }
 
-        public void AddFragment(String filePath,
-            String mergedPath)
+        public void AddFragment(String filePath)
         {
             const String fcn = "AddFragment";
 
             DomainResource domainResource;
-            DomainResource mergedResource;
 
             switch (Path.GetExtension(filePath).ToUpper(CultureInfo.InvariantCulture))
             {
@@ -66,7 +56,6 @@ namespace FireFragger
                     {
                         FhirXmlParser parser = new FhirXmlParser();
                         domainResource = parser.Parse<DomainResource>(File.ReadAllText(filePath));
-                        mergedResource = parser.Parse<DomainResource>(File.ReadAllText(mergedPath));
                         break;
                     }
 
@@ -74,7 +63,6 @@ namespace FireFragger
                     {
                         FhirJsonParser parser = new FhirJsonParser();
                         domainResource = parser.Parse<DomainResource>(File.ReadAllText(filePath));
-                        mergedResource = parser.Parse<DomainResource>(File.ReadAllText(mergedPath));
                         break;
                     }
 
@@ -86,12 +74,15 @@ namespace FireFragger
             {
                 case StructureDefinition sd:
                     {
+                        ElementTreeLoader l = new ElementTreeLoader(this);
+                        ElementTreeNode diffNode = null;
+
                         FragInfo fi = new FragInfo
                         {
                             StructDef = sd,
-                            StructDefMerged = (StructureDefinition) mergedResource,
                             InterfaceCode = new CodeEditor(),
-                            ClassCode = new CodeEditor()
+                            ClassCode = new CodeEditor(),
+                            SnapNodes = l.Create(sd.Differential.Element)
                         };
                         fi.InterfaceCode.Load("TemplateInterface.txt");
                         fi.ClassCode.Load("TemplateClass.txt");
@@ -114,8 +105,22 @@ namespace FireFragger
             this.ConversionInfo(this.GetType().Name,
                fcn,
                $"Processing fragment {fi.StructDef.Name}");
-
             BuildHeader(fi);
+            BuildHasMembers(fi);
+        }
+
+        void BuildHasMembers(FragInfo fi)
+        {
+            HashSet<string> items = new HashSet<string>();
+
+            void Build(FragInfo fi)
+            {
+                if (fi.StructDef.BaseDefinition != Global.ObservationUrl)
+                    return;
+
+            }
+
+            VisitFragments(Build, fi);
         }
 
         void BuildHeader(FragInfo fi)
@@ -222,6 +227,30 @@ namespace FireFragger
         {
             Extension isFragmentExtension = r.GetExtension(Global.IsFragmentExtensionUrl);
             return (isFragmentExtension != null);
+        }
+
+        delegate void VisitFragment(FragInfo fi);
+
+        void VisitFragments(VisitFragment vi,
+            FragInfo fragBase)
+        {
+            HashSet<FragInfo> visitedFrags = new HashSet<FragInfo>();
+
+            void Visit(VisitFragment vi,
+                FragInfo fi)
+            {
+                if (visitedFrags.Contains(fi))
+                    return;
+                vi(fi);
+                visitedFrags.Add(fi);
+
+                foreach (FragInfo refFrag in fragBase.ReferencedFragments)
+                {
+                    Visit(vi, refFrag);
+                }
+            }
+
+            Visit(vi, fragBase);
         }
 
         public void Dispose()

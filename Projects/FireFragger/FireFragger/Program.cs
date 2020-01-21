@@ -60,7 +60,6 @@ namespace FireFragger
                     case "-f":
                     case "-frags":
                         csBuilder.AddFragmentDir(ParseDir(GetArg(arg, args, ref i)),
-                                                ParseDir(GetArg(arg, args, ref i)),
                                                 filter);
                         break;
 
