@@ -15,6 +15,7 @@ namespace FireFragger
         {
             public List<FragInfo> ReferencedFragments = new List<FragInfo>();
             public StructureDefinition StructDef;
+            public StructureDefinition StructDefMerged;
             public CodeEditor InterfaceCode;
             public CodeEditor ClassCode;
         };
@@ -28,39 +29,57 @@ namespace FireFragger
         /// <summary>
         /// Add all fragment resources in indicated directory.
         /// </summary>
-        public void AddFragmentDir(String path,
+        public void AddFragmentDir(String fragDir,
+            String mergedDir,
             String searchPattern)
         {
-            foreach (String filePath in Directory.GetFiles(path, searchPattern))
-                this.AddFragment(filePath);
+            foreach (String filePath in Directory.GetFiles(fragDir, searchPattern))
+            {
+                String mergedPath = Path.Combine(
+                    mergedDir,
+                    Path.GetFileName(fragDir)
+                    );
+                this.AddFragment(filePath, filePath);
+            }
 
-            foreach (String subDir in Directory.GetDirectories(path))
-                this.AddFragmentDir(subDir, searchPattern);
+            foreach (String subDir in Directory.GetDirectories(fragDir))
+            {
+                String mergedSubDir = Path.Combine(
+                    mergedDir,
+                    Path.GetFileName(subDir)
+                    );
+                this.AddFragmentDir(subDir, mergedSubDir, searchPattern);
+            }
         }
 
-        public void AddFragment(String path)
+        public void AddFragment(String filePath,
+            String mergedPath)
         {
             const String fcn = "AddFragment";
 
             DomainResource domainResource;
-            switch (Path.GetExtension(path).ToUpper(CultureInfo.InvariantCulture))
+            DomainResource mergedResource;
+
+            switch (Path.GetExtension(filePath).ToUpper(CultureInfo.InvariantCulture))
             {
                 case ".XML":
                     {
                         FhirXmlParser parser = new FhirXmlParser();
-                        domainResource = parser.Parse<DomainResource>(File.ReadAllText(path));
+                        domainResource = parser.Parse<DomainResource>(File.ReadAllText(filePath));
+                        mergedResource = parser.Parse<DomainResource>(File.ReadAllText(mergedPath));
                         break;
                     }
 
                 case ".JSON":
                     {
                         FhirJsonParser parser = new FhirJsonParser();
-                        domainResource = parser.Parse<DomainResource>(File.ReadAllText(path));
+                        domainResource = parser.Parse<DomainResource>(File.ReadAllText(filePath));
+                        mergedResource = parser.Parse<DomainResource>(File.ReadAllText(mergedPath));
                         break;
                     }
 
                 default:
-                    throw new Exception($"Unknown extension for serialized fhir resource '{path}'");
+                    throw new Exception($"Unknown extension for serialized fhir resource '{filePath}'");
             }
 
             switch (domainResource)
@@ -70,6 +89,7 @@ namespace FireFragger
                         FragInfo fi = new FragInfo
                         {
                             StructDef = sd,
+                            StructDefMerged = (StructureDefinition) mergedResource,
                             InterfaceCode = new CodeEditor(),
                             ClassCode = new CodeEditor()
                         };
@@ -82,7 +102,7 @@ namespace FireFragger
                 default:
                     this.ConversionError(this.GetType().Name,
                        fcn,
-                       $"Unimplemented fragment resource type {domainResource.GetType().Name} file {path}");
+                       $"Unimplemented fragment resource type {domainResource.GetType().Name} file {filePath}");
                     return;
             }
         }
