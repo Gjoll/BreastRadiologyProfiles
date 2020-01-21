@@ -14,9 +14,9 @@ namespace BreastRadLib
 	//- Header
 	{
 		//+ Fields
-		public List<MGAbnormalityArchitecturalDistortion> mGAbnormalityArchitecturalDistortion;
-		public List<MGAbnormalityCalcification> mGAbnormalityCalcification;
-		public List<ObservedFeature> observedFeature;
+		public List<IMGAbnormalityArchitecturalDistortion> MGAbnormalityArchitecturalDistortion {get;} = new List<IMGAbnormalityArchitecturalDistortion>();
+		public List<IMGAbnormalityCalcification> MGAbnormalityCalcification {get;} = new List<IMGAbnormalityCalcification>();
+		public List<IObservedFeature> ObservedFeature {get;} = new List<IObservedFeature>();
 		//- Fields
 	}
 }

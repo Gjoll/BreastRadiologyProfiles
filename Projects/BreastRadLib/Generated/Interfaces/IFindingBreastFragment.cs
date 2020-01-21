@@ -14,6 +14,10 @@ namespace BreastRadLib
 	//- Header
 	{
 		//+ Fields
+		List<IMGFinding> MGFinding {get;}
+		List<IMRIFinding> MRIFinding {get;}
+		List<INMFinding> NMFinding {get;}
+		List<IUSFinding> USFinding {get;}
 		//- Fields
 	}
 }

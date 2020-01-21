@@ -14,7 +14,7 @@ namespace BreastRadLib
 	//- Header
 	{
 		//+ Fields
-		public List<ConsistentWith> consistentWith;
+		public List<IConsistentWith> ConsistentWith {get;} = new List<IConsistentWith>();
 		//- Fields
 	}
 }

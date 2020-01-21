@@ -14,19 +14,19 @@ namespace BreastRadLib
 	//- Header
 	{
 		//+ Fields
-		public List<AbnormalityCyst> abnormalityCyst;
-		public List<AbnormalityDuct> abnormalityDuct;
-		public List<AbnormalityForeignObject> abnormalityForeignObject;
-		public List<AbnormalityLymphNode> abnormalityLymphNode;
-		public List<Mass> mass;
-		public List<AssociatedFeatures> associatedFeatures;
-		public List<AbnormalityFibroadenoma> abnormalityFibroadenoma;
-		public List<MGAbnormalityArchitecturalDistortion> mGAbnormalityArchitecturalDistortion;
-		public List<MGAbnormalityAsymmetry> mGAbnormalityAsymmetry;
-		public List<MGAbnormalityCalcification> mGAbnormalityCalcification;
-		public List<MGAbnormalityDensity> mGAbnormalityDensity;
-		public List<MGAbnormalityFatNecrosis> mGAbnormalityFatNecrosis;
-		public List<MGBreastDensity> mGBreastDensity;
+		public List<IAbnormalityCyst> AbnormalityCyst {get;} = new List<IAbnormalityCyst>();
+		public List<IAbnormalityDuct> AbnormalityDuct {get;} = new List<IAbnormalityDuct>();
+		public List<IAbnormalityForeignObject> AbnormalityForeignObject {get;} = new List<IAbnormalityForeignObject>();
+		public List<IAbnormalityLymphNode> AbnormalityLymphNode {get;} = new List<IAbnormalityLymphNode>();
+		public List<IMass> Mass {get;} = new List<IMass>();
+		public List<IAssociatedFeatures> AssociatedFeatures {get;} = new List<IAssociatedFeatures>();
+		public List<IAbnormalityFibroadenoma> AbnormalityFibroadenoma {get;} = new List<IAbnormalityFibroadenoma>();
+		public List<IMGAbnormalityArchitecturalDistortion> MGAbnormalityArchitecturalDistortion {get;} = new List<IMGAbnormalityArchitecturalDistortion>();
+		public List<IMGAbnormalityAsymmetry> MGAbnormalityAsymmetry {get;} = new List<IMGAbnormalityAsymmetry>();
+		public List<IMGAbnormalityCalcification> MGAbnormalityCalcification {get;} = new List<IMGAbnormalityCalcification>();
+		public List<IMGAbnormalityDensity> MGAbnormalityDensity {get;} = new List<IMGAbnormalityDensity>();
+		public List<IMGAbnormalityFatNecrosis> MGAbnormalityFatNecrosis {get;} = new List<IMGAbnormalityFatNecrosis>();
+		public List<IMGBreastDensity> MGBreastDensity {get;} = new List<IMGBreastDensity>();
 		//- Fields
 	}
 }

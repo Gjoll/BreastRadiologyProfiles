@@ -14,6 +14,7 @@ namespace BreastRadLib
 	//- Header
 	{
 		//+ Fields
+		List<IAssociatedFeatures> AssociatedFeatures {get;}
 		//- Fields
 	}
 }

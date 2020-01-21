@@ -30,6 +30,7 @@ namespace FireFragger
         Dictionary<String, FragInfo> sdFragments = new Dictionary<string, FragInfo>();
         String InterfaceName(FragInfo fi) => $"I{fi.StructDef.Name}";
         String ClassName(FragInfo fi) => $"{fi.StructDef.Name}";
+        String PropertyName(string name) => $"{Char.ToUpper(name[0])}{name.Substring(1)}";
 
         /// <summary>
         /// Add all fragment resources in indicated directory.
@@ -117,11 +118,11 @@ namespace FireFragger
             BuildHasMembers(fi);
         }
 
-        void BuildHasMembers(FragInfo fi)
+        void BuildHasMembers(FragInfo fragInfo)
         {
             HashSet<string> items = new HashSet<string>();
 
-            void Build2(FragInfo fi, ElementTreeSlice slice)
+            void Build2(FragInfo fi, ElementTreeSlice slice, Int32 level)
             {
                 if (slice.ElementDefinition.Type.Count != 1)
                     throw new Exception($"invalid hasMember type count");
@@ -135,20 +136,26 @@ namespace FireFragger
                 if (items.Contains(slice.Name))
                     return;
                 items.Add(slice.Name);
-
                 String refClassName = ClassName(refFrag);
                 String refInterfaceName = InterfaceName(refFrag);
-                String fieldName = slice.Name;
+                String fieldName = PropertyName(slice.Name);
 
-                if (fi.ClassCode != null)
+                if (fragInfo.ClassCode != null)
                 {
-                    fi.ClassCode.Blocks.Find("Fields")
-                        .AppendLine($"public List<{refClassName}> {fieldName};")
+                    fragInfo.ClassCode.Blocks.Find("Fields")
+                        .AppendLine($"public List<{refInterfaceName}> {fieldName} {{get;}} = new List<{refInterfaceName}>();")
+                        ;
+                }
+
+                if (level == 0)
+                {
+                    fragInfo.InterfaceCode.Blocks.Find("Fields")
+                        .AppendLine($"List<{refInterfaceName}> {fieldName} {{get;}}")
                         ;
                 }
             }
 
-            void Build(FragInfo fi)
+            void Build(FragInfo fi, Int32 level)
             {
                 if (fi.StructDef.BaseDefinition != Global.ObservationUrl)
                     return;
@@ -157,11 +164,10 @@ namespace FireFragger
                 if (hasMemberNode.Slices.Count <= 1)
                     return;
                 foreach (ElementTreeSlice slice in hasMemberNode.Slices.Skip(1))
-                    Build2(fi, slice);
+                    Build2(fi, slice, level);
             }
 
-
-            VisitFragments(Build, fi);
+            VisitFragments(Build, fragInfo);
         }
 
         void BuildHeader(FragInfo fi)
@@ -274,7 +280,7 @@ namespace FireFragger
             return (isFragmentExtension != null);
         }
 
-        delegate void VisitFragment(FragInfo fi);
+        delegate void VisitFragment(FragInfo fi, Int32 level);
 
         void VisitFragments(VisitFragment vi,
             FragInfo fragBase)
@@ -282,20 +288,18 @@ namespace FireFragger
             HashSet<FragInfo> visitedFrags = new HashSet<FragInfo>();
 
             void Visit(VisitFragment vi,
-                FragInfo fi)
+                FragInfo fi,
+                Int32 level)
             {
                 if (visitedFrags.Contains(fi))
                     return;
-                vi(fi);
+                vi(fi, level);
                 visitedFrags.Add(fi);
-
                 foreach (FragInfo refFrag in fragBase.ReferencedFragments)
-                {
-                    Visit(vi, refFrag);
-                }
+                    Visit(vi, refFrag, level + 1);
             }
 
-            Visit(vi, fragBase);
+            Visit(vi, fragBase, 0);
         }
 
         public void Dispose()
