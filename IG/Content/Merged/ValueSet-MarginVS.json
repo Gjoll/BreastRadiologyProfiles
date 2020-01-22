@@ -1,0 +1,101 @@
+{
+  "resourceType": "ValueSet",
+  "id": "MarginVS",
+  "extension": [
+    {
+      "url": "http://www.fragment.com/fragment",
+      "valueUrl": "http://hl7.org/fhir/us/breast-radiology/StructureDefinition/HeaderFragment"
+    },
+    {
+      "url": "http://www.fragment.com/Group",
+      "valueString": "CommonCodesVS"
+    },
+    {
+      "url": "http://www.fragment.com/mapname",
+      "valueString": "MarginValueSet"
+    },
+    {
+      "url": "http://www.fragment.com/mapname",
+      "valueString": "Common"
+    },
+    {
+      "url": "http://www.fragment.com/Group",
+      "valueString": "Fragment/HeaderFragment"
+    }
+  ],
+  "url": "http://hl7.org/fhir/us/breast-radiology/ValueSet/MarginVS",
+  "version": "0.0.2",
+  "name": "MarginVS",
+  "title": "Margin ValueSet",
+  "status": "draft",
+  "date": "2019-11-01",
+  "publisher": "Hl7-Clinical Interoperability Council",
+  "contact": [
+    {
+      "telecom": [
+        {
+          "system": "url",
+          "value": "http://www.hl7.org/Special/committees/cic"
+        }
+      ]
+    }
+  ],
+  "description": "Margin ValueSet.",
+  "compose": {
+    "include": [
+      {
+        "system": "http://hl7.org/fhir/us/breast-radiology/CodeSystem/MarginCS",
+        "concept": [
+          {
+            "code": "AngularMargin",
+            "display": "Angular margin"
+          },
+          {
+            "code": "CircumscribedMargin",
+            "display": "Circumscribed margin"
+          },
+          {
+            "code": "IndistinctMargin",
+            "display": "Indistinct margin"
+          },
+          {
+            "code": "IntraductalExtension",
+            "display": "Intraductal extension"
+          },
+          {
+            "code": "IrregularMargin",
+            "display": "Irregular margin"
+          },
+          {
+            "code": "LobulatedMargin",
+            "display": "Lobulated margin"
+          },
+          {
+            "code": "MacrolobulatedMargin",
+            "display": "Macrolobulated margin"
+          },
+          {
+            "code": "MicrolobulatedMargin",
+            "display": "Microlobulated margin"
+          },
+          {
+            "code": "NonCircumscribedMargin",
+            "display": "Non circumscribed margin"
+          },
+          {
+            "code": "ObscuredMargin",
+            "display": "Obscured margin"
+          },
+          {
+            "code": "SmoothMargin",
+            "display": "Smooth margin"
+          },
+          {
+            "code": "SpiculatedMargin",
+            "display": "Spiculated margin"
+          }
+        ]
+      }
+    ]
+  }
+}

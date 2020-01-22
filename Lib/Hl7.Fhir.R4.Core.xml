@@ -49793,7 +49793,7 @@
             attested | validated | in-process | req-revalid | val-fail | reval-fail
             </summary>
         </member>
-        <member name="P:Hl7.Fhir.Model.VerificationResult.VStatus">
+        <member name="P:Hl7.Fhir.Model.VerificationResult.Status">
             <summary>
             attested | validated | in-process | req-revalid | val-fail | reval-fail
             </summary>

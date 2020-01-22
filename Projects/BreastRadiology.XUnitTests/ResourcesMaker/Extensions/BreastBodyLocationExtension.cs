@@ -279,16 +279,16 @@ namespace BreastRadiology.XUnitTests
                     sealExtension.Zero();
                     extensionElement.CreateNode(sealExtension);
 
-                    ElementDefinition valueBase = e.Get("value[x]").ElementDefinition;
-                    ElementDefinition elementValue = new ElementDefinition()
-                        .Path($"{extensionNode.ElementDefinition.Path}.value[x]")
-                        .ElementId($"{extensionNode.ElementDefinition.Path}:{sliceName}.value[x]")
-                        ;
-
                     ElementDefinition elementUrl = new ElementDefinition()
                         .Path($"{extensionNode.ElementDefinition.Path}.url")
                         .ElementId($"{extensionNode.ElementDefinition.Path}:{sliceName}.url")
                         .Value(new FhirUrl(sliceName))
+                        ;
+                    extensionElement.CreateNode(elementUrl);
+
+                    ElementDefinition elementValue = new ElementDefinition()
+                        .Path($"{extensionNode.ElementDefinition.Path}.value[x]")
+                        .ElementId($"{extensionNode.ElementDefinition.Path}:{sliceName}.value[x]")
                         ;
                     return extensionElement.CreateNode(elementValue);
                 }

@@ -136,7 +136,7 @@ namespace BreastRadiology.XUnitTests
         {
             DateTime start = DateTime.Now;
             Trace.WriteLine("Starting B_BuildResources");
-            bool saveMergedFiles = false;
+            bool saveMergedFiles = true;
 
             try
             {
@@ -161,6 +161,8 @@ namespace BreastRadiology.XUnitTests
                 preFhir.AddDir(this.fragmentDir, "*.json");
                 if (saveMergedFiles)
                     preFhir.MergedDir = this.mergedDir;
+                preFhir.BreakOnElementId = "Extension.extension:laterality.url";
+                preFhir.BreakOnTitle = "BreastBodyLocationExtension";
                 preFhir.Process();
                 preFhir.SaveResources(this.resourcesDir);
 
@@ -216,13 +218,6 @@ namespace BreastRadiology.XUnitTests
             //Assert.IsTrue(success);
             Trace.WriteLine("Validation complete");
         }
-
-        //[TestMethod]
-        //public void Clean()
-        //{
-        //    ProfileCleanUp pc = new ProfileCleanUp();
-        //    pc.Clean(resourcesDir);
-        //}
 
         FileCleaner fc = null;
 
@@ -445,6 +440,61 @@ namespace BreastRadiology.XUnitTests
             }
             TimeSpan span = DateTime.Now - start;
             Trace.WriteLine($"Ending D_BuildIG [{(Int32)span.TotalSeconds}]");
+        }
+
+
+
+
+        [TestMethod]
+        public void MergeOneFile()
+        {
+            DateTime start = DateTime.Now;
+            bool saveMergedFiles = true;
+
+            try
+            {
+                if (Directory.Exists(this.resourcesDir) == false)
+                    Directory.CreateDirectory(this.resourcesDir);
+
+                if (saveMergedFiles)
+                {
+                    if (Directory.Exists(this.mergedDir) == false)
+                        Directory.CreateDirectory(this.mergedDir);
+                }
+                else
+                {
+                    if (Directory.Exists(this.mergedDir) == true)
+                        Directory.Delete(this.mergedDir, true);
+                }
+
+                PreFhirGenerator preFhir = new PreFhirGenerator(this.fc, this.cacheDir);
+                preFhir.StatusErrors += this.StatusErrors;
+                preFhir.StatusInfo += this.StatusInfo;
+                preFhir.StatusWarnings += this.StatusWarnings;
+                preFhir.AddDir(this.fragmentDir, "*.json");
+                if (saveMergedFiles)
+                    preFhir.MergedDir = this.mergedDir;
+                preFhir.BreakOnElementId = "Extension.extension:laterality.url";
+                preFhir.BreakOnTitle = "BreastBodyLocationExtension";
+                preFhir.ProcessOne(this.fragmentDir, "BreastBodyLocationExtension");
+                preFhir.SaveResources(this.resourcesDir);
+
+                if (preFhir.HasErrors)
+                {
+                    StringBuilder sb = new StringBuilder();
+                    preFhir.FormatErrorMessages(sb);
+                    Trace.WriteLine(sb.ToString());
+                    Debug.Assert(false);
+                }
+            }
+            catch (Exception err)
+            {
+                Trace.WriteLine(err.Message);
+                Assert.IsTrue(false);
+            }
+
+            TimeSpan span = DateTime.Now - start;
+            Trace.WriteLine($"Ending B_BuildResources [{(Int32)span.TotalSeconds}]");
         }
     }
 }

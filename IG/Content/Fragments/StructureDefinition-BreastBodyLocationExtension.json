@@ -118,6 +118,11 @@
         "max": "0"
       },
       {
+        "id": "Extension.extension:laterality.url",
+        "path": "Extension.extension.url",
+        "fixedUrl": "laterality"
+      },
+      {
         "id": "Extension.extension:laterality.value[x]",
         "path": "Extension.extension.value[x]",
         "min": 1,
@@ -151,6 +156,11 @@
         "path": "Extension.extension.extension",
         "min": 0,
         "max": "0"
+      },
+      {
+        "id": "Extension.extension:quadrant.url",
+        "path": "Extension.extension.url",
+        "fixedUrl": "quadrant"
       },
       {
         "id": "Extension.extension:quadrant.value[x]",
@@ -188,6 +198,11 @@
         "max": "0"
       },
       {
+        "id": "Extension.extension:region.url",
+        "path": "Extension.extension.url",
+        "fixedUrl": "region"
+      },
+      {
         "id": "Extension.extension:region.value[x]",
         "path": "Extension.extension.value[x]",
         "min": 1,
@@ -223,6 +238,11 @@
         "max": "0"
       },
       {
+        "id": "Extension.extension:clockDirection.url",
+        "path": "Extension.extension.url",
+        "fixedUrl": "clockDirection"
+      },
+      {
         "id": "Extension.extension:clockDirection.value[x]",
         "path": "Extension.extension.value[x]",
         "min": 1,
@@ -256,6 +276,11 @@
         "path": "Extension.extension.extension",
         "min": 0,
         "max": "0"
+      },
+      {
+        "id": "Extension.extension:depth.url",
+        "path": "Extension.extension.url",
+        "fixedUrl": "depth"
       },
       {
         "id": "Extension.extension:depth.value[x]",

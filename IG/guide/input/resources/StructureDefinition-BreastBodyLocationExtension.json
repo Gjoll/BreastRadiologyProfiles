@@ -299,7 +299,7 @@
             }
           }
         ],
-        "fixedUri": "laterality",
+        "fixedUrl": "laterality",
         "isModifier": false,
         "isSummary": false,
         "mapping": [
@@ -481,7 +481,7 @@
             }
           }
         ],
-        "fixedUri": "quadrant",
+        "fixedUrl": "quadrant",
         "isModifier": false,
         "isSummary": false,
         "mapping": [
@@ -663,7 +663,7 @@
             }
           }
         ],
-        "fixedUri": "region",
+        "fixedUrl": "region",
         "isModifier": false,
         "isSummary": false,
         "mapping": [
@@ -845,7 +845,7 @@
             }
           }
         ],
-        "fixedUri": "clockDirection",
+        "fixedUrl": "clockDirection",
         "isModifier": false,
         "isSummary": false,
         "mapping": [
@@ -1027,7 +1027,7 @@
             }
           }
         ],
-        "fixedUri": "depth",
+        "fixedUrl": "depth",
         "isModifier": false,
         "isSummary": false,
         "mapping": [
@@ -1490,7 +1490,7 @@
             }
           }
         ],
-        "fixedUri": "laterality",
+        "fixedUrl": "laterality",
         "isModifier": false,
         "isSummary": false,
         "mapping": [
@@ -1672,7 +1672,7 @@
             }
           }
         ],
-        "fixedUri": "quadrant",
+        "fixedUrl": "quadrant",
         "isModifier": false,
         "isSummary": false,
         "mapping": [
@@ -1854,7 +1854,7 @@
             }
           }
         ],
-        "fixedUri": "region",
+        "fixedUrl": "region",
         "isModifier": false,
         "isSummary": false,
         "mapping": [
@@ -2036,7 +2036,7 @@
             }
           }
         ],
-        "fixedUri": "clockDirection",
+        "fixedUrl": "clockDirection",
         "isModifier": false,
         "isSummary": false,
         "mapping": [
@@ -2218,7 +2218,7 @@
             }
           }
         ],
-        "fixedUri": "depth",
+        "fixedUrl": "depth",
         "isModifier": false,
         "isSummary": false,
         "mapping": [
