@@ -336,9 +336,6 @@ namespace BreastRadiology.XUnitTests
             return retVal;
         }
 
-        /// <summary>
-        /// Add the indicated slice by url.
-        /// </summary>
         public ElementDefinition FixedCodeSlice(String path,
             String sliceName,
             String system,
@@ -482,7 +479,7 @@ namespace BreastRadiology.XUnitTests
                 valueSet.Url);
         }
 
-        public void FixComponentCode(ElementTreeSlice slice,
+        public void SliceComponentCode(ElementTreeSlice slice,
             String sliceName,
             CodeableConcept sliceCode)
         {
@@ -497,7 +494,7 @@ namespace BreastRadiology.XUnitTests
             slice.CreateNode(componentCode);
         }
 
-        public ElementTreeNode FixComponentValueX(ElementTreeSlice slice,
+        public ElementTreeNode SliceValueXByType(ElementTreeSlice slice,
             String sliceName,
             String[] types)
         {

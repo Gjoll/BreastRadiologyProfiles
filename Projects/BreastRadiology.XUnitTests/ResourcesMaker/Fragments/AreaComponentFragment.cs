@@ -47,8 +47,8 @@ namespace BreastRadiology.XUnitTests
                            ;
 
                        // Fix component code
-                       e.FixComponentCode(slice, sliceName, Self.CodeObservedArea.ToCodeableConcept());
-                       ElementTreeNode valueXNode = e.FixComponentValueX(slice, sliceName, new string[] { "Quantity", "Range" });
+                       e.SliceComponentCode(slice, sliceName, Self.CodeObservedArea.ToCodeableConcept());
+                       ElementTreeNode valueXNode = e.SliceValueXByType(slice, sliceName, new string[] { "Quantity", "Range" });
 
                        {
                            Hl7.Fhir.Model.Quantity q = new Hl7.Fhir.Model.Quantity
