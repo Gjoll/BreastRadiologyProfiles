@@ -28,9 +28,11 @@ namespace BreastRadiology.XUnitTests
 
                 ElementTreeNode eDef = e.Get("category");
                 eDef.ElementDefinition.Card(1, eDef.ElementDefinition.Max);
-                e.FixedCodeSlice("category", "categoryImaging",
-                    "http://terminology.hl7.org/CodeSystem/observation-category",
-                    "imaging");
+                e.SliceSelfByPattern("category",
+                    "categoryImaging",
+                    new CodeableConcept("http://terminology.hl7.org/CodeSystem/observation-category", "imaging"))
+                    .Single()
+                ;
             });
     }
 }

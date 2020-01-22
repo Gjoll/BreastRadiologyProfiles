@@ -336,10 +336,9 @@ namespace BreastRadiology.XUnitTests
             return retVal;
         }
 
-        public ElementDefinition FixedCodeSlice(String path,
+        public ElementDefinition SliceSelfByPattern(String path,
             String sliceName,
-            String system,
-            String code)
+            Element pattern)
         {
             sliceName = sliceName.UncapFirstLetter();
             ElementDefinition.SlicingComponent slicing = new ElementDefinition.SlicingComponent
@@ -349,26 +348,15 @@ namespace BreastRadiology.XUnitTests
 
             slicing.Discriminator.Add(new ElementDefinition.DiscriminatorComponent
             {
-                Type = ElementDefinition.DiscriminatorType.Value,
-                Path = "coding"
+                Type = ElementDefinition.DiscriminatorType.Pattern,
+                Path = "$this"
             });
             ElementTreeNode elementDef = this.Get(path);
             elementDef.ApplySlicing(slicing, false);
 
-            ElementDefinition coding = new ElementDefinition
-            {
-                ElementId = $"{elementDef.ElementDefinition.Path}.coding",
-                Path = $"{elementDef.ElementDefinition.Path}.coding",
-            };
+            ElementTreeSlice codingSlice = elementDef.CreateSlice(sliceName);
 
-            ElementTreeNode codingNode = elementDef.DefaultSlice.CreateNode(coding);
-            ElementTreeSlice codingSlice = codingNode.CreateSlice(sliceName);
-
-            codingSlice.ElementDefinition
-                .SetCardinality(1, "1")
-                ;
-
-            codingSlice.ElementDefinition.Pattern = new Coding(system, code);
+            codingSlice.ElementDefinition.Pattern = pattern;
             return codingSlice.ElementDefinition;
         }
 
@@ -563,6 +551,139 @@ namespace BreastRadiology.XUnitTests
             this.AddTargetLink(profile.Url,
                 new SDefEditor.Cardinality(min, max),
                 false);
+        }
+
+        public void SliceComponentSize(String sliceName,
+            CodeableConcept componentCode,
+            out ElementTreeSlice slice)
+        {
+            this.StartComponentSliceing();
+
+            slice = this.AppendSlice("component", sliceName, 0, "1");
+
+            // Fix component code
+            this.SliceComponentCode(slice, sliceName, componentCode);
+            ElementTreeNode valueXNode = this.SliceValueXByType(slice,
+                sliceName,
+                new string[] { "Quantity", "Range" });
+
+            {
+                Hl7.Fhir.Model.Quantity q = new Hl7.Fhir.Model.Quantity
+                {
+                    System = "http://unitsofmeasure.org",
+                    Code = "cm"
+                };
+
+                ElementDefinition valueX = new ElementDefinition
+                {
+                    Path = $"{slice.ElementDefinition.Path}.value[x]",
+                    ElementId = $"{slice.ElementDefinition.Path}:{sliceName}.value[x]:valueQuantity",
+                    SliceName = $"valueQuantity",
+                    Min = 0,
+                    Max = "1"
+                }
+                .Pattern(q)
+                .Type("Quantity")
+                ;
+                valueXNode.CreateSlice($"valueQuantity", valueX);
+            }
+
+            {
+                Hl7.Fhir.Model.Range r = new Hl7.Fhir.Model.Range
+                {
+                    Low = new SimpleQuantity
+                    {
+                        System = "http://unitsofmeasure.org",
+                        Code = "cm"
+                    },
+                    High = new SimpleQuantity
+                    {
+                        System = "http://unitsofmeasure.org",
+                        Code = "cm"
+                    }
+                };
+                ElementDefinition valueX = new ElementDefinition
+                {
+                    Path = $"{slice.ElementDefinition.Path}.value[x]",
+                    ElementId = $"{slice.ElementDefinition.Path}:{sliceName}.value[x]:valueRange",
+                    SliceName = $"valueRange",
+                    Min = 0,
+                    Max = "1"
+                }
+                .Pattern(r)
+                .Type("Range")
+                ;
+                valueXNode.CreateSlice($"{sliceName}/range", valueX);
+            }
+        }
+
+
+
+
+
+
+        public void SliceComponentCount(String sliceName,
+            CodeableConcept componentCode,
+            out ElementTreeSlice slice)
+        {
+            this.StartComponentSliceing();
+
+            slice = this.AppendSlice("component", sliceName, 0, "1");
+
+            // Fix component code
+            this.SliceComponentCode(slice, sliceName, componentCode);
+            ElementTreeNode valueXNode = this.SliceValueXByType(slice,
+                sliceName,
+                new string[] { "Quantity", "Range" });
+
+            {
+                Hl7.Fhir.Model.Quantity q = new Hl7.Fhir.Model.Quantity
+                {
+                    System = "http://unitsofmeasure.org",
+                    Code = "tot"
+                };
+
+                ElementDefinition valueX = new ElementDefinition
+                {
+                    Path = $"{slice.ElementDefinition.Path}.value[x]",
+                    ElementId = $"{slice.ElementDefinition.Path}:{sliceName}.value[x]:valueQuantity",
+                    SliceName = $"valueQuantity",
+                    Min = 0,
+                    Max = "1"
+                }
+                .Pattern(q)
+                .Type("Quantity")
+                ;
+                valueXNode.CreateSlice($"valueQuantity", valueX);
+            }
+
+            {
+                Hl7.Fhir.Model.Range r = new Hl7.Fhir.Model.Range
+                {
+                    Low = new SimpleQuantity
+                    {
+                        System = "http://unitsofmeasure.org",
+                        Code = "tot"
+                    },
+                    High = new SimpleQuantity
+                    {
+                        System = "http://unitsofmeasure.org",
+                        Code = "tot"
+                    }
+                };
+                ElementDefinition valueX = new ElementDefinition
+                {
+                    Path = $"{slice.ElementDefinition.Path}.value[x]",
+                    ElementId = $"{slice.ElementDefinition.Path}:{sliceName}.value[x]:valueRange",
+                    SliceName = $"valueRange",
+                    Min = 0,
+                    Max = "1"
+                }
+                .Pattern(r)
+                .Type("Range")
+                ;
+                valueXNode.CreateSlice($"{sliceName}/range", valueX);
+            }
         }
     }
 }

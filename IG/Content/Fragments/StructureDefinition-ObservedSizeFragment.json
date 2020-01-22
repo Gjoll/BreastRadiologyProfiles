@@ -123,9 +123,9 @@
         ]
       },
       {
-        "id": "Observation.component:observedSize.value[x]:observedSize/quantity",
+        "id": "Observation.component:observedSize.value[x]:valueQuantity",
         "path": "Observation.component.value[x]",
-        "sliceName": "observedSize/quantity",
+        "sliceName": "valueQuantity",
         "min": 0,
         "max": "1",
         "base": {
@@ -144,9 +144,9 @@
         }
       },
       {
-        "id": "Observation.component:observedSize.value[x]:observedSize/range",
+        "id": "Observation.component:observedSize.value[x]:valueRange",
         "path": "Observation.component.value[x]",
-        "sliceName": "observedSize/range",
+        "sliceName": "valueRange",
         "min": 0,
         "max": "1",
         "base": {

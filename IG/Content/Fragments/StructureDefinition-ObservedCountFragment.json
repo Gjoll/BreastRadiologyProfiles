@@ -89,7 +89,7 @@
           "coding": [
             {
               "system": "http://hl7.org/fhir/us/breast-radiology/CodeSystem/ComponentSliceCodes",
-              "code": "observedCount"
+              "code": "observedSize"
             }
           ]
         }
@@ -123,9 +123,9 @@
         ]
       },
       {
-        "id": "Observation.component:observedCount.value[x]:observedCount/quantity",
+        "id": "Observation.component:observedCount.value[x]:valueQuantity",
         "path": "Observation.component.value[x]",
-        "sliceName": "observedCount/quantity",
+        "sliceName": "valueQuantity",
         "min": 0,
         "max": "1",
         "base": {
@@ -140,13 +140,13 @@
         ],
         "patternQuantity": {
           "system": "http://unitsofmeasure.org",
-          "code": "tot"
+          "code": "cm"
         }
       },
       {
-        "id": "Observation.component:observedCount.value[x]:observedCount/range",
+        "id": "Observation.component:observedCount.value[x]:valueRange",
         "path": "Observation.component.value[x]",
-        "sliceName": "observedCount/range",
+        "sliceName": "valueRange",
         "min": 0,
         "max": "1",
         "base": {
@@ -162,11 +162,11 @@
         "patternRange": {
           "low": {
             "system": "http://unitsofmeasure.org",
-            "code": "tot"
+            "code": "cm"
           },
           "high": {
             "system": "http://unitsofmeasure.org",
-            "code": "tot"
+            "code": "cm"
           }
         }
       }

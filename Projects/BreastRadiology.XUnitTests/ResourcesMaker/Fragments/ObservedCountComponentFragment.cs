@@ -28,9 +28,10 @@ namespace BreastRadiology.XUnitTests
                            ;
                        s = e.SDef;
 
-                       e.StartComponentSliceing();
+                       e.SliceComponentSize(sliceName,
+                           Self.CodeObservedSize.ToCodeableConcept(),
+                           out ElementTreeSlice slice);
 
-                       ElementTreeSlice slice = e.AppendSlice("component", sliceName, 0, "1");
                        slice.ElementDefinition
                            .SetShort($"Observed Count component")
                            .SetDefinition(new Markdown()
@@ -42,59 +43,6 @@ namespace BreastRadiology.XUnitTests
                                 )
                            .SetComment(new Markdown($"This is one component of a group of components that comprise the observation."))
                            ;
-
-                       // Fix component code
-                       e.SliceComponentCode(slice, sliceName, Self.CodeObservedCount.ToCodeableConcept());
-                       ElementTreeNode valueXNode = e.SliceValueXByType(slice, sliceName, new string[] { "Quantity", "Range" });
-
-                       {
-                           Hl7.Fhir.Model.Quantity q = new Hl7.Fhir.Model.Quantity
-                           {
-                               System = "http://unitsofmeasure.org",
-                               Code = "tot"
-                           };
-
-                           ElementDefinition valueX = new ElementDefinition
-                           {
-                               Path = $"{slice.ElementDefinition.Path}.value[x]",
-                               ElementId = $"{slice.ElementDefinition.Path}:{sliceName}.value[x]:{sliceName}/quantity",
-                               SliceName = $"{sliceName}/quantity",
-                               Min = 0,
-                               Max = "1"
-                           }
-                           .Pattern(q)
-                           .Type("Quantity")
-                           ;
-                           valueXNode.CreateSlice($"{sliceName}/quantity", valueX);
-                       }
-
-                       {
-                           Hl7.Fhir.Model.Range r = new Hl7.Fhir.Model.Range
-                           {
-                               Low = new SimpleQuantity
-                               {
-                                   System = "http://unitsofmeasure.org",
-                                   Code = "tot"
-                               },
-                               High = new SimpleQuantity
-                               {
-                                   System = "http://unitsofmeasure.org",
-                                   Code = "tot"
-                               }
-                           };
-                           ElementDefinition valueX = new ElementDefinition
-                           {
-                               Path = $"{slice.ElementDefinition.Path}.value[x]",
-                               ElementId = $"{slice.ElementDefinition.Path}:{sliceName}.value[x]:{sliceName}/range",
-                               SliceName = $"{sliceName}/range",
-                               Min = 0,
-                               Max = "1"
-                           }
-                           .Pattern(r)
-                           .Type("Range")
-                           ;
-                           valueXNode.CreateSlice($"{sliceName}/range", valueX);
-                       }
 
                        e.AddComponentLink($"Observed Count",
                            new SDefEditor.Cardinality(slice.ElementDefinition),
