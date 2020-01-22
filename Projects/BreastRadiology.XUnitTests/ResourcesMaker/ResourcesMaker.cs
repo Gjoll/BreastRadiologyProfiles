@@ -484,52 +484,6 @@ namespace BreastRadiology.XUnitTests
             }
         }
 
-        void FixComponentCode(ElementTreeSlice slice,
-            String sliceName,
-            CodeableConcept sliceCode)
-        {
-            ElementDefinition componentCode = new ElementDefinition
-            {
-                Path = $"{slice.ElementDefinition.Path}.code",
-                ElementId = $"{slice.ElementDefinition.Path}:{sliceName}.code",
-                Min = 1,
-                Max = "1"
-            };
-            componentCode.Pattern(sliceCode);
-            slice.CreateNode(componentCode);
-        }
-
-        ElementTreeNode FixComponentValueX(ElementTreeSlice slice,
-            String sliceName,
-            String[] types)
-        {
-            ElementDefinition valueX = new ElementDefinition
-            {
-                Path = $"{slice.ElementDefinition.Path}.value[x]",
-                ElementId = $"{slice.ElementDefinition.Path}:{sliceName}.value[x]",
-                Min = 1,
-                Max = "1"
-            };
-            valueX
-                .Types(types)
-                ;
-
-            ElementDefinition.SlicingComponent slicingComponent = new ElementDefinition.SlicingComponent
-            {
-                Rules = ElementDefinition.SlicingRules.Closed
-            };
-
-            slicingComponent.Discriminator.Add(new ElementDefinition.DiscriminatorComponent
-            {
-                Type = ElementDefinition.DiscriminatorType.Type,
-                Path = "$this"
-            });
-
-            valueX.ApplySlicing(slicingComponent, false);
-
-            return slice.CreateNode(valueX);
-        }
-
         IntroDoc CreateIntroDocVS(ValueSet binding)
         {
             IntroDoc doc = new IntroDoc();
@@ -540,64 +494,5 @@ namespace BreastRadiology.XUnitTests
                 Path.Combine(Self.pageDir, $"ValueSet-{binding.Name}-intro.xml"));
             return doc;
         }
-
-        ElementTreeSlice SliceTargetReference(SDefEditor e,
-            ElementTreeNode sliceElementDef,
-            StructureDefinition profile,
-            Int32 min = 0,
-            String max = "*")
-        {
-            String baseName = sliceElementDef.ElementDefinition.Path.LastPathPart();
-            ElementTreeSlice retVal = e.SliceByUrlTarget(sliceElementDef, profile.Url, min, max);
-            retVal.ElementDefinition
-                .SetShort($"'{profile.Title}' reference")
-                .SetDefinition(
-                    new Markdown($"This slice references the target '{profile.Title}'")
-                    )
-            ;
-            e.AddTargetLink(profile.Url.Trim(),
-                new SDefEditor.Cardinality(min, max),
-                false);
-
-            return retVal;
-        }
-
-        void SliceTargetReference(SDefEditor e,
-            ElementTreeNode sliceElementDef,
-            StructureDefinition profile,
-            Modalities modalities,
-            Int32 min = 0,
-            String max = "*")
-        {
-            String baseName = sliceElementDef.ElementDefinition.Path.LastPathPart();
-            e.SliceByUrlTarget(sliceElementDef, profile.Url, min, max).ElementDefinition
-                .SetShort($"'{profile.Title}' reference")
-                .SetDefinition(
-                    new Markdown($"This slice references the target '{profile.Title}'")
-                    .ValidModalities(Modalities.MG)
-                    )
-            ;
-            e.AddTargetLink(profile.Url,
-                new SDefEditor.Cardinality(min, max),
-                false);
-        }
-
-        void SliceTargetReference(SDefEditor e,
-            ElementTreeNode sliceElementDef,
-            String profile,
-            String title,
-            Int32 min = 0,
-            String max = "*")
-        {
-            String baseName = sliceElementDef.ElementDefinition.Path.LastPathPart();
-            e.SliceByUrlTarget(sliceElementDef, profile, min, max).ElementDefinition
-                .SetShort($"'{title}' reference")
-                .SetDefinition(new Markdown($"This slice references the target '{title}'"))
-            ;
-            e.AddTargetLink(profile,
-                new SDefEditor.Cardinality(min, max),
-                false);
-        }
-
     }
 }

@@ -78,11 +78,11 @@ namespace BreastRadiology.XUnitTests
                 }
                 ElementTreeNode sliceElementDef = e.ConfigureSliceByUrlDiscriminator("result", false);
                 {
-                    ElementTreeSlice slice = Self.SliceTargetReference(e, sliceElementDef, Self.SectionFindingsLeftBreast.Value(), 0, "1");
+                    ElementTreeSlice slice = e.SliceTargetReference( sliceElementDef, Self.SectionFindingsLeftBreast.Value(), 0, "1");
                     slice.ElementDefinition.MustSupport();
                 }
                 {
-                    ElementTreeSlice slice = Self.SliceTargetReference(e, sliceElementDef, Self.SectionFindingsRightBreast.Value(), 0, "1");
+                    ElementTreeSlice slice = e.SliceTargetReference( sliceElementDef, Self.SectionFindingsRightBreast.Value(), 0, "1");
                     slice.ElementDefinition.MustSupport();
                 }
             });

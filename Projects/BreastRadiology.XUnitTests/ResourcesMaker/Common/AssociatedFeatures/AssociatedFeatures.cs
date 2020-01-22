@@ -38,9 +38,9 @@ namespace BreastRadiology.XUnitTests
 
                 ElementTreeNode sliceElementDef = e.ConfigureSliceByUrlDiscriminator("hasMember", false);
 
-                Self.SliceTargetReference(e, sliceElementDef, Self.MGAbnormalityArchitecturalDistortion.Value(), Modalities.MG, 0, "*");
-                Self.SliceTargetReference(e, sliceElementDef, Self.MGAbnormalityCalcification.Value(), Modalities.MG, 0, "*");
-                Self.SliceTargetReference(e, sliceElementDef, Self.ObservedFeature.Value(), Modalities.All, 0, "*");
+                e.SliceTargetReference( sliceElementDef, Self.MGAbnormalityArchitecturalDistortion.Value(), Modalities.MG, 0, "*");
+                e.SliceTargetReference( sliceElementDef, Self.MGAbnormalityCalcification.Value(), Modalities.MG, 0, "*");
+                e.SliceTargetReference( sliceElementDef, Self.ObservedFeature.Value(), Modalities.All, 0, "*");
             });
     }
 }

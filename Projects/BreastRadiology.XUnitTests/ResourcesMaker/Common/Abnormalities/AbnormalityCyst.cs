@@ -108,8 +108,8 @@ namespace BreastRadiology.XUnitTests
                     ;
 
                 ElementTreeNode sliceElementDef = e.ConfigureSliceByUrlDiscriminator("hasMember", false);
-                Self.SliceTargetReference(e, sliceElementDef, Self.AssociatedFeatures.Value(), 0, "1");
-                Self.SliceTargetReference(e, sliceElementDef, Self.ConsistentWith.Value(), 0, "*");
+                e.SliceTargetReference( sliceElementDef, Self.AssociatedFeatures.Value(), 0, "1");
+                e.SliceTargetReference( sliceElementDef, Self.ConsistentWith.Value(), 0, "*");
 
                 e.StartComponentSliceing();
                 e.ComponentSliceCodeableConcept("cystType",

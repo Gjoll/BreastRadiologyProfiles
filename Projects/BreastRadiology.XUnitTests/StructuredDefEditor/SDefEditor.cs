@@ -61,43 +61,6 @@ namespace BreastRadiology.XUnitTests
             this.SDef.AddExtension(Global.ResourceMapNameUrl, new FhirString(mapName));
         }
 
-        /// <summary>
-        /// Inserts after the element with the indicated name, and any children of that element.
-        /// </summary>
-        //public ElementDefGroup InsertAfter(ElementDefGroup at,
-        //    ElementDefinition e)
-        //{
-        //    return this.AddElementDefinition(at.Index, e, null);
-        //}
-
-        /// <summary>
-        /// Inserts after the element with the indicated name, and any children of that element.
-        /// </summary>
-        //public ElementDefGroup InsertAfterAllChildren(String path,
-        //    ElementDefinition insertItem)
-        //{
-        //    if (this.baseElements.TryGetValue(path, out ElementDefGroup baseDefinition) == false)
-        //        throw new Exception($"{path} not found");
-
-        //    path = path + ".";
-        //    Int32 i = this.elementOrder.Count;
-
-        //    while ((i > 0) && (this.elementOrder[i - 1].Index > baseDefinition.Index))
-        //        i -= 1;
-
-        //    while (i < this.elementOrder.Count)
-        //    {
-        //        if (this.elementOrder[i].ElementDefinition.ElementId.SkipFirstPathPart().StartsWith(path) == false)
-        //            break;
-        //        i += 1;
-        //    }
-        //    ElementDefGroup newE = new ElementDefGroup(baseDefinition.Index,
-        //        insertItem,
-        //        baseDefinition.ElementDefinition);
-        //    this.elements.Add(insertItem.ElementId.SkipFirstPathPart(), newE);
-        //    this.elementOrder.Insert(i, newE);
-        //    return newE;
-        //}
 
         /// <summary>
         /// Select a element definition from the base sdef by its path name and 
@@ -125,12 +88,6 @@ namespace BreastRadiology.XUnitTests
         public ElementDefinition Select(String path)
         {
             return this.Get(path).ElementDefinition;
-        }
-
-        public ElementDefinition Clone(String path)
-        {
-            ElementTreeNode node = this.Get(path);
-            return (ElementDefinition)node.ElementDefinition.DeepCopy();
         }
 
         public bool WriteFragment(out String fragmentName)
@@ -418,29 +375,6 @@ namespace BreastRadiology.XUnitTests
             return codingSlice.ElementDefinition;
         }
 
-        public void SliceByPatterns(String elementName,
-            String typeCode,
-            IEnumerable<PatternSlice> patternSlices)
-        {
-            ElementTreeNode elementDef = this.ConfigureSliceByUrlDiscriminator(elementName, false);
-            elementDef.ElementDefinition
-                .Type(typeCode)
-                ;
-            foreach (PatternSlice patternSlice in patternSlices)
-            {
-                ElementTreeSlice slice = elementDef.CreateSlice(patternSlice.SliceName);
-                slice.ElementDefinition
-                    .SetCardinality(patternSlice.Min, patternSlice.Max)
-                    .Type("CodeableConcept")
-                    .Pattern(patternSlice.Pattern)
-                    .Short(patternSlice.ShortDefinition)
-                    .Definition(patternSlice.Definition)
-                    .Type(typeCode);
-                ;
-                slice.ElementDefinition.Mapping.Clear();
-            }
-        }
-
         public ElementTreeSlice SliceByUrlTarget(ElementTreeNode sliceElementDef,
             String profileUrl,
             Int32 min,
@@ -479,70 +413,6 @@ namespace BreastRadiology.XUnitTests
             });
 
             componentNode.ApplySlicing(slicingComponent, false);
-        }
-
-        public void StartComponentTypeSlicing(ElementTreeSlice parentSlice,
-            String type)
-        {
-            ElementDefinition.SlicingComponent slicingComponent = new ElementDefinition.SlicingComponent
-            {
-                Rules = ElementDefinition.SlicingRules.Closed
-            };
-
-            slicingComponent.Discriminator.Add(new ElementDefinition.DiscriminatorComponent
-            {
-                Type = ElementDefinition.DiscriminatorType.Type,
-                Path = "value[x]"
-            });
-
-            parentSlice.ElementDefinition.ApplySlicing(slicingComponent, false);
-        }
-
-
-        public void ComponentSliceQuantity(String sliceName,
-            CodeableConcept pattern,
-            Int32 minCardinality,
-            String maxCardinality,
-            String componentName)
-        {
-            ElementTreeSlice slice = this.AppendSlice("component", sliceName, minCardinality, maxCardinality);
-            slice.ElementDefinition
-                .SetShort($"{componentName} component")
-                .SetDefinition(new Markdown($"This component slice contains the {componentName} quantity"))
-                .SetComment(new Markdown($"This is one component of a group of components that comprise the observation."))
-                ;
-
-            {
-                ElementDefinition componentCode = new ElementDefinition
-                {
-                    Path = $"{slice.ElementDefinition.Path}.code",
-                    ElementId = $"{slice.ElementDefinition.Path}:{sliceName}.code",
-                    Min = 1,
-                    Max = "1"
-                };
-                componentCode
-                    .Pattern(pattern)
-                    ;
-                slice.CreateNode(componentCode);
-            }
-            {
-                ElementDefinition valueX = new ElementDefinition
-                {
-                    Path = $"{slice.ElementDefinition.Path}.value[x]",
-                    ElementId = $"{slice.ElementDefinition.Path}:{sliceName}.value[x]",
-                    Min = 1,
-                    Max = "1"
-                };
-                valueX
-                    .Type("Quantity");
-                ;
-                slice.CreateNode(valueX);
-            }
-            String componentRef = Global.ComponentAnchor(sliceName);
-            this.AddComponentLink(componentName,
-                new SDefEditor.Cardinality(slice.ElementDefinition),
-                componentRef,
-                "Quantity");
         }
 
         public void ComponentSliceCodeableConcept(String sliceName,
@@ -610,6 +480,92 @@ namespace BreastRadiology.XUnitTests
                 componentRef,
                 "CodeableConcept",
                 valueSet.Url);
+        }
+
+        public void FixComponentCode(ElementTreeSlice slice,
+            String sliceName,
+            CodeableConcept sliceCode)
+        {
+            ElementDefinition componentCode = new ElementDefinition
+            {
+                Path = $"{slice.ElementDefinition.Path}.code",
+                ElementId = $"{slice.ElementDefinition.Path}:{sliceName}.code",
+                Min = 1,
+                Max = "1"
+            };
+            componentCode.Pattern(sliceCode);
+            slice.CreateNode(componentCode);
+        }
+
+        public ElementTreeNode FixComponentValueX(ElementTreeSlice slice,
+            String sliceName,
+            String[] types)
+        {
+            ElementDefinition valueX = new ElementDefinition
+            {
+                Path = $"{slice.ElementDefinition.Path}.value[x]",
+                ElementId = $"{slice.ElementDefinition.Path}:{sliceName}.value[x]",
+                Min = 1,
+                Max = "1"
+            };
+            valueX
+                .Types(types)
+                ;
+
+            ElementDefinition.SlicingComponent slicingComponent = new ElementDefinition.SlicingComponent
+            {
+                Rules = ElementDefinition.SlicingRules.Closed
+            };
+
+            slicingComponent.Discriminator.Add(new ElementDefinition.DiscriminatorComponent
+            {
+                Type = ElementDefinition.DiscriminatorType.Type,
+                Path = "$this"
+            });
+
+            valueX.ApplySlicing(slicingComponent, false);
+
+            return slice.CreateNode(valueX);
+        }
+
+
+        public ElementTreeSlice SliceTargetReference(ElementTreeNode sliceElementDef,
+            StructureDefinition profile,
+            Int32 min = 0,
+            String max = "*")
+        {
+            String baseName = sliceElementDef.ElementDefinition.Path.LastPathPart();
+            ElementTreeSlice retVal = this.SliceByUrlTarget(sliceElementDef, profile.Url, min, max);
+            retVal.ElementDefinition
+                .SetShort($"'{profile.Title}' reference")
+                .SetDefinition(
+                    new Markdown($"This slice references the target '{profile.Title}'")
+                    )
+            ;
+            this.AddTargetLink(profile.Url.Trim(),
+                new SDefEditor.Cardinality(min, max),
+                false);
+
+            return retVal;
+        }
+
+        public void SliceTargetReference(ElementTreeNode sliceElementDef,
+            StructureDefinition profile,
+            Modalities modalities,
+            Int32 min = 0,
+            String max = "*")
+        {
+            String baseName = sliceElementDef.ElementDefinition.Path.LastPathPart();
+            this.SliceByUrlTarget(sliceElementDef, profile.Url, min, max).ElementDefinition
+                .SetShort($"'{profile.Title}' reference")
+                .SetDefinition(
+                    new Markdown($"This slice references the target '{profile.Title}'")
+                    .ValidModalities(Modalities.MG)
+                    )
+            ;
+            this.AddTargetLink(profile.Url,
+                new SDefEditor.Cardinality(min, max),
+                false);
         }
     }
 }

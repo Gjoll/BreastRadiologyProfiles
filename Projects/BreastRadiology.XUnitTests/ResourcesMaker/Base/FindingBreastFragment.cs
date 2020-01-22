@@ -46,19 +46,19 @@ namespace BreastRadiology.XUnitTests
                        ElementTreeNode sliceElementDef = e.ConfigureSliceByUrlDiscriminator("hasMember", false);
 
                        {
-                           ElementTreeSlice slice = Self.SliceTargetReference(e, sliceElementDef, Self.FindingMammo.Value(), 0, "*");
+                           ElementTreeSlice slice = e.SliceTargetReference( sliceElementDef, Self.FindingMammo.Value(), 0, "*");
                            slice.ElementDefinition.MustSupport();
                        }
                        {
-                           ElementTreeSlice slice = Self.SliceTargetReference(e, sliceElementDef, Self.FindingMri.Value(), 0, "*");
+                           ElementTreeSlice slice = e.SliceTargetReference( sliceElementDef, Self.FindingMri.Value(), 0, "*");
                            slice.ElementDefinition.MustSupport();
                        }
                        {
-                           ElementTreeSlice slice = Self.SliceTargetReference(e, sliceElementDef, Self.FindingNM.Value(), 0, "*");
+                           ElementTreeSlice slice = e.SliceTargetReference( sliceElementDef, Self.FindingNM.Value(), 0, "*");
                            slice.ElementDefinition.MustSupport();
                        }
                        {
-                           ElementTreeSlice slice = Self.SliceTargetReference(e, sliceElementDef, Self.FindingUltraSound.Value(), 0, "*");
+                           ElementTreeSlice slice = e.SliceTargetReference( sliceElementDef, Self.FindingUltraSound.Value(), 0, "*");
                            slice.ElementDefinition.MustSupport();
                        }
                    });
