@@ -8,14 +8,6 @@ using System.Text;
 
 namespace BreastRadiology.XUnitTests
 {
-    public enum ReviewStatus
-    {
-        NotReviewed,
-        Alpha,
-        Preliminary,
-        Completed
-    };
-
     /// <summary>
     /// Helper class for making xxx-intro.xml files.
     /// These files provide the html verbage for the introduction of a fhir class
@@ -45,15 +37,22 @@ namespace BreastRadiology.XUnitTests
             codeEditor.Load(fullPath);
         }
 
-        public IntroDoc ReviewedStatus(ReviewStatus reviewStatus)
+        CodeBlockNested reviewStatusBlock = null;
+        public IntroDoc ReviewedStatus(String reviewer, String dt)
         {
-            CodeBlockNested b = this.codeEditor.Blocks.Find("reviewStatus");
-            if (b == null)
-                throw new Exception($"reviewStatus block missing");
-
-            b
-                .AppendRaw($"<h3 id=\"reviewStatus\">Review Status</h3>")
-                .AppendRaw($"<p><b>{reviewStatus}</b></p>")
+            if (reviewStatusBlock == null)
+            {
+                reviewStatusBlock = this.codeEditor.Blocks.Find("reviewStatus");
+                if (reviewStatusBlock == null)
+                    throw new Exception($"reviewStatus block missing");
+                reviewStatusBlock
+                    .AppendRaw($"<h3 id=\"reviewStatus\">Review Status</h3>")
+                    .AppendRaw($"Comments and Suggested changes to this implementation guide van be made ")
+                    .AppendRaw($"<a href=\"https://github.com/HL7/fhir-breast-radiology-ig/projects/1\">here</a>")
+                    ;
+            }
+            reviewStatusBlock
+                .AppendRaw($"<p><b>Reviewed by {reviewer} on {dt}</b></p>")
                 .AppendRaw($"Comments and Suggested changes to this implementation guide van be made ")
                 .AppendRaw($"<a href=\"https://github.com/HL7/fhir-breast-radiology-ig/projects/1\">here</a>")
                 ;

@@ -41,7 +41,7 @@ namespace BreastRadiology.XUnitTests
         //            IntroDoc valueSetIntroDoc = Self.CreateIntroDocVS(binding);
         //            valueSetIntroDoc
         //                .ValueSet(binding);
-        //                .ReviewedStatus(ReviewStatus.NotReviewed)
+        //                .ReviewedStatus("NOONE", "1.1.2020")
         //            ;
         //            String outputPath = valueSetIntroDoc.Save();
         //            Self.fc?.Mark(outputPath);
@@ -67,7 +67,7 @@ namespace BreastRadiology.XUnitTests
 
         //        e.IntroDoc
         //            .CodedObservationLeafNode("a mammography mass margin", binding)
-        //            .ReviewedStatus(ReviewStatus.NotReviewed)
+        //            .ReviewedStatus("NOONE", "1.1.2020")
         //            ;
 
         //        e.Select("value[x]")

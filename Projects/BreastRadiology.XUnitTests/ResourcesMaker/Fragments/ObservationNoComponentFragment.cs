@@ -31,7 +31,7 @@ namespace BreastRadiology.XUnitTests
                 e.Select("component").Zero();
 
                 e.IntroDoc
-                    .ReviewedStatus(ReviewStatus.NotReviewed)
+                    .ReviewedStatus("NOONE", "1.1.2020")
                     ;
             });
 

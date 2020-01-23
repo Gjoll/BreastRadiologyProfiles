@@ -27,7 +27,7 @@ namespace BreastRadiology.XUnitTests
 
         //        e.IntroDoc
         //            .Fragment($"Resource fragment used by various observations to include an optional breast body location.")
-        //            .ReviewedStatus(ReviewStatus.NotReviewed)
+        //            .ReviewedStatus("NOONE", "1.1.2020")
         //            ;
 
         //        e

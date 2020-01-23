@@ -74,7 +74,7 @@ namespace BreastRadiology.XUnitTests
                 {
                     IntroDoc valueSetIntroDoc = Self.CreateIntroDocVS(binding);
                     valueSetIntroDoc
-                        .ReviewedStatus(ReviewStatus.NotReviewed)
+                        .ReviewedStatus("NOONE", "1.1.2020")
                     ;
                     String outputPath = valueSetIntroDoc.Save();
                     Self.fc?.Mark(outputPath);
@@ -104,7 +104,7 @@ namespace BreastRadiology.XUnitTests
                 s = e.SDef;
 
                 e.IntroDoc
-                    .ReviewedStatus(ReviewStatus.NotReviewed)
+                    .ReviewedStatus("NOONE", "1.1.2020")
                     ;
 
                 ElementTreeNode sliceElementDef = e.ConfigureSliceByUrlDiscriminator("hasMember", false);

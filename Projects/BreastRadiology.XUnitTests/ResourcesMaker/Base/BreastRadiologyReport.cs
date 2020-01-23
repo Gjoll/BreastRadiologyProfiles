@@ -41,7 +41,8 @@ namespace BreastRadiology.XUnitTests
 
                 s = e.SDef;
                 e.IntroDoc
-                     .ReviewedStatus(ReviewStatus.Alpha)
+                     .ReviewedStatus("KWA-PEN", "1.1.2020")
+                     .ReviewedStatus("CIC", "22.1.2020")
                      ;
 
                 e.Select("code").Pattern = new CodeableConcept(Loinc, "10193-1");

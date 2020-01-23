@@ -78,7 +78,7 @@ namespace BreastRadiology.XUnitTests
                 s = e.SDef;
 
                 e.IntroDoc
-                    .ReviewedStatus(ReviewStatus.NotReviewed)
+                    .ReviewedStatus("NOONE", "1.1.2020")
                     ;
 
                 ElementTreeNode sliceElementDef = e.ConfigureSliceByUrlDiscriminator("hasMember", false);

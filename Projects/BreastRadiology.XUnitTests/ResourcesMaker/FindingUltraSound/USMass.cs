@@ -40,7 +40,7 @@ namespace BreastRadiology.XUnitTests
 
         //        e.IntroDoc
         //            .ObservationSection($"Ultra-Sound Mass")
-        //            .ReviewedStatus(ReviewStatus.NotReviewed)
+        //            .ReviewedStatus("NOONE", "1.1.2020")
         //            ;
 
         //        //ProfileTargetSlice[] targets = new ProfileTargetSlice[]
