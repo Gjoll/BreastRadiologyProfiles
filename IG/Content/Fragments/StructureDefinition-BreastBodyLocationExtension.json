@@ -19,23 +19,23 @@
     },
     {
       "url": "http://www.fragment.com/maplink",
-      "valueString": "valueSet||True|http://hl7.org/fhir/us/breast-radiology/ValueSet/BreastLocationQuadrantVS"
+      "valueString": "component|1..1|True|quadrant^StructureDefinition-{SDName}-definitions.html#Extension.extension:quadrant.value[x]^Component^http://hl7.org/fhir/us/breast-radiology/ValueSet/BreastLocationQuadrantVS"
     },
     {
       "url": "http://www.fragment.com/maplink",
-      "valueString": "valueSet||True|http://hl7.org/fhir/us/breast-radiology/ValueSet/BreastLocationRegionVS"
+      "valueString": "component|1..1|True|region^StructureDefinition-{SDName}-definitions.html#Extension.extension:region.value[x]^Component^http://hl7.org/fhir/us/breast-radiology/ValueSet/BreastLocationRegionVS"
     },
     {
       "url": "http://www.fragment.com/maplink",
-      "valueString": "valueSet||True|http://hl7.org/fhir/us/breast-radiology/ValueSet/BreastLocationClockVS"
+      "valueString": "component|1..1|True|clockDirection^StructureDefinition-{SDName}-definitions.html#Extension.extension:clockDirection.value[x]^Component^http://hl7.org/fhir/us/breast-radiology/ValueSet/BreastLocationClockVS"
     },
     {
       "url": "http://www.fragment.com/maplink",
-      "valueString": "valueSet||True|http://hl7.org/fhir/us/breast-radiology/ValueSet/BreastLocationDepthVS"
+      "valueString": "component|1..1|True|depth^StructureDefinition-{SDName}-definitions.html#Extension.extension:depth.value[x]^Component^http://hl7.org/fhir/us/breast-radiology/ValueSet/BreastLocationDepthVS"
     },
     {
       "url": "http://www.fragment.com/maplink",
-      "valueString": "extension|1..1|True|http://hl7.org/fhir/us/breast-radiology/StructureDefinition/BodyDistanceFromExtension"
+      "valueString": "extension|0..1|True|http://hl7.org/fhir/us/breast-radiology/StructureDefinition/BodyDistanceFromExtension"
     }
   ],
   "url": "http://hl7.org/fhir/us/breast-radiology/StructureDefinition/BreastBodyLocationExtension",
@@ -220,8 +220,8 @@
       {
         "id": "Extension.extension:region.value[x]",
         "path": "Extension.extension.value[x]",
-        "min": 1,
-        "max": "1",
+        "min": 0,
+        "max": "*",
         "type": [
           {
             "code": "CodeableConcept"
@@ -329,7 +329,7 @@
         "short": "distanceFromLandmark extension",
         "definition": "This extension slice contains the distanceFromLandmark extension",
         "comment": "This is one component of a group of components that comprise the observation.",
-        "min": 1,
+        "min": 0,
         "max": "1",
         "base": {
           "path": "Extension.extension",

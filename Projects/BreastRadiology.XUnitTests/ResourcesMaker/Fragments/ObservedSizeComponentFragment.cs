@@ -31,7 +31,7 @@ namespace BreastRadiology.XUnitTests
                            Self.CodeObservedSize.ToCodeableConcept(),
                            out ElementTreeSlice slice);
 
-                       slice.ElementDefinition
+                       ElementDefinition sliceDef = slice.ElementDefinition
                            .SetShort($"Observed Size component")
                            .SetDefinition(new Markdown()
                                                .Paragraph($"This component slice contains the observed size of an item in cemtimeters.",
@@ -44,7 +44,7 @@ namespace BreastRadiology.XUnitTests
 
                        e.AddComponentLink($"Observed Size",
                            new SDefEditor.Cardinality(slice.ElementDefinition),
-                           Global.ComponentAnchor(sliceName),
+                           Global.ElementAnchor(sliceDef),
                            "Quantity or Range");
                    });
     }

@@ -32,7 +32,7 @@ namespace BreastRadiology.XUnitTests
                            Self.CodeObservedSize.ToCodeableConcept(),
                            out ElementTreeSlice slice);
 
-                       slice.ElementDefinition
+                       ElementDefinition sliceDef = slice.ElementDefinition
                            .SetShort($"Observed Count component")
                            .SetDefinition(new Markdown()
                                 .Paragraph($"This component slice contains the number of items observed.",
@@ -46,7 +46,7 @@ namespace BreastRadiology.XUnitTests
 
                        e.AddComponentLink($"Observed Count",
                            new SDefEditor.Cardinality(slice.ElementDefinition),
-                           Global.ComponentAnchor(sliceName), 
+                           Global.ElementAnchor(sliceDef), 
                            "Quantity or Range");
                    });
     }

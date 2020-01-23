@@ -50,18 +50,18 @@ namespace BreastRadiology.XUnitTests
                     .Type("uri")
                     .Fixed(new FhirUri(e.SDef.Url));
 
-                e.Select("value[x]")
+                ElementDefinition valueXDef = e.Select("value[x]")
                     .Type("Reference")
                     ;
 
                 e.AddTargetLink(Self.BreastRadiologyReport.Value().Url,
-                    new SDefEditor.Cardinality(0, "*"), 
+                    new SDefEditor.Cardinality(valueXDef), 
                     false);
                 e.AddTargetLink(RiskAssessmentUrl, 
-                    new SDefEditor.Cardinality(0, "*"), 
+                    new SDefEditor.Cardinality(valueXDef), 
                     false);
                 e.AddTargetLink(DomainResourceUrl, 
-                    new SDefEditor.Cardinality(0, "*"),
+                    new SDefEditor.Cardinality(valueXDef),
                     false);
             });
     }

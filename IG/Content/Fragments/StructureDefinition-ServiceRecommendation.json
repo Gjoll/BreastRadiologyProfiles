@@ -19,7 +19,7 @@
     },
     {
       "url": "http://www.fragment.com/maplink",
-      "valueString": "component|0..*|True|Service Recommendation Code^StructureDefinition-{SDName}-definitions.html#Observation.code^CodeableConcept^http://hl7.org/fhir/us/breast-radiology/ValueSet/RecommendationsVS"
+      "valueString": "component|0..1|True|Service Recommendation Code^StructureDefinition-{SDName}-definitions.html#ServiceRequest.code^CodeableConcept^http://hl7.org/fhir/us/breast-radiology/ValueSet/RecommendationsVS"
     }
   ],
   "url": "http://hl7.org/fhir/us/breast-radiology/StructureDefinition/ServiceRecommendation",

@@ -73,14 +73,14 @@ namespace BreastRadiology.XUnitTests
                 }
                 {
                     ValueSet binding = Self.BiRadsAssessmentCategoriesVS.Value();
-                    e.Select("conclusionCode")
+                    ElementDefinition conclusionCodeDef =  e.Select("conclusionCode")
                         .Single()
                         .Binding(binding, BindingStrength.Required)
                         .MustSupport()
                         ;
                     e.AddComponentLink("Conclusion Code",
                         new SDefEditor.Cardinality(e.Select("conclusionCode")),
-                        Global.ElementAnchor("conclusionCode"), 
+                        Global.ElementAnchor(conclusionCodeDef), 
                         "CodeableConcept", 
                         binding.Url);
                 }

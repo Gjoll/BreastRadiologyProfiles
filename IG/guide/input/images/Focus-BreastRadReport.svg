@@ -68,13 +68,13 @@
 </g>
 <g>
 <g transform="translate(503.99997 127.5)">
-<a href="StructureDefinition-BreastRadReport-definitions.html#Observation.conclusionCode" target="_top">
+<a href="StructureDefinition-BreastRadReport-definitions.html#DiagnosticReport.conclusionCode" target="_top">
 <rect fill="LightYellow" stroke="Black" stroke-width="1.875" x="0" y="0" width="172.5" height="52.5" rx="3.75" ry="3.75" />
 </a>
-<a href="StructureDefinition-BreastRadReport-definitions.html#Observation.conclusionCode" target="_top">
+<a href="StructureDefinition-BreastRadReport-definitions.html#DiagnosticReport.conclusionCode" target="_top">
 <text x="86.25" y="22.5" text-anchor="middle">Conclusion Code</text>
 </a>
-<a href="StructureDefinition-BreastRadReport-definitions.html#Observation.conclusionCode" target="_top">
+<a href="StructureDefinition-BreastRadReport-definitions.html#DiagnosticReport.conclusionCode" target="_top">
 <text x="86.25" y="41.25" text-anchor="middle">CodeableConcept</text>
 </a>
 </g>

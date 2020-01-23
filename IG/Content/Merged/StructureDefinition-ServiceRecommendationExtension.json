@@ -19,15 +19,15 @@
     },
     {
       "url": "http://www.fragment.com/maplink",
-      "valueString": "target|0..*|False|http://hl7.org/fhir/StructureDefinition/MedicationRequest"
+      "valueString": "target|1..1|False|http://hl7.org/fhir/StructureDefinition/MedicationRequest"
     },
     {
       "url": "http://www.fragment.com/maplink",
-      "valueString": "target|0..*|False|http://hl7.org/fhir/StructureDefinition/ServiceRequest"
+      "valueString": "target|1..1|False|http://hl7.org/fhir/StructureDefinition/ServiceRequest"
     },
     {
       "url": "http://www.fragment.com/maplink",
-      "valueString": "target|0..*|False|http://hl7.org/fhir/us/breast-radiology/StructureDefinition/ServiceRecommendation"
+      "valueString": "target|1..1|False|http://hl7.org/fhir/us/breast-radiology/StructureDefinition/ServiceRecommendation"
     },
     {
       "url": "http://www.fragment.com/mapname",

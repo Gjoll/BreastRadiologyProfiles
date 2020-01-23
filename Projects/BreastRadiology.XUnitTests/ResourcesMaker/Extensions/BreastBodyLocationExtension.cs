@@ -333,7 +333,14 @@ namespace BreastRadiology.XUnitTests
                     Markdown definition)
                 {
                     ElementDefinition  retVal = SliceAndBindUrl(sliceName, binding.Url, shortText, definition);
-                    e.AddValueSetLink(binding);
+                    //e.AddValueSetLink(binding);
+
+                    e.AddComponentLink(sliceName,
+                        new SDefEditor.Cardinality(retVal),
+                        Global.ElementAnchor(retVal),
+                        "Component",
+                        binding.Url);
+
                     return retVal;
                 }
 

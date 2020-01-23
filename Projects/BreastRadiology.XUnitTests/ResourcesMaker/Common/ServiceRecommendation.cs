@@ -39,11 +39,11 @@ namespace BreastRadiology.XUnitTests
                      ;
                 {
                     ValueSet binding = Self.RecommendationsVS.Value();
-                    e.Select("code").Binding(binding, BindingStrength.Extensible);
+                    ElementDefinition codeDef = e.Select("code").Binding(binding, BindingStrength.Extensible);
 
                     e.AddComponentLink("Service Recommendation Code",
-                        new SDefEditor.Cardinality(0, "*"),
-                        Global.ElementAnchor("code"),
+                        new SDefEditor.Cardinality(codeDef),
+                        Global.ElementAnchor(codeDef),
                         "CodeableConcept",
                         binding.Url);
                 }

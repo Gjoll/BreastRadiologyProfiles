@@ -30,7 +30,7 @@ namespace BreastRadiology.XUnitTests
                            ;
                        {
                            ValueSet binding = Self.BiRadsAssessmentCategoriesVS.Value();
-                           e.Select("value[x]")
+                           ElementDefinition valueXDef = e.Select("value[x]")
                                .ZeroToOne()
                                .Type("CodeableConcept")
                                .Binding(binding, BindingStrength.Required)
@@ -38,8 +38,8 @@ namespace BreastRadiology.XUnitTests
                                ;
 
                            e.AddComponentLink("Finding Value",
-                               new SDefEditor.Cardinality(e.Select("value[x]")),
-                               Global.ElementAnchor("value[x]"), 
+                               new SDefEditor.Cardinality(valueXDef),
+                               Global.ElementAnchor(valueXDef), 
                                "CodeableConcept", 
                                binding.Url);
                        }

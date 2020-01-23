@@ -268,23 +268,21 @@ namespace BreastRadiology.XUnitTests
             return this;
         }
 
+        /// <summary>
+        /// Keeps cardinality of element.
+        /// Note: We keep a reference to the element, so if the cardinality is changed after
+        /// this item is instantiated, we will get a current cardinality.
+        /// </summary>
         public class Cardinality
         {
-            public Int32 Min;
-            public String Max;
+            ElementDefinition element;
 
-            public Cardinality(Int32 min, String max)
-            {
-                this.Min = min;
-                this.Max = max;
-            }
             public Cardinality(ElementDefinition e)
             {
-                this.Min = e.Min.Value;
-                this.Max = e.Max;
+                this.element = e;
             }
 
-            public override string ToString() => $"{Min}..{Max}";
+            public override string ToString() => $"{element.Min}..{element.Max}";
         }
 
         public SDefEditor AddComponentLink(String url,
@@ -459,9 +457,9 @@ namespace BreastRadiology.XUnitTests
                 slice.CreateNode(valueX);
             }
 
-            String componentRef = Global.ComponentAnchor(sliceName);
+            String componentRef = Global.ElementAnchor(slice.ElementDefinition);
             this.AddComponentLink(componentName,
-                new SDefEditor.Cardinality(minCardinality, maxCardinality),
+                new SDefEditor.Cardinality(slice.ElementDefinition),
                 componentRef,
                 "CodeableConcept",
                 valueSet.Url);
@@ -528,7 +526,7 @@ namespace BreastRadiology.XUnitTests
                     )
             ;
             this.AddTargetLink(profile.Url.Trim(),
-                new SDefEditor.Cardinality(min, max),
+                new SDefEditor.Cardinality(retVal.ElementDefinition),
                 false);
 
             return retVal;
@@ -541,7 +539,7 @@ namespace BreastRadiology.XUnitTests
             String max = "*")
         {
             String baseName = sliceElementDef.ElementDefinition.Path.LastPathPart();
-            this.SliceByUrlTarget(sliceElementDef, profile.Url, min, max).ElementDefinition
+            ElementDefinition sliceDef = this.SliceByUrlTarget(sliceElementDef, profile.Url, min, max).ElementDefinition
                 .SetShort($"'{profile.Title}' reference")
                 .SetDefinition(
                     new Markdown($"This slice references the target '{profile.Title}'")
@@ -549,7 +547,7 @@ namespace BreastRadiology.XUnitTests
                     )
             ;
             this.AddTargetLink(profile.Url,
-                new SDefEditor.Cardinality(min, max),
+                new SDefEditor.Cardinality(sliceDef),
                 false);
         }
 

@@ -17,14 +17,9 @@ namespace BreastRadiology.XUnitTests
         public static String ResourceMapNameUrl = $"{BaseFragmentUrl}mapname";
         public static String ResourceMapLinkUrl = $"{BaseFragmentUrl}maplink";
 
-        public static String ElementAnchor(String elementName)
+        public static String ElementAnchor(ElementDefinition e)
         {
-            return $"StructureDefinition-" + "{SDName}" + $"-definitions.html#Observation.{elementName}";
-        }
-
-        public static String ComponentAnchor(String sliceName)
-        {
-            return $"StructureDefinition-" + "{SDName}" + "-definitions.html#Observation.component:" + sliceName;
+            return $"StructureDefinition-" + "{SDName}" + $"-definitions.html#{e.ElementId}";
         }
 
         //public static String Cardinality(ElementDefinition extDef)

@@ -31,7 +31,7 @@ namespace BreastRadiology.XUnitTests
                        e.SliceComponentSize(sliceName,
                            Self.CodeObservedSize.ToCodeableConcept(),
                            out ElementTreeSlice slice);
-                       slice.ElementDefinition
+                       ElementDefinition sliceDef = slice.ElementDefinition
                            .SetShort($"Observed Area component")
                            .SetDefinition(new Markdown()
                                 .Paragraph("This component slice contains the spherical area of an item observed.",
@@ -48,7 +48,7 @@ namespace BreastRadiology.XUnitTests
 
                        e.AddComponentLink("Observed Area",
                             new SDefEditor.Cardinality(slice.ElementDefinition),
-                           Global.ComponentAnchor(sliceName),
+                           Global.ElementAnchor(sliceDef),
                            "Quantity or Range");
                    });
     }
