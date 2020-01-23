@@ -376,10 +376,142 @@ namespace BreastRadiology.XUnitTests
                                 .SetDefinition(new Definition()
                                     .Line("[PR] Wire fragment")
                                 )
-                                .ValidModalities(Modalities.MG | Modalities.MRI | Modalities.US)
+                                .ValidModalities(Modalities.MG | Modalities.MRI | Modalities.US),
                             //- AutoGen
                             //- WireFragment
                             
+                            //+ BBPellets
+                            //+ AutoGen
+                            new ConceptDef()
+                                .SetCode("BBPellets")
+                                .SetDisplay("BB pellets")
+                                .SetDefinition(new Definition()
+                                    .Line("[PR] BB pellets")
+                                )
+                                .ValidModalities(Modalities.MG | Modalities.MRI | Modalities.US)
+                                .SetSnomedDescription("ClinicalFinding | 283574001 | Pellet wound of breast (Disorder) | [0/0] | S21.039? ")
+                            //- AutoGen
+                            ,
+                            //- BBPellets
+                            //+ BiopsyClips
+                            //+ AutoGen
+                            new ConceptDef()
+                                .SetCode("BiopsyClips")
+                                .SetDisplay("Biopsy clips")
+                                .SetDefinition(new Definition()
+                                    .Line("[PR] Biopsy clips")
+                                )
+                                .ValidModalities(Modalities.MG | Modalities.MRI | Modalities.US)
+                                .SetSnomedCode("470272007")
+                                .SetSnomedDescription("PhysicalObject | Implantable lesion localization marker (Object)")
+                                .SetICD10("470272007")
+                            //- AutoGen
+                            ,
+                            //- BiopsyClips
+                            //+ BreastMarkers
+                            //+ AutoGen
+                            new ConceptDef()
+                                .SetCode("BreastMarkers")
+                                .SetDisplay("Breast markers")
+                                .SetDefinition(new Definition()
+                                    .Line("[PR] Breast markers")
+                                )
+                                .ValidModalities(Modalities.MRI)
+                                .SetSnomedCode("470272007")
+                                .SetSnomedDescription("PhysicalObject | Implantable lesion localization marker (Object)")
+                                .SetICD10("470272007")
+                            //- AutoGen
+                            ,
+                            //- BreastMarkers
+                            //+ Calcifications
+                            //+ AutoGen
+                            new ConceptDef()
+                                .SetCode("Calcifications")
+                                .SetDisplay("Calcifications")
+                                .SetDefinition(new Definition()
+                                    .Line("[PR] Calcifications")
+                                )
+                                .ValidModalities(Modalities.MRI)
+                            //- AutoGen
+                            ,
+                            //- Calcifications
+                            //+ Clips
+                            //+ AutoGen
+                            new ConceptDef()
+                                .SetCode("Clips")
+                                .SetDisplay("Clips")
+                                .SetDefinition(new Definition()
+                                    .Line("[PR] Clips")
+                                )
+                                .ValidModalities(Modalities.MG | Modalities.MRI | Modalities.US)
+                                .SetSnomedCode("470342004")
+                                .SetOneToMany("many")
+                                .SetSnomedDescription("PhysicalObject | Implantable tissue clip (Object)")
+                                .SetICD10("470342004")
+                            //- AutoGen
+                            ,
+                            //- Clips
+                            //+ MetallicMarkers
+                            //+ AutoGen
+                            new ConceptDef()
+                                .SetCode("MetallicMarkers")
+                                .SetDisplay("Metallic markers")
+                                .SetDefinition(new Definition()
+                                    .Line("[PR] Metallic markers")
+                                )
+                                .ValidModalities(Modalities.MRI)
+                                .SetSnomedCode("470272007")
+                                .SetOneToMany("many")
+                                .SetSnomedDescription("PhysicalObject | Implantable lesion localization marker (Object)")
+                                .SetICD10("470272007")
+                            //- AutoGen
+                            ,
+                            //- MetallicMarkers
+                            //+ MetallicObjects
+                            //+ AutoGen
+                            new ConceptDef()
+                                .SetCode("MetallicObjects")
+                                .SetDisplay("Metallic objects")
+                                .SetDefinition(new Definition()
+                                    .Line("[PR] Metallic objects")
+                                )
+                                .ValidModalities(Modalities.MG)
+                                .SetSnomedDescription("ClinicalFinding | 283169003 | Metal foreign body in breast (Disorder) | [0/0] | S21.009?")
+                            //- AutoGen
+                            ,
+                            //- MetallicObjects
+                            //+ SurgicalClips
+                            //+ AutoGen
+                            new ConceptDef()
+                                .SetCode("SurgicalClips")
+                                .SetDisplay("Surgical clips")
+                                .SetDefinition(new Definition()
+                                    .Line("[PR] Surgical clips")
+                                )
+                                .ValidModalities(Modalities.MG | Modalities.MRI | Modalities.US)
+                                .SetSnomedCode("470342004")
+                                .SetOneToMany("one")
+                                .SetSnomedDescription("PhysicalObject | Implantable tissue clip (Object)")
+                                .SetICD10("470342004")
+                            //- AutoGen
+                            ,
+                            //- SurgicalClips
+                            //+ TitaniumClips
+                            //+ AutoGen
+                            new ConceptDef()
+                                .SetCode("TitaniumClips")
+                                .SetDisplay("Titanium clips")
+                                .SetDefinition(new Definition()
+                                    .Line("[PR] Titanium clips")
+                                )
+                                .ValidModalities(Modalities.MG | Modalities.MRI | Modalities.US)
+                                .SetSnomedCode("470272007")
+                                .SetOneToMany("many")
+                                .SetSnomedDescription("PhysicalObject | Implantable lesion localization marker (Object)")
+                                .SetICD10("470272007")
+                            //- AutoGen
+                            ,
+                            //- TitaniumClips
                              //- ForeignObjectCS
                          })
              );
