@@ -72,9 +72,8 @@ namespace BreastRadiology.XUnitTests
                          .SetICD10("129738007")
                      //- AutoGen
                         .SetDefinition(new Definition()
-                            .Line("[PR] Circumscribed margin")
                             .CiteStart()
-                            .Line("(historically, �well-defined� or �sharply-defined�)")
+                            .Line("(historically, \"well-defined\" or \"sharply-defined\")")
                             .Line("A circumscribed margin is one that is well defined, with an abrupt transition between the")
                             .Line("lesion and the surrounding tissue. For US, to describe a mass as circumscribed, its entire margin")
                             .Line("must be sharply defined. Most circumscribed lesions have round or oval shapes.")

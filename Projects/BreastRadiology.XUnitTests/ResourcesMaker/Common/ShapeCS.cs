@@ -38,6 +38,8 @@ namespace BreastRadiology.XUnitTests
                      Group_CommonCodesCS,
                      new ConceptDef[]
                      {
+                        //+ ShapeCS
+                        //- ShapeCS
                         new ConceptDef("Irregular",
                             "Irregular Shape",
                             new Definition()
@@ -46,22 +48,12 @@ namespace BreastRadiology.XUnitTests
                                 .Line("For mammography, use of this descriptor usually implies a suspicious finding.")
                             .CiteEnd(BiRadCitation)
                             ),
-                        new ConceptDef("Lobulated",
-                            "Lobulated Shape",
-                            new Definition()
-                                .Line("[PR]")
-                            ),
                         new ConceptDef("Oval",
                             "Elliptical/Egg-shaped",
                             new Definition()
                             .CiteStart()
                                 .Line("Shape is elliptical or egg-shaped (may include 2 or 3 undulations, , i.e., \"gently lobulated\" or \"macrolobulated\").")
                             .CiteEnd(BiRadCitation)
-                            ),
-                        new ConceptDef("Reniform",
-                            "Reniform Shape",
-                            new Definition()
-                                .Line("[PR]")
                             ),
                         new ConceptDef("Round",
                             "Round Shape",
