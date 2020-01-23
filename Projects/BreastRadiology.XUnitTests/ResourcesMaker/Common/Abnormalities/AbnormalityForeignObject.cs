@@ -376,10 +376,10 @@ namespace BreastRadiology.XUnitTests
                                 .SetDefinition(new Definition()
                                     .Line("[PR] Wire fragment")
                                 )
-                                .ValidModalities(Modalities.MG | Modalities.MRI | Modalities.US),
+                                .ValidModalities(Modalities.MG | Modalities.MRI | Modalities.US)
                             //- AutoGen
                             //- WireFragment
-                            
+                            ,
                             //+ BBPellets
                             //+ AutoGen
                             new ConceptDef()
