@@ -144,7 +144,6 @@ namespace BreastRadiology.XUnitTests
                     Global.ElementAnchor(valueXDef), 
                     "CodeableConcept", 
                     binding.Url);
-                e.AddValueSetLink(binding);
             });
     }
 }

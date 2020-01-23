@@ -60,7 +60,6 @@ namespace BreastRadiology.XUnitTests
                 String s = titlePart.Trim();
                 node.AddTextLine(s, hRef);
             }
-
             return node;
         }
 
@@ -76,17 +75,14 @@ namespace BreastRadiology.XUnitTests
             SENodeGroup childrenGroup = new SENodeGroup("children", true);
             parentsGroup.AppendChild(focusGroup);
             focusGroup.AppendChild(childrenGroup);
-
             {
                 SENode node = this.CreateResourceNode(focusNode, Color.White, null, false);
                 focusGroup.AppendNode(node);
             }
-
             Color extensionColor = Color.LightBlue;
             Color valueSetColor = Color.LightGreen;
             Color targetColor = Color.LightCyan;
             Color componentColor = Color.LightYellow;
-
             {
                 List<SENode> extensionParents = new List<SENode>();
                 List<SENode> valueSetParents = new List<SENode>();
@@ -131,12 +127,10 @@ namespace BreastRadiology.XUnitTests
                             throw new NotImplementedException($"Unknown link type {link.LinkType}");
                     }
                 }
-
                 parentsGroup.AppendNodes(targetParents);
                 parentsGroup.AppendNodes(valueSetParents);
                 parentsGroup.AppendNodes(extensionParents);
             }
-
             {
                 SENodeGroup targetChildren = new SENodeGroup("A.Targets", true);
                 SENodeGroup componentChildren = new SENodeGroup("B.Components", true);
@@ -161,6 +155,7 @@ namespace BreastRadiology.XUnitTests
                                 String componentHRef = lines[1];
                                 componentHRef = componentHRef.Replace("{SDName}", link.LinkSource.LastUriPart());
 
+                                Debug.Assert(lines[0] != "region");
                                 SENode node = new SENode(0, componentColor, link.Cardinality?.ToString(), componentHRef);
                                 node.AddTextLine(lines[0], componentHRef);
 

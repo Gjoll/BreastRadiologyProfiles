@@ -19,19 +19,19 @@
     },
     {
       "url": "http://www.fragment.com/maplink",
-      "valueString": "component|0..1|True|quadrant^StructureDefinition-{SDName}-definitions.html#Extension.extension:quadrant^Component^http://hl7.org/fhir/us/breast-radiology/ValueSet/BreastLocationQuadrantVS"
+      "valueString": "component|1..1|True|Quadrant^StructureDefinition-{SDName}-definitions.html#Extension.extension:laterality^Component^http://hl7.org/fhir/us/breast-radiology/ValueSet/BreastLocationQuadrantVS"
     },
     {
       "url": "http://www.fragment.com/maplink",
-      "valueString": "component|0..1|True|region^StructureDefinition-{SDName}-definitions.html#Extension.extension:region^Component^http://hl7.org/fhir/us/breast-radiology/ValueSet/BreastLocationRegionVS"
+      "valueString": "component|0..*|True|Region^StructureDefinition-{SDName}-definitions.html#Extension.extension:laterality^Component^http://hl7.org/fhir/us/breast-radiology/ValueSet/BreastLocationRegionVS"
     },
     {
       "url": "http://www.fragment.com/maplink",
-      "valueString": "component|0..1|True|clockDirection^StructureDefinition-{SDName}-definitions.html#Extension.extension:clockDirection^Component^http://hl7.org/fhir/us/breast-radiology/ValueSet/BreastLocationClockVS"
+      "valueString": "component|1..1|True|ClockDirection^StructureDefinition-{SDName}-definitions.html#Extension.extension:laterality^Component^http://hl7.org/fhir/us/breast-radiology/ValueSet/BreastLocationClockVS"
     },
     {
       "url": "http://www.fragment.com/maplink",
-      "valueString": "component|0..1|True|depth^StructureDefinition-{SDName}-definitions.html#Extension.extension:depth^Component^http://hl7.org/fhir/us/breast-radiology/ValueSet/BreastLocationDepthVS"
+      "valueString": "component|1..1|True|Depth^StructureDefinition-{SDName}-definitions.html#Extension.extension:laterality^Component^http://hl7.org/fhir/us/breast-radiology/ValueSet/BreastLocationDepthVS"
     },
     {
       "url": "http://www.fragment.com/maplink",
@@ -214,7 +214,7 @@
           "extensions",
           "user content"
         ],
-        "min": 0,
+        "min": 1,
         "max": "1",
         "base": {
           "path": "Element.extension",
@@ -341,7 +341,7 @@
         "path": "Extension.extension.value[x]",
         "short": "Value of extension",
         "definition": "Value of extension - must be one of a constrained set of the data types (see [Extensibility](extensibility.html) for a list).",
-        "min": 1,
+        "min": 0,
         "max": "1",
         "base": {
           "path": "Extension.value[x]",
@@ -377,7 +377,7 @@
           "extensions",
           "user content"
         ],
-        "min": 0,
+        "min": 1,
         "max": "1",
         "base": {
           "path": "Element.extension",
@@ -504,7 +504,7 @@
         "path": "Extension.extension.value[x]",
         "short": "Value of extension",
         "definition": "Value of extension - must be one of a constrained set of the data types (see [Extensibility](extensibility.html) for a list).",
-        "min": 1,
+        "min": 0,
         "max": "1",
         "base": {
           "path": "Extension.value[x]",
@@ -667,7 +667,7 @@
         "path": "Extension.extension.value[x]",
         "short": "Value of extension",
         "definition": "Value of extension - must be one of a constrained set of the data types (see [Extensibility](extensibility.html) for a list).",
-        "min": 1,
+        "min": 0,
         "max": "1",
         "base": {
           "path": "Extension.value[x]",
@@ -703,7 +703,7 @@
           "extensions",
           "user content"
         ],
-        "min": 0,
+        "min": 1,
         "max": "1",
         "base": {
           "path": "Element.extension",
@@ -830,7 +830,7 @@
         "path": "Extension.extension.value[x]",
         "short": "Value of extension",
         "definition": "Value of extension - must be one of a constrained set of the data types (see [Extensibility](extensibility.html) for a list).",
-        "min": 1,
+        "min": 0,
         "max": "1",
         "base": {
           "path": "Extension.value[x]",
@@ -866,7 +866,7 @@
           "extensions",
           "user content"
         ],
-        "min": 0,
+        "min": 1,
         "max": "1",
         "base": {
           "path": "Element.extension",
@@ -993,7 +993,7 @@
         "path": "Extension.extension.value[x]",
         "short": "Value of extension",
         "definition": "Value of extension - must be one of a constrained set of the data types (see [Extensibility](extensibility.html) for a list).",
-        "min": 1,
+        "min": 0,
         "max": "1",
         "base": {
           "path": "Extension.value[x]",
@@ -1304,7 +1304,7 @@
         "sliceName": "laterality",
         "short": "Laterality of the body location",
         "definition": "The laterality of the body location",
-        "min": 0,
+        "min": 1,
         "max": "1",
         "base": {
           "path": "Extension.extension",
@@ -1331,8 +1331,6 @@
       {
         "id": "Extension.extension:laterality.value[x]",
         "path": "Extension.extension.value[x]",
-        "min": 1,
-        "max": "1",
         "type": [
           {
             "code": "CodeableConcept"
@@ -1349,7 +1347,7 @@
         "sliceName": "quadrant",
         "short": "Quadrant of the body location",
         "definition": "The quadrant  of the body location",
-        "min": 0,
+        "min": 1,
         "max": "1",
         "base": {
           "path": "Extension.extension",
@@ -1376,8 +1374,6 @@
       {
         "id": "Extension.extension:quadrant.value[x]",
         "path": "Extension.extension.value[x]",
-        "min": 1,
-        "max": "1",
         "type": [
           {
             "code": "CodeableConcept"
@@ -1421,8 +1417,6 @@
       {
         "id": "Extension.extension:region.value[x]",
         "path": "Extension.extension.value[x]",
-        "min": 1,
-        "max": "1",
         "type": [
           {
             "code": "CodeableConcept"
@@ -1439,7 +1433,7 @@
         "sliceName": "clockDirection",
         "short": "Clock direction of the body location",
         "definition": "The clock direction of the body location.",
-        "min": 0,
+        "min": 1,
         "max": "1",
         "base": {
           "path": "Extension.extension",
@@ -1466,8 +1460,6 @@
       {
         "id": "Extension.extension:clockDirection.value[x]",
         "path": "Extension.extension.value[x]",
-        "min": 1,
-        "max": "1",
         "type": [
           {
             "code": "CodeableConcept"
@@ -1484,7 +1476,7 @@
         "sliceName": "depth",
         "short": "Depth of the body location",
         "definition": "The depth of the body location.",
-        "min": 0,
+        "min": 1,
         "max": "1",
         "base": {
           "path": "Extension.extension",
@@ -1511,8 +1503,6 @@
       {
         "id": "Extension.extension:depth.value[x]",
         "path": "Extension.extension.value[x]",
-        "min": 1,
-        "max": "1",
         "type": [
           {
             "code": "CodeableConcept"

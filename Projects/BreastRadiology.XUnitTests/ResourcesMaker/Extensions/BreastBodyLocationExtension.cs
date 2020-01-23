@@ -326,7 +326,6 @@ namespace BreastRadiology.XUnitTests
                     valueXNode.ElementDefinition
                         .Type("CodeableConcept")
                         .Binding(bindName, BindingStrength.Required)
-                        .Single()
                         ;
                 }
 
@@ -341,12 +340,6 @@ namespace BreastRadiology.XUnitTests
                         definition,
                     out ElementTreeSlice extensionSlice,
                     out ElementTreeNode valueXNode);
-
-                    e.AddComponentLink(sliceName,
-                        new SDefEditor.Cardinality(extensionSlice.ElementDefinition),
-                        Global.ElementAnchor(extensionSlice.ElementDefinition),
-                        "Component",
-                        binding.Url);
                     return extensionSlice.ElementDefinition;
                 }
 
@@ -384,6 +377,7 @@ namespace BreastRadiology.XUnitTests
                     out ElementTreeSlice extensionSlice,
                     out ElementTreeNode valueXNode
                     );
+                extensionSlice.ElementDefinition.Single();
 
                 {
                     ValueSet binding = Self.BreastLocationQuadrantVS.Value();
@@ -397,10 +391,18 @@ namespace BreastRadiology.XUnitTests
                         Self.fc?.Mark(outputPath);
                     }
 
-                    SliceAndBindVS("quadrant",
+                    ElementDefinition sliceDef = SliceAndBindVS("quadrant",
                         binding,
                         "Quadrant of the body location",
-                        new Markdown().Paragraph("The quadrant  of the body location"));
+                        new Markdown().Paragraph("The quadrant  of the body location"))
+                        .Single()
+                       ;
+
+                    e.AddComponentLink("Quadrant",
+                        new SDefEditor.Cardinality(sliceDef),
+                        Global.ElementAnchor(extensionSlice.ElementDefinition),
+                        "Component",
+                        binding.Url);
                 }
 
                 {
@@ -415,13 +417,18 @@ namespace BreastRadiology.XUnitTests
                         Self.fc?.Mark(outputPath);
                     }
 
-                    SliceAndBindVS("region",
+                    ElementDefinition sliceDef = SliceAndBindVS("region",
                         binding,
                         "Region of the body location",
                         new Markdown().Paragraph("The region  of the body location"))
                         .ZeroToMany()
                     ;
 
+                    e.AddComponentLink("Region",
+                        new SDefEditor.Cardinality(sliceDef),
+                        Global.ElementAnchor(extensionSlice.ElementDefinition),
+                        "Component",
+                        binding.Url);
                 }
 
                 {
@@ -436,10 +443,18 @@ namespace BreastRadiology.XUnitTests
                         Self.fc?.Mark(outputPath);
                     }
 
-                    SliceAndBindVS("clockDirection",
+                    ElementDefinition sliceDef = SliceAndBindVS("clockDirection",
                         binding,
                         "Clock direction of the body location",
-                        new Markdown().Paragraph("The clock direction of the body location."));
+                        new Markdown().Paragraph("The clock direction of the body location."))
+                        .Single()
+                        ;
+
+                    e.AddComponentLink("ClockDirection",
+                        new SDefEditor.Cardinality(sliceDef),
+                        Global.ElementAnchor(extensionSlice.ElementDefinition),
+                        "Component",
+                        binding.Url);
                 }
 
                 {
@@ -453,10 +468,18 @@ namespace BreastRadiology.XUnitTests
                         Self.fc?.Mark(outputPath);
                     }
 
-                    SliceAndBindVS("depth",
+                    ElementDefinition sliceDef = SliceAndBindVS("depth",
                         binding,
                         "Depth of the body location",
-                        new Markdown().Paragraph("The depth of the body location."));
+                        new Markdown().Paragraph("The depth of the body location."))
+                        .Single()
+                        ;
+
+                    e.AddComponentLink("Depth",
+                        new SDefEditor.Cardinality(sliceDef),
+                        Global.ElementAnchor(extensionSlice.ElementDefinition),
+                        "Component",
+                        binding.Url);
                 }
                 {
                     ElementDefinition extensionDef = e
