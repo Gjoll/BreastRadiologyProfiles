@@ -19,19 +19,19 @@
     },
     {
       "url": "http://www.fragment.com/maplink",
-      "valueString": "component|1..1|True|quadrant^StructureDefinition-{SDName}-definitions.html#Extension.extension:quadrant.value[x]^Component^http://hl7.org/fhir/us/breast-radiology/ValueSet/BreastLocationQuadrantVS"
+      "valueString": "component|0..1|True|quadrant^StructureDefinition-{SDName}-definitions.html#Extension.extension:quadrant^Component^http://hl7.org/fhir/us/breast-radiology/ValueSet/BreastLocationQuadrantVS"
     },
     {
       "url": "http://www.fragment.com/maplink",
-      "valueString": "component|1..1|True|region^StructureDefinition-{SDName}-definitions.html#Extension.extension:region.value[x]^Component^http://hl7.org/fhir/us/breast-radiology/ValueSet/BreastLocationRegionVS"
+      "valueString": "component|0..1|True|region^StructureDefinition-{SDName}-definitions.html#Extension.extension:region^Component^http://hl7.org/fhir/us/breast-radiology/ValueSet/BreastLocationRegionVS"
     },
     {
       "url": "http://www.fragment.com/maplink",
-      "valueString": "component|1..1|True|clockDirection^StructureDefinition-{SDName}-definitions.html#Extension.extension:clockDirection.value[x]^Component^http://hl7.org/fhir/us/breast-radiology/ValueSet/BreastLocationClockVS"
+      "valueString": "component|0..1|True|clockDirection^StructureDefinition-{SDName}-definitions.html#Extension.extension:clockDirection^Component^http://hl7.org/fhir/us/breast-radiology/ValueSet/BreastLocationClockVS"
     },
     {
       "url": "http://www.fragment.com/maplink",
-      "valueString": "component|1..1|True|depth^StructureDefinition-{SDName}-definitions.html#Extension.extension:depth.value[x]^Component^http://hl7.org/fhir/us/breast-radiology/ValueSet/BreastLocationDepthVS"
+      "valueString": "component|0..1|True|depth^StructureDefinition-{SDName}-definitions.html#Extension.extension:depth^Component^http://hl7.org/fhir/us/breast-radiology/ValueSet/BreastLocationDepthVS"
     },
     {
       "url": "http://www.fragment.com/maplink",
@@ -541,7 +541,7 @@
           "user content"
         ],
         "min": 0,
-        "max": "1",
+        "max": "*",
         "base": {
           "path": "Element.extension",
           "min": 0,
@@ -667,8 +667,8 @@
         "path": "Extension.extension.value[x]",
         "short": "Value of extension",
         "definition": "Value of extension - must be one of a constrained set of the data types (see [Extensibility](extensibility.html) for a list).",
-        "min": 0,
-        "max": "*",
+        "min": 1,
+        "max": "1",
         "base": {
           "path": "Extension.value[x]",
           "min": 0,
@@ -1395,7 +1395,7 @@
         "short": "Region of the body location",
         "definition": "The region  of the body location",
         "min": 0,
-        "max": "1",
+        "max": "*",
         "base": {
           "path": "Extension.extension",
           "min": 0,
@@ -1421,8 +1421,8 @@
       {
         "id": "Extension.extension:region.value[x]",
         "path": "Extension.extension.value[x]",
-        "min": 0,
-        "max": "*",
+        "min": 1,
+        "max": "1",
         "type": [
           {
             "code": "CodeableConcept"
