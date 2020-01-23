@@ -446,6 +446,23 @@ namespace BreastRadiology.XUnitTests
 
 
         [TestMethod]
+        public void TestFile()
+        {
+            FhirStructureDefinitions.Create(cacheDir);
+            FhirStructureDefinitions.Self.StoreFhirElements();
+
+            FhirJsonParser parser = new FhirJsonParser();
+            StructureDefinition sd = parser.Parse<StructureDefinition>(
+                File.ReadAllText(@"C:\Development\HL7\BreastRadiologyProfiles\IG\Content\Fragments\StructureDefinition-BreastBodyLocationExtension.json"));
+
+            sd.Snapshot = null;
+            SnapshotCreator.Create(sd);
+            sd.Extension = null;
+            sd.Context = null;
+            sd.SaveJson(@"c:\Temp\test.json");
+        }
+
+        [TestMethod]
         public void MergeOneFile()
         {
             DateTime start = DateTime.Now;

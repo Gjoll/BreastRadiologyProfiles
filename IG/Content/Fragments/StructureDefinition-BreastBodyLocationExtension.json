@@ -120,6 +120,11 @@
       {
         "id": "Extension.extension:laterality.url",
         "path": "Extension.extension.url",
+        "type": [
+          {
+            "code": "uri"
+          }
+        ],
         "fixedUrl": "laterality"
       },
       {
@@ -160,6 +165,11 @@
       {
         "id": "Extension.extension:quadrant.url",
         "path": "Extension.extension.url",
+        "type": [
+          {
+            "code": "uri"
+          }
+        ],
         "fixedUrl": "quadrant"
       },
       {
@@ -200,6 +210,11 @@
       {
         "id": "Extension.extension:region.url",
         "path": "Extension.extension.url",
+        "type": [
+          {
+            "code": "uri"
+          }
+        ],
         "fixedUrl": "region"
       },
       {
@@ -240,6 +255,11 @@
       {
         "id": "Extension.extension:clockDirection.url",
         "path": "Extension.extension.url",
+        "type": [
+          {
+            "code": "uri"
+          }
+        ],
         "fixedUrl": "clockDirection"
       },
       {
@@ -280,6 +300,11 @@
       {
         "id": "Extension.extension:depth.url",
         "path": "Extension.extension.url",
+        "type": [
+          {
+            "code": "uri"
+          }
+        ],
         "fixedUrl": "depth"
       },
       {

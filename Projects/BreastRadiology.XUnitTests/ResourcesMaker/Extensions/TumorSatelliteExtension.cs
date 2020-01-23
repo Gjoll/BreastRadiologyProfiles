@@ -15,7 +15,7 @@ namespace BreastRadiology.XUnitTests
     partial class ResourcesMaker : ConverterBase
     {
         public SDTaskVar TumorSatelliteExtension = new SDTaskVar(
-            (out StructureDefinition  s) =>
+            (out StructureDefinition s) =>
             {
                 SDefEditor e;
                 ElementTreeNode extensionNode;
@@ -43,19 +43,23 @@ namespace BreastRadiology.XUnitTests
 
                     sealExtension.Zero();
                     extensionElement.CreateNode(sealExtension);
-
-                    ElementDefinition valueBase = e.Get("value[x]").ElementDefinition;
-                    ElementDefinition elementValue = new ElementDefinition()
-                        .Path($"{extensionNode.ElementDefinition.Path}.value[x]")
-                        .ElementId($"{extensionNode.ElementDefinition.Path}:{sliceName}.value[x]")
-                        ;
-
-                    ElementDefinition elementUrl = new ElementDefinition()
-                        .Path($"{extensionNode.ElementDefinition.Path}.url")
-                        .ElementId($"{extensionNode.ElementDefinition.Path}:{sliceName}.url")
-                        .Value(new FhirUrl(sliceName))
-                        ;
-                    return extensionElement.CreateNode(elementValue);
+                    {
+                        ElementDefinition elementUrl = new ElementDefinition()
+                            .Path($"{extensionNode.ElementDefinition.Path}.url")
+                            .ElementId($"{extensionNode.ElementDefinition.Path}:{sliceName}.url")
+                            .Value(new FhirUrl(sliceName))
+                            .Type("uri")
+                            ;
+                        extensionElement.CreateNode(elementUrl);
+                    }
+                    {
+                        ElementDefinition valueBase = e.Get("value[x]").ElementDefinition;
+                        ElementDefinition elementValue = new ElementDefinition()
+                            .Path($"{extensionNode.ElementDefinition.Path}.value[x]")
+                            .ElementId($"{extensionNode.ElementDefinition.Path}:{sliceName}.value[x]")
+                            ;
+                        return extensionElement.CreateNode(elementValue);
+                    }
                 }
 
                 e = Self.CreateEditor("TumorSatelliteExtension",
@@ -115,19 +119,9 @@ namespace BreastRadiology.XUnitTests
                         .Pattern(
                             new Quantity
                             {
-                                System = "http://unitsofmeasure.org",
-                                Code = "cm"
+                                System = "http://hl7.org/fhir/us/breast-radiology/ValueSet/UnitsOfLengthVS"
                             })
                         ;
-                    ElementDefinition quantityCode = new ElementDefinition()
-                        .Path($"{extensionNode.ElementDefinition.Path}.value[x].code")
-                        .ElementId($"{extensionNode.ElementDefinition.Path}:{sliceName}.value[x].code")
-                        .Type("uri")
-                        .Single()
-                        .Binding("http://hl7.org/fhir/us/breast-radiology/ValueSet/UnitsOfLengthVS",
-                                BindingStrength.Required)
-                        ;
-                    sliceNode.DefaultSlice.CreateNode(quantityCode);
                 }
 
                 e.IntroDoc

@@ -570,8 +570,7 @@ namespace BreastRadiology.XUnitTests
             {
                 Hl7.Fhir.Model.Quantity q = new Hl7.Fhir.Model.Quantity
                 {
-                    System = "http://unitsofmeasure.org",
-                    Code = "cm"
+                    System = "http://hl7.org/fhir/us/breast-radiology/ValueSet/UnitsOfLengthVS"
                 };
 
                 ElementDefinition valueX = new ElementDefinition
@@ -593,13 +592,11 @@ namespace BreastRadiology.XUnitTests
                 {
                     Low = new SimpleQuantity
                     {
-                        System = "http://unitsofmeasure.org",
-                        Code = "cm"
+                        System = "http://hl7.org/fhir/us/breast-radiology/ValueSet/UnitsOfLengthVS",
                     },
                     High = new SimpleQuantity
                     {
-                        System = "http://unitsofmeasure.org",
-                        Code = "cm"
+                        System = "http://hl7.org/fhir/us/breast-radiology/ValueSet/UnitsOfLengthVS",
                     }
                 };
                 ElementDefinition valueX = new ElementDefinition

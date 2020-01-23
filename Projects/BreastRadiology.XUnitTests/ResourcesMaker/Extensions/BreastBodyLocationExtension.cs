@@ -268,29 +268,34 @@ namespace BreastRadiology.XUnitTests
                         .SetCardinality(0, "1")
                         ;
                     extensionElement.ElementDefinition.Type = null;
-                    extensionElement.ElementDefinition.Type = null;
 
-                    ElementDefinition sealExtension = new ElementDefinition
                     {
-                        ElementId = $"{extensionNode.ElementDefinition.Path}:{sliceName}.extension",
-                        Path = $"{extensionNode.ElementDefinition.Path}.extension"
-                    };
+                        ElementDefinition sealExtension = new ElementDefinition
+                        {
+                            ElementId = $"{extensionNode.ElementDefinition.Path}:{sliceName}.extension",
+                            Path = $"{extensionNode.ElementDefinition.Path}.extension"
+                        };
 
-                    sealExtension.Zero();
-                    extensionElement.CreateNode(sealExtension);
+                        sealExtension.Zero();
+                        extensionElement.CreateNode(sealExtension);
+                    }
 
-                    ElementDefinition elementUrl = new ElementDefinition()
-                        .Path($"{extensionNode.ElementDefinition.Path}.url")
-                        .ElementId($"{extensionNode.ElementDefinition.Path}:{sliceName}.url")
-                        .Value(new FhirUrl(sliceName))
-                        ;
-                    extensionElement.CreateNode(elementUrl);
-
-                    ElementDefinition elementValue = new ElementDefinition()
-                        .Path($"{extensionNode.ElementDefinition.Path}.value[x]")
-                        .ElementId($"{extensionNode.ElementDefinition.Path}:{sliceName}.value[x]")
-                        ;
-                    return extensionElement.CreateNode(elementValue);
+                    {
+                        ElementDefinition elementUrl = new ElementDefinition()
+                            .Path($"{extensionNode.ElementDefinition.Path}.url")
+                            .ElementId($"{extensionNode.ElementDefinition.Path}:{sliceName}.url")
+                            .Value(new FhirUrl(sliceName))
+                            .Type("uri")
+                            ;
+                        extensionElement.CreateNode(elementUrl);
+                    }
+                    {
+                        ElementDefinition elementValue = new ElementDefinition()
+                            .Path($"{extensionNode.ElementDefinition.Path}.value[x]")
+                            .ElementId($"{extensionNode.ElementDefinition.Path}:{sliceName}.value[x]")
+                            ;
+                        return extensionElement.CreateNode(elementValue);
+                    }
                 }
 
                 void SliceAndBindUrl(String sliceName,

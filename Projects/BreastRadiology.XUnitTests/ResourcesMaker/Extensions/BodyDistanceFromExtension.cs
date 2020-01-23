@@ -16,7 +16,7 @@ namespace BreastRadiology.XUnitTests
     {
         //$ Fix: complex extension is wrong - subslices are not identified.
         public SDTaskVar BodyDistanceFromExtension = new SDTaskVar(
-            (out StructureDefinition  s) =>
+            (out StructureDefinition s) =>
             {
                 SDefEditor e;
                 ElementTreeNode extensionNode;
@@ -34,29 +34,38 @@ namespace BreastRadiology.XUnitTests
                         .SetCardinality(0, "1")
                         ;
                     extensionElement.ElementDefinition.Type = null;
-                    extensionElement.ElementDefinition.Type = null;
 
-                    ElementDefinition sealExtension = new ElementDefinition
                     {
-                        ElementId = $"{extensionNode.ElementDefinition.Path}:{sliceName}.extension",
-                        Path = $"{extensionNode.ElementDefinition.Path}.extension"
-                    };
+                        ElementDefinition sealExtension = new ElementDefinition
+                        {
+                            ElementId = $"{extensionNode.ElementDefinition.Path}:{sliceName}.extension",
+                            Path = $"{extensionNode.ElementDefinition.Path}.extension"
+                        };
 
-                    sealExtension.Zero();
-                    extensionElement.CreateNode(sealExtension);
-
-                    ElementDefinition valueBase = e.Get("value[x]").ElementDefinition;
-                    ElementDefinition elementValue = new ElementDefinition()
-                        .Path($"{extensionNode.ElementDefinition.Path}.value[x]")
-                        .ElementId($"{extensionNode.ElementDefinition.Path}:{sliceName}.value[x]")
-                        ;
-
-                    ElementDefinition elementUrl = new ElementDefinition()
+                        sealExtension.Zero();
+                        extensionElement.CreateNode(sealExtension);
+                    }
+                    {
+                        ElementDefinition elementUrl = new ElementDefinition()
                         .Path($"{extensionNode.ElementDefinition.Path}.url")
                         .ElementId($"{extensionNode.ElementDefinition.Path}:{sliceName}.url")
                         .Value(new FhirUrl(sliceName))
+                        .Type("uri")
+                        .Definition(new Markdown()
+                            .Paragraph($"Url for {sliceName} complex extension item")
+                            )
                         ;
-                    return extensionElement.CreateNode(elementValue);
+                        extensionElement.CreateNode(elementUrl);
+                    }
+
+                    {
+                        ElementDefinition valueBase = e.Get("value[x]").ElementDefinition;
+                        ElementDefinition elementValue = new ElementDefinition()
+                            .Path($"{extensionNode.ElementDefinition.Path}.value[x]")
+                            .ElementId($"{extensionNode.ElementDefinition.Path}:{sliceName}.value[x]")
+                            ;
+                        return extensionElement.CreateNode(elementValue);
+                    }
                 }
 
                 e = Self.CreateEditor("BodyDistanceFromExtension",
@@ -118,19 +127,9 @@ namespace BreastRadiology.XUnitTests
                         .Pattern(
                             new Quantity
                             {
-                                System = "http://unitsofmeasure.org",
-                                Code = "cm"
+                                System = "http://hl7.org/fhir/us/breast-radiology/ValueSet/UnitsOfLengthVS"
                             })
                         ;
-                    ElementDefinition quantityCode = new ElementDefinition()
-                        .Path($"{extensionNode.ElementDefinition.Path}.value[x].code")
-                        .ElementId($"{extensionNode.ElementDefinition.Path}:{sliceName}.value[x].code")
-                        .Type("uri")
-                        .Single()
-                        .Binding("http://hl7.org/fhir/us/breast-radiology/ValueSet/UnitsOfLengthVS",
-                                BindingStrength.Required)
-                        ;
-                    sliceNode.DefaultSlice.CreateNode(quantityCode);
                 }
 
                 e.IntroDoc

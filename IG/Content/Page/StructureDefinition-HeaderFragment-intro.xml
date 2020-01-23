@@ -19,13 +19,5 @@ Comments and Suggested changes to this implementation guide van be made
 <a href="https://github.com/HL7/fhir-breast-radiology-ig/projects/1">here</a>
   <!-- -reviewStatus-->
   <!-- +profileFragments-->
-  <h3 id="profileFragments">Profile Fragments</h3>
-  <p>
-    The following are the fragments that are included in this profile. This is included for developers use to understand
-    the hierarchy and commonality of disparate profiles..
-  </p>
-  <ul>
-    %FragmentList:noexpand:prefix=<li>:suffix=</li>:lb%
-  </ul>
   <!-- -profileFragments-->
 </div>

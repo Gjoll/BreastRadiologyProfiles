@@ -25,7 +25,8 @@ Comments and Suggested changes to this implementation guide van be made
     the hierarchy and commonality of disparate profiles..
   </p>
   <ul>
-    %FragmentList:noexpand:prefix=<li>:suffix=</li>:lb%
+    
+<li><a href="./StructureDefinition-BreastRadObservationNoComponentFragment.html">Observation No Component Fragment</a></li>
   </ul>
   <!-- -profileFragments-->
 </div>
