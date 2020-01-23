@@ -85,7 +85,7 @@ namespace BreastRadiology.XUnitTests
                                     .Line("[PR] Ductogram")
                                 )
                                 .ValidModalities(Modalities.MG)
-                                .SetSnomedDescription("Procedure | 420131003 | Fluoroscopic mammary ductography (Procedure) ")
+                                .SetSnomedDescription("Procedure | 420131003 | Fluoroscopic mammary ductography (Procedure)")
                             //- AutoGen
                             //- Ductogram
                             ,
@@ -342,7 +342,7 @@ namespace BreastRadiology.XUnitTests
                                     .Line("[PR] Skin marker")
                                 )
                                 .ValidModalities(Modalities.MG)
-                                .SetSnomedDescription("PhysicalObject | 706314007 | Imaging lesion localization marker (Object) ")
+                                .SetSnomedDescription("PhysicalObject | 706314007 | Imaging lesion localization marker (Object)")
                             //- AutoGen
                             //- SkinMarker
                             ,
@@ -380,7 +380,7 @@ namespace BreastRadiology.XUnitTests
                                     .Line("[PR] Tenderness")
                                 )
                                 .ValidModalities(Modalities.MG)
-                                .SetSnomedDescription("ClinicalFinding | 290080002 | Localized tenderness of breast (Finding) | [0/0] | N64.4 ")
+                                .SetSnomedDescription("ClinicalFinding | 290080002 | Localized tenderness of breast (Finding) | [0/0] | N64.4")
                             //- AutoGen
                             //- Tenderness
                             ,

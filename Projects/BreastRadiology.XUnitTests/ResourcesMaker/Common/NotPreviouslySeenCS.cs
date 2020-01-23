@@ -58,7 +58,7 @@ namespace BreastRadiology.XUnitTests
                                     .Line("[PR] Ductogram")
                                 )
                                 .ValidModalities(Modalities.MG | Modalities.MRI | Modalities.NM | Modalities.US)
-                                .SetSnomedDescription("Procedure | 420131003 | Fluoroscopic mammary ductography (Procedure) ")
+                                .SetSnomedDescription("Procedure | 420131003 | Fluoroscopic mammary ductography (Procedure)")
                             //- AutoGen
                             //- Ductogram
                             ,

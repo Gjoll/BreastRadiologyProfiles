@@ -319,7 +319,7 @@ namespace BreastRadiology.XUnitTests
                                     .Line("[PR] Compression views")
                                 )
                                 .ValidModalities(Modalities.MG | Modalities.US)
-                                .SetSnomedDescription("Procedure | 439324009 | Mammogram in compression view (Procedure) ")
+                                .SetSnomedDescription("Procedure | 439324009 | Mammogram in compression view (Procedure)")
                             //- AutoGen
                             //- CompressionViews
                             ,
@@ -332,7 +332,7 @@ namespace BreastRadiology.XUnitTests
                                     .Line("[PR] Cone compression")
                                 )
                                 .ValidModalities(Modalities.MG | Modalities.US)
-                                .SetSnomedDescription("Procedure | 439324009 | Mammogram in compression view (Procedure) ")
+                                .SetSnomedDescription("Procedure | 439324009 | Mammogram in compression view (Procedure)")
                             //- AutoGen
                             //- ConeCompression
                             ,
@@ -446,7 +446,7 @@ namespace BreastRadiology.XUnitTests
                                     .Line("[PR] Ductography")
                                 )
                                 .ValidModalities(Modalities.MG | Modalities.MRI | Modalities.US)
-                                .SetSnomedDescription("Procedure | 420131003 | Fluoroscopic mammary ductography (Procedure) ")
+                                .SetSnomedDescription("Procedure | 420131003 | Fluoroscopic mammary ductography (Procedure)")
                             //- AutoGen
                             //- Ductography
                             ,

@@ -227,7 +227,7 @@ namespace BreastRadiology.XUnitTests
                                 .ValidModalities(Modalities.MG | Modalities.MRI)
                                 .SetSnomedCode("399294002")
                                 .SetOneToMany("one")
-                                .SetSnomedDescription("ClinicalFinding |Cyst of breast (Disorder) ")
+                                .SetSnomedDescription("ClinicalFinding |Cyst of breast (Disorder)")
                                 .SetICD10("399294002")
                             //- AutoGen
                             //- Cyst
@@ -410,7 +410,7 @@ namespace BreastRadiology.XUnitTests
                                     .Line("[PR] Duct ectasia")
                                 )
                                 .ValidModalities(Modalities.MRI | Modalities.US)
-                                .SetSnomedDescription("ClinicalFinding | 22049009 | Mammary duct ectasia (Disorder) | [0/0] | N60.49 ")
+                                .SetSnomedDescription("ClinicalFinding | 22049009 | Mammary duct ectasia (Disorder) | [0/0] | N60.49")
                             //- AutoGen
                             //- DuctEctasia
                             ,
@@ -452,7 +452,7 @@ namespace BreastRadiology.XUnitTests
                                 )
                                 .ValidModalities(Modalities.MG | Modalities.MRI | Modalities.US)
                                 .SetSnomedCode("21381006")
-                                .SetSnomedDescription("ClinicalFinding | Fat necrosis of breast (Disorder) ")
+                                .SetSnomedDescription("ClinicalFinding | Fat necrosis of breast (Disorder)")
                                 .SetICD10("21381006")
                             //- AutoGen
                             //- FatNecrosis
@@ -504,7 +504,7 @@ namespace BreastRadiology.XUnitTests
                                 )
                                 .ValidModalities(Modalities.MG | Modalities.MRI | Modalities.US)
                                 .SetSnomedCode("367647000")
-                                .SetSnomedDescription("BodyStructure | Fibrocystic change ")
+                                .SetSnomedDescription("BodyStructure | Fibrocystic change")
                                 .SetICD10("367647000")
                                 .SetComment("right/left/bilateral choices")
                             //- AutoGen
@@ -556,7 +556,7 @@ namespace BreastRadiology.XUnitTests
                                     .Line("[PR] Folliculitis")
                                 )
                                 .ValidModalities(Modalities.US)
-                                .SetSnomedDescription("ClinicalFinding | 13600006 | Folliculitis (Disorder) | [6/113] | L73.9 ")
+                                .SetSnomedDescription("ClinicalFinding | 13600006 | Folliculitis (Disorder) | [6/113] | L73.9")
                             //- AutoGen
                             //- Folliculitis
                             ,
@@ -663,7 +663,7 @@ namespace BreastRadiology.XUnitTests
                                     .Line("[PR] Lumpectomy cavity")
                                 )
                                 .ValidModalities(Modalities.MRI | Modalities.US)
-                                .SetSnomedDescription("BodyStructure | 261719000 | Breast cavity (Morphologic-Abnormality) ")
+                                .SetSnomedDescription("BodyStructure | 261719000 | Breast cavity (Morphologic-Abnormality)")
                                 .SetComment("Need to create")
                             //- AutoGen
                             //- LumpectomyCavity
@@ -703,9 +703,9 @@ namespace BreastRadiology.XUnitTests
                                     .Line("[PR] Lymph node enlarged")
                                 )
                                 .ValidModalities(Modalities.MRI | Modalities.US)
-                                .SetSnomedCode("274741002 ")
+                                .SetSnomedCode("274741002")
                                 .SetSnomedDescription("ClinicalFinding | Generalized enlarged lymph nodes (Disorder) | [0/0] | R59.1")
-                                .SetICD10("274741002 ")
+                                .SetICD10("274741002")
                             //- AutoGen
                             //- LymphNodeEnlarged
                             ,
@@ -766,7 +766,7 @@ namespace BreastRadiology.XUnitTests
                                     .Line("[PR] Mastitis")
                                 )
                                 .ValidModalities(Modalities.MG | Modalities.MRI | Modalities.US)
-                                .SetSnomedDescription("ClinicalFinding | 45198002 | Mastitis (Disorder) | [3/51] | P39.0 | Neonatal infective mastitis | N61 | Inflammatory disorders of breast | ")
+                                .SetSnomedDescription("ClinicalFinding | 45198002 | Mastitis (Disorder) | [3/51] | P39.0 | Neonatal infective mastitis | N61 | Inflammatory disorders of breast |")
                             //- AutoGen
                             //- Mastitis
                             ,
@@ -1062,7 +1062,7 @@ namespace BreastRadiology.XUnitTests
                                     .Line("[PR] Trauma")
                                 )
                                 .ValidModalities(Modalities.MRI)
-                                .SetSnomedDescription("ClinicalFinding | 62112002 | Injury of breast (Disorder) ")
+                                .SetSnomedDescription("ClinicalFinding | 62112002 | Injury of breast (Disorder)")
                                 .SetComment("Need help no direct match")
                             //- AutoGen
                             //- Trauma
@@ -1076,7 +1076,7 @@ namespace BreastRadiology.XUnitTests
                                     .Line("[PR] Vascular calcifications")
                                 )
                                 .ValidModalities(Modalities.MG)
-                                .SetSnomedDescription("ClinicalFinding | 396779001 | Breast arterial calcification (Finding) | [0/0] | R92.1 ")
+                                .SetSnomedDescription("ClinicalFinding | 396779001 | Breast arterial calcification (Finding) | [0/0] | R92.1")
                             //- AutoGen
                             //- VascularCalcifications
                             ,

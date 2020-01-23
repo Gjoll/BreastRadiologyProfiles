@@ -35,7 +35,7 @@ namespace BreastRadiology.XUnitTests
                                 )
                                 .ValidModalities(Modalities.MG | Modalities.MRI | Modalities.US)
                                 .SetOneToMany("many")
-                                .SetSnomedDescription("ClinicalFinding | 283574001 | Pellet wound of breast (Disorder) | [0/0] | S21.039? ")
+                                .SetSnomedDescription("ClinicalFinding | 283574001 | Pellet wound of breast (Disorder) | [0/0] | S21.039?")
                             //- AutoGen
                             //- BBPellet
                             ,
@@ -389,7 +389,7 @@ namespace BreastRadiology.XUnitTests
                                     .Line("[PR] BB pellets")
                                 )
                                 .ValidModalities(Modalities.MG | Modalities.MRI | Modalities.US)
-                                .SetSnomedDescription("ClinicalFinding | 283574001 | Pellet wound of breast (Disorder) | [0/0] | S21.039? ")
+                                .SetSnomedDescription("ClinicalFinding | 283574001 | Pellet wound of breast (Disorder) | [0/0] | S21.039?")
                             //- AutoGen
                             ,
                             //- BBPellets

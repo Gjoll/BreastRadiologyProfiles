@@ -405,7 +405,7 @@ namespace BreastRadiology.XUnitTests
                                 )
                                 .ValidModalities(Modalities.MG)
                                 .SetSnomedCode("129795008")
-                                .SetSnomedDescription("ClinicalFinding | Mammographic trabecular thickening of breast (Finding) ")
+                                .SetSnomedDescription("ClinicalFinding | Mammographic trabecular thickening of breast (Finding)")
                                 .SetICD10("129795008")
                                 .SetComment("only mammo chioce")
                             //- AutoGen

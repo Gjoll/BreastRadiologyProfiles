@@ -20,6 +20,17 @@ Comments and Suggested changes to this implementation guide can be made
 <p><b>Reviewed by NOONE on 1.1.2020</b></p>
   <!-- -reviewStatus-->
   <!-- +components-->
+  <a name="components"></a>
+  <h3 id="components">Member Fields</h3>
+  <p>
+    The following are parts of this observation that are contained within this resource.
+  </p>
+  <p>
+    Each field contains one data item and is stored as an item (slice) in the Observation.component element.
+  </p>
+  <ul>
+    %ComponentList:noexpand:prefix=<li>:suffix=</li>:lb%
+  </ul>
   <!-- -components-->
   <!-- +hasMember-->
   <a name="hasMembers"></a>
@@ -31,10 +42,7 @@ Comments and Suggested changes to this implementation guide can be made
     The reference to each external observation is stored as an item in the Observation.hasMember element.
   </p>
   <ul>
-    
-<li><a href="StructureDefinition-AssociatedFeatures-definitions.html#Observation.hasMember:mGAbnormalityArchitecturalDistortion">'Mammography Architectural Distortion' reference [0..*]</a></li>
-<li><a href="StructureDefinition-AssociatedFeatures-definitions.html#Observation.hasMember:mGAbnormalityCalcification">'Mammography Calcification' reference [0..*]</a></li>
-<li><a href="StructureDefinition-AssociatedFeatures-definitions.html#Observation.hasMember:observedFeature">'Observed Feature' reference [0..*]</a></li>
+    %HasMemberList:noexpand:prefix=<li>:suffix=</li>:lb%
   </ul>
   <!-- -hasMember-->
   <!-- +profileFragments-->
@@ -44,8 +52,7 @@ Comments and Suggested changes to this implementation guide can be made
     the hierarchy and commonality of disparate profiles..
   </p>
   <ul>
-    
-<li><a href="./StructureDefinition-ObservationSectionFragment.html">Observation Section Fragment</a></li>
+    %FragmentList:noexpand:prefix=<li>:suffix=</li>:lb%
   </ul>
   <!-- -profileFragments-->
 </div>
