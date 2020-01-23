@@ -89,17 +89,6 @@
         }
       },
       {
-        "id": "Observation.subject",
-        "path": "Observation.subject",
-        "min": 0,
-        "max": "0",
-        "base": {
-          "path": "Observation.subject",
-          "min": 0,
-          "max": "1"
-        }
-      },
-      {
         "id": "Observation.focus",
         "extension": [
           {

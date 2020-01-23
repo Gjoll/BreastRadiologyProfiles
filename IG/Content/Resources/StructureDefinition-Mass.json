@@ -1157,7 +1157,7 @@
         "comment": "One would expect this element to be a cardinality of 1..1. The only circumstance in which the subject can be missing is when the observation is made by a device that does not know the patient. In this case, the observation SHALL be matched to a patient through some context/channel matching technique, and at this point, the observation should be updated.",
         "requirements": "Observations have no value if you don't know who or what they're about.",
         "min": 0,
-        "max": "0",
+        "max": "1",
         "base": {
           "path": "Observation.subject",
           "min": 0,
@@ -3914,8 +3914,7 @@
           }
         ],
         "patternQuantity": {
-          "system": "http://unitsofmeasure.org",
-          "code": "cm"
+          "system": "http://hl7.org/fhir/us/breast-radiology/ValueSet/UnitsOfLengthVS"
         },
         "isModifier": false,
         "isSummary": true,
@@ -3960,12 +3959,10 @@
         ],
         "patternRange": {
           "low": {
-            "system": "http://unitsofmeasure.org",
-            "code": "cm"
+            "system": "http://hl7.org/fhir/us/breast-radiology/ValueSet/UnitsOfLengthVS"
           },
           "high": {
-            "system": "http://unitsofmeasure.org",
-            "code": "cm"
+            "system": "http://hl7.org/fhir/us/breast-radiology/ValueSet/UnitsOfLengthVS"
           }
         },
         "isModifier": false,
@@ -4386,8 +4383,7 @@
           }
         ],
         "patternQuantity": {
-          "system": "http://unitsofmeasure.org",
-          "code": "cm"
+          "system": "http://hl7.org/fhir/us/breast-radiology/ValueSet/UnitsOfLengthVS"
         },
         "isModifier": false,
         "isSummary": true,
@@ -4432,12 +4428,10 @@
         ],
         "patternRange": {
           "low": {
-            "system": "http://unitsofmeasure.org",
-            "code": "cm"
+            "system": "http://hl7.org/fhir/us/breast-radiology/ValueSet/UnitsOfLengthVS"
           },
           "high": {
-            "system": "http://unitsofmeasure.org",
-            "code": "cm"
+            "system": "http://hl7.org/fhir/us/breast-radiology/ValueSet/UnitsOfLengthVS"
           }
         },
         "isModifier": false,
@@ -6698,8 +6692,7 @@
           }
         ],
         "patternQuantity": {
-          "system": "http://unitsofmeasure.org",
-          "code": "cm"
+          "system": "http://hl7.org/fhir/us/breast-radiology/ValueSet/UnitsOfLengthVS"
         },
         "isModifier": false,
         "isSummary": true,
@@ -6744,12 +6737,10 @@
         ],
         "patternRange": {
           "low": {
-            "system": "http://unitsofmeasure.org",
-            "code": "cm"
+            "system": "http://hl7.org/fhir/us/breast-radiology/ValueSet/UnitsOfLengthVS"
           },
           "high": {
-            "system": "http://unitsofmeasure.org",
-            "code": "cm"
+            "system": "http://hl7.org/fhir/us/breast-radiology/ValueSet/UnitsOfLengthVS"
           }
         },
         "isModifier": false,
@@ -7793,17 +7784,6 @@
         }
       },
       {
-        "id": "Observation.subject",
-        "path": "Observation.subject",
-        "min": 0,
-        "max": "0",
-        "base": {
-          "path": "Observation.subject",
-          "min": 0,
-          "max": "1"
-        }
-      },
-      {
         "id": "Observation.focus",
         "extension": [
           {
@@ -8553,8 +8533,7 @@
           }
         ],
         "patternQuantity": {
-          "system": "http://unitsofmeasure.org",
-          "code": "cm"
+          "system": "http://hl7.org/fhir/us/breast-radiology/ValueSet/UnitsOfLengthVS"
         }
       },
       {
@@ -8575,12 +8554,10 @@
         ],
         "patternRange": {
           "low": {
-            "system": "http://unitsofmeasure.org",
-            "code": "cm"
+            "system": "http://hl7.org/fhir/us/breast-radiology/ValueSet/UnitsOfLengthVS"
           },
           "high": {
-            "system": "http://unitsofmeasure.org",
-            "code": "cm"
+            "system": "http://hl7.org/fhir/us/breast-radiology/ValueSet/UnitsOfLengthVS"
           }
         }
       },
@@ -8663,8 +8640,7 @@
           }
         ],
         "patternQuantity": {
-          "system": "http://unitsofmeasure.org",
-          "code": "cm"
+          "system": "http://hl7.org/fhir/us/breast-radiology/ValueSet/UnitsOfLengthVS"
         }
       },
       {
@@ -8685,12 +8661,10 @@
         ],
         "patternRange": {
           "low": {
-            "system": "http://unitsofmeasure.org",
-            "code": "cm"
+            "system": "http://hl7.org/fhir/us/breast-radiology/ValueSet/UnitsOfLengthVS"
           },
           "high": {
-            "system": "http://unitsofmeasure.org",
-            "code": "cm"
+            "system": "http://hl7.org/fhir/us/breast-radiology/ValueSet/UnitsOfLengthVS"
           }
         }
       },
@@ -10303,8 +10277,7 @@
           }
         ],
         "patternQuantity": {
-          "system": "http://unitsofmeasure.org",
-          "code": "cm"
+          "system": "http://hl7.org/fhir/us/breast-radiology/ValueSet/UnitsOfLengthVS"
         }
       },
       {
@@ -10325,12 +10298,10 @@
         ],
         "patternRange": {
           "low": {
-            "system": "http://unitsofmeasure.org",
-            "code": "cm"
+            "system": "http://hl7.org/fhir/us/breast-radiology/ValueSet/UnitsOfLengthVS"
           },
           "high": {
-            "system": "http://unitsofmeasure.org",
-            "code": "cm"
+            "system": "http://hl7.org/fhir/us/breast-radiology/ValueSet/UnitsOfLengthVS"
           }
         }
       },

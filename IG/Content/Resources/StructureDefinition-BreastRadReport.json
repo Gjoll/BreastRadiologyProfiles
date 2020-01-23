@@ -1529,7 +1529,7 @@
         "id": "DiagnosticReport.conclusion",
         "path": "DiagnosticReport.conclusion",
         "short": "Clinical conclusion (interpretation) of test results",
-        "definition": "Concise and clinically contextualized summary conclusion (interpretation/impression) of the diagnostic report.",
+        "definition": "This will contain a text version of the complete report.\n\nThe report should be readable without specialized formatting software..",
         "requirements": "Need to be able to provide a conclusion that is not lost among the basic result data.",
         "alias": [
           "Report"
@@ -1918,6 +1918,7 @@
       {
         "id": "DiagnosticReport.conclusion",
         "path": "DiagnosticReport.conclusion",
+        "definition": "This will contain a text version of the complete report.\n\nThe report should be readable without specialized formatting software..",
         "min": 1,
         "max": "1",
         "base": {

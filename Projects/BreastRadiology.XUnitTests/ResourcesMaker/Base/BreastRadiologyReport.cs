@@ -46,8 +46,6 @@ namespace BreastRadiology.XUnitTests
 
                 e.Select("code").Pattern = new CodeableConcept(Loinc, "10193-1");
                 e.Select("specimen").Zero();
-                e.Select("conclusion").Single();
-                e.Select("conclusionCode").Single();
                 {
                     ElementDefinition extensionDef = e.ApplyExtension("Impressions", Self.ImpressionsExtension.Value())
                          .Short("Exam impressions")
@@ -62,6 +60,15 @@ namespace BreastRadiology.XUnitTests
                          .Definition("References to FHIR clinical resoruces used during the exam or referenced by this report.")
                          .ZeroToMany();
                     e.AddExtensionLink(extensionDef);
+                }
+                {
+                    ValueSet binding = Self.BiRadsAssessmentCategoriesVS.Value();
+                    e.Select("conclusion")
+                        .Single()
+                        .Definition(new Markdown()
+                            .Paragraph("This will contain a text version of the complete report.")
+                            .Paragraph("The report should be readable without specialized formatting software..")
+                            );
                 }
                 {
                     ValueSet binding = Self.BiRadsAssessmentCategoriesVS.Value();

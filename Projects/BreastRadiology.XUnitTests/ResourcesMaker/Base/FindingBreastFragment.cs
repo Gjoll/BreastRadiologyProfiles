@@ -31,7 +31,7 @@ namespace BreastRadiology.XUnitTests
                        {
                            ValueSet binding = Self.BiRadsAssessmentCategoriesVS.Value();
                            e.Select("value[x]")
-                               .Single()
+                               .ZeroToOne()
                                .Type("CodeableConcept")
                                .Binding(binding, BindingStrength.Required)
                                .MustSupport()
