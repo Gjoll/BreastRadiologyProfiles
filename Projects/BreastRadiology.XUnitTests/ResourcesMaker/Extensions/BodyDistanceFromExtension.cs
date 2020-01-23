@@ -21,19 +21,21 @@ namespace BreastRadiology.XUnitTests
                 SDefEditor e;
                 ElementTreeNode extensionNode;
 
-                ElementTreeNode Slice(String sliceName,
+                void Slice(String sliceName,
                     String shortText,
-                    Markdown definition)
+                    Markdown definition,
+                    out ElementTreeSlice extensionSlice,
+                    out ElementTreeNode valueXNode)
                 {
-                    ElementTreeSlice extensionElement = extensionNode.CreateSlice(sliceName);
-                    extensionElement.ElementDefinition
+                    extensionSlice = extensionNode.CreateSlice(sliceName);
+                    extensionSlice.ElementDefinition
                         .ElementId($"{extensionNode.ElementDefinition.Path}:{sliceName}")
                         .SliceName(sliceName)
                         .Short(shortText)
                         .Definition(definition)
                         .SetCardinality(0, "1")
                         ;
-                    extensionElement.ElementDefinition.Type = null;
+                    extensionSlice.ElementDefinition.Type = null;
 
                     {
                         ElementDefinition sealExtension = new ElementDefinition
@@ -43,7 +45,7 @@ namespace BreastRadiology.XUnitTests
                         };
 
                         sealExtension.Zero();
-                        extensionElement.CreateNode(sealExtension);
+                        extensionSlice.CreateNode(sealExtension);
                     }
                     {
                         ElementDefinition elementUrl = new ElementDefinition()
@@ -55,7 +57,7 @@ namespace BreastRadiology.XUnitTests
                             .Paragraph($"Url for {sliceName} complex extension item")
                             )
                         ;
-                        extensionElement.CreateNode(elementUrl);
+                        extensionSlice.CreateNode(elementUrl);
                     }
 
                     {
@@ -64,7 +66,7 @@ namespace BreastRadiology.XUnitTests
                             .Path($"{extensionNode.ElementDefinition.Path}.value[x]")
                             .ElementId($"{extensionNode.ElementDefinition.Path}:{sliceName}.value[x]")
                             ;
-                        return extensionElement.CreateNode(elementValue);
+                        valueXNode = extensionSlice.CreateNode(elementValue);
                     }
                 }
 
@@ -98,38 +100,49 @@ namespace BreastRadiology.XUnitTests
 
                 // Slice land mark.
                 {
-                    ElementDefinition elementValue = Slice("landMark",
+                    Slice("landMark",
                             "Body landmark. Origin of distance measurement.",
                             new Markdown()
-                            .Paragraph("Body landmark which defines the origin of the measurement")
-                            .Paragraph("Currently the value set this is bound to does not contain the requiored breast landmarks like nipple.")
-                            )
-                        .ElementDefinition
-                        .Binding("http://hl7.org/fhir/ValueSet/body-site", BindingStrength.Extensible)
-                        ;
+                                .Paragraph("Body landmark which defines the origin of the measurement")
+                                .Paragraph("Currently the value set this is bound to does not contain the requiored breast landmarks like nipple."),
+                            out ElementTreeSlice extensionSlice,
+                            out ElementTreeNode valueXNode
+                     );
 
-                    elementValue
+                    String binding = "http://hl7.org/fhir/ValueSet/body-site";
+                    valueXNode.ElementDefinition
+                        .Binding(binding, BindingStrength.Extensible)
                         .Type("CodeableConcept")
                         .Single()
                         ;
+                    e.AddComponentLink("Land Mark",
+                        new SDefEditor.Cardinality(extensionSlice.ElementDefinition),
+                        Global.ElementAnchor(extensionSlice.ElementDefinition),
+                        "CodeableConcept",
+                        binding);
                 }
 
                 {
                     String sliceName = "distanceFromLandMark";
 
-                    ElementTreeNode sliceNode = Slice(sliceName,
+                    Slice(sliceName,
                         "Distance from landmark",
-                        new Markdown("Distance from body landmark to body location"));
+                        new Markdown("Distance from body landmark to body location"),
+                            out ElementTreeSlice extensionSlice,
+                            out ElementTreeNode valueXNode);
 
-                    sliceNode.ElementDefinition
+                    String binding = Self.UnitsOfLengthVS.Value().Url;
+                    valueXNode.ElementDefinition
                         .Type("Quantity")
+                        .Binding(binding, BindingStrength.Required)
                         .Single()
-                        .Pattern(
-                            new Quantity
-                            {
-                                System = "http://hl7.org/fhir/us/breast-radiology/ValueSet/UnitsOfLengthVS"
-                            })
                         ;
+
+                    e.AddComponentLink("Distance From LandMark",
+                        new SDefEditor.Cardinality(extensionSlice.ElementDefinition),
+                        Global.ElementAnchor(extensionSlice.ElementDefinition),
+                        "Quantity",
+                        binding);
                 }
 
                 e.IntroDoc

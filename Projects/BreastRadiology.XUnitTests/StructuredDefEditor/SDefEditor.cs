@@ -553,6 +553,7 @@ namespace BreastRadiology.XUnitTests
 
         public void SliceComponentSize(String sliceName,
             CodeableConcept componentCode,
+            ValueSet units,
             out ElementTreeSlice slice)
         {
             this.StartComponentSliceing();
@@ -564,11 +565,10 @@ namespace BreastRadiology.XUnitTests
             ElementTreeNode valueXNode = this.SliceValueXByType(slice,
                 sliceName,
                 new string[] { "Quantity", "Range" });
-
             {
                 Hl7.Fhir.Model.Quantity q = new Hl7.Fhir.Model.Quantity
                 {
-                    System = "http://hl7.org/fhir/us/breast-radiology/ValueSet/UnitsOfLengthVS"
+                    System = units.Url
                 };
 
                 ElementDefinition valueX = new ElementDefinition
@@ -590,11 +590,11 @@ namespace BreastRadiology.XUnitTests
                 {
                     Low = new SimpleQuantity
                     {
-                        System = "http://hl7.org/fhir/us/breast-radiology/ValueSet/UnitsOfLengthVS",
+                        System = units.Url,
                     },
                     High = new SimpleQuantity
                     {
-                        System = "http://hl7.org/fhir/us/breast-radiology/ValueSet/UnitsOfLengthVS",
+                        System = units.Url,
                     }
                 };
                 ElementDefinition valueX = new ElementDefinition

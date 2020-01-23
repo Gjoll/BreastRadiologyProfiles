@@ -3,11 +3,11 @@
   "extension": [
     {
       "url": "http://www.fragment.com/mapname",
-      "valueString": "ObservedArea Fragment"
+      "valueString": "ObservedRegion Fragment"
     },
     {
       "url": "http://www.fragment.com/Group",
-      "valueString": "Fragment/ObservedAreaFragment"
+      "valueString": "Fragment/ObservedRegionFragment"
     },
     {
       "url": "http://www.fragment.com/isFragment",
@@ -15,15 +15,15 @@
     },
     {
       "url": "http://www.fragment.com/maplink",
-      "valueString": "component|0..1|True|Observed Area^StructureDefinition-{SDName}-definitions.html#Observation.component:observedArea^Quantity or Range"
+      "valueString": "component|0..1|True|Observed Region^StructureDefinition-{SDName}-definitions.html#Observation.component:observedRegion^Quantity or Range"
     }
   ],
-  "url": "http://hl7.org/fhir/us/breast-radiology/StructureDefinition/ObservedAreaFragment",
+  "url": "http://hl7.org/fhir/us/breast-radiology/StructureDefinition/ObservedRegionFragment",
   "version": "Fragment",
-  "name": "ObservedAreaFragment",
-  "title": "ObservedArea Fragment",
+  "name": "ObservedRegionFragment",
+  "title": "ObservedRegion Fragment",
   "status": "draft",
-  "description": "<b>Fragment that adds 'Observed Area' element to profile.</b>",
+  "description": "<b>Fragment that adds 'Observed Region' element to profile.</b>",
   "fhirVersion": "4.0.0",
   "kind": "resource",
   "abstract": true,
@@ -35,7 +35,7 @@
       {
         "id": "Observation",
         "path": "Observation",
-        "short": "Fragment that adds 'Observed Area' element to profile.",
+        "short": "Fragment that adds 'Observed Region' element to profile.",
         "base": {
           "path": "Observation",
           "min": 0,
@@ -61,11 +61,11 @@
         }
       },
       {
-        "id": "Observation.component:observedArea",
+        "id": "Observation.component:observedRegion",
         "path": "Observation.component",
-        "sliceName": "observedArea",
-        "short": "Observed Area component",
-        "definition": "This component slice contains the spherical area of an item observed.\nIf an area component is included in an observation, then what is being observed is not a single item,\nbut some number of items contained in the area of the observation\n\nThe size is the diameter of the area. The units are always cm.\nThis can be a quantity (i.e. 5 cm area ), or a range (1 to 5 cm area).\nIf the lower bound of the range is set but not the upper bound, then it means {lower bound} or more.\nIf the lower bound of the range is not set but not the upper bound is, then it means {upper bound} or less.",
+        "sliceName": "observedRegion",
+        "short": "Observed Region component",
+        "definition": "This component slice contains the spherical region of an item observed.\nIf a region component is included in an observation, then what is being observed is not a single item,\nbut some number of items contained in the region of the observation\n\nThe size is the diameter of the region.\nThis can be a quantity (i.e. 5 cm region ), or a range (1 to 5 cm region).\nIf the lower bound of the range is set but not the upper bound, then it means {lower bound} or more.\nIf the lower bound of the range is not set but not the upper bound is, then it means {upper bound} or less.",
         "comment": "This is one component of a group of components that comprise the observation.",
         "min": 0,
         "max": "1",
@@ -76,7 +76,7 @@
         }
       },
       {
-        "id": "Observation.component:observedArea.code",
+        "id": "Observation.component:observedRegion.code",
         "path": "Observation.component.code",
         "min": 1,
         "max": "1",
@@ -95,7 +95,7 @@
         }
       },
       {
-        "id": "Observation.component:observedArea.value[x]",
+        "id": "Observation.component:observedRegion.value[x]",
         "path": "Observation.component.value[x]",
         "slicing": {
           "discriminator": [
@@ -123,7 +123,7 @@
         ]
       },
       {
-        "id": "Observation.component:observedArea.value[x]:valueQuantity",
+        "id": "Observation.component:observedRegion.value[x]:valueQuantity",
         "path": "Observation.component.value[x]",
         "sliceName": "valueQuantity",
         "min": 0,
@@ -143,7 +143,7 @@
         }
       },
       {
-        "id": "Observation.component:observedArea.value[x]:valueRange",
+        "id": "Observation.component:observedRegion.value[x]:valueRange",
         "path": "Observation.component.value[x]",
         "sliceName": "valueRange",
         "min": 0,

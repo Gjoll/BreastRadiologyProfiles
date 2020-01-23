@@ -1,0 +1,43 @@
+{
+  "resourceType": "ValueSet",
+  "id": "UnitsOfLengthVS",
+  "extension": [
+    {
+      "url": "http://www.fragment.com/fragment",
+      "valueUrl": "http://hl7.org/fhir/us/breast-radiology/StructureDefinition/HeaderFragment"
+    },
+    {
+      "url": "http://www.fragment.com/Group",
+      "valueString": "MGCodesVS"
+    },
+    {
+      "url": "http://www.fragment.com/mapname",
+      "valueString": "UnitsOfLength/ValueSet"
+    }
+  ],
+  "url": "http://hl7.org/fhir/us/breast-radiology/ValueSet/UnitsOfLengthVS",
+  "name": "UnitsOfLengthVS",
+  "title": "UnitsOfLength ValueSet",
+  "description": "UnitsOfLength value set.",
+  "compose": {
+    "include": [
+      {
+        "system": "http://unitsofmeasure.org",
+        "concept": [
+          {
+            "code": "m",
+            "display": "meter"
+          },
+          {
+            "code": "cm",
+            "display": "centimeter"
+          },
+          {
+            "code": "mm",
+            "display": "millimeter"
+          }
+        ]
+      }
+    ]
+  }
+}

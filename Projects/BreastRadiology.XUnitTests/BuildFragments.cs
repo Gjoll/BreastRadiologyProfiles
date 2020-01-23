@@ -45,6 +45,8 @@ namespace BreastRadiology.XUnitTests
         String pageTemplateDir;
         String mergedDir;
 
+        FileCleaner fc = null;
+
         public void Dispose()
         {
             this.fc?.Dispose();
@@ -219,26 +221,6 @@ namespace BreastRadiology.XUnitTests
             Trace.WriteLine("Validation complete");
         }
 
-        FileCleaner fc = null;
-
-        [TestMethod]
-        public void FullBuild()
-        {
-            using (this.fc = new FileCleaner())
-            {
-                this.fc?.Add(this.graphicsDir, "*.svg");
-                this.fc?.Add(this.pageDir, "*.xml");
-                this.fc?.Add(this.fragmentDir, "*.json");
-                this.fc?.Add(this.resourcesDir, "*.json");
-
-                this.A_BuildFragments();
-                this.B_BuildResources();
-                this.C_PatchIntroDocs();
-                this.D_BuildGraphics();
-                this.E_BuildIG();
-            }
-        }
-
         [TestMethod]
         public void C_PatchIntroDocs()
         {
@@ -369,6 +351,24 @@ namespace BreastRadiology.XUnitTests
             }
             TimeSpan span = DateTime.Now - start;
             Trace.WriteLine($"Ending C_BuildGraphics [{(Int32)span.TotalSeconds}]");
+        }
+
+        [TestMethod]
+        public void FullBuild()
+        {
+            using (this.fc = new FileCleaner())
+            {
+                this.fc?.Add(this.graphicsDir, "*.svg");
+                this.fc?.Add(this.pageDir, "*.xml");
+                this.fc?.Add(this.fragmentDir, "*.json");
+                this.fc?.Add(this.resourcesDir, "*.json");
+
+                this.A_BuildFragments();
+                this.B_BuildResources();
+                this.C_PatchIntroDocs();
+                this.D_BuildGraphics();
+                this.E_BuildIG();
+            }
         }
 
         [TestMethod]

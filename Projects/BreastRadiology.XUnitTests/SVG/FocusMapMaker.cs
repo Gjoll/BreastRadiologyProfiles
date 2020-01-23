@@ -44,7 +44,7 @@ namespace BreastRadiology.XUnitTests
             return $"./{mapNode.StructureName}-{mapNode.Name}.html";
         }
 
-        SENode CreateResourceNode(ResourceMap.Node mapNode, 
+        SENode CreateResourceNode(ResourceMap.Node mapNode,
             Color color,
             String annotation,
             bool linkFlag)
@@ -168,13 +168,21 @@ namespace BreastRadiology.XUnitTests
 
                                 if (lines.Length > 3)
                                 {
-                                    if (this.map.TryGetNode(lines[3], out ResourceMap.Node vsNode) == false)
-                                        throw new Exception($"Component resource '{lines[3]}' not found!");
-
                                     SENodeGroup vsGroup = new SENodeGroup("vs", false);
                                     nodeGroup.AppendChild(vsGroup);
-
-                                    SENode vs2Node = this.CreateResourceNode(vsNode, valueSetColor, link.Cardinality?.ToString(), true);
+                                    SENode vs2Node;
+                                    String vsUrl = lines[3].Trim();
+                                    if (vsUrl.ToLower().StartsWith(Global.BreastRadBaseUrl))
+                                    {
+                                        if (this.map.TryGetNode(vsUrl, out ResourceMap.Node vsNode) == false)
+                                            throw new Exception($"Component resource '{vsUrl}' not found!");
+                                        vs2Node = this.CreateResourceNode(vsNode, valueSetColor, link.Cardinality?.ToString(), true);
+                                    }
+                                    else
+                                    {
+                                        vs2Node = new SENode(0, valueSetColor, link.Cardinality?.ToString(), null, vsUrl);
+                                        vs2Node.AddTextLine(vsUrl.LastUriPart(), vsUrl);
+                                    }
                                     vsGroup.AppendNode(vs2Node);
                                 }
                             }

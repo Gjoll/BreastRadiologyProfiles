@@ -18,6 +18,14 @@
       "valueString": "fragment||False|http://hl7.org/fhir/us/breast-radiology/StructureDefinition/HeaderFragment"
     },
     {
+      "url": "http://www.fragment.com/maplink",
+      "valueString": "component|0..1|True|Land Mark^StructureDefinition-{SDName}-definitions.html#Extension.extension:landMark^CodeableConcept^http://hl7.org/fhir/ValueSet/body-site"
+    },
+    {
+      "url": "http://www.fragment.com/maplink",
+      "valueString": "component|0..1|True|Distance From LandMark^StructureDefinition-{SDName}-definitions.html#Extension.extension:distanceFromLandMark^Quantity^http://hl7.org/fhir/us/breast-radiology/ValueSet/UnitsOfLengthVS"
+    },
+    {
       "url": "http://www.fragment.com/mapname",
       "valueString": "Common"
     },
@@ -496,11 +504,12 @@
             "code": "Quantity"
           }
         ],
-        "patternQuantity": {
-          "system": "http://hl7.org/fhir/us/breast-radiology/ValueSet/UnitsOfLengthVS"
-        },
         "isModifier": false,
         "isSummary": false,
+        "binding": {
+          "strength": "required",
+          "valueSet": "http://hl7.org/fhir/us/breast-radiology/ValueSet/UnitsOfLengthVS"
+        },
         "mapping": [
           {
             "identity": "rim",
@@ -840,8 +849,9 @@
             "code": "Quantity"
           }
         ],
-        "patternQuantity": {
-          "system": "http://hl7.org/fhir/us/breast-radiology/ValueSet/UnitsOfLengthVS"
+        "binding": {
+          "strength": "required",
+          "valueSet": "http://hl7.org/fhir/us/breast-radiology/ValueSet/UnitsOfLengthVS"
         }
       },
       {

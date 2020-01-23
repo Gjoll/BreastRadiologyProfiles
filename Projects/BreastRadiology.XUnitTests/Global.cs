@@ -8,6 +8,8 @@ namespace BreastRadiology.XUnitTests
 {
     class Global
     {
+        public const String BreastRadBaseUrl = "http://hl7.org/fhir/us/breast-radiology/";
+
         public const String BaseFragmentUrl = "http://www.fragment.com/";
         public static String FragmentUrl = $"{BaseFragmentUrl}fragment";
         public static String IsFragmentExtensionUrl = $"{BaseFragmentUrl}isFragment";

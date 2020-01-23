@@ -29,6 +29,7 @@ namespace BreastRadiology.XUnitTests
                        const String sliceName = "observedSize";
                        e.SliceComponentSize(sliceName,
                            Self.CodeObservedSize.ToCodeableConcept(),
+                           Self.UnitsOfLengthVS.Value(),
                            out ElementTreeSlice slice);
 
                        ElementDefinition sliceDef = slice.ElementDefinition

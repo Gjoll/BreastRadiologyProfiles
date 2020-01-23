@@ -354,7 +354,7 @@ namespace BreastRadiology.XUnitTests
             return retVal;
         }
 
-        String CodeSystemUrl(String name) => $"http://hl7.org/fhir/us/breast-radiology/CodeSystem/{name}";
+        String CodeSystemUrl(String name) => $"{Global.BreastRadBaseUrl}CodeSystem/{name}";
 
         CodeSystem CreateCodeSystem(String name,
             String title,
@@ -406,7 +406,7 @@ namespace BreastRadiology.XUnitTests
             String mapName,
             String description,
             String groupPath,
-            CodeSystem cs)
+            CodeSystem cs = null)
         {
             ValueSet vs = new ValueSet
             {
@@ -426,6 +426,11 @@ namespace BreastRadiology.XUnitTests
                 Value = new FhirString(groupPath)
             });
 
+            this.resources.Add(Path.Combine(this.resourceDir, $"ValueSet-{name}.json"), vs);
+            vs.AddExtension(Global.ResourceMapNameUrl, new FhirString(mapName));
+
+            if (cs == null)
+                return vs;
 
             ValueSet.ConceptSetComponent vsComp = new ValueSet.ConceptSetComponent
             {
@@ -443,9 +448,6 @@ namespace BreastRadiology.XUnitTests
                     Display = code.Display
                 });
             }
-
-            this.resources.Add(Path.Combine(this.resourceDir, $"ValueSet-{name}.json"), vs);
-            vs.AddExtension(Global.ResourceMapNameUrl, new FhirString(mapName));
             return vs;
         }
 
@@ -460,6 +462,7 @@ namespace BreastRadiology.XUnitTests
             // all the necessary objects to be created.
             this.ComponentSliceCodesCS.Value();
             this.BreastRadiologyReport.Value();
+            this.UnitsOfLengthVS.Value();
 
             this.SaveAll();
         }

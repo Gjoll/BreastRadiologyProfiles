@@ -20,20 +20,22 @@ namespace BreastRadiology.XUnitTests
                 SDefEditor e;
                 ElementTreeNode extensionNode;
 
-                ElementTreeNode Slice(String sliceName,
+                void Slice(String sliceName,
                     String shortText,
-                    Markdown definition)
+                    Markdown definition,
+                    out ElementTreeSlice extensionSlice,
+                    out ElementTreeNode valueXNode)
                 {
-                    ElementTreeSlice extensionElement = extensionNode.CreateSlice(sliceName);
-                    extensionElement.ElementDefinition
+                    extensionSlice = extensionNode.CreateSlice(sliceName);
+                    extensionSlice.ElementDefinition
                         .ElementId($"{extensionNode.ElementDefinition.Path}:{sliceName}")
                         .SliceName(sliceName)
                         .Short(shortText)
                         .Definition(definition)
                         .SetCardinality(0, "1")
                         ;
-                    extensionElement.ElementDefinition.Type = null;
-                    extensionElement.ElementDefinition.Type = null;
+                    extensionSlice.ElementDefinition.Type = null;
+                    extensionSlice.ElementDefinition.Type = null;
 
                     ElementDefinition sealExtension = new ElementDefinition
                     {
@@ -42,7 +44,7 @@ namespace BreastRadiology.XUnitTests
                     };
 
                     sealExtension.Zero();
-                    extensionElement.CreateNode(sealExtension);
+                    extensionSlice.CreateNode(sealExtension);
                     {
                         ElementDefinition elementUrl = new ElementDefinition()
                             .Path($"{extensionNode.ElementDefinition.Path}.url")
@@ -50,7 +52,7 @@ namespace BreastRadiology.XUnitTests
                             .Value(new FhirUrl(sliceName))
                             .Type("uri")
                             ;
-                        extensionElement.CreateNode(elementUrl);
+                        extensionSlice.CreateNode(elementUrl);
                     }
                     {
                         ElementDefinition valueBase = e.Get("value[x]").ElementDefinition;
@@ -58,7 +60,7 @@ namespace BreastRadiology.XUnitTests
                             .Path($"{extensionNode.ElementDefinition.Path}.value[x]")
                             .ElementId($"{extensionNode.ElementDefinition.Path}:{sliceName}.value[x]")
                             ;
-                        return extensionElement.CreateNode(elementValue);
+                        valueXNode = extensionSlice.CreateNode(elementValue);
                     }
                 }
 
@@ -92,36 +94,48 @@ namespace BreastRadiology.XUnitTests
 
                 // Slice index tumour reference.
                 {
-                    ElementDefinition elementValue = Slice("indexReference",
-                            "Reference of index tumor",
-                            new Markdown()
+                    Slice("indexReference",
+                        "Reference of index tumor",
+                        new Markdown()
                             .Paragraph("Optional reference to index tumor (tumor that this is a satellite of).")
-                            )
-                        .ElementDefinition
-                        ;
+                            .Paragraph("Generally this should be a reference to a Breast Radiology Abnormality Observation resource"),
+                        out ElementTreeSlice extensionSlice,
+                        out ElementTreeNode valueXNode);
 
-                    elementValue
-                        .Type("Reference")
+                    valueXNode.ElementDefinition
+                        .Type("Reference", 
+                        null,
+                        new string[] { "Observation" })
                         .Single()
                         ;
+
+                    e.AddComponentLink("Index Reference",
+                        new SDefEditor.Cardinality(extensionSlice.ElementDefinition),
+                        Global.ElementAnchor(extensionSlice.ElementDefinition),
+                        "Reference");
                 }
 
                 {
                     String sliceName = "distanceFromIndex";
 
-                    ElementTreeNode sliceNode = Slice(sliceName,
+                    Slice(sliceName,
                         "Distance from index tumor",
-                        new Markdown("Distance from satellite tumor to index tumor"));
+                        new Markdown("Distance from satellite tumor to index tumor"),
+                    out ElementTreeSlice extensionSlice,
+                    out ElementTreeNode valueXNode);
 
-                    sliceNode.ElementDefinition
+                    String binding = Self.UnitsOfLengthVS.Value().Url;
+                    valueXNode.ElementDefinition
                         .Type("Quantity")
                         .Single()
-                        .Pattern(
-                            new Quantity
-                            {
-                                System = "http://hl7.org/fhir/us/breast-radiology/ValueSet/UnitsOfLengthVS"
-                            })
+                        .Binding(binding, BindingStrength.Required)
                         ;
+
+                    e.AddComponentLink("Distance From Index",
+                        new SDefEditor.Cardinality(extensionSlice.ElementDefinition),
+                        Global.ElementAnchor(extensionSlice.ElementDefinition),
+                        "Quantity",
+                        binding);
                 }
 
                 e.IntroDoc

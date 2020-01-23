@@ -401,7 +401,7 @@ namespace BreastRadiology.XUnitTests
                     e.AddComponentLink("Quadrant",
                         new SDefEditor.Cardinality(sliceDef),
                         Global.ElementAnchor(extensionSlice.ElementDefinition),
-                        "Component",
+                        "CodeableConcept",
                         binding.Url);
                 }
 
@@ -427,7 +427,7 @@ namespace BreastRadiology.XUnitTests
                     e.AddComponentLink("Region",
                         new SDefEditor.Cardinality(sliceDef),
                         Global.ElementAnchor(extensionSlice.ElementDefinition),
-                        "Component",
+                        "CodeableConcept",
                         binding.Url);
                 }
 
@@ -453,7 +453,7 @@ namespace BreastRadiology.XUnitTests
                     e.AddComponentLink("ClockDirection",
                         new SDefEditor.Cardinality(sliceDef),
                         Global.ElementAnchor(extensionSlice.ElementDefinition),
-                        "Component",
+                        "CodeableConcept",
                         binding.Url);
                 }
 
@@ -478,7 +478,7 @@ namespace BreastRadiology.XUnitTests
                     e.AddComponentLink("Depth",
                         new SDefEditor.Cardinality(sliceDef),
                         Global.ElementAnchor(extensionSlice.ElementDefinition),
-                        "Component",
+                        "CodeableConcept",
                         binding.Url);
                 }
                 {
