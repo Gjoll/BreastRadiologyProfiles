@@ -521,7 +521,7 @@ namespace BreastRadiology.XUnitTests
             (out ValueSet vs) =>
             {
                 vs = Self.CreateValueSet(
-                        "AbnormalitiesVS",
+                        "ForeignObjectVS",
                         "Foreign Object ValueSet",
                         "Foreign/Object/ValueSet",
                         "Foreign objects observed during a Breast Radiology exam value set",

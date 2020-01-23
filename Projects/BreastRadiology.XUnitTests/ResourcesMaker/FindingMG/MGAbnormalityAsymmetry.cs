@@ -82,7 +82,7 @@ namespace BreastRadiology.XUnitTests
         VSTaskVar MGAbnormalityAsymmetriesVS = new VSTaskVar(
             (out ValueSet vs) =>
                 vs = Self.CreateValueSet(
-                   "MGAbnormalityAsymmetriesVS",
+                   "MGAbnormalityAsymmetriesTypeVS",
                    "Mammography AsymmetryAbnormalities ValueSet",
                     "MG Asymmetry/ValueSet",
                    "Mammography asymmetry abnormality types value set.",

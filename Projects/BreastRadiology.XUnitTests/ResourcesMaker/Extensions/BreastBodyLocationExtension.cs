@@ -45,6 +45,21 @@ namespace BreastRadiology.XUnitTests
                             new Definition()
                                 .Line("Upper outer region location in the axilla")
                             ),
+                        new ConceptDef("AxillaI",
+                            "Axilla Region I",
+                            new Definition()
+                                .Line("Axilla Region I")
+                            ),
+                        new ConceptDef("AxillaII",
+                            "Axilla Region II",
+                            new Definition()
+                                .Line("Axilla Region II")
+                            ),
+                        new ConceptDef("AxillaIII",
+                            "Axilla Region III",
+                            new Definition()
+                                .Line("Axilla Region III")
+                            ),
                         new ConceptDef("InframammaryFold",
                             "Inframammary Fold Region",
                             new Definition()
@@ -298,7 +313,7 @@ namespace BreastRadiology.XUnitTests
                     }
                 }
 
-                void SliceAndBindUrl(String sliceName,
+                ElementDefinition SliceAndBindUrl(String sliceName,
                     String bindName,
                     String shortText,
                     Markdown definition)
@@ -309,15 +324,17 @@ namespace BreastRadiology.XUnitTests
                         .Binding(bindName, BindingStrength.Required)
                         .Single()
                         ;
+                    return elementValue;
                 }
 
-                void SliceAndBindVS(String sliceName,
+                ElementDefinition SliceAndBindVS(String sliceName,
                     ValueSet binding,
                     String shortText,
                     Markdown definition)
                 {
-                    SliceAndBindUrl(sliceName, binding.Url, shortText, definition);
+                    ElementDefinition  retVal = SliceAndBindUrl(sliceName, binding.Url, shortText, definition);
                     e.AddValueSetLink(binding);
+                    return retVal;
                 }
 
 
@@ -386,7 +403,10 @@ namespace BreastRadiology.XUnitTests
                     SliceAndBindVS("region",
                         binding,
                         "Region of the body location",
-                        new Markdown().Paragraph("The region  of the body location"));
+                        new Markdown().Paragraph("The region  of the body location"))
+                    .ZeroToMany()
+                    ;
+
                 }
 
                 {
@@ -426,7 +446,7 @@ namespace BreastRadiology.XUnitTests
                 {
                     ElementDefinition extensionDef = e
                         .ApplyExtension("distanceFromLandmark", Self.BodyDistanceFromExtension.Value(), true)
-                        .Single()
+                        .ZeroToOne()
                         ;
                     e.AddExtensionLink(extensionDef);
                 }

@@ -16,7 +16,7 @@ namespace BreastRadiology.XUnitTests
         CSTaskVar AbnormalityLymphNodeCS = new CSTaskVar(
              (out CodeSystem cs) =>
                  cs = Self.CreateCodeSystem(
-                        "AbnormalityLymphNodeCS",
+                        "AbnormalityLymphNodeTypeCS",
                         "Lymph Node Type CodeSystem",
                          "Lymph Node Type/CodeSystem",
                         "Lymph node abnormality types code system.",
@@ -77,7 +77,7 @@ namespace BreastRadiology.XUnitTests
         VSTaskVar AbnormalityLymphNodeVS = new VSTaskVar(
             (out ValueSet vs) =>
                 vs = Self.CreateValueSet(
-                   "AbnormalityLymphNodeVS",
+                   "AbnormalityLymphNodeTypeVS",
                    "Lymph Node ValueSet",
                     "Lymph Node/ValueSet",
                    "lymph node abnormality types value set.",

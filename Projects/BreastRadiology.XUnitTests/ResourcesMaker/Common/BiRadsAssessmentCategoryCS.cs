@@ -73,6 +73,16 @@ namespace BreastRadiology.XUnitTests
                             "Category 6 - Known Biopsy-Proven Malignancy",
                             new Definition()
                                 .Line("Known Biopsy-Proven Malignancy")
+                            ),
+                        new ConceptDef("Post Biopsy Marker",
+                            "Post Biopsy Marker",
+                            new Definition()
+                                .Line("Post Biopsy Marker")
+                            ),
+                        new ConceptDef("Marker Clip Placement",
+                            "Marker Clip Placement",
+                            new Definition()
+                                .Line("Marker Clip Placement")
                             )
                         })
                     );

@@ -56,7 +56,7 @@ namespace BreastRadiology.XUnitTests
         VSTaskVar AbnormalityCystVS = new VSTaskVar(
             (out ValueSet vs) =>
                 vs = Self.CreateValueSet(
-                   "AbnormalityCystVS",
+                   "AbnormalityCystTypeVS",
                    "Cyst Abnormalities ValueSet",
                     "Cyst/ValueSet",
                    "Cyst abnormality types value set.",

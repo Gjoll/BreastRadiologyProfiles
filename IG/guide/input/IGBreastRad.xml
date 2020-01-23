@@ -127,7 +127,25 @@
     </resource>
     <resource>
       <reference>
+        <reference value="CodeSystem/AbnormalityDuctTypeCS" />
+      </reference>
+      <name value="Duct Type CodeSystem" />
+      <description value="Duct abnormality types code system." />
+      <exampleBoolean value="false" />
+      <groupingId value="CommonCodesCS" />
+    </resource>
+    <resource>
+      <reference>
         <reference value="CodeSystem/AbnormalityLymphNodeCS" />
+      </reference>
+      <name value="Lymph Node Type CodeSystem" />
+      <description value="Lymph node abnormality types code system." />
+      <exampleBoolean value="false" />
+      <groupingId value="CommonCodesCS" />
+    </resource>
+    <resource>
+      <reference>
+        <reference value="CodeSystem/AbnormalityLymphNodeTypeCS" />
       </reference>
       <name value="Lymph Node Type CodeSystem" />
       <description value="Lymph node abnormality types code system." />
@@ -370,6 +388,15 @@
     </resource>
     <resource>
       <reference>
+        <reference value="ValueSet/AbnormalityCystTypeVS" />
+      </reference>
+      <name value="Cyst Abnormalities ValueSet" />
+      <description value="Cyst abnormality types value set." />
+      <exampleBoolean value="false" />
+      <groupingId value="CommonCodesVS" />
+    </resource>
+    <resource>
+      <reference>
         <reference value="ValueSet/AbnormalityCystVS" />
       </reference>
       <name value="Cyst Abnormalities ValueSet" />
@@ -379,10 +406,28 @@
     </resource>
     <resource>
       <reference>
+        <reference value="ValueSet/AbnormalityDuctTypeVS" />
+      </reference>
+      <name value="Duct ValueSet" />
+      <description value="Duct node abnormality types value set." />
+      <exampleBoolean value="false" />
+      <groupingId value="CommonCodesVS" />
+    </resource>
+    <resource>
+      <reference>
         <reference value="ValueSet/AbnormalityDuctVS" />
       </reference>
       <name value="Duct ValueSet" />
       <description value="Duct node abnormality types value set." />
+      <exampleBoolean value="false" />
+      <groupingId value="CommonCodesVS" />
+    </resource>
+    <resource>
+      <reference>
+        <reference value="ValueSet/AbnormalityLymphNodeTypeVS" />
+      </reference>
+      <name value="Lymph Node ValueSet" />
+      <description value="lymph node abnormality types value set." />
       <exampleBoolean value="false" />
       <groupingId value="CommonCodesVS" />
     </resource>
@@ -478,6 +523,15 @@
     </resource>
     <resource>
       <reference>
+        <reference value="ValueSet/ForeignObjectVS" />
+      </reference>
+      <name value="Foreign Object ValueSet" />
+      <description value="Foreign objects observed during a Breast Radiology exam value set" />
+      <exampleBoolean value="false" />
+      <groupingId value="CommonCodesVS" />
+    </resource>
+    <resource>
+      <reference>
         <reference value="ValueSet/MammoCalcificationDistributionVS" />
       </reference>
       <name value="Mammography Calcification Distribution ValueSet" />
@@ -511,6 +565,15 @@
       <description value="Mass type value set." />
       <exampleBoolean value="false" />
       <groupingId value="CommonCodesVS" />
+    </resource>
+    <resource>
+      <reference>
+        <reference value="ValueSet/MGAbnormalityAsymmetriesTypeVS" />
+      </reference>
+      <name value="Mammography AsymmetryAbnormalities ValueSet" />
+      <description value="Mammography asymmetry abnormality types value set." />
+      <exampleBoolean value="false" />
+      <groupingId value="MGCodesVS" />
     </resource>
     <resource>
       <reference>

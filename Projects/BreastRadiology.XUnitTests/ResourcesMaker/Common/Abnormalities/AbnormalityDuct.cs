@@ -16,7 +16,7 @@ namespace BreastRadiology.XUnitTests
         CSTaskVar AbnormalityDuctCS = new CSTaskVar(
              (out CodeSystem cs) =>
                  cs = Self.CreateCodeSystem(
-                        "AbnormalityDuctCS",
+                        "AbnormalityDuctTypeCS",
                         "Duct Type CodeSystem",
                          "Duct Type/CodeSystem",
                         "Duct abnormality types code system.",
@@ -50,7 +50,7 @@ namespace BreastRadiology.XUnitTests
         VSTaskVar AbnormalityDuctVS = new VSTaskVar(
             (out ValueSet vs) =>
                 vs = Self.CreateValueSet(
-                   "AbnormalityDuctVS",
+                   "AbnormalityDuctTypeVS",
                    "Duct ValueSet",
                     "Duct/ValueSet",
                    "Duct node abnormality types value set.",

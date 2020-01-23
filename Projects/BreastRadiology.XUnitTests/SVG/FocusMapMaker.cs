@@ -173,16 +173,14 @@ namespace BreastRadiology.XUnitTests
 
                                 if (lines.Length > 3)
                                 {
-                                    if (this.map.TryGetNode(lines[3], out ResourceMap.Node mapNode) == false)
+                                    if (this.map.TryGetNode(lines[3], out ResourceMap.Node vsNode) == false)
                                         throw new Exception($"Component resource '{lines[3]}' not found!");
 
                                     SENodeGroup vsGroup = new SENodeGroup("vs", false);
                                     nodeGroup.AppendChild(vsGroup);
-                                    String hRef = HRef(mapNode);
-                                    SENode vsNode = new SENode(0, valueSetColor, link.Cardinality?.ToString(), hRef);
-                                    vsGroup.AppendNode(vsNode);
-                                    String s = mapNode.Name.Trim();
-                                    vsNode.AddTextLine(s, hRef);
+
+                                    SENode vs2Node = this.CreateResourceNode(vsNode, valueSetColor, link.Cardinality?.ToString(), true);
+                                    vsGroup.AppendNode(vs2Node);
                                 }
                             }
                             break;

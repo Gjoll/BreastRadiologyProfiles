@@ -1,0 +1,38 @@
+{
+  "resourceType": "CodeSystem",
+  "id": "AbnormalityDuctTypeCS",
+  "extension": [
+    {
+      "url": "http://www.fragment.com/fragment",
+      "valueUrl": "http://hl7.org/fhir/us/breast-radiology/StructureDefinition/HeaderFragment"
+    },
+    {
+      "url": "http://www.fragment.com/Group",
+      "valueString": "CommonCodesCS"
+    }
+  ],
+  "url": "http://hl7.org/fhir/us/breast-radiology/CodeSystem/AbnormalityDuctTypeCS",
+  "name": "AbnormalityDuctTypeCS",
+  "title": "Duct Type CodeSystem",
+  "description": "Duct abnormality types code system.",
+  "caseSensitive": true,
+  "content": "complete",
+  "count": 3,
+  "concept": [
+    {
+      "code": "Normal",
+      "display": "Normal",
+      "definition": "[PR]"
+    },
+    {
+      "code": "Ectasia",
+      "display": "Ectasia",
+      "definition": "[PR]"
+    },
+    {
+      "code": "Dilated",
+      "display": "Dilated",
+      "definition": "This is a unilateral tubular or branching structure that likely represents a dilated or otherwise en-\r\nlarged duct. It is a rare finding. Even if unassociated with other suspicious clinical or mammographic\r\nfindings, it has been reported to be associated with noncalcified DCIS.\r\n    -- Bi-Rads® Atlas — Mammography Fifth Ed. 2013"
+    }
+  ]
+}
