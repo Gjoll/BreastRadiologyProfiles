@@ -24,8 +24,8 @@ namespace BreastRadiology.XUnitTests
                      Group_CommonCodesCS,
                      new ConceptDef[]
                      {
-                    new ConceptDef("Parallel ",
-                        "Parallel",
+                    new ConceptDef("ParallelToSkin",
+                        "Parallel to skin",
                         new Definition()
                         .CiteStart()
                             .Line("(historically, “wider-than-tall” or “horizontal”)")
@@ -33,8 +33,8 @@ namespace BreastRadiology.XUnitTests
                             .Line("might be considered parallel.")
                         .CiteEnd(BiRadCitation)
                         ),
-                    new ConceptDef("NotParallel",
-                        "Not Parallel",
+                    new ConceptDef("PerpendicularToSkin",
+                        "Perpendicular To Skin",
                         new Definition()
                         .CiteStart()
                             .Line("(historically, \"isodense\")")
