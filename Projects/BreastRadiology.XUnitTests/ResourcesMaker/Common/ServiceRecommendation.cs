@@ -1312,7 +1312,7 @@ namespace BreastRadiology.XUnitTests
                                 .ValidModalities(Modalities.MG | Modalities.US)
                             //- AutoGen
                             //- VacuumBx
-                            
+                            ,
                             //+ LateromedialOblique
                             //+ AutoGen
                             new ConceptDef()

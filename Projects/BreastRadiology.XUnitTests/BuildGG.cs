@@ -95,6 +95,8 @@ namespace BreastRadiology.XUnitTests
                         "ResourcesMaker",
                         outputCodePath));
             CodeBlockNested concepts = editor.Blocks.Find(csBlockName);
+            if (concepts == null)
+                throw new Exception($"Can not find editor block {csBlockName}");
             CodeBlockNested concept = null;
 
             for (Int32 i = 1; i < dataTbl.Rows.Count; i++)
@@ -118,6 +120,10 @@ namespace BreastRadiology.XUnitTests
                             return;
 
                         String sValue = value.ToString();
+                        sValue = sValue.Trim()
+                            .Replace("\r", "")
+                            .Replace("\n", "")
+                            ;
                         if (String.IsNullOrEmpty(sValue) == false)
                             concept
                                 .AppendLine($"    .{name}(\"{sValue}\")");
@@ -177,6 +183,7 @@ namespace BreastRadiology.XUnitTests
             WriteCS(ds, "NotPreviousSeen", @"Common\NotPreviouslySeenCS.cs", "NotPreviouslySeenCS");
             WriteCS(ds, "Margin", @"Common\MarginCS.cs", "MarginCS");
             WriteCS(ds, "Shape", @"Common\ShapeCS.cs", "ShapeCS");
+            WriteCS(ds, "ChangeFromPrior", @"Common\ObservedChangesCS.cs", "ChangesCS");
 
             List<String> itemsToIgnore = new List<string>();
             itemsToIgnore.Add("ARCHITECTURAL DISTORTION");
