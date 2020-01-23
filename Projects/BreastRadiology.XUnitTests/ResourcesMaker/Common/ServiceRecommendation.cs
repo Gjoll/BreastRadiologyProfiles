@@ -1313,6 +1313,32 @@ namespace BreastRadiology.XUnitTests
                             //- AutoGen
                             //- VacuumBx
                             
+                            //+ LateromedialOblique
+                            //+ AutoGen
+                            new ConceptDef()
+                                .SetCode("LateromedialOblique")
+                                .SetDisplay("Lateromedial oblique")
+                                .SetDefinition(new Definition()
+                                    .Line("[PR] Lateromedial oblique")
+                                )
+                                .ValidModalities(Modalities.MG | Modalities.US)
+                                .SetSnomedDescription("Procedure | 241055006 | Mammogram - symptomatic (Procedure)+ QualifierValue | 399352003 | Lateral-medial projection (Qualifier)")
+                            //- AutoGen
+                            ,
+                            //- LateromedialOblique
+                            //+ LateromedialView
+                            //+ AutoGen
+                            new ConceptDef()
+                                .SetCode("LateromedialView")
+                                .SetDisplay("Lateromedial view")
+                                .SetDefinition(new Definition()
+                                    .Line("[PR] Lateromedial view")
+                                )
+                                .ValidModalities(Modalities.MG | Modalities.US)
+                                .SetSnomedDescription("Procedure | 241055006 | Mammogram - symptomatic (Procedure) + QualifierValue | 399352003 | Lateral-medial projection (Qualifier)")
+                            //- AutoGen
+                            ,
+                            //- LateromedialView
                             //- RecommendationsCS
                         })
             );
