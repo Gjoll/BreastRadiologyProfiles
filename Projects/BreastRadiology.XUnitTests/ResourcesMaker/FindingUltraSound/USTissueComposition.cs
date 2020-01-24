@@ -78,7 +78,7 @@ namespace BreastRadiology.XUnitTests
         //            IntroDoc valueSetIntroDoc = Self.CreateIntroDocVS(binding);
         //            valueSetIntroDoc
         //                .ValueSet(binding);
-        //                .ReviewedStatus("NOONE", "1.1.2020")
+        //                .ReviewedStatus("NOONE", "")
         //            ;
         //            String outputPath = valueSetIntroDoc.Save();
         //            Self.fc?.Mark(outputPath);
@@ -107,7 +107,7 @@ namespace BreastRadiology.XUnitTests
 
         //        e.IntroDoc
         //            .CodedObservationLeafNode("an ultra-sound tissue composition", binding)
-        //            .ReviewedStatus("NOONE", "1.1.2020")
+        //            .ReviewedStatus("NOONE", "")
         //            ;
 
         //        e.Select("value[x]")

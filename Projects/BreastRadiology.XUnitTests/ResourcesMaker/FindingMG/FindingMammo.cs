@@ -54,7 +54,7 @@ namespace BreastRadiology.XUnitTests
                 e.SliceTargetReference( sliceElementDef, Self.MGBreastDensity.Value(), 1, "1");
 
                 e.IntroDoc
-                    .ReviewedStatus("NOONE", "1.1.2020")
+                    .ReviewedStatus("NOONE", "")
                     ;
             });
     }

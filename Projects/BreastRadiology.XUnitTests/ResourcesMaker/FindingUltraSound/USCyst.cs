@@ -35,7 +35,7 @@ namespace BreastRadiology.XUnitTests
 
         //        e.IntroDoc
         //            .ObservationSection("UltraSound Cyst")
-        //            .ReviewedStatus("NOONE", "1.1.2020")
+        //            .ReviewedStatus("NOONE", "")
         //            ;
 
         //        //ProfileTargetSlice[] targets = new ProfileTargetSlice[]

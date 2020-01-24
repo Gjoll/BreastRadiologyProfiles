@@ -40,7 +40,7 @@ namespace BreastRadiology.XUnitTests
                                             $"The value of this component is a codeable concept chosen from the {Self.CorrespondsWithVS.Value().Name} valueset.")
                            );
                        e.IntroDoc
-                           .ReviewedStatus("NOONE", "1.1.2020")
+                           .ReviewedStatus("NOONE", "")
                            ;
                    });
     }
