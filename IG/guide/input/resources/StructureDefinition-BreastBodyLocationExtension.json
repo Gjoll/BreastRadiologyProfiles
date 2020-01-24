@@ -266,7 +266,7 @@
           "xmlAttr"
         ],
         "short": "identifies the meaning of the extension",
-        "definition": "Source of the definition for the extension code - a logical name or a URL.",
+        "definition": "Url for laterality complex extension item",
         "comment": "The definition may point directly to a computable or human-readable definition of the extensibility codes, or it may be a logical URI as declared in some other specification. The definition SHALL be a URI for the Structure Definition defining the extension.",
         "min": 1,
         "max": "1",
@@ -429,7 +429,7 @@
           "xmlAttr"
         ],
         "short": "identifies the meaning of the extension",
-        "definition": "Source of the definition for the extension code - a logical name or a URL.",
+        "definition": "Url for quadrant complex extension item",
         "comment": "The definition may point directly to a computable or human-readable definition of the extensibility codes, or it may be a logical URI as declared in some other specification. The definition SHALL be a URI for the Structure Definition defining the extension.",
         "min": 1,
         "max": "1",
@@ -592,7 +592,7 @@
           "xmlAttr"
         ],
         "short": "identifies the meaning of the extension",
-        "definition": "Source of the definition for the extension code - a logical name or a URL.",
+        "definition": "Url for region complex extension item",
         "comment": "The definition may point directly to a computable or human-readable definition of the extensibility codes, or it may be a logical URI as declared in some other specification. The definition SHALL be a URI for the Structure Definition defining the extension.",
         "min": 1,
         "max": "1",
@@ -755,7 +755,7 @@
           "xmlAttr"
         ],
         "short": "identifies the meaning of the extension",
-        "definition": "Source of the definition for the extension code - a logical name or a URL.",
+        "definition": "Url for clockDirection complex extension item",
         "comment": "The definition may point directly to a computable or human-readable definition of the extensibility codes, or it may be a logical URI as declared in some other specification. The definition SHALL be a URI for the Structure Definition defining the extension.",
         "min": 1,
         "max": "1",
@@ -918,7 +918,7 @@
           "xmlAttr"
         ],
         "short": "identifies the meaning of the extension",
-        "definition": "Source of the definition for the extension code - a logical name or a URL.",
+        "definition": "Url for depth complex extension item",
         "comment": "The definition may point directly to a computable or human-readable definition of the extensibility codes, or it may be a logical URI as declared in some other specification. The definition SHALL be a URI for the Structure Definition defining the extension.",
         "min": 1,
         "max": "1",
@@ -1275,6 +1275,7 @@
       {
         "id": "Extension.extension:laterality.url",
         "path": "Extension.extension.url",
+        "definition": "Url for laterality complex extension item",
         "type": [
           {
             "code": "uri"
@@ -1318,6 +1319,7 @@
       {
         "id": "Extension.extension:quadrant.url",
         "path": "Extension.extension.url",
+        "definition": "Url for quadrant complex extension item",
         "type": [
           {
             "code": "uri"
@@ -1361,6 +1363,7 @@
       {
         "id": "Extension.extension:region.url",
         "path": "Extension.extension.url",
+        "definition": "Url for region complex extension item",
         "type": [
           {
             "code": "uri"
@@ -1404,6 +1407,7 @@
       {
         "id": "Extension.extension:clockDirection.url",
         "path": "Extension.extension.url",
+        "definition": "Url for clockDirection complex extension item",
         "type": [
           {
             "code": "uri"
@@ -1447,6 +1451,7 @@
       {
         "id": "Extension.extension:depth.url",
         "path": "Extension.extension.url",
+        "definition": "Url for depth complex extension item",
         "type": [
           {
             "code": "uri"

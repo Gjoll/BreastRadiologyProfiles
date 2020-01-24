@@ -265,84 +265,6 @@ namespace BreastRadiology.XUnitTests
                 SDefEditor e;
                 ElementTreeNode extensionNode;
 
-                //void AddMapLink(ValueSet binding)
-                //{
-                //    breastBodyLocationMapLinks.Add(new ResourceMap.Link("valueSet", binding.Url, false));
-                //}
-
-                void Slice(String sliceName,
-                    String shortText,
-                    Markdown definition,
-                    out ElementTreeSlice extensionSlice,
-                    out ElementTreeNode valueXNode)
-                {
-                    extensionSlice = extensionNode.CreateSlice(sliceName);
-                    extensionSlice.ElementDefinition
-                        .ElementId($"{extensionNode.ElementDefinition.Path}:{sliceName}")
-                        .SliceName(sliceName)
-                        .Short(shortText)
-                        .Definition(definition)
-                        .SetCardinality(0, "1")
-                        ;
-                    extensionSlice.ElementDefinition.Type = null;
-
-                    {
-                        ElementDefinition sealExtension = new ElementDefinition
-                        {
-                            ElementId = $"{extensionNode.ElementDefinition.Path}:{sliceName}.extension",
-                            Path = $"{extensionNode.ElementDefinition.Path}.extension"
-                        };
-
-                        sealExtension.Zero();
-                        extensionSlice.CreateNode(sealExtension);
-                    }
-
-                    {
-                        ElementDefinition elementUrl = new ElementDefinition()
-                            .Path($"{extensionNode.ElementDefinition.Path}.url")
-                            .ElementId($"{extensionNode.ElementDefinition.Path}:{sliceName}.url")
-                            .Value(new FhirUrl(sliceName))
-                            .Type("uri")
-                            ;
-                        extensionSlice.CreateNode(elementUrl);
-                    }
-                    {
-                        ElementDefinition elementValue = new ElementDefinition()
-                            .Path($"{extensionNode.ElementDefinition.Path}.value[x]")
-                            .ElementId($"{extensionNode.ElementDefinition.Path}:{sliceName}.value[x]")
-                            ;
-                        valueXNode = extensionSlice.CreateNode(elementValue);
-                    }
-                }
-
-                void SliceAndBindUrl(String sliceName,
-                    String bindName,
-                    String shortText,
-                    Markdown definition, 
-                    out ElementTreeSlice extensionSlice, 
-                    out ElementTreeNode valueXNode)
-                {
-                    Slice(sliceName, shortText, definition, out extensionSlice, out valueXNode);
-                    valueXNode.ElementDefinition
-                        .Type("CodeableConcept")
-                        .Binding(bindName, BindingStrength.Required)
-                        ;
-                }
-
-                ElementDefinition SliceAndBindVS(String sliceName,
-                    ValueSet binding,
-                    String shortText,
-                    Markdown definition)
-                {
-                    SliceAndBindUrl(sliceName, 
-                        binding.Url, 
-                        shortText, 
-                        definition,
-                    out ElementTreeSlice extensionSlice,
-                    out ElementTreeNode valueXNode);
-                    return extensionSlice.ElementDefinition;
-                }
-
                 e = Self.CreateEditor("BreastBodyLocationExtension",
                     "Breast Body Location Extension",
                     "Breast Body Loc.",
@@ -370,7 +292,9 @@ namespace BreastRadiology.XUnitTests
 
                 extensionNode = e.ConfigureSliceByUrlDiscriminator("extension", true);
 
-                SliceAndBindUrl("laterality",
+                Self.SliceAndBindUrl(e,
+                    extensionNode,
+                    "laterality",
                     "http://hl7.org/fhir/ValueSet/bodysite-laterality",
                     "Laterality of the body location",
                     new Markdown().Paragraph("The laterality of the body location"),
@@ -391,7 +315,9 @@ namespace BreastRadiology.XUnitTests
                         Self.fc?.Mark(outputPath);
                     }
 
-                    ElementDefinition sliceDef = SliceAndBindVS("quadrant",
+                    ElementDefinition sliceDef = Self.SliceAndBindVS(e,
+                        extensionNode,
+                        "quadrant",
                         binding,
                         "Quadrant of the body location",
                         new Markdown().Paragraph("The quadrant  of the body location"))
@@ -417,7 +343,9 @@ namespace BreastRadiology.XUnitTests
                         Self.fc?.Mark(outputPath);
                     }
 
-                    ElementDefinition sliceDef = SliceAndBindVS("region",
+                    ElementDefinition sliceDef = Self.SliceAndBindVS(e,
+                        extensionNode,
+                        "region",
                         binding,
                         "Region of the body location",
                         new Markdown().Paragraph("The region  of the body location"))
@@ -443,7 +371,9 @@ namespace BreastRadiology.XUnitTests
                         Self.fc?.Mark(outputPath);
                     }
 
-                    ElementDefinition sliceDef = SliceAndBindVS("clockDirection",
+                    ElementDefinition sliceDef = Self.SliceAndBindVS(e,
+                        extensionNode,
+                        "clockDirection",
                         binding,
                         "Clock direction of the body location",
                         new Markdown().Paragraph("The clock direction of the body location."))
@@ -468,7 +398,9 @@ namespace BreastRadiology.XUnitTests
                         Self.fc?.Mark(outputPath);
                     }
 
-                    ElementDefinition sliceDef = SliceAndBindVS("depth",
+                    ElementDefinition sliceDef = Self.SliceAndBindVS(e,
+                        extensionNode,
+                        "depth",
                         binding,
                         "Depth of the body location",
                         new Markdown().Paragraph("The depth of the body location."))

@@ -120,6 +120,7 @@
       {
         "id": "Extension.extension:laterality.url",
         "path": "Extension.extension.url",
+        "definition": "Url for laterality complex extension item",
         "type": [
           {
             "code": "uri"
@@ -163,6 +164,7 @@
       {
         "id": "Extension.extension:quadrant.url",
         "path": "Extension.extension.url",
+        "definition": "Url for quadrant complex extension item",
         "type": [
           {
             "code": "uri"
@@ -206,6 +208,7 @@
       {
         "id": "Extension.extension:region.url",
         "path": "Extension.extension.url",
+        "definition": "Url for region complex extension item",
         "type": [
           {
             "code": "uri"
@@ -249,6 +252,7 @@
       {
         "id": "Extension.extension:clockDirection.url",
         "path": "Extension.extension.url",
+        "definition": "Url for clockDirection complex extension item",
         "type": [
           {
             "code": "uri"
@@ -292,6 +296,7 @@
       {
         "id": "Extension.extension:depth.url",
         "path": "Extension.extension.url",
+        "definition": "Url for depth complex extension item",
         "type": [
           {
             "code": "uri"
