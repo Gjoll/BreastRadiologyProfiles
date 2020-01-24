@@ -15,15 +15,15 @@
     },
     {
       "url": "http://www.fragment.com/maplink",
-      "valueString": "fragment||False|http://hl7.org/fhir/us/breast-radiology/StructureDefinition/HeaderFragment"
+      "valueString": "{\r\n  \"LinkType\": \"fragment\",\r\n  \"ShowChildren\": false,\r\n  \"LinkTarget\": \"http://hl7.org/fhir/us/breast-radiology/StructureDefinition/HeaderFragment\"\r\n}"
     },
     {
       "url": "http://www.fragment.com/maplink",
-      "valueString": "component|0..1|True|Index Reference^StructureDefinition-{SDName}-definitions.html#Extension.extension:indexReference^Reference"
+      "valueString": "{\r\n  \"LinkType\": \"component\",\r\n  \"ShowChildren\": true,\r\n  \"Cardinality\": \"0..1\",\r\n  \"LinkTarget\": \"Index Reference^StructureDefinition-{SDName}-definitions.html#Extension.extension:indexReference^Reference\"\r\n}"
     },
     {
       "url": "http://www.fragment.com/maplink",
-      "valueString": "component|0..1|True|Distance From Index^StructureDefinition-{SDName}-definitions.html#Extension.extension:distanceFromIndex^Quantity^http://hl7.org/fhir/us/breast-radiology/ValueSet/UnitsOfLengthVS"
+      "valueString": "{\r\n  \"LinkType\": \"component\",\r\n  \"ShowChildren\": true,\r\n  \"Cardinality\": \"0..1\",\r\n  \"LinkTarget\": \"Distance From Index^StructureDefinition-{SDName}-definitions.html#Extension.extension:distanceFromIndex^Quantity^http://hl7.org/fhir/us/breast-radiology/ValueSet/UnitsOfLengthVS\"\r\n}"
     }
   ],
   "url": "http://hl7.org/fhir/us/breast-radiology/StructureDefinition/TumorSatelliteExtension",

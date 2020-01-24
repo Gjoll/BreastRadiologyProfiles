@@ -19,11 +19,11 @@
     },
     {
       "url": "http://www.fragment.com/maplink",
-      "valueString": "fragment||False|http://hl7.org/fhir/us/breast-radiology/StructureDefinition/HeaderFragment"
+      "valueString": "{\r\n  \"LinkType\": \"fragment\",\r\n  \"ShowChildren\": false,\r\n  \"LinkTarget\": \"http://hl7.org/fhir/us/breast-radiology/StructureDefinition/HeaderFragment\"\r\n}"
     },
     {
       "url": "http://www.fragment.com/maplink",
-      "valueString": "extension|0..*|True|http://hl7.org/fhir/us/breast-radiology/StructureDefinition/ServiceRecommendationExtension^StructureDefinition-{SDName}-definitions.html#Observation.extension:serviceRecommendation^Service Recommentation"
+      "valueString": "{\r\n  \"LinkType\": \"extension\",\r\n  \"ShowChildren\": true,\r\n  \"Cardinality\": \"0..*\",\r\n  \"LinkTarget\": \"http://hl7.org/fhir/us/breast-radiology/StructureDefinition/ServiceRecommendationExtension^StructureDefinition-{SDName}-definitions.html#Observation.extension:serviceRecommendation^Service Recommentation\"\r\n}"
     }
   ],
   "url": "http://hl7.org/fhir/us/breast-radiology/StructureDefinition/ServiceRecommendationFragment",

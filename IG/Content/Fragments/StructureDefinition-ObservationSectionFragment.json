@@ -19,7 +19,7 @@
     },
     {
       "url": "http://www.fragment.com/maplink",
-      "valueString": "fragment||False|http://hl7.org/fhir/us/breast-radiology/StructureDefinition/BreastRadObservationFragment"
+      "valueString": "{\r\n  \"LinkType\": \"fragment\",\r\n  \"ShowChildren\": false,\r\n  \"LinkTarget\": \"http://hl7.org/fhir/us/breast-radiology/StructureDefinition/BreastRadObservationFragment\"\r\n}"
     },
     {
       "url": "http://www.fragment.com/fragment",
@@ -27,7 +27,7 @@
     },
     {
       "url": "http://www.fragment.com/maplink",
-      "valueString": "fragment||False|http://hl7.org/fhir/us/breast-radiology/StructureDefinition/BreastRadObservationNoValueFragment"
+      "valueString": "{\r\n  \"LinkType\": \"fragment\",\r\n  \"ShowChildren\": false,\r\n  \"LinkTarget\": \"http://hl7.org/fhir/us/breast-radiology/StructureDefinition/BreastRadObservationNoValueFragment\"\r\n}"
     },
     {
       "url": "http://www.fragment.com/incompatibleFragment",

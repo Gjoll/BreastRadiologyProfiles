@@ -15,7 +15,7 @@
     },
     {
       "url": "http://www.fragment.com/maplink",
-      "valueString": "fragment||False|http://hl7.org/fhir/us/breast-radiology/StructureDefinition/ObservationLeafFragment"
+      "valueString": "{\r\n  \"LinkType\": \"fragment\",\r\n  \"ShowChildren\": false,\r\n  \"LinkTarget\": \"http://hl7.org/fhir/us/breast-radiology/StructureDefinition/ObservationLeafFragment\"\r\n}"
     },
     {
       "url": "http://www.fragment.com/fragment",
@@ -23,7 +23,7 @@
     },
     {
       "url": "http://www.fragment.com/maplink",
-      "valueString": "fragment||False|http://hl7.org/fhir/us/breast-radiology/StructureDefinition/BreastRadObservationNoDeviceFragment"
+      "valueString": "{\r\n  \"LinkType\": \"fragment\",\r\n  \"ShowChildren\": false,\r\n  \"LinkTarget\": \"http://hl7.org/fhir/us/breast-radiology/StructureDefinition/BreastRadObservationNoDeviceFragment\"\r\n}"
     },
     {
       "url": "http://www.fragment.com/fragment",
@@ -31,15 +31,15 @@
     },
     {
       "url": "http://www.fragment.com/maplink",
-      "valueString": "fragment||False|http://hl7.org/fhir/us/breast-radiology/StructureDefinition/BreastRadObservationNoValueFragment"
+      "valueString": "{\r\n  \"LinkType\": \"fragment\",\r\n  \"ShowChildren\": false,\r\n  \"LinkTarget\": \"http://hl7.org/fhir/us/breast-radiology/StructureDefinition/BreastRadObservationNoValueFragment\"\r\n}"
     },
     {
       "url": "http://www.fragment.com/maplink",
-      "valueString": "component|1..1|True|Consistent With Value^StructureDefinition-{SDName}-definitions.html#Observation.component:value^CodeableConcept^http://hl7.org/fhir/us/breast-radiology/ValueSet/ConsistentWithVS"
+      "valueString": "{\r\n  \"LinkType\": \"component\",\r\n  \"ShowChildren\": true,\r\n  \"Cardinality\": \"1..1\",\r\n  \"LinkTarget\": \"Consistent With Value^StructureDefinition-{SDName}-definitions.html#Observation.component:value^CodeableConcept^http://hl7.org/fhir/us/breast-radiology/ValueSet/ConsistentWithVS\"\r\n}"
     },
     {
       "url": "http://www.fragment.com/maplink",
-      "valueString": "component|0..*|True|Consistent With Qualifier^StructureDefinition-{SDName}-definitions.html#Observation.component:qualifier^CodeableConcept^http://hl7.org/fhir/us/breast-radiology/ValueSet/ConsistentWithQualifierVS"
+      "valueString": "{\r\n  \"LinkType\": \"component\",\r\n  \"ShowChildren\": true,\r\n  \"Cardinality\": \"0..*\",\r\n  \"LinkTarget\": \"Consistent With Qualifier^StructureDefinition-{SDName}-definitions.html#Observation.component:qualifier^CodeableConcept^http://hl7.org/fhir/us/breast-radiology/ValueSet/ConsistentWithQualifierVS\"\r\n}"
     }
   ],
   "url": "http://hl7.org/fhir/us/breast-radiology/StructureDefinition/ConsistentWith",

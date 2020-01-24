@@ -73,7 +73,7 @@ namespace BreastRadiology.XUnitTests
             return node;
         }
 
-        bool DifferentChildren(ResourceMap.Link[] links1, ResourceMap.Link[] links2)
+        bool DifferentChildren(dynamic[] links1, dynamic[] links2)
         {
             if (links1 == null)
                 return true;
@@ -83,11 +83,11 @@ namespace BreastRadiology.XUnitTests
                 return true;
             for (Int32 i = 0; i < links1.Length; i++)
             {
-                ResourceMap.Link link1 = links1[i];
-                ResourceMap.Link link2 = links2[i];
+                dynamic link1 = links1[i];
+                dynamic link2 = links2[i];
                 if (link1.LinkType != link2.LinkType)
                     return true;
-                if (link1.LinkTarget != link2.LinkTarget)
+                if (link1.LinkTarget.ToObject<String>() != (String) link2.ToObject<String>())
                     return true;
             }
             return false;
@@ -105,20 +105,20 @@ namespace BreastRadiology.XUnitTests
         }
 
         void AddChildren(ResourceMap.Node mapNode,
-            ResourceMap.Link[] links,
+            dynamic[] links,
             SENodeGroup group)
         {
-            ResourceMap.Link[] previousChildLinks = null;
+            dynamic[] previousChildLinks = null;
             if (links.Length > 0)
             {
                 SENodeGroup groupChild = null;
-                foreach (ResourceMap.Link link in links)
+                foreach (dynamic link in links)
                 {
-                    ResourceMap.Link[] childMapLinks = null;
+                    dynamic[] childMapLinks = null;
 
-                    String linkTargetUrl = link.LinkTarget.Split('^')[0];
+                    String linkTargetUrl = link.LinkTarget.ToObject<String>().Split('^')[0];
                     ResourceMap.Node childMapNode = this.map.GetNode(linkTargetUrl);
-                    if (link.ShowChildren)
+                    if (link.ShowChildren.ToObject<Boolean>())
                     {
                         childMapLinks = childMapNode.LinksByName(linkNames).ToArray();
                         if (this.DifferentChildren(previousChildLinks, childMapLinks))
@@ -130,7 +130,7 @@ namespace BreastRadiology.XUnitTests
                     if (previousChildLinks == null)
                     {
                         groupChild = group.AppendChild("", false);
-                        if (link.ShowChildren)
+                        if (link.ShowChildren.ToObject<Boolean>())
                         {
                             this.AddChildren(childMapNode, childMapLinks, groupChild);
                             previousChildLinks = childMapLinks;

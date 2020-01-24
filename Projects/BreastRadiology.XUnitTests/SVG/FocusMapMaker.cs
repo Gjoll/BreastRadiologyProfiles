@@ -89,9 +89,9 @@ namespace BreastRadiology.XUnitTests
                 List<SENode> valueSetParents = new List<SENode>();
                 List<SENode> targetParents = new List<SENode>();
 
-                foreach (ResourceMap.Link link in this.map.TargetLinks(focusNode.ResourceUrl))
+                foreach (dynamic link in this.map.TargetLinks(focusNode.ResourceUrl))
                 {
-                    switch (link.LinkType)
+                    switch (link.LinkType.ToObject<String>())
                     {
                         case "fragment":
                         case "component":
@@ -125,7 +125,7 @@ namespace BreastRadiology.XUnitTests
                             break;
 
                         default:
-                            throw new NotImplementedException($"Unknown link type {link.LinkType}");
+                            throw new NotImplementedException($"Unknown link type {link.LinkType.ToObject<String>()}");
                     }
                 }
                 parentsGroup.AppendNodes(targetParents);
@@ -143,16 +143,16 @@ namespace BreastRadiology.XUnitTests
                 childrenGroup.AppendChild(valueSetChildren);
                 childrenGroup.AppendChild(extensionChildren);
 
-                foreach (ResourceMap.Link link in this.map.SourceLinks(focusNode.ResourceUrl))
+                foreach (dynamic link in this.map.SourceLinks(focusNode.ResourceUrl))
                 {
-                    switch (link.LinkType)
+                    switch (link.LinkType.ToObject<String>())
                     {
                         case "fragment":
                             break;
 
                         case "component":
                             {
-                                String[] lines = link.LinkTarget.Split("^");
+                                String[] lines = link.LinkTarget.ToObject<String>().Split("^");
                                 String componentHRef = lines[1];
                                 componentHRef = componentHRef.Replace("{SDName}", link.LinkSource.LastUriPart());
 
@@ -189,7 +189,7 @@ namespace BreastRadiology.XUnitTests
 
                         case "extension":
                             {
-                                String[] lines = link.LinkTarget.Split("^");
+                                String[] lines = link.LinkTarget.ToObject<String>().Split("^");
                                 String componentHRef = lines[1];
                                 componentHRef = componentHRef.Replace("{SDName}", link.LinkSource.LastUriPart());
 
@@ -223,20 +223,12 @@ namespace BreastRadiology.XUnitTests
                                     }
                                     extGroup.AppendNode(extNode);
                                 }
-
-                                //if (this.map.TryGetNode(link.LinkTarget, out ResourceMap.Node childNode) == true)
-                                //{
-                                //    SENode node = this.CreateResourceNode(childNode, extensionColor, link.Cardinality?.ToString(), true);
-                                //    SENodeGroup nodeGroup = new SENodeGroup(node.AllText(), false);
-                                //    extensionChildren.AppendChild(nodeGroup);
-                                //    nodeGroup.AppendNode(node);
-                                //}
                             }
                             break;
 
                         case "valueSet":
                             {
-                                if (this.map.TryGetNode(link.LinkTarget, out ResourceMap.Node childNode) == true)
+                                if (this.map.TryGetNode(link.LinkTarget.ToObject<String>().ToObject<String>(), out ResourceMap.Node childNode) == true)
                                 {
                                     SENode node = this.CreateResourceNode(childNode, valueSetColor, link.Cardinality?.ToString(), true);
                                     SENodeGroup nodeGroup = new SENodeGroup(node.AllText(), false);
@@ -248,8 +240,8 @@ namespace BreastRadiology.XUnitTests
 
                         case "target":
                             {
-                                if (this.map.TryGetNode(link.LinkTarget, out ResourceMap.Node childNode) == false)
-                                    throw new Exception($"Child target {link.LinkTarget} not found in map");
+                                if (this.map.TryGetNode(link.LinkTarget.ToObject<String>(), out ResourceMap.Node childNode) == false)
+                                    throw new Exception($"Child target {link.LinkTarget.ToObject<String>()} not found in map");
                                 SENode node = this.CreateResourceNode(childNode, targetColor, link.Cardinality?.ToString(), true);
                                 SENodeGroup nodeGroup = new SENodeGroup(node.AllText(), true);
                                 targetChildren.AppendChild(nodeGroup);
@@ -258,7 +250,7 @@ namespace BreastRadiology.XUnitTests
                             break;
 
                         default:
-                            throw new NotImplementedException($"Unknown link type {link.LinkType}");
+                            throw new NotImplementedException($"Unknown link type {link.LinkType.ToObject<String>()}");
                     }
                 }
             }

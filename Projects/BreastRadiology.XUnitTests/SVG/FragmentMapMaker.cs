@@ -45,9 +45,9 @@ namespace BreastRadiology.XUnitTests
         public static String FragmentMapName(String name) => $"Frag-{name}.svg";
         public static String FragmentMapName(ResourceMap.Node mapNode) => $"Frag-{mapNode.Name}.svg";
 
-        IEnumerable<ResourceMap.Link> FragmentLinks(ResourceMap.Node n)
+        IEnumerable<dynamic> FragmentLinks(ResourceMap.Node n)
         {
-            foreach (ResourceMap.Link link in n.Links)
+            foreach (dynamic link in n.Links)
             {
                 switch (link.LinkType)
                 {
@@ -65,9 +65,9 @@ namespace BreastRadiology.XUnitTests
                 if (this.fragmentNodes.TryGetValue(focusMapNode.Name, out FragmentNode fragmentFocusNode) == false)
                     throw new Exception($"Internal error. Cant find Focus FragmentNode '{focusMapNode.Name}' ");
 
-                foreach (ResourceMap.Link link in this.FragmentLinks(focusMapNode))
+                foreach (dynamic link in this.FragmentLinks(focusMapNode))
                 {
-                    ResourceMap.Node referencedMapNode = this.map.GetNode(link.LinkTarget);
+                    ResourceMap.Node referencedMapNode = this.map.GetNode(link.LinkTarget.ToObject<String>());
                     fragmentFocusNode.Parents.Add(referencedMapNode);
 
                     if (this.fragmentNodes.TryGetValue(referencedMapNode.Name, out FragmentNode fragmentParentNode) == false)

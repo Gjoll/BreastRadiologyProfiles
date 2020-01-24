@@ -15,7 +15,7 @@
     },
     {
       "url": "http://www.fragment.com/maplink",
-      "valueString": "fragment||False|http://hl7.org/fhir/us/breast-radiology/StructureDefinition/HeaderFragment"
+      "valueString": "{\r\n  \"LinkType\": \"fragment\",\r\n  \"ShowChildren\": false,\r\n  \"LinkTarget\": \"http://hl7.org/fhir/us/breast-radiology/StructureDefinition/HeaderFragment\"\r\n}"
     },
     {
       "url": "http://www.fragment.com/fragment",
@@ -23,27 +23,27 @@
     },
     {
       "url": "http://www.fragment.com/maplink",
-      "valueString": "fragment||False|http://hl7.org/fhir/us/breast-radiology/StructureDefinition/CategoryFragment"
+      "valueString": "{\r\n  \"LinkType\": \"fragment\",\r\n  \"ShowChildren\": false,\r\n  \"LinkTarget\": \"http://hl7.org/fhir/us/breast-radiology/StructureDefinition/CategoryFragment\"\r\n}"
     },
     {
       "url": "http://www.fragment.com/maplink",
-      "valueString": "extension|0..*|True|http://hl7.org/fhir/us/breast-radiology/StructureDefinition/ImpressionsExtension^StructureDefinition-{SDName}-definitions.html#DiagnosticReport.extension:impressions^Impressions"
+      "valueString": "{\r\n  \"LinkType\": \"extension\",\r\n  \"ShowChildren\": true,\r\n  \"Cardinality\": \"0..*\",\r\n  \"LinkTarget\": \"http://hl7.org/fhir/us/breast-radiology/StructureDefinition/ImpressionsExtension^StructureDefinition-{SDName}-definitions.html#DiagnosticReport.extension:impressions^Impressions\"\r\n}"
     },
     {
       "url": "http://www.fragment.com/maplink",
-      "valueString": "extension|0..*|True|http://hl7.org/fhir/us/breast-radiology/StructureDefinition/RelatedClinicalResourcesExtension^StructureDefinition-{SDName}-definitions.html#DiagnosticReport.extension:related^Related Clinical Resources"
+      "valueString": "{\r\n  \"LinkType\": \"extension\",\r\n  \"ShowChildren\": true,\r\n  \"Cardinality\": \"0..*\",\r\n  \"LinkTarget\": \"http://hl7.org/fhir/us/breast-radiology/StructureDefinition/RelatedClinicalResourcesExtension^StructureDefinition-{SDName}-definitions.html#DiagnosticReport.extension:related^Related Clinical Resources\"\r\n}"
     },
     {
       "url": "http://www.fragment.com/maplink",
-      "valueString": "component|1..1|True|Conclusion Code^StructureDefinition-{SDName}-definitions.html#DiagnosticReport.conclusionCode^CodeableConcept^http://hl7.org/fhir/us/breast-radiology/ValueSet/BiRadsAssessmentCategoriesVS"
+      "valueString": "{\r\n  \"LinkType\": \"component\",\r\n  \"ShowChildren\": true,\r\n  \"Cardinality\": \"1..1\",\r\n  \"LinkTarget\": \"Conclusion Code^StructureDefinition-{SDName}-definitions.html#DiagnosticReport.conclusionCode^CodeableConcept^http://hl7.org/fhir/us/breast-radiology/ValueSet/BiRadsAssessmentCategoriesVS\"\r\n}"
     },
     {
       "url": "http://www.fragment.com/maplink",
-      "valueString": "target|0..1|False|http://hl7.org/fhir/us/breast-radiology/StructureDefinition/SectionFindingsLeftBreast"
+      "valueString": "{\r\n  \"LinkType\": \"target\",\r\n  \"ShowChildren\": false,\r\n  \"Cardinality\": \"0..1\",\r\n  \"LinkTarget\": \"http://hl7.org/fhir/us/breast-radiology/StructureDefinition/SectionFindingsLeftBreast\"\r\n}"
     },
     {
       "url": "http://www.fragment.com/maplink",
-      "valueString": "target|0..1|False|http://hl7.org/fhir/us/breast-radiology/StructureDefinition/SectionFindingsRightBreast"
+      "valueString": "{\r\n  \"LinkType\": \"target\",\r\n  \"ShowChildren\": false,\r\n  \"Cardinality\": \"0..1\",\r\n  \"LinkTarget\": \"http://hl7.org/fhir/us/breast-radiology/StructureDefinition/SectionFindingsRightBreast\"\r\n}"
     },
     {
       "url": "http://www.fragment.com/mapname",

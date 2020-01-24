@@ -26,9 +26,9 @@ namespace BreastRadiology.XUnitTests
             /// <summary>
             /// Links from this resource to an other resource.
             /// </summary>
-            public IEnumerable<Link> Links => this.links.Values;
+            public IEnumerable<dynamic> Links => this.links.Values;
 
-            Dictionary<String, Link> links = new Dictionary<String, Link>();
+            Dictionary<String, dynamic> links = new Dictionary<String, dynamic>();
 
             public Node(String resourceUrl,
                 String title,
@@ -45,11 +45,11 @@ namespace BreastRadiology.XUnitTests
                 this.Title = title;
             }
 
-            public IEnumerable<Link> LinksByName(params String[] linkTypes)
+            public IEnumerable<dynamic> LinksByName(params String[] linkTypes)
             {
                 foreach (String linkType in linkTypes)
                 {
-                    foreach (Link link in this.Links)
+                    foreach (dynamic link in this.Links)
                     {
                         if (link.LinkType == linkType)
                             yield return link;
@@ -57,11 +57,13 @@ namespace BreastRadiology.XUnitTests
                 }
             }
 
-            public void AddLink(Link link)
+            public void AddLink(dynamic link)
             {
-                if (this.links.TryGetValue(link.LinkTarget, out Link temp) == true)
+                String linkTarget = (string)link.LinkTarget;
+
+                if (this.links.TryGetValue(linkTarget, out dynamic temp) == true)
                     return;
-                this.links.Add(link.LinkTarget, link);
+                this.links.Add(linkTarget, link);
             }
         }
     }

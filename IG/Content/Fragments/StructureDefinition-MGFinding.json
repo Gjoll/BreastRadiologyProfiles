@@ -15,59 +15,59 @@
     },
     {
       "url": "http://www.fragment.com/maplink",
-      "valueString": "fragment||False|http://hl7.org/fhir/us/breast-radiology/StructureDefinition/ObservationSectionFragment"
+      "valueString": "{\r\n  \"LinkType\": \"fragment\",\r\n  \"ShowChildren\": false,\r\n  \"LinkTarget\": \"http://hl7.org/fhir/us/breast-radiology/StructureDefinition/ObservationSectionFragment\"\r\n}"
     },
     {
       "url": "http://www.fragment.com/maplink",
-      "valueString": "target|0..*|False|http://hl7.org/fhir/us/breast-radiology/StructureDefinition/AbnormalityCyst"
+      "valueString": "{\r\n  \"LinkType\": \"target\",\r\n  \"ShowChildren\": false,\r\n  \"Cardinality\": \"0..*\",\r\n  \"LinkTarget\": \"http://hl7.org/fhir/us/breast-radiology/StructureDefinition/AbnormalityCyst\"\r\n}"
     },
     {
       "url": "http://www.fragment.com/maplink",
-      "valueString": "target|0..*|False|http://hl7.org/fhir/us/breast-radiology/StructureDefinition/AbnormalityDuct"
+      "valueString": "{\r\n  \"LinkType\": \"target\",\r\n  \"ShowChildren\": false,\r\n  \"Cardinality\": \"0..*\",\r\n  \"LinkTarget\": \"http://hl7.org/fhir/us/breast-radiology/StructureDefinition/AbnormalityDuct\"\r\n}"
     },
     {
       "url": "http://www.fragment.com/maplink",
-      "valueString": "target|0..*|False|http://hl7.org/fhir/us/breast-radiology/StructureDefinition/AbnormalityForeignObject"
+      "valueString": "{\r\n  \"LinkType\": \"target\",\r\n  \"ShowChildren\": false,\r\n  \"Cardinality\": \"0..*\",\r\n  \"LinkTarget\": \"http://hl7.org/fhir/us/breast-radiology/StructureDefinition/AbnormalityForeignObject\"\r\n}"
     },
     {
       "url": "http://www.fragment.com/maplink",
-      "valueString": "target|0..*|False|http://hl7.org/fhir/us/breast-radiology/StructureDefinition/AbnormalityLymphNode"
+      "valueString": "{\r\n  \"LinkType\": \"target\",\r\n  \"ShowChildren\": false,\r\n  \"Cardinality\": \"0..*\",\r\n  \"LinkTarget\": \"http://hl7.org/fhir/us/breast-radiology/StructureDefinition/AbnormalityLymphNode\"\r\n}"
     },
     {
       "url": "http://www.fragment.com/maplink",
-      "valueString": "target|0..*|False|http://hl7.org/fhir/us/breast-radiology/StructureDefinition/Mass"
+      "valueString": "{\r\n  \"LinkType\": \"target\",\r\n  \"ShowChildren\": false,\r\n  \"Cardinality\": \"0..*\",\r\n  \"LinkTarget\": \"http://hl7.org/fhir/us/breast-radiology/StructureDefinition/Mass\"\r\n}"
     },
     {
       "url": "http://www.fragment.com/maplink",
-      "valueString": "target|0..*|False|http://hl7.org/fhir/us/breast-radiology/StructureDefinition/AssociatedFeatures"
+      "valueString": "{\r\n  \"LinkType\": \"target\",\r\n  \"ShowChildren\": false,\r\n  \"Cardinality\": \"0..*\",\r\n  \"LinkTarget\": \"http://hl7.org/fhir/us/breast-radiology/StructureDefinition/AssociatedFeatures\"\r\n}"
     },
     {
       "url": "http://www.fragment.com/maplink",
-      "valueString": "target|0..*|False|http://hl7.org/fhir/us/breast-radiology/StructureDefinition/AbnormalityFibroadenoma"
+      "valueString": "{\r\n  \"LinkType\": \"target\",\r\n  \"ShowChildren\": false,\r\n  \"Cardinality\": \"0..*\",\r\n  \"LinkTarget\": \"http://hl7.org/fhir/us/breast-radiology/StructureDefinition/AbnormalityFibroadenoma\"\r\n}"
     },
     {
       "url": "http://www.fragment.com/maplink",
-      "valueString": "target|0..*|False|http://hl7.org/fhir/us/breast-radiology/StructureDefinition/MGAbnormalityArchitecturalDistortion"
+      "valueString": "{\r\n  \"LinkType\": \"target\",\r\n  \"ShowChildren\": false,\r\n  \"Cardinality\": \"0..*\",\r\n  \"LinkTarget\": \"http://hl7.org/fhir/us/breast-radiology/StructureDefinition/MGAbnormalityArchitecturalDistortion\"\r\n}"
     },
     {
       "url": "http://www.fragment.com/maplink",
-      "valueString": "target|0..*|False|http://hl7.org/fhir/us/breast-radiology/StructureDefinition/MGAbnormalityAsymmetry"
+      "valueString": "{\r\n  \"LinkType\": \"target\",\r\n  \"ShowChildren\": false,\r\n  \"Cardinality\": \"0..*\",\r\n  \"LinkTarget\": \"http://hl7.org/fhir/us/breast-radiology/StructureDefinition/MGAbnormalityAsymmetry\"\r\n}"
     },
     {
       "url": "http://www.fragment.com/maplink",
-      "valueString": "target|0..*|False|http://hl7.org/fhir/us/breast-radiology/StructureDefinition/MGAbnormalityCalcification"
+      "valueString": "{\r\n  \"LinkType\": \"target\",\r\n  \"ShowChildren\": false,\r\n  \"Cardinality\": \"0..*\",\r\n  \"LinkTarget\": \"http://hl7.org/fhir/us/breast-radiology/StructureDefinition/MGAbnormalityCalcification\"\r\n}"
     },
     {
       "url": "http://www.fragment.com/maplink",
-      "valueString": "target|0..*|False|http://hl7.org/fhir/us/breast-radiology/StructureDefinition/MGAbnormalityDensity"
+      "valueString": "{\r\n  \"LinkType\": \"target\",\r\n  \"ShowChildren\": false,\r\n  \"Cardinality\": \"0..*\",\r\n  \"LinkTarget\": \"http://hl7.org/fhir/us/breast-radiology/StructureDefinition/MGAbnormalityDensity\"\r\n}"
     },
     {
       "url": "http://www.fragment.com/maplink",
-      "valueString": "target|0..*|False|http://hl7.org/fhir/us/breast-radiology/StructureDefinition/MGAbnormalityFatNecrosis"
+      "valueString": "{\r\n  \"LinkType\": \"target\",\r\n  \"ShowChildren\": false,\r\n  \"Cardinality\": \"0..*\",\r\n  \"LinkTarget\": \"http://hl7.org/fhir/us/breast-radiology/StructureDefinition/MGAbnormalityFatNecrosis\"\r\n}"
     },
     {
       "url": "http://www.fragment.com/maplink",
-      "valueString": "target|1..1|False|http://hl7.org/fhir/us/breast-radiology/StructureDefinition/MGBreastDensity"
+      "valueString": "{\r\n  \"LinkType\": \"target\",\r\n  \"ShowChildren\": false,\r\n  \"Cardinality\": \"1..1\",\r\n  \"LinkTarget\": \"http://hl7.org/fhir/us/breast-radiology/StructureDefinition/MGBreastDensity\"\r\n}"
     }
   ],
   "url": "http://hl7.org/fhir/us/breast-radiology/StructureDefinition/MGFinding",

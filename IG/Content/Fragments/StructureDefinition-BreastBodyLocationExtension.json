@@ -15,39 +15,39 @@
     },
     {
       "url": "http://www.fragment.com/maplink",
-      "valueString": "fragment||False|http://hl7.org/fhir/us/breast-radiology/StructureDefinition/HeaderFragment"
+      "valueString": "{\r\n  \"LinkType\": \"fragment\",\r\n  \"ShowChildren\": false,\r\n  \"LinkTarget\": \"http://hl7.org/fhir/us/breast-radiology/StructureDefinition/HeaderFragment\"\r\n}"
     },
     {
       "url": "http://www.fragment.com/maplink",
-      "valueString": "extension|1..1|True|https://build.fhir.org/ig/HL7/fhir-skin-wound-ig/branches/master/StructureDefinition-BodySideExt.html^StructureDefinition-{SDName}-definitions.html#Extension.extension:laterality^Laterality"
+      "valueString": "{\r\n  \"LinkType\": \"extension\",\r\n  \"ShowChildren\": true,\r\n  \"Cardinality\": \"1..1\",\r\n  \"LinkTarget\": \"https://build.fhir.org/ig/HL7/fhir-skin-wound-ig/branches/master/StructureDefinition-BodySideExt.html^StructureDefinition-{SDName}-definitions.html#Extension.extension:laterality^Laterality\"\r\n}"
     },
     {
       "url": "http://www.fragment.com/maplink",
-      "valueString": "component|1..1|True|Quadrant^StructureDefinition-{SDName}-definitions.html#Extension.extension:quadrant^CodeableConcept^http://hl7.org/fhir/us/breast-radiology/ValueSet/BreastLocationQuadrantVS"
+      "valueString": "{\r\n  \"LinkType\": \"component\",\r\n  \"ShowChildren\": true,\r\n  \"Cardinality\": \"1..1\",\r\n  \"LinkTarget\": \"Quadrant^StructureDefinition-{SDName}-definitions.html#Extension.extension:quadrant^CodeableConcept^http://hl7.org/fhir/us/breast-radiology/ValueSet/BreastLocationQuadrantVS\"\r\n}"
     },
     {
       "url": "http://www.fragment.com/maplink",
-      "valueString": "component|0..*|True|Region^StructureDefinition-{SDName}-definitions.html#Extension.extension^CodeableConcept^http://hl7.org/fhir/us/breast-radiology/ValueSet/BreastLocationRegionVS"
+      "valueString": "{\r\n  \"LinkType\": \"component\",\r\n  \"ShowChildren\": true,\r\n  \"Cardinality\": \"0..*\",\r\n  \"LinkTarget\": \"Region^StructureDefinition-{SDName}-definitions.html#Extension.extension^CodeableConcept^http://hl7.org/fhir/us/breast-radiology/ValueSet/BreastLocationRegionVS\"\r\n}"
     },
     {
       "url": "http://www.fragment.com/maplink",
-      "valueString": "component|1..1|True|ClockDirection^StructureDefinition-{SDName}-definitions.html#Extension.extension^CodeableConcept^http://hl7.org/fhir/us/breast-radiology/ValueSet/BreastLocationClockVS"
+      "valueString": "{\r\n  \"LinkType\": \"component\",\r\n  \"ShowChildren\": true,\r\n  \"Cardinality\": \"1..1\",\r\n  \"LinkTarget\": \"ClockDirection^StructureDefinition-{SDName}-definitions.html#Extension.extension^CodeableConcept^http://hl7.org/fhir/us/breast-radiology/ValueSet/BreastLocationClockVS\"\r\n}"
     },
     {
       "url": "http://www.fragment.com/maplink",
-      "valueString": "component|1..1|True|Depth^StructureDefinition-{SDName}-definitions.html#Extension.extension^CodeableConcept^http://hl7.org/fhir/us/breast-radiology/ValueSet/BreastLocationDepthVS"
+      "valueString": "{\r\n  \"LinkType\": \"component\",\r\n  \"ShowChildren\": true,\r\n  \"Cardinality\": \"1..1\",\r\n  \"LinkTarget\": \"Depth^StructureDefinition-{SDName}-definitions.html#Extension.extension^CodeableConcept^http://hl7.org/fhir/us/breast-radiology/ValueSet/BreastLocationDepthVS\"\r\n}"
     },
     {
       "url": "http://www.fragment.com/maplink",
-      "valueString": "extension|0..1|True|http://hl7.org/fhir/us/breast-radiology/StructureDefinition/BodyDistanceFromExtension^StructureDefinition-{SDName}-definitions.html#Extension.extension:distanceFromNipple^Distance From Nipple"
+      "valueString": "{\r\n  \"LinkType\": \"extension\",\r\n  \"ShowChildren\": true,\r\n  \"Cardinality\": \"0..1\",\r\n  \"LinkTarget\": \"http://hl7.org/fhir/us/breast-radiology/StructureDefinition/BodyDistanceFromExtension^StructureDefinition-{SDName}-definitions.html#Extension.extension:distanceFromNipple^Distance From Nipple\"\r\n}"
     },
     {
       "url": "http://www.fragment.com/maplink",
-      "valueString": "extension|0..1|True|http://hl7.org/fhir/us/breast-radiology/StructureDefinition/BodyDistanceFromExtension^StructureDefinition-{SDName}-definitions.html#Extension.extension:distanceFromChestWall^Distance From Chest Wall"
+      "valueString": "{\r\n  \"LinkType\": \"extension\",\r\n  \"ShowChildren\": true,\r\n  \"Cardinality\": \"0..1\",\r\n  \"LinkTarget\": \"http://hl7.org/fhir/us/breast-radiology/StructureDefinition/BodyDistanceFromExtension^StructureDefinition-{SDName}-definitions.html#Extension.extension:distanceFromChestWall^Distance From Chest Wall\"\r\n}"
     },
     {
       "url": "http://www.fragment.com/maplink",
-      "valueString": "extension|0..1|True|http://hl7.org/fhir/us/breast-radiology/StructureDefinition/BodyDistanceFromExtension^StructureDefinition-{SDName}-definitions.html#Extension.extension:distanceFromSkin^Distance From Skin"
+      "valueString": "{\r\n  \"LinkType\": \"extension\",\r\n  \"ShowChildren\": true,\r\n  \"Cardinality\": \"0..1\",\r\n  \"LinkTarget\": \"http://hl7.org/fhir/us/breast-radiology/StructureDefinition/BodyDistanceFromExtension^StructureDefinition-{SDName}-definitions.html#Extension.extension:distanceFromSkin^Distance From Skin\"\r\n}"
     }
   ],
   "url": "http://hl7.org/fhir/us/breast-radiology/StructureDefinition/BreastBodyLocationExtension",

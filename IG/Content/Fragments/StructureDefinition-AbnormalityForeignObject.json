@@ -15,7 +15,7 @@
     },
     {
       "url": "http://www.fragment.com/maplink",
-      "valueString": "fragment||False|http://hl7.org/fhir/us/breast-radiology/StructureDefinition/BreastRadObservationNoDeviceFragment"
+      "valueString": "{\r\n  \"LinkType\": \"fragment\",\r\n  \"ShowChildren\": false,\r\n  \"LinkTarget\": \"http://hl7.org/fhir/us/breast-radiology/StructureDefinition/BreastRadObservationNoDeviceFragment\"\r\n}"
     },
     {
       "url": "http://www.fragment.com/fragment",
@@ -23,7 +23,7 @@
     },
     {
       "url": "http://www.fragment.com/maplink",
-      "valueString": "fragment||False|http://hl7.org/fhir/us/breast-radiology/StructureDefinition/BreastRadObservationNoValueFragment"
+      "valueString": "{\r\n  \"LinkType\": \"fragment\",\r\n  \"ShowChildren\": false,\r\n  \"LinkTarget\": \"http://hl7.org/fhir/us/breast-radiology/StructureDefinition/BreastRadObservationNoValueFragment\"\r\n}"
     },
     {
       "url": "http://www.fragment.com/fragment",
@@ -31,7 +31,7 @@
     },
     {
       "url": "http://www.fragment.com/maplink",
-      "valueString": "fragment||False|http://hl7.org/fhir/us/breast-radiology/StructureDefinition/CommonComponentsFragment"
+      "valueString": "{\r\n  \"LinkType\": \"fragment\",\r\n  \"ShowChildren\": false,\r\n  \"LinkTarget\": \"http://hl7.org/fhir/us/breast-radiology/StructureDefinition/CommonComponentsFragment\"\r\n}"
     },
     {
       "url": "http://www.fragment.com/fragment",
@@ -39,7 +39,7 @@
     },
     {
       "url": "http://www.fragment.com/maplink",
-      "valueString": "fragment||False|http://hl7.org/fhir/us/breast-radiology/StructureDefinition/NotPreviouslySeenComponentFragment"
+      "valueString": "{\r\n  \"LinkType\": \"fragment\",\r\n  \"ShowChildren\": false,\r\n  \"LinkTarget\": \"http://hl7.org/fhir/us/breast-radiology/StructureDefinition/NotPreviouslySeenComponentFragment\"\r\n}"
     },
     {
       "url": "http://www.fragment.com/fragment",
@@ -47,7 +47,7 @@
     },
     {
       "url": "http://www.fragment.com/maplink",
-      "valueString": "fragment||False|http://hl7.org/fhir/us/breast-radiology/StructureDefinition/CorrespondsWithFragment"
+      "valueString": "{\r\n  \"LinkType\": \"fragment\",\r\n  \"ShowChildren\": false,\r\n  \"LinkTarget\": \"http://hl7.org/fhir/us/breast-radiology/StructureDefinition/CorrespondsWithFragment\"\r\n}"
     },
     {
       "url": "http://www.fragment.com/fragment",
@@ -55,19 +55,19 @@
     },
     {
       "url": "http://www.fragment.com/maplink",
-      "valueString": "fragment||False|http://hl7.org/fhir/us/breast-radiology/StructureDefinition/BiRadFragment"
+      "valueString": "{\r\n  \"LinkType\": \"fragment\",\r\n  \"ShowChildren\": false,\r\n  \"LinkTarget\": \"http://hl7.org/fhir/us/breast-radiology/StructureDefinition/BiRadFragment\"\r\n}"
     },
     {
       "url": "http://www.fragment.com/maplink",
-      "valueString": "target|0..*|False|http://hl7.org/fhir/us/breast-radiology/StructureDefinition/ConsistentWith"
+      "valueString": "{\r\n  \"LinkType\": \"target\",\r\n  \"ShowChildren\": false,\r\n  \"Cardinality\": \"0..*\",\r\n  \"LinkTarget\": \"http://hl7.org/fhir/us/breast-radiology/StructureDefinition/ConsistentWith\"\r\n}"
     },
     {
       "url": "http://www.fragment.com/maplink",
-      "valueString": "target|0..1|False|http://hl7.org/fhir/us/breast-radiology/StructureDefinition/AssociatedFeatures"
+      "valueString": "{\r\n  \"LinkType\": \"target\",\r\n  \"ShowChildren\": false,\r\n  \"Cardinality\": \"0..1\",\r\n  \"LinkTarget\": \"http://hl7.org/fhir/us/breast-radiology/StructureDefinition/AssociatedFeatures\"\r\n}"
     },
     {
       "url": "http://www.fragment.com/maplink",
-      "valueString": "component|1..1|True|Foreign Object Type^StructureDefinition-{SDName}-definitions.html#Observation.component:abnormalityForeignObjectType^CodeableConcept^http://hl7.org/fhir/us/breast-radiology/ValueSet/ForeignObjectVS"
+      "valueString": "{\r\n  \"LinkType\": \"component\",\r\n  \"ShowChildren\": true,\r\n  \"Cardinality\": \"1..1\",\r\n  \"LinkTarget\": \"Foreign Object Type^StructureDefinition-{SDName}-definitions.html#Observation.component:abnormalityForeignObjectType^CodeableConcept^http://hl7.org/fhir/us/breast-radiology/ValueSet/ForeignObjectVS\"\r\n}"
     }
   ],
   "url": "http://hl7.org/fhir/us/breast-radiology/StructureDefinition/AbnormalityForeignObject",

@@ -2,6 +2,7 @@
 using FhirKhit.Tools.R4;
 using Hl7.Fhir.Model;
 using Hl7.Fhir.Serialization;
+using Newtonsoft.Json.Linq;
 using PreFhir;
 using System;
 using System.Collections.Generic;
@@ -18,8 +19,8 @@ namespace BreastRadiology.XUnitTests
         public IEnumerable<ResourceMap.Node> Nodes => this.nodes.Values;
         Dictionary<String, ResourceMap.Node> nodes = new Dictionary<string, ResourceMap.Node>();
 
-        public IEnumerable<ResourceMap.Link> Links => this.links;
-        List<ResourceMap.Link> links = new List<ResourceMap.Link>();
+        public IEnumerable<dynamic> Links => this.links;
+        List<dynamic> links = new List<dynamic>();
 
         public ResourceMap()
         {
@@ -109,33 +110,22 @@ namespace BreastRadiology.XUnitTests
             return node;
         }
 
-        public IEnumerable<ResourceMap.Link> TargetLinks(String target)
+        public IEnumerable<dynamic> TargetLinks(String target)
         {
-            foreach (ResourceMap.Link link in this.Links)
+            foreach (dynamic link in this.Links)
             {
-                if (link.LinkTarget == target)
+                if (link.LinkTarget.ToObject<String>() == target)
                     yield return link;
             }
         }
 
-        public IEnumerable<ResourceMap.Link> SourceLinks(String source)
+        public IEnumerable<dynamic> SourceLinks(String source)
         {
-            foreach (ResourceMap.Link link in this.Links)
+            foreach (dynamic link in this.Links)
             {
                 if (link.LinkSource == source)
                     yield return link;
             }
-        }
-
-        public Link CreateLink(String linkType,
-            String linkSource,
-            String linkTarget,
-            String cardinality,
-            bool showChildren)
-        {
-            Link retVal = new Link(linkType, linkSource, linkTarget, cardinality, showChildren);
-            this.links.Add(retVal);
-            return retVal;
         }
 
         ResourceMap.Node CreateMapNode(DomainResource r)
@@ -179,8 +169,10 @@ namespace BreastRadiology.XUnitTests
             foreach (Extension link in r.GetExtensions(Global.ResourceMapLinkUrl))
             {
                 FhirString s = (FhirString)link.Value;
-                String[] parts = s.Value.Split('|');
-                ResourceMap.Link mapLink = this.CreateLink(parts[0], resourceUrl, parts[3], parts[1], Boolean.Parse(parts[2]));
+
+                dynamic mapLink = JObject.Parse(s.Value);
+                mapLink.LinkSource = resourceUrl;
+                this.links.Add(mapLink);
                 retVal.AddLink(mapLink);
             }
             return retVal;

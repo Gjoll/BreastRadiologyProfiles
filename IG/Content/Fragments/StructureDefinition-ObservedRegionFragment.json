@@ -15,7 +15,7 @@
     },
     {
       "url": "http://www.fragment.com/maplink",
-      "valueString": "component|0..1|True|Observed Region^StructureDefinition-{SDName}-definitions.html#Observation.component:observedRegion^Quantity or Range"
+      "valueString": "{\r\n  \"LinkType\": \"component\",\r\n  \"ShowChildren\": true,\r\n  \"Cardinality\": \"0..1\",\r\n  \"LinkTarget\": \"Observed Region^StructureDefinition-{SDName}-definitions.html#Observation.component:observedRegion^Quantity or Range\"\r\n}"
     }
   ],
   "url": "http://hl7.org/fhir/us/breast-radiology/StructureDefinition/ObservedRegionFragment",

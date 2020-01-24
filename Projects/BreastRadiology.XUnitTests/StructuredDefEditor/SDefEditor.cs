@@ -1,6 +1,7 @@
 ﻿using FhirKhit.Tools;
 using FhirKhit.Tools.R4;
 using Hl7.Fhir.Model;
+using Newtonsoft.Json.Linq;
 using PreFhir;
 using System;
 using System.Collections.Generic;
@@ -256,7 +257,12 @@ namespace BreastRadiology.XUnitTests
                 Url = PreFhirGenerator.FragmentUrl,
                 Value = new FhirUrl(fragRef)
             });
-            this.AddLink("fragment", sd.Url, null, false);
+
+            dynamic packet = new JObject();
+            packet.LinkType = "fragment";
+            packet.ShowChildren = false;
+            packet.LinkTarget = sd.Url;
+            this.SDef.AddExtension(Global.ResourceMapLinkUrl, new FhirString(packet.ToString()));
             return this;
         }
 
@@ -284,10 +290,14 @@ namespace BreastRadiology.XUnitTests
             bool showChildren = true)
         {
             String temp = $"{url}^{componentRef}^{localName}";
-            this.AddLink("extension",
-                temp, 
-                cardinality,
-                showChildren);
+
+            dynamic packet = new JObject();
+            packet.LinkType = "extension";
+            packet.ShowChildren = showChildren;
+            packet.Cardinality = cardinality.ToString();
+            packet.LinkTarget = temp;
+            this.SDef.AddExtension(Global.ResourceMapLinkUrl, new FhirString(packet.ToString()));
+
             return this;
         }
 
@@ -301,32 +311,37 @@ namespace BreastRadiology.XUnitTests
             String temp = $"{url}^{componentRef}^{types}";
             if (String.IsNullOrEmpty(vs) == false)
                 temp += $"^{vs}";
-            this.AddLink("component", temp, cardinality, showChildren);
+
+            dynamic packet = new JObject();
+            packet.LinkType = "component";
+            packet.ShowChildren = showChildren;
+            packet.Cardinality = cardinality.ToString();
+            packet.LinkTarget = temp;
+            this.SDef.AddExtension(Global.ResourceMapLinkUrl, new FhirString(packet.ToString()));
+
             return this;
         }
 
         public SDefEditor AddTargetLink(String url, Cardinality cardinality, bool showChildren = true)
         {
-            this.AddLink("target", url, cardinality, showChildren);
+
+            dynamic packet = new JObject();
+            packet.LinkType = "target";
+            packet.ShowChildren = showChildren;
+            packet.Cardinality = cardinality.ToString();
+            packet.LinkTarget = url;
+            this.SDef.AddExtension(Global.ResourceMapLinkUrl, new FhirString(packet.ToString()));
             return this;
         }
 
         public SDefEditor AddValueSetLink(ValueSet vs, bool showChildren = true)
         {
-            this.AddLink("valueSet", vs.Url, null, showChildren);
-            return this;
-        }
+            dynamic packet = new JObject();
+            packet.LinkType = "valueSet";
+            packet.ShowChildren = showChildren;
+            packet.LinkTarget = vs.Url;
+            this.SDef.AddExtension(Global.ResourceMapLinkUrl, new FhirString(packet.ToString()));
 
-        public SDefEditor AddLink(String linkType,
-            String url,
-            Cardinality cardinality,
-            bool showChildren)
-        {
-            if (linkType.Contains('|'))
-                throw new Exception("linkType can not contain a '|' character");
-
-            this.SDef.AddExtension(Global.ResourceMapLinkUrl,
-                new FhirString($"{linkType}|{cardinality}|{showChildren}|{url}"));
             return this;
         }
 
