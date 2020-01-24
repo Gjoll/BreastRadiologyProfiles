@@ -20,7 +20,6 @@ namespace BreastRadiology.XUnitTests
                 SDefEditor e;
                 ElementTreeNode extensionNode;
 
-
                 e = Self.CreateEditor("BodyDistanceFromExtension",
                     "Body Distance From Extension",
                     "Body Dist. From",
@@ -74,7 +73,6 @@ namespace BreastRadiology.XUnitTests
                         "CodeableConcept",
                         binding);
                 }
-
                 {
                     String sliceName = "distanceFromLandMark";
 
@@ -99,7 +97,6 @@ namespace BreastRadiology.XUnitTests
                         "Quantity",
                         binding);
                 }
-
                 e.IntroDoc
                     .ReviewedStatus("NOONE", "")
                     ;

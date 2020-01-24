@@ -23,7 +23,7 @@
     },
     {
       "url": "http://www.fragment.com/maplink",
-      "valueString": "extension|0..*|True|http://hl7.org/fhir/us/breast-radiology/StructureDefinition/ServiceRecommendationExtension"
+      "valueString": "extension|0..*|True|http://hl7.org/fhir/us/breast-radiology/StructureDefinition/ServiceRecommendationExtension^StructureDefinition-{SDName}-definitions.html#Observation.extension:serviceRecommendation^Service Recommentation"
     }
   ],
   "url": "http://hl7.org/fhir/us/breast-radiology/StructureDefinition/ServiceRecommendationFragment",

@@ -19,7 +19,7 @@ namespace BreastRadiology.XUnitTests
                  cs = Self.CreateCodeSystem(
                          "BreastLocationRegionCS",
                          "Breast Location Region CodeSystem",
-                         "Breast/Location/Region/CodeSystem",
+                         "Breast Location/Region CodeSystem",
                          "Breast body location region code system.",
                          Group_CommonCodesCS,
                          new ConceptDef[]
@@ -78,7 +78,7 @@ namespace BreastRadiology.XUnitTests
                  cs = Self.CreateCodeSystem(
                          "BreastLocationQuadrantCS",
                          "Breast Location Quadrant CodeSystem",
-                         "Breast/Location/Quadrant/CodeSystem",
+                         "Breast Location/Quadrant CodeSystem",
                          "Breast body location quadrant code system.",
                          Group_CommonCodesCS,
                          new ConceptDef[]
@@ -114,7 +114,7 @@ namespace BreastRadiology.XUnitTests
                  cs = Self.CreateCodeSystem(
                          "BreastLocationClockCS",
                          "Breast Location Clock CodeSystem",
-                         "Breast/Location/Clock/CodeSystem",
+                         "Breast Location/Clock CodeSystem",
                          "Breast body location angles (expressed in clock-face units) code system.",
                          Group_CommonCodesCS,
                          new ConceptDef[]
@@ -187,7 +187,7 @@ namespace BreastRadiology.XUnitTests
                  cs = Self.CreateCodeSystem(
                          "BreastLocationDepthCS",
                          "Breast Location Depth CodeSystem",
-                         "Breast/Location/Depth/CodeSystem",
+                         "Breast Location/Depth CodeSystem",
                          "Breast body location depth code system.",
                          Group_CommonCodesCS,
                          new ConceptDef[]
@@ -215,7 +215,7 @@ namespace BreastRadiology.XUnitTests
                 vs = Self.CreateValueSet(
                         "BreastLocationRegionVS",
                         "Breast Location Region ValueSet",
-                        "Breast/Location/RegionValueSet",
+                        "Breast Location/Region ValueSet",
                         "Breast body location region value set.",
                         Group_CommonCodesVS,
                         Self.BreastLocationRegionCS.Value()
@@ -227,7 +227,7 @@ namespace BreastRadiology.XUnitTests
                 vs = Self.CreateValueSet(
                         "BreastLocationClockVS",
                         "Breast Location Clock ValueSet",
-                        "Breast/Location/ClockValueSet",
+                        "Breast Location/Clock ValueSet",
                         "Breast body location angles (expressed in clock-face units) value set.",
                         Group_CommonCodesVS,
                         Self.BreastLocationClockCS.Value()
@@ -239,7 +239,7 @@ namespace BreastRadiology.XUnitTests
                 vs = Self.CreateValueSet(
                         "BreastLocationDepthVS",
                         "Breast Location Depth ValueSet",
-                        "Breast/Location/DepthValueSet",
+                        "Breast Location/Depth ValueSet",
                         "Breast body location depth value set.",
                         Group_CommonCodesVS,
                         Self.BreastLocationDepthCS.Value()
@@ -251,7 +251,7 @@ namespace BreastRadiology.XUnitTests
                 vs = Self.CreateValueSet(
                         "BreastLocationQuadrantVS",
                         "Breast Location Quadrant ValueSet",
-                        "Breast/Location/QuadrantValueSet",
+                        "Breast Location/Quadrant ValueSet",
                         "Breast body location quadrant code system value set.",
                         Group_CommonCodesVS,
                         Self.BreastLocationQuadrantCS.Value()
@@ -260,7 +260,7 @@ namespace BreastRadiology.XUnitTests
 
         //$ Fix: complex extension is wrong - subslices are not identified.
         public SDTaskVar BreastBodyLocationExtension = new SDTaskVar(
-            (out StructureDefinition  s) =>
+            (out StructureDefinition s) =>
             {
                 SDefEditor e;
                 ElementTreeNode extensionNode;
@@ -292,17 +292,31 @@ namespace BreastRadiology.XUnitTests
 
                 extensionNode = e.ConfigureSliceByUrlDiscriminator("extension", true);
 
-                Self.SliceAndBindUrl(e,
-                    extensionNode,
-                    "laterality",
-                    "http://hl7.org/fhir/ValueSet/bodysite-laterality",
-                    "Laterality of the body location",
-                    new Markdown().Paragraph("The laterality of the body location"),
-                    out ElementTreeSlice extensionSlice,
-                    out ElementTreeNode valueXNode
-                    );
-                extensionSlice.ElementDefinition.Single();
+                //Self.SliceAndBindUrl(e,
+                //    extensionNode,
+                //    "laterality",
+                //    "http://hl7.org/fhir/ValueSet/bodysite-laterality",
+                //    "Laterality of the body location",
+                //    new Markdown().Paragraph("The laterality of the body location"),
+                //    out ElementTreeSlice extensionSlice,
+                //    out ElementTreeNode valueXNode
+                //    );
+                //extensionSlice.ElementDefinition.Single();
+                {
+                    ElementDefinition extensionDef = e.ApplyExtension(extensionNode,
+                        "laterality",
+                        "http://hl7.org/fhir/us/skinwoundassessment/StructureDefinition/BodySideExt")
+                        .ElementDefinition
+                            .Single()
+                            .SetDefinition(new Markdown().Paragraph("The laterality of the body location"))
+                        ;
 
+                    //$ This is the build site url. Fix this when bodysite gets published.
+                    e.AddExtensionLink("https://build.fhir.org/ig/HL7/fhir-skin-wound-ig/branches/master/StructureDefinition-BodySideExt.html",
+                        new SDefEditor.Cardinality(extensionDef),
+                        "Laterality", 
+                        Global.ElementAnchor(extensionDef));
+                }
                 {
                     ValueSet binding = Self.BreastLocationQuadrantVS.Value();
 
@@ -326,7 +340,7 @@ namespace BreastRadiology.XUnitTests
 
                     e.AddComponentLink("Quadrant",
                         new SDefEditor.Cardinality(sliceDef),
-                        Global.ElementAnchor(extensionSlice.ElementDefinition),
+                        Global.ElementAnchor(sliceDef),
                         "CodeableConcept",
                         binding.Url);
                 }
@@ -354,7 +368,7 @@ namespace BreastRadiology.XUnitTests
 
                     e.AddComponentLink("Region",
                         new SDefEditor.Cardinality(sliceDef),
-                        Global.ElementAnchor(extensionSlice.ElementDefinition),
+                        Global.ElementAnchor(extensionNode.ElementDefinition),
                         "CodeableConcept",
                         binding.Url);
                 }
@@ -382,7 +396,7 @@ namespace BreastRadiology.XUnitTests
 
                     e.AddComponentLink("ClockDirection",
                         new SDefEditor.Cardinality(sliceDef),
-                        Global.ElementAnchor(extensionSlice.ElementDefinition),
+                        Global.ElementAnchor(extensionNode.ElementDefinition),
                         "CodeableConcept",
                         binding.Url);
                 }
@@ -409,19 +423,38 @@ namespace BreastRadiology.XUnitTests
 
                     e.AddComponentLink("Depth",
                         new SDefEditor.Cardinality(sliceDef),
-                        Global.ElementAnchor(extensionSlice.ElementDefinition),
+                        Global.ElementAnchor(extensionNode.ElementDefinition),
                         "CodeableConcept",
                         binding.Url);
                 }
                 {
-                    ElementDefinition extensionDef = e.ApplyExtension("distanceFromLandmark", Self.BodyDistanceFromExtension.Value(), true).ElementDefinition
-                        .ZeroToOne()
-                        ;
-                    e.AddExtensionLink(extensionDef);
+                    StructureDefinition extensionStructDef = Self.BodyDistanceFromExtension.Value();
+                    ElementTreeSlice extensionSlice = e.ApplyExtension("distanceFromNipple", extensionStructDef, true);
+                    extensionSlice.ElementDefinition.ZeroToOne();
+                    e.AddExtensionLink(extensionStructDef.Url,
+                        new SDefEditor.Cardinality(extensionSlice.ElementDefinition),
+                        "Distance From Nipple",
+                        Global.ElementAnchor(extensionSlice.ElementDefinition));
                 }
-                e.IntroDoc
-                    .ReviewedStatus("NOONE", "")
-                    ;
+                {
+                    StructureDefinition extensionStructDef = Self.BodyDistanceFromExtension.Value();
+                    ElementTreeSlice extensionSlice = e.ApplyExtension("distanceFromChestWall", extensionStructDef, true);
+                    extensionSlice.ElementDefinition.ZeroToOne();
+                    e.AddExtensionLink(extensionStructDef.Url,
+                        new SDefEditor.Cardinality(extensionSlice.ElementDefinition),
+                        "Distance From Chest Wall", 
+                        Global.ElementAnchor(extensionSlice.ElementDefinition));
+                }
+                {
+                    StructureDefinition extensionStructDef = Self.BodyDistanceFromExtension.Value();
+                    ElementTreeSlice extensionSlice = e.ApplyExtension("distanceFromSkin", extensionStructDef, true);
+                    extensionSlice.ElementDefinition.ZeroToOne();
+                    e.AddExtensionLink(extensionStructDef.Url,
+                        new SDefEditor.Cardinality(extensionSlice.ElementDefinition),
+                        "Distance From Skin", 
+                        Global.ElementAnchor(extensionSlice.ElementDefinition));
+                }
+                e.IntroDoc.ReviewedStatus("NOONE", "");
             });
     }
 }

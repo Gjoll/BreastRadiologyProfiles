@@ -12,7 +12,7 @@
     },
     {
       "url": "http://www.fragment.com/mapname",
-      "valueString": "Breast/Location/ClockValueSet"
+      "valueString": "Breast Location/Clock ValueSet"
     }
   ],
   "url": "http://hl7.org/fhir/us/breast-radiology/ValueSet/BreastLocationClockVS",

@@ -48,19 +48,27 @@ namespace BreastRadiology.XUnitTests
                 e.Select("code").Pattern = new CodeableConcept(Loinc, "10193-1");
                 e.Select("specimen").Zero();
                 {
-                    ElementDefinition extensionDef = e.ApplyExtension("Impressions", Self.ImpressionsExtension.Value()).ElementDefinition
+                    StructureDefinition extensionStructureDef = Self.ImpressionsExtension.Value();
+                    ElementDefinition extensionDef = e.ApplyExtension("Impressions", extensionStructureDef).ElementDefinition
                          .Short("Exam impressions")
                          .Definition("Exam impressions.")
                          .ZeroToMany()
                          .MustSupport();
-                    e.AddExtensionLink(extensionDef);
+                    e.AddExtensionLink(extensionStructureDef.Url,
+                        new SDefEditor.Cardinality(extensionDef),
+                        "Impressions", 
+                        Global.ElementAnchor(extensionDef));
                 }
                 {
-                    ElementDefinition extensionDef =  e.ApplyExtension("Related", Self.RelatedClinicalResourcesExtension.Value()).ElementDefinition
+                    StructureDefinition extensionStructureDef = Self.RelatedClinicalResourcesExtension.Value();
+                    ElementDefinition extensionDef =  e.ApplyExtension("Related", extensionStructureDef).ElementDefinition
                          .Short("Related Clinical Resources")
                          .Definition("References to FHIR clinical resoruces used during the exam or referenced by this report.")
                          .ZeroToMany();
-                    e.AddExtensionLink(extensionDef);
+                    e.AddExtensionLink(extensionStructureDef.Url,
+                        new SDefEditor.Cardinality(extensionDef),
+                        "Related Clinical Resources", 
+                        Global.ElementAnchor(extensionDef));
                 }
                 {
                     ValueSet binding = Self.BiRadsAssessmentCategoriesVS.Value();

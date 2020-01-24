@@ -159,7 +159,7 @@
     },
     {
       "url": "http://www.fragment.com/maplink",
-      "valueString": "extension|0..1|True|http://hl7.org/fhir/us/breast-radiology/StructureDefinition/TumorSatelliteExtension"
+      "valueString": "extension|0..1|True|http://hl7.org/fhir/us/breast-radiology/StructureDefinition/TumorSatelliteExtension^StructureDefinition-{SDName}-definitions.html#Observation.extension:tumorSatellite^Tumour Satellite"
     },
     {
       "url": "http://www.fragment.com/mapname",
@@ -219,7 +219,7 @@
     },
     {
       "url": "http://www.fragment.com/maplink",
-      "valueString": "extension|1..1|True|http://hl7.org/fhir/us/breast-radiology/StructureDefinition/BreastBodyLocationExtension"
+      "valueString": "extension|1..1|True|http://hl7.org/fhir/us/breast-radiology/StructureDefinition/BreastBodyLocationExtension^StructureDefinition-{SDName}-definitions.html#Observation.bodySite.extension:breastBodyLocation^Breast Body Location"
     },
     {
       "url": "http://www.fragment.com/mapname",
@@ -279,7 +279,7 @@
     },
     {
       "url": "http://www.fragment.com/maplink",
-      "valueString": "extension|0..*|True|http://hl7.org/fhir/us/breast-radiology/StructureDefinition/ServiceRecommendationExtension"
+      "valueString": "extension|0..*|True|http://hl7.org/fhir/us/breast-radiology/StructureDefinition/ServiceRecommendationExtension^StructureDefinition-{SDName}-definitions.html#Observation.extension:serviceRecommendation^Service Recommentation"
     },
     {
       "url": "http://www.fragment.com/mapname",

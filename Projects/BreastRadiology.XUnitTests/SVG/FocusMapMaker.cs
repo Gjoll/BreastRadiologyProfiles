@@ -79,6 +79,7 @@ namespace BreastRadiology.XUnitTests
                 SENode node = this.CreateResourceNode(focusNode, Color.White, null, false);
                 focusGroup.AppendNode(node);
             }
+            Color extensionReferenceColor = Color.LightSkyBlue;
             Color extensionColor = Color.LightBlue;
             Color valueSetColor = Color.LightGreen;
             Color targetColor = Color.LightCyan;
@@ -155,13 +156,11 @@ namespace BreastRadiology.XUnitTests
                                 String componentHRef = lines[1];
                                 componentHRef = componentHRef.Replace("{SDName}", link.LinkSource.LastUriPart());
 
-                                Debug.Assert(lines[0] != "region");
                                 SENode node = new SENode(0, componentColor, link.Cardinality?.ToString(), componentHRef);
                                 node.AddTextLine(lines[0], componentHRef);
 
                                 if (lines.Length > 2)
                                     node.AddTextLine(lines[2], componentHRef);
-
                                 SENodeGroup nodeGroup = new SENodeGroup(node.AllText(), true);
                                 componentChildren.AppendChild(nodeGroup);
                                 nodeGroup.AppendNode(node);
@@ -190,13 +189,43 @@ namespace BreastRadiology.XUnitTests
 
                         case "extension":
                             {
-                                if (this.map.TryGetNode(link.LinkTarget, out ResourceMap.Node childNode) == true)
+                                String[] lines = link.LinkTarget.Split("^");
+                                String componentHRef = lines[1];
+                                componentHRef = componentHRef.Replace("{SDName}", link.LinkSource.LastUriPart());
+
+                                SENode node = new SENode(0, extensionReferenceColor, link.Cardinality?.ToString(), componentHRef);
+                                node.AddTextLine(lines[2], componentHRef);
+
+                                SENodeGroup nodeGroup = new SENodeGroup(node.AllText(), true);
+                                componentChildren.AppendChild(nodeGroup);
+                                nodeGroup.AppendNode(node);
+
                                 {
-                                    SENode node = this.CreateResourceNode(childNode, extensionColor, link.Cardinality?.ToString(), true);
-                                    SENodeGroup nodeGroup = new SENodeGroup(node.AllText(), false);
-                                    extensionChildren.AppendChild(nodeGroup);
-                                    nodeGroup.AppendNode(node);
+                                    SENodeGroup extGroup = new SENodeGroup("extension", false);
+                                    nodeGroup.AppendChild(extGroup);
+                                    SENode extNode;
+                                    String extUrl = lines[0].Trim();
+                                    if (extUrl.ToLower().StartsWith(Global.BreastRadBaseUrl))
+                                    {
+                                        if (this.map.TryGetNode(extUrl, out ResourceMap.Node vsNode) == false)
+                                            throw new Exception($"Component resource '{extUrl}' not found!");
+                                        extNode = this.CreateResourceNode(vsNode, extensionColor, link.Cardinality?.ToString(), true);
+                                    }
+                                    else
+                                    {
+                                        extNode = new SENode(0, valueSetColor, link.Cardinality?.ToString(), null, extUrl);
+                                        extNode.AddTextLine(extUrl.LastUriPart(), extUrl);
+                                    }
+                                    extGroup.AppendNode(extNode);
                                 }
+
+                                //if (this.map.TryGetNode(link.LinkTarget, out ResourceMap.Node childNode) == true)
+                                //{
+                                //    SENode node = this.CreateResourceNode(childNode, extensionColor, link.Cardinality?.ToString(), true);
+                                //    SENodeGroup nodeGroup = new SENodeGroup(node.AllText(), false);
+                                //    extensionChildren.AppendChild(nodeGroup);
+                                //    nodeGroup.AppendNode(node);
+                                //}
                             }
                             break;
 

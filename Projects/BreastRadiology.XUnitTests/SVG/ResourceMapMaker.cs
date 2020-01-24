@@ -116,7 +116,8 @@ namespace BreastRadiology.XUnitTests
                 {
                     ResourceMap.Link[] childMapLinks = null;
 
-                    ResourceMap.Node childMapNode = this.map.GetNode(link.LinkTarget);
+                    String linkTargetUrl = link.LinkTarget.Split('^')[0];
+                    ResourceMap.Node childMapNode = this.map.GetNode(linkTargetUrl);
                     if (link.ShowChildren)
                     {
                         childMapLinks = childMapNode.LinksByName(linkNames).ToArray();
@@ -137,7 +138,7 @@ namespace BreastRadiology.XUnitTests
                     }
 
                     {
-                        if (this.map.TryGetNode(link.LinkTarget, out ResourceMap.Node linkTargetNode) == false)
+                        if (this.map.TryGetNode(linkTargetUrl, out ResourceMap.Node linkTargetNode) == false)
                             throw new Exception("ResourceMap.Node '{link.ResourceUrl}' not found");
                         SENode node = this.CreateNode(linkTargetNode, link.Cardinality?.ToString());
                         groupChild.AppendNode(node);

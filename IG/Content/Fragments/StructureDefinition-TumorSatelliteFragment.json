@@ -23,7 +23,7 @@
     },
     {
       "url": "http://www.fragment.com/maplink",
-      "valueString": "extension|0..1|True|http://hl7.org/fhir/us/breast-radiology/StructureDefinition/TumorSatelliteExtension"
+      "valueString": "extension|0..1|True|http://hl7.org/fhir/us/breast-radiology/StructureDefinition/TumorSatelliteExtension^StructureDefinition-{SDName}-definitions.html#Observation.extension:tumorSatellite^Tumour Satellite"
     }
   ],
   "url": "http://hl7.org/fhir/us/breast-radiology/StructureDefinition/TumorSatelliteFragment",

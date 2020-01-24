@@ -32,10 +32,16 @@ namespace BreastRadiology.XUnitTests
                     .Select("bodySite")
                     .Single()
                     ;
-                ElementDefinition extensionDef = e.ApplyExtension("serviceRecommendation", Self.ServiceRecommendationExtension.Value(), true).ElementDefinition
-                    .ZeroToMany()
-                    ;
-                e.AddExtensionLink(extensionDef);
+                {
+                    StructureDefinition extensionStructDef = Self.ServiceRecommendationExtension.Value();
+                    ElementDefinition extensionDef = e.ApplyExtension("serviceRecommendation", extensionStructDef, true).ElementDefinition
+                        .ZeroToMany()
+                        ;
+                    e.AddExtensionLink(extensionStructDef.Url,
+                        new SDefEditor.Cardinality(extensionDef),
+                        "Service Recommentation",
+                        Global.ElementAnchor(extensionDef));
+                }
             });
     }
 }

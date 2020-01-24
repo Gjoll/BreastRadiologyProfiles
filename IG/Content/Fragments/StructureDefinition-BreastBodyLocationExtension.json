@@ -19,23 +19,35 @@
     },
     {
       "url": "http://www.fragment.com/maplink",
-      "valueString": "component|1..1|True|Quadrant^StructureDefinition-{SDName}-definitions.html#Extension.extension:laterality^CodeableConcept^http://hl7.org/fhir/us/breast-radiology/ValueSet/BreastLocationQuadrantVS"
+      "valueString": "extension|1..1|True|https://build.fhir.org/ig/HL7/fhir-skin-wound-ig/branches/master/StructureDefinition-BodySideExt.html^StructureDefinition-{SDName}-definitions.html#Extension.extension:laterality^Laterality"
     },
     {
       "url": "http://www.fragment.com/maplink",
-      "valueString": "component|0..*|True|Region^StructureDefinition-{SDName}-definitions.html#Extension.extension:laterality^CodeableConcept^http://hl7.org/fhir/us/breast-radiology/ValueSet/BreastLocationRegionVS"
+      "valueString": "component|1..1|True|Quadrant^StructureDefinition-{SDName}-definitions.html#Extension.extension:quadrant^CodeableConcept^http://hl7.org/fhir/us/breast-radiology/ValueSet/BreastLocationQuadrantVS"
     },
     {
       "url": "http://www.fragment.com/maplink",
-      "valueString": "component|1..1|True|ClockDirection^StructureDefinition-{SDName}-definitions.html#Extension.extension:laterality^CodeableConcept^http://hl7.org/fhir/us/breast-radiology/ValueSet/BreastLocationClockVS"
+      "valueString": "component|0..*|True|Region^StructureDefinition-{SDName}-definitions.html#Extension.extension^CodeableConcept^http://hl7.org/fhir/us/breast-radiology/ValueSet/BreastLocationRegionVS"
     },
     {
       "url": "http://www.fragment.com/maplink",
-      "valueString": "component|1..1|True|Depth^StructureDefinition-{SDName}-definitions.html#Extension.extension:laterality^CodeableConcept^http://hl7.org/fhir/us/breast-radiology/ValueSet/BreastLocationDepthVS"
+      "valueString": "component|1..1|True|ClockDirection^StructureDefinition-{SDName}-definitions.html#Extension.extension^CodeableConcept^http://hl7.org/fhir/us/breast-radiology/ValueSet/BreastLocationClockVS"
     },
     {
       "url": "http://www.fragment.com/maplink",
-      "valueString": "extension|0..1|True|http://hl7.org/fhir/us/breast-radiology/StructureDefinition/BodyDistanceFromExtension"
+      "valueString": "component|1..1|True|Depth^StructureDefinition-{SDName}-definitions.html#Extension.extension^CodeableConcept^http://hl7.org/fhir/us/breast-radiology/ValueSet/BreastLocationDepthVS"
+    },
+    {
+      "url": "http://www.fragment.com/maplink",
+      "valueString": "extension|0..1|True|http://hl7.org/fhir/us/breast-radiology/StructureDefinition/BodyDistanceFromExtension^StructureDefinition-{SDName}-definitions.html#Extension.extension:distanceFromNipple^Distance From Nipple"
+    },
+    {
+      "url": "http://www.fragment.com/maplink",
+      "valueString": "extension|0..1|True|http://hl7.org/fhir/us/breast-radiology/StructureDefinition/BodyDistanceFromExtension^StructureDefinition-{SDName}-definitions.html#Extension.extension:distanceFromChestWall^Distance From Chest Wall"
+    },
+    {
+      "url": "http://www.fragment.com/maplink",
+      "valueString": "extension|0..1|True|http://hl7.org/fhir/us/breast-radiology/StructureDefinition/BodyDistanceFromExtension^StructureDefinition-{SDName}-definitions.html#Extension.extension:distanceFromSkin^Distance From Skin"
     }
   ],
   "url": "http://hl7.org/fhir/us/breast-radiology/StructureDefinition/BreastBodyLocationExtension",
@@ -101,45 +113,25 @@
         "id": "Extension.extension:laterality",
         "path": "Extension.extension",
         "sliceName": "laterality",
-        "short": "Laterality of the body location",
+        "short": "laterality extension",
         "definition": "The laterality of the body location",
+        "comment": "This is one component of a group of components that comprise the observation.",
         "min": 1,
         "max": "1",
         "base": {
           "path": "Extension.extension",
           "min": 0,
           "max": "*"
-        }
-      },
-      {
-        "id": "Extension.extension:laterality.extension",
-        "path": "Extension.extension.extension",
-        "min": 0,
-        "max": "0"
-      },
-      {
-        "id": "Extension.extension:laterality.url",
-        "path": "Extension.extension.url",
-        "definition": "Url for laterality complex extension item",
+        },
         "type": [
           {
-            "code": "uri"
+            "code": "Extension",
+            "profile": [
+              "http://hl7.org/fhir/us/skinwoundassessment/StructureDefinition/BodySideExt"
+            ]
           }
         ],
-        "fixedUrl": "laterality"
-      },
-      {
-        "id": "Extension.extension:laterality.value[x]",
-        "path": "Extension.extension.value[x]",
-        "type": [
-          {
-            "code": "CodeableConcept"
-          }
-        ],
-        "binding": {
-          "strength": "required",
-          "valueSet": "http://hl7.org/fhir/ValueSet/bodysite-laterality"
-        }
+        "isModifier": false
       },
       {
         "id": "Extension.extension:quadrant",
@@ -318,11 +310,59 @@
         }
       },
       {
-        "id": "Extension.extension:distanceFromLandmark",
+        "id": "Extension.extension:distanceFromNipple",
         "path": "Extension.extension",
-        "sliceName": "distanceFromLandmark",
-        "short": "distanceFromLandmark extension",
-        "definition": "This extension slice contains the distanceFromLandmark extension",
+        "sliceName": "distanceFromNipple",
+        "short": "distanceFromNipple extension",
+        "definition": "This extension slice contains the distanceFromNipple extension",
+        "comment": "This is one component of a group of components that comprise the observation.",
+        "min": 0,
+        "max": "1",
+        "base": {
+          "path": "Extension.extension",
+          "min": 0,
+          "max": "*"
+        },
+        "type": [
+          {
+            "code": "Extension",
+            "profile": [
+              "http://hl7.org/fhir/us/breast-radiology/StructureDefinition/BodyDistanceFromExtension"
+            ]
+          }
+        ],
+        "isModifier": false
+      },
+      {
+        "id": "Extension.extension:distanceFromChestWall",
+        "path": "Extension.extension",
+        "sliceName": "distanceFromChestWall",
+        "short": "distanceFromChestWall extension",
+        "definition": "This extension slice contains the distanceFromChestWall extension",
+        "comment": "This is one component of a group of components that comprise the observation.",
+        "min": 0,
+        "max": "1",
+        "base": {
+          "path": "Extension.extension",
+          "min": 0,
+          "max": "*"
+        },
+        "type": [
+          {
+            "code": "Extension",
+            "profile": [
+              "http://hl7.org/fhir/us/breast-radiology/StructureDefinition/BodyDistanceFromExtension"
+            ]
+          }
+        ],
+        "isModifier": false
+      },
+      {
+        "id": "Extension.extension:distanceFromSkin",
+        "path": "Extension.extension",
+        "sliceName": "distanceFromSkin",
+        "short": "distanceFromSkin extension",
+        "definition": "This extension slice contains the distanceFromSkin extension",
         "comment": "This is one component of a group of components that comprise the observation.",
         "min": 0,
         "max": "1",

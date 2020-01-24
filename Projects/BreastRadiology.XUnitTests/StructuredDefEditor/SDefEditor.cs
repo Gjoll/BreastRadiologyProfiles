@@ -260,14 +260,6 @@ namespace BreastRadiology.XUnitTests
             return this;
         }
 
-        public SDefEditor AddExtensionLink(ElementDefinition extensionDef,
-            bool showChildren = true)
-        {
-            String url = extensionDef.Type[0].Profile.First();
-            this.AddLink("extension", url, new Cardinality(extensionDef), showChildren);
-            return this;
-        }
-
         /// <summary>
         /// Keeps cardinality of element.
         /// Note: We keep a reference to the element, so if the cardinality is changed after
@@ -285,10 +277,26 @@ namespace BreastRadiology.XUnitTests
             public override string ToString() => $"{element.Min}..{element.Max}";
         }
 
+        public SDefEditor AddExtensionLink(String url,
+            Cardinality cardinality,
+            String localName,
+            String componentRef,
+            bool showChildren = true)
+        {
+            String temp = $"{url}^{componentRef}^{localName}";
+            this.AddLink("extension",
+                temp, 
+                cardinality,
+                showChildren);
+            return this;
+        }
+
         public SDefEditor AddComponentLink(String url,
             Cardinality cardinality,
             String componentRef,
-            String types, String vs = null, bool showChildren = true)
+            String types,
+            String vs = null,
+            bool showChildren = true)
         {
             String temp = $"{url}^{componentRef}^{types}";
             if (String.IsNullOrEmpty(vs) == false)
