@@ -414,8 +414,7 @@ namespace BreastRadiology.XUnitTests
                         binding.Url);
                 }
                 {
-                    ElementDefinition extensionDef = e
-                        .ApplyExtension("distanceFromLandmark", Self.BodyDistanceFromExtension.Value(), true)
+                    ElementDefinition extensionDef = e.ApplyExtension("distanceFromLandmark", Self.BodyDistanceFromExtension.Value(), true).ElementDefinition
                         .ZeroToOne()
                         ;
                     e.AddExtensionLink(extensionDef);

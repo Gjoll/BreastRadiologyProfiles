@@ -45,7 +45,7 @@ namespace BreastRadiology.XUnitTests
                 ElementTreeNode bodySiteNode = e.Get("bodySite");
                 ElementTreeNode extensionNode = bodySiteNode.DefaultSlice.CreateNode(extension);
                 {
-                    ElementDefinition extensionDef = e.ApplyExtension(extensionNode, "breastBodyLocation", Self.BreastBodyLocationExtension.Value())
+                    ElementDefinition extensionDef = e.ApplyExtension(extensionNode, "breastBodyLocation", Self.BreastBodyLocationExtension.Value()).ElementDefinition
                         .Single()
                         ;
                     e.AddExtensionLink(extensionDef);

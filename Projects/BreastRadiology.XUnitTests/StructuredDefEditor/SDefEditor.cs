@@ -147,28 +147,28 @@ namespace BreastRadiology.XUnitTests
             return extDef;
         }
 
-        public ElementDefinition ApplyExtension(String name,
+        public ElementTreeSlice ApplyExtension(String name,
             StructureDefinition sd,
             bool showChildren = true)
         {
             return ApplyExtension(name, sd.Url, showChildren);
         }
 
-        public ElementDefinition ApplyExtension(ElementTreeNode extDef,
+        public ElementTreeSlice ApplyExtension(ElementTreeNode extDef,
             String name,
             StructureDefinition sd)
         {
             return ApplyExtension(extDef, name, sd.Url);
         }
 
-        public ElementDefinition ApplyExtension(String name,
+        public ElementTreeSlice ApplyExtension(String name,
         String extensionUrl,
         bool showChildren = true)
         {
             return this.ApplyExtension(this.Get("extension"), name, extensionUrl);
         }
 
-        public ElementDefinition ApplyExtension(ElementTreeNode extDef,
+        public ElementTreeSlice ApplyExtension(ElementTreeNode extDef,
             String name,
             String extensionUrl)
         {
@@ -192,7 +192,7 @@ namespace BreastRadiology.XUnitTests
                 Code = "Extension",
                 Profile = new String[] { extensionUrl }
             });
-            return slice.ElementDefinition;
+            return slice;
         }
 
         /// <summary>

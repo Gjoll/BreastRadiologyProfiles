@@ -48,7 +48,7 @@ namespace BreastRadiology.XUnitTests
                 e.Select("code").Pattern = new CodeableConcept(Loinc, "10193-1");
                 e.Select("specimen").Zero();
                 {
-                    ElementDefinition extensionDef = e.ApplyExtension("Impressions", Self.ImpressionsExtension.Value())
+                    ElementDefinition extensionDef = e.ApplyExtension("Impressions", Self.ImpressionsExtension.Value()).ElementDefinition
                          .Short("Exam impressions")
                          .Definition("Exam impressions.")
                          .ZeroToMany()
@@ -56,7 +56,7 @@ namespace BreastRadiology.XUnitTests
                     e.AddExtensionLink(extensionDef);
                 }
                 {
-                    ElementDefinition extensionDef =  e.ApplyExtension("Related", Self.RelatedClinicalResourcesExtension.Value())
+                    ElementDefinition extensionDef =  e.ApplyExtension("Related", Self.RelatedClinicalResourcesExtension.Value()).ElementDefinition
                          .Short("Related Clinical Resources")
                          .Definition("References to FHIR clinical resoruces used during the exam or referenced by this report.")
                          .ZeroToMany();

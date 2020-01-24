@@ -28,8 +28,7 @@ namespace BreastRadiology.XUnitTests
                     .ReviewedStatus("NOONE", "")
                     ;
 
-                ElementDefinition extensionDef = e
-                    .ApplyExtension("tumorSatellite", Self.TumorSatelliteExtension.Value(), true)
+                ElementDefinition extensionDef = e.ApplyExtension("tumorSatellite", Self.TumorSatelliteExtension.Value(), true).ElementDefinition
                     .ZeroToOne()
                     ;
                 e.AddExtensionLink(extensionDef);
