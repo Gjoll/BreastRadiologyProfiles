@@ -197,7 +197,7 @@ namespace BreastRadiology.XUnitTests
                                 node.AddTextLine(lines[2], componentHRef);
 
                                 SENodeGroup nodeGroup = new SENodeGroup(node.AllText(), true);
-                                componentChildren.AppendChild(nodeGroup);
+                                extensionChildren.AppendChild(nodeGroup);
                                 nodeGroup.AppendNode(node);
 
                                 {
@@ -213,8 +213,13 @@ namespace BreastRadiology.XUnitTests
                                     }
                                     else
                                     {
+                                        String name = extUrl.LastUriPart()
+                                            .TrimStart("StructureDefinition-")
+                                            .TrimStart("ValueSet-")
+                                            .TrimEnd(".html")
+                                            ;
                                         extNode = new SENode(0, valueSetColor, link.Cardinality?.ToString(), null, extUrl);
-                                        extNode.AddTextLine(extUrl.LastUriPart(), extUrl);
+                                        extNode.AddTextLine(name, extUrl);
                                     }
                                     extGroup.AppendNode(extNode);
                                 }
