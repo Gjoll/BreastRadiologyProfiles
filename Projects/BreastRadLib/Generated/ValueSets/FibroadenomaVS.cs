@@ -10,7 +10,7 @@ using Hl7.Fhir.Serialization;
 namespace BreastRadLib
 {
 	//+ Header
-	public interface IObservedAreaFragment 
+	public class FibroadenomaVS                                                                                                                // CSBuilder.cs:245
 	//- Header
 	{
 		//+ Fields

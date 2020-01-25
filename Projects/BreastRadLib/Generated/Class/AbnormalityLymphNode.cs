@@ -10,11 +10,11 @@ using Hl7.Fhir.Serialization;
 namespace BreastRadLib
 {
 	//+ Header
-	public class AbnormalityLymphNode : BreastRadBase, IAbnormalityLymphNode
+	public class AbnormalityLymphNode : BreastRadBase, IAbnormalityLymphNode                                                                   // CSBuilder.cs:218
 	//- Header
 	{
 		//+ Fields
-		public List<IAssociatedFeatures> AssociatedFeatures {get;} = new List<IAssociatedFeatures>();
+		public List<IAssociatedFeatures> AssociatedFeatures {get;} = new List<IAssociatedFeatures>();                                             // CSBuilder.cs:166
 		//- Fields
 	}
 }

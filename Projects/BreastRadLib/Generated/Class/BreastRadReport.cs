@@ -10,7 +10,7 @@ using Hl7.Fhir.Serialization;
 namespace BreastRadLib
 {
 	//+ Header
-	public class BreastRadReport : BreastRadBase, IBreastRadReport
+	public class BreastRadReport : BreastRadBase, IBreastRadReport                                                                             // CSBuilder.cs:218
 	//- Header
 	{
 		//+ Fields

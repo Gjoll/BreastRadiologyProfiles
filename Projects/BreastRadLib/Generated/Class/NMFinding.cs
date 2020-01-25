@@ -10,7 +10,7 @@ using Hl7.Fhir.Serialization;
 namespace BreastRadLib
 {
 	//+ Header
-	public class NMFinding : BreastRadBase, INMFinding
+	public class NMFinding : BreastRadBase, INMFinding                                                                                         // CSBuilder.cs:218
 	//- Header
 	{
 		//+ Fields

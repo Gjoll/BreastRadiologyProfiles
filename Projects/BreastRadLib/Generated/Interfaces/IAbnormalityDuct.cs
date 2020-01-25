@@ -10,11 +10,11 @@ using Hl7.Fhir.Serialization;
 namespace BreastRadLib
 {
 	//+ Header
-	public interface IAbnormalityDuct  : IObservationLeafFragment, IBreastRadObservationNoDeviceFragment, IBreastRadObservationNoValueFragment, ICommonComponentsFragment, IShapeComponentsFragment, IObservedCountFragment, INotPreviouslySeenComponentFragment, ICorrespondsWithFragment
+	public interface IAbnormalityDuct  : IObservationLeafFragment, IBreastRadObservationNoDeviceFragment, IBreastRadObservationNoValueFragment, ICommonComponentsFragment, IShapeComponentsFragment, IObservedCountFragment, INotPreviouslySeenComponentFragment, ICorrespondsWithFragment// CSBuilder.cs:210
 	//- Header
 	{
 		//+ Fields
-		List<IConsistentWith> ConsistentWith {get;}
+		List<IConsistentWith> ConsistentWith {get;}                                                                                               // CSBuilder.cs:173
 		//- Fields
 	}
 }

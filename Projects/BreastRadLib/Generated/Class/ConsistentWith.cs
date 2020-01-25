@@ -10,7 +10,7 @@ using Hl7.Fhir.Serialization;
 namespace BreastRadLib
 {
 	//+ Header
-	public class ConsistentWith : BreastRadBase, IConsistentWith
+	public class ConsistentWith : BreastRadBase, IConsistentWith                                                                               // CSBuilder.cs:218
 	//- Header
 	{
 		//+ Fields

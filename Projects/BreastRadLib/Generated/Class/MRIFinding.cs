@@ -10,7 +10,7 @@ using Hl7.Fhir.Serialization;
 namespace BreastRadLib
 {
 	//+ Header
-	public class MRIFinding : BreastRadBase, IMRIFinding
+	public class MRIFinding : BreastRadBase, IMRIFinding                                                                                       // CSBuilder.cs:218
 	//- Header
 	{
 		//+ Fields

@@ -10,7 +10,7 @@ using Hl7.Fhir.Serialization;
 namespace BreastRadLib
 {
 	//+ Header
-	public interface IBodyDistanceFromExtension  : IHeaderFragment
+	public interface IBodyDistanceFromExtension  : IHeaderFragment                                                                             // CSBuilder.cs:210
 	//- Header
 	{
 		//+ Fields

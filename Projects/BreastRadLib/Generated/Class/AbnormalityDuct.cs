@@ -10,11 +10,11 @@ using Hl7.Fhir.Serialization;
 namespace BreastRadLib
 {
 	//+ Header
-	public class AbnormalityDuct : BreastRadBase, IAbnormalityDuct
+	public class AbnormalityDuct : BreastRadBase, IAbnormalityDuct                                                                             // CSBuilder.cs:218
 	//- Header
 	{
 		//+ Fields
-		public List<IConsistentWith> ConsistentWith {get;} = new List<IConsistentWith>();
+		public List<IConsistentWith> ConsistentWith {get;} = new List<IConsistentWith>();                                                         // CSBuilder.cs:166
 		//- Fields
 	}
 }
