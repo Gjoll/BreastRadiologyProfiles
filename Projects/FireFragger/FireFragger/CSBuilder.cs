@@ -14,6 +14,12 @@ namespace FireFragger
 {
     class CSBuilder : ConverterBase, IDisposable
     {
+        class VSInfo
+        {
+            public ValueSet ValueSet;
+            public CodeEditor ClassCode;
+        };
+
         class FragInfo
         {
             public List<FragInfo> ReferencedFragments = new List<FragInfo>();
@@ -27,9 +33,11 @@ namespace FireFragger
         public bool CleanFlag { get; set; } = false;
         FileCleaner fc = new FileCleaner();
 
+        Dictionary<String, VSInfo> valueSets = new Dictionary<string, VSInfo>();
         Dictionary<String, FragInfo> sdFragments = new Dictionary<string, FragInfo>();
         String InterfaceName(FragInfo fi) => $"I{fi.StructDef.Name}";
         String ClassName(FragInfo fi) => $"{fi.StructDef.Name}";
+        String ValueSetName(VSInfo vi) => $"{vi.ValueSet.Name}";
         String PropertyName(string name) => $"{Char.ToUpper(name[0])}{name.Substring(1)}";
 
         /// <summary>
@@ -77,6 +85,18 @@ namespace FireFragger
 
             switch (domainResource)
             {
+                case ValueSet vs:
+                    {
+                        VSInfo vi = new VSInfo
+                        {
+                            ValueSet = vs,
+                            ClassCode = new CodeEditor()
+                        };
+                        vi.ClassCode.Load("TemplateValueSet.txt");
+                        valueSets.Add(vs.Url.ToLower(), vi);
+                    }
+                    break;
+
                 case StructureDefinition sd:
                     {
                         ElementTreeLoader l = new ElementTreeLoader(this);
@@ -143,14 +163,14 @@ namespace FireFragger
                 if (fragInfo.ClassCode != null)
                 {
                     fragInfo.ClassCode.Blocks.Find("Fields")
-                        .AppendLine($"public List<{refInterfaceName}> {fieldName} {{get;}} = new List<{refInterfaceName}>();")
+                        .AppendCode($"public List<{refInterfaceName}> {fieldName} {{get;}} = new List<{refInterfaceName}>();")
                         ;
                 }
 
                 if (level == 0)
                 {
                     fragInfo.InterfaceCode.Blocks.Find("Fields")
-                        .AppendLine($"List<{refInterfaceName}> {fieldName} {{get;}}")
+                        .AppendCode($"List<{refInterfaceName}> {fieldName} {{get;}}")
                         ;
                 }
             }
@@ -187,7 +207,7 @@ namespace FireFragger
 
             iHdr.Clear();
             iHdr
-                .AppendLine($"public interface {InterfaceName(fi)} {interfaces.ToString()}")
+                .AppendCode($"public interface {InterfaceName(fi)} {interfaces.ToString()}")
                 ;
 
             if (fi.ClassCode != null)
@@ -195,18 +215,11 @@ namespace FireFragger
                 CodeBlockNested cHdr = fi.ClassCode.Blocks.Find("Header");
                 cHdr.Clear();
                 cHdr
-                    .AppendLine($"public class {ClassName(fi)} : BreastRadBase, {InterfaceName(fi)}")
+                    .AppendCode($"public class {ClassName(fi)} : BreastRadBase, {InterfaceName(fi)}")
                     ;
             }
         }
 
-
-        void Save(FragInfo fi)
-        {
-            Save(fi.InterfaceCode, Path.Combine(this.OutputDir, "Generated", "Interfaces", $"{InterfaceName(fi)}.cs"));
-            if (fi.ClassCode != null)
-                Save(fi.ClassCode, Path.Combine(this.OutputDir, "Generated", "Class", $"{ClassName(fi)}.cs"));
-        }
 
         void Save(CodeEditor code, String path)
         {
@@ -223,10 +236,33 @@ namespace FireFragger
                 BuildFragment(fi);
         }
 
+        void BuildValueSet(VSInfo vi)
+        {
+            CodeBlockNested vsHdr = vi.ClassCode.Blocks.Find("Header");
+            CodeBlockNested vsFields = vi.ClassCode.Blocks.Find("Fields");
+
+            vsHdr
+                .AppendCode($"public class {vi.ValueSet.Name}")
+                ;
+        }
+
+        void BuildValueSets()
+        {
+            foreach (VSInfo vi in this.valueSets.Values)
+                BuildValueSet(vi);
+        }
         void SaveAll()
         {
             foreach (FragInfo fi in this.sdFragments.Values)
-                Save(fi);
+            {
+                Save(fi.InterfaceCode, Path.Combine(this.OutputDir, "Generated", "Interfaces", $"{InterfaceName(fi)}.cs"));
+                if (fi.ClassCode != null)
+                    Save(fi.ClassCode, Path.Combine(this.OutputDir, "Generated", "Class", $"{ClassName(fi)}.cs"));
+            }
+            foreach (VSInfo vi in this.valueSets.Values)
+            {
+                Save(vi.ClassCode, Path.Combine(this.OutputDir, "Generated", "ValueSets", $"{ValueSetName(vi)}.cs"));
+            }
         }
 
         public void Build()
@@ -241,6 +277,7 @@ namespace FireFragger
             }
 
             BuildReferences();
+            BuildValueSets();
             BuildFragments();
             SaveAll();
 
