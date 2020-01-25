@@ -19,11 +19,11 @@
     },
     {
       "url": "http://www.fragment.com/maplink",
-      "valueString": "{\r\n  \"LinkType\": \"component\",\r\n  \"ShowChildren\": true,\r\n  \"Cardinality\": \"0..1\",\r\n  \"LinkTarget\": \"Index Reference^StructureDefinition-{SDName}-definitions.html#Extension.extension:indexReference^Reference\"\r\n}"
+      "valueString": "{\r\n  \"LinkType\": \"component\",\r\n  \"ShowChildren\": true,\r\n  \"Cardinality\": \"0..1\",\r\n  \"LinkTarget\": \"Index Reference\",\r\n  \"ComponentHRef\": \"StructureDefinition-{SDName}-definitions.html#Extension.extension:indexReference\",\r\n  \"Types\": \"Reference\",\r\n  \"ValueSet\": null\r\n}"
     },
     {
       "url": "http://www.fragment.com/maplink",
-      "valueString": "{\r\n  \"LinkType\": \"component\",\r\n  \"ShowChildren\": true,\r\n  \"Cardinality\": \"0..1\",\r\n  \"LinkTarget\": \"Distance From Index^StructureDefinition-{SDName}-definitions.html#Extension.extension:distanceFromIndex^Quantity^http://hl7.org/fhir/us/breast-radiology/ValueSet/UnitsOfLengthVS\"\r\n}"
+      "valueString": "{\r\n  \"LinkType\": \"component\",\r\n  \"ShowChildren\": true,\r\n  \"Cardinality\": \"0..1\",\r\n  \"LinkTarget\": \"Distance From Index\",\r\n  \"ComponentHRef\": \"StructureDefinition-{SDName}-definitions.html#Extension.extension:distanceFromIndex\",\r\n  \"Types\": \"Quantity\",\r\n  \"ValueSet\": \"http://hl7.org/fhir/us/breast-radiology/ValueSet/UnitsOfLengthVS\"\r\n}"
     }
   ],
   "url": "http://hl7.org/fhir/us/breast-radiology/StructureDefinition/TumorSatelliteExtension",

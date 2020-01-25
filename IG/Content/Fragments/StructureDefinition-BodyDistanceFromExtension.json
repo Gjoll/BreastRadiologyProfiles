@@ -19,11 +19,11 @@
     },
     {
       "url": "http://www.fragment.com/maplink",
-      "valueString": "{\r\n  \"LinkType\": \"component\",\r\n  \"ShowChildren\": true,\r\n  \"Cardinality\": \"0..1\",\r\n  \"LinkTarget\": \"Land Mark^StructureDefinition-{SDName}-definitions.html#Extension.extension:landMark^CodeableConcept^http://hl7.org/fhir/ValueSet/body-site\"\r\n}"
+      "valueString": "{\r\n  \"LinkType\": \"component\",\r\n  \"ShowChildren\": true,\r\n  \"Cardinality\": \"0..1\",\r\n  \"LinkTarget\": \"Land Mark\",\r\n  \"ComponentHRef\": \"StructureDefinition-{SDName}-definitions.html#Extension.extension:landMark\",\r\n  \"Types\": \"CodeableConcept\",\r\n  \"ValueSet\": \"http://hl7.org/fhir/ValueSet/body-site\"\r\n}"
     },
     {
       "url": "http://www.fragment.com/maplink",
-      "valueString": "{\r\n  \"LinkType\": \"component\",\r\n  \"ShowChildren\": true,\r\n  \"Cardinality\": \"0..1\",\r\n  \"LinkTarget\": \"Distance From LandMark^StructureDefinition-{SDName}-definitions.html#Extension.extension:distanceFromLandMark^Quantity^http://hl7.org/fhir/us/breast-radiology/ValueSet/UnitsOfLengthVS\"\r\n}"
+      "valueString": "{\r\n  \"LinkType\": \"component\",\r\n  \"ShowChildren\": true,\r\n  \"Cardinality\": \"0..1\",\r\n  \"LinkTarget\": \"Distance From LandMark\",\r\n  \"ComponentHRef\": \"StructureDefinition-{SDName}-definitions.html#Extension.extension:distanceFromLandMark\",\r\n  \"Types\": \"Quantity\",\r\n  \"ValueSet\": \"http://hl7.org/fhir/us/breast-radiology/ValueSet/UnitsOfLengthVS\"\r\n}"
     }
   ],
   "url": "http://hl7.org/fhir/us/breast-radiology/StructureDefinition/BodyDistanceFromExtension",

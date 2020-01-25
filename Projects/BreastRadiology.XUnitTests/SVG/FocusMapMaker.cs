@@ -89,6 +89,8 @@ namespace BreastRadiology.XUnitTests
                 List<SENode> valueSetParents = new List<SENode>();
                 List<SENode> targetParents = new List<SENode>();
 
+                HashSet<String> alreadyLinkedResources = new HashSet<string>();
+
                 foreach (dynamic link in this.map.TargetLinks(focusNode.ResourceUrl))
                 {
                     switch (link.LinkType.ToObject<String>())
@@ -99,28 +101,43 @@ namespace BreastRadiology.XUnitTests
 
                         case "extension":
                             {
-                                if (this.map.TryGetNode(link.LinkSource, out ResourceMap.Node parentNode) == false)
-                                    throw new Exception($"Parent extension {link.LinkSource} not found in map");
-                                SENode node = this.CreateResourceNode(parentNode, extensionColor, link.Cardinality?.ToString(), true);
-                                extensionParents.Add(node);
+                                String linkSource = link.LinkSource.ToObject<String>();
+                                if (this.map.TryGetNode(linkSource, out ResourceMap.Node parentNode) == false)
+                                    throw new Exception($"Parent extension {linkSource} not found in map");
+                                if (alreadyLinkedResources.Contains(parentNode.ResourceUrl) == false)
+                                {
+                                    alreadyLinkedResources.Add(parentNode.ResourceUrl);
+                                    SENode node = this.CreateResourceNode(parentNode, extensionColor, link.Cardinality?.ToString(), true);
+                                    extensionParents.Add(node);
+                                }
                             }
                             break;
 
                         case "valueSet":
                             {
-                                if (this.map.TryGetNode(link.LinkSource, out ResourceMap.Node parentNode) == false)
-                                    throw new Exception($"Parent valueSet {link.LinkSource} not found in map");
-                                SENode node = this.CreateResourceNode(parentNode, valueSetColor, link.Cardinality?.ToString(), true);
-                                valueSetParents.Add(node);
+                                String linkSource = link.LinkSource.ToObject<String>();
+                                if (this.map.TryGetNode(linkSource, out ResourceMap.Node parentNode) == false)
+                                    throw new Exception($"Parent valueSet {linkSource} not found in map");
+                                if (alreadyLinkedResources.Contains(parentNode.ResourceUrl) == false)
+                                {
+                                    alreadyLinkedResources.Add(parentNode.ResourceUrl);
+                                    SENode node = this.CreateResourceNode(parentNode, valueSetColor, link.Cardinality?.ToString(), true);
+                                    valueSetParents.Add(node);
+                                }
                             }
                             break;
 
                         case "target":
                             {
-                                if (this.map.TryGetNode(link.LinkSource, out ResourceMap.Node parentNode) == false)
-                                    throw new Exception($"Parent resource {link.LinkSource} not found in map");
-                                SENode node = this.CreateResourceNode(parentNode, targetColor, link.Cardinality?.ToString(), true);
-                                targetParents.Add(node);
+                                String linkSource = link.LinkSource.ToObject<String>();
+                                if (this.map.TryGetNode(linkSource, out ResourceMap.Node parentNode) == false)
+                                    throw new Exception($"Parent resource {linkSource} not found in map");
+                                if (alreadyLinkedResources.Contains(parentNode.ResourceUrl) == false)
+                                {
+                                    alreadyLinkedResources.Add(parentNode.ResourceUrl);
+                                    SENode node = this.CreateResourceNode(parentNode, targetColor, link.Cardinality?.ToString(), true);
+                                    targetParents.Add(node);
+                                }
                             }
                             break;
 
@@ -152,25 +169,26 @@ namespace BreastRadiology.XUnitTests
 
                         case "component":
                             {
-                                String[] lines = link.LinkTarget.ToObject<String>().Split("^");
-                                String componentHRef = lines[1];
-                                componentHRef = componentHRef.Replace("{SDName}", link.LinkSource.LastUriPart());
+                                String linkSource = link.LinkSource.ToObject<String>();
+                                String componentHRef = link.ComponentHRef.ToObject<String>().Replace("{SDName}", linkSource.LastUriPart());
 
                                 SENode node = new SENode(0, componentColor, link.Cardinality?.ToString(), componentHRef);
-                                node.AddTextLine(lines[0], componentHRef);
+                                node.AddTextLine(link.LinkTarget.ToObject<String>(), componentHRef);
 
-                                if (lines.Length > 2)
-                                    node.AddTextLine(lines[2], componentHRef);
+                                String types = link.Types?.ToObject<String>();
+                                if (String.IsNullOrEmpty(types) == false)
+                                    node.AddTextLine(types, componentHRef);
                                 SENodeGroup nodeGroup = new SENodeGroup(node.AllText(), true);
                                 componentChildren.AppendChild(nodeGroup);
                                 nodeGroup.AppendNode(node);
 
-                                if (lines.Length > 3)
+                                String vs = link.ValueSet?.ToObject<String>();
+                                if (String.IsNullOrEmpty(vs) == false)
                                 {
                                     SENodeGroup vsGroup = new SENodeGroup("vs", false);
                                     nodeGroup.AppendChild(vsGroup);
                                     SENode vs2Node;
-                                    String vsUrl = lines[3].Trim();
+                                    String vsUrl = vs.Trim();
                                     if (vsUrl.ToLower().StartsWith(Global.BreastRadBaseUrl))
                                     {
                                         if (this.map.TryGetNode(vsUrl, out ResourceMap.Node vsNode) == false)
@@ -189,12 +207,11 @@ namespace BreastRadiology.XUnitTests
 
                         case "extension":
                             {
-                                String[] lines = link.LinkTarget.ToObject<String>().Split("^");
-                                String componentHRef = lines[1];
-                                componentHRef = componentHRef.Replace("{SDName}", link.LinkSource.LastUriPart());
+                                String linkSource = link.LinkSource.ToObject<String>();
+                                String componentHRef = link.ComponentHRef.ToObject<String>().Replace("{SDName}", linkSource.LastUriPart());
 
                                 SENode node = new SENode(0, extensionReferenceColor, link.Cardinality?.ToString(), componentHRef);
-                                node.AddTextLine(lines[2], componentHRef);
+                                node.AddTextLine(link.LocalName.ToObject<String>(), componentHRef);
 
                                 SENodeGroup nodeGroup = new SENodeGroup(node.AllText(), true);
                                 extensionChildren.AppendChild(nodeGroup);
@@ -204,7 +221,7 @@ namespace BreastRadiology.XUnitTests
                                     SENodeGroup extGroup = new SENodeGroup("extension", false);
                                     nodeGroup.AppendChild(extGroup);
                                     SENode extNode;
-                                    String extUrl = lines[0].Trim();
+                                    String extUrl = link.LinkTarget.ToObject<String>().Trim();
                                     if (extUrl.ToLower().StartsWith(Global.BreastRadBaseUrl))
                                     {
                                         if (this.map.TryGetNode(extUrl, out ResourceMap.Node vsNode) == false)

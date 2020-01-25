@@ -27,15 +27,15 @@
     },
     {
       "url": "http://www.fragment.com/maplink",
-      "valueString": "{\r\n  \"LinkType\": \"extension\",\r\n  \"ShowChildren\": true,\r\n  \"Cardinality\": \"0..*\",\r\n  \"LinkTarget\": \"http://hl7.org/fhir/us/breast-radiology/StructureDefinition/ImpressionsExtension^StructureDefinition-{SDName}-definitions.html#DiagnosticReport.extension:impressions^Impressions\"\r\n}"
+      "valueString": "{\r\n  \"LinkType\": \"extension\",\r\n  \"ShowChildren\": true,\r\n  \"Cardinality\": \"0..*\",\r\n  \"ComponentHRef\": \"StructureDefinition-{SDName}-definitions.html#DiagnosticReport.extension:impressions\",\r\n  \"LocalName\": \"Impressions\",\r\n  \"LinkTarget\": \"http://hl7.org/fhir/us/breast-radiology/StructureDefinition/ImpressionsExtension\"\r\n}"
     },
     {
       "url": "http://www.fragment.com/maplink",
-      "valueString": "{\r\n  \"LinkType\": \"extension\",\r\n  \"ShowChildren\": true,\r\n  \"Cardinality\": \"0..*\",\r\n  \"LinkTarget\": \"http://hl7.org/fhir/us/breast-radiology/StructureDefinition/RelatedClinicalResourcesExtension^StructureDefinition-{SDName}-definitions.html#DiagnosticReport.extension:related^Related Clinical Resources\"\r\n}"
+      "valueString": "{\r\n  \"LinkType\": \"extension\",\r\n  \"ShowChildren\": true,\r\n  \"Cardinality\": \"0..*\",\r\n  \"ComponentHRef\": \"StructureDefinition-{SDName}-definitions.html#DiagnosticReport.extension:related\",\r\n  \"LocalName\": \"Related Clinical Resources\",\r\n  \"LinkTarget\": \"http://hl7.org/fhir/us/breast-radiology/StructureDefinition/RelatedClinicalResourcesExtension\"\r\n}"
     },
     {
       "url": "http://www.fragment.com/maplink",
-      "valueString": "{\r\n  \"LinkType\": \"component\",\r\n  \"ShowChildren\": true,\r\n  \"Cardinality\": \"1..1\",\r\n  \"LinkTarget\": \"Conclusion Code^StructureDefinition-{SDName}-definitions.html#DiagnosticReport.conclusionCode^CodeableConcept^http://hl7.org/fhir/us/breast-radiology/ValueSet/BiRadsAssessmentCategoriesVS\"\r\n}"
+      "valueString": "{\r\n  \"LinkType\": \"component\",\r\n  \"ShowChildren\": true,\r\n  \"Cardinality\": \"1..1\",\r\n  \"LinkTarget\": \"Conclusion Code\",\r\n  \"ComponentHRef\": \"StructureDefinition-{SDName}-definitions.html#DiagnosticReport.conclusionCode\",\r\n  \"Types\": \"CodeableConcept\",\r\n  \"ValueSet\": \"http://hl7.org/fhir/us/breast-radiology/ValueSet/BiRadsAssessmentCategoriesVS\"\r\n}"
     },
     {
       "url": "http://www.fragment.com/maplink",

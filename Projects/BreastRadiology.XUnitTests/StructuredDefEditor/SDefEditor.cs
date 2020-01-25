@@ -289,13 +289,13 @@ namespace BreastRadiology.XUnitTests
             String componentRef,
             bool showChildren = true)
         {
-            String temp = $"{url}^{componentRef}^{localName}";
-
             dynamic packet = new JObject();
             packet.LinkType = "extension";
             packet.ShowChildren = showChildren;
             packet.Cardinality = cardinality.ToString();
-            packet.LinkTarget = temp;
+            packet.ComponentHRef = componentRef;
+            packet.LocalName = localName;
+            packet.LinkTarget = url;
             this.SDef.AddExtension(Global.ResourceMapLinkUrl, new FhirString(packet.ToString()));
 
             return this;
@@ -308,15 +308,14 @@ namespace BreastRadiology.XUnitTests
             String vs = null,
             bool showChildren = true)
         {
-            String temp = $"{url}^{componentRef}^{types}";
-            if (String.IsNullOrEmpty(vs) == false)
-                temp += $"^{vs}";
-
             dynamic packet = new JObject();
             packet.LinkType = "component";
             packet.ShowChildren = showChildren;
             packet.Cardinality = cardinality.ToString();
-            packet.LinkTarget = temp;
+            packet.LinkTarget = url;
+            packet.ComponentHRef = componentRef;
+            packet.Types = types;
+            packet.ValueSet = vs;
             this.SDef.AddExtension(Global.ResourceMapLinkUrl, new FhirString(packet.ToString()));
 
             return this;

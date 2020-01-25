@@ -83,7 +83,7 @@
     },
     {
       "url": "http://www.fragment.com/maplink",
-      "valueString": "{\r\n  \"LinkType\": \"component\",\r\n  \"ShowChildren\": true,\r\n  \"Cardinality\": \"1..1\",\r\n  \"LinkTarget\": \"Density Type^StructureDefinition-{SDName}-definitions.html#Observation.component:densityType^CodeableConcept^http://hl7.org/fhir/us/breast-radiology/ValueSet/MGAbnormalityDensityTypeVS\"\r\n}"
+      "valueString": "{\r\n  \"LinkType\": \"component\",\r\n  \"ShowChildren\": true,\r\n  \"Cardinality\": \"1..1\",\r\n  \"LinkTarget\": \"Density Type\",\r\n  \"ComponentHRef\": \"StructureDefinition-{SDName}-definitions.html#Observation.component:densityType\",\r\n  \"Types\": \"CodeableConcept\",\r\n  \"ValueSet\": \"http://hl7.org/fhir/us/breast-radiology/ValueSet/MGAbnormalityDensityTypeVS\"\r\n}"
     }
   ],
   "url": "http://hl7.org/fhir/us/breast-radiology/StructureDefinition/MGAbnormalityDensity",

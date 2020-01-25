@@ -79,7 +79,7 @@
     },
     {
       "url": "http://www.fragment.com/maplink",
-      "valueString": "{\r\n  \"LinkType\": \"component\",\r\n  \"ShowChildren\": true,\r\n  \"Cardinality\": \"0..1\",\r\n  \"LinkTarget\": \"Duct Type^StructureDefinition-{SDName}-definitions.html#Observation.component:ductType^CodeableConcept^http://hl7.org/fhir/us/breast-radiology/ValueSet/AbnormalityDuctTypeVS\"\r\n}"
+      "valueString": "{\r\n  \"LinkType\": \"component\",\r\n  \"ShowChildren\": true,\r\n  \"Cardinality\": \"0..1\",\r\n  \"LinkTarget\": \"Duct Type\",\r\n  \"ComponentHRef\": \"StructureDefinition-{SDName}-definitions.html#Observation.component:ductType\",\r\n  \"Types\": \"CodeableConcept\",\r\n  \"ValueSet\": \"http://hl7.org/fhir/us/breast-radiology/ValueSet/AbnormalityDuctTypeVS\"\r\n}"
     }
   ],
   "url": "http://hl7.org/fhir/us/breast-radiology/StructureDefinition/AbnormalityDuct",

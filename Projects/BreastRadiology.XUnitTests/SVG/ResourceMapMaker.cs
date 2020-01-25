@@ -116,7 +116,7 @@ namespace BreastRadiology.XUnitTests
                 {
                     dynamic[] childMapLinks = null;
 
-                    String linkTargetUrl = link.LinkTarget.ToObject<String>().Split('^')[0];
+                    String linkTargetUrl = link.LinkTarget.ToObject<String>();
                     ResourceMap.Node childMapNode = this.map.GetNode(linkTargetUrl);
                     if (link.ShowChildren.ToObject<Boolean>())
                     {
