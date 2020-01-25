@@ -351,13 +351,13 @@ namespace FireFragger
 
             definitionsBlock
                 .AppendLine("/// <summary>")
-                .AppendLine("/// This class creates a type for codings of this class, that explicitly converts to Coding")
+                .AppendLine("/// This class creates a type for codings of this class, that implicitly converts to Coding")
                 .AppendLine("/// Allows type checking for these codes.")
                 .AppendLine("/// </summary>")
                  .AppendCode($"public class TCoding")
                 .OpenBrace()
                 .AppendCode($"Coding value;")
-                .AppendCode($"public static explicit operator Coding(TCoding tCode)")
+                .AppendCode($"public static implicit operator Coding(TCoding tCode)")
                 .OpenBrace()
                 .AppendCode($"return tCode.value;")
                 .CloseBrace()
@@ -387,7 +387,7 @@ namespace FireFragger
                         .AppendCode($"public TCoding {codeName} = new TCoding({codingReference});")
                         ;
                     constructorBlock
-                        .AppendCode($"this.Members.Add({codingReference});")
+                        .AppendCode($"this.Members.Add(this.{codeName});")
                         ;
                 }
             }

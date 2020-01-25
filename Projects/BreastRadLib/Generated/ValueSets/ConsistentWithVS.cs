@@ -15,13 +15,13 @@ namespace BreastRadLib
 	{
 		//+ Fields
 		/// <summary>
-		/// This class creates a type for codings of this class, that explicitly converts to Coding
+		/// This class creates a type for codings of this class, that implicitly converts to Coding
 		/// Allows type checking for these codes.
 		/// </summary>
 		public class TCoding                                                                                                                      // CSBuilder.cs:357
 		{                                                                                                                                         // CSBuilder.cs:358
 		    Coding value;                                                                                                                         // CSBuilder.cs:359
-		    public static explicit operator Coding(TCoding tCode)                                                                                 // CSBuilder.cs:360
+		    public static implicit operator Coding(TCoding tCode)                                                                                 // CSBuilder.cs:360
 		    {                                                                                                                                     // CSBuilder.cs:361
 		        return tCode.value;                                                                                                               // CSBuilder.cs:362
 		    }                                                                                                                                     // CSBuilder.cs:363
@@ -111,80 +111,80 @@ namespace BreastRadLib
 		public ConsistentWithVS()                                                                                                                 // CSBuilder.cs:345
 		{                                                                                                                                         // CSBuilder.cs:346
 		    this.Members = new List<Coding>();                                                                                                    // CSBuilder.cs:347
-		    this.Members.Add(ConsistentWithCodeSystemCS.Code_Abscess);                                                                            // CSBuilder.cs:390
-		    this.Members.Add(ConsistentWithCodeSystemCS.Code_Angiolipoma);                                                                        // CSBuilder.cs:390
-		    this.Members.Add(ConsistentWithCodeSystemCS.Code_ApocrineMetaplasia);                                                                 // CSBuilder.cs:390
-		    this.Members.Add(ConsistentWithCodeSystemCS.Code_Artifact);                                                                           // CSBuilder.cs:390
-		    this.Members.Add(ConsistentWithCodeSystemCS.Code_AtypicalHyperplasia);                                                                // CSBuilder.cs:390
-		    this.Members.Add(ConsistentWithCodeSystemCS.Code_AxillaryLymphNode);                                                                  // CSBuilder.cs:390
-		    this.Members.Add(ConsistentWithCodeSystemCS.Code_Carcinoma);                                                                          // CSBuilder.cs:390
-		    this.Members.Add(ConsistentWithCodeSystemCS.Code_CarcinomaKnown);                                                                     // CSBuilder.cs:390
-		    this.Members.Add(ConsistentWithCodeSystemCS.Code_ClusterOfCysts);                                                                     // CSBuilder.cs:390
-		    this.Members.Add(ConsistentWithCodeSystemCS.Code_Cyst);                                                                               // CSBuilder.cs:390
-		    this.Members.Add(ConsistentWithCodeSystemCS.Code_CystComplex);                                                                        // CSBuilder.cs:390
-		    this.Members.Add(ConsistentWithCodeSystemCS.Code_CystComplicated);                                                                    // CSBuilder.cs:390
-		    this.Members.Add(ConsistentWithCodeSystemCS.Code_CystOil);                                                                            // CSBuilder.cs:390
-		    this.Members.Add(ConsistentWithCodeSystemCS.Code_CystSebaceous);                                                                      // CSBuilder.cs:390
-		    this.Members.Add(ConsistentWithCodeSystemCS.Code_CystSimple);                                                                         // CSBuilder.cs:390
-		    this.Members.Add(ConsistentWithCodeSystemCS.Code_CystsComplex);                                                                       // CSBuilder.cs:390
-		    this.Members.Add(ConsistentWithCodeSystemCS.Code_CystsComplicated);                                                                   // CSBuilder.cs:390
-		    this.Members.Add(ConsistentWithCodeSystemCS.Code_CystsMicroClustered);                                                                // CSBuilder.cs:390
-		    this.Members.Add(ConsistentWithCodeSystemCS.Code_DCIS);                                                                               // CSBuilder.cs:390
-		    this.Members.Add(ConsistentWithCodeSystemCS.Code_Debris);                                                                             // CSBuilder.cs:390
-		    this.Members.Add(ConsistentWithCodeSystemCS.Code_Deodorant);                                                                          // CSBuilder.cs:390
-		    this.Members.Add(ConsistentWithCodeSystemCS.Code_DermalCalcification);                                                                // CSBuilder.cs:390
-		    this.Members.Add(ConsistentWithCodeSystemCS.Code_DuctEctasia);                                                                        // CSBuilder.cs:390
-		    this.Members.Add(ConsistentWithCodeSystemCS.Code_Edema);                                                                              // CSBuilder.cs:390
-		    this.Members.Add(ConsistentWithCodeSystemCS.Code_FatLobule);                                                                          // CSBuilder.cs:390
-		    this.Members.Add(ConsistentWithCodeSystemCS.Code_FatNecrosis);                                                                        // CSBuilder.cs:390
-		    this.Members.Add(ConsistentWithCodeSystemCS.Code_Fibroadenolipoma);                                                                   // CSBuilder.cs:390
-		    this.Members.Add(ConsistentWithCodeSystemCS.Code_Fibroadenoma);                                                                       // CSBuilder.cs:390
-		    this.Members.Add(ConsistentWithCodeSystemCS.Code_FibroadenomaDegenerating);                                                           // CSBuilder.cs:390
-		    this.Members.Add(ConsistentWithCodeSystemCS.Code_FibrocysticChange);                                                                  // CSBuilder.cs:390
-		    this.Members.Add(ConsistentWithCodeSystemCS.Code_FibroglandularTissue);                                                               // CSBuilder.cs:390
-		    this.Members.Add(ConsistentWithCodeSystemCS.Code_Fibrosis);                                                                           // CSBuilder.cs:390
-		    this.Members.Add(ConsistentWithCodeSystemCS.Code_FibrousRidge);                                                                       // CSBuilder.cs:390
-		    this.Members.Add(ConsistentWithCodeSystemCS.Code_Folliculitis);                                                                       // CSBuilder.cs:390
-		    this.Members.Add(ConsistentWithCodeSystemCS.Code_Gynecomastia);                                                                       // CSBuilder.cs:390
-		    this.Members.Add(ConsistentWithCodeSystemCS.Code_Hamartoma);                                                                          // CSBuilder.cs:390
-		    this.Members.Add(ConsistentWithCodeSystemCS.Code_Hematoma);                                                                           // CSBuilder.cs:390
-		    this.Members.Add(ConsistentWithCodeSystemCS.Code_HormonalStimulation);                                                                // CSBuilder.cs:390
-		    this.Members.Add(ConsistentWithCodeSystemCS.Code_IntracysticLesion);                                                                  // CSBuilder.cs:390
-		    this.Members.Add(ConsistentWithCodeSystemCS.Code_IntramammaryNode);                                                                   // CSBuilder.cs:390
-		    this.Members.Add(ConsistentWithCodeSystemCS.Code_Lipoma);                                                                             // CSBuilder.cs:390
-		    this.Members.Add(ConsistentWithCodeSystemCS.Code_LumpectomyCavity);                                                                   // CSBuilder.cs:390
-		    this.Members.Add(ConsistentWithCodeSystemCS.Code_LumpectomySite);                                                                     // CSBuilder.cs:390
-		    this.Members.Add(ConsistentWithCodeSystemCS.Code_LymphNode);                                                                          // CSBuilder.cs:390
-		    this.Members.Add(ConsistentWithCodeSystemCS.Code_LymphNodeEnlarged);                                                                  // CSBuilder.cs:390
-		    this.Members.Add(ConsistentWithCodeSystemCS.Code_LymphNodeNormal);                                                                    // CSBuilder.cs:390
-		    this.Members.Add(ConsistentWithCodeSystemCS.Code_LymphNodePathological);                                                              // CSBuilder.cs:390
-		    this.Members.Add(ConsistentWithCodeSystemCS.Code_MassSolid);                                                                          // CSBuilder.cs:390
-		    this.Members.Add(ConsistentWithCodeSystemCS.Code_MassSolidWTumorVasc);                                                                // CSBuilder.cs:390
-		    this.Members.Add(ConsistentWithCodeSystemCS.Code_Mastitis);                                                                           // CSBuilder.cs:390
-		    this.Members.Add(ConsistentWithCodeSystemCS.Code_MilkOfCalcium);                                                                      // CSBuilder.cs:390
-		    this.Members.Add(ConsistentWithCodeSystemCS.Code_MultiFocalCancer);                                                                   // CSBuilder.cs:390
-		    this.Members.Add(ConsistentWithCodeSystemCS.Code_PapillaryLesion);                                                                    // CSBuilder.cs:390
-		    this.Members.Add(ConsistentWithCodeSystemCS.Code_Papilloma);                                                                          // CSBuilder.cs:390
-		    this.Members.Add(ConsistentWithCodeSystemCS.Code_PhyllodesTumor);                                                                     // CSBuilder.cs:390
-		    this.Members.Add(ConsistentWithCodeSystemCS.Code_PostLumpectomyScar);                                                                 // CSBuilder.cs:390
-		    this.Members.Add(ConsistentWithCodeSystemCS.Code_PostSurgicalScar);                                                                   // CSBuilder.cs:390
-		    this.Members.Add(ConsistentWithCodeSystemCS.Code_PreviousBiopsy);                                                                     // CSBuilder.cs:390
-		    this.Members.Add(ConsistentWithCodeSystemCS.Code_PreviousSurgery);                                                                    // CSBuilder.cs:390
-		    this.Members.Add(ConsistentWithCodeSystemCS.Code_PreviousTrauma);                                                                     // CSBuilder.cs:390
-		    this.Members.Add(ConsistentWithCodeSystemCS.Code_RadialScar);                                                                         // CSBuilder.cs:390
-		    this.Members.Add(ConsistentWithCodeSystemCS.Code_RadiationChanges);                                                                   // CSBuilder.cs:390
-		    this.Members.Add(ConsistentWithCodeSystemCS.Code_RadiationTherapy);                                                                   // CSBuilder.cs:390
-		    this.Members.Add(ConsistentWithCodeSystemCS.Code_Scar);                                                                               // CSBuilder.cs:390
-		    this.Members.Add(ConsistentWithCodeSystemCS.Code_ScarWithShadowing);                                                                  // CSBuilder.cs:390
-		    this.Members.Add(ConsistentWithCodeSystemCS.Code_SclerosingAdenosis);                                                                 // CSBuilder.cs:390
-		    this.Members.Add(ConsistentWithCodeSystemCS.Code_SecretoryCalcification);                                                             // CSBuilder.cs:390
-		    this.Members.Add(ConsistentWithCodeSystemCS.Code_SentinelNode);                                                                       // CSBuilder.cs:390
-		    this.Members.Add(ConsistentWithCodeSystemCS.Code_Seroma);                                                                             // CSBuilder.cs:390
-		    this.Members.Add(ConsistentWithCodeSystemCS.Code_SkinLesion);                                                                         // CSBuilder.cs:390
-		    this.Members.Add(ConsistentWithCodeSystemCS.Code_Surgery);                                                                            // CSBuilder.cs:390
-		    this.Members.Add(ConsistentWithCodeSystemCS.Code_Trauma);                                                                             // CSBuilder.cs:390
-		    this.Members.Add(ConsistentWithCodeSystemCS.Code_VascularCalcifications);                                                             // CSBuilder.cs:390
-		    this.Members.Add(ConsistentWithCodeSystemCS.Code_VenousStasis);                                                                       // CSBuilder.cs:390
+		    this.Members.Add(this.Code_Abscess);                                                                                                  // CSBuilder.cs:390
+		    this.Members.Add(this.Code_Angiolipoma);                                                                                              // CSBuilder.cs:390
+		    this.Members.Add(this.Code_ApocrineMetaplasia);                                                                                       // CSBuilder.cs:390
+		    this.Members.Add(this.Code_Artifact);                                                                                                 // CSBuilder.cs:390
+		    this.Members.Add(this.Code_AtypicalHyperplasia);                                                                                      // CSBuilder.cs:390
+		    this.Members.Add(this.Code_AxillaryLymphNode);                                                                                        // CSBuilder.cs:390
+		    this.Members.Add(this.Code_Carcinoma);                                                                                                // CSBuilder.cs:390
+		    this.Members.Add(this.Code_CarcinomaKnown);                                                                                           // CSBuilder.cs:390
+		    this.Members.Add(this.Code_ClusterOfCysts);                                                                                           // CSBuilder.cs:390
+		    this.Members.Add(this.Code_Cyst);                                                                                                     // CSBuilder.cs:390
+		    this.Members.Add(this.Code_CystComplex);                                                                                              // CSBuilder.cs:390
+		    this.Members.Add(this.Code_CystComplicated);                                                                                          // CSBuilder.cs:390
+		    this.Members.Add(this.Code_CystOil);                                                                                                  // CSBuilder.cs:390
+		    this.Members.Add(this.Code_CystSebaceous);                                                                                            // CSBuilder.cs:390
+		    this.Members.Add(this.Code_CystSimple);                                                                                               // CSBuilder.cs:390
+		    this.Members.Add(this.Code_CystsComplex);                                                                                             // CSBuilder.cs:390
+		    this.Members.Add(this.Code_CystsComplicated);                                                                                         // CSBuilder.cs:390
+		    this.Members.Add(this.Code_CystsMicroClustered);                                                                                      // CSBuilder.cs:390
+		    this.Members.Add(this.Code_DCIS);                                                                                                     // CSBuilder.cs:390
+		    this.Members.Add(this.Code_Debris);                                                                                                   // CSBuilder.cs:390
+		    this.Members.Add(this.Code_Deodorant);                                                                                                // CSBuilder.cs:390
+		    this.Members.Add(this.Code_DermalCalcification);                                                                                      // CSBuilder.cs:390
+		    this.Members.Add(this.Code_DuctEctasia);                                                                                              // CSBuilder.cs:390
+		    this.Members.Add(this.Code_Edema);                                                                                                    // CSBuilder.cs:390
+		    this.Members.Add(this.Code_FatLobule);                                                                                                // CSBuilder.cs:390
+		    this.Members.Add(this.Code_FatNecrosis);                                                                                              // CSBuilder.cs:390
+		    this.Members.Add(this.Code_Fibroadenolipoma);                                                                                         // CSBuilder.cs:390
+		    this.Members.Add(this.Code_Fibroadenoma);                                                                                             // CSBuilder.cs:390
+		    this.Members.Add(this.Code_FibroadenomaDegenerating);                                                                                 // CSBuilder.cs:390
+		    this.Members.Add(this.Code_FibrocysticChange);                                                                                        // CSBuilder.cs:390
+		    this.Members.Add(this.Code_FibroglandularTissue);                                                                                     // CSBuilder.cs:390
+		    this.Members.Add(this.Code_Fibrosis);                                                                                                 // CSBuilder.cs:390
+		    this.Members.Add(this.Code_FibrousRidge);                                                                                             // CSBuilder.cs:390
+		    this.Members.Add(this.Code_Folliculitis);                                                                                             // CSBuilder.cs:390
+		    this.Members.Add(this.Code_Gynecomastia);                                                                                             // CSBuilder.cs:390
+		    this.Members.Add(this.Code_Hamartoma);                                                                                                // CSBuilder.cs:390
+		    this.Members.Add(this.Code_Hematoma);                                                                                                 // CSBuilder.cs:390
+		    this.Members.Add(this.Code_HormonalStimulation);                                                                                      // CSBuilder.cs:390
+		    this.Members.Add(this.Code_IntracysticLesion);                                                                                        // CSBuilder.cs:390
+		    this.Members.Add(this.Code_IntramammaryNode);                                                                                         // CSBuilder.cs:390
+		    this.Members.Add(this.Code_Lipoma);                                                                                                   // CSBuilder.cs:390
+		    this.Members.Add(this.Code_LumpectomyCavity);                                                                                         // CSBuilder.cs:390
+		    this.Members.Add(this.Code_LumpectomySite);                                                                                           // CSBuilder.cs:390
+		    this.Members.Add(this.Code_LymphNode);                                                                                                // CSBuilder.cs:390
+		    this.Members.Add(this.Code_LymphNodeEnlarged);                                                                                        // CSBuilder.cs:390
+		    this.Members.Add(this.Code_LymphNodeNormal);                                                                                          // CSBuilder.cs:390
+		    this.Members.Add(this.Code_LymphNodePathological);                                                                                    // CSBuilder.cs:390
+		    this.Members.Add(this.Code_MassSolid);                                                                                                // CSBuilder.cs:390
+		    this.Members.Add(this.Code_MassSolidWTumorVasc);                                                                                      // CSBuilder.cs:390
+		    this.Members.Add(this.Code_Mastitis);                                                                                                 // CSBuilder.cs:390
+		    this.Members.Add(this.Code_MilkOfCalcium);                                                                                            // CSBuilder.cs:390
+		    this.Members.Add(this.Code_MultiFocalCancer);                                                                                         // CSBuilder.cs:390
+		    this.Members.Add(this.Code_PapillaryLesion);                                                                                          // CSBuilder.cs:390
+		    this.Members.Add(this.Code_Papilloma);                                                                                                // CSBuilder.cs:390
+		    this.Members.Add(this.Code_PhyllodesTumor);                                                                                           // CSBuilder.cs:390
+		    this.Members.Add(this.Code_PostLumpectomyScar);                                                                                       // CSBuilder.cs:390
+		    this.Members.Add(this.Code_PostSurgicalScar);                                                                                         // CSBuilder.cs:390
+		    this.Members.Add(this.Code_PreviousBiopsy);                                                                                           // CSBuilder.cs:390
+		    this.Members.Add(this.Code_PreviousSurgery);                                                                                          // CSBuilder.cs:390
+		    this.Members.Add(this.Code_PreviousTrauma);                                                                                           // CSBuilder.cs:390
+		    this.Members.Add(this.Code_RadialScar);                                                                                               // CSBuilder.cs:390
+		    this.Members.Add(this.Code_RadiationChanges);                                                                                         // CSBuilder.cs:390
+		    this.Members.Add(this.Code_RadiationTherapy);                                                                                         // CSBuilder.cs:390
+		    this.Members.Add(this.Code_Scar);                                                                                                     // CSBuilder.cs:390
+		    this.Members.Add(this.Code_ScarWithShadowing);                                                                                        // CSBuilder.cs:390
+		    this.Members.Add(this.Code_SclerosingAdenosis);                                                                                       // CSBuilder.cs:390
+		    this.Members.Add(this.Code_SecretoryCalcification);                                                                                   // CSBuilder.cs:390
+		    this.Members.Add(this.Code_SentinelNode);                                                                                             // CSBuilder.cs:390
+		    this.Members.Add(this.Code_Seroma);                                                                                                   // CSBuilder.cs:390
+		    this.Members.Add(this.Code_SkinLesion);                                                                                               // CSBuilder.cs:390
+		    this.Members.Add(this.Code_Surgery);                                                                                                  // CSBuilder.cs:390
+		    this.Members.Add(this.Code_Trauma);                                                                                                   // CSBuilder.cs:390
+		    this.Members.Add(this.Code_VascularCalcifications);                                                                                   // CSBuilder.cs:390
+		    this.Members.Add(this.Code_VenousStasis);                                                                                             // CSBuilder.cs:390
 		}                                                                                                                                         // CSBuilder.cs:349
 		//- Fields
 	}

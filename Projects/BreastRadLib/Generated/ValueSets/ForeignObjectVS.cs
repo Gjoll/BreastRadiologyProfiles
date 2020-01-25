@@ -15,13 +15,13 @@ namespace BreastRadLib
 	{
 		//+ Fields
 		/// <summary>
-		/// This class creates a type for codings of this class, that explicitly converts to Coding
+		/// This class creates a type for codings of this class, that implicitly converts to Coding
 		/// Allows type checking for these codes.
 		/// </summary>
 		public class TCoding                                                                                                                      // CSBuilder.cs:357
 		{                                                                                                                                         // CSBuilder.cs:358
 		    Coding value;                                                                                                                         // CSBuilder.cs:359
-		    public static explicit operator Coding(TCoding tCode)                                                                                 // CSBuilder.cs:360
+		    public static implicit operator Coding(TCoding tCode)                                                                                 // CSBuilder.cs:360
 		    {                                                                                                                                     // CSBuilder.cs:361
 		        return tCode.value;                                                                                                               // CSBuilder.cs:362
 		    }                                                                                                                                     // CSBuilder.cs:363
@@ -72,41 +72,41 @@ namespace BreastRadLib
 		public ForeignObjectVS()                                                                                                                  // CSBuilder.cs:345
 		{                                                                                                                                         // CSBuilder.cs:346
 		    this.Members = new List<Coding>();                                                                                                    // CSBuilder.cs:347
-		    this.Members.Add(ForeignObjectCS.Code_BBPellet);                                                                                      // CSBuilder.cs:390
-		    this.Members.Add(ForeignObjectCS.Code_BiopsyClip);                                                                                    // CSBuilder.cs:390
-		    this.Members.Add(ForeignObjectCS.Code_BreastMarker);                                                                                  // CSBuilder.cs:390
-		    this.Members.Add(ForeignObjectCS.Code_Calcification);                                                                                 // CSBuilder.cs:390
-		    this.Members.Add(ForeignObjectCS.Code_CatheterSleeves);                                                                               // CSBuilder.cs:390
-		    this.Members.Add(ForeignObjectCS.Code_ChemotherapyPort);                                                                              // CSBuilder.cs:390
-		    this.Members.Add(ForeignObjectCS.Code_Clip);                                                                                          // CSBuilder.cs:390
-		    this.Members.Add(ForeignObjectCS.Code_Coil);                                                                                          // CSBuilder.cs:390
-		    this.Members.Add(ForeignObjectCS.Code_Glass);                                                                                         // CSBuilder.cs:390
-		    this.Members.Add(ForeignObjectCS.Code_GoldSeed);                                                                                      // CSBuilder.cs:390
-		    this.Members.Add(ForeignObjectCS.Code_GunshotWound);                                                                                  // CSBuilder.cs:390
-		    this.Members.Add(ForeignObjectCS.Code_MarkerClip);                                                                                    // CSBuilder.cs:390
-		    this.Members.Add(ForeignObjectCS.Code_Metal);                                                                                         // CSBuilder.cs:390
-		    this.Members.Add(ForeignObjectCS.Code_MetallicMarker);                                                                                // CSBuilder.cs:390
-		    this.Members.Add(ForeignObjectCS.Code_Needle);                                                                                        // CSBuilder.cs:390
-		    this.Members.Add(ForeignObjectCS.Code_NippleJewelry);                                                                                 // CSBuilder.cs:390
-		    this.Members.Add(ForeignObjectCS.Code_NonMetallicBody);                                                                               // CSBuilder.cs:390
-		    this.Members.Add(ForeignObjectCS.Code_Pacemaker);                                                                                     // CSBuilder.cs:390
-		    this.Members.Add(ForeignObjectCS.Code_SiliconeGranuloma);                                                                             // CSBuilder.cs:390
-		    this.Members.Add(ForeignObjectCS.Code_Sponge);                                                                                        // CSBuilder.cs:390
-		    this.Members.Add(ForeignObjectCS.Code_SurgicalClip);                                                                                  // CSBuilder.cs:390
-		    this.Members.Add(ForeignObjectCS.Code_Swab);                                                                                          // CSBuilder.cs:390
-		    this.Members.Add(ForeignObjectCS.Code_TitaniumClip);                                                                                  // CSBuilder.cs:390
-		    this.Members.Add(ForeignObjectCS.Code_TitaniumMarkerClip);                                                                            // CSBuilder.cs:390
-		    this.Members.Add(ForeignObjectCS.Code_Wire);                                                                                          // CSBuilder.cs:390
-		    this.Members.Add(ForeignObjectCS.Code_WireFragment);                                                                                  // CSBuilder.cs:390
-		    this.Members.Add(ForeignObjectCS.Code_BBPellets);                                                                                     // CSBuilder.cs:390
-		    this.Members.Add(ForeignObjectCS.Code_BiopsyClips);                                                                                   // CSBuilder.cs:390
-		    this.Members.Add(ForeignObjectCS.Code_BreastMarkers);                                                                                 // CSBuilder.cs:390
-		    this.Members.Add(ForeignObjectCS.Code_Calcifications);                                                                                // CSBuilder.cs:390
-		    this.Members.Add(ForeignObjectCS.Code_Clips);                                                                                         // CSBuilder.cs:390
-		    this.Members.Add(ForeignObjectCS.Code_MetallicMarkers);                                                                               // CSBuilder.cs:390
-		    this.Members.Add(ForeignObjectCS.Code_MetallicObjects);                                                                               // CSBuilder.cs:390
-		    this.Members.Add(ForeignObjectCS.Code_SurgicalClips);                                                                                 // CSBuilder.cs:390
-		    this.Members.Add(ForeignObjectCS.Code_TitaniumClips);                                                                                 // CSBuilder.cs:390
+		    this.Members.Add(this.Code_BBPellet);                                                                                                 // CSBuilder.cs:390
+		    this.Members.Add(this.Code_BiopsyClip);                                                                                               // CSBuilder.cs:390
+		    this.Members.Add(this.Code_BreastMarker);                                                                                             // CSBuilder.cs:390
+		    this.Members.Add(this.Code_Calcification);                                                                                            // CSBuilder.cs:390
+		    this.Members.Add(this.Code_CatheterSleeves);                                                                                          // CSBuilder.cs:390
+		    this.Members.Add(this.Code_ChemotherapyPort);                                                                                         // CSBuilder.cs:390
+		    this.Members.Add(this.Code_Clip);                                                                                                     // CSBuilder.cs:390
+		    this.Members.Add(this.Code_Coil);                                                                                                     // CSBuilder.cs:390
+		    this.Members.Add(this.Code_Glass);                                                                                                    // CSBuilder.cs:390
+		    this.Members.Add(this.Code_GoldSeed);                                                                                                 // CSBuilder.cs:390
+		    this.Members.Add(this.Code_GunshotWound);                                                                                             // CSBuilder.cs:390
+		    this.Members.Add(this.Code_MarkerClip);                                                                                               // CSBuilder.cs:390
+		    this.Members.Add(this.Code_Metal);                                                                                                    // CSBuilder.cs:390
+		    this.Members.Add(this.Code_MetallicMarker);                                                                                           // CSBuilder.cs:390
+		    this.Members.Add(this.Code_Needle);                                                                                                   // CSBuilder.cs:390
+		    this.Members.Add(this.Code_NippleJewelry);                                                                                            // CSBuilder.cs:390
+		    this.Members.Add(this.Code_NonMetallicBody);                                                                                          // CSBuilder.cs:390
+		    this.Members.Add(this.Code_Pacemaker);                                                                                                // CSBuilder.cs:390
+		    this.Members.Add(this.Code_SiliconeGranuloma);                                                                                        // CSBuilder.cs:390
+		    this.Members.Add(this.Code_Sponge);                                                                                                   // CSBuilder.cs:390
+		    this.Members.Add(this.Code_SurgicalClip);                                                                                             // CSBuilder.cs:390
+		    this.Members.Add(this.Code_Swab);                                                                                                     // CSBuilder.cs:390
+		    this.Members.Add(this.Code_TitaniumClip);                                                                                             // CSBuilder.cs:390
+		    this.Members.Add(this.Code_TitaniumMarkerClip);                                                                                       // CSBuilder.cs:390
+		    this.Members.Add(this.Code_Wire);                                                                                                     // CSBuilder.cs:390
+		    this.Members.Add(this.Code_WireFragment);                                                                                             // CSBuilder.cs:390
+		    this.Members.Add(this.Code_BBPellets);                                                                                                // CSBuilder.cs:390
+		    this.Members.Add(this.Code_BiopsyClips);                                                                                              // CSBuilder.cs:390
+		    this.Members.Add(this.Code_BreastMarkers);                                                                                            // CSBuilder.cs:390
+		    this.Members.Add(this.Code_Calcifications);                                                                                           // CSBuilder.cs:390
+		    this.Members.Add(this.Code_Clips);                                                                                                    // CSBuilder.cs:390
+		    this.Members.Add(this.Code_MetallicMarkers);                                                                                          // CSBuilder.cs:390
+		    this.Members.Add(this.Code_MetallicObjects);                                                                                          // CSBuilder.cs:390
+		    this.Members.Add(this.Code_SurgicalClips);                                                                                            // CSBuilder.cs:390
+		    this.Members.Add(this.Code_TitaniumClips);                                                                                            // CSBuilder.cs:390
 		}                                                                                                                                         // CSBuilder.cs:349
 		//- Fields
 	}

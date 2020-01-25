@@ -15,13 +15,13 @@ namespace BreastRadLib
 	{
 		//+ Fields
 		/// <summary>
-		/// This class creates a type for codings of this class, that explicitly converts to Coding
+		/// This class creates a type for codings of this class, that implicitly converts to Coding
 		/// Allows type checking for these codes.
 		/// </summary>
 		public class TCoding                                                                                                                      // CSBuilder.cs:357
 		{                                                                                                                                         // CSBuilder.cs:358
 		    Coding value;                                                                                                                         // CSBuilder.cs:359
-		    public static explicit operator Coding(TCoding tCode)                                                                                 // CSBuilder.cs:360
+		    public static implicit operator Coding(TCoding tCode)                                                                                 // CSBuilder.cs:360
 		    {                                                                                                                                     // CSBuilder.cs:361
 		        return tCode.value;                                                                                                               // CSBuilder.cs:362
 		    }                                                                                                                                     // CSBuilder.cs:363
@@ -52,21 +52,21 @@ namespace BreastRadLib
 		public ObservedChangesVS()                                                                                                                // CSBuilder.cs:345
 		{                                                                                                                                         // CSBuilder.cs:346
 		    this.Members = new List<Coding>();                                                                                                    // CSBuilder.cs:347
-		    this.Members.Add(ObservedChangesCS.Code_DecreaseInCalcifications);                                                                    // CSBuilder.cs:390
-		    this.Members.Add(ObservedChangesCS.Code_DecreaseInNumber);                                                                            // CSBuilder.cs:390
-		    this.Members.Add(ObservedChangesCS.Code_DecreaseInSize);                                                                              // CSBuilder.cs:390
-		    this.Members.Add(ObservedChangesCS.Code_IncreaseInCalcifications);                                                                    // CSBuilder.cs:390
-		    this.Members.Add(ObservedChangesCS.Code_IncreaseInNumber);                                                                            // CSBuilder.cs:390
-		    this.Members.Add(ObservedChangesCS.Code_IncreaseInSize);                                                                              // CSBuilder.cs:390
-		    this.Members.Add(ObservedChangesCS.Code_LessProminent);                                                                               // CSBuilder.cs:390
-		    this.Members.Add(ObservedChangesCS.Code_MoreProminent);                                                                               // CSBuilder.cs:390
-		    this.Members.Add(ObservedChangesCS.Code_New);                                                                                         // CSBuilder.cs:390
-		    this.Members.Add(ObservedChangesCS.Code_NoLongerSeen);                                                                                // CSBuilder.cs:390
-		    this.Members.Add(ObservedChangesCS.Code_NotSignificantChanged);                                                                       // CSBuilder.cs:390
-		    this.Members.Add(ObservedChangesCS.Code_PartiallyRemoved);                                                                            // CSBuilder.cs:390
-		    this.Members.Add(ObservedChangesCS.Code_RepresentsChange);                                                                            // CSBuilder.cs:390
-		    this.Members.Add(ObservedChangesCS.Code_Stable);                                                                                      // CSBuilder.cs:390
-		    this.Members.Add(ObservedChangesCS.Code_IncidentalFinding);                                                                           // CSBuilder.cs:390
+		    this.Members.Add(this.Code_DecreaseInCalcifications);                                                                                 // CSBuilder.cs:390
+		    this.Members.Add(this.Code_DecreaseInNumber);                                                                                         // CSBuilder.cs:390
+		    this.Members.Add(this.Code_DecreaseInSize);                                                                                           // CSBuilder.cs:390
+		    this.Members.Add(this.Code_IncreaseInCalcifications);                                                                                 // CSBuilder.cs:390
+		    this.Members.Add(this.Code_IncreaseInNumber);                                                                                         // CSBuilder.cs:390
+		    this.Members.Add(this.Code_IncreaseInSize);                                                                                           // CSBuilder.cs:390
+		    this.Members.Add(this.Code_LessProminent);                                                                                            // CSBuilder.cs:390
+		    this.Members.Add(this.Code_MoreProminent);                                                                                            // CSBuilder.cs:390
+		    this.Members.Add(this.Code_New);                                                                                                      // CSBuilder.cs:390
+		    this.Members.Add(this.Code_NoLongerSeen);                                                                                             // CSBuilder.cs:390
+		    this.Members.Add(this.Code_NotSignificantChanged);                                                                                    // CSBuilder.cs:390
+		    this.Members.Add(this.Code_PartiallyRemoved);                                                                                         // CSBuilder.cs:390
+		    this.Members.Add(this.Code_RepresentsChange);                                                                                         // CSBuilder.cs:390
+		    this.Members.Add(this.Code_Stable);                                                                                                   // CSBuilder.cs:390
+		    this.Members.Add(this.Code_IncidentalFinding);                                                                                        // CSBuilder.cs:390
 		}                                                                                                                                         // CSBuilder.cs:349
 		//- Fields
 	}

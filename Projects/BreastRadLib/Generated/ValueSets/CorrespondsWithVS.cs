@@ -15,13 +15,13 @@ namespace BreastRadLib
 	{
 		//+ Fields
 		/// <summary>
-		/// This class creates a type for codings of this class, that explicitly converts to Coding
+		/// This class creates a type for codings of this class, that implicitly converts to Coding
 		/// Allows type checking for these codes.
 		/// </summary>
 		public class TCoding                                                                                                                      // CSBuilder.cs:357
 		{                                                                                                                                         // CSBuilder.cs:358
 		    Coding value;                                                                                                                         // CSBuilder.cs:359
-		    public static explicit operator Coding(TCoding tCode)                                                                                 // CSBuilder.cs:360
+		    public static implicit operator Coding(TCoding tCode)                                                                                 // CSBuilder.cs:360
 		    {                                                                                                                                     // CSBuilder.cs:361
 		        return tCode.value;                                                                                                               // CSBuilder.cs:362
 		    }                                                                                                                                     // CSBuilder.cs:363
@@ -67,36 +67,36 @@ namespace BreastRadLib
 		public CorrespondsWithVS()                                                                                                                // CSBuilder.cs:345
 		{                                                                                                                                         // CSBuilder.cs:346
 		    this.Members = new List<Coding>();                                                                                                    // CSBuilder.cs:347
-		    this.Members.Add(CorrespondsWithCodeSystemCS.Code_Aspiration);                                                                        // CSBuilder.cs:390
-		    this.Members.Add(CorrespondsWithCodeSystemCS.Code_Biopsy);                                                                            // CSBuilder.cs:390
-		    this.Members.Add(CorrespondsWithCodeSystemCS.Code_Concern);                                                                           // CSBuilder.cs:390
-		    this.Members.Add(CorrespondsWithCodeSystemCS.Code_Ductogram);                                                                         // CSBuilder.cs:390
-		    this.Members.Add(CorrespondsWithCodeSystemCS.Code_IncidentalFinding);                                                                 // CSBuilder.cs:390
-		    this.Members.Add(CorrespondsWithCodeSystemCS.Code_Mammogram);                                                                         // CSBuilder.cs:390
-		    this.Members.Add(CorrespondsWithCodeSystemCS.Code_MRI);                                                                               // CSBuilder.cs:390
-		    this.Members.Add(CorrespondsWithCodeSystemCS.Code_NippleDischarge);                                                                   // CSBuilder.cs:390
-		    this.Members.Add(CorrespondsWithCodeSystemCS.Code_OutsideExam);                                                                       // CSBuilder.cs:390
-		    this.Members.Add(CorrespondsWithCodeSystemCS.Code_Pain);                                                                              // CSBuilder.cs:390
-		    this.Members.Add(CorrespondsWithCodeSystemCS.Code_Palpated);                                                                          // CSBuilder.cs:390
-		    this.Members.Add(CorrespondsWithCodeSystemCS.Code_PostOperative);                                                                     // CSBuilder.cs:390
-		    this.Members.Add(CorrespondsWithCodeSystemCS.Code_PreviousBiopsy);                                                                    // CSBuilder.cs:390
-		    this.Members.Add(CorrespondsWithCodeSystemCS.Code_PriorExam);                                                                         // CSBuilder.cs:390
-		    this.Members.Add(CorrespondsWithCodeSystemCS.Code_Redness);                                                                           // CSBuilder.cs:390
-		    this.Members.Add(CorrespondsWithCodeSystemCS.Code_Scinti);                                                                            // CSBuilder.cs:390
-		    this.Members.Add(CorrespondsWithCodeSystemCS.Code_SizeLessThanMammo);                                                                 // CSBuilder.cs:390
-		    this.Members.Add(CorrespondsWithCodeSystemCS.Code_SizeLessThanMRI);                                                                   // CSBuilder.cs:390
-		    this.Members.Add(CorrespondsWithCodeSystemCS.Code_SizeLessThanPalp);                                                                  // CSBuilder.cs:390
-		    this.Members.Add(CorrespondsWithCodeSystemCS.Code_SizeLessThanUS);                                                                    // CSBuilder.cs:390
-		    this.Members.Add(CorrespondsWithCodeSystemCS.Code_SizeGreaterThanMammo);                                                              // CSBuilder.cs:390
-		    this.Members.Add(CorrespondsWithCodeSystemCS.Code_SizeGreaterThanMRI);                                                                // CSBuilder.cs:390
-		    this.Members.Add(CorrespondsWithCodeSystemCS.Code_SizeGreaterThanPalp);                                                               // CSBuilder.cs:390
-		    this.Members.Add(CorrespondsWithCodeSystemCS.Code_SizeGreaterThanUS);                                                                 // CSBuilder.cs:390
-		    this.Members.Add(CorrespondsWithCodeSystemCS.Code_SkinMarker);                                                                        // CSBuilder.cs:390
-		    this.Members.Add(CorrespondsWithCodeSystemCS.Code_Surgery);                                                                           // CSBuilder.cs:390
-		    this.Members.Add(CorrespondsWithCodeSystemCS.Code_SurgicalSite);                                                                      // CSBuilder.cs:390
-		    this.Members.Add(CorrespondsWithCodeSystemCS.Code_Tenderness);                                                                        // CSBuilder.cs:390
-		    this.Members.Add(CorrespondsWithCodeSystemCS.Code_TriggerPoint);                                                                      // CSBuilder.cs:390
-		    this.Members.Add(CorrespondsWithCodeSystemCS.Code_US);                                                                                // CSBuilder.cs:390
+		    this.Members.Add(this.Code_Aspiration);                                                                                               // CSBuilder.cs:390
+		    this.Members.Add(this.Code_Biopsy);                                                                                                   // CSBuilder.cs:390
+		    this.Members.Add(this.Code_Concern);                                                                                                  // CSBuilder.cs:390
+		    this.Members.Add(this.Code_Ductogram);                                                                                                // CSBuilder.cs:390
+		    this.Members.Add(this.Code_IncidentalFinding);                                                                                        // CSBuilder.cs:390
+		    this.Members.Add(this.Code_Mammogram);                                                                                                // CSBuilder.cs:390
+		    this.Members.Add(this.Code_MRI);                                                                                                      // CSBuilder.cs:390
+		    this.Members.Add(this.Code_NippleDischarge);                                                                                          // CSBuilder.cs:390
+		    this.Members.Add(this.Code_OutsideExam);                                                                                              // CSBuilder.cs:390
+		    this.Members.Add(this.Code_Pain);                                                                                                     // CSBuilder.cs:390
+		    this.Members.Add(this.Code_Palpated);                                                                                                 // CSBuilder.cs:390
+		    this.Members.Add(this.Code_PostOperative);                                                                                            // CSBuilder.cs:390
+		    this.Members.Add(this.Code_PreviousBiopsy);                                                                                           // CSBuilder.cs:390
+		    this.Members.Add(this.Code_PriorExam);                                                                                                // CSBuilder.cs:390
+		    this.Members.Add(this.Code_Redness);                                                                                                  // CSBuilder.cs:390
+		    this.Members.Add(this.Code_Scinti);                                                                                                   // CSBuilder.cs:390
+		    this.Members.Add(this.Code_SizeLessThanMammo);                                                                                        // CSBuilder.cs:390
+		    this.Members.Add(this.Code_SizeLessThanMRI);                                                                                          // CSBuilder.cs:390
+		    this.Members.Add(this.Code_SizeLessThanPalp);                                                                                         // CSBuilder.cs:390
+		    this.Members.Add(this.Code_SizeLessThanUS);                                                                                           // CSBuilder.cs:390
+		    this.Members.Add(this.Code_SizeGreaterThanMammo);                                                                                     // CSBuilder.cs:390
+		    this.Members.Add(this.Code_SizeGreaterThanMRI);                                                                                       // CSBuilder.cs:390
+		    this.Members.Add(this.Code_SizeGreaterThanPalp);                                                                                      // CSBuilder.cs:390
+		    this.Members.Add(this.Code_SizeGreaterThanUS);                                                                                        // CSBuilder.cs:390
+		    this.Members.Add(this.Code_SkinMarker);                                                                                               // CSBuilder.cs:390
+		    this.Members.Add(this.Code_Surgery);                                                                                                  // CSBuilder.cs:390
+		    this.Members.Add(this.Code_SurgicalSite);                                                                                             // CSBuilder.cs:390
+		    this.Members.Add(this.Code_Tenderness);                                                                                               // CSBuilder.cs:390
+		    this.Members.Add(this.Code_TriggerPoint);                                                                                             // CSBuilder.cs:390
+		    this.Members.Add(this.Code_US);                                                                                                       // CSBuilder.cs:390
 		}                                                                                                                                         // CSBuilder.cs:349
 		//- Fields
 	}

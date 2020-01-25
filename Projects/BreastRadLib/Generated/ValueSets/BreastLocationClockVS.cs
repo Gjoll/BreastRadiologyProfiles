@@ -15,13 +15,13 @@ namespace BreastRadLib
 	{
 		//+ Fields
 		/// <summary>
-		/// This class creates a type for codings of this class, that explicitly converts to Coding
+		/// This class creates a type for codings of this class, that implicitly converts to Coding
 		/// Allows type checking for these codes.
 		/// </summary>
 		public class TCoding                                                                                                                      // CSBuilder.cs:357
 		{                                                                                                                                         // CSBuilder.cs:358
 		    Coding value;                                                                                                                         // CSBuilder.cs:359
-		    public static explicit operator Coding(TCoding tCode)                                                                                 // CSBuilder.cs:360
+		    public static implicit operator Coding(TCoding tCode)                                                                                 // CSBuilder.cs:360
 		    {                                                                                                                                     // CSBuilder.cs:361
 		        return tCode.value;                                                                                                               // CSBuilder.cs:362
 		    }                                                                                                                                     // CSBuilder.cs:363
@@ -49,18 +49,18 @@ namespace BreastRadLib
 		public BreastLocationClockVS()                                                                                                            // CSBuilder.cs:345
 		{                                                                                                                                         // CSBuilder.cs:346
 		    this.Members = new List<Coding>();                                                                                                    // CSBuilder.cs:347
-		    this.Members.Add(BreastLocationClockCS.Code_1200OClock);                                                                              // CSBuilder.cs:390
-		    this.Members.Add(BreastLocationClockCS.Code_100OClock);                                                                               // CSBuilder.cs:390
-		    this.Members.Add(BreastLocationClockCS.Code_200OClock);                                                                               // CSBuilder.cs:390
-		    this.Members.Add(BreastLocationClockCS.Code_300OClock);                                                                               // CSBuilder.cs:390
-		    this.Members.Add(BreastLocationClockCS.Code_400OClock);                                                                               // CSBuilder.cs:390
-		    this.Members.Add(BreastLocationClockCS.Code_500OClock);                                                                               // CSBuilder.cs:390
-		    this.Members.Add(BreastLocationClockCS.Code_600OClock);                                                                               // CSBuilder.cs:390
-		    this.Members.Add(BreastLocationClockCS.Code_700OClock);                                                                               // CSBuilder.cs:390
-		    this.Members.Add(BreastLocationClockCS.Code_800OClock);                                                                               // CSBuilder.cs:390
-		    this.Members.Add(BreastLocationClockCS.Code_900OClock);                                                                               // CSBuilder.cs:390
-		    this.Members.Add(BreastLocationClockCS.Code_1000OClock);                                                                              // CSBuilder.cs:390
-		    this.Members.Add(BreastLocationClockCS.Code_1100OClock);                                                                              // CSBuilder.cs:390
+		    this.Members.Add(this.Code_1200OClock);                                                                                               // CSBuilder.cs:390
+		    this.Members.Add(this.Code_100OClock);                                                                                                // CSBuilder.cs:390
+		    this.Members.Add(this.Code_200OClock);                                                                                                // CSBuilder.cs:390
+		    this.Members.Add(this.Code_300OClock);                                                                                                // CSBuilder.cs:390
+		    this.Members.Add(this.Code_400OClock);                                                                                                // CSBuilder.cs:390
+		    this.Members.Add(this.Code_500OClock);                                                                                                // CSBuilder.cs:390
+		    this.Members.Add(this.Code_600OClock);                                                                                                // CSBuilder.cs:390
+		    this.Members.Add(this.Code_700OClock);                                                                                                // CSBuilder.cs:390
+		    this.Members.Add(this.Code_800OClock);                                                                                                // CSBuilder.cs:390
+		    this.Members.Add(this.Code_900OClock);                                                                                                // CSBuilder.cs:390
+		    this.Members.Add(this.Code_1000OClock);                                                                                               // CSBuilder.cs:390
+		    this.Members.Add(this.Code_1100OClock);                                                                                               // CSBuilder.cs:390
 		}                                                                                                                                         // CSBuilder.cs:349
 		//- Fields
 	}
