@@ -28,18 +28,25 @@ namespace BreastRadiology.XUnitTests
                     .ReviewedStatus("NOONE", "")
                     ;
 
-                e
-                    .Select("bodySite")
-                    .Single()
-                    ;
                 {
                     StructureDefinition extensionStructDef = Self.ServiceRecommendationExtension.Value();
                     ElementDefinition extensionDef = e.ApplyExtension("serviceRecommendation", extensionStructDef, true).ElementDefinition
                         .ZeroToMany()
+                        .SetDefinition(new Markdown()
+                            .Paragraph("References to recommended action to be taken in response to this observation.")
+                            .Paragraph("All Service Recommendations for a Breast Radiology Report will be referenced in the Breast Radiology Report, ",
+                                       "so that all recommendations can be found in one place.",
+                                       "In addition pecific Service Recommendations may also be referenced in an abnormality observations, indicating that the action",
+                                       "taken is inresponse to that abnormality observation,",
+                                       "or in a finding observation, indicating that the action ",
+                                       "taken is in response to one or more of the abnormality observations that are a part of the finding.")
+                            .Paragraph("All Service Recommendations referenced in an abnormality observation or finding observation ",
+                                       "will always be also referenced in the Breast Radiology Report")
+                            )
                         ;
                     e.AddExtensionLink(extensionStructDef.Url,
                         new SDefEditor.Cardinality(extensionDef),
-                        "Service Recommentation",
+                        "Service Recommendation",
                         Global.ElementAnchor(extensionDef));
                 }
             });

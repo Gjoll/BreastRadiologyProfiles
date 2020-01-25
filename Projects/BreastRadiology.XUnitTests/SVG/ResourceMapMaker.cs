@@ -85,9 +85,9 @@ namespace BreastRadiology.XUnitTests
             {
                 dynamic link1 = links1[i];
                 dynamic link2 = links2[i];
-                if (link1.LinkType != link2.LinkType)
+                if (link1.LinkType.ToObject<String>() != link2.LinkType.ToObject<String>())
                     return true;
-                if (link1.LinkTarget.ToObject<String>() != (String) link2.ToObject<String>())
+                if (link1.LinkTarget.ToObject<String>() != (String) link2.LinkTarget.ToObject<String>())
                     return true;
             }
             return false;

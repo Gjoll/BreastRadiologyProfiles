@@ -68,7 +68,6 @@ namespace BreastRadiology.XUnitTests
             if (focusNode.Name.Contains("Fragment", new StringComparison()) == true)
                 return;
 
-            Trace.WriteLine($"Creating focus graph {focusNode.Name}");
             SvgEditor e = new SvgEditor();
             SENodeGroup parentsGroup = new SENodeGroup("parents", false);
             SENodeGroup focusGroup = new SENodeGroup("focus", false);

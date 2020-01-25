@@ -55,6 +55,9 @@ namespace BreastRadiology.XUnitTests
                         ServiceRequestUrl, 
                         Self.ServiceRecommendation.Value().Url)
                     .Single()
+                    .SetDefinition(new Markdown()
+                        .Paragraph("Reference to a fhir resource that contains the recommended action to be taken.")
+                    )
                     ;
                 e.AddTargetLink(MedicationRequestUrl, new SDefEditor.Cardinality(valueXDef), false);
                 e.AddTargetLink(ServiceRequestUrl, new SDefEditor.Cardinality(valueXDef), false);

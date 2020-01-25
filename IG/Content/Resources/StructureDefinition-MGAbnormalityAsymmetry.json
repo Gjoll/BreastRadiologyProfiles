@@ -259,7 +259,7 @@
     },
     {
       "url": "http://www.fragment.com/maplink",
-      "valueString": "{\r\n  \"LinkType\": \"extension\",\r\n  \"ShowChildren\": true,\r\n  \"Cardinality\": \"0..*\",\r\n  \"ComponentHRef\": \"StructureDefinition-{SDName}-definitions.html#Observation.extension:serviceRecommendation\",\r\n  \"LocalName\": \"Service Recommentation\",\r\n  \"LinkTarget\": \"http://hl7.org/fhir/us/breast-radiology/StructureDefinition/ServiceRecommendationExtension\"\r\n}"
+      "valueString": "{\r\n  \"LinkType\": \"extension\",\r\n  \"ShowChildren\": true,\r\n  \"Cardinality\": \"0..*\",\r\n  \"ComponentHRef\": \"StructureDefinition-{SDName}-definitions.html#Observation.extension:serviceRecommendation\",\r\n  \"LocalName\": \"Service Recommendation\",\r\n  \"LinkTarget\": \"http://hl7.org/fhir/us/breast-radiology/StructureDefinition/ServiceRecommendationExtension\"\r\n}"
     },
     {
       "url": "http://www.fragment.com/mapname",
@@ -672,7 +672,7 @@
         "path": "Observation.extension",
         "sliceName": "serviceRecommendation",
         "short": "serviceRecommendation extension",
-        "definition": "This extension slice contains the serviceRecommendation extension",
+        "definition": "References to recommended action to be taken in response to this observation.\n\nAll Service Recommendations for a Breast Radiology Report will be referenced in the Breast Radiology Report, \nso that all recommendations can be found in one place.\nIn addition pecific Service Recommendations may also be referenced in an abnormality observations, indicating that the action\ntaken is inresponse to that abnormality observation,\nor in a finding observation, indicating that the action \ntaken is in response to one or more of the abnormality observations that are a part of the finding.\n\nAll Service Recommendations referenced in an abnormality observation or finding observation \nwill always be also referenced in the Breast Radiology Report",
         "comment": "This is one component of a group of components that comprise the observation.",
         "alias": [
           "extensions",
@@ -7623,7 +7623,7 @@
         "path": "Observation.extension",
         "sliceName": "serviceRecommendation",
         "short": "serviceRecommendation extension",
-        "definition": "This extension slice contains the serviceRecommendation extension",
+        "definition": "References to recommended action to be taken in response to this observation.\n\nAll Service Recommendations for a Breast Radiology Report will be referenced in the Breast Radiology Report, \nso that all recommendations can be found in one place.\nIn addition pecific Service Recommendations may also be referenced in an abnormality observations, indicating that the action\ntaken is inresponse to that abnormality observation,\nor in a finding observation, indicating that the action \ntaken is in response to one or more of the abnormality observations that are a part of the finding.\n\nAll Service Recommendations referenced in an abnormality observation or finding observation \nwill always be also referenced in the Breast Radiology Report",
         "comment": "This is one component of a group of components that comprise the observation.",
         "min": 0,
         "max": "*",
