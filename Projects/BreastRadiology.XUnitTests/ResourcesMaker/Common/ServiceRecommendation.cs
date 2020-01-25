@@ -1289,18 +1289,6 @@ namespace BreastRadiology.XUnitTests
                             //- AutoGen
                             //- Unspecified-Other
                             ,
-                            //+ Unspecified/Other
-                            //+ AutoGen
-                            new ConceptDef()
-                                .SetCode("Unspecified/Other")
-                                .SetDisplay("Unspecified / other")
-                                .SetDefinition(new Definition()
-                                    .Line("[PR] Unspecified / other")
-                                )
-                                .ValidModalities(Modalities.MRI | Modalities.US)
-                            //- AutoGen
-                            //- Unspecified/Other
-                            ,
                             //+ VacuumBx
                             //+ AutoGen
                             new ConceptDef()

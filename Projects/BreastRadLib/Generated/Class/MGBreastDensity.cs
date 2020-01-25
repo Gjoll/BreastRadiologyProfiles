@@ -10,7 +10,7 @@ using Hl7.Fhir.Serialization;
 namespace BreastRadLib
 {
 	//+ Header
-	public class MGBreastDensity : BreastRadBase, IMGBreastDensity                                                                             // CSBuilder.cs:218
+	public class MGBreastDensity : BreastRadBase, IMGBreastDensity                                                                             // CSBuilder.cs:262
 	//- Header
 	{
 		//+ Fields

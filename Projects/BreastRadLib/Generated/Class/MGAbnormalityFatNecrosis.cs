@@ -10,12 +10,12 @@ using Hl7.Fhir.Serialization;
 namespace BreastRadLib
 {
 	//+ Header
-	public class MGAbnormalityFatNecrosis : BreastRadBase, IMGAbnormalityFatNecrosis                                                           // CSBuilder.cs:218
+	public class MGAbnormalityFatNecrosis : BreastRadBase, IMGAbnormalityFatNecrosis                                                           // CSBuilder.cs:262
 	//- Header
 	{
 		//+ Fields
-		public List<IAssociatedFeatures> AssociatedFeatures {get;} = new List<IAssociatedFeatures>();                                             // CSBuilder.cs:166
-		public List<IConsistentWith> ConsistentWith {get;} = new List<IConsistentWith>();                                                         // CSBuilder.cs:166
+		public List<IAssociatedFeatures> AssociatedFeatures {get;} = new List<IAssociatedFeatures>();                                             // CSBuilder.cs:210
+		public List<IConsistentWith> ConsistentWith {get;} = new List<IConsistentWith>();                                                         // CSBuilder.cs:210
 		//- Fields
 	}
 }

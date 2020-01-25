@@ -10,7 +10,7 @@ using Hl7.Fhir.Serialization;
 namespace BreastRadLib
 {
 	//+ Header
-	public class ServiceRecommendation : BreastRadBase, IServiceRecommendation                                                                 // CSBuilder.cs:218
+	public class ServiceRecommendation : BreastRadBase, IServiceRecommendation                                                                 // CSBuilder.cs:262
 	//- Header
 	{
 		//+ Fields

@@ -435,10 +435,6 @@
             "display": "Unspecified - other"
           },
           {
-            "code": "Unspecified/Other",
-            "display": "Unspecified / other"
-          },
-          {
             "code": "VacuumBx",
             "display": "Vacuum Bx"
           },

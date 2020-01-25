@@ -10,14 +10,14 @@ using Hl7.Fhir.Serialization;
 namespace BreastRadLib
 {
 	//+ Header
-	public class SectionFindingsLeftBreast : BreastRadBase, ISectionFindingsLeftBreast                                                         // CSBuilder.cs:218
+	public class SectionFindingsLeftBreast : BreastRadBase, ISectionFindingsLeftBreast                                                         // CSBuilder.cs:262
 	//- Header
 	{
 		//+ Fields
-		public List<IMGFinding> MGFinding {get;} = new List<IMGFinding>();                                                                        // CSBuilder.cs:166
-		public List<IMRIFinding> MRIFinding {get;} = new List<IMRIFinding>();                                                                     // CSBuilder.cs:166
-		public List<INMFinding> NMFinding {get;} = new List<INMFinding>();                                                                        // CSBuilder.cs:166
-		public List<IUSFinding> USFinding {get;} = new List<IUSFinding>();                                                                        // CSBuilder.cs:166
+		public List<IMGFinding> MGFinding {get;} = new List<IMGFinding>();                                                                        // CSBuilder.cs:210
+		public List<IMRIFinding> MRIFinding {get;} = new List<IMRIFinding>();                                                                     // CSBuilder.cs:210
+		public List<INMFinding> NMFinding {get;} = new List<INMFinding>();                                                                        // CSBuilder.cs:210
+		public List<IUSFinding> USFinding {get;} = new List<IUSFinding>();                                                                        // CSBuilder.cs:210
 		//- Fields
 	}
 }

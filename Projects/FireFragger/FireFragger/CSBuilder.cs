@@ -14,6 +14,18 @@ namespace FireFragger
 {
     class CSBuilder : ConverterBase, IDisposable
     {
+        class CSInfo
+        {
+            public CodeSystem CodeSystem;
+            public CodeEditor ClassCode { get; }
+
+            public CSInfo()
+            {
+                ClassCode = new CodeEditor();
+                this.ClassCode.Load("TemplateValueSet.txt");
+            }
+        };
+
         class VSInfo
         {
             public ValueSet ValueSet;
@@ -29,16 +41,38 @@ namespace FireFragger
             public ElementTreeNode DiffNodes;
         };
 
+        Dictionary<String, CSInfo> codeSystems;
+        Dictionary<String, CSInfo> localCodeSystems;
+        Dictionary<String, VSInfo> valueSets;
+        Dictionary<String, FragInfo> sdFragments;
+
         public String OutputDir { get; set; } = ".";
         public bool CleanFlag { get; set; } = false;
         FileCleaner fc = new FileCleaner();
 
-        Dictionary<String, VSInfo> valueSets = new Dictionary<string, VSInfo>();
-        Dictionary<String, FragInfo> sdFragments = new Dictionary<string, FragInfo>();
-        String InterfaceName(FragInfo fi) => $"I{fi.StructDef.Name}";
-        String ClassName(FragInfo fi) => $"{fi.StructDef.Name}";
-        String ValueSetName(VSInfo vi) => $"{vi.ValueSet.Name}";
-        String PropertyName(string name) => $"{Char.ToUpper(name[0])}{name.Substring(1)}";
+        public CSBuilder()
+        {
+            var comparer = StringComparer.OrdinalIgnoreCase;
+            this.codeSystems = new Dictionary<string, CSInfo>(comparer);
+            this.localCodeSystems = new Dictionary<string, CSInfo>(comparer);
+            this.valueSets = new Dictionary<string, VSInfo>(comparer);
+            this.sdFragments = new Dictionary<string, FragInfo>(comparer);
+        }
+
+        String MachineName(String s)
+        {
+            return s.Replace("<", " Less Than ")
+            .Replace(">", " Greater Than ")
+            .Replace("  ", " ")
+            .Replace("  ", " ")
+            .ToMachineName();
+        }
+        String CodeName(string code) => $"Code_{MachineName(code)}";
+        String InterfaceName(FragInfo fi) => $"I{MachineName(fi.StructDef.Name)}";
+        String ClassName(FragInfo fi) => $"{MachineName(fi.StructDef.Name)}";
+        String CodeSystemName(CSInfo ci) => $"{MachineName(ci.CodeSystem.Name)}";
+        String ValueSetName(VSInfo vi) => $"{MachineName(vi.ValueSet.Name)}";
+        String PropertyName(string name) => $"{MachineName(name)}";
 
         /// <summary>
         /// Add all fragment resources in indicated directory.
@@ -85,6 +119,16 @@ namespace FireFragger
 
             switch (domainResource)
             {
+                case CodeSystem cs:
+                    {
+                        CSInfo ci = new CSInfo
+                        {
+                            CodeSystem = cs,
+                        };
+                        codeSystems.Add(cs.Url, ci);
+                    }
+                    break;
+
                 case ValueSet vs:
                     {
                         VSInfo vi = new VSInfo
@@ -93,7 +137,7 @@ namespace FireFragger
                             ClassCode = new CodeEditor()
                         };
                         vi.ClassCode.Load("TemplateValueSet.txt");
-                        valueSets.Add(vs.Url.ToLower(), vi);
+                        valueSets.Add(vs.Url, vi);
                     }
                     break;
 
@@ -115,7 +159,7 @@ namespace FireFragger
                             fi.ClassCode = new CodeEditor();
                             fi.ClassCode.Load("TemplateClass.txt");
                         }
-                        this.sdFragments.Add(sd.Url.ToLower().Trim(), fi);
+                        this.sdFragments.Add(sd.Url.Trim(), fi);
                     }
                     break;
 
@@ -151,7 +195,7 @@ namespace FireFragger
                 if (slice.ElementDefinition.Type[0].TargetProfile.Count() != 1)
                     throw new Exception($"invalid hasMember targetProfile count");
                 String reference = slice.ElementDefinition.Type[0].TargetProfile.First();
-                if (this.sdFragments.TryGetValue(reference.ToLower().Trim(), out FragInfo refFrag) == false)
+                if (this.sdFragments.TryGetValue(reference.Trim(), out FragInfo refFrag) == false)
                     throw new Exception($"missing hasMember reference {reference}");
                 if (items.Contains(slice.Name))
                     return;
@@ -236,14 +280,89 @@ namespace FireFragger
                 BuildFragment(fi);
         }
 
+        /// <summary>
+        /// Create local code systems for those that are not defined in this project.
+        /// Add all value set codes taht reference this code system into it.
+        /// </summary>
+        /// <param name="vi"></param>
+        void BuildLocalCodeSystem(VSInfo vi)
+        {
+            foreach (ValueSet.ConceptSetComponent component in vi.ValueSet.Compose.Include)
+            {
+                foreach (ValueSet.ConceptReferenceComponent concept in component.Concept)
+                {
+                    // if code system not found
+                    if (this.codeSystems.TryGetValue(component.System, out CSInfo ci) == false)
+                    {
+                        if (this.localCodeSystems.TryGetValue(component.System, out ci) == false)
+                        {
+                            ci = new CSInfo
+                            {
+                                CodeSystem = new CodeSystem
+                                {
+                                    Name = component.System.LastUriPart(),
+                                    Url = component.System
+                                }
+                            };
+                            this.localCodeSystems.Add(component.System, ci);
+                        }
+
+                        CodeSystem.ConceptDefinitionComponent c = new CodeSystem.ConceptDefinitionComponent
+                        {
+                            Code = concept.Code,
+                            Display = concept.Display
+                        };
+                        ci.CodeSystem.Concept.Add(c);
+                    }
+                }
+            }
+        }
+
+        void BuildLocalCodeSystems()
+        {
+            foreach (VSInfo vi in this.valueSets.Values)
+                BuildLocalCodeSystem(vi);
+            foreach (KeyValuePair<string, CSInfo> item in this.localCodeSystems)
+                this.codeSystems.Add(item.Key, item.Value);
+            this.localCodeSystems = null;
+        }
+
         void BuildValueSet(VSInfo vi)
         {
             CodeBlockNested vsHdr = vi.ClassCode.Blocks.Find("Header");
             CodeBlockNested vsFields = vi.ClassCode.Blocks.Find("Fields");
 
             vsHdr
-                .AppendCode($"public class {vi.ValueSet.Name}")
+                .AppendCode($"public class {ValueSetName(vi)}")
                 ;
+
+            vsFields
+                .AppendCode($"public List<Coding> Members;")
+                .BlankLine()
+                .AppendCode($"public {ValueSetName(vi)}()")
+                .OpenBrace()
+                .AppendCode($"this.Members = new List<Coding>();")
+                .DefineBlock(out CodeBlockNested constructorBlock)
+                .CloseBrace()
+                ;
+
+            if (vi.ValueSet.Compose.Exclude.Count > 0)
+                throw new NotImplementedException("Have not implemented ValueSet.Compose.Exclude");
+
+            foreach (ValueSet.ConceptSetComponent component in vi.ValueSet.Compose.Include)
+            {
+                if (component.Filter.Count > 0)
+                    throw new NotImplementedException("Have not implemented ValueSet.Compose.Include.Filter");
+                foreach (ValueSet.ConceptReferenceComponent concept in component.Concept)
+                {
+                    if (this.codeSystems.TryGetValue(component.System, out CSInfo ci) == false)
+                        throw new Exception($"CodeSystem {component.System} not found");
+                    String codingReference = $"{this.CodeSystemName(ci)}.{this.CodeName(concept.Code)}";
+                    constructorBlock
+                        .AppendCode($"this.Members.Add({codingReference});")
+                        ;
+                }
+            }
         }
 
         void BuildValueSets()
@@ -251,6 +370,56 @@ namespace FireFragger
             foreach (VSInfo vi in this.valueSets.Values)
                 BuildValueSet(vi);
         }
+
+        void BuildCodeSystem(CSInfo ci)
+        {
+            CodeBlockNested csHdr = ci.ClassCode.Blocks.Find("Header");
+            CodeBlockNested csFields = ci.ClassCode.Blocks.Find("Fields");
+
+            csHdr
+                .AppendCode($"public class {CodeSystemName(ci)}")
+                ;
+
+            csFields
+                .AppendCode($"const string System = \"{ci.CodeSystem.Url}\";");
+            ;
+
+            if (ci.CodeSystem.Filter.Count > 0)
+                throw new NotImplementedException("Have not implemented CodeSystem.Filter");
+
+            foreach (CodeSystem.ConceptDefinitionComponent component in ci.CodeSystem.Concept)
+            {
+                String display = component.Display?.Replace("\"", "'");
+                String code = component.Code;
+
+                csFields
+                    .BlankLine()
+                    .AppendLine("/// <summary>")
+                    ;
+                if (component.Definition != null)
+                {
+                    foreach (String line in component.Definition.Split('\n'))
+                    {
+                        String s = line.Trim().Replace("\r", "").Replace("%", "\\%");
+                        csFields.AppendLine($"/// {s}");
+                    }
+                }
+
+                csFields
+                    .AppendLine("/// </summary>")
+                    .AppendCode($"public static Coding {CodeName(component.Code)} = new Coding(System, \"{code}\", \"{display}\");")
+                    ;
+            }
+        }
+        /// <summary>
+        /// 
+        /// </summary>
+        void BuildCodeSystems()
+        {
+            foreach (CSInfo ci in this.codeSystems.Values)
+                BuildCodeSystem(ci);
+        }
+
         void SaveAll()
         {
             foreach (FragInfo fi in this.sdFragments.Values)
@@ -259,10 +428,12 @@ namespace FireFragger
                 if (fi.ClassCode != null)
                     Save(fi.ClassCode, Path.Combine(this.OutputDir, "Generated", "Class", $"{ClassName(fi)}.cs"));
             }
+
+            foreach (CSInfo ci in this.codeSystems.Values)
+                Save(ci.ClassCode, Path.Combine(this.OutputDir, "Generated", "CodeSystems", $"{CodeSystemName(ci)}.cs"));
+
             foreach (VSInfo vi in this.valueSets.Values)
-            {
                 Save(vi.ClassCode, Path.Combine(this.OutputDir, "Generated", "ValueSets", $"{ValueSetName(vi)}.cs"));
-            }
         }
 
         public void Build()
@@ -277,6 +448,8 @@ namespace FireFragger
             }
 
             BuildReferences();
+            BuildLocalCodeSystems();
+            BuildCodeSystems();
             BuildValueSets();
             BuildFragments();
             SaveAll();
@@ -295,8 +468,7 @@ namespace FireFragger
                     if (e.Url.ToLower().Trim() == Global.FragmentUrl)
                     {
                         FhirUrl extUrl = (FhirUrl)e.Value;
-                        String url = extUrl.Value.ToLower().Trim();
-                        if (sdFragments.TryGetValue(url, out FragInfo reference) == false)
+                        if (sdFragments.TryGetValue(extUrl.Value.Trim(), out FragInfo reference) == false)
                         {
                             this.ConversionError(this.GetType().Name,
                                fcn,
