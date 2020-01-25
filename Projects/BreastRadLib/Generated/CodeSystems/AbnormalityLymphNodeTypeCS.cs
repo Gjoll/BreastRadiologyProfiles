@@ -10,32 +10,32 @@ using Hl7.Fhir.Serialization;
 namespace BreastRadLib
 {
 	//+ Header
-	public class AbnormalityLymphNodeTypeCS                                                                                                    // CSBuilder.cs:380
+	public class AbnormalityLymphNodeTypeCS                                                                                                    // CSBuilder.cs:408
 	//- Header
 	{
 		//+ Fields
-		const string System = "http://hl7.org/fhir/us/breast-radiology/CodeSystem/AbnormalityLymphNodeTypeCS";                                    // CSBuilder.cs:384
-		                                                                                                                                          // CSBuilder.cs:396
+		const string System = "http://hl7.org/fhir/us/breast-radiology/CodeSystem/AbnormalityLymphNodeTypeCS";                                    // CSBuilder.cs:412
+		                                                                                                                                          // CSBuilder.cs:424
 		/// <summary>
 		/// [PR]
 		/// </summary>
-		public static Coding Code_Axillary = new Coding(System, "Axillary", "Axillary");                                                          // CSBuilder.cs:410
-		                                                                                                                                          // CSBuilder.cs:396
+		public static Coding Code_Axillary = new Coding(System, "Axillary", "Axillary");                                                          // CSBuilder.cs:438
+		                                                                                                                                          // CSBuilder.cs:424
 		/// <summary>
 		/// [PR]
 		/// </summary>
-		public static Coding Code_Enlarged = new Coding(System, "Enlarged", "Enlarged");                                                          // CSBuilder.cs:410
-		                                                                                                                                          // CSBuilder.cs:396
+		public static Coding Code_Enlarged = new Coding(System, "Enlarged", "Enlarged");                                                          // CSBuilder.cs:438
+		                                                                                                                                          // CSBuilder.cs:424
 		/// <summary>
 		/// [PR]
 		/// </summary>
-		public static Coding Code_FocalCortex = new Coding(System, "FocalCortex", "FocalCortex");                                                 // CSBuilder.cs:410
-		                                                                                                                                          // CSBuilder.cs:396
+		public static Coding Code_FocalCortex = new Coding(System, "FocalCortex", "FocalCortex");                                                 // CSBuilder.cs:438
+		                                                                                                                                          // CSBuilder.cs:424
 		/// <summary>
 		/// [PR]
 		/// </summary>
-		public static Coding Code_UniformThickness = new Coding(System, "UniformThickness", "UniformThickness");                                  // CSBuilder.cs:410
-		                                                                                                                                          // CSBuilder.cs:396
+		public static Coding Code_UniformThickness = new Coding(System, "UniformThickness", "UniformThickness");                                  // CSBuilder.cs:438
+		                                                                                                                                          // CSBuilder.cs:424
 		/// <summary>
 		/// These are circumscribed masses that are reniform and have hilar fat. They are generally 1 cm or smaller
 		/// in size. They may be larger than 1 cm and characterized as normal when fat replacement is pro-
@@ -44,22 +44,22 @@ namespace BreastRadLib
 		/// because the lymphatic drainage of the breast parallels the venous drainage.
 		/// -- Bi-Rads® Atlas — Mammography Fifth Ed. 2013
 		/// </summary>
-		public static Coding Code_Intramammory = new Coding(System, "Intramammory", "Intramammory");                                              // CSBuilder.cs:410
-		                                                                                                                                          // CSBuilder.cs:396
+		public static Coding Code_Intramammory = new Coding(System, "Intramammory", "Intramammory");                                              // CSBuilder.cs:438
+		                                                                                                                                          // CSBuilder.cs:424
 		/// <summary>
 		/// [PR]
 		/// </summary>
-		public static Coding Code_InternalMargin = new Coding(System, "InternalMargin", "Internal Margin");                                       // CSBuilder.cs:410
-		                                                                                                                                          // CSBuilder.cs:396
+		public static Coding Code_InternalMargin = new Coding(System, "InternalMargin", "Internal Margin");                                       // CSBuilder.cs:438
+		                                                                                                                                          // CSBuilder.cs:424
 		/// <summary>
 		/// [PR]
 		/// </summary>
-		public static Coding Code_Normal = new Coding(System, "Normal", "Normal");                                                                // CSBuilder.cs:410
-		                                                                                                                                          // CSBuilder.cs:396
+		public static Coding Code_Normal = new Coding(System, "Normal", "Normal");                                                                // CSBuilder.cs:438
+		                                                                                                                                          // CSBuilder.cs:424
 		/// <summary>
 		/// [PR]
 		/// </summary>
-		public static Coding Code_PathLymphNode = new Coding(System, "PathLymphNode", "Path Lymph Node");                                         // CSBuilder.cs:410
+		public static Coding Code_PathLymphNode = new Coding(System, "PathLymphNode", "Path Lymph Node");                                         // CSBuilder.cs:438
 		//- Fields
 	}
 }

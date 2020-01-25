@@ -14,14 +14,34 @@ namespace BreastRadLib
 	//- Header
 	{
 		//+ Fields
-		public List<Coding> Members;                                                                                                              // CSBuilder.cs:340
-		                                                                                                                                          // CSBuilder.cs:341
-		public FibroadenomaVS()                                                                                                                   // CSBuilder.cs:342
-		{                                                                                                                                         // CSBuilder.cs:343
-		    this.Members = new List<Coding>();                                                                                                    // CSBuilder.cs:344
-		    this.Members.Add(FibroadenomaCodeSystemCS.Code_Normal);                                                                               // CSBuilder.cs:362
-		    this.Members.Add(FibroadenomaCodeSystemCS.Code_Degenerated);                                                                          // CSBuilder.cs:362
-		}                                                                                                                                         // CSBuilder.cs:346
+		/// <summary>
+		/// This class creates a type for codings of this class, that explicitly converts to Coding
+		/// Allows type checking for these codes.
+		/// </summary>
+		public class TCoding                                                                                                                      // CSBuilder.cs:357
+		{                                                                                                                                         // CSBuilder.cs:358
+		    Coding value;                                                                                                                         // CSBuilder.cs:359
+		    public static explicit operator Coding(TCoding tCode)                                                                                 // CSBuilder.cs:360
+		    {                                                                                                                                     // CSBuilder.cs:361
+		        return tCode.value;                                                                                                               // CSBuilder.cs:362
+		    }                                                                                                                                     // CSBuilder.cs:363
+		                                                                                                                                          // CSBuilder.cs:364
+		    public TCoding(Coding value)                                                                                                          // CSBuilder.cs:365
+		    {                                                                                                                                     // CSBuilder.cs:366
+		        this.value= value;                                                                                                                // CSBuilder.cs:367
+		    }                                                                                                                                     // CSBuilder.cs:368
+		}                                                                                                                                         // CSBuilder.cs:369
+		public TCoding Code_Normal = new TCoding(FibroadenomaCodeSystemCS.Code_Normal);                                                           // CSBuilder.cs:387
+		public TCoding Code_Degenerated = new TCoding(FibroadenomaCodeSystemCS.Code_Degenerated);                                                 // CSBuilder.cs:387
+		                                                                                                                                          // CSBuilder.cs:342
+		public List<Coding> Members;                                                                                                              // CSBuilder.cs:343
+		                                                                                                                                          // CSBuilder.cs:344
+		public FibroadenomaVS()                                                                                                                   // CSBuilder.cs:345
+		{                                                                                                                                         // CSBuilder.cs:346
+		    this.Members = new List<Coding>();                                                                                                    // CSBuilder.cs:347
+		    this.Members.Add(FibroadenomaCodeSystemCS.Code_Normal);                                                                               // CSBuilder.cs:390
+		    this.Members.Add(FibroadenomaCodeSystemCS.Code_Degenerated);                                                                          // CSBuilder.cs:390
+		}                                                                                                                                         // CSBuilder.cs:349
 		//- Fields
 	}
 }

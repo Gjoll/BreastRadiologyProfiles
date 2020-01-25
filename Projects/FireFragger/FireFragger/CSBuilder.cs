@@ -337,12 +337,35 @@ namespace FireFragger
                 ;
 
             vsFields
+                .DefineBlock(out CodeBlockNested definitionsBlock)
+                .DefineBlock(out CodeBlockNested fieldsBlock)
+                .BlankLine()
                 .AppendCode($"public List<Coding> Members;")
                 .BlankLine()
                 .AppendCode($"public {ValueSetName(vi)}()")
                 .OpenBrace()
                 .AppendCode($"this.Members = new List<Coding>();")
                 .DefineBlock(out CodeBlockNested constructorBlock)
+                .CloseBrace()
+                ;
+
+            definitionsBlock
+                .AppendLine("/// <summary>")
+                .AppendLine("/// This class creates a type for codings of this class, that explicitly converts to Coding")
+                .AppendLine("/// Allows type checking for these codes.")
+                .AppendLine("/// </summary>")
+                 .AppendCode($"public class TCoding")
+                .OpenBrace()
+                .AppendCode($"Coding value;")
+                .AppendCode($"public static explicit operator Coding(TCoding tCode)")
+                .OpenBrace()
+                .AppendCode($"return tCode.value;")
+                .CloseBrace()
+                .BlankLine()
+                .AppendCode($"public TCoding(Coding value)")
+                .OpenBrace()
+                .AppendCode($"this.value= value;")
+                .CloseBrace()
                 .CloseBrace()
                 ;
 
@@ -355,9 +378,14 @@ namespace FireFragger
                     throw new NotImplementedException("Have not implemented ValueSet.Compose.Include.Filter");
                 foreach (ValueSet.ConceptReferenceComponent concept in component.Concept)
                 {
+                    String codeName = this.CodeName(concept.Code);
+
                     if (this.codeSystems.TryGetValue(component.System, out CSInfo ci) == false)
                         throw new Exception($"CodeSystem {component.System} not found");
-                    String codingReference = $"{this.CodeSystemName(ci)}.{this.CodeName(concept.Code)}";
+                    String codingReference = $"{this.CodeSystemName(ci)}.{codeName}";
+                    fieldsBlock
+                        .AppendCode($"public TCoding {codeName} = new TCoding({codingReference});")
+                        ;
                     constructorBlock
                         .AppendCode($"this.Members.Add({codingReference});")
                         ;

@@ -10,71 +10,71 @@ using Hl7.Fhir.Serialization;
 namespace BreastRadLib
 {
 	//+ Header
-	public class BreastLocationClockCS                                                                                                         // CSBuilder.cs:380
+	public class BreastLocationClockCS                                                                                                         // CSBuilder.cs:408
 	//- Header
 	{
 		//+ Fields
-		const string System = "http://hl7.org/fhir/us/breast-radiology/CodeSystem/BreastLocationClockCS";                                         // CSBuilder.cs:384
-		                                                                                                                                          // CSBuilder.cs:396
+		const string System = "http://hl7.org/fhir/us/breast-radiology/CodeSystem/BreastLocationClockCS";                                         // CSBuilder.cs:412
+		                                                                                                                                          // CSBuilder.cs:424
 		/// <summary>
 		/// 12-OClock
 		/// </summary>
-		public static Coding Code_1200OClock = new Coding(System, "12:00-OClock", "12:00-OClock");                                                // CSBuilder.cs:410
-		                                                                                                                                          // CSBuilder.cs:396
+		public static Coding Code_1200OClock = new Coding(System, "12:00-OClock", "12:00-OClock");                                                // CSBuilder.cs:438
+		                                                                                                                                          // CSBuilder.cs:424
 		/// <summary>
 		/// 1:00-OClock
 		/// </summary>
-		public static Coding Code_100OClock = new Coding(System, "1:00-OClock", "1:00-OClock");                                                   // CSBuilder.cs:410
-		                                                                                                                                          // CSBuilder.cs:396
+		public static Coding Code_100OClock = new Coding(System, "1:00-OClock", "1:00-OClock");                                                   // CSBuilder.cs:438
+		                                                                                                                                          // CSBuilder.cs:424
 		/// <summary>
 		/// 2:00-OClock
 		/// </summary>
-		public static Coding Code_200OClock = new Coding(System, "2:00-OClock", "2:00-OClock");                                                   // CSBuilder.cs:410
-		                                                                                                                                          // CSBuilder.cs:396
+		public static Coding Code_200OClock = new Coding(System, "2:00-OClock", "2:00-OClock");                                                   // CSBuilder.cs:438
+		                                                                                                                                          // CSBuilder.cs:424
 		/// <summary>
 		/// 3:00-OClock
 		/// </summary>
-		public static Coding Code_300OClock = new Coding(System, "3:00-OClock", "3:00-OClock");                                                   // CSBuilder.cs:410
-		                                                                                                                                          // CSBuilder.cs:396
+		public static Coding Code_300OClock = new Coding(System, "3:00-OClock", "3:00-OClock");                                                   // CSBuilder.cs:438
+		                                                                                                                                          // CSBuilder.cs:424
 		/// <summary>
 		/// 4:00-OClock
 		/// </summary>
-		public static Coding Code_400OClock = new Coding(System, "4:00-OClock", "4:00-OClock");                                                   // CSBuilder.cs:410
-		                                                                                                                                          // CSBuilder.cs:396
+		public static Coding Code_400OClock = new Coding(System, "4:00-OClock", "4:00-OClock");                                                   // CSBuilder.cs:438
+		                                                                                                                                          // CSBuilder.cs:424
 		/// <summary>
 		/// 5:00-OClock
 		/// </summary>
-		public static Coding Code_500OClock = new Coding(System, "5:00-OClock", "5:00-OClock");                                                   // CSBuilder.cs:410
-		                                                                                                                                          // CSBuilder.cs:396
+		public static Coding Code_500OClock = new Coding(System, "5:00-OClock", "5:00-OClock");                                                   // CSBuilder.cs:438
+		                                                                                                                                          // CSBuilder.cs:424
 		/// <summary>
 		/// 6:00-OClock
 		/// </summary>
-		public static Coding Code_600OClock = new Coding(System, "6:00-OClock", "6:00-OClock");                                                   // CSBuilder.cs:410
-		                                                                                                                                          // CSBuilder.cs:396
+		public static Coding Code_600OClock = new Coding(System, "6:00-OClock", "6:00-OClock");                                                   // CSBuilder.cs:438
+		                                                                                                                                          // CSBuilder.cs:424
 		/// <summary>
 		/// 7:00-OClock
 		/// </summary>
-		public static Coding Code_700OClock = new Coding(System, "7:00-OClock", "7:00-OClock");                                                   // CSBuilder.cs:410
-		                                                                                                                                          // CSBuilder.cs:396
+		public static Coding Code_700OClock = new Coding(System, "7:00-OClock", "7:00-OClock");                                                   // CSBuilder.cs:438
+		                                                                                                                                          // CSBuilder.cs:424
 		/// <summary>
 		/// 8:00-OClock
 		/// </summary>
-		public static Coding Code_800OClock = new Coding(System, "8:00-OClock", "8:00-OClock");                                                   // CSBuilder.cs:410
-		                                                                                                                                          // CSBuilder.cs:396
+		public static Coding Code_800OClock = new Coding(System, "8:00-OClock", "8:00-OClock");                                                   // CSBuilder.cs:438
+		                                                                                                                                          // CSBuilder.cs:424
 		/// <summary>
 		/// 9:00-OClock
 		/// </summary>
-		public static Coding Code_900OClock = new Coding(System, "9:00-OClock", "9:00-OClock");                                                   // CSBuilder.cs:410
-		                                                                                                                                          // CSBuilder.cs:396
+		public static Coding Code_900OClock = new Coding(System, "9:00-OClock", "9:00-OClock");                                                   // CSBuilder.cs:438
+		                                                                                                                                          // CSBuilder.cs:424
 		/// <summary>
 		/// 10:00-OClock
 		/// </summary>
-		public static Coding Code_1000OClock = new Coding(System, "10:00-OClock", "10:00-OClock");                                                // CSBuilder.cs:410
-		                                                                                                                                          // CSBuilder.cs:396
+		public static Coding Code_1000OClock = new Coding(System, "10:00-OClock", "10:00-OClock");                                                // CSBuilder.cs:438
+		                                                                                                                                          // CSBuilder.cs:424
 		/// <summary>
 		/// 11:00-OClock
 		/// </summary>
-		public static Coding Code_1100OClock = new Coding(System, "11:00-OClock", "11:00-OClock");                                                // CSBuilder.cs:410
+		public static Coding Code_1100OClock = new Coding(System, "11:00-OClock", "11:00-OClock");                                                // CSBuilder.cs:438
 		//- Fields
 	}
 }

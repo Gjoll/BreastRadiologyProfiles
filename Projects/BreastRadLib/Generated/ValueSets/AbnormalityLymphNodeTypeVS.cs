@@ -14,20 +14,46 @@ namespace BreastRadLib
 	//- Header
 	{
 		//+ Fields
-		public List<Coding> Members;                                                                                                              // CSBuilder.cs:340
-		                                                                                                                                          // CSBuilder.cs:341
-		public AbnormalityLymphNodeTypeVS()                                                                                                       // CSBuilder.cs:342
-		{                                                                                                                                         // CSBuilder.cs:343
-		    this.Members = new List<Coding>();                                                                                                    // CSBuilder.cs:344
-		    this.Members.Add(AbnormalityLymphNodeTypeCS.Code_Axillary);                                                                           // CSBuilder.cs:362
-		    this.Members.Add(AbnormalityLymphNodeTypeCS.Code_Enlarged);                                                                           // CSBuilder.cs:362
-		    this.Members.Add(AbnormalityLymphNodeTypeCS.Code_FocalCortex);                                                                        // CSBuilder.cs:362
-		    this.Members.Add(AbnormalityLymphNodeTypeCS.Code_UniformThickness);                                                                   // CSBuilder.cs:362
-		    this.Members.Add(AbnormalityLymphNodeTypeCS.Code_Intramammory);                                                                       // CSBuilder.cs:362
-		    this.Members.Add(AbnormalityLymphNodeTypeCS.Code_InternalMargin);                                                                     // CSBuilder.cs:362
-		    this.Members.Add(AbnormalityLymphNodeTypeCS.Code_Normal);                                                                             // CSBuilder.cs:362
-		    this.Members.Add(AbnormalityLymphNodeTypeCS.Code_PathLymphNode);                                                                      // CSBuilder.cs:362
-		}                                                                                                                                         // CSBuilder.cs:346
+		/// <summary>
+		/// This class creates a type for codings of this class, that explicitly converts to Coding
+		/// Allows type checking for these codes.
+		/// </summary>
+		public class TCoding                                                                                                                      // CSBuilder.cs:357
+		{                                                                                                                                         // CSBuilder.cs:358
+		    Coding value;                                                                                                                         // CSBuilder.cs:359
+		    public static explicit operator Coding(TCoding tCode)                                                                                 // CSBuilder.cs:360
+		    {                                                                                                                                     // CSBuilder.cs:361
+		        return tCode.value;                                                                                                               // CSBuilder.cs:362
+		    }                                                                                                                                     // CSBuilder.cs:363
+		                                                                                                                                          // CSBuilder.cs:364
+		    public TCoding(Coding value)                                                                                                          // CSBuilder.cs:365
+		    {                                                                                                                                     // CSBuilder.cs:366
+		        this.value= value;                                                                                                                // CSBuilder.cs:367
+		    }                                                                                                                                     // CSBuilder.cs:368
+		}                                                                                                                                         // CSBuilder.cs:369
+		public TCoding Code_Axillary = new TCoding(AbnormalityLymphNodeTypeCS.Code_Axillary);                                                     // CSBuilder.cs:387
+		public TCoding Code_Enlarged = new TCoding(AbnormalityLymphNodeTypeCS.Code_Enlarged);                                                     // CSBuilder.cs:387
+		public TCoding Code_FocalCortex = new TCoding(AbnormalityLymphNodeTypeCS.Code_FocalCortex);                                               // CSBuilder.cs:387
+		public TCoding Code_UniformThickness = new TCoding(AbnormalityLymphNodeTypeCS.Code_UniformThickness);                                     // CSBuilder.cs:387
+		public TCoding Code_Intramammory = new TCoding(AbnormalityLymphNodeTypeCS.Code_Intramammory);                                             // CSBuilder.cs:387
+		public TCoding Code_InternalMargin = new TCoding(AbnormalityLymphNodeTypeCS.Code_InternalMargin);                                         // CSBuilder.cs:387
+		public TCoding Code_Normal = new TCoding(AbnormalityLymphNodeTypeCS.Code_Normal);                                                         // CSBuilder.cs:387
+		public TCoding Code_PathLymphNode = new TCoding(AbnormalityLymphNodeTypeCS.Code_PathLymphNode);                                           // CSBuilder.cs:387
+		                                                                                                                                          // CSBuilder.cs:342
+		public List<Coding> Members;                                                                                                              // CSBuilder.cs:343
+		                                                                                                                                          // CSBuilder.cs:344
+		public AbnormalityLymphNodeTypeVS()                                                                                                       // CSBuilder.cs:345
+		{                                                                                                                                         // CSBuilder.cs:346
+		    this.Members = new List<Coding>();                                                                                                    // CSBuilder.cs:347
+		    this.Members.Add(AbnormalityLymphNodeTypeCS.Code_Axillary);                                                                           // CSBuilder.cs:390
+		    this.Members.Add(AbnormalityLymphNodeTypeCS.Code_Enlarged);                                                                           // CSBuilder.cs:390
+		    this.Members.Add(AbnormalityLymphNodeTypeCS.Code_FocalCortex);                                                                        // CSBuilder.cs:390
+		    this.Members.Add(AbnormalityLymphNodeTypeCS.Code_UniformThickness);                                                                   // CSBuilder.cs:390
+		    this.Members.Add(AbnormalityLymphNodeTypeCS.Code_Intramammory);                                                                       // CSBuilder.cs:390
+		    this.Members.Add(AbnormalityLymphNodeTypeCS.Code_InternalMargin);                                                                     // CSBuilder.cs:390
+		    this.Members.Add(AbnormalityLymphNodeTypeCS.Code_Normal);                                                                             // CSBuilder.cs:390
+		    this.Members.Add(AbnormalityLymphNodeTypeCS.Code_PathLymphNode);                                                                      // CSBuilder.cs:390
+		}                                                                                                                                         // CSBuilder.cs:349
 		//- Fields
 	}
 }

@@ -10,31 +10,31 @@ using Hl7.Fhir.Serialization;
 namespace BreastRadLib
 {
 	//+ Header
-	public class BreastLocationQuadrantCS                                                                                                      // CSBuilder.cs:380
+	public class BreastLocationQuadrantCS                                                                                                      // CSBuilder.cs:408
 	//- Header
 	{
 		//+ Fields
-		const string System = "http://hl7.org/fhir/us/breast-radiology/CodeSystem/BreastLocationQuadrantCS";                                      // CSBuilder.cs:384
-		                                                                                                                                          // CSBuilder.cs:396
+		const string System = "http://hl7.org/fhir/us/breast-radiology/CodeSystem/BreastLocationQuadrantCS";                                      // CSBuilder.cs:412
+		                                                                                                                                          // CSBuilder.cs:424
 		/// <summary>
 		/// Upper outer quadrant of the breast
 		/// </summary>
-		public static Coding Code_UpperOuter = new Coding(System, "UpperOuter", "Upper Outer Quadrant");                                          // CSBuilder.cs:410
-		                                                                                                                                          // CSBuilder.cs:396
+		public static Coding Code_UpperOuter = new Coding(System, "UpperOuter", "Upper Outer Quadrant");                                          // CSBuilder.cs:438
+		                                                                                                                                          // CSBuilder.cs:424
 		/// <summary>
 		/// Upper inner quadrant of the breast
 		/// </summary>
-		public static Coding Code_UpperInner = new Coding(System, "UpperInner", "Upper Inner Quadrant");                                          // CSBuilder.cs:410
-		                                                                                                                                          // CSBuilder.cs:396
+		public static Coding Code_UpperInner = new Coding(System, "UpperInner", "Upper Inner Quadrant");                                          // CSBuilder.cs:438
+		                                                                                                                                          // CSBuilder.cs:424
 		/// <summary>
 		/// Lower outer quadrant of the breast
 		/// </summary>
-		public static Coding Code_LowerOuter = new Coding(System, "LowerOuter", "Lower Outer Quadrant");                                          // CSBuilder.cs:410
-		                                                                                                                                          // CSBuilder.cs:396
+		public static Coding Code_LowerOuter = new Coding(System, "LowerOuter", "Lower Outer Quadrant");                                          // CSBuilder.cs:438
+		                                                                                                                                          // CSBuilder.cs:424
 		/// <summary>
 		/// Lower inner quadrant of the breast
 		/// </summary>
-		public static Coding Code_LowerInner = new Coding(System, "LowerInner", "Lower Inner Quadrant");                                          // CSBuilder.cs:410
+		public static Coding Code_LowerInner = new Coding(System, "LowerInner", "Lower Inner Quadrant");                                          // CSBuilder.cs:438
 		//- Fields
 	}
 }
