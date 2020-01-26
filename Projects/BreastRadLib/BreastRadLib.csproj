@@ -5,10 +5,6 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Folder Include="Generated\" />
-  </ItemGroup>
-
-  <ItemGroup>
     <Reference Include="Hl7.Fhir.ElementModel">
       <HintPath>..\..\Lib\Hl7.Fhir.ElementModel.dll</HintPath>
     </Reference>

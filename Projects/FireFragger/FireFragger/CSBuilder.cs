@@ -22,7 +22,7 @@ namespace FireFragger
             public CSInfo()
             {
                 ClassCode = new CodeEditor();
-                this.ClassCode.Load("TemplateValueSet.txt");
+                this.ClassCode.Load(Path.Combine("Templates", "ValueSet.txt"));
             }
         };
 
@@ -144,7 +144,7 @@ namespace FireFragger
                             ValueSet = vs,
                             ClassCode = new CodeEditor()
                         };
-                        vi.ClassCode.Load("TemplateValueSet.txt");
+                        vi.ClassCode.Load(Path.Combine("Templates", "ValueSet.txt"));
                         valueSets.Add(vs.Url, vi);
                     }
                     break;
@@ -160,12 +160,14 @@ namespace FireFragger
                             InterfaceEditor = new CodeEditor(),
                             DiffNodes = l.Create(sd.Differential.Element)
                         };
-                        fi.InterfaceEditor.Load("TemplateInterface.txt");
+                        fi.InterfaceEditor.TryAddUserMacro("InterfaceName", InterfaceName(fi));
+                        fi.InterfaceEditor.Load(Path.Combine("Templates", "Interface.txt"));
 
                         if (this.IsFragment(sd) == false)
                         {
                             fi.ClassEditor = new CodeEditor();
-                            fi.ClassEditor.Load("TemplateClass.txt");
+                            fi.ClassEditor.TryAddUserMacro("ClassName", ClassName(fi));
+                            fi.ClassEditor.Load(Path.Combine("Templates", "Class.txt"));
                         }
                         this.sdFragments.Add(sd.Url.Trim(), fi);
                     }
@@ -186,7 +188,7 @@ namespace FireFragger
             this.ConversionInfo(this.GetType().Name,
                fcn,
                $"Processing fragment {fi.StructDef.Name}");
-            BuildHeader(fi);
+            DefineInterfaces(fi);
             BuildHasMembers(fi);
         }
 
@@ -246,8 +248,8 @@ namespace FireFragger
                             .OpenBrace()
                             .AppendCode("foreach (ResourceReference hasMember in resource.HasMember)")
                             .OpenBrace()
-                            .AppendCode("if (resourceBag.TryGetEntry(hasMember.Url, out Bundle.EntryComponent entry) == false)")
-                            .AppendCode("    throw new Exception(\"Reference '{hasMember.Url}' not found in bag\");")
+                            .AppendCode("//if (resourceBag.TryGetEntry(hasMember.Url, out Bundle.EntryComponent entry) == false)")
+                            .AppendCode("//    throw new Exception(\"Reference '{hasMember.Url}' not found in bag\");")
                             //.AppendCode("switch ()")
                             .DefineBlock(out loadHasMemberBlock)
                             .CloseBrace()
@@ -284,33 +286,21 @@ namespace FireFragger
         }
 
 
-        void BuildHeader(FragInfo fi)
+        void DefineInterfaces(FragInfo fi)
         {
-            CodeBlockNested iHdr = fi.InterfaceEditor.Blocks.Find("Header");
             StringBuilder interfaces = new StringBuilder();
-            String comma = "";
-            if (fi.ReferencedFragments.Count > 0)
+            foreach (FragInfo refFrag in fi.ReferencedFragments)
             {
-                interfaces.Append(" : ");
-                foreach (FragInfo refFrag in fi.ReferencedFragments)
-                {
-                    interfaces.Append($"{comma}{InterfaceName(refFrag)}");
-                    comma = ", ";
-                }
+                interfaces.Append($", {InterfaceName(refFrag)}");
             }
 
-            iHdr.Clear();
-            iHdr
-                .AppendCode($"public interface {InterfaceName(fi)} {interfaces.ToString()}")
-                ;
+            fi.InterfaceEditor.TryAddUserMacro("Interfaces", interfaces.ToString());
+            fi.InterfaceEditor.Blocks.Find("*Header").Reload();
 
             if (fi.ClassEditor != null)
             {
-                CodeBlockNested cHdr = fi.ClassEditor.Blocks.Find("Header");
-                cHdr.Clear();
-                cHdr
-                    .AppendCode($"public class {ClassName(fi)} : BreastRadBase, {InterfaceName(fi)}")
-                    ;
+                fi.ClassEditor.TryAddUserMacro("Interfaces", interfaces.ToString());
+                fi.ClassEditor.Blocks.Find("*Header").Reload();
 
 
                 CodeBlockNested conBlock = fi.ClassEditor.Blocks.Find("Constructor");

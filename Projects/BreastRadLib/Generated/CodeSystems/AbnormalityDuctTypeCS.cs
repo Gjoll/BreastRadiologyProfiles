@@ -10,29 +10,29 @@ using Hl7.Fhir.Serialization;
 namespace BreastRadLib
 {
 	//+ Header
-	public class AbnormalityDuctTypeCS                                                                                                         // CSBuilder.cs:485
+	public class AbnormalityDuctTypeCS                                                                                                         // CSBuilder.cs:475
 	//- Header
 	{
 		//+ Fields
-		const string System = "http://hl7.org/fhir/us/breast-radiology/CodeSystem/AbnormalityDuctTypeCS";                                         // CSBuilder.cs:489
-		                                                                                                                                          // CSBuilder.cs:501
+		const string System = "http://hl7.org/fhir/us/breast-radiology/CodeSystem/AbnormalityDuctTypeCS";                                         // CSBuilder.cs:479
+		                                                                                                                                          // CSBuilder.cs:491
 		/// <summary>
 		/// [PR]
 		/// </summary>
-		public static Coding Code_Normal = new Coding(System, "Normal", "Normal");                                                                // CSBuilder.cs:515
-		                                                                                                                                          // CSBuilder.cs:501
+		public static Coding Code_Normal = new Coding(System, "Normal", "Normal");                                                                // CSBuilder.cs:505
+		                                                                                                                                          // CSBuilder.cs:491
 		/// <summary>
 		/// [PR]
 		/// </summary>
-		public static Coding Code_Ectasia = new Coding(System, "Ectasia", "Ectasia");                                                             // CSBuilder.cs:515
-		                                                                                                                                          // CSBuilder.cs:501
+		public static Coding Code_Ectasia = new Coding(System, "Ectasia", "Ectasia");                                                             // CSBuilder.cs:505
+		                                                                                                                                          // CSBuilder.cs:491
 		/// <summary>
 		/// This is a unilateral tubular or branching structure that likely represents a dilated or otherwise en-
 		/// larged duct. It is a rare finding. Even if unassociated with other suspicious clinical or mammographic
 		/// findings, it has been reported to be associated with noncalcified DCIS.
 		/// -- Bi-Rads® Atlas — Mammography Fifth Ed. 2013
 		/// </summary>
-		public static Coding Code_Dilated = new Coding(System, "Dilated", "Dilated");                                                             // CSBuilder.cs:515
+		public static Coding Code_Dilated = new Coding(System, "Dilated", "Dilated");                                                             // CSBuilder.cs:505
 		//- Fields
 	}
 }

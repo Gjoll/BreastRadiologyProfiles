@@ -10,12 +10,12 @@ using Hl7.Fhir.Serialization;
 namespace BreastRadLib
 {
 	//+ Header
-	public class MarginCS                                                                                                                      // CSBuilder.cs:485
+	public class MarginCS                                                                                                                      // CSBuilder.cs:475
 	//- Header
 	{
 		//+ Fields
-		const string System = "http://hl7.org/fhir/us/breast-radiology/CodeSystem/MarginCS";                                                      // CSBuilder.cs:489
-		                                                                                                                                          // CSBuilder.cs:501
+		const string System = "http://hl7.org/fhir/us/breast-radiology/CodeSystem/MarginCS";                                                      // CSBuilder.cs:479
+		                                                                                                                                          // CSBuilder.cs:491
 		/// <summary>
 		/// [PR] Angular margin
 		/// Some or all of the margin has sharp corners, often forming acute angles, but the significant
@@ -23,8 +23,8 @@ namespace BreastRadLib
 		/// -- Bi-Rads® Atlas — Mammography Fifth Ed. 2013
 		/// Valid for the following modalities: US.
 		/// </summary>
-		public static Coding Code_AngularMargin = new Coding(System, "AngularMargin", "Angular margin");                                          // CSBuilder.cs:515
-		                                                                                                                                          // CSBuilder.cs:501
+		public static Coding Code_AngularMargin = new Coding(System, "AngularMargin", "Angular margin");                                          // CSBuilder.cs:505
+		                                                                                                                                          // CSBuilder.cs:491
 		/// <summary>
 		/// (historically, "well-defined" or "sharply-defined")
 		/// A circumscribed margin is one that is well defined, with an abrupt transition between the
@@ -33,8 +33,8 @@ namespace BreastRadLib
 		/// -- Bi-Rads® Atlas — Mammography Fifth Ed. 2013
 		/// Valid for the following modalities: MG US NM.
 		/// </summary>
-		public static Coding Code_CircumscribedMargin = new Coding(System, "CircumscribedMargin", "Circumscribed margin");                        // CSBuilder.cs:515
-		                                                                                                                                          // CSBuilder.cs:501
+		public static Coding Code_CircumscribedMargin = new Coding(System, "CircumscribedMargin", "Circumscribed margin");                        // CSBuilder.cs:505
+		                                                                                                                                          // CSBuilder.cs:491
 		/// <summary>
 		/// Indistinct margin
 		/// There is no clear demarcation of the entire margin or any portion of the margin from the
@@ -45,32 +45,32 @@ namespace BreastRadLib
 		/// -- Bi-Rads® Atlas — Mammography Fifth Ed. 2013
 		/// Valid for the following modalities: MG US.
 		/// </summary>
-		public static Coding Code_IndistinctMargin = new Coding(System, "IndistinctMargin", "Indistinct margin");                                 // CSBuilder.cs:515
-		                                                                                                                                          // CSBuilder.cs:501
+		public static Coding Code_IndistinctMargin = new Coding(System, "IndistinctMargin", "Indistinct margin");                                 // CSBuilder.cs:505
+		                                                                                                                                          // CSBuilder.cs:491
 		/// <summary>
 		/// [PR] Intraductal extension
 		/// Valid for the following modalities: US.
 		/// </summary>
-		public static Coding Code_IntraductalExtension = new Coding(System, "IntraductalExtension", "Intraductal extension");                     // CSBuilder.cs:515
-		                                                                                                                                          // CSBuilder.cs:501
+		public static Coding Code_IntraductalExtension = new Coding(System, "IntraductalExtension", "Intraductal extension");                     // CSBuilder.cs:505
+		                                                                                                                                          // CSBuilder.cs:491
 		/// <summary>
 		/// [PR] Irregular margin
 		/// Valid for the following modalities: MG US MRI.
 		/// </summary>
-		public static Coding Code_IrregularMargin = new Coding(System, "IrregularMargin", "Irregular margin");                                    // CSBuilder.cs:515
-		                                                                                                                                          // CSBuilder.cs:501
+		public static Coding Code_IrregularMargin = new Coding(System, "IrregularMargin", "Irregular margin");                                    // CSBuilder.cs:505
+		                                                                                                                                          // CSBuilder.cs:491
 		/// <summary>
 		/// [PR] Lobulated margin
 		/// Valid for the following modalities: US.
 		/// </summary>
-		public static Coding Code_LobulatedMargin = new Coding(System, "LobulatedMargin", "Lobulated margin");                                    // CSBuilder.cs:515
-		                                                                                                                                          // CSBuilder.cs:501
+		public static Coding Code_LobulatedMargin = new Coding(System, "LobulatedMargin", "Lobulated margin");                                    // CSBuilder.cs:505
+		                                                                                                                                          // CSBuilder.cs:491
 		/// <summary>
 		/// [PR] Macrolobulated margin
 		/// Valid for the following modalities: MG.
 		/// </summary>
-		public static Coding Code_MacrolobulatedMargin = new Coding(System, "MacrolobulatedMargin", "Macrolobulated margin");                     // CSBuilder.cs:515
-		                                                                                                                                          // CSBuilder.cs:501
+		public static Coding Code_MacrolobulatedMargin = new Coding(System, "MacrolobulatedMargin", "Macrolobulated margin");                     // CSBuilder.cs:505
+		                                                                                                                                          // CSBuilder.cs:491
 		/// <summary>
 		/// Microlobulated margin
 		/// The margin is characterized by short-cycle undulations, but the significant feature is that
@@ -78,14 +78,14 @@ namespace BreastRadLib
 		/// -- Bi-Rads® Atlas — Mammography Fifth Ed. 2013
 		/// Valid for the following modalities: MG US.
 		/// </summary>
-		public static Coding Code_MicrolobulatedMargin = new Coding(System, "MicrolobulatedMargin", "Microlobulated margin");                     // CSBuilder.cs:515
-		                                                                                                                                          // CSBuilder.cs:501
+		public static Coding Code_MicrolobulatedMargin = new Coding(System, "MicrolobulatedMargin", "Microlobulated margin");                     // CSBuilder.cs:505
+		                                                                                                                                          // CSBuilder.cs:491
 		/// <summary>
 		/// [PR] Non circumscribed margin
 		/// Valid for the following modalities: US MRI.
 		/// </summary>
-		public static Coding Code_NonCircumscribedMargin = new Coding(System, "NonCircumscribedMargin", "Non circumscribed margin");              // CSBuilder.cs:515
-		                                                                                                                                          // CSBuilder.cs:501
+		public static Coding Code_NonCircumscribedMargin = new Coding(System, "NonCircumscribedMargin", "Non circumscribed margin");              // CSBuilder.cs:505
+		                                                                                                                                          // CSBuilder.cs:491
 		/// <summary>
 		/// Obscured margin
 		/// A margin that is hidden by superimposed or adjacent fibroglandular tissue. This is used
@@ -93,14 +93,14 @@ namespace BreastRadLib
 		/// -- Bi-Rads® Atlas — Mammography Fifth Ed. 2013
 		/// Valid for the following modalities: MG.
 		/// </summary>
-		public static Coding Code_ObscuredMargin = new Coding(System, "ObscuredMargin", "Obscured margin");                                       // CSBuilder.cs:515
-		                                                                                                                                          // CSBuilder.cs:501
+		public static Coding Code_ObscuredMargin = new Coding(System, "ObscuredMargin", "Obscured margin");                                       // CSBuilder.cs:505
+		                                                                                                                                          // CSBuilder.cs:491
 		/// <summary>
 		/// [PR] Smooth margin
 		/// Valid for the following modalities: US MRI.
 		/// </summary>
-		public static Coding Code_SmoothMargin = new Coding(System, "SmoothMargin", "Smooth margin");                                             // CSBuilder.cs:515
-		                                                                                                                                          // CSBuilder.cs:501
+		public static Coding Code_SmoothMargin = new Coding(System, "SmoothMargin", "Smooth margin");                                             // CSBuilder.cs:505
+		                                                                                                                                          // CSBuilder.cs:491
 		/// <summary>
 		/// Spiculated margin
 		/// The margin is characterized by sharp lines radiating from the mass, often a sign of malignancy,
@@ -108,7 +108,7 @@ namespace BreastRadLib
 		/// -- Bi-Rads® Atlas — Mammography Fifth Ed. 2013
 		/// Valid for the following modalities: MG US MRI.
 		/// </summary>
-		public static Coding Code_SpiculatedMargin = new Coding(System, "SpiculatedMargin", "Spiculated margin");                                 // CSBuilder.cs:515
+		public static Coding Code_SpiculatedMargin = new Coding(System, "SpiculatedMargin", "Spiculated margin");                                 // CSBuilder.cs:505
 		//- Fields
 	}
 }

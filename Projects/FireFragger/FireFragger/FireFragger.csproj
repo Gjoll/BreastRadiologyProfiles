@@ -42,16 +42,16 @@
   </ItemGroup>
 
   <ItemGroup>
-    <None Update="TemplateCodeSystem.txt">
+    <None Update="Templates\CodeSystem.txt">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
-    <None Update="TemplateValueSet.txt">
+    <None Update="Templates\ValueSet.txt">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
-    <None Update="TemplateClass.txt">
+    <None Update="Templates\Class.txt">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
-    <None Update="TemplateInterface.txt">
+    <None Update="Templates\Interface.txt">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
   </ItemGroup>

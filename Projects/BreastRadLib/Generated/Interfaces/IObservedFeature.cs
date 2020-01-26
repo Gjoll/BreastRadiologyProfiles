@@ -9,9 +9,7 @@ using Hl7.Fhir.Serialization;
 
 namespace BreastRadLib
 {
-	//+ Header
-	public interface IObservedFeature  : IObservationLeafFragment, IBreastRadObservationNoDeviceFragment, IBreastRadObservationNoValueFragment, IBreastBodyLocationRequiredFragment, IObservedCountFragment// CSBuilder.cs:304
-	//- Header
+	public interface IObservedFeature : IBreastRad, IObservationLeafFragment, IBreastRadObservationNoDeviceFragment, IBreastRadObservationNoValueFragment, IBreastBodyLocationRequiredFragment, IObservedCountFragment
 	{
 		//+ Fields
 		//- Fields

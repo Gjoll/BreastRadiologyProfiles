@@ -10,7 +10,7 @@ using Hl7.Fhir.Serialization;
 namespace BreastRadLib
 {
 	//+ Header
-	public class ConsistentWithQualifierVS                                                                                                     // CSBuilder.cs:413
+	public class ConsistentWithQualifierVS                                                                                                     // CSBuilder.cs:403
 	//- Header
 	{
 		//+ Fields
@@ -18,34 +18,34 @@ namespace BreastRadLib
 		/// This class creates a type for codings of this class, that implicitly converts to Coding
 		/// Allows type checking for these codes.
 		/// </summary>
-		public class TCoding                                                                                                                      // CSBuilder.cs:434
-		{                                                                                                                                         // CSBuilder.cs:435
-		    Coding value;                                                                                                                         // CSBuilder.cs:436
-		    public static implicit operator Coding(TCoding tCode)                                                                                 // CSBuilder.cs:437
-		    {                                                                                                                                     // CSBuilder.cs:438
-		        return tCode.value;                                                                                                               // CSBuilder.cs:439
-		    }                                                                                                                                     // CSBuilder.cs:440
-		                                                                                                                                          // CSBuilder.cs:441
-		    public TCoding(Coding value)                                                                                                          // CSBuilder.cs:442
-		    {                                                                                                                                     // CSBuilder.cs:443
-		        this.value= value;                                                                                                                // CSBuilder.cs:444
-		    }                                                                                                                                     // CSBuilder.cs:445
-		}                                                                                                                                         // CSBuilder.cs:446
-		public TCoding Code_LikelyRepresents = new TCoding(ConsistentWithQualifierCS.Code_LikelyRepresents);                                      // CSBuilder.cs:464
-		public TCoding Code_MostLikely = new TCoding(ConsistentWithQualifierCS.Code_MostLikely);                                                  // CSBuilder.cs:464
-		public TCoding Code_Resembles = new TCoding(ConsistentWithQualifierCS.Code_Resembles);                                                    // CSBuilder.cs:464
-		public TCoding Code_WDifferentialDiagnosis = new TCoding(ConsistentWithQualifierCS.Code_WDifferentialDiagnosis);                          // CSBuilder.cs:464
-		                                                                                                                                          // CSBuilder.cs:419
-		public List<Coding> Members;                                                                                                              // CSBuilder.cs:420
-		                                                                                                                                          // CSBuilder.cs:421
-		public ConsistentWithQualifierVS()                                                                                                        // CSBuilder.cs:422
-		{                                                                                                                                         // CSBuilder.cs:423
-		    this.Members = new List<Coding>();                                                                                                    // CSBuilder.cs:424
-		    this.Members.Add(this.Code_LikelyRepresents);                                                                                         // CSBuilder.cs:467
-		    this.Members.Add(this.Code_MostLikely);                                                                                               // CSBuilder.cs:467
-		    this.Members.Add(this.Code_Resembles);                                                                                                // CSBuilder.cs:467
-		    this.Members.Add(this.Code_WDifferentialDiagnosis);                                                                                   // CSBuilder.cs:467
-		}                                                                                                                                         // CSBuilder.cs:426
+		public class TCoding                                                                                                                      // CSBuilder.cs:424
+		{                                                                                                                                         // CSBuilder.cs:425
+		    Coding value;                                                                                                                         // CSBuilder.cs:426
+		    public static implicit operator Coding(TCoding tCode)                                                                                 // CSBuilder.cs:427
+		    {                                                                                                                                     // CSBuilder.cs:428
+		        return tCode.value;                                                                                                               // CSBuilder.cs:429
+		    }                                                                                                                                     // CSBuilder.cs:430
+		                                                                                                                                          // CSBuilder.cs:431
+		    public TCoding(Coding value)                                                                                                          // CSBuilder.cs:432
+		    {                                                                                                                                     // CSBuilder.cs:433
+		        this.value= value;                                                                                                                // CSBuilder.cs:434
+		    }                                                                                                                                     // CSBuilder.cs:435
+		}                                                                                                                                         // CSBuilder.cs:436
+		public TCoding Code_LikelyRepresents = new TCoding(ConsistentWithQualifierCS.Code_LikelyRepresents);                                      // CSBuilder.cs:454
+		public TCoding Code_MostLikely = new TCoding(ConsistentWithQualifierCS.Code_MostLikely);                                                  // CSBuilder.cs:454
+		public TCoding Code_Resembles = new TCoding(ConsistentWithQualifierCS.Code_Resembles);                                                    // CSBuilder.cs:454
+		public TCoding Code_WDifferentialDiagnosis = new TCoding(ConsistentWithQualifierCS.Code_WDifferentialDiagnosis);                          // CSBuilder.cs:454
+		                                                                                                                                          // CSBuilder.cs:409
+		public List<Coding> Members;                                                                                                              // CSBuilder.cs:410
+		                                                                                                                                          // CSBuilder.cs:411
+		public ConsistentWithQualifierVS()                                                                                                        // CSBuilder.cs:412
+		{                                                                                                                                         // CSBuilder.cs:413
+		    this.Members = new List<Coding>();                                                                                                    // CSBuilder.cs:414
+		    this.Members.Add(this.Code_LikelyRepresents);                                                                                         // CSBuilder.cs:457
+		    this.Members.Add(this.Code_MostLikely);                                                                                               // CSBuilder.cs:457
+		    this.Members.Add(this.Code_Resembles);                                                                                                // CSBuilder.cs:457
+		    this.Members.Add(this.Code_WDifferentialDiagnosis);                                                                                   // CSBuilder.cs:457
+		}                                                                                                                                         // CSBuilder.cs:416
 		//- Fields
 	}
 }

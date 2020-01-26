@@ -10,36 +10,36 @@ using Hl7.Fhir.Serialization;
 namespace BreastRadLib
 {
 	//+ Header
-	public class AbnormalityCystTypeCS                                                                                                         // CSBuilder.cs:485
+	public class AbnormalityCystTypeCS                                                                                                         // CSBuilder.cs:475
 	//- Header
 	{
 		//+ Fields
-		const string System = "http://hl7.org/fhir/us/breast-radiology/CodeSystem/AbnormalityCystTypeCS";                                         // CSBuilder.cs:489
-		                                                                                                                                          // CSBuilder.cs:501
+		const string System = "http://hl7.org/fhir/us/breast-radiology/CodeSystem/AbnormalityCystTypeCS";                                         // CSBuilder.cs:479
+		                                                                                                                                          // CSBuilder.cs:491
 		/// <summary>
 		/// [PR]
 		/// </summary>
-		public static Coding Code_Complex = new Coding(System, "Complex", "Complex cyst");                                                        // CSBuilder.cs:515
-		                                                                                                                                          // CSBuilder.cs:501
+		public static Coding Code_Complex = new Coding(System, "Complex", "Complex cyst");                                                        // CSBuilder.cs:505
+		                                                                                                                                          // CSBuilder.cs:491
 		/// <summary>
 		/// [PR]
 		/// </summary>
-		public static Coding Code_Oil = new Coding(System, "Oil", "Oil cyst");                                                                    // CSBuilder.cs:515
-		                                                                                                                                          // CSBuilder.cs:501
+		public static Coding Code_Oil = new Coding(System, "Oil", "Oil cyst");                                                                    // CSBuilder.cs:505
+		                                                                                                                                          // CSBuilder.cs:491
 		/// <summary>
 		/// [PR]
 		/// </summary>
-		public static Coding Code_Simple = new Coding(System, "Simple", "Simple cyst");                                                           // CSBuilder.cs:515
-		                                                                                                                                          // CSBuilder.cs:501
+		public static Coding Code_Simple = new Coding(System, "Simple", "Simple cyst");                                                           // CSBuilder.cs:505
+		                                                                                                                                          // CSBuilder.cs:491
 		/// <summary>
 		/// [PR]
 		/// </summary>
-		public static Coding Code_Complicated = new Coding(System, "Complicated", "Complicated cyst");                                            // CSBuilder.cs:515
-		                                                                                                                                          // CSBuilder.cs:501
+		public static Coding Code_Complicated = new Coding(System, "Complicated", "Complicated cyst");                                            // CSBuilder.cs:505
+		                                                                                                                                          // CSBuilder.cs:491
 		/// <summary>
 		/// [PR]
 		/// </summary>
-		public static Coding Code_WithDebris = new Coding(System, "WithDebris", "Cyst With Debris");                                              // CSBuilder.cs:515
+		public static Coding Code_WithDebris = new Coding(System, "WithDebris", "Cyst With Debris");                                              // CSBuilder.cs:505
 		//- Fields
 	}
 }
