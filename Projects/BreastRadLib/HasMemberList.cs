@@ -13,7 +13,8 @@ namespace BreastRadLib
 
         public HasMemberList(Int32 min, Int32 max)
         {
-    
+            this.min = min;
+            this.max = max;
         }
     }
 }

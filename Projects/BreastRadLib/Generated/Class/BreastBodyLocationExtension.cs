@@ -14,20 +14,19 @@ namespace BreastRadLib
 		//+ Fields
 		//- Fields
 
-		//+ Constructor
-		public BreastBodyLocationExtension()                                                                                                      // CSBuilder.cs:308
-		{                                                                                                                                         // CSBuilder.cs:309
-		}                                                                                                                                         // CSBuilder.cs:311
-		//- Constructor
+		public BreastBodyLocationExtension()
+		{
+			//+ Constructor
+			//- Constructor
+		}
 
-		//+ Methods
-		public void Load(ResourceBag resourceBag, Extension resource)                                                                             // CSBuilder.cs:318
-		{                                                                                                                                         // CSBuilder.cs:319
-		}                                                                                                                                         // CSBuilder.cs:321
-		                                                                                                                                          // CSBuilder.cs:322
-		public void Unload(ResourceBag resourceBag, Extension resource)                                                                           // CSBuilder.cs:323
-		{                                                                                                                                         // CSBuilder.cs:324
-		}                                                                                                                                         // CSBuilder.cs:326
-		//- Methods
+		public void Load(ResourceBag resourceBag, Observation resource)
+		{
+		}
+
+		public void Unload(ResourceBag resourceBag, Observation resource)
+		{
+		}
+
 	}
 }

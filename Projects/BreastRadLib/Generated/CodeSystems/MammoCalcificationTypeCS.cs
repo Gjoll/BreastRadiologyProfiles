@@ -10,12 +10,12 @@ using Hl7.Fhir.Serialization;
 namespace BreastRadLib
 {
 	//+ Header
-	public class MammoCalcificationTypeCS                                                                                                      // CSBuilder.cs:475
+	public class MammoCalcificationTypeCS                                                                                                      // CSBuilder.cs:433
 	//- Header
 	{
 		//+ Fields
-		const string System = "http://hl7.org/fhir/us/breast-radiology/CodeSystem/MammoCalcificationTypeCS";                                      // CSBuilder.cs:479
-		                                                                                                                                          // CSBuilder.cs:491
+		const string System = "http://hl7.org/fhir/us/breast-radiology/CodeSystem/MammoCalcificationTypeCS";                                      // CSBuilder.cs:437
+		                                                                                                                                          // CSBuilder.cs:449
 		/// <summary>
 		/// These are usually lucent-centered and pathognomonic in their appearance. Skin calcifications
 		/// are most commonly seen along the inframammary fold, parasternally, overlying the axilla
@@ -28,8 +28,8 @@ namespace BreastRadLib
 		/// intervention.
 		/// -- Bi-Rads® Atlas — Mammography Fifth Ed. 2013
 		/// </summary>
-		public static Coding Code_Skin = new Coding(System, "Skin", "Skin Calcification (Typically Benign)");                                     // CSBuilder.cs:505
-		                                                                                                                                          // CSBuilder.cs:491
+		public static Coding Code_Skin = new Coding(System, "Skin", "Skin Calcification (Typically Benign)");                                     // CSBuilder.cs:463
+		                                                                                                                                          // CSBuilder.cs:449
 		/// <summary>
 		/// Parallel tracks, or linear tubular calcifications that are clearly associated with blood vessels.
 		/// While most vascular calcification is not difficult to identify, if only a few discontinuous calcific
@@ -38,14 +38,14 @@ namespace BreastRadLib
 		/// their nature.
 		/// -- Bi-Rads® Atlas — Mammography Fifth Ed. 2013
 		/// </summary>
-		public static Coding Code_Vascular = new Coding(System, "Vascular", "Vascular Calcification (Typically Benign)");                         // CSBuilder.cs:505
-		                                                                                                                                          // CSBuilder.cs:491
+		public static Coding Code_Vascular = new Coding(System, "Vascular", "Vascular Calcification (Typically Benign)");                         // CSBuilder.cs:463
+		                                                                                                                                          // CSBuilder.cs:449
 		/// <summary>
 		/// These are the classic large (> 2 to 3 mm in greatest diameter) calcifications produced by an involuting fibroadenoma.
 		/// -- Bi-Rads® Atlas — Mammography Fifth Ed. 2013
 		/// </summary>
-		public static Coding Code_Coarse = new Coding(System, "Coarse", "Coarse or 'Popcorn-like' Calcification (Typically Benign)");             // CSBuilder.cs:505
-		                                                                                                                                          // CSBuilder.cs:491
+		public static Coding Code_Coarse = new Coding(System, "Coarse", "Coarse or 'Popcorn-like' Calcification (Typically Benign)");             // CSBuilder.cs:463
+		                                                                                                                                          // CSBuilder.cs:449
 		/// <summary>
 		/// These benign calcifications associated with ductal ectasia may form solid or discontinuous
 		/// smooth linear rods, most of which are 0.5 mm or larger in diameter. A small percentage of
@@ -57,8 +57,8 @@ namespace BreastRadLib
 		/// in women older than 60 years.)
 		/// -- Bi-Rads® Atlas — Mammography Fifth Ed. 2013
 		/// </summary>
-		public static Coding Code_LargeRodLike = new Coding(System, "LargeRodLike", "Large Rod-Like Calcification (Typically Benign)");           // CSBuilder.cs:505
-		                                                                                                                                          // CSBuilder.cs:491
+		public static Coding Code_LargeRodLike = new Coding(System, "LargeRodLike", "Large Rod-Like Calcification (Typically Benign)");           // CSBuilder.cs:463
+		                                                                                                                                          // CSBuilder.cs:449
 		/// <summary>
 		/// When multiple, they may vary in size and therefore also in opacity. They may be considered
 		/// benign when diffuse and small (< 1 mm), and are frequently formed in the acini of lobules. When
@@ -70,8 +70,8 @@ namespace BreastRadLib
 		/// adjacent to a known cancer.
 		/// -- Bi-Rads® Atlas — Mammography Fifth Ed. 2013
 		/// </summary>
-		public static Coding Code_Round = new Coding(System, "Round", "Round (Typically Benign)");                                                // CSBuilder.cs:505
-		                                                                                                                                          // CSBuilder.cs:491
+		public static Coding Code_Round = new Coding(System, "Round", "Round (Typically Benign)");                                                // CSBuilder.cs:463
+		                                                                                                                                          // CSBuilder.cs:449
 		/// <summary>
 		/// (historically, "eggshell", "lucent-centered")
 		/// These are thin benign calcifications that appear as calcium deposited on the surface of a
@@ -83,16 +83,16 @@ namespace BreastRadLib
 		/// walls of oil cysts or simple cysts may be seen.
 		/// -- Bi-Rads® Atlas — Mammography Fifth Ed. 2013
 		/// </summary>
-		public static Coding Code_Rim = new Coding(System, "Rim", "Rim  Calcification (Typically Benign)");                                       // CSBuilder.cs:505
-		                                                                                                                                          // CSBuilder.cs:491
+		public static Coding Code_Rim = new Coding(System, "Rim", "Rim  Calcification (Typically Benign)");                                       // CSBuilder.cs:463
+		                                                                                                                                          // CSBuilder.cs:449
 		/// <summary>
 		/// These typically form in the irradiated breast or in the breast following trauma or surgery. The
 		/// calcifications are irregular in shape, and they are usually larger than 1 mm in size. They often
 		/// have lucent centers.
 		/// -- Bi-Rads® Atlas — Mammography Fifth Ed. 2013
 		/// </summary>
-		public static Coding Code_Dystrophic = new Coding(System, "Dystrophic", "Dystrophic Calcification (Typically Benign)");                   // CSBuilder.cs:505
-		                                                                                                                                          // CSBuilder.cs:491
+		public static Coding Code_Dystrophic = new Coding(System, "Dystrophic", "Dystrophic Calcification (Typically Benign)");                   // CSBuilder.cs:463
+		                                                                                                                                          // CSBuilder.cs:449
 		/// <summary>
 		/// This is a manifestation of sedimented calcifications in macro- or microcysts, usually but not
 		/// always grouped. On the craniocaudal image they are often less evident and appear as round,
@@ -106,15 +106,15 @@ namespace BreastRadLib
 		/// those that do not change shape from the 90º lateral projection to the CC projection.
 		/// -- Bi-Rads® Atlas — Mammography Fifth Ed. 2013
 		/// </summary>
-		public static Coding Code_MilkOfCalcium = new Coding(System, "MilkOfCalcium", "Milk of Calcium Calcification (Typically Benign)");        // CSBuilder.cs:505
-		                                                                                                                                          // CSBuilder.cs:491
+		public static Coding Code_MilkOfCalcium = new Coding(System, "MilkOfCalcium", "Milk of Calcium Calcification (Typically Benign)");        // CSBuilder.cs:463
+		                                                                                                                                          // CSBuilder.cs:449
 		/// <summary>
 		/// These represent calcium deposited on suture material. They are typically linear or tubular in
 		/// appearance and when present, knots are frequently visible.
 		/// -- Bi-Rads® Atlas — Mammography Fifth Ed. 2013
 		/// </summary>
-		public static Coding Code_Suture = new Coding(System, "Suture", "Suture Calcification (Typically Benign)");                               // CSBuilder.cs:505
-		                                                                                                                                          // CSBuilder.cs:491
+		public static Coding Code_Suture = new Coding(System, "Suture", "Suture Calcification (Typically Benign)");                               // CSBuilder.cs:463
+		                                                                                                                                          // CSBuilder.cs:449
 		/// <summary>
 		/// (historically, "indistinct")
 		/// These are sufficiently small and/or hazy in appearance that a more specific particle shape
@@ -126,8 +126,8 @@ namespace BreastRadLib
 		/// should be placed into BI-RADS® assessment category 4B (PPV range > 10% to ? 50%).
 		/// -- Bi-Rads® Atlas — Mammography Fifth Ed. 2013
 		/// </summary>
-		public static Coding Code_Amorphous = new Coding(System, "Amorphous", "Amorphous Calcification (Suspicious Morphology)");                 // CSBuilder.cs:505
-		                                                                                                                                          // CSBuilder.cs:491
+		public static Coding Code_Amorphous = new Coding(System, "Amorphous", "Amorphous Calcification (Suspicious Morphology)");                 // CSBuilder.cs:463
+		                                                                                                                                          // CSBuilder.cs:449
 		/// <summary>
 		/// These are irregular, conspicuous calcifications that are generally between 0.5 mm and 1 mm
 		/// and tend to coalesce, but are smaller than dystrophic calcifications. They may be associated
@@ -139,8 +139,8 @@ namespace BreastRadLib
 		/// placed in BI-RADS® assessment category 4B (PPV range > 10% to ? 50%).
 		/// -- Bi-Rads® Atlas — Mammography Fifth Ed. 2013
 		/// </summary>
-		public static Coding Code_CoarseHeterogeneous = new Coding(System, "CoarseHeterogeneous", "Coarse Heterogeneous Calcification (Suspicious Morphology)");// CSBuilder.cs:505
-		                                                                                                                                          // CSBuilder.cs:491
+		public static Coding Code_CoarseHeterogeneous = new Coding(System, "CoarseHeterogeneous", "Coarse Heterogeneous Calcification (Suspicious Morphology)");// CSBuilder.cs:463
+		                                                                                                                                          // CSBuilder.cs:449
 		/// <summary>
 		/// These calcifications are usually more conspicuous than amorphous forms and are seen to have
 		/// discrete shapes. These irregular calcifications are distinguished from fine linear and fine-linear
@@ -150,8 +150,8 @@ namespace BreastRadLib
 		/// but also should be placed in BI-RADS® assessment category 4B (PPV range > 10% to ? 50%).
 		/// -- Bi-Rads® Atlas — Mammography Fifth Ed. 2013
 		/// </summary>
-		public static Coding Code_FinePleomorphic = new Coding(System, "Fine Pleomorphic", "Fine Pleomorphic Calcification (Suspicious Morphology)");// CSBuilder.cs:505
-		                                                                                                                                          // CSBuilder.cs:491
+		public static Coding Code_FinePleomorphic = new Coding(System, "Fine Pleomorphic", "Fine Pleomorphic Calcification (Suspicious Morphology)");// CSBuilder.cs:463
+		                                                                                                                                          // CSBuilder.cs:449
 		/// <summary>
 		/// These are thin, linear, irregular calcifications, which may be discontinuous and which are
 		/// smaller than 0.5 mm in caliber. Occasionally, branching forms may be seen. Their
@@ -161,7 +161,7 @@ namespace BreastRadLib
 		/// should be placed in BI-RADS® assessment category 4C (PPV range > 50% to < 95%).
 		/// -- Bi-Rads® Atlas — Mammography Fifth Ed. 2013
 		/// </summary>
-		public static Coding Code_FineLinear = new Coding(System, "FineLinear", "Fine Linear or Fine-Linear Branching Calcification (Suspicious Morphology)");// CSBuilder.cs:505
+		public static Coding Code_FineLinear = new Coding(System, "FineLinear", "Fine Linear or Fine-Linear Branching Calcification (Suspicious Morphology)");// CSBuilder.cs:463
 		//- Fields
 	}
 }

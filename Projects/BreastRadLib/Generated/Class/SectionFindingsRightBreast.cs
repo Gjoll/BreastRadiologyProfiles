@@ -12,40 +12,47 @@ namespace BreastRadLib
 	public class SectionFindingsRightBreast : BreastRadBase, IFindingBreastFragment
 	{
 		//+ Fields
-		public HasMemberList<IMGFinding> MGFinding {get;}                                                                                         // CSBuilder.cs:222
-		public HasMemberList<IMRIFinding> MRIFinding {get;}                                                                                       // CSBuilder.cs:222
-		public HasMemberList<INMFinding> NMFinding {get;}                                                                                         // CSBuilder.cs:222
-		public HasMemberList<IUSFinding> USFinding {get;}                                                                                         // CSBuilder.cs:222
+		
+        public HasMemberList<IMGFinding> MGFinding {get;}
+        public HasMemberList<IMRIFinding> MRIFinding {get;}
+        public HasMemberList<INMFinding> NMFinding {get;}
+        public HasMemberList<IUSFinding> USFinding {get;}
 		//- Fields
 
-		//+ Constructor
-		public SectionFindingsRightBreast()                                                                                                       // CSBuilder.cs:308
-		{                                                                                                                                         // CSBuilder.cs:309
-		    this.MGFinding = new HasMemberList<IMGFinding>(0, -1);                                                                                // CSBuilder.cs:236
-		    this.MRIFinding = new HasMemberList<IMRIFinding>(0, -1);                                                                              // CSBuilder.cs:236
-		    this.NMFinding = new HasMemberList<INMFinding>(0, -1);                                                                                // CSBuilder.cs:236
-		    this.USFinding = new HasMemberList<IUSFinding>(0, -1);                                                                                // CSBuilder.cs:236
-		}                                                                                                                                         // CSBuilder.cs:311
-		//- Constructor
+		public SectionFindingsRightBreast()
+		{
+			//+ Constructor
+		
+            this.MGFinding = new HasMemberList<IMGFinding>(0, -1);
+            this.MRIFinding = new HasMemberList<IMRIFinding>(0, -1);
+            this.NMFinding = new HasMemberList<INMFinding>(0, -1);
+            this.USFinding = new HasMemberList<IUSFinding>(0, -1);
+			//- Constructor
+		}
 
-		//+ Methods
-		public void Load(ResourceBag resourceBag, Observation resource)                                                                           // CSBuilder.cs:318
-		{                                                                                                                                         // CSBuilder.cs:319
-		    LoadHasMembers(resourceBag, resource);                                                                                                // CSBuilder.cs:242
-		}                                                                                                                                         // CSBuilder.cs:321
-		                                                                                                                                          // CSBuilder.cs:322
-		public void Unload(ResourceBag resourceBag, Observation resource)                                                                         // CSBuilder.cs:323
-		{                                                                                                                                         // CSBuilder.cs:324
-		}                                                                                                                                         // CSBuilder.cs:326
-		                                                                                                                                          // CSBuilder.cs:246
-		public void LoadHasMembers(ResourceBag resourceBag, Observation resource)                                                                 // CSBuilder.cs:247
-		{                                                                                                                                         // CSBuilder.cs:248
-		    foreach (ResourceReference hasMember in resource.HasMember)                                                                           // CSBuilder.cs:249
-		    {                                                                                                                                     // CSBuilder.cs:250
-		        //if (resourceBag.TryGetEntry(hasMember.Url, out Bundle.EntryComponent entry) == false)                                           // CSBuilder.cs:251
-		        //    throw new Exception("Reference '{hasMember.Url}' not found in bag");                                                        // CSBuilder.cs:252
-		    }                                                                                                                                     // CSBuilder.cs:255
-		}                                                                                                                                         // CSBuilder.cs:256
-		//- Methods
+		public void Load(ResourceBag resourceBag, Observation resource)
+		{
+		    LoadHasMembers(resourceBag, resource);
+		}
+
+		public void Unload(ResourceBag resourceBag, Observation resource)
+		{
+		    UnloadHasMembers(resourceBag, resource);
+		}
+
+		//+ HasMembers
+		public void LoadHasMembers(ResourceBag resourceBag, Observation resource)
+		{
+		    foreach (ResourceReference hasMember in resource.HasMember)
+		    {
+		        //if (resourceBag.TryGetEntry(hasMember.Url, out Bundle.EntryComponent entry) == false)
+		        //    throw new Exception("Reference '{hasMember.Url}' not found in bag");
+		    }
+		}
+
+		public void UnloadHasMembers(ResourceBag resourceBag, Observation resource)
+		{
+		}
+		//- HasMembers
 	}
 }

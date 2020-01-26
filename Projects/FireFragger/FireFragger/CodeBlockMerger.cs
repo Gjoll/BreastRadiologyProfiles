@@ -15,35 +15,52 @@ namespace FireFragger
 
         public void Merge(CodeEditor mergeCode)
         {
-            foreach (CodeBlock mergeBlock in mergeCode.Blocks.Children)
+            bool AllBlank(String[] lines)
+            {
+                foreach (String line in lines)
+                {
+                    if (line.Trim().Length > 0)
+                        return false;
+                }
+                return true;
+            }
+
+            void ProcessBlock(CodeBlock mergeBlock)
             {
                 CodeBlockNested mergeBlockNested = mergeBlock as CodeBlockNested;
                 if (mergeBlockNested == null)
-                    throw new Exception($"Base merge block must be of type MergeBlockNested");
+                {
+                    if (AllBlank(mergeBlock.AllLines()) == false)
+                        throw new Exception($"Base merge block must be of type MergeBlockNested");
+                    return;
+                }
 
                 CodeBlockNested codeBlockNested = this.code.Blocks.Find(mergeBlockNested.Name);
                 if (codeBlockNested == null)
                     throw new Exception($"Base code editor does not contain a top level block named {mergeBlockNested.Name}");
                 Merge(codeBlockNested, mergeBlockNested);
             }
+
+            foreach (CodeBlock mergeBlock in mergeCode.Blocks.Children)
+                ProcessBlock(mergeBlock);
         }
 
         void Merge(CodeBlockNested codeBlock, CodeBlockNested mergeBlock)
         {
-            foreach (CodeBlock mergeBlockChild in code.Blocks.Children)
+            foreach (CodeBlock mergeBlockChild in mergeBlock.Children)
             {
                 switch (mergeBlockChild)
                 {
                     case CodeBlockText mergeBlockChildText:
-                        codeBlock.AppendBlock(mergeBlockChild);
+                        foreach (String line in mergeBlockChild.AllLines())
+                            codeBlock.AppendLine(line, "");
                         break;
 
                     case CodeBlockNested mergeBlockChildNested:
                         CodeBlockNested codeBlockChildNested = codeBlock.Find(mergeBlockChildNested.Name);
                         if (codeBlockChildNested == null)
-                            codeBlock.AppendBlock(mergeBlockChild);
-                        else
-                            Merge(codeBlockChildNested, mergeBlockChildNested);
+                            codeBlockChildNested = codeBlock.AppendBlock(mergeBlockChildNested.Name);
+                        Merge(codeBlockChildNested, mergeBlockChildNested);
                         break;
                 }
             }

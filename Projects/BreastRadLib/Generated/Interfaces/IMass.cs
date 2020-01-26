@@ -12,8 +12,9 @@ namespace BreastRadLib
 	public interface IMass : IBreastRad, IObservationLeafFragment, ITumorSatelliteFragment, IBreastRadObservationNoDeviceFragment, IBreastRadObservationNoValueFragment, ICommonComponentsFragment, IShapeComponentsFragment, IObservedCountFragment, INotPreviouslySeenComponentFragment, ICorrespondsWithFragment
 	{
 		//+ Fields
-		HasMemberList<IAssociatedFeatures> AssociatedFeatures {get;}                                                                              // CSBuilder.cs:265
-		HasMemberList<IConsistentWith> ConsistentWith {get;}                                                                                      // CSBuilder.cs:265
+		
+        HasMemberList<IAssociatedFeatures> AssociatedFeatures {get;}
+        HasMemberList<IConsistentWith> ConsistentWith {get;}
 		//- Fields
 	}
 }

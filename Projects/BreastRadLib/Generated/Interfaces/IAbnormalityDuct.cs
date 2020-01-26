@@ -12,7 +12,8 @@ namespace BreastRadLib
 	public interface IAbnormalityDuct : IBreastRad, IObservationLeafFragment, IBreastRadObservationNoDeviceFragment, IBreastRadObservationNoValueFragment, ICommonComponentsFragment, IShapeComponentsFragment, IObservedCountFragment, INotPreviouslySeenComponentFragment, ICorrespondsWithFragment
 	{
 		//+ Fields
-		HasMemberList<IConsistentWith> ConsistentWith {get;}                                                                                      // CSBuilder.cs:265
+		
+        HasMemberList<IConsistentWith> ConsistentWith {get;}
 		//- Fields
 	}
 }

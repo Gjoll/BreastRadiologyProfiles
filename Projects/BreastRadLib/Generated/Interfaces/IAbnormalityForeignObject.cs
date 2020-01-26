@@ -12,8 +12,9 @@ namespace BreastRadLib
 	public interface IAbnormalityForeignObject : IBreastRad, IBreastRadObservationNoDeviceFragment, IBreastRadObservationNoValueFragment, ICommonComponentsFragment, INotPreviouslySeenComponentFragment, ICorrespondsWithFragment, IBiRadFragment
 	{
 		//+ Fields
-		HasMemberList<IConsistentWith> ConsistentWith {get;}                                                                                      // CSBuilder.cs:265
-		HasMemberList<IAssociatedFeatures> AssociatedFeatures {get;}                                                                              // CSBuilder.cs:265
+		
+        HasMemberList<IConsistentWith> ConsistentWith {get;}
+        HasMemberList<IAssociatedFeatures> AssociatedFeatures {get;}
 		//- Fields
 	}
 }

@@ -10,7 +10,7 @@ using Hl7.Fhir.Serialization;
 namespace BreastRadLib
 {
 	//+ Header
-	public class OrientationVS                                                                                                                 // CSBuilder.cs:403
+	public class OrientationVS                                                                                                                 // CSBuilder.cs:361
 	//- Header
 	{
 		//+ Fields
@@ -18,30 +18,30 @@ namespace BreastRadLib
 		/// This class creates a type for codings of this class, that implicitly converts to Coding
 		/// Allows type checking for these codes.
 		/// </summary>
-		public class TCoding                                                                                                                      // CSBuilder.cs:424
-		{                                                                                                                                         // CSBuilder.cs:425
-		    Coding value;                                                                                                                         // CSBuilder.cs:426
-		    public static implicit operator Coding(TCoding tCode)                                                                                 // CSBuilder.cs:427
-		    {                                                                                                                                     // CSBuilder.cs:428
-		        return tCode.value;                                                                                                               // CSBuilder.cs:429
-		    }                                                                                                                                     // CSBuilder.cs:430
-		                                                                                                                                          // CSBuilder.cs:431
-		    public TCoding(Coding value)                                                                                                          // CSBuilder.cs:432
-		    {                                                                                                                                     // CSBuilder.cs:433
-		        this.value= value;                                                                                                                // CSBuilder.cs:434
-		    }                                                                                                                                     // CSBuilder.cs:435
-		}                                                                                                                                         // CSBuilder.cs:436
-		public TCoding Code_ParallelToSkin = new TCoding(OrientationCS.Code_ParallelToSkin);                                                      // CSBuilder.cs:454
-		public TCoding Code_PerpendicularToSkin = new TCoding(OrientationCS.Code_PerpendicularToSkin);                                            // CSBuilder.cs:454
-		                                                                                                                                          // CSBuilder.cs:409
-		public List<Coding> Members;                                                                                                              // CSBuilder.cs:410
-		                                                                                                                                          // CSBuilder.cs:411
-		public OrientationVS()                                                                                                                    // CSBuilder.cs:412
-		{                                                                                                                                         // CSBuilder.cs:413
-		    this.Members = new List<Coding>();                                                                                                    // CSBuilder.cs:414
-		    this.Members.Add(this.Code_ParallelToSkin);                                                                                           // CSBuilder.cs:457
-		    this.Members.Add(this.Code_PerpendicularToSkin);                                                                                      // CSBuilder.cs:457
-		}                                                                                                                                         // CSBuilder.cs:416
+		public class TCoding                                                                                                                      // CSBuilder.cs:382
+		{                                                                                                                                         // CSBuilder.cs:383
+		    Coding value;                                                                                                                         // CSBuilder.cs:384
+		    public static implicit operator Coding(TCoding tCode)                                                                                 // CSBuilder.cs:385
+		    {                                                                                                                                     // CSBuilder.cs:386
+		        return tCode.value;                                                                                                               // CSBuilder.cs:387
+		    }                                                                                                                                     // CSBuilder.cs:388
+		                                                                                                                                          // CSBuilder.cs:389
+		    public TCoding(Coding value)                                                                                                          // CSBuilder.cs:390
+		    {                                                                                                                                     // CSBuilder.cs:391
+		        this.value= value;                                                                                                                // CSBuilder.cs:392
+		    }                                                                                                                                     // CSBuilder.cs:393
+		}                                                                                                                                         // CSBuilder.cs:394
+		public TCoding Code_ParallelToSkin = new TCoding(OrientationCS.Code_ParallelToSkin);                                                      // CSBuilder.cs:412
+		public TCoding Code_PerpendicularToSkin = new TCoding(OrientationCS.Code_PerpendicularToSkin);                                            // CSBuilder.cs:412
+		                                                                                                                                          // CSBuilder.cs:367
+		public List<Coding> Members;                                                                                                              // CSBuilder.cs:368
+		                                                                                                                                          // CSBuilder.cs:369
+		public OrientationVS()                                                                                                                    // CSBuilder.cs:370
+		{                                                                                                                                         // CSBuilder.cs:371
+		    this.Members = new List<Coding>();                                                                                                    // CSBuilder.cs:372
+		    this.Members.Add(this.Code_ParallelToSkin);                                                                                           // CSBuilder.cs:415
+		    this.Members.Add(this.Code_PerpendicularToSkin);                                                                                      // CSBuilder.cs:415
+		}                                                                                                                                         // CSBuilder.cs:374
 		//- Fields
 	}
 }

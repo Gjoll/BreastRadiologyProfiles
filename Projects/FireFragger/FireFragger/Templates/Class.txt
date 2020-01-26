@@ -16,10 +16,25 @@ namespace BreastRadLib
 		//+ Fields
 		//- Fields
 
-		//+ Constructor
-		//- Constructor
+		public %ClassName%()
+		{
+			//+ Constructor
+			//- Constructor
+		}
 
-		//+ Methods
-		//- Methods
+		public void Load(ResourceBag resourceBag, Observation resource)
+		{
+			//+ *LoadMethods
+			//- *LoadMethods
+		}
+
+		public void Unload(ResourceBag resourceBag, Observation resource)
+		{
+			//+ *UnloadMethods
+			//- *UnloadMethods
+		}
+
+		//+ *Methods
+		//- *Methods
 	}
 }

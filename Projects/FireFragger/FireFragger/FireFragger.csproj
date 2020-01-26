@@ -42,6 +42,12 @@
   </ItemGroup>
 
   <ItemGroup>
+    <None Update="Templates\HasMemberInterfaceFrag.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="Templates\HasMemberClassFrag.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
     <None Update="Templates\CodeSystem.txt">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>

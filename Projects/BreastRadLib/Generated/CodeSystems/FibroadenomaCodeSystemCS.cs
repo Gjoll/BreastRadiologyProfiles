@@ -10,23 +10,23 @@ using Hl7.Fhir.Serialization;
 namespace BreastRadLib
 {
 	//+ Header
-	public class FibroadenomaCodeSystemCS                                                                                                      // CSBuilder.cs:475
+	public class FibroadenomaCodeSystemCS                                                                                                      // CSBuilder.cs:433
 	//- Header
 	{
 		//+ Fields
-		const string System = "http://hl7.org/fhir/us/breast-radiology/CodeSystem/FibroadenomaCodeSystemCS";                                      // CSBuilder.cs:479
-		                                                                                                                                          // CSBuilder.cs:491
+		const string System = "http://hl7.org/fhir/us/breast-radiology/CodeSystem/FibroadenomaCodeSystemCS";                                      // CSBuilder.cs:437
+		                                                                                                                                          // CSBuilder.cs:449
 		/// <summary>
 		/// [PR]
 		/// Valid for the following modalities: MG US MRI NM.
 		/// </summary>
-		public static Coding Code_Normal = new Coding(System, "Normal", "Normal");                                                                // CSBuilder.cs:505
-		                                                                                                                                          // CSBuilder.cs:491
+		public static Coding Code_Normal = new Coding(System, "Normal", "Normal");                                                                // CSBuilder.cs:463
+		                                                                                                                                          // CSBuilder.cs:449
 		/// <summary>
 		/// [PR]
 		/// Valid for the following modalities: MG.
 		/// </summary>
-		public static Coding Code_Degenerated = new Coding(System, "Degenerated", "Degenerated");                                                 // CSBuilder.cs:505
+		public static Coding Code_Degenerated = new Coding(System, "Degenerated", "Degenerated");                                                 // CSBuilder.cs:463
 		//- Fields
 	}
 }

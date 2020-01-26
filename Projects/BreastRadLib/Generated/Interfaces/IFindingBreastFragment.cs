@@ -12,10 +12,6 @@ namespace BreastRadLib
 	public interface IFindingBreastFragment : IBreastRad, IHeaderFragment, IBreastRadObservationNoDeviceFragment, IServiceRecommendationFragment
 	{
 		//+ Fields
-		HasMemberList<IMGFinding> MGFinding {get;}                                                                                                // CSBuilder.cs:265
-		HasMemberList<IMRIFinding> MRIFinding {get;}                                                                                              // CSBuilder.cs:265
-		HasMemberList<INMFinding> NMFinding {get;}                                                                                                // CSBuilder.cs:265
-		HasMemberList<IUSFinding> USFinding {get;}                                                                                                // CSBuilder.cs:265
 		//- Fields
 	}
 }

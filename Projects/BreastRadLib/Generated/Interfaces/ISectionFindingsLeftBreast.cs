@@ -12,6 +12,7 @@ namespace BreastRadLib
 	public interface ISectionFindingsLeftBreast : IBreastRad, IFindingBreastFragment
 	{
 		//+ Fields
+		
 		//- Fields
 	}
 }

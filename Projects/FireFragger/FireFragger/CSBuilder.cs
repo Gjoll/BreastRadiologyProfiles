@@ -38,10 +38,6 @@ namespace FireFragger
             public StructureDefinition StructDef;
             public CodeEditor InterfaceEditor;
             public CodeEditor ClassEditor;
-            public CodeBlockNested ClassConstructorBody;
-            public CodeBlockNested MethodsBlock;
-            public CodeBlockNested LoadBody;
-            public CodeBlockNested UnloadBody;
             public ElementTreeNode DiffNodes;
 
             public String BaseDefinitionUrl => this.StructDef.BaseDefinition;
@@ -152,7 +148,6 @@ namespace FireFragger
                 case StructureDefinition sd:
                     {
                         ElementTreeLoader l = new ElementTreeLoader(this);
-                        ElementTreeNode diffNode = null;
 
                         FragInfo fi = new FragInfo
                         {
@@ -189,13 +184,16 @@ namespace FireFragger
                fcn,
                $"Processing fragment {fi.StructDef.Name}");
             DefineInterfaces(fi);
-            BuildHasMembers(fi);
+            DefineHasMembers(fi);
         }
 
-        void BuildHasMembers(FragInfo fragInfo)
+        void DefineHasMembers(FragInfo fragInfo)
         {
+            List<String> interfaceFields = new List<string>();
+            List<String> classFields = new List<string>();
+            List<String> classInstantiations = new List<string>();
+
             HashSet<string> items = new HashSet<string>();
-            CodeBlockNested loadHasMemberBlock = null;
 
             void Build2(FragInfo fi, ElementTreeSlice slice, Int32 level)
             {
@@ -216,55 +214,20 @@ namespace FireFragger
                 String refInterfaceName = InterfaceName(refFrag);
                 String fieldName = PropertyName(slice.Name);
 
-                if (fragInfo.ClassEditor != null)
-                {
-                    fragInfo.ClassEditor.Blocks.Find("Fields")
-                        .AppendCode($"public HasMemberList<{refInterfaceName}> {fieldName} {{get;}}")
-                        ;
-
-                    Int32 min = 0;
-                    if (slice.ElementDefinition.Min.HasValue)
-                        min = slice.ElementDefinition.Min.Value;
-                    Int32 max = -1;
-                    if (String.IsNullOrEmpty(slice.ElementDefinition.Max) == false)
-                    {
-                        if (slice.ElementDefinition.Max != "*")
-                            max = Int32.Parse(slice.ElementDefinition.Max);
-                    }
-
-                    fragInfo.ClassConstructorBody
-                        .AppendCode($"this.{fieldName} = new HasMemberList<{refInterfaceName}>({min}, {max});")
-                        ;
-
-                    if (loadHasMemberBlock == null)
-                    {
-                        fragInfo.LoadBody
-                            .AppendCode("LoadHasMembers(resourceBag, resource);")
-                        ;
-
-                        fragInfo.MethodsBlock
-                            .BlankLine()
-                            .AppendCode($"public void LoadHasMembers(ResourceBag resourceBag, {fi.BaseDefinitionName} resource)")
-                            .OpenBrace()
-                            .AppendCode("foreach (ResourceReference hasMember in resource.HasMember)")
-                            .OpenBrace()
-                            .AppendCode("//if (resourceBag.TryGetEntry(hasMember.Url, out Bundle.EntryComponent entry) == false)")
-                            .AppendCode("//    throw new Exception(\"Reference '{hasMember.Url}' not found in bag\");")
-                            //.AppendCode("switch ()")
-                            .DefineBlock(out loadHasMemberBlock)
-                            .CloseBrace()
-                            .CloseBrace()
-                        ;
-                    }
-
-                }
-
+                classFields.Add($"public HasMemberList<{refInterfaceName}> {fieldName} {{get;}}");
                 if (level == 0)
+                    interfaceFields.Add($"HasMemberList<{refInterfaceName}> {fieldName} {{get;}}");
+
+                Int32 min = 0;
+                if (slice.ElementDefinition.Min.HasValue)
+                    min = slice.ElementDefinition.Min.Value;
+                Int32 max = -1;
+                if (String.IsNullOrEmpty(slice.ElementDefinition.Max) == false)
                 {
-                    fragInfo.InterfaceEditor.Blocks.Find("Fields")
-                        .AppendCode($"HasMemberList<{refInterfaceName}> {fieldName} {{get;}}")
-                        ;
+                    if (slice.ElementDefinition.Max != "*")
+                        max = Int32.Parse(slice.ElementDefinition.Max);
                 }
+                classInstantiations.Add($"this.{fieldName} = new HasMemberList<{refInterfaceName}>({min}, {max});");
             }
 
             void Build(FragInfo fi, Int32 level)
@@ -281,8 +244,30 @@ namespace FireFragger
 
             if (fragInfo.BaseDefinitionUrl != Global.ObservationUrl)
                 return;
+            if (fragInfo.ClassEditor == null)
+                return;
 
             VisitFragments(Build, fragInfo);
+
+            if (classFields.Count == 0)
+                return;
+
+            {
+                CodeEditor hasMemberClassFrag = new CodeEditor();
+                hasMemberClassFrag.Load(Path.Combine("Templates", "HasMemberClassFrag.txt"));
+                fragInfo.ClassEditor.AddUserMacro("HasMemberFields", classFields);
+                fragInfo.ClassEditor.AddUserMacro("HasMemberDefinitions", classInstantiations);
+                CodeBlockMerger cbm = new CodeBlockMerger(fragInfo.ClassEditor);
+                cbm.Merge(hasMemberClassFrag);
+            }
+
+            {
+                CodeEditor hasMemberInterfaceFrag = new CodeEditor();
+                hasMemberInterfaceFrag.Load(Path.Combine("Templates", "HasMemberInterfaceFrag.txt"));
+                fragInfo.InterfaceEditor.AddUserMacro("HasMemberFields", interfaceFields);
+                CodeBlockMerger cbm = new CodeBlockMerger(fragInfo.InterfaceEditor);
+                cbm.Merge(hasMemberInterfaceFrag);
+            }
         }
 
 
@@ -301,33 +286,6 @@ namespace FireFragger
             {
                 fi.ClassEditor.TryAddUserMacro("Interfaces", interfaces.ToString());
                 fi.ClassEditor.Blocks.Find("*Header").Reload();
-
-
-                CodeBlockNested conBlock = fi.ClassEditor.Blocks.Find("Constructor");
-                conBlock
-                    .AppendCode($"public {this.ClassName(fi)}()")
-                    .OpenBrace()
-                    .DefineBlock(out CodeBlockNested conBody)
-                    .CloseBrace()
-                    ;
-                fi.ClassConstructorBody = conBody;
-
-                fi.MethodsBlock = fi.ClassEditor.Blocks.Find("Methods");
-
-                fi.MethodsBlock
-                    .AppendCode($"public void Load(ResourceBag resourceBag, {fi.BaseDefinitionName} resource)")
-                    .OpenBrace()
-                    .DefineBlock(out CodeBlockNested loadBody)
-                    .CloseBrace()
-                    .BlankLine()
-                    .AppendCode($"public void Unload(ResourceBag resourceBag, {fi.BaseDefinitionName} resource)")
-                    .OpenBrace()
-                    .DefineBlock(out CodeBlockNested unloadBody)
-                    .CloseBrace()
-                    ;
-
-                fi.LoadBody = loadBody;
-                fi.UnloadBody = unloadBody;
             }
         }
 

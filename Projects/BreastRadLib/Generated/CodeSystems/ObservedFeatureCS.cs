@@ -10,12 +10,12 @@ using Hl7.Fhir.Serialization;
 namespace BreastRadLib
 {
 	//+ Header
-	public class ObservedFeatureCS                                                                                                             // CSBuilder.cs:475
+	public class ObservedFeatureCS                                                                                                             // CSBuilder.cs:433
 	//- Header
 	{
 		//+ Fields
-		const string System = "http://hl7.org/fhir/us/breast-radiology/CodeSystem/ObservedFeatureCS";                                             // CSBuilder.cs:479
-		                                                                                                                                          // CSBuilder.cs:491
+		const string System = "http://hl7.org/fhir/us/breast-radiology/CodeSystem/ObservedFeatureCS";                                             // CSBuilder.cs:437
+		                                                                                                                                          // CSBuilder.cs:449
 		/// <summary>
 		/// Axillary adenopathy
 		/// Enlarged axillary lymph nodes may warrant comment, clinical correlation, and additional
@@ -26,68 +26,68 @@ namespace BreastRadLib
 		/// -- Bi-Rads® Atlas — Mammography Fifth Ed. 2013
 		/// Valid for the following modalities: MG MRI.
 		/// </summary>
-		public static Coding Code_AxillaryAdenopathy = new Coding(System, "AxillaryAdenopathy", "Axillary adenopathy");                           // CSBuilder.cs:505
-		                                                                                                                                          // CSBuilder.cs:491
+		public static Coding Code_AxillaryAdenopathy = new Coding(System, "AxillaryAdenopathy", "Axillary adenopathy");                           // CSBuilder.cs:463
+		                                                                                                                                          // CSBuilder.cs:449
 		/// <summary>
 		/// [PR] Biopsy clip
 		/// Valid for the following modalities: MG US MRI.
 		/// </summary>
-		public static Coding Code_BiopsyClip = new Coding(System, "BiopsyClip", "Biopsy clip");                                                   // CSBuilder.cs:505
-		                                                                                                                                          // CSBuilder.cs:491
+		public static Coding Code_BiopsyClip = new Coding(System, "BiopsyClip", "Biopsy clip");                                                   // CSBuilder.cs:463
+		                                                                                                                                          // CSBuilder.cs:449
 		/// <summary>
 		/// [PR] Biopsy clips
 		/// Valid for the following modalities: MG US MRI.
 		/// </summary>
-		public static Coding Code_BiopsyClips = new Coding(System, "BiopsyClips", "Biopsy clips");                                                // CSBuilder.cs:505
-		                                                                                                                                          // CSBuilder.cs:491
+		public static Coding Code_BiopsyClips = new Coding(System, "BiopsyClips", "Biopsy clips");                                                // CSBuilder.cs:463
+		                                                                                                                                          // CSBuilder.cs:449
 		/// <summary>
 		/// [PR] Brachytherapy tube
 		/// Valid for the following modalities: MG.
 		/// </summary>
-		public static Coding Code_BrachytherapyTube = new Coding(System, "BrachytherapyTube", "Brachytherapy tube");                              // CSBuilder.cs:505
-		                                                                                                                                          // CSBuilder.cs:491
+		public static Coding Code_BrachytherapyTube = new Coding(System, "BrachytherapyTube", "Brachytherapy tube");                              // CSBuilder.cs:463
+		                                                                                                                                          // CSBuilder.cs:449
 		/// <summary>
 		/// [PR] Chest wall invasion
 		/// Valid for the following modalities: MG US MRI.
 		/// </summary>
-		public static Coding Code_ChestWallInvasion = new Coding(System, "ChestWallInvasion", "Chest wall invasion");                             // CSBuilder.cs:505
-		                                                                                                                                          // CSBuilder.cs:491
+		public static Coding Code_ChestWallInvasion = new Coding(System, "ChestWallInvasion", "Chest wall invasion");                             // CSBuilder.cs:463
+		                                                                                                                                          // CSBuilder.cs:449
 		/// <summary>
 		/// [PR] Cooper distorted
 		/// Valid for the following modalities: US.
 		/// </summary>
-		public static Coding Code_CooperDistorted = new Coding(System, "CooperDistorted", "Cooper distorted");                                    // CSBuilder.cs:505
-		                                                                                                                                          // CSBuilder.cs:491
+		public static Coding Code_CooperDistorted = new Coding(System, "CooperDistorted", "Cooper distorted");                                    // CSBuilder.cs:463
+		                                                                                                                                          // CSBuilder.cs:449
 		/// <summary>
 		/// [PR] Cooper thickened
 		/// Valid for the following modalities: US.
 		/// </summary>
-		public static Coding Code_CooperThickened = new Coding(System, "CooperThickened", "Cooper thickened");                                    // CSBuilder.cs:505
-		                                                                                                                                          // CSBuilder.cs:491
+		public static Coding Code_CooperThickened = new Coding(System, "CooperThickened", "Cooper thickened");                                    // CSBuilder.cs:463
+		                                                                                                                                          // CSBuilder.cs:449
 		/// <summary>
 		/// [PR] Edema
 		/// Valid for the following modalities: US.
 		/// </summary>
-		public static Coding Code_Edema = new Coding(System, "Edema", "Edema");                                                                   // CSBuilder.cs:505
-		                                                                                                                                          // CSBuilder.cs:491
+		public static Coding Code_Edema = new Coding(System, "Edema", "Edema");                                                                   // CSBuilder.cs:463
+		                                                                                                                                          // CSBuilder.cs:449
 		/// <summary>
 		/// [PR] Edema adj
 		/// Valid for the following modalities: US.
 		/// </summary>
-		public static Coding Code_EdemaAdj = new Coding(System, "EdemaAdj", "Edema adj");                                                         // CSBuilder.cs:505
-		                                                                                                                                          // CSBuilder.cs:491
+		public static Coding Code_EdemaAdj = new Coding(System, "EdemaAdj", "Edema adj");                                                         // CSBuilder.cs:463
+		                                                                                                                                          // CSBuilder.cs:449
 		/// <summary>
 		/// [PR] Gold Seed
 		/// Valid for the following modalities: MG.
 		/// </summary>
-		public static Coding Code_GoldSeed = new Coding(System, "GoldSeed", "Gold Seed");                                                         // CSBuilder.cs:505
-		                                                                                                                                          // CSBuilder.cs:491
+		public static Coding Code_GoldSeed = new Coding(System, "GoldSeed", "Gold Seed");                                                         // CSBuilder.cs:463
+		                                                                                                                                          // CSBuilder.cs:449
 		/// <summary>
 		/// [PR] Hematoma
 		/// Valid for the following modalities: MG.
 		/// </summary>
-		public static Coding Code_Hematoma = new Coding(System, "Hematoma", "Hematoma");                                                          // CSBuilder.cs:505
-		                                                                                                                                          // CSBuilder.cs:491
+		public static Coding Code_Hematoma = new Coding(System, "Hematoma", "Hematoma");                                                          // CSBuilder.cs:463
+		                                                                                                                                          // CSBuilder.cs:449
 		/// <summary>
 		/// Nipple retraction
 		/// The nipple is pulled in. This should not be confused with nipple inversion, which is often bilateral
@@ -96,50 +96,50 @@ namespace BreastRadLib
 		/// -- Bi-Rads® Atlas — Mammography Fifth Ed. 2013
 		/// Valid for the following modalities: MG MRI.
 		/// </summary>
-		public static Coding Code_NippleRetraction = new Coding(System, "NippleRetraction", "Nipple retraction");                                 // CSBuilder.cs:505
-		                                                                                                                                          // CSBuilder.cs:491
+		public static Coding Code_NippleRetraction = new Coding(System, "NippleRetraction", "Nipple retraction");                                 // CSBuilder.cs:463
+		                                                                                                                                          // CSBuilder.cs:449
 		/// <summary>
 		/// [PR] NO Chest wall invasion
 		/// Valid for the following modalities: MRI.
 		/// </summary>
-		public static Coding Code_NOChestWallInvasion = new Coding(System, "NOChestWallInvasion", "NO Chest wall invasion");                      // CSBuilder.cs:505
-		                                                                                                                                          // CSBuilder.cs:491
+		public static Coding Code_NOChestWallInvasion = new Coding(System, "NOChestWallInvasion", "NO Chest wall invasion");                      // CSBuilder.cs:463
+		                                                                                                                                          // CSBuilder.cs:449
 		/// <summary>
 		/// [PR] Pectoralis muscle invasion
 		/// Valid for the following modalities: US MRI.
 		/// </summary>
-		public static Coding Code_PectoralisMuscleInvasion = new Coding(System, "PectoralisMuscleInvasion", "Pectoralis muscle invasion");        // CSBuilder.cs:505
-		                                                                                                                                          // CSBuilder.cs:491
+		public static Coding Code_PectoralisMuscleInvasion = new Coding(System, "PectoralisMuscleInvasion", "Pectoralis muscle invasion");        // CSBuilder.cs:463
+		                                                                                                                                          // CSBuilder.cs:449
 		/// <summary>
 		/// [PR] Pectoralis muscle involvement
 		/// Valid for the following modalities: MRI.
 		/// </summary>
-		public static Coding Code_PectoralisMuscleInvolvement = new Coding(System, "PectoralisMuscleInvolvement", "Pectoralis muscle involvement");// CSBuilder.cs:505
-		                                                                                                                                          // CSBuilder.cs:491
+		public static Coding Code_PectoralisMuscleInvolvement = new Coding(System, "PectoralisMuscleInvolvement", "Pectoralis muscle involvement");// CSBuilder.cs:463
+		                                                                                                                                          // CSBuilder.cs:449
 		/// <summary>
 		/// [PR] Pectoralis muscle tenting
 		/// Valid for the following modalities: US MRI.
 		/// </summary>
-		public static Coding Code_PectoralisMuscleTenting = new Coding(System, "PectoralisMuscleTenting", "Pectoralis muscle tenting");           // CSBuilder.cs:505
-		                                                                                                                                          // CSBuilder.cs:491
+		public static Coding Code_PectoralisMuscleTenting = new Coding(System, "PectoralisMuscleTenting", "Pectoralis muscle tenting");           // CSBuilder.cs:463
+		                                                                                                                                          // CSBuilder.cs:449
 		/// <summary>
 		/// [PR] Post surgical scar
 		/// Valid for the following modalities: MG.
 		/// </summary>
-		public static Coding Code_PostSurgicalScar = new Coding(System, "PostSurgicalScar", "Post surgical scar");                                // CSBuilder.cs:505
-		                                                                                                                                          // CSBuilder.cs:491
+		public static Coding Code_PostSurgicalScar = new Coding(System, "PostSurgicalScar", "Post surgical scar");                                // CSBuilder.cs:463
+		                                                                                                                                          // CSBuilder.cs:449
 		/// <summary>
 		/// [PR] Seroma
 		/// Valid for the following modalities: MG.
 		/// </summary>
-		public static Coding Code_Seroma = new Coding(System, "Seroma", "Seroma");                                                                // CSBuilder.cs:505
-		                                                                                                                                          // CSBuilder.cs:491
+		public static Coding Code_Seroma = new Coding(System, "Seroma", "Seroma");                                                                // CSBuilder.cs:463
+		                                                                                                                                          // CSBuilder.cs:449
 		/// <summary>
 		/// [PR] Skin involvement
 		/// Valid for the following modalities: MG US MRI.
 		/// </summary>
-		public static Coding Code_SkinInvolvement = new Coding(System, "SkinInvolvement", "Skin involvement");                                    // CSBuilder.cs:505
-		                                                                                                                                          // CSBuilder.cs:491
+		public static Coding Code_SkinInvolvement = new Coding(System, "SkinInvolvement", "Skin involvement");                                    // CSBuilder.cs:463
+		                                                                                                                                          // CSBuilder.cs:449
 		/// <summary>
 		/// Skin lesion
 		/// This finding may be described in the mammography report or annotated on the mammographic
@@ -150,14 +150,14 @@ namespace BreastRadLib
 		/// -- Bi-Rads® Atlas — Mammography Fifth Ed. 2013
 		/// Valid for the following modalities: MG.
 		/// </summary>
-		public static Coding Code_SkinLesion = new Coding(System, "SkinLesion", "Skin lesion");                                                   // CSBuilder.cs:505
-		                                                                                                                                          // CSBuilder.cs:491
+		public static Coding Code_SkinLesion = new Coding(System, "SkinLesion", "Skin lesion");                                                   // CSBuilder.cs:463
+		                                                                                                                                          // CSBuilder.cs:449
 		/// <summary>
 		/// [PR] Skin retraction
 		/// Valid for the following modalities: MG US MRI.
 		/// </summary>
-		public static Coding Code_SkinRetraction = new Coding(System, "SkinRetraction", "Skin retraction");                                       // CSBuilder.cs:505
-		                                                                                                                                          // CSBuilder.cs:491
+		public static Coding Code_SkinRetraction = new Coding(System, "SkinRetraction", "Skin retraction");                                       // CSBuilder.cs:463
+		                                                                                                                                          // CSBuilder.cs:449
 		/// <summary>
 		/// Skin thickening
 		/// Skin thickening may be focal or diffuse, and is defined as being greater than 2 mm in thickness. This
@@ -166,27 +166,27 @@ namespace BreastRadLib
 		/// -- Bi-Rads® Atlas — Mammography Fifth Ed. 2013
 		/// Valid for the following modalities: MG US MRI.
 		/// </summary>
-		public static Coding Code_SkinThickening = new Coding(System, "SkinThickening", "Skin thickening");                                       // CSBuilder.cs:505
-		                                                                                                                                          // CSBuilder.cs:491
+		public static Coding Code_SkinThickening = new Coding(System, "SkinThickening", "Skin thickening");                                       // CSBuilder.cs:463
+		                                                                                                                                          // CSBuilder.cs:449
 		/// <summary>
 		/// [PR] Surgical clip
 		/// Valid for the following modalities: MG.
 		/// </summary>
-		public static Coding Code_SurgicalClip = new Coding(System, "SurgicalClip", "Surgical clip");                                             // CSBuilder.cs:505
-		                                                                                                                                          // CSBuilder.cs:491
+		public static Coding Code_SurgicalClip = new Coding(System, "SurgicalClip", "Surgical clip");                                             // CSBuilder.cs:463
+		                                                                                                                                          // CSBuilder.cs:449
 		/// <summary>
 		/// [PR] Surgical clips
 		/// Valid for the following modalities: MG.
 		/// </summary>
-		public static Coding Code_SurgicalClips = new Coding(System, "SurgicalClips", "Surgical clips");                                          // CSBuilder.cs:505
-		                                                                                                                                          // CSBuilder.cs:491
+		public static Coding Code_SurgicalClips = new Coding(System, "SurgicalClips", "Surgical clips");                                          // CSBuilder.cs:463
+		                                                                                                                                          // CSBuilder.cs:449
 		/// <summary>
 		/// Trabecular thickening
 		/// This is a thickening of the fibrous septa of the breast.
 		/// -- Bi-Rads® Atlas — Mammography Fifth Ed. 2013
 		/// Valid for the following modalities: MG.
 		/// </summary>
-		public static Coding Code_TrabecularThickening = new Coding(System, "TrabecularThickening", "Trabecular thickening");                     // CSBuilder.cs:505
+		public static Coding Code_TrabecularThickening = new Coding(System, "TrabecularThickening", "Trabecular thickening");                     // CSBuilder.cs:463
 		//- Fields
 	}
 }

@@ -10,20 +10,20 @@ using Hl7.Fhir.Serialization;
 namespace BreastRadLib
 {
 	//+ Header
-	public class OrientationCS                                                                                                                 // CSBuilder.cs:475
+	public class OrientationCS                                                                                                                 // CSBuilder.cs:433
 	//- Header
 	{
 		//+ Fields
-		const string System = "http://hl7.org/fhir/us/breast-radiology/CodeSystem/OrientationCS";                                                 // CSBuilder.cs:479
-		                                                                                                                                          // CSBuilder.cs:491
+		const string System = "http://hl7.org/fhir/us/breast-radiology/CodeSystem/OrientationCS";                                                 // CSBuilder.cs:437
+		                                                                                                                                          // CSBuilder.cs:449
 		/// <summary>
 		/// (historically, “wider-than-tall” or “horizontal”)
 		/// The long axis of the mass parallels the skin line. Masses that are only slightly obiquely oriented
 		/// might be considered parallel.
 		/// -- Bi-Rads® Atlas — Mammography Fifth Ed. 2013
 		/// </summary>
-		public static Coding Code_ParallelToSkin = new Coding(System, "ParallelToSkin", "Parallel to skin");                                      // CSBuilder.cs:505
-		                                                                                                                                          // CSBuilder.cs:491
+		public static Coding Code_ParallelToSkin = new Coding(System, "ParallelToSkin", "Parallel to skin");                                      // CSBuilder.cs:463
+		                                                                                                                                          // CSBuilder.cs:449
 		/// <summary>
 		/// (historically, "isodense")
 		/// The long axis of the mass does not lie parallel to the skin line. The anterior–posterior or vertical
@@ -31,7 +31,7 @@ namespace BreastRadLib
 		/// obliquely oriented to the skin line. Round masses are NOT PARALLEL in their orientation.
 		/// -- Bi-Rads® Atlas — Mammography Fifth Ed. 2013
 		/// </summary>
-		public static Coding Code_PerpendicularToSkin = new Coding(System, "PerpendicularToSkin", "Perpendicular To Skin");                       // CSBuilder.cs:505
+		public static Coding Code_PerpendicularToSkin = new Coding(System, "PerpendicularToSkin", "Perpendicular To Skin");                       // CSBuilder.cs:463
 		//- Fields
 	}
 }

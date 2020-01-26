@@ -10,35 +10,35 @@ using Hl7.Fhir.Serialization;
 namespace BreastRadLib
 {
 	//+ Header
-	public class MassTypeCS                                                                                                                    // CSBuilder.cs:475
+	public class MassTypeCS                                                                                                                    // CSBuilder.cs:433
 	//- Header
 	{
 		//+ Fields
-		const string System = "http://hl7.org/fhir/us/breast-radiology/CodeSystem/MassTypeCS";                                                    // CSBuilder.cs:479
-		                                                                                                                                          // CSBuilder.cs:491
+		const string System = "http://hl7.org/fhir/us/breast-radiology/CodeSystem/MassTypeCS";                                                    // CSBuilder.cs:437
+		                                                                                                                                          // CSBuilder.cs:449
 		/// <summary>
 		/// [PR]
 		/// Solid Mass
 		/// </summary>
-		public static Coding Code_Solid = new Coding(System, "Solid", "Solid Mass");                                                              // CSBuilder.cs:505
-		                                                                                                                                          // CSBuilder.cs:491
+		public static Coding Code_Solid = new Coding(System, "Solid", "Solid Mass");                                                              // CSBuilder.cs:463
+		                                                                                                                                          // CSBuilder.cs:449
 		/// <summary>
 		/// [PR]
 		/// Intraductal Mass
 		/// </summary>
-		public static Coding Code_Intraductal = new Coding(System, "Intraductal", "Intraductal Mass");                                            // CSBuilder.cs:505
-		                                                                                                                                          // CSBuilder.cs:491
+		public static Coding Code_Intraductal = new Coding(System, "Intraductal", "Intraductal Mass");                                            // CSBuilder.cs:463
+		                                                                                                                                          // CSBuilder.cs:449
 		/// <summary>
 		/// [PR]
 		/// Partially Solid Mass
 		/// </summary>
-		public static Coding Code_PartiallySolid = new Coding(System, "PartiallySolid", "Partially Solid Mass");                                  // CSBuilder.cs:505
-		                                                                                                                                          // CSBuilder.cs:491
+		public static Coding Code_PartiallySolid = new Coding(System, "PartiallySolid", "Partially Solid Mass");                                  // CSBuilder.cs:463
+		                                                                                                                                          // CSBuilder.cs:449
 		/// <summary>
 		/// [PR]
 		/// Skin Mass
 		/// </summary>
-		public static Coding Code_Skin = new Coding(System, "Skin", "Skin Mass");                                                                 // CSBuilder.cs:505
+		public static Coding Code_Skin = new Coding(System, "Skin", "Skin Mass");                                                                 // CSBuilder.cs:463
 		//- Fields
 	}
 }

@@ -10,27 +10,27 @@ using Hl7.Fhir.Serialization;
 namespace BreastRadLib
 {
 	//+ Header
-	public class ShapeCS                                                                                                                       // CSBuilder.cs:475
+	public class ShapeCS                                                                                                                       // CSBuilder.cs:433
 	//- Header
 	{
 		//+ Fields
-		const string System = "http://hl7.org/fhir/us/breast-radiology/CodeSystem/ShapeCS";                                                       // CSBuilder.cs:479
-		                                                                                                                                          // CSBuilder.cs:491
+		const string System = "http://hl7.org/fhir/us/breast-radiology/CodeSystem/ShapeCS";                                                       // CSBuilder.cs:437
+		                                                                                                                                          // CSBuilder.cs:449
 		/// <summary>
 		/// The shape is neither round nor oval.
 		/// For mammography, use of this descriptor usually implies a suspicious finding.
 		/// -- Bi-Rads® Atlas — Mammography Fifth Ed. 2013
 		/// Valid for the following modalities: MG US MRI.
 		/// </summary>
-		public static Coding Code_IrregularInShape = new Coding(System, "IrregularInShape", "Irregular in shape");                                // CSBuilder.cs:505
-		                                                                                                                                          // CSBuilder.cs:491
+		public static Coding Code_IrregularInShape = new Coding(System, "IrregularInShape", "Irregular in shape");                                // CSBuilder.cs:463
+		                                                                                                                                          // CSBuilder.cs:449
 		/// <summary>
 		/// Shape is elliptical or egg-shaped (may include 2 or 3 undulations, , i.e., "gently lobulated" or "macrolobulated").
 		/// -- Bi-Rads® Atlas — Mammography Fifth Ed. 2013
 		/// Valid for the following modalities: MG US MRI.
 		/// </summary>
-		public static Coding Code_OvalInShape = new Coding(System, "OvalInShape", "Oval in shape");                                               // CSBuilder.cs:505
-		                                                                                                                                          // CSBuilder.cs:491
+		public static Coding Code_OvalInShape = new Coding(System, "OvalInShape", "Oval in shape");                                               // CSBuilder.cs:463
+		                                                                                                                                          // CSBuilder.cs:449
 		/// <summary>
 		/// A mass that is spherical, ball-shaped, circular, or globular in shape.
 		/// A round mass has an anteroposterior diameter equal to its transverse diameter
@@ -39,7 +39,7 @@ namespace BreastRadLib
 		/// -- Bi-Rads® Atlas — Mammography Fifth Ed. 2013
 		/// Valid for the following modalities: MG US MRI.
 		/// </summary>
-		public static Coding Code_RoundInShape = new Coding(System, "RoundInShape", "Round in shape");                                            // CSBuilder.cs:505
+		public static Coding Code_RoundInShape = new Coding(System, "RoundInShape", "Round in shape");                                            // CSBuilder.cs:463
 		//- Fields
 	}
 }
