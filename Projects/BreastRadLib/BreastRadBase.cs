@@ -14,7 +14,7 @@ namespace BreastRadLib
             Observation parent,
             Observation child)
         {
-            resourceBag.AddEntry(child, child.Url);
+            //resourceBag.AddEntry(child, child.Url);
         }
     }
 }
