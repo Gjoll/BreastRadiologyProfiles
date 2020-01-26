@@ -63,8 +63,8 @@ namespace BreastRadLib
 		{
 		    foreach (ResourceReference hasMember in resource.HasMember)
 		    {
-		        //if (resourceBag.TryGetEntry(hasMember.Url, out Bundle.EntryComponent entry) == false)
-		        //    throw new Exception("Reference '{hasMember.Url}' not found in bag");
+		        if (resourceBag.TryGetEntry(hasMember.Url.AbsoluteUri, out Bundle.EntryComponent entry) == false)
+		            throw new Exception("Reference '{hasMember.Url}' not found in bag");
 		    }
 		}
 

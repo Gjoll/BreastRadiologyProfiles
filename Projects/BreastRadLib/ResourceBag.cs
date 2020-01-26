@@ -7,14 +7,28 @@ namespace BreastRadLib
 {
     public class ResourceBag
     {
+        Bundle bundle;
         Dictionary<String, Bundle.EntryComponent> resources = new Dictionary<string, Bundle.EntryComponent>(StringComparer.OrdinalIgnoreCase);
 
-        public bool TryGetEntry(String url, out Bundle.EntryComponent entry) => this.resources.TryGetValue(url, out entry);
+        public ResourceBag()
+        {
+            this.bundle = new Bundle();
+            this.bundle.Type = Bundle.BundleType.Batch;
+        }
 
         public ResourceBag(Bundle bundle)
         {
+            if (this.bundle.Type != Bundle.BundleType.Batch)
+                throw new Exception($"Expected bundle type batch, got '{this.bundle.Type}'");
+            this.bundle = bundle;
             foreach (Bundle.EntryComponent entry in bundle.Entry)
                 resources.Add(entry.FullUrl, entry);
+        }
+
+        public bool TryGetEntry(String url, out Bundle.EntryComponent entry) => this.resources.TryGetValue(url, out entry);
+        public void AddEntry(String fullUrl, DomainResource resource)
+        {
+            bundle.AddResourceEntry(resource, fullUrl);
         }
     }
 }
