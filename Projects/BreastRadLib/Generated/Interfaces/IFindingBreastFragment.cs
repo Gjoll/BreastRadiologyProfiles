@@ -10,14 +10,14 @@ using Hl7.Fhir.Serialization;
 namespace BreastRadLib
 {
 	//+ Header
-	public interface IFindingBreastFragment  : IHeaderFragment, IBreastRadObservationNoDeviceFragment, IServiceRecommendationFragment          // CSBuilder.cs:254
+	public interface IFindingBreastFragment  : IHeaderFragment, IBreastRadObservationNoDeviceFragment, IServiceRecommendationFragment          // CSBuilder.cs:304
 	//- Header
 	{
 		//+ Fields
-		List<IMGFinding> MGFinding {get;}                                                                                                         // CSBuilder.cs:217
-		List<IMRIFinding> MRIFinding {get;}                                                                                                       // CSBuilder.cs:217
-		List<INMFinding> NMFinding {get;}                                                                                                         // CSBuilder.cs:217
-		List<IUSFinding> USFinding {get;}                                                                                                         // CSBuilder.cs:217
+		HasMemberList<IMGFinding> MGFinding {get;}                                                                                                // CSBuilder.cs:263
+		HasMemberList<IMRIFinding> MRIFinding {get;}                                                                                              // CSBuilder.cs:263
+		HasMemberList<INMFinding> NMFinding {get;}                                                                                                // CSBuilder.cs:263
+		HasMemberList<IUSFinding> USFinding {get;}                                                                                                // CSBuilder.cs:263
 		//- Fields
 	}
 }

@@ -10,19 +10,19 @@ using Hl7.Fhir.Serialization;
 namespace BreastRadLib
 {
 	//+ Header
-	public class MGBreastDensityCS                                                                                                             // CSBuilder.cs:408
+	public class MGBreastDensityCS                                                                                                             // CSBuilder.cs:485
 	//- Header
 	{
 		//+ Fields
-		const string System = "http://hl7.org/fhir/us/breast-radiology/CodeSystem/MGBreastDensityCS";                                             // CSBuilder.cs:412
-		                                                                                                                                          // CSBuilder.cs:424
+		const string System = "http://hl7.org/fhir/us/breast-radiology/CodeSystem/MGBreastDensityCS";                                             // CSBuilder.cs:489
+		                                                                                                                                          // CSBuilder.cs:501
 		/// <summary>
 		/// Unless an area containing cancer is not included in the image field of the mammogram,
 		/// mammography is highly sensitive in this setting.
 		/// -- Bi-Rads® Atlas — Mammography Fifth Ed. 2013
 		/// </summary>
-		public static Coding Code_Fatty = new Coding(System, "Fatty", "The breasts are almost entirely fatty");                                   // CSBuilder.cs:438
-		                                                                                                                                          // CSBuilder.cs:424
+		public static Coding Code_Fatty = new Coding(System, "Fatty", "The breasts are almost entirely fatty");                                   // CSBuilder.cs:515
+		                                                                                                                                          // CSBuilder.cs:501
 		/// <summary>
 		/// (historically, there are scattered fibroglandular densities).
 		/// 
@@ -34,8 +34,8 @@ namespace BreastRadLib
 		/// mammographic findings.
 		/// -- Bi-Rads® Atlas — Mammography Fifth Ed. 2013
 		/// </summary>
-		public static Coding Code_Fibroglandular = new Coding(System, "Fibroglandular", "Scattered areas of fibroglandular density");             // CSBuilder.cs:438
-		                                                                                                                                          // CSBuilder.cs:424
+		public static Coding Code_Fibroglandular = new Coding(System, "Fibroglandular", "Scattered areas of fibroglandular density");             // CSBuilder.cs:515
+		                                                                                                                                          // CSBuilder.cs:501
 		/// <summary>
 		/// It is not uncommon for some areas in such breasts to be relatively dense while other
 		/// areas are primarily fatty. When this occurs, it may be helpful to describe the location(s)
@@ -50,8 +50,8 @@ namespace BreastRadLib
 		/// scattered areas of fibroglandular tissue are present in the remainder of the breasts."
 		/// -- Bi-Rads® Atlas — Mammography Fifth Ed. 2013
 		/// </summary>
-		public static Coding Code_HeterogeneouslyDense = new Coding(System, "HeterogeneouslyDense", "The breasts are heterogeneously dense, which may obscure detection of small masses");// CSBuilder.cs:438
-		                                                                                                                                          // CSBuilder.cs:424
+		public static Coding Code_HeterogeneouslyDense = new Coding(System, "HeterogeneouslyDense", "The breasts are heterogeneously dense, which may obscure detection of small masses");// CSBuilder.cs:515
+		                                                                                                                                          // CSBuilder.cs:501
 		/// <summary>
 		/// The sensitivity of mammography is lowest in this density category.
 		/// The Fourth Edition of BI-RADS®, unlike previous editions, indicated quartile ranges
@@ -63,7 +63,7 @@ namespace BreastRadLib
 		/// in this historical distribution across density categories.
 		/// -- Bi-Rads® Atlas — Mammography Fifth Ed. 2013
 		/// </summary>
-		public static Coding Code_ExtremelyDense = new Coding(System, "ExtremelyDense", "The breasts are extremely dense, which lowers the sensitivity of mammography.");// CSBuilder.cs:438
+		public static Coding Code_ExtremelyDense = new Coding(System, "ExtremelyDense", "The breasts are extremely dense, which lowers the sensitivity of mammography.");// CSBuilder.cs:515
 		//- Fields
 	}
 }

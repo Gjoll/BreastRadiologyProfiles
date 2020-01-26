@@ -10,7 +10,7 @@ using Hl7.Fhir.Serialization;
 namespace BreastRadLib
 {
 	//+ Header
-	public interface IObservedSizeFragment                                                                                                     // CSBuilder.cs:254
+	public interface IObservedSizeFragment                                                                                                     // CSBuilder.cs:304
 	//- Header
 	{
 		//+ Fields

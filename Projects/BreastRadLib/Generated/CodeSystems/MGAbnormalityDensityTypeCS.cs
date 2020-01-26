@@ -10,26 +10,26 @@ using Hl7.Fhir.Serialization;
 namespace BreastRadLib
 {
 	//+ Header
-	public class MGAbnormalityDensityTypeCS                                                                                                    // CSBuilder.cs:408
+	public class MGAbnormalityDensityTypeCS                                                                                                    // CSBuilder.cs:485
 	//- Header
 	{
 		//+ Fields
-		const string System = "http://hl7.org/fhir/us/breast-radiology/CodeSystem/MGAbnormalityDensityTypeCS";                                    // CSBuilder.cs:412
-		                                                                                                                                          // CSBuilder.cs:424
+		const string System = "http://hl7.org/fhir/us/breast-radiology/CodeSystem/MGAbnormalityDensityTypeCS";                                    // CSBuilder.cs:489
+		                                                                                                                                          // CSBuilder.cs:501
 		/// <summary>
 		/// [PR]
 		/// </summary>
-		public static Coding Code_FocalAsymmetrical = new Coding(System, "FocalAsymmetrical", "Focal Asymmetrical");                              // CSBuilder.cs:438
-		                                                                                                                                          // CSBuilder.cs:424
+		public static Coding Code_FocalAsymmetrical = new Coding(System, "FocalAsymmetrical", "Focal Asymmetrical");                              // CSBuilder.cs:515
+		                                                                                                                                          // CSBuilder.cs:501
 		/// <summary>
 		/// [PR]
 		/// </summary>
-		public static Coding Code_Nodular = new Coding(System, "Nodular", "Nodular");                                                             // CSBuilder.cs:438
-		                                                                                                                                          // CSBuilder.cs:424
+		public static Coding Code_Nodular = new Coding(System, "Nodular", "Nodular");                                                             // CSBuilder.cs:515
+		                                                                                                                                          // CSBuilder.cs:501
 		/// <summary>
 		/// [PR]
 		/// </summary>
-		public static Coding Code_Tubular = new Coding(System, "Tubular", "Tubular");                                                             // CSBuilder.cs:438
+		public static Coding Code_Tubular = new Coding(System, "Tubular", "Tubular");                                                             // CSBuilder.cs:515
 		//- Fields
 	}
 }

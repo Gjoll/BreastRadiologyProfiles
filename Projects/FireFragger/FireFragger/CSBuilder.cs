@@ -36,15 +36,23 @@ namespace FireFragger
         {
             public List<FragInfo> ReferencedFragments = new List<FragInfo>();
             public StructureDefinition StructDef;
-            public CodeEditor InterfaceCode;
-            public CodeEditor ClassCode;
+            public CodeEditor InterfaceEditor;
+            public CodeEditor ClassEditor;
+            public CodeBlockNested ClassConstructorBody;
+            public CodeBlockNested MethodsBlock;
+            public CodeBlockNested LoadBody;
+            public CodeBlockNested UnloadBody;
             public ElementTreeNode DiffNodes;
+
+            public String BaseDefinitionUrl => this.StructDef.BaseDefinition;
+            public String BaseDefinitionName => this.BaseDefinitionUrl.LastUriPart();
         };
 
         Dictionary<String, CSInfo> codeSystems;
         Dictionary<String, CSInfo> localCodeSystems;
         Dictionary<String, VSInfo> valueSets;
         Dictionary<String, FragInfo> sdFragments;
+
 
         public String OutputDir { get; set; } = ".";
         public bool CleanFlag { get; set; } = false;
@@ -149,15 +157,15 @@ namespace FireFragger
                         FragInfo fi = new FragInfo
                         {
                             StructDef = sd,
-                            InterfaceCode = new CodeEditor(),
+                            InterfaceEditor = new CodeEditor(),
                             DiffNodes = l.Create(sd.Differential.Element)
                         };
-                        fi.InterfaceCode.Load("TemplateInterface.txt");
+                        fi.InterfaceEditor.Load("TemplateInterface.txt");
 
                         if (this.IsFragment(sd) == false)
                         {
-                            fi.ClassCode = new CodeEditor();
-                            fi.ClassCode.Load("TemplateClass.txt");
+                            fi.ClassEditor = new CodeEditor();
+                            fi.ClassEditor.Load("TemplateClass.txt");
                         }
                         this.sdFragments.Add(sd.Url.Trim(), fi);
                     }
@@ -185,6 +193,7 @@ namespace FireFragger
         void BuildHasMembers(FragInfo fragInfo)
         {
             HashSet<string> items = new HashSet<string>();
+            CodeBlockNested loadHasMemberBlock = null;
 
             void Build2(FragInfo fi, ElementTreeSlice slice, Int32 level)
             {
@@ -199,29 +208,66 @@ namespace FireFragger
                     throw new Exception($"missing hasMember reference {reference}");
                 if (items.Contains(slice.Name))
                     return;
+
                 items.Add(slice.Name);
                 String refClassName = ClassName(refFrag);
                 String refInterfaceName = InterfaceName(refFrag);
                 String fieldName = PropertyName(slice.Name);
 
-                if (fragInfo.ClassCode != null)
+                if (fragInfo.ClassEditor != null)
                 {
-                    fragInfo.ClassCode.Blocks.Find("Fields")
-                        .AppendCode($"public List<{refInterfaceName}> {fieldName} {{get;}} = new List<{refInterfaceName}>();")
+                    fragInfo.ClassEditor.Blocks.Find("Fields")
+                        .AppendCode($"public HasMemberList<{refInterfaceName}> {fieldName} {{get;}}")
                         ;
+
+                    Int32 min = 0;
+                    if (slice.ElementDefinition.Min.HasValue)
+                        min = slice.ElementDefinition.Min.Value;
+                    Int32 max = -1;
+                    if (String.IsNullOrEmpty(slice.ElementDefinition.Max) == false)
+                    {
+                        if (slice.ElementDefinition.Max != "*")
+                            max = Int32.Parse(slice.ElementDefinition.Max);
+                    }
+
+                    fragInfo.ClassConstructorBody
+                        .AppendCode($"this.{fieldName} = new HasMemberList<{refInterfaceName}>({min}, {max});")
+                        ;
+
+                    if (loadHasMemberBlock == null)
+                    {
+                        fragInfo.LoadBody
+                            .AppendCode("LoadHasMembers(resourceBag, resource);")
+                        ;
+
+                        fragInfo.MethodsBlock
+                            .BlankLine()
+                            .AppendCode($"public void LoadHasMembers(ResourceBag resourceBag, {fi.BaseDefinitionName} resource)")
+                            .OpenBrace()
+                            .AppendCode("foreach (ResourceReference hasMember in resource.HasMember)")
+                            .OpenBrace()
+                            .AppendCode("if (resourceBag.TryGetEntry(hasMember.Url, out Bundle.EntryComponent entry) == false)")
+                            .AppendCode("    throw new Exception(\"Reference '{hasMember.Url}' not found in bag\");")
+                            //.AppendCode("switch ()")
+                            .DefineBlock(out loadHasMemberBlock)
+                            .CloseBrace()
+                            .CloseBrace()
+                        ;
+                    }
+
                 }
 
                 if (level == 0)
                 {
-                    fragInfo.InterfaceCode.Blocks.Find("Fields")
-                        .AppendCode($"List<{refInterfaceName}> {fieldName} {{get;}}")
+                    fragInfo.InterfaceEditor.Blocks.Find("Fields")
+                        .AppendCode($"HasMemberList<{refInterfaceName}> {fieldName} {{get;}}")
                         ;
                 }
             }
 
             void Build(FragInfo fi, Int32 level)
             {
-                if (fi.StructDef.BaseDefinition != Global.ObservationUrl)
+                if (fi.BaseDefinitionUrl != Global.ObservationUrl)
                     return;
                 if (fi.DiffNodes.TryGetElementNode("Observation.hasMember", out ElementTreeNode hasMemberNode) == false)
                     return;
@@ -231,12 +277,16 @@ namespace FireFragger
                     Build2(fi, slice, level);
             }
 
+            if (fragInfo.BaseDefinitionUrl != Global.ObservationUrl)
+                return;
+
             VisitFragments(Build, fragInfo);
         }
 
+
         void BuildHeader(FragInfo fi)
         {
-            CodeBlockNested iHdr = fi.InterfaceCode.Blocks.Find("Header");
+            CodeBlockNested iHdr = fi.InterfaceEditor.Blocks.Find("Header");
             StringBuilder interfaces = new StringBuilder();
             String comma = "";
             if (fi.ReferencedFragments.Count > 0)
@@ -254,13 +304,40 @@ namespace FireFragger
                 .AppendCode($"public interface {InterfaceName(fi)} {interfaces.ToString()}")
                 ;
 
-            if (fi.ClassCode != null)
+            if (fi.ClassEditor != null)
             {
-                CodeBlockNested cHdr = fi.ClassCode.Blocks.Find("Header");
+                CodeBlockNested cHdr = fi.ClassEditor.Blocks.Find("Header");
                 cHdr.Clear();
                 cHdr
                     .AppendCode($"public class {ClassName(fi)} : BreastRadBase, {InterfaceName(fi)}")
                     ;
+
+
+                CodeBlockNested conBlock = fi.ClassEditor.Blocks.Find("Constructor");
+                conBlock
+                    .AppendCode($"public {this.ClassName(fi)}()")
+                    .OpenBrace()
+                    .DefineBlock(out CodeBlockNested conBody)
+                    .CloseBrace()
+                    ;
+                fi.ClassConstructorBody = conBody;
+
+                fi.MethodsBlock = fi.ClassEditor.Blocks.Find("Methods");
+
+                fi.MethodsBlock
+                    .AppendCode($"public void Load(ResourceBag resourceBag, {fi.BaseDefinitionName} resource)")
+                    .OpenBrace()
+                    .DefineBlock(out CodeBlockNested loadBody)
+                    .CloseBrace()
+                    .BlankLine()
+                    .AppendCode($"public void Unload(ResourceBag resourceBag, {fi.BaseDefinitionName} resource)")
+                    .OpenBrace()
+                    .DefineBlock(out CodeBlockNested unloadBody)
+                    .CloseBrace()
+                    ;
+
+                fi.LoadBody = loadBody;
+                fi.UnloadBody = unloadBody;
             }
         }
 
@@ -452,9 +529,9 @@ namespace FireFragger
         {
             foreach (FragInfo fi in this.sdFragments.Values)
             {
-                Save(fi.InterfaceCode, Path.Combine(this.OutputDir, "Generated", "Interfaces", $"{InterfaceName(fi)}.cs"));
-                if (fi.ClassCode != null)
-                    Save(fi.ClassCode, Path.Combine(this.OutputDir, "Generated", "Class", $"{ClassName(fi)}.cs"));
+                Save(fi.InterfaceEditor, Path.Combine(this.OutputDir, "Generated", "Interfaces", $"{InterfaceName(fi)}.cs"));
+                if (fi.ClassEditor != null)
+                    Save(fi.ClassEditor, Path.Combine(this.OutputDir, "Generated", "Class", $"{ClassName(fi)}.cs"));
             }
 
             foreach (CSInfo ci in this.codeSystems.Values)

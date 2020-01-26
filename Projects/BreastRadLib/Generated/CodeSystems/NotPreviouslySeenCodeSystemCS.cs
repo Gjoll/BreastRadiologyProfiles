@@ -10,53 +10,53 @@ using Hl7.Fhir.Serialization;
 namespace BreastRadLib
 {
 	//+ Header
-	public class NotPreviouslySeenCodeSystemCS                                                                                                 // CSBuilder.cs:408
+	public class NotPreviouslySeenCodeSystemCS                                                                                                 // CSBuilder.cs:485
 	//- Header
 	{
 		//+ Fields
-		const string System = "http://hl7.org/fhir/us/breast-radiology/CodeSystem/NotPreviouslySeenCodeSystemCS";                                 // CSBuilder.cs:412
-		                                                                                                                                          // CSBuilder.cs:424
+		const string System = "http://hl7.org/fhir/us/breast-radiology/CodeSystem/NotPreviouslySeenCodeSystemCS";                                 // CSBuilder.cs:489
+		                                                                                                                                          // CSBuilder.cs:501
 		/// <summary>
 		/// [PR] Clinical exam
 		/// Valid for the following modalities: MG US MRI NM.
 		/// </summary>
-		public static Coding Code_ClinicalExam = new Coding(System, "ClinicalExam", "Clinical exam");                                             // CSBuilder.cs:438
-		                                                                                                                                          // CSBuilder.cs:424
+		public static Coding Code_ClinicalExam = new Coding(System, "ClinicalExam", "Clinical exam");                                             // CSBuilder.cs:515
+		                                                                                                                                          // CSBuilder.cs:501
 		/// <summary>
 		/// [PR] Ductogram
 		/// Valid for the following modalities: MG US MRI NM.
 		/// </summary>
-		public static Coding Code_Ductogram = new Coding(System, "Ductogram", "Ductogram");                                                       // CSBuilder.cs:438
-		                                                                                                                                          // CSBuilder.cs:424
+		public static Coding Code_Ductogram = new Coding(System, "Ductogram", "Ductogram");                                                       // CSBuilder.cs:515
+		                                                                                                                                          // CSBuilder.cs:501
 		/// <summary>
 		/// [PR] Mammogram
 		/// Valid for the following modalities: MG US MRI NM.
 		/// </summary>
-		public static Coding Code_Mammogram = new Coding(System, "Mammogram", "Mammogram");                                                       // CSBuilder.cs:438
-		                                                                                                                                          // CSBuilder.cs:424
+		public static Coding Code_Mammogram = new Coding(System, "Mammogram", "Mammogram");                                                       // CSBuilder.cs:515
+		                                                                                                                                          // CSBuilder.cs:501
 		/// <summary>
 		/// [PR] MRI
 		/// Valid for the following modalities: MG US MRI NM.
 		/// </summary>
-		public static Coding Code_MRI = new Coding(System, "MRI", "MRI");                                                                         // CSBuilder.cs:438
-		                                                                                                                                          // CSBuilder.cs:424
+		public static Coding Code_MRI = new Coding(System, "MRI", "MRI");                                                                         // CSBuilder.cs:515
+		                                                                                                                                          // CSBuilder.cs:501
 		/// <summary>
 		/// [PR] Outside exam
 		/// Valid for the following modalities: MG.
 		/// </summary>
-		public static Coding Code_OutsideExam = new Coding(System, "OutsideExam", "Outside exam");                                                // CSBuilder.cs:438
-		                                                                                                                                          // CSBuilder.cs:424
+		public static Coding Code_OutsideExam = new Coding(System, "OutsideExam", "Outside exam");                                                // CSBuilder.cs:515
+		                                                                                                                                          // CSBuilder.cs:501
 		/// <summary>
 		/// [PR] Scintimammography
 		/// Valid for the following modalities: NM.
 		/// </summary>
-		public static Coding Code_Scintimammography = new Coding(System, "Scintimammography", "Scintimammography");                               // CSBuilder.cs:438
-		                                                                                                                                          // CSBuilder.cs:424
+		public static Coding Code_Scintimammography = new Coding(System, "Scintimammography", "Scintimammography");                               // CSBuilder.cs:515
+		                                                                                                                                          // CSBuilder.cs:501
 		/// <summary>
 		/// [PR] Ultrasound
 		/// Valid for the following modalities: MG US MRI NM.
 		/// </summary>
-		public static Coding Code_Ultrasound = new Coding(System, "Ultrasound", "Ultrasound");                                                    // CSBuilder.cs:438
+		public static Coding Code_Ultrasound = new Coding(System, "Ultrasound", "Ultrasound");                                                    // CSBuilder.cs:515
 		//- Fields
 	}
 }

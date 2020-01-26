@@ -10,13 +10,13 @@ using Hl7.Fhir.Serialization;
 namespace BreastRadLib
 {
 	//+ Header
-	public interface IAssociatedFeatures  : IObservationSectionFragment                                                                        // CSBuilder.cs:254
+	public interface IAssociatedFeatures  : IObservationSectionFragment                                                                        // CSBuilder.cs:304
 	//- Header
 	{
 		//+ Fields
-		List<IMGAbnormalityArchitecturalDistortion> MGAbnormalityArchitecturalDistortion {get;}                                                   // CSBuilder.cs:217
-		List<IMGAbnormalityCalcification> MGAbnormalityCalcification {get;}                                                                       // CSBuilder.cs:217
-		List<IObservedFeature> ObservedFeature {get;}                                                                                             // CSBuilder.cs:217
+		HasMemberList<IMGAbnormalityArchitecturalDistortion> MGAbnormalityArchitecturalDistortion {get;}                                          // CSBuilder.cs:263
+		HasMemberList<IMGAbnormalityCalcification> MGAbnormalityCalcification {get;}                                                              // CSBuilder.cs:263
+		HasMemberList<IObservedFeature> ObservedFeature {get;}                                                                                    // CSBuilder.cs:263
 		//- Fields
 	}
 }
