@@ -1,0 +1,27 @@
+{
+  "resourceType": "CodeSystem",
+  "id": "CompositionSectionSliceCodes",
+  "extension": [
+    {
+      "url": "http://www.fragment.com/fragment",
+      "valueUrl": "http://hl7.org/fhir/us/breast-radiology/StructureDefinition/HeaderFragment"
+    },
+    {
+      "url": "http://www.fragment.com/Group",
+      "valueString": "CommonCodesCS"
+    }
+  ],
+  "url": "http://hl7.org/fhir/us/breast-radiology/CodeSystem/CompositionSectionSliceCodes",
+  "name": "CompositionSectionSliceCodes",
+  "title": "Composition Section Slice Codes CodeSystem",
+  "description": "Composition Section Slice Codes code system",
+  "caseSensitive": true,
+  "content": "complete",
+  "count": 1,
+  "concept": [
+    {
+      "code": "report",
+      "definition": "Slicing CompositionSection Code - SectionCodeReport"
+    }
+  ]
+}

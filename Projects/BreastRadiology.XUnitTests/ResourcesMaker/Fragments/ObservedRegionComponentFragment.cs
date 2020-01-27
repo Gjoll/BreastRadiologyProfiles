@@ -47,7 +47,7 @@ namespace BreastRadiology.XUnitTests
                            .SetComment(new Markdown($"This is one component of a group of components that comprise the observation."))
                            ;
 
-                       e.AddComponentLink("Observed Region",
+                       e.AddComponentLinkVS("Observed Region",
                             new SDefEditor.Cardinality(slice.ElementDefinition),
                            Global.ElementAnchor(sliceDef),
                            "Quantity or Range");

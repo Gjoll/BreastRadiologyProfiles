@@ -1,4 +1,5 @@
 using FhirKhit.Tools;
+using Newtonsoft.Json.Linq;
 using System;
 using System.Collections.Concurrent;
 using System.Collections.Generic;
@@ -181,25 +182,44 @@ namespace BreastRadiology.XUnitTests
                                 componentChildren.AppendChild(nodeGroup);
                                 nodeGroup.AppendNode(node);
 
-                                String vs = link.ValueSet?.ToObject<String>();
-                                if (String.IsNullOrEmpty(vs) == false)
+                                JArray references = (JArray) link.References;
+                                if (references != null)
                                 {
-                                    SENodeGroup vsGroup = new SENodeGroup("vs", false);
-                                    nodeGroup.AppendChild(vsGroup);
-                                    SENode vs2Node;
-                                    String vsUrl = vs.Trim();
-                                    if (vsUrl.ToLower().StartsWith(Global.BreastRadBaseUrl))
+                                    SENodeGroup refGroup = new SENodeGroup("ref", false);
+                                    nodeGroup.AppendChild(refGroup);
+
+                                    Color refColor = Color.White;
+                                    switch (link.ReferenceType.ToObject<String>())
                                     {
-                                        if (this.map.TryGetNode(vsUrl, out ResourceMap.Node vsNode) == false)
-                                            throw new Exception($"Component resource '{vsUrl}' not found!");
-                                        vs2Node = this.CreateResourceNode(vsNode, valueSetColor, link.Cardinality?.ToString(), true);
+                                        case "valueSet":
+                                            refColor = valueSetColor;
+                                            break;
+
+                                        case "target":
+                                            refColor = targetColor;
+                                            break;
+
+                                        default:
+                                            throw new NotImplementedException();
                                     }
-                                    else
+                                    foreach (JValue item in references)
                                     {
-                                        vs2Node = new SENode(0, valueSetColor, link.Cardinality?.ToString(), null, vsUrl);
-                                        vs2Node.AddTextLine(vsUrl.LastUriPart(), vsUrl);
+                                        String reference = item.ToObject<String>();
+                                        SENode refNode;
+                                        String vsUrl = reference.Trim();
+                                        if (vsUrl.ToLower().StartsWith(Global.BreastRadBaseUrl))
+                                        {
+                                            if (this.map.TryGetNode(vsUrl, out ResourceMap.Node vsNode) == false)
+                                                throw new Exception($"Component resource '{vsUrl}' not found!");
+                                            refNode = this.CreateResourceNode(vsNode, refColor, link.Cardinality?.ToString(), true);
+                                        }
+                                        else
+                                        {
+                                            refNode = new SENode(0, refColor, link.Cardinality?.ToString(), null, vsUrl);
+                                            refNode.AddTextLine(vsUrl.LastUriPart(), vsUrl);
+                                        }
+                                        refGroup.AppendNode(refNode);
                                     }
-                                    vsGroup.AppendNode(vs2Node);
                                 }
                             }
                             break;

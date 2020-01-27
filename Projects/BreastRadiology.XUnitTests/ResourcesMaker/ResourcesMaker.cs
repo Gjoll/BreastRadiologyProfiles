@@ -209,6 +209,7 @@ namespace BreastRadiology.XUnitTests
         const String Loinc = "http://loinc.org";
         const String Snomed = "http://snomed.info/sct";
 
+        public const String CompositionUrl = "http://hl7.org/fhir/StructureDefinition/Composition";
         public const String ClinicalImpressionUrl = "http://hl7.org/fhir/StructureDefinition/ClinicalImpression";
         public const String DiagnosticReportUrl = "http://hl7.org/fhir/StructureDefinition/DiagnosticReport";
         public const String DomainResourceUrl = "http://hl7.org/fhir/StructureDefinition/DomainResource";
@@ -460,7 +461,9 @@ namespace BreastRadiology.XUnitTests
 
             // we have to manually force the creation of the following to get
             // all the necessary objects to be created.
+            this.CompositionSectionSliceCodesCS.Value();
             this.ComponentSliceCodesCS.Value();
+            this.BreastRadiologyDocument.Value();
             this.BreastRadiologyReport.Value();
             this.UnitsOfLengthVS.Value();
 

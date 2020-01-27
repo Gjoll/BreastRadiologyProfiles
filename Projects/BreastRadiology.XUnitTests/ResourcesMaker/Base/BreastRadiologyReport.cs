@@ -87,8 +87,8 @@ namespace BreastRadiology.XUnitTests
                         .Binding(binding, BindingStrength.Required)
                         .MustSupport()
                         ;
-                    e.AddComponentLink("Conclusion Code",
-                        new SDefEditor.Cardinality(e.Select("conclusionCode")),
+                    e.AddComponentLinkVS("Conclusion Code",
+                        new SDefEditor.Cardinality(conclusionCodeDef),
                         Global.ElementAnchor(conclusionCodeDef), 
                         "CodeableConcept", 
                         binding.Url);

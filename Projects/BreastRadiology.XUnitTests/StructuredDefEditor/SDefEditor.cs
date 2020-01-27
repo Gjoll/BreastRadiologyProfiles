@@ -301,7 +301,30 @@ namespace BreastRadiology.XUnitTests
             return this;
         }
 
-        public SDefEditor AddComponentLink(String url,
+        public SDefEditor AddComponentLinkTarget(String url,
+            Cardinality cardinality,
+            String componentRef,
+            String types,
+            String[] targets = null,
+            bool showChildren = true)
+        {
+            dynamic packet = new JObject();
+            packet.LinkType = "component";
+            packet.ShowChildren = showChildren;
+            packet.Cardinality = cardinality.ToString();
+            packet.LinkTarget = url;
+            packet.ComponentHRef = componentRef;
+            packet.Types = types;
+            if (targets != null)
+                packet.References = new JArray(targets);
+            packet.ReferenceType = "target";
+            this.SDef.AddExtension(Global.ResourceMapLinkUrl, new FhirString(packet.ToString()));
+
+            return this;
+        }
+
+
+        public SDefEditor AddComponentLinkVS(String url,
             Cardinality cardinality,
             String componentRef,
             String types,
@@ -315,7 +338,9 @@ namespace BreastRadiology.XUnitTests
             packet.LinkTarget = url;
             packet.ComponentHRef = componentRef;
             packet.Types = types;
-            packet.ValueSet = vs;
+            if (vs != null)
+                packet.References = new JArray(new String[] { vs });
+            packet.ReferenceType = "valueSet";
             this.SDef.AddExtension(Global.ResourceMapLinkUrl, new FhirString(packet.ToString()));
 
             return this;
@@ -344,7 +369,7 @@ namespace BreastRadiology.XUnitTests
             return this;
         }
 
-        public ElementTreeSlice AppendSlice(String elementName,
+        ElementTreeSlice AppendSlice(String elementName,
             String sliceName,
             Int32 min = 0,
             String max = "*")
@@ -480,7 +505,7 @@ namespace BreastRadiology.XUnitTests
             }
 
             String componentRef = Global.ElementAnchor(slice.ElementDefinition);
-            this.AddComponentLink(componentName,
+            this.AddComponentLinkVS(componentName,
                 new SDefEditor.Cardinality(slice.ElementDefinition),
                 componentRef,
                 "CodeableConcept",

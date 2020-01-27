@@ -1,0 +1,344 @@
+{
+  "resourceType": "StructureDefinition",
+  "extension": [
+    {
+      "url": "http://www.fragment.com/mapname",
+      "valueString": "Breast/Radiology/Composition"
+    },
+    {
+      "url": "http://www.fragment.com/Group",
+      "valueString": "BaseResources"
+    },
+    {
+      "url": "http://www.fragment.com/fragment",
+      "valueUrl": "http://hl7.org/fhir/us/breast-radiology/StructureDefinition/HeaderFragment"
+    },
+    {
+      "url": "http://www.fragment.com/maplink",
+      "valueString": "{\r\n  \"LinkType\": \"fragment\",\r\n  \"ShowChildren\": false,\r\n  \"LinkTarget\": \"http://hl7.org/fhir/us/breast-radiology/StructureDefinition/HeaderFragment\"\r\n}"
+    },
+    {
+      "url": "http://www.fragment.com/maplink",
+      "valueString": "{\r\n  \"LinkType\": \"component\",\r\n  \"ShowChildren\": true,\r\n  \"Cardinality\": \"1..1\",\r\n  \"LinkTarget\": \"Report Section\",\r\n  \"ComponentHRef\": \"StructureDefinition-{SDName}-definitions.html#Composition.section:report\",\r\n  \"Types\": \"Section\",\r\n  \"References\": [\r\n    \"http://hl7.org/fhir/us/breast-radiology/StructureDefinition/BreastRadReport\"\r\n  ],\r\n  \"ReferenceType\": \"target\"\r\n}"
+    },
+    {
+      "url": "http://www.fragment.com/maplink",
+      "valueString": "{\r\n  \"LinkType\": \"component\",\r\n  \"ShowChildren\": true,\r\n  \"Cardinality\": \"0..*\",\r\n  \"LinkTarget\": \"Impressions Section\",\r\n  \"ComponentHRef\": \"StructureDefinition-{SDName}-definitions.html#Composition.section:impressions\",\r\n  \"Types\": \"Section\",\r\n  \"References\": [\r\n    \"http://hl7.org/fhir/StructureDefinition/ClinicalImpression\"\r\n  ],\r\n  \"ReferenceType\": \"target\"\r\n}"
+    },
+    {
+      "url": "http://www.fragment.com/maplink",
+      "valueString": "{\r\n  \"LinkType\": \"component\",\r\n  \"ShowChildren\": true,\r\n  \"Cardinality\": \"0..*\",\r\n  \"LinkTarget\": \"Releated Resources Section\",\r\n  \"ComponentHRef\": \"StructureDefinition-{SDName}-definitions.html#Composition.section:relatedResources\",\r\n  \"Types\": \"Section\",\r\n  \"References\": [\r\n    \"http://hl7.org/fhir/StructureDefinition/Resource\"\r\n  ],\r\n  \"ReferenceType\": \"target\"\r\n}"
+    }
+  ],
+  "url": "http://hl7.org/fhir/us/breast-radiology/StructureDefinition/BreastRadComposition",
+  "name": "BreastRadComposition",
+  "title": "Breast Radiology Composition",
+  "status": "draft",
+  "description": "<b>Breast Radiology Composition</b>\n\nThis is the composition resource for the Breast Radiology Fhir Document.\n\nA Fhir Document is a Bundle that contains a composition as the first entry and\nprovides a single item (bundle) that contains all the resources that are a part of\nthe Breat Radiology Diagnostic Report.",
+  "fhirVersion": "4.0.0",
+  "kind": "resource",
+  "abstract": false,
+  "type": "Composition",
+  "baseDefinition": "http://hl7.org/fhir/StructureDefinition/Composition",
+  "derivation": "constraint",
+  "differential": {
+    "element": [
+      {
+        "id": "Composition",
+        "path": "Composition",
+        "short": "Breast Radiology Composition",
+        "definition": "This is the composition resource for the Breast Radiology Fhir Document.\n\nA Fhir Document is a Bundle that contains a composition as the first entry and\nprovides a single item (bundle) that contains all the resources that are a part of\nthe Breat Radiology Diagnostic Report.",
+        "base": {
+          "path": "Composition",
+          "min": 0,
+          "max": "*"
+        }
+      },
+      {
+        "id": "Composition.section",
+        "extension": [
+          {
+            "url": "http://hl7.org/fhir/StructureDefinition/structuredefinition-explicit-type-name",
+            "valueString": "Section"
+          }
+        ],
+        "path": "Composition.section",
+        "slicing": {
+          "discriminator": [
+            {
+              "type": "pattern",
+              "path": "code"
+            }
+          ],
+          "rules": "open"
+        },
+        "base": {
+          "path": "Composition.section",
+          "min": 0,
+          "max": "*"
+        }
+      },
+      {
+        "id": "Composition.section:report",
+        "path": "Composition.section",
+        "sliceName": "report",
+        "short": "Report Section",
+        "definition": "This section references the single required Breast Radiology Report'",
+        "min": 1,
+        "max": "1",
+        "base": {
+          "path": "Composition.section",
+          "min": 0,
+          "max": "*"
+        },
+        "mustSupport": true
+      },
+      {
+        "id": "Composition.section:report.code",
+        "path": "Composition.section.code",
+        "min": 1,
+        "max": "1",
+        "base": {
+          "path": "Composition.section.code",
+          "min": 0,
+          "max": "1"
+        },
+        "fixedCodeableConcept": {
+          "coding": [
+            {
+              "system": "http://hl7.org/fhir/us/breast-radiology/CodeSystem/CompositionSectionSliceCodes",
+              "code": "report"
+            }
+          ]
+        }
+      },
+      {
+        "id": "Composition.section:report.title",
+        "path": "Composition.section.title",
+        "min": 1,
+        "max": "1",
+        "base": {
+          "path": "Composition.section.title",
+          "min": 0,
+          "max": "1"
+        },
+        "fixedString": "Breast Radiology Report"
+      },
+      {
+        "id": "Composition.section:report.section",
+        "path": "Composition.section.section",
+        "min": 0,
+        "max": "0",
+        "base": {
+          "path": "Composition.section.section",
+          "min": 0,
+          "max": "*"
+        }
+      },
+      {
+        "id": "Composition.section:report.focus",
+        "path": "Composition.section.focus",
+        "min": 0,
+        "max": "0",
+        "base": {
+          "path": "Composition.section.focus",
+          "min": 0,
+          "max": "1"
+        }
+      },
+      {
+        "id": "Composition.section:report.entry",
+        "path": "Composition.section.entry",
+        "min": 1,
+        "max": "1",
+        "base": {
+          "path": "Composition.section.entry",
+          "min": 0,
+          "max": "*"
+        },
+        "type": [
+          {
+            "code": "Reference",
+            "targetProfile": [
+              "http://hl7.org/fhir/us/breast-radiology/StructureDefinition/BreastRadReport"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "Composition.section:impressions",
+        "path": "Composition.section",
+        "sliceName": "impressions",
+        "short": "Impressions Section",
+        "definition": "This section contains references to the report impressions",
+        "min": 0,
+        "max": "*",
+        "base": {
+          "path": "Composition.section",
+          "min": 0,
+          "max": "*"
+        },
+        "mustSupport": true
+      },
+      {
+        "id": "Composition.section:impressions.code",
+        "path": "Composition.section.code",
+        "min": 1,
+        "max": "1",
+        "base": {
+          "path": "Composition.section.code",
+          "min": 0,
+          "max": "1"
+        },
+        "fixedCodeableConcept": {
+          "coding": [
+            {
+              "system": "http://hl7.org/fhir/us/breast-radiology/CodeSystem/CompositionSectionSliceCodes",
+              "code": "report"
+            }
+          ]
+        }
+      },
+      {
+        "id": "Composition.section:impressions.title",
+        "path": "Composition.section.title",
+        "min": 1,
+        "max": "1",
+        "base": {
+          "path": "Composition.section.title",
+          "min": 0,
+          "max": "1"
+        },
+        "fixedString": "Clinical Impressions"
+      },
+      {
+        "id": "Composition.section:impressions.section",
+        "path": "Composition.section.section",
+        "min": 0,
+        "max": "0",
+        "base": {
+          "path": "Composition.section.section",
+          "min": 0,
+          "max": "*"
+        }
+      },
+      {
+        "id": "Composition.section:impressions.focus",
+        "path": "Composition.section.focus",
+        "min": 0,
+        "max": "0",
+        "base": {
+          "path": "Composition.section.focus",
+          "min": 0,
+          "max": "1"
+        }
+      },
+      {
+        "id": "Composition.section:impressions.entry",
+        "path": "Composition.section.entry",
+        "min": 1,
+        "max": "1",
+        "base": {
+          "path": "Composition.section.entry",
+          "min": 0,
+          "max": "*"
+        },
+        "type": [
+          {
+            "code": "Reference",
+            "targetProfile": [
+              "http://hl7.org/fhir/StructureDefinition/ClinicalImpression"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "Composition.section:relatedResources",
+        "path": "Composition.section",
+        "sliceName": "relatedResources",
+        "short": "Related Clinical Resources",
+        "definition": "References to FHIR clinical resoruces used during the exam or referenced by this report.",
+        "min": 0,
+        "max": "*",
+        "base": {
+          "path": "Composition.section",
+          "min": 0,
+          "max": "*"
+        },
+        "mustSupport": true
+      },
+      {
+        "id": "Composition.section:relatedResources.code",
+        "path": "Composition.section.code",
+        "min": 1,
+        "max": "1",
+        "base": {
+          "path": "Composition.section.code",
+          "min": 0,
+          "max": "1"
+        },
+        "fixedCodeableConcept": {
+          "coding": [
+            {
+              "system": "http://hl7.org/fhir/us/breast-radiology/CodeSystem/CompositionSectionSliceCodes",
+              "code": "report"
+            }
+          ]
+        }
+      },
+      {
+        "id": "Composition.section:relatedResources.title",
+        "path": "Composition.section.title",
+        "min": 1,
+        "max": "1",
+        "base": {
+          "path": "Composition.section.title",
+          "min": 0,
+          "max": "1"
+        },
+        "fixedString": "Related Resources"
+      },
+      {
+        "id": "Composition.section:relatedResources.section",
+        "path": "Composition.section.section",
+        "min": 0,
+        "max": "0",
+        "base": {
+          "path": "Composition.section.section",
+          "min": 0,
+          "max": "*"
+        }
+      },
+      {
+        "id": "Composition.section:relatedResources.focus",
+        "path": "Composition.section.focus",
+        "min": 0,
+        "max": "0",
+        "base": {
+          "path": "Composition.section.focus",
+          "min": 0,
+          "max": "1"
+        }
+      },
+      {
+        "id": "Composition.section:relatedResources.entry",
+        "path": "Composition.section.entry",
+        "min": 1,
+        "max": "1",
+        "base": {
+          "path": "Composition.section.entry",
+          "min": 0,
+          "max": "*"
+        },
+        "type": [
+          {
+            "code": "Reference",
+            "targetProfile": [
+              "http://hl7.org/fhir/StructureDefinition/Resource"
+            ]
+          }
+        ]
+      }
+    ]
+  }
+}

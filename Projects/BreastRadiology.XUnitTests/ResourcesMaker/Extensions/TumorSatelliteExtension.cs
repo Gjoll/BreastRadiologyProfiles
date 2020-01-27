@@ -109,7 +109,7 @@ namespace BreastRadiology.XUnitTests
                         .Single()
                         ;
 
-                    e.AddComponentLink("Index Reference",
+                    e.AddComponentLinkVS("Index Reference",
                         new SDefEditor.Cardinality(extensionSlice.ElementDefinition),
                         Global.ElementAnchor(extensionSlice.ElementDefinition),
                         "Reference");
@@ -131,7 +131,7 @@ namespace BreastRadiology.XUnitTests
                         .Binding(binding, BindingStrength.Required)
                         ;
 
-                    e.AddComponentLink("Distance From Index",
+                    e.AddComponentLinkVS("Distance From Index",
                         new SDefEditor.Cardinality(extensionSlice.ElementDefinition),
                         Global.ElementAnchor(extensionSlice.ElementDefinition),
                         "Quantity",

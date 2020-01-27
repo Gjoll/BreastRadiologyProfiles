@@ -67,7 +67,7 @@ namespace BreastRadiology.XUnitTests
                         .Type("CodeableConcept")
                         .Single()
                         ;
-                    e.AddComponentLink("Land Mark",
+                    e.AddComponentLinkVS("Land Mark",
                         new SDefEditor.Cardinality(extensionSlice.ElementDefinition),
                         Global.ElementAnchor(extensionSlice.ElementDefinition),
                         "CodeableConcept",
@@ -91,7 +91,7 @@ namespace BreastRadiology.XUnitTests
                         .Single()
                         ;
 
-                    e.AddComponentLink("Distance From LandMark",
+                    e.AddComponentLinkVS("Distance From LandMark",
                         new SDefEditor.Cardinality(extensionSlice.ElementDefinition),
                         Global.ElementAnchor(extensionSlice.ElementDefinition),
                         "Quantity",
