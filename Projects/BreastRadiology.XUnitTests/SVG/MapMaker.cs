@@ -12,7 +12,7 @@ namespace BreastRadiology.XUnitTests
     class MapMaker
     {
         protected ResourceMap map;
-
+        protected bool showCardinality = true;
         protected Color focusColor = Color.White;
         protected Color extensionReferenceColor = Color.LightSkyBlue;
         protected Color extensionColor = Color.LightBlue;
@@ -118,7 +118,7 @@ namespace BreastRadiology.XUnitTests
             }
             else
             {
-                SENodeGroup groupChild = group.AppendChild("", false);
+                SENodeGroup groupChild = group.AppendChild("", this.showCardinality);
                 CreateDirectNode(groupChild);
                 if (showChildren)
                     this.AddChildren(childMapNode, childMapLinks, groupChild, link.ShowChildren.ToObject<Boolean>());
@@ -192,7 +192,7 @@ namespace BreastRadiology.XUnitTests
             String types = link.Types?.ToObject<String>();
             if (String.IsNullOrEmpty(types) == false)
                 node.AddTextLine(types, componentHRef);
-            SENodeGroup componentGroup = new SENodeGroup(node.AllText(), true);
+            SENodeGroup componentGroup = new SENodeGroup(node.AllText(), this.showCardinality);
             group.AppendChild(componentGroup);
             componentGroup.AppendNode(node);
 

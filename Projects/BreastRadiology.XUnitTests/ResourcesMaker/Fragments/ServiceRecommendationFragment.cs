@@ -47,7 +47,8 @@ namespace BreastRadiology.XUnitTests
                     e.AddExtensionLink(extensionStructDef.Url,
                         new SDefEditor.Cardinality(extensionDef),
                         "Service Recommendation",
-                        Global.ElementAnchor(extensionDef));
+                        Global.ElementAnchor(extensionDef),
+                        false);
                 }
             });
     }

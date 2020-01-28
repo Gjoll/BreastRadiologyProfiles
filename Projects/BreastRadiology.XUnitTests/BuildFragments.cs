@@ -281,19 +281,16 @@ namespace BreastRadiology.XUnitTests
                         resourceMapMaker.Create(ResourcesMaker.CreateUrl("MGFinding"),
                             Path.Combine(this.graphicsDir, "MgFindings.svg"));
                     }
-
                     {
                         ResourceMapMaker resourceMapMaker = new ResourceMapMaker(this.fc, map);
                         resourceMapMaker.Create(ResourcesMaker.CreateUrl("MRIFinding"),
                             Path.Combine(this.graphicsDir, "MRIFindings.svg"));
                     }
-
                     {
                         ResourceMapMaker resourceMapMaker = new ResourceMapMaker(this.fc, map);
                         resourceMapMaker.Create(ResourcesMaker.CreateUrl("NMFinding"),
                             Path.Combine(this.graphicsDir, "NMFindings.svg"));
                     }
-
                     {
                         ResourceMapMaker resourceMapMaker = new ResourceMapMaker(this.fc, map);
                         resourceMapMaker.Create(ResourcesMaker.CreateUrl("USFinding"),

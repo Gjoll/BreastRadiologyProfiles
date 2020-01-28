@@ -20,6 +20,7 @@ namespace BreastRadiology.XUnitTests
             ResourceMap map) : base(map)
         {
             this.fc = fc;
+            base.showCardinality = false;
         }
 
         public void Create(String baseUrl, String outputPath)
