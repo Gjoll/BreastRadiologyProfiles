@@ -49,7 +49,7 @@ namespace BreastRadiology.XUnitTests
         {
             foreach (dynamic link in n.Links)
             {
-                switch (link.LinkType)
+                switch (link.LinkType.ToObject<String>())
                 {
                     case "fragment":
                         yield return link;

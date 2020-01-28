@@ -88,38 +88,41 @@ namespace BreastRadiology.XUnitTests
             dynamic link,
             bool showChildren)
         {
-            SENodeGroup groupChild = null;
-            dynamic[] childMapLinks = new Object[0];
-
             String linkTargetUrl = link.LinkTarget.ToObject<String>();
-            ResourceMap.Node childMapNode = null;
-            if (showChildren)
-            {
-                childMapNode = this.map.GetNode(linkTargetUrl);
-                childMapLinks = childMapNode.LinksByName(linkNames).ToArray();
-                if (this.DifferentChildren(previousChildLinks, childMapLinks))
-                    previousChildLinks = new Object[0];
-            }
-            else
-                previousChildLinks = new Object[0];
 
-            if (previousChildLinks.Length == 0)
-            {
-                groupChild = group.AppendChild("", false);
-                if (showChildren)
-                {
-                    this.AddChildren(childMapNode, childMapLinks, groupChild, link.ShowChildren.ToObject<Boolean>());
-                    previousChildLinks = childMapLinks;
-                }
-            }
-
+            void CreateDirectNode(SENodeGroup g)
             {
                 if (this.map.TryGetNode(linkTargetUrl, out ResourceMap.Node linkTargetNode) == false)
                     throw new Exception("ResourceMap.Node '{link.ResourceUrl}' not found");
                 SENode node = this.CreateResourceNode(linkTargetNode, link);
-                if (groupChild == null)
-                    groupChild = group.AppendChild("", false);
-                groupChild.AppendNode(node);
+                g.AppendNode(node);
+            }
+
+            dynamic[] childMapLinks = new Object[0];
+
+            ResourceMap.Node childMapNode = null;
+
+            bool linkToLastGroup = false;
+            if (showChildren)
+            {
+                childMapNode = this.map.GetNode(linkTargetUrl);
+                childMapLinks = childMapNode.LinksByName(linkNames).ToArray();
+                if (childMapLinks.Length > 0)
+                    linkToLastGroup = !this.DifferentChildren(previousChildLinks, childMapLinks);
+            }
+
+            if (linkToLastGroup)
+            {
+                SENodeGroup groupChild = group.Children.Last();
+                CreateDirectNode(groupChild);
+            }
+            else
+            {
+                SENodeGroup groupChild = group.AppendChild("", false);
+                CreateDirectNode(groupChild);
+                if (showChildren)
+                    this.AddChildren(childMapNode, childMapLinks, groupChild, link.ShowChildren.ToObject<Boolean>());
+                previousChildLinks = childMapLinks;
             }
         }
 
@@ -175,7 +178,6 @@ namespace BreastRadiology.XUnitTests
                 SENodeGroup group,
                 bool showChildren)
         {
-            if (link?.LinkTarget == "Report") Debugger.Break();
             // we never link components to previous child links, not should next item
             // link to this items children. Each component stands alone.
             previousChildLinks = new Object[0];
