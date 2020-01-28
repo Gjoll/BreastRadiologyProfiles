@@ -75,7 +75,7 @@ namespace BreastRadiology.XUnitTests
                                 if (alreadyLinkedResources.Contains(parentNode.ResourceUrl) == false)
                                 {
                                     alreadyLinkedResources.Add(parentNode.ResourceUrl);
-                                    SENode node = this.CreateResourceNode(parentNode, extensionColor, link.Cardinality?.ToString(), true);
+                                    SENode node = this.CreateResourceNode(parentNode, link, true);
                                     extensionParents.Add(node);
                                 }
                             }
@@ -89,7 +89,7 @@ namespace BreastRadiology.XUnitTests
                                 if (alreadyLinkedResources.Contains(parentNode.ResourceUrl) == false)
                                 {
                                     alreadyLinkedResources.Add(parentNode.ResourceUrl);
-                                    SENode node = this.CreateResourceNode(parentNode, valueSetColor, link.Cardinality?.ToString(), true);
+                                    SENode node = this.CreateResourceNode(parentNode, link, true);
                                     valueSetParents.Add(node);
                                 }
                             }
@@ -103,7 +103,7 @@ namespace BreastRadiology.XUnitTests
                                 if (alreadyLinkedResources.Contains(parentNode.ResourceUrl) == false)
                                 {
                                     alreadyLinkedResources.Add(parentNode.ResourceUrl);
-                                    SENode node = this.CreateResourceNode(parentNode, targetColor, link.Cardinality?.ToString(), true);
+                                    SENode node = this.CreateResourceNode(parentNode, link, true);
                                     targetParents.Add(node);
                                 }
                             }
@@ -136,7 +136,7 @@ namespace BreastRadiology.XUnitTests
                             break;
 
                         case "component":
-                            MakeComponent(link, componentChildren);
+                            MakeComponent(link, componentChildren, false);
                             break;
 
                         case "extension":
@@ -160,7 +160,7 @@ namespace BreastRadiology.XUnitTests
                                     {
                                         if (this.map.TryGetNode(extUrl, out ResourceMap.Node vsNode) == false)
                                             throw new Exception($"Component resource '{extUrl}' not found!");
-                                        extNode = this.CreateResourceNode(vsNode, extensionColor, link.Cardinality?.ToString(), true);
+                                        extNode = this.CreateResourceNode(vsNode, link, true);
                                     }
                                     else
                                     {
@@ -181,7 +181,7 @@ namespace BreastRadiology.XUnitTests
                             {
                                 if (this.map.TryGetNode(link.LinkTarget.ToObject<String>().ToObject<String>(), out ResourceMap.Node childNode) == true)
                                 {
-                                    SENode node = this.CreateResourceNode(childNode, valueSetColor, link.Cardinality?.ToString(), true);
+                                    SENode node = this.CreateResourceNode(childNode, link, true);
                                     SENodeGroup nodeGroup = new SENodeGroup(node.AllText(), false);
                                     valueSetChildren.AppendChild(nodeGroup);
                                     nodeGroup.AppendNode(node);
@@ -193,7 +193,7 @@ namespace BreastRadiology.XUnitTests
                             {
                                 if (this.map.TryGetNode(link.LinkTarget.ToObject<String>(), out ResourceMap.Node childNode) == false)
                                     throw new Exception($"Child target {link.LinkTarget.ToObject<String>()} not found in map");
-                                SENode node = this.CreateResourceNode(childNode, targetColor, link.Cardinality?.ToString(), true);
+                                SENode node = this.CreateResourceNode(childNode, link, true);
                                 SENodeGroup nodeGroup = new SENodeGroup(node.AllText(), true);
                                 targetChildren.AppendChild(nodeGroup);
                                 nodeGroup.AppendNode(node);
