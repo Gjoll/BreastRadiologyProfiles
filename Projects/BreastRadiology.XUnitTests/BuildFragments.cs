@@ -264,26 +264,16 @@ namespace BreastRadiology.XUnitTests
             {
                 if (Directory.Exists(this.graphicsDir) == false)
                     Directory.CreateDirectory(this.graphicsDir);
-
                 {
                     ResourceMap map = new ResourceMap();
-
                     map.AddDir(this.resourcesDir, "*.json");
-
                     {
                         FocusMapMaker focusMapMaker = new FocusMapMaker(this.fc, map, this.graphicsDir, this.pageDir);
                         focusMapMaker.Create();
                     }
-
                     {
                         ResourceMapMaker resourceMapMaker = new ResourceMapMaker(this.fc, map);
-                        resourceMapMaker.AddLegendItem("DiagnosticReport", Color.LightGreen);
-                        resourceMapMaker.AddLegendItem("ServiceRequest", Color.LightPink);
-                        resourceMapMaker.AddLegendItem("Extension", Color.LightSalmon);
-                        resourceMapMaker.AddLegendItem("Observation", Color.LightSkyBlue);
-                        resourceMapMaker.AddLegendItem("FhirResource", Color.LightBlue);
-
-                        resourceMapMaker.Create(ResourcesMaker.CreateUrl("BreastRadReport"),
+                        resourceMapMaker.Create(ResourcesMaker.CreateUrl("BreastRadComposition"),
                             Path.Combine(this.graphicsDir, "ProfileOverview.svg"));
                     }
                     {

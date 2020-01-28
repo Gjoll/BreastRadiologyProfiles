@@ -106,7 +106,7 @@ namespace BreastRadiology.XUnitTests
                             .MustSupport();
                         ;
 
-                        e.AddComponentLinkTarget("Report Section",
+                        e.AddComponentLinkTarget("Report",
                             new SDefEditor.Cardinality(sectionSlice.ElementDefinition),
                             Global.ElementAnchor(sectionSlice.ElementDefinition),
                             "Section",
@@ -131,7 +131,32 @@ namespace BreastRadiology.XUnitTests
                                 )
                             .MustSupport();
                         ;
-                        e.AddComponentLinkTarget("Impressions Section",
+                        e.AddComponentLinkTarget("Impressions",
+                            new SDefEditor.Cardinality(sectionSlice.ElementDefinition),
+                            Global.ElementAnchor(sectionSlice.ElementDefinition),
+                            "Section",
+                            new string[] { ClinicalImpressionUrl });
+                    }
+                }
+
+                // Findings Section
+                {
+                    ElementTreeNode sliceElementDef = StartSectionSlicing(e);
+                    {
+                        ElementTreeSlice sectionSlice = SliceSection(sliceElementDef,
+                            "findings",
+                            "Findings",
+                            Self.SectionCodeReport);
+                        CreateElement(sectionSlice, "entry").Single().Type("Reference", null, new string[] { ClinicalImpressionUrl });
+                        sectionSlice.ElementDefinition
+                            .ZeroToMany()
+                            .SetShort($"Impressions Section")
+                            .SetDefinition(
+                                new Markdown($"This section contains references to the report impressions")
+                                )
+                            .MustSupport();
+                        ;
+                        e.AddComponentLinkTarget("Impressions",
                             new SDefEditor.Cardinality(sectionSlice.ElementDefinition),
                             Global.ElementAnchor(sectionSlice.ElementDefinition),
                             "Section",
@@ -150,11 +175,11 @@ namespace BreastRadiology.XUnitTests
                         CreateElement(sectionSlice, "entry").Single().Type("Reference", null, new string[] { ResourceUrl });
                         sectionSlice.ElementDefinition
                             .ZeroToMany()
-                            .Short("Related Clinical Resources")
+                            .Short("Related Clinical Resources Section")
                             .Definition("References to FHIR clinical resoruces used during the exam or referenced by this report.")
                             .MustSupport();
                         ;
-                        e.AddComponentLinkTarget("Releated Resources Section",
+                        e.AddComponentLinkTarget("Related Resources",
                             new SDefEditor.Cardinality(sectionSlice.ElementDefinition),
                             Global.ElementAnchor(sectionSlice.ElementDefinition),
                             "Section",

@@ -35,14 +35,6 @@
     },
     {
       "url": "http://www.fragment.com/maplink",
-      "valueString": "{\r\n  \"LinkType\": \"extension\",\r\n  \"ShowChildren\": true,\r\n  \"Cardinality\": \"0..*\",\r\n  \"ComponentHRef\": \"StructureDefinition-{SDName}-definitions.html#DiagnosticReport.extension:impressions\",\r\n  \"LocalName\": \"Impressions\",\r\n  \"LinkTarget\": \"http://hl7.org/fhir/us/breast-radiology/StructureDefinition/ImpressionsExtension\"\r\n}"
-    },
-    {
-      "url": "http://www.fragment.com/maplink",
-      "valueString": "{\r\n  \"LinkType\": \"extension\",\r\n  \"ShowChildren\": true,\r\n  \"Cardinality\": \"0..*\",\r\n  \"ComponentHRef\": \"StructureDefinition-{SDName}-definitions.html#DiagnosticReport.extension:related\",\r\n  \"LocalName\": \"Related Clinical Resources\",\r\n  \"LinkTarget\": \"http://hl7.org/fhir/us/breast-radiology/StructureDefinition/RelatedClinicalResourcesExtension\"\r\n}"
-    },
-    {
-      "url": "http://www.fragment.com/maplink",
       "valueString": "{\r\n  \"LinkType\": \"component\",\r\n  \"ShowChildren\": true,\r\n  \"Cardinality\": \"1..1\",\r\n  \"LinkTarget\": \"Conclusion Code\",\r\n  \"ComponentHRef\": \"StructureDefinition-{SDName}-definitions.html#DiagnosticReport.conclusionCode\",\r\n  \"Types\": \"CodeableConcept\",\r\n  \"References\": [\r\n    \"http://hl7.org/fhir/us/breast-radiology/ValueSet/BiRadsAssessmentCategoriesVS\"\r\n  ],\r\n  \"ReferenceType\": \"valueSet\"\r\n}"
     },
     {
@@ -400,77 +392,6 @@
         "type": [
           {
             "code": "Extension"
-          }
-        ],
-        "isModifier": false,
-        "isSummary": false,
-        "mapping": [
-          {
-            "identity": "rim",
-            "map": "N/A"
-          }
-        ]
-      },
-      {
-        "id": "DiagnosticReport.extension:impressions",
-        "path": "DiagnosticReport.extension",
-        "sliceName": "impressions",
-        "short": "Exam impressions",
-        "definition": "Exam impressions.",
-        "comment": "This is one component of a group of components that comprise the observation.",
-        "alias": [
-          "extensions",
-          "user content"
-        ],
-        "min": 0,
-        "max": "*",
-        "base": {
-          "path": "DomainResource.extension",
-          "min": 0,
-          "max": "*"
-        },
-        "type": [
-          {
-            "code": "Extension",
-            "profile": [
-              "http://hl7.org/fhir/us/breast-radiology/StructureDefinition/ImpressionsExtension"
-            ]
-          }
-        ],
-        "mustSupport": true,
-        "isModifier": false,
-        "isSummary": false,
-        "mapping": [
-          {
-            "identity": "rim",
-            "map": "N/A"
-          }
-        ]
-      },
-      {
-        "id": "DiagnosticReport.extension:related",
-        "path": "DiagnosticReport.extension",
-        "sliceName": "related",
-        "short": "Related Clinical Resources",
-        "definition": "References to FHIR clinical resoruces used during the exam or referenced by this report.",
-        "comment": "This is one component of a group of components that comprise the observation.",
-        "alias": [
-          "extensions",
-          "user content"
-        ],
-        "min": 0,
-        "max": "*",
-        "base": {
-          "path": "DomainResource.extension",
-          "min": 0,
-          "max": "*"
-        },
-        "type": [
-          {
-            "code": "Extension",
-            "profile": [
-              "http://hl7.org/fhir/us/breast-radiology/StructureDefinition/RelatedClinicalResourcesExtension"
-            ]
           }
         ],
         "isModifier": false,
@@ -1715,77 +1636,6 @@
           "min": 0,
           "max": "*"
         }
-      },
-      {
-        "id": "DiagnosticReport.extension:impressions",
-        "path": "DiagnosticReport.extension",
-        "sliceName": "impressions",
-        "short": "Exam impressions",
-        "definition": "Exam impressions.",
-        "comment": "This is one component of a group of components that comprise the observation.",
-        "alias": [
-          "extensions",
-          "user content"
-        ],
-        "min": 0,
-        "max": "*",
-        "base": {
-          "path": "DiagnosticReport.extension",
-          "min": 0,
-          "max": "*"
-        },
-        "type": [
-          {
-            "code": "Extension",
-            "profile": [
-              "http://hl7.org/fhir/us/breast-radiology/StructureDefinition/ImpressionsExtension"
-            ]
-          }
-        ],
-        "mustSupport": true,
-        "isModifier": false,
-        "isSummary": false,
-        "mapping": [
-          {
-            "identity": "rim",
-            "map": "N/A"
-          }
-        ]
-      },
-      {
-        "id": "DiagnosticReport.extension:related",
-        "path": "DiagnosticReport.extension",
-        "sliceName": "related",
-        "short": "Related Clinical Resources",
-        "definition": "References to FHIR clinical resoruces used during the exam or referenced by this report.",
-        "comment": "This is one component of a group of components that comprise the observation.",
-        "alias": [
-          "extensions",
-          "user content"
-        ],
-        "min": 0,
-        "max": "*",
-        "base": {
-          "path": "DiagnosticReport.extension",
-          "min": 0,
-          "max": "*"
-        },
-        "type": [
-          {
-            "code": "Extension",
-            "profile": [
-              "http://hl7.org/fhir/us/breast-radiology/StructureDefinition/RelatedClinicalResourcesExtension"
-            ]
-          }
-        ],
-        "isModifier": false,
-        "isSummary": false,
-        "mapping": [
-          {
-            "identity": "rim",
-            "map": "N/A"
-          }
-        ]
       },
       {
         "id": "DiagnosticReport.extension:serviceRecommendation",

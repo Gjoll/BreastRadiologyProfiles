@@ -51,7 +51,8 @@ namespace BreastRadiology.XUnitTests
                 {
                     foreach (dynamic link in this.Links)
                     {
-                        if (link.LinkType == linkType)
+                        String linkTypeval = link.LinkType.ToObject<String>();
+                        if (linkTypeval == linkType)
                             yield return link;
                     }
                 }

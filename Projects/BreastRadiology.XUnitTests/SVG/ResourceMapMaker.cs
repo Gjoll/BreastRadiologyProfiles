@@ -12,7 +12,7 @@ namespace BreastRadiology.XUnitTests
     /// <summary>
     /// Create graphic of all resources.
     /// </summary>
-    class ResourceMapMaker
+    class ResourceMapMaker : MapMaker
     {
         class LegendItem
         {
@@ -21,15 +21,12 @@ namespace BreastRadiology.XUnitTests
         };
 
         Dictionary<String, LegendItem> legendItems = new Dictionary<string, LegendItem>();
-        ResourceMap map;
         FileCleaner fc;
 
-
         public ResourceMapMaker(FileCleaner fc,
-            ResourceMap map)
+            ResourceMap map) : base(map)
         {
             this.fc = fc;
-            this.map = map;
         }
 
         public void AddLegendItem(String resourceType, Color color)
@@ -40,13 +37,6 @@ namespace BreastRadiology.XUnitTests
                     ResourceType = resourceType,
                     Color = color
                 });
-        }
-
-        String HRef(ResourceMap.Node mapNode)
-        {
-            if (mapNode.ResourceUrl.StartsWith("http://hl7.org/fhir/StructureDefinition/"))
-                return mapNode.ResourceUrl;
-            return $"./{mapNode.StructureName}-{mapNode.Name}.html";
         }
 
         SENode CreateNode(ResourceMap.Node mapNode, String annotation)
@@ -87,13 +77,13 @@ namespace BreastRadiology.XUnitTests
                 dynamic link2 = links2[i];
                 if (link1.LinkType.ToObject<String>() != link2.LinkType.ToObject<String>())
                     return true;
-                if (link1.LinkTarget.ToObject<String>() != (String) link2.LinkTarget.ToObject<String>())
+                if (link1.LinkTarget.ToObject<String>() != (String)link2.LinkTarget.ToObject<String>())
                     return true;
             }
             return false;
         }
 
-        String[] linkNames = new string[] {"extension", "target" };
+        String[] linkNames = new string[] { "extension", "target", "component" };
         /*
          * Add children. If two adjacent children have same children, then dont create each in a seperate
          * group. Have the two nodes point to the same group of children.
@@ -104,54 +94,71 @@ namespace BreastRadiology.XUnitTests
             this.AddChildren(mapNode, mapNode.LinksByName(linkNames).ToArray(), group);
         }
 
+        dynamic[] previousChildLinks = null;
+        dynamic[] childMapLinks = null;
+
+        void DirectLink(SENodeGroup group,
+            ResourceMap.Node mapNode,
+            dynamic link)
+        {
+            SENodeGroup groupChild = null;
+
+            String linkTargetUrl = link.LinkTarget.ToObject<String>();
+            ResourceMap.Node childMapNode = this.map.GetNode(linkTargetUrl);
+            if (link.ShowChildren.ToObject<Boolean>())
+            {
+                childMapLinks = childMapNode.LinksByName(linkNames).ToArray();
+                if (this.DifferentChildren(previousChildLinks, childMapLinks))
+                    previousChildLinks = null;
+            }
+            else
+                previousChildLinks = null;
+
+            if (previousChildLinks == null)
+            {
+                groupChild = group.AppendChild("", false);
+                if (link.ShowChildren.ToObject<Boolean>())
+                {
+                    this.AddChildren(childMapNode, childMapLinks, groupChild);
+                    previousChildLinks = childMapLinks;
+                }
+            }
+
+            {
+                if (this.map.TryGetNode(linkTargetUrl, out ResourceMap.Node linkTargetNode) == false)
+                    throw new Exception("ResourceMap.Node '{link.ResourceUrl}' not found");
+                SENode node = this.CreateNode(linkTargetNode, link.Cardinality?.ToString());
+                groupChild.AppendNode(node);
+            }
+        }
+
         void AddChildren(ResourceMap.Node mapNode,
             dynamic[] links,
             SENodeGroup group)
         {
-            dynamic[] previousChildLinks = null;
-            if (links.Length > 0)
+
+            if (links.Length == 0)
+                return;
+            foreach (dynamic link in links)
             {
-                SENodeGroup groupChild = null;
-                foreach (dynamic link in links)
+                switch (link.LinkType.ToObject<String>())
                 {
-                    dynamic[] childMapLinks = null;
+                    case "component":
+                        MakeComponent(link, group);
+                        break;
 
-                    String linkTargetUrl = link.LinkTarget.ToObject<String>();
-                    ResourceMap.Node childMapNode = this.map.GetNode(linkTargetUrl);
-                    if (link.ShowChildren.ToObject<Boolean>())
-                    {
-                        childMapLinks = childMapNode.LinksByName(linkNames).ToArray();
-                        if (this.DifferentChildren(previousChildLinks, childMapLinks))
-                            previousChildLinks = null;
-                    }
-                    else
-                        previousChildLinks = null;
-
-                    if (previousChildLinks == null)
-                    {
-                        groupChild = group.AppendChild("", false);
-                        if (link.ShowChildren.ToObject<Boolean>())
-                        {
-                            this.AddChildren(childMapNode, childMapLinks, groupChild);
-                            previousChildLinks = childMapLinks;
-                        }
-                    }
-
-                    {
-                        if (this.map.TryGetNode(linkTargetUrl, out ResourceMap.Node linkTargetNode) == false)
-                            throw new Exception("ResourceMap.Node '{link.ResourceUrl}' not found");
-                        SENode node = this.CreateNode(linkTargetNode, link.Cardinality?.ToString());
-                        groupChild.AppendNode(node);
-                    }
+                    default:
+                        DirectLink(group, mapNode, link);
+                        break;
                 }
             }
         }
 
-        public void Create(String reportUrl, String outputPath)
+        public void Create(String baseUrl, String outputPath)
         {
             SvgEditor svgEditor = new SvgEditor();
             SENodeGroup legendGroup = this.CreateLegend();
-            SENodeGroup rootGroup = this.CreateNodes(reportUrl);
+            SENodeGroup rootGroup = this.CreateNodes(baseUrl);
             svgEditor.Render(legendGroup, false);
             svgEditor.Render(rootGroup, true);
             svgEditor.Save(outputPath);
