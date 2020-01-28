@@ -2,6 +2,7 @@
 using Newtonsoft.Json.Linq;
 using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -22,8 +23,7 @@ namespace BreastRadiology.XUnitTests
         // these are use to determine if children of a node can be
         // grouped with the children of the last parent node, or if a new group need to be created
         // to group the current children seperately.
-        dynamic[] previousChildLinks = null;
-        dynamic[] childMapLinks = null;
+        dynamic[] previousChildLinks = new Object[0];
 
         protected bool DifferentChildren(dynamic[] links1, dynamic[] links2)
         {
@@ -89,6 +89,7 @@ namespace BreastRadiology.XUnitTests
             bool showChildren)
         {
             SENodeGroup groupChild = null;
+            dynamic[] childMapLinks = new Object[0];
 
             String linkTargetUrl = link.LinkTarget.ToObject<String>();
             ResourceMap.Node childMapNode = null;
@@ -97,12 +98,12 @@ namespace BreastRadiology.XUnitTests
                 childMapNode = this.map.GetNode(linkTargetUrl);
                 childMapLinks = childMapNode.LinksByName(linkNames).ToArray();
                 if (this.DifferentChildren(previousChildLinks, childMapLinks))
-                    previousChildLinks = null;
+                    previousChildLinks = new Object[0];
             }
             else
-                previousChildLinks = null;
+                previousChildLinks = new Object[0];
 
-            if (previousChildLinks == null)
+            if (previousChildLinks.Length == 0)
             {
                 groupChild = group.AppendChild("", false);
                 if (showChildren)
@@ -116,6 +117,8 @@ namespace BreastRadiology.XUnitTests
                 if (this.map.TryGetNode(linkTargetUrl, out ResourceMap.Node linkTargetNode) == false)
                     throw new Exception("ResourceMap.Node '{link.ResourceUrl}' not found");
                 SENode node = this.CreateResourceNode(linkTargetNode, link);
+                if (groupChild == null)
+                    groupChild = group.AppendChild("", false);
                 groupChild.AppendNode(node);
             }
         }
@@ -125,7 +128,6 @@ namespace BreastRadiology.XUnitTests
             SENodeGroup group,
             bool showChildren)
         {
-
             if (links.Length == 0)
                 return;
             foreach (dynamic link in links)
@@ -170,31 +172,33 @@ namespace BreastRadiology.XUnitTests
         }
 
         protected void MakeComponent(dynamic link,
-                SENodeGroup componentChildren,
+                SENodeGroup group,
                 bool showChildren)
         {
+            if (link?.LinkTarget == "Report") Debugger.Break();
             // we never link components to previous child links, not should next item
             // link to this items children. Each component stands alone.
-            previousChildLinks = null;
+            previousChildLinks = new Object[0];
 
+            String linkTargetUrl = link.LinkTarget.ToObject<String>();
             String linkSource = link.LinkSource.ToObject<String>();
             String componentHRef = link.ComponentHRef.ToObject<String>().Replace("{SDName}", linkSource.LastUriPart());
 
             SENode node = new SENode(0, componentColor, link.Cardinality?.ToString(), componentHRef);
-            node.AddTextLine(link.LinkTarget.ToObject<String>(), componentHRef);
+            node.AddTextLine(linkTargetUrl, componentHRef);
 
             String types = link.Types?.ToObject<String>();
             if (String.IsNullOrEmpty(types) == false)
                 node.AddTextLine(types, componentHRef);
-            SENodeGroup nodeGroup = new SENodeGroup(node.AllText(), true);
-            componentChildren.AppendChild(nodeGroup);
-            nodeGroup.AppendNode(node);
+            SENodeGroup componentGroup = new SENodeGroup(node.AllText(), true);
+            group.AppendChild(componentGroup);
+            componentGroup.AppendNode(node);
 
             JArray references = (JArray)link.References;
             if (references != null)
             {
                 SENodeGroup refGroup = new SENodeGroup("ref", false);
-                nodeGroup.AppendChild(refGroup);
+                componentGroup.AppendChild(refGroup);
 
                 Color refColor = this.LinkTypeColor(link);
 
@@ -208,6 +212,12 @@ namespace BreastRadiology.XUnitTests
                         if (this.map.TryGetNode(vsUrl, out ResourceMap.Node vsNode) == false)
                             throw new Exception($"Component resource '{vsUrl}' not found!");
                         refNode = this.CreateResourceNode(vsNode, refColor, link.Cardinality?.ToString(), true);
+
+                        if (showChildren)
+                        {
+                            var childMapNode = this.map.GetNode(reference);
+                            this.AddChildren(childMapNode, refGroup, link.ShowChildren.ToObject<Boolean>());
+                        }
                     }
                     else
                     {
