@@ -278,48 +278,24 @@ namespace BreastRadiology.XUnitTests
                     }
                     {
                         ResourceMapMaker resourceMapMaker = new ResourceMapMaker(this.fc, map);
-                        resourceMapMaker.AddLegendItem("DiagnosticReport", Color.LightGreen);
-                        resourceMapMaker.AddLegendItem("Extension", Color.LightSalmon);
-                        resourceMapMaker.AddLegendItem("Observation", Color.LightSkyBlue);
-                        resourceMapMaker.AddLegendItem("ImagingStudy", Color.LightCoral);
-                        resourceMapMaker.AddLegendItem("FhirResource", Color.LightBlue);
-
                         resourceMapMaker.Create(ResourcesMaker.CreateUrl("MGFinding"),
                             Path.Combine(this.graphicsDir, "MgFindings.svg"));
                     }
 
                     {
                         ResourceMapMaker resourceMapMaker = new ResourceMapMaker(this.fc, map);
-                        resourceMapMaker.AddLegendItem("DiagnosticReport", Color.LightGreen);
-                        resourceMapMaker.AddLegendItem("Extension", Color.LightSalmon);
-                        resourceMapMaker.AddLegendItem("Observation", Color.LightSkyBlue);
-                        resourceMapMaker.AddLegendItem("ImagingStudy", Color.LightCoral);
-                        resourceMapMaker.AddLegendItem("FhirResource", Color.LightBlue);
-
                         resourceMapMaker.Create(ResourcesMaker.CreateUrl("MRIFinding"),
                             Path.Combine(this.graphicsDir, "MRIFindings.svg"));
                     }
 
                     {
                         ResourceMapMaker resourceMapMaker = new ResourceMapMaker(this.fc, map);
-                        resourceMapMaker.AddLegendItem("DiagnosticReport", Color.LightGreen);
-                        resourceMapMaker.AddLegendItem("Extension", Color.LightSalmon);
-                        resourceMapMaker.AddLegendItem("Observation", Color.LightSkyBlue);
-                        resourceMapMaker.AddLegendItem("ImagingStudy", Color.LightCoral);
-                        resourceMapMaker.AddLegendItem("FhirResource", Color.LightBlue);
-
                         resourceMapMaker.Create(ResourcesMaker.CreateUrl("NMFinding"),
                             Path.Combine(this.graphicsDir, "NMFindings.svg"));
                     }
 
                     {
                         ResourceMapMaker resourceMapMaker = new ResourceMapMaker(this.fc, map);
-                        resourceMapMaker.AddLegendItem("DiagnosticReport", Color.LightGreen);
-                        resourceMapMaker.AddLegendItem("Extension", Color.LightSalmon);
-                        resourceMapMaker.AddLegendItem("Observation", Color.LightSkyBlue);
-                        resourceMapMaker.AddLegendItem("ImagingStudy", Color.LightCoral);
-                        resourceMapMaker.AddLegendItem("FhirResource", Color.LightBlue);
-
                         resourceMapMaker.Create(ResourcesMaker.CreateUrl("USFinding"),
                             Path.Combine(this.graphicsDir, "USFindings.svg"));
                     }

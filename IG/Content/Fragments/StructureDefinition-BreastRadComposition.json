@@ -27,6 +27,10 @@
     },
     {
       "url": "http://www.fragment.com/maplink",
+      "valueString": "{\r\n  \"LinkType\": \"component\",\r\n  \"ShowChildren\": true,\r\n  \"Cardinality\": \"0..*\",\r\n  \"LinkTarget\": \"Impressions\",\r\n  \"ComponentHRef\": \"StructureDefinition-{SDName}-definitions.html#Composition.section:findings\",\r\n  \"Types\": \"Section\",\r\n  \"References\": [\r\n    \"http://hl7.org/fhir/StructureDefinition/ClinicalImpression\"\r\n  ],\r\n  \"ReferenceType\": \"target\"\r\n}"
+    },
+    {
+      "url": "http://www.fragment.com/maplink",
       "valueString": "{\r\n  \"LinkType\": \"component\",\r\n  \"ShowChildren\": true,\r\n  \"Cardinality\": \"0..*\",\r\n  \"LinkTarget\": \"Related Resources\",\r\n  \"ComponentHRef\": \"StructureDefinition-{SDName}-definitions.html#Composition.section:relatedResources\",\r\n  \"Types\": \"Section\",\r\n  \"References\": [\r\n    \"http://hl7.org/fhir/StructureDefinition/Resource\"\r\n  ],\r\n  \"ReferenceType\": \"target\"\r\n}"
     }
   ],
@@ -235,6 +239,93 @@
       },
       {
         "id": "Composition.section:impressions.entry",
+        "path": "Composition.section.entry",
+        "min": 1,
+        "max": "1",
+        "base": {
+          "path": "Composition.section.entry",
+          "min": 0,
+          "max": "*"
+        },
+        "type": [
+          {
+            "code": "Reference",
+            "targetProfile": [
+              "http://hl7.org/fhir/StructureDefinition/ClinicalImpression"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "Composition.section:findings",
+        "path": "Composition.section",
+        "sliceName": "findings",
+        "short": "Impressions Section",
+        "definition": "This section contains references to the report impressions",
+        "min": 0,
+        "max": "*",
+        "base": {
+          "path": "Composition.section",
+          "min": 0,
+          "max": "*"
+        },
+        "mustSupport": true
+      },
+      {
+        "id": "Composition.section:findings.code",
+        "path": "Composition.section.code",
+        "min": 1,
+        "max": "1",
+        "base": {
+          "path": "Composition.section.code",
+          "min": 0,
+          "max": "1"
+        },
+        "fixedCodeableConcept": {
+          "coding": [
+            {
+              "system": "http://hl7.org/fhir/us/breast-radiology/CodeSystem/CompositionSectionSliceCodes",
+              "code": "report"
+            }
+          ]
+        }
+      },
+      {
+        "id": "Composition.section:findings.title",
+        "path": "Composition.section.title",
+        "min": 1,
+        "max": "1",
+        "base": {
+          "path": "Composition.section.title",
+          "min": 0,
+          "max": "1"
+        },
+        "fixedString": "Findings"
+      },
+      {
+        "id": "Composition.section:findings.section",
+        "path": "Composition.section.section",
+        "min": 0,
+        "max": "0",
+        "base": {
+          "path": "Composition.section.section",
+          "min": 0,
+          "max": "*"
+        }
+      },
+      {
+        "id": "Composition.section:findings.focus",
+        "path": "Composition.section.focus",
+        "min": 0,
+        "max": "0",
+        "base": {
+          "path": "Composition.section.focus",
+          "min": 0,
+          "max": "1"
+        }
+      },
+      {
+        "id": "Composition.section:findings.entry",
         "path": "Composition.section.entry",
         "min": 1,
         "max": "1",

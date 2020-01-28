@@ -11,6 +11,7 @@ namespace BreastRadiology.XUnitTests
     {
         protected ResourceMap map;
 
+        protected Color focusColor = Color.White;
         protected Color extensionReferenceColor = Color.LightSkyBlue;
         protected Color extensionColor = Color.LightBlue;
         protected Color valueSetColor = Color.LightGreen;

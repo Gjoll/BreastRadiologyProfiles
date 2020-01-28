@@ -14,13 +14,6 @@ namespace BreastRadiology.XUnitTests
     /// </summary>
     class ResourceMapMaker : MapMaker
     {
-        class LegendItem
-        {
-            public String ResourceType;
-            public Color Color;
-        };
-
-        Dictionary<String, LegendItem> legendItems = new Dictionary<string, LegendItem>();
         FileCleaner fc;
 
         public ResourceMapMaker(FileCleaner fc,
@@ -29,32 +22,10 @@ namespace BreastRadiology.XUnitTests
             this.fc = fc;
         }
 
-        public void AddLegendItem(String resourceType, Color color)
+        SENode CreateNode(ResourceMap.Node mapNode, Color color, String annotation)
         {
-            this.legendItems.Add(resourceType,
-                new LegendItem
-                {
-                    ResourceType = resourceType,
-                    Color = color
-                });
-        }
-
-        SENode CreateNode(ResourceMap.Node mapNode, String annotation)
-        {
-            LegendItem legendItem;
-            switch (mapNode.StructureName)
-            {
-                case "StructureDefinition":
-                    if (this.legendItems.TryGetValue(mapNode.LegendName, out legendItem) == false)
-                        throw new Exception($"No legend item defined for Base {mapNode.LegendName}");
-                    break;
-
-                default:
-                    throw new Exception($"No legend item defined for Structure {mapNode.StructureName}");
-            }
-
             String hRef = HRef(mapNode);
-            SENode node = new SENode(0, legendItem.Color, annotation, hRef, mapNode.Name);
+            SENode node = new SENode(0, color, annotation, hRef, mapNode.Name);
             foreach (String titlePart in mapNode.MapName)
             {
                 String s = titlePart.Trim();
@@ -127,7 +98,7 @@ namespace BreastRadiology.XUnitTests
             {
                 if (this.map.TryGetNode(linkTargetUrl, out ResourceMap.Node linkTargetNode) == false)
                     throw new Exception("ResourceMap.Node '{link.ResourceUrl}' not found");
-                SENode node = this.CreateNode(linkTargetNode, link.Cardinality?.ToString());
+                SENode node = this.CreateNode(linkTargetNode, targetColor, link.Cardinality?.ToString());
                 groupChild.AppendNode(node);
             }
         }
@@ -145,6 +116,11 @@ namespace BreastRadiology.XUnitTests
                 {
                     case "component":
                         MakeComponent(link, group);
+                        if (link.ShowChildren.ToObject<Boolean>())
+                        {
+                            //$this.AddChildren(childMapNode, childMapLinks, groupChild);
+                            //$previousChildLinks = childMapLinks;
+                        }
                         break;
 
                     default:
@@ -157,56 +133,18 @@ namespace BreastRadiology.XUnitTests
         public void Create(String baseUrl, String outputPath)
         {
             SvgEditor svgEditor = new SvgEditor();
-            SENodeGroup legendGroup = this.CreateLegend();
             SENodeGroup rootGroup = this.CreateNodes(baseUrl);
-            svgEditor.Render(legendGroup, false);
             svgEditor.Render(rootGroup, true);
             svgEditor.Save(outputPath);
             fc?.Mark(outputPath);
         }
 
-        SENodeGroup CreateLegend()
-        {
-            SENodeGroup legendGroup = new SENodeGroup("legend", false);
-            Int32 i = 0;
-            LegendItem[] legendItems = this.legendItems.Values.ToArray();
-            while (i < this.legendItems.Values.Count)
-            {
-                SENodeGroup lastGroup = legendGroup;
-                Int32 counter = 4;
-                while ((counter > 0) && (i < this.legendItems.Values.Count))
-                {
-                    LegendItem legendItem = legendItems[i];
-                    SENodeGroup nextGroup = lastGroup.AppendChild("Legend", false);
-                    SENode node = new SENode(0, legendItem.Color, null);
-                    nextGroup.AppendNode(node);
-                    node.AddTextLine(legendItem.ResourceType);
-                    lastGroup = nextGroup;
-
-                    counter -= 1;
-                    i += 1;
-                }
-            }
-            return legendGroup;
-
-            //SENodeGroup legendGroup = new SENodeGroup("legend");
-            //SENodeGroup lastGroup = legendGroup;
-            //foreach (LegendItem legendItem in this.legendItems.Values)
-            //{
-            //    SENodeGroup nextGroup = lastGroup.AppendChild("Legend");
-            //    SENode node = new SENode(0, legendItem.Color);
-            //    nextGroup.AppendNode(node);
-            //    node.AddTextLine(legendItem.ResourceType);
-            //    lastGroup = nextGroup;
-            //}
-            //return legendGroup;
-        }
 
         SENodeGroup CreateNodes(String reportUrl)
         {
             ResourceMap.Node mapNode = this.map.GetNode(reportUrl);
             SENodeGroup rootGroup = new SENodeGroup("root", false);
-            SENode rootNode = this.CreateNode(mapNode, null);
+            SENode rootNode = this.CreateNode(mapNode, focusColor , null);
             rootGroup.AppendNode(rootNode);
             this.AddChildren(mapNode, rootGroup);
             return rootGroup;
