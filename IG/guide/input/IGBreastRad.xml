@@ -122,7 +122,7 @@
       </reference>
       <name value="Cyst Type CodeSystem" />
       <description value="Cyst abnormality type CodeSystem." />
-      <exampleBoolean value="False" />
+      <exampleBoolean value="false" />
       <groupingId value="CommonCodesCS" />
     </resource>
     <resource>
@@ -131,7 +131,7 @@
       </reference>
       <name value="Duct Type CodeSystem" />
       <description value="Duct abnormality types code system." />
-      <exampleBoolean value="False" />
+      <exampleBoolean value="false" />
       <groupingId value="CommonCodesCS" />
     </resource>
     <resource>
@@ -140,7 +140,7 @@
       </reference>
       <name value="Lymph Node Type CodeSystem" />
       <description value="Lymph node abnormality types code system." />
-      <exampleBoolean value="False" />
+      <exampleBoolean value="false" />
       <groupingId value="CommonCodesCS" />
     </resource>
     <resource>
@@ -149,7 +149,7 @@
       </reference>
       <name value="BiRads(r) Assessment Category Codes CodeSystem" />
       <description value="BiRads(r) Assessment Category code system." />
-      <exampleBoolean value="False" />
+      <exampleBoolean value="false" />
       <groupingId value="CommonCodesCS" />
     </resource>
     <resource>
@@ -158,7 +158,7 @@
       </reference>
       <name value="Breast Location Clock CodeSystem" />
       <description value="Breast body location angles (expressed in clock-face units) code system." />
-      <exampleBoolean value="False" />
+      <exampleBoolean value="false" />
       <groupingId value="CommonCodesCS" />
     </resource>
     <resource>
@@ -167,7 +167,7 @@
       </reference>
       <name value="Breast Location Depth CodeSystem" />
       <description value="Breast body location depth code system." />
-      <exampleBoolean value="False" />
+      <exampleBoolean value="false" />
       <groupingId value="CommonCodesCS" />
     </resource>
     <resource>
@@ -176,7 +176,7 @@
       </reference>
       <name value="Breast Location Quadrant CodeSystem" />
       <description value="Breast body location quadrant code system." />
-      <exampleBoolean value="False" />
+      <exampleBoolean value="false" />
       <groupingId value="CommonCodesCS" />
     </resource>
     <resource>
@@ -185,7 +185,7 @@
       </reference>
       <name value="Breast Location Region CodeSystem" />
       <description value="Breast body location region code system." />
-      <exampleBoolean value="False" />
+      <exampleBoolean value="false" />
       <groupingId value="CommonCodesCS" />
     </resource>
     <resource>
@@ -194,7 +194,7 @@
       </reference>
       <name value="Component Slice Codes CodeSystem" />
       <description value="Component Slice Codes code system" />
-      <exampleBoolean value="False" />
+      <exampleBoolean value="false" />
       <groupingId value="CommonCodesCS" />
     </resource>
     <resource>
@@ -203,7 +203,7 @@
       </reference>
       <name value="Composition Section Slice Codes CodeSystem" />
       <description value="Composition Section Slice Codes code system" />
-      <exampleBoolean value="False" />
+      <exampleBoolean value="false" />
       <groupingId value="CommonCodesCS" />
     </resource>
     <resource>
@@ -212,7 +212,7 @@
       </reference>
       <name value="Consistent With CodeSystem" />
       <description value="ConsistentWith code system" />
-      <exampleBoolean value="False" />
+      <exampleBoolean value="false" />
       <groupingId value="CommonCodesCS" />
     </resource>
     <resource>
@@ -221,7 +221,7 @@
       </reference>
       <name value="ConsistentWith Qualifier CodeSystem" />
       <description value="ConsistentWithQualifier  code system" />
-      <exampleBoolean value="False" />
+      <exampleBoolean value="false" />
       <groupingId value="CommonCodesCS" />
     </resource>
     <resource>
@@ -230,7 +230,7 @@
       </reference>
       <name value="Consistent With CodeSystem" />
       <description value="CorrespondsWith code system" />
-      <exampleBoolean value="False" />
+      <exampleBoolean value="false" />
       <groupingId value="CommonCodesCS" />
     </resource>
     <resource>
@@ -239,7 +239,7 @@
       </reference>
       <name value="Fibroadenoma CodeSystem" />
       <description value="Fibroadenoma values code system." />
-      <exampleBoolean value="False" />
+      <exampleBoolean value="false" />
       <groupingId value="CommonCodesCS" />
     </resource>
     <resource>
@@ -248,7 +248,7 @@
       </reference>
       <name value="Foreign Object CodeSystem" />
       <description value="Foreign objects observed during a Breast Radiology exam code system." />
-      <exampleBoolean value="False" />
+      <exampleBoolean value="false" />
       <groupingId value="CommonCodesCS" />
     </resource>
     <resource>
@@ -257,7 +257,7 @@
       </reference>
       <name value="Mammography Calcification Distribution CodeSystem" />
       <description value="Mammography calcification distribution code system." />
-      <exampleBoolean value="False" />
+      <exampleBoolean value="false" />
       <groupingId value="MGCodesCS" />
     </resource>
     <resource>
@@ -266,7 +266,7 @@
       </reference>
       <name value="Mammography Calcification Type CodeSystem" />
       <description value="Mammography calcification type code system." />
-      <exampleBoolean value="False" />
+      <exampleBoolean value="false" />
       <groupingId value="MGCodesCS" />
     </resource>
     <resource>
@@ -275,7 +275,7 @@
       </reference>
       <name value="MarginCodeSystem" />
       <description value="Margin code system." />
-      <exampleBoolean value="False" />
+      <exampleBoolean value="false" />
       <groupingId value="CommonCodesCS" />
     </resource>
     <resource>
@@ -284,7 +284,7 @@
       </reference>
       <name value="Mass Type CodeSystem" />
       <description value="Codes defining mass refinements." />
-      <exampleBoolean value="False" />
+      <exampleBoolean value="false" />
       <groupingId value="CommonCodesCS" />
     </resource>
     <resource>
@@ -293,7 +293,7 @@
       </reference>
       <name value="Mammography Asymmetry Type CodeSystem" />
       <description value="Mammography asymmetry abnormality type code system." />
-      <exampleBoolean value="False" />
+      <exampleBoolean value="false" />
       <groupingId value="MGCodesCS" />
     </resource>
     <resource>
@@ -302,7 +302,7 @@
       </reference>
       <name value="Mammography Density Type CodeSystem" />
       <description value="Mammography density abnormality refinement types code system." />
-      <exampleBoolean value="False" />
+      <exampleBoolean value="false" />
       <groupingId value="MGCodesCS" />
     </resource>
     <resource>
@@ -311,7 +311,7 @@
       </reference>
       <name value="Mammography Breast Density CodeSystem" />
       <description value="Mammography breast density values code system." />
-      <exampleBoolean value="False" />
+      <exampleBoolean value="false" />
       <groupingId value="MGCodesCS" />
     </resource>
     <resource>
@@ -320,7 +320,7 @@
       </reference>
       <name value="Mammography Density CodeSystem" />
       <description value="Mammography density code system." />
-      <exampleBoolean value="False" />
+      <exampleBoolean value="false" />
       <groupingId value="MGCodesCS" />
     </resource>
     <resource>
@@ -329,7 +329,7 @@
       </reference>
       <name value="Not Previously Seen CodeSystem" />
       <description value="NotPreviouslySeen code system" />
-      <exampleBoolean value="False" />
+      <exampleBoolean value="false" />
       <groupingId value="CommonCodesCS" />
     </resource>
     <resource>
@@ -338,7 +338,7 @@
       </reference>
       <name value="Observed Changes CodeSystem" />
       <description value="Observed changes in an abnormality code system." />
-      <exampleBoolean value="False" />
+      <exampleBoolean value="false" />
       <groupingId value="CommonCodesCS" />
     </resource>
     <resource>
@@ -347,7 +347,7 @@
       </reference>
       <name value="Observed Feature CodeSystem" />
       <description value="Observed Feature seen during a breast examination." />
-      <exampleBoolean value="False" />
+      <exampleBoolean value="false" />
       <groupingId value="CommonCodesCS" />
     </resource>
     <resource>
@@ -356,7 +356,7 @@
       </reference>
       <name value="Orientation CodeSystem" />
       <description value="Orientation CodeSystem" />
-      <exampleBoolean value="False" />
+      <exampleBoolean value="false" />
       <groupingId value="CommonCodesCS" />
     </resource>
     <resource>
@@ -365,7 +365,7 @@
       </reference>
       <name value="Recommendations CodeSystem" />
       <description value="Recommendations code system" />
-      <exampleBoolean value="False" />
+      <exampleBoolean value="false" />
       <groupingId value="CommonCodesCS" />
     </resource>
     <resource>
@@ -374,7 +374,7 @@
       </reference>
       <name value="Shape CodeSystem" />
       <description value="Shape values code system." />
-      <exampleBoolean value="False" />
+      <exampleBoolean value="false" />
       <groupingId value="CommonCodesCS" />
     </resource>
     <resource>
@@ -383,7 +383,7 @@
       </reference>
       <name value="Cyst Abnormalities ValueSet" />
       <description value="Cyst abnormality types value set." />
-      <exampleBoolean value="False" />
+      <exampleBoolean value="false" />
       <groupingId value="CommonCodesVS" />
     </resource>
     <resource>
@@ -392,7 +392,7 @@
       </reference>
       <name value="Duct ValueSet" />
       <description value="Duct node abnormality types value set." />
-      <exampleBoolean value="False" />
+      <exampleBoolean value="false" />
       <groupingId value="CommonCodesVS" />
     </resource>
     <resource>
@@ -401,7 +401,7 @@
       </reference>
       <name value="Lymph Node ValueSet" />
       <description value="lymph node abnormality types value set." />
-      <exampleBoolean value="False" />
+      <exampleBoolean value="false" />
       <groupingId value="CommonCodesVS" />
     </resource>
     <resource>
@@ -410,7 +410,7 @@
       </reference>
       <name value="BiRads(r) Assessment Category ValueSet" />
       <description value="BiRads(r) Assessment Category value set." />
-      <exampleBoolean value="False" />
+      <exampleBoolean value="false" />
       <groupingId value="CommonCodesVS" />
     </resource>
     <resource>
@@ -419,7 +419,7 @@
       </reference>
       <name value="Breast Location Clock ValueSet" />
       <description value="Breast body location angles (expressed in clock-face units) value set." />
-      <exampleBoolean value="False" />
+      <exampleBoolean value="false" />
       <groupingId value="CommonCodesVS" />
     </resource>
     <resource>
@@ -428,7 +428,7 @@
       </reference>
       <name value="Breast Location Depth ValueSet" />
       <description value="Breast body location depth value set." />
-      <exampleBoolean value="False" />
+      <exampleBoolean value="false" />
       <groupingId value="CommonCodesVS" />
     </resource>
     <resource>
@@ -437,7 +437,7 @@
       </reference>
       <name value="Breast Location Quadrant ValueSet" />
       <description value="Breast body location quadrant code system value set." />
-      <exampleBoolean value="False" />
+      <exampleBoolean value="false" />
       <groupingId value="CommonCodesVS" />
     </resource>
     <resource>
@@ -446,7 +446,7 @@
       </reference>
       <name value="Breast Location Region ValueSet" />
       <description value="Breast body location region value set." />
-      <exampleBoolean value="False" />
+      <exampleBoolean value="false" />
       <groupingId value="CommonCodesVS" />
     </resource>
     <resource>
@@ -455,7 +455,7 @@
       </reference>
       <name value="ConsistentWithQualifier ValueSet" />
       <description value="ConsistentWithQualifier value set." />
-      <exampleBoolean value="False" />
+      <exampleBoolean value="false" />
       <groupingId value="MGCodesVS" />
     </resource>
     <resource>
@@ -464,7 +464,7 @@
       </reference>
       <name value="ConsistentWith ValueSet" />
       <description value="ConsistentWith value set." />
-      <exampleBoolean value="False" />
+      <exampleBoolean value="false" />
       <groupingId value="MGCodesVS" />
     </resource>
     <resource>
@@ -473,7 +473,7 @@
       </reference>
       <name value="CorrespondsWith ValueSet" />
       <description value="CorrespondsWith value set." />
-      <exampleBoolean value="False" />
+      <exampleBoolean value="false" />
       <groupingId value="MGCodesVS" />
     </resource>
     <resource>
@@ -482,7 +482,7 @@
       </reference>
       <name value="Fibroadenoma ValueSet" />
       <description value="Fibroadenoma value set." />
-      <exampleBoolean value="False" />
+      <exampleBoolean value="false" />
       <groupingId value="CommonCodesVS" />
     </resource>
     <resource>
@@ -491,7 +491,7 @@
       </reference>
       <name value="Foreign Object ValueSet" />
       <description value="Foreign objects observed during a Breast Radiology exam value set" />
-      <exampleBoolean value="False" />
+      <exampleBoolean value="false" />
       <groupingId value="CommonCodesVS" />
     </resource>
     <resource>
@@ -500,7 +500,7 @@
       </reference>
       <name value="Mammography Calcification Distribution ValueSet" />
       <description value="Mammography calcification distribution value set." />
-      <exampleBoolean value="False" />
+      <exampleBoolean value="false" />
       <groupingId value="MGCodesVS" />
     </resource>
     <resource>
@@ -509,7 +509,7 @@
       </reference>
       <name value="Mammography Calcification Type ValueSet" />
       <description value="Mammography calcification types value set." />
-      <exampleBoolean value="False" />
+      <exampleBoolean value="false" />
       <groupingId value="MGCodesVS" />
     </resource>
     <resource>
@@ -518,7 +518,7 @@
       </reference>
       <name value="Margin ValueSet" />
       <description value="Margin ValueSet." />
-      <exampleBoolean value="False" />
+      <exampleBoolean value="false" />
       <groupingId value="CommonCodesVS" />
     </resource>
     <resource>
@@ -527,7 +527,7 @@
       </reference>
       <name value="Mass Type ValueSet" />
       <description value="Mass type value set." />
-      <exampleBoolean value="False" />
+      <exampleBoolean value="false" />
       <groupingId value="CommonCodesVS" />
     </resource>
     <resource>
@@ -536,7 +536,7 @@
       </reference>
       <name value="Mammography AsymmetryAbnormalities ValueSet" />
       <description value="Mammography asymmetry abnormality types value set." />
-      <exampleBoolean value="False" />
+      <exampleBoolean value="false" />
       <groupingId value="MGCodesVS" />
     </resource>
     <resource>
@@ -545,7 +545,7 @@
       </reference>
       <name value="Mammography Density Type ValueSet" />
       <description value="Mammography density abnormality refinement value set." />
-      <exampleBoolean value="False" />
+      <exampleBoolean value="false" />
       <groupingId value="MGCodesVS" />
     </resource>
     <resource>
@@ -554,7 +554,7 @@
       </reference>
       <name value="Mammography Breast Density ValueSet" />
       <description value="Mammography breast density value set." />
-      <exampleBoolean value="False" />
+      <exampleBoolean value="false" />
       <groupingId value="MGCodesVS" />
     </resource>
     <resource>
@@ -563,7 +563,7 @@
       </reference>
       <name value="Mammography Density ValueSet" />
       <description value="Mammography density codes value set." />
-      <exampleBoolean value="False" />
+      <exampleBoolean value="false" />
       <groupingId value="MGCodesVS" />
     </resource>
     <resource>
@@ -572,7 +572,7 @@
       </reference>
       <name value="NotPreviouslySeen ValueSet" />
       <description value="NotPreviouslySeen value set." />
-      <exampleBoolean value="False" />
+      <exampleBoolean value="false" />
       <groupingId value="MGCodesVS" />
     </resource>
     <resource>
@@ -581,7 +581,7 @@
       </reference>
       <name value="Observed Changes ValueSet" />
       <description value="Observed changes in an abnormality value set." />
-      <exampleBoolean value="False" />
+      <exampleBoolean value="false" />
       <groupingId value="CommonCodesVS" />
     </resource>
     <resource>
@@ -590,7 +590,7 @@
       </reference>
       <name value="Observed Feature ValueSet" />
       <description value="Observed feature observed during a Breast Radiology exam value set" />
-      <exampleBoolean value="False" />
+      <exampleBoolean value="false" />
       <groupingId value="CommonCodesVS" />
     </resource>
     <resource>
@@ -599,7 +599,7 @@
       </reference>
       <name value="Orientation ValueSet" />
       <description value="Orientation ValueSet" />
-      <exampleBoolean value="False" />
+      <exampleBoolean value="false" />
       <groupingId value="CommonCodesVS" />
     </resource>
     <resource>
@@ -608,7 +608,7 @@
       </reference>
       <name value="Recommendations ValueSet" />
       <description value="Recommendations value set." />
-      <exampleBoolean value="False" />
+      <exampleBoolean value="false" />
       <groupingId value="MGCodesVS" />
     </resource>
     <resource>
@@ -617,7 +617,7 @@
       </reference>
       <name value="Shape ValueSet" />
       <description value="Shape value set." />
-      <exampleBoolean value="False" />
+      <exampleBoolean value="false" />
       <groupingId value="CommonCodesVS" />
     </resource>
     <resource>
@@ -626,7 +626,7 @@
       </reference>
       <name value="UnitsOfLength ValueSet" />
       <description value="UnitsOfLength value set." />
-      <exampleBoolean value="False" />
+      <exampleBoolean value="false" />
       <groupingId value="MGCodesVS" />
     </resource>
     <resource>
@@ -635,7 +635,7 @@
       </reference>
       <name value="Breast Radiology Report" />
       <description value="Breast Radiology Diagnostic Report" />
-      <exampleBoolean value="False" />
+      <exampleBoolean value="false" />
       <groupingId value="BaseResources" />
     </resource>
     <resource>
@@ -644,7 +644,7 @@
       </reference>
       <name value="Service Recommendation" />
       <description value="Service Recommendation" />
-      <exampleBoolean value="False" />
+      <exampleBoolean value="false" />
       <groupingId value="BaseResources" />
     </resource>
     <resource>
@@ -653,7 +653,7 @@
       </reference>
       <name value="Breast Radiology Composition" />
       <description value="Breast Radiology Composition" />
-      <exampleBoolean value="False" />
+      <exampleBoolean value="false" />
       <groupingId value="BaseResources" />
     </resource>
     <resource>
@@ -662,7 +662,7 @@
       </reference>
       <name value="Findings Left Breast" />
       <description value="Findings Left Breast Section" />
-      <exampleBoolean value="False" />
+      <exampleBoolean value="false" />
       <groupingId value="BaseResources" />
     </resource>
     <resource>
@@ -671,7 +671,7 @@
       </reference>
       <name value="Findings Right Breast" />
       <description value="Findings Right Breast Section" />
-      <exampleBoolean value="False" />
+      <exampleBoolean value="false" />
       <groupingId value="BaseResources" />
     </resource>
     <resource>
@@ -680,7 +680,7 @@
       </reference>
       <name value="Cyst" />
       <description value="Cyst Observation" />
-      <exampleBoolean value="False" />
+      <exampleBoolean value="false" />
       <groupingId value="CommonResources" />
     </resource>
     <resource>
@@ -689,7 +689,7 @@
       </reference>
       <name value="Duct" />
       <description value="Duct Observation" />
-      <exampleBoolean value="False" />
+      <exampleBoolean value="false" />
       <groupingId value="CommonResources" />
     </resource>
     <resource>
@@ -698,7 +698,7 @@
       </reference>
       <name value="Fibroadenoma" />
       <description value="Fibroadenoma Observation" />
-      <exampleBoolean value="False" />
+      <exampleBoolean value="false" />
       <groupingId value="CommonResources" />
     </resource>
     <resource>
@@ -707,7 +707,7 @@
       </reference>
       <name value="Foreign Object" />
       <description value="Foreign Object Observation" />
-      <exampleBoolean value="False" />
+      <exampleBoolean value="false" />
       <groupingId value="CommonResources" />
     </resource>
     <resource>
@@ -716,7 +716,7 @@
       </reference>
       <name value="LymphNode" />
       <description value="LymphNode Observation" />
-      <exampleBoolean value="False" />
+      <exampleBoolean value="false" />
       <groupingId value="CommonResources" />
     </resource>
     <resource>
@@ -725,7 +725,7 @@
       </reference>
       <name value="Associated Features" />
       <description value="Associated Features Observation" />
-      <exampleBoolean value="False" />
+      <exampleBoolean value="false" />
       <groupingId value="CommonResources" />
     </resource>
     <resource>
@@ -734,7 +734,7 @@
       </reference>
       <name value="Observed Feature" />
       <description value="Observed Feature Observation" />
-      <exampleBoolean value="False" />
+      <exampleBoolean value="false" />
       <groupingId value="CommonResources" />
     </resource>
     <resource>
@@ -743,7 +743,7 @@
       </reference>
       <name value="Consistent With" />
       <description value="'Consistent With' Observation" />
-      <exampleBoolean value="False" />
+      <exampleBoolean value="false" />
       <groupingId value="CommonResources" />
     </resource>
     <resource>
@@ -752,7 +752,7 @@
       </reference>
       <name value="Mass" />
       <description value="Mass Observation" />
-      <exampleBoolean value="False" />
+      <exampleBoolean value="false" />
       <groupingId value="CommonResources" />
     </resource>
     <resource>
@@ -761,7 +761,7 @@
       </reference>
       <name value="Body Distance From Extension" />
       <description value="Body Distance From extension" />
-      <exampleBoolean value="False" />
+      <exampleBoolean value="false" />
       <groupingId value="ExtensionResources" />
     </resource>
     <resource>
@@ -770,7 +770,7 @@
       </reference>
       <name value="Breast Body Location Extension" />
       <description value="Breast Body Location extension" />
-      <exampleBoolean value="False" />
+      <exampleBoolean value="false" />
       <groupingId value="ExtensionResources" />
     </resource>
     <resource>
@@ -779,7 +779,7 @@
       </reference>
       <name value="Tumor Satellite Extension" />
       <description value="Tumor Satellite Extension" />
-      <exampleBoolean value="False" />
+      <exampleBoolean value="false" />
       <groupingId value="ExtensionResources" />
     </resource>
     <resource>
@@ -788,7 +788,7 @@
       </reference>
       <name value="Mammography Finding" />
       <description value="Mammography Finding" />
-      <exampleBoolean value="False" />
+      <exampleBoolean value="false" />
       <groupingId value="MGResources" />
     </resource>
     <resource>
@@ -797,7 +797,7 @@
       </reference>
       <name value="Mammography Architectural Distortion" />
       <description value="Architectural Distortion Observation" />
-      <exampleBoolean value="False" />
+      <exampleBoolean value="false" />
       <groupingId value="MGResources" />
     </resource>
     <resource>
@@ -806,7 +806,7 @@
       </reference>
       <name value="Mammography Asymmetry" />
       <description value="Asymmetry Observation" />
-      <exampleBoolean value="False" />
+      <exampleBoolean value="false" />
       <groupingId value="MGResources" />
     </resource>
     <resource>
@@ -815,7 +815,7 @@
       </reference>
       <name value="Mammography Density" />
       <description value="Mammography Density Observation" />
-      <exampleBoolean value="False" />
+      <exampleBoolean value="false" />
       <groupingId value="MGResources" />
     </resource>
     <resource>
@@ -824,7 +824,7 @@
       </reference>
       <name value="Mammography Fat Necrosis" />
       <description value="Fat Necrosis Observation" />
-      <exampleBoolean value="False" />
+      <exampleBoolean value="false" />
       <groupingId value="MGResources" />
     </resource>
     <resource>
@@ -833,7 +833,7 @@
       </reference>
       <name value="Mammography Breast Density" />
       <description value="Breast Density Observation" />
-      <exampleBoolean value="False" />
+      <exampleBoolean value="false" />
       <groupingId value="MGResources" />
     </resource>
     <resource>
@@ -842,7 +842,7 @@
       </reference>
       <name value="Mammography Calcification" />
       <description value="Calcification Observation" />
-      <exampleBoolean value="False" />
+      <exampleBoolean value="false" />
       <groupingId value="MGResources" />
     </resource>
     <resource>
@@ -851,7 +851,7 @@
       </reference>
       <name value="MRI Finding" />
       <description value="MRI Finding" />
-      <exampleBoolean value="False" />
+      <exampleBoolean value="false" />
       <groupingId value="MRIResources" />
     </resource>
     <resource>
@@ -860,7 +860,7 @@
       </reference>
       <name value="NM Finding" />
       <description value="NM Finding" />
-      <exampleBoolean value="False" />
+      <exampleBoolean value="false" />
       <groupingId value="NMResources" />
     </resource>
     <resource>
@@ -869,7 +869,7 @@
       </reference>
       <name value="Ultra-Sound Finding" />
       <description value="Ultra Sound Finding" />
-      <exampleBoolean value="False" />
+      <exampleBoolean value="false" />
       <groupingId value="USResources" />
     </resource>
     <resource>
@@ -878,7 +878,7 @@
       </reference>
       <name value="BiRad Fragment" />
       <description value="Fragment 'Fragment that adds 'BiRad code' element to profile.'" />
-      <exampleBoolean value="False" />
+      <exampleBoolean value="false" />
       <groupingId value="Fragments" />
     </resource>
     <resource>
@@ -887,7 +887,7 @@
       </reference>
       <name value="Breast Body Location (Required) Fragment" />
       <description value="Fragment 'Required Breast Body Location fragment'" />
-      <exampleBoolean value="False" />
+      <exampleBoolean value="false" />
       <groupingId value="Fragments" />
     </resource>
     <resource>
@@ -896,7 +896,7 @@
       </reference>
       <name value="Observation Fragment" />
       <description value="Fragment 'Observation base fragment'" />
-      <exampleBoolean value="False" />
+      <exampleBoolean value="false" />
       <groupingId value="Fragments" />
     </resource>
     <resource>
@@ -905,7 +905,7 @@
       </reference>
       <name value="Observation No Component Fragment" />
       <description value="Fragment 'Observation NoComponent Fragment.'" />
-      <exampleBoolean value="False" />
+      <exampleBoolean value="false" />
       <groupingId value="Fragments" />
     </resource>
     <resource>
@@ -914,7 +914,7 @@
       </reference>
       <name value="Observation NoDevice Fragment" />
       <description value="Fragment 'Observations No Device Data fragment.'" />
-      <exampleBoolean value="False" />
+      <exampleBoolean value="false" />
       <groupingId value="Fragments" />
     </resource>
     <resource>
@@ -923,7 +923,7 @@
       </reference>
       <name value="Observation NoValue Fragment" />
       <description value="Fragment 'Observation No Value fragment'" />
-      <exampleBoolean value="False" />
+      <exampleBoolean value="false" />
       <groupingId value="Fragments" />
     </resource>
     <resource>
@@ -932,7 +932,7 @@
       </reference>
       <name value="Category Fragment" />
       <description value="Fragment 'Fix Observation.category Fragment'" />
-      <exampleBoolean value="False" />
+      <exampleBoolean value="false" />
       <groupingId value="Fragments" />
     </resource>
     <resource>
@@ -941,7 +941,7 @@
       </reference>
       <name value="Common Components Fragment" />
       <description value="Fragment 'Common Components fragment'" />
-      <exampleBoolean value="False" />
+      <exampleBoolean value="false" />
       <groupingId value="Fragments" />
     </resource>
     <resource>
@@ -950,7 +950,7 @@
       </reference>
       <name value="CorrespondsWith Fragment" />
       <description value="Fragment 'Observation 'Consistent With' Component Fragment'" />
-      <exampleBoolean value="False" />
+      <exampleBoolean value="false" />
       <groupingId value="Fragments" />
     </resource>
     <resource>
@@ -959,7 +959,7 @@
       </reference>
       <name value="Finding Breast Fragment" />
       <description value="Fragment 'Fragment definition for finding section of left or right breast'" />
-      <exampleBoolean value="False" />
+      <exampleBoolean value="false" />
       <groupingId value="Fragments" />
     </resource>
     <resource>
@@ -968,7 +968,7 @@
       </reference>
       <name value="Header Fragment" />
       <description value="Fragment 'Common Header Fragment'" />
-      <exampleBoolean value="False" />
+      <exampleBoolean value="false" />
       <groupingId value="Fragments" />
     </resource>
     <resource>
@@ -977,7 +977,7 @@
       </reference>
       <name value="Not Previously Seen Component Fragment" />
       <description value="Fragment 'Not Previously Seen component slice fragment'" />
-      <exampleBoolean value="False" />
+      <exampleBoolean value="false" />
       <groupingId value="Fragments" />
     </resource>
     <resource>
@@ -986,7 +986,7 @@
       </reference>
       <name value="Observation Leaf Fragment" />
       <description value="Fragment 'Observation Leaf Node Fragment'" />
-      <exampleBoolean value="False" />
+      <exampleBoolean value="false" />
       <groupingId value="Fragments" />
     </resource>
     <resource>
@@ -995,7 +995,7 @@
       </reference>
       <name value="Observation Section Fragment" />
       <description value="Fragment 'Observation section fragment'" />
-      <exampleBoolean value="False" />
+      <exampleBoolean value="false" />
       <groupingId value="Fragments" />
     </resource>
     <resource>
@@ -1004,7 +1004,7 @@
       </reference>
       <name value="ObservedChanges Fragment" />
       <description value="Fragment 'Fragment that adds 'Observed Changes' element to profile.'" />
-      <exampleBoolean value="False" />
+      <exampleBoolean value="false" />
       <groupingId value="Fragments" />
     </resource>
     <resource>
@@ -1013,7 +1013,7 @@
       </reference>
       <name value="ObservedCount Fragment" />
       <description value="Fragment 'Fragment that adds 'Observed Count' element to profile.'" />
-      <exampleBoolean value="False" />
+      <exampleBoolean value="false" />
       <groupingId value="Fragments" />
     </resource>
     <resource>
@@ -1022,7 +1022,7 @@
       </reference>
       <name value="ObservedRegion Fragment" />
       <description value="Fragment 'Fragment that adds 'Observed Region' element to profile.'" />
-      <exampleBoolean value="False" />
+      <exampleBoolean value="false" />
       <groupingId value="Fragments" />
     </resource>
     <resource>
@@ -1031,7 +1031,7 @@
       </reference>
       <name value="ObservedSize Fragment" />
       <description value="Fragment 'Fragment that adds 'Observed Size' element to profile.'" />
-      <exampleBoolean value="False" />
+      <exampleBoolean value="false" />
       <groupingId value="Fragments" />
     </resource>
     <resource>
@@ -1040,7 +1040,7 @@
       </reference>
       <name value="Shape Components Fragment" />
       <description value="Fragment 'Shape component slice fragment'" />
-      <exampleBoolean value="False" />
+      <exampleBoolean value="false" />
       <groupingId value="Fragments" />
     </resource>
     <resource>
@@ -1049,7 +1049,7 @@
       </reference>
       <name value="Tumor Satellite Fragment" />
       <description value="Fragment 'Tumor Satellite fragment'" />
-      <exampleBoolean value="False" />
+      <exampleBoolean value="false" />
       <groupingId value="Fragments" />
     </resource>
     <!-- You don't need to define any groupings.  The IGPublisher will define them for you.  You only need to do so if your IG is 'special' and it's
