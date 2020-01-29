@@ -93,7 +93,6 @@ namespace BreastRadiology.XUnitTests
                         name,
                         new String[] {name },
                         "StructureDefinition",
-                        "FhirResource",
                         false);
 
                     return true;
@@ -134,7 +133,6 @@ namespace BreastRadiology.XUnitTests
             String resourceUrl;
             String baseName = null;
             String title;
-
             switch (r)
             {
                 case ValueSet vs:
@@ -163,7 +161,6 @@ namespace BreastRadiology.XUnitTests
                 title,
                 mapNameArray,
                 structureName,
-                baseName,
                 isFragmentExtension != null);
 
             foreach (Extension link in r.GetExtensions(Global.ResourceMapLinkUrl))
@@ -183,12 +180,11 @@ namespace BreastRadiology.XUnitTests
             String title,
             String[] mapName, 
             String structureName, 
-            String legendName, 
             bool fragment)
         {
             if (this.nodes.TryGetValue(url, out ResourceMap.Node retVal) == true)
                 throw new Exception($"Map node {url} already exists");
-            retVal = new Node(url, title, mapName, structureName, legendName, fragment);
+            retVal = new Node(url, title, mapName, structureName, fragment);
             return retVal;
         }
     }

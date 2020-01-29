@@ -27,10 +27,6 @@
     },
     {
       "url": "http://www.fragment.com/maplink",
-      "valueString": "{\r\n  \"LinkType\": \"component\",\r\n  \"ShowChildren\": true,\r\n  \"Cardinality\": \"0..*\",\r\n  \"LinkTarget\": \"Impressions\",\r\n  \"ComponentHRef\": \"StructureDefinition-{SDName}-definitions.html#Composition.section:findings\",\r\n  \"Types\": \"Section\",\r\n  \"References\": [\r\n    \"http://hl7.org/fhir/StructureDefinition/ClinicalImpression\"\r\n  ],\r\n  \"ReferenceType\": \"target\"\r\n}"
-    },
-    {
-      "url": "http://www.fragment.com/maplink",
       "valueString": "{\r\n  \"LinkType\": \"component\",\r\n  \"ShowChildren\": true,\r\n  \"Cardinality\": \"0..*\",\r\n  \"LinkTarget\": \"Related Resources\",\r\n  \"ComponentHRef\": \"StructureDefinition-{SDName}-definitions.html#Composition.section:relatedResources\",\r\n  \"Types\": \"Section\",\r\n  \"References\": [\r\n    \"http://hl7.org/fhir/StructureDefinition/Resource\"\r\n  ],\r\n  \"ReferenceType\": \"target\"\r\n}"
     },
     {
@@ -42,7 +38,7 @@
   "name": "BreastRadComposition",
   "title": "Breast Radiology Composition",
   "status": "draft",
-  "description": "<b>Breast Radiology Composition</b>\n\nThis is the composition resource for the Breast Radiology Fhir Document.\n\nA Fhir Document is a Bundle that contains a composition as the first entry and\nprovides a single item (bundle) that contains all the resources that are a part of\nthe Breast Radiology Diagnostic Report.",
+  "description": "<b>Breast Radiology Composition</b>\n\nThis is the composition resource for the Breast Radiology Fhir Document.\n\nA Fhir Document is a Bundle that contains a composition as the first entry and\nprovides a single item (bundle) that contains all the resources that are a part of\nthe Breast Radiology Diagnostic Report.\n\nThis composition creates the following sections that contain resources related to the document.\n\nA. Report Section.\nThis contains a single reference to the Breast Radiology Report\nAll Breast Radiology Findings are referenced by the reports results element.\n\nB. Impressions Section.\nAll of the clinical impressions created for this exam are referenced in this section.\n\nC. Recommendations Section.\nAll of the service and medication recommendations created for this exam are referenced in this section.\nIf a recommendation is in response to a particular observation or finding, then \nthe recommendations 'reasonReference' should contain a  reference to the pertinant observation or finding.",
   "fhirVersion": "4.0.0",
   "kind": "resource",
   "abstract": false,
@@ -55,7 +51,7 @@
         "id": "Composition",
         "path": "Composition",
         "short": "Breast Radiology Composition",
-        "definition": "This is the composition resource for the Breast Radiology Fhir Document.\n\nA Fhir Document is a Bundle that contains a composition as the first entry and\nprovides a single item (bundle) that contains all the resources that are a part of\nthe Breast Radiology Diagnostic Report.",
+        "definition": "This is the composition resource for the Breast Radiology Fhir Document.\n\nA Fhir Document is a Bundle that contains a composition as the first entry and\nprovides a single item (bundle) that contains all the resources that are a part of\nthe Breast Radiology Diagnostic Report.\n\nThis composition creates the following sections that contain resources related to the document.\n\nA. Report Section.\nThis contains a single reference to the Breast Radiology Report\nAll Breast Radiology Findings are referenced by the reports results element.\n\nB. Impressions Section.\nAll of the clinical impressions created for this exam are referenced in this section.\n\nC. Recommendations Section.\nAll of the service and medication recommendations created for this exam are referenced in this section.\nIf a recommendation is in response to a particular observation or finding, then \nthe recommendations 'reasonReference' should contain a  reference to the pertinant observation or finding.",
         "base": {
           "path": "Composition",
           "min": 0,
@@ -255,95 +251,6 @@
       },
       {
         "id": "Composition.section:impressions.section",
-        "path": "Composition.section.section",
-        "min": 0,
-        "max": "0",
-        "base": {
-          "path": "Composition.section.section",
-          "min": 0,
-          "max": "*"
-        }
-      },
-      {
-        "id": "Composition.section:findings",
-        "path": "Composition.section",
-        "sliceName": "findings",
-        "short": "Impressions Section",
-        "definition": "This section contains references to the report's findings.",
-        "min": 0,
-        "max": "*",
-        "base": {
-          "path": "Composition.section",
-          "min": 0,
-          "max": "*"
-        },
-        "mustSupport": true
-      },
-      {
-        "id": "Composition.section:findings.title",
-        "path": "Composition.section.title",
-        "min": 1,
-        "max": "1",
-        "base": {
-          "path": "Composition.section.title",
-          "min": 0,
-          "max": "1"
-        },
-        "fixedString": "Findings"
-      },
-      {
-        "id": "Composition.section:findings.code",
-        "path": "Composition.section.code",
-        "min": 1,
-        "max": "1",
-        "base": {
-          "path": "Composition.section.code",
-          "min": 0,
-          "max": "1"
-        },
-        "fixedCodeableConcept": {
-          "coding": [
-            {
-              "system": "http://hl7.org/fhir/us/breast-radiology/CodeSystem/CompositionSectionSliceCodes",
-              "code": "sectionCodeFindings"
-            }
-          ]
-        }
-      },
-      {
-        "id": "Composition.section:findings.focus",
-        "path": "Composition.section.focus",
-        "min": 0,
-        "max": "0",
-        "base": {
-          "path": "Composition.section.focus",
-          "min": 0,
-          "max": "1"
-        }
-      },
-      {
-        "id": "Composition.section:findings.entry",
-        "path": "Composition.section.entry",
-        "short": "Finding reference",
-        "definition": "Reference to the finding.",
-        "min": 1,
-        "max": "1",
-        "base": {
-          "path": "Composition.section.entry",
-          "min": 0,
-          "max": "*"
-        },
-        "type": [
-          {
-            "code": "Reference",
-            "targetProfile": [
-              "http://hl7.org/fhir/StructureDefinition/ClinicalImpression"
-            ]
-          }
-        ]
-      },
-      {
-        "id": "Composition.section:findings.section",
         "path": "Composition.section.section",
         "min": 0,
         "max": "0",

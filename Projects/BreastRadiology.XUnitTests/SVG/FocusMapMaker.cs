@@ -206,7 +206,7 @@ namespace BreastRadiology.XUnitTests
                 }
             }
 
-            parentsGroup.Sort();
+            //parentsGroup.Sort();
             e.Render(parentsGroup, true);
             String outputPath = Path.Combine(this.graphicsDir, FocusMapName(focusNode));
             fc?.Mark(outputPath);

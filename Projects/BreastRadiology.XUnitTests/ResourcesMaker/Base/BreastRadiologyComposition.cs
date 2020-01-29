@@ -92,6 +92,16 @@ namespace BreastRadiology.XUnitTests
                              .Paragraph("A Fhir Document is a Bundle that contains a composition as the first entry and",
                                         "provides a single item (bundle) that contains all the resources that are a part of",
                                         "the Breast Radiology Diagnostic Report.")
+                             .Paragraph("This composition creates the following sections that contain resources related to the document.")
+                             .Paragraph("A. Report Section.",
+                                        "This contains a single reference to the Breast Radiology Report",
+                                        "All Breast Radiology Findings are referenced by the reports results element.")
+                             .Paragraph("B. Impressions Section.",
+                                        "All of the clinical impressions created for this exam are referenced in this section.")
+                             .Paragraph("C. Recommendations Section.",
+                                        "All of the service and medication recommendations created for this exam are referenced in this section.",
+                                        "If a recommendation is in response to a particular observation or finding, then ",
+                                        "the recommendations 'reasonReference' should contain a  reference to the pertinant observation or finding.")
                      )
                      .AddFragRef(Self.HeaderFragment.Value())
                      ;
@@ -171,39 +181,39 @@ namespace BreastRadiology.XUnitTests
                     }
                 }
 
-                // Findings Section
-                {
-                    ElementTreeNode sliceElementDef = StartSectionSlicing(e);
-                    {
-                        String[] targets = new string[] { ClinicalImpressionUrl };
+                //// Findings Section
+                //{
+                //    ElementTreeNode sliceElementDef = StartSectionSlicing(e);
+                //    {
+                //        String[] targets = new string[] { ObservationUrl };
 
-                        ElementTreeSlice sectionSlice = SliceSection(sliceElementDef,
-                            "findings",
-                            "Findings",
-                            Self.SectionCodeFindings,
-                            out ElementDefinition entry);
-                        entry
-                            .Single()
-                            .Type("Reference", null, targets)
-                            .Short("Finding reference")
-                            .Definition("Reference to the finding.")
-                            ;
-                        sectionSlice.ElementDefinition
-                            .ZeroToMany()
-                            .SetShort($"Impressions Section")
-                            .SetDefinition(
-                                new Markdown()
-                                    .Paragraph($"This section contains references to the report's findings.")
-                                )
-                            .MustSupport();
-                        ;
-                        e.AddComponentLinkTarget("Impressions",
-                            new SDefEditor.Cardinality(sectionSlice.ElementDefinition),
-                            Global.ElementAnchor(sectionSlice.ElementDefinition),
-                            "Section",
-                            targets);
-                    }
-                }
+                //        ElementTreeSlice sectionSlice = SliceSection(sliceElementDef,
+                //            "findings",
+                //            "Findings",
+                //            Self.SectionCodeFindings,
+                //            out ElementDefinition entry);
+                //        entry
+                //            .Single()
+                //            .Type("Reference", null, targets)
+                //            .Short("Finding reference")
+                //            .Definition("Reference to the finding.")
+                //            ;
+                //        sectionSlice.ElementDefinition
+                //            .ZeroToMany()
+                //            .SetShort($"Findings Section")
+                //            .SetDefinition(
+                //                new Markdown()
+                //                    .Paragraph($"This section contains references to the report's findings.")
+                //                )
+                //            .MustSupport();
+                //        ;
+                //        e.AddComponentLinkTarget("Findings",
+                //            new SDefEditor.Cardinality(sectionSlice.ElementDefinition),
+                //            Global.ElementAnchor(sectionSlice.ElementDefinition),
+                //            "Section",
+                //            targets);
+                //    }
+                //}
 
                 // Related Resources Section
                 {

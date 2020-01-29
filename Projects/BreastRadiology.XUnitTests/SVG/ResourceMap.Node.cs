@@ -15,7 +15,6 @@ namespace BreastRadiology.XUnitTests
             public String Title { get; }
 
             public String[] MapName { get; }
-            public String LegendName { get; }
             public bool IsFragment { get; }
 
             /// <summary>
@@ -34,13 +33,11 @@ namespace BreastRadiology.XUnitTests
                 String title,
                 String[] mapName,
                 String structureName,
-                String legendName,
                 bool isFragment)
             {
                 this.ResourceUrl = resourceUrl;
                 this.MapName = mapName;
                 this.StructureName = structureName;
-                this.LegendName = legendName;
                 this.IsFragment = isFragment;
                 this.Title = title;
             }
