@@ -122,7 +122,7 @@
         "path": "Observation.hasMember",
         "sliceName": "associatedFeatures",
         "short": "'Associated Features' reference",
-        "definition": "This slice references the target 'Associated Features'",
+        "definition": "This slice references the target 'Associated Features'.",
         "min": 0,
         "max": "1",
         "base": {
@@ -144,7 +144,7 @@
         "path": "Observation.hasMember",
         "sliceName": "consistentWith",
         "short": "'Consistent With' reference",
-        "definition": "This slice references the target 'Consistent With'",
+        "definition": "This slice references the target 'Consistent With'.",
         "min": 0,
         "max": "*",
         "base": {

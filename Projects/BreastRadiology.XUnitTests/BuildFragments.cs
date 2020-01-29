@@ -207,6 +207,16 @@ namespace BreastRadiology.XUnitTests
         }
 
         [TestMethod]
+        public void SDCheckInputResources()
+        {
+            SDChecker fv = new SDChecker();
+            fv.StatusErrors += this.StatusErrors;
+            fv.StatusInfo += this.StatusInfo;
+            fv.StatusWarnings += this.StatusWarnings;
+            fv.CheckDir(this.resourcesDir, "*.json");
+        }
+
+        [TestMethod]
         public void ValidateInputResources()
         {
             FhirValidator fv = new FhirValidator(Path.Combine(this.cacheDir, "validation.xml"));

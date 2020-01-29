@@ -274,7 +274,7 @@ namespace BreastRadiology.XUnitTests
                     .Description("Breast Body Location extension",
                         new Markdown()
                             .Paragraph("this extension defines the fields that are used to describe the" +
-                                       "location of an observed item in a breast radiology report")
+                                       "location of an observed item in a breast radiology report.")
                             .Paragraph("Breast radiology exams have specific ways of defining a location that are unique to this field.")
                     )
                     .Kind(StructureDefinition.StructureDefinitionKind.ComplexType)
@@ -297,7 +297,7 @@ namespace BreastRadiology.XUnitTests
                 //    "laterality",
                 //    "http://hl7.org/fhir/ValueSet/bodysite-laterality",
                 //    "Laterality of the body location",
-                //    new Markdown().Paragraph("The laterality of the body location"),
+                //    new Markdown().Paragraph("The laterality of the body location."),
                 //    out ElementTreeSlice extensionSlice,
                 //    out ElementTreeNode valueXNode
                 //    );
@@ -308,7 +308,7 @@ namespace BreastRadiology.XUnitTests
                         "http://hl7.org/fhir/us/skinwoundassessment/StructureDefinition/BodySideExt")
                         .ElementDefinition
                             .Single()
-                            .SetDefinition(new Markdown().Paragraph("The laterality of the body location"))
+                            .SetDefinition(new Markdown().Paragraph("The laterality of the body location."))
                         ;
 
                     //$ This is the build site url. Fix this when bodysite gets published.
@@ -334,7 +334,7 @@ namespace BreastRadiology.XUnitTests
                         "quadrant",
                         binding,
                         "Quadrant of the body location",
-                        new Markdown().Paragraph("The quadrant  of the body location"))
+                        new Markdown().Paragraph("The quadrant  of the body location."))
                         .Single()
                        ;
 
@@ -362,7 +362,7 @@ namespace BreastRadiology.XUnitTests
                         "region",
                         binding,
                         "Region of the body location",
-                        new Markdown().Paragraph("The region  of the body location"))
+                        new Markdown().Paragraph("The region  of the body location."))
                         .ZeroToMany()
                     ;
 

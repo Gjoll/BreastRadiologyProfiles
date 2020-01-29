@@ -2,6 +2,7 @@
 using PreFhir;
 using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Text;
 
 namespace BreastRadiology.XUnitTests
@@ -21,6 +22,11 @@ namespace BreastRadiology.XUnitTests
 
         public static String ElementAnchor(ElementDefinition e)
         {
+            Int32 pIndex = e.ElementId.IndexOf('.');
+            if (pIndex < 0)
+                pIndex = e.ElementId.Length;
+            String id = "{SDName}" + e.ElementId.Substring(pIndex);
+
             return $"StructureDefinition-" + "{SDName}" + $"-definitions.html#{e.ElementId}";
         }
 

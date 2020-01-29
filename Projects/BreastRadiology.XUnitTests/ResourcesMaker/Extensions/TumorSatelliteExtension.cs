@@ -98,7 +98,7 @@ namespace BreastRadiology.XUnitTests
                         "Reference of index tumor",
                         new Markdown()
                             .Paragraph("Optional reference to index tumor (tumor that this is a satellite of).")
-                            .Paragraph("Generally this should be a reference to a Breast Radiology Abnormality Observation resource"),
+                            .Paragraph("Generally this should be a reference to a Breast Radiology Abnormality Observation resource."),
                         out ElementTreeSlice extensionSlice,
                         out ElementTreeNode valueXNode);
 

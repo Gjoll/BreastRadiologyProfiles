@@ -83,7 +83,7 @@ namespace BreastRadiology.XUnitTests
                 .Value(new FhirUrl(sliceName))
                 .Type("uri")
                 .Definition(new Markdown()
-                    .Paragraph($"Url for {sliceName} complex extension item")
+                    .Paragraph($"Url for {sliceName} complex extension item.")
                     )
                 ;
                 extensionSlice.CreateNode(elementUrl);

@@ -25,19 +25,12 @@ namespace BreastRadiology.XUnitTests
                      "Resource")
                      .Description("Breast Radiology Diagnostic Report",
                          new Markdown()
-                             .Paragraph("This resource is the base resource of the Breast Diagnostic Report.",
-                                         "All components of this report are stored in or referenced by this fhir instance.")
+                             .Paragraph("This resource is one of the components of a Breast Radiology Document.",
+                             "It is the first section of the documents first section, title, and contains the report conclusions and supporting information.")
                              .Paragraph("This resource is a profile of the Fhir DiagnosticReport base resource.")
-                             .Paragraph("Items referenced by this resource include:")
-                             .List("Prior breast radiology reports for this patient",
-                                   "Left breast findings",
-                                   "Right breast findings",
-                                   "Recommendations of this report",
-                                   "Report findings in a human readable format")
                      )
                      .AddFragRef(Self.HeaderFragment.Value())
                      .AddFragRef(Self.CategoryFragment.Value())
-                     .AddFragRef(Self.ServiceRecommendationFragment.Value())
                      ;
 
                 s = e.SDef;
@@ -53,7 +46,7 @@ namespace BreastRadiology.XUnitTests
                         .Single()
                         .Definition(new Markdown()
                             .Paragraph("This will contain a text version of the complete report.")
-                            .Paragraph("The report should be readable without specialized formatting software..")
+                            .Paragraph("The report should be readable without specialized formatting software.")
                             );
                 }
                 {

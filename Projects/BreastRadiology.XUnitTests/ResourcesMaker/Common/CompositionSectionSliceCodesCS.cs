@@ -16,7 +16,11 @@ namespace BreastRadiology.XUnitTests
     {
         String CompositionSectionSliceCodesUrl => CodeSystemUrl("CompositionSectionSliceCodes");
 
-        Coding SectionCodeReport => new Coding(CompositionSectionSliceCodesUrl, "report");
+        Coding SectionCodeReport => new Coding(CompositionSectionSliceCodesUrl, "sectionReport");
+        Coding SectionCodeImpressions => new Coding(CompositionSectionSliceCodesUrl, "sectionImpressions");
+        Coding SectionCodeRelatedResources => new Coding(CompositionSectionSliceCodesUrl, "sectionRelatedResources");
+        Coding SectionCodeRecommendations => new Coding(CompositionSectionSliceCodesUrl, "sectionCodeRecommendations");
+        Coding SectionCodeFindings => new Coding(CompositionSectionSliceCodesUrl, "sectionCodeFindings");
 
         CSTaskVar CompositionSectionSliceCodesCS = new CSTaskVar(
              (out CodeSystem cs) =>
@@ -30,7 +34,23 @@ namespace BreastRadiology.XUnitTests
                         {
                             new ConceptDef(Self.SectionCodeReport,
                                 new Definition()
-                                    .Line("Slicing CompositionSection Code - SectionCodeReport")
+                                    .Line("Slicing CompositionSection Code - Report")
+                                ),
+                            new ConceptDef(Self.SectionCodeImpressions,
+                                new Definition()
+                                    .Line("Slicing CompositionSection Code - Impressions")
+                                ),
+                            new ConceptDef(Self.SectionCodeRelatedResources,
+                                new Definition()
+                                    .Line("Slicing CompositionSection Code - Related Resources")
+                                ),
+                            new ConceptDef(Self.SectionCodeRecommendations,
+                                new Definition()
+                                    .Line("Slicing CompositionSection Code - Recommendations")
+                                ),
+                            new ConceptDef(Self.SectionCodeFindings,
+                                new Definition()
+                                    .Line("Slicing CompositionSection Code - Findings")
                                 ),
                        })
              );

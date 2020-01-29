@@ -32,7 +32,6 @@ namespace BreastRadiology.XUnitTests
                     .AddFragRef(Self.ObservedSizeComponentFragment.Value())
                     .AddFragRef(Self.ObservedRegionComponentFragment.Value())
                     .AddFragRef(Self.BiRadComponentFragment.Value())
-                    .AddFragRef(Self.ServiceRecommendationFragment.Value())
                     ;
                 s = e.SDef;
 

@@ -2,6 +2,7 @@
 <ImplementationGuide xmlns="http://hl7.org/fhir">
   <id value="hl7.fhir.us.breast-radiology-0.1.0" />
   <url value="http://hl7.org/fhir/us/breast-radiology/ImplementationGuide/hl7.fhir.us.breast-radiology-0.1.0" />
+  <version value="0.0.2" />
   <name value="Breast_Radiology_Reporting_1st_STU_ballot" />
   <title value="Breast Radiology Reporting - 1st STU ballot" />
   <status value="draft" />
@@ -766,15 +767,6 @@
     </resource>
     <resource>
       <reference>
-        <reference value="StructureDefinition/ServiceRecommendationExtension" />
-      </reference>
-      <name value="Service Recommendation Extension" />
-      <description value="Diagnostic Report Service Recommendation extension" />
-      <exampleBoolean value="false" />
-      <groupingId value="ExtensionResources" />
-    </resource>
-    <resource>
-      <reference>
         <reference value="StructureDefinition/TumorSatelliteExtension" />
       </reference>
       <name value="Tumor Satellite Extension" />
@@ -1031,15 +1023,6 @@
       </reference>
       <name value="ObservedSize Fragment" />
       <description value="Fragment 'Fragment that adds 'Observed Size' element to profile.'" />
-      <exampleBoolean value="false" />
-      <groupingId value="Fragments" />
-    </resource>
-    <resource>
-      <reference>
-        <reference value="StructureDefinition/ServiceRecommendationFragment" />
-      </reference>
-      <name value="Service Recommendation Fragment" />
-      <description value="Fragment 'Service Recommendation Fragment fragment'" />
       <exampleBoolean value="false" />
       <groupingId value="Fragments" />
     </resource>

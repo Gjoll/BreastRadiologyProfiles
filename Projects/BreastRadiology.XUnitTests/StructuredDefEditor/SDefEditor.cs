@@ -183,8 +183,10 @@ namespace BreastRadiology.XUnitTests
 
             slice.ElementDefinition
                 .SetShort($"{name} extension")
-                .SetDefinition(new Markdown($"This extension slice contains the {name} extension"))
-                .SetComment(new Markdown($"This is one component of a group of components that comprise the observation."))
+                .SetDefinition(new Markdown()
+                                    .Paragraph($"This extension slice contains the {name} extension."))
+                .SetComment(new Markdown()
+                                    .Paragraph($"This is one component of a group of components that comprise the observation."))
                 ;
 
             slice.ElementDefinition.IsModifier = false;
@@ -461,7 +463,8 @@ namespace BreastRadiology.XUnitTests
             slice.ElementDefinition
                 .SetShort($"{componentName} component")
                 .SetDefinition(sliceDefinition)
-                .SetComment(new Markdown($"This is one component of a group of components that comprise the observation."))
+                .SetComment(new Markdown()
+                                    .Paragraph($"This is one component of a group of components that comprise the observation."))
                 ;
 
             if (modalities != Modalities.All)
@@ -478,7 +481,8 @@ namespace BreastRadiology.XUnitTests
                     Min = 1,
                     Max = "1",
                     Short = $"{componentName} component code",
-                    Definition = new Markdown($"This code identifies the {componentName} {compStr}")
+                    Definition = new Markdown()
+                                    .Paragraph($"This code identifies the {componentName} {compStr}.")
                 };
                 componentCode
                     .Pattern(pattern)
@@ -569,7 +573,8 @@ namespace BreastRadiology.XUnitTests
             retVal.ElementDefinition
                 .SetShort($"'{profile.Title}' reference")
                 .SetDefinition(
-                    new Markdown($"This slice references the target '{profile.Title}'")
+                    new Markdown()
+                                    .Paragraph($"This slice references the target '{profile.Title}'.")
                     )
             ;
             this.AddTargetLink(profile.Url.Trim(),
@@ -589,7 +594,8 @@ namespace BreastRadiology.XUnitTests
             ElementDefinition sliceDef = this.SliceByUrlTarget(sliceElementDef, profile.Url, min, max).ElementDefinition
                 .SetShort($"'{profile.Title}' reference")
                 .SetDefinition(
-                    new Markdown($"This slice references the target '{profile.Title}'")
+                    new Markdown()
+                        .Paragraph($"This slice references the target '{profile.Title}'.")
                     .ValidModalities(Modalities.MG)
                     )
             ;

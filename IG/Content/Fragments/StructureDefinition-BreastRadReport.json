@@ -26,14 +26,6 @@
       "valueString": "{\r\n  \"LinkType\": \"fragment\",\r\n  \"ShowChildren\": false,\r\n  \"LinkTarget\": \"http://hl7.org/fhir/us/breast-radiology/StructureDefinition/CategoryFragment\"\r\n}"
     },
     {
-      "url": "http://www.fragment.com/fragment",
-      "valueUrl": "http://hl7.org/fhir/us/breast-radiology/StructureDefinition/ServiceRecommendationFragment"
-    },
-    {
-      "url": "http://www.fragment.com/maplink",
-      "valueString": "{\r\n  \"LinkType\": \"fragment\",\r\n  \"ShowChildren\": false,\r\n  \"LinkTarget\": \"http://hl7.org/fhir/us/breast-radiology/StructureDefinition/ServiceRecommendationFragment\"\r\n}"
-    },
-    {
       "url": "http://www.fragment.com/maplink",
       "valueString": "{\r\n  \"LinkType\": \"component\",\r\n  \"ShowChildren\": true,\r\n  \"Cardinality\": \"1..1\",\r\n  \"LinkTarget\": \"Conclusion Code\",\r\n  \"ComponentHRef\": \"StructureDefinition-{SDName}-definitions.html#DiagnosticReport.conclusionCode\",\r\n  \"Types\": \"CodeableConcept\",\r\n  \"References\": [\r\n    \"http://hl7.org/fhir/us/breast-radiology/ValueSet/BiRadsAssessmentCategoriesVS\"\r\n  ],\r\n  \"ReferenceType\": \"valueSet\"\r\n}"
     },
@@ -50,7 +42,7 @@
   "name": "BreastRadReport",
   "title": "Breast Radiology Report",
   "status": "draft",
-  "description": "<b>Breast Radiology Diagnostic Report</b>\n\nThis resource is the base resource of the Breast Diagnostic Report.\nAll components of this report are stored in or referenced by this fhir instance.\n\nThis resource is a profile of the Fhir DiagnosticReport base resource.\n\nItems referenced by this resource include:\n\n<ul><li>Prior breast radiology reports for this patient</li>\n<li>Left breast findings</li>\n<li>Right breast findings</li>\n<li>Recommendations of this report</li>\n<li>Report findings in a human readable format</li>\n</ul>",
+  "description": "<b>Breast Radiology Diagnostic Report</b>\n\nThis resource is one of the components of a Breast Radiology Document.\nIt is the first section of the documents first section, title, and contains the report conclusions and supporting information.\n\nThis resource is a profile of the Fhir DiagnosticReport base resource.",
   "fhirVersion": "4.0.0",
   "kind": "resource",
   "abstract": false,
@@ -63,7 +55,7 @@
         "id": "DiagnosticReport",
         "path": "DiagnosticReport",
         "short": "Breast Radiology Diagnostic Report",
-        "definition": "This resource is the base resource of the Breast Diagnostic Report.\nAll components of this report are stored in or referenced by this fhir instance.\n\nThis resource is a profile of the Fhir DiagnosticReport base resource.\n\nItems referenced by this resource include:\n\n<ul><li>Prior breast radiology reports for this patient</li>\n<li>Left breast findings</li>\n<li>Right breast findings</li>\n<li>Recommendations of this report</li>\n<li>Report findings in a human readable format</li>\n</ul>",
+        "definition": "This resource is one of the components of a Breast Radiology Document.\nIt is the first section of the documents first section, title, and contains the report conclusions and supporting information.\n\nThis resource is a profile of the Fhir DiagnosticReport base resource.",
         "base": {
           "path": "DiagnosticReport",
           "min": 0,
@@ -122,7 +114,7 @@
         "path": "DiagnosticReport.result",
         "sliceName": "sectionFindingsLeftBreast",
         "short": "'Findings Left Breast' reference",
-        "definition": "This slice references the target 'Findings Left Breast'",
+        "definition": "This slice references the target 'Findings Left Breast'.",
         "min": 0,
         "max": "1",
         "base": {
@@ -145,7 +137,7 @@
         "path": "DiagnosticReport.result",
         "sliceName": "sectionFindingsRightBreast",
         "short": "'Findings Right Breast' reference",
-        "definition": "This slice references the target 'Findings Right Breast'",
+        "definition": "This slice references the target 'Findings Right Breast'.",
         "min": 0,
         "max": "1",
         "base": {
@@ -166,7 +158,7 @@
       {
         "id": "DiagnosticReport.conclusion",
         "path": "DiagnosticReport.conclusion",
-        "definition": "This will contain a text version of the complete report.\n\nThe report should be readable without specialized formatting software..",
+        "definition": "This will contain a text version of the complete report.\n\nThe report should be readable without specialized formatting software.",
         "min": 1,
         "max": "1",
         "base": {

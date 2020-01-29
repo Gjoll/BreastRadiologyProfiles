@@ -130,7 +130,7 @@
         "path": "Observation.hasMember",
         "sliceName": "associatedFeatures",
         "short": "'Associated Features' reference",
-        "definition": "This slice references the target 'Associated Features'",
+        "definition": "This slice references the target 'Associated Features'.",
         "min": 0,
         "max": "1",
         "base": {
@@ -152,7 +152,7 @@
         "path": "Observation.hasMember",
         "sliceName": "consistentWith",
         "short": "'Consistent With' reference",
-        "definition": "This slice references the target 'Consistent With'",
+        "definition": "This slice references the target 'Consistent With'.",
         "min": 0,
         "max": "*",
         "base": {
@@ -206,7 +206,7 @@
         "id": "Observation.component:calcificationType.code",
         "path": "Observation.component.code",
         "short": "Calcification Type component code",
-        "definition": "This code identifies the Calcification Type component",
+        "definition": "This code identifies the Calcification Type component.",
         "min": 1,
         "max": "1",
         "base": {
@@ -264,7 +264,7 @@
         "id": "Observation.component:calcificationDistribution.code",
         "path": "Observation.component.code",
         "short": "Calcification Distribution component code",
-        "definition": "This code identifies the Calcification Distribution component",
+        "definition": "This code identifies the Calcification Distribution component.",
         "min": 1,
         "max": "1",
         "base": {

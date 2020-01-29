@@ -44,6 +44,7 @@ namespace BreastRadiology.XUnitTests
                         Path = $"{slice.ElementDefinition.Path}.{name}",
                         ElementId = $"{slice.ElementDefinition.ElementId}.{name}"
                     };
+
                     slice.CreateNode(e);
                     return e;
                 }
@@ -51,20 +52,33 @@ namespace BreastRadiology.XUnitTests
                 ElementTreeSlice SliceSection(ElementTreeNode sliceElementDef,
                     String sliceName,
                     String title,
-                    Coding code)
+                    Coding code,
+                    out ElementDefinition entry)
                 {
                     ElementTreeSlice slice = sliceElementDef.CreateSlice(sliceName);
 
                     CodeableConcept sectionCode = new CodeableConcept();
-                    sectionCode.Coding.Add(Self.SectionCodeReport);
+                    sectionCode.Coding.Add(code);
 
-                    CreateElement(slice, "code").Single().Fixed(sectionCode);
-                    CreateElement(slice, "title").Single().Fixed(new FhirString(title));
-                    CreateElement(slice, "section").Zero();
-                    CreateElement(slice, "focus").Zero();
+                    CreateElement(slice, "title")
+                        .Single()
+                            .Fixed(new FhirString(title))
+                            ;
+                    CreateElement(slice, "code")
+                        .Single()
+                        .Fixed(sectionCode)
+                        ;
+                    CreateElement(slice, "focus")
+                        .Zero()
+                        ;
+                    entry = CreateElement(slice, "entry")
+                        ;
+
+                    CreateElement(slice, "section")
+                        .Zero()
+                        ;
                     return slice;
                 }
-
 
                 SDefEditor e = Self.CreateEditor("BreastRadComposition",
                      "Breast Radiology Composition",
@@ -77,7 +91,7 @@ namespace BreastRadiology.XUnitTests
                              .Paragraph("This is the composition resource for the Breast Radiology Fhir Document.")
                              .Paragraph("A Fhir Document is a Bundle that contains a composition as the first entry and",
                                         "provides a single item (bundle) that contains all the resources that are a part of",
-                                        "the Breat Radiology Diagnostic Report.")
+                                        "the Breast Radiology Diagnostic Report.")
                      )
                      .AddFragRef(Self.HeaderFragment.Value())
                      ;
@@ -91,17 +105,26 @@ namespace BreastRadiology.XUnitTests
                 {
                     ElementTreeNode sliceElementDef = StartSectionSlicing(e);
                     {
+                        String[] targets = new string[] { Self.BreastRadiologyReport.Value().Url };
+
                         ElementTreeSlice sectionSlice = SliceSection(sliceElementDef,
                             "report",
                             "Breast Radiology Report",
-                            Self.SectionCodeReport);
-                        CreateElement(sectionSlice, "entry").Single().Type("Reference", null, new string[] { Self.BreastRadiologyReport.Value().Url });
+                            Self.SectionCodeReport,
+                            out ElementDefinition entry);
+                        entry
+                            .Single()
+                            .Type("Reference", null, targets)
+                            .Short("Breast Radiology Report reference")
+                            .Definition("Reference to the Breast Radiology Report.")
+                            ;
 
                         sectionSlice.ElementDefinition
                             .Single()
                             .SetShort($"Report Section")
                             .SetDefinition(
-                                new Markdown($"This section references the single required Breast Radiology Report'")
+                                new Markdown()
+                                    .Paragraph($"This section references the single required Breast Radiology Report'.")
                                 )
                             .MustSupport();
                         ;
@@ -110,7 +133,7 @@ namespace BreastRadiology.XUnitTests
                             new SDefEditor.Cardinality(sectionSlice.ElementDefinition),
                             Global.ElementAnchor(sectionSlice.ElementDefinition),
                             "Section",
-                            new String[] { Self.BreastRadiologyReport.Value().Url });
+                            targets);
                     }
                 }
 
@@ -118,16 +141,25 @@ namespace BreastRadiology.XUnitTests
                 {
                     ElementTreeNode sliceElementDef = StartSectionSlicing(e);
                     {
+                        String[] targets = new string[] { ClinicalImpressionUrl };
+
                         ElementTreeSlice sectionSlice = SliceSection(sliceElementDef,
                             "impressions",
                             "Clinical Impressions",
-                            Self.SectionCodeReport);
-                        CreateElement(sectionSlice, "entry").Single().Type("Reference", null, new string[] { ClinicalImpressionUrl });
+                            Self.SectionCodeImpressions,
+                            out ElementDefinition entry);
+                        entry
+                            .Single()
+                            .Type("Reference", null, targets)
+                            .Short("Clinical Impression reference")
+                            .Definition("Reference to the clinical impression.")
+                            ;
                         sectionSlice.ElementDefinition
                             .ZeroToMany()
                             .SetShort($"Impressions Section")
                             .SetDefinition(
-                                new Markdown($"This section contains references to the report impressions")
+                                new Markdown()
+                                    .Paragraph($"This section contains references to the report's clinical impressions.")
                                 )
                             .MustSupport();
                         ;
@@ -135,7 +167,7 @@ namespace BreastRadiology.XUnitTests
                             new SDefEditor.Cardinality(sectionSlice.ElementDefinition),
                             Global.ElementAnchor(sectionSlice.ElementDefinition),
                             "Section",
-                            new string[] { ClinicalImpressionUrl });
+                            targets);
                     }
                 }
 
@@ -143,16 +175,25 @@ namespace BreastRadiology.XUnitTests
                 {
                     ElementTreeNode sliceElementDef = StartSectionSlicing(e);
                     {
+                        String[] targets = new string[] { ClinicalImpressionUrl };
+
                         ElementTreeSlice sectionSlice = SliceSection(sliceElementDef,
                             "findings",
                             "Findings",
-                            Self.SectionCodeReport);
-                        CreateElement(sectionSlice, "entry").Single().Type("Reference", null, new string[] { ClinicalImpressionUrl });
+                            Self.SectionCodeFindings,
+                            out ElementDefinition entry);
+                        entry
+                            .Single()
+                            .Type("Reference", null, targets)
+                            .Short("Finding reference")
+                            .Definition("Reference to the finding.")
+                            ;
                         sectionSlice.ElementDefinition
                             .ZeroToMany()
                             .SetShort($"Impressions Section")
                             .SetDefinition(
-                                new Markdown($"This section contains references to the report impressions")
+                                new Markdown()
+                                    .Paragraph($"This section contains references to the report's findings.")
                                 )
                             .MustSupport();
                         ;
@@ -160,7 +201,7 @@ namespace BreastRadiology.XUnitTests
                             new SDefEditor.Cardinality(sectionSlice.ElementDefinition),
                             Global.ElementAnchor(sectionSlice.ElementDefinition),
                             "Section",
-                            new string[] { ClinicalImpressionUrl });
+                            targets);
                     }
                 }
 
@@ -168,11 +209,19 @@ namespace BreastRadiology.XUnitTests
                 {
                     ElementTreeNode sliceElementDef = StartSectionSlicing(e);
                     {
+                        String[] targets = new string[] { ResourceUrl };
+
                         ElementTreeSlice sectionSlice = SliceSection(sliceElementDef,
                             "relatedResources",
                             "Related Resources",
-                            Self.SectionCodeReport);
-                        CreateElement(sectionSlice, "entry").Single().Type("Reference", null, new string[] { ResourceUrl });
+                            Self.SectionCodeRelatedResources,
+                            out ElementDefinition entry);
+                        entry
+                            .Single()
+                            .Type("Reference", null, targets)
+                            .Short("Related Resource reference")
+                            .Definition("Reference to the related resource.")
+                            ;
                         sectionSlice.ElementDefinition
                             .ZeroToMany()
                             .Short("Related Clinical Resources Section")
@@ -183,7 +232,38 @@ namespace BreastRadiology.XUnitTests
                             new SDefEditor.Cardinality(sectionSlice.ElementDefinition),
                             Global.ElementAnchor(sectionSlice.ElementDefinition),
                             "Section",
-                            new string[] { ResourceUrl });
+                            targets);
+                    }
+                }
+
+                // Recommendations Section
+                {
+                    ElementTreeNode sliceElementDef = StartSectionSlicing(e);
+                    {
+                        String[] targets = new string[] { MedicationRequestUrl, ServiceRequestUrl, Self.ServiceRecommendation.Value().Url };
+
+                        ElementTreeSlice sectionSlice = SliceSection(sliceElementDef,
+                            "recommendations",
+                            "Recommendations",
+                            Self.SectionCodeRecommendations,
+                            out ElementDefinition entry);
+                        entry
+                            .Single()
+                            .Type("Reference", null, targets)
+                            .Short("Recommendation reference")
+                            .Definition("Reference to the recommended action.")
+                            ;
+                        sectionSlice.ElementDefinition
+                            .ZeroToMany()
+                            .Short("Recommendations Section")
+                            .Definition("This section contains references to recommended actions taken in response to the observations and findings of this report.")
+                            .MustSupport();
+                        ;
+                        e.AddComponentLinkTarget("Recommendations",
+                            new SDefEditor.Cardinality(sectionSlice.ElementDefinition),
+                            Global.ElementAnchor(sectionSlice.ElementDefinition),
+                            "Section",
+                            targets);
                     }
                 }
             });

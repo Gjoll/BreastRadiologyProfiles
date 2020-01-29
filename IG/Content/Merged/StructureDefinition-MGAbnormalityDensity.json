@@ -186,10 +186,6 @@
       "valueString": "{\r\n  \"LinkType\": \"fragment\",\r\n  \"ShowChildren\": false,\r\n  \"LinkTarget\": \"http://hl7.org/fhir/us/breast-radiology/StructureDefinition/BiRadFragment\"\r\n}"
     },
     {
-      "url": "http://www.fragment.com/maplink",
-      "valueString": "{\r\n  \"LinkType\": \"fragment\",\r\n  \"ShowChildren\": false,\r\n  \"LinkTarget\": \"http://hl7.org/fhir/us/breast-radiology/StructureDefinition/ServiceRecommendationFragment\"\r\n}"
-    },
-    {
       "url": "http://www.fragment.com/mapname",
       "valueString": "Breast Body Location/Fragment (Required)"
     },
@@ -248,18 +244,6 @@
     {
       "url": "http://www.fragment.com/maplink",
       "valueString": "{\r\n  \"LinkType\": \"component\",\r\n  \"ShowChildren\": true,\r\n  \"Cardinality\": \"0..1\",\r\n  \"LinkTarget\": \"BiRads Assessment Category\",\r\n  \"ComponentHRef\": \"StructureDefinition-{SDName}-definitions.html#Observation.component:biRadsAssessmentCategory\",\r\n  \"Types\": \"CodeableConcept\",\r\n  \"References\": [\r\n    \"http://hl7.org/fhir/us/breast-radiology/ValueSet/BiRadsAssessmentCategoriesVS\"\r\n  ],\r\n  \"ReferenceType\": \"valueSet\"\r\n}"
-    },
-    {
-      "url": "http://www.fragment.com/mapname",
-      "valueString": "Service Recommendation/Fragment"
-    },
-    {
-      "url": "http://www.fragment.com/Group",
-      "valueString": "Fragment/ServiceRecommendationFragment"
-    },
-    {
-      "url": "http://www.fragment.com/maplink",
-      "valueString": "{\r\n  \"LinkType\": \"extension\",\r\n  \"ShowChildren\": false,\r\n  \"Cardinality\": \"0..*\",\r\n  \"ComponentHRef\": \"StructureDefinition-{SDName}-definitions.html#Observation.extension:serviceRecommendation\",\r\n  \"LocalName\": \"Service Recommendation\",\r\n  \"LinkTarget\": \"http://hl7.org/fhir/us/breast-radiology/StructureDefinition/ServiceRecommendationExtension\"\r\n}"
     },
     {
       "url": "http://www.fragment.com/mapname",
@@ -629,16 +613,6 @@
       {
         "id": "Observation.extension",
         "path": "Observation.extension",
-        "slicing": {
-          "discriminator": [
-            {
-              "type": "value",
-              "path": "url"
-            }
-          ],
-          "ordered": true,
-          "rules": "openAtEnd"
-        },
         "short": "Additional content defined by implementations",
         "definition": "May be used to represent additional information that is not part of the basic definition of the resource. To make the use of extensions safe and manageable, there is a strict set of governance  applied to the definition and use of extensions. Though any implementer can define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension.",
         "comment": "There can be no stigma associated with the use of extensions by any application, project, or standard - regardless of the institution or jurisdiction that uses or defines the extensions.  The use of extensions is what allows the FHIR specification to retain a core level of simplicity for everyone.",
@@ -656,41 +630,6 @@
         "type": [
           {
             "code": "Extension"
-          }
-        ],
-        "isModifier": false,
-        "isSummary": false,
-        "mapping": [
-          {
-            "identity": "rim",
-            "map": "N/A"
-          }
-        ]
-      },
-      {
-        "id": "Observation.extension:serviceRecommendation",
-        "path": "Observation.extension",
-        "sliceName": "serviceRecommendation",
-        "short": "serviceRecommendation extension",
-        "definition": "References to recommended action to be taken in response to this observation.\n\nAll Service Recommendations for a Breast Radiology Report will be referenced in the Breast Radiology Report, \nso that all recommendations can be found in one place.\nIn addition pecific Service Recommendations may also be referenced in an abnormality observations, indicating that the action\ntaken is inresponse to that abnormality observation,\nor in a finding observation, indicating that the action \ntaken is in response to one or more of the abnormality observations that are a part of the finding.\n\nAll Service Recommendations referenced in an abnormality observation or finding observation \nwill always be also referenced in the Breast Radiology Report",
-        "comment": "This is one component of a group of components that comprise the observation.",
-        "alias": [
-          "extensions",
-          "user content"
-        ],
-        "min": 0,
-        "max": "*",
-        "base": {
-          "path": "DomainResource.extension",
-          "min": 0,
-          "max": "*"
-        },
-        "type": [
-          {
-            "code": "Extension",
-            "profile": [
-              "http://hl7.org/fhir/us/breast-radiology/StructureDefinition/ServiceRecommendationExtension"
-            ]
           }
         ],
         "isModifier": false,
@@ -1703,7 +1642,7 @@
         "path": "Observation.bodySite.extension",
         "sliceName": "breastBodyLocation",
         "short": "breastBodyLocation extension",
-        "definition": "This extension slice contains the breastBodyLocation extension",
+        "definition": "This extension slice contains the breastBodyLocation extension.",
         "comment": "This is one component of a group of components that comprise the observation.",
         "alias": [
           "extensions",
@@ -2356,7 +2295,7 @@
         "path": "Observation.hasMember",
         "sliceName": "associatedFeatures",
         "short": "'Associated Features' reference",
-        "definition": "This slice references the target 'Associated Features'",
+        "definition": "This slice references the target 'Associated Features'.",
         "comment": "When using this element, an observation will typically have either a value or a set of related resources, although both may be present in some cases.  For a discussion on the ways Observations can assembled in groups together, see [Notes](observation.html#obsgrouping) below.  Note that a system may calculate results from [QuestionnaireResponse](questionnaireresponse.html)  into a final score and represent the score as an Observation.",
         "min": 0,
         "max": "1",
@@ -2391,7 +2330,7 @@
         "path": "Observation.hasMember",
         "sliceName": "consistentWith",
         "short": "'Consistent With' reference",
-        "definition": "This slice references the target 'Consistent With'",
+        "definition": "This slice references the target 'Consistent With'.",
         "comment": "When using this element, an observation will typically have either a value or a set of related resources, although both may be present in some cases.  For a discussion on the ways Observations can assembled in groups together, see [Notes](observation.html#obsgrouping) below.  Note that a system may calculate results from [QuestionnaireResponse](questionnaireresponse.html)  into a final score and represent the score as an Observation.",
         "min": 0,
         "max": "*",
@@ -2995,7 +2934,7 @@
         "id": "Observation.component:densityType.code",
         "path": "Observation.component.code",
         "short": "Density Type component code",
-        "definition": "This code identifies the Density Type component",
+        "definition": "This code identifies the Density Type component.",
         "comment": "*All* code-value and  component.code-component.value pairs need to be taken into account to correctly understand the meaning of the observation.",
         "requirements": "Knowing what kind of observation is being made is essential to understanding the observation.",
         "min": 1,
@@ -3363,7 +3302,7 @@
         "id": "Observation.component:observedChanges.code",
         "path": "Observation.component.code",
         "short": "Observed Change In Abnormality component code",
-        "definition": "This code identifies the Observed Change In Abnormality components",
+        "definition": "This code identifies the Observed Change In Abnormality components.",
         "comment": "*All* code-value and  component.code-component.value pairs need to be taken into account to correctly understand the meaning of the observation.",
         "requirements": "Knowing what kind of observation is being made is essential to understanding the observation.",
         "min": 1,
@@ -4669,7 +4608,7 @@
         "id": "Observation.component:biRadsAssessmentCategory.code",
         "path": "Observation.component.code",
         "short": "BiRads Assessment Category component code",
-        "definition": "This code identifies the BiRads Assessment Category component",
+        "definition": "This code identifies the BiRads Assessment Category component.",
         "comment": "*All* code-value and  component.code-component.value pairs need to be taken into account to correctly understand the meaning of the observation.",
         "requirements": "Knowing what kind of observation is being made is essential to understanding the observation.",
         "min": 1,
@@ -5037,7 +4976,7 @@
         "id": "Observation.component:orientation.code",
         "path": "Observation.component.code",
         "short": "Orientation component code",
-        "definition": "This code identifies the Orientation component",
+        "definition": "This code identifies the Orientation component.",
         "comment": "*All* code-value and  component.code-component.value pairs need to be taken into account to correctly understand the meaning of the observation.",
         "requirements": "Knowing what kind of observation is being made is essential to understanding the observation.",
         "min": 1,
@@ -5405,7 +5344,7 @@
         "id": "Observation.component:shape.code",
         "path": "Observation.component.code",
         "short": "Shape component code",
-        "definition": "This code identifies the Shape component",
+        "definition": "This code identifies the Shape component.",
         "comment": "*All* code-value and  component.code-component.value pairs need to be taken into account to correctly understand the meaning of the observation.",
         "requirements": "Knowing what kind of observation is being made is essential to understanding the observation.",
         "min": 1,
@@ -5773,7 +5712,7 @@
         "id": "Observation.component:margin.code",
         "path": "Observation.component.code",
         "short": "Margin component code",
-        "definition": "This code identifies the Margin component",
+        "definition": "This code identifies the Margin component.",
         "comment": "*All* code-value and  component.code-component.value pairs need to be taken into account to correctly understand the meaning of the observation.",
         "requirements": "Knowing what kind of observation is being made is essential to understanding the observation.",
         "min": 1,
@@ -6141,7 +6080,7 @@
         "id": "Observation.component:mgDensity.code",
         "path": "Observation.component.code",
         "short": "Density component code",
-        "definition": "This code identifies the Density component",
+        "definition": "This code identifies the Density component.",
         "comment": "*All* code-value and  component.code-component.value pairs need to be taken into account to correctly understand the meaning of the observation.",
         "requirements": "Knowing what kind of observation is being made is essential to understanding the observation.",
         "min": 1,
@@ -6509,7 +6448,7 @@
         "id": "Observation.component:notPreviouslySeen.code",
         "path": "Observation.component.code",
         "short": "Not Previously Seen component code",
-        "definition": "This code identifies the Not Previously Seen components",
+        "definition": "This code identifies the Not Previously Seen components.",
         "comment": "*All* code-value and  component.code-component.value pairs need to be taken into account to correctly understand the meaning of the observation.",
         "requirements": "Knowing what kind of observation is being made is essential to understanding the observation.",
         "min": 1,
@@ -7346,7 +7285,7 @@
         "id": "Observation.component:correspondsWith.code",
         "path": "Observation.component.code",
         "short": "Corresponds With component code",
-        "definition": "This code identifies the Corresponds With components",
+        "definition": "This code identifies the Corresponds With components.",
         "comment": "*All* code-value and  component.code-component.value pairs need to be taken into account to correctly understand the meaning of the observation.",
         "requirements": "Knowing what kind of observation is being made is essential to understanding the observation.",
         "min": 1,
@@ -7599,49 +7538,6 @@
         }
       },
       {
-        "id": "Observation.extension",
-        "path": "Observation.extension",
-        "slicing": {
-          "discriminator": [
-            {
-              "type": "value",
-              "path": "url"
-            }
-          ],
-          "ordered": true,
-          "rules": "openAtEnd"
-        },
-        "base": {
-          "path": "Observation.extension",
-          "min": 0,
-          "max": "*"
-        }
-      },
-      {
-        "id": "Observation.extension:serviceRecommendation",
-        "path": "Observation.extension",
-        "sliceName": "serviceRecommendation",
-        "short": "serviceRecommendation extension",
-        "definition": "References to recommended action to be taken in response to this observation.\n\nAll Service Recommendations for a Breast Radiology Report will be referenced in the Breast Radiology Report, \nso that all recommendations can be found in one place.\nIn addition pecific Service Recommendations may also be referenced in an abnormality observations, indicating that the action\ntaken is inresponse to that abnormality observation,\nor in a finding observation, indicating that the action \ntaken is in response to one or more of the abnormality observations that are a part of the finding.\n\nAll Service Recommendations referenced in an abnormality observation or finding observation \nwill always be also referenced in the Breast Radiology Report",
-        "comment": "This is one component of a group of components that comprise the observation.",
-        "min": 0,
-        "max": "*",
-        "base": {
-          "path": "Observation.extension",
-          "min": 0,
-          "max": "*"
-        },
-        "type": [
-          {
-            "code": "Extension",
-            "profile": [
-              "http://hl7.org/fhir/us/breast-radiology/StructureDefinition/ServiceRecommendationExtension"
-            ]
-          }
-        ],
-        "isModifier": false
-      },
-      {
         "id": "Observation.basedOn",
         "path": "Observation.basedOn",
         "min": 0,
@@ -7790,7 +7686,7 @@
         "path": "Observation.bodySite.extension",
         "sliceName": "breastBodyLocation",
         "short": "breastBodyLocation extension",
-        "definition": "This extension slice contains the breastBodyLocation extension",
+        "definition": "This extension slice contains the breastBodyLocation extension.",
         "comment": "This is one component of a group of components that comprise the observation.",
         "min": 1,
         "max": "1",
@@ -7863,7 +7759,7 @@
         "path": "Observation.hasMember",
         "sliceName": "associatedFeatures",
         "short": "'Associated Features' reference",
-        "definition": "This slice references the target 'Associated Features'",
+        "definition": "This slice references the target 'Associated Features'.",
         "comment": "When using this element, an observation will typically have either a value or a set of related resources, although both may be present in some cases.  For a discussion on the ways Observations can assembled in groups together, see [Notes](observation.html#obsgrouping) below.  Note that a system may calculate results from [QuestionnaireResponse](questionnaireresponse.html)  into a final score and represent the score as an Observation.",
         "min": 0,
         "max": "1",
@@ -7898,7 +7794,7 @@
         "path": "Observation.hasMember",
         "sliceName": "consistentWith",
         "short": "'Consistent With' reference",
-        "definition": "This slice references the target 'Consistent With'",
+        "definition": "This slice references the target 'Consistent With'.",
         "comment": "When using this element, an observation will typically have either a value or a set of related resources, although both may be present in some cases.  For a discussion on the ways Observations can assembled in groups together, see [Notes](observation.html#obsgrouping) below.  Note that a system may calculate results from [QuestionnaireResponse](questionnaireresponse.html)  into a final score and represent the score as an Observation.",
         "min": 0,
         "max": "*",
@@ -8089,7 +7985,7 @@
         "id": "Observation.component:densityType.code",
         "path": "Observation.component.code",
         "short": "Density Type component code",
-        "definition": "This code identifies the Density Type component",
+        "definition": "This code identifies the Density Type component.",
         "comment": "*All* code-value and  component.code-component.value pairs need to be taken into account to correctly understand the meaning of the observation.",
         "requirements": "Knowing what kind of observation is being made is essential to understanding the observation.",
         "min": 1,
@@ -8335,7 +8231,7 @@
         "id": "Observation.component:observedChanges.code",
         "path": "Observation.component.code",
         "short": "Observed Change In Abnormality component code",
-        "definition": "This code identifies the Observed Change In Abnormality components",
+        "definition": "This code identifies the Observed Change In Abnormality components.",
         "min": 1,
         "max": "1",
         "base": {
@@ -8607,7 +8503,7 @@
         "id": "Observation.component:biRadsAssessmentCategory.code",
         "path": "Observation.component.code",
         "short": "BiRads Assessment Category component code",
-        "definition": "This code identifies the BiRads Assessment Category component",
+        "definition": "This code identifies the BiRads Assessment Category component.",
         "min": 1,
         "max": "1",
         "base": {
@@ -8787,7 +8683,7 @@
         "id": "Observation.component:orientation.code",
         "path": "Observation.component.code",
         "short": "Orientation component code",
-        "definition": "This code identifies the Orientation component",
+        "definition": "This code identifies the Orientation component.",
         "comment": "*All* code-value and  component.code-component.value pairs need to be taken into account to correctly understand the meaning of the observation.",
         "requirements": "Knowing what kind of observation is being made is essential to understanding the observation.",
         "min": 1,
@@ -9155,7 +9051,7 @@
         "id": "Observation.component:shape.code",
         "path": "Observation.component.code",
         "short": "Shape component code",
-        "definition": "This code identifies the Shape component",
+        "definition": "This code identifies the Shape component.",
         "comment": "*All* code-value and  component.code-component.value pairs need to be taken into account to correctly understand the meaning of the observation.",
         "requirements": "Knowing what kind of observation is being made is essential to understanding the observation.",
         "min": 1,
@@ -9523,7 +9419,7 @@
         "id": "Observation.component:margin.code",
         "path": "Observation.component.code",
         "short": "Margin component code",
-        "definition": "This code identifies the Margin component",
+        "definition": "This code identifies the Margin component.",
         "comment": "*All* code-value and  component.code-component.value pairs need to be taken into account to correctly understand the meaning of the observation.",
         "requirements": "Knowing what kind of observation is being made is essential to understanding the observation.",
         "min": 1,
@@ -9891,7 +9787,7 @@
         "id": "Observation.component:mgDensity.code",
         "path": "Observation.component.code",
         "short": "Density component code",
-        "definition": "This code identifies the Density component",
+        "definition": "This code identifies the Density component.",
         "comment": "*All* code-value and  component.code-component.value pairs need to be taken into account to correctly understand the meaning of the observation.",
         "requirements": "Knowing what kind of observation is being made is essential to understanding the observation.",
         "min": 1,
@@ -10259,7 +10155,7 @@
         "id": "Observation.component:notPreviouslySeen.code",
         "path": "Observation.component.code",
         "short": "Not Previously Seen component code",
-        "definition": "This code identifies the Not Previously Seen components",
+        "definition": "This code identifies the Not Previously Seen components.",
         "comment": "*All* code-value and  component.code-component.value pairs need to be taken into account to correctly understand the meaning of the observation.",
         "requirements": "Knowing what kind of observation is being made is essential to understanding the observation.",
         "min": 1,
@@ -10612,7 +10508,7 @@
         "id": "Observation.component:correspondsWith.code",
         "path": "Observation.component.code",
         "short": "Corresponds With component code",
-        "definition": "This code identifies the Corresponds With components",
+        "definition": "This code identifies the Corresponds With components.",
         "min": 1,
         "max": "1",
         "base": {

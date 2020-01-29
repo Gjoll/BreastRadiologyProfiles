@@ -26,7 +26,7 @@ namespace BreastRadiology.XUnitTests
                     .Description("Associated Features Observation",
                         new Markdown()
                             .Paragraph("Used with masses, asymmetries, or calcifications, or may stand alone as " +
-                                        "Features when no other abnormality is present.")
+                                        "features when no other abnormality is present.")
                      )
                     .AddFragRef(Self.ObservationSectionFragment.Value())
                     ;
