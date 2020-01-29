@@ -3411,7 +3411,7 @@
             debugging purposes. Default is 'false'.
             </summary>
         </member>
-        <member name="P:Hl7.Fhir.Validation.ValidationSettings.ResolveExternalReferences">
+        <member name="P:Hl7.Fhir.Validation.ValidationSettings.ResolveExteralReferences">
             <summary>
             If a reference is encountered that references to a resource outside of the current instance being validated,
             this setting controls whether the validator will call out to the ResourceResolver to try to resolve the
