@@ -21,7 +21,6 @@ namespace BreastRadiology.XUnitTests
         String contentDir;
         FileCleaner fc;
 
-
         public FocusMapMaker(FileCleaner fc,
             ResourceMap map,
             String graphicsDir,
@@ -82,19 +81,19 @@ namespace BreastRadiology.XUnitTests
                         case "fragment":
                             break;
 
-                        case "component":
+                        case SVGGlobal.ComponentType:
                             AddParent(link, componentParents);
                             break;
 
-                        case "extension":
+                        case SVGGlobal.ExtensionType:
                             AddParent(link, extensionParents);
                             break;
 
-                        case "valueSet":
+                        case SVGGlobal.ValueSetType:
                             AddParent(link, valueSetParents);
                             break;
 
-                        case "target":
+                        case SVGGlobal.TargetType:
                             AddParent(link, targetParents);
                             break;
 
@@ -125,11 +124,11 @@ namespace BreastRadiology.XUnitTests
                         case "fragment":
                             break;
 
-                        case "component":
+                        case SVGGlobal.ComponentType:
                             MakeComponent(link, componentChildren, false);
                             break;
 
-                        case "extension":
+                        case SVGGlobal.ExtensionType:
                             {
                                 String linkSource = link.LinkSource.ToObject<String>();
                                 String componentHRef = link.ComponentHRef.ToObject<String>().Replace("{SDName}", linkSource.LastUriPart());
@@ -167,7 +166,7 @@ namespace BreastRadiology.XUnitTests
                             }
                             break;
 
-                        case "valueSet":
+                        case SVGGlobal.ValueSetType:
                             {
                                 if (this.map.TryGetNode(link.LinkTarget.ToObject<String>().ToObject<String>(), out ResourceMap.Node childNode) == true)
                                 {
@@ -179,7 +178,7 @@ namespace BreastRadiology.XUnitTests
                             }
                             break;
 
-                        case "target":
+                        case SVGGlobal.TargetType:
                             {
                                 if (this.map.TryGetNode(link.LinkTarget.ToObject<String>(), out ResourceMap.Node childNode) == false)
                                     throw new Exception($"Child target {link.LinkTarget.ToObject<String>()} not found in map");

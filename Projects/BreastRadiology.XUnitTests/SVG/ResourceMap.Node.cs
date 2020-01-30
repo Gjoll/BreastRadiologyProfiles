@@ -42,7 +42,7 @@ namespace BreastRadiology.XUnitTests
                 this.Title = title;
             }
 
-            public IEnumerable<dynamic> LinksByName(params String[] linkTypes)
+            public IEnumerable<dynamic> LinksByLinkType(params String[] linkTypes)
             {
                 foreach (String linkType in linkTypes)
                 {

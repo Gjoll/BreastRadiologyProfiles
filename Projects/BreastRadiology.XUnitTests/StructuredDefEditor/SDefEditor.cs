@@ -292,7 +292,7 @@ namespace BreastRadiology.XUnitTests
             bool showChildren = true)
         {
             dynamic packet = new JObject();
-            packet.LinkType = "extension";
+            packet.LinkType = SVGGlobal.ExtensionType;
             packet.ShowChildren = showChildren;
             packet.Cardinality = cardinality.ToString();
             packet.ComponentHRef = componentRef;
@@ -311,7 +311,7 @@ namespace BreastRadiology.XUnitTests
             bool showChildren = true)
         {
             dynamic packet = new JObject();
-            packet.LinkType = "component";
+            packet.LinkType = SVGGlobal.ComponentType;
             packet.ShowChildren = showChildren;
             packet.Cardinality = cardinality.ToString();
             packet.LinkTarget = url;
@@ -319,7 +319,7 @@ namespace BreastRadiology.XUnitTests
             packet.Types = types;
             if (targets != null)
                 packet.References = new JArray(targets);
-            packet.ReferenceType = "target";
+            packet.ReferenceType = SVGGlobal.TargetType;
             this.SDef.AddExtension(Global.ResourceMapLinkUrl, new FhirString(packet.ToString()));
 
             return this;
@@ -334,7 +334,7 @@ namespace BreastRadiology.XUnitTests
             bool showChildren = true)
         {
             dynamic packet = new JObject();
-            packet.LinkType = "component";
+            packet.LinkType = SVGGlobal.ComponentType;
             packet.ShowChildren = showChildren;
             packet.Cardinality = cardinality.ToString();
             packet.LinkTarget = url;
@@ -342,7 +342,7 @@ namespace BreastRadiology.XUnitTests
             packet.Types = types;
             if (vs != null)
                 packet.References = new JArray(new String[] { vs });
-            packet.ReferenceType = "valueSet";
+            packet.ReferenceType = SVGGlobal.ValueSetType;
             this.SDef.AddExtension(Global.ResourceMapLinkUrl, new FhirString(packet.ToString()));
 
             return this;
@@ -352,7 +352,7 @@ namespace BreastRadiology.XUnitTests
         {
 
             dynamic packet = new JObject();
-            packet.LinkType = "target";
+            packet.LinkType = SVGGlobal.TargetType;
             packet.ShowChildren = showChildren;
             packet.Cardinality = cardinality.ToString();
             packet.LinkTarget = url;
@@ -363,7 +363,7 @@ namespace BreastRadiology.XUnitTests
         public SDefEditor AddValueSetLink(ValueSet vs, bool showChildren = true)
         {
             dynamic packet = new JObject();
-            packet.LinkType = "valueSet";
+            packet.LinkType = SVGGlobal.ValueSetType;
             packet.ShowChildren = showChildren;
             packet.LinkTarget = vs.Url;
             this.SDef.AddExtension(Global.ResourceMapLinkUrl, new FhirString(packet.ToString()));

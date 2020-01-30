@@ -45,7 +45,8 @@ namespace BreastRadiology.XUnitTests
             return false;
         }
 
-        String[] linkNames = new string[] { "extension", "target", "component" };
+        String[] linkTypes = new string[] { SVGGlobal.ExtensionType, SVGGlobal.TargetType, SVGGlobal.ComponentType};
+
         /*
          * Add children. If two adjacent children have same children, then dont create each in a seperate
          * group. Have the two nodes point to the same group of children.
@@ -54,7 +55,7 @@ namespace BreastRadiology.XUnitTests
             SENodeGroup group,
             bool showChildren)
         {
-            this.AddChildren(mapNode, mapNode.LinksByName(linkNames).ToArray(), group, showChildren);
+            this.AddChildren(mapNode, mapNode.LinksByLinkType(linkTypes).ToArray(), group, showChildren);
         }
 
         protected SENode CreateResourceNode(ResourceMap.Node mapNode,
@@ -106,7 +107,7 @@ namespace BreastRadiology.XUnitTests
             if (showChildren)
             {
                 childMapNode = this.map.GetNode(linkTargetUrl);
-                childMapLinks = childMapNode.LinksByName(linkNames).ToArray();
+                childMapLinks = childMapNode.LinksByLinkType(linkTypes).ToArray();
                 if (childMapLinks.Length > 0)
                     linkToLastGroup = !this.DifferentChildren(previousChildLinks, childMapLinks);
             }
@@ -137,7 +138,7 @@ namespace BreastRadiology.XUnitTests
             {
                 switch (link.LinkType.ToObject<String>())
                 {
-                    case "component":
+                    case SVGGlobal.ComponentType:
                         MakeComponent(link, group, showChildren);
                         break;
 
@@ -166,10 +167,10 @@ namespace BreastRadiology.XUnitTests
         {
             switch (link.LinkType.ToObject<String>())
             {
-                case "extension": return extensionColor;
-                case "component": return componentColor;
-                case "valueSet": return valueSetColor;
-                case "target": return targetColor;
+                case SVGGlobal.ExtensionType: return extensionColor;
+                case SVGGlobal.ComponentType: return componentColor;
+                case SVGGlobal.ValueSetType: return valueSetColor;
+                case SVGGlobal.TargetType: return targetColor;
                 default: throw new NotImplementedException();
             }
         }
