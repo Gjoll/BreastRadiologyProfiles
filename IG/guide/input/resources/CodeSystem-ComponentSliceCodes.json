@@ -21,7 +21,7 @@
   "description": "Component Slice Codes code system",
   "caseSensitive": true,
   "content": "complete",
-  "count": 25,
+  "count": 26,
   "concept": [
     {
       "code": "abnormalityCystType",
@@ -82,6 +82,10 @@
     {
       "code": "observedSize",
       "definition": "Slicing Component Code - ObservedSize"
+    },
+    {
+      "code": "observedGrouping",
+      "definition": "Slicing Component Code - ObservedGrouping"
     },
     {
       "code": "observedRegion",

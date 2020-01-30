@@ -180,7 +180,7 @@
         "path": "Observation.component",
         "sliceName": "abnormalityForeignObjectType",
         "short": "Foreign Object Type component",
-        "definition": "This slice contains the required component that refines the foreign object type.\nThe value of this component is a codeable concept chosen from the ForeignObjectVS valueset.",
+        "definition": "This slice contains the required component that refines the foreign object type.\n The value of this component is a codeable concept chosen from the ForeignObjectVS valueset.",
         "comment": "This is one component of a group of components that comprise the observation.",
         "min": 1,
         "max": "1",

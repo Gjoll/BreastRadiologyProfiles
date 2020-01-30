@@ -74,7 +74,7 @@
         "path": "Observation.component",
         "sliceName": "notPreviouslySeen",
         "short": "Not Previously Seen component",
-        "definition": "This slice contains zero or more components that define prevous encounters in which this abnormality was not seen.\nThe value of this component is a codeable concept chosen from the NotPreviouslySeenVS valueset.",
+        "definition": "This slice contains zero or more components that define prevous encounters in which this abnormality was not seen.\n The value of this component is a codeable concept chosen from the NotPreviouslySeenVS valueset.",
         "comment": "This is one component of a group of components that comprise the observation.",
         "min": 0,
         "max": "*",

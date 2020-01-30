@@ -1,0 +1,39 @@
+{
+  "resourceType": "ValueSet",
+  "id": "ObservedGroupingVS",
+  "extension": [
+    {
+      "url": "http://www.fragment.com/fragment",
+      "valueUrl": "http://hl7.org/fhir/us/breast-radiology/StructureDefinition/HeaderFragment"
+    },
+    {
+      "url": "http://www.fragment.com/Group",
+      "valueString": "CommonCodesVS"
+    },
+    {
+      "url": "http://www.fragment.com/mapname",
+      "valueString": "Observed/Grouping/ValueSet"
+    }
+  ],
+  "url": "http://hl7.org/fhir/us/breast-radiology/ValueSet/ObservedGroupingVS",
+  "name": "ObservedGroupingVS",
+  "title": "Observed Grouping ValueSet",
+  "description": "Observed Grouping of abnormalities value set.",
+  "compose": {
+    "include": [
+      {
+        "system": "http://hl7.org/fhir/us/breast-radiology/CodeSystem/ObservedGroupingCS",
+        "concept": [
+          {
+            "code": "Multiple",
+            "display": "Multiple Items in Grouping"
+          },
+          {
+            "code": "ClusterOf",
+            "display": "Cluster of Items in Grouping"
+          }
+        ]
+      }
+    ]
+  }
+}

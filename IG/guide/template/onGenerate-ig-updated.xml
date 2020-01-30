@@ -18,7 +18,7 @@
    <title value="Breast Radiology Reporting - 1st STU ballot"/>
    <status value="draft"/>
    <experimental value="false"/>
-   <date value="2020-01-30T15:51:20-06:00"/>
+   <date value="2020-01-30T17:10:06-06:00"/>
    <publisher value="Hl7 - Clinical Interoperability Council"/>
    <contact>
       <telecom>
@@ -497,6 +497,21 @@
             <valueString value="CodeSystem"/>
          </extension>
          <extension url="http://hl7.org/fhir/StructureDefinition/implementationguide-page">
+            <valueUri value="CodeSystem-ObservedGroupingCS.html"/>
+         </extension>
+         <reference>
+            <reference value="CodeSystem/ObservedGroupingCS"/>
+         </reference>
+         <name value="Observed Grouping CodeSystem"/>
+         <description value="Observed grouping of abnormalities code system."/>
+         <exampleBoolean value="false"/>
+         <groupingId value="CommonCodesCS"/>
+      </resource>
+      <resource>
+         <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+            <valueString value="CodeSystem"/>
+         </extension>
+         <extension url="http://hl7.org/fhir/StructureDefinition/implementationguide-page">
             <valueUri value="CodeSystem-OrientationCS.html"/>
          </extension>
          <reference>
@@ -894,6 +909,21 @@
          </reference>
          <name value="Observed Feature ValueSet"/>
          <description value="Observed feature observed during a Breast Radiology exam value set"/>
+         <exampleBoolean value="false"/>
+         <groupingId value="CommonCodesVS"/>
+      </resource>
+      <resource>
+         <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+            <valueString value="ValueSet"/>
+         </extension>
+         <extension url="http://hl7.org/fhir/StructureDefinition/implementationguide-page">
+            <valueUri value="ValueSet-ObservedGroupingVS.html"/>
+         </extension>
+         <reference>
+            <reference value="ValueSet/ObservedGroupingVS"/>
+         </reference>
+         <name value="Observed Grouping ValueSet"/>
+         <description value="Observed Grouping of abnormalities value set."/>
          <exampleBoolean value="false"/>
          <groupingId value="CommonCodesVS"/>
       </resource>
@@ -1607,6 +1637,21 @@
             <valueString value="StructureDefinition:resource:abstract"/>
          </extension>
          <extension url="http://hl7.org/fhir/StructureDefinition/implementationguide-page">
+            <valueUri value="StructureDefinition-ObservedGroupingFragment.html"/>
+         </extension>
+         <reference>
+            <reference value="StructureDefinition/ObservedGroupingFragment"/>
+         </reference>
+         <name value="ObservedGrouping Fragment"/>
+         <description value="Fragment 'Fragment that adds 'Observed Grouping' element to profile.'"/>
+         <exampleBoolean value="false"/>
+         <groupingId value="Fragments"/>
+      </resource>
+      <resource>
+         <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+            <valueString value="StructureDefinition:resource:abstract"/>
+         </extension>
+         <extension url="http://hl7.org/fhir/StructureDefinition/implementationguide-page">
             <valueUri value="StructureDefinition-ObservedRegionFragment.html"/>
          </extension>
          <reference>
@@ -1861,6 +1906,11 @@
                <generation value="generated"/>
             </page>
             <page>
+               <nameUrl value="ValueSet-ObservedGroupingVS.html"/>
+               <title value="Observed Grouping ValueSet"/>
+               <generation value="generated"/>
+            </page>
+            <page>
                <nameUrl value="ValueSet-OrientationVS.html"/>
                <title value="Orientation ValueSet"/>
                <generation value="generated"/>
@@ -1968,6 +2018,11 @@
             <page>
                <nameUrl value="CodeSystem-ObservedFeatureCS.html"/>
                <title value="Observed Feature CodeSystem"/>
+               <generation value="generated"/>
+            </page>
+            <page>
+               <nameUrl value="CodeSystem-ObservedGroupingCS.html"/>
+               <title value="Observed Grouping CodeSystem"/>
                <generation value="generated"/>
             </page>
             <page>
@@ -2203,6 +2258,11 @@
             <page>
                <nameUrl value="StructureDefinition-ObservedCountFragment.html"/>
                <title value="ObservedCount Fragment"/>
+               <generation value="generated"/>
+            </page>
+            <page>
+               <nameUrl value="StructureDefinition-ObservedGroupingFragment.html"/>
+               <title value="ObservedGrouping Fragment"/>
                <generation value="generated"/>
             </page>
             <page>

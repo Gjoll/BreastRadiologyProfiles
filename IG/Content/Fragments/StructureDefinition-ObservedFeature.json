@@ -101,7 +101,7 @@
         "path": "Observation.component",
         "sliceName": "featureType",
         "short": "Observed Feature Type component",
-        "definition": "This slice contains the required component that defines the observed feature.\nThe value of this component is a codeable concept chosen from the ObservedFeatureVS valueset.",
+        "definition": "This slice contains the required component that defines the observed feature.\n The value of this component is a codeable concept chosen from the ObservedFeatureVS valueset.",
         "comment": "This is one component of a group of components that comprise the observation.",
         "min": 1,
         "max": "1",

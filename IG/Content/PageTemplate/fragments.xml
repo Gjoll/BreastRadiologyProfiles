@@ -238,6 +238,12 @@
 	    <img src="Frag-ObservedFeature.svg" alt="ObservedFeature"/>
 	</object>
 	<p>
+	Fragment Diagram ObservedGroupingFragment
+	</p>
+	<object data="Frag-ObservedGroupingFragment.svg" type="image/svg+xml">
+	    <img src="Frag-ObservedGroupingFragment.svg" alt="ObservedGroupingFragment"/>
+	</object>
+	<p>
 	Fragment Diagram ObservedRegionFragment
 	</p>
 	<object data="Frag-ObservedRegionFragment.svg" type="image/svg+xml">

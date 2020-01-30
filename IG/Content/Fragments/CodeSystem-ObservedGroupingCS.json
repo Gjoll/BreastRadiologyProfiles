@@ -1,0 +1,33 @@
+{
+  "resourceType": "CodeSystem",
+  "id": "ObservedGroupingCS",
+  "extension": [
+    {
+      "url": "http://www.fragment.com/fragment",
+      "valueUrl": "http://hl7.org/fhir/us/breast-radiology/StructureDefinition/HeaderFragment"
+    },
+    {
+      "url": "http://www.fragment.com/Group",
+      "valueString": "CommonCodesCS"
+    }
+  ],
+  "url": "http://hl7.org/fhir/us/breast-radiology/CodeSystem/ObservedGroupingCS",
+  "name": "ObservedGroupingCS",
+  "title": "Observed Grouping CodeSystem",
+  "description": "Observed grouping of abnormalities code system.",
+  "caseSensitive": true,
+  "content": "complete",
+  "count": 2,
+  "concept": [
+    {
+      "code": "Multiple",
+      "display": "Multiple Items in Grouping",
+      "definition": "[PR] Multiple Items in Grouping"
+    },
+    {
+      "code": "ClusterOf",
+      "display": "Cluster of Items in Grouping",
+      "definition": "[PR] Cluster of Items in Grouping"
+    }
+  ]
+}

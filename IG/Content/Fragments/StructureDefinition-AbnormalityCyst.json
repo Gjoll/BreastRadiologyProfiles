@@ -204,7 +204,7 @@
         "path": "Observation.component",
         "sliceName": "cystType",
         "short": "Cyst Type component",
-        "definition": "This slice contains the optional component that refines the cyst type.\nThe value of this component is a codeable concept chosen from the AbnormalityCystTypeVS valueset.",
+        "definition": "This slice contains the optional component that refines the cyst type.\n The value of this component is a codeable concept chosen from the AbnormalityCystTypeVS valueset.",
         "comment": "This is one component of a group of components that comprise the observation.",
         "min": 0,
         "max": "1",

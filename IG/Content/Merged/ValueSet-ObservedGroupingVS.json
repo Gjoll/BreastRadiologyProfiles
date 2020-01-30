@@ -1,0 +1,61 @@
+{
+  "resourceType": "ValueSet",
+  "id": "ObservedGroupingVS",
+  "extension": [
+    {
+      "url": "http://www.fragment.com/fragment",
+      "valueUrl": "http://hl7.org/fhir/us/breast-radiology/StructureDefinition/HeaderFragment"
+    },
+    {
+      "url": "http://www.fragment.com/Group",
+      "valueString": "CommonCodesVS"
+    },
+    {
+      "url": "http://www.fragment.com/mapname",
+      "valueString": "Observed/Grouping/ValueSet"
+    },
+    {
+      "url": "http://www.fragment.com/mapname",
+      "valueString": "Common"
+    },
+    {
+      "url": "http://www.fragment.com/Group",
+      "valueString": "Fragment/HeaderFragment"
+    }
+  ],
+  "url": "http://hl7.org/fhir/us/breast-radiology/ValueSet/ObservedGroupingVS",
+  "version": "0.0.2",
+  "name": "ObservedGroupingVS",
+  "title": "Observed Grouping ValueSet",
+  "status": "draft",
+  "date": "2019-11-01",
+  "publisher": "Hl7-Clinical Interoperability Council",
+  "contact": [
+    {
+      "telecom": [
+        {
+          "system": "url",
+          "value": "http://www.hl7.org/Special/committees/cic"
+        }
+      ]
+    }
+  ],
+  "description": "Observed Grouping of abnormalities value set.",
+  "compose": {
+    "include": [
+      {
+        "system": "http://hl7.org/fhir/us/breast-radiology/CodeSystem/ObservedGroupingCS",
+        "concept": [
+          {
+            "code": "Multiple",
+            "display": "Multiple Items in Grouping"
+          },
+          {
+            "code": "ClusterOf",
+            "display": "Cluster of Items in Grouping"
+          }
+        ]
+      }
+    ]
+  }
+}

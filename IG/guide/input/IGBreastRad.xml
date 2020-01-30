@@ -352,6 +352,15 @@
     </resource>
     <resource>
       <reference>
+        <reference value="CodeSystem/ObservedGroupingCS" />
+      </reference>
+      <name value="Observed Grouping CodeSystem" />
+      <description value="Observed grouping of abnormalities code system." />
+      <exampleBoolean value="false" />
+      <groupingId value="CommonCodesCS" />
+    </resource>
+    <resource>
+      <reference>
         <reference value="CodeSystem/OrientationCS" />
       </reference>
       <name value="Orientation CodeSystem" />
@@ -590,6 +599,15 @@
       </reference>
       <name value="Observed Feature ValueSet" />
       <description value="Observed feature observed during a Breast Radiology exam value set" />
+      <exampleBoolean value="false" />
+      <groupingId value="CommonCodesVS" />
+    </resource>
+    <resource>
+      <reference>
+        <reference value="ValueSet/ObservedGroupingVS" />
+      </reference>
+      <name value="Observed Grouping ValueSet" />
+      <description value="Observed Grouping of abnormalities value set." />
       <exampleBoolean value="false" />
       <groupingId value="CommonCodesVS" />
     </resource>
@@ -1013,6 +1031,15 @@
       </reference>
       <name value="ObservedCount Fragment" />
       <description value="Fragment 'Fragment that adds 'Observed Count' element to profile.'" />
+      <exampleBoolean value="false" />
+      <groupingId value="Fragments" />
+    </resource>
+    <resource>
+      <reference>
+        <reference value="StructureDefinition/ObservedGroupingFragment" />
+      </reference>
+      <name value="ObservedGrouping Fragment" />
+      <description value="Fragment 'Fragment that adds 'Observed Grouping' element to profile.'" />
       <exampleBoolean value="false" />
       <groupingId value="Fragments" />
     </resource>
