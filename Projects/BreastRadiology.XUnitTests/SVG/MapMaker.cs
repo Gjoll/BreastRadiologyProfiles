@@ -13,12 +13,15 @@ namespace BreastRadiology.XUnitTests
     {
         protected ResourceMap map;
         protected bool showCardinality = true;
+
         protected Color focusColor = Color.White;
-        protected Color extensionReferenceColor = Color.LightSkyBlue;
-        protected Color extensionColor = Color.LightBlue;
+        protected Color fhirColor = Color.LightGray;
+
+        protected Color extensionColor = Color.LightGoldenrodYellow;
         protected Color valueSetColor = Color.LightGreen;
         protected Color targetColor = Color.LightCyan;
         protected Color componentColor = Color.LightYellow;
+        protected Color extensionReferenceColor = Color.LightBlue;
 
         // these are use to determine if children of a node can be
         // grouped with the children of the last parent node, or if a new group need to be created
@@ -175,6 +178,17 @@ namespace BreastRadiology.XUnitTests
             }
         }
 
+        protected Color ReferenceColor(ResourceMap.Node refNode)
+        {
+            switch (refNode.StructureName)
+            {
+                case "StructureDefinition": return targetColor;
+                case "ValueSet": return valueSetColor;
+                case "Extension": return extensionReferenceColor;
+                default: throw new NotImplementedException();
+            }
+        }
+
         protected void MakeComponent(dynamic link,
                 SENodeGroup group,
                 bool showChildren)
@@ -203,18 +217,15 @@ namespace BreastRadiology.XUnitTests
                 SENodeGroup refGroup = new SENodeGroup("ref", false);
                 componentGroup.AppendChild(refGroup);
 
-                Color refColor = this.LinkTypeColor(link);
-
                 foreach (JValue item in references)
                 {
                     String reference = item.ToObject<String>();
                     SENode refNode;
-                    String vsUrl = reference.Trim();
-                    if (vsUrl.ToLower().StartsWith(Global.BreastRadBaseUrl))
+                    if (reference.ToLower().StartsWith(Global.BreastRadBaseUrl))
                     {
-                        if (this.map.TryGetNode(vsUrl, out ResourceMap.Node vsNode) == false)
-                            throw new Exception($"Component resource '{vsUrl}' not found!");
-                        refNode = this.CreateResourceNode(vsNode, refColor, link.Cardinality?.ToString(), true);
+                        if (this.map.TryGetNode(reference, out ResourceMap.Node refMapNode) == false)
+                            throw new Exception($"Component resource '{reference}' not found!");
+                        refNode = this.CreateResourceNode(refMapNode, ReferenceColor(refMapNode), link.Cardinality?.ToString(), true);
 
                         if (showChildren)
                         {
@@ -224,8 +235,8 @@ namespace BreastRadiology.XUnitTests
                     }
                     else
                     {
-                        refNode = new SENode(0, refColor, link.Cardinality?.ToString(), null, vsUrl);
-                        refNode.AddTextLine(vsUrl.LastUriPart(), vsUrl);
+                        refNode = new SENode(0, fhirColor, link.Cardinality?.ToString(), null, reference);
+                        refNode.AddTextLine(reference.LastUriPart(), reference);
                     }
                     refGroup.AppendNode(refNode);
                 }

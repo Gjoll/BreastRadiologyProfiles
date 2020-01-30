@@ -35,7 +35,7 @@ namespace BreastRadiology.XUnitTests
 
                     e.AddExtensionLink(extensionStructDef.Url,
                         new SDefEditor.Cardinality(extensionDef),
-                        "Tumour Satellite", 
+                        "Tumor Satellite", 
                         Global.ElementAnchor(extensionDef));
                 }
             });

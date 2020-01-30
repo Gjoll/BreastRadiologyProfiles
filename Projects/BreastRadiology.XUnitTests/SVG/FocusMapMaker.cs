@@ -56,17 +56,20 @@ namespace BreastRadiology.XUnitTests
                 HashSet<String> alreadyLinkedResources = new HashSet<string>();
 
                 void AddParent(dynamic link,
-                    List< SENode> parents)
+                    List<SENode> parents)
                 {
                     String linkSource = link.LinkSource.ToObject<String>();
                     if (this.map.TryGetNode(linkSource, out ResourceMap.Node parentNode) == false)
-                        throw new Exception($"Parent extension {linkSource} not found in map");
-                    if (alreadyLinkedResources.Contains(parentNode.ResourceUrl) == false)
-                    {
-                        alreadyLinkedResources.Add(parentNode.ResourceUrl);
-                        SENode node = this.CreateResourceNode(parentNode, link, true);
-                        parents.Add(node);
-                    }
+                        throw new Exception($"Parzent extension {linkSource} not found in map");
+                    if (alreadyLinkedResources.Contains(parentNode.ResourceUrl) == true)
+                        return;
+
+                    if (this.map.TryGetNode(parentNode.ResourceUrl, out ResourceMap.Node parentMapNode) == false)
+                        throw new Exception($"Resource '{parentNode.ResourceUrl}' not found!");
+
+                    alreadyLinkedResources.Add(parentNode.ResourceUrl);
+                    SENode node = this.CreateResourceNode(parentNode, ReferenceColor(parentMapNode), link.Cardinality?.ToString(), true);
+                    parents.Add(node);
                 }
 
                 List<SENode> componentParents = new List<SENode>();
@@ -81,24 +84,9 @@ namespace BreastRadiology.XUnitTests
                         case "fragment":
                             break;
 
-                        case SVGGlobal.ComponentType:
+                        default:
                             AddParent(link, componentParents);
                             break;
-
-                        case SVGGlobal.ExtensionType:
-                            AddParent(link, extensionParents);
-                            break;
-
-                        case SVGGlobal.ValueSetType:
-                            AddParent(link, valueSetParents);
-                            break;
-
-                        case SVGGlobal.TargetType:
-                            AddParent(link, targetParents);
-                            break;
-
-                        default:
-                            throw new NotImplementedException($"Unknown link type {link.LinkType.ToObject<String>()}");
                     }
                 }
                 parentsGroup.AppendNodes(targetParents);
@@ -133,8 +121,9 @@ namespace BreastRadiology.XUnitTests
                                 String linkSource = link.LinkSource.ToObject<String>();
                                 String componentHRef = link.ComponentHRef.ToObject<String>().Replace("{SDName}", linkSource.LastUriPart());
 
-                                SENode node = new SENode(0, extensionReferenceColor, link.Cardinality?.ToString(), componentHRef);
+                                SENode node = new SENode(0, LinkTypeColor(link), link.Cardinality?.ToString(), componentHRef);
                                 node.AddTextLine(link.LocalName.ToObject<String>(), componentHRef);
+                                node.AddTextLine("extension", componentHRef);
 
                                 SENodeGroup nodeGroup = new SENodeGroup(node.AllText(), true);
                                 extensionChildren.AppendChild(nodeGroup);
@@ -147,9 +136,9 @@ namespace BreastRadiology.XUnitTests
                                     String extUrl = link.LinkTarget.ToObject<String>().Trim();
                                     if (extUrl.ToLower().StartsWith(Global.BreastRadBaseUrl))
                                     {
-                                        if (this.map.TryGetNode(extUrl, out ResourceMap.Node vsNode) == false)
+                                        if (this.map.TryGetNode(extUrl, out ResourceMap.Node targetNode) == false)
                                             throw new Exception($"Component resource '{extUrl}' not found!");
-                                        extNode = this.CreateResourceNode(vsNode, link, true);
+                                        extNode = this.CreateResourceNode(targetNode, ReferenceColor(targetNode), link.Cardinality?.ToString(), true);
                                     }
                                     else
                                     {
@@ -158,7 +147,7 @@ namespace BreastRadiology.XUnitTests
                                             .TrimStart("ValueSet-")
                                             .TrimEnd(".html")
                                             ;
-                                        extNode = new SENode(0, valueSetColor, link.Cardinality?.ToString(), null, extUrl);
+                                        extNode = new SENode(0, fhirColor, link.Cardinality?.ToString(), null, extUrl);
                                         extNode.AddTextLine(name, extUrl);
                                     }
                                     extGroup.AppendNode(extNode);

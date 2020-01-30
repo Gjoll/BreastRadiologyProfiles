@@ -303,50 +303,25 @@ namespace BreastRadiology.XUnitTests
             return this;
         }
 
-        public SDefEditor AddComponentLinkTarget(String url,
+        public SDefEditor AddComponentLink(String url,
             Cardinality cardinality,
             String componentRef,
             String types,
-            String[] targets = null,
-            bool showChildren = true)
+            params String[] targets)
         {
             dynamic packet = new JObject();
             packet.LinkType = SVGGlobal.ComponentType;
-            packet.ShowChildren = showChildren;
+            packet.ShowChildren = true;
             packet.Cardinality = cardinality.ToString();
             packet.LinkTarget = url;
             packet.ComponentHRef = componentRef;
             packet.Types = types;
-            if (targets != null)
-                packet.References = new JArray(targets);
-            packet.ReferenceType = SVGGlobal.TargetType;
+            packet.References = new JArray(targets);
             this.SDef.AddExtension(Global.ResourceMapLinkUrl, new FhirString(packet.ToString()));
 
             return this;
         }
 
-
-        public SDefEditor AddComponentLinkVS(String url,
-            Cardinality cardinality,
-            String componentRef,
-            String types,
-            String vs = null,
-            bool showChildren = true)
-        {
-            dynamic packet = new JObject();
-            packet.LinkType = SVGGlobal.ComponentType;
-            packet.ShowChildren = showChildren;
-            packet.Cardinality = cardinality.ToString();
-            packet.LinkTarget = url;
-            packet.ComponentHRef = componentRef;
-            packet.Types = types;
-            if (vs != null)
-                packet.References = new JArray(new String[] { vs });
-            packet.ReferenceType = SVGGlobal.ValueSetType;
-            this.SDef.AddExtension(Global.ResourceMapLinkUrl, new FhirString(packet.ToString()));
-
-            return this;
-        }
 
         public SDefEditor AddTargetLink(String url, Cardinality cardinality, bool showChildren = true)
         {
@@ -509,7 +484,7 @@ namespace BreastRadiology.XUnitTests
             }
 
             String componentRef = Global.ElementAnchor(slice.ElementDefinition);
-            this.AddComponentLinkVS(componentName,
+            this.AddComponentLink(componentName,
                 new SDefEditor.Cardinality(slice.ElementDefinition),
                 componentRef,
                 "CodeableConcept",

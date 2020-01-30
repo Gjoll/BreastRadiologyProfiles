@@ -139,7 +139,7 @@ namespace BreastRadiology.XUnitTests
                             .MustSupport();
                         ;
 
-                        e.AddComponentLinkTarget("Report",
+                        e.AddComponentLink("Report",
                             new SDefEditor.Cardinality(sectionSlice.ElementDefinition),
                             Global.ElementAnchor(sectionSlice.ElementDefinition),
                             "Section",
@@ -173,7 +173,7 @@ namespace BreastRadiology.XUnitTests
                                 )
                             .MustSupport();
                         ;
-                        e.AddComponentLinkTarget("Impressions",
+                        e.AddComponentLink("Impressions",
                             new SDefEditor.Cardinality(sectionSlice.ElementDefinition),
                             Global.ElementAnchor(sectionSlice.ElementDefinition),
                             "Section",
@@ -238,7 +238,7 @@ namespace BreastRadiology.XUnitTests
                             .Definition("References to FHIR clinical resoruces used during the exam or referenced by this report.")
                             .MustSupport();
                         ;
-                        e.AddComponentLinkTarget("Related Resources",
+                        e.AddComponentLink("Related Resources",
                             new SDefEditor.Cardinality(sectionSlice.ElementDefinition),
                             Global.ElementAnchor(sectionSlice.ElementDefinition),
                             "Section",
@@ -269,7 +269,7 @@ namespace BreastRadiology.XUnitTests
                             .Definition("This section contains references to recommended actions taken in response to the observations and findings of this report.")
                             .MustSupport();
                         ;
-                        e.AddComponentLinkTarget("Recommendations",
+                        e.AddComponentLink("Recommendations",
                             new SDefEditor.Cardinality(sectionSlice.ElementDefinition),
                             Global.ElementAnchor(sectionSlice.ElementDefinition),
                             "Section",

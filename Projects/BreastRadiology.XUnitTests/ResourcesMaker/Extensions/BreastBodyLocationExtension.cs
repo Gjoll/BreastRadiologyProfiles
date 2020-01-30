@@ -267,7 +267,7 @@ namespace BreastRadiology.XUnitTests
 
                 e = Self.CreateEditor("BreastBodyLocationExtension",
                     "Breast Body Location Extension",
-                    "Breast Body Loc.",
+                    "Breast Body Loc./Extension Def.",
                     ExtensionUrl,
                     $"{Group_ExtensionResources}/BreastBodyLocation",
                     "Extension")
@@ -338,7 +338,7 @@ namespace BreastRadiology.XUnitTests
                         .Single()
                        ;
 
-                    e.AddComponentLinkVS("Quadrant",
+                    e.AddComponentLink("Quadrant",
                         new SDefEditor.Cardinality(sliceDef),
                         Global.ElementAnchor(sliceDef),
                         "CodeableConcept",
@@ -366,7 +366,7 @@ namespace BreastRadiology.XUnitTests
                         .ZeroToMany()
                     ;
 
-                    e.AddComponentLinkVS("Region",
+                    e.AddComponentLink("Region",
                         new SDefEditor.Cardinality(sliceDef),
                         Global.ElementAnchor(extensionNode.ElementDefinition),
                         "CodeableConcept",
@@ -394,7 +394,7 @@ namespace BreastRadiology.XUnitTests
                         .Single()
                         ;
 
-                    e.AddComponentLinkVS("ClockDirection",
+                    e.AddComponentLink("ClockDirection",
                         new SDefEditor.Cardinality(sliceDef),
                         Global.ElementAnchor(extensionNode.ElementDefinition),
                         "CodeableConcept",
@@ -421,7 +421,7 @@ namespace BreastRadiology.XUnitTests
                         .Single()
                         ;
 
-                    e.AddComponentLinkVS("Depth",
+                    e.AddComponentLink("Depth",
                         new SDefEditor.Cardinality(sliceDef),
                         Global.ElementAnchor(extensionNode.ElementDefinition),
                         "CodeableConcept",

@@ -66,7 +66,7 @@ namespace BreastRadiology.XUnitTests
 
                 e = Self.CreateEditor("TumorSatelliteExtension",
                     "Tumor Satellite Extension",
-                    "Tumor Satellite/Extension",
+                    "Tumor Satellite/Extension Def.",
                     ExtensionUrl,
                     $"{Group_ExtensionResources}/TumorSatelliteExtension",
                     "Extension")
@@ -109,7 +109,7 @@ namespace BreastRadiology.XUnitTests
                         .Single()
                         ;
 
-                    e.AddComponentLinkVS("Index Reference",
+                    e.AddComponentLink("Index Reference",
                         new SDefEditor.Cardinality(extensionSlice.ElementDefinition),
                         Global.ElementAnchor(extensionSlice.ElementDefinition),
                         "Reference");
@@ -131,7 +131,7 @@ namespace BreastRadiology.XUnitTests
                         .Binding(binding, BindingStrength.Required)
                         ;
 
-                    e.AddComponentLinkVS("Distance From Index",
+                    e.AddComponentLink("Distance From Index",
                         new SDefEditor.Cardinality(extensionSlice.ElementDefinition),
                         Global.ElementAnchor(extensionSlice.ElementDefinition),
                         "Quantity",
