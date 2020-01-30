@@ -17,7 +17,7 @@ namespace BreastRadiology.XUnitTests
         protected Color focusColor = Color.White;
         protected Color fhirColor = Color.LightGray;
 
-        protected Color extensionColor = Color.LightGoldenrodYellow;
+        protected Color extensionColor = Color.LightSalmon;
         protected Color valueSetColor = Color.LightGreen;
         protected Color targetColor = Color.LightCyan;
         protected Color componentColor = Color.LightYellow;

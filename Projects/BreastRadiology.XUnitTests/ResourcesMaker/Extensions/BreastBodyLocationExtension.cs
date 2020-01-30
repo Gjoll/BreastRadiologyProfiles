@@ -267,7 +267,7 @@ namespace BreastRadiology.XUnitTests
 
                 e = Self.CreateEditor("BreastBodyLocationExtension",
                     "Breast Body Location Extension",
-                    "Breast Body Loc./Extension Def.",
+                    "Breast Body Loc.",
                     ExtensionUrl,
                     $"{Group_ExtensionResources}/BreastBodyLocation",
                     "Extension")
