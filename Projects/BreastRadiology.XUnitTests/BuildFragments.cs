@@ -327,24 +327,6 @@ namespace BreastRadiology.XUnitTests
         }
 
         [TestMethod]
-        public void FullBuild()
-        {
-            using (this.fc = new FileCleaner())
-            {
-                this.fc?.Add(this.graphicsDir, "*.svg");
-                this.fc?.Add(this.pageDir, "*.xml");
-                this.fc?.Add(this.fragmentDir, "*.json");
-                this.fc?.Add(this.resourcesDir, "*.json");
-
-                this.A_BuildFragments();
-                this.B_BuildResources();
-                this.C_PatchIntroDocs();
-                this.D_BuildGraphics();
-                this.E_BuildIG();
-            }
-        }
-
-        [TestMethod]
         public void E_BuildIG()
         {
             DateTime start = DateTime.Now;
@@ -415,7 +397,64 @@ namespace BreastRadiology.XUnitTests
             Trace.WriteLine($"Ending D_BuildIG [{(Int32)span.TotalSeconds}]");
         }
 
+        [TestMethod]
+        public void F_RunPublisher()
+        {
+            DateTime start = DateTime.Now;
+            Trace.WriteLine("Starting F_RunPublisher");
+            try
+            {
+                String executingDir = Path.Combine(DirHelper.FindParentDir("BreastRadiologyProfiles"),
+                    "IG",
+                    "guide");
+                String jarPath = Path.Combine(executingDir, "input-cache", "org.hl7.fhir.publisher.jar");
+                String igPath = Path.Combine(executingDir, "ig.ini");
+                if (File.Exists(jarPath) == false)
+                    throw new Exception($"Missing publisher jar '{jarPath}'");
 
+                IGPublisher p = new IGPublisher();
+                p.StatusErrors += this.StatusErrors;
+                p.StatusInfo += this.StatusInfo;
+                p.StatusWarnings += this.StatusWarnings;
+                p.Publish(executingDir, jarPath, igPath);
+
+                if (p.HasErrors)
+                {
+                    StringBuilder sb = new StringBuilder();
+                    p.FormatErrorMessages(sb);
+                    Trace.WriteLine(sb.ToString());
+                    Debug.Assert(false);
+                }
+            }
+            catch (Exception err)
+            {
+                Trace.WriteLine(err.Message);
+                Assert.IsTrue(false);
+            }
+            TimeSpan span = DateTime.Now - start;
+            Trace.WriteLine($"Ending F_RunPublisher[{(Int32)span.TotalSeconds}]");
+        }
+
+
+
+        [TestMethod]
+        public void FullBuild()
+        {
+            using (this.fc = new FileCleaner())
+            {
+                this.fc?.Add(this.graphicsDir, "*.svg");
+                this.fc?.Add(this.pageDir, "*.xml");
+                this.fc?.Add(this.fragmentDir, "*.json");
+                this.fc?.Add(this.resourcesDir, "*.json");
+
+                this.A_BuildFragments();
+                this.B_BuildResources();
+                this.C_PatchIntroDocs();
+                this.D_BuildGraphics();
+                this.E_BuildIG();
+                this.F_RunPublisher();
+            }
+        }
 
 
         [TestMethod]

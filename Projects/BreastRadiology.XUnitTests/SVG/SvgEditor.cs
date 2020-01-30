@@ -202,7 +202,7 @@ namespace BreastRadiology.XUnitTests
                 if (bottomConnectorY < connectorY)
                     bottomConnectorY = connectorY;
                 startConnectors.Add(new PointF(screenX + nodeWidth, col1ScreenY + nodeHeight / 2));
-                Debug.Assert(String.IsNullOrEmpty(node.Annotation) || node.Annotation.Contains(".."));
+
                 endConnectors.Add(new EndPoint
                     {
                         Location = new PointF(screenX, col1ScreenY + nodeHeight / 2),
@@ -245,7 +245,6 @@ namespace BreastRadiology.XUnitTests
                         float xStart = screenX + col1Width + this.NodeGapStartX;
                         this.CreateArrow(g, false, true, xStart, stubEnd.Location.Y, stubEnd.Location.X, stubEnd.Location.Y);
 
-                        Debug.Assert(String.IsNullOrEmpty(stubEnd.Annotation) || stubEnd.Annotation.Contains(".."));
                         if (child.ShowCardinalities == true)
                         {
                             SvgText t = this.doc.AddText(g);

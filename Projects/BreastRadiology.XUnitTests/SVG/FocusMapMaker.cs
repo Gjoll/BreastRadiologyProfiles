@@ -41,6 +41,7 @@ namespace BreastRadiology.XUnitTests
         {
             if (focusNode.Name.Contains("Fragment", new StringComparison()) == true)
                 return;
+            //Debug.Assert(focusNode.Name != "BreastRadReport");
 
             SvgEditor e = new SvgEditor();
             SENodeGroup parentsGroup = new SENodeGroup("parents", false);
@@ -53,60 +54,48 @@ namespace BreastRadiology.XUnitTests
                 focusGroup.AppendNode(node);
             }
             {
+                HashSet<String> alreadyLinkedResources = new HashSet<string>();
+
+                void AddParent(dynamic link,
+                    List< SENode> parents)
+                {
+                    String linkSource = link.LinkSource.ToObject<String>();
+                    if (this.map.TryGetNode(linkSource, out ResourceMap.Node parentNode) == false)
+                        throw new Exception($"Parent extension {linkSource} not found in map");
+                    if (alreadyLinkedResources.Contains(parentNode.ResourceUrl) == false)
+                    {
+                        alreadyLinkedResources.Add(parentNode.ResourceUrl);
+                        SENode node = this.CreateResourceNode(parentNode, link, true);
+                        parents.Add(node);
+                    }
+                }
+
+                List<SENode> componentParents = new List<SENode>();
                 List<SENode> extensionParents = new List<SENode>();
                 List<SENode> valueSetParents = new List<SENode>();
                 List<SENode> targetParents = new List<SENode>();
 
-                HashSet<String> alreadyLinkedResources = new HashSet<string>();
-
-                foreach (dynamic link in this.map.TargetLinks(focusNode.ResourceUrl))
+                foreach (dynamic link in this.map.TargetOrReferenceLinks(focusNode.ResourceUrl))
                 {
                     switch (link.LinkType.ToObject<String>())
                     {
                         case "fragment":
+                            break;
+
                         case "component":
+                            AddParent(link, componentParents);
                             break;
 
                         case "extension":
-                            {
-                                String linkSource = link.LinkSource.ToObject<String>();
-                                if (this.map.TryGetNode(linkSource, out ResourceMap.Node parentNode) == false)
-                                    throw new Exception($"Parent extension {linkSource} not found in map");
-                                if (alreadyLinkedResources.Contains(parentNode.ResourceUrl) == false)
-                                {
-                                    alreadyLinkedResources.Add(parentNode.ResourceUrl);
-                                    SENode node = this.CreateResourceNode(parentNode, link, true);
-                                    extensionParents.Add(node);
-                                }
-                            }
+                            AddParent(link, extensionParents);
                             break;
 
                         case "valueSet":
-                            {
-                                String linkSource = link.LinkSource.ToObject<String>();
-                                if (this.map.TryGetNode(linkSource, out ResourceMap.Node parentNode) == false)
-                                    throw new Exception($"Parent valueSet {linkSource} not found in map");
-                                if (alreadyLinkedResources.Contains(parentNode.ResourceUrl) == false)
-                                {
-                                    alreadyLinkedResources.Add(parentNode.ResourceUrl);
-                                    SENode node = this.CreateResourceNode(parentNode, link, true);
-                                    valueSetParents.Add(node);
-                                }
-                            }
+                            AddParent(link, valueSetParents);
                             break;
 
                         case "target":
-                            {
-                                String linkSource = link.LinkSource.ToObject<String>();
-                                if (this.map.TryGetNode(linkSource, out ResourceMap.Node parentNode) == false)
-                                    throw new Exception($"Parent resource {linkSource} not found in map");
-                                if (alreadyLinkedResources.Contains(parentNode.ResourceUrl) == false)
-                                {
-                                    alreadyLinkedResources.Add(parentNode.ResourceUrl);
-                                    SENode node = this.CreateResourceNode(parentNode, link, true);
-                                    targetParents.Add(node);
-                                }
-                            }
+                            AddParent(link, targetParents);
                             break;
 
                         default:
@@ -114,6 +103,7 @@ namespace BreastRadiology.XUnitTests
                     }
                 }
                 parentsGroup.AppendNodes(targetParents);
+                parentsGroup.AppendNodes(componentParents);
                 parentsGroup.AppendNodes(valueSetParents);
                 parentsGroup.AppendNodes(extensionParents);
             }

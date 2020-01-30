@@ -91,7 +91,7 @@ namespace BreastRadiology.XUnitTests
                     String name = fhirResource.Url.LastUriPart();
                     node = this.CreateMapNode(fhirResource.Url,
                         name,
-                        new String[] {name },
+                        new String[] { name },
                         "StructureDefinition",
                         false);
 
@@ -109,12 +109,24 @@ namespace BreastRadiology.XUnitTests
             return node;
         }
 
-        public IEnumerable<dynamic> TargetLinks(String target)
+        public IEnumerable<dynamic> TargetOrReferenceLinks(String target)
         {
             foreach (dynamic link in this.Links)
             {
                 if (link.LinkTarget.ToObject<String>() == target)
                     yield return link;
+                else
+                {
+                    JArray references = (JArray)link.References;
+                    if (references != null)
+                    {
+                        foreach (JValue item in references)
+                        {
+                            if (item.ToObject<String>() == target)
+                                yield return link;
+                        }
+                    }
+                }
             }
         }
 
@@ -178,8 +190,8 @@ namespace BreastRadiology.XUnitTests
 
         public ResourceMap.Node CreateMapNode(String url,
             String title,
-            String[] mapName, 
-            String structureName, 
+            String[] mapName,
+            String structureName,
             bool fragment)
         {
             if (this.nodes.TryGetValue(url, out ResourceMap.Node retVal) == true)

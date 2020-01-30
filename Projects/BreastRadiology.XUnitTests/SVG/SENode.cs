@@ -26,7 +26,6 @@ namespace BreastRadiology.XUnitTests
         {
             this.Width = width;
             this.FillColor = fillColor;
-            Debug.Assert(String.IsNullOrEmpty(annotation) || annotation.Contains(".."));
             this.Annotation = annotation;
             this.HRef = hRef;
             this.Title = title;
