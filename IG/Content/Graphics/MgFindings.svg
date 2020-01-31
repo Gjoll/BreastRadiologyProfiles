@@ -1,6 +1,6 @@
 <?xml version="1.0"?>
 <!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
-<svg xmlns="http://www.w3.org/2000/svg" version="1.1" width="1003.5" height="10155">
+<svg xmlns="http://www.w3.org/2000/svg" version="1.1" width="1171.5" height="10155">
 <defs>
 <marker id="arrowStart" markerWidth="3.75" markerHeight="3.75" markerUnits="px" refX="1.875" refY="1.875">
 <circle fill="Black" stroke-width="0" cx="1.875" cy="1.875" r="1.875" />
@@ -170,21 +170,21 @@
 <g>
 <g transform="translate(274.5 408.75)">
 <a href="StructureDefinition-AbnormalityCyst-definitions.html#Observation.component:observedGrouping" target="_top">
-<rect fill="LightYellow" stroke="Black" stroke-width="1.875" x="0" y="0" width="372" height="52.5" rx="3.75" ry="3.75" />
+<rect fill="LightYellow" stroke="Black" stroke-width="1.875" x="0" y="0" width="550.5" height="52.5" rx="3.75" ry="3.75" />
 </a>
 <a href="StructureDefinition-AbnormalityCyst-definitions.html#Observation.component:observedGrouping" target="_top">
-<text x="186" y="22.5" text-anchor="middle">Observed Grouping of Abnormalities</text>
+<text x="275.25" y="22.5" text-anchor="middle">Observed Grouping of Abnormalities regions or items</text>
 </a>
 <a href="StructureDefinition-AbnormalityCyst-definitions.html#Observation.component:observedGrouping" target="_top">
-<text x="186" y="41.25" text-anchor="middle">CodeableConcept</text>
+<text x="275.25" y="41.25" text-anchor="middle">CodeableConcept</text>
 </a>
 </g>
-<line stroke="Black" stroke-width="1.875" marker-end="url(#arrowEnd)" x1="661.5" y1="444.375" x2="691.5" y2="444.375" />
-<line stroke="Black" stroke-width="1.875" marker-start="url(#arrowStart)" x1="646.5" y1="435" x2="661.5" y2="435" />
-<line stroke="Black" stroke-width="1.875" x1="661.5" y1="435" x2="661.5" y2="444.375" />
+<line stroke="Black" stroke-width="1.875" marker-end="url(#arrowEnd)" x1="840" y1="444.375" x2="870" y2="444.375" />
+<line stroke="Black" stroke-width="1.875" marker-start="url(#arrowStart)" x1="825" y1="435" x2="840" y2="435" />
+<line stroke="Black" stroke-width="1.875" x1="840" y1="435" x2="840" y2="444.375" />
 </g>
 <g>
-<g transform="translate(691.5 408.75)">
+<g transform="translate(870 408.75)">
 <rect fill="LightGreen" stroke="Black" stroke-width="1.875" x="0" y="0" width="99" height="71.25" rx="3.75" ry="3.75" />
 <a href="./ValueSet-ObservedGroupingVS.html" target="_top">
 <text x="49.5" y="22.5" text-anchor="middle">Observed</text>
@@ -520,21 +520,21 @@
 <g>
 <g transform="translate(274.5 1327.5)">
 <a href="StructureDefinition-AbnormalityDuct-definitions.html#Observation.component:observedGrouping" target="_top">
-<rect fill="LightYellow" stroke="Black" stroke-width="1.875" x="0" y="0" width="372" height="52.5" rx="3.75" ry="3.75" />
+<rect fill="LightYellow" stroke="Black" stroke-width="1.875" x="0" y="0" width="550.5" height="52.5" rx="3.75" ry="3.75" />
 </a>
 <a href="StructureDefinition-AbnormalityDuct-definitions.html#Observation.component:observedGrouping" target="_top">
-<text x="186" y="22.5" text-anchor="middle">Observed Grouping of Abnormalities</text>
+<text x="275.25" y="22.5" text-anchor="middle">Observed Grouping of Abnormalities regions or items</text>
 </a>
 <a href="StructureDefinition-AbnormalityDuct-definitions.html#Observation.component:observedGrouping" target="_top">
-<text x="186" y="41.25" text-anchor="middle">CodeableConcept</text>
+<text x="275.25" y="41.25" text-anchor="middle">CodeableConcept</text>
 </a>
 </g>
-<line stroke="Black" stroke-width="1.875" marker-end="url(#arrowEnd)" x1="661.5" y1="1363.125" x2="691.5" y2="1363.125" />
-<line stroke="Black" stroke-width="1.875" marker-start="url(#arrowStart)" x1="646.5" y1="1353.75" x2="661.5" y2="1353.75" />
-<line stroke="Black" stroke-width="1.875" x1="661.5" y1="1353.75" x2="661.5" y2="1363.125" />
+<line stroke="Black" stroke-width="1.875" marker-end="url(#arrowEnd)" x1="840" y1="1363.125" x2="870" y2="1363.125" />
+<line stroke="Black" stroke-width="1.875" marker-start="url(#arrowStart)" x1="825" y1="1353.75" x2="840" y2="1353.75" />
+<line stroke="Black" stroke-width="1.875" x1="840" y1="1353.75" x2="840" y2="1363.125" />
 </g>
 <g>
-<g transform="translate(691.5 1327.5)">
+<g transform="translate(870 1327.5)">
 <rect fill="LightGreen" stroke="Black" stroke-width="1.875" x="0" y="0" width="99" height="71.25" rx="3.75" ry="3.75" />
 <a href="./ValueSet-ObservedGroupingVS.html" target="_top">
 <text x="49.5" y="22.5" text-anchor="middle">Observed</text>
@@ -880,21 +880,21 @@
 <g>
 <g transform="translate(379.5 2325)">
 <a href="StructureDefinition-AbnormalityForeignObject-definitions.html#Observation.component:observedGrouping" target="_top">
-<rect fill="LightYellow" stroke="Black" stroke-width="1.875" x="0" y="0" width="372" height="52.5" rx="3.75" ry="3.75" />
+<rect fill="LightYellow" stroke="Black" stroke-width="1.875" x="0" y="0" width="550.5" height="52.5" rx="3.75" ry="3.75" />
 </a>
 <a href="StructureDefinition-AbnormalityForeignObject-definitions.html#Observation.component:observedGrouping" target="_top">
-<text x="186" y="22.5" text-anchor="middle">Observed Grouping of Abnormalities</text>
+<text x="275.25" y="22.5" text-anchor="middle">Observed Grouping of Abnormalities regions or items</text>
 </a>
 <a href="StructureDefinition-AbnormalityForeignObject-definitions.html#Observation.component:observedGrouping" target="_top">
-<text x="186" y="41.25" text-anchor="middle">CodeableConcept</text>
+<text x="275.25" y="41.25" text-anchor="middle">CodeableConcept</text>
 </a>
 </g>
-<line stroke="Black" stroke-width="1.875" marker-end="url(#arrowEnd)" x1="766.5" y1="2360.625" x2="796.5" y2="2360.625" />
-<line stroke="Black" stroke-width="1.875" marker-start="url(#arrowStart)" x1="751.5" y1="2351.25" x2="766.5" y2="2351.25" />
-<line stroke="Black" stroke-width="1.875" x1="766.5" y1="2351.25" x2="766.5" y2="2360.625" />
+<line stroke="Black" stroke-width="1.875" marker-end="url(#arrowEnd)" x1="945" y1="2360.625" x2="975" y2="2360.625" />
+<line stroke="Black" stroke-width="1.875" marker-start="url(#arrowStart)" x1="930" y1="2351.25" x2="945" y2="2351.25" />
+<line stroke="Black" stroke-width="1.875" x1="945" y1="2351.25" x2="945" y2="2360.625" />
 </g>
 <g>
-<g transform="translate(796.5 2325)">
+<g transform="translate(975 2325)">
 <rect fill="LightGreen" stroke="Black" stroke-width="1.875" x="0" y="0" width="99" height="71.25" rx="3.75" ry="3.75" />
 <a href="./ValueSet-ObservedGroupingVS.html" target="_top">
 <text x="49.5" y="22.5" text-anchor="middle">Observed</text>
@@ -1127,21 +1127,21 @@
 <g>
 <g transform="translate(337.5 2985)">
 <a href="StructureDefinition-AbnormalityLymphNode-definitions.html#Observation.component:observedGrouping" target="_top">
-<rect fill="LightYellow" stroke="Black" stroke-width="1.875" x="0" y="0" width="372" height="52.5" rx="3.75" ry="3.75" />
+<rect fill="LightYellow" stroke="Black" stroke-width="1.875" x="0" y="0" width="550.5" height="52.5" rx="3.75" ry="3.75" />
 </a>
 <a href="StructureDefinition-AbnormalityLymphNode-definitions.html#Observation.component:observedGrouping" target="_top">
-<text x="186" y="22.5" text-anchor="middle">Observed Grouping of Abnormalities</text>
+<text x="275.25" y="22.5" text-anchor="middle">Observed Grouping of Abnormalities regions or items</text>
 </a>
 <a href="StructureDefinition-AbnormalityLymphNode-definitions.html#Observation.component:observedGrouping" target="_top">
-<text x="186" y="41.25" text-anchor="middle">CodeableConcept</text>
+<text x="275.25" y="41.25" text-anchor="middle">CodeableConcept</text>
 </a>
 </g>
-<line stroke="Black" stroke-width="1.875" marker-end="url(#arrowEnd)" x1="724.5" y1="3020.625" x2="754.5" y2="3020.625" />
-<line stroke="Black" stroke-width="1.875" marker-start="url(#arrowStart)" x1="709.5" y1="3011.25" x2="724.5" y2="3011.25" />
-<line stroke="Black" stroke-width="1.875" x1="724.5" y1="3011.25" x2="724.5" y2="3020.625" />
+<line stroke="Black" stroke-width="1.875" marker-end="url(#arrowEnd)" x1="903" y1="3020.625" x2="933" y2="3020.625" />
+<line stroke="Black" stroke-width="1.875" marker-start="url(#arrowStart)" x1="888" y1="3011.25" x2="903" y2="3011.25" />
+<line stroke="Black" stroke-width="1.875" x1="903" y1="3011.25" x2="903" y2="3020.625" />
 </g>
 <g>
-<g transform="translate(754.5 2985)">
+<g transform="translate(933 2985)">
 <rect fill="LightGreen" stroke="Black" stroke-width="1.875" x="0" y="0" width="99" height="71.25" rx="3.75" ry="3.75" />
 <a href="./ValueSet-ObservedGroupingVS.html" target="_top">
 <text x="49.5" y="22.5" text-anchor="middle">Observed</text>
@@ -1498,21 +1498,21 @@
 <g>
 <g transform="translate(274.5 4005)">
 <a href="StructureDefinition-Mass-definitions.html#Observation.component:observedGrouping" target="_top">
-<rect fill="LightYellow" stroke="Black" stroke-width="1.875" x="0" y="0" width="372" height="52.5" rx="3.75" ry="3.75" />
+<rect fill="LightYellow" stroke="Black" stroke-width="1.875" x="0" y="0" width="550.5" height="52.5" rx="3.75" ry="3.75" />
 </a>
 <a href="StructureDefinition-Mass-definitions.html#Observation.component:observedGrouping" target="_top">
-<text x="186" y="22.5" text-anchor="middle">Observed Grouping of Abnormalities</text>
+<text x="275.25" y="22.5" text-anchor="middle">Observed Grouping of Abnormalities regions or items</text>
 </a>
 <a href="StructureDefinition-Mass-definitions.html#Observation.component:observedGrouping" target="_top">
-<text x="186" y="41.25" text-anchor="middle">CodeableConcept</text>
+<text x="275.25" y="41.25" text-anchor="middle">CodeableConcept</text>
 </a>
 </g>
-<line stroke="Black" stroke-width="1.875" marker-end="url(#arrowEnd)" x1="661.5" y1="4040.625" x2="691.5" y2="4040.625" />
-<line stroke="Black" stroke-width="1.875" marker-start="url(#arrowStart)" x1="646.5" y1="4031.25" x2="661.5" y2="4031.25" />
-<line stroke="Black" stroke-width="1.875" x1="661.5" y1="4031.25" x2="661.5" y2="4040.625" />
+<line stroke="Black" stroke-width="1.875" marker-end="url(#arrowEnd)" x1="840" y1="4040.625" x2="870" y2="4040.625" />
+<line stroke="Black" stroke-width="1.875" marker-start="url(#arrowStart)" x1="825" y1="4031.25" x2="840" y2="4031.25" />
+<line stroke="Black" stroke-width="1.875" x1="840" y1="4031.25" x2="840" y2="4040.625" />
 </g>
 <g>
-<g transform="translate(691.5 4005)">
+<g transform="translate(870 4005)">
 <rect fill="LightGreen" stroke="Black" stroke-width="1.875" x="0" y="0" width="99" height="71.25" rx="3.75" ry="3.75" />
 <a href="./ValueSet-ObservedGroupingVS.html" target="_top">
 <text x="49.5" y="22.5" text-anchor="middle">Observed</text>
@@ -1883,21 +1883,21 @@
 <g>
 <g transform="translate(358.5 5047.5)">
 <a href="StructureDefinition-AbnormalityFibroadenoma-definitions.html#Observation.component:observedGrouping" target="_top">
-<rect fill="LightYellow" stroke="Black" stroke-width="1.875" x="0" y="0" width="372" height="52.5" rx="3.75" ry="3.75" />
+<rect fill="LightYellow" stroke="Black" stroke-width="1.875" x="0" y="0" width="550.5" height="52.5" rx="3.75" ry="3.75" />
 </a>
 <a href="StructureDefinition-AbnormalityFibroadenoma-definitions.html#Observation.component:observedGrouping" target="_top">
-<text x="186" y="22.5" text-anchor="middle">Observed Grouping of Abnormalities</text>
+<text x="275.25" y="22.5" text-anchor="middle">Observed Grouping of Abnormalities regions or items</text>
 </a>
 <a href="StructureDefinition-AbnormalityFibroadenoma-definitions.html#Observation.component:observedGrouping" target="_top">
-<text x="186" y="41.25" text-anchor="middle">CodeableConcept</text>
+<text x="275.25" y="41.25" text-anchor="middle">CodeableConcept</text>
 </a>
 </g>
-<line stroke="Black" stroke-width="1.875" marker-end="url(#arrowEnd)" x1="745.49994" y1="5083.125" x2="775.49994" y2="5083.125" />
-<line stroke="Black" stroke-width="1.875" marker-start="url(#arrowStart)" x1="730.49994" y1="5073.75" x2="745.49994" y2="5073.75" />
-<line stroke="Black" stroke-width="1.875" x1="745.49994" y1="5073.75" x2="745.49994" y2="5083.125" />
+<line stroke="Black" stroke-width="1.875" marker-end="url(#arrowEnd)" x1="924" y1="5083.125" x2="954" y2="5083.125" />
+<line stroke="Black" stroke-width="1.875" marker-start="url(#arrowStart)" x1="909" y1="5073.75" x2="924" y2="5073.75" />
+<line stroke="Black" stroke-width="1.875" x1="924" y1="5073.75" x2="924" y2="5083.125" />
 </g>
 <g>
-<g transform="translate(775.49994 5047.5)">
+<g transform="translate(954 5047.5)">
 <rect fill="LightGreen" stroke="Black" stroke-width="1.875" x="0" y="0" width="99" height="71.25" rx="3.75" ry="3.75" />
 <a href="./ValueSet-ObservedGroupingVS.html" target="_top">
 <text x="49.5" y="22.5" text-anchor="middle">Observed</text>
@@ -2162,21 +2162,21 @@
 <g>
 <g transform="translate(432 5846.25)">
 <a href="StructureDefinition-MGAbnormalityArchitecturalDistortion-definitions.html#Observation.component:observedGrouping" target="_top">
-<rect fill="LightYellow" stroke="Black" stroke-width="1.875" x="0" y="0" width="372" height="52.5" rx="3.75" ry="3.75" />
+<rect fill="LightYellow" stroke="Black" stroke-width="1.875" x="0" y="0" width="550.5" height="52.5" rx="3.75" ry="3.75" />
 </a>
 <a href="StructureDefinition-MGAbnormalityArchitecturalDistortion-definitions.html#Observation.component:observedGrouping" target="_top">
-<text x="186" y="22.5" text-anchor="middle">Observed Grouping of Abnormalities</text>
+<text x="275.25" y="22.5" text-anchor="middle">Observed Grouping of Abnormalities regions or items</text>
 </a>
 <a href="StructureDefinition-MGAbnormalityArchitecturalDistortion-definitions.html#Observation.component:observedGrouping" target="_top">
-<text x="186" y="41.25" text-anchor="middle">CodeableConcept</text>
+<text x="275.25" y="41.25" text-anchor="middle">CodeableConcept</text>
 </a>
 </g>
-<line stroke="Black" stroke-width="1.875" marker-end="url(#arrowEnd)" x1="819" y1="5881.875" x2="849" y2="5881.875" />
-<line stroke="Black" stroke-width="1.875" marker-start="url(#arrowStart)" x1="804" y1="5872.5" x2="819" y2="5872.5" />
-<line stroke="Black" stroke-width="1.875" x1="819" y1="5872.5" x2="819" y2="5881.875" />
+<line stroke="Black" stroke-width="1.875" marker-end="url(#arrowEnd)" x1="997.5" y1="5881.875" x2="1027.5" y2="5881.875" />
+<line stroke="Black" stroke-width="1.875" marker-start="url(#arrowStart)" x1="982.5" y1="5872.5" x2="997.5" y2="5872.5" />
+<line stroke="Black" stroke-width="1.875" x1="997.5" y1="5872.5" x2="997.5" y2="5881.875" />
 </g>
 <g>
-<g transform="translate(849 5846.25)">
+<g transform="translate(1027.5 5846.25)">
 <rect fill="LightGreen" stroke="Black" stroke-width="1.875" x="0" y="0" width="99" height="71.25" rx="3.75" ry="3.75" />
 <a href="./ValueSet-ObservedGroupingVS.html" target="_top">
 <text x="49.5" y="22.5" text-anchor="middle">Observed</text>
@@ -2511,21 +2511,21 @@
 <g>
 <g transform="translate(358.5 6765)">
 <a href="StructureDefinition-MGAbnormalityAsymmetry-definitions.html#Observation.component:observedGrouping" target="_top">
-<rect fill="LightYellow" stroke="Black" stroke-width="1.875" x="0" y="0" width="372" height="52.5" rx="3.75" ry="3.75" />
+<rect fill="LightYellow" stroke="Black" stroke-width="1.875" x="0" y="0" width="550.5" height="52.5" rx="3.75" ry="3.75" />
 </a>
 <a href="StructureDefinition-MGAbnormalityAsymmetry-definitions.html#Observation.component:observedGrouping" target="_top">
-<text x="186" y="22.5" text-anchor="middle">Observed Grouping of Abnormalities</text>
+<text x="275.25" y="22.5" text-anchor="middle">Observed Grouping of Abnormalities regions or items</text>
 </a>
 <a href="StructureDefinition-MGAbnormalityAsymmetry-definitions.html#Observation.component:observedGrouping" target="_top">
-<text x="186" y="41.25" text-anchor="middle">CodeableConcept</text>
+<text x="275.25" y="41.25" text-anchor="middle">CodeableConcept</text>
 </a>
 </g>
-<line stroke="Black" stroke-width="1.875" marker-end="url(#arrowEnd)" x1="745.49994" y1="6800.625" x2="775.49994" y2="6800.625" />
-<line stroke="Black" stroke-width="1.875" marker-start="url(#arrowStart)" x1="730.49994" y1="6791.25" x2="745.49994" y2="6791.25" />
-<line stroke="Black" stroke-width="1.875" x1="745.49994" y1="6791.25" x2="745.49994" y2="6800.625" />
+<line stroke="Black" stroke-width="1.875" marker-end="url(#arrowEnd)" x1="924" y1="6800.625" x2="954" y2="6800.625" />
+<line stroke="Black" stroke-width="1.875" marker-start="url(#arrowStart)" x1="909" y1="6791.25" x2="924" y2="6791.25" />
+<line stroke="Black" stroke-width="1.875" x1="924" y1="6791.25" x2="924" y2="6800.625" />
 </g>
 <g>
-<g transform="translate(775.49994 6765)">
+<g transform="translate(954 6765)">
 <rect fill="LightGreen" stroke="Black" stroke-width="1.875" x="0" y="0" width="99" height="71.25" rx="3.75" ry="3.75" />
 <a href="./ValueSet-ObservedGroupingVS.html" target="_top">
 <text x="49.5" y="22.5" text-anchor="middle">Observed</text>
@@ -2894,21 +2894,21 @@
 <g>
 <g transform="translate(316.5 7803.75)">
 <a href="StructureDefinition-MGAbnormalityCalcification-definitions.html#Observation.component:observedGrouping" target="_top">
-<rect fill="LightYellow" stroke="Black" stroke-width="1.875" x="0" y="0" width="372" height="52.5" rx="3.75" ry="3.75" />
+<rect fill="LightYellow" stroke="Black" stroke-width="1.875" x="0" y="0" width="550.5" height="52.5" rx="3.75" ry="3.75" />
 </a>
 <a href="StructureDefinition-MGAbnormalityCalcification-definitions.html#Observation.component:observedGrouping" target="_top">
-<text x="186" y="22.5" text-anchor="middle">Observed Grouping of Abnormalities</text>
+<text x="275.25" y="22.5" text-anchor="middle">Observed Grouping of Abnormalities regions or items</text>
 </a>
 <a href="StructureDefinition-MGAbnormalityCalcification-definitions.html#Observation.component:observedGrouping" target="_top">
-<text x="186" y="41.25" text-anchor="middle">CodeableConcept</text>
+<text x="275.25" y="41.25" text-anchor="middle">CodeableConcept</text>
 </a>
 </g>
-<line stroke="Black" stroke-width="1.875" marker-end="url(#arrowEnd)" x1="703.5" y1="7839.375" x2="733.5" y2="7839.375" />
-<line stroke="Black" stroke-width="1.875" marker-start="url(#arrowStart)" x1="688.5" y1="7830" x2="703.5" y2="7830" />
-<line stroke="Black" stroke-width="1.875" x1="703.5" y1="7830" x2="703.5" y2="7839.375" />
+<line stroke="Black" stroke-width="1.875" marker-end="url(#arrowEnd)" x1="882.00006" y1="7839.375" x2="912.00006" y2="7839.375" />
+<line stroke="Black" stroke-width="1.875" marker-start="url(#arrowStart)" x1="867.00006" y1="7830" x2="882.00006" y2="7830" />
+<line stroke="Black" stroke-width="1.875" x1="882.00006" y1="7830" x2="882.00006" y2="7839.375" />
 </g>
 <g>
-<g transform="translate(733.5 7803.75)">
+<g transform="translate(912.00006 7803.75)">
 <rect fill="LightGreen" stroke="Black" stroke-width="1.875" x="0" y="0" width="99" height="71.25" rx="3.75" ry="3.75" />
 <a href="./ValueSet-ObservedGroupingVS.html" target="_top">
 <text x="49.5" y="22.5" text-anchor="middle">Observed</text>
@@ -3157,21 +3157,21 @@
 <g>
 <g transform="translate(337.5 8542.5)">
 <a href="StructureDefinition-MGAbnormalityDensity-definitions.html#Observation.component:observedGrouping" target="_top">
-<rect fill="LightYellow" stroke="Black" stroke-width="1.875" x="0" y="0" width="372" height="52.5" rx="3.75" ry="3.75" />
+<rect fill="LightYellow" stroke="Black" stroke-width="1.875" x="0" y="0" width="550.5" height="52.5" rx="3.75" ry="3.75" />
 </a>
 <a href="StructureDefinition-MGAbnormalityDensity-definitions.html#Observation.component:observedGrouping" target="_top">
-<text x="186" y="22.5" text-anchor="middle">Observed Grouping of Abnormalities</text>
+<text x="275.25" y="22.5" text-anchor="middle">Observed Grouping of Abnormalities regions or items</text>
 </a>
 <a href="StructureDefinition-MGAbnormalityDensity-definitions.html#Observation.component:observedGrouping" target="_top">
-<text x="186" y="41.25" text-anchor="middle">CodeableConcept</text>
+<text x="275.25" y="41.25" text-anchor="middle">CodeableConcept</text>
 </a>
 </g>
-<line stroke="Black" stroke-width="1.875" marker-end="url(#arrowEnd)" x1="724.5" y1="8578.125" x2="754.5" y2="8578.125" />
-<line stroke="Black" stroke-width="1.875" marker-start="url(#arrowStart)" x1="709.5" y1="8568.75" x2="724.5" y2="8568.75" />
-<line stroke="Black" stroke-width="1.875" x1="724.5" y1="8568.75" x2="724.5" y2="8578.125" />
+<line stroke="Black" stroke-width="1.875" marker-end="url(#arrowEnd)" x1="903" y1="8578.125" x2="933" y2="8578.125" />
+<line stroke="Black" stroke-width="1.875" marker-start="url(#arrowStart)" x1="888" y1="8568.75" x2="903" y2="8568.75" />
+<line stroke="Black" stroke-width="1.875" x1="903" y1="8568.75" x2="903" y2="8578.125" />
 </g>
 <g>
-<g transform="translate(754.5 8542.5)">
+<g transform="translate(933 8542.5)">
 <rect fill="LightGreen" stroke="Black" stroke-width="1.875" x="0" y="0" width="99" height="71.25" rx="3.75" ry="3.75" />
 <a href="./ValueSet-ObservedGroupingVS.html" target="_top">
 <text x="49.5" y="22.5" text-anchor="middle">Observed</text>
@@ -3491,21 +3491,21 @@
 <g>
 <g transform="translate(390 9461.25)">
 <a href="StructureDefinition-MGAbnormalityFatNecrosis-definitions.html#Observation.component:observedGrouping" target="_top">
-<rect fill="LightYellow" stroke="Black" stroke-width="1.875" x="0" y="0" width="372" height="52.5" rx="3.75" ry="3.75" />
+<rect fill="LightYellow" stroke="Black" stroke-width="1.875" x="0" y="0" width="550.5" height="52.5" rx="3.75" ry="3.75" />
 </a>
 <a href="StructureDefinition-MGAbnormalityFatNecrosis-definitions.html#Observation.component:observedGrouping" target="_top">
-<text x="186" y="22.5" text-anchor="middle">Observed Grouping of Abnormalities</text>
+<text x="275.25" y="22.5" text-anchor="middle">Observed Grouping of Abnormalities regions or items</text>
 </a>
 <a href="StructureDefinition-MGAbnormalityFatNecrosis-definitions.html#Observation.component:observedGrouping" target="_top">
-<text x="186" y="41.25" text-anchor="middle">CodeableConcept</text>
+<text x="275.25" y="41.25" text-anchor="middle">CodeableConcept</text>
 </a>
 </g>
-<line stroke="Black" stroke-width="1.875" marker-end="url(#arrowEnd)" x1="777" y1="9496.875" x2="807" y2="9496.875" />
-<line stroke="Black" stroke-width="1.875" marker-start="url(#arrowStart)" x1="762" y1="9487.5" x2="777" y2="9487.5" />
-<line stroke="Black" stroke-width="1.875" x1="777" y1="9487.5" x2="777" y2="9496.875" />
+<line stroke="Black" stroke-width="1.875" marker-end="url(#arrowEnd)" x1="955.5" y1="9496.875" x2="985.49994" y2="9496.875" />
+<line stroke="Black" stroke-width="1.875" marker-start="url(#arrowStart)" x1="940.5" y1="9487.5" x2="955.5" y2="9487.5" />
+<line stroke="Black" stroke-width="1.875" x1="955.5" y1="9487.5" x2="955.5" y2="9496.875" />
 </g>
 <g>
-<g transform="translate(807 9461.25)">
+<g transform="translate(985.49994 9461.25)">
 <rect fill="LightGreen" stroke="Black" stroke-width="1.875" x="0" y="0" width="99" height="71.25" rx="3.75" ry="3.75" />
 <a href="./ValueSet-ObservedGroupingVS.html" target="_top">
 <text x="49.5" y="22.5" text-anchor="middle">Observed</text>

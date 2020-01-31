@@ -17,15 +17,25 @@
   "description": "Observed grouping of abnormalities code system.",
   "caseSensitive": true,
   "content": "complete",
-  "count": 2,
+  "count": 4,
   "concept": [
     {
-      "code": "Multiple",
+      "code": "MultipleRegions",
+      "display": "Multiple Observed Regions in Grouping",
+      "definition": "[PR] Multiple Observed Regions in Grouping"
+    },
+    {
+      "code": "ClusterOfRegions",
+      "display": "Cluster of Observed Regions in Grouping",
+      "definition": "[PR] Cluster of Observed Regions in Grouping"
+    },
+    {
+      "code": "MultipleItems",
       "display": "Multiple Items in Grouping",
       "definition": "[PR] Multiple Items in Grouping"
     },
     {
-      "code": "ClusterOf",
+      "code": "ClusterOfItems",
       "display": "Cluster of Items in Grouping",
       "definition": "[PR] Cluster of Items in Grouping"
     }

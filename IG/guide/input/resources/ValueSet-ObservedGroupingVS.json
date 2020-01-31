@@ -25,11 +25,19 @@
         "system": "http://hl7.org/fhir/us/breast-radiology/CodeSystem/ObservedGroupingCS",
         "concept": [
           {
-            "code": "Multiple",
+            "code": "MultipleRegions",
+            "display": "Multiple Observed Regions in Grouping"
+          },
+          {
+            "code": "ClusterOfRegions",
+            "display": "Cluster of Observed Regions in Grouping"
+          },
+          {
+            "code": "MultipleItems",
             "display": "Multiple Items in Grouping"
           },
           {
-            "code": "ClusterOf",
+            "code": "ClusterOfItems",
             "display": "Cluster of Items in Grouping"
           }
         ]

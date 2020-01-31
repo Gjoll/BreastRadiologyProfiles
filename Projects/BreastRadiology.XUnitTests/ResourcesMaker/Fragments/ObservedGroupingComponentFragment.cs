@@ -25,13 +25,25 @@ namespace BreastRadiology.XUnitTests
                      new ConceptDef[]
                      {
                          new ConceptDef()
-                             .SetCode("Multiple")
+                             .SetCode("MultipleRegions")
+                             .SetDisplay("Multiple Observed Regions in Grouping")
+                             .SetDefinition(new Definition()
+                                 .Line("[PR] Multiple Observed Regions in Grouping")
+                             ),
+                         new ConceptDef()
+                             .SetCode("ClusterOfRegions")
+                             .SetDisplay("Cluster of Observed Regions in Grouping")
+                             .SetDefinition(new Definition()
+                                 .Line("[PR] Cluster of Observed Regions in Grouping")
+                             ),
+                         new ConceptDef()
+                             .SetCode("MultipleItems")
                              .SetDisplay("Multiple Items in Grouping")
                              .SetDefinition(new Definition()
                                  .Line("[PR] Multiple Items in Grouping")
                              ),
                          new ConceptDef()
-                             .SetCode("ClusterOf")
+                             .SetCode("ClusterOfItems")
                              .SetDisplay("Cluster of Items in Grouping")
                              .SetDefinition(new Definition()
                                  .Line("[PR] Cluster of Items in Grouping")
@@ -70,13 +82,11 @@ namespace BreastRadiology.XUnitTests
                        Self.ObservedGroupingVS.Value(),
                        BindingStrength.Required,
                        0,
-                       "1",
-                       "Observed Grouping of Abnormalities",
+                       "*",
+                       "Observed Grouping of Abnormalities regions or items",
                        new Markdown()
                                 .Paragraph("This component slice contains the grouping of an item observed.",
-                                            "If a grouping component is included in an observation, then what is being observed is a grouping of items")
-                                .Paragraph("If an ObservedRegion component is included, then the grouping of a grouping of these areas.",
-                                            "Otherwise the grouping is a grouping of the items observed.")
+                                            "The grouping component can describe a grouping of items and/or a grouping of regions.")
                        );
                });
     }
