@@ -244,22 +244,22 @@
 	    <img src="Frag-ObservedGroupingFragment.svg" alt="ObservedGroupingFragment"/>
 	</object>
 	<p>
+	Fragment Diagram ObservedItemGroup
+	</p>
+	<object data="Frag-ObservedItemGroup.svg" type="image/svg+xml">
+	    <img src="Frag-ObservedItemGroup.svg" alt="ObservedItemGroup"/>
+	</object>
+	<p>
+	Fragment Diagram ObservedItemGroupFragment
+	</p>
+	<object data="Frag-ObservedItemGroupFragment.svg" type="image/svg+xml">
+	    <img src="Frag-ObservedItemGroupFragment.svg" alt="ObservedItemGroupFragment"/>
+	</object>
+	<p>
 	Fragment Diagram ObservedRegionFragment
 	</p>
 	<object data="Frag-ObservedRegionFragment.svg" type="image/svg+xml">
 	    <img src="Frag-ObservedRegionFragment.svg" alt="ObservedRegionFragment"/>
-	</object>
-	<p>
-	Fragment Diagram ObservedSize
-	</p>
-	<object data="Frag-ObservedSize.svg" type="image/svg+xml">
-	    <img src="Frag-ObservedSize.svg" alt="ObservedSize"/>
-	</object>
-	<p>
-	Fragment Diagram ObservedSizeFragment
-	</p>
-	<object data="Frag-ObservedSizeFragment.svg" type="image/svg+xml">
-	    <img src="Frag-ObservedSizeFragment.svg" alt="ObservedSizeFragment"/>
 	</object>
 	<p>
 	Fragment Diagram SectionFindingsLeftBreast

@@ -7,6 +7,19 @@ namespace BreastRadiology.XUnitTests
 {
     public static class ValueSetExtensions
     {
+        public static Coding Find(this ValueSet vs, String code)
+        {
+            foreach (ValueSet.ConceptSetComponent component in vs.Compose.Include)
+            {
+                foreach (ValueSet.ConceptReferenceComponent concept in component.Concept)
+                {
+                    if (concept.Code == code)
+                        return new Coding(component.System, concept.Code);
+                }
+            }
+            throw new Exception($"Code {code} not found in valueset!");
+        }
+
         public static ValueSet Remove(this ValueSet vs, String code)
         {
             foreach (ValueSet.ConceptSetComponent component in vs.Compose.Include)

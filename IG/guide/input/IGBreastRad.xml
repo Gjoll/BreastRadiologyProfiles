@@ -262,6 +262,15 @@
     </resource>
     <resource>
       <reference>
+        <reference value="CodeSystem/ItemGroupComponentCodesCS" />
+      </reference>
+      <name value="Item Group Codes CodeSystem" />
+      <description value="ItemGroupComponentCodes code system" />
+      <exampleBoolean value="false" />
+      <groupingId value="CommonCodesCS" />
+    </resource>
+    <resource>
+      <reference>
         <reference value="CodeSystem/MammoCalcificationDistributionCS" />
       </reference>
       <name value="Mammography Calcification Distribution CodeSystem" />
@@ -498,8 +507,8 @@
       <reference>
         <reference value="ValueSet/DimensionCodeVS" />
       </reference>
-      <name value="DimensionCode ValueSet" />
-      <description value="DimensionCode value set." />
+      <name value="Dimension Code ValueSet" />
+      <description value="Dimension Code value set." />
       <exampleBoolean value="false" />
       <groupingId value="MGCodesVS" />
     </resource>
@@ -520,6 +529,15 @@
       <description value="Foreign objects observed during a Breast Radiology exam value set" />
       <exampleBoolean value="false" />
       <groupingId value="CommonCodesVS" />
+    </resource>
+    <resource>
+      <reference>
+        <reference value="ValueSet/ItemGroupComponentCodesVS" />
+      </reference>
+      <name value="Item Group Component Codes ValueSet" />
+      <description value="Item Group Component Codes value set." />
+      <exampleBoolean value="false" />
+      <groupingId value="MGCodesVS" />
     </resource>
     <resource>
       <reference>
@@ -883,9 +901,9 @@
     </resource>
     <resource>
       <reference>
-        <reference value="StructureDefinition/ObservedSize" />
+        <reference value="StructureDefinition/ObservedItemGroup" />
       </reference>
-      <name value="Observed Size" />
+      <name value="Observed ItemGroup" />
       <description value="Observation of a size or size range in 1, 2, or 3 dimensions." />
       <exampleBoolean value="false" />
       <groupingId value="MGResources" />
@@ -1072,19 +1090,19 @@
     </resource>
     <resource>
       <reference>
-        <reference value="StructureDefinition/ObservedRegionFragment" />
+        <reference value="StructureDefinition/ObservedItemGroupFragment" />
       </reference>
-      <name value="ObservedRegion Fragment" />
-      <description value="Fragment 'Fragment that adds 'Observed Region' element to profile.'" />
+      <name value="ObservedItemGroup Fragment" />
+      <description value="Fragment 'Fragment that adds 'Observed Item Group' hasmember element to profile.'" />
       <exampleBoolean value="false" />
       <groupingId value="Fragments" />
     </resource>
     <resource>
       <reference>
-        <reference value="StructureDefinition/ObservedSizeFragment" />
+        <reference value="StructureDefinition/ObservedRegionFragment" />
       </reference>
-      <name value="ObservedSize Fragment" />
-      <description value="Fragment 'Fragment that adds 'Observed Size' hasmember element to profile.'" />
+      <name value="ObservedRegion Fragment" />
+      <description value="Fragment 'Fragment that adds 'Observed Region' element to profile.'" />
       <exampleBoolean value="false" />
       <groupingId value="Fragments" />
     </resource>

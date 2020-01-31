@@ -18,7 +18,7 @@
    <title value="Breast Radiology Reporting - 1st STU ballot"/>
    <status value="draft"/>
    <experimental value="false"/>
-   <date value="2020-01-31T13:05:11-06:00"/>
+   <date value="2020-01-31T16:53:11-06:00"/>
    <publisher value="Hl7 - Clinical Interoperability Council"/>
    <contact>
       <telecom>
@@ -339,6 +339,21 @@
          </reference>
          <name value="Foreign Object CodeSystem"/>
          <description value="Foreign objects observed during a Breast Radiology exam code system."/>
+         <exampleBoolean value="false"/>
+         <groupingId value="CommonCodesCS"/>
+      </resource>
+      <resource>
+         <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+            <valueString value="CodeSystem"/>
+         </extension>
+         <extension url="http://hl7.org/fhir/StructureDefinition/implementationguide-page">
+            <valueUri value="CodeSystem-ItemGroupComponentCodesCS.html"/>
+         </extension>
+         <reference>
+            <reference value="CodeSystem/ItemGroupComponentCodesCS"/>
+         </reference>
+         <name value="Item Group Codes CodeSystem"/>
+         <description value="ItemGroupComponentCodes code system"/>
          <exampleBoolean value="false"/>
          <groupingId value="CommonCodesCS"/>
       </resource>
@@ -742,8 +757,8 @@
          <reference>
             <reference value="ValueSet/DimensionCodeVS"/>
          </reference>
-         <name value="DimensionCode ValueSet"/>
-         <description value="DimensionCode value set."/>
+         <name value="Dimension Code ValueSet"/>
+         <description value="Dimension Code value set."/>
          <exampleBoolean value="false"/>
          <groupingId value="MGCodesVS"/>
       </resource>
@@ -776,6 +791,21 @@
          <description value="Foreign objects observed during a Breast Radiology exam value set"/>
          <exampleBoolean value="false"/>
          <groupingId value="CommonCodesVS"/>
+      </resource>
+      <resource>
+         <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+            <valueString value="ValueSet"/>
+         </extension>
+         <extension url="http://hl7.org/fhir/StructureDefinition/implementationguide-page">
+            <valueUri value="ValueSet-ItemGroupComponentCodesVS.html"/>
+         </extension>
+         <reference>
+            <reference value="ValueSet/ItemGroupComponentCodesVS"/>
+         </reference>
+         <name value="Item Group Component Codes ValueSet"/>
+         <description value="Item Group Component Codes value set."/>
+         <exampleBoolean value="false"/>
+         <groupingId value="MGCodesVS"/>
       </resource>
       <resource>
          <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
@@ -1382,12 +1412,12 @@
             <valueString value="StructureDefinition:resource"/>
          </extension>
          <extension url="http://hl7.org/fhir/StructureDefinition/implementationguide-page">
-            <valueUri value="StructureDefinition-ObservedSize.html"/>
+            <valueUri value="StructureDefinition-ObservedItemGroup.html"/>
          </extension>
          <reference>
-            <reference value="StructureDefinition/ObservedSize"/>
+            <reference value="StructureDefinition/ObservedItemGroup"/>
          </reference>
-         <name value="Observed Size"/>
+         <name value="Observed ItemGroup"/>
          <description value="Observation of a size or size range in 1, 2, or 3 dimensions."/>
          <exampleBoolean value="false"/>
          <groupingId value="MGResources"/>
@@ -1697,13 +1727,13 @@
             <valueString value="StructureDefinition:resource:abstract"/>
          </extension>
          <extension url="http://hl7.org/fhir/StructureDefinition/implementationguide-page">
-            <valueUri value="StructureDefinition-ObservedRegionFragment.html"/>
+            <valueUri value="StructureDefinition-ObservedItemGroupFragment.html"/>
          </extension>
          <reference>
-            <reference value="StructureDefinition/ObservedRegionFragment"/>
+            <reference value="StructureDefinition/ObservedItemGroupFragment"/>
          </reference>
-         <name value="ObservedRegion Fragment"/>
-         <description value="Fragment 'Fragment that adds 'Observed Region' element to profile.'"/>
+         <name value="ObservedItemGroup Fragment"/>
+         <description value="Fragment 'Fragment that adds 'Observed Item Group' hasmember element to profile.'"/>
          <exampleBoolean value="false"/>
          <groupingId value="Fragments"/>
       </resource>
@@ -1712,13 +1742,13 @@
             <valueString value="StructureDefinition:resource:abstract"/>
          </extension>
          <extension url="http://hl7.org/fhir/StructureDefinition/implementationguide-page">
-            <valueUri value="StructureDefinition-ObservedSizeFragment.html"/>
+            <valueUri value="StructureDefinition-ObservedRegionFragment.html"/>
          </extension>
          <reference>
-            <reference value="StructureDefinition/ObservedSizeFragment"/>
+            <reference value="StructureDefinition/ObservedRegionFragment"/>
          </reference>
-         <name value="ObservedSize Fragment"/>
-         <description value="Fragment 'Fragment that adds 'Observed Size' hasmember element to profile.'"/>
+         <name value="ObservedRegion Fragment"/>
+         <description value="Fragment 'Fragment that adds 'Observed Region' element to profile.'"/>
          <exampleBoolean value="false"/>
          <groupingId value="Fragments"/>
       </resource>
@@ -2046,6 +2076,11 @@
                <generation value="generated"/>
             </page>
             <page>
+               <nameUrl value="CodeSystem-ItemGroupComponentCodesCS.html"/>
+               <title value="Item Group Codes CodeSystem"/>
+               <generation value="generated"/>
+            </page>
+            <page>
                <nameUrl value="CodeSystem-MarginCS.html"/>
                <title value="MarginCodeSystem"/>
                <generation value="generated"/>
@@ -2126,8 +2161,8 @@
                <generation value="generated"/>
             </page>
             <page>
-               <nameUrl value="StructureDefinition-ObservedSize.html"/>
-               <title value="Observed Size"/>
+               <nameUrl value="StructureDefinition-ObservedItemGroup.html"/>
+               <title value="Observed ItemGroup"/>
                <generation value="generated"/>
             </page>
             <page>
@@ -2147,7 +2182,12 @@
             </page>
             <page>
                <nameUrl value="ValueSet-DimensionCodeVS.html"/>
-               <title value="DimensionCode ValueSet"/>
+               <title value="Dimension Code ValueSet"/>
+               <generation value="generated"/>
+            </page>
+            <page>
+               <nameUrl value="ValueSet-ItemGroupComponentCodesVS.html"/>
+               <title value="Item Group Component Codes ValueSet"/>
                <generation value="generated"/>
             </page>
             <page>
@@ -2326,13 +2366,13 @@
                <generation value="generated"/>
             </page>
             <page>
-               <nameUrl value="StructureDefinition-ObservedRegionFragment.html"/>
-               <title value="ObservedRegion Fragment"/>
+               <nameUrl value="StructureDefinition-ObservedItemGroupFragment.html"/>
+               <title value="ObservedItemGroup Fragment"/>
                <generation value="generated"/>
             </page>
             <page>
-               <nameUrl value="StructureDefinition-ObservedSizeFragment.html"/>
-               <title value="ObservedSize Fragment"/>
+               <nameUrl value="StructureDefinition-ObservedRegionFragment.html"/>
+               <title value="ObservedRegion Fragment"/>
                <generation value="generated"/>
             </page>
             <page>

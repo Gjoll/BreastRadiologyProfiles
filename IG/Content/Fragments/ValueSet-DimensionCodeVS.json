@@ -12,13 +12,13 @@
     },
     {
       "url": "http://www.fragment.com/mapname",
-      "valueString": "DimensionCode/ValueSet"
+      "valueString": "Dimension Code/ValueSet"
     }
   ],
   "url": "http://hl7.org/fhir/us/breast-radiology/ValueSet/DimensionCodeVS",
   "name": "DimensionCodeVS",
-  "title": "DimensionCode ValueSet",
-  "description": "DimensionCode value set.",
+  "title": "Dimension Code ValueSet",
+  "description": "Dimension Code value set.",
   "compose": {
     "include": [
       {

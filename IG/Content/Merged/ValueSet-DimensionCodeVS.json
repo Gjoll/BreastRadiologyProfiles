@@ -12,7 +12,7 @@
     },
     {
       "url": "http://www.fragment.com/mapname",
-      "valueString": "DimensionCode/ValueSet"
+      "valueString": "Dimension Code/ValueSet"
     },
     {
       "url": "http://www.fragment.com/mapname",
@@ -26,7 +26,7 @@
   "url": "http://hl7.org/fhir/us/breast-radiology/ValueSet/DimensionCodeVS",
   "version": "0.0.2",
   "name": "DimensionCodeVS",
-  "title": "DimensionCode ValueSet",
+  "title": "Dimension Code ValueSet",
   "status": "draft",
   "date": "2019-11-01",
   "publisher": "Hl7-Clinical Interoperability Council",
@@ -40,7 +40,7 @@
       ]
     }
   ],
-  "description": "DimensionCode value set.",
+  "description": "Dimension Code value set.",
   "compose": {
     "include": [
       {

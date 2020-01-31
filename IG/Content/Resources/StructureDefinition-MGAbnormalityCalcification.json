@@ -175,7 +175,7 @@
     },
     {
       "url": "http://www.fragment.com/maplink",
-      "valueString": "{\r\n  \"LinkType\": \"fragment\",\r\n  \"ShowChildren\": false,\r\n  \"LinkTarget\": \"http://hl7.org/fhir/us/breast-radiology/StructureDefinition/ObservedSizeFragment\"\r\n}"
+      "valueString": "{\r\n  \"LinkType\": \"fragment\",\r\n  \"ShowChildren\": false,\r\n  \"LinkTarget\": \"http://hl7.org/fhir/us/breast-radiology/StructureDefinition/ObservedItemGroupFragment\"\r\n}"
     },
     {
       "url": "http://www.fragment.com/maplink",
@@ -215,15 +215,15 @@
     },
     {
       "url": "http://www.fragment.com/mapname",
-      "valueString": "ObservedSize Fragment"
+      "valueString": "ObservedItemGroup Fragment"
     },
     {
       "url": "http://www.fragment.com/Group",
-      "valueString": "Fragment/ObservedSizeFragment"
+      "valueString": "Fragment/ObservedItemGroupFragment"
     },
     {
       "url": "http://www.fragment.com/maplink",
-      "valueString": "{\r\n  \"LinkType\": \"target\",\r\n  \"ShowChildren\": false,\r\n  \"Cardinality\": \"0..1\",\r\n  \"LinkTarget\": \"http://hl7.org/fhir/us/breast-radiology/StructureDefinition/ObservedSize\"\r\n}"
+      "valueString": "{\r\n  \"LinkType\": \"target\",\r\n  \"ShowChildren\": false,\r\n  \"Cardinality\": \"0..1\",\r\n  \"LinkTarget\": \"http://hl7.org/fhir/us/breast-radiology/StructureDefinition/ObservedItemGroup\"\r\n}"
     },
     {
       "url": "http://www.fragment.com/mapname",
@@ -2353,11 +2353,11 @@
         ]
       },
       {
-        "id": "Observation.hasMember:observedSize",
+        "id": "Observation.hasMember:observedItemGroup",
         "path": "Observation.hasMember",
-        "sliceName": "observedSize",
-        "short": "'Observed Size' reference",
-        "definition": "This slice references the target 'Observed Size'.",
+        "sliceName": "observedItemGroup",
+        "short": "'Observed ItemGroup' reference",
+        "definition": "This slice references the target 'Observed ItemGroup'.",
         "comment": "When using this element, an observation will typically have either a value or a set of related resources, although both may be present in some cases.  For a discussion on the ways Observations can assembled in groups together, see [Notes](observation.html#obsgrouping) below.  Note that a system may calculate results from [QuestionnaireResponse](questionnaireresponse.html)  into a final score and represent the score as an Observation.",
         "min": 0,
         "max": "1",
@@ -2370,7 +2370,7 @@
           {
             "code": "Reference",
             "targetProfile": [
-              "http://hl7.org/fhir/us/breast-radiology/StructureDefinition/ObservedSize"
+              "http://hl7.org/fhir/us/breast-radiology/StructureDefinition/ObservedItemGroup"
             ]
           }
         ],
@@ -4453,7 +4453,7 @@
           "coding": [
             {
               "system": "http://hl7.org/fhir/us/breast-radiology/CodeSystem/ComponentSliceCodes",
-              "code": "observedSize"
+              "code": "observedCount"
             }
           ]
         },
@@ -5658,7 +5658,7 @@
           "coding": [
             {
               "system": "http://hl7.org/fhir/us/breast-radiology/CodeSystem/ComponentSliceCodes",
-              "code": "observedSize"
+              "code": "observedCount"
             }
           ]
         },
@@ -6649,11 +6649,11 @@
         ]
       },
       {
-        "id": "Observation.hasMember:observedSize",
+        "id": "Observation.hasMember:observedItemGroup",
         "path": "Observation.hasMember",
-        "sliceName": "observedSize",
-        "short": "'Observed Size' reference",
-        "definition": "This slice references the target 'Observed Size'.",
+        "sliceName": "observedItemGroup",
+        "short": "'Observed ItemGroup' reference",
+        "definition": "This slice references the target 'Observed ItemGroup'.",
         "min": 0,
         "max": "1",
         "base": {
@@ -6665,7 +6665,7 @@
           {
             "code": "Reference",
             "targetProfile": [
-              "http://hl7.org/fhir/us/breast-radiology/StructureDefinition/ObservedSize"
+              "http://hl7.org/fhir/us/breast-radiology/StructureDefinition/ObservedItemGroup"
             ]
           }
         ],
@@ -7572,7 +7572,7 @@
           "coding": [
             {
               "system": "http://hl7.org/fhir/us/breast-radiology/CodeSystem/ComponentSliceCodes",
-              "code": "observedSize"
+              "code": "observedCount"
             }
           ]
         }
@@ -8105,7 +8105,7 @@
           "coding": [
             {
               "system": "http://hl7.org/fhir/us/breast-radiology/CodeSystem/ComponentSliceCodes",
-              "code": "observedSize"
+              "code": "observedCount"
             }
           ]
         }

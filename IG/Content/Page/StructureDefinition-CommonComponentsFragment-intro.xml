@@ -26,8 +26,8 @@
 <li><a href="./StructureDefinition-BreastBodyLocationRequiredFragment.html">Breast Body Location (Required) Fragment</a></li>
 <li><a href="./StructureDefinition-ObservedChangesFragment.html">ObservedChanges Fragment</a></li>
 <li><a href="./StructureDefinition-ObservedGroupingFragment.html">ObservedGrouping Fragment</a></li>
+<li><a href="./StructureDefinition-ObservedItemGroupFragment.html">ObservedItemGroup Fragment</a></li>
 <li><a href="./StructureDefinition-ObservedRegionFragment.html">ObservedRegion Fragment</a></li>
-<li><a href="./StructureDefinition-ObservedSizeFragment.html">ObservedSize Fragment</a></li>
   </ul>
   <!-- -profileFragments-->
 </div>

@@ -31,7 +31,7 @@ namespace BreastRadiology.XUnitTests
         Coding CodeMargin => new Coding(ComponentSliceCodesUrl, "margin");
         Coding CodeMGDensity => new Coding(ComponentSliceCodesUrl, "mgDensity");
         Coding CodeNotPreviouslySeen => new Coding(ComponentSliceCodesUrl, "notPreviouslySeen");
-        Coding CodeObservedSize => new Coding(ComponentSliceCodesUrl, "observedSize");
+        Coding CodeObservedItemGroup => new Coding(ComponentSliceCodesUrl, "observedItemGroup");
         Coding CodeObservedGrouping => new Coding(ComponentSliceCodesUrl, "observedGrouping");
         Coding CodeObservedRegion => new Coding(ComponentSliceCodesUrl, "observedRegion");
         Coding CodeObservedCount => new Coding(ComponentSliceCodesUrl, "observedCount");
@@ -114,9 +114,9 @@ namespace BreastRadiology.XUnitTests
                                 new Definition()
                                     .Line("Slicing Component Code - Observed Changes")
                                 ),
-                            new ConceptDef(Self.CodeObservedSize,
+                            new ConceptDef(Self.CodeObservedItemGroup,
                                 new Definition()
-                                    .Line("Slicing Component Code - ObservedSize")
+                                    .Line("Slicing Component Code - ObservedItemGroup")
                                 ),
                             new ConceptDef(Self.CodeObservedGrouping,
                                 new Definition()

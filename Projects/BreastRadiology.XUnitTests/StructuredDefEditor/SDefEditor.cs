@@ -421,7 +421,7 @@ namespace BreastRadiology.XUnitTests
             componentNode.ApplySlicing(slicingComponent, false);
         }
 
-        public void ComponentSliceCodeableConcept(String sliceName,
+        public ElementTreeSlice ComponentSliceCodeableConcept(String sliceName,
                 CodeableConcept pattern,
                 ValueSet valueSet,
                 BindingStrength bindingStrength,
@@ -487,9 +487,11 @@ namespace BreastRadiology.XUnitTests
                 componentRef,
                 "CodeableConcept",
                 valueSet.Url);
+
+            return slice;
         }
 
-        public void SliceComponentCode(ElementTreeSlice slice,
+        public ElementTreeNode SliceComponentCode(ElementTreeSlice slice,
             String sliceName,
             CodeableConcept sliceCode)
         {
@@ -501,7 +503,7 @@ namespace BreastRadiology.XUnitTests
                 Max = "1"
             };
             componentCode.Pattern(sliceCode);
-            slice.CreateNode(componentCode);
+            return slice.CreateNode(componentCode);
         }
 
         public ElementTreeNode SliceValueXByType(ElementTreeSlice slice,

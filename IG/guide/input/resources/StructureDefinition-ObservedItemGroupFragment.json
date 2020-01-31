@@ -1,11 +1,11 @@
 {
   "resourceType": "StructureDefinition",
-  "url": "http://hl7.org/fhir/us/breast-radiology/StructureDefinition/ObservedSizeFragment",
+  "url": "http://hl7.org/fhir/us/breast-radiology/StructureDefinition/ObservedItemGroupFragment",
   "version": "Fragment",
-  "name": "ObservedSizeFragment",
-  "title": "ObservedSize Fragment",
+  "name": "ObservedItemGroupFragment",
+  "title": "ObservedItemGroup Fragment",
   "status": "draft",
-  "description": "<b>Fragment that adds 'Observed Size' hasmember element to profile.</b>",
+  "description": "<b>Fragment that adds 'Observed Item Group' hasmember element to profile.</b>",
   "fhirVersion": "4.0.0",
   "kind": "resource",
   "abstract": true,
@@ -17,7 +17,7 @@
       {
         "id": "Observation",
         "path": "Observation",
-        "short": "Fragment that adds 'Observed Size' hasmember element to profile.",
+        "short": "Fragment that adds 'Observed Item Group' hasmember element to profile.",
         "definition": "Measurements and simple assertions made about a patient, device or other subject.",
         "comment": "Used for simple observations such as device measurements, laboratory atomic results, vital signs, height, weight, smoking status, comments, etc.  Other resources are used to provide context for observations such as laboratory reports, etc.",
         "alias": [
@@ -1728,11 +1728,11 @@
         ]
       },
       {
-        "id": "Observation.hasMember:observedSize",
+        "id": "Observation.hasMember:observedItemGroup",
         "path": "Observation.hasMember",
-        "sliceName": "observedSize",
-        "short": "'Observed Size' reference",
-        "definition": "This slice references the target 'Observed Size'.",
+        "sliceName": "observedItemGroup",
+        "short": "'Observed ItemGroup' reference",
+        "definition": "This slice references the target 'Observed ItemGroup'.",
         "comment": "When using this element, an observation will typically have either a value or a set of related resources, although both may be present in some cases.  For a discussion on the ways Observations can assembled in groups together, see [Notes](observation.html#obsgrouping) below.  Note that a system may calculate results from [QuestionnaireResponse](questionnaireresponse.html)  into a final score and represent the score as an Observation.",
         "min": 0,
         "max": "1",
@@ -1745,7 +1745,7 @@
           {
             "code": "Reference",
             "targetProfile": [
-              "http://hl7.org/fhir/us/breast-radiology/StructureDefinition/ObservedSize"
+              "http://hl7.org/fhir/us/breast-radiology/StructureDefinition/ObservedItemGroup"
             ]
           }
         ],
@@ -2194,7 +2194,7 @@
       {
         "id": "Observation",
         "path": "Observation",
-        "short": "Fragment that adds 'Observed Size' hasmember element to profile.",
+        "short": "Fragment that adds 'Observed Item Group' hasmember element to profile.",
         "base": {
           "path": "Observation",
           "min": 0,
@@ -2221,11 +2221,11 @@
         }
       },
       {
-        "id": "Observation.hasMember:observedSize",
+        "id": "Observation.hasMember:observedItemGroup",
         "path": "Observation.hasMember",
-        "sliceName": "observedSize",
-        "short": "'Observed Size' reference",
-        "definition": "This slice references the target 'Observed Size'.",
+        "sliceName": "observedItemGroup",
+        "short": "'Observed ItemGroup' reference",
+        "definition": "This slice references the target 'Observed ItemGroup'.",
         "min": 0,
         "max": "1",
         "base": {
@@ -2237,7 +2237,7 @@
           {
             "code": "Reference",
             "targetProfile": [
-              "http://hl7.org/fhir/us/breast-radiology/StructureDefinition/ObservedSize"
+              "http://hl7.org/fhir/us/breast-radiology/StructureDefinition/ObservedItemGroup"
             ]
           }
         ],

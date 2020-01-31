@@ -80,8 +80,8 @@
       "definition": "Slicing Component Code - Observed Changes"
     },
     {
-      "code": "observedSize",
-      "definition": "Slicing Component Code - ObservedSize"
+      "code": "observedItemGroup",
+      "definition": "Slicing Component Code - ObservedItemGroup"
     },
     {
       "code": "observedGrouping",

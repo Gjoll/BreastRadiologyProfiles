@@ -2310,7 +2310,7 @@
           "coding": [
             {
               "system": "http://hl7.org/fhir/us/breast-radiology/CodeSystem/ComponentSliceCodes",
-              "code": "observedSize"
+              "code": "observedCount"
             }
           ]
         },
@@ -2680,7 +2680,7 @@
           "coding": [
             {
               "system": "http://hl7.org/fhir/us/breast-radiology/CodeSystem/ComponentSliceCodes",
-              "code": "observedSize"
+              "code": "observedCount"
             }
           ]
         }
