@@ -18,7 +18,7 @@
    <title value="Breast Radiology Reporting - 1st STU ballot"/>
    <status value="draft"/>
    <experimental value="false"/>
-   <date value="2020-01-30T17:32:37-06:00"/>
+   <date value="2020-01-31T13:05:11-06:00"/>
    <publisher value="Hl7 - Clinical Interoperability Council"/>
    <contact>
       <telecom>
@@ -294,6 +294,21 @@
          </reference>
          <name value="Consistent With CodeSystem"/>
          <description value="CorrespondsWith code system"/>
+         <exampleBoolean value="false"/>
+         <groupingId value="CommonCodesCS"/>
+      </resource>
+      <resource>
+         <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+            <valueString value="CodeSystem"/>
+         </extension>
+         <extension url="http://hl7.org/fhir/StructureDefinition/implementationguide-page">
+            <valueUri value="CodeSystem-DimensionCodeCodeSystemCS.html"/>
+         </extension>
+         <reference>
+            <reference value="CodeSystem/DimensionCodeCodeSystemCS"/>
+         </reference>
+         <name value="Consistent With CodeSystem"/>
+         <description value="DimensionCode code system"/>
          <exampleBoolean value="false"/>
          <groupingId value="CommonCodesCS"/>
       </resource>
@@ -714,6 +729,21 @@
          </reference>
          <name value="CorrespondsWith ValueSet"/>
          <description value="CorrespondsWith value set."/>
+         <exampleBoolean value="false"/>
+         <groupingId value="MGCodesVS"/>
+      </resource>
+      <resource>
+         <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+            <valueString value="ValueSet"/>
+         </extension>
+         <extension url="http://hl7.org/fhir/StructureDefinition/implementationguide-page">
+            <valueUri value="ValueSet-DimensionCodeVS.html"/>
+         </extension>
+         <reference>
+            <reference value="ValueSet/DimensionCodeVS"/>
+         </reference>
+         <name value="DimensionCode ValueSet"/>
+         <description value="DimensionCode value set."/>
          <exampleBoolean value="false"/>
          <groupingId value="MGCodesVS"/>
       </resource>
@@ -1352,6 +1382,21 @@
             <valueString value="StructureDefinition:resource"/>
          </extension>
          <extension url="http://hl7.org/fhir/StructureDefinition/implementationguide-page">
+            <valueUri value="StructureDefinition-ObservedSize.html"/>
+         </extension>
+         <reference>
+            <reference value="StructureDefinition/ObservedSize"/>
+         </reference>
+         <name value="Observed Size"/>
+         <description value="Observation of a size or size range in 1, 2, or 3 dimensions."/>
+         <exampleBoolean value="false"/>
+         <groupingId value="MGResources"/>
+      </resource>
+      <resource>
+         <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+            <valueString value="StructureDefinition:resource"/>
+         </extension>
+         <extension url="http://hl7.org/fhir/StructureDefinition/implementationguide-page">
             <valueUri value="StructureDefinition-MRIFinding.html"/>
          </extension>
          <reference>
@@ -1673,7 +1718,7 @@
             <reference value="StructureDefinition/ObservedSizeFragment"/>
          </reference>
          <name value="ObservedSize Fragment"/>
-         <description value="Fragment 'Fragment that adds 'Observed Size' element to profile.'"/>
+         <description value="Fragment 'Fragment that adds 'Observed Size' hasmember element to profile.'"/>
          <exampleBoolean value="false"/>
          <groupingId value="Fragments"/>
       </resource>
@@ -1986,6 +2031,11 @@
                <generation value="generated"/>
             </page>
             <page>
+               <nameUrl value="CodeSystem-DimensionCodeCodeSystemCS.html"/>
+               <title value="Consistent With CodeSystem"/>
+               <generation value="generated"/>
+            </page>
+            <page>
                <nameUrl value="CodeSystem-FibroadenomaCodeSystemCS.html"/>
                <title value="Fibroadenoma CodeSystem"/>
                <generation value="generated"/>
@@ -2076,6 +2126,11 @@
                <generation value="generated"/>
             </page>
             <page>
+               <nameUrl value="StructureDefinition-ObservedSize.html"/>
+               <title value="Observed Size"/>
+               <generation value="generated"/>
+            </page>
+            <page>
                <nameUrl value="ValueSet-ConsistentWithQualifierVS.html"/>
                <title value="ConsistentWithQualifier ValueSet"/>
                <generation value="generated"/>
@@ -2088,6 +2143,11 @@
             <page>
                <nameUrl value="ValueSet-CorrespondsWithVS.html"/>
                <title value="CorrespondsWith ValueSet"/>
+               <generation value="generated"/>
+            </page>
+            <page>
+               <nameUrl value="ValueSet-DimensionCodeVS.html"/>
+               <title value="DimensionCode ValueSet"/>
                <generation value="generated"/>
             </page>
             <page>

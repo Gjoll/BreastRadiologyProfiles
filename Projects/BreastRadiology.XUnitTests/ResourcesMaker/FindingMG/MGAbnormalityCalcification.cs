@@ -289,6 +289,13 @@ namespace BreastRadiology.XUnitTests
                         $"{Group_MGResources}/CalcificationAbnormality",
                         "ObservationLeaf")
                     .AddFragRef(Self.ObservationLeafFragment.Value())
+                    .AddFragRef(Self.ObservationNoDeviceFragment.Value())
+                    .AddFragRef(Self.ObservationNoComponentFragment.Value())
+                    .AddFragRef(Self.ObservationNoValueFragment.Value())
+                    .AddFragRef(Self.CommonComponentsFragment.Value())
+                    .AddFragRef(Self.NotPreviouslySeenComponentsFragment.Value())
+                    .AddFragRef(Self.ObservedCountComponentFragment.Value())
+                    .AddFragRef(Self.CorrespondsWithComponentFragment.Value())
                     .Description("Calcification Observation",
                         new Markdown()
                             .BiradHeader()
@@ -306,12 +313,6 @@ namespace BreastRadiology.XUnitTests
                             .BlockQuote("to describe calcifications within or immediately adjacent to the finding(s)")
                             .BiradFooter()
                     )
-                    .AddFragRef(Self.ObservationNoDeviceFragment.Value())
-                    .AddFragRef(Self.ObservationNoValueFragment.Value())
-                    .AddFragRef(Self.CommonComponentsFragment.Value())
-                    .AddFragRef(Self.NotPreviouslySeenComponentsFragment.Value())
-                    .AddFragRef(Self.ObservedCountComponentFragment.Value())
-                    .AddFragRef(Self.CorrespondsWithComponentFragment.Value())
                     ;
 
                 s = e.SDef;

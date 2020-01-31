@@ -112,6 +112,14 @@ namespace BreastRadiology.XUnitTests
                         $"{Group_MGResources}/AbnormalityAsymmetry",
                         "ObservationLeaf")
                     .AddFragRef(Self.ObservationLeafFragment.Value())
+                    .AddFragRef(Self.ObservationNoDeviceFragment.Value())
+                    .AddFragRef(Self.ObservationNoComponentFragment.Value())
+                    .AddFragRef(Self.ObservationNoValueFragment.Value())
+                    .AddFragRef(Self.CommonComponentsFragment.Value())
+                    .AddFragRef(Self.ShapeComponentsFragment.Value())
+                    .AddFragRef(Self.NotPreviouslySeenComponentsFragment.Value())
+                    .AddFragRef(Self.ObservedCountComponentFragment.Value())
+                    .AddFragRef(Self.CorrespondsWithComponentFragment.Value())
                     .Description("Asymmetry Observation",
                         new Markdown()
                             .BiradHeader()
@@ -123,13 +131,6 @@ namespace BreastRadiology.XUnitTests
                             .BlockQuote("convex-outward borders and appears to be denser in the center than at the periphery.")
                             .BiradFooter()
                     )
-                    .AddFragRef(Self.ObservationNoDeviceFragment.Value())
-                    .AddFragRef(Self.ObservationNoValueFragment.Value())
-                    .AddFragRef(Self.CommonComponentsFragment.Value())
-                    .AddFragRef(Self.ShapeComponentsFragment.Value())
-                    .AddFragRef(Self.NotPreviouslySeenComponentsFragment.Value())
-                    .AddFragRef(Self.ObservedCountComponentFragment.Value())
-                    .AddFragRef(Self.CorrespondsWithComponentFragment.Value())
                 ;
                 s = e.SDef;
 

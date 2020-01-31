@@ -67,7 +67,7 @@ namespace BreastRadiology.XUnitTests
 
 
         SDTaskVar AbnormalityCyst = new SDTaskVar(
-            (out StructureDefinition  s) =>
+            (out StructureDefinition s) =>
             {
                 ValueSet binding = Self.AbnormalityCystVS.Value();
 
@@ -86,20 +86,20 @@ namespace BreastRadiology.XUnitTests
                         ObservationUrl,
                         $"{Group_CommonResources}/AbnormalityCyst",
                         "ObservationLeaf")
-                   .AddFragRef(Self.ObservationLeafFragment.Value())
-                   .Description("Cyst Observation",
-                        new Markdown()
-                            .Paragraph("[PR]")
-                    )
+                    .AddFragRef(Self.ObservationLeafFragment.Value())
                     .AddFragRef(Self.TumorSatelliteFragment.Value())
-
                     .AddFragRef(Self.ObservationNoDeviceFragment.Value())
+                    .AddFragRef(Self.ObservationNoComponentFragment.Value())
                     .AddFragRef(Self.ObservationNoValueFragment.Value())
                     .AddFragRef(Self.CommonComponentsFragment.Value())
                     .AddFragRef(Self.ShapeComponentsFragment.Value())
                     .AddFragRef(Self.ObservedCountComponentFragment.Value())
                     .AddFragRef(Self.NotPreviouslySeenComponentsFragment.Value())
                     .AddFragRef(Self.CorrespondsWithComponentFragment.Value())
+                    .Description("Cyst Observation",
+                        new Markdown()
+                            .Paragraph("[PR]")
+                    )
                     ;
                 s = e.SDef;
 
@@ -108,8 +108,8 @@ namespace BreastRadiology.XUnitTests
                     ;
 
                 ElementTreeNode sliceElementDef = e.ConfigureSliceByUrlDiscriminator("hasMember", false);
-                e.SliceTargetReference( sliceElementDef, Self.AssociatedFeatures.Value(), 0, "1");
-                e.SliceTargetReference( sliceElementDef, Self.ConsistentWith.Value(), 0, "*");
+                e.SliceTargetReference(sliceElementDef, Self.AssociatedFeatures.Value(), 0, "1");
+                e.SliceTargetReference(sliceElementDef, Self.ConsistentWith.Value(), 0, "*");
 
                 e.StartComponentSliceing();
                 e.ComponentSliceCodeableConcept("cystType",

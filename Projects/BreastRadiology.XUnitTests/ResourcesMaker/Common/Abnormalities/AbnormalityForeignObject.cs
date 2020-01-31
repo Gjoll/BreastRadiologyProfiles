@@ -554,6 +554,7 @@ namespace BreastRadiology.XUnitTests
                     )
                     .AddFragRef(Self.ObservationNoDeviceFragment.Value())
                     .AddFragRef(Self.ObservationNoValueFragment.Value())
+                    .AddFragRef(Self.ObservationNoComponentFragment.Value())
                     .AddFragRef(Self.CommonComponentsFragment.Value())
                     .AddFragRef(Self.NotPreviouslySeenComponentsFragment.Value())
                     .AddFragRef(Self.CorrespondsWithComponentFragment.Value())

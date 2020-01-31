@@ -35,6 +35,14 @@
     },
     {
       "url": "http://www.fragment.com/fragment",
+      "valueUrl": "http://hl7.org/fhir/us/breast-radiology/StructureDefinition/BreastRadObservationNoComponentFragment"
+    },
+    {
+      "url": "http://www.fragment.com/maplink",
+      "valueString": "{\r\n  \"LinkType\": \"fragment\",\r\n  \"ShowChildren\": false,\r\n  \"LinkTarget\": \"http://hl7.org/fhir/us/breast-radiology/StructureDefinition/BreastRadObservationNoComponentFragment\"\r\n}"
+    },
+    {
+      "url": "http://www.fragment.com/fragment",
       "valueUrl": "http://hl7.org/fhir/us/breast-radiology/StructureDefinition/BreastBodyLocationRequiredFragment"
     },
     {
@@ -62,16 +70,12 @@
       "valueString": "Fragment/ObservationLeafFragment"
     },
     {
-      "url": "http://www.fragment.com/maplink",
-      "valueString": "{\r\n  \"LinkType\": \"fragment\",\r\n  \"ShowChildren\": false,\r\n  \"LinkTarget\": \"http://hl7.org/fhir/us/breast-radiology/StructureDefinition/BreastRadObservationNoComponentFragment\"\r\n}"
-    },
-    {
       "url": "http://www.fragment.com/mapname",
-      "valueString": "Observation/No Component/Fragment"
+      "valueString": "Observation/NoDevice/Fragment"
     },
     {
       "url": "http://www.fragment.com/Group",
-      "valueString": "Fragment/BreastRadObservationNoComponentFragment"
+      "valueString": "Fragment/BreastRadObservationNoDeviceFragment"
     },
     {
       "url": "http://www.fragment.com/maplink",
@@ -111,19 +115,19 @@
     },
     {
       "url": "http://www.fragment.com/mapname",
-      "valueString": "Observation/NoDevice/Fragment"
-    },
-    {
-      "url": "http://www.fragment.com/Group",
-      "valueString": "Fragment/BreastRadObservationNoDeviceFragment"
-    },
-    {
-      "url": "http://www.fragment.com/mapname",
       "valueString": "Observation/NoValue/Fragment"
     },
     {
       "url": "http://www.fragment.com/Group",
       "valueString": "Fragment/BreastRadObservationNoValueFragment"
+    },
+    {
+      "url": "http://www.fragment.com/mapname",
+      "valueString": "Observation/No Component/Fragment"
+    },
+    {
+      "url": "http://www.fragment.com/Group",
+      "valueString": "Fragment/BreastRadObservationNoComponentFragment"
     },
     {
       "url": "http://www.fragment.com/mapname",

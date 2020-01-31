@@ -75,6 +75,15 @@ namespace BreastRadiology.XUnitTests
                         $"{Group_CommonResources}/MassAbnormality",
                         "ObservationLeaf")
                     .AddFragRef(Self.ObservationLeafFragment.Value())
+                    .AddFragRef(Self.TumorSatelliteFragment.Value())
+                    .AddFragRef(Self.ObservationNoDeviceFragment.Value())
+                    .AddFragRef(Self.ObservationNoValueFragment.Value())
+                    .AddFragRef(Self.ObservationNoComponentFragment.Value())
+                    .AddFragRef(Self.CommonComponentsFragment.Value())
+                    .AddFragRef(Self.ShapeComponentsFragment.Value())
+                    .AddFragRef(Self.ObservedCountComponentFragment.Value())
+                    .AddFragRef(Self.NotPreviouslySeenComponentsFragment.Value())
+                    .AddFragRef(Self.CorrespondsWithComponentFragment.Value())
                     .Description("Mass Observation",
                         new Markdown()
                             .BiradHeader()
@@ -84,15 +93,6 @@ namespace BreastRadiology.XUnitTests
                             .BlockQuote("should be called an \"ASYMMETRY\" until its 3-dimensionality is confirmed")
                             .BiradFooter()
                     )
-                    .AddFragRef(Self.TumorSatelliteFragment.Value())
-
-                    .AddFragRef(Self.ObservationNoDeviceFragment.Value())
-                    .AddFragRef(Self.ObservationNoValueFragment.Value())
-                    .AddFragRef(Self.CommonComponentsFragment.Value())
-                    .AddFragRef(Self.ShapeComponentsFragment.Value())
-                    .AddFragRef(Self.ObservedCountComponentFragment.Value())
-                    .AddFragRef(Self.NotPreviouslySeenComponentsFragment.Value())
-                    .AddFragRef(Self.CorrespondsWithComponentFragment.Value())
                     ;
 
                 s = e.SDef;

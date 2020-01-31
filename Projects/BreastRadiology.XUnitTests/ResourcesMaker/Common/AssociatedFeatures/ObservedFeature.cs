@@ -453,14 +453,15 @@ namespace BreastRadiology.XUnitTests
                     $"{Group_CommonResources}/AssociatedFeature/ObservedFeature",
                         "ObservationLeaf")
                     .AddFragRef(Self.ObservationLeafFragment.Value())
+                    .AddFragRef(Self.ObservationNoDeviceFragment.Value())
+                    .AddFragRef(Self.ObservationNoValueFragment.Value())
+                    .AddFragRef(Self.ObservationNoComponentFragment.Value())
+                    .AddFragRef(Self.BreastBodyLocationRequiredFragment.Value())
+                    .AddFragRef(Self.ObservedCountComponentFragment.Value())
                     .Description("Observed Feature Observation",
                         new Markdown()
                             .Paragraph("The feature observed is defined by the codeable concept in the value[x] field.")
                     )
-                    .AddFragRef(Self.ObservationNoDeviceFragment.Value())
-                    .AddFragRef(Self.ObservationNoValueFragment.Value())
-                    .AddFragRef(Self.BreastBodyLocationRequiredFragment.Value())
-                    .AddFragRef(Self.ObservedCountComponentFragment.Value())
                     ;
                 s = e.SDef;
                 e.IntroDoc

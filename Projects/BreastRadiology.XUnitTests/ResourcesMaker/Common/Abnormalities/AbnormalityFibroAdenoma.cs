@@ -63,16 +63,17 @@ namespace BreastRadiology.XUnitTests
                         $"{Group_CommonResources}/AbnormalityFibroadenoma",
                         "ObservationLeaf")
                     .AddFragRef(Self.ObservationLeafFragment.Value())
+                    .AddFragRef(Self.ObservationNoDeviceFragment.Value())
+                    .AddFragRef(Self.ObservationNoValueFragment.Value())
+                    .AddFragRef(Self.ObservationNoComponentFragment.Value())
+                    .AddFragRef(Self.CommonComponentsFragment.Value())
+                    .AddFragRef(Self.ShapeComponentsFragment.Value())
+                    .AddFragRef(Self.ObservedCountComponentFragment.Value())
                     .Description("Fibroadenoma Observation",
                         new Markdown()
                             .Paragraph("[PR]")
                             .ValidModalities(Modalities.MG | Modalities.US)
                     )
-                    .AddFragRef(Self.ObservationNoDeviceFragment.Value())
-                    .AddFragRef(Self.ObservationNoValueFragment.Value())
-                    .AddFragRef(Self.CommonComponentsFragment.Value())
-                    .AddFragRef(Self.ShapeComponentsFragment.Value())
-                    .AddFragRef(Self.ObservedCountComponentFragment.Value())
                     ;
 
                 s = e.SDef;

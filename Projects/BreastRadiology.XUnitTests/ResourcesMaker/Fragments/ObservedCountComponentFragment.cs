@@ -42,8 +42,7 @@ namespace BreastRadiology.XUnitTests
                                             $"If the lower bound of the range is not set but not the upper bound is, then it means {{upper bound}} or less."
                                             )
                                 )
-                           .SetComment(new Markdown()
-                                    .Paragraph($"This is one component of a group of components that comprise the observation."))
+                           .SetComment(componentDefinition)
                            ;
 
                        e.AddComponentLink($"Observed Count",

@@ -185,8 +185,7 @@ namespace BreastRadiology.XUnitTests
                 .SetShort($"{name} extension")
                 .SetDefinition(new Markdown()
                                     .Paragraph($"This extension slice contains the {name} extension."))
-                .SetComment(new Markdown()
-                                    .Paragraph($"This is one component of a group of components that comprise the observation."))
+                .SetComment(ResourcesMaker.componentDefinition)
                 ;
 
             slice.ElementDefinition.IsModifier = false;
@@ -346,7 +345,7 @@ namespace BreastRadiology.XUnitTests
             return this;
         }
 
-        ElementTreeSlice AppendSlice(String elementName,
+        public ElementTreeSlice AppendSlice(String elementName,
             String sliceName,
             Int32 min = 0,
             String max = "*")
@@ -438,8 +437,7 @@ namespace BreastRadiology.XUnitTests
             slice.ElementDefinition
                 .SetShort($"{componentName} component")
                 .SetDefinition(sliceDefinition)
-                .SetComment(new Markdown()
-                                    .Paragraph($"This is one component of a group of components that comprise the observation."))
+                .SetComment(ResourcesMaker.componentDefinition)
                 ;
 
             if (modalities != Modalities.All)
@@ -623,75 +621,6 @@ namespace BreastRadiology.XUnitTests
                     High = new SimpleQuantity
                     {
                         System = units.Url,
-                    }
-                };
-                ElementDefinition valueX = new ElementDefinition
-                {
-                    Path = $"{slice.ElementDefinition.Path}.value[x]",
-                    ElementId = $"{slice.ElementDefinition.Path}:{sliceName}.value[x]:valueRange",
-                    SliceName = $"valueRange",
-                    Min = 0,
-                    Max = "1"
-                }
-                .Pattern(r)
-                .Type("Range")
-                ;
-                valueXNode.CreateSlice($"{sliceName}/range", valueX);
-            }
-        }
-
-
-
-
-
-
-        public void SliceComponentCount(String sliceName,
-            CodeableConcept componentCode,
-            out ElementTreeSlice slice)
-        {
-            this.StartComponentSliceing();
-
-            slice = this.AppendSlice("component", sliceName, 0, "1");
-
-            // Fix component code
-            this.SliceComponentCode(slice, sliceName, componentCode);
-            ElementTreeNode valueXNode = this.SliceValueXByType(slice,
-                sliceName,
-                new string[] { "Quantity", "Range" });
-
-            {
-                Hl7.Fhir.Model.Quantity q = new Hl7.Fhir.Model.Quantity
-                {
-                    System = "http://unitsofmeasure.org",
-                    Code = "tot"
-                };
-
-                ElementDefinition valueX = new ElementDefinition
-                {
-                    Path = $"{slice.ElementDefinition.Path}.value[x]",
-                    ElementId = $"{slice.ElementDefinition.Path}:{sliceName}.value[x]:valueQuantity",
-                    SliceName = $"valueQuantity",
-                    Min = 0,
-                    Max = "1"
-                }
-                .Pattern(q)
-                .Type("Quantity")
-                ;
-                valueXNode.CreateSlice($"valueQuantity", valueX);
-            }
-
-            {
-                Hl7.Fhir.Model.Range r = new Hl7.Fhir.Model.Range
-                {
-                    Low = new SimpleQuantity
-                    {
-                        System = "http://unitsofmeasure.org",
-                        Code = "tot"
-                    },
-                    High = new SimpleQuantity
-                    {
-                        System = "http://unitsofmeasure.org",
-                        Code = "tot"
                     }
                 };
                 ElementDefinition valueX = new ElementDefinition

@@ -115,6 +115,7 @@ namespace BreastRadiology.XUnitTests
                         $"{Group_MGResources}/BreastDensity",
                         "ObservationLeaf")
                     .AddFragRef(Self.ObservationLeafFragment.Value())
+                    .AddFragRef(Self.ObservationNoComponentFragment.Value())
                     .Description("Breast Density Observation",
                         new Markdown()
                             .BiradHeader()

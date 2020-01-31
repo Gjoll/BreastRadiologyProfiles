@@ -23,17 +23,18 @@ namespace BreastRadiology.XUnitTests
                         $"{Group_MGResources}/AbnormalityFatNecrosis",
                         "ObservationLeaf")
                     .AddFragRef(Self.ObservationLeafFragment.Value())
-                    .Description("Fat Necrosis Observation",
-                        new Markdown()
-                            .Paragraph("[PR]")
-                    )
                     .AddFragRef(Self.ObservationNoDeviceFragment.Value())
+                    .AddFragRef(Self.ObservationNoComponentFragment.Value())
                     .AddFragRef(Self.ObservationNoValueFragment.Value())
                     .AddFragRef(Self.CommonComponentsFragment.Value())
                     .AddFragRef(Self.ShapeComponentsFragment.Value())
                     .AddFragRef(Self.NotPreviouslySeenComponentsFragment.Value())
                     .AddFragRef(Self.ObservedCountComponentFragment.Value())
                     .AddFragRef(Self.CorrespondsWithComponentFragment.Value())
+                    .Description("Fat Necrosis Observation",
+                        new Markdown()
+                            .Paragraph("[PR]")
+                    )
                     ;
 
                 s = e.SDef;

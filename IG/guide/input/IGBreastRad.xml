@@ -235,6 +235,15 @@
     </resource>
     <resource>
       <reference>
+        <reference value="CodeSystem/DimensionCodeCodeSystemCS" />
+      </reference>
+      <name value="Consistent With CodeSystem" />
+      <description value="DimensionCode code system" />
+      <exampleBoolean value="false" />
+      <groupingId value="CommonCodesCS" />
+    </resource>
+    <resource>
+      <reference>
         <reference value="CodeSystem/FibroadenomaCodeSystemCS" />
       </reference>
       <name value="Fibroadenoma CodeSystem" />
@@ -482,6 +491,15 @@
       </reference>
       <name value="CorrespondsWith ValueSet" />
       <description value="CorrespondsWith value set." />
+      <exampleBoolean value="false" />
+      <groupingId value="MGCodesVS" />
+    </resource>
+    <resource>
+      <reference>
+        <reference value="ValueSet/DimensionCodeVS" />
+      </reference>
+      <name value="DimensionCode ValueSet" />
+      <description value="DimensionCode value set." />
       <exampleBoolean value="false" />
       <groupingId value="MGCodesVS" />
     </resource>
@@ -865,6 +883,15 @@
     </resource>
     <resource>
       <reference>
+        <reference value="StructureDefinition/ObservedSize" />
+      </reference>
+      <name value="Observed Size" />
+      <description value="Observation of a size or size range in 1, 2, or 3 dimensions." />
+      <exampleBoolean value="false" />
+      <groupingId value="MGResources" />
+    </resource>
+    <resource>
+      <reference>
         <reference value="StructureDefinition/MRIFinding" />
       </reference>
       <name value="MRI Finding" />
@@ -1057,7 +1084,7 @@
         <reference value="StructureDefinition/ObservedSizeFragment" />
       </reference>
       <name value="ObservedSize Fragment" />
-      <description value="Fragment 'Fragment that adds 'Observed Size' element to profile.'" />
+      <description value="Fragment 'Fragment that adds 'Observed Size' hasmember element to profile.'" />
       <exampleBoolean value="false" />
       <groupingId value="Fragments" />
     </resource>

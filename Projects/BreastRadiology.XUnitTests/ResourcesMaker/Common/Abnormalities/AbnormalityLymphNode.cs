@@ -99,18 +99,18 @@ namespace BreastRadiology.XUnitTests
                     $"{Group_CommonResources}/AbnormalityLymphNode",
                         "ObservationLeaf")
                     .AddFragRef(Self.ObservationLeafFragment.Value())
-                    .Description("LymphNode Observation",
-                        new Markdown()
-                    )
                     .AddFragRef(Self.TumorSatelliteFragment.Value())
-
                     .AddFragRef(Self.ObservationNoDeviceFragment.Value())
                     .AddFragRef(Self.ObservationNoValueFragment.Value())
+                    .AddFragRef(Self.ObservationNoComponentFragment.Value())
                     .AddFragRef(Self.CommonComponentsFragment.Value())
                     .AddFragRef(Self.ShapeComponentsFragment.Value())
                     .AddFragRef(Self.ObservedCountComponentFragment.Value())
                     .AddFragRef(Self.NotPreviouslySeenComponentsFragment.Value())
                     .AddFragRef(Self.CorrespondsWithComponentFragment.Value())
+                    .Description("LymphNode Observation",
+                        new Markdown()
+                    )
                     ;
 
                 s = e.SDef;

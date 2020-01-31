@@ -250,6 +250,12 @@
 	    <img src="Frag-ObservedRegionFragment.svg" alt="ObservedRegionFragment"/>
 	</object>
 	<p>
+	Fragment Diagram ObservedSize
+	</p>
+	<object data="Frag-ObservedSize.svg" type="image/svg+xml">
+	    <img src="Frag-ObservedSize.svg" alt="ObservedSize"/>
+	</object>
+	<p>
 	Fragment Diagram ObservedSizeFragment
 	</p>
 	<object data="Frag-ObservedSizeFragment.svg" type="image/svg+xml">

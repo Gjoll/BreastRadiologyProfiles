@@ -24,11 +24,12 @@ namespace BreastRadiology.XUnitTests
                         $"{Group_CommonResources}/ConsistentWith",
                         "ObservationLeaf")
                            .AddFragRef(Self.ObservationLeafFragment.Value())
+                           .AddFragRef(Self.ObservationNoDeviceFragment.Value())
+                           .AddFragRef(Self.ObservationNoValueFragment.Value())
+                           .AddFragRef(Self.ObservationNoComponentFragment.Value())
                            .Description("'Consistent With' Observation",
                                new Markdown()
                            )
-                           .AddFragRef(Self.ObservationNoDeviceFragment.Value())
-                           .AddFragRef(Self.ObservationNoValueFragment.Value())
                            ;
                        s = e.SDef;
 

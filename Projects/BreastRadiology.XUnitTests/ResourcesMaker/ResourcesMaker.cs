@@ -223,6 +223,10 @@ namespace BreastRadiology.XUnitTests
 
         public const String contactUrl = "http://www.hl7.org/Special/committees/cic";
 
+        public static Markdown componentDefinition = new Markdown()
+                                    .Paragraph($"This is one component of a group of components that comprise the observation.")
+            ;
+
         Dictionary<String, Resource> resources = new Dictionary<string, Resource>();
 
         FileCleaner fc;

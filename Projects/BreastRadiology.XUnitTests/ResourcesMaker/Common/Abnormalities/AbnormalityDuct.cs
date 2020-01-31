@@ -71,16 +71,17 @@ namespace BreastRadiology.XUnitTests
                         $"{Group_CommonResources}/AbnormalityDuct",
                         "ObservationLeaf")
                     .AddFragRef(Self.ObservationLeafFragment.Value())
-                    .Description("Duct Observation",
-                        new Markdown()
-                    )
                     .AddFragRef(Self.ObservationNoDeviceFragment.Value())
                     .AddFragRef(Self.ObservationNoValueFragment.Value())
+                    .AddFragRef(Self.ObservationNoComponentFragment.Value())
                     .AddFragRef(Self.CommonComponentsFragment.Value())
                     .AddFragRef(Self.ShapeComponentsFragment.Value())
                     .AddFragRef(Self.ObservedCountComponentFragment.Value())
                     .AddFragRef(Self.NotPreviouslySeenComponentsFragment.Value())
                     .AddFragRef(Self.CorrespondsWithComponentFragment.Value())
+                    .Description("Duct Observation",
+                        new Markdown()
+                    )
                     ;
 
                 s = e.SDef;

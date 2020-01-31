@@ -1,0 +1,38 @@
+<div xmlns="http://www.w3.org/1999/xhtml"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://hl7.org/fhir ../../src-generated/schemas/fhir-single.xsd">
+  <h3 id="focusGraph">Graphical Overview</h3>
+  <p>
+    This graph provides an overview of:
+    <ul>
+      <li>what resources reference Observed Size</li>
+      <li>what resources Observed Size references</li>
+    </ul>
+  </p>
+  <object data="Focus-ObservedSize.svg" type="image/svg+xml">
+    <img src="Focus-ObservedSize.svg" alt="image/svg+xml" />
+  </object>
+  <!-- +reviewStatus-->
+<h3 id="reviewStatus">Review Status</h3>
+Comments and Suggested changes to this implementation guide can be made 
+<a href="https://github.com/HL7/fhir-breast-radiology-ig/projects/1">here</a>
+<p><b>Reviewed by NOONE on </b></p>
+  <!-- -reviewStatus-->
+  <!-- +components-->
+  <!-- -components-->
+  <!-- +hasMember-->
+  <!-- -hasMember-->
+  <!-- +profileFragments-->
+  <h3 id="profileFragments">Profile Fragments</h3>
+  <p>
+    The following are the fragments that are included in this profile. This is included for developers use to understand
+    the hierarchy and commonality of disparate profiles..
+  </p>
+  <ul>
+    
+<li><a href="./StructureDefinition-ObservationLeafFragment.html">Observation Leaf Fragment</a></li>
+<li><a href="./StructureDefinition-BreastRadObservationNoDeviceFragment.html">Observation NoDevice Fragment</a></li>
+<li><a href="./StructureDefinition-BreastRadObservationNoValueFragment.html">Observation NoValue Fragment</a></li>
+  </ul>
+  <!-- -profileFragments-->
+</div>

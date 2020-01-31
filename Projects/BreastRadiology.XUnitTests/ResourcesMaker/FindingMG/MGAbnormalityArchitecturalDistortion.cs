@@ -24,6 +24,13 @@ namespace BreastRadiology.XUnitTests
                         $"{Group_MGResources}/AbnormalityArchitecturalDistortion",
                         "ObservationLeaf")
                     .AddFragRef(Self.ObservationLeafFragment.Value())
+                    .AddFragRef(Self.ObservationNoDeviceFragment.Value())
+                    .AddFragRef(Self.ObservationNoComponentFragment.Value())
+                    .AddFragRef(Self.ObservationNoValueFragment.Value())
+                    .AddFragRef(Self.CommonComponentsFragment.Value())
+                    .AddFragRef(Self.ShapeComponentsFragment.Value())
+                    .AddFragRef(Self.NotPreviouslySeenComponentsFragment.Value())
+                    .AddFragRef(Self.CorrespondsWithComponentFragment.Value())
                     .Description("Architectural Distortion Observation",
                         new Markdown()
                             .BiradHeader()
@@ -37,12 +44,6 @@ namespace BreastRadiology.XUnitTests
                             .BlockQuote("finding to indicate that the parenchyma is distorted or retracted adjacent to the FINDING")
                             .BiradFooter()
                     )
-                    .AddFragRef(Self.ObservationNoDeviceFragment.Value())
-                    .AddFragRef(Self.ObservationNoValueFragment.Value())
-                    .AddFragRef(Self.CommonComponentsFragment.Value())
-                    .AddFragRef(Self.ShapeComponentsFragment.Value())
-                    .AddFragRef(Self.NotPreviouslySeenComponentsFragment.Value())
-                    .AddFragRef(Self.CorrespondsWithComponentFragment.Value())
                     ;
                 s = e.SDef;
 

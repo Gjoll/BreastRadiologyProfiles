@@ -2,12 +2,15 @@
 using Hl7.Fhir.Model;
 using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Text;
 
 namespace BreastRadiology.XUnitTests
 {
     partial class ResourceMap
     {
+        [DebuggerDisplay("{Name}")]
+
         public class Node
         {
             public String Name => this.ResourceUrl.LastUriPart();

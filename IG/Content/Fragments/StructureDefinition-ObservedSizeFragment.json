@@ -15,7 +15,7 @@
     },
     {
       "url": "http://www.fragment.com/maplink",
-      "valueString": "{\r\n  \"LinkType\": \"component\",\r\n  \"ShowChildren\": true,\r\n  \"Cardinality\": \"0..1\",\r\n  \"LinkTarget\": \"Observed Size\",\r\n  \"ComponentHRef\": \"StructureDefinition-{SDName}-definitions.html#Observation.component:observedSize\",\r\n  \"Types\": \"Quantity or Range\",\r\n  \"References\": []\r\n}"
+      "valueString": "{\r\n  \"LinkType\": \"target\",\r\n  \"ShowChildren\": false,\r\n  \"Cardinality\": \"0..1\",\r\n  \"LinkTarget\": \"http://hl7.org/fhir/us/breast-radiology/StructureDefinition/ObservedSize\"\r\n}"
     }
   ],
   "url": "http://hl7.org/fhir/us/breast-radiology/StructureDefinition/ObservedSizeFragment",
@@ -23,7 +23,7 @@
   "name": "ObservedSizeFragment",
   "title": "ObservedSize Fragment",
   "status": "draft",
-  "description": "<b>Fragment that adds 'Observed Size' element to profile.</b>",
+  "description": "<b>Fragment that adds 'Observed Size' hasmember element to profile.</b>",
   "fhirVersion": "4.0.0",
   "kind": "resource",
   "abstract": true,
@@ -35,7 +35,7 @@
       {
         "id": "Observation",
         "path": "Observation",
-        "short": "Fragment that adds 'Observed Size' element to profile.",
+        "short": "Fragment that adds 'Observed Size' hasmember element to profile.",
         "base": {
           "path": "Observation",
           "min": 0,
@@ -43,129 +43,46 @@
         }
       },
       {
-        "id": "Observation.component",
-        "path": "Observation.component",
+        "id": "Observation.hasMember",
+        "path": "Observation.hasMember",
         "slicing": {
           "discriminator": [
             {
-              "type": "pattern",
-              "path": "code"
+              "type": "value",
+              "path": "url"
             }
           ],
-          "rules": "open"
+          "ordered": true,
+          "rules": "openAtEnd"
         },
         "base": {
-          "path": "Observation.component",
+          "path": "Observation.hasMember",
           "min": 0,
           "max": "*"
         }
       },
       {
-        "id": "Observation.component:observedSize",
-        "path": "Observation.component",
+        "id": "Observation.hasMember:observedSize",
+        "path": "Observation.hasMember",
         "sliceName": "observedSize",
-        "short": "Observed Size component",
-        "definition": "This component slice contains the observed size of an item in cemtimeters.\n This can be a quantity (i.e. 5 cm), or a range (1 cm to 5 cm).\n If the lower bound of the range is set but not the upper bound, then it means {lower bound} cm or more.\n If the lower bound of the range is not set but not the upper bound is, then it means {upper bound} cm or less.",
-        "comment": "This is one component of a group of components that comprise the observation.",
+        "short": "'Observed Size' reference",
+        "definition": "This slice references the target 'Observed Size'.",
         "min": 0,
         "max": "1",
         "base": {
-          "path": "Observation.component",
+          "path": "Observation.hasMember",
           "min": 0,
           "max": "*"
-        }
-      },
-      {
-        "id": "Observation.component:observedSize.code",
-        "path": "Observation.component.code",
-        "min": 1,
-        "max": "1",
-        "base": {
-          "path": "Observation.component.code",
-          "min": 1,
-          "max": "1"
-        },
-        "patternCodeableConcept": {
-          "coding": [
-            {
-              "system": "http://hl7.org/fhir/us/breast-radiology/CodeSystem/ComponentSliceCodes",
-              "code": "observedSize"
-            }
-          ]
-        }
-      },
-      {
-        "id": "Observation.component:observedSize.value[x]",
-        "path": "Observation.component.value[x]",
-        "slicing": {
-          "discriminator": [
-            {
-              "type": "type",
-              "path": "$this"
-            }
-          ],
-          "rules": "closed"
-        },
-        "min": 1,
-        "max": "1",
-        "base": {
-          "path": "Observation.component.value[x]",
-          "min": 0,
-          "max": "1"
         },
         "type": [
           {
-            "code": "Quantity"
-          },
-          {
-            "code": "Range"
-          }
-        ]
-      },
-      {
-        "id": "Observation.component:observedSize.value[x]:valueQuantity",
-        "path": "Observation.component.value[x]",
-        "sliceName": "valueQuantity",
-        "min": 0,
-        "max": "1",
-        "base": {
-          "path": "Observation.component.value[x]",
-          "min": 0,
-          "max": "1"
-        },
-        "type": [
-          {
-            "code": "Quantity"
+            "code": "Reference",
+            "targetProfile": [
+              "http://hl7.org/fhir/us/breast-radiology/StructureDefinition/ObservedSize"
+            ]
           }
         ],
-        "patternQuantity": {
-          "system": "http://hl7.org/fhir/us/breast-radiology/ValueSet/UnitsOfLengthVS"
-        }
-      },
-      {
-        "id": "Observation.component:observedSize.value[x]:valueRange",
-        "path": "Observation.component.value[x]",
-        "sliceName": "valueRange",
-        "min": 0,
-        "max": "1",
-        "base": {
-          "path": "Observation.component.value[x]",
-          "min": 0,
-          "max": "1"
-        },
-        "type": [
-          {
-            "code": "Range"
-          }
-        ],
-        "patternRange": {
-          "low": {
-            "system": "http://hl7.org/fhir/us/breast-radiology/ValueSet/UnitsOfLengthVS"
-          },
-          "high": {
-            "system": "http://hl7.org/fhir/us/breast-radiology/ValueSet/UnitsOfLengthVS"
-          }
-        }
+        "mustSupport": true
       }
     ]
   }
