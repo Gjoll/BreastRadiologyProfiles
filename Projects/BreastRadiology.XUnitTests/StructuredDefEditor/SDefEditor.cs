@@ -91,7 +91,7 @@ namespace BreastRadiology.XUnitTests
             return this.Get(path).ElementDefinition;
         }
 
-        public bool WriteFragment(out String fragmentName)
+        public bool Write(out String fragmentName)
         {
             fragmentName = null;
 
@@ -120,6 +120,24 @@ namespace BreastRadiology.XUnitTests
             }
 
             fragmentName = Path.Combine(this.fragmentDir, $"StructureDefinition-{this.sDef.Name}.json");
+
+            // Make sure that all Observation resources that are not fragments, have Observation.code
+            // fixed properly.
+            if (
+                (this.sDef.IsFragment() == false) &&
+                (this.sDef.BaseDefinition == Global.ObservationUrl)
+                )
+            {
+                if (this.snapNode.TryGetElementNode("Observation.code", out ElementTreeNode codeNode) == false)
+                    throw new Exception("Observation.code not found");
+                if (codeNode.ElementDefinition.Pattern == null)
+                {
+                    this.info.ConversionError(nameof(SDefEditor),
+                        "Write",
+                        $"Observation {this.SDef.Name} lacks fixed Observation.code.");
+                }
+            }
+
             this.sDef.SaveJson(fragmentName);
             return true;
         }

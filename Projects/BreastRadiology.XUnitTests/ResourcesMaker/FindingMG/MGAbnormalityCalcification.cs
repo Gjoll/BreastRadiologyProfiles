@@ -285,7 +285,7 @@ namespace BreastRadiology.XUnitTests
                 SDefEditor e = Self.CreateEditor("MGAbnormalityCalcification",
                         "Mammography Calcification",
                         "MG Calc.",
-                        ObservationUrl,
+                        Global.ObservationUrl,
                         $"{Group_MGResources}/CalcificationAbnormality",
                         "ObservationLeaf")
                     .AddFragRef(Self.ObservationLeafFragment.Value())
@@ -317,6 +317,9 @@ namespace BreastRadiology.XUnitTests
 
                 s = e.SDef;
 
+                // Set Observation.code to unique value for this profile.
+                e.Select("code").Pattern(Self.ObservationCodeMGAbnormalityCalcification.ToCodeableConcept());
+
                 e.IntroDoc
                     .ReviewedStatus("NOONE", "")
                     ;
@@ -328,7 +331,7 @@ namespace BreastRadiology.XUnitTests
                 e.StartComponentSliceing();
 
                 e.ComponentSliceCodeableConcept("calcificationType",
-                    Self.MGCodeCalcificationType.ToCodeableConcept(),
+                    Self.MGComponentSliceCodeCalcificationType.ToCodeableConcept(),
                     Self.MGCalcificationTypeVS.Value(),
                     BindingStrength.Required,
                     0,

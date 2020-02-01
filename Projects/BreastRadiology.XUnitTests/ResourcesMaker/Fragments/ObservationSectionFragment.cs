@@ -15,7 +15,7 @@ namespace BreastRadiology.XUnitTests
                 SDefEditor e = Self.CreateFragment("ObservationSectionFragment",
                         "Observation Section Fragment",
                         "Section/Fragment",
-                        ObservationUrl)
+                        Global.ObservationUrl)
                     .Description("Observation section fragment",
                         new Markdown()
                             .Paragraph("this fragment constrains a generic observation to be a observation section.")

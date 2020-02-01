@@ -687,6 +687,14 @@
             "code": "CodeableConcept"
           }
         ],
+        "patternCodeableConcept": {
+          "coding": [
+            {
+              "system": "http://hl7.org/fhir/us/breast-radiology/CodeSystem/ObservationCodesUrl",
+              "code": "featureObservation"
+            }
+          ]
+        },
         "isModifier": false,
         "isSummary": true,
         "binding": {
@@ -2566,7 +2574,7 @@
         "patternCodeableConcept": {
           "coding": [
             {
-              "system": "http://hl7.org/fhir/us/breast-radiology/CodeSystem/ComponentSliceCodes",
+              "system": "http://hl7.org/fhir/us/breast-radiology/CodeSystem/ObservationComponentSliceCodesUrl",
               "code": "featureType"
             }
           ]
@@ -2934,7 +2942,7 @@
         "patternCodeableConcept": {
           "coding": [
             {
-              "system": "http://hl7.org/fhir/us/breast-radiology/CodeSystem/ComponentSliceCodes",
+              "system": "http://hl7.org/fhir/us/breast-radiology/CodeSystem/ObservationComponentSliceCodesUrl",
               "code": "observedCount"
             }
           ]
@@ -3333,6 +3341,23 @@
         }
       },
       {
+        "id": "Observation.code",
+        "path": "Observation.code",
+        "base": {
+          "path": "Observation.code",
+          "min": 1,
+          "max": "1"
+        },
+        "patternCodeableConcept": {
+          "coding": [
+            {
+              "system": "http://hl7.org/fhir/us/breast-radiology/CodeSystem/ObservationCodesUrl",
+              "code": "featureObservation"
+            }
+          ]
+        }
+      },
+      {
         "id": "Observation.focus",
         "extension": [
           {
@@ -3656,7 +3681,7 @@
         "patternCodeableConcept": {
           "coding": [
             {
-              "system": "http://hl7.org/fhir/us/breast-radiology/CodeSystem/ComponentSliceCodes",
+              "system": "http://hl7.org/fhir/us/breast-radiology/CodeSystem/ObservationComponentSliceCodesUrl",
               "code": "featureType"
             }
           ]
@@ -3893,7 +3918,7 @@
         "patternCodeableConcept": {
           "coding": [
             {
-              "system": "http://hl7.org/fhir/us/breast-radiology/CodeSystem/ComponentSliceCodes",
+              "system": "http://hl7.org/fhir/us/breast-radiology/CodeSystem/ObservationComponentSliceCodesUrl",
               "code": "observedCount"
             }
           ]

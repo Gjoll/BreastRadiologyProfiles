@@ -60,7 +60,7 @@ namespace BreastRadiology.XUnitTests
                 SDefEditor e = Self.CreateEditor("MGAbnormalityDensity",
                         "Mammography Density",
                         "MG Density",
-                        ObservationUrl,
+                        Global.ObservationUrl,
                         $"{Group_MGResources}/AbnormalityDensity",
                         "ObservationLeaf")
                     .AddFragRef(Self.ObservationLeafFragment.Value())
@@ -79,6 +79,9 @@ namespace BreastRadiology.XUnitTests
 
                 s = e.SDef;
 
+                // Set Observation.code to unique value for this profile.
+                e.Select("code").Pattern(Self.ObservationCodeMGAbnormalityDensity.ToCodeableConcept());
+
                 e.IntroDoc
                     .ReviewedStatus("NOONE", "")
                     ;
@@ -91,7 +94,7 @@ namespace BreastRadiology.XUnitTests
 
                 e.StartComponentSliceing();
                 e.ComponentSliceCodeableConcept("densityType",
-                    Self.MGCodeAbnormalityDensityType.ToCodeableConcept(),
+                    Self.MGComponentSliceCodeAbnormalityDensityType.ToCodeableConcept(),
                     binding,
                     BindingStrength.Required,
                     1,

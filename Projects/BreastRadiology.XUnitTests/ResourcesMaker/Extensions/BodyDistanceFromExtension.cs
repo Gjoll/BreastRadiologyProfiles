@@ -23,7 +23,7 @@ namespace BreastRadiology.XUnitTests
                 e = Self.CreateEditor("BodyDistanceFromExtension",
                     "Body Distance From Extension",
                     "Body Dist. From",
-                    ExtensionUrl,
+                    Global.ExtensionUrl,
                     $"{Group_ExtensionResources}/BreastBodyLocation",
                     "Extension")
                     .Description("Body Distance From extension",

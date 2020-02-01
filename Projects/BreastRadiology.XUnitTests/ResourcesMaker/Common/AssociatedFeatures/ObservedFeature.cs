@@ -449,7 +449,7 @@ namespace BreastRadiology.XUnitTests
                 SDefEditor e = Self.CreateEditor("ObservedFeature",
                     "Observed Feature",
                     "Observed Feature",
-                    ObservationUrl,
+                    Global.ObservationUrl,
                     $"{Group_CommonResources}/AssociatedFeature/ObservedFeature",
                         "ObservationLeaf")
                     .AddFragRef(Self.ObservationLeafFragment.Value())
@@ -468,9 +468,12 @@ namespace BreastRadiology.XUnitTests
                     .ReviewedStatus("NOONE", "")
                     ;
 
+                // Set Observation.code to unique value for this profile.
+                e.Select("code").Pattern(Self.ObservationCodeObservedFeature.ToCodeableConcept());
+
                 e.StartComponentSliceing();
                 e.ComponentSliceCodeableConcept("featureType",
-                    Self.CodeObservedFeatureType.ToCodeableConcept(),
+                    Self.ComponentSliceCodeObservedFeatureType.ToCodeableConcept(),
                     binding,
                     BindingStrength.Required,
                     1,

@@ -545,7 +545,7 @@ namespace BreastRadiology.XUnitTests
                 SDefEditor e = Self.CreateEditor("AbnormalityForeignObject",
                         "Foreign Object",
                         "Foreign Object",
-                        ObservationUrl,
+                        Global.ObservationUrl,
                         $"{Group_CommonResources}/AbnormalityForeign",
                         "ObservationSection")
                     .Description("Foreign Object Observation",
@@ -567,13 +567,16 @@ namespace BreastRadiology.XUnitTests
                     .ReviewedStatus("NOONE", "")
                     ;
 
+                // Set Observation.code to unique value for this profile.
+                e.Select("code").Pattern(Self.ObservationCodeAbnormalityForeignObject.ToCodeableConcept());
+
                 ElementTreeNode sliceElementDef = e.ConfigureSliceByUrlDiscriminator("hasMember", false);
                 e.SliceTargetReference( sliceElementDef, Self.ConsistentWith.Value(), 0, "*");
                 e.SliceTargetReference( sliceElementDef, Self.AssociatedFeatures.Value(), 0, "1");
 
                 e.StartComponentSliceing();
                 e.ComponentSliceCodeableConcept("abnormalityForeignObjectType",
-                    Self.CodeAbnormalityForeignObjectType.ToCodeableConcept(),
+                    Self.ComponentSliceCodeAbnormalityForeignObjectType.ToCodeableConcept(),
                     binding,
                     BindingStrength.Required,
                     1,

@@ -206,23 +206,6 @@ namespace BreastRadiology.XUnitTests
         const String ProfileVersion = "0.0.2";
         const PublicationStatus ProfileStatus = PublicationStatus.Draft;
 
-        const String Loinc = "http://loinc.org";
-        const String Snomed = "http://snomed.info/sct";
-
-        public const String CompositionUrl = "http://hl7.org/fhir/StructureDefinition/Composition";
-        public const String ClinicalImpressionUrl = "http://hl7.org/fhir/StructureDefinition/ClinicalImpression";
-        public const String DiagnosticReportUrl = "http://hl7.org/fhir/StructureDefinition/DiagnosticReport";
-        public const String DomainResourceUrl = "http://hl7.org/fhir/StructureDefinition/DomainResource";
-        public const String ExtensionUrl = "http://hl7.org/fhir/StructureDefinition/Extension";
-        public const String ImagingStudyUrl = "http://hl7.org/fhir/StructureDefinition/ImagingStudy";
-        public const String MedicationRequestUrl = "http://hl7.org/fhir/StructureDefinition/MedicationRequest";
-        public const String ObservationUrl = "http://hl7.org/fhir/StructureDefinition/Observation";
-        public const String ResourceUrl = "http://hl7.org/fhir/StructureDefinition/Resource";
-        public const String RiskAssessmentUrl = "http://hl7.org/fhir/StructureDefinition/RiskAssessment";
-        public const String ServiceRequestUrl = "http://hl7.org/fhir/StructureDefinition/ServiceRequest";
-
-        public const String contactUrl = "http://www.hl7.org/Special/committees/cic";
-
         public static Markdown componentDefinition = new Markdown()
                                     .Paragraph($"This is one component of a group of components that comprise the observation.")
             ;
@@ -484,7 +467,7 @@ namespace BreastRadiology.XUnitTests
 
             foreach (SDefEditor sDefEditor in this.Editors.Values)
             {
-                if (sDefEditor.WriteFragment(out String fragmentName))
+                if (sDefEditor.Write(out String fragmentName))
                     this.fc?.Mark(fragmentName);
                 if (sDefEditor.IntroDoc != null)
                 {

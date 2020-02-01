@@ -67,7 +67,7 @@ namespace BreastRadiology.XUnitTests
                 e = Self.CreateEditor("TumorSatelliteExtension",
                     "Tumor Satellite Extension",
                     "Tumor Satellite",
-                    ExtensionUrl,
+                    Global.ExtensionUrl,
                     $"{Group_ExtensionResources}/TumorSatelliteExtension",
                     "Extension")
                     .Description("Tumor Satellite Extension",

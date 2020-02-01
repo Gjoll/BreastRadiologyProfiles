@@ -274,7 +274,7 @@ namespace BreastRadiology.XUnitTests
                        SDefEditor e = Self.CreateFragment("ObservedChangesFragment",
                                "ObservedChanges Fragment",
                                "ObservedChanges Fragment",
-                               ObservationUrl)
+                               Global.ObservationUrl)
                            .Description("Fragment that adds 'Observed Changes' element to profile.",
                                new Markdown()
                            )
@@ -284,7 +284,7 @@ namespace BreastRadiology.XUnitTests
                        e.StartComponentSliceing();
 
                        e.ComponentSliceCodeableConcept("observedChanges",
-                           Self.CodeObservedChanges.ToCodeableConcept(),
+                           Self.ComponentSliceCodeObservedChanges.ToCodeableConcept(),
                            Self.ObservedChangesVS.Value(),
                            BindingStrength.Required,
                            0,

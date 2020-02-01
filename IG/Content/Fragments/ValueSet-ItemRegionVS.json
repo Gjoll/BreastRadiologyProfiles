@@ -1,0 +1,43 @@
+{
+  "resourceType": "ValueSet",
+  "id": "ItemRegionVS",
+  "extension": [
+    {
+      "url": "http://www.fragment.com/fragment",
+      "valueUrl": "http://hl7.org/fhir/us/breast-radiology/StructureDefinition/HeaderFragment"
+    },
+    {
+      "url": "http://www.fragment.com/Group",
+      "valueString": "CommonCodesVS"
+    },
+    {
+      "url": "http://www.fragment.com/mapname",
+      "valueString": "Item/Region/ValueSet"
+    }
+  ],
+  "url": "http://hl7.org/fhir/us/breast-radiology/ValueSet/ItemRegionVS",
+  "name": "ItemRegionVS",
+  "title": "Item Region ValueSet",
+  "description": "Item Region of abnormalities value set.",
+  "compose": {
+    "include": [
+      {
+        "system": "http://hl7.org/fhir/us/breast-radiology/CodeSystem/ItemRegion",
+        "concept": [
+          {
+            "code": "SingleItem",
+            "display": "Single Region"
+          },
+          {
+            "code": "MultipleItems",
+            "display": "Multiple Regions"
+          },
+          {
+            "code": "ClusterOfItems",
+            "display": "Cluster of Regions"
+          }
+        ]
+      }
+    ]
+  }
+}

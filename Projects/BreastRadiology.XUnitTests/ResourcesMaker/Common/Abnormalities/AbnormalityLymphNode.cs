@@ -95,7 +95,7 @@ namespace BreastRadiology.XUnitTests
                 SDefEditor e = Self.CreateEditor("AbnormalityLymphNode",
                     "LymphNode",
                     "Lymph Node",
-                    ObservationUrl,
+                    Global.ObservationUrl,
                     $"{Group_CommonResources}/AbnormalityLymphNode",
                         "ObservationLeaf")
                     .AddFragRef(Self.ObservationLeafFragment.Value())
@@ -115,6 +115,9 @@ namespace BreastRadiology.XUnitTests
 
                 s = e.SDef;
 
+                // Set Observation.code to unique value for this profile.
+                e.Select("code").Pattern(Self.ObservationCodeAbnormalityLymphNode.ToCodeableConcept());
+
                 e.IntroDoc
                     .ReviewedStatus("NOONE", "")
                     ;
@@ -124,7 +127,7 @@ namespace BreastRadiology.XUnitTests
 
                 e.StartComponentSliceing();
                 e.ComponentSliceCodeableConcept("lymphNodeType",
-                    Self.CodeAbnormalityLymphNodeType.ToCodeableConcept(),
+                    Self.ComponentSliceCodeAbnormalityLymphNodeType.ToCodeableConcept(),
                     binding,
                     BindingStrength.Required,
                     0,

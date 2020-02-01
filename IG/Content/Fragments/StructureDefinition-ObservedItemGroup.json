@@ -35,7 +35,7 @@
     },
     {
       "url": "http://www.fragment.com/maplink",
-      "valueString": "{\r\n  \"LinkType\": \"component\",\r\n  \"ShowChildren\": true,\r\n  \"Cardinality\": \"1..1\",\r\n  \"LinkTarget\": \"Grouping Type\",\r\n  \"ComponentHRef\": \"StructureDefinition-{SDName}-definitions.html#Observation.component:groupingType\",\r\n  \"Types\": \"CodeableConcept\",\r\n  \"References\": [\r\n    \"http://hl7.org/fhir/us/breast-radiology/ValueSet/ItemGroupComponentCodesVS\"\r\n  ]\r\n}"
+      "valueString": "{\r\n  \"LinkType\": \"component\",\r\n  \"ShowChildren\": true,\r\n  \"Cardinality\": \"1..1\",\r\n  \"LinkTarget\": \"Grouping Type\",\r\n  \"ComponentHRef\": \"StructureDefinition-{SDName}-definitions.html#Observation.component:groupingType\",\r\n  \"Types\": \"CodeableConcept\",\r\n  \"References\": [\r\n    \"http://hl7.org/fhir/us/breast-radiology/ValueSet/ItemGroupingVS\"\r\n  ]\r\n}"
     },
     {
       "url": "http://www.fragment.com/maplink",
@@ -77,8 +77,8 @@
         "patternCodeableConcept": {
           "coding": [
             {
-              "system": "http://hl7.org/fhir/us/breast-radiology/CodeSystem/ComponentSliceCodes",
-              "code": "observedItemGroup"
+              "system": "http://hl7.org/fhir/us/breast-radiology/CodeSystem/ObservationCodesUrl",
+              "code": "observedItemGroupObservation"
             }
           ]
         }
@@ -156,7 +156,7 @@
         ],
         "binding": {
           "strength": "required",
-          "valueSet": "http://hl7.org/fhir/us/breast-radiology/ValueSet/ItemGroupComponentCodesVS"
+          "valueSet": "http://hl7.org/fhir/us/breast-radiology/ValueSet/ItemGroupingVS"
         }
       },
       {

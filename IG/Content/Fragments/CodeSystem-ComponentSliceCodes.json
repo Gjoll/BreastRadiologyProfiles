@@ -17,7 +17,7 @@
   "description": "Component Slice Codes code system",
   "caseSensitive": true,
   "content": "complete",
-  "count": 26,
+  "count": 22,
   "concept": [
     {
       "code": "abnormalityCystType",
@@ -76,18 +76,6 @@
       "definition": "Slicing Component Code - Observed Changes"
     },
     {
-      "code": "observedItemGroup",
-      "definition": "Slicing Component Code - ObservedItemGroup"
-    },
-    {
-      "code": "observedGrouping",
-      "definition": "Slicing Component Code - ObservedGrouping"
-    },
-    {
-      "code": "observedRegion",
-      "definition": "Slicing Component Code - ObservedArea"
-    },
-    {
       "code": "observedCount",
       "definition": "Slicing Component Code - ObservedCount"
     },
@@ -102,10 +90,6 @@
     {
       "code": "shape",
       "definition": "Slicing Component Code - Shape"
-    },
-    {
-      "code": "tumorQualifier",
-      "definition": "Slicing Component Code - TumorQualifier"
     },
     {
       "code": "mgAbnormalityAsymmetryType",

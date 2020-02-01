@@ -15,7 +15,7 @@ namespace BreastRadiology.XUnitTests
                 SDefEditor e = Self.CreateFragment("CategoryFragment",
                         "Category Fragment",
                         "Category/Fragment",
-                        ObservationUrl)
+                        Global.ObservationUrl)
                     .Description("Fix Observation.category Fragment",
                         new Markdown()
                             .Paragraph("This fragment slices Observation.category and fixes the observation.code value to 'imaging'.")

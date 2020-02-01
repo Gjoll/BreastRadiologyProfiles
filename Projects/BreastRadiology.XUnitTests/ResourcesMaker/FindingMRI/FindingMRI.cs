@@ -20,7 +20,7 @@ namespace BreastRadiology.XUnitTests
                 SDefEditor e = Self.CreateEditor("MRIFinding",
                         "MRI Finding",
                         "MRI Finding",
-                        ObservationUrl,
+                        Global.ObservationUrl,
                         $"{Group_MRIResources}",
                         "ObservationSection")
                     .Description("MRI Finding",
@@ -33,6 +33,9 @@ namespace BreastRadiology.XUnitTests
                 e.IntroDoc
                     .ReviewedStatus("NOONE", "")
                     ;
+
+                // Set Observation.code to unique value for this profile.
+                e.Select("code").Pattern(Self.ObservationCodeMRIFinding.ToCodeableConcept());
 
                 //ProfileTargetSlice[] targets = new ProfileTargetSlice[]
                 //{

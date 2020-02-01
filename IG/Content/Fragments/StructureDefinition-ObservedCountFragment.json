@@ -88,7 +88,7 @@
         "patternCodeableConcept": {
           "coding": [
             {
-              "system": "http://hl7.org/fhir/us/breast-radiology/CodeSystem/ComponentSliceCodes",
+              "system": "http://hl7.org/fhir/us/breast-radiology/CodeSystem/ObservationComponentSliceCodesUrl",
               "code": "observedCount"
             }
           ]

@@ -20,7 +20,7 @@ namespace BreastRadiology.XUnitTests
                 SDefEditor e = Self.CreateEditor("ServiceRecommendation",
                      "Service Recommendation",
                      "Service/Recommendation",
-                     ServiceRequestUrl,
+                     Global.ServiceRequestUrl,
                      Group_BaseResources,
                      "Resource")
                      .Description("Service Recommendation",

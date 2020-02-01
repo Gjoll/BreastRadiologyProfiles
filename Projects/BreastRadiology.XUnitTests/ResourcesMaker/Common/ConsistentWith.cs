@@ -20,7 +20,7 @@ namespace BreastRadiology.XUnitTests
                        SDefEditor e = Self.CreateEditor("ConsistentWith",
                         "Consistent With",
                         "Consistent/With",
-                        ObservationUrl,
+                        Global.ObservationUrl,
                         $"{Group_CommonResources}/ConsistentWith",
                         "ObservationLeaf")
                            .AddFragRef(Self.ObservationLeafFragment.Value())
@@ -33,9 +33,13 @@ namespace BreastRadiology.XUnitTests
                            ;
                        s = e.SDef;
 
+                       // Set Observation.code to unique value for this profile.
+                       e.Select("code").Pattern(Self.ObservationCodeConsistentWith.ToCodeableConcept());
+
+
                        e.StartComponentSliceing();
                        e.ComponentSliceCodeableConcept("value",
-                           Self.CodeConsistentWithValue.ToCodeableConcept(),
+                           Self.ComponentSliceCodeConsistentWithValue.ToCodeableConcept(),
                            Self.ConsistentWithVS.Value(),
                            BindingStrength.Extensible,
                            1,
@@ -46,7 +50,7 @@ namespace BreastRadiology.XUnitTests
                                             $"The value of this component is a codeable concept chosen from the {Self.ConsistentWithVS.Value().Name} valueset.")
                        );
                        e.ComponentSliceCodeableConcept("qualifier",
-                           Self.CodeConsistentWithQualifier.ToCodeableConcept(),
+                           Self.ComponentSliceCodeConsistentWithQualifier.ToCodeableConcept(),
                            Self.ConsistentWithQualifierVS.Value(),
                            BindingStrength.Required,
                            0,

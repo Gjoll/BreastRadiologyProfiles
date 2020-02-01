@@ -83,7 +83,7 @@ namespace BreastRadiology.XUnitTests
                 SDefEditor e = Self.CreateEditor("AbnormalityCyst",
                         "Cyst",
                         "Cyst",
-                        ObservationUrl,
+                        Global.ObservationUrl,
                         $"{Group_CommonResources}/AbnormalityCyst",
                         "ObservationLeaf")
                     .AddFragRef(Self.ObservationLeafFragment.Value())
@@ -102,7 +102,7 @@ namespace BreastRadiology.XUnitTests
                     )
                     ;
                 s = e.SDef;
-
+                e.Select("code").Pattern(Self.ObservationCodeAbnormalityCyst.ToCodeableConcept());
                 e.IntroDoc
                     .ReviewedStatus("NOONE", "")
                     ;
@@ -113,7 +113,7 @@ namespace BreastRadiology.XUnitTests
 
                 e.StartComponentSliceing();
                 e.ComponentSliceCodeableConcept("cystType",
-                    Self.CodeAbnormalityCystType.ToCodeableConcept(),
+                    Self.ComponentSliceCodeAbnormalityCystType.ToCodeableConcept(),
                     binding,
                     BindingStrength.Required,
                     0,

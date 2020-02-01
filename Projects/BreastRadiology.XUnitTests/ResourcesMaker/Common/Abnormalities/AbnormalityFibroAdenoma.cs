@@ -59,7 +59,7 @@ namespace BreastRadiology.XUnitTests
                 SDefEditor e = Self.CreateEditor("AbnormalityFibroadenoma",
                         "Fibroadenoma",
                         "Fibroadenoma",
-                        ObservationUrl,
+                        Global.ObservationUrl,
                         $"{Group_CommonResources}/AbnormalityFibroadenoma",
                         "ObservationLeaf")
                     .AddFragRef(Self.ObservationLeafFragment.Value())
@@ -82,12 +82,15 @@ namespace BreastRadiology.XUnitTests
                     .ReviewedStatus("NOONE", "")
                     ;
 
+                // Set Observation.code to unique value for this profile.
+                e.Select("code").Pattern(Self.ObservationCodeAbnormalityFibroadenoma.ToCodeableConcept());
+
                 ElementTreeNode sliceElementDef = e.ConfigureSliceByUrlDiscriminator("hasMember", false);
                 e.SliceTargetReference( sliceElementDef, Self.AssociatedFeatures.Value(), 0, "1");
 
                 e.StartComponentSliceing();
                 e.ComponentSliceCodeableConcept("fibroAdenomaType",
-                    Self.CodeAbnormalityFibroAdenomaType.ToCodeableConcept(),
+                    Self.ComponentSliceCodeAbnormalityFibroAdenomaType.ToCodeableConcept(),
                     binding,
                     BindingStrength.Required,
                     0,

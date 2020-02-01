@@ -35,7 +35,7 @@
     },
     {
       "url": "http://www.fragment.com/maplink",
-      "valueString": "{\r\n  \"LinkType\": \"target\",\r\n  \"ShowChildren\": false,\r\n  \"Cardinality\": \"0..*\",\r\n  \"LinkTarget\": \"http://hl7.org/fhir/us/breast-radiology/StructureDefinition/Mass\"\r\n}"
+      "valueString": "{\r\n  \"LinkType\": \"target\",\r\n  \"ShowChildren\": false,\r\n  \"Cardinality\": \"0..*\",\r\n  \"LinkTarget\": \"http://hl7.org/fhir/us/breast-radiology/StructureDefinition/AbnormalityMass\"\r\n}"
     },
     {
       "url": "http://www.fragment.com/maplink",
@@ -829,6 +829,14 @@
             "code": "CodeableConcept"
           }
         ],
+        "patternCodeableConcept": {
+          "coding": [
+            {
+              "system": "http://hl7.org/fhir/us/breast-radiology/CodeSystem/ObservationCodesUrl",
+              "code": "mgFindingObservationObservation"
+            }
+          ]
+        },
         "isModifier": false,
         "isSummary": true,
         "binding": {
@@ -2083,9 +2091,9 @@
         ]
       },
       {
-        "id": "Observation.hasMember:mass",
+        "id": "Observation.hasMember:abnormalityMass",
         "path": "Observation.hasMember",
-        "sliceName": "mass",
+        "sliceName": "abnormalityMass",
         "short": "'Mass' reference",
         "definition": "This slice references the target 'Mass'.",
         "comment": "When using this element, an observation will typically have either a value or a set of related resources, although both may be present in some cases.  For a discussion on the ways Observations can assembled in groups together, see [Notes](observation.html#obsgrouping) below.  Note that a system may calculate results from [QuestionnaireResponse](questionnaireresponse.html)  into a final score and represent the score as an Observation.",
@@ -2100,7 +2108,7 @@
           {
             "code": "Reference",
             "targetProfile": [
-              "http://hl7.org/fhir/us/breast-radiology/StructureDefinition/Mass"
+              "http://hl7.org/fhir/us/breast-radiology/StructureDefinition/AbnormalityMass"
             ]
           }
         ],
@@ -2910,6 +2918,23 @@
         }
       },
       {
+        "id": "Observation.code",
+        "path": "Observation.code",
+        "base": {
+          "path": "Observation.code",
+          "min": 1,
+          "max": "1"
+        },
+        "patternCodeableConcept": {
+          "coding": [
+            {
+              "system": "http://hl7.org/fhir/us/breast-radiology/CodeSystem/ObservationCodesUrl",
+              "code": "mgFindingObservationObservation"
+            }
+          ]
+        }
+      },
+      {
         "id": "Observation.focus",
         "extension": [
           {
@@ -3152,9 +3177,9 @@
         ]
       },
       {
-        "id": "Observation.hasMember:mass",
+        "id": "Observation.hasMember:abnormalityMass",
         "path": "Observation.hasMember",
-        "sliceName": "mass",
+        "sliceName": "abnormalityMass",
         "short": "'Mass' reference",
         "definition": "This slice references the target 'Mass'.",
         "comment": "When using this element, an observation will typically have either a value or a set of related resources, although both may be present in some cases.  For a discussion on the ways Observations can assembled in groups together, see [Notes](observation.html#obsgrouping) below.  Note that a system may calculate results from [QuestionnaireResponse](questionnaireresponse.html)  into a final score and represent the score as an Observation.",
@@ -3169,7 +3194,7 @@
           {
             "code": "Reference",
             "targetProfile": [
-              "http://hl7.org/fhir/us/breast-radiology/StructureDefinition/Mass"
+              "http://hl7.org/fhir/us/breast-radiology/StructureDefinition/AbnormalityMass"
             ]
           }
         ],

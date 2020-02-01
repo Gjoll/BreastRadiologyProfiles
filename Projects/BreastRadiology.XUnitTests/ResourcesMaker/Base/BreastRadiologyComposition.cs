@@ -83,7 +83,7 @@ namespace BreastRadiology.XUnitTests
                 SDefEditor e = Self.CreateEditor("BreastRadComposition",
                      "Breast Radiology Composition",
                      "Breast/Radiology/Composition",
-                     CompositionUrl,
+                     Global.CompositionUrl,
                      Group_BaseResources,
                      "Resource")
                      .Description("Breast Radiology Composition",
@@ -151,7 +151,7 @@ namespace BreastRadiology.XUnitTests
                 {
                     ElementTreeNode sliceElementDef = StartSectionSlicing(e);
                     {
-                        String[] targets = new string[] { ClinicalImpressionUrl };
+                        String[] targets = new string[] { Global.ClinicalImpressionUrl };
 
                         ElementTreeSlice sectionSlice = SliceSection(sliceElementDef,
                             "impressions",
@@ -219,7 +219,7 @@ namespace BreastRadiology.XUnitTests
                 {
                     ElementTreeNode sliceElementDef = StartSectionSlicing(e);
                     {
-                        String[] targets = new string[] { ResourceUrl };
+                        String[] targets = new string[] { Global.ResourceUrl };
 
                         ElementTreeSlice sectionSlice = SliceSection(sliceElementDef,
                             "relatedResources",
@@ -250,7 +250,7 @@ namespace BreastRadiology.XUnitTests
                 {
                     ElementTreeNode sliceElementDef = StartSectionSlicing(e);
                     {
-                        String[] targets = new string[] { MedicationRequestUrl, ServiceRequestUrl, Self.ServiceRecommendation.Value().Url };
+                        String[] targets = new string[] { Global.MedicationRequestUrl, Global.ServiceRequestUrl, Self.ServiceRecommendation.Value().Url };
 
                         ElementTreeSlice sectionSlice = SliceSection(sliceElementDef,
                             "recommendations",

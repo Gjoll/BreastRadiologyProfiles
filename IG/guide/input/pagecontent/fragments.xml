@@ -40,6 +40,12 @@
 	    <img src="Frag-AbnormalityLymphNode.svg" alt="AbnormalityLymphNode"/>
 	</object>
 	<p>
+	Fragment Diagram AbnormalityMass
+	</p>
+	<object data="Frag-AbnormalityMass.svg" type="image/svg+xml">
+	    <img src="Frag-AbnormalityMass.svg" alt="AbnormalityMass"/>
+	</object>
+	<p>
 	Fragment Diagram AssociatedFeatures
 	</p>
 	<object data="Frag-AssociatedFeatures.svg" type="image/svg+xml">
@@ -254,6 +260,18 @@
 	</p>
 	<object data="Frag-ObservedItemGroupFragment.svg" type="image/svg+xml">
 	    <img src="Frag-ObservedItemGroupFragment.svg" alt="ObservedItemGroupFragment"/>
+	</object>
+	<p>
+	Fragment Diagram ObservedItemRegion
+	</p>
+	<object data="Frag-ObservedItemRegion.svg" type="image/svg+xml">
+	    <img src="Frag-ObservedItemRegion.svg" alt="ObservedItemRegion"/>
+	</object>
+	<p>
+	Fragment Diagram ObservedItemRegionFragment
+	</p>
+	<object data="Frag-ObservedItemRegionFragment.svg" type="image/svg+xml">
+	    <img src="Frag-ObservedItemRegionFragment.svg" alt="ObservedItemRegionFragment"/>
 	</object>
 	<p>
 	Fragment Diagram ObservedRegionFragment

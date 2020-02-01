@@ -67,7 +67,7 @@ namespace BreastRadiology.XUnitTests
                 SDefEditor e = Self.CreateEditor("AbnormalityDuct",
                         "Duct",
                         "Duct",
-                        ObservationUrl,
+                        Global.ObservationUrl,
                         $"{Group_CommonResources}/AbnormalityDuct",
                         "ObservationLeaf")
                     .AddFragRef(Self.ObservationLeafFragment.Value())
@@ -86,6 +86,9 @@ namespace BreastRadiology.XUnitTests
 
                 s = e.SDef;
 
+                // Set Observation.code to unique value for this profile.
+                e.Select("code").Pattern(Self.ObservationCodeAbnormalityDuct.ToCodeableConcept());
+
                 e.IntroDoc
                     .ReviewedStatus("NOONE", "")
                     ;
@@ -95,7 +98,7 @@ namespace BreastRadiology.XUnitTests
 
                 e.StartComponentSliceing();
                 e.ComponentSliceCodeableConcept("ductType",
-                    Self.CodeAbnormalityDuctType.ToCodeableConcept(),
+                    Self.ComponentSliceCodeAbnormalityDuctType.ToCodeableConcept(),
                     binding,
                     BindingStrength.Required,
                     0,

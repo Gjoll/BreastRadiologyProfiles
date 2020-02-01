@@ -15,7 +15,7 @@ namespace BreastRadiology.XUnitTests
                 SDefEditor e = Self.CreateFragment("BreastRadObservationFragment",
                     "Observation Fragment",
                         "Observation/Fragment",
-                    ObservationUrl)
+                    Global.ObservationUrl)
                     .Description("Observation base fragment",
                         new Markdown()
                             .Paragraph("Base fragment that performs common constrains used in all breast radiology observations.")

@@ -44,7 +44,7 @@ Comments and Suggested changes to this implementation guide can be made
 <li><a href="StructureDefinition-MGFinding-definitions.html#Observation.hasMember:mGAbnormalityCalcification">'Mammography Calcification' reference [0..*]</a></li>
 <li><a href="StructureDefinition-MGFinding-definitions.html#Observation.hasMember:mGAbnormalityDensity">'Mammography Density' reference [0..*]</a></li>
 <li><a href="StructureDefinition-MGFinding-definitions.html#Observation.hasMember:mGAbnormalityFatNecrosis">'Mammography Fat Necrosis' reference [0..*]</a></li>
-<li><a href="StructureDefinition-MGFinding-definitions.html#Observation.hasMember:mass">'Mass' reference [0..*]</a></li>
+<li><a href="StructureDefinition-MGFinding-definitions.html#Observation.hasMember:abnormalityMass">'Mass' reference [0..*]</a></li>
   </ul>
   <!-- -hasMember-->
   <!-- +profileFragments-->

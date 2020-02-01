@@ -21,7 +21,7 @@ namespace BreastRadiology.XUnitTests
                 SDefEditor e = Self.CreateFragment("CommonComponentsFragment",
                         "Common Components Fragment",
                         "Common Components Fragment",
-                        ObservationUrl)
+                        Global.ObservationUrl)
                     .Description("Common Components fragment",
                         new Markdown()
                             .Paragraph("Adds commonly used component slice values, including:")

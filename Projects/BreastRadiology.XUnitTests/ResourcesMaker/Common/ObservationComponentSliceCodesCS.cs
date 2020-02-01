@@ -1,14 +1,5 @@
-using System;
-using System.Collections.Generic;
-using System.Diagnostics;
-using System.IO;
-using System.Linq;
-using System.Text;
-using FhirKhit.Tools;
-using FhirKhit.Tools.R4;
 using Hl7.Fhir.Model;
-using Hl7.Fhir.Serialization;
-using PreFhir;
+using System;
 
 namespace BreastRadiology.XUnitTests
 {
@@ -16,31 +7,29 @@ namespace BreastRadiology.XUnitTests
     {
         String ObservationComponentSliceCodesUrl => CodeSystemUrl("ObservationComponentSliceCodesUrl");
 
-        Coding CodeAbnormalityCystType => new Coding(ObservationComponentSliceCodesUrl, "abnormalityCystType");
-        Coding CodeAbnormalityDuctType => new Coding(ObservationComponentSliceCodesUrl, "abnormalityDuctType");
-        Coding CodeAbnormalityFibroAdenomaType => new Coding(ObservationComponentSliceCodesUrl, "mgAbnormalityFibroAdenomaType");
-        Coding CodeAbnormalityForeignObjectType => new Coding(ObservationComponentSliceCodesUrl, "abnormalityForeignObjectType");
-        Coding CodeAbnormalityLymphNodeType => new Coding(ObservationComponentSliceCodesUrl, "abnormalityLymphNodeType");
-        Coding CodeAbnormalityMassType => new Coding(ObservationComponentSliceCodesUrl, "abnormalityMassType");
+        Coding ComponentSliceCodeAbnormalityCystType => new Coding(ObservationComponentSliceCodesUrl, "abnormalityCystType");
+        Coding ComponentSliceCodeAbnormalityDuctType => new Coding(ObservationComponentSliceCodesUrl, "abnormalityDuctType");
+        Coding ComponentSliceCodeAbnormalityFibroAdenomaType => new Coding(ObservationComponentSliceCodesUrl, "mgAbnormalityFibroAdenomaType");
+        Coding ComponentSliceCodeAbnormalityForeignObjectType => new Coding(ObservationComponentSliceCodesUrl, "abnormalityForeignObjectType");
+        Coding ComponentSliceCodeAbnormalityLymphNodeType => new Coding(ObservationComponentSliceCodesUrl, "abnormalityLymphNodeType");
+        Coding ComponentSliceCodeAbnormalityMassType => new Coding(ObservationComponentSliceCodesUrl, "abnormalityMassType");
 
-        Coding CodeBiRads => new Coding(ObservationComponentSliceCodesUrl, "targetBiRads");
-        Coding CodeConsistentWithValue => new Coding(ObservationComponentSliceCodesUrl, "consistentWithValue");
-        Coding CodeConsistentWithQualifier => new Coding(ObservationComponentSliceCodesUrl, "consistentWithQualifier");
-        Coding CodeCorrespondsWith => new Coding(ObservationComponentSliceCodesUrl, "correspondsWith");
-        Coding CodeObservedChanges => new Coding(ObservationComponentSliceCodesUrl, "observedChanges");
-        Coding CodeMargin => new Coding(ObservationComponentSliceCodesUrl, "margin");
-        Coding CodeMGDensity => new Coding(ObservationComponentSliceCodesUrl, "mgDensity");
-        Coding CodeNotPreviouslySeen => new Coding(ObservationComponentSliceCodesUrl, "notPreviouslySeen");
-        Coding CodeObservedItemGroup => new Coding(ObservationComponentSliceCodesUrl, "observedItemGroup");
-        Coding CodeObservedItemRegion => new Coding(ObservationComponentSliceCodesUrl, "observedItemRegion");
-        Coding CodeObservedCount => new Coding(ObservationComponentSliceCodesUrl, "observedCount");
-        Coding CodeObservedFeatureType => new Coding(ObservationComponentSliceCodesUrl, "featureType");
-        Coding CodeOrientation => new Coding(ObservationComponentSliceCodesUrl, "orientation");
-        Coding CodeShape => new Coding(ObservationComponentSliceCodesUrl, "shape");
-        Coding MGCodeAbnormalityAsymmetryType => new Coding(ObservationComponentSliceCodesUrl, "mgAbnormalityAsymmetryType");
-        Coding MGCodeAbnormalityDensityType => new Coding(ObservationComponentSliceCodesUrl, "mgAbnormalityDensityType");
+        Coding ComponentSliceCodeBiRads => new Coding(ObservationComponentSliceCodesUrl, "targetBiRads");
+        Coding ComponentSliceCodeConsistentWithValue => new Coding(ObservationComponentSliceCodesUrl, "consistentWithValue");
+        Coding ComponentSliceCodeConsistentWithQualifier => new Coding(ObservationComponentSliceCodesUrl, "consistentWithQualifier");
+        Coding ComponentSliceCodeCorrespondsWith => new Coding(ObservationComponentSliceCodesUrl, "correspondsWith");
+        Coding ComponentSliceCodeObservedChanges => new Coding(ObservationComponentSliceCodesUrl, "observedChanges");
+        Coding ComponentSliceCodeMargin => new Coding(ObservationComponentSliceCodesUrl, "margin");
+        Coding ComponentSliceCodeMGDensity => new Coding(ObservationComponentSliceCodesUrl, "mgDensity");
+        Coding ComponentSliceCodeNotPreviouslySeen => new Coding(ObservationComponentSliceCodesUrl, "notPreviouslySeen");
+        Coding ComponentSliceCodeObservedCount => new Coding(ObservationComponentSliceCodesUrl, "observedCount");
+        Coding ComponentSliceCodeObservedFeatureType => new Coding(ObservationComponentSliceCodesUrl, "featureType");
+        Coding ComponentSliceCodeOrientation => new Coding(ObservationComponentSliceCodesUrl, "orientation");
+        Coding ComponentSliceCodeShape => new Coding(ObservationComponentSliceCodesUrl, "shape");
+        Coding MGComponentSliceCodeAbnormalityAsymmetryType => new Coding(ObservationComponentSliceCodesUrl, "mgAbnormalityAsymmetryType");
+        Coding MGComponentSliceCodeAbnormalityDensityType => new Coding(ObservationComponentSliceCodesUrl, "mgAbnormalityDensityType");
 
-        Coding MGCodeCalcificationType => new Coding(ObservationComponentSliceCodesUrl, "mgCalcificationType");
+        Coding MGComponentSliceCodeCalcificationType => new Coding(ObservationComponentSliceCodesUrl, "mgCalcificationType");
         Coding MGCodeCalcificationDistribution => new Coding(ObservationComponentSliceCodesUrl, "mgCalcificationDistribution");
 
         CSTaskVar ComponentSliceCodesCS = new CSTaskVar(
@@ -53,100 +42,92 @@ namespace BreastRadiology.XUnitTests
                         Group_CommonCodesCS,
                         new ConceptDef[]
                         {
-                            new ConceptDef(Self.CodeAbnormalityCystType,
+                            new ConceptDef(Self.ComponentSliceCodeAbnormalityCystType,
                                 new Definition()
                                     .Line("Slicing Component Code - AbnormalityCystType")
                                 ),
-                            new ConceptDef(Self.CodeAbnormalityDuctType,
+                            new ConceptDef(Self.ComponentSliceCodeAbnormalityDuctType,
                                 new Definition()
                                     .Line("Slicing Component Code - CodeAbnormalityDuctType")
                                 ),
-                            new ConceptDef(Self.CodeAbnormalityFibroAdenomaType,
+                            new ConceptDef(Self.ComponentSliceCodeAbnormalityFibroAdenomaType,
                                 new Definition()
                                     .Line("Slicing Component Code - CodeAbnormalityFibroAdenomaType")
                                 ),
-                            new ConceptDef(Self.CodeAbnormalityForeignObjectType,
+                            new ConceptDef(Self.ComponentSliceCodeAbnormalityForeignObjectType,
                                 new Definition()
                                     .Line("Slicing Component Code - CodeAbnormalityForeignObjectType")
                                 ),
-                            new ConceptDef(Self.CodeAbnormalityLymphNodeType,
+                            new ConceptDef(Self.ComponentSliceCodeAbnormalityLymphNodeType,
                                 new Definition()
                                     .Line("Slicing Component Code - CodeAbnormalityLymphNodeType")
                                 ),
-                            new ConceptDef(Self.CodeAbnormalityMassType,
+                            new ConceptDef(Self.ComponentSliceCodeAbnormalityMassType,
                                 new Definition()
                                     .Line("Slicing Component Code - CodeAbnormalityMassType")
                                 ),
 
-                            new ConceptDef(Self.CodeBiRads,
+                            new ConceptDef(Self.ComponentSliceCodeBiRads,
                                 new Definition()
                                     .Line("Slicing Component Code - BiRads")
                                 ),
-                            new ConceptDef(Self.CodeConsistentWithValue,
+                            new ConceptDef(Self.ComponentSliceCodeConsistentWithValue,
                                 new Definition()
                                     .Line("Slicing Component Code - ConsistentWithValue")
                                 ),
-                            new ConceptDef(Self.CodeConsistentWithQualifier,
+                            new ConceptDef(Self.ComponentSliceCodeConsistentWithQualifier,
                                 new Definition()
                                     .Line("Slicing Component Code - ConsistentWithQualifier")
                                 ),
-                            new ConceptDef(Self.CodeCorrespondsWith,
+                            new ConceptDef(Self.ComponentSliceCodeCorrespondsWith,
                                 new Definition()
                                     .Line("Slicing Component Code - CorrespondsWith")
                                 ),
 
-                            new ConceptDef(Self.CodeMargin,
+                            new ConceptDef(Self.ComponentSliceCodeMargin,
                                 new Definition()
                                     .Line("Slicing Component Code - Margin")
                                 ),
-                            new ConceptDef(Self.CodeMGDensity,
+                            new ConceptDef(Self.ComponentSliceCodeMGDensity,
                                 new Definition()
                                     .Line("Slicing Component Code - MGDensity")
                                 ),
-                            new ConceptDef(Self.CodeNotPreviouslySeen,
+                            new ConceptDef(Self.ComponentSliceCodeNotPreviouslySeen,
                                 new Definition()
                                     .Line("Slicing Component Code - Not Previously Seen")
                                 ),
-                            new ConceptDef(Self.CodeObservedChanges,
+                            new ConceptDef(Self.ComponentSliceCodeObservedChanges,
                                 new Definition()
                                     .Line("Slicing Component Code - Observed Changes")
                                 ),
-                            new ConceptDef(Self.CodeObservedItemGroup,
-                                new Definition()
-                                    .Line("Slicing Component Code - ObservedItemGroup")
-                                ),
-                            new ConceptDef(Self.CodeObservedItemRegion,
-                                new Definition()
-                                    .Line("Slicing Component Code - ObservedArea")
-                                ),
-                            new ConceptDef(Self.CodeObservedCount,
+                            new ConceptDef(Self.ComponentSliceCodeObservedCount,
                                 new Definition()
                                     .Line("Slicing Component Code - ObservedCount")
                                 ),
-                            new ConceptDef(Self.CodeObservedFeatureType,
+                            new ConceptDef(Self.ComponentSliceCodeObservedFeatureType,
                                 new Definition()
                                     .Line("Slicing Component Code - ObservedFeatureType")
                                 ),
 
-                            new ConceptDef(Self.CodeOrientation,
+                            new ConceptDef(Self.ComponentSliceCodeOrientation,
                                 new Definition()
                                     .Line("Slicing Component Code - Orientation")
                                 ),
-                            new ConceptDef(Self.CodeShape,
+                            new ConceptDef(Self.ComponentSliceCodeShape,
                                 new Definition()
                                     .Line("Slicing Component Code - Shape")
                                 ),
 
-                            new ConceptDef(Self.MGCodeAbnormalityAsymmetryType,
+                            new ConceptDef(Self.MGComponentSliceCodeAbnormalityAsymmetryType,
                                 new Definition()
                                     .Line("Slicing Component Code - MGCodeAbnormalityAsymmetryType")
                                 ),
-                            new ConceptDef(Self.MGCodeAbnormalityDensityType,
+                            new ConceptDef(Self.MGComponentSliceCodeAbnormalityDensityType,
                                 new Definition()
                                     .Line("Slicing Component Code - MGCodeAbnormalityDensityType")
                                 ),
 
-                            new ConceptDef(Self.MGCodeCalcificationType,
+                            new ConceptDef(Self.MGComponentSliceCodeCalcificationType,
                                 new Definition()
                                     .Line("Slicing Component Code - MGCalcificationType")
                                 ),

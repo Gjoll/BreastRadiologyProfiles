@@ -21,7 +21,7 @@ namespace BreastRadiology.XUnitTests
                        SDefEditor e = Self.CreateFragment("ObservedCountFragment",
                                "ObservedCount Fragment",
                                "ObservedCount Fragment",
-                               ObservationUrl)
+                               Global.ObservationUrl)
                            .Description("Fragment that adds 'Observed Count' element to profile.",
                                new Markdown()
                            )
@@ -29,7 +29,7 @@ namespace BreastRadiology.XUnitTests
                        s = e.SDef;
 
                        e.SliceComponentSize(sliceName,
-                           Self.CodeObservedCount.ToCodeableConcept(),
+                           Self.ComponentSliceCodeObservedCount.ToCodeableConcept(),
                            Self.UnitsOfLengthVS.Value(),
                            out ElementTreeSlice slice);
 

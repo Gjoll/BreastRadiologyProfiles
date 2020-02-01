@@ -20,7 +20,7 @@ namespace BreastRadiology.XUnitTests
                 SDefEditor e = Self.CreateEditor("AssociatedFeatures",
                         "Associated Features",
                         "Associated/Features",
-                        ObservationUrl,
+                        Global.ObservationUrl,
                         $"{Group_CommonResources}/AssociatedFeature",
                         "ObservationSection")
                     .Description("Associated Features Observation",
@@ -31,6 +31,10 @@ namespace BreastRadiology.XUnitTests
                     .AddFragRef(Self.ObservationSectionFragment.Value())
                     ;
                 s = e.SDef;
+
+                // Set Observation.code to unique value for this profile.
+                e.Select("code").Pattern(Self.ObservationCodeAssociatedFeatures.ToCodeableConcept());
+
 
                 e.IntroDoc
                     .ReviewedStatus("NOONE", "")

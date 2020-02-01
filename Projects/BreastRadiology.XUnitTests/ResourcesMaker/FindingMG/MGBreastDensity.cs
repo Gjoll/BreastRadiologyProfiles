@@ -111,7 +111,7 @@ namespace BreastRadiology.XUnitTests
                 SDefEditor e = Self.CreateEditor("MGBreastDensity",
                         "Mammography Breast Density",
                         "MG Breast Density",
-                        ObservationUrl,
+                        Global.ObservationUrl,
                         $"{Group_MGResources}/BreastDensity",
                         "ObservationLeaf")
                     .AddFragRef(Self.ObservationLeafFragment.Value())
@@ -132,6 +132,9 @@ namespace BreastRadiology.XUnitTests
                     ;
 
                 s = e.SDef;
+
+                // Set Observation.code to unique value for this profile.
+                e.Select("code").Pattern(Self.ObservationCodeMGBreastDensity.ToCodeableConcept());
 
                 e.IntroDoc
                     .ReviewedStatus("NOONE", "")

@@ -12,7 +12,7 @@ namespace BreastRadiology.XUnitTests
             SDefEditor e = Self.CreateFragment("ShapeComponentsFragment",
                     "Shape Components Fragment",
                     "Shape Components Fragment",
-                    ObservationUrl)
+                    Global.ObservationUrl)
                 .Description("Shape component slice fragment",
                     new Markdown()
                         .Paragraph("Adds Orientation, Shape, Margin, and Density Components")
@@ -24,7 +24,7 @@ namespace BreastRadiology.XUnitTests
             e.StartComponentSliceing();
 
             e.ComponentSliceCodeableConcept("orientation",
-                Self.CodeOrientation.ToCodeableConcept(),
+                Self.ComponentSliceCodeOrientation.ToCodeableConcept(),
                 Self.OrientationVS.Value(),
                 BindingStrength.Required,
                 0,
@@ -36,7 +36,7 @@ namespace BreastRadiology.XUnitTests
                 );
 
             e.ComponentSliceCodeableConcept("shape",
-                Self.CodeShape.ToCodeableConcept(),
+                Self.ComponentSliceCodeShape.ToCodeableConcept(),
                 Self.ShapeVS.Value(),
                 BindingStrength.Required,
                 0,
@@ -48,7 +48,7 @@ namespace BreastRadiology.XUnitTests
                 );
 
             e.ComponentSliceCodeableConcept("margin",
-                Self.CodeMargin.ToCodeableConcept(),
+                Self.ComponentSliceCodeMargin.ToCodeableConcept(),
                 Self.MarginVS.Value(),
                 BindingStrength.Required,
                 0,
@@ -60,7 +60,7 @@ namespace BreastRadiology.XUnitTests
                 );
 
             e.ComponentSliceCodeableConcept("mgDensity",
-                Self.CodeMGDensity.ToCodeableConcept(),
+                Self.ComponentSliceCodeMGDensity.ToCodeableConcept(),
                 Self.MGDensityVS.Value(),
                 BindingStrength.Required,
                 0,

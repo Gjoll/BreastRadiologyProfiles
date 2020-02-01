@@ -68,10 +68,10 @@ namespace BreastRadiology.XUnitTests
             {
                 ValueSet binding = Self.MassTypeValueSetVS.Value();
 
-                SDefEditor e = Self.CreateEditor("Mass",
+                SDefEditor e = Self.CreateEditor("AbnormalityMass",
                         "Mass",
                         "Mass",
-                        ObservationUrl,
+                        Global.ObservationUrl,
                         $"{Group_CommonResources}/MassAbnormality",
                         "ObservationLeaf")
                     .AddFragRef(Self.ObservationLeafFragment.Value())
@@ -97,6 +97,9 @@ namespace BreastRadiology.XUnitTests
 
                 s = e.SDef;
 
+                // Set Observation.code to unique value for this profile.
+                e.Select("code").Pattern(Self.ObservationCodeAbnormalityMass.ToCodeableConcept());
+
                 e.IntroDoc
                     .ReviewedStatus("NOONE", "")
                     ;
@@ -107,7 +110,7 @@ namespace BreastRadiology.XUnitTests
 
                 e.StartComponentSliceing();
                 e.ComponentSliceCodeableConcept("massType",
-                    Self.CodeAbnormalityMassType.ToCodeableConcept(),
+                    Self.ComponentSliceCodeAbnormalityMassType.ToCodeableConcept(),
                     binding,
                     BindingStrength.Required,
                     0,

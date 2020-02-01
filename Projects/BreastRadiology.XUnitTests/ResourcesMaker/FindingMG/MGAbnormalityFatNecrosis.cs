@@ -19,7 +19,7 @@ namespace BreastRadiology.XUnitTests
                 SDefEditor e = Self.CreateEditor("MGAbnormalityFatNecrosis",
                         "Mammography Fat Necrosis",
                         "MG Fat Necrosis",
-                        ObservationUrl,
+                        Global.ObservationUrl,
                         $"{Group_MGResources}/AbnormalityFatNecrosis",
                         "ObservationLeaf")
                     .AddFragRef(Self.ObservationLeafFragment.Value())
@@ -38,6 +38,9 @@ namespace BreastRadiology.XUnitTests
                     ;
 
                 s = e.SDef;
+
+                // Set Observation.code to unique value for this profile.
+                e.Select("code").Pattern(Self.ObservationCodeMGAbnormalityFatNecrosis.ToCodeableConcept());
 
                 e.IntroDoc
                     .ReviewedStatus("NOONE", "")

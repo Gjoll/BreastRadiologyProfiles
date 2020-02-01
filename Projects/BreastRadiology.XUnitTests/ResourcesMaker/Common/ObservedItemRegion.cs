@@ -14,6 +14,46 @@ namespace BreastRadiology.XUnitTests
 {
     partial class ResourcesMaker : ConverterBase
     {
+        #region ItemRegionComponentCodes
+        VSTaskVar ItemRegionComponentCodesVS = new VSTaskVar(
+            (out ValueSet vs) =>
+                vs = Self.CreateValueSet(
+                        "ItemRegionComponentCodesVS",
+                        "Item Region Component Codes ValueSet",
+                        "Component Code/ValueSet",
+                        "Item Region Component Codes value set.",
+                        Group_MGCodesVS,
+                        Self.ItemRegionComponentCodesCS.Value()
+                    )
+            );
+
+        CSTaskVar ItemRegionComponentCodesCS = new CSTaskVar(
+            (out CodeSystem cs) =>
+                cs = Self.CreateCodeSystem(
+                        "ItemRegionComponentCodesCS",
+                        "Item Region Codes CodeSystem",
+                        "ItemRegionComponentCodes/CodeSystem",
+                        "ItemRegionComponentCodes code system",
+                        Group_CommonCodesCS,
+                        new ConceptDef[]
+                        {
+                            new ConceptDef()
+                                .SetCode("RegionComponent")
+                                .SetDisplay("Region Component code")
+                                .SetDefinition(new Definition()
+                                    .Line("RegionComponent")
+                                    .Line("Identifies the component containing the grouping code")
+                                ),
+                            new ConceptDef()
+                                .SetCode("SizeComponent")
+                                .SetDisplay("Size Component code")
+                                .SetDefinition(new Definition()
+                                    .Line("SizeComponent")
+                                    .Line("Identifies the component(s) containing the size values")
+                                ),
+                        })
+            );
+        #endregion
         #region ItemRegion
         CSTaskVar ItemRegionCS = new CSTaskVar(
              (out CodeSystem cs) =>
@@ -64,7 +104,7 @@ namespace BreastRadiology.XUnitTests
                 SDefEditor e = Self.CreateEditor("ObservedItemRegion",
                         "Observed ItemRegion",
                         "ObservedItemRegion",
-                        ObservationUrl,
+                        Global.ObservationUrl,
                         $"{Group_MGResources}/ObservedItemRegion",
                         "ObservationLeaf")
                     .AddFragRef(Self.ObservationLeafFragment.Value())
@@ -89,13 +129,16 @@ namespace BreastRadiology.XUnitTests
                     ;
                 s = e.SDef;
 
+                // Set Observation.code to unique value for this profile.
+                e.Select("code").Pattern(Self.ObservationCodeObservedItemRegion.ToCodeableConcept());
+
                 e.IntroDoc
                     .ReviewedStatus("NOONE", "")
                     ;
 
                 // Set Observation.code to ObservedItemRegion
                 e.Select("code")
-                    .Pattern(Self.CodeObservedItemRegion.ToCodeableConcept())
+                    .Pattern(Self.ObservationCodeObservedItemRegion.ToCodeableConcept())
                     ;
 
                 e.StartComponentSliceing();
@@ -104,7 +147,7 @@ namespace BreastRadiology.XUnitTests
                 {
                     ValueSet binding = Self.ItemRegionVS.Value();
                     ElementTreeSlice slice = e.ComponentSliceCodeableConcept("groupingType",
-                        binding.Find("RegionComponent").ToCodeableConcept(),
+                        Self.ItemRegionComponentCodesVS.Value().Find("RegionComponent").ToCodeableConcept(),
                         binding,
                         BindingStrength.Required,
                         1,
@@ -199,7 +242,7 @@ namespace BreastRadiology.XUnitTests
                    SDefEditor e = Self.CreateFragment("ObservedItemRegionFragment",
                            "ObservedItemRegion Fragment",
                            "ObservedItemRegion Fragment",
-                           ObservationUrl)
+                           Global.ObservationUrl)
                        .Description("Fragment that adds 'Observed Item Region' hasmember element to profile.",
                            new Markdown()
                        )

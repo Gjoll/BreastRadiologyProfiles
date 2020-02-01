@@ -20,7 +20,7 @@ namespace BreastRadiology.XUnitTests
                 SDefEditor e = Self.CreateEditor("BreastRadReport",
                      "Breast Radiology Report",
                      "Breast/Radiology/Report",
-                     DiagnosticReportUrl,
+                     Global.DiagnosticReportUrl,
                      Group_BaseResources,
                      "Resource")
                      .Description("Breast Radiology Diagnostic Report",
@@ -40,7 +40,7 @@ namespace BreastRadiology.XUnitTests
                      .ReviewedStatus("CIC", "22.1.2020")
                      ;
 
-                e.Select("code").Pattern = new CodeableConcept(Loinc, "10193-1");
+                e.Select("code").Pattern = new CodeableConcept(Global.Loinc, "10193-1");
                 e.Select("specimen").Zero();
                 {
                     e.Select("conclusion")
@@ -65,11 +65,11 @@ namespace BreastRadiology.XUnitTests
                 }
                 ElementTreeNode sliceElementDef = e.ConfigureSliceByUrlDiscriminator("result", false);
                 {
-                    ElementTreeSlice slice = e.SliceTargetReference( sliceElementDef, Self.SectionFindingsLeftBreast.Value(), 0, "1");
+                    ElementTreeSlice slice = e.SliceTargetReference( sliceElementDef, Self.FindingsLeftBreast.Value(), 0, "1");
                     slice.ElementDefinition.MustSupport();
                 }
                 {
-                    ElementTreeSlice slice = e.SliceTargetReference( sliceElementDef, Self.SectionFindingsRightBreast.Value(), 0, "1");
+                    ElementTreeSlice slice = e.SliceTargetReference( sliceElementDef, Self.FindingsRightBreast.Value(), 0, "1");
                     slice.ElementDefinition.MustSupport();
                 }
             });

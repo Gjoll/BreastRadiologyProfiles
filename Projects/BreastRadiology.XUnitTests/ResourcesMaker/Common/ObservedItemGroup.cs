@@ -173,7 +173,7 @@ namespace BreastRadiology.XUnitTests
                 SDefEditor e = Self.CreateEditor("ObservedItemGroup",
                         "Observed ItemGroup",
                         "ObservedItemGroup",
-                        ObservationUrl,
+                        Global.ObservationUrl,
                         $"{Group_MGResources}/ObservedItemGroup",
                         "ObservationLeaf")
                     .AddFragRef(Self.ObservationLeafFragment.Value())
@@ -191,13 +191,11 @@ namespace BreastRadiology.XUnitTests
                     ;
                 s = e.SDef;
 
+                // Set Observation.code to unique value for this profile.
+                e.Select("code").Pattern(Self.ObservationCodeObservedItemGroup.ToCodeableConcept());
+
                 e.IntroDoc
                     .ReviewedStatus("NOONE", "")
-                    ;
-
-                // Set Observation.code to ObservedItemGroup
-                e.Select("code")
-                    .Pattern(Self.CodeObservedItemGroup.ToCodeableConcept())
                     ;
 
                 e.StartComponentSliceing();
@@ -206,7 +204,7 @@ namespace BreastRadiology.XUnitTests
                 {
                     ValueSet binding = Self.ItemGroupingVS.Value();
                     ElementTreeSlice slice = e.ComponentSliceCodeableConcept("groupingType",
-                        binding.Find("GroupingComponent").ToCodeableConcept(),
+                        Self.ItemGroupComponentCodesVS.Value().Find("GroupingComponent").ToCodeableConcept(),
                         binding,
                         BindingStrength.Required,
                         1,
@@ -301,7 +299,7 @@ namespace BreastRadiology.XUnitTests
                    SDefEditor e = Self.CreateFragment("ObservedItemGroupFragment",
                            "ObservedItemGroup Fragment",
                            "ObservedItemGroup Fragment",
-                           ObservationUrl)
+                           Global.ObservationUrl)
                        .Description("Fragment that adds 'Observed Item Group' hasmember element to profile.",
                            new Markdown()
                        )

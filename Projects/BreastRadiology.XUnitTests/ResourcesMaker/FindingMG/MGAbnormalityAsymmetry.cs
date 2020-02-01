@@ -108,7 +108,7 @@ namespace BreastRadiology.XUnitTests
                 SDefEditor e = Self.CreateEditor("MGAbnormalityAsymmetry",
                         "Mammography Asymmetry",
                         "MG Asymmetry",
-                        ObservationUrl,
+                        Global.ObservationUrl,
                         $"{Group_MGResources}/AbnormalityAsymmetry",
                         "ObservationLeaf")
                     .AddFragRef(Self.ObservationLeafFragment.Value())
@@ -134,6 +134,9 @@ namespace BreastRadiology.XUnitTests
                 ;
                 s = e.SDef;
 
+                // Set Observation.code to unique value for this profile.
+                e.Select("code").Pattern(Self.ObservationCodeMGAbnormalityAsymmetry.ToCodeableConcept());
+
                 e.IntroDoc
                     .ReviewedStatus("NOONE", "")
                     ;
@@ -144,7 +147,7 @@ namespace BreastRadiology.XUnitTests
 
                 e.StartComponentSliceing();
                 e.ComponentSliceCodeableConcept("asymmetryType",
-                    Self.MGCodeAbnormalityAsymmetryType.ToCodeableConcept(),
+                    Self.MGComponentSliceCodeAbnormalityAsymmetryType.ToCodeableConcept(),
                     binding,
                     BindingStrength.Required,
                     0,

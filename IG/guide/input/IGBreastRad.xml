@@ -271,6 +271,33 @@
     </resource>
     <resource>
       <reference>
+        <reference value="CodeSystem/ItemGrouping" />
+      </reference>
+      <name value="Item Grouping CodeSystem" />
+      <description value="Item grouping code system." />
+      <exampleBoolean value="false" />
+      <groupingId value="CommonCodesCS" />
+    </resource>
+    <resource>
+      <reference>
+        <reference value="CodeSystem/ItemRegion" />
+      </reference>
+      <name value="Item Region CodeSystem" />
+      <description value="Item grouping code system." />
+      <exampleBoolean value="false" />
+      <groupingId value="CommonCodesCS" />
+    </resource>
+    <resource>
+      <reference>
+        <reference value="CodeSystem/ItemRegionComponentCodesCS" />
+      </reference>
+      <name value="Item Region Codes CodeSystem" />
+      <description value="ItemRegionComponentCodes code system" />
+      <exampleBoolean value="false" />
+      <groupingId value="CommonCodesCS" />
+    </resource>
+    <resource>
+      <reference>
         <reference value="CodeSystem/MammoCalcificationDistributionCS" />
       </reference>
       <name value="Mammography Calcification Distribution CodeSystem" />
@@ -541,6 +568,33 @@
     </resource>
     <resource>
       <reference>
+        <reference value="ValueSet/ItemGroupingVS" />
+      </reference>
+      <name value="Item Grouping ValueSet" />
+      <description value="Item Grouping of abnormalities value set." />
+      <exampleBoolean value="false" />
+      <groupingId value="CommonCodesVS" />
+    </resource>
+    <resource>
+      <reference>
+        <reference value="ValueSet/ItemRegionComponentCodesVS" />
+      </reference>
+      <name value="Item Region Component Codes ValueSet" />
+      <description value="Item Region Component Codes value set." />
+      <exampleBoolean value="false" />
+      <groupingId value="MGCodesVS" />
+    </resource>
+    <resource>
+      <reference>
+        <reference value="ValueSet/ItemRegionVS" />
+      </reference>
+      <name value="Item Region ValueSet" />
+      <description value="Item Region of abnormalities value set." />
+      <exampleBoolean value="false" />
+      <groupingId value="CommonCodesVS" />
+    </resource>
+    <resource>
+      <reference>
         <reference value="ValueSet/MammoCalcificationDistributionVS" />
       </reference>
       <name value="Mammography Calcification Distribution ValueSet" />
@@ -685,10 +739,10 @@
     </resource>
     <resource>
       <reference>
-        <reference value="StructureDefinition/BreastRadReport" />
+        <reference value="StructureDefinition/BreastRadComposition" />
       </reference>
-      <name value="Breast Radiology Report" />
-      <description value="Breast Radiology Diagnostic Report" />
+      <name value="Breast Radiology Composition" />
+      <description value="Breast Radiology Composition" />
       <exampleBoolean value="false" />
       <groupingId value="BaseResources" />
     </resource>
@@ -703,10 +757,10 @@
     </resource>
     <resource>
       <reference>
-        <reference value="StructureDefinition/BreastRadComposition" />
+        <reference value="StructureDefinition/BreastRadReport" />
       </reference>
-      <name value="Breast Radiology Composition" />
-      <description value="Breast Radiology Composition" />
+      <name value="Breast Radiology Report" />
+      <description value="Breast Radiology Diagnostic Report" />
       <exampleBoolean value="false" />
       <groupingId value="BaseResources" />
     </resource>
@@ -811,6 +865,15 @@
     </resource>
     <resource>
       <reference>
+        <reference value="StructureDefinition/AbnormalityMass" />
+      </reference>
+      <name value="Mass" />
+      <description value="Mass Observation" />
+      <exampleBoolean value="false" />
+      <groupingId value="CommonResources" />
+    </resource>
+    <resource>
+      <reference>
         <reference value="StructureDefinition/BodyDistanceFromExtension" />
       </reference>
       <name value="Body Distance From Extension" />
@@ -905,6 +968,15 @@
       </reference>
       <name value="Observed ItemGroup" />
       <description value="Observation of a size or size range in 1, 2, or 3 dimensions." />
+      <exampleBoolean value="false" />
+      <groupingId value="MGResources" />
+    </resource>
+    <resource>
+      <reference>
+        <reference value="StructureDefinition/ObservedItemRegion" />
+      </reference>
+      <name value="Observed ItemRegion" />
+      <description value="Observation Region" />
       <exampleBoolean value="false" />
       <groupingId value="MGResources" />
     </resource>
@@ -1094,6 +1166,15 @@
       </reference>
       <name value="ObservedItemGroup Fragment" />
       <description value="Fragment 'Fragment that adds 'Observed Item Group' hasmember element to profile.'" />
+      <exampleBoolean value="false" />
+      <groupingId value="Fragments" />
+    </resource>
+    <resource>
+      <reference>
+        <reference value="StructureDefinition/ObservedItemRegionFragment" />
+      </reference>
+      <name value="ObservedItemRegion Fragment" />
+      <description value="Fragment 'Fragment that adds 'Observed Item Region' hasmember element to profile.'" />
       <exampleBoolean value="false" />
       <groupingId value="Fragments" />
     </resource>
