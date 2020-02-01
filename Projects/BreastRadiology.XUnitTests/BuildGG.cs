@@ -109,7 +109,7 @@ namespace BreastRadiology.XUnitTests
                 String code = row[7].ToString();
                 if (itemsToIgnore.Contains(code.Trim().ToUpper()) == false)
                 {
-                    String validWith = row[0];
+                    String validWith = App("", row[0], "MG"); ;
                     validWith = App(validWith, row[1], "MRI");
                     validWith = App(validWith, row[2], "NM");
                     validWith = App(validWith, row[3], "US");
