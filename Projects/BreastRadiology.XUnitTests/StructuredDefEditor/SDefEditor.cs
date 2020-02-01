@@ -116,7 +116,7 @@ namespace BreastRadiology.XUnitTests
             {
                 List<ElementDefinition> elementDefinitions = new List<ElementDefinition>();
                 differentialNode.CopyTo(elementDefinitions);
-                sDef.Differential.Element = elementDefinitions;
+                this.sDef.Differential.Element = elementDefinitions;
             }
 
             fragmentName = Path.Combine(this.fragmentDir, $"StructureDefinition-{this.sDef.Name}.json");
@@ -170,14 +170,14 @@ namespace BreastRadiology.XUnitTests
             StructureDefinition sd,
             bool showChildren = true)
         {
-            return ApplyExtension(name, sd.Url, showChildren);
+            return this.ApplyExtension(name, sd.Url, showChildren);
         }
 
         public ElementTreeSlice ApplyExtension(ElementTreeNode extDef,
             String name,
             StructureDefinition sd)
         {
-            return ApplyExtension(extDef, name, sd.Url);
+            return this.ApplyExtension(extDef, name, sd.Url);
         }
 
         public ElementTreeSlice ApplyExtension(String name,
@@ -299,7 +299,7 @@ namespace BreastRadiology.XUnitTests
                 this.element = e;
             }
 
-            public override string ToString() => $"{element.Min}..{element.Max}";
+            public override string ToString() => $"{this.element.Min}..{this.element.Max}";
         }
 
         public SDefEditor AddExtensionLink(String url,

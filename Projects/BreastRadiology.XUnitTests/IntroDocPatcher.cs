@@ -55,7 +55,7 @@ namespace BreastRadiology.XUnitTests
             switch (resource)
             {
                 case StructureDefinition sd:
-                    PatchStructDef(sd);
+                    this.PatchStructDef(sd);
                     break;
             }
         }

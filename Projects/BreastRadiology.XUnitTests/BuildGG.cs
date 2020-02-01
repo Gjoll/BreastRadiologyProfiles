@@ -27,9 +27,9 @@ namespace BreastRadiology.XUnitTests
         {
             get
             {
-                if (baseDirFull == null)
-                    baseDirFull = DirHelper.FindParentDir(BaseDirName);
-                return baseDirFull;
+                if (this.baseDirFull == null)
+                    this.baseDirFull = DirHelper.FindParentDir(BaseDirName);
+                return this.baseDirFull;
             }
         }
         String baseDirFull;
@@ -109,7 +109,7 @@ namespace BreastRadiology.XUnitTests
                 String code = row[7].ToString();
                 if (itemsToIgnore.Contains(code.Trim().ToUpper()) == false)
                 {
-                    String validWith = App("", row[0], "MG");
+                    String validWith = row[0];
                     validWith = App(validWith, row[1], "MRI");
                     validWith = App(validWith, row[2], "NM");
                     validWith = App(validWith, row[3], "US");
@@ -170,11 +170,58 @@ namespace BreastRadiology.XUnitTests
             editor.Save();
         }
 
+        void WriteDescriptions(DataSet ds)
+        {
+            String Val(Object t)
+            {
+                switch (t)
+                {
+                    case DBNull dbNullValue:
+                        return null;
+
+                    case String stringValue:
+                        return stringValue;
+
+                    default:
+                        throw new Exception("Invalid excel cell value");
+                }
+            }
+
+            DataTable dataTbl = ds.Tables["Sheet3"];
+            if (dataTbl == null)
+                throw new Exception($"Table {"Sheet3"} not found");
+
+            CodeEditor editor = new CodeEditor();
+            editor.Load(Path.Combine(DirHelper.FindParentDir("BreastRadiology.XUnitTests"),
+                        "ResourcesMaker",
+                        "MammoIDDescriptions.cs"));
+
+            CodeBlockNested cb = editor.Blocks.Find("Data");
+
+            for (Int32 i = 1; i < dataTbl.Rows.Count; i++)
+            {
+                DataRow row = dataTbl.Rows[i];
+
+                String id = Val(row[5]);
+                if (String.IsNullOrEmpty(id))
+                    throw new Exception("Null id field");
+                String text = Val(row[9]);
+
+                if (String.IsNullOrEmpty(id) == false)
+                {
+                    cb
+                        .AppendLine($"Add(\"{id}\", \"UMLS\", \"{text}\")")
+                    ;
+                }
+            }
+            editor.Save();
+        }
+
         [TestMethod]
         public void WriteCode()
         {
             DataSet ds = this.ReadGregDS();
-
+            WriteDescriptions(ds);
             WriteCS(ds, "Recommendation", @"Common\ServiceRecommendation.cs", "RecommendationsCS");
             WriteCS(ds, "CorrspondsWith", @"Common\CorrespondsWithCS.cs", "CorrespondsWithCS");
             WriteCS(ds, "ConsistentWith", @"Common\ConsistentWith.cs", "ConsistentWithCS");

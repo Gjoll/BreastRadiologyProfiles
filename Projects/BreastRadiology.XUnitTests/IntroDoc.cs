@@ -34,24 +34,24 @@ namespace BreastRadiology.XUnitTests
         {
             this.OutputPath = outputPath;
             String fullPath = Path.Combine("IntroDocTemplates", $"{templateName}.template");
-            codeEditor.Load(fullPath);
+            this.codeEditor.Load(fullPath);
         }
 
         CodeBlockNested reviewStatusBlock = null;
         public IntroDoc ReviewedStatus(String reviewer, String dt)
         {
-            if (reviewStatusBlock == null)
+            if (this.reviewStatusBlock == null)
             {
-                reviewStatusBlock = this.codeEditor.Blocks.Find("reviewStatus");
-                if (reviewStatusBlock == null)
+                this.reviewStatusBlock = this.codeEditor.Blocks.Find("reviewStatus");
+                if (this.reviewStatusBlock == null)
                     throw new Exception($"reviewStatus block missing");
-                reviewStatusBlock
+                this.reviewStatusBlock
                     .AppendRaw($"<h3 id=\"reviewStatus\">Review Status</h3>")
                     .AppendRaw($"Comments and Suggested changes to this implementation guide can be made ")
                     .AppendRaw($"<a href=\"https://github.com/HL7/fhir-breast-radiology-ig/projects/1\">here</a>")
                     ;
             }
-            reviewStatusBlock
+            this.reviewStatusBlock
                 .AppendRaw($"<p><b>Reviewed by {reviewer} on {dt}</b></p>")
                 ;
 

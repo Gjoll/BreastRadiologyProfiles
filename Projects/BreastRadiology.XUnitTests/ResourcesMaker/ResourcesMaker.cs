@@ -55,9 +55,9 @@ namespace BreastRadiology.XUnitTests
                 get
                 {
                     StringBuilder sb = new StringBuilder();
-                    sb.Append(definitionText);
-                    if (String.IsNullOrEmpty(modalities) == false)
-                        sb.AppendLine(modalities);
+                    sb.Append(this.definitionText);
+                    if (String.IsNullOrEmpty(this.modalities) == false)
+                        sb.AppendLine(this.modalities);
                     return sb.ToString();
                 }
             }
@@ -306,11 +306,11 @@ namespace BreastRadiology.XUnitTests
             String docTemplateName)
         {
             title = title.Trim();
-            SDefEditor retVal = CreateEditor(name, title, mapName, baseDefinition, groupPath);
+            SDefEditor retVal = this.CreateEditor(name, title, mapName, baseDefinition, groupPath);
 
             retVal.IntroDoc = new IntroDoc();
             retVal.IntroDoc.TryAddUserMacro("FocusPath", FocusMapMaker.FocusMapName(retVal.SDef.Url.LastUriPart()));
-            retVal.IntroDoc.TryAddUserMacro("TitleArticle", Article(title));
+            retVal.IntroDoc.TryAddUserMacro("TitleArticle", this.Article(title));
             retVal.IntroDoc.TryAddUserMacro("Title", title);
             retVal.IntroDoc.Load(docTemplateName, Path.Combine(this.pageDir, $"StructureDefinition-{name}-intro.xml"));
 
@@ -332,10 +332,10 @@ namespace BreastRadiology.XUnitTests
 
             retVal.IntroDoc = new IntroDoc();
             retVal.IntroDoc.TryAddUserMacro("FragPath", FragmentMapMaker.FragmentMapName(retVal.SDef.Url.LastUriPart()));
-            retVal.IntroDoc.TryAddUserMacro("TitleArticle", Article(title));
+            retVal.IntroDoc.TryAddUserMacro("TitleArticle", this.Article(title));
             retVal.IntroDoc.TryAddUserMacro("Title", title);
             retVal.IntroDoc.Load("Fragment",
-                Path.Combine(pageDir, $"StructureDefinition-{name}-intro.xml"));
+                Path.Combine(this.pageDir, $"StructureDefinition-{name}-intro.xml"));
 
             retVal.SDef.Version = "Fragment";       // this will get stripped out when unfrag'd.
 
@@ -354,7 +354,7 @@ namespace BreastRadiology.XUnitTests
             CodeSystem cs = new CodeSystem
             {
                 Id = name,
-                Url = CodeSystemUrl(name),
+                Url = this.CodeSystemUrl(name),
                 Name = name,
                 Title = title,
                 Description = new Markdown(description),
@@ -480,7 +480,7 @@ namespace BreastRadiology.XUnitTests
         IntroDoc CreateIntroDocVS(ValueSet binding)
         {
             IntroDoc doc = new IntroDoc();
-            doc.TryAddUserMacro("TitleArticle", Article(binding.Title));
+            doc.TryAddUserMacro("TitleArticle", this.Article(binding.Title));
             doc.TryAddUserMacro("Title", binding.Title);
             doc.TryAddUserMacro("FocusPath", FocusMapMaker.FocusMapName(binding.Name));
             doc.Load("ValueSet",

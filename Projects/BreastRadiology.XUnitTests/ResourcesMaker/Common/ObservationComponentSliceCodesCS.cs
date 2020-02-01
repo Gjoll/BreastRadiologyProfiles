@@ -5,32 +5,32 @@ namespace BreastRadiology.XUnitTests
 {
     partial class ResourcesMaker
     {
-        String ObservationComponentSliceCodesUrl => CodeSystemUrl("ObservationComponentSliceCodesUrl");
+        String ObservationComponentSliceCodesUrl => this.CodeSystemUrl("ObservationComponentSliceCodesUrl");
 
-        Coding ComponentSliceCodeAbnormalityCystType => new Coding(ObservationComponentSliceCodesUrl, "abnormalityCystType");
-        Coding ComponentSliceCodeAbnormalityDuctType => new Coding(ObservationComponentSliceCodesUrl, "abnormalityDuctType");
-        Coding ComponentSliceCodeAbnormalityFibroAdenomaType => new Coding(ObservationComponentSliceCodesUrl, "mgAbnormalityFibroAdenomaType");
-        Coding ComponentSliceCodeAbnormalityForeignObjectType => new Coding(ObservationComponentSliceCodesUrl, "abnormalityForeignObjectType");
-        Coding ComponentSliceCodeAbnormalityLymphNodeType => new Coding(ObservationComponentSliceCodesUrl, "abnormalityLymphNodeType");
-        Coding ComponentSliceCodeAbnormalityMassType => new Coding(ObservationComponentSliceCodesUrl, "abnormalityMassType");
+        Coding ComponentSliceCodeAbnormalityCystType => new Coding(this.ObservationComponentSliceCodesUrl, "abnormalityCystType");
+        Coding ComponentSliceCodeAbnormalityDuctType => new Coding(this.ObservationComponentSliceCodesUrl, "abnormalityDuctType");
+        Coding ComponentSliceCodeAbnormalityFibroAdenomaType => new Coding(this.ObservationComponentSliceCodesUrl, "mgAbnormalityFibroAdenomaType");
+        Coding ComponentSliceCodeAbnormalityForeignObjectType => new Coding(this.ObservationComponentSliceCodesUrl, "abnormalityForeignObjectType");
+        Coding ComponentSliceCodeAbnormalityLymphNodeType => new Coding(this.ObservationComponentSliceCodesUrl, "abnormalityLymphNodeType");
+        Coding ComponentSliceCodeAbnormalityMassType => new Coding(this.ObservationComponentSliceCodesUrl, "abnormalityMassType");
 
-        Coding ComponentSliceCodeBiRads => new Coding(ObservationComponentSliceCodesUrl, "targetBiRads");
-        Coding ComponentSliceCodeConsistentWithValue => new Coding(ObservationComponentSliceCodesUrl, "consistentWithValue");
-        Coding ComponentSliceCodeConsistentWithQualifier => new Coding(ObservationComponentSliceCodesUrl, "consistentWithQualifier");
-        Coding ComponentSliceCodeCorrespondsWith => new Coding(ObservationComponentSliceCodesUrl, "correspondsWith");
-        Coding ComponentSliceCodeObservedChanges => new Coding(ObservationComponentSliceCodesUrl, "observedChanges");
-        Coding ComponentSliceCodeMargin => new Coding(ObservationComponentSliceCodesUrl, "margin");
-        Coding ComponentSliceCodeMGDensity => new Coding(ObservationComponentSliceCodesUrl, "mgDensity");
-        Coding ComponentSliceCodeNotPreviouslySeen => new Coding(ObservationComponentSliceCodesUrl, "notPreviouslySeen");
-        Coding ComponentSliceCodeObservedCount => new Coding(ObservationComponentSliceCodesUrl, "observedCount");
-        Coding ComponentSliceCodeObservedFeatureType => new Coding(ObservationComponentSliceCodesUrl, "featureType");
-        Coding ComponentSliceCodeOrientation => new Coding(ObservationComponentSliceCodesUrl, "orientation");
-        Coding ComponentSliceCodeShape => new Coding(ObservationComponentSliceCodesUrl, "shape");
-        Coding MGComponentSliceCodeAbnormalityAsymmetryType => new Coding(ObservationComponentSliceCodesUrl, "mgAbnormalityAsymmetryType");
-        Coding MGComponentSliceCodeAbnormalityDensityType => new Coding(ObservationComponentSliceCodesUrl, "mgAbnormalityDensityType");
+        Coding ComponentSliceCodeBiRads => new Coding(this.ObservationComponentSliceCodesUrl, "targetBiRads");
+        Coding ComponentSliceCodeConsistentWithValue => new Coding(this.ObservationComponentSliceCodesUrl, "consistentWithValue");
+        Coding ComponentSliceCodeConsistentWithQualifier => new Coding(this.ObservationComponentSliceCodesUrl, "consistentWithQualifier");
+        Coding ComponentSliceCodeCorrespondsWith => new Coding(this.ObservationComponentSliceCodesUrl, "correspondsWith");
+        Coding ComponentSliceCodeObservedChanges => new Coding(this.ObservationComponentSliceCodesUrl, "observedChanges");
+        Coding ComponentSliceCodeMargin => new Coding(this.ObservationComponentSliceCodesUrl, "margin");
+        Coding ComponentSliceCodeMGDensity => new Coding(this.ObservationComponentSliceCodesUrl, "mgDensity");
+        Coding ComponentSliceCodeNotPreviouslySeen => new Coding(this.ObservationComponentSliceCodesUrl, "notPreviouslySeen");
+        Coding ComponentSliceCodeObservedCount => new Coding(this.ObservationComponentSliceCodesUrl, "observedCount");
+        Coding ComponentSliceCodeObservedFeatureType => new Coding(this.ObservationComponentSliceCodesUrl, "featureType");
+        Coding ComponentSliceCodeOrientation => new Coding(this.ObservationComponentSliceCodesUrl, "orientation");
+        Coding ComponentSliceCodeShape => new Coding(this.ObservationComponentSliceCodesUrl, "shape");
+        Coding MGComponentSliceCodeAbnormalityAsymmetryType => new Coding(this.ObservationComponentSliceCodesUrl, "mgAbnormalityAsymmetryType");
+        Coding MGComponentSliceCodeAbnormalityDensityType => new Coding(this.ObservationComponentSliceCodesUrl, "mgAbnormalityDensityType");
 
-        Coding MGComponentSliceCodeCalcificationType => new Coding(ObservationComponentSliceCodesUrl, "mgCalcificationType");
-        Coding MGCodeCalcificationDistribution => new Coding(ObservationComponentSliceCodesUrl, "mgCalcificationDistribution");
+        Coding MGComponentSliceCodeCalcificationType => new Coding(this.ObservationComponentSliceCodesUrl, "mgCalcificationType");
+        Coding MGCodeCalcificationDistribution => new Coding(this.ObservationComponentSliceCodesUrl, "mgCalcificationDistribution");
 
         CSTaskVar ComponentSliceCodesCS = new CSTaskVar(
              (out CodeSystem cs) =>

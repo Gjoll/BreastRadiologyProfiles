@@ -18,32 +18,32 @@ namespace BreastRadiology.XUnitTests
 
 Observation SectionFindingsRightBreast
          */
-        String ObservationCodesUrl => CodeSystemUrl("ObservationCodesUrl");
+        String ObservationCodesUrl => this.CodeSystemUrl("ObservationCodesUrl");
 
-        Coding ObservationCodeObservedItemGroup => new Coding(ObservationCodesUrl, "observedItemGroupObservation");
-        Coding ObservationCodeObservedItemRegion => new Coding(ObservationCodesUrl, "observedItemRegionObservationObservation");
+        Coding ObservationCodeObservedItemGroup => new Coding(this.ObservationCodesUrl, "observedItemGroupObservation");
+        Coding ObservationCodeObservedItemRegion => new Coding(this.ObservationCodesUrl, "observedItemRegionObservationObservation");
 
-        Coding ObservationCodeMGFinding => new Coding(ObservationCodesUrl, "mgFindingObservationObservation");
-        Coding ObservationCodeAbnormalityCyst => new Coding(ObservationCodesUrl, "abnormalityCyst");
-        Coding ObservationCodeAssociatedFeatures => new Coding(ObservationCodesUrl, "associatedFeaturesObservation");
-        Coding ObservationCodeMGAbnormalityArchitecturalDistortion => new Coding(ObservationCodesUrl, "mgAbnormalityArchitecturalDistortionObservation");
-        Coding ObservationCodeConsistentWith => new Coding(ObservationCodesUrl, "consistentWithObservation");
-        Coding ObservationCodeMGAbnormalityCalcification => new Coding(ObservationCodesUrl, "mgAbnormalityCalcificationObservation");
-        Coding ObservationCodeObservedFeature => new Coding(ObservationCodesUrl, "featureObservation");
-        Coding ObservationCodeAbnormalityDuct => new Coding(ObservationCodesUrl, "abnormalityDuctObservation");
-        Coding ObservationCodeAbnormalityForeignObject => new Coding(ObservationCodesUrl, "abnormalityForeignObjectObservation");
-        Coding ObservationCodeAbnormalityLymphNode => new Coding(ObservationCodesUrl, "abnormalityLymphNodeObservation");
-        Coding ObservationCodeAbnormalityMass => new Coding(ObservationCodesUrl, "abnormalityMassObservation");
-        Coding ObservationCodeAbnormalityFibroadenoma => new Coding(ObservationCodesUrl, "abnormalityFibroadenomaObservation");
-        Coding ObservationCodeMGAbnormalityAsymmetry => new Coding(ObservationCodesUrl, "mgAbnormalityAsymmetryObservation");
-        Coding ObservationCodeMGAbnormalityDensity => new Coding(ObservationCodesUrl, "mgAbnormalityDensityObservation");
-        Coding ObservationCodeMGAbnormalityFatNecrosis => new Coding(ObservationCodesUrl, "mgAbnormalityFatNecrosisObservation");
-        Coding ObservationCodeMGBreastDensity => new Coding(ObservationCodesUrl, "mgBreastDensityObservation");
-        Coding ObservationCodeMRIFinding => new Coding(ObservationCodesUrl, "mriFindingObservation");
-        Coding ObservationCodeNMFinding => new Coding(ObservationCodesUrl, "nmFindingObservation");
-        Coding ObservationCodeUSFinding => new Coding(ObservationCodesUrl, "usFindingObservation");
-        Coding ObservationCodeFindingsRightBreast => new Coding(ObservationCodesUrl, "findingsRightBreastObservation");
-        Coding ObservationCodeFindingsLeftBreast => new Coding(ObservationCodesUrl, "findingsLeftBreastObservation");
+        Coding ObservationCodeMGFinding => new Coding(this.ObservationCodesUrl, "mgFindingObservationObservation");
+        Coding ObservationCodeAbnormalityCyst => new Coding(this.ObservationCodesUrl, "abnormalityCyst");
+        Coding ObservationCodeAssociatedFeatures => new Coding(this.ObservationCodesUrl, "associatedFeaturesObservation");
+        Coding ObservationCodeMGAbnormalityArchitecturalDistortion => new Coding(this.ObservationCodesUrl, "mgAbnormalityArchitecturalDistortionObservation");
+        Coding ObservationCodeConsistentWith => new Coding(this.ObservationCodesUrl, "consistentWithObservation");
+        Coding ObservationCodeMGAbnormalityCalcification => new Coding(this.ObservationCodesUrl, "mgAbnormalityCalcificationObservation");
+        Coding ObservationCodeObservedFeature => new Coding(this.ObservationCodesUrl, "featureObservation");
+        Coding ObservationCodeAbnormalityDuct => new Coding(this.ObservationCodesUrl, "abnormalityDuctObservation");
+        Coding ObservationCodeAbnormalityForeignObject => new Coding(this.ObservationCodesUrl, "abnormalityForeignObjectObservation");
+        Coding ObservationCodeAbnormalityLymphNode => new Coding(this.ObservationCodesUrl, "abnormalityLymphNodeObservation");
+        Coding ObservationCodeAbnormalityMass => new Coding(this.ObservationCodesUrl, "abnormalityMassObservation");
+        Coding ObservationCodeAbnormalityFibroadenoma => new Coding(this.ObservationCodesUrl, "abnormalityFibroadenomaObservation");
+        Coding ObservationCodeMGAbnormalityAsymmetry => new Coding(this.ObservationCodesUrl, "mgAbnormalityAsymmetryObservation");
+        Coding ObservationCodeMGAbnormalityDensity => new Coding(this.ObservationCodesUrl, "mgAbnormalityDensityObservation");
+        Coding ObservationCodeMGAbnormalityFatNecrosis => new Coding(this.ObservationCodesUrl, "mgAbnormalityFatNecrosisObservation");
+        Coding ObservationCodeMGBreastDensity => new Coding(this.ObservationCodesUrl, "mgBreastDensityObservation");
+        Coding ObservationCodeMRIFinding => new Coding(this.ObservationCodesUrl, "mriFindingObservation");
+        Coding ObservationCodeNMFinding => new Coding(this.ObservationCodesUrl, "nmFindingObservation");
+        Coding ObservationCodeUSFinding => new Coding(this.ObservationCodesUrl, "usFindingObservation");
+        Coding ObservationCodeFindingsRightBreast => new Coding(this.ObservationCodesUrl, "findingsRightBreastObservation");
+        Coding ObservationCodeFindingsLeftBreast => new Coding(this.ObservationCodesUrl, "findingsLeftBreastObservation");
 
         CSTaskVar CodesCS = new CSTaskVar(
              (out CodeSystem cs) =>

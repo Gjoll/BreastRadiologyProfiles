@@ -32,14 +32,14 @@ namespace BreastRadiology.XUnitTests
         public IGBuilder(FileCleaner fc, String outputDir)
         {
             this.outputDir = outputDir;
-            if (Directory.Exists(resourceDir) == false)
-                Directory.CreateDirectory(resourceDir);
+            if (Directory.Exists(this.resourceDir) == false)
+                Directory.CreateDirectory(this.resourceDir);
 
-            if (Directory.Exists(pagecontentDir) == false)
-                Directory.CreateDirectory(pagecontentDir);
+            if (Directory.Exists(this.pagecontentDir) == false)
+                Directory.CreateDirectory(this.pagecontentDir);
 
-            if (Directory.Exists(imagesDir) == false)
-                Directory.CreateDirectory(imagesDir);
+            if (Directory.Exists(this.imagesDir) == false)
+                Directory.CreateDirectory(this.imagesDir);
 
             this.fc = fc;
         }
@@ -143,7 +143,7 @@ namespace BreastRadiology.XUnitTests
 
             void Save(DomainResource r, String outputName)
             {
-                RemoveFragmentExtensions(r);
+                this.RemoveFragmentExtensions(r);
                 String outputPath = Path.Combine(this.resourceDir, outputName);
                 r.SaveJson(outputPath);
                 this.fc?.Mark(outputPath);
@@ -231,7 +231,7 @@ namespace BreastRadiology.XUnitTests
 
             void Save(DomainResource r, String outputName)
             {
-                RemoveFragmentExtensions(r);
+                this.RemoveFragmentExtensions(r);
 
                 String outputPath = Path.Combine(this.resourceDir, outputName);
                 r.SaveJson(outputPath);

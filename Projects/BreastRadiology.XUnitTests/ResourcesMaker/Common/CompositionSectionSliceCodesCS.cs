@@ -14,13 +14,13 @@ namespace BreastRadiology.XUnitTests
 {
     partial class ResourcesMaker
     {
-        String CompositionSectionSliceCodesUrl => CodeSystemUrl("CompositionSectionSliceCodes");
+        String CompositionSectionSliceCodesUrl => this.CodeSystemUrl("CompositionSectionSliceCodes");
 
-        Coding SectionCodeReport => new Coding(CompositionSectionSliceCodesUrl, "sectionReport");
-        Coding SectionCodeImpressions => new Coding(CompositionSectionSliceCodesUrl, "sectionImpressions");
-        Coding SectionCodeRelatedResources => new Coding(CompositionSectionSliceCodesUrl, "sectionRelatedResources");
-        Coding SectionCodeRecommendations => new Coding(CompositionSectionSliceCodesUrl, "sectionCodeRecommendations");
-        Coding SectionCodeFindings => new Coding(CompositionSectionSliceCodesUrl, "sectionCodeFindings");
+        Coding SectionCodeReport => new Coding(this.CompositionSectionSliceCodesUrl, "sectionReport");
+        Coding SectionCodeImpressions => new Coding(this.CompositionSectionSliceCodesUrl, "sectionImpressions");
+        Coding SectionCodeRelatedResources => new Coding(this.CompositionSectionSliceCodesUrl, "sectionRelatedResources");
+        Coding SectionCodeRecommendations => new Coding(this.CompositionSectionSliceCodesUrl, "sectionCodeRecommendations");
+        Coding SectionCodeFindings => new Coding(this.CompositionSectionSliceCodesUrl, "sectionCodeFindings");
 
         CSTaskVar CompositionSectionSliceCodesCS = new CSTaskVar(
              (out CodeSystem cs) =>

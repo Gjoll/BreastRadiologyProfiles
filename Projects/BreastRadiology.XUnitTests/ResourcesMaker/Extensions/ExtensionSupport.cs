@@ -23,7 +23,7 @@ namespace BreastRadiology.XUnitTests
             out ElementTreeSlice extensionSlice,
             out ElementTreeNode valueXNode)
         {
-            Slice(e, extensionNode, sliceName, shortText, definition, out extensionSlice, out valueXNode);
+            this.Slice(e, extensionNode, sliceName, shortText, definition, out extensionSlice, out valueXNode);
             valueXNode.ElementDefinition
                 .Type("CodeableConcept")
                 .Binding(bindName, BindingStrength.Required)
@@ -37,7 +37,7 @@ namespace BreastRadiology.XUnitTests
             String shortText,
             Markdown definition)
         {
-            SliceAndBindUrl(e,
+            this.SliceAndBindUrl(e,
                 extensionNode, 
                 sliceName,
                 binding.Url,

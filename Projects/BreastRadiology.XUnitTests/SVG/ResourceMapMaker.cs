@@ -29,7 +29,7 @@ namespace BreastRadiology.XUnitTests
             SENodeGroup rootGroup = this.CreateNodes(baseUrl);
             svgEditor.Render(rootGroup, true);
             svgEditor.Save(outputPath);
-            fc?.Mark(outputPath);
+            this.fc?.Mark(outputPath);
         }
 
 
@@ -37,7 +37,7 @@ namespace BreastRadiology.XUnitTests
         {
             ResourceMap.Node mapNode = this.map.GetNode(reportUrl);
             SENodeGroup rootGroup = new SENodeGroup("root", false);
-            SENode rootNode = this.CreateResourceNode(mapNode, focusColor , null);
+            SENode rootNode = this.CreateResourceNode(mapNode, this.focusColor , null);
             rootGroup.AppendNode(rootNode);
             this.AddChildren(mapNode, rootGroup, true);
             return rootGroup;

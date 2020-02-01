@@ -68,7 +68,7 @@ namespace BreastRadiology.XUnitTests
                         throw new Exception($"Resource '{parentNode.ResourceUrl}' not found!");
 
                     alreadyLinkedResources.Add(parentNode.ResourceUrl);
-                    SENode node = this.CreateResourceNode(parentNode, ReferenceColor(parentMapNode), link.Cardinality?.ToString(), true);
+                    SENode node = this.CreateResourceNode(parentNode, this.ReferenceColor(parentMapNode), link.Cardinality?.ToString(), true);
                     parents.Add(node);
                 }
 
@@ -138,7 +138,7 @@ namespace BreastRadiology.XUnitTests
                                     {
                                         if (this.map.TryGetNode(extUrl, out ResourceMap.Node targetNode) == false)
                                             throw new Exception($"Component resource '{extUrl}' not found!");
-                                        extNode = this.CreateResourceNode(targetNode, ReferenceColor(targetNode), link.Cardinality?.ToString(), true);
+                                        extNode = this.CreateResourceNode(targetNode, this.ReferenceColor(targetNode), link.Cardinality?.ToString(), true);
                                     }
                                     else
                                     {
@@ -147,7 +147,7 @@ namespace BreastRadiology.XUnitTests
                                             .TrimStart("ValueSet-")
                                             .TrimEnd(".html")
                                             ;
-                                        extNode = new SENode(0, fhirColor, link.Cardinality?.ToString(), null, extUrl);
+                                        extNode = new SENode(0, this.fhirColor, link.Cardinality?.ToString(), null, extUrl);
                                         extNode.AddTextLine(name, extUrl);
                                     }
                                     extGroup.AppendNode(extNode);
@@ -187,7 +187,7 @@ namespace BreastRadiology.XUnitTests
             //parentsGroup.Sort();
             e.Render(parentsGroup, true);
             String outputPath = Path.Combine(this.graphicsDir, FocusMapName(focusNode));
-            fc?.Mark(outputPath);
+            this.fc?.Mark(outputPath);
             e.Save(outputPath);
         }
 

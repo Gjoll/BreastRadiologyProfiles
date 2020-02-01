@@ -90,8 +90,8 @@ namespace BreastRadiology.XUnitTests
         public float NodeGapEndX(SENodeGroup g)
         {
             if (g.ShowCardinalities == true)
-                return NodeGapCardEndX;
-            return NodeGapNoCardEndX;
+                return this.NodeGapCardEndX;
+            return this.NodeGapNoCardEndX;
         }
 
         public void Render(SENodeGroup group,
@@ -154,12 +154,12 @@ namespace BreastRadiology.XUnitTests
             colHeight = 0;
 
             if (group.Nodes.Count() > 0)
-                RenderSimpleGroup(group, screenX, screenY, lineFlag, out colWidth, out colHeight, endConnectors);
+                this.RenderSimpleGroup(group, screenX, screenY, lineFlag, out colWidth, out colHeight, endConnectors);
             else if (group.Children.Count() > 0)
             {
                 foreach (SENodeGroup childGroup in group.Children)
                 {
-                    RenderGroup(childGroup, screenX, screenY, lineFlag, out float tColWidth, out float tColHeight, endConnectors);
+                    this.RenderGroup(childGroup, screenX, screenY, lineFlag, out float tColWidth, out float tColHeight, endConnectors);
                     colHeight += tColHeight;
                     screenY += tColHeight;
                     if (colWidth < tColWidth)

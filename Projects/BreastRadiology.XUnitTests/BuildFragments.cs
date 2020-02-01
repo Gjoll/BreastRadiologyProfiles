@@ -27,9 +27,9 @@ namespace BreastRadiology.XUnitTests
         {
             get
             {
-                if (baseDirFull == null)
-                    baseDirFull = DirHelper.FindParentDir(BaseDirName);
-                return baseDirFull;
+                if (this.baseDirFull == null)
+                    this.baseDirFull = DirHelper.FindParentDir(BaseDirName);
+                return this.baseDirFull;
             }
         }
         String baseDirFull;
@@ -54,9 +54,9 @@ namespace BreastRadiology.XUnitTests
 
         public BuildFragments()
         {
-            this.cacheDir = Path.Combine(BaseDir, "Cache");
-            this.contentDir = Path.Combine(BaseDir, "IG", "Content");
-            this.guideDir = Path.Combine(BaseDir, "IG", "Guide");
+            this.cacheDir = Path.Combine(this.BaseDir, "Cache");
+            this.contentDir = Path.Combine(this.BaseDir, "IG", "Content");
+            this.guideDir = Path.Combine(this.BaseDir, "IG", "Guide");
 
             this.graphicsDir = Path.Combine(this.contentDir, "Graphics");
             this.fragmentDir = Path.Combine(this.contentDir, "Fragments");
@@ -460,7 +460,7 @@ namespace BreastRadiology.XUnitTests
         [TestMethod]
         public void TestFile()
         {
-            FhirStructureDefinitions.Create(cacheDir);
+            FhirStructureDefinitions.Create(this.cacheDir);
             FhirStructureDefinitions.Self.StoreFhirElements();
 
             FhirJsonParser parser = new FhirJsonParser();

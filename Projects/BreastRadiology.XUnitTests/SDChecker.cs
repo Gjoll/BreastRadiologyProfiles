@@ -89,7 +89,7 @@ namespace BreastRadiology.XUnitTests
 
             HashSet<String> ids = new HashSet<string>();
             foreach (ElementDefinition element in elements)
-                Check(element, name, baseName, ids);
+                this.Check(element, name, baseName, ids);
         }
 
         public void Check(StructureDefinition.SnapshotComponent snapShot,
@@ -98,7 +98,7 @@ namespace BreastRadiology.XUnitTests
         {
             if (snapShot == null)
                 return;
-            Check(snapShot.Element, name, baseName);
+            this.Check(snapShot.Element, name, baseName);
         }
 
         public void Check(StructureDefinition.DifferentialComponent differentialComponent,
@@ -107,21 +107,21 @@ namespace BreastRadiology.XUnitTests
         {
             if (differentialComponent == null)
                 return;
-            Check(differentialComponent.Element, name, baseName);
+            this.Check(differentialComponent.Element, name, baseName);
         }
 
         public void Check(StructureDefinition sd)
         {
             String name = sd.Url.LastUriPart();
             String baseName = sd.BaseDefinition.LastUriPart();
-            Check(sd.Snapshot, name, baseName);
-            Check(sd.Differential, name, baseName);
+            this.Check(sd.Snapshot, name, baseName);
+            this.Check(sd.Differential, name, baseName);
         }
 
         public void CheckDir(String inputDir, String inputMask)
         {
             foreach (String inputPath in Directory.GetFiles(inputDir, inputMask))
-                CheckFile(inputPath);
+                this.CheckFile(inputPath);
         }
 
         public void CheckFile(String inputPath)
@@ -132,7 +132,7 @@ namespace BreastRadiology.XUnitTests
             switch (resource)
             {
                 case StructureDefinition sd:
-                    Check(sd);
+                    this.Check(sd);
                     break;
             }
         }
