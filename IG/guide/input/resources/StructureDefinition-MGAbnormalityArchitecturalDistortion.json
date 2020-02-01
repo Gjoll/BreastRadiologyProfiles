@@ -17,7 +17,7 @@
       ]
     }
   ],
-  "description": "<b>Architectural Distortion Observation</b>\n\nThe parenchyma is distorted with no definite mass visible. For mammography, this includes thin\nstraight lines or spiculations radiating from a point, and focal retraction, distortion or straightening\nat the anterior or posterior edge of the parenchyma. Architectural distortion may also be associ-\nated with a mass, asymmetry, or calcifications. In the absence of appropriate history of trauma or\nsurgery, architectural distortion is suspicious for malignancy or radial scar, and tissue diagnosis is\nappropriate.\nAs an ASSOCIATED FEATURE, architectural distortion may be used in conjunction with another\nfinding to indicate that the parenchyma is distorted or retracted adjacent to the FINDING\n-- Bi-Rads® Atlas — Mammography Fifth Ed. 2013",
+  "description": "<b>Architectural Distortion Observation</b>",
   "fhirVersion": "4.0.0",
   "kind": "resource",
   "abstract": false,
@@ -30,7 +30,7 @@
         "id": "Observation",
         "path": "Observation",
         "short": "Architectural Distortion Observation",
-        "definition": "The parenchyma is distorted with no definite mass visible. For mammography, this includes thin\nstraight lines or spiculations radiating from a point, and focal retraction, distortion or straightening\nat the anterior or posterior edge of the parenchyma. Architectural distortion may also be associ-\nated with a mass, asymmetry, or calcifications. In the absence of appropriate history of trauma or\nsurgery, architectural distortion is suspicious for malignancy or radial scar, and tissue diagnosis is\nappropriate.\nAs an ASSOCIATED FEATURE, architectural distortion may be used in conjunction with another\nfinding to indicate that the parenchyma is distorted or retracted adjacent to the FINDING\n-- Bi-Rads® Atlas — Mammography Fifth Ed. 2013",
+        "definition": "Measurements and simple assertions made about a patient, device or other subject.",
         "comment": "Used for simple observations such as device measurements, laboratory atomic results, vital signs, height, weight, smoking status, comments, etc.  Other resources are used to provide context for observations such as laboratory reports, etc.",
         "alias": [
           "Vital Signs",
@@ -5519,7 +5519,6 @@
         "id": "Observation",
         "path": "Observation",
         "short": "Architectural Distortion Observation",
-        "definition": "The parenchyma is distorted with no definite mass visible. For mammography, this includes thin\nstraight lines or spiculations radiating from a point, and focal retraction, distortion or straightening\nat the anterior or posterior edge of the parenchyma. Architectural distortion may also be associ-\nated with a mass, asymmetry, or calcifications. In the absence of appropriate history of trauma or\nsurgery, architectural distortion is suspicious for malignancy or radial scar, and tissue diagnosis is\nappropriate.\nAs an ASSOCIATED FEATURE, architectural distortion may be used in conjunction with another\nfinding to indicate that the parenchyma is distorted or retracted adjacent to the FINDING\n-- Bi-Rads® Atlas — Mammography Fifth Ed. 2013",
         "base": {
           "path": "Observation",
           "min": 0,

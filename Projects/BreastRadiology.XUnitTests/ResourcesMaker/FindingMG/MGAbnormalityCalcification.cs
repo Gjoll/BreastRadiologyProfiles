@@ -298,20 +298,6 @@ namespace BreastRadiology.XUnitTests
                     .AddFragRef(Self.CorrespondsWithComponentFragment.Value())
                     .Description("Calcification Observation",
                         new Markdown()
-                            .BiradHeader()
-                            .BlockQuote("Calcifications that are assessed as benign at mammography are typically larger, coarser, round with")
-                            .BlockQuote("smooth margins, and more easily seen than malignant calcifications. Calcifications associated with")
-                            .BlockQuote("malignancy (and many benign calcifications as well) are usually very small and often require the use")
-                            .BlockQuote("of magnification to be seen well. When a specific typically benign etiology cannot be assigned, a")
-                            .BlockQuote("description of calcifications should include their morphology and distribution. Calcifications that are")
-                            .BlockQuote("obviously benign need not be reported, especially if the interpreting physician is concerned that")
-                            .BlockQuote("the referring clinician or patient might infer anything other than absolute confidence in benignity")
-                            .BlockQuote("were such calcifications described in the report. However, typically benign calcifications should be")
-                            .BlockQuote("reported if the interpreting physician is concerned that other observers might misinterpret them as")
-                            .BlockQuote("anything but benign were such calcifications not described in the report.")
-                            .BlockQuote("As an ASSOCIATED FEATURE, this may be used in conjunction with one or more other FINDING(S)")
-                            .BlockQuote("to describe calcifications within or immediately adjacent to the finding(s)")
-                            .BiradFooter()
                     )
                     ;
 
@@ -322,6 +308,21 @@ namespace BreastRadiology.XUnitTests
 
                 e.IntroDoc
                     .ReviewedStatus("NOONE", "")
+                    .ACRDescription(
+                        "Calcifications that are assessed as benign at mammography are typically larger, coarser, round with",
+                        "smooth margins, and more easily seen than malignant calcifications. Calcifications associated with",
+                        "malignancy (and many benign calcifications as well) are usually very small and often require the use",
+                        "of magnification to be seen well. When a specific typically benign etiology cannot be assigned, a",
+                        "description of calcifications should include their morphology and distribution. Calcifications that are",
+                        "obviously benign need not be reported, especially if the interpreting physician is concerned that",
+                        "the referring clinician or patient might infer anything other than absolute confidence in benignity",
+                        "were such calcifications described in the report. However, typically benign calcifications should be",
+                        "reported if the interpreting physician is concerned that other observers might misinterpret them as",
+                        "anything but benign were such calcifications not described in the report.",
+                        "As an ASSOCIATED FEATURE, this may be used in conjunction with one or more other FINDING(S)",
+                        "to describe calcifications within or immediately adjacent to the finding(s)"
+                        )
+                    .MammoDescription("545")
                     ;
 
                 ElementTreeNode sliceElementDef = e.ConfigureSliceByUrlDiscriminator("hasMember", false);

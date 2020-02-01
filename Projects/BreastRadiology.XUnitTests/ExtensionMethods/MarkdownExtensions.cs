@@ -19,18 +19,6 @@ namespace BreastRadiology.XUnitTests
             return md;
         }
 
-        public static Markdown BiradHeader(this Markdown md)
-        {
-            md.Value += "";
-            return md;
-        }
-
-        public static Markdown BiradFooter(this Markdown md)
-        {
-            md.Value += $"-- {ResourcesMaker.BiRadCitation} \n";
-            return md;
-        }
-
         public static Markdown List(this Markdown md, ValueSet vs)
         {
             List<String> items = new List<string>();

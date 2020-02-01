@@ -18,6 +18,18 @@ Comments and Suggested changes to this implementation guide can be made
 <a href="https://github.com/HL7/fhir-breast-radiology-ig/projects/1">here</a>
 <p><b>Reviewed by NOONE on </b></p>
   <!-- -reviewStatus-->
+  <!-- +descriptions-->
+<h3 id="descriptions">References</h3>
+<h4 id="UMLS">UMLS Description</h4>
+<p>
+Lymphadenopathy (or adenopathy) is, if anything,
+a broader term, referring to any pathology of lymph
+nodes, not necessarily resulting in increased size;
+this includes abnormal number of nodes, or derangement
+of internal architecture (e.g. cystic or necrotic
+nodes).
+</p>
+  <!-- -descriptions-->
   <!-- +components-->
   <a name="components"></a>
   <h3 id="components">Member Fields</h3>

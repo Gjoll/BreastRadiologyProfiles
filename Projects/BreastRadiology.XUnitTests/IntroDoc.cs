@@ -38,6 +38,7 @@ namespace BreastRadiology.XUnitTests
         }
 
         CodeBlockNested reviewStatusBlock = null;
+        CodeBlockNested descriptionBlock = null;
         public IntroDoc ReviewedStatus(String reviewer, String dt)
         {
             if (this.reviewStatusBlock == null)
@@ -55,6 +56,71 @@ namespace BreastRadiology.XUnitTests
                 .AppendRaw($"<p><b>Reviewed by {reviewer} on {dt}</b></p>")
                 ;
 
+            return this;
+        }
+
+        CodeBlockNested CreateDescriptionBlock()
+        {
+            if (this.descriptionBlock != null)
+                return this.descriptionBlock;
+            this.descriptionBlock = this.codeEditor.Blocks.Find("descriptions");
+            if (this.descriptionBlock == null)
+                throw new Exception($"'descriptions' block missing");
+            this.descriptionBlock
+                .AppendRaw($"<h3 id=\"descriptions\">References</h3>")
+                ;
+            return this.descriptionBlock;
+        }
+        void WriteParagraphs(CodeBlockNested d,
+            String[] lines)
+        {
+            bool newParagraph = true;
+
+            void Line(String line)
+            {
+                line = line.Trim();
+                if (line.Length == 0)
+                    return;
+                if (
+                    (line.Length == 1) &&
+                    (line[0] == '\n') &&
+                    (newParagraph == false)
+                    )
+                {
+                    d.AppendRaw($"</p>\n");
+                    newParagraph = true;
+                    return;
+                }
+                if (newParagraph == true)
+                {
+                    d.AppendRaw($"<p>\n");
+                    newParagraph = false;
+                }
+                d.AppendRaw($"{line}\n");
+            }
+
+            foreach (String line in lines)
+                Line(line);
+            if (newParagraph == false)
+                d.AppendRaw($"</p>\n");
+        }
+
+        public IntroDoc ACRDescription(params String[] lines)
+        {
+            CodeBlockNested d = CreateDescriptionBlock();
+            d.AppendRaw($"<h4 id=\"acrDescription\">ACR Description</h4>");
+            WriteParagraphs(d, lines);
+            return this;
+        }
+
+        public IntroDoc MammoDescription(String id)
+        {
+            if (MammoIDDescriptions.Self.TryGet(id, out MammoIDDescriptions.Description description) == false)
+                return this;
+
+            CodeBlockNested d = CreateDescriptionBlock();
+            d.AppendRaw($"<h4 id=\"{description.Source}\">{description.Source} Description</h4>");
+            WriteParagraphs(d, description.Text);
             return this;
         }
 

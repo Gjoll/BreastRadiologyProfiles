@@ -148,12 +148,6 @@
 	    <img src="Frag-HeaderFragment.svg" alt="HeaderFragment"/>
 	</object>
 	<p>
-	Fragment Diagram Mass
-	</p>
-	<object data="Frag-Mass.svg" type="image/svg+xml">
-	    <img src="Frag-Mass.svg" alt="Mass"/>
-	</object>
-	<p>
 	Fragment Diagram MGAbnormalityArchitecturalDistortion
 	</p>
 	<object data="Frag-MGAbnormalityArchitecturalDistortion.svg" type="image/svg+xml">
@@ -244,12 +238,6 @@
 	    <img src="Frag-ObservedFeature.svg" alt="ObservedFeature"/>
 	</object>
 	<p>
-	Fragment Diagram ObservedGroupingFragment
-	</p>
-	<object data="Frag-ObservedGroupingFragment.svg" type="image/svg+xml">
-	    <img src="Frag-ObservedGroupingFragment.svg" alt="ObservedGroupingFragment"/>
-	</object>
-	<p>
 	Fragment Diagram ObservedItemGroup
 	</p>
 	<object data="Frag-ObservedItemGroup.svg" type="image/svg+xml">
@@ -272,12 +260,6 @@
 	</p>
 	<object data="Frag-ObservedItemRegionFragment.svg" type="image/svg+xml">
 	    <img src="Frag-ObservedItemRegionFragment.svg" alt="ObservedItemRegionFragment"/>
-	</object>
-	<p>
-	Fragment Diagram ObservedRegionFragment
-	</p>
-	<object data="Frag-ObservedRegionFragment.svg" type="image/svg+xml">
-	    <img src="Frag-ObservedRegionFragment.svg" alt="ObservedRegionFragment"/>
 	</object>
 	<p>
 	Fragment Diagram SectionFindingsLeftBreast

@@ -105,6 +105,7 @@ namespace BreastRadiology.XUnitTests
                 e.Select("code").Pattern(Self.ObservationCodeAbnormalityCyst.ToCodeableConcept());
                 e.IntroDoc
                     .ReviewedStatus("NOONE", "")
+                    .MammoDescription("540")
                     ;
 
                 ElementTreeNode sliceElementDef = e.ConfigureSliceByUrlDiscriminator("hasMember", false);

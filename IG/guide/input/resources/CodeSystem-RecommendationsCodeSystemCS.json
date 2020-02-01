@@ -21,7 +21,7 @@
   "description": "Recommendations code system",
   "caseSensitive": true,
   "content": "complete",
-  "count": 100,
+  "count": 101,
   "concept": [
     {
       "code": "3DImaging",
@@ -522,6 +522,11 @@
       "code": "LateromedialView",
       "display": "Lateromedial view",
       "definition": "[PR] Lateromedial view\r\nValid for the following modalities: MG US."
+    },
+    {
+      "code": "Unspecified/Other",
+      "display": "Unspecified / other",
+      "definition": "[PR] Unspecified / other\r\nValid for the following modalities: US MRI."
     }
   ]
 }

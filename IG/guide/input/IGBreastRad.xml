@@ -397,15 +397,6 @@
     </resource>
     <resource>
       <reference>
-        <reference value="CodeSystem/ObservedGroupingCS" />
-      </reference>
-      <name value="Observed Grouping CodeSystem" />
-      <description value="Observed grouping of abnormalities code system." />
-      <exampleBoolean value="false" />
-      <groupingId value="CommonCodesCS" />
-    </resource>
-    <resource>
-      <reference>
         <reference value="CodeSystem/OrientationCS" />
       </reference>
       <name value="Orientation CodeSystem" />
@@ -694,15 +685,6 @@
     </resource>
     <resource>
       <reference>
-        <reference value="ValueSet/ObservedGroupingVS" />
-      </reference>
-      <name value="Observed Grouping ValueSet" />
-      <description value="Observed Grouping of abnormalities value set." />
-      <exampleBoolean value="false" />
-      <groupingId value="CommonCodesVS" />
-    </resource>
-    <resource>
-      <reference>
         <reference value="ValueSet/OrientationVS" />
       </reference>
       <name value="Orientation ValueSet" />
@@ -739,15 +721,6 @@
     </resource>
     <resource>
       <reference>
-        <reference value="StructureDefinition/BreastRadComposition" />
-      </reference>
-      <name value="Breast Radiology Composition" />
-      <description value="Breast Radiology Composition" />
-      <exampleBoolean value="false" />
-      <groupingId value="BaseResources" />
-    </resource>
-    <resource>
-      <reference>
         <reference value="StructureDefinition/ServiceRecommendation" />
       </reference>
       <name value="Service Recommendation" />
@@ -761,6 +734,15 @@
       </reference>
       <name value="Breast Radiology Report" />
       <description value="Breast Radiology Diagnostic Report" />
+      <exampleBoolean value="false" />
+      <groupingId value="BaseResources" />
+    </resource>
+    <resource>
+      <reference>
+        <reference value="StructureDefinition/BreastRadComposition" />
+      </reference>
+      <name value="Breast Radiology Composition" />
+      <description value="Breast Radiology Composition" />
       <exampleBoolean value="false" />
       <groupingId value="BaseResources" />
     </resource>
@@ -856,15 +838,6 @@
     </resource>
     <resource>
       <reference>
-        <reference value="StructureDefinition/Mass" />
-      </reference>
-      <name value="Mass" />
-      <description value="Mass Observation" />
-      <exampleBoolean value="false" />
-      <groupingId value="CommonResources" />
-    </resource>
-    <resource>
-      <reference>
         <reference value="StructureDefinition/AbnormalityMass" />
       </reference>
       <name value="Mass" />
@@ -874,19 +847,19 @@
     </resource>
     <resource>
       <reference>
-        <reference value="StructureDefinition/BodyDistanceFromExtension" />
+        <reference value="StructureDefinition/BreastBodyLocationExtension" />
       </reference>
-      <name value="Body Distance From Extension" />
-      <description value="Body Distance From extension" />
+      <name value="Breast Body Location Extension" />
+      <description value="Breast Body Location extension" />
       <exampleBoolean value="false" />
       <groupingId value="ExtensionResources" />
     </resource>
     <resource>
       <reference>
-        <reference value="StructureDefinition/BreastBodyLocationExtension" />
+        <reference value="StructureDefinition/BodyDistanceFromExtension" />
       </reference>
-      <name value="Breast Body Location Extension" />
-      <description value="Breast Body Location extension" />
+      <name value="Body Distance From Extension" />
+      <description value="Body Distance From extension" />
       <exampleBoolean value="false" />
       <groupingId value="ExtensionResources" />
     </resource>
@@ -1153,15 +1126,6 @@
     </resource>
     <resource>
       <reference>
-        <reference value="StructureDefinition/ObservedGroupingFragment" />
-      </reference>
-      <name value="ObservedGrouping Fragment" />
-      <description value="Fragment 'Fragment that adds 'Observed Grouping' element to profile.'" />
-      <exampleBoolean value="false" />
-      <groupingId value="Fragments" />
-    </resource>
-    <resource>
-      <reference>
         <reference value="StructureDefinition/ObservedItemGroupFragment" />
       </reference>
       <name value="ObservedItemGroup Fragment" />
@@ -1175,15 +1139,6 @@
       </reference>
       <name value="ObservedItemRegion Fragment" />
       <description value="Fragment 'Fragment that adds 'Observed Item Region' hasmember element to profile.'" />
-      <exampleBoolean value="false" />
-      <groupingId value="Fragments" />
-    </resource>
-    <resource>
-      <reference>
-        <reference value="StructureDefinition/ObservedRegionFragment" />
-      </reference>
-      <name value="ObservedRegion Fragment" />
-      <description value="Fragment 'Fragment that adds 'Observed Region' element to profile.'" />
       <exampleBoolean value="false" />
       <groupingId value="Fragments" />
     </resource>

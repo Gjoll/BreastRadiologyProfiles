@@ -15,6 +15,7 @@ using System.Drawing;
 using ExcelDataReader;
 using System.Data;
 using System.Globalization;
+using System.Linq;
 
 namespace BreastRadiology.XUnitTests
 {
@@ -191,17 +192,82 @@ namespace BreastRadiology.XUnitTests
                         throw new Exception("Invalid excel cell value");
                 }
             }
+            IEnumerable<String> FormatMultiLineText(String text)
+            {
+                const Int32 Maxlen = 48;
+                Int32 i = 0;
+                Int32 len = 0;
+
+                StringBuilder sb = new StringBuilder();
+                while (i < text.Length)
+                {
+                    void Add(Char c)
+                    {
+                        sb.Append(c);
+                        len += 1;
+                    }
+
+                    Char c = text[i++];
+                    switch (c)
+                    {
+                        case '\"':
+                            sb.Append("\\\\\"");
+                            break;
+
+                        case '\r':
+                            break;
+
+                        case '\n':
+                            sb.Append("\\n\n");
+                            len = 0;
+                            break;
+
+                        case ' ':
+                            Add(c);
+                            if (len > Maxlen)
+                            {
+                                sb.Append('\n');
+                                len = 0;
+                            }
+                            break;
+
+                        default:
+                            Add(c);
+                            break;
+                    }
+                }
+                return sb.ToString().Split('\n');
+            }
+
             void DoRow(DataRow row)
             {
                 String id = Val(row[5]);
                 if (String.IsNullOrEmpty(id))
                     return;
-                String text = Val(row[9]);
+                String text = Val(row[17]);
                 if (String.IsNullOrEmpty(text))
                     return;
                 cb
-                    .AppendLine($"Add(\"{id}\", \"UMLS\", \"{text}\")")
+                    .AppendLine($"Add(\"{id}\", ")
+                    .AppendLine($"    \"UMLS\", ")
+                    .AppendLine($"    new String[]")
+                    .AppendLine($"    {{")
                 ;
+                String[] lines = FormatMultiLineText(text).ToArray();
+
+                String GetLine(Int32 i)
+                {
+                    return lines[i]
+                        .Replace("\"", "\\\"")
+                        ;
+                }
+
+                for (Int32 i = 0; i < lines.Length - 1; i++)
+                    cb.AppendLine($"    \"{GetLine(i)}\",");
+                cb
+                    .AppendLine($"    \"{GetLine(lines.Length - 1)}\"")
+                    .AppendLine($"    }});")
+                    ;
             }
 
             DataTable dataTbl = ds.Tables["Sheet3"];
@@ -214,6 +280,7 @@ namespace BreastRadiology.XUnitTests
                         "MammoIDDescriptions.cs"));
 
             cb = editor.Blocks.Find("Data");
+            cb.Clear();
 
             for (Int32 i = 1; i < dataTbl.Rows.Count; i++)
             {

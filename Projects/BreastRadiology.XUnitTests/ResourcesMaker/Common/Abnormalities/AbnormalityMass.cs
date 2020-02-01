@@ -86,12 +86,6 @@ namespace BreastRadiology.XUnitTests
                     .AddFragRef(Self.CorrespondsWithComponentFragment.Value())
                     .Description("Mass Observation",
                         new Markdown()
-                            .BiradHeader()
-                            .BlockQuote("\"MASS\" is three dimensional and occupies space. It is seen on two different mammographic pro-")
-                            .BlockQuote("jections. It has completely or partially convex-outward borders and (when radiodense) appears")
-                            .BlockQuote("denser in the center than at the periphery. If a potential mass is seen only on a single projection, it")
-                            .BlockQuote("should be called an \"ASYMMETRY\" until its 3-dimensionality is confirmed")
-                            .BiradFooter()
                     )
                     ;
 
@@ -102,6 +96,12 @@ namespace BreastRadiology.XUnitTests
 
                 e.IntroDoc
                     .ReviewedStatus("NOONE", "")
+                    .ACRDescription(
+                            "\"MASS\" is three dimensional and occupies space. It is seen on two different mammographic ", 
+                            "projections. It has completely or partially convex-outward borders and (when radiodense) appears",
+                            "denser in the center than at the periphery. If a potential mass is seen only on a single projection, it",
+                            "should be called an \"ASYMMETRY\" until its 3-dimensionality is confirmed"
+                    )
                     ;
 
                 ElementTreeNode sliceElementDef = e.ConfigureSliceByUrlDiscriminator("hasMember", false);

@@ -84,6 +84,7 @@ namespace BreastRadiology.XUnitTests
 
                 e.IntroDoc
                     .ReviewedStatus("NOONE", "")
+                    .MammoDescription("686")
                     ;
 
                 e.Select("value[x]").Zero();
