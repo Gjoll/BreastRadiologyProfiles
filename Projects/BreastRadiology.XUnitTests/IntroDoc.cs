@@ -67,7 +67,7 @@ namespace BreastRadiology.XUnitTests
             if (this.descriptionBlock == null)
                 throw new Exception($"'descriptions' block missing");
             this.descriptionBlock
-                .AppendRaw($"<h3 id=\"descriptions\">References</h3>")
+                .AppendRaw($"<h3 id=\"descriptions\">Definitions</h3>")
                 ;
             return this.descriptionBlock;
         }
@@ -105,10 +105,17 @@ namespace BreastRadiology.XUnitTests
                 d.AppendRaw($"</p>\n");
         }
 
+        String Title()
+        {
+            if (this.codeEditor.TryGetUserMacro("Title", out object value) == false)
+                throw new Exception("Error accessing title macro");
+            return (String)value;
+        }
+
         public IntroDoc ACRDescription(params String[] lines)
         {
             CodeBlockNested d = CreateDescriptionBlock();
-            d.AppendRaw($"<h4 id=\"acrDescription\">ACR Description</h4>");
+            d.AppendRaw($"<h4 id=\"acrDescription\">ACR {Title()} Definition</h4>");
             WriteParagraphs(d, lines);
             return this;
         }
@@ -119,7 +126,7 @@ namespace BreastRadiology.XUnitTests
                 return this;
 
             CodeBlockNested d = CreateDescriptionBlock();
-            d.AppendRaw($"<h4 id=\"{description.Source}\">{description.Source} Description</h4>");
+            d.AppendRaw($"<h4 id=\"{description.Source}\">{description.Source} {Title()} Definition</h4>");
             WriteParagraphs(d, description.Text);
             return this;
         }

@@ -114,12 +114,6 @@ namespace BreastRadiology.XUnitTests
                 "A tumor of the lung that has invaded the chest wall. ",
                 ""
                 });
-            Add("261", 
-                "UMLS", 
-                new String[]
-                {
-                "C1268682"
-                });
             Add("262", 
                 "UMLS", 
                 new String[]
@@ -411,30 +405,6 @@ namespace BreastRadiology.XUnitTests
                 "calcification with at least 5 calcifications occupying ",
                 "a small volume of tissue."
                 });
-            Add("752", 
-                "UMLS", 
-                new String[]
-                {
-                "C1268689"
-                });
-            Add("753", 
-                "UMLS", 
-                new String[]
-                {
-                "C1268691"
-                });
-            Add("754", 
-                "UMLS", 
-                new String[]
-                {
-                "C1268690"
-                });
-            Add("755", 
-                "UMLS", 
-                new String[]
-                {
-                "C1268692"
-                });
             Add("756", 
                 "UMLS", 
                 new String[]
@@ -443,36 +413,6 @@ namespace BreastRadiology.XUnitTests
                 "Scattered calcifications or multiple similar appearing ",
                 "clusters of calcifications throughout the whole breast.\n",
                 ""
-                });
-            Add("757", 
-                "UMLS", 
-                new String[]
-                {
-                "C1268693"
-                });
-            Add("702", 
-                "UMLS", 
-                new String[]
-                {
-                "C1268685"
-                });
-            Add("704", 
-                "UMLS", 
-                new String[]
-                {
-                "C1268677"
-                });
-            Add("705", 
-                "UMLS", 
-                new String[]
-                {
-                "C0333582"
-                });
-            Add("706", 
-                "UMLS", 
-                new String[]
-                {
-                "C1313950"
                 });
             Add("701", 
                 "UMLS", 
@@ -484,108 +424,6 @@ namespace BreastRadiology.XUnitTests
                 "Calcium is transported through the bloodstream. It’s ",
                 "also found in every cell. As a result, calcification ",
                 "can occur in almost any part of the body."
-                });
-            Add("708", 
-                "UMLS", 
-                new String[]
-                {
-                "C1268688"
-                });
-            Add("710", 
-                "UMLS", 
-                new String[]
-                {
-                "C1268678"
-                });
-            Add("713", 
-                "UMLS", 
-                new String[]
-                {
-                "C1268680"
-                });
-            Add("714", 
-                "UMLS", 
-                new String[]
-                {
-                "C1268679"
-                });
-            Add("716", 
-                "UMLS", 
-                new String[]
-                {
-                "C1265883"
-                });
-            Add("718", 
-                "UMLS", 
-                new String[]
-                {
-                "C1268681"
-                });
-            Add("721", 
-                "UMLS", 
-                new String[]
-                {
-                "C1268683"
-                });
-            Add("722", 
-                "UMLS", 
-                new String[]
-                {
-                "C1268684"
-                });
-            Add("484", 
-                "UMLS", 
-                new String[]
-                {
-                "C1268655"
-                });
-            Add("78", 
-                "UMLS", 
-                new String[]
-                {
-                "C0332511"
-                });
-            Add("483", 
-                "UMLS", 
-                new String[]
-                {
-                "C1268654"
-                });
-            Add("77", 
-                "UMLS", 
-                new String[]
-                {
-                "C0332509"
-                });
-            Add("293", 
-                "UMLS", 
-                new String[]
-                {
-                "C1268656"
-                });
-            Add("294", 
-                "UMLS", 
-                new String[]
-                {
-                "C1268657"
-                });
-            Add("75", 
-                "UMLS", 
-                new String[]
-                {
-                "C1268649"
-                });
-            Add("76", 
-                "UMLS", 
-                new String[]
-                {
-                "C1268651"
-                });
-            Add("295", 
-                "UMLS", 
-                new String[]
-                {
-                "C1268650"
                 });
             Add("561", 
                 "UMLS", 

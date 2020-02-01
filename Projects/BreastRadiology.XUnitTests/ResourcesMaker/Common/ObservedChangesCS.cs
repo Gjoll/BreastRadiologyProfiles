@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.IO;
@@ -32,6 +32,7 @@ namespace BreastRadiology.XUnitTests
                              .SetDisplay("Decrease in calcifications")
                              .SetDefinition(new Definition()
                                  .Line("[PR] Decrease in calcifications")
+                                 .MammoId("484")
                              )
                              .ValidModalities(Modalities.MG)
                              .SetDicom("F-01727")
@@ -51,6 +52,7 @@ namespace BreastRadiology.XUnitTests
                              .SetDisplay("Decrease in number")
                              .SetDefinition(new Definition()
                                  .Line("[PR] Decrease in number")
+                                 .MammoId("482")
                              )
                              .ValidModalities(Modalities.MG)
                              .SetSnomedDescription("ClinicalFinding | 42915007 | Abnormal decrease in number (Finding)")
@@ -64,6 +66,7 @@ namespace BreastRadiology.XUnitTests
                              .SetDisplay("Decrease in size")
                              .SetDefinition(new Definition()
                                  .Line("[PR] Decrease in size")
+                                 .MammoId("78")
                              )
                              .ValidModalities(Modalities.MG | Modalities.MRI | Modalities.NM | Modalities.US)
                              .SetDicom("M-02530")
@@ -81,6 +84,7 @@ namespace BreastRadiology.XUnitTests
                              .SetDisplay("Increase in calcifications")
                              .SetDefinition(new Definition()
                                  .Line("[PR] Increase in calcifications")
+                                 .MammoId("483")
                              )
                              .ValidModalities(Modalities.MG)
                              .SetDicom("F-01726")
@@ -100,6 +104,7 @@ namespace BreastRadiology.XUnitTests
                              .SetDisplay("Increase in number")
                              .SetDefinition(new Definition()
                                  .Line("[PR] Increase in number")
+                                 .MammoId("481")
                              )
                              .ValidModalities(Modalities.MG)
                              .SetSnomedDescription("ClinicalFinding | 61515005 | Abnormal increase in number (Finding)")
@@ -113,6 +118,7 @@ namespace BreastRadiology.XUnitTests
                              .SetDisplay("Increase in size")
                              .SetDefinition(new Definition()
                                  .Line("[PR] Increase in size")
+                                 .MammoId("77")
                              )
                              .ValidModalities(Modalities.MG | Modalities.MRI | Modalities.NM | Modalities.US)
                              .SetDicom("M-02520")
@@ -130,6 +136,7 @@ namespace BreastRadiology.XUnitTests
                              .SetDisplay("Less prominent")
                              .SetDefinition(new Definition()
                                  .Line("[PR] Less prominent")
+                                 .MammoId("293")
                              )
                              .ValidModalities(Modalities.MG | Modalities.MRI | Modalities.US)
                              .SetDicom("F-01728")
@@ -147,6 +154,7 @@ namespace BreastRadiology.XUnitTests
                              .SetDisplay("More prominent")
                              .SetDefinition(new Definition()
                                  .Line("[PR] More prominent")
+                                 .MammoId("294")
                              )
                              .ValidModalities(Modalities.MG | Modalities.MRI | Modalities.US)
                              .SetDicom("F-01729")
@@ -164,6 +172,7 @@ namespace BreastRadiology.XUnitTests
                              .SetDisplay("New")
                              .SetDefinition(new Definition()
                                  .Line("[PR] New")
+                                 .MammoId("75")
                              )
                              .ValidModalities(Modalities.MG | Modalities.MRI | Modalities.NM | Modalities.US)
                              .SetDicom("F-01721")
@@ -181,6 +190,7 @@ namespace BreastRadiology.XUnitTests
                              .SetDisplay("No longer seen")
                              .SetDefinition(new Definition()
                                  .Line("[PR] No longer seen")
+                                 .MammoId("296")
                              )
                              .ValidModalities(Modalities.MG | Modalities.MRI | Modalities.US)
                          //- AutoGen
@@ -193,6 +203,7 @@ namespace BreastRadiology.XUnitTests
                              .SetDisplay("Not significant changed")
                              .SetDefinition(new Definition()
                                  .Line("[PR] Not significant changed")
+                                 .MammoId("76")
                              )
                              .ValidModalities(Modalities.MG | Modalities.MRI | Modalities.NM | Modalities.US)
                              .SetDicom("F-01723")
@@ -210,6 +221,7 @@ namespace BreastRadiology.XUnitTests
                              .SetDisplay("Partially removed")
                              .SetDefinition(new Definition()
                                  .Line("[PR] Partially removed")
+                                 .MammoId("295")
                              )
                              .ValidModalities(Modalities.MG)
                              .SetDicom("F-01722")
@@ -227,6 +239,7 @@ namespace BreastRadiology.XUnitTests
                              .SetDisplay("Represents change")
                              .SetDefinition(new Definition()
                                  .Line("[PR] Represents change")
+                                 .MammoId("298")
                              )
                              .ValidModalities(Modalities.MG | Modalities.MRI | Modalities.NM | Modalities.US)
                          //- AutoGen
@@ -243,6 +256,7 @@ namespace BreastRadiology.XUnitTests
                              .SetDisplay("Stable")
                              .SetDefinition(new Definition()
                                  .Line("[PR] Stable")
+                                 .MammoId("297")
                              )
                              .ValidModalities(Modalities.MG | Modalities.MRI | Modalities.US)
                          //- AutoGen

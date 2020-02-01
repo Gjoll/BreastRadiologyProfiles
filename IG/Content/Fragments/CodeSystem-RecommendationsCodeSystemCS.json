@@ -22,27 +22,27 @@
     {
       "code": "3DImaging",
       "display": "3D Imaging",
-      "definition": "[PR] 3D Imaging\r\nValid for the following modalities: MG US MRI."
+      "definition": "[PR] 3D Imaging\r\nAdvanced Technology that takes multiple images, or \r\nX-rays, of breast tissue to recreate a 3-dimensional \r\npicture of the breast. Also called breast tomosynthesis. \r\n\r\n    -- UMLS\r\nValid for the following modalities: MG US MRI."
     },
     {
       "code": "3DSpotCC",
       "display": "3D spot CC",
-      "definition": "[PR] 3D spot CC\r\nValid for the following modalities: MG."
+      "definition": "[PR] 3D spot CC\r\nAdvanced Technology that takes multiple images, or \r\nX-rays, of breast tissue to recreate a 3-dimensional \r\npicture of the breast. Cranial-Caudal (CC) is a 3D \r\nview from above the breast. \r\n    -- UMLS\r\nValid for the following modalities: MG."
     },
     {
       "code": "3DSpotLM",
       "display": "3D spot LM",
-      "definition": "[PR] 3D spot LM\r\nValid for the following modalities: MG."
+      "definition": "[PR] 3D spot LM\r\nAdvanced Technology that takes multiple images, or \r\nX-rays, of breast tissue to recreate a 3-dimensional \r\npicture of the breast. Lateral-medial (LM) is\r\n    -- UMLS\r\nValid for the following modalities: MG."
     },
     {
       "code": "3DSpotML",
       "display": "3D spot ML",
-      "definition": "[PR] 3D spot ML\r\nValid for the following modalities: MG."
+      "definition": "[PR] 3D spot ML\r\nAdvanced Technology that takes multiple images, or \r\nX-rays, of breast tissue to recreate a 3-dimensional \r\npicture of the breast. Mediolateral (ML) is\r\n    -- UMLS\r\nValid for the following modalities: MG."
     },
     {
       "code": "3DSpotMLO",
       "display": "3D spot MLO",
-      "definition": "[PR] 3D spot MLO\r\nValid for the following modalities: MG."
+      "definition": "[PR] 3D spot MLO\r\nAdvanced Technology that takes multiple images, or \r\nX-rays, of breast tissue to recreate a 3-dimensional \r\npicture of the breast. Mediolateral-oblique (MLO) \r\nis \r\n    -- UMLS\r\nValid for the following modalities: MG."
     },
     {
       "code": "AdditionalViews",
@@ -57,12 +57,12 @@
     {
       "code": "AxillaView",
       "display": "Axilla view",
-      "definition": "[PR] Axilla view\r\nValid for the following modalities: MG US."
+      "definition": "[PR] Axilla view\r\nAn axillary view (also known as a \\\"Cleopatra view“) \r\nis a type of view in mammography. It is an exaggerated \r\ncraniocaudal view for better imaging of the lateral \r\nportion of the breast to the axillary tail. This \r\nprojection is performed whenever we want to show \r\na lesion seen only in the axillary tail on the MLO \r\nview. An optimal axillary view require to be clearly \r\ndisplayed the most lateral portion of the breast \r\nincluding the axillary tail, as well the pectoral \r\nmuscle and the nipple in profile.\r\n    -- UMLS\r\nValid for the following modalities: MG US."
     },
     {
       "code": "AxillaryTailView",
       "display": "Axillary tail view",
-      "definition": "[PR] Axillary tail view\r\nValid for the following modalities: MG US."
+      "definition": "[PR] Axillary tail view\r\nThe tail of Spence (Spence's tail, axillary process, \r\naxillary tail) is an extension of the tissue of the \r\nbreast that extends into the axilla. It is actually \r\nan extension of the upper lateral quadrant of the \r\nbreast. It passes into the axilla through an opening \r\nin the deep fascia called foramen of Langer.The Axilla \r\nis another name for armpit. \r\n    -- UMLS\r\nValid for the following modalities: MG US."
     },
     {
       "code": "Biopsy",
@@ -77,7 +77,7 @@
     {
       "code": "CaudocranialView",
       "display": "Caudocranial view",
-      "definition": "[PR] Caudocranial view\r\nValid for the following modalities: MG US."
+      "definition": "[PR] Caudocranial view\r\nIt is useful for the study of breasts in the lower \r\nquadrants. The patient will bend forward at the waist \r\nto view the underside of the breast. Also called \r\na reverse CC view. The reversed CC view is an additional \r\nview. It is useful for the study of breasts with \r\nsurgical scars in the lower quadrants. The ability \r\nto see the scar through the compressor paddle offers \r\nto the mammographer the possibility to flatten it \r\nproperly, reducing the formation of scar folds as \r\nwell artifacts from false parenchymal distortion.\r\n    -- UMLS\r\nValid for the following modalities: MG US."
     },
     {
       "code": "CCWithCompressionView",
@@ -92,7 +92,7 @@
     {
       "code": "CleavageView",
       "display": "Cleavage view",
-      "definition": "[PR] Cleavage view\r\nValid for the following modalities: MG US."
+      "definition": "[PR] Cleavage view\r\nAlso called \\\"valley view\\\" is a mammogram view that \r\nimages the most central portions of the breasts. \r\nTo get as much central tissue as possible, the mammogram \r\ntechnologist will place both breasts on the plate \r\nat the same time to image the medial half of both \r\nbreasts. \r\n    -- UMLS\r\nValid for the following modalities: MG US."
     },
     {
       "code": "ClinicalConsultation",
@@ -117,47 +117,47 @@
     {
       "code": "CompressionViews",
       "display": "Compression views",
-      "definition": "[PR] Compression views\r\nValid for the following modalities: MG US."
+      "definition": "[PR] Compression views\r\nAll mammograms use compression of the breast. By \r\napplying compression to only a specific area of the \r\nbreast, the effective pressure is increased on that \r\nspot. This results in better tissue separation and \r\nallows better visualization of the area of the breast \r\nneeding additional examination. \r\n    -- UMLS\r\nValid for the following modalities: MG US."
     },
     {
       "code": "ConeCompression",
       "display": "Cone compression",
-      "definition": "[PR] Cone compression\r\nValid for the following modalities: MG US."
+      "definition": "[PR] Cone compression\r\nA cone compression is to catch a specific spot or \r\nview during the mammogram. Spot views apply the compression \r\nto a smaller area of tissue using a small compression \r\nplate or \\\"cone\\\". \r\n    -- UMLS\r\nValid for the following modalities: MG US."
     },
     {
       "code": "CoreBiopsy",
       "display": "Core Biopsy",
-      "definition": "[PR] Core Biopsy\r\nValid for the following modalities: MG US MRI."
+      "definition": "[PR] Core Biopsy\r\nA core biopsy is a procedure where a needle is passed \r\nthrough the skin to take a sample of tissue from \r\na mass or lump. The tissue is then examined under \r\na microscope for any abnormalities.\r\n    -- UMLS\r\nValid for the following modalities: MG US MRI."
     },
     {
       "code": "CraniocaudalView",
       "display": "Craniocaudal view",
-      "definition": "[PR] Craniocaudal view\r\nValid for the following modalities: MG."
+      "definition": "[PR] Craniocaudal view\r\nCranial-Caudal (CC) is a view from above the breast \r\nduring a mammogram or ultrasound. \r\n    -- UMLS\r\nValid for the following modalities: MG."
     },
     {
       "code": "Cryoablation",
       "display": "Cryoablation",
-      "definition": "[PR] Cryoablation\r\nValid for the following modalities: MG US."
+      "definition": "[PR] Cryoablation\r\nUses imaging guidance, a needle-like applicator called \r\na cryoprobe, and liquid nitrogen or argon gas to \r\ncreate intense cold to freeze and destroy diseased \r\ntissue, including cancer cells. It may be used to \r\ntreat a variety of skin conditions as well as tumors \r\nwithin the liver, kidneys, bones, lungs and breasts.\r\n    -- UMLS\r\nValid for the following modalities: MG US."
     },
     {
       "code": "CystAspiration",
       "display": "Cyst aspiration",
-      "definition": "[PR] Cyst aspiration\r\nValid for the following modalities: MG US MRI."
+      "definition": "[PR] Cyst aspiration\r\nA medical procedure in which fluid or cells are drawn \r\nout from a cyst using a needle. This is often performed \r\nin order to do a biopsy. The needle is generally \r\ninserted directly through the skin and may be guided \r\nby a sonogram so the doctor can see what he's doing.\r\n    -- UMLS\r\nValid for the following modalities: MG US MRI."
     },
     {
       "code": "CystAspirationForRelief",
       "display": "Cyst aspiration for relief",
-      "definition": "[PR] Cyst aspiration for relief\r\nValid for the following modalities: US."
+      "definition": "[PR] Cyst aspiration for relief\r\nOne way to get relief from the pain of a cyst is \r\nto remove fluid from the cyst, thereby decreasing \r\nthe pressure. This is called aspiration. \r\n    -- UMLS\r\nValid for the following modalities: US."
     },
     {
       "code": "DiagnosticAspiration",
       "display": "Diagnostic aspiration",
-      "definition": "[PR] Diagnostic aspiration\r\nValid for the following modalities: MG US MRI."
+      "definition": "[PR] Diagnostic aspiration\r\nThis is a fine needle aspiration and is a type of \r\nbiopsy procedure. In fine needle aspiration, a thin \r\nneedle is inserted into an area of abnormal-appearing \r\ntissue or body fluid.\r\n    -- UMLS\r\nValid for the following modalities: MG US MRI."
     },
     {
       "code": "DiagnosticMammogram",
       "display": "Diagnostic Mammogram",
-      "definition": "[PR] Diagnostic Mammogram\r\nValid for the following modalities: MG."
+      "definition": "[PR] Diagnostic Mammogram\r\nWhile screening mammograms are used as a routine \r\ncheck-up for breast health,  diagnostic mammograms \r\nare used after suspicious results on a screening \r\nmammogram or after some signs of breast cancer alert \r\nthe physician to check the tissue.These signs may \r\ninclude a lump or breast pain. \r\n    -- UMLS\r\nValid for the following modalities: MG."
     },
     {
       "code": "DrainageTube",
@@ -167,12 +167,12 @@
     {
       "code": "Ductography",
       "display": "Ductography",
-      "definition": "[PR] Ductography\r\nValid for the following modalities: MG US MRI."
+      "definition": "[PR] Ductography\r\nA ductogram (galactogram) is a type of medical imaging \r\nused to view your breast ducts. It can be helpful \r\nin finding the cause of nipple discharge. A ductogram involves \r\nmammography and use of a contrast agent that gets \r\ninjected into the breast, like during a breast MRI. \r\nA blunt-tipped sialogram needle (30-gauge) is used \r\nfor performing the ductogram. The abnormal duct is \r\nidentified and cannulated. Approximately 1-2 mL of \r\ncontrast is injected. A standard two-view mammography \r\n(or craniocaudal and mediolateral projections) are \r\nobtained.\r\n    -- UMLS\r\nValid for the following modalities: MG US MRI."
     },
     {
       "code": "ExaggeratedCCViews",
       "display": "Exaggerated CC views",
-      "definition": "[PR] Exaggerated CC views\r\nValid for the following modalities: MG US."
+      "definition": "[PR] Exaggerated CC views\r\nAn XCCL view is a supplementary mammographic view. \r\nIt is a type of exaggerated cranio-caudal view. It \r\nis particularly good for imaging the lateral aspect \r\nof the breast. It is often done when a lesion is \r\nsuspected on a MLO view but cannot be seen on the CC \r\nview. In this view, the lateral aspect of the breast \r\nis placed forward. One rationale of performing this \r\nview is that many cancers are located in the lateral \r\naspect of the breast. An XCCM view is a supplementary \r\nmammographic view. It is a type of exaggerated cranio-caudal \r\nview. It is particularly good for imaging the medial \r\nportion of the breast. In this view, the medial portion \r\nof the breast is placed forward. A negative 15° tube \r\ntilt is suggested.\n\r\n\n\r\nAn optimal XCCM view requires the most medial portion \r\nof the breast and the nipple in profile to be clearly \r\ndisplayed.\r\n    -- UMLS\r\nValid for the following modalities: MG US."
     },
     {
       "code": "FNABiopsy",
@@ -182,17 +182,17 @@
     {
       "code": "Follow-up",
       "display": "Follow-up",
-      "definition": "[PR] Follow-up\r\nValid for the following modalities: US."
+      "definition": "[PR] Follow-up\r\nIt is recommended to make a follow-up appointment. \r\n\r\n    -- UMLS\r\nValid for the following modalities: US."
     },
     {
       "code": "Followup3Months",
       "display": "Followup 3 months",
-      "definition": "[PR] Followup 3 months\r\nValid for the following modalities: MG US."
+      "definition": "[PR] Followup 3 months\r\nIt is recommended to make a follow-up appointment \r\nin 3 months.\r\n    -- UMLS\r\nValid for the following modalities: MG US."
     },
     {
       "code": "Followup6Months",
       "display": "Followup 6 months",
-      "definition": "[PR] Followup 6 months\r\nValid for the following modalities: MG US MRI."
+      "definition": "[PR] Followup 6 months\r\nIt is recommended to make a follow-up appointment \r\nin 6 months.\r\n    -- UMLS\r\nValid for the following modalities: MG US MRI."
     },
     {
       "code": "IfPreviousShowNoChange",
@@ -207,12 +207,12 @@
     {
       "code": "LateralMedialView",
       "display": "Lateral medial view",
-      "definition": "[PR] Lateral medial view\r\nValid for the following modalities: MG US."
+      "definition": "[PR] Lateral medial view\r\nThere are different views of the breast in mammography. \r\nFor the LM view, the tube is lateral and the detector \r\nis placed medially\n\r\nLM view is best for evaluating medial lesions.\r\n    -- UMLS\r\nValid for the following modalities: MG US."
     },
     {
       "code": "LateralView",
       "display": "Lateral view",
-      "definition": "[PR] Lateral view\r\nValid for the following modalities: MG US."
+      "definition": "[PR] Lateral view\r\nThere are different views of the breast in mammography. \r\nThe lateral view is a view obtained at virtually \r\nevery diagnostic evaluation. A lateral view may be \r\nobtained as a mediolateral view (ML) or lateromedial \r\nview (LM) view depending on where the imaging tube \r\nand detector are located.\n\r\n\n\r\n\r\n    -- UMLS\r\nValid for the following modalities: MG US."
     },
     {
       "code": "LateralWithCompressionView",
@@ -237,7 +237,7 @@
     {
       "code": "MagnificationViews",
       "display": "Magnification views",
-      "definition": "[PR] Magnification views\r\nValid for the following modalities: MG US MRI NM."
+      "definition": "[PR] Magnification views\r\nA magnification view in mammography is performed \r\nto evaluate and count microcalcifications and its \r\nextension (as well the assessment of the borders \r\nand the tissue structures of a suspicious area or \r\na mass) by using a magnification device which brings \r\nthe breast away from the film plate and closer to \r\nthe x-ray source. This allows the acquisition of \r\nmagnified images (1.5x to 2x magnification) of the \r\nregion of interest. \r\n    -- UMLS\r\nValid for the following modalities: MG US MRI NM."
     },
     {
       "code": "Mammogram",
@@ -247,22 +247,22 @@
     {
       "code": "Mammogram3MonthFollow-up",
       "display": "Mammogram 3 month follow-up",
-      "definition": "[PR] Mammogram 3 month follow-up\r\nValid for the following modalities: MG US."
+      "definition": "[PR] Mammogram 3 month follow-up\r\nA three month follow-up is recommended. \r\n    -- UMLS\r\nValid for the following modalities: MG US."
     },
     {
       "code": "Mammogram6MonthFollow-up",
       "display": "Mammogram 6 month follow-up",
-      "definition": "[PR] Mammogram 6 month follow-up\r\nValid for the following modalities: MG US."
+      "definition": "[PR] Mammogram 6 month follow-up\r\nA six month follow-up is recommended. \r\n    -- UMLS\r\nValid for the following modalities: MG US."
     },
     {
       "code": "MammogramAndUltrasound3MonthFollow-up",
       "display": "Mammogram and ultrasound 3 month follow-up",
-      "definition": "[PR] Mammogram and ultrasound 3 month follow-up\r\nValid for the following modalities: MG US."
+      "definition": "[PR] Mammogram and ultrasound 3 month follow-up\r\nA three month follow-up is recommended. \r\n    -- UMLS\r\nValid for the following modalities: MG US."
     },
     {
       "code": "MammogramAndUltrasound6MonthFollow-up",
       "display": "Mammogram and ultrasound 6 month follow-up",
-      "definition": "[PR] Mammogram and ultrasound 6 month follow-up\r\nValid for the following modalities: MG US."
+      "definition": "[PR] Mammogram and ultrasound 6 month follow-up\r\nA six month follow-up is recommended. \r\n    -- UMLS\r\nValid for the following modalities: MG US."
     },
     {
       "code": "MediolateralObliqueView",
@@ -307,7 +307,7 @@
     {
       "code": "NippleInProfileView",
       "display": "Nipple in profile view",
-      "definition": "[PR] Nipple in profile view\r\nValid for the following modalities: MG."
+      "definition": "[PR] Nipple in profile view\r\nA technically adequate exam has the nipple in profile, \r\nallows visualization of the inframammary fold and \r\nincludes the pectoralis muscle extending down to \r\nthe posterior nipple line (an oblique line drawn \r\nstraight back from the nipple.)\r\n    -- UMLS\r\nValid for the following modalities: MG."
     },
     {
       "code": "OffAngleCCView",
@@ -322,7 +322,7 @@
     {
       "code": "Poss.StereotacticBx",
       "display": "Poss. Stereotactic Bx",
-      "definition": "[PR] Poss. Stereotactic Bx\r\nValid for the following modalities: MG."
+      "definition": "[PR] Poss. Stereotactic Bx\r\nA stereotactic breast biopsy may be performed when \r\na mammogram shows a breast abnormality such as: a \r\nsuspicious mass. microcalcifications, which are a \r\ntiny cluster of small calcium deposits. a distortion \r\nin the structure of the breast tissue.\r\n    -- UMLS\r\nValid for the following modalities: MG."
     },
     {
       "code": "PossibleCoreBiopsy",
@@ -337,7 +337,7 @@
     {
       "code": "PossibleStereotacticVacuumBiopsy",
       "display": "Possible stereotactic vacuum biopsy",
-      "definition": "[PR] Possible stereotactic vacuum biopsy\r\nValid for the following modalities: MG."
+      "definition": "[PR] Possible stereotactic vacuum biopsy\r\nStereotactic Vacuum Assisted Biopsy. ... During this \r\ntype of biopsy, small samples of tissue are removed \r\nfrom the breast using a hollow needle, which is precisely \r\nguided to the correct location using x-rays and computer \r\ngenerated coordinates of the concerning area of breast \r\ntissue.\r\n    -- UMLS\r\nValid for the following modalities: MG."
     },
     {
       "code": "PossibleSurgicalConsult",
@@ -362,7 +362,7 @@
     {
       "code": "PossibleVacuumBiopsy",
       "display": "Possible vacuum biopsy",
-      "definition": "[PR] Possible vacuum biopsy\r\nValid for the following modalities: MG."
+      "definition": "[PR] Possible vacuum biopsy\r\nA vacuum assisted biopsy is a way of removing an \r\narea of abnormal cells from the breast tissue. A \r\ndoctor or nurse uses a special needle attached to \r\na vacuum device to remove the cells. The samples \r\ncan then be examined under a microscope. This can \r\nshow whether there is a cancer or another type of \r\nbreast condition.\r\n    -- UMLS\r\nValid for the following modalities: MG."
     },
     {
       "code": "RepeatCCView",
@@ -377,7 +377,7 @@
     {
       "code": "RolledLateralView",
       "display": "Rolled lateral view",
-      "definition": "[PR] Rolled lateral view\r\nValid for the following modalities: MG US."
+      "definition": "[PR] Rolled lateral view\r\nGiven that the rolled projections can be performed \r\nfrom any standard projection, the most commonly used \r\nis certainly the cranio-caudal one. \n\r\nA rolled CC view- It's performed to locate a lesion \r\nonly visible in the cranio-caudal view, or when overlapped \r\ntissues in the standard view can simulate or partially \r\nconceal a lesion: changing of  tissues distribution \r\n allows to determine whether or not its presence. \r\nThe breast is positioned on the image receptor as \r\nfor the cranio-caudal view, then is rotated medially \r\nor laterally around the axis of the nipple prior \r\nto applying compression.\r\n    -- UMLS\r\nValid for the following modalities: MG US."
     },
     {
       "code": "RolledMedialView",
@@ -387,17 +387,17 @@
     {
       "code": "ScintiBiopsy",
       "display": "Scinti biopsy",
-      "definition": "[PR] Scinti biopsy\r\nValid for the following modalities: MG."
+      "definition": "[PR] Scinti biopsy\r\nThis is a fine needle aspiration and is a type of \r\nbiopsy procedure. In fine needle aspiration, a thin \r\nneedle is inserted into an area of abnormal-appearing \r\ntissue or body fluid. This is also can be called \r\na Scinti biopsy. \r\n    -- UMLS\r\nValid for the following modalities: MG."
     },
     {
       "code": "Scintimammography",
       "display": "Scintimammography",
-      "definition": "[PR] Scintimammography\r\nValid for the following modalities: MG US MRI."
+      "definition": "[PR] Scintimammography\r\nScintimammography is also known as nuclear medicine \r\nbreast imaging, Breast Specific Gamma Imaging (BSGI) \r\nand Molecular Breast Imaging (MBI). Your doctor may \r\nuse this exam to investigate a breast abnormality \r\nfound with mammography.\r\n    -- UMLS\r\nValid for the following modalities: MG US MRI."
     },
     {
       "code": "SpotCompression",
       "display": "Spot compression",
-      "definition": "[PR] Spot compression\r\nValid for the following modalities: MG US NM."
+      "definition": "[PR] Spot compression\r\nA spot view (also known as a spot compression view or focal \r\ncompression view) is an additional mammographic view performed \r\nby applying the compression to a smaller area of \r\ntissue using a small compression paddle, increasing \r\nthe effective pressure on that spot. This results \r\nin better tissue separation and allows better visualization \r\nof the breast tissue in that area. It is used to \r\ndistinguish between the presence of a true lesion \r\nand an overlap of tissues, as well to better show \r\nthe borders of an abnormality or questionable area \r\nor a little cluster of faint microcalcifications \r\nin a dense area. The improved resolution is due to \r\nthe increased reduction of thickness in the examined \r\narea and by getting the suspicious area closer to \r\nthe detector surface.\r\n    -- UMLS\r\nValid for the following modalities: MG US NM."
     },
     {
       "code": "SpotMagnificationViews",
@@ -407,7 +407,7 @@
     {
       "code": "StereotacticBx",
       "display": "Stereotactic bx",
-      "definition": "[PR] Stereotactic bx\r\nValid for the following modalities: MG US MRI NM."
+      "definition": "[PR] Stereotactic bx\r\nStereotactic breast biopsy uses mammography – a specific \r\ntype of breast imaging that uses low-dose x-rays \r\n— to help locate a breast abnormality and remove \r\na tissue sample for examination under a microscope. \r\nIt's less invasive than surgical biopsy, leaves little \r\nto no scarring and can be an excellent way to evaluate \r\ncalcium deposits or tiny masses that are not visible \r\non ultrasound.\r\n    -- UMLS\r\nValid for the following modalities: MG US MRI NM."
     },
     {
       "code": "SuperolateralIOView",
@@ -507,7 +507,7 @@
     {
       "code": "VacuumBx",
       "display": "Vacuum Bx",
-      "definition": "[PR] Vacuum Bx\r\nValid for the following modalities: MG US."
+      "definition": "[PR] Vacuum Bx\r\nA vacuum assisted biopsy is a way of removing an \r\narea of abnormal cells from the breast tissue. A \r\ndoctor or nurse uses a special needle attached to \r\na vacuum device to remove the cells. The samples \r\ncan then be examined under a microscope. This can \r\nshow whether there is a cancer or another type of \r\nbreast condition. Bx: Abbreviation for biopsy, the \r\nremoval of a sample of tissue for examination or \r\nother study. Biopsies are most frequently studied \r\nby use of a microscope to check for possible abnormalities \r\nsuch as inflammation or cancer.\r\n    -- UMLS\r\nValid for the following modalities: MG US."
     },
     {
       "code": "LateromedialOblique",

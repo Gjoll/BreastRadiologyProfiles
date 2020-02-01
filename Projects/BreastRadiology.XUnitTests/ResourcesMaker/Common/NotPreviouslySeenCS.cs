@@ -44,6 +44,7 @@ namespace BreastRadiology.XUnitTests
                                 .SetDisplay("Clinical exam")
                                 .SetDefinition(new Definition()
                                     .Line("[PR] Clinical exam")
+                                    .MammoId("280")
                                 )
                                 .ValidModalities(Modalities.MG | Modalities.MRI | Modalities.NM | Modalities.US)
                             //- AutoGen
@@ -56,6 +57,7 @@ namespace BreastRadiology.XUnitTests
                                 .SetDisplay("Ductogram")
                                 .SetDefinition(new Definition()
                                     .Line("[PR] Ductogram")
+                                    .MammoId("284")
                                 )
                                 .ValidModalities(Modalities.MG | Modalities.MRI | Modalities.NM | Modalities.US)
                                 .SetSnomedDescription("Procedure | 420131003 | Fluoroscopic mammary ductography (Procedure)")
@@ -69,6 +71,7 @@ namespace BreastRadiology.XUnitTests
                                 .SetDisplay("Mammogram")
                                 .SetDefinition(new Definition()
                                     .Line("[PR] Mammogram")
+                                    .MammoId("281")
                                 )
                                 .ValidModalities(Modalities.MG | Modalities.MRI | Modalities.NM | Modalities.US)
                             //- AutoGen
@@ -81,6 +84,7 @@ namespace BreastRadiology.XUnitTests
                                 .SetDisplay("MRI")
                                 .SetDefinition(new Definition()
                                     .Line("[PR] MRI")
+                                    .MammoId("283")
                                 )
                                 .ValidModalities(Modalities.MG | Modalities.MRI | Modalities.NM | Modalities.US)
                                 .SetSnomedDescription("Procedure | 241615005 | Magnetic resonance imaging of breast (Procedure)")
@@ -94,6 +98,7 @@ namespace BreastRadiology.XUnitTests
                                 .SetDisplay("Outside exam")
                                 .SetDefinition(new Definition()
                                     .Line("[PR] Outside exam")
+                                    .MammoId("286")
                                 )
                                 .ValidModalities(Modalities.MG)
                             //- AutoGen
@@ -106,6 +111,7 @@ namespace BreastRadiology.XUnitTests
                                 .SetDisplay("Scintimammography")
                                 .SetDefinition(new Definition()
                                     .Line("[PR] Scintimammography")
+                                    .MammoId("285")
                                 )
                                 .ValidModalities(Modalities.NM)
                             //- AutoGen
@@ -118,6 +124,7 @@ namespace BreastRadiology.XUnitTests
                                 .SetDisplay("Ultrasound")
                                 .SetDefinition(new Definition()
                                     .Line("[PR] Ultrasound")
+                                    .MammoId("282")
                                 )
                                 .ValidModalities(Modalities.MG | Modalities.MRI | Modalities.NM | Modalities.US)
                                 .SetSnomedDescription("Procedure | 47079000 | Ultrasonography of breast (Procedure)")

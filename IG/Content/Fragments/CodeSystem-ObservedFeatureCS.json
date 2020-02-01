@@ -37,12 +37,12 @@
     {
       "code": "BrachytherapyTube",
       "display": "Brachytherapy tube",
-      "definition": "[PR] Brachytherapy tube\r\nValid for the following modalities: MG."
+      "definition": "[PR] Brachytherapy tube\r\nBrachytherapy (brak-e-THER-uh-pee) is a procedure \r\nthat involves placing radioactive material inside \r\nyour body.\n\r\n\n\r\nBrachytherapy is one type of radiation therapy that's \r\nused to treat cancer. Brachytherapy is sometimes \r\ncalled internal radiation.\n\r\n\n\r\nBrachytherapy allows doctors to deliver higher doses \r\nof radiation to more-specific areas of the body, \r\ncompared with the conventional form of radiation \r\ntherapy (external beam radiation) that projects radiation \r\nfrom a machine outside of your body.\r\n    -- UMLS\r\nValid for the following modalities: MG."
     },
     {
       "code": "ChestWallInvasion",
       "display": "Chest wall invasion",
-      "definition": "[PR] Chest wall invasion\r\nValid for the following modalities: MG US MRI."
+      "definition": "[PR] Chest wall invasion\r\nA tumor of the lung that has invaded the chest wall. \r\n\r\n    -- UMLS\r\nValid for the following modalities: MG US MRI."
     },
     {
       "code": "CooperDistorted",
@@ -52,12 +52,12 @@
     {
       "code": "CooperThickened",
       "display": "Cooper thickened",
-      "definition": "[PR] Cooper thickened\r\nValid for the following modalities: US."
+      "definition": "[PR] Cooper thickened\r\nThe cooper's ligaments are fibrous bands extending \r\nvertically from surface attach on chest wall muscles. \r\nThese ligaments maintain the shape and structure \r\nof your breasts and help to prevent sagging. Cooper’s \r\nligaments support the breasts on the chest wall, \r\nmaintain their contour, and keep them in position.These \r\nsupport breast tissue; they become contracted in \r\ncancer of breast, producing dimples in overlying \r\nskin. \n\r\nThickening occurs when there are skin changes usually \r\nassociated with the presence of a mass, benign or \r\nmalignant, that causes shortening in the Coopers \r\nligenments due to fibrosis. \r\n    -- UMLS\r\nValid for the following modalities: US."
     },
     {
       "code": "Edema",
       "display": "Edema",
-      "definition": "[PR] Edema\r\nValid for the following modalities: US."
+      "definition": "[PR] Edema\r\nEdema may be due to blockage of subdermal lymphatics \r\nby tumor cells or an inflammatory process within \r\nthe breast or axilla.\r\n    -- UMLS\r\nValid for the following modalities: US."
     },
     {
       "code": "EdemaAdj",
@@ -72,7 +72,7 @@
     {
       "code": "Hematoma",
       "display": "Hematoma",
-      "definition": "[PR] Hematoma\r\nValid for the following modalities: MG."
+      "definition": "[PR] Hematoma\r\nA hematoma (US spelling)  is a localized bleeding \r\noutside of blood vessels, due to either disease or \r\ntrauma including injury or surgery and may involve \r\nblood continuing to seep from broken capillaries.\r\n    -- UMLS\r\nValid for the following modalities: MG."
     },
     {
       "code": "NippleRetraction",
@@ -87,7 +87,7 @@
     {
       "code": "PectoralisMuscleInvasion",
       "display": "Pectoralis muscle invasion",
-      "definition": "[PR] Pectoralis muscle invasion\r\nValid for the following modalities: US MRI."
+      "definition": "[PR] Pectoralis muscle invasion\r\nPectoralis muscle invasion is when a tumor has become \r\nlarge enough to invade into the pectoralis muscle. \r\n \r\n    -- UMLS\r\nValid for the following modalities: US MRI."
     },
     {
       "code": "PectoralisMuscleInvolvement",
@@ -102,12 +102,12 @@
     {
       "code": "PostSurgicalScar",
       "display": "Post surgical scar",
-      "definition": "[PR] Post surgical scar\r\nValid for the following modalities: MG."
+      "definition": "[PR] Post surgical scar\r\nPost surgical scarring happens because of the incisions \r\nneeded to surgically remove tumor, cells, etc. The \r\namount of scarring is connected to the different \r\nstages of wound healing. Surgical scar care should \r\nbe continued for a year. \r\n    -- UMLS\r\nValid for the following modalities: MG."
     },
     {
       "code": "Seroma",
       "display": "Seroma",
-      "definition": "[PR] Seroma\r\nValid for the following modalities: MG."
+      "definition": "[PR] Seroma\r\nA breast seroma is a collection (pocket) of serous \r\nfluid that can develop after trauma to the breast \r\nor following procedures such as breast surgery or \r\nradiation therapy. Serous fluid is a pale yellow, \r\ntransparent fluid that contains protein, but no blood \r\ncells or pus.\r\n    -- UMLS\r\nValid for the following modalities: MG."
     },
     {
       "code": "SkinInvolvement",
@@ -122,7 +122,7 @@
     {
       "code": "SkinRetraction",
       "display": "Skin retraction",
-      "definition": "[PR] Skin retraction\r\nValid for the following modalities: MG US MRI."
+      "definition": "[PR] Skin retraction\r\nSkin retraction (or inversion) or Skin retraction. \r\nBreast cancers that are located near the skin or \r\nnipple may cause scarring within the breast that \r\npulls at the nipple or nearby skin. Skin and nipple \r\nretraction are more obvious when a woman raises her \r\narms above her head or leans forward.\r\n    -- UMLS\r\nValid for the following modalities: MG US MRI."
     },
     {
       "code": "SkinThickening",
@@ -132,12 +132,12 @@
     {
       "code": "SurgicalClip",
       "display": "Surgical clip",
-      "definition": "[PR] Surgical clip\r\nValid for the following modalities: MG."
+      "definition": "[PR] Surgical clip\r\nMost surgical clips are currently made of titanium, \r\nand as many as 30 to 40 clips may be used during \r\na single surgical procedure. They remain inside the \r\npatient's body after the wounds are healed.\r\n    -- UMLS\r\nValid for the following modalities: MG."
     },
     {
       "code": "SurgicalClips",
       "display": "Surgical clips",
-      "definition": "[PR] Surgical clips\r\nValid for the following modalities: MG."
+      "definition": "[PR] Surgical clips\r\nA series of surgical staples or clips are used during \r\nsurgery. In one push of a button the blood supply \r\nis cut off to the anatomical part being removed and \r\na staple line is left in the patient and on the side \r\nwhere the pathology has been removed.\r\n    -- UMLS\r\nValid for the following modalities: MG."
     },
     {
       "code": "TrabecularThickening",

@@ -45,6 +45,7 @@ namespace BreastRadiology.XUnitTests
                                 .SetDisplay("Aspiration")
                                 .SetDefinition(new Definition()
                                     .Line("[PR] Aspiration")
+                                    .MammoId("391")
                                 )
                                 .ValidModalities(Modalities.MG | Modalities.US)
                                 .SetSnomedDescription("Procedure | 287572003 | Diagnostic aspiration of breast cyst (Procedure)")
@@ -58,6 +59,7 @@ namespace BreastRadiology.XUnitTests
                                 .SetDisplay("Biopsy")
                                 .SetDefinition(new Definition()
                                     .Line("[PR] Biopsy")
+                                    .MammoId("392")
                                 )
                                 .ValidModalities(Modalities.MG)
                                 .SetSnomedDescription("Procedure | 122548005 | Biopsy of breast (Procedure)")
@@ -71,6 +73,7 @@ namespace BreastRadiology.XUnitTests
                                 .SetDisplay("Concern")
                                 .SetDefinition(new Definition()
                                     .Line("[PR] Concern")
+                                    .MammoId("327")
                                 )
                                 .ValidModalities(Modalities.MG | Modalities.MRI | Modalities.NM | Modalities.US)
                             //- AutoGen
@@ -83,6 +86,7 @@ namespace BreastRadiology.XUnitTests
                                 .SetDisplay("Ductogram")
                                 .SetDefinition(new Definition()
                                     .Line("[PR] Ductogram")
+                                    .MammoId("324")
                                 )
                                 .ValidModalities(Modalities.MG)
                                 .SetSnomedDescription("Procedure | 420131003 | Fluoroscopic mammary ductography (Procedure)")
@@ -96,6 +100,7 @@ namespace BreastRadiology.XUnitTests
                                 .SetDisplay("Incidental finding")
                                 .SetDefinition(new Definition()
                                     .Line("[PR] Incidental finding")
+                                    .MammoId("79")
                                 )
                                 .ValidModalities(Modalities.MG | Modalities.MRI | Modalities.NM | Modalities.US)
                             //- AutoGen
@@ -108,6 +113,7 @@ namespace BreastRadiology.XUnitTests
                                 .SetDisplay("Mammogram")
                                 .SetDefinition(new Definition()
                                     .Line("[PR] Mammogram")
+                                    .MammoId("10")
                                 )
                                 .ValidModalities(Modalities.MRI | Modalities.NM | Modalities.US)
                             //- AutoGen
@@ -120,6 +126,7 @@ namespace BreastRadiology.XUnitTests
                                 .SetDisplay("MRI")
                                 .SetDefinition(new Definition()
                                     .Line("[PR] MRI")
+                                    .MammoId("272")
                                 )
                                 .ValidModalities(Modalities.MG | Modalities.MRI | Modalities.NM | Modalities.US)
                                 .SetSnomedDescription("Procedure | 241615005 | Magnetic resonance imaging of breast (Procedure)")
@@ -133,6 +140,7 @@ namespace BreastRadiology.XUnitTests
                                 .SetDisplay("Nipple discharge")
                                 .SetDefinition(new Definition()
                                     .Line("[PR] Nipple discharge")
+                                    .MammoId("318")
                                 )
                                 .ValidModalities(Modalities.MG | Modalities.US)
                                 .SetSnomedDescription("ClinicalFinding | 162166009 | Nipple discharge present (Disorder) | [0/0] | N64.52 |")
@@ -146,6 +154,7 @@ namespace BreastRadiology.XUnitTests
                                 .SetDisplay("Outside exam")
                                 .SetDefinition(new Definition()
                                     .Line("[PR] Outside exam")
+                                    .MammoId("451")
                                 )
                                 .ValidModalities(Modalities.MG)
                             //- AutoGen
@@ -158,6 +167,7 @@ namespace BreastRadiology.XUnitTests
                                 .SetDisplay("Pain")
                                 .SetDefinition(new Definition()
                                     .Line("[PR] Pain")
+                                    .MammoId("271")
                                 )
                                 .ValidModalities(Modalities.MG | Modalities.MRI | Modalities.NM | Modalities.US)
                             //- AutoGen
@@ -170,6 +180,7 @@ namespace BreastRadiology.XUnitTests
                                 .SetDisplay("Palpated")
                                 .SetDefinition(new Definition()
                                     .Line("[PR] Palpated")
+                                    .MammoId("8")
                                 )
                                 .ValidModalities(Modalities.MG | Modalities.MRI | Modalities.NM | Modalities.US)
                             //- AutoGen
@@ -182,6 +193,7 @@ namespace BreastRadiology.XUnitTests
                                 .SetDisplay("Post-operative")
                                 .SetDefinition(new Definition()
                                     .Line("[PR] Post-operative")
+                                    .MammoId("325")
                                 )
                                 .ValidModalities(Modalities.MG)
                                 .SetSnomedDescription("BodyStructure | 312285003 | Post-surgical breast structure")
@@ -195,6 +207,7 @@ namespace BreastRadiology.XUnitTests
                                 .SetDisplay("Previous biopsy")
                                 .SetDefinition(new Definition()
                                     .Line("[PR] Previous biopsy")
+                                    .MammoId("330")
                                 )
                                 .ValidModalities(Modalities.MRI | Modalities.US)
                                 .SetSnomedDescription("Procedure | 122548005 | Biopsy of breast (Procedure)")
@@ -208,6 +221,7 @@ namespace BreastRadiology.XUnitTests
                                 .SetDisplay("Prior exam")
                                 .SetDefinition(new Definition()
                                     .Line("[PR] Prior exam")
+                                    .MammoId("450")
                                 )
                                 .ValidModalities(Modalities.MG)
                             //- AutoGen
@@ -220,6 +234,7 @@ namespace BreastRadiology.XUnitTests
                                 .SetDisplay("Redness")
                                 .SetDefinition(new Definition()
                                     .Line("[PR] Redness")
+                                    .MammoId("326")
                                 )
                                 .ValidModalities(Modalities.MG | Modalities.US)
                             //- AutoGen
@@ -232,6 +247,7 @@ namespace BreastRadiology.XUnitTests
                                 .SetDisplay("Scinti")
                                 .SetDefinition(new Definition()
                                     .Line("[PR] Scinti")
+                                    .MammoId("323")
                                 )
                                 .ValidModalities(Modalities.MG)
                             //- AutoGen
@@ -244,6 +260,7 @@ namespace BreastRadiology.XUnitTests
                                 .SetDisplay("size < mammo")
                                 .SetDefinition(new Definition()
                                     .Line("[PR] size < mammo")
+                                    .MammoId("274")
                                 )
                                 .ValidModalities(Modalities.MRI | Modalities.NM | Modalities.US)
                             //- AutoGen
@@ -256,6 +273,7 @@ namespace BreastRadiology.XUnitTests
                                 .SetDisplay("size < MRI")
                                 .SetDefinition(new Definition()
                                     .Line("[PR] size < MRI")
+                                    .MammoId("276")
                                 )
                                 .ValidModalities(Modalities.MG)
                             //- AutoGen
@@ -268,6 +286,7 @@ namespace BreastRadiology.XUnitTests
                                 .SetDisplay("size < palp")
                                 .SetDefinition(new Definition()
                                     .Line("[PR] size < palp")
+                                    .MammoId("278")
                                 )
                                 .ValidModalities(Modalities.MG | Modalities.MRI | Modalities.US)
                             //- AutoGen
@@ -280,6 +299,7 @@ namespace BreastRadiology.XUnitTests
                                 .SetDisplay("size < US")
                                 .SetDefinition(new Definition()
                                     .Line("[PR] size < US")
+                                    .MammoId("320.276")
                                 )
                                 .ValidModalities(Modalities.MG | Modalities.MRI | Modalities.NM | Modalities.US)
                             //- AutoGen
@@ -292,6 +312,7 @@ namespace BreastRadiology.XUnitTests
                                 .SetDisplay("size > mammo")
                                 .SetDefinition(new Definition()
                                     .Line("[PR] size > mammo")
+                                    .MammoId("273")
                                 )
                                 .ValidModalities(Modalities.MRI | Modalities.NM | Modalities.US)
                             //- AutoGen
@@ -304,6 +325,7 @@ namespace BreastRadiology.XUnitTests
                                 .SetDisplay("size > MRI")
                                 .SetDefinition(new Definition()
                                     .Line("[PR] size > MRI")
+                                    .MammoId("275")
                                 )
                                 .ValidModalities(Modalities.MG)
                             //- AutoGen
@@ -316,6 +338,7 @@ namespace BreastRadiology.XUnitTests
                                 .SetDisplay("size > palp")
                                 .SetDefinition(new Definition()
                                     .Line("[PR] size > palp")
+                                    .MammoId("277")
                                 )
                                 .ValidModalities(Modalities.MG | Modalities.MRI | Modalities.US)
                             //- AutoGen
@@ -328,6 +351,7 @@ namespace BreastRadiology.XUnitTests
                                 .SetDisplay("size > US")
                                 .SetDefinition(new Definition()
                                     .Line("[PR] size > US")
+                                    .MammoId("275")
                                 )
                                 .ValidModalities(Modalities.MRI | Modalities.NM | Modalities.US)
                             //- AutoGen
@@ -340,6 +364,7 @@ namespace BreastRadiology.XUnitTests
                                 .SetDisplay("Skin marker")
                                 .SetDefinition(new Definition()
                                     .Line("[PR] Skin marker")
+                                    .MammoId("328")
                                 )
                                 .ValidModalities(Modalities.MG)
                                 .SetSnomedDescription("PhysicalObject | 706314007 | Imaging lesion localization marker (Object)")
@@ -353,6 +378,7 @@ namespace BreastRadiology.XUnitTests
                                 .SetDisplay("Surgery")
                                 .SetDefinition(new Definition()
                                     .Line("[PR] Surgery")
+                                    .MammoId("393")
                                 )
                                 .ValidModalities(Modalities.MG)
                                 .SetSnomedDescription("Procedure | 274331003 | Surgical biopsy of breast (Procedure)")
@@ -366,6 +392,7 @@ namespace BreastRadiology.XUnitTests
                                 .SetDisplay("Surgical site")
                                 .SetDefinition(new Definition()
                                     .Line("[PR] Surgical site")
+                                    .MammoId("329")
                                 )
                                 .ValidModalities(Modalities.MRI)
                             //- AutoGen
@@ -378,6 +405,7 @@ namespace BreastRadiology.XUnitTests
                                 .SetDisplay("Tenderness")
                                 .SetDefinition(new Definition()
                                     .Line("[PR] Tenderness")
+                                    .MammoId("322")
                                 )
                                 .ValidModalities(Modalities.MG)
                                 .SetSnomedDescription("ClinicalFinding | 290080002 | Localized tenderness of breast (Finding) | [0/0] | N64.4")
@@ -391,6 +419,7 @@ namespace BreastRadiology.XUnitTests
                                 .SetDisplay("Trigger point")
                                 .SetDefinition(new Definition()
                                     .Line("[PR] Trigger point")
+                                    .MammoId("319")
                                 )
                                 .ValidModalities(Modalities.US)
                                 .SetSnomedDescription("BodyStructure | 134190002 | Trigger point (BodyStructure)")
@@ -404,6 +433,7 @@ namespace BreastRadiology.XUnitTests
                                 .SetDisplay("US")
                                 .SetDefinition(new Definition()
                                     .Line("[PR] US")
+                                    .MammoId("270")
                                 )
                                 .ValidModalities(Modalities.MG | Modalities.MRI | Modalities.NM | Modalities.US)
                             //- AutoGen

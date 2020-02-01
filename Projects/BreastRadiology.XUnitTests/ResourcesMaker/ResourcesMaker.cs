@@ -38,6 +38,17 @@ namespace BreastRadiology.XUnitTests
                 return this;
             }
 
+            public Definition MammoId(String id)
+            {
+                if (MammoIDDescriptions.Self.TryGet(id, out MammoIDDescriptions.Description description) == false)
+                    return this;
+                this.CiteStart();
+                foreach (String line in description.Text)
+                    this.Line(line);
+                this.CiteEnd(description.Source);
+                return this;
+            }
+
             public override string ToString() => this.ToText();
 
             public String ToText()

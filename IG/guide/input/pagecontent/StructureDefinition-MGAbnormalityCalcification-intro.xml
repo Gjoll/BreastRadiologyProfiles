@@ -19,8 +19,8 @@ Comments and Suggested changes to this implementation guide can be made
 <p><b>Reviewed by NOONE on </b></p>
   <!-- -reviewStatus-->
   <!-- +descriptions-->
-<h3 id="descriptions">References</h3>
-<h4 id="acrDescription">ACR Description</h4>
+<h3 id="descriptions">Definitions</h3>
+<h4 id="acrDescription">ACR Mammography Calcification Definition</h4>
 <p>
 Calcifications that are assessed as benign at mammography are typically larger, coarser, round with
 smooth margins, and more easily seen than malignant calcifications. Calcifications associated with
@@ -35,7 +35,7 @@ anything but benign were such calcifications not described in the report.
 As an ASSOCIATED FEATURE, this may be used in conjunction with one or more other FINDING(S)
 to describe calcifications within or immediately adjacent to the finding(s)
 </p>
-<h4 id="UMLS">UMLS Description</h4>
+<h4 id="UMLS">UMLS Mammography Calcification Definition</h4>
 <p>
 Atypical hyperplasia is a precancerous condition
 that affects cells in the breast. Atypical hyperplasia

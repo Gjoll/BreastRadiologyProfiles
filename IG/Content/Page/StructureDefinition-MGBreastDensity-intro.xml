@@ -1,6 +1,20 @@
 <div xmlns="http://www.w3.org/1999/xhtml"
     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
     xsi:schemaLocation="http://hl7.org/fhir ../../src-generated/schemas/fhir-single.xsd">
+  <a name="intro"></a>
+  <!-- +descriptions-->
+<h3 id="descriptions">Definitions</h3>
+<h4 id="acrDescription">ACR Mammography Breast Density Definition</h4>
+<p>
+The following four categories of breast composition are defined by the visually estimated content of fibroglandular-density tissue within the breasts. Please note that the
+categories are listed as a, b, c, and d so as not to be confused with the numbered BI-RADS® assessment categories. If the breasts are not of apparently equal density, the
+denser breast should be used to categorize breast density. The sensitivity of mammography for noncalcified lesions decreases as the BI-RADS® breast density category
+increases. The denser the breast, the larger the lesion(s) that may be obscured. There is considerable intra- and inter-observer variation in visually estimating breast density
+between any two adjacent density categories. Furthermore, there is only a minimal and insignificant difference in the sensitivity of mammography between the densest breast
+in a lower-density category and the least dense breast in the next-higher-density category. These factors limit the clinical relevance of breast density categorization for the
+individual woman.
+</p>
+  <!-- -descriptions-->
   <h3 id="focusGraph">Graphical Overview</h3>
   <p>
     This graph provides an overview of:
@@ -18,22 +32,31 @@ Comments and Suggested changes to this implementation guide can be made
 <a href="https://github.com/HL7/fhir-breast-radiology-ig/projects/1">here</a>
 <p><b>Reviewed by NOONE on </b></p>
   <!-- -reviewStatus-->
-  <!-- +descriptions-->
-<h3 id="descriptions">References</h3>
-<h4 id="acrDescription">ACR Description</h4>
-<p>
-The following four categories of breast composition are defined by the visually estimated content of fibroglandular-density tissue within the breasts. Please note that the
-categories are listed as a, b, c, and d so as not to be confused with the numbered BI-RADS® assessment categories. If the breasts are not of apparently equal density, the
-denser breast should be used to categorize breast density. The sensitivity of mammography for noncalcified lesions decreases as the BI-RADS® breast density category
-increases. The denser the breast, the larger the lesion(s) that may be obscured. There is considerable intra- and inter-observer variation in visually estimating breast density
-between any two adjacent density categories. Furthermore, there is only a minimal and insignificant difference in the sensitivity of mammography between the densest breast
-in a lower-density category and the least dense breast in the next-higher-density category. These factors limit the clinical relevance of breast density categorization for the
-individual woman.
-</p>
-  <!-- -descriptions-->
   <!-- +components-->
+  <a name="components"></a>
+  <h3 id="components">Member Fields</h3>
+  <p>
+    The following are parts of this observation that are contained within this resource.
+  </p>
+  <p>
+    Each field contains one data item and is stored as an item (slice) in the Observation.component element.
+  </p>
+  <ul>
+    %ComponentList:noexpand:prefix=<li>:suffix=</li>:lb%
+  </ul>
   <!-- -components-->
   <!-- +hasMember-->
+  <a name="hasMembers"></a>
+  <h3 id="hasMember">Member Observations</h3>
+  <p>
+    The following are parts of this observation that are stored in seperate observation resources.
+  </p>
+  <p>
+    The reference to each external observation is stored as an item in the Observation.hasMember element.
+  </p>
+  <ul>
+    %HasMemberList:noexpand:prefix=<li>:suffix=</li>:lb%
+  </ul>
   <!-- -hasMember-->
   <!-- +profileFragments-->
   <h3 id="profileFragments">Profile Fragments</h3>
@@ -42,10 +65,7 @@ individual woman.
     the hierarchy and commonality of disparate profiles..
   </p>
   <ul>
-    
-<li><a href="./StructureDefinition-ObservationLeafFragment.html">Observation Leaf Fragment</a></li>
-<li><a href="./StructureDefinition-BreastRadObservationNoComponentFragment.html">Observation No Component Fragment</a></li>
-<li><a href="./StructureDefinition-BreastRadObservationNoDeviceFragment.html">Observation NoDevice Fragment</a></li>
+    %FragmentList:noexpand:prefix=<li>:suffix=</li>:lb%
   </ul>
   <!-- -profileFragments-->
 </div>

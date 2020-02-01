@@ -37,7 +37,7 @@
     {
       "code": "w/differentialDiagnosis",
       "display": "w/differential diagnosis",
-      "definition": "[PR] w/differential diagnosis\r\nValid for the following modalities: MG US MRI NM."
+      "definition": "[PR] w/differential diagnosis\r\nMore than one possibility for your diagnosis. The \r\nprocess of weighing the probability of one disease \r\nversus that of other diseases possibly accounting \r\nfor a patient's illness.\r\n    -- UMLS\r\nValid for the following modalities: MG US MRI NM."
     }
   ]
 }

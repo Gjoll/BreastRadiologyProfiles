@@ -146,6 +146,7 @@ namespace BreastRadiology.XUnitTests
                         concept.Clear();
                     }
 
+                    String penId = row[4].ToString();
 
                     concept
                         .AppendLine($"new ConceptDef()")
@@ -153,6 +154,7 @@ namespace BreastRadiology.XUnitTests
                         .AppendLine($"    .SetDisplay(\"{code}\")")
                         .AppendLine($"    .SetDefinition(new Definition()")
                         .AppendLine($"        .Line(\"[PR] {code}\")")
+                        .AppendLine($"        .MammoId(\"{penId}\")")
                         .AppendLine($"    )")
                         .AppendLine($"    .ValidModalities({validWith})")
                         ;
@@ -239,13 +241,28 @@ namespace BreastRadiology.XUnitTests
                 return sb.ToString().Split('\n');
             }
 
+            // Get rid of empty strings, and strings liek C1234
+            bool CheckText(String t)
+            {
+                if (String.IsNullOrEmpty(t))
+                    return false;
+                if (t[0] != 'C')
+                    return true;
+                for (Int32 i = 1; i < t.Length; i++)
+                {
+                    if (Char.IsDigit(t[i]) == false)
+                        return true;
+                }
+                return false;
+            }
             void DoRow(DataRow row)
             {
                 String id = Val(row[5]);
                 if (String.IsNullOrEmpty(id))
                     return;
                 String text = Val(row[17]);
-                if (String.IsNullOrEmpty(text))
+
+                if (CheckText(text) == false)
                     return;
                 cb
                     .AppendLine($"Add(\"{id}\", ")

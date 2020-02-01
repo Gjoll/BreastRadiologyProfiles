@@ -27,12 +27,12 @@
     {
       "code": "BiopsyClip",
       "display": "Biopsy clip",
-      "definition": "[PR] Biopsy clip\r\nValid for the following modalities: MG US MRI."
+      "definition": "[PR] Biopsy clip\r\nThe biopsy clip serves as a marker documenting where \r\nthe tissue was sampled in the breast. If the original \r\nabnormality is no longer visible by imaging after \r\nthe biopsy, the marker is the only guide we have \r\nto know where the diseased tissue was sampled.\r\n    -- UMLS\r\nValid for the following modalities: MG US MRI."
     },
     {
       "code": "BreastMarker",
       "display": "Breast marker",
-      "definition": "[PR] Breast marker\r\nValid for the following modalities: MRI."
+      "definition": "[PR] Breast marker\r\nTissue marker placement after image-guided breast \r\nbiopsy has become a routine component of clinical \r\npractice. Marker placement distinguishes multiple \r\nbiopsied lesions within the same breast, prevents \r\nre-biopsy of benign lesions, enables multi-modality \r\ncorrelation, guides pre-operative localization and \r\nhelps confirm surgical target removal. Numerous breast \r\ntissue markers are currently available, with varied \r\nshapes, composition, and associated bio-absorbable \r\ncomponents. \r\n    -- UMLS\r\nValid for the following modalities: MRI."
     },
     {
       "code": "Calcification",
@@ -157,12 +157,12 @@
     {
       "code": "BiopsyClips",
       "display": "Biopsy clips",
-      "definition": "[PR] Biopsy clips\r\nValid for the following modalities: MG US MRI."
+      "definition": "[PR] Biopsy clips\r\nTissue marker placement after image-guided breast \r\nbiopsy has become a routine component of clinical \r\npractice. Marker placement distinguishes multiple \r\nbiopsied lesions within the same breast, prevents \r\nre-biopsy of benign lesions, enables multi-modality \r\ncorrelation, guides pre-operative localization and \r\nhelps confirm surgical target removal. Numerous breast \r\ntissue markers are currently available, with varied \r\nshapes, composition, and associated bio-absorbable \r\ncomponents. This review serves to familiarize the \r\nbreast interventionalist with the tissue markers \r\nmost widely available in the United States today \r\nand to provide guidance regarding selection of appropriate \r\nmarkers for various clinical settings.\r\n    -- UMLS\r\nValid for the following modalities: MG US MRI."
     },
     {
       "code": "BreastMarkers",
       "display": "Breast markers",
-      "definition": "[PR] Breast markers\r\nValid for the following modalities: MRI."
+      "definition": "[PR] Breast markers\r\nTissue marker placement after image-guided breast \r\nbiopsy has become a routine component of clinical \r\npractice. Marker placement distinguishes multiple \r\nbiopsied lesions within the same breast, prevents \r\nre-biopsy of benign lesions, enables multi-modality \r\ncorrelation, guides pre-operative localization and \r\nhelps confirm surgical target removal. Numerous breast \r\ntissue markers are currently available, with varied \r\nshapes, composition, and associated bio-absorbable \r\ncomponents. This review serves to familiarize the \r\nbreast interventionalist with the tissue markers \r\nmost widely available in the United States today \r\nand to provide guidance regarding selection of appropriate \r\nmarkers for various clinical settings.\r\n    -- UMLS\r\nValid for the following modalities: MRI."
     },
     {
       "code": "Calcifications",

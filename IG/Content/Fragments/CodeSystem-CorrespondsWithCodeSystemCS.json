@@ -37,7 +37,7 @@
     {
       "code": "Ductogram",
       "display": "Ductogram",
-      "definition": "[PR] Ductogram\r\nValid for the following modalities: MG."
+      "definition": "[PR] Ductogram\r\nA ductogram, also called a galactogram, is a special \r\ntype of mammogram used for imaging the breast ducts. \r\nIt can aid in diagnosing the cause of abnormal nipple \r\ndischarges.\r\n    -- UMLS\r\nValid for the following modalities: MG."
     },
     {
       "code": "IncidentalFinding",
@@ -97,7 +97,7 @@
     {
       "code": "Scinti",
       "display": "Scinti",
-      "definition": "[PR] Scinti\r\nValid for the following modalities: MG."
+      "definition": "[PR] Scinti\r\nScintigraphy definition is - a diagnostic technique \r\nin which a two-dimensional picture of internal body \r\ntissue is produced through the detection of radiation \r\nemitted by a radioactive substance administered into \r\nthe body. \r\n    -- UMLS\r\nValid for the following modalities: MG."
     },
     {
       "code": "size<Mammo",

@@ -37,17 +37,17 @@
     {
       "code": "IntraductalExtension",
       "display": "Intraductal extension",
-      "definition": "[PR] Intraductal extension\r\nValid for the following modalities: US."
+      "definition": "[PR] Intraductal extension\r\nIntraductal tumor extension is a characteristic feature \r\nof primary breast carcinoma, and is an important \r\nconsideration in patients undergoing breast conservative \r\nsurgery.\r\n    -- UMLS\r\nValid for the following modalities: US."
     },
     {
       "code": "IrregularMargin",
       "display": "Irregular margin",
-      "definition": "[PR] Irregular margin\r\nValid for the following modalities: MG US MRI."
+      "definition": "[PR] Irregular margin\r\nEdges around the soft tissue that don't look smooth. \r\nIndicative of some sort of growth or mass rather \r\nthan a cyst. \r\n    -- UMLS\r\nValid for the following modalities: MG US MRI."
     },
     {
       "code": "LobulatedMargin",
       "display": "Lobulated margin",
-      "definition": "[PR] Lobulated margin\r\nValid for the following modalities: US."
+      "definition": "[PR] Lobulated margin\r\nThe edge of the mass has broad bulges. Much like \r\na 6 or 8 leaf clover. The edge of all of the leaves \r\nwould be lobulated. \r\n    -- UMLS\r\nValid for the following modalities: US."
     },
     {
       "code": "MacrolobulatedMargin",
@@ -62,7 +62,7 @@
     {
       "code": "NonCircumscribedMargin",
       "display": "Non circumscribed margin",
-      "definition": "[PR] Non circumscribed margin\r\nValid for the following modalities: US MRI."
+      "definition": "[PR] Non circumscribed margin\r\nMicrobulated or Irregular masses, a margin that is \r\nnot well defined. There is not a clear demarcation \r\nbetween the mass and the surrounding tissue. \r\n    -- UMLS\r\nValid for the following modalities: US MRI."
     },
     {
       "code": "ObscuredMargin",
@@ -72,7 +72,7 @@
     {
       "code": "SmoothMargin",
       "display": "Smooth margin",
-      "definition": "[PR] Smooth margin\r\nValid for the following modalities: US MRI."
+      "definition": "[PR] Smooth margin\r\nThe edges of the mass have a smooth appearance and \r\ndistinct separation between the mass and surrounding \r\ntissue. \r\n    -- UMLS\r\nValid for the following modalities: US MRI."
     },
     {
       "code": "SpiculatedMargin",
