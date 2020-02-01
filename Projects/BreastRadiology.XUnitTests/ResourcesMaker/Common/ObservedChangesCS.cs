@@ -1,0 +1,271 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Diagnostics;
+using System.IO;
+using System.Linq;
+using System.Text;
+using FhirKhit.Tools;
+using FhirKhit.Tools.R4;
+using Hl7.Fhir.Model;
+using Hl7.Fhir.Serialization;
+using PreFhir;
+
+namespace BreastRadiology.XUnitTests
+{
+    partial class ResourcesMaker : ConverterBase
+    {
+        CSTaskVar ObservedChangesCS = new CSTaskVar(
+              (out CodeSystem cs) =>
+                  cs = Self.CreateCodeSystem(
+                      "ObservedChangesCS",
+                      "Observed Changes CodeSystem",
+                      "Observed/Change/CodeSystem",
+                      "Observed changes in an abnormality code system.",
+                      Group_CommonCodesCS,
+                      new ConceptDef[]
+                      {
+                         //+ ChangesCS
+                         //+ DecreaseInCalcifications
+                         //+ AutoGen
+                         new ConceptDef()
+                             .SetCode("DecreaseInCalcifications")
+                             .SetDisplay("Decrease in calcifications")
+                             .SetDefinition(new Definition()
+                                 .Line("[PR] Decrease in calcifications")
+                             )
+                             .ValidModalities(Modalities.MG)
+                             .SetDicom("F-01727")
+                             .SetPenCode("Decrease in number of calcifications")
+                             .SetSnomedCode("129727007")
+                             .SetOneToMany("one")
+                             .SetSnomedDescription("ClinicalFinding | Decrease in number of calcifications since previous mammogram (Finding)")
+                             .SetICD10("129727007")
+                             .SetUMLS("C1268655")
+                         //- AutoGen
+                         ,
+                         //- DecreaseInCalcifications
+                         //+ DecreaseInNumber
+                         //+ AutoGen
+                         new ConceptDef()
+                             .SetCode("DecreaseInNumber")
+                             .SetDisplay("Decrease in number")
+                             .SetDefinition(new Definition()
+                                 .Line("[PR] Decrease in number")
+                             )
+                             .ValidModalities(Modalities.MG)
+                             .SetSnomedDescription("ClinicalFinding | 42915007 | Abnormal decrease in number (Finding)")
+                         //- AutoGen
+                         ,
+                         //- DecreaseInNumber
+                         //+ DecreaseInSize
+                         //+ AutoGen
+                         new ConceptDef()
+                             .SetCode("DecreaseInSize")
+                             .SetDisplay("Decrease in size")
+                             .SetDefinition(new Definition()
+                                 .Line("[PR] Decrease in size")
+                             )
+                             .ValidModalities(Modalities.MG | Modalities.MRI | Modalities.NM | Modalities.US)
+                             .SetDicom("M-02530")
+                             .SetSnomedCode("19776001")
+                             .SetSnomedDescription("ClinicalFinding | 19776001 | Decreased size (Finding)")
+                             .SetICD10("19776001")
+                             .SetUMLS("C0332511")
+                         //- AutoGen
+                         ,
+                         //- DecreaseInSize
+                         //+ IncreaseInCalcifications
+                         //+ AutoGen
+                         new ConceptDef()
+                             .SetCode("IncreaseInCalcifications")
+                             .SetDisplay("Increase in calcifications")
+                             .SetDefinition(new Definition()
+                                 .Line("[PR] Increase in calcifications")
+                             )
+                             .ValidModalities(Modalities.MG)
+                             .SetDicom("F-01726")
+                             .SetPenCode("Increase in number of calcifications")
+                             .SetSnomedCode("129726003")
+                             .SetOneToMany("one")
+                             .SetSnomedDescription("ClinicalFinding | Increase in number of calcifications since previous mammogram (Finding)")
+                             .SetICD10("129726003")
+                             .SetUMLS("C1268654")
+                         //- AutoGen
+                         ,
+                         //- IncreaseInCalcifications
+                         //+ IncreaseInNumber
+                         //+ AutoGen
+                         new ConceptDef()
+                             .SetCode("IncreaseInNumber")
+                             .SetDisplay("Increase in number")
+                             .SetDefinition(new Definition()
+                                 .Line("[PR] Increase in number")
+                             )
+                             .ValidModalities(Modalities.MG)
+                             .SetSnomedDescription("ClinicalFinding | 61515005 | Abnormal increase in number (Finding)")
+                         //- AutoGen
+                         ,
+                         //- IncreaseInNumber
+                         //+ IncreaseInSize
+                         //+ AutoGen
+                         new ConceptDef()
+                             .SetCode("IncreaseInSize")
+                             .SetDisplay("Increase in size")
+                             .SetDefinition(new Definition()
+                                 .Line("[PR] Increase in size")
+                             )
+                             .ValidModalities(Modalities.MG | Modalities.MRI | Modalities.NM | Modalities.US)
+                             .SetDicom("M-02520")
+                             .SetSnomedCode("15454001")
+                             .SetSnomedDescription("ClinicalFinding | 15454001 | Increased size (Finding)")
+                             .SetICD10("15454001")
+                             .SetUMLS("C0332509")
+                         //- AutoGen
+                         ,
+                         //- IncreaseInSize
+                         //+ LessProminent
+                         //+ AutoGen
+                         new ConceptDef()
+                             .SetCode("LessProminent")
+                             .SetDisplay("Less prominent")
+                             .SetDefinition(new Definition()
+                                 .Line("[PR] Less prominent")
+                             )
+                             .ValidModalities(Modalities.MG | Modalities.MRI | Modalities.US)
+                             .SetDicom("F-01728")
+                             .SetSnomedCode("129728002")
+                             .SetSnomedDescription("ClinicalFinding | 129728002 | Finding less well defined since previous mammogram (Finding)")
+                             .SetICD10("129728002")
+                             .SetUMLS("C1268656")
+                         //- AutoGen
+                         ,
+                         //- LessProminent
+                         //+ MoreProminent
+                         //+ AutoGen
+                         new ConceptDef()
+                             .SetCode("MoreProminent")
+                             .SetDisplay("More prominent")
+                             .SetDefinition(new Definition()
+                                 .Line("[PR] More prominent")
+                             )
+                             .ValidModalities(Modalities.MG | Modalities.MRI | Modalities.US)
+                             .SetDicom("F-01729")
+                             .SetSnomedCode("129729005")
+                             .SetSnomedDescription("ClinicalFinding | 129729005 | Finding more defined since previous mammogram (Finding)")
+                             .SetICD10("129729005")
+                             .SetUMLS("C1268657")
+                         //- AutoGen
+                         ,
+                         //- MoreProminent
+                         //+ New
+                         //+ AutoGen
+                         new ConceptDef()
+                             .SetCode("New")
+                             .SetDisplay("New")
+                             .SetDefinition(new Definition()
+                                 .Line("[PR] New")
+                             )
+                             .ValidModalities(Modalities.MG | Modalities.MRI | Modalities.NM | Modalities.US)
+                             .SetDicom("F-01721")
+                             .SetSnomedCode("129721008")
+                             .SetSnomedDescription("ClinicalFinding | 129721008 | New finding since previous mammogram (Finding)")
+                             .SetICD10("129721008")
+                             .SetUMLS("C1268649")
+                         //- AutoGen
+                         ,
+                         //- New
+                         //+ NoLongerSeen
+                         //+ AutoGen
+                         new ConceptDef()
+                             .SetCode("NoLongerSeen")
+                             .SetDisplay("No longer seen")
+                             .SetDefinition(new Definition()
+                                 .Line("[PR] No longer seen")
+                             )
+                             .ValidModalities(Modalities.MG | Modalities.MRI | Modalities.US)
+                         //- AutoGen
+                         ,
+                         //- NoLongerSeen
+                         //+ NotSignificantChanged
+                         //+ AutoGen
+                         new ConceptDef()
+                             .SetCode("NotSignificantChanged")
+                             .SetDisplay("Not significant changed")
+                             .SetDefinition(new Definition()
+                                 .Line("[PR] Not significant changed")
+                             )
+                             .ValidModalities(Modalities.MG | Modalities.MRI | Modalities.NM | Modalities.US)
+                             .SetDicom("F-01723")
+                             .SetSnomedCode("129723006")
+                             .SetSnomedDescription("ClinicalFinding | 129723006 | No significant change since previous mammogram (Finding)")
+                             .SetICD10("129723006")
+                             .SetUMLS("C1268651")
+                         //- AutoGen
+                         ,
+                         //- NotSignificantChanged
+                         //+ PartiallyRemoved
+                         //+ AutoGen
+                         new ConceptDef()
+                             .SetCode("PartiallyRemoved")
+                             .SetDisplay("Partially removed")
+                             .SetDefinition(new Definition()
+                                 .Line("[PR] Partially removed")
+                             )
+                             .ValidModalities(Modalities.MG)
+                             .SetDicom("F-01722")
+                             .SetSnomedCode("129722001")
+                             .SetSnomedDescription("ClinicalFinding | 129722001 | Finding partially removed since previous mammogram (Finding)")
+                             .SetICD10("129722001")
+                             .SetUMLS("C1268650")
+                         //- AutoGen
+                         ,
+                         //- PartiallyRemoved
+                         //+ RepresentsChange
+                         //+ AutoGen
+                         new ConceptDef()
+                             .SetCode("RepresentsChange")
+                             .SetDisplay("Represents change")
+                             .SetDefinition(new Definition()
+                                 .Line("[PR] Represents change")
+                             )
+                             .ValidModalities(Modalities.MG | Modalities.MRI | Modalities.NM | Modalities.US)
+                         //- AutoGen
+                            .SetDefinition(
+                                new Definition()
+                                    .Line("Unspecified change has occured in item")
+                                )
+                         //- RepresentsChange
+                         ,
+                         //+ Stable
+                         //+ AutoGen
+                         new ConceptDef()
+                             .SetCode("Stable")
+                             .SetDisplay("Stable")
+                             .SetDefinition(new Definition()
+                                 .Line("[PR] Stable")
+                             )
+                             .ValidModalities(Modalities.MG | Modalities.MRI | Modalities.US)
+                         //- AutoGen
+                         //- Stable
+                        ,
+                         //- ChangesCS
+                        new ConceptDef("IncidentalFinding",
+                            "Incidental Finding",
+                            new Definition()
+                                .Line("Item observation is an incidental Finding")
+                            )
+                      }));
+
+        VSTaskVar ObservedChangesVS = new VSTaskVar(
+            (out ValueSet vs) =>
+                vs = Self.CreateValueSet(
+                    "ObservedChangesVS",
+                    "Observed Changes ValueSet",
+                    "Observed/Change/ValueSet",
+                    "Observed changes in an abnormality value set.",
+                    Group_CommonCodesVS,
+                    Self.ObservedChangesCS.Value()
+                    )
+            );
+    }
+}

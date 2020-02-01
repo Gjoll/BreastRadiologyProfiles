@@ -172,6 +172,8 @@ namespace BreastRadiology.XUnitTests
 
         void WriteDescriptions(DataSet ds)
         {
+            CodeBlockNested cb = null;
+
             String Val(Object t)
             {
                 switch (t)
@@ -179,12 +181,27 @@ namespace BreastRadiology.XUnitTests
                     case DBNull dbNullValue:
                         return null;
 
+                    case Double dbl:
+                        return dbl.ToString();
+
                     case String stringValue:
                         return stringValue;
 
                     default:
                         throw new Exception("Invalid excel cell value");
                 }
+            }
+            void DoRow(DataRow row)
+            {
+                String id = Val(row[5]);
+                if (String.IsNullOrEmpty(id))
+                    return;
+                String text = Val(row[9]);
+                if (String.IsNullOrEmpty(text))
+                    return;
+                cb
+                    .AppendLine($"Add(\"{id}\", \"UMLS\", \"{text}\")")
+                ;
             }
 
             DataTable dataTbl = ds.Tables["Sheet3"];
@@ -196,23 +213,12 @@ namespace BreastRadiology.XUnitTests
                         "ResourcesMaker",
                         "MammoIDDescriptions.cs"));
 
-            CodeBlockNested cb = editor.Blocks.Find("Data");
+            cb = editor.Blocks.Find("Data");
 
             for (Int32 i = 1; i < dataTbl.Rows.Count; i++)
             {
                 DataRow row = dataTbl.Rows[i];
-
-                String id = Val(row[5]);
-                if (String.IsNullOrEmpty(id))
-                    throw new Exception("Null id field");
-                String text = Val(row[9]);
-
-                if (String.IsNullOrEmpty(id) == false)
-                {
-                    cb
-                        .AppendLine($"Add(\"{id}\", \"UMLS\", \"{text}\")")
-                    ;
-                }
+                DoRow(row);
             }
             editor.Save();
         }

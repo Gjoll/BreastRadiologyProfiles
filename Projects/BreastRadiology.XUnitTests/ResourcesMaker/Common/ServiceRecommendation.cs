@@ -1327,6 +1327,18 @@ namespace BreastRadiology.XUnitTests
                             //- AutoGen
                             ,
                             //- LateromedialView
+                            //+ Unspecified/Other
+                            //+ AutoGen
+                            new ConceptDef()
+                                .SetCode("Unspecified/Other")
+                                .SetDisplay("Unspecified / other")
+                                .SetDefinition(new Definition()
+                                    .Line("[PR] Unspecified / other")
+                                )
+                                .ValidModalities(Modalities.MRI | Modalities.US)
+                            //- AutoGen
+                            ,
+                            //- Unspecified/Other
                             //- RecommendationsCS
                         })
             );
