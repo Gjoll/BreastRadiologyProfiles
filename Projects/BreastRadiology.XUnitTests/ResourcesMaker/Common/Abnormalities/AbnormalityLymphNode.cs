@@ -77,6 +77,11 @@ namespace BreastRadiology.XUnitTests
                                 .MammoId("650")
                                 .ValidModalities(Modalities.MG | Modalities.US)
                             //- AutoGen
+                                .BiRadsDef("These are circumscribed masses that are reniform and have hilar fat. They are generally 1 cm or smaller",
+                                        "in size. They may be larger than 1 cm and characterized as normal when fat replacement is pronounced. ",
+                                        "They frequently occur in the lateral and usually upper portions of the breast closer to the",
+                                        "axilla, although they may occur anywhere in the breast. They usually are seen adjacent to a vein,",
+                                        "because the lymphatic drainage of the breast parallels the venous drainage.")
                             ,
                             //- NodeIntramammary
                             //+ NodeLymph
@@ -124,17 +129,6 @@ namespace BreastRadiology.XUnitTests
                             
                             //- NodeUniformThickness
                             //- Type
-                        //$new ConceptDef("Intramammory",
-                        //    "Intramammory",
-                        //    new Definition()
-                        //    .CiteStart(BiRadCitation)
-                        //    .Text("These are circumscribed masses that are reniform and have hilar fat. They are generally 1 cm or smaller")
-                        //    .Text("in size. They may be larger than 1 cm and characterized as normal when fat replacement is pro-")
-                        //    .Text("nounced. They frequently occur in the lateral and usually upper portions of the breast closer to the")
-                        //    .Text("axilla, although they may occur anywhere in the breast. They usually are seen adjacent to a vein,")
-                        //    .Text("because the lymphatic drainage of the breast parallels the venous drainage.")
-                        //    .CiteEnd()
-                        //    ),
                          }
                      )
                  );

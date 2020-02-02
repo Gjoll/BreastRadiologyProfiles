@@ -22,7 +22,9 @@ namespace BreastRadiology.XUnitTests
         }
         String modalities { get; set; }
 
-        String definitionText;
+        String[] definitionText;
+
+        String[] biRadsText;
 
         public ConceptDef()
         {
@@ -40,13 +42,7 @@ namespace BreastRadiology.XUnitTests
             return this;
         }
 
-        [Obsolete]
-        public ConceptDef SetDefinition(Definition def)
-        {
-            return this;
-        }
-
-        public ConceptDef SetDefinition(String def)
+        public ConceptDef SetDefinition(params String[] def)
         {
             this.definitionText = def;
             return this;
@@ -56,7 +52,7 @@ namespace BreastRadiology.XUnitTests
         {
             this.Code = code.Code;
             this.Display = code.Display;
-            this.definitionText = definition.ToString();
+            //$this.definitionText = definition.ToString();
         }
 
         public ConceptDef(String code, String display, Definition definition)
@@ -70,7 +66,7 @@ namespace BreastRadiology.XUnitTests
                 throw new Exception("Empty definition");
             this.Code = code;
             this.Display = display;
-            this.definitionText = definitionStr;
+            //$this.definitionText = definitionStr;
         }
 
         public ConceptDef ValidModalities(Modalities modalities)
@@ -96,6 +92,12 @@ namespace BreastRadiology.XUnitTests
         {
             return this;
         }
+        public ConceptDef BiRadsDef(params String[] lines)
+        {
+            this.biRadsText = lines;
+            return this;
+        }
+
         public ConceptDef MammoId(String id)
         {
             if (MammoIDDescriptions.Self.TryGet(id, out MammoIDDescriptions.Description description) == false)

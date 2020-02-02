@@ -50,13 +50,9 @@ namespace BreastRadiology.XUnitTests
                             .SetSnomedCode("129736006")
                             .SetSnomedDescription("ClinicalFinding | Irregular shaped lesion")
                         //- AutoGen
-                            .SetDefinition(
-                                new Definition()
-                                .CiteStart(BiRadCitation)
-                                    .Text("The shape is neither round nor oval.")
-                                    .Text("For mammography, use of this descriptor usually implies a suspicious finding.")
-                                .CiteEnd()
-                            )
+                            .BiRadsDef(
+                                "The shape is neither round nor oval.",
+                                "For mammography, use of this descriptor usually implies a suspicious finding.")
                         ,
                         //- IrregularInShape
                         //+ OvalInShape
@@ -70,12 +66,7 @@ namespace BreastRadiology.XUnitTests
                             .SetSnomedCode("129734009")
                             .SetSnomedDescription("ClinicalFinding | Oval shaped lesion (Finding)")
                         //- AutoGen
-                            .SetDefinition(
-                                new Definition()
-                                .CiteStart(BiRadCitation)
-                                    .Text("Shape is elliptical or egg-shaped (may include 2 or 3 undulations, , i.e., \"gently lobulated\" or \"macrolobulated\").")
-                                .CiteEnd()
-                            )
+                            .BiRadsDef("Shape is elliptical or egg-shaped (may include 2 or 3 undulations, , i.e., \"gently lobulated\" or \"macrolobulated\").")
                         ,
                         //- OvalInShape
                         //+ RoundInShape
@@ -89,15 +80,11 @@ namespace BreastRadiology.XUnitTests
                             .SetSnomedCode("129733003")
                             .SetSnomedDescription("ClinicalFinding | Round shaped lesion (Finding)")
                         //- AutoGen
-                            .SetDefinition(
-                                new Definition()
-                                .CiteStart(BiRadCitation)
-                                    .Text("A mass that is spherical, ball-shaped, circular, or globular in shape.")
-                                    .Text("A round mass has an anteroposterior diameter equal to its transverse diameter")
-                                    .Text("and to qualify as a ROUND mass, it must be circular in perpendicular projections.")
-                                    .Text("Breast masses with a ROUND shape are not commonly seen with breast ultrasound.")
-                                .CiteEnd()
-                            )
+                            .BiRadsDef(
+                                "A mass that is spherical, ball-shaped, circular, or globular in shape.",
+                                "A round mass has an anteroposterior diameter equal to its transverse diameter",
+                                "and to qualify as a ROUND mass, it must be circular in perpendicular projections.",
+                                "Breast masses with a ROUND shape are not commonly seen with breast ultrasound.")
                         //- RoundInShape
                      })
                  );

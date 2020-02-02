@@ -47,11 +47,6 @@ namespace BreastRadiology.XUnitTests
             return this;
         }
 
-        [Obsolete]
-        public Definition MammoId(String id)
-        {
-            return this;
-        }
         public override string ToString() => this.ToText();
 
         public String ToText()

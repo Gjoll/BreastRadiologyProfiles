@@ -40,17 +40,15 @@ namespace BreastRadiology.XUnitTests
                             new ConceptDef()
                                 .SetCode("RegionComponent")
                                 .SetDisplay("Region Component code")
-                                .SetDefinition(new Definition()
-                                    .Line("RegionComponent")
-                                    .Line("Identifies the component containing the grouping code")
-                                ),
+                                .SetDefinition("Region Component",
+                                                "Identifies the component containing the grouping code")
+                                ,
                             new ConceptDef()
                                 .SetCode("SizeComponent")
                                 .SetDisplay("Size Component code")
-                                .SetDefinition(new Definition()
-                                    .Line("SizeComponent")
-                                    .Line("Identifies the component(s) containing the size values")
-                                ),
+                                .SetDefinition("Size Component",
+                                                "Identifies the component(s) containing the size values")
+                                ,
                         })
             );
         #endregion
@@ -68,21 +66,15 @@ namespace BreastRadiology.XUnitTests
                          new ConceptDef()
                              .SetCode("SingleItem")
                              .SetDisplay("Single Region")
-                             .SetDefinition(new Definition()
-                                 .Line("[PR] Single Region")
-                             ),
+                             .SetDefinition("[PR] Single Region"),
                          new ConceptDef()
                              .SetCode("MultipleItems")
                              .SetDisplay("Multiple Regions")
-                             .SetDefinition(new Definition()
-                                 .Line("[PR] Multiple Regions")
-                             ),
+                             .SetDefinition("[PR] Multiple Regions"),
                          new ConceptDef()
                              .SetCode("ClusterOfItems")
                              .SetDisplay("Cluster of Regions")
-                             .SetDefinition(new Definition()
-                                 .Line("[PR] Cluster of Regions")
-                             ),
+                             .SetDefinition("[PR] Cluster of Regions")
                      }));
 
         VSTaskVar ItemRegionVS = new VSTaskVar(

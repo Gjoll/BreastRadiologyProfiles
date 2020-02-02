@@ -40,17 +40,13 @@ namespace BreastRadiology.XUnitTests
                             new ConceptDef()
                                 .SetCode("GroupingComponent")
                                 .SetDisplay("Grouping Component code")
-                                .SetDefinition(new Definition()
-                                    .Line("GroupingComponent")
-                                    .Line("Identifies the component containing the grouping code")
-                                ),
+                                .SetDefinition("Grouping Component code",
+                                                "Identifies the component containing the grouping code"),
                             new ConceptDef()
                                 .SetCode("SizeComponent")
                                 .SetDisplay("Size Component code")
-                                .SetDefinition(new Definition()
-                                    .Line("SizeComponent")
-                                    .Line("Identifies the component(s) containing the size values")
-                                ),
+                                .SetDefinition("Size Component code",
+                                                "Identifies the component(s) containing the size values")
                         })
             );
         #endregion
@@ -80,46 +76,40 @@ namespace BreastRadiology.XUnitTests
                             new ConceptDef()
                                 .SetCode("Transverse")
                                 .SetDisplay("Transverse")
-                                .SetDefinition(new Definition()
-                                    .Line("[PR] Transverse")
-                                    .Line("All dimensions should be Transverse, Anterior-Posterior, and Craniocaudal dimension")
-                                ),
+                                .SetDefinition("[PR] Transverse",
+                                                "All dimensions should be Transverse, Anterior-Posterior, and Craniocaudal dimension")
+                                ,
                             new ConceptDef()
                                 .SetCode("Anterior-Posterior")
                                 .SetDisplay("Anterior-Posterior")
-                                .SetDefinition(new Definition()
-                                    .Line("[PR] Anterior-Posterior")
-                                    .Line("All dimensions should be Transverse, Anterior-Posterior, and Craniocaudal dimension")
-                                ),
+                                .SetDefinition("[PR] Anterior-Posterior",
+                                                "All dimensions should be Transverse, Anterior-Posterior, and Craniocaudal dimension")
+                                ,
                             new ConceptDef()
                                 .SetCode("Craniocaudal")
                                 .SetDisplay("Craniocaudal")
-                                .SetDefinition(new Definition()
-                                    .Line("[PR] Craniocaudal")
-                                    .Line("All dimensions should be Transverse, Anterior-Posterior, and Craniocaudal dimension")
-                                ),
+                                .SetDefinition("[PR] Craniocaudal",
+                                                "All dimensions should be Transverse, Anterior-Posterior, and Craniocaudal dimension")
+                                ,
 
                             new ConceptDef()
                                 .SetCode("LargestSize")
                                 .SetDisplay("LargestSize")
-                                .SetDefinition(new Definition()
-                                    .Line("[PR] LargestSize")
-                                    .Line("All dimensions should be Largest, Medium, Smallest")
-                                ),
+                                .SetDefinition("[PR] LargestSize",
+                                                "All dimensions should be Largest, Medium, Smallest")
+                                ,
                             new ConceptDef()
                                 .SetCode("MiddleSize")
                                 .SetDisplay("MiddleSize")
-                                .SetDefinition(new Definition()
-                                    .Line("[PR] Anterior-Posterior")
-                                    .Line("All dimensions should be Largest, Medium, Smallest")
-                                ),
+                                .SetDefinition("[PR] Anterior-Posterior",
+                                        "All dimensions should be Largest, Medium, Smallest")
+                                ,
                             new ConceptDef()
                                 .SetCode("SmallestSize")
                                 .SetDisplay("SmallestSize")
-                                .SetDefinition(new Definition()
-                                    .Line("[PR] SmallestSize")
-                                    .Line("All dimensions should be Largest, Medium, Smallest")
-                                ),
+                                .SetDefinition("[PR] SmallestSize",
+                                        "All dimensions should be Largest, Medium, Smallest")
+                                ,
                         })
             );
         #endregion
@@ -137,21 +127,18 @@ namespace BreastRadiology.XUnitTests
                          new ConceptDef()
                              .SetCode("SingleItem")
                              .SetDisplay("Single Items in Grouping")
-                             .SetDefinition(new Definition()
-                                 .Line("[PR] Single Items in Grouping")
-                             ),
+                             .SetDefinition("[PR] Single Items in Grouping")
+                             ,
                          new ConceptDef()
                              .SetCode("MultipleItems")
                              .SetDisplay("Multiple Items in Grouping")
-                             .SetDefinition(new Definition()
-                                 .Line("[PR] Multiple Items in Grouping")
-                             ),
+                             .SetDefinition("[PR] Multiple Items in Grouping")
+                             ,
                          new ConceptDef()
                              .SetCode("ClusterOfItems")
                              .SetDisplay("Cluster of Items in Grouping")
-                             .SetDefinition(new Definition()
-                                 .Line("[PR] Cluster of Items in Grouping")
-                             ),
+                             .SetDefinition("[PR] Cluster of Items in Grouping")
+                             ,
                      }));
 
         VSTaskVar ItemGroupingVS = new VSTaskVar(

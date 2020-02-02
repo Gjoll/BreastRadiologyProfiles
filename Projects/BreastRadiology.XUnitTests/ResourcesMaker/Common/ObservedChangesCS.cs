@@ -208,10 +208,6 @@ namespace BreastRadiology.XUnitTests
                              .MammoId("298")
                              .ValidModalities(Modalities.MG | Modalities.MRI | Modalities.NM | Modalities.US)
                          //- AutoGen
-                            .SetDefinition(
-                                new Definition()
-                                    .Line("Unspecified change has occured in item")
-                                )
                          //- RepresentsChange
                          ,
                          //+ Stable

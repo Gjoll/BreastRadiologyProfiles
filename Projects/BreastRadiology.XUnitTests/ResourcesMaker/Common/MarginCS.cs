@@ -48,14 +48,10 @@ namespace BreastRadiology.XUnitTests
                          .ValidModalities(Modalities.US)
                          .SetComment("NOT FOUND")
                      //- AutoGen
-                         .SetDefinition(new Definition()
-                            .Line("[PR] Angular margin")
-                            .CiteStart(BiRadCitation)
-                                .Text("Some or all of the margin has sharp corners, often forming acute angles, but the significant")
-                                .Text("feature is that the margin of the mass is NOT CIRCUMSCRIBED.")
-                            .CiteEnd()
-                         )
-                     ,
+                         .BiRadsDef(
+                             "Some or all of the margin has sharp corners, often forming acute angles, but the significant",
+                             "feature is that the margin of the mass is NOT CIRCUMSCRIBED.")
+                         ,
                      //- AngularMargin
                      //+ CircumscribedMargin
                      //+ AutoGen
@@ -68,15 +64,12 @@ namespace BreastRadiology.XUnitTests
                          .SetSnomedCode("129738007")
                          .SetSnomedDescription("ClinicalFinding | Lesion with circumscribed margin (Finding)")
                      //- AutoGen
-                        .SetDefinition(new Definition()
-                            .CiteStart(BiRadCitation)
-                            .Text("(historically, \"well-defined\" or \"sharply-defined\")")
-                            .Text("A circumscribed margin is one that is well defined, with an abrupt transition between the")
-                            .Text("lesion and the surrounding tissue. For US, to describe a mass as circumscribed, its entire margin")
-                            .Text("must be sharply defined. Most circumscribed lesions have round or oval shapes.")
-                            .CiteEnd()
-                        )
-                     ,
+                         .BiRadsDef(
+                            "(historically, \"well-defined\" or \"sharply-defined\")",
+                            "A circumscribed margin is one that is well defined, with an abrupt transition between the",
+                            "lesion and the surrounding tissue. For US, to describe a mass as circumscribed, its entire margin",
+                            "must be sharply defined. Most circumscribed lesions have round or oval shapes.")
+                         ,
                      //- CircumscribedMargin
                      //+ IndistinctMargin
                      //+ AutoGen
@@ -89,17 +82,13 @@ namespace BreastRadiology.XUnitTests
                          .SetSnomedCode("129741003")
                          .SetSnomedDescription("ClinicalFinding | Lesion with indistinct margin (Finding)")
                      //- AutoGen
-                        .SetDefinition(new Definition()
-                             .Line("Indistinct margin")
-                            .CiteStart(BiRadCitation)
-                                .Text("There is no clear demarcation of the entire margin or any portion of the margin from the")
-                                .Text("surrounding tissue. The boundary is poorly defined, and the significant feature is that the")
-                                .Text("mass is NOT CIRCUMSCRIBED. This is meant to include �echogenic rim� (historically, echogenic")
-                                .Text("halo) because one may not be able to distinguish between an indistinct margin and")
-                                .Text("one that displays an echogenic rim.")
-                            .CiteEnd()
-                         )
-                     ,
+                            .BiRadsDef(
+                            "There is no clear demarcation of the entire margin or any portion of the margin from the",
+                            "surrounding tissue. The boundary is poorly defined, and the significant feature is that the",
+                            "mass is NOT CIRCUMSCRIBED. This is meant to include �echogenic rim� (historically, echogenic",
+                            "halo) because one may not be able to distinguish between an indistinct margin and",
+                            "one that displays an echogenic rim.")
+                         ,
                      //- IndistinctMargin
                      //+ IntraductalExtension
                      //+ AutoGen
@@ -135,18 +124,6 @@ namespace BreastRadiology.XUnitTests
                          .SetComment("NOT FOUND")
                      //- AutoGen
                      ,
-                     //- LobulatedMargin
-                     //+ MacrolobulatedMargin
-                     //+ AutoGen
-                     new ConceptDef()
-                         .SetCode("MacrolobulatedMargin")
-                         .SetDisplay("Macrolobulated margin")
-                         .SetDefinition(new Definition()
-                             .Line("[PR] Macrolobulated margin")
-                         )
-                         .ValidModalities(Modalities.MG)
-                     //- AutoGen
-                     ,
                      //- MacrolobulatedMargin
                      //+ MicrolobulatedMargin
                      //+ AutoGen
@@ -159,13 +136,9 @@ namespace BreastRadiology.XUnitTests
                          .SetSnomedCode("129739004")
                          .SetSnomedDescription("ClinicalFinding | Lesion with microlobulated margin (Finding)")
                      //- AutoGen
-                        .SetDefinition(new Definition()
-                            .Line("Microlobulated margin")
-                            .CiteStart(BiRadCitation)
-                            .Text("The margin is characterized by short-cycle undulations, but the significant feature is that")
-                            .Text("the margin of the mass is NOT CIRCUMSCRIBED.")
-                            .CiteEnd()
-                        )
+                         .BiRadsDef(
+                            "The margin is characterized by short-cycle undulations, but the significant feature is that",
+                            "the margin of the mass is NOT CIRCUMSCRIBED.")
                      ,
                      //- MicrolobulatedMargin
                      //+ NonCircumscribedMargin
@@ -192,14 +165,10 @@ namespace BreastRadiology.XUnitTests
                          .SetSnomedCode("129740002")
                          .SetSnomedDescription("ClinicalFinding | Lesion with obscured margin (Finding)")
                      //- AutoGen
-                         .SetDefinition(new Definition()
-                             .Line("Obscured margin")
-                            .CiteStart(BiRadCitation)
-                                .Text("A margin that is hidden by superimposed or adjacent fibroglandular tissue. This is used")
-                                .Text("primarily when some of the margin of the mass is circumscribed, but the rest (more than 25%) is hidden.")
-                            .CiteEnd()
-                         )
-                     ,
+                         .BiRadsDef(
+                             "A margin that is hidden by superimposed or adjacent fibroglandular tissue. This is used",
+                             "primarily when some of the margin of the mass is circumscribed, but the rest (more than 25%) is hidden.")
+                         ,
                      //- ObscuredMargin
                      //+ SmoothMargin
                      //+ AutoGen
@@ -224,13 +193,9 @@ namespace BreastRadiology.XUnitTests
                          .SetSnomedCode("129742005")
                          .SetSnomedDescription("ClinicalFinding | Lesion with spiculated margin (Finding)")
                      //- AutoGen
-                        .SetDefinition(new Definition()
-                            .Line("Spiculated margin")
-                            .CiteStart(BiRadCitation)
-                                .Text("The margin is characterized by sharp lines radiating from the mass, often a sign of malignancy,")
-                                .Text("but the significant feature is that the margin of the mass is NOT CIRCUMSCRIBED.")
-                            .CiteEnd()
-                        )
+                         .BiRadsDef(
+                            "The margin is characterized by sharp lines radiating from the mass, often a sign of malignancy,",
+                            "but the significant feature is that the margin of the mass is NOT CIRCUMSCRIBED.")
                      //- SpiculatedMargin
                      //- MarginCS
                      })
