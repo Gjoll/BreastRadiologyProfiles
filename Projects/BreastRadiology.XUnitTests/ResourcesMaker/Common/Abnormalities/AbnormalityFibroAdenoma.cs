@@ -29,10 +29,8 @@ namespace BreastRadiology.XUnitTests
                             new ConceptDef()
                                 .SetCode("Fibroadenoma")
                                 .SetDisplay("Fibroadenoma")
-                                .SetDefinition(new Definition()
-                                    .Line("[PR] Fibroadenoma")
-                                    .MammoId("70")
-                                )
+                                .SetDefinition("[PR] Fibroadenoma")
+                                .MammoId("70")
                                 .ValidModalities(Modalities.MG | Modalities.US)
                             //- AutoGen
                             ,
@@ -42,10 +40,8 @@ namespace BreastRadiology.XUnitTests
                             new ConceptDef()
                                 .SetCode("FibroadenomaDegeneration")
                                 .SetDisplay("Fibroadenoma degeneration")
-                                .SetDefinition(new Definition()
-                                    .Line("[PR] Fibroadenoma degeneration")
-                                    .MammoId("695")
-                                )
+                                .SetDefinition("[PR] Fibroadenoma degeneration")
+                                .MammoId("695")
                                 .ValidModalities(Modalities.MG)
                             //- AutoGen
                             

@@ -29,10 +29,8 @@ namespace BreastRadiology.XUnitTests
                             new ConceptDef()
                                 .SetCode("Mass")
                                 .SetDisplay("Mass")
-                                .SetDefinition(new Definition()
-                                    .Line("[PR] Mass")
-                                    .MammoId("58")
-                                )
+                                .SetDefinition("[PR] Mass")
+                                .MammoId("58")
                                 .ValidModalities(Modalities.MG | Modalities.MRI | Modalities.US)
                             //- AutoGen
                             ,
@@ -42,10 +40,8 @@ namespace BreastRadiology.XUnitTests
                             new ConceptDef()
                                 .SetCode("MassIntraductal")
                                 .SetDisplay("Mass intraductal")
-                                .SetDefinition(new Definition()
-                                    .Line("[PR] Mass intraductal")
-                                    .MammoId("621")
-                                )
+                                .SetDefinition("[PR] Mass intraductal")
+                                .MammoId("621")
                                 .ValidModalities(Modalities.US)
                             //- AutoGen
                             ,
@@ -55,10 +51,8 @@ namespace BreastRadiology.XUnitTests
                             new ConceptDef()
                                 .SetCode("MassPartiallySolid")
                                 .SetDisplay("Mass partially solid")
-                                .SetDefinition(new Definition()
-                                    .Line("[PR] Mass partially solid")
-                                    .MammoId("697")
-                                )
+                                .SetDefinition("[PR] Mass partially solid")
+                                .MammoId("697")
                                 .ValidModalities(Modalities.MG | Modalities.US)
                             //- AutoGen
                             ,
@@ -68,10 +62,8 @@ namespace BreastRadiology.XUnitTests
                             new ConceptDef()
                                 .SetCode("MassSkinATLASIsSkinLesion")
                                 .SetDisplay("Mass skin ATLAS is skin lesion")
-                                .SetDefinition(new Definition()
-                                    .Line("[PR] Mass skin ATLAS is skin lesion")
-                                    .MammoId("613")
-                                )
+                                .SetDefinition("[PR] Mass skin ATLAS is skin lesion")
+                                .MammoId("613")
                                 .ValidModalities(Modalities.MG | Modalities.US)
                             //- AutoGen
                             ,
@@ -81,10 +73,8 @@ namespace BreastRadiology.XUnitTests
                             new ConceptDef()
                                 .SetCode("MassSolid")
                                 .SetDisplay("Mass solid")
-                                .SetDefinition(new Definition()
-                                    .Line("[PR] Mass solid")
-                                    .MammoId("608")
-                                )
+                                .SetDefinition("[PR] Mass solid")
+                                .MammoId("608")
                                 .ValidModalities(Modalities.MG | Modalities.US)
                             //- AutoGen
                             

@@ -29,10 +29,8 @@ namespace BreastRadiology.XUnitTests
                             new ConceptDef()
                                 .SetCode("DuctDilatedATLASSolitaryDilatedDuct")
                                 .SetDisplay("Duct dilated ATLAS solitary dilated duct")
-                                .SetDefinition(new Definition()
-                                    .Line("[PR] Duct dilated ATLAS solitary dilated duct")
-                                    .MammoId("694.602")
-                                )
+                                .SetDefinition("[PR] Duct dilated ATLAS solitary dilated duct")
+                                .MammoId("694.602")
                                 .ValidModalities(Modalities.MG | Modalities.US)
                             //- AutoGen
                             ,
@@ -42,10 +40,8 @@ namespace BreastRadiology.XUnitTests
                             new ConceptDef()
                                 .SetCode("DuctEctasia")
                                 .SetDisplay("Duct ectasia")
-                                .SetDefinition(new Definition()
-                                    .Line("[PR] Duct ectasia")
-                                    .MammoId("693.614")
-                                )
+                                .SetDefinition("[PR] Duct ectasia")
+                                .MammoId("693.614")
                                 .ValidModalities(Modalities.MG | Modalities.US)
                             //- AutoGen
                             

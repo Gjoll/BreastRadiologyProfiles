@@ -44,10 +44,8 @@ namespace BreastRadiology.XUnitTests
                         new ConceptDef()
                             .SetCode("IrregularInShape")
                             .SetDisplay("Irregular in shape")
-                            .SetDefinition(new Definition()
-                                .Line("[PR] Irregular in shape")
-                                .MammoId("16")
-                            )
+                            .SetDefinition("[PR] Irregular in shape")
+                            .MammoId("16")
                             .ValidModalities(Modalities.MG | Modalities.MRI | Modalities.US)
                             .SetSnomedCode("129736006")
                             .SetSnomedDescription("ClinicalFinding | Irregular shaped lesion")
@@ -66,10 +64,8 @@ namespace BreastRadiology.XUnitTests
                         new ConceptDef()
                             .SetCode("OvalInShape")
                             .SetDisplay("Oval in shape")
-                            .SetDefinition(new Definition()
-                                .Line("[PR] Oval in shape")
-                                .MammoId("15")
-                            )
+                            .SetDefinition("[PR] Oval in shape")
+                            .MammoId("15")
                             .ValidModalities(Modalities.MG | Modalities.MRI | Modalities.US)
                             .SetSnomedCode("129734009")
                             .SetSnomedDescription("ClinicalFinding | Oval shaped lesion (Finding)")
@@ -87,10 +83,8 @@ namespace BreastRadiology.XUnitTests
                         new ConceptDef()
                             .SetCode("RoundInShape")
                             .SetDisplay("Round in shape")
-                            .SetDefinition(new Definition()
-                                .Line("[PR] Round in shape")
-                                .MammoId("14")
-                            )
+                            .SetDefinition("[PR] Round in shape")
+                            .MammoId("14")
                             .ValidModalities(Modalities.MG | Modalities.MRI | Modalities.US)
                             .SetSnomedCode("129733003")
                             .SetSnomedDescription("ClinicalFinding | Round shaped lesion (Finding)")
@@ -109,6 +103,7 @@ namespace BreastRadiology.XUnitTests
                  );
     }
 }
+
 
 
 

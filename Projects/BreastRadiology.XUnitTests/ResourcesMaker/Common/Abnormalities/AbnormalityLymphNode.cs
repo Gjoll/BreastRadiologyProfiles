@@ -29,10 +29,8 @@ namespace BreastRadiology.XUnitTests
                             new ConceptDef()
                                 .SetCode("NodeAxillary")
                                 .SetDisplay("Node axillary")
-                                .SetDefinition(new Definition()
-                                    .Line("[PR] Node axillary")
-                                    .MammoId("648")
-                                )
+                                .SetDefinition("[PR] Node axillary")
+                                .MammoId("648")
                                 .ValidModalities(Modalities.MG | Modalities.US)
                             //- AutoGen
                             ,
@@ -42,10 +40,8 @@ namespace BreastRadiology.XUnitTests
                             new ConceptDef()
                                 .SetCode("NodeEnlarged")
                                 .SetDisplay("Node enlarged")
-                                .SetDefinition(new Definition()
-                                    .Line("[PR] Node enlarged")
-                                    .MammoId("649")
-                                )
+                                .SetDefinition("[PR] Node enlarged")
+                                .MammoId("649")
                                 .ValidModalities(Modalities.MG | Modalities.US)
                             //- AutoGen
                             ,
@@ -55,10 +51,8 @@ namespace BreastRadiology.XUnitTests
                             new ConceptDef()
                                 .SetCode("NodeFocalCortex")
                                 .SetDisplay("Node focal cortex")
-                                .SetDefinition(new Definition()
-                                    .Line("[PR] Node focal cortex")
-                                    .MammoId("662")
-                                )
+                                .SetDefinition("[PR] Node focal cortex")
+                                .MammoId("662")
                                 .ValidModalities(Modalities.MG | Modalities.US)
                             //- AutoGen
                             ,
@@ -68,10 +62,8 @@ namespace BreastRadiology.XUnitTests
                             new ConceptDef()
                                 .SetCode("NodeInfraclavicular")
                                 .SetDisplay("Node infraclavicular")
-                                .SetDefinition(new Definition()
-                                    .Line("[PR] Node infraclavicular")
-                                    .MammoId("665")
-                                )
+                                .SetDefinition("[PR] Node infraclavicular")
+                                .MammoId("665")
                                 .ValidModalities(Modalities.US)
                             //- AutoGen
                             ,
@@ -81,10 +73,8 @@ namespace BreastRadiology.XUnitTests
                             new ConceptDef()
                                 .SetCode("NodeIntramammary")
                                 .SetDisplay("Node intramammary")
-                                .SetDefinition(new Definition()
-                                    .Line("[PR] Node intramammary")
-                                    .MammoId("650")
-                                )
+                                .SetDefinition("[PR] Node intramammary")
+                                .MammoId("650")
                                 .ValidModalities(Modalities.MG | Modalities.US)
                             //- AutoGen
                             ,
@@ -94,10 +84,8 @@ namespace BreastRadiology.XUnitTests
                             new ConceptDef()
                                 .SetCode("NodeLymph")
                                 .SetDisplay("Node lymph")
-                                .SetDefinition(new Definition()
-                                    .Line("[PR] Node lymph")
-                                    .MammoId("651")
-                                )
+                                .SetDefinition("[PR] Node lymph")
+                                .MammoId("651")
                                 .ValidModalities(Modalities.MG | Modalities.US)
                             //- AutoGen
                             ,
@@ -107,10 +95,8 @@ namespace BreastRadiology.XUnitTests
                             new ConceptDef()
                                 .SetCode("NodeLymphNormal")
                                 .SetDisplay("Node lymph normal")
-                                .SetDefinition(new Definition()
-                                    .Line("[PR] Node lymph normal")
-                                    .MammoId("652")
-                                )
+                                .SetDefinition("[PR] Node lymph normal")
+                                .MammoId("652")
                                 .ValidModalities(Modalities.MG | Modalities.US)
                             //- AutoGen
                             ,
@@ -120,10 +106,8 @@ namespace BreastRadiology.XUnitTests
                             new ConceptDef()
                                 .SetCode("NodeSupraclavicular")
                                 .SetDisplay("Node supraclavicular")
-                                .SetDefinition(new Definition()
-                                    .Line("[PR] Node supraclavicular")
-                                    .MammoId("666")
-                                )
+                                .SetDefinition("[PR] Node supraclavicular")
+                                .MammoId("666")
                                 .ValidModalities(Modalities.US)
                             //- AutoGen
                             ,
@@ -133,10 +117,8 @@ namespace BreastRadiology.XUnitTests
                             new ConceptDef()
                                 .SetCode("NodeUniformThickness")
                                 .SetDisplay("Node uniform thickness")
-                                .SetDefinition(new Definition()
-                                    .Line("[PR] Node uniform thickness")
-                                    .MammoId("663")
-                                )
+                                .SetDefinition("[PR] Node uniform thickness")
+                                .MammoId("663")
                                 .ValidModalities(Modalities.MG | Modalities.US)
                             //- AutoGen
                             

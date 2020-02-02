@@ -29,10 +29,8 @@ namespace BreastRadiology.XUnitTests
                          new ConceptDef()
                              .SetCode("Cyst")
                              .SetDisplay("Cyst")
-                             .SetDefinition(new Definition()
-                                 .Line("[PR] Cyst")
-                                 .MammoId("69")
-                             )
+                             .SetDefinition("[PR] Cyst")
+                             .MammoId("69")
                              .ValidModalities(Modalities.MG | Modalities.MRI | Modalities.US)
                          //- AutoGen
                          ,
@@ -42,10 +40,8 @@ namespace BreastRadiology.XUnitTests
                          new ConceptDef()
                              .SetCode("CystComplex")
                              .SetDisplay("Cyst complex")
-                             .SetDefinition(new Definition()
-                                 .Line("[PR] Cyst complex")
-                                 .MammoId("610")
-                             )
+                             .SetDefinition("[PR] Cyst complex")
+                             .MammoId("610")
                              .ValidModalities(Modalities.MG | Modalities.US)
                          //- AutoGen
                          ,
@@ -55,10 +51,8 @@ namespace BreastRadiology.XUnitTests
                          new ConceptDef()
                              .SetCode("CystComplicated")
                              .SetDisplay("Cyst complicated")
-                             .SetDefinition(new Definition()
-                                 .Line("[PR] Cyst complicated")
-                                 .MammoId("657")
-                             )
+                             .SetDefinition("[PR] Cyst complicated")
+                             .MammoId("657")
                              .ValidModalities(Modalities.MG | Modalities.US)
                          //- AutoGen
                          ,
@@ -68,10 +62,8 @@ namespace BreastRadiology.XUnitTests
                          new ConceptDef()
                              .SetCode("CystMicro")
                              .SetDisplay("Cyst micro")
-                             .SetDefinition(new Definition()
-                                 .Line("[PR] Cyst micro")
-                                 .MammoId("617")
-                             )
+                             .SetDefinition("[PR] Cyst micro")
+                             .MammoId("617")
                              .ValidModalities(Modalities.US)
                          //- AutoGen
                          ,
@@ -81,10 +73,8 @@ namespace BreastRadiology.XUnitTests
                          new ConceptDef()
                              .SetCode("CystOil")
                              .SetDisplay("Cyst oil")
-                             .SetDefinition(new Definition()
-                                 .Line("[PR] Cyst oil")
-                                 .MammoId("636")
-                             )
+                             .SetDefinition("[PR] Cyst oil")
+                             .MammoId("636")
                              .ValidModalities(Modalities.MG | Modalities.US)
                          //- AutoGen
                          ,
@@ -94,10 +84,8 @@ namespace BreastRadiology.XUnitTests
                          new ConceptDef()
                              .SetCode("CystSimple")
                              .SetDisplay("Cyst simple")
-                             .SetDefinition(new Definition()
-                                 .Line("[PR] Cyst simple")
-                                 .MammoId("609")
-                             )
+                             .SetDefinition("[PR] Cyst simple")
+                             .MammoId("609")
                              .ValidModalities(Modalities.MG | Modalities.US)
                          //- AutoGen
                          ,
@@ -107,10 +95,8 @@ namespace BreastRadiology.XUnitTests
                          new ConceptDef()
                              .SetCode("CystWithDebris")
                              .SetDisplay("Cyst with debris")
-                             .SetDefinition(new Definition()
-                                 .Line("[PR] Cyst with debris")
-                                 .MammoId("661")
-                             )
+                             .SetDefinition("[PR] Cyst with debris")
+                             .MammoId("661")
                              .ValidModalities(Modalities.MG | Modalities.US)
                          //- AutoGen
                          
