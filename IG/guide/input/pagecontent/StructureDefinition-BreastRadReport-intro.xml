@@ -2,6 +2,9 @@
     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
     xsi:schemaLocation="http://hl7.org/fhir ../../src-generated/schemas/fhir-single.xsd">
   <h3 id="focusGraph">Graphical Overview</h3>
+  <a name="intro"></a>
+  <!-- +descriptions-->
+  <!-- -descriptions-->
   <p>
     This graph provides an overview of how and where this resource is
     referenced.
@@ -16,8 +19,6 @@ Comments and Suggested changes to this implementation guide can be made
 <p><b>Reviewed by KWA-PEN on 1.1.2020</b></p>
 <p><b>Reviewed by CIC on 22.1.2020</b></p>
   <!-- -reviewStatus-->
-  <!-- +descriptions-->
-  <!-- -descriptions-->
   <!-- +profileFragments-->
   <h3 id="profileFragments">Profile Fragments</h3>
   <p>

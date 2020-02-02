@@ -14,6 +14,7 @@ namespace BreastRadiology.XUnitTests
 {
     partial class ResourcesMaker
     {
+        //# TODO: get from gg
         CSTaskVar BiRadsAssessmentCategoriesCS = new CSTaskVar(
             (out CodeSystem cs) =>
                 cs = Self.CreateCodeSystem(

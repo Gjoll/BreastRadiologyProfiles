@@ -37,10 +37,10 @@ namespace BreastRadiology.XUnitTests
         //            new ConceptDef("Obscured",
         //                "Obscured Margin",
         //                new Definition()
-        //                .CiteStart()
+        //                .CiteStart(BiRadCitation)
         //                    .Line("A margin that is hidden by superimposed or adjacent fibroglandular tissue. This is used")
         //                    .Line("primarily when some of the margin of the mass is circumscribed, but the rest (more than 25%) is hidden.")
-        //                .CiteEnd(BiRadCitation)
+        //                .CiteEnd()
         //                ),
         //            new ConceptDef("Smooth",
         //                "Smooth Margin",
@@ -50,10 +50,10 @@ namespace BreastRadiology.XUnitTests
         //            new ConceptDef("Spiculated",
         //                "Spiculated Margin",
         //                new Definition()
-        //                .CiteStart()
+        //                .CiteStart(BiRadCitation)
         //                    .Line("The margin is characterized by lines radiating from the mass. Use of this descriptor usually")
         //                    .Line("implies a suspicious finding.")
-        //                .CiteEnd(BiRadCitation)
+        //                .CiteEnd()
         //                )
         //             })
         //         );

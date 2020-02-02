@@ -1,23 +1,7 @@
 <div xmlns="http://www.w3.org/1999/xhtml"
     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
     xsi:schemaLocation="http://hl7.org/fhir ../../src-generated/schemas/fhir-single.xsd">
-  <h3 id="focusGraph">Graphical Overview</h3>
-  <p>
-    This graph provides an overview of:
-    <ul>
-      <li>what resources reference Mammography Calcification</li>
-      <li>what resources Mammography Calcification references</li>
-    </ul>
-  </p>
-  <object data="Focus-MGAbnormalityCalcification.svg" type="image/svg+xml">
-    <img src="Focus-MGAbnormalityCalcification.svg" alt="image/svg+xml" />
-  </object>
-  <!-- +reviewStatus-->
-<h3 id="reviewStatus">Review Status</h3>
-Comments and Suggested changes to this implementation guide can be made 
-<a href="https://github.com/HL7/fhir-breast-radiology-ig/projects/1">here</a>
-<p><b>Reviewed by NOONE on </b></p>
-  <!-- -reviewStatus-->
+  <a name="intro"></a>
   <!-- +descriptions-->
 <h3 id="descriptions">Definitions</h3>
 <h4 id="acrDescription">ACR Mammography Calcification Definition</h4>
@@ -37,14 +21,26 @@ to describe calcifications within or immediately adjacent to the finding(s)
 </p>
 <h4 id="UMLS">UMLS Mammography Calcification Definition</h4>
 <p>
-Atypical hyperplasia is a precancerous condition
-that affects cells in the breast. Atypical hyperplasia
-describes an accumulation of abnormal cells in the
-breast. Atypical hyperplasia isn't cancer, but it
-can be a forerunner to the development of breast
-cancer.
+Atypical hyperplasia is a precancerous condition that affects cells in the breast. Atypical hyperplasia describes an accumulation of abnormal cells in the breast. Atypical hyperplasia isn't cancer, but it can be a forerunner to the development of breast cancer.
 </p>
   <!-- -descriptions-->
+  <h3 id="focusGraph">Graphical Overview</h3>
+  <p>
+    This graph provides an overview of:
+    <ul>
+      <li>what resources reference Mammography Calcification</li>
+      <li>what resources Mammography Calcification references</li>
+    </ul>
+  </p>
+  <object data="Focus-MGAbnormalityCalcification.svg" type="image/svg+xml">
+    <img src="Focus-MGAbnormalityCalcification.svg" alt="image/svg+xml" />
+  </object>
+  <!-- +reviewStatus-->
+<h3 id="reviewStatus">Review Status</h3>
+Comments and Suggested changes to this implementation guide can be made 
+<a href="https://github.com/HL7/fhir-breast-radiology-ig/projects/1">here</a>
+<p><b>Reviewed by NOONE on </b></p>
+  <!-- -reviewStatus-->
   <!-- +components-->
   <a name="components"></a>
   <h3 id="components">Member Fields</h3>

@@ -6,14 +6,7 @@
 <h3 id="descriptions">Definitions</h3>
 <h4 id="UMLS">UMLS Mammography Architectural Distortion Definition</h4>
 <p>
-Architectural distortion is often due to a desmoplastic
-reaction in which there is focal disruption of the
-normal breast tissue pattern. Architectural distortion
-is among the most common presentations for breast
-cancer. An architectural distortion may be caused
-by sclerosing adenosis, or a thing called radial
-scar, both of which are benign and both quite rare.
-Architectural distortion uncommonly indicates cancer.
+Architectural distortion is often due to a desmoplastic reaction in which there is focal disruption of the normal breast tissue pattern. Architectural distortion is among the most common presentations for breast cancer. An architectural distortion may be caused by sclerosing adenosis, or a thing called radial scar, both of which are benign and both quite rare. Architectural distortion uncommonly indicates cancer.
 </p>
 <h4 id="acrDescription">ACR Mammography Architectural Distortion Definition</h4>
 <p>
@@ -54,7 +47,15 @@ Comments and Suggested changes to this implementation guide can be made
     Each field contains one data item and is stored as an item (slice) in the Observation.component element.
   </p>
   <ul>
-    %ComponentList:noexpand:prefix=<li>:suffix=</li>:lb%
+    
+<li><a href="StructureDefinition-MGAbnormalityArchitecturalDistortion-definitions.html#Observation.component:biRadsAssessmentCategory">BiRads Assessment Category component [0..1]</a></li>
+<li><a href="StructureDefinition-MGAbnormalityArchitecturalDistortion-definitions.html#Observation.component:correspondsWith">Corresponds With component [0..*]</a></li>
+<li><a href="StructureDefinition-MGAbnormalityArchitecturalDistortion-definitions.html#Observation.component:mgDensity">Density component [0..1]</a></li>
+<li><a href="StructureDefinition-MGAbnormalityArchitecturalDistortion-definitions.html#Observation.component:margin">Margin component [0..1]</a></li>
+<li><a href="StructureDefinition-MGAbnormalityArchitecturalDistortion-definitions.html#Observation.component:notPreviouslySeen">Not Previously Seen component [0..*]</a></li>
+<li><a href="StructureDefinition-MGAbnormalityArchitecturalDistortion-definitions.html#Observation.component:observedChanges">Observed Change In Abnormality component [0..*]</a></li>
+<li><a href="StructureDefinition-MGAbnormalityArchitecturalDistortion-definitions.html#Observation.component:orientation">Orientation component [0..1]</a></li>
+<li><a href="StructureDefinition-MGAbnormalityArchitecturalDistortion-definitions.html#Observation.component:shape">Shape component [0..1]</a></li>
   </ul>
   <!-- -components-->
   <!-- +hasMember-->
@@ -67,7 +68,11 @@ Comments and Suggested changes to this implementation guide can be made
     The reference to each external observation is stored as an item in the Observation.hasMember element.
   </p>
   <ul>
-    %HasMemberList:noexpand:prefix=<li>:suffix=</li>:lb%
+    
+<li><a href="StructureDefinition-MGAbnormalityArchitecturalDistortion-definitions.html#Observation.hasMember:associatedFeatures">'Associated Features' reference [0..1]</a></li>
+<li><a href="StructureDefinition-MGAbnormalityArchitecturalDistortion-definitions.html#Observation.hasMember:consistentWith">'Consistent With' reference [0..*]</a></li>
+<li><a href="StructureDefinition-MGAbnormalityArchitecturalDistortion-definitions.html#Observation.hasMember:observedItemGroup">'Observed ItemGroup' reference [0..1]</a></li>
+<li><a href="StructureDefinition-MGAbnormalityArchitecturalDistortion-definitions.html#Observation.hasMember:observedItemRegion">'Observed ItemRegion' reference [0..1]</a></li>
   </ul>
   <!-- -hasMember-->
   <!-- +profileFragments-->
@@ -77,7 +82,15 @@ Comments and Suggested changes to this implementation guide can be made
     the hierarchy and commonality of disparate profiles..
   </p>
   <ul>
-    %FragmentList:noexpand:prefix=<li>:suffix=</li>:lb%
+    
+<li><a href="./StructureDefinition-CommonComponentsFragment.html">Common Components Fragment</a></li>
+<li><a href="./StructureDefinition-CorrespondsWithFragment.html">CorrespondsWith Fragment</a></li>
+<li><a href="./StructureDefinition-NotPreviouslySeenComponentFragment.html">Not Previously Seen Component Fragment</a></li>
+<li><a href="./StructureDefinition-ObservationLeafFragment.html">Observation Leaf Fragment</a></li>
+<li><a href="./StructureDefinition-BreastRadObservationNoComponentFragment.html">Observation No Component Fragment</a></li>
+<li><a href="./StructureDefinition-BreastRadObservationNoDeviceFragment.html">Observation NoDevice Fragment</a></li>
+<li><a href="./StructureDefinition-BreastRadObservationNoValueFragment.html">Observation NoValue Fragment</a></li>
+<li><a href="./StructureDefinition-ShapeComponentsFragment.html">Shape Components Fragment</a></li>
   </ul>
   <!-- -profileFragments-->
 </div>

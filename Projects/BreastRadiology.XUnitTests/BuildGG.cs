@@ -173,6 +173,33 @@ namespace BreastRadiology.XUnitTests
             editor.Save();
         }
 
+        Dictionary<String, DataRow> sheet3 = new Dictionary<string, DataRow>();
+
+        void LoadSheet3(DataSet ds)
+        {
+            DataTable dataTbl = ds.Tables["Sheet3"];
+            if (dataTbl == null)
+                throw new Exception($"Table {"Sheet3"} not found");
+
+            void DoRow(DataRow row)
+            {
+                String penId = row[5].ToString().Trim();
+                if (penId == "?????")
+                    return;
+                if (penId.Length == 0)
+                    return;
+
+                if (sheet3.TryAdd(penId, row) == false)
+                    Trace.WriteLine($"Duplicate PenId {penId}");
+            }
+
+            for (Int32 i = 1; i < dataTbl.Rows.Count; i++)
+            {
+                DataRow row = dataTbl.Rows[i];
+                DoRow(row);
+            }
+        }
+
         void WriteDescriptions(DataSet ds)
         {
             CodeBlockNested cb = null;
@@ -201,6 +228,7 @@ namespace BreastRadiology.XUnitTests
                 Int32 len = 0;
 
                 StringBuilder sb = new StringBuilder();
+                sb.Append("\"");
                 while (i < text.Length)
                 {
                     void Add(Char c)
@@ -212,23 +240,28 @@ namespace BreastRadiology.XUnitTests
                     Char c = text[i++];
                     switch (c)
                     {
+                        case '“':
+                        case '”':
                         case '\"':
-                            sb.Append("\\\\\"");
+                            sb.Append("\\\"");
                             break;
 
                         case '\r':
                             break;
 
                         case '\n':
-                            sb.Append("\\n\n");
-                            len = 0;
+                            if (len > 0)
+                            {
+                                sb.Append("\",\n\"");
+                                len = 0;
+                            }
                             break;
 
                         case ' ':
                             Add(c);
                             if (len > Maxlen)
                             {
-                                sb.Append('\n');
+                                sb.Append("\" +\n\"");
                                 len = 0;
                             }
                             break;
@@ -238,6 +271,7 @@ namespace BreastRadiology.XUnitTests
                             break;
                     }
                 }
+                sb.Append("\"");
                 return sb.ToString().Split('\n');
             }
 
@@ -272,19 +306,9 @@ namespace BreastRadiology.XUnitTests
                 ;
                 String[] lines = FormatMultiLineText(text).ToArray();
 
-                String GetLine(Int32 i)
-                {
-                    return lines[i]
-                        .Replace("\"", "\\\"")
-                        ;
-                }
-
-                for (Int32 i = 0; i < lines.Length - 1; i++)
-                    cb.AppendLine($"    \"{GetLine(i)}\",");
-                cb
-                    .AppendLine($"    \"{GetLine(lines.Length - 1)}\"")
-                    .AppendLine($"    }});")
-                    ;
+                foreach (String line in lines)
+                    cb.AppendLine($"        {line}");
+                cb.AppendLine($"    }});");
             }
 
             DataTable dataTbl = ds.Tables["Sheet3"];
@@ -311,6 +335,8 @@ namespace BreastRadiology.XUnitTests
         public void WriteCode()
         {
             DataSet ds = this.ReadGregDS();
+            LoadSheet3(ds);
+
             WriteDescriptions(ds);
             WriteCS(ds, "Recommendation", @"Common\ServiceRecommendation.cs", "RecommendationsCS");
             WriteCS(ds, "CorrspondsWith", @"Common\CorrespondsWithCS.cs", "CorrespondsWithCS");

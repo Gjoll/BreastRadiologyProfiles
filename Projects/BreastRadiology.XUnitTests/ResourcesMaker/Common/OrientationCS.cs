@@ -27,21 +27,21 @@ namespace BreastRadiology.XUnitTests
                     new ConceptDef("ParallelToSkin",
                         "Parallel to skin",
                         new Definition()
-                        .CiteStart()
-                            .Line("(historically, “wider-than-tall” or “horizontal”)")
-                            .Line("The long axis of the mass parallels the skin line. Masses that are only slightly obiquely oriented")
-                            .Line("might be considered parallel.")
-                        .CiteEnd(BiRadCitation)
+                        .CiteStart(BiRadCitation)
+                            .Text("(historically, “wider-than-tall” or “horizontal”)")
+                            .Text("The long axis of the mass parallels the skin line. Masses that are only slightly obiquely oriented")
+                            .Text("might be considered parallel.")
+                        .CiteEnd()
                         ),
                     new ConceptDef("PerpendicularToSkin",
                         "Perpendicular To Skin",
                         new Definition()
-                        .CiteStart()
-                            .Line("(historically, \"isodense\")")
-                            .Line("The long axis of the mass does not lie parallel to the skin line. The anterior–posterior or vertical")
-                            .Line("dimension is greater than the transverse or horizontal dimension. These masses can also be")
-                            .Line("obliquely oriented to the skin line. Round masses are NOT PARALLEL in their orientation.")
-                        .CiteEnd(BiRadCitation)
+                        .CiteStart(BiRadCitation)
+                            .Text("(historically, \"isodense\")")
+                            .Text("The long axis of the mass does not lie parallel to the skin line. The anterior–posterior or vertical")
+                            .Text("dimension is greater than the transverse or horizontal dimension. These masses can also be")
+                            .Text("obliquely oriented to the skin line. Round masses are NOT PARALLEL in their orientation.")
+                        .CiteEnd()
                         )
                      })
              );

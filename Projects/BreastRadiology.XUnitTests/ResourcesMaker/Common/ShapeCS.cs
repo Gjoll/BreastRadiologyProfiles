@@ -55,10 +55,10 @@ namespace BreastRadiology.XUnitTests
                         //- AutoGen
                             .SetDefinition(
                                 new Definition()
-                                .CiteStart()
-                                    .Line("The shape is neither round nor oval.")
-                                    .Line("For mammography, use of this descriptor usually implies a suspicious finding.")
-                                .CiteEnd(BiRadCitation)
+                                .CiteStart(BiRadCitation)
+                                    .Text("The shape is neither round nor oval.")
+                                    .Text("For mammography, use of this descriptor usually implies a suspicious finding.")
+                                .CiteEnd()
                             )
                         ,
                         //- IrregularInShape
@@ -78,9 +78,9 @@ namespace BreastRadiology.XUnitTests
                         //- AutoGen
                             .SetDefinition(
                                 new Definition()
-                                .CiteStart()
-                                    .Line("Shape is elliptical or egg-shaped (may include 2 or 3 undulations, , i.e., \"gently lobulated\" or \"macrolobulated\").")
-                                .CiteEnd(BiRadCitation)
+                                .CiteStart(BiRadCitation)
+                                    .Text("Shape is elliptical or egg-shaped (may include 2 or 3 undulations, , i.e., \"gently lobulated\" or \"macrolobulated\").")
+                                .CiteEnd()
                             )
                         ,
                         //- OvalInShape
@@ -100,18 +100,29 @@ namespace BreastRadiology.XUnitTests
                         //- AutoGen
                             .SetDefinition(
                                 new Definition()
-                                .CiteStart()
-                                    .Line("A mass that is spherical, ball-shaped, circular, or globular in shape.")
-                                    .Line("A round mass has an anteroposterior diameter equal to its transverse diameter")
-                                    .Line("and to qualify as a ROUND mass, it must be circular in perpendicular projections.")
-                                    .Line("Breast masses with a ROUND shape are not commonly seen with breast ultrasound.")
-                                .CiteEnd(BiRadCitation)
+                                .CiteStart(BiRadCitation)
+                                    .Text("A mass that is spherical, ball-shaped, circular, or globular in shape.")
+                                    .Text("A round mass has an anteroposterior diameter equal to its transverse diameter")
+                                    .Text("and to qualify as a ROUND mass, it must be circular in perpendicular projections.")
+                                    .Text("Breast masses with a ROUND shape are not commonly seen with breast ultrasound.")
+                                .CiteEnd()
                             )
                         //- RoundInShape
                      })
                  );
     }
 }
+
+
+
+
+
+
+
+
+
+
+
 
 
 

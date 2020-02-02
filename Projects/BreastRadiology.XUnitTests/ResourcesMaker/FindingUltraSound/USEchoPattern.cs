@@ -21,17 +21,17 @@ namespace BreastRadiology.XUnitTests
         //            new ConceptDef("Anechoic",
         //                "Anechoic",
         //                new Definition()
-        //                .CiteStart()
+        //                .CiteStart(BiRadCitation)
         //                    .Line("Without internal echoes.")
-        //                .CiteEnd(BiRadCitation)
+        //                .CiteEnd()
         //                ),
         //            new ConceptDef("ComplexCysticAndSolid",
         //                "Complex Cystic and Solid",
         //                new Definition()
-        //                .CiteStart()
+        //                .CiteStart(BiRadCitation)
         //                    .Line("A complex mass contains both anechoic (cystic or fluid) and echogenic (solid) components.")
         //                    .Line("Not [PR]")
-        //                .CiteEnd(BiRadCitation)
+        //                .CiteEnd()
         //                ),
         //            new ConceptDef("FibrocysticTissue",
         //                "Fibrocystic Tissue",
@@ -41,13 +41,13 @@ namespace BreastRadiology.XUnitTests
         //             new ConceptDef("Heterogeneous",
         //                "Heterogeneous",
         //                new Definition()
-        //                .CiteStart()
+        //                .CiteStart(BiRadCitation)
         //                    .Line("A mixture of echogenic patterns within a solid mass. Heterogeneity has little prognostic")
         //                    .Line("value in differentiating benign from malignant masses, but it is not uncommon to observe")
         //                    .Line("heterogeneity in fibroadenomas as well as cancers. Clumped areas of different echogenicity")
         //                    .Line("may elevate the suspicion for malignancy, particularly in a mass whose margins are not")
         //                    .Line("circumscribed and whose shape is irregular.")
-        //                .CiteEnd(BiRadCitation)
+        //                .CiteEnd()
         //                ),
         //             new ConceptDef("Homogeneous",
         //                "Homogeneous",
@@ -57,28 +57,28 @@ namespace BreastRadiology.XUnitTests
         //           new ConceptDef("Hyperechoic",
         //                "Hyperechoic",
         //                new Definition()
-        //                .CiteStart()
+        //                .CiteStart(BiRadCitation)
         //                    .Line("Hyperechogenicity is defined as having increased echogenicity relative to fat or equal to fibroglandular tissue.")
-        //                .CiteEnd(BiRadCitation)
+        //                .CiteEnd()
         //                ),
         //            new ConceptDef("Hypoechoic",
         //                "Hypoechoic",
         //                new Definition()
-        //                .CiteStart()
+        //                .CiteStart(BiRadCitation)
         //                    .Line("The term “hypoechoic” is defined relative to subcutaneous fat; hypoechoic masses, less")
         //                    .Line("echogenic than fat, are characterized by low-level echoes throughout (for example,")
         //                    .Line("complicated cysts and fibroadenomas)")
-        //                .CiteEnd(BiRadCitation)
+        //                .CiteEnd()
         //                ),
         //            new ConceptDef("Isoechoic",
         //                "Isoechoic",
         //                new Definition()
-        //                .CiteStart()
+        //                .CiteStart(BiRadCitation)
         //                    .Line("Isoechogenicity is defined as having the same echogenicity as subcutaneous fat. Isoechoic")
         //                    .Line("masses may be relatively inconspicuous, particularly when they are situated within an area of")
         //                    .Line("fat lobules. This may limit the sensitivity of US, especially at screening, in which the presence")
         //                    .Line("and location of such a mass is not known at the time of examination.")
-        //                .CiteEnd(BiRadCitation)
+        //                .CiteEnd()
         //                ),
         //            new ConceptDef("MixedEchogenic",
         //                "Mixed Echogenic",

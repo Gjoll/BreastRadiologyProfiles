@@ -27,10 +27,10 @@ namespace BreastRadiology.XUnitTests
         //            new ConceptDef("Circumscribed ",
         //                "Circumscribed Margin",
         //                new Definition()
-        //                .CiteStart()
+        //                .CiteStart(BiRadCitation)
         //                    .Line("(historically, \"well defined\" or \"sharply defined\")")
         //                    .Line("The margin is sharply demarcated with an abrupt transition between the lesion and the surrounding tissue.")
-        //                .CiteEnd(BiRadCitation)
+        //                .CiteEnd()
         //                )
         //             })
         //         );

@@ -6,22 +6,8 @@
 <h3 id="descriptions">Definitions</h3>
 <h4 id="UMLS">UMLS Mammography Fat Necrosis Definition</h4>
 <p>
-Sometimes a lump can form if an area of the fatty
-breast tissue is damaged. This is called fat necrosis
-(necrosis is a medical term used to describe damaged
-or dead tissue).Fat necrosis feels like a firm, round
-lump (or lumps) and is usually painless, but in some
-people it may feel tender or even painful. The skin
-around the lump may look red, bruised or occasionally
-dimpled. Sometimes fat necrosis can cause the nipple
-to be pulled in.
-Sometimes, within an area of fat necrosis the damaged
-tissue can form a cyst containing an oily fluid (oil
-cyst). Breast cysts don’t usually need any treatment
-or follow-up. Most cysts go away by themselves and
-are nothing to worry about. If the cyst is large
-or causing discomfort, your specialist may draw off
-the fluid using a fine needle and syringe.
+Sometimes a lump can form if an area of the fatty breast tissue is damaged. This is called fat necrosis (necrosis is a medical term used to describe damaged or dead tissue).Fat necrosis feels like a firm, round lump (or lumps) and is usually painless, but in some people it may feel tender or even painful. The skin around the lump may look red, bruised or occasionally dimpled. Sometimes fat necrosis can cause the nipple to be pulled in.
+Sometimes, within an area of fat necrosis the damaged tissue can form a cyst containing an oily fluid (oil cyst). Breast cysts don’t usually need any treatment or follow-up. Most cysts go away by themselves and are nothing to worry about. If the cyst is large or causing discomfort, your specialist may draw off the fluid using a fine needle and syringe.
 </p>
   <!-- -descriptions-->
   <h3 id="focusGraph">Graphical Overview</h3>
@@ -51,7 +37,16 @@ Comments and Suggested changes to this implementation guide can be made
     Each field contains one data item and is stored as an item (slice) in the Observation.component element.
   </p>
   <ul>
-    %ComponentList:noexpand:prefix=<li>:suffix=</li>:lb%
+    
+<li><a href="StructureDefinition-MGAbnormalityFatNecrosis-definitions.html#Observation.component:biRadsAssessmentCategory">BiRads Assessment Category component [0..1]</a></li>
+<li><a href="StructureDefinition-MGAbnormalityFatNecrosis-definitions.html#Observation.component:correspondsWith">Corresponds With component [0..*]</a></li>
+<li><a href="StructureDefinition-MGAbnormalityFatNecrosis-definitions.html#Observation.component:mgDensity">Density component [0..1]</a></li>
+<li><a href="StructureDefinition-MGAbnormalityFatNecrosis-definitions.html#Observation.component:margin">Margin component [0..1]</a></li>
+<li><a href="StructureDefinition-MGAbnormalityFatNecrosis-definitions.html#Observation.component:notPreviouslySeen">Not Previously Seen component [0..*]</a></li>
+<li><a href="StructureDefinition-MGAbnormalityFatNecrosis-definitions.html#Observation.component:observedChanges">Observed Change In Abnormality component [0..*]</a></li>
+<li><a href="StructureDefinition-MGAbnormalityFatNecrosis-definitions.html#Observation.component:observedCount">Observed Count component [0..1]</a></li>
+<li><a href="StructureDefinition-MGAbnormalityFatNecrosis-definitions.html#Observation.component:orientation">Orientation component [0..1]</a></li>
+<li><a href="StructureDefinition-MGAbnormalityFatNecrosis-definitions.html#Observation.component:shape">Shape component [0..1]</a></li>
   </ul>
   <!-- -components-->
   <!-- +hasMember-->
@@ -64,7 +59,11 @@ Comments and Suggested changes to this implementation guide can be made
     The reference to each external observation is stored as an item in the Observation.hasMember element.
   </p>
   <ul>
-    %HasMemberList:noexpand:prefix=<li>:suffix=</li>:lb%
+    
+<li><a href="StructureDefinition-MGAbnormalityFatNecrosis-definitions.html#Observation.hasMember:associatedFeatures">'Associated Features' reference [0..1]</a></li>
+<li><a href="StructureDefinition-MGAbnormalityFatNecrosis-definitions.html#Observation.hasMember:consistentWith">'Consistent With' reference [0..*]</a></li>
+<li><a href="StructureDefinition-MGAbnormalityFatNecrosis-definitions.html#Observation.hasMember:observedItemGroup">'Observed ItemGroup' reference [0..1]</a></li>
+<li><a href="StructureDefinition-MGAbnormalityFatNecrosis-definitions.html#Observation.hasMember:observedItemRegion">'Observed ItemRegion' reference [0..1]</a></li>
   </ul>
   <!-- -hasMember-->
   <!-- +profileFragments-->
@@ -74,7 +73,16 @@ Comments and Suggested changes to this implementation guide can be made
     the hierarchy and commonality of disparate profiles..
   </p>
   <ul>
-    %FragmentList:noexpand:prefix=<li>:suffix=</li>:lb%
+    
+<li><a href="./StructureDefinition-CommonComponentsFragment.html">Common Components Fragment</a></li>
+<li><a href="./StructureDefinition-CorrespondsWithFragment.html">CorrespondsWith Fragment</a></li>
+<li><a href="./StructureDefinition-NotPreviouslySeenComponentFragment.html">Not Previously Seen Component Fragment</a></li>
+<li><a href="./StructureDefinition-ObservationLeafFragment.html">Observation Leaf Fragment</a></li>
+<li><a href="./StructureDefinition-BreastRadObservationNoComponentFragment.html">Observation No Component Fragment</a></li>
+<li><a href="./StructureDefinition-BreastRadObservationNoDeviceFragment.html">Observation NoDevice Fragment</a></li>
+<li><a href="./StructureDefinition-BreastRadObservationNoValueFragment.html">Observation NoValue Fragment</a></li>
+<li><a href="./StructureDefinition-ObservedCountFragment.html">ObservedCount Fragment</a></li>
+<li><a href="./StructureDefinition-ShapeComponentsFragment.html">Shape Components Fragment</a></li>
   </ul>
   <!-- -profileFragments-->
 </div>

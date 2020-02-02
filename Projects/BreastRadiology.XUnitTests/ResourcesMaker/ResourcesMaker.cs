@@ -19,21 +19,42 @@ namespace BreastRadiology.XUnitTests
         class Definition
         {
             StringBuilder sb = new StringBuilder();
-            //bool citeFlag = false;
+            bool eolFlag = true;
 
-            public Definition CiteStart()
+
+            void MakeEOLN()
             {
+                if (this.eolFlag == true)
+                    return;
+                this.sb.AppendLine("");
+                this.eolFlag = true;
+            }
+
+            public Definition CiteStart(String citationSource)
+            {
+                MakeEOLN();
+                this.sb.AppendLine($"[{citationSource}]");
+                this.eolFlag = true;
                 return this;
             }
 
-            public Definition CiteEnd(String citationSource)
+            public Definition CiteEnd()
             {
-                this.sb.AppendLine($"    -- {citationSource}");
+                MakeEOLN();
+                //this.sb.AppendLine($"    -- {citationSource}");
+                return this;
+            }
+
+            public Definition Text(String line)
+            {
+                this.eolFlag = false;
+                this.sb.Append(line);
                 return this;
             }
 
             public Definition Line(String line)
             {
+                this.eolFlag = true;
                 this.sb.AppendLine(line);
                 return this;
             }
@@ -42,10 +63,10 @@ namespace BreastRadiology.XUnitTests
             {
                 if (MammoIDDescriptions.Self.TryGet(id, out MammoIDDescriptions.Description description) == false)
                     return this;
-                this.CiteStart();
+                this.CiteStart(description.Source);
                 foreach (String line in description.Text)
                     this.Line(line);
-                this.CiteEnd(description.Source);
+                this.CiteEnd();
                 return this;
             }
 

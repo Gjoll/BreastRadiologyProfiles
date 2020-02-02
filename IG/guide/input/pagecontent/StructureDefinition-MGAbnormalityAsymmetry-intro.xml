@@ -1,6 +1,19 @@
 <div xmlns="http://www.w3.org/1999/xhtml"
     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
     xsi:schemaLocation="http://hl7.org/fhir ../../src-generated/schemas/fhir-single.xsd">
+  <a name="intro"></a>
+  <!-- +descriptions-->
+<h3 id="descriptions">Definitions</h3>
+<h4 id="acrDescription">ACR Mammography Asymmetry Definition</h4>
+<p>
+The several types of asymmetry involve a spectrum of mammographic findings that represent
+unilateral deposits of fibroglandular tissue not conforming to the definition of a radiodense mass.
+The asymmetry, unlike a mass, is visible on only 1 mammographic projection. The other 3 types of
+asymmetry, although visible on more than 1 projection, have concave-outward borders and
+usually are seen to be interspersed with fat, whereas a radiodense mass displays completely or partially
+convex-outward borders and appears to be denser in the center than at the periphery.
+</p>
+  <!-- -descriptions-->
   <h3 id="focusGraph">Graphical Overview</h3>
   <p>
     This graph provides an overview of:
@@ -18,18 +31,6 @@ Comments and Suggested changes to this implementation guide can be made
 <a href="https://github.com/HL7/fhir-breast-radiology-ig/projects/1">here</a>
 <p><b>Reviewed by NOONE on </b></p>
   <!-- -reviewStatus-->
-  <!-- +descriptions-->
-<h3 id="descriptions">Definitions</h3>
-<h4 id="acrDescription">ACR Mammography Asymmetry Definition</h4>
-<p>
-The several types of asymmetry involve a spectrum of mammographic findings that represent
-unilateral deposits of fibroglandular tissue not conforming to the definition of a radiodense mass.
-The asymmetry, unlike a mass, is visible on only 1 mammographic projection. The other 3 types of
-asymmetry, although visible on more than 1 projection, have concave-outward borders and
-usually are seen to be interspersed with fat, whereas a radiodense mass displays completely or partially
-convex-outward borders and appears to be denser in the center than at the periphery.
-</p>
-  <!-- -descriptions-->
   <!-- +components-->
   <a name="components"></a>
   <h3 id="components">Member Fields</h3>

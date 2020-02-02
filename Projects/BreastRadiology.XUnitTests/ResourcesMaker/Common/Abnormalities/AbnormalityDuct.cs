@@ -13,6 +13,7 @@ namespace BreastRadiology.XUnitTests
 {
     partial class ResourcesMaker : ConverterBase
     {
+        //# TODO: Get from gg
         CSTaskVar AbnormalityDuctCS = new CSTaskVar(
              (out CodeSystem cs) =>
                  cs = Self.CreateCodeSystem(
@@ -36,11 +37,11 @@ namespace BreastRadiology.XUnitTests
                         new ConceptDef("Dilated",
                             "Dilated",
                             new Definition()
-                                .CiteStart()
-                                .Line("This is a unilateral tubular or branching structure that likely represents a dilated or otherwise en-")
-                                .Line("larged duct. It is a rare finding. Even if unassociated with other suspicious clinical or mammographic")
-                                .Line("findings, it has been reported to be associated with noncalcified DCIS.")
-                                .CiteEnd(BiRadCitation)
+                                .CiteStart(BiRadCitation)
+                                .Text("This is a unilateral tubular or branching structure that likely represents a dilated or otherwise en-")
+                                .Text("larged duct. It is a rare finding. Even if unassociated with other suspicious clinical or mammographic")
+                                .Text("findings, it has been reported to be associated with noncalcified DCIS.")
+                                .CiteEnd()
                             )
                          }
                      )
