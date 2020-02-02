@@ -40,6 +40,23 @@ namespace BreastRadiology.XUnitTests
         {
         }
 
+        String CodeValue(String value)
+        {
+            while (true)
+            {
+                Int32 j = value.IndexOf(' ', new StringComparison());
+                if (j < 0)
+                    break;
+                String temp = value.Substring(0, j);
+                while (value[j] == ' ')
+                    j += 1;
+                temp += Char.ToUpper(value[j], CultureInfo.InvariantCulture);
+                temp += value.Substring(j + 1);
+                value = temp;
+            }
+            return value;
+        }
+
         public void WriteCS(DataSet ds,
             String sheetName,
             String outputCodePath,
@@ -70,22 +87,6 @@ namespace BreastRadiology.XUnitTests
                 }
             }
 
-            String CodeValue(String value)
-            {
-                while (true)
-                {
-                    Int32 j = value.IndexOf(' ', new StringComparison());
-                    if (j < 0)
-                        break;
-                    String temp = value.Substring(0, j);
-                    while (value[j] == ' ')
-                        j += 1;
-                    temp += Char.ToUpper(value[j], CultureInfo.InvariantCulture);
-                    temp += value.Substring(j + 1);
-                    value = temp;
-                }
-                return value;
-            }
 
             DataTable dataTbl = ds.Tables[sheetName];
             if (dataTbl == null)
@@ -324,6 +325,89 @@ namespace BreastRadiology.XUnitTests
             editor.Save();
         }
 
+        void WriteIds(String outputCodePath,
+            String csBlockName,
+            params String[] penIds)
+        {
+            CodeEditor editor = new CodeEditor();
+            editor.Load(Path.Combine(DirHelper.FindParentDir("BreastRadiology.XUnitTests"),
+                        "ResourcesMaker",
+                        outputCodePath));
+
+            CodeBlockNested concepts = editor.Blocks.Find(csBlockName);
+            if (concepts == null)
+                throw new Exception($"Can not find editor block {csBlockName}");
+
+            CodeBlockNested concept = null;
+            for (Int32 i = 0; i < penIds.Length; i++)
+            {
+                String term = ",";
+                if (i == penIds.Length - 1)
+                    term = "";
+
+                String penId = penIds[i];
+
+                if (this.sheet3.TryGetValue(penId, out DataRow row) == false)
+                    throw new Exception($"Missing value for penid '{penId}'");
+
+                String code = row[8].ToString();
+                String conceptBlockName = CodeValue(code);
+                CodeBlockNested conceptOuter = concepts.Find(conceptBlockName);
+                if (conceptOuter == null)
+                {
+                    conceptOuter = concepts.AppendBlock(conceptBlockName);
+                    concept = conceptOuter.AppendBlock("AutoGen");
+                    conceptOuter
+                        .AppendLine(term)
+                        ;
+                }
+                else
+                {
+                    concept = conceptOuter.Find("AutoGen");
+                    concept.Clear();
+                }
+
+                String App(String s, Object t, String sb)
+                {
+                    switch (t)
+                    {
+                        case DBNull dbNullValue:
+                            return s;
+
+                        case String stringValue:
+                            // verify we have correct column.
+                            if (stringValue != sb)
+                                Trace.WriteLine($"Invalid Modality '{stringValue}'. Expected {sb}");
+                            if (String.IsNullOrEmpty(s) == false)
+                                s += " | ";
+                            s += $"Modalities.{sb}";
+                            return s;
+
+                        default:
+                            throw new Exception("Invalid excel cell value");
+                    }
+                }
+
+                String validWith = App("", row[1], "MG"); ;
+                validWith = App(validWith, row[2], "MRI");
+                validWith = App(validWith, row[3], "NM");
+                validWith = App(validWith, row[4], "US");
+
+                concept
+                    .AppendLine($"new ConceptDef()")
+                    .AppendLine($"    .SetCode(\"{conceptBlockName}\")")
+                    .AppendLine($"    .SetDisplay(\"{code}\")")
+                    .AppendLine($"    .SetDefinition(new Definition()")
+                    .AppendLine($"        .Line(\"[PR] {code}\")")
+                    .AppendLine($"        .MammoId(\"{penId}\")")
+                    .AppendLine($"    )")
+                    .AppendLine($"    .ValidModalities({validWith})")
+                    ;
+            }
+
+            editor.Save();
+        }
+
         [TestMethod]
         public void WriteCode()
         {
@@ -331,6 +415,9 @@ namespace BreastRadiology.XUnitTests
             LoadSheet3(ds);
 
             WriteDescriptions();
+            WriteIds(@"Common\Abnormalities\AbnormalityCyst.cs", "CystTypeCS", "69", "610", "657", "617", "636", "609", "661");
+            WriteIds(@"Common\Abnormalities\AbnormalityDuct.cs", "DuctTypeCS", "694.602", "693.614");
+            WriteIds(@"Common\Abnormalities\AbnormalityFibroAdenoma.cs", "FibroTypeCS", "70", "695");
             WriteCS(ds, "Recommendation", @"Common\ServiceRecommendation.cs", "RecommendationsCS");
             WriteCS(ds, "CorrspondsWith", @"Common\CorrespondsWithCS.cs", "CorrespondsWithCS");
             WriteCS(ds, "ConsistentWith", @"Common\ConsistentWith.cs", "ConsistentWithCS");

@@ -13,7 +13,6 @@ namespace BreastRadiology.XUnitTests
 {
     partial class ResourcesMaker : ConverterBase
     {
-        //# TODO: get from gg
         CSTaskVar AbnormalityCystTypeCS = new CSTaskVar(
              (out CodeSystem cs) =>
                  cs = Self.CreateCodeSystem(
@@ -24,31 +23,99 @@ namespace BreastRadiology.XUnitTests
                          Group_CommonCodesCS,
                         new ConceptDef[]
                          {
-                        new ConceptDef("Complex",
-                            "Complex cyst",
-                            new Definition()
-                                .Line("[PR]")
-                            ),
-                        new ConceptDef("Oil",
-                            "Oil cyst",
-                            new Definition()
-                                .Line("[PR]")
-                            ),
-                        new ConceptDef("Simple",
-                            "Simple cyst",
-                            new Definition()
-                                .Line("[PR]")
-                            ),
-                        new ConceptDef("Complicated",
-                            "Complicated cyst",
-                            new Definition()
-                                .Line("[PR]")
-                            ),
-                        new ConceptDef("WithDebris",
-                            "Cyst With Debris",
-                            new Definition()
-                                .Line("[PR]")
-                            )
+                         //+ CystTypeCS
+                         //+ Cyst
+                         //+ AutoGen
+                         new ConceptDef()
+                             .SetCode("Cyst")
+                             .SetDisplay("Cyst")
+                             .SetDefinition(new Definition()
+                                 .Line("[PR] Cyst")
+                                 .MammoId("69")
+                             )
+                             .ValidModalities(Modalities.MG | Modalities.MRI | Modalities.US)
+                         //- AutoGen
+                         ,
+                         //- Cyst
+                         //+ CystComplex
+                         //+ AutoGen
+                         new ConceptDef()
+                             .SetCode("CystComplex")
+                             .SetDisplay("Cyst complex")
+                             .SetDefinition(new Definition()
+                                 .Line("[PR] Cyst complex")
+                                 .MammoId("610")
+                             )
+                             .ValidModalities(Modalities.MG | Modalities.US)
+                         //- AutoGen
+                         ,
+                         //- CystComplex
+                         //+ CystComplicated
+                         //+ AutoGen
+                         new ConceptDef()
+                             .SetCode("CystComplicated")
+                             .SetDisplay("Cyst complicated")
+                             .SetDefinition(new Definition()
+                                 .Line("[PR] Cyst complicated")
+                                 .MammoId("657")
+                             )
+                             .ValidModalities(Modalities.MG | Modalities.US)
+                         //- AutoGen
+                         ,
+                         //- CystComplicated
+                         //+ CystMicro
+                         //+ AutoGen
+                         new ConceptDef()
+                             .SetCode("CystMicro")
+                             .SetDisplay("Cyst micro")
+                             .SetDefinition(new Definition()
+                                 .Line("[PR] Cyst micro")
+                                 .MammoId("617")
+                             )
+                             .ValidModalities(Modalities.US)
+                         //- AutoGen
+                         ,
+                         //- CystMicro
+                         //+ CystOil
+                         //+ AutoGen
+                         new ConceptDef()
+                             .SetCode("CystOil")
+                             .SetDisplay("Cyst oil")
+                             .SetDefinition(new Definition()
+                                 .Line("[PR] Cyst oil")
+                                 .MammoId("636")
+                             )
+                             .ValidModalities(Modalities.MG | Modalities.US)
+                         //- AutoGen
+                         ,
+                         //- CystOil
+                         //+ CystSimple
+                         //+ AutoGen
+                         new ConceptDef()
+                             .SetCode("CystSimple")
+                             .SetDisplay("Cyst simple")
+                             .SetDefinition(new Definition()
+                                 .Line("[PR] Cyst simple")
+                                 .MammoId("609")
+                             )
+                             .ValidModalities(Modalities.MG | Modalities.US)
+                         //- AutoGen
+                         ,
+                         //- CystSimple
+                         //+ CystWithDebris
+                         //+ AutoGen
+                         new ConceptDef()
+                             .SetCode("CystWithDebris")
+                             .SetDisplay("Cyst with debris")
+                             .SetDefinition(new Definition()
+                                 .Line("[PR] Cyst with debris")
+                                 .MammoId("661")
+                             )
+                             .ValidModalities(Modalities.MG | Modalities.US)
+                         //- AutoGen
+                         
+                         //- CystWithDebris
+                         //- CystTypeCS
                          }
                      )
              );

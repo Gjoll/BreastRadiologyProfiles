@@ -13,7 +13,6 @@ namespace BreastRadiology.XUnitTests
 {
     partial class ResourcesMaker : ConverterBase
     {
-        //# TODO: get from gg
         CSTaskVar FibroadenomaCS = new CSTaskVar(
              (out CodeSystem cs) =>
                  cs = Self.CreateCodeSystem(
@@ -24,19 +23,34 @@ namespace BreastRadiology.XUnitTests
                          Group_CommonCodesCS,
                          new ConceptDef[]
                          {
-                            new ConceptDef("Normal",
-                                "Normal",
-                                new Definition()
-                                   .Line("[PR]")
+                            //+ FibroTypeCS
+                            //+ Fibroadenoma
+                            //+ AutoGen
+                            new ConceptDef()
+                                .SetCode("Fibroadenoma")
+                                .SetDisplay("Fibroadenoma")
+                                .SetDefinition(new Definition()
+                                    .Line("[PR] Fibroadenoma")
+                                    .MammoId("70")
                                 )
-                               .ValidModalities(Modalities.MG | Modalities.MRI | Modalities.NM | Modalities.US)
-                             ,
-                            new ConceptDef("Degenerated",
-                                "Degenerated",
-                                new Definition()
-                                   .Line("[PR]")
+                                .ValidModalities(Modalities.MG | Modalities.US)
+                            //- AutoGen
+                            ,
+                            //- Fibroadenoma
+                            //+ FibroadenomaDegeneration
+                            //+ AutoGen
+                            new ConceptDef()
+                                .SetCode("FibroadenomaDegeneration")
+                                .SetDisplay("Fibroadenoma degeneration")
+                                .SetDefinition(new Definition()
+                                    .Line("[PR] Fibroadenoma degeneration")
+                                    .MammoId("695")
                                 )
                                 .ValidModalities(Modalities.MG)
+                            //- AutoGen
+                            
+                            //- FibroadenomaDegeneration
+                            //- FibroTypeCS
                          })
                      );
 

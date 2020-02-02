@@ -13,7 +13,6 @@ namespace BreastRadiology.XUnitTests
 {
     partial class ResourcesMaker : ConverterBase
     {
-        //# TODO: Get from gg
         CSTaskVar AbnormalityDuctCS = new CSTaskVar(
              (out CodeSystem cs) =>
                  cs = Self.CreateCodeSystem(
@@ -24,25 +23,34 @@ namespace BreastRadiology.XUnitTests
                          Group_CommonCodesCS,
                         new ConceptDef[]
                          {
-                        new ConceptDef("Normal",
-                            "Normal",
-                            new Definition()
-                                .Line("[PR]")
-                            ),
-                        new ConceptDef("Ectasia",
-                            "Ectasia",
-                            new Definition()
-                                .Line("[PR]")
-                            ),
-                        new ConceptDef("Dilated",
-                            "Dilated",
-                            new Definition()
-                                .CiteStart(BiRadCitation)
-                                .Text("This is a unilateral tubular or branching structure that likely represents a dilated or otherwise en-")
-                                .Text("larged duct. It is a rare finding. Even if unassociated with other suspicious clinical or mammographic")
-                                .Text("findings, it has been reported to be associated with noncalcified DCIS.")
-                                .CiteEnd()
-                            )
+                            //+ DuctTypeCS
+                            //+ DuctDilatedATLASSolitaryDilatedDuct
+                            //+ AutoGen
+                            new ConceptDef()
+                                .SetCode("DuctDilatedATLASSolitaryDilatedDuct")
+                                .SetDisplay("Duct dilated ATLAS solitary dilated duct")
+                                .SetDefinition(new Definition()
+                                    .Line("[PR] Duct dilated ATLAS solitary dilated duct")
+                                    .MammoId("694.602")
+                                )
+                                .ValidModalities(Modalities.MG | Modalities.US)
+                            //- AutoGen
+                            ,
+                            //- DuctDilatedATLASSolitaryDilatedDuct
+                            //+ DuctEctasia
+                            //+ AutoGen
+                            new ConceptDef()
+                                .SetCode("DuctEctasia")
+                                .SetDisplay("Duct ectasia")
+                                .SetDefinition(new Definition()
+                                    .Line("[PR] Duct ectasia")
+                                    .MammoId("693.614")
+                                )
+                                .ValidModalities(Modalities.MG | Modalities.US)
+                            //- AutoGen
+                            
+                            //- DuctEctasia
+                            //- DuctTypeCS
                          }
                      )
                  );
@@ -62,7 +70,7 @@ namespace BreastRadiology.XUnitTests
 
 
         SDTaskVar AbnormalityDuct = new SDTaskVar(
-            (out StructureDefinition  s) =>
+            (out StructureDefinition s) =>
             {
                 ValueSet binding = Self.AbnormalityDuctVS.Value();
                 SDefEditor e = Self.CreateEditor("AbnormalityDuct",
@@ -95,7 +103,7 @@ namespace BreastRadiology.XUnitTests
                     ;
 
                 ElementTreeNode sliceElementDef = e.ConfigureSliceByUrlDiscriminator("hasMember", false);
-                e.SliceTargetReference( sliceElementDef, Self.ConsistentWith.Value(), 0, "*");
+                e.SliceTargetReference(sliceElementDef, Self.ConsistentWith.Value(), 0, "*");
 
                 e.StartComponentSliceing();
                 e.ComponentSliceCodeableConcept("ductType",
