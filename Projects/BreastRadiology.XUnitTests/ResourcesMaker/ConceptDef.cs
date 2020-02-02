@@ -40,9 +40,15 @@ namespace BreastRadiology.XUnitTests
             return this;
         }
 
+        [Obsolete]
         public ConceptDef SetDefinition(Definition def)
         {
-            this.definitionText = def.ToString();
+            return this;
+        }
+
+        public ConceptDef SetDefinition(String def)
+        {
+            this.definitionText = def;
             return this;
         }
 

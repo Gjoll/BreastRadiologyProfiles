@@ -394,10 +394,8 @@ namespace BreastRadiology.XUnitTests
                     .AppendLine($"new ConceptDef()")
                     .AppendLine($"    .SetCode(\"{conceptBlockName}\")")
                     .AppendLine($"    .SetDisplay(\"{code}\")")
-                    .AppendLine($"    .SetDefinition(new Definition()")
-                    .AppendLine($"        .Line(\"[PR] {code}\")")
-                    .AppendLine($"        .MammoId(\"{penId}\")")
-                    .AppendLine($"    )")
+                    .AppendLine($"    .SetDefinition(\"[PR] {code}\"")
+                    .AppendLine($"    .MammoId(\"{penId}\")")
                     .AppendLine($"    .ValidModalities({validWith})")
                     ;
             }
