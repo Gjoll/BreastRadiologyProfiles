@@ -23,7 +23,7 @@ namespace BreastRadiology.XUnitTests
                          Group_CommonCodesCS,
                         new ConceptDef[]
                          {
-                         //+ CystTypeCS
+                         //+ Type
                          //+ Cyst
                          //+ AutoGen
                          new ConceptDef()
@@ -115,7 +115,7 @@ namespace BreastRadiology.XUnitTests
                          //- AutoGen
                          
                          //- CystWithDebris
-                         //- CystTypeCS
+                         //- Type
                          }
                      )
              );

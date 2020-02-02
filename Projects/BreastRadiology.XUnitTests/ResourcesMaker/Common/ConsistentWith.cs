@@ -126,7 +126,7 @@ namespace BreastRadiology.XUnitTests
                                 .ValidModalities(Modalities.MRI | Modalities.US)
                                 .SetSnomedCode("404057003")
                                 .SetSnomedDescription("ClinicalFinding | Angiolipoma (Disorder)")
-                                .SetICD10("404057003")
+                                .SetICD10("D17.9")
                             //- AutoGen
                             //- Angiolipoma
                             ,
@@ -225,7 +225,7 @@ namespace BreastRadiology.XUnitTests
                                 .SetSnomedCode("399294002")
                                 .SetOneToMany("one")
                                 .SetSnomedDescription("ClinicalFinding |Cyst of breast (Disorder) ++++++")
-                                .SetICD10("399294002")
+                                .SetICD10("N60.09")
                                 .SetComment("BodyStructure | 125291005 | Multiple cysts (Morphologic-Abnormality")
                             //- AutoGen
                             //- ClusterOfCysts
@@ -243,7 +243,7 @@ namespace BreastRadiology.XUnitTests
                                 .SetSnomedCode("399294002")
                                 .SetOneToMany("one")
                                 .SetSnomedDescription("ClinicalFinding |Cyst of breast (Disorder)")
-                                .SetICD10("399294002")
+                                .SetICD10("N60.09")
                             //- AutoGen
                             //- Cyst
                             ,
@@ -260,7 +260,7 @@ namespace BreastRadiology.XUnitTests
                                 .SetSnomedCode("449837001")
                                 .SetOneToMany("one")
                                 .SetSnomedDescription("ClinicalFinding | Complex cyst of breast (Disorder)")
-                                .SetICD10("449837001")
+                                .SetICD10("N60.09")
                             //- AutoGen
                             //- CystComplex
                             ,
@@ -305,7 +305,7 @@ namespace BreastRadiology.XUnitTests
                                 .SetSnomedCode("76649007")
                                 .SetOneToMany("one")
                                 .SetSnomedDescription("ClinicalFinding | Sebaceous cyst of skin of breast (Disorder)")
-                                .SetICD10("76649007")
+                                .SetICD10("N60.89")
                             //- AutoGen
                             //- CystSebaceous
                             ,
@@ -322,7 +322,7 @@ namespace BreastRadiology.XUnitTests
                                 .SetSnomedCode("399253005")
                                 .SetOneToMany("one")
                                 .SetSnomedDescription("ClinicalFinding | Simple cyst of breast (Disorder)")
-                                .SetICD10("399253005")
+                                .SetICD10("N60.09")
                             //- AutoGen
                             //- CystSimple
                             ,
@@ -339,7 +339,7 @@ namespace BreastRadiology.XUnitTests
                                 .SetSnomedCode("449837001")
                                 .SetOneToMany("Many")
                                 .SetSnomedDescription("ClinicalFinding | Complex cyst of breast (Disorder)")
-                                .SetICD10("449837001")
+                                .SetICD10("N60.09")
                             //- AutoGen
                             //- CystsComplex
                             ,
@@ -411,7 +411,6 @@ namespace BreastRadiology.XUnitTests
                                 .ValidModalities(Modalities.MG)
                                 .SetSnomedCode("39432004")
                                 .SetSnomedDescription("PharmaceuticalBiologicProduct | Deodorant (Product)")
-                                .SetICD10("39432004")
                             //- AutoGen
                             //- Deodorant
                             ,
@@ -454,7 +453,7 @@ namespace BreastRadiology.XUnitTests
                                 .ValidModalities(Modalities.MRI | Modalities.US)
                                 .SetSnomedCode("290077003")
                                 .SetSnomedDescription("ClinicalFinding | Edema of breast (Finding)")
-                                .SetICD10("290077003")
+                                .SetICD10("R60.0")
                             //- AutoGen
                             //- Edema
                             ,
@@ -484,7 +483,7 @@ namespace BreastRadiology.XUnitTests
                                 .ValidModalities(Modalities.MG | Modalities.MRI | Modalities.US)
                                 .SetSnomedCode("21381006")
                                 .SetSnomedDescription("ClinicalFinding | Fat necrosis of breast (Disorder)")
-                                .SetICD10("21381006")
+                                .SetICD10("N64.1")
                             //- AutoGen
                             //- FatNecrosis
                             ,
@@ -540,7 +539,6 @@ namespace BreastRadiology.XUnitTests
                                 .ValidModalities(Modalities.MG | Modalities.MRI | Modalities.US)
                                 .SetSnomedCode("367647000")
                                 .SetSnomedDescription("BodyStructure | Fibrocystic change")
-                                .SetICD10("367647000")
                                 .SetComment("right/left/bilateral choices")
                             //- AutoGen
                             //- FibrocysticChange
@@ -624,7 +622,6 @@ namespace BreastRadiology.XUnitTests
                                 .ValidModalities(Modalities.MG | Modalities.MRI | Modalities.US)
                                 .SetSnomedCode("51398009")
                                 .SetSnomedDescription("BodyStructure | Hamartoma (Morphologic-Abnormality)")
-                                .SetICD10("51398009")
                             //- AutoGen
                             //- Hamartoma
                             ,
@@ -640,7 +637,6 @@ namespace BreastRadiology.XUnitTests
                                 .ValidModalities(Modalities.MG | Modalities.MRI | Modalities.US)
                                 .SetSnomedCode("302924003")
                                 .SetSnomedDescription("ClinicalFinding | Breast hematoma (Disorder) | N64.89")
-                                .SetICD10("302924003")
                             //- AutoGen
                             //- Hematoma
                             ,
@@ -696,7 +692,7 @@ namespace BreastRadiology.XUnitTests
                                 .ValidModalities(Modalities.MG | Modalities.MRI | Modalities.US)
                                 .SetSnomedCode("276891009")
                                 .SetSnomedDescription("ClinicalFinding | Lipoma of breast (Disorder)")
-                                .SetICD10("276891009")
+                                .SetICD10("D17.39")
                             //- AutoGen
                             //- Lipoma
                             ,
@@ -755,7 +751,6 @@ namespace BreastRadiology.XUnitTests
                                 .ValidModalities(Modalities.MRI | Modalities.US)
                                 .SetSnomedCode("274741002")
                                 .SetSnomedDescription("ClinicalFinding | Generalized enlarged lymph nodes (Disorder) | [0/0] | R59.1")
-                                .SetICD10("274741002")
                             //- AutoGen
                             //- LymphNodeEnlarged
                             ,
@@ -838,7 +833,6 @@ namespace BreastRadiology.XUnitTests
                                 .SetDicom("F-01765")
                                 .SetSnomedCode("129753004")
                                 .SetSnomedDescription("ClinicalFinding | 129753004 | Milk of calcium radiographic calcification (Finding)")
-                                .SetICD10("129753004")
                             //- AutoGen
                             //- MilkOfCalcium
                             ,
@@ -881,7 +875,7 @@ namespace BreastRadiology.XUnitTests
                                 .ValidModalities(Modalities.MG | Modalities.MRI | Modalities.US)
                                 .SetSnomedCode("99571000119102")
                                 .SetSnomedDescription("ClinicalFinding | Papilloma of breast (Disorder)")
-                                .SetICD10("99571000119102")
+                                .SetICD10("D24")
                                 .SetComment("US SM NUMBER")
                             //- AutoGen
                             //- Papilloma
@@ -982,7 +976,7 @@ namespace BreastRadiology.XUnitTests
                                 .ValidModalities(Modalities.MG | Modalities.US)
                                 .SetSnomedCode("390787006")
                                 .SetSnomedDescription("ClinicalFinding | Radial scar of breast (Finding)")
-                                .SetICD10("390787006")
+                                .SetICD10("N64.89")
                             //- AutoGen
                             //- RadialScar
                             ,
@@ -998,7 +992,6 @@ namespace BreastRadiology.XUnitTests
                                 .ValidModalities(Modalities.MRI)
                                 .SetSnomedCode("143501000119107")
                                 .SetSnomedDescription("SituationWithExplicitContext  | History of radiation therapy to breast area (Situation)")
-                                .SetICD10("143501000119107")
                             //- AutoGen
                             //- RadiationChanges
                             ,
@@ -1014,7 +1007,6 @@ namespace BreastRadiology.XUnitTests
                                 .ValidModalities(Modalities.MRI)
                                 .SetSnomedCode("429479009")
                                 .SetSnomedDescription("SituationWithExplicitContext | History of radiation therapy (Situation)")
-                                .SetICD10("429479009")
                             //- AutoGen
                             //- RadiationTherapy
                             ,
@@ -1096,7 +1088,7 @@ namespace BreastRadiology.XUnitTests
                                 .ValidModalities(Modalities.MG | Modalities.MRI | Modalities.US)
                                 .SetSnomedCode("297178008")
                                 .SetSnomedDescription("ClinicalFinding | Breast seroma (Disorder)")
-                                .SetICD10("297178008")
+                                .SetICD10("N64.89")
                             //- AutoGen
                             //- Seroma
                             ,
@@ -1112,7 +1104,7 @@ namespace BreastRadiology.XUnitTests
                                 .ValidModalities(Modalities.MG)
                                 .SetSnomedCode("126510002")
                                 .SetSnomedDescription("ClinicalFinding | Neoplasm of skin of breast (Disorder)")
-                                .SetICD10("126510002")
+                                .SetICD10("D49.2")
                             //- AutoGen
                             //- SkinLesion
                             ,
@@ -1140,6 +1132,7 @@ namespace BreastRadiology.XUnitTests
                                 )
                                 .ValidModalities(Modalities.MRI)
                                 .SetSnomedDescription("ClinicalFinding | 62112002 | Injury of breast (Disorder)")
+                                .SetICD10("S29.9XX?")
                                 .SetComment("Need help no direct match")
                             //- AutoGen
                             //- Trauma

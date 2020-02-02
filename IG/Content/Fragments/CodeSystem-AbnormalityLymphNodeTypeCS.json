@@ -17,47 +17,12 @@
   "description": "Lymph node abnormality types code system.",
   "caseSensitive": true,
   "content": "complete",
-  "count": 8,
+  "count": 1,
   "concept": [
-    {
-      "code": "Axillary",
-      "display": "Axillary",
-      "definition": "[PR]"
-    },
-    {
-      "code": "Enlarged",
-      "display": "Enlarged",
-      "definition": "[PR]"
-    },
-    {
-      "code": "FocalCortex",
-      "display": "FocalCortex",
-      "definition": "[PR]"
-    },
-    {
-      "code": "UniformThickness",
-      "display": "UniformThickness",
-      "definition": "[PR]"
-    },
     {
       "code": "Intramammory",
       "display": "Intramammory",
       "definition": "[Bi-Rads® Atlas — Mammography Fifth Ed. 2013]\r\nThese are circumscribed masses that are reniform and have hilar fat. They are generally 1 cm or smallerin size. They may be larger than 1 cm and characterized as normal when fat replacement is pro-nounced. They frequently occur in the lateral and usually upper portions of the breast closer to theaxilla, although they may occur anywhere in the breast. They usually are seen adjacent to a vein,because the lymphatic drainage of the breast parallels the venous drainage."
-    },
-    {
-      "code": "InternalMargin",
-      "display": "Internal Margin",
-      "definition": "[PR]"
-    },
-    {
-      "code": "Normal",
-      "display": "Normal",
-      "definition": "[PR]"
-    },
-    {
-      "code": "PathLymphNode",
-      "display": "Path Lymph Node",
-      "definition": "[PR]"
     }
   ]
 }

@@ -13,7 +13,6 @@ namespace BreastRadiology.XUnitTests
 {
     partial class ResourcesMaker : ConverterBase
     {
-        //# TODO: get from gg
         CSTaskVar AbnormalityLymphNodeCS = new CSTaskVar(
              (out CodeSystem cs) =>
                  cs = Self.CreateCodeSystem(
@@ -24,26 +23,125 @@ namespace BreastRadiology.XUnitTests
                          Group_CommonCodesCS,
                         new ConceptDef[]
                          {
-                        new ConceptDef("Axillary",
-                            "Axillary",
-                            new Definition()
-                                .Line("[PR]")
-                            ),
-                        new ConceptDef("Enlarged",
-                            "Enlarged",
-                            new Definition()
-                                .Line("[PR]")
-                            ),
-                        new ConceptDef("FocalCortex",
-                            "FocalCortex",
-                            new Definition()
-                                .Line("[PR]")
-                            ),
-                        new ConceptDef("UniformThickness",
-                            "UniformThickness",
-                            new Definition()
-                                .Line("[PR]")
-                            ),
+                            //+ Type
+                            //+ NodeAxillary
+                            //+ AutoGen
+                            new ConceptDef()
+                                .SetCode("NodeAxillary")
+                                .SetDisplay("Node axillary")
+                                .SetDefinition(new Definition()
+                                    .Line("[PR] Node axillary")
+                                    .MammoId("648")
+                                )
+                                .ValidModalities(Modalities.MG | Modalities.US)
+                            //- AutoGen
+                            ,
+                            //- NodeAxillary
+                            //+ NodeEnlarged
+                            //+ AutoGen
+                            new ConceptDef()
+                                .SetCode("NodeEnlarged")
+                                .SetDisplay("Node enlarged")
+                                .SetDefinition(new Definition()
+                                    .Line("[PR] Node enlarged")
+                                    .MammoId("649")
+                                )
+                                .ValidModalities(Modalities.MG | Modalities.US)
+                            //- AutoGen
+                            ,
+                            //- NodeEnlarged
+                            //+ NodeFocalCortex
+                            //+ AutoGen
+                            new ConceptDef()
+                                .SetCode("NodeFocalCortex")
+                                .SetDisplay("Node focal cortex")
+                                .SetDefinition(new Definition()
+                                    .Line("[PR] Node focal cortex")
+                                    .MammoId("662")
+                                )
+                                .ValidModalities(Modalities.MG | Modalities.US)
+                            //- AutoGen
+                            ,
+                            //- NodeFocalCortex
+                            //+ NodeInfraclavicular
+                            //+ AutoGen
+                            new ConceptDef()
+                                .SetCode("NodeInfraclavicular")
+                                .SetDisplay("Node infraclavicular")
+                                .SetDefinition(new Definition()
+                                    .Line("[PR] Node infraclavicular")
+                                    .MammoId("665")
+                                )
+                                .ValidModalities(Modalities.US)
+                            //- AutoGen
+                            ,
+                            //- NodeInfraclavicular
+                            //+ NodeIntramammary
+                            //+ AutoGen
+                            new ConceptDef()
+                                .SetCode("NodeIntramammary")
+                                .SetDisplay("Node intramammary")
+                                .SetDefinition(new Definition()
+                                    .Line("[PR] Node intramammary")
+                                    .MammoId("650")
+                                )
+                                .ValidModalities(Modalities.MG | Modalities.US)
+                            //- AutoGen
+                            ,
+                            //- NodeIntramammary
+                            //+ NodeLymph
+                            //+ AutoGen
+                            new ConceptDef()
+                                .SetCode("NodeLymph")
+                                .SetDisplay("Node lymph")
+                                .SetDefinition(new Definition()
+                                    .Line("[PR] Node lymph")
+                                    .MammoId("651")
+                                )
+                                .ValidModalities(Modalities.MG | Modalities.US)
+                            //- AutoGen
+                            ,
+                            //- NodeLymph
+                            //+ NodeLymphNormal
+                            //+ AutoGen
+                            new ConceptDef()
+                                .SetCode("NodeLymphNormal")
+                                .SetDisplay("Node lymph normal")
+                                .SetDefinition(new Definition()
+                                    .Line("[PR] Node lymph normal")
+                                    .MammoId("652")
+                                )
+                                .ValidModalities(Modalities.MG | Modalities.US)
+                            //- AutoGen
+                            ,
+                            //- NodeLymphNormal
+                            //+ NodeSupraclavicular
+                            //+ AutoGen
+                            new ConceptDef()
+                                .SetCode("NodeSupraclavicular")
+                                .SetDisplay("Node supraclavicular")
+                                .SetDefinition(new Definition()
+                                    .Line("[PR] Node supraclavicular")
+                                    .MammoId("666")
+                                )
+                                .ValidModalities(Modalities.US)
+                            //- AutoGen
+                            ,
+                            //- NodeSupraclavicular
+                            //+ NodeUniformThickness
+                            //+ AutoGen
+                            new ConceptDef()
+                                .SetCode("NodeUniformThickness")
+                                .SetDisplay("Node uniform thickness")
+                                .SetDefinition(new Definition()
+                                    .Line("[PR] Node uniform thickness")
+                                    .MammoId("663")
+                                )
+                                .ValidModalities(Modalities.MG | Modalities.US)
+                            //- AutoGen
+                            
+                            //- NodeUniformThickness
+                            //- Type
                         new ConceptDef("Intramammory",
                             "Intramammory",
                             new Definition()
@@ -55,21 +153,6 @@ namespace BreastRadiology.XUnitTests
                             .Text("because the lymphatic drainage of the breast parallels the venous drainage.")
                             .CiteEnd()
                             ),
-                        new ConceptDef("InternalMargin",
-                            "Internal Margin",
-                            new Definition()
-                                .Line("[PR]")
-                            ),
-                        new ConceptDef("Normal",
-                            "Normal",
-                            new Definition()
-                                .Line("[PR]")
-                            ),
-                        new ConceptDef("PathLymphNode",
-                            "Path Lymph Node",
-                            new Definition()
-                                .Line("[PR]")
-                            )
                          }
                      )
                  );

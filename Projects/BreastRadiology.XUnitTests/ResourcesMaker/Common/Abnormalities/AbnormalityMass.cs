@@ -13,7 +13,6 @@ namespace BreastRadiology.XUnitTests
 {
     partial class ResourcesMaker : ConverterBase
     {
-        //# TODO: get from gg
         CSTaskVar CSMassType = new CSTaskVar(
              (out CodeSystem cs) =>
                  cs = Self.CreateCodeSystem(
@@ -24,30 +23,73 @@ namespace BreastRadiology.XUnitTests
                          Group_CommonCodesCS,
                          new ConceptDef[]
                          {
-                        new ConceptDef("Solid",
-                            "Solid Mass",
-                            new Definition()
-                               .Line("[PR]")
-                               .Line("Solid Mass")
-                            ),
-                        new ConceptDef("Intraductal",
-                            "Intraductal Mass",
-                            new Definition()
-                               .Line("[PR]")
-                               .Line("Intraductal Mass")
-                            ),
-                        new ConceptDef("PartiallySolid",
-                            "Partially Solid Mass",
-                            new Definition()
-                               .Line("[PR]")
-                               .Line("Partially Solid Mass")
-                            ),
-                        new ConceptDef("Skin",
-                            "Skin Mass",
-                            new Definition()
-                               .Line("[PR]")
-                               .Line("Skin Mass")
-                            )
+                            //+ Type
+                            //+ Mass
+                            //+ AutoGen
+                            new ConceptDef()
+                                .SetCode("Mass")
+                                .SetDisplay("Mass")
+                                .SetDefinition(new Definition()
+                                    .Line("[PR] Mass")
+                                    .MammoId("58")
+                                )
+                                .ValidModalities(Modalities.MG | Modalities.MRI | Modalities.US)
+                            //- AutoGen
+                            ,
+                            //- Mass
+                            //+ MassIntraductal
+                            //+ AutoGen
+                            new ConceptDef()
+                                .SetCode("MassIntraductal")
+                                .SetDisplay("Mass intraductal")
+                                .SetDefinition(new Definition()
+                                    .Line("[PR] Mass intraductal")
+                                    .MammoId("621")
+                                )
+                                .ValidModalities(Modalities.US)
+                            //- AutoGen
+                            ,
+                            //- MassIntraductal
+                            //+ MassPartiallySolid
+                            //+ AutoGen
+                            new ConceptDef()
+                                .SetCode("MassPartiallySolid")
+                                .SetDisplay("Mass partially solid")
+                                .SetDefinition(new Definition()
+                                    .Line("[PR] Mass partially solid")
+                                    .MammoId("697")
+                                )
+                                .ValidModalities(Modalities.MG | Modalities.US)
+                            //- AutoGen
+                            ,
+                            //- MassPartiallySolid
+                            //+ MassSkinATLASIsSkinLesion
+                            //+ AutoGen
+                            new ConceptDef()
+                                .SetCode("MassSkinATLASIsSkinLesion")
+                                .SetDisplay("Mass skin ATLAS is skin lesion")
+                                .SetDefinition(new Definition()
+                                    .Line("[PR] Mass skin ATLAS is skin lesion")
+                                    .MammoId("613")
+                                )
+                                .ValidModalities(Modalities.MG | Modalities.US)
+                            //- AutoGen
+                            ,
+                            //- MassSkinATLASIsSkinLesion
+                            //+ MassSolid
+                            //+ AutoGen
+                            new ConceptDef()
+                                .SetCode("MassSolid")
+                                .SetDisplay("Mass solid")
+                                .SetDefinition(new Definition()
+                                    .Line("[PR] Mass solid")
+                                    .MammoId("608")
+                                )
+                                .ValidModalities(Modalities.MG | Modalities.US)
+                            //- AutoGen
+                            
+                            //- MassSolid
+                            //- Type
                          })
              );
 

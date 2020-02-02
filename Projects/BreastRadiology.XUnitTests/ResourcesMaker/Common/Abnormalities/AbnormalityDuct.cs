@@ -23,7 +23,7 @@ namespace BreastRadiology.XUnitTests
                          Group_CommonCodesCS,
                         new ConceptDef[]
                          {
-                            //+ DuctTypeCS
+                            //+ Type
                             //+ DuctDilatedATLASSolitaryDilatedDuct
                             //+ AutoGen
                             new ConceptDef()
@@ -50,7 +50,7 @@ namespace BreastRadiology.XUnitTests
                             //- AutoGen
                             
                             //- DuctEctasia
-                            //- DuctTypeCS
+                            //- Type
                          }
                      )
                  );

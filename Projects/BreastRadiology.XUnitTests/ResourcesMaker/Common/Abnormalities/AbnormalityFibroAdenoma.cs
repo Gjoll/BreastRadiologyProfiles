@@ -23,7 +23,7 @@ namespace BreastRadiology.XUnitTests
                          Group_CommonCodesCS,
                          new ConceptDef[]
                          {
-                            //+ FibroTypeCS
+                            //+ Type
                             //+ Fibroadenoma
                             //+ AutoGen
                             new ConceptDef()
@@ -50,7 +50,7 @@ namespace BreastRadiology.XUnitTests
                             //- AutoGen
                             
                             //- FibroadenomaDegeneration
-                            //- FibroTypeCS
+                            //- Type
                          })
                      );
 

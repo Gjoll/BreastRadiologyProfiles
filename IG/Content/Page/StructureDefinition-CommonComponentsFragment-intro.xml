@@ -21,12 +21,7 @@
     the hierarchy and commonality of disparate profiles..
   </p>
   <ul>
-    
-<li><a href="./StructureDefinition-BiRadFragment.html">BiRad Fragment</a></li>
-<li><a href="./StructureDefinition-BreastBodyLocationRequiredFragment.html">Breast Body Location (Required) Fragment</a></li>
-<li><a href="./StructureDefinition-ObservedChangesFragment.html">ObservedChanges Fragment</a></li>
-<li><a href="./StructureDefinition-ObservedItemGroupFragment.html">ObservedItemGroup Fragment</a></li>
-<li><a href="./StructureDefinition-ObservedItemRegionFragment.html">ObservedItemRegion Fragment</a></li>
+    %FragmentList:noexpand:prefix=<li>:suffix=</li>:lb%
   </ul>
   <!-- -profileFragments-->
 </div>

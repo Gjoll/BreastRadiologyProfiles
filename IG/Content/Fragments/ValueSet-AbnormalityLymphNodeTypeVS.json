@@ -25,36 +25,8 @@
         "system": "http://hl7.org/fhir/us/breast-radiology/CodeSystem/AbnormalityLymphNodeTypeCS",
         "concept": [
           {
-            "code": "Axillary",
-            "display": "Axillary"
-          },
-          {
-            "code": "Enlarged",
-            "display": "Enlarged"
-          },
-          {
-            "code": "FocalCortex",
-            "display": "FocalCortex"
-          },
-          {
-            "code": "UniformThickness",
-            "display": "UniformThickness"
-          },
-          {
             "code": "Intramammory",
             "display": "Intramammory"
-          },
-          {
-            "code": "InternalMargin",
-            "display": "Internal Margin"
-          },
-          {
-            "code": "Normal",
-            "display": "Normal"
-          },
-          {
-            "code": "PathLymphNode",
-            "display": "Path Lymph Node"
           }
         ]
       }

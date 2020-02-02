@@ -59,7 +59,6 @@ namespace BreastRadiology.XUnitTests
                                 .SetSnomedCode("470272007")
                                 .SetOneToMany("one")
                                 .SetSnomedDescription("PhysicalObject | Implantable lesion localization marker (Object)")
-                                .SetICD10("470272007")
                             //- AutoGen
                             ,
                             //- BiopsyClip
@@ -76,7 +75,6 @@ namespace BreastRadiology.XUnitTests
                                 .SetSnomedCode("470272007")
                                 .SetOneToMany("many")
                                 .SetSnomedDescription("PhysicalObject | Implantable lesion localization marker (Object)")
-                                .SetICD10("470272007")
                             //- AutoGen
                             ,
                             //- BiopsyClips
@@ -147,7 +145,7 @@ namespace BreastRadiology.XUnitTests
                                 .ValidModalities(Modalities.US)
                                 .SetSnomedCode("290077003")
                                 .SetSnomedDescription("ClinicalFinding | Edema of breast (Finding)")
-                                .SetICD10("290077003")
+                                .SetICD10("R60.0")
                             //- AutoGen
                             ,
                             //- Edema
@@ -176,7 +174,6 @@ namespace BreastRadiology.XUnitTests
                                 .ValidModalities(Modalities.MG)
                                 .SetSnomedCode("470272007")
                                 .SetSnomedDescription("PhysicalObject | Implantable lesion localization marker (Object)")
-                                .SetICD10("470272007")
                                 .SetComment("no gold seed SM")
                             //- AutoGen
                             ,
@@ -193,7 +190,6 @@ namespace BreastRadiology.XUnitTests
                                 .ValidModalities(Modalities.MG)
                                 .SetSnomedCode("302924003")
                                 .SetSnomedDescription("ClinicalFinding | Breast hematoma (Disorder) | N64.89")
-                                .SetICD10("302924003")
                             //- AutoGen
                             ,
                             //- Hematoma
@@ -209,7 +205,6 @@ namespace BreastRadiology.XUnitTests
                                 .ValidModalities(Modalities.MG | Modalities.MRI)
                                 .SetSnomedCode("31845005")
                                 .SetSnomedDescription("ClinicalFinding | Retraction of nipple (Disorder) | [2/9] | N64.53")
-                                .SetICD10("31845005")
                                 .SetComment("ClinicalFinding | 254239000 | Congenital retraction of nipple (Disorder) | [0/0] | Q83.8")
                             //- AutoGen
                                 .SetDefinition(new Definition()
@@ -289,7 +284,6 @@ namespace BreastRadiology.XUnitTests
                                 .ValidModalities(Modalities.MG)
                                 .SetSnomedCode("442523003")
                                 .SetSnomedDescription("ClinicalFinding | Surgical scar finding (Finding) | [2/7] | L90.5 |")
-                                .SetICD10("442523003")
                             //- AutoGen
                             ,
                             //- PostSurgicalScar
@@ -305,7 +299,7 @@ namespace BreastRadiology.XUnitTests
                                 .ValidModalities(Modalities.MG)
                                 .SetSnomedCode("297178008")
                                 .SetSnomedDescription("ClinicalFinding | Breast seroma (Disorder)")
-                                .SetICD10("297178008")
+                                .SetICD10("N64.89")
                             //- AutoGen
                             ,
                             //- Seroma
@@ -334,7 +328,7 @@ namespace BreastRadiology.XUnitTests
                                 .ValidModalities(Modalities.MG)
                                 .SetSnomedCode("126510002")
                                 .SetSnomedDescription("ClinicalFinding | Neoplasm of skin of breast (Disorder)")
-                                .SetICD10("126510002")
+                                .SetICD10("D49.2")
                             //- AutoGen
                                 .SetDefinition(new Definition()
                                     .Line("Skin lesion")
@@ -398,7 +392,6 @@ namespace BreastRadiology.XUnitTests
                                 .SetSnomedCode("470342004")
                                 .SetOneToMany("one")
                                 .SetSnomedDescription("PhysicalObject | Implantable tissue clip (Object)")
-                                .SetICD10("470342004")
                             //- AutoGen
                             ,
                             //- SurgicalClip
@@ -415,7 +408,6 @@ namespace BreastRadiology.XUnitTests
                                 .SetSnomedCode("470342004")
                                 .SetOneToMany("many")
                                 .SetSnomedDescription("PhysicalObject | Implantable tissue clip (Object)")
-                                .SetICD10("470342004")
                             //- AutoGen
                             ,
                             //- SurgicalClips
@@ -431,7 +423,7 @@ namespace BreastRadiology.XUnitTests
                                 .ValidModalities(Modalities.MG)
                                 .SetSnomedCode("129795008")
                                 .SetSnomedDescription("ClinicalFinding | Mammographic trabecular thickening of breast (Finding)")
-                                .SetICD10("129795008")
+                                .SetICD10("N64.5")
                                 .SetComment("only mammo chioce")
                             //- AutoGen
                                 .SetDefinition(new Definition()

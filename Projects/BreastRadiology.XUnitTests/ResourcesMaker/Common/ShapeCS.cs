@@ -51,7 +51,6 @@ namespace BreastRadiology.XUnitTests
                             .ValidModalities(Modalities.MG | Modalities.MRI | Modalities.US)
                             .SetSnomedCode("129736006")
                             .SetSnomedDescription("ClinicalFinding | Irregular shaped lesion")
-                            .SetICD10("129736006")
                         //- AutoGen
                             .SetDefinition(
                                 new Definition()
@@ -74,7 +73,6 @@ namespace BreastRadiology.XUnitTests
                             .ValidModalities(Modalities.MG | Modalities.MRI | Modalities.US)
                             .SetSnomedCode("129734009")
                             .SetSnomedDescription("ClinicalFinding | Oval shaped lesion (Finding)")
-                            .SetICD10("129734009")
                         //- AutoGen
                             .SetDefinition(
                                 new Definition()
@@ -96,7 +94,6 @@ namespace BreastRadiology.XUnitTests
                             .ValidModalities(Modalities.MG | Modalities.MRI | Modalities.US)
                             .SetSnomedCode("129733003")
                             .SetSnomedDescription("ClinicalFinding | Round shaped lesion (Finding)")
-                            .SetICD10("129733003")
                         //- AutoGen
                             .SetDefinition(
                                 new Definition()
@@ -112,6 +109,7 @@ namespace BreastRadiology.XUnitTests
                  );
     }
 }
+
 
 
 

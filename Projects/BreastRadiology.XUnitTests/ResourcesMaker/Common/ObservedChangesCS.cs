@@ -39,7 +39,7 @@ namespace BreastRadiology.XUnitTests
                              .SetSnomedCode("129727007")
                              .SetOneToMany("one")
                              .SetSnomedDescription("ClinicalFinding | Decrease in number of calcifications since previous mammogram (Finding)")
-                             .SetICD10("129727007")
+                             .SetICD10("R92")
                              .SetUMLS("C1268655")
                          //- AutoGen
                          ,
@@ -71,7 +71,6 @@ namespace BreastRadiology.XUnitTests
                              .SetDicom("M-02530")
                              .SetSnomedCode("19776001")
                              .SetSnomedDescription("ClinicalFinding | 19776001 | Decreased size (Finding)")
-                             .SetICD10("19776001")
                              .SetUMLS("C0332511")
                          //- AutoGen
                          ,
@@ -90,7 +89,7 @@ namespace BreastRadiology.XUnitTests
                              .SetSnomedCode("129726003")
                              .SetOneToMany("one")
                              .SetSnomedDescription("ClinicalFinding | Increase in number of calcifications since previous mammogram (Finding)")
-                             .SetICD10("129726003")
+                             .SetICD10("R92")
                              .SetUMLS("C1268654")
                          //- AutoGen
                          ,
@@ -122,7 +121,6 @@ namespace BreastRadiology.XUnitTests
                              .SetDicom("M-02520")
                              .SetSnomedCode("15454001")
                              .SetSnomedDescription("ClinicalFinding | 15454001 | Increased size (Finding)")
-                             .SetICD10("15454001")
                              .SetUMLS("C0332509")
                          //- AutoGen
                          ,
@@ -140,7 +138,6 @@ namespace BreastRadiology.XUnitTests
                              .SetDicom("F-01728")
                              .SetSnomedCode("129728002")
                              .SetSnomedDescription("ClinicalFinding | 129728002 | Finding less well defined since previous mammogram (Finding)")
-                             .SetICD10("129728002")
                              .SetUMLS("C1268656")
                          //- AutoGen
                          ,
@@ -158,7 +155,6 @@ namespace BreastRadiology.XUnitTests
                              .SetDicom("F-01729")
                              .SetSnomedCode("129729005")
                              .SetSnomedDescription("ClinicalFinding | 129729005 | Finding more defined since previous mammogram (Finding)")
-                             .SetICD10("129729005")
                              .SetUMLS("C1268657")
                          //- AutoGen
                          ,
@@ -176,7 +172,6 @@ namespace BreastRadiology.XUnitTests
                              .SetDicom("F-01721")
                              .SetSnomedCode("129721008")
                              .SetSnomedDescription("ClinicalFinding | 129721008 | New finding since previous mammogram (Finding)")
-                             .SetICD10("129721008")
                              .SetUMLS("C1268649")
                          //- AutoGen
                          ,
@@ -207,7 +202,6 @@ namespace BreastRadiology.XUnitTests
                              .SetDicom("F-01723")
                              .SetSnomedCode("129723006")
                              .SetSnomedDescription("ClinicalFinding | 129723006 | No significant change since previous mammogram (Finding)")
-                             .SetICD10("129723006")
                              .SetUMLS("C1268651")
                          //- AutoGen
                          ,
@@ -225,7 +219,6 @@ namespace BreastRadiology.XUnitTests
                              .SetDicom("F-01722")
                              .SetSnomedCode("129722001")
                              .SetSnomedDescription("ClinicalFinding | 129722001 | Finding partially removed since previous mammogram (Finding)")
-                             .SetICD10("129722001")
                              .SetUMLS("C1268650")
                          //- AutoGen
                          ,

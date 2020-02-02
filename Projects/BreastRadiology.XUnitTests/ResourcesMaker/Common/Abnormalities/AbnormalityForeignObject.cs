@@ -52,7 +52,6 @@ namespace BreastRadiology.XUnitTests
                                 .ValidModalities(Modalities.MG | Modalities.MRI | Modalities.US)
                                 .SetSnomedCode("470272007")
                                 .SetSnomedDescription("PhysicalObject | Implantable lesion localization marker (Object)")
-                                .SetICD10("470272007")
                             //- AutoGen
                             //- BiopsyClip
                             ,
@@ -68,7 +67,6 @@ namespace BreastRadiology.XUnitTests
                                 .ValidModalities(Modalities.MRI)
                                 .SetSnomedCode("470272007")
                                 .SetSnomedDescription("PhysicalObject | Implantable lesion localization marker (Object)")
-                                .SetICD10("470272007")
                             //- AutoGen
                             //- BreastMarker
                             ,
@@ -124,7 +122,6 @@ namespace BreastRadiology.XUnitTests
                                 .SetSnomedCode("470342004")
                                 .SetOneToMany("many")
                                 .SetSnomedDescription("PhysicalObject | Implantable tissue clip (Object)")
-                                .SetICD10("470342004")
                             //- AutoGen
                             //- Clip
                             ,
@@ -141,7 +138,6 @@ namespace BreastRadiology.XUnitTests
                                 .SetSnomedCode("470342004")
                                 .SetOneToMany("one")
                                 .SetSnomedDescription("PhysicalObject | Implantable tissue clip (Object)")
-                                .SetICD10("470342004")
                             //- AutoGen
                             //- Coil
                             ,
@@ -157,7 +153,7 @@ namespace BreastRadiology.XUnitTests
                                 .ValidModalities(Modalities.MG | Modalities.MRI | Modalities.US)
                                 .SetSnomedCode("283258005")
                                 .SetSnomedDescription("ClinicalFinding | Glass in breast (Disorder)")
-                                .SetICD10("283258005")
+                                .SetICD10("S21.009?")
                             //- AutoGen
                             //- Glass
                             ,
@@ -200,7 +196,6 @@ namespace BreastRadiology.XUnitTests
                                 .ValidModalities(Modalities.MG)
                                 .SetSnomedCode("470272007")
                                 .SetSnomedDescription("PhysicalObject | Implantable lesion localization marker (Object)")
-                                .SetICD10("470272007")
                             //- AutoGen
                             //- MarkerClip
                             ,
@@ -216,7 +211,7 @@ namespace BreastRadiology.XUnitTests
                                 .ValidModalities(Modalities.MG | Modalities.MRI | Modalities.US)
                                 .SetSnomedCode("283169003")
                                 .SetSnomedDescription("ClinicalFinding | Metal foreign body in breast (Disorder)")
-                                .SetICD10("283169003")
+                                .SetICD10("S21.009?")
                             //- AutoGen
                             //- Metal
                             ,
@@ -232,7 +227,6 @@ namespace BreastRadiology.XUnitTests
                                 .ValidModalities(Modalities.MRI)
                                 .SetSnomedCode("470272007")
                                 .SetSnomedDescription("PhysicalObject | Implantable lesion localization marker (Object)")
-                                .SetICD10("470272007")
                             //- AutoGen
                             //- MetallicMarker
                             ,
@@ -261,7 +255,6 @@ namespace BreastRadiology.XUnitTests
                                 .ValidModalities(Modalities.MG)
                                 .SetSnomedCode("80919006")
                                 .SetSnomedDescription("PhysicalObject | Jewelry (Object)")
-                                .SetICD10("80919006")
                                 .SetComment("NEEDED ADD NIPPLE LOCATION")
                             //- AutoGen
                             //- NippleJewelry
@@ -332,7 +325,6 @@ namespace BreastRadiology.XUnitTests
                                 .SetSnomedCode("470342004")
                                 .SetOneToMany("one")
                                 .SetSnomedDescription("PhysicalObject | Implantable tissue clip (Object)")
-                                .SetICD10("470342004")
                             //- AutoGen
                             //- SurgicalClip
                             ,
@@ -363,7 +355,6 @@ namespace BreastRadiology.XUnitTests
                                 .SetSnomedCode("470272007")
                                 .SetOneToMany("one")
                                 .SetSnomedDescription("PhysicalObject | Implantable lesion localization marker (Object)")
-                                .SetICD10("470272007")
                             //- AutoGen
                             //- TitaniumClip
                             ,
@@ -432,7 +423,6 @@ namespace BreastRadiology.XUnitTests
                                 .ValidModalities(Modalities.MG | Modalities.MRI | Modalities.US)
                                 .SetSnomedCode("470272007")
                                 .SetSnomedDescription("PhysicalObject | Implantable lesion localization marker (Object)")
-                                .SetICD10("470272007")
                             //- AutoGen
                             ,
                             //- BiopsyClips
@@ -448,7 +438,6 @@ namespace BreastRadiology.XUnitTests
                                 .ValidModalities(Modalities.MRI)
                                 .SetSnomedCode("470272007")
                                 .SetSnomedDescription("PhysicalObject | Implantable lesion localization marker (Object)")
-                                .SetICD10("470272007")
                             //- AutoGen
                             ,
                             //- BreastMarkers
@@ -478,7 +467,6 @@ namespace BreastRadiology.XUnitTests
                                 .SetSnomedCode("470342004")
                                 .SetOneToMany("many")
                                 .SetSnomedDescription("PhysicalObject | Implantable tissue clip (Object)")
-                                .SetICD10("470342004")
                             //- AutoGen
                             ,
                             //- Clips
@@ -495,7 +483,6 @@ namespace BreastRadiology.XUnitTests
                                 .SetSnomedCode("470272007")
                                 .SetOneToMany("many")
                                 .SetSnomedDescription("PhysicalObject | Implantable lesion localization marker (Object)")
-                                .SetICD10("470272007")
                             //- AutoGen
                             ,
                             //- MetallicMarkers
@@ -526,7 +513,6 @@ namespace BreastRadiology.XUnitTests
                                 .SetSnomedCode("470342004")
                                 .SetOneToMany("one")
                                 .SetSnomedDescription("PhysicalObject | Implantable tissue clip (Object)")
-                                .SetICD10("470342004")
                             //- AutoGen
                             ,
                             //- SurgicalClips
@@ -543,7 +529,6 @@ namespace BreastRadiology.XUnitTests
                                 .SetSnomedCode("470272007")
                                 .SetOneToMany("many")
                                 .SetSnomedDescription("PhysicalObject | Implantable lesion localization marker (Object)")
-                                .SetICD10("470272007")
                             //- AutoGen
                             ,
                             //- TitaniumClips

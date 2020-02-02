@@ -153,10 +153,9 @@ namespace BreastRadiology.XUnitTests
                         .AppendLine($"new ConceptDef()")
                         .AppendLine($"    .SetCode(\"{conceptBlockName}\")")
                         .AppendLine($"    .SetDisplay(\"{code}\")")
-                        .AppendLine($"    .SetDefinition(new Definition()")
-                        .AppendLine($"        .Line(\"[PR] {code}\")")
-                        .AppendLine($"        .MammoId(\"{penId}\")")
+                        .AppendLine($"    .SetDefinition(\"[PR] {code}\")")
                         .AppendLine($"    )")
+                        .AppendLine($"    .MammoId(\"{penId}\")")
                         .AppendLine($"    .ValidModalities({validWith})")
                         ;
 
@@ -414,9 +413,11 @@ namespace BreastRadiology.XUnitTests
             LoadSheet3(ds);
 
             WriteDescriptions();
-            WriteIds(@"Common\Abnormalities\AbnormalityCyst.cs", "CystTypeCS", "69", "610", "657", "617", "636", "609", "661");
-            WriteIds(@"Common\Abnormalities\AbnormalityDuct.cs", "DuctTypeCS", "694.602", "693.614");
-            WriteIds(@"Common\Abnormalities\AbnormalityFibroAdenoma.cs", "FibroTypeCS", "70", "695");
+            WriteIds(@"Common\Abnormalities\AbnormalityCyst.cs", "Type", "69", "610", "657", "617", "636", "609", "661");
+            WriteIds(@"Common\Abnormalities\AbnormalityDuct.cs", "Type", "694.602", "693.614");
+            WriteIds(@"Common\Abnormalities\AbnormalityFibroAdenoma.cs", "Type", "70", "695");
+            WriteIds(@"Common\Abnormalities\AbnormalityLymphNode.cs", "Type", "648", "649", "662", "665", "650", "651", "652", "666", "663");
+            WriteIds(@"Common\Abnormalities\AbnormalityMass.cs", "Type", "58", "621", "697", "613", "608");
             WriteCS(ds, "Recommendation", @"Common\ServiceRecommendation.cs", "RecommendationsCS");
             WriteCS(ds, "CorrspondsWith", @"Common\CorrespondsWithCS.cs", "CorrespondsWithCS");
             WriteCS(ds, "ConsistentWith", @"Common\ConsistentWith.cs", "ConsistentWithCS");

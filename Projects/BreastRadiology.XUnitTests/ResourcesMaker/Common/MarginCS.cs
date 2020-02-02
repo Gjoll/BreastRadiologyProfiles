@@ -71,7 +71,6 @@ namespace BreastRadiology.XUnitTests
                          .ValidModalities(Modalities.MG | Modalities.NM | Modalities.US)
                          .SetSnomedCode("129738007")
                          .SetSnomedDescription("ClinicalFinding | Lesion with circumscribed margin (Finding)")
-                         .SetICD10("129738007")
                      //- AutoGen
                         .SetDefinition(new Definition()
                             .CiteStart(BiRadCitation)
@@ -95,7 +94,6 @@ namespace BreastRadiology.XUnitTests
                          .ValidModalities(Modalities.MG | Modalities.US)
                          .SetSnomedCode("129741003")
                          .SetSnomedDescription("ClinicalFinding | Lesion with indistinct margin (Finding)")
-                         .SetICD10("129741003")
                      //- AutoGen
                         .SetDefinition(new Definition()
                              .Line("Indistinct margin")
@@ -174,7 +172,6 @@ namespace BreastRadiology.XUnitTests
                          .ValidModalities(Modalities.MG | Modalities.US)
                          .SetSnomedCode("129739004")
                          .SetSnomedDescription("ClinicalFinding | Lesion with microlobulated margin (Finding)")
-                         .SetICD10("129739004")
                      //- AutoGen
                         .SetDefinition(new Definition()
                             .Line("Microlobulated margin")
@@ -212,7 +209,6 @@ namespace BreastRadiology.XUnitTests
                          .ValidModalities(Modalities.MG)
                          .SetSnomedCode("129740002")
                          .SetSnomedDescription("ClinicalFinding | Lesion with obscured margin (Finding)")
-                         .SetICD10("129740002")
                      //- AutoGen
                          .SetDefinition(new Definition()
                              .Line("Obscured margin")
@@ -249,7 +245,6 @@ namespace BreastRadiology.XUnitTests
                          .ValidModalities(Modalities.MG | Modalities.MRI | Modalities.US)
                          .SetSnomedCode("129742005")
                          .SetSnomedDescription("ClinicalFinding | Lesion with spiculated margin (Finding)")
-                         .SetICD10("129742005")
                      //- AutoGen
                         .SetDefinition(new Definition()
                             .Line("Spiculated margin")
