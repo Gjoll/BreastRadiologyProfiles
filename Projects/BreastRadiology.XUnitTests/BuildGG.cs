@@ -200,7 +200,7 @@ namespace BreastRadiology.XUnitTests
             }
         }
 
-        void WriteDescriptions(DataSet ds)
+        void WriteDescriptions()
         {
             CodeBlockNested cb = null;
 
@@ -311,10 +311,6 @@ namespace BreastRadiology.XUnitTests
                 cb.AppendLine($"    }});");
             }
 
-            DataTable dataTbl = ds.Tables["Sheet3"];
-            if (dataTbl == null)
-                throw new Exception($"Table {"Sheet3"} not found");
-
             CodeEditor editor = new CodeEditor();
             editor.Load(Path.Combine(DirHelper.FindParentDir("BreastRadiology.XUnitTests"),
                         "ResourcesMaker",
@@ -323,11 +319,8 @@ namespace BreastRadiology.XUnitTests
             cb = editor.Blocks.Find("Data");
             cb.Clear();
 
-            for (Int32 i = 1; i < dataTbl.Rows.Count; i++)
-            {
-                DataRow row = dataTbl.Rows[i];
+            foreach (DataRow row in this.sheet3.Values)
                 DoRow(row);
-            }
             editor.Save();
         }
 
@@ -337,7 +330,7 @@ namespace BreastRadiology.XUnitTests
             DataSet ds = this.ReadGregDS();
             LoadSheet3(ds);
 
-            WriteDescriptions(ds);
+            WriteDescriptions();
             WriteCS(ds, "Recommendation", @"Common\ServiceRecommendation.cs", "RecommendationsCS");
             WriteCS(ds, "CorrspondsWith", @"Common\CorrespondsWithCS.cs", "CorrespondsWithCS");
             WriteCS(ds, "ConsistentWith", @"Common\ConsistentWith.cs", "ConsistentWithCS");
