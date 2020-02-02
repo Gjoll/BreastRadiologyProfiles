@@ -161,11 +161,10 @@ namespace BreastRadiology.XUnitTests
                         ;
 
                     AppIfNotNull("SetDicom", row[9]);
-                    AppIfNotNull("SetPenCode", row[10]);
                     AppIfNotNull("SetSnomedCode", row[11]);
                     AppIfNotNull("SetOneToMany", row[12]);
                     AppIfNotNull("SetSnomedDescription", row[13]);
-                    AppIfNotNull("SetICD10", row[11]);
+                    AppIfNotNull("SetICD10", row[14]);
                     AppIfNotNull("SetComment", row[15]);
                     AppIfNotNull("SetUMLS", row[16]);
                 }

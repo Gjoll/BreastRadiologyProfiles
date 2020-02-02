@@ -164,11 +164,6 @@ namespace BreastRadiology.XUnitTests
                 return this;
             }
 
-            public ConceptDef SetPenCode(String value)
-            {
-                return this;
-            }
-
             public ConceptDef SetSnomedCode(String value)
             {
                 return this;

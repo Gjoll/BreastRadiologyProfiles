@@ -1198,7 +1198,6 @@ namespace BreastRadiology.XUnitTests
                                     .MammoId("536")
                                 )
                                 .ValidModalities(Modalities.MG | Modalities.MRI | Modalities.NM | Modalities.US)
-                                .SetPenCode("Qualifier")
                             //- AutoGen
                             //- LikelyRepresents
                             ,
@@ -1212,7 +1211,6 @@ namespace BreastRadiology.XUnitTests
                                     .MammoId("581")
                                 )
                                 .ValidModalities(Modalities.MG | Modalities.US)
-                                .SetPenCode("Qualifier")
                             //- AutoGen
                             //- MostLikely
                             ,
@@ -1226,7 +1224,6 @@ namespace BreastRadiology.XUnitTests
                                     .MammoId("580")
                                 )
                                 .ValidModalities(Modalities.MG | Modalities.MRI | Modalities.NM | Modalities.US)
-                                .SetPenCode("Qualifier")
                             //- AutoGen
                             //- Resembles
                             ,
@@ -1240,7 +1237,6 @@ namespace BreastRadiology.XUnitTests
                                     .MammoId("561")
                                 )
                                 .ValidModalities(Modalities.MG | Modalities.MRI | Modalities.NM | Modalities.US)
-                                .SetPenCode("Qualifier")
                             //- AutoGen
                             //- w/differentialDiagnosis
                             
