@@ -370,6 +370,15 @@
     </resource>
     <resource>
       <reference>
+        <reference value="CodeSystem/ObservationCodes" />
+      </reference>
+      <name value="Observation Codes CodeSystem" />
+      <description value="Observation Codes code system" />
+      <exampleBoolean value="false" />
+      <groupingId value="CommonCodesCS" />
+    </resource>
+    <resource>
+      <reference>
         <reference value="CodeSystem/ObservationComponentSliceCodes" />
       </reference>
       <name value="Component Slice Codes CodeSystem" />

@@ -168,7 +168,7 @@ namespace BreastRadiology.XUnitTests
 
         public ElementTreeSlice ApplyExtension(String name,
             StructureDefinition sd,
-            bool showChildren = true)
+            bool showChildren)
         {
             return this.ApplyExtension(name, sd.Url, showChildren);
         }
@@ -182,7 +182,7 @@ namespace BreastRadiology.XUnitTests
 
         public ElementTreeSlice ApplyExtension(String name,
         String extensionUrl,
-        bool showChildren = true)
+        bool showChildren)
         {
             return this.ApplyExtension(this.Get("extension"), name, extensionUrl);
         }
@@ -306,7 +306,7 @@ namespace BreastRadiology.XUnitTests
             Cardinality cardinality,
             String localName,
             String componentRef,
-            bool showChildren = true)
+            bool showChildren)
         {
             dynamic packet = new JObject();
             packet.LinkType = SVGGlobal.ExtensionType;
@@ -328,7 +328,7 @@ namespace BreastRadiology.XUnitTests
         {
             dynamic packet = new JObject();
             packet.LinkType = SVGGlobal.ComponentType;
-            packet.ShowChildren = true;
+            packet.ShowChildren = false;
             packet.Cardinality = cardinality.ToString();
             packet.LinkTarget = url;
             packet.ComponentHRef = componentRef;
@@ -340,7 +340,7 @@ namespace BreastRadiology.XUnitTests
         }
 
 
-        public SDefEditor AddTargetLink(String url, Cardinality cardinality, bool showChildren = true)
+        public SDefEditor AddTargetLink(String url, Cardinality cardinality, bool showChildren)
         {
 
             dynamic packet = new JObject();
@@ -352,7 +352,7 @@ namespace BreastRadiology.XUnitTests
             return this;
         }
 
-        public SDefEditor AddValueSetLink(ValueSet vs, bool showChildren = true)
+        public SDefEditor AddValueSetLink(ValueSet vs, bool showChildren)
         {
             dynamic packet = new JObject();
             packet.LinkType = SVGGlobal.ValueSetType;

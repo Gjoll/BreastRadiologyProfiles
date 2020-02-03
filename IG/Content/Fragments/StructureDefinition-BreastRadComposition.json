@@ -19,19 +19,19 @@
     },
     {
       "url": "http://www.fragment.com/maplink",
-      "valueString": "{\r\n  \"LinkType\": \"component\",\r\n  \"ShowChildren\": true,\r\n  \"Cardinality\": \"1..1\",\r\n  \"LinkTarget\": \"Report\",\r\n  \"ComponentHRef\": \"StructureDefinition-{SDName}-definitions.html#Composition.section:report\",\r\n  \"Types\": \"Section\",\r\n  \"References\": [\r\n    \"http://hl7.org/fhir/us/breast-radiology/StructureDefinition/BreastRadReport\"\r\n  ]\r\n}"
+      "valueString": "{\r\n  \"LinkType\": \"component\",\r\n  \"ShowChildren\": false,\r\n  \"Cardinality\": \"1..1\",\r\n  \"LinkTarget\": \"Report\",\r\n  \"ComponentHRef\": \"StructureDefinition-{SDName}-definitions.html#Composition.section:report\",\r\n  \"Types\": \"Section\",\r\n  \"References\": [\r\n    \"http://hl7.org/fhir/us/breast-radiology/StructureDefinition/BreastRadReport\"\r\n  ]\r\n}"
     },
     {
       "url": "http://www.fragment.com/maplink",
-      "valueString": "{\r\n  \"LinkType\": \"component\",\r\n  \"ShowChildren\": true,\r\n  \"Cardinality\": \"0..*\",\r\n  \"LinkTarget\": \"Impressions\",\r\n  \"ComponentHRef\": \"StructureDefinition-{SDName}-definitions.html#Composition.section:impressions\",\r\n  \"Types\": \"Section\",\r\n  \"References\": [\r\n    \"http://hl7.org/fhir/StructureDefinition/ClinicalImpression\"\r\n  ]\r\n}"
+      "valueString": "{\r\n  \"LinkType\": \"component\",\r\n  \"ShowChildren\": false,\r\n  \"Cardinality\": \"0..*\",\r\n  \"LinkTarget\": \"Impressions\",\r\n  \"ComponentHRef\": \"StructureDefinition-{SDName}-definitions.html#Composition.section:impressions\",\r\n  \"Types\": \"Section\",\r\n  \"References\": [\r\n    \"http://hl7.org/fhir/StructureDefinition/ClinicalImpression\"\r\n  ]\r\n}"
     },
     {
       "url": "http://www.fragment.com/maplink",
-      "valueString": "{\r\n  \"LinkType\": \"component\",\r\n  \"ShowChildren\": true,\r\n  \"Cardinality\": \"0..*\",\r\n  \"LinkTarget\": \"Related Resources\",\r\n  \"ComponentHRef\": \"StructureDefinition-{SDName}-definitions.html#Composition.section:relatedResources\",\r\n  \"Types\": \"Section\",\r\n  \"References\": [\r\n    \"http://hl7.org/fhir/StructureDefinition/Resource\"\r\n  ]\r\n}"
+      "valueString": "{\r\n  \"LinkType\": \"component\",\r\n  \"ShowChildren\": false,\r\n  \"Cardinality\": \"0..*\",\r\n  \"LinkTarget\": \"Related Resources\",\r\n  \"ComponentHRef\": \"StructureDefinition-{SDName}-definitions.html#Composition.section:relatedResources\",\r\n  \"Types\": \"Section\",\r\n  \"References\": [\r\n    \"http://hl7.org/fhir/StructureDefinition/Resource\"\r\n  ]\r\n}"
     },
     {
       "url": "http://www.fragment.com/maplink",
-      "valueString": "{\r\n  \"LinkType\": \"component\",\r\n  \"ShowChildren\": true,\r\n  \"Cardinality\": \"0..*\",\r\n  \"LinkTarget\": \"Recommendations\",\r\n  \"ComponentHRef\": \"StructureDefinition-{SDName}-definitions.html#Composition.section:recommendations\",\r\n  \"Types\": \"Section\",\r\n  \"References\": [\r\n    \"http://hl7.org/fhir/StructureDefinition/MedicationRequest\",\r\n    \"http://hl7.org/fhir/StructureDefinition/ServiceRequest\",\r\n    \"http://hl7.org/fhir/us/breast-radiology/StructureDefinition/ServiceRecommendation\"\r\n  ]\r\n}"
+      "valueString": "{\r\n  \"LinkType\": \"component\",\r\n  \"ShowChildren\": false,\r\n  \"Cardinality\": \"0..*\",\r\n  \"LinkTarget\": \"Recommendations\",\r\n  \"ComponentHRef\": \"StructureDefinition-{SDName}-definitions.html#Composition.section:recommendations\",\r\n  \"Types\": \"Section\",\r\n  \"References\": [\r\n    \"http://hl7.org/fhir/StructureDefinition/MedicationRequest\",\r\n    \"http://hl7.org/fhir/StructureDefinition/ServiceRequest\",\r\n    \"http://hl7.org/fhir/us/breast-radiology/StructureDefinition/ServiceRecommendation\"\r\n  ]\r\n}"
     }
   ],
   "url": "http://hl7.org/fhir/us/breast-radiology/StructureDefinition/BreastRadComposition",

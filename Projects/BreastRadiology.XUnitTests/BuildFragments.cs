@@ -438,7 +438,7 @@ namespace BreastRadiology.XUnitTests
 
 
         [TestMethod]
-        public void FullBuild()
+        public void Build()
         {
             using (this.fc = new FileCleaner())
             {
@@ -452,8 +452,14 @@ namespace BreastRadiology.XUnitTests
                 this.C_PatchIntroDocs();
                 this.D_BuildGraphics();
                 this.E_BuildIG();
-                this.F_RunPublisher();
             }
+        }
+
+        [TestMethod]
+        public void BuildAndPublish()
+        {
+            this.Build();
+            this.F_RunPublisher();
         }
 
 

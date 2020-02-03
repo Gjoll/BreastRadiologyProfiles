@@ -254,7 +254,7 @@ namespace BreastRadiology.XUnitTests
                     e.AddExtensionLink("https://build.fhir.org/ig/HL7/fhir-skin-wound-ig/branches/master/StructureDefinition-BodySideExt.html",
                         new SDefEditor.Cardinality(extensionDef),
                         "Laterality", 
-                        Global.ElementAnchor(extensionDef));
+                        Global.ElementAnchor(extensionDef), false);
                 }
                 {
                     ValueSet binding = Self.BreastLocationQuadrantVS.Value();
@@ -373,7 +373,8 @@ namespace BreastRadiology.XUnitTests
                     e.AddExtensionLink(extensionStructDef.Url,
                         new SDefEditor.Cardinality(extensionSlice.ElementDefinition),
                         "Distance From Nipple",
-                        Global.ElementAnchor(extensionSlice.ElementDefinition));
+                        Global.ElementAnchor(extensionSlice.ElementDefinition),
+                        false);
                 }
                 {
                     StructureDefinition extensionStructDef = Self.BodyDistanceFromExtension.Value();
@@ -382,7 +383,7 @@ namespace BreastRadiology.XUnitTests
                     e.AddExtensionLink(extensionStructDef.Url,
                         new SDefEditor.Cardinality(extensionSlice.ElementDefinition),
                         "Distance From Chest Wall", 
-                        Global.ElementAnchor(extensionSlice.ElementDefinition));
+                        Global.ElementAnchor(extensionSlice.ElementDefinition), false);
                 }
                 {
                     StructureDefinition extensionStructDef = Self.BodyDistanceFromExtension.Value();
@@ -391,7 +392,8 @@ namespace BreastRadiology.XUnitTests
                     e.AddExtensionLink(extensionStructDef.Url,
                         new SDefEditor.Cardinality(extensionSlice.ElementDefinition),
                         "Distance From Skin", 
-                        Global.ElementAnchor(extensionSlice.ElementDefinition));
+                        Global.ElementAnchor(extensionSlice.ElementDefinition),
+                        false);
                 }
                 e.IntroDoc.ReviewedStatus("NOONE", "");
             });

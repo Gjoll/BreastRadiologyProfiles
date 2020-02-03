@@ -55,10 +55,10 @@ namespace BreastRadiology.XUnitTests
          * group. Have the two nodes point to the same group of children.
          */
         protected void AddChildren(ResourceMap.Node mapNode,
-            SENodeGroup group,
-            bool showChildren)
+            SENodeGroup group)
         {
-            this.AddChildren(mapNode, mapNode.LinksByLinkType(this.linkTypes).ToArray(), group, showChildren);
+            this.AddChildren(mapNode, mapNode.LinksByLinkType(this.linkTypes).ToArray(), 
+                group);
         }
 
         protected SENode CreateResourceNode(ResourceMap.Node mapNode,
@@ -89,8 +89,7 @@ namespace BreastRadiology.XUnitTests
 
         protected void DirectLink(SENodeGroup group,
             ResourceMap.Node mapNode,
-            dynamic link,
-            bool showChildren)
+            dynamic link)
         {
             String linkTargetUrl = link.LinkTarget.ToObject<String>();
 
@@ -107,7 +106,7 @@ namespace BreastRadiology.XUnitTests
             ResourceMap.Node childMapNode = null;
 
             bool linkToLastGroup = false;
-            if (showChildren)
+            if (link.ShowChildren.ToObject<Boolean>())
             {
                 childMapNode = this.map.GetNode(linkTargetUrl);
                 childMapLinks = childMapNode.LinksByLinkType(this.linkTypes).ToArray();
@@ -124,16 +123,17 @@ namespace BreastRadiology.XUnitTests
             {
                 SENodeGroup groupChild = group.AppendChild("", this.showCardinality);
                 CreateDirectNode(groupChild);
-                if (showChildren)
-                    this.AddChildren(childMapNode, childMapLinks, groupChild, link.ShowChildren.ToObject<Boolean>());
+                if (link.ShowChildren.ToObject<Boolean>())
+                    this.AddChildren(childMapNode, 
+                        childMapLinks, 
+                        groupChild);
                 this.previousChildLinks = childMapLinks;
             }
         }
 
         protected void AddChildren(ResourceMap.Node mapNode,
             dynamic[] links,
-            SENodeGroup group,
-            bool showChildren)
+            SENodeGroup group)
         {
             if (links.Length == 0)
                 return;
@@ -142,11 +142,11 @@ namespace BreastRadiology.XUnitTests
                 switch (link.LinkType.ToObject<String>())
                 {
                     case SVGGlobal.ComponentType:
-                        MakeComponent(link, group, showChildren);
+                        MakeComponent(link, group);
                         break;
 
                     default:
-                        DirectLink(group, mapNode, link, showChildren);
+                        DirectLink(group, mapNode, link);
                         break;
                 }
             }
@@ -190,8 +190,7 @@ namespace BreastRadiology.XUnitTests
         }
 
         protected void MakeComponent(dynamic link,
-                SENodeGroup group,
-                bool showChildren)
+                SENodeGroup group)
         {
             // we never link components to previous child links, not should next item
             // link to this items children. Each component stands alone.
@@ -227,10 +226,10 @@ namespace BreastRadiology.XUnitTests
                             throw new Exception($"Component resource '{reference}' not found!");
                         refNode = this.CreateResourceNode(refMapNode, this.ReferenceColor(refMapNode), link.Cardinality?.ToString(), true);
 
-                        if (showChildren)
+                        if (link.ShowChildren.ToObject<Boolean>())
                         {
                             var childMapNode = this.map.GetNode(reference);
-                            this.AddChildren(childMapNode, refGroup, link.ShowChildren.ToObject<Boolean>());
+                            this.AddChildren(childMapNode, refGroup);
                         }
                     }
                     else

@@ -113,7 +113,7 @@ namespace BreastRadiology.XUnitTests
                             break;
 
                         case SVGGlobal.ComponentType:
-                            MakeComponent(link, componentChildren, false);
+                            MakeComponent(link, componentChildren);
                             break;
 
                         case SVGGlobal.ExtensionType:

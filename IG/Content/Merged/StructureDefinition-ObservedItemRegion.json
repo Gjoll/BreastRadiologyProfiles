@@ -35,11 +35,11 @@
     },
     {
       "url": "http://www.fragment.com/maplink",
-      "valueString": "{\r\n  \"LinkType\": \"component\",\r\n  \"ShowChildren\": true,\r\n  \"Cardinality\": \"1..1\",\r\n  \"LinkTarget\": \"Region Type\",\r\n  \"ComponentHRef\": \"StructureDefinition-{SDName}-definitions.html#Observation.component:groupingType\",\r\n  \"Types\": \"CodeableConcept\",\r\n  \"References\": [\r\n    \"http://hl7.org/fhir/us/breast-radiology/ValueSet/ItemRegionVS\"\r\n  ]\r\n}"
+      "valueString": "{\r\n  \"LinkType\": \"component\",\r\n  \"ShowChildren\": false,\r\n  \"Cardinality\": \"1..1\",\r\n  \"LinkTarget\": \"Region Type\",\r\n  \"ComponentHRef\": \"StructureDefinition-{SDName}-definitions.html#Observation.component:groupingType\",\r\n  \"Types\": \"CodeableConcept\",\r\n  \"References\": [\r\n    \"http://hl7.org/fhir/us/breast-radiology/ValueSet/ItemRegionVS\"\r\n  ]\r\n}"
     },
     {
       "url": "http://www.fragment.com/maplink",
-      "valueString": "{\r\n  \"LinkType\": \"component\",\r\n  \"ShowChildren\": true,\r\n  \"Cardinality\": \"1..3\",\r\n  \"LinkTarget\": \"Item Region Components\",\r\n  \"ComponentHRef\": \"StructureDefinition-{SDName}-definitions.html#Observation.component:sizeDimension\",\r\n  \"Types\": \"Quantity | Range\",\r\n  \"References\": [\r\n    \"http://hl7.org/fhir/us/breast-radiology/ValueSet/DimensionCodeVS\"\r\n  ]\r\n}"
+      "valueString": "{\r\n  \"LinkType\": \"component\",\r\n  \"ShowChildren\": false,\r\n  \"Cardinality\": \"1..3\",\r\n  \"LinkTarget\": \"Item Region Components\",\r\n  \"ComponentHRef\": \"StructureDefinition-{SDName}-definitions.html#Observation.component:sizeDimension\",\r\n  \"Types\": \"Quantity | Range\",\r\n  \"References\": [\r\n    \"http://hl7.org/fhir/us/breast-radiology/ValueSet/DimensionCodeVS\"\r\n  ]\r\n}"
     },
     {
       "url": "http://www.fragment.com/mapname",
