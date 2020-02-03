@@ -25,66 +25,53 @@ namespace BreastRadiology.XUnitTests
                         Group_CommonCodesCS,
                         new ConceptDef[]
                         {
-                        new ConceptDef("Category-0",
-                            "Category 0 - Incomplete ",
-                            new Definition()
-                                .Line("Incomplete – Need Additional Imaging Evaluation and/or Prior Mammograms for Comparison")
-                            ),
-                        new ConceptDef("Category-1",
-                            "Category 1 - Negative ",
-                            new Definition()
-                                .Line("Negative Routine mammography screening Essentially 0% likelihood of malignancy")
-                            ),
-                        new ConceptDef("Category-2",
-                            "Category 2 - Benign ",
-                            new Definition()
-                                .Line("Benign Routine mammography screening Essentially 0% likelihood of malignancy")
-                            ),
-                        new ConceptDef("Category-3",
-                            "Category 0 - Probably Benign ",
-                            new Definition()
-                                .Line("Probably Benign Short-interval (6-month) follow-up or surveillance mammography ")
-                            ),
-                        new ConceptDef("Category-4",
-                            "Category 4 - Suspicious",
-                            new Definition()
-                                .Line("Suspicious")
-                            ),
-                        new ConceptDef("Category-4A",
-                            "Category 4A - Low suspicion for malignancy",
-                            new Definition()
-                                .Line("Low suspicion for malignancy")
-                            ),
-                        new ConceptDef("Category-4B",
-                            "Category 4B - Moderate suspicion for malignancy",
-                            new Definition()
-                                .Line("Moderate suspicion for malignancy")
-                            ),
-                        new ConceptDef("Category-4C",
-                            "Category 4C - High suspicion for malignancy",
-                            new Definition()
-                                .Line("High suspicion for malignancy")
-                            ),
-                        new ConceptDef("Category-5",
-                            "Category 5 - Highly Suggestive of Malignancy",
-                            new Definition()
-                                .Line("Highly Suggestive of Malignancy")
-                            ),
-                        new ConceptDef("Category-6",
-                            "Category 6 - Known Biopsy-Proven Malignancy",
-                            new Definition()
-                                .Line("Known Biopsy-Proven Malignancy")
-                            ),
-                        new ConceptDef("Post Biopsy Marker",
-                            "Post Biopsy Marker",
-                            new Definition()
-                                .Line("Post Biopsy Marker")
-                            ),
-                        new ConceptDef("Marker Clip Placement",
-                            "Marker Clip Placement",
-                            new Definition()
-                                .Line("Marker Clip Placement")
-                            )
+                        new ConceptDef()
+                            .SetCode("Category-0", "Category 0 - Incomplete")
+                            .SetDefinition("Incomplete – Need Additional Imaging Evaluation and/or Prior Mammograms for Comparison")
+                            ,
+                        new ConceptDef()
+                            .SetCode("Category-1", "Category 1 - Negative")
+                            .SetDefinition("Negative Routine mammography screening Essentially 0% likelihood of malignancy")
+                            ,
+                        new ConceptDef()
+                            .SetCode("Category-2", "Category 2 - Benign ")
+                            .SetDefinition("Benign Routine mammography screening Essentially 0% likelihood of malignancy")
+                            ,
+                        new ConceptDef()
+                            .SetCode("Category-3", "Category 0 - Probably Benign ")
+                            .SetDefinition("Probably Benign Short-interval (6-month) follow-up or surveillance mammography ")
+                            ,
+                        new ConceptDef()
+                            .SetCode("Category-4", "Category 4 - Suspicious")
+                            .SetDefinition("Suspicious")
+                            ,
+                        new ConceptDef()
+                            .SetCode("Category-4A", "Category 4A - Low suspicion for malignancy")
+                            .SetDefinition("Low suspicion for malignancy")
+                            ,
+                        new ConceptDef()
+                            .SetCode("Category-4B", "Category 4B - Moderate suspicion for malignancy")
+                            .SetDefinition("Moderate suspicion for malignancy")
+                            ,
+                        new ConceptDef()
+                            .SetCode("Category-4C", "Category 4C - High suspicion for malignancy")
+                            .SetDefinition("High suspicion for malignancy")
+                            ,
+                        new ConceptDef()
+                            .SetCode("Category-5", "Category 5 - Highly Suggestive of Malignancy")
+                            .SetDefinition("Highly Suggestive of Malignancy")
+                            ,
+                        new ConceptDef()
+                            .SetCode("Category-6", "Category 6 - Known Biopsy-Proven Malignancy")
+                            .SetDefinition("Known Biopsy-Proven Malignancy")
+                            ,
+                        new ConceptDef()
+                            .SetCode("Post Biopsy Marker", "Post Biopsy Marker")
+                            .SetDefinition("Post Biopsy Marker")
+                            ,
+                        new ConceptDef()
+                            .SetCode("Marker Clip Placement", "Marker Clip Placement")
+                            .SetDefinition("Marker Clip Placement")
                         })
                     );
 

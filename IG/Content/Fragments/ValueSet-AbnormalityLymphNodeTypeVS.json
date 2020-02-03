@@ -25,8 +25,40 @@
         "system": "http://hl7.org/fhir/us/breast-radiology/CodeSystem/AbnormalityLymphNodeTypeCS",
         "concept": [
           {
-            "code": "Intramammory",
-            "display": "Intramammory"
+            "code": "NodeAxillary",
+            "display": "Node axillary"
+          },
+          {
+            "code": "NodeEnlarged",
+            "display": "Node enlarged"
+          },
+          {
+            "code": "NodeFocalCortex",
+            "display": "Node focal cortex"
+          },
+          {
+            "code": "NodeInfraclavicular",
+            "display": "Node infraclavicular"
+          },
+          {
+            "code": "NodeIntramammary",
+            "display": "Node intramammary"
+          },
+          {
+            "code": "NodeLymph",
+            "display": "Node lymph"
+          },
+          {
+            "code": "NodeLymphNormal",
+            "display": "Node lymph normal"
+          },
+          {
+            "code": "NodeSupraclavicular",
+            "display": "Node supraclavicular"
+          },
+          {
+            "code": "NodeUniformThickness",
+            "display": "Node uniform thickness"
           }
         ]
       }

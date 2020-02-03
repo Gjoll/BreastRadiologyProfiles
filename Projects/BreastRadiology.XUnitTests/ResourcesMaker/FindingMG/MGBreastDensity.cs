@@ -24,63 +24,45 @@ namespace BreastRadiology.XUnitTests
                      Group_MGCodesCS,
                      new ConceptDef[]
                      {
-                    new ConceptDef("Fatty",
-                        "The breasts are almost entirely fatty",
-                        new Definition()
-                        .CiteStart(BiRadCitation)
-                            .Text("Unless an area containing cancer is not included in the image field of the mammogram,")
-                            .Text("mammography is highly sensitive in this setting.")
-                        .CiteEnd()
-                    ),
-                    new ConceptDef("Fibroglandular",
-                        "Scattered areas of fibroglandular density",
-                        new Definition()
-                        .CiteStart(BiRadCitation)
-                            .Text("(historically, there are scattered fibroglandular densities).")
-                            .Text("")
-                            .Text("It may be helpful to distinguish breasts in which there are a few scattered areas of")
-                            .Text("fibroglandular-density tissue from those in which there are moderate scattered areas of")
-                            .Text("fibroglandular-density tissue. Note that there has been a subtle change in the wording")
-                            .Text("of this category, to conform to BI-RADS® lexicon use of the term \"density\" to describe")
-                            .Text("the degree of x-ray attenuation of breast tissue but not to represent discrete")
-                            .Text("mammographic findings.")
-                        .CiteEnd()
-                    ),
-                    new ConceptDef("HeterogeneouslyDense",
-                        "The breasts are heterogeneously dense, which may obscure detection of small masses",
-                        new Definition()
-                        .CiteStart(BiRadCitation)
-                            .Text("It is not uncommon for some areas in such breasts to be relatively dense while other")
-                            .Text("areas are primarily fatty. When this occurs, it may be helpful to describe the location(s)")
-                            .Text("of the denser tissue in a second sentence, so that the referring clinician is aware that")
-                            .Text("these are the areas in which small noncalcified lesions may be obscured. Suggested")
-                            .Text("wordings for the second sentence include:")
-                            .Text("")
-                            .Text("\"The dense tissue is located anteriorly in both breasts, and the posterior portions")
-                            .Text("are mostly fatty.\"")
-                            .Text("")
-                            .Text("\"Primarily dense tissue is located in the upper outer quadrants of both breasts;")
-                            .Text("scattered areas of fibroglandular tissue are present in the remainder of the breasts.\"")
-                        .CiteEnd()
-                    ),
-                    new ConceptDef("ExtremelyDense",
-                        "The breasts are extremely dense, which lowers the sensitivity of mammography.",
-                        new Definition()
-                        .CiteStart(BiRadCitation)
-                            .Text("The sensitivity of mammography is lowest in this density category.")
-                            .Text("The Fourth Edition of BI-RADS®, unlike previous editions, indicated quartile ranges")
-                            .Text("of percentage dense tissue (increments of 25% density) for each of the four density")
-                            .Text("categories, with the expectation that the assignment of breast density would be")
-                            .Text("distributed more evenly across categories than the historical distribution of 10% fatty,")
-                            .Text("40% scattered, 40% heterogeneously and 10% extremely dense. However, it has since")
-                            .Text("been demonstrated in clinical practice that there has been essentially no change")
-                            .Text("in this historical distribution across density categories.")
-                        .CiteEnd()
-                    ),
+                    new ConceptDef()
+                        .SetCode("Fatty", "The breasts are almost entirely fatty")
+                         .BiRadsDef("Unless an area containing cancer is not included in the image field of the mammogram,",
+                                     "mammography is highly sensitive in this setting."),
+                    new ConceptDef()
+                        .SetCode("Fibroglandular", "Scattered areas of fibroglandular density")
+                        .BiRadsDef("(historically, there are scattered fibroglandular densities).",
+                                   "It may be helpful to distinguish breasts in which there are a few scattered areas of",
+                                   "fibroglandular-density tissue from those in which there are moderate scattered areas of",
+                                   "fibroglandular-density tissue. Note that there has been a subtle change in the wording",
+                                   "of this category, to conform to BI-RADS® lexicon use of the term \"density\" to describe",
+                                   "the degree of x-ray attenuation of breast tissue but not to represent discrete",
+                                   "mammographic findings."),
+                    new ConceptDef()
+                        .SetCode("HeterogeneouslyDense", "Heterogeneously Dense")
+                             //"The breasts are heterogeneously dense, which may obscure detection of small masses",
+                        .BiRadsDef("It is not uncommon for some areas in such breasts to be relatively dense while other",
+                                   "areas are primarily fatty. When this occurs, it may be helpful to describe the location(s)",
+                                   "of the denser tissue in a second sentence, so that the referring clinician is aware that",
+                                   "these are the areas in which small noncalcified lesions may be obscured. Suggested",
+                                   "wordings for the second sentence include:",
+                                   "\"The dense tissue is located anteriorly in both breasts, and the posterior portions",
+                                   "are mostly fatty.\"",
+                                   "\"Primarily dense tissue is located in the upper outer quadrants of both breasts;",
+                                   "scattered areas of fibroglandular tissue are present in the remainder of the breasts.\""),
+                    new ConceptDef()
+                        .SetCode("ExtremelyDense", "Extremely Dense")
+                        //"The breasts are extremely dense, which lowers the sensitivity of mammography.",
+                        .BiRadsDef("The sensitivity of mammography is lowest in this density category.",
+                                   "The Fourth Edition of BI-RADS®, unlike previous editions, indicated quartile ranges",
+                                   "of percentage dense tissue (increments of 25% density) for each of the four density",
+                                   "categories, with the expectation that the assignment of breast density would be",
+                                   "distributed more evenly across categories than the historical distribution of 10% fatty,",
+                                   "40% scattered, 40% heterogeneously and 10% extremely dense. However, it has since",
+                                   "been demonstrated in clinical practice that there has been essentially no change",
+                                   "in this historical distribution across density categories.")
                      }
                  )
              );
-
 
         VSTaskVar MGBreastDensityVS = new VSTaskVar(
             (out ValueSet vs) =>

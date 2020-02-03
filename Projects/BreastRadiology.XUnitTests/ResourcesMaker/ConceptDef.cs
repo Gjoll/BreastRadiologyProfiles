@@ -14,7 +14,28 @@ namespace BreastRadiology.XUnitTests
             get
             {
                 StringBuilder sb = new StringBuilder();
-                sb.Append(this.definitionText);
+                void AppendDefLines(String[] lines)
+                {
+                    if (lines == null)
+                        return;
+                    foreach (String line in lines)
+                        sb.AppendLine(line);
+                }
+
+                AppendDefLines(this.definitionText);
+
+                if (this.mammoIdDescription != null)
+                {
+                    sb.AppendLine($"[{this.mammoIdDescription.Source}]");
+                    AppendDefLines(this.mammoIdDescription.Text);
+                }
+
+                if (this.biRadsText != null)
+                {
+                    sb.AppendLine($"[{ResourcesMaker.BiRadCitation}]");
+                    AppendDefLines(this.biRadsText);
+                }
+
                 if (String.IsNullOrEmpty(this.modalities) == false)
                     sb.AppendLine(this.modalities);
                 return sb.ToString();
@@ -23,11 +44,25 @@ namespace BreastRadiology.XUnitTests
         String modalities { get; set; }
 
         String[] definitionText;
-
         String[] biRadsText;
+        MammoIDDescriptions.Description mammoIdDescription;
 
         public ConceptDef()
         {
+        }
+
+        public ConceptDef SetCode(String code, String display)
+        {
+            this.Code = code;
+            this.Display = display;
+            return this;
+        }
+
+        public ConceptDef SetCode(Coding code)
+        {
+            this.Code = code.Code;
+            this.Display = code.Display;
+            return this;
         }
 
         public ConceptDef SetCode(String value)
@@ -46,27 +81,6 @@ namespace BreastRadiology.XUnitTests
         {
             this.definitionText = def;
             return this;
-        }
-
-        public ConceptDef(Coding code, Definition definition)
-        {
-            this.Code = code.Code;
-            this.Display = code.Display;
-            //$this.definitionText = definition.ToString();
-        }
-
-        public ConceptDef(String code, String display, Definition definition)
-        {
-            String definitionStr = definition.ToString();
-            if (String.IsNullOrWhiteSpace(code) == true)
-                throw new Exception("Empty code");
-            if (String.IsNullOrWhiteSpace(display) == true)
-                throw new Exception("Empty Display");
-            if (String.IsNullOrWhiteSpace(definitionStr) == true)
-                throw new Exception("Empty definition");
-            this.Code = code;
-            this.Display = display;
-            //$this.definitionText = definitionStr;
         }
 
         public ConceptDef ValidModalities(Modalities modalities)
@@ -100,12 +114,8 @@ namespace BreastRadiology.XUnitTests
 
         public ConceptDef MammoId(String id)
         {
-            if (MammoIDDescriptions.Self.TryGet(id, out MammoIDDescriptions.Description description) == false)
+            if (MammoIDDescriptions.Self.TryGet(id, out mammoIdDescription) == false)
                 return this;
-            //$this.CiteStart(description.Source);
-            //foreach (String line in description.Text)
-            //    this.Line(line);
-            //this.CiteEnd();
             return this;
         }
 

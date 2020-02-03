@@ -1,9 +1,27 @@
 {
   "resourceType": "CodeSystem",
-  "id": "ComponentSliceCodes",
-  "url": "http://hl7.org/fhir/us/breast-radiology/CodeSystem/ComponentSliceCodes",
+  "id": "ObservationComponentSliceCodes",
+  "extension": [
+    {
+      "url": "http://www.fragment.com/fragment",
+      "valueUrl": "http://hl7.org/fhir/us/breast-radiology/StructureDefinition/HeaderFragment"
+    },
+    {
+      "url": "http://www.fragment.com/Group",
+      "valueString": "CommonCodesCS"
+    },
+    {
+      "url": "http://www.fragment.com/mapname",
+      "valueString": "Common"
+    },
+    {
+      "url": "http://www.fragment.com/Group",
+      "valueString": "Fragment/HeaderFragment"
+    }
+  ],
+  "url": "http://hl7.org/fhir/us/breast-radiology/CodeSystem/ObservationComponentSliceCodes",
   "version": "0.0.2",
-  "name": "ComponentSliceCodes",
+  "name": "ObservationComponentSliceCodes",
   "title": "Component Slice Codes CodeSystem",
   "status": "draft",
   "date": "2019-11-01",

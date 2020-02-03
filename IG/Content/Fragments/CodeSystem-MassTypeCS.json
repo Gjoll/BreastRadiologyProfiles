@@ -17,5 +17,32 @@
   "description": "Codes defining mass refinements.",
   "caseSensitive": true,
   "content": "complete",
-  "count": 0
+  "count": 5,
+  "concept": [
+    {
+      "code": "Mass",
+      "display": "Mass",
+      "definition": "[PR] Mass\r\nValid for the following modalities: MG US MRI."
+    },
+    {
+      "code": "MassIntraductal",
+      "display": "Mass intraductal",
+      "definition": "[PR] Mass intraductal\r\nValid for the following modalities: US."
+    },
+    {
+      "code": "MassPartiallySolid",
+      "display": "Mass partially solid",
+      "definition": "[PR] Mass partially solid\r\nValid for the following modalities: MG US."
+    },
+    {
+      "code": "MassSkinATLASIsSkinLesion",
+      "display": "Mass skin ATLAS is skin lesion",
+      "definition": "[PR] Mass skin ATLAS is skin lesion\r\nValid for the following modalities: MG US."
+    },
+    {
+      "code": "MassSolid",
+      "display": "Mass solid",
+      "definition": "[PR] Mass solid\r\nValid for the following modalities: MG US."
+    }
+  ]
 }

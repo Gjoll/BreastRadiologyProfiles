@@ -220,13 +220,7 @@ namespace BreastRadiology.XUnitTests
                              .ValidModalities(Modalities.MG | Modalities.MRI | Modalities.US)
                          //- AutoGen
                          //- Stable
-                        ,
                          //- ChangesCS
-                        new ConceptDef("IncidentalFinding",
-                            "Incidental Finding",
-                            new Definition()
-                                .Line("Item observation is an incidental Finding")
-                            )
                       }));
 
         VSTaskVar ObservedChangesVS = new VSTaskVar(

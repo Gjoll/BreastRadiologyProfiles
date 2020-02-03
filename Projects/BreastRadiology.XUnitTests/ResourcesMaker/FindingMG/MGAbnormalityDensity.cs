@@ -19,21 +19,17 @@ namespace BreastRadiology.XUnitTests
                          Group_MGCodesCS,
                         new ConceptDef[]
                          {
-                        new ConceptDef("FocalAsymmetrical",
-                            "Focal Asymmetrical",
-                            new Definition()
-                                .Line("[PR]")
-                            ),
-                        new ConceptDef("Nodular",
-                            "Nodular",
-                            new Definition()
-                                .Line("[PR]")
-                            ),
-                        new ConceptDef("Tubular",
-                            "Tubular",
-                            new Definition()
-                                .Line("[PR]")
-                            )
+                        new ConceptDef()
+                            .SetCode("FocalAsymmetrical", "Focal Asymmetrical")
+                            .SetDefinition("[PR]")
+                            ,
+                        new ConceptDef()
+                            .SetCode("Nodular", "Nodular")
+                            .SetDefinition("[PR]")
+                            ,
+                        new ConceptDef()
+                            .SetCode("Tubular", "Tubular")
+                            .SetDefinition("[PR]")
                          }
                      )
                  );

@@ -14,7 +14,8 @@ namespace BreastRadiology.XUnitTests
 {
     partial class ResourcesMaker
     {
-        String CompositionSectionSliceCodesUrl => this.CodeSystemUrl("CompositionSectionSliceCodes");
+        const string CompositionSectionSliceCodesName = "CompositionSectionSliceCodes";
+        String CompositionSectionSliceCodesUrl => this.CodeSystemUrl(CompositionSectionSliceCodesName);
 
         Coding SectionCodeReport => new Coding(this.CompositionSectionSliceCodesUrl, "sectionReport");
         Coding SectionCodeImpressions => new Coding(this.CompositionSectionSliceCodesUrl, "sectionImpressions");
@@ -25,33 +26,33 @@ namespace BreastRadiology.XUnitTests
         CSTaskVar CompositionSectionSliceCodesCS = new CSTaskVar(
              (out CodeSystem cs) =>
                  cs = Self.CreateCodeSystem(
-                        "CompositionSectionSliceCodes",
+                        CompositionSectionSliceCodesName,
                         "Composition Section Slice Codes CodeSystem",
                         "Composition Section/Slice Codes/ValueSet",
                         "Composition Section Slice Codes code system",
                         Group_CommonCodesCS,
                         new ConceptDef[]
                         {
-                            new ConceptDef(Self.SectionCodeReport,
-                                new Definition()
-                                    .Line("Slicing CompositionSection Code - Report")
-                                ),
-                            new ConceptDef(Self.SectionCodeImpressions,
-                                new Definition()
-                                    .Line("Slicing CompositionSection Code - Impressions")
-                                ),
-                            new ConceptDef(Self.SectionCodeRelatedResources,
-                                new Definition()
-                                    .Line("Slicing CompositionSection Code - Related Resources")
-                                ),
-                            new ConceptDef(Self.SectionCodeRecommendations,
-                                new Definition()
-                                    .Line("Slicing CompositionSection Code - Recommendations")
-                                ),
-                            new ConceptDef(Self.SectionCodeFindings,
-                                new Definition()
-                                    .Line("Slicing CompositionSection Code - Findings")
-                                ),
+                            new ConceptDef()
+                                .SetCode(Self.SectionCodeReport)
+                                .SetDefinition("Slicing CompositionSection Code - Report")
+                                ,
+                            new ConceptDef()
+                                .SetCode(Self.SectionCodeImpressions)
+                                .SetDefinition("Slicing CompositionSection Code - Impressions")
+                                ,
+                            new ConceptDef()
+                                .SetCode(Self.SectionCodeRelatedResources)
+                                .SetDefinition("Slicing CompositionSection Code - Related Resources")
+                                ,
+                            new ConceptDef()
+                                .SetCode(Self.SectionCodeRecommendations)
+                                .SetDefinition("Slicing CompositionSection Code - Recommendations")
+                                ,
+                            new ConceptDef()
+                                .SetCode(Self.SectionCodeFindings)
+                                .SetDefinition("Slicing CompositionSection Code - Findings")
+                                ,
                        })
              );
     }

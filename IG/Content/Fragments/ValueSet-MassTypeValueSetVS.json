@@ -22,7 +22,29 @@
   "compose": {
     "include": [
       {
-        "system": "http://hl7.org/fhir/us/breast-radiology/CodeSystem/MassTypeCS"
+        "system": "http://hl7.org/fhir/us/breast-radiology/CodeSystem/MassTypeCS",
+        "concept": [
+          {
+            "code": "Mass",
+            "display": "Mass"
+          },
+          {
+            "code": "MassIntraductal",
+            "display": "Mass intraductal"
+          },
+          {
+            "code": "MassPartiallySolid",
+            "display": "Mass partially solid"
+          },
+          {
+            "code": "MassSkinATLASIsSkinLesion",
+            "display": "Mass skin ATLAS is skin lesion"
+          },
+          {
+            "code": "MassSolid",
+            "display": "Mass solid"
+          }
+        ]
       }
     ]
   }

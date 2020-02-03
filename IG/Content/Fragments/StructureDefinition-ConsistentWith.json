@@ -84,7 +84,7 @@
         "patternCodeableConcept": {
           "coding": [
             {
-              "system": "http://hl7.org/fhir/us/breast-radiology/CodeSystem/ObservationCodesUrl",
+              "system": "http://hl7.org/fhir/us/breast-radiology/CodeSystem/ObservationCodes",
               "code": "consistentWithObservation"
             }
           ]
@@ -138,7 +138,7 @@
         "patternCodeableConcept": {
           "coding": [
             {
-              "system": "http://hl7.org/fhir/us/breast-radiology/CodeSystem/ObservationComponentSliceCodesUrl",
+              "system": "http://hl7.org/fhir/us/breast-radiology/CodeSystem/ObservationComponentSliceCodes",
               "code": "consistentWithValue"
             }
           ]
@@ -196,7 +196,7 @@
         "patternCodeableConcept": {
           "coding": [
             {
-              "system": "http://hl7.org/fhir/us/breast-radiology/CodeSystem/ObservationComponentSliceCodesUrl",
+              "system": "http://hl7.org/fhir/us/breast-radiology/CodeSystem/ObservationComponentSliceCodes",
               "code": "consistentWithQualifier"
             }
           ]

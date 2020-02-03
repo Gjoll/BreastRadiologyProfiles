@@ -18,7 +18,8 @@ namespace BreastRadiology.XUnitTests
 
 Observation SectionFindingsRightBreast
          */
-        String ObservationCodesUrl => this.CodeSystemUrl("ObservationCodesUrl");
+        const String ObservationCodesName = "ObservationCodes";
+        String ObservationCodesUrl => this.CodeSystemUrl(ObservationCodesName);
 
         Coding ObservationCodeObservedItemGroup => new Coding(this.ObservationCodesUrl, "observedItemGroupObservation");
         Coding ObservationCodeObservedItemRegion => new Coding(this.ObservationCodesUrl, "observedItemRegionObservationObservation");
@@ -48,105 +49,105 @@ Observation SectionFindingsRightBreast
         CSTaskVar CodesCS = new CSTaskVar(
              (out CodeSystem cs) =>
                  cs = Self.CreateCodeSystem(
-                        "Codes",
-                        "Component Slice Codes CodeSystem",
-                        "Codes/ValueSet",
-                        "Component Slice Codes code system",
+                        ObservationCodesName,
+                        "Observation Codes CodeSystem",
+                        "Observation Codes/ValueSet",
+                        "Observation Codes code system",
                         Group_CommonCodesCS,
                         new ConceptDef[]
                         {
-                            new ConceptDef(Self.ObservationCodeObservedItemGroup,
-                                new Definition()
-                                    .Line("Observation.code to uniquely identifies an ObservedItemGroup observation")
-                                ),
-                            new ConceptDef(Self.ObservationCodeObservedItemRegion,
-                                new Definition()
-                                    .Line("Observation.code to uniquely identifies an ObservedItemRegion observation")
-                                ),
-                            new ConceptDef(Self.ObservationCodeMGFinding,
-                                new Definition()
-                                    .Line("Observation.code to uniquely identifies an MGFinding observation")
-                                ),
-                            new ConceptDef(Self.ObservationCodeAbnormalityCyst,
-                                new Definition()
-                                    .Line("Observation.code to uniquely identifies an AbnormalityCyst observation")
-                                ),
-                            new ConceptDef(Self.ObservationCodeAssociatedFeatures,
-                                new Definition()
-                                    .Line("Observation.code to uniquely identifies an AssociatedFeatures observation")
-                                ),
-                            new ConceptDef(Self.ObservationCodeMGAbnormalityArchitecturalDistortion,
-                                new Definition()
-                                    .Line("Observation.code to uniquely identifies an MGAbnormalityArchitecturalDistortion observation")
-                                ),
-                            new ConceptDef(Self.ObservationCodeConsistentWith,
-                                new Definition()
-                                    .Line("Observation.code to uniquely identifies a ConsistentWith observation")
-                                ),
-                            new ConceptDef(Self.ObservationCodeMGAbnormalityCalcification,
-                                new Definition()
-                                    .Line("Observation.code to uniquely identifies an MGAbnormalityCalcification observation")
-                                ),
-                            new ConceptDef(Self.ObservationCodeObservedFeature,
-                                new Definition()
-                                    .Line("Observation.code to uniquely identifies an ObservedFeature observation")
-                                ),
-                            new ConceptDef(Self.ObservationCodeAbnormalityDuct,
-                                new Definition()
-                                    .Line("Observation.code to uniquely identifies an ObservationCodeAbnormalityDuct observation")
-                                ),
-                            new ConceptDef(Self.ObservationCodeAbnormalityForeignObject,
-                                new Definition()
-                                    .Line("Observation.code to uniquely identifies an AbnormalityForeignObject observation")
-                                ),
-                            new ConceptDef(Self.ObservationCodeAbnormalityLymphNode,
-                                new Definition()
-                                    .Line("Observation.code to uniquely identifies an AbnormalityLymphNode observation")
-                                ),
-                            new ConceptDef(Self.ObservationCodeAbnormalityMass,
-                                new Definition()
-                                    .Line("Observation.code to uniquely identifies an AbnormalityMass observation")
-                                ),
-                            new ConceptDef(Self.ObservationCodeAbnormalityFibroadenoma,
-                                new Definition()
-                                    .Line("Observation.code to uniquely identifies an AbnormalityFibroadenoma observation")
-                                ),
-                            new ConceptDef(Self.ObservationCodeMGAbnormalityAsymmetry,
-                                new Definition()
-                                    .Line("Observation.code to uniquely identifies an MGAbnormalityAsymmetry observation")
-                                ),
-                            new ConceptDef(Self.ObservationCodeMGAbnormalityDensity,
-                                new Definition()
-                                    .Line("Observation.code to uniquely identifies an MGAbnormalityDensity observation")
-                                ),
-                            new ConceptDef(Self.ObservationCodeMGAbnormalityFatNecrosis,
-                                new Definition()
-                                    .Line("Observation.code to uniquely identifies an MGAbnormalityFatNecrosis observation")
-                                ),
-                            new ConceptDef(Self.ObservationCodeMGBreastDensity,
-                                new Definition()
-                                    .Line("Observation.code to uniquely identifies an MGBreastDensity observation")
-                                ),
-                            new ConceptDef(Self.ObservationCodeMRIFinding,
-                                new Definition()
-                                    .Line("Observation.code to uniquely identifies an MRIFinding observation")
-                                ),
-                            new ConceptDef(Self.ObservationCodeNMFinding,
-                                new Definition()
-                                    .Line("Observation.code to uniquely identifies an NMFinding observation")
-                                ),
-                            new ConceptDef(Self.ObservationCodeUSFinding,
-                                new Definition()
-                                    .Line("Observation.code to uniquely identifies a USFinding observation")
-                                ),
-                            new ConceptDef(Self.ObservationCodeFindingsLeftBreast,
-                                new Definition()
-                                    .Line("Observation.code to uniquely identifies a SectionFindingsLeftBreast observation")
-                                ),
-                            new ConceptDef(Self.ObservationCodeFindingsRightBreast,
-                                new Definition()
-                                    .Line("Observation.code to uniquely identifies a SectionFindingsRightBreast observation")
-                                ),
+                            new ConceptDef()
+                                .SetCode(Self.ObservationCodeObservedItemGroup)
+                                .SetDefinition("Observation.code to uniquely identifies an ObservedItemGroup observation")
+                                ,
+                            new ConceptDef()
+                                .SetCode(Self.ObservationCodeObservedItemRegion)
+                                .SetDefinition("Observation.code to uniquely identifies an ObservedItemRegion observation")
+                                ,
+                            new ConceptDef()
+                                .SetCode(Self.ObservationCodeMGFinding)
+                                .SetDefinition("Observation.code to uniquely identifies an MGFinding observation")
+                                ,
+                            new ConceptDef()
+                                .SetCode(Self.ObservationCodeAbnormalityCyst)
+                                .SetDefinition("Observation.code to uniquely identifies an AbnormalityCyst observation")
+                                ,
+                            new ConceptDef()
+                                .SetCode(Self.ObservationCodeAssociatedFeatures)
+                                .SetDefinition("Observation.code to uniquely identifies an AssociatedFeatures observation")
+                                ,
+                            new ConceptDef()
+                                .SetCode(Self.ObservationCodeMGAbnormalityArchitecturalDistortion)
+                                .SetDefinition("Observation.code to uniquely identifies an MGAbnormalityArchitecturalDistortion observation")
+                                ,
+                            new ConceptDef()
+                                .SetCode(Self.ObservationCodeConsistentWith)
+                                .SetDefinition("Observation.code to uniquely identifies a ConsistentWith observation")
+                                ,
+                            new ConceptDef()
+                                .SetCode(Self.ObservationCodeMGAbnormalityCalcification)
+                                .SetDefinition("Observation.code to uniquely identifies an MGAbnormalityCalcification observation")
+                                ,
+                            new ConceptDef()
+                                .SetCode(Self.ObservationCodeObservedFeature)
+                                .SetDefinition("Observation.code to uniquely identifies an ObservedFeature observation")
+                                ,
+                            new ConceptDef()
+                                .SetCode(Self.ObservationCodeAbnormalityDuct)
+                                .SetDefinition("Observation.code to uniquely identifies an ObservationCodeAbnormalityDuct observation")
+                                ,
+                            new ConceptDef()
+                                .SetCode(Self.ObservationCodeAbnormalityForeignObject)
+                                .SetDefinition("Observation.code to uniquely identifies an AbnormalityForeignObject observation")
+                                ,
+                            new ConceptDef()
+                                .SetCode(Self.ObservationCodeAbnormalityLymphNode)
+                                .SetDefinition("Observation.code to uniquely identifies an AbnormalityLymphNode observation")
+                                ,
+                            new ConceptDef()
+                                .SetCode(Self.ObservationCodeAbnormalityMass)
+                                .SetDefinition("Observation.code to uniquely identifies an AbnormalityMass observation")
+                                ,
+                            new ConceptDef()
+                                .SetCode(Self.ObservationCodeAbnormalityFibroadenoma)
+                                .SetDefinition("Observation.code to uniquely identifies an AbnormalityFibroadenoma observation")
+                                ,
+                            new ConceptDef()
+                                .SetCode(Self.ObservationCodeMGAbnormalityAsymmetry)
+                                .SetDefinition("Observation.code to uniquely identifies an MGAbnormalityAsymmetry observation")
+                                ,
+                            new ConceptDef()
+                                .SetCode(Self.ObservationCodeMGAbnormalityDensity)
+                                .SetDefinition("Observation.code to uniquely identifies an MGAbnormalityDensity observation")
+                                ,
+                            new ConceptDef()
+                                .SetCode(Self.ObservationCodeMGAbnormalityFatNecrosis)
+                                .SetDefinition("Observation.code to uniquely identifies an MGAbnormalityFatNecrosis observation")
+                                ,
+                            new ConceptDef()
+                                .SetCode(Self.ObservationCodeMGBreastDensity)
+                                .SetDefinition("Observation.code to uniquely identifies an MGBreastDensity observation")
+                                ,
+                            new ConceptDef()
+                                .SetCode(Self.ObservationCodeMRIFinding)
+                                .SetDefinition("Observation.code to uniquely identifies an MRIFinding observation")
+                                ,
+                            new ConceptDef()
+                                .SetCode(Self.ObservationCodeNMFinding)
+                                .SetDefinition("Observation.code to uniquely identifies an NMFinding observation")
+                                ,
+                            new ConceptDef()
+                                .SetCode(Self.ObservationCodeUSFinding)
+                                .SetDefinition("Observation.code to uniquely identifies a USFinding observation")
+                                ,
+                            new ConceptDef()
+                                .SetCode(Self.ObservationCodeFindingsLeftBreast)
+                                .SetDefinition("Observation.code to uniquely identifies a SectionFindingsLeftBreast observation")
+                                ,
+                            new ConceptDef()
+                                .SetCode(Self.ObservationCodeFindingsRightBreast)
+                                .SetDefinition("Observation.code to uniquely identifies a SectionFindingsRightBreast observation")
+                                ,
                        })
              );
     }

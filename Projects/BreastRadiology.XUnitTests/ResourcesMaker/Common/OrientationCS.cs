@@ -24,25 +24,17 @@ namespace BreastRadiology.XUnitTests
                      Group_CommonCodesCS,
                      new ConceptDef[]
                      {
-                    new ConceptDef("ParallelToSkin",
-                        "Parallel to skin",
-                        new Definition()
-                        .CiteStart(BiRadCitation)
-                            .Text("(historically, “wider-than-tall” or “horizontal”)")
-                            .Text("The long axis of the mass parallels the skin line. Masses that are only slightly obiquely oriented")
-                            .Text("might be considered parallel.")
-                        .CiteEnd()
-                        ),
-                    new ConceptDef("PerpendicularToSkin",
-                        "Perpendicular To Skin",
-                        new Definition()
-                        .CiteStart(BiRadCitation)
-                            .Text("(historically, \"isodense\")")
-                            .Text("The long axis of the mass does not lie parallel to the skin line. The anterior–posterior or vertical")
-                            .Text("dimension is greater than the transverse or horizontal dimension. These masses can also be")
-                            .Text("obliquely oriented to the skin line. Round masses are NOT PARALLEL in their orientation.")
-                        .CiteEnd()
-                        )
+                    new ConceptDef()
+                         .SetCode("ParallelToSkin", "Parallel to skin")
+                         .BiRadsDef("(historically, “wider-than-tall” or “horizontal”)",
+                                    "The long axis of the mass parallels the skin line. Masses that are only slightly obiquely oriented",
+                                     "might be considered parallel."),
+                    new ConceptDef()
+                         .SetCode("PerpendicularToSkin", "Perpendicular To Skin")
+                            .BiRadsDef("(historically, \"isodense\")",
+                                       "The long axis of the mass does not lie parallel to the skin line. The anterior–posterior or vertical",
+                                       "dimension is greater than the transverse or horizontal dimension. These masses can also be",
+                                       "obliquely oriented to the skin line. Round masses are NOT PARALLEL in their orientation.")
                      })
              );
 
