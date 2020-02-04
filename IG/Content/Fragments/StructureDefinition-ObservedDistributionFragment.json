@@ -1,0 +1,234 @@
+{
+  "resourceType": "StructureDefinition",
+  "extension": [
+    {
+      "url": "http://www.fragment.com/mapname",
+      "valueString": "ObservedDistribution Fragment"
+    },
+    {
+      "url": "http://www.fragment.com/Group",
+      "valueString": "Fragment/ObservedDistributionFragment"
+    },
+    {
+      "url": "http://www.fragment.com/isFragment",
+      "valueBoolean": true
+    },
+    {
+      "url": "http://www.fragment.com/maplink",
+      "valueString": "{\r\n  \"LinkType\": \"component\",\r\n  \"ShowChildren\": false,\r\n  \"Cardinality\": \"0..*\",\r\n  \"LinkTarget\": \"Observed distribution of abnormalities\",\r\n  \"ComponentHRef\": \"StructureDefinition-{SDName}-definitions.html#Observation.component:obsDistribution\",\r\n  \"Types\": \"CodeableConcept\",\r\n  \"References\": [\r\n    \"http://hl7.org/fhir/us/breast-radiology/ValueSet/ObservedDistributionVS\"\r\n  ]\r\n}"
+    },
+    {
+      "url": "http://www.fragment.com/maplink",
+      "valueString": "{\r\n  \"LinkType\": \"component\",\r\n  \"ShowChildren\": false,\r\n  \"Cardinality\": \"0..3\",\r\n  \"LinkTarget\": \"Observed Distribution Region Size\",\r\n  \"ComponentHRef\": \"StructureDefinition-{SDName}-definitions.html#Observation.component:obsDistRegionSize\",\r\n  \"Types\": \"Quantity or Range\",\r\n  \"References\": [\r\n    \"http://hl7.org/fhir/us/breast-radiology/ValueSet/UnitsOfLengthVS\"\r\n  ]\r\n}"
+    }
+  ],
+  "url": "http://hl7.org/fhir/us/breast-radiology/StructureDefinition/ObservedDistributionFragment",
+  "version": "Fragment",
+  "name": "ObservedDistributionFragment",
+  "title": "ObservedDistribution Fragment",
+  "status": "draft",
+  "description": "<b>Fragment that adds 'Observed Distribution' components to Observation.</b>",
+  "fhirVersion": "4.0.0",
+  "kind": "resource",
+  "abstract": true,
+  "type": "Observation",
+  "baseDefinition": "http://hl7.org/fhir/StructureDefinition/Observation",
+  "derivation": "constraint",
+  "differential": {
+    "element": [
+      {
+        "id": "Observation",
+        "path": "Observation",
+        "short": "Fragment that adds 'Observed Distribution' components to Observation.",
+        "base": {
+          "path": "Observation",
+          "min": 0,
+          "max": "*"
+        }
+      },
+      {
+        "id": "Observation.component",
+        "path": "Observation.component",
+        "slicing": {
+          "discriminator": [
+            {
+              "type": "pattern",
+              "path": "code"
+            }
+          ],
+          "rules": "open"
+        },
+        "base": {
+          "path": "Observation.component",
+          "min": 0,
+          "max": "*"
+        }
+      },
+      {
+        "id": "Observation.component:obsDistribution",
+        "path": "Observation.component",
+        "sliceName": "obsDistribution",
+        "short": "Observed distribution of abnormalities component",
+        "definition": "This slice contains an optional description of the distribution of a \ngroup of abnormalities. \nThe value of this component is a codeable concept chosen from the ObservedDistributionVS valueset.",
+        "comment": "This is one component of a group of components that comprise the observation.",
+        "min": 0,
+        "max": "*",
+        "base": {
+          "path": "Observation.component",
+          "min": 0,
+          "max": "*"
+        }
+      },
+      {
+        "id": "Observation.component:obsDistribution.code",
+        "path": "Observation.component.code",
+        "short": "Observed distribution of abnormalities component code",
+        "definition": "This code identifies the Observed distribution of abnormalities components.",
+        "min": 1,
+        "max": "1",
+        "base": {
+          "path": "Observation.component.code",
+          "min": 1,
+          "max": "1"
+        },
+        "patternCodeableConcept": {
+          "coding": [
+            {
+              "system": "http://hl7.org/fhir/us/breast-radiology/CodeSystem/ObservationComponentSliceCodes",
+              "code": "obsDistribution"
+            }
+          ]
+        }
+      },
+      {
+        "id": "Observation.component:obsDistribution.value[x]",
+        "path": "Observation.component.value[x]",
+        "short": "Observed distribution of abnormalities component value",
+        "definition": "Value is a codeable concept.",
+        "min": 1,
+        "max": "1",
+        "base": {
+          "path": "Observation.component.value[x]",
+          "min": 0,
+          "max": "1"
+        },
+        "type": [
+          {
+            "code": "CodeableConcept"
+          }
+        ],
+        "binding": {
+          "strength": "required",
+          "valueSet": "http://hl7.org/fhir/us/breast-radiology/ValueSet/ObservedDistributionVS"
+        }
+      },
+      {
+        "id": "Observation.component:obsDistRegionSize",
+        "path": "Observation.component",
+        "sliceName": "obsDistRegionSize",
+        "short": "Observed Distribution Region Size component",
+        "definition": "This component slice contains the size of an region inside of which there \nis a distribution of abnormalities.\n There may be one, two, or three values indicating a size of\n one dimension (length), two dimensions (area), or three dimensions (volume).\n Each dimension can be a quantity (i.e. 5), or a range (1 to 5).\n If the lower bound of the range is set but not the upper bound, then the size is {lower bound} or greater.\n If the upper bound of the range is set but not the lower bound, then the size is {upper bound} or less.",
+        "comment": "This is one component of a group of components that comprise the observation.",
+        "min": 0,
+        "max": "3",
+        "base": {
+          "path": "Observation.component",
+          "min": 0,
+          "max": "*"
+        }
+      },
+      {
+        "id": "Observation.component:obsDistRegionSize.code",
+        "path": "Observation.component.code",
+        "min": 1,
+        "max": "1",
+        "base": {
+          "path": "Observation.component.code",
+          "min": 1,
+          "max": "1"
+        },
+        "patternCodeableConcept": {
+          "coding": [
+            {
+              "system": "http://hl7.org/fhir/us/breast-radiology/CodeSystem/ObservationComponentSliceCodes",
+              "code": "obsSize"
+            }
+          ]
+        }
+      },
+      {
+        "id": "Observation.component:obsDistRegionSize.value[x]",
+        "path": "Observation.component.value[x]",
+        "slicing": {
+          "discriminator": [
+            {
+              "type": "type",
+              "path": "$this"
+            }
+          ],
+          "rules": "closed"
+        },
+        "min": 1,
+        "max": "1",
+        "base": {
+          "path": "Observation.component.value[x]",
+          "min": 0,
+          "max": "1"
+        },
+        "type": [
+          {
+            "code": "Quantity"
+          },
+          {
+            "code": "Range"
+          }
+        ]
+      },
+      {
+        "id": "Observation.component:obsDistRegionSize.value[x]:valueQuantity",
+        "path": "Observation.component.value[x]",
+        "sliceName": "valueQuantity",
+        "min": 0,
+        "max": "1",
+        "base": {
+          "path": "Observation.component.value[x]",
+          "min": 0,
+          "max": "1"
+        },
+        "type": [
+          {
+            "code": "Quantity"
+          }
+        ],
+        "patternQuantity": {
+          "system": "http://hl7.org/fhir/us/breast-radiology/ValueSet/UnitsOfLengthVS"
+        }
+      },
+      {
+        "id": "Observation.component:obsDistRegionSize.value[x]:valueRange",
+        "path": "Observation.component.value[x]",
+        "sliceName": "valueRange",
+        "min": 0,
+        "max": "1",
+        "base": {
+          "path": "Observation.component.value[x]",
+          "min": 0,
+          "max": "1"
+        },
+        "type": [
+          {
+            "code": "Range"
+          }
+        ],
+        "patternRange": {
+          "low": {
+            "system": "http://hl7.org/fhir/us/breast-radiology/ValueSet/UnitsOfLengthVS"
+          },
+          "high": {
+            "system": "http://hl7.org/fhir/us/breast-radiology/ValueSet/UnitsOfLengthVS"
+          }
+        }
+      }
+    ]
+  }
+}

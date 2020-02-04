@@ -21,7 +21,7 @@ namespace BreastRadiology.XUnitTests
                         "NotPreviouslySeen ValueSet",
                         "NotPreviouslySeen/ValueSet",
                         "NotPreviouslySeen value set.",
-                        Group_MGCodesVS,
+                        Group_CommonCodesVS,
                         Self.NotPreviouslySeenCS.Value()
                     )
             );

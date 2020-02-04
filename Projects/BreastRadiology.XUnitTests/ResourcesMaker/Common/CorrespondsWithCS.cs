@@ -21,7 +21,7 @@ namespace BreastRadiology.XUnitTests
                         "CorrespondsWith ValueSet",
                         "CorrespondsWith/ValueSet",
                         "CorrespondsWith value set.",
-                        Group_MGCodesVS,
+                        Group_CommonCodesVS,
                         Self.CorrespondsWithCS.Value()
                     )
             );

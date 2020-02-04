@@ -600,11 +600,11 @@ namespace BreastRadiology.XUnitTests
         public void SliceComponentSize(String sliceName,
             CodeableConcept componentCode,
             ValueSet units,
+            Int32 min,
+            String max,
             out ElementTreeSlice slice)
         {
-            this.StartComponentSliceing();
-
-            slice = this.AppendSlice("component", sliceName, 0, "1");
+            slice = this.AppendSlice("component", sliceName, min, max);
 
             // Fix component code
             this.SliceComponentCode(slice, sliceName, componentCode);

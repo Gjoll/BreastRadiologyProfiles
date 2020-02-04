@@ -223,6 +223,8 @@ namespace BreastRadiology.XUnitTests
                     .AddFragRef(Self.CommonComponentsFragment.Value())
                     .AddFragRef(Self.NotPreviouslySeenComponentsFragment.Value())
                     .AddFragRef(Self.ObservedCountComponentFragment.Value())
+                    .AddFragRef(Self.ObservedSizeComponentFragment.Value())
+                    .AddFragRef(Self.ObservedDistributionComponentFragment.Value())
                     .AddFragRef(Self.CorrespondsWithComponentFragment.Value())
                     .Description("Calcification Observation",
                         new Markdown()

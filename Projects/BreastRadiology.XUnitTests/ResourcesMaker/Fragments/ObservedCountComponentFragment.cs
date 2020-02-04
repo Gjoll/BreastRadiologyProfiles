@@ -17,7 +17,7 @@ namespace BreastRadiology.XUnitTests
         SDTaskVar ObservedCountComponentFragment = new SDTaskVar(
                (out StructureDefinition s) =>
                    {
-                       const String sliceName = "observedCount";
+                       const String sliceName = "obsCount";
                        SDefEditor e = Self.CreateFragment("ObservedCountFragment",
                                "ObservedCount Fragment",
                                "ObservedCount Fragment",
@@ -28,10 +28,13 @@ namespace BreastRadiology.XUnitTests
                            ;
                        s = e.SDef;
 
-                       e.SliceComponentSize(sliceName,
-                           Self.ComponentSliceCodeObservedCount.ToCodeableConcept(),
-                           Self.UnitsOfLengthVS.Value(),
-                           out ElementTreeSlice slice);
+                       e.StartComponentSliceing();
+                       ElementTreeSlice slice = e.AppendSlice("component", sliceName, 0, "1");
+                       // Fix component code
+                       e.SliceComponentCode(slice, sliceName, Self.ComponentSliceCodeObservedCount.ToCodeableConcept());
+                       ElementTreeNode valueXNode = e.SliceValueXByType(slice,
+                           sliceName,
+                           new string[] { "Quantity", "Range" });
 
                        ElementDefinition sliceDef = slice.ElementDefinition
                            .SetShort($"Observed Count component")

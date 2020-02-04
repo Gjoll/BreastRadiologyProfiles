@@ -20,11 +20,13 @@ namespace BreastRadiology.XUnitTests
         Coding ComponentSliceCodeConsistentWithValue => new Coding(this.ObservationComponentSliceCodesUrl, "consistentWithValue");
         Coding ComponentSliceCodeConsistentWithQualifier => new Coding(this.ObservationComponentSliceCodesUrl, "consistentWithQualifier");
         Coding ComponentSliceCodeCorrespondsWith => new Coding(this.ObservationComponentSliceCodesUrl, "correspondsWith");
-        Coding ComponentSliceCodeObservedChanges => new Coding(this.ObservationComponentSliceCodesUrl, "observedChanges");
+        Coding ComponentSliceCodeObservedChanges => new Coding(this.ObservationComponentSliceCodesUrl, "obsChanges");
         Coding ComponentSliceCodeMargin => new Coding(this.ObservationComponentSliceCodesUrl, "margin");
         Coding ComponentSliceCodeMGDensity => new Coding(this.ObservationComponentSliceCodesUrl, "mgDensity");
         Coding ComponentSliceCodeNotPreviouslySeen => new Coding(this.ObservationComponentSliceCodesUrl, "notPreviouslySeen");
-        Coding ComponentSliceCodeObservedCount => new Coding(this.ObservationComponentSliceCodesUrl, "observedCount");
+        Coding ComponentSliceCodeObservedSize => new Coding(this.ObservationComponentSliceCodesUrl, "obsSize");
+        Coding ComponentSliceCodeObservedDistribution => new Coding(this.ObservationComponentSliceCodesUrl, "obsDistribution");
+        Coding ComponentSliceCodeObservedCount => new Coding(this.ObservationComponentSliceCodesUrl, "obsCount");
         Coding ComponentSliceCodeObservedFeatureType => new Coding(this.ObservationComponentSliceCodesUrl, "featureType");
         Coding ComponentSliceCodeOrientation => new Coding(this.ObservationComponentSliceCodesUrl, "orientation");
         Coding ComponentSliceCodeShape => new Coding(this.ObservationComponentSliceCodesUrl, "shape");
@@ -105,6 +107,14 @@ namespace BreastRadiology.XUnitTests
                             new ConceptDef()
                                 .SetCode(Self.ComponentSliceCodeObservedCount)
                                 .SetDefinition("Slicing Component Code - ObservedCount")
+                                ,
+                            new ConceptDef()
+                                .SetCode(Self.ComponentSliceCodeObservedDistribution)
+                                .SetDefinition("Slicing Component Code - ObservedDistribution")
+                                ,
+                            new ConceptDef()
+                                .SetCode(Self.ComponentSliceCodeObservedSize)
+                                .SetDefinition("Slicing Component Code - ObservedSize")
                                 ,
                             new ConceptDef()
                                 .SetCode(Self.ComponentSliceCodeObservedFeatureType)

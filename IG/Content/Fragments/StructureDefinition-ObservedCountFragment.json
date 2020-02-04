@@ -15,7 +15,7 @@
     },
     {
       "url": "http://www.fragment.com/maplink",
-      "valueString": "{\r\n  \"LinkType\": \"component\",\r\n  \"ShowChildren\": false,\r\n  \"Cardinality\": \"0..1\",\r\n  \"LinkTarget\": \"Observed Count\",\r\n  \"ComponentHRef\": \"StructureDefinition-{SDName}-definitions.html#Observation.component:observedCount\",\r\n  \"Types\": \"Quantity or Range\",\r\n  \"References\": []\r\n}"
+      "valueString": "{\r\n  \"LinkType\": \"component\",\r\n  \"ShowChildren\": false,\r\n  \"Cardinality\": \"0..1\",\r\n  \"LinkTarget\": \"Observed Count\",\r\n  \"ComponentHRef\": \"StructureDefinition-{SDName}-definitions.html#Observation.component:obsCount\",\r\n  \"Types\": \"Quantity or Range\",\r\n  \"References\": []\r\n}"
     }
   ],
   "url": "http://hl7.org/fhir/us/breast-radiology/StructureDefinition/ObservedCountFragment",
@@ -61,9 +61,9 @@
         }
       },
       {
-        "id": "Observation.component:observedCount",
+        "id": "Observation.component:obsCount",
         "path": "Observation.component",
-        "sliceName": "observedCount",
+        "sliceName": "obsCount",
         "short": "Observed Count component",
         "definition": "This component slice contains the number of items observed.\n This can be a quantity (i.e. 5), or a range (1 to 5).\n If the lower bound of the range is set but not the upper bound, then it means {lower bound} or more.\n If the lower bound of the range is not set but not the upper bound is, then it means {upper bound} or less.",
         "comment": "This is one component of a group of components that comprise the observation.",
@@ -76,7 +76,7 @@
         }
       },
       {
-        "id": "Observation.component:observedCount.code",
+        "id": "Observation.component:obsCount.code",
         "path": "Observation.component.code",
         "min": 1,
         "max": "1",
@@ -89,13 +89,13 @@
           "coding": [
             {
               "system": "http://hl7.org/fhir/us/breast-radiology/CodeSystem/ObservationComponentSliceCodes",
-              "code": "observedCount"
+              "code": "obsCount"
             }
           ]
         }
       },
       {
-        "id": "Observation.component:observedCount.value[x]",
+        "id": "Observation.component:obsCount.value[x]",
         "path": "Observation.component.value[x]",
         "slicing": {
           "discriminator": [
@@ -121,51 +121,6 @@
             "code": "Range"
           }
         ]
-      },
-      {
-        "id": "Observation.component:observedCount.value[x]:valueQuantity",
-        "path": "Observation.component.value[x]",
-        "sliceName": "valueQuantity",
-        "min": 0,
-        "max": "1",
-        "base": {
-          "path": "Observation.component.value[x]",
-          "min": 0,
-          "max": "1"
-        },
-        "type": [
-          {
-            "code": "Quantity"
-          }
-        ],
-        "patternQuantity": {
-          "system": "http://hl7.org/fhir/us/breast-radiology/ValueSet/UnitsOfLengthVS"
-        }
-      },
-      {
-        "id": "Observation.component:observedCount.value[x]:valueRange",
-        "path": "Observation.component.value[x]",
-        "sliceName": "valueRange",
-        "min": 0,
-        "max": "1",
-        "base": {
-          "path": "Observation.component.value[x]",
-          "min": 0,
-          "max": "1"
-        },
-        "type": [
-          {
-            "code": "Range"
-          }
-        ],
-        "patternRange": {
-          "low": {
-            "system": "http://hl7.org/fhir/us/breast-radiology/ValueSet/UnitsOfLengthVS"
-          },
-          "high": {
-            "system": "http://hl7.org/fhir/us/breast-radiology/ValueSet/UnitsOfLengthVS"
-          }
-        }
       }
     ]
   }

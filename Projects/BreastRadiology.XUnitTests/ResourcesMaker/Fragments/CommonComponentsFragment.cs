@@ -29,8 +29,6 @@ namespace BreastRadiology.XUnitTests
                     )
                     .AddFragRef(Self.BreastBodyLocationRequiredFragment.Value())
                     .AddFragRef(Self.ObservedChangesComponentFragment.Value())
-                    .AddFragRef(Self.ObservedItemGroupFragment.Value())
-                    .AddFragRef(Self.ObservedItemRegionFragment.Value())
                     .AddFragRef(Self.BiRadComponentFragment.Value())
                     ;
                 s = e.SDef;

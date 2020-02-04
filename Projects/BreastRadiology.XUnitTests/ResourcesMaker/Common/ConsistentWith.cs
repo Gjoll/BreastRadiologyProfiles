@@ -73,7 +73,7 @@ namespace BreastRadiology.XUnitTests
                         "ConsistentWith ValueSet",
                         "ConsistentWith/ValueSet",
                         "ConsistentWith value set.",
-                        Group_MGCodesVS,
+                        Group_CommonCodesVS,
                         Self.ConsistentWithCS.Value()
                     )
             );
@@ -85,7 +85,7 @@ namespace BreastRadiology.XUnitTests
                         "ConsistentWithQualifier ValueSet",
                         "ConsistentWithQualifier/ValueSet",
                         "ConsistentWithQualifier value set.",
-                        Group_MGCodesVS,
+                        Group_CommonCodesVS,
                         Self.ConsistentWithQualifierCS.Value()
                     )
             );

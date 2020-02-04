@@ -21,9 +21,6 @@ Observation SectionFindingsRightBreast
         const String ObservationCodesName = "ObservationCodes";
         String ObservationCodesUrl => this.CodeSystemUrl(ObservationCodesName);
 
-        Coding ObservationCodeObservedItemGroup => new Coding(this.ObservationCodesUrl, "observedItemGroupObservation");
-        Coding ObservationCodeObservedItemRegion => new Coding(this.ObservationCodesUrl, "observedItemRegionObservationObservation");
-
         Coding ObservationCodeMGFinding => new Coding(this.ObservationCodesUrl, "mgFindingObservationObservation");
         Coding ObservationCodeAbnormalityCyst => new Coding(this.ObservationCodesUrl, "abnormalityCyst");
         Coding ObservationCodeAssociatedFeatures => new Coding(this.ObservationCodesUrl, "associatedFeaturesObservation");
@@ -56,14 +53,6 @@ Observation SectionFindingsRightBreast
                         Group_CommonCodesCS,
                         new ConceptDef[]
                         {
-                            new ConceptDef()
-                                .SetCode(Self.ObservationCodeObservedItemGroup)
-                                .SetDefinition("Observation.code to uniquely identifies an ObservedItemGroup observation")
-                                ,
-                            new ConceptDef()
-                                .SetCode(Self.ObservationCodeObservedItemRegion)
-                                .SetDefinition("Observation.code to uniquely identifies an ObservedItemRegion observation")
-                                ,
                             new ConceptDef()
                                 .SetCode(Self.ObservationCodeMGFinding)
                                 .SetDefinition("Observation.code to uniquely identifies an MGFinding observation")

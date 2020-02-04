@@ -56,7 +56,7 @@ namespace BreastRadiology.XUnitTests
                         "Recommendations ValueSet",
                         "Recommendations/ValueSet",
                         "Recommendations value set.",
-                        Group_MGCodesVS,
+                        Group_CommonCodesVS,
                         Self.RecommendationsCS.Value()
                     )
             );

@@ -29,7 +29,7 @@ namespace BreastRadiology.XUnitTests
 
                        e.StartComponentSliceing();
 
-                       e.ComponentSliceCodeableConcept("observedChanges",
+                       e.ComponentSliceCodeableConcept("obsChanges",
                            Self.ComponentSliceCodeObservedChanges.ToCodeableConcept(),
                            Self.ObservedChangesVS.Value(),
                            BindingStrength.Required,
