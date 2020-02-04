@@ -67,7 +67,7 @@ namespace BreastRadiology.XUnitTests
             (out CodeSystem cs) =>
                 cs = Self.CreateCodeSystem(
                         "DimensionCodeCodeSystemCS",
-                        "Consistent With CodeSystem",
+                        "DimensionCode CodeSystem",
                         "DimensionCode/CodeSystem",
                         "DimensionCode code system",
                         Group_CommonCodesCS,

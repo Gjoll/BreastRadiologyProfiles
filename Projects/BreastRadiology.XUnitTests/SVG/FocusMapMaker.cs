@@ -147,7 +147,7 @@ namespace BreastRadiology.XUnitTests
                                             .TrimStart("ValueSet-")
                                             .TrimEnd(".html")
                                             ;
-                                        extNode = new SENode(0, this.fhirColor, link.Cardinality?.ToString(), null, extUrl);
+                                        extNode = new SENode(0, this.fhirColor, link.Cardinality?.ToString(), extUrl);
                                         extNode.AddTextLine(name, extUrl);
                                     }
                                     extGroup.AppendNode(extNode);

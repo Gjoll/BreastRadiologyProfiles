@@ -82,19 +82,18 @@ namespace BreastRadiology.XUnitTests
             if (this.map.TryGetNode(mapNode.ResourceUrl, out var dummy) == false)
                 throw new Exception($"Referenced node {mapNode.ResourceUrl} not found in map");
 
-            SENode node = new SENode(0, color, null);
+            String hRef = null;
+            if (linkFlag)
+            {
+                String fragMapName = $"{mapNode.StructureName}-{mapNode.Name}.html";
+                hRef = $"./{fragMapName}";
+            }
+
+            SENode node = new SENode(0, color, null, hRef);
             foreach (String titlePart in mapNode.MapName)
             {
-                String hRef = null;
-                String title = null;
-                if (linkFlag)
-                {
-                    String fragMapName = $"{mapNode.StructureName}-{mapNode.Name}.html";
-                    hRef = $"./{fragMapName}";
-                    title = $"'{mapNode.Name}'";
-                }
                 String s = titlePart.Trim();
-                node.AddTextLine(s, hRef, title);
+                node.AddTextLine(s, hRef);
             }
 
             return node;

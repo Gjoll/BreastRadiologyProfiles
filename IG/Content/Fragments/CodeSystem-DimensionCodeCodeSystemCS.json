@@ -13,7 +13,7 @@
   ],
   "url": "http://hl7.org/fhir/us/breast-radiology/CodeSystem/DimensionCodeCodeSystemCS",
   "name": "DimensionCodeCodeSystemCS",
-  "title": "Consistent With CodeSystem",
+  "title": "DimensionCode CodeSystem",
   "description": "DimensionCode code system",
   "caseSensitive": true,
   "content": "complete",

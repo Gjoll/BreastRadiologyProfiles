@@ -105,7 +105,7 @@ namespace BreastRadiology.XUnitTests
         }
 
         [TestMethod]
-        public void A_BuildFragments()
+        public void B1_BuildFragments()
         {
             DateTime start = DateTime.Now;
             Trace.WriteLine("Starting A_BuildFragments");
@@ -134,7 +134,7 @@ namespace BreastRadiology.XUnitTests
         }
 
         [TestMethod]
-        public void B_BuildResources()
+        public void B2_BuildResources()
         {
             DateTime start = DateTime.Now;
             Trace.WriteLine("Starting B_BuildResources");
@@ -232,7 +232,7 @@ namespace BreastRadiology.XUnitTests
         }
 
         [TestMethod]
-        public void C_PatchIntroDocs()
+        public void B3_PatchIntroDocs()
         {
             DateTime start = DateTime.Now;
             Trace.WriteLine("Starting A_BuildFragments");
@@ -266,7 +266,7 @@ namespace BreastRadiology.XUnitTests
         }
 
         [TestMethod]
-        public void D_BuildGraphics()
+        public void B4_BuildGraphics()
         {
             DateTime start = DateTime.Now;
             Trace.WriteLine("Starting C_BuildGraphics");
@@ -327,7 +327,7 @@ namespace BreastRadiology.XUnitTests
         }
 
         [TestMethod]
-        public void E_BuildIG()
+        public void B5_BuildIG()
         {
             DateTime start = DateTime.Now;
             Trace.WriteLine("Starting D_BuildIG");
@@ -398,7 +398,7 @@ namespace BreastRadiology.XUnitTests
         }
 
         [TestMethod]
-        public void F_RunPublisher()
+        public void B6_RunPublisher()
         {
             DateTime start = DateTime.Now;
             Trace.WriteLine("Starting F_RunPublisher");
@@ -438,7 +438,7 @@ namespace BreastRadiology.XUnitTests
 
 
         [TestMethod]
-        public void Build()
+        public void A1_Build()
         {
             using (this.fc = new FileCleaner())
             {
@@ -447,19 +447,19 @@ namespace BreastRadiology.XUnitTests
                 this.fc?.Add(this.fragmentDir, "*.json");
                 this.fc?.Add(this.resourcesDir, "*.json");
 
-                this.A_BuildFragments();
-                this.B_BuildResources();
-                this.C_PatchIntroDocs();
-                this.D_BuildGraphics();
-                this.E_BuildIG();
+                this.B1_BuildFragments();
+                this.B2_BuildResources();
+                this.B3_PatchIntroDocs();
+                this.B4_BuildGraphics();
+                this.B5_BuildIG();
             }
         }
 
         [TestMethod]
-        public void BuildAndPublish()
+        public void A2_BuildAndPublish()
         {
-            this.Build();
-            this.F_RunPublisher();
+            this.A1_Build();
+            this.B6_RunPublisher();
         }
 
 

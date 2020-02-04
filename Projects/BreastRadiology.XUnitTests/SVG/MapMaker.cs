@@ -77,7 +77,7 @@ namespace BreastRadiology.XUnitTests
             if (linkFlag)
                 hRef = this.HRef(mapNode);
 
-            SENode node = new SENode(0, color, annotation, null, hRef);
+            SENode node = new SENode(0, color, annotation, hRef);
 
             foreach (String titlePart in mapNode.MapName)
             {
@@ -234,7 +234,7 @@ namespace BreastRadiology.XUnitTests
                     }
                     else
                     {
-                        refNode = new SENode(0, this.fhirColor, link.Cardinality?.ToString(), null, reference);
+                        refNode = new SENode(0, this.fhirColor, link.Cardinality?.ToString(), reference);
                         refNode.AddTextLine(reference.LastUriPart(), reference);
                     }
                     refGroup.AppendNode(refNode);

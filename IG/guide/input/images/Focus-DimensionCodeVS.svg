@@ -11,13 +11,17 @@
 </defs>
 <g>
 <g transform="translate(7.5 7.5)">
+<a href="./StructureDefinition-ObservedItemGroup.html" target="_top">
 <rect fill="LightCyan" stroke="Black" stroke-width="1.875" x="0" y="0" width="193.5" height="33.75" rx="3.75" ry="3.75" />
+</a>
 <a href="./StructureDefinition-ObservedItemGroup.html" target="_top">
 <text x="96.75" y="22.5" text-anchor="middle">ObservedItemGroup</text>
 </a>
 </g>
 <g transform="translate(7.5 48.75)">
+<a href="./StructureDefinition-ObservedItemRegion.html" target="_top">
 <rect fill="LightCyan" stroke="Black" stroke-width="1.875" x="0" y="0" width="203.99998" height="33.75" rx="3.75" ry="3.75" />
+</a>
 <a href="./StructureDefinition-ObservedItemRegion.html" target="_top">
 <text x="101.99999" y="22.5" text-anchor="middle">ObservedItemRegion</text>
 </a>

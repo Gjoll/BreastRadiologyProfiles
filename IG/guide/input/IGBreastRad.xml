@@ -228,7 +228,7 @@
       <reference>
         <reference value="CodeSystem/DimensionCodeCodeSystemCS" />
       </reference>
-      <name value="Consistent With CodeSystem" />
+      <name value="DimensionCode CodeSystem" />
       <description value="DimensionCode code system" />
       <exampleBoolean value="false" />
       <groupingId value="CommonCodesCS" />

@@ -311,11 +311,6 @@ namespace BreastRadiology.XUnitTests
                 SvgHyperLink l = this.doc.AddHyperLink(g);
                 l.Target = "_top";
                 l.HRef = node.HRef.ToString();
-                if (node.Title != null)
-                {
-                    SvgTitle title = this.doc.AddTitle(l);
-                    title.Value = node.Title;
-                }
                 square = this.doc.AddRect(l);
             }
             else
