@@ -36,6 +36,7 @@
             this.btnSelDest = new System.Windows.Forms.Button();
             this.btnOk = new System.Windows.Forms.Button();
             this.btnCancel = new System.Windows.Forms.Button();
+            this.btnMerge = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // tbSource
@@ -95,7 +96,7 @@
             // btnOk
             // 
             this.btnOk.Enabled = false;
-            this.btnOk.Location = new System.Drawing.Point(473, 65);
+            this.btnOk.Location = new System.Drawing.Point(713, 415);
             this.btnOk.Name = "btnOk";
             this.btnOk.Size = new System.Drawing.Size(75, 23);
             this.btnOk.TabIndex = 6;
@@ -105,7 +106,7 @@
             // 
             // btnCancel
             // 
-            this.btnCancel.Location = new System.Drawing.Point(16, 74);
+            this.btnCancel.Location = new System.Drawing.Point(16, 415);
             this.btnCancel.Name = "btnCancel";
             this.btnCancel.Size = new System.Drawing.Size(75, 23);
             this.btnCancel.TabIndex = 7;
@@ -113,11 +114,22 @@
             this.btnCancel.UseVisualStyleBackColor = true;
             this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
             // 
+            // btnMerge
+            // 
+            this.btnMerge.Location = new System.Drawing.Point(594, 7);
+            this.btnMerge.Name = "btnMerge";
+            this.btnMerge.Size = new System.Drawing.Size(75, 44);
+            this.btnMerge.TabIndex = 8;
+            this.btnMerge.Text = "Merge";
+            this.btnMerge.UseVisualStyleBackColor = true;
+            this.btnMerge.Click += new System.EventHandler(this.btnMerge_Click);
+            // 
             // SelectSpreadSheets
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.btnMerge);
             this.Controls.Add(this.btnCancel);
             this.Controls.Add(this.btnOk);
             this.Controls.Add(this.btnSelDest);
@@ -142,5 +154,6 @@
         private System.Windows.Forms.Button btnCancel;
         public System.Windows.Forms.TextBox tbSource;
         public System.Windows.Forms.TextBox tbDestination;
+        private System.Windows.Forms.Button btnMerge;
     }
 }

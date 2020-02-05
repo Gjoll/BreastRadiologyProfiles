@@ -1,4 +1,5 @@
-﻿using System;
+﻿using ExcelDataReader;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -32,17 +33,18 @@ namespace GGMerge
 
         private void tbDestination_TextChanged(object sender, EventArgs e)
         {
-            CheckPaths();
+            EnableButtons();
         }
 
         private void tbSource_TextChanged(object sender, EventArgs e)
         {
-            CheckPaths();
+            EnableButtons();
         }
 
-        void CheckPaths()
+        void EnableButtons()
         {
             this.btnOk.Enabled = false;
+            this.btnMerge.Enabled = false;
             if (String.IsNullOrEmpty(this.tbDestination.Text))
                 return;
             if (String.IsNullOrEmpty(this.tbSource.Text))
@@ -51,8 +53,9 @@ namespace GGMerge
                 return;
             if (File.Exists(this.tbSource.Text) == false)
                 return;
-            this.btnOk.Enabled = true;
 
+            this.btnOk.Enabled = true;
+            this.btnMerge.Enabled = true;
         }
 
         bool SelectSpreadSheetFile(String startPath, out String path)
@@ -87,5 +90,129 @@ namespace GGMerge
                 return;
             this.tbDestination.Text = path;
         }
+
+        DataSet dsSource;
+        DataSet dsDestination;
+        Int32 idMammoCol = -1;
+
+        Dictionary<String, DataRow> rowsSource = new Dictionary<string, DataRow>();
+        Dictionary<String, DataRow> rowsDestination = new Dictionary<string, DataRow>();
+
+        private void btnMerge_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                Merge(this.tbSource.Text, this.tbDestination.Text);
+            }
+            catch (Exception exception)
+            {
+                MessageBox.Show(exception.Message);
+            }
+        }
+
+        public void Merge(String pathSource,
+            String pathDestination)
+        {
+            this.dsSource = this.ReadSpreadSheet(pathSource);
+            this.dsDestination = this.ReadSpreadSheet(pathDestination);
+
+            DataTable tblSource = this.dsSource.Tables["Sheet3"];
+            if (tblSource == null)
+                throw new Exception("Table \"Sheet3\" not found");
+
+            DataTable tblDestination = this.dsDestination.Tables["Sheet3"];
+            if (tblSource == null)
+                throw new Exception("Table \"Sheet3\" not found");
+
+            String[] headingSource = GetHeadings(tblSource);
+            String[] headingDestination = GetHeadings(tblDestination);
+            Compare(headingSource, headingDestination);
+
+            LoadRows(tblSource, this.rowsSource);
+            LoadRows(tblDestination, this.rowsDestination);
+        }
+
+        void LoadRows(DataTable tbl,
+            Dictionary<String, DataRow> rows)
+        {
+            for (Int32 rowIndex = 1; rowIndex < tbl.Rows.Count; rowIndex++)
+            {
+                DataRow r = tbl.Rows[rowIndex++];
+                switch (r[this.idMammoCol])
+                {
+                    case DBNull dbNullValue:
+                        break;
+                    default:
+                        try
+                        {
+                            rows.Add(r[this.idMammoCol].ToString(), r);
+                        }
+                        catch (Exception e)
+                        {
+                            Console.WriteLine(e);
+                        }
+                        break;
+                }
+            }
+        }
+
+
+        void Compare(String[] headingSource, String[] headingDestination)
+        {
+            if (headingSource.Length != headingDestination.Length)
+                throw new Exception("Header's do not match");
+
+            for (Int32 i = 0; i < headingSource.Length; i++)
+                if (headingSource[i] != headingDestination[i])
+                    throw new Exception($"Heading's{i} {headingSource[i]} and {headingDestination[i]} do not match");
+        }
+
+        String[] GetHeadings(DataTable tblSource)
+        {
+            List<String> retVal = new List<string>();
+            DataRow row = tblSource.Rows[0];
+            Int32 i = 1;
+
+            void Read()
+            {
+                while (true)
+                {
+                    switch (row[i])
+                    {
+                        case DBNull dbNullValue: return;
+                        case String stringValue:
+                            retVal.Add(stringValue);
+                            if (stringValue == "ID_MAMMO")
+                                idMammoCol = i;
+                            break;
+                        default:
+                            throw new NotImplementedException();
+                    }
+
+                    i += 1;
+                }
+            }
+            Read();
+            return retVal.ToArray();
+        }
+
+        DataSet ReadSpreadSheet(String filePath)
+        {
+            Encoding.RegisterProvider(System.Text.CodePagesEncodingProvider.Instance);
+            Encoding enc1252 = CodePagesEncodingProvider.Instance.GetEncoding(1252);
+
+            using (var stream = File.Open(filePath, FileMode.Open, FileAccess.Read))
+            {
+                // Auto-detect format, supports:
+                //  - Binary Excel files (2.0-2003 format; *.xls)
+                //  - OpenXml Excel files (2007 format; *.xlsx)
+
+                using (var reader = ExcelReaderFactory.CreateReader(stream))
+                {
+                    return reader.AsDataSet();
+                }
+            }
+        }
+
     }
 }
