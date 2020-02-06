@@ -24,17 +24,58 @@ namespace BreastRadiology.XUnitTests
                      Group_CommonCodesCS,
                      new ConceptDef[]
                      {
-                    new ConceptDef()
-                         .SetCode("ParallelToSkin", "Parallel to skin")
-                         .BiRadsDef("(historically, “wider-than-tall” or “horizontal”)",
-                                    "The long axis of the mass parallels the skin line. Masses that are only slightly obiquely oriented",
-                                     "might be considered parallel."),
-                    new ConceptDef()
-                         .SetCode("PerpendicularToSkin", "Perpendicular To Skin")
-                            .BiRadsDef("(historically, \"isodense\")",
-                                       "The long axis of the mass does not lie parallel to the skin line. The anterior–posterior or vertical",
-                                       "dimension is greater than the transverse or horizontal dimension. These masses can also be",
-                                       "obliquely oriented to the skin line. Round masses are NOT PARALLEL in their orientation.")
+                         //+ Codes
+                         //+ ParallelToSkin
+                         //+ AutoGen
+                         new ConceptDef()
+                             .SetCode("ParallelToSkin")
+                             .SetDisplay("Parallel to skin")
+                             .SetDefinition("[PR] Parallel to skin")
+                             .MammoId("1508")
+                             .ValidModalities(Modalities.MG | Modalities.MRI | Modalities.NM | Modalities.US)
+                         //- AutoGen
+                             .BiRadsDef("(historically, “wider-than-tall” or “horizontal”)",
+                                 "The long axis of the mass parallels the skin line. Masses that are only slightly obiquely oriented",
+                                 "might be considered parallel."),
+                         //- ParallelToSkin
+                         //+ PerpendicularToSkin(notParallel)
+                         //+ AutoGen
+                         new ConceptDef()
+                             .SetCode("PerpendicularToSkin(notParallel)")
+                             .SetDisplay("Perpendicular to skin (not parallel)")
+                             .SetDefinition("[PR] Perpendicular to skin (not parallel)")
+                             .MammoId("1509")
+                             .ValidModalities(Modalities.MG | Modalities.MRI | Modalities.NM | Modalities.US)
+                         //- AutoGen
+                             .BiRadsDef("(historically, \"isodense\")",
+                                 "The long axis of the mass does not lie parallel to the skin line. The anterior–posterior or vertical",
+                                 "dimension is greater than the transverse or horizontal dimension. These masses can also be",
+                                 "obliquely oriented to the skin line. Round masses are NOT PARALLEL in their orientation.")
+                         ,
+                         //- PerpendicularToSkin(notParallel)
+                         //+ TallerThanWide
+                         //+ AutoGen
+                         new ConceptDef()
+                             .SetCode("TallerThanWide")
+                             .SetDisplay("Taller than wide")
+                             .SetDefinition("[PR] Taller than wide")
+                             .MammoId("1518")
+                             .ValidModalities(Modalities.MRI | Modalities.US)
+                         //- AutoGen
+                         ,
+                         //- TallerThanWide
+                         //+ WiderThanTall
+                         //+ AutoGen
+                         new ConceptDef()
+                             .SetCode("WiderThanTall")
+                             .SetDisplay("Wider than tall")
+                             .SetDefinition("[PR] Wider than tall")
+                             .MammoId("1517")
+                             .ValidModalities(Modalities.MRI | Modalities.US)
+                         //- AutoGen
+                         
+                         //- WiderThanTall
+                         //- Codes
                      })
              );
 
