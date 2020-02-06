@@ -503,7 +503,7 @@ namespace BreastRadiology.XUnitTests
             String filePath = Path.Combine(BaseDir,
                 "..",
                 "BRDocs",
-                "Breast-Reporting Value-sets GG V3.xlsx");
+                "BreastData.xlsx");
 
             Encoding.RegisterProvider(CodePagesEncodingProvider.Instance);
             Encoding enc1252 = CodePagesEncodingProvider.Instance.GetEncoding(1252);
