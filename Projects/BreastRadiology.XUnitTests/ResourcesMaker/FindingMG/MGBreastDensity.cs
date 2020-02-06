@@ -31,7 +31,7 @@ namespace BreastRadiology.XUnitTests
                              .SetCode("AlmostEntirelyFat")
                              .SetDisplay("Almost entirely fat")
                              .SetDefinition("[PR] Almost entirely fat")
-                             .MammoId("10001")
+                             .MammoId("X10001")
                              .ValidModalities(Modalities.MG)
                          //- AutoGen
                              .BiRadsDef("Unless an area containing cancer is not included in the image field of the mammogram,",
@@ -44,7 +44,7 @@ namespace BreastRadiology.XUnitTests
                              .SetCode("ScatteredAreasOfFibroglandularDensity")
                              .SetDisplay("Scattered areas of fibroglandular density")
                              .SetDefinition("[PR] Scattered areas of fibroglandular density")
-                             .MammoId("10002")
+                             .MammoId("X10002")
                              .ValidModalities(Modalities.MG)
                          //- AutoGen
                              .BiRadsDef("(historically, there are scattered fibroglandular densities).",
@@ -62,7 +62,7 @@ namespace BreastRadiology.XUnitTests
                              .SetCode("HetrogeneouslyDense")
                              .SetDisplay("Hetrogeneously dense ")
                              .SetDefinition("[PR] Hetrogeneously dense ")
-                             .MammoId("10003")
+                             .MammoId("X10003")
                              .ValidModalities(Modalities.MG)
                          //- AutoGen
                              .BiRadsDef("It is not uncommon for some areas in such breasts to be relatively dense while other",
@@ -82,7 +82,7 @@ namespace BreastRadiology.XUnitTests
                              .SetCode("ExtremelyDense")
                              .SetDisplay("Extremely dense")
                              .SetDefinition("[PR] Extremely dense")
-                             .MammoId("10004")
+                             .MammoId("X10004")
                              .ValidModalities(Modalities.MG)
                          //- AutoGen
                              .BiRadsDef("The sensitivity of mammography is lowest in this density category.",
