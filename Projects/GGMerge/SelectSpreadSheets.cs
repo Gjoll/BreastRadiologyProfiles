@@ -236,7 +236,7 @@ namespace GGMerge
         {
             for (Int32 rowIndex = 1; rowIndex < tbl.Rows.Count; rowIndex++)
             {
-                DataRow r = tbl.Rows[rowIndex++];
+                DataRow r = tbl.Rows[rowIndex];
                 switch (r[this.idMammoCol])
                 {
                     case DBNull dbNullValue:

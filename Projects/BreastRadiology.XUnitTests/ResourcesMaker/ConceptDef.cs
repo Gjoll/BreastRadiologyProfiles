@@ -47,6 +47,7 @@ namespace BreastRadiology.XUnitTests
         String[] definitionText;
         String[] biRadsText;
         MammoIDDescriptions.Description mammoIdDescription;
+        String mammoId = null;
 
         public ConceptDef()
         {
@@ -109,7 +110,16 @@ namespace BreastRadiology.XUnitTests
         }
         public ConceptDef BiRadsDef(params String[] lines)
         {
+
             this.biRadsText = lines;
+            if (String.IsNullOrEmpty((this.mammoId)))
+            {
+                ResourcesMaker.Self.ConversionWarn("ConceptDef",
+                    "BiRadsDef",
+                    "ACR text with no MammoId!");
+            }
+            else
+                GGPatcher.Self.PatchACRText(this.mammoId, lines);
             return this;
         }
 
@@ -117,6 +127,7 @@ namespace BreastRadiology.XUnitTests
         {
             if (MammoIDDescriptions.Self.TryGet(id, out mammoIdDescription) == false)
                 return this;
+            this.mammoId = id;
             return this;
         }
 

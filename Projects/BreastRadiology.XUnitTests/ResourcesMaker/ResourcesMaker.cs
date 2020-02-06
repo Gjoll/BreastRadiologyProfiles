@@ -323,6 +323,7 @@ namespace BreastRadiology.XUnitTests
                     this.fc?.Mark(path);
                 }
             }
+            GGPatcher.Self.Save();
         }
 
         IntroDoc CreateIntroDocVS(ValueSet binding)

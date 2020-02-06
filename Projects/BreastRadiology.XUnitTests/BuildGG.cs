@@ -474,17 +474,23 @@ namespace BreastRadiology.XUnitTests
             WriteIds(@"Common\Abnormalities\AbnormalityLymphNode.cs", "Type", "648", "649", "662", "665", "650", "651", "652", "666", "663");
             WriteIds(@"Common\Abnormalities\AbnormalityMass.cs", "Type", "58", "621", "697", "613", "608");
 
+            //WriteCS(ds, "Recommendation", @"Common\ServiceRecommendation.cs", "RecommendationsCS");
             WriteIds(@"Common\ServiceRecommendation.cs", "RecommendationsCS", Filter("Recommendations", "Recommendation"));
 
-            //WriteCS(ds, "Recommendation", @"Common\ServiceRecommendation.cs", "RecommendationsCS");
-            WriteCS(ds, "CorrspondsWith", @"Common\CorrespondsWithCS.cs", "CorrespondsWithCS");
-            WriteCS(ds, "ConsistentWith", @"Common\ConsistentWith.cs", "ConsistentWithCS");
-            WriteCS(ds, "ConsistentWithQualifier", @"Common\ConsistentWith.cs", "ConsistentWithQualifierCS");
-            WriteCS(ds, "ForeignBody", @"Common\Abnormalities\AbnormalityForeignObject.cs", "ForeignObjectCS");
-            WriteCS(ds, "NotPreviousSeen", @"Common\NotPreviouslySeenCS.cs", "NotPreviouslySeenCS");
-            WriteCS(ds, "Margin", @"Common\MarginCS.cs", "MarginCS");
-            WriteCS(ds, "Shape", @"Common\ShapeCS.cs", "ShapeCS");
-            WriteCS(ds, "ChangeFromPrior", @"Common\ObservedChangesCS.cs", "ChangesCS");
+            //WriteCS(ds, "CorrspondsWith", @"Common\CorrespondsWithCS.cs", "CorrespondsWithCS");
+            WriteIds(@"Common\CorrespondsWithCS.cs", "CorrespondsWithCS", Filter("Corresponds", "Corrosponds with"));
+
+            //WriteCS(ds, "ConsistentWith", @"Common\ConsistentWith.cs", "ConsistentWithCS");
+            WriteIds(@"Common\ConsistentWith.cs", "ConsistentWithCS", Filter("Classification Consistent with", "Consistent with"));
+
+            //WriteCS(ds, "ConsistentWithQualifier", @"Common\ConsistentWith.cs", "ConsistentWithQualifierCS");
+            WriteIds(@"Common\ConsistentWith.cs", "ConsistentWithQualifierCS", Filter("Classification Consistent with", "Consistent qualifier"));
+
+            //WriteCS(ds, "ForeignBody", @"Common\Abnormalities\AbnormalityForeignObject.cs", "ForeignObjectCS");
+            //WriteCS(ds, "NotPreviousSeen", @"Common\NotPreviouslySeenCS.cs", "NotPreviouslySeenCS");
+            //WriteCS(ds, "Margin", @"Common\MarginCS.cs", "MarginCS");
+            //WriteCS(ds, "Shape", @"Common\ShapeCS.cs", "ShapeCS");
+            //WriteCS(ds, "ChangeFromPrior", @"Common\ObservedChangesCS.cs", "ChangesCS");
 
             List<String> itemsToIgnore = new List<string>();
             itemsToIgnore.Add("ARCHITECTURAL DISTORTION");

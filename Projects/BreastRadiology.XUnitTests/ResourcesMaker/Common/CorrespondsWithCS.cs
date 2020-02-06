@@ -84,6 +84,10 @@ namespace BreastRadiology.XUnitTests
                                 .ValidModalities(Modalities.MG)
                                 .SetSnomedDescription("Procedure | 420131003 | Fluoroscopic mammary ductography " +
                                     "(Procedure)")
+                                .SetUMLS("A ductogram, also called a galactogram, is a special " +
+                                    "type of mammogram used for imaging the breast ducts. " +
+                                    "It can aid in diagnosing the cause of abnormal nipple " +
+                                    "discharges.")
                             //- AutoGen
                             //- Ductogram
                             ,
@@ -223,6 +227,11 @@ namespace BreastRadiology.XUnitTests
                                 .SetDefinition("[PR] Scinti")
                                 .MammoId("323")
                                 .ValidModalities(Modalities.MG)
+                                .SetUMLS("Scintigraphy definition is - a diagnostic technique " +
+                                    "in which a two-dimensional picture of internal body " +
+                                    "tissue is produced through the detection of radiation " +
+                                    "emitted by a radioactive substance administered into " +
+                                    "the body.")
                             //- AutoGen
                             //- Scinti
                             ,
@@ -386,7 +395,31 @@ namespace BreastRadiology.XUnitTests
                                 .ValidModalities(Modalities.MG | Modalities.MRI | Modalities.NM | Modalities.US)
                             //- AutoGen
                             //- US
-                            
+                            ,
+                            //+ Mammo
+                            //+ AutoGen
+                            new ConceptDef()
+                                .SetCode("Mammo")
+                                .SetDisplay("Mammo")
+                                .SetDefinition("[PR] Mammo")
+                                .MammoId("10")
+                                .ValidModalities(Modalities.MRI | Modalities.NM | Modalities.US)
+                            //- AutoGen
+                            ,
+                            //- Mammo
+                            //+ PostOperative
+                            //+ AutoGen
+                            new ConceptDef()
+                                .SetCode("PostOperative")
+                                .SetDisplay("Post operative")
+                                .SetDefinition("[PR] Post operative")
+                                .MammoId("325")
+                                .ValidModalities(Modalities.MG)
+                                .SetSnomedDescription("BodyStructure | 312285003 | Post-surgical breast " +
+                                    "structure")
+                            //- AutoGen
+                            ,
+                            //- PostOperative
                             //- CorrespondsWithCS
                         })
             );
