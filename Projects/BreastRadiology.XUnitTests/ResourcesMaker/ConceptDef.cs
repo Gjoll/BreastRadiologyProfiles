@@ -119,7 +119,7 @@ namespace BreastRadiology.XUnitTests
                     "ACR text with no MammoId!");
             }
             else
-                GGPatcher.Self.PatchACRText(this.mammoId, lines);
+                Global.BreastData.PatchACRText(this.mammoId, lines);
             return this;
         }
 

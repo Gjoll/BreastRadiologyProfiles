@@ -143,6 +143,14 @@
           {
             "code": "US",
             "display": "US"
+          },
+          {
+            "code": "Mammo",
+            "display": "Mammo"
+          },
+          {
+            "code": "PostOperative",
+            "display": "Post operative"
           }
         ]
       }

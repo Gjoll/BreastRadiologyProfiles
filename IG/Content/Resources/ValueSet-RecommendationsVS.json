@@ -441,6 +441,14 @@
           {
             "code": "VacuumBx",
             "display": "Vacuum Bx"
+          },
+          {
+            "code": "LateromedialObliqueSPELLING",
+            "display": "Lateromedial oblique SPELLING"
+          },
+          {
+            "code": "LateromedialViewSPELLING",
+            "display": "Lateromedial view SPELLING"
           }
         ]
       }

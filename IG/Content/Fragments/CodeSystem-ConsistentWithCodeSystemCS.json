@@ -52,12 +52,12 @@
     {
       "code": "Carcinoma",
       "display": "Carcinoma",
-      "definition": "[PR] Carcinoma\r\nCarcinoma is a type of cancer that starts in cells that make up the skin or the tissue lining organs.\r\nValid for the following modalities: MG US MRI NM."
+      "definition": "[PR] Carcinoma\r\nCarcinoma is a type of cancer that starts in cells that make up the skin or the tissue lining organs\r\nValid for the following modalities: MRI."
     },
     {
       "code": "CarcinomaKnown",
       "display": "Carcinoma known",
-      "definition": "[PR] Carcinoma known\r\nValid for the following modalities: MG US MRI."
+      "definition": "[PR] Carcinoma known\r\nValid for the following modalities: MRI."
     },
     {
       "code": "ClusterOfCysts",
@@ -212,12 +212,12 @@
     {
       "code": "IntracysticLesion",
       "display": "Intracystic lesion",
-      "definition": "[PR] Intracystic lesion\r\nIntracystic tumors of the breast are uncommon and, at the time of ultrasonography and aspiration cytology, it is difficult to distinguish cancer from a benign tumor. \r\nValid for the following modalities: US."
+      "definition": "[PR] Intracystic lesion\r\nIntracystic tumors of the breast are uncommon and, at the time of ultrasonography and aspiration cytology, it is difficult to distinguish cancer from a benign tumor. \r\nValid for the following modalities: US NM."
     },
     {
       "code": "IntramammaryNode",
       "display": "Intramammary node",
-      "definition": "[PR] Intramammary node\r\nValid for the following modalities: MG NM."
+      "definition": "[PR] Intramammary node\r\nIntramammary lymph nodes are defined as lymph nodes surrounded by breast tissue.\r\nValid for the following modalities: MG."
     },
     {
       "code": "Lipoma",

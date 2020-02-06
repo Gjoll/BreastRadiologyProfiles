@@ -17,7 +17,7 @@
   "description": "Recommendations code system",
   "caseSensitive": true,
   "content": "complete",
-  "count": 99,
+  "count": 101,
   "concept": [
     {
       "code": "3DImaging",
@@ -513,6 +513,16 @@
       "code": "VacuumBx",
       "display": "Vacuum Bx",
       "definition": "[PR] Vacuum Bx\r\nA vacuum assisted biopsy is a way of removing an area of abnormal cells from the breast tissue. A doctor or nurse uses a special needle attached to a vacuum device to remove the cells. The samples can then be examined under a microscope. This can show whether there is a cancer or another type of breast condition. Bx: Abbreviation for biopsy, the removal of a sample of tissue for examination or other study. Biopsies are most frequently studied by use of a microscope to check for possible abnormalities such as inflammation or cancer.\r\nValid for the following modalities: MG US."
+    },
+    {
+      "code": "LateromedialObliqueSPELLING",
+      "display": "Lateromedial oblique SPELLING",
+      "definition": "[PR] Lateromedial oblique SPELLING\r\nValid for the following modalities: MG US."
+    },
+    {
+      "code": "LateromedialViewSPELLING",
+      "display": "Lateromedial view SPELLING",
+      "definition": "[PR] Lateromedial view SPELLING\r\nValid for the following modalities: MG US."
     }
   ]
 }

@@ -39,6 +39,10 @@
           {
             "code": "w/differentialDiagnosis",
             "display": "w/differential diagnosis"
+          },
+          {
+            "code": "DifferentialDiagnosis",
+            "display": "Differential diagnosis"
           }
         ]
       }

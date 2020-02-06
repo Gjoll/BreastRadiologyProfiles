@@ -17,7 +17,7 @@
   "description": "ConsistentWithQualifier  code system",
   "caseSensitive": true,
   "content": "complete",
-  "count": 4,
+  "count": 5,
   "concept": [
     {
       "code": "LikelyRepresents",
@@ -38,6 +38,11 @@
       "code": "w/differentialDiagnosis",
       "display": "w/differential diagnosis",
       "definition": "[PR] w/differential diagnosis\r\nMore than one possibility for your diagnosis. The process of weighing the probability of one disease versus that of other diseases possibly accounting for a patient's illness.\r\nValid for the following modalities: MG US MRI NM."
+    },
+    {
+      "code": "DifferentialDiagnosis",
+      "display": "Differential diagnosis",
+      "definition": "[PR] Differential diagnosis\r\nMore than one possibility for your diagnosis. The process of weighing the probability of one disease versus that of other diseases possibly accounting for a patient's illness.\r\nValid for the following modalities: MG US MRI NM."
     }
   ]
 }

@@ -1,8 +1,10 @@
-﻿using Hl7.Fhir.Model;
+﻿using FhirKhit.Tools;
+using Hl7.Fhir.Model;
 using PreFhir;
 using System;
 using System.Collections.Generic;
 using System.Diagnostics;
+using System.IO;
 using System.Text;
 
 namespace BreastRadiology.XUnitTests
@@ -28,9 +30,6 @@ namespace BreastRadiology.XUnitTests
 
         public const String ContactUrl = "http://www.hl7.org/Special/committees/cic";
 
-
-
-
         public const String BaseFragmentUrl = "http://www.fragment.com/";
         public static String FragmentUrl = $"{BaseFragmentUrl}fragment";
         public static String IsFragmentExtensionUrl = $"{BaseFragmentUrl}isFragment";
@@ -50,10 +49,15 @@ namespace BreastRadiology.XUnitTests
             return $"StructureDefinition-" + "{SDName}" + $"-definitions.html#{e.ElementId}";
         }
 
-        //public static String Cardinality(ElementDefinition extDef)
-        //{
-        //    return $"{extDef.Min}..{extDef.Max}";
-        //}
+        public static ExcelData BreastData;
 
+        static Global()
+        {
+            String filePath = Path.Combine(DirHelper.FindParentDir("HL7"),
+                "BRDocs",
+                "BreastData.xlsx");
+
+            BreastData = new ExcelData(filePath, "Sheet3");
+        }
     }
 }
