@@ -16,6 +16,7 @@ using ExcelDataReader;
 using System.Data;
 using System.Globalization;
 using System.Linq;
+using Newtonsoft.Json.Linq;
 
 namespace BreastRadiology.XUnitTests
 {
@@ -351,6 +352,14 @@ namespace BreastRadiology.XUnitTests
             String csBlockName,
             params String[] penIds)
         {
+            WriteIds(outputCodePath, csBlockName, (IEnumerable<String>) penIds);
+        }
+
+        void WriteIds(String outputCodePath,
+            String csBlockName,
+            IEnumerable<String> penIdsEnum)
+        {
+            String[] penIds = penIdsEnum.ToArray();
             CodeBlockNested concept = null;
 
             CodeEditor editor = new CodeEditor();
@@ -434,11 +443,10 @@ namespace BreastRadiology.XUnitTests
                 AppIfNotNull(concept, "SetComment", row[16]);
                 AppIfNotNull(concept, "SetUMLS", row[17]);
             }
-
             editor.Save();
         }
 
-        String[] Filter(String listBoxName,
+        IEnumerable<String> Filter(String listBoxName,
             String structure)
         {
             List<String> retVal = new List<string>();
@@ -473,28 +481,22 @@ namespace BreastRadiology.XUnitTests
             WriteIds(@"Common\Abnormalities\AbnormalityFibroAdenoma.cs", "Type", "70", "695");
             WriteIds(@"Common\Abnormalities\AbnormalityLymphNode.cs", "Type", "648", "649", "662", "665", "650", "651", "652", "666", "663");
             WriteIds(@"Common\Abnormalities\AbnormalityMass.cs", "Type", "58", "621", "697", "613", "608");
-
-            //WriteCS(ds, "Recommendation", @"Common\ServiceRecommendation.cs", "RecommendationsCS");
             WriteIds(@"Common\ServiceRecommendation.cs", "RecommendationsCS", Filter("Recommendations", "Recommendation"));
-
-            //WriteCS(ds, "CorrspondsWith", @"Common\CorrespondsWithCS.cs", "CorrespondsWithCS");
             WriteIds(@"Common\CorrespondsWithCS.cs", "CorrespondsWithCS", Filter("Corresponds", "Corrosponds with"));
-
-            //WriteCS(ds, "ConsistentWith", @"Common\ConsistentWith.cs", "ConsistentWithCS");
             WriteIds(@"Common\ConsistentWith.cs", "ConsistentWithCS", Filter("Classification Consistent with", "Consistent with"));
-
-            //WriteCS(ds, "ConsistentWithQualifier", @"Common\ConsistentWith.cs", "ConsistentWithQualifierCS");
             WriteIds(@"Common\ConsistentWith.cs", "ConsistentWithQualifierCS", Filter("Classification Consistent with", "Consistent qualifier"));
-
-            //WriteCS(ds, "ForeignBody", @"Common\Abnormalities\AbnormalityForeignObject.cs", "ForeignObjectCS");
-            //WriteCS(ds, "NotPreviousSeen", @"Common\NotPreviouslySeenCS.cs", "NotPreviouslySeenCS");
-            //WriteCS(ds, "Margin", @"Common\MarginCS.cs", "MarginCS");
-            //WriteCS(ds, "Shape", @"Common\ShapeCS.cs", "ShapeCS");
-            //WriteCS(ds, "ChangeFromPrior", @"Common\ObservedChangesCS.cs", "ChangesCS");
+            WriteIds(@"Common\Abnormalities\AbnormalityForeignObject.cs", "ForeignObjectCS", Filter("Finding foreign body", "foreign body"));
+            WriteIds(@"Common\NotPreviouslySeenCS.cs", "NotPreviouslySeenCS", Filter("Not Prev Seen On", "not previous seen"));
+            WriteIds(@"Common\MarginCS.cs", "MarginCS", Filter("Profile Abnormality", "margin"));
+            WriteIds(@"Common\ShapeCS.cs", "ShapeCS", Filter("Profile Abnormality", "shape"));
+            WriteIds(@"Common\ObservedChangesCS.cs", "ChangesCS", Filter("Change From Prior", "Change From Prior"));
 
             List<String> itemsToIgnore = new List<string>();
             itemsToIgnore.Add("ARCHITECTURAL DISTORTION");
-            WriteCS(ds, "AssocFindings", @"Common\AssociatedFeatures\ObservedFeature.cs", "ObservedFeatureCS", itemsToIgnore);
+
+            //WriteCS(ds, "AssocFindings", @"Common\AssociatedFeatures\ObservedFeature.cs", "ObservedFeatureCS", itemsToIgnore);
+            WriteIds(@"Common\AssociatedFeatures\ObservedFeature.cs", "ObservedFeatureCS",
+                Filter("Associated findings", "Associated findings").Remove(itemsToIgnore));
         }
         public DataSet ReadGregDS()
         {
@@ -518,5 +520,18 @@ namespace BreastRadiology.XUnitTests
                 }
             }
         }
+    }
+    public static class Extensions
+    {
+        public static IEnumerable<String> Remove(this IEnumerable<String> values,
+            List<String> itemsToIgnore)
+        {
+            foreach (String value in values)
+            {
+                if (itemsToIgnore.Contains(value.Trim().ToUpper()) == false)
+                    yield return value;
+            }
+        }
+
     }
 }

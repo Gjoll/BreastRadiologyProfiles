@@ -1288,7 +1288,26 @@ namespace BreastRadiology.XUnitTests
                                     "in the veins, usually of the legs. Venous stasis " +
                                     "is a risk factor for forming blood clots in veins")
                             //- AutoGen
+                            ,
                             //- VenousStasis
+                            //+ PhyllodesTumor(SPELLINGREMOVEI)
+                            //+ AutoGen
+                            new ConceptDef()
+                                .SetCode("PhyllodesTumor(SPELLINGREMOVEI)")
+                                .SetDisplay("Phyllodes tumor (SPELLING REMOVE i)")
+                                .SetDefinition("[PR] Phyllodes tumor (SPELLING REMOVE i)")
+                                .MammoId("560")
+                                .ValidModalities(Modalities.MRI | Modalities.US)
+                                .SetSnomedDescription("ClinicalFinding | 712989008 | Phyllodes tumor of " +
+                                    "breast (Disorder) | D48.6 |")
+                                .SetUMLS("Phyllodes tumor. Phyllodes tumors (from Greek: phullon " +
+                                    "leaf), also cystosarcoma phyllodes, cystosarcoma " +
+                                    "phylloides and phylloides tumor, are typically large, " +
+                                    "fast-growing masses that form from the periductal " +
+                                    "stromal cells of the breast.")
+                            //- AutoGen
+                            ,
+                            //- PhyllodesTumor(SPELLINGREMOVEI)
                             //- ConsistentWithCS
                         })
             );

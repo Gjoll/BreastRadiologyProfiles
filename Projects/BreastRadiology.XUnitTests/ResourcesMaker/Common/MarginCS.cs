@@ -47,6 +47,9 @@ namespace BreastRadiology.XUnitTests
                          .MammoId("191")
                          .ValidModalities(Modalities.US)
                          .SetComment("NOT FOUND")
+                         .SetUMLS("Some or all of the margin has sharp corners, often " +
+                             "forming acute angles. The margin of the mass is not " +
+                             "circumscribed.")
                      //- AutoGen
                          .BiRadsDef(
                              "Some or all of the margin has sharp corners, often forming acute angles, but the significant",
@@ -60,10 +63,16 @@ namespace BreastRadiology.XUnitTests
                          .SetDisplay("Circumscribed margin")
                          .SetDefinition("[PR] Circumscribed margin")
                          .MammoId("109")
-                         .ValidModalities(Modalities.MG | Modalities.NM | Modalities.US)
+                         .ValidModalities(Modalities.MG | Modalities.MRI | Modalities.US)
                          .SetSnomedCode("129738007")
                          .SetSnomedDescription("ClinicalFinding | Lesion with circumscribed margin " +
                              "(Finding)")
+                         .SetUMLS("A circumscribed margin is one that is well defined, " +
+                             "with an abrupt transition between the lesion and " +
+                             "the surrounding tissue. For US, to describe a mass " +
+                             "as circumscribed, its entire margin must be sharply " +
+                             "defined. Most circumscribed lesions have round or " +
+                             "oval shapes.")
                      //- AutoGen
                          .BiRadsDef(
                             "(historically, \"well-defined\" or \"sharply-defined\")",
@@ -82,6 +91,11 @@ namespace BreastRadiology.XUnitTests
                          .ValidModalities(Modalities.MG | Modalities.US)
                          .SetSnomedCode("129741003")
                          .SetSnomedDescription("ClinicalFinding | Lesion with indistinct margin (Finding)")
+                         .SetUMLS("Indistinct margin There is no clear demarcation of " +
+                             "the entire margin or any portion of the margin from " +
+                             "the surrounding tissue. The boundary is poorly defined, " +
+                             "and the significant feature is that the mass is not " +
+                             "circumscribed.")
                      //- AutoGen
                             .BiRadsDef(
                             "There is no clear demarcation of the entire margin or any portion of the margin from the",
@@ -99,6 +113,10 @@ namespace BreastRadiology.XUnitTests
                          .SetDefinition("[PR] Intraductal extension")
                          .MammoId("201")
                          .ValidModalities(Modalities.US)
+                         .SetUMLS("Intraductal tumor extension is a characteristic feature " +
+                             "of primary breast carcinoma, and is an important " +
+                             "consideration in patients undergoing breast conservative " +
+                             "surgery.")
                      //- AutoGen
                      ,
                      //- IntraductalExtension
@@ -111,6 +129,9 @@ namespace BreastRadiology.XUnitTests
                          .MammoId("20")
                          .ValidModalities(Modalities.MG | Modalities.MRI | Modalities.US)
                          .SetComment("NOT FOUND")
+                         .SetUMLS("Edges around the soft tissue that don't look smooth. " +
+                             "Indicative of some sort of growth or mass rather " +
+                             "than a cyst.")
                      //- AutoGen
                      ,
                      //- IrregularMargin
@@ -123,6 +144,9 @@ namespace BreastRadiology.XUnitTests
                          .MammoId("19")
                          .ValidModalities(Modalities.US)
                          .SetComment("NOT FOUND")
+                         .SetUMLS("The edge of the mass has broad bulges. Much like " +
+                             "a 6 or 8 leaf clover. The edge of all of the leaves " +
+                             "would be lobulated.")
                      //- AutoGen
                      ,
                      //- MacrolobulatedMargin
@@ -137,6 +161,9 @@ namespace BreastRadiology.XUnitTests
                          .SetSnomedCode("129739004")
                          .SetSnomedDescription("ClinicalFinding | Lesion with microlobulated margin " +
                              "(Finding)")
+                         .SetUMLS("The margin is characterized by short-cycle undulations " +
+                             "or scalloped appearance,and the margin of the mass " +
+                             "is not circumscribed.")
                      //- AutoGen
                          .BiRadsDef(
                             "The margin is characterized by short-cycle undulations, but the significant feature is that",
@@ -154,6 +181,9 @@ namespace BreastRadiology.XUnitTests
                          .SetSnomedDescription("ClinicalFinding | 129738007 | Lesion with circumscribed " +
                              "margin (Finding)")
                          .SetComment("NEED NOT")
+                         .SetUMLS("Microbulated or Irregular masses, a margin that is " +
+                             "not well defined. There is not a clear demarcation " +
+                             "between the mass and the surrounding tissue.")
                      //- AutoGen
                      ,
                      //- NonCircumscribedMargin
@@ -182,6 +212,9 @@ namespace BreastRadiology.XUnitTests
                          .MammoId("18")
                          .ValidModalities(Modalities.MRI | Modalities.US)
                          .SetComment("NOT FOUND")
+                         .SetUMLS("The edges of the mass have a smooth appearance and " +
+                             "distinct separation between the mass and surrounding " +
+                             "tissue.")
                      //- AutoGen
                      ,
                      //- SmoothMargin
@@ -195,11 +228,46 @@ namespace BreastRadiology.XUnitTests
                          .ValidModalities(Modalities.MG | Modalities.MRI | Modalities.US)
                          .SetSnomedCode("129742005")
                          .SetSnomedDescription("ClinicalFinding | Lesion with spiculated margin (Finding)")
+                         .SetUMLS("The edges of the mass have sharp \"spikes\" coming out " +
+                             "from it, and the lines radiate from the mass. The " +
+                             "margin of the mass is not circumscribed.")
                      //- AutoGen
                          .BiRadsDef(
                             "The margin is characterized by sharp lines radiating from the mass, often a sign of malignancy,",
                             "but the significant feature is that the margin of the mass is NOT CIRCUMSCRIBED.")
+                     ,
                      //- SpiculatedMargin
+                     //+ MacrolobulatedMargin
+                     //+ AutoGen
+                     new ConceptDef()
+                         .SetCode("MacrolobulatedMargin")
+                         .SetDisplay("Macrolobulated margin")
+                         .SetDefinition("[PR] Macrolobulated margin")
+                         .MammoId("218")
+                         .ValidModalities(Modalities.MG)
+                         .SetUMLS("Smooth margin with distinct separation between the " +
+                             "mass and the surrounding border. They are  oval-shaped " +
+                             "and  have a wide rather than tall formation.")
+                     //- AutoGen
+                     ,
+                     //- MacrolobulatedMargin
+                     //+ ObscuredMagin
+                     //+ AutoGen
+                     new ConceptDef()
+                         .SetCode("ObscuredMagin")
+                         .SetDisplay("Obscured magin")
+                         .SetDefinition("[PR] Obscured magin")
+                         .MammoId("28")
+                         .ValidModalities(Modalities.MG)
+                         .SetSnomedCode("129740002")
+                         .SetSnomedDescription("ClinicalFinding | Lesion with obscured margin (Finding)")
+                         .SetUMLS("It is hidden by superimposed or adjacent fibroglandular " +
+                             "tissue. This is used primarily when some of the margin " +
+                             "of the mass is circumscribed, but the rest (more " +
+                             "than 25%) is hidden.")
+                     //- AutoGen
+                     ,
+                     //- ObscuredMagin
                      //- MarginCS
                      })
                  );

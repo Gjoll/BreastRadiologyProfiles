@@ -58,6 +58,10 @@ namespace BreastRadiology.XUnitTests
                                 .ValidModalities(Modalities.MG | Modalities.MRI | Modalities.NM | Modalities.US)
                                 .SetSnomedDescription("Procedure | 420131003 | Fluoroscopic mammary ductography " +
                                     "(Procedure)")
+                                .SetUMLS("A medical imaging used to view breast ducts. It can " +
+                                    "aid in diagnosing the cause of an abnormal nipple " +
+                                    "discharge and is valuable in diagnosing intraductal " +
+                                    "papillomas and other conditions.")
                             //- AutoGen
                             //- Ductogram
                             ,
@@ -69,6 +73,8 @@ namespace BreastRadiology.XUnitTests
                                 .SetDefinition("[PR] Mammogram")
                                 .MammoId("281")
                                 .ValidModalities(Modalities.MG | Modalities.MRI | Modalities.NM | Modalities.US)
+                                .SetUMLS("An X-Ray picture of the breast. It's used to look " +
+                                    "for early signs of breast cancer.")
                             //- AutoGen
                             //- Mammogram
                             ,
@@ -82,6 +88,10 @@ namespace BreastRadiology.XUnitTests
                                 .ValidModalities(Modalities.MG | Modalities.MRI | Modalities.NM | Modalities.US)
                                 .SetSnomedDescription("Procedure | 241615005 | Magnetic resonance imaging " +
                                     "of breast (Procedure)")
+                                .SetUMLS("Magnetic Resonance Imaging (MRI) is a test that uses " +
+                                    "powerful magnets, radio waves, and a computer to " +
+                                    "make detailed pictures inside your body. It helps " +
+                                    "a doctor to diagnose a disease or injury.")
                             //- AutoGen
                             //- MRI
                             ,
@@ -104,6 +114,9 @@ namespace BreastRadiology.XUnitTests
                                 .SetDefinition("[PR] Scintimammography")
                                 .MammoId("285")
                                 .ValidModalities(Modalities.NM)
+                                .SetUMLS("This is a type of breast imaging that is used to " +
+                                    "detect cancer cells in the breasts of some women " +
+                                    "who have had abnormal mammograms.")
                             //- AutoGen
                             //- Scintimammography
                             ,
@@ -117,6 +130,10 @@ namespace BreastRadiology.XUnitTests
                                 .ValidModalities(Modalities.MG | Modalities.MRI | Modalities.NM | Modalities.US)
                                 .SetSnomedDescription("Procedure | 47079000 | Ultrasonography of breast " +
                                     "(Procedure)")
+                                .SetUMLS("Uses soundwaves to develop ultrasound images. This " +
+                                    "information is relayed in real time to produce images " +
+                                    "on a computer screen. This can help diagnose and " +
+                                    "treat disease or conditions.")
                             //- AutoGen
                             //- Ultrasound
                             

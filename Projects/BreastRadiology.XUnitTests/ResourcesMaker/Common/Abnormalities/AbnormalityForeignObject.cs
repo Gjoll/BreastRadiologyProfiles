@@ -50,6 +50,11 @@ namespace BreastRadiology.XUnitTests
                                 .SetSnomedCode("470272007")
                                 .SetSnomedDescription("PhysicalObject | Implantable lesion localization " +
                                     "marker (Object)")
+                                .SetUMLS("The biopsy clip serves as a marker documenting where " +
+                                    "the tissue was sampled in the breast. If the original " +
+                                    "abnormality is no longer visible by imaging after " +
+                                    "the biopsy, the marker is the only guide we have " +
+                                    "to know where the diseased tissue was sampled.")
                             //- AutoGen
                             //- BiopsyClip
                             ,
@@ -64,6 +69,16 @@ namespace BreastRadiology.XUnitTests
                                 .SetSnomedCode("470272007")
                                 .SetSnomedDescription("PhysicalObject | Implantable lesion localization " +
                                     "marker (Object)")
+                                .SetUMLS("Tissue marker placement after image-guided breast " +
+                                    "biopsy has become a routine component of clinical " +
+                                    "practice. Marker placement distinguishes multiple " +
+                                    "biopsied lesions within the same breast, prevents " +
+                                    "re-biopsy of benign lesions, enables multi-modality " +
+                                    "correlation, guides pre-operative localization and " +
+                                    "helps confirm surgical target removal. Numerous breast " +
+                                    "tissue markers are currently available, with varied " +
+                                    "shapes, composition, and associated bio-absorbable " +
+                                    "components.")
                             //- AutoGen
                             //- BreastMarker
                             ,
@@ -376,6 +391,20 @@ namespace BreastRadiology.XUnitTests
                                 .SetSnomedCode("470272007")
                                 .SetSnomedDescription("PhysicalObject | Implantable lesion localization " +
                                     "marker (Object)")
+                                .SetUMLS("Tissue marker placement after image-guided breast " +
+                                    "biopsy has become a routine component of clinical " +
+                                    "practice. Marker placement distinguishes multiple " +
+                                    "biopsied lesions within the same breast, prevents " +
+                                    "re-biopsy of benign lesions, enables multi-modality " +
+                                    "correlation, guides pre-operative localization and " +
+                                    "helps confirm surgical target removal. Numerous breast " +
+                                    "tissue markers are currently available, with varied " +
+                                    "shapes, composition, and associated bio-absorbable " +
+                                    "components. This review serves to familiarize the " +
+                                    "breast interventionalist with the tissue markers " +
+                                    "most widely available in the United States today " +
+                                    "and to provide guidance regarding selection of appropriate " +
+                                    "markers for various clinical settings.")
                             //- AutoGen
                             ,
                             //- BiopsyClips
@@ -390,6 +419,20 @@ namespace BreastRadiology.XUnitTests
                                 .SetSnomedCode("470272007")
                                 .SetSnomedDescription("PhysicalObject | Implantable lesion localization " +
                                     "marker (Object)")
+                                .SetUMLS("Tissue marker placement after image-guided breast " +
+                                    "biopsy has become a routine component of clinical " +
+                                    "practice. Marker placement distinguishes multiple " +
+                                    "biopsied lesions within the same breast, prevents " +
+                                    "re-biopsy of benign lesions, enables multi-modality " +
+                                    "correlation, guides pre-operative localization and " +
+                                    "helps confirm surgical target removal. Numerous breast " +
+                                    "tissue markers are currently available, with varied " +
+                                    "shapes, composition, and associated bio-absorbable " +
+                                    "components. This review serves to familiarize the " +
+                                    "breast interventionalist with the tissue markers " +
+                                    "most widely available in the United States today " +
+                                    "and to provide guidance regarding selection of appropriate " +
+                                    "markers for various clinical settings.")
                             //- AutoGen
                             ,
                             //- BreastMarkers
