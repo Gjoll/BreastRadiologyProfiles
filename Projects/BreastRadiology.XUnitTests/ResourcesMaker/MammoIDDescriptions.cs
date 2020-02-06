@@ -112,6 +112,9 @@ namespace BreastRadiology.XUnitTests
                     "A tumor of the lung that has invaded the chest wall. " +
                     ""
                 });
+            Add("261", 
+                "", 
+                new String[0]);
             Add("262", 
                 "", 
                 new String[]
@@ -138,6 +141,12 @@ namespace BreastRadiology.XUnitTests
                     "by tumor cells or an inflammatory process within " +
                     "the breast or axilla."
                 });
+            Add("259", 
+                "", 
+                new String[0]);
+            Add("238", 
+                "", 
+                new String[0]);
             Add("478", 
                 "", 
                 new String[]
@@ -158,6 +167,9 @@ namespace BreastRadiology.XUnitTests
                     "cancer, nipple retraction occurs when the tumor attacks " +
                     "the duct behind the nipple, pulling it in."
                 });
+            Add("257", 
+                "", 
+                new String[0]);
             Add("254", 
                 "", 
                 new String[]
@@ -166,6 +178,12 @@ namespace BreastRadiology.XUnitTests
                     "large enough to invade into the pectoralis muscle. " +
                     " "
                 });
+            Add("256", 
+                "", 
+                new String[0]);
+            Add("253", 
+                "", 
+                new String[0]);
             Add("479", 
                 "", 
                 new String[]
@@ -187,6 +205,9 @@ namespace BreastRadiology.XUnitTests
                     "transparent fluid that contains protein, but no blood " +
                     "cells or pus."
                 });
+            Add("252", 
+                "", 
+                new String[0]);
             Add("473", 
                 "", 
                 new String[]
@@ -207,6 +228,9 @@ namespace BreastRadiology.XUnitTests
                     "retraction are more obvious when a woman raises her " +
                     "arms above her head or leans forward."
                 });
+            Add("250", 
+                "", 
+                new String[0]);
             Add("485", 
                 "", 
                 new String[]
@@ -379,6 +403,24 @@ namespace BreastRadiology.XUnitTests
                     "biopsy.  Mammograms may be used in this way to see " +
                     "how well the cancer is responding to treatment. "
                 });
+            Add("790", 
+                "", 
+                new String[0]);
+            Add("791", 
+                "", 
+                new String[0]);
+            Add("174", 
+                "", 
+                new String[0]);
+            Add("173", 
+                "", 
+                new String[0]);
+            Add("193", 
+                "", 
+                new String[0]);
+            Add("194", 
+                "", 
+                new String[0]);
             Add("202", 
                 "", 
                 new String[]
@@ -387,6 +429,9 @@ namespace BreastRadiology.XUnitTests
                     "equal to fibroglandular tissue. [TIRADS]: Increased " +
                     "echogenicity relative to thyroid tissue"
                 });
+            Add("192", 
+                "", 
+                new String[0]);
             Add("703", 
                 "", 
                 new String[]
@@ -403,6 +448,18 @@ namespace BreastRadiology.XUnitTests
                     "calcification with at least 5 calcifications occupying " +
                     "a small volume of tissue."
                 });
+            Add("752", 
+                "", 
+                new String[0]);
+            Add("753", 
+                "", 
+                new String[0]);
+            Add("754", 
+                "", 
+                new String[0]);
+            Add("755", 
+                "", 
+                new String[0]);
             Add("756", 
                 "", 
                 new String[]
@@ -412,6 +469,24 @@ namespace BreastRadiology.XUnitTests
                     "clusters of calcifications throughout the whole breast.",
                     ""
                 });
+            Add("757", 
+                "", 
+                new String[0]);
+            Add("702", 
+                "", 
+                new String[0]);
+            Add("704", 
+                "", 
+                new String[0]);
+            Add("705", 
+                "", 
+                new String[0]);
+            Add("706", 
+                "", 
+                new String[0]);
+            Add("707", 
+                "", 
+                new String[0]);
             Add("701", 
                 "", 
                 new String[]
@@ -423,6 +498,93 @@ namespace BreastRadiology.XUnitTests
                     "also found in every cell. As a result, calcification " +
                     "can occur in almost any part of the body."
                 });
+            Add("708", 
+                "", 
+                new String[0]);
+            Add("709", 
+                "", 
+                new String[0]);
+            Add("710", 
+                "", 
+                new String[0]);
+            Add("711", 
+                "", 
+                new String[0]);
+            Add("712", 
+                "", 
+                new String[0]);
+            Add("713", 
+                "", 
+                new String[0]);
+            Add("714", 
+                "", 
+                new String[0]);
+            Add("715", 
+                "", 
+                new String[0]);
+            Add("716", 
+                "", 
+                new String[0]);
+            Add("717", 
+                "", 
+                new String[0]);
+            Add("718", 
+                "", 
+                new String[0]);
+            Add("719", 
+                "", 
+                new String[0]);
+            Add("720", 
+                "", 
+                new String[0]);
+            Add("721", 
+                "", 
+                new String[0]);
+            Add("722", 
+                "", 
+                new String[0]);
+            Add("484", 
+                "", 
+                new String[0]);
+            Add("482", 
+                "", 
+                new String[0]);
+            Add("78", 
+                "", 
+                new String[0]);
+            Add("483", 
+                "", 
+                new String[0]);
+            Add("481", 
+                "", 
+                new String[0]);
+            Add("77", 
+                "", 
+                new String[0]);
+            Add("293", 
+                "", 
+                new String[0]);
+            Add("294", 
+                "", 
+                new String[0]);
+            Add("75", 
+                "", 
+                new String[0]);
+            Add("296", 
+                "", 
+                new String[0]);
+            Add("76", 
+                "", 
+                new String[0]);
+            Add("295", 
+                "", 
+                new String[0]);
+            Add("298", 
+                "", 
+                new String[0]);
+            Add("297", 
+                "", 
+                new String[0]);
             Add("561", 
                 "", 
                 new String[]
@@ -432,6 +594,15 @@ namespace BreastRadiology.XUnitTests
                     "versus that of other diseases possibly accounting " +
                     "for a patient's illness."
                 });
+            Add("536", 
+                "", 
+                new String[0]);
+            Add("581", 
+                "", 
+                new String[0]);
+            Add("580", 
+                "", 
+                new String[0]);
             Add("104", 
                 "", 
                 new String[]
@@ -506,6 +677,12 @@ namespace BreastRadiology.XUnitTests
                     "Carcinoma is a type of cancer that starts in cells " +
                     "that make up the skin or the tissue lining organs"
                 });
+            Add("510", 
+                "", 
+                new String[0]);
+            Add("543", 
+                "", 
+                new String[0]);
             Add("577", 
                 "", 
                 new String[]
@@ -517,6 +694,9 @@ namespace BreastRadiology.XUnitTests
                     "may be quite large and uncomfortable. Sometimes there " +
                     "are clusters of cysts in one breast or both."
                 });
+            Add("565", 
+                "", 
+                new String[0]);
             Add("61", 
                 "", 
                 new String[]
@@ -560,6 +740,9 @@ namespace BreastRadiology.XUnitTests
                     "or blocked. This usually occurs due to a trauma to " +
                     "the area."
                 });
+            Add("60", 
+                "", 
+                new String[0]);
             Add("537", 
                 "", 
                 new String[]
@@ -602,6 +785,12 @@ namespace BreastRadiology.XUnitTests
                     "DCIS is noninvasive, meaning it hasn't spread out " +
                     "of the milk duct and has a low risk of becoming invasive."
                 });
+            Add("515", 
+                "", 
+                new String[0]);
+            Add("589", 
+                "", 
+                new String[0]);
             Add("572", 
                 "", 
                 new String[]
@@ -768,6 +957,9 @@ namespace BreastRadiology.XUnitTests
                     "fever, skin discoloration, and may leave behind scar " +
                     "tissue that mimics the shape of a breast tumor."
                 });
+            Add("539", 
+                "", 
+                new String[0]);
             Add("62", 
                 "", 
                 new String[]
@@ -796,6 +988,21 @@ namespace BreastRadiology.XUnitTests
                     "people have more than one lipoma.A lipoma isn't cancer " +
                     "and usually is harmless."
                 });
+            Add("512", 
+                "", 
+                new String[0]);
+            Add("564", 
+                "", 
+                new String[0]);
+            Add("74", 
+                "", 
+                new String[0]);
+            Add("541.588", 
+                "", 
+                new String[0]);
+            Add("907", 
+                "", 
+                new String[0]);
             Add("540", 
                 "", 
                 new String[]
@@ -807,6 +1014,12 @@ namespace BreastRadiology.XUnitTests
                     "of internal architecture (e.g. cystic or necrotic " +
                     "nodes)."
                 });
+            Add("63", 
+                "", 
+                new String[0]);
+            Add("550", 
+                "", 
+                new String[0]);
             Add("524", 
                 "", 
                 new String[]
@@ -883,6 +1096,15 @@ namespace BreastRadiology.XUnitTests
                     "stages of wound healing. Surgical scar care should " +
                     "be continued for a year. "
                 });
+            Add("584", 
+                "", 
+                new String[0]);
+            Add("585", 
+                "", 
+                new String[0]);
+            Add("586", 
+                "", 
+                new String[0]);
             Add("568", 
                 "", 
                 new String[]
@@ -896,6 +1118,12 @@ namespace BreastRadiology.XUnitTests
                     "one radial scar is present. Another term for this " +
                     "condition is complex sclerosing lesions. "
                 });
+            Add("548", 
+                "", 
+                new String[0]);
+            Add("549", 
+                "", 
+                new String[0]);
             Add("502", 
                 "", 
                 new String[]
@@ -904,6 +1132,9 @@ namespace BreastRadiology.XUnitTests
                     "a wound, burn, or sore has not healed completely " +
                     "and fibrous connective tissue has developed."
                 });
+            Add("113", 
+                "", 
+                new String[0]);
             Add("599", 
                 "", 
                 new String[]
@@ -947,6 +1178,15 @@ namespace BreastRadiology.XUnitTests
                     "transparent fluid that contains protein, but no blood " +
                     "cells or pus."
                 });
+            Add("583", 
+                "", 
+                new String[0]);
+            Add("546", 
+                "", 
+                new String[0]);
+            Add("547", 
+                "", 
+                new String[0]);
             Add("569", 
                 "", 
                 new String[]
@@ -964,6 +1204,15 @@ namespace BreastRadiology.XUnitTests
                     "in the veins, usually of the legs. Venous stasis " +
                     "is a risk factor for forming blood clots in veins"
                 });
+            Add("391", 
+                "", 
+                new String[0]);
+            Add("392", 
+                "", 
+                new String[0]);
+            Add("327", 
+                "", 
+                new String[0]);
             Add("324", 
                 "", 
                 new String[]
@@ -973,6 +1222,39 @@ namespace BreastRadiology.XUnitTests
                     "It can aid in diagnosing the cause of abnormal nipple " +
                     "discharges."
                 });
+            Add("79", 
+                "", 
+                new String[0]);
+            Add("10", 
+                "", 
+                new String[0]);
+            Add("272", 
+                "", 
+                new String[0]);
+            Add("318", 
+                "", 
+                new String[0]);
+            Add("451", 
+                "", 
+                new String[0]);
+            Add("271", 
+                "", 
+                new String[0]);
+            Add("8", 
+                "", 
+                new String[0]);
+            Add("325", 
+                "", 
+                new String[0]);
+            Add("330", 
+                "", 
+                new String[0]);
+            Add("450", 
+                "", 
+                new String[0]);
+            Add("326", 
+                "", 
+                new String[0]);
             Add("323", 
                 "", 
                 new String[]
@@ -983,6 +1265,183 @@ namespace BreastRadiology.XUnitTests
                     "emitted by a radioactive substance administered into " +
                     "the body. "
                 });
+            Add("274", 
+                "", 
+                new String[0]);
+            Add("276", 
+                "", 
+                new String[0]);
+            Add("278", 
+                "", 
+                new String[0]);
+            Add("320.276", 
+                "", 
+                new String[0]);
+            Add("273", 
+                "", 
+                new String[0]);
+            Add("275", 
+                "", 
+                new String[0]);
+            Add("277", 
+                "", 
+                new String[0]);
+            Add("328", 
+                "", 
+                new String[0]);
+            Add("393", 
+                "", 
+                new String[0]);
+            Add("329", 
+                "", 
+                new String[0]);
+            Add("322", 
+                "", 
+                new String[0]);
+            Add("319", 
+                "", 
+                new String[0]);
+            Add("270", 
+                "", 
+                new String[0]);
+            Add("364", 
+                "", 
+                new String[0]);
+            Add("365", 
+                "", 
+                new String[0]);
+            Add("366", 
+                "", 
+                new String[0]);
+            Add("215", 
+                "", 
+                new String[0]);
+            Add("213", 
+                "", 
+                new String[0]);
+            Add("214", 
+                "", 
+                new String[0]);
+            Add("211", 
+                "", 
+                new String[0]);
+            Add("212", 
+                "", 
+                new String[0]);
+            Add("1500", 
+                "", 
+                new String[0]);
+            Add("1921", 
+                "", 
+                new String[0]);
+            Add("1922", 
+                "", 
+                new String[0]);
+            Add("1923", 
+                "", 
+                new String[0]);
+            Add("1924", 
+                "", 
+                new String[0]);
+            Add("1925", 
+                "", 
+                new String[0]);
+            Add("248", 
+                "", 
+                new String[0]);
+            Add("247", 
+                "", 
+                new String[0]);
+            Add("246", 
+                "", 
+                new String[0]);
+            Add("1705", 
+                "", 
+                new String[0]);
+            Add("1706", 
+                "", 
+                new String[0]);
+            Add("1707", 
+                "", 
+                new String[0]);
+            Add("1712", 
+                "", 
+                new String[0]);
+            Add("1709", 
+                "", 
+                new String[0]);
+            Add("1701", 
+                "", 
+                new String[0]);
+            Add("1702", 
+                "", 
+                new String[0]);
+            Add("1708", 
+                "", 
+                new String[0]);
+            Add("1703", 
+                "", 
+                new String[0]);
+            Add("1704", 
+                "", 
+                new String[0]);
+            Add("1711", 
+                "", 
+                new String[0]);
+            Add("1710", 
+                "", 
+                new String[0]);
+            Add("1603", 
+                "", 
+                new String[0]);
+            Add("1601", 
+                "", 
+                new String[0]);
+            Add("1602", 
+                "", 
+                new String[0]);
+            Add("379", 
+                "", 
+                new String[0]);
+            Add("375", 
+                "", 
+                new String[0]);
+            Add("390", 
+                "", 
+                new String[0]);
+            Add("382", 
+                "", 
+                new String[0]);
+            Add("372", 
+                "", 
+                new String[0]);
+            Add("373", 
+                "", 
+                new String[0]);
+            Add("378", 
+                "", 
+                new String[0]);
+            Add("380", 
+                "", 
+                new String[0]);
+            Add("377", 
+                "", 
+                new String[0]);
+            Add("376", 
+                "", 
+                new String[0]);
+            Add("386", 
+                "", 
+                new String[0]);
+            Add("387", 
+                "", 
+                new String[0]);
+            Add("532", 
+                "", 
+                new String[0]);
+            Add("531", 
+                "", 
+                new String[0]);
             Add("591", 
                 "", 
                 new String[]
@@ -1046,6 +1505,126 @@ namespace BreastRadiology.XUnitTests
                     "and to provide guidance regarding selection of appropriate " +
                     "markers for various clinical settings."
                 });
+            Add("901", 
+                "", 
+                new String[0]);
+            Add("902", 
+                "", 
+                new String[0]);
+            Add("519", 
+                "", 
+                new String[0]);
+            Add("592", 
+                "", 
+                new String[0]);
+            Add("908", 
+                "", 
+                new String[0]);
+            Add("516", 
+                "", 
+                new String[0]);
+            Add("517", 
+                "", 
+                new String[0]);
+            Add("522", 
+                "", 
+                new String[0]);
+            Add("913", 
+                "", 
+                new String[0]);
+            Add("533", 
+                "", 
+                new String[0]);
+            Add("575", 
+                "", 
+                new String[0]);
+            Add("521", 
+                "", 
+                new String[0]);
+            Add("903", 
+                "", 
+                new String[0]);
+            Add("904", 
+                "", 
+                new String[0]);
+            Add("593", 
+                "", 
+                new String[0]);
+            Add("597", 
+                "", 
+                new String[0]);
+            Add("598", 
+                "", 
+                new String[0]);
+            Add("594", 
+                "", 
+                new String[0]);
+            Add("529", 
+                "", 
+                new String[0]);
+            Add("520", 
+                "", 
+                new String[0]);
+            Add("535", 
+                "", 
+                new String[0]);
+            Add("696", 
+                "", 
+                new String[0]);
+            Add("911", 
+                "", 
+                new String[0]);
+            Add("596", 
+                "", 
+                new String[0]);
+            Add("534", 
+                "", 
+                new String[0]);
+            Add("528", 
+                "", 
+                new String[0]);
+            Add("530", 
+                "", 
+                new String[0]);
+            Add("641", 
+                "", 
+                new String[0]);
+            Add("518", 
+                "", 
+                new String[0]);
+            Add("527", 
+                "", 
+                new String[0]);
+            Add("228", 
+                "", 
+                new String[0]);
+            Add("229", 
+                "", 
+                new String[0]);
+            Add("216", 
+                "", 
+                new String[0]);
+            Add("217", 
+                "", 
+                new String[0]);
+            Add("750", 
+                "", 
+                new String[0]);
+            Add("551", 
+                "", 
+                new String[0]);
+            Add("210", 
+                "", 
+                new String[0]);
+            Add("1700", 
+                "", 
+                new String[0]);
+            Add("1600", 
+                "", 
+                new String[0]);
+            Add("574", 
+                "", 
+                new String[0]);
             Add("195", 
                 "", 
                 new String[]
@@ -1070,6 +1649,15 @@ namespace BreastRadiology.XUnitTests
                     "an indicator to the radiologists that there is possibly " +
                     "cancer in the lymph nodes.  "
                 });
+            Add("362", 
+                "", 
+                new String[0]);
+            Add("363", 
+                "", 
+                new String[0]);
+            Add("361", 
+                "", 
+                new String[0]);
             Add("2", 
                 "", 
                 new String[]
@@ -1099,6 +1687,12 @@ namespace BreastRadiology.XUnitTests
                     "percent of women have this type of breast tissue. " +
                     ""
                 });
+            Add("961", 
+                "", 
+                new String[0]);
+            Add("11", 
+                "", 
+                new String[0]);
             Add("4", 
                 "", 
                 new String[]
@@ -1119,6 +1713,51 @@ namespace BreastRadiology.XUnitTests
                     "hypoechoic mass means that it is solid, rather than " +
                     "liquid.The lump or lesion is not a cyst. "
                 });
+            Add("5", 
+                "", 
+                new String[0]);
+            Add("6", 
+                "", 
+                new String[0]);
+            Add("7", 
+                "", 
+                new String[0]);
+            Add("960", 
+                "", 
+                new String[0]);
+            Add("67", 
+                "", 
+                new String[0]);
+            Add("355", 
+                "", 
+                new String[0]);
+            Add("358", 
+                "", 
+                new String[0]);
+            Add("360", 
+                "", 
+                new String[0]);
+            Add("353", 
+                "", 
+                new String[0]);
+            Add("352", 
+                "", 
+                new String[0]);
+            Add("351", 
+                "", 
+                new String[0]);
+            Add("357", 
+                "", 
+                new String[0]);
+            Add("359", 
+                "", 
+                new String[0]);
+            Add("354", 
+                "", 
+                new String[0]);
+            Add("356", 
+                "", 
+                new String[0]);
             Add("1001", 
                 "", 
                 new String[]
@@ -1258,6 +1897,48 @@ namespace BreastRadiology.XUnitTests
                     "breast. It passes into the axilla through an opening " +
                     "in the deep fascia called foramen of Langer."
                 });
+            Add("1013", 
+                "", 
+                new String[0]);
+            Add("1510", 
+                "", 
+                new String[0]);
+            Add("1511", 
+                "", 
+                new String[0]);
+            Add("1025", 
+                "", 
+                new String[0]);
+            Add("1024", 
+                "", 
+                new String[0]);
+            Add("1515", 
+                "", 
+                new String[0]);
+            Add("1018", 
+                "", 
+                new String[0]);
+            Add("1019", 
+                "", 
+                new String[0]);
+            Add("1020", 
+                "", 
+                new String[0]);
+            Add("1023", 
+                "", 
+                new String[0]);
+            Add("1022", 
+                "", 
+                new String[0]);
+            Add("970", 
+                "", 
+                new String[0]);
+            Add("800", 
+                "", 
+                new String[0]);
+            Add("1502", 
+                "", 
+                new String[0]);
             Add("683", 
                 "", 
                 new String[]
@@ -1299,6 +1980,18 @@ namespace BreastRadiology.XUnitTests
                     "the most important criteria for distinguishing between " +
                     "normal and abnormal nodes. "
                 });
+            Add("681", 
+                "", 
+                new String[0]);
+            Add("669", 
+                "", 
+                new String[0]);
+            Add("680", 
+                "", 
+                new String[0]);
+            Add("667", 
+                "", 
+                new String[0]);
             Add("191", 
                 "", 
                 new String[]
@@ -1402,6 +2095,9 @@ namespace BreastRadiology.XUnitTests
                     "from it, and the lines radiate from the mass. The " +
                     "margin of the mass is not circumscribed. "
                 });
+            Add("280", 
+                "", 
+                new String[0]);
             Add("284", 
                 "", 
                 new String[]
@@ -1427,6 +2123,9 @@ namespace BreastRadiology.XUnitTests
                     "make detailed pictures inside your body. It helps " +
                     "a doctor to diagnose a disease or injury. "
                 });
+            Add("286", 
+                "", 
+                new String[0]);
             Add("285", 
                 "", 
                 new String[]
@@ -1444,6 +2143,30 @@ namespace BreastRadiology.XUnitTests
                     "on a computer screen. This can help diagnose and " +
                     "treat disease or conditions. "
                 });
+            Add("1508", 
+                "", 
+                new String[0]);
+            Add("1509", 
+                "", 
+                new String[0]);
+            Add("1518", 
+                "", 
+                new String[0]);
+            Add("1517", 
+                "", 
+                new String[0]);
+            Add("384", 
+                "", 
+                new String[0]);
+            Add("385", 
+                "", 
+                new String[0]);
+            Add("66", 
+                "", 
+                new String[0]);
+            Add("65", 
+                "", 
+                new String[0]);
             Add("805", 
                 "", 
                 new String[]
@@ -1460,6 +2183,18 @@ namespace BreastRadiology.XUnitTests
                     "discover the presence, cause or extent of a disease. " +
                     ""
                 });
+            Add("808", 
+                "", 
+                new String[0]);
+            Add("806", 
+                "", 
+                new String[0]);
+            Add("622", 
+                "", 
+                new String[0]);
+            Add("623", 
+                "", 
+                new String[0]);
             Add("1828", 
                 "", 
                 new String[]
@@ -1503,6 +2238,12 @@ namespace BreastRadiology.XUnitTests
                     "picture of the breast. Mediolateral-oblique (MLO) " +
                     "is "
                 });
+            Add("68", 
+                "", 
+                new String[0]);
+            Add("87", 
+                "", 
+                new String[0]);
             Add("1820", 
                 "", 
                 new String[]
@@ -1530,6 +2271,12 @@ namespace BreastRadiology.XUnitTests
                     "in the deep fascia called foramen of Langer.The Axilla " +
                     "is another name for armpit. "
                 });
+            Add("100", 
+                "", 
+                new String[0]);
+            Add("52", 
+                "", 
+                new String[0]);
             Add("46", 
                 "", 
                 new String[]
@@ -1545,6 +2292,12 @@ namespace BreastRadiology.XUnitTests
                     "properly, reducing the formation of scar folds as " +
                     "well artifacts from false parenchymal distortion."
                 });
+            Add("84", 
+                "", 
+                new String[0]);
+            Add("82", 
+                "", 
+                new String[0]);
             Add("44", 
                 "", 
                 new String[]
@@ -1556,6 +2309,18 @@ namespace BreastRadiology.XUnitTests
                     "at the same time to image the medial half of both " +
                     "breasts. "
                 });
+            Add("116", 
+                "", 
+                new String[0]);
+            Add("56", 
+                "", 
+                new String[0]);
+            Add("93", 
+                "", 
+                new String[0]);
+            Add("103", 
+                "", 
+                new String[0]);
             Add("43", 
                 "", 
                 new String[]
@@ -1641,6 +2406,9 @@ namespace BreastRadiology.XUnitTests
                     "the physician to check the tissue.These signs may " +
                     "include a lump or breast pain. "
                 });
+            Add("183", 
+                "", 
+                new String[0]);
             Add("179", 
                 "", 
                 new String[]
@@ -1679,6 +2447,9 @@ namespace BreastRadiology.XUnitTests
                     "of the breast and the nipple in profile to be clearly " +
                     "displayed."
                 });
+            Add("57", 
+                "", 
+                new String[0]);
             Add("38", 
                 "", 
                 new String[]
@@ -1700,6 +2471,12 @@ namespace BreastRadiology.XUnitTests
                     "It is recommended to make a follow-up appointment " +
                     "in 6 months."
                 });
+            Add("89", 
+                "", 
+                new String[0]);
+            Add("161", 
+                "", 
+                new String[0]);
             Add("90", 
                 "", 
                 new String[]
@@ -1721,6 +2498,18 @@ namespace BreastRadiology.XUnitTests
                     "and detector are located.",
                     ""
                 });
+            Add("86", 
+                "", 
+                new String[0]);
+            Add("47", 
+                "", 
+                new String[0]);
+            Add("96", 
+                "", 
+                new String[0]);
+            Add("1835", 
+                "", 
+                new String[0]);
             Add("42", 
                 "", 
                 new String[]
@@ -1735,6 +2524,9 @@ namespace BreastRadiology.XUnitTests
                     "magnified images (1.5x to 2x magnification) of the " +
                     "region of interest. "
                 });
+            Add("182", 
+                "", 
+                new String[0]);
             Add("1822", 
                 "", 
                 new String[]
@@ -1759,6 +2551,30 @@ namespace BreastRadiology.XUnitTests
                 {
                     "A six month follow-up is recommended. "
                 });
+            Add("187", 
+                "", 
+                new String[0]);
+            Add("162", 
+                "", 
+                new String[0]);
+            Add("85", 
+                "", 
+                new String[0]);
+            Add("83", 
+                "", 
+                new String[0]);
+            Add("92", 
+                "", 
+                new String[0]);
+            Add("120", 
+                "", 
+                new String[0]);
+            Add("180", 
+                "", 
+                new String[0]);
+            Add("53", 
+                "", 
+                new String[0]);
             Add("144", 
                 "", 
                 new String[]
@@ -1769,6 +2585,12 @@ namespace BreastRadiology.XUnitTests
                     "the posterior nipple line (an oblique line drawn " +
                     "straight back from the nipple.)"
                 });
+            Add("106", 
+                "", 
+                new String[0]);
+            Add("107", 
+                "", 
+                new String[0]);
             Add("1837", 
                 "", 
                 new String[]
@@ -1779,6 +2601,12 @@ namespace BreastRadiology.XUnitTests
                     "tiny cluster of small calcium deposits. a distortion " +
                     "in the structure of the breast tissue."
                 });
+            Add("91", 
+                "", 
+                new String[0]);
+            Add("1836", 
+                "", 
+                new String[0]);
             Add("133", 
                 "", 
                 new String[]
@@ -1790,6 +2618,18 @@ namespace BreastRadiology.XUnitTests
                     "generated coordinates of the concerning area of breast " +
                     "tissue."
                 });
+            Add("1805", 
+                "", 
+                new String[0]);
+            Add("1806", 
+                "", 
+                new String[0]);
+            Add("186", 
+                "", 
+                new String[0]);
+            Add("130", 
+                "", 
+                new String[0]);
             Add("132", 
                 "", 
                 new String[]
@@ -1802,6 +2642,12 @@ namespace BreastRadiology.XUnitTests
                     "show whether there is a cancer or another type of " +
                     "breast condition."
                 });
+            Add("135", 
+                "", 
+                new String[0]);
+            Add("134", 
+                "", 
+                new String[0]);
             Add("49", 
                 "", 
                 new String[]
@@ -1819,6 +2665,9 @@ namespace BreastRadiology.XUnitTests
                     "or laterally around the axis of the nipple prior " +
                     "to applying compression."
                 });
+            Add("50", 
+                "", 
+                new String[0]);
             Add("1807", 
                 "", 
                 new String[]
@@ -1859,6 +2708,9 @@ namespace BreastRadiology.XUnitTests
                     "area and by getting the suspicious area closer to " +
                     "the detector surface."
                 });
+            Add("188", 
+                "", 
+                new String[0]);
             Add("54", 
                 "", 
                 new String[]
@@ -1872,6 +2724,60 @@ namespace BreastRadiology.XUnitTests
                     "calcium deposits or tiny masses that are not visible " +
                     "on ultrasound."
                 });
+            Add("48", 
+                "", 
+                new String[0]);
+            Add("1803", 
+                "", 
+                new String[0]);
+            Add("101", 
+                "", 
+                new String[0]);
+            Add("118", 
+                "", 
+                new String[0]);
+            Add("1802", 
+                "", 
+                new String[0]);
+            Add("1804", 
+                "", 
+                new String[0]);
+            Add("1810", 
+                "", 
+                new String[0]);
+            Add("1809", 
+                "", 
+                new String[0]);
+            Add("114", 
+                "", 
+                new String[0]);
+            Add("40", 
+                "", 
+                new String[0]);
+            Add("181", 
+                "", 
+                new String[0]);
+            Add("184", 
+                "", 
+                new String[0]);
+            Add("1824", 
+                "", 
+                new String[0]);
+            Add("1825", 
+                "", 
+                new String[0]);
+            Add("55", 
+                "", 
+                new String[0]);
+            Add("171", 
+                "", 
+                new String[0]);
+            Add("189", 
+                "", 
+                new String[0]);
+            Add("117", 
+                "", 
+                new String[0]);
             Add("131", 
                 "", 
                 new String[]
@@ -1888,6 +2794,30 @@ namespace BreastRadiology.XUnitTests
                     "by use of a microscope to check for possible abnormalities " +
                     "such as inflammation or cancer."
                 });
+            Add("620", 
+                "", 
+                new String[0]);
+            Add("1514", 
+                "", 
+                new String[0]);
+            Add("1520", 
+                "", 
+                new String[0]);
+            Add("1519", 
+                "", 
+                new String[0]);
+            Add("1513", 
+                "", 
+                new String[0]);
+            Add("1516", 
+                "", 
+                new String[0]);
+            Add("573", 
+                "", 
+                new String[0]);
+            Add("687", 
+                "", 
+                new String[0]);
             Add("367", 
                 "", 
                 new String[]
@@ -1934,6 +2864,9 @@ namespace BreastRadiology.XUnitTests
                 {
                     "A mass that is elliptical or egg-shaped. "
                 });
+            Add("27", 
+                "", 
+                new String[0]);
             Add("14", 
                 "", 
                 new String[]
@@ -1941,12 +2874,93 @@ namespace BreastRadiology.XUnitTests
                     "A mass that is spherical, ball-shaped, circular or " +
                     "global. "
                 });
+            Add("1901", 
+                "", 
+                new String[0]);
+            Add("1902", 
+                "", 
+                new String[0]);
+            Add("1903", 
+                "", 
+                new String[0]);
+            Add("1904", 
+                "", 
+                new String[0]);
+            Add("1905", 
+                "", 
+                new String[0]);
+            Add("1906", 
+                "", 
+                new String[0]);
+            Add("1907", 
+                "", 
+                new String[0]);
+            Add("1908", 
+                "", 
+                new String[0]);
+            Add("1909", 
+                "", 
+                new String[0]);
+            Add("1910", 
+                "", 
+                new String[0]);
+            Add("802", 
+                "", 
+                new String[0]);
+            Add("803", 
+                "", 
+                new String[0]);
+            Add("801", 
+                "", 
+                new String[0]);
+            Add("604", 
+                "", 
+                new String[0]);
+            Add("88", 
+                "", 
+                new String[0]);
+            Add("605", 
+                "", 
+                new String[0]);
+            Add("72", 
+                "", 
+                new String[0]);
+            Add("810", 
+                "", 
+                new String[0]);
+            Add("809", 
+                "", 
+                new String[0]);
             Add("813", 
                 "", 
                 new String[]
                 {
                     "Only visable on breast tomosynthesis. "
                 });
+            Add("71", 
+                "", 
+                new String[0]);
+            Add("659", 
+                "", 
+                new String[0]);
+            Add("658", 
+                "", 
+                new String[0]);
+            Add("811", 
+                "", 
+                new String[0]);
+            Add("812", 
+                "", 
+                new String[0]);
+            Add("656", 
+                "", 
+                new String[0]);
+            Add("655", 
+                "", 
+                new String[0]);
+            Add("105", 
+                "", 
+                new String[0]);
             Add("642", 
                 "", 
                 new String[]
@@ -1960,6 +2974,21 @@ namespace BreastRadiology.XUnitTests
                     "scar, both of which are benign and both quite rare. " +
                     "Architectural distortion uncommonly indicates cancer."
                 });
+            Add("600", 
+                "", 
+                new String[0]);
+            Add("691", 
+                "", 
+                new String[0]);
+            Add("643", 
+                "", 
+                new String[0]);
+            Add("644", 
+                "", 
+                new String[0]);
+            Add("NO PEN_ID", 
+                "", 
+                new String[0]);
             Add("630", 
                 "", 
                 new String[]
@@ -1971,6 +3000,9 @@ namespace BreastRadiology.XUnitTests
                     "or high-dose rate (HDR). Permanent brachytherapy " +
                     "is also called seed implantation."
                 });
+            Add("690", 
+                "", 
+                new String[0]);
             Add("69", 
                 "", 
                 new String[]
@@ -2036,6 +3068,18 @@ namespace BreastRadiology.XUnitTests
                     "cyst. The type of debris determines what kind of " +
                     "cyst. "
                 });
+            Add("686", 
+                "", 
+                new String[0]);
+            Add("645", 
+                "", 
+                new String[0]);
+            Add("646", 
+                "", 
+                new String[0]);
+            Add("647", 
+                "", 
+                new String[0]);
             Add("694.602", 
                 "", 
                 new String[]
@@ -2087,6 +3131,9 @@ namespace BreastRadiology.XUnitTests
                     "a cause for concern. If left untreated, it can eventually " +
                     "obliterate the breast duct. "
                 });
+            Add("692", 
+                "", 
+                new String[0]);
             Add("688", 
                 "", 
                 new String[]
@@ -2118,6 +3165,24 @@ namespace BreastRadiology.XUnitTests
                     "remains in the breast tissue. They’re pretty small, " +
                     "too. Most are only 1 or 2 centimeters in size."
                 });
+            Add("695", 
+                "", 
+                new String[0]);
+            Add("611", 
+                "", 
+                new String[0]);
+            Add("612", 
+                "", 
+                new String[0]);
+            Add("601", 
+                "", 
+                new String[0]);
+            Add("615", 
+                "", 
+                new String[0]);
+            Add("603", 
+                "", 
+                new String[0]);
             Add("631", 
                 "", 
                 new String[]
@@ -2147,6 +3212,9 @@ namespace BreastRadiology.XUnitTests
                     "or surgery and may involve blood continuing to seep " +
                     "from broken capillaries."
                 });
+            Add("633", 
+                "", 
+                new String[0]);
             Add("634", 
                 "", 
                 new String[]
@@ -2156,6 +3224,9 @@ namespace BreastRadiology.XUnitTests
                     "It's a non-invasive cancer in which abnormal cells " +
                     "are contained inside the milk duct of the breast."
                 });
+            Add("607", 
+                "", 
+                new String[0]);
             Add("635", 
                 "", 
                 new String[]
@@ -2168,6 +3239,21 @@ namespace BreastRadiology.XUnitTests
                     "cases, they may also form in internal organs, bones, " +
                     "or muscles."
                 });
+            Add("58", 
+                "", 
+                new String[0]);
+            Add("621", 
+                "", 
+                new String[0]);
+            Add("697", 
+                "", 
+                new String[0]);
+            Add("613", 
+                "", 
+                new String[0]);
+            Add("608", 
+                "", 
+                new String[0]);
             Add("654", 
                 "", 
                 new String[]
@@ -2210,6 +3296,9 @@ namespace BreastRadiology.XUnitTests
                     "your neck, under your chin, in your armpits and in " +
                     "your groin."
                 });
+            Add("662", 
+                "", 
+                new String[0]);
             Add("665", 
                 "", 
                 new String[]
@@ -2227,6 +3316,12 @@ namespace BreastRadiology.XUnitTests
                 {
                     "Lymph nodes found within the breast tissue. "
                 });
+            Add("651", 
+                "", 
+                new String[0]);
+            Add("652", 
+                "", 
+                new String[0]);
             Add("666", 
                 "", 
                 new String[]
@@ -2237,6 +3332,27 @@ namespace BreastRadiology.XUnitTests
                     "for filtering the lymphatic fluid of unwanted debris " +
                     "and bacteria."
                 });
+            Add("663", 
+                "", 
+                new String[0]);
+            Add("699", 
+                "", 
+                new String[0]);
+            Add("637", 
+                "", 
+                new String[0]);
+            Add("653", 
+                "", 
+                new String[0]);
+            Add("638", 
+                "", 
+                new String[0]);
+            Add("639", 
+                "", 
+                new String[0]);
+            Add("59", 
+                "", 
+                new String[0]);
             Add("640", 
                 "", 
                 new String[]
@@ -2248,6 +3364,9 @@ namespace BreastRadiology.XUnitTests
                     "transparent fluid that contains protein, but no blood " +
                     "cells or pus."
                 });
+            Add("698", 
+                "", 
+                new String[0]);
             Add("664", 
                 "", 
                 new String[]
@@ -2258,6 +3377,51 @@ namespace BreastRadiology.XUnitTests
                     "it should not be mistaken for a pathological lesion. " +
                     ""
                 });
+            Add("175", 
+                "", 
+                new String[0]);
+            Add("673", 
+                "", 
+                new String[0]);
+            Add("670", 
+                "", 
+                new String[0]);
+            Add("672", 
+                "", 
+                new String[0]);
+            Add("671", 
+                "", 
+                new String[0]);
+            Add("244", 
+                "", 
+                new String[0]);
+            Add("245", 
+                "", 
+                new String[0]);
+            Add("240", 
+                "", 
+                new String[0]);
+            Add("241", 
+                "", 
+                new String[0]);
+            Add("242", 
+                "", 
+                new String[0]);
+            Add("243", 
+                "", 
+                new String[0]);
+            Add("24", 
+                "", 
+                new String[0]);
+            Add("25", 
+                "", 
+                new String[0]);
+            Add("23", 
+                "", 
+                new String[0]);
+            Add("199", 
+                "", 
+                new String[0]);
             //- Data
         }
     }

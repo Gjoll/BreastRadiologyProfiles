@@ -316,12 +316,21 @@ namespace BreastRadiology.XUnitTests
             void DoRow(DataRow row)
             {
                 String id = Val(row[5]);
+                if (id == "1508") Debugger.Break();
                 if (String.IsNullOrEmpty(id))
                     return;
                 String text = Val(row[17]);
 
                 if (CheckText(text) == false)
+                {
+                    cb
+                        .AppendLine($"Add(\"{id}\", ")
+                        .AppendLine($"    \"\", ")
+                        .AppendLine($"    new String[0]);")
+                        ;
                     return;
+                }
+
                 cb
                     .AppendLine($"Add(\"{id}\", ")
                     .AppendLine($"    \"\", ")
