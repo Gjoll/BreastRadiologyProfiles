@@ -159,10 +159,6 @@ namespace BreastRadiology.XUnitTests
 
             for (Int32 i = 1; i < dataTbl.Rows.Count; i++)
             {
-                String term = ",";
-                if (i == dataTbl.Rows.Count - 1)
-                    term = "";
-
                 DataRow row = dataTbl.Rows[i];
                 String code = row[7].ToString();
                 if (itemsToIgnore.Contains(code.Trim().ToUpper()) == false)
@@ -193,6 +189,10 @@ namespace BreastRadiology.XUnitTests
                     AppIfNotNull(concepts, "SetICD10", row[ICD10Col]);
                     AppIfNotNull(concepts, "SetUMLS", row[UMLSCol]);
                     AppIfNotNull(concepts, "SetACR", row[ACRCol]);
+
+                    if (i == dataTbl.Rows.Count - 1)
+                        concepts
+                            .AppendLine($",");
                 }
             }
 
@@ -268,7 +268,6 @@ namespace BreastRadiology.XUnitTests
             IEnumerable<String> penIdsEnum)
         {
             String[] penIds = penIdsEnum.ToArray();
-            CodeBlockNested concept = null;
 
             CodeEditor editor = new CodeEditor();
             editor.Load(Path.Combine(DirHelper.FindParentDir("BreastRadiology.XUnitTests"),
@@ -282,10 +281,6 @@ namespace BreastRadiology.XUnitTests
             concepts.Clear();
             for (Int32 i = 0; i < penIds.Length; i++)
             {
-                String term = ",";
-                if (i == penIds.Length - 1)
-                    term = "";
-
                 String penId = penIds[i];
 
                 if (this.spreadSheetData.TryGetRow(penId, out DataRow row) == false)
@@ -337,6 +332,9 @@ namespace BreastRadiology.XUnitTests
                 AppIfNotNull(concepts, "SetICD10", row[ICD10Col]);
                 AppIfNotNull(concepts, "SetUMLS", row[UMLSCol]);
                 AppIfNotNull(concepts, "SetACR", row[ACRCol]);
+                if (i == penIds.Length - 1)
+                    concepts
+                        .AppendLine($",");
             }
             editor.Save();
         }
