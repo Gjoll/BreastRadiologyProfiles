@@ -80,7 +80,6 @@ namespace BreastRadiology.XUnitTests
                                 .SetDefinition("[PR] 3D Imaging")
                                 .MammoId("1828")
                                 .ValidModalities(Modalities.MG | Modalities.MRI | Modalities.US)
-                                .SetSnomedDescription("Procedure | 450566007 | Digital breast tomosynthesis (Procedure) +")
                             //- AutoGen
                             ,
                             //- 3DImaging
@@ -92,7 +91,6 @@ namespace BreastRadiology.XUnitTests
                                 .SetDefinition("[PR] 3D spot CC")
                                 .MammoId("1830")
                                 .ValidModalities(Modalities.MG)
-                                .SetSnomedDescription("Procedure | 450566007 | Digital breast tomosynthesis (Procedure) + QualifierValue | 399162004 | Cranio-caudal projection (Qualifier) + SPOT")
                             //- AutoGen
                             ,
                             //- 3DSpotCC
@@ -104,7 +102,6 @@ namespace BreastRadiology.XUnitTests
                                 .SetDefinition("[PR] 3D spot LM")
                                 .MammoId("1833")
                                 .ValidModalities(Modalities.MG)
-                                .SetSnomedDescription("Procedure | 450566007 | Digital breast tomosynthesis (Procedure) + QualifierValue | 399352003 | Lateral-medial projection (Qualifier) + SPOT")
                             //- AutoGen
                             ,
                             //- 3DSpotLM
@@ -116,7 +113,6 @@ namespace BreastRadiology.XUnitTests
                                 .SetDefinition("[PR] 3D spot ML")
                                 .MammoId("1832")
                                 .ValidModalities(Modalities.MG)
-                                .SetSnomedDescription("Procedure | 450566007 | Digital breast tomosynthesis (Procedure) + QualifierValue | 399260004 | Medial-lateral projection (Qualifier) + SPOT")
                             //- AutoGen
                             ,
                             //- 3DSpotML
@@ -128,7 +124,6 @@ namespace BreastRadiology.XUnitTests
                                 .SetDefinition("[PR] 3D spot MLO")
                                 .MammoId("1831")
                                 .ValidModalities(Modalities.MG)
-                                .SetSnomedDescription("Procedure | 450566007 | Digital breast tomosynthesis (Procedure) + QualifierValue | 399368009 | Medio-lateral oblique projection (Qualifier) + SPOT")
                             //- AutoGen
                             ,
                             //- 3DSpotMLO
@@ -151,7 +146,6 @@ namespace BreastRadiology.XUnitTests
                                 .SetDefinition("[PR] Addlitional views with possible ultrasound")
                                 .MammoId("87")
                                 .ValidModalities(Modalities.MG | Modalities.MRI | Modalities.US)
-                                .SetSnomedDescription("Procedure | 47079000 | Ultrasonography of breast (Procedure)")
                             //- AutoGen
                             ,
                             //- AddlitionalViewsWithPossibleUltrasound
@@ -174,7 +168,6 @@ namespace BreastRadiology.XUnitTests
                                 .SetDefinition("[PR] Axillary tail view")
                                 .MammoId("45")
                                 .ValidModalities(Modalities.MG | Modalities.US)
-                                .SetSnomedDescription("Procedure | 241055006 | Mammogram - symptomatic (Procedure) + QualifierValue | 442580003 | Axillary tissue mammography view (Qualifier)")
                             //- AutoGen
                             ,
                             //- AxillaryTailView
@@ -219,7 +212,6 @@ namespace BreastRadiology.XUnitTests
                                 .SetDefinition("[PR] CC with compression view")
                                 .MammoId("84")
                                 .ValidModalities(Modalities.MG | Modalities.US)
-                                .SetSnomedDescription("Procedure | 439324009 | Mammogram in compression view (Procedure)+ QualifierValue | 399162004 | Cranio-caudal projection (Qualifier)")
                             //- AutoGen
                             ,
                             //- CCWithCompressionView
@@ -231,7 +223,6 @@ namespace BreastRadiology.XUnitTests
                                 .SetDefinition("[PR] CC with magnification view")
                                 .MammoId("82")
                                 .ValidModalities(Modalities.MG | Modalities.US)
-                                .SetSnomedDescription("Procedure | 241058008 | Mammogram magnification (Procedure) + QualifierValue | 399162004 | Cranio-caudal projection (Qualifier)")
                             //- AutoGen
                             ,
                             //- CCWithMagnificationView
@@ -243,7 +234,6 @@ namespace BreastRadiology.XUnitTests
                                 .SetDefinition("[PR] Cleavage view")
                                 .MammoId("44")
                                 .ValidModalities(Modalities.MG | Modalities.US)
-                                .SetSnomedDescription("Procedure | 241055006 | Mammogram - symptomatic (Procedure) + QualifierValue | 399161006 | Cleavage mammography view (Qualifier)")
                             //- AutoGen
                             ,
                             //- CleavageView
@@ -299,7 +289,6 @@ namespace BreastRadiology.XUnitTests
                                 .SetDefinition("[PR] Compression views")
                                 .MammoId("43")
                                 .ValidModalities(Modalities.MG | Modalities.US)
-                                .SetSnomedDescription("Procedure | 439324009 | Mammogram in compression view (Procedure)")
                             //- AutoGen
                             ,
                             //- CompressionViews
@@ -311,7 +300,6 @@ namespace BreastRadiology.XUnitTests
                                 .SetDefinition("[PR] Cone compression")
                                 .MammoId("185")
                                 .ValidModalities(Modalities.MG | Modalities.US)
-                                .SetSnomedDescription("Procedure | 439324009 | Mammogram in compression view (Procedure)")
                             //- AutoGen
                             ,
                             //- ConeCompression
@@ -323,7 +311,6 @@ namespace BreastRadiology.XUnitTests
                                 .SetDefinition("[PR] Core Biopsy")
                                 .MammoId("1829")
                                 .ValidModalities(Modalities.MG | Modalities.MRI | Modalities.US)
-                                .SetSnomedDescription("Procedure | 44578009 | Core needle biopsy of breast (Procedure)")
                             //- AutoGen
                             ,
                             //- CoreBiopsy
@@ -335,7 +322,6 @@ namespace BreastRadiology.XUnitTests
                                 .SetDefinition("[PR] Craniocaudal view")
                                 .MammoId("332")
                                 .ValidModalities(Modalities.MG)
-                                .SetSnomedDescription("Procedure | 241055006 | Mammogram - symptomatic (Procedure) + QualifierValue | 399162004 | Cranio-caudal projection (Qualifier)")
                             //- AutoGen
                             ,
                             //- CraniocaudalView
@@ -358,7 +344,6 @@ namespace BreastRadiology.XUnitTests
                                 .SetDefinition("[PR] Cyst aspiration")
                                 .MammoId("51")
                                 .ValidModalities(Modalities.MG | Modalities.MRI | Modalities.US)
-                                .SetSnomedDescription("Procedure | 287572003 | Diagnostic aspiration of breast cyst (Procedure)")
                             //- AutoGen
                             ,
                             //- CystAspiration
@@ -370,7 +355,6 @@ namespace BreastRadiology.XUnitTests
                                 .SetDefinition("[PR] Cyst aspiration for relief")
                                 .MammoId("1821")
                                 .ValidModalities(Modalities.US)
-                                .SetSnomedDescription("Procedure | 287572003 | Diagnostic aspiration of breast cyst (Procedure)")
                             //- AutoGen
                             ,
                             //- CystAspirationForRelief
@@ -382,7 +366,6 @@ namespace BreastRadiology.XUnitTests
                                 .SetDefinition("[PR] Diagnostic aspiration")
                                 .MammoId("108")
                                 .ValidModalities(Modalities.MG | Modalities.MRI | Modalities.US)
-                                .SetSnomedDescription("Procedure | 287572003 | Diagnostic aspiration of breast cyst (Procedure)")
                             //- AutoGen
                             ,
                             //- DiagnosticAspiration
@@ -416,7 +399,6 @@ namespace BreastRadiology.XUnitTests
                                 .SetDefinition("[PR] Ductography")
                                 .MammoId("179")
                                 .ValidModalities(Modalities.MG | Modalities.MRI | Modalities.US)
-                                .SetSnomedDescription("Procedure | 420131003 | Fluoroscopic mammary ductography (Procedure)")
                             //- AutoGen
                             ,
                             //- Ductography
@@ -428,7 +410,6 @@ namespace BreastRadiology.XUnitTests
                                 .SetDefinition("[PR] Exaggerated CC views")
                                 .MammoId("41")
                                 .ValidModalities(Modalities.MG | Modalities.US)
-                                .SetSnomedDescription("Procedure | 241055006 | Mammogram - symptomatic (Procedure) + QualifierValue | 399265009 | Exaggerated cranio-caudal projection (Qualifier)")
                             //- AutoGen
                             ,
                             //- ExaggeratedCCViews
@@ -440,7 +421,6 @@ namespace BreastRadiology.XUnitTests
                                 .SetDefinition("[PR] FNA biopsy")
                                 .MammoId("57")
                                 .ValidModalities(Modalities.MG | Modalities.US)
-                                .SetSnomedDescription("not matching")
                             //- AutoGen
                             ,
                             //- FNABiopsy
@@ -496,7 +476,6 @@ namespace BreastRadiology.XUnitTests
                                 .SetDefinition("[PR] Lateral magnificaion view")
                                 .MammoId("161")
                                 .ValidModalities(Modalities.MG)
-                                .SetSnomedDescription("Procedure | 241058008 | Mammogram magnification (Procedure) + QualifierValue | 399067008 | Lateral projection (Qualifier)")
                             //- AutoGen
                             ,
                             //- LateralMagnificaionView
@@ -508,7 +487,6 @@ namespace BreastRadiology.XUnitTests
                                 .SetDefinition("[PR] Lateral medial view")
                                 .MammoId("90")
                                 .ValidModalities(Modalities.MG | Modalities.US)
-                                .SetSnomedDescription("Procedure | 241055006 | Mammogram - symptomatic (Procedure) + QualifierValue | 399352003 | Lateral-medial projection (Qualifier)")
                             //- AutoGen
                             ,
                             //- LateralMedialView
@@ -520,7 +498,6 @@ namespace BreastRadiology.XUnitTests
                                 .SetDefinition("[PR] Lateral view")
                                 .MammoId("95")
                                 .ValidModalities(Modalities.MG | Modalities.US)
-                                .SetSnomedDescription("Procedure | 241055006 | Mammogram - symptomatic (Procedure) + QualifierValue | 399067008 | Lateral projection (Qualifier)")
                             //- AutoGen
                             ,
                             //- LateralView
@@ -532,7 +509,6 @@ namespace BreastRadiology.XUnitTests
                                 .SetDefinition("[PR] Lateral with compression view")
                                 .MammoId("86")
                                 .ValidModalities(Modalities.MG | Modalities.US)
-                                .SetSnomedDescription("Procedure | 439324009 | Mammogram in compression view (Procedure) + QualifierValue | 399067008 | Lateral projection (Qualifier)")
                             //- AutoGen
                             ,
                             //- LateralWithCompressionView
@@ -579,7 +555,6 @@ namespace BreastRadiology.XUnitTests
                                 .SetDefinition("[PR] Magnification views")
                                 .MammoId("42")
                                 .ValidModalities(Modalities.MG | Modalities.MRI | Modalities.NM | Modalities.US)
-                                .SetSnomedDescription("Procedure | 241058008 | Mammogram magnification (Procedure)")
                             //- AutoGen
                             ,
                             //- MagnificationViews
@@ -591,7 +566,6 @@ namespace BreastRadiology.XUnitTests
                                 .SetDefinition("[PR] Mammogram")
                                 .MammoId("182")
                                 .ValidModalities(Modalities.MRI)
-                                .SetSnomedDescription("Procedure | 241055006 | Mammogram - symptomatic (Procedure)")
                             //- AutoGen
                             ,
                             //- Mammogram
@@ -647,7 +621,6 @@ namespace BreastRadiology.XUnitTests
                                 .SetDefinition("[PR] Mediolateral oblique view")
                                 .MammoId("187")
                                 .ValidModalities(Modalities.MG)
-                                .SetSnomedDescription("Procedure | 241055006 | Mammogram - symptomatic (Procedure) + QualifierValue | 399368009 | Medio-lateral oblique projection (Qualifier)")
                             //- AutoGen
                             ,
                             //- MediolateralObliqueView
@@ -659,7 +632,6 @@ namespace BreastRadiology.XUnitTests
                                 .SetDefinition("[PR] Mediolateral view")
                                 .MammoId("162")
                                 .ValidModalities(Modalities.MG)
-                                .SetSnomedDescription("Procedure | 241055006 | Mammogram - symptomatic (Procedure) + QualifierValue | 399260004 | Medial-lateral projection (Qualifier)")
                             //- AutoGen
                             ,
                             //- MediolateralView
@@ -671,7 +643,6 @@ namespace BreastRadiology.XUnitTests
                                 .SetDefinition("[PR] MLO with compression view")
                                 .MammoId("85")
                                 .ValidModalities(Modalities.MG | Modalities.US)
-                                .SetSnomedDescription("Procedure | 439324009 | Mammogram in compression view (Procedure) + QualifierValue | 399368009 | Medio-lateral oblique projection (Qualifier)")
                             //- AutoGen
                             ,
                             //- MLOWithCompressionView
@@ -683,7 +654,6 @@ namespace BreastRadiology.XUnitTests
                                 .SetDefinition("[PR] MLO with magnification view")
                                 .MammoId("83")
                                 .ValidModalities(Modalities.MG | Modalities.US)
-                                .SetSnomedDescription("Procedure | 241058008 | Mammogram magnification (Procedure) + QualifierValue | 399368009 | Medio-lateral oblique projection (Qualifier)")
                             //- AutoGen
                             ,
                             //- MLOWithMagnificationView
@@ -695,7 +665,6 @@ namespace BreastRadiology.XUnitTests
                                 .SetDefinition("[PR] MRI")
                                 .MammoId("92")
                                 .ValidModalities(Modalities.MG | Modalities.US)
-                                .SetSnomedDescription("Procedure | 241615005 | Magnetic resonance imaging of breast (Procedure)")
                             //- AutoGen
                             ,
                             //- MRI
@@ -707,7 +676,6 @@ namespace BreastRadiology.XUnitTests
                                 .SetDefinition("[PR] MRI biopsy")
                                 .MammoId("120")
                                 .ValidModalities(Modalities.MG | Modalities.MRI | Modalities.NM | Modalities.US)
-                                .SetSnomedDescription("Procedure | 433008009 | Core needle biopsy of breast using magnetic resonance imaging guidance (Procedure)")
                             //- AutoGen
                             ,
                             //- MRIBiopsy
@@ -741,7 +709,6 @@ namespace BreastRadiology.XUnitTests
                                 .SetDefinition("[PR] Nipple in profile view")
                                 .MammoId("144")
                                 .ValidModalities(Modalities.MG)
-                                .SetSnomedDescription("Procedure | 241055006 | Mammogram - symptomatic (Procedure) + QualifierValue | 442581004 | Nipple in profile mammography view (Qualifier)")
                             //- AutoGen
                             ,
                             //- NippleInProfileView
@@ -753,7 +720,6 @@ namespace BreastRadiology.XUnitTests
                                 .SetDefinition("[PR] Off angle CC view")
                                 .MammoId("106")
                                 .ValidModalities(Modalities.MG | Modalities.US)
-                                .SetSnomedDescription("Procedure | 241055006 | Mammogram - symptomatic (Procedure) + QualifierValue | 399162004 | Cranio-caudal projection (Qualifier)")
                             //- AutoGen
                             ,
                             //- OffAngleCCView
@@ -765,7 +731,6 @@ namespace BreastRadiology.XUnitTests
                                 .SetDefinition("[PR] Off angle MLO view")
                                 .MammoId("107")
                                 .ValidModalities(Modalities.MG | Modalities.US)
-                                .SetSnomedDescription("Procedure | 241055006 | Mammogram - symptomatic (Procedure) + QualifierValue | 399368009 | Medio-lateral oblique projection (Qualifier) +++++")
                             //- AutoGen
                             ,
                             //- OffAngleMLOView
@@ -777,7 +742,6 @@ namespace BreastRadiology.XUnitTests
                                 .SetDefinition("[PR] Poss. Stereotactic Bx")
                                 .MammoId("1837")
                                 .ValidModalities(Modalities.MG)
-                                .SetSnomedDescription("Procedure | 116334007 | Stereotactically guided core needle biopsy of breast (Procedure) ++ POSSILE")
                             //- AutoGen
                             ,
                             //- Poss.StereotacticBx
@@ -789,7 +753,6 @@ namespace BreastRadiology.XUnitTests
                                 .SetDefinition("[PR] Possible core biopsy")
                                 .MammoId("91")
                                 .ValidModalities(Modalities.MG | Modalities.US)
-                                .SetSnomedDescription("Procedure | 44578009 | Core needle biopsy of breast (Procedure) ++ POSSIBLE")
                             //- AutoGen
                             ,
                             //- PossibleCoreBiopsy
@@ -856,7 +819,6 @@ namespace BreastRadiology.XUnitTests
                                 .SetDefinition("[PR] Possible ultrasound guided biopsy")
                                 .MammoId("130")
                                 .ValidModalities(Modalities.MG)
-                                .SetSnomedDescription("Procedure | 432550005 | Core needle biopsy of breast using ultrasound guidance (Procedure) +++ POSSIBLE")
                             //- AutoGen
                             ,
                             //- PossibleUltrasoundGuidedBiopsy
@@ -879,7 +841,6 @@ namespace BreastRadiology.XUnitTests
                                 .SetDefinition("[PR] Repeat CC view")
                                 .MammoId("135")
                                 .ValidModalities(Modalities.MG)
-                                .SetSnomedDescription("Procedure | 241055006 | Mammogram - symptomatic (Procedure) + QualifierValue | 399162004 | Cranio-caudal projection (Qualifier)")
                             //- AutoGen
                             ,
                             //- RepeatCCView
@@ -891,7 +852,6 @@ namespace BreastRadiology.XUnitTests
                                 .SetDefinition("[PR] Repeat MLO view")
                                 .MammoId("134")
                                 .ValidModalities(Modalities.MG)
-                                .SetSnomedDescription("Procedure | 241055006 | Mammogram - symptomatic (Procedure) + QualifierValue | 399368009 | Medio-lateral oblique projection (Qualifier)")
                             //- AutoGen
                             ,
                             //- RepeatMLOView
@@ -903,7 +863,6 @@ namespace BreastRadiology.XUnitTests
                                 .SetDefinition("[PR] Rolled lateral view")
                                 .MammoId("49")
                                 .ValidModalities(Modalities.MG | Modalities.US)
-                                .SetSnomedDescription("Procedure | 399197002 | Lateral rolling of breast (Procedure)")
                             //- AutoGen
                             ,
                             //- RolledLateralView
@@ -915,7 +874,6 @@ namespace BreastRadiology.XUnitTests
                                 .SetDefinition("[PR] Rolled medial view")
                                 .MammoId("50")
                                 .ValidModalities(Modalities.MG | Modalities.US)
-                                .SetSnomedDescription("Procedure | 399226006 | Medial rolling of breast (Procedure)")
                             //- AutoGen
                             ,
                             //- RolledMedialView
@@ -949,7 +907,6 @@ namespace BreastRadiology.XUnitTests
                                 .SetDefinition("[PR] Spot compression")
                                 .MammoId("1801")
                                 .ValidModalities(Modalities.MG | Modalities.NM | Modalities.US)
-                                .SetSnomedDescription("Procedure | 439324009 | Mammogram in compression view (Procedure)")
                             //- AutoGen
                             ,
                             //- SpotCompression
@@ -961,7 +918,6 @@ namespace BreastRadiology.XUnitTests
                                 .SetDefinition("[PR] Spot magnification views")
                                 .MammoId("188")
                                 .ValidModalities(Modalities.MG)
-                                .SetSnomedDescription("Procedure | 241058008 | Mammogram magnification (Procedure) +++++")
                             //- AutoGen
                             ,
                             //- SpotMagnificationViews
@@ -973,7 +929,6 @@ namespace BreastRadiology.XUnitTests
                                 .SetDefinition("[PR] Stereotactic bx")
                                 .MammoId("54")
                                 .ValidModalities(Modalities.MG | Modalities.MRI | Modalities.NM | Modalities.US)
-                                .SetSnomedDescription("Procedure | 116334007 | Stereotactically guided core needle biopsy of breast (Procedure)")
                             //- AutoGen
                             ,
                             //- StereotacticBx
@@ -996,7 +951,6 @@ namespace BreastRadiology.XUnitTests
                                 .SetDefinition("[PR] Surgical biopsy")
                                 .MammoId("1803")
                                 .ValidModalities(Modalities.NM)
-                                .SetSnomedDescription("Procedure | 274331003 | Surgical biopsy of breast (Procedure)")
                             //- AutoGen
                             ,
                             //- SurgicalBiopsy
@@ -1019,7 +973,6 @@ namespace BreastRadiology.XUnitTests
                                 .SetDefinition("[PR] Surgical consult and biopsy")
                                 .MammoId("118")
                                 .ValidModalities(Modalities.MG | Modalities.MRI | Modalities.US)
-                                .SetSnomedDescription("Procedure | 274331003 | Surgical biopsy of breast (Procedure) ++++")
                             //- AutoGen
                             ,
                             //- SurgicalConsultAndBiopsy
@@ -1042,7 +995,6 @@ namespace BreastRadiology.XUnitTests
                                 .SetDefinition("[PR] Surgical excision")
                                 .MammoId("1804")
                                 .ValidModalities(Modalities.NM)
-                                .SetSnomedDescription("Procedure | 237372000 | Excisional biopsy of breast (Procedure)")
                             //- AutoGen
                             ,
                             //- SurgicalExcision
@@ -1098,7 +1050,6 @@ namespace BreastRadiology.XUnitTests
                                 .SetDefinition("[PR] Ultrasound")
                                 .MammoId("181")
                                 .ValidModalities(Modalities.MG | Modalities.MRI | Modalities.NM)
-                                .SetSnomedDescription("Procedure | 47079000 | Ultrasonography of breast (Procedure)")
                             //- AutoGen
                             ,
                             //- Ultrasound
@@ -1143,7 +1094,6 @@ namespace BreastRadiology.XUnitTests
                                 .SetDefinition("[PR] Ultrasound guided bx")
                                 .MammoId("55")
                                 .ValidModalities(Modalities.MG | Modalities.MRI | Modalities.NM | Modalities.US)
-                                .SetSnomedDescription("Procedure | 432550005 | Core needle biopsy of breast using ultrasound guidance (Procedure)")
                             //- AutoGen
                             ,
                             //- UltrasoundGuidedBx
@@ -1155,7 +1105,6 @@ namespace BreastRadiology.XUnitTests
                                 .SetDefinition("[PR] Ultrasound location and surgical biopsy")
                                 .MammoId("171")
                                 .ValidModalities(Modalities.MG | Modalities.US)
-                                .SetSnomedDescription("Procedure | 274331003 | Surgical biopsy of breast (Procedure)++++++++++++")
                             //- AutoGen
                             ,
                             //- UltrasoundLocationAndSurgicalBiopsy
@@ -1212,8 +1161,30 @@ namespace BreastRadiology.XUnitTests
                                 .MammoId("131")
                                 .ValidModalities(Modalities.MG | Modalities.US)
                             //- AutoGen
-                            
+                            ,
                             //- VacuumBx
+                            //+ LateromedialObliqueSPELLING
+                            //+ AutoGen
+                            new ConceptDef()
+                                .SetCode("LateromedialObliqueSPELLING")
+                                .SetDisplay("Lateromedial oblique SPELLING")
+                                .SetDefinition("[PR] Lateromedial oblique SPELLING")
+                                .MammoId("47")
+                                .ValidModalities(Modalities.MG | Modalities.US)
+                            //- AutoGen
+                            ,
+                            //- LateromedialObliqueSPELLING
+                            //+ LateromedialViewSPELLING
+                            //+ AutoGen
+                            new ConceptDef()
+                                .SetCode("LateromedialViewSPELLING")
+                                .SetDisplay("Lateromedial view SPELLING")
+                                .SetDefinition("[PR] Lateromedial view SPELLING")
+                                .MammoId("96")
+                                .ValidModalities(Modalities.MG | Modalities.US)
+                            //- AutoGen
+                            ,
+                            //- LateromedialViewSPELLING
                             //- RecommendationsCS
                         })
             );

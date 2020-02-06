@@ -33,6 +33,7 @@ namespace BreastRadiology.XUnitTests
                 return this.baseDirFull;
             }
         }
+
         String baseDirFull;
 
 
@@ -54,6 +55,7 @@ namespace BreastRadiology.XUnitTests
                 temp += value.Substring(j + 1);
                 value = temp;
             }
+
             return value;
         }
 
@@ -94,8 +96,8 @@ namespace BreastRadiology.XUnitTests
 
             CodeEditor editor = new CodeEditor();
             editor.Load(Path.Combine(DirHelper.FindParentDir("BreastRadiology.XUnitTests"),
-                        "ResourcesMaker",
-                        outputCodePath));
+                "ResourcesMaker",
+                outputCodePath));
             CodeBlockNested concepts = editor.Blocks.Find(csBlockName);
             if (concepts == null)
                 throw new Exception($"Can not find editor block {csBlockName}");
@@ -111,7 +113,8 @@ namespace BreastRadiology.XUnitTests
                 String code = row[7].ToString();
                 if (itemsToIgnore.Contains(code.Trim().ToUpper()) == false)
                 {
-                    String validWith = App("", row[0], "MG"); ;
+                    String validWith = App("", row[0], "MG");
+                    ;
                     validWith = App(validWith, row[1], "MRI");
                     validWith = App(validWith, row[2], "NM");
                     validWith = App(validWith, row[3], "US");
@@ -123,8 +126,8 @@ namespace BreastRadiology.XUnitTests
 
                         String sValue = value.ToString();
                         sValue = sValue.Trim()
-                            .Replace("\r", "")
-                            .Replace("\n", "")
+                                .Replace("\r", "")
+                                .Replace("\n", "")
                             ;
                         if (String.IsNullOrEmpty(sValue) == false)
                             concept
@@ -219,6 +222,7 @@ namespace BreastRadiology.XUnitTests
                         throw new Exception("Invalid excel cell value");
                 }
             }
+
             IEnumerable<String> FormatMultiLineText(String text)
             {
                 const Int32 Maxlen = 48;
@@ -253,6 +257,7 @@ namespace BreastRadiology.XUnitTests
                                 sb.Append("\",\n\"");
                                 len = 0;
                             }
+
                             break;
 
                         case ' ':
@@ -262,6 +267,7 @@ namespace BreastRadiology.XUnitTests
                                 sb.Append("\" +\n\"");
                                 len = 0;
                             }
+
                             break;
 
                         default:
@@ -269,6 +275,7 @@ namespace BreastRadiology.XUnitTests
                             break;
                     }
                 }
+
                 sb.Append("\"");
                 return sb.ToString().Split('\n');
             }
@@ -285,8 +292,10 @@ namespace BreastRadiology.XUnitTests
                     if (Char.IsDigit(t[i]) == false)
                         return true;
                 }
+
                 return false;
             }
+
             void DoRow(DataRow row)
             {
                 String id = Val(row[5]);
@@ -301,7 +310,7 @@ namespace BreastRadiology.XUnitTests
                     .AppendLine($"    \"\", ")
                     .AppendLine($"    new String[]")
                     .AppendLine($"    {{")
-                ;
+                    ;
                 String[] lines = FormatMultiLineText(text).ToArray();
 
                 foreach (String line in lines)
@@ -311,8 +320,8 @@ namespace BreastRadiology.XUnitTests
 
             CodeEditor editor = new CodeEditor();
             editor.Load(Path.Combine(DirHelper.FindParentDir("BreastRadiology.XUnitTests"),
-                        "ResourcesMaker",
-                        "MammoIDDescriptions.cs"));
+                "ResourcesMaker",
+                "MammoIDDescriptions.cs"));
 
             cb = editor.Blocks.Find("Data");
             cb.Clear();
@@ -328,8 +337,8 @@ namespace BreastRadiology.XUnitTests
         {
             CodeEditor editor = new CodeEditor();
             editor.Load(Path.Combine(DirHelper.FindParentDir("BreastRadiology.XUnitTests"),
-                        "ResourcesMaker",
-                        outputCodePath));
+                "ResourcesMaker",
+                outputCodePath));
 
             CodeBlockNested concepts = editor.Blocks.Find(csBlockName);
             if (concepts == null)
@@ -385,7 +394,8 @@ namespace BreastRadiology.XUnitTests
                     }
                 }
 
-                String validWith = App("", row[1], "MG"); ;
+                String validWith = App("", row[1], "MG");
+                ;
                 validWith = App(validWith, row[2], "MRI");
                 validWith = App(validWith, row[3], "NM");
                 validWith = App(validWith, row[4], "US");
@@ -403,7 +413,30 @@ namespace BreastRadiology.XUnitTests
             editor.Save();
         }
 
-        [TestMethod]
+        String[] Filter(String listBoxName,
+            String structure)
+        {
+            List<String> retVal = new List<string>();
+
+            bool IsMatch(DataRow dr)
+            {
+                if (dr[6].ToString() != listBoxName)
+                    return false;
+                if (dr[7].ToString() != structure)
+                    return false;
+                return true;
+            }
+
+            foreach (KeyValuePair<String, DataRow> item in this.sheet3)
+            {
+                if (IsMatch(item.Value))
+                    retVal.Add(item.Key);
+            }
+            return retVal.ToArray();
+        }
+
+
+    [TestMethod]
         public void WriteCode()
         {
             DataSet ds = this.ReadGregDS();
@@ -415,7 +448,10 @@ namespace BreastRadiology.XUnitTests
             WriteIds(@"Common\Abnormalities\AbnormalityFibroAdenoma.cs", "Type", "70", "695");
             WriteIds(@"Common\Abnormalities\AbnormalityLymphNode.cs", "Type", "648", "649", "662", "665", "650", "651", "652", "666", "663");
             WriteIds(@"Common\Abnormalities\AbnormalityMass.cs", "Type", "58", "621", "697", "613", "608");
-            WriteCS(ds, "Recommendation", @"Common\ServiceRecommendation.cs", "RecommendationsCS");
+
+            WriteIds(@"Common\ServiceRecommendation.cs", "RecommendationsCS", Filter("Recommendations", "Recommendation"));
+
+            //WriteCS(ds, "Recommendation", @"Common\ServiceRecommendation.cs", "RecommendationsCS");
             WriteCS(ds, "CorrspondsWith", @"Common\CorrespondsWithCS.cs", "CorrespondsWithCS");
             WriteCS(ds, "ConsistentWith", @"Common\ConsistentWith.cs", "ConsistentWithCS");
             WriteCS(ds, "ConsistentWithQualifier", @"Common\ConsistentWith.cs", "ConsistentWithQualifierCS");
