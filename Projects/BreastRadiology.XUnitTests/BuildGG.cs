@@ -274,89 +274,6 @@ namespace BreastRadiology.XUnitTests
             return sb.ToString().Split('\n');
         }
 
-        void WriteDescriptions()
-        {
-            CodeBlockNested cb = null;
-
-            String Val(Object t)
-            {
-                switch (t)
-                {
-                    case DBNull dbNullValue:
-                        return null;
-
-                    case Double dbl:
-                        return dbl.ToString();
-
-                    case String stringValue:
-                        return stringValue;
-
-                    default:
-                        throw new Exception("Invalid excel cell value");
-                }
-            }
-
-
-            // Get rid of empty strings, and strings liek C1234
-            bool CheckText(String t)
-            {
-                if (String.IsNullOrEmpty(t))
-                    return false;
-                if (t[0] != 'C')
-                    return true;
-                for (Int32 i = 1; i < t.Length; i++)
-                {
-                    if (Char.IsDigit(t[i]) == false)
-                        return true;
-                }
-
-                return false;
-            }
-
-            void DoRow(DataRow row)
-            {
-                String id = Val(row[5]);
-                if (id == "1508") Debugger.Break();
-                if (String.IsNullOrEmpty(id))
-                    return;
-                String text = Val(row[17]);
-
-                if (CheckText(text) == false)
-                {
-                    cb
-                        .AppendLine($"Add(\"{id}\", ")
-                        .AppendLine($"    \"\", ")
-                        .AppendLine($"    new String[0]);")
-                        ;
-                    return;
-                }
-
-                cb
-                    .AppendLine($"Add(\"{id}\", ")
-                    .AppendLine($"    \"\", ")
-                    .AppendLine($"    new String[]")
-                    .AppendLine($"    {{")
-                    ;
-                String[] lines = FormatMultiLineText(text).ToArray();
-
-                foreach (String line in lines)
-                    cb.AppendLine($"        {line}");
-                cb.AppendLine($"    }});");
-            }
-
-            CodeEditor editor = new CodeEditor();
-            editor.Load(Path.Combine(DirHelper.FindParentDir("BreastRadiology.XUnitTests"),
-                "ResourcesMaker",
-                "MammoIDDescriptions.cs"));
-
-            cb = editor.Blocks.Find("Data");
-            cb.Clear();
-
-            foreach (DataRow row in this.sheet3.Values)
-                DoRow(row);
-            editor.Save();
-        }
-
         void WriteIds(String outputCodePath,
             String csBlockName,
             params String[] penIds)
@@ -484,7 +401,6 @@ namespace BreastRadiology.XUnitTests
             DataSet ds = this.ReadGregDS();
             LoadSheet3(ds);
 
-            WriteDescriptions();
             WriteIds(@"Common\Abnormalities\AbnormalityCyst.cs", "Type", "69", "610", "657", "617", "636", "609", "661");
             WriteIds(@"Common\Abnormalities\AbnormalityDuct.cs", "Type", "694.602", "693.614");
             WriteIds(@"Common\Abnormalities\AbnormalityFibroAdenoma.cs", "Type", "70", "695");

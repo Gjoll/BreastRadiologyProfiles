@@ -24,11 +24,10 @@ namespace BreastRadiology.XUnitTests
 
                 AppendDefLines(this.definitionText);
 
-                if (this.mammoIdDescription != null)
+                if (MammoData.Self.SelectRow(this.mammoId) == true)
                 {
-                    if (String.IsNullOrEmpty(this.mammoIdDescription.Source) == false)
-                        sb.AppendLine($"[{this.mammoIdDescription.Source}]");
-                    AppendDefLines(this.mammoIdDescription.Text);
+                    String[] description = MammoData.Self.UMLS.Split('\n');
+                    AppendDefLines(description);
                 }
 
                 if (this.biRadsText != null)
@@ -46,7 +45,6 @@ namespace BreastRadiology.XUnitTests
 
         String[] definitionText;
         String[] biRadsText;
-        MammoIDDescriptions.Description mammoIdDescription;
         String mammoId = null;
 
         public ConceptDef()
@@ -119,14 +117,12 @@ namespace BreastRadiology.XUnitTests
                     "ACR text with no MammoId!");
             }
             else
-                Global.BreastData.PatchACRText(this.mammoId, lines);
+                MammoData.Self.BreastData.PatchACRText(this.mammoId, lines);
             return this;
         }
 
         public ConceptDef MammoId(String id)
         {
-            if (MammoIDDescriptions.Self.TryGet(id, out mammoIdDescription) == false)
-                return this;
             this.mammoId = id;
             return this;
         }

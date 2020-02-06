@@ -48,16 +48,5 @@ namespace BreastRadiology.XUnitTests
 
             return $"StructureDefinition-" + "{SDName}" + $"-definitions.html#{e.ElementId}";
         }
-
-        public static ExcelData BreastData;
-
-        static Global()
-        {
-            String filePath = Path.Combine(DirHelper.FindParentDir("HL7"),
-                "BRDocs",
-                "BreastData.xlsx");
-
-            BreastData = new ExcelData(filePath, "Sheet3");
-        }
     }
 }

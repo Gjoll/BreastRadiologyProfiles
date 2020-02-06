@@ -9,26 +9,26 @@ using ClosedXML.Excel;
 
 namespace BreastRadiology.XUnitTests
 {
-    class ExcelData
+    public class ExcelData
     {
         DataTable dataTable;
         Dictionary<String, DataRow> rows = new Dictionary<string, DataRow>();
         String filePath;
 
-        Int32 mgCol = -1;
-        Int32 mriCol = -1;
-        Int32 nmCol = -1;
-        Int32 usCol = -1;
-        Int32 idMammoCol = -1;
-        Int32 listBoxNameCol = -1;
-        Int32 structureCol = -1;
-        Int32 itemNameCol = -1;
-        Int32 dicomCol = -1;
-        Int32 snoMedCol = -1;
-        Int32 snoMedDescriptionCol = -1;
-        Int32 icd10Col = -1;
-        Int32 umlsCol = -1;
-        Int32 acrCol = -1;
+        public Int32 mgCol = -1;
+        public Int32 mriCol = -1;
+        public Int32 nmCol = -1;
+        public Int32 usCol = -1;
+        public Int32 idMammoCol = -1;
+        public Int32 listBoxNameCol = -1;
+        public Int32 structureCol = -1;
+        public Int32 itemNameCol = -1;
+        public Int32 dicomCol = -1;
+        public Int32 snoMedCol = -1;
+        public Int32 snoMedDescriptionCol = -1;
+        public Int32 icd10Col = -1;
+        public Int32 umlsCol = -1;
+        public Int32 acrCol = -1;
 
         public ExcelData(String filePath,
             String sheetName)
@@ -115,6 +115,11 @@ namespace BreastRadiology.XUnitTests
                         break;
                 }
             }
+        }
+
+        public bool TryGetRow(String mammoId, out DataRow row)
+        {
+            return this.rows.TryGetValue(mammoId, out row);
         }
 
         public void PatchACRText(String mammoId, String[] lines)
