@@ -327,7 +327,7 @@ namespace BreastRadiology.XUnitTests
                     this.fc?.Mark(path);
                 }
             }
-            Self.Data.BreastData.Save();
+            //Self.Data.BreastData.Save();
         }
 
         IntroDoc CreateIntroDocVS(ValueSet binding)

@@ -52,6 +52,14 @@ namespace BreastRadiology.XUnitTests
         String baseDirFull;
 
         ExcelData spreadSheetData;
+
+        Int32 ICD10Col => this.spreadSheetData.icd10Col;
+        Int32 DicomCol => this.spreadSheetData.dicomCol;
+        Int32 SnomedCol => this.spreadSheetData.snoMedCol;
+        Int32 SnomedDescriptionCol => this.spreadSheetData.snoMedDescriptionCol;
+        Int32 ACRCol => this.spreadSheetData.acrCol;
+        Int32 UMLSCol => this.spreadSheetData.umlsCol;
+
         public BuildGG()
         {
         }
@@ -166,24 +174,10 @@ namespace BreastRadiology.XUnitTests
                     validWith = App(validWith, row[3], "US");
 
                     String conceptBlockName = CodeValue(code);
-                    CodeBlockNested conceptOuter = concepts.Find(conceptBlockName);
-                    if (conceptOuter == null)
-                    {
-                        conceptOuter = concepts.AppendBlock(conceptBlockName);
-                        concept = conceptOuter.AppendBlock("AutoGen");
-                        conceptOuter
-                            .AppendLine(term)
-                            ;
-                    }
-                    else
-                    {
-                        concept = conceptOuter.Find("AutoGen");
-                        concept.Clear();
-                    }
 
                     String penId = row[4].ToString();
 
-                    concept
+                    concepts
                         .AppendLine($"new ConceptDef()")
                         .AppendLine($"    .SetCode(\"{conceptBlockName}\")")
                         .AppendLine($"    .SetDisplay(\"{code}\")")
@@ -192,13 +186,13 @@ namespace BreastRadiology.XUnitTests
                         .AppendLine($"    .ValidModalities({validWith})")
                         ;
 
-                    AppIfNotNull(concept, "SetDicom", row[9]);
-                    AppIfNotNull(concept, "SetSnomedCode", row[11]);
-                    AppIfNotNull(concept, "SetOneToMany", row[12]);
-                    AppIfNotNull(concept, "SetSnomedDescription", row[13]);
-                    AppIfNotNull(concept, "SetICD10", row[14]);
-                    AppIfNotNull(concept, "SetComment", row[15]);
-                    AppIfNotNull(concept, "SetUMLS", row[16]);
+                    AppIfNotNull(concepts, "SetDicom", row[DicomCol]);
+                    AppIfNotNull(concepts, "SetSnomedCode", row[SnomedCol]);
+                    //AppIfNotNull(concepts, "SetOneToMany", row[12]);
+                    AppIfNotNull(concepts, "SetSnomedDescription", row[SnomedDescriptionCol]);
+                    AppIfNotNull(concepts, "SetICD10", row[ICD10Col]);
+                    AppIfNotNull(concepts, "SetUMLS", row[UMLSCol]);
+                    AppIfNotNull(concepts, "SetACR", row[ACRCol]);
                 }
             }
 
@@ -285,6 +279,7 @@ namespace BreastRadiology.XUnitTests
             if (concepts == null)
                 throw new Exception($"Can not find editor block {csBlockName}");
 
+            concepts.Clear();
             for (Int32 i = 0; i < penIds.Length; i++)
             {
                 String term = ",";
@@ -298,20 +293,6 @@ namespace BreastRadiology.XUnitTests
 
                 String code = row[8].ToString();
                 String conceptBlockName = CodeValue(code);
-                CodeBlockNested conceptOuter = concepts.Find(conceptBlockName);
-                if (conceptOuter == null)
-                {
-                    conceptOuter = concepts.AppendBlock(conceptBlockName);
-                    concept = conceptOuter.AppendBlock("AutoGen");
-                    conceptOuter
-                        .AppendLine(term)
-                        ;
-                }
-                else
-                {
-                    concept = conceptOuter.Find("AutoGen");
-                    concept.Clear();
-                }
 
                 String App(String s, Object t, String sb)
                 {
@@ -340,7 +321,7 @@ namespace BreastRadiology.XUnitTests
                 validWith = App(validWith, row[3], "NM");
                 validWith = App(validWith, row[4], "US");
 
-                concept
+                concepts
                     .AppendLine($"new ConceptDef()")
                     .AppendLine($"    .SetCode(\"{conceptBlockName}\")")
                     .AppendLine($"    .SetDisplay(\"{code}\")")
@@ -349,13 +330,13 @@ namespace BreastRadiology.XUnitTests
                     .AppendLine($"    .ValidModalities({validWith})")
                     ;
 
-                AppIfNotNull(concept, "SetDicom", row[10]);
-                AppIfNotNull(concept, "SetSnomedCode", row[12]);
-                AppIfNotNull(concept, "SetOneToMany", row[13]);
-                AppIfNotNull(concept, "SetSnomedDescription", row[14]);
-                AppIfNotNull(concept, "SetICD10", row[15]);
-                AppIfNotNull(concept, "SetComment", row[16]);
-                AppIfNotNull(concept, "SetUMLS", row[17]);
+                AppIfNotNull(concepts, "SetDicom", row[DicomCol]);
+                AppIfNotNull(concepts, "SetSnomedCode", row[SnomedCol]);
+                //AppIfNotNull(concepts, "SetOneToMany", row[13]);
+                AppIfNotNull(concepts, "SetSnomedDescription", row[SnomedDescriptionCol]);
+                AppIfNotNull(concepts, "SetICD10", row[ICD10Col]);
+                AppIfNotNull(concepts, "SetUMLS", row[UMLSCol]);
+                AppIfNotNull(concepts, "SetACR", row[ACRCol]);
             }
             editor.Save();
         }
@@ -419,6 +400,7 @@ namespace BreastRadiology.XUnitTests
                     Filter("Associated findings", "Associated findings").Remove(itemsToIgnore));
             }
         }
+
         public void ReadGregDS()
         {
             String filePath = Path.Combine(BaseDir,
