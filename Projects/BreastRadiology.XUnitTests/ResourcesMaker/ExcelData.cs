@@ -88,10 +88,11 @@ namespace BreastRadiology.XUnitTests
             }
             Read();
             if (this.acrCol == -1)
-            {
-                this.acrCol = this.idMammoCol + 1;
-                row[this.acrCol] = "ACR";
-            }
+                throw new Exception("Missing ACR column");
+            if (this.umlsCol == -1)
+                throw new Exception("Missing UMLS column");
+            if (this.idMammoCol == -1)
+                throw new Exception("Missing IDMAMMO column");
             return retVal;
         }
 

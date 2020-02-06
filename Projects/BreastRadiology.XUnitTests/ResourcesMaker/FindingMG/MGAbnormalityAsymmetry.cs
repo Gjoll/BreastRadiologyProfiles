@@ -86,7 +86,7 @@ namespace BreastRadiology.XUnitTests
                              .SetCode("AsymmetryADDPrefixDeveloping")
                              .SetDisplay("Asymmetry ADD prefix developing")
                              .SetDefinition("[PR] Asymmetry ADD prefix developing")
-                             .MammoId("X8001")
+                             .MammoId("X11000")
                              .ValidModalities(Modalities.MG)
                          //- AutoGen
                              .BiRadsDef("Global asymmetry is judged relative to the corresponding area in the contralateral breast and",
