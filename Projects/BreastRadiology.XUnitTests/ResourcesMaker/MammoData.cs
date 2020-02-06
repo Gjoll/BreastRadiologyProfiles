@@ -28,6 +28,12 @@ namespace BreastRadiology.XUnitTests
 
         public bool SelectRow(String id)
         {
+            if (id == null)
+                return false;
+
+            if (currentRowId == id)
+                return true;
+
             currentRowId = id;
             if (this.BreastData.TryGetRow(id, out this.currentRow) == true)
                 return true;
@@ -36,6 +42,6 @@ namespace BreastRadiology.XUnitTests
             return false;
         }
 
-        public String UMLS => (String) this.currentRow[this.BreastData.umlsCol];
+        public String UMLS => this.currentRow[this.BreastData.umlsCol].ToString();
     }
 }

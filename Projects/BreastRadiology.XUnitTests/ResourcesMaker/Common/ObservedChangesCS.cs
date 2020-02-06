@@ -24,7 +24,7 @@ namespace BreastRadiology.XUnitTests
                       Group_CommonCodesCS,
                       new ConceptDef[]
                       {
-                         //+ ChangesCS
+                         //+ Codes
                          //+ DecreaseInCalcifications
                          //+ AutoGen
                          new ConceptDef()
@@ -229,7 +229,7 @@ namespace BreastRadiology.XUnitTests
                              .ValidModalities(Modalities.MG | Modalities.MRI | Modalities.US)
                          //- AutoGen
                          //- Stable
-                         //- ChangesCS
+                         //- Codes
                       }));
 
         VSTaskVar ObservedChangesVS = new VSTaskVar(

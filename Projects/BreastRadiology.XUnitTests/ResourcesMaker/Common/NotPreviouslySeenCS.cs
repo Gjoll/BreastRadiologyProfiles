@@ -36,7 +36,7 @@ namespace BreastRadiology.XUnitTests
                         Group_CommonCodesCS,
                         new ConceptDef[]
                         {
-                            //+ NotPreviouslySeenCS
+                            //+ Codes
                             //+ ClinicalExam
                             //+ AutoGen
                             new ConceptDef()
@@ -136,8 +136,7 @@ namespace BreastRadiology.XUnitTests
                                     "treat disease or conditions.")
                             //- AutoGen
                             //- Ultrasound
-                            
-                            //- NotPreviouslySeenCS
+                            //- Codes
                         })
             );
     }

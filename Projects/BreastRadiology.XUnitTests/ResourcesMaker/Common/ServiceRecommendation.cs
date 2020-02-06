@@ -71,7 +71,7 @@ namespace BreastRadiology.XUnitTests
                         Group_CommonCodesCS,
                         new ConceptDef[]
                         {
-                            //+ RecommendationsCS
+                            //+ Codes
                             //+ 3DImaging
                             //+ AutoGen
                             new ConceptDef()
@@ -1536,7 +1536,7 @@ namespace BreastRadiology.XUnitTests
                             //- AutoGen
                             ,
                             //- LateromedialViewSPELLING
-                            //- RecommendationsCS
+                            //- Codes
                         })
             );
     }

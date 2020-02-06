@@ -24,7 +24,7 @@ namespace BreastRadiology.XUnitTests
                          Group_CommonCodesCS,
                          new ConceptDef[]
                          {
-                            //+ ForeignObjectCS
+                            //+ Type
                             //+ BBPellet
                             //+ AutoGen
                             new ConceptDef()
@@ -518,7 +518,7 @@ namespace BreastRadiology.XUnitTests
                             //- AutoGen
                             ,
                             //- TitaniumClips
-                             //- ForeignObjectCS
+                             //- Type
                          })
              );
 

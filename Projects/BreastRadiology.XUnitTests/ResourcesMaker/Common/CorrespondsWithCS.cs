@@ -37,7 +37,7 @@ namespace BreastRadiology.XUnitTests
                         Group_CommonCodesCS,
                         new ConceptDef[]
                         {
-                            //+ CorrespondsWithCS
+                            //+ Codes
                             //+ Aspiration
                             //+ AutoGen
                             new ConceptDef()
@@ -420,7 +420,7 @@ namespace BreastRadiology.XUnitTests
                             //- AutoGen
                             ,
                             //- PostOperative
-                            //- CorrespondsWithCS
+                            //- Codes
                         })
             );
     }

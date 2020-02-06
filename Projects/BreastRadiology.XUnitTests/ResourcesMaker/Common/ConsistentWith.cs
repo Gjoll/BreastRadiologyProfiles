@@ -100,7 +100,7 @@ namespace BreastRadiology.XUnitTests
                         Group_CommonCodesCS,
                         new ConceptDef[]
                         {
-                            //+ ConsistentWithCS
+                            //+ Codes
                             //+ Abscess
                             //+ AutoGen
                             new ConceptDef()
@@ -1308,7 +1308,7 @@ namespace BreastRadiology.XUnitTests
                             //- AutoGen
                             ,
                             //- PhyllodesTumor(SPELLINGREMOVEI)
-                            //- ConsistentWithCS
+                            //- Codes
                         })
             );
 
@@ -1323,7 +1323,7 @@ namespace BreastRadiology.XUnitTests
                         Group_CommonCodesCS,
                         new ConceptDef[]
                         {
-                            //+ ConsistentWithQualifierCS
+                            //+ Qualifiers
                             //+ LikelyRepresents
                             //+ AutoGen
                             new ConceptDef()
@@ -1383,7 +1383,7 @@ namespace BreastRadiology.XUnitTests
                             //- AutoGen
                             ,
                             //- DifferentialDiagnosis
-                            //- ConsistentWithQualifierCS
+                            //- Qualifiers
                         })
              );
     }

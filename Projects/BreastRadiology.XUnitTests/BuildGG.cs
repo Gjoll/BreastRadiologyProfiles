@@ -278,7 +278,7 @@ namespace BreastRadiology.XUnitTests
             String csBlockName,
             params String[] penIds)
         {
-            WriteIds(outputCodePath, csBlockName, (IEnumerable<String>) penIds);
+            WriteIds(outputCodePath, csBlockName, (IEnumerable<String>)penIds);
         }
 
         void WriteIds(String outputCodePath,
@@ -406,23 +406,27 @@ namespace BreastRadiology.XUnitTests
             WriteIds(@"Common\Abnormalities\AbnormalityFibroAdenoma.cs", "Type", "70", "695");
             WriteIds(@"Common\Abnormalities\AbnormalityLymphNode.cs", "Type", "648", "649", "662", "665", "650", "651", "652", "666", "663");
             WriteIds(@"Common\Abnormalities\AbnormalityMass.cs", "Type", "58", "621", "697", "613", "608");
-            WriteIds(@"Common\Abnormalities\AbnormalityForeignObject.cs", "ForeignObjectCS", Filter("Finding foreign body", "foreign body"));
-            WriteIds(@"Common\ServiceRecommendation.cs", "RecommendationsCS", Filter("Recommendations", "Recommendation"));
-            WriteIds(@"Common\CorrespondsWithCS.cs", "CorrespondsWithCS", Filter("Corresponds", "Corrosponds with"));
-            WriteIds(@"Common\ConsistentWith.cs", "ConsistentWithCS", Filter("Classification Consistent with", "Consistent with"));
-            WriteIds(@"Common\ConsistentWith.cs", "ConsistentWithQualifierCS", Filter("Classification Consistent with", "Consistent qualifier"));
-            WriteIds(@"Common\NotPreviouslySeenCS.cs", "NotPreviouslySeenCS", Filter("Not Prev Seen On", "not previous seen"));
+            WriteIds(@"Common\Abnormalities\AbnormalityForeignObject.cs", "Type", Filter("Finding foreign body", "foreign body"));
+
+            WriteIds(@"Common\ServiceRecommendation.cs", "Codes", Filter("Recommendations", "Recommendation"));
+            WriteIds(@"Common\CorrespondsWithCS.cs", "Codes", Filter("Corresponds", "Corrosponds with"));
+            WriteIds(@"Common\ConsistentWith.cs", "Codes", Filter("Classification Consistent with", "Consistent with"));
+            WriteIds(@"Common\ConsistentWith.cs", "Qualifiers", Filter("Classification Consistent with", "Consistent qualifier"));
+            WriteIds(@"Common\NotPreviouslySeenCS.cs", "Codes", Filter("Not Prev Seen On", "not previous seen"));
             WriteIds(@"Common\MarginCS.cs", "MarginCS", Filter("Profile Abnormality", "margin"));
             WriteIds(@"Common\OrientationCS.cs", "Codes", Filter("Size and Distance", "Orientation"));
-            WriteIds(@"Common\ShapeCS.cs", "ShapeCS", Filter("Profile Abnormality", "shape"));
-            WriteIds(@"Common\ObservedChangesCS.cs", "ChangesCS", Filter("Change From Prior", "Change From Prior"));
+            WriteIds(@"Common\ShapeCS.cs", "Codes", Filter("Profile Abnormality", "shape"));
+            WriteIds(@"Common\ObservedChangesCS.cs", "Codes", Filter("Change From Prior", "Change From Prior"));
 
-            List<String> itemsToIgnore = new List<string>();
-            itemsToIgnore.Add("ARCHITECTURAL DISTORTION");
+            WriteIds(@"FindingMG\MGBreastDensity.cs", "Codes", Filter("Profile Abnormality", "density"));
 
-            //WriteCS(ds, "AssocFindings", @"Common\AssociatedFeatures\ObservedFeature.cs", "ObservedFeatureCS", itemsToIgnore);
-            WriteIds(@"Common\AssociatedFeatures\ObservedFeature.cs", "ObservedFeatureCS",
-                Filter("Associated findings", "Associated findings").Remove(itemsToIgnore));
+            {
+                List<String> itemsToIgnore = new List<string>();
+                itemsToIgnore.Add("ARCHITECTURAL DISTORTION");
+                //WriteCS(ds, "AssocFindings", @"Common\AssociatedFeatures\ObservedFeature.cs", "ObservedFeatureCS", itemsToIgnore);
+                WriteIds(@"Common\AssociatedFeatures\ObservedFeature.cs", "ObservedFeatureCS",
+                    Filter("Associated findings", "Associated findings").Remove(itemsToIgnore));
+            }
         }
         public DataSet ReadGregDS()
         {

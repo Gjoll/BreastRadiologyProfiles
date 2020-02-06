@@ -38,7 +38,7 @@ namespace BreastRadiology.XUnitTests
                      Group_CommonCodesCS,
                      new ConceptDef[]
                      {
-                        //+ ShapeCS
+                        //+ Codes
                         //+ IrregularInShape
                         //+ AutoGen
                         new ConceptDef()
@@ -117,7 +117,7 @@ namespace BreastRadiology.XUnitTests
                             .ValidModalities(Modalities.MG)
                         //- AutoGen
                         //- Reniform
-                        //- ShapeCS
+                        //- Codes
                      })
                  );
     }
