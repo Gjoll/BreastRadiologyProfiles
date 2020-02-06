@@ -7,13 +7,13 @@ namespace BreastRadiology.XUnitTests
 {
     partial class ResourcesMaker
     {
-        CSTaskVar ObservedDistributionCS = new CSTaskVar(
+        CSTaskVar CalcificationDistributionCS = new CSTaskVar(
             (out CodeSystem cs) =>
                 cs = Self.CreateCodeSystem(
-                    "ObservedDistributionCS",
-                    "Observed Distribution CodeSystem",
-                    "Observed/Distribution/CodeSystem",
-                    "Observed Distribution in an abnormality code system.",
+                    "CalcificationDistributionCS",
+                    "Calcification Distribution CodeSystem",
+                    "Calcification/Distribution/CodeSystem",
+                    "Calcification Distribution in an abnormality code system.",
                     Group_CommonCodesCS,
                     new ConceptDef[]
                     {
@@ -175,15 +175,15 @@ namespace BreastRadiology.XUnitTests
                         //- Codes
                     }));
 
-        VSTaskVar ObservedDistributionVS = new VSTaskVar(
+        VSTaskVar CalcificationDistributionVS = new VSTaskVar(
             (out ValueSet vs) =>
                 vs = Self.CreateValueSet(
-                    "ObservedDistributionVS",
-                    "Observed Distribution ValueSet",
-                    "Observed Distribution/ValueSet",
-                    "Observed Distribution of an abnormality value set.",
+                    "CalcificationDistributionVS",
+                    "Calcification Distribution ValueSet",
+                    "Calcification Distribution/ValueSet",
+                    "Calcification Distribution of an abnormality value set.",
                     Group_CommonCodesVS,
-                    Self.ObservedDistributionCS.Value()
+                    Self.CalcificationDistributionCS.Value()
                 )
         );
     }

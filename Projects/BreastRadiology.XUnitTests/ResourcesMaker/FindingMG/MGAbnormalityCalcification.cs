@@ -13,66 +13,6 @@ namespace BreastRadiology.XUnitTests
 {
     partial class ResourcesMaker : ConverterBase
     {
-        //# TODO: get from gg
-        CSTaskVar MGCalcificationDistributionCS = new CSTaskVar(
-             (out CodeSystem cs) =>
-                 cs = Self.CreateCodeSystem(
-                     "MammoCalcificationDistributionCS",
-                     "Mammography Calcification Distribution CodeSystem",
-                     "MG Calc./Distribution/CodeSystem",
-                     "Mammography calcification distribution code system.",
-                     Group_MGCodesCS,
-                     new ConceptDef[]
-                     {
-                    new ConceptDef()
-                        .SetCode("Diffuse", "Diffuse Calcification Distribution")
-                        .BiRadsDef("(historically, \"scattered\")",
-                                       "These are calcifications that are distributed randomly throughout the breast. Punctate and",
-                                        "amorphous calcifications in this distribution are almost always benign, especially if bilateral."),
-                    new ConceptDef()
-                        .SetCode("Regional ", "Regional  Calcification Distribution")
-                        .BiRadsDef("This descriptor is used for numerous calcifications that occupy a large portion of breast tissue",
-                                   "(more than 2 cm in greatest dimension), not conforming to a duct distribution. Since this",
-                                   "distribution may involve most of a quadrant or even more than a single quadrant, malignancy",
-                                   "is less likely. However, overall evaluation of regional calcifications must include particle shape",
-                                   "(morphology) as well as distribution."),
-                    new ConceptDef()
-                        .SetCode("Grouped ", "Grouped  Calcification Distribution")
-                        .BiRadsDef("(historically, \"clustered\")",
-                                   "This term should be used when relatively few calcifications occupy a small portion of breast",
-                                   "tissue. The lower limit for use of this descriptor is usually when 5 calcifications are grouped",
-                                   "within 1 cm of each other or when a definable pattern is identified. The upper limit for use",
-                                   "of this descriptor is when larger numbers of calcifications are grouped within 2 cm of each other."),
-                    new ConceptDef()
-                        .SetCode("Linear ", "Linear  Calcification Distribution")
-                        .BiRadsDef("These are calcifications arrayed in a line. This distribution may elevate suspicion for malignancy,",
-                                   "as it suggests deposits in a duct. Note that both vascular and large rod-like calcifications",
-                                   "also are usually linear in distribution, but that these typically benign calcifications have",
-                                   "a characteristically benign morphology."),
-                    new ConceptDef()
-                        .SetCode("Segmental", "Segmental Calcification Distribution")
-                        .BiRadsDef("Calcifications in a segmental distribution are of concern because they suggest deposits in a",
-                                   "duct or ducts and their branches, raising the possibility of extensive or multifocal breast cancer",
-                                   "in a lobe or segment of the breast. Although benign causes of segmental calcifications exist",
-                                   "(e.g. large rod-like), the smooth, rod-like morphology and large size of benign calcifications",
-                                   "distinguish them from finer, more pleomorphic or heterogeneous malignant calcifications.",
-                                   "A segmental distribution may elevate the degree of suspicion for calcifications such as punctate or amorphous forms.")
-                     }
-                 ));
-
-
-        VSTaskVar MGCalcificationDistributionVS = new VSTaskVar(
-            (out ValueSet vs) =>
-                vs = Self.CreateValueSet(
-                        "MammoCalcificationDistributionVS",
-                        "Mammography Calcification Distribution ValueSet",
-                        "MG Calc./DistributionValueSet",
-                        "Mammography calcification distribution value set.",
-                        Group_MGCodesVS,
-                        Self.MGCalcificationDistributionCS.Value()
-                    )
-            );
-
         CSTaskVar MGCalcificationTypeCS = new CSTaskVar(
              (out CodeSystem cs) =>
                  cs = Self.CreateCodeSystem(
@@ -562,14 +502,14 @@ namespace BreastRadiology.XUnitTests
 
                 e.ComponentSliceCodeableConcept("calcificationDistribution",
                     Self.MGCodeCalcificationDistribution.ToCodeableConcept(),
-                    Self.MGCalcificationDistributionVS.Value(),
+                    Self.CalcificationDistributionVS.Value(),
                     BindingStrength.Required,
                     0,
                     "1",
                     "Calcification Distribution",
                     new Markdown()
                         .Paragraph($"This slice contains the optional component that defines the calcification distribution.",
-                                    $"The value of this component is a codeable concept chosen from the {Self.MGCalcificationDistributionVS.Value().Name} valueset.")
+                                    $"The value of this component is a codeable concept chosen from the {Self.CalcificationDistributionVS.Value().Name} valueset.")
                     );
             });
     }

@@ -31,7 +31,7 @@ namespace BreastRadiology.XUnitTests
                        {
                            e.ComponentSliceCodeableConcept("obsDistribution",
                                Self.ComponentSliceCodeObservedDistribution.ToCodeableConcept(),
-                               Self.ObservedDistributionVS.Value(),
+                               Self.CalcificationDistributionVS.Value(),
                                BindingStrength.Required,
                                0,
                                "*",
@@ -39,7 +39,7 @@ namespace BreastRadiology.XUnitTests
                                new Markdown()
                                    .Paragraph($"This slice contains an optional description of the distribution of a ",
                                               "group of abnormalities. ",
-                                               $"The value of this component is a codeable concept chosen from the {Self.ObservedDistributionVS.Value().Name} valueset.")
+                                               $"The value of this component is a codeable concept chosen from the {Self.CalcificationDistributionVS.Value().Name} valueset.")
                                );
                        }
                        {
