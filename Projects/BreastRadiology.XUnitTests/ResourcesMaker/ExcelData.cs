@@ -12,7 +12,7 @@ namespace BreastRadiology.XUnitTests
     public class ExcelData
     {
         DataTable dataTable;
-        Dictionary<String, DataRow> rows = new Dictionary<string, DataRow>();
+        public Dictionary<String, DataRow> rows = new Dictionary<string, DataRow>();
         String filePath;
 
         public Int32 mgCol = -1;
@@ -29,10 +29,13 @@ namespace BreastRadiology.XUnitTests
         public Int32 icd10Col = -1;
         public Int32 umlsCol = -1;
         public Int32 acrCol = -1;
+        IConversionInfo converter;
 
-        public ExcelData(String filePath,
+        public ExcelData(IConversionInfo converter,
+            String filePath,
             String sheetName)
         {
+            this.converter = converter;
             this.filePath = filePath;
             DataSet dataSet = this.ReadSpreadSheet(filePath);
             DataTable originalTable = dataSet.Tables[sheetName];
@@ -106,7 +109,7 @@ namespace BreastRadiology.XUnitTests
                         String key = r[this.idMammoCol].ToString();
                         if (rows.ContainsKey(key))
                         {
-                            ResourcesMaker.Self.ConversionWarn("GGPatcher",
+                            this.converter.ConversionWarn("GGPatcher",
                                 "LoadRows",
                                 $"Mammo id {key} already exists");
                         }
@@ -129,7 +132,7 @@ namespace BreastRadiology.XUnitTests
                 sb.AppendLine(line);
             if (this.rows.TryGetValue(mammoId, out DataRow row) == false)
             {
-                ResourcesMaker.Self.ConversionWarn("GGPatcher",
+                this.converter.ConversionWarn("GGPatcher",
                     "PatchACRText",
                     $"Cant find row for Mammo id {mammoId}");
                 return;

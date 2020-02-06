@@ -122,9 +122,9 @@ namespace BreastRadiology.XUnitTests
 
         public IntroDoc MammoDescription(String id)
         {
-            if (MammoData.Self.SelectRow(id) == false)
+            if (ResourcesMaker.Self.Data.SelectRow(id) == false)
                 return this;
-            String[] description = MammoData.Self.UMLS.Split('\n');
+            String[] description = ResourcesMaker.Self.Data.UMLS.Split('\n');
 
             CodeBlockNested d = CreateDescriptionBlock();
             d.AppendRaw($"<h4>{Title()} Definition</h4>");

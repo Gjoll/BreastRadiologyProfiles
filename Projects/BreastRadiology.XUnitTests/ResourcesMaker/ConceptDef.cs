@@ -24,9 +24,9 @@ namespace BreastRadiology.XUnitTests
 
                 AppendDefLines(this.definitionText);
 
-                if (MammoData.Self.SelectRow(this.mammoId) == true)
+                if (ResourcesMaker.Self.Data.SelectRow(this.mammoId) == true)
                 {
-                    String[] description = MammoData.Self.UMLS.Split('\n');
+                    String[] description = ResourcesMaker.Self.Data.UMLS.Split('\n');
                     AppendDefLines(description);
                 }
 
@@ -117,7 +117,7 @@ namespace BreastRadiology.XUnitTests
                     "ACR text with no MammoId!");
             }
             else
-                MammoData.Self.BreastData.PatchACRText(this.mammoId, lines);
+                ResourcesMaker.Self.Data.BreastData.PatchACRText(this.mammoId, lines);
             return this;
         }
 

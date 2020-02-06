@@ -9,18 +9,15 @@ namespace BreastRadiology.XUnitTests
 {
     public class MammoData
     {
-        public static MammoData Self => self;
-        static MammoData self = new MammoData();
-
         public ExcelData BreastData;
 
-        public MammoData()
+        public MammoData(IConversionInfo converter)
         {
             String filePath = Path.Combine(DirHelper.FindParentDir("HL7"),
                 "BRDocs",
                 "BreastData.xlsx");
 
-            BreastData = new ExcelData(filePath, "Sheet3");
+            BreastData = new ExcelData(converter, filePath, "Sheet3");
         }
 
         String currentRowId;

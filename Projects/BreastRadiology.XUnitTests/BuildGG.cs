@@ -20,6 +20,20 @@ using Newtonsoft.Json.Linq;
 
 namespace BreastRadiology.XUnitTests
 {
+    class Info : IConversionInfo
+    {
+        void Msg(String import, string className, string method, string msg)
+        {
+            Trace.WriteLine($"{import} [{className}.{method}] '{msg}'");
+        }
+
+        public void ConversionError(string className, string method, string msg) => Msg("Err", className, method, msg);
+
+        public void ConversionInfo(string className, string method, string msg) => Msg("Info", className, method, msg);
+
+        public void ConversionWarn(string className, string method, string msg) => Msg("Warn", className, method, msg);
+    }
+
     [TestClass]
     public sealed class BuildGG
     {
@@ -37,13 +51,14 @@ namespace BreastRadiology.XUnitTests
 
         String baseDirFull;
 
-
+        ExcelData spreadSheetData;
         public BuildGG()
         {
         }
 
         String CodeValue(String value)
         {
+            value = value.Trim();
             while (true)
             {
                 Int32 j = value.IndexOf(' ', new StringComparison());
@@ -190,33 +205,6 @@ namespace BreastRadiology.XUnitTests
             editor.Save();
         }
 
-        Dictionary<String, DataRow> sheet3 = new Dictionary<string, DataRow>();
-
-        void LoadSheet3(DataSet ds)
-        {
-            DataTable dataTbl = ds.Tables["Sheet3"];
-            if (dataTbl == null)
-                throw new Exception($"Table {"Sheet3"} not found");
-
-            void DoRow(DataRow row)
-            {
-                String penId = row[5].ToString().Trim();
-                if (penId == "?????")
-                    return;
-                if (penId.Length == 0)
-                    return;
-
-                if (sheet3.TryAdd(penId, row) == false)
-                    Trace.WriteLine($"Duplicate PenId {penId}");
-            }
-
-            for (Int32 i = 1; i < dataTbl.Rows.Count; i++)
-            {
-                DataRow row = dataTbl.Rows[i];
-                DoRow(row);
-            }
-        }
-
         IEnumerable<String> FormatMultiLineText(String text)
         {
             const Int32 Maxlen = 48;
@@ -305,7 +293,7 @@ namespace BreastRadiology.XUnitTests
 
                 String penId = penIds[i];
 
-                if (this.sheet3.TryGetValue(penId, out DataRow row) == false)
+                if (this.spreadSheetData.TryGetRow(penId, out DataRow row) == false)
                     throw new Exception($"Missing value for penid '{penId}'");
 
                 String code = row[8].ToString();
@@ -386,7 +374,7 @@ namespace BreastRadiology.XUnitTests
                 return true;
             }
 
-            foreach (KeyValuePair<String, DataRow> item in this.sheet3)
+            foreach (KeyValuePair<String, DataRow> item in this.spreadSheetData.rows)
             {
                 if (IsMatch(item.Value))
                     retVal.Add(item.Key);
@@ -398,8 +386,7 @@ namespace BreastRadiology.XUnitTests
         [TestMethod]
         public void WriteCode()
         {
-            DataSet ds = this.ReadGregDS();
-            LoadSheet3(ds);
+            this.ReadGregDS();
 
             WriteIds(@"Common\Abnormalities\AbnormalityCyst.cs", "Type", "69", "610", "657", "617", "636", "609", "661");
             WriteIds(@"Common\Abnormalities\AbnormalityDuct.cs", "Type", "694.602", "693.614");
@@ -418,7 +405,8 @@ namespace BreastRadiology.XUnitTests
             WriteIds(@"Common\ShapeCS.cs", "Codes", Filter("Profile Abnormality", "shape"));
             WriteIds(@"Common\ObservedChangesCS.cs", "Codes", Filter("Change From Prior", "Change From Prior"));
 
-            WriteIds(@"FindingMG\MGBreastDensity.cs", "Codes", Filter("Profile Abnormality", "density"));
+            //WriteIds(@"FindingMG\MGDensity.cs", "Codes", Filter("Profile Abnormality", "density"));
+            WriteIds(@"FindingMG\MGBreastDensity.cs", "Codes", Filter("", "MG Breast Density"));
 
             {
                 List<String> itemsToIgnore = new List<string>();
@@ -428,27 +416,13 @@ namespace BreastRadiology.XUnitTests
                     Filter("Associated findings", "Associated findings").Remove(itemsToIgnore));
             }
         }
-        public DataSet ReadGregDS()
+        public void ReadGregDS()
         {
             String filePath = Path.Combine(BaseDir,
                 "..",
                 "BRDocs",
                 "BreastData.xlsx");
-
-            Encoding.RegisterProvider(CodePagesEncodingProvider.Instance);
-            Encoding enc1252 = CodePagesEncodingProvider.Instance.GetEncoding(1252);
-
-            using (var stream = File.Open(filePath, FileMode.Open, FileAccess.Read))
-            {
-                // Auto-detect format, supports:
-                //  - Binary Excel files (2.0-2003 format; *.xls)
-                //  - OpenXml Excel files (2007 format; *.xlsx)
-
-                using (var reader = ExcelReaderFactory.CreateReader(stream))
-                {
-                    return reader.AsDataSet();
-                }
-            }
+            this.spreadSheetData = new ExcelData(new Info(), filePath, "Sheet3");
         }
     }
     public static class Extensions

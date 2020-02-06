@@ -59,6 +59,8 @@ namespace BreastRadiology.XUnitTests
 
         Dictionary<String, Resource> resources = new Dictionary<string, Resource>();
 
+        public MammoData Data;
+
         FileCleaner fc;
         String resourceDir;
         String pageDir;
@@ -78,6 +80,8 @@ namespace BreastRadiology.XUnitTests
             const String fcn = "ResourcesMaker";
 
             Self = this;
+            this.Data = new MammoData(this);
+
             this.fc = fc;
             this.resourceDir = resourceDir;
             this.pageDir = pageDir;
@@ -323,7 +327,7 @@ namespace BreastRadiology.XUnitTests
                     this.fc?.Mark(path);
                 }
             }
-            MammoData.Self.BreastData.Save();
+            Self.Data.BreastData.Save();
         }
 
         IntroDoc CreateIntroDocVS(ValueSet binding)
