@@ -406,6 +406,7 @@ namespace BreastRadiology.XUnitTests
             WriteIds(@"Common\ObservedChangesCS.cs", "Codes", Filter("Change From Prior", "Change From Prior"));
             WriteIds(@"Common\ObservedDistributionCS.cs", "Codes", Filter("Assoc Calcs distribution", "calcification distribution"));
 
+            WriteIds(@"FindingMG\MGAbnormalityCalcification.cs", "Type", Filter("Assoc Calcs", "calcification type"));
             WriteIds(@"FindingMG\MGDensity.cs", "Codes", Filter("Profile Abnormality", "density"));
             WriteIds(@"FindingMG\MGBreastDensity.cs", "Codes", Filter("", "MG Breast Density"));
 
