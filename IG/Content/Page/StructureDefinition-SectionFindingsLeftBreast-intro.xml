@@ -23,17 +23,6 @@ Comments and Suggested changes to this implementation guide can be made
 <p><b>Reviewed by CIC on 22.1.2020</b></p>
   <!-- -reviewStatus-->
   <!-- +components-->
-  <a name="components"></a>
-  <h3 id="components">Member Fields</h3>
-  <p>
-    The following are parts of this observation that are contained within this resource.
-  </p>
-  <p>
-    Each field contains one data item and is stored as an item (slice) in the Observation.component element.
-  </p>
-  <ul>
-    %ComponentList:noexpand:prefix=<li>:suffix=</li>:lb%
-  </ul>
   <!-- -components-->
   <!-- +hasMember-->
   <a name="hasMembers"></a>
@@ -45,7 +34,11 @@ Comments and Suggested changes to this implementation guide can be made
     The reference to each external observation is stored as an item in the Observation.hasMember element.
   </p>
   <ul>
-    %HasMemberList:noexpand:prefix=<li>:suffix=</li>:lb%
+    
+<li><a href="StructureDefinition-SectionFindingsLeftBreast-definitions.html#Observation.hasMember:mGFinding">'Mammography Finding' reference [0..*]</a></li>
+<li><a href="StructureDefinition-SectionFindingsLeftBreast-definitions.html#Observation.hasMember:mRIFinding">'MRI Finding' reference [0..*]</a></li>
+<li><a href="StructureDefinition-SectionFindingsLeftBreast-definitions.html#Observation.hasMember:nMFinding">'NM Finding' reference [0..*]</a></li>
+<li><a href="StructureDefinition-SectionFindingsLeftBreast-definitions.html#Observation.hasMember:uSFinding">'Ultra-Sound Finding' reference [0..*]</a></li>
   </ul>
   <!-- -hasMember-->
   <!-- +profileFragments-->
@@ -55,7 +48,8 @@ Comments and Suggested changes to this implementation guide can be made
     the hierarchy and commonality of disparate profiles..
   </p>
   <ul>
-    %FragmentList:noexpand:prefix=<li>:suffix=</li>:lb%
+    
+<li><a href="./StructureDefinition-FindingBreastFragment.html">Finding Breast Fragment</a></li>
   </ul>
   <!-- -profileFragments-->
 </div>

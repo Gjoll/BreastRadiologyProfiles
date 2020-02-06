@@ -29,20 +29,20 @@
             "display": "Irregular in shape"
           },
           {
-            "code": "OvalInShape",
-            "display": "Oval in shape"
-          },
-          {
-            "code": "RoundInShape",
-            "display": "Round in shape"
-          },
-          {
             "code": "LobulatedInShape",
             "display": "Lobulated in shape"
           },
           {
+            "code": "OvalInShape",
+            "display": "Oval in shape"
+          },
+          {
             "code": "Reniform",
             "display": "Reniform"
+          },
+          {
+            "code": "RoundInShape",
+            "display": "Round in shape"
           }
         ]
       }

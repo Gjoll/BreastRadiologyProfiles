@@ -31,21 +31,12 @@ Comments and Suggested changes to this implementation guide can be made
     Each field contains one data item and is stored as an item (slice) in the Observation.component element.
   </p>
   <ul>
-    %ComponentList:noexpand:prefix=<li>:suffix=</li>:lb%
+    
+<li><a href="StructureDefinition-ObservedFeature-definitions.html#Observation.component:obsCount">Observed Count component [0..1]</a></li>
+<li><a href="StructureDefinition-ObservedFeature-definitions.html#Observation.component:featureType">Observed Feature Type component [1..1]</a></li>
   </ul>
   <!-- -components-->
   <!-- +hasMember-->
-  <a name="hasMembers"></a>
-  <h3 id="hasMember">Member Observations</h3>
-  <p>
-    The following are parts of this observation that are stored in seperate observation resources.
-  </p>
-  <p>
-    The reference to each external observation is stored as an item in the Observation.hasMember element.
-  </p>
-  <ul>
-    %HasMemberList:noexpand:prefix=<li>:suffix=</li>:lb%
-  </ul>
   <!-- -hasMember-->
   <!-- +profileFragments-->
   <h3 id="profileFragments">Profile Fragments</h3>
@@ -54,7 +45,13 @@ Comments and Suggested changes to this implementation guide can be made
     the hierarchy and commonality of disparate profiles..
   </p>
   <ul>
-    %FragmentList:noexpand:prefix=<li>:suffix=</li>:lb%
+    
+<li><a href="./StructureDefinition-BreastBodyLocationRequiredFragment.html">Breast Body Location (Required) Fragment</a></li>
+<li><a href="./StructureDefinition-ObservationLeafFragment.html">Observation Leaf Fragment</a></li>
+<li><a href="./StructureDefinition-BreastRadObservationNoComponentFragment.html">Observation No Component Fragment</a></li>
+<li><a href="./StructureDefinition-BreastRadObservationNoDeviceFragment.html">Observation NoDevice Fragment</a></li>
+<li><a href="./StructureDefinition-BreastRadObservationNoValueFragment.html">Observation NoValue Fragment</a></li>
+<li><a href="./StructureDefinition-ObservedCountFragment.html">ObservedCount Fragment</a></li>
   </ul>
   <!-- -profileFragments-->
 </div>

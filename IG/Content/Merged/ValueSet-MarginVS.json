@@ -71,6 +71,10 @@
             "display": "Lobulated margin"
           },
           {
+            "code": "MacrolobulatedMargin",
+            "display": "Macrolobulated margin"
+          },
+          {
             "code": "MicrolobulatedMargin",
             "display": "Microlobulated margin"
           },
@@ -79,8 +83,8 @@
             "display": "Non circumscribed margin"
           },
           {
-            "code": "ObscuredMargin",
-            "display": "Obscured margin"
+            "code": "ObscuredMagin",
+            "display": "Obscured magin"
           },
           {
             "code": "SmoothMargin",
@@ -89,14 +93,6 @@
           {
             "code": "SpiculatedMargin",
             "display": "Spiculated margin"
-          },
-          {
-            "code": "MacrolobulatedMargin",
-            "display": "Macrolobulated margin"
-          },
-          {
-            "code": "ObscuredMagin",
-            "display": "Obscured magin"
           }
         ]
       }
