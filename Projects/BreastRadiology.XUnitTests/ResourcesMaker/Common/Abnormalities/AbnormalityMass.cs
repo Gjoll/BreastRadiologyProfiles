@@ -43,6 +43,9 @@ namespace BreastRadiology.XUnitTests
                                 .SetDefinition("[PR] Mass intraductal")
                                 .MammoId("621")
                                 .ValidModalities(Modalities.US)
+                                .SetOneToMany("????")
+                                .SetSnomedDescription("ClinicalFinding | 369753003 | Intraductal tumor configuration " +
+                                    "(Finding)")
                             //- AutoGen
                             ,
                             //- MassIntraductal
@@ -65,6 +68,9 @@ namespace BreastRadiology.XUnitTests
                                 .SetDefinition("[PR] Mass skin ATLAS is skin lesion")
                                 .MammoId("613")
                                 .ValidModalities(Modalities.MG | Modalities.US)
+                                .SetSnomedCode("126510002")
+                                .SetSnomedDescription("ClinicalFinding | Neoplasm of skin of breast (Disorder)")
+                                .SetICD10("D49.2")
                             //- AutoGen
                             ,
                             //- MassSkinATLASIsSkinLesion

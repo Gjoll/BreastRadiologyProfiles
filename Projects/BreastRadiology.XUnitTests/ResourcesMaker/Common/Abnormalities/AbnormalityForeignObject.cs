@@ -34,7 +34,8 @@ namespace BreastRadiology.XUnitTests
                                 .MammoId("532")
                                 .ValidModalities(Modalities.MG | Modalities.MRI | Modalities.US)
                                 .SetOneToMany("many")
-                                .SetSnomedDescription("ClinicalFinding | 283574001 | Pellet wound of breast (Disorder) | [0/0] | S21.039?")
+                                .SetSnomedDescription("ClinicalFinding | 283574001 | Pellet wound of breast " +
+                                    "(Disorder) | [0/0] | S21.039?")
                             //- AutoGen
                             //- BBPellet
                             ,
@@ -47,7 +48,8 @@ namespace BreastRadiology.XUnitTests
                                 .MammoId("591")
                                 .ValidModalities(Modalities.MG | Modalities.MRI | Modalities.US)
                                 .SetSnomedCode("470272007")
-                                .SetSnomedDescription("PhysicalObject | Implantable lesion localization marker (Object)")
+                                .SetSnomedDescription("PhysicalObject | Implantable lesion localization " +
+                                    "marker (Object)")
                             //- AutoGen
                             //- BiopsyClip
                             ,
@@ -60,7 +62,8 @@ namespace BreastRadiology.XUnitTests
                                 .MammoId("905")
                                 .ValidModalities(Modalities.MRI)
                                 .SetSnomedCode("470272007")
-                                .SetSnomedDescription("PhysicalObject | Implantable lesion localization marker (Object)")
+                                .SetSnomedDescription("PhysicalObject | Implantable lesion localization " +
+                                    "marker (Object)")
                             //- AutoGen
                             //- BreastMarker
                             ,
@@ -158,7 +161,8 @@ namespace BreastRadiology.XUnitTests
                                 .SetDefinition("[PR] Gunshot wound")
                                 .MammoId("533")
                                 .ValidModalities(Modalities.MG | Modalities.MRI | Modalities.US)
-                                .SetSnomedDescription("ClinicalFinding | 425055008 | Gunshot entry wound (Disorder) | [0/0] | T14.8")
+                                .SetSnomedDescription("ClinicalFinding | 425055008 | Gunshot entry wound " +
+                                    "(Disorder) | [0/0] | T14.8")
                             //- AutoGen
                             //- GunshotWound
                             ,
@@ -171,7 +175,8 @@ namespace BreastRadiology.XUnitTests
                                 .MammoId("575")
                                 .ValidModalities(Modalities.MG)
                                 .SetSnomedCode("470272007")
-                                .SetSnomedDescription("PhysicalObject | Implantable lesion localization marker (Object)")
+                                .SetSnomedDescription("PhysicalObject | Implantable lesion localization " +
+                                    "marker (Object)")
                             //- AutoGen
                             //- MarkerClip
                             ,
@@ -198,7 +203,8 @@ namespace BreastRadiology.XUnitTests
                                 .MammoId("903")
                                 .ValidModalities(Modalities.MRI)
                                 .SetSnomedCode("470272007")
-                                .SetSnomedDescription("PhysicalObject | Implantable lesion localization marker (Object)")
+                                .SetSnomedDescription("PhysicalObject | Implantable lesion localization " +
+                                    "marker (Object)")
                             //- AutoGen
                             //- MetallicMarker
                             ,
@@ -308,7 +314,8 @@ namespace BreastRadiology.XUnitTests
                                 .ValidModalities(Modalities.MG | Modalities.MRI | Modalities.US)
                                 .SetSnomedCode("470272007")
                                 .SetOneToMany("one")
-                                .SetSnomedDescription("PhysicalObject | Implantable lesion localization marker (Object)")
+                                .SetSnomedDescription("PhysicalObject | Implantable lesion localization " +
+                                    "marker (Object)")
                             //- AutoGen
                             //- TitaniumClip
                             ,
@@ -353,7 +360,8 @@ namespace BreastRadiology.XUnitTests
                                 .SetDefinition("[PR] BB pellets")
                                 .MammoId("531")
                                 .ValidModalities(Modalities.MG | Modalities.MRI | Modalities.US)
-                                .SetSnomedDescription("ClinicalFinding | 283574001 | Pellet wound of breast (Disorder) | [0/0] | S21.039?")
+                                .SetSnomedDescription("ClinicalFinding | 283574001 | Pellet wound of breast " +
+                                    "(Disorder) | [0/0] | S21.039?")
                             //- AutoGen
                             ,
                             //- BBPellets
@@ -366,7 +374,8 @@ namespace BreastRadiology.XUnitTests
                                 .MammoId("910")
                                 .ValidModalities(Modalities.MG | Modalities.MRI | Modalities.US)
                                 .SetSnomedCode("470272007")
-                                .SetSnomedDescription("PhysicalObject | Implantable lesion localization marker (Object)")
+                                .SetSnomedDescription("PhysicalObject | Implantable lesion localization " +
+                                    "marker (Object)")
                             //- AutoGen
                             ,
                             //- BiopsyClips
@@ -379,7 +388,8 @@ namespace BreastRadiology.XUnitTests
                                 .MammoId("906")
                                 .ValidModalities(Modalities.MRI)
                                 .SetSnomedCode("470272007")
-                                .SetSnomedDescription("PhysicalObject | Implantable lesion localization marker (Object)")
+                                .SetSnomedDescription("PhysicalObject | Implantable lesion localization " +
+                                    "marker (Object)")
                             //- AutoGen
                             ,
                             //- BreastMarkers
@@ -418,7 +428,8 @@ namespace BreastRadiology.XUnitTests
                                 .ValidModalities(Modalities.MRI)
                                 .SetSnomedCode("470272007")
                                 .SetOneToMany("many")
-                                .SetSnomedDescription("PhysicalObject | Implantable lesion localization marker (Object)")
+                                .SetSnomedDescription("PhysicalObject | Implantable lesion localization " +
+                                    "marker (Object)")
                             //- AutoGen
                             ,
                             //- MetallicMarkers
@@ -430,7 +441,8 @@ namespace BreastRadiology.XUnitTests
                                 .SetDefinition("[PR] Metallic objects")
                                 .MammoId("593")
                                 .ValidModalities(Modalities.MG)
-                                .SetSnomedDescription("ClinicalFinding | 283169003 | Metal foreign body in breast (Disorder) | [0/0] | S21.009?")
+                                .SetSnomedDescription("ClinicalFinding | 283169003 | Metal foreign body " +
+                                    "in breast (Disorder) | [0/0] | S21.009?")
                             //- AutoGen
                             ,
                             //- MetallicObjects
@@ -458,7 +470,8 @@ namespace BreastRadiology.XUnitTests
                                 .ValidModalities(Modalities.MG | Modalities.MRI | Modalities.US)
                                 .SetSnomedCode("470272007")
                                 .SetOneToMany("many")
-                                .SetSnomedDescription("PhysicalObject | Implantable lesion localization marker (Object)")
+                                .SetSnomedDescription("PhysicalObject | Implantable lesion localization " +
+                                    "marker (Object)")
                             //- AutoGen
                             ,
                             //- TitaniumClips

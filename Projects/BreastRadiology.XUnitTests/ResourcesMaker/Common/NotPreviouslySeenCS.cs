@@ -56,7 +56,8 @@ namespace BreastRadiology.XUnitTests
                                 .SetDefinition("[PR] Ductogram")
                                 .MammoId("284")
                                 .ValidModalities(Modalities.MG | Modalities.MRI | Modalities.NM | Modalities.US)
-                                .SetSnomedDescription("Procedure | 420131003 | Fluoroscopic mammary ductography (Procedure)")
+                                .SetSnomedDescription("Procedure | 420131003 | Fluoroscopic mammary ductography " +
+                                    "(Procedure)")
                             //- AutoGen
                             //- Ductogram
                             ,
@@ -79,7 +80,8 @@ namespace BreastRadiology.XUnitTests
                                 .SetDefinition("[PR] MRI")
                                 .MammoId("283")
                                 .ValidModalities(Modalities.MG | Modalities.MRI | Modalities.NM | Modalities.US)
-                                .SetSnomedDescription("Procedure | 241615005 | Magnetic resonance imaging of breast (Procedure)")
+                                .SetSnomedDescription("Procedure | 241615005 | Magnetic resonance imaging " +
+                                    "of breast (Procedure)")
                             //- AutoGen
                             //- MRI
                             ,
@@ -113,7 +115,8 @@ namespace BreastRadiology.XUnitTests
                                 .SetDefinition("[PR] Ultrasound")
                                 .MammoId("282")
                                 .ValidModalities(Modalities.MG | Modalities.MRI | Modalities.NM | Modalities.US)
-                                .SetSnomedDescription("Procedure | 47079000 | Ultrasonography of breast (Procedure)")
+                                .SetSnomedDescription("Procedure | 47079000 | Ultrasonography of breast " +
+                                    "(Procedure)")
                             //- AutoGen
                             //- Ultrasound
                             

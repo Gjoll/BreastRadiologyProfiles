@@ -32,6 +32,14 @@ namespace BreastRadiology.XUnitTests
                              .SetDefinition("[PR] Cyst")
                              .MammoId("69")
                              .ValidModalities(Modalities.MG | Modalities.MRI | Modalities.US)
+                             .SetSnomedCode("399294002")
+                             .SetOneToMany("one")
+                             .SetSnomedDescription("ClinicalFinding |Cyst of breast (Disorder)")
+                             .SetICD10("N60.09")
+                             .SetUMLS("A cyst is a sac-like pocket of membranous tissue " +
+                                 "that contains fluid, air, or other substances. Cysts " +
+                                 "can grow almost anywhere in your body or under your " +
+                                 "skin.")
                          //- AutoGen
                          ,
                          //- Cyst
@@ -43,6 +51,15 @@ namespace BreastRadiology.XUnitTests
                              .SetDefinition("[PR] Cyst complex")
                              .MammoId("610")
                              .ValidModalities(Modalities.MG | Modalities.US)
+                             .SetSnomedCode("449837001")
+                             .SetOneToMany("one")
+                             .SetSnomedDescription("ClinicalFinding | Complex cyst of breast (Disorder)")
+                             .SetICD10("N60.09")
+                             .SetUMLS("Refers to cysts that contain something more than " +
+                                 "clear fluid. A complex breast cyst contains solid " +
+                                 "elements suspended within the fluid, and may also " +
+                                 "feature segmentation (septation) and some regions " +
+                                 "of the cyst wall that are ‘thicker‘ than others.")
                          //- AutoGen
                          ,
                          //- CystComplex
@@ -54,6 +71,15 @@ namespace BreastRadiology.XUnitTests
                              .SetDefinition("[PR] Cyst complicated")
                              .MammoId("657")
                              .ValidModalities(Modalities.MG | Modalities.US)
+                             .SetComment("NOT COMPLICATED")
+                             .SetUMLS("Complicated cysts are \"in between\" a simple cyst and " +
+                                 "a complex cyst. A complicated breast cyst contains " +
+                                 "solid elements suspended within the fluid, and may " +
+                                 "also feature segmentation (septation) and some regions " +
+                                 "of the cyst wall that are ‘thicker‘ than others. " +
+                                 "Complicated breast cysts are one of the cystic breast " +
+                                 "lesions that show intracystic debris which may imitate " +
+                                 "a solid mass appearance.")
                          //- AutoGen
                          ,
                          //- CystComplicated
@@ -65,6 +91,10 @@ namespace BreastRadiology.XUnitTests
                              .SetDefinition("[PR] Cyst micro")
                              .MammoId("617")
                              .ValidModalities(Modalities.US)
+                             .SetUMLS("Is a sac-like pocket of tissue that contains fluid, " +
+                                 "air, or other substances. A Microcyst is small and " +
+                                 "less than 2-3 mm. They are often in clusters and " +
+                                 "only show up on a mammogram or ultrasound.")
                          //- AutoGen
                          ,
                          //- CystMicro
@@ -76,6 +106,9 @@ namespace BreastRadiology.XUnitTests
                              .SetDefinition("[PR] Cyst oil")
                              .MammoId("636")
                              .ValidModalities(Modalities.MG | Modalities.US)
+                             .SetUMLS("Oil cysts are filled with fluid that may feel smooth " +
+                                 "and soft/squishy. They are caused by the breakdown " +
+                                 "of fatty tissue.")
                          //- AutoGen
                          ,
                          //- CystOil
@@ -87,6 +120,12 @@ namespace BreastRadiology.XUnitTests
                              .SetDefinition("[PR] Cyst simple")
                              .MammoId("609")
                              .ValidModalities(Modalities.MG | Modalities.US)
+                             .SetSnomedCode("399253005")
+                             .SetOneToMany("one")
+                             .SetSnomedDescription("ClinicalFinding | Simple cyst of breast (Disorder)")
+                             .SetICD10("N60.09")
+                             .SetUMLS("A simple cyst is a sac-like pocket of membranous " +
+                                 "tissue that only contains clear fluid.")
                          //- AutoGen
                          ,
                          //- CystSimple
@@ -98,6 +137,10 @@ namespace BreastRadiology.XUnitTests
                              .SetDefinition("[PR] Cyst with debris")
                              .MammoId("661")
                              .ValidModalities(Modalities.MG | Modalities.US)
+                             .SetUMLS("A cyst that is filled with debris and fluid substance. " +
+                                 "It Is either considered a complex or complicated " +
+                                 "cyst. The type of debris determines what kind of " +
+                                 "cyst.")
                          //- AutoGen
                          
                          //- CystWithDebris

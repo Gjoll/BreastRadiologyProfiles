@@ -36,7 +36,8 @@ namespace BreastRadiology.XUnitTests
                              .SetDicom("F-01727")
                              .SetSnomedCode("129727007")
                              .SetOneToMany("one")
-                             .SetSnomedDescription("ClinicalFinding | Decrease in number of calcifications since previous mammogram (Finding)")
+                             .SetSnomedDescription("ClinicalFinding | Decrease in number of calcifications " +
+                                 "since previous mammogram (Finding)")
                              .SetICD10("R92")
                              .SetUMLS("C1268655")
                          //- AutoGen
@@ -50,7 +51,8 @@ namespace BreastRadiology.XUnitTests
                              .SetDefinition("[PR] Decrease in number")
                              .MammoId("482")
                              .ValidModalities(Modalities.MG)
-                             .SetSnomedDescription("ClinicalFinding | 42915007 | Abnormal decrease in number (Finding)")
+                             .SetSnomedDescription("ClinicalFinding | 42915007 | Abnormal decrease in " +
+                                 "number (Finding)")
                          //- AutoGen
                          ,
                          //- DecreaseInNumber
@@ -80,7 +82,8 @@ namespace BreastRadiology.XUnitTests
                              .SetDicom("F-01726")
                              .SetSnomedCode("129726003")
                              .SetOneToMany("one")
-                             .SetSnomedDescription("ClinicalFinding | Increase in number of calcifications since previous mammogram (Finding)")
+                             .SetSnomedDescription("ClinicalFinding | Increase in number of calcifications " +
+                                 "since previous mammogram (Finding)")
                              .SetICD10("R92")
                              .SetUMLS("C1268654")
                          //- AutoGen
@@ -94,7 +97,8 @@ namespace BreastRadiology.XUnitTests
                              .SetDefinition("[PR] Increase in number")
                              .MammoId("481")
                              .ValidModalities(Modalities.MG)
-                             .SetSnomedDescription("ClinicalFinding | 61515005 | Abnormal increase in number (Finding)")
+                             .SetSnomedDescription("ClinicalFinding | 61515005 | Abnormal increase in " +
+                                 "number (Finding)")
                          //- AutoGen
                          ,
                          //- IncreaseInNumber
@@ -123,7 +127,8 @@ namespace BreastRadiology.XUnitTests
                              .ValidModalities(Modalities.MG | Modalities.MRI | Modalities.US)
                              .SetDicom("F-01728")
                              .SetSnomedCode("129728002")
-                             .SetSnomedDescription("ClinicalFinding | 129728002 | Finding less well defined since previous mammogram (Finding)")
+                             .SetSnomedDescription("ClinicalFinding | 129728002 | Finding less well defined " +
+                                 "since previous mammogram (Finding)")
                              .SetUMLS("C1268656")
                          //- AutoGen
                          ,
@@ -138,7 +143,8 @@ namespace BreastRadiology.XUnitTests
                              .ValidModalities(Modalities.MG | Modalities.MRI | Modalities.US)
                              .SetDicom("F-01729")
                              .SetSnomedCode("129729005")
-                             .SetSnomedDescription("ClinicalFinding | 129729005 | Finding more defined since previous mammogram (Finding)")
+                             .SetSnomedDescription("ClinicalFinding | 129729005 | Finding more defined " +
+                                 "since previous mammogram (Finding)")
                              .SetUMLS("C1268657")
                          //- AutoGen
                          ,
@@ -153,7 +159,8 @@ namespace BreastRadiology.XUnitTests
                              .ValidModalities(Modalities.MG | Modalities.MRI | Modalities.NM | Modalities.US)
                              .SetDicom("F-01721")
                              .SetSnomedCode("129721008")
-                             .SetSnomedDescription("ClinicalFinding | 129721008 | New finding since previous mammogram (Finding)")
+                             .SetSnomedDescription("ClinicalFinding | 129721008 | New finding since previous " +
+                                 "mammogram (Finding)")
                              .SetUMLS("C1268649")
                          //- AutoGen
                          ,
@@ -179,7 +186,8 @@ namespace BreastRadiology.XUnitTests
                              .ValidModalities(Modalities.MG | Modalities.MRI | Modalities.NM | Modalities.US)
                              .SetDicom("F-01723")
                              .SetSnomedCode("129723006")
-                             .SetSnomedDescription("ClinicalFinding | 129723006 | No significant change since previous mammogram (Finding)")
+                             .SetSnomedDescription("ClinicalFinding | 129723006 | No significant change " +
+                                 "since previous mammogram (Finding)")
                              .SetUMLS("C1268651")
                          //- AutoGen
                          ,
@@ -194,7 +202,8 @@ namespace BreastRadiology.XUnitTests
                              .ValidModalities(Modalities.MG)
                              .SetDicom("F-01722")
                              .SetSnomedCode("129722001")
-                             .SetSnomedDescription("ClinicalFinding | 129722001 | Finding partially removed since previous mammogram (Finding)")
+                             .SetSnomedDescription("ClinicalFinding | 129722001 | Finding partially removed " +
+                                 "since previous mammogram (Finding)")
                              .SetUMLS("C1268650")
                          //- AutoGen
                          ,

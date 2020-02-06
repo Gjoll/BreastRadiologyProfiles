@@ -32,6 +32,16 @@ namespace BreastRadiology.XUnitTests
                                 .SetDefinition("[PR] Node axillary")
                                 .MammoId("648")
                                 .ValidModalities(Modalities.MG | Modalities.US)
+                                .SetSnomedDescription("BodyStructure | 68171009 | Axillary lymph node structure " +
+                                    "(Bodypart)")
+                                .SetUMLS("Axillary Nodes. The axillary nodes are a group of " +
+                                    "lymph nodes located in the axillary (or armpit) region " +
+                                    "of the body. They perform the vital function of filtration " +
+                                    "and conduction of lymph from the upper limbs, pectoral " +
+                                    "region, and upper back.There are five axillary lymph " +
+                                    "node groups, namely the lateral (humeral), anterior " +
+                                    "(pectoral), posterior (subscapular), central and " +
+                                    "apical nodes.")
                             //- AutoGen
                             ,
                             //- NodeAxillary
@@ -43,6 +53,20 @@ namespace BreastRadiology.XUnitTests
                                 .SetDefinition("[PR] Node enlarged")
                                 .MammoId("649")
                                 .ValidModalities(Modalities.MG | Modalities.US)
+                                .SetSnomedCode("274744005")
+                                .SetSnomedDescription("ClinicalFinding | Localized enlarged lymph nodes " +
+                                    "(Disorder)")
+                                .SetICD10("R59.0")
+                                .SetUMLS("Swollen lymph nodes usually occur as a result of " +
+                                    "infection from bacteria or viruses. Rarely, swollen " +
+                                    "lymph nodes are caused by cancer.Your lymph nodes, " +
+                                    "also called lymph glands, play a vital role in your " +
+                                    "body's ability to fight off infections. They function " +
+                                    "as filters, trapping viruses, bacteria and other " +
+                                    "causes of illnesses before they can infect other " +
+                                    "parts of your body. Common areas where you might " +
+                                    "notice swollen lymph nodes include your neck, under " +
+                                    "your chin, in your armpits and in your groin.")
                             //- AutoGen
                             ,
                             //- NodeEnlarged
@@ -65,6 +89,14 @@ namespace BreastRadiology.XUnitTests
                                 .SetDefinition("[PR] Node infraclavicular")
                                 .MammoId("665")
                                 .ValidModalities(Modalities.US)
+                                .SetSnomedDescription("BodyStructure | 9659009 | Infraclavicular lymph node " +
+                                    "(Bodypart)")
+                                .SetUMLS("(Infraclavicular labeled at upper left.) One or two " +
+                                    "deltopectoral lymph nodes (or infraclavicular nodes) " +
+                                    "are found beside the cephalic vein, between the pectoralis " +
+                                    "major and deltoideus, immediately below the clavicle " +
+                                    ". They are situated in the course of the external " +
+                                    "collecting trunks of the arm.")
                             //- AutoGen
                             ,
                             //- NodeInfraclavicular
@@ -76,6 +108,9 @@ namespace BreastRadiology.XUnitTests
                                 .SetDefinition("[PR] Node intramammary")
                                 .MammoId("650")
                                 .ValidModalities(Modalities.MG | Modalities.US)
+                                .SetSnomedDescription("BodyStructure | 443808008 | Structure of intramammary " +
+                                    "lymph node (Bodypart)")
+                                .SetUMLS("Lymph nodes found within the breast tissue.")
                             //- AutoGen
                                 .BiRadsDef("These are circumscribed masses that are reniform and have hilar fat. They are generally 1 cm or smaller",
                                         "in size. They may be larger than 1 cm and characterized as normal when fat replacement is pronounced. ",
@@ -114,6 +149,13 @@ namespace BreastRadiology.XUnitTests
                                 .SetDefinition("[PR] Node supraclavicular")
                                 .MammoId("666")
                                 .ValidModalities(Modalities.US)
+                                .SetSnomedDescription("BodyStructure | 76838003 | Structure of supraclavicular " +
+                                    "lymph node (Bodypart)")
+                                .SetUMLS("The supraclavicular lymph nodes are a set of lymph " +
+                                    "nodes found just above the clavicle or collarbone, " +
+                                    "toward the hollow of the neck. Lymph nodes are responsible " +
+                                    "for filtering the lymphatic fluid of unwanted debris " +
+                                    "and bacteria.")
                             //- AutoGen
                             ,
                             //- NodeSupraclavicular

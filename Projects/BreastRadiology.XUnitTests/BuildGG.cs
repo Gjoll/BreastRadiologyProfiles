@@ -59,6 +59,36 @@ namespace BreastRadiology.XUnitTests
             return value;
         }
 
+        void AppIfNotNull(CodeBlockNested concept, String name, Object value)
+        {
+            if (value is System.DBNull)
+                return;
+
+            String sValue = value.ToString();
+            sValue = sValue.Trim()
+                    .Replace("\r", "")
+                    .Replace("\n", "")
+                ;
+            if (String.IsNullOrEmpty(sValue) == false)
+            {
+                String[] lines = FormatMultiLineText(sValue).ToArray();
+                if (lines.Length == 1)
+                {
+                    concept
+                        .AppendLine($"    .{name}({lines[0]})");
+                }
+                else
+                {
+                    concept
+                        .AppendLine($"    .{name}({lines[0]}");
+                    Int32 i = 1;
+                    while (i < lines.Length - 1)
+                        concept.AppendLine($"        {lines[i++]}");
+                    concept.AppendLine($"        {lines[i]})");
+                }
+            }
+        }
+
         public void WriteCS(DataSet ds,
             String sheetName,
             String outputCodePath,
@@ -119,21 +149,6 @@ namespace BreastRadiology.XUnitTests
                     validWith = App(validWith, row[2], "NM");
                     validWith = App(validWith, row[3], "US");
 
-                    void AppIfNotNull(String name, Object value)
-                    {
-                        if (value is System.DBNull)
-                            return;
-
-                        String sValue = value.ToString();
-                        sValue = sValue.Trim()
-                                .Replace("\r", "")
-                                .Replace("\n", "")
-                            ;
-                        if (String.IsNullOrEmpty(sValue) == false)
-                            concept
-                                .AppendLine($"    .{name}(\"{sValue}\")");
-                    }
-
                     String conceptBlockName = CodeValue(code);
                     CodeBlockNested conceptOuter = concepts.Find(conceptBlockName);
                     if (conceptOuter == null)
@@ -161,13 +176,13 @@ namespace BreastRadiology.XUnitTests
                         .AppendLine($"    .ValidModalities({validWith})")
                         ;
 
-                    AppIfNotNull("SetDicom", row[9]);
-                    AppIfNotNull("SetSnomedCode", row[11]);
-                    AppIfNotNull("SetOneToMany", row[12]);
-                    AppIfNotNull("SetSnomedDescription", row[13]);
-                    AppIfNotNull("SetICD10", row[14]);
-                    AppIfNotNull("SetComment", row[15]);
-                    AppIfNotNull("SetUMLS", row[16]);
+                    AppIfNotNull(concept, "SetDicom", row[9]);
+                    AppIfNotNull(concept, "SetSnomedCode", row[11]);
+                    AppIfNotNull(concept, "SetOneToMany", row[12]);
+                    AppIfNotNull(concept, "SetSnomedDescription", row[13]);
+                    AppIfNotNull(concept, "SetICD10", row[14]);
+                    AppIfNotNull(concept, "SetComment", row[15]);
+                    AppIfNotNull(concept, "SetUMLS", row[16]);
                 }
             }
 
@@ -201,6 +216,63 @@ namespace BreastRadiology.XUnitTests
             }
         }
 
+        IEnumerable<String> FormatMultiLineText(String text)
+        {
+            const Int32 Maxlen = 48;
+            Int32 i = 0;
+            Int32 len = 0;
+
+            StringBuilder sb = new StringBuilder();
+            sb.Append("\"");
+            while (i < text.Length)
+            {
+                void Add(Char c)
+                {
+                    sb.Append(c);
+                    len += 1;
+                }
+
+                Char c = text[i++];
+                switch (c)
+                {
+                    case '“':
+                    case '”':
+                    case '\"':
+                        sb.Append("\\\"");
+                        break;
+
+                    case '\r':
+                        break;
+
+                    case '\n':
+                        if (len > 0)
+                        {
+                            sb.Append("\",\n\"");
+                            len = 0;
+                        }
+
+                        break;
+
+                    case ' ':
+                        Add(c);
+                        if (len > Maxlen)
+                        {
+                            sb.Append("\" +\n\"");
+                            len = 0;
+                        }
+
+                        break;
+
+                    default:
+                        Add(c);
+                        break;
+                }
+            }
+
+            sb.Append("\"");
+            return sb.ToString().Split('\n');
+        }
+
         void WriteDescriptions()
         {
             CodeBlockNested cb = null;
@@ -223,62 +295,6 @@ namespace BreastRadiology.XUnitTests
                 }
             }
 
-            IEnumerable<String> FormatMultiLineText(String text)
-            {
-                const Int32 Maxlen = 48;
-                Int32 i = 0;
-                Int32 len = 0;
-
-                StringBuilder sb = new StringBuilder();
-                sb.Append("\"");
-                while (i < text.Length)
-                {
-                    void Add(Char c)
-                    {
-                        sb.Append(c);
-                        len += 1;
-                    }
-
-                    Char c = text[i++];
-                    switch (c)
-                    {
-                        case '“':
-                        case '”':
-                        case '\"':
-                            sb.Append("\\\"");
-                            break;
-
-                        case '\r':
-                            break;
-
-                        case '\n':
-                            if (len > 0)
-                            {
-                                sb.Append("\",\n\"");
-                                len = 0;
-                            }
-
-                            break;
-
-                        case ' ':
-                            Add(c);
-                            if (len > Maxlen)
-                            {
-                                sb.Append("\" +\n\"");
-                                len = 0;
-                            }
-
-                            break;
-
-                        default:
-                            Add(c);
-                            break;
-                    }
-                }
-
-                sb.Append("\"");
-                return sb.ToString().Split('\n');
-            }
 
             // Get rid of empty strings, and strings liek C1234
             bool CheckText(String t)
@@ -335,6 +351,8 @@ namespace BreastRadiology.XUnitTests
             String csBlockName,
             params String[] penIds)
         {
+            CodeBlockNested concept = null;
+
             CodeEditor editor = new CodeEditor();
             editor.Load(Path.Combine(DirHelper.FindParentDir("BreastRadiology.XUnitTests"),
                 "ResourcesMaker",
@@ -344,7 +362,6 @@ namespace BreastRadiology.XUnitTests
             if (concepts == null)
                 throw new Exception($"Can not find editor block {csBlockName}");
 
-            CodeBlockNested concept = null;
             for (Int32 i = 0; i < penIds.Length; i++)
             {
                 String term = ",";
@@ -408,6 +425,14 @@ namespace BreastRadiology.XUnitTests
                     .AppendLine($"    .MammoId(\"{penId}\")")
                     .AppendLine($"    .ValidModalities({validWith})")
                     ;
+
+                AppIfNotNull(concept, "SetDicom", row[10]);
+                AppIfNotNull(concept, "SetSnomedCode", row[12]);
+                AppIfNotNull(concept, "SetOneToMany", row[13]);
+                AppIfNotNull(concept, "SetSnomedDescription", row[14]);
+                AppIfNotNull(concept, "SetICD10", row[15]);
+                AppIfNotNull(concept, "SetComment", row[16]);
+                AppIfNotNull(concept, "SetUMLS", row[17]);
             }
 
             editor.Save();
@@ -436,7 +461,7 @@ namespace BreastRadiology.XUnitTests
         }
 
 
-    [TestMethod]
+        [TestMethod]
         public void WriteCode()
         {
             DataSet ds = this.ReadGregDS();

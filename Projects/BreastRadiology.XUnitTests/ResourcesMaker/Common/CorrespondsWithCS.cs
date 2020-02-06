@@ -46,7 +46,8 @@ namespace BreastRadiology.XUnitTests
                                 .SetDefinition("[PR] Aspiration")
                                 .MammoId("391")
                                 .ValidModalities(Modalities.MG | Modalities.US)
-                                .SetSnomedDescription("Procedure | 287572003 | Diagnostic aspiration of breast cyst (Procedure)")
+                                .SetSnomedDescription("Procedure | 287572003 | Diagnostic aspiration of " +
+                                    "breast cyst (Procedure)")
                             //- AutoGen
                             //- Aspiration
                             ,
@@ -81,7 +82,8 @@ namespace BreastRadiology.XUnitTests
                                 .SetDefinition("[PR] Ductogram")
                                 .MammoId("324")
                                 .ValidModalities(Modalities.MG)
-                                .SetSnomedDescription("Procedure | 420131003 | Fluoroscopic mammary ductography (Procedure)")
+                                .SetSnomedDescription("Procedure | 420131003 | Fluoroscopic mammary ductography " +
+                                    "(Procedure)")
                             //- AutoGen
                             //- Ductogram
                             ,
@@ -115,7 +117,8 @@ namespace BreastRadiology.XUnitTests
                                 .SetDefinition("[PR] MRI")
                                 .MammoId("272")
                                 .ValidModalities(Modalities.MG | Modalities.MRI | Modalities.NM | Modalities.US)
-                                .SetSnomedDescription("Procedure | 241615005 | Magnetic resonance imaging of breast (Procedure)")
+                                .SetSnomedDescription("Procedure | 241615005 | Magnetic resonance imaging " +
+                                    "of breast (Procedure)")
                             //- AutoGen
                             //- MRI
                             ,
@@ -127,7 +130,8 @@ namespace BreastRadiology.XUnitTests
                                 .SetDefinition("[PR] Nipple discharge")
                                 .MammoId("318")
                                 .ValidModalities(Modalities.MG | Modalities.US)
-                                .SetSnomedDescription("ClinicalFinding | 162166009 | Nipple discharge present (Disorder) | [0/0] | N64.52 |")
+                                .SetSnomedDescription("ClinicalFinding | 162166009 | Nipple discharge present " +
+                                    "(Disorder) | [0/0] | N64.52 |")
                             //- AutoGen
                             //- NippleDischarge
                             ,
@@ -172,7 +176,8 @@ namespace BreastRadiology.XUnitTests
                                 .SetDefinition("[PR] Post-operative")
                                 .MammoId("325")
                                 .ValidModalities(Modalities.MG)
-                                .SetSnomedDescription("BodyStructure | 312285003 | Post-surgical breast structure")
+                                .SetSnomedDescription("BodyStructure | 312285003 | Post-surgical breast " +
+                                    "structure")
                             //- AutoGen
                             //- Post-operative
                             ,
@@ -317,7 +322,8 @@ namespace BreastRadiology.XUnitTests
                                 .SetDefinition("[PR] Skin marker")
                                 .MammoId("328")
                                 .ValidModalities(Modalities.MG)
-                                .SetSnomedDescription("PhysicalObject | 706314007 | Imaging lesion localization marker (Object)")
+                                .SetSnomedDescription("PhysicalObject | 706314007 | Imaging lesion localization " +
+                                    "marker (Object)")
                             //- AutoGen
                             //- SkinMarker
                             ,
@@ -329,7 +335,8 @@ namespace BreastRadiology.XUnitTests
                                 .SetDefinition("[PR] Surgery")
                                 .MammoId("393")
                                 .ValidModalities(Modalities.MG)
-                                .SetSnomedDescription("Procedure | 274331003 | Surgical biopsy of breast (Procedure)")
+                                .SetSnomedDescription("Procedure | 274331003 | Surgical biopsy of breast " +
+                                    "(Procedure)")
                             //- AutoGen
                             //- Surgery
                             ,
@@ -352,7 +359,8 @@ namespace BreastRadiology.XUnitTests
                                 .SetDefinition("[PR] Tenderness")
                                 .MammoId("322")
                                 .ValidModalities(Modalities.MG)
-                                .SetSnomedDescription("ClinicalFinding | 290080002 | Localized tenderness of breast (Finding) | [0/0] | N64.4")
+                                .SetSnomedDescription("ClinicalFinding | 290080002 | Localized tenderness " +
+                                    "of breast (Finding) | [0/0] | N64.4")
                             //- AutoGen
                             //- Tenderness
                             ,

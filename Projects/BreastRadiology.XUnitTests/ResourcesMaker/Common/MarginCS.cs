@@ -62,7 +62,8 @@ namespace BreastRadiology.XUnitTests
                          .MammoId("109")
                          .ValidModalities(Modalities.MG | Modalities.NM | Modalities.US)
                          .SetSnomedCode("129738007")
-                         .SetSnomedDescription("ClinicalFinding | Lesion with circumscribed margin (Finding)")
+                         .SetSnomedDescription("ClinicalFinding | Lesion with circumscribed margin " +
+                             "(Finding)")
                      //- AutoGen
                          .BiRadsDef(
                             "(historically, \"well-defined\" or \"sharply-defined\")",
@@ -134,7 +135,8 @@ namespace BreastRadiology.XUnitTests
                          .MammoId("111")
                          .ValidModalities(Modalities.MG | Modalities.US)
                          .SetSnomedCode("129739004")
-                         .SetSnomedDescription("ClinicalFinding | Lesion with microlobulated margin (Finding)")
+                         .SetSnomedDescription("ClinicalFinding | Lesion with microlobulated margin " +
+                             "(Finding)")
                      //- AutoGen
                          .BiRadsDef(
                             "The margin is characterized by short-cycle undulations, but the significant feature is that",
@@ -149,7 +151,8 @@ namespace BreastRadiology.XUnitTests
                          .SetDefinition("[PR] Non circumscribed margin")
                          .MammoId("383")
                          .ValidModalities(Modalities.MRI | Modalities.US)
-                         .SetSnomedDescription("ClinicalFinding | 129738007 | Lesion with circumscribed margin (Finding)")
+                         .SetSnomedDescription("ClinicalFinding | 129738007 | Lesion with circumscribed " +
+                             "margin (Finding)")
                          .SetComment("NEED NOT")
                      //- AutoGen
                      ,

@@ -51,7 +51,8 @@ namespace BreastRadiology.XUnitTests
                                 .ValidModalities(Modalities.MG | Modalities.MRI | Modalities.US)
                                 .SetSnomedCode("470272007")
                                 .SetOneToMany("one")
-                                .SetSnomedDescription("PhysicalObject | Implantable lesion localization marker (Object)")
+                                .SetSnomedDescription("PhysicalObject | Implantable lesion localization " +
+                                    "marker (Object)")
                             //- AutoGen
                             ,
                             //- BiopsyClip
@@ -65,7 +66,8 @@ namespace BreastRadiology.XUnitTests
                                 .ValidModalities(Modalities.MG | Modalities.MRI | Modalities.US)
                                 .SetSnomedCode("470272007")
                                 .SetOneToMany("many")
-                                .SetSnomedDescription("PhysicalObject | Implantable lesion localization marker (Object)")
+                                .SetSnomedDescription("PhysicalObject | Implantable lesion localization " +
+                                    "marker (Object)")
                             //- AutoGen
                             ,
                             //- BiopsyClips
@@ -150,7 +152,8 @@ namespace BreastRadiology.XUnitTests
                                 .MammoId("238")
                                 .ValidModalities(Modalities.MG)
                                 .SetSnomedCode("470272007")
-                                .SetSnomedDescription("PhysicalObject | Implantable lesion localization marker (Object)")
+                                .SetSnomedDescription("PhysicalObject | Implantable lesion localization " +
+                                    "marker (Object)")
                                 .SetComment("no gold seed SM")
                             //- AutoGen
                             ,
@@ -177,8 +180,10 @@ namespace BreastRadiology.XUnitTests
                                 .MammoId("477")
                                 .ValidModalities(Modalities.MG | Modalities.MRI)
                                 .SetSnomedCode("31845005")
-                                .SetSnomedDescription("ClinicalFinding | Retraction of nipple (Disorder) | [2/9] | N64.53")
-                                .SetComment("ClinicalFinding | 254239000 | Congenital retraction of nipple (Disorder) | [0/0] | Q83.8")
+                                .SetSnomedDescription("ClinicalFinding | Retraction of nipple (Disorder) " +
+                                    "| [2/9] | N64.53")
+                                .SetComment("ClinicalFinding | 254239000 | Congenital retraction " +
+                                    "of nipple (Disorder) | [0/0] | Q83.8")
                             //- AutoGen
                             .BiRadsDef(
                                 "The nipple is pulled in. This should not be confused with nipple inversion, which is often bilateral ",
@@ -242,7 +247,8 @@ namespace BreastRadiology.XUnitTests
                                 .MammoId("479")
                                 .ValidModalities(Modalities.MG)
                                 .SetSnomedCode("442523003")
-                                .SetSnomedDescription("ClinicalFinding | Surgical scar finding (Finding) | [2/7] | L90.5 |")
+                                .SetSnomedDescription("ClinicalFinding | Surgical scar finding (Finding) " +
+                                    "| [2/7] | L90.5 |")
                             //- AutoGen
                             ,
                             //- PostSurgicalScar
@@ -299,7 +305,8 @@ namespace BreastRadiology.XUnitTests
                                 .SetDefinition("[PR] Skin retraction")
                                 .MammoId("251")
                                 .ValidModalities(Modalities.MG | Modalities.MRI | Modalities.US)
-                                .SetSnomedDescription("ClinicalFinding | 129796009 | Mammographic skin retraction of breast (Finding) | [0/0] | N64.5")
+                                .SetSnomedDescription("ClinicalFinding | 129796009 | Mammographic skin retraction " +
+                                    "of breast (Finding) | [0/0] | N64.5")
                             //- AutoGen
                             ,
                             //- SkinRetraction
@@ -311,7 +318,8 @@ namespace BreastRadiology.XUnitTests
                                 .SetDefinition("[PR] Skin thickening")
                                 .MammoId("250")
                                 .ValidModalities(Modalities.MG | Modalities.MRI | Modalities.US)
-                                .SetSnomedDescription("ClinicalFinding | 129797000 | Mammographic skin thickening of breast (Finding) | [0/0] | R92")
+                                .SetSnomedDescription("ClinicalFinding | 129797000 | Mammographic skin thickening " +
+                                    "of breast (Finding) | [0/0] | R92")
                                 .SetComment("450848006??")
                             //- AutoGen
                             .BiRadsDef(
@@ -357,7 +365,8 @@ namespace BreastRadiology.XUnitTests
                                 .MammoId("470")
                                 .ValidModalities(Modalities.MG)
                                 .SetSnomedCode("129795008")
-                                .SetSnomedDescription("ClinicalFinding | Mammographic trabecular thickening of breast (Finding)")
+                                .SetSnomedDescription("ClinicalFinding | Mammographic trabecular thickening " +
+                                    "of breast (Finding)")
                                 .SetICD10("N64.5")
                                 .SetComment("only mammo chioce")
                             //- AutoGen
