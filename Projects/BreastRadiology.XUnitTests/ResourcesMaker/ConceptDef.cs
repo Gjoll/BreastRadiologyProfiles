@@ -26,7 +26,8 @@ namespace BreastRadiology.XUnitTests
 
                 if (this.mammoIdDescription != null)
                 {
-                    sb.AppendLine($"[{this.mammoIdDescription.Source}]");
+                    if (String.IsNullOrEmpty(this.mammoIdDescription.Source) == false)
+                        sb.AppendLine($"[{this.mammoIdDescription.Source}]");
                     AppendDefLines(this.mammoIdDescription.Text);
                 }
 

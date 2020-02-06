@@ -38,7 +38,7 @@ namespace BreastRadiology.XUnitTests
             this.descriptions = new Dictionary<string, Description>();
             //+ Data
             Add("260", 
-                "UMLS", 
+                "", 
                 new String[]
                 {
                     "Architectural distortion is often due to a desmoplastic " +
@@ -51,7 +51,7 @@ namespace BreastRadiology.XUnitTests
                     "Architectural distortion uncommonly indicates cancer."
                 });
             Add("239", 
-                "UMLS", 
+                "", 
                 new String[]
                 {
                     "Axillary lymphadenopathy is a condition in which " +
@@ -61,7 +61,7 @@ namespace BreastRadiology.XUnitTests
                     "or imaging studies."
                 });
             Add("471.263", 
-                "UMLS", 
+                "", 
                 new String[]
                 {
                     "The biopsy clip serves as a marker documenting where " +
@@ -71,7 +71,7 @@ namespace BreastRadiology.XUnitTests
                     "to know where the diseased tissue was sampled."
                 });
             Add("472.264", 
-                "UMLS", 
+                "", 
                 new String[]
                 {
                     "Tissue marker placement after image-guided breast " +
@@ -90,7 +90,7 @@ namespace BreastRadiology.XUnitTests
                     "markers for various clinical settings."
                 });
             Add("475", 
-                "UMLS", 
+                "", 
                 new String[]
                 {
                     "Brachytherapy (brak-e-THER-uh-pee) is a procedure " +
@@ -106,14 +106,14 @@ namespace BreastRadiology.XUnitTests
                     "from a machine outside of your body."
                 });
             Add("255", 
-                "UMLS", 
+                "", 
                 new String[]
                 {
                     "A tumor of the lung that has invaded the chest wall. " +
                     ""
                 });
             Add("262", 
-                "UMLS", 
+                "", 
                 new String[]
                 {
                     "The cooper's ligaments are fibrous bands extending " +
@@ -131,7 +131,7 @@ namespace BreastRadiology.XUnitTests
                     "ligenments due to fibrosis. "
                 });
             Add("258", 
-                "UMLS", 
+                "", 
                 new String[]
                 {
                     "Edema may be due to blockage of subdermal lymphatics " +
@@ -139,7 +139,7 @@ namespace BreastRadiology.XUnitTests
                     "the breast or axilla."
                 });
             Add("478", 
-                "UMLS", 
+                "", 
                 new String[]
                 {
                     "A hematoma (US spelling)  is a localized bleeding " +
@@ -148,7 +148,7 @@ namespace BreastRadiology.XUnitTests
                     "blood continuing to seep from broken capillaries."
                 });
             Add("477", 
-                "UMLS", 
+                "", 
                 new String[]
                 {
                     "Retracted nipples lie flat against the areola. The " +
@@ -159,7 +159,7 @@ namespace BreastRadiology.XUnitTests
                     "the duct behind the nipple, pulling it in."
                 });
             Add("254", 
-                "UMLS", 
+                "", 
                 new String[]
                 {
                     "Pectoralis muscle invasion is when a tumor has become " +
@@ -167,7 +167,7 @@ namespace BreastRadiology.XUnitTests
                     " "
                 });
             Add("479", 
-                "UMLS", 
+                "", 
                 new String[]
                 {
                     "Post surgical scarring happens because of the incisions " +
@@ -177,7 +177,7 @@ namespace BreastRadiology.XUnitTests
                     "be continued for a year. "
                 });
             Add("469", 
-                "UMLS", 
+                "", 
                 new String[]
                 {
                     "A breast seroma is a collection (pocket) of serous " +
@@ -188,7 +188,7 @@ namespace BreastRadiology.XUnitTests
                     "cells or pus."
                 });
             Add("473", 
-                "UMLS", 
+                "", 
                 new String[]
                 {
                     "A skin lesion is a part of the skin that has an abnormal " +
@@ -197,7 +197,7 @@ namespace BreastRadiology.XUnitTests
                     "or doctor will conduct a full physical exam. "
                 });
             Add("251", 
-                "UMLS", 
+                "", 
                 new String[]
                 {
                     "Skin retraction (or inversion) or Skin retraction. " +
@@ -208,7 +208,7 @@ namespace BreastRadiology.XUnitTests
                     "arms above her head or leans forward."
                 });
             Add("485", 
-                "UMLS", 
+                "", 
                 new String[]
                 {
                     "Most surgical clips are currently made of titanium, " +
@@ -217,7 +217,7 @@ namespace BreastRadiology.XUnitTests
                     "patient's body after the wounds are healed."
                 });
             Add("486", 
-                "UMLS", 
+                "", 
                 new String[]
                 {
                     "A series of surgical staples or clips are used during " +
@@ -227,7 +227,7 @@ namespace BreastRadiology.XUnitTests
                     "where the pathology has been removed."
                 });
             Add("470", 
-                "UMLS", 
+                "", 
                 new String[]
                 {
                     "Diffusely increased density, skin edema, and trabecular " +
@@ -236,7 +236,7 @@ namespace BreastRadiology.XUnitTests
                     "of the breast. "
                 });
             Add("233", 
-                "UMLS", 
+                "", 
                 new String[]
                 {
                     "Calcifications usually can't be felt, but they appear " +
@@ -246,7 +246,7 @@ namespace BreastRadiology.XUnitTests
                     "— are usually not associated with cancer."
                 });
             Add("235", 
-                "UMLS", 
+                "", 
                 new String[]
                 {
                     "Calcifications usually can't be felt, but they appear " +
@@ -256,7 +256,7 @@ namespace BreastRadiology.XUnitTests
                     "— are usually not associated with cancer."
                 });
             Add("234", 
-                "UMLS", 
+                "", 
                 new String[]
                 {
                     "Calcifications are small deposits of calcium that " +
@@ -265,7 +265,7 @@ namespace BreastRadiology.XUnitTests
                     "calcium readily absorbs the X-rays from mammograms"
                 });
             Add("232", 
-                "UMLS", 
+                "", 
                 new String[]
                 {
                     "Calcifications are small deposits of calcium that " +
@@ -273,7 +273,7 @@ namespace BreastRadiology.XUnitTests
                     "on the soft tissue background of the breasts. "
                 });
             Add("231", 
-                "UMLS", 
+                "", 
                 new String[]
                 {
                     "These show up as fine, white specks in a mammogram, " +
@@ -281,7 +281,7 @@ namespace BreastRadiology.XUnitTests
                     "but certain patterns can be an early sign of cancer."
                 });
             Add("237", 
-                "UMLS", 
+                "", 
                 new String[]
                 {
                     "The term milk of calcium (MOC) is given to dependent, " +
@@ -292,7 +292,7 @@ namespace BreastRadiology.XUnitTests
                     "of calcium in breast cyst."
                 });
             Add("236", 
-                "UMLS", 
+                "", 
                 new String[]
                 {
                     "These are very thin benign calcifications that appear " +
@@ -303,7 +303,7 @@ namespace BreastRadiology.XUnitTests
                     "Eggshell"
                 });
             Add("36", 
-                "UMLS", 
+                "", 
                 new String[]
                 {
                     "Further evaluation (by way of exam, tests, etc) is " +
@@ -311,7 +311,7 @@ namespace BreastRadiology.XUnitTests
                     " "
                 });
             Add("32", 
-                "UMLS", 
+                "", 
                 new String[]
                 {
                     "Benign refers to a condition, tumor, or growth that " +
@@ -320,7 +320,7 @@ namespace BreastRadiology.XUnitTests
                     "tissue."
                 });
             Add("33", 
-                "UMLS", 
+                "", 
                 new String[]
                 {
                     "Probably benign: means that there is a finding that " +
@@ -329,7 +329,7 @@ namespace BreastRadiology.XUnitTests
                     "concern changes. "
                 });
             Add("34", 
-                "UMLS", 
+                "", 
                 new String[]
                 {
                     "Suspicious abnormality: means that there are suspicious " +
@@ -339,7 +339,7 @@ namespace BreastRadiology.XUnitTests
                     "calcifications. "
                 });
             Add("176", 
-                "UMLS", 
+                "", 
                 new String[]
                 {
                     "A malignant finding is not suspected. A biopsy or " +
@@ -347,7 +347,7 @@ namespace BreastRadiology.XUnitTests
                     "to determine. Likelihood of malignancy is 2% to <10%."
                 });
             Add("177", 
-                "UMLS", 
+                "", 
                 new String[]
                 {
                     "It warrants radiologic and pathologic correlation " +
@@ -355,7 +355,7 @@ namespace BreastRadiology.XUnitTests
                     "is >10% to <50%. "
                 });
             Add("178", 
-                "UMLS", 
+                "", 
                 new String[]
                 {
                     "Includes findings that have a high suspicion for " +
@@ -364,14 +364,14 @@ namespace BreastRadiology.XUnitTests
                     "benign. "
                 });
             Add("35", 
-                "UMLS", 
+                "", 
                 new String[]
                 {
                     "Almost certainly predictive of breast cancer with " +
                     "a value of at least 95%."
                 });
             Add("172", 
-                "UMLS", 
+                "", 
                 new String[]
                 {
                     "This category is only used for findings on a mammogram " +
@@ -380,7 +380,7 @@ namespace BreastRadiology.XUnitTests
                     "how well the cancer is responding to treatment. "
                 });
             Add("202", 
-                "UMLS", 
+                "", 
                 new String[]
                 {
                     "having increased echogenicity relative to fat or " +
@@ -388,7 +388,7 @@ namespace BreastRadiology.XUnitTests
                     "echogenicity relative to thyroid tissue"
                 });
             Add("703", 
-                "UMLS", 
+                "", 
                 new String[]
                 {
                     "These are calcifications arranged in a line or showing " +
@@ -396,7 +396,7 @@ namespace BreastRadiology.XUnitTests
                     "They tend to be distributed in a linear manner."
                 });
             Add("751", 
-                "UMLS", 
+                "", 
                 new String[]
                 {
                     "Clustered Distribution is in regards to a type of " +
@@ -404,7 +404,7 @@ namespace BreastRadiology.XUnitTests
                     "a small volume of tissue."
                 });
             Add("756", 
-                "UMLS", 
+                "", 
                 new String[]
                 {
                     "Refers to a type of calcification of the breast. " +
@@ -413,7 +413,7 @@ namespace BreastRadiology.XUnitTests
                     ""
                 });
             Add("701", 
-                "UMLS", 
+                "", 
                 new String[]
                 {
                     "Calcification happens when calcium builds up in body " +
@@ -424,7 +424,7 @@ namespace BreastRadiology.XUnitTests
                     "can occur in almost any part of the body."
                 });
             Add("561", 
-                "UMLS", 
+                "", 
                 new String[]
                 {
                     "More than one possibility for your diagnosis. The " +
@@ -433,14 +433,14 @@ namespace BreastRadiology.XUnitTests
                     "for a patient's illness."
                 });
             Add("104", 
-                "UMLS", 
+                "", 
                 new String[]
                 {
                     "An area within the body tissue that is swollen and " +
                     "contains an accumulation of pus. "
                 });
             Add("503", 
-                "UMLS", 
+                "", 
                 new String[]
                 {
                     "Angiolipoma is a rare type of lipoma — a growth made " +
@@ -449,7 +449,7 @@ namespace BreastRadiology.XUnitTests
                     "are often painful or tender."
                 });
             Add("948", 
-                "UMLS", 
+                "", 
                 new String[]
                 {
                     "Apocrine Metaplasia refers to a particular type of " +
@@ -460,7 +460,7 @@ namespace BreastRadiology.XUnitTests
                     "palpable mass."
                 });
             Add("946", 
-                "UMLS", 
+                "", 
                 new String[]
                 {
                     "In medical imaging, artifacts are misrepresentations " +
@@ -469,7 +469,7 @@ namespace BreastRadiology.XUnitTests
                     "resonance imaging (MRI)."
                 });
             Add("545", 
-                "UMLS", 
+                "", 
                 new String[]
                 {
                     "Atypical hyperplasia is a precancerous condition " +
@@ -480,7 +480,7 @@ namespace BreastRadiology.XUnitTests
                     "cancer."
                 });
             Add("942", 
-                "UMLS", 
+                "", 
                 new String[]
                 {
                     "Axillary lymph nodes are the lymph nodes located " +
@@ -493,21 +493,21 @@ namespace BreastRadiology.XUnitTests
                     ""
                 });
             Add("504", 
-                "UMLS", 
+                "", 
                 new String[]
                 {
                     "Carcinoma is a type of cancer that starts in cells " +
                     "that make up the skin or the tissue lining organs."
                 });
             Add("542", 
-                "UMLS", 
+                "", 
                 new String[]
                 {
                     "Carcinoma is a type of cancer that starts in cells " +
                     "that make up the skin or the tissue lining organs"
                 });
             Add("577", 
-                "UMLS", 
+                "", 
                 new String[]
                 {
                     "A breast cyst is a benign (non-cancerous) fluid-filled " +
@@ -518,7 +518,7 @@ namespace BreastRadiology.XUnitTests
                     "are clusters of cysts in one breast or both."
                 });
             Add("61", 
-                "UMLS", 
+                "", 
                 new String[]
                 {
                     "Refers to cysts that contain something more than " +
@@ -528,7 +528,7 @@ namespace BreastRadiology.XUnitTests
                     "of the cyst wall that are ‘thicker‘ than others."
                 });
             Add("115", 
-                "UMLS", 
+                "", 
                 new String[]
                 {
                     "Complicated cysts are \"in between\" a simple cyst and " +
@@ -541,7 +541,7 @@ namespace BreastRadiology.XUnitTests
                     "a solid mass appearance. "
                 });
             Add("582", 
-                "UMLS", 
+                "", 
                 new String[]
                 {
                     "Oil cysts are filled with fluid that may feel smooth " +
@@ -549,7 +549,7 @@ namespace BreastRadiology.XUnitTests
                     "of fatty tissue. "
                 });
             Add("501", 
-                "UMLS", 
+                "", 
                 new String[]
                 {
                     "Sebaceous cysts form out of your sebaceous gland. " +
@@ -561,7 +561,7 @@ namespace BreastRadiology.XUnitTests
                     "the area."
                 });
             Add("537", 
-                "UMLS", 
+                "", 
                 new String[]
                 {
                     "Refers to cysts that contain something more than " +
@@ -571,7 +571,7 @@ namespace BreastRadiology.XUnitTests
                     "of the cyst wall that are ‘thicker‘ than others."
                 });
             Add("506", 
-                "UMLS", 
+                "", 
                 new String[]
                 {
                     "Complicated cysts are \"in between\" a simple cyst and " +
@@ -584,7 +584,7 @@ namespace BreastRadiology.XUnitTests
                     "a solid mass appearance. "
                 });
             Add("505", 
-                "UMLS", 
+                "", 
                 new String[]
                 {
                     "A cyst is a  pocket of tissue that contains fluid, " +
@@ -593,7 +593,7 @@ namespace BreastRadiology.XUnitTests
                     "only show up on a mammogram or ultrasound."
                 });
             Add("514", 
-                "UMLS", 
+                "", 
                 new String[]
                 {
                     "Ductal carcinoma in situ (DCIS) is the presence of " +
@@ -603,7 +603,7 @@ namespace BreastRadiology.XUnitTests
                     "of the milk duct and has a low risk of becoming invasive."
                 });
             Add("572", 
-                "UMLS", 
+                "", 
                 new String[]
                 {
                     "Skin calcifications in the breast usually form in " +
@@ -614,7 +614,7 @@ namespace BreastRadiology.XUnitTests
                     "into small glands in the skin."
                 });
             Add("64", 
-                "UMLS", 
+                "", 
                 new String[]
                 {
                     "An abnormal dilation of a duct by lipids and cellular " +
@@ -623,7 +623,7 @@ namespace BreastRadiology.XUnitTests
                     "by inflammation and infiltration by plasma cells."
                 });
             Add("513", 
-                "UMLS", 
+                "", 
                 new String[]
                 {
                     "Breast edema is defined as a mammographic pattern " +
@@ -635,7 +635,7 @@ namespace BreastRadiology.XUnitTests
                     "or by congestive heart failure."
                 });
             Add("523", 
-                "UMLS", 
+                "", 
                 new String[]
                 {
                     "Fat Lobule. The normal breast is composed of numerous " +
@@ -648,7 +648,7 @@ namespace BreastRadiology.XUnitTests
                     "tissue."
                 });
             Add("509", 
-                "UMLS", 
+                "", 
                 new String[]
                 {
                     "Fat necrosis within the breast is a pathological " +
@@ -659,7 +659,7 @@ namespace BreastRadiology.XUnitTests
                     "procedures."
                 });
             Add("500", 
-                "UMLS", 
+                "", 
                 new String[]
                 {
                     "Another name for Hamartomas, Hamartomas represent " +
@@ -670,14 +670,14 @@ namespace BreastRadiology.XUnitTests
                     "lesions are considered hamartomatous."
                 });
             Add("81", 
-                "UMLS", 
+                "", 
                 new String[]
                 {
                     "Fibroadenomas are noncancerous breast lumps that " +
                     "most commonly occur in women ages 15 to 35. "
                 });
             Add("587", 
-                "UMLS", 
+                "", 
                 new String[]
                 {
                     "Fibroadenomas usually go away with age. By the time " +
@@ -686,7 +686,7 @@ namespace BreastRadiology.XUnitTests
                     "lumps. "
                 });
             Add("538", 
-                "UMLS", 
+                "", 
                 new String[]
                 {
                     "Fibrocystic breast changes lead to the development " +
@@ -698,7 +698,7 @@ namespace BreastRadiology.XUnitTests
                     "breast tissue."
                 });
             Add("94", 
-                "UMLS", 
+                "", 
                 new String[]
                 {
                     "Fibrocystic breast changes lead to the development " +
@@ -710,7 +710,7 @@ namespace BreastRadiology.XUnitTests
                     "breast tissue."
                 });
             Add("578", 
-                "UMLS", 
+                "", 
                 new String[]
                 {
                     "Fibrosis may refer to the connective tissue deposition " +
@@ -721,7 +721,7 @@ namespace BreastRadiology.XUnitTests
                     "that occur in the body are described below."
                 });
             Add("914", 
-                "UMLS", 
+                "", 
                 new String[]
                 {
                     "Fibrous tissue, which extends under the skin, from " +
@@ -731,7 +731,7 @@ namespace BreastRadiology.XUnitTests
                     "a prominent ridge called the inframammary ridge."
                 });
             Add("562", 
-                "UMLS", 
+                "", 
                 new String[]
                 {
                     "Folliculitis is the inflammation of hair follicles " +
@@ -741,7 +741,7 @@ namespace BreastRadiology.XUnitTests
                     "buttocks, and face."
                 });
             Add("759", 
-                "UMLS", 
+                "", 
                 new String[]
                 {
                     "An increase in the amount of breast gland tissue " +
@@ -750,7 +750,7 @@ namespace BreastRadiology.XUnitTests
                     "one or both breasts, sometimes unevenly."
                 });
             Add("552.544", 
-                "UMLS", 
+                "", 
                 new String[]
                 {
                     "A hamartoma is a noncancerous tumor made of an abnormal " +
@@ -758,7 +758,7 @@ namespace BreastRadiology.XUnitTests
                     "in which it grows."
                 });
             Add("112", 
-                "UMLS", 
+                "", 
                 new String[]
                 {
                     "A breast hematoma is a collection of blood that forms " +
@@ -769,7 +769,7 @@ namespace BreastRadiology.XUnitTests
                     "tissue that mimics the shape of a breast tumor."
                 });
             Add("62", 
-                "UMLS", 
+                "", 
                 new String[]
                 {
                     "Intracystic tumors of the breast are uncommon and, " +
@@ -778,14 +778,14 @@ namespace BreastRadiology.XUnitTests
                     "tumor. "
                 });
             Add("566,941", 
-                "UMLS", 
+                "", 
                 new String[]
                 {
                     "Intramammary lymph nodes are defined as lymph nodes " +
                     "surrounded by breast tissue."
                 });
             Add("508", 
-                "UMLS", 
+                "", 
                 new String[]
                 {
                     "A lipoma is a slow-growing, fatty lump that's most " +
@@ -797,7 +797,7 @@ namespace BreastRadiology.XUnitTests
                     "and usually is harmless."
                 });
             Add("540", 
-                "UMLS", 
+                "", 
                 new String[]
                 {
                     "Lymphadenopathy (or adenopathy) is, if anything, " +
@@ -808,14 +808,14 @@ namespace BreastRadiology.XUnitTests
                     "nodes)."
                 });
             Add("524", 
-                "UMLS", 
+                "", 
                 new String[]
                 {
                     "Infection of the breast tissue resulting in pain, " +
                     "swelling, warmth and redness."
                 });
             Add("571", 
-                "UMLS", 
+                "", 
                 new String[]
                 {
                     "The term milk of calcium (MOC) is given to dependent, " +
@@ -826,7 +826,7 @@ namespace BreastRadiology.XUnitTests
                     "of calcium in breast cyst."
                 });
             Add("944", 
-                "UMLS", 
+                "", 
                 new String[]
                 {
                     "Multifocal breast cancer occurs when there are two " +
@@ -835,7 +835,7 @@ namespace BreastRadiology.XUnitTests
                     "all in the same quadrant — or section — of the breast."
                 });
             Add("563", 
-                "UMLS", 
+                "", 
                 new String[]
                 {
                     "Papillary lesions are benign growths in the duct " +
@@ -846,14 +846,14 @@ namespace BreastRadiology.XUnitTests
                     "and is often dependent upon physician recommendation."
                 });
             Add("507", 
-                "UMLS", 
+                "", 
                 new String[]
                 {
                     "A benign epithelial tumor that forms on the skin " +
                     "or mucous membrane."
                 });
             Add("560", 
-                "UMLS", 
+                "", 
                 new String[]
                 {
                     "Phyllodes tumor. Phyllodes tumors (from Greek: phullon " +
@@ -863,7 +863,7 @@ namespace BreastRadiology.XUnitTests
                     "stromal cells of the breast."
                 });
             Add("590", 
-                "UMLS", 
+                "", 
                 new String[]
                 {
                     "A lump of scar tissue forms in the hole left after " +
@@ -874,7 +874,7 @@ namespace BreastRadiology.XUnitTests
                     "firmer or rounder than before surgery and/or radiation."
                 });
             Add("567.943", 
-                "UMLS", 
+                "", 
                 new String[]
                 {
                     "Post surgical scarring happens because of the incisions " +
@@ -884,7 +884,7 @@ namespace BreastRadiology.XUnitTests
                     "be continued for a year. "
                 });
             Add("568", 
-                "UMLS", 
+                "", 
                 new String[]
                 {
                     "Radial scar is a growth that looks like a scar when " +
@@ -897,7 +897,7 @@ namespace BreastRadiology.XUnitTests
                     "condition is complex sclerosing lesions. "
                 });
             Add("502", 
-                "UMLS", 
+                "", 
                 new String[]
                 {
                     "A mark left on the skin or within body tissue where " +
@@ -905,7 +905,7 @@ namespace BreastRadiology.XUnitTests
                     "and fibrous connective tissue has developed."
                 });
             Add("599", 
-                "UMLS", 
+                "", 
                 new String[]
                 {
                     "Sclerosing adenosis is a type of adenosis in which " +
@@ -915,7 +915,7 @@ namespace BreastRadiology.XUnitTests
                     "exaggerated and distorted."
                 });
             Add("570", 
-                "UMLS", 
+                "", 
                 new String[]
                 {
                     "Large rodlike or secretory calcifications. Large " +
@@ -927,7 +927,7 @@ namespace BreastRadiology.XUnitTests
                     "system."
                 });
             Add("945", 
-                "UMLS", 
+                "", 
                 new String[]
                 {
                     "The sentinel nodes are the first few lymph nodes " +
@@ -937,7 +937,7 @@ namespace BreastRadiology.XUnitTests
                     "nodes are removed and analyzed in a laboratory."
                 });
             Add("511.576", 
-                "UMLS", 
+                "", 
                 new String[]
                 {
                     "A breast seroma is a collection (pocket) of serous " +
@@ -948,7 +948,7 @@ namespace BreastRadiology.XUnitTests
                     "cells or pus."
                 });
             Add("569", 
-                "UMLS", 
+                "", 
                 new String[]
                 {
                     "Vascular calcifications are mineral deposits on the " +
@@ -957,7 +957,7 @@ namespace BreastRadiology.XUnitTests
                     "are already built up on the walls of a blood vessel."
                 });
             Add("947", 
-                "UMLS", 
+                "", 
                 new String[]
                 {
                     "Venous stasis, is a condition of slow blood flow " +
@@ -965,7 +965,7 @@ namespace BreastRadiology.XUnitTests
                     "is a risk factor for forming blood clots in veins"
                 });
             Add("324", 
-                "UMLS", 
+                "", 
                 new String[]
                 {
                     "A ductogram, also called a galactogram, is a special " +
@@ -974,7 +974,7 @@ namespace BreastRadiology.XUnitTests
                     "discharges."
                 });
             Add("323", 
-                "UMLS", 
+                "", 
                 new String[]
                 {
                     "Scintigraphy definition is - a diagnostic technique " +
@@ -984,7 +984,7 @@ namespace BreastRadiology.XUnitTests
                     "the body. "
                 });
             Add("591", 
-                "UMLS", 
+                "", 
                 new String[]
                 {
                     "The biopsy clip serves as a marker documenting where " +
@@ -994,7 +994,7 @@ namespace BreastRadiology.XUnitTests
                     "to know where the diseased tissue was sampled."
                 });
             Add("910", 
-                "UMLS", 
+                "", 
                 new String[]
                 {
                     "Tissue marker placement after image-guided breast " +
@@ -1013,7 +1013,7 @@ namespace BreastRadiology.XUnitTests
                     "markers for various clinical settings."
                 });
             Add("905", 
-                "UMLS", 
+                "", 
                 new String[]
                 {
                     "Tissue marker placement after image-guided breast " +
@@ -1028,7 +1028,7 @@ namespace BreastRadiology.XUnitTests
                     "components. "
                 });
             Add("906", 
-                "UMLS", 
+                "", 
                 new String[]
                 {
                     "Tissue marker placement after image-guided breast " +
@@ -1047,7 +1047,7 @@ namespace BreastRadiology.XUnitTests
                     "markers for various clinical settings."
                 });
             Add("195", 
-                "UMLS", 
+                "", 
                 new String[]
                 {
                     "Hilum of lymph node, the portion of a lymph node " +
@@ -1062,7 +1062,7 @@ namespace BreastRadiology.XUnitTests
                     "of the lymphoid tissue."
                 });
             Add("196", 
-                "UMLS", 
+                "", 
                 new String[]
                 {
                     "Hilum is the fatty part of the lymph node where the " +
@@ -1071,7 +1071,7 @@ namespace BreastRadiology.XUnitTests
                     "cancer in the lymph nodes.  "
                 });
             Add("2", 
-                "UMLS", 
+                "", 
                 new String[]
                 {
                     "The property of being echo-free or appearing without " +
@@ -1079,7 +1079,7 @@ namespace BreastRadiology.XUnitTests
                     "clear fluid appears anechoic. "
                 });
             Add("230", 
-                "UMLS", 
+                "", 
                 new String[]
                 {
                     "Fibrocystic breast disease, commonly called fibrocystic " +
@@ -1089,7 +1089,7 @@ namespace BreastRadiology.XUnitTests
                     "or uncomfortable for some women."
                 });
             Add("97", 
-                "UMLS", 
+                "", 
                 new String[]
                 {
                     "Fibroglandular tissue refers to the density and composition " +
@@ -1100,7 +1100,7 @@ namespace BreastRadiology.XUnitTests
                     ""
                 });
             Add("4", 
-                "UMLS", 
+                "", 
                 new String[]
                 {
                     "In an ultrasound- something with high echogenicity " +
@@ -1110,7 +1110,7 @@ namespace BreastRadiology.XUnitTests
                     ""
                 });
             Add("3", 
-                "UMLS", 
+                "", 
                 new String[]
                 {
                     "Hypoechoic means an area looks darker on ultrasound " +
@@ -1120,7 +1120,7 @@ namespace BreastRadiology.XUnitTests
                     "liquid.The lump or lesion is not a cyst. "
                 });
             Add("1001", 
-                "UMLS", 
+                "", 
                 new String[]
                 {
                     "Just like the hands of a clock, this is how doctors " +
@@ -1129,7 +1129,7 @@ namespace BreastRadiology.XUnitTests
                     "Upper Inner Quandrant (UIQ) of the breast. "
                 });
             Add("1010", 
-                "UMLS", 
+                "", 
                 new String[]
                 {
                     "Just like the hands of a clock, this is how doctors " +
@@ -1139,7 +1139,7 @@ namespace BreastRadiology.XUnitTests
                     ""
                 });
             Add("1011", 
-                "UMLS", 
+                "", 
                 new String[]
                 {
                     "Just like the hands of a clock, this is how doctors " +
@@ -1149,7 +1149,7 @@ namespace BreastRadiology.XUnitTests
                     ""
                 });
             Add("1012", 
-                "UMLS", 
+                "", 
                 new String[]
                 {
                     "Just like the hands of a clock, this is how doctors " +
@@ -1157,7 +1157,7 @@ namespace BreastRadiology.XUnitTests
                     "o'clock position is at the 12 o'clock position."
                 });
             Add("1002", 
-                "UMLS", 
+                "", 
                 new String[]
                 {
                     "Just like the hands of a clock, this is how doctors " +
@@ -1166,7 +1166,7 @@ namespace BreastRadiology.XUnitTests
                     "Upper Inner Quandrant (UIQ) of the breast. "
                 });
             Add("1003", 
-                "UMLS", 
+                "", 
                 new String[]
                 {
                     "Just like the hands of a clock, this is how doctors " +
@@ -1174,7 +1174,7 @@ namespace BreastRadiology.XUnitTests
                     "position is at the 3 o'clock position."
                 });
             Add("1004", 
-                "UMLS", 
+                "", 
                 new String[]
                 {
                     "Just like the hands of a clock, this is how doctors " +
@@ -1183,7 +1183,7 @@ namespace BreastRadiology.XUnitTests
                     "Lower Inner Quandrant (LIQ) of the breast. "
                 });
             Add("1005", 
-                "UMLS", 
+                "", 
                 new String[]
                 {
                     "Just like the hands of a clock, this is how doctors " +
@@ -1192,7 +1192,7 @@ namespace BreastRadiology.XUnitTests
                     "Lower Inner Quandrant (LIQ) of the breast. "
                 });
             Add("1006", 
-                "UMLS", 
+                "", 
                 new String[]
                 {
                     "Just like the hands of a clock, this is how doctors " +
@@ -1200,7 +1200,7 @@ namespace BreastRadiology.XUnitTests
                     "position is at the 6 o'clock position."
                 });
             Add("1007", 
-                "UMLS", 
+                "", 
                 new String[]
                 {
                     "Just like the hands of a clock, this is how doctors " +
@@ -1209,7 +1209,7 @@ namespace BreastRadiology.XUnitTests
                     "Lower Outer Quandrant (LOQ) of the breast. "
                 });
             Add("1008", 
-                "UMLS", 
+                "", 
                 new String[]
                 {
                     "Just like the hands of a clock, this is how doctors " +
@@ -1218,7 +1218,7 @@ namespace BreastRadiology.XUnitTests
                     "Lower Outer Quandrant (LOQ) of the breast. "
                 });
             Add("1009", 
-                "UMLS", 
+                "", 
                 new String[]
                 {
                     "Just like the hands of a clock, this is how doctors " +
@@ -1226,7 +1226,7 @@ namespace BreastRadiology.XUnitTests
                     "position is at the 9 o'clock position."
                 });
             Add("1017", 
-                "UMLS", 
+                "", 
                 new String[]
                 {
                     "The breast is arbitrarily divided into anterior, " +
@@ -1239,7 +1239,7 @@ namespace BreastRadiology.XUnitTests
                     ""
                 });
             Add("1015", 
-                "UMLS", 
+                "", 
                 new String[]
                 {
                     "The axilla (also, armpit, underarm or oxter) is the " +
@@ -1248,7 +1248,7 @@ namespace BreastRadiology.XUnitTests
                     "many sweat glands. "
                 });
             Add("1014", 
-                "UMLS", 
+                "", 
                 new String[]
                 {
                     "The tail of Spence (Spence's tail, axillary process, " +
@@ -1259,7 +1259,7 @@ namespace BreastRadiology.XUnitTests
                     "in the deep fascia called foramen of Langer."
                 });
             Add("683", 
-                "UMLS", 
+                "", 
                 new String[]
                 {
                     "The lymph nodes in the neck have historically been " +
@@ -1269,7 +1269,7 @@ namespace BreastRadiology.XUnitTests
                     "and submandibular. "
                 });
             Add("684", 
-                "UMLS", 
+                "", 
                 new String[]
                 {
                     "The lymph nodes in the neck have historically been " +
@@ -1279,7 +1279,7 @@ namespace BreastRadiology.XUnitTests
                     "jugular (deep cervical) chain."
                 });
             Add("685", 
-                "UMLS", 
+                "", 
                 new String[]
                 {
                     "The lymph nodes in the neck have historically been " +
@@ -1289,7 +1289,7 @@ namespace BreastRadiology.XUnitTests
                     "jugular (deep cervical) chain."
                 });
             Add("668", 
-                "UMLS", 
+                "", 
                 new String[]
                 {
                     "If the thickness at the thickest point of the cortex " +
@@ -1300,7 +1300,7 @@ namespace BreastRadiology.XUnitTests
                     "normal and abnormal nodes. "
                 });
             Add("191", 
-                "UMLS", 
+                "", 
                 new String[]
                 {
                     "Some or all of the margin has sharp corners, often " +
@@ -1308,7 +1308,7 @@ namespace BreastRadiology.XUnitTests
                     "circumscribed. "
                 });
             Add("109", 
-                "UMLS", 
+                "", 
                 new String[]
                 {
                     " A circumscribed margin is one that is well defined, " +
@@ -1319,7 +1319,7 @@ namespace BreastRadiology.XUnitTests
                     "oval shapes."
                 });
             Add("21", 
-                "UMLS", 
+                "", 
                 new String[]
                 {
                     "Indistinct margin There is no clear demarcation of " +
@@ -1329,7 +1329,7 @@ namespace BreastRadiology.XUnitTests
                     "circumscribed. "
                 });
             Add("201", 
-                "UMLS", 
+                "", 
                 new String[]
                 {
                     "Intraductal tumor extension is a characteristic feature " +
@@ -1338,7 +1338,7 @@ namespace BreastRadiology.XUnitTests
                     "surgery."
                 });
             Add("20", 
-                "UMLS", 
+                "", 
                 new String[]
                 {
                     "Edges around the soft tissue that don't look smooth. " +
@@ -1346,7 +1346,7 @@ namespace BreastRadiology.XUnitTests
                     "than a cyst. "
                 });
             Add("19", 
-                "UMLS", 
+                "", 
                 new String[]
                 {
                     "The edge of the mass has broad bulges. Much like " +
@@ -1354,7 +1354,7 @@ namespace BreastRadiology.XUnitTests
                     "would be lobulated. "
                 });
             Add("218", 
-                "UMLS", 
+                "", 
                 new String[]
                 {
                     "Smooth margin with distinct separation between the " +
@@ -1362,7 +1362,7 @@ namespace BreastRadiology.XUnitTests
                     "and  have a wide rather than tall formation. "
                 });
             Add("111", 
-                "UMLS", 
+                "", 
                 new String[]
                 {
                     "The margin is characterized by short-cycle undulations " +
@@ -1370,7 +1370,7 @@ namespace BreastRadiology.XUnitTests
                     "is not circumscribed."
                 });
             Add("383", 
-                "UMLS", 
+                "", 
                 new String[]
                 {
                     "Microbulated or Irregular masses, a margin that is " +
@@ -1378,7 +1378,7 @@ namespace BreastRadiology.XUnitTests
                     "between the mass and the surrounding tissue. "
                 });
             Add("28", 
-                "UMLS", 
+                "", 
                 new String[]
                 {
                     "It is hidden by superimposed or adjacent fibroglandular " +
@@ -1387,7 +1387,7 @@ namespace BreastRadiology.XUnitTests
                     "than 25%) is hidden. "
                 });
             Add("18", 
-                "UMLS", 
+                "", 
                 new String[]
                 {
                     "The edges of the mass have a smooth appearance and " +
@@ -1395,7 +1395,7 @@ namespace BreastRadiology.XUnitTests
                     "tissue. "
                 });
             Add("29", 
-                "UMLS", 
+                "", 
                 new String[]
                 {
                     "The edges of the mass have sharp \"spikes\" coming out " +
@@ -1403,7 +1403,7 @@ namespace BreastRadiology.XUnitTests
                     "margin of the mass is not circumscribed. "
                 });
             Add("284", 
-                "UMLS", 
+                "", 
                 new String[]
                 {
                     "A medical imaging used to view breast ducts. It can " +
@@ -1412,14 +1412,14 @@ namespace BreastRadiology.XUnitTests
                     "papillomas and other conditions. "
                 });
             Add("281", 
-                "UMLS", 
+                "", 
                 new String[]
                 {
                     "An X-Ray picture of the breast. It's used to look " +
                     "for early signs of breast cancer. "
                 });
             Add("283", 
-                "UMLS", 
+                "", 
                 new String[]
                 {
                     "Magnetic Resonance Imaging (MRI) is a test that uses " +
@@ -1428,7 +1428,7 @@ namespace BreastRadiology.XUnitTests
                     "a doctor to diagnose a disease or injury. "
                 });
             Add("285", 
-                "UMLS", 
+                "", 
                 new String[]
                 {
                     "This is a type of breast imaging that is used to " +
@@ -1436,7 +1436,7 @@ namespace BreastRadiology.XUnitTests
                     "who have had abnormal mammograms. "
                 });
             Add("282", 
-                "UMLS", 
+                "", 
                 new String[]
                 {
                     "Uses soundwaves to develop ultrasound images. This " +
@@ -1445,7 +1445,7 @@ namespace BreastRadiology.XUnitTests
                     "treat disease or conditions. "
                 });
             Add("805", 
-                "UMLS", 
+                "", 
                 new String[]
                 {
                     "A medical procedure that removes tissue samples for " +
@@ -1453,7 +1453,7 @@ namespace BreastRadiology.XUnitTests
                     ""
                 });
             Add("807", 
-                "UMLS", 
+                "", 
                 new String[]
                 {
                     "An examination of tissue removed from the body to " +
@@ -1461,7 +1461,7 @@ namespace BreastRadiology.XUnitTests
                     ""
                 });
             Add("1828", 
-                "UMLS", 
+                "", 
                 new String[]
                 {
                     "Advanced Technology that takes multiple images, or " +
@@ -1470,7 +1470,7 @@ namespace BreastRadiology.XUnitTests
                     ""
                 });
             Add("1830", 
-                "UMLS", 
+                "", 
                 new String[]
                 {
                     "Advanced Technology that takes multiple images, or " +
@@ -1479,7 +1479,7 @@ namespace BreastRadiology.XUnitTests
                     "view from above the breast. "
                 });
             Add("1833", 
-                "UMLS", 
+                "", 
                 new String[]
                 {
                     "Advanced Technology that takes multiple images, or " +
@@ -1487,7 +1487,7 @@ namespace BreastRadiology.XUnitTests
                     "picture of the breast. Lateral-medial (LM) is"
                 });
             Add("1832", 
-                "UMLS", 
+                "", 
                 new String[]
                 {
                     "Advanced Technology that takes multiple images, or " +
@@ -1495,7 +1495,7 @@ namespace BreastRadiology.XUnitTests
                     "picture of the breast. Mediolateral (ML) is"
                 });
             Add("1831", 
-                "UMLS", 
+                "", 
                 new String[]
                 {
                     "Advanced Technology that takes multiple images, or " +
@@ -1504,7 +1504,7 @@ namespace BreastRadiology.XUnitTests
                     "is "
                 });
             Add("1820", 
-                "UMLS", 
+                "", 
                 new String[]
                 {
                     "An axillary view (also known as a \"Cleopatra view\") " +
@@ -1519,7 +1519,7 @@ namespace BreastRadiology.XUnitTests
                     "muscle and the nipple in profile."
                 });
             Add("45", 
-                "UMLS", 
+                "", 
                 new String[]
                 {
                     "The tail of Spence (Spence's tail, axillary process, " +
@@ -1531,7 +1531,7 @@ namespace BreastRadiology.XUnitTests
                     "is another name for armpit. "
                 });
             Add("46", 
-                "UMLS", 
+                "", 
                 new String[]
                 {
                     "It is useful for the study of breasts in the lower " +
@@ -1546,7 +1546,7 @@ namespace BreastRadiology.XUnitTests
                     "well artifacts from false parenchymal distortion."
                 });
             Add("44", 
-                "UMLS", 
+                "", 
                 new String[]
                 {
                     "Also called \"valley view\" is a mammogram view that " +
@@ -1557,7 +1557,7 @@ namespace BreastRadiology.XUnitTests
                     "breasts. "
                 });
             Add("43", 
-                "UMLS", 
+                "", 
                 new String[]
                 {
                     "All mammograms use compression of the breast. By " +
@@ -1568,7 +1568,7 @@ namespace BreastRadiology.XUnitTests
                     "needing additional examination. "
                 });
             Add("185", 
-                "UMLS", 
+                "", 
                 new String[]
                 {
                     "A cone compression is to catch a specific spot or " +
@@ -1577,7 +1577,7 @@ namespace BreastRadiology.XUnitTests
                     "plate or \"cone\". "
                 });
             Add("1829", 
-                "UMLS", 
+                "", 
                 new String[]
                 {
                     "A core biopsy is a procedure where a needle is passed " +
@@ -1586,14 +1586,14 @@ namespace BreastRadiology.XUnitTests
                     "a microscope for any abnormalities."
                 });
             Add("332", 
-                "UMLS", 
+                "", 
                 new String[]
                 {
                     "Cranial-Caudal (CC) is a view from above the breast " +
                     "during a mammogram or ultrasound. "
                 });
             Add("168", 
-                "UMLS", 
+                "", 
                 new String[]
                 {
                     "Uses imaging guidance, a needle-like applicator called " +
@@ -1604,7 +1604,7 @@ namespace BreastRadiology.XUnitTests
                     "within the liver, kidneys, bones, lungs and breasts."
                 });
             Add("51", 
-                "UMLS", 
+                "", 
                 new String[]
                 {
                     "A medical procedure in which fluid or cells are drawn " +
@@ -1614,7 +1614,7 @@ namespace BreastRadiology.XUnitTests
                     "by a sonogram so the doctor can see what he's doing."
                 });
             Add("1821", 
-                "UMLS", 
+                "", 
                 new String[]
                 {
                     "One way to get relief from the pain of a cyst is " +
@@ -1622,7 +1622,7 @@ namespace BreastRadiology.XUnitTests
                     "the pressure. This is called aspiration. "
                 });
             Add("108", 
-                "UMLS", 
+                "", 
                 new String[]
                 {
                     "This is a fine needle aspiration and is a type of " +
@@ -1631,7 +1631,7 @@ namespace BreastRadiology.XUnitTests
                     "tissue or body fluid."
                 });
             Add("1834", 
-                "UMLS", 
+                "", 
                 new String[]
                 {
                     "While screening mammograms are used as a routine " +
@@ -1642,7 +1642,7 @@ namespace BreastRadiology.XUnitTests
                     "include a lump or breast pain. "
                 });
             Add("179", 
-                "UMLS", 
+                "", 
                 new String[]
                 {
                     "A ductogram (galactogram) is a type of medical imaging " +
@@ -1658,7 +1658,7 @@ namespace BreastRadiology.XUnitTests
                     "obtained."
                 });
             Add("41", 
-                "UMLS", 
+                "", 
                 new String[]
                 {
                     "An XCCL view is a supplementary mammographic view. " +
@@ -1680,28 +1680,28 @@ namespace BreastRadiology.XUnitTests
                     "displayed."
                 });
             Add("38", 
-                "UMLS", 
+                "", 
                 new String[]
                 {
                     "It is recommended to make a follow-up appointment. " +
                     ""
                 });
             Add("123", 
-                "UMLS", 
+                "", 
                 new String[]
                 {
                     "It is recommended to make a follow-up appointment " +
                     "in 3 months."
                 });
             Add("119", 
-                "UMLS", 
+                "", 
                 new String[]
                 {
                     "It is recommended to make a follow-up appointment " +
                     "in 6 months."
                 });
             Add("90", 
-                "UMLS", 
+                "", 
                 new String[]
                 {
                     "There are different views of the breast in mammography. " +
@@ -1710,7 +1710,7 @@ namespace BreastRadiology.XUnitTests
                     "LM view is best for evaluating medial lesions."
                 });
             Add("95", 
-                "UMLS", 
+                "", 
                 new String[]
                 {
                     "There are different views of the breast in mammography. " +
@@ -1722,7 +1722,7 @@ namespace BreastRadiology.XUnitTests
                     ""
                 });
             Add("42", 
-                "UMLS", 
+                "", 
                 new String[]
                 {
                     "A magnification view in mammography is performed " +
@@ -1736,31 +1736,31 @@ namespace BreastRadiology.XUnitTests
                     "region of interest. "
                 });
             Add("1822", 
-                "UMLS", 
+                "", 
                 new String[]
                 {
                     "A three month follow-up is recommended. "
                 });
             Add("1823", 
-                "UMLS", 
+                "", 
                 new String[]
                 {
                     "A six month follow-up is recommended. "
                 });
             Add("1826", 
-                "UMLS", 
+                "", 
                 new String[]
                 {
                     "A three month follow-up is recommended. "
                 });
             Add("1827", 
-                "UMLS", 
+                "", 
                 new String[]
                 {
                     "A six month follow-up is recommended. "
                 });
             Add("144", 
-                "UMLS", 
+                "", 
                 new String[]
                 {
                     "A technically adequate exam has the nipple in profile, " +
@@ -1770,7 +1770,7 @@ namespace BreastRadiology.XUnitTests
                     "straight back from the nipple.)"
                 });
             Add("1837", 
-                "UMLS", 
+                "", 
                 new String[]
                 {
                     "A stereotactic breast biopsy may be performed when " +
@@ -1780,7 +1780,7 @@ namespace BreastRadiology.XUnitTests
                     "in the structure of the breast tissue."
                 });
             Add("133", 
-                "UMLS", 
+                "", 
                 new String[]
                 {
                     "Stereotactic Vacuum Assisted Biopsy. ... During this " +
@@ -1791,7 +1791,7 @@ namespace BreastRadiology.XUnitTests
                     "tissue."
                 });
             Add("132", 
-                "UMLS", 
+                "", 
                 new String[]
                 {
                     "A vacuum assisted biopsy is a way of removing an " +
@@ -1803,7 +1803,7 @@ namespace BreastRadiology.XUnitTests
                     "breast condition."
                 });
             Add("49", 
-                "UMLS", 
+                "", 
                 new String[]
                 {
                     "Given that the rolled projections can be performed " +
@@ -1820,7 +1820,7 @@ namespace BreastRadiology.XUnitTests
                     "to applying compression."
                 });
             Add("1807", 
-                "UMLS", 
+                "", 
                 new String[]
                 {
                     "This is a fine needle aspiration and is a type of " +
@@ -1830,7 +1830,7 @@ namespace BreastRadiology.XUnitTests
                     "a Scinti biopsy. "
                 });
             Add("102", 
-                "UMLS", 
+                "", 
                 new String[]
                 {
                     "Scintimammography is also known as nuclear medicine " +
@@ -1840,7 +1840,7 @@ namespace BreastRadiology.XUnitTests
                     "found with mammography."
                 });
             Add("1801", 
-                "UMLS", 
+                "", 
                 new String[]
                 {
                     "A spot view (also known as a spot compression view or focal " +
@@ -1860,7 +1860,7 @@ namespace BreastRadiology.XUnitTests
                     "the detector surface."
                 });
             Add("54", 
-                "UMLS", 
+                "", 
                 new String[]
                 {
                     "Stereotactic breast biopsy uses mammography – a specific " +
@@ -1873,7 +1873,7 @@ namespace BreastRadiology.XUnitTests
                     "on ultrasound."
                 });
             Add("131", 
-                "UMLS", 
+                "", 
                 new String[]
                 {
                     "A vacuum assisted biopsy is a way of removing an " +
@@ -1889,7 +1889,7 @@ namespace BreastRadiology.XUnitTests
                     "such as inflammation or cancer."
                 });
             Add("367", 
-                "UMLS", 
+                "", 
                 new String[]
                 {
                     "A septation is a description of lesion. Dark Internal " +
@@ -1897,7 +1897,7 @@ namespace BreastRadiology.XUnitTests
                     ""
                 });
             Add("368", 
-                "UMLS", 
+                "", 
                 new String[]
                 {
                     "A septation is a description of lesion. \"Enhancing " +
@@ -1905,7 +1905,7 @@ namespace BreastRadiology.XUnitTests
                     "mass. "
                 });
             Add("369", 
-                "UMLS", 
+                "", 
                 new String[]
                 {
                     "A septation is a description of lesion. Dark internal " +
@@ -1915,40 +1915,40 @@ namespace BreastRadiology.XUnitTests
                     "margins."
                 });
             Add("16", 
-                "UMLS", 
+                "", 
                 new String[]
                 {
                     "A mass that can't be characterized by any specific " +
                     "shape. "
                 });
             Add("190", 
-                "UMLS", 
+                "", 
                 new String[]
                 {
                     "A mass that has an undulating  (having a smoothly " +
                     "rising and falling form or outline) contour. "
                 });
             Add("15", 
-                "UMLS", 
+                "", 
                 new String[]
                 {
                     "A mass that is elliptical or egg-shaped. "
                 });
             Add("14", 
-                "UMLS", 
+                "", 
                 new String[]
                 {
                     "A mass that is spherical, ball-shaped, circular or " +
                     "global. "
                 });
             Add("813", 
-                "UMLS", 
+                "", 
                 new String[]
                 {
                     "Only visable on breast tomosynthesis. "
                 });
             Add("642", 
-                "UMLS", 
+                "", 
                 new String[]
                 {
                     "Architectural distortion is often due to a desmoplastic " +
@@ -1961,7 +1961,7 @@ namespace BreastRadiology.XUnitTests
                     "Architectural distortion uncommonly indicates cancer."
                 });
             Add("630", 
-                "UMLS", 
+                "", 
                 new String[]
                 {
                     "Brachytherapy may be temporary or permanent. ... " +
@@ -1972,7 +1972,7 @@ namespace BreastRadiology.XUnitTests
                     "is also called seed implantation."
                 });
             Add("69", 
-                "UMLS", 
+                "", 
                 new String[]
                 {
                     "A cyst is a sac-like pocket of membranous tissue " +
@@ -1981,7 +1981,7 @@ namespace BreastRadiology.XUnitTests
                     "skin. "
                 });
             Add("610", 
-                "UMLS", 
+                "", 
                 new String[]
                 {
                     "Refers to cysts that contain something more than " +
@@ -1991,7 +1991,7 @@ namespace BreastRadiology.XUnitTests
                     "of the cyst wall that are ‘thicker‘ than others."
                 });
             Add("657", 
-                "UMLS", 
+                "", 
                 new String[]
                 {
                     "Complicated cysts are \"in between\" a simple cyst and " +
@@ -2004,7 +2004,7 @@ namespace BreastRadiology.XUnitTests
                     "a solid mass appearance. "
                 });
             Add("617", 
-                "UMLS", 
+                "", 
                 new String[]
                 {
                     "Is a sac-like pocket of tissue that contains fluid, " +
@@ -2013,7 +2013,7 @@ namespace BreastRadiology.XUnitTests
                     "only show up on a mammogram or ultrasound. "
                 });
             Add("636", 
-                "UMLS", 
+                "", 
                 new String[]
                 {
                     "Oil cysts are filled with fluid that may feel smooth " +
@@ -2021,14 +2021,14 @@ namespace BreastRadiology.XUnitTests
                     "of fatty tissue. "
                 });
             Add("609", 
-                "UMLS", 
+                "", 
                 new String[]
                 {
                     "A simple cyst is a sac-like pocket of membranous " +
                     "tissue that only contains clear fluid. "
                 });
             Add("661", 
-                "UMLS", 
+                "", 
                 new String[]
                 {
                     "A cyst that is filled with debris and fluid substance. " +
@@ -2037,7 +2037,7 @@ namespace BreastRadiology.XUnitTests
                     "cyst. "
                 });
             Add("694.602", 
-                "UMLS", 
+                "", 
                 new String[]
                 {
                     "The mammographic finding of solitary dilated duct " +
@@ -2078,7 +2078,7 @@ namespace BreastRadiology.XUnitTests
                     "Read More: https://www.ajronline.org/doi/full/10.2214/AJR.09.2944"
                 });
             Add("693.614", 
-                "UMLS", 
+                "", 
                 new String[]
                 {
                     "A noncancerous condition that results in clogged " +
@@ -2088,7 +2088,7 @@ namespace BreastRadiology.XUnitTests
                     "obliterate the breast duct. "
                 });
             Add("688", 
-                "UMLS", 
+                "", 
                 new String[]
                 {
                     "Sometimes a lump can form if an area of the fatty " +
@@ -2109,7 +2109,7 @@ namespace BreastRadiology.XUnitTests
                     "the fluid using a fine needle and syringe."
                 });
             Add("70", 
-                "UMLS", 
+                "", 
                 new String[]
                 {
                     "A fibroadenoma is a benign, or noncancerous, breast " +
@@ -2119,7 +2119,7 @@ namespace BreastRadiology.XUnitTests
                     "too. Most are only 1 or 2 centimeters in size."
                 });
             Add("631", 
-                "UMLS", 
+                "", 
                 new String[]
                 {
                     "A hamartoma is a mostly benign,[2] local malformation " +
@@ -2138,7 +2138,7 @@ namespace BreastRadiology.XUnitTests
                     "individual towards malignancies."
                 });
             Add("632", 
-                "UMLS", 
+                "", 
                 new String[]
                 {
                     "A hematoma (US spelling) or haematoma (UK spelling) " +
@@ -2148,7 +2148,7 @@ namespace BreastRadiology.XUnitTests
                     "from broken capillaries."
                 });
             Add("634", 
-                "UMLS", 
+                "", 
                 new String[]
                 {
                     "Ductal carcinoma in situ (DCIS), also known as intraductal " +
@@ -2157,7 +2157,7 @@ namespace BreastRadiology.XUnitTests
                     "are contained inside the milk duct of the breast."
                 });
             Add("635", 
-                "UMLS", 
+                "", 
                 new String[]
                 {
                     "A lipoma is a lump under the skin that occurs due " +
@@ -2169,7 +2169,7 @@ namespace BreastRadiology.XUnitTests
                     "or muscles."
                 });
             Add("654", 
-                "UMLS", 
+                "", 
                 new String[]
                 {
                     "Mastitis usually starts as a painful area in one " +
@@ -2182,7 +2182,7 @@ namespace BreastRadiology.XUnitTests
                     "also in men."
                 });
             Add("648", 
-                "UMLS", 
+                "", 
                 new String[]
                 {
                     "Axillary Nodes. The axillary nodes are a group of " +
@@ -2195,7 +2195,7 @@ namespace BreastRadiology.XUnitTests
                     "apical nodes."
                 });
             Add("649", 
-                "UMLS", 
+                "", 
                 new String[]
                 {
                     "Swollen lymph nodes usually occur as a result of " +
@@ -2211,7 +2211,7 @@ namespace BreastRadiology.XUnitTests
                     "your groin."
                 });
             Add("665", 
-                "UMLS", 
+                "", 
                 new String[]
                 {
                     "(Infraclavicular labeled at upper left.) One or two " +
@@ -2222,13 +2222,13 @@ namespace BreastRadiology.XUnitTests
                     "collecting trunks of the arm."
                 });
             Add("650", 
-                "UMLS", 
+                "", 
                 new String[]
                 {
                     "Lymph nodes found within the breast tissue. "
                 });
             Add("666", 
-                "UMLS", 
+                "", 
                 new String[]
                 {
                     "The supraclavicular lymph nodes are a set of lymph " +
@@ -2238,7 +2238,7 @@ namespace BreastRadiology.XUnitTests
                     "and bacteria."
                 });
             Add("640", 
-                "UMLS", 
+                "", 
                 new String[]
                 {
                     "A breast seroma is a collection (pocket) of serous " +
@@ -2249,7 +2249,7 @@ namespace BreastRadiology.XUnitTests
                     "cells or pus."
                 });
             Add("664", 
-                "UMLS", 
+                "", 
                 new String[]
                 {
                     "The sternalis muscle is an uncommon anatomic variant " +

@@ -298,7 +298,7 @@ namespace BreastRadiology.XUnitTests
                     return;
                 cb
                     .AppendLine($"Add(\"{id}\", ")
-                    .AppendLine($"    \"UMLS\", ")
+                    .AppendLine($"    \"\", ")
                     .AppendLine($"    new String[]")
                     .AppendLine($"    {{")
                 ;
