@@ -1,4 +1,5 @@
-﻿using ExcelDataReader;
+﻿using ClosedXML.Excel;
+using ExcelDataReader;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -9,11 +10,14 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using DocumentFormat.OpenXml.Wordprocessing;
 
 namespace GGMerge
 {
     public partial class SelectSpreadSheets : Form
     {
+        String[] headings;
+
         public SelectSpreadSheets()
         {
             InitializeComponent();
@@ -110,7 +114,7 @@ namespace GGMerge
             }
         }
 
-        public void Merge(String pathSource,
+        public bool Merge(String pathSource,
             String pathDestination)
         {
             this.dsSource = this.ReadSpreadSheet(pathSource);
@@ -128,8 +132,103 @@ namespace GGMerge
             String[] headingDestination = GetHeadings(tblDestination);
             Compare(headingSource, headingDestination);
 
+            this.headings = headingDestination;
+
             LoadRows(tblSource, this.rowsSource);
             LoadRows(tblDestination, this.rowsDestination);
+            if (MergeRows() == false)
+                return false;
+
+            File.Delete(this.tbDestination.Text);
+            XLWorkbook workbook = new XLWorkbook();
+            workbook.Worksheets.Add(this.dsDestination);
+            workbook.SaveAs(this.tbDestination.Text);
+            return true;
+        }
+
+        bool MergeRows()
+        {
+            foreach (KeyValuePair<String, DataRow> item in this.rowsSource)
+            {
+                if (MergeRow(item) == false)
+                    return false;
+            }
+
+            return true;
+        }
+
+        bool MergeRow(KeyValuePair<String, DataRow> item)
+        {
+            if (this.rowsDestination.TryGetValue(item.Key, out DataRow rowDest) == false)
+            {
+                DialogResult res = MessageBox.Show($"Can not find row {item.Key} in destination table",
+                    "Error",
+                    MessageBoxButtons.OKCancel);
+                switch (res)
+                {
+                    case DialogResult.OK:
+                        return true;
+
+                    case DialogResult.Cancel:
+                        return false;
+
+                    default:
+                        throw new NotImplementedException();
+                }
+            }
+
+            return this.MergeCols(item.Key, item.Value, rowDest);
+        }
+
+        bool MergeCols(String mammoId, 
+            DataRow rowSource, 
+            DataRow rowDest)
+        {
+            for (Int32 i = 0; i < this.headings.Length; i++)
+            {
+                if (i != this.idMammoCol)
+                    MergeCol(mammoId, i, rowSource, rowDest);
+            }
+            return true;
+        }
+
+        bool MergeCol(String mammoId, 
+            Int32 i,
+            DataRow rowSource, 
+            DataRow rowDest)
+        {
+            String sourceText = rowSource[i].ToString();
+            String destText = rowDest[i].ToString();
+            if (String.Compare(sourceText, destText) == 0)
+                return true;
+
+            if (destText.Length == 0)
+            {
+                rowDest[i] = rowSource[i];
+                return true;
+            }
+
+            this.tbMammoId.Text = mammoId;
+            this.tbColumnName.Text = this.headings[i];
+            this.tbSourceData.Text = sourceText;
+            this.tbDestData.Text = destText;
+
+            DialogResult res = MessageBox.Show($"Overwrite destination?",
+                "Query",
+                MessageBoxButtons.YesNo);
+            switch (res)
+            {
+                case DialogResult.Yes:
+                    rowDest[i] = rowSource[i];
+                    return true;
+
+                case DialogResult.No:
+                    return true;
+
+                default:
+                    throw new NotImplementedException();
+            }
+
         }
 
         void LoadRows(DataTable tbl,

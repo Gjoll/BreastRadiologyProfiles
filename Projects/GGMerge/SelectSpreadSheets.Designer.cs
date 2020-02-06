@@ -37,6 +37,10 @@
             this.btnOk = new System.Windows.Forms.Button();
             this.btnCancel = new System.Windows.Forms.Button();
             this.btnMerge = new System.Windows.Forms.Button();
+            this.tbMammoId = new System.Windows.Forms.TextBox();
+            this.tbColumnName = new System.Windows.Forms.TextBox();
+            this.tbSourceData = new System.Windows.Forms.TextBox();
+            this.tbDestData = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
             // 
             // tbSource
@@ -124,11 +128,45 @@
             this.btnMerge.UseVisualStyleBackColor = true;
             this.btnMerge.Click += new System.EventHandler(this.btnMerge_Click);
             // 
+            // tbMammoId
+            // 
+            this.tbMammoId.Location = new System.Drawing.Point(75, 111);
+            this.tbMammoId.Name = "tbMammoId";
+            this.tbMammoId.Size = new System.Drawing.Size(100, 20);
+            this.tbMammoId.TabIndex = 9;
+            // 
+            // tbColumnName
+            // 
+            this.tbColumnName.Location = new System.Drawing.Point(206, 111);
+            this.tbColumnName.Name = "tbColumnName";
+            this.tbColumnName.Size = new System.Drawing.Size(100, 20);
+            this.tbColumnName.TabIndex = 10;
+            // 
+            // tbSourceData
+            // 
+            this.tbSourceData.Location = new System.Drawing.Point(42, 156);
+            this.tbSourceData.Multiline = true;
+            this.tbSourceData.Name = "tbSourceData";
+            this.tbSourceData.Size = new System.Drawing.Size(288, 236);
+            this.tbSourceData.TabIndex = 11;
+            // 
+            // tbDestData
+            // 
+            this.tbDestData.Location = new System.Drawing.Point(355, 156);
+            this.tbDestData.Multiline = true;
+            this.tbDestData.Name = "tbDestData";
+            this.tbDestData.Size = new System.Drawing.Size(288, 236);
+            this.tbDestData.TabIndex = 12;
+            // 
             // SelectSpreadSheets
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.tbDestData);
+            this.Controls.Add(this.tbSourceData);
+            this.Controls.Add(this.tbColumnName);
+            this.Controls.Add(this.tbMammoId);
             this.Controls.Add(this.btnMerge);
             this.Controls.Add(this.btnCancel);
             this.Controls.Add(this.btnOk);
@@ -155,5 +193,9 @@
         public System.Windows.Forms.TextBox tbSource;
         public System.Windows.Forms.TextBox tbDestination;
         private System.Windows.Forms.Button btnMerge;
+        private System.Windows.Forms.TextBox tbMammoId;
+        private System.Windows.Forms.TextBox tbColumnName;
+        private System.Windows.Forms.TextBox tbSourceData;
+        private System.Windows.Forms.TextBox tbDestData;
     }
 }
