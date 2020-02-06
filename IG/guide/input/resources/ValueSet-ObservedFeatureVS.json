@@ -123,6 +123,10 @@
           {
             "code": "TrabecularThickening",
             "display": "Trabecular thickening"
+          },
+          {
+            "code": "ArchitecturalDistortion",
+            "display": "Architectural distortion"
           }
         ]
       }

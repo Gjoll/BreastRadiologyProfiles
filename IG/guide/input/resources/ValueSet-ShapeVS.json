@@ -35,6 +35,14 @@
           {
             "code": "RoundInShape",
             "display": "Round in shape"
+          },
+          {
+            "code": "LobulatedInShape",
+            "display": "Lobulated in shape"
+          },
+          {
+            "code": "Reniform",
+            "display": "Reniform"
           }
         ]
       }

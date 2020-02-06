@@ -190,6 +190,15 @@
     </resource>
     <resource>
       <reference>
+        <reference value="CodeSystem/CalcificationDistributionCS" />
+      </reference>
+      <name value="Calcification Distribution CodeSystem" />
+      <description value="Calcification Distribution in an abnormality code system." />
+      <exampleBoolean value="false" />
+      <groupingId value="CommonCodesCS" />
+    </resource>
+    <resource>
+      <reference>
         <reference value="CodeSystem/CompositionSectionSliceCodes" />
       </reference>
       <name value="Composition Section Slice Codes CodeSystem" />
@@ -464,6 +473,15 @@
       </reference>
       <name value="Breast Location Region ValueSet" />
       <description value="Breast body location region value set." />
+      <exampleBoolean value="false" />
+      <groupingId value="CommonCodesVS" />
+    </resource>
+    <resource>
+      <reference>
+        <reference value="ValueSet/CalcificationDistributionVS" />
+      </reference>
+      <name value="Calcification Distribution ValueSet" />
+      <description value="Calcification Distribution of an abnormality value set." />
       <exampleBoolean value="false" />
       <groupingId value="CommonCodesVS" />
     </resource>

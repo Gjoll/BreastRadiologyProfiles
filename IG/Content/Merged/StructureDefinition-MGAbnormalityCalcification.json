@@ -103,7 +103,7 @@
     },
     {
       "url": "http://www.fragment.com/maplink",
-      "valueString": "{\r\n  \"LinkType\": \"component\",\r\n  \"ShowChildren\": false,\r\n  \"Cardinality\": \"0..1\",\r\n  \"LinkTarget\": \"Calcification Distribution\",\r\n  \"ComponentHRef\": \"StructureDefinition-{SDName}-definitions.html#Observation.component:calcificationDistribution\",\r\n  \"Types\": \"CodeableConcept\",\r\n  \"References\": [\r\n    \"http://hl7.org/fhir/us/breast-radiology/ValueSet/MammoCalcificationDistributionVS\"\r\n  ]\r\n}"
+      "valueString": "{\r\n  \"LinkType\": \"component\",\r\n  \"ShowChildren\": false,\r\n  \"Cardinality\": \"0..1\",\r\n  \"LinkTarget\": \"Calcification Distribution\",\r\n  \"ComponentHRef\": \"StructureDefinition-{SDName}-definitions.html#Observation.component:calcificationDistribution\",\r\n  \"Types\": \"CodeableConcept\",\r\n  \"References\": [\r\n    \"http://hl7.org/fhir/us/breast-radiology/ValueSet/CalcificationDistributionVS\"\r\n  ]\r\n}"
     },
     {
       "url": "http://www.fragment.com/mapname",
@@ -275,7 +275,7 @@
     },
     {
       "url": "http://www.fragment.com/maplink",
-      "valueString": "{\r\n  \"LinkType\": \"component\",\r\n  \"ShowChildren\": false,\r\n  \"Cardinality\": \"0..*\",\r\n  \"LinkTarget\": \"Observed distribution of abnormalities\",\r\n  \"ComponentHRef\": \"StructureDefinition-{SDName}-definitions.html#Observation.component:obsDistribution\",\r\n  \"Types\": \"CodeableConcept\",\r\n  \"References\": [\r\n    \"http://hl7.org/fhir/us/breast-radiology/ValueSet/ObservedDistributionVS\"\r\n  ]\r\n}"
+      "valueString": "{\r\n  \"LinkType\": \"component\",\r\n  \"ShowChildren\": false,\r\n  \"Cardinality\": \"0..*\",\r\n  \"LinkTarget\": \"Observed distribution of abnormalities\",\r\n  \"ComponentHRef\": \"StructureDefinition-{SDName}-definitions.html#Observation.component:obsDistribution\",\r\n  \"Types\": \"CodeableConcept\",\r\n  \"References\": [\r\n    \"http://hl7.org/fhir/us/breast-radiology/ValueSet/CalcificationDistributionVS\"\r\n  ]\r\n}"
     },
     {
       "url": "http://www.fragment.com/maplink",
@@ -3162,7 +3162,7 @@
         "path": "Observation.component",
         "sliceName": "calcificationDistribution",
         "short": "Calcification Distribution component",
-        "definition": "This slice contains the optional component that defines the calcification distribution.\n The value of this component is a codeable concept chosen from the MammoCalcificationDistributionVS valueset.",
+        "definition": "This slice contains the optional component that defines the calcification distribution.\n The value of this component is a codeable concept chosen from the CalcificationDistributionVS valueset.",
         "comment": "This is one component of a group of components that comprise the observation.",
         "requirements": "Component observations share the same attributes in the Observation resource as the primary observation and are always treated a part of a single observation (they are not separable).   However, the reference range for the primary observation value is not inherited by the component values and is required when appropriate for each component observation.",
         "min": 0,
@@ -3376,7 +3376,7 @@
         "isSummary": true,
         "binding": {
           "strength": "required",
-          "valueSet": "http://hl7.org/fhir/us/breast-radiology/ValueSet/MammoCalcificationDistributionVS"
+          "valueSet": "http://hl7.org/fhir/us/breast-radiology/ValueSet/CalcificationDistributionVS"
         },
         "mapping": [
           {
@@ -5479,7 +5479,7 @@
         "path": "Observation.component",
         "sliceName": "obsDistribution",
         "short": "Observed distribution of abnormalities component",
-        "definition": "This slice contains an optional description of the distribution of a \ngroup of abnormalities. \nThe value of this component is a codeable concept chosen from the ObservedDistributionVS valueset.",
+        "definition": "This slice contains an optional description of the distribution of a \ngroup of abnormalities. \nThe value of this component is a codeable concept chosen from the CalcificationDistributionVS valueset.",
         "comment": "This is one component of a group of components that comprise the observation.",
         "requirements": "Component observations share the same attributes in the Observation resource as the primary observation and are always treated a part of a single observation (they are not separable).   However, the reference range for the primary observation value is not inherited by the component values and is required when appropriate for each component observation.",
         "min": 0,
@@ -5693,7 +5693,7 @@
         "isSummary": true,
         "binding": {
           "strength": "required",
-          "valueSet": "http://hl7.org/fhir/us/breast-radiology/ValueSet/ObservedDistributionVS"
+          "valueSet": "http://hl7.org/fhir/us/breast-radiology/ValueSet/CalcificationDistributionVS"
         },
         "mapping": [
           {
@@ -7401,7 +7401,7 @@
         "path": "Observation.component",
         "sliceName": "calcificationDistribution",
         "short": "Calcification Distribution component",
-        "definition": "This slice contains the optional component that defines the calcification distribution.\n The value of this component is a codeable concept chosen from the MammoCalcificationDistributionVS valueset.",
+        "definition": "This slice contains the optional component that defines the calcification distribution.\n The value of this component is a codeable concept chosen from the CalcificationDistributionVS valueset.",
         "comment": "This is one component of a group of components that comprise the observation.",
         "requirements": "Component observations share the same attributes in the Observation resource as the primary observation and are always treated a part of a single observation (they are not separable).   However, the reference range for the primary observation value is not inherited by the component values and is required when appropriate for each component observation.",
         "min": 0,
@@ -7615,7 +7615,7 @@
         "isSummary": true,
         "binding": {
           "strength": "required",
-          "valueSet": "http://hl7.org/fhir/us/breast-radiology/ValueSet/MammoCalcificationDistributionVS"
+          "valueSet": "http://hl7.org/fhir/us/breast-radiology/ValueSet/CalcificationDistributionVS"
         },
         "mapping": [
           {
@@ -8422,7 +8422,7 @@
         "path": "Observation.component",
         "sliceName": "obsDistribution",
         "short": "Observed distribution of abnormalities component",
-        "definition": "This slice contains an optional description of the distribution of a \ngroup of abnormalities. \nThe value of this component is a codeable concept chosen from the ObservedDistributionVS valueset.",
+        "definition": "This slice contains an optional description of the distribution of a \ngroup of abnormalities. \nThe value of this component is a codeable concept chosen from the CalcificationDistributionVS valueset.",
         "comment": "This is one component of a group of components that comprise the observation.",
         "min": 0,
         "max": "*",
@@ -8472,7 +8472,7 @@
         ],
         "binding": {
           "strength": "required",
-          "valueSet": "http://hl7.org/fhir/us/breast-radiology/ValueSet/ObservedDistributionVS"
+          "valueSet": "http://hl7.org/fhir/us/breast-radiology/ValueSet/CalcificationDistributionVS"
         }
       },
       {

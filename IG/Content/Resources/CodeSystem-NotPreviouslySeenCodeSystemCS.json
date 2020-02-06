@@ -44,7 +44,7 @@
     {
       "code": "ClinicalExam",
       "display": "Clinical exam",
-      "definition": "[PR] Clinical exam\r\nValid for the following modalities: MG US MRI NM."
+      "definition": "[PR] Clinical exam\r\n\r\nValid for the following modalities: MG US MRI NM."
     },
     {
       "code": "Ductogram",
@@ -64,7 +64,7 @@
     {
       "code": "OutsideExam",
       "display": "Outside exam",
-      "definition": "[PR] Outside exam\r\nValid for the following modalities: MG."
+      "definition": "[PR] Outside exam\r\n\r\nValid for the following modalities: MG."
     },
     {
       "code": "Scintimammography",

@@ -319,6 +319,10 @@
           {
             "code": "VenousStasis",
             "display": "Venous stasis"
+          },
+          {
+            "code": "PhyllodesTumor(SPELLINGREMOVEI)",
+            "display": "Phyllodes tumor (SPELLING REMOVE i)"
           }
         ]
       }

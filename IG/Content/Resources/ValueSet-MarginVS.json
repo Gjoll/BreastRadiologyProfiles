@@ -89,6 +89,14 @@
           {
             "code": "SpiculatedMargin",
             "display": "Spiculated margin"
+          },
+          {
+            "code": "MacrolobulatedMargin",
+            "display": "Macrolobulated margin"
+          },
+          {
+            "code": "ObscuredMagin",
+            "display": "Obscured magin"
           }
         ]
       }

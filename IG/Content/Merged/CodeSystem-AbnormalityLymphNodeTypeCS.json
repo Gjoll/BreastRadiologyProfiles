@@ -54,7 +54,7 @@
     {
       "code": "NodeFocalCortex",
       "display": "Node focal cortex",
-      "definition": "[PR] Node focal cortex\r\nValid for the following modalities: MG US."
+      "definition": "[PR] Node focal cortex\r\n\r\nValid for the following modalities: MG US."
     },
     {
       "code": "NodeInfraclavicular",
@@ -69,12 +69,12 @@
     {
       "code": "NodeLymph",
       "display": "Node lymph",
-      "definition": "[PR] Node lymph\r\nValid for the following modalities: MG US."
+      "definition": "[PR] Node lymph\r\n\r\nValid for the following modalities: MG US."
     },
     {
       "code": "NodeLymphNormal",
       "display": "Node lymph normal",
-      "definition": "[PR] Node lymph normal\r\nValid for the following modalities: MG US."
+      "definition": "[PR] Node lymph normal\r\n\r\nValid for the following modalities: MG US."
     },
     {
       "code": "NodeSupraclavicular",
@@ -84,7 +84,7 @@
     {
       "code": "NodeUniformThickness",
       "display": "Node uniform thickness",
-      "definition": "[PR] Node uniform thickness\r\nValid for the following modalities: MG US."
+      "definition": "[PR] Node uniform thickness\r\n\r\nValid for the following modalities: MG US."
     }
   ]
 }

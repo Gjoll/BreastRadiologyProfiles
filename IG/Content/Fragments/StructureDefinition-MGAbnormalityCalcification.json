@@ -103,7 +103,7 @@
     },
     {
       "url": "http://www.fragment.com/maplink",
-      "valueString": "{\r\n  \"LinkType\": \"component\",\r\n  \"ShowChildren\": false,\r\n  \"Cardinality\": \"0..1\",\r\n  \"LinkTarget\": \"Calcification Distribution\",\r\n  \"ComponentHRef\": \"StructureDefinition-{SDName}-definitions.html#Observation.component:calcificationDistribution\",\r\n  \"Types\": \"CodeableConcept\",\r\n  \"References\": [\r\n    \"http://hl7.org/fhir/us/breast-radiology/ValueSet/MammoCalcificationDistributionVS\"\r\n  ]\r\n}"
+      "valueString": "{\r\n  \"LinkType\": \"component\",\r\n  \"ShowChildren\": false,\r\n  \"Cardinality\": \"0..1\",\r\n  \"LinkTarget\": \"Calcification Distribution\",\r\n  \"ComponentHRef\": \"StructureDefinition-{SDName}-definitions.html#Observation.component:calcificationDistribution\",\r\n  \"Types\": \"CodeableConcept\",\r\n  \"References\": [\r\n    \"http://hl7.org/fhir/us/breast-radiology/ValueSet/CalcificationDistributionVS\"\r\n  ]\r\n}"
     }
   ],
   "url": "http://hl7.org/fhir/us/breast-radiology/StructureDefinition/MGAbnormalityCalcification",
@@ -290,7 +290,7 @@
         "path": "Observation.component",
         "sliceName": "calcificationDistribution",
         "short": "Calcification Distribution component",
-        "definition": "This slice contains the optional component that defines the calcification distribution.\n The value of this component is a codeable concept chosen from the MammoCalcificationDistributionVS valueset.",
+        "definition": "This slice contains the optional component that defines the calcification distribution.\n The value of this component is a codeable concept chosen from the CalcificationDistributionVS valueset.",
         "comment": "This is one component of a group of components that comprise the observation.",
         "min": 0,
         "max": "1",
@@ -340,7 +340,7 @@
         ],
         "binding": {
           "strength": "required",
-          "valueSet": "http://hl7.org/fhir/us/breast-radiology/ValueSet/MammoCalcificationDistributionVS"
+          "valueSet": "http://hl7.org/fhir/us/breast-radiology/ValueSet/CalcificationDistributionVS"
         }
       }
     ]

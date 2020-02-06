@@ -21,7 +21,7 @@
   "description": "Shape values code system.",
   "caseSensitive": true,
   "content": "complete",
-  "count": 3,
+  "count": 5,
   "concept": [
     {
       "code": "IrregularInShape",
@@ -37,6 +37,16 @@
       "code": "RoundInShape",
       "display": "Round in shape",
       "definition": "[PR] Round in shape\r\nA mass that is spherical, ball-shaped, circular or global. \r\n[Bi-Rads® Atlas — Mammography Fifth Ed. 2013]\r\nA mass that is spherical, ball-shaped, circular, or globular in shape.\r\nA round mass has an anteroposterior diameter equal to its transverse diameter\r\nand to qualify as a ROUND mass, it must be circular in perpendicular projections.\r\nBreast masses with a ROUND shape are not commonly seen with breast ultrasound.\r\nValid for the following modalities: MG US MRI."
+    },
+    {
+      "code": "LobulatedInShape",
+      "display": "Lobulated in shape",
+      "definition": "[PR] Lobulated in shape\r\nA mass that has an undulating  (having a smoothly rising and falling form or outline) contour. \r\nValid for the following modalities: MG US MRI."
+    },
+    {
+      "code": "Reniform",
+      "display": "Reniform",
+      "definition": "[PR] Reniform\r\n\r\nValid for the following modalities: MG."
     }
   ]
 }

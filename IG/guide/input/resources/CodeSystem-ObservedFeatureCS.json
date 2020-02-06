@@ -21,7 +21,7 @@
   "description": "Observed Feature seen during a breast examination.",
   "caseSensitive": true,
   "content": "complete",
-  "count": 25,
+  "count": 26,
   "concept": [
     {
       "code": "AxillaryAdenopathy",
@@ -31,17 +31,17 @@
     {
       "code": "BiopsyClip",
       "display": "Biopsy clip",
-      "definition": "[PR] Biopsy clip\r\nValid for the following modalities: MG US MRI."
+      "definition": "[PR] Biopsy clip\r\nThe biopsy clip serves as a marker documenting where the tissue was sampled in the breast. If the original abnormality is no longer visible by imaging after the biopsy, the marker is the only guide we have to know where the diseased tissue was sampled.\r\nValid for the following modalities: MG US MRI."
     },
     {
       "code": "BiopsyClips",
       "display": "Biopsy clips",
-      "definition": "[PR] Biopsy clips\r\nValid for the following modalities: MG US MRI."
+      "definition": "[PR] Biopsy clips\r\nTissue marker placement after image-guided breast biopsy has become a routine component of clinical practice. Marker placement distinguishes multiple biopsied lesions within the same breast, prevents re-biopsy of benign lesions, enables multi-modality correlation, guides pre-operative localization and helps confirm surgical target removal. Numerous breast tissue markers are currently available, with varied shapes, composition, and associated bio-absorbable components. This review serves to familiarize the breast interventionalist with the tissue markers most widely available in the United States today and to provide guidance regarding selection of appropriate markers for various clinical settings.\r\nValid for the following modalities: MG US MRI."
     },
     {
       "code": "BrachytherapyTube",
       "display": "Brachytherapy tube",
-      "definition": "[PR] Brachytherapy tube\r\nBrachytherapy (brak-e-THER-uh-pee) is a procedure that involves placing radioactive material inside your body.\r\nBrachytherapy is one type of radiation therapy that's used to treat cancer. Brachytherapy is sometimes called internal radiation.\r\nBrachytherapy allows doctors to deliver higher doses of radiation to more-specific areas of the body, compared with the conventional form of radiation therapy (external beam radiation) that projects radiation from a machine outside of your body.\r\nValid for the following modalities: MG."
+      "definition": "[PR] Brachytherapy tube\r\nBrachytherapy (brak-e-THER-uh-pee) is a procedure that involves placing radioactive material inside your body.\r\n\r\nBrachytherapy is one type of radiation therapy that's used to treat cancer. Brachytherapy is sometimes called internal radiation.\r\n\r\nBrachytherapy allows doctors to deliver higher doses of radiation to more-specific areas of the body, compared with the conventional form of radiation therapy (external beam radiation) that projects radiation from a machine outside of your body.\r\nValid for the following modalities: MG."
     },
     {
       "code": "ChestWallInvasion",
@@ -51,7 +51,7 @@
     {
       "code": "CooperDistorted",
       "display": "Cooper distorted",
-      "definition": "[PR] Cooper distorted\r\nValid for the following modalities: US."
+      "definition": "[PR] Cooper distorted\r\nC1268682\r\nValid for the following modalities: US."
     },
     {
       "code": "CooperThickened",
@@ -66,12 +66,12 @@
     {
       "code": "EdemaAdj",
       "display": "Edema adj",
-      "definition": "[PR] Edema adj\r\nValid for the following modalities: US."
+      "definition": "[PR] Edema adj\r\n\r\nValid for the following modalities: US."
     },
     {
       "code": "GoldSeed",
       "display": "Gold Seed",
-      "definition": "[PR] Gold Seed\r\nValid for the following modalities: MG."
+      "definition": "[PR] Gold Seed\r\n\r\nValid for the following modalities: MG."
     },
     {
       "code": "Hematoma",
@@ -86,7 +86,7 @@
     {
       "code": "NOChestWallInvasion",
       "display": "NO Chest wall invasion",
-      "definition": "[PR] NO Chest wall invasion\r\nValid for the following modalities: MRI."
+      "definition": "[PR] NO Chest wall invasion\r\n\r\nValid for the following modalities: MRI."
     },
     {
       "code": "PectoralisMuscleInvasion",
@@ -96,12 +96,12 @@
     {
       "code": "PectoralisMuscleInvolvement",
       "display": "Pectoralis muscle involvement",
-      "definition": "[PR] Pectoralis muscle involvement\r\nValid for the following modalities: MRI."
+      "definition": "[PR] Pectoralis muscle involvement\r\n\r\nValid for the following modalities: MRI."
     },
     {
       "code": "PectoralisMuscleTenting",
       "display": "Pectoralis muscle tenting",
-      "definition": "[PR] Pectoralis muscle tenting\r\nValid for the following modalities: US MRI."
+      "definition": "[PR] Pectoralis muscle tenting\r\n\r\nValid for the following modalities: US MRI."
     },
     {
       "code": "PostSurgicalScar",
@@ -116,7 +116,7 @@
     {
       "code": "SkinInvolvement",
       "display": "Skin involvement",
-      "definition": "[PR] Skin involvement\r\nValid for the following modalities: MG US MRI."
+      "definition": "[PR] Skin involvement\r\n\r\nValid for the following modalities: MG US MRI."
     },
     {
       "code": "SkinLesion",
@@ -131,7 +131,7 @@
     {
       "code": "SkinThickening",
       "display": "Skin thickening",
-      "definition": "[PR] Skin thickening\r\n[Bi-Rads® Atlas — Mammography Fifth Ed. 2013]\r\nSkin thickening may be focal or diffuse, and is defined as being greater than 2 mm in thickness. This \r\nfinding is of particular concern if it represents a change from previous mammography examinations. \r\nHowever, unilateral skin thickening is an expected finding after radiation therapy.\r\nValid for the following modalities: MG US MRI."
+      "definition": "[PR] Skin thickening\r\n\r\n[Bi-Rads® Atlas — Mammography Fifth Ed. 2013]\r\nSkin thickening may be focal or diffuse, and is defined as being greater than 2 mm in thickness. This \r\nfinding is of particular concern if it represents a change from previous mammography examinations. \r\nHowever, unilateral skin thickening is an expected finding after radiation therapy.\r\nValid for the following modalities: MG US MRI."
     },
     {
       "code": "SurgicalClip",
@@ -147,6 +147,11 @@
       "code": "TrabecularThickening",
       "display": "Trabecular thickening",
       "definition": "[PR] Trabecular thickening\r\nDiffusely increased density, skin edema, and trabecular thickening are mammographic manifestations of the edema and lymphatic obstruction in inflammatory carcinoma of the breast. \r\n[Bi-Rads® Atlas — Mammography Fifth Ed. 2013]\r\nThis is a thickening of the fibrous septa of the breast.\r\nValid for the following modalities: MG."
+    },
+    {
+      "code": "ArchitecturalDistortion",
+      "display": "Architectural distortion",
+      "definition": "[PR] Architectural distortion\r\nArchitectural distortion is often due to a desmoplastic reaction in which there is focal disruption of the normal breast tissue pattern. Architectural distortion is among the most common presentations for breast cancer. An architectural distortion may be caused by sclerosing adenosis, or a thing called radial scar, both of which are benign and both quite rare. Architectural distortion uncommonly indicates cancer.\r\nValid for the following modalities: MG US MRI."
     }
   ]
 }
