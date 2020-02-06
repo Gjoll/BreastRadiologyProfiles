@@ -25,10 +25,6 @@
         "system": "http://hl7.org/fhir/us/breast-radiology/CodeSystem/CalcificationDistributionCS",
         "concept": [
           {
-            "code": "BranchingDistribution",
-            "display": "Branching distribution"
-          },
-          {
             "code": "ClusteredDistribution",
             "display": "Clustered distribution"
           },

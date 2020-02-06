@@ -101,8 +101,6 @@ namespace BreastRadiology.XUnitTests
                         new ConceptDef[]
                         {
                             //+ Codes
-                            //+ Abscess
-                            //+ AutoGen
                             new ConceptDef()
                                 .SetCode("Abscess")
                                 .SetDisplay("Abscess")
@@ -111,11 +109,7 @@ namespace BreastRadiology.XUnitTests
                                 .ValidModalities(Modalities.MG | Modalities.MRI | Modalities.US)
                                 .SetUMLS("An area within the body tissue that is swollen and " +
                                     "contains an accumulation of pus.")
-                            //- AutoGen
-                            //- Abscess
                             ,
-                            //+ Angiolipoma
-                            //+ AutoGen
                             new ConceptDef()
                                 .SetCode("Angiolipoma")
                                 .SetDisplay("Angiolipoma")
@@ -124,16 +118,11 @@ namespace BreastRadiology.XUnitTests
                                 .ValidModalities(Modalities.MRI | Modalities.US)
                                 .SetSnomedCode("404057003")
                                 .SetSnomedDescription("ClinicalFinding | Angiolipoma (Disorder)")
-                                .SetICD10("D17.9")
                                 .SetUMLS("Angiolipoma is a rare type of lipoma — a growth made " +
                                     "of fat and blood vessels that develops under your " +
                                     "skin.  Unlike other types of lipomas, angiolipomas " +
                                     "are often painful or tender.")
-                            //- AutoGen
-                            //- Angiolipoma
                             ,
-                            //+ ApocrineMetaplasia
-                            //+ AutoGen
                             new ConceptDef()
                                 .SetCode("ApocrineMetaplasia")
                                 .SetDisplay("Apocrine metaplasia")
@@ -148,11 +137,7 @@ namespace BreastRadiology.XUnitTests
                                     "changes may show on a mammogram and biopsy as a mass " +
                                     "or benign lesion, or possibly even develop into a " +
                                     "palpable mass.")
-                            //- AutoGen
-                            //- ApocrineMetaplasia
                             ,
-                            //+ Artifact
-                            //+ AutoGen
                             new ConceptDef()
                                 .SetCode("Artifact")
                                 .SetDisplay("Artifact")
@@ -163,11 +148,7 @@ namespace BreastRadiology.XUnitTests
                                     "of tissue structures produced by imaging techniques " +
                                     "such as ultrasound, X-ray, CT scan, and magnetic " +
                                     "resonance imaging (MRI).")
-                            //- AutoGen
-                            //- Artifact
                             ,
-                            //+ AtypicalHyperplasia
-                            //+ AutoGen
                             new ConceptDef()
                                 .SetCode("AtypicalHyperplasia")
                                 .SetDisplay("Atypical hyperplasia")
@@ -180,11 +161,7 @@ namespace BreastRadiology.XUnitTests
                                     "breast. Atypical hyperplasia isn't cancer, but it " +
                                     "can be a forerunner to the development of breast " +
                                     "cancer.")
-                            //- AutoGen
-                            //- AtypicalHyperplasia
                             ,
-                            //+ AxillaryLymphNode
-                            //+ AutoGen
                             new ConceptDef()
                                 .SetCode("AxillaryLymphNode")
                                 .SetDisplay("Axillary lymph node")
@@ -200,11 +177,18 @@ namespace BreastRadiology.XUnitTests
                                     "all over the body around blood vessels that act as " +
                                     "filters and can accumulate germs or cancer cells. " +
                                     "They are a part of the lymph system of the body.")
-                            //- AutoGen
-                            //- AxillaryLymphNode
                             ,
-                            //+ Carcinoma
-                            //+ AutoGen
+                            new ConceptDef()
+                                .SetCode("Carcinoma")
+                                .SetDisplay("Carcinoma")
+                                .SetDefinition("[PR] Carcinoma")
+                                .MammoId("504")
+                                .ValidModalities(Modalities.MG | Modalities.MRI | Modalities.NM | Modalities.US)
+                                .SetSnomedDescription("ClinicalFinding | 254838004 | Carcinoma of breast " +
+                                    "(Disorder) | [4/33] | C50.929")
+                                .SetUMLS("Carcinoma is a type of cancer that starts in cells " +
+                                    "that make up the skin or the tissue lining organs.")
+                            ,
                             new ConceptDef()
                                 .SetCode("Carcinoma")
                                 .SetDisplay("Carcinoma")
@@ -213,22 +197,23 @@ namespace BreastRadiology.XUnitTests
                                 .ValidModalities(Modalities.MRI)
                                 .SetUMLS("Carcinoma is a type of cancer that starts in cells " +
                                     "that make up the skin or the tissue lining organs")
-                            //- AutoGen
-                            //- Carcinoma
                             ,
-                            //+ CarcinomaKnown
-                            //+ AutoGen
+                            new ConceptDef()
+                                .SetCode("CarcinomaKnown")
+                                .SetDisplay("Carcinoma known")
+                                .SetDefinition("[PR] Carcinoma known")
+                                .MammoId("510")
+                                .ValidModalities(Modalities.MG | Modalities.MRI | Modalities.US)
+                                .SetSnomedDescription("ClinicalFinding | 254838004 | Carcinoma of breast " +
+                                    "(Disorder) | [4/33] | C50.929")
+                            ,
                             new ConceptDef()
                                 .SetCode("CarcinomaKnown")
                                 .SetDisplay("Carcinoma known")
                                 .SetDefinition("[PR] Carcinoma known")
                                 .MammoId("543")
                                 .ValidModalities(Modalities.MRI)
-                            //- AutoGen
-                            //- CarcinomaKnown
                             ,
-                            //+ ClusterOfCysts
-                            //+ AutoGen
                             new ConceptDef()
                                 .SetCode("ClusterOfCysts")
                                 .SetDisplay("Cluster of cysts")
@@ -236,21 +221,14 @@ namespace BreastRadiology.XUnitTests
                                 .MammoId("577")
                                 .ValidModalities(Modalities.MG | Modalities.MRI | Modalities.US)
                                 .SetSnomedCode("399294002")
-                                .SetOneToMany("one")
                                 .SetSnomedDescription("ClinicalFinding |Cyst of breast (Disorder) ++++++")
-                                .SetICD10("N60.09")
-                                .SetComment("BodyStructure | 125291005 | Multiple cysts (Morphologic-Abnormality")
                                 .SetUMLS("A breast cyst is a benign (non-cancerous) fluid-filled " +
                                     "sac in the breast. They are most common in pre-menopausal " +
                                     "women and in post-menopausal women taking hormone " +
                                     "therapy. Some cysts are too small to feel and others " +
                                     "may be quite large and uncomfortable. Sometimes there " +
                                     "are clusters of cysts in one breast or both.")
-                            //- AutoGen
-                            //- ClusterOfCysts
                             ,
-                            //+ Cyst
-                            //+ AutoGen
                             new ConceptDef()
                                 .SetCode("Cyst")
                                 .SetDisplay("Cyst")
@@ -258,14 +236,8 @@ namespace BreastRadiology.XUnitTests
                                 .MammoId("565")
                                 .ValidModalities(Modalities.MG | Modalities.MRI)
                                 .SetSnomedCode("399294002")
-                                .SetOneToMany("one")
                                 .SetSnomedDescription("ClinicalFinding |Cyst of breast (Disorder)")
-                                .SetICD10("N60.09")
-                            //- AutoGen
-                            //- Cyst
                             ,
-                            //+ CystComplex
-                            //+ AutoGen
                             new ConceptDef()
                                 .SetCode("CystComplex")
                                 .SetDisplay("Cyst complex")
@@ -273,26 +245,19 @@ namespace BreastRadiology.XUnitTests
                                 .MammoId("61")
                                 .ValidModalities(Modalities.MRI | Modalities.US)
                                 .SetSnomedCode("449837001")
-                                .SetOneToMany("one")
                                 .SetSnomedDescription("ClinicalFinding | Complex cyst of breast (Disorder)")
-                                .SetICD10("N60.09")
                                 .SetUMLS("Refers to cysts that contain something more than " +
                                     "clear fluid. A complex breast cyst contains solid " +
                                     "elements suspended within the fluid, and may also " +
                                     "feature segmentation (septation) and some regions " +
                                     "of the cyst wall that are ‘thicker‘ than others.")
-                            //- AutoGen
-                            //- CystComplex
                             ,
-                            //+ CystComplicated
-                            //+ AutoGen
                             new ConceptDef()
                                 .SetCode("CystComplicated")
                                 .SetDisplay("Cyst complicated")
                                 .SetDefinition("[PR] Cyst complicated")
                                 .MammoId("115")
                                 .ValidModalities(Modalities.MRI | Modalities.US)
-                                .SetComment("NO CORRECT TERM")
                                 .SetUMLS("Complicated cysts are \"in between\" a simple cyst and " +
                                     "a complex cyst. A complicated breast cyst contains " +
                                     "solid elements suspended within the fluid, and may " +
@@ -301,26 +266,17 @@ namespace BreastRadiology.XUnitTests
                                     "Complicated breast cysts are one of the cystic breast " +
                                     "lesions that show intracystic debris which may imitate " +
                                     "a solid mass appearance.")
-                            //- AutoGen
-                            //- CystComplicated
                             ,
-                            //+ CystOil
-                            //+ AutoGen
                             new ConceptDef()
                                 .SetCode("CystOil")
                                 .SetDisplay("Cyst oil")
                                 .SetDefinition("[PR] Cyst oil")
                                 .MammoId("582")
                                 .ValidModalities(Modalities.MG | Modalities.US)
-                                .SetComment("NO OIL CYST")
                                 .SetUMLS("Oil cysts are filled with fluid that may feel smooth " +
                                     "and soft/squishy. They are caused by the breakdown " +
                                     "of fatty tissue.")
-                            //- AutoGen
-                            //- CystOil
                             ,
-                            //+ CystSebaceous
-                            //+ AutoGen
                             new ConceptDef()
                                 .SetCode("CystSebaceous")
                                 .SetDisplay("Cyst sebaceous")
@@ -328,21 +284,15 @@ namespace BreastRadiology.XUnitTests
                                 .MammoId("501")
                                 .ValidModalities(Modalities.US)
                                 .SetSnomedCode("76649007")
-                                .SetOneToMany("one")
                                 .SetSnomedDescription("ClinicalFinding | Sebaceous cyst of skin of breast " +
                                     "(Disorder)")
-                                .SetICD10("N60.89")
                                 .SetUMLS("Sebaceous cysts form out of your sebaceous gland. " +
                                     "The sebaceous gland produces the oil (called sebum) " +
                                     "that coats your hair and skin.Cysts can develop if " +
                                     "the gland or its duct (the passage from which the " +
                                     "oil is able to leave) becomes damaged or blocked. " +
                                     "This usually occurs due to a trauma to the area.")
-                            //- AutoGen
-                            //- CystSebaceous
                             ,
-                            //+ CystSimple
-                            //+ AutoGen
                             new ConceptDef()
                                 .SetCode("CystSimple")
                                 .SetDisplay("Cyst simple")
@@ -350,14 +300,8 @@ namespace BreastRadiology.XUnitTests
                                 .MammoId("60")
                                 .ValidModalities(Modalities.MRI | Modalities.US)
                                 .SetSnomedCode("399253005")
-                                .SetOneToMany("one")
                                 .SetSnomedDescription("ClinicalFinding | Simple cyst of breast (Disorder)")
-                                .SetICD10("N60.09")
-                            //- AutoGen
-                            //- CystSimple
                             ,
-                            //+ CystsComplex
-                            //+ AutoGen
                             new ConceptDef()
                                 .SetCode("CystsComplex")
                                 .SetDisplay("Cysts complex")
@@ -365,26 +309,19 @@ namespace BreastRadiology.XUnitTests
                                 .MammoId("537")
                                 .ValidModalities(Modalities.MRI | Modalities.US)
                                 .SetSnomedCode("449837001")
-                                .SetOneToMany("Many")
                                 .SetSnomedDescription("ClinicalFinding | Complex cyst of breast (Disorder)")
-                                .SetICD10("N60.09")
                                 .SetUMLS("Refers to cysts that contain something more than " +
                                     "clear fluid. A complex breast cyst contains solid " +
                                     "elements suspended within the fluid, and may also " +
                                     "feature segmentation (septation) and some regions " +
                                     "of the cyst wall that are ‘thicker‘ than others.")
-                            //- AutoGen
-                            //- CystsComplex
                             ,
-                            //+ CystsComplicated
-                            //+ AutoGen
                             new ConceptDef()
                                 .SetCode("CystsComplicated")
                                 .SetDisplay("Cysts complicated")
                                 .SetDefinition("[PR] Cysts complicated")
                                 .MammoId("506")
                                 .ValidModalities(Modalities.MRI | Modalities.US)
-                                .SetComment("NO CORRECT TERM")
                                 .SetUMLS("Complicated cysts are \"in between\" a simple cyst and " +
                                     "a complex cyst. A complicated breast cyst contains " +
                                     "solid elements suspended within the fluid, and may " +
@@ -393,34 +330,24 @@ namespace BreastRadiology.XUnitTests
                                     "Complicated breast cysts are one of the cystic breast " +
                                     "lesions that show intracystic debris which may imitate " +
                                     "a solid mass appearance.")
-                            //- AutoGen
-                            //- CystsComplicated
                             ,
-                            //+ CystsMicroClustered
-                            //+ AutoGen
                             new ConceptDef()
                                 .SetCode("CystsMicroClustered")
                                 .SetDisplay("Cysts micro clustered")
                                 .SetDefinition("[PR] Cysts micro clustered")
                                 .MammoId("505")
                                 .ValidModalities(Modalities.US)
-                                .SetComment("NO CORRECT TERM")
                                 .SetUMLS("A cyst is a  pocket of tissue that contains fluid, " +
                                     "air, or other substances. A Microcyst is small and " +
                                     "less than 2-3 mm. They are often in clusters and " +
                                     "only show up on a mammogram or ultrasound.")
-                            //- AutoGen
-                            //- CystsMicroClustered
                             ,
-                            //+ DCIS
-                            //+ AutoGen
                             new ConceptDef()
                                 .SetCode("DCIS")
                                 .SetDisplay("DCIS")
                                 .SetDefinition("[PR] DCIS")
                                 .MammoId("514")
                                 .ValidModalities(Modalities.MG | Modalities.MRI | Modalities.NM | Modalities.US)
-                                .SetOneToMany("?????")
                                 .SetSnomedDescription("BodyStructure | 399935008 | Ductal carcinoma in situ " +
                                     "- category (Morphologic-Abnormality)")
                                 .SetUMLS("Ductal carcinoma in situ (DCIS) is the presence of " +
@@ -428,22 +355,14 @@ namespace BreastRadiology.XUnitTests
                                     "DCIS is considered the earliest form of breast cancer. " +
                                     "DCIS is noninvasive, meaning it hasn't spread out " +
                                     "of the milk duct and has a low risk of becoming invasive.")
-                            //- AutoGen
-                            //- DCIS
                             ,
-                            //+ Debris
-                            //+ AutoGen
                             new ConceptDef()
                                 .SetCode("Debris")
                                 .SetDisplay("Debris")
                                 .SetDefinition("[PR] Debris")
                                 .MammoId("515")
                                 .ValidModalities(Modalities.MG | Modalities.US)
-                            //- AutoGen
-                            //- Debris
                             ,
-                            //+ Deodorant
-                            //+ AutoGen
                             new ConceptDef()
                                 .SetCode("Deodorant")
                                 .SetDisplay("Deodorant")
@@ -452,11 +371,7 @@ namespace BreastRadiology.XUnitTests
                                 .ValidModalities(Modalities.MG)
                                 .SetSnomedCode("39432004")
                                 .SetSnomedDescription("PharmaceuticalBiologicProduct | Deodorant (Product)")
-                            //- AutoGen
-                            //- Deodorant
                             ,
-                            //+ DermalCalcification
-                            //+ AutoGen
                             new ConceptDef()
                                 .SetCode("DermalCalcification")
                                 .SetDisplay("Dermal calcification")
@@ -469,11 +384,7 @@ namespace BreastRadiology.XUnitTests
                                     "may also form in moles and other skin lesions. Often, " +
                                     "these calcifications are in groups as they extend " +
                                     "into small glands in the skin.")
-                            //- AutoGen
-                            //- DermalCalcification
                             ,
-                            //+ DuctEctasia
-                            //+ AutoGen
                             new ConceptDef()
                                 .SetCode("DuctEctasia")
                                 .SetDisplay("Duct ectasia")
@@ -486,11 +397,7 @@ namespace BreastRadiology.XUnitTests
                                     "debris. In a mammary duct the condition, which tends " +
                                     "mainly to affect postmenopausal women, may be accompanied " +
                                     "by inflammation and infiltration by plasma cells.")
-                            //- AutoGen
-                            //- DuctEctasia
                             ,
-                            //+ Edema
-                            //+ AutoGen
                             new ConceptDef()
                                 .SetCode("Edema")
                                 .SetDisplay("Edema")
@@ -499,7 +406,6 @@ namespace BreastRadiology.XUnitTests
                                 .ValidModalities(Modalities.MRI | Modalities.US)
                                 .SetSnomedCode("290077003")
                                 .SetSnomedDescription("ClinicalFinding | Edema of breast (Finding)")
-                                .SetICD10("R60.0")
                                 .SetUMLS("Breast edema is defined as a mammographic pattern " +
                                     "of skin thickening, increased parenchymal density, " +
                                     "and interstitial marking. It can be caused by benign " +
@@ -507,11 +413,7 @@ namespace BreastRadiology.XUnitTests
                                     "the dermal lymphatics of the breast, lymphatic congestion " +
                                     "caused by breast, lymphatic drainage obstruction, " +
                                     "or by congestive heart failure.")
-                            //- AutoGen
-                            //- Edema
                             ,
-                            //+ FatLobule
-                            //+ AutoGen
                             new ConceptDef()
                                 .SetCode("FatLobule")
                                 .SetDisplay("Fat lobule")
@@ -527,11 +429,7 @@ namespace BreastRadiology.XUnitTests
                                     "The connective tissue (or stroma) in the breast is " +
                                     "composed of various proportions of fat and fibrous " +
                                     "tissue.")
-                            //- AutoGen
-                            //- FatLobule
                             ,
-                            //+ FatNecrosis
-                            //+ AutoGen
                             new ConceptDef()
                                 .SetCode("FatNecrosis")
                                 .SetDisplay("Fat necrosis")
@@ -540,36 +438,26 @@ namespace BreastRadiology.XUnitTests
                                 .ValidModalities(Modalities.MG | Modalities.MRI | Modalities.US)
                                 .SetSnomedCode("21381006")
                                 .SetSnomedDescription("ClinicalFinding | Fat necrosis of breast (Disorder)")
-                                .SetICD10("N64.1")
                                 .SetUMLS("Fat necrosis within the breast is a pathological " +
                                     "process that occurs when there is saponification " +
                                     "of local fat. It is a benign inflammatory process " +
                                     "and is becoming increasingly common with the greater " +
                                     "use of breast conserving surgery and mammoplasty " +
                                     "procedures.")
-                            //- AutoGen
-                            //- FatNecrosis
                             ,
-                            //+ Fibroadenolipoma
-                            //+ AutoGen
                             new ConceptDef()
                                 .SetCode("Fibroadenolipoma")
                                 .SetDisplay("Fibroadenolipoma")
                                 .SetDefinition("[PR] Fibroadenolipoma")
                                 .MammoId("500")
                                 .ValidModalities(Modalities.MG | Modalities.US)
-                                .SetComment("NO CORRECT TERM")
                                 .SetUMLS("Another name for Hamartomas, Hamartomas represent " +
                                     "benign proliferation of fibrous, glandular, and fatty " +
                                     "tissue (hence fibro-adeno-lipoma) surrounded by a " +
                                     "thin capsule of connective tissue. All components " +
                                     "are found in normal breast tissue, which is why the " +
                                     "lesions are considered hamartomatous.")
-                            //- AutoGen
-                            //- Fibroadenolipoma
                             ,
-                            //+ Fibroadenoma
-                            //+ AutoGen
                             new ConceptDef()
                                 .SetCode("Fibroadenoma")
                                 .SetDisplay("Fibroadenoma")
@@ -578,11 +466,7 @@ namespace BreastRadiology.XUnitTests
                                 .ValidModalities(Modalities.MG | Modalities.MRI | Modalities.NM | Modalities.US)
                                 .SetUMLS("Fibroadenomas are noncancerous breast lumps that " +
                                     "most commonly occur in women ages 15 to 35.")
-                            //- AutoGen
-                            //- Fibroadenoma
                             ,
-                            //+ FibroadenomaDegenerating
-                            //+ AutoGen
                             new ConceptDef()
                                 .SetCode("FibroadenomaDegenerating")
                                 .SetDisplay("Fibroadenoma degenerating")
@@ -593,11 +477,7 @@ namespace BreastRadiology.XUnitTests
                                     "a woman is menopausal, they will experience a degeneration " +
                                     "of the Fibroadenomas. These are non-cancerous breast " +
                                     "lumps.")
-                            //- AutoGen
-                            //- FibroadenomaDegenerating
                             ,
-                            //+ FibrocysticChange
-                            //+ AutoGen
                             new ConceptDef()
                                 .SetCode("FibrocysticChange")
                                 .SetDisplay("Fibrocystic change")
@@ -606,7 +486,6 @@ namespace BreastRadiology.XUnitTests
                                 .ValidModalities(Modalities.MG | Modalities.MRI | Modalities.US)
                                 .SetSnomedCode("367647000")
                                 .SetSnomedDescription("BodyStructure | Fibrocystic change")
-                                .SetComment("right/left/bilateral choices")
                                 .SetUMLS("Fibrocystic breast changes lead to the development " +
                                     "of fluid-filled round or oval sacs (cysts) and more " +
                                     "prominent scar-like (fibrous) tissue, which can make " +
@@ -614,11 +493,7 @@ namespace BreastRadiology.XUnitTests
                                     "are composed of tissue that feels lumpy or rope-like " +
                                     "in texture. Doctors call this nodular or glandular " +
                                     "breast tissue.")
-                            //- AutoGen
-                            //- FibrocysticChange
                             ,
-                            //+ FibroglandularTissue
-                            //+ AutoGen
                             new ConceptDef()
                                 .SetCode("FibroglandularTissue")
                                 .SetDisplay("Fibroglandular tissue")
@@ -632,11 +507,7 @@ namespace BreastRadiology.XUnitTests
                                     "are composed of tissue that feels lumpy or rope-like " +
                                     "in texture. Doctors call this nodular or glandular " +
                                     "breast tissue.")
-                            //- AutoGen
-                            //- FibroglandularTissue
                             ,
-                            //+ Fibrosis
-                            //+ AutoGen
                             new ConceptDef()
                                 .SetCode("Fibrosis")
                                 .SetDisplay("Fibrosis")
@@ -650,11 +521,7 @@ namespace BreastRadiology.XUnitTests
                                     "When fibrosis occurs in response to injury, the term " +
                                     "\"scarring\" is used. Some of the main types of fibrosis " +
                                     "that occur in the body are described below.")
-                            //- AutoGen
-                            //- Fibrosis
                             ,
-                            //+ FibrousRidge
-                            //+ AutoGen
                             new ConceptDef()
                                 .SetCode("FibrousRidge")
                                 .SetDisplay("Fibrous ridge")
@@ -666,11 +533,7 @@ namespace BreastRadiology.XUnitTests
                                     "wall, supports the breast and gives it shape. Strands " +
                                     "of supportive tissue surround the breast and form " +
                                     "a prominent ridge called the inframammary ridge.")
-                            //- AutoGen
-                            //- FibrousRidge
                             ,
-                            //+ Folliculitis
-                            //+ AutoGen
                             new ConceptDef()
                                 .SetCode("Folliculitis")
                                 .SetDisplay("Folliculitis")
@@ -684,11 +547,7 @@ namespace BreastRadiology.XUnitTests
                                     "characterized by tender, swollen areas that form " +
                                     "around hair follicles, often on the neck, breasts, " +
                                     "buttocks, and face.")
-                            //- AutoGen
-                            //- Folliculitis
                             ,
-                            //+ Gynecomastia
-                            //+ AutoGen
                             new ConceptDef()
                                 .SetCode("Gynecomastia")
                                 .SetDisplay("Gynecomastia")
@@ -699,11 +558,7 @@ namespace BreastRadiology.XUnitTests
                                     "in boys or men, caused by an imbalance of the hormones " +
                                     "estrogen and testosterone. Gynecomastia can affect " +
                                     "one or both breasts, sometimes unevenly.")
-                            //- AutoGen
-                            //- Gynecomastia
                             ,
-                            //+ Hamartoma
-                            //+ AutoGen
                             new ConceptDef()
                                 .SetCode("Hamartoma")
                                 .SetDisplay("Hamartoma")
@@ -715,11 +570,7 @@ namespace BreastRadiology.XUnitTests
                                 .SetUMLS("A hamartoma is a noncancerous tumor made of an abnormal " +
                                     "mixture of normal tissues and cells from the area " +
                                     "in which it grows.")
-                            //- AutoGen
-                            //- Hamartoma
                             ,
-                            //+ Hematoma
-                            //+ AutoGen
                             new ConceptDef()
                                 .SetCode("Hematoma")
                                 .SetDisplay("Hematoma")
@@ -734,22 +585,14 @@ namespace BreastRadiology.XUnitTests
                                     "is not cancerous, but it can sometimes lead to inflammation, " +
                                     "fever, skin discoloration, and may leave behind scar " +
                                     "tissue that mimics the shape of a breast tumor.")
-                            //- AutoGen
-                            //- Hematoma
                             ,
-                            //+ HormonalStimulation
-                            //+ AutoGen
                             new ConceptDef()
                                 .SetCode("HormonalStimulation")
                                 .SetDisplay("Hormonal stimulation")
                                 .SetDefinition("[PR] Hormonal stimulation")
                                 .MammoId("539")
                                 .ValidModalities(Modalities.US)
-                            //- AutoGen
-                            //- HormonalStimulation
                             ,
-                            //+ IntracysticLesion
-                            //+ AutoGen
                             new ConceptDef()
                                 .SetCode("IntracysticLesion")
                                 .SetDisplay("Intracystic lesion")
@@ -760,11 +603,7 @@ namespace BreastRadiology.XUnitTests
                                     "at the time of ultrasonography and aspiration cytology, " +
                                     "it is difficult to distinguish cancer from a benign " +
                                     "tumor.")
-                            //- AutoGen
-                            //- IntracysticLesion
                             ,
-                            //+ IntramammaryNode
-                            //+ AutoGen
                             new ConceptDef()
                                 .SetCode("IntramammaryNode")
                                 .SetDisplay("Intramammary node")
@@ -775,11 +614,7 @@ namespace BreastRadiology.XUnitTests
                                     "group (Bodypart)")
                                 .SetUMLS("Intramammary lymph nodes are defined as lymph nodes " +
                                     "surrounded by breast tissue.")
-                            //- AutoGen
-                            //- IntramammaryNode
                             ,
-                            //+ Lipoma
-                            //+ AutoGen
                             new ConceptDef()
                                 .SetCode("Lipoma")
                                 .SetDisplay("Lipoma")
@@ -788,7 +623,6 @@ namespace BreastRadiology.XUnitTests
                                 .ValidModalities(Modalities.MG | Modalities.MRI | Modalities.US)
                                 .SetSnomedCode("276891009")
                                 .SetSnomedDescription("ClinicalFinding | Lipoma of breast (Disorder)")
-                                .SetICD10("D17.39")
                                 .SetUMLS("A lipoma is a slow-growing, fatty lump that's most " +
                                     "often situated between your skin and the underlying " +
                                     "muscle layer. A lipoma, which feels doughy and usually " +
@@ -796,11 +630,7 @@ namespace BreastRadiology.XUnitTests
                                     "Lipomas are usually detected in middle age. Some " +
                                     "people have more than one lipoma.A lipoma isn't cancer " +
                                     "and usually is harmless.")
-                            //- AutoGen
-                            //- Lipoma
                             ,
-                            //+ LumpectomyCavity
-                            //+ AutoGen
                             new ConceptDef()
                                 .SetCode("LumpectomyCavity")
                                 .SetDisplay("Lumpectomy cavity")
@@ -808,12 +638,7 @@ namespace BreastRadiology.XUnitTests
                                 .MammoId("512")
                                 .ValidModalities(Modalities.MRI | Modalities.US)
                                 .SetSnomedDescription("BodyStructure | 261719000 | Breast cavity (Morphologic-Abnormality)")
-                                .SetComment("Need to create")
-                            //- AutoGen
-                            //- LumpectomyCavity
                             ,
-                            //+ LumpectomySite
-                            //+ AutoGen
                             new ConceptDef()
                                 .SetCode("LumpectomySite")
                                 .SetDisplay("Lumpectomy site")
@@ -821,23 +646,14 @@ namespace BreastRadiology.XUnitTests
                                 .MammoId("564")
                                 .ValidModalities(Modalities.MRI)
                                 .SetSnomedDescription("BodyStructure | 261719000 | Breast cavity (Morphologic-Abnormality)")
-                                .SetComment("needs better")
-                            //- AutoGen
-                            //- LumpectomySite
                             ,
-                            //+ LymphNode
-                            //+ AutoGen
                             new ConceptDef()
                                 .SetCode("LymphNode")
                                 .SetDisplay("Lymph node")
                                 .SetDefinition("[PR] Lymph node")
                                 .MammoId("74")
                                 .ValidModalities(Modalities.MG | Modalities.MRI | Modalities.NM | Modalities.US)
-                            //- AutoGen
-                            //- LymphNode
                             ,
-                            //+ LymphNodeEnlarged
-                            //+ AutoGen
                             new ConceptDef()
                                 .SetCode("LymphNodeEnlarged")
                                 .SetDisplay("Lymph node enlarged")
@@ -847,22 +663,14 @@ namespace BreastRadiology.XUnitTests
                                 .SetSnomedCode("274741002")
                                 .SetSnomedDescription("ClinicalFinding | Generalized enlarged lymph nodes " +
                                     "(Disorder) | [0/0] | R59.1")
-                            //- AutoGen
-                            //- LymphNodeEnlarged
                             ,
-                            //+ LymphNodeNormal
-                            //+ AutoGen
                             new ConceptDef()
                                 .SetCode("LymphNodeNormal")
                                 .SetDisplay("Lymph node normal")
                                 .SetDefinition("[PR] Lymph node normal")
                                 .MammoId("907")
                                 .ValidModalities(Modalities.MG | Modalities.MRI | Modalities.US)
-                            //- AutoGen
-                            //- LymphNodeNormal
                             ,
-                            //+ LymphNodePathological
-                            //+ AutoGen
                             new ConceptDef()
                                 .SetCode("LymphNodePathological")
                                 .SetDisplay("Lymph node pathological")
@@ -875,33 +683,21 @@ namespace BreastRadiology.XUnitTests
                                     "this includes abnormal number of nodes, or derangement " +
                                     "of internal architecture (e.g. cystic or necrotic " +
                                     "nodes).")
-                            //- AutoGen
-                            //- LymphNodePathological
                             ,
-                            //+ MassSolid
-                            //+ AutoGen
                             new ConceptDef()
                                 .SetCode("MassSolid")
                                 .SetDisplay("Mass solid")
                                 .SetDefinition("[PR] Mass solid")
                                 .MammoId("63")
                                 .ValidModalities(Modalities.MG | Modalities.MRI | Modalities.US)
-                            //- AutoGen
-                            //- MassSolid
                             ,
-                            //+ MassSolidW/tumorVasc
-                            //+ AutoGen
                             new ConceptDef()
                                 .SetCode("MassSolidW/tumorVasc")
                                 .SetDisplay("Mass solid w/tumor vasc")
                                 .SetDefinition("[PR] Mass solid w/tumor vasc")
                                 .MammoId("550")
                                 .ValidModalities(Modalities.MRI)
-                            //- AutoGen
-                            //- MassSolidW/tumorVasc
                             ,
-                            //+ Mastitis
-                            //+ AutoGen
                             new ConceptDef()
                                 .SetCode("Mastitis")
                                 .SetDisplay("Mastitis")
@@ -913,11 +709,7 @@ namespace BreastRadiology.XUnitTests
                                     "N61 | Inflammatory disorders of breast |")
                                 .SetUMLS("Infection of the breast tissue resulting in pain, " +
                                     "swelling, warmth and redness.")
-                            //- AutoGen
-                            //- Mastitis
                             ,
-                            //+ MilkOfCalcium
-                            //+ AutoGen
                             new ConceptDef()
                                 .SetCode("MilkOfCalcium")
                                 .SetDisplay("Milk of calcium")
@@ -934,11 +726,7 @@ namespace BreastRadiology.XUnitTests
                                     "layering can occur in various regions: renal: milk " +
                                     "of calcium in renal cyst (most common) breast: mil+A:Rk " +
                                     "of calcium in breast cyst.")
-                            //- AutoGen
-                            //- MilkOfCalcium
                             ,
-                            //+ Multi-focalCancer
-                            //+ AutoGen
                             new ConceptDef()
                                 .SetCode("Multi-focalCancer")
                                 .SetDisplay("Multi-focal cancer")
@@ -949,11 +737,7 @@ namespace BreastRadiology.XUnitTests
                                     "or more tumors in the same breast. All of the tumors " +
                                     "begin in one original tumor. The tumors are also " +
                                     "all in the same quadrant — or section — of the breast.")
-                            //- AutoGen
-                            //- Multi-focalCancer
                             ,
-                            //+ PapillaryLesion
-                            //+ AutoGen
                             new ConceptDef()
                                 .SetCode("PapillaryLesion")
                                 .SetDisplay("Papillary lesion")
@@ -967,11 +751,7 @@ namespace BreastRadiology.XUnitTests
                                     "Currently, the treatment of these lesions alternates " +
                                     "between radiographic follow-up and surgical excision, " +
                                     "and is often dependent upon physician recommendation.")
-                            //- AutoGen
-                            //- PapillaryLesion
                             ,
-                            //+ Papilloma
-                            //+ AutoGen
                             new ConceptDef()
                                 .SetCode("Papilloma")
                                 .SetDisplay("Papilloma")
@@ -980,35 +760,29 @@ namespace BreastRadiology.XUnitTests
                                 .ValidModalities(Modalities.MG | Modalities.MRI | Modalities.US)
                                 .SetSnomedCode("99571000119102")
                                 .SetSnomedDescription("ClinicalFinding | Papilloma of breast (Disorder)")
-                                .SetICD10("D24")
-                                .SetComment("US SM NUMBER")
                                 .SetUMLS("A benign epithelial tumor that forms on the skin " +
                                     "or mucous membrane.")
-                            //- AutoGen
-                            //- Papilloma
                             ,
-                            //+ PhyllodesTumor
-                            //+ AutoGen
                             new ConceptDef()
-                                .SetCode("PhyllodesTumor")
-                                .SetDisplay("Phyllodes tumor")
-                                .SetDefinition("[PR] Phyllodes tumor")
+                                .SetCode("PhyllodesTumor(SPELLINGREMOVEI)")
+                                .SetDisplay("Phyllodes tumor (SPELLING REMOVE i)")
+                                .SetDefinition("[PR] Phyllodes tumor (SPELLING REMOVE i)")
                                 .MammoId("560")
                                 .ValidModalities(Modalities.MRI | Modalities.US)
                                 .SetSnomedDescription("ClinicalFinding | 712989008 | Phyllodes tumor of " +
                                     "breast (Disorder) | D48.6 |")
-                            //- AutoGen
-                            //- PhyllodesTumor
+                                .SetUMLS("Phyllodes tumor. Phyllodes tumors (from Greek: phullon " +
+                                    "leaf), also cystosarcoma phyllodes, cystosarcoma " +
+                                    "phylloides and phylloides tumor, are typically large, " +
+                                    "fast-growing masses that form from the periductal " +
+                                    "stromal cells of the breast.")
                             ,
-                            //+ PostLumpectomyScar
-                            //+ AutoGen
                             new ConceptDef()
                                 .SetCode("PostLumpectomyScar")
                                 .SetDisplay("Post lumpectomy scar")
                                 .SetDefinition("[PR] Post lumpectomy scar")
                                 .MammoId("590")
                                 .ValidModalities(Modalities.MG)
-                                .SetOneToMany("???")
                                 .SetSnomedDescription("BodyStructure | 63130001 | Surgical scar (Morphologic-Abnormality)")
                                 .SetUMLS("A lump of scar tissue forms in the hole left after " +
                                     "breast tissue is removed. If scar tissue forms around " +
@@ -1016,11 +790,7 @@ namespace BreastRadiology.XUnitTests
                                     "and also feels like a lump. ... Scar tissue and fluid " +
                                     "retention can make breast tissue appear a little " +
                                     "firmer or rounder than before surgery and/or radiation.")
-                            //- AutoGen
-                            //- PostLumpectomyScar
                             ,
-                            //+ PostSurgicalScar
-                            //+ AutoGen
                             new ConceptDef()
                                 .SetCode("PostSurgicalScar")
                                 .SetDisplay("Post surgical scar")
@@ -1033,33 +803,21 @@ namespace BreastRadiology.XUnitTests
                                     "amount of scarring is connected to the different " +
                                     "stages of wound healing. Surgical scar care should " +
                                     "be continued for a year.")
-                            //- AutoGen
-                            //- PostSurgicalScar
                             ,
-                            //+ PreviousBiopsy
-                            //+ AutoGen
                             new ConceptDef()
                                 .SetCode("PreviousBiopsy")
                                 .SetDisplay("Previous biopsy")
                                 .SetDefinition("[PR] Previous biopsy")
                                 .MammoId("584")
                                 .ValidModalities(Modalities.MG)
-                            //- AutoGen
-                            //- PreviousBiopsy
                             ,
-                            //+ PreviousSurgery
-                            //+ AutoGen
                             new ConceptDef()
                                 .SetCode("PreviousSurgery")
                                 .SetDisplay("Previous surgery")
                                 .SetDefinition("[PR] Previous surgery")
                                 .MammoId("585")
                                 .ValidModalities(Modalities.MG)
-                            //- AutoGen
-                            //- PreviousSurgery
                             ,
-                            //+ PreviousTrauma
-                            //+ AutoGen
                             new ConceptDef()
                                 .SetCode("PreviousTrauma")
                                 .SetDisplay("Previous trauma")
@@ -1068,12 +826,7 @@ namespace BreastRadiology.XUnitTests
                                 .ValidModalities(Modalities.MG)
                                 .SetSnomedDescription("ClinicalFinding | 62112002 | Injury of breast (Disorder) " +
                                     "| [4/41] | S29.9XX?")
-                                .SetComment("NEED TO INDICATE PREVIOUS")
-                            //- AutoGen
-                            //- PreviousTrauma
                             ,
-                            //+ RadialScar
-                            //+ AutoGen
                             new ConceptDef()
                                 .SetCode("RadialScar")
                                 .SetDisplay("Radial scar")
@@ -1082,7 +835,6 @@ namespace BreastRadiology.XUnitTests
                                 .ValidModalities(Modalities.MG | Modalities.US)
                                 .SetSnomedCode("390787006")
                                 .SetSnomedDescription("ClinicalFinding | Radial scar of breast (Finding)")
-                                .SetICD10("N64.89")
                                 .SetUMLS("Radial scar is a growth that looks like a scar when " +
                                     "the tissue is viewed under a microscope. It has a " +
                                     "central core containing benign ducts. Growing out " +
@@ -1091,11 +843,7 @@ namespace BreastRadiology.XUnitTests
                                     "(overgrowth of their inner lining). Often, more than " +
                                     "one radial scar is present. Another term for this " +
                                     "condition is complex sclerosing lesions.")
-                            //- AutoGen
-                            //- RadialScar
                             ,
-                            //+ RadiationChanges
-                            //+ AutoGen
                             new ConceptDef()
                                 .SetCode("RadiationChanges")
                                 .SetDisplay("Radiation changes")
@@ -1105,11 +853,7 @@ namespace BreastRadiology.XUnitTests
                                 .SetSnomedCode("143501000119107")
                                 .SetSnomedDescription("SituationWithExplicitContext  | History of radiation " +
                                     "therapy to breast area (Situation)")
-                            //- AutoGen
-                            //- RadiationChanges
                             ,
-                            //+ RadiationTherapy
-                            //+ AutoGen
                             new ConceptDef()
                                 .SetCode("RadiationTherapy")
                                 .SetDisplay("Radiation therapy")
@@ -1119,11 +863,7 @@ namespace BreastRadiology.XUnitTests
                                 .SetSnomedCode("429479009")
                                 .SetSnomedDescription("SituationWithExplicitContext | History of radiation " +
                                     "therapy (Situation)")
-                            //- AutoGen
-                            //- RadiationTherapy
                             ,
-                            //+ Scar
-                            //+ AutoGen
                             new ConceptDef()
                                 .SetCode("Scar")
                                 .SetDisplay("Scar")
@@ -1133,22 +873,14 @@ namespace BreastRadiology.XUnitTests
                                 .SetUMLS("A mark left on the skin or within body tissue where " +
                                     "a wound, burn, or sore has not healed completely " +
                                     "and fibrous connective tissue has developed.")
-                            //- AutoGen
-                            //- Scar
                             ,
-                            //+ ScarWithShadowing
-                            //+ AutoGen
                             new ConceptDef()
                                 .SetCode("ScarWithShadowing")
                                 .SetDisplay("Scar with shadowing")
                                 .SetDefinition("[PR] Scar with shadowing")
                                 .MammoId("113")
                                 .ValidModalities(Modalities.MRI | Modalities.US)
-                            //- AutoGen
-                            //- ScarWithShadowing
                             ,
-                            //+ SclerosingAdenosis
-                            //+ AutoGen
                             new ConceptDef()
                                 .SetCode("SclerosingAdenosis")
                                 .SetDisplay("Sclerosing adenosis")
@@ -1160,11 +892,7 @@ namespace BreastRadiology.XUnitTests
                                     "stromal fibrosis (\"sclerosis\"). The normal lobular " +
                                     "architecture of the breast is maintained, but becomes " +
                                     "exaggerated and distorted.")
-                            //- AutoGen
-                            //- SclerosingAdenosis
                             ,
-                            //+ SecretoryCalcification
-                            //+ AutoGen
                             new ConceptDef()
                                 .SetCode("SecretoryCalcification")
                                 .SetDisplay("Secretory calcification")
@@ -1179,11 +907,7 @@ namespace BreastRadiology.XUnitTests
                                     "secretions. Large rodlike or secretory calcifications " +
                                     "are oriented along the axis of the breast ductal " +
                                     "system.")
-                            //- AutoGen
-                            //- SecretoryCalcification
                             ,
-                            //+ SentinelNode
-                            //+ AutoGen
                             new ConceptDef()
                                 .SetCode("SentinelNode")
                                 .SetDisplay("Sentinel node")
@@ -1195,11 +919,7 @@ namespace BreastRadiology.XUnitTests
                                     "injecting a tracer material that helps the surgeon " +
                                     "locate the sentinel nodes during surgery. The sentinel " +
                                     "nodes are removed and analyzed in a laboratory.")
-                            //- AutoGen
-                            //- SentinelNode
                             ,
-                            //+ Seroma
-                            //+ AutoGen
                             new ConceptDef()
                                 .SetCode("Seroma")
                                 .SetDisplay("Seroma")
@@ -1208,18 +928,13 @@ namespace BreastRadiology.XUnitTests
                                 .ValidModalities(Modalities.MG | Modalities.MRI | Modalities.US)
                                 .SetSnomedCode("297178008")
                                 .SetSnomedDescription("ClinicalFinding | Breast seroma (Disorder)")
-                                .SetICD10("N64.89")
                                 .SetUMLS("A breast seroma is a collection (pocket) of serous " +
                                     "fluid that can develop after trauma to the breast " +
                                     "or following procedures such as breast surgery or " +
                                     "radiation therapy. Serous fluid is a pale yellow, " +
                                     "transparent fluid that contains protein, but no blood " +
                                     "cells or pus.")
-                            //- AutoGen
-                            //- Seroma
                             ,
-                            //+ SkinLesion
-                            //+ AutoGen
                             new ConceptDef()
                                 .SetCode("SkinLesion")
                                 .SetDisplay("Skin lesion")
@@ -1228,23 +943,14 @@ namespace BreastRadiology.XUnitTests
                                 .ValidModalities(Modalities.MG)
                                 .SetSnomedCode("126510002")
                                 .SetSnomedDescription("ClinicalFinding | Neoplasm of skin of breast (Disorder)")
-                                .SetICD10("D49.2")
-                            //- AutoGen
-                            //- SkinLesion
                             ,
-                            //+ Surgery
-                            //+ AutoGen
                             new ConceptDef()
                                 .SetCode("Surgery")
                                 .SetDisplay("Surgery")
                                 .SetDefinition("[PR] Surgery")
                                 .MammoId("546")
                                 .ValidModalities(Modalities.MRI)
-                            //- AutoGen
-                            //- Surgery
                             ,
-                            //+ Trauma
-                            //+ AutoGen
                             new ConceptDef()
                                 .SetCode("Trauma")
                                 .SetDisplay("Trauma")
@@ -1252,13 +958,7 @@ namespace BreastRadiology.XUnitTests
                                 .MammoId("547")
                                 .ValidModalities(Modalities.MRI)
                                 .SetSnomedDescription("ClinicalFinding | 62112002 | Injury of breast (Disorder)")
-                                .SetICD10("S29.9XX?")
-                                .SetComment("Need help no direct match")
-                            //- AutoGen
-                            //- Trauma
                             ,
-                            //+ VascularCalcifications
-                            //+ AutoGen
                             new ConceptDef()
                                 .SetCode("VascularCalcifications")
                                 .SetDisplay("Vascular calcifications")
@@ -1271,11 +971,7 @@ namespace BreastRadiology.XUnitTests
                                     "walls of your arteries and veins. These mineral deposits " +
                                     "sometimes stick to fatty deposits, or plaques, that " +
                                     "are already built up on the walls of a blood vessel.")
-                            //- AutoGen
-                            //- VascularCalcifications
                             ,
-                            //+ VenousStasis
-                            //+ AutoGen
                             new ConceptDef()
                                 .SetCode("VenousStasis")
                                 .SetDisplay("Venous stasis")
@@ -1287,27 +983,6 @@ namespace BreastRadiology.XUnitTests
                                 .SetUMLS("Venous stasis, is a condition of slow blood flow " +
                                     "in the veins, usually of the legs. Venous stasis " +
                                     "is a risk factor for forming blood clots in veins")
-                            //- AutoGen
-                            ,
-                            //- VenousStasis
-                            //+ PhyllodesTumor(SPELLINGREMOVEI)
-                            //+ AutoGen
-                            new ConceptDef()
-                                .SetCode("PhyllodesTumor(SPELLINGREMOVEI)")
-                                .SetDisplay("Phyllodes tumor (SPELLING REMOVE i)")
-                                .SetDefinition("[PR] Phyllodes tumor (SPELLING REMOVE i)")
-                                .MammoId("560")
-                                .ValidModalities(Modalities.MRI | Modalities.US)
-                                .SetSnomedDescription("ClinicalFinding | 712989008 | Phyllodes tumor of " +
-                                    "breast (Disorder) | D48.6 |")
-                                .SetUMLS("Phyllodes tumor. Phyllodes tumors (from Greek: phullon " +
-                                    "leaf), also cystosarcoma phyllodes, cystosarcoma " +
-                                    "phylloides and phylloides tumor, are typically large, " +
-                                    "fast-growing masses that form from the periductal " +
-                                    "stromal cells of the breast.")
-                            //- AutoGen
-                            ,
-                            //- PhyllodesTumor(SPELLINGREMOVEI)
                             //- Codes
                         })
             );
@@ -1324,52 +999,6 @@ namespace BreastRadiology.XUnitTests
                         new ConceptDef[]
                         {
                             //+ Qualifiers
-                            //+ LikelyRepresents
-                            //+ AutoGen
-                            new ConceptDef()
-                                .SetCode("LikelyRepresents")
-                                .SetDisplay("Likely represents")
-                                .SetDefinition("[PR] Likely represents")
-                                .MammoId("536")
-                                .ValidModalities(Modalities.MG | Modalities.MRI | Modalities.NM | Modalities.US)
-                            //- AutoGen
-                            //- LikelyRepresents
-                            ,
-                            //+ MostLikely
-                            //+ AutoGen
-                            new ConceptDef()
-                                .SetCode("MostLikely")
-                                .SetDisplay("Most likely")
-                                .SetDefinition("[PR] Most likely")
-                                .MammoId("581")
-                                .ValidModalities(Modalities.MG | Modalities.US)
-                            //- AutoGen
-                            //- MostLikely
-                            ,
-                            //+ Resembles
-                            //+ AutoGen
-                            new ConceptDef()
-                                .SetCode("Resembles")
-                                .SetDisplay("Resembles")
-                                .SetDefinition("[PR] Resembles")
-                                .MammoId("580")
-                                .ValidModalities(Modalities.MG | Modalities.MRI | Modalities.NM | Modalities.US)
-                            //- AutoGen
-                            //- Resembles
-                            ,
-                            //+ w/differentialDiagnosis
-                            //+ AutoGen
-                            new ConceptDef()
-                                .SetCode("w/differentialDiagnosis")
-                                .SetDisplay("w/differential diagnosis")
-                                .SetDefinition("[PR] w/differential diagnosis")
-                                .MammoId("561")
-                                .ValidModalities(Modalities.MG | Modalities.MRI | Modalities.NM | Modalities.US)
-                            //- AutoGen
-                            //- w/differentialDiagnosis
-                            ,
-                            //+ DifferentialDiagnosis
-                            //+ AutoGen
                             new ConceptDef()
                                 .SetCode("DifferentialDiagnosis")
                                 .SetDisplay("Differential diagnosis")
@@ -1380,9 +1009,27 @@ namespace BreastRadiology.XUnitTests
                                     "process of weighing the probability of one disease " +
                                     "versus that of other diseases possibly accounting " +
                                     "for a patient's illness.")
-                            //- AutoGen
                             ,
-                            //- DifferentialDiagnosis
+                            new ConceptDef()
+                                .SetCode("LikelyRepresents")
+                                .SetDisplay("Likely represents")
+                                .SetDefinition("[PR] Likely represents")
+                                .MammoId("536")
+                                .ValidModalities(Modalities.MG | Modalities.MRI | Modalities.NM | Modalities.US)
+                            ,
+                            new ConceptDef()
+                                .SetCode("MostLikely")
+                                .SetDisplay("Most likely")
+                                .SetDefinition("[PR] Most likely")
+                                .MammoId("581")
+                                .ValidModalities(Modalities.MG | Modalities.US)
+                            ,
+                            new ConceptDef()
+                                .SetCode("Resembles")
+                                .SetDisplay("Resembles")
+                                .SetDefinition("[PR] Resembles")
+                                .MammoId("580")
+                                .ValidModalities(Modalities.MG | Modalities.MRI | Modalities.NM | Modalities.US)
                             //- Qualifiers
                         })
              );

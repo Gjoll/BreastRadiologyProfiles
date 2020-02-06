@@ -72,8 +72,6 @@ namespace BreastRadiology.XUnitTests
                         new ConceptDef[]
                         {
                             //+ Codes
-                            //+ 3DImaging
-                            //+ AutoGen
                             new ConceptDef()
                                 .SetCode("3DImaging")
                                 .SetDisplay("3D Imaging")
@@ -85,11 +83,7 @@ namespace BreastRadiology.XUnitTests
                                 .SetUMLS("Advanced Technology that takes multiple images, or " +
                                     "X-rays, of breast tissue to recreate a 3-dimensional " +
                                     "picture of the breast. Also called breast tomosynthesis.")
-                            //- AutoGen
                             ,
-                            //- 3DImaging
-                            //+ 3DSpotCC
-                            //+ AutoGen
                             new ConceptDef()
                                 .SetCode("3DSpotCC")
                                 .SetDisplay("3D spot CC")
@@ -103,11 +97,7 @@ namespace BreastRadiology.XUnitTests
                                     "X-rays, of breast tissue to recreate a 3-dimensional " +
                                     "picture of the breast. Cranial-Caudal (CC) is a 3D " +
                                     "view from above the breast.")
-                            //- AutoGen
                             ,
-                            //- 3DSpotCC
-                            //+ 3DSpotLM
-                            //+ AutoGen
                             new ConceptDef()
                                 .SetCode("3DSpotLM")
                                 .SetDisplay("3D spot LM")
@@ -120,11 +110,7 @@ namespace BreastRadiology.XUnitTests
                                 .SetUMLS("Advanced Technology that takes multiple images, or " +
                                     "X-rays, of breast tissue to recreate a 3-dimensional " +
                                     "picture of the breast. Lateral-medial (LM) is")
-                            //- AutoGen
                             ,
-                            //- 3DSpotLM
-                            //+ 3DSpotML
-                            //+ AutoGen
                             new ConceptDef()
                                 .SetCode("3DSpotML")
                                 .SetDisplay("3D spot ML")
@@ -137,11 +123,7 @@ namespace BreastRadiology.XUnitTests
                                 .SetUMLS("Advanced Technology that takes multiple images, or " +
                                     "X-rays, of breast tissue to recreate a 3-dimensional " +
                                     "picture of the breast. Mediolateral (ML) is")
-                            //- AutoGen
                             ,
-                            //- 3DSpotML
-                            //+ 3DSpotMLO
-                            //+ AutoGen
                             new ConceptDef()
                                 .SetCode("3DSpotMLO")
                                 .SetDisplay("3D spot MLO")
@@ -155,22 +137,14 @@ namespace BreastRadiology.XUnitTests
                                     "X-rays, of breast tissue to recreate a 3-dimensional " +
                                     "picture of the breast. Mediolateral-oblique (MLO) " +
                                     "is")
-                            //- AutoGen
                             ,
-                            //- 3DSpotMLO
-                            //+ AdditionalViews
-                            //+ AutoGen
                             new ConceptDef()
                                 .SetCode("AdditionalViews")
                                 .SetDisplay("Additional views")
                                 .SetDefinition("[PR] Additional views")
                                 .MammoId("68")
                                 .ValidModalities(Modalities.MG | Modalities.MRI | Modalities.US)
-                            //- AutoGen
                             ,
-                            //- AdditionalViews
-                            //+ AddlitionalViewsWithPossibleUltrasound
-                            //+ AutoGen
                             new ConceptDef()
                                 .SetCode("AddlitionalViewsWithPossibleUltrasound")
                                 .SetDisplay("Addlitional views with possible ultrasound")
@@ -179,11 +153,7 @@ namespace BreastRadiology.XUnitTests
                                 .ValidModalities(Modalities.MG | Modalities.MRI | Modalities.US)
                                 .SetSnomedDescription("Procedure | 47079000 | Ultrasonography of breast " +
                                     "(Procedure)")
-                            //- AutoGen
                             ,
-                            //- AddlitionalViewsWithPossibleUltrasound
-                            //+ AxillaView
-                            //+ AutoGen
                             new ConceptDef()
                                 .SetCode("AxillaView")
                                 .SetDisplay("Axilla view")
@@ -200,11 +170,7 @@ namespace BreastRadiology.XUnitTests
                                     "displayed the most lateral portion of the breast " +
                                     "including the axillary tail, as well the pectoral " +
                                     "muscle and the nipple in profile.")
-                            //- AutoGen
                             ,
-                            //- AxillaView
-                            //+ AxillaryTailView
-                            //+ AutoGen
                             new ConceptDef()
                                 .SetCode("AxillaryTailView")
                                 .SetDisplay("Axillary tail view")
@@ -221,33 +187,21 @@ namespace BreastRadiology.XUnitTests
                                     "breast. It passes into the axilla through an opening " +
                                     "in the deep fascia called foramen of Langer.The Axilla " +
                                     "is another name for armpit.")
-                            //- AutoGen
                             ,
-                            //- AxillaryTailView
-                            //+ Biopsy
-                            //+ AutoGen
                             new ConceptDef()
                                 .SetCode("Biopsy")
                                 .SetDisplay("Biopsy")
                                 .SetDefinition("[PR] Biopsy")
                                 .MammoId("100")
                                 .ValidModalities(Modalities.MG | Modalities.MRI | Modalities.NM | Modalities.US)
-                            //- AutoGen
                             ,
-                            //- Biopsy
-                            //+ BiopsyBaseOnClinical
-                            //+ AutoGen
                             new ConceptDef()
                                 .SetCode("BiopsyBaseOnClinical")
                                 .SetDisplay("Biopsy base on clinical")
                                 .SetDefinition("[PR] Biopsy base on clinical")
                                 .MammoId("52")
                                 .ValidModalities(Modalities.MG | Modalities.MRI | Modalities.US)
-                            //- AutoGen
                             ,
-                            //- BiopsyBaseOnClinical
-                            //+ CaudocranialView
-                            //+ AutoGen
                             new ConceptDef()
                                 .SetCode("CaudocranialView")
                                 .SetDisplay("Caudocranial view")
@@ -264,11 +218,7 @@ namespace BreastRadiology.XUnitTests
                                     "to the mammographer the possibility to flatten it " +
                                     "properly, reducing the formation of scar folds as " +
                                     "well artifacts from false parenchymal distortion.")
-                            //- AutoGen
                             ,
-                            //- CaudocranialView
-                            //+ CCWithCompressionView
-                            //+ AutoGen
                             new ConceptDef()
                                 .SetCode("CCWithCompressionView")
                                 .SetDisplay("CC with compression view")
@@ -278,11 +228,7 @@ namespace BreastRadiology.XUnitTests
                                 .SetSnomedDescription("Procedure | 439324009 | Mammogram in compression " +
                                     "view (Procedure)+ QualifierValue | 399162004 | Cranio-caudal " +
                                     "projection (Qualifier)")
-                            //- AutoGen
                             ,
-                            //- CCWithCompressionView
-                            //+ CCWithMagnificationView
-                            //+ AutoGen
                             new ConceptDef()
                                 .SetCode("CCWithMagnificationView")
                                 .SetDisplay("CC with magnification view")
@@ -292,11 +238,7 @@ namespace BreastRadiology.XUnitTests
                                 .SetSnomedDescription("Procedure | 241058008 | Mammogram magnification (Procedure) " +
                                     "+ QualifierValue | 399162004 | Cranio-caudal projection " +
                                     "(Qualifier)")
-                            //- AutoGen
                             ,
-                            //- CCWithMagnificationView
-                            //+ CleavageView
-                            //+ AutoGen
                             new ConceptDef()
                                 .SetCode("CleavageView")
                                 .SetDisplay("Cleavage view")
@@ -312,55 +254,35 @@ namespace BreastRadiology.XUnitTests
                                     "technologist will place both breasts on the plate " +
                                     "at the same time to image the medial half of both " +
                                     "breasts.")
-                            //- AutoGen
                             ,
-                            //- CleavageView
-                            //+ ClinicalConsultation
-                            //+ AutoGen
                             new ConceptDef()
                                 .SetCode("ClinicalConsultation")
                                 .SetDisplay("Clinical consultation")
                                 .SetDefinition("[PR] Clinical consultation")
                                 .MammoId("116")
                                 .ValidModalities(Modalities.MG | Modalities.MRI | Modalities.US)
-                            //- AutoGen
                             ,
-                            //- ClinicalConsultation
-                            //+ ClinicalCorrelation
-                            //+ AutoGen
                             new ConceptDef()
                                 .SetCode("ClinicalCorrelation")
                                 .SetDisplay("Clinical correlation")
                                 .SetDefinition("[PR] Clinical correlation")
                                 .MammoId("56")
                                 .ValidModalities(Modalities.MG | Modalities.MRI | Modalities.US)
-                            //- AutoGen
                             ,
-                            //- ClinicalCorrelation
-                            //+ ClinicalFollow-up
-                            //+ AutoGen
                             new ConceptDef()
                                 .SetCode("ClinicalFollow-up")
                                 .SetDisplay("Clinical follow-up")
                                 .SetDefinition("[PR] Clinical follow-up")
                                 .MammoId("93")
                                 .ValidModalities(Modalities.MG | Modalities.MRI | Modalities.US)
-                            //- AutoGen
                             ,
-                            //- ClinicalFollow-up
-                            //+ CompareToPriorExams
-                            //+ AutoGen
                             new ConceptDef()
                                 .SetCode("CompareToPriorExams")
                                 .SetDisplay("Compare to prior exams")
                                 .SetDefinition("[PR] Compare to prior exams")
                                 .MammoId("103")
                                 .ValidModalities(Modalities.MG | Modalities.US)
-                            //- AutoGen
                             ,
-                            //- CompareToPriorExams
-                            //+ CompressionViews
-                            //+ AutoGen
                             new ConceptDef()
                                 .SetCode("CompressionViews")
                                 .SetDisplay("Compression views")
@@ -375,11 +297,7 @@ namespace BreastRadiology.XUnitTests
                                     "spot. This results in better tissue separation and " +
                                     "allows better visualization of the area of the breast " +
                                     "needing additional examination.")
-                            //- AutoGen
                             ,
-                            //- CompressionViews
-                            //+ ConeCompression
-                            //+ AutoGen
                             new ConceptDef()
                                 .SetCode("ConeCompression")
                                 .SetDisplay("Cone compression")
@@ -392,11 +310,7 @@ namespace BreastRadiology.XUnitTests
                                     "view during the mammogram. Spot views apply the compression " +
                                     "to a smaller area of tissue using a small compression " +
                                     "plate or \"cone\".")
-                            //- AutoGen
                             ,
-                            //- ConeCompression
-                            //+ CoreBiopsy
-                            //+ AutoGen
                             new ConceptDef()
                                 .SetCode("CoreBiopsy")
                                 .SetDisplay("Core Biopsy")
@@ -409,11 +323,7 @@ namespace BreastRadiology.XUnitTests
                                     "through the skin to take a sample of tissue from " +
                                     "a mass or lump. The tissue is then examined under " +
                                     "a microscope for any abnormalities.")
-                            //- AutoGen
                             ,
-                            //- CoreBiopsy
-                            //+ CraniocaudalView
-                            //+ AutoGen
                             new ConceptDef()
                                 .SetCode("CraniocaudalView")
                                 .SetDisplay("Craniocaudal view")
@@ -425,11 +335,7 @@ namespace BreastRadiology.XUnitTests
                                     "(Qualifier)")
                                 .SetUMLS("Cranial-Caudal (CC) is a view from above the breast " +
                                     "during a mammogram or ultrasound.")
-                            //- AutoGen
                             ,
-                            //- CraniocaudalView
-                            //+ Cryoablation
-                            //+ AutoGen
                             new ConceptDef()
                                 .SetCode("Cryoablation")
                                 .SetDisplay("Cryoablation")
@@ -442,11 +348,7 @@ namespace BreastRadiology.XUnitTests
                                     "tissue, including cancer cells. It may be used to " +
                                     "treat a variety of skin conditions as well as tumors " +
                                     "within the liver, kidneys, bones, lungs and breasts.")
-                            //- AutoGen
                             ,
-                            //- Cryoablation
-                            //+ CystAspiration
-                            //+ AutoGen
                             new ConceptDef()
                                 .SetCode("CystAspiration")
                                 .SetDisplay("Cyst aspiration")
@@ -460,11 +362,7 @@ namespace BreastRadiology.XUnitTests
                                     "in order to do a biopsy. The needle is generally " +
                                     "inserted directly through the skin and may be guided " +
                                     "by a sonogram so the doctor can see what he's doing.")
-                            //- AutoGen
                             ,
-                            //- CystAspiration
-                            //+ CystAspirationForRelief
-                            //+ AutoGen
                             new ConceptDef()
                                 .SetCode("CystAspirationForRelief")
                                 .SetDisplay("Cyst aspiration for relief")
@@ -476,11 +374,7 @@ namespace BreastRadiology.XUnitTests
                                 .SetUMLS("One way to get relief from the pain of a cyst is " +
                                     "to remove fluid from the cyst, thereby decreasing " +
                                     "the pressure. This is called aspiration.")
-                            //- AutoGen
                             ,
-                            //- CystAspirationForRelief
-                            //+ DiagnosticAspiration
-                            //+ AutoGen
                             new ConceptDef()
                                 .SetCode("DiagnosticAspiration")
                                 .SetDisplay("Diagnostic aspiration")
@@ -493,11 +387,7 @@ namespace BreastRadiology.XUnitTests
                                     "biopsy procedure. In fine needle aspiration, a thin " +
                                     "needle is inserted into an area of abnormal-appearing " +
                                     "tissue or body fluid.")
-                            //- AutoGen
                             ,
-                            //- DiagnosticAspiration
-                            //+ DiagnosticMammogram
-                            //+ AutoGen
                             new ConceptDef()
                                 .SetCode("DiagnosticMammogram")
                                 .SetDisplay("Diagnostic Mammogram")
@@ -510,22 +400,14 @@ namespace BreastRadiology.XUnitTests
                                     "mammogram or after some signs of breast cancer alert " +
                                     "the physician to check the tissue.These signs may " +
                                     "include a lump or breast pain.")
-                            //- AutoGen
                             ,
-                            //- DiagnosticMammogram
-                            //+ DrainageTube
-                            //+ AutoGen
                             new ConceptDef()
                                 .SetCode("DrainageTube")
                                 .SetDisplay("Drainage tube")
                                 .SetDefinition("[PR] Drainage tube")
                                 .MammoId("183")
                                 .ValidModalities(Modalities.MG | Modalities.MRI | Modalities.US)
-                            //- AutoGen
                             ,
-                            //- DrainageTube
-                            //+ Ductography
-                            //+ AutoGen
                             new ConceptDef()
                                 .SetCode("Ductography")
                                 .SetDisplay("Ductography")
@@ -545,11 +427,7 @@ namespace BreastRadiology.XUnitTests
                                     "contrast is injected. A standard two-view mammography " +
                                     "(or craniocaudal and mediolateral projections) are " +
                                     "obtained.")
-                            //- AutoGen
                             ,
-                            //- Ductography
-                            //+ ExaggeratedCCViews
-                            //+ AutoGen
                             new ConceptDef()
                                 .SetCode("ExaggeratedCCViews")
                                 .SetDisplay("Exaggerated CC views")
@@ -575,11 +453,7 @@ namespace BreastRadiology.XUnitTests
                                     "tilt is suggested.An optimal XCCM view requires the " +
                                     "most medial portion of the breast and the nipple " +
                                     "in profile to be clearly displayed.")
-                            //- AutoGen
                             ,
-                            //- ExaggeratedCCViews
-                            //+ FNABiopsy
-                            //+ AutoGen
                             new ConceptDef()
                                 .SetCode("FNABiopsy")
                                 .SetDisplay("FNA biopsy")
@@ -587,11 +461,7 @@ namespace BreastRadiology.XUnitTests
                                 .MammoId("57")
                                 .ValidModalities(Modalities.MG | Modalities.US)
                                 .SetSnomedDescription("not matching")
-                            //- AutoGen
                             ,
-                            //- FNABiopsy
-                            //+ Follow-up
-                            //+ AutoGen
                             new ConceptDef()
                                 .SetCode("Follow-up")
                                 .SetDisplay("Follow-up")
@@ -599,11 +469,7 @@ namespace BreastRadiology.XUnitTests
                                 .MammoId("38")
                                 .ValidModalities(Modalities.US)
                                 .SetUMLS("It is recommended to make a follow-up appointment.")
-                            //- AutoGen
                             ,
-                            //- Follow-up
-                            //+ Followup3Months
-                            //+ AutoGen
                             new ConceptDef()
                                 .SetCode("Followup3Months")
                                 .SetDisplay("Followup 3 months")
@@ -612,11 +478,7 @@ namespace BreastRadiology.XUnitTests
                                 .ValidModalities(Modalities.MG | Modalities.US)
                                 .SetUMLS("It is recommended to make a follow-up appointment " +
                                     "in 3 months.")
-                            //- AutoGen
                             ,
-                            //- Followup3Months
-                            //+ Followup6Months
-                            //+ AutoGen
                             new ConceptDef()
                                 .SetCode("Followup6Months")
                                 .SetDisplay("Followup 6 months")
@@ -625,22 +487,14 @@ namespace BreastRadiology.XUnitTests
                                 .ValidModalities(Modalities.MG | Modalities.MRI | Modalities.US)
                                 .SetUMLS("It is recommended to make a follow-up appointment " +
                                     "in 6 months.")
-                            //- AutoGen
                             ,
-                            //- Followup6Months
-                            //+ IfPreviousShowNoChange
-                            //+ AutoGen
                             new ConceptDef()
                                 .SetCode("IfPreviousShowNoChange")
                                 .SetDisplay("If previous show no change")
                                 .SetDefinition("[PR] If previous show no change")
                                 .MammoId("89")
                                 .ValidModalities(Modalities.MRI | Modalities.US)
-                            //- AutoGen
                             ,
-                            //- IfPreviousShowNoChange
-                            //+ LateralMagnificaionView
-                            //+ AutoGen
                             new ConceptDef()
                                 .SetCode("LateralMagnificaionView")
                                 .SetDisplay("Lateral magnificaion view")
@@ -650,11 +504,7 @@ namespace BreastRadiology.XUnitTests
                                 .SetSnomedDescription("Procedure | 241058008 | Mammogram magnification (Procedure) " +
                                     "+ QualifierValue | 399067008 | Lateral projection " +
                                     "(Qualifier)")
-                            //- AutoGen
                             ,
-                            //- LateralMagnificaionView
-                            //+ LateralMedialView
-                            //+ AutoGen
                             new ConceptDef()
                                 .SetCode("LateralMedialView")
                                 .SetDisplay("Lateral medial view")
@@ -668,11 +518,7 @@ namespace BreastRadiology.XUnitTests
                                     "For the LM view, the tube is lateral and the detector " +
                                     "is placed mediallyLM view is best for evaluating " +
                                     "medial lesions.")
-                            //- AutoGen
                             ,
-                            //- LateralMedialView
-                            //+ LateralView
-                            //+ AutoGen
                             new ConceptDef()
                                 .SetCode("LateralView")
                                 .SetDisplay("Lateral view")
@@ -688,11 +534,7 @@ namespace BreastRadiology.XUnitTests
                                     "obtained as a mediolateral view (ML) or lateromedial " +
                                     "view (LM) view depending on where the imaging tube " +
                                     "and detector are located.")
-                            //- AutoGen
                             ,
-                            //- LateralView
-                            //+ LateralWithCompressionView
-                            //+ AutoGen
                             new ConceptDef()
                                 .SetCode("LateralWithCompressionView")
                                 .SetDisplay("Lateral with compression view")
@@ -702,46 +544,34 @@ namespace BreastRadiology.XUnitTests
                                 .SetSnomedDescription("Procedure | 439324009 | Mammogram in compression " +
                                     "view (Procedure) + QualifierValue | 399067008 | Lateral " +
                                     "projection (Qualifier)")
-                            //- AutoGen
                             ,
-                            //- LateralWithCompressionView
-                            //+ LateromedialOblique
-                            //+ AutoGen
                             new ConceptDef()
-                                .SetCode("LateromedialOblique")
-                                .SetDisplay("Lateromedial oblique")
-                                .SetDefinition("[PR] Lateromedial oblique")
+                                .SetCode("LateromedialObliqueSPELLING")
+                                .SetDisplay("Lateromedial oblique SPELLING")
+                                .SetDefinition("[PR] Lateromedial oblique SPELLING")
                                 .MammoId("47")
                                 .ValidModalities(Modalities.MG | Modalities.US)
-                                .SetSnomedDescription("Procedure | 241055006 | Mammogram - symptomatic (Procedure)+ QualifierValue | 399352003 | Lateral-medial projection (Qualifier)")
-                            //- AutoGen
+                                .SetSnomedDescription("Procedure | 241055006 | Mammogram - symptomatic (Procedure)+ " +
+                                    "QualifierValue | 399352003 | Lateral-medial projection " +
+                                    "(Qualifier)")
                             ,
-                            //- LateromedialOblique
-                            //+ LateromedialView
-                            //+ AutoGen
                             new ConceptDef()
-                                .SetCode("LateromedialView")
-                                .SetDisplay("Lateromedial view")
-                                .SetDefinition("[PR] Lateromedial view")
+                                .SetCode("LateromedialViewSPELLING")
+                                .SetDisplay("Lateromedial view SPELLING")
+                                .SetDefinition("[PR] Lateromedial view SPELLING")
                                 .MammoId("96")
                                 .ValidModalities(Modalities.MG | Modalities.US)
-                                .SetSnomedDescription("Procedure | 241055006 | Mammogram - symptomatic (Procedure) + QualifierValue | 399352003 | Lateral-medial projection (Qualifier)")
-                            //- AutoGen
+                                .SetSnomedDescription("Procedure | 241055006 | Mammogram - symptomatic (Procedure) " +
+                                    "+ QualifierValue | 399352003 | Lateral-medial projection " +
+                                    "(Qualifier)")
                             ,
-                            //- LateromedialView
-                            //+ LymphNodeAssessment
-                            //+ AutoGen
                             new ConceptDef()
                                 .SetCode("LymphNodeAssessment")
                                 .SetDisplay("Lymph node assessment")
                                 .SetDefinition("[PR] Lymph node assessment")
                                 .MammoId("1835")
                                 .ValidModalities(Modalities.MG)
-                            //- AutoGen
                             ,
-                            //- LymphNodeAssessment
-                            //+ MagnificationViews
-                            //+ AutoGen
                             new ConceptDef()
                                 .SetCode("MagnificationViews")
                                 .SetDisplay("Magnification views")
@@ -758,11 +588,7 @@ namespace BreastRadiology.XUnitTests
                                     "the x-ray source. This allows the acquisition of " +
                                     "magnified images (1.5x to 2x magnification) of the " +
                                     "region of interest.")
-                            //- AutoGen
                             ,
-                            //- MagnificationViews
-                            //+ Mammogram
-                            //+ AutoGen
                             new ConceptDef()
                                 .SetCode("Mammogram")
                                 .SetDisplay("Mammogram")
@@ -770,11 +596,7 @@ namespace BreastRadiology.XUnitTests
                                 .MammoId("182")
                                 .ValidModalities(Modalities.MRI)
                                 .SetSnomedDescription("Procedure | 241055006 | Mammogram - symptomatic (Procedure)")
-                            //- AutoGen
                             ,
-                            //- Mammogram
-                            //+ Mammogram3MonthFollow-up
-                            //+ AutoGen
                             new ConceptDef()
                                 .SetCode("Mammogram3MonthFollow-up")
                                 .SetDisplay("Mammogram 3 month follow-up")
@@ -782,11 +604,7 @@ namespace BreastRadiology.XUnitTests
                                 .MammoId("1822")
                                 .ValidModalities(Modalities.MG | Modalities.US)
                                 .SetUMLS("A three month follow-up is recommended.")
-                            //- AutoGen
                             ,
-                            //- Mammogram3MonthFollow-up
-                            //+ Mammogram6MonthFollow-up
-                            //+ AutoGen
                             new ConceptDef()
                                 .SetCode("Mammogram6MonthFollow-up")
                                 .SetDisplay("Mammogram 6 month follow-up")
@@ -794,11 +612,7 @@ namespace BreastRadiology.XUnitTests
                                 .MammoId("1823")
                                 .ValidModalities(Modalities.MG | Modalities.US)
                                 .SetUMLS("A six month follow-up is recommended.")
-                            //- AutoGen
                             ,
-                            //- Mammogram6MonthFollow-up
-                            //+ MammogramAndUltrasound3MonthFollow-up
-                            //+ AutoGen
                             new ConceptDef()
                                 .SetCode("MammogramAndUltrasound3MonthFollow-up")
                                 .SetDisplay("Mammogram and ultrasound 3 month follow-up")
@@ -806,11 +620,7 @@ namespace BreastRadiology.XUnitTests
                                 .MammoId("1826")
                                 .ValidModalities(Modalities.MG | Modalities.US)
                                 .SetUMLS("A three month follow-up is recommended.")
-                            //- AutoGen
                             ,
-                            //- MammogramAndUltrasound3MonthFollow-up
-                            //+ MammogramAndUltrasound6MonthFollow-up
-                            //+ AutoGen
                             new ConceptDef()
                                 .SetCode("MammogramAndUltrasound6MonthFollow-up")
                                 .SetDisplay("Mammogram and ultrasound 6 month follow-up")
@@ -818,11 +628,7 @@ namespace BreastRadiology.XUnitTests
                                 .MammoId("1827")
                                 .ValidModalities(Modalities.MG | Modalities.US)
                                 .SetUMLS("A six month follow-up is recommended.")
-                            //- AutoGen
                             ,
-                            //- MammogramAndUltrasound6MonthFollow-up
-                            //+ MediolateralObliqueView
-                            //+ AutoGen
                             new ConceptDef()
                                 .SetCode("MediolateralObliqueView")
                                 .SetDisplay("Mediolateral oblique view")
@@ -832,11 +638,7 @@ namespace BreastRadiology.XUnitTests
                                 .SetSnomedDescription("Procedure | 241055006 | Mammogram - symptomatic (Procedure) " +
                                     "+ QualifierValue | 399368009 | Medio-lateral oblique " +
                                     "projection (Qualifier)")
-                            //- AutoGen
                             ,
-                            //- MediolateralObliqueView
-                            //+ MediolateralView
-                            //+ AutoGen
                             new ConceptDef()
                                 .SetCode("MediolateralView")
                                 .SetDisplay("Mediolateral view")
@@ -846,11 +648,7 @@ namespace BreastRadiology.XUnitTests
                                 .SetSnomedDescription("Procedure | 241055006 | Mammogram - symptomatic (Procedure) " +
                                     "+ QualifierValue | 399260004 | Medial-lateral projection " +
                                     "(Qualifier)")
-                            //- AutoGen
                             ,
-                            //- MediolateralView
-                            //+ MLOWithCompressionView
-                            //+ AutoGen
                             new ConceptDef()
                                 .SetCode("MLOWithCompressionView")
                                 .SetDisplay("MLO with compression view")
@@ -860,11 +658,7 @@ namespace BreastRadiology.XUnitTests
                                 .SetSnomedDescription("Procedure | 439324009 | Mammogram in compression " +
                                     "view (Procedure) + QualifierValue | 399368009 | Medio-lateral " +
                                     "oblique projection (Qualifier)")
-                            //- AutoGen
                             ,
-                            //- MLOWithCompressionView
-                            //+ MLOWithMagnificationView
-                            //+ AutoGen
                             new ConceptDef()
                                 .SetCode("MLOWithMagnificationView")
                                 .SetDisplay("MLO with magnification view")
@@ -874,11 +668,7 @@ namespace BreastRadiology.XUnitTests
                                 .SetSnomedDescription("Procedure | 241058008 | Mammogram magnification (Procedure) " +
                                     "+ QualifierValue | 399368009 | Medio-lateral oblique " +
                                     "projection (Qualifier)")
-                            //- AutoGen
                             ,
-                            //- MLOWithMagnificationView
-                            //+ MRI
-                            //+ AutoGen
                             new ConceptDef()
                                 .SetCode("MRI")
                                 .SetDisplay("MRI")
@@ -887,11 +677,7 @@ namespace BreastRadiology.XUnitTests
                                 .ValidModalities(Modalities.MG | Modalities.US)
                                 .SetSnomedDescription("Procedure | 241615005 | Magnetic resonance imaging " +
                                     "of breast (Procedure)")
-                            //- AutoGen
                             ,
-                            //- MRI
-                            //+ MRIBiopsy
-                            //+ AutoGen
                             new ConceptDef()
                                 .SetCode("MRIBiopsy")
                                 .SetDisplay("MRI biopsy")
@@ -900,33 +686,21 @@ namespace BreastRadiology.XUnitTests
                                 .ValidModalities(Modalities.MG | Modalities.MRI | Modalities.NM | Modalities.US)
                                 .SetSnomedDescription("Procedure | 433008009 | Core needle biopsy of breast " +
                                     "using magnetic resonance imaging guidance (Procedure)")
-                            //- AutoGen
                             ,
-                            //- MRIBiopsy
-                            //+ MRIFollow-up
-                            //+ AutoGen
                             new ConceptDef()
                                 .SetCode("MRIFollow-up")
                                 .SetDisplay("MRI follow-up")
                                 .SetDefinition("[PR] MRI follow-up")
                                 .MammoId("180")
                                 .ValidModalities(Modalities.MRI | Modalities.NM)
-                            //- AutoGen
                             ,
-                            //- MRIFollow-up
-                            //+ NeedleLocationAndSurgicalBiopsy
-                            //+ AutoGen
                             new ConceptDef()
                                 .SetCode("NeedleLocationAndSurgicalBiopsy")
                                 .SetDisplay("Needle location and surgical biopsy")
                                 .SetDefinition("[PR] Needle location and surgical biopsy")
                                 .MammoId("53")
                                 .ValidModalities(Modalities.MG | Modalities.MRI | Modalities.US)
-                            //- AutoGen
                             ,
-                            //- NeedleLocationAndSurgicalBiopsy
-                            //+ NippleInProfileView
-                            //+ AutoGen
                             new ConceptDef()
                                 .SetCode("NippleInProfileView")
                                 .SetDisplay("Nipple in profile view")
@@ -941,11 +715,7 @@ namespace BreastRadiology.XUnitTests
                                     "includes the pectoralis muscle extending down to " +
                                     "the posterior nipple line (an oblique line drawn " +
                                     "straight back from the nipple.)")
-                            //- AutoGen
                             ,
-                            //- NippleInProfileView
-                            //+ OffAngleCCView
-                            //+ AutoGen
                             new ConceptDef()
                                 .SetCode("OffAngleCCView")
                                 .SetDisplay("Off angle CC view")
@@ -955,11 +725,7 @@ namespace BreastRadiology.XUnitTests
                                 .SetSnomedDescription("Procedure | 241055006 | Mammogram - symptomatic (Procedure) " +
                                     "+ QualifierValue | 399162004 | Cranio-caudal projection " +
                                     "(Qualifier)")
-                            //- AutoGen
                             ,
-                            //- OffAngleCCView
-                            //+ OffAngleMLOView
-                            //+ AutoGen
                             new ConceptDef()
                                 .SetCode("OffAngleMLOView")
                                 .SetDisplay("Off angle MLO view")
@@ -969,11 +735,7 @@ namespace BreastRadiology.XUnitTests
                                 .SetSnomedDescription("Procedure | 241055006 | Mammogram - symptomatic (Procedure) " +
                                     "+ QualifierValue | 399368009 | Medio-lateral oblique " +
                                     "projection (Qualifier) +++++")
-                            //- AutoGen
                             ,
-                            //- OffAngleMLOView
-                            //+ Poss.StereotacticBx
-                            //+ AutoGen
                             new ConceptDef()
                                 .SetCode("Poss.StereotacticBx")
                                 .SetDisplay("Poss. Stereotactic Bx")
@@ -987,11 +749,7 @@ namespace BreastRadiology.XUnitTests
                                     "suspicious mass. microcalcifications, which are a " +
                                     "tiny cluster of small calcium deposits. a distortion " +
                                     "in the structure of the breast tissue.")
-                            //- AutoGen
                             ,
-                            //- Poss.StereotacticBx
-                            //+ PossibleCoreBiopsy
-                            //+ AutoGen
                             new ConceptDef()
                                 .SetCode("PossibleCoreBiopsy")
                                 .SetDisplay("Possible core biopsy")
@@ -1000,22 +758,14 @@ namespace BreastRadiology.XUnitTests
                                 .ValidModalities(Modalities.MG | Modalities.US)
                                 .SetSnomedDescription("Procedure | 44578009 | Core needle biopsy of breast " +
                                     "(Procedure) ++ POSSIBLE")
-                            //- AutoGen
                             ,
-                            //- PossibleCoreBiopsy
-                            //+ PossibleDiagnosticMammogram
-                            //+ AutoGen
                             new ConceptDef()
                                 .SetCode("PossibleDiagnosticMammogram")
                                 .SetDisplay("Possible Diagnostic Mammogram")
                                 .SetDefinition("[PR] Possible Diagnostic Mammogram")
                                 .MammoId("1836")
                                 .ValidModalities(Modalities.MG)
-                            //- AutoGen
                             ,
-                            //- PossibleDiagnosticMammogram
-                            //+ PossibleStereotacticVacuumBiopsy
-                            //+ AutoGen
                             new ConceptDef()
                                 .SetCode("PossibleStereotacticVacuumBiopsy")
                                 .SetDisplay("Possible stereotactic vacuum biopsy")
@@ -1028,44 +778,28 @@ namespace BreastRadiology.XUnitTests
                                     "guided to the correct location using x-rays and computer " +
                                     "generated coordinates of the concerning area of breast " +
                                     "tissue.")
-                            //- AutoGen
                             ,
-                            //- PossibleStereotacticVacuumBiopsy
-                            //+ PossibleSurgicalConsult
-                            //+ AutoGen
                             new ConceptDef()
                                 .SetCode("PossibleSurgicalConsult")
                                 .SetDisplay("Possible surgical consult")
                                 .SetDefinition("[PR] Possible surgical consult")
                                 .MammoId("1805")
                                 .ValidModalities(Modalities.NM)
-                            //- AutoGen
                             ,
-                            //- PossibleSurgicalConsult
-                            //+ PossibleSurgicalEvaluation
-                            //+ AutoGen
                             new ConceptDef()
                                 .SetCode("PossibleSurgicalEvaluation")
                                 .SetDisplay("Possible surgical evaluation")
                                 .SetDefinition("[PR] Possible surgical evaluation")
                                 .MammoId("1806")
                                 .ValidModalities(Modalities.NM)
-                            //- AutoGen
                             ,
-                            //- PossibleSurgicalEvaluation
-                            //+ PossibleUltrasound
-                            //+ AutoGen
                             new ConceptDef()
                                 .SetCode("PossibleUltrasound")
                                 .SetDisplay("Possible ultrasound")
                                 .SetDefinition("[PR] Possible ultrasound")
                                 .MammoId("186")
                                 .ValidModalities(Modalities.MG)
-                            //- AutoGen
                             ,
-                            //- PossibleUltrasound
-                            //+ PossibleUltrasoundGuidedBiopsy
-                            //+ AutoGen
                             new ConceptDef()
                                 .SetCode("PossibleUltrasoundGuidedBiopsy")
                                 .SetDisplay("Possible ultrasound guided biopsy")
@@ -1074,11 +808,7 @@ namespace BreastRadiology.XUnitTests
                                 .ValidModalities(Modalities.MG)
                                 .SetSnomedDescription("Procedure | 432550005 | Core needle biopsy of breast " +
                                     "using ultrasound guidance (Procedure) +++ POSSIBLE")
-                            //- AutoGen
                             ,
-                            //- PossibleUltrasoundGuidedBiopsy
-                            //+ PossibleVacuumBiopsy
-                            //+ AutoGen
                             new ConceptDef()
                                 .SetCode("PossibleVacuumBiopsy")
                                 .SetDisplay("Possible vacuum biopsy")
@@ -1092,11 +822,7 @@ namespace BreastRadiology.XUnitTests
                                     "can then be examined under a microscope. This can " +
                                     "show whether there is a cancer or another type of " +
                                     "breast condition.")
-                            //- AutoGen
                             ,
-                            //- PossibleVacuumBiopsy
-                            //+ RepeatCCView
-                            //+ AutoGen
                             new ConceptDef()
                                 .SetCode("RepeatCCView")
                                 .SetDisplay("Repeat CC view")
@@ -1106,11 +832,7 @@ namespace BreastRadiology.XUnitTests
                                 .SetSnomedDescription("Procedure | 241055006 | Mammogram - symptomatic (Procedure) " +
                                     "+ QualifierValue | 399162004 | Cranio-caudal projection " +
                                     "(Qualifier)")
-                            //- AutoGen
                             ,
-                            //- RepeatCCView
-                            //+ RepeatMLOView
-                            //+ AutoGen
                             new ConceptDef()
                                 .SetCode("RepeatMLOView")
                                 .SetDisplay("Repeat MLO view")
@@ -1120,11 +842,7 @@ namespace BreastRadiology.XUnitTests
                                 .SetSnomedDescription("Procedure | 241055006 | Mammogram - symptomatic (Procedure) " +
                                     "+ QualifierValue | 399368009 | Medio-lateral oblique " +
                                     "projection (Qualifier)")
-                            //- AutoGen
                             ,
-                            //- RepeatMLOView
-                            //+ RolledLateralView
-                            //+ AutoGen
                             new ConceptDef()
                                 .SetCode("RolledLateralView")
                                 .SetDisplay("Rolled lateral view")
@@ -1144,11 +862,7 @@ namespace BreastRadiology.XUnitTests
                                     "is positioned on the image receptor as for the cranio-caudal " +
                                     "view, then is rotated medially or laterally around " +
                                     "the axis of the nipple prior to applying compression.")
-                            //- AutoGen
                             ,
-                            //- RolledLateralView
-                            //+ RolledMedialView
-                            //+ AutoGen
                             new ConceptDef()
                                 .SetCode("RolledMedialView")
                                 .SetDisplay("Rolled medial view")
@@ -1157,11 +871,7 @@ namespace BreastRadiology.XUnitTests
                                 .ValidModalities(Modalities.MG | Modalities.US)
                                 .SetSnomedDescription("Procedure | 399226006 | Medial rolling of breast " +
                                     "(Procedure)")
-                            //- AutoGen
                             ,
-                            //- RolledMedialView
-                            //+ ScintiBiopsy
-                            //+ AutoGen
                             new ConceptDef()
                                 .SetCode("ScintiBiopsy")
                                 .SetDisplay("Scinti biopsy")
@@ -1173,11 +883,7 @@ namespace BreastRadiology.XUnitTests
                                     "needle is inserted into an area of abnormal-appearing " +
                                     "tissue or body fluid. This is also can be called " +
                                     "a Scinti biopsy.")
-                            //- AutoGen
                             ,
-                            //- ScintiBiopsy
-                            //+ Scintimammography
-                            //+ AutoGen
                             new ConceptDef()
                                 .SetCode("Scintimammography")
                                 .SetDisplay("Scintimammography")
@@ -1189,11 +895,7 @@ namespace BreastRadiology.XUnitTests
                                     "and Molecular Breast Imaging (MBI). Your doctor may " +
                                     "use this exam to investigate a breast abnormality " +
                                     "found with mammography.")
-                            //- AutoGen
                             ,
-                            //- Scintimammography
-                            //+ SpotCompression
-                            //+ AutoGen
                             new ConceptDef()
                                 .SetCode("SpotCompression")
                                 .SetDisplay("Spot compression")
@@ -1217,11 +919,7 @@ namespace BreastRadiology.XUnitTests
                                     "the increased reduction of thickness in the examined " +
                                     "area and by getting the suspicious area closer to " +
                                     "the detector surface.")
-                            //- AutoGen
                             ,
-                            //- SpotCompression
-                            //+ SpotMagnificationViews
-                            //+ AutoGen
                             new ConceptDef()
                                 .SetCode("SpotMagnificationViews")
                                 .SetDisplay("Spot magnification views")
@@ -1230,11 +928,7 @@ namespace BreastRadiology.XUnitTests
                                 .ValidModalities(Modalities.MG)
                                 .SetSnomedDescription("Procedure | 241058008 | Mammogram magnification (Procedure) " +
                                     "+++++")
-                            //- AutoGen
                             ,
-                            //- SpotMagnificationViews
-                            //+ StereotacticBx
-                            //+ AutoGen
                             new ConceptDef()
                                 .SetCode("StereotacticBx")
                                 .SetDisplay("Stereotactic bx")
@@ -1251,22 +945,14 @@ namespace BreastRadiology.XUnitTests
                                     "to no scarring and can be an excellent way to evaluate " +
                                     "calcium deposits or tiny masses that are not visible " +
                                     "on ultrasound.")
-                            //- AutoGen
                             ,
-                            //- StereotacticBx
-                            //+ SuperolateralIOView
-                            //+ AutoGen
                             new ConceptDef()
                                 .SetCode("SuperolateralIOView")
                                 .SetDisplay("Superolateral IO view")
                                 .SetDefinition("[PR] Superolateral IO view")
                                 .MammoId("48")
                                 .ValidModalities(Modalities.MG | Modalities.US)
-                            //- AutoGen
                             ,
-                            //- SuperolateralIOView
-                            //+ SurgicalBiopsy
-                            //+ AutoGen
                             new ConceptDef()
                                 .SetCode("SurgicalBiopsy")
                                 .SetDisplay("Surgical biopsy")
@@ -1275,22 +961,14 @@ namespace BreastRadiology.XUnitTests
                                 .ValidModalities(Modalities.NM)
                                 .SetSnomedDescription("Procedure | 274331003 | Surgical biopsy of breast " +
                                     "(Procedure)")
-                            //- AutoGen
                             ,
-                            //- SurgicalBiopsy
-                            //+ SurgicalConsult
-                            //+ AutoGen
                             new ConceptDef()
                                 .SetCode("SurgicalConsult")
                                 .SetDisplay("Surgical consult")
                                 .SetDefinition("[PR] Surgical consult")
                                 .MammoId("101")
                                 .ValidModalities(Modalities.MG | Modalities.MRI | Modalities.NM | Modalities.US)
-                            //- AutoGen
                             ,
-                            //- SurgicalConsult
-                            //+ SurgicalConsultAndBiopsy
-                            //+ AutoGen
                             new ConceptDef()
                                 .SetCode("SurgicalConsultAndBiopsy")
                                 .SetDisplay("Surgical consult and biopsy")
@@ -1299,22 +977,14 @@ namespace BreastRadiology.XUnitTests
                                 .ValidModalities(Modalities.MG | Modalities.MRI | Modalities.US)
                                 .SetSnomedDescription("Procedure | 274331003 | Surgical biopsy of breast " +
                                     "(Procedure) ++++")
-                            //- AutoGen
                             ,
-                            //- SurgicalConsultAndBiopsy
-                            //+ SurgicalEvaluation
-                            //+ AutoGen
                             new ConceptDef()
                                 .SetCode("SurgicalEvaluation")
                                 .SetDisplay("Surgical evaluation")
                                 .SetDefinition("[PR] Surgical evaluation")
                                 .MammoId("1802")
                                 .ValidModalities(Modalities.NM)
-                            //- AutoGen
                             ,
-                            //- SurgicalEvaluation
-                            //+ SurgicalExcision
-                            //+ AutoGen
                             new ConceptDef()
                                 .SetCode("SurgicalExcision")
                                 .SetDisplay("Surgical excision")
@@ -1323,55 +993,35 @@ namespace BreastRadiology.XUnitTests
                                 .ValidModalities(Modalities.NM)
                                 .SetSnomedDescription("Procedure | 237372000 | Excisional biopsy of breast " +
                                     "(Procedure)")
-                            //- AutoGen
                             ,
-                            //- SurgicalExcision
-                            //+ SurgicalOncologicEvaluation
-                            //+ AutoGen
                             new ConceptDef()
                                 .SetCode("SurgicalOncologicEvaluation")
                                 .SetDisplay("Surgical oncologic evaluation")
                                 .SetDefinition("[PR] Surgical oncologic evaluation")
                                 .MammoId("1810")
                                 .ValidModalities(Modalities.NM)
-                            //- AutoGen
                             ,
-                            //- SurgicalOncologicEvaluation
-                            //+ SurgicalOncologicalConsult
-                            //+ AutoGen
                             new ConceptDef()
                                 .SetCode("SurgicalOncologicalConsult")
                                 .SetDisplay("Surgical oncological consult")
                                 .SetDefinition("[PR] Surgical oncological consult")
                                 .MammoId("1809")
                                 .ValidModalities(Modalities.MG | Modalities.MRI | Modalities.NM | Modalities.US)
-                            //- AutoGen
                             ,
-                            //- SurgicalOncologicalConsult
-                            //+ TangentialView
-                            //+ AutoGen
                             new ConceptDef()
                                 .SetCode("TangentialView")
                                 .SetDisplay("Tangential view")
                                 .SetDefinition("[PR] Tangential view")
                                 .MammoId("114")
                                 .ValidModalities(Modalities.MG | Modalities.US)
-                            //- AutoGen
                             ,
-                            //- TangentialView
-                            //+ TangentialViews
-                            //+ AutoGen
                             new ConceptDef()
                                 .SetCode("TangentialViews")
                                 .SetDisplay("Tangential views")
                                 .SetDefinition("[PR] Tangential views")
                                 .MammoId("40")
                                 .ValidModalities(Modalities.MG | Modalities.US)
-                            //- AutoGen
                             ,
-                            //- TangentialViews
-                            //+ Ultrasound
-                            //+ AutoGen
                             new ConceptDef()
                                 .SetCode("Ultrasound")
                                 .SetDisplay("Ultrasound")
@@ -1380,44 +1030,28 @@ namespace BreastRadiology.XUnitTests
                                 .ValidModalities(Modalities.MG | Modalities.MRI | Modalities.NM)
                                 .SetSnomedDescription("Procedure | 47079000 | Ultrasonography of breast " +
                                     "(Procedure)")
-                            //- AutoGen
                             ,
-                            //- Ultrasound
-                            //+ Ultrasound2ndLook
-                            //+ AutoGen
                             new ConceptDef()
                                 .SetCode("Ultrasound2ndLook")
                                 .SetDisplay("Ultrasound 2nd Look")
                                 .SetDefinition("[PR] Ultrasound 2nd Look")
                                 .MammoId("184")
                                 .ValidModalities(Modalities.MG | Modalities.MRI | Modalities.NM | Modalities.US)
-                            //- AutoGen
                             ,
-                            //- Ultrasound2ndLook
-                            //+ Ultrasound3MonthFollow-up
-                            //+ AutoGen
                             new ConceptDef()
                                 .SetCode("Ultrasound3MonthFollow-up")
                                 .SetDisplay("Ultrasound 3 month follow-up")
                                 .SetDefinition("[PR] Ultrasound 3 month follow-up")
                                 .MammoId("1824")
                                 .ValidModalities(Modalities.MG | Modalities.US)
-                            //- AutoGen
                             ,
-                            //- Ultrasound3MonthFollow-up
-                            //+ Ultrasound6MonthFollow-up
-                            //+ AutoGen
                             new ConceptDef()
                                 .SetCode("Ultrasound6MonthFollow-up")
                                 .SetDisplay("Ultrasound 6 month follow-up")
                                 .SetDefinition("[PR] Ultrasound 6 month follow-up")
                                 .MammoId("1825")
                                 .ValidModalities(Modalities.MG | Modalities.US)
-                            //- AutoGen
                             ,
-                            //- Ultrasound6MonthFollow-up
-                            //+ UltrasoundGuidedBx
-                            //+ AutoGen
                             new ConceptDef()
                                 .SetCode("UltrasoundGuidedBx")
                                 .SetDisplay("Ultrasound guided bx")
@@ -1426,11 +1060,7 @@ namespace BreastRadiology.XUnitTests
                                 .ValidModalities(Modalities.MG | Modalities.MRI | Modalities.NM | Modalities.US)
                                 .SetSnomedDescription("Procedure | 432550005 | Core needle biopsy of breast " +
                                     "using ultrasound guidance (Procedure)")
-                            //- AutoGen
                             ,
-                            //- UltrasoundGuidedBx
-                            //+ UltrasoundLocationAndSurgicalBiopsy
-                            //+ AutoGen
                             new ConceptDef()
                                 .SetCode("UltrasoundLocationAndSurgicalBiopsy")
                                 .SetDisplay("Ultrasound location and surgical biopsy")
@@ -1439,55 +1069,21 @@ namespace BreastRadiology.XUnitTests
                                 .ValidModalities(Modalities.MG | Modalities.US)
                                 .SetSnomedDescription("Procedure | 274331003 | Surgical biopsy of breast " +
                                     "(Procedure)++++++++++++")
-                            //- AutoGen
                             ,
-                            //- UltrasoundLocationAndSurgicalBiopsy
-                            //+ UltrasoundWithPossibleAddlitonalViews
-                            //+ AutoGen
                             new ConceptDef()
                                 .SetCode("UltrasoundWithPossibleAddlitonalViews")
                                 .SetDisplay("Ultrasound with possible addlitonal views")
                                 .SetDefinition("[PR] Ultrasound with possible addlitonal views")
                                 .MammoId("189")
                                 .ValidModalities(Modalities.MG)
-                            //- AutoGen
                             ,
-                            //- UltrasoundWithPossibleAddlitonalViews
-                            //+ UnlessPreviousShowNoChange
-                            //+ AutoGen
-                            new ConceptDef()
-                                .SetCode("UnlessPreviousShowNoChange")
-                                .SetDisplay("Unless previous show no change")
-                                .SetDefinition("[PR] Unless previous show no change")
-                                .MammoId("89")
-                                .ValidModalities(Modalities.MG)
-                            //- AutoGen
-                            ,
-                            //- UnlessPreviousShowNoChange
-                            //+ Unspecified-Other
-                            //+ AutoGen
-                            new ConceptDef()
-                                .SetCode("Unspecified-Other")
-                                .SetDisplay("Unspecified - other")
-                                .SetDefinition("[PR] Unspecified - other")
-                                .MammoId("351")
-                                .ValidModalities(Modalities.MG)
-                            //- AutoGen
-                            ,
-                            //- Unspecified-Other
-                            //+ Unspecified/Other
-                            //+ AutoGen
                             new ConceptDef()
                                 .SetCode("Unspecified/Other")
                                 .SetDisplay("Unspecified / other")
                                 .SetDefinition("[PR] Unspecified / other")
                                 .MammoId("117")
                                 .ValidModalities(Modalities.MRI | Modalities.US)
-                            //- AutoGen
                             ,
-                            //- Unspecified/Other
-                            //+ VacuumBx
-                            //+ AutoGen
                             new ConceptDef()
                                 .SetCode("VacuumBx")
                                 .SetDisplay("Vacuum Bx")
@@ -1505,37 +1101,6 @@ namespace BreastRadiology.XUnitTests
                                     "other study. Biopsies are most frequently studied " +
                                     "by use of a microscope to check for possible abnormalities " +
                                     "such as inflammation or cancer.")
-                            //- AutoGen
-                            ,
-                            //- VacuumBx
-                            //+ LateromedialObliqueSPELLING
-                            //+ AutoGen
-                            new ConceptDef()
-                                .SetCode("LateromedialObliqueSPELLING")
-                                .SetDisplay("Lateromedial oblique SPELLING")
-                                .SetDefinition("[PR] Lateromedial oblique SPELLING")
-                                .MammoId("47")
-                                .ValidModalities(Modalities.MG | Modalities.US)
-                                .SetSnomedDescription("Procedure | 241055006 | Mammogram - symptomatic (Procedure)+ " +
-                                    "QualifierValue | 399352003 | Lateral-medial projection " +
-                                    "(Qualifier)")
-                            //- AutoGen
-                            ,
-                            //- LateromedialObliqueSPELLING
-                            //+ LateromedialViewSPELLING
-                            //+ AutoGen
-                            new ConceptDef()
-                                .SetCode("LateromedialViewSPELLING")
-                                .SetDisplay("Lateromedial view SPELLING")
-                                .SetDefinition("[PR] Lateromedial view SPELLING")
-                                .MammoId("96")
-                                .ValidModalities(Modalities.MG | Modalities.US)
-                                .SetSnomedDescription("Procedure | 241055006 | Mammogram - symptomatic (Procedure) " +
-                                    "+ QualifierValue | 399352003 | Lateral-medial projection " +
-                                    "(Qualifier)")
-                            //- AutoGen
-                            ,
-                            //- LateromedialViewSPELLING
                             //- Codes
                         })
             );

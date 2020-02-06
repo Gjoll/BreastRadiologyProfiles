@@ -106,18 +106,18 @@ namespace BreastRadiology.XUnitTests
         {
             return this;
         }
-        public ConceptDef BiRadsDef(params String[] lines)
+        public ConceptDef SetACR(params String[] lines)
         {
 
             this.biRadsText = lines;
-            if (String.IsNullOrEmpty((this.mammoId)))
-            {
-                ResourcesMaker.Self.ConversionWarn("ConceptDef",
-                    "BiRadsDef",
-                    "ACR text with no MammoId!");
-            }
-            else
-                ResourcesMaker.Self.Data.BreastData.PatchACRText(this.mammoId, lines);
+            //if (String.IsNullOrEmpty((this.mammoId)))
+            //{
+            //    ResourcesMaker.Self.ConversionWarn("ConceptDef",
+            //        "BiRadsDef",
+            //        "ACR text with no MammoId!");
+            //}
+            //else
+            //    ResourcesMaker.Self.Data.BreastData.PatchACRText(this.mammoId, lines);
             return this;
         }
 

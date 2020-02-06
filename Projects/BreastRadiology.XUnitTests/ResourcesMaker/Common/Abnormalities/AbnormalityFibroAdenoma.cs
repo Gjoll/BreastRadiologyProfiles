@@ -24,8 +24,6 @@ namespace BreastRadiology.XUnitTests
                          new ConceptDef[]
                          {
                             //+ Type
-                            //+ Fibroadenoma
-                            //+ AutoGen
                             new ConceptDef()
                                 .SetCode("Fibroadenoma")
                                 .SetDisplay("Fibroadenoma")
@@ -37,20 +35,13 @@ namespace BreastRadiology.XUnitTests
                                     "over time and can spread to other organs, a fibroadenoma " +
                                     "remains in the breast tissue. They’re pretty small, " +
                                     "too. Most are only 1 or 2 centimeters in size.")
-                            //- AutoGen
                             ,
-                            //- Fibroadenoma
-                            //+ FibroadenomaDegeneration
-                            //+ AutoGen
                             new ConceptDef()
                                 .SetCode("FibroadenomaDegeneration")
                                 .SetDisplay("Fibroadenoma degeneration")
                                 .SetDefinition("[PR] Fibroadenoma degeneration")
                                 .MammoId("695")
                                 .ValidModalities(Modalities.MG)
-                            //- AutoGen
-                            
-                            //- FibroadenomaDegeneration
                             //- Type
                          })
                      );

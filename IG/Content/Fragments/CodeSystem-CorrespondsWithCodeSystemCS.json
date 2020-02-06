@@ -17,7 +17,7 @@
   "description": "CorrespondsWith code system",
   "caseSensitive": true,
   "content": "complete",
-  "count": 32,
+  "count": 29,
   "concept": [
     {
       "code": "Aspiration",
@@ -45,9 +45,9 @@
       "definition": "[PR] Incidental finding\r\n\r\nValid for the following modalities: MG US MRI NM."
     },
     {
-      "code": "Mammogram",
-      "display": "Mammogram",
-      "definition": "[PR] Mammogram\r\n\r\nValid for the following modalities: US MRI NM."
+      "code": "Mammo",
+      "display": "Mammo",
+      "definition": "[PR] Mammo\r\n\r\nValid for the following modalities: US MRI NM."
     },
     {
       "code": "MRI",
@@ -75,9 +75,9 @@
       "definition": "[PR] Palpated\r\n\r\nValid for the following modalities: MG US MRI NM."
     },
     {
-      "code": "Post-operative",
-      "display": "Post-operative",
-      "definition": "[PR] Post-operative\r\n\r\nValid for the following modalities: MG."
+      "code": "PostOperative",
+      "display": "Post operative",
+      "definition": "[PR] Post operative\r\n\r\nValid for the following modalities: MG."
     },
     {
       "code": "PreviousBiopsy",
@@ -135,11 +135,6 @@
       "definition": "[PR] size > palp\r\n\r\nValid for the following modalities: MG US MRI."
     },
     {
-      "code": "size>US",
-      "display": "size > US",
-      "definition": "[PR] size > US\r\n\r\nValid for the following modalities: US MRI NM."
-    },
-    {
       "code": "SkinMarker",
       "display": "Skin marker",
       "definition": "[PR] Skin marker\r\n\r\nValid for the following modalities: MG."
@@ -168,16 +163,6 @@
       "code": "US",
       "display": "US",
       "definition": "[PR] US\r\n\r\nValid for the following modalities: MG US MRI NM."
-    },
-    {
-      "code": "Mammo",
-      "display": "Mammo",
-      "definition": "[PR] Mammo\r\n\r\nValid for the following modalities: US MRI NM."
-    },
-    {
-      "code": "PostOperative",
-      "display": "Post operative",
-      "definition": "[PR] Post operative\r\n\r\nValid for the following modalities: MG."
     }
   ]
 }

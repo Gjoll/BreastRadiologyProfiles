@@ -26,74 +26,77 @@ namespace BreastRadiology.XUnitTests
                     new ConceptDef[]
                      {
                          //+ Type
-                         //+ Asymmetry
-                         //+ AutoGen
                          new ConceptDef()
                              .SetCode("Asymmetry")
                              .SetDisplay("Asymmetry")
                              .SetDefinition("[PR] Asymmetry")
                              .MammoId("691")
                              .ValidModalities(Modalities.MG)
-                         //- AutoGen
-                             .BiRadsDef("This is an area of fibroglandular-density tissue that is visible on only one mammographic projection.",
-                                 "Most such findings represent summation artifact, a superimposition of normal breast structures,",
-                                 "whereas those confirmed to be real lesions (by subsequent demonstration on at least one",
-                                 "more projection) may represent one of the other types of asymmetry or a mass.")
+                             .SetACR("This is an area of fibroglandular-density tissue " +
+                                 "that is visible on only one mammographic projection.Most " +
+                                 "such findings represent summation artifact, a superimposition " +
+                                 "of normal breast structures,whereas those confirmed " +
+                                 "to be real lesions (by subsequent demonstration on " +
+                                 "at least onemore projection) may represent one of " +
+                                 "the other types of asymmetry or a mass.")
                          ,
-                         //- Asymmetry
-                         //+ AsymmetryFocal
-                         //+ AutoGen
                          new ConceptDef()
                              .SetCode("AsymmetryFocal")
                              .SetDisplay("Asymmetry focal")
                              .SetDefinition("[PR] Asymmetry focal")
                              .MammoId("643")
                              .ValidModalities(Modalities.MG)
-                         //- AutoGen
-                             .BiRadsDef("A focal asymmetry is judged relative to the corresponding location in the contralateral breast,",
-                                 "and represents a relatively small amount of fibroglandular-density tissue over a confined portion",
-                                 "of the breast (less than one quadrant). It is visible on and has similar shape on different mammographic",
-                                 "projections (hence a real finding rather than superimposition of normal breast structures),",
-                                 "but it lacks the convex-outward borders and the conspicuity of a mass. Rather, the borders",
-                                 "of a focal asymmetry are concave-outward, and it usually is seen to be interspersed with fat.",
-                                 "Note that occasionally what is properly described as a focal asymmetry at screening (a finding visible ",
-                                 "on standard MLO and CC views) is determined at diagnostic mammography to be 2 different",
-                                 "findings, each visible on only 1 standard view (hence, 2 asymmetries), each of which ultimately",
-                                 "is judged to represent superimposition of normal breast structures. Also, not infrequently, what",
-                                 "is properly described as a focal asymmetry at screening is determined at diagnostic evaluation",
-                                 "(mammography and/or ultrasound) to represent a mass.")
+                             .SetACR("A focal asymmetry is judged relative to the corresponding " +
+                                 "location in the contralateral breast,and represents " +
+                                 "a relatively small amount of fibroglandular-density " +
+                                 "tissue over a confined portionof the breast (less " +
+                                 "than one quadrant). It is visible on and has similar " +
+                                 "shape on different mammographicprojections (hence " +
+                                 "a real finding rather than superimposition of normal " +
+                                 "breast structures),but it lacks the convex-outward " +
+                                 "borders and the conspicuity of a mass. Rather, the " +
+                                 "bordersof a focal asymmetry are concave-outward, " +
+                                 "and it usually is seen to be interspersed with fat.Note " +
+                                 "that occasionally what is properly described as a " +
+                                 "focal asymmetry at screening (a finding visible on " +
+                                 "standard MLO and CC views) is determined at diagnostic " +
+                                 "mammography to be 2 differentfindings, each visible " +
+                                 "on only 1 standard view (hence, 2 asymmetries), each " +
+                                 "of which ultimatelyis judged to represent superimposition " +
+                                 "of normal breast structures. Also, not infrequently, " +
+                                 "whatis properly described as a focal asymmetry at " +
+                                 "screening is determined at diagnostic evaluation(mammography " +
+                                 "and/or ultrasound) to represent a mass.")
                          ,
-                         //- AsymmetryFocal
-                         //+ AsymmetryGlobal
-                         //+ AutoGen
                          new ConceptDef()
                              .SetCode("AsymmetryGlobal")
                              .SetDisplay("Asymmetry global")
                              .SetDefinition("[PR] Asymmetry global")
                              .MammoId("644")
                              .ValidModalities(Modalities.MG)
-                         //- AutoGen
-                             .BiRadsDef("This is a focal asymmetry that is new, larger, or more conspicuous than on a previous examination.",
-                                 "Approximately 15% of cases of developing asymmetry are found to be malignant (either",
-                                 "invasive carcinoma, DCIS, or both), so these cases warrant further imaging evaluation and biopsy",
-                                 "unless found to be characteristically benign (e.g., simple cyst at directed ultrasound). Absence",
-                                 "of a sonographic correlate, especially for a small (< 1 cm) developing asymmetry, should not avert biopsy.")
+                             .SetACR("This is a focal asymmetry that is new, larger, or " +
+                                 "more conspicuous than on a previous examination.Approximately " +
+                                 "15% of cases of developing asymmetry are found to " +
+                                 "be malignant (eitherinvasive carcinoma, DCIS, or " +
+                                 "both), so these cases warrant further imaging evaluation " +
+                                 "and biopsyunless found to be characteristically benign " +
+                                 "(e.g., simple cyst at directed ultrasound). Absenceof " +
+                                 "a sonographic correlate, especially for a small (< " +
+                                 "1 cm) developing asymmetry, should not avert biopsy.")
                          ,
-                         //- AsymmetryGlobal
-                         //+ AsymmetryADDPrefixDeveloping
-                         //+ AutoGen
                          new ConceptDef()
                              .SetCode("AsymmetryADDPrefixDeveloping")
                              .SetDisplay("Asymmetry ADD prefix developing")
                              .SetDefinition("[PR] Asymmetry ADD prefix developing")
                              .MammoId("X11000")
                              .ValidModalities(Modalities.MG)
-                         //- AutoGen
-                             .BiRadsDef("Global asymmetry is judged relative to the corresponding area in the contralateral breast and",
-                                 "represents a large amount of fibroglandular-density tissue over a substantial portion of the",
-                                 "breast (at least one quadrant). There is no mass, distorted architecture or associated suspicious",
-                                 "calcifications. Global asymmetry usually represents a normal variant.")
-                         //- AsymmetryADDPrefixDeveloping
+                             .SetACR("Global asymmetry is judged relative to the corresponding " +
+                                 "area in the contralateral breast andrepresents a " +
+                                 "large amount of fibroglandular-density tissue over " +
+                                 "a substantial portion of thebreast (at least one " +
+                                 "quadrant). There is no mass, distorted architecture " +
+                                 "or associated suspiciouscalcifications. Global asymmetry " +
+                                 "usually represents a normal variant.")
                          //- Type
                          }
                  )

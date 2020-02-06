@@ -186,11 +186,11 @@ namespace BreastRadiology.XUnitTests
                     AppIfNotNull(concepts, "SetSnomedCode", row[SnomedCol]);
                     //AppIfNotNull(concepts, "SetOneToMany", row[12]);
                     AppIfNotNull(concepts, "SetSnomedDescription", row[SnomedDescriptionCol]);
-                    AppIfNotNull(concepts, "SetICD10", row[ICD10Col]);
+                    //AppIfNotNull(concepts, "SetICD10", row[ICD10Col]);
                     AppIfNotNull(concepts, "SetUMLS", row[UMLSCol]);
                     AppIfNotNull(concepts, "SetACR", row[ACRCol]);
 
-                    if (i == dataTbl.Rows.Count - 1)
+                    if (i < dataTbl.Rows.Count - 1)
                         concepts
                             .AppendLine($",");
                 }
@@ -329,10 +329,10 @@ namespace BreastRadiology.XUnitTests
                 AppIfNotNull(concepts, "SetSnomedCode", row[SnomedCol]);
                 //AppIfNotNull(concepts, "SetOneToMany", row[13]);
                 AppIfNotNull(concepts, "SetSnomedDescription", row[SnomedDescriptionCol]);
-                AppIfNotNull(concepts, "SetICD10", row[ICD10Col]);
+                //AppIfNotNull(concepts, "SetICD10", row[ICD10Col]);
                 AppIfNotNull(concepts, "SetUMLS", row[UMLSCol]);
                 AppIfNotNull(concepts, "SetACR", row[ACRCol]);
-                if (i == penIds.Length - 1)
+                if (i < penIds.Length - 1)
                     concepts
                         .AppendLine($",");
             }

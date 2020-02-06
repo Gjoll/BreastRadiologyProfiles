@@ -24,44 +24,29 @@ namespace BreastRadiology.XUnitTests
                          new ConceptDef[]
                          {
                             //+ Type
-                            //+ Mass
-                            //+ AutoGen
                             new ConceptDef()
                                 .SetCode("Mass")
                                 .SetDisplay("Mass")
                                 .SetDefinition("[PR] Mass")
                                 .MammoId("58")
                                 .ValidModalities(Modalities.MG | Modalities.MRI | Modalities.US)
-                            //- AutoGen
                             ,
-                            //- Mass
-                            //+ MassIntraductal
-                            //+ AutoGen
                             new ConceptDef()
                                 .SetCode("MassIntraductal")
                                 .SetDisplay("Mass intraductal")
                                 .SetDefinition("[PR] Mass intraductal")
                                 .MammoId("621")
                                 .ValidModalities(Modalities.US)
-                                .SetOneToMany("????")
                                 .SetSnomedDescription("ClinicalFinding | 369753003 | Intraductal tumor configuration " +
                                     "(Finding)")
-                            //- AutoGen
                             ,
-                            //- MassIntraductal
-                            //+ MassPartiallySolid
-                            //+ AutoGen
                             new ConceptDef()
                                 .SetCode("MassPartiallySolid")
                                 .SetDisplay("Mass partially solid")
                                 .SetDefinition("[PR] Mass partially solid")
                                 .MammoId("697")
                                 .ValidModalities(Modalities.MG | Modalities.US)
-                            //- AutoGen
                             ,
-                            //- MassPartiallySolid
-                            //+ MassSkinATLASIsSkinLesion
-                            //+ AutoGen
                             new ConceptDef()
                                 .SetCode("MassSkinATLASIsSkinLesion")
                                 .SetDisplay("Mass skin ATLAS is skin lesion")
@@ -70,21 +55,13 @@ namespace BreastRadiology.XUnitTests
                                 .ValidModalities(Modalities.MG | Modalities.US)
                                 .SetSnomedCode("126510002")
                                 .SetSnomedDescription("ClinicalFinding | Neoplasm of skin of breast (Disorder)")
-                                .SetICD10("D49.2")
-                            //- AutoGen
                             ,
-                            //- MassSkinATLASIsSkinLesion
-                            //+ MassSolid
-                            //+ AutoGen
                             new ConceptDef()
                                 .SetCode("MassSolid")
                                 .SetDisplay("Mass solid")
                                 .SetDefinition("[PR] Mass solid")
                                 .MammoId("608")
                                 .ValidModalities(Modalities.MG | Modalities.US)
-                            //- AutoGen
-                            
-                            //- MassSolid
                             //- Type
                          })
              );

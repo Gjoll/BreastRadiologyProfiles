@@ -25,75 +25,72 @@ namespace BreastRadiology.XUnitTests
                      new ConceptDef[]
                      {
                          //+ Codes
-                         //+ AlmostEntirelyFat
-                         //+ AutoGen
                          new ConceptDef()
                              .SetCode("AlmostEntirelyFat")
                              .SetDisplay("Almost entirely fat")
                              .SetDefinition("[PR] Almost entirely fat")
                              .MammoId("X10000")
                              .ValidModalities(Modalities.MG)
-                         //- AutoGen
-                             .BiRadsDef("Unless an area containing cancer is not included in the image field of the mammogram,",
-                                 "mammography is highly sensitive in this setting.")
+                             .SetACR("Unless an area containing cancer is not included " +
+                                 "in the image field of the mammogram,mammography is " +
+                                 "highly sensitive in this setting.")
                          ,
-                         //- AlmostEntirelyFat
-                         //+ ScatteredAreasOfFibroglandularDensity
-                         //+ AutoGen
                          new ConceptDef()
                              .SetCode("ScatteredAreasOfFibroglandularDensity")
                              .SetDisplay("Scattered areas of fibroglandular density")
                              .SetDefinition("[PR] Scattered areas of fibroglandular density")
                              .MammoId("X10001")
                              .ValidModalities(Modalities.MG)
-                         //- AutoGen
-                             .BiRadsDef("(historically, there are scattered fibroglandular densities).",
-                                 "It may be helpful to distinguish breasts in which there are a few scattered areas of",
-                                 "fibroglandular-density tissue from those in which there are moderate scattered areas of",
-                                 "fibroglandular-density tissue. Note that there has been a subtle change in the wording",
-                                 "of this category, to conform to BI-RADS® lexicon use of the term \"density\" to describe",
-                                 "the degree of x-ray attenuation of breast tissue but not to represent discrete",
-                                 "mammographic findings.")
+                             .SetACR("(historically, there are scattered fibroglandular " +
+                                 "densities).It may be helpful to distinguish breasts " +
+                                 "in which there are a few scattered areas offibroglandular-density " +
+                                 "tissue from those in which there are moderate scattered " +
+                                 "areas offibroglandular-density tissue. Note that " +
+                                 "there has been a subtle change in the wordingof this " +
+                                 "category, to conform to BI-RADS® lexicon use of the " +
+                                 "term \"density\" to describethe degree of x-ray attenuation " +
+                                 "of breast tissue but not to represent discretemammographic " +
+                                 "findings.")
                          ,
-                         //- ScatteredAreasOfFibroglandularDensity
-                         //+ HetrogeneouslyDense
-                         //+ AutoGen
                          new ConceptDef()
                              .SetCode("HetrogeneouslyDense")
                              .SetDisplay("Hetrogeneously dense ")
                              .SetDefinition("[PR] Hetrogeneously dense ")
                              .MammoId("X10002")
                              .ValidModalities(Modalities.MG)
-                         //- AutoGen
-                             .BiRadsDef("It is not uncommon for some areas in such breasts to be relatively dense while other",
-                                 "areas are primarily fatty. When this occurs, it may be helpful to describe the location(s)",
-                                 "of the denser tissue in a second sentence, so that the referring clinician is aware that",
-                                 "these are the areas in which small noncalcified lesions may be obscured. Suggested",
-                                 "wordings for the second sentence include:",
-                                 "\"The dense tissue is located anteriorly in both breasts, and the posterior portions",
-                                 "are mostly fatty.\"",
-                                 "\"Primarily dense tissue is located in the upper outer quadrants of both breasts;",
-                                 "scattered areas of fibroglandular tissue are present in the remainder of the breasts.\"")
+                             .SetACR("It is not uncommon for some areas in such breasts " +
+                                 "to be relatively dense while otherareas are primarily " +
+                                 "fatty. When this occurs, it may be helpful to describe " +
+                                 "the location(s)of the denser tissue in a second sentence, " +
+                                 "so that the referring clinician is aware thatthese " +
+                                 "are the areas in which small noncalcified lesions " +
+                                 "may be obscured. Suggestedwordings for the second " +
+                                 "sentence include:\"The dense tissue is located anteriorly " +
+                                 "in both breasts, and the posterior portionsare mostly " +
+                                 "fatty.\"\"Primarily dense tissue is located in the upper " +
+                                 "outer quadrants of both breasts;scattered areas of " +
+                                 "fibroglandular tissue are present in the remainder " +
+                                 "of the breasts.\"")
                          ,
-                         //- HetrogeneouslyDense
-                         //+ ExtremelyDense
-                         //+ AutoGen
                          new ConceptDef()
                              .SetCode("ExtremelyDense")
                              .SetDisplay("Extremely dense")
                              .SetDefinition("[PR] Extremely dense")
                              .MammoId("X10003")
                              .ValidModalities(Modalities.MG)
-                         //- AutoGen
-                             .BiRadsDef("The sensitivity of mammography is lowest in this density category.",
-                                 "The Fourth Edition of BI-RADS®, unlike previous editions, indicated quartile ranges",
-                                 "of percentage dense tissue (increments of 25% density) for each of the four density",
-                                 "categories, with the expectation that the assignment of breast density would be",
-                                 "distributed more evenly across categories than the historical distribution of 10% fatty,",
-                                 "40% scattered, 40% heterogeneously and 10% extremely dense. However, it has since",
-                                 "been demonstrated in clinical practice that there has been essentially no change",
-                                 "in this historical distribution across density categories.")
-                         //- ExtremelyDense
+                             .SetACR("The sensitivity of mammography is lowest in this " +
+                                 "density category.The Fourth Edition of BI-RADS®, " +
+                                 "unlike previous editions, indicated quartile rangesof " +
+                                 "percentage dense tissue (increments of 25% density) " +
+                                 "for each of the four densitycategories, with the " +
+                                 "expectation that the assignment of breast density " +
+                                 "would bedistributed more evenly across categories " +
+                                 "than the historical distribution of 10% fatty,40% " +
+                                 "scattered, 40% heterogeneously and 10% extremely " +
+                                 "dense. However, it has sincebeen demonstrated in " +
+                                 "clinical practice that there has been essentially " +
+                                 "no changein this historical distribution across density " +
+                                 "categories.")
                          //- Codes
                      }
                  )

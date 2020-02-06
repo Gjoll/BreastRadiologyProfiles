@@ -24,8 +24,6 @@ namespace BreastRadiology.XUnitTests
                         new ConceptDef[]
                          {
                             //+ Type
-                            //+ DuctDilatedATLASSolitaryDilatedDuct
-                            //+ AutoGen
                             new ConceptDef()
                                 .SetCode("DuctDilatedATLASSolitaryDilatedDuct")
                                 .SetDisplay("Duct dilated ATLAS solitary dilated duct")
@@ -67,11 +65,7 @@ namespace BreastRadiology.XUnitTests
                                     "the isolated finding of solitary dilated duct identified " +
                                     "at screening or diagnostic mammography.Read More: " +
                                     "https://www.ajronline.org/doi/full/10.2214/AJR.09.2944")
-                            //- AutoGen
                             ,
-                            //- DuctDilatedATLASSolitaryDilatedDuct
-                            //+ DuctEctasia
-                            //+ AutoGen
                             new ConceptDef()
                                 .SetCode("DuctEctasia")
                                 .SetDisplay("Duct ectasia")
@@ -85,9 +79,6 @@ namespace BreastRadiology.XUnitTests
                                     "pain, irritation and discharge, it's generally not " +
                                     "a cause for concern. If left untreated, it can eventually " +
                                     "obliterate the breast duct.")
-                            //- AutoGen
-                            
-                            //- DuctEctasia
                             //- Type
                          }
                      )

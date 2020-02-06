@@ -24,8 +24,6 @@ namespace BreastRadiology.XUnitTests
                      new ConceptDef[]
                      {
                          //+ Type
-                         //+ Amorphous
-                         //+ AutoGen
                          new ConceptDef()
                              .SetCode("Amorphous")
                              .SetDisplay("Amorphous")
@@ -37,19 +35,19 @@ namespace BreastRadiology.XUnitTests
                              .SetSnomedDescription("ClinicalFinding | 129760005 | Radiographic finding " +
                                  "of amorphous calcification (Finding)")
                              .SetUMLS("C1268685")
-                         //- AutoGen
-                             .BiRadsDef("(historically, \"indistinct\")",
-                                 "These are sufficiently small and/or hazy in appearance that a more specific particle shape",
-                                 "cannot be determined. Amorphous calcifications in a grouped, linear, or segmental distribution",
-                                 "are suspicious and generally warrant biopsy. Bilateral, diffuse amorphous calcifications",
-                                 "usually may be dismissed as benign, although baseline magnification views may be helpful.",
-                                 "The positive predictive value (PPV) of amorphous calcifications is reported to be",
-                                 "approximately 20%. Therefore, calcifications of this morphology appropriately",
-                                 "should be placed into BI-RADS� assessment category 4B (PPV range > 10% to ? 50%).")
+                             .SetACR("(historically, \"indistinct\")These are sufficiently " +
+                                 "small and/or hazy in appearance that a more specific " +
+                                 "particle shapecannot be determined. Amorphous calcifications " +
+                                 "in a grouped, linear, or segmental distributionare " +
+                                 "suspicious and generally warrant biopsy. Bilateral, " +
+                                 "diffuse amorphous calcificationsusually may be dismissed " +
+                                 "as benign, although baseline magnification views " +
+                                 "may be helpful.The positive predictive value (PPV) " +
+                                 "of amorphous calcifications is reported to beapproximately " +
+                                 "20%. Therefore, calcifications of this morphology " +
+                                 "appropriatelyshould be placed into BI-RADS� assessment " +
+                                 "category 4B (PPV range > 10% to ? 50%).")
                          ,
-                         //- Amorphous
-                         //+ Coarse
-                         //+ AutoGen
                          new ConceptDef()
                              .SetCode("Coarse")
                              .SetDisplay("Coarse")
@@ -61,12 +59,10 @@ namespace BreastRadiology.XUnitTests
                              .SetSnomedDescription("ClinicalFinding | 129749001 | Coarse (popcorn-like) " +
                                  "radiographic calcification (Finding)")
                              .SetUMLS("C1268677")
-                         //- AutoGen
-                             .BiRadsDef("These are the classic large (> 2 to 3 mm in greatest diameter) calcifications produced by an involuting fibroadenoma.")
+                             .SetACR("These are the classic large (> 2 to 3 mm in greatest " +
+                                 "diameter) calcifications produced by an involuting " +
+                                 "fibroadenoma.")
                          ,
-                         //- Coarse
-                         //+ Dystrophic
-                         //+ AutoGen
                          new ConceptDef()
                              .SetCode("Dystrophic")
                              .SetDisplay("Dystrophic")
@@ -78,14 +74,11 @@ namespace BreastRadiology.XUnitTests
                              .SetSnomedDescription("ClinicalFinding | 129750001 | Dystrophic radiographic " +
                                  "calcification (Finding) | [0/0] | R93.8")
                              .SetUMLS("C0333582")
-                         //- AutoGen
-                             .BiRadsDef("These typically form in the irradiated breast or in the breast following trauma or surgery. The",
-                                 "calcifications are irregular in shape, and they are usually larger than 1 mm in size. They often",
-                                 "have lucent centers.")
+                             .SetACR("These typically form in the irradiated breast or " +
+                                 "in the breast following trauma or surgery. Thecalcifications " +
+                                 "are irregular in shape, and they are usually larger " +
+                                 "than 1 mm in size. They oftenhave lucent centers.")
                          ,
-                         //- Dystrophic
-                         //+ Eggshell
-                         //+ AutoGen
                          new ConceptDef()
                              .SetCode("Eggshell")
                              .SetDisplay("Eggshell")
@@ -97,11 +90,7 @@ namespace BreastRadiology.XUnitTests
                              .SetSnomedDescription("ClinicalFinding | 129751002 | Eggshell radiographic " +
                                  "calcification (Finding)")
                              .SetUMLS("C1313950")
-                         //- AutoGen
                          ,
-                         //- Eggshell
-                         //+ FineADDPrefix
-                         //+ AutoGen
                          new ConceptDef()
                              .SetCode("FineADDPrefix")
                              .SetDisplay("Fine ADD prefix ")
@@ -110,11 +99,7 @@ namespace BreastRadiology.XUnitTests
                              .ValidModalities(Modalities.MG)
                              .SetSnomedDescription("ClinicalFinding | 129761009 | Fine, linear, (casting) " +
                                  "radiographic calcification (Finding)")
-                         //- AutoGen
                          ,
-                         //- FineADDPrefix
-                         //+ GenericCalcification
-                         //+ AutoGen
                          new ConceptDef()
                              .SetCode("GenericCalcification")
                              .SetDisplay("Generic calcification")
@@ -129,11 +114,7 @@ namespace BreastRadiology.XUnitTests
                                  "Calcium is transported through the bloodstream. It’s " +
                                  "also found in every cell. As a result, calcification " +
                                  "can occur in almost any part of the body.")
-                         //- AutoGen
                          ,
-                         //- GenericCalcification
-                         //+ HeterogeneousADDPrefixCourse
-                         //+ AutoGen
                          new ConceptDef()
                              .SetCode("HeterogeneousADDPrefixCourse")
                              .SetDisplay("Heterogeneous ADD prefix course")
@@ -145,30 +126,28 @@ namespace BreastRadiology.XUnitTests
                              .SetSnomedDescription("ClinicalFinding | 129763007 | Heterogeneous radiographic " +
                                  "calcification (Finding)")
                              .SetUMLS("C1268688")
-                         //- AutoGen
-                             .BiRadsDef("These are irregular, conspicuous calcifications that are generally between 0.5 mm and 1 mm",
-                                 "and tend to coalesce, but are smaller than dystrophic calcifications. They may be associated",
-                                 "with malignancy but more frequently are present in a fibroadenoma or in areas of fibrosis or",
-                                 "trauma representing evolving dystrophic calcifications. Numerous bilateral groups of coarse",
-                                 "heterogeneous calcifications usually may be dismissed as benign, although baseline magnification",
-                                 "views may be helpful. However, a single group of coarse heterogeneous calcifications has a positive",
-                                 "predictive value of slightly less than 15%, and therefore this finding should be",
-                                 "placed in BI-RADS� assessment category 4B (PPV range > 10% to ? 50%).")
+                             .SetACR("These are irregular, conspicuous calcifications that " +
+                                 "are generally between 0.5 mm and 1 mmand tend to " +
+                                 "coalesce, but are smaller than dystrophic calcifications. " +
+                                 "They may be associatedwith malignancy but more frequently " +
+                                 "are present in a fibroadenoma or in areas of fibrosis " +
+                                 "ortrauma representing evolving dystrophic calcifications. " +
+                                 "Numerous bilateral groups of coarseheterogeneous " +
+                                 "calcifications usually may be dismissed as benign, " +
+                                 "although baseline magnificationviews may be helpful. " +
+                                 "However, a single group of coarse heterogeneous calcifications " +
+                                 "has a positivepredictive value of slightly less than " +
+                                 "15%, and therefore this finding should beplaced in " +
+                                 "BI-RADS� assessment category 4B (PPV range > 10% " +
+                                 "to ? 50%).")
                          ,
-                         //- HeterogeneousADDPrefixCourse
-                         //+ Indistinct
-                         //+ AutoGen
                          new ConceptDef()
                              .SetCode("Indistinct")
                              .SetDisplay("Indistinct")
                              .SetDefinition("[PR] Indistinct")
                              .MammoId("709")
                              .ValidModalities(Modalities.MG)
-                         //- AutoGen
                          ,
-                         //- Indistinct
-                         //+ LargeRodlike
-                         //+ AutoGen
                          new ConceptDef()
                              .SetCode("LargeRodlike")
                              .SetDisplay("Large rodlike")
@@ -180,30 +159,27 @@ namespace BreastRadiology.XUnitTests
                              .SetSnomedDescription("ClinicalFinding | 129752009 | Large rod-like radiographic " +
                                  "calcification (Finding)")
                              .SetUMLS("C1268678")
-                         //- AutoGen
-                             .BiRadsDef("These benign calcifications associated with ductal ectasia may form solid or discontinuous",
-                                 "smooth linear rods, most of which are 0.5 mm or larger in diameter. A small percentage of",
-                                 "these calcifications may have lucent centers if the calcium is in the wall of the duct (periductal),",
-                                 "but most are intraductal, when calcification forms within the lumen of the duct. All large",
-                                 "rod-like calcifications follow a ductal distribution, radiating toward the nipple, occasionally",
-                                 "branching. The calcifications usually are bilateral, although they may be seen in only one",
-                                 "breast, especially when few calcific particles are visible. These calcifications usually are seen",
-                                 "in women older than 60 years.)")
+                             .SetACR("These benign calcifications associated with ductal " +
+                                 "ectasia may form solid or discontinuoussmooth linear " +
+                                 "rods, most of which are 0.5 mm or larger in diameter. " +
+                                 "A small percentage ofthese calcifications may have " +
+                                 "lucent centers if the calcium is in the wall of the " +
+                                 "duct (periductal),but most are intraductal, when " +
+                                 "calcification forms within the lumen of the duct. " +
+                                 "All largerod-like calcifications follow a ductal " +
+                                 "distribution, radiating toward the nipple, occasionallybranching. " +
+                                 "The calcifications usually are bilateral, although " +
+                                 "they may be seen in only onebreast, especially when " +
+                                 "few calcific particles are visible. These calcifications " +
+                                 "usually are seenin women older than 60 years.)")
                          ,
-                         //- LargeRodlike
-                         //+ Layering
-                         //+ AutoGen
                          new ConceptDef()
                              .SetCode("Layering")
                              .SetDisplay("Layering")
                              .SetDefinition("[PR] Layering")
                              .MammoId("711")
                              .ValidModalities(Modalities.MG)
-                         //- AutoGen
                          ,
-                         //- Layering
-                         //+ LinearADDPrefixFine
-                         //+ AutoGen
                          new ConceptDef()
                              .SetCode("LinearADDPrefixFine")
                              .SetDisplay("Linear ADD prefix fine")
@@ -212,17 +188,17 @@ namespace BreastRadiology.XUnitTests
                              .ValidModalities(Modalities.MG)
                              .SetSnomedDescription("ClinicalFinding | 129761009 | Fine, linear, (casting) " +
                                  "radiographic calcification (Finding)")
-                         //- AutoGen
-                             .BiRadsDef("These are thin, linear, irregular calcifications, which may be discontinuous and which are",
-                                 "smaller than 0.5 mm in caliber. Occasionally, branching forms may be seen. Their",
-                                 "appearance suggests filling of the lumen of a duct or ducts involved irregularly by",
-                                 "breast cancer. Among the suspicious calcifications, fine linear and fine-linear",
-                                 "branching calcifications have the highest PPV (70%). Therefore, these calcifications",
-                                 "should be placed in BI-RADS� assessment category 4C (PPV range > 50% to < 95%).")
+                             .SetACR("These are thin, linear, irregular calcifications, " +
+                                 "which may be discontinuous and which aresmaller than " +
+                                 "0.5 mm in caliber. Occasionally, branching forms " +
+                                 "may be seen. Theirappearance suggests filling of " +
+                                 "the lumen of a duct or ducts involved irregularly " +
+                                 "bybreast cancer. Among the suspicious calcifications, " +
+                                 "fine linear and fine-linearbranching calcifications " +
+                                 "have the highest PPV (70%). Therefore, these calcificationsshould " +
+                                 "be placed in BI-RADS� assessment category 4C (PPV " +
+                                 "range > 50% to < 95%).")
                          ,
-                         //- LinearADDPrefixFine
-                         //+ Lucent-centered
-                         //+ AutoGen
                          new ConceptDef()
                              .SetCode("Lucent-centered")
                              .SetDisplay("Lucent-centered")
@@ -234,11 +210,7 @@ namespace BreastRadiology.XUnitTests
                              .SetSnomedDescription("ClinicalFinding | 129754005 | Lucent-centered radiographic " +
                                  "calcification (Finding)")
                              .SetUMLS("C1268680")
-                         //- AutoGen
                          ,
-                         //- Lucent-centered
-                         //+ MilkOfCalcium
-                         //+ AutoGen
                          new ConceptDef()
                              .SetCode("MilkOfCalcium")
                              .SetDisplay("Milk of calcium")
@@ -250,21 +222,24 @@ namespace BreastRadiology.XUnitTests
                              .SetSnomedDescription("ClinicalFinding | 129753004 | Milk of calcium radiographic " +
                                  "calcification (Finding)")
                              .SetUMLS("C1268679")
-                         //- AutoGen
-                             .BiRadsDef("This is a manifestation of sedimented calcifications in macro- or microcysts, usually but not",
-                                 "always grouped. On the craniocaudal image they are often less evident and appear as round,",
-                                 "smudgy deposits, while occasionally on MLO and especially on 90� lateral (LM/ML) views,",
-                                 "they are more clearly defined and often semilunar, crescent shaped, curvilinear (concave up),",
-                                 "or linear, defining the dependent portion of cysts. The most important feature of these calcifications",
-                                 "is the apparent change in shape of the calcific particles on different mammographic",
-                                 "projections (craniocaudal versus occasionally the MLO view and especially LM/ML views). At",
-                                 "times milk of calcium calcifications are seen adjacent to other types of calcifications that may",
-                                 "be associated with malignancy, so it is important to search for more suspicious forms, especially ",
-                                 "those that do not change shape from the 90� lateral projection to the CC projection.")
+                             .SetACR("This is a manifestation of sedimented calcifications " +
+                                 "in macro- or microcysts, usually but notalways grouped. " +
+                                 "On the craniocaudal image they are often less evident " +
+                                 "and appear as round,smudgy deposits, while occasionally " +
+                                 "on MLO and especially on 90� lateral (LM/ML) views,they " +
+                                 "are more clearly defined and often semilunar, crescent " +
+                                 "shaped, curvilinear (concave up),or linear, defining " +
+                                 "the dependent portion of cysts. The most important " +
+                                 "feature of these calcificationsis the apparent change " +
+                                 "in shape of the calcific particles on different mammographicprojections " +
+                                 "(craniocaudal versus occasionally the MLO view and " +
+                                 "especially LM/ML views). Attimes milk of calcium " +
+                                 "calcifications are seen adjacent to other types of " +
+                                 "calcifications that maybe associated with malignancy, " +
+                                 "so it is important to search for more suspicious " +
+                                 "forms, especially those that do not change shape " +
+                                 "from the 90� lateral projection to the CC projection.")
                          ,
-                         //- MilkOfCalcium
-                         //+ PleomorphicADDPrefixFine
-                         //+ AutoGen
                          new ConceptDef()
                              .SetCode("PleomorphicADDPrefixFine")
                              .SetDisplay("Pleomorphic ADD prefix fine")
@@ -273,18 +248,18 @@ namespace BreastRadiology.XUnitTests
                              .ValidModalities(Modalities.MG)
                              .SetDicom("111344")
                              .SetSnomedDescription("not found")
-                             .SetComment("not found")
-                         //- AutoGen
-                             .BiRadsDef("These calcifications are usually more conspicuous than amorphous forms and are seen to have",
-                                 "discrete shapes. These irregular calcifications are distinguished from fine linear and fine-linear",
-                                 "branching forms by the absence of fine-linear particles. Fine pleomorphic calcifications vary in",
-                                 "size and shape and are usually smaller than 0.5 mm in diameter. They have a somewhat higher",
-                                 "PPV for malignancy (29%) than amorphous or coarse heterogeneous calcifications,",
-                                 "but also should be placed in BI-RADS� assessment category 4B (PPV range > 10% to ? 50%).")
+                             .SetACR("These calcifications are usually more conspicuous " +
+                                 "than amorphous forms and are seen to havediscrete " +
+                                 "shapes. These irregular calcifications are distinguished " +
+                                 "from fine linear and fine-linearbranching forms by " +
+                                 "the absence of fine-linear particles. Fine pleomorphic " +
+                                 "calcifications vary insize and shape and are usually " +
+                                 "smaller than 0.5 mm in diameter. They have a somewhat " +
+                                 "higherPPV for malignancy (29%) than amorphous or " +
+                                 "coarse heterogeneous calcifications,but also should " +
+                                 "be placed in BI-RADS� assessment category 4B (PPV " +
+                                 "range > 10% to ? 50%).")
                          ,
-                         //- PleomorphicADDPrefixFine
-                         //+ Punctate
-                         //+ AutoGen
                          new ConceptDef()
                              .SetCode("Punctate")
                              .SetDisplay("Punctate")
@@ -296,11 +271,7 @@ namespace BreastRadiology.XUnitTests
                              .SetSnomedDescription("ClinicalFinding | 129755006 | Punctate radiographic " +
                                  "calcification (Finding)")
                              .SetUMLS("C1265883")
-                         //- AutoGen
                          ,
-                         //- Punctate
-                         //+ Rim
-                         //+ AutoGen
                          new ConceptDef()
                              .SetCode("Rim")
                              .SetDisplay("Rim")
@@ -308,20 +279,19 @@ namespace BreastRadiology.XUnitTests
                              .MammoId("717")
                              .ValidModalities(Modalities.MG)
                              .SetSnomedDescription("not found")
-                             .SetComment("not found")
-                         //- AutoGen
-                             .BiRadsDef("(historically, \"eggshell\", \"lucent-centered\")",
-                                 "These are thin benign calcifications that appear as calcium deposited on the surface of a",
-                                 "sphere. The calcific deposits are usually less than 1 mm in thickness when viewed on edge.",
-                                 "These are benign nongrouped calcifications that range from smaller than 1 mm to larger",
-                                 "than a centimeter or more. The calcifications are round or oval, with smooth surfaces and",
-                                 "lucent centers. Fat necrosis and calcifications in the walls of cysts are the most common \"rim\"",
-                                 "calcifications, although more extensive (and occasionally thicker-rimmed) calcification in the",
-                                 "walls of oil cysts or simple cysts may be seen.")
+                             .SetACR("(historically, \"eggshell\", \"lucent-centered\")These are " +
+                                 "thin benign calcifications that appear as calcium " +
+                                 "deposited on the surface of asphere. The calcific " +
+                                 "deposits are usually less than 1 mm in thickness " +
+                                 "when viewed on edge.These are benign nongrouped calcifications " +
+                                 "that range from smaller than 1 mm to largerthan a " +
+                                 "centimeter or more. The calcifications are round " +
+                                 "or oval, with smooth surfaces andlucent centers. " +
+                                 "Fat necrosis and calcifications in the walls of cysts " +
+                                 "are the most common \"rim\"calcifications, although more " +
+                                 "extensive (and occasionally thicker-rimmed) calcification " +
+                                 "in thewalls of oil cysts or simple cysts may be seen.")
                          ,
-                         //- Rim
-                         //+ Round
-                         //+ AutoGen
                          new ConceptDef()
                              .SetCode("Round")
                              .SetDisplay("Round")
@@ -333,18 +303,18 @@ namespace BreastRadiology.XUnitTests
                              .SetSnomedDescription("ClinicalFinding | 129756007 | Round shaped radiographic " +
                                  "calcification (Finding)")
                              .SetUMLS("C1268681")
-                         //- AutoGen
-                             .BiRadsDef("When multiple, they may vary in size and therefore also in opacity. They may be considered",
-                                 "benign when diffuse and small (< 1 mm), and are frequently formed in the acini of lobules. When",
-                                 "smaller than 0.5 mm, the term \"punctate\" should be used.",
-                                 "An isolated group of punctate calcifications may warrant probably benign assessment and",
-                                 "mammographic surveillance if no prior examinations are available for comparison, or",
-                                 "image-guided biopsy if the group is new, increasing, linear or segmental in distribution, or if",
-                                 "adjacent to a known cancer.")
+                             .SetACR("When multiple, they may vary in size and therefore " +
+                                 "also in opacity. They may be consideredbenign when " +
+                                 "diffuse and small (< 1 mm), and are frequently formed " +
+                                 "in the acini of lobules. Whensmaller than 0.5 mm, " +
+                                 "the term \"punctate\" should be used.An isolated group " +
+                                 "of punctate calcifications may warrant probably benign " +
+                                 "assessment andmammographic surveillance if no prior " +
+                                 "examinations are available for comparison, orimage-guided " +
+                                 "biopsy if the group is new, increasing, linear or " +
+                                 "segmental in distribution, or ifadjacent to a known " +
+                                 "cancer.")
                          ,
-                         //- Round
-                         //+ Skin
-                         //+ AutoGen
                          new ConceptDef()
                              .SetCode("Skin")
                              .SetDisplay("Skin")
@@ -353,20 +323,21 @@ namespace BreastRadiology.XUnitTests
                              .ValidModalities(Modalities.MG)
                              .SetSnomedDescription("ClinicalFinding | 129757003 | Radiographic finding " +
                                  "of calcified skin of breast (Finding) | [0/0] | R92")
-                         //- AutoGen
-                             .BiRadsDef("These are usually lucent-centered and pathognomonic in their appearance. Skin calcifications",
-                                 "are most commonly seen along the inframammary fold, parasternally, overlying the axilla ",
-                                 "and around the areola. The individual calcific particles usually are tightly grouped, with individual ",
-                                 "groups smaller than 5 mm in greatest dimension. Atypical forms may be confirmed",
-                                 "as skin deposits by performing additional mammographic views tangential to the overlying",
-                                 "skin. Also note that if suspicious-appearing calcifications are adjacent to a skin surface on",
-                                 "a given mammographic view, they actually may be dermal (hence benign) in nature, so that",
-                                 "tangential-view mammography with or without magnification should be done prior to any",
-                                 "intervention.")
+                             .SetACR("These are usually lucent-centered and pathognomonic " +
+                                 "in their appearance. Skin calcificationsare most " +
+                                 "commonly seen along the inframammary fold, parasternally, " +
+                                 "overlying the axilla and around the areola. The individual " +
+                                 "calcific particles usually are tightly grouped, with " +
+                                 "individual groups smaller than 5 mm in greatest dimension. " +
+                                 "Atypical forms may be confirmedas skin deposits by " +
+                                 "performing additional mammographic views tangential " +
+                                 "to the overlyingskin. Also note that if suspicious-appearing " +
+                                 "calcifications are adjacent to a skin surface ona " +
+                                 "given mammographic view, they actually may be dermal " +
+                                 "(hence benign) in nature, so thattangential-view " +
+                                 "mammography with or without magnification should " +
+                                 "be done prior to anyintervention.")
                          ,
-                         //- Skin
-                         //+ Spherical
-                         //+ AutoGen
                          new ConceptDef()
                              .SetCode("Spherical")
                              .SetDisplay("Spherical")
@@ -375,11 +346,7 @@ namespace BreastRadiology.XUnitTests
                              .ValidModalities(Modalities.MG)
                              .SetSnomedDescription("QualifierValue | 34258004 | Spherical shape (Qualifier) " +
                                  "+")
-                         //- AutoGen
                          ,
-                         //- Spherical
-                         //+ Suture
-                         //+ AutoGen
                          new ConceptDef()
                              .SetCode("Suture")
                              .SetDisplay("Suture")
@@ -391,13 +358,10 @@ namespace BreastRadiology.XUnitTests
                              .SetSnomedDescription("ClinicalFinding | 129758008 | Radiographic finding " +
                                  "of calcified suture material (Finding)")
                              .SetUMLS("C1268683")
-                         //- AutoGen
-                             .BiRadsDef("These represent calcium deposited on suture material. They are typically linear or tubular in",
-                                 "appearance and when present, knots are frequently visible.")
+                             .SetACR("These represent calcium deposited on suture material. " +
+                                 "They are typically linear or tubular inappearance " +
+                                 "and when present, knots are frequently visible.")
                          ,
-                         //- Suture
-                         //+ Vascular
-                         //+ AutoGen
                          new ConceptDef()
                              .SetCode("Vascular")
                              .SetDisplay("Vascular")
@@ -408,14 +372,14 @@ namespace BreastRadiology.XUnitTests
                              .SetSnomedDescription("ClinicalFinding | 396779001 | Breast arterial calcification " +
                                  "(Finding) | [0/0] | R92.1")
                              .SetUMLS("C1268684")
-                         //- AutoGen
-                             .BiRadsDef("Parallel tracks, or linear tubular calcifications that are clearly associated with blood vessels.",
-                                 "While most vascular calcification is not difficult to identify, if only a few discontinuous calcific",
-                                 "particles are visible in a single location and if association with a tubular structure is",
-                                 "questionable, then additional spot-compression magnification views may be needed to further characterize",
-                                 "their nature.")
-                        
-                         //- Vascular
+                             .SetACR("Parallel tracks, or linear tubular calcifications " +
+                                 "that are clearly associated with blood vessels.While " +
+                                 "most vascular calcification is not difficult to identify, " +
+                                 "if only a few discontinuous calcificparticles are " +
+                                 "visible in a single location and if association with " +
+                                 "a tubular structure isquestionable, then additional " +
+                                 "spot-compression magnification views may be needed " +
+                                 "to further characterizetheir nature.")
                          //- Type
                      }
                  )

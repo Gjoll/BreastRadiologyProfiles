@@ -24,8 +24,6 @@ namespace BreastRadiology.XUnitTests
                         new ConceptDef[]
                          {
                             //+ Type
-                            //+ NodeAxillary
-                            //+ AutoGen
                             new ConceptDef()
                                 .SetCode("NodeAxillary")
                                 .SetDisplay("Node axillary")
@@ -42,11 +40,7 @@ namespace BreastRadiology.XUnitTests
                                     "node groups, namely the lateral (humeral), anterior " +
                                     "(pectoral), posterior (subscapular), central and " +
                                     "apical nodes.")
-                            //- AutoGen
                             ,
-                            //- NodeAxillary
-                            //+ NodeEnlarged
-                            //+ AutoGen
                             new ConceptDef()
                                 .SetCode("NodeEnlarged")
                                 .SetDisplay("Node enlarged")
@@ -56,7 +50,6 @@ namespace BreastRadiology.XUnitTests
                                 .SetSnomedCode("274744005")
                                 .SetSnomedDescription("ClinicalFinding | Localized enlarged lymph nodes " +
                                     "(Disorder)")
-                                .SetICD10("R59.0")
                                 .SetUMLS("Swollen lymph nodes usually occur as a result of " +
                                     "infection from bacteria or viruses. Rarely, swollen " +
                                     "lymph nodes are caused by cancer.Your lymph nodes, " +
@@ -67,22 +60,14 @@ namespace BreastRadiology.XUnitTests
                                     "parts of your body. Common areas where you might " +
                                     "notice swollen lymph nodes include your neck, under " +
                                     "your chin, in your armpits and in your groin.")
-                            //- AutoGen
                             ,
-                            //- NodeEnlarged
-                            //+ NodeFocalCortex
-                            //+ AutoGen
                             new ConceptDef()
                                 .SetCode("NodeFocalCortex")
                                 .SetDisplay("Node focal cortex")
                                 .SetDefinition("[PR] Node focal cortex")
                                 .MammoId("662")
                                 .ValidModalities(Modalities.MG | Modalities.US)
-                            //- AutoGen
                             ,
-                            //- NodeFocalCortex
-                            //+ NodeInfraclavicular
-                            //+ AutoGen
                             new ConceptDef()
                                 .SetCode("NodeInfraclavicular")
                                 .SetDisplay("Node infraclavicular")
@@ -97,11 +82,7 @@ namespace BreastRadiology.XUnitTests
                                     "major and deltoideus, immediately below the clavicle " +
                                     ". They are situated in the course of the external " +
                                     "collecting trunks of the arm.")
-                            //- AutoGen
                             ,
-                            //- NodeInfraclavicular
-                            //+ NodeIntramammary
-                            //+ AutoGen
                             new ConceptDef()
                                 .SetCode("NodeIntramammary")
                                 .SetDisplay("Node intramammary")
@@ -111,38 +92,30 @@ namespace BreastRadiology.XUnitTests
                                 .SetSnomedDescription("BodyStructure | 443808008 | Structure of intramammary " +
                                     "lymph node (Bodypart)")
                                 .SetUMLS("Lymph nodes found within the breast tissue.")
-                            //- AutoGen
-                                .BiRadsDef("These are circumscribed masses that are reniform and have hilar fat. They are generally 1 cm or smaller",
-                                        "in size. They may be larger than 1 cm and characterized as normal when fat replacement is pronounced. ",
-                                        "They frequently occur in the lateral and usually upper portions of the breast closer to the",
-                                        "axilla, although they may occur anywhere in the breast. They usually are seen adjacent to a vein,",
-                                        "because the lymphatic drainage of the breast parallels the venous drainage.")
+                                .SetACR("These are circumscribed masses that are reniform " +
+                                    "and have hilar fat. They are generally 1 cm or smallerin " +
+                                    "size. They may be larger than 1 cm and characterized " +
+                                    "as normal when fat replacement is pronounced. They " +
+                                    "frequently occur in the lateral and usually upper " +
+                                    "portions of the breast closer to theaxilla, although " +
+                                    "they may occur anywhere in the breast. They usually " +
+                                    "are seen adjacent to a vein,because the lymphatic " +
+                                    "drainage of the breast parallels the venous drainage.")
                             ,
-                            //- NodeIntramammary
-                            //+ NodeLymph
-                            //+ AutoGen
                             new ConceptDef()
                                 .SetCode("NodeLymph")
                                 .SetDisplay("Node lymph")
                                 .SetDefinition("[PR] Node lymph")
                                 .MammoId("651")
                                 .ValidModalities(Modalities.MG | Modalities.US)
-                            //- AutoGen
                             ,
-                            //- NodeLymph
-                            //+ NodeLymphNormal
-                            //+ AutoGen
                             new ConceptDef()
                                 .SetCode("NodeLymphNormal")
                                 .SetDisplay("Node lymph normal")
                                 .SetDefinition("[PR] Node lymph normal")
                                 .MammoId("652")
                                 .ValidModalities(Modalities.MG | Modalities.US)
-                            //- AutoGen
                             ,
-                            //- NodeLymphNormal
-                            //+ NodeSupraclavicular
-                            //+ AutoGen
                             new ConceptDef()
                                 .SetCode("NodeSupraclavicular")
                                 .SetDisplay("Node supraclavicular")
@@ -156,20 +129,13 @@ namespace BreastRadiology.XUnitTests
                                     "toward the hollow of the neck. Lymph nodes are responsible " +
                                     "for filtering the lymphatic fluid of unwanted debris " +
                                     "and bacteria.")
-                            //- AutoGen
                             ,
-                            //- NodeSupraclavicular
-                            //+ NodeUniformThickness
-                            //+ AutoGen
                             new ConceptDef()
                                 .SetCode("NodeUniformThickness")
                                 .SetDisplay("Node uniform thickness")
                                 .SetDefinition("[PR] Node uniform thickness")
                                 .MammoId("663")
                                 .ValidModalities(Modalities.MG | Modalities.US)
-                            //- AutoGen
-                            
-                            //- NodeUniformThickness
                             //- Type
                          }
                      )

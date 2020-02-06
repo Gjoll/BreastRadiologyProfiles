@@ -37,19 +37,13 @@ namespace BreastRadiology.XUnitTests
                         new ConceptDef[]
                         {
                             //+ Codes
-                            //+ ClinicalExam
-                            //+ AutoGen
                             new ConceptDef()
                                 .SetCode("ClinicalExam")
                                 .SetDisplay("Clinical exam")
                                 .SetDefinition("[PR] Clinical exam")
                                 .MammoId("280")
                                 .ValidModalities(Modalities.MG | Modalities.MRI | Modalities.NM | Modalities.US)
-                            //- AutoGen
-                            //- ClinicalExam
                             ,
-                            //+ Ductogram
-                            //+ AutoGen
                             new ConceptDef()
                                 .SetCode("Ductogram")
                                 .SetDisplay("Ductogram")
@@ -62,11 +56,7 @@ namespace BreastRadiology.XUnitTests
                                     "aid in diagnosing the cause of an abnormal nipple " +
                                     "discharge and is valuable in diagnosing intraductal " +
                                     "papillomas and other conditions.")
-                            //- AutoGen
-                            //- Ductogram
                             ,
-                            //+ Mammogram
-                            //+ AutoGen
                             new ConceptDef()
                                 .SetCode("Mammogram")
                                 .SetDisplay("Mammogram")
@@ -75,11 +65,7 @@ namespace BreastRadiology.XUnitTests
                                 .ValidModalities(Modalities.MG | Modalities.MRI | Modalities.NM | Modalities.US)
                                 .SetUMLS("An X-Ray picture of the breast. It's used to look " +
                                     "for early signs of breast cancer.")
-                            //- AutoGen
-                            //- Mammogram
                             ,
-                            //+ MRI
-                            //+ AutoGen
                             new ConceptDef()
                                 .SetCode("MRI")
                                 .SetDisplay("MRI")
@@ -92,22 +78,14 @@ namespace BreastRadiology.XUnitTests
                                     "powerful magnets, radio waves, and a computer to " +
                                     "make detailed pictures inside your body. It helps " +
                                     "a doctor to diagnose a disease or injury.")
-                            //- AutoGen
-                            //- MRI
                             ,
-                            //+ OutsideExam
-                            //+ AutoGen
                             new ConceptDef()
                                 .SetCode("OutsideExam")
                                 .SetDisplay("Outside exam")
                                 .SetDefinition("[PR] Outside exam")
                                 .MammoId("286")
                                 .ValidModalities(Modalities.MG)
-                            //- AutoGen
-                            //- OutsideExam
                             ,
-                            //+ Scintimammography
-                            //+ AutoGen
                             new ConceptDef()
                                 .SetCode("Scintimammography")
                                 .SetDisplay("Scintimammography")
@@ -117,11 +95,7 @@ namespace BreastRadiology.XUnitTests
                                 .SetUMLS("This is a type of breast imaging that is used to " +
                                     "detect cancer cells in the breasts of some women " +
                                     "who have had abnormal mammograms.")
-                            //- AutoGen
-                            //- Scintimammography
                             ,
-                            //+ Ultrasound
-                            //+ AutoGen
                             new ConceptDef()
                                 .SetCode("Ultrasound")
                                 .SetDisplay("Ultrasound")
@@ -134,8 +108,6 @@ namespace BreastRadiology.XUnitTests
                                     "information is relayed in real time to produce images " +
                                     "on a computer screen. This can help diagnose and " +
                                     "treat disease or conditions.")
-                            //- AutoGen
-                            //- Ultrasound
                             //- Codes
                         })
             );
