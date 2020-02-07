@@ -39,11 +39,11 @@ namespace BreastRadiology.XUnitTests
             this.filePath = filePath;
             DataSet dataSet = this.ReadSpreadSheet(filePath);
             DataTable originalTable = dataSet.Tables[sheetName];
-            this.dataTable = GetHeadings(originalTable);
+            this.dataTable = CreateTableWithHeadings(originalTable);
             this.LoadRows(originalTable);
         }
 
-        DataTable GetHeadings(DataTable tblSource)
+        DataTable CreateTableWithHeadings(DataTable tblSource)
         {
             DataTable retVal = new DataTable("Sheet3");
             DataRow row = tblSource.Rows[0];

@@ -14,11 +14,11 @@ using DocumentFormat.OpenXml.Wordprocessing;
 
 namespace GGMerge
 {
-    public partial class SelectSpreadSheets : Form
+    public partial class FormMergeSheet : Form
     {
         String[] headings;
 
-        public SelectSpreadSheets()
+        public FormMergeSheet()
         {
             InitializeComponent();
         }
@@ -244,7 +244,9 @@ namespace GGMerge
                     default:
                         try
                         {
-                            rows.Add(r[this.idMammoCol].ToString(), r);
+                            String key = r[this.idMammoCol].ToString();
+                            if (String.IsNullOrEmpty(key) == false)
+                                rows.Add(key, r);
                         }
                         catch (Exception e)
                         {
@@ -270,28 +272,32 @@ namespace GGMerge
         {
             List<String> retVal = new List<string>();
             DataRow row = tblSource.Rows[0];
-            Int32 i = 1;
 
             void Read()
             {
-                while (true)
+                object[] items = row.ItemArray;
+                for (Int32 i = 0; i < items.Length; i++)
                 {
-                    switch (row[i])
+                    switch (items[i])
                     {
-                        case DBNull dbNullValue: return;
-                        case String stringValue:
-                            retVal.Add(stringValue);
-                            if (stringValue == "ID_MAMMO")
-                                idMammoCol = i;
+                        case DBNull dbNullValue:
+                            retVal.Add("");
                             break;
+                        case String stringValue:
+                            switch (stringValue.Trim().ToUpper())
+                            {
+                                case "ID_MAMMO": this.idMammoCol = i; break;
+                            }
+                            retVal.Add(stringValue);
+                            break;
+
                         default:
                             throw new NotImplementedException();
                     }
-
-                    i += 1;
                 }
             }
             Read();
+
             return retVal.ToArray();
         }
 

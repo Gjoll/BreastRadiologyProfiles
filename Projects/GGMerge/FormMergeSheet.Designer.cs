@@ -1,6 +1,6 @@
 ﻿namespace GGMerge
 {
-    partial class SelectSpreadSheets
+    partial class FormMergeSheet
     {
         /// <summary>
         /// Required designer variable.

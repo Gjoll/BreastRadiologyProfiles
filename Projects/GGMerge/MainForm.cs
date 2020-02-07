@@ -24,7 +24,7 @@ namespace GGMerge
         {
             try
             {
-                SelectSpreadSheets s = new SelectSpreadSheets();
+                FormMergeSheet s = new FormMergeSheet();
                 s.tbDestination.Text = this.destPath;
                 s.tbSource.Text = this.sourcePath;
                 s.ShowDialog();

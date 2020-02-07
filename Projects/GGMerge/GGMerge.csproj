@@ -91,11 +91,11 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="SelectSpreadSheets.cs">
+    <Compile Include="FormMergeSheet.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="SelectSpreadSheets.Designer.cs">
-      <DependentUpon>SelectSpreadSheets.cs</DependentUpon>
+    <Compile Include="FormMergeSheet.Designer.cs">
+      <DependentUpon>FormMergeSheet.cs</DependentUpon>
     </Compile>
     <EmbeddedResource Include="MainForm.resx">
       <DependentUpon>MainForm.cs</DependentUpon>
@@ -109,8 +109,8 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="SelectSpreadSheets.resx">
-      <DependentUpon>SelectSpreadSheets.cs</DependentUpon>
+    <EmbeddedResource Include="FormMergeSheet.resx">
+      <DependentUpon>FormMergeSheet.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
