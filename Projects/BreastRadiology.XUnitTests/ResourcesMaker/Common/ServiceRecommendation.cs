@@ -546,9 +546,9 @@ namespace BreastRadiology.XUnitTests
                                     "projection (Qualifier)")
                             ,
                             new ConceptDef()
-                                .SetCode("LateromedialObliqueSPELLING")
-                                .SetDisplay("Lateromedial oblique SPELLING")
-                                .SetDefinition("[PR] Lateromedial oblique SPELLING")
+                                .SetCode("LateromedialOblique")
+                                .SetDisplay("Lateromedial oblique")
+                                .SetDefinition("[PR] Lateromedial oblique")
                                 .MammoId("47")
                                 .ValidModalities(Modalities.MG | Modalities.US)
                                 .SetSnomedDescription("Procedure | 241055006 | Mammogram - symptomatic (Procedure)+ " +
@@ -556,9 +556,9 @@ namespace BreastRadiology.XUnitTests
                                     "(Qualifier)")
                             ,
                             new ConceptDef()
-                                .SetCode("LateromedialViewSPELLING")
-                                .SetDisplay("Lateromedial view SPELLING")
-                                .SetDefinition("[PR] Lateromedial view SPELLING")
+                                .SetCode("LateromedialView")
+                                .SetDisplay("Lateromedial view")
+                                .SetDefinition("[PR] Lateromedial view")
                                 .MammoId("96")
                                 .ValidModalities(Modalities.MG | Modalities.US)
                                 .SetSnomedDescription("Procedure | 241055006 | Mammogram - symptomatic (Procedure) " +

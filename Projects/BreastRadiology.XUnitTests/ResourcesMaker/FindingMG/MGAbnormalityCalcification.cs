@@ -92,9 +92,9 @@ namespace BreastRadiology.XUnitTests
                              .SetUMLS("C1313950")
                          ,
                          new ConceptDef()
-                             .SetCode("FineADDPrefix")
-                             .SetDisplay("Fine ADD prefix ")
-                             .SetDefinition("[PR] Fine ADD prefix ")
+                             .SetCode("Fine")
+                             .SetDisplay("Fine")
+                             .SetDefinition("[PR] Fine")
                              .MammoId("707")
                              .ValidModalities(Modalities.MG)
                              .SetSnomedDescription("ClinicalFinding | 129761009 | Fine, linear, (casting) " +
@@ -116,9 +116,9 @@ namespace BreastRadiology.XUnitTests
                                  "can occur in almost any part of the body.")
                          ,
                          new ConceptDef()
-                             .SetCode("HeterogeneousADDPrefixCourse")
-                             .SetDisplay("Heterogeneous ADD prefix course")
-                             .SetDefinition("[PR] Heterogeneous ADD prefix course")
+                             .SetCode("CoarseHeterogeneous")
+                             .SetDisplay("Coarse Heterogeneous")
+                             .SetDefinition("[PR] Coarse Heterogeneous")
                              .MammoId("708")
                              .ValidModalities(Modalities.MG)
                              .SetDicom("F-0176F")
@@ -181,9 +181,9 @@ namespace BreastRadiology.XUnitTests
                              .ValidModalities(Modalities.MG)
                          ,
                          new ConceptDef()
-                             .SetCode("LinearADDPrefixFine")
-                             .SetDisplay("Linear ADD prefix fine")
-                             .SetDefinition("[PR] Linear ADD prefix fine")
+                             .SetCode("FineLinear")
+                             .SetDisplay("Fine Linear")
+                             .SetDefinition("[PR] Fine Linear")
                              .MammoId("712")
                              .ValidModalities(Modalities.MG)
                              .SetSnomedDescription("ClinicalFinding | 129761009 | Fine, linear, (casting) " +
@@ -241,9 +241,9 @@ namespace BreastRadiology.XUnitTests
                                  "from the 90� lateral projection to the CC projection.")
                          ,
                          new ConceptDef()
-                             .SetCode("PleomorphicADDPrefixFine")
-                             .SetDisplay("Pleomorphic ADD prefix fine")
-                             .SetDefinition("[PR] Pleomorphic ADD prefix fine")
+                             .SetCode("FinePleomorphic")
+                             .SetDisplay("Fine Pleomorphic")
+                             .SetDefinition("[PR] Fine Pleomorphic")
                              .MammoId("715")
                              .ValidModalities(Modalities.MG)
                              .SetDicom("111344")

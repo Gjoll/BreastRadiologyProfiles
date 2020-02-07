@@ -764,9 +764,9 @@ namespace BreastRadiology.XUnitTests
                                     "or mucous membrane.")
                             ,
                             new ConceptDef()
-                                .SetCode("PhyllodesTumor(SPELLINGREMOVEI)")
-                                .SetDisplay("Phyllodes tumor (SPELLING REMOVE i)")
-                                .SetDefinition("[PR] Phyllodes tumor (SPELLING REMOVE i)")
+                                .SetCode("PhyllodesTumor")
+                                .SetDisplay("Phyllodes tumor")
+                                .SetDefinition("[PR] Phyllodes tumor")
                                 .MammoId("560")
                                 .ValidModalities(Modalities.MRI | Modalities.US)
                                 .SetSnomedDescription("ClinicalFinding | 712989008 | Phyllodes tumor of " +

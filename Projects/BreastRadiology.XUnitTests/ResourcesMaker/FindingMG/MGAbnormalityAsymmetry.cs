@@ -14,7 +14,6 @@ namespace BreastRadiology.XUnitTests
 {
     partial class ResourcesMaker : ConverterBase
     {
-        //# TODO: get from gg
         CSTaskVar MGAbnormalityAsymmetryTypeCS = new CSTaskVar(
              (out CodeSystem cs) =>
                  cs = Self.CreateCodeSystem(
@@ -85,9 +84,9 @@ namespace BreastRadiology.XUnitTests
                                  "1 cm) developing asymmetry, should not avert biopsy.")
                          ,
                          new ConceptDef()
-                             .SetCode("AsymmetryADDPrefixDeveloping")
-                             .SetDisplay("Asymmetry ADD prefix developing")
-                             .SetDefinition("[PR] Asymmetry ADD prefix developing")
+                             .SetCode("DevelopingAsymmetry")
+                             .SetDisplay("Developing Asymmetry")
+                             .SetDefinition("[PR] Developing Asymmetry")
                              .MammoId("X11000")
                              .ValidModalities(Modalities.MG)
                              .SetACR("Global asymmetry is judged relative to the corresponding " +

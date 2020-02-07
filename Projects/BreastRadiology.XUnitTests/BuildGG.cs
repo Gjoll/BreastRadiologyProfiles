@@ -263,6 +263,27 @@ namespace BreastRadiology.XUnitTests
             WriteIds(outputCodePath, csBlockName, (IEnumerable<String>)penIds);
         }
 
+        String FormatCode(String s)
+        {
+            Int32 index = s.ToUpper().IndexOf(" ADD PREFIX");
+            if (index >= 0)
+            {
+                String text = s.Substring(0, index);
+                String prefix = s.Substring(index + 11).Trim();
+                prefix = prefix.ToMachineName();
+                s = $"{prefix} {text}";
+            }
+
+            index = s.ToUpper().IndexOf("(SPELL");
+            if (index >= 0)
+                s = s.Substring(0, index);
+
+            index = s.ToUpper().IndexOf("SPELL");
+            if (index >= 0)
+                s = s.Substring(0, index);
+            return s.Trim();
+        }
+
         void WriteIds(String outputCodePath,
             String csBlockName,
             IEnumerable<String> penIdsEnum)
@@ -286,7 +307,7 @@ namespace BreastRadiology.XUnitTests
                 if (this.spreadSheetData.TryGetRow(penId, out DataRow row) == false)
                     throw new Exception($"Missing value for penid '{penId}'");
 
-                String code = row[8].ToString();
+                String code = FormatCode(row[this.spreadSheetData.itemNameCol].ToString());
                 String conceptBlockName = CodeValue(code);
 
                 String App(String s, Object t, String sb)

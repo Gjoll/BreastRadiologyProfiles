@@ -54,8 +54,8 @@ namespace BreastRadiology.XUnitTests
                          ,
                          new ConceptDef()
                              .SetCode("HetrogeneouslyDense")
-                             .SetDisplay("Hetrogeneously dense ")
-                             .SetDefinition("[PR] Hetrogeneously dense ")
+                             .SetDisplay("Hetrogeneously dense")
+                             .SetDefinition("[PR] Hetrogeneously dense")
                              .MammoId("X10002")
                              .ValidModalities(Modalities.MG)
                              .SetACR("It is not uncommon for some areas in such breasts " +
