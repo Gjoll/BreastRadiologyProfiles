@@ -35,6 +35,14 @@
     },
     {
       "url": "http://www.fragment.com/fragment",
+      "valueUrl": "http://hl7.org/fhir/us/breast-radiology/StructureDefinition/BreastRadObservationNoComponentFragment"
+    },
+    {
+      "url": "http://www.fragment.com/maplink",
+      "valueString": "{\r\n  \"LinkType\": \"fragment\",\r\n  \"ShowChildren\": false,\r\n  \"LinkTarget\": \"http://hl7.org/fhir/us/breast-radiology/StructureDefinition/BreastRadObservationNoComponentFragment\"\r\n}"
+    },
+    {
+      "url": "http://www.fragment.com/fragment",
       "valueUrl": "http://hl7.org/fhir/us/breast-radiology/StructureDefinition/CommonComponentsFragment"
     },
     {
@@ -58,12 +66,28 @@
       "valueString": "{\r\n  \"LinkType\": \"fragment\",\r\n  \"ShowChildren\": false,\r\n  \"LinkTarget\": \"http://hl7.org/fhir/us/breast-radiology/StructureDefinition/ObservedCountFragment\"\r\n}"
     },
     {
+      "url": "http://www.fragment.com/fragment",
+      "valueUrl": "http://hl7.org/fhir/us/breast-radiology/StructureDefinition/ObservedDistributionFragment"
+    },
+    {
+      "url": "http://www.fragment.com/maplink",
+      "valueString": "{\r\n  \"LinkType\": \"fragment\",\r\n  \"ShowChildren\": false,\r\n  \"LinkTarget\": \"http://hl7.org/fhir/us/breast-radiology/StructureDefinition/ObservedDistributionFragment\"\r\n}"
+    },
+    {
+      "url": "http://www.fragment.com/fragment",
+      "valueUrl": "http://hl7.org/fhir/us/breast-radiology/StructureDefinition/ObservedSizeFragment"
+    },
+    {
+      "url": "http://www.fragment.com/maplink",
+      "valueString": "{\r\n  \"LinkType\": \"fragment\",\r\n  \"ShowChildren\": false,\r\n  \"LinkTarget\": \"http://hl7.org/fhir/us/breast-radiology/StructureDefinition/ObservedSizeFragment\"\r\n}"
+    },
+    {
       "url": "http://www.fragment.com/maplink",
       "valueString": "{\r\n  \"LinkType\": \"target\",\r\n  \"ShowChildren\": false,\r\n  \"Cardinality\": \"0..1\",\r\n  \"LinkTarget\": \"http://hl7.org/fhir/us/breast-radiology/StructureDefinition/AssociatedFeatures\"\r\n}"
     },
     {
       "url": "http://www.fragment.com/maplink",
-      "valueString": "{\r\n  \"LinkType\": \"component\",\r\n  \"ShowChildren\": true,\r\n  \"Cardinality\": \"0..1\",\r\n  \"LinkTarget\": \"FibroAdenoma Type\",\r\n  \"ComponentHRef\": \"StructureDefinition-{SDName}-definitions.html#Observation.component:fibroAdenomaType\",\r\n  \"Types\": \"CodeableConcept\",\r\n  \"ValueSet\": \"http://hl7.org/fhir/us/breast-radiology/ValueSet/FibroadenomaVS\"\r\n}"
+      "valueString": "{\r\n  \"LinkType\": \"component\",\r\n  \"ShowChildren\": false,\r\n  \"Cardinality\": \"0..1\",\r\n  \"LinkTarget\": \"FibroAdenoma Type\",\r\n  \"ComponentHRef\": \"StructureDefinition-{SDName}-definitions.html#Observation.component:fibroAdenomaType\",\r\n  \"Types\": \"CodeableConcept\",\r\n  \"References\": [\r\n    \"http://hl7.org/fhir/us/breast-radiology/ValueSet/FibroadenomaVS\"\r\n  ]\r\n}"
     }
   ],
   "url": "http://hl7.org/fhir/us/breast-radiology/StructureDefinition/AbnormalityFibroadenoma",
@@ -91,6 +115,23 @@
         }
       },
       {
+        "id": "Observation.code",
+        "path": "Observation.code",
+        "base": {
+          "path": "Observation.code",
+          "min": 1,
+          "max": "1"
+        },
+        "patternCodeableConcept": {
+          "coding": [
+            {
+              "system": "http://hl7.org/fhir/us/breast-radiology/CodeSystem/ObservationCodes",
+              "code": "abnormalityFibroadenomaObservation"
+            }
+          ]
+        }
+      },
+      {
         "id": "Observation.hasMember",
         "path": "Observation.hasMember",
         "slicing": {
@@ -114,7 +155,7 @@
         "path": "Observation.hasMember",
         "sliceName": "associatedFeatures",
         "short": "'Associated Features' reference",
-        "definition": "This slice references the target 'Associated Features'",
+        "definition": "This slice references the target 'Associated Features'.",
         "min": 0,
         "max": "1",
         "base": {
@@ -154,7 +195,7 @@
         "path": "Observation.component",
         "sliceName": "fibroAdenomaType",
         "short": "FibroAdenoma Type component",
-        "definition": "This slice contains the optional component that refines the fibroadenema type.\nThe value of this component is a codeable concept chosen from the FibroadenomaVS valueset.",
+        "definition": "This slice contains the optional component that refines the fibroadenema type.\n The value of this component is a codeable concept chosen from the FibroadenomaVS valueset.",
         "comment": "This is one component of a group of components that comprise the observation.",
         "min": 0,
         "max": "1",
@@ -168,7 +209,7 @@
         "id": "Observation.component:fibroAdenomaType.code",
         "path": "Observation.component.code",
         "short": "FibroAdenoma Type component code",
-        "definition": "This code identifies the FibroAdenoma Type component",
+        "definition": "This code identifies the FibroAdenoma Type component.",
         "min": 1,
         "max": "1",
         "base": {
@@ -179,7 +220,7 @@
         "patternCodeableConcept": {
           "coding": [
             {
-              "system": "http://hl7.org/fhir/us/breast-radiology/CodeSystem/ComponentSliceCodes",
+              "system": "http://hl7.org/fhir/us/breast-radiology/CodeSystem/ObservationComponentSliceCodes",
               "code": "mgAbnormalityFibroAdenomaType"
             }
           ]

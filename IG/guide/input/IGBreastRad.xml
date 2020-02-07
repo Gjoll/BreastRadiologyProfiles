@@ -1,27 +1,36 @@
-<?xml version="1.0" encoding="utf-8"?>
-<ImplementationGuide xmlns="http://hl7.org/fhir">
-  <id value="hl7.fhir.us.breast-radiology-0.1.0" />
-  <url value="http://hl7.org/fhir/us/breast-radiology/ImplementationGuide/hl7.fhir.us.breast-radiology-0.1.0" />
-  <name value="Breast_Radiology_Reporting_1st_STU_ballot" />
-  <title value="Breast Radiology Reporting - 1st STU ballot" />
-  <status value="draft" />
-  <experimental value="false" />
-  <publisher value="Hl7 - Clinical Interoperability Council" />
+<?xml version="1.0" encoding="UTF-8"?>
+<ImplementationGuide xmlns="http://hl7.org/fhir" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://hl7.org/fhir ../input-cache/schemas-r5/fhir-single.xsd">
+  <id value="hl7.fhir.us.breast-radiology-0.1.0"/>
+  <url value="http://hl7.org/fhir/us/breast-radiology/ImplementationGuide/hl7.fhir.us.breast-radiology-0.1.0"/>
+  <name value="Breast_Radiology_Reporting_1st_STU_ballot"/>
+  <title value="Breast Radiology Reporting - 1st STU ballot"/>
+  <status value="draft"/>
+  <experimental value="false"/>
+  <publisher value="Hl7 - Clinical Interoperability Council"/>
   <contact>
     <telecom>
-      <system value="other" />
-      <value value="http://hl7.org/Special/committees/cic" />
+      <!-- Or whatever URL and/or email address(es) are appropriate -->
+      <system value="other"/>
+      <value value="http://hl7.org/Special/committees/cic"/>
     </telecom>
   </contact>
-  <description value="Breast Radiology Reporting Implementation Guide" />
+  <description value="Breast Radiology Reporting Implementation Guide"/>
   <jurisdiction>
+    <!-- This will drive SNOMED release used -->
     <coding>
-      <system value="http://unstats.un.org/unsd/methods/m49/m49.htm" />
-      <code value="001" />
+      <!-- This is the code for universal -->
+      <system value="http://unstats.un.org/unsd/methods/m49/m49.htm"/>
+      <code value="001"/>
+      <!-- Change to this if the IG is country-specific
+      <system value="http://unstats.un.org/unsd/methods/m49/m49.htm"/>
+      <code value="001"/>
+      -->
     </coding>
   </jurisdiction>
-  <packageId value="hl7.fhir.us.breast-radiology" />
-  <fhirVersion value="4.0.1" />
+  <packageId value="hl7.fhir.us.breast-radiology"/>
+  <!-- This is whatever FHIR version the IG artifacts are targeting (not the version of this file, which should always be 'current release') -->
+  <fhirVersion value="4.0.1"/>
+  <version value="0.0.2"/>
   <definition>
     <grouping id="BaseResources">
       <name value="Main Resources" />
@@ -32,7 +41,7 @@
       <description value="This section contains resources that are commonly used throughout a Breast Radiology Report" />
     </grouping>
     <grouping id="CommonCodesVS">
-      <name value="Common ValueSets" />
+      <name value="Common ValueSets " />
       <description value="This section contains value sets that are commonly used throughout a Breast Radiology Report" />
     </grouping>
     <grouping id="CommonCodesCS">
@@ -181,10 +190,19 @@
     </resource>
     <resource>
       <reference>
-        <reference value="CodeSystem/ComponentSliceCodes" />
+        <reference value="CodeSystem/CalcificationDistributionCS" />
       </reference>
-      <name value="Component Slice Codes CodeSystem" />
-      <description value="Component Slice Codes code system" />
+      <name value="Calcification Distribution CodeSystem" />
+      <description value="Calcification Distribution in an abnormality code system." />
+      <exampleBoolean value="false" />
+      <groupingId value="CommonCodesCS" />
+    </resource>
+    <resource>
+      <reference>
+        <reference value="CodeSystem/CompositionSectionSliceCodes" />
+      </reference>
+      <name value="Composition Section Slice Codes CodeSystem" />
+      <description value="Composition Section Slice Codes code system" />
       <exampleBoolean value="false" />
       <groupingId value="CommonCodesCS" />
     </resource>
@@ -232,15 +250,6 @@
       <description value="Foreign objects observed during a Breast Radiology exam code system." />
       <exampleBoolean value="false" />
       <groupingId value="CommonCodesCS" />
-    </resource>
-    <resource>
-      <reference>
-        <reference value="CodeSystem/MammoCalcificationDistributionCS" />
-      </reference>
-      <name value="Mammography Calcification Distribution CodeSystem" />
-      <description value="Mammography calcification distribution code system." />
-      <exampleBoolean value="false" />
-      <groupingId value="MGCodesCS" />
     </resource>
     <resource>
       <reference>
@@ -311,6 +320,24 @@
       </reference>
       <name value="Not Previously Seen CodeSystem" />
       <description value="NotPreviouslySeen code system" />
+      <exampleBoolean value="false" />
+      <groupingId value="CommonCodesCS" />
+    </resource>
+    <resource>
+      <reference>
+        <reference value="CodeSystem/ObservationCodes" />
+      </reference>
+      <name value="Observation Codes CodeSystem" />
+      <description value="Observation Codes code system" />
+      <exampleBoolean value="false" />
+      <groupingId value="CommonCodesCS" />
+    </resource>
+    <resource>
+      <reference>
+        <reference value="CodeSystem/ObservationComponentSliceCodes" />
+      </reference>
+      <name value="Component Slice Codes CodeSystem" />
+      <description value="Component Slice Codes code system" />
       <exampleBoolean value="false" />
       <groupingId value="CommonCodesCS" />
     </resource>
@@ -433,12 +460,21 @@
     </resource>
     <resource>
       <reference>
+        <reference value="ValueSet/CalcificationDistributionVS" />
+      </reference>
+      <name value="Calcification Distribution ValueSet" />
+      <description value="Calcification Distribution of an abnormality value set." />
+      <exampleBoolean value="false" />
+      <groupingId value="CommonCodesVS" />
+    </resource>
+    <resource>
+      <reference>
         <reference value="ValueSet/ConsistentWithQualifierVS" />
       </reference>
       <name value="ConsistentWithQualifier ValueSet" />
       <description value="ConsistentWithQualifier value set." />
       <exampleBoolean value="false" />
-      <groupingId value="MGCodesVS" />
+      <groupingId value="CommonCodesVS" />
     </resource>
     <resource>
       <reference>
@@ -447,7 +483,7 @@
       <name value="ConsistentWith ValueSet" />
       <description value="ConsistentWith value set." />
       <exampleBoolean value="false" />
-      <groupingId value="MGCodesVS" />
+      <groupingId value="CommonCodesVS" />
     </resource>
     <resource>
       <reference>
@@ -456,7 +492,7 @@
       <name value="CorrespondsWith ValueSet" />
       <description value="CorrespondsWith value set." />
       <exampleBoolean value="false" />
-      <groupingId value="MGCodesVS" />
+      <groupingId value="CommonCodesVS" />
     </resource>
     <resource>
       <reference>
@@ -475,15 +511,6 @@
       <description value="Foreign objects observed during a Breast Radiology exam value set" />
       <exampleBoolean value="false" />
       <groupingId value="CommonCodesVS" />
-    </resource>
-    <resource>
-      <reference>
-        <reference value="ValueSet/MammoCalcificationDistributionVS" />
-      </reference>
-      <name value="Mammography Calcification Distribution ValueSet" />
-      <description value="Mammography calcification distribution value set." />
-      <exampleBoolean value="false" />
-      <groupingId value="MGCodesVS" />
     </resource>
     <resource>
       <reference>
@@ -555,7 +582,7 @@
       <name value="NotPreviouslySeen ValueSet" />
       <description value="NotPreviouslySeen value set." />
       <exampleBoolean value="false" />
-      <groupingId value="MGCodesVS" />
+      <groupingId value="CommonCodesVS" />
     </resource>
     <resource>
       <reference>
@@ -591,7 +618,7 @@
       <name value="Recommendations ValueSet" />
       <description value="Recommendations value set." />
       <exampleBoolean value="false" />
-      <groupingId value="MGCodesVS" />
+      <groupingId value="CommonCodesVS" />
     </resource>
     <resource>
       <reference>
@@ -609,14 +636,14 @@
       <name value="UnitsOfLength ValueSet" />
       <description value="UnitsOfLength value set." />
       <exampleBoolean value="false" />
-      <groupingId value="MGCodesVS" />
+      <groupingId value="CommonCodesVS" />
     </resource>
     <resource>
       <reference>
-        <reference value="StructureDefinition/BreastRadReport" />
+        <reference value="StructureDefinition/BreastRadComposition" />
       </reference>
-      <name value="Breast Radiology Report" />
-      <description value="Breast Radiology Diagnostic Report" />
+      <name value="Breast Radiology Composition" />
+      <description value="Breast Radiology Composition" />
       <exampleBoolean value="false" />
       <groupingId value="BaseResources" />
     </resource>
@@ -626,6 +653,15 @@
       </reference>
       <name value="Service Recommendation" />
       <description value="Service Recommendation" />
+      <exampleBoolean value="false" />
+      <groupingId value="BaseResources" />
+    </resource>
+    <resource>
+      <reference>
+        <reference value="StructureDefinition/BreastRadReport" />
+      </reference>
+      <name value="Breast Radiology Report" />
+      <description value="Breast Radiology Diagnostic Report" />
       <exampleBoolean value="false" />
       <groupingId value="BaseResources" />
     </resource>
@@ -712,15 +748,6 @@
     </resource>
     <resource>
       <reference>
-        <reference value="StructureDefinition/Impression" />
-      </reference>
-      <name value="Impression" />
-      <description value="Impression (ClinicalImpression)" />
-      <exampleBoolean value="false" />
-      <groupingId value="CommonResources" />
-    </resource>
-    <resource>
-      <reference>
         <reference value="StructureDefinition/ConsistentWith" />
       </reference>
       <name value="Consistent With" />
@@ -730,21 +757,12 @@
     </resource>
     <resource>
       <reference>
-        <reference value="StructureDefinition/Mass" />
+        <reference value="StructureDefinition/AbnormalityMass" />
       </reference>
       <name value="Mass" />
       <description value="Mass Observation" />
       <exampleBoolean value="false" />
       <groupingId value="CommonResources" />
-    </resource>
-    <resource>
-      <reference>
-        <reference value="StructureDefinition/BreastBodyLocationExtension" />
-      </reference>
-      <name value="Breast Body Location Extension" />
-      <description value="Breast Body Location extension" />
-      <exampleBoolean value="false" />
-      <groupingId value="ExtensionResources" />
     </resource>
     <resource>
       <reference>
@@ -757,28 +775,10 @@
     </resource>
     <resource>
       <reference>
-        <reference value="StructureDefinition/ImpressionsExtension" />
+        <reference value="StructureDefinition/BreastBodyLocationExtension" />
       </reference>
-      <name value="Impressions Extension" />
-      <description value="Impressions extension" />
-      <exampleBoolean value="false" />
-      <groupingId value="ExtensionResources" />
-    </resource>
-    <resource>
-      <reference>
-        <reference value="StructureDefinition/RelatedClinicalResourcesExtension" />
-      </reference>
-      <name value="Related Clinical Resources Extension" />
-      <description value="Related Clinical Resources section extension" />
-      <exampleBoolean value="false" />
-      <groupingId value="ExtensionResources" />
-    </resource>
-    <resource>
-      <reference>
-        <reference value="StructureDefinition/ServiceRecommendationExtension" />
-      </reference>
-      <name value="Service Recommendation Extension" />
-      <description value="Diagnostic Report Service Recommendation extension" />
+      <name value="Breast Body Location Extension" />
+      <description value="Breast Body Location extension" />
       <exampleBoolean value="false" />
       <groupingId value="ExtensionResources" />
     </resource>
@@ -1027,10 +1027,10 @@
     </resource>
     <resource>
       <reference>
-        <reference value="StructureDefinition/ObservedRegionFragment" />
+        <reference value="StructureDefinition/ObservedDistributionFragment" />
       </reference>
-      <name value="ObservedRegion Fragment" />
-      <description value="Fragment 'Fragment that adds 'Observed Region' element to profile.'" />
+      <name value="ObservedDistribution Fragment" />
+      <description value="Fragment 'Fragment that adds 'Observed Distribution' components to Observation.'" />
       <exampleBoolean value="false" />
       <groupingId value="Fragments" />
     </resource>
@@ -1039,16 +1039,7 @@
         <reference value="StructureDefinition/ObservedSizeFragment" />
       </reference>
       <name value="ObservedSize Fragment" />
-      <description value="Fragment 'Fragment that adds 'Observed Size' element to profile.'" />
-      <exampleBoolean value="false" />
-      <groupingId value="Fragments" />
-    </resource>
-    <resource>
-      <reference>
-        <reference value="StructureDefinition/ServiceRecommendationFragment" />
-      </reference>
-      <name value="Service Recommendation Fragment" />
-      <description value="Fragment 'Service Recommendation Fragment fragment'" />
+      <description value="Fragment 'Fragment that adds 'Observed Size' components to Observation.'" />
       <exampleBoolean value="false" />
       <groupingId value="Fragments" />
     </resource>
@@ -1070,60 +1061,100 @@
       <exampleBoolean value="false" />
       <groupingId value="Fragments" />
     </resource>
+    <!-- You don't need to define any groupings.  The IGPublisher will define them for you.  You only need to do so if your IG is 'special' and it's
+      inappropriate to use the defaults.  Feel free to provide feedback about the defaults... -->
+    <!--    <resource>
+      <reference>
+        <reference value="StructureDefinition/structuredefinition-somePatientProfile"/>
+      </reference>
+      <name value="Name you want in artifact list"/>
+      <description value="Description you want in artifact list"/>
+    </resource>-->
     <page>
-      <nameUrl value="toc.html" />
-      <title value="Table of Contents" />
-      <generation value="html" />
+      <!-- The root will always be toc.html - the template will force it if you don't do it -->
+      <nameUrl value="toc.html"/>
+      <title value="Table of Contents"/>
+      <generation value="html"/>
       <page>
-        <nameUrl value="index.html" />
-        <title value="Breast Radiology Reporting - 1st STU ballot" />
-        <generation value="html" />
+        <nameUrl value="index.html"/>
+		<title value="Breast Radiology Reporting - 1st STU ballot" />
+        <generation value="html"/>
       </page>
       <page>
-        <nameUrl value="background.html" />
-        <title value="Background" />
-        <generation value="html" />
+        <nameUrl value="background.html"/>
+        <title value="Background"/>
+        <generation value="html"/>
       </page>
       <page>
-        <nameUrl value="spec.html" />
-        <title value="Detailed Specification" />
-        <generation value="html" />
+        <nameUrl value="spec.html"/>
+        <title value="Overview"/>
+        <generation value="html"/>
       </page>
       <page>
-        <nameUrl value="mgfinding.html" />
-        <title value="Mammography Finding" />
-        <generation value="html" />
+        <nameUrl value="mgfinding.html"/>
+        <title value="Mammography Finding"/>
+        <generation value="html"/>
       </page>
       <page>
-        <nameUrl value="usfinding.html" />
-        <title value="Ultra-Sound Finding" />
-        <generation value="html" />
+        <nameUrl value="usfinding.html"/>
+        <title value="Ultra-Sound Finding"/>
+        <generation value="html"/>
       </page>
       <page>
-        <nameUrl value="mrifinding.html" />
-        <title value="MRI Finding" />
-        <generation value="html" />
+        <nameUrl value="mrifinding.html"/>
+        <title value="MRI Finding"/>
+        <generation value="html"/>
       </page>
       <page>
-        <nameUrl value="nmfinding.html" />
-        <title value="Nuclear Medicine Finding" />
-        <generation value="html" />
+        <nameUrl value="nmfinding.html"/>
+        <title value="Nuclear Medicine Finding"/>
+        <generation value="html"/>
       </page>
       <page>
-        <nameUrl value="fragments.html" />
-        <title value="Resource Fragments" />
-        <generation value="html" />
+        <nameUrl value="fragments.html"/>
+        <title value="Resource Fragments"/>
+        <generation value="html"/>
       </page>
       <page>
-        <nameUrl value="downloads.html" />
-        <title value="Useful Downloads" />
-        <generation value="html" />
+        <nameUrl value="downloads.html"/>
+        <title value="Useful Downloads"/>
+        <generation value="html"/>
       </page>
       <page>
-        <nameUrl value="changes.html" />
-        <title value="IG Change History" />
-        <generation value="html" />
+        <nameUrl value="changes.html"/>
+        <title value="IG Change History"/>
+        <generation value="html"/>
       </page>
     </page>
+    <parameter>
+      <code value="copyrightyear"/>
+      <value value="2019+"/>
+    </parameter>
+    <!-- releaselabel should be the ballot status for HL7-published IGs. -->
+    <parameter>
+      <code value="releaselabel"/>
+      <value value="CI Build"/>
+    </parameter>
+    <parameter>
+      <code value="find-other-resources"/>
+      <value value="true"/>
+    </parameter>
+	<!-- Uncomment one or more of these if you want to limit which syntaxes are supported or want to disable the display of mappings
+    <parameter>
+      <code value="excludexml"/>
+      <value value="true"/>
+    </parameter>
+    <parameter>
+      <code value="excludejson"/>
+      <value value="true"/>
+    </parameter>
+    <parameter>
+      <code value="excludettl"/>
+      <value value="true"/>
+    </parameter>
+    <parameter>
+      <code value="excludemap"/>
+      <value value="true"/>
+    </parameter>-->
   </definition>
 </ImplementationGuide>

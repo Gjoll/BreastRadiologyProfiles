@@ -19,35 +19,35 @@
     },
     {
       "url": "http://www.fragment.com/maplink",
-      "valueString": "{\r\n  \"LinkType\": \"extension\",\r\n  \"ShowChildren\": true,\r\n  \"Cardinality\": \"1..1\",\r\n  \"ComponentHRef\": \"StructureDefinition-{SDName}-definitions.html#Extension.extension:laterality\",\r\n  \"LocalName\": \"Laterality\",\r\n  \"LinkTarget\": \"https://build.fhir.org/ig/HL7/fhir-skin-wound-ig/branches/master/StructureDefinition-BodySideExt.html\"\r\n}"
+      "valueString": "{\r\n  \"LinkType\": \"extension\",\r\n  \"ShowChildren\": false,\r\n  \"Cardinality\": \"1..1\",\r\n  \"ComponentHRef\": \"StructureDefinition-{SDName}-definitions.html#Extension.extension:laterality\",\r\n  \"LocalName\": \"Laterality\",\r\n  \"LinkTarget\": \"https://build.fhir.org/ig/HL7/fhir-skin-wound-ig/branches/master/StructureDefinition-BodySideExt.html\"\r\n}"
     },
     {
       "url": "http://www.fragment.com/maplink",
-      "valueString": "{\r\n  \"LinkType\": \"component\",\r\n  \"ShowChildren\": true,\r\n  \"Cardinality\": \"1..1\",\r\n  \"LinkTarget\": \"Quadrant\",\r\n  \"ComponentHRef\": \"StructureDefinition-{SDName}-definitions.html#Extension.extension:quadrant\",\r\n  \"Types\": \"CodeableConcept\",\r\n  \"ValueSet\": \"http://hl7.org/fhir/us/breast-radiology/ValueSet/BreastLocationQuadrantVS\"\r\n}"
+      "valueString": "{\r\n  \"LinkType\": \"component\",\r\n  \"ShowChildren\": false,\r\n  \"Cardinality\": \"1..1\",\r\n  \"LinkTarget\": \"Quadrant\",\r\n  \"ComponentHRef\": \"StructureDefinition-{SDName}-definitions.html#Extension.extension:quadrant\",\r\n  \"Types\": \"CodeableConcept\",\r\n  \"References\": [\r\n    \"http://hl7.org/fhir/us/breast-radiology/ValueSet/BreastLocationQuadrantVS\"\r\n  ]\r\n}"
     },
     {
       "url": "http://www.fragment.com/maplink",
-      "valueString": "{\r\n  \"LinkType\": \"component\",\r\n  \"ShowChildren\": true,\r\n  \"Cardinality\": \"0..*\",\r\n  \"LinkTarget\": \"Region\",\r\n  \"ComponentHRef\": \"StructureDefinition-{SDName}-definitions.html#Extension.extension\",\r\n  \"Types\": \"CodeableConcept\",\r\n  \"ValueSet\": \"http://hl7.org/fhir/us/breast-radiology/ValueSet/BreastLocationRegionVS\"\r\n}"
+      "valueString": "{\r\n  \"LinkType\": \"component\",\r\n  \"ShowChildren\": false,\r\n  \"Cardinality\": \"0..*\",\r\n  \"LinkTarget\": \"Region\",\r\n  \"ComponentHRef\": \"StructureDefinition-{SDName}-definitions.html#Extension.extension\",\r\n  \"Types\": \"CodeableConcept\",\r\n  \"References\": [\r\n    \"http://hl7.org/fhir/us/breast-radiology/ValueSet/BreastLocationRegionVS\"\r\n  ]\r\n}"
     },
     {
       "url": "http://www.fragment.com/maplink",
-      "valueString": "{\r\n  \"LinkType\": \"component\",\r\n  \"ShowChildren\": true,\r\n  \"Cardinality\": \"1..1\",\r\n  \"LinkTarget\": \"ClockDirection\",\r\n  \"ComponentHRef\": \"StructureDefinition-{SDName}-definitions.html#Extension.extension\",\r\n  \"Types\": \"CodeableConcept\",\r\n  \"ValueSet\": \"http://hl7.org/fhir/us/breast-radiology/ValueSet/BreastLocationClockVS\"\r\n}"
+      "valueString": "{\r\n  \"LinkType\": \"component\",\r\n  \"ShowChildren\": false,\r\n  \"Cardinality\": \"1..1\",\r\n  \"LinkTarget\": \"ClockDirection\",\r\n  \"ComponentHRef\": \"StructureDefinition-{SDName}-definitions.html#Extension.extension\",\r\n  \"Types\": \"CodeableConcept\",\r\n  \"References\": [\r\n    \"http://hl7.org/fhir/us/breast-radiology/ValueSet/BreastLocationClockVS\"\r\n  ]\r\n}"
     },
     {
       "url": "http://www.fragment.com/maplink",
-      "valueString": "{\r\n  \"LinkType\": \"component\",\r\n  \"ShowChildren\": true,\r\n  \"Cardinality\": \"1..1\",\r\n  \"LinkTarget\": \"Depth\",\r\n  \"ComponentHRef\": \"StructureDefinition-{SDName}-definitions.html#Extension.extension\",\r\n  \"Types\": \"CodeableConcept\",\r\n  \"ValueSet\": \"http://hl7.org/fhir/us/breast-radiology/ValueSet/BreastLocationDepthVS\"\r\n}"
+      "valueString": "{\r\n  \"LinkType\": \"component\",\r\n  \"ShowChildren\": false,\r\n  \"Cardinality\": \"1..1\",\r\n  \"LinkTarget\": \"Depth\",\r\n  \"ComponentHRef\": \"StructureDefinition-{SDName}-definitions.html#Extension.extension\",\r\n  \"Types\": \"CodeableConcept\",\r\n  \"References\": [\r\n    \"http://hl7.org/fhir/us/breast-radiology/ValueSet/BreastLocationDepthVS\"\r\n  ]\r\n}"
     },
     {
       "url": "http://www.fragment.com/maplink",
-      "valueString": "{\r\n  \"LinkType\": \"extension\",\r\n  \"ShowChildren\": true,\r\n  \"Cardinality\": \"0..1\",\r\n  \"ComponentHRef\": \"StructureDefinition-{SDName}-definitions.html#Extension.extension:distanceFromNipple\",\r\n  \"LocalName\": \"Distance From Nipple\",\r\n  \"LinkTarget\": \"http://hl7.org/fhir/us/breast-radiology/StructureDefinition/BodyDistanceFromExtension\"\r\n}"
+      "valueString": "{\r\n  \"LinkType\": \"extension\",\r\n  \"ShowChildren\": false,\r\n  \"Cardinality\": \"0..1\",\r\n  \"ComponentHRef\": \"StructureDefinition-{SDName}-definitions.html#Extension.extension:distanceFromNipple\",\r\n  \"LocalName\": \"Distance From Nipple\",\r\n  \"LinkTarget\": \"http://hl7.org/fhir/us/breast-radiology/StructureDefinition/BodyDistanceFromExtension\"\r\n}"
     },
     {
       "url": "http://www.fragment.com/maplink",
-      "valueString": "{\r\n  \"LinkType\": \"extension\",\r\n  \"ShowChildren\": true,\r\n  \"Cardinality\": \"0..1\",\r\n  \"ComponentHRef\": \"StructureDefinition-{SDName}-definitions.html#Extension.extension:distanceFromChestWall\",\r\n  \"LocalName\": \"Distance From Chest Wall\",\r\n  \"LinkTarget\": \"http://hl7.org/fhir/us/breast-radiology/StructureDefinition/BodyDistanceFromExtension\"\r\n}"
+      "valueString": "{\r\n  \"LinkType\": \"extension\",\r\n  \"ShowChildren\": false,\r\n  \"Cardinality\": \"0..1\",\r\n  \"ComponentHRef\": \"StructureDefinition-{SDName}-definitions.html#Extension.extension:distanceFromChestWall\",\r\n  \"LocalName\": \"Distance From Chest Wall\",\r\n  \"LinkTarget\": \"http://hl7.org/fhir/us/breast-radiology/StructureDefinition/BodyDistanceFromExtension\"\r\n}"
     },
     {
       "url": "http://www.fragment.com/maplink",
-      "valueString": "{\r\n  \"LinkType\": \"extension\",\r\n  \"ShowChildren\": true,\r\n  \"Cardinality\": \"0..1\",\r\n  \"ComponentHRef\": \"StructureDefinition-{SDName}-definitions.html#Extension.extension:distanceFromSkin\",\r\n  \"LocalName\": \"Distance From Skin\",\r\n  \"LinkTarget\": \"http://hl7.org/fhir/us/breast-radiology/StructureDefinition/BodyDistanceFromExtension\"\r\n}"
+      "valueString": "{\r\n  \"LinkType\": \"extension\",\r\n  \"ShowChildren\": false,\r\n  \"Cardinality\": \"0..1\",\r\n  \"ComponentHRef\": \"StructureDefinition-{SDName}-definitions.html#Extension.extension:distanceFromSkin\",\r\n  \"LocalName\": \"Distance From Skin\",\r\n  \"LinkTarget\": \"http://hl7.org/fhir/us/breast-radiology/StructureDefinition/BodyDistanceFromExtension\"\r\n}"
     },
     {
       "url": "http://www.fragment.com/mapname",
@@ -75,7 +75,7 @@
       ]
     }
   ],
-  "description": "<b>Breast Body Location extension</b>\n\nthis extension defines the fields that are used to describe thelocation of an observed item in a breast radiology report\n\nBreast radiology exams have specific ways of defining a location that are unique to this field.",
+  "description": "<b>Breast Body Location extension</b>\n\nthis extension defines the fields that are used to describe the\n location of an observed item in a breast radiology report.\n\nBreast radiology exams have specific ways of defining a location that are unique to this field.",
   "fhirVersion": "4.0.0",
   "kind": "complex-type",
   "abstract": false,
@@ -104,7 +104,7 @@
         ],
         "path": "Extension",
         "short": "Breast Body Location extension",
-        "definition": "this extension defines the fields that are used to describe thelocation of an observed item in a breast radiology report\n\nBreast radiology exams have specific ways of defining a location that are unique to this field.",
+        "definition": "this extension defines the fields that are used to describe the\n location of an observed item in a breast radiology report.\n\nBreast radiology exams have specific ways of defining a location that are unique to this field.",
         "min": 0,
         "max": "*",
         "base": {
@@ -220,7 +220,7 @@
         "path": "Extension.extension",
         "sliceName": "laterality",
         "short": "laterality extension",
-        "definition": "The laterality of the body location",
+        "definition": "The laterality of the body location.",
         "comment": "This is one component of a group of components that comprise the observation.",
         "alias": [
           "extensions",
@@ -255,7 +255,7 @@
         "path": "Extension.extension",
         "sliceName": "quadrant",
         "short": "Quadrant of the body location",
-        "definition": "The quadrant  of the body location",
+        "definition": "The quadrant  of the body location.",
         "comment": "There can be no stigma associated with the use of extensions by any application, project, or standard - regardless of the institution or jurisdiction that uses or defines the extensions.  The use of extensions is what allows the FHIR specification to retain a core level of simplicity for everyone.",
         "alias": [
           "extensions",
@@ -359,7 +359,7 @@
           "xmlAttr"
         ],
         "short": "identifies the meaning of the extension",
-        "definition": "Url for quadrant complex extension item",
+        "definition": "Url for quadrant complex extension item.",
         "comment": "The definition may point directly to a computable or human-readable definition of the extensibility codes, or it may be a logical URI as declared in some other specification. The definition SHALL be a URI for the Structure Definition defining the extension.",
         "min": 1,
         "max": "1",
@@ -418,7 +418,7 @@
         "path": "Extension.extension",
         "sliceName": "region",
         "short": "Region of the body location",
-        "definition": "The region  of the body location",
+        "definition": "The region  of the body location.",
         "comment": "There can be no stigma associated with the use of extensions by any application, project, or standard - regardless of the institution or jurisdiction that uses or defines the extensions.  The use of extensions is what allows the FHIR specification to retain a core level of simplicity for everyone.",
         "alias": [
           "extensions",
@@ -522,7 +522,7 @@
           "xmlAttr"
         ],
         "short": "identifies the meaning of the extension",
-        "definition": "Url for region complex extension item",
+        "definition": "Url for region complex extension item.",
         "comment": "The definition may point directly to a computable or human-readable definition of the extensibility codes, or it may be a logical URI as declared in some other specification. The definition SHALL be a URI for the Structure Definition defining the extension.",
         "min": 1,
         "max": "1",
@@ -685,7 +685,7 @@
           "xmlAttr"
         ],
         "short": "identifies the meaning of the extension",
-        "definition": "Url for clockDirection complex extension item",
+        "definition": "Url for clockDirection complex extension item.",
         "comment": "The definition may point directly to a computable or human-readable definition of the extensibility codes, or it may be a logical URI as declared in some other specification. The definition SHALL be a URI for the Structure Definition defining the extension.",
         "min": 1,
         "max": "1",
@@ -848,7 +848,7 @@
           "xmlAttr"
         ],
         "short": "identifies the meaning of the extension",
-        "definition": "Url for depth complex extension item",
+        "definition": "Url for depth complex extension item.",
         "comment": "The definition may point directly to a computable or human-readable definition of the extensibility codes, or it may be a logical URI as declared in some other specification. The definition SHALL be a URI for the Structure Definition defining the extension.",
         "min": 1,
         "max": "1",
@@ -907,7 +907,7 @@
         "path": "Extension.extension",
         "sliceName": "distanceFromNipple",
         "short": "distanceFromNipple extension",
-        "definition": "This extension slice contains the distanceFromNipple extension",
+        "definition": "This extension slice contains the distanceFromNipple extension.",
         "comment": "This is one component of a group of components that comprise the observation.",
         "alias": [
           "extensions",
@@ -942,7 +942,7 @@
         "path": "Extension.extension",
         "sliceName": "distanceFromChestWall",
         "short": "distanceFromChestWall extension",
-        "definition": "This extension slice contains the distanceFromChestWall extension",
+        "definition": "This extension slice contains the distanceFromChestWall extension.",
         "comment": "This is one component of a group of components that comprise the observation.",
         "alias": [
           "extensions",
@@ -977,7 +977,7 @@
         "path": "Extension.extension",
         "sliceName": "distanceFromSkin",
         "short": "distanceFromSkin extension",
-        "definition": "This extension slice contains the distanceFromSkin extension",
+        "definition": "This extension slice contains the distanceFromSkin extension.",
         "comment": "This is one component of a group of components that comprise the observation.",
         "alias": [
           "extensions",
@@ -1226,7 +1226,7 @@
         ],
         "path": "Extension",
         "short": "Breast Body Location extension",
-        "definition": "this extension defines the fields that are used to describe thelocation of an observed item in a breast radiology report\n\nBreast radiology exams have specific ways of defining a location that are unique to this field.",
+        "definition": "this extension defines the fields that are used to describe the\n location of an observed item in a breast radiology report.\n\nBreast radiology exams have specific ways of defining a location that are unique to this field.",
         "base": {
           "path": "Extension",
           "min": 0,
@@ -1257,7 +1257,7 @@
         "path": "Extension.extension",
         "sliceName": "laterality",
         "short": "laterality extension",
-        "definition": "The laterality of the body location",
+        "definition": "The laterality of the body location.",
         "comment": "This is one component of a group of components that comprise the observation.",
         "min": 1,
         "max": "1",
@@ -1281,7 +1281,7 @@
         "path": "Extension.extension",
         "sliceName": "quadrant",
         "short": "Quadrant of the body location",
-        "definition": "The quadrant  of the body location",
+        "definition": "The quadrant  of the body location.",
         "min": 1,
         "max": "1",
         "base": {
@@ -1299,7 +1299,7 @@
       {
         "id": "Extension.extension:quadrant.url",
         "path": "Extension.extension.url",
-        "definition": "Url for quadrant complex extension item",
+        "definition": "Url for quadrant complex extension item.",
         "type": [
           {
             "code": "uri"
@@ -1325,7 +1325,7 @@
         "path": "Extension.extension",
         "sliceName": "region",
         "short": "Region of the body location",
-        "definition": "The region  of the body location",
+        "definition": "The region  of the body location.",
         "min": 0,
         "max": "*",
         "base": {
@@ -1343,7 +1343,7 @@
       {
         "id": "Extension.extension:region.url",
         "path": "Extension.extension.url",
-        "definition": "Url for region complex extension item",
+        "definition": "Url for region complex extension item.",
         "type": [
           {
             "code": "uri"
@@ -1387,7 +1387,7 @@
       {
         "id": "Extension.extension:clockDirection.url",
         "path": "Extension.extension.url",
-        "definition": "Url for clockDirection complex extension item",
+        "definition": "Url for clockDirection complex extension item.",
         "type": [
           {
             "code": "uri"
@@ -1431,7 +1431,7 @@
       {
         "id": "Extension.extension:depth.url",
         "path": "Extension.extension.url",
-        "definition": "Url for depth complex extension item",
+        "definition": "Url for depth complex extension item.",
         "type": [
           {
             "code": "uri"
@@ -1457,7 +1457,7 @@
         "path": "Extension.extension",
         "sliceName": "distanceFromNipple",
         "short": "distanceFromNipple extension",
-        "definition": "This extension slice contains the distanceFromNipple extension",
+        "definition": "This extension slice contains the distanceFromNipple extension.",
         "comment": "This is one component of a group of components that comprise the observation.",
         "min": 0,
         "max": "1",
@@ -1481,7 +1481,7 @@
         "path": "Extension.extension",
         "sliceName": "distanceFromChestWall",
         "short": "distanceFromChestWall extension",
-        "definition": "This extension slice contains the distanceFromChestWall extension",
+        "definition": "This extension slice contains the distanceFromChestWall extension.",
         "comment": "This is one component of a group of components that comprise the observation.",
         "min": 0,
         "max": "1",
@@ -1505,7 +1505,7 @@
         "path": "Extension.extension",
         "sliceName": "distanceFromSkin",
         "short": "distanceFromSkin extension",
-        "definition": "This extension slice contains the distanceFromSkin extension",
+        "definition": "This extension slice contains the distanceFromSkin extension.",
         "comment": "This is one component of a group of components that comprise the observation.",
         "min": 0,
         "max": "1",

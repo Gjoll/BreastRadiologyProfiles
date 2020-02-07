@@ -19,7 +19,7 @@ namespace BreastRadiology.XUnitTests
                 SDefEditor e = Self.CreateEditor("NMFinding",
                         "NM Finding",
                         "NM Finding",
-                        ObservationUrl,
+                        Global.ObservationUrl,
                         $"{Group_NMResources}",
                         "ObservationSection")
                     .Description("NM Finding",
@@ -28,6 +28,10 @@ namespace BreastRadiology.XUnitTests
                         .AddFragRef(Self.ObservationSectionFragment.Value())
                     ;
                 s = e.SDef;
+
+                // Set Observation.code to unique value for this profile.
+                e.Select("code").Pattern(Self.ObservationCodeNMFinding.ToCodeableConcept());
+
 
                 e.IntroDoc
                     .ReviewedStatus("NOONE", "")

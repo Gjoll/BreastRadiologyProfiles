@@ -23,52 +23,120 @@ namespace BreastRadiology.XUnitTests
                          Group_CommonCodesCS,
                         new ConceptDef[]
                          {
-                        new ConceptDef("Axillary",
-                            "Axillary",
-                            new Definition()
-                                .Line("[PR]")
-                            ),
-                        new ConceptDef("Enlarged",
-                            "Enlarged",
-                            new Definition()
-                                .Line("[PR]")
-                            ),
-                        new ConceptDef("FocalCortex",
-                            "FocalCortex",
-                            new Definition()
-                                .Line("[PR]")
-                            ),
-                        new ConceptDef("UniformThickness",
-                            "UniformThickness",
-                            new Definition()
-                                .Line("[PR]")
-                            ),
-                        new ConceptDef("Intramammory",
-                            "Intramammory",
-                            new Definition()
-                            .CiteStart()
-                            .Line("These are circumscribed masses that are reniform and have hilar fat. They are generally 1 cm or smaller")
-                            .Line("in size. They may be larger than 1 cm and characterized as normal when fat replacement is pro-")
-                            .Line("nounced. They frequently occur in the lateral and usually upper portions of the breast closer to the")
-                            .Line("axilla, although they may occur anywhere in the breast. They usually are seen adjacent to a vein,")
-                            .Line("because the lymphatic drainage of the breast parallels the venous drainage.")
-                            .CiteEnd(BiRadCitation)
-                            ),
-                        new ConceptDef("InternalMargin",
-                            "Internal Margin",
-                            new Definition()
-                                .Line("[PR]")
-                            ),
-                        new ConceptDef("Normal",
-                            "Normal",
-                            new Definition()
-                                .Line("[PR]")
-                            ),
-                        new ConceptDef("PathLymphNode",
-                            "Path Lymph Node",
-                            new Definition()
-                                .Line("[PR]")
-                            )
+                            //+ Type
+                            new ConceptDef()
+                                .SetCode("NodeAxillary")
+                                .SetDisplay("Node axillary")
+                                .SetDefinition("[PR] Node axillary")
+                                .MammoId("648")
+                                .ValidModalities(Modalities.MG | Modalities.US)
+                                .SetSnomedDescription("BodyStructure | 68171009 | Axillary lymph node structure " +
+                                    "(Bodypart)")
+                                .SetUMLS("Axillary Nodes. The axillary nodes are a group of " +
+                                    "lymph nodes located in the axillary (or armpit) region " +
+                                    "of the body. They perform the vital function of filtration " +
+                                    "and conduction of lymph from the upper limbs, pectoral " +
+                                    "region, and upper back.There are five axillary lymph " +
+                                    "node groups, namely the lateral (humeral), anterior " +
+                                    "(pectoral), posterior (subscapular), central and " +
+                                    "apical nodes.")
+                            ,
+                            new ConceptDef()
+                                .SetCode("NodeEnlarged")
+                                .SetDisplay("Node enlarged")
+                                .SetDefinition("[PR] Node enlarged")
+                                .MammoId("649")
+                                .ValidModalities(Modalities.MG | Modalities.US)
+                                .SetSnomedCode("274744005")
+                                .SetSnomedDescription("ClinicalFinding | Localized enlarged lymph nodes " +
+                                    "(Disorder)")
+                                .SetUMLS("Swollen lymph nodes usually occur as a result of " +
+                                    "infection from bacteria or viruses. Rarely, swollen " +
+                                    "lymph nodes are caused by cancer.Your lymph nodes, " +
+                                    "also called lymph glands, play a vital role in your " +
+                                    "body's ability to fight off infections. They function " +
+                                    "as filters, trapping viruses, bacteria and other " +
+                                    "causes of illnesses before they can infect other " +
+                                    "parts of your body. Common areas where you might " +
+                                    "notice swollen lymph nodes include your neck, under " +
+                                    "your chin, in your armpits and in your groin.")
+                            ,
+                            new ConceptDef()
+                                .SetCode("NodeFocalCortex")
+                                .SetDisplay("Node focal cortex")
+                                .SetDefinition("[PR] Node focal cortex")
+                                .MammoId("662")
+                                .ValidModalities(Modalities.MG | Modalities.US)
+                            ,
+                            new ConceptDef()
+                                .SetCode("NodeInfraclavicular")
+                                .SetDisplay("Node infraclavicular")
+                                .SetDefinition("[PR] Node infraclavicular")
+                                .MammoId("665")
+                                .ValidModalities(Modalities.US)
+                                .SetSnomedDescription("BodyStructure | 9659009 | Infraclavicular lymph node " +
+                                    "(Bodypart)")
+                                .SetUMLS("(Infraclavicular labeled at upper left.) One or two " +
+                                    "deltopectoral lymph nodes (or infraclavicular nodes) " +
+                                    "are found beside the cephalic vein, between the pectoralis " +
+                                    "major and deltoideus, immediately below the clavicle " +
+                                    ". They are situated in the course of the external " +
+                                    "collecting trunks of the arm.")
+                            ,
+                            new ConceptDef()
+                                .SetCode("NodeIntramammary")
+                                .SetDisplay("Node intramammary")
+                                .SetDefinition("[PR] Node intramammary")
+                                .MammoId("650")
+                                .ValidModalities(Modalities.MG | Modalities.US)
+                                .SetSnomedDescription("BodyStructure | 443808008 | Structure of intramammary " +
+                                    "lymph node (Bodypart)")
+                                .SetUMLS("Lymph nodes found within the breast tissue.")
+                                .SetACR("These are circumscribed masses that are reniform " +
+                                    "and have hilar fat. They are generally 1 cm or smallerin " +
+                                    "size. They may be larger than 1 cm and characterized " +
+                                    "as normal when fat replacement is pronounced. They " +
+                                    "frequently occur in the lateral and usually upper " +
+                                    "portions of the breast closer to theaxilla, although " +
+                                    "they may occur anywhere in the breast. They usually " +
+                                    "are seen adjacent to a vein,because the lymphatic " +
+                                    "drainage of the breast parallels the venous drainage.")
+                            ,
+                            new ConceptDef()
+                                .SetCode("NodeLymph")
+                                .SetDisplay("Node lymph")
+                                .SetDefinition("[PR] Node lymph")
+                                .MammoId("651")
+                                .ValidModalities(Modalities.MG | Modalities.US)
+                            ,
+                            new ConceptDef()
+                                .SetCode("NodeLymphNormal")
+                                .SetDisplay("Node lymph normal")
+                                .SetDefinition("[PR] Node lymph normal")
+                                .MammoId("652")
+                                .ValidModalities(Modalities.MG | Modalities.US)
+                            ,
+                            new ConceptDef()
+                                .SetCode("NodeSupraclavicular")
+                                .SetDisplay("Node supraclavicular")
+                                .SetDefinition("[PR] Node supraclavicular")
+                                .MammoId("666")
+                                .ValidModalities(Modalities.US)
+                                .SetSnomedDescription("BodyStructure | 76838003 | Structure of supraclavicular " +
+                                    "lymph node (Bodypart)")
+                                .SetUMLS("The supraclavicular lymph nodes are a set of lymph " +
+                                    "nodes found just above the clavicle or collarbone, " +
+                                    "toward the hollow of the neck. Lymph nodes are responsible " +
+                                    "for filtering the lymphatic fluid of unwanted debris " +
+                                    "and bacteria.")
+                            ,
+                            new ConceptDef()
+                                .SetCode("NodeUniformThickness")
+                                .SetDisplay("Node uniform thickness")
+                                .SetDefinition("[PR] Node uniform thickness")
+                                .MammoId("663")
+                                .ValidModalities(Modalities.MG | Modalities.US)
+                            //- Type
                          }
                      )
                  );
@@ -95,25 +163,30 @@ namespace BreastRadiology.XUnitTests
                 SDefEditor e = Self.CreateEditor("AbnormalityLymphNode",
                     "LymphNode",
                     "Lymph Node",
-                    ObservationUrl,
+                    Global.ObservationUrl,
                     $"{Group_CommonResources}/AbnormalityLymphNode",
                         "ObservationLeaf")
                     .AddFragRef(Self.ObservationLeafFragment.Value())
-                    .Description("LymphNode Observation",
-                        new Markdown()
-                    )
                     .AddFragRef(Self.TumorSatelliteFragment.Value())
-
                     .AddFragRef(Self.ObservationNoDeviceFragment.Value())
                     .AddFragRef(Self.ObservationNoValueFragment.Value())
+                    .AddFragRef(Self.ObservationNoComponentFragment.Value())
                     .AddFragRef(Self.CommonComponentsFragment.Value())
                     .AddFragRef(Self.ShapeComponentsFragment.Value())
                     .AddFragRef(Self.ObservedCountComponentFragment.Value())
+                    .AddFragRef(Self.ObservedDistributionComponentFragment.Value())
+                    .AddFragRef(Self.ObservedSizeComponentFragment.Value())
                     .AddFragRef(Self.NotPreviouslySeenComponentsFragment.Value())
                     .AddFragRef(Self.CorrespondsWithComponentFragment.Value())
+                    .Description("LymphNode Observation",
+                        new Markdown()
+                    )
                     ;
 
                 s = e.SDef;
+
+                // Set Observation.code to unique value for this profile.
+                e.Select("code").Pattern(Self.ObservationCodeAbnormalityLymphNode.ToCodeableConcept());
 
                 e.IntroDoc
                     .ReviewedStatus("NOONE", "")
@@ -124,7 +197,7 @@ namespace BreastRadiology.XUnitTests
 
                 e.StartComponentSliceing();
                 e.ComponentSliceCodeableConcept("lymphNodeType",
-                    Self.CodeAbnormalityLymphNodeType.ToCodeableConcept(),
+                    Self.ComponentSliceCodeAbnormalityLymphNodeType.ToCodeableConcept(),
                     binding,
                     BindingStrength.Required,
                     0,

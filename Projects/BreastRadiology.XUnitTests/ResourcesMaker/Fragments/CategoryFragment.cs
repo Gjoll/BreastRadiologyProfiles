@@ -15,7 +15,7 @@ namespace BreastRadiology.XUnitTests
                 SDefEditor e = Self.CreateFragment("CategoryFragment",
                         "Category Fragment",
                         "Category/Fragment",
-                        ObservationUrl)
+                        Global.ObservationUrl)
                     .Description("Fix Observation.category Fragment",
                         new Markdown()
                             .Paragraph("This fragment slices Observation.category and fixes the observation.code value to 'imaging'.")
@@ -26,8 +26,11 @@ namespace BreastRadiology.XUnitTests
                    .ReviewedStatus("NOONE", "")
                    ;
 
-                ElementTreeNode eDef = e.Get("category");
-                eDef.ElementDefinition.Card(1, eDef.ElementDefinition.Max);
+                {
+                    ElementTreeNode eDef = e.Get("category");
+                    eDef.ElementDefinition.Card(1, eDef.ElementDefinition.Max);
+                }
+
                 e.SliceSelfByPattern("category",
                     "categoryImaging",
                     new CodeableConcept("http://terminology.hl7.org/CodeSystem/observation-category", "imaging"))

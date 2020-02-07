@@ -2155,12 +2155,12 @@
         </member>
         <member name="P:Hl7.Fhir.Model.CodeSystem.FilterComponent.OperatorElement">
             <summary>
-            = | is-a | descendent-of | is-not-a | regex | in | not-in | generalizes | exists
+            Operators that can be used with filter
             </summary>
         </member>
         <member name="P:Hl7.Fhir.Model.CodeSystem.FilterComponent.Operator">
             <summary>
-            = | is-a | descendent-of | is-not-a | regex | in | not-in | generalizes | exists
+            Operators that can be used with filter
             </summary>
             <remarks>This uses the native .NET datatype, rather than the FHIR equivalent</remarks>
         </member>
@@ -3916,12 +3916,12 @@
         </member>
         <member name="P:Hl7.Fhir.Model.ActivityDefinition.IntentElement">
             <summary>
-            proposal | plan | directive | order | original-order | reflex-order | filler-order | instance-order | option
+            proposal | plan | order
             </summary>
         </member>
         <member name="P:Hl7.Fhir.Model.ActivityDefinition.Intent">
             <summary>
-            proposal | plan | directive | order | original-order | reflex-order | filler-order | instance-order | option
+            proposal | plan | order
             </summary>
             <remarks>This uses the native .NET datatype, rather than the FHIR equivalent</remarks>
         </member>
@@ -5005,12 +5005,12 @@
         </member>
         <member name="P:Hl7.Fhir.Model.AppointmentResponse.ParticipantStatusElement">
             <summary>
-            accepted | declined | tentative | needs-action
+            accepted | declined | tentative | in-process | completed | needs-action | entered-in-error
             </summary>
         </member>
         <member name="P:Hl7.Fhir.Model.AppointmentResponse.ParticipantStatus">
             <summary>
-            accepted | declined | tentative | needs-action
+            accepted | declined | tentative | in-process | completed | needs-action | entered-in-error
             </summary>
             <remarks>This uses the native .NET datatype, rather than the FHIR equivalent</remarks>
         </member>
@@ -6992,12 +6992,12 @@
         </member>
         <member name="P:Hl7.Fhir.Model.CarePlan.DetailComponent.KindElement">
             <summary>
-            Appointment | CommunicationRequest | DeviceRequest | MedicationRequest | NutritionOrder | Task | ServiceRequest | VisionPrescription
+            Kind of resource
             </summary>
         </member>
         <member name="P:Hl7.Fhir.Model.CarePlan.DetailComponent.Kind">
             <summary>
-            Appointment | CommunicationRequest | DeviceRequest | MedicationRequest | NutritionOrder | Task | ServiceRequest | VisionPrescription
+            Kind of resource
             </summary>
             <remarks>This uses the native .NET datatype, rather than the FHIR equivalent</remarks>
         </member>
@@ -7155,12 +7155,12 @@
         </member>
         <member name="P:Hl7.Fhir.Model.CarePlan.StatusElement">
             <summary>
-            draft | active | on-hold | revoked | completed | entered-in-error | unknown
+            draft | active | suspended | completed | entered-in-error | cancelled | unknown
             </summary>
         </member>
         <member name="P:Hl7.Fhir.Model.CarePlan.Status">
             <summary>
-            draft | active | on-hold | revoked | completed | entered-in-error | unknown
+            draft | active | suspended | completed | entered-in-error | cancelled | unknown
             </summary>
             <remarks>This uses the native .NET datatype, rather than the FHIR equivalent</remarks>
         </member>
@@ -9468,12 +9468,12 @@
         </member>
         <member name="P:Hl7.Fhir.Model.ClinicalImpression.StatusElement">
             <summary>
-            in-progress | completed | entered-in-error
+            draft | completed | entered-in-error
             </summary>
         </member>
         <member name="P:Hl7.Fhir.Model.ClinicalImpression.Status">
             <summary>
-            in-progress | completed | entered-in-error
+            draft | completed | entered-in-error
             </summary>
             <remarks>This uses the native .NET datatype, rather than the FHIR equivalent</remarks>
         </member>
@@ -9666,12 +9666,12 @@
         </member>
         <member name="P:Hl7.Fhir.Model.Communication.StatusElement">
             <summary>
-            preparation | in-progress | not-done | on-hold | stopped | completed | entered-in-error | unknown
+            preparation | in-progress | not-done | suspended | aborted | completed | entered-in-error
             </summary>
         </member>
         <member name="P:Hl7.Fhir.Model.Communication.Status">
             <summary>
-            preparation | in-progress | not-done | on-hold | stopped | completed | entered-in-error | unknown
+            preparation | in-progress | not-done | suspended | aborted | completed | entered-in-error
             </summary>
             <remarks>This uses the native .NET datatype, rather than the FHIR equivalent</remarks>
         </member>
@@ -9687,12 +9687,12 @@
         </member>
         <member name="P:Hl7.Fhir.Model.Communication.PriorityElement">
             <summary>
-            routine | urgent | asap | stat
+            Message urgency
             </summary>
         </member>
         <member name="P:Hl7.Fhir.Model.Communication.Priority">
             <summary>
-            routine | urgent | asap | stat
+            Message urgency
             </summary>
             <remarks>This uses the native .NET datatype, rather than the FHIR equivalent</remarks>
         </member>
@@ -9805,12 +9805,12 @@
         </member>
         <member name="P:Hl7.Fhir.Model.CommunicationRequest.StatusElement">
             <summary>
-            draft | active | on-hold | revoked | completed | entered-in-error | unknown
+            draft | active | suspended | cancelled | completed | entered-in-error | unknown
             </summary>
         </member>
         <member name="P:Hl7.Fhir.Model.CommunicationRequest.Status">
             <summary>
-            draft | active | on-hold | revoked | completed | entered-in-error | unknown
+            draft | active | suspended | cancelled | completed | entered-in-error | unknown
             </summary>
             <remarks>This uses the native .NET datatype, rather than the FHIR equivalent</remarks>
         </member>
@@ -9826,12 +9826,12 @@
         </member>
         <member name="P:Hl7.Fhir.Model.CommunicationRequest.PriorityElement">
             <summary>
-            routine | urgent | asap | stat
+            Message urgency
             </summary>
         </member>
         <member name="P:Hl7.Fhir.Model.CommunicationRequest.Priority">
             <summary>
-            routine | urgent | asap | stat
+            Message urgency
             </summary>
             <remarks>This uses the native .NET datatype, rather than the FHIR equivalent</remarks>
         </member>
@@ -11050,12 +11050,12 @@
         </member>
         <member name="P:Hl7.Fhir.Model.Contract.ContentDefinitionComponent.PublicationStatusElement">
             <summary>
-            amended | appended | cancelled | disputed | entered-in-error | executable | executed | negotiable | offered | policy | rejected | renewed | revoked | resolved | terminated
+            draft | active | retired | unknown
             </summary>
         </member>
         <member name="P:Hl7.Fhir.Model.Contract.ContentDefinitionComponent.PublicationStatus">
             <summary>
-            amended | appended | cancelled | disputed | entered-in-error | executable | executed | negotiable | offered | policy | rejected | renewed | revoked | resolved | terminated
+            draft | active | retired | unknown
             </summary>
             <remarks>This uses the native .NET datatype, rather than the FHIR equivalent</remarks>
         </member>
@@ -11699,12 +11699,12 @@
         </member>
         <member name="P:Hl7.Fhir.Model.Contract.StatusElement">
             <summary>
-            amended | appended | cancelled | disputed | entered-in-error | executable | executed | negotiable | offered | policy | rejected | renewed | revoked | resolved | terminated
+            draft | active | suspended | cancelled | completed | entered-in-error | unknown
             </summary>
         </member>
         <member name="P:Hl7.Fhir.Model.Contract.Status">
             <summary>
-            amended | appended | cancelled | disputed | entered-in-error | executable | executed | negotiable | offered | policy | rejected | renewed | revoked | resolved | terminated
+            draft | active | suspended | cancelled | completed | entered-in-error | unknown
             </summary>
             <remarks>This uses the native .NET datatype, rather than the FHIR equivalent</remarks>
         </member>
@@ -13996,34 +13996,34 @@
         </member>
         <member name="P:Hl7.Fhir.Model.DeviceRequest.StatusElement">
             <summary>
-            draft | active | on-hold | revoked | completed | entered-in-error | unknown
+            draft | active | suspended | completed | entered-in-error | cancelled
             </summary>
         </member>
         <member name="P:Hl7.Fhir.Model.DeviceRequest.Status">
             <summary>
-            draft | active | on-hold | revoked | completed | entered-in-error | unknown
+            draft | active | suspended | completed | entered-in-error | cancelled
             </summary>
             <remarks>This uses the native .NET datatype, rather than the FHIR equivalent</remarks>
         </member>
         <member name="P:Hl7.Fhir.Model.DeviceRequest.IntentElement">
             <summary>
-            proposal | plan | directive | order | original-order | reflex-order | filler-order | instance-order | option
+            proposal | plan | original-order | encoded | reflex-order
             </summary>
         </member>
         <member name="P:Hl7.Fhir.Model.DeviceRequest.Intent">
             <summary>
-            proposal | plan | directive | order | original-order | reflex-order | filler-order | instance-order | option
+            proposal | plan | original-order | encoded | reflex-order
             </summary>
             <remarks>This uses the native .NET datatype, rather than the FHIR equivalent</remarks>
         </member>
         <member name="P:Hl7.Fhir.Model.DeviceRequest.PriorityElement">
             <summary>
-            routine | urgent | asap | stat
+            Indicates how quickly the {{title}} should be addressed with respect to other requests
             </summary>
         </member>
         <member name="P:Hl7.Fhir.Model.DeviceRequest.Priority">
             <summary>
-            routine | urgent | asap | stat
+            Indicates how quickly the {{title}} should be addressed with respect to other requests
             </summary>
             <remarks>This uses the native .NET datatype, rather than the FHIR equivalent</remarks>
         </member>
@@ -14620,12 +14620,12 @@
         </member>
         <member name="P:Hl7.Fhir.Model.DocumentReference.DocStatusElement">
             <summary>
-            preliminary | final | amended | entered-in-error
+            preliminary | final | appended | amended | entered-in-error
             </summary>
         </member>
         <member name="P:Hl7.Fhir.Model.DocumentReference.DocStatus">
             <summary>
-            preliminary | final | amended | entered-in-error
+            preliminary | final | appended | amended | entered-in-error
             </summary>
             <remarks>This uses the native .NET datatype, rather than the FHIR equivalent</remarks>
         </member>
@@ -18972,12 +18972,12 @@
         </member>
         <member name="P:Hl7.Fhir.Model.GraphDefinition.CompartmentComponent.CodeElement">
             <summary>
-            Patient | Encounter | RelatedPerson | Practitioner | Device
+            Identifies the compartment
             </summary>
         </member>
         <member name="P:Hl7.Fhir.Model.GraphDefinition.CompartmentComponent.Code">
             <summary>
-            Patient | Encounter | RelatedPerson | Practitioner | Device
+            Identifies the compartment
             </summary>
             <remarks>This uses the native .NET datatype, rather than the FHIR equivalent</remarks>
         </member>
@@ -25370,12 +25370,12 @@
         </member>
         <member name="P:Hl7.Fhir.Model.Media.StatusElement">
             <summary>
-            preparation | in-progress | not-done | on-hold | stopped | completed | entered-in-error | unknown
+            preparation | in-progress | not-done | suspended | aborted | completed | entered-in-error | unknown
             </summary>
         </member>
         <member name="P:Hl7.Fhir.Model.Media.Status">
             <summary>
-            preparation | in-progress | not-done | on-hold | stopped | completed | entered-in-error | unknown
+            preparation | in-progress | not-done | suspended | aborted | completed | entered-in-error | unknown
             </summary>
             <remarks>This uses the native .NET datatype, rather than the FHIR equivalent</remarks>
         </member>
@@ -25942,12 +25942,12 @@
         </member>
         <member name="P:Hl7.Fhir.Model.MedicationDispense.StatusElement">
             <summary>
-            preparation | in-progress | cancelled | on-hold | completed | entered-in-error | stopped | declined | unknown
+            preparation | in-progress | cancelled | on-hold | completed | entered-in-error | stopped | unknown
             </summary>
         </member>
         <member name="P:Hl7.Fhir.Model.MedicationDispense.Status">
             <summary>
-            preparation | in-progress | cancelled | on-hold | completed | entered-in-error | stopped | declined | unknown
+            preparation | in-progress | cancelled | on-hold | completed | entered-in-error | stopped | unknown
             </summary>
             <remarks>This uses the native .NET datatype, rather than the FHIR equivalent</remarks>
         </member>
@@ -26631,12 +26631,12 @@
         </member>
         <member name="P:Hl7.Fhir.Model.MedicationRequest.IntentElement">
             <summary>
-            proposal | plan | order | original-order | reflex-order | filler-order | instance-order | option
+            proposal | plan | order | original-order | instance-order | option
             </summary>
         </member>
         <member name="P:Hl7.Fhir.Model.MedicationRequest.Intent">
             <summary>
-            proposal | plan | order | original-order | reflex-order | filler-order | instance-order | option
+            proposal | plan | order | original-order | instance-order | option
             </summary>
             <remarks>This uses the native .NET datatype, rather than the FHIR equivalent</remarks>
         </member>
@@ -30852,23 +30852,23 @@
         </member>
         <member name="P:Hl7.Fhir.Model.NutritionOrder.StatusElement">
             <summary>
-            draft | active | on-hold | revoked | completed | entered-in-error | unknown
+            proposed | draft | planned | requested | active | on-hold | completed | cancelled | entered-in-error
             </summary>
         </member>
         <member name="P:Hl7.Fhir.Model.NutritionOrder.Status">
             <summary>
-            draft | active | on-hold | revoked | completed | entered-in-error | unknown
+            proposed | draft | planned | requested | active | on-hold | completed | cancelled | entered-in-error
             </summary>
             <remarks>This uses the native .NET datatype, rather than the FHIR equivalent</remarks>
         </member>
         <member name="P:Hl7.Fhir.Model.NutritionOrder.IntentElement">
             <summary>
-            proposal | plan | directive | order | original-order | reflex-order | filler-order | instance-order | option
+            proposal | plan | order
             </summary>
         </member>
         <member name="P:Hl7.Fhir.Model.NutritionOrder.Intent">
             <summary>
-            proposal | plan | directive | order | original-order | reflex-order | filler-order | instance-order | option
+            proposal | plan | order
             </summary>
             <remarks>This uses the native .NET datatype, rather than the FHIR equivalent</remarks>
         </member>
@@ -33808,12 +33808,12 @@
         </member>
         <member name="P:Hl7.Fhir.Model.Procedure.StatusElement">
             <summary>
-            preparation | in-progress | not-done | on-hold | stopped | completed | entered-in-error | unknown
+            preparation | in-progress | not-done | suspended | aborted | completed | entered-in-error | unknown
             </summary>
         </member>
         <member name="P:Hl7.Fhir.Model.Procedure.Status">
             <summary>
-            preparation | in-progress | not-done | on-hold | stopped | completed | entered-in-error | unknown
+            preparation | in-progress | not-done | suspended | aborted | completed | entered-in-error | unknown
             </summary>
             <remarks>This uses the native .NET datatype, rather than the FHIR equivalent</remarks>
         </member>
@@ -35480,23 +35480,23 @@
         </member>
         <member name="P:Hl7.Fhir.Model.RequestGroup.StatusElement">
             <summary>
-            draft | active | on-hold | revoked | completed | entered-in-error | unknown
+            draft | active | suspended | cancelled | completed | entered-in-error | unknown
             </summary>
         </member>
         <member name="P:Hl7.Fhir.Model.RequestGroup.Status">
             <summary>
-            draft | active | on-hold | revoked | completed | entered-in-error | unknown
+            draft | active | suspended | cancelled | completed | entered-in-error | unknown
             </summary>
             <remarks>This uses the native .NET datatype, rather than the FHIR equivalent</remarks>
         </member>
         <member name="P:Hl7.Fhir.Model.RequestGroup.IntentElement">
             <summary>
-            proposal | plan | directive | order | original-order | reflex-order | filler-order | instance-order | option
+            proposal | plan | order
             </summary>
         </member>
         <member name="P:Hl7.Fhir.Model.RequestGroup.Intent">
             <summary>
-            proposal | plan | directive | order | original-order | reflex-order | filler-order | instance-order | option
+            proposal | plan | order
             </summary>
             <remarks>This uses the native .NET datatype, rather than the FHIR equivalent</remarks>
         </member>
@@ -37816,23 +37816,23 @@
         </member>
         <member name="P:Hl7.Fhir.Model.ServiceRequest.StatusElement">
             <summary>
-            draft | active | on-hold | revoked | completed | entered-in-error | unknown
+            draft | active | suspended | completed | entered-in-error | cancelled
             </summary>
         </member>
         <member name="P:Hl7.Fhir.Model.ServiceRequest.Status">
             <summary>
-            draft | active | on-hold | revoked | completed | entered-in-error | unknown
+            draft | active | suspended | completed | entered-in-error | cancelled
             </summary>
             <remarks>This uses the native .NET datatype, rather than the FHIR equivalent</remarks>
         </member>
         <member name="P:Hl7.Fhir.Model.ServiceRequest.IntentElement">
             <summary>
-            proposal | plan | directive | order | original-order | reflex-order | filler-order | instance-order | option
+            proposal | plan | order +
             </summary>
         </member>
         <member name="P:Hl7.Fhir.Model.ServiceRequest.Intent">
             <summary>
-            proposal | plan | directive | order | original-order | reflex-order | filler-order | instance-order | option
+            proposal | plan | order +
             </summary>
             <remarks>This uses the native .NET datatype, rather than the FHIR equivalent</remarks>
         </member>
@@ -41996,12 +41996,6 @@
             </summary>
         </member>
         <member name="F:Hl7.Fhir.Model.FHIRVersion.N4_0_0">
-            <summary>
-            MISSING DESCRIPTION<br/>
-            (system: http://hl7.org/fhir/FHIR-version)
-            </summary>
-        </member>
-        <member name="F:Hl7.Fhir.Model.FHIRVersion.N4_0_1">
             <summary>
             MISSING DESCRIPTION<br/>
             (system: http://hl7.org/fhir/FHIR-version)
@@ -50438,14 +50432,6 @@
             <param name="externalResolver"></param>
             <returns></returns>
         </member>
-        <member name="M:Hl7.Fhir.ElementModel.ScopedNodeExtensions.GetRootResource(Hl7.Fhir.ElementModel.ITypedElement)">
-            <summary>
-            When the ParentResource contains another resource, and that contained resource is the focus (node) then 
-            ParentResource is the RootResource. Otherwise null
-            </summary>
-            <param name="element">The element node that has the focus. This must be of type ScopedNode</param>
-            <returns></returns>
-        </member>
         <member name="M:Hl7.Fhir.Serialization.PocoBuilder.BuildFrom(Hl7.Fhir.ElementModel.ISourceNode,System.Type)">
             <summary>
             Build a POCO from an ISourceNode.
@@ -50565,11 +50551,6 @@
         <member name="P:Hl7.Fhir.Serialization.SerializerSettings.AppendNewLine">
             <summary>
             Add new line at the end of the serialized xml or json output.
-            </summary>
-        </member>
-        <member name="P:Hl7.Fhir.Serialization.SerializerSettings.TrimWhiteSpacesInXml">
-            <summary>
-            Trim whitespaces at the beginning and end of xml attribute value
             </summary>
         </member>
         <member name="M:Hl7.Fhir.Serialization.SerializerSettings.#ctor">

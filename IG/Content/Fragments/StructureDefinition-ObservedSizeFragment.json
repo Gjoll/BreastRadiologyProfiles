@@ -15,7 +15,7 @@
     },
     {
       "url": "http://www.fragment.com/maplink",
-      "valueString": "{\r\n  \"LinkType\": \"component\",\r\n  \"ShowChildren\": true,\r\n  \"Cardinality\": \"0..1\",\r\n  \"LinkTarget\": \"Observed Size\",\r\n  \"ComponentHRef\": \"StructureDefinition-{SDName}-definitions.html#Observation.component:observedSize\",\r\n  \"Types\": \"Quantity or Range\",\r\n  \"ValueSet\": null\r\n}"
+      "valueString": "{\r\n  \"LinkType\": \"component\",\r\n  \"ShowChildren\": false,\r\n  \"Cardinality\": \"0..3\",\r\n  \"LinkTarget\": \"Observed Size\",\r\n  \"ComponentHRef\": \"StructureDefinition-{SDName}-definitions.html#Observation.component:obsSize\",\r\n  \"Types\": \"Quantity or Range\",\r\n  \"References\": [\r\n    \"http://hl7.org/fhir/us/breast-radiology/ValueSet/UnitsOfLengthVS\"\r\n  ]\r\n}"
     }
   ],
   "url": "http://hl7.org/fhir/us/breast-radiology/StructureDefinition/ObservedSizeFragment",
@@ -23,7 +23,7 @@
   "name": "ObservedSizeFragment",
   "title": "ObservedSize Fragment",
   "status": "draft",
-  "description": "<b>Fragment that adds 'Observed Size' element to profile.</b>",
+  "description": "<b>Fragment that adds 'Observed Size' components to Observation.</b>",
   "fhirVersion": "4.0.0",
   "kind": "resource",
   "abstract": true,
@@ -35,7 +35,7 @@
       {
         "id": "Observation",
         "path": "Observation",
-        "short": "Fragment that adds 'Observed Size' element to profile.",
+        "short": "Fragment that adds 'Observed Size' components to Observation.",
         "base": {
           "path": "Observation",
           "min": 0,
@@ -61,14 +61,14 @@
         }
       },
       {
-        "id": "Observation.component:observedSize",
+        "id": "Observation.component:obsSize",
         "path": "Observation.component",
-        "sliceName": "observedSize",
+        "sliceName": "obsSize",
         "short": "Observed Size component",
-        "definition": "This component slice contains the observed size of an item in cemtimeters.\nThis can be a quantity (i.e. 5 cm), or a range (1 cm to 5 cm).\nIf the lower bound of the range is set but not the upper bound, then it means {lower bound} cm or more.\nIf the lower bound of the range is not set but not the upper bound is, then it means {upper bound} cm or less.",
+        "definition": "This component slice contains the size of an item observed.\n There may be one, two, or three values indicating a size of\n one dimension (length), two dimensions (area), or three dimensions (volume).\n Each dimension can be a quantity (i.e. 5), or a range (1 to 5).\n If the lower bound of the range is set but not the upper bound, then the size is {lower bound} or greater.\n If the upper bound of the range is set but not the lower bound, then the size is {upper bound} or less.",
         "comment": "This is one component of a group of components that comprise the observation.",
         "min": 0,
-        "max": "1",
+        "max": "3",
         "base": {
           "path": "Observation.component",
           "min": 0,
@@ -76,7 +76,7 @@
         }
       },
       {
-        "id": "Observation.component:observedSize.code",
+        "id": "Observation.component:obsSize.code",
         "path": "Observation.component.code",
         "min": 1,
         "max": "1",
@@ -88,14 +88,14 @@
         "patternCodeableConcept": {
           "coding": [
             {
-              "system": "http://hl7.org/fhir/us/breast-radiology/CodeSystem/ComponentSliceCodes",
-              "code": "observedSize"
+              "system": "http://hl7.org/fhir/us/breast-radiology/CodeSystem/ObservationComponentSliceCodes",
+              "code": "obsSize"
             }
           ]
         }
       },
       {
-        "id": "Observation.component:observedSize.value[x]",
+        "id": "Observation.component:obsSize.value[x]",
         "path": "Observation.component.value[x]",
         "slicing": {
           "discriminator": [
@@ -123,7 +123,7 @@
         ]
       },
       {
-        "id": "Observation.component:observedSize.value[x]:valueQuantity",
+        "id": "Observation.component:obsSize.value[x]:valueQuantity",
         "path": "Observation.component.value[x]",
         "sliceName": "valueQuantity",
         "min": 0,
@@ -143,7 +143,7 @@
         }
       },
       {
-        "id": "Observation.component:observedSize.value[x]:valueRange",
+        "id": "Observation.component:obsSize.value[x]:valueRange",
         "path": "Observation.component.value[x]",
         "sliceName": "valueRange",
         "min": 0,

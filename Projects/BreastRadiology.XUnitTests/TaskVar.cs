@@ -18,9 +18,9 @@ namespace BreastRadiology.XUnitTests
 
         public T Value()
         {
-            if (value == null)
-                entry(out this.value);
-            return value;
+            if (this.value == null)
+                this.entry(out this.value);
+            return this.value;
         }
         public TaskVar(Fcn entry)
         {

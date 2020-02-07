@@ -27,6 +27,14 @@
     },
     {
       "url": "http://www.fragment.com/fragment",
+      "valueUrl": "http://hl7.org/fhir/us/breast-radiology/StructureDefinition/BreastRadObservationNoComponentFragment"
+    },
+    {
+      "url": "http://www.fragment.com/maplink",
+      "valueString": "{\r\n  \"LinkType\": \"fragment\",\r\n  \"ShowChildren\": false,\r\n  \"LinkTarget\": \"http://hl7.org/fhir/us/breast-radiology/StructureDefinition/BreastRadObservationNoComponentFragment\"\r\n}"
+    },
+    {
+      "url": "http://www.fragment.com/fragment",
       "valueUrl": "http://hl7.org/fhir/us/breast-radiology/StructureDefinition/BreastRadObservationNoValueFragment"
     },
     {
@@ -83,14 +91,14 @@
     },
     {
       "url": "http://www.fragment.com/maplink",
-      "valueString": "{\r\n  \"LinkType\": \"component\",\r\n  \"ShowChildren\": true,\r\n  \"Cardinality\": \"0..1\",\r\n  \"LinkTarget\": \"Asymmetry Type\",\r\n  \"ComponentHRef\": \"StructureDefinition-{SDName}-definitions.html#Observation.component:asymmetryType\",\r\n  \"Types\": \"CodeableConcept\",\r\n  \"ValueSet\": \"http://hl7.org/fhir/us/breast-radiology/ValueSet/MGAbnormalityAsymmetriesTypeVS\"\r\n}"
+      "valueString": "{\r\n  \"LinkType\": \"component\",\r\n  \"ShowChildren\": false,\r\n  \"Cardinality\": \"0..1\",\r\n  \"LinkTarget\": \"Asymmetry Type\",\r\n  \"ComponentHRef\": \"StructureDefinition-{SDName}-definitions.html#Observation.component:asymmetryType\",\r\n  \"Types\": \"CodeableConcept\",\r\n  \"References\": [\r\n    \"http://hl7.org/fhir/us/breast-radiology/ValueSet/MGAbnormalityAsymmetriesTypeVS\"\r\n  ]\r\n}"
     }
   ],
   "url": "http://hl7.org/fhir/us/breast-radiology/StructureDefinition/MGAbnormalityAsymmetry",
   "name": "MGAbnormalityAsymmetry",
   "title": "Mammography Asymmetry",
   "status": "draft",
-  "description": "<b>Asymmetry Observation</b>\n\nThe several types of asymmetry involve a spectrum of mammographic findings that represent\nunilateral deposits of fibroglandular tissue not conforming to the definition of a radiodense mass.\nThe asymmetry, unlike a mass, is visible on only 1 mammographic projection. The other 3 types of\nasymmetry, although visible on more than 1 projection, have concave-outward borders and usu-\nally are seen to be interspersed with fat, whereas a radiodense mass displays completely or partially\nconvex-outward borders and appears to be denser in the center than at the periphery.\n-- Bi-Rads® Atlas — Mammography Fifth Ed. 2013",
+  "description": "<b>Asymmetry Observation</b>",
   "fhirVersion": "4.0.0",
   "kind": "resource",
   "abstract": false,
@@ -103,11 +111,27 @@
         "id": "Observation",
         "path": "Observation",
         "short": "Asymmetry Observation",
-        "definition": "The several types of asymmetry involve a spectrum of mammographic findings that represent\nunilateral deposits of fibroglandular tissue not conforming to the definition of a radiodense mass.\nThe asymmetry, unlike a mass, is visible on only 1 mammographic projection. The other 3 types of\nasymmetry, although visible on more than 1 projection, have concave-outward borders and usu-\nally are seen to be interspersed with fat, whereas a radiodense mass displays completely or partially\nconvex-outward borders and appears to be denser in the center than at the periphery.\n-- Bi-Rads® Atlas — Mammography Fifth Ed. 2013",
         "base": {
           "path": "Observation",
           "min": 0,
           "max": "*"
+        }
+      },
+      {
+        "id": "Observation.code",
+        "path": "Observation.code",
+        "base": {
+          "path": "Observation.code",
+          "min": 1,
+          "max": "1"
+        },
+        "patternCodeableConcept": {
+          "coding": [
+            {
+              "system": "http://hl7.org/fhir/us/breast-radiology/CodeSystem/ObservationCodes",
+              "code": "mgAbnormalityAsymmetryObservation"
+            }
+          ]
         }
       },
       {
@@ -134,7 +158,7 @@
         "path": "Observation.hasMember",
         "sliceName": "associatedFeatures",
         "short": "'Associated Features' reference",
-        "definition": "This slice references the target 'Associated Features'",
+        "definition": "This slice references the target 'Associated Features'.",
         "min": 0,
         "max": "1",
         "base": {
@@ -156,7 +180,7 @@
         "path": "Observation.hasMember",
         "sliceName": "consistentWith",
         "short": "'Consistent With' reference",
-        "definition": "This slice references the target 'Consistent With'",
+        "definition": "This slice references the target 'Consistent With'.",
         "min": 0,
         "max": "*",
         "base": {
@@ -196,7 +220,7 @@
         "path": "Observation.component",
         "sliceName": "asymmetryType",
         "short": "Asymmetry Type component",
-        "definition": "This slice contains the optional component that refines the asymmetry type.\nThe value of this component is a codeable concept chosen from the MGAbnormalityAsymmetriesTypeVS valueset.",
+        "definition": "This slice contains the optional component that refines the asymmetry type.\n The value of this component is a codeable concept chosen from the MGAbnormalityAsymmetriesTypeVS valueset.",
         "comment": "This is one component of a group of components that comprise the observation.",
         "min": 0,
         "max": "1",
@@ -210,7 +234,7 @@
         "id": "Observation.component:asymmetryType.code",
         "path": "Observation.component.code",
         "short": "Asymmetry Type component code",
-        "definition": "This code identifies the Asymmetry Type component",
+        "definition": "This code identifies the Asymmetry Type component.",
         "min": 1,
         "max": "1",
         "base": {
@@ -221,7 +245,7 @@
         "patternCodeableConcept": {
           "coding": [
             {
-              "system": "http://hl7.org/fhir/us/breast-radiology/CodeSystem/ComponentSliceCodes",
+              "system": "http://hl7.org/fhir/us/breast-radiology/CodeSystem/ObservationComponentSliceCodes",
               "code": "mgAbnormalityAsymmetryType"
             }
           ]

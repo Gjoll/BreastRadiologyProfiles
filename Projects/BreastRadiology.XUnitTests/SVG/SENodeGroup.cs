@@ -38,10 +38,10 @@ namespace BreastRadiology.XUnitTests
         /// </summary>
         public String Title { get; set; }
 
-        public IEnumerable<SENode> Nodes => nodes;
+        public IEnumerable<SENode> Nodes => this.nodes;
         List<SENode> nodes = new List<SENode>();
 
-        public IEnumerable<SENodeGroup> Children => children;
+        public IEnumerable<SENodeGroup> Children => this.children;
         List<SENodeGroup> children = new List<SENodeGroup>();
 
         public SENodeGroup(String title, bool showCardinalities)
@@ -71,7 +71,7 @@ namespace BreastRadiology.XUnitTests
         public void AppendNodes(IEnumerable<SENode> nodes)
         {
             foreach (SENode node in nodes)
-                AppendNode(node);
+                this.AppendNode(node);
         }
 
         public void AppendChild(SENodeGroup nodeGroup)

@@ -20,17 +20,21 @@ namespace BreastRadiology.XUnitTests
                 SDefEditor e = Self.CreateEditor("AssociatedFeatures",
                         "Associated Features",
                         "Associated/Features",
-                        ObservationUrl,
+                        Global.ObservationUrl,
                         $"{Group_CommonResources}/AssociatedFeature",
                         "ObservationSection")
                     .Description("Associated Features Observation",
                         new Markdown()
                             .Paragraph("Used with masses, asymmetries, or calcifications, or may stand alone as " +
-                                        "Features when no other abnormality is present.")
+                                        "features when no other abnormality is present.")
                      )
                     .AddFragRef(Self.ObservationSectionFragment.Value())
                     ;
                 s = e.SDef;
+
+                // Set Observation.code to unique value for this profile.
+                e.Select("code").Pattern(Self.ObservationCodeAssociatedFeatures.ToCodeableConcept());
+
 
                 e.IntroDoc
                     .ReviewedStatus("NOONE", "")

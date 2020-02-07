@@ -34,27 +34,101 @@ namespace BreastRadiology.XUnitTests
         {
             this.OutputPath = outputPath;
             String fullPath = Path.Combine("IntroDocTemplates", $"{templateName}.template");
-            codeEditor.Load(fullPath);
+            this.codeEditor.Load(fullPath);
         }
 
         CodeBlockNested reviewStatusBlock = null;
+        CodeBlockNested descriptionBlock = null;
         public IntroDoc ReviewedStatus(String reviewer, String dt)
         {
-            if (reviewStatusBlock == null)
+            if (this.reviewStatusBlock == null)
             {
-                reviewStatusBlock = this.codeEditor.Blocks.Find("reviewStatus");
-                if (reviewStatusBlock == null)
+                this.reviewStatusBlock = this.codeEditor.Blocks.Find("reviewStatus");
+                if (this.reviewStatusBlock == null)
                     throw new Exception($"reviewStatus block missing");
-                reviewStatusBlock
+                this.reviewStatusBlock
                     .AppendRaw($"<h3 id=\"reviewStatus\">Review Status</h3>")
                     .AppendRaw($"Comments and Suggested changes to this implementation guide can be made ")
                     .AppendRaw($"<a href=\"https://github.com/HL7/fhir-breast-radiology-ig/projects/1\">here</a>")
                     ;
             }
-            reviewStatusBlock
+            this.reviewStatusBlock
                 .AppendRaw($"<p><b>Reviewed by {reviewer} on {dt}</b></p>")
                 ;
 
+            return this;
+        }
+
+        CodeBlockNested CreateDescriptionBlock()
+        {
+            if (this.descriptionBlock != null)
+                return this.descriptionBlock;
+            this.descriptionBlock = this.codeEditor.Blocks.Find("descriptions");
+            if (this.descriptionBlock == null)
+                throw new Exception($"'descriptions' block missing");
+            this.descriptionBlock
+                .AppendRaw($"<h3 id=\"descriptions\">Definitions</h3>")
+                ;
+            return this.descriptionBlock;
+        }
+        void WriteParagraphs(CodeBlockNested d,
+            String[] lines)
+        {
+            bool newParagraph = true;
+
+            void Line(String line)
+            {
+                line = line.Trim();
+                if (line.Length == 0)
+                    return;
+                if (
+                    (line.Length == 1) &&
+                    (line[0] == '\n') &&
+                    (newParagraph == false)
+                    )
+                {
+                    d.AppendRaw($"</p>\n");
+                    newParagraph = true;
+                    return;
+                }
+                if (newParagraph == true)
+                {
+                    d.AppendRaw($"<p>\n");
+                    newParagraph = false;
+                }
+                d.AppendRaw($"{line}\n");
+            }
+
+            foreach (String line in lines)
+                Line(line);
+            if (newParagraph == false)
+                d.AppendRaw($"</p>\n");
+        }
+
+        String Title()
+        {
+            if (this.codeEditor.TryGetUserMacro("Title", out object value) == false)
+                throw new Exception("Error accessing title macro");
+            return (String)value;
+        }
+
+        public IntroDoc ACRDescription(params String[] lines)
+        {
+            CodeBlockNested d = CreateDescriptionBlock();
+            d.AppendRaw($"<h4 id=\"acrDescription\">ACR {Title()} Definition</h4>");
+            WriteParagraphs(d, lines);
+            return this;
+        }
+
+        public IntroDoc MammoDescription(String id)
+        {
+            if (ResourcesMaker.Self.Data.SelectRow(id) == false)
+                return this;
+            String[] description = ResourcesMaker.Self.Data.UMLS.Split('\n');
+
+            CodeBlockNested d = CreateDescriptionBlock();
+            d.AppendRaw($"<h4>{Title()} Definition</h4>");
+            WriteParagraphs(d, description);
             return this;
         }
 

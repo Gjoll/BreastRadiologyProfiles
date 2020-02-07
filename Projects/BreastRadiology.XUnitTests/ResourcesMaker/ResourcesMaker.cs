@@ -16,159 +16,6 @@ namespace BreastRadiology.XUnitTests
 {
     partial class ResourcesMaker : ConverterBase
     {
-        class Definition
-        {
-            StringBuilder sb = new StringBuilder();
-            //bool citeFlag = false;
-
-            public Definition CiteStart()
-            {
-                return this;
-            }
-
-            public Definition CiteEnd(String citationSource)
-            {
-                this.sb.AppendLine($"    -- {citationSource}");
-                return this;
-            }
-
-            public Definition Line(String line)
-            {
-                this.sb.AppendLine(line);
-                return this;
-            }
-
-            public override string ToString() => this.ToText();
-
-            public String ToText()
-            {
-                return this.sb.ToString();
-            }
-        }
-
-        class ConceptDef
-        {
-            public String Code { get; set; }
-            public String Display { get; set; }
-            public String Definition
-            {
-                get
-                {
-                    StringBuilder sb = new StringBuilder();
-                    sb.Append(definitionText);
-                    if (String.IsNullOrEmpty(modalities) == false)
-                        sb.AppendLine(modalities);
-                    return sb.ToString();
-                }
-            }
-            String modalities { get; set; }
-
-            String definitionText;
-
-            public ConceptDef()
-            {
-            }
-
-            public ConceptDef SetCode(String value)
-            {
-                this.Code = value;
-                return this;
-            }
-
-            public ConceptDef SetDisplay(String value)
-            {
-                this.Display= value;
-                return this;
-            }
-
-            public ConceptDef SetDefinition(Definition def)
-            {
-                this.definitionText = def.ToString();
-                return this;
-            }
-
-            public ConceptDef(Coding code, Definition definition)
-            {
-                this.Code = code.Code;
-                this.Display = code.Display;
-                this.definitionText = definition.ToString();
-            }
-
-            public ConceptDef(String code, String display, Definition definition)
-            {
-                String definitionStr = definition.ToString();
-                if (String.IsNullOrWhiteSpace(code) == true)
-                    throw new Exception("Empty code");
-                if (String.IsNullOrWhiteSpace(display) == true)
-                    throw new Exception("Empty Display");
-                if (String.IsNullOrWhiteSpace(definitionStr) == true)
-                    throw new Exception("Empty definition");
-                this.Code = code;
-                this.Display = display;
-                this.definitionText = definitionStr;
-            }
-
-            public ConceptDef ValidModalities(Modalities modalities)
-            {
-                StringBuilder sb = new StringBuilder();
-                void Add(Modalities flag)
-                {
-                    if ((modalities & flag) == flag)
-                        sb.Append($" {flag.ToString()}");
-                }
-
-                sb.Append("Valid for the following modalities:");
-                Add(Modalities.MG);
-                Add(Modalities.US);
-                Add(Modalities.MRI);
-                Add(Modalities.NM);
-                sb.AppendLine(".");
-                this.modalities = sb.ToString();
-                return this;
-            }
-
-            public ConceptDef SetDicom(String value)
-            {
-                return this;
-            }
-
-            public ConceptDef SetPenCode(String value)
-            {
-                return this;
-            }
-
-            public ConceptDef SetSnomedCode(String value)
-            {
-                return this;
-            }
-
-            public ConceptDef SetOneToMany(String value)
-            {
-                return this;
-            }
-
-            public ConceptDef SetSnomedDescription(String value)
-            {
-                return this;
-            }
-
-            public ConceptDef SetICD10(String value)
-            {
-                return this;
-            }
-
-            public ConceptDef SetComment(String value)
-            {
-                return this;
-            }
-
-            public ConceptDef SetUMLS(String value)
-            {
-                return this;
-            }
-
-        }
-
         public static ResourcesMaker Self { get; set; }
 
         public const String Group_BaseResources = "BaseResources";
@@ -206,23 +53,13 @@ namespace BreastRadiology.XUnitTests
         const String ProfileVersion = "0.0.2";
         const PublicationStatus ProfileStatus = PublicationStatus.Draft;
 
-        const String Loinc = "http://loinc.org";
-        const String Snomed = "http://snomed.info/sct";
-
-        public const String ClinicalImpressionUrl = "http://hl7.org/fhir/StructureDefinition/ClinicalImpression";
-        public const String DiagnosticReportUrl = "http://hl7.org/fhir/StructureDefinition/DiagnosticReport";
-        public const String DomainResourceUrl = "http://hl7.org/fhir/StructureDefinition/DomainResource";
-        public const String ExtensionUrl = "http://hl7.org/fhir/StructureDefinition/Extension";
-        public const String ImagingStudyUrl = "http://hl7.org/fhir/StructureDefinition/ImagingStudy";
-        public const String MedicationRequestUrl = "http://hl7.org/fhir/StructureDefinition/MedicationRequest";
-        public const String ObservationUrl = "http://hl7.org/fhir/StructureDefinition/Observation";
-        public const String ResourceUrl = "http://hl7.org/fhir/StructureDefinition/Resource";
-        public const String RiskAssessmentUrl = "http://hl7.org/fhir/StructureDefinition/RiskAssessment";
-        public const String ServiceRequestUrl = "http://hl7.org/fhir/StructureDefinition/ServiceRequest";
-
-        public const String contactUrl = "http://www.hl7.org/Special/committees/cic";
+        public static Markdown componentDefinition = new Markdown()
+                                    .Paragraph($"This is one component of a group of components that comprise the observation.")
+            ;
 
         Dictionary<String, Resource> resources = new Dictionary<string, Resource>();
+
+        public MammoData Data;
 
         FileCleaner fc;
         String resourceDir;
@@ -243,6 +80,8 @@ namespace BreastRadiology.XUnitTests
             const String fcn = "ResourcesMaker";
 
             Self = this;
+            this.Data = new MammoData(this);
+
             this.fc = fc;
             this.resourceDir = resourceDir;
             this.pageDir = pageDir;
@@ -318,11 +157,11 @@ namespace BreastRadiology.XUnitTests
             String docTemplateName)
         {
             title = title.Trim();
-            SDefEditor retVal = CreateEditor(name, title, mapName, baseDefinition, groupPath);
+            SDefEditor retVal = this.CreateEditor(name, title, mapName, baseDefinition, groupPath);
 
             retVal.IntroDoc = new IntroDoc();
             retVal.IntroDoc.TryAddUserMacro("FocusPath", FocusMapMaker.FocusMapName(retVal.SDef.Url.LastUriPart()));
-            retVal.IntroDoc.TryAddUserMacro("TitleArticle", Article(title));
+            retVal.IntroDoc.TryAddUserMacro("TitleArticle", this.Article(title));
             retVal.IntroDoc.TryAddUserMacro("Title", title);
             retVal.IntroDoc.Load(docTemplateName, Path.Combine(this.pageDir, $"StructureDefinition-{name}-intro.xml"));
 
@@ -344,10 +183,10 @@ namespace BreastRadiology.XUnitTests
 
             retVal.IntroDoc = new IntroDoc();
             retVal.IntroDoc.TryAddUserMacro("FragPath", FragmentMapMaker.FragmentMapName(retVal.SDef.Url.LastUriPart()));
-            retVal.IntroDoc.TryAddUserMacro("TitleArticle", Article(title));
+            retVal.IntroDoc.TryAddUserMacro("TitleArticle", this.Article(title));
             retVal.IntroDoc.TryAddUserMacro("Title", title);
             retVal.IntroDoc.Load("Fragment",
-                Path.Combine(pageDir, $"StructureDefinition-{name}-intro.xml"));
+                Path.Combine(this.pageDir, $"StructureDefinition-{name}-intro.xml"));
 
             retVal.SDef.Version = "Fragment";       // this will get stripped out when unfrag'd.
 
@@ -366,7 +205,7 @@ namespace BreastRadiology.XUnitTests
             CodeSystem cs = new CodeSystem
             {
                 Id = name,
-                Url = CodeSystemUrl(name),
+                Url = this.CodeSystemUrl(name),
                 Name = name,
                 Title = title,
                 Description = new Markdown(description),
@@ -460,7 +299,10 @@ namespace BreastRadiology.XUnitTests
 
             // we have to manually force the creation of the following to get
             // all the necessary objects to be created.
+            this.CodesCS.Value();
+            this.CompositionSectionSliceCodesCS.Value();
             this.ComponentSliceCodesCS.Value();
+            this.BreastRadiologyDocument.Value();
             this.BreastRadiologyReport.Value();
             this.UnitsOfLengthVS.Value();
 
@@ -477,7 +319,7 @@ namespace BreastRadiology.XUnitTests
 
             foreach (SDefEditor sDefEditor in this.Editors.Values)
             {
-                if (sDefEditor.WriteFragment(out String fragmentName))
+                if (sDefEditor.Write(out String fragmentName))
                     this.fc?.Mark(fragmentName);
                 if (sDefEditor.IntroDoc != null)
                 {
@@ -485,12 +327,13 @@ namespace BreastRadiology.XUnitTests
                     this.fc?.Mark(path);
                 }
             }
+            //Self.Data.BreastData.Save();
         }
 
         IntroDoc CreateIntroDocVS(ValueSet binding)
         {
             IntroDoc doc = new IntroDoc();
-            doc.TryAddUserMacro("TitleArticle", Article(binding.Title));
+            doc.TryAddUserMacro("TitleArticle", this.Article(binding.Title));
             doc.TryAddUserMacro("Title", binding.Title);
             doc.TryAddUserMacro("FocusPath", FocusMapMaker.FocusMapName(binding.Name));
             doc.Load("ValueSet",

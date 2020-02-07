@@ -15,12 +15,11 @@ namespace BreastRadiology.XUnitTests
                 SDefEditor e = Self.CreateFragment("ObservationLeafFragment",
                     "Observation Leaf Fragment",
                         "Observation/Leaf/Fragment",
-                    ObservationUrl)
+                    Global.ObservationUrl)
                     .Description("Observation Leaf Node Fragment",
                         new Markdown()
                             .Paragraph("Fragment that constrains observations leaf nodes (no hasMembers references).")
                     )
-                    .AddFragRef(Self.ObservationNoComponentFragment.Value())
                 ;
                 s = e.SDef;
 

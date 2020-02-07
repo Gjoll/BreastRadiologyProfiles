@@ -21,7 +21,7 @@ namespace BreastRadiology.XUnitTests
                 SDefEditor e = Self.CreateFragment("CommonComponentsFragment",
                         "Common Components Fragment",
                         "Common Components Fragment",
-                        ObservationUrl)
+                        Global.ObservationUrl)
                     .Description("Common Components fragment",
                         new Markdown()
                             .Paragraph("Adds commonly used component slice values, including:")
@@ -29,10 +29,7 @@ namespace BreastRadiology.XUnitTests
                     )
                     .AddFragRef(Self.BreastBodyLocationRequiredFragment.Value())
                     .AddFragRef(Self.ObservedChangesComponentFragment.Value())
-                    .AddFragRef(Self.ObservedSizeComponentFragment.Value())
-                    .AddFragRef(Self.ObservedRegionComponentFragment.Value())
                     .AddFragRef(Self.BiRadComponentFragment.Value())
-                    .AddFragRef(Self.ServiceRecommendationFragment.Value())
                     ;
                 s = e.SDef;
 

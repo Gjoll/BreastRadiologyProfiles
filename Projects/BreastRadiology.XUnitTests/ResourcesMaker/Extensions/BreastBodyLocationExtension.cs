@@ -24,52 +24,33 @@ namespace BreastRadiology.XUnitTests
                          Group_CommonCodesCS,
                          new ConceptDef[]
                          {
-                        new ConceptDef("Central",
-                            "Central Region",
-                            new Definition()
-                                .Line("Central region of the breast (behind nipple)")
-                            ),
-
-                        new ConceptDef("RetroaReolar",
-                            "RetroaReolar Region",
-                            new Definition()
-                                .Line("Central location in the anterior third of the breast close to the nipple")
-                            ),
-                        new ConceptDef("AxillaryTail",
-                            "AxillaryTail Region",
-                            new Definition()
-                                .Line("Upper outer region location adjacent to the axilla but within the breast mound")
-                            ),
-                        new ConceptDef("Axilla",
-                            "Axilla Region",
-                            new Definition()
-                                .Line("Upper outer region location in the axilla")
-                            ),
-                        new ConceptDef("AxillaI",
-                            "Axilla Region I",
-                            new Definition()
-                                .Line("Axilla Region I")
-                            ),
-                        new ConceptDef("AxillaII",
-                            "Axilla Region II",
-                            new Definition()
-                                .Line("Axilla Region II")
-                            ),
-                        new ConceptDef("AxillaIII",
-                            "Axilla Region III",
-                            new Definition()
-                                .Line("Axilla Region III")
-                            ),
-                        new ConceptDef("InframammaryFold",
-                            "Inframammary Fold Region",
-                            new Definition()
-                                .Line("Inframammary Fold")
-                            ),
-                        new ConceptDef("InSkin",
-                            "In Skin",
-                            new Definition()
-                                .Line("In Skin")
-                            )
+                        new ConceptDef()
+                            .SetCode("Central", "Central Region")
+                            .SetDefinition("Central region of the breast (behind nipple)"),
+                        new ConceptDef()
+                            .SetCode("RetroaReolar", "RetroaReolar Region")
+                            .SetDefinition("Central location in the anterior third of the breast close to the nipple"),
+                        new ConceptDef()
+                            .SetCode("AxillaryTail", "AxillaryTail Region")
+                            .SetDefinition("Upper outer region location adjacent to the axilla but within the breast mound"),
+                        new ConceptDef()
+                            .SetCode("Axilla", "Axilla Region")
+                            .SetDefinition("Upper outer region location in the axilla"),
+                        new ConceptDef()
+                            .SetCode("AxillaI", "Axilla Region I")
+                            .SetDefinition("Axilla Region I"),
+                        new ConceptDef()
+                            .SetCode("AxillaII", "Axilla Region II")
+                            .SetDefinition("Axilla Region II"),
+                        new ConceptDef()
+                            .SetCode("AxillaIII", "Axilla Region III")
+                            .SetDefinition("Axilla Region III"),
+                        new ConceptDef()
+                            .SetCode("InframammaryFold", "Inframammary Fold Region")
+                            .SetDefinition("Inframammary Fold"),
+                        new ConceptDef()
+                            .SetCode("InSkin", "In Skin")
+                            .SetDefinition("In Skin")
                          })
                      );
 
@@ -83,30 +64,18 @@ namespace BreastRadiology.XUnitTests
                          Group_CommonCodesCS,
                          new ConceptDef[]
                          {
-                        new ConceptDef("UpperOuter",
-                            "Upper Outer Quadrant",
-                            new Definition()
-                                .Line("Upper outer quadrant of the breast")
-                            ),
-
-                        new ConceptDef("UpperInner",
-                            "Upper Inner Quadrant",
-                            new Definition()
-                                .Line("Upper inner quadrant of the breast")
-                            ),
-
-                        new ConceptDef("LowerOuter",
-                            "Lower Outer Quadrant",
-                            new Definition()
-                                .Line("Lower outer quadrant of the breast")
-                            ),
-
-                        new ConceptDef("LowerInner",
-                            "Lower Inner Quadrant",
-                            new Definition()
-                                .Line("Lower inner quadrant of the breast")
-                            )
-
+                        new ConceptDef()
+                            .SetCode("UpperOuter", "Upper Outer Quadrant")
+                            .SetDefinition("Upper outer quadrant of the breast"),
+                        new ConceptDef()
+                            .SetCode("UpperInner", "Upper Inner Quadrant")
+                            .SetDefinition("Upper inner quadrant of the breast"),
+                        new ConceptDef()
+                            .SetCode("LowerOuter", "Lower Outer Quadrant")
+                            .SetDefinition("Lower outer quadrant of the breast"),
+                        new ConceptDef()
+                            .SetCode("LowerInner", "Lower Inner Quadrant")
+                            .SetDefinition("Lower inner quadrant of the breast")
                          })
              );
         CSTaskVar BreastLocationClockCS = new CSTaskVar(
@@ -119,66 +88,42 @@ namespace BreastRadiology.XUnitTests
                          Group_CommonCodesCS,
                          new ConceptDef[]
                          {
-                        new ConceptDef("12:00-OClock",
-                            "12:00-OClock",
-                            new Definition()
-                                .Line("12-OClock")
-                            ),
-                        new ConceptDef("1:00-OClock",
-                            "1:00-OClock",
-                            new Definition()
-                                .Line("1:00-OClock")
-                            ),
-                        new ConceptDef("2:00-OClock",
-                            "2:00-OClock",
-                            new Definition()
-                                .Line("2:00-OClock")
-                            ),
-                        new ConceptDef("3:00-OClock",
-                            "3:00-OClock",
-                            new Definition()
-                                .Line("3:00-OClock")
-                            ),
-                        new ConceptDef("4:00-OClock",
-                            "4:00-OClock",
-                            new Definition()
-                                .Line("4:00-OClock")
-                            ),
-                        new ConceptDef("5:00-OClock",
-                            "5:00-OClock",
-                            new Definition()
-                                .Line("5:00-OClock")
-                            ),
-                        new ConceptDef("6:00-OClock",
-                            "6:00-OClock",
-                            new Definition()
-                                .Line("6:00-OClock")
-                            ),
-                        new ConceptDef("7:00-OClock",
-                            "7:00-OClock",
-                            new Definition()
-                                .Line("7:00-OClock")
-                            ),
-                        new ConceptDef("8:00-OClock",
-                            "8:00-OClock",
-                            new Definition()
-                                .Line("8:00-OClock")
-                            ),
-                        new ConceptDef("9:00-OClock",
-                            "9:00-OClock",
-                            new Definition()
-                                .Line("9:00-OClock")
-                            ),
-                        new ConceptDef("10:00-OClock",
-                            "10:00-OClock",
-                            new Definition()
-                                .Line("10:00-OClock")
-                            ),
-                        new ConceptDef("11:00-OClock",
-                            "11:00-OClock",
-                            new Definition()
-                                .Line("11:00-OClock")
-                            ),
+                        new ConceptDef()
+                             .SetCode("12:00-OClock", "12:00-OClock")
+                             .SetDefinition("12-OClock"),
+                        new ConceptDef()
+                            .SetCode("1:00-OClock", "1:00-OClock")
+                            .SetDefinition("1:00-OClock"),
+                        new ConceptDef()
+                            .SetCode("2:00-OClock", "2:00-OClock")
+                            .SetDefinition("2:00-OClock"),
+                        new ConceptDef()
+                            .SetCode("3:00-OClock", "3:00-OClock")
+                            .SetDefinition("3:00-OClock"),
+                        new ConceptDef()
+                            .SetCode("4:00-OClock", "4:00-OClock")
+                            .SetDefinition("4:00-OClock"),
+                        new ConceptDef()
+                            .SetCode("5:00-OClock", "5:00-OClock")
+                            .SetDefinition("5:00-OClock"),
+                        new ConceptDef()
+                            .SetCode("6:00-OClock", "6:00-OClock")
+                            .SetDefinition("6:00-OClock"),
+                        new ConceptDef()
+                            .SetCode("7:00-OClock", "7:00-OClock")
+                            .SetDefinition("7:00-OClock"),
+                        new ConceptDef()
+                            .SetCode("8:00-OClock", "8:00-OClock")
+                            .SetDefinition("8:00-OClock"),
+                        new ConceptDef()
+                            .SetCode("9:00-OClock", "9:00-OClock")
+                            .SetDefinition("9:00-OClock"),
+                        new ConceptDef()
+                            .SetCode("10:00-OClock", "10:00-OClock")
+                            .SetDefinition("10:00-OClock"),
+                        new ConceptDef()
+                            .SetCode("11:00-OClock", "11:00-OClock")
+                            .SetDefinition("11:00-OClock"),
                          })
                      );
 
@@ -192,21 +137,15 @@ namespace BreastRadiology.XUnitTests
                          Group_CommonCodesCS,
                          new ConceptDef[]
                          {
-                        new ConceptDef("Anterior",
-                            "Anterior depth",
-                            new Definition()
-                                .Line("Anterior depth")
-                            ),
-                        new ConceptDef("Middle",
-                            "Middle depth",
-                            new Definition()
-                                .Line("Middle depth")
-                            ),
-                        new ConceptDef("Posterior",
-                            "Posterior depth",
-                            new Definition()
-                                .Line("Posterior depth")
-                            )
+                        new ConceptDef()
+                            .SetCode("Anterior", "Anterior depth")
+                            .SetDefinition("Anterior depth"),
+                        new ConceptDef()
+                            .SetCode("Middle", "Middle depth")
+                            .SetDefinition("Middle depth"),
+                        new ConceptDef()
+                            .SetCode("Posterior", "Posterior depth")
+                            .SetDefinition("Posterior depth")
                          })
              );
 
@@ -268,13 +207,13 @@ namespace BreastRadiology.XUnitTests
                 e = Self.CreateEditor("BreastBodyLocationExtension",
                     "Breast Body Location Extension",
                     "Breast Body Loc.",
-                    ExtensionUrl,
+                    Global.ExtensionUrl,
                     $"{Group_ExtensionResources}/BreastBodyLocation",
                     "Extension")
                     .Description("Breast Body Location extension",
                         new Markdown()
-                            .Paragraph("this extension defines the fields that are used to describe the" +
-                                       "location of an observed item in a breast radiology report")
+                            .Paragraph("this extension defines the fields that are used to describe the",
+                                       "location of an observed item in a breast radiology report.")
                             .Paragraph("Breast radiology exams have specific ways of defining a location that are unique to this field.")
                     )
                     .Kind(StructureDefinition.StructureDefinitionKind.ComplexType)
@@ -297,7 +236,7 @@ namespace BreastRadiology.XUnitTests
                 //    "laterality",
                 //    "http://hl7.org/fhir/ValueSet/bodysite-laterality",
                 //    "Laterality of the body location",
-                //    new Markdown().Paragraph("The laterality of the body location"),
+                //    new Markdown().Paragraph("The laterality of the body location."),
                 //    out ElementTreeSlice extensionSlice,
                 //    out ElementTreeNode valueXNode
                 //    );
@@ -308,14 +247,14 @@ namespace BreastRadiology.XUnitTests
                         "http://hl7.org/fhir/us/skinwoundassessment/StructureDefinition/BodySideExt")
                         .ElementDefinition
                             .Single()
-                            .SetDefinition(new Markdown().Paragraph("The laterality of the body location"))
+                            .SetDefinition(new Markdown().Paragraph("The laterality of the body location."))
                         ;
 
                     //$ This is the build site url. Fix this when bodysite gets published.
                     e.AddExtensionLink("https://build.fhir.org/ig/HL7/fhir-skin-wound-ig/branches/master/StructureDefinition-BodySideExt.html",
                         new SDefEditor.Cardinality(extensionDef),
                         "Laterality", 
-                        Global.ElementAnchor(extensionDef));
+                        Global.ElementAnchor(extensionDef), false);
                 }
                 {
                     ValueSet binding = Self.BreastLocationQuadrantVS.Value();
@@ -334,7 +273,7 @@ namespace BreastRadiology.XUnitTests
                         "quadrant",
                         binding,
                         "Quadrant of the body location",
-                        new Markdown().Paragraph("The quadrant  of the body location"))
+                        new Markdown().Paragraph("The quadrant  of the body location."))
                         .Single()
                        ;
 
@@ -362,7 +301,7 @@ namespace BreastRadiology.XUnitTests
                         "region",
                         binding,
                         "Region of the body location",
-                        new Markdown().Paragraph("The region  of the body location"))
+                        new Markdown().Paragraph("The region  of the body location."))
                         .ZeroToMany()
                     ;
 
@@ -434,7 +373,8 @@ namespace BreastRadiology.XUnitTests
                     e.AddExtensionLink(extensionStructDef.Url,
                         new SDefEditor.Cardinality(extensionSlice.ElementDefinition),
                         "Distance From Nipple",
-                        Global.ElementAnchor(extensionSlice.ElementDefinition));
+                        Global.ElementAnchor(extensionSlice.ElementDefinition),
+                        false);
                 }
                 {
                     StructureDefinition extensionStructDef = Self.BodyDistanceFromExtension.Value();
@@ -443,7 +383,7 @@ namespace BreastRadiology.XUnitTests
                     e.AddExtensionLink(extensionStructDef.Url,
                         new SDefEditor.Cardinality(extensionSlice.ElementDefinition),
                         "Distance From Chest Wall", 
-                        Global.ElementAnchor(extensionSlice.ElementDefinition));
+                        Global.ElementAnchor(extensionSlice.ElementDefinition), false);
                 }
                 {
                     StructureDefinition extensionStructDef = Self.BodyDistanceFromExtension.Value();
@@ -452,7 +392,8 @@ namespace BreastRadiology.XUnitTests
                     e.AddExtensionLink(extensionStructDef.Url,
                         new SDefEditor.Cardinality(extensionSlice.ElementDefinition),
                         "Distance From Skin", 
-                        Global.ElementAnchor(extensionSlice.ElementDefinition));
+                        Global.ElementAnchor(extensionSlice.ElementDefinition),
+                        false);
                 }
                 e.IntroDoc.ReviewedStatus("NOONE", "");
             });

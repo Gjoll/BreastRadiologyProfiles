@@ -3,7 +3,7 @@
   "extension": [
     {
       "url": "http://www.fragment.com/mapname",
-      "valueString": "Tumor Satellite/Extension"
+      "valueString": "Tumor Satellite"
     },
     {
       "url": "http://www.fragment.com/Group",
@@ -19,18 +19,18 @@
     },
     {
       "url": "http://www.fragment.com/maplink",
-      "valueString": "{\r\n  \"LinkType\": \"component\",\r\n  \"ShowChildren\": true,\r\n  \"Cardinality\": \"0..1\",\r\n  \"LinkTarget\": \"Index Reference\",\r\n  \"ComponentHRef\": \"StructureDefinition-{SDName}-definitions.html#Extension.extension:indexReference\",\r\n  \"Types\": \"Reference\",\r\n  \"ValueSet\": null\r\n}"
+      "valueString": "{\r\n  \"LinkType\": \"component\",\r\n  \"ShowChildren\": false,\r\n  \"Cardinality\": \"0..1\",\r\n  \"LinkTarget\": \"Index Reference\",\r\n  \"ComponentHRef\": \"StructureDefinition-{SDName}-definitions.html#Extension.extension:indexReference\",\r\n  \"Types\": \"Reference\",\r\n  \"References\": []\r\n}"
     },
     {
       "url": "http://www.fragment.com/maplink",
-      "valueString": "{\r\n  \"LinkType\": \"component\",\r\n  \"ShowChildren\": true,\r\n  \"Cardinality\": \"0..1\",\r\n  \"LinkTarget\": \"Distance From Index\",\r\n  \"ComponentHRef\": \"StructureDefinition-{SDName}-definitions.html#Extension.extension:distanceFromIndex\",\r\n  \"Types\": \"Quantity\",\r\n  \"ValueSet\": \"http://hl7.org/fhir/us/breast-radiology/ValueSet/UnitsOfLengthVS\"\r\n}"
+      "valueString": "{\r\n  \"LinkType\": \"component\",\r\n  \"ShowChildren\": false,\r\n  \"Cardinality\": \"0..1\",\r\n  \"LinkTarget\": \"Distance From Index\",\r\n  \"ComponentHRef\": \"StructureDefinition-{SDName}-definitions.html#Extension.extension:distanceFromIndex\",\r\n  \"Types\": \"Quantity\",\r\n  \"References\": [\r\n    \"http://hl7.org/fhir/us/breast-radiology/ValueSet/UnitsOfLengthVS\"\r\n  ]\r\n}"
     }
   ],
   "url": "http://hl7.org/fhir/us/breast-radiology/StructureDefinition/TumorSatelliteExtension",
   "name": "TumorSatelliteExtension",
   "title": "Tumor Satellite Extension",
   "status": "draft",
-  "description": "<b>Tumor Satellite Extension</b>\n\nThis extension identifies a tumour as a satellite of another tumour.\nOptionally a reference to that tumor and the distance to that tumor may be defined.\nThe distance is defined by a quantity of metric distance units (cm, mm, etc).",
+  "description": "<b>Tumor Satellite Extension</b>\n\nThis extension identifies a tumour as a satellite of another tumour.\n Optionally a reference to that tumor and the distance to that tumor may be defined.\n The distance is defined by a quantity of metric distance units (cm, mm, etc).",
   "fhirVersion": "4.0.0",
   "kind": "complex-type",
   "abstract": false,
@@ -59,7 +59,7 @@
         ],
         "path": "Extension",
         "short": "Tumor Satellite Extension",
-        "definition": "This extension identifies a tumour as a satellite of another tumour.\nOptionally a reference to that tumor and the distance to that tumor may be defined.\nThe distance is defined by a quantity of metric distance units (cm, mm, etc).",
+        "definition": "This extension identifies a tumour as a satellite of another tumour.\n Optionally a reference to that tumor and the distance to that tumor may be defined.\n The distance is defined by a quantity of metric distance units (cm, mm, etc).",
         "base": {
           "path": "Extension",
           "min": 0,
@@ -90,7 +90,7 @@
         "path": "Extension.extension",
         "sliceName": "indexReference",
         "short": "Reference of index tumor",
-        "definition": "Optional reference to index tumor (tumor that this is a satellite of).\n\nGenerally this should be a reference to a Breast Radiology Abnormality Observation resource",
+        "definition": "Optional reference to index tumor (tumor that this is a satellite of).\n\nGenerally this should be a reference to a Breast Radiology Abnormality Observation resource.",
         "min": 0,
         "max": "1",
         "base": {

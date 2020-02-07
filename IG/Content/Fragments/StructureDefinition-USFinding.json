@@ -40,6 +40,23 @@
           "min": 0,
           "max": "*"
         }
+      },
+      {
+        "id": "Observation.code",
+        "path": "Observation.code",
+        "base": {
+          "path": "Observation.code",
+          "min": 1,
+          "max": "1"
+        },
+        "patternCodeableConcept": {
+          "coding": [
+            {
+              "system": "http://hl7.org/fhir/us/breast-radiology/CodeSystem/ObservationCodes",
+              "code": "usFindingObservation"
+            }
+          ]
+        }
       }
     ]
   }

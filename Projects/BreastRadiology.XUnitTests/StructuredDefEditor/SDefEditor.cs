@@ -91,7 +91,7 @@ namespace BreastRadiology.XUnitTests
             return this.Get(path).ElementDefinition;
         }
 
-        public bool WriteFragment(out String fragmentName)
+        public bool Write(out String fragmentName)
         {
             fragmentName = null;
 
@@ -116,10 +116,28 @@ namespace BreastRadiology.XUnitTests
             {
                 List<ElementDefinition> elementDefinitions = new List<ElementDefinition>();
                 differentialNode.CopyTo(elementDefinitions);
-                sDef.Differential.Element = elementDefinitions;
+                this.sDef.Differential.Element = elementDefinitions;
             }
 
             fragmentName = Path.Combine(this.fragmentDir, $"StructureDefinition-{this.sDef.Name}.json");
+
+            // Make sure that all Observation resources that are not fragments, have Observation.code
+            // fixed properly.
+            if (
+                (this.sDef.IsFragment() == false) &&
+                (this.sDef.BaseDefinition == Global.ObservationUrl)
+                )
+            {
+                if (this.snapNode.TryGetElementNode("Observation.code", out ElementTreeNode codeNode) == false)
+                    throw new Exception("Observation.code not found");
+                if (codeNode.ElementDefinition.Pattern == null)
+                {
+                    this.info.ConversionError(nameof(SDefEditor),
+                        "Write",
+                        $"Observation {this.SDef.Name} lacks fixed Observation.code.");
+                }
+            }
+
             this.sDef.SaveJson(fragmentName);
             return true;
         }
@@ -150,21 +168,21 @@ namespace BreastRadiology.XUnitTests
 
         public ElementTreeSlice ApplyExtension(String name,
             StructureDefinition sd,
-            bool showChildren = true)
+            bool showChildren)
         {
-            return ApplyExtension(name, sd.Url, showChildren);
+            return this.ApplyExtension(name, sd.Url, showChildren);
         }
 
         public ElementTreeSlice ApplyExtension(ElementTreeNode extDef,
             String name,
             StructureDefinition sd)
         {
-            return ApplyExtension(extDef, name, sd.Url);
+            return this.ApplyExtension(extDef, name, sd.Url);
         }
 
         public ElementTreeSlice ApplyExtension(String name,
         String extensionUrl,
-        bool showChildren = true)
+        bool showChildren)
         {
             return this.ApplyExtension(this.Get("extension"), name, extensionUrl);
         }
@@ -183,8 +201,9 @@ namespace BreastRadiology.XUnitTests
 
             slice.ElementDefinition
                 .SetShort($"{name} extension")
-                .SetDefinition(new Markdown($"This extension slice contains the {name} extension"))
-                .SetComment(new Markdown($"This is one component of a group of components that comprise the observation."))
+                .SetDefinition(new Markdown()
+                                    .Paragraph($"This extension slice contains the {name} extension."))
+                .SetComment(ResourcesMaker.componentDefinition)
                 ;
 
             slice.ElementDefinition.IsModifier = false;
@@ -280,17 +299,17 @@ namespace BreastRadiology.XUnitTests
                 this.element = e;
             }
 
-            public override string ToString() => $"{element.Min}..{element.Max}";
+            public override string ToString() => $"{this.element.Min}..{this.element.Max}";
         }
 
         public SDefEditor AddExtensionLink(String url,
             Cardinality cardinality,
             String localName,
             String componentRef,
-            bool showChildren = true)
+            bool showChildren)
         {
             dynamic packet = new JObject();
-            packet.LinkType = "extension";
+            packet.LinkType = SVGGlobal.ExtensionType;
             packet.ShowChildren = showChildren;
             packet.Cardinality = cardinality.ToString();
             packet.ComponentHRef = componentRef;
@@ -305,27 +324,27 @@ namespace BreastRadiology.XUnitTests
             Cardinality cardinality,
             String componentRef,
             String types,
-            String vs = null,
-            bool showChildren = true)
+            params String[] targets)
         {
             dynamic packet = new JObject();
-            packet.LinkType = "component";
-            packet.ShowChildren = showChildren;
+            packet.LinkType = SVGGlobal.ComponentType;
+            packet.ShowChildren = false;
             packet.Cardinality = cardinality.ToString();
             packet.LinkTarget = url;
             packet.ComponentHRef = componentRef;
             packet.Types = types;
-            packet.ValueSet = vs;
+            packet.References = new JArray(targets);
             this.SDef.AddExtension(Global.ResourceMapLinkUrl, new FhirString(packet.ToString()));
 
             return this;
         }
 
-        public SDefEditor AddTargetLink(String url, Cardinality cardinality, bool showChildren = true)
+
+        public SDefEditor AddTargetLink(String url, Cardinality cardinality, bool showChildren)
         {
 
             dynamic packet = new JObject();
-            packet.LinkType = "target";
+            packet.LinkType = SVGGlobal.TargetType;
             packet.ShowChildren = showChildren;
             packet.Cardinality = cardinality.ToString();
             packet.LinkTarget = url;
@@ -333,10 +352,10 @@ namespace BreastRadiology.XUnitTests
             return this;
         }
 
-        public SDefEditor AddValueSetLink(ValueSet vs, bool showChildren = true)
+        public SDefEditor AddValueSetLink(ValueSet vs, bool showChildren)
         {
             dynamic packet = new JObject();
-            packet.LinkType = "valueSet";
+            packet.LinkType = SVGGlobal.ValueSetType;
             packet.ShowChildren = showChildren;
             packet.LinkTarget = vs.Url;
             this.SDef.AddExtension(Global.ResourceMapLinkUrl, new FhirString(packet.ToString()));
@@ -420,7 +439,7 @@ namespace BreastRadiology.XUnitTests
             componentNode.ApplySlicing(slicingComponent, false);
         }
 
-        public void ComponentSliceCodeableConcept(String sliceName,
+        public ElementTreeSlice ComponentSliceCodeableConcept(String sliceName,
                 CodeableConcept pattern,
                 ValueSet valueSet,
                 BindingStrength bindingStrength,
@@ -436,7 +455,7 @@ namespace BreastRadiology.XUnitTests
             slice.ElementDefinition
                 .SetShort($"{componentName} component")
                 .SetDefinition(sliceDefinition)
-                .SetComment(new Markdown($"This is one component of a group of components that comprise the observation."))
+                .SetComment(ResourcesMaker.componentDefinition)
                 ;
 
             if (modalities != Modalities.All)
@@ -453,7 +472,8 @@ namespace BreastRadiology.XUnitTests
                     Min = 1,
                     Max = "1",
                     Short = $"{componentName} component code",
-                    Definition = new Markdown($"This code identifies the {componentName} {compStr}")
+                    Definition = new Markdown()
+                                    .Paragraph($"This code identifies the {componentName} {compStr}.")
                 };
                 componentCode
                     .Pattern(pattern)
@@ -485,9 +505,11 @@ namespace BreastRadiology.XUnitTests
                 componentRef,
                 "CodeableConcept",
                 valueSet.Url);
+
+            return slice;
         }
 
-        public void SliceComponentCode(ElementTreeSlice slice,
+        public ElementTreeNode SliceComponentCode(ElementTreeSlice slice,
             String sliceName,
             CodeableConcept sliceCode)
         {
@@ -499,7 +521,7 @@ namespace BreastRadiology.XUnitTests
                 Max = "1"
             };
             componentCode.Pattern(sliceCode);
-            slice.CreateNode(componentCode);
+            return slice.CreateNode(componentCode);
         }
 
         public ElementTreeNode SliceValueXByType(ElementTreeSlice slice,
@@ -544,7 +566,8 @@ namespace BreastRadiology.XUnitTests
             retVal.ElementDefinition
                 .SetShort($"'{profile.Title}' reference")
                 .SetDefinition(
-                    new Markdown($"This slice references the target '{profile.Title}'")
+                    new Markdown()
+                                    .Paragraph($"This slice references the target '{profile.Title}'.")
                     )
             ;
             this.AddTargetLink(profile.Url.Trim(),
@@ -564,7 +587,8 @@ namespace BreastRadiology.XUnitTests
             ElementDefinition sliceDef = this.SliceByUrlTarget(sliceElementDef, profile.Url, min, max).ElementDefinition
                 .SetShort($"'{profile.Title}' reference")
                 .SetDefinition(
-                    new Markdown($"This slice references the target '{profile.Title}'")
+                    new Markdown()
+                        .Paragraph($"This slice references the target '{profile.Title}'.")
                     .ValidModalities(Modalities.MG)
                     )
             ;
@@ -576,11 +600,11 @@ namespace BreastRadiology.XUnitTests
         public void SliceComponentSize(String sliceName,
             CodeableConcept componentCode,
             ValueSet units,
+            Int32 min,
+            String max,
             out ElementTreeSlice slice)
         {
-            this.StartComponentSliceing();
-
-            slice = this.AppendSlice("component", sliceName, 0, "1");
+            slice = this.AppendSlice("component", sliceName, min, max);
 
             // Fix component code
             this.SliceComponentCode(slice, sliceName, componentCode);
@@ -617,75 +641,6 @@ namespace BreastRadiology.XUnitTests
                     High = new SimpleQuantity
                     {
                         System = units.Url,
-                    }
-                };
-                ElementDefinition valueX = new ElementDefinition
-                {
-                    Path = $"{slice.ElementDefinition.Path}.value[x]",
-                    ElementId = $"{slice.ElementDefinition.Path}:{sliceName}.value[x]:valueRange",
-                    SliceName = $"valueRange",
-                    Min = 0,
-                    Max = "1"
-                }
-                .Pattern(r)
-                .Type("Range")
-                ;
-                valueXNode.CreateSlice($"{sliceName}/range", valueX);
-            }
-        }
-
-
-
-
-
-
-        public void SliceComponentCount(String sliceName,
-            CodeableConcept componentCode,
-            out ElementTreeSlice slice)
-        {
-            this.StartComponentSliceing();
-
-            slice = this.AppendSlice("component", sliceName, 0, "1");
-
-            // Fix component code
-            this.SliceComponentCode(slice, sliceName, componentCode);
-            ElementTreeNode valueXNode = this.SliceValueXByType(slice,
-                sliceName,
-                new string[] { "Quantity", "Range" });
-
-            {
-                Hl7.Fhir.Model.Quantity q = new Hl7.Fhir.Model.Quantity
-                {
-                    System = "http://unitsofmeasure.org",
-                    Code = "tot"
-                };
-
-                ElementDefinition valueX = new ElementDefinition
-                {
-                    Path = $"{slice.ElementDefinition.Path}.value[x]",
-                    ElementId = $"{slice.ElementDefinition.Path}:{sliceName}.value[x]:valueQuantity",
-                    SliceName = $"valueQuantity",
-                    Min = 0,
-                    Max = "1"
-                }
-                .Pattern(q)
-                .Type("Quantity")
-                ;
-                valueXNode.CreateSlice($"valueQuantity", valueX);
-            }
-
-            {
-                Hl7.Fhir.Model.Range r = new Hl7.Fhir.Model.Range
-                {
-                    Low = new SimpleQuantity
-                    {
-                        System = "http://unitsofmeasure.org",
-                        Code = "tot"
-                    },
-                    High = new SimpleQuantity
-                    {
-                        System = "http://unitsofmeasure.org",
-                        Code = "tot"
                     }
                 };
                 ElementDefinition valueX = new ElementDefinition

@@ -4,51 +4,160 @@
         <name>Hl7.Fhir.Support</name>
     </assembly>
     <members>
-        <member name="M:Hl7.Fhir.Support.Model.Primitives.GetPrimitiveTypeName(System.Type)">
+        <member name="F:Hl7.Fhir.Language.TypeSpecifier.PrimitiveTypes">
             <summary>
-            Derives the basic FHIR type name from a C# primitive type.
+            This is the list of supported types for the primitive values in ITypedElement.Value
+            </summary>
+        </member>
+        <member name="M:Hl7.Fhir.Language.TypeSpecifier.ForNativeType(System.Type)">
+            <summary>
+            Maps a C# type to a known TypeSpecifier.
             </summary>
             <param name="dotNetType">Value to determine the type for.</param>
             <returns></returns>
-            <remarks>This function maps a primitive .NET value unto the subset of types supported by FhirPath.</remarks>
         </member>
-        <member name="M:Hl7.Fhir.Support.Model.Primitives.TryGetPrimitiveTypeName(System.Type,System.String@)">
+        <member name="M:Hl7.Fhir.Language.TypeSpecifier.TryGetNativeType(System.Type@)">
             <summary>
-            Derives the basic FHIR type name from a C# primitive type.
+            Returns the .NET type used to represent this TypeSpecifier.
             </summary>
-            <param name="dotNetType">The Value to determine the type for.</param>
-            <param name="typeName">Primitive type name for the .NET primitive, or null.</param>
-            <returns>Returns false if the function was unable to map the .NET type to a FHIR type.</returns>
-            <remarks>This function maps a primitive .NET value unto the subset of types supported by FhirPath.</remarks>
-        </member>
-        <member name="M:Hl7.Fhir.Support.Model.Primitives.ConvertToPrimitiveValue(System.Object)">
-            <summary>
-            Converts a primitive .NET value to a primitive FHIR-supported primitive value.
-            </summary>
-            <param name="value"></param>
-            <returns>A primitive value that is directly supported in FHIR and the .Value attribute of ITypedElement.</returns>
-        </member>
-        <member name="M:Hl7.Fhir.Support.Model.Primitives.TryConvertToPrimitiveValue(System.Object,System.Object@)">
-            <summary>
-            Tries to converts a primitive .NET value to a primitive FHIR-supported primitive value.
-            </summary>
-            <param name="value"></param>
-            <param name="primitiveValue">A primitive value that is directly supported in FHIR and the .Value attribute of ITypedElement.</param>
-            <returns>Whether the conversion succeeded.</returns>
-        </member>
-        <member name="M:Hl7.Fhir.Support.Model.Primitives.GetNativeRepresentation(System.String)">
-            <summary>
-            Returns the .NET type used to represent the given FHIR primitive type.
-            </summary>
-            <param name="typeName"></param>
             <returns></returns>
         </member>
-        <member name="M:Hl7.Fhir.Support.Model.Primitives.TryGetNativeRepresentation(System.String,System.Type@)">
+        <member name="M:Hl7.Fhir.Model.Primitives.Any.ConvertToSystemValue(System.Object)">
             <summary>
-            Returns the .NET type used to represent the given FHIR primitive type.
+            Converts a primitive .NET instance to a System-based instance.
             </summary>
-            <param name="typeName">A FHIR type name</param>
-            <param name="nativeType">The corresponding .NET type used by this library to represent the given type.</param>
+        </member>
+        <member name="M:Hl7.Fhir.Model.Primitives.Any.TryConvertToSystemValue(System.Object,System.Object@)">
+            <summary>
+            Try to converts a .NET instance to a System-based instance.
+            </summary>
+        </member>
+        <member name="T:Hl7.Fhir.Model.Primitives.EqualityExtensions">
+            <summary>
+            Equality functions for the base set of primitives, based on section 6.1 of the FhirPath spec
+            </summary>
+            <remarks>Because PartialDate and PartialTime also accept timezones, the definition below
+            deviates from the spec, and instead aligns with the logic for PartialDateTime as described
+            in the FhirPath specification.
+            </remarks>
+        </member>
+        <member name="T:Hl7.Fhir.Model.Primitives.EquivalenceExtensions">
+            <summary>
+            Equality functions for the base set of primitives, based on section 6.1 of the FhirPath spec
+            </summary>
+            <remarks>Because PartialDate and PartialTime also accept timezones, the definition below
+            deviates from the spec, and instead aligns with the logic for PartialDateTime as described
+            in the FhirPath specification.
+            </remarks>
+        </member>
+        <member name="P:Hl7.Fhir.Model.Primitives.PartialDate.Precision">
+            <summary>
+            The precision of the date available. 
+            </summary>
+        </member>
+        <member name="P:Hl7.Fhir.Model.Primitives.PartialDate.Offset">
+            <summary>
+            The span of time ahead/behind UTC
+            </summary>
+        </member>
+        <member name="P:Hl7.Fhir.Model.Primitives.PartialDate.HasOffset">
+            <summary>
+            Whether the time specifies an offset to UTC
+            </summary>
+        </member>
+        <member name="M:Hl7.Fhir.Model.Primitives.PartialDate.ToDateTimeOffset(System.Int32,System.Int32,System.Int32,System.TimeSpan)">
+            <summary>
+            Converts the partial date to a full DateTimeOffset instance.
+            </summary>
+            <param name="hours"></param>
+            <param name="minutes"></param>
+            <param name="seconds"></param>
+            <param name="defaultOffset">Offset used when the partial datetime does not specify one.</param>
+            <returns></returns>
+        </member>
+        <member name="M:Hl7.Fhir.Model.Primitives.PartialDate.ToDateTimeOffset(System.Int32,System.Int32,System.Int32,System.Int32,System.TimeSpan)">
+            <summary>
+            Converts the partial date to a full DateTimeOffset instance.
+            </summary>
+            <param name="hours"></param>
+            <param name="minutes"></param>
+            <param name="seconds"></param>
+            <param name="milliseconds"></param>
+            <param name="defaultOffset">Offset used when the partial datetime does not specify one.</param>
+            <returns></returns>
+        </member>
+        <member name="M:Hl7.Fhir.Model.Primitives.PartialDate.tryParse(System.String,Hl7.Fhir.Model.Primitives.PartialDate@)">
+            <summary>
+            Converts the partial date to a full DateTimeOffset instance.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="P:Hl7.Fhir.Model.Primitives.PartialDateTime.Offset">
+            <summary>
+            The span of time ahead/behind UTC
+            </summary>
+        </member>
+        <member name="P:Hl7.Fhir.Model.Primitives.PartialDateTime.Precision">
+            <summary>
+            The precision of the date and time available. 
+            </summary>
+        </member>
+        <member name="P:Hl7.Fhir.Model.Primitives.PartialDateTime.HasOffset">
+            <summary>
+            Whether the time specifies an offset to UTC
+            </summary>
+        </member>
+        <member name="M:Hl7.Fhir.Model.Primitives.PartialDateTime.ToDateTimeOffset(System.TimeSpan)">
+            <summary>
+            Converts the partial datetime to a full DateTimeOffset instance.
+            </summary>
+            <param name="defaultOffset">Offset used when the partial datetime does not specify one.</param>
+            <returns></returns>
+        </member>
+        <member name="F:Hl7.Fhir.Model.Primitives.PartialPrecision.Fraction">
+            <summary>
+            Milliseconds and fractions
+            </summary>
+        </member>
+        <member name="P:Hl7.Fhir.Model.Primitives.PartialTime.Offset">
+            <summary>
+            The span of time ahead/behind UTC
+            </summary>
+        </member>
+        <member name="P:Hl7.Fhir.Model.Primitives.PartialTime.Precision">
+            <summary>
+            The precision of the time available. 
+            </summary>
+        </member>
+        <member name="P:Hl7.Fhir.Model.Primitives.PartialTime.HasOffset">
+            <summary>
+            Whether the time specifies an offset to UTC
+            </summary>
+        </member>
+        <member name="M:Hl7.Fhir.Model.Primitives.PartialTime.ToDateTimeOffset(System.Int32,System.Int32,System.Int32,System.TimeSpan)">
+            <summary>
+            Converts the partial time to a full DateTimeOffset instance.
+            </summary>
+            <param name="year">Year used to turn a time into a date</param>
+            <param name="month">Month used to turn a time into a date</param>
+            <param name="day">Day used to turn a time into a date</param>
+            <param name="defaultOffset">Offset used when the partial time does not specify one.</param>
+            <returns></returns>
+        </member>
+        <member name="M:Hl7.Fhir.Model.Primitives.PartialTime.FromDateTimeOffset(System.DateTimeOffset,Hl7.Fhir.Model.Primitives.PartialPrecision,System.Boolean)">
+            <summary>
+            
+            </summary>
+            <param name="dto"></param>
+            <param name="prec"></param>
+            <param name="includeOffset">Whether to include the timezone offset.</param>
+            <returns></returns>
+        </member>
+        <member name="M:Hl7.Fhir.Model.Primitives.PartialTime.Now(System.Boolean)">
+            <summary>
+            
+            </summary>
+            <param name="includeOffset">Whether to include the timezone offset.</param>
             <returns></returns>
         </member>
         <member name="P:Hl7.Fhir.Utility.EnumLiteralAttribute.System">

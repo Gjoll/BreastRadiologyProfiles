@@ -27,9 +27,9 @@ namespace BreastRadiology.XUnitTests
         {
             get
             {
-                if (baseDirFull == null)
-                    baseDirFull = DirHelper.FindParentDir(BaseDirName);
-                return baseDirFull;
+                if (this.baseDirFull == null)
+                    this.baseDirFull = DirHelper.FindParentDir(BaseDirName);
+                return this.baseDirFull;
             }
         }
         String baseDirFull;
@@ -54,9 +54,12 @@ namespace BreastRadiology.XUnitTests
 
         public BuildFragments()
         {
-            this.cacheDir = Path.Combine(BaseDir, "Cache");
-            this.contentDir = Path.Combine(BaseDir, "IG", "Content");
-            this.guideDir = Path.Combine(BaseDir, "IG", "Guide");
+            Encoding.RegisterProvider(System.Text.CodePagesEncodingProvider.Instance);
+            Encoding enc1252 = CodePagesEncodingProvider.Instance.GetEncoding(1252);
+
+            this.cacheDir = Path.Combine(this.BaseDir, "Cache");
+            this.contentDir = Path.Combine(this.BaseDir, "IG", "Content");
+            this.guideDir = Path.Combine(this.BaseDir, "IG", "Guide");
 
             this.graphicsDir = Path.Combine(this.contentDir, "Graphics");
             this.fragmentDir = Path.Combine(this.contentDir, "Fragments");
@@ -105,7 +108,7 @@ namespace BreastRadiology.XUnitTests
         }
 
         [TestMethod]
-        public void A_BuildFragments()
+        public void B1_BuildFragments()
         {
             DateTime start = DateTime.Now;
             Trace.WriteLine("Starting A_BuildFragments");
@@ -134,7 +137,7 @@ namespace BreastRadiology.XUnitTests
         }
 
         [TestMethod]
-        public void B_BuildResources()
+        public void B2_BuildResources()
         {
             DateTime start = DateTime.Now;
             Trace.WriteLine("Starting B_BuildResources");
@@ -207,6 +210,16 @@ namespace BreastRadiology.XUnitTests
         }
 
         [TestMethod]
+        public void SDCheckInputResources()
+        {
+            SDChecker fv = new SDChecker();
+            fv.StatusErrors += this.StatusErrors;
+            fv.StatusInfo += this.StatusInfo;
+            fv.StatusWarnings += this.StatusWarnings;
+            fv.CheckDir(this.resourcesDir, "*.json");
+        }
+
+        [TestMethod]
         public void ValidateInputResources()
         {
             FhirValidator fv = new FhirValidator(Path.Combine(this.cacheDir, "validation.xml"));
@@ -222,7 +235,7 @@ namespace BreastRadiology.XUnitTests
         }
 
         [TestMethod]
-        public void C_PatchIntroDocs()
+        public void B3_PatchIntroDocs()
         {
             DateTime start = DateTime.Now;
             Trace.WriteLine("Starting A_BuildFragments");
@@ -256,7 +269,7 @@ namespace BreastRadiology.XUnitTests
         }
 
         [TestMethod]
-        public void D_BuildGraphics()
+        public void B4_BuildGraphics()
         {
             DateTime start = DateTime.Now;
             Trace.WriteLine("Starting C_BuildGraphics");
@@ -264,72 +277,35 @@ namespace BreastRadiology.XUnitTests
             {
                 if (Directory.Exists(this.graphicsDir) == false)
                     Directory.CreateDirectory(this.graphicsDir);
-
                 {
                     ResourceMap map = new ResourceMap();
-
                     map.AddDir(this.resourcesDir, "*.json");
-
                     {
                         FocusMapMaker focusMapMaker = new FocusMapMaker(this.fc, map, this.graphicsDir, this.pageDir);
                         focusMapMaker.Create();
                     }
-
                     {
                         ResourceMapMaker resourceMapMaker = new ResourceMapMaker(this.fc, map);
-                        resourceMapMaker.AddLegendItem("DiagnosticReport", Color.LightGreen);
-                        resourceMapMaker.AddLegendItem("ServiceRequest", Color.LightPink);
-                        resourceMapMaker.AddLegendItem("Extension", Color.LightSalmon);
-                        resourceMapMaker.AddLegendItem("Observation", Color.LightSkyBlue);
-                        resourceMapMaker.AddLegendItem("FhirResource", Color.LightBlue);
-
-                        resourceMapMaker.Create(ResourcesMaker.CreateUrl("BreastRadReport"),
+                        resourceMapMaker.Create(ResourcesMaker.CreateUrl("BreastRadComposition"),
                             Path.Combine(this.graphicsDir, "ProfileOverview.svg"));
                     }
                     {
                         ResourceMapMaker resourceMapMaker = new ResourceMapMaker(this.fc, map);
-                        resourceMapMaker.AddLegendItem("DiagnosticReport", Color.LightGreen);
-                        resourceMapMaker.AddLegendItem("Extension", Color.LightSalmon);
-                        resourceMapMaker.AddLegendItem("Observation", Color.LightSkyBlue);
-                        resourceMapMaker.AddLegendItem("ImagingStudy", Color.LightCoral);
-                        resourceMapMaker.AddLegendItem("FhirResource", Color.LightBlue);
-
                         resourceMapMaker.Create(ResourcesMaker.CreateUrl("MGFinding"),
                             Path.Combine(this.graphicsDir, "MgFindings.svg"));
                     }
-
                     {
                         ResourceMapMaker resourceMapMaker = new ResourceMapMaker(this.fc, map);
-                        resourceMapMaker.AddLegendItem("DiagnosticReport", Color.LightGreen);
-                        resourceMapMaker.AddLegendItem("Extension", Color.LightSalmon);
-                        resourceMapMaker.AddLegendItem("Observation", Color.LightSkyBlue);
-                        resourceMapMaker.AddLegendItem("ImagingStudy", Color.LightCoral);
-                        resourceMapMaker.AddLegendItem("FhirResource", Color.LightBlue);
-
                         resourceMapMaker.Create(ResourcesMaker.CreateUrl("MRIFinding"),
                             Path.Combine(this.graphicsDir, "MRIFindings.svg"));
                     }
-
                     {
                         ResourceMapMaker resourceMapMaker = new ResourceMapMaker(this.fc, map);
-                        resourceMapMaker.AddLegendItem("DiagnosticReport", Color.LightGreen);
-                        resourceMapMaker.AddLegendItem("Extension", Color.LightSalmon);
-                        resourceMapMaker.AddLegendItem("Observation", Color.LightSkyBlue);
-                        resourceMapMaker.AddLegendItem("ImagingStudy", Color.LightCoral);
-                        resourceMapMaker.AddLegendItem("FhirResource", Color.LightBlue);
-
                         resourceMapMaker.Create(ResourcesMaker.CreateUrl("NMFinding"),
                             Path.Combine(this.graphicsDir, "NMFindings.svg"));
                     }
-
                     {
                         ResourceMapMaker resourceMapMaker = new ResourceMapMaker(this.fc, map);
-                        resourceMapMaker.AddLegendItem("DiagnosticReport", Color.LightGreen);
-                        resourceMapMaker.AddLegendItem("Extension", Color.LightSalmon);
-                        resourceMapMaker.AddLegendItem("Observation", Color.LightSkyBlue);
-                        resourceMapMaker.AddLegendItem("ImagingStudy", Color.LightCoral);
-                        resourceMapMaker.AddLegendItem("FhirResource", Color.LightBlue);
-
                         resourceMapMaker.Create(ResourcesMaker.CreateUrl("USFinding"),
                             Path.Combine(this.graphicsDir, "USFindings.svg"));
                     }
@@ -354,25 +330,7 @@ namespace BreastRadiology.XUnitTests
         }
 
         [TestMethod]
-        public void FullBuild()
-        {
-            using (this.fc = new FileCleaner())
-            {
-                this.fc?.Add(this.graphicsDir, "*.svg");
-                this.fc?.Add(this.pageDir, "*.xml");
-                this.fc?.Add(this.fragmentDir, "*.json");
-                this.fc?.Add(this.resourcesDir, "*.json");
-
-                this.A_BuildFragments();
-                this.B_BuildResources();
-                this.C_PatchIntroDocs();
-                this.D_BuildGraphics();
-                this.E_BuildIG();
-            }
-        }
-
-        [TestMethod]
-        public void E_BuildIG()
+        public void B5_BuildIG()
         {
             DateTime start = DateTime.Now;
             Trace.WriteLine("Starting D_BuildIG");
@@ -442,13 +400,76 @@ namespace BreastRadiology.XUnitTests
             Trace.WriteLine($"Ending D_BuildIG [{(Int32)span.TotalSeconds}]");
         }
 
+        [TestMethod]
+        public void B6_RunPublisher()
+        {
+            DateTime start = DateTime.Now;
+            Trace.WriteLine("Starting F_RunPublisher");
+            try
+            {
+                String executingDir = Path.Combine(DirHelper.FindParentDir("BreastRadiologyProfiles"),
+                    "IG",
+                    "guide");
+                String jarPath = Path.Combine(executingDir, "input-cache", "org.hl7.fhir.publisher.jar");
+                String igPath = Path.Combine(executingDir, "ig.ini");
+                if (File.Exists(jarPath) == false)
+                    throw new Exception($"Missing publisher jar '{jarPath}'");
 
+                IGPublisher p = new IGPublisher();
+                p.StatusErrors += this.StatusErrors;
+                p.StatusInfo += this.StatusInfo;
+                p.StatusWarnings += this.StatusWarnings;
+                p.Publish(executingDir, jarPath, igPath);
+
+                if (p.HasErrors)
+                {
+                    StringBuilder sb = new StringBuilder();
+                    p.FormatErrorMessages(sb);
+                    Trace.WriteLine(sb.ToString());
+                    Debug.Assert(false);
+                }
+            }
+            catch (Exception err)
+            {
+                Trace.WriteLine(err.Message);
+                Assert.IsTrue(false);
+            }
+            TimeSpan span = DateTime.Now - start;
+            Trace.WriteLine($"Ending F_RunPublisher[{(Int32)span.TotalSeconds}]");
+        }
+
+
+
+        [TestMethod]
+        public void A1_Build()
+        {
+            using (this.fc = new FileCleaner())
+            {
+                this.fc?.Add(this.graphicsDir, "*.svg");
+                this.fc?.Add(this.pageDir, "*.xml");
+                this.fc?.Add(this.fragmentDir, "*.json");
+                this.fc?.Add(this.resourcesDir, "*.json");
+
+                this.B1_BuildFragments();
+                this.B2_BuildResources();
+                this.B3_PatchIntroDocs();
+                this.B4_BuildGraphics();
+                this.B5_BuildIG();
+            }
+        }
+
+        [TestMethod]
+        public void A2_BuildAndPublish()
+        {
+            this.A1_Build();
+            this.B6_RunPublisher();
+        }
 
 
         [TestMethod]
         public void TestFile()
         {
-            FhirStructureDefinitions.Create(cacheDir);
+            FhirStructureDefinitions.Create(this.cacheDir);
             FhirStructureDefinitions.Self.StoreFhirElements();
 
             FhirJsonParser parser = new FhirJsonParser();

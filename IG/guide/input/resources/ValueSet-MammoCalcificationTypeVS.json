@@ -25,56 +25,88 @@
         "system": "http://hl7.org/fhir/us/breast-radiology/CodeSystem/MammoCalcificationTypeCS",
         "concept": [
           {
-            "code": "Skin",
-            "display": "Skin Calcification (Typically Benign)"
-          },
-          {
-            "code": "Vascular",
-            "display": "Vascular Calcification (Typically Benign)"
+            "code": "Amorphous",
+            "display": "Amorphous"
           },
           {
             "code": "Coarse",
-            "display": "Coarse or \"Popcorn-like\" Calcification (Typically Benign)"
-          },
-          {
-            "code": "LargeRodLike",
-            "display": "Large Rod-Like Calcification (Typically Benign)"
-          },
-          {
-            "code": "Round",
-            "display": "Round (Typically Benign)"
-          },
-          {
-            "code": "Rim",
-            "display": "Rim  Calcification (Typically Benign)"
+            "display": "Coarse"
           },
           {
             "code": "Dystrophic",
-            "display": "Dystrophic Calcification (Typically Benign)"
+            "display": "Dystrophic"
           },
           {
-            "code": "MilkOfCalcium",
-            "display": "Milk of Calcium Calcification (Typically Benign)"
+            "code": "Eggshell",
+            "display": "Eggshell"
           },
           {
-            "code": "Suture",
-            "display": "Suture Calcification (Typically Benign)"
+            "code": "Fine",
+            "display": "Fine"
           },
           {
-            "code": "Amorphous",
-            "display": "Amorphous Calcification (Suspicious Morphology)"
+            "code": "GenericCalcification",
+            "display": "Generic calcification"
           },
           {
             "code": "CoarseHeterogeneous",
-            "display": "Coarse Heterogeneous Calcification (Suspicious Morphology)"
+            "display": "Coarse Heterogeneous"
           },
           {
-            "code": "Fine Pleomorphic",
-            "display": "Fine Pleomorphic Calcification (Suspicious Morphology)"
+            "code": "Indistinct",
+            "display": "Indistinct"
+          },
+          {
+            "code": "LargeRodlike",
+            "display": "Large rodlike"
+          },
+          {
+            "code": "Layering",
+            "display": "Layering"
           },
           {
             "code": "FineLinear",
-            "display": "Fine Linear or Fine-Linear Branching Calcification (Suspicious Morphology)"
+            "display": "Fine Linear"
+          },
+          {
+            "code": "Lucent-centered",
+            "display": "Lucent-centered"
+          },
+          {
+            "code": "MilkOfCalcium",
+            "display": "Milk of calcium"
+          },
+          {
+            "code": "FinePleomorphic",
+            "display": "Fine Pleomorphic"
+          },
+          {
+            "code": "Punctate",
+            "display": "Punctate"
+          },
+          {
+            "code": "Rim",
+            "display": "Rim"
+          },
+          {
+            "code": "Round",
+            "display": "Round"
+          },
+          {
+            "code": "Skin",
+            "display": "Skin"
+          },
+          {
+            "code": "Spherical",
+            "display": "Spherical"
+          },
+          {
+            "code": "Suture",
+            "display": "Suture"
+          },
+          {
+            "code": "Vascular",
+            "display": "Vascular"
           }
         ]
       }

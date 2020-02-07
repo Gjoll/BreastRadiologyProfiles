@@ -15,7 +15,7 @@ namespace BreastRadiology.XUnitTests
                         "UnitsOfLength ValueSet",
                         "UnitsOfLength/ValueSet",
                         "UnitsOfLength value set.",
-                        Group_MGCodesVS);
+                        Group_CommonCodesVS);
 
                 ValueSet.ConceptSetComponent vsComp = new ValueSet.ConceptSetComponent
                 {

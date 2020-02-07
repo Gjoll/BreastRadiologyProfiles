@@ -15,13 +15,12 @@ namespace BreastRadiology.XUnitTests
                 SDefEditor e = Self.CreateFragment("BreastRadObservationNoValueFragment",
                     "Observation NoValue Fragment",
                         "Observation/NoValue/Fragment",
-                    ObservationUrl)
+                    Global.ObservationUrl)
                     .Description("Observation No Value fragment",
                         new Markdown()
                             .Paragraph("Base fragment for all BreastRad observations that have no explicit value.")
                     )
                     .AddFragRef(Self.ObservationFragment.Value())
-                    .AddFragRef(Self.ObservationNoComponentFragment.Value())
                 ;
                 s = e.SDef;
 

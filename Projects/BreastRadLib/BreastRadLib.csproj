@@ -28,4 +28,11 @@
     </Reference>
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="Generated\Class\" />
+    <Folder Include="Generated\CodeSystems\" />
+    <Folder Include="Generated\Interfaces\" />
+    <Folder Include="Generated\ValueSets\" />
+  </ItemGroup>
+
 </Project>

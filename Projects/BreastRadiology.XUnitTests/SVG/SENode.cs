@@ -13,7 +13,6 @@ namespace BreastRadiology.XUnitTests
         public List<SEText> TextLines = new List<SEText>();
         public Color FillColor { get; }
         public String HRef {get; }
-        public String Title {get; }
         public float Width { get => this.width; set => this.width = value; }
 
         public String Annotation { get; }
@@ -21,15 +20,12 @@ namespace BreastRadiology.XUnitTests
         public SENode(float width,
             Color fillColor,
             String annotation,
-            String hRef = null,
-            String title = null)
+            String hRef = null)
         {
             this.Width = width;
             this.FillColor = fillColor;
-            Debug.Assert(String.IsNullOrEmpty(annotation) || annotation.Contains(".."));
             this.Annotation = annotation;
             this.HRef = hRef;
-            this.Title = title;
         }
 
         public SENode()

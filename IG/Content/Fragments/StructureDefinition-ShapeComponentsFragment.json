@@ -23,19 +23,19 @@
     },
     {
       "url": "http://www.fragment.com/maplink",
-      "valueString": "{\r\n  \"LinkType\": \"component\",\r\n  \"ShowChildren\": true,\r\n  \"Cardinality\": \"0..1\",\r\n  \"LinkTarget\": \"Orientation\",\r\n  \"ComponentHRef\": \"StructureDefinition-{SDName}-definitions.html#Observation.component:orientation\",\r\n  \"Types\": \"CodeableConcept\",\r\n  \"ValueSet\": \"http://hl7.org/fhir/us/breast-radiology/ValueSet/OrientationVS\"\r\n}"
+      "valueString": "{\r\n  \"LinkType\": \"component\",\r\n  \"ShowChildren\": false,\r\n  \"Cardinality\": \"0..1\",\r\n  \"LinkTarget\": \"Orientation\",\r\n  \"ComponentHRef\": \"StructureDefinition-{SDName}-definitions.html#Observation.component:orientation\",\r\n  \"Types\": \"CodeableConcept\",\r\n  \"References\": [\r\n    \"http://hl7.org/fhir/us/breast-radiology/ValueSet/OrientationVS\"\r\n  ]\r\n}"
     },
     {
       "url": "http://www.fragment.com/maplink",
-      "valueString": "{\r\n  \"LinkType\": \"component\",\r\n  \"ShowChildren\": true,\r\n  \"Cardinality\": \"0..1\",\r\n  \"LinkTarget\": \"Shape\",\r\n  \"ComponentHRef\": \"StructureDefinition-{SDName}-definitions.html#Observation.component:shape\",\r\n  \"Types\": \"CodeableConcept\",\r\n  \"ValueSet\": \"http://hl7.org/fhir/us/breast-radiology/ValueSet/ShapeVS\"\r\n}"
+      "valueString": "{\r\n  \"LinkType\": \"component\",\r\n  \"ShowChildren\": false,\r\n  \"Cardinality\": \"0..1\",\r\n  \"LinkTarget\": \"Shape\",\r\n  \"ComponentHRef\": \"StructureDefinition-{SDName}-definitions.html#Observation.component:shape\",\r\n  \"Types\": \"CodeableConcept\",\r\n  \"References\": [\r\n    \"http://hl7.org/fhir/us/breast-radiology/ValueSet/ShapeVS\"\r\n  ]\r\n}"
     },
     {
       "url": "http://www.fragment.com/maplink",
-      "valueString": "{\r\n  \"LinkType\": \"component\",\r\n  \"ShowChildren\": true,\r\n  \"Cardinality\": \"0..1\",\r\n  \"LinkTarget\": \"Margin\",\r\n  \"ComponentHRef\": \"StructureDefinition-{SDName}-definitions.html#Observation.component:margin\",\r\n  \"Types\": \"CodeableConcept\",\r\n  \"ValueSet\": \"http://hl7.org/fhir/us/breast-radiology/ValueSet/MarginVS\"\r\n}"
+      "valueString": "{\r\n  \"LinkType\": \"component\",\r\n  \"ShowChildren\": false,\r\n  \"Cardinality\": \"0..1\",\r\n  \"LinkTarget\": \"Margin\",\r\n  \"ComponentHRef\": \"StructureDefinition-{SDName}-definitions.html#Observation.component:margin\",\r\n  \"Types\": \"CodeableConcept\",\r\n  \"References\": [\r\n    \"http://hl7.org/fhir/us/breast-radiology/ValueSet/MarginVS\"\r\n  ]\r\n}"
     },
     {
       "url": "http://www.fragment.com/maplink",
-      "valueString": "{\r\n  \"LinkType\": \"component\",\r\n  \"ShowChildren\": true,\r\n  \"Cardinality\": \"0..1\",\r\n  \"LinkTarget\": \"Density\",\r\n  \"ComponentHRef\": \"StructureDefinition-{SDName}-definitions.html#Observation.component:mgDensity\",\r\n  \"Types\": \"CodeableConcept\",\r\n  \"ValueSet\": \"http://hl7.org/fhir/us/breast-radiology/ValueSet/MGDensityVS\"\r\n}"
+      "valueString": "{\r\n  \"LinkType\": \"component\",\r\n  \"ShowChildren\": false,\r\n  \"Cardinality\": \"0..1\",\r\n  \"LinkTarget\": \"Density\",\r\n  \"ComponentHRef\": \"StructureDefinition-{SDName}-definitions.html#Observation.component:mgDensity\",\r\n  \"Types\": \"CodeableConcept\",\r\n  \"References\": [\r\n    \"http://hl7.org/fhir/us/breast-radiology/ValueSet/MGDensityVS\"\r\n  ]\r\n}"
     }
   ],
   "url": "http://hl7.org/fhir/us/breast-radiology/StructureDefinition/ShapeComponentsFragment",
@@ -86,7 +86,7 @@
         "path": "Observation.component",
         "sliceName": "orientation",
         "short": "Orientation component",
-        "definition": "This slice contains the optional component that define the orientation of the abnormality.\nThe value of this component is a codeable concept chosen from the OrientationVS valueset.",
+        "definition": "This slice contains the optional component that define the orientation of the abnormality.\n The value of this component is a codeable concept chosen from the OrientationVS valueset.",
         "comment": "This is one component of a group of components that comprise the observation.",
         "min": 0,
         "max": "1",
@@ -100,7 +100,7 @@
         "id": "Observation.component:orientation.code",
         "path": "Observation.component.code",
         "short": "Orientation component code",
-        "definition": "This code identifies the Orientation component",
+        "definition": "This code identifies the Orientation component.",
         "min": 1,
         "max": "1",
         "base": {
@@ -111,7 +111,7 @@
         "patternCodeableConcept": {
           "coding": [
             {
-              "system": "http://hl7.org/fhir/us/breast-radiology/CodeSystem/ComponentSliceCodes",
+              "system": "http://hl7.org/fhir/us/breast-radiology/CodeSystem/ObservationComponentSliceCodes",
               "code": "orientation"
             }
           ]
@@ -144,7 +144,7 @@
         "path": "Observation.component",
         "sliceName": "shape",
         "short": "Shape component",
-        "definition": "This slice contains the optional component that defines the shape of the abnormality.\nThe value of this component is a codeable concept chosen from the ShapeVS valueset.",
+        "definition": "This slice contains the optional component that defines the shape of the abnormality.\n The value of this component is a codeable concept chosen from the ShapeVS valueset.",
         "comment": "This is one component of a group of components that comprise the observation.",
         "min": 0,
         "max": "1",
@@ -158,7 +158,7 @@
         "id": "Observation.component:shape.code",
         "path": "Observation.component.code",
         "short": "Shape component code",
-        "definition": "This code identifies the Shape component",
+        "definition": "This code identifies the Shape component.",
         "min": 1,
         "max": "1",
         "base": {
@@ -169,7 +169,7 @@
         "patternCodeableConcept": {
           "coding": [
             {
-              "system": "http://hl7.org/fhir/us/breast-radiology/CodeSystem/ComponentSliceCodes",
+              "system": "http://hl7.org/fhir/us/breast-radiology/CodeSystem/ObservationComponentSliceCodes",
               "code": "shape"
             }
           ]
@@ -202,7 +202,7 @@
         "path": "Observation.component",
         "sliceName": "margin",
         "short": "Margin component",
-        "definition": "This slice contains the optional component that defines the observed margin of the abnormality.\nThe value of this component is a codeable concept chosen from the MarginVS valueset.",
+        "definition": "This slice contains the optional component that defines the observed margin of the abnormality.\n The value of this component is a codeable concept chosen from the MarginVS valueset.",
         "comment": "This is one component of a group of components that comprise the observation.",
         "min": 0,
         "max": "1",
@@ -216,7 +216,7 @@
         "id": "Observation.component:margin.code",
         "path": "Observation.component.code",
         "short": "Margin component code",
-        "definition": "This code identifies the Margin component",
+        "definition": "This code identifies the Margin component.",
         "min": 1,
         "max": "1",
         "base": {
@@ -227,7 +227,7 @@
         "patternCodeableConcept": {
           "coding": [
             {
-              "system": "http://hl7.org/fhir/us/breast-radiology/CodeSystem/ComponentSliceCodes",
+              "system": "http://hl7.org/fhir/us/breast-radiology/CodeSystem/ObservationComponentSliceCodes",
               "code": "margin"
             }
           ]
@@ -260,7 +260,7 @@
         "path": "Observation.component",
         "sliceName": "mgDensity",
         "short": "Density component",
-        "definition": "This slice contains the optional component that defines the observed density of the breast tissue.\nThe value of this component is a codeable concept chosen from the MGDensityVS valueset.\n\nValid for the following modalities:\n\n<ul><li> MG</li>\n</ul>",
+        "definition": "This slice contains the optional component that defines the observed density of the breast tissue.\n The value of this component is a codeable concept chosen from the MGDensityVS valueset.\n\nValid for the following modalities:\n\n<ul><li> MG</li>\n</ul>",
         "comment": "This is one component of a group of components that comprise the observation.",
         "min": 0,
         "max": "1",
@@ -274,7 +274,7 @@
         "id": "Observation.component:mgDensity.code",
         "path": "Observation.component.code",
         "short": "Density component code",
-        "definition": "This code identifies the Density component",
+        "definition": "This code identifies the Density component.",
         "min": 1,
         "max": "1",
         "base": {
@@ -285,7 +285,7 @@
         "patternCodeableConcept": {
           "coding": [
             {
-              "system": "http://hl7.org/fhir/us/breast-radiology/CodeSystem/ComponentSliceCodes",
+              "system": "http://hl7.org/fhir/us/breast-radiology/CodeSystem/ObservationComponentSliceCodes",
               "code": "mgDensity"
             }
           ]

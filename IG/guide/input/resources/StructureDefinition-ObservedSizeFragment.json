@@ -5,7 +5,7 @@
   "name": "ObservedSizeFragment",
   "title": "ObservedSize Fragment",
   "status": "draft",
-  "description": "<b>Fragment that adds 'Observed Size' element to profile.</b>",
+  "description": "<b>Fragment that adds 'Observed Size' components to Observation.</b>",
   "fhirVersion": "4.0.0",
   "kind": "resource",
   "abstract": true,
@@ -17,7 +17,7 @@
       {
         "id": "Observation",
         "path": "Observation",
-        "short": "Fragment that adds 'Observed Size' element to profile.",
+        "short": "Fragment that adds 'Observed Size' components to Observation.",
         "definition": "Measurements and simple assertions made about a patient, device or other subject.",
         "comment": "Used for simple observations such as device measurements, laboratory atomic results, vital signs, height, weight, smoking status, comments, etc.  Other resources are used to provide context for observations such as laboratory reports, etc.",
         "alias": [
@@ -2151,15 +2151,15 @@
         ]
       },
       {
-        "id": "Observation.component:observedSize",
+        "id": "Observation.component:obsSize",
         "path": "Observation.component",
-        "sliceName": "observedSize",
+        "sliceName": "obsSize",
         "short": "Observed Size component",
-        "definition": "This component slice contains the observed size of an item in cemtimeters.\nThis can be a quantity (i.e. 5 cm), or a range (1 cm to 5 cm).\nIf the lower bound of the range is set but not the upper bound, then it means {lower bound} cm or more.\nIf the lower bound of the range is not set but not the upper bound is, then it means {upper bound} cm or less.",
+        "definition": "This component slice contains the size of an item observed.\n There may be one, two, or three values indicating a size of\n one dimension (length), two dimensions (area), or three dimensions (volume).\n Each dimension can be a quantity (i.e. 5), or a range (1 to 5).\n If the lower bound of the range is set but not the upper bound, then the size is {lower bound} or greater.\n If the upper bound of the range is set but not the lower bound, then the size is {upper bound} or less.",
         "comment": "This is one component of a group of components that comprise the observation.",
         "requirements": "Component observations share the same attributes in the Observation resource as the primary observation and are always treated a part of a single observation (they are not separable).   However, the reference range for the primary observation value is not inherited by the component values and is required when appropriate for each component observation.",
         "min": 0,
-        "max": "1",
+        "max": "3",
         "base": {
           "path": "Observation.component",
           "min": 0,
@@ -2194,7 +2194,7 @@
         ]
       },
       {
-        "id": "Observation.component:observedSize.id",
+        "id": "Observation.component:obsSize.id",
         "path": "Observation.component.id",
         "representation": [
           "xmlAttr"
@@ -2223,7 +2223,7 @@
         ]
       },
       {
-        "id": "Observation.component:observedSize.extension",
+        "id": "Observation.component:obsSize.extension",
         "path": "Observation.component.extension",
         "short": "Additional content defined by implementations",
         "definition": "May be used to represent additional information that is not part of the basic definition of the element. To make the use of extensions safe and manageable, there is a strict set of governance  applied to the definition and use of extensions. Though any implementer can define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension.",
@@ -2254,7 +2254,7 @@
         ]
       },
       {
-        "id": "Observation.component:observedSize.modifierExtension",
+        "id": "Observation.component:obsSize.modifierExtension",
         "path": "Observation.component.modifierExtension",
         "short": "Extensions that cannot be ignored even if unrecognized",
         "definition": "May be used to represent additional information that is not part of the basic definition of the element and that modifies the understanding of the element in which it is contained and/or the understanding of the containing element's descendants. Usually modifier elements provide negation or qualification. To make the use of extensions safe and manageable, there is a strict set of governance applied to the definition and use of extensions. Though any implementer can define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension. Applications processing a resource are required to check for modifier extensions.\n\nModifier extensions SHALL NOT change the meaning of any elements on Resource or DomainResource (including cannot change the meaning of modifierExtension itself).",
@@ -2288,7 +2288,7 @@
         ]
       },
       {
-        "id": "Observation.component:observedSize.code",
+        "id": "Observation.component:obsSize.code",
         "path": "Observation.component.code",
         "short": "Type of component observation (code / type)",
         "definition": "Describes what was observed. Sometimes this is called the observation \"code\".",
@@ -2309,8 +2309,8 @@
         "patternCodeableConcept": {
           "coding": [
             {
-              "system": "http://hl7.org/fhir/us/breast-radiology/CodeSystem/ComponentSliceCodes",
-              "code": "observedSize"
+              "system": "http://hl7.org/fhir/us/breast-radiology/CodeSystem/ObservationComponentSliceCodes",
+              "code": "obsSize"
             }
           ]
         },
@@ -2347,7 +2347,7 @@
         ]
       },
       {
-        "id": "Observation.component:observedSize.value[x]",
+        "id": "Observation.component:obsSize.value[x]",
         "path": "Observation.component.value[x]",
         "slicing": {
           "discriminator": [
@@ -2399,7 +2399,7 @@
         ]
       },
       {
-        "id": "Observation.component:observedSize.value[x]:valueQuantity",
+        "id": "Observation.component:obsSize.value[x]:valueQuantity",
         "path": "Observation.component.value[x]",
         "sliceName": "valueQuantity",
         "short": "Actual component result",
@@ -2443,7 +2443,7 @@
         ]
       },
       {
-        "id": "Observation.component:observedSize.value[x]:valueRange",
+        "id": "Observation.component:obsSize.value[x]:valueRange",
         "path": "Observation.component.value[x]",
         "sliceName": "valueRange",
         "short": "Actual component result",
@@ -2492,7 +2492,7 @@
         ]
       },
       {
-        "id": "Observation.component:observedSize.dataAbsentReason",
+        "id": "Observation.component:obsSize.dataAbsentReason",
         "path": "Observation.component.dataAbsentReason",
         "short": "Why the component result is missing",
         "definition": "Provides a reason why the expected value in the element Observation.component.value[x] is missing.",
@@ -2538,7 +2538,7 @@
         ]
       },
       {
-        "id": "Observation.component:observedSize.interpretation",
+        "id": "Observation.component:obsSize.interpretation",
         "path": "Observation.component.interpretation",
         "short": "High, low, normal, etc.",
         "definition": "A categorical assessment of an observation value.  For example, high, low, normal.",
@@ -2592,7 +2592,7 @@
         ]
       },
       {
-        "id": "Observation.component:observedSize.referenceRange",
+        "id": "Observation.component:obsSize.referenceRange",
         "path": "Observation.component.referenceRange",
         "short": "Provides guide for interpretation of component result",
         "definition": "Guidance on how to interpret the value by comparison to a normal or recommended range.",
@@ -2626,7 +2626,7 @@
       {
         "id": "Observation",
         "path": "Observation",
-        "short": "Fragment that adds 'Observed Size' element to profile.",
+        "short": "Fragment that adds 'Observed Size' components to Observation.",
         "base": {
           "path": "Observation",
           "min": 0,
@@ -2652,14 +2652,14 @@
         }
       },
       {
-        "id": "Observation.component:observedSize",
+        "id": "Observation.component:obsSize",
         "path": "Observation.component",
-        "sliceName": "observedSize",
+        "sliceName": "obsSize",
         "short": "Observed Size component",
-        "definition": "This component slice contains the observed size of an item in cemtimeters.\nThis can be a quantity (i.e. 5 cm), or a range (1 cm to 5 cm).\nIf the lower bound of the range is set but not the upper bound, then it means {lower bound} cm or more.\nIf the lower bound of the range is not set but not the upper bound is, then it means {upper bound} cm or less.",
+        "definition": "This component slice contains the size of an item observed.\n There may be one, two, or three values indicating a size of\n one dimension (length), two dimensions (area), or three dimensions (volume).\n Each dimension can be a quantity (i.e. 5), or a range (1 to 5).\n If the lower bound of the range is set but not the upper bound, then the size is {lower bound} or greater.\n If the upper bound of the range is set but not the lower bound, then the size is {upper bound} or less.",
         "comment": "This is one component of a group of components that comprise the observation.",
         "min": 0,
-        "max": "1",
+        "max": "3",
         "base": {
           "path": "Observation.component",
           "min": 0,
@@ -2667,7 +2667,7 @@
         }
       },
       {
-        "id": "Observation.component:observedSize.code",
+        "id": "Observation.component:obsSize.code",
         "path": "Observation.component.code",
         "min": 1,
         "max": "1",
@@ -2679,14 +2679,14 @@
         "patternCodeableConcept": {
           "coding": [
             {
-              "system": "http://hl7.org/fhir/us/breast-radiology/CodeSystem/ComponentSliceCodes",
-              "code": "observedSize"
+              "system": "http://hl7.org/fhir/us/breast-radiology/CodeSystem/ObservationComponentSliceCodes",
+              "code": "obsSize"
             }
           ]
         }
       },
       {
-        "id": "Observation.component:observedSize.value[x]",
+        "id": "Observation.component:obsSize.value[x]",
         "path": "Observation.component.value[x]",
         "slicing": {
           "discriminator": [
@@ -2714,7 +2714,7 @@
         ]
       },
       {
-        "id": "Observation.component:observedSize.value[x]:valueQuantity",
+        "id": "Observation.component:obsSize.value[x]:valueQuantity",
         "path": "Observation.component.value[x]",
         "sliceName": "valueQuantity",
         "min": 0,
@@ -2734,7 +2734,7 @@
         }
       },
       {
-        "id": "Observation.component:observedSize.value[x]:valueRange",
+        "id": "Observation.component:obsSize.value[x]:valueRange",
         "path": "Observation.component.value[x]",
         "sliceName": "valueRange",
         "min": 0,

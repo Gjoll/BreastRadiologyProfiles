@@ -19,21 +19,38 @@ namespace BreastRadiology.XUnitTests
                          Group_MGCodesCS,
                         new ConceptDef[]
                          {
-                        new ConceptDef("FocalAsymmetrical",
-                            "Focal Asymmetrical",
-                            new Definition()
-                                .Line("[PR]")
-                            ),
-                        new ConceptDef("Nodular",
-                            "Nodular",
-                            new Definition()
-                                .Line("[PR]")
-                            ),
-                        new ConceptDef("Tubular",
-                            "Tubular",
-                            new Definition()
-                                .Line("[PR]")
-                            )
+                             //+ Type
+                             new ConceptDef()
+                                 .SetCode("Density")
+                                 .SetDisplay("Density")
+                                 .SetDefinition("[PR] Density")
+                                 .MammoId("686")
+                                 .ValidModalities(Modalities.MG)
+                             ,
+                             new ConceptDef()
+                                 .SetCode("DensityFocalAsymmetry")
+                                 .SetDisplay("Density focal asymmetry")
+                                 .SetDefinition("[PR] Density focal asymmetry")
+                                 .MammoId("645")
+                                 .ValidModalities(Modalities.MG)
+                             ,
+                             new ConceptDef()
+                                 .SetCode("DensityNodular")
+                                 .SetDisplay("Density nodular")
+                                 .SetDefinition("[PR] Density nodular")
+                                 .MammoId("646")
+                                 .ValidModalities(Modalities.MG)
+                                 .SetSnomedDescription("not found like tubular shaped")
+                             ,
+                             new ConceptDef()
+                                 .SetCode("DensityTubular")
+                                 .SetDisplay("Density tubular")
+                                 .SetDefinition("[PR] Density tubular")
+                                 .MammoId("647")
+                                 .ValidModalities(Modalities.MG)
+                                 .SetSnomedDescription("ClinicalFinding | 129794007 | Tubular shaped density " +
+                                     "of breast (Finding)")
+                             //- Type
                          }
                      )
                  );
@@ -60,26 +77,33 @@ namespace BreastRadiology.XUnitTests
                 SDefEditor e = Self.CreateEditor("MGAbnormalityDensity",
                         "Mammography Density",
                         "MG Density",
-                        ObservationUrl,
+                        Global.ObservationUrl,
                         $"{Group_MGResources}/AbnormalityDensity",
                         "ObservationLeaf")
                     .AddFragRef(Self.ObservationLeafFragment.Value())
-                    .Description("Mammography Density Observation",
-                        new Markdown()
-                    )
                     .AddFragRef(Self.ObservationNoDeviceFragment.Value())
+                    .AddFragRef(Self.ObservationNoComponentFragment.Value())
                     .AddFragRef(Self.ObservationNoValueFragment.Value())
                     .AddFragRef(Self.CommonComponentsFragment.Value())
                     .AddFragRef(Self.ShapeComponentsFragment.Value())
                     .AddFragRef(Self.NotPreviouslySeenComponentsFragment.Value())
                     .AddFragRef(Self.ObservedCountComponentFragment.Value())
+                    .AddFragRef(Self.ObservedSizeComponentFragment.Value())
+                    .AddFragRef(Self.ObservedDistributionComponentFragment.Value())
                     .AddFragRef(Self.CorrespondsWithComponentFragment.Value())
+                    .Description("Mammography Density Observation",
+                        new Markdown()
+                    )
                     ;
 
                 s = e.SDef;
 
+                // Set Observation.code to unique value for this profile.
+                e.Select("code").Pattern(Self.ObservationCodeMGAbnormalityDensity.ToCodeableConcept());
+
                 e.IntroDoc
                     .ReviewedStatus("NOONE", "")
+                    .MammoDescription("686")
                     ;
 
                 e.Select("value[x]").Zero();
@@ -90,7 +114,7 @@ namespace BreastRadiology.XUnitTests
 
                 e.StartComponentSliceing();
                 e.ComponentSliceCodeableConcept("densityType",
-                    Self.MGCodeAbnormalityDensityType.ToCodeableConcept(),
+                    Self.MGComponentSliceCodeAbnormalityDensityType.ToCodeableConcept(),
                     binding,
                     BindingStrength.Required,
                     1,

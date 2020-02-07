@@ -15,14 +15,13 @@ namespace BreastRadiology.XUnitTests
                        SDefEditor e = Self.CreateFragment("FindingBreastFragment",
                                            "Finding Breast Fragment",
                                            "Finding/Breast/Fragment",
-                                           ObservationUrl)
+                                           Global.ObservationUrl)
                            .Description("Fragment definition for finding section of left or right breast",
                                new Markdown()
                                .Paragraph("This fragment defines the elements of a finding section of a left or right breast.")
                             )
                            .AddFragRef(Self.HeaderFragment.Value())
                            .AddFragRef(Self.ObservationNoDeviceFragment.Value())
-                           .AddFragRef(Self.ServiceRecommendationFragment.Value())
                            ;
                        s = e.SDef;
 
@@ -47,7 +46,7 @@ namespace BreastRadiology.XUnitTests
                        ElementTreeNode sliceElementDef = e.ConfigureSliceByUrlDiscriminator("hasMember", false);
 
                        {
-                           ElementTreeSlice slice = e.SliceTargetReference( sliceElementDef, Self.FindingMammo.Value(), 0, "*");
+                           ElementTreeSlice slice = e.SliceTargetReference( sliceElementDef, Self.MGFinding.Value(), 0, "*");
                            slice.ElementDefinition.MustSupport();
                        }
                        {

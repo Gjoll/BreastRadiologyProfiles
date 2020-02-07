@@ -8,7 +8,7 @@
     },
     {
       "url": "http://www.fragment.com/Group",
-      "valueString": "MGCodesVS"
+      "valueString": "CommonCodesVS"
     },
     {
       "url": "http://www.fragment.com/mapname",
@@ -67,8 +67,8 @@
             "display": "Incidental finding"
           },
           {
-            "code": "Mammogram",
-            "display": "Mammogram"
+            "code": "Mammo",
+            "display": "Mammo"
           },
           {
             "code": "MRI",
@@ -91,8 +91,8 @@
             "display": "Palpated"
           },
           {
-            "code": "Post-operative",
-            "display": "Post-operative"
+            "code": "PostOperative",
+            "display": "Post operative"
           },
           {
             "code": "PreviousBiopsy",
@@ -137,10 +137,6 @@
           {
             "code": "size>Palp",
             "display": "size > palp"
-          },
-          {
-            "code": "size>US",
-            "display": "size > US"
           },
           {
             "code": "SkinMarker",

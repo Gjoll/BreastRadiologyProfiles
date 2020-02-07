@@ -1,4 +1,5 @@
 pushd Content
+rmdir /s /q Merged
 rmdir /s /q Fragments
 rmdir /s /q Graphics
 rmdir /s /q Page

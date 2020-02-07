@@ -90,8 +90,8 @@ namespace BreastRadiology.XUnitTests
         public float NodeGapEndX(SENodeGroup g)
         {
             if (g.ShowCardinalities == true)
-                return NodeGapCardEndX;
-            return NodeGapNoCardEndX;
+                return this.NodeGapCardEndX;
+            return this.NodeGapNoCardEndX;
         }
 
         public void Render(SENodeGroup group,
@@ -154,12 +154,12 @@ namespace BreastRadiology.XUnitTests
             colHeight = 0;
 
             if (group.Nodes.Count() > 0)
-                RenderSimpleGroup(group, screenX, screenY, lineFlag, out colWidth, out colHeight, endConnectors);
+                this.RenderSimpleGroup(group, screenX, screenY, lineFlag, out colWidth, out colHeight, endConnectors);
             else if (group.Children.Count() > 0)
             {
                 foreach (SENodeGroup childGroup in group.Children)
                 {
-                    RenderGroup(childGroup, screenX, screenY, lineFlag, out float tColWidth, out float tColHeight, endConnectors);
+                    this.RenderGroup(childGroup, screenX, screenY, lineFlag, out float tColWidth, out float tColHeight, endConnectors);
                     colHeight += tColHeight;
                     screenY += tColHeight;
                     if (colWidth < tColWidth)
@@ -202,7 +202,7 @@ namespace BreastRadiology.XUnitTests
                 if (bottomConnectorY < connectorY)
                     bottomConnectorY = connectorY;
                 startConnectors.Add(new PointF(screenX + nodeWidth, col1ScreenY + nodeHeight / 2));
-                Debug.Assert(String.IsNullOrEmpty(node.Annotation) || node.Annotation.Contains(".."));
+
                 endConnectors.Add(new EndPoint
                     {
                         Location = new PointF(screenX, col1ScreenY + nodeHeight / 2),
@@ -245,7 +245,6 @@ namespace BreastRadiology.XUnitTests
                         float xStart = screenX + col1Width + this.NodeGapStartX;
                         this.CreateArrow(g, false, true, xStart, stubEnd.Location.Y, stubEnd.Location.X, stubEnd.Location.Y);
 
-                        Debug.Assert(String.IsNullOrEmpty(stubEnd.Annotation) || stubEnd.Annotation.Contains(".."));
                         if (child.ShowCardinalities == true)
                         {
                             SvgText t = this.doc.AddText(g);
@@ -312,11 +311,6 @@ namespace BreastRadiology.XUnitTests
                 SvgHyperLink l = this.doc.AddHyperLink(g);
                 l.Target = "_top";
                 l.HRef = node.HRef.ToString();
-                if (node.Title != null)
-                {
-                    SvgTitle title = this.doc.AddTitle(l);
-                    title.Value = node.Title;
-                }
                 square = this.doc.AddRect(l);
             }
             else

@@ -19,7 +19,7 @@ namespace BreastRadiology.XUnitTests
                 SDefEditor e = Self.CreateFragment("HeaderFragment",
                     "Header Fragment",
                     "Common",
-                    ResourceUrl)
+                    Global.ResourceUrl)
                     .Description("Common Header Fragment",
                         new Markdown("Resource fragment used to by all resources to define common values such as Contact and Date.")
                     );
@@ -27,7 +27,7 @@ namespace BreastRadiology.XUnitTests
                 cd.Telecom.Add(new ContactPoint
                 {
                     System = ContactPoint.ContactPointSystem.Url,
-                    Value = contactUrl
+                    Value = Global.ContactUrl
                 });
 
                 s = e.SDef;

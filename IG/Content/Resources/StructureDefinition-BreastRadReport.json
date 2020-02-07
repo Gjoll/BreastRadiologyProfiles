@@ -26,24 +26,8 @@
       "valueString": "{\r\n  \"LinkType\": \"fragment\",\r\n  \"ShowChildren\": false,\r\n  \"LinkTarget\": \"http://hl7.org/fhir/us/breast-radiology/StructureDefinition/CategoryFragment\"\r\n}"
     },
     {
-      "url": "http://www.fragment.com/fragment",
-      "valueUrl": "http://hl7.org/fhir/us/breast-radiology/StructureDefinition/ServiceRecommendationFragment"
-    },
-    {
       "url": "http://www.fragment.com/maplink",
-      "valueString": "{\r\n  \"LinkType\": \"fragment\",\r\n  \"ShowChildren\": false,\r\n  \"LinkTarget\": \"http://hl7.org/fhir/us/breast-radiology/StructureDefinition/ServiceRecommendationFragment\"\r\n}"
-    },
-    {
-      "url": "http://www.fragment.com/maplink",
-      "valueString": "{\r\n  \"LinkType\": \"extension\",\r\n  \"ShowChildren\": true,\r\n  \"Cardinality\": \"0..*\",\r\n  \"ComponentHRef\": \"StructureDefinition-{SDName}-definitions.html#DiagnosticReport.extension:impressions\",\r\n  \"LocalName\": \"Impressions\",\r\n  \"LinkTarget\": \"http://hl7.org/fhir/us/breast-radiology/StructureDefinition/ImpressionsExtension\"\r\n}"
-    },
-    {
-      "url": "http://www.fragment.com/maplink",
-      "valueString": "{\r\n  \"LinkType\": \"extension\",\r\n  \"ShowChildren\": true,\r\n  \"Cardinality\": \"0..*\",\r\n  \"ComponentHRef\": \"StructureDefinition-{SDName}-definitions.html#DiagnosticReport.extension:related\",\r\n  \"LocalName\": \"Related Clinical Resources\",\r\n  \"LinkTarget\": \"http://hl7.org/fhir/us/breast-radiology/StructureDefinition/RelatedClinicalResourcesExtension\"\r\n}"
-    },
-    {
-      "url": "http://www.fragment.com/maplink",
-      "valueString": "{\r\n  \"LinkType\": \"component\",\r\n  \"ShowChildren\": true,\r\n  \"Cardinality\": \"1..1\",\r\n  \"LinkTarget\": \"Conclusion Code\",\r\n  \"ComponentHRef\": \"StructureDefinition-{SDName}-definitions.html#DiagnosticReport.conclusionCode\",\r\n  \"Types\": \"CodeableConcept\",\r\n  \"ValueSet\": \"http://hl7.org/fhir/us/breast-radiology/ValueSet/BiRadsAssessmentCategoriesVS\"\r\n}"
+      "valueString": "{\r\n  \"LinkType\": \"component\",\r\n  \"ShowChildren\": false,\r\n  \"Cardinality\": \"1..1\",\r\n  \"LinkTarget\": \"Conclusion Code\",\r\n  \"ComponentHRef\": \"StructureDefinition-{SDName}-definitions.html#DiagnosticReport.conclusionCode\",\r\n  \"Types\": \"CodeableConcept\",\r\n  \"References\": [\r\n    \"http://hl7.org/fhir/us/breast-radiology/ValueSet/BiRadsAssessmentCategoriesVS\"\r\n  ]\r\n}"
     },
     {
       "url": "http://www.fragment.com/maplink",
@@ -68,18 +52,6 @@
     {
       "url": "http://www.fragment.com/Group",
       "valueString": "Fragment/CategoryFragment"
-    },
-    {
-      "url": "http://www.fragment.com/mapname",
-      "valueString": "Service Recommendation/Fragment"
-    },
-    {
-      "url": "http://www.fragment.com/Group",
-      "valueString": "Fragment/ServiceRecommendationFragment"
-    },
-    {
-      "url": "http://www.fragment.com/maplink",
-      "valueString": "{\r\n  \"LinkType\": \"extension\",\r\n  \"ShowChildren\": true,\r\n  \"Cardinality\": \"0..*\",\r\n  \"ComponentHRef\": \"StructureDefinition-{SDName}-definitions.html#Observation.extension:serviceRecommendation\",\r\n  \"LocalName\": \"Service Recommendation\",\r\n  \"LinkTarget\": \"http://hl7.org/fhir/us/breast-radiology/StructureDefinition/ServiceRecommendationExtension\"\r\n}"
     }
   ],
   "url": "http://hl7.org/fhir/us/breast-radiology/StructureDefinition/BreastRadReport",
@@ -99,7 +71,7 @@
       ]
     }
   ],
-  "description": "<b>Breast Radiology Diagnostic Report</b>\n\nThis resource is the base resource of the Breast Diagnostic Report.\nAll components of this report are stored in or referenced by this fhir instance.\n\nThis resource is a profile of the Fhir DiagnosticReport base resource.\n\nItems referenced by this resource include:\n\n<ul><li>Prior breast radiology reports for this patient</li>\n<li>Left breast findings</li>\n<li>Right breast findings</li>\n<li>Recommendations of this report</li>\n<li>Report findings in a human readable format</li>\n</ul>",
+  "description": "<b>Breast Radiology Diagnostic Report</b>\n\nThis resource is one of the components of a Breast Radiology Document.\n It is referenced in the document's 'Report' section \nand contains the report conclusions and findings.\n\nThis resource is a profile of the Fhir DiagnosticReport base resource.",
   "fhirVersion": "4.0.0",
   "kind": "resource",
   "abstract": false,
@@ -112,7 +84,7 @@
         "id": "DiagnosticReport",
         "path": "DiagnosticReport",
         "short": "Breast Radiology Diagnostic Report",
-        "definition": "This resource is the base resource of the Breast Diagnostic Report.\nAll components of this report are stored in or referenced by this fhir instance.\n\nThis resource is a profile of the Fhir DiagnosticReport base resource.\n\nItems referenced by this resource include:\n\n<ul><li>Prior breast radiology reports for this patient</li>\n<li>Left breast findings</li>\n<li>Right breast findings</li>\n<li>Recommendations of this report</li>\n<li>Report findings in a human readable format</li>\n</ul>",
+        "definition": "This resource is one of the components of a Breast Radiology Document.\n It is referenced in the document's 'Report' section \nand contains the report conclusions and findings.\n\nThis resource is a profile of the Fhir DiagnosticReport base resource.",
         "comment": "This is intended to capture a single report and is not suitable for use in displaying summary information that covers multiple reports.  For example, this resource has not been designed for laboratory cumulative reporting formats nor detailed structured reports for sequencing.",
         "alias": [
           "Report",
@@ -373,16 +345,6 @@
       {
         "id": "DiagnosticReport.extension",
         "path": "DiagnosticReport.extension",
-        "slicing": {
-          "discriminator": [
-            {
-              "type": "value",
-              "path": "url"
-            }
-          ],
-          "ordered": true,
-          "rules": "openAtEnd"
-        },
         "short": "Additional content defined by implementations",
         "definition": "May be used to represent additional information that is not part of the basic definition of the resource. To make the use of extensions safe and manageable, there is a strict set of governance  applied to the definition and use of extensions. Though any implementer can define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension.",
         "comment": "There can be no stigma associated with the use of extensions by any application, project, or standard - regardless of the institution or jurisdiction that uses or defines the extensions.  The use of extensions is what allows the FHIR specification to retain a core level of simplicity for everyone.",
@@ -400,112 +362,6 @@
         "type": [
           {
             "code": "Extension"
-          }
-        ],
-        "isModifier": false,
-        "isSummary": false,
-        "mapping": [
-          {
-            "identity": "rim",
-            "map": "N/A"
-          }
-        ]
-      },
-      {
-        "id": "DiagnosticReport.extension:impressions",
-        "path": "DiagnosticReport.extension",
-        "sliceName": "impressions",
-        "short": "Exam impressions",
-        "definition": "Exam impressions.",
-        "comment": "This is one component of a group of components that comprise the observation.",
-        "alias": [
-          "extensions",
-          "user content"
-        ],
-        "min": 0,
-        "max": "*",
-        "base": {
-          "path": "DomainResource.extension",
-          "min": 0,
-          "max": "*"
-        },
-        "type": [
-          {
-            "code": "Extension",
-            "profile": [
-              "http://hl7.org/fhir/us/breast-radiology/StructureDefinition/ImpressionsExtension"
-            ]
-          }
-        ],
-        "mustSupport": true,
-        "isModifier": false,
-        "isSummary": false,
-        "mapping": [
-          {
-            "identity": "rim",
-            "map": "N/A"
-          }
-        ]
-      },
-      {
-        "id": "DiagnosticReport.extension:related",
-        "path": "DiagnosticReport.extension",
-        "sliceName": "related",
-        "short": "Related Clinical Resources",
-        "definition": "References to FHIR clinical resoruces used during the exam or referenced by this report.",
-        "comment": "This is one component of a group of components that comprise the observation.",
-        "alias": [
-          "extensions",
-          "user content"
-        ],
-        "min": 0,
-        "max": "*",
-        "base": {
-          "path": "DomainResource.extension",
-          "min": 0,
-          "max": "*"
-        },
-        "type": [
-          {
-            "code": "Extension",
-            "profile": [
-              "http://hl7.org/fhir/us/breast-radiology/StructureDefinition/RelatedClinicalResourcesExtension"
-            ]
-          }
-        ],
-        "isModifier": false,
-        "isSummary": false,
-        "mapping": [
-          {
-            "identity": "rim",
-            "map": "N/A"
-          }
-        ]
-      },
-      {
-        "id": "DiagnosticReport.extension:serviceRecommendation",
-        "path": "DiagnosticReport.extension",
-        "sliceName": "serviceRecommendation",
-        "short": "serviceRecommendation extension",
-        "definition": "References to recommended action to be taken in response to this observation.\n\nAll Service Recommendations for a Breast Radiology Report will be referenced in the Breast Radiology Report, \nso that all recommendations can be found in one place.\nIn addition pecific Service Recommendations may also be referenced in an abnormality observations, indicating that the action\ntaken is inresponse to that abnormality observation,\nor in a finding observation, indicating that the action \ntaken is in response to one or more of the abnormality observations that are a part of the finding.\n\nAll Service Recommendations referenced in an abnormality observation or finding observation \nwill always be also referenced in the Breast Radiology Report",
-        "comment": "This is one component of a group of components that comprise the observation.",
-        "alias": [
-          "extensions",
-          "user content"
-        ],
-        "min": 0,
-        "max": "*",
-        "base": {
-          "path": "DomainResource.extension",
-          "min": 0,
-          "max": "*"
-        },
-        "type": [
-          {
-            "code": "Extension",
-            "profile": [
-              "http://hl7.org/fhir/us/breast-radiology/StructureDefinition/ServiceRecommendationExtension"
-            ]
           }
         ],
         "isModifier": false,
@@ -1262,7 +1118,7 @@
         "path": "DiagnosticReport.result",
         "sliceName": "sectionFindingsLeftBreast",
         "short": "'Findings Left Breast' reference",
-        "definition": "This slice references the target 'Findings Left Breast'",
+        "definition": "This slice references the target 'Findings Left Breast'.",
         "comment": "Observations can contain observations.",
         "requirements": "Need to support individual results, or  groups of results, where the result grouping is arbitrary, but meaningful.",
         "alias": [
@@ -1310,7 +1166,7 @@
         "path": "DiagnosticReport.result",
         "sliceName": "sectionFindingsRightBreast",
         "short": "'Findings Right Breast' reference",
-        "definition": "This slice references the target 'Findings Right Breast'",
+        "definition": "This slice references the target 'Findings Right Breast'.",
         "comment": "Observations can contain observations.",
         "requirements": "Need to support individual results, or  groups of results, where the result grouping is arbitrary, but meaningful.",
         "alias": [
@@ -1584,7 +1440,7 @@
         "id": "DiagnosticReport.conclusion",
         "path": "DiagnosticReport.conclusion",
         "short": "Clinical conclusion (interpretation) of test results",
-        "definition": "This will contain a text version of the complete report.\n\nThe report should be readable without specialized formatting software..",
+        "definition": "This will contain a text version of the complete report.\n\nThe report should be readable without specialized formatting software.",
         "requirements": "Need to be able to provide a conclusion that is not lost among the basic result data.",
         "alias": [
           "Report"
@@ -1690,126 +1546,12 @@
         "id": "DiagnosticReport",
         "path": "DiagnosticReport",
         "short": "Breast Radiology Diagnostic Report",
-        "definition": "This resource is the base resource of the Breast Diagnostic Report.\nAll components of this report are stored in or referenced by this fhir instance.\n\nThis resource is a profile of the Fhir DiagnosticReport base resource.\n\nItems referenced by this resource include:\n\n<ul><li>Prior breast radiology reports for this patient</li>\n<li>Left breast findings</li>\n<li>Right breast findings</li>\n<li>Recommendations of this report</li>\n<li>Report findings in a human readable format</li>\n</ul>",
+        "definition": "This resource is one of the components of a Breast Radiology Document.\n It is referenced in the document's 'Report' section \nand contains the report conclusions and findings.\n\nThis resource is a profile of the Fhir DiagnosticReport base resource.",
         "base": {
           "path": "DiagnosticReport",
           "min": 0,
           "max": "*"
         }
-      },
-      {
-        "id": "DiagnosticReport.extension",
-        "path": "DiagnosticReport.extension",
-        "slicing": {
-          "discriminator": [
-            {
-              "type": "value",
-              "path": "url"
-            }
-          ],
-          "ordered": true,
-          "rules": "openAtEnd"
-        },
-        "base": {
-          "path": "DiagnosticReport.extension",
-          "min": 0,
-          "max": "*"
-        }
-      },
-      {
-        "id": "DiagnosticReport.extension:impressions",
-        "path": "DiagnosticReport.extension",
-        "sliceName": "impressions",
-        "short": "Exam impressions",
-        "definition": "Exam impressions.",
-        "comment": "This is one component of a group of components that comprise the observation.",
-        "alias": [
-          "extensions",
-          "user content"
-        ],
-        "min": 0,
-        "max": "*",
-        "base": {
-          "path": "DiagnosticReport.extension",
-          "min": 0,
-          "max": "*"
-        },
-        "type": [
-          {
-            "code": "Extension",
-            "profile": [
-              "http://hl7.org/fhir/us/breast-radiology/StructureDefinition/ImpressionsExtension"
-            ]
-          }
-        ],
-        "mustSupport": true,
-        "isModifier": false,
-        "isSummary": false,
-        "mapping": [
-          {
-            "identity": "rim",
-            "map": "N/A"
-          }
-        ]
-      },
-      {
-        "id": "DiagnosticReport.extension:related",
-        "path": "DiagnosticReport.extension",
-        "sliceName": "related",
-        "short": "Related Clinical Resources",
-        "definition": "References to FHIR clinical resoruces used during the exam or referenced by this report.",
-        "comment": "This is one component of a group of components that comprise the observation.",
-        "alias": [
-          "extensions",
-          "user content"
-        ],
-        "min": 0,
-        "max": "*",
-        "base": {
-          "path": "DiagnosticReport.extension",
-          "min": 0,
-          "max": "*"
-        },
-        "type": [
-          {
-            "code": "Extension",
-            "profile": [
-              "http://hl7.org/fhir/us/breast-radiology/StructureDefinition/RelatedClinicalResourcesExtension"
-            ]
-          }
-        ],
-        "isModifier": false,
-        "isSummary": false,
-        "mapping": [
-          {
-            "identity": "rim",
-            "map": "N/A"
-          }
-        ]
-      },
-      {
-        "id": "DiagnosticReport.extension:serviceRecommendation",
-        "path": "DiagnosticReport.extension",
-        "sliceName": "serviceRecommendation",
-        "short": "serviceRecommendation extension",
-        "definition": "References to recommended action to be taken in response to this observation.\n\nAll Service Recommendations for a Breast Radiology Report will be referenced in the Breast Radiology Report, \nso that all recommendations can be found in one place.\nIn addition pecific Service Recommendations may also be referenced in an abnormality observations, indicating that the action\ntaken is inresponse to that abnormality observation,\nor in a finding observation, indicating that the action \ntaken is in response to one or more of the abnormality observations that are a part of the finding.\n\nAll Service Recommendations referenced in an abnormality observation or finding observation \nwill always be also referenced in the Breast Radiology Report",
-        "comment": "This is one component of a group of components that comprise the observation.",
-        "min": 0,
-        "max": "*",
-        "base": {
-          "path": "DiagnosticReport.extension",
-          "min": 0,
-          "max": "*"
-        },
-        "type": [
-          {
-            "code": "Extension",
-            "profile": [
-              "http://hl7.org/fhir/us/breast-radiology/StructureDefinition/ServiceRecommendationExtension"
-            ]
-          }
-        ],
-        "isModifier": false
       },
       {
         "id": "DiagnosticReport.category",
@@ -1903,7 +1645,7 @@
         "path": "DiagnosticReport.result",
         "sliceName": "sectionFindingsLeftBreast",
         "short": "'Findings Left Breast' reference",
-        "definition": "This slice references the target 'Findings Left Breast'",
+        "definition": "This slice references the target 'Findings Left Breast'.",
         "comment": "Observations can contain observations.",
         "requirements": "Need to support individual results, or  groups of results, where the result grouping is arbitrary, but meaningful.",
         "alias": [
@@ -1951,7 +1693,7 @@
         "path": "DiagnosticReport.result",
         "sliceName": "sectionFindingsRightBreast",
         "short": "'Findings Right Breast' reference",
-        "definition": "This slice references the target 'Findings Right Breast'",
+        "definition": "This slice references the target 'Findings Right Breast'.",
         "comment": "Observations can contain observations.",
         "requirements": "Need to support individual results, or  groups of results, where the result grouping is arbitrary, but meaningful.",
         "alias": [
@@ -1997,7 +1739,7 @@
       {
         "id": "DiagnosticReport.conclusion",
         "path": "DiagnosticReport.conclusion",
-        "definition": "This will contain a text version of the complete report.\n\nThe report should be readable without specialized formatting software..",
+        "definition": "This will contain a text version of the complete report.\n\nThe report should be readable without specialized formatting software.",
         "min": 1,
         "max": "1",
         "base": {

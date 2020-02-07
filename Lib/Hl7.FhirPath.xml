@@ -4,6 +4,130 @@
         <name>Hl7.FhirPath</name>
     </assembly>
     <members>
+        <member name="M:Hl7.FhirPath.Expressions.Typecasts.UnboxTo(System.Object,System.Type)">
+            <summary>
+            This will unpack the instance 
+            </summary>
+            <param name="instance"></param>
+            <param name="to">The level to unbox to.</param>
+            <returns></returns>
+            <remarks>The level of unboxing is specified using a type. The highest level
+            being an <see cref="T:System.Collections.Generic.IEnumerable`1"/> followed by 
+            <see cref="T:Hl7.Fhir.ElementModel.ITypedElement"/> followed by a primitive runtime type.
+            </remarks>
+        </member>
+        <member name="M:Hl7.FhirPath.Functions.ConversionOperators.ToBoolean(Hl7.Fhir.ElementModel.ITypedElement)">
+            <summary>
+            FhirPath toBoolean() function
+            </summary>
+            <param name="focus"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Hl7.FhirPath.Functions.ConversionOperators.ConvertsToBoolean(Hl7.Fhir.ElementModel.ITypedElement)">
+            <summary>
+            FhirPath convertsToBoolean() function
+            </summary>
+            <param name="focus"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Hl7.FhirPath.Functions.ConversionOperators.ToInteger(Hl7.Fhir.ElementModel.ITypedElement)">
+            <summary>
+            FhirPath toInteger() function
+            </summary>
+            <param name="focus"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Hl7.FhirPath.Functions.ConversionOperators.ConvertsToInteger(Hl7.Fhir.ElementModel.ITypedElement)">
+            <summary>
+            FhirPath convertsToInteger() function.
+            </summary>
+            <param name="focus"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Hl7.FhirPath.Functions.ConversionOperators.ToDecimal(Hl7.Fhir.ElementModel.ITypedElement)">
+            <summary>
+            FhirPath toDecimal() function.
+            </summary>
+            <param name="focus"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Hl7.FhirPath.Functions.ConversionOperators.ConvertsToDecimal(Hl7.Fhir.ElementModel.ITypedElement)">
+            <summary>
+            FhirPath convertsToDecimal() function.
+            </summary>
+            <param name="focus"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Hl7.FhirPath.Functions.ConversionOperators.ToDateTime(Hl7.Fhir.ElementModel.ITypedElement)">
+            <summary>
+            FhirPath toDateTime() function.
+            </summary>
+            <param name="focus"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Hl7.FhirPath.Functions.ConversionOperators.ConvertsToDateTime(Hl7.Fhir.ElementModel.ITypedElement)">
+            <summary>
+            FhirPath convertsToDateTime() function.
+            </summary>
+            <param name="focus"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Hl7.FhirPath.Functions.ConversionOperators.ToTime(Hl7.Fhir.ElementModel.ITypedElement)">
+            <summary>
+            FhirPath toTime() function.
+            </summary>
+            <param name="focus"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Hl7.FhirPath.Functions.ConversionOperators.ConvertsToTime(Hl7.Fhir.ElementModel.ITypedElement)">
+            <summary>
+            FhirPath convertsToTime() function.
+            </summary>
+            <param name="focus"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Hl7.FhirPath.Functions.ConversionOperators.ToDate(Hl7.Fhir.ElementModel.ITypedElement)">
+            <summary>
+            FhirPath toDate() function.
+            </summary>
+            <param name="focus"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Hl7.FhirPath.Functions.ConversionOperators.ConvertsToDate(Hl7.Fhir.ElementModel.ITypedElement)">
+            <summary>
+            FhirPath convertsToDate() function.
+            </summary>
+            <param name="focus"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Hl7.FhirPath.Functions.ConversionOperators.ToQuantity(Hl7.Fhir.ElementModel.ITypedElement)">
+            <summary>
+            FhirPath toQuantity() function.
+            </summary>
+            <param name="focus"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Hl7.FhirPath.Functions.ConversionOperators.ConvertsToQuantity(Hl7.Fhir.ElementModel.ITypedElement)">
+            <summary>
+            FhirPath convertsToQuantity() function.
+            </summary>
+            <param name="focus"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Hl7.FhirPath.Functions.ConversionOperators.ToStringRepresentation(Hl7.Fhir.ElementModel.ITypedElement)">
+            <summary>
+            FhirPath toString() function.
+            </summary>
+            <param name="focus"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Hl7.FhirPath.Functions.ConversionOperators.ConvertsToString(Hl7.Fhir.ElementModel.ITypedElement)">
+            <summary>
+            FhirPath convertsToString() function.
+            </summary>
+            <param name="focus"></param>
+            <returns></returns>
+        </member>
         <member name="T:Hl7.FhirPath.Sprache.CommentParser">
             <summary>
             Constructs customizable comment parsers.

@@ -23,19 +23,26 @@ namespace BreastRadiology.XUnitTests
                          Group_CommonCodesCS,
                          new ConceptDef[]
                          {
-                            new ConceptDef("Normal",
-                                "Normal",
-                                new Definition()
-                                   .Line("[PR]")
-                                )
-                               .ValidModalities(Modalities.MG | Modalities.MRI | Modalities.NM | Modalities.US)
-                             ,
-                            new ConceptDef("Degenerated",
-                                "Degenerated",
-                                new Definition()
-                                   .Line("[PR]")
-                                )
+                            //+ Type
+                            new ConceptDef()
+                                .SetCode("Fibroadenoma")
+                                .SetDisplay("Fibroadenoma")
+                                .SetDefinition("[PR] Fibroadenoma")
+                                .MammoId("70")
+                                .ValidModalities(Modalities.MG | Modalities.US)
+                                .SetUMLS("A fibroadenoma is a benign, or noncancerous, breast " +
+                                    "tumor. Unlike a breast cancer, which grows larger " +
+                                    "over time and can spread to other organs, a fibroadenoma " +
+                                    "remains in the breast tissue. They’re pretty small, " +
+                                    "too. Most are only 1 or 2 centimeters in size.")
+                            ,
+                            new ConceptDef()
+                                .SetCode("FibroadenomaDegeneration")
+                                .SetDisplay("Fibroadenoma degeneration")
+                                .SetDefinition("[PR] Fibroadenoma degeneration")
+                                .MammoId("695")
                                 .ValidModalities(Modalities.MG)
+                            //- Type
                          })
                      );
 
@@ -59,20 +66,23 @@ namespace BreastRadiology.XUnitTests
                 SDefEditor e = Self.CreateEditor("AbnormalityFibroadenoma",
                         "Fibroadenoma",
                         "Fibroadenoma",
-                        ObservationUrl,
+                        Global.ObservationUrl,
                         $"{Group_CommonResources}/AbnormalityFibroadenoma",
                         "ObservationLeaf")
                     .AddFragRef(Self.ObservationLeafFragment.Value())
+                    .AddFragRef(Self.ObservationNoDeviceFragment.Value())
+                    .AddFragRef(Self.ObservationNoValueFragment.Value())
+                    .AddFragRef(Self.ObservationNoComponentFragment.Value())
+                    .AddFragRef(Self.CommonComponentsFragment.Value())
+                    .AddFragRef(Self.ShapeComponentsFragment.Value())
+                    .AddFragRef(Self.ObservedCountComponentFragment.Value())
+                    .AddFragRef(Self.ObservedDistributionComponentFragment.Value())
+                    .AddFragRef(Self.ObservedSizeComponentFragment.Value())
                     .Description("Fibroadenoma Observation",
                         new Markdown()
                             .Paragraph("[PR]")
                             .ValidModalities(Modalities.MG | Modalities.US)
                     )
-                    .AddFragRef(Self.ObservationNoDeviceFragment.Value())
-                    .AddFragRef(Self.ObservationNoValueFragment.Value())
-                    .AddFragRef(Self.CommonComponentsFragment.Value())
-                    .AddFragRef(Self.ShapeComponentsFragment.Value())
-                    .AddFragRef(Self.ObservedCountComponentFragment.Value())
                     ;
 
                 s = e.SDef;
@@ -81,12 +91,15 @@ namespace BreastRadiology.XUnitTests
                     .ReviewedStatus("NOONE", "")
                     ;
 
+                // Set Observation.code to unique value for this profile.
+                e.Select("code").Pattern(Self.ObservationCodeAbnormalityFibroadenoma.ToCodeableConcept());
+
                 ElementTreeNode sliceElementDef = e.ConfigureSliceByUrlDiscriminator("hasMember", false);
                 e.SliceTargetReference( sliceElementDef, Self.AssociatedFeatures.Value(), 0, "1");
 
                 e.StartComponentSliceing();
                 e.ComponentSliceCodeableConcept("fibroAdenomaType",
-                    Self.CodeAbnormalityFibroAdenomaType.ToCodeableConcept(),
+                    Self.ComponentSliceCodeAbnormalityFibroAdenomaType.ToCodeableConcept(),
                     binding,
                     BindingStrength.Required,
                     0,

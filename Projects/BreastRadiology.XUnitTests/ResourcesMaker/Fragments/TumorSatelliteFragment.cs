@@ -15,7 +15,7 @@ namespace BreastRadiology.XUnitTests
                 SDefEditor e = Self.CreateFragment("TumorSatelliteFragment",
                         "Tumor Satellite Fragment",
                         "Tumor Satellite/Fragment",
-                        ObservationUrl)
+                        Global.ObservationUrl)
                     .Description("Tumor Satellite fragment",
                         new Markdown()
                         .Paragraph("This fragment adds the references for the Tumor Satellite extension.")
@@ -35,8 +35,9 @@ namespace BreastRadiology.XUnitTests
 
                     e.AddExtensionLink(extensionStructDef.Url,
                         new SDefEditor.Cardinality(extensionDef),
-                        "Tumour Satellite", 
-                        Global.ElementAnchor(extensionDef));
+                        "Tumor Satellite", 
+                        Global.ElementAnchor(extensionDef),
+                        false);
                 }
             });
     }

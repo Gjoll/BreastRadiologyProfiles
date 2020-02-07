@@ -20,7 +20,7 @@ namespace BreastRadiology.XUnitTests
                 SDefEditor e = Self.CreateEditor("USFinding",
                         "Ultra-Sound Finding",
                         "US Finding",
-                        ObservationUrl,
+                        Global.ObservationUrl,
                         $"{Group_USResources}",
                         "ObservationSection")
                         .Description("Ultra Sound Finding",
@@ -29,6 +29,9 @@ namespace BreastRadiology.XUnitTests
                      .AddFragRef(Self.ObservationSectionFragment.Value())
                    ;
                 s = e.SDef;
+
+                // Set Observation.code to unique value for this profile.
+                e.Select("code").Pattern(Self.ObservationCodeUSFinding.ToCodeableConcept());
 
                 e.IntroDoc
                     .ReviewedStatus("NOONE", "")

@@ -27,6 +27,14 @@
     },
     {
       "url": "http://www.fragment.com/fragment",
+      "valueUrl": "http://hl7.org/fhir/us/breast-radiology/StructureDefinition/BreastRadObservationNoComponentFragment"
+    },
+    {
+      "url": "http://www.fragment.com/maplink",
+      "valueString": "{\r\n  \"LinkType\": \"fragment\",\r\n  \"ShowChildren\": false,\r\n  \"LinkTarget\": \"http://hl7.org/fhir/us/breast-radiology/StructureDefinition/BreastRadObservationNoComponentFragment\"\r\n}"
+    },
+    {
+      "url": "http://www.fragment.com/fragment",
       "valueUrl": "http://hl7.org/fhir/us/breast-radiology/StructureDefinition/BreastRadObservationNoValueFragment"
     },
     {
@@ -78,7 +86,7 @@
   "name": "MGAbnormalityArchitecturalDistortion",
   "title": "Mammography Architectural Distortion",
   "status": "draft",
-  "description": "<b>Architectural Distortion Observation</b>\n\nThe parenchyma is distorted with no definite mass visible. For mammography, this includes thin\nstraight lines or spiculations radiating from a point, and focal retraction, distortion or straightening\nat the anterior or posterior edge of the parenchyma. Architectural distortion may also be associ-\nated with a mass, asymmetry, or calcifications. In the absence of appropriate history of trauma or\nsurgery, architectural distortion is suspicious for malignancy or radial scar, and tissue diagnosis is\nappropriate.\nAs an ASSOCIATED FEATURE, architectural distortion may be used in conjunction with another\nfinding to indicate that the parenchyma is distorted or retracted adjacent to the FINDING\n-- Bi-Rads® Atlas — Mammography Fifth Ed. 2013",
+  "description": "<b>Architectural Distortion Observation</b>",
   "fhirVersion": "4.0.0",
   "kind": "resource",
   "abstract": false,
@@ -91,11 +99,27 @@
         "id": "Observation",
         "path": "Observation",
         "short": "Architectural Distortion Observation",
-        "definition": "The parenchyma is distorted with no definite mass visible. For mammography, this includes thin\nstraight lines or spiculations radiating from a point, and focal retraction, distortion or straightening\nat the anterior or posterior edge of the parenchyma. Architectural distortion may also be associ-\nated with a mass, asymmetry, or calcifications. In the absence of appropriate history of trauma or\nsurgery, architectural distortion is suspicious for malignancy or radial scar, and tissue diagnosis is\nappropriate.\nAs an ASSOCIATED FEATURE, architectural distortion may be used in conjunction with another\nfinding to indicate that the parenchyma is distorted or retracted adjacent to the FINDING\n-- Bi-Rads® Atlas — Mammography Fifth Ed. 2013",
         "base": {
           "path": "Observation",
           "min": 0,
           "max": "*"
+        }
+      },
+      {
+        "id": "Observation.code",
+        "path": "Observation.code",
+        "base": {
+          "path": "Observation.code",
+          "min": 1,
+          "max": "1"
+        },
+        "patternCodeableConcept": {
+          "coding": [
+            {
+              "system": "http://hl7.org/fhir/us/breast-radiology/CodeSystem/ObservationCodes",
+              "code": "mgAbnormalityArchitecturalDistortionObservation"
+            }
+          ]
         }
       },
       {
@@ -122,7 +146,7 @@
         "path": "Observation.hasMember",
         "sliceName": "associatedFeatures",
         "short": "'Associated Features' reference",
-        "definition": "This slice references the target 'Associated Features'",
+        "definition": "This slice references the target 'Associated Features'.",
         "min": 0,
         "max": "1",
         "base": {
@@ -144,7 +168,7 @@
         "path": "Observation.hasMember",
         "sliceName": "consistentWith",
         "short": "'Consistent With' reference",
-        "definition": "This slice references the target 'Consistent With'",
+        "definition": "This slice references the target 'Consistent With'.",
         "min": 0,
         "max": "*",
         "base": {

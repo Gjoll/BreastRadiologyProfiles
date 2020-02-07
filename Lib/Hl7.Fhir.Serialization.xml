@@ -178,11 +178,6 @@
             Add new line at the end of the xml output when converted to a string.
             </summary>
         </member>
-        <member name="P:Hl7.Fhir.Serialization.FhirXmlSerializationSettings.TrimWhitespaces">
-            <summary>
-            Trims whitespaces add the beginning and the end of xml value attributes
-            </summary>
-        </member>
         <member name="M:Hl7.Fhir.Serialization.FhirXmlSerializationSettings.#ctor">
             <summary>Default constructor. Creates a new <see cref="T:Hl7.Fhir.Serialization.FhirXmlSerializationSettings"/> instance with default property values.</summary>
         </member>

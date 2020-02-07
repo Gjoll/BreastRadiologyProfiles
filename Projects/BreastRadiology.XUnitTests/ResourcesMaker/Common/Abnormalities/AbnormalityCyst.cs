@@ -23,31 +23,92 @@ namespace BreastRadiology.XUnitTests
                          Group_CommonCodesCS,
                         new ConceptDef[]
                          {
-                        new ConceptDef("Complex",
-                            "Complex cyst",
-                            new Definition()
-                                .Line("[PR]")
-                            ),
-                        new ConceptDef("Oil",
-                            "Oil cyst",
-                            new Definition()
-                                .Line("[PR]")
-                            ),
-                        new ConceptDef("Simple",
-                            "Simple cyst",
-                            new Definition()
-                                .Line("[PR]")
-                            ),
-                        new ConceptDef("Complicated",
-                            "Complicated cyst",
-                            new Definition()
-                                .Line("[PR]")
-                            ),
-                        new ConceptDef("WithDebris",
-                            "Cyst With Debris",
-                            new Definition()
-                                .Line("[PR]")
-                            )
+                         //+ Type
+                         new ConceptDef()
+                             .SetCode("Cyst")
+                             .SetDisplay("Cyst")
+                             .SetDefinition("[PR] Cyst")
+                             .MammoId("69")
+                             .ValidModalities(Modalities.MG | Modalities.MRI | Modalities.US)
+                             .SetSnomedCode("399294002")
+                             .SetSnomedDescription("ClinicalFinding |Cyst of breast (Disorder)")
+                             .SetUMLS("A cyst is a sac-like pocket of membranous tissue " +
+                                 "that contains fluid, air, or other substances. Cysts " +
+                                 "can grow almost anywhere in your body or under your " +
+                                 "skin.")
+                         ,
+                         new ConceptDef()
+                             .SetCode("CystComplex")
+                             .SetDisplay("Cyst complex")
+                             .SetDefinition("[PR] Cyst complex")
+                             .MammoId("610")
+                             .ValidModalities(Modalities.MG | Modalities.US)
+                             .SetSnomedCode("449837001")
+                             .SetSnomedDescription("ClinicalFinding | Complex cyst of breast (Disorder)")
+                             .SetUMLS("Refers to cysts that contain something more than " +
+                                 "clear fluid. A complex breast cyst contains solid " +
+                                 "elements suspended within the fluid, and may also " +
+                                 "feature segmentation (septation) and some regions " +
+                                 "of the cyst wall that are ‘thicker‘ than others.")
+                         ,
+                         new ConceptDef()
+                             .SetCode("CystComplicated")
+                             .SetDisplay("Cyst complicated")
+                             .SetDefinition("[PR] Cyst complicated")
+                             .MammoId("657")
+                             .ValidModalities(Modalities.MG | Modalities.US)
+                             .SetUMLS("Complicated cysts are \"in between\" a simple cyst and " +
+                                 "a complex cyst. A complicated breast cyst contains " +
+                                 "solid elements suspended within the fluid, and may " +
+                                 "also feature segmentation (septation) and some regions " +
+                                 "of the cyst wall that are ‘thicker‘ than others. " +
+                                 "Complicated breast cysts are one of the cystic breast " +
+                                 "lesions that show intracystic debris which may imitate " +
+                                 "a solid mass appearance.")
+                         ,
+                         new ConceptDef()
+                             .SetCode("CystMicro")
+                             .SetDisplay("Cyst micro")
+                             .SetDefinition("[PR] Cyst micro")
+                             .MammoId("617")
+                             .ValidModalities(Modalities.US)
+                             .SetUMLS("Is a sac-like pocket of tissue that contains fluid, " +
+                                 "air, or other substances. A Microcyst is small and " +
+                                 "less than 2-3 mm. They are often in clusters and " +
+                                 "only show up on a mammogram or ultrasound.")
+                         ,
+                         new ConceptDef()
+                             .SetCode("CystOil")
+                             .SetDisplay("Cyst oil")
+                             .SetDefinition("[PR] Cyst oil")
+                             .MammoId("636")
+                             .ValidModalities(Modalities.MG | Modalities.US)
+                             .SetUMLS("Oil cysts are filled with fluid that may feel smooth " +
+                                 "and soft/squishy. They are caused by the breakdown " +
+                                 "of fatty tissue.")
+                         ,
+                         new ConceptDef()
+                             .SetCode("CystSimple")
+                             .SetDisplay("Cyst simple")
+                             .SetDefinition("[PR] Cyst simple")
+                             .MammoId("609")
+                             .ValidModalities(Modalities.MG | Modalities.US)
+                             .SetSnomedCode("399253005")
+                             .SetSnomedDescription("ClinicalFinding | Simple cyst of breast (Disorder)")
+                             .SetUMLS("A simple cyst is a sac-like pocket of membranous " +
+                                 "tissue that only contains clear fluid.")
+                         ,
+                         new ConceptDef()
+                             .SetCode("CystWithDebris")
+                             .SetDisplay("Cyst with debris")
+                             .SetDefinition("[PR] Cyst with debris")
+                             .MammoId("661")
+                             .ValidModalities(Modalities.MG | Modalities.US)
+                             .SetUMLS("A cyst that is filled with debris and fluid substance. " +
+                                 "It Is either considered a complex or complicated " +
+                                 "cyst. The type of debris determines what kind of " +
+                                 "cyst.")
+                         //- Type
                          }
                      )
              );
@@ -67,7 +128,7 @@ namespace BreastRadiology.XUnitTests
 
 
         SDTaskVar AbnormalityCyst = new SDTaskVar(
-            (out StructureDefinition  s) =>
+            (out StructureDefinition s) =>
             {
                 ValueSet binding = Self.AbnormalityCystVS.Value();
 
@@ -83,37 +144,40 @@ namespace BreastRadiology.XUnitTests
                 SDefEditor e = Self.CreateEditor("AbnormalityCyst",
                         "Cyst",
                         "Cyst",
-                        ObservationUrl,
+                        Global.ObservationUrl,
                         $"{Group_CommonResources}/AbnormalityCyst",
                         "ObservationLeaf")
-                   .AddFragRef(Self.ObservationLeafFragment.Value())
-                   .Description("Cyst Observation",
-                        new Markdown()
-                            .Paragraph("[PR]")
-                    )
+                    .AddFragRef(Self.ObservationLeafFragment.Value())
                     .AddFragRef(Self.TumorSatelliteFragment.Value())
-
                     .AddFragRef(Self.ObservationNoDeviceFragment.Value())
+                    .AddFragRef(Self.ObservationNoComponentFragment.Value())
                     .AddFragRef(Self.ObservationNoValueFragment.Value())
                     .AddFragRef(Self.CommonComponentsFragment.Value())
                     .AddFragRef(Self.ShapeComponentsFragment.Value())
                     .AddFragRef(Self.ObservedCountComponentFragment.Value())
+                    .AddFragRef(Self.ObservedDistributionComponentFragment.Value())
+                    .AddFragRef(Self.ObservedSizeComponentFragment.Value())
                     .AddFragRef(Self.NotPreviouslySeenComponentsFragment.Value())
                     .AddFragRef(Self.CorrespondsWithComponentFragment.Value())
+                    .Description("Cyst Observation",
+                        new Markdown()
+                            .Paragraph("[PR]")
+                    )
                     ;
                 s = e.SDef;
-
+                e.Select("code").Pattern(Self.ObservationCodeAbnormalityCyst.ToCodeableConcept());
                 e.IntroDoc
                     .ReviewedStatus("NOONE", "")
+                    .MammoDescription("540")
                     ;
 
                 ElementTreeNode sliceElementDef = e.ConfigureSliceByUrlDiscriminator("hasMember", false);
-                e.SliceTargetReference( sliceElementDef, Self.AssociatedFeatures.Value(), 0, "1");
-                e.SliceTargetReference( sliceElementDef, Self.ConsistentWith.Value(), 0, "*");
+                e.SliceTargetReference(sliceElementDef, Self.AssociatedFeatures.Value(), 0, "1");
+                e.SliceTargetReference(sliceElementDef, Self.ConsistentWith.Value(), 0, "*");
 
                 e.StartComponentSliceing();
                 e.ComponentSliceCodeableConcept("cystType",
-                    Self.CodeAbnormalityCystType.ToCodeableConcept(),
+                    Self.ComponentSliceCodeAbnormalityCystType.ToCodeableConcept(),
                     binding,
                     BindingStrength.Required,
                     0,

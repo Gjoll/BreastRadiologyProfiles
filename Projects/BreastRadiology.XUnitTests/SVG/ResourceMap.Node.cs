@@ -2,12 +2,15 @@
 using Hl7.Fhir.Model;
 using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Text;
 
 namespace BreastRadiology.XUnitTests
 {
     partial class ResourceMap
     {
+        [DebuggerDisplay("{Name}")]
+
         public class Node
         {
             public String Name => this.ResourceUrl.LastUriPart();
@@ -15,7 +18,6 @@ namespace BreastRadiology.XUnitTests
             public String Title { get; }
 
             public String[] MapName { get; }
-            public String LegendName { get; }
             public bool IsFragment { get; }
 
             /// <summary>
@@ -34,24 +36,23 @@ namespace BreastRadiology.XUnitTests
                 String title,
                 String[] mapName,
                 String structureName,
-                String legendName,
                 bool isFragment)
             {
                 this.ResourceUrl = resourceUrl;
                 this.MapName = mapName;
                 this.StructureName = structureName;
-                this.LegendName = legendName;
                 this.IsFragment = isFragment;
                 this.Title = title;
             }
 
-            public IEnumerable<dynamic> LinksByName(params String[] linkTypes)
+            public IEnumerable<dynamic> LinksByLinkType(params String[] linkTypes)
             {
                 foreach (String linkType in linkTypes)
                 {
                     foreach (dynamic link in this.Links)
                     {
-                        if (link.LinkType == linkType)
+                        String linkTypeval = link.LinkType.ToObject<String>();
+                        if (linkTypeval == linkType)
                             yield return link;
                     }
                 }

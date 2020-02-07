@@ -14,13 +14,13 @@ namespace BreastRadiology.XUnitTests
 {
     partial class ResourcesMaker
     {
-        SDTaskVar ObservedChangesComponentFragment = new SDTaskVar(
+         SDTaskVar ObservedChangesComponentFragment = new SDTaskVar(
                (out StructureDefinition s) =>
                    {
                        SDefEditor e = Self.CreateFragment("ObservedChangesFragment",
                                "ObservedChanges Fragment",
                                "ObservedChanges Fragment",
-                               ObservationUrl)
+                               Global.ObservationUrl)
                            .Description("Fragment that adds 'Observed Changes' element to profile.",
                                new Markdown()
                            )
@@ -29,8 +29,8 @@ namespace BreastRadiology.XUnitTests
 
                        e.StartComponentSliceing();
 
-                       e.ComponentSliceCodeableConcept("observedChanges",
-                           Self.CodeObservedChanges.ToCodeableConcept(),
+                       e.ComponentSliceCodeableConcept("obsChanges",
+                           Self.ComponentSliceCodeObservedChanges.ToCodeableConcept(),
                            Self.ObservedChangesVS.Value(),
                            BindingStrength.Required,
                            0,

@@ -19,11 +19,11 @@
     },
     {
       "url": "http://www.fragment.com/maplink",
-      "valueString": "{\r\n  \"LinkType\": \"component\",\r\n  \"ShowChildren\": true,\r\n  \"Cardinality\": \"0..1\",\r\n  \"LinkTarget\": \"Land Mark\",\r\n  \"ComponentHRef\": \"StructureDefinition-{SDName}-definitions.html#Extension.extension:landMark\",\r\n  \"Types\": \"CodeableConcept\",\r\n  \"ValueSet\": \"http://hl7.org/fhir/ValueSet/body-site\"\r\n}"
+      "valueString": "{\r\n  \"LinkType\": \"component\",\r\n  \"ShowChildren\": false,\r\n  \"Cardinality\": \"0..1\",\r\n  \"LinkTarget\": \"Land Mark\",\r\n  \"ComponentHRef\": \"StructureDefinition-{SDName}-definitions.html#Extension.extension:landMark\",\r\n  \"Types\": \"CodeableConcept\",\r\n  \"References\": [\r\n    \"http://hl7.org/fhir/ValueSet/body-site\"\r\n  ]\r\n}"
     },
     {
       "url": "http://www.fragment.com/maplink",
-      "valueString": "{\r\n  \"LinkType\": \"component\",\r\n  \"ShowChildren\": true,\r\n  \"Cardinality\": \"0..1\",\r\n  \"LinkTarget\": \"Distance From LandMark\",\r\n  \"ComponentHRef\": \"StructureDefinition-{SDName}-definitions.html#Extension.extension:distanceFromLandMark\",\r\n  \"Types\": \"Quantity\",\r\n  \"ValueSet\": \"http://hl7.org/fhir/us/breast-radiology/ValueSet/UnitsOfLengthVS\"\r\n}"
+      "valueString": "{\r\n  \"LinkType\": \"component\",\r\n  \"ShowChildren\": false,\r\n  \"Cardinality\": \"0..1\",\r\n  \"LinkTarget\": \"Distance From LandMark\",\r\n  \"ComponentHRef\": \"StructureDefinition-{SDName}-definitions.html#Extension.extension:distanceFromLandMark\",\r\n  \"Types\": \"Quantity\",\r\n  \"References\": [\r\n    \"http://hl7.org/fhir/us/breast-radiology/ValueSet/UnitsOfLengthVS\"\r\n  ]\r\n}"
     },
     {
       "url": "http://www.fragment.com/mapname",
@@ -51,7 +51,7 @@
       ]
     }
   ],
-  "description": "<b>Body Distance From extension</b>\n\nThis complex extension adds fields that form a distance measurement from a specified body landmark.\nThe body landmark is defined by a codeable concept\nThe distance is defined by a quantity of metric distance units (cm, mm, etc).",
+  "description": "<b>Body Distance From extension</b>\n\nThis complex extension adds fields that form a distance measurement from a specified body landmark.\n The body landmark is defined by a codeable concept\n The distance is defined by a quantity of metric distance units (cm, mm, etc).",
   "fhirVersion": "4.0.0",
   "kind": "complex-type",
   "abstract": false,
@@ -80,7 +80,7 @@
         ],
         "path": "Extension",
         "short": "Body Distance From extension",
-        "definition": "This complex extension adds fields that form a distance measurement from a specified body landmark.\nThe body landmark is defined by a codeable concept\nThe distance is defined by a quantity of metric distance units (cm, mm, etc).",
+        "definition": "This complex extension adds fields that form a distance measurement from a specified body landmark.\n The body landmark is defined by a codeable concept\n The distance is defined by a quantity of metric distance units (cm, mm, etc).",
         "min": 0,
         "max": "*",
         "base": {
@@ -196,7 +196,7 @@
         "path": "Extension.extension",
         "sliceName": "landMark",
         "short": "Body landmark. Origin of distance measurement.",
-        "definition": "Body landmark which defines the origin of the measurement\n\nCurrently the value set this is bound to does not contain the requiored breast landmarks like nipple.",
+        "definition": "Body landmark which defines the origin of the measurement.\n\nCurrently the value set this is bound to does not contain the requiored breast landmarks like nipple.",
         "comment": "There can be no stigma associated with the use of extensions by any application, project, or standard - regardless of the institution or jurisdiction that uses or defines the extensions.  The use of extensions is what allows the FHIR specification to retain a core level of simplicity for everyone.",
         "alias": [
           "extensions",
@@ -300,7 +300,7 @@
           "xmlAttr"
         ],
         "short": "identifies the meaning of the extension",
-        "definition": "Url for landMark complex extension item",
+        "definition": "Url for landMark complex extension item.",
         "comment": "The definition may point directly to a computable or human-readable definition of the extensibility codes, or it may be a logical URI as declared in some other specification. The definition SHALL be a URI for the Structure Definition defining the extension.",
         "min": 1,
         "max": "1",
@@ -463,7 +463,7 @@
           "xmlAttr"
         ],
         "short": "identifies the meaning of the extension",
-        "definition": "Url for distanceFromLandMark complex extension item",
+        "definition": "Url for distanceFromLandMark complex extension item.",
         "comment": "The definition may point directly to a computable or human-readable definition of the extensibility codes, or it may be a logical URI as declared in some other specification. The definition SHALL be a URI for the Structure Definition defining the extension.",
         "min": 1,
         "max": "1",
@@ -736,7 +736,7 @@
         ],
         "path": "Extension",
         "short": "Body Distance From extension",
-        "definition": "This complex extension adds fields that form a distance measurement from a specified body landmark.\nThe body landmark is defined by a codeable concept\nThe distance is defined by a quantity of metric distance units (cm, mm, etc).",
+        "definition": "This complex extension adds fields that form a distance measurement from a specified body landmark.\n The body landmark is defined by a codeable concept\n The distance is defined by a quantity of metric distance units (cm, mm, etc).",
         "base": {
           "path": "Extension",
           "min": 0,
@@ -767,7 +767,7 @@
         "path": "Extension.extension",
         "sliceName": "landMark",
         "short": "Body landmark. Origin of distance measurement.",
-        "definition": "Body landmark which defines the origin of the measurement\n\nCurrently the value set this is bound to does not contain the requiored breast landmarks like nipple.",
+        "definition": "Body landmark which defines the origin of the measurement.\n\nCurrently the value set this is bound to does not contain the requiored breast landmarks like nipple.",
         "min": 0,
         "max": "1",
         "base": {
@@ -785,7 +785,7 @@
       {
         "id": "Extension.extension:landMark.url",
         "path": "Extension.extension.url",
-        "definition": "Url for landMark complex extension item",
+        "definition": "Url for landMark complex extension item.",
         "type": [
           {
             "code": "uri"
@@ -831,7 +831,7 @@
       {
         "id": "Extension.extension:distanceFromLandMark.url",
         "path": "Extension.extension.url",
-        "definition": "Url for distanceFromLandMark complex extension item",
+        "definition": "Url for distanceFromLandMark complex extension item.",
         "type": [
           {
             "code": "uri"

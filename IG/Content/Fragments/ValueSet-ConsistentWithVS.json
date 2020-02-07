@@ -8,7 +8,7 @@
     },
     {
       "url": "http://www.fragment.com/Group",
-      "valueString": "MGCodesVS"
+      "valueString": "CommonCodesVS"
     },
     {
       "url": "http://www.fragment.com/mapname",
@@ -51,6 +51,14 @@
           {
             "code": "Carcinoma",
             "display": "Carcinoma"
+          },
+          {
+            "code": "Carcinoma",
+            "display": "Carcinoma"
+          },
+          {
+            "code": "CarcinomaKnown",
+            "display": "Carcinoma known"
           },
           {
             "code": "CarcinomaKnown",

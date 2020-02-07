@@ -20,7 +20,7 @@ namespace BreastRadiology.XUnitTests
                        SDefEditor e = Self.CreateFragment("BiRadFragment",
                                "BiRad Fragment",
                                "BiRad Fragment",
-                               ObservationUrl)
+                               Global.ObservationUrl)
                            .Description("Fragment that adds 'BiRad code' element to profile.",
                                new Markdown()
                            )
@@ -30,7 +30,7 @@ namespace BreastRadiology.XUnitTests
                        e.StartComponentSliceing();
 
                        e.ComponentSliceCodeableConcept("biRadsAssessmentCategory",
-                           Self.CodeBiRads.ToCodeableConcept(),
+                           Self.ComponentSliceCodeBiRads.ToCodeableConcept(),
                            Self.BiRadsAssessmentCategoriesVS.Value(),
                            BindingStrength.Required,
                            0,

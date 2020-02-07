@@ -38,77 +38,116 @@ namespace BreastRadiology.XUnitTests
                      Group_CommonCodesCS,
                      new ConceptDef[]
                      {
-                        //+ ShapeCS
-                        //+ IrregularInShape
-                        //+ AutoGen
+                        //+ Codes
                         new ConceptDef()
                             .SetCode("IrregularInShape")
                             .SetDisplay("Irregular in shape")
-                            .SetDefinition(new Definition()
-                                .Line("[PR] Irregular in shape")
-                            )
+                            .SetDefinition("[PR] Irregular in shape")
+                            .MammoId("16")
                             .ValidModalities(Modalities.MG | Modalities.MRI | Modalities.US)
                             .SetSnomedCode("129736006")
                             .SetSnomedDescription("ClinicalFinding | Irregular shaped lesion")
-                            .SetICD10("129736006")
-                        //- AutoGen
-                            .SetDefinition(
-                                new Definition()
-                                .CiteStart()
-                                    .Line("The shape is neither round nor oval.")
-                                    .Line("For mammography, use of this descriptor usually implies a suspicious finding.")
-                                .CiteEnd(BiRadCitation)
-                            )
+                            .SetUMLS("A mass that can't be characterized by any specific " +
+                                "shape.")
+                            .SetACR("The shape is neither round nor oval.For mammography, " +
+                                "use of this descriptor usually implies a suspicious " +
+                                "finding.")
                         ,
-                        //- IrregularInShape
-                        //+ OvalInShape
-                        //+ AutoGen
+                        new ConceptDef()
+                            .SetCode("LobulatedInShape")
+                            .SetDisplay("Lobulated in shape")
+                            .SetDefinition("[PR] Lobulated in shape")
+                            .MammoId("190")
+                            .ValidModalities(Modalities.MG | Modalities.MRI | Modalities.US)
+                            .SetSnomedCode("129735005")
+                            .SetSnomedDescription("ClinicalFinding | Lobular shaped lesion (Finding)")
+                            .SetUMLS("A mass that has an undulating  (having a smoothly " +
+                                "rising and falling form or outline) contour.")
+                        ,
                         new ConceptDef()
                             .SetCode("OvalInShape")
                             .SetDisplay("Oval in shape")
-                            .SetDefinition(new Definition()
-                                .Line("[PR] Oval in shape")
-                            )
+                            .SetDefinition("[PR] Oval in shape")
+                            .MammoId("15")
                             .ValidModalities(Modalities.MG | Modalities.MRI | Modalities.US)
                             .SetSnomedCode("129734009")
                             .SetSnomedDescription("ClinicalFinding | Oval shaped lesion (Finding)")
-                            .SetICD10("129734009")
-                        //- AutoGen
-                            .SetDefinition(
-                                new Definition()
-                                .CiteStart()
-                                    .Line("Shape is elliptical or egg-shaped (may include 2 or 3 undulations, , i.e., \"gently lobulated\" or \"macrolobulated\").")
-                                .CiteEnd(BiRadCitation)
-                            )
+                            .SetUMLS("A mass that is elliptical or egg-shaped.")
+                            .SetACR("Shape is elliptical or egg-shaped (may include 2 " +
+                                "or 3 undulations, , i.e., \"gently lobulated\" or \"macrolobulated\").")
                         ,
-                        //- OvalInShape
-                        //+ RoundInShape
-                        //+ AutoGen
+                        new ConceptDef()
+                            .SetCode("Reniform")
+                            .SetDisplay("Reniform")
+                            .SetDefinition("[PR] Reniform")
+                            .MammoId("27")
+                            .ValidModalities(Modalities.MG)
+                            .SetACR("is a three-dimensional lesion that occupies a space " +
+                                "within the breast.")
+                        ,
                         new ConceptDef()
                             .SetCode("RoundInShape")
                             .SetDisplay("Round in shape")
-                            .SetDefinition(new Definition()
-                                .Line("[PR] Round in shape")
-                            )
+                            .SetDefinition("[PR] Round in shape")
+                            .MammoId("14")
                             .ValidModalities(Modalities.MG | Modalities.MRI | Modalities.US)
                             .SetSnomedCode("129733003")
                             .SetSnomedDescription("ClinicalFinding | Round shaped lesion (Finding)")
-                            .SetICD10("129733003")
-                        //- AutoGen
-                            .SetDefinition(
-                                new Definition()
-                                .CiteStart()
-                                    .Line("A mass that is spherical, ball-shaped, circular, or globular in shape.")
-                                    .Line("A round mass has an anteroposterior diameter equal to its transverse diameter")
-                                    .Line("and to qualify as a ROUND mass, it must be circular in perpendicular projections.")
-                                    .Line("Breast masses with a ROUND shape are not commonly seen with breast ultrasound.")
-                                .CiteEnd(BiRadCitation)
-                            )
-                        //- RoundInShape
+                            .SetUMLS("A mass that is spherical, ball-shaped, circular or " +
+                                "global.")
+                            .SetACR("A mass that is spherical, ball-shaped, circular, " +
+                                "or globular in shape.A round mass has an anteroposterior " +
+                                "diameter equal to its transverse diameterand to qualify " +
+                                "as a ROUND mass, it must be circular in perpendicular " +
+                                "projections.Breast masses with a ROUND shape are " +
+                                "not commonly seen with breast ultrasound.")
+                        //- Codes
                      })
                  );
     }
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

@@ -53,6 +53,14 @@
             "display": "Carcinoma"
           },
           {
+            "code": "Carcinoma",
+            "display": "Carcinoma"
+          },
+          {
+            "code": "CarcinomaKnown",
+            "display": "Carcinoma known"
+          },
+          {
             "code": "CarcinomaKnown",
             "display": "Carcinoma known"
           },

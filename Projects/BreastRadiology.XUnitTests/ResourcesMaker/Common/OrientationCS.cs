@@ -24,25 +24,45 @@ namespace BreastRadiology.XUnitTests
                      Group_CommonCodesCS,
                      new ConceptDef[]
                      {
-                    new ConceptDef("ParallelToSkin",
-                        "Parallel to skin",
-                        new Definition()
-                        .CiteStart()
-                            .Line("(historically, “wider-than-tall” or “horizontal”)")
-                            .Line("The long axis of the mass parallels the skin line. Masses that are only slightly obiquely oriented")
-                            .Line("might be considered parallel.")
-                        .CiteEnd(BiRadCitation)
-                        ),
-                    new ConceptDef("PerpendicularToSkin",
-                        "Perpendicular To Skin",
-                        new Definition()
-                        .CiteStart()
-                            .Line("(historically, \"isodense\")")
-                            .Line("The long axis of the mass does not lie parallel to the skin line. The anterior–posterior or vertical")
-                            .Line("dimension is greater than the transverse or horizontal dimension. These masses can also be")
-                            .Line("obliquely oriented to the skin line. Round masses are NOT PARALLEL in their orientation.")
-                        .CiteEnd(BiRadCitation)
-                        )
+                         //+ Codes
+                         new ConceptDef()
+                             .SetCode("ParallelToSkin")
+                             .SetDisplay("Parallel to skin")
+                             .SetDefinition("[PR] Parallel to skin")
+                             .MammoId("1508")
+                             .ValidModalities(Modalities.MG | Modalities.MRI | Modalities.NM | Modalities.US)
+                             .SetACR("(historically, \"wider-than-tall\" or \"horizontal\")The " +
+                                 "long axis of the mass parallels the skin line. Masses " +
+                                 "that are only slightly obiquely orientedmight be " +
+                                 "considered parallel.")
+                         ,
+                         new ConceptDef()
+                             .SetCode("PerpendicularToSkin(notParallel)")
+                             .SetDisplay("Perpendicular to skin (not parallel)")
+                             .SetDefinition("[PR] Perpendicular to skin (not parallel)")
+                             .MammoId("1509")
+                             .ValidModalities(Modalities.MG | Modalities.MRI | Modalities.NM | Modalities.US)
+                             .SetACR("(historically, \"isodense\")The long axis of the mass " +
+                                 "does not lie parallel to the skin line. The anterior–posterior " +
+                                 "or verticaldimension is greater than the transverse " +
+                                 "or horizontal dimension. These masses can also beobliquely " +
+                                 "oriented to the skin line. Round masses are NOT PARALLEL " +
+                                 "in their orientation.")
+                         ,
+                         new ConceptDef()
+                             .SetCode("TallerThanWide")
+                             .SetDisplay("Taller than wide")
+                             .SetDefinition("[PR] Taller than wide")
+                             .MammoId("1518")
+                             .ValidModalities(Modalities.MRI | Modalities.US)
+                         ,
+                         new ConceptDef()
+                             .SetCode("WiderThanTall")
+                             .SetDisplay("Wider than tall")
+                             .SetDefinition("[PR] Wider than tall")
+                             .MammoId("1517")
+                             .ValidModalities(Modalities.MRI | Modalities.US)
+                         //- Codes
                      })
              );
 

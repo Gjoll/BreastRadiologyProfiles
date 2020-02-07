@@ -91,9 +91,8 @@ namespace BreastRadiology.XUnitTests
                     String name = fhirResource.Url.LastUriPart();
                     node = this.CreateMapNode(fhirResource.Url,
                         name,
-                        new String[] {name },
+                        new String[] { name },
                         "StructureDefinition",
-                        "FhirResource",
                         false);
 
                     return true;
@@ -110,12 +109,24 @@ namespace BreastRadiology.XUnitTests
             return node;
         }
 
-        public IEnumerable<dynamic> TargetLinks(String target)
+        public IEnumerable<dynamic> TargetOrReferenceLinks(String target)
         {
             foreach (dynamic link in this.Links)
             {
                 if (link.LinkTarget.ToObject<String>() == target)
                     yield return link;
+                else
+                {
+                    JArray references = (JArray)link.References;
+                    if (references != null)
+                    {
+                        foreach (JValue item in references)
+                        {
+                            if (item.ToObject<String>() == target)
+                                yield return link;
+                        }
+                    }
+                }
             }
         }
 
@@ -134,7 +145,6 @@ namespace BreastRadiology.XUnitTests
             String resourceUrl;
             String baseName = null;
             String title;
-
             switch (r)
             {
                 case ValueSet vs:
@@ -163,7 +173,6 @@ namespace BreastRadiology.XUnitTests
                 title,
                 mapNameArray,
                 structureName,
-                baseName,
                 isFragmentExtension != null);
 
             foreach (Extension link in r.GetExtensions(Global.ResourceMapLinkUrl))
@@ -181,14 +190,13 @@ namespace BreastRadiology.XUnitTests
 
         public ResourceMap.Node CreateMapNode(String url,
             String title,
-            String[] mapName, 
-            String structureName, 
-            String legendName, 
+            String[] mapName,
+            String structureName,
             bool fragment)
         {
             if (this.nodes.TryGetValue(url, out ResourceMap.Node retVal) == true)
                 throw new Exception($"Map node {url} already exists");
-            retVal = new Node(url, title, mapName, structureName, legendName, fragment);
+            retVal = new Node(url, title, mapName, structureName, fragment);
             return retVal;
         }
     }

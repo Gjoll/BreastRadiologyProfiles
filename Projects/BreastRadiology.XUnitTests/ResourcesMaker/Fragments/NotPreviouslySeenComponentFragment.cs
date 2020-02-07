@@ -12,10 +12,10 @@ namespace BreastRadiology.XUnitTests
             SDefEditor e = Self.CreateFragment("NotPreviouslySeenComponentFragment",
                     "Not Previously Seen Component Fragment",
                     "Not Previously Seen Component Fragment",
-                    ObservationUrl)
+                    Global.ObservationUrl)
                 .Description("Not Previously Seen component slice fragment",
                     new Markdown()
-                        .Paragraph("Adds NotPreviously Seen Component slice")
+                        .Paragraph("Adds NotPreviously Seen Component slice.")
                 )
                 .AddFragRef(Self.BreastBodyLocationRequiredFragment.Value())
                 ;
@@ -24,7 +24,7 @@ namespace BreastRadiology.XUnitTests
             e.StartComponentSliceing();
 
             e.ComponentSliceCodeableConcept("notPreviouslySeen",
-                Self.CodeNotPreviouslySeen.ToCodeableConcept(),
+                Self.ComponentSliceCodeNotPreviouslySeen.ToCodeableConcept(),
                 Self.NotPreviouslySeenVS.Value(),
                 BindingStrength.Required,
                 0,

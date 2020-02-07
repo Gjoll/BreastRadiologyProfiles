@@ -19,27 +19,34 @@ namespace BreastRadiology.XUnitTests
                 SDefEditor e = Self.CreateEditor("MGAbnormalityFatNecrosis",
                         "Mammography Fat Necrosis",
                         "MG Fat Necrosis",
-                        ObservationUrl,
+                        Global.ObservationUrl,
                         $"{Group_MGResources}/AbnormalityFatNecrosis",
                         "ObservationLeaf")
                     .AddFragRef(Self.ObservationLeafFragment.Value())
-                    .Description("Fat Necrosis Observation",
-                        new Markdown()
-                            .Paragraph("[PR]")
-                    )
                     .AddFragRef(Self.ObservationNoDeviceFragment.Value())
+                    .AddFragRef(Self.ObservationNoComponentFragment.Value())
                     .AddFragRef(Self.ObservationNoValueFragment.Value())
                     .AddFragRef(Self.CommonComponentsFragment.Value())
                     .AddFragRef(Self.ShapeComponentsFragment.Value())
                     .AddFragRef(Self.NotPreviouslySeenComponentsFragment.Value())
                     .AddFragRef(Self.ObservedCountComponentFragment.Value())
+                    .AddFragRef(Self.ObservedSizeComponentFragment.Value())
+                    .AddFragRef(Self.ObservedDistributionComponentFragment.Value())
                     .AddFragRef(Self.CorrespondsWithComponentFragment.Value())
+                    .Description("Fat Necrosis Observation",
+                        new Markdown()
+                            .Paragraph("[PR]")
+                    )
                     ;
 
                 s = e.SDef;
 
+                // Set Observation.code to unique value for this profile.
+                e.Select("code").Pattern(Self.ObservationCodeMGAbnormalityFatNecrosis.ToCodeableConcept());
+
                 e.IntroDoc
                     .ReviewedStatus("NOONE", "")
+                    .MammoDescription("688")
                     ;
 
                 ElementTreeNode sliceElementDef = e.ConfigureSliceByUrlDiscriminator("hasMember", false);

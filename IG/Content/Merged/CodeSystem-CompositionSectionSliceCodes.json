@@ -1,0 +1,65 @@
+{
+  "resourceType": "CodeSystem",
+  "id": "CompositionSectionSliceCodes",
+  "extension": [
+    {
+      "url": "http://www.fragment.com/fragment",
+      "valueUrl": "http://hl7.org/fhir/us/breast-radiology/StructureDefinition/HeaderFragment"
+    },
+    {
+      "url": "http://www.fragment.com/Group",
+      "valueString": "CommonCodesCS"
+    },
+    {
+      "url": "http://www.fragment.com/mapname",
+      "valueString": "Common"
+    },
+    {
+      "url": "http://www.fragment.com/Group",
+      "valueString": "Fragment/HeaderFragment"
+    }
+  ],
+  "url": "http://hl7.org/fhir/us/breast-radiology/CodeSystem/CompositionSectionSliceCodes",
+  "version": "0.0.2",
+  "name": "CompositionSectionSliceCodes",
+  "title": "Composition Section Slice Codes CodeSystem",
+  "status": "draft",
+  "date": "2019-11-01",
+  "publisher": "Hl7-Clinical Interoperability Council",
+  "contact": [
+    {
+      "telecom": [
+        {
+          "system": "url",
+          "value": "http://www.hl7.org/Special/committees/cic"
+        }
+      ]
+    }
+  ],
+  "description": "Composition Section Slice Codes code system",
+  "caseSensitive": true,
+  "content": "complete",
+  "count": 5,
+  "concept": [
+    {
+      "code": "sectionReport",
+      "definition": "Slicing CompositionSection Code - Report"
+    },
+    {
+      "code": "sectionImpressions",
+      "definition": "Slicing CompositionSection Code - Impressions"
+    },
+    {
+      "code": "sectionRelatedResources",
+      "definition": "Slicing CompositionSection Code - Related Resources"
+    },
+    {
+      "code": "sectionCodeRecommendations",
+      "definition": "Slicing CompositionSection Code - Recommendations"
+    },
+    {
+      "code": "sectionCodeFindings",
+      "definition": "Slicing CompositionSection Code - Findings"
+    }
+  ]
+}

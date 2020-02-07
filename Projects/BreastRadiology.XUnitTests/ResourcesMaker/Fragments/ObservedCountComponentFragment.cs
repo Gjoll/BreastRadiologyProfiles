@@ -17,21 +17,24 @@ namespace BreastRadiology.XUnitTests
         SDTaskVar ObservedCountComponentFragment = new SDTaskVar(
                (out StructureDefinition s) =>
                    {
-                       const String sliceName = "observedCount";
+                       const String sliceName = "obsCount";
                        SDefEditor e = Self.CreateFragment("ObservedCountFragment",
                                "ObservedCount Fragment",
                                "ObservedCount Fragment",
-                               ObservationUrl)
+                               Global.ObservationUrl)
                            .Description("Fragment that adds 'Observed Count' element to profile.",
                                new Markdown()
                            )
                            ;
                        s = e.SDef;
 
-                       e.SliceComponentSize(sliceName,
-                           Self.CodeObservedSize.ToCodeableConcept(),
-                           Self.UnitsOfLengthVS.Value(),
-                           out ElementTreeSlice slice);
+                       e.StartComponentSliceing();
+                       ElementTreeSlice slice = e.AppendSlice("component", sliceName, 0, "1");
+                       // Fix component code
+                       e.SliceComponentCode(slice, sliceName, Self.ComponentSliceCodeObservedCount.ToCodeableConcept());
+                       ElementTreeNode valueXNode = e.SliceValueXByType(slice,
+                           sliceName,
+                           new string[] { "Quantity", "Range" });
 
                        ElementDefinition sliceDef = slice.ElementDefinition
                            .SetShort($"Observed Count component")
@@ -42,7 +45,7 @@ namespace BreastRadiology.XUnitTests
                                             $"If the lower bound of the range is not set but not the upper bound is, then it means {{upper bound}} or less."
                                             )
                                 )
-                           .SetComment(new Markdown($"This is one component of a group of components that comprise the observation."))
+                           .SetComment(componentDefinition)
                            ;
 
                        e.AddComponentLink($"Observed Count",

@@ -23,30 +23,46 @@ namespace BreastRadiology.XUnitTests
                          Group_CommonCodesCS,
                          new ConceptDef[]
                          {
-                        new ConceptDef("Solid",
-                            "Solid Mass",
-                            new Definition()
-                               .Line("[PR]")
-                               .Line("Solid Mass")
-                            ),
-                        new ConceptDef("Intraductal",
-                            "Intraductal Mass",
-                            new Definition()
-                               .Line("[PR]")
-                               .Line("Intraductal Mass")
-                            ),
-                        new ConceptDef("PartiallySolid",
-                            "Partially Solid Mass",
-                            new Definition()
-                               .Line("[PR]")
-                               .Line("Partially Solid Mass")
-                            ),
-                        new ConceptDef("Skin",
-                            "Skin Mass",
-                            new Definition()
-                               .Line("[PR]")
-                               .Line("Skin Mass")
-                            )
+                            //+ Type
+                            new ConceptDef()
+                                .SetCode("Mass")
+                                .SetDisplay("Mass")
+                                .SetDefinition("[PR] Mass")
+                                .MammoId("58")
+                                .ValidModalities(Modalities.MG | Modalities.MRI | Modalities.US)
+                            ,
+                            new ConceptDef()
+                                .SetCode("MassIntraductal")
+                                .SetDisplay("Mass intraductal")
+                                .SetDefinition("[PR] Mass intraductal")
+                                .MammoId("621")
+                                .ValidModalities(Modalities.US)
+                                .SetSnomedDescription("ClinicalFinding | 369753003 | Intraductal tumor configuration " +
+                                    "(Finding)")
+                            ,
+                            new ConceptDef()
+                                .SetCode("MassPartiallySolid")
+                                .SetDisplay("Mass partially solid")
+                                .SetDefinition("[PR] Mass partially solid")
+                                .MammoId("697")
+                                .ValidModalities(Modalities.MG | Modalities.US)
+                            ,
+                            new ConceptDef()
+                                .SetCode("MassSkinATLASIsSkinLesion")
+                                .SetDisplay("Mass skin ATLAS is skin lesion")
+                                .SetDefinition("[PR] Mass skin ATLAS is skin lesion")
+                                .MammoId("613")
+                                .ValidModalities(Modalities.MG | Modalities.US)
+                                .SetSnomedCode("126510002")
+                                .SetSnomedDescription("ClinicalFinding | Neoplasm of skin of breast (Disorder)")
+                            ,
+                            new ConceptDef()
+                                .SetCode("MassSolid")
+                                .SetDisplay("Mass solid")
+                                .SetDefinition("[PR] Mass solid")
+                                .MammoId("608")
+                                .ValidModalities(Modalities.MG | Modalities.US)
+                            //- Type
                          })
              );
 
@@ -68,37 +84,42 @@ namespace BreastRadiology.XUnitTests
             {
                 ValueSet binding = Self.MassTypeValueSetVS.Value();
 
-                SDefEditor e = Self.CreateEditor("Mass",
+                SDefEditor e = Self.CreateEditor("AbnormalityMass",
                         "Mass",
                         "Mass",
-                        ObservationUrl,
+                        Global.ObservationUrl,
                         $"{Group_CommonResources}/MassAbnormality",
                         "ObservationLeaf")
                     .AddFragRef(Self.ObservationLeafFragment.Value())
-                    .Description("Mass Observation",
-                        new Markdown()
-                            .BiradHeader()
-                            .BlockQuote("\"MASS\" is three dimensional and occupies space. It is seen on two different mammographic pro-")
-                            .BlockQuote("jections. It has completely or partially convex-outward borders and (when radiodense) appears")
-                            .BlockQuote("denser in the center than at the periphery. If a potential mass is seen only on a single projection, it")
-                            .BlockQuote("should be called an \"ASYMMETRY\" until its 3-dimensionality is confirmed")
-                            .BiradFooter()
-                    )
                     .AddFragRef(Self.TumorSatelliteFragment.Value())
-
                     .AddFragRef(Self.ObservationNoDeviceFragment.Value())
                     .AddFragRef(Self.ObservationNoValueFragment.Value())
+                    .AddFragRef(Self.ObservationNoComponentFragment.Value())
                     .AddFragRef(Self.CommonComponentsFragment.Value())
                     .AddFragRef(Self.ShapeComponentsFragment.Value())
                     .AddFragRef(Self.ObservedCountComponentFragment.Value())
+                    .AddFragRef(Self.ObservedSizeComponentFragment.Value())
+                    .AddFragRef(Self.ObservedDistributionComponentFragment.Value())
                     .AddFragRef(Self.NotPreviouslySeenComponentsFragment.Value())
                     .AddFragRef(Self.CorrespondsWithComponentFragment.Value())
+                    .Description("Mass Observation",
+                        new Markdown()
+                    )
                     ;
 
                 s = e.SDef;
 
+                // Set Observation.code to unique value for this profile.
+                e.Select("code").Pattern(Self.ObservationCodeAbnormalityMass.ToCodeableConcept());
+
                 e.IntroDoc
                     .ReviewedStatus("NOONE", "")
+                    .ACRDescription(
+                            "\"MASS\" is three dimensional and occupies space. It is seen on two different mammographic ", 
+                            "projections. It has completely or partially convex-outward borders and (when radiodense) appears",
+                            "denser in the center than at the periphery. If a potential mass is seen only on a single projection, it",
+                            "should be called an \"ASYMMETRY\" until its 3-dimensionality is confirmed"
+                    )
                     ;
 
                 ElementTreeNode sliceElementDef = e.ConfigureSliceByUrlDiscriminator("hasMember", false);
@@ -107,7 +128,7 @@ namespace BreastRadiology.XUnitTests
 
                 e.StartComponentSliceing();
                 e.ComponentSliceCodeableConcept("massType",
-                    Self.CodeAbnormalityMassType.ToCodeableConcept(),
+                    Self.ComponentSliceCodeAbnormalityMassType.ToCodeableConcept(),
                     binding,
                     BindingStrength.Required,
                     0,

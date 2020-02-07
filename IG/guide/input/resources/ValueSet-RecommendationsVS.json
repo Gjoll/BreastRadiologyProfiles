@@ -185,12 +185,12 @@
             "display": "Lateral with compression view"
           },
           {
-            "code": "LateromedialObliqueSPELLING",
-            "display": "Lateromedial oblique SPELLING"
+            "code": "LateromedialOblique",
+            "display": "Lateromedial oblique"
           },
           {
-            "code": "LateromedialViewSPELLING",
-            "display": "Lateromedial view SPELLING"
+            "code": "LateromedialView",
+            "display": "Lateromedial view"
           },
           {
             "code": "LymphNodeAssessment",
@@ -405,24 +405,12 @@
             "display": "Ultrasound with possible addlitonal views"
           },
           {
-            "code": "UnlessPreviousShowNoChange",
-            "display": "Unless previous show no change"
-          },
-          {
-            "code": "Unspecified-Other",
-            "display": "Unspecified - other"
+            "code": "Unspecified/Other",
+            "display": "Unspecified / other"
           },
           {
             "code": "VacuumBx",
             "display": "Vacuum Bx"
-          },
-          {
-            "code": "LateromedialOblique",
-            "display": "Lateromedial oblique"
-          },
-          {
-            "code": "LateromedialView",
-            "display": "Lateromedial view"
           }
         ]
       }

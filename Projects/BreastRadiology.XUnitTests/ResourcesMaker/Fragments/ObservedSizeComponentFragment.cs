@@ -20,33 +20,43 @@ namespace BreastRadiology.XUnitTests
                        SDefEditor e = Self.CreateFragment("ObservedSizeFragment",
                                "ObservedSize Fragment",
                                "ObservedSize Fragment",
-                               ObservationUrl)
-                           .Description("Fragment that adds 'Observed Size' element to profile.",
+                               Global.ObservationUrl)
+                           .Description("Fragment that adds 'Observed Size' components to Observation.",
                                new Markdown()
                            )
                            ;
                        s = e.SDef;
-                       const String sliceName = "observedSize";
-                       e.SliceComponentSize(sliceName,
-                           Self.CodeObservedSize.ToCodeableConcept(),
-                           Self.UnitsOfLengthVS.Value(),
-                           out ElementTreeSlice slice);
+                       {
+                           ValueSet binding = Self.UnitsOfLengthVS.Value();
+                           const String sliceName = "obsSize";
 
-                       ElementDefinition sliceDef = slice.ElementDefinition
-                           .SetShort($"Observed Size component")
-                           .SetDefinition(new Markdown()
-                                               .Paragraph($"This component slice contains the observed size of an item in cemtimeters.",
-                                                          $"This can be a quantity (i.e. 5 cm), or a range (1 cm to 5 cm).",
-                                                          $"If the lower bound of the range is set but not the upper bound, then it means {{lower bound}} cm or more.",
-                                                          $"If the lower bound of the range is not set but not the upper bound is, then it means {{upper bound}} cm or less."
-                                           ))
-                           .SetComment(new Markdown($"This is one component of a group of components that comprise the observation."))
-                           ;
+                           e.StartComponentSliceing();
+                           e.SliceComponentSize(sliceName,
+                               Self.ComponentSliceCodeObservedSize.ToCodeableConcept(),
+                               binding,
+                               0,
+                               "3",
+                               out ElementTreeSlice slice);
 
-                       e.AddComponentLink($"Observed Size",
-                           new SDefEditor.Cardinality(slice.ElementDefinition),
-                           Global.ElementAnchor(sliceDef),
-                           "Quantity or Range");
+                           ElementDefinition sliceDef = slice.ElementDefinition
+                               .SetShort($"Observed Size component")
+                               .SetDefinition(new Markdown()
+                                    .Paragraph($"This component slice contains the size of an item observed.",
+                                               $"There may be one, two, or three values indicating a size of",
+                                               $"one dimension (length), two dimensions (area), or three dimensions (volume).",
+                                               $"Each dimension can be a quantity (i.e. 5), or a range (1 to 5).",
+                                               $"If the lower bound of the range is set but not the upper bound, then the size is {{lower bound}} or greater.",
+                                               $"If the upper bound of the range is set but not the lower bound, then the size is {{upper bound}} or less.")
+                                    )
+                               .SetComment(componentDefinition)
+                               ;
+
+                           e.AddComponentLink($"Observed Size",
+                               new SDefEditor.Cardinality(slice.ElementDefinition),
+                               Global.ElementAnchor(sliceDef),
+                               "Quantity or Range",
+                               binding.Url);
+                       }
                    });
     }
 }

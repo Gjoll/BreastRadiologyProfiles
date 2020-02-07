@@ -17,7 +17,7 @@
       ]
     }
   ],
-  "description": "<b>Tumor Satellite Extension</b>\n\nThis extension identifies a tumour as a satellite of another tumour.\nOptionally a reference to that tumor and the distance to that tumor may be defined.\nThe distance is defined by a quantity of metric distance units (cm, mm, etc).",
+  "description": "<b>Tumor Satellite Extension</b>\n\nThis extension identifies a tumour as a satellite of another tumour.\n Optionally a reference to that tumor and the distance to that tumor may be defined.\n The distance is defined by a quantity of metric distance units (cm, mm, etc).",
   "fhirVersion": "4.0.0",
   "kind": "complex-type",
   "abstract": false,
@@ -46,7 +46,7 @@
         ],
         "path": "Extension",
         "short": "Tumor Satellite Extension",
-        "definition": "This extension identifies a tumour as a satellite of another tumour.\nOptionally a reference to that tumor and the distance to that tumor may be defined.\nThe distance is defined by a quantity of metric distance units (cm, mm, etc).",
+        "definition": "This extension identifies a tumour as a satellite of another tumour.\n Optionally a reference to that tumor and the distance to that tumor may be defined.\n The distance is defined by a quantity of metric distance units (cm, mm, etc).",
         "min": 0,
         "max": "*",
         "base": {
@@ -162,7 +162,7 @@
         "path": "Extension.extension",
         "sliceName": "indexReference",
         "short": "Reference of index tumor",
-        "definition": "Optional reference to index tumor (tumor that this is a satellite of).\n\nGenerally this should be a reference to a Breast Radiology Abnormality Observation resource",
+        "definition": "Optional reference to index tumor (tumor that this is a satellite of).\n\nGenerally this should be a reference to a Breast Radiology Abnormality Observation resource.",
         "comment": "There can be no stigma associated with the use of extensions by any application, project, or standard - regardless of the institution or jurisdiction that uses or defines the extensions.  The use of extensions is what allows the FHIR specification to retain a core level of simplicity for everyone.",
         "alias": [
           "extensions",
@@ -701,7 +701,7 @@
         ],
         "path": "Extension",
         "short": "Tumor Satellite Extension",
-        "definition": "This extension identifies a tumour as a satellite of another tumour.\nOptionally a reference to that tumor and the distance to that tumor may be defined.\nThe distance is defined by a quantity of metric distance units (cm, mm, etc).",
+        "definition": "This extension identifies a tumour as a satellite of another tumour.\n Optionally a reference to that tumor and the distance to that tumor may be defined.\n The distance is defined by a quantity of metric distance units (cm, mm, etc).",
         "base": {
           "path": "Extension",
           "min": 0,
@@ -732,7 +732,7 @@
         "path": "Extension.extension",
         "sliceName": "indexReference",
         "short": "Reference of index tumor",
-        "definition": "Optional reference to index tumor (tumor that this is a satellite of).\n\nGenerally this should be a reference to a Breast Radiology Abnormality Observation resource",
+        "definition": "Optional reference to index tumor (tumor that this is a satellite of).\n\nGenerally this should be a reference to a Breast Radiology Abnormality Observation resource.",
         "min": 0,
         "max": "1",
         "base": {

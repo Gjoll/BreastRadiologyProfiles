@@ -20,24 +20,18 @@ namespace BreastRadiology.XUnitTests
                 SDefEditor e = Self.CreateEditor("BreastRadReport",
                      "Breast Radiology Report",
                      "Breast/Radiology/Report",
-                     DiagnosticReportUrl,
+                     Global.DiagnosticReportUrl,
                      Group_BaseResources,
                      "Resource")
                      .Description("Breast Radiology Diagnostic Report",
                          new Markdown()
-                             .Paragraph("This resource is the base resource of the Breast Diagnostic Report.",
-                                         "All components of this report are stored in or referenced by this fhir instance.")
+                             .Paragraph("This resource is one of the components of a Breast Radiology Document.",
+                                         "It is referenced in the document's 'Report' section ",
+                                         "and contains the report conclusions and findings.")
                              .Paragraph("This resource is a profile of the Fhir DiagnosticReport base resource.")
-                             .Paragraph("Items referenced by this resource include:")
-                             .List("Prior breast radiology reports for this patient",
-                                   "Left breast findings",
-                                   "Right breast findings",
-                                   "Recommendations of this report",
-                                   "Report findings in a human readable format")
                      )
                      .AddFragRef(Self.HeaderFragment.Value())
                      .AddFragRef(Self.CategoryFragment.Value())
-                     .AddFragRef(Self.ServiceRecommendationFragment.Value())
                      ;
 
                 s = e.SDef;
@@ -46,38 +40,14 @@ namespace BreastRadiology.XUnitTests
                      .ReviewedStatus("CIC", "22.1.2020")
                      ;
 
-                e.Select("code").Pattern = new CodeableConcept(Loinc, "10193-1");
+                e.Select("code").Pattern = new CodeableConcept(Global.Loinc, "10193-1");
                 e.Select("specimen").Zero();
                 {
-                    StructureDefinition extensionStructureDef = Self.ImpressionsExtension.Value();
-                    ElementDefinition extensionDef = e.ApplyExtension("Impressions", extensionStructureDef).ElementDefinition
-                         .Short("Exam impressions")
-                         .Definition("Exam impressions.")
-                         .ZeroToMany()
-                         .MustSupport();
-                    e.AddExtensionLink(extensionStructureDef.Url,
-                        new SDefEditor.Cardinality(extensionDef),
-                        "Impressions", 
-                        Global.ElementAnchor(extensionDef));
-                }
-                {
-                    StructureDefinition extensionStructureDef = Self.RelatedClinicalResourcesExtension.Value();
-                    ElementDefinition extensionDef =  e.ApplyExtension("Related", extensionStructureDef).ElementDefinition
-                         .Short("Related Clinical Resources")
-                         .Definition("References to FHIR clinical resoruces used during the exam or referenced by this report.")
-                         .ZeroToMany();
-                    e.AddExtensionLink(extensionStructureDef.Url,
-                        new SDefEditor.Cardinality(extensionDef),
-                        "Related Clinical Resources", 
-                        Global.ElementAnchor(extensionDef));
-                }
-                {
-                    ValueSet binding = Self.BiRadsAssessmentCategoriesVS.Value();
                     e.Select("conclusion")
                         .Single()
                         .Definition(new Markdown()
                             .Paragraph("This will contain a text version of the complete report.")
-                            .Paragraph("The report should be readable without specialized formatting software..")
+                            .Paragraph("The report should be readable without specialized formatting software.")
                             );
                 }
                 {
@@ -88,18 +58,18 @@ namespace BreastRadiology.XUnitTests
                         .MustSupport()
                         ;
                     e.AddComponentLink("Conclusion Code",
-                        new SDefEditor.Cardinality(e.Select("conclusionCode")),
+                        new SDefEditor.Cardinality(conclusionCodeDef),
                         Global.ElementAnchor(conclusionCodeDef), 
                         "CodeableConcept", 
                         binding.Url);
                 }
                 ElementTreeNode sliceElementDef = e.ConfigureSliceByUrlDiscriminator("result", false);
                 {
-                    ElementTreeSlice slice = e.SliceTargetReference( sliceElementDef, Self.SectionFindingsLeftBreast.Value(), 0, "1");
+                    ElementTreeSlice slice = e.SliceTargetReference( sliceElementDef, Self.FindingsLeftBreast.Value(), 0, "1");
                     slice.ElementDefinition.MustSupport();
                 }
                 {
-                    ElementTreeSlice slice = e.SliceTargetReference( sliceElementDef, Self.SectionFindingsRightBreast.Value(), 0, "1");
+                    ElementTreeSlice slice = e.SliceTargetReference( sliceElementDef, Self.FindingsRightBreast.Value(), 0, "1");
                     slice.ElementDefinition.MustSupport();
                 }
             });

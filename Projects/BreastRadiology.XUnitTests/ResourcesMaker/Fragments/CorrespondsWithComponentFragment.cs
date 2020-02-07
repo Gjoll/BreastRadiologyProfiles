@@ -20,7 +20,7 @@ namespace BreastRadiology.XUnitTests
                        SDefEditor e = Self.CreateFragment("CorrespondsWithFragment",
                                "CorrespondsWith Fragment",
                                "CorrespondsWith Fragment",
-                               ObservationUrl)
+                               Global.ObservationUrl)
                            .Description("Observation 'Consistent With' Component Fragment",
                                new Markdown()
                            )
@@ -29,7 +29,7 @@ namespace BreastRadiology.XUnitTests
 
                        e.StartComponentSliceing();
                        e.ComponentSliceCodeableConcept("correspondsWith",
-                           Self.CodeCorrespondsWith.ToCodeableConcept(),
+                           Self.ComponentSliceCodeCorrespondsWith.ToCodeableConcept(),
                            Self.CorrespondsWithVS.Value(),
                            BindingStrength.Extensible,
                            0,

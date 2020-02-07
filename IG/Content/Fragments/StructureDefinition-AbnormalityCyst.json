@@ -35,6 +35,14 @@
     },
     {
       "url": "http://www.fragment.com/fragment",
+      "valueUrl": "http://hl7.org/fhir/us/breast-radiology/StructureDefinition/BreastRadObservationNoComponentFragment"
+    },
+    {
+      "url": "http://www.fragment.com/maplink",
+      "valueString": "{\r\n  \"LinkType\": \"fragment\",\r\n  \"ShowChildren\": false,\r\n  \"LinkTarget\": \"http://hl7.org/fhir/us/breast-radiology/StructureDefinition/BreastRadObservationNoComponentFragment\"\r\n}"
+    },
+    {
+      "url": "http://www.fragment.com/fragment",
       "valueUrl": "http://hl7.org/fhir/us/breast-radiology/StructureDefinition/BreastRadObservationNoValueFragment"
     },
     {
@@ -67,6 +75,22 @@
     },
     {
       "url": "http://www.fragment.com/fragment",
+      "valueUrl": "http://hl7.org/fhir/us/breast-radiology/StructureDefinition/ObservedDistributionFragment"
+    },
+    {
+      "url": "http://www.fragment.com/maplink",
+      "valueString": "{\r\n  \"LinkType\": \"fragment\",\r\n  \"ShowChildren\": false,\r\n  \"LinkTarget\": \"http://hl7.org/fhir/us/breast-radiology/StructureDefinition/ObservedDistributionFragment\"\r\n}"
+    },
+    {
+      "url": "http://www.fragment.com/fragment",
+      "valueUrl": "http://hl7.org/fhir/us/breast-radiology/StructureDefinition/ObservedSizeFragment"
+    },
+    {
+      "url": "http://www.fragment.com/maplink",
+      "valueString": "{\r\n  \"LinkType\": \"fragment\",\r\n  \"ShowChildren\": false,\r\n  \"LinkTarget\": \"http://hl7.org/fhir/us/breast-radiology/StructureDefinition/ObservedSizeFragment\"\r\n}"
+    },
+    {
+      "url": "http://www.fragment.com/fragment",
       "valueUrl": "http://hl7.org/fhir/us/breast-radiology/StructureDefinition/NotPreviouslySeenComponentFragment"
     },
     {
@@ -91,7 +115,7 @@
     },
     {
       "url": "http://www.fragment.com/maplink",
-      "valueString": "{\r\n  \"LinkType\": \"component\",\r\n  \"ShowChildren\": true,\r\n  \"Cardinality\": \"0..1\",\r\n  \"LinkTarget\": \"Cyst Type\",\r\n  \"ComponentHRef\": \"StructureDefinition-{SDName}-definitions.html#Observation.component:cystType\",\r\n  \"Types\": \"CodeableConcept\",\r\n  \"ValueSet\": \"http://hl7.org/fhir/us/breast-radiology/ValueSet/AbnormalityCystTypeVS\"\r\n}"
+      "valueString": "{\r\n  \"LinkType\": \"component\",\r\n  \"ShowChildren\": false,\r\n  \"Cardinality\": \"0..1\",\r\n  \"LinkTarget\": \"Cyst Type\",\r\n  \"ComponentHRef\": \"StructureDefinition-{SDName}-definitions.html#Observation.component:cystType\",\r\n  \"Types\": \"CodeableConcept\",\r\n  \"References\": [\r\n    \"http://hl7.org/fhir/us/breast-radiology/ValueSet/AbnormalityCystTypeVS\"\r\n  ]\r\n}"
     }
   ],
   "url": "http://hl7.org/fhir/us/breast-radiology/StructureDefinition/AbnormalityCyst",
@@ -119,6 +143,23 @@
         }
       },
       {
+        "id": "Observation.code",
+        "path": "Observation.code",
+        "base": {
+          "path": "Observation.code",
+          "min": 1,
+          "max": "1"
+        },
+        "patternCodeableConcept": {
+          "coding": [
+            {
+              "system": "http://hl7.org/fhir/us/breast-radiology/CodeSystem/ObservationCodes",
+              "code": "abnormalityCyst"
+            }
+          ]
+        }
+      },
+      {
         "id": "Observation.hasMember",
         "path": "Observation.hasMember",
         "slicing": {
@@ -142,7 +183,7 @@
         "path": "Observation.hasMember",
         "sliceName": "associatedFeatures",
         "short": "'Associated Features' reference",
-        "definition": "This slice references the target 'Associated Features'",
+        "definition": "This slice references the target 'Associated Features'.",
         "min": 0,
         "max": "1",
         "base": {
@@ -164,7 +205,7 @@
         "path": "Observation.hasMember",
         "sliceName": "consistentWith",
         "short": "'Consistent With' reference",
-        "definition": "This slice references the target 'Consistent With'",
+        "definition": "This slice references the target 'Consistent With'.",
         "min": 0,
         "max": "*",
         "base": {
@@ -204,7 +245,7 @@
         "path": "Observation.component",
         "sliceName": "cystType",
         "short": "Cyst Type component",
-        "definition": "This slice contains the optional component that refines the cyst type.\nThe value of this component is a codeable concept chosen from the AbnormalityCystTypeVS valueset.",
+        "definition": "This slice contains the optional component that refines the cyst type.\n The value of this component is a codeable concept chosen from the AbnormalityCystTypeVS valueset.",
         "comment": "This is one component of a group of components that comprise the observation.",
         "min": 0,
         "max": "1",
@@ -218,7 +259,7 @@
         "id": "Observation.component:cystType.code",
         "path": "Observation.component.code",
         "short": "Cyst Type component code",
-        "definition": "This code identifies the Cyst Type component",
+        "definition": "This code identifies the Cyst Type component.",
         "min": 1,
         "max": "1",
         "base": {
@@ -229,7 +270,7 @@
         "patternCodeableConcept": {
           "coding": [
             {
-              "system": "http://hl7.org/fhir/us/breast-radiology/CodeSystem/ComponentSliceCodes",
+              "system": "http://hl7.org/fhir/us/breast-radiology/CodeSystem/ObservationComponentSliceCodes",
               "code": "abnormalityCystType"
             }
           ]

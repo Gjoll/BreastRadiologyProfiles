@@ -34,12 +34,20 @@
       "valueString": "{\r\n  \"LinkType\": \"fragment\",\r\n  \"ShowChildren\": false,\r\n  \"LinkTarget\": \"http://hl7.org/fhir/us/breast-radiology/StructureDefinition/BreastRadObservationNoValueFragment\"\r\n}"
     },
     {
-      "url": "http://www.fragment.com/maplink",
-      "valueString": "{\r\n  \"LinkType\": \"component\",\r\n  \"ShowChildren\": true,\r\n  \"Cardinality\": \"1..1\",\r\n  \"LinkTarget\": \"Consistent With Value\",\r\n  \"ComponentHRef\": \"StructureDefinition-{SDName}-definitions.html#Observation.component:value\",\r\n  \"Types\": \"CodeableConcept\",\r\n  \"ValueSet\": \"http://hl7.org/fhir/us/breast-radiology/ValueSet/ConsistentWithVS\"\r\n}"
+      "url": "http://www.fragment.com/fragment",
+      "valueUrl": "http://hl7.org/fhir/us/breast-radiology/StructureDefinition/BreastRadObservationNoComponentFragment"
     },
     {
       "url": "http://www.fragment.com/maplink",
-      "valueString": "{\r\n  \"LinkType\": \"component\",\r\n  \"ShowChildren\": true,\r\n  \"Cardinality\": \"0..*\",\r\n  \"LinkTarget\": \"Consistent With Qualifier\",\r\n  \"ComponentHRef\": \"StructureDefinition-{SDName}-definitions.html#Observation.component:qualifier\",\r\n  \"Types\": \"CodeableConcept\",\r\n  \"ValueSet\": \"http://hl7.org/fhir/us/breast-radiology/ValueSet/ConsistentWithQualifierVS\"\r\n}"
+      "valueString": "{\r\n  \"LinkType\": \"fragment\",\r\n  \"ShowChildren\": false,\r\n  \"LinkTarget\": \"http://hl7.org/fhir/us/breast-radiology/StructureDefinition/BreastRadObservationNoComponentFragment\"\r\n}"
+    },
+    {
+      "url": "http://www.fragment.com/maplink",
+      "valueString": "{\r\n  \"LinkType\": \"component\",\r\n  \"ShowChildren\": false,\r\n  \"Cardinality\": \"1..1\",\r\n  \"LinkTarget\": \"Consistent With Value\",\r\n  \"ComponentHRef\": \"StructureDefinition-{SDName}-definitions.html#Observation.component:value\",\r\n  \"Types\": \"CodeableConcept\",\r\n  \"References\": [\r\n    \"http://hl7.org/fhir/us/breast-radiology/ValueSet/ConsistentWithVS\"\r\n  ]\r\n}"
+    },
+    {
+      "url": "http://www.fragment.com/maplink",
+      "valueString": "{\r\n  \"LinkType\": \"component\",\r\n  \"ShowChildren\": false,\r\n  \"Cardinality\": \"0..*\",\r\n  \"LinkTarget\": \"Consistent With Qualifier\",\r\n  \"ComponentHRef\": \"StructureDefinition-{SDName}-definitions.html#Observation.component:qualifier\",\r\n  \"Types\": \"CodeableConcept\",\r\n  \"References\": [\r\n    \"http://hl7.org/fhir/us/breast-radiology/ValueSet/ConsistentWithQualifierVS\"\r\n  ]\r\n}"
     },
     {
       "url": "http://www.fragment.com/mapname",
@@ -50,16 +58,12 @@
       "valueString": "Fragment/ObservationLeafFragment"
     },
     {
-      "url": "http://www.fragment.com/maplink",
-      "valueString": "{\r\n  \"LinkType\": \"fragment\",\r\n  \"ShowChildren\": false,\r\n  \"LinkTarget\": \"http://hl7.org/fhir/us/breast-radiology/StructureDefinition/BreastRadObservationNoComponentFragment\"\r\n}"
-    },
-    {
       "url": "http://www.fragment.com/mapname",
-      "valueString": "Observation/No Component/Fragment"
+      "valueString": "Observation/NoDevice/Fragment"
     },
     {
       "url": "http://www.fragment.com/Group",
-      "valueString": "Fragment/BreastRadObservationNoComponentFragment"
+      "valueString": "Fragment/BreastRadObservationNoDeviceFragment"
     },
     {
       "url": "http://www.fragment.com/maplink",
@@ -99,19 +103,19 @@
     },
     {
       "url": "http://www.fragment.com/mapname",
-      "valueString": "Observation/NoDevice/Fragment"
-    },
-    {
-      "url": "http://www.fragment.com/Group",
-      "valueString": "Fragment/BreastRadObservationNoDeviceFragment"
-    },
-    {
-      "url": "http://www.fragment.com/mapname",
       "valueString": "Observation/NoValue/Fragment"
     },
     {
       "url": "http://www.fragment.com/Group",
       "valueString": "Fragment/BreastRadObservationNoValueFragment"
+    },
+    {
+      "url": "http://www.fragment.com/mapname",
+      "valueString": "Observation/No Component/Fragment"
+    },
+    {
+      "url": "http://www.fragment.com/Group",
+      "valueString": "Fragment/BreastRadObservationNoComponentFragment"
     }
   ],
   "url": "http://hl7.org/fhir/us/breast-radiology/StructureDefinition/ConsistentWith",
@@ -801,6 +805,14 @@
             "code": "CodeableConcept"
           }
         ],
+        "patternCodeableConcept": {
+          "coding": [
+            {
+              "system": "http://hl7.org/fhir/us/breast-radiology/CodeSystem/ObservationCodes",
+              "code": "consistentWithObservation"
+            }
+          ]
+        },
         "isModifier": false,
         "isSummary": true,
         "binding": {
@@ -2342,7 +2354,7 @@
         "path": "Observation.component",
         "sliceName": "value",
         "short": "Consistent With Value component",
-        "definition": "This slice contains the required component that defines what this observation is consistent with.\nThe value of this component is a codeable concept chosen from the ConsistentWithVS valueset.",
+        "definition": "This slice contains the required component that defines what this observation is consistent with.\n The value of this component is a codeable concept chosen from the ConsistentWithVS valueset.",
         "comment": "This is one component of a group of components that comprise the observation.",
         "requirements": "Component observations share the same attributes in the Observation resource as the primary observation and are always treated a part of a single observation (they are not separable).   However, the reference range for the primary observation value is not inherited by the component values and is required when appropriate for each component observation.",
         "min": 1,
@@ -2478,7 +2490,7 @@
         "id": "Observation.component:value.code",
         "path": "Observation.component.code",
         "short": "Consistent With Value component code",
-        "definition": "This code identifies the Consistent With Value component",
+        "definition": "This code identifies the Consistent With Value component.",
         "comment": "*All* code-value and  component.code-component.value pairs need to be taken into account to correctly understand the meaning of the observation.",
         "requirements": "Knowing what kind of observation is being made is essential to understanding the observation.",
         "min": 1,
@@ -2496,7 +2508,7 @@
         "patternCodeableConcept": {
           "coding": [
             {
-              "system": "http://hl7.org/fhir/us/breast-radiology/CodeSystem/ComponentSliceCodes",
+              "system": "http://hl7.org/fhir/us/breast-radiology/CodeSystem/ObservationComponentSliceCodes",
               "code": "consistentWithValue"
             }
           ]
@@ -2710,7 +2722,7 @@
         "path": "Observation.component",
         "sliceName": "qualifier",
         "short": "Consistent With Qualifier component",
-        "definition": "This slice contains zero or more components that qualify the consistent with slice component value.\nThe value of this component is a codeable concept chosen from the ConsistentWithVS valueset.",
+        "definition": "This slice contains zero or more components that qualify the consistent with slice component value.\n The value of this component is a codeable concept chosen from the ConsistentWithVS valueset.",
         "comment": "This is one component of a group of components that comprise the observation.",
         "requirements": "Component observations share the same attributes in the Observation resource as the primary observation and are always treated a part of a single observation (they are not separable).   However, the reference range for the primary observation value is not inherited by the component values and is required when appropriate for each component observation.",
         "min": 0,
@@ -2846,7 +2858,7 @@
         "id": "Observation.component:qualifier.code",
         "path": "Observation.component.code",
         "short": "Consistent With Qualifier component code",
-        "definition": "This code identifies the Consistent With Qualifier components",
+        "definition": "This code identifies the Consistent With Qualifier components.",
         "comment": "*All* code-value and  component.code-component.value pairs need to be taken into account to correctly understand the meaning of the observation.",
         "requirements": "Knowing what kind of observation is being made is essential to understanding the observation.",
         "min": 1,
@@ -2864,7 +2876,7 @@
         "patternCodeableConcept": {
           "coding": [
             {
-              "system": "http://hl7.org/fhir/us/breast-radiology/CodeSystem/ComponentSliceCodes",
+              "system": "http://hl7.org/fhir/us/breast-radiology/CodeSystem/ObservationComponentSliceCodes",
               "code": "consistentWithQualifier"
             }
           ]
@@ -3161,6 +3173,23 @@
         }
       },
       {
+        "id": "Observation.code",
+        "path": "Observation.code",
+        "base": {
+          "path": "Observation.code",
+          "min": 1,
+          "max": "1"
+        },
+        "patternCodeableConcept": {
+          "coding": [
+            {
+              "system": "http://hl7.org/fhir/us/breast-radiology/CodeSystem/ObservationCodes",
+              "code": "consistentWithObservation"
+            }
+          ]
+        }
+      },
+      {
         "id": "Observation.focus",
         "extension": [
           {
@@ -3279,7 +3308,7 @@
         "path": "Observation.component",
         "sliceName": "value",
         "short": "Consistent With Value component",
-        "definition": "This slice contains the required component that defines what this observation is consistent with.\nThe value of this component is a codeable concept chosen from the ConsistentWithVS valueset.",
+        "definition": "This slice contains the required component that defines what this observation is consistent with.\n The value of this component is a codeable concept chosen from the ConsistentWithVS valueset.",
         "comment": "This is one component of a group of components that comprise the observation.",
         "requirements": "Component observations share the same attributes in the Observation resource as the primary observation and are always treated a part of a single observation (they are not separable).   However, the reference range for the primary observation value is not inherited by the component values and is required when appropriate for each component observation.",
         "min": 1,
@@ -3415,7 +3444,7 @@
         "id": "Observation.component:value.code",
         "path": "Observation.component.code",
         "short": "Consistent With Value component code",
-        "definition": "This code identifies the Consistent With Value component",
+        "definition": "This code identifies the Consistent With Value component.",
         "comment": "*All* code-value and  component.code-component.value pairs need to be taken into account to correctly understand the meaning of the observation.",
         "requirements": "Knowing what kind of observation is being made is essential to understanding the observation.",
         "min": 1,
@@ -3433,7 +3462,7 @@
         "patternCodeableConcept": {
           "coding": [
             {
-              "system": "http://hl7.org/fhir/us/breast-radiology/CodeSystem/ComponentSliceCodes",
+              "system": "http://hl7.org/fhir/us/breast-radiology/CodeSystem/ObservationComponentSliceCodes",
               "code": "consistentWithValue"
             }
           ]
@@ -3647,7 +3676,7 @@
         "path": "Observation.component",
         "sliceName": "qualifier",
         "short": "Consistent With Qualifier component",
-        "definition": "This slice contains zero or more components that qualify the consistent with slice component value.\nThe value of this component is a codeable concept chosen from the ConsistentWithVS valueset.",
+        "definition": "This slice contains zero or more components that qualify the consistent with slice component value.\n The value of this component is a codeable concept chosen from the ConsistentWithVS valueset.",
         "comment": "This is one component of a group of components that comprise the observation.",
         "requirements": "Component observations share the same attributes in the Observation resource as the primary observation and are always treated a part of a single observation (they are not separable).   However, the reference range for the primary observation value is not inherited by the component values and is required when appropriate for each component observation.",
         "min": 0,
@@ -3783,7 +3812,7 @@
         "id": "Observation.component:qualifier.code",
         "path": "Observation.component.code",
         "short": "Consistent With Qualifier component code",
-        "definition": "This code identifies the Consistent With Qualifier components",
+        "definition": "This code identifies the Consistent With Qualifier components.",
         "comment": "*All* code-value and  component.code-component.value pairs need to be taken into account to correctly understand the meaning of the observation.",
         "requirements": "Knowing what kind of observation is being made is essential to understanding the observation.",
         "min": 1,
@@ -3801,7 +3830,7 @@
         "patternCodeableConcept": {
           "coding": [
             {
-              "system": "http://hl7.org/fhir/us/breast-radiology/CodeSystem/ComponentSliceCodes",
+              "system": "http://hl7.org/fhir/us/breast-radiology/CodeSystem/ObservationComponentSliceCodes",
               "code": "consistentWithQualifier"
             }
           ]
