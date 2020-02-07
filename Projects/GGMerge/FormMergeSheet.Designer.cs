@@ -41,6 +41,8 @@
             this.tbColumnName = new System.Windows.Forms.TextBox();
             this.tbSourceData = new System.Windows.Forms.TextBox();
             this.tbDestData = new System.Windows.Forms.TextBox();
+            this.tbInfo = new System.Windows.Forms.TextBox();
+            this.cbQuery = new System.Windows.Forms.CheckBox();
             this.SuspendLayout();
             // 
             // tbSource
@@ -120,6 +122,7 @@
             // 
             // btnMerge
             // 
+            this.btnMerge.Enabled = false;
             this.btnMerge.Location = new System.Drawing.Point(594, 7);
             this.btnMerge.Name = "btnMerge";
             this.btnMerge.Size = new System.Drawing.Size(75, 44);
@@ -158,11 +161,30 @@
             this.tbDestData.Size = new System.Drawing.Size(288, 236);
             this.tbDestData.TabIndex = 12;
             // 
-            // SelectSpreadSheets
+            // tbInfo
+            // 
+            this.tbInfo.Location = new System.Drawing.Point(355, 111);
+            this.tbInfo.Name = "tbInfo";
+            this.tbInfo.Size = new System.Drawing.Size(288, 20);
+            this.tbInfo.TabIndex = 13;
+            // 
+            // cbQuery
+            // 
+            this.cbQuery.AutoSize = true;
+            this.cbQuery.Location = new System.Drawing.Point(661, 156);
+            this.cbQuery.Name = "cbQuery";
+            this.cbQuery.Size = new System.Drawing.Size(57, 17);
+            this.cbQuery.TabIndex = 14;
+            this.cbQuery.Text = "Query ";
+            this.cbQuery.UseVisualStyleBackColor = true;
+            // 
+            // FormMergeSheet
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.cbQuery);
+            this.Controls.Add(this.tbInfo);
             this.Controls.Add(this.tbDestData);
             this.Controls.Add(this.tbSourceData);
             this.Controls.Add(this.tbColumnName);
@@ -176,7 +198,7 @@
             this.Controls.Add(this.tbDestination);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.tbSource);
-            this.Name = "SelectSpreadSheets";
+            this.Name = "FormMergeSheet";
             this.Text = "SelectSpreadSheets";
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -197,5 +219,7 @@
         private System.Windows.Forms.TextBox tbColumnName;
         private System.Windows.Forms.TextBox tbSourceData;
         private System.Windows.Forms.TextBox tbDestData;
+        private System.Windows.Forms.TextBox tbInfo;
+        private System.Windows.Forms.CheckBox cbQuery;
     }
 }

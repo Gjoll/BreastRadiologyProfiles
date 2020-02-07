@@ -163,8 +163,8 @@ namespace GGMerge
             return this.MergeCols(item.Key, item.Value, rowDest);
         }
 
-        bool MergeCols(String mammoId, 
-            DataRow rowSource, 
+        bool MergeCols(String mammoId,
+            DataRow rowSource,
             DataRow rowDest)
         {
             for (Int32 i = 0; i < this.headings.Length; i++)
@@ -175,14 +175,17 @@ namespace GGMerge
             return true;
         }
 
-        bool MergeCol(String mammoId, 
+        bool MergeCol(String mammoId,
             Int32 i,
-            DataRow rowSource, 
+            DataRow rowSource,
             DataRow rowDest)
         {
-            String sourceText = rowSource[i].ToString();
-            String destText = rowDest[i].ToString();
+            String sourceText = rowSource[i].ToString().Trim();
+            String destText = rowDest[i].ToString().Trim();
             if (String.Compare(sourceText, destText) == 0)
+                return true;
+
+            if (sourceText.Length == 0)
                 return true;
 
             if (destText.Length == 0)
@@ -193,25 +196,33 @@ namespace GGMerge
 
             this.tbMammoId.Text = mammoId;
             this.tbColumnName.Text = this.headings[i];
+            this.tbInfo.Text = $"{rowDest[this.destination.listBoxNameCol]}:{rowDest[this.destination.itemNameCol]}";
             this.tbSourceData.Text = sourceText;
             this.tbDestData.Text = destText;
 
-            DialogResult res = MessageBox.Show($"Overwrite destination?",
-                "Query",
-                MessageBoxButtons.YesNo);
-            switch (res)
+            bool MergeQuery()
             {
-                case DialogResult.Yes:
-                    rowDest[i] = rowSource[i];
+                if (this.cbQuery.Checked == true)
                     return true;
+                DialogResult res = MessageBox.Show($"Overwrite destination?",
+                    "Query",
+                    MessageBoxButtons.YesNo);
+                switch (res)
+                {
+                    case DialogResult.Yes:
+                        return true;
 
-                case DialogResult.No:
-                    return true;
+                    case DialogResult.No:
+                        return true;
 
-                default:
-                    throw new NotImplementedException();
+                    default:
+                        throw new NotImplementedException();
+                }
             }
-
+            if (MergeQuery() == false)
+                return false;
+            rowDest[i] = rowSource[i];
+            return true;
         }
 
         void Compare(String[] headingSource, String[] headingDestination)

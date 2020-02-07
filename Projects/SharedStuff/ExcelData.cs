@@ -56,7 +56,7 @@ namespace BreastRadiology.Shared
                     switch (items[i])
                     {
                         case DBNull dbNullValue:
-                            retVal.Columns.Add(" ");
+                            retVal.Columns.Add($"Column {i}");
                             break;
 
                         case String stringValue:
@@ -100,33 +100,36 @@ namespace BreastRadiology.Shared
         public String[] GetHeadings()
         {
             List<String> retVal = new List<string>();
-            DataRow row = this.dataTable.Rows[0];
+            //DataRow row = this.dataTable.Rows[0];
 
-            void Read()
+            //void Read()
+            //{
+            //    object[] items = row.ItemArray;
+            //    for (Int32 i = 0; i < items.Length; i++)
+            //    {
+            //        switch (items[i])
+            //        {
+            //            case DBNull dbNullValue:
+            //                retVal.Add("");
+            //                break;
+            //            case String stringValue:
+            //                switch (stringValue.Trim().ToUpper())
+            //                {
+            //                    case "ID_MAMMO": this.idMammoCol = i; break;
+            //                }
+            //                retVal.Add(stringValue);
+            //                break;
+
+            //            default:
+            //                throw new NotImplementedException();
+            //        }
+            //    }
+            //}
+            //Read();
+            foreach (var col in this.dataTable.Columns)
             {
-                object[] items = row.ItemArray;
-                for (Int32 i = 0; i < items.Length; i++)
-                {
-                    switch (items[i])
-                    {
-                        case DBNull dbNullValue:
-                            retVal.Add("");
-                            break;
-                        case String stringValue:
-                            switch (stringValue.Trim().ToUpper())
-                            {
-                                case "ID_MAMMO": this.idMammoCol = i; break;
-                            }
-                            retVal.Add(stringValue);
-                            break;
-
-                        default:
-                            throw new NotImplementedException();
-                    }
-                }
+                retVal.Add(col.ToString());
             }
-            Read();
-
             return retVal.ToArray();
         }
 
