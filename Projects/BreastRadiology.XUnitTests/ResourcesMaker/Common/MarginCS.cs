@@ -37,7 +37,7 @@ namespace BreastRadiology.XUnitTests
                      Group_CommonCodesCS,
                      new ConceptDef[]
                      {
-                     //+ MarginCS
+                     //+ Codes
                      new ConceptDef()
                          .SetCode("AngularMargin")
                          .SetDisplay("Angular margin")
@@ -206,7 +206,7 @@ namespace BreastRadiology.XUnitTests
                              "from the mass, often a sign of malignancy,but the " +
                              "significant feature is that the margin of the mass " +
                              "is NOT CIRCUMSCRIBED.")
-                     //- MarginCS
+                     //- Codes
                      })
                  );
     }

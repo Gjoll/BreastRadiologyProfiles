@@ -403,13 +403,14 @@ namespace BreastRadiology.XUnitTests
             WriteIds(@"Common\ConsistentWith.cs", "Codes", Filter("Classification Consistent with", "Consistent with"));
             WriteIds(@"Common\ConsistentWith.cs", "Qualifiers", Filter("Classification Consistent with", "Consistent qualifier"));
             WriteIds(@"Common\NotPreviouslySeenCS.cs", "Codes", Filter("Not Prev Seen On", "not previous seen"));
-            WriteIds(@"Common\MarginCS.cs", "MarginCS", Filter("Profile Abnormality", "margin"));
+            WriteIds(@"Common\MarginCS.cs", "Codes", Filter("Profile Abnormality", "margin"));
             WriteIds(@"Common\OrientationCS.cs", "Codes", Filter("Size and Distance", "Orientation"));
             WriteIds(@"Common\ShapeCS.cs", "Codes", Filter("Profile Abnormality", "shape"));
             WriteIds(@"Common\ObservedChangesCS.cs", "Codes", Filter("Change From Prior", "Change From Prior"));
             WriteIds(@"Common\CalcificationDistributionCS.cs", "Codes", Filter("Assoc Calcs distribution", "calcification distribution"));
 
             WriteIds(@"FindingMG\MGAbnormalityAsymmetry.cs", "Type", "691", "643", "644", "X11000");
+            WriteIds(@"FindingMG\MGAbnormalityDensity.cs", "Type", "686", "645", "646", "647");
             WriteIds(@"FindingMG\MGAbnormalityCalcification.cs", "Type", Filter("Assoc Calcs", "calcification type"));
             WriteIds(@"FindingMG\MGDensity.cs", "Codes", Filter("Profile Abnormality", "density"));
             WriteIds(@"FindingMG\MGBreastDensity.cs", "Codes", Filter("", "MG Breast Density"));
@@ -443,6 +444,5 @@ namespace BreastRadiology.XUnitTests
                     yield return value;
             }
         }
-
     }
 }

@@ -19,17 +19,38 @@ namespace BreastRadiology.XUnitTests
                          Group_MGCodesCS,
                         new ConceptDef[]
                          {
-                        new ConceptDef()
-                            .SetCode("FocalAsymmetrical", "Focal Asymmetrical")
-                            .SetDefinition("[PR]")
-                            ,
-                        new ConceptDef()
-                            .SetCode("Nodular", "Nodular")
-                            .SetDefinition("[PR]")
-                            ,
-                        new ConceptDef()
-                            .SetCode("Tubular", "Tubular")
-                            .SetDefinition("[PR]")
+                             //+ Type
+                             new ConceptDef()
+                                 .SetCode("Density")
+                                 .SetDisplay("Density")
+                                 .SetDefinition("[PR] Density")
+                                 .MammoId("686")
+                                 .ValidModalities(Modalities.MG)
+                             ,
+                             new ConceptDef()
+                                 .SetCode("DensityFocalAsymmetry")
+                                 .SetDisplay("Density focal asymmetry")
+                                 .SetDefinition("[PR] Density focal asymmetry")
+                                 .MammoId("645")
+                                 .ValidModalities(Modalities.MG)
+                             ,
+                             new ConceptDef()
+                                 .SetCode("DensityNodular")
+                                 .SetDisplay("Density nodular")
+                                 .SetDefinition("[PR] Density nodular")
+                                 .MammoId("646")
+                                 .ValidModalities(Modalities.MG)
+                                 .SetSnomedDescription("not found like tubular shaped")
+                             ,
+                             new ConceptDef()
+                                 .SetCode("DensityTubular")
+                                 .SetDisplay("Density tubular")
+                                 .SetDefinition("[PR] Density tubular")
+                                 .MammoId("647")
+                                 .ValidModalities(Modalities.MG)
+                                 .SetSnomedDescription("ClinicalFinding | 129794007 | Tubular shaped density " +
+                                     "of breast (Finding)")
+                             //- Type
                          }
                      )
                  );
