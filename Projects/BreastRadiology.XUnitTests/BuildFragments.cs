@@ -54,6 +54,9 @@ namespace BreastRadiology.XUnitTests
 
         public BuildFragments()
         {
+            Encoding.RegisterProvider(System.Text.CodePagesEncodingProvider.Instance);
+            Encoding enc1252 = CodePagesEncodingProvider.Instance.GetEncoding(1252);
+
             this.cacheDir = Path.Combine(this.BaseDir, "Cache");
             this.contentDir = Path.Combine(this.BaseDir, "IG", "Content");
             this.guideDir = Path.Combine(this.BaseDir, "IG", "Guide");

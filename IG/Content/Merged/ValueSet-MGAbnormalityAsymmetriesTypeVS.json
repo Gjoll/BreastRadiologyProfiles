@@ -59,8 +59,8 @@
             "display": "Asymmetry global"
           },
           {
-            "code": "AsymmetryADDPrefixDeveloping",
-            "display": "Asymmetry ADD prefix developing"
+            "code": "DevelopingAsymmetry",
+            "display": "Developing Asymmetry"
           }
         ]
       }
