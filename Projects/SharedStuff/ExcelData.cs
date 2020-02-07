@@ -7,7 +7,7 @@ using System.Text;
 using FhirKhit.Tools;
 using ClosedXML.Excel;
 
-namespace BreastRadiology.XUnitTests
+namespace BreastRadiology.Shared
 {
     public class ExcelData
     {
@@ -56,8 +56,9 @@ namespace BreastRadiology.XUnitTests
                     switch (items[i])
                     {
                         case DBNull dbNullValue:
-                            retVal.Columns.Add("");
+                            retVal.Columns.Add(" ");
                             break;
+
                         case String stringValue:
                             DataColumn col = new DataColumn(stringValue, typeof(String));
                             retVal.Columns.Add(col);
@@ -96,18 +97,51 @@ namespace BreastRadiology.XUnitTests
             return retVal;
         }
 
+        public String[] GetHeadings()
+        {
+            List<String> retVal = new List<string>();
+            DataRow row = this.dataTable.Rows[0];
+
+            void Read()
+            {
+                object[] items = row.ItemArray;
+                for (Int32 i = 0; i < items.Length; i++)
+                {
+                    switch (items[i])
+                    {
+                        case DBNull dbNullValue:
+                            retVal.Add("");
+                            break;
+                        case String stringValue:
+                            switch (stringValue.Trim().ToUpper())
+                            {
+                                case "ID_MAMMO": this.idMammoCol = i; break;
+                            }
+                            retVal.Add(stringValue);
+                            break;
+
+                        default:
+                            throw new NotImplementedException();
+                    }
+                }
+            }
+            Read();
+
+            return retVal.ToArray();
+        }
+
         void LoadRows(DataTable originalData)
         {
             for (Int32 rowIndex = 1; rowIndex < originalData.Rows.Count; rowIndex++)
             {
-                DataRow r = originalData.Rows[rowIndex];
-                this.dataTable.Rows.Add(r.ItemArray);
-                switch (r[this.idMammoCol])
+                DataRow originalRow = originalData.Rows[rowIndex];
+                DataRow newRow = this.dataTable.Rows.Add(originalRow.ItemArray);
+                switch (newRow[this.idMammoCol])
                 {
                     case DBNull dbNullValue:
                         break;
                     default:
-                        String key = r[this.idMammoCol].ToString();
+                        String key = newRow[this.idMammoCol].ToString();
                         if (rows.ContainsKey(key))
                         {
                             this.converter.ConversionWarn("GGPatcher",
@@ -115,7 +149,7 @@ namespace BreastRadiology.XUnitTests
                                 $"Mammo id {key} already exists");
                         }
                         else
-                            rows.Add(key, r);
+                            rows.Add(key, newRow);
                         break;
                 }
             }
@@ -153,8 +187,8 @@ namespace BreastRadiology.XUnitTests
 
         DataSet ReadSpreadSheet(String filePath)
         {
-            Encoding.RegisterProvider(System.Text.CodePagesEncodingProvider.Instance);
-            Encoding enc1252 = CodePagesEncodingProvider.Instance.GetEncoding(1252);
+            //Encoding.RegisterProvider(System.Text.CodePagesEncodingProvider.Instance);
+            //Encoding enc1252 = CodePagesEncodingProvider.Instance.GetEncoding(1252);
 
             using (var stream = File.Open(filePath, FileMode.Open, FileAccess.Read))
             {

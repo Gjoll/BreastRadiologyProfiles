@@ -10,12 +10,16 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using BreastRadiology.Shared;
 using DocumentFormat.OpenXml.Wordprocessing;
+using FhirKhit.Tools;
 
 namespace GGMerge
 {
-    public partial class FormMergeSheet : Form
+    public partial class FormMergeSheet : Form, IConversionInfo
     {
+        ExcelData source;
+        ExcelData destination;
         String[] headings;
 
         public FormMergeSheet()
@@ -95,13 +99,6 @@ namespace GGMerge
             this.tbDestination.Text = path;
         }
 
-        DataSet dsSource;
-        DataSet dsDestination;
-        Int32 idMammoCol = -1;
-
-        Dictionary<String, DataRow> rowsSource = new Dictionary<string, DataRow>();
-        Dictionary<String, DataRow> rowsDestination = new Dictionary<string, DataRow>();
-
         private void btnMerge_Click(object sender, EventArgs e)
         {
             try
@@ -117,38 +114,24 @@ namespace GGMerge
         public bool Merge(String pathSource,
             String pathDestination)
         {
-            this.dsSource = this.ReadSpreadSheet(pathSource);
-            this.dsDestination = this.ReadSpreadSheet(pathDestination);
+            this.source = new ExcelData(this, pathSource, "Sheet3");
+            this.destination = new ExcelData(this, pathDestination, "Sheet3");
 
-            DataTable tblSource = this.dsSource.Tables["Sheet3"];
-            if (tblSource == null)
-                throw new Exception("Table \"Sheet3\" not found");
-
-            DataTable tblDestination = this.dsDestination.Tables["Sheet3"];
-            if (tblSource == null)
-                throw new Exception("Table \"Sheet3\" not found");
-
-            String[] headingSource = GetHeadings(tblSource);
-            String[] headingDestination = GetHeadings(tblDestination);
+            String[] headingSource = this.source.GetHeadings();
+            String[] headingDestination = this.destination.GetHeadings();
             Compare(headingSource, headingDestination);
 
             this.headings = headingDestination;
 
-            LoadRows(tblSource, this.rowsSource);
-            LoadRows(tblDestination, this.rowsDestination);
             if (MergeRows() == false)
                 return false;
-
-            File.Delete(this.tbDestination.Text);
-            XLWorkbook workbook = new XLWorkbook();
-            workbook.Worksheets.Add(this.dsDestination);
-            workbook.SaveAs(this.tbDestination.Text);
+            this.destination.Save();
             return true;
         }
 
         bool MergeRows()
         {
-            foreach (KeyValuePair<String, DataRow> item in this.rowsSource)
+            foreach (KeyValuePair<String, DataRow> item in this.source.rows)
             {
                 if (MergeRow(item) == false)
                     return false;
@@ -159,7 +142,7 @@ namespace GGMerge
 
         bool MergeRow(KeyValuePair<String, DataRow> item)
         {
-            if (this.rowsDestination.TryGetValue(item.Key, out DataRow rowDest) == false)
+            if (this.destination.TryGetRow(item.Key, out DataRow rowDest) == false)
             {
                 DialogResult res = MessageBox.Show($"Can not find row {item.Key} in destination table",
                     "Error",
@@ -186,7 +169,7 @@ namespace GGMerge
         {
             for (Int32 i = 0; i < this.headings.Length; i++)
             {
-                if (i != this.idMammoCol)
+                if (i != this.source.idMammoCol)
                     MergeCol(mammoId, i, rowSource, rowDest);
             }
             return true;
@@ -231,74 +214,23 @@ namespace GGMerge
 
         }
 
-        void LoadRows(DataTable tbl,
-            Dictionary<String, DataRow> rows)
-        {
-            for (Int32 rowIndex = 1; rowIndex < tbl.Rows.Count; rowIndex++)
-            {
-                DataRow r = tbl.Rows[rowIndex];
-                switch (r[this.idMammoCol])
-                {
-                    case DBNull dbNullValue:
-                        break;
-                    default:
-                        try
-                        {
-                            String key = r[this.idMammoCol].ToString();
-                            if (String.IsNullOrEmpty(key) == false)
-                                rows.Add(key, r);
-                        }
-                        catch (Exception e)
-                        {
-                            Console.WriteLine(e);
-                        }
-                        break;
-                }
-            }
-        }
-
-
         void Compare(String[] headingSource, String[] headingDestination)
         {
+            String FixedName(String s)
+            {
+                if (s.StartsWith("Column"))
+                    s = "";
+                return s;
+            }
+
             if (headingSource.Length != headingDestination.Length)
                 throw new Exception("Header's do not match");
 
             for (Int32 i = 0; i < headingSource.Length; i++)
-                if (headingSource[i] != headingDestination[i])
-                    throw new Exception($"Heading's{i} {headingSource[i]} and {headingDestination[i]} do not match");
-        }
-
-        String[] GetHeadings(DataTable tblSource)
-        {
-            List<String> retVal = new List<string>();
-            DataRow row = tblSource.Rows[0];
-
-            void Read()
             {
-                object[] items = row.ItemArray;
-                for (Int32 i = 0; i < items.Length; i++)
-                {
-                    switch (items[i])
-                    {
-                        case DBNull dbNullValue:
-                            retVal.Add("");
-                            break;
-                        case String stringValue:
-                            switch (stringValue.Trim().ToUpper())
-                            {
-                                case "ID_MAMMO": this.idMammoCol = i; break;
-                            }
-                            retVal.Add(stringValue);
-                            break;
-
-                        default:
-                            throw new NotImplementedException();
-                    }
-                }
+                if (FixedName(headingSource[i]) != FixedName(headingDestination[i]))
+                    throw new Exception($"Heading's{i} {headingSource[i]} and {headingDestination[i]} do not match");
             }
-            Read();
-
-            return retVal.ToArray();
         }
 
         DataSet ReadSpreadSheet(String filePath)
@@ -319,5 +251,14 @@ namespace GGMerge
             }
         }
 
+        void Msg(String import, string className, string method, string msg)
+        {
+        }
+
+        public void ConversionError(string className, string method, string msg) => Msg("Err", className, method, msg);
+
+        public void ConversionInfo(string className, string method, string msg) => Msg("Info", className, method, msg);
+
+        public void ConversionWarn(string className, string method, string msg) => Msg("Warn", className, method, msg);
     }
 }

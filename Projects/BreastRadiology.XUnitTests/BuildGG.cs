@@ -16,6 +16,7 @@ using ExcelDataReader;
 using System.Data;
 using System.Globalization;
 using System.Linq;
+using BreastRadiology.Shared;
 using Newtonsoft.Json.Linq;
 
 namespace BreastRadiology.XUnitTests

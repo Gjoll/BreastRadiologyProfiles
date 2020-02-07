@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.Data;
 using System.IO;
 using System.Text;
+using BreastRadiology.Shared;
 
 namespace BreastRadiology.XUnitTests
 {
