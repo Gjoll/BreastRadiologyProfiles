@@ -63,6 +63,8 @@ namespace BreastRadiology.XUnitTests
 
         public BuildGG()
         {
+            Encoding.RegisterProvider(System.Text.CodePagesEncodingProvider.Instance);
+            Encoding enc1252 = CodePagesEncodingProvider.Instance.GetEncoding(1252);
         }
 
         String CodeValue(String value)
