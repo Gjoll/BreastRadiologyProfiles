@@ -73,8 +73,7 @@ namespace BreastRadiology.XUnitTests
                             .SetSnomedCode("129734009")
                             .SetSnomedDescription("ClinicalFinding | Oval shaped lesion (Finding)")
                             .SetUMLS("A mass that is elliptical or egg-shaped.")
-                            .SetACR("Shape is elliptical or egg-shaped (may include 2 " +
-                                "or 3 undulations, , i.e., \"gently lobulated\" or \"macrolobulated\").")
+                            .SetACR("A mass")
                         ,
                         new ConceptDef()
                             .SetCode("Reniform")
@@ -95,12 +94,10 @@ namespace BreastRadiology.XUnitTests
                             .SetSnomedDescription("ClinicalFinding | Round shaped lesion (Finding)")
                             .SetUMLS("A mass that is spherical, ball-shaped, circular or " +
                                 "global.")
-                            .SetACR("A mass that is spherical, ball-shaped, circular, " +
-                                "or globular in shape.A round mass has an anteroposterior " +
-                                "diameter equal to its transverse diameterand to qualify " +
-                                "as a ROUND mass, it must be circular in perpendicular " +
-                                "projections.Breast masses with a ROUND shape are " +
-                                "not commonly seen with breast ultrasound.")
+                            .SetACR("Just as in mammography and ultrasound, we look at " +
+                                "its shape, its margins and its internal characteristics: " +
+                                "this includes its T1- and T2-characteristics as well " +
+                                "its enhancement pattern.")
                         //- Codes
                      })
                  );

@@ -34,7 +34,8 @@ namespace BreastRadiology.XUnitTests
                                     "tumor. Unlike a breast cancer, which grows larger " +
                                     "over time and can spread to other organs, a fibroadenoma " +
                                     "remains in the breast tissue. They’re pretty small, " +
-                                    "too. Most are only 1 or 2 centimeters in size.")
+                                    "too. Most are only 1 or 2 centimeters in size. www.webmd.com " +
+                                    "› breast-cancer › what-are-fibroadenomas")
                             ,
                             new ConceptDef()
                                 .SetCode("FibroadenomaDegeneration")
@@ -42,6 +43,10 @@ namespace BreastRadiology.XUnitTests
                                 .SetDefinition("[PR] Fibroadenoma degeneration")
                                 .MammoId("695")
                                 .ValidModalities(Modalities.MG)
+                                .SetUMLS("These are non-cancerous breast lumps. Fibroadenomas " +
+                                    "usually go away with age. By the time a woman is " +
+                                    "menopausal, they will likely experience a degeneration " +
+                                    "of the Fibroadenomas.")
                             //- Type
                          })
                      );

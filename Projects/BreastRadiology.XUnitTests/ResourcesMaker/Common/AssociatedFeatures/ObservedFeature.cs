@@ -30,14 +30,14 @@ namespace BreastRadiology.XUnitTests
                                 .SetDefinition("[PR] Architectural distortion")
                                 .MammoId("260")
                                 .ValidModalities(Modalities.MG | Modalities.MRI | Modalities.US)
-                                .SetUMLS("Architectural distortion is often due to a desmoplastic " +
-                                    "reaction in which there is focal disruption of the " +
-                                    "normal breast tissue pattern. Architectural distortion " +
-                                    "is among the most common presentations for breast " +
-                                    "cancer. An architectural distortion may be caused " +
-                                    "by sclerosing adenosis, or a thing called radial " +
-                                    "scar, both of which are benign and both quite rare. " +
-                                    "Architectural distortion uncommonly indicates cancer.")
+                                .SetUMLS("Many breast masses are found within the zone of fibroglandular " +
+                                    "tissue or at a fat-fibroglandularjunction. If the " +
+                                    "mass blurs a tissue plane between fat and fibroglandular " +
+                                    "tissue or if the mass producesdistortion of the ducts, " +
+                                    "these findings may be termed architectural distortion. " +
+                                    "Second Addition —As of 07/31/2013 American College " +
+                                    "of Radiology Breast Imaging Reporting andData System—Ultrasoundpg " +
+                                    "139")
                             ,
                             new ConceptDef()
                                 .SetCode("AxillaryAdenopathy")
@@ -45,11 +45,12 @@ namespace BreastRadiology.XUnitTests
                                 .SetDefinition("[PR] Axillary adenopathy")
                                 .MammoId("239")
                                 .ValidModalities(Modalities.MG | Modalities.MRI)
-                                .SetUMLS("Axillary lymphadenopathy is a condition in which " +
-                                    "the lymph nodes of the axillary region — commonly " +
-                                    "known as the armpit — are enlarged. The condition " +
-                                    "can be diagnosed on the basis of a physical exam " +
-                                    "or imaging studies.")
+                                .SetUMLS("Enlarged axillary (under the armpit) lymph nodes. " +
+                                    "Additional evaluation is needed to determine the " +
+                                    "cause.                                        FIFTH " +
+                                    "EDITION —As of 07/31/2013                       American " +
+                                    "College of Radiology Breast Imaging Reporting andData " +
+                                    "System—MammographyFifth Edition 2013 pg 110")
                                 .SetACR("Enlarged axillary lymph nodes may warrant comment, " +
                                     "clinical correlation, and additional evaluation, " +
                                     "especially if new or considerably larger or rounder " +
@@ -67,22 +68,7 @@ namespace BreastRadiology.XUnitTests
                                 .MammoId("471.263")
                                 .ValidModalities(Modalities.MG | Modalities.MRI | Modalities.US)
                                 .SetSnomedCode("470272007")
-                                .SetSnomedDescription("PhysicalObject | Implantable lesion localization " +
-                                    "marker (Object)")
-                                .SetUMLS("The biopsy clip serves as a marker documenting where " +
-                                    "the tissue was sampled in the breast. If the original " +
-                                    "abnormality is no longer visible by imaging after " +
-                                    "the biopsy, the marker is the only guide we have " +
-                                    "to know where the diseased tissue was sampled.")
-                            ,
-                            new ConceptDef()
-                                .SetCode("BiopsyClips")
-                                .SetDisplay("Biopsy clips")
-                                .SetDefinition("[PR] Biopsy clips")
-                                .MammoId("472.264")
-                                .ValidModalities(Modalities.MG | Modalities.MRI | Modalities.US)
-                                .SetSnomedCode("470272007")
-                                .SetSnomedDescription("PhysicalObject | Implantable lesion localization " +
+                                .SetSnomedDescription("Physical Object | Implantable lesion localization " +
                                     "marker (Object)")
                                 .SetUMLS("Tissue marker placement after image-guided breast " +
                                     "biopsy has become a routine component of clinical " +
@@ -97,7 +83,31 @@ namespace BreastRadiology.XUnitTests
                                     "breast interventionalist with the tissue markers " +
                                     "most widely available in the United States today " +
                                     "and to provide guidance regarding selection of appropriate " +
-                                    "markers for various clinical settings.")
+                                    "markers for various clinical settings. https://www.ncbi.nlm.nih.gov/pubmed/30059952")
+                            ,
+                            new ConceptDef()
+                                .SetCode("BiopsyClips")
+                                .SetDisplay("Biopsy clips")
+                                .SetDefinition("[PR] Biopsy clips")
+                                .MammoId("472.264")
+                                .ValidModalities(Modalities.MG | Modalities.MRI | Modalities.US)
+                                .SetSnomedCode("470272007")
+                                .SetSnomedDescription("Physical Object | Implantable lesion localization " +
+                                    "marker (Object)")
+                                .SetUMLS("Tissue marker placement after image-guided breast " +
+                                    "biopsy has become a routine component of clinical " +
+                                    "practice. Marker placement distinguishes multiple " +
+                                    "biopsied lesions within the same breast, prevents " +
+                                    "re-biopsy of benign lesions, enables multi-modality " +
+                                    "correlation, guides pre-operative localization and " +
+                                    "helps confirm surgical target removal. Numerous breast " +
+                                    "tissue markers are currently available, with varied " +
+                                    "shapes, composition, and associated bio-absorbable " +
+                                    "components. This review serves to familiarize the " +
+                                    "breast interventionalist with the tissue markers " +
+                                    "most widely available in the United States today " +
+                                    "and to provide guidance regarding selection of appropriate " +
+                                    "markers for various clinical settings. https://www.ncbi.nlm.nih.gov/pubmed/30059952")
                             ,
                             new ConceptDef()
                                 .SetCode("BrachytherapyTube")
@@ -105,16 +115,15 @@ namespace BreastRadiology.XUnitTests
                                 .SetDefinition("[PR] Brachytherapy tube")
                                 .MammoId("475")
                                 .ValidModalities(Modalities.MG)
-                                .SetUMLS("Brachytherapy (brak-e-THER-uh-pee) is a procedure " +
-                                    "that involves placing radioactive material inside " +
-                                    "your body.Brachytherapy is one type of radiation " +
-                                    "therapy that's used to treat cancer. Brachytherapy " +
-                                    "is sometimes called internal radiation.Brachytherapy " +
-                                    "allows doctors to deliver higher doses of radiation " +
-                                    "to more-specific areas of the body, compared with " +
-                                    "the conventional form of radiation therapy (external " +
-                                    "beam radiation) that projects radiation from a machine " +
-                                    "outside of your body.")
+                                .SetUMLS("Brachytherapy may be temporary or permanent. Temporary " +
+                                    "brachytherapy places radioactive material inside " +
+                                    "a catheter for a specific amount of time and then " +
+                                    "it is removed. It is given at a low-dose rate (LDR) " +
+                                    "or high-dose rate (HDR). Permanent brachytherapy " +
+                                    "is also called seed implantation. It puts radioactive " +
+                                    "seeds (about the size of a grain of rice) in or near " +
+                                    "the tumor permanently. After several months, the " +
+                                    "seeds lose their radioactivity. https://www.radiologyinfo.org/en/info.cfm?pg=brachy")
                             ,
                             new ConceptDef()
                                 .SetCode("ChestWallInvasion")
@@ -131,7 +140,6 @@ namespace BreastRadiology.XUnitTests
                                 .SetDefinition("[PR] Cooper distorted")
                                 .MammoId("261")
                                 .ValidModalities(Modalities.US)
-                                .SetUMLS("C1268682")
                             ,
                             new ConceptDef()
                                 .SetCode("CooperThickened")
@@ -144,13 +152,13 @@ namespace BreastRadiology.XUnitTests
                                     "These ligaments maintain the shape and structure " +
                                     "of your breasts and help to prevent sagging. Cooper’s " +
                                     "ligaments support the breasts on the chest wall, " +
-                                    "maintain their contour, and keep them in position.These " +
-                                    "support breast tissue; they become contracted in " +
-                                    "cancer of breast, producing dimples in overlying " +
+                                    "maintain their contour, and keep them in position. " +
+                                    "These support breast tissue; they become contracted " +
+                                    "in cancer of breast, producing dimples in overlying " +
                                     "skin. Thickening occurs when there are skin changes " +
                                     "usually associated with the presence of a mass, benign " +
                                     "or malignant, that causes shortening in the Coopers " +
-                                    "ligenments due to fibrosis.")
+                                    "ligaments due to fibrosis.")
                             ,
                             new ConceptDef()
                                 .SetCode("Edema")
@@ -159,7 +167,7 @@ namespace BreastRadiology.XUnitTests
                                 .MammoId("258")
                                 .ValidModalities(Modalities.US)
                                 .SetSnomedCode("290077003")
-                                .SetSnomedDescription("ClinicalFinding | Edema of breast (Finding)")
+                                .SetSnomedDescription("Clinical Finding | Edema of breast (Finding)")
                                 .SetUMLS("Edema may be due to blockage of subdermal lymphatics " +
                                     "by tumor cells or an inflammatory process within " +
                                     "the breast or axilla.")
@@ -184,8 +192,15 @@ namespace BreastRadiology.XUnitTests
                                 .MammoId("238")
                                 .ValidModalities(Modalities.MG)
                                 .SetSnomedCode("470272007")
-                                .SetSnomedDescription("PhysicalObject | Implantable lesion localization " +
+                                .SetSnomedDescription("Physical Object | Implantable lesion localization " +
                                     "marker (Object)")
+                                .SetUMLS("Tiny, gold seeds, about the size of a grain of rice, " +
+                                    "that are put in and/or around a tumor to show exactly " +
+                                    "where it is in the body. Doctors are then able to " +
+                                    "target the tumor directly and give higher doses of " +
+                                    "radiation with less harm to nearby healthy tissue. " +
+                                    "Also called gold fiducial marker seeds, gold fiducial " +
+                                    "markers, and gold-seed fiducial markers. https://www.cancer.gov/publications/dictionaries/cancer-terms/def/gold-seeds")
                             ,
                             new ConceptDef()
                                 .SetCode("Hematoma")
@@ -194,11 +209,12 @@ namespace BreastRadiology.XUnitTests
                                 .MammoId("478")
                                 .ValidModalities(Modalities.MG)
                                 .SetSnomedCode("302924003")
-                                .SetSnomedDescription("ClinicalFinding | Breast hematoma (Disorder) | N64.89")
-                                .SetUMLS("A hematoma (US spelling)  is a localized bleeding " +
-                                    "outside of blood vessels, due to either disease or " +
-                                    "trauma including injury or surgery and may involve " +
-                                    "blood continuing to seep from broken capillaries.")
+                                .SetSnomedDescription("Clinical Finding | Breast hematoma (Disorder) | N64.89")
+                                .SetUMLS("A hematoma is a localized bleeding outside of blood " +
+                                    "vessels, due to either disease or trauma including " +
+                                    "injury or surgery and may involve blood continuing " +
+                                    "to seep from broken capillaries. en.wikipedia.org " +
+                                    "› wiki › Hematoma")
                             ,
                             new ConceptDef()
                                 .SetCode("NippleRetraction")
@@ -212,7 +228,7 @@ namespace BreastRadiology.XUnitTests
                                 .SetUMLS("Retracted nipples lie flat against the areola. The " +
                                     "condition can be the result of inflammation or scarring " +
                                     "of the tissue behind the nipple, and caused by numerous " +
-                                    "conditions, not just cancer. ... In the case of breast " +
+                                    "conditions, not just cancer. In the case of breast " +
                                     "cancer, nipple retraction occurs when the tumor attacks " +
                                     "the duct behind the nipple, pulling it in.")
                                 .SetACR("The nipple is pulled in. This should not be confused " +
@@ -228,6 +244,7 @@ namespace BreastRadiology.XUnitTests
                                 .SetDefinition("[PR] NO Chest wall invasion")
                                 .MammoId("257")
                                 .ValidModalities(Modalities.MRI)
+                                .SetUMLS("The mass has not attached itself to the chest wall.")
                             ,
                             new ConceptDef()
                                 .SetCode("PectoralisMuscleInvasion")
@@ -246,6 +263,10 @@ namespace BreastRadiology.XUnitTests
                                 .MammoId("256")
                                 .ValidModalities(Modalities.MRI)
                                 .SetSnomedDescription("choices with muscle + invasion")
+                                .SetUMLS("Pectoralis muscle involvement of the tumor has been " +
+                                    "detected on the MRI by muscle enhancement with obliteration " +
+                                    "of the fat plane between the tumor and the muscle. " +
+                                    "pubs.rsna.org › doi › pdf")
                             ,
                             new ConceptDef()
                                 .SetCode("PectoralisMuscleTenting")
@@ -254,6 +275,11 @@ namespace BreastRadiology.XUnitTests
                                 .MammoId("253")
                                 .ValidModalities(Modalities.MRI | Modalities.US)
                                 .SetSnomedDescription("NO FIND")
+                                .SetUMLS("The tent sign is a term referring to a characteristic " +
+                                    "appearance of the posterior edge of the breast parenchyma " +
+                                    "when a mass (usually an infiltrating lesion) causes " +
+                                    "its retraction and forms an inverted \"V\" that resembles " +
+                                    "the tip of a circus tent. https://radiopaedia.org/articles/tent-sign-breast?lang=us")
                             ,
                             new ConceptDef()
                                 .SetCode("PostSurgicalScar")
@@ -283,7 +309,7 @@ namespace BreastRadiology.XUnitTests
                                     "or following procedures such as breast surgery or " +
                                     "radiation therapy. Serous fluid is a pale yellow, " +
                                     "transparent fluid that contains protein, but no blood " +
-                                    "cells or pus.")
+                                    "cells or pus. https://www.verywellhealth.com/seroma-medical-definition-430372")
                             ,
                             new ConceptDef()
                                 .SetCode("SkinInvolvement")
@@ -291,6 +317,10 @@ namespace BreastRadiology.XUnitTests
                                 .SetDefinition("[PR] Skin involvement")
                                 .MammoId("252")
                                 .ValidModalities(Modalities.MG | Modalities.MRI | Modalities.US)
+                                .SetUMLS("The mass or lesion has attached itself to the skin " +
+                                    "of the breast. There are several layers of skin that " +
+                                    "the mass or lesion can penetrate and that is what " +
+                                    "determines the level of skin invasion.")
                             ,
                             new ConceptDef()
                                 .SetCode("SkinLesion")
@@ -326,7 +356,7 @@ namespace BreastRadiology.XUnitTests
                                     "nipple may cause scarring within the breast that " +
                                     "pulls at the nipple or nearby skin. Skin and nipple " +
                                     "retraction are more obvious when a woman raises her " +
-                                    "arms above her head or leans forward.")
+                                    "arms above her head or leans forward. https://www.drholmesmd.com/blog/early-signs-of-breast-cancer")
                             ,
                             new ConceptDef()
                                 .SetCode("SkinThickening")
@@ -336,6 +366,10 @@ namespace BreastRadiology.XUnitTests
                                 .ValidModalities(Modalities.MG | Modalities.MRI | Modalities.US)
                                 .SetSnomedDescription("ClinicalFinding | 129797000 | Mammographic skin thickening " +
                                     "of breast (Finding) | [0/0] | R92")
+                                .SetUMLS("The presence of skin thickening on mammography is " +
+                                    "variably defined, usually being more than 2 mm in " +
+                                    "thickness. It can result from a number of both benign " +
+                                    "and malignant causes. https://radiopaedia.org/articles/skin-thickening-on-mammography-differential?lang=us")
                                 .SetACR("Skin thickening may be focal or diffuse, and is defined " +
                                     "as being greater than 2 mm in thickness. This finding " +
                                     "is of particular concern if it represents a change " +
@@ -379,10 +413,12 @@ namespace BreastRadiology.XUnitTests
                                 .SetSnomedCode("129795008")
                                 .SetSnomedDescription("ClinicalFinding | Mammographic trabecular thickening " +
                                     "of breast (Finding)")
-                                .SetUMLS("Diffusely increased density, skin edema, and trabecular " +
-                                    "thickening are mammographic manifestations of the " +
-                                    "edema and lymphatic obstruction in inflammatory carcinoma " +
-                                    "of the breast.")
+                                .SetUMLS("Trabecular thickening—thickening of the Cooper’s " +
+                                    "ligaments and fibrous stroma—is an imaging finding " +
+                                    "of breast edema, usually secondary to dilated lymphatics. " +
+                                    "Skin thickening and trabecular thickening often occur " +
+                                    "together, and they have similar differential diagnoses. " +
+                                    " https://oxfordmedicine.com/view/10.1093/med/9780190270261.001.0001/med-9780190270261-chapter-48")
                                 .SetACR("This is a thickening of the fibrous septa of the " +
                                     "breast.")
                             //- ObservedFeatureCS

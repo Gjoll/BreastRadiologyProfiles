@@ -386,6 +386,46 @@ namespace BreastRadiology.XUnitTests
 
 
         [TestMethod]
+        public void Cleanup()
+        {
+            ExcelData source;
+
+            bool IsGargage(String text)
+            {
+                text = text.ToUpper();
+                if ((text.Length == 0) || (text[0] != 'C'))
+                    return false;
+                for (Int32 i = 1; i < text.Length; i++)
+                    if (Char.IsDigit(text[i]) == false)
+                        return false;
+                return true;
+            }
+
+            void CleanupUMLS(DataRow row)
+            {
+                String text = row[source.umlsCol].ToString();
+                if (IsGargage(text))
+                    text = "";
+
+                row[source.umlsCol] = text;
+            }
+
+            String baseDir = DirHelper.FindParentDir("BreastRadiologyProfiles");
+            String filePath = Path.Combine(baseDir,
+                "..",
+                "BRDocs",
+                "BreastData.xlsx");
+            source = new ExcelData(new Info(), filePath, "Sheet3");
+
+            foreach (DataRow row in source.rows.Values)
+            {
+                CleanupUMLS(row);
+            }
+            source.Save();
+        }
+
+
+        [TestMethod]
         public void WriteCode()
         {
             this.ReadGregDS();
@@ -408,7 +448,7 @@ namespace BreastRadiology.XUnitTests
             WriteIds(@"Common\ObservedChangesCS.cs", "Codes", Filter("Change From Prior", "Change From Prior"));
             WriteIds(@"Common\CalcificationDistributionCS.cs", "Codes", Filter("Assoc Calcs distribution", "calcification distribution"));
 
-            WriteIds(@"FindingMG\MGAbnormalityAsymmetry.cs", "Type", "691", "643", "644", "X11000");
+            WriteIds(@"FindingMG\MGAbnormalityAsymmetry.cs", "Type", "691", "643", "644", "Row542");
             WriteIds(@"FindingMG\MGAbnormalityDensity.cs", "Type", "686", "645", "646", "647");
             WriteIds(@"FindingMG\MGAbnormalityCalcification.cs", "Type", Filter("Assoc Calcs", "calcification type"));
             WriteIds(@"FindingMG\MGDensity.cs", "Codes", Filter("Profile Abnormality", "density"));

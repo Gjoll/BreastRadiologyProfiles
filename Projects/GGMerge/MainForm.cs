@@ -41,43 +41,6 @@ namespace GGMerge
             }
         }
 
-        private void btnCleanup_Click(object sender, EventArgs e)
-        {
-            ExcelData source;
-
-            bool IsGargage(String text)
-            {
-                text = text.ToUpper();
-                if ((text.Length == 0) || (text[0] != 'C'))
-                    return false;
-                for (Int32 i = 1; i < text.Length; i++)
-                    if (Char.IsDigit(text[i]) == false)
-                        return false;
-                return true;
-            }
-
-            void CleanupUMLS(DataRow row)
-            {
-                String text = row[source.umlsCol].ToString();
-                if (IsGargage(text))
-                    text = "";
-
-                row[source.umlsCol] = text;
-            }
-
-            String baseDir = DirHelper.FindParentDir("BreastRadiologyProfiles");
-            String filePath = Path.Combine(baseDir,
-                "..",
-                "BRDocs",
-                "BreastData.xlsx");
-            source = new ExcelData(this, filePath, "Sheet3");
-
-            foreach (DataRow row in source.rows.Values)
-            {
-                CleanupUMLS(row);
-            }
-            source.Save();
-        }
         void Msg(String import, string className, string method, string msg)
         {
         }

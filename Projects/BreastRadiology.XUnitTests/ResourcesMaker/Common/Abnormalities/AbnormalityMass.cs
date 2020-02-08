@@ -30,6 +30,10 @@ namespace BreastRadiology.XUnitTests
                                 .SetDefinition("[PR] Mass")
                                 .MammoId("58")
                                 .ValidModalities(Modalities.MG | Modalities.MRI | Modalities.US)
+                                .SetUMLS("A breast mass has been identified in the breast. " +
+                                    "This is also known as a breast lump.  It feels different " +
+                                    "from the surrounding tissue. Breast pain, nipple " +
+                                    "discharge, or skin changes may be present.")
                             ,
                             new ConceptDef()
                                 .SetCode("MassIntraductal")
@@ -39,6 +43,9 @@ namespace BreastRadiology.XUnitTests
                                 .ValidModalities(Modalities.US)
                                 .SetSnomedDescription("ClinicalFinding | 369753003 | Intraductal tumor configuration " +
                                     "(Finding)")
+                                .SetUMLS("An intraductal mass has been identified in the breast. " +
+                                    "It is a lump that originates in one or more of the " +
+                                    "milk ducts in the breast.")
                             ,
                             new ConceptDef()
                                 .SetCode("MassPartiallySolid")
@@ -46,6 +53,8 @@ namespace BreastRadiology.XUnitTests
                                 .SetDefinition("[PR] Mass partially solid")
                                 .MammoId("697")
                                 .ValidModalities(Modalities.MG | Modalities.US)
+                                .SetUMLS("A mass that is partially solid has been identified " +
+                                    "in the breast.")
                             ,
                             new ConceptDef()
                                 .SetCode("MassSkinATLASIsSkinLesion")

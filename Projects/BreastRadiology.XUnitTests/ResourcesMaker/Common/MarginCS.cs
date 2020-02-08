@@ -65,7 +65,9 @@ namespace BreastRadiology.XUnitTests
                              "the surrounding tissue. For US, to describe a mass " +
                              "as circumscribed, its entire margin must be sharply " +
                              "defined. Most circumscribed lesions have round or " +
-                             "oval shapes.")
+                             "oval shapes.    Second Addition —As of 07/31/2013 " +
+                             "American College of Radiology Breast Imaging Reporting " +
+                             "andData System—Ultrasoundpg 49")
                          .SetACR("(historically, \"well-defined\" or \"sharply-defined\")A " +
                              "circumscribed margin is one that is well defined, " +
                              "with an abrupt transition between thelesion and the " +
@@ -81,11 +83,16 @@ namespace BreastRadiology.XUnitTests
                          .ValidModalities(Modalities.MG | Modalities.US)
                          .SetSnomedCode("129741003")
                          .SetSnomedDescription("ClinicalFinding | Lesion with indistinct margin (Finding)")
-                         .SetUMLS("Indistinct margin There is no clear demarcation of " +
-                             "the entire margin or any portion of the margin from " +
-                             "the surrounding tissue. The boundary is poorly defined, " +
-                             "and the significant feature is that the mass is not " +
-                             "circumscribed.")
+                         .SetUMLS("There is no clear demarcation of the entire margin, " +
+                             "or of any portion of the margin, from the surroundingtissue. " +
+                             "For mammography, this descriptor should not be used " +
+                             "when the interpretingphysician believes it is likely " +
+                             "due to immediately adjacent breast tissue. Use of " +
+                             "this descriptorusually implies a suspicious finding. " +
+                             "                                FIFTH EDITION —As " +
+                             "of 07/31/2013American College of Radiology Breast " +
+                             "Imaging Reporting andData System—MammographyFifth " +
+                             "Edition 2013 pg 23")
                          .SetACR("There is no clear demarcation of the entire margin " +
                              "or any portion of the margin from thesurrounding " +
                              "tissue. The boundary is poorly defined, and the significant " +
@@ -104,7 +111,7 @@ namespace BreastRadiology.XUnitTests
                          .SetUMLS("Intraductal tumor extension is a characteristic feature " +
                              "of primary breast carcinoma, and is an important " +
                              "consideration in patients undergoing breast conservative " +
-                             "surgery.")
+                             "surgery. https://www.ncbi.nlm.nih.gov/pubmed/8630874")
                      ,
                      new ConceptDef()
                          .SetCode("IrregularMargin")
@@ -124,7 +131,7 @@ namespace BreastRadiology.XUnitTests
                          .ValidModalities(Modalities.US)
                          .SetUMLS("The edge of the mass has broad bulges. Much like " +
                              "a 6 or 8 leaf clover. The edge of all of the leaves " +
-                             "would be lobulated.")
+                             "would be considered lobulated.")
                      ,
                      new ConceptDef()
                          .SetCode("MacrolobulatedMargin")
@@ -147,7 +154,9 @@ namespace BreastRadiology.XUnitTests
                              "(Finding)")
                          .SetUMLS("The margin is characterized by short-cycle undulations " +
                              "or scalloped appearance,and the margin of the mass " +
-                             "is not circumscribed.")
+                             "is not circumscribed.         Second Addition —As " +
+                             "of 07/31/2013 American College of Radiology Breast " +
+                             "Imaging Reporting andData System—Ultrasoundpg 54")
                          .SetACR("The margin is characterized by short-cycle undulations, " +
                              "but the significant feature is thatthe margin of " +
                              "the mass is NOT CIRCUMSCRIBED.")
@@ -160,9 +169,13 @@ namespace BreastRadiology.XUnitTests
                          .ValidModalities(Modalities.MRI | Modalities.US)
                          .SetSnomedDescription("ClinicalFinding | 129738007 | Lesion with circumscribed " +
                              "margin (Finding)")
-                         .SetUMLS("Microbulated or Irregular masses, a margin that is " +
-                             "not well defined. There is not a clear demarcation " +
-                             "between the mass and the surrounding tissue.")
+                         .SetUMLS("The mass has one or more of the following features: " +
+                             "indistinct,angular, microlobulated, or spiculated " +
+                             "in any portionof the margin There is not a clear " +
+                             "demarcation between the mass and the surrounding " +
+                             "tissue. Second Addition —As of 07/31/2013 American " +
+                             "College of Radiology Breast Imaging Reporting andData " +
+                             "System—Ultrasoundpg 153")
                      ,
                      new ConceptDef()
                          .SetCode("ObscuredMagin")
@@ -199,9 +212,12 @@ namespace BreastRadiology.XUnitTests
                          .ValidModalities(Modalities.MG | Modalities.MRI | Modalities.US)
                          .SetSnomedCode("129742005")
                          .SetSnomedDescription("ClinicalFinding | Lesion with spiculated margin (Finding)")
-                         .SetUMLS("The edges of the mass have sharp \"spikes\" coming out " +
-                             "from it, and the lines radiate from the mass. The " +
-                             "margin of the mass is not circumscribed.")
+                         .SetUMLS("The margin is characterized by sharp lines radiating " +
+                             "from the mass, often a sign of malignancy,but the " +
+                             "significant feature is that the margin of the mass " +
+                             "is not circumscribed.                    Second Addition " +
+                             "—As of 07/31/2013 American College of Radiology Breast " +
+                             "Imaging Reporting andData System—Ultrasoundpg 55")
                          .SetACR("The margin is characterized by sharp lines radiating " +
                              "from the mass, often a sign of malignancy,but the " +
                              "significant feature is that the margin of the mass " +

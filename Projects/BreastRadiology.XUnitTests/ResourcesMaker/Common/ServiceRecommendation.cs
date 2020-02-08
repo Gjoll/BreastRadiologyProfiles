@@ -144,6 +144,9 @@ namespace BreastRadiology.XUnitTests
                                 .SetDefinition("[PR] Additional views")
                                 .MammoId("68")
                                 .ValidModalities(Modalities.MG | Modalities.MRI | Modalities.US)
+                                .SetUMLS("Additional views in Mammography, MRI and US, help " +
+                                    "increase the chances of finding any possible tumors " +
+                                    "in the breast.")
                             ,
                             new ConceptDef()
                                 .SetCode("AddlitionalViewsWithPossibleUltrasound")
@@ -153,6 +156,8 @@ namespace BreastRadiology.XUnitTests
                                 .ValidModalities(Modalities.MG | Modalities.MRI | Modalities.US)
                                 .SetSnomedDescription("Procedure | 47079000 | Ultrasonography of breast " +
                                     "(Procedure)")
+                                .SetUMLS("Additional views in a Mammogram, MRI or Ultrasound " +
+                                    "are recommended.")
                             ,
                             new ConceptDef()
                                 .SetCode("AxillaView")
@@ -169,7 +174,7 @@ namespace BreastRadiology.XUnitTests
                                     "view. An optimal axillary view require to be clearly " +
                                     "displayed the most lateral portion of the breast " +
                                     "including the axillary tail, as well the pectoral " +
-                                    "muscle and the nipple in profile.")
+                                    "muscle and the nipple in profile. https://radiopaedia.org/articles/axillary-view?lang=us")
                             ,
                             new ConceptDef()
                                 .SetCode("AxillaryTailView")
@@ -185,8 +190,7 @@ namespace BreastRadiology.XUnitTests
                                     "breast that extends into the axilla. It is actually " +
                                     "an extension of the upper lateral quadrant of the " +
                                     "breast. It passes into the axilla through an opening " +
-                                    "in the deep fascia called foramen of Langer.The Axilla " +
-                                    "is another name for armpit.")
+                                    "in the deep fascia called foramen of Langer. https://en.wikipedia.org/wiki/Tail_of_Spence")
                             ,
                             new ConceptDef()
                                 .SetCode("Biopsy")
@@ -208,16 +212,18 @@ namespace BreastRadiology.XUnitTests
                                 .SetDefinition("[PR] Caudocranial view")
                                 .MammoId("46")
                                 .ValidModalities(Modalities.MG | Modalities.US)
-                                .SetUMLS("It is useful for the study of breasts in the lower " +
-                                    "quadrants. The patient will bend forward at the waist " +
-                                    "to view the underside of the breast. Also called " +
-                                    "a reverse CC view. The reversed CC view is an additional " +
-                                    "view. It is useful for the study of breasts with " +
-                                    "surgical scars in the lower quadrants. The ability " +
-                                    "to see the scar through the compressor paddle offers " +
-                                    "to the mammographer the possibility to flatten it " +
-                                    "properly, reducing the formation of scar folds as " +
-                                    "well artifacts from false parenchymal distortion.")
+                                .SetUMLS("It is recommended that a Caudocranial view is captured " +
+                                    "by Ultrasound and/or Mammogram. It is useful for " +
+                                    "the study of breasts in the lower quadrants. The " +
+                                    "patient will bend forward at the waist to view the " +
+                                    "underside of the breast. Also called a reverse CC " +
+                                    "view. The reversed CC view is an additional view. " +
+                                    "It is useful for the study of breasts with surgical " +
+                                    "scars in the lower quadrants. The ability to see " +
+                                    "the scar through the compressor paddle offers to " +
+                                    "the mammographer the possibility to flatten it properly, " +
+                                    "reducing the formation of scar folds as well artifacts " +
+                                    "from false parenchymal distortion.")
                             ,
                             new ConceptDef()
                                 .SetCode("CCWithCompressionView")
@@ -248,12 +254,13 @@ namespace BreastRadiology.XUnitTests
                                 .SetSnomedDescription("Procedure | 241055006 | Mammogram - symptomatic (Procedure) " +
                                     "+ QualifierValue | 399161006 | Cleavage mammography " +
                                     "view (Qualifier)")
-                                .SetUMLS("Also called \"valley view\" is a mammogram view that " +
-                                    "images the most central portions of the breasts. " +
-                                    "To get as much central tissue as possible, the mammogram " +
-                                    "technologist will place both breasts on the plate " +
-                                    "at the same time to image the medial half of both " +
-                                    "breasts.")
+                                .SetUMLS("It is recommended that a cleavage view is captured " +
+                                    "via Mammogram and/or Ultrasound. Also called \"valley " +
+                                    "view\" is a mammogram view that images the most central " +
+                                    "portions of the breasts. To get as much central tissue " +
+                                    "as possible, the mammogram technologist will place " +
+                                    "both breasts on the plate at the same time to image " +
+                                    "the medial half of both breasts.")
                             ,
                             new ConceptDef()
                                 .SetCode("ClinicalConsultation")
@@ -261,6 +268,7 @@ namespace BreastRadiology.XUnitTests
                                 .SetDefinition("[PR] Clinical consultation")
                                 .MammoId("116")
                                 .ValidModalities(Modalities.MG | Modalities.MRI | Modalities.US)
+                                .SetUMLS("A clinical consultation is recommended.")
                             ,
                             new ConceptDef()
                                 .SetCode("ClinicalCorrelation")
@@ -291,12 +299,13 @@ namespace BreastRadiology.XUnitTests
                                 .ValidModalities(Modalities.MG | Modalities.US)
                                 .SetSnomedDescription("Procedure | 439324009 | Mammogram in compression " +
                                     "view (Procedure)")
-                                .SetUMLS("All mammograms use compression of the breast. By " +
-                                    "applying compression to only a specific area of the " +
-                                    "breast, the effective pressure is increased on that " +
-                                    "spot. This results in better tissue separation and " +
-                                    "allows better visualization of the area of the breast " +
-                                    "needing additional examination.")
+                                .SetUMLS("It is recommended that a compression view is admininstered " +
+                                    "via Mammogram or Ultrasound. All mammograms use compression " +
+                                    "of the breast. By applying compression to only a " +
+                                    "specific area of the breast, the effective pressure " +
+                                    "is increased on that spot. This results in better " +
+                                    "tissue separation and allows better visualization " +
+                                    "of the area of the breast needing additional examination.")
                             ,
                             new ConceptDef()
                                 .SetCode("ConeCompression")
@@ -306,10 +315,10 @@ namespace BreastRadiology.XUnitTests
                                 .ValidModalities(Modalities.MG | Modalities.US)
                                 .SetSnomedDescription("Procedure | 439324009 | Mammogram in compression " +
                                     "view (Procedure)")
-                                .SetUMLS("A cone compression is to catch a specific spot or " +
-                                    "view during the mammogram. Spot views apply the compression " +
-                                    "to a smaller area of tissue using a small compression " +
-                                    "plate or \"cone\".")
+                                .SetUMLS("A cone compression is recommended to catch a specific " +
+                                    "spot or view during the mammogram and/or ultrasound. " +
+                                    "Spot views apply the compression to a smaller area " +
+                                    "of tissue using a small compression plate or \"cone\".")
                             ,
                             new ConceptDef()
                                 .SetCode("CoreBiopsy")
@@ -319,10 +328,11 @@ namespace BreastRadiology.XUnitTests
                                 .ValidModalities(Modalities.MG | Modalities.MRI | Modalities.US)
                                 .SetSnomedDescription("Procedure | 44578009 | Core needle biopsy of breast " +
                                     "(Procedure)")
-                                .SetUMLS("A core biopsy is a procedure where a needle is passed " +
-                                    "through the skin to take a sample of tissue from " +
-                                    "a mass or lump. The tissue is then examined under " +
-                                    "a microscope for any abnormalities.")
+                                .SetUMLS("It is recommended that a core biopsy procedure is " +
+                                    "administered. It is a procedure where a needle is " +
+                                    "passed through the skin to take a sample of tissue " +
+                                    "from a mass or lump. The tissue is then examined " +
+                                    "under a microscope for any abnormalities.")
                             ,
                             new ConceptDef()
                                 .SetCode("CraniocaudalView")
@@ -357,11 +367,13 @@ namespace BreastRadiology.XUnitTests
                                 .ValidModalities(Modalities.MG | Modalities.MRI | Modalities.US)
                                 .SetSnomedDescription("Procedure | 287572003 | Diagnostic aspiration of " +
                                     "breast cyst (Procedure)")
-                                .SetUMLS("A medical procedure in which fluid or cells are drawn " +
-                                    "out from a cyst using a needle. This is often performed " +
-                                    "in order to do a biopsy. The needle is generally " +
-                                    "inserted directly through the skin and may be guided " +
-                                    "by a sonogram so the doctor can see what he's doing.")
+                                .SetUMLS("A cyst aspiration is a procedure used to drain fluid " +
+                                    "from a breast cyst. The vast majority of cysts are " +
+                                    "benign (non-cancerous), though some are quite tender. " +
+                                    "Aspirating the fluid from a cyst may alleviate symptoms " +
+                                    "or discomfort. In some cases, specimens are sent " +
+                                    "to pathology. www.carolmilgardbreastcenter.org › " +
+                                    "Cyst_Aspiration")
                             ,
                             new ConceptDef()
                                 .SetCode("CystAspirationForRelief")
@@ -372,8 +384,8 @@ namespace BreastRadiology.XUnitTests
                                 .SetSnomedDescription("Procedure | 287572003 | Diagnostic aspiration of " +
                                     "breast cyst (Procedure)")
                                 .SetUMLS("One way to get relief from the pain of a cyst is " +
-                                    "to remove fluid from the cyst, thereby decreasing " +
-                                    "the pressure. This is called aspiration.")
+                                    "to have a doctor remove fluid from the cyst, thereby " +
+                                    "decreasing the pressure. This is called aspiration.")
                             ,
                             new ConceptDef()
                                 .SetCode("DiagnosticAspiration")
@@ -386,7 +398,8 @@ namespace BreastRadiology.XUnitTests
                                 .SetUMLS("This is a fine needle aspiration and is a type of " +
                                     "biopsy procedure. In fine needle aspiration, a thin " +
                                     "needle is inserted into an area of abnormal-appearing " +
-                                    "tissue or body fluid.")
+                                    "tissue or body fluid. www.webmd.com › a-to-z-guides " +
+                                    "› fine-needle-aspiration")
                             ,
                             new ConceptDef()
                                 .SetCode("DiagnosticMammogram")
@@ -399,7 +412,7 @@ namespace BreastRadiology.XUnitTests
                                     "are used after suspicious results on a screening " +
                                     "mammogram or after some signs of breast cancer alert " +
                                     "the physician to check the tissue.These signs may " +
-                                    "include a lump or breast pain.")
+                                    "include a lump or breast pain.  https://www.nationalbreastcancer.org/diagnostic-mammogram")
                             ,
                             new ConceptDef()
                                 .SetCode("DrainageTube")
@@ -416,17 +429,15 @@ namespace BreastRadiology.XUnitTests
                                 .ValidModalities(Modalities.MG | Modalities.MRI | Modalities.US)
                                 .SetSnomedDescription("Procedure | 420131003 | Fluoroscopic mammary ductography " +
                                     "(Procedure)")
-                                .SetUMLS("A ductogram (galactogram) is a type of medical imaging " +
-                                    "used to view your breast ducts. It can be helpful " +
-                                    "in finding the cause of nipple discharge. A ductogram involves " +
-                                    "mammography and use of a contrast agent that gets " +
-                                    "injected into the breast, like during a breast MRI. " +
-                                    "A blunt-tipped sialogram needle (30-gauge) is used " +
-                                    "for performing the ductogram. The abnormal duct is " +
-                                    "identified and cannulated. Approximately 1-2 mL of " +
-                                    "contrast is injected. A standard two-view mammography " +
-                                    "(or craniocaudal and mediolateral projections) are " +
-                                    "obtained.")
+                                .SetUMLS("A ductogram, also called a galactogram, is a special " +
+                                    "type of mammogram used for imaging the breast ducts. " +
+                                    "It can aid in diagnosing the cause of abnormal nipple " +
+                                    "discharges.Ductography (also called galactography " +
+                                    "or ductogalactography) is a special type of contrast " +
+                                    "enhanced mammography used for imaging the breast " +
+                                    "ducts. Ductography can aid in diagnosing the cause " +
+                                    "of an abnormal nipple discharge and is valuable in " +
+                                    "diagnosing intraductal papillomas and other conditions.https://www.imaginis.com/mammography/ductogram-galactogram-imaging-the-breast-ducts")
                             ,
                             new ConceptDef()
                                 .SetCode("ExaggeratedCCViews")
@@ -452,7 +463,8 @@ namespace BreastRadiology.XUnitTests
                                     "of the breast is placed forward. A negative 15° tube " +
                                     "tilt is suggested.An optimal XCCM view requires the " +
                                     "most medial portion of the breast and the nipple " +
-                                    "in profile to be clearly displayed.")
+                                    "in profile to be clearly displayed.              " +
+                                    "                       https://radiopaedia.org/articles/xccl-view?lang=us")
                             ,
                             new ConceptDef()
                                 .SetCode("FNABiopsy")
@@ -461,6 +473,13 @@ namespace BreastRadiology.XUnitTests
                                 .MammoId("57")
                                 .ValidModalities(Modalities.MG | Modalities.US)
                                 .SetSnomedDescription("not matching")
+                                .SetUMLS("FNA stands for Fine needle aspiration and this is " +
+                                    "a type of biopsy procedure. In fine needle aspiration, " +
+                                    "a thin needle is inserted into an area of abnormal-appearing " +
+                                    "tissue or body fluid.As with other types of biopsies, " +
+                                    "the sample collected during fine needle aspiration " +
+                                    "can help make a diagnosis or rule out conditions " +
+                                    "such as cancer. https://www.webmd.com/a-to-z-guides/fine-needle-aspiration#1")
                             ,
                             new ConceptDef()
                                 .SetCode("Follow-up")
@@ -571,6 +590,10 @@ namespace BreastRadiology.XUnitTests
                                 .SetDefinition("[PR] Lymph node assessment")
                                 .MammoId("1835")
                                 .ValidModalities(Modalities.MG)
+                                .SetUMLS("Lymph Node Exam. Palpation of the lymph nodes provides " +
+                                    "information about the possible presence of a malignant " +
+                                    "or inflammatory process and the localization or generalization " +
+                                    "of that process. https://stanfordmedicine25.stanford.edu/the25/lymph.html")
                             ,
                             new ConceptDef()
                                 .SetCode("MagnificationViews")
@@ -587,7 +610,8 @@ namespace BreastRadiology.XUnitTests
                                     "the breast away from the film plate and closer to " +
                                     "the x-ray source. This allows the acquisition of " +
                                     "magnified images (1.5x to 2x magnification) of the " +
-                                    "region of interest.")
+                                    "region of interest. radiopaedia.org › articles › " +
+                                    "magnification-view-mammography")
                             ,
                             new ConceptDef()
                                 .SetCode("Mammogram")
@@ -596,6 +620,8 @@ namespace BreastRadiology.XUnitTests
                                 .MammoId("182")
                                 .ValidModalities(Modalities.MRI)
                                 .SetSnomedDescription("Procedure | 241055006 | Mammogram - symptomatic (Procedure)")
+                                .SetUMLS("An X-Ray picture of the breast. It's used to look " +
+                                    "for early signs of breast cancer.")
                             ,
                             new ConceptDef()
                                 .SetCode("Mammogram3MonthFollow-up")
@@ -714,7 +740,7 @@ namespace BreastRadiology.XUnitTests
                                     "allows visualization of the inframammary fold and " +
                                     "includes the pectoralis muscle extending down to " +
                                     "the posterior nipple line (an oblique line drawn " +
-                                    "straight back from the nipple.)")
+                                    "straight back from the nipple.) https://www.mammoguide.com/mammo-techniques.html")
                             ,
                             new ConceptDef()
                                 .SetCode("OffAngleCCView")
@@ -744,11 +770,14 @@ namespace BreastRadiology.XUnitTests
                                 .ValidModalities(Modalities.MG)
                                 .SetSnomedDescription("Procedure | 116334007 | Stereotactically guided core " +
                                     "needle biopsy of breast (Procedure) ++ POSSILE")
-                                .SetUMLS("A stereotactic breast biopsy may be performed when " +
-                                    "a mammogram shows a breast abnormality such as: a " +
-                                    "suspicious mass. microcalcifications, which are a " +
-                                    "tiny cluster of small calcium deposits. a distortion " +
-                                    "in the structure of the breast tissue.")
+                                .SetUMLS("Stereotactic breast biopsy uses mammography – a specific " +
+                                    "type of breast imaging that uses low-dose x-rays " +
+                                    "— to help locate a breast abnormality and remove " +
+                                    "a tissue sample for examination under a microscope. " +
+                                    "It's less invasive than surgical biopsy, leaves little " +
+                                    "to no scarring and can be an excellent way to evaluate " +
+                                    "calcium deposits or tiny masses that are not visible " +
+                                    "on ultrasound. https://www.radiologyinfo.org/en/info.cfm?pg=breastbixr")
                             ,
                             new ConceptDef()
                                 .SetCode("PossibleCoreBiopsy")
@@ -758,6 +787,18 @@ namespace BreastRadiology.XUnitTests
                                 .ValidModalities(Modalities.MG | Modalities.US)
                                 .SetSnomedDescription("Procedure | 44578009 | Core needle biopsy of breast " +
                                     "(Procedure) ++ POSSIBLE")
+                                .SetUMLS("If other tests show you might have breast cancer, " +
+                                    "your doctor might refer you for a core needle biopsy " +
+                                    "(CNB). For a CNB, the doctor uses a hollow needle " +
+                                    "to take out pieces of breast tissue from a suspicious " +
+                                    "area the doctor has felt or has pinpointed on an " +
+                                    "imaging test. The needle may be attached to a spring-loaded " +
+                                    "tool that moves the needle in and out of the tissue " +
+                                    "quickly, or it may be attached to a suction device " +
+                                    "that helps pull breast tissue into the needle. A " +
+                                    "small cylinder (core) of tissue is taken out in the " +
+                                    "needle. Several cores are often removed.         " +
+                                    "                                https://www.cancer.org/cancer/breast-cancer/screening-tests-and-early-detection/breast-biopsy/core-needle-biopsy-of-the-breast.html")
                             ,
                             new ConceptDef()
                                 .SetCode("PossibleDiagnosticMammogram")
@@ -765,6 +806,15 @@ namespace BreastRadiology.XUnitTests
                                 .SetDefinition("[PR] Possible Diagnostic Mammogram")
                                 .MammoId("1836")
                                 .ValidModalities(Modalities.MG)
+                                .SetUMLS("A diagnostic mammogram is an X-ray examination of " +
+                                    "the breasts. This is carried out when a person, their " +
+                                    "doctor or another health professional discovers unusual " +
+                                    "signs or symptoms in one or both breasts; that is, " +
+                                    "a lump, tenderness, nipple discharge or skin changes. " +
+                                    "The mammogram confirms whether the changes are benign " +
+                                    "(non-cancerous) and no treatment is needed, or whether " +
+                                    "the changes indicate possible breast cancer and further " +
+                                    "tests and treatment may be required. https://www.insideradiology.com.au/diagnostic-mammography/")
                             ,
                             new ConceptDef()
                                 .SetCode("PossibleStereotacticVacuumBiopsy")
@@ -772,12 +822,16 @@ namespace BreastRadiology.XUnitTests
                                 .SetDefinition("[PR] Possible stereotactic vacuum biopsy")
                                 .MammoId("133")
                                 .ValidModalities(Modalities.MG)
-                                .SetUMLS("Stereotactic Vacuum Assisted Biopsy. ... During this " +
-                                    "type of biopsy, small samples of tissue are removed " +
-                                    "from the breast using a hollow needle, which is precisely " +
-                                    "guided to the correct location using x-rays and computer " +
+                                .SetUMLS("Based on the results of your last mammogram, it may " +
+                                    "be  recommended that an area of your breast be biopsied " +
+                                    "in order to obtain further information. This is accomplished " +
+                                    "through a technique known as a stereotatic vacuum " +
+                                    "assisted core biopsy.During this type of biopsy, " +
+                                    "small samples of tissue are removed from the breast " +
+                                    "using a hollow needle, which is precisely guided " +
+                                    "to the correct location using x-rays and computer " +
                                     "generated coordinates of the concerning area of breast " +
-                                    "tissue.")
+                                    "tissue. https://www.genesishealth.com/care-treatment/cancer/treat/breast/diagnosis/sterotactic_vacuum/")
                             ,
                             new ConceptDef()
                                 .SetCode("PossibleSurgicalConsult")
@@ -815,13 +869,13 @@ namespace BreastRadiology.XUnitTests
                                 .SetDefinition("[PR] Possible vacuum biopsy")
                                 .MammoId("132")
                                 .ValidModalities(Modalities.MG)
-                                .SetUMLS("A vacuum assisted biopsy is a way of removing an " +
-                                    "area of abnormal cells from the breast tissue. A " +
-                                    "doctor or nurse uses a special needle attached to " +
-                                    "a vacuum device to remove the cells. The samples " +
-                                    "can then be examined under a microscope. This can " +
-                                    "show whether there is a cancer or another type of " +
-                                    "breast condition.")
+                                .SetUMLS("Recommendation is a vacuum assisted biopsy.  This " +
+                                    "is a way of  removing an area of abnormal cells from " +
+                                    "the breast tissue. A doctor or nurse uses a special " +
+                                    "needle attached to a vacuum device to remove the " +
+                                    "cells. The samples can then be examined under a microscope. " +
+                                    "This can show whether there is a cancer or another " +
+                                    "type of breast condition.")
                             ,
                             new ConceptDef()
                                 .SetCode("RepeatCCView")
@@ -853,15 +907,19 @@ namespace BreastRadiology.XUnitTests
                                     "(Procedure)")
                                 .SetUMLS("Given that the rolled projections can be performed " +
                                     "from any standard projection, the most commonly used " +
-                                    "is certainly the cranio-caudal one. A rolled CC view- " +
+                                    "is certainly the cranio-caudal one. A rolled CC view " +
                                     "It's performed to locate a lesion only visible in " +
                                     "the cranio-caudal view, or when overlapped tissues " +
                                     "in the standard view can simulate or partially conceal " +
                                     "a lesion: changing of  tissues distribution  allows " +
-                                    "to determine whether or not its presence. The breast " +
-                                    "is positioned on the image receptor as for the cranio-caudal " +
-                                    "view, then is rotated medially or laterally around " +
-                                    "the axis of the nipple prior to applying compression.")
+                                    "to determine whether or not its presence. When the " +
+                                    "lesion identified moves medially or laterally respect " +
+                                    "to the standard projection, it is possible to determine " +
+                                    "in which quadrant it is localized.The breast is positioned " +
+                                    "on the image receptor as for the cranio-caudal view, " +
+                                    "then is rotated medially or laterally around the " +
+                                    "axis of the nipple prior to applying compression. " +
+                                    "https://radiopaedia.org/articles/rolled-cc-view-1?lang=us")
                             ,
                             new ConceptDef()
                                 .SetCode("RolledMedialView")
@@ -878,11 +936,11 @@ namespace BreastRadiology.XUnitTests
                                 .SetDefinition("[PR] Scinti biopsy")
                                 .MammoId("1807")
                                 .ValidModalities(Modalities.MG)
-                                .SetUMLS("This is a fine needle aspiration and is a type of " +
-                                    "biopsy procedure. In fine needle aspiration, a thin " +
-                                    "needle is inserted into an area of abnormal-appearing " +
-                                    "tissue or body fluid. This is also can be called " +
-                                    "a Scinti biopsy.")
+                                .SetUMLS("A Scinti Biopsy is recommended. This is a fine needle " +
+                                    "aspiration and is a type of biopsy procedure. In " +
+                                    "fine needle aspiration, a thin needle is inserted " +
+                                    "into an area of abnormal-appearing tissue or body " +
+                                    "fluid. This is also can be called a Scinti biopsy.")
                             ,
                             new ConceptDef()
                                 .SetCode("Scintimammography")
@@ -894,7 +952,13 @@ namespace BreastRadiology.XUnitTests
                                     "breast imaging, Breast Specific Gamma Imaging (BSGI) " +
                                     "and Molecular Breast Imaging (MBI). Your doctor may " +
                                     "use this exam to investigate a breast abnormality " +
-                                    "found with mammography.")
+                                    "found with mammography. Scintimammography uses small " +
+                                    "amounts of radioactive material, a special camera " +
+                                    "and a computer to help investigate a breast abnormality. " +
+                                    "Scintimammography can detect cancer even when dense " +
+                                    "breast tissue and breast implants are present. It " +
+                                    "can reduce unnecessary procedures by helping determine " +
+                                    "whether a biopsy is needed. https://www.radiologyinfo.org/en/info.cfm?pg=scintimammo")
                             ,
                             new ConceptDef()
                                 .SetCode("SpotCompression")
@@ -904,21 +968,18 @@ namespace BreastRadiology.XUnitTests
                                 .ValidModalities(Modalities.MG | Modalities.NM | Modalities.US)
                                 .SetSnomedDescription("Procedure | 439324009 | Mammogram in compression " +
                                     "view (Procedure)")
-                                .SetUMLS("A spot view (also known as a spot compression view or focal " +
-                                    "compression view) is an additional mammographic view performed " +
-                                    "by applying the compression to a smaller area of " +
-                                    "tissue using a small compression paddle, increasing " +
-                                    "the effective pressure on that spot. This results " +
-                                    "in better tissue separation and allows better visualization " +
-                                    "of the breast tissue in that area. It is used to " +
-                                    "distinguish between the presence of a true lesion " +
-                                    "and an overlap of tissues, as well to better show " +
-                                    "the borders of an abnormality or questionable area " +
-                                    "or a little cluster of faint microcalcifications " +
-                                    "in a dense area. The improved resolution is due to " +
-                                    "the increased reduction of thickness in the examined " +
-                                    "area and by getting the suspicious area closer to " +
-                                    "the detector surface.")
+                                .SetUMLS("A spot view (also known as a spot compression view " +
+                                    "or focal compression view) is an additional mammographic " +
+                                    "view performed by applying the compression to a smaller " +
+                                    "area of tissue using a small compression paddle, " +
+                                    "increasing the effective pressure on that spot. This " +
+                                    "results in better tissue separation and allows better " +
+                                    "visualization of the breast tissue in that area. " +
+                                    "It is used to distinguish between the presence of " +
+                                    "a true lesion and an overlap of tissues, as well " +
+                                    "to better show the borders of an abnormality or questionable " +
+                                    "area or a little cluster of faint microcalcifications " +
+                                    "in a dense area. https://radiopaedia.org/articles/spot-view-mammography?lang=us")
                             ,
                             new ConceptDef()
                                 .SetCode("SpotMagnificationViews")
@@ -928,6 +989,7 @@ namespace BreastRadiology.XUnitTests
                                 .ValidModalities(Modalities.MG)
                                 .SetSnomedDescription("Procedure | 241058008 | Mammogram magnification (Procedure) " +
                                     "+++++")
+                                .SetUMLS("In a mammogram")
                             ,
                             new ConceptDef()
                                 .SetCode("StereotacticBx")
@@ -944,7 +1006,7 @@ namespace BreastRadiology.XUnitTests
                                     "It's less invasive than surgical biopsy, leaves little " +
                                     "to no scarring and can be an excellent way to evaluate " +
                                     "calcium deposits or tiny masses that are not visible " +
-                                    "on ultrasound.")
+                                    "on ultrasound. https://www.radiologyinfo.org/en/info.cfm?pg=breastbixr")
                             ,
                             new ConceptDef()
                                 .SetCode("SuperolateralIOView")
@@ -952,6 +1014,10 @@ namespace BreastRadiology.XUnitTests
                                 .SetDefinition("[PR] Superolateral IO view")
                                 .MammoId("48")
                                 .ValidModalities(Modalities.MG | Modalities.US)
+                                .SetUMLS("The view of the upper outer quadrant of the breast. " +
+                                    "This is the quadrant of the breast that is closest " +
+                                    "to the armpit. There are 4 quadrants in the anatomy " +
+                                    "of a breast.")
                             ,
                             new ConceptDef()
                                 .SetCode("SurgicalBiopsy")
@@ -961,6 +1027,13 @@ namespace BreastRadiology.XUnitTests
                                 .ValidModalities(Modalities.NM)
                                 .SetSnomedDescription("Procedure | 274331003 | Surgical biopsy of breast " +
                                     "(Procedure)")
+                                .SetUMLS("A surgical biopsy is a procedure that involves the " +
+                                    "surgical removal of tissue from a lump or mass for " +
+                                    "examination under a microscope. This test may also " +
+                                    "be called an open biopsy.Surgical biopsies can be " +
+                                    "excisional (removal of an entire lump or abnormal " +
+                                    "area) or incisional (removal of a piece of a lump " +
+                                    "or abnormal area). https://www.cancer.ca/en/cancer-information/diagnosis-and-treatment/tests-and-procedures/surgical-biopsy/?region=on")
                             ,
                             new ConceptDef()
                                 .SetCode("SurgicalConsult")
@@ -968,6 +1041,8 @@ namespace BreastRadiology.XUnitTests
                                 .SetDefinition("[PR] Surgical consult")
                                 .MammoId("101")
                                 .ValidModalities(Modalities.MG | Modalities.MRI | Modalities.NM | Modalities.US)
+                                .SetUMLS("Recommend consultation with your doctor to determine " +
+                                    "if surgery is the best plan of action for your diagnosis.")
                             ,
                             new ConceptDef()
                                 .SetCode("SurgicalConsultAndBiopsy")
@@ -977,6 +1052,9 @@ namespace BreastRadiology.XUnitTests
                                 .ValidModalities(Modalities.MG | Modalities.MRI | Modalities.US)
                                 .SetSnomedDescription("Procedure | 274331003 | Surgical biopsy of breast " +
                                     "(Procedure) ++++")
+                                .SetUMLS("Recommend a biopsy as well as consultation with your " +
+                                    "doctor to determine if surgery is the best plan of " +
+                                    "action for your diagnosis.")
                             ,
                             new ConceptDef()
                                 .SetCode("SurgicalEvaluation")
@@ -984,6 +1062,7 @@ namespace BreastRadiology.XUnitTests
                                 .SetDefinition("[PR] Surgical evaluation")
                                 .MammoId("1802")
                                 .ValidModalities(Modalities.NM)
+                                .SetUMLS("The recommendation is for a surgical evaluation.")
                             ,
                             new ConceptDef()
                                 .SetCode("SurgicalExcision")
@@ -993,6 +1072,7 @@ namespace BreastRadiology.XUnitTests
                                 .ValidModalities(Modalities.NM)
                                 .SetSnomedDescription("Procedure | 237372000 | Excisional biopsy of breast " +
                                     "(Procedure)")
+                                .SetUMLS("The recommendation is for a surgical excision.")
                             ,
                             new ConceptDef()
                                 .SetCode("SurgicalOncologicEvaluation")
@@ -1000,6 +1080,7 @@ namespace BreastRadiology.XUnitTests
                                 .SetDefinition("[PR] Surgical oncologic evaluation")
                                 .MammoId("1810")
                                 .ValidModalities(Modalities.NM)
+                                .SetUMLS("The recommendation is for a surgical oncologic evaluation.")
                             ,
                             new ConceptDef()
                                 .SetCode("SurgicalOncologicalConsult")
@@ -1007,6 +1088,7 @@ namespace BreastRadiology.XUnitTests
                                 .SetDefinition("[PR] Surgical oncological consult")
                                 .MammoId("1809")
                                 .ValidModalities(Modalities.MG | Modalities.MRI | Modalities.NM | Modalities.US)
+                                .SetUMLS("The recommendation is for a surgical oncologic consult.")
                             ,
                             new ConceptDef()
                                 .SetCode("TangentialView")
@@ -1014,6 +1096,10 @@ namespace BreastRadiology.XUnitTests
                                 .SetDefinition("[PR] Tangential view")
                                 .MammoId("114")
                                 .ValidModalities(Modalities.MG | Modalities.US)
+                                .SetUMLS("A tangential view is recommended via Ultrasound. " +
+                                    "Tangential views are useful to differentiate intracutaneous " +
+                                    "radiopaque particles in a tattoo from intraparenchymal " +
+                                    "microcalcifications.")
                             ,
                             new ConceptDef()
                                 .SetCode("TangentialViews")
@@ -1021,6 +1107,10 @@ namespace BreastRadiology.XUnitTests
                                 .SetDefinition("[PR] Tangential views")
                                 .MammoId("40")
                                 .ValidModalities(Modalities.MG | Modalities.US)
+                                .SetUMLS("Tangential views are recommended via Ultrasound. " +
+                                    "Tangential views are useful to differentiate intracutaneous " +
+                                    "radiopaque particles in a tattoo from intraparenchymal " +
+                                    "microcalcifications.")
                             ,
                             new ConceptDef()
                                 .SetCode("Ultrasound")
@@ -1090,17 +1180,11 @@ namespace BreastRadiology.XUnitTests
                                 .SetDefinition("[PR] Vacuum Bx")
                                 .MammoId("131")
                                 .ValidModalities(Modalities.MG | Modalities.US)
-                                .SetUMLS("A vacuum assisted biopsy is a way of removing an " +
-                                    "area of abnormal cells from the breast tissue. A " +
-                                    "doctor or nurse uses a special needle attached to " +
-                                    "a vacuum device to remove the cells. The samples " +
-                                    "can then be examined under a microscope. This can " +
-                                    "show whether there is a cancer or another type of " +
-                                    "breast condition. Bx: Abbreviation for biopsy, the " +
-                                    "removal of a sample of tissue for examination or " +
-                                    "other study. Biopsies are most frequently studied " +
-                                    "by use of a microscope to check for possible abnormalities " +
-                                    "such as inflammation or cancer.")
+                                .SetUMLS("A vacuum biopsy is recommended. A vacuum assisted " +
+                                    "biopsy is a way of removing an area of abnormal cells " +
+                                    "from the breast tissue. A doctor or nurse uses a " +
+                                    "special needle attached to a vacuum device to remove " +
+                                    "the cells.")
                             //- Codes
                         })
             );

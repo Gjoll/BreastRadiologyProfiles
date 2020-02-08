@@ -26,9 +26,17 @@ namespace BreastRadiology.XUnitTests
                             .ValidModalities(Modalities.MG)
                             .SetSnomedDescription("ClinicalFinding | 129769006 | Radiographic calcification " +
                                 "with clustered distribution (Finding)")
-                            .SetUMLS("Clustered Distribution is in regards to a type of " +
-                                "calcification with at least 5 calcifications occupying " +
-                                "a small volume of tissue.")
+                            .SetUMLS("Grouped (historically, \"clustered\") This term should " +
+                                "be used when relatively few calcifications occupy " +
+                                "a small portion of breasttissue. The lower limit " +
+                                "for use of this descriptor is usually when 5 calcifications " +
+                                "are groupedwithin 1 cm of each other or when a definable " +
+                                "pattern is identified. The upper limit for useof " +
+                                "this descriptor is when larger numbers of calcifications " +
+                                "are grouped within 2 cm of eachother. FIFTH EDITION " +
+                                "—As of 07/31/2013 American College of Radiology Breast " +
+                                "Imaging Reporting andData System—MammographyFifth " +
+                                "Edition 2013 pg 73")
                         ,
                         new ConceptDef()
                             .SetCode("DiffuseDistribution")
@@ -39,7 +47,6 @@ namespace BreastRadiology.XUnitTests
                             .SetDicom("F-01770")
                             .SetSnomedDescription("ClinicalFinding | 129764001 | Radiographic calcification " +
                                 "with diffuse distribution (Finding)")
-                            .SetUMLS("C1268689")
                             .SetACR("Diffuse (historically, \"scattered\"). These are calcifications " +
                                 "that are distributed randomly throughout the breast. " +
                                 "Punctate and amorphous calcifications in this distribution " +
@@ -54,7 +61,6 @@ namespace BreastRadiology.XUnitTests
                             .SetDicom("F-01772")
                             .SetSnomedDescription("ClinicalFinding | 129766004 | Radiographic calcification " +
                                 "with grouped distribution (Finding)")
-                            .SetUMLS("C1268691")
                             .SetACR("This term should be used when relatively few calcifications " +
                                 "occupy a small portion of breast tissue. The lower " +
                                 "limit for use of this descriptor is usually when " +
@@ -73,7 +79,6 @@ namespace BreastRadiology.XUnitTests
                             .SetDicom("F-01771")
                             .SetSnomedDescription("ClinicalFinding | 129765000 | Radiographic calcification " +
                                 "with linear distribution (Finding)")
-                            .SetUMLS("C1268690")
                             .SetACR("These are calcifications arrayed in a line. This " +
                                 "distribution may elevate suspicion for malignancy, " +
                                 "as it suggests deposits in a duct. Note that both " +
@@ -91,7 +96,6 @@ namespace BreastRadiology.XUnitTests
                             .SetDicom("F-01773")
                             .SetSnomedDescription("ClinicalFinding | 129767008 | Radiographic calcification " +
                                 "with regional distribution (Finding)")
-                            .SetUMLS("C1268692")
                             .SetACR("This descriptor is used for numerous calcifications " +
                                 "that occupy a large portion of breast tissue (more " +
                                 "than 2 cm in greatest dimension), not conforming " +
@@ -108,9 +112,14 @@ namespace BreastRadiology.XUnitTests
                             .MammoId("756")
                             .ValidModalities(Modalities.MG)
                             .SetSnomedDescription("not found")
-                            .SetUMLS("Refers to a type of calcification of the breast. " +
-                                "Scattered calcifications or multiple similar appearing " +
-                                "clusters of calcifications throughout the whole breast.")
+                            .SetUMLS("Scattered distributions are also called diffuse distributions. " +
+                                "These are calcifications that are distributed randomly " +
+                                "throughout the breast. Punctate andamorphous calcifications " +
+                                "in this distribution are almost always benign, especially " +
+                                "if bilateral (in both breasts).                  " +
+                                "             FIFTH EDITION —As of 07/31/2013American " +
+                                "College of Radiology Breast Imaging Reporting andData " +
+                                "System—MammographyFifth Edition 2013 pg 70")
                         ,
                         new ConceptDef()
                             .SetCode("SegmentalDistribution")
@@ -122,7 +131,6 @@ namespace BreastRadiology.XUnitTests
                             .SetSnomedCode("129768003")
                             .SetSnomedDescription("ClinicalFinding | 129768003 | Radiographic calcification " +
                                 "with segmental distribution (Finding)")
-                            .SetUMLS("C1268693")
                             .SetACR("Calcifications in a segmental distribution are of " +
                                 "concern because they suggest deposits in a duct or " +
                                 "ducts and their branches, raising the possibility " +

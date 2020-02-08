@@ -121,7 +121,7 @@ namespace BreastRadiology.XUnitTests
                                 .SetUMLS("Angiolipoma is a rare type of lipoma — a growth made " +
                                     "of fat and blood vessels that develops under your " +
                                     "skin.  Unlike other types of lipomas, angiolipomas " +
-                                    "are often painful or tender.")
+                                    "are often painful or tender. https://www.healthline.com/health/angiolipoma")
                             ,
                             new ConceptDef()
                                 .SetCode("ApocrineMetaplasia")
@@ -131,12 +131,13 @@ namespace BreastRadiology.XUnitTests
                                 .ValidModalities(Modalities.US)
                                 .SetSnomedDescription("ClinicalFinding | 37009001 | Apocrine metaplasia " +
                                     "of breast (Disorder) | [0/0] | N60.89")
-                                .SetUMLS("Apocrine Metaplasia refers to a particular type of " +
-                                    "cell change. ... This means that the epithelial cells " +
-                                    "are undergoing an unexpected change. These breast " +
-                                    "changes may show on a mammogram and biopsy as a mass " +
-                                    "or benign lesion, or possibly even develop into a " +
-                                    "palpable mass.")
+                                .SetUMLS("A benign condition; Apocrine Metaplasia refers to " +
+                                    "a particular type of cell change. This is a type " +
+                                    "of ‘umbrella term’ that relates to a variety of cystic " +
+                                    "breast disorders. The epithelial cells are undergoing " +
+                                    "an unexpected change.These breast changes may show " +
+                                    "on a mammogram and biopsy as a mass or benign lesion, " +
+                                    "or possibly even develop into a palpable mass.https://breast-cancer.ca/apo-meta/")
                             ,
                             new ConceptDef()
                                 .SetCode("Artifact")
@@ -144,10 +145,16 @@ namespace BreastRadiology.XUnitTests
                                 .SetDefinition("[PR] Artifact")
                                 .MammoId("946")
                                 .ValidModalities(Modalities.NM)
-                                .SetUMLS("In medical imaging, artifacts are misrepresentations " +
-                                    "of tissue structures produced by imaging techniques " +
-                                    "such as ultrasound, X-ray, CT scan, and magnetic " +
-                                    "resonance imaging (MRI).")
+                                .SetUMLS("X-ray artifacts can present in a variety of ways " +
+                                    "including abnormal shadows noted on a radiograph " +
+                                    "or degraded image quality, and have been produced " +
+                                    "by artificial means from hardware failure, operator " +
+                                    "error and software (post-processing) artifacts. There " +
+                                    "are common and distinct artifacts for film, computed " +
+                                    "(CR) and digital radiography (DR). Common causes " +
+                                    "are improper handling of the filmserrors while processing " +
+                                    "the filmspatient movement while taking the image. " +
+                                    "https://radiopaedia.org/articles/x-ray-artifacts?lang=us")
                             ,
                             new ConceptDef()
                                 .SetCode("AtypicalHyperplasia")
@@ -158,9 +165,13 @@ namespace BreastRadiology.XUnitTests
                                 .SetUMLS("Atypical hyperplasia is a precancerous condition " +
                                     "that affects cells in the breast. Atypical hyperplasia " +
                                     "describes an accumulation of abnormal cells in the " +
-                                    "breast. Atypical hyperplasia isn't cancer, but it " +
+                                    "breast.Atypical hyperplasia isn't cancer, but it " +
                                     "can be a forerunner to the development of breast " +
-                                    "cancer.")
+                                    "cancer. Over the course of your lifetime, if the " +
+                                    "atypical hyperplasia cells keep dividing and become " +
+                                    "more abnormal, this can transition into noninvasive " +
+                                    "breast cancer (carcinoma in situ) or invasive breast " +
+                                    "cancer. https://www.mayoclinic.org/diseases-conditions/atypical-hyperplasia/symptoms-causes/syc-20369773")
                             ,
                             new ConceptDef()
                                 .SetCode("AxillaryLymphNode")
@@ -176,7 +187,8 @@ namespace BreastRadiology.XUnitTests
                                     "cancers. Lymph nodes are small structures located " +
                                     "all over the body around blood vessels that act as " +
                                     "filters and can accumulate germs or cancer cells. " +
-                                    "They are a part of the lymph system of the body.")
+                                    "They are a part of the lymph system of the body. " +
+                                    " https://www.verywellhealth.com/axillary-lymph-nodes-2252131")
                             ,
                             new ConceptDef()
                                 .SetCode("Carcinoma")
@@ -206,6 +218,19 @@ namespace BreastRadiology.XUnitTests
                                 .ValidModalities(Modalities.MG | Modalities.MRI | Modalities.US)
                                 .SetSnomedDescription("ClinicalFinding | 254838004 | Carcinoma of breast " +
                                     "(Disorder) | [4/33] | C50.929")
+                                .SetUMLS("Imaging tests used in diagnosing cancer may include " +
+                                    "a computerized tomography (CT) scan, bone scan, magnetic " +
+                                    "resonance imaging (MRI), (PET) scan, ultrasound and " +
+                                    "X-ray, among others. In most cases, a biopsy is the " +
+                                    "only way to definitively diagnose cancer. Most breast " +
+                                    "cancers are carcinomas, which are tumors that start " +
+                                    "in the epithelial cells that line organs and tissues " +
+                                    "throughout the body. When carcinomas form in the " +
+                                    "breast, they are usually a more specific type called " +
+                                    "adenocarcinoma, which starts in cells in the ducts " +
+                                    "(the milk ducts) or the lobules (milk-producing glands). " +
+                                    "www.mayoclinic.org › cancer › diagnosis-treatment " +
+                                    "› drc-20370594")
                             ,
                             new ConceptDef()
                                 .SetCode("CarcinomaKnown")
@@ -213,6 +238,19 @@ namespace BreastRadiology.XUnitTests
                                 .SetDefinition("[PR] Carcinoma known")
                                 .MammoId("543")
                                 .ValidModalities(Modalities.MRI)
+                                .SetUMLS("Imaging tests used in diagnosing cancer may include " +
+                                    "a computerized tomography (CT) scan, bone scan, magnetic " +
+                                    "resonance imaging (MRI), (PET) scan, ultrasound and " +
+                                    "X-ray, among others. In most cases, a biopsy is the " +
+                                    "only way to definitively diagnose cancer. Most breast " +
+                                    "cancers are carcinomas, which are tumors that start " +
+                                    "in the epithelial cells that line organs and tissues " +
+                                    "throughout the body. When carcinomas form in the " +
+                                    "breast, they are usually a more specific type called " +
+                                    "adenocarcinoma, which starts in cells in the ducts " +
+                                    "(the milk ducts) or the lobules (milk-producing glands). " +
+                                    "www.mayoclinic.org › cancer › diagnosis-treatment " +
+                                    "› drc-20370594")
                             ,
                             new ConceptDef()
                                 .SetCode("ClusterOfCysts")
@@ -222,12 +260,10 @@ namespace BreastRadiology.XUnitTests
                                 .ValidModalities(Modalities.MG | Modalities.MRI | Modalities.US)
                                 .SetSnomedCode("399294002")
                                 .SetSnomedDescription("ClinicalFinding |Cyst of breast (Disorder) ++++++")
-                                .SetUMLS("A breast cyst is a benign (non-cancerous) fluid-filled " +
-                                    "sac in the breast. They are most common in pre-menopausal " +
-                                    "women and in post-menopausal women taking hormone " +
-                                    "therapy. Some cysts are too small to feel and others " +
-                                    "may be quite large and uncomfortable. Sometimes there " +
-                                    "are clusters of cysts in one breast or both.")
+                                .SetUMLS("A breast cyst is a non-cancerous (benign) fluid-filled " +
+                                    "sac in the breast.  Some cysts are too small to feel " +
+                                    "and others may be large and uncomfortable. Sometimes " +
+                                    "there are clusters of cysts in one breast or both.")
                             ,
                             new ConceptDef()
                                 .SetCode("Cyst")
@@ -237,6 +273,10 @@ namespace BreastRadiology.XUnitTests
                                 .ValidModalities(Modalities.MG | Modalities.MRI)
                                 .SetSnomedCode("399294002")
                                 .SetSnomedDescription("ClinicalFinding |Cyst of breast (Disorder)")
+                                .SetUMLS("A breast cyst is a non-cancerous (benign) fluid-filled " +
+                                    "sac in the breast.  Some cysts are too small to feel " +
+                                    "and others may be large and uncomfortable. Sometimes " +
+                                    "there are clusters of cysts in one breast or both.")
                             ,
                             new ConceptDef()
                                 .SetCode("CystComplex")
@@ -246,11 +286,14 @@ namespace BreastRadiology.XUnitTests
                                 .ValidModalities(Modalities.MRI | Modalities.US)
                                 .SetSnomedCode("449837001")
                                 .SetSnomedDescription("ClinicalFinding | Complex cyst of breast (Disorder)")
-                                .SetUMLS("Refers to cysts that contain something more than " +
-                                    "clear fluid. A complex breast cyst contains solid " +
-                                    "elements suspended within the fluid, and may also " +
-                                    "feature segmentation (septation) and some regions " +
-                                    "of the cyst wall that are ‘thicker‘ than others.")
+                                .SetUMLS("Complex cysts have irregular or scalloped borders, " +
+                                    "thick walls, and some evidence of solid areas and/or " +
+                                    "debris in the fluid. These solid areas echo back " +
+                                    "the sound waves from the ultrasound. A complex cyst " +
+                                    "is sometimes aspirated, or drained with a fine needle, " +
+                                    "so that the fluid inside can be tested. If blood " +
+                                    "or any unusual cells are present, further testing " +
+                                    "may be needed to rule out breast cancer. https://www.breastcancer.org/symptoms/benign/cysts")
                             ,
                             new ConceptDef()
                                 .SetCode("CystComplicated")
@@ -258,14 +301,12 @@ namespace BreastRadiology.XUnitTests
                                 .SetDefinition("[PR] Cyst complicated")
                                 .MammoId("115")
                                 .ValidModalities(Modalities.MRI | Modalities.US)
-                                .SetUMLS("Complicated cysts are \"in between\" a simple cyst and " +
-                                    "a complex cyst. A complicated breast cyst contains " +
-                                    "solid elements suspended within the fluid, and may " +
-                                    "also feature segmentation (septation) and some regions " +
-                                    "of the cyst wall that are ‘thicker‘ than others. " +
-                                    "Complicated breast cysts are one of the cystic breast " +
-                                    "lesions that show intracystic debris which may imitate " +
-                                    "a solid mass appearance.")
+                                .SetUMLS("Complicated cysts are \"in between\" simple and complex. " +
+                                    "Although they share most of the features of simple " +
+                                    "cysts, they tend to have some debris inside them " +
+                                    "and echo back some of the ultrasound waves. However, " +
+                                    "they don’t have the thick walls or obvious solid " +
+                                    "components that a complex cyst has. https://www.breastcancer.org/symptoms/benign/cysts")
                             ,
                             new ConceptDef()
                                 .SetCode("CystOil")
@@ -274,8 +315,8 @@ namespace BreastRadiology.XUnitTests
                                 .MammoId("582")
                                 .ValidModalities(Modalities.MG | Modalities.US)
                                 .SetUMLS("Oil cysts are filled with fluid that may feel smooth " +
-                                    "and soft/squishy. They are caused by the breakdown " +
-                                    "of fatty tissue.")
+                                    "and squishy. They are caused by the breakdown of " +
+                                    "fatty tissue.")
                             ,
                             new ConceptDef()
                                 .SetCode("CystSebaceous")
@@ -286,12 +327,13 @@ namespace BreastRadiology.XUnitTests
                                 .SetSnomedCode("76649007")
                                 .SetSnomedDescription("ClinicalFinding | Sebaceous cyst of skin of breast " +
                                     "(Disorder)")
-                                .SetUMLS("Sebaceous cysts form out of your sebaceous gland. " +
-                                    "The sebaceous gland produces the oil (called sebum) " +
-                                    "that coats your hair and skin.Cysts can develop if " +
-                                    "the gland or its duct (the passage from which the " +
-                                    "oil is able to leave) becomes damaged or blocked. " +
-                                    "This usually occurs due to a trauma to the area.")
+                                .SetUMLS("Sebaceous cysts are common noncancerous cysts of " +
+                                    "the skin. Cysts are abnormalities in the body that " +
+                                    "may contain liquid or semiliquid material. Sebaceous " +
+                                    "cysts are mostly found on the face, neck, or torso. " +
+                                    "They grow slowly and aren't life-threatening, but " +
+                                    "they may become uncomfortable if they go unchecked. " +
+                                    "www.healthline.com › health › sebaceous-cyst")
                             ,
                             new ConceptDef()
                                 .SetCode("CystSimple")
@@ -301,6 +343,11 @@ namespace BreastRadiology.XUnitTests
                                 .ValidModalities(Modalities.MRI | Modalities.US)
                                 .SetSnomedCode("399253005")
                                 .SetSnomedDescription("ClinicalFinding | Simple cyst of breast (Disorder)")
+                                .SetUMLS("Simple cysts have smooth, thin, regularly shaped " +
+                                    "walls and are completely filled with fluid. The sound " +
+                                    "waves sent out by the ultrasound test pass right " +
+                                    "through them, indicating there are no solid areas. " +
+                                    "Simple cysts are always benign. https://www.breastcancer.org/symptoms/benign/cysts")
                             ,
                             new ConceptDef()
                                 .SetCode("CystsComplex")
@@ -310,11 +357,14 @@ namespace BreastRadiology.XUnitTests
                                 .ValidModalities(Modalities.MRI | Modalities.US)
                                 .SetSnomedCode("449837001")
                                 .SetSnomedDescription("ClinicalFinding | Complex cyst of breast (Disorder)")
-                                .SetUMLS("Refers to cysts that contain something more than " +
-                                    "clear fluid. A complex breast cyst contains solid " +
-                                    "elements suspended within the fluid, and may also " +
-                                    "feature segmentation (septation) and some regions " +
-                                    "of the cyst wall that are ‘thicker‘ than others.")
+                                .SetUMLS("Complex cysts have irregular or scalloped borders, " +
+                                    "thick walls, and some evidence of solid areas and/or " +
+                                    "debris in the fluid. These solid areas echo back " +
+                                    "the sound waves from the ultrasound. A complex cyst " +
+                                    "is sometimes aspirated, or drained with a fine needle, " +
+                                    "so that the fluid inside can be tested. If blood " +
+                                    "or any unusual cells are present, further testing " +
+                                    "may be needed to rule out breast cancer. https://www.breastcancer.org/symptoms/benign/cysts")
                             ,
                             new ConceptDef()
                                 .SetCode("CystsComplicated")
@@ -322,14 +372,12 @@ namespace BreastRadiology.XUnitTests
                                 .SetDefinition("[PR] Cysts complicated")
                                 .MammoId("506")
                                 .ValidModalities(Modalities.MRI | Modalities.US)
-                                .SetUMLS("Complicated cysts are \"in between\" a simple cyst and " +
-                                    "a complex cyst. A complicated breast cyst contains " +
-                                    "solid elements suspended within the fluid, and may " +
-                                    "also feature segmentation (septation) and some regions " +
-                                    "of the cyst wall that are ‘thicker‘ than others. " +
-                                    "Complicated breast cysts are one of the cystic breast " +
-                                    "lesions that show intracystic debris which may imitate " +
-                                    "a solid mass appearance.")
+                                .SetUMLS("Complicated cysts are \"in between\" simple and complex. " +
+                                    "Although they share most of the features of simple " +
+                                    "cysts, they tend to have some debris inside them " +
+                                    "and echo back some of the ultrasound waves. However, " +
+                                    "they don’t have the thick walls or obvious solid " +
+                                    "components that a complex cyst has. https://www.breastcancer.org/symptoms/benign/cysts")
                             ,
                             new ConceptDef()
                                 .SetCode("CystsMicroClustered")
@@ -337,10 +385,9 @@ namespace BreastRadiology.XUnitTests
                                 .SetDefinition("[PR] Cysts micro clustered")
                                 .MammoId("505")
                                 .ValidModalities(Modalities.US)
-                                .SetUMLS("A cyst is a  pocket of tissue that contains fluid, " +
-                                    "air, or other substances. A Microcyst is small and " +
-                                    "less than 2-3 mm. They are often in clusters and " +
-                                    "only show up on a mammogram or ultrasound.")
+                                .SetUMLS("Microcysts are tiny, microscopic cysts. Clustered " +
+                                    "microcysts are a cluster of these tiny cysts and " +
+                                    "they only have fluid inside of them.")
                             ,
                             new ConceptDef()
                                 .SetCode("DCIS")
@@ -354,7 +401,8 @@ namespace BreastRadiology.XUnitTests
                                     "abnormal cells inside a milk duct in the breast. " +
                                     "DCIS is considered the earliest form of breast cancer. " +
                                     "DCIS is noninvasive, meaning it hasn't spread out " +
-                                    "of the milk duct and has a low risk of becoming invasive.")
+                                    "of the milk duct and has a low risk of becoming invasive. " +
+                                    "https://www.mayoclinic.org/diseases-conditions/dcis/symptoms-causes/syc-20371889")
                             ,
                             new ConceptDef()
                                 .SetCode("Debris")
@@ -362,6 +410,8 @@ namespace BreastRadiology.XUnitTests
                                 .SetDefinition("[PR] Debris")
                                 .MammoId("515")
                                 .ValidModalities(Modalities.MG | Modalities.US)
+                                .SetUMLS("Debris is a substance that is anything other than " +
+                                    "a liquid inside of the cyst.")
                             ,
                             new ConceptDef()
                                 .SetCode("Deodorant")
@@ -371,6 +421,12 @@ namespace BreastRadiology.XUnitTests
                                 .ValidModalities(Modalities.MG)
                                 .SetSnomedCode("39432004")
                                 .SetSnomedDescription("PharmaceuticalBiologicProduct | Deodorant (Product)")
+                                .SetUMLS("Because estrogen can promote the growth of breast " +
+                                    "cancer cells, some scientists have suggested that " +
+                                    "the aluminum-based compounds in antiperspirants may " +
+                                    "contribute to the development of breast cancer. In " +
+                                    "addition, it has been suggested that aluminum may " +
+                                    "have direct activity in breast tissue.https://www.cancer.gov/about-cancer/causes-prevention/risk/myths/antiperspirants-fact-sheet")
                             ,
                             new ConceptDef()
                                 .SetCode("DermalCalcification")
@@ -383,7 +439,7 @@ namespace BreastRadiology.XUnitTests
                                     "and inspissation of sebaceous material. Calcifications " +
                                     "may also form in moles and other skin lesions. Often, " +
                                     "these calcifications are in groups as they extend " +
-                                    "into small glands in the skin.")
+                                    "into small glands in the skin. https://radiopaedia.org/articles/skin-calcification-in-breast?lang=us")
                             ,
                             new ConceptDef()
                                 .SetCode("DuctEctasia")
@@ -394,9 +450,10 @@ namespace BreastRadiology.XUnitTests
                                 .SetSnomedDescription("ClinicalFinding | 22049009 | Mammary duct ectasia " +
                                     "(Disorder) | [0/0] | N60.49")
                                 .SetUMLS("An abnormal dilation of a duct by lipids and cellular " +
-                                    "debris. In a mammary duct the condition, which tends " +
+                                    "debris. In  mammary duct the condition, which tends " +
                                     "mainly to affect postmenopausal women, may be accompanied " +
-                                    "by inflammation and infiltration by plasma cells.")
+                                    "by inflammation and infiltration by plasma cells. " +
+                                    "https://www.hoafredericksburg.com/duct-ectasia/")
                             ,
                             new ConceptDef()
                                 .SetCode("Edema")
@@ -412,7 +469,7 @@ namespace BreastRadiology.XUnitTests
                                     "or malignant diseases, as a result of a tumor in " +
                                     "the dermal lymphatics of the breast, lymphatic congestion " +
                                     "caused by breast, lymphatic drainage obstruction, " +
-                                    "or by congestive heart failure.")
+                                    "or by congestive heart failure. https://www.researchgate.net/publication/7988898_Unilateral_Breast_Edema_Spectrum_of_Etiologies_and_Imaging_Appearances")
                             ,
                             new ConceptDef()
                                 .SetCode("FatLobule")
@@ -438,12 +495,13 @@ namespace BreastRadiology.XUnitTests
                                 .ValidModalities(Modalities.MG | Modalities.MRI | Modalities.US)
                                 .SetSnomedCode("21381006")
                                 .SetSnomedDescription("ClinicalFinding | Fat necrosis of breast (Disorder)")
-                                .SetUMLS("Fat necrosis within the breast is a pathological " +
-                                    "process that occurs when there is saponification " +
-                                    "of local fat. It is a benign inflammatory process " +
-                                    "and is becoming increasingly common with the greater " +
-                                    "use of breast conserving surgery and mammoplasty " +
-                                    "procedures.")
+                                .SetUMLS("Breasts are made up of lobules (milk-producing glands) " +
+                                    "and ducts (tubes that carry milk to the nipple). " +
+                                    "These are surrounded by glandular, fibrous and fatty " +
+                                    "tissue. Sometimes a lump can form if an area of the " +
+                                    "fatty breast tissue is damaged. This is called fat " +
+                                    "necrosis (necrosis is a medical term used to describe " +
+                                    "damaged or dead tissue). https://breastcancernow.org/information-support/have-i-got-breast-cancer/breast-pain-other-benign-conditions/fat-necrosis")
                             ,
                             new ConceptDef()
                                 .SetCode("Fibroadenolipoma")
@@ -456,7 +514,7 @@ namespace BreastRadiology.XUnitTests
                                     "tissue (hence fibro-adeno-lipoma) surrounded by a " +
                                     "thin capsule of connective tissue. All components " +
                                     "are found in normal breast tissue, which is why the " +
-                                    "lesions are considered hamartomatous.")
+                                    "lesions are considered hamartomatous. https://radiopaedia.org/articles/breast-hamartoma?lang=us")
                             ,
                             new ConceptDef()
                                 .SetCode("Fibroadenoma")
@@ -464,8 +522,12 @@ namespace BreastRadiology.XUnitTests
                                 .SetDefinition("[PR] Fibroadenoma")
                                 .MammoId("81")
                                 .ValidModalities(Modalities.MG | Modalities.MRI | Modalities.NM | Modalities.US)
-                                .SetUMLS("Fibroadenomas are noncancerous breast lumps that " +
-                                    "most commonly occur in women ages 15 to 35.")
+                                .SetUMLS("Fibroadenomas are common benign (non-cancerous) breast " +
+                                    "tumors made up of both glandular tissue and stromal " +
+                                    "(connective) tissue. Fibroadenomas are most common " +
+                                    "in women in their 20s and 30s, but they can be found " +
+                                    "in women of any age. They tend to shrink after a " +
+                                    "woman goes through menopause. https://www.cancer.org/cancer/breast-cancer/non-cancerous-breast-conditions/fibroadenomas-of-the-breast.html")
                             ,
                             new ConceptDef()
                                 .SetCode("FibroadenomaDegenerating")
@@ -473,10 +535,10 @@ namespace BreastRadiology.XUnitTests
                                 .SetDefinition("[PR] Fibroadenoma degenerating")
                                 .MammoId("587")
                                 .ValidModalities(Modalities.MG)
-                                .SetUMLS("Fibroadenomas usually go away with age. By the time " +
-                                    "a woman is menopausal, they will experience a degeneration " +
-                                    "of the Fibroadenomas. These are non-cancerous breast " +
-                                    "lumps.")
+                                .SetUMLS("These are non-cancerous breast lumps. Fibroadenomas " +
+                                    "usually go away with age. By the time a woman is " +
+                                    "menopausal, they will likely experience a degeneration " +
+                                    "of the Fibroadenomas.")
                             ,
                             new ConceptDef()
                                 .SetCode("FibrocysticChange")
@@ -492,7 +554,7 @@ namespace BreastRadiology.XUnitTests
                                     "breasts feel tender, lumpy or ropy. Fibrocystic breasts " +
                                     "are composed of tissue that feels lumpy or rope-like " +
                                     "in texture. Doctors call this nodular or glandular " +
-                                    "breast tissue.")
+                                    "breast tissue. https://www.mayoclinic.org/diseases-conditions/fibrocystic-breasts/symptoms-causes/syc-20350438")
                             ,
                             new ConceptDef()
                                 .SetCode("FibroglandularTissue")
@@ -506,7 +568,7 @@ namespace BreastRadiology.XUnitTests
                                     "breasts feel tender, lumpy or ropy. Fibrocystic breasts " +
                                     "are composed of tissue that feels lumpy or rope-like " +
                                     "in texture. Doctors call this nodular or glandular " +
-                                    "breast tissue.")
+                                    "breast tissue. https://www.mayoclinic.org/diseases-conditions/fibrocystic-breasts/symptoms-causes/syc-20350438")
                             ,
                             new ConceptDef()
                                 .SetCode("Fibrosis")
@@ -519,8 +581,7 @@ namespace BreastRadiology.XUnitTests
                                     "that occurs as part of normal healing or to the excess " +
                                     "tissue deposition that occurs as a pathological process. " +
                                     "When fibrosis occurs in response to injury, the term " +
-                                    "\"scarring\" is used. Some of the main types of fibrosis " +
-                                    "that occur in the body are described below.")
+                                    "\"scarring\" is used.  https://www.news-medical.net/health/What-is-Fibrosis.aspx")
                             ,
                             new ConceptDef()
                                 .SetCode("FibrousRidge")
@@ -532,7 +593,8 @@ namespace BreastRadiology.XUnitTests
                                     "the front of the breast to the back of the chest " +
                                     "wall, supports the breast and gives it shape. Strands " +
                                     "of supportive tissue surround the breast and form " +
-                                    "a prominent ridge called the inframammary ridge.")
+                                    "a prominent ridge called the inframammary ridge. " +
+                                    "https://www.stjoeshealth.org/find-a-service-or-specialty/womens-health/")
                             ,
                             new ConceptDef()
                                 .SetCode("Folliculitis")
@@ -546,7 +608,9 @@ namespace BreastRadiology.XUnitTests
                                     "due to an infection, injury, or irritation. It is " +
                                     "characterized by tender, swollen areas that form " +
                                     "around hair follicles, often on the neck, breasts, " +
-                                    "buttocks, and face.")
+                                    "buttocks, and face. Boils (also referred to as furuncles) " +
+                                    "are pus-filled lesions that are painful and usually " +
+                                    "firm. https://www.hopkinsmedicine.org/health/conditions-and-diseases/folliculitis-boils-and-carbuncles")
                             ,
                             new ConceptDef()
                                 .SetCode("Gynecomastia")
@@ -554,10 +618,10 @@ namespace BreastRadiology.XUnitTests
                                 .SetDefinition("[PR] Gynecomastia")
                                 .MammoId("759")
                                 .ValidModalities(Modalities.US)
-                                .SetUMLS("An increase in the amount of breast gland tissue " +
-                                    "in boys or men, caused by an imbalance of the hormones " +
-                                    "estrogen and testosterone. Gynecomastia can affect " +
-                                    "one or both breasts, sometimes unevenly.")
+                                .SetUMLS("Gynecomastia is an enlargement or swelling of breast " +
+                                    "tissue in males. It is most commonly caused by male " +
+                                    "estrogen levels that are too high or are out of balance " +
+                                    "with testosterone levels. https://my.clevelandclinic.org/health/diseases/16227-enlarged-male-breast-tissue-gynecomastia")
                             ,
                             new ConceptDef()
                                 .SetCode("Hamartoma")
@@ -567,9 +631,9 @@ namespace BreastRadiology.XUnitTests
                                 .ValidModalities(Modalities.MG | Modalities.MRI | Modalities.US)
                                 .SetSnomedCode("51398009")
                                 .SetSnomedDescription("BodyStructure | Hamartoma (Morphologic-Abnormality)")
-                                .SetUMLS("A hamartoma is a noncancerous tumor made of an abnormal " +
-                                    "mixture of normal tissues and cells from the area " +
-                                    "in which it grows.")
+                                .SetUMLS("A benign (not cancer) growth made up of an abnormal " +
+                                    "mixture of cells and tissues normally found in the " +
+                                    "area of the body where the growth occurs. https://www.cancer.gov/publications/dictionaries/cancer-terms/def/hamartoma")
                             ,
                             new ConceptDef()
                                 .SetCode("Hematoma")
@@ -584,7 +648,7 @@ namespace BreastRadiology.XUnitTests
                                     "a large bruise in your breast. The mass it forms " +
                                     "is not cancerous, but it can sometimes lead to inflammation, " +
                                     "fever, skin discoloration, and may leave behind scar " +
-                                    "tissue that mimics the shape of a breast tumor.")
+                                    "tissue that mimics the shape of a breast tumor. https://www.verywellhealth.com/breast-hematomas-430281")
                             ,
                             new ConceptDef()
                                 .SetCode("HormonalStimulation")
@@ -592,6 +656,12 @@ namespace BreastRadiology.XUnitTests
                                 .SetDefinition("[PR] Hormonal stimulation")
                                 .MammoId("539")
                                 .ValidModalities(Modalities.US)
+                                .SetUMLS("Hormonal effects of certain medications including " +
+                                    "antihypertensives, antidepressants, H2 blockers,illicit " +
+                                    "drugs, and endocrine active tumors stimulate development " +
+                                    "of rudimentary breast tissue.    Second Addition " +
+                                    "—As of 07/31/2013 American College of Radiology Breast " +
+                                    "Imaging Reporting andData System—Ultrasound")
                             ,
                             new ConceptDef()
                                 .SetCode("IntracysticLesion")
@@ -602,7 +672,7 @@ namespace BreastRadiology.XUnitTests
                                 .SetUMLS("Intracystic tumors of the breast are uncommon and, " +
                                     "at the time of ultrasonography and aspiration cytology, " +
                                     "it is difficult to distinguish cancer from a benign " +
-                                    "tumor.")
+                                    "tumor. https://www.ncbi.nlm.nih.gov/pubmed/11911303")
                             ,
                             new ConceptDef()
                                 .SetCode("IntramammaryNode")
@@ -612,8 +682,16 @@ namespace BreastRadiology.XUnitTests
                                 .ValidModalities(Modalities.MG)
                                 .SetSnomedDescription("BodyStructure | 443159006 | Intramammary lymph node " +
                                     "group (Bodypart)")
-                                .SetUMLS("Intramammary lymph nodes are defined as lymph nodes " +
-                                    "surrounded by breast tissue.")
+                                .SetUMLS("These are lymph  nodes within the breast tissue. " +
+                                    "They are generally 1 cm or smallerin size. They frequently " +
+                                    "occur in the lateral and usually upper portions of " +
+                                    "the breast closer to theaxilla (armpit area), although " +
+                                    "they may occur anywhere in the breast. They usually " +
+                                    "are seen adjacent to a vein, because the lymphatic " +
+                                    "drainage of the breast parallels the venous drainage. " +
+                                    "                    FIFTH EDITION —As of 07/31/2013American " +
+                                    "College of Radiology Breast Imaging Reporting andData " +
+                                    "System—MammographyFifth Edition 2013")
                             ,
                             new ConceptDef()
                                 .SetCode("Lipoma")
@@ -629,7 +707,8 @@ namespace BreastRadiology.XUnitTests
                                     "isn't tender, moves readily with slight finger pressure. " +
                                     "Lipomas are usually detected in middle age. Some " +
                                     "people have more than one lipoma.A lipoma isn't cancer " +
-                                    "and usually is harmless.")
+                                    "and usually is harmless. www.mayoclinic.org › lipoma " +
+                                    "› symptoms-causes › syc-20374470")
                             ,
                             new ConceptDef()
                                 .SetCode("LumpectomyCavity")
@@ -638,6 +717,10 @@ namespace BreastRadiology.XUnitTests
                                 .MammoId("512")
                                 .ValidModalities(Modalities.MRI | Modalities.US)
                                 .SetSnomedDescription("BodyStructure | 261719000 | Breast cavity (Morphologic-Abnormality)")
+                                .SetUMLS("With a lumpectomy, the surgeon removes only the tumor " +
+                                    "and a small amount of normal surrounding tissue. " +
+                                    "The cavity is the hollow area or hole left behind " +
+                                    "after the tumor and surrounding tissue is removed.")
                             ,
                             new ConceptDef()
                                 .SetCode("LumpectomySite")
@@ -646,6 +729,8 @@ namespace BreastRadiology.XUnitTests
                                 .MammoId("564")
                                 .ValidModalities(Modalities.MRI)
                                 .SetSnomedDescription("BodyStructure | 261719000 | Breast cavity (Morphologic-Abnormality)")
+                                .SetUMLS("The area of the breast where the incision is made " +
+                                    "during the lumpectomy.")
                             ,
                             new ConceptDef()
                                 .SetCode("LymphNode")
@@ -653,6 +738,17 @@ namespace BreastRadiology.XUnitTests
                                 .SetDefinition("[PR] Lymph node")
                                 .MammoId("74")
                                 .ValidModalities(Modalities.MG | Modalities.MRI | Modalities.NM | Modalities.US)
+                                .SetUMLS("A small bean-shaped structure that is part of the " +
+                                    "body’s immune system. Lymph nodes filter substances " +
+                                    "that travel through the lymphatic fluid, and they " +
+                                    "contain lymphocytes (white blood cells) that help " +
+                                    "the body fight infection and disease. There are hundreds " +
+                                    "of lymph nodes found throughout the body. They are " +
+                                    "connected to one another by lymph vessels. Clusters " +
+                                    "of lymph nodes are found in the neck, axilla (underarm), " +
+                                    "chest, abdomen, and groin. For example, there are " +
+                                    "about 20-40 lymph nodes in the axilla. Also called " +
+                                    "lymph gland. https://www.cancer.gov/publications/dictionaries/cancer-terms/def/lymph-node")
                             ,
                             new ConceptDef()
                                 .SetCode("LymphNodeEnlarged")
@@ -663,6 +759,12 @@ namespace BreastRadiology.XUnitTests
                                 .SetSnomedCode("274741002")
                                 .SetSnomedDescription("ClinicalFinding | Generalized enlarged lymph nodes " +
                                     "(Disorder) | [0/0] | R59.1")
+                                .SetUMLS("Enlarged or swollen lymph nodes usually indicate " +
+                                    "a common infection, but they can also signal a medical " +
+                                    "condition, such as an immune disorder or, rarely, " +
+                                    "a type of cancer. Lymph nodes are small, round structures " +
+                                    "that play a vital role in the body's immune system. " +
+                                    "Swollen lymph nodes are also known as swollen glands.")
                             ,
                             new ConceptDef()
                                 .SetCode("LymphNodeNormal")
@@ -670,6 +772,15 @@ namespace BreastRadiology.XUnitTests
                                 .SetDefinition("[PR] Lymph node normal")
                                 .MammoId("907")
                                 .ValidModalities(Modalities.MG | Modalities.MRI | Modalities.US)
+                                .SetUMLS("Lymph nodes filter substances that travel through " +
+                                    "the lymphatic fluid, and they contain lymphocytes " +
+                                    "(white blood cells) that help the body fight infection " +
+                                    "and disease. There are hundreds of lymph nodes found " +
+                                    "throughout the body. They are connected to one another " +
+                                    "by lymph vessels. Clusters of lymph nodes are found " +
+                                    "in the neck, axilla (underarm), chest, abdomen, and " +
+                                    "groin. A normal sized lymph node is about pea-sized " +
+                                    "or bean-sized (or smaller than 1/2 inch or 12mm).")
                             ,
                             new ConceptDef()
                                 .SetCode("LymphNodePathological")
@@ -682,7 +793,7 @@ namespace BreastRadiology.XUnitTests
                                     "nodes, not necessarily resulting in increased size; " +
                                     "this includes abnormal number of nodes, or derangement " +
                                     "of internal architecture (e.g. cystic or necrotic " +
-                                    "nodes).")
+                                    "nodes). https://radiopaedia.org/articles/lymph-node-enlargement?lang=us")
                             ,
                             new ConceptDef()
                                 .SetCode("MassSolid")
@@ -690,6 +801,14 @@ namespace BreastRadiology.XUnitTests
                                 .SetDefinition("[PR] Mass solid")
                                 .MammoId("63")
                                 .ValidModalities(Modalities.MG | Modalities.MRI | Modalities.US)
+                                .SetUMLS("An abnormal mass of tissue that usually does not " +
+                                    "contain cysts or liquid areas. Solid masses or tumors " +
+                                    "may be benign (not cancer), or malignant (cancer). " +
+                                    "Different types of solid mass/ tumors are named for " +
+                                    "the type of cells that form them. Examples of solid " +
+                                    "tumors are sarcomas, carcinomas, and lymphomas. Leukemias " +
+                                    "(cancer of the blood) generally do not form solid " +
+                                    "mass/tumors. https://www.cancer.gov/publications/dictionaries/cancer-terms/def/solid-tumor")
                             ,
                             new ConceptDef()
                                 .SetCode("MassSolidW/tumorVasc")
@@ -697,6 +816,21 @@ namespace BreastRadiology.XUnitTests
                                 .SetDefinition("[PR] Mass solid w/tumor vasc")
                                 .MammoId("550")
                                 .ValidModalities(Modalities.MRI)
+                                .SetUMLS("An abnormal mass of tissue that usually does not " +
+                                    "contain cysts or liquid areas. Solid masses or tumors " +
+                                    "may be benign (not cancer), or malignant (cancer). " +
+                                    "Different types of solid mass/ tumors are named for " +
+                                    "the type of cells that form them. Examples of solid " +
+                                    "tumors are sarcomas, carcinomas, and lymphomas. Leukemias " +
+                                    "(cancer of the blood) generally do not form solid " +
+                                    "mass/tumors. A vascular tumor is a type of tumor " +
+                                    "that forms from cells that make blood vessels or " +
+                                    "lymph vessels. Vascular tumors may be benign (not " +
+                                    "cancer) or malignant (cancer) and can occur anywhere " +
+                                    "in the body. They may form on the skin, in the tissues " +
+                                    "below the skin, and/or in an organ. There are many " +
+                                    "types of vascular tumors.  https://www.cancer.gov/publications/dictionaries/cancer-terms/def/solid-tumor " +
+                                    "https://www.cancer.gov/publications/dictionaries/cancer-terms/def/vascular-tumor")
                             ,
                             new ConceptDef()
                                 .SetCode("Mastitis")
@@ -723,9 +857,7 @@ namespace BreastRadiology.XUnitTests
                                 .SetUMLS("The term milk of calcium (MOC) is given to dependent, " +
                                     "sedimented calcification within a cystic structure " +
                                     "or hollow organ. This sort of colloidal calcium suspension " +
-                                    "layering can occur in various regions: renal: milk " +
-                                    "of calcium in renal cyst (most common) breast: mil+A:Rk " +
-                                    "of calcium in breast cyst.")
+                                    "layering can occur in various regions. https://radiopaedia.org/articles/milk-of-calcium-disambiguation?lang=us")
                             ,
                             new ConceptDef()
                                 .SetCode("Multi-focalCancer")
@@ -736,7 +868,8 @@ namespace BreastRadiology.XUnitTests
                                 .SetUMLS("Multifocal breast cancer occurs when there are two " +
                                     "or more tumors in the same breast. All of the tumors " +
                                     "begin in one original tumor. The tumors are also " +
-                                    "all in the same quadrant — or section — of the breast.")
+                                    "all in the same quadrant — or section — of the breast. " +
+                                    "https://www.healthline.com/health/breast-cancer/multifocal-breast-cancer")
                             ,
                             new ConceptDef()
                                 .SetCode("PapillaryLesion")
@@ -745,12 +878,14 @@ namespace BreastRadiology.XUnitTests
                                 .MammoId("563")
                                 .ValidModalities(Modalities.MG | Modalities.US)
                                 .SetSnomedDescription("need help")
-                                .SetUMLS("Papillary lesions are benign growths in the duct " +
-                                    "of the breast. They comprise approximately 1 to 3 " +
-                                    "percent of all lesions sampled by core needle biopsies. " +
-                                    "Currently, the treatment of these lesions alternates " +
-                                    "between radiographic follow-up and surgical excision, " +
-                                    "and is often dependent upon physician recommendation.")
+                                .SetUMLS("Breast papillary lesions are characterised by growth " +
+                                    "inside the milk ducts, and they represent a heterogeneous " +
+                                    "pathology. They are rare and constitute less than " +
+                                    "10% of benign breast lesions and less than 1% of " +
+                                    "malignant breast neoplasms. Breast papillary lesions " +
+                                    "are usually detected by imaging or clinically by " +
+                                    "the presence of a palpable breast mass or unilateral " +
+                                    "spontaneous nipple discharge. https://ecancer.org/es/journal/article/461-breast-papillary-lesions-an-analysis-of-70-cases")
                             ,
                             new ConceptDef()
                                 .SetCode("Papilloma")
@@ -760,8 +895,11 @@ namespace BreastRadiology.XUnitTests
                                 .ValidModalities(Modalities.MG | Modalities.MRI | Modalities.US)
                                 .SetSnomedCode("99571000119102")
                                 .SetSnomedDescription("ClinicalFinding | Papilloma of breast (Disorder)")
-                                .SetUMLS("A benign epithelial tumor that forms on the skin " +
-                                    "or mucous membrane.")
+                                .SetUMLS("Intraductal papillomas are benign (non-cancerous), " +
+                                    "wart-like tumors that grow within the milk ducts " +
+                                    "of the breast. They are made up of gland tissue along " +
+                                    "with fibrous tissue and blood vessels (called fibrovascular " +
+                                    "tissue). https://www.cancer.org/cancer/breast-cancer/non-cancerous-breast-conditions/intraductal-papillomas.html")
                             ,
                             new ConceptDef()
                                 .SetCode("PhyllodesTumor")
@@ -771,11 +909,20 @@ namespace BreastRadiology.XUnitTests
                                 .ValidModalities(Modalities.MRI | Modalities.US)
                                 .SetSnomedDescription("ClinicalFinding | 712989008 | Phyllodes tumor of " +
                                     "breast (Disorder) | D48.6 |")
-                                .SetUMLS("Phyllodes tumor. Phyllodes tumors (from Greek: phullon " +
-                                    "leaf), also cystosarcoma phyllodes, cystosarcoma " +
-                                    "phylloides and phylloides tumor, are typically large, " +
-                                    "fast-growing masses that form from the periductal " +
-                                    "stromal cells of the breast.")
+                                .SetUMLS("Phyllodes tumors of the breast are rare, accounting " +
+                                    "for less than 1% of all breast tumors. The name \"phyllodes,\" " +
+                                    "which is taken from the Greek language and means " +
+                                    "\"leaflike,\" refers to that fact that the tumor cells " +
+                                    "grow in a leaflike pattern. Other names for these " +
+                                    "tumors are phylloides tumor and cystosarcoma phyllodes. " +
+                                    "Phyllodes tumors tend to grow quickly, but they rarely " +
+                                    "spread outside the breast.Although most phyllodes " +
+                                    "tumors are benign (not cancerous), some are malignant " +
+                                    "(cancerous) and some are borderline (in between noncancerous " +
+                                    "and cancerous). All three kinds of phyllodes tumors " +
+                                    "tend to grow quickly, and they require surgery to " +
+                                    "reduce the risk of a phyllodes tumor coming back " +
+                                    "in the breast (local recurrence). https://www.breastcancer.org/symptoms/types/phyllodes")
                             ,
                             new ConceptDef()
                                 .SetCode("PostLumpectomyScar")
@@ -784,12 +931,16 @@ namespace BreastRadiology.XUnitTests
                                 .MammoId("590")
                                 .ValidModalities(Modalities.MG)
                                 .SetSnomedDescription("BodyStructure | 63130001 | Surgical scar (Morphologic-Abnormality)")
-                                .SetUMLS("A lump of scar tissue forms in the hole left after " +
-                                    "breast tissue is removed. If scar tissue forms around " +
-                                    "a stitch from surgery it's called a suture granuloma " +
-                                    "and also feels like a lump. ... Scar tissue and fluid " +
-                                    "retention can make breast tissue appear a little " +
-                                    "firmer or rounder than before surgery and/or radiation.")
+                                .SetUMLS("This is scarring that occurs from the lumpectomy " +
+                                    "site. It can include nerve pain or numbness if scar " +
+                                    "tissue forms around nerves.A lump of scar tissue " +
+                                    "forms in the hole left after breast tissue is removed. " +
+                                    "If scar tissue forms around a stitch from surgery " +
+                                    "it's called a suture granuloma and also feels like " +
+                                    "a lump.Changes in breast appearance. Scar tissue " +
+                                    "and fluid retention can make breast tissue appear " +
+                                    "a little firmer or rounder than before surgery and/or " +
+                                    "radiation. https://www.breastcancer.org/treatment/side_effects/scar_tissue")
                             ,
                             new ConceptDef()
                                 .SetCode("PostSurgicalScar")
@@ -810,6 +961,8 @@ namespace BreastRadiology.XUnitTests
                                 .SetDefinition("[PR] Previous biopsy")
                                 .MammoId("584")
                                 .ValidModalities(Modalities.MG)
+                                .SetUMLS("Findings on mammogram are  consistent with previous " +
+                                    "biopsy.")
                             ,
                             new ConceptDef()
                                 .SetCode("PreviousSurgery")
@@ -817,6 +970,8 @@ namespace BreastRadiology.XUnitTests
                                 .SetDefinition("[PR] Previous surgery")
                                 .MammoId("585")
                                 .ValidModalities(Modalities.MG)
+                                .SetUMLS("Findings on mammogram are consistent with previous " +
+                                    "surgery.")
                             ,
                             new ConceptDef()
                                 .SetCode("PreviousTrauma")
@@ -826,6 +981,8 @@ namespace BreastRadiology.XUnitTests
                                 .ValidModalities(Modalities.MG)
                                 .SetSnomedDescription("ClinicalFinding | 62112002 | Injury of breast (Disorder) " +
                                     "| [4/41] | S29.9XX?")
+                                .SetUMLS("Findings on mammogram are consistent with previous " +
+                                    "trauma to breast.")
                             ,
                             new ConceptDef()
                                 .SetCode("RadialScar")
@@ -842,7 +999,7 @@ namespace BreastRadiology.XUnitTests
                                     "of unusual changes such as cysts and epithelial hyperplasia " +
                                     "(overgrowth of their inner lining). Often, more than " +
                                     "one radial scar is present. Another term for this " +
-                                    "condition is complex sclerosing lesions.")
+                                    "condition is complex sclerosing lesions. https://www.breastcancer.org/symptoms/benign/radial-scars")
                             ,
                             new ConceptDef()
                                 .SetCode("RadiationChanges")
@@ -853,6 +1010,9 @@ namespace BreastRadiology.XUnitTests
                                 .SetSnomedCode("143501000119107")
                                 .SetSnomedDescription("SituationWithExplicitContext  | History of radiation " +
                                     "therapy to breast area (Situation)")
+                                .SetUMLS("Radiation levels during radiation therapy may change " +
+                                    "as a result of side effects or to complete a more " +
+                                    "aggressive cancer treatment.")
                             ,
                             new ConceptDef()
                                 .SetCode("RadiationTherapy")
@@ -863,6 +1023,17 @@ namespace BreastRadiology.XUnitTests
                                 .SetSnomedCode("429479009")
                                 .SetSnomedDescription("SituationWithExplicitContext | History of radiation " +
                                     "therapy (Situation)")
+                                .SetUMLS("The use of high-energy radiation from x-rays, gamma " +
+                                    "rays, neutrons, protons, and other sources to kill " +
+                                    "cancer cells and shrink tumors. Radiation may come " +
+                                    "from a machine outside the body (external-beam radiation " +
+                                    "therapy), or it may come from radioactive material " +
+                                    "placed in the body near cancer cells (internal radiation " +
+                                    "therapy or brachytherapy). Systemic radiation therapy " +
+                                    "uses a radioactive substance, such as a radiolabeled " +
+                                    "monoclonal antibody, that travels in the blood to " +
+                                    "tissues throughout the body. Also called irradiation " +
+                                    "and radiotherapy. https://www.cancer.gov/publications/dictionaries/cancer-terms/def/44971")
                             ,
                             new ConceptDef()
                                 .SetCode("Scar")
@@ -870,9 +1041,9 @@ namespace BreastRadiology.XUnitTests
                                 .SetDefinition("[PR] Scar")
                                 .MammoId("502")
                                 .ValidModalities(Modalities.MRI | Modalities.US)
-                                .SetUMLS("A mark left on the skin or within body tissue where " +
-                                    "a wound, burn, or sore has not healed completely " +
-                                    "and fibrous connective tissue has developed.")
+                                .SetUMLS("Scar tissue forms as part of the healing process " +
+                                    "after a skin injury. A scar is fibrous tissue made " +
+                                    "of collagen that replaces the injured skin. https://www.breastcancer.org/treatment/side_effects/scar_tissue")
                             ,
                             new ConceptDef()
                                 .SetCode("ScarWithShadowing")
@@ -880,6 +1051,13 @@ namespace BreastRadiology.XUnitTests
                                 .SetDefinition("[PR] Scar with shadowing")
                                 .MammoId("113")
                                 .ValidModalities(Modalities.MRI | Modalities.US)
+                                .SetUMLS("In cases when the appropriate history is not available, " +
+                                    "a postsurgical scar may mimic a malignancy. At sonographic " +
+                                    "evaluation, an area of posterior acoustic shadowing " +
+                                    "may be seen.  This lack of a central mass helps differentiate " +
+                                    "a scar from a carcinoma, which has shadowing arising " +
+                                    "from a central mass. onlinelibrary.wiley.com › doi " +
+                                    "› full › jum.2004.23.1.73")
                             ,
                             new ConceptDef()
                                 .SetCode("SclerosingAdenosis")
@@ -900,13 +1078,12 @@ namespace BreastRadiology.XUnitTests
                                 .MammoId("570")
                                 .ValidModalities(Modalities.MG)
                                 .SetSnomedDescription("??????????????")
-                                .SetUMLS("Large rodlike or secretory calcifications. Large " +
-                                    "rodlike or secretory calcifications (see below) are " +
-                                    "oriented along the axes of the ductal system. These " +
-                                    "calcifications result from calcification of ductal " +
-                                    "secretions. Large rodlike or secretory calcifications " +
-                                    "are oriented along the axis of the breast ductal " +
-                                    "system.")
+                                .SetUMLS("Secretory calcifications are benign calcifications " +
+                                    "usually in women older than 60. They classically " +
+                                    "appear as solid or discontinuous, smooth, linear " +
+                                    "and rod-like calcifications. Usually bilateral and " +
+                                    "symmetric and may appear lucent-centered. Also known " +
+                                    "as plasma cell mastitis. https://radiopaedia.org/cases/secretory-calcifications?lang=us")
                             ,
                             new ConceptDef()
                                 .SetCode("SentinelNode")
@@ -918,7 +1095,7 @@ namespace BreastRadiology.XUnitTests
                                     "into which a tumor drains. Sentinel node biopsy involves " +
                                     "injecting a tracer material that helps the surgeon " +
                                     "locate the sentinel nodes during surgery. The sentinel " +
-                                    "nodes are removed and analyzed in a laboratory.")
+                                    "nodes are removed and analyzed in a laboratory. https://www.mayoclinic.org/tests-procedures/sentinel-node-biopsy/about/pac-20385264")
                             ,
                             new ConceptDef()
                                 .SetCode("Seroma")
@@ -933,7 +1110,7 @@ namespace BreastRadiology.XUnitTests
                                     "or following procedures such as breast surgery or " +
                                     "radiation therapy. Serous fluid is a pale yellow, " +
                                     "transparent fluid that contains protein, but no blood " +
-                                    "cells or pus.")
+                                    "cells or pus. https://www.verywellhealth.com/seroma-medical-definition-430372")
                             ,
                             new ConceptDef()
                                 .SetCode("SkinLesion")
@@ -943,6 +1120,12 @@ namespace BreastRadiology.XUnitTests
                                 .ValidModalities(Modalities.MG)
                                 .SetSnomedCode("126510002")
                                 .SetSnomedDescription("ClinicalFinding | Neoplasm of skin of breast (Disorder)")
+                                .SetUMLS("A skin lesion is a part of the skin that has an abnormal " +
+                                    "growth or appearance compared to the skin around " +
+                                    "it. Primary skin lesions are abnormal skin conditions " +
+                                    "present at birth or acquired over a person's lifetime. " +
+                                    "Secondary skin lesions are the result of irritated " +
+                                    "or manipulated primary skin lesions. https://www.healthline.com/health/skin-lesions")
                             ,
                             new ConceptDef()
                                 .SetCode("Surgery")
@@ -950,6 +1133,10 @@ namespace BreastRadiology.XUnitTests
                                 .SetDefinition("[PR] Surgery")
                                 .MammoId("546")
                                 .ValidModalities(Modalities.MRI)
+                                .SetUMLS("The branch of medicine that employs operations in " +
+                                    "the treatment of disease or injury. Surgery can involve " +
+                                    "cutting, abrading, suturing, or otherwise physically " +
+                                    "changing body tissues and organs. https://www.medicinenet.com/script/main/art.asp?articlekey=5603")
                             ,
                             new ConceptDef()
                                 .SetCode("Trauma")
@@ -958,6 +1145,8 @@ namespace BreastRadiology.XUnitTests
                                 .MammoId("547")
                                 .ValidModalities(Modalities.MRI)
                                 .SetSnomedDescription("ClinicalFinding | 62112002 | Injury of breast (Disorder)")
+                                .SetUMLS("Previous injury to breast consistent with surgery, " +
+                                    "infection, etc.")
                             ,
                             new ConceptDef()
                                 .SetCode("VascularCalcifications")
@@ -967,10 +1156,17 @@ namespace BreastRadiology.XUnitTests
                                 .ValidModalities(Modalities.MG)
                                 .SetSnomedDescription("ClinicalFinding | 396779001 | Breast arterial calcification " +
                                     "(Finding) | [0/0] | R92.1")
-                                .SetUMLS("Vascular calcifications are mineral deposits on the " +
-                                    "walls of your arteries and veins. These mineral deposits " +
-                                    "sometimes stick to fatty deposits, or plaques, that " +
-                                    "are already built up on the walls of a blood vessel.")
+                                .SetUMLS("Parallel tracks, or linear tubular calcifications " +
+                                    "that are clearly associated with blood vessels.While " +
+                                    "most vascular calcification is not difficult to identify, " +
+                                    "if only a few discontinuous calcificparticles are " +
+                                    "visible in a single location and if association with " +
+                                    "a tubular structure is questionable,then additional " +
+                                    "spot-compression magnification views may be needed " +
+                                    "to further characterizetheir nature. FIFTH EDITION " +
+                                    "—As of 07/31/2013American College of Radiology Breast " +
+                                    "Imaging Reporting andData System—MammographyFifth " +
+                                    "Edition 2013 pg 38")
                             ,
                             new ConceptDef()
                                 .SetCode("VenousStasis")
@@ -980,9 +1176,11 @@ namespace BreastRadiology.XUnitTests
                                 .ValidModalities(Modalities.NM)
                                 .SetSnomedDescription("ClinicalFinding | 71897006 | Venous stasis (Finding) " +
                                     "| [0/0] | I87.8")
-                                .SetUMLS("Venous stasis, is a condition of slow blood flow " +
-                                    "in the veins, usually of the legs. Venous stasis " +
-                                    "is a risk factor for forming blood clots in veins")
+                                .SetUMLS("Venous stasis dermatitis happens when there's a problem " +
+                                    "with your veins, that keeps blood from moving through " +
+                                    "very well. As more fluid and pressure build, some " +
+                                    "of the blood leaks out of your veins and into your " +
+                                    "skin. https://www.webmd.com/skin-problems-and-treatments/eczema/venous-stasis-dermatitis#1")
                             //- Codes
                         })
             );

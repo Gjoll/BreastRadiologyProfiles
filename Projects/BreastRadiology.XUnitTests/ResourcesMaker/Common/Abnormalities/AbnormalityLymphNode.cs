@@ -91,7 +91,8 @@ namespace BreastRadiology.XUnitTests
                                 .ValidModalities(Modalities.MG | Modalities.US)
                                 .SetSnomedDescription("BodyStructure | 443808008 | Structure of intramammary " +
                                     "lymph node (Bodypart)")
-                                .SetUMLS("Lymph nodes found within the breast tissue.")
+                                .SetUMLS("Intramammary lymph nodes are defined as lymph nodes " +
+                                    "surrounded by breast tissue.")
                                 .SetACR("These are circumscribed masses that are reniform " +
                                     "and have hilar fat. They are generally 1 cm or smallerin " +
                                     "size. They may be larger than 1 cm and characterized " +

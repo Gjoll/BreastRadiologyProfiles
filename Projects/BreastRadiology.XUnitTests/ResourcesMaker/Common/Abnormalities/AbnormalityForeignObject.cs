@@ -33,6 +33,8 @@ namespace BreastRadiology.XUnitTests
                                 .ValidModalities(Modalities.MG | Modalities.MRI | Modalities.US)
                                 .SetSnomedDescription("ClinicalFinding | 283574001 | Pellet wound of breast " +
                                     "(Disorder) | [0/0] | S21.039?")
+                                .SetUMLS("A BB pellet is present in the body and is visible " +
+                                    "by the Mammogram, MRI and/or Ultrasound.")
                             ,
                             new ConceptDef()
                                 .SetCode("BBPellets")
@@ -42,6 +44,8 @@ namespace BreastRadiology.XUnitTests
                                 .ValidModalities(Modalities.MG | Modalities.MRI | Modalities.US)
                                 .SetSnomedDescription("ClinicalFinding | 283574001 | Pellet wound of breast " +
                                     "(Disorder) | [0/0] | S21.039?")
+                                .SetUMLS("BB pellets are present in the body and is visible " +
+                                    "by the Mammogram, MRI and/or Ultrasound.")
                             ,
                             new ConceptDef()
                                 .SetCode("BiopsyClip")
@@ -52,11 +56,20 @@ namespace BreastRadiology.XUnitTests
                                 .SetSnomedCode("470272007")
                                 .SetSnomedDescription("PhysicalObject | Implantable lesion localization " +
                                     "marker (Object)")
-                                .SetUMLS("The biopsy clip serves as a marker documenting where " +
-                                    "the tissue was sampled in the breast. If the original " +
-                                    "abnormality is no longer visible by imaging after " +
-                                    "the biopsy, the marker is the only guide we have " +
-                                    "to know where the diseased tissue was sampled.")
+                                .SetUMLS("Tissue marker placement after image-guided breast " +
+                                    "biopsy has become a routine component of clinical " +
+                                    "practice. Marker placement distinguishes multiple " +
+                                    "biopsied lesions within the same breast, prevents " +
+                                    "re-biopsy of benign lesions, enables multi-modality " +
+                                    "correlation, guides pre-operative localization and " +
+                                    "helps confirm surgical target removal. Numerous breast " +
+                                    "tissue markers are currently available, with varied " +
+                                    "shapes, composition, and associated bio-absorbable " +
+                                    "components. This review serves to familiarize the " +
+                                    "breast interventionalist with the tissue markers " +
+                                    "most widely available in the United States today " +
+                                    "and to provide guidance regarding selection of appropriate " +
+                                    "markers for various clinical settings. https://www.ncbi.nlm.nih.gov/pubmed/30059952")
                             ,
                             new ConceptDef()
                                 .SetCode("BiopsyClips")
@@ -80,7 +93,7 @@ namespace BreastRadiology.XUnitTests
                                     "breast interventionalist with the tissue markers " +
                                     "most widely available in the United States today " +
                                     "and to provide guidance regarding selection of appropriate " +
-                                    "markers for various clinical settings.")
+                                    "markers for various clinical settings. https://www.ncbi.nlm.nih.gov/pubmed/30059952")
                             ,
                             new ConceptDef()
                                 .SetCode("BreastMarker")
@@ -91,16 +104,17 @@ namespace BreastRadiology.XUnitTests
                                 .SetSnomedCode("470272007")
                                 .SetSnomedDescription("PhysicalObject | Implantable lesion localization " +
                                     "marker (Object)")
-                                .SetUMLS("Tissue marker placement after image-guided breast " +
-                                    "biopsy has become a routine component of clinical " +
-                                    "practice. Marker placement distinguishes multiple " +
-                                    "biopsied lesions within the same breast, prevents " +
-                                    "re-biopsy of benign lesions, enables multi-modality " +
+                                .SetUMLS("A breast marker is present in the  breast and is " +
+                                    "viewable on the MRI. Tissue marker placement after " +
+                                    "image-guided breast biopsy has become a routine component " +
+                                    "of clinical practice. Marker placement distinguishes " +
+                                    "multiple biopsied lesions within the same breast, " +
+                                    "prevents re-biopsy of benign lesions, enables multi-modality " +
                                     "correlation, guides pre-operative localization and " +
                                     "helps confirm surgical target removal. Numerous breast " +
                                     "tissue markers are currently available, with varied " +
                                     "shapes, composition, and associated bio-absorbable " +
-                                    "components.")
+                                    "components. www.ncbi.nlm.nih.gov › pubmed")
                             ,
                             new ConceptDef()
                                 .SetCode("BreastMarkers")
@@ -124,7 +138,8 @@ namespace BreastRadiology.XUnitTests
                                     "breast interventionalist with the tissue markers " +
                                     "most widely available in the United States today " +
                                     "and to provide guidance regarding selection of appropriate " +
-                                    "markers for various clinical settings.")
+                                    "markers for various clinical settings. www.ncbi.nlm.nih.gov " +
+                                    "› pubmed")
                             ,
                             new ConceptDef()
                                 .SetCode("CatheterSleeves")
@@ -139,6 +154,9 @@ namespace BreastRadiology.XUnitTests
                                 .SetDefinition("[PR] Chemotherapy port")
                                 .MammoId("592")
                                 .ValidModalities(Modalities.MG)
+                                .SetUMLS("A soft thin tube called a catheter connects the port " +
+                                    "to a large vein for administering chemotherapy is " +
+                                    "present in the MRI/Ultrasound.")
                             ,
                             new ConceptDef()
                                 .SetCode("Clip")
@@ -166,6 +184,9 @@ namespace BreastRadiology.XUnitTests
                                 .ValidModalities(Modalities.MG | Modalities.MRI | Modalities.US)
                                 .SetSnomedCode("470342004")
                                 .SetSnomedDescription("PhysicalObject | Implantable tissue clip (Object)")
+                                .SetUMLS("The coil acts as an antenna to receive the radio " +
+                                    "frequency signal. This is present on the Mammogram, " +
+                                    "MRI and/or Ultrasound.")
                             ,
                             new ConceptDef()
                                 .SetCode("Glass")
@@ -175,6 +196,8 @@ namespace BreastRadiology.XUnitTests
                                 .ValidModalities(Modalities.MG | Modalities.MRI | Modalities.US)
                                 .SetSnomedCode("283258005")
                                 .SetSnomedDescription("ClinicalFinding | Glass in breast (Disorder)")
+                                .SetUMLS("Glass is present in the body and shows up on the " +
+                                    "MRI, Mammogram, and/or Ultrasound.")
                             ,
                             new ConceptDef()
                                 .SetCode("GoldSeed")
@@ -182,6 +205,9 @@ namespace BreastRadiology.XUnitTests
                                 .SetDefinition("[PR] Gold seed")
                                 .MammoId("913")
                                 .ValidModalities(Modalities.MG | Modalities.MRI | Modalities.US)
+                                .SetUMLS("Tiny, gold seeds that are put in and/or around a " +
+                                    "tumor to show exactly where the tumor is are present " +
+                                    "in the ultrasound/MRI.")
                             ,
                             new ConceptDef()
                                 .SetCode("GunshotWound")
@@ -210,6 +236,8 @@ namespace BreastRadiology.XUnitTests
                                 .ValidModalities(Modalities.MG | Modalities.MRI | Modalities.US)
                                 .SetSnomedCode("283169003")
                                 .SetSnomedDescription("ClinicalFinding | Metal foreign body in breast (Disorder)")
+                                .SetUMLS("A piece of metal is present in the body and is viewable " +
+                                    "on the MRI and/or Ultrasound.")
                             ,
                             new ConceptDef()
                                 .SetCode("MetallicMarker")
@@ -220,6 +248,7 @@ namespace BreastRadiology.XUnitTests
                                 .SetSnomedCode("470272007")
                                 .SetSnomedDescription("PhysicalObject | Implantable lesion localization " +
                                     "marker (Object)")
+                                .SetUMLS("A metallic tissue marker is present in the ultrasound/MRI.")
                             ,
                             new ConceptDef()
                                 .SetCode("MetallicMarkers")
@@ -230,6 +259,7 @@ namespace BreastRadiology.XUnitTests
                                 .SetSnomedCode("470272007")
                                 .SetSnomedDescription("PhysicalObject | Implantable lesion localization " +
                                     "marker (Object)")
+                                .SetUMLS("Metallic tissue markers are present in the MRI/Ultrasound.")
                             ,
                             new ConceptDef()
                                 .SetCode("MetallicObjects")
@@ -239,6 +269,8 @@ namespace BreastRadiology.XUnitTests
                                 .ValidModalities(Modalities.MG)
                                 .SetSnomedDescription("ClinicalFinding | 283169003 | Metal foreign body " +
                                     "in breast (Disorder) | [0/0] | S21.009?")
+                                .SetUMLS("The Mammogram suggests a foreign body in the breast " +
+                                    "that appears to be a metallic object.")
                             ,
                             new ConceptDef()
                                 .SetCode("Needle")
@@ -246,6 +278,8 @@ namespace BreastRadiology.XUnitTests
                                 .SetDefinition("[PR] Needle")
                                 .MammoId("597")
                                 .ValidModalities(Modalities.MG)
+                                .SetUMLS("The Mammogram suggests a foreign body in the breast " +
+                                    "that appears to be a needle.")
                             ,
                             new ConceptDef()
                                 .SetCode("NippleJewelry")
@@ -255,6 +289,8 @@ namespace BreastRadiology.XUnitTests
                                 .ValidModalities(Modalities.MG)
                                 .SetSnomedCode("80919006")
                                 .SetSnomedDescription("PhysicalObject | Jewelry (Object)")
+                                .SetUMLS("The Mammogram suggests a foreign body in the breast " +
+                                    "that appears to be a piece of nipple jewelry.")
                             ,
                             new ConceptDef()
                                 .SetCode("Non-metallicBody")
@@ -269,6 +305,8 @@ namespace BreastRadiology.XUnitTests
                                 .SetDefinition("[PR] Pacemaker")
                                 .MammoId("529")
                                 .ValidModalities(Modalities.MG | Modalities.MRI | Modalities.US)
+                                .SetUMLS("A pacemaker is present showing up on the MRI and/or " +
+                                    "Ultrasound.")
                             ,
                             new ConceptDef()
                                 .SetCode("SiliconeGranuloma")
@@ -276,6 +314,13 @@ namespace BreastRadiology.XUnitTests
                                 .SetDefinition("[PR] Silicone granuloma")
                                 .MammoId("520")
                                 .ValidModalities(Modalities.MG | Modalities.MRI | Modalities.US)
+                                .SetUMLS("Silicone granuloma shows up on the MRI and/or Ultrasound. " +
+                                    "Snowball like hyperechogenic axillary lymph nodes " +
+                                    "in a woman with silicone implants removed due to " +
+                                    "complications. Specialty. Dermatology. Silicone granulomas " +
+                                    "are a skin condition that occur as a reaction to " +
+                                    "liquid silicones, and are characterized by the formation " +
+                                    "of nodules.")
                             ,
                             new ConceptDef()
                                 .SetCode("Sponge")
@@ -310,6 +355,9 @@ namespace BreastRadiology.XUnitTests
                                 .MammoId("534")
                                 .ValidModalities(Modalities.MG | Modalities.MRI | Modalities.US)
                                 .SetSnomedDescription("PhysicalObject | 408098004 | Swab (Object")
+                                .SetUMLS("A Retained surgical swab appears to have been idenified " +
+                                    "in the breast during the mammogram, ultrasound and/or " +
+                                    "MRI.")
                             ,
                             new ConceptDef()
                                 .SetCode("TitaniumClip")
@@ -337,6 +385,10 @@ namespace BreastRadiology.XUnitTests
                                 .SetDefinition("[PR] Wire")
                                 .MammoId("518")
                                 .ValidModalities(Modalities.MG | Modalities.MRI | Modalities.US)
+                                .SetUMLS("Guidewire is present in the body.  It is viewable " +
+                                    "in the MRI and/or Ultrasound. Guidewire is used during " +
+                                    "medical procedures such as biopsy or placement of " +
+                                    "medical devices such as a catheter or pacemaker.")
                             ,
                             new ConceptDef()
                                 .SetCode("WireFragment")
@@ -344,6 +396,11 @@ namespace BreastRadiology.XUnitTests
                                 .SetDefinition("[PR] Wire fragment")
                                 .MammoId("527")
                                 .ValidModalities(Modalities.MG | Modalities.MRI | Modalities.US)
+                                .SetUMLS("A fragment of a guidewire is present in the body. " +
+                                    "It is viewable in the MRI and/or Ultrasound.  Guidewire " +
+                                    "is used during medical procedures such as a biopsy " +
+                                    "or  placement of medical devices such as a catheter " +
+                                    "or pacemaker.")
                              //- Type
                          })
              );

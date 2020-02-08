@@ -29,7 +29,6 @@
         private void InitializeComponent()
         {
             this.Merge = new System.Windows.Forms.Button();
-            this.btnCleanup = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // Merge
@@ -42,22 +41,11 @@
             this.Merge.UseVisualStyleBackColor = true;
             this.Merge.Click += new System.EventHandler(this.Merge_Click);
             // 
-            // btnCleanup
-            // 
-            this.btnCleanup.Location = new System.Drawing.Point(12, 98);
-            this.btnCleanup.Name = "btnCleanup";
-            this.btnCleanup.Size = new System.Drawing.Size(215, 23);
-            this.btnCleanup.TabIndex = 1;
-            this.btnCleanup.Text = "Cleanup";
-            this.btnCleanup.UseVisualStyleBackColor = true;
-            this.btnCleanup.Click += new System.EventHandler(this.btnCleanup_Click);
-            // 
             // GGMerge
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(239, 218);
-            this.Controls.Add(this.btnCleanup);
             this.Controls.Add(this.Merge);
             this.Name = "GGMerge";
             this.Text = "Form1";
@@ -69,7 +57,6 @@
         #endregion
 
         private System.Windows.Forms.Button Merge;
-        private System.Windows.Forms.Button btnCleanup;
     }
 }
 

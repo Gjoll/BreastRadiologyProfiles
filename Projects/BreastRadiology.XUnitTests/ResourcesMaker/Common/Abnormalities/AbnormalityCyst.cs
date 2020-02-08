@@ -45,11 +45,14 @@ namespace BreastRadiology.XUnitTests
                              .ValidModalities(Modalities.MG | Modalities.US)
                              .SetSnomedCode("449837001")
                              .SetSnomedDescription("ClinicalFinding | Complex cyst of breast (Disorder)")
-                             .SetUMLS("Refers to cysts that contain something more than " +
-                                 "clear fluid. A complex breast cyst contains solid " +
-                                 "elements suspended within the fluid, and may also " +
-                                 "feature segmentation (septation) and some regions " +
-                                 "of the cyst wall that are ‘thicker‘ than others.")
+                             .SetUMLS("Complex cysts have irregular or scalloped borders, " +
+                                 "thick walls, and some evidence of solid areas and/or " +
+                                 "debris in the fluid. These solid areas echo back " +
+                                 "the sound waves from the ultrasound. A complex cyst " +
+                                 "is sometimes aspirated, or drained with a fine needle, " +
+                                 "so that the fluid inside can be tested. If blood " +
+                                 "or any unusual cells are present, further testing " +
+                                 "may be needed to rule out breast cancer. https://www.breastcancer.org/symptoms/benign/cysts")
                          ,
                          new ConceptDef()
                              .SetCode("CystComplicated")
@@ -57,14 +60,12 @@ namespace BreastRadiology.XUnitTests
                              .SetDefinition("[PR] Cyst complicated")
                              .MammoId("657")
                              .ValidModalities(Modalities.MG | Modalities.US)
-                             .SetUMLS("Complicated cysts are \"in between\" a simple cyst and " +
-                                 "a complex cyst. A complicated breast cyst contains " +
-                                 "solid elements suspended within the fluid, and may " +
-                                 "also feature segmentation (septation) and some regions " +
-                                 "of the cyst wall that are ‘thicker‘ than others. " +
-                                 "Complicated breast cysts are one of the cystic breast " +
-                                 "lesions that show intracystic debris which may imitate " +
-                                 "a solid mass appearance.")
+                             .SetUMLS("Complicated cysts are \"in between\" simple and complex. " +
+                                 "Although they share most of the features of simple " +
+                                 "cysts, they tend to have some debris inside them " +
+                                 "and echo back some of the ultrasound waves. However, " +
+                                 "they don’t have the thick walls or obvious solid " +
+                                 "components that a complex cyst has. https://www.breastcancer.org/symptoms/benign/cysts")
                          ,
                          new ConceptDef()
                              .SetCode("CystMicro")

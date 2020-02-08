@@ -118,12 +118,12 @@ namespace BreastRadiology.Shared
                 switch (newRow[this.idMammoCol])
                 {
                     case DBNull dbNullValue:
-                        key = $"Row{rowIndex}";
+                        newRow[this.idMammoCol] = key = $"Row{rowIndex}";
                         break;
                     default:
                         key = newRow[this.idMammoCol].ToString();
                         if (key.ToUpper().StartsWith("X"))
-                            key = $"Row{rowIndex}";
+                            newRow[this.idMammoCol] = key = $"Row{rowIndex}";
                         break;
                 }
                 if (rows.ContainsKey(key))

@@ -52,10 +52,14 @@ namespace BreastRadiology.XUnitTests
                                 .ValidModalities(Modalities.MG | Modalities.MRI | Modalities.NM | Modalities.US)
                                 .SetSnomedDescription("Procedure | 420131003 | Fluoroscopic mammary ductography " +
                                     "(Procedure)")
-                                .SetUMLS("A medical imaging used to view breast ducts. It can " +
-                                    "aid in diagnosing the cause of an abnormal nipple " +
-                                    "discharge and is valuable in diagnosing intraductal " +
-                                    "papillomas and other conditions.")
+                                .SetUMLS("Breast ductography (a.k.a. galactography) is an imaging " +
+                                    "technique which is used to evaluate lesions causing " +
+                                    "nipple discharge. It helps in precisely locating " +
+                                    "the mass within breast tissue and gives useful information " +
+                                    "for surgical approach and planning.A blunt-tipped " +
+                                    "sialogram needle (30-gauge) is used for performing " +
+                                    "the ductogram. The abnormal duct is identified and " +
+                                    "cannulated. https://radiopaedia.org/articles/breast-ductography-1?lang=us")
                             ,
                             new ConceptDef()
                                 .SetCode("Mammogram")

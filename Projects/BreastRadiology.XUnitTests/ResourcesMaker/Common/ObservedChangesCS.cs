@@ -35,7 +35,6 @@ namespace BreastRadiology.XUnitTests
                              .SetSnomedCode("129727007")
                              .SetSnomedDescription("ClinicalFinding | Decrease in number of calcifications " +
                                  "since previous mammogram (Finding)")
-                             .SetUMLS("C1268655")
                          ,
                          new ConceptDef()
                              .SetCode("DecreaseInNumber")
@@ -45,6 +44,8 @@ namespace BreastRadiology.XUnitTests
                              .ValidModalities(Modalities.MG)
                              .SetSnomedDescription("ClinicalFinding | 42915007 | Abnormal decrease in " +
                                  "number (Finding)")
+                             .SetUMLS("There is a decrease in the number of calcifications " +
+                                 "found in this mammogram versus the prior mammogram.")
                          ,
                          new ConceptDef()
                              .SetCode("DecreaseInSize")
@@ -55,7 +56,6 @@ namespace BreastRadiology.XUnitTests
                              .SetDicom("M-02530")
                              .SetSnomedCode("19776001")
                              .SetSnomedDescription("ClinicalFinding | 19776001 | Decreased size (Finding)")
-                             .SetUMLS("C0332511")
                          ,
                          new ConceptDef()
                              .SetCode("IncreaseInCalcifications")
@@ -67,7 +67,6 @@ namespace BreastRadiology.XUnitTests
                              .SetSnomedCode("129726003")
                              .SetSnomedDescription("ClinicalFinding | Increase in number of calcifications " +
                                  "since previous mammogram (Finding)")
-                             .SetUMLS("C1268654")
                          ,
                          new ConceptDef()
                              .SetCode("IncreaseInNumber")
@@ -77,6 +76,8 @@ namespace BreastRadiology.XUnitTests
                              .ValidModalities(Modalities.MG)
                              .SetSnomedDescription("ClinicalFinding | 61515005 | Abnormal increase in " +
                                  "number (Finding)")
+                             .SetUMLS("There is an increase in the number of calcifications " +
+                                 "found in this mammogram versus the prior mammogram.")
                          ,
                          new ConceptDef()
                              .SetCode("IncreaseInSize")
@@ -87,7 +88,6 @@ namespace BreastRadiology.XUnitTests
                              .SetDicom("M-02520")
                              .SetSnomedCode("15454001")
                              .SetSnomedDescription("ClinicalFinding | 15454001 | Increased size (Finding)")
-                             .SetUMLS("C0332509")
                          ,
                          new ConceptDef()
                              .SetCode("LessProminent")
@@ -99,7 +99,6 @@ namespace BreastRadiology.XUnitTests
                              .SetSnomedCode("129728002")
                              .SetSnomedDescription("ClinicalFinding | 129728002 | Finding less well defined " +
                                  "since previous mammogram (Finding)")
-                             .SetUMLS("C1268656")
                          ,
                          new ConceptDef()
                              .SetCode("MoreProminent")
@@ -111,7 +110,6 @@ namespace BreastRadiology.XUnitTests
                              .SetSnomedCode("129729005")
                              .SetSnomedDescription("ClinicalFinding | 129729005 | Finding more defined " +
                                  "since previous mammogram (Finding)")
-                             .SetUMLS("C1268657")
                          ,
                          new ConceptDef()
                              .SetCode("New")
@@ -123,7 +121,6 @@ namespace BreastRadiology.XUnitTests
                              .SetSnomedCode("129721008")
                              .SetSnomedDescription("ClinicalFinding | 129721008 | New finding since previous " +
                                  "mammogram (Finding)")
-                             .SetUMLS("C1268649")
                          ,
                          new ConceptDef()
                              .SetCode("NoLongerSeen")
@@ -131,6 +128,8 @@ namespace BreastRadiology.XUnitTests
                              .SetDefinition("[PR] No longer seen")
                              .MammoId("296")
                              .ValidModalities(Modalities.MG | Modalities.MRI | Modalities.US)
+                             .SetUMLS("The lesion or mass is no longer seen from previous " +
+                                 "Mammogram, Ultrasound and/or MRI.")
                          ,
                          new ConceptDef()
                              .SetCode("NotSignificantChanged")
@@ -142,7 +141,6 @@ namespace BreastRadiology.XUnitTests
                              .SetSnomedCode("129723006")
                              .SetSnomedDescription("ClinicalFinding | 129723006 | No significant change " +
                                  "since previous mammogram (Finding)")
-                             .SetUMLS("C1268651")
                          ,
                          new ConceptDef()
                              .SetCode("PartiallyRemoved")
@@ -154,7 +152,6 @@ namespace BreastRadiology.XUnitTests
                              .SetSnomedCode("129722001")
                              .SetSnomedDescription("ClinicalFinding | 129722001 | Finding partially removed " +
                                  "since previous mammogram (Finding)")
-                             .SetUMLS("C1268650")
                          ,
                          new ConceptDef()
                              .SetCode("RepresentsChange")
@@ -169,6 +166,8 @@ namespace BreastRadiology.XUnitTests
                              .SetDefinition("[PR] Stable")
                              .MammoId("297")
                              .ValidModalities(Modalities.MG | Modalities.MRI | Modalities.US)
+                             .SetUMLS("The condition has remained stable since the last " +
+                                 "Mammogram, Ultrasound, MRI or Nuclear Medicine exam.")
                          //- Codes
                       }));
 
