@@ -47,7 +47,7 @@ namespace BreastRadiology.XUnitTests
 
         public const String Group_ExtensionResources = "ExtensionResources";
 
-        public static String BiRadCitation = "Bi-Rads® Atlas — Mammography Fifth Ed. 2013";
+        public static String BiRadCitation = "-- Bi-Rads® Atlas — Mammography Fifth Ed. 2013";
         //#const FHIRVersion FVersion = FHIRVersion.N4_0_0;
 
         const String ProfileVersion = "0.0.2";

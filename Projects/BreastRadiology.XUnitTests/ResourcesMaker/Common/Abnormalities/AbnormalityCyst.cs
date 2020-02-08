@@ -27,71 +27,70 @@ namespace BreastRadiology.XUnitTests
                          new ConceptDef()
                              .SetCode("Cyst")
                              .SetDisplay("Cyst")
-                             .SetDefinition("[PR] Cyst")
                              .MammoId("69")
                              .ValidModalities(Modalities.MG | Modalities.MRI | Modalities.US)
                              .SetSnomedCode("399294002")
                              .SetSnomedDescription("ClinicalFinding |Cyst of breast (Disorder)")
                              .SetUMLS("A cyst is a sac-like pocket of membranous tissue " +
-                                 "that contains fluid, air, or other substances. Cysts " +
-                                 "can grow almost anywhere in your body or under your " +
-                                 "skin.")
+                                 "that contains fluid, air, or other substances. ",
+                                 "Cysts can grow almost anywhere in your body or under " +
+                                 "your skin.")
                          ,
                          new ConceptDef()
                              .SetCode("CystComplex")
                              .SetDisplay("Cyst complex")
-                             .SetDefinition("[PR] Cyst complex")
                              .MammoId("610")
                              .ValidModalities(Modalities.MG | Modalities.US)
                              .SetSnomedCode("449837001")
                              .SetSnomedDescription("ClinicalFinding | Complex cyst of breast (Disorder)")
                              .SetUMLS("Complex cysts have irregular or scalloped borders, " +
                                  "thick walls, and some evidence of solid areas and/or " +
-                                 "debris in the fluid. These solid areas echo back " +
-                                 "the sound waves from the ultrasound. A complex cyst " +
-                                 "is sometimes aspirated, or drained with a fine needle, " +
-                                 "so that the fluid inside can be tested. If blood " +
-                                 "or any unusual cells are present, further testing " +
-                                 "may be needed to rule out breast cancer. https://www.breastcancer.org/symptoms/benign/cysts")
+                                 "debris in the fluid. ",
+                                 "These solid areas echo back the sound waves from " +
+                                 "the ultrasound. ",
+                                 "A complex cyst is sometimes aspirated, or drained " +
+                                 "with a fine needle, so that the fluid inside can " +
+                                 "be tested. ",
+                                 "If blood or any unusual cells are present, further " +
+                                 "testing may be needed to rule out breast cancer. ",
+                                 "###URL#https://www.breastcancer.org/symptoms/benign/cysts")
                          ,
                          new ConceptDef()
                              .SetCode("CystComplicated")
                              .SetDisplay("Cyst complicated")
-                             .SetDefinition("[PR] Cyst complicated")
                              .MammoId("657")
                              .ValidModalities(Modalities.MG | Modalities.US)
-                             .SetUMLS("Complicated cysts are \"in between\" simple and complex. " +
+                             .SetUMLS("Complicated cysts are \"in between\" simple and complex. ",
                                  "Although they share most of the features of simple " +
                                  "cysts, they tend to have some debris inside them " +
-                                 "and echo back some of the ultrasound waves. However, " +
-                                 "they don’t have the thick walls or obvious solid " +
-                                 "components that a complex cyst has. https://www.breastcancer.org/symptoms/benign/cysts")
+                                 "and echo back some of the ultrasound waves. ",
+                                 "However, they don’t have the thick walls or obvious " +
+                                 "solid components that a complex cyst has. ",
+                                 "###URL#https://www.breastcancer.org/symptoms/benign/cysts")
                          ,
                          new ConceptDef()
                              .SetCode("CystMicro")
                              .SetDisplay("Cyst micro")
-                             .SetDefinition("[PR] Cyst micro")
                              .MammoId("617")
                              .ValidModalities(Modalities.US)
                              .SetUMLS("Is a sac-like pocket of tissue that contains fluid, " +
-                                 "air, or other substances. A Microcyst is small and " +
-                                 "less than 2-3 mm. They are often in clusters and " +
-                                 "only show up on a mammogram or ultrasound.")
+                                 "air, or other substances. ",
+                                 "A Microcyst is small and less than 2-3 mm. ",
+                                 "They are often in clusters and only show up on a " +
+                                 "mammogram or ultrasound.")
                          ,
                          new ConceptDef()
                              .SetCode("CystOil")
                              .SetDisplay("Cyst oil")
-                             .SetDefinition("[PR] Cyst oil")
                              .MammoId("636")
                              .ValidModalities(Modalities.MG | Modalities.US)
                              .SetUMLS("Oil cysts are filled with fluid that may feel smooth " +
-                                 "and soft/squishy. They are caused by the breakdown " +
-                                 "of fatty tissue.")
+                                 "and soft/squishy. ",
+                                 "They are caused by the breakdown of fatty tissue.")
                          ,
                          new ConceptDef()
                              .SetCode("CystSimple")
                              .SetDisplay("Cyst simple")
-                             .SetDefinition("[PR] Cyst simple")
                              .MammoId("609")
                              .ValidModalities(Modalities.MG | Modalities.US)
                              .SetSnomedCode("399253005")
@@ -102,13 +101,12 @@ namespace BreastRadiology.XUnitTests
                          new ConceptDef()
                              .SetCode("CystWithDebris")
                              .SetDisplay("Cyst with debris")
-                             .SetDefinition("[PR] Cyst with debris")
                              .MammoId("661")
                              .ValidModalities(Modalities.MG | Modalities.US)
-                             .SetUMLS("A cyst that is filled with debris and fluid substance. " +
+                             .SetUMLS("A cyst that is filled with debris and fluid substance. ",
                                  "It Is either considered a complex or complicated " +
-                                 "cyst. The type of debris determines what kind of " +
-                                 "cyst.")
+                                 "cyst. ",
+                                 "The type of debris determines what kind of cyst.")
                          //- Type
                          }
                      )

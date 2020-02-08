@@ -21,32 +21,5 @@
   "description": "Mammography density code system.",
   "caseSensitive": true,
   "content": "complete",
-  "count": 5,
-  "concept": [
-    {
-      "code": "CentralLucent",
-      "display": "Central lucent",
-      "definition": "[PR] Central lucent\r\nThese are round or oval calcifications that range from under 1 mm to over a centimeter.\r\r\nThey are the result of fat necrosis, calcified debris in ducts, and occasional fibroadenomas. \r\r\n-- https://radiologyassistant.nl/breast/breast-calcifications-differential-diagnosis#benign-calcifications-lucent-centered\r\nValid for the following modalities: MG."
-    },
-    {
-      "code": "EqualDensity",
-      "display": "Equal density",
-      "definition": "[PR] Equal density\r\n\r\n[Bi-Rads® Atlas — Mammography Fifth Ed. 2013]\r\n(historically, \"isodense\")X-ray attenuation of the mass is the same as the expected attenuation of an equal volume offibroglandular breast tissue.\r\nValid for the following modalities: MG."
-    },
-    {
-      "code": "FatContaining",
-      "display": "Fat containing",
-      "definition": "[PR] Fat containing\r\n\r\n[Bi-Rads® Atlas — Mammography Fifth Ed. 2013]\r\nThis includes all masses containing fat, such as oil cyst, lipoma or galactocele, as well as mixeddensity masses such as hamartoma. A fat-containing mass will almost always represent abenign mass.\r\nValid for the following modalities: MG."
-    },
-    {
-      "code": "HighDensity",
-      "display": "High density",
-      "definition": "[PR] High density\r\nYour breast tissue may be called dense if you have a lot of fibrous or glandular \r\r\ntissue and not much fat in the breasts. \r\r\nHaving dense breast tissue is common. \r\r\nSome women have more dense breast tissue than others. \r\r\n-- https://www.cancer.org/cancer/breast-cancer/screening-tests-and-early-detection/mammograms/breast-density-and-your-mammogram-report.html\r\n[Bi-Rads® Atlas — Mammography Fifth Ed. 2013]\r\nX-ray attenuation of the mass is greater than the expected attenuation of an equal volume offibroglandular breast tissue.\r\nValid for the following modalities: MG."
-    },
-    {
-      "code": "LowDensity",
-      "display": "Low density",
-      "definition": "[PR] Low density\r\n\r\n[Bi-Rads® Atlas — Mammography Fifth Ed. 2013]\r\nX-ray attenuation of the mass is less than the expected attenuation of an equal volume offibroglandular breast tissue. A low density mass may be a group of microcysts. If such a findingis identified at mammography, it may very well not be malignant but appropriately maybe worked up.\r\nValid for the following modalities: MG."
-    }
-  ]
+  "count": 0
 }

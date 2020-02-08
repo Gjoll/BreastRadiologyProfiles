@@ -21,32 +21,5 @@
   "description": "Shape values code system.",
   "caseSensitive": true,
   "content": "complete",
-  "count": 5,
-  "concept": [
-    {
-      "code": "IrregularInShape",
-      "display": "Irregular in shape",
-      "definition": "[PR] Irregular in shape\r\nA mass that can't be characterized by any specific shape. \r\r\n\r\n[Bi-Rads® Atlas — Mammography Fifth Ed. 2013]\r\nThe shape is neither round nor oval.For mammography, use of this descriptor usually implies a suspicious finding.\r\nValid for the following modalities: MG US MRI."
-    },
-    {
-      "code": "LobulatedInShape",
-      "display": "Lobulated in shape",
-      "definition": "[PR] Lobulated in shape\r\nA mass that has an undulating  (having a smoothly rising and falling form or outline) \r\r\ncontour. \r\r\n\r\nValid for the following modalities: MG US MRI."
-    },
-    {
-      "code": "OvalInShape",
-      "display": "Oval in shape",
-      "definition": "[PR] Oval in shape\r\nA mass that is elliptical or egg-shaped. \r\r\n\r\n[Bi-Rads® Atlas — Mammography Fifth Ed. 2013]\r\nA mass\r\nValid for the following modalities: MG US MRI."
-    },
-    {
-      "code": "Reniform",
-      "display": "Reniform",
-      "definition": "[PR] Reniform\r\n\r\n[Bi-Rads® Atlas — Mammography Fifth Ed. 2013]\r\nis a three-dimensional lesion that occupies a space within the breast.\r\nValid for the following modalities: MG."
-    },
-    {
-      "code": "RoundInShape",
-      "display": "Round in shape",
-      "definition": "[PR] Round in shape\r\nA mass that is spherical, ball-shaped, circular or global. \r\r\n\r\n[Bi-Rads® Atlas — Mammography Fifth Ed. 2013]\r\nJust as in mammography and ultrasound, we look at its shape, its margins and its internal characteristics: this includes its T1- and T2-characteristics as well its enhancement pattern.\r\nValid for the following modalities: MG US MRI."
-    }
-  ]
+  "count": 0
 }

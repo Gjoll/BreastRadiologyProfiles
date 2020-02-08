@@ -1,6 +1,7 @@
 ﻿using Hl7.Fhir.Model;
 using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Text;
 
 namespace BreastRadiology.XUnitTests
@@ -24,16 +25,21 @@ namespace BreastRadiology.XUnitTests
 
                 AppendDefLines(this.definitionText);
 
-                if (ResourcesMaker.Self.Data.SelectRow(this.mammoId) == true)
-                {
-                    String[] description = ResourcesMaker.Self.Data.UMLS.Split('\n');
-                    AppendDefLines(description);
-                }
+                //if (ResourcesMaker.Self.Data.SelectRow(this.mammoId) == true)
+                //{
+                //    String[] description = ResourcesMaker.Self.Data.UMLS.Split('\n');
+                //    AppendDefLines(description);
+                //}
 
-                if (this.biRadsText != null)
+                if (this.umlsText!= null)
                 {
-                    sb.AppendLine($"[{ResourcesMaker.BiRadCitation}]");
+                    string text = this.FormatUmls(this.umlsText.ToList());
+                    sb.AppendLine(text);
+                }
+                else if (this.biRadsText != null)
+                {
                     AppendDefLines(this.biRadsText);
+                    sb.AppendLine($"[{ResourcesMaker.BiRadCitation}]");
                 }
 
                 if (String.IsNullOrEmpty(this.modalities) == false)
@@ -45,10 +51,62 @@ namespace BreastRadiology.XUnitTests
 
         String[] definitionText;
         String[] biRadsText;
+        String[] umlsText;
         String mammoId = null;
 
         public ConceptDef()
         {
+        }
+
+        private String FormatUmls(List<String> lines)
+        {
+            StringBuilder sb = new StringBuilder();
+            void CopyLines(Int32 count)
+            {
+                for (Int32 i = 0; i < count; i++)
+                    sb.AppendLine(lines[i]);
+            }
+
+            if (lines.Count > 0)
+                while ((lines.Count > 0) && String.IsNullOrWhiteSpace(lines[^1]))
+                    lines.RemoveAt(lines.Count - 1);
+            if (lines.Count == 0)
+                return "";
+
+            String lastLine = lines[^1];
+            if (lastLine.StartsWith("###") == false)
+            {
+                CopyLines(lines.Count);
+                return sb.ToString();
+            }
+
+            void AcrCitation(String name, String page)
+            {
+                sb.Append($"-- {name}");
+                if (String.IsNullOrEmpty(page) == false)
+                    sb.Append($"#{page}");
+                sb.AppendLine("");
+            }
+
+            CopyLines(lines.Count - 1);
+            lastLine = lastLine.Substring(3);
+            Int32 index = lastLine.IndexOf('#');
+            String citationType = lastLine.Substring(0, index);
+            String page = lastLine.Substring(index + 1);
+            switch (citationType)
+            {
+                case "URL":
+                    String hRef = lastLine.Substring(index + 1);
+                    sb.Append($"-- {hRef}");
+                    break;
+                case "ACRUS":
+                    AcrCitation("Breast Imaging Reporting and Data System—Mammography, Fifth Edition", page);
+                    break;
+                case "ACRMG":
+                    AcrCitation("Breast Imaging Reporting and Data System—Ultrasound, Second Edition", page);
+                    break;
+            }
+            return sb.ToString();
         }
 
         public ConceptDef SetCode(String code, String display)
@@ -110,14 +168,6 @@ namespace BreastRadiology.XUnitTests
         {
 
             this.biRadsText = lines;
-            //if (String.IsNullOrEmpty((this.mammoId)))
-            //{
-            //    ResourcesMaker.Self.ConversionWarn("ConceptDef",
-            //        "BiRadsDef",
-            //        "ACR text with no MammoId!");
-            //}
-            //else
-            //    ResourcesMaker.Self.Data.BreastData.PatchACRText(this.mammoId, lines);
             return this;
         }
 
@@ -152,10 +202,10 @@ namespace BreastRadiology.XUnitTests
             return this;
         }
 
-        public ConceptDef SetUMLS(String value)
+        public ConceptDef SetUMLS(params String[] value)
         {
+            this.umlsText = value;
             return this;
         }
-
     }
 }

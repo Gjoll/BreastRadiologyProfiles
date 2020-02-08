@@ -179,7 +179,7 @@ namespace BreastRadiology.XUnitTests
                         .AppendLine($"new ConceptDef()")
                         .AppendLine($"    .SetCode(\"{conceptBlockName}\")")
                         .AppendLine($"    .SetDisplay(\"{code}\")")
-                        .AppendLine($"    .SetDefinition(\"[PR] {code}\")")
+                        //.AppendLine($"    .SetDefinition(\"[PR] {code}\")")
                         .AppendLine($"    .MammoId(\"{penId}\")")
                         .AppendLine($"    .ValidModalities({validWith})")
                         ;
@@ -357,7 +357,7 @@ namespace BreastRadiology.XUnitTests
                     .AppendLine($"new ConceptDef()")
                     .AppendLine($"    .SetCode(\"{conceptBlockName}\")")
                     .AppendLine($"    .SetDisplay(\"{code}\")")
-                    .AppendLine($"    .SetDefinition(\"[PR] {code}\")")
+                    //.AppendLine($"    .SetDefinition(\"[PR] {code}\")")
                     .AppendLine($"    .MammoId(\"{penId}\")")
                     .AppendLine($"    .ValidModalities({validWith})")
                     ;
@@ -383,9 +383,9 @@ namespace BreastRadiology.XUnitTests
 
             bool IsMatch(DataRow dr)
             {
-                if (dr[6].ToString() != listBoxName)
+                if (dr[this.spreadSheetData.listBoxNameCol].ToString() != listBoxName)
                     return false;
-                if (dr[7].ToString() != structure)
+                if (dr[this.spreadSheetData.itemNameCol].ToString() != structure)
                     return false;
                 return true;
             }
@@ -569,6 +569,8 @@ namespace BreastRadiology.XUnitTests
         public void WriteCode()
         {
             this.ReadGregDS();
+
+            WriteIds(@"Common\PreviouslyDemonstratedBy.cs", "Codes", Filter("Dem. By Prior", "previous demostrated by"));
 
             WriteIds(@"Common\Abnormalities\AbnormalityCyst.cs", "Type", "69", "610", "657", "617", "636", "609", "661");
             WriteIds(@"Common\Abnormalities\AbnormalityDuct.cs", "Type", "694.602", "693.614");
