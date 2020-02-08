@@ -162,18 +162,18 @@ namespace BreastRadiology.XUnitTests
             for (Int32 i = 1; i < dataTbl.Rows.Count; i++)
             {
                 DataRow row = dataTbl.Rows[i];
-                String code = row[7].ToString();
+                String code = row[this.spreadSheetData.itemNameCol].ToString();
                 if (itemsToIgnore.Contains(code.Trim().ToUpper()) == false)
                 {
-                    String validWith = App("", row[0], "MG");
+                    String validWith = App("", row[this.spreadSheetData.mgCol], "MG");
                     ;
-                    validWith = App(validWith, row[1], "MRI");
-                    validWith = App(validWith, row[2], "NM");
-                    validWith = App(validWith, row[3], "US");
+                    validWith = App(validWith, row[this.spreadSheetData.mriCol], "MRI");
+                    validWith = App(validWith, row[this.spreadSheetData.nmCol], "NM");
+                    validWith = App(validWith, row[this.spreadSheetData.usCol], "US");
 
                     String conceptBlockName = CodeValue(code);
 
-                    String penId = row[4].ToString();
+                    String penId = row[this.spreadSheetData.idMammoCol].ToString();
 
                     concepts
                         .AppendLine($"new ConceptDef()")
@@ -347,11 +347,11 @@ namespace BreastRadiology.XUnitTests
                     }
                 }
 
-                String validWith = App("", row[1], "MG");
+                String validWith = App("", row[this.spreadSheetData.mgCol], "MG");
                 ;
-                validWith = App(validWith, row[2], "MRI");
-                validWith = App(validWith, row[3], "NM");
-                validWith = App(validWith, row[4], "US");
+                validWith = App(validWith, row[this.spreadSheetData.mriCol], "MRI");
+                validWith = App(validWith, row[this.spreadSheetData.nmCol], "NM");
+                validWith = App(validWith, row[this.spreadSheetData.usCol], "US");
 
                 concepts
                     .AppendLine($"new ConceptDef()")
@@ -584,6 +584,7 @@ namespace BreastRadiology.XUnitTests
             WriteIds(@"Common\NotPreviouslySeenCS.cs", "Codes", Filter("Not Prev Seen On", "not previous seen"));
             WriteIds(@"Common\MarginCS.cs", "Codes", Filter("Profile Abnormality", "margin"));
             WriteIds(@"Common\OrientationCS.cs", "Codes", Filter("Size and Distance", "Orientation"));
+            WriteIds(@"Common\PreviouslyDemonstratedBy.cs", "Codes", Filter("Dem. By Prior", "previous demostrated by"));
             WriteIds(@"Common\ShapeCS.cs", "Codes", Filter("Profile Abnormality", "shape"));
             WriteIds(@"Common\ObservedChangesCS.cs", "Codes", Filter("Change From Prior", "Change From Prior"));
             WriteIds(@"Common\CalcificationDistributionCS.cs", "Codes", Filter("Assoc Calcs distribution", "calcification distribution"));
