@@ -208,6 +208,13 @@ namespace BreastRadiology.XUnitTests
             Int32 len = 0;
 
             StringBuilder sb = new StringBuilder();
+
+            void PutEoln()
+            {
+                sb.Append("\",\n\"");
+                len = 0;
+            }
+
             sb.Append("\"");
             while (i < text.Length)
             {
@@ -229,13 +236,20 @@ namespace BreastRadiology.XUnitTests
                     case '\r':
                         break;
 
-                    case '\n':
-                        if (len > 0)
+                    case '.':
+                        Add(c);
+                        if ((i < text.Length) && (text[i] == ' '))
                         {
-                            sb.Append("\",\n\"");
-                            len = 0;
+                            i += 1;
+                            Add(' ');
+                            PutEoln();
                         }
 
+                        break;
+
+                    case '\n':
+                        if (len > 0)
+                            PutEoln();
                         break;
 
                     case ' ':
@@ -384,7 +398,73 @@ namespace BreastRadiology.XUnitTests
             return retVal.ToArray();
         }
 
+        List<String> FormatText(String text)
+        {
+            const Int32 Maxlen = 80;
+            Int32 i = 0;
+            Int32 len = 0;
 
+            StringBuilder sb = new StringBuilder();
+
+            void PutEoln()
+            {
+                sb.Append("\n");
+                len = 0;
+            }
+
+            while (i < text.Length)
+            {
+                void Add(Char c)
+                {
+                    sb.Append(c);
+                    len += 1;
+                }
+
+                Char c = text[i++];
+                switch (c)
+                {
+                    case '“':
+                    case '”':
+                    case '\"':
+                        sb.Append("\"");
+                        break;
+
+                    case '\r':
+                        break;
+
+                    case '.':
+                        Add(c);
+                        if ((i < text.Length) && (text[i] == ' '))
+                        {
+                            i += 1;
+                            Add(' ');
+                            PutEoln();
+                        }
+
+                        break;
+
+                    case '\n':
+                        if (len > 0)
+                            PutEoln();
+                        break;
+
+                    case ' ':
+                        Add(c);
+                        if (len > Maxlen)
+                            PutEoln();
+
+                        break;
+
+                    default:
+                        Add(c);
+                        break;
+                }
+            }
+            List<String> retVal = sb.ToString().Split('\n').ToList();
+            while ((retVal.Count > 0) && (String.IsNullOrWhiteSpace(retVal[^1])))
+                retVal.RemoveAt(retVal.Count - 1);
+            return retVal;
+        }
         [TestMethod]
         public void Cleanup()
         {
@@ -401,13 +481,73 @@ namespace BreastRadiology.XUnitTests
                 return true;
             }
 
+            bool FixCitations(String text, out String text2, out String citation)
+            {
+                bool FindAnchor(String anchor, out String t2, out String c)
+                {
+                    t2 = null;
+                    c = null;
+                    Int32 i = text.ToUpper().IndexOf(anchor);
+                    if (i < 0)
+                        return false;
+                    t2 = text.Substring(0, i);
+                    c = text.Substring(i).Trim();
+                    return true;
+                }
+
+                if (FindAnchor("HTTP://", out text2, out citation))
+                {
+                    citation = $"###URL#{citation}";
+                }
+                else if (FindAnchor("HTTPS://", out text2, out citation))
+                {
+                    citation = $"###URL#{citation}";
+                    return true;
+                }
+                else if (FindAnchor("FIFTH EDITION", out text2, out citation))
+                {
+                    Int32 index = citation.ToUpper().IndexOf("PG");
+                    if (index > 0)
+                        citation = $"###ACRMG#{citation.Substring(index + 2).Trim()}";
+                    else
+                        citation = $"###ACRUS#";
+                    return true;
+                }
+                else if (FindAnchor("SECOND ADDITION", out text2, out citation))
+                {
+                    String name;
+                    if (citation.Contains("Ultrasound"))
+                        name = "ACRUS";
+                    else if (citation.Contains("Magnetic Resonance Imaging"))
+                        name = "ACRMRI";
+                    else
+                        Debugger.Break();
+
+                    Int32 index = citation.ToUpper().IndexOf("PG");
+                    if (index > 0)
+                        citation = $"###ACRUS#{citation.Substring(index+2).Trim()}";
+                    else
+                        citation = $"###ACRUS#";
+                    return true;
+                }
+                return false;
+            }
+
             void CleanupUMLS(DataRow row)
             {
                 String text = row[source.umlsCol].ToString();
                 if (IsGargage(text))
                     text = "";
 
-                row[source.umlsCol] = text;
+                if (FixCitations(text, out String text2, out String citation) == true)
+                    text = text2;
+                List<String> lines = FormatText(text).ToList();
+                StringBuilder sb = new StringBuilder();
+                for (Int32 i = 0; i < lines.Count; i++)
+                    sb.AppendLine(lines[i]);
+                if (String.IsNullOrEmpty(citation) == false) 
+                    sb.AppendLine(citation);
+                row[source.umlsCol] = sb.ToString();
             }
 
             String baseDir = DirHelper.FindParentDir("BreastRadiologyProfiles");
