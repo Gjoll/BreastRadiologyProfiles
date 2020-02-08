@@ -195,41 +195,12 @@ namespace BreastRadiology.XUnitTests
                                     "that make up the skin or the tissue lining organs.")
                             ,
                             new ConceptDef()
-                                .SetCode("Carcinoma")
-                                .SetDisplay("Carcinoma")
-                                .MammoId("542")
-                                .ValidModalities(Modalities.MRI)
-                                .SetUMLS("Carcinoma is a type of cancer that starts in cells " +
-                                    "that make up the skin or the tissue lining organs")
-                            ,
-                            new ConceptDef()
                                 .SetCode("CarcinomaKnown")
                                 .SetDisplay("Carcinoma known")
                                 .MammoId("510")
                                 .ValidModalities(Modalities.MG | Modalities.MRI | Modalities.US)
                                 .SetSnomedDescription("ClinicalFinding | 254838004 | Carcinoma of breast " +
                                     "(Disorder) | [4/33] | C50.929")
-                                .SetUMLS("Imaging tests used in diagnosing cancer may include " +
-                                    "a computerized tomography (CT) scan, bone scan, magnetic " +
-                                    "resonance imaging (MRI), (PET) scan, ultrasound and " +
-                                    "X-ray, among others. ",
-                                    "In most cases, a biopsy is the only way to definitively " +
-                                    "diagnose cancer. ",
-                                    "Most breast cancers are carcinomas, which are tumors " +
-                                    "that start in the epithelial cells that line organs " +
-                                    "and tissues throughout the body. ",
-                                    "When carcinomas form in the breast, they are usually " +
-                                    "a more specific type called adenocarcinoma, which " +
-                                    "starts in cells in the ducts (the milk ducts) or " +
-                                    "the lobules (milk-producing glands). ",
-                                    "www.mayoclinic.org › cancer › diagnosis-treatment " +
-                                    "› drc-20370594")
-                            ,
-                            new ConceptDef()
-                                .SetCode("CarcinomaKnown")
-                                .SetDisplay("Carcinoma known")
-                                .MammoId("543")
-                                .ValidModalities(Modalities.MRI)
                                 .SetUMLS("Imaging tests used in diagnosing cancer may include " +
                                     "a computerized tomography (CT) scan, bone scan, magnetic " +
                                     "resonance imaging (MRI), (PET) scan, ultrasound and " +

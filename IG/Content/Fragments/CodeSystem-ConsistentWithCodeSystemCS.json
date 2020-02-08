@@ -17,7 +17,7 @@
   "description": "ConsistentWith code system",
   "caseSensitive": true,
   "content": "complete",
-  "count": 76,
+  "count": 74,
   "concept": [
     {
       "code": "Abscess",
@@ -55,19 +55,9 @@
       "definition": "Carcinoma is a type of cancer that starts in cells that make up the skin or the tissue lining organs.\r\n\r\nValid for the following modalities: MG US MRI NM."
     },
     {
-      "code": "Carcinoma",
-      "display": "Carcinoma",
-      "definition": "Carcinoma is a type of cancer that starts in cells that make up the skin or the tissue lining organs\r\n\r\nValid for the following modalities: MRI."
-    },
-    {
       "code": "CarcinomaKnown",
       "display": "Carcinoma known",
       "definition": "Imaging tests used in diagnosing cancer may include a computerized tomography (CT) scan, bone scan, magnetic resonance imaging (MRI), (PET) scan, ultrasound and X-ray, among others. \r\nIn most cases, a biopsy is the only way to definitively diagnose cancer. \r\nMost breast cancers are carcinomas, which are tumors that start in the epithelial cells that line organs and tissues throughout the body. \r\nWhen carcinomas form in the breast, they are usually a more specific type called adenocarcinoma, which starts in cells in the ducts (the milk ducts) or the lobules (milk-producing glands). \r\nwww.mayoclinic.org › cancer › diagnosis-treatment › drc-20370594\r\n\r\nValid for the following modalities: MG US MRI."
-    },
-    {
-      "code": "CarcinomaKnown",
-      "display": "Carcinoma known",
-      "definition": "Imaging tests used in diagnosing cancer may include a computerized tomography (CT) scan, bone scan, magnetic resonance imaging (MRI), (PET) scan, ultrasound and X-ray, among others. \r\nIn most cases, a biopsy is the only way to definitively diagnose cancer. \r\nMost breast cancers are carcinomas, which are tumors that start in the epithelial cells that line organs and tissues throughout the body. \r\nWhen carcinomas form in the breast, they are usually a more specific type called adenocarcinoma, which starts in cells in the ducts (the milk ducts) or the lobules (milk-producing glands). \r\nwww.mayoclinic.org › cancer › diagnosis-treatment › drc-20370594\r\n\r\nValid for the following modalities: MRI."
     },
     {
       "code": "ClusterOfCysts",
