@@ -44,17 +44,17 @@
     {
       "code": "Mass",
       "display": "Mass",
-      "definition": "[PR] Mass\r\n\r\nValid for the following modalities: MG US MRI."
+      "definition": "[PR] Mass\r\nA breast mass has been identified in the breast. \r\r\nThis is also known as a breast lump. \r\r\n It feels different from the surrounding tissue. \r\r\nBreast pain, nipple discharge, or skin changes may be present. \r\r\n\r\nValid for the following modalities: MG US MRI."
     },
     {
       "code": "MassIntraductal",
       "display": "Mass intraductal",
-      "definition": "[PR] Mass intraductal\r\n\r\nValid for the following modalities: US."
+      "definition": "[PR] Mass intraductal\r\nAn intraductal mass has been identified in the breast. \r\r\nIt is a lump that originates in one or more of the milk ducts in the breast. \r\r\n\r\nValid for the following modalities: US."
     },
     {
       "code": "MassPartiallySolid",
       "display": "Mass partially solid",
-      "definition": "[PR] Mass partially solid\r\n\r\nValid for the following modalities: MG US."
+      "definition": "[PR] Mass partially solid\r\nA mass that is partially solid has been identified in the breast. \r\r\n\r\nValid for the following modalities: MG US."
     },
     {
       "code": "MassSkinATLASIsSkinLesion",

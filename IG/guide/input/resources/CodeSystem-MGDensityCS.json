@@ -26,7 +26,7 @@
     {
       "code": "CentralLucent",
       "display": "Central lucent",
-      "definition": "[PR] Central lucent\r\n\r\nValid for the following modalities: MG."
+      "definition": "[PR] Central lucent\r\nThese are round or oval calcifications that range from under 1 mm to over a centimeter.\r\r\nThey are the result of fat necrosis, calcified debris in ducts, and occasional fibroadenomas. \r\r\n-- https://radiologyassistant.nl/breast/breast-calcifications-differential-diagnosis#benign-calcifications-lucent-centered\r\nValid for the following modalities: MG."
     },
     {
       "code": "EqualDensity",
@@ -41,7 +41,7 @@
     {
       "code": "HighDensity",
       "display": "High density",
-      "definition": "[PR] High density\r\n\r\n[Bi-Rads® Atlas — Mammography Fifth Ed. 2013]\r\nX-ray attenuation of the mass is greater than the expected attenuation of an equal volume offibroglandular breast tissue.\r\nValid for the following modalities: MG."
+      "definition": "[PR] High density\r\nYour breast tissue may be called dense if you have a lot of fibrous or glandular \r\r\ntissue and not much fat in the breasts. \r\r\nHaving dense breast tissue is common. \r\r\nSome women have more dense breast tissue than others. \r\r\n-- https://www.cancer.org/cancer/breast-cancer/screening-tests-and-early-detection/mammograms/breast-density-and-your-mammogram-report.html\r\n[Bi-Rads® Atlas — Mammography Fifth Ed. 2013]\r\nX-ray attenuation of the mass is greater than the expected attenuation of an equal volume offibroglandular breast tissue.\r\nValid for the following modalities: MG."
     },
     {
       "code": "LowDensity",

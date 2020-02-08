@@ -22,32 +22,32 @@
     {
       "code": "BBPellet",
       "display": "BB pellet",
-      "definition": "[PR] BB pellet\r\n\r\nValid for the following modalities: MG US MRI."
+      "definition": "[PR] BB pellet\r\nA BB pellet is present in the body and is visible by the Mammogram, MRI and/or Ultrasound. \r\r\n\r\nValid for the following modalities: MG US MRI."
     },
     {
       "code": "BBPellets",
       "display": "BB pellets",
-      "definition": "[PR] BB pellets\r\n\r\nValid for the following modalities: MG US MRI."
+      "definition": "[PR] BB pellets\r\nBB pellets are present in the body and is visible by the Mammogram, MRI and/or Ultrasound. \r\r\n\r\nValid for the following modalities: MG US MRI."
     },
     {
       "code": "BiopsyClip",
       "display": "Biopsy clip",
-      "definition": "[PR] Biopsy clip\r\nThe biopsy clip serves as a marker documenting where the tissue was sampled in the breast. If the original abnormality is no longer visible by imaging after the biopsy, the marker is the only guide we have to know where the diseased tissue was sampled.\r\nValid for the following modalities: MG US MRI."
+      "definition": "[PR] Biopsy clip\r\nTissue marker placement after image-guided breast biopsy has become a routine component \r\r\nof clinical practice. \r\r\nMarker placement distinguishes multiple biopsied lesions within the same breast, \r\r\nprevents re-biopsy of benign lesions, enables multi-modality correlation, guides \r\r\npre-operative localization and helps confirm surgical target removal. \r\r\nNumerous breast tissue markers are currently available, with varied shapes, composition, \r\r\nand associated bio-absorbable components. \r\r\nThis review serves to familiarize the breast interventionalist with the tissue markers \r\r\nmost widely available in the United States today and to provide guidance regarding \r\r\nselection of appropriate markers for various clinical settings. \r\r\n-- https://www.ncbi.nlm.nih.gov/pubmed/30059952\r\nValid for the following modalities: MG US MRI."
     },
     {
       "code": "BiopsyClips",
       "display": "Biopsy clips",
-      "definition": "[PR] Biopsy clips\r\nTissue marker placement after image-guided breast biopsy has become a routine component of clinical practice. Marker placement distinguishes multiple biopsied lesions within the same breast, prevents re-biopsy of benign lesions, enables multi-modality correlation, guides pre-operative localization and helps confirm surgical target removal. Numerous breast tissue markers are currently available, with varied shapes, composition, and associated bio-absorbable components. This review serves to familiarize the breast interventionalist with the tissue markers most widely available in the United States today and to provide guidance regarding selection of appropriate markers for various clinical settings.\r\nValid for the following modalities: MG US MRI."
+      "definition": "[PR] Biopsy clips\r\nTissue marker placement after image-guided breast biopsy has become a routine component \r\r\nof clinical practice. \r\r\nMarker placement distinguishes multiple biopsied lesions within the same breast, \r\r\nprevents re-biopsy of benign lesions, enables multi-modality correlation, guides \r\r\npre-operative localization and helps confirm surgical target removal. \r\r\nNumerous breast tissue markers are currently available, with varied shapes, composition, \r\r\nand associated bio-absorbable components. \r\r\nThis review serves to familiarize the breast interventionalist with the tissue markers \r\r\nmost widely available in the United States today and to provide guidance regarding \r\r\nselection of appropriate markers for various clinical settings. \r\r\n-- https://www.ncbi.nlm.nih.gov/pubmed/30059952\r\nValid for the following modalities: MG US MRI."
     },
     {
       "code": "BreastMarker",
       "display": "Breast marker",
-      "definition": "[PR] Breast marker\r\nTissue marker placement after image-guided breast biopsy has become a routine component of clinical practice. Marker placement distinguishes multiple biopsied lesions within the same breast, prevents re-biopsy of benign lesions, enables multi-modality correlation, guides pre-operative localization and helps confirm surgical target removal. Numerous breast tissue markers are currently available, with varied shapes, composition, and associated bio-absorbable components. \r\nValid for the following modalities: MRI."
+      "definition": "[PR] Breast marker\r\nA breast marker is present in the  breast and is viewable on the MRI. \r\r\nTissue marker placement after image-guided breast biopsy has become a routine component \r\r\nof clinical practice. \r\r\nMarker placement distinguishes multiple biopsied lesions within the same breast, \r\r\nprevents re-biopsy of benign lesions, enables multi-modality correlation, guides \r\r\npre-operative localization and helps confirm surgical target removal. \r\r\nNumerous breast tissue markers are currently available, with varied shapes, composition, \r\r\nand associated bio-absorbable components. \r\r\nwww.ncbi.nlm.nih.gov › pubmed\r\r\n\r\nValid for the following modalities: MRI."
     },
     {
       "code": "BreastMarkers",
       "display": "Breast markers",
-      "definition": "[PR] Breast markers\r\nTissue marker placement after image-guided breast biopsy has become a routine component of clinical practice. Marker placement distinguishes multiple biopsied lesions within the same breast, prevents re-biopsy of benign lesions, enables multi-modality correlation, guides pre-operative localization and helps confirm surgical target removal. Numerous breast tissue markers are currently available, with varied shapes, composition, and associated bio-absorbable components. This review serves to familiarize the breast interventionalist with the tissue markers most widely available in the United States today and to provide guidance regarding selection of appropriate markers for various clinical settings.\r\nValid for the following modalities: MRI."
+      "definition": "[PR] Breast markers\r\nTissue marker placement after image-guided breast biopsy has become a routine component \r\r\nof clinical practice. \r\r\nMarker placement distinguishes multiple biopsied lesions within the same breast, \r\r\nprevents re-biopsy of benign lesions, enables multi-modality correlation, guides \r\r\npre-operative localization and helps confirm surgical target removal. \r\r\nNumerous breast tissue markers are currently available, with varied shapes, composition, \r\r\nand associated bio-absorbable components. \r\r\nThis review serves to familiarize the breast interventionalist with the tissue markers \r\r\nmost widely available in the United States today and to provide guidance regarding \r\r\nselection of appropriate markers for various clinical settings. \r\r\nwww.ncbi.nlm.nih.gov › pubmed\r\r\n\r\nValid for the following modalities: MRI."
     },
     {
       "code": "CatheterSleeves",
@@ -57,7 +57,7 @@
     {
       "code": "ChemotherapyPort",
       "display": "Chemotherapy port",
-      "definition": "[PR] Chemotherapy port\r\n\r\nValid for the following modalities: MG."
+      "definition": "[PR] Chemotherapy port\r\nA soft thin tube called a catheter connects the port to a large vein for administering \r\r\nchemotherapy is present in the MRI/Ultrasound. \r\r\n\r\nValid for the following modalities: MG."
     },
     {
       "code": "Clip",
@@ -72,17 +72,17 @@
     {
       "code": "Coil",
       "display": "Coil",
-      "definition": "[PR] Coil\r\n\r\nValid for the following modalities: MG US MRI."
+      "definition": "[PR] Coil\r\nThe coil acts as an antenna to receive the radio frequency signal. \r\r\nThis is present on the Mammogram, MRI and/or Ultrasound. \r\r\n\r\nValid for the following modalities: MG US MRI."
     },
     {
       "code": "Glass",
       "display": "Glass",
-      "definition": "[PR] Glass\r\n\r\nValid for the following modalities: MG US MRI."
+      "definition": "[PR] Glass\r\nGlass is present in the body and shows up on the MRI, Mammogram, and/or Ultrasound. \r\r\n\r\nValid for the following modalities: MG US MRI."
     },
     {
       "code": "GoldSeed",
       "display": "Gold seed",
-      "definition": "[PR] Gold seed\r\n\r\nValid for the following modalities: MG US MRI."
+      "definition": "[PR] Gold seed\r\nTiny, gold seeds that are put in and/or around a tumor to show exactly where the \r\r\ntumor is are present in the ultrasound/MRI. \r\r\n\r\nValid for the following modalities: MG US MRI."
     },
     {
       "code": "GunshotWound",
@@ -97,32 +97,32 @@
     {
       "code": "Metal",
       "display": "Metal",
-      "definition": "[PR] Metal\r\n\r\nValid for the following modalities: MG US MRI."
+      "definition": "[PR] Metal\r\nA piece of metal is present in the body and is viewable on the MRI and/or Ultrasound. \r\r\n\r\nValid for the following modalities: MG US MRI."
     },
     {
       "code": "MetallicMarker",
       "display": "Metallic marker",
-      "definition": "[PR] Metallic marker\r\n\r\nValid for the following modalities: MRI."
+      "definition": "[PR] Metallic marker\r\nA metallic tissue marker is present in the ultrasound/MRI. \r\r\n\r\nValid for the following modalities: MRI."
     },
     {
       "code": "MetallicMarkers",
       "display": "Metallic markers",
-      "definition": "[PR] Metallic markers\r\n\r\nValid for the following modalities: MRI."
+      "definition": "[PR] Metallic markers\r\nMetallic tissue markers are present in the MRI/Ultrasound. \r\r\n\r\nValid for the following modalities: MRI."
     },
     {
       "code": "MetallicObjects",
       "display": "Metallic objects",
-      "definition": "[PR] Metallic objects\r\n\r\nValid for the following modalities: MG."
+      "definition": "[PR] Metallic objects\r\nThe Mammogram suggests a foreign body in the breast that appears to be a metallic \r\r\nobject. \r\r\n\r\nValid for the following modalities: MG."
     },
     {
       "code": "Needle",
       "display": "Needle",
-      "definition": "[PR] Needle\r\n\r\nValid for the following modalities: MG."
+      "definition": "[PR] Needle\r\nThe Mammogram suggests a foreign body in the breast that appears to be a needle. \r\r\n\r\nValid for the following modalities: MG."
     },
     {
       "code": "NippleJewelry",
       "display": "Nipple jewelry",
-      "definition": "[PR] Nipple jewelry\r\n\r\nValid for the following modalities: MG."
+      "definition": "[PR] Nipple jewelry\r\nThe Mammogram suggests a foreign body in the breast that appears to be a piece of \r\r\nnipple jewelry. \r\r\n\r\nValid for the following modalities: MG."
     },
     {
       "code": "Non-metallicBody",
@@ -132,12 +132,12 @@
     {
       "code": "Pacemaker",
       "display": "Pacemaker",
-      "definition": "[PR] Pacemaker\r\n\r\nValid for the following modalities: MG US MRI."
+      "definition": "[PR] Pacemaker\r\nA pacemaker is present showing up on the MRI and/or Ultrasound. \r\r\n\r\nValid for the following modalities: MG US MRI."
     },
     {
       "code": "SiliconeGranuloma",
       "display": "Silicone granuloma",
-      "definition": "[PR] Silicone granuloma\r\n\r\nValid for the following modalities: MG US MRI."
+      "definition": "[PR] Silicone granuloma\r\nSilicone granuloma shows up on the MRI and/or Ultrasound. \r\r\nSnowball like hyperechogenic axillary lymph nodes in a woman with silicone implants \r\r\nremoved due to complications. \r\r\nSpecialty. \r\r\nDermatology. \r\r\nSilicone granulomas are a skin condition that occur as a reaction to liquid silicones, \r\r\nand are characterized by the formation of nodules.\r\r\n\r\nValid for the following modalities: MG US MRI."
     },
     {
       "code": "Sponge",
@@ -157,7 +157,7 @@
     {
       "code": "Swab",
       "display": "Swab",
-      "definition": "[PR] Swab\r\n\r\nValid for the following modalities: MG US MRI."
+      "definition": "[PR] Swab\r\nA Retained surgical swab appears to have been idenified in the breast during the \r\r\nmammogram, ultrasound and/or MRI. \r\r\n\r\nValid for the following modalities: MG US MRI."
     },
     {
       "code": "TitaniumClip",
@@ -172,12 +172,12 @@
     {
       "code": "Wire",
       "display": "Wire",
-      "definition": "[PR] Wire\r\n\r\nValid for the following modalities: MG US MRI."
+      "definition": "[PR] Wire\r\nGuidewire is present in the body. \r\r\n It is viewable in the MRI and/or Ultrasound. \r\r\nGuidewire is used during medical procedures such as biopsy or placement of medical \r\r\ndevices such as a catheter or pacemaker. \r\r\n\r\nValid for the following modalities: MG US MRI."
     },
     {
       "code": "WireFragment",
       "display": "Wire fragment",
-      "definition": "[PR] Wire fragment\r\n\r\nValid for the following modalities: MG US MRI."
+      "definition": "[PR] Wire fragment\r\nA fragment of a guidewire is present in the body. \r\r\nIt is viewable in the MRI and/or Ultrasound. \r\r\n Guidewire is used during medical procedures such as a biopsy or  placement of medical \r\r\ndevices such as a catheter or pacemaker. \r\r\n\r\nValid for the following modalities: MG US MRI."
     }
   ]
 }

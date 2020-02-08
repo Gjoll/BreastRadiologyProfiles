@@ -22,12 +22,12 @@
     {
       "code": "NodeAxillary",
       "display": "Node axillary",
-      "definition": "[PR] Node axillary\r\nAxillary Nodes. The axillary nodes are a group of lymph nodes located in the axillary (or armpit) region of the body. They perform the vital function of filtration and conduction of lymph from the upper limbs, pectoral region, and upper back.There are five axillary lymph node groups, namely the lateral (humeral), anterior (pectoral), posterior (subscapular), central and apical nodes.\r\nValid for the following modalities: MG US."
+      "definition": "[PR] Node axillary\r\nAxillary Nodes. \r\r\nThe axillary nodes are a group of lymph nodes located in the axillary (or armpit) \r\r\nregion of the body. \r\r\nThey perform the vital function of filtration and conduction of lymph from the upper \r\r\nlimbs, pectoral region, and upper back.There are five axillary lymph node groups, \r\r\nnamely the lateral (humeral), anterior (pectoral), posterior (subscapular), central \r\r\nand apical nodes.\r\r\n\r\nValid for the following modalities: MG US."
     },
     {
       "code": "NodeEnlarged",
       "display": "Node enlarged",
-      "definition": "[PR] Node enlarged\r\nSwollen lymph nodes usually occur as a result of infection from bacteria or viruses. Rarely, swollen lymph nodes are caused by cancer.\r\nYour lymph nodes, also called lymph glands, play a vital role in your body's ability to fight off infections. They function as filters, trapping viruses, bacteria and other causes of illnesses before they can infect other parts of your body. Common areas where you might notice swollen lymph nodes include your neck, under your chin, in your armpits and in your groin.\r\nValid for the following modalities: MG US."
+      "definition": "[PR] Node enlarged\r\nSwollen lymph nodes usually occur as a result of infection from bacteria or viruses. \r\r\nRarely, swollen lymph nodes are caused by cancer.\r\r\nYour lymph nodes, also called lymph glands, play a vital role in your body's ability \r\r\nto fight off infections. \r\r\nThey function as filters, trapping viruses, bacteria and other causes of illnesses \r\r\nbefore they can infect other parts of your body. \r\r\nCommon areas where you might notice swollen lymph nodes include your neck, under \r\r\nyour chin, in your armpits and in your groin.\r\r\n\r\nValid for the following modalities: MG US."
     },
     {
       "code": "NodeFocalCortex",
@@ -37,12 +37,12 @@
     {
       "code": "NodeInfraclavicular",
       "display": "Node infraclavicular",
-      "definition": "[PR] Node infraclavicular\r\n(Infraclavicular labeled at upper left.) One or two deltopectoral lymph nodes (or infraclavicular nodes) are found beside the cephalic vein, between the pectoralis major and deltoideus, immediately below the clavicle . They are situated in the course of the external collecting trunks of the arm.\r\nValid for the following modalities: US."
+      "definition": "[PR] Node infraclavicular\r\n(Infraclavicular labeled at upper left.) One or two deltopectoral lymph nodes (or \r\r\ninfraclavicular nodes) are found beside the cephalic vein, between the pectoralis \r\r\nmajor and deltoideus, immediately below the clavicle . \r\r\nThey are situated in the course of the external collecting trunks of the arm.\r\r\n\r\nValid for the following modalities: US."
     },
     {
       "code": "NodeIntramammary",
       "display": "Node intramammary",
-      "definition": "[PR] Node intramammary\r\nLymph nodes found within the breast tissue. \r\n[Bi-Rads® Atlas — Mammography Fifth Ed. 2013]\r\nThese are circumscribed masses that are reniform and have hilar fat. They are generally 1 cm or smallerin size. They may be larger than 1 cm and characterized as normal when fat replacement is pronounced. They frequently occur in the lateral and usually upper portions of the breast closer to theaxilla, although they may occur anywhere in the breast. They usually are seen adjacent to a vein,because the lymphatic drainage of the breast parallels the venous drainage.\r\nValid for the following modalities: MG US."
+      "definition": "[PR] Node intramammary\r\nIntramammary lymph nodes are defined as lymph nodes surrounded by breast tissue.\r\r\n\r\n[Bi-Rads® Atlas — Mammography Fifth Ed. 2013]\r\nThese are circumscribed masses that are reniform and have hilar fat. They are generally 1 cm or smallerin size. They may be larger than 1 cm and characterized as normal when fat replacement is pronounced. They frequently occur in the lateral and usually upper portions of the breast closer to theaxilla, although they may occur anywhere in the breast. They usually are seen adjacent to a vein,because the lymphatic drainage of the breast parallels the venous drainage.\r\nValid for the following modalities: MG US."
     },
     {
       "code": "NodeLymph",
@@ -57,7 +57,7 @@
     {
       "code": "NodeSupraclavicular",
       "display": "Node supraclavicular",
-      "definition": "[PR] Node supraclavicular\r\nThe supraclavicular lymph nodes are a set of lymph nodes found just above the clavicle or collarbone, toward the hollow of the neck. Lymph nodes are responsible for filtering the lymphatic fluid of unwanted debris and bacteria.\r\nValid for the following modalities: US."
+      "definition": "[PR] Node supraclavicular\r\nThe supraclavicular lymph nodes are a set of lymph nodes found just above the clavicle \r\r\nor collarbone, toward the hollow of the neck. \r\r\nLymph nodes are responsible for filtering the lymphatic fluid of unwanted debris \r\r\nand bacteria.\r\r\n\r\nValid for the following modalities: US."
     },
     {
       "code": "NodeUniformThickness",

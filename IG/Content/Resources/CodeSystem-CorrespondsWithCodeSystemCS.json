@@ -44,82 +44,82 @@
     {
       "code": "Aspiration",
       "display": "Aspiration",
-      "definition": "[PR] Aspiration\r\n\r\nValid for the following modalities: MG US."
+      "definition": "[PR] Aspiration\r\nA medical procedure that removes something from an area of the body. \r\r\nThese substances can be air, body fluids, or bone fragments.\r\r\n-- https://medlineplus.gov/ency/article/002216.htm\r\nValid for the following modalities: MG US."
     },
     {
       "code": "Biopsy",
       "display": "Biopsy",
-      "definition": "[PR] Biopsy\r\n\r\nValid for the following modalities: MG."
+      "definition": "[PR] Biopsy\r\nThe Mammogram and Biopsy correspond with each other. \r\r\n\r\nValid for the following modalities: MG."
     },
     {
       "code": "Concern",
       "display": "Concern",
-      "definition": "[PR] Concern\r\n\r\nValid for the following modalities: MG US MRI NM."
+      "definition": "[PR] Concern\r\nThe test corresponds with the concern. \r\r\n\r\nValid for the following modalities: MG US MRI NM."
     },
     {
       "code": "Ductogram",
       "display": "Ductogram",
-      "definition": "[PR] Ductogram\r\nA ductogram, also called a galactogram, is a special type of mammogram used for imaging the breast ducts. It can aid in diagnosing the cause of abnormal nipple discharges.\r\nValid for the following modalities: MG."
+      "definition": "[PR] Ductogram\r\nA ductogram, also called a galactogram, is a special type of mammogram used for imaging \r\r\nthe breast ducts. \r\r\nIt can aid in diagnosing the cause of abnormal nipple discharges.\r\r\nDuctography (also called galactography or ductogalactography) is a special type of \r\r\ncontrast enhanced mammography used for imaging the breast ducts. \r\r\nDuctography can aid in diagnosing the cause of an abnormal nipple discharge and is \r\r\nvaluable in diagnosing intraductal papillomas and other conditions.\r\r\n-- https://www.imaginis.com/mammography/ductogram-galactogram-imaging-the-breast-ducts\r\nValid for the following modalities: MG."
     },
     {
       "code": "IncidentalFinding",
       "display": "Incidental finding",
-      "definition": "[PR] Incidental finding\r\n\r\nValid for the following modalities: MG US MRI NM."
+      "definition": "[PR] Incidental finding\r\nA medical finding that wasn't the abnormality of the original  mammogram, MRI, nuclear \r\r\nmedicine, or ultrasound was intended to find. \r\r\n\r\nValid for the following modalities: MG US MRI NM."
     },
     {
       "code": "Mammo",
       "display": "Mammo",
-      "definition": "[PR] Mammo\r\n\r\nValid for the following modalities: US MRI NM."
+      "definition": "[PR] Mammo\r\nThe original MRI, Nuclear Medicine, or Ultrasound corresponds with the findings on \r\r\nthe Mammogram. \r\r\n\r\nValid for the following modalities: US MRI NM."
     },
     {
       "code": "MRI",
       "display": "MRI",
-      "definition": "[PR] MRI\r\n\r\nValid for the following modalities: MG US MRI NM."
+      "definition": "[PR] MRI\r\nThe original Mammogram, Nuclear Medicine, or Ultrasound corresponds with the findings \r\r\non the MRI. \r\r\n\r\nValid for the following modalities: MG US MRI NM."
     },
     {
       "code": "NippleDischarge",
       "display": "Nipple discharge",
-      "definition": "[PR] Nipple discharge\r\n\r\nValid for the following modalities: MG US."
+      "definition": "[PR] Nipple discharge\r\nThe findings on the Mammogram and/or Ultrasound, correspond with the nipple discharge. \r\r\n\r\nValid for the following modalities: MG US."
     },
     {
       "code": "OutsideExam",
       "display": "Outside exam",
-      "definition": "[PR] Outside exam\r\n\r\nValid for the following modalities: MG."
+      "definition": "[PR] Outside exam\r\nPrevious exam at another clinic that took place separate from current exam. \r\r\n\r\nValid for the following modalities: MG."
     },
     {
       "code": "Pain",
       "display": "Pain",
-      "definition": "[PR] Pain\r\n\r\nValid for the following modalities: MG US MRI NM."
+      "definition": "[PR] Pain\r\nMammogram, MRI, Nuclear Medicine, or ultrasound corresponds with the pain the patient \r\r\nis experiencing. \r\r\n\r\nValid for the following modalities: MG US MRI NM."
     },
     {
       "code": "Palpated",
       "display": "Palpated",
-      "definition": "[PR] Palpated\r\n\r\nValid for the following modalities: MG US MRI NM."
+      "definition": "[PR] Palpated\r\nThe Mammogram, Ultrasound, Nuclear Medicine, MRI correspond with the palpated (physical \r\r\nexam to touch) lump.\r\r\n\r\nValid for the following modalities: MG US MRI NM."
     },
     {
       "code": "PostOperative",
       "display": "Post operative",
-      "definition": "[PR] Post operative\r\n\r\nValid for the following modalities: MG."
+      "definition": "[PR] Post operative\r\nThe Mammogram corresponds with the post operative results of the breast incision. \r\r\n\r\nValid for the following modalities: MG."
     },
     {
       "code": "PreviousBiopsy",
       "display": "Previous biopsy",
-      "definition": "[PR] Previous biopsy\r\n\r\nValid for the following modalities: US MRI."
+      "definition": "[PR] Previous biopsy\r\nThe previous biopsy results correspond with the MRI and/or Ultrasound. \r\r\n\r\nValid for the following modalities: US MRI."
     },
     {
       "code": "PriorExam",
       "display": "Prior exam",
-      "definition": "[PR] Prior exam\r\n\r\nValid for the following modalities: MG."
+      "definition": "[PR] Prior exam\r\nThe prior exam of the breast, corresponds with the results of the Mammogram. \r\r\n\r\nValid for the following modalities: MG."
     },
     {
       "code": "Redness",
       "display": "Redness",
-      "definition": "[PR] Redness\r\n\r\nValid for the following modalities: MG US."
+      "definition": "[PR] Redness\r\nThe redness in the breast, corresponds with the results of the Mammogram and/or Ultrasound. \r\r\n\r\nValid for the following modalities: MG US."
     },
     {
       "code": "Scinti",
       "display": "Scinti",
-      "definition": "[PR] Scinti\r\nScintigraphy definition is - a diagnostic technique in which a two-dimensional picture of internal body tissue is produced through the detection of radiation emitted by a radioactive substance administered into the body. \r\nValid for the following modalities: MG."
+      "definition": "[PR] Scinti\r\nThe initial Mammogram corresponds with the Scinti results. \r\r\n Scintigraphy definition is - a diagnostic technique in which a two-dimensional picture \r\r\nof internal body tissue is produced through the detection of radiation emitted by \r\r\na radioactive substance administered into the body. \r\r\n\r\nValid for the following modalities: MG."
     },
     {
       "code": "size<Mammo",
@@ -169,22 +169,22 @@
     {
       "code": "SurgicalSite",
       "display": "Surgical site",
-      "definition": "[PR] Surgical site\r\n\r\nValid for the following modalities: MRI."
+      "definition": "[PR] Surgical site\r\nThe MRI information corresponds with the surgical site. \r\r\n\r\nValid for the following modalities: MRI."
     },
     {
       "code": "Tenderness",
       "display": "Tenderness",
-      "definition": "[PR] Tenderness\r\n\r\nValid for the following modalities: MG."
+      "definition": "[PR] Tenderness\r\nThe mammogram results correspond with where the patient feels tenderness. \r\r\n\r\nValid for the following modalities: MG."
     },
     {
       "code": "TriggerPoint",
       "display": "Trigger point",
-      "definition": "[PR] Trigger point\r\n\r\nValid for the following modalities: US."
+      "definition": "[PR] Trigger point\r\nThe results of the Ultrasound correspond with where the trigger point is around the \r\r\ntumor/lesion. \r\r\nThe trigger point is the point where the site of the pain is. \r\r\n\r\nValid for the following modalities: US."
     },
     {
       "code": "US",
       "display": "US",
-      "definition": "[PR] US\r\n\r\nValid for the following modalities: MG US MRI NM."
+      "definition": "[PR] US\r\nThe results of the MRI, Mammogram and/or Nuclear Medicine exam, correspond with this \r\r\nUltrasound. \r\r\n\r\nValid for the following modalities: MG US MRI NM."
     }
   ]
 }
