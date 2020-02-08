@@ -29,7 +29,9 @@ namespace BreastRadiology.XUnitTests
         Coding ComponentSliceCodeConsistentWithQualifier =>
             new Coding(this.ObservationComponentSliceCodesUrl, "consistentWithQualifier", "Component code for 'Consistent With Qualifier' slice");
         Coding ComponentSliceCodeCorrespondsWith =>
-            new Coding(this.ObservationComponentSliceCodesUrl, "correspondsWith", "Component code for 'xxyyz' slice");
+            new Coding(this.ObservationComponentSliceCodesUrl, "correspondsWith", "Component code for 'Corresponds With' slice");
+        Coding ComponentSliceCodePreviouslyDemonstratedBy=>
+            new Coding(this.ObservationComponentSliceCodesUrl, "prevDemBy", "Component code for 'Previously Demonstrated By' slice");
         Coding ComponentSliceCodeObservedChanges =>
             new Coding(this.ObservationComponentSliceCodesUrl, "obsChanges", "Component code for 'Observed Changes' slice");
         Coding ComponentSliceCodeMargin =>
@@ -111,7 +113,11 @@ namespace BreastRadiology.XUnitTests
                                 .SetCode(Self.ComponentSliceCodeCorrespondsWith)
                                 .SetDefinition("Code to identify the component slice CorrespondsWith")
                                 ,
-
+                            new ConceptDef()
+                                .SetCode(Self.ComponentSliceCodePreviouslyDemonstratedBy)
+                                .SetDefinition("Code to identify the component slice Previously Demonstrated By")
+                                ,
+                           
                             new ConceptDef()
                                 .SetCode(Self.ComponentSliceCodeMargin)
                                 .SetDefinition("Code to identify the component slice Margin")

@@ -79,10 +79,14 @@ namespace BreastRadiology.XUnitTests
                     .AddFragRef(Self.ObservationNoValueFragment.Value())
                     .AddFragRef(Self.ObservationNoComponentFragment.Value())
                     .AddFragRef(Self.CommonComponentsFragment.Value())
-                    .AddFragRef(Self.ShapeComponentsFragment.Value())
-                    .AddFragRef(Self.ObservedCountComponentFragment.Value())
-                    .AddFragRef(Self.ObservedDistributionComponentFragment.Value())
-                    .AddFragRef(Self.ObservedSizeComponentFragment.Value())
+                    .AddFragRef(Self.ObservationComponentShapeFragment.Value())
+                    .AddFragRef(Self.ObservationComponentObservedCountFragment.Value())
+                    .AddFragRef(Self.ObservationComponentObservedDistributionFragment.Value())
+                    .AddFragRef(Self.ObservationComponentObservedSizeFragment.Value())
+                    .AddFragRef(Self.ObservationComponentPreviouslyDemonstratedByFragment.Value())
+
+                    .AddFragRef(Self.ObservationHasMemberAssociatedFeaturesFragment.Value())
+
                     .Description("Fibroadenoma Observation",
                         new Markdown()
                             .Paragraph("[PR]")
@@ -98,9 +102,6 @@ namespace BreastRadiology.XUnitTests
 
                 // Set Observation.code to unique value for this profile.
                 e.Select("code").Pattern(Self.ObservationCodeAbnormalityFibroadenoma.ToCodeableConcept());
-
-                ElementTreeNode sliceElementDef = e.ConfigureSliceByUrlDiscriminator("hasMember", false);
-                e.SliceTargetReference( sliceElementDef, Self.AssociatedFeatures.Value(), 0, "1");
 
                 e.StartComponentSliceing();
                 e.ComponentSliceCodeableConcept("fibroAdenomaType",

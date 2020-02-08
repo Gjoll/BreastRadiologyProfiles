@@ -27,12 +27,17 @@ namespace BreastRadiology.XUnitTests
                     .AddFragRef(Self.ObservationNoComponentFragment.Value())
                     .AddFragRef(Self.ObservationNoValueFragment.Value())
                     .AddFragRef(Self.CommonComponentsFragment.Value())
-                    .AddFragRef(Self.ShapeComponentsFragment.Value())
-                    .AddFragRef(Self.NotPreviouslySeenComponentsFragment.Value())
-                    .AddFragRef(Self.ObservedCountComponentFragment.Value())
-                    .AddFragRef(Self.ObservedSizeComponentFragment.Value())
-                    .AddFragRef(Self.ObservedDistributionComponentFragment.Value())
-                    .AddFragRef(Self.CorrespondsWithComponentFragment.Value())
+                    .AddFragRef(Self.ObservationComponentShapeFragment.Value())
+                    .AddFragRef(Self.ObservationComponentNotPreviouslySeenFragment.Value())
+                    .AddFragRef(Self.ObservationComponentObservedCountFragment.Value())
+                    .AddFragRef(Self.ObservationComponentObservedSizeFragment.Value())
+                    .AddFragRef(Self.ObservationComponentObservedDistributionFragment.Value())
+                    .AddFragRef(Self.ObservationComponentCorrespondsWithFragment.Value())
+                    .AddFragRef(Self.ObservationComponentPreviouslyDemonstratedByFragment.Value())
+
+                    .AddFragRef(Self.ObservationHasMemberAssociatedFeaturesFragment.Value())
+                    .AddFragRef(Self.ObservationHasMemberConsistentWithFragment.Value())
+
                     .Description("Fat Necrosis Observation",
                         new Markdown()
                             .Paragraph("[PR]")
@@ -48,10 +53,6 @@ namespace BreastRadiology.XUnitTests
                     .ReviewedStatus("NOONE", "")
                     .MammoDescription("688")
                     ;
-
-                ElementTreeNode sliceElementDef = e.ConfigureSliceByUrlDiscriminator("hasMember", false);
-                e.SliceTargetReference( sliceElementDef, Self.AssociatedFeatures.Value(), 0, "1");
-                e.SliceTargetReference( sliceElementDef, Self.ConsistentWith.Value(), 0, "*");
 
                 e.StartComponentSliceing();
             });

@@ -427,9 +427,13 @@ namespace BreastRadiology.XUnitTests
                     .AddFragRef(Self.ObservationNoValueFragment.Value())
                     .AddFragRef(Self.ObservationNoComponentFragment.Value())
                     .AddFragRef(Self.CommonComponentsFragment.Value())
-                    .AddFragRef(Self.NotPreviouslySeenComponentsFragment.Value())
-                    .AddFragRef(Self.CorrespondsWithComponentFragment.Value())
-                    .AddFragRef(Self.BiRadComponentFragment.Value())
+                    .AddFragRef(Self.ObservationComponentNotPreviouslySeenFragment.Value())
+                    .AddFragRef(Self.ObservationComponentCorrespondsWithFragment.Value())
+                    .AddFragRef(Self.ObservationComponentBiRadFragment.Value())
+                    .AddFragRef(Self.ObservationComponentPreviouslyDemonstratedByFragment.Value())
+
+                    .AddFragRef(Self.ObservationHasMemberAssociatedFeaturesFragment.Value())
+                    .AddFragRef(Self.ObservationHasMemberConsistentWithFragment.Value())
                     ;
 
                 s = e.SDef;
@@ -440,10 +444,6 @@ namespace BreastRadiology.XUnitTests
 
                 // Set Observation.code to unique value for this profile.
                 e.Select("code").Pattern(Self.ObservationCodeAbnormalityForeignObject.ToCodeableConcept());
-
-                ElementTreeNode sliceElementDef = e.ConfigureSliceByUrlDiscriminator("hasMember", false);
-                e.SliceTargetReference( sliceElementDef, Self.ConsistentWith.Value(), 0, "*");
-                e.SliceTargetReference( sliceElementDef, Self.AssociatedFeatures.Value(), 0, "1");
 
                 e.StartComponentSliceing();
                 e.ComponentSliceCodeableConcept("abnormalityForeignObjectType",

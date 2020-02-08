@@ -18,7 +18,7 @@
    <title value="Breast Radiology Reporting - 1st STU ballot"/>
    <status value="draft"/>
    <experimental value="false"/>
-   <date value="2020-02-08T11:55:56-06:00"/>
+   <date value="2020-02-08T16:21:14-06:00"/>
    <publisher value="Hl7 - Clinical Interoperability Council"/>
    <contact>
       <telecom>
@@ -536,6 +536,21 @@
             <valueString value="CodeSystem"/>
          </extension>
          <extension url="http://hl7.org/fhir/StructureDefinition/implementationguide-page">
+            <valueUri value="CodeSystem-PreviouslyDemonstratedByCodeSystemCS.html"/>
+         </extension>
+         <reference>
+            <reference value="CodeSystem/PreviouslyDemonstratedByCodeSystemCS"/>
+         </reference>
+         <name value="Not Previously Seen CodeSystem"/>
+         <description value="PreviouslyDemonstratedBy code system"/>
+         <exampleBoolean value="false"/>
+         <groupingId value="CommonCodesCS"/>
+      </resource>
+      <resource>
+         <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+            <valueString value="CodeSystem"/>
+         </extension>
+         <extension url="http://hl7.org/fhir/StructureDefinition/implementationguide-page">
             <valueUri value="CodeSystem-RecommendationsCodeSystemCS.html"/>
          </extension>
          <reference>
@@ -933,6 +948,21 @@
          </reference>
          <name value="Orientation ValueSet"/>
          <description value="Orientation ValueSet"/>
+         <exampleBoolean value="false"/>
+         <groupingId value="CommonCodesVS"/>
+      </resource>
+      <resource>
+         <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+            <valueString value="ValueSet"/>
+         </extension>
+         <extension url="http://hl7.org/fhir/StructureDefinition/implementationguide-page">
+            <valueUri value="ValueSet-PreviouslyDemonstratedByVS.html"/>
+         </extension>
+         <reference>
+            <reference value="ValueSet/PreviouslyDemonstratedByVS"/>
+         </reference>
+         <name value="PreviouslyDemonstratedBy ValueSet"/>
+         <description value="PreviouslyDemonstratedBy value set."/>
          <exampleBoolean value="false"/>
          <groupingId value="CommonCodesVS"/>
       </resource>
@@ -1391,6 +1421,21 @@
             <valueString value="StructureDefinition:resource:abstract"/>
          </extension>
          <extension url="http://hl7.org/fhir/StructureDefinition/implementationguide-page">
+            <valueUri value="StructureDefinition-AssociatedFeaturesHasMemberFragment.html"/>
+         </extension>
+         <reference>
+            <reference value="StructureDefinition/AssociatedFeaturesHasMemberFragment"/>
+         </reference>
+         <name value="AssociatedFeatures HasMember Fragment"/>
+         <description value="Fragment 'AssociatedFeatures HasMember fragment'"/>
+         <exampleBoolean value="false"/>
+         <groupingId value="Fragments"/>
+      </resource>
+      <resource>
+         <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+            <valueString value="StructureDefinition:resource:abstract"/>
+         </extension>
+         <extension url="http://hl7.org/fhir/StructureDefinition/implementationguide-page">
             <valueUri value="StructureDefinition-BiRadFragment.html"/>
          </extension>
          <reference>
@@ -1503,6 +1548,21 @@
          </reference>
          <name value="Common Components Fragment"/>
          <description value="Fragment 'Common Components fragment'"/>
+         <exampleBoolean value="false"/>
+         <groupingId value="Fragments"/>
+      </resource>
+      <resource>
+         <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+            <valueString value="StructureDefinition:resource:abstract"/>
+         </extension>
+         <extension url="http://hl7.org/fhir/StructureDefinition/implementationguide-page">
+            <valueUri value="StructureDefinition-ConsistentWithHasMemberFragment.html"/>
+         </extension>
+         <reference>
+            <reference value="StructureDefinition/ConsistentWithHasMemberFragment"/>
+         </reference>
+         <name value="ConsistentWith HasMember Fragment"/>
+         <description value="Fragment 'ConsistentWith HasMember fragment'"/>
          <exampleBoolean value="false"/>
          <groupingId value="Fragments"/>
       </resource>
@@ -1653,6 +1713,21 @@
          </reference>
          <name value="ObservedSize Fragment"/>
          <description value="Fragment 'Fragment that adds 'Observed Size' components to Observation.'"/>
+         <exampleBoolean value="false"/>
+         <groupingId value="Fragments"/>
+      </resource>
+      <resource>
+         <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+            <valueString value="StructureDefinition:resource:abstract"/>
+         </extension>
+         <extension url="http://hl7.org/fhir/StructureDefinition/implementationguide-page">
+            <valueUri value="StructureDefinition-PreviouslyDemonstratedByFragment.html"/>
+         </extension>
+         <reference>
+            <reference value="StructureDefinition/PreviouslyDemonstratedByFragment"/>
+         </reference>
+         <name value="PreviouslyDemonstratedBy Fragment"/>
+         <description value="Fragment 'Observation 'Demonstrated By' Component Fragment'"/>
          <exampleBoolean value="false"/>
          <groupingId value="Fragments"/>
       </resource>
@@ -1999,6 +2074,11 @@
                <generation value="generated"/>
             </page>
             <page>
+               <nameUrl value="ValueSet-PreviouslyDemonstratedByVS.html"/>
+               <title value="PreviouslyDemonstratedBy ValueSet"/>
+               <generation value="generated"/>
+            </page>
+            <page>
                <nameUrl value="ValueSet-RecommendationsVS.html"/>
                <title value="Recommendations ValueSet"/>
                <generation value="generated"/>
@@ -2129,6 +2209,11 @@
                <generation value="generated"/>
             </page>
             <page>
+               <nameUrl value="CodeSystem-PreviouslyDemonstratedByCodeSystemCS.html"/>
+               <title value="Not Previously Seen CodeSystem"/>
+               <generation value="generated"/>
+            </page>
+            <page>
                <nameUrl value="CodeSystem-RecommendationsCodeSystemCS.html"/>
                <title value="Recommendations CodeSystem"/>
                <generation value="generated"/>
@@ -2239,6 +2324,11 @@
                <generation value="generated"/>
             </page>
             <page>
+               <nameUrl value="StructureDefinition-AssociatedFeaturesHasMemberFragment.html"/>
+               <title value="AssociatedFeatures HasMember Fragment"/>
+               <generation value="generated"/>
+            </page>
+            <page>
                <nameUrl value="StructureDefinition-BiRadFragment.html"/>
                <title value="BiRad Fragment"/>
                <generation value="generated"/>
@@ -2276,6 +2366,11 @@
             <page>
                <nameUrl value="StructureDefinition-CommonComponentsFragment.html"/>
                <title value="Common Components Fragment"/>
+               <generation value="generated"/>
+            </page>
+            <page>
+               <nameUrl value="StructureDefinition-ConsistentWithHasMemberFragment.html"/>
+               <title value="ConsistentWith HasMember Fragment"/>
                <generation value="generated"/>
             </page>
             <page>
@@ -2326,6 +2421,11 @@
             <page>
                <nameUrl value="StructureDefinition-ObservedSizeFragment.html"/>
                <title value="ObservedSize Fragment"/>
+               <generation value="generated"/>
+            </page>
+            <page>
+               <nameUrl value="StructureDefinition-PreviouslyDemonstratedByFragment.html"/>
+               <title value="PreviouslyDemonstratedBy Fragment"/>
                <generation value="generated"/>
             </page>
             <page>

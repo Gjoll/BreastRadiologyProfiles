@@ -14,7 +14,7 @@ namespace BreastRadiology.XUnitTests
 {
     partial class ResourcesMaker
     {
-        SDTaskVar ObservedCountComponentFragment = new SDTaskVar(
+        SDTaskVar ObservationComponentObservedCountFragment = new SDTaskVar(
                (out StructureDefinition s) =>
                    {
                        const String sliceName = "obsCount";

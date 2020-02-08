@@ -17,7 +17,7 @@
   "description": "Component Slice Codes code system",
   "caseSensitive": true,
   "content": "complete",
-  "count": 24,
+  "count": 25,
   "concept": [
     {
       "code": "abnormalityCystType",
@@ -66,8 +66,13 @@
     },
     {
       "code": "correspondsWith",
-      "display": "Component code for 'xxyyz' slice",
+      "display": "Component code for 'Corresponds With' slice",
       "definition": "Code to identify the component slice CorrespondsWith"
+    },
+    {
+      "code": "prevDemBy",
+      "display": "Component code for 'Previously Demonstrated By' slice",
+      "definition": "Code to identify the component slice Previously Demonstrated By"
     },
     {
       "code": "margin",

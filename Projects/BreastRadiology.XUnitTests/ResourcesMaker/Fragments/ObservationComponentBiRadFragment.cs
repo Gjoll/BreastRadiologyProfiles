@@ -14,7 +14,7 @@ namespace BreastRadiology.XUnitTests
 {
     partial class ResourcesMaker
     {
-        SDTaskVar BiRadComponentFragment = new SDTaskVar(
+        SDTaskVar ObservationComponentBiRadFragment = new SDTaskVar(
                (out StructureDefinition s) =>
                    {
                        SDefEditor e = Self.CreateFragment("BiRadFragment",

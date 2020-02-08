@@ -14,23 +14,33 @@ namespace BreastRadiology.XUnitTests
 {
     partial class ResourcesMaker
     {
-        SDTaskVar ObservedSizeComponentFragment = new SDTaskVar(
+        SDTaskVar ObservationComponentObservedDistributionFragment = new SDTaskVar(
                (out StructureDefinition s) =>
                    {
-                       SDefEditor e = Self.CreateFragment("ObservedSizeFragment",
-                               "ObservedSize Fragment",
-                               "ObservedSize Fragment",
+                       SDefEditor e = Self.CreateFragment("ObservedDistributionFragment",
+                               "ObservedDistribution Fragment",
+                               "ObservedDistribution Fragment",
                                Global.ObservationUrl)
-                           .Description("Fragment that adds 'Observed Size' components to Observation.",
+                           .Description("Fragment that adds 'Observed Distribution' components to Observation.",
                                new Markdown()
                            )
                            ;
                        s = e.SDef;
+
+                       e.StartComponentSliceing();
+                       {
+                           e.ComponentSliceCodeableConcept("obsDistribution",
+                               Self.ComponentSliceCodeObservedDistribution.ToCodeableConcept(),
+                               Self.CalcificationDistributionVS.Value(),
+                               BindingStrength.Required,
+                               0,
+                               "*",
+                               "Observed distribution of abnormalities",
+                               "description of the distribution of a group of abnormalities");
+                       }
                        {
                            ValueSet binding = Self.UnitsOfLengthVS.Value();
-                           const String sliceName = "obsSize";
-
-                           e.StartComponentSliceing();
+                           String sliceName = "obsDistRegionSize";
                            e.SliceComponentSize(sliceName,
                                Self.ComponentSliceCodeObservedSize.ToCodeableConcept(),
                                binding,
@@ -39,9 +49,10 @@ namespace BreastRadiology.XUnitTests
                                out ElementTreeSlice slice);
 
                            ElementDefinition sliceDef = slice.ElementDefinition
-                               .SetShort($"Observed Size component")
+                               .SetShort($"Observed Distribution Region Size component")
                                .SetDefinition(new Markdown()
-                                    .Paragraph($"This component slice contains the size of an item observed.",
+                                    .Paragraph($"This component slice contains the size of an region inside of which there ",
+                                               $"is a distribution of abnormalities.",
                                                $"There may be one, two, or three values indicating a size of",
                                                $"one dimension (length), two dimensions (area), or three dimensions (volume).",
                                                $"Each dimension can be a quantity (i.e. 5), or a range (1 to 5).",
@@ -51,7 +62,7 @@ namespace BreastRadiology.XUnitTests
                                .SetComment(componentDefinition)
                                ;
 
-                           e.AddComponentLink($"Observed Size",
+                           e.AddComponentLink($"Observed Distribution Region Size",
                                new SDefEditor.Cardinality(slice.ElementDefinition),
                                Global.ElementAnchor(sliceDef),
                                "Quantity or Range",

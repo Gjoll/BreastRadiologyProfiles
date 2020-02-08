@@ -158,12 +158,16 @@ namespace BreastRadiology.XUnitTests
                     .AddFragRef(Self.ObservationNoValueFragment.Value())
                     .AddFragRef(Self.ObservationNoComponentFragment.Value())
                     .AddFragRef(Self.CommonComponentsFragment.Value())
-                    .AddFragRef(Self.ShapeComponentsFragment.Value())
-                    .AddFragRef(Self.ObservedCountComponentFragment.Value())
-                    .AddFragRef(Self.ObservedDistributionComponentFragment.Value())
-                    .AddFragRef(Self.ObservedSizeComponentFragment.Value())
-                    .AddFragRef(Self.NotPreviouslySeenComponentsFragment.Value())
-                    .AddFragRef(Self.CorrespondsWithComponentFragment.Value())
+                    .AddFragRef(Self.ObservationComponentShapeFragment.Value())
+                    .AddFragRef(Self.ObservationComponentObservedCountFragment.Value())
+                    .AddFragRef(Self.ObservationComponentObservedDistributionFragment.Value())
+                    .AddFragRef(Self.ObservationComponentObservedSizeFragment.Value())
+                    .AddFragRef(Self.ObservationComponentNotPreviouslySeenFragment.Value())
+                    .AddFragRef(Self.ObservationComponentCorrespondsWithFragment.Value())
+                    .AddFragRef(Self.ObservationComponentPreviouslyDemonstratedByFragment.Value())
+
+                    .AddFragRef(Self.ObservationHasMemberAssociatedFeaturesFragment.Value())
+
                     .Description("LymphNode Observation",
                         new Markdown()
                     )
@@ -177,9 +181,6 @@ namespace BreastRadiology.XUnitTests
                 e.IntroDoc
                     .ReviewedStatus("NOONE", "")
                     ;
-
-                ElementTreeNode sliceElementDef = e.ConfigureSliceByUrlDiscriminator("hasMember", false);
-                e.SliceTargetReference( sliceElementDef, Self.AssociatedFeatures.Value(), 0, "1");
 
                 e.StartComponentSliceing();
                 e.ComponentSliceCodeableConcept("lymphNodeType",

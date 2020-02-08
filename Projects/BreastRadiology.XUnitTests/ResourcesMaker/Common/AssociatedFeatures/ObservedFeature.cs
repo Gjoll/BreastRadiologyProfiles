@@ -416,7 +416,7 @@ namespace BreastRadiology.XUnitTests
                     .AddFragRef(Self.ObservationNoValueFragment.Value())
                     .AddFragRef(Self.ObservationNoComponentFragment.Value())
                     .AddFragRef(Self.BreastBodyLocationRequiredFragment.Value())
-                    .AddFragRef(Self.ObservedCountComponentFragment.Value())
+                    .AddFragRef(Self.ObservationComponentObservedCountFragment.Value())
                     .Description("Observed Feature Observation",
                         new Markdown()
                             .Paragraph("The feature observed is defined by the codeable concept in the value[x] field.")

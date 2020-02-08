@@ -121,10 +121,15 @@ namespace BreastRadiology.XUnitTests
                     .AddFragRef(Self.ObservationNoComponentFragment.Value())
                     .AddFragRef(Self.ObservationNoValueFragment.Value())
                     .AddFragRef(Self.CommonComponentsFragment.Value())
-                    .AddFragRef(Self.ShapeComponentsFragment.Value())
-                    .AddFragRef(Self.NotPreviouslySeenComponentsFragment.Value())
-                    .AddFragRef(Self.ObservedCountComponentFragment.Value())
-                    .AddFragRef(Self.CorrespondsWithComponentFragment.Value())
+                    .AddFragRef(Self.ObservationComponentShapeFragment.Value())
+                    .AddFragRef(Self.ObservationComponentNotPreviouslySeenFragment.Value())
+                    .AddFragRef(Self.ObservationComponentObservedCountFragment.Value())
+                    .AddFragRef(Self.ObservationComponentCorrespondsWithFragment.Value())
+                    .AddFragRef(Self.ObservationComponentPreviouslyDemonstratedByFragment.Value())
+
+                    .AddFragRef(Self.ObservationHasMemberAssociatedFeaturesFragment.Value())
+                    .AddFragRef(Self.ObservationHasMemberConsistentWithFragment.Value())
+
                     .Description("Asymmetry Observation",
                         new Markdown()
                     )
@@ -145,10 +150,6 @@ namespace BreastRadiology.XUnitTests
                             "convex-outward borders and appears to be denser in the center than at the periphery."
                     )
                     ;
-
-                ElementTreeNode sliceElementDef = e.ConfigureSliceByUrlDiscriminator("hasMember", false);
-                e.SliceTargetReference(sliceElementDef, Self.AssociatedFeatures.Value(), 0, "1");
-                e.SliceTargetReference(sliceElementDef, Self.ConsistentWith.Value(), 0, "*");
 
                 e.StartComponentSliceing();
                 e.ComponentSliceCodeableConcept("asymmetryType",

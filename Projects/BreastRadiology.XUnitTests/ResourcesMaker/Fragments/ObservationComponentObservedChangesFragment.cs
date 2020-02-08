@@ -14,7 +14,7 @@ namespace BreastRadiology.XUnitTests
 {
     partial class ResourcesMaker
     {
-         SDTaskVar ObservedChangesComponentFragment = new SDTaskVar(
+         SDTaskVar ObservationComponentObservedChangesFragment = new SDTaskVar(
                (out StructureDefinition s) =>
                    {
                        SDefEditor e = Self.CreateFragment("ObservedChangesFragment",

@@ -152,12 +152,17 @@ namespace BreastRadiology.XUnitTests
                     .AddFragRef(Self.ObservationNoComponentFragment.Value())
                     .AddFragRef(Self.ObservationNoValueFragment.Value())
                     .AddFragRef(Self.CommonComponentsFragment.Value())
-                    .AddFragRef(Self.ShapeComponentsFragment.Value())
-                    .AddFragRef(Self.ObservedCountComponentFragment.Value())
-                    .AddFragRef(Self.ObservedDistributionComponentFragment.Value())
-                    .AddFragRef(Self.ObservedSizeComponentFragment.Value())
-                    .AddFragRef(Self.NotPreviouslySeenComponentsFragment.Value())
-                    .AddFragRef(Self.CorrespondsWithComponentFragment.Value())
+                    .AddFragRef(Self.ObservationComponentShapeFragment.Value())
+                    .AddFragRef(Self.ObservationComponentObservedCountFragment.Value())
+                    .AddFragRef(Self.ObservationComponentObservedDistributionFragment.Value())
+                    .AddFragRef(Self.ObservationComponentObservedSizeFragment.Value())
+                    .AddFragRef(Self.ObservationComponentNotPreviouslySeenFragment.Value())
+                    .AddFragRef(Self.ObservationComponentCorrespondsWithFragment.Value())
+                    .AddFragRef(Self.ObservationComponentPreviouslyDemonstratedByFragment.Value())
+
+                    .AddFragRef(Self.ObservationHasMemberConsistentWithFragment.Value())
+                    .AddFragRef(Self.ObservationHasMemberAssociatedFeaturesFragment.Value())
+
                     .Description("Cyst Observation",
                         new Markdown()
                             .Paragraph("[PR]")
@@ -169,10 +174,6 @@ namespace BreastRadiology.XUnitTests
                     .ReviewedStatus("NOONE", "")
                     .MammoDescription("540")
                     ;
-
-                ElementTreeNode sliceElementDef = e.ConfigureSliceByUrlDiscriminator("hasMember", false);
-                e.SliceTargetReference(sliceElementDef, Self.AssociatedFeatures.Value(), 0, "1");
-                e.SliceTargetReference(sliceElementDef, Self.ConsistentWith.Value(), 0, "*");
 
                 e.StartComponentSliceing();
                 e.ComponentSliceCodeableConcept("cystType",

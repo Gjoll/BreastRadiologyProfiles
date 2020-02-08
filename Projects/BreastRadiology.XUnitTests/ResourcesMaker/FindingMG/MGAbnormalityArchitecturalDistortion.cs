@@ -28,9 +28,13 @@ namespace BreastRadiology.XUnitTests
                     .AddFragRef(Self.ObservationNoComponentFragment.Value())
                     .AddFragRef(Self.ObservationNoValueFragment.Value())
                     .AddFragRef(Self.CommonComponentsFragment.Value())
-                    .AddFragRef(Self.ShapeComponentsFragment.Value())
-                    .AddFragRef(Self.NotPreviouslySeenComponentsFragment.Value())
-                    .AddFragRef(Self.CorrespondsWithComponentFragment.Value())
+                    .AddFragRef(Self.ObservationComponentShapeFragment.Value())
+                    .AddFragRef(Self.ObservationComponentNotPreviouslySeenFragment.Value())
+                    .AddFragRef(Self.ObservationComponentCorrespondsWithFragment.Value())
+                    .AddFragRef(Self.ObservationComponentPreviouslyDemonstratedByFragment.Value())
+
+                    .AddFragRef(Self.ObservationHasMemberAssociatedFeaturesFragment.Value())
+                    .AddFragRef(Self.ObservationHasMemberConsistentWithFragment.Value())
                     .Description("Architectural Distortion Observation",
                         new Markdown())
                     ;
@@ -53,11 +57,6 @@ namespace BreastRadiology.XUnitTests
                             "As an ASSOCIATED FEATURE, architectural distortion may be used in conjunction with another",
                             "finding to indicate that the parenchyma is distorted or retracted adjacent to the FINDING")
                     ;
-
-
-                ElementTreeNode sliceElementDef = e.ConfigureSliceByUrlDiscriminator("hasMember", false);
-                e.SliceTargetReference( sliceElementDef, Self.AssociatedFeatures.Value(), 0, "1");
-                e.SliceTargetReference( sliceElementDef, Self.ConsistentWith.Value(), 0, "*");
             });
     }
 }

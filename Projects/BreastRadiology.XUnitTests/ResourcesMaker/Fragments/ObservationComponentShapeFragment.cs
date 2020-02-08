@@ -6,7 +6,7 @@ namespace BreastRadiology.XUnitTests
 {
     partial class ResourcesMaker : ConverterBase
     {
-        SDTaskVar ShapeComponentsFragment = new SDTaskVar(
+        SDTaskVar ObservationComponentShapeFragment = new SDTaskVar(
             (out StructureDefinition  s) =>
         {
             SDefEditor e = Self.CreateFragment("ShapeComponentsFragment",
