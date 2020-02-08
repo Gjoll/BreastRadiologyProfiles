@@ -153,9 +153,11 @@
           "coding": [
             {
               "system": "http://hl7.org/fhir/us/breast-radiology/CodeSystem/ObservationCodes",
-              "code": "abnormalityMassObservation"
+              "code": "abnormalityMassObservation",
+              "display": "Abnormality Mass observation"
             }
-          ]
+          ],
+          "text": "Abnormality Mass observation"
         }
       },
       {
@@ -258,7 +260,7 @@
         "id": "Observation.component:massType.code",
         "path": "Observation.component.code",
         "short": "Mass Type component code",
-        "definition": "This code identifies the Mass Type component.",
+        "definition": "This code identifies the Mass Type component.\n Its value shall always be the concept 'Component code for 'Abnormality Mass Type' slice'",
         "min": 1,
         "max": "1",
         "base": {
@@ -270,9 +272,11 @@
           "coding": [
             {
               "system": "http://hl7.org/fhir/us/breast-radiology/CodeSystem/ObservationComponentSliceCodes",
-              "code": "abnormalityMassType"
+              "code": "abnormalityMassType",
+              "display": "Component code for 'Abnormality Mass Type' slice"
             }
-          ]
+          ],
+          "text": "Component code for 'Abnormality Mass Type' slice"
         }
       },
       {

@@ -789,9 +789,11 @@
           "coding": [
             {
               "system": "http://hl7.org/fhir/us/breast-radiology/CodeSystem/ObservationCodes",
-              "code": "mgBreastDensityObservation"
+              "code": "mgBreastDensityObservation",
+              "display": "MG Breast Density observation"
             }
-          ]
+          ],
+          "text": "MG Breast Density observation"
         },
         "isModifier": false,
         "isSummary": true,
@@ -2393,9 +2395,11 @@
           "coding": [
             {
               "system": "http://hl7.org/fhir/us/breast-radiology/CodeSystem/ObservationCodes",
-              "code": "mgBreastDensityObservation"
+              "code": "mgBreastDensityObservation",
+              "display": "MG Breast Density observation"
             }
-          ]
+          ],
+          "text": "MG Breast Density observation"
         }
       },
       {

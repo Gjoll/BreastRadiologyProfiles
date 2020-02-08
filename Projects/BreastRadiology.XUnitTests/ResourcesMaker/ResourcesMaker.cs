@@ -299,7 +299,7 @@ namespace BreastRadiology.XUnitTests
 
             // we have to manually force the creation of the following to get
             // all the necessary objects to be created.
-            this.CodesCS.Value();
+            this.ObservationCodesCS.Value();
             this.CompositionSectionSliceCodesCS.Value();
             this.ComponentSliceCodesCS.Value();
             this.BreastRadiologyDocument.Value();

@@ -35,10 +35,7 @@ namespace BreastRadiology.XUnitTests
                            0,
                            "*",
                            "Corresponds With",
-                            new Markdown()
-                                .Paragraph($"This slice contains zero or more components that defines what this observation correspomnds with.",
-                                            $"The value of this component is a codeable concept chosen from the {Self.CorrespondsWithVS.Value().Name} valueset.")
-                           );
+                            "defines what this observation corresponds with");
                        e.IntroDoc
                            .ReviewedStatus("NOONE", "")
                            ;

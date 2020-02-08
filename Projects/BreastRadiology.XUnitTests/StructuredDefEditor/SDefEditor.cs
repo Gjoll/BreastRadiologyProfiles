@@ -446,17 +446,39 @@ namespace BreastRadiology.XUnitTests
                 Int32 minCardinality,
                 String maxCardinality,
                 String componentName,
-                Markdown sliceDefinition,
+                String sliceDefinitionText,
                 Modalities modalities = Modalities.All)
         {
             String compStr = maxCardinality == "1" ? compStr = "component" : "components";
+            Markdown sliceDefinition;
+
+            {
+                String introStr;
+                if (minCardinality == 0)
+                {
+                    if (maxCardinality == "1")
+                        introStr = "This slice contains the optional component";
+                    else
+                        introStr = "This slice contains the optional components";
+                }
+                else
+                {
+                    if (maxCardinality == "1")
+                        introStr = "This slice contains the required component";
+                    else
+                        introStr = "This slice contains the required components";
+                }
+                sliceDefinition = new Markdown()
+                    .Paragraph($"{introStr} that {sliceDefinitionText}.",
+                               $"The value of this component is a codeable concept chosen from the {valueSet.Name} valueset.");
+            }
 
             ElementTreeSlice slice = this.AppendSlice("component", sliceName, minCardinality, maxCardinality);
             slice.ElementDefinition
                 .SetShort($"{componentName} component")
-                .SetDefinition(sliceDefinition)
-                .SetComment(ResourcesMaker.componentDefinition)
-                ;
+                    .SetDefinition(sliceDefinition)
+                    .SetComment(ResourcesMaker.componentDefinition)
+                    ;
 
             if (modalities != Modalities.All)
             {
@@ -464,6 +486,8 @@ namespace BreastRadiology.XUnitTests
                     .ValidModalities(modalities);
             }
 
+            if (String.IsNullOrWhiteSpace(pattern.Coding[0].Display))
+                throw new Exception($"Display null on coding {pattern.Coding[0].Code}");
             {
                 ElementDefinition componentCode = new ElementDefinition
                 {
@@ -473,11 +497,12 @@ namespace BreastRadiology.XUnitTests
                     Max = "1",
                     Short = $"{componentName} component code",
                     Definition = new Markdown()
-                                    .Paragraph($"This code identifies the {componentName} {compStr}.")
+                                    .Paragraph($"This code identifies the {componentName} {compStr}.",
+                                        $"Its value shall always be the concept '{pattern.Coding[0].Display}'")
                 };
                 componentCode
                     .Pattern(pattern)
-                    ;
+                                ;
                 slice.CreateNode(componentCode);
             }
             {
@@ -491,11 +516,11 @@ namespace BreastRadiology.XUnitTests
                 };
                 valueX
                     .Binding(valueSet, bindingStrength)
-                    .Type("CodeableConcept")
-                    .SetDefinition(new Markdown()
-                        .Paragraph("Value is a codeable concept.")
-                     )
-                ;
+                                    .Type("CodeableConcept")
+                                    .SetDefinition(new Markdown()
+                                        .Paragraph("Value is a codeable concept.")
+                                     )
+                                ;
                 slice.CreateNode(valueX);
             }
 

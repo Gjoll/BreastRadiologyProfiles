@@ -22,7 +22,25 @@
   "compose": {
     "include": [
       {
-        "system": "http://hl7.org/fhir/us/breast-radiology/CodeSystem/OrientationCS"
+        "system": "http://hl7.org/fhir/us/breast-radiology/CodeSystem/OrientationCS",
+        "concept": [
+          {
+            "code": "ParallelToSkin",
+            "display": "Parallel to skin"
+          },
+          {
+            "code": "PerpendicularToSkin(notParallel)",
+            "display": "Perpendicular to skin (not parallel)"
+          },
+          {
+            "code": "TallerThanWide",
+            "display": "Taller than wide"
+          },
+          {
+            "code": "WiderThanTall",
+            "display": "Wider than tall"
+          }
+        ]
       }
     ]
   }

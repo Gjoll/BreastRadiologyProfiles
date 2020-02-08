@@ -44,7 +44,37 @@
   "compose": {
     "include": [
       {
-        "system": "http://hl7.org/fhir/us/breast-radiology/CodeSystem/NotPreviouslySeenCodeSystemCS"
+        "system": "http://hl7.org/fhir/us/breast-radiology/CodeSystem/NotPreviouslySeenCodeSystemCS",
+        "concept": [
+          {
+            "code": "ClinicalExam",
+            "display": "Clinical exam"
+          },
+          {
+            "code": "Ductogram",
+            "display": "Ductogram"
+          },
+          {
+            "code": "Mammogram",
+            "display": "Mammogram"
+          },
+          {
+            "code": "MRI",
+            "display": "MRI"
+          },
+          {
+            "code": "OutsideExam",
+            "display": "Outside exam"
+          },
+          {
+            "code": "Scintimammography",
+            "display": "Scintimammography"
+          },
+          {
+            "code": "Ultrasound",
+            "display": "Ultrasound"
+          }
+        ]
       }
     ]
   }

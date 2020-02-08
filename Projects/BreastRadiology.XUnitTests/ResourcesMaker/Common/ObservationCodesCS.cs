@@ -21,29 +21,50 @@ Observation SectionFindingsRightBreast
         const String ObservationCodesName = "ObservationCodes";
         String ObservationCodesUrl => this.CodeSystemUrl(ObservationCodesName);
 
-        Coding ObservationCodeMGFinding => new Coding(this.ObservationCodesUrl, "mgFindingObservationObservation");
-        Coding ObservationCodeAbnormalityCyst => new Coding(this.ObservationCodesUrl, "abnormalityCyst");
-        Coding ObservationCodeAssociatedFeatures => new Coding(this.ObservationCodesUrl, "associatedFeaturesObservation");
-        Coding ObservationCodeMGAbnormalityArchitecturalDistortion => new Coding(this.ObservationCodesUrl, "mgAbnormalityArchitecturalDistortionObservation");
-        Coding ObservationCodeConsistentWith => new Coding(this.ObservationCodesUrl, "consistentWithObservation");
-        Coding ObservationCodeMGAbnormalityCalcification => new Coding(this.ObservationCodesUrl, "mgAbnormalityCalcificationObservation");
-        Coding ObservationCodeObservedFeature => new Coding(this.ObservationCodesUrl, "featureObservation");
-        Coding ObservationCodeAbnormalityDuct => new Coding(this.ObservationCodesUrl, "abnormalityDuctObservation");
-        Coding ObservationCodeAbnormalityForeignObject => new Coding(this.ObservationCodesUrl, "abnormalityForeignObjectObservation");
-        Coding ObservationCodeAbnormalityLymphNode => new Coding(this.ObservationCodesUrl, "abnormalityLymphNodeObservation");
-        Coding ObservationCodeAbnormalityMass => new Coding(this.ObservationCodesUrl, "abnormalityMassObservation");
-        Coding ObservationCodeAbnormalityFibroadenoma => new Coding(this.ObservationCodesUrl, "abnormalityFibroadenomaObservation");
-        Coding ObservationCodeMGAbnormalityAsymmetry => new Coding(this.ObservationCodesUrl, "mgAbnormalityAsymmetryObservation");
-        Coding ObservationCodeMGAbnormalityDensity => new Coding(this.ObservationCodesUrl, "mgAbnormalityDensityObservation");
-        Coding ObservationCodeMGAbnormalityFatNecrosis => new Coding(this.ObservationCodesUrl, "mgAbnormalityFatNecrosisObservation");
-        Coding ObservationCodeMGBreastDensity => new Coding(this.ObservationCodesUrl, "mgBreastDensityObservation");
-        Coding ObservationCodeMRIFinding => new Coding(this.ObservationCodesUrl, "mriFindingObservation");
-        Coding ObservationCodeNMFinding => new Coding(this.ObservationCodesUrl, "nmFindingObservation");
-        Coding ObservationCodeUSFinding => new Coding(this.ObservationCodesUrl, "usFindingObservation");
-        Coding ObservationCodeFindingsRightBreast => new Coding(this.ObservationCodesUrl, "findingsRightBreastObservation");
-        Coding ObservationCodeFindingsLeftBreast => new Coding(this.ObservationCodesUrl, "findingsLeftBreastObservation");
+        Coding ObservationCodeMGFinding =>
+            new Coding(this.ObservationCodesUrl, "mgFindingObservationObservation", "MG Finding observation");
+        Coding ObservationCodeAbnormalityCyst => 
+            new Coding(this.ObservationCodesUrl, "abnormalityCyst", "Abnormality Cyst observation");
+        Coding ObservationCodeAssociatedFeatures =>
+            new Coding(this.ObservationCodesUrl, "associatedFeaturesObservation", "Associated Features observation");
+        Coding ObservationCodeMGAbnormalityArchitecturalDistortion =>
+            new Coding(this.ObservationCodesUrl, "mgAbnormalityArchitecturalDistortionObservation", "Abnormality Architectural Distortion observation");
+        Coding ObservationCodeConsistentWith =>
+            new Coding(this.ObservationCodesUrl, "consistentWithObservation", "Consistent With observation");
+        Coding ObservationCodeMGAbnormalityCalcification =>
+            new Coding(this.ObservationCodesUrl, "mgAbnormalityCalcificationObservation", "Abnormality Calcification observation");
+        Coding ObservationCodeObservedFeature =>
+            new Coding(this.ObservationCodesUrl, "featureObservation", "Observed Feature observation");
+        Coding ObservationCodeAbnormalityDuct =>
+            new Coding(this.ObservationCodesUrl, "abnormalityDuctObservation", "Abnormality Duct observation");
+        Coding ObservationCodeAbnormalityForeignObject =>
+            new Coding(this.ObservationCodesUrl, "abnormalityForeignObjectObservation", "Abnormality Foreign Object observation");
+        Coding ObservationCodeAbnormalityLymphNode =>
+            new Coding(this.ObservationCodesUrl, "abnormalityLymphNodeObservation", "Abnormality Lymph Node observation");
+        Coding ObservationCodeAbnormalityMass =>
+            new Coding(this.ObservationCodesUrl, "abnormalityMassObservation", "Abnormality Mass observation");
+        Coding ObservationCodeAbnormalityFibroadenoma =>
+            new Coding(this.ObservationCodesUrl, "abnormalityFibroadenomaObservation", "Abnormality Fibroadenoma observation");
+        Coding ObservationCodeMGAbnormalityAsymmetry =>
+            new Coding(this.ObservationCodesUrl, "mgAbnormalityAsymmetryObservation", "MG Abnormality Asymmetry observation");
+        Coding ObservationCodeMGAbnormalityDensity =>
+            new Coding(this.ObservationCodesUrl, "mgAbnormalityDensityObservation", "MG Abnormality Density observation");
+        Coding ObservationCodeMGAbnormalityFatNecrosis =>
+            new Coding(this.ObservationCodesUrl, "mgAbnormalityFatNecrosisObservation", "MG Abnormality FatNecrosis observation");
+        Coding ObservationCodeMGBreastDensity =>
+            new Coding(this.ObservationCodesUrl, "mgBreastDensityObservation", "MG Breast Density observation");
+        Coding ObservationCodeMRIFinding =>
+            new Coding(this.ObservationCodesUrl, "mriFindingObservation", "MRI Finding observation");
+        Coding ObservationCodeNMFinding =>
+            new Coding(this.ObservationCodesUrl, "nmFindingObservation", "NM Findingobservation");
+        Coding ObservationCodeUSFinding =>
+            new Coding(this.ObservationCodesUrl, "usFindingObservation", "US Finding observation");
+        Coding ObservationCodeFindingsRightBreast =>
+            new Coding(this.ObservationCodesUrl, "findingsRightBreastObservation", "Findings Right Breast observation");
+        Coding ObservationCodeFindingsLeftBreast =>
+            new Coding(this.ObservationCodesUrl, "findingsLeftBreastObservation", "Findings Left Breast observation");
 
-        CSTaskVar CodesCS = new CSTaskVar(
+        CSTaskVar ObservationCodesCS = new CSTaskVar(
              (out CodeSystem cs) =>
                  cs = Self.CreateCodeSystem(
                         ObservationCodesName,
@@ -55,87 +76,87 @@ Observation SectionFindingsRightBreast
                         {
                             new ConceptDef()
                                 .SetCode(Self.ObservationCodeMGFinding)
-                                .SetDefinition("Observation.code to uniquely identifies an MGFinding observation")
+                                .SetDefinition("Observation.code to identify an MGFinding observation")
                                 ,
                             new ConceptDef()
                                 .SetCode(Self.ObservationCodeAbnormalityCyst)
-                                .SetDefinition("Observation.code to uniquely identifies an AbnormalityCyst observation")
+                                .SetDefinition("Observation.code to identify an AbnormalityCyst observation")
                                 ,
                             new ConceptDef()
                                 .SetCode(Self.ObservationCodeAssociatedFeatures)
-                                .SetDefinition("Observation.code to uniquely identifies an AssociatedFeatures observation")
+                                .SetDefinition("Observation.code to identify an AssociatedFeatures observation")
                                 ,
                             new ConceptDef()
                                 .SetCode(Self.ObservationCodeMGAbnormalityArchitecturalDistortion)
-                                .SetDefinition("Observation.code to uniquely identifies an MGAbnormalityArchitecturalDistortion observation")
+                                .SetDefinition("Observation.code to identify an MGAbnormalityArchitecturalDistortion observation")
                                 ,
                             new ConceptDef()
                                 .SetCode(Self.ObservationCodeConsistentWith)
-                                .SetDefinition("Observation.code to uniquely identifies a ConsistentWith observation")
+                                .SetDefinition("Observation.code to identify a ConsistentWith observation")
                                 ,
                             new ConceptDef()
                                 .SetCode(Self.ObservationCodeMGAbnormalityCalcification)
-                                .SetDefinition("Observation.code to uniquely identifies an MGAbnormalityCalcification observation")
+                                .SetDefinition("Observation.code to identify an MGAbnormalityCalcification observation")
                                 ,
                             new ConceptDef()
                                 .SetCode(Self.ObservationCodeObservedFeature)
-                                .SetDefinition("Observation.code to uniquely identifies an ObservedFeature observation")
+                                .SetDefinition("Observation.code to identify an ObservedFeature observation")
                                 ,
                             new ConceptDef()
                                 .SetCode(Self.ObservationCodeAbnormalityDuct)
-                                .SetDefinition("Observation.code to uniquely identifies an ObservationCodeAbnormalityDuct observation")
+                                .SetDefinition("Observation.code to identify an ObservationCodeAbnormalityDuct observation")
                                 ,
                             new ConceptDef()
                                 .SetCode(Self.ObservationCodeAbnormalityForeignObject)
-                                .SetDefinition("Observation.code to uniquely identifies an AbnormalityForeignObject observation")
+                                .SetDefinition("Observation.code to identify an AbnormalityForeignObject observation")
                                 ,
                             new ConceptDef()
                                 .SetCode(Self.ObservationCodeAbnormalityLymphNode)
-                                .SetDefinition("Observation.code to uniquely identifies an AbnormalityLymphNode observation")
+                                .SetDefinition("Observation.code to identify an AbnormalityLymphNode observation")
                                 ,
                             new ConceptDef()
                                 .SetCode(Self.ObservationCodeAbnormalityMass)
-                                .SetDefinition("Observation.code to uniquely identifies an AbnormalityMass observation")
+                                .SetDefinition("Observation.code to identify an AbnormalityMass observation")
                                 ,
                             new ConceptDef()
                                 .SetCode(Self.ObservationCodeAbnormalityFibroadenoma)
-                                .SetDefinition("Observation.code to uniquely identifies an AbnormalityFibroadenoma observation")
+                                .SetDefinition("Observation.code to identify an AbnormalityFibroadenoma observation")
                                 ,
                             new ConceptDef()
                                 .SetCode(Self.ObservationCodeMGAbnormalityAsymmetry)
-                                .SetDefinition("Observation.code to uniquely identifies an MGAbnormalityAsymmetry observation")
+                                .SetDefinition("Observation.code to identify an MGAbnormalityAsymmetry observation")
                                 ,
                             new ConceptDef()
                                 .SetCode(Self.ObservationCodeMGAbnormalityDensity)
-                                .SetDefinition("Observation.code to uniquely identifies an MGAbnormalityDensity observation")
+                                .SetDefinition("Observation.code to identify an MGAbnormalityDensity observation")
                                 ,
                             new ConceptDef()
                                 .SetCode(Self.ObservationCodeMGAbnormalityFatNecrosis)
-                                .SetDefinition("Observation.code to uniquely identifies an MGAbnormalityFatNecrosis observation")
+                                .SetDefinition("Observation.code to identify an MGAbnormalityFatNecrosis observation")
                                 ,
                             new ConceptDef()
                                 .SetCode(Self.ObservationCodeMGBreastDensity)
-                                .SetDefinition("Observation.code to uniquely identifies an MGBreastDensity observation")
+                                .SetDefinition("Observation.code to identify an MGBreastDensity observation")
                                 ,
                             new ConceptDef()
                                 .SetCode(Self.ObservationCodeMRIFinding)
-                                .SetDefinition("Observation.code to uniquely identifies an MRIFinding observation")
+                                .SetDefinition("Observation.code to identify an MRIFinding observation")
                                 ,
                             new ConceptDef()
                                 .SetCode(Self.ObservationCodeNMFinding)
-                                .SetDefinition("Observation.code to uniquely identifies an NMFinding observation")
+                                .SetDefinition("Observation.code to identify an NMFinding observation")
                                 ,
                             new ConceptDef()
                                 .SetCode(Self.ObservationCodeUSFinding)
-                                .SetDefinition("Observation.code to uniquely identifies a USFinding observation")
+                                .SetDefinition("Observation.code to identify a USFinding observation")
                                 ,
                             new ConceptDef()
                                 .SetCode(Self.ObservationCodeFindingsLeftBreast)
-                                .SetDefinition("Observation.code to uniquely identifies a SectionFindingsLeftBreast observation")
+                                .SetDefinition("Observation.code to identify a SectionFindingsLeftBreast observation")
                                 ,
                             new ConceptDef()
                                 .SetCode(Self.ObservationCodeFindingsRightBreast)
-                                .SetDefinition("Observation.code to uniquely identifies a SectionFindingsRightBreast observation")
+                                .SetDefinition("Observation.code to identify a SectionFindingsRightBreast observation")
                                 ,
                        })
              );

@@ -17,11 +17,16 @@ namespace BreastRadiology.XUnitTests
         const string CompositionSectionSliceCodesName = "CompositionSectionSliceCodes";
         String CompositionSectionSliceCodesUrl => this.CodeSystemUrl(CompositionSectionSliceCodesName);
 
-        Coding SectionCodeReport => new Coding(this.CompositionSectionSliceCodesUrl, "sectionReport");
-        Coding SectionCodeImpressions => new Coding(this.CompositionSectionSliceCodesUrl, "sectionImpressions");
-        Coding SectionCodeRelatedResources => new Coding(this.CompositionSectionSliceCodesUrl, "sectionRelatedResources");
-        Coding SectionCodeRecommendations => new Coding(this.CompositionSectionSliceCodesUrl, "sectionCodeRecommendations");
-        Coding SectionCodeFindings => new Coding(this.CompositionSectionSliceCodesUrl, "sectionCodeFindings");
+        Coding SectionCodeReport => 
+            new Coding(this.CompositionSectionSliceCodesUrl, "sectionReport", "Code to identify the 'Report' section slice");
+        Coding SectionCodeImpressions => 
+            new Coding(this.CompositionSectionSliceCodesUrl, "sectionImpressions", "Code to identify the 'Impressions' section slice");
+        Coding SectionCodeRelatedResources => 
+            new Coding(this.CompositionSectionSliceCodesUrl, "sectionRelatedResources", "Code to identify the 'RelatedResources' section slice");
+        Coding SectionCodeRecommendations => 
+            new Coding(this.CompositionSectionSliceCodesUrl, "sectionCodeRecommendations", "Code to identify the 'Recommendations' section slice");
+        Coding SectionCodeFindings => 
+            new Coding(this.CompositionSectionSliceCodesUrl, "sectionCodeFindings", "Code to identify the 'Findings' section slice");
 
         CSTaskVar CompositionSectionSliceCodesCS = new CSTaskVar(
              (out CodeSystem cs) =>

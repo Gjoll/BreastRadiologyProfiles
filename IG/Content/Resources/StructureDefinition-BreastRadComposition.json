@@ -2410,7 +2410,8 @@
           "coding": [
             {
               "system": "http://hl7.org/fhir/us/breast-radiology/CodeSystem/CompositionSectionSliceCodes",
-              "code": "sectionReport"
+              "code": "sectionReport",
+              "display": "Code to identify the 'Report' section slice"
             }
           ]
         },
@@ -2965,7 +2966,8 @@
           "coding": [
             {
               "system": "http://hl7.org/fhir/us/breast-radiology/CodeSystem/CompositionSectionSliceCodes",
-              "code": "sectionImpressions"
+              "code": "sectionImpressions",
+              "display": "Code to identify the 'Impressions' section slice"
             }
           ]
         },
@@ -3520,7 +3522,8 @@
           "coding": [
             {
               "system": "http://hl7.org/fhir/us/breast-radiology/CodeSystem/CompositionSectionSliceCodes",
-              "code": "sectionRelatedResources"
+              "code": "sectionRelatedResources",
+              "display": "Code to identify the 'RelatedResources' section slice"
             }
           ]
         },
@@ -4075,7 +4078,8 @@
           "coding": [
             {
               "system": "http://hl7.org/fhir/us/breast-radiology/CodeSystem/CompositionSectionSliceCodes",
-              "code": "sectionCodeRecommendations"
+              "code": "sectionCodeRecommendations",
+              "display": "Code to identify the 'Recommendations' section slice"
             }
           ]
         },
@@ -4495,7 +4499,8 @@
           "coding": [
             {
               "system": "http://hl7.org/fhir/us/breast-radiology/CodeSystem/CompositionSectionSliceCodes",
-              "code": "sectionReport"
+              "code": "sectionReport",
+              "display": "Code to identify the 'Report' section slice"
             }
           ]
         }
@@ -4584,7 +4589,8 @@
           "coding": [
             {
               "system": "http://hl7.org/fhir/us/breast-radiology/CodeSystem/CompositionSectionSliceCodes",
-              "code": "sectionImpressions"
+              "code": "sectionImpressions",
+              "display": "Code to identify the 'Impressions' section slice"
             }
           ]
         }
@@ -4673,7 +4679,8 @@
           "coding": [
             {
               "system": "http://hl7.org/fhir/us/breast-radiology/CodeSystem/CompositionSectionSliceCodes",
-              "code": "sectionRelatedResources"
+              "code": "sectionRelatedResources",
+              "display": "Code to identify the 'RelatedResources' section slice"
             }
           ]
         }
@@ -4762,7 +4769,8 @@
           "coding": [
             {
               "system": "http://hl7.org/fhir/us/breast-radiology/CodeSystem/CompositionSectionSliceCodes",
-              "code": "sectionCodeRecommendations"
+              "code": "sectionCodeRecommendations",
+              "display": "Code to identify the 'Recommendations' section slice"
             }
           ]
         }

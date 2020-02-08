@@ -98,9 +98,11 @@
           "coding": [
             {
               "system": "http://hl7.org/fhir/us/breast-radiology/CodeSystem/ObservationCodes",
-              "code": "featureObservation"
+              "code": "featureObservation",
+              "display": "Observed Feature observation"
             }
-          ]
+          ],
+          "text": "Observed Feature observation"
         }
       },
       {
@@ -140,7 +142,7 @@
         "id": "Observation.component:featureType.code",
         "path": "Observation.component.code",
         "short": "Observed Feature Type component code",
-        "definition": "This code identifies the Observed Feature Type component.",
+        "definition": "This code identifies the Observed Feature Type component.\n Its value shall always be the concept 'Component code for 'Feature Type' slice'",
         "min": 1,
         "max": "1",
         "base": {
@@ -152,9 +154,11 @@
           "coding": [
             {
               "system": "http://hl7.org/fhir/us/breast-radiology/CodeSystem/ObservationComponentSliceCodes",
-              "code": "featureType"
+              "code": "featureType",
+              "display": "Component code for 'Feature Type' slice"
             }
-          ]
+          ],
+          "text": "Component code for 'Feature Type' slice"
         }
       },
       {

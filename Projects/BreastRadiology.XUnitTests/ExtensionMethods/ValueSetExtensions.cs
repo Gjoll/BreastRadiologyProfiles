@@ -14,7 +14,7 @@ namespace BreastRadiology.XUnitTests
                 foreach (ValueSet.ConceptReferenceComponent concept in component.Concept)
                 {
                     if (concept.Code == code)
-                        return new Coding(component.System, concept.Code);
+                        return new Coding(component.System, concept.Code, concept.Display);
                 }
             }
             throw new Exception($"Code {code} not found in valueset!");

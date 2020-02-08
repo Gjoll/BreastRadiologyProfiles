@@ -36,10 +36,7 @@ namespace BreastRadiology.XUnitTests
                            0,
                            "*",
                            "Observed Change In Abnormality",
-                           new Markdown()
-                               .Paragraph($"This slice contains zero or more components that define observed changes in this abnormality.",
-                                           $"The value of this component is a codeable concept chosen from the {Self.ObservedChangesVS.Value().Name} valueset.")
-                           );
+                           "define observed changes in this abnormality");
                    });
     }
 }

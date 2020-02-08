@@ -36,11 +36,7 @@ namespace BreastRadiology.XUnitTests
                                0,
                                "*",
                                "Observed distribution of abnormalities",
-                               new Markdown()
-                                   .Paragraph($"This slice contains an optional description of the distribution of a ",
-                                              "group of abnormalities. ",
-                                               $"The value of this component is a codeable concept chosen from the {Self.CalcificationDistributionVS.Value().Name} valueset.")
-                               );
+                               "description of the distribution of a group of abnormalities");
                        }
                        {
                            ValueSet binding = Self.UnitsOfLengthVS.Value();

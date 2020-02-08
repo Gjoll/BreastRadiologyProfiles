@@ -120,6 +120,7 @@ namespace BreastRadiology.XUnitTests
         {
             this.Code = code.Code;
             this.Display = code.Display;
+
             return this;
         }
 

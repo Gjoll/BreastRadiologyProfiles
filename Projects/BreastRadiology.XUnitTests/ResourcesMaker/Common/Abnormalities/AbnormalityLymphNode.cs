@@ -189,10 +189,7 @@ namespace BreastRadiology.XUnitTests
                     0,
                     "1",
                     "Lymph Node Type",
-                    new Markdown()
-                        .Paragraph($"This slice contains the optional component that refines the lymph node type.",
-                                    $"The value of this component is a codeable concept chosen from the {binding.Name} valueset.")
-                    );
+                    "refines the lymph node type");
             });
     }
 }

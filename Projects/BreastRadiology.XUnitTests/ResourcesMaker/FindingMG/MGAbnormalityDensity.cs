@@ -116,10 +116,7 @@ namespace BreastRadiology.XUnitTests
                     1,
                     "1",
                     "Density Type",
-                    new Markdown()
-                        .Paragraph($"This slice contains the optional component that refines the density type.",
-                                    $"The value of this component is a codeable concept chosen from the {Self.MGCalcificationTypeVS.Value().Name} valueset.")
-                    );
+                    "refines the density type");
             });
     }
 }

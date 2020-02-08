@@ -139,10 +139,7 @@ namespace BreastRadiology.XUnitTests
                     0,
                     "1",
                     "Mass Type",
-                    new Markdown()
-                        .Paragraph($"This slice contains the optional component that refines the mass type.",
-                                    $"The value of this component is a codeable concept chosen from the {binding.Name} valueset.")
-                    );
+                    "refines the mass type");
             });
     }
 }

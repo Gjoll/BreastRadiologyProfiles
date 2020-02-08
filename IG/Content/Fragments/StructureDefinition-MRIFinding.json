@@ -53,9 +53,11 @@
           "coding": [
             {
               "system": "http://hl7.org/fhir/us/breast-radiology/CodeSystem/ObservationCodes",
-              "code": "mriFindingObservation"
+              "code": "mriFindingObservation",
+              "display": "MRI Finding observation"
             }
-          ]
+          ],
+          "text": "MRI Finding observation"
         }
       }
     ]

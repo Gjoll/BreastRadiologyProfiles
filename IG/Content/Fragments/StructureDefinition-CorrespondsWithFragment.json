@@ -65,7 +65,7 @@
         "path": "Observation.component",
         "sliceName": "correspondsWith",
         "short": "Corresponds With component",
-        "definition": "This slice contains zero or more components that defines what this observation correspomnds with.\n The value of this component is a codeable concept chosen from the CorrespondsWithVS valueset.",
+        "definition": "This slice contains the optional components that defines what this observation corresponds with.\n The value of this component is a codeable concept chosen from the CorrespondsWithVS valueset.",
         "comment": "This is one component of a group of components that comprise the observation.",
         "min": 0,
         "max": "*",
@@ -79,7 +79,7 @@
         "id": "Observation.component:correspondsWith.code",
         "path": "Observation.component.code",
         "short": "Corresponds With component code",
-        "definition": "This code identifies the Corresponds With components.",
+        "definition": "This code identifies the Corresponds With components.\n Its value shall always be the concept 'Component code for 'xxyyz' slice'",
         "min": 1,
         "max": "1",
         "base": {
@@ -91,9 +91,11 @@
           "coding": [
             {
               "system": "http://hl7.org/fhir/us/breast-radiology/CodeSystem/ObservationComponentSliceCodes",
-              "code": "correspondsWith"
+              "code": "correspondsWith",
+              "display": "Component code for 'xxyyz' slice"
             }
-          ]
+          ],
+          "text": "Component code for 'xxyyz' slice"
         }
       },
       {

@@ -25,6 +25,40 @@ namespace BreastRadiology.XUnitTests
                      new ConceptDef[]
                      {
                          //+ Codes
+                         new ConceptDef()
+                             .SetCode("ParallelToSkin")
+                             .SetDisplay("Parallel to skin")
+                             .MammoId("1508")
+                             .ValidModalities(Modalities.MG | Modalities.MRI | Modalities.NM | Modalities.US)
+                             .SetACR("(historically, \"wider-than-tall\" or \"horizontal\")The " +
+                                 "long axis of the mass parallels the skin line. ",
+                                 "Masses that are only slightly obiquely orientedmight " +
+                                 "be considered parallel.")
+                         ,
+                         new ConceptDef()
+                             .SetCode("PerpendicularToSkin(notParallel)")
+                             .SetDisplay("Perpendicular to skin (not parallel)")
+                             .MammoId("1509")
+                             .ValidModalities(Modalities.MG | Modalities.MRI | Modalities.NM | Modalities.US)
+                             .SetACR("(historically, \"isodense\")The long axis of the mass " +
+                                 "does not lie parallel to the skin line. ",
+                                 "The anterior–posterior or verticaldimension is greater " +
+                                 "than the transverse or horizontal dimension. ",
+                                 "These masses can also beobliquely oriented to the " +
+                                 "skin line. ",
+                                 "Round masses are NOT PARALLEL in their orientation.")
+                         ,
+                         new ConceptDef()
+                             .SetCode("TallerThanWide")
+                             .SetDisplay("Taller than wide")
+                             .MammoId("1518")
+                             .ValidModalities(Modalities.MRI | Modalities.US)
+                         ,
+                         new ConceptDef()
+                             .SetCode("WiderThanTall")
+                             .SetDisplay("Wider than tall")
+                             .MammoId("1517")
+                             .ValidModalities(Modalities.MRI | Modalities.US)
                          //- Codes
                      })
              );

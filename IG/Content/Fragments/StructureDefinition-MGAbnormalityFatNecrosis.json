@@ -142,9 +142,11 @@
           "coding": [
             {
               "system": "http://hl7.org/fhir/us/breast-radiology/CodeSystem/ObservationCodes",
-              "code": "mgAbnormalityFatNecrosisObservation"
+              "code": "mgAbnormalityFatNecrosisObservation",
+              "display": "MG Abnormality FatNecrosis observation"
             }
-          ]
+          ],
+          "text": "MG Abnormality FatNecrosis observation"
         }
       },
       {

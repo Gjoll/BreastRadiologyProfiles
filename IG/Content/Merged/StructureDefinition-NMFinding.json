@@ -781,9 +781,11 @@
           "coding": [
             {
               "system": "http://hl7.org/fhir/us/breast-radiology/CodeSystem/ObservationCodes",
-              "code": "nmFindingObservation"
+              "code": "nmFindingObservation",
+              "display": "NM Findingobservation"
             }
-          ]
+          ],
+          "text": "NM Findingobservation"
         },
         "isModifier": false,
         "isSummary": true,
@@ -2411,9 +2413,11 @@
           "coding": [
             {
               "system": "http://hl7.org/fhir/us/breast-radiology/CodeSystem/ObservationCodes",
-              "code": "nmFindingObservation"
+              "code": "nmFindingObservation",
+              "display": "NM Findingobservation"
             }
-          ]
+          ],
+          "text": "NM Findingobservation"
         }
       },
       {

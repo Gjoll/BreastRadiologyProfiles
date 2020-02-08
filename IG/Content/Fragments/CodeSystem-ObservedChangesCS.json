@@ -17,5 +17,77 @@
   "description": "Observed changes in an abnormality code system.",
   "caseSensitive": true,
   "content": "complete",
-  "count": 0
+  "count": 14,
+  "concept": [
+    {
+      "code": "DecreaseInCalcifications",
+      "display": "Decrease in calcifications",
+      "definition": "Valid for the following modalities: MG."
+    },
+    {
+      "code": "DecreaseInNumber",
+      "display": "Decrease in number",
+      "definition": "There is a decrease in the number of calcifications found in this mammogram versus the prior mammogram.\r\n\r\nValid for the following modalities: MG."
+    },
+    {
+      "code": "DecreaseInSize",
+      "display": "Decrease in size",
+      "definition": "Valid for the following modalities: MG US MRI NM."
+    },
+    {
+      "code": "IncreaseInCalcifications",
+      "display": "Increase in calcifications",
+      "definition": "Valid for the following modalities: MG."
+    },
+    {
+      "code": "IncreaseInNumber",
+      "display": "Increase in number",
+      "definition": "There is an increase in the number of calcifications found in this mammogram versus the prior mammogram.\r\n\r\nValid for the following modalities: MG."
+    },
+    {
+      "code": "IncreaseInSize",
+      "display": "Increase in size",
+      "definition": "Valid for the following modalities: MG US MRI NM."
+    },
+    {
+      "code": "LessProminent",
+      "display": "Less prominent",
+      "definition": "Valid for the following modalities: MG US MRI."
+    },
+    {
+      "code": "MoreProminent",
+      "display": "More prominent",
+      "definition": "Valid for the following modalities: MG US MRI."
+    },
+    {
+      "code": "New",
+      "display": "New",
+      "definition": "Valid for the following modalities: MG US MRI NM."
+    },
+    {
+      "code": "NoLongerSeen",
+      "display": "No longer seen",
+      "definition": "The lesion or mass is no longer seen from previous Mammogram, Ultrasound and/or MRI.\r\n\r\nValid for the following modalities: MG US MRI."
+    },
+    {
+      "code": "NotSignificantChanged",
+      "display": "Not significant changed",
+      "definition": "Valid for the following modalities: MG US MRI NM."
+    },
+    {
+      "code": "PartiallyRemoved",
+      "display": "Partially removed",
+      "definition": "Valid for the following modalities: MG."
+    },
+    {
+      "code": "RepresentsChange",
+      "display": "Represents change",
+      "definition": "Valid for the following modalities: MG US MRI NM."
+    },
+    {
+      "code": "Stable",
+      "display": "Stable",
+      "definition": "The condition has remained stable since the last Mammogram, Ultrasound, MRI or Nuclear Medicine exam.\r\n\r\nValid for the following modalities: MG US MRI."
+    }
+  ]
 }

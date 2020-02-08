@@ -39,5 +39,27 @@
   "description": "ConsistentWithQualifier  code system",
   "caseSensitive": true,
   "content": "complete",
-  "count": 0
+  "count": 4,
+  "concept": [
+    {
+      "code": "DifferentialDiagnosis",
+      "display": "Differential diagnosis",
+      "definition": "More than one possibility for your diagnosis. \r\nThe process of weighing the probability of one disease versus that of other diseases possibly accounting for a patient's illness.\r\n\r\nValid for the following modalities: MG US MRI NM."
+    },
+    {
+      "code": "LikelyRepresents",
+      "display": "Likely represents",
+      "definition": "Valid for the following modalities: MG US MRI NM."
+    },
+    {
+      "code": "MostLikely",
+      "display": "Most likely",
+      "definition": "Valid for the following modalities: MG US."
+    },
+    {
+      "code": "Resembles",
+      "display": "Resembles",
+      "definition": "Valid for the following modalities: MG US MRI NM."
+    }
+  ]
 }

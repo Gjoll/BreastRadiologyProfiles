@@ -9,7 +9,8 @@ namespace BreastRadiology.XUnitTests
     {
         public static CodeableConcept ToCodeableConcept(this Coding coding)
         {
-            return new CodeableConcept(coding.System, coding.Code, coding.Display);
+            CodeableConcept retVal = new CodeableConcept(coding.System, coding.Code, coding.Display, coding.Display);
+            return retVal;
         }
     }
 }

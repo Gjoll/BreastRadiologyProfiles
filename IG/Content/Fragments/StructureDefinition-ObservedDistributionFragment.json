@@ -69,7 +69,7 @@
         "path": "Observation.component",
         "sliceName": "obsDistribution",
         "short": "Observed distribution of abnormalities component",
-        "definition": "This slice contains an optional description of the distribution of a \ngroup of abnormalities. \nThe value of this component is a codeable concept chosen from the CalcificationDistributionVS valueset.",
+        "definition": "This slice contains the optional components that description of the distribution of a group of abnormalities.\n The value of this component is a codeable concept chosen from the CalcificationDistributionVS valueset.",
         "comment": "This is one component of a group of components that comprise the observation.",
         "min": 0,
         "max": "*",
@@ -83,7 +83,7 @@
         "id": "Observation.component:obsDistribution.code",
         "path": "Observation.component.code",
         "short": "Observed distribution of abnormalities component code",
-        "definition": "This code identifies the Observed distribution of abnormalities components.",
+        "definition": "This code identifies the Observed distribution of abnormalities components.\n Its value shall always be the concept 'Component code for 'Observed Distribution' slice'",
         "min": 1,
         "max": "1",
         "base": {
@@ -95,9 +95,11 @@
           "coding": [
             {
               "system": "http://hl7.org/fhir/us/breast-radiology/CodeSystem/ObservationComponentSliceCodes",
-              "code": "obsDistribution"
+              "code": "obsDistribution",
+              "display": "Component code for 'Observed Distribution' slice"
             }
-          ]
+          ],
+          "text": "Component code for 'Observed Distribution' slice"
         }
       },
       {
@@ -151,9 +153,11 @@
           "coding": [
             {
               "system": "http://hl7.org/fhir/us/breast-radiology/CodeSystem/ObservationComponentSliceCodes",
-              "code": "obsSize"
+              "code": "obsSize",
+              "display": "Component code for 'Observed Size' slice"
             }
-          ]
+          ],
+          "text": "Component code for 'Observed Size' slice"
         }
       },
       {
