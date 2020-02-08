@@ -100,32 +100,6 @@ namespace BreastRadiology.Shared
         public String[] GetHeadings()
         {
             List<String> retVal = new List<string>();
-            //DataRow row = this.dataTable.Rows[0];
-
-            //void Read()
-            //{
-            //    object[] items = row.ItemArray;
-            //    for (Int32 i = 0; i < items.Length; i++)
-            //    {
-            //        switch (items[i])
-            //        {
-            //            case DBNull dbNullValue:
-            //                retVal.Add("");
-            //                break;
-            //            case String stringValue:
-            //                switch (stringValue.Trim().ToUpper())
-            //                {
-            //                    case "ID_MAMMO": this.idMammoCol = i; break;
-            //                }
-            //                retVal.Add(stringValue);
-            //                break;
-
-            //            default:
-            //                throw new NotImplementedException();
-            //        }
-            //    }
-            //}
-            //Read();
             foreach (var col in this.dataTable.Columns)
             {
                 retVal.Add(col.ToString());
@@ -139,22 +113,28 @@ namespace BreastRadiology.Shared
             {
                 DataRow originalRow = originalData.Rows[rowIndex];
                 DataRow newRow = this.dataTable.Rows.Add(originalRow.ItemArray);
+
+                String key;
                 switch (newRow[this.idMammoCol])
                 {
                     case DBNull dbNullValue:
+                        key = $"Row{rowIndex}";
                         break;
                     default:
-                        String key = newRow[this.idMammoCol].ToString();
-                        if (rows.ContainsKey(key))
-                        {
-                            this.converter.ConversionWarn("GGPatcher",
-                                "LoadRows",
-                                $"Mammo id {key} already exists");
-                        }
-                        else
-                            rows.Add(key, newRow);
+                        key = newRow[this.idMammoCol].ToString();
+                        if (key.ToUpper().StartsWith("X"))
+                            key = $"Row{rowIndex}";
                         break;
                 }
+                if (rows.ContainsKey(key))
+                {
+                    this.converter.ConversionWarn("GGPatcher",
+                        "LoadRows",
+                        $"Mammo id {key} already exists");
+                }
+                else
+                    rows.Add(key, newRow);
+
             }
         }
 

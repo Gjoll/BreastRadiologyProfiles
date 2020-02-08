@@ -246,9 +246,6 @@ namespace GGMerge
 
         DataSet ReadSpreadSheet(String filePath)
         {
-            Encoding.RegisterProvider(System.Text.CodePagesEncodingProvider.Instance);
-            Encoding enc1252 = CodePagesEncodingProvider.Instance.GetEncoding(1252);
-
             using (var stream = File.Open(filePath, FileMode.Open, FileAccess.Read))
             {
                 // Auto-detect format, supports:

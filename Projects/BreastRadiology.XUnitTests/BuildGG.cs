@@ -158,7 +158,6 @@ namespace BreastRadiology.XUnitTests
             CodeBlockNested concepts = editor.Blocks.Find(csBlockName);
             if (concepts == null)
                 throw new Exception($"Can not find editor block {csBlockName}");
-            CodeBlockNested concept = null;
 
             for (Int32 i = 1; i < dataTbl.Rows.Count; i++)
             {
