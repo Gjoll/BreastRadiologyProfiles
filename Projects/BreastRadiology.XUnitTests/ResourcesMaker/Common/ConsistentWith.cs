@@ -95,6 +95,7 @@ namespace BreastRadiology.XUnitTests
                         new ConceptDef[]
                         {
                             //+ Codes
+                            #region Codes
                             new ConceptDef()
                                 .SetCode("Abscess")
                                 .SetDisplay("Abscess")
@@ -110,7 +111,7 @@ namespace BreastRadiology.XUnitTests
                                 .ValidModalities(Modalities.MRI | Modalities.US)
                                 .SetSnomedCode("404057003")
                                 .SetSnomedDescription("ClinicalFinding | Angiolipoma (Disorder)")
-                                .SetUMLS("Angiolipoma is a rare type of lipoma — a growth made " +
+                                .SetUMLS("Angiolipoma is a rare type of lipoma - a growth made " +
                                     "of fat and blood vessels that develops under your " +
                                     "skin. ",
                                     " Unlike other types of lipomas, angiolipomas are " +
@@ -126,8 +127,8 @@ namespace BreastRadiology.XUnitTests
                                     "of breast (Disorder) | [0/0] | N60.89")
                                 .SetUMLS("A benign condition; Apocrine Metaplasia refers to " +
                                     "a particular type of cell change. ",
-                                    "This is a type of ‘umbrella term’ that relates to " +
-                                    "a variety of cystic breast disorders. ",
+                                    "This is a type of 'umbrella term' that relates to a " +
+                                    "variety of cystic breast disorders. ",
                                     "The epithelial cells are undergoing an unexpected " +
                                     "change.These breast changes may show on a mammogram " +
                                     "and biopsy as a mass or benign lesion, or possibly " +
@@ -214,8 +215,8 @@ namespace BreastRadiology.XUnitTests
                                     "a more specific type called adenocarcinoma, which " +
                                     "starts in cells in the ducts (the milk ducts) or " +
                                     "the lobules (milk-producing glands). ",
-                                    "www.mayoclinic.org › cancer › diagnosis-treatment " +
-                                    "› drc-20370594")
+                                    "www.mayoclinic.org > cancer > diagnosis-treatment > " +
+                                    "drc-20370594")
                             ,
                             new ConceptDef()
                                 .SetCode("ClusterOfCysts")
@@ -273,7 +274,7 @@ namespace BreastRadiology.XUnitTests
                                     "Although they share most of the features of simple " +
                                     "cysts, they tend to have some debris inside them " +
                                     "and echo back some of the ultrasound waves. ",
-                                    "However, they don’t have the thick walls or obvious " +
+                                    "However, they don't have the thick walls or obvious " +
                                     "solid components that a complex cyst has. ",
                                     "###URL#https://www.breastcancer.org/symptoms/benign/cysts")
                             ,
@@ -302,7 +303,7 @@ namespace BreastRadiology.XUnitTests
                                     "or torso. ",
                                     "They grow slowly and aren't life-threatening, but " +
                                     "they may become uncomfortable if they go unchecked. ",
-                                    "www.healthline.com › health › sebaceous-cyst")
+                                    "www.healthline.com > health > sebaceous-cyst")
                             ,
                             new ConceptDef()
                                 .SetCode("CystSimple")
@@ -347,7 +348,7 @@ namespace BreastRadiology.XUnitTests
                                     "Although they share most of the features of simple " +
                                     "cysts, they tend to have some debris inside them " +
                                     "and echo back some of the ultrasound waves. ",
-                                    "However, they don’t have the thick walls or obvious " +
+                                    "However, they don't have the thick walls or obvious " +
                                     "solid components that a complex cyst has. ",
                                     "###URL#https://www.breastcancer.org/symptoms/benign/cysts")
                             ,
@@ -679,7 +680,7 @@ namespace BreastRadiology.XUnitTests
                                     "Lipomas are usually detected in middle age. ",
                                     "Some people have more than one lipoma.A lipoma isn't " +
                                     "cancer and usually is harmless. ",
-                                    "www.mayoclinic.org › lipoma › symptoms-causes › syc-20374470")
+                                    "www.mayoclinic.org > lipoma > symptoms-causes > syc-20374470")
                             ,
                             new ConceptDef()
                                 .SetCode("LumpectomyCavity")
@@ -707,7 +708,7 @@ namespace BreastRadiology.XUnitTests
                                 .MammoId("74")
                                 .ValidModalities(Modalities.MG | Modalities.MRI | Modalities.NM | Modalities.US)
                                 .SetUMLS("A small bean-shaped structure that is part of the " +
-                                    "body’s immune system. ",
+                                    "body's immune system. ",
                                     "Lymph nodes filter substances that travel through " +
                                     "the lymphatic fluid, and they contain lymphocytes " +
                                     "(white blood cells) that help the body fight infection " +
@@ -845,8 +846,8 @@ namespace BreastRadiology.XUnitTests
                                 .SetUMLS("Multifocal breast cancer occurs when there are two " +
                                     "or more tumors in the same breast. ",
                                     "All of the tumors begin in one original tumor. ",
-                                    "The tumors are also all in the same quadrant — or " +
-                                    "section — of the breast. ",
+                                    "The tumors are also all in the same quadrant - or " +
+                                    "section - of the breast. ",
                                     "###URL#https://www.healthline.com/health/breast-cancer/multifocal-breast-cancer")
                             ,
                             new ConceptDef()
@@ -1037,7 +1038,7 @@ namespace BreastRadiology.XUnitTests
                                     " This lack of a central mass helps differentiate " +
                                     "a scar from a carcinoma, which has shadowing arising " +
                                     "from a central mass. ",
-                                    "onlinelibrary.wiley.com › doi › full › jum.2004.23.1.73")
+                                    "onlinelibrary.wiley.com > doi > full > jum.2004.23.1.73")
                             ,
                             new ConceptDef()
                                 .SetCode("SclerosingAdenosis")
@@ -1160,6 +1161,7 @@ namespace BreastRadiology.XUnitTests
                                     "As more fluid and pressure build, some of the blood " +
                                     "leaks out of your veins and into your skin. ",
                                     "###URL#https://www.webmd.com/skin-problems-and-treatments/eczema/venous-stasis-dermatitis#1")
+                            #endregion // Codes
                             //- Codes
                         })
             );
@@ -1176,6 +1178,7 @@ namespace BreastRadiology.XUnitTests
                         new ConceptDef[]
                         {
                             //+ Qualifiers
+                            #region Codes
                             new ConceptDef()
                                 .SetCode("DifferentialDiagnosis")
                                 .SetDisplay("Differential diagnosis")
@@ -1203,6 +1206,7 @@ namespace BreastRadiology.XUnitTests
                                 .SetDisplay("Resembles")
                                 .MammoId("580")
                                 .ValidModalities(Modalities.MG | Modalities.MRI | Modalities.NM | Modalities.US)
+                            #endregion // Codes
                             //- Qualifiers
                         })
              );

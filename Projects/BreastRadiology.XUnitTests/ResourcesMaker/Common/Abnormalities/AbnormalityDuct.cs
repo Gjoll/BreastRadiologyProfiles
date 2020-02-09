@@ -24,6 +24,7 @@ namespace BreastRadiology.XUnitTests
                         new ConceptDef[]
                          {
                             //+ Type
+                            #region Codes
                             new ConceptDef()
                                 .SetCode("DuctDilatedATLASSolitaryDilatedDuct")
                                 .SetDisplay("Duct dilated ATLAS solitary dilated duct")
@@ -80,7 +81,8 @@ namespace BreastRadiology.XUnitTests
                                     "it's generally not a cause for concern. ",
                                     "If left untreated, it can eventually obliterate the " +
                                     "breast duct. ",
-                                    "www.healthline.com › health › duct-ectasia-of-the-breast")
+                                    "www.healthline.com > health > duct-ectasia-of-the-breast")
+                            #endregion // Codes
                             //- Type
                          }
                      )

@@ -24,6 +24,7 @@ namespace BreastRadiology.XUnitTests
                         new ConceptDef[]
                          {
                             //+ Type
+                            #region Codes
                             new ConceptDef()
                                 .SetCode("NodeAxillary")
                                 .SetDisplay("Node axillary")
@@ -122,6 +123,7 @@ namespace BreastRadiology.XUnitTests
                                 .SetDisplay("Node uniform thickness")
                                 .MammoId("663")
                                 .ValidModalities(Modalities.MG | Modalities.US)
+                            #endregion // Codes
                             //- Type
                          }
                      )

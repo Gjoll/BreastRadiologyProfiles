@@ -25,6 +25,7 @@ namespace BreastRadiology.XUnitTests
                          new ConceptDef[]
                          {
                             //+ Type
+                            #region Codes
                             new ConceptDef()
                                 .SetCode("BBPellet")
                                 .SetDisplay("BB pellet")
@@ -118,7 +119,7 @@ namespace BreastRadiology.XUnitTests
                                     "Numerous breast tissue markers are currently available, " +
                                     "with varied shapes, composition, and associated bio-absorbable " +
                                     "components. ",
-                                    "www.ncbi.nlm.nih.gov › pubmed")
+                                    "www.ncbi.nlm.nih.gov > pubmed")
                             ,
                             new ConceptDef()
                                 .SetCode("BreastMarkers")
@@ -144,7 +145,7 @@ namespace BreastRadiology.XUnitTests
                                     "the United States today and to provide guidance regarding " +
                                     "selection of appropriate markers for various clinical " +
                                     "settings. ",
-                                    "www.ncbi.nlm.nih.gov › pubmed")
+                                    "www.ncbi.nlm.nih.gov > pubmed")
                             ,
                             new ConceptDef()
                                 .SetCode("CatheterSleeves")
@@ -383,6 +384,7 @@ namespace BreastRadiology.XUnitTests
                                     " Guidewire is used during medical procedures such " +
                                     "as a biopsy or  placement of medical devices such " +
                                     "as a catheter or pacemaker.")
+                            #endregion // Codes
                              //- Type
                          })
              );

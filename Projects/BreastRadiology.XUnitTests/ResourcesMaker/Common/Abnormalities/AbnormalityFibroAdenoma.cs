@@ -24,6 +24,7 @@ namespace BreastRadiology.XUnitTests
                          new ConceptDef[]
                          {
                             //+ Type
+                            #region Codes
                             new ConceptDef()
                                 .SetCode("Fibroadenoma")
                                 .SetDisplay("Fibroadenoma")
@@ -34,9 +35,9 @@ namespace BreastRadiology.XUnitTests
                                     "Unlike a breast cancer, which grows larger over time " +
                                     "and can spread to other organs, a fibroadenoma remains " +
                                     "in the breast tissue. ",
-                                    "They’re pretty small, too. ",
+                                    "They're pretty small, too. ",
                                     "Most are only 1 or 2 centimeters in size. ",
-                                    "www.webmd.com › breast-cancer › what-are-fibroadenomas")
+                                    "www.webmd.com > breast-cancer > what-are-fibroadenomas")
                             ,
                             new ConceptDef()
                                 .SetCode("FibroadenomaDegeneration")
@@ -47,6 +48,7 @@ namespace BreastRadiology.XUnitTests
                                     "Fibroadenomas usually go away with age. ",
                                     "By the time a woman is menopausal, they will likely " +
                                     "experience a degeneration of the Fibroadenomas.")
+                            #endregion // Codes
                             //- Type
                          })
                      );

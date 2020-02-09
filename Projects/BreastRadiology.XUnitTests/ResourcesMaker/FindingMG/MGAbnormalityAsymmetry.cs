@@ -25,6 +25,7 @@ namespace BreastRadiology.XUnitTests
                     new ConceptDef[]
                      {
                          //+ Type
+                         #region Codes
                          new ConceptDef()
                              .SetCode("Asymmetry")
                              .SetDisplay("Asymmetry")
@@ -78,6 +79,7 @@ namespace BreastRadiology.XUnitTests
                                  "because it is an uncommon manifestation of breast " +
                                  "cancer. ",
                                  "###URL#https://pubs.rsna.org/doi/full/10.1148/rg.2016150123")
+                         #endregion // Codes
                          //- Type
                          }
                  )

@@ -20,6 +20,7 @@ namespace BreastRadiology.XUnitTests
                         new ConceptDef[]
                          {
                              //+ Type
+                             #region Codes
                              new ConceptDef()
                                  .SetCode("Density")
                                  .SetDisplay("Density")
@@ -46,6 +47,7 @@ namespace BreastRadiology.XUnitTests
                                  .ValidModalities(Modalities.MG)
                                  .SetSnomedDescription("ClinicalFinding | 129794007 | Tubular shaped density " +
                                      "of breast (Finding)")
+                             #endregion // Codes
                              //- Type
                          }
                      )

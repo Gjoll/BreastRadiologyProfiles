@@ -25,6 +25,7 @@ namespace BreastRadiology.XUnitTests
                      new ConceptDef[]
                      {
                          //+ Codes
+                         #region Codes
                          new ConceptDef()
                              .SetCode("CentralLucent")
                              .SetDisplay("Central lucent")
@@ -80,6 +81,7 @@ namespace BreastRadiology.XUnitTests
                                  "If such a findingis identified at mammography, it " +
                                  "may very well not be malignant but appropriately " +
                                  "maybe worked up.")
+                         #endregion // Codes
                          //- Codes
                      })
              );

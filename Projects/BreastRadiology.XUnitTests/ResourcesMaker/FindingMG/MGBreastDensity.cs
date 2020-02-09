@@ -25,6 +25,7 @@ namespace BreastRadiology.XUnitTests
                      new ConceptDef[]
                      {
                          //+ Codes
+                         #region Codes
                          new ConceptDef()
                              .SetCode("AlmostEntirelyFat")
                              .SetDisplay("Almost entirely fat")
@@ -92,6 +93,7 @@ namespace BreastRadiology.XUnitTests
                                  "a mammogram. ",
                                  "About 10% of women have this type of breast tissue. ",
                                  "###URL#https://www.cancer.gov/publications/dictionaries/cancer-terms/def/extremely-dense-breast-tissue")
+                         #endregion // Codes
                          //- Codes
                      }
                  )

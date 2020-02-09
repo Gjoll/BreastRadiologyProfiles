@@ -38,6 +38,7 @@ namespace BreastRadiology.XUnitTests
                      new ConceptDef[]
                      {
                      //+ Codes
+                     #region Codes
                      new ConceptDef()
                          .SetCode("AngularMargin")
                          .SetDisplay("Angular margin")
@@ -180,6 +181,7 @@ namespace BreastRadiology.XUnitTests
                              "significant feature is that the margin of the mass " +
                              "is not circumscribed. ",
                              "###ACRUS#55")
+                     #endregion // Codes
                      //- Codes
                      })
                  );

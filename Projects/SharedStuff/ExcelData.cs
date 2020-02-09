@@ -15,6 +15,7 @@ namespace BreastRadiology.Shared
         public Dictionary<String, DataRow> rows = new Dictionary<string, DataRow>();
         String filePath;
 
+        public Int32 classCol = -1;
         public Int32 mgCol = -1;
         public Int32 mriCol = -1;
         public Int32 nmCol = -1;
@@ -46,54 +47,55 @@ namespace BreastRadiology.Shared
         DataTable CreateTableWithHeadings(DataTable tblSource)
         {
             DataTable retVal = new DataTable("Sheet3");
-            DataRow row = tblSource.Rows[0];
 
             void Read()
             {
+                DataRow row = tblSource.Rows[0];
                 object[] items = row.ItemArray;
-                for (Int32 i = 0; i < items.Length; i++)
                 {
-                    switch (items[i])
-                    {
-                        case DBNull dbNullValue:
-                            retVal.Columns.Add($"Column {i}");
-                            break;
-
-                        case String stringValue:
-                            DataColumn col = new DataColumn(stringValue, typeof(String));
-                            retVal.Columns.Add(col);
-
-                            switch (stringValue.Trim().ToUpper())
-                            {
-                                case "MG": this.mgCol = i; break;
-                                case "MRI": mriCol = i; break;
-                                case "NM": nmCol = i; break;
-                                case "US": usCol = i; break;
-                                case "ID_MAMMO": this.idMammoCol = i; break;
-                                case "LISTBOX_NAME": listBoxNameCol = i; break;
-                                case "STRUCTURE": structureCol = i; break;
-                                case "ITEM_NAME": itemNameCol = i; break;
-                                case "DICOM_CODE": dicomCol = i; break;
-                                case "SNOMED": snoMedCol = i; break;
-                                case "SNOMED DESCRIPTION": snoMedDescriptionCol = i; break;
-                                case "ICD10":  icd10Col = i; break;
-                                case "UMLS": umlsCol = i; break;
-                                case "ACR": this.acrCol = i; break;
-                            }
-                            break;
-
-                        default:
-                            throw new NotImplementedException();
-                    }
+                    DataColumn col = new DataColumn("Class", typeof(String));
+                    retVal.Columns.Add(col);
+                }
+                for (Int32 i = 1; i < tblSource.Columns.Count; i++)
+                {
+                    String colName = tblSource.Columns[i].ColumnName;
+                    if (colName.StartsWith("Column"))
+                        colName = row.ItemArray[i].ToString();
+                    if (colName.ToUpper() == "ID10CT")
+                        colName = "ICD10CM";
+                    DataColumn newCol = new DataColumn(colName, typeof(String));
+                    retVal.Columns.Add(newCol);
                 }
             }
             Read();
-            if (this.acrCol == -1)
-                throw new Exception("Missing ACR column");
-            if (this.umlsCol == -1)
-                throw new Exception("Missing UMLS column");
-            if (this.idMammoCol == -1)
-                throw new Exception("Missing IDMAMMO column");
+            Int32 GetColumn(String name)
+            {
+                Int32 index = 0;
+                foreach (DataColumn col in retVal.Columns)
+                {
+                    if (String.Compare(col.ColumnName, name, true) == 0)
+                        return index;
+                    index += 1;
+                }
+                throw new Exception($"Column {name} not found ");
+            }
+
+            this.classCol = GetColumn("CLASS");
+            this.mgCol = GetColumn("MG");
+            this.mriCol = GetColumn("MRI");
+            this.nmCol = GetColumn("NM");
+            this.usCol = GetColumn("US");
+            this.idMammoCol = GetColumn("ID_MAMMO");
+            this.listBoxNameCol = GetColumn("LISTBOX_NAME");
+            this.structureCol = GetColumn("STRUCTURE");
+            this.itemNameCol = GetColumn("ITEM_NAME");
+            this.dicomCol = GetColumn("DICOM_CODE");
+            this.snoMedCol = GetColumn("SNOMED");
+            this.snoMedDescriptionCol = GetColumn("SNOMED DESCRIPTION");
+            this.icd10Col = GetColumn("ICD10CM");
+            this.umlsCol = GetColumn("UMLS");
+            this.acrCol = GetColumn("ACR");
+
             return retVal;
         }
 
@@ -112,7 +114,9 @@ namespace BreastRadiology.Shared
             for (Int32 rowIndex = 1; rowIndex < originalData.Rows.Count; rowIndex++)
             {
                 DataRow originalRow = originalData.Rows[rowIndex];
-                DataRow newRow = this.dataTable.Rows.Add(originalRow.ItemArray);
+                object[] items = originalRow.ItemArray;
+                items[this.classCol] = "";
+                DataRow newRow = this.dataTable.Rows.Add(items);
 
                 String key;
                 switch (newRow[this.idMammoCol])
@@ -122,19 +126,16 @@ namespace BreastRadiology.Shared
                         break;
                     default:
                         key = newRow[this.idMammoCol].ToString();
-                        if (key.ToUpper().StartsWith("X"))
-                            newRow[this.idMammoCol] = key = $"Row{rowIndex}";
                         break;
                 }
                 if (rows.ContainsKey(key))
                 {
-                    this.converter.ConversionWarn("GGPatcher",
+                    this.converter.ConversionWarn("ExcelData",
                         "LoadRows",
                         $"Mammo id {key} already exists");
                 }
                 else
                     rows.Add(key, newRow);
-
             }
         }
 
@@ -150,7 +151,7 @@ namespace BreastRadiology.Shared
                 sb.AppendLine(line);
             if (this.rows.TryGetValue(mammoId, out DataRow row) == false)
             {
-                this.converter.ConversionWarn("GGPatcher",
+                this.converter.ConversionWarn("ExcelData",
                     "PatchACRText",
                     $"Cant find row for Mammo id {mammoId}");
                 return;
@@ -161,11 +162,20 @@ namespace BreastRadiology.Shared
 
         public void Save()
         {
-            File.Delete(this.filePath);
             XLWorkbook workbook = new XLWorkbook();
-            workbook.Worksheets.Add(this.dataTable);
-            workbook.SaveAs(this.filePath);
+            IXLWorksheet sheet = workbook.Worksheets.Add(this.dataTable);
+            sheet.Columns().AdjustToContents();
+            sheet.Columns().Style.Border.BottomBorder = XLBorderStyleValues.Thin;
+            sheet.Columns().Style.Border.TopBorder = XLBorderStyleValues.Thin;
+            sheet.Columns().Style.Border.RightBorder = XLBorderStyleValues.Thin;
+            sheet.Columns().Style.Border.LeftBorder = XLBorderStyleValues.Thin;
+            //sheet.Columns().Style.Border.InsideBorder = XLBorderStyleValues.Thin;
+            sheet.Columns().Style.Alignment.WrapText = true;
+            sheet.Columns().Style.Alignment.Horizontal = XLAlignmentHorizontalValues.Left;
+            sheet.Columns().Style.Alignment.Vertical = XLAlignmentVerticalValues.Top;
 
+            File.Delete(this.filePath);
+            workbook.SaveAs(this.filePath);
         }
 
         DataSet ReadSpreadSheet(String filePath)

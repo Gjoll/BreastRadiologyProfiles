@@ -24,6 +24,7 @@ namespace BreastRadiology.XUnitTests
                         new ConceptDef[]
                          {
                          //+ Type
+                         #region Codes
                          new ConceptDef()
                              .SetCode("Cyst")
                              .SetDisplay("Cyst")
@@ -64,7 +65,7 @@ namespace BreastRadiology.XUnitTests
                                  "Although they share most of the features of simple " +
                                  "cysts, they tend to have some debris inside them " +
                                  "and echo back some of the ultrasound waves. ",
-                                 "However, they don’t have the thick walls or obvious " +
+                                 "However, they don't have the thick walls or obvious " +
                                  "solid components that a complex cyst has. ",
                                  "###URL#https://www.breastcancer.org/symptoms/benign/cysts")
                          ,
@@ -107,6 +108,7 @@ namespace BreastRadiology.XUnitTests
                                  "It Is either considered a complex or complicated " +
                                  "cyst. ",
                                  "The type of debris determines what kind of cyst.")
+                         #endregion // Codes
                          //- Type
                          }
                      )

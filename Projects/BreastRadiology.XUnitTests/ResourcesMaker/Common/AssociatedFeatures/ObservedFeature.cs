@@ -24,6 +24,7 @@ namespace BreastRadiology.XUnitTests
                          new ConceptDef[]
                          {
                             //+ ObservedFeatureCS
+                            #region Codes
                             new ConceptDef()
                                 .SetCode("ArchitecturalDistortion")
                                 .SetDisplay("Architectural distortion")
@@ -139,7 +140,7 @@ namespace BreastRadiology.XUnitTests
                                     "vertically from surface attach on chest wall muscles. ",
                                     "These ligaments maintain the shape and structure " +
                                     "of your breasts and help to prevent sagging. ",
-                                    "Cooper’s ligaments support the breasts on the chest " +
+                                    "Cooper's ligaments support the breasts on the chest " +
                                     "wall, maintain their contour, and keep them in position. ",
                                     "These support breast tissue; they become contracted " +
                                     "in cancer of breast, producing dimples in overlying " +
@@ -195,7 +196,7 @@ namespace BreastRadiology.XUnitTests
                                     "vessels, due to either disease or trauma including " +
                                     "injury or surgery and may involve blood continuing " +
                                     "to seep from broken capillaries. ",
-                                    "en.wikipedia.org › wiki › Hematoma")
+                                    "en.wikipedia.org > wiki > Hematoma")
                             ,
                             new ConceptDef()
                                 .SetCode("NippleRetraction")
@@ -238,7 +239,7 @@ namespace BreastRadiology.XUnitTests
                                 .SetUMLS("Pectoralis muscle involvement of the tumor has been " +
                                     "detected on the MRI by muscle enhancement with obliteration " +
                                     "of the fat plane between the tumor and the muscle. ",
-                                    "pubs.rsna.org › doi › pdf")
+                                    "pubs.rsna.org > doi > pdf")
                             ,
                             new ConceptDef()
                                 .SetCode("PectoralisMuscleTenting")
@@ -369,12 +370,13 @@ namespace BreastRadiology.XUnitTests
                                 .SetSnomedCode("129795008")
                                 .SetSnomedDescription("ClinicalFinding | Mammographic trabecular thickening " +
                                     "of breast (Finding)")
-                                .SetUMLS("Trabecular thickening—thickening of the Cooper’s " +
-                                    "ligaments and fibrous stroma—is an imaging finding " +
-                                    "of breast edema, usually secondary to dilated lymphatics. ",
+                                .SetUMLS("Trabecular thickening-thickening of the Cooper's ligaments " +
+                                    "and fibrous stroma-is an imaging finding of breast " +
+                                    "edema, usually secondary to dilated lymphatics. ",
                                     "Skin thickening and trabecular thickening often occur " +
                                     "together, and they have similar differential diagnoses. ",
                                     "###URL#https://oxfordmedicine.com/view/10.1093/med/9780190270261.001.0001/med-9780190270261-chapter-48")
+                            #endregion // Codes
                             //- ObservedFeatureCS
                          })
              );

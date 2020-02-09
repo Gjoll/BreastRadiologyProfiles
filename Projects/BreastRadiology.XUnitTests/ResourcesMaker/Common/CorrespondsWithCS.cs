@@ -38,6 +38,7 @@ namespace BreastRadiology.XUnitTests
                         new ConceptDef[]
                         {
                             //+ Codes
+                            #region Codes
                             new ConceptDef()
                                 .SetCode("Aspiration")
                                 .SetDisplay("Aspiration")
@@ -194,44 +195,44 @@ namespace BreastRadiology.XUnitTests
                                     "the body.")
                             ,
                             new ConceptDef()
-                                .SetCode("size<Mammo")
-                                .SetDisplay("size < mammo")
+                                .SetCode("Size<Mammo")
+                                .SetDisplay("Size < mammo")
                                 .MammoId("274")
                                 .ValidModalities(Modalities.MRI | Modalities.NM | Modalities.US)
                             ,
                             new ConceptDef()
-                                .SetCode("size<MRI")
-                                .SetDisplay("size < MRI")
+                                .SetCode("Size<MRI")
+                                .SetDisplay("Size < MRI")
                                 .MammoId("276")
                                 .ValidModalities(Modalities.MG)
                             ,
                             new ConceptDef()
-                                .SetCode("size<Palp")
-                                .SetDisplay("size < palp")
+                                .SetCode("Size<Palp")
+                                .SetDisplay("Size < palp")
                                 .MammoId("278")
                                 .ValidModalities(Modalities.MG | Modalities.MRI | Modalities.US)
                             ,
                             new ConceptDef()
-                                .SetCode("size<US")
-                                .SetDisplay("size < US")
+                                .SetCode("Size<US")
+                                .SetDisplay("Size < US")
                                 .MammoId("320.276")
                                 .ValidModalities(Modalities.MG | Modalities.MRI | Modalities.NM | Modalities.US)
                             ,
                             new ConceptDef()
-                                .SetCode("size>Mammo")
-                                .SetDisplay("size > mammo")
+                                .SetCode("Size>Mammo")
+                                .SetDisplay("Size > mammo")
                                 .MammoId("273")
                                 .ValidModalities(Modalities.MRI | Modalities.NM | Modalities.US)
                             ,
                             new ConceptDef()
-                                .SetCode("size>MRI")
-                                .SetDisplay("size > MRI")
+                                .SetCode("Size>MRI")
+                                .SetDisplay("Size > MRI")
                                 .MammoId("275")
                                 .ValidModalities(Modalities.MG)
                             ,
                             new ConceptDef()
-                                .SetCode("size>Palp")
-                                .SetDisplay("size > palp")
+                                .SetCode("Size>Palp")
+                                .SetDisplay("Size > palp")
                                 .MammoId("277")
                                 .ValidModalities(Modalities.MG | Modalities.MRI | Modalities.US)
                             ,
@@ -287,6 +288,7 @@ namespace BreastRadiology.XUnitTests
                                 .ValidModalities(Modalities.MG | Modalities.MRI | Modalities.NM | Modalities.US)
                                 .SetUMLS("The results of the MRI, Mammogram and/or Nuclear " +
                                     "Medicine exam, correspond with this Ultrasound.")
+                            #endregion // Codes
                             //- Codes
                         })
             );

@@ -24,6 +24,7 @@ namespace BreastRadiology.XUnitTests
                      new ConceptDef[]
                      {
                          //+ Type
+                         #region Codes
                          new ConceptDef()
                              .SetCode("Amorphous")
                              .SetDisplay("Amorphous")
@@ -45,7 +46,7 @@ namespace BreastRadiology.XUnitTests
                                  "(PPV) of amorphous calcifications is reported to " +
                                  "beapproximately 20%. ",
                                  "Therefore, calcifications of this morphology appropriatelyshould " +
-                                 "be placed into BI-RADS� assessment category 4B (PPV " +
+                                 "be placed into BI-RADS assessment category 4B (PPV " +
                                  "range > 10% to ? 50%).")
                          ,
                          new ConceptDef()
@@ -105,10 +106,10 @@ namespace BreastRadiology.XUnitTests
                                  "finding")
                              .SetUMLS("Calcification happens when calcium builds up in body " +
                                  "tissue, blood vessels, or organs. ",
-                                 "This buildup can harden and disrupt your body’s normal " +
+                                 "This buildup can harden and disrupt your body's normal " +
                                  "processes. ",
                                  "Calcium is transported through the bloodstream. ",
-                                 "It’s also found in every cell. ",
+                                 "It's also found in every cell. ",
                                  "As a result, calcification can occur in almost any " +
                                  "part of the body.")
                          ,
@@ -133,8 +134,8 @@ namespace BreastRadiology.XUnitTests
                                  "However, a single group of coarse heterogeneous calcifications " +
                                  "has a positivepredictive value of slightly less than " +
                                  "15%, and therefore this finding should beplaced in " +
-                                 "BI-RADS� assessment category 4B (PPV range > 10% " +
-                                 "to ? 50%).")
+                                 "BI-RADS assessment category 4B (PPV range > 10% to " +
+                                 "? 50%).")
                          ,
                          new ConceptDef()
                              .SetCode("Indistinct")
@@ -145,7 +146,7 @@ namespace BreastRadiology.XUnitTests
                                  "calcifications, are a morphological descriptor for " +
                                  "breast calcifications that are small and/or hazy " +
                                  "such that no clearly defined shape/form can be ascribed. ",
-                                 "radiopaedia.org › articles › amorphous-calcifications-breast")
+                                 "radiopaedia.org > articles > amorphous-calcifications-breast")
                          ,
                          new ConceptDef()
                              .SetCode("LargeRodlike")
@@ -218,7 +219,7 @@ namespace BreastRadiology.XUnitTests
                                  "in macro- or microcysts, usually but notalways grouped. ",
                                  "On the craniocaudal image they are often less evident " +
                                  "and appear as round,smudgy deposits, while occasionally " +
-                                 "on MLO and especially on 90� lateral (LM/ML) views,they " +
+                                 "on MLO and especially on 90 lateral (LM/ML) views,they " +
                                  "are more clearly defined and often semilunar, crescent " +
                                  "shaped, curvilinear (concave up),or linear, defining " +
                                  "the dependent portion of cysts. ",
@@ -231,7 +232,7 @@ namespace BreastRadiology.XUnitTests
                                  "to other types of calcifications that maybe associated " +
                                  "with malignancy, so it is important to search for " +
                                  "more suspicious forms, especially those that do not " +
-                                 "change shape from the 90� lateral projection to the " +
+                                 "change shape from the 90 lateral projection to the " +
                                  "CC projection.")
                          ,
                          new ConceptDef()
@@ -356,6 +357,7 @@ namespace BreastRadiology.XUnitTests
                                  "a tubular structure isquestionable, then additional " +
                                  "spot-compression magnification views may be needed " +
                                  "to further characterizetheir nature.")
+                         #endregion // Codes
                          //- Type
                      }
                  )

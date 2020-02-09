@@ -24,6 +24,7 @@ namespace BreastRadiology.XUnitTests
                          new ConceptDef[]
                          {
                             //+ Type
+                            #region Codes
                             new ConceptDef()
                                 .SetCode("Mass")
                                 .SetDisplay("Mass")
@@ -67,6 +68,7 @@ namespace BreastRadiology.XUnitTests
                                 .SetDisplay("Mass solid")
                                 .MammoId("608")
                                 .ValidModalities(Modalities.MG | Modalities.US)
+                            #endregion // Codes
                             //- Type
                          })
              );

@@ -69,7 +69,14 @@ namespace BreastRadiology.XUnitTests
 
         String CodeValue(String value)
         {
+            {
+                Int32 index = value.IndexOf('(');
+                if (index > 0)
+                    value = value.Substring(0, index);
+            }
+
             value = value.Trim();
+            value = Char.ToUpper(value[0], CultureInfo.InvariantCulture) + value.Substring(1);
             while (true)
             {
                 Int32 j = value.IndexOf(' ', new StringComparison());
@@ -101,104 +108,17 @@ namespace BreastRadiology.XUnitTests
                 String[] lines = FormatMultiLineText(sValue).ToArray();
                 if (lines.Length == 1)
                 {
-                    concept
-                        .AppendLine($"    .{name}({lines[0]})");
+                    concept.AppendLine($"    .{name}({lines[0]})");
                 }
                 else
                 {
-                    concept
-                        .AppendLine($"    .{name}({lines[0]}");
+                    concept.AppendLine($"    .{name}({lines[0]}");
                     Int32 i = 1;
                     while (i < lines.Length - 1)
                         concept.AppendLine($"        {lines[i++]}");
                     concept.AppendLine($"        {lines[i]})");
                 }
             }
-        }
-
-        public void WriteCS(DataSet ds,
-            String sheetName,
-            String outputCodePath,
-            String csBlockName,
-            List<String> itemsToIgnore = null)
-        {
-            if (itemsToIgnore == null)
-                itemsToIgnore = new List<string>();
-
-            String App(String s, Object t, String sb)
-            {
-                switch (t)
-                {
-                    case DBNull dbNullValue:
-                        return s;
-
-                    case String stringValue:
-                        // verify we have correct column.
-                        if (stringValue != sb)
-                            Trace.WriteLine($"Invalid Modality '{stringValue}'. Expected {sb}");
-                        if (String.IsNullOrEmpty(s) == false)
-                            s += " | ";
-                        s += $"Modalities.{sb}";
-                        return s;
-
-                    default:
-                        throw new Exception("Invalid excel cell value");
-                }
-            }
-
-
-            DataTable dataTbl = ds.Tables[sheetName];
-            if (dataTbl == null)
-                throw new Exception($"Table {sheetName} not found");
-
-            CodeEditor editor = new CodeEditor();
-            editor.Load(Path.Combine(DirHelper.FindParentDir("BreastRadiology.XUnitTests"),
-                "ResourcesMaker",
-                outputCodePath));
-            CodeBlockNested concepts = editor.Blocks.Find(csBlockName);
-            if (concepts == null)
-                throw new Exception($"Can not find editor block {csBlockName}");
-
-            for (Int32 i = 1; i < dataTbl.Rows.Count; i++)
-            {
-                DataRow row = dataTbl.Rows[i];
-                String code = row[this.spreadSheetData.itemNameCol].ToString();
-                if (itemsToIgnore.Contains(code.Trim().ToUpper()) == false)
-                {
-                    String validWith = App("", row[this.spreadSheetData.mgCol], "MG");
-                    ;
-                    validWith = App(validWith, row[this.spreadSheetData.mriCol], "MRI");
-                    validWith = App(validWith, row[this.spreadSheetData.nmCol], "NM");
-                    validWith = App(validWith, row[this.spreadSheetData.usCol], "US");
-
-                    String conceptBlockName = CodeValue(code);
-
-                    String penId = row[this.spreadSheetData.idMammoCol].ToString();
-
-                    concepts
-                        .AppendLine($"new ConceptDef()")
-                        .AppendLine($"    .SetCode(\"{conceptBlockName}\")")
-                        .AppendLine($"    .SetDisplay(\"{code}\")")
-                        //.AppendLine($"    .SetDefinition(\"[PR] {code}\")")
-                        .AppendLine($"    .MammoId(\"{penId}\")")
-                        .AppendLine($"    .ValidModalities({validWith})")
-                        ;
-
-                    AppIfNotNull(concepts, "SetDicom", row[DicomCol]);
-                    AppIfNotNull(concepts, "SetSnomedCode", row[SnomedCol]);
-                    //AppIfNotNull(concepts, "SetOneToMany", row[12]);
-                    AppIfNotNull(concepts, "SetSnomedDescription", row[SnomedDescriptionCol]);
-                    //AppIfNotNull(concepts, "SetICD10", row[ICD10Col]);
-                    AppIfNotNull(concepts, "SetUMLS", row[UMLSCol]);
-                    AppIfNotNull(concepts, "SetACR", row[ACRCol]);
-
-                    if (i < dataTbl.Rows.Count - 1)
-                        concepts
-                            .AppendLine($",");
-                }
-            }
-
-            editor.Save();
         }
 
         IEnumerable<String> FormatMultiLineText(String text)
@@ -233,6 +153,15 @@ namespace BreastRadiology.XUnitTests
                         sb.Append("\\\"");
                         break;
 
+                    case '›':
+                        sb.Append(">");
+                        break;
+
+                    case '‘':
+                    case '’':
+                        sb.Append("'");
+                        break;
+
                     case '\r':
                         break;
 
@@ -247,12 +176,25 @@ namespace BreastRadiology.XUnitTests
 
                         break;
 
+                    case (char)65533:       // unicode REPLACEMENT CHARACTER - ignore it.
+                        break;
+
+                    case (char)8211:       // en dash
+                    case (char)8212:        // em dash
+                        Add('-');
+                        break;
+
                     case '\n':
                         if (len > 0)
                             PutEoln();
                         break;
 
+                    case '°':
+                        sb.Append("degrees");
+                        break;
+
                     case ' ':
+                    case (Char)160:     // non breaking space - break anyways :-)
                         Add(c);
                         if (len > Maxlen)
                         {
@@ -263,6 +205,12 @@ namespace BreastRadiology.XUnitTests
                         break;
 
                     default:
+                        Int32 cNum = (Int32)c;
+                        if ((cNum < 0x20) || (cNum > 0x7e))
+                        {
+                            String s = $"Invalid char '{c}' {cNum}";
+                            throw new Exception(s);
+                        }
                         Add(c);
                         break;
                 }
@@ -272,11 +220,12 @@ namespace BreastRadiology.XUnitTests
             return sb.ToString().Split('\n');
         }
 
-        void WriteIds(String outputCodePath,
+        void WriteIds(String className,
+            String outputCodePath,
             String csBlockName,
             params String[] penIds)
         {
-            WriteIds(outputCodePath, csBlockName, (IEnumerable<String>)penIds);
+            WriteIds(className, outputCodePath, csBlockName, (IEnumerable<String>)penIds);
         }
 
         String FormatCode(String s)
@@ -297,10 +246,13 @@ namespace BreastRadiology.XUnitTests
             index = s.ToUpper().IndexOf("SPELL");
             if (index >= 0)
                 s = s.Substring(0, index);
+
+            s = Char.ToUpper(s[0], CultureInfo.InvariantCulture) + s.Substring(1);
             return s.Trim();
         }
 
-        void WriteIds(String outputCodePath,
+        void WriteIds(String className,
+            String outputCodePath,
             String csBlockName,
             IEnumerable<String> penIdsEnum)
         {
@@ -316,12 +268,22 @@ namespace BreastRadiology.XUnitTests
                 throw new Exception($"Can not find editor block {csBlockName}");
 
             concepts.Clear();
+            concepts.AppendLine($"#region Codes");
             for (Int32 i = 0; i < penIds.Length; i++)
             {
                 String penId = penIds[i];
 
                 if (this.spreadSheetData.TryGetRow(penId, out DataRow row) == false)
                     throw new Exception($"Missing value for penid '{penId}'");
+
+                // Update row[Class] with name of class that used row. Used for validation.
+                {
+                    String classText = row[this.spreadSheetData.classCol].ToString();
+                    if (classText.Length > 0)
+                        classText += ", ";
+                    classText += className;
+                    row[this.spreadSheetData.classCol] = classText;
+                }
 
                 String code = FormatCode(row[this.spreadSheetData.itemNameCol].ToString());
                 String conceptBlockName = CodeValue(code);
@@ -359,8 +321,9 @@ namespace BreastRadiology.XUnitTests
                     .AppendLine($"    .SetDisplay(\"{code}\")")
                     //.AppendLine($"    .SetDefinition(\"[PR] {code}\")")
                     .AppendLine($"    .MammoId(\"{penId}\")")
-                    .AppendLine($"    .ValidModalities({validWith})")
                     ;
+                if (String.IsNullOrEmpty(validWith) == false)
+                    concepts.AppendLine($"    .ValidModalities({validWith})");
 
                 AppIfNotNull(concepts, "SetDicom", row[DicomCol]);
                 AppIfNotNull(concepts, "SetSnomedCode", row[SnomedCol]);
@@ -373,6 +336,7 @@ namespace BreastRadiology.XUnitTests
                     concepts
                         .AppendLine($",");
             }
+            concepts.AppendLine($"#endregion // Codes");
             editor.Save();
         }
 
@@ -525,7 +489,7 @@ namespace BreastRadiology.XUnitTests
 
                     Int32 index = citation.ToUpper().IndexOf("PG");
                     if (index > 0)
-                        citation = $"###ACRUS#{citation.Substring(index+2).Trim()}";
+                        citation = $"###ACRUS#{citation.Substring(index + 2).Trim()}";
                     else
                         citation = $"###ACRUS#";
                     return true;
@@ -545,7 +509,7 @@ namespace BreastRadiology.XUnitTests
                 StringBuilder sb = new StringBuilder();
                 for (Int32 i = 0; i < lines.Count; i++)
                     sb.AppendLine(lines[i]);
-                if (String.IsNullOrEmpty(citation) == false) 
+                if (String.IsNullOrEmpty(citation) == false)
                     sb.AppendLine(citation);
                 row[source.umlsCol] = sb.ToString();
             }
@@ -568,49 +532,51 @@ namespace BreastRadiology.XUnitTests
         [TestMethod]
         public void WriteCode()
         {
-            this.ReadGregDS();
-
-            WriteIds(@"Common\Abnormalities\AbnormalityCyst.cs", "Type", "69", "610", "657", "617", "636", "609", "661");
-            WriteIds(@"Common\Abnormalities\AbnormalityDuct.cs", "Type", "694.602", "693.614");
-            WriteIds(@"Common\Abnormalities\AbnormalityFibroAdenoma.cs", "Type", "70", "695");
-            WriteIds(@"Common\Abnormalities\AbnormalityLymphNode.cs", "Type", "648", "649", "662", "665", "650", "651", "652", "666", "663");
-            WriteIds(@"Common\Abnormalities\AbnormalityMass.cs", "Type", "58", "621", "697", "613", "608");
-            WriteIds(@"Common\Abnormalities\AbnormalityForeignObject.cs", "Type", Filter("Finding foreign body", "foreign body"));
-
-            WriteIds(@"Common\ServiceRecommendation.cs", "Codes", Filter("Recommendations", "Recommendation"));
-            WriteIds(@"Common\CorrespondsWithCS.cs", "Codes", Filter("Corresponds", "Corrosponds with"));
-            WriteIds(@"Common\ConsistentWith.cs", "Codes", Filter("Classification Consistent with", "Consistent with"));
-            WriteIds(@"Common\ConsistentWith.cs", "Qualifiers", Filter("Classification Consistent with", "Consistent qualifier"));
-            WriteIds(@"Common\NotPreviouslySeenCS.cs", "Codes", Filter("Not Prev Seen On", "not previous seen"));
-            WriteIds(@"Common\MarginCS.cs", "Codes", Filter("Profile Abnormality", "margin"));
-            WriteIds(@"Common\OrientationCS.cs", "Codes", Filter("Size and Distance", "Orientation"));
-            WriteIds(@"Common\PreviouslyDemonstratedBy.cs", "Codes", Filter("Dem. By Prior", "previous demostrated by"));
-            WriteIds(@"Common\ShapeCS.cs", "Codes", Filter("Profile Abnormality", "shape"));
-            WriteIds(@"Common\ObservedChangesCS.cs", "Codes", Filter("Change From Prior", "Change From Prior"));
-            WriteIds(@"Common\CalcificationDistributionCS.cs", "Codes", Filter("Assoc Calcs distribution", "calcification distribution"));
-
-            WriteIds(@"FindingMG\MGAbnormalityAsymmetry.cs", "Type", "691", "643", "644", "Row542");
-            WriteIds(@"FindingMG\MGAbnormalityDensity.cs", "Type", "686", "645", "646", "647");
-            WriteIds(@"FindingMG\MGAbnormalityCalcification.cs", "Type", Filter("Assoc Calcs", "calcification type"));
-            WriteIds(@"FindingMG\MGDensity.cs", "Codes", Filter("Profile Abnormality", "density"));
-            WriteIds(@"FindingMG\MGBreastDensity.cs", "Codes", Filter("", "MG Breast Density"));
-
-            {
-                List<String> itemsToIgnore = new List<string>();
-                itemsToIgnore.Add("ARCHITECTURAL DISTORTION");
-                //WriteCS(ds, "AssocFindings", @"Common\AssociatedFeatures\ObservedFeature.cs", "ObservedFeatureCS", itemsToIgnore);
-                WriteIds(@"Common\AssociatedFeatures\ObservedFeature.cs", "ObservedFeatureCS",
-                    Filter("Associated findings", "Associated findings").Remove(itemsToIgnore));
-            }
-        }
-
-        public void ReadGregDS()
-        {
             String filePath = Path.Combine(BaseDir,
                 "..",
                 "BRDocs",
                 "BreastData.xlsx");
             this.spreadSheetData = new ExcelData(new Info(), filePath, "Sheet3");
+
+            WriteIds("AbnormalityCyst", @"Common\Abnormalities\AbnormalityCyst.cs", "Type", "69", "610", "657", "617", "636", "609", "661");
+            WriteIds("AbnormalityDuct", @"Common\Abnormalities\AbnormalityDuct.cs", "Type", "694.602", "693.614");
+            WriteIds("AbnormalityFibroAdenoma", @"Common\Abnormalities\AbnormalityFibroAdenoma.cs", "Type", "70", "695");
+            WriteIds("AbnormalityLymphNode", @"Common\Abnormalities\AbnormalityLymphNode.cs", "Type", "648", "649", "662", "665", "650", "651", "652", "666", "663");
+            WriteIds("AbnormalityMass", @"Common\Abnormalities\AbnormalityMass.cs", "Type", "58", "621", "697", "613", "608");
+            WriteIds("AbnormalityForeignObject", @"Common\Abnormalities\AbnormalityForeignObject.cs", "Type", Filter("Finding foreign body", "foreign body"));
+
+            WriteIds("ServiceRecommendation", @"Common\ServiceRecommendation.cs", "Codes", Filter("Recommendations", "Recommendation"));
+            WriteIds("CorrespondsWithCS", @"Common\CorrespondsWithCS.cs", "Codes", Filter("Corresponds", "Corrosponds with"));
+            WriteIds("ConsistentWith", @"Common\ConsistentWith.cs", "Codes", Filter("Classification Consistent with", "Consistent with"));
+            WriteIds("ConsistentWith", @"Common\ConsistentWith.cs", "Qualifiers", Filter("Classification Consistent with", "Consistent qualifier"));
+            WriteIds("NotPreviouslySeenCS", @"Common\NotPreviouslySeenCS.cs", "Codes", Filter("Not Prev Seen On", "not previous seen"));
+            WriteIds("MarginCS", @"Common\MarginCS.cs", "Codes", Filter("Profile Abnormality", "margin"));
+            WriteIds("OrientationCS", @"Common\OrientationCS.cs", "Codes", Filter("Size and Distance", "Orientation"));
+            WriteIds("PreviouslyDemonstratedBy", @"Common\PreviouslyDemonstratedBy.cs", "Codes", Filter("Dem. By Prior", "previous demostrated by"));
+            WriteIds("ShapeCS", @"Common\ShapeCS.cs", "Codes", Filter("Profile Abnormality", "shape"));
+            WriteIds("ObservedChangesCS", @"Common\ObservedChangesCS.cs", "Codes", Filter("Change From Prior", "Change From Prior"));
+            WriteIds("CalcificationDistributionCS", @"Common\CalcificationDistributionCS.cs", "Codes", Filter("Assoc Calcs distribution", "calcification distribution"));
+
+            WriteIds("MGAbnormalityAsymmetry", @"FindingMG\MGAbnormalityAsymmetry.cs", "Type", "691", "643", "644", "Row542");
+            WriteIds("MGAbnormalityDensity", @"FindingMG\MGAbnormalityDensity.cs", "Type", "686", "645", "646", "647");
+            WriteIds("MGAbnormalityCalcification", @"FindingMG\MGAbnormalityCalcification.cs", "Type", Filter("Assoc Calcs", "calcification type"));
+            WriteIds("MGDensity", @"FindingMG\MGDensity.cs", "Codes", Filter("Profile Abnormality", "density"));
+            WriteIds("MGBreastDensity", @"FindingMG\MGBreastDensity.cs", "Codes", Filter("", "MG Breast Density"));
+
+            WriteIds("BreastBodyLocation-ClockPositions", @"Extensions\BreastBodyLocationExtension.cs", "ClockPositions", "1001", "1002", "1003", "1004", "1005", "1006", "1007", "1008", "1009", "1010", "1011", "1012");
+            WriteIds("BreastBodyLocation-Depth", @"Extensions\BreastBodyLocationExtension.cs", "Depth", "1017", "1018", "1019");
+            WriteIds("BreastBodyLocation-Quadrants", @"Extensions\BreastBodyLocationExtension.cs", "Quadrants", "1024", "1025", "1022", "1023");
+            WriteIds("BreastBodyLocation-Regions", @"Extensions\BreastBodyLocationExtension.cs", "Regions",
+                    "1015", "1014", "AxillaI", "AxillaII", "AxillaIII", "1515", "1511", "1013");
+            {
+                List<String> itemsToIgnore = new List<string>();
+                itemsToIgnore.Add("ARCHITECTURAL DISTORTION");
+                //WriteCS(ds, "AssocFindings", @"Common\AssociatedFeatures\ObservedFeature.cs", "ObservedFeatureCS", itemsToIgnore);
+                WriteIds("ObservedFeature",
+                    @"Common\AssociatedFeatures\ObservedFeature.cs", "ObservedFeatureCS",
+                    Filter("Associated findings", "Associated findings").Remove(itemsToIgnore));
+            }
+            this.spreadSheetData.Save();
         }
     }
     public static class Extensions

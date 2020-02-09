@@ -25,6 +25,7 @@ namespace BreastRadiology.XUnitTests
                       new ConceptDef[]
                       {
                          //+ Codes
+                         #region Codes
                          new ConceptDef()
                              .SetCode("DecreaseInCalcifications")
                              .SetDisplay("Decrease in calcifications")
@@ -154,6 +155,7 @@ namespace BreastRadiology.XUnitTests
                              .ValidModalities(Modalities.MG | Modalities.MRI | Modalities.US)
                              .SetUMLS("The condition has remained stable since the last " +
                                  "Mammogram, Ultrasound, MRI or Nuclear Medicine exam.")
+                         #endregion // Codes
                          //- Codes
                       }));
 

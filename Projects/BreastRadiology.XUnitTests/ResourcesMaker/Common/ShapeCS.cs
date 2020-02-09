@@ -39,6 +39,7 @@ namespace BreastRadiology.XUnitTests
                      new ConceptDef[]
                      {
                         //+ Codes
+                        #region Codes
                         new ConceptDef()
                             .SetCode("IrregularInShape")
                             .SetDisplay("Irregular in shape")
@@ -85,6 +86,7 @@ namespace BreastRadiology.XUnitTests
                             .SetSnomedDescription("ClinicalFinding | Round shaped lesion (Finding)")
                             .SetUMLS("A mass that is spherical, ball-shaped, circular or " +
                                 "global.")
+                        #endregion // Codes
                         //- Codes
                      })
                  );

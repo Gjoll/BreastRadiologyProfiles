@@ -37,6 +37,7 @@ namespace BreastRadiology.XUnitTests
                         new ConceptDef[]
                         {
                             //+ Codes
+                            #region Codes
                             new ConceptDef()
                                 .SetCode("ClinicalExam")
                                 .SetDisplay("Clinical exam")
@@ -106,6 +107,7 @@ namespace BreastRadiology.XUnitTests
                                     "This information is relayed in real time to produce " +
                                     "images on a computer screen. ",
                                     "This can help diagnose and treat disease or conditions.")
+                            #endregion // Codes
                             //- Codes
                         })
             );

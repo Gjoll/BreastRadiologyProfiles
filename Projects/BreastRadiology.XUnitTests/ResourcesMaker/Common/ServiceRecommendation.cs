@@ -72,6 +72,7 @@ namespace BreastRadiology.XUnitTests
                         new ConceptDef[]
                         {
                             //+ Codes
+                            #region Codes
                             new ConceptDef()
                                 .SetCode("3DImaging")
                                 .SetDisplay("3D Imaging")
@@ -165,8 +166,8 @@ namespace BreastRadiology.XUnitTests
                                     "craniocaudal view for better imaging of the lateral " +
                                     "portion of the breast to the axillary tail. ",
                                     "This projection is performed whenever we want to " +
-                                    "show a lesion seen only in the axillary tail on the MLO " +
-                                    "view. ",
+                                    "show a lesion seen only in the axillary tail on the " +
+                                    "MLO view. ",
                                     "An optimal axillary view require to be clearly displayed " +
                                     "the most lateral portion of the breast including " +
                                     "the axillary tail, as well the pectoral muscle and " +
@@ -365,7 +366,7 @@ namespace BreastRadiology.XUnitTests
                                     "Aspirating the fluid from a cyst may alleviate symptoms " +
                                     "or discomfort. ",
                                     "In some cases, specimens are sent to pathology. ",
-                                    "www.carolmilgardbreastcenter.org › Cyst_Aspiration")
+                                    "www.carolmilgardbreastcenter.org > Cyst_Aspiration")
                             ,
                             new ConceptDef()
                                 .SetCode("CystAspirationForRelief")
@@ -391,7 +392,7 @@ namespace BreastRadiology.XUnitTests
                                     "In fine needle aspiration, a thin needle is inserted " +
                                     "into an area of abnormal-appearing tissue or body " +
                                     "fluid. ",
-                                    "www.webmd.com › a-to-z-guides › fine-needle-aspiration")
+                                    "www.webmd.com > a-to-z-guides > fine-needle-aspiration")
                             ,
                             new ConceptDef()
                                 .SetCode("DiagnosticMammogram")
@@ -442,9 +443,9 @@ namespace BreastRadiology.XUnitTests
                                     "It is a type of exaggerated cranio-caudal view. ",
                                     "It is particularly good for imaging the lateral aspect " +
                                     "of the breast. It is often done when a lesion is " +
-                                    "suspected on a MLO view but cannot be seen on the CC " +
-                                    "view. In this view, the lateral aspect of the breast " +
-                                    "is placed forward. ",
+                                    "suspected on a MLO view but cannot be seen on the " +
+                                    "CC view. In this view, the lateral aspect of the " +
+                                    "breast is placed forward. ",
                                     "One rationale of performing this view is that many " +
                                     "cancers are located in the lateral aspect of the " +
                                     "breast. ",
@@ -454,9 +455,9 @@ namespace BreastRadiology.XUnitTests
                                     "of the breast. ",
                                     "In this view, the medial portion of the breast is " +
                                     "placed forward. ",
-                                    "A negative 15° tube tilt is suggested.An optimal " +
-                                    "XCCM view requires the most medial portion of the " +
-                                    "breast and the nipple in profile to be clearly displayed. ",
+                                    "A negative 15degrees tube tilt is suggested.An optimal XCCM " +
+                                    "view requires the most medial portion of the breast " +
+                                    "and the nipple in profile to be clearly displayed. ",
                                     "###URL#https://radiopaedia.org/articles/xccl-view?lang=us")
                             ,
                             new ConceptDef()
@@ -594,7 +595,7 @@ namespace BreastRadiology.XUnitTests
                                     "the x-ray source. ",
                                     "This allows the acquisition of magnified images (1.5x " +
                                     "to 2x magnification) of the region of interest. radiopaedia.org " +
-                                    "› articles › magnification-view-mammography")
+                                    "> articles > magnification-view-mammography")
                             ,
                             new ConceptDef()
                                 .SetCode("Mammogram")
@@ -736,9 +737,9 @@ namespace BreastRadiology.XUnitTests
                                 .ValidModalities(Modalities.MG)
                                 .SetSnomedDescription("Procedure | 116334007 | Stereotactically guided core " +
                                     "needle biopsy of breast (Procedure) ++ POSSILE")
-                                .SetUMLS("Stereotactic breast biopsy uses mammography – a specific " +
+                                .SetUMLS("Stereotactic breast biopsy uses mammography - a specific " +
                                     "type of breast imaging that uses low-dose x-rays " +
-                                    "— to help locate a breast abnormality and remove " +
+                                    "- to help locate a breast abnormality and remove " +
                                     "a tissue sample for examination under a microscope. ",
                                     "It's less invasive than surgical biopsy, leaves little " +
                                     "to no scarring and can be an excellent way to evaluate " +
@@ -963,9 +964,9 @@ namespace BreastRadiology.XUnitTests
                                 .ValidModalities(Modalities.MG | Modalities.MRI | Modalities.NM | Modalities.US)
                                 .SetSnomedDescription("Procedure | 116334007 | Stereotactically guided core " +
                                     "needle biopsy of breast (Procedure)")
-                                .SetUMLS("Stereotactic breast biopsy uses mammography – a specific " +
+                                .SetUMLS("Stereotactic breast biopsy uses mammography - a specific " +
                                     "type of breast imaging that uses low-dose x-rays " +
-                                    "— to help locate a breast abnormality and remove " +
+                                    "- to help locate a breast abnormality and remove " +
                                     "a tissue sample for examination under a microscope. ",
                                     "It's less invasive than surgical biopsy, leaves little " +
                                     "to no scarring and can be an excellent way to evaluate " +
@@ -1132,6 +1133,7 @@ namespace BreastRadiology.XUnitTests
                                     "area of abnormal cells from the breast tissue. ",
                                     "A doctor or nurse uses a special needle attached " +
                                     "to a vacuum device to remove the cells.")
+                            #endregion // Codes
                             //- Codes
                         })
             );

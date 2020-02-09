@@ -37,6 +37,7 @@ namespace BreastRadiology.XUnitTests
                         new ConceptDef[]
                         {
                             //+ Codes
+                            #region Codes
                             new ConceptDef()
                                 .SetCode("Aspiration")
                                 .SetDisplay("Aspiration")
@@ -75,6 +76,7 @@ namespace BreastRadiology.XUnitTests
                                 .ValidModalities(Modalities.MG)
                                 .SetUMLS("Findings on the Mammogram was previously demonstrated " +
                                     "by the Ultrasound.")
+                            #endregion // Codes
                             //- Codes
                         })
             );

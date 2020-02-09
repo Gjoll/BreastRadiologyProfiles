@@ -18,6 +18,7 @@ namespace BreastRadiology.XUnitTests
                     new ConceptDef[]
                     {
                         //+ Codes
+                        #region Codes
                         new ConceptDef()
                             .SetCode("ClusteredDistribution")
                             .SetDisplay("Clustered distribution")
@@ -139,6 +140,7 @@ namespace BreastRadiology.XUnitTests
                                 "A segmental distribution may elevate the degree of " +
                                 "suspicion for calcifications such as punctate or " +
                                 "amorphous forms.")
+                        #endregion // Codes
                         //- Codes
                     }));
 

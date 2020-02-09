@@ -25,6 +25,7 @@ namespace BreastRadiology.XUnitTests
                      new ConceptDef[]
                      {
                          //+ Codes
+                         #region Codes
                          new ConceptDef()
                              .SetCode("ParallelToSkin")
                              .SetDisplay("Parallel to skin")
@@ -36,13 +37,13 @@ namespace BreastRadiology.XUnitTests
                                  "be considered parallel.")
                          ,
                          new ConceptDef()
-                             .SetCode("PerpendicularToSkin(notParallel)")
+                             .SetCode("PerpendicularToSkin")
                              .SetDisplay("Perpendicular to skin (not parallel)")
                              .MammoId("1509")
                              .ValidModalities(Modalities.MG | Modalities.MRI | Modalities.NM | Modalities.US)
                              .SetACR("(historically, \"isodense\")The long axis of the mass " +
                                  "does not lie parallel to the skin line. ",
-                                 "The anterior–posterior or verticaldimension is greater " +
+                                 "The anterior-posterior or verticaldimension is greater " +
                                  "than the transverse or horizontal dimension. ",
                                  "These masses can also beobliquely oriented to the " +
                                  "skin line. ",
@@ -59,6 +60,7 @@ namespace BreastRadiology.XUnitTests
                              .SetDisplay("Wider than tall")
                              .MammoId("1517")
                              .ValidModalities(Modalities.MRI | Modalities.US)
+                         #endregion // Codes
                          //- Codes
                      })
              );

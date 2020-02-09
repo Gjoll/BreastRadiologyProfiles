@@ -24,33 +24,80 @@ namespace BreastRadiology.XUnitTests
                          Group_CommonCodesCS,
                          new ConceptDef[]
                          {
-                        new ConceptDef()
-                            .SetCode("Central", "Central Region")
-                            .SetDefinition("Central region of the breast (behind nipple)"),
-                        new ConceptDef()
-                            .SetCode("RetroaReolar", "RetroaReolar Region")
-                            .SetDefinition("Central location in the anterior third of the breast close to the nipple"),
-                        new ConceptDef()
-                            .SetCode("AxillaryTail", "AxillaryTail Region")
-                            .SetDefinition("Upper outer region location adjacent to the axilla but within the breast mound"),
-                        new ConceptDef()
-                            .SetCode("Axilla", "Axilla Region")
-                            .SetDefinition("Upper outer region location in the axilla"),
-                        new ConceptDef()
-                            .SetCode("AxillaI", "Axilla Region I")
-                            .SetDefinition("Axilla Region I"),
-                        new ConceptDef()
-                            .SetCode("AxillaII", "Axilla Region II")
-                            .SetDefinition("Axilla Region II"),
-                        new ConceptDef()
-                            .SetCode("AxillaIII", "Axilla Region III")
-                            .SetDefinition("Axilla Region III"),
-                        new ConceptDef()
-                            .SetCode("InframammaryFold", "Inframammary Fold Region")
-                            .SetDefinition("Inframammary Fold"),
-                        new ConceptDef()
-                            .SetCode("InSkin", "In Skin")
-                            .SetDefinition("In Skin")
+                             //+ Regions
+                             #region Codes
+                             new ConceptDef()
+                                 .SetCode("Axilla")
+                                 .SetDisplay("Axilla")
+                                 .MammoId("1015")
+                                 .ValidModalities(Modalities.US)
+                                 .SetSnomedDescription("BodyStructure | 416710001 | Skin and subcutaneous " +
+                                     "tissue structure of axilla")
+                                 .SetUMLS("The axilla (also, armpit, underarm or oxter) is the " +
+                                     "area on the human body directly under the joint where " +
+                                     "the arm connects to the shoulder. ",
+                                     "It also contains many sweat glands. ",
+                                     "###URL#https://en.wikipedia.org/wiki/Axilla")
+                             ,
+                             new ConceptDef()
+                                 .SetCode("AxillaryTail")
+                                 .SetDisplay("Axillary tail")
+                                 .MammoId("1014")
+                                 .ValidModalities(Modalities.MG | Modalities.US)
+                                 .SetSnomedDescription("BodyStructure | 38412008 | Structure of axillary " +
+                                     "tail of breast (Bodypart)")
+                                 .SetUMLS("The tail of Spence (Spence's tail, axillary process, " +
+                                     "axillary tail) is an extension of the tissue of the " +
+                                     "breast that extends into the axilla. ",
+                                     "It is actually an extension of the upper lateral " +
+                                     "quadrant of the breast. ",
+                                     "It passes into the axilla through an opening in the " +
+                                     "deep fascia called foramen of Langer. ",
+                                     "###URL#https://en.wikipedia.org/wiki/Tail_of_Spence")
+                             ,
+                             new ConceptDef()
+                                 .SetCode("AxillaI")
+                                 .SetDisplay("Axilla I")
+                                 .MammoId("AxillaI")
+                                 .SetUMLS("Axilla Region I")
+                             ,
+                             new ConceptDef()
+                                 .SetCode("AxillaII")
+                                 .SetDisplay("Axilla II")
+                                 .MammoId("AxillaII")
+                                 .SetUMLS("Axilla Region II")
+                             ,
+                             new ConceptDef()
+                                 .SetCode("AxillaIII")
+                                 .SetDisplay("Axilla III")
+                                 .MammoId("AxillaIII")
+                                 .SetUMLS("Axilla Region III")
+                             ,
+                             new ConceptDef()
+                                 .SetCode("InframammaryFold")
+                                 .SetDisplay("Inframammary fold")
+                                 .MammoId("1515")
+                                 .ValidModalities(Modalities.MG | Modalities.MRI | Modalities.NM | Modalities.US)
+                             ,
+                             new ConceptDef()
+                                 .SetCode("InSkin")
+                                 .SetDisplay("In skin")
+                                 .MammoId("1511")
+                                 .ValidModalities(Modalities.MG | Modalities.MRI | Modalities.NM | Modalities.US)
+                                 .SetUMLS("Located within the skin.")
+                             ,
+                             new ConceptDef()
+                                 .SetCode("CentralToNipple")
+                                 .SetDisplay("Central to nipple")
+                                 .MammoId("1013")
+                                 .ValidModalities(Modalities.MG | Modalities.US)
+                                 .SetSnomedDescription("BodyStructure | 49058007 | Structure of central portion " +
+                                     "of breast (Bodypart)")
+                             #endregion // Codes
+                             //- Regions
+                            //new ConceptDef()
+                            //    .SetCode("RetroaReolar", "RetroaReolar Region")
+                            //    .SetDefinition("Central location in the anterior third of the breast close to the nipple"),
                          })
                      );
 
@@ -64,18 +111,53 @@ namespace BreastRadiology.XUnitTests
                          Group_CommonCodesCS,
                          new ConceptDef[]
                          {
-                        new ConceptDef()
-                            .SetCode("UpperOuter", "Upper Outer Quadrant")
-                            .SetDefinition("Upper outer quadrant of the breast"),
-                        new ConceptDef()
-                            .SetCode("UpperInner", "Upper Inner Quadrant")
-                            .SetDefinition("Upper inner quadrant of the breast"),
-                        new ConceptDef()
-                            .SetCode("LowerOuter", "Lower Outer Quadrant")
-                            .SetDefinition("Lower outer quadrant of the breast"),
-                        new ConceptDef()
-                            .SetCode("LowerInner", "Lower Inner Quadrant")
-                            .SetDefinition("Lower inner quadrant of the breast")
+                             //+ Quadrants
+                             #region Codes
+                             new ConceptDef()
+                                 .SetCode("InferiorMedialQuadrent")
+                                 .SetDisplay("Inferior medial quadrent (lower inner)")
+                                 .MammoId("1024")
+                                 .ValidModalities(Modalities.MG | Modalities.US)
+                                 .SetSnomedDescription("BodyStructure | 19100000 | Structure of lower inner " +
+                                     "quadrant of breast (Bodypart)")
+                                 .SetUMLS("The lower inside (closest to the cleavage of your " +
+                                     "breasts) quadrant of each breast. ",
+                                     "There are 4 quadrants to the anatomy of the breast.")
+                             ,
+                             new ConceptDef()
+                                 .SetCode("InferiorLateralQuadrent")
+                                 .SetDisplay("Inferior lateral quadrent (lower outer)")
+                                 .MammoId("1025")
+                                 .ValidModalities(Modalities.MG | Modalities.US)
+                                 .SetSnomedDescription("BodyStructure | 33564002 | Structure of lower outer " +
+                                     "quadrant of breast (Bodypart)")
+                                 .SetUMLS("The upper inside (closest to the armpit of each breast) " +
+                                     "quadrant of each breast. ",
+                                     "There are 4 quadrants to the anatomy of the breast.")
+                             ,
+                             new ConceptDef()
+                                 .SetCode("SuperiorMedialQuadrent")
+                                 .SetDisplay("Superior medial quadrent (upper inner)")
+                                 .MammoId("1022")
+                                 .ValidModalities(Modalities.MG | Modalities.US)
+                                 .SetSnomedDescription("BodyStructure | 77831004 | Structure of upper inner " +
+                                     "quadrant of breast (Bodypart)")
+                                 .SetUMLS("The upper inside (closest to the cleavage of your " +
+                                     "breasts) quadrant of each breast. ",
+                                     "There are 4 quadrants to the anatomy of the breast.")
+                             ,
+                             new ConceptDef()
+                                 .SetCode("SuperiorLateralQuadrent")
+                                 .SetDisplay("Superior lateral quadrent (upper outer)")
+                                 .MammoId("1023")
+                                 .ValidModalities(Modalities.MG | Modalities.US)
+                                 .SetSnomedDescription("BodyStructure | 76365002 | Structure of upper outer " +
+                                     "quadrant of breast (Bodypart)")
+                                 .SetUMLS("The upper outside (closest to your armpit on each " +
+                                     "breast) quadrant of each breast. ",
+                                     "There are 4 quadrants to the anatomy of the breast.")
+                             #endregion // Codes
+                             //- Quadrants
                          })
              );
         CSTaskVar BreastLocationClockCS = new CSTaskVar(
@@ -88,42 +170,149 @@ namespace BreastRadiology.XUnitTests
                          Group_CommonCodesCS,
                          new ConceptDef[]
                          {
-                        new ConceptDef()
-                             .SetCode("12:00-OClock", "12:00-OClock")
-                             .SetDefinition("12-OClock"),
-                        new ConceptDef()
-                            .SetCode("1:00-OClock", "1:00-OClock")
-                            .SetDefinition("1:00-OClock"),
-                        new ConceptDef()
-                            .SetCode("2:00-OClock", "2:00-OClock")
-                            .SetDefinition("2:00-OClock"),
-                        new ConceptDef()
-                            .SetCode("3:00-OClock", "3:00-OClock")
-                            .SetDefinition("3:00-OClock"),
-                        new ConceptDef()
-                            .SetCode("4:00-OClock", "4:00-OClock")
-                            .SetDefinition("4:00-OClock"),
-                        new ConceptDef()
-                            .SetCode("5:00-OClock", "5:00-OClock")
-                            .SetDefinition("5:00-OClock"),
-                        new ConceptDef()
-                            .SetCode("6:00-OClock", "6:00-OClock")
-                            .SetDefinition("6:00-OClock"),
-                        new ConceptDef()
-                            .SetCode("7:00-OClock", "7:00-OClock")
-                            .SetDefinition("7:00-OClock"),
-                        new ConceptDef()
-                            .SetCode("8:00-OClock", "8:00-OClock")
-                            .SetDefinition("8:00-OClock"),
-                        new ConceptDef()
-                            .SetCode("9:00-OClock", "9:00-OClock")
-                            .SetDefinition("9:00-OClock"),
-                        new ConceptDef()
-                            .SetCode("10:00-OClock", "10:00-OClock")
-                            .SetDefinition("10:00-OClock"),
-                        new ConceptDef()
-                            .SetCode("11:00-OClock", "11:00-OClock")
-                            .SetDefinition("11:00-OClock"),
+                             //+ ClockPositions
+                             #region Codes
+                             new ConceptDef()
+                                 .SetCode("1O'clock")
+                                 .SetDisplay("1 o'clock")
+                                 .MammoId("1001")
+                                 .ValidModalities(Modalities.MG | Modalities.US)
+                                 .SetSnomedDescription("ClinicalFinding | 129772004 | 1 o'clock position " +
+                                     "on mammogram (Finding) | [0/0] |")
+                                 .SetUMLS("Just like the hands of a clock, this is how doctors " +
+                                     "describe position of the tumor in the breast. ",
+                                     "1 o'clock position is at the 1 o'clock position and " +
+                                     "in the Upper Inner Quandrant (UIQ) of the breast.")
+                             ,
+                             new ConceptDef()
+                                 .SetCode("2O'clock")
+                                 .SetDisplay("2 o'clock")
+                                 .MammoId("1002")
+                                 .ValidModalities(Modalities.MG | Modalities.US)
+                                 .SetSnomedDescription("ClinicalFinding | 129773009 | 2 o'clock position " +
+                                     "on mammogram (Finding) | [0/0] |")
+                                 .SetUMLS("Just like the hands of a clock, this is how doctors " +
+                                     "describe position of the tumor in the breast. ",
+                                     "2 o'clock position is at the 2 o'clock position and " +
+                                     "in the Upper Inner Quandrant (UIQ) of the breast.")
+                             ,
+                             new ConceptDef()
+                                 .SetCode("3O'clock")
+                                 .SetDisplay("3 o'clock")
+                                 .MammoId("1003")
+                                 .ValidModalities(Modalities.MG | Modalities.US)
+                                 .SetSnomedDescription("ClinicalFinding | 129774003 | 3 o'clock position " +
+                                     "on mammogram (Finding) | [0/0] |")
+                                 .SetUMLS("Just like the hands of a clock, this is how doctors " +
+                                     "describe position of the tumor in the breast. ",
+                                     "3 o'clock position is at the 3 o'clock position.")
+                             ,
+                             new ConceptDef()
+                                 .SetCode("4O'clock")
+                                 .SetDisplay("4 o'clock")
+                                 .MammoId("1004")
+                                 .ValidModalities(Modalities.MG | Modalities.US)
+                                 .SetSnomedDescription("ClinicalFinding | 129775002 | 4 o'clock position " +
+                                     "on mammogram (Finding) | [0/0] |")
+                                 .SetUMLS("Just like the hands of a clock, this is how doctors " +
+                                     "describe position of the tumor in the breast. ",
+                                     "4 o'clock position is at the 4 o'clock position and " +
+                                     "in the Lower Inner Quandrant (LIQ) of the breast.")
+                             ,
+                             new ConceptDef()
+                                 .SetCode("5O'clock")
+                                 .SetDisplay("5 o'clock")
+                                 .MammoId("1005")
+                                 .ValidModalities(Modalities.MG | Modalities.US)
+                                 .SetSnomedDescription("ClinicalFinding | 129776001 | 5 o'clock position " +
+                                     "on mammogram (Finding) | [0/0] |")
+                                 .SetUMLS("Just like the hands of a clock, this is how doctors " +
+                                     "describe position of the tumor in the breast. ",
+                                     "5 o'clock position is at the 5 o'clock position and " +
+                                     "in the Lower Inner Quandrant (LIQ) of the breast.")
+                             ,
+                             new ConceptDef()
+                                 .SetCode("6O'clock")
+                                 .SetDisplay("6 o'clock")
+                                 .MammoId("1006")
+                                 .ValidModalities(Modalities.MG | Modalities.US)
+                                 .SetSnomedDescription("ClinicalFinding | 129777005 | 6 o'clock position " +
+                                     "on mammogram (Finding) | [0/0] |")
+                                 .SetUMLS("Just like the hands of a clock, this is how doctors " +
+                                     "describe position of the tumor in the breast. ",
+                                     "6 o'clock position is at the 6 o'clock position.")
+                             ,
+                             new ConceptDef()
+                                 .SetCode("7O'clock")
+                                 .SetDisplay("7 o'clock")
+                                 .MammoId("1007")
+                                 .ValidModalities(Modalities.MG | Modalities.US)
+                                 .SetSnomedDescription("ClinicalFinding | 129778000 | 7 o'clock position " +
+                                     "on mammogram (Finding) | [0/0] |")
+                                 .SetUMLS("Just like the hands of a clock, this is how doctors " +
+                                     "describe position of the tumor in the breast. ",
+                                     "7 o'clock position is at the 7 o'clock position and " +
+                                     "in the Lower Outer Quandrant (LOQ) of the breast.")
+                             ,
+                             new ConceptDef()
+                                 .SetCode("8O'clock")
+                                 .SetDisplay("8 o'clock")
+                                 .MammoId("1008")
+                                 .ValidModalities(Modalities.MG | Modalities.US)
+                                 .SetSnomedDescription("ClinicalFinding | 129779008 | 8 o'clock position " +
+                                     "on mammogram (Finding) | [0/0] |")
+                                 .SetUMLS("Just like the hands of a clock, this is how doctors " +
+                                     "describe position of the tumor in the breast. ",
+                                     "8 o'clock position is at the 8 o'clock position and " +
+                                     "in the Lower Outer Quandrant (LOQ) of the breast.")
+                             ,
+                             new ConceptDef()
+                                 .SetCode("9O'clock")
+                                 .SetDisplay("9 o'clock")
+                                 .MammoId("1009")
+                                 .ValidModalities(Modalities.MG | Modalities.US)
+                                 .SetSnomedDescription("ClinicalFinding | 129780006 | 9 o'clock position " +
+                                     "on mammogram (Finding) | [0/0] |")
+                                 .SetUMLS("Just like the hands of a clock, this is how doctors " +
+                                     "describe position of the tumor in the breast. ",
+                                     "9 o'clock position is at the 9 o'clock position.")
+                             ,
+                             new ConceptDef()
+                                 .SetCode("10O'clock")
+                                 .SetDisplay("10 o'clock")
+                                 .MammoId("1010")
+                                 .ValidModalities(Modalities.MG | Modalities.US)
+                                 .SetSnomedDescription("ClinicalFinding | 129781005 | 10 o'clock position " +
+                                     "on mammogram (Finding) | [0/0] |")
+                                 .SetUMLS("Just like the hands of a clock, this is how doctors " +
+                                     "describe position of the tumor in the breast. ",
+                                     "10 o'clock position is at the 10 o'clock position " +
+                                     "and in the Upper Outer Quandrant (UOQ) of the breast.")
+                             ,
+                             new ConceptDef()
+                                 .SetCode("11O'clock")
+                                 .SetDisplay("11 o'clock")
+                                 .MammoId("1011")
+                                 .ValidModalities(Modalities.MG | Modalities.US)
+                                 .SetSnomedDescription("ClinicalFinding | 129782003 | 11 o'clock position " +
+                                     "on mammogram (Finding) | [0/0] |")
+                                 .SetUMLS("Just like the hands of a clock, this is how doctors " +
+                                     "describe position of the tumor in the breast. ",
+                                     "11 o'clock position is at the 11 o'clock position " +
+                                     "and in the Upper Outer Quandrant (UOQ) of the breast.")
+                             ,
+                             new ConceptDef()
+                                 .SetCode("12O'clock")
+                                 .SetDisplay("12 o'clock")
+                                 .MammoId("1012")
+                                 .ValidModalities(Modalities.MG | Modalities.US)
+                                 .SetSnomedDescription("ClinicalFinding | 129783008 | 12 o'clock position " +
+                                     "on mammogram (Finding) | [0/0] |")
+                                 .SetUMLS("Just like the hands of a clock, this is how doctors " +
+                                     "describe position of the tumor in the breast. ",
+                                     "12 o'clock position is at the 12 o'clock position.")
+                             #endregion // Codes
+                             //- ClockPositions
                          })
                      );
 
@@ -137,15 +326,38 @@ namespace BreastRadiology.XUnitTests
                          Group_CommonCodesCS,
                          new ConceptDef[]
                          {
-                        new ConceptDef()
-                            .SetCode("Anterior", "Anterior depth")
-                            .SetDefinition("Anterior depth"),
-                        new ConceptDef()
-                            .SetCode("Middle", "Middle depth")
-                            .SetDefinition("Middle depth"),
-                        new ConceptDef()
-                            .SetCode("Posterior", "Posterior depth")
-                            .SetDefinition("Posterior depth")
+                             //+ Depth
+                             #region Codes
+                             new ConceptDef()
+                                 .SetCode("AnteriorDepth")
+                                 .SetDisplay("Anterior depth")
+                                 .MammoId("1017")
+                                 .ValidModalities(Modalities.MG | Modalities.US)
+                                 .SetSnomedDescription("Not found")
+                                 .SetUMLS("The breast is divided into anterior, middle and posterior " +
+                                     "depth. ",
+                                     "The location of any lesion is given when discussed " +
+                                     "in the medical profession, with reference to a quadrant " +
+                                     "or 'clock position,' and the depth within the breast.Anterior " +
+                                     "depth is the outer most depth (closest to the nipple) " +
+                                     "of the breast.")
+                             ,
+                             new ConceptDef()
+                                 .SetCode("MiddleDepth")
+                                 .SetDisplay("Middle depth")
+                                 .MammoId("1018")
+                                 .ValidModalities(Modalities.MG | Modalities.US)
+                                 .SetSnomedDescription("Not found")
+                             ,
+                             new ConceptDef()
+                                 .SetCode("PosteriorDepth")
+                                 .SetDisplay("Posterior depth")
+                                 .MammoId("1019")
+                                 .ValidModalities(Modalities.MG | Modalities.US)
+                                 .SetSnomedDescription("QualifierValue | 255551008 | Posterior (Qualifier) " +
+                                     "+ depth")
+                             #endregion // Codes
+                             //- Depth
                          })
              );
 
@@ -253,7 +465,7 @@ namespace BreastRadiology.XUnitTests
                     //$ This is the build site url. Fix this when bodysite gets published.
                     e.AddExtensionLink("https://build.fhir.org/ig/HL7/fhir-skin-wound-ig/branches/master/StructureDefinition-BodySideExt.html",
                         new SDefEditor.Cardinality(extensionDef),
-                        "Laterality", 
+                        "Laterality",
                         Global.ElementAnchor(extensionDef), false);
                 }
                 {
@@ -382,7 +594,7 @@ namespace BreastRadiology.XUnitTests
                     extensionSlice.ElementDefinition.ZeroToOne();
                     e.AddExtensionLink(extensionStructDef.Url,
                         new SDefEditor.Cardinality(extensionSlice.ElementDefinition),
-                        "Distance From Chest Wall", 
+                        "Distance From Chest Wall",
                         Global.ElementAnchor(extensionSlice.ElementDefinition), false);
                 }
                 {
@@ -391,7 +603,7 @@ namespace BreastRadiology.XUnitTests
                     extensionSlice.ElementDefinition.ZeroToOne();
                     e.AddExtensionLink(extensionStructDef.Url,
                         new SDefEditor.Cardinality(extensionSlice.ElementDefinition),
-                        "Distance From Skin", 
+                        "Distance From Skin",
                         Global.ElementAnchor(extensionSlice.ElementDefinition),
                         false);
                 }
