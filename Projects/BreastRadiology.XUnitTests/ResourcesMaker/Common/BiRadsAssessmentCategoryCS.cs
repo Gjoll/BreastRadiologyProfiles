@@ -29,19 +29,19 @@ namespace BreastRadiology.XUnitTests
                             #region Codes
                             new ConceptDef()
                                 .SetCode("Category0")
-                                .SetDisplay("Category 0")
+                                .SetDisplay("Category 0 (Incomplete)")
                                 .MammoId("36")
                                 .ValidModalities(Modalities.MG | Modalities.MRI | Modalities.NM | Modalities.US)
                                 .SetSnomedDescription("ClinicalFinding | 397138000 | Mammography assessment " +
                                     "(Category 0)")
-                                .SetUMLS("Category 0: Incomplete - NeedAdditional Imaging Evaluation " +
-                                    "and/or prior Mammograms for comparison. ",
+                                .SetUMLS("Need additional Imaging Evaluation and/or prior Mammograms " +
+                                    "for comparison. ",
                                     "Recall for additional imaging and/or comparison with " +
                                     "prior examination(s)        ###ACRUS#")
                             ,
                             new ConceptDef()
                                 .SetCode("Category2")
-                                .SetDisplay("Category 2")
+                                .SetDisplay("Category 2 (Benign)")
                                 .MammoId("32")
                                 .ValidModalities(Modalities.MG | Modalities.MRI | Modalities.NM | Modalities.US)
                                 .SetSnomedDescription("ClinicalFinding | 397141009 | Mammography assessment " +
@@ -57,7 +57,7 @@ namespace BreastRadiology.XUnitTests
                             ,
                             new ConceptDef()
                                 .SetCode("Category3")
-                                .SetDisplay("Category 3")
+                                .SetDisplay("Category 3 (Probably Benign)")
                                 .MammoId("33")
                                 .ValidModalities(Modalities.MG | Modalities.MRI | Modalities.NM | Modalities.US)
                                 .SetSnomedDescription("ClinicalFinding | 397143007 | Mammography assessment " +
@@ -77,7 +77,7 @@ namespace BreastRadiology.XUnitTests
                             ,
                             new ConceptDef()
                                 .SetCode("Category4")
-                                .SetDisplay("Category 4")
+                                .SetDisplay("Category 4 (Suspicious)")
                                 .MammoId("34")
                                 .ValidModalities(Modalities.MG | Modalities.MRI | Modalities.NM | Modalities.US)
                                 .SetSnomedDescription("ClinicalFinding | 397144001 | Mammography assessment " +
@@ -93,12 +93,12 @@ namespace BreastRadiology.XUnitTests
                                     "###ACRUS#")
                             ,
                             new ConceptDef()
-                                .SetCode("Category4a")
-                                .SetDisplay("Category 4a")
+                                .SetCode("Category4A")
+                                .SetDisplay("Category 4A (Low suspicion)")
                                 .MammoId("176")
                                 .ValidModalities(Modalities.MG | Modalities.MRI | Modalities.NM | Modalities.US)
                                 .SetSnomedDescription("Not found")
-                                .SetUMLS("Category 4A: Low suspicion formalignancy. ",
+                                .SetUMLS("Low suspicion for malignancy. ",
                                     "A malignant finding is not suspected. ",
                                     "A biopsy or other test will likely still be performed " +
                                     "in order to determine. ",
@@ -110,8 +110,8 @@ namespace BreastRadiology.XUnitTests
                                     "###ACRUS#")
                             ,
                             new ConceptDef()
-                                .SetCode("Category4b")
-                                .SetDisplay("Category 4b")
+                                .SetCode("Category4B")
+                                .SetDisplay("Category 4B (Moderate suspicion)")
                                 .MammoId("177")
                                 .ValidModalities(Modalities.MG | Modalities.MRI | Modalities.NM | Modalities.US)
                                 .SetSnomedDescription("Not found")
@@ -123,8 +123,8 @@ namespace BreastRadiology.XUnitTests
                                     "###ACRUS#")
                             ,
                             new ConceptDef()
-                                .SetCode("Category4c")
-                                .SetDisplay("Category 4c")
+                                .SetCode("Category4C")
+                                .SetDisplay("Category 4C (High suspicion)")
                                 .MammoId("178")
                                 .ValidModalities(Modalities.MG | Modalities.MRI | Modalities.NM | Modalities.US)
                                 .SetSnomedDescription("Not found")
@@ -140,53 +140,30 @@ namespace BreastRadiology.XUnitTests
                             ,
                             new ConceptDef()
                                 .SetCode("Category5")
-                                .SetDisplay("Category 5")
+                                .SetDisplay("Category 5 (Highly Suggestive of Malignancy)")
                                 .MammoId("35")
                                 .ValidModalities(Modalities.MG | Modalities.MRI | Modalities.NM | Modalities.US)
                                 .SetSnomedDescription("ClinicalFinding | 397145000 | Mammography assessment " +
                                     "(Category 5)")
-                                .SetUMLS("Category 5: HighlySuggestive of Malignancy      Almost " +
-                                    "certainly predictive of breast cancer with a value " +
-                                    "of at least 95%. ",
-                                    "Tissue Diagnosis is highly recommended or required.")
-                            ,
-                            new ConceptDef()
-                                .SetCode("Category6")
-                                .SetDisplay("Category 6")
-                                .MammoId("172")
-                                .ValidModalities(Modalities.MG | Modalities.MRI | Modalities.NM | Modalities.US)
-                                .SetUMLS("Category 6: Known Biopsy-Proven Malignancy       " +
-                                    "              Surgical excision when clinicallyappropriate. ",
-                                    "                                This category is " +
-                                    "only used for findings on a mammogram that have already " +
-                                    "been shown to be cancer by a previous biopsy. ",
-                                    " Mammograms may be used in this way to see how well " +
-                                    "the cancer is responding to treatment. ",
+                                .SetUMLS("Highly Suggestive of Malignancy. ",
+                                    "Almost certainly predictive of breast cancer with " +
+                                    "a value of at least 95%. ",
+                                    "Tissue Diagnosis is highly recommended or required. ",
                                     "###ACRUS#")
                             ,
                             new ConceptDef()
-                                .SetCode("N/A")
-                                .SetDisplay("N/A")
-                                .MammoId("174")
+                                .SetCode("Category6")
+                                .SetDisplay("Category 6 (Known Biopsy-Proven Malignancy)")
+                                .MammoId("172")
                                 .ValidModalities(Modalities.MG | Modalities.MRI | Modalities.NM | Modalities.US)
-                                .SetSnomedDescription("Not found")
-                            ,
-                            new ConceptDef()
-                                .SetCode("PostBiopsy/Marker")
-                                .SetDisplay("Post biopsy / marker")
-                                .MammoId("173")
-                                .ValidModalities(Modalities.MG | Modalities.MRI | Modalities.NM | Modalities.US)
-                                .SetSnomedCode("470272007")
-                                .SetSnomedDescription("PhysicalObject | Implantable lesion localization " +
-                                    "marker (Object)")
-                                .SetUMLS("After removing the tissue samples, the doctor may " +
-                                    "leave a tiny clip or marker, made of surgical-grade " +
-                                    "material, to identify the biopsy site. ",
-                                    "This will be visible on a mammogram. ",
-                                    "The marker points out the exact site of the biopsy " +
-                                    "so that a doctor can find it again easily if they " +
-                                    "need to. ",
-                                    "###URL#https://www.medicalnewstoday.com/articles/265444.php")
+                                .SetUMLS("Known Biopsy-Proven Malignancy. ",
+                                    "Surgical excision when clinicallyappropriate. ",
+                                    "This category is only used for findings on a mammogram " +
+                                    "that have already been shown to be cancer by a previous " +
+                                    "biopsy. ",
+                                    "Mammograms may be used in this way to see how well " +
+                                    "the cancer is responding to treatment. ",
+                                    "###ACRUS#")
                             #endregion // Codes
                             //- Codes
                         //new ConceptDef()

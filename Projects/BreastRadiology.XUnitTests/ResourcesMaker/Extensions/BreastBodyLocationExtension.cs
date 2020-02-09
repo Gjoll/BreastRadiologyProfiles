@@ -59,19 +59,16 @@ namespace BreastRadiology.XUnitTests
                                  .SetCode("AxillaI")
                                  .SetDisplay("Axilla I")
                                  .MammoId("AxillaI")
-                                 .SetUMLS("Axilla Region I")
                              ,
                              new ConceptDef()
                                  .SetCode("AxillaII")
                                  .SetDisplay("Axilla II")
                                  .MammoId("AxillaII")
-                                 .SetUMLS("Axilla Region II")
                              ,
                              new ConceptDef()
                                  .SetCode("AxillaIII")
                                  .SetDisplay("Axilla III")
                                  .MammoId("AxillaIII")
-                                 .SetUMLS("Axilla Region III")
                              ,
                              new ConceptDef()
                                  .SetCode("InframammaryFold")

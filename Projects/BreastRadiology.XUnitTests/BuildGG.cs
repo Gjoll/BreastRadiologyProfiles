@@ -544,7 +544,7 @@ namespace BreastRadiology.XUnitTests
             this.spreadSheetData = new ExcelData(new Info(), filePath, "Sheet3");
 
             WriteIds("BiRads", @"Common\BiRadsAssessmentCategoryCS.cs", "Codes",
-                Filter("Impression", "Birads").Remove("790", "791"));
+                Filter("Impression", "Birads").Remove("790", "791", "174", "173"));
 
             WriteIds("AbnormalityCyst",
                 @"Common\Abnormalities\AbnormalityCyst.cs",

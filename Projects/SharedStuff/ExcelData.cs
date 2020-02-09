@@ -52,11 +52,7 @@ namespace BreastRadiology.Shared
             {
                 DataRow row = tblSource.Rows[0];
                 object[] items = row.ItemArray;
-                {
-                    DataColumn col = new DataColumn("Class", typeof(String));
-                    retVal.Columns.Add(col);
-                }
-                for (Int32 i = 1; i < tblSource.Columns.Count; i++)
+                for (Int32 i = 0; i < tblSource.Columns.Count; i++)
                 {
                     String colName = tblSource.Columns[i].ColumnName;
                     if (colName.StartsWith("Column"))
