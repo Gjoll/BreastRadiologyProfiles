@@ -184,6 +184,11 @@ namespace BreastRadiology.XUnitTests
                         Add('-');
                         break;
 
+                    case (char)8804:
+                        Add('<');
+                        Add('=');
+                        break;
+
                     case '\n':
                         if (len > 0)
                             PutEoln();
@@ -538,49 +543,131 @@ namespace BreastRadiology.XUnitTests
                 "BreastData.xlsx");
             this.spreadSheetData = new ExcelData(new Info(), filePath, "Sheet3");
 
-            WriteIds("AbnormalityCyst", @"Common\Abnormalities\AbnormalityCyst.cs", "Type", "69", "610", "657", "617", "636", "609", "661");
-            WriteIds("AbnormalityDuct", @"Common\Abnormalities\AbnormalityDuct.cs", "Type", "694.602", "693.614");
-            WriteIds("AbnormalityFibroAdenoma", @"Common\Abnormalities\AbnormalityFibroAdenoma.cs", "Type", "70", "695");
-            WriteIds("AbnormalityLymphNode", @"Common\Abnormalities\AbnormalityLymphNode.cs", "Type", "648", "649", "662", "665", "650", "651", "652", "666", "663");
-            WriteIds("AbnormalityMass", @"Common\Abnormalities\AbnormalityMass.cs", "Type", "58", "621", "697", "613", "608");
-            WriteIds("AbnormalityForeignObject", @"Common\Abnormalities\AbnormalityForeignObject.cs", "Type", Filter("Finding foreign body", "foreign body"));
+            WriteIds("BiRads", @"Common\BiRadsAssessmentCategoryCS.cs", "Codes",
+                Filter("Impression", "Birads").Remove("790", "791"));
 
-            WriteIds("ServiceRecommendation", @"Common\ServiceRecommendation.cs", "Codes", Filter("Recommendations", "Recommendation"));
-            WriteIds("CorrespondsWithCS", @"Common\CorrespondsWithCS.cs", "Codes", Filter("Corresponds", "Corrosponds with"));
-            WriteIds("ConsistentWith", @"Common\ConsistentWith.cs", "Codes", Filter("Classification Consistent with", "Consistent with"));
-            WriteIds("ConsistentWith", @"Common\ConsistentWith.cs", "Qualifiers", Filter("Classification Consistent with", "Consistent qualifier"));
-            WriteIds("NotPreviouslySeenCS", @"Common\NotPreviouslySeenCS.cs", "Codes", Filter("Not Prev Seen On", "not previous seen"));
-            WriteIds("MarginCS", @"Common\MarginCS.cs", "Codes", Filter("Profile Abnormality", "margin"));
-            WriteIds("OrientationCS", @"Common\OrientationCS.cs", "Codes", Filter("Size and Distance", "Orientation"));
-            WriteIds("PreviouslyDemonstratedBy", @"Common\PreviouslyDemonstratedBy.cs", "Codes", Filter("Dem. By Prior", "previous demostrated by"));
-            WriteIds("ShapeCS", @"Common\ShapeCS.cs", "Codes", Filter("Profile Abnormality", "shape"));
-            WriteIds("ObservedChangesCS", @"Common\ObservedChangesCS.cs", "Codes", Filter("Change From Prior", "Change From Prior"));
-            WriteIds("CalcificationDistributionCS", @"Common\CalcificationDistributionCS.cs", "Codes", Filter("Assoc Calcs distribution", "calcification distribution"));
+            WriteIds("AbnormalityCyst",
+                @"Common\Abnormalities\AbnormalityCyst.cs",
+                "Type",
+                "69", "610", "657", "617", "636", "609", "661");
+            WriteIds("AbnormalityDuct",
+                @"Common\Abnormalities\AbnormalityDuct.cs",
+                "Type",
+                "694.602", "693.614");
+            WriteIds("AbnormalityFibroAdenoma",
+                @"Common\Abnormalities\AbnormalityFibroAdenoma.cs",
+                "Type",
+                "70", "695");
+            WriteIds("AbnormalityLymphNode",
+                @"Common\Abnormalities\AbnormalityLymphNode.cs",
+                "Type",
+                "648", "649", "662", "665", "650", "651", "652", "666", "663");
+            WriteIds("AbnormalityMass",
+                @"Common\Abnormalities\AbnormalityMass.cs",
+                "Type",
+                "58", "621", "697", "613", "608");
+            WriteIds("AbnormalityForeignObject",
+                @"Common\Abnormalities\AbnormalityForeignObject.cs",
+                "Type",
+                Filter("Finding foreign body", "foreign body"));
 
-            WriteIds("MGAbnormalityAsymmetry", @"FindingMG\MGAbnormalityAsymmetry.cs", "Type", "691", "643", "644", "Row542");
-            WriteIds("MGAbnormalityDensity", @"FindingMG\MGAbnormalityDensity.cs", "Type", "686", "645", "646", "647");
-            WriteIds("MGAbnormalityCalcification", @"FindingMG\MGAbnormalityCalcification.cs", "Type", Filter("Assoc Calcs", "calcification type"));
-            WriteIds("MGDensity", @"FindingMG\MGDensity.cs", "Codes", Filter("Profile Abnormality", "density"));
-            WriteIds("MGBreastDensity", @"FindingMG\MGBreastDensity.cs", "Codes", Filter("", "MG Breast Density"));
+            WriteIds("ServiceRecommendation",
+                @"Common\ServiceRecommendation.cs",
+                "Codes",
+                Filter("Recommendations", "Recommendation"));
+            WriteIds("CorrespondsWithCS",
+                @"Common\CorrespondsWithCS.cs",
+                "Codes",
+                Filter("Corresponds", "Corrosponds with"));
+            WriteIds("ConsistentWith",
+                @"Common\ConsistentWith.cs",
+                "Codes",
+                Filter("Classification Consistent with", "Consistent with"));
+            WriteIds("ConsistentWith",
+                @"Common\ConsistentWith.cs",
+                "Qualifiers",
+                Filter("Classification Consistent with", "Consistent qualifier"));
+            WriteIds("NotPreviouslySeenCS",
+                @"Common\NotPreviouslySeenCS.cs",
+                "Codes",
+                Filter("Not Prev Seen On", "not previous seen"));
+            WriteIds("MarginCS",
+                @"Common\MarginCS.cs",
+                "Codes",
+                Filter("Profile Abnormality", "margin"));
+            WriteIds("OrientationCS",
+                @"Common\OrientationCS.cs",
+                "Codes",
+                Filter("Size and Distance", "Orientation"));
+            WriteIds("PreviouslyDemonstratedBy",
+                @"Common\PreviouslyDemonstratedBy.cs",
+                "Codes",
+                Filter("Dem. By Prior", "previous demostrated by"));
+            WriteIds("ShapeCS",
+                @"Common\ShapeCS.cs",
+                "Codes",
+                Filter("Profile Abnormality", "shape"));
+            WriteIds("ObservedChangesCS",
+                @"Common\ObservedChangesCS.cs",
+                "Codes",
+                Filter("Change From Prior", "Change From Prior"));
+            WriteIds("CalcificationDistributionCS",
+                @"Common\CalcificationDistributionCS.cs",
+                "Codes",
+                Filter("Assoc Calcs distribution", "calcification distribution"));
 
-            WriteIds("BreastBodyLocation-ClockPositions", @"Extensions\BreastBodyLocationExtension.cs", "ClockPositions", "1001", "1002", "1003", "1004", "1005", "1006", "1007", "1008", "1009", "1010", "1011", "1012");
-            WriteIds("BreastBodyLocation-Depth", @"Extensions\BreastBodyLocationExtension.cs", "Depth", "1017", "1018", "1019");
-            WriteIds("BreastBodyLocation-Quadrants", @"Extensions\BreastBodyLocationExtension.cs", "Quadrants", "1024", "1025", "1022", "1023");
-            WriteIds("BreastBodyLocation-Regions", @"Extensions\BreastBodyLocationExtension.cs", "Regions",
+            WriteIds("MGAbnormalityAsymmetry",
+                @"FindingMG\MGAbnormalityAsymmetry.cs",
+                "Type",
+                "691", "643", "644", "Row542");
+            WriteIds("MGAbnormalityDensity",
+                @"FindingMG\MGAbnormalityDensity.cs",
+                "Type",
+                "686", "645", "646", "647");
+            WriteIds("MGAbnormalityCalcification",
+                @"FindingMG\MGAbnormalityCalcification.cs",
+                "Type",
+                Filter("Assoc Calcs", "calcification type"));
+            WriteIds("MGDensity",
+                @"FindingMG\MGDensity.cs",
+                "Codes",
+                Filter("Profile Abnormality", "density"));
+            WriteIds("MGBreastDensity",
+                @"FindingMG\MGBreastDensity.cs",
+                "Codes",
+                Filter("", "MG Breast Density"));
+
+            WriteIds("BreastBodyLocation-ClockPositions",
+                @"Extensions\BreastBodyLocationExtension.cs",
+                "ClockPositions",
+                "1001", "1002", "1003", "1004", "1005", "1006", "1007", "1008", "1009", "1010", "1011", "1012");
+            WriteIds("BreastBodyLocation-Depth",
+                @"Extensions\BreastBodyLocationExtension.cs",
+                "Depth",
+                "1017", "1018", "1019");
+            WriteIds("BreastBodyLocation-Quadrants",
+                @"Extensions\BreastBodyLocationExtension.cs",
+                "Quadrants",
+                "1024", "1025", "1022", "1023");
+            WriteIds("BreastBodyLocation-Regions",
+                @"Extensions\BreastBodyLocationExtension.cs",
+                "Regions",
                     "1015", "1014", "AxillaI", "AxillaII", "AxillaIII", "1515", "1511", "1013");
-            {
-                List<String> itemsToIgnore = new List<string>();
-                itemsToIgnore.Add("ARCHITECTURAL DISTORTION");
-                //WriteCS(ds, "AssocFindings", @"Common\AssociatedFeatures\ObservedFeature.cs", "ObservedFeatureCS", itemsToIgnore);
-                WriteIds("ObservedFeature",
-                    @"Common\AssociatedFeatures\ObservedFeature.cs", "ObservedFeatureCS",
-                    Filter("Associated findings", "Associated findings").Remove(itemsToIgnore));
-            }
+            WriteIds("ObservedFeature",
+                @"Common\AssociatedFeatures\ObservedFeature.cs", "ObservedFeatureCS",
+                Filter("Associated findings", "Associated findings").Remove("ARCHITECTURAL DISTORTION"));
+
             this.spreadSheetData.Save();
         }
     }
     public static class Extensions
     {
+        public static IEnumerable<String> Remove(this IEnumerable<String> values,
+            params String[] itemsToIgnore)
+        {
+            return Remove(values, itemsToIgnore.ToList());
+        }
+
         public static IEnumerable<String> Remove(this IEnumerable<String> values,
             List<String> itemsToIgnore)
         {
