@@ -175,6 +175,10 @@ namespace BreastRadiology.XUnitTests
                 e.IntroDoc
                     .ReviewedStatus("NOONE", "")
                     //+ IntroDocDescription
+                        .Description("A cyst is a sac-like pocket of membranous tissue " +
+                            "that contains fluid, air, or other substances. ",
+                            "Cysts can grow almost anywhere in your body or under " +
+                            "your skin.")
                     //- IntroDocDescription
                     ;
 

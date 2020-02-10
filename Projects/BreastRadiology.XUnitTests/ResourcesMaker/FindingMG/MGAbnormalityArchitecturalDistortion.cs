@@ -46,6 +46,13 @@ namespace BreastRadiology.XUnitTests
                 e.IntroDoc
                     .ReviewedStatus("NOONE", "")
                     //+ IntroDocDescription
+                        .Description("Many breast masses are found within the zone of fibroglandular " +
+                            "tissue or at a fat-fibroglandularjunction. ",
+                            "If the mass blurs a tissue plane between fat and " +
+                            "fibroglandular tissue or if the mass producesdistortion " +
+                            "of the ducts, these findings may be termed architectural " +
+                            "distortion. ",
+                            "###ACRUS#139")
                     //- IntroDocDescription
                     .ACRDescription(
                             "The parenchyma is distorted with no definite mass visible. For mammography, this includes thin",

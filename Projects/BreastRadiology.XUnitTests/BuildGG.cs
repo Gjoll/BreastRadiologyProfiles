@@ -577,9 +577,9 @@ namespace BreastRadiology.XUnitTests
 
             WriteIntroDocDescription("TumorSatellite", "IntroDocDescription", @"Common\TumorSatellite.cs", "623");
             WriteIntroDocDescription("AbnormalityCyst", "IntroDocDescription", @"Common\Abnormalities\AbnormalityCyst.cs", "69");
-            // WriteIntroDocDescription("AbnormalityArchitecturalDistortion", "IntroDocDescription", @"FindingMG\AbnormalityArchitecturalDistortion.cs", "642");
-            //WriteIntroDocDescription("MGAbnormalityAsymmetry", "IntroDocDescription", @"FindingMG\MGAbnormalityAsymmetry.cs", "691");
-            //WriteIntroDocDescription("MGAbnormalityCalcification", "IntroDocDescription", @"FindingMG\MGAbnormalityCalcification.cs", "686");
+            WriteIntroDocDescription("AbnormalityArchitecturalDistortion", "IntroDocDescription", @"FindingMG\MGAbnormalityArchitecturalDistortion.cs", "642");
+            WriteIntroDocDescription("MGAbnormalityAsymmetry", "IntroDocDescription", @"FindingMG\MGAbnormalityAsymmetry.cs", "691");
+            WriteIntroDocDescription("MGAbnormalityCalcification", "IntroDocDescription", @"FindingMG\MGAbnormalityCalcification.cs", "690");
             WriteIntroDocDescription("MGAbnormalityDensity", "IntroDocDescription", @"FindingMG\MGAbnormalityDensity.cs", "686");
             WriteIntroDocDescription("MGAbnormalityFatNecrosis", "IntroDocDescription", @"FindingMG\MGAbnormalityFatNecrosis.cs", "688");
 
