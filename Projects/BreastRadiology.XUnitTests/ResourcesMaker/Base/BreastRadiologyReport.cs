@@ -40,7 +40,7 @@ namespace BreastRadiology.XUnitTests
                      .ReviewedStatus("CIC", "22.1.2020")
                      ;
 
-                e.Select("code").Pattern = new CodeableConcept(Global.Loinc, "10193-1");
+                e.Select("code").Pattern(new CodeableConcept(Global.Loinc, "10193-1"));
                 e.Select("specimen").Zero();
                 {
                     e.Select("conclusion")

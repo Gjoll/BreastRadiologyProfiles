@@ -91,11 +91,9 @@
           "coding": [
             {
               "system": "http://hl7.org/fhir/us/breast-radiology/CodeSystem/ObservationComponentSliceCodes",
-              "code": "obsChanges",
-              "display": "Component code for 'Observed Changes' slice"
+              "code": "obsChanges"
             }
-          ],
-          "text": "Component code for 'Observed Changes' slice"
+          ]
         }
       },
       {

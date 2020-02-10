@@ -98,11 +98,9 @@
           "coding": [
             {
               "system": "http://hl7.org/fhir/us/breast-radiology/CodeSystem/ObservationCodes",
-              "code": "featureObservation",
-              "display": "Observed Feature observation"
+              "code": "featureObservation"
             }
-          ],
-          "text": "Observed Feature observation"
+          ]
         }
       },
       {
@@ -154,11 +152,9 @@
           "coding": [
             {
               "system": "http://hl7.org/fhir/us/breast-radiology/CodeSystem/ObservationComponentSliceCodes",
-              "code": "featureType",
-              "display": "Component code for 'Feature Type' slice"
+              "code": "featureType"
             }
-          ],
-          "text": "Component code for 'Feature Type' slice"
+          ]
         }
       },
       {

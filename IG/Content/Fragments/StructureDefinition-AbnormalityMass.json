@@ -169,11 +169,9 @@
           "coding": [
             {
               "system": "http://hl7.org/fhir/us/breast-radiology/CodeSystem/ObservationCodes",
-              "code": "abnormalityMassObservation",
-              "display": "Abnormality Mass observation"
+              "code": "abnormalityMassObservation"
             }
-          ],
-          "text": "Abnormality Mass observation"
+          ]
         }
       },
       {
@@ -225,11 +223,9 @@
           "coding": [
             {
               "system": "http://hl7.org/fhir/us/breast-radiology/CodeSystem/ObservationComponentSliceCodes",
-              "code": "abnormalityMassType",
-              "display": "Component code for 'Abnormality Mass Type' slice"
+              "code": "abnormalityMassType"
             }
-          ],
-          "text": "Component code for 'Abnormality Mass Type' slice"
+          ]
         }
       },
       {

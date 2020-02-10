@@ -42,7 +42,7 @@ namespace BreastRadiology.XUnitTests
                     ;
 
                 // Set Observation.code to unique value for this profile.
-                e.Select("code").Pattern(Self.ObservationCodeFindingsLeftBreast.ToCodeableConcept());
+                e.Select("code").Pattern(Self.ObservationCodeFindingsLeftBreast.ToCodeableConcept().ToPattern());
 
                 e.IntroDoc
                      .ReviewedStatus("KWA-PEN", "1.1.2020")

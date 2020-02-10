@@ -27,7 +27,6 @@ namespace BreastRadiology.XUnitTests
                 e.IntroDoc
                     .ReviewedStatus("NOONE", "")
                     ;
-
                 ElementTreeNode sliceElementDef = e.ConfigureSliceByUrlDiscriminator("hasMember", false);
                 e.SliceTargetReference(sliceElementDef, Self.ConsistentWith.Value(), 0, "*");
             });

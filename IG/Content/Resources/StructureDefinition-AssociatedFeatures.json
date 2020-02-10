@@ -669,7 +669,7 @@
         "slicing": {
           "discriminator": [
             {
-              "type": "pattern",
+              "type": "type",
               "path": "$this"
             }
           ],
@@ -793,11 +793,9 @@
           "coding": [
             {
               "system": "http://hl7.org/fhir/us/breast-radiology/CodeSystem/ObservationCodes",
-              "code": "associatedFeaturesObservation",
-              "display": "Associated Features observation"
+              "code": "associatedFeaturesObservation"
             }
-          ],
-          "text": "Associated Features observation"
+          ]
         },
         "isModifier": false,
         "isSummary": true,
@@ -2495,7 +2493,7 @@
         "slicing": {
           "discriminator": [
             {
-              "type": "pattern",
+              "type": "type",
               "path": "$this"
             }
           ],
@@ -2541,11 +2539,9 @@
           "coding": [
             {
               "system": "http://hl7.org/fhir/us/breast-radiology/CodeSystem/ObservationCodes",
-              "code": "associatedFeaturesObservation",
-              "display": "Associated Features observation"
+              "code": "associatedFeaturesObservation"
             }
-          ],
-          "text": "Associated Features observation"
+          ]
         }
       },
       {

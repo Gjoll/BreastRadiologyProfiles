@@ -53,11 +53,9 @@
           "coding": [
             {
               "system": "http://hl7.org/fhir/us/breast-radiology/CodeSystem/ObservationCodes",
-              "code": "nmFindingObservation",
-              "display": "NM Findingobservation"
+              "code": "nmFindingObservation"
             }
-          ],
-          "text": "NM Findingobservation"
+          ]
         }
       }
     ]

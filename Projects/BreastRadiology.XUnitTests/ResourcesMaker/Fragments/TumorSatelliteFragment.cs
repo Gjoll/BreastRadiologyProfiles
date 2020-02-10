@@ -18,7 +18,7 @@ namespace BreastRadiology.XUnitTests
                         Global.ObservationUrl)
                     .Description("Tumor Satellite fragment",
                         new Markdown()
-                        .Paragraph("This fragment adds the references for the Tumor Satellite extension.")
+                            .Paragraph("This fragment adds the references for the Tumor Satellite extension.")
                      )
                     .AddFragRef(Self.HeaderFragment.Value())
                 ;
@@ -27,18 +27,9 @@ namespace BreastRadiology.XUnitTests
                 e.IntroDoc
                     .ReviewedStatus("NOONE", "")
                     ;
-                {
-                    StructureDefinition extensionStructDef = Self.TumorSatelliteExtension.Value();
-                    ElementDefinition extensionDef = e.ApplyExtension("tumorSatellite", extensionStructDef, true).ElementDefinition
-                        .ZeroToOne()
-                        ;
 
-                    e.AddExtensionLink(extensionStructDef.Url,
-                        new SDefEditor.Cardinality(extensionDef),
-                        "Tumor Satellite", 
-                        Global.ElementAnchor(extensionDef),
-                        false);
-                }
+                ElementTreeNode sliceElementDef = e.ConfigureSliceByUrlDiscriminator("hasMember", false);
+                e.SliceTargetReference(sliceElementDef, Self.TumorSatellite.Value(), 0, "*");
             });
     }
 }

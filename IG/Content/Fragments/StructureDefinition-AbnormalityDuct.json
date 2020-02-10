@@ -153,11 +153,9 @@
           "coding": [
             {
               "system": "http://hl7.org/fhir/us/breast-radiology/CodeSystem/ObservationCodes",
-              "code": "abnormalityDuctObservation",
-              "display": "Abnormality Duct observation"
+              "code": "abnormalityDuctObservation"
             }
-          ],
-          "text": "Abnormality Duct observation"
+          ]
         }
       },
       {
@@ -209,11 +207,9 @@
           "coding": [
             {
               "system": "http://hl7.org/fhir/us/breast-radiology/CodeSystem/ObservationComponentSliceCodes",
-              "code": "abnormalityDuctType",
-              "display": "Component code for 'Duct Type' slice"
+              "code": "abnormalityDuctType"
             }
-          ],
-          "text": "Component code for 'Duct Type' slice"
+          ]
         }
       },
       {

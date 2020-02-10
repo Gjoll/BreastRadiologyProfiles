@@ -66,11 +66,9 @@
           "coding": [
             {
               "system": "http://hl7.org/fhir/us/breast-radiology/CodeSystem/ObservationCodes",
-              "code": "associatedFeaturesObservation",
-              "display": "Associated Features observation"
+              "code": "associatedFeaturesObservation"
             }
-          ],
-          "text": "Associated Features observation"
+          ]
         }
       },
       {

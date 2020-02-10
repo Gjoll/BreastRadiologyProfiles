@@ -23,7 +23,7 @@
     },
     {
       "url": "http://www.fragment.com/maplink",
-      "valueString": "{\r\n  \"LinkType\": \"extension\",\r\n  \"ShowChildren\": false,\r\n  \"Cardinality\": \"0..1\",\r\n  \"ComponentHRef\": \"StructureDefinition-{SDName}-definitions.html#Observation.extension:tumorSatellite\",\r\n  \"LocalName\": \"Tumor Satellite\",\r\n  \"LinkTarget\": \"http://hl7.org/fhir/us/breast-radiology/StructureDefinition/TumorSatelliteExtension\"\r\n}"
+      "valueString": "{\r\n  \"LinkType\": \"target\",\r\n  \"ShowChildren\": false,\r\n  \"Cardinality\": \"0..*\",\r\n  \"LinkTarget\": \"http://hl7.org/fhir/us/breast-radiology/StructureDefinition/TumorSatellite\"\r\n}"
     }
   ],
   "url": "http://hl7.org/fhir/us/breast-radiology/StructureDefinition/TumorSatelliteFragment",
@@ -52,8 +52,8 @@
         }
       },
       {
-        "id": "Observation.extension",
-        "path": "Observation.extension",
+        "id": "Observation.hasMember",
+        "path": "Observation.hasMember",
         "slicing": {
           "discriminator": [
             {
@@ -65,34 +65,32 @@
           "rules": "openAtEnd"
         },
         "base": {
-          "path": "Observation.extension",
+          "path": "Observation.hasMember",
           "min": 0,
           "max": "*"
         }
       },
       {
-        "id": "Observation.extension:tumorSatellite",
-        "path": "Observation.extension",
+        "id": "Observation.hasMember:tumorSatellite",
+        "path": "Observation.hasMember",
         "sliceName": "tumorSatellite",
-        "short": "tumorSatellite extension",
-        "definition": "This extension slice contains the tumorSatellite extension.",
-        "comment": "This is one component of a group of components that comprise the observation.",
+        "short": "'Tumor Satellite' reference",
+        "definition": "This slice references the target 'Tumor Satellite'.",
         "min": 0,
-        "max": "1",
+        "max": "*",
         "base": {
-          "path": "Observation.extension",
+          "path": "Observation.hasMember",
           "min": 0,
           "max": "*"
         },
         "type": [
           {
-            "code": "Extension",
-            "profile": [
-              "http://hl7.org/fhir/us/breast-radiology/StructureDefinition/TumorSatelliteExtension"
+            "code": "Reference",
+            "targetProfile": [
+              "http://hl7.org/fhir/us/breast-radiology/StructureDefinition/TumorSatellite"
             ]
           }
-        ],
-        "isModifier": false
+        ]
       }
     ]
   }

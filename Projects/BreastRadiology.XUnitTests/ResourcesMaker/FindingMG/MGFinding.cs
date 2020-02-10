@@ -31,7 +31,7 @@ namespace BreastRadiology.XUnitTests
                     .AddFragRef(Self.ObservationSectionFragment.Value())
                     ;
                 s = e.SDef;
-                e.Select("code").Pattern(Self.ObservationCodeMGFinding.ToCodeableConcept());
+                e.Select("code").Pattern(Self.ObservationCodeMGFinding.ToCodeableConcept().ToPattern());
 
                 ////$ todo. Incorrect method!!!
                 //e.Find("method")

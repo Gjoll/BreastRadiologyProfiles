@@ -375,11 +375,8 @@ namespace BreastRadiology.XUnitTests
             return retVal;
         }
 
-        public ElementDefinition SliceSelfByPattern(String path,
-            String sliceName,
-            Element pattern)
+        public ElementTreeNode ApplySliceSelf(String path)
         {
-            sliceName = sliceName.UncapFirstLetter();
             ElementDefinition.SlicingComponent slicing = new ElementDefinition.SlicingComponent
             {
                 Rules = ElementDefinition.SlicingRules.Open
@@ -387,14 +384,22 @@ namespace BreastRadiology.XUnitTests
 
             slicing.Discriminator.Add(new ElementDefinition.DiscriminatorComponent
             {
-                Type = ElementDefinition.DiscriminatorType.Pattern,
+                Type = ElementDefinition.DiscriminatorType.Type,
                 Path = "$this"
             });
             ElementTreeNode elementDef = this.Get(path);
             elementDef.ApplySlicing(slicing, false);
+            return elementDef;
+        }
 
+        public ElementDefinition SliceSelfByPattern(String path,
+            String sliceName,
+            Element pattern)
+        {
+            ElementTreeNode elementDef = ApplySliceSelf(path);
+
+            sliceName = sliceName.UncapFirstLetter();
             ElementTreeSlice codingSlice = elementDef.CreateSlice(sliceName);
-
             codingSlice.ElementDefinition.Pattern = pattern;
             return codingSlice.ElementDefinition;
         }
@@ -501,7 +506,7 @@ namespace BreastRadiology.XUnitTests
                                         $"Its value shall always be the concept '{pattern.Coding[0].Display}'")
                 };
                 componentCode
-                    .Pattern(pattern)
+                    .Pattern(pattern.ToPattern())
                                 ;
                 slice.CreateNode(componentCode);
             }
@@ -550,13 +555,12 @@ namespace BreastRadiology.XUnitTests
         }
 
         public ElementTreeNode SliceValueXByType(ElementTreeSlice slice,
-            String sliceName,
             String[] types)
         {
             ElementDefinition valueX = new ElementDefinition
             {
                 Path = $"{slice.ElementDefinition.Path}.value[x]",
-                ElementId = $"{slice.ElementDefinition.Path}:{sliceName}.value[x]",
+                ElementId = $"{slice.ElementDefinition.ElementId}.value[x]",
                 Min = 1,
                 Max = "1"
             };
@@ -630,11 +634,15 @@ namespace BreastRadiology.XUnitTests
             out ElementTreeSlice slice)
         {
             slice = this.AppendSlice("component", sliceName, min, max);
-
-            // Fix component code
             this.SliceComponentCode(slice, sliceName, componentCode);
+            SliceSize(slice, units);
+        }
+
+        public void SliceSize(ElementTreeSlice slice,
+            ValueSet units)
+        {
+            // Fix component code
             ElementTreeNode valueXNode = this.SliceValueXByType(slice,
-                sliceName,
                 new string[] { "Quantity", "Range" });
             {
                 Hl7.Fhir.Model.Quantity q = new Hl7.Fhir.Model.Quantity
@@ -645,7 +653,7 @@ namespace BreastRadiology.XUnitTests
                 ElementDefinition valueX = new ElementDefinition
                 {
                     Path = $"{slice.ElementDefinition.Path}.value[x]",
-                    ElementId = $"{slice.ElementDefinition.Path}:{sliceName}.value[x]:valueQuantity",
+                    ElementId = $"{slice.ElementDefinition.ElementId}.value[x]:valueQuantity",
                     SliceName = $"valueQuantity",
                     Min = 0,
                     Max = "1"
@@ -671,7 +679,7 @@ namespace BreastRadiology.XUnitTests
                 ElementDefinition valueX = new ElementDefinition
                 {
                     Path = $"{slice.ElementDefinition.Path}.value[x]",
-                    ElementId = $"{slice.ElementDefinition.Path}:{sliceName}.value[x]:valueRange",
+                    ElementId = $"{slice.ElementDefinition.ElementId}.value[x]:valueRange",
                     SliceName = $"valueRange",
                     Min = 0,
                     Max = "1"
@@ -679,7 +687,7 @@ namespace BreastRadiology.XUnitTests
                 .Pattern(r)
                 .Type("Range")
                 ;
-                valueXNode.CreateSlice($"{sliceName}/range", valueX);
+                valueXNode.CreateSlice($"valueRange", valueX);
             }
         }
     }

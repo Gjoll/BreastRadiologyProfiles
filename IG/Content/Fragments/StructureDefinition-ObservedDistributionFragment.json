@@ -95,11 +95,9 @@
           "coding": [
             {
               "system": "http://hl7.org/fhir/us/breast-radiology/CodeSystem/ObservationComponentSliceCodes",
-              "code": "obsDistribution",
-              "display": "Component code for 'Observed Distribution' slice"
+              "code": "obsDistribution"
             }
-          ],
-          "text": "Component code for 'Observed Distribution' slice"
+          ]
         }
       },
       {

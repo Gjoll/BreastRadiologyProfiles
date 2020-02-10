@@ -34,7 +34,7 @@ namespace BreastRadiology.XUnitTests
                        s = e.SDef;
 
                        // Set Observation.code to unique value for this profile.
-                       e.Select("code").Pattern(Self.ObservationCodeConsistentWith.ToCodeableConcept());
+                       e.Select("code").Pattern(Self.ObservationCodeConsistentWith.ToCodeableConcept().ToPattern());
 
 
                        e.StartComponentSliceing();

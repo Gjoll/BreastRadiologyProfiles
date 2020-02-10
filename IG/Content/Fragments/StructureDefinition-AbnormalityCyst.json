@@ -170,11 +170,9 @@
           "coding": [
             {
               "system": "http://hl7.org/fhir/us/breast-radiology/CodeSystem/ObservationCodes",
-              "code": "abnormalityCyst",
-              "display": "Abnormality Cyst observation"
+              "code": "abnormalityCyst"
             }
-          ],
-          "text": "Abnormality Cyst observation"
+          ]
         }
       },
       {
@@ -226,11 +224,9 @@
           "coding": [
             {
               "system": "http://hl7.org/fhir/us/breast-radiology/CodeSystem/ObservationComponentSliceCodes",
-              "code": "abnormalityCystType",
-              "display": "Component code for 'Cyst Type' slice"
+              "code": "abnormalityCystType"
             }
-          ],
-          "text": "Component code for 'Cyst Type' slice"
+          ]
         }
       },
       {

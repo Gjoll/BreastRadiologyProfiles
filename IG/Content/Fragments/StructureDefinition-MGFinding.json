@@ -106,11 +106,9 @@
           "coding": [
             {
               "system": "http://hl7.org/fhir/us/breast-radiology/CodeSystem/ObservationCodes",
-              "code": "mgFindingObservationObservation",
-              "display": "MG Finding observation"
+              "code": "mgFindingObservationObservation"
             }
-          ],
-          "text": "MG Finding observation"
+          ]
         }
       },
       {

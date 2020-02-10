@@ -54,11 +54,9 @@
           "coding": [
             {
               "system": "http://hl7.org/fhir/us/breast-radiology/CodeSystem/ObservationCodes",
-              "code": "findingsRightBreastObservation",
-              "display": "Findings Right Breast observation"
+              "code": "findingsRightBreastObservation"
             }
-          ],
-          "text": "Findings Right Breast observation"
+          ]
         }
       },
       {

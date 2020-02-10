@@ -130,11 +130,9 @@
           "coding": [
             {
               "system": "http://hl7.org/fhir/us/breast-radiology/CodeSystem/ObservationCodes",
-              "code": "abnormalityForeignObjectObservation",
-              "display": "Abnormality Foreign Object observation"
+              "code": "abnormalityForeignObjectObservation"
             }
-          ],
-          "text": "Abnormality Foreign Object observation"
+          ]
         }
       },
       {
@@ -186,11 +184,9 @@
           "coding": [
             {
               "system": "http://hl7.org/fhir/us/breast-radiology/CodeSystem/ObservationComponentSliceCodes",
-              "code": "abnormalityForeignObjectType",
-              "display": "Component code for 'Foreign Object Type' slice"
+              "code": "abnormalityForeignObjectType"
             }
-          ],
-          "text": "Component code for 'Foreign Object Type' slice"
+          ]
         }
       },
       {

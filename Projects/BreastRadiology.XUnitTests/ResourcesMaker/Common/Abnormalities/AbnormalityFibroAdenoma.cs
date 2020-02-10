@@ -103,7 +103,7 @@ namespace BreastRadiology.XUnitTests
                     ;
 
                 // Set Observation.code to unique value for this profile.
-                e.Select("code").Pattern(Self.ObservationCodeAbnormalityFibroadenoma.ToCodeableConcept());
+                e.Select("code").Pattern(Self.ObservationCodeAbnormalityFibroadenoma.ToCodeableConcept().ToPattern());
 
                 e.StartComponentSliceing();
                 e.ComponentSliceCodeableConcept("fibroAdenomaType",

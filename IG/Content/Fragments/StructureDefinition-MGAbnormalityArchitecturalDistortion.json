@@ -133,11 +133,9 @@
           "coding": [
             {
               "system": "http://hl7.org/fhir/us/breast-radiology/CodeSystem/ObservationCodes",
-              "code": "mgAbnormalityArchitecturalDistortionObservation",
-              "display": "Abnormality Architectural Distortion observation"
+              "code": "mgAbnormalityArchitecturalDistortionObservation"
             }
-          ],
-          "text": "Abnormality Architectural Distortion observation"
+          ]
         }
       }
     ]

@@ -31,6 +31,8 @@ Observation SectionFindingsRightBreast
             new Coding(this.ObservationCodesUrl, "mgAbnormalityArchitecturalDistortionObservation", "Abnormality Architectural Distortion observation");
         Coding ObservationCodeConsistentWith =>
             new Coding(this.ObservationCodesUrl, "consistentWithObservation", "Consistent With observation");
+        Coding ObservationCodeTumorSatellite =>
+            new Coding(this.ObservationCodesUrl, "tumorSatelliteObservation", "Tumor Satellite observation");
         Coding ObservationCodeMGAbnormalityCalcification =>
             new Coding(this.ObservationCodesUrl, "mgAbnormalityCalcificationObservation", "Abnormality Calcification observation");
         Coding ObservationCodeObservedFeature =>
@@ -93,6 +95,10 @@ Observation SectionFindingsRightBreast
                             new ConceptDef()
                                 .SetCode(Self.ObservationCodeConsistentWith)
                                 .SetDefinition("Observation.code to identify a ConsistentWith observation")
+                                ,
+                            new ConceptDef()
+                                .SetCode(Self.ObservationCodeTumorSatellite)
+                                .SetDefinition("Observation.code to identify a TumorSatellite observation")
                                 ,
                             new ConceptDef()
                                 .SetCode(Self.ObservationCodeMGAbnormalityCalcification)

@@ -157,11 +157,9 @@
           "coding": [
             {
               "system": "http://hl7.org/fhir/us/breast-radiology/CodeSystem/ObservationCodes",
-              "code": "mgAbnormalityCalcificationObservation",
-              "display": "Abnormality Calcification observation"
+              "code": "mgAbnormalityCalcificationObservation"
             }
-          ],
-          "text": "Abnormality Calcification observation"
+          ]
         }
       },
       {
@@ -213,11 +211,9 @@
           "coding": [
             {
               "system": "http://hl7.org/fhir/us/breast-radiology/CodeSystem/ObservationComponentSliceCodes",
-              "code": "mgCalcificationType",
-              "display": "Component code for 'Calcification Type' slice"
+              "code": "mgCalcificationType"
             }
-          ],
-          "text": "Component code for 'Calcification Type' slice"
+          ]
         }
       },
       {
@@ -273,11 +269,9 @@
           "coding": [
             {
               "system": "http://hl7.org/fhir/us/breast-radiology/CodeSystem/ObservationComponentSliceCodes",
-              "code": "mgCalcificationDistribution",
-              "display": "Component code for 'Distribution' slice"
+              "code": "mgCalcificationDistribution"
             }
-          ],
-          "text": "Component code for 'Distribution' slice"
+          ]
         }
       },
       {

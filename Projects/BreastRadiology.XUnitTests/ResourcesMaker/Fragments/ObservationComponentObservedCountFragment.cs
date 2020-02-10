@@ -32,9 +32,7 @@ namespace BreastRadiology.XUnitTests
                        ElementTreeSlice slice = e.AppendSlice("component", sliceName, 0, "1");
                        // Fix component code
                        e.SliceComponentCode(slice, sliceName, Self.ComponentSliceCodeObservedCount.ToCodeableConcept());
-                       ElementTreeNode valueXNode = e.SliceValueXByType(slice,
-                           sliceName,
-                           new string[] { "Quantity", "Range" });
+                       e.SliceValueXByType(slice, new string[] { "Quantity", "Range" });
 
                        ElementDefinition sliceDef = slice.ElementDefinition
                            .SetShort($"Observed Count component")

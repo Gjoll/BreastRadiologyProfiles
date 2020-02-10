@@ -201,11 +201,9 @@
           "coding": [
             {
               "system": "http://hl7.org/fhir/us/breast-radiology/CodeSystem/ObservationComponentSliceCodes",
-              "code": "mgAbnormalityAsymmetryType",
-              "display": "Component code for 'Abnormality Asymmetry Type' slice"
+              "code": "mgAbnormalityAsymmetryType"
             }
-          ],
-          "text": "Component code for 'Abnormality Asymmetry Type' slice"
+          ]
         }
       },
       {

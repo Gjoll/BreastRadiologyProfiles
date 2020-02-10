@@ -1,0 +1,116 @@
+using System;
+using System.Collections.Generic;
+using System.Diagnostics;
+using System.IO;
+using System.Linq;
+using System.Text;
+using FhirKhit.Tools;
+using FhirKhit.Tools.R4;
+using Hl7.Fhir.Model;
+using Hl7.Fhir.Serialization;
+using PreFhir;
+
+namespace BreastRadiology.XUnitTests
+{
+    partial class ResourcesMaker
+    {
+        SDTaskVar TumorSatellite = new SDTaskVar(
+               (out StructureDefinition s) =>
+               {
+                   SDefEditor e = Self.CreateEditor("TumorSatellite",
+                    "Tumor Satellite",
+                    "TumorSatellite",
+                    Global.ObservationUrl,
+                    $"{Group_CommonResources}/TumorSatellite",
+                    "ObservationLeaf")
+                       .AddFragRef(Self.ObservationLeafFragment.Value())
+                       .AddFragRef(Self.ObservationNoDeviceFragment.Value())
+                       .AddFragRef(Self.ObservationNoComponentFragment.Value())
+                       .Description("'Tumor Satellite' Observation",
+                           new Markdown()
+                               .Paragraph("If a tumor observation's Observation.hasMember field contains a referrence " +
+                                          "to a 'Tumor Satellite' observation, then it is a satellite tumor." +
+                                          "The tumor that it is a satellite of is called the index tumor.")
+                               .Paragraph("The 'Tumor Satellite' observation may contain a reference to the index tumor observation.")
+                               .Paragraph("The 'Tumor Satellite' observation may contain a distance to the index tumor.")
+                       )
+                       ;
+                   s = e.SDef;
+
+                   // Set Observation.code to unique value for this profile.
+                   e.Select("code").Pattern(Self.ObservationCodeTumorSatellite.ToCodeableConcept().ToPattern());
+
+                   ElementTreeNode sliceElementDef = e.ConfigureSliceByUrlDiscriminator("derivedFrom", false);
+                   {
+                       String baseName = sliceElementDef.ElementDefinition.Path.LastPathPart();
+                       ElementTreeSlice treeSlice = e.SliceByUrlTarget(sliceElementDef, Global.ObservationUrl, 0, "1");
+                       treeSlice.ElementDefinition
+                           .SetShort($"Tumor Observation reference")
+                           .SetDefinition(
+                               new Markdown()
+                                   .Paragraph($"This slice references the index tumor.")
+                               )
+                       ;
+                   }
+
+                   {
+                       ValueSet units = Self.UnitsOfLengthVS.Value();
+                       const String sliceName = "indexDistance";
+                       ElementTreeNode valueXNode = e.ApplySliceSelf("value[x]");
+                       valueXNode.ElementDefinition
+                        .ZeroToOne()
+                        .Types("Quantity", "Range")
+                        ;
+                       {
+                           Hl7.Fhir.Model.Quantity q = new Hl7.Fhir.Model.Quantity
+                           {
+                               System = units.Url
+                           };
+
+                           ElementDefinition valueX = new ElementDefinition
+                           {
+                               Path = $"{valueXNode.ElementDefinition.Path}",
+                               ElementId = $"{valueXNode.ElementDefinition.ElementId}:valueQuantity",
+                               SliceName = $"valueQuantity",
+                               Min = 0,
+                               Max = "1"
+                           }
+                           .Pattern(q)
+                           .Type("Quantity")
+                           ;
+                           valueXNode.CreateSlice($"valueQuantity", valueX);
+                       }
+
+                       {
+                           Hl7.Fhir.Model.Range r = new Hl7.Fhir.Model.Range
+                           {
+                               Low = new SimpleQuantity
+                               {
+                                   System = units.Url,
+                               },
+                               High = new SimpleQuantity
+                               {
+                                   System = units.Url,
+                               }
+                           };
+                           ElementDefinition valueX = new ElementDefinition
+                           {
+                               Path = $"{valueXNode.ElementDefinition.Path}",
+                               ElementId = $"{valueXNode.ElementDefinition.ElementId}:valueRange",
+                               SliceName = $"valueRange",
+                               Min = 0,
+                               Max = "1"
+                           }
+                           .Pattern(r)
+                           .Type("Range")
+                           ;
+                           valueXNode.CreateSlice($"valueRange", valueX);
+                       }
+
+                       e.IntroDoc
+                           .ReviewedStatus("NOONE", "")
+                           ;
+                   }
+               });
+    }
+}
