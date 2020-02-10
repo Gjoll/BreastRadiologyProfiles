@@ -46,7 +46,7 @@ namespace BreastRadiology.XUnitTests
 
                 e.IntroDoc
                     .ReviewedStatus("NOONE", "")
-                    .MammoDescription("260")
+                    //.MammoDescription("642")
                     .ACRDescription(
                             "The parenchyma is distorted with no definite mass visible. For mammography, this includes thin",
                             "straight lines or spiculations radiating from a point, and focal retraction, distortion or straightening",

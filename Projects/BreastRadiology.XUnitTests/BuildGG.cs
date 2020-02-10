@@ -256,6 +256,22 @@ namespace BreastRadiology.XUnitTests
             return s.Trim();
         }
 
+        void UpdateClass(String className,
+            String penId)
+        {
+            if (this.spreadSheetData.TryGetRow(penId, out DataRow row) == false)
+                throw new Exception($"Missing value for penid '{penId}'");
+
+            // Update row[Class] with name of class that used row. Used for validation.
+            {
+                String classText = row[this.spreadSheetData.classCol].ToString();
+                if (classText.Length > 0)
+                    classText += ", ";
+                classText += className;
+                row[this.spreadSheetData.classCol] = classText;
+            }
+        }
+
         void WriteIds(String className,
             String outputCodePath,
             String csBlockName,
@@ -277,18 +293,10 @@ namespace BreastRadiology.XUnitTests
             for (Int32 i = 0; i < penIds.Length; i++)
             {
                 String penId = penIds[i];
+                UpdateClass(className, penId);
 
                 if (this.spreadSheetData.TryGetRow(penId, out DataRow row) == false)
                     throw new Exception($"Missing value for penid '{penId}'");
-
-                // Update row[Class] with name of class that used row. Used for validation.
-                {
-                    String classText = row[this.spreadSheetData.classCol].ToString();
-                    if (classText.Length > 0)
-                        classText += ", ";
-                    classText += className;
-                    row[this.spreadSheetData.classCol] = classText;
-                }
 
                 String code = FormatCode(row[this.spreadSheetData.itemNameCol].ToString());
                 String conceptBlockName = CodeValue(code);
@@ -479,12 +487,12 @@ namespace BreastRadiology.XUnitTests
                     if (index > 0)
                         citation = $"###ACRMG#{citation.Substring(index + 2).Trim()}";
                     else
-                        citation = $"###ACRUS#";
+                        citation = $"###ACRMG#";
                     return true;
                 }
                 else if (FindAnchor("SECOND ADDITION", out text2, out citation))
                 {
-                    String name;
+                    String name = null;
                     if (citation.Contains("Ultrasound"))
                         name = "ACRUS";
                     else if (citation.Contains("Magnetic Resonance Imaging"))
@@ -494,9 +502,9 @@ namespace BreastRadiology.XUnitTests
 
                     Int32 index = citation.ToUpper().IndexOf("PG");
                     if (index > 0)
-                        citation = $"###ACRUS#{citation.Substring(index + 2).Trim()}";
+                        citation = $"###{name}#{citation.Substring(index + 2).Trim()}";
                     else
-                        citation = $"###ACRUS#";
+                        citation = $"###{name}#";
                     return true;
                 }
                 return false;
@@ -543,6 +551,12 @@ namespace BreastRadiology.XUnitTests
                 "BreastData.xlsx");
             this.spreadSheetData = new ExcelData(new Info(), filePath, "Sheet3");
 
+            UpdateClass("AbnormalityCyst", "69");
+            UpdateClass("AbnormalityArchitecturalDistortion", "642");
+            UpdateClass("AbnormalityAsymmetry", "691");
+            UpdateClass("MGAbnormalityCalcification", "690");
+            UpdateClass("MGAbnormalityDensity", "686");
+            UpdateClass("MGAbnormalityFatNecrosis", "688");
             WriteIds("BiRads", @"Common\BiRadsAssessmentCategoryCS.cs", "Codes",
                 Filter("Impression", "Birads").Remove("790", "791", "174", "173"));
 

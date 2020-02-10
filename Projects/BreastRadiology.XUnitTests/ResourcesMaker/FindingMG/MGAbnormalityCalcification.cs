@@ -425,7 +425,7 @@ namespace BreastRadiology.XUnitTests
                         "As an ASSOCIATED FEATURE, this may be used in conjunction with one or more other FINDING(S)",
                         "to describe calcifications within or immediately adjacent to the finding(s)"
                         )
-                    .MammoDescription("545")
+                    //.MammoDescription("545")
                     ;
 
                 e.StartComponentSliceing();
