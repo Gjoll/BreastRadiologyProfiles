@@ -271,6 +271,29 @@ namespace BreastRadiology.XUnitTests
                 row[this.spreadSheetData.classCol] = classText;
             }
         }
+        void WriteIntroDocDescription(String className, 
+            String blockName,
+            String outputCodePath, 
+            String penId)
+        {
+            CodeEditor editor = new CodeEditor();
+            editor.Load(Path.Combine(DirHelper.FindParentDir("BreastRadiology.XUnitTests"),
+                "ResourcesMaker",
+                outputCodePath));
+
+            UpdateClass(className, penId);
+
+            if (this.spreadSheetData.TryGetRow(penId, out DataRow row) == false)
+                throw new Exception($"Missing value for penid '{penId}'");
+
+            CodeBlockNested description = editor.Blocks.Find(blockName);
+            if (description == null)
+                throw new Exception($"Can not find editor block {blockName}");
+
+            description.Clear();
+            AppIfNotNull(description, "Description", row[UMLSCol]);
+            editor.Save();
+        }
 
         void WriteIds(String className,
             String outputCodePath,
@@ -552,12 +575,15 @@ namespace BreastRadiology.XUnitTests
                 "BreastData.xlsx");
             this.spreadSheetData = new ExcelData(new Info(), filePath, "Sheet3");
 
-            UpdateClass("AbnormalityCyst", "69");
-            UpdateClass("AbnormalityArchitecturalDistortion", "642");
-            UpdateClass("AbnormalityAsymmetry", "691");
-            UpdateClass("MGAbnormalityCalcification", "690");
-            UpdateClass("MGAbnormalityDensity", "686");
-            UpdateClass("MGAbnormalityFatNecrosis", "688");
+            WriteIntroDocDescription("TumorSatellite", "IntroDocDescription", @"Common\TumorSatellite.cs", "623");
+            WriteIntroDocDescription("AbnormalityCyst", "IntroDocDescription", @"Common\Abnormalities\AbnormalityCyst.cs", "69");
+            // WriteIntroDocDescription("AbnormalityArchitecturalDistortion", "IntroDocDescription", @"FindingMG\AbnormalityArchitecturalDistortion.cs", "642");
+            //WriteIntroDocDescription("MGAbnormalityAsymmetry", "IntroDocDescription", @"FindingMG\MGAbnormalityAsymmetry.cs", "691");
+            //WriteIntroDocDescription("MGAbnormalityCalcification", "IntroDocDescription", @"FindingMG\MGAbnormalityCalcification.cs", "686");
+            WriteIntroDocDescription("MGAbnormalityDensity", "IntroDocDescription", @"FindingMG\MGAbnormalityDensity.cs", "686");
+            WriteIntroDocDescription("MGAbnormalityFatNecrosis", "IntroDocDescription", @"FindingMG\MGAbnormalityFatNecrosis.cs", "688");
+
+            //UpdateClass("MGAbnormalityFatNecrosis", "688");
             WriteIds("BiRads", @"Common\BiRadsAssessmentCategoryCS.cs", "Codes",
                 Filter("Impression", "Birads").Remove("790", "791", "174", "173"));
 

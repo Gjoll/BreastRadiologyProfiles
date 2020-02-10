@@ -51,7 +51,8 @@ namespace BreastRadiology.XUnitTests
 
                 e.IntroDoc
                     .ReviewedStatus("NOONE", "")
-                    .MammoDescription("688")
+                    //+ IntroDocDescription
+                    //- IntroDocDescription
                     ;
 
                 e.StartComponentSliceing();

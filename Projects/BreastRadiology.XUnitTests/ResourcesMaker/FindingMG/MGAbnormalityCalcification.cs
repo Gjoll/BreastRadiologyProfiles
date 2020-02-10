@@ -411,6 +411,8 @@ namespace BreastRadiology.XUnitTests
 
                 e.IntroDoc
                     .ReviewedStatus("NOONE", "")
+                    //+ IntroDocDescription
+                    //- IntroDocDescription
                     .ACRDescription(
                         "Calcifications that are assessed as benign at mammography are typically larger, coarser, round with",
                         "smooth margins, and more easily seen than malignant calcifications. Calcifications associated with",
@@ -425,7 +427,6 @@ namespace BreastRadiology.XUnitTests
                         "As an ASSOCIATED FEATURE, this may be used in conjunction with one or more other FINDING(S)",
                         "to describe calcifications within or immediately adjacent to the finding(s)"
                         )
-                    //.MammoDescription("545")
                     ;
 
                 e.StartComponentSliceing();

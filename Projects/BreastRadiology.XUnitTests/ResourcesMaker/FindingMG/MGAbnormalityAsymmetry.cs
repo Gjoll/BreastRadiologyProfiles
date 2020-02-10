@@ -143,6 +143,8 @@ namespace BreastRadiology.XUnitTests
 
                 e.IntroDoc
                     .ReviewedStatus("NOONE", "")
+                    //+ IntroDocDescription
+                    //- IntroDocDescription
                     .ACRDescription(
                             "The several types of asymmetry involve a spectrum of mammographic findings that represent",
                             "unilateral deposits of fibroglandular tissue not conforming to the definition of a radiodense mass.",

@@ -120,15 +120,17 @@ namespace BreastRadiology.XUnitTests
             return this;
         }
 
+        [Obsolete]
         public IntroDoc MammoDescription(String id)
         {
-            if (ResourcesMaker.Self.Data.SelectRow(id) == false)
-                return this;
-            String[] description = ResourcesMaker.Self.Data.UMLS.Split('\n');
+            return this;
+        }
 
+        public IntroDoc Description(params String[] lines)
+        {
             CodeBlockNested d = CreateDescriptionBlock();
             d.AppendRaw($"<h4>{Title()} Definition</h4>");
-            WriteParagraphs(d, description);
+            WriteParagraphs(d, lines);
             return this;
         }
 

@@ -174,7 +174,8 @@ namespace BreastRadiology.XUnitTests
                 e.Select("code").Pattern(Self.ObservationCodeAbnormalityCyst.ToCodeableConcept().ToPattern());
                 e.IntroDoc
                     .ReviewedStatus("NOONE", "")
-                    .MammoDescription("69")
+                    //+ IntroDocDescription
+                    //- IntroDocDescription
                     ;
 
                 e.StartComponentSliceing();
