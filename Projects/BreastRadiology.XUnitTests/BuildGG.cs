@@ -442,104 +442,105 @@ namespace BreastRadiology.XUnitTests
                 retVal.RemoveAt(retVal.Count - 1);
             return retVal;
         }
-        [TestMethod]
-        public void Cleanup()
-        {
-            ExcelData source;
 
-            bool IsGargage(String text)
-            {
-                text = text.ToUpper();
-                if ((text.Length == 0) || (text[0] != 'C'))
-                    return false;
-                for (Int32 i = 1; i < text.Length; i++)
-                    if (Char.IsDigit(text[i]) == false)
-                        return false;
-                return true;
-            }
+        //[TestMethod]
+        //public void Cleanup()
+        //{
+        //    ExcelData source;
 
-            bool FixCitations(String text, out String text2, out String citation)
-            {
-                bool FindAnchor(String anchor, out String t2, out String c)
-                {
-                    t2 = null;
-                    c = null;
-                    Int32 i = text.ToUpper().IndexOf(anchor);
-                    if (i < 0)
-                        return false;
-                    t2 = text.Substring(0, i);
-                    c = text.Substring(i).Trim();
-                    return true;
-                }
+        //    bool IsGargage(String text)
+        //    {
+        //        text = text.ToUpper();
+        //        if ((text.Length == 0) || (text[0] != 'C'))
+        //            return false;
+        //        for (Int32 i = 1; i < text.Length; i++)
+        //            if (Char.IsDigit(text[i]) == false)
+        //                return false;
+        //        return true;
+        //    }
 
-                if (FindAnchor("HTTP://", out text2, out citation))
-                {
-                    citation = $"###URL#{citation}";
-                }
-                else if (FindAnchor("HTTPS://", out text2, out citation))
-                {
-                    citation = $"###URL#{citation}";
-                    return true;
-                }
-                else if (FindAnchor("FIFTH EDITION", out text2, out citation))
-                {
-                    Int32 index = citation.ToUpper().IndexOf("PG");
-                    if (index > 0)
-                        citation = $"###ACRMG#{citation.Substring(index + 2).Trim()}";
-                    else
-                        citation = $"###ACRMG#";
-                    return true;
-                }
-                else if (FindAnchor("SECOND ADDITION", out text2, out citation))
-                {
-                    String name = null;
-                    if (citation.Contains("Ultrasound"))
-                        name = "ACRUS";
-                    else if (citation.Contains("Magnetic Resonance Imaging"))
-                        name = "ACRMRI";
-                    else
-                        Debugger.Break();
+        //    bool FixCitations(String text, out String text2, out String citation)
+        //    {
+        //        bool FindAnchor(String anchor, out String t2, out String c)
+        //        {
+        //            t2 = null;
+        //            c = null;
+        //            Int32 i = text.ToUpper().IndexOf(anchor);
+        //            if (i < 0)
+        //                return false;
+        //            t2 = text.Substring(0, i);
+        //            c = text.Substring(i).Trim();
+        //            return true;
+        //        }
 
-                    Int32 index = citation.ToUpper().IndexOf("PG");
-                    if (index > 0)
-                        citation = $"###{name}#{citation.Substring(index + 2).Trim()}";
-                    else
-                        citation = $"###{name}#";
-                    return true;
-                }
-                return false;
-            }
+        //        if (FindAnchor("HTTP://", out text2, out citation))
+        //        {
+        //            citation = $"###URL#{citation}";
+        //        }
+        //        else if (FindAnchor("HTTPS://", out text2, out citation))
+        //        {
+        //            citation = $"###URL#{citation}";
+        //            return true;
+        //        }
+        //        else if (FindAnchor("FIFTH EDITION", out text2, out citation))
+        //        {
+        //            Int32 index = citation.ToUpper().IndexOf("PG");
+        //            if (index > 0)
+        //                citation = $"###ACRMG#{citation.Substring(index + 2).Trim()}";
+        //            else
+        //                citation = $"###ACRMG#";
+        //            return true;
+        //        }
+        //        else if (FindAnchor("SECOND ADDITION", out text2, out citation))
+        //        {
+        //            String name = null;
+        //            if (citation.Contains("Ultrasound"))
+        //                name = "ACRUS";
+        //            else if (citation.Contains("Magnetic Resonance Imaging"))
+        //                name = "ACRMRI";
+        //            else
+        //                Debugger.Break();
 
-            void CleanupUMLS(DataRow row)
-            {
-                String text = row[source.umlsCol].ToString();
-                if (IsGargage(text))
-                    text = "";
+        //            Int32 index = citation.ToUpper().IndexOf("PG");
+        //            if (index > 0)
+        //                citation = $"###{name}#{citation.Substring(index + 2).Trim()}";
+        //            else
+        //                citation = $"###{name}#";
+        //            return true;
+        //        }
+        //        return false;
+        //    }
 
-                if (FixCitations(text, out String text2, out String citation) == true)
-                    text = text2;
-                List<String> lines = FormatText(text).ToList();
-                StringBuilder sb = new StringBuilder();
-                for (Int32 i = 0; i < lines.Count; i++)
-                    sb.AppendLine(lines[i]);
-                if (String.IsNullOrEmpty(citation) == false)
-                    sb.AppendLine(citation);
-                row[source.umlsCol] = sb.ToString();
-            }
+        //    void CleanupUMLS(DataRow row)
+        //    {
+        //        String text = row[source.umlsCol].ToString();
+        //        if (IsGargage(text))
+        //            text = "";
 
-            String baseDir = DirHelper.FindParentDir("BreastRadiologyProfiles");
-            String filePath = Path.Combine(baseDir,
-                "..",
-                "BRDocs",
-                "BreastData.xlsx");
-            source = new ExcelData(new Info(), filePath, "Sheet3");
+        //        if (FixCitations(text, out String text2, out String citation) == true)
+        //            text = text2;
+        //        List<String> lines = FormatText(text).ToList();
+        //        StringBuilder sb = new StringBuilder();
+        //        for (Int32 i = 0; i < lines.Count; i++)
+        //            sb.AppendLine(lines[i]);
+        //        if (String.IsNullOrEmpty(citation) == false)
+        //            sb.AppendLine(citation);
+        //        row[source.umlsCol] = sb.ToString();
+        //    }
 
-            foreach (DataRow row in source.rows.Values)
-            {
-                CleanupUMLS(row);
-            }
-            source.Save();
-        }
+        //    String baseDir = DirHelper.FindParentDir("BreastRadiologyProfiles");
+        //    String filePath = Path.Combine(baseDir,
+        //        "..",
+        //        "BRDocs",
+        //        "BreastData.xlsx");
+        //    source = new ExcelData(new Info(), filePath, "Sheet3");
+
+        //    foreach (DataRow row in source.rows.Values)
+        //    {
+        //        CleanupUMLS(row);
+        //    }
+        //    source.Save();
+        //}
 
 
         [TestMethod]
@@ -567,7 +568,7 @@ namespace BreastRadiology.XUnitTests
             WriteIds("AbnormalityDuct",
                 @"Common\Abnormalities\AbnormalityDuct.cs",
                 "Type",
-                "694.602", "693.614");
+                "692", "694.602", "693.614");
             WriteIds("AbnormalityFibroAdenoma",
                 @"Common\Abnormalities\AbnormalityFibroAdenoma.cs",
                 "Type",

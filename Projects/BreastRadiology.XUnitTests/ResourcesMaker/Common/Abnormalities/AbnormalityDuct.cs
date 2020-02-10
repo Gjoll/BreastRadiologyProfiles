@@ -26,8 +26,19 @@ namespace BreastRadiology.XUnitTests
                             //+ Type
                             #region Codes
                             new ConceptDef()
-                                .SetCode("DuctDilatedATLASSolitaryDilatedDuct")
-                                .SetDisplay("Duct dilated ATLAS solitary dilated duct")
+                                .SetCode("DuctNormal")
+                                .SetDisplay("Duct normal")
+                                .MammoId("692")
+                                .ValidModalities(Modalities.MG)
+                                .SetUMLS("Duct is considered normal. ",
+                                    "It is surrounded by normal cells and collagen in " +
+                                    "the breast with no abnormalities. ",
+                                    "A system of ducts in your breast carries milk to " +
+                                    "the nipples.")
+                            ,
+                            new ConceptDef()
+                                .SetCode("SolitaryDilatedDuct")
+                                .SetDisplay("Solitary dilated duct")
                                 .MammoId("694.602")
                                 .ValidModalities(Modalities.MG | Modalities.US)
                                 .SetUMLS("The mammographic finding of solitary dilated duct " +

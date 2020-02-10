@@ -158,6 +158,34 @@ namespace BreastRadiology.Shared
 
         public void Save()
         {
+            Save(this.filePath);
+
+            {
+                Int32 i = 0;
+                while (i < this.dataTable.Rows.Count)
+                {
+                    DataRow r = this.dataTable.Rows[i];
+                    bool Delete()
+                    {
+                        if (String.IsNullOrWhiteSpace(r[this.classCol].ToString()) == false)
+                            return true;
+                        if (String.IsNullOrWhiteSpace(r[this.mgCol].ToString()) == true)
+                            return true;
+                        return false;
+                    }
+                    if (Delete())
+                        this.dataTable.Rows.RemoveAt(i);
+                    else
+                        i += 1;
+                }
+
+                String unusedPath = Path.Combine(Path.GetDirectoryName(this.filePath), "BreastData.unused.xlsx");
+                Save(unusedPath);
+            }
+        }
+
+        public void Save(String filePath)
+        {
             XLWorkbook workbook = new XLWorkbook();
             IXLWorksheet sheet = workbook.Worksheets.Add(this.dataTable);
             sheet.Columns().AdjustToContents();
@@ -170,8 +198,8 @@ namespace BreastRadiology.Shared
             sheet.Columns().Style.Alignment.Horizontal = XLAlignmentHorizontalValues.Left;
             sheet.Columns().Style.Alignment.Vertical = XLAlignmentVerticalValues.Top;
 
-            File.Delete(this.filePath);
-            workbook.SaveAs(this.filePath);
+            File.Delete(filePath);
+            workbook.SaveAs(filePath);
         }
 
         DataSet ReadSpreadSheet(String filePath)
