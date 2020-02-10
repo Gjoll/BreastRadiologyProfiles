@@ -109,6 +109,7 @@ namespace BreastRadiology.XUnitTests
 
                        e.IntroDoc
                            .ReviewedStatus("NOONE", "")
+                           .MammoDescription("623")
                            ;
                    }
                });
