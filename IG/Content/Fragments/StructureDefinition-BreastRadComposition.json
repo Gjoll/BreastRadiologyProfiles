@@ -119,9 +119,13 @@
           "min": 0,
           "max": "1"
         },
-        "patternCoding": {
-          "system": "http://hl7.org/fhir/us/breast-radiology/CodeSystem/CompositionSectionSliceCodes",
-          "code": "sectionReport"
+        "patternCodeableConcept": {
+          "coding": [
+            {
+              "system": "http://hl7.org/fhir/us/breast-radiology/CodeSystem/CompositionSectionSliceCodes",
+              "code": "sectionReport"
+            }
+          ]
         }
       },
       {
@@ -204,9 +208,13 @@
           "min": 0,
           "max": "1"
         },
-        "patternCoding": {
-          "system": "http://hl7.org/fhir/us/breast-radiology/CodeSystem/CompositionSectionSliceCodes",
-          "code": "sectionImpressions"
+        "patternCodeableConcept": {
+          "coding": [
+            {
+              "system": "http://hl7.org/fhir/us/breast-radiology/CodeSystem/CompositionSectionSliceCodes",
+              "code": "sectionImpressions"
+            }
+          ]
         }
       },
       {
@@ -289,9 +297,13 @@
           "min": 0,
           "max": "1"
         },
-        "patternCoding": {
-          "system": "http://hl7.org/fhir/us/breast-radiology/CodeSystem/CompositionSectionSliceCodes",
-          "code": "sectionRelatedResources"
+        "patternCodeableConcept": {
+          "coding": [
+            {
+              "system": "http://hl7.org/fhir/us/breast-radiology/CodeSystem/CompositionSectionSliceCodes",
+              "code": "sectionRelatedResources"
+            }
+          ]
         }
       },
       {
@@ -374,9 +386,13 @@
           "min": 0,
           "max": "1"
         },
-        "patternCoding": {
-          "system": "http://hl7.org/fhir/us/breast-radiology/CodeSystem/CompositionSectionSliceCodes",
-          "code": "sectionCodeRecommendations"
+        "patternCodeableConcept": {
+          "coding": [
+            {
+              "system": "http://hl7.org/fhir/us/breast-radiology/CodeSystem/CompositionSectionSliceCodes",
+              "code": "sectionCodeRecommendations"
+            }
+          ]
         }
       },
       {

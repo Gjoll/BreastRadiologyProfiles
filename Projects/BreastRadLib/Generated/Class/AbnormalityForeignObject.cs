@@ -32,7 +32,7 @@ namespace BreastRadLib
 		//- WriteCode
 		}
 
-		public void Read()
+		public void Read(ResourceBag resourceBag)
 		{
 		//+ ReadCode
 		//- ReadCode

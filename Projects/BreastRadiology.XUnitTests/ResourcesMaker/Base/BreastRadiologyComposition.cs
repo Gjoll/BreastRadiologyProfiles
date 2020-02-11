@@ -63,7 +63,7 @@ namespace BreastRadiology.XUnitTests
                         ;
                     CreateElement(slice, "code")
                         .Single()
-                        .Pattern(code.ToPattern())
+                        .Pattern(code.ToCodeableConcept().ToPattern())
                         ;
                     CreateElement(slice, "focus")
                         .Zero()

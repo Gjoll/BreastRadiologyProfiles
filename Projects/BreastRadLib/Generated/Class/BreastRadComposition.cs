@@ -12,34 +12,34 @@ namespace BreastRadLib
 	public class BreastRadComposition : CompositionBase, IHeaderFragment
 	{
 		//+ Fields
-		                                                                                                                                          // CSDefineComposition.cs:76
+		                                                                                                                                          // CSDefineComposition.cs:78
 		/// <summary>
 		/// Section report
 		/// Composition.section:report
 		/// </summary>
-		Coding ReportSectionCode = new Coding("http://hl7.org/fhir/us/breast-radiology/CodeSystem/CompositionSectionSliceCodes", "sectionReport");// CSDefineComposition.cs:83
-		public BreastRadReport Report { get; set; }                                                                                               // CSDefineComposition.cs:89
-		                                                                                                                                          // CSDefineComposition.cs:76
+		Coding ReportSectionCode = new Coding("http://hl7.org/fhir/us/breast-radiology/CodeSystem/CompositionSectionSliceCodes", "sectionReport");// CSDefineComposition.cs:85
+		public BreastRadReport Report { get; set; }                                                                                               // CSDefineComposition.cs:91
+		                                                                                                                                          // CSDefineComposition.cs:78
 		/// <summary>
 		/// Section impressions
 		/// Composition.section:impressions
 		/// </summary>
-		Coding ImpressionsSectionCode = new Coding("http://hl7.org/fhir/us/breast-radiology/CodeSystem/CompositionSectionSliceCodes", "sectionImpressions");// CSDefineComposition.cs:83
-		public List<ClinicalImpressionBase> Impressions { get; } = new List<ClinicalImpressionBase>();                                            // CSDefineComposition.cs:100
-		                                                                                                                                          // CSDefineComposition.cs:76
+		Coding ImpressionsSectionCode = new Coding("http://hl7.org/fhir/us/breast-radiology/CodeSystem/CompositionSectionSliceCodes", "sectionImpressions");// CSDefineComposition.cs:85
+		public List<ClinicalImpressionBase> Impressions { get; } = new List<ClinicalImpressionBase>();                                            // CSDefineComposition.cs:102
+		                                                                                                                                          // CSDefineComposition.cs:78
 		/// <summary>
 		/// Section relatedResources
 		/// Composition.section:relatedResources
 		/// </summary>
-		Coding RelatedResourcesSectionCode = new Coding("http://hl7.org/fhir/us/breast-radiology/CodeSystem/CompositionSectionSliceCodes", "sectionRelatedResources");// CSDefineComposition.cs:83
-		public List<ResourceBase> RelatedResources { get; } = new List<ResourceBase>();                                                           // CSDefineComposition.cs:100
-		                                                                                                                                          // CSDefineComposition.cs:76
+		Coding RelatedResourcesSectionCode = new Coding("http://hl7.org/fhir/us/breast-radiology/CodeSystem/CompositionSectionSliceCodes", "sectionRelatedResources");// CSDefineComposition.cs:85
+		public List<ResourceBase> RelatedResources { get; } = new List<ResourceBase>();                                                           // CSDefineComposition.cs:102
+		                                                                                                                                          // CSDefineComposition.cs:78
 		/// <summary>
 		/// Section recommendations
 		/// Composition.section:recommendations
 		/// </summary>
-		Coding RecommendationsSectionCode = new Coding("http://hl7.org/fhir/us/breast-radiology/CodeSystem/CompositionSectionSliceCodes", "sectionCodeRecommendations");// CSDefineComposition.cs:83
-		public List<ResourceBase> Recommendations { get; } = new List<ResourceBase>();                                                            // CSDefineComposition.cs:100
+		Coding RecommendationsSectionCode = new Coding("http://hl7.org/fhir/us/breast-radiology/CodeSystem/CompositionSectionSliceCodes", "sectionCodeRecommendations");// CSDefineComposition.cs:85
+		public List<ResourceBase> Recommendations { get; } = new List<ResourceBase>();                                                            // CSDefineComposition.cs:102
 		//- Fields
 
 		public BreastRadComposition(Composition resource) : base(resource)
@@ -52,46 +52,21 @@ namespace BreastRadLib
 		{
 		//+ WriteCode
 		ClearSection();                                                                                                                           // CSDefineComposition.cs:38
-		WriteSection<BreastRadReport>("Breast Radiology Report",                                                                                  // CSDefineComposition.cs:112
-		        ReportSectionCode,                                                                                                                // CSDefineComposition.cs:113
-		        1,                                                                                                                                // CSDefineComposition.cs:114
-		        1,                                                                                                                                // CSDefineComposition.cs:115
-		        this.Report);                                                                                                                     // CSDefineComposition.cs:116
-		WriteSection<ClinicalImpressionBase>("Clinical Impressions",                                                                              // CSDefineComposition.cs:112
-		        ImpressionsSectionCode,                                                                                                           // CSDefineComposition.cs:113
-		        0,                                                                                                                                // CSDefineComposition.cs:114
-		        -1,                                                                                                                               // CSDefineComposition.cs:115
-		        this.Impressions);                                                                                                                // CSDefineComposition.cs:116
-		WriteSection<ResourceBase>("Related Resources",                                                                                           // CSDefineComposition.cs:112
-		        RelatedResourcesSectionCode,                                                                                                      // CSDefineComposition.cs:113
-		        0,                                                                                                                                // CSDefineComposition.cs:114
-		        -1,                                                                                                                               // CSDefineComposition.cs:115
-		        this.RelatedResources);                                                                                                           // CSDefineComposition.cs:116
-		WriteSection<ResourceBase>("Recommendations",                                                                                             // CSDefineComposition.cs:112
-		        RecommendationsSectionCode,                                                                                                       // CSDefineComposition.cs:113
-		        0,                                                                                                                                // CSDefineComposition.cs:114
-		        -1,                                                                                                                               // CSDefineComposition.cs:115
-		        this.Recommendations);                                                                                                            // CSDefineComposition.cs:116
+		WriteSection<BreastRadReport>("Breast Radiology Report", ReportSectionCode, 1, 1, this.Report);                                           // CSDefineComposition.cs:111
+		WriteSection<ClinicalImpressionBase>("Clinical Impressions", ImpressionsSectionCode, 0, -1, this.Impressions);                            // CSDefineComposition.cs:111
+		WriteSection<ResourceBase>("Related Resources", RelatedResourcesSectionCode, 0, -1, this.RelatedResources);                               // CSDefineComposition.cs:111
+		WriteSection<ResourceBase>("Recommendations", RecommendationsSectionCode, 0, -1, this.Recommendations);                                   // CSDefineComposition.cs:111
 		//- WriteCode
 		}
 
-		public void Read()
+		public void Read(ResourceBag resourceBag)
 		{
 		//+ ReadCode
-		                                                                                                                                          // CSDefineComposition.cs:93
-		this.Report = ReadSection<BreastRadReport>(this.ReportSectionCode);                                                                       // CSDefineComposition.cs:94
-		ReadSection<ClinicalImpressionBase>(ImpressionsSectionCode,                                                                               // CSDefineComposition.cs:104
-		        0,                                                                                                                                // CSDefineComposition.cs:105
-		        -1,                                                                                                                               // CSDefineComposition.cs:106
-		        this.Impressions);                                                                                                                // CSDefineComposition.cs:107
-		ReadSection<ResourceBase>(RelatedResourcesSectionCode,                                                                                    // CSDefineComposition.cs:104
-		        0,                                                                                                                                // CSDefineComposition.cs:105
-		        -1,                                                                                                                               // CSDefineComposition.cs:106
-		        this.RelatedResources);                                                                                                           // CSDefineComposition.cs:107
-		ReadSection<ResourceBase>(RecommendationsSectionCode,                                                                                     // CSDefineComposition.cs:104
-		        0,                                                                                                                                // CSDefineComposition.cs:105
-		        -1,                                                                                                                               // CSDefineComposition.cs:106
-		        this.Recommendations);                                                                                                            // CSDefineComposition.cs:107
+		                                                                                                                                          // CSDefineComposition.cs:95
+		this.Report = ReadSection<BreastRadReport>(resourceBag, this.ReportSectionCode);                                                          // CSDefineComposition.cs:96
+		ReadSection<ClinicalImpressionBase>(resourceBag, ImpressionsSectionCode, 0, -1, this.Impressions);                                        // CSDefineComposition.cs:106
+		ReadSection<ResourceBase>(resourceBag, RelatedResourcesSectionCode, 0, -1, this.RelatedResources);                                        // CSDefineComposition.cs:106
+		ReadSection<ResourceBase>(resourceBag, RecommendationsSectionCode, 0, -1, this.Recommendations);                                          // CSDefineComposition.cs:106
 		//- ReadCode
 		}
 

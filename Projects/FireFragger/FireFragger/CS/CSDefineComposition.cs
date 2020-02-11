@@ -53,7 +53,10 @@ namespace FireFragger
                 ElementTreeNode entryNode = GetChild("entry");
 
                 String title = titleNode.ElementDefinition.Fixed.ToString();
-                Coding code = codeNode.ElementDefinition.Pattern as Coding;
+                CodeableConcept sectionCode = (CodeableConcept) codeNode.ElementDefinition.Pattern;
+                if (sectionCode.Coding.Count != 1)
+                    throw new Exception("Invalid section code");
+                Coding code = sectionCode.Coding[0];
 
                 String[] references = this.References(entryNode);
                 String reference;
@@ -90,7 +93,7 @@ namespace FireFragger
 
                     this.ClassReadCode
                         .BlankLine()
-                        .AppendCode($"this.{propertyName} = ReadSection<{reference}>(this.{sectionCodeName});")
+                        .AppendCode($"this.{propertyName} = ReadSection<{reference}>(resourceBag, this.{sectionCodeName});")
                         ;
                 }
                 else
@@ -100,19 +103,12 @@ namespace FireFragger
                         ;
 
                     this.ClassReadCode
-                        .AppendCode($"ReadSection<{reference}>({sectionCodeName},")
-                        .AppendCode($"        {sectionSlice.ElementDefinition.Min},")
-                        .AppendCode($"        {max},")
-                        .AppendCode($"        this.{propertyName});")
+                        .AppendCode($"ReadSection<{reference}>(resourceBag, {sectionCodeName}, {sectionSlice.ElementDefinition.Min}, {max}, this.{propertyName});")
                         ;
                 }
 
                 this.ClassWriteCode
-                    .AppendCode($"WriteSection<{reference}>(\"{title}\",")
-                    .AppendCode($"        {sectionCodeName},")
-                    .AppendCode($"        {sectionSlice.ElementDefinition.Min},")
-                    .AppendCode($"        {max},")
-                    .AppendCode($"        this.{propertyName});")
+                    .AppendCode($"WriteSection<{reference}>(\"{title}\", {sectionCodeName}, {sectionSlice.ElementDefinition.Min}, {max}, this.{propertyName});")
                     ;
 
                 if (max == 1)
