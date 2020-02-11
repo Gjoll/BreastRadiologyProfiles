@@ -137,7 +137,7 @@ namespace BreastRadiology.XUnitTests
                         ;
 
                         e.AddComponentLink("Report",
-                            new SDefEditor.Cardinality(sectionSlice.ElementDefinition),
+                            new SDefEditor.Cardinality(entry),
                             Global.ElementAnchor(sectionSlice.ElementDefinition),
                             "Section",
                             targets);
@@ -156,13 +156,13 @@ namespace BreastRadiology.XUnitTests
                             Self.SectionCodeImpressions,
                             out ElementDefinition entry);
                         entry
-                            .Single()
+                            .ZeroToMany()
                             .Type("Reference", null, targets)
                             .Short("Clinical Impression reference")
-                            .Definition("Reference to the clinical impression.")
+                            .Definition("Reference to the clinical impression(s).")
                             ;
                         sectionSlice.ElementDefinition
-                            .ZeroToMany()
+                            .Single()
                             .SetShort($"Impressions Section")
                             .SetDefinition(
                                 new Markdown()
@@ -171,7 +171,7 @@ namespace BreastRadiology.XUnitTests
                             .MustSupport();
                         ;
                         e.AddComponentLink("Impressions",
-                            new SDefEditor.Cardinality(sectionSlice.ElementDefinition),
+                            new SDefEditor.Cardinality(entry),
                             Global.ElementAnchor(sectionSlice.ElementDefinition),
                             "Section",
                             targets);
@@ -190,13 +190,13 @@ namespace BreastRadiology.XUnitTests
                 //            Self.SectionCodeFindings,
                 //            out ElementDefinition entry);
                 //        entry
-                //            .Single()
+                //            .ZeroToMany()
                 //            .Type("Reference", null, targets)
                 //            .Short("Finding reference")
                 //            .Definition("Reference to the finding.")
                 //            ;
                 //        sectionSlice.ElementDefinition
-                //            .ZeroToMany()
+                //            .Single()
                 //            .SetShort($"Findings Section")
                 //            .SetDefinition(
                 //                new Markdown()
@@ -205,7 +205,7 @@ namespace BreastRadiology.XUnitTests
                 //            .MustSupport();
                 //        ;
                 //        e.AddComponentLinkTarget("Findings",
-                //            new SDefEditor.Cardinality(sectionSlice.ElementDefinition),
+                //            new SDefEditor.Cardinality(entry),
                 //            Global.ElementAnchor(sectionSlice.ElementDefinition),
                 //            "Section",
                 //            targets);
@@ -224,19 +224,19 @@ namespace BreastRadiology.XUnitTests
                             Self.SectionCodeRelatedResources,
                             out ElementDefinition entry);
                         entry
-                            .Single()
+                            .ZeroToMany()
                             .Type("Reference", null, targets)
                             .Short("Related Resource reference")
                             .Definition("Reference to the related resource.")
                             ;
                         sectionSlice.ElementDefinition
-                            .ZeroToMany()
+                            .Single()
                             .Short("Related Clinical Resources Section")
                             .Definition("References to FHIR clinical resoruces used during the exam or referenced by this report.")
                             .MustSupport();
                         ;
                         e.AddComponentLink("Related Resources",
-                            new SDefEditor.Cardinality(sectionSlice.ElementDefinition),
+                            new SDefEditor.Cardinality(entry),
                             Global.ElementAnchor(sectionSlice.ElementDefinition),
                             "Section",
                             targets);
@@ -255,19 +255,19 @@ namespace BreastRadiology.XUnitTests
                             Self.SectionCodeRecommendations,
                             out ElementDefinition entry);
                         entry
-                            .Single()
+                            .ZeroToMany()
                             .Type("Reference", null, targets)
                             .Short("Recommendation reference")
                             .Definition("Reference to the recommended action.")
                             ;
                         sectionSlice.ElementDefinition
-                            .ZeroToMany()
+                            .Single()
                             .Short("Recommendations Section")
                             .Definition("This section contains references to recommended actions taken in response to the observations and findings of this report.")
                             .MustSupport();
                         ;
                         e.AddComponentLink("Recommendations",
-                            new SDefEditor.Cardinality(sectionSlice.ElementDefinition),
+                            new SDefEditor.Cardinality(entry),
                             Global.ElementAnchor(sectionSlice.ElementDefinition),
                             "Section",
                             targets);
