@@ -58,26 +58,42 @@ namespace FireFragger
                 else
                     reference = "DomainResource";
 
+                Int32 max = ToMax(sectionSlice.ElementDefinition.Max);
+                String propertyName = sliceName.ToMachineName();
+
                 this.ClassFields
                     .BlankLine()
                     .SummaryOpen()
                     .Summary($"Section {sliceName}")
                     .Summary($"{sectionSlice.ElementDefinition.ElementId}")
                     .SummaryClose()
-                    .AppendCode($"public SectionList<{reference}> {sliceName.ToMachineName()} {{ get; }}");
-                ;
+                    ;
+                if (max == 1)
+                    this.ClassFields
+                        .AppendCode($"public {reference} {propertyName} {{ get; set; }}")
+                        ;
+                else
+                    this.ClassFields
+                        .AppendCode($"public List<{reference}> {propertyName} {{ get; }} = new List<{reference}>();")
+                        ;
 
-                this.ClassConstructor
+                this.ClassWriteCode
                     .BlankLine()
-                    .AppendCode($"{sliceName.ToMachineName()} = new SectionList<{reference}>(\"{title}\",")
+                    .AppendCode($"WriteSection<{reference}>(\"{title}\",")
                     .AppendCode($"        new Coding(\"{code.System}\", \"{code.Code}\"),")
                     .AppendCode($"        {sectionSlice.ElementDefinition.Min},")
-                    .AppendCode($"        {ToMax(sectionSlice.ElementDefinition.Max)});")
+                    .AppendCode($"        {max},")
+                    .AppendCode($"        this.{propertyName});")
                 ;
 
-                this.InterfaceFields
-                    .AppendCode($"SectionList<{reference}> {sliceName.ToMachineName()} {{ get; }}");
-                ;
+                if (max == 1)
+                    this.InterfaceFields
+                            .AppendCode($"{reference} {propertyName} {{ get; set; }}")
+                        ;
+                else
+                    this.InterfaceFields
+                            .AppendCode($"List<{reference}> {propertyName} {{ get; }}")
+                        ;
             }
         }
 

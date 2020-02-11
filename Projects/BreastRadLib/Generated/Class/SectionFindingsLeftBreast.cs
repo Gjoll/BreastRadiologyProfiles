@@ -30,6 +30,18 @@ namespace BreastRadLib
 			//- Constructor
 		}
 
+		public void Write()
+		{
+		//+ WriteCode
+		//- WriteCode
+		}
+
+		public void Read()
+		{
+		//+ ReadCode
+		//- ReadCode
+		}
+
 		//+ Methods
 		//- Methods
 	}
