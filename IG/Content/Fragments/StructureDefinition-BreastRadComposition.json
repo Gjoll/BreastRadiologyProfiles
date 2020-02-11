@@ -119,14 +119,9 @@
           "min": 0,
           "max": "1"
         },
-        "fixedCodeableConcept": {
-          "coding": [
-            {
-              "system": "http://hl7.org/fhir/us/breast-radiology/CodeSystem/CompositionSectionSliceCodes",
-              "code": "sectionReport",
-              "display": "Code to identify the 'Report' section slice"
-            }
-          ]
+        "patternCoding": {
+          "system": "http://hl7.org/fhir/us/breast-radiology/CodeSystem/CompositionSectionSliceCodes",
+          "code": "sectionReport"
         }
       },
       {
@@ -209,14 +204,9 @@
           "min": 0,
           "max": "1"
         },
-        "fixedCodeableConcept": {
-          "coding": [
-            {
-              "system": "http://hl7.org/fhir/us/breast-radiology/CodeSystem/CompositionSectionSliceCodes",
-              "code": "sectionImpressions",
-              "display": "Code to identify the 'Impressions' section slice"
-            }
-          ]
+        "patternCoding": {
+          "system": "http://hl7.org/fhir/us/breast-radiology/CodeSystem/CompositionSectionSliceCodes",
+          "code": "sectionImpressions"
         }
       },
       {
@@ -299,14 +289,9 @@
           "min": 0,
           "max": "1"
         },
-        "fixedCodeableConcept": {
-          "coding": [
-            {
-              "system": "http://hl7.org/fhir/us/breast-radiology/CodeSystem/CompositionSectionSliceCodes",
-              "code": "sectionRelatedResources",
-              "display": "Code to identify the 'RelatedResources' section slice"
-            }
-          ]
+        "patternCoding": {
+          "system": "http://hl7.org/fhir/us/breast-radiology/CodeSystem/CompositionSectionSliceCodes",
+          "code": "sectionRelatedResources"
         }
       },
       {
@@ -389,14 +374,9 @@
           "min": 0,
           "max": "1"
         },
-        "fixedCodeableConcept": {
-          "coding": [
-            {
-              "system": "http://hl7.org/fhir/us/breast-radiology/CodeSystem/CompositionSectionSliceCodes",
-              "code": "sectionCodeRecommendations",
-              "display": "Code to identify the 'Recommendations' section slice"
-            }
-          ]
+        "patternCoding": {
+          "system": "http://hl7.org/fhir/us/breast-radiology/CodeSystem/CompositionSectionSliceCodes",
+          "code": "sectionCodeRecommendations"
         }
       },
       {

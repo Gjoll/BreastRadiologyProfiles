@@ -160,15 +160,15 @@ namespace FireFragger
             {
                 case Global.ObservationUrl:
                     {
-                        CSDefineObservation def = new CSDefineObservation(this);
-                        def.Build(fi);
+                        CSDefineObservation def = new CSDefineObservation(this, fi);
+                        def.Build();
                     }
                     break;
 
                 case Global.CompositionUrl:
                     {
-                        CSDefineComposition def = new CSDefineComposition(this);
-                        def.Build(fi);
+                        CSDefineComposition def = new CSDefineComposition(this, fi);
+                        def.Build();
                     }
                     break;
 

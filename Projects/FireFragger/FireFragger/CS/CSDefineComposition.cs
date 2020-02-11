@@ -17,41 +17,27 @@ namespace FireFragger
     /// </summary>
     class CSDefineComposition : CSDefineBase
     {
-        FragInfo fragBase;
-
-        public CSDefineComposition(CSBuilder csBuilder) : base(csBuilder)
+        public CSDefineComposition(CSBuilder csBuilder,
+                    FragInfo fragBase) : base(csBuilder, fragBase)
         {
-        }
-        
-        void MergeFragment(FragInfo fi)
-        {
-            const String fcn = "MergeFragment";
-
-            this.csBuilder.ConversionInfo(this.GetType().Name,
-               fcn,
-               $"Integrating fragment {fi.StructDef.Url.LastUriPart()}");
-            if (fi != fragBase)
-            {
-                if (fi.InterfaceEditor != null)
-                {
-                    CodeBlockMerger cbm = new CodeBlockMerger(fragBase.InterfaceEditor);
-                    cbm.Merge(fi.InterfaceEditor);
-                }
-                if (fi.ClassEditor != null)
-                {
-                    CodeBlockMerger cbm = new CodeBlockMerger(fragBase.ClassEditor);
-                    cbm.Merge(fi.ClassEditor);
-                }
-            }
         }
 
         void DefineSections()
         {
+            Int32 ToMax(String max)
+            {
+                if (max == "*")
+                    return -1;
+                return Int32.Parse(max);
+            }
+
             if (this.fragBase.DiffNodes.TryGetElementNode("Composition.section", out ElementTreeNode sectionNode) == false)
                 return;
 
             foreach (ElementTreeSlice sectionSlice in sectionNode.Slices.Skip(1))
             {
+                String sliceName = sectionSlice.ElementDefinition.SliceName;
+
                 ElementTreeNode GetChild(String name)
                 {
                     if (this.fragBase.DiffNodes.TryGetElementNode($"{sectionSlice.ElementDefinition.ElementId}.{name}", out ElementTreeNode n) == false)
@@ -59,10 +45,43 @@ namespace FireFragger
                     return n;
                 }
                 ElementTreeNode titleNode = GetChild("title");
+                ElementTreeNode codeNode = GetChild("code");
+                ElementTreeNode entryNode = GetChild("entry");
+
+                String title = titleNode.ElementDefinition.Fixed.ToString();
+                Coding code = codeNode.ElementDefinition.Pattern as Coding;
+
+                String[] references = this.References(entryNode);
+                String reference;
+                if (references.Length == 1)
+                    reference = references[0].LastUriPart();
+                else
+                    reference = "DomainResource";
+
+                this.ClassFields
+                    .BlankLine()
+                    .SummaryOpen()
+                    .Summary($"Section {sliceName}")
+                    .Summary($"{sectionSlice.ElementDefinition.ElementId}")
+                    .SummaryClose()
+                    .AppendCode($"public SectionList<{reference}> {sliceName.ToMachineName()} {{ get; }}");
+                ;
+
+                this.ClassConstructor
+                    .BlankLine()
+                    .AppendCode($"{sliceName.ToMachineName()} = new SectionList<{reference}>(\"{title}\",")
+                    .AppendCode($"        new Coding(\"{code.System}\", \"{code.Code}\"),")
+                    .AppendCode($"        {sectionSlice.ElementDefinition.Min},")
+                    .AppendCode($"        {ToMax(sectionSlice.ElementDefinition.Max)});")
+                ;
+
+                this.InterfaceFields
+                    .AppendCode($"SectionList<{reference}> {sliceName.ToMachineName()} {{ get; }}");
+                ;
             }
         }
 
-        public void Build(FragInfo fragBase)
+        public void Build()
         {
             const String fcn = "Build";
 
@@ -70,10 +89,13 @@ namespace FireFragger
                fcn,
                $"Building {fragBase.StructDef.Url.LastUriPart()}");
 
-            this.fragBase = fragBase;
-            foreach (FragInfo fiRef in this.fragBase.ReferencedFragments)
-                MergeFragment(fiRef);
+            this.ClassFields.Clear();
+            this.ClassMethods.Clear();
+            this.ClassConstructor.Clear();
 
+            this.InterfaceFields.Clear();
+            this.InterfaceMethods.Clear();
+            this.MergeFragments();
             DefineSections();
             this.csBuilder.ConversionInfo(this.GetType().Name,
                fcn,

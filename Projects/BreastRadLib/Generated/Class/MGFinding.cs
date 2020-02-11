@@ -48,5 +48,7 @@ namespace BreastRadLib
 			//- Constructor
 		}
 
+		//+ Methods
+		//- Methods
 	}
 }

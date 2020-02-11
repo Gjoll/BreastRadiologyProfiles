@@ -17,5 +17,8 @@ namespace BreastRadLib
         MemberList<IMGAbnormalityCalcification> MGAbnormalityCalcification {get;}
         MemberList<IObservedFeature> ObservedFeature {get;}
 		//- Fields
+
+		//+ Methods
+		//- Methods
 	}
 }

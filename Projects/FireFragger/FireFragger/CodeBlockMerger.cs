@@ -13,7 +13,7 @@ namespace FireFragger
             this.code = code;
         }
 
-        public void Merge(CodeEditor mergeCode)
+        public void Merge(CodeBlock mergeBlock)
         {
             bool AllBlank(String[] lines)
             {
@@ -25,24 +25,24 @@ namespace FireFragger
                 return true;
             }
 
-            void ProcessBlock(CodeBlock mergeBlock)
+            CodeBlockNested mergeBlockNested = mergeBlock as CodeBlockNested;
+            if (mergeBlockNested == null)
             {
-                CodeBlockNested mergeBlockNested = mergeBlock as CodeBlockNested;
-                if (mergeBlockNested == null)
-                {
-                    if (AllBlank(mergeBlock.AllLines()) == false)
-                        throw new Exception($"Base merge block must be of type MergeBlockNested");
-                    return;
-                }
-
-                CodeBlockNested codeBlockNested = this.code.Blocks.Find(mergeBlockNested.Name);
-                if (codeBlockNested == null)
-                    throw new Exception($"Base code editor does not contain a top level block named {mergeBlockNested.Name}");
-                Merge(codeBlockNested, mergeBlockNested);
+                if (AllBlank(mergeBlock.AllLines()) == false)
+                    throw new Exception($"Base merge block must be of type MergeBlockNested");
+                return;
             }
 
+            CodeBlockNested codeBlockNested = this.code.Blocks.Find(mergeBlockNested.Name);
+            if (codeBlockNested == null)
+                throw new Exception($"Base code editor does not contain a top level block named {mergeBlockNested.Name}");
+            Merge(codeBlockNested, mergeBlockNested);
+        }
+
+        public void Merge(CodeEditor mergeCode)
+        {
             foreach (CodeBlock mergeBlock in mergeCode.Blocks.AllNamedBlocks)
-                ProcessBlock(mergeBlock);
+                Merge(mergeBlock);
         }
 
         void Merge(CodeBlockNested codeBlock, CodeBlockNested mergeBlock)

@@ -5,26 +5,17 @@ using System.Text;
 
 namespace BreastRadLib
 {
-    public interface ISectionList
+    public class SectionList<T>
+        where T : class
     {
-        Int32 Min { get; }
-        Int32 Max { get; }
-
-        String Title { get; }
-        CodeableConcept Code { get; }
-    }
-
-    public class SectionList<T> : ISectionList
-        where T : IResourceBase
-    {
-        public CodeableConcept Code { get; }
+        public Coding Code { get; }
         public String Title { get; }
         public Int32 Min { get; }
         public Int32 Max { get; }
         List<T> items = new List<T>();
 
-        public SectionList(CodeableConcept code,
-            String title,
+        public SectionList(String title,
+            Coding code,
             Int32 min,
             Int32 max)
         {

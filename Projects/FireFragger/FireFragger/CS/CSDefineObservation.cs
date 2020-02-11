@@ -17,7 +17,8 @@ namespace FireFragger
     /// </summary>
     class CSDefineObservation : CSDefineBase
     {
-        public CSDefineObservation(CSBuilder csBuilder) : base(csBuilder)
+        public CSDefineObservation(CSBuilder csBuilder,
+                    FragInfo fragBase) : base(csBuilder, fragBase)
         {
         }
 
@@ -102,9 +103,9 @@ namespace FireFragger
             }
         }
 
-        public void Build(FragInfo fragInfo)
+        public void Build()
         {
-            DefineHasMembers(fragInfo);
+            DefineHasMembers(this.fragBase);
         }
     }
 }

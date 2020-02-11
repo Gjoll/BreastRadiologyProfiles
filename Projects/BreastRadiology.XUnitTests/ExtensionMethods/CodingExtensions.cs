@@ -18,6 +18,16 @@ namespace BreastRadiology.XUnitTests
         /// We dont want to constrain the display and text in a pettern, so just copy the
         /// system and code
         /// </summary>
+        public static Coding ToPattern(this Coding coding)
+        {
+            return new Coding(coding.System, coding.Code);
+        }
+
+        /// <summary>
+        /// Convert a coding to a codeable concept suitable for use in a pattern.
+        /// We dont want to constrain the display and text in a pettern, so just copy the
+        /// system and code
+        /// </summary>
         public static CodeableConcept ToPattern(this CodeableConcept concept)
         {
             if (concept.Coding.Count != 1)

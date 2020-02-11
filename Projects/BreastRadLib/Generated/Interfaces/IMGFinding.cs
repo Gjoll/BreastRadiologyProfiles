@@ -27,5 +27,8 @@ namespace BreastRadLib
         MemberList<IMGAbnormalityFatNecrosis> MGAbnormalityFatNecrosis {get;}
         MemberList<IMGBreastDensity> MGBreastDensity {get;}
 		//- Fields
+
+		//+ Methods
+		//- Methods
 	}
 }

@@ -13,5 +13,8 @@ namespace BreastRadLib
 	{
 		//+ Fields
 		//- Fields
+
+		//+ Methods
+		//- Methods
 	}
 }

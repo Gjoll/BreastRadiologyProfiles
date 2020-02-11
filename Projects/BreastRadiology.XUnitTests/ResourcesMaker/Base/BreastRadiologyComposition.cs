@@ -57,16 +57,13 @@ namespace BreastRadiology.XUnitTests
                 {
                     ElementTreeSlice slice = sliceElementDef.CreateSlice(sliceName);
 
-                    CodeableConcept sectionCode = new CodeableConcept();
-                    sectionCode.Coding.Add(code);
-
                     CreateElement(slice, "title")
                         .Single()
-                            .Fixed(new FhirString(title))
-                            ;
+                        .Fixed(new FhirString(title))
+                        ;
                     CreateElement(slice, "code")
                         .Single()
-                        .Fixed(sectionCode)
+                        .Pattern(code.ToPattern())
                         ;
                     CreateElement(slice, "focus")
                         .Zero()

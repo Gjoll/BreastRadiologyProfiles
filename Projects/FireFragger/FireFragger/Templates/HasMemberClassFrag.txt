@@ -6,5 +6,5 @@
 		%HasMemberDefinitions:lb:prefix=            %
 		//- Constructor
 
-		//+ *Methods
-		//- *Methods
+		//+ Methods
+		//- Methods
