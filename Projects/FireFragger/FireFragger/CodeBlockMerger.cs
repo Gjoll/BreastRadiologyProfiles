@@ -41,7 +41,7 @@ namespace FireFragger
                 Merge(codeBlockNested, mergeBlockNested);
             }
 
-            foreach (CodeBlock mergeBlock in mergeCode.Blocks.Children)
+            foreach (CodeBlock mergeBlock in mergeCode.Blocks.AllNamedBlocks)
                 ProcessBlock(mergeBlock);
         }
 
