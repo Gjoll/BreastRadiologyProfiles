@@ -12,7 +12,7 @@ namespace BreastRadLib
     }
 
     public class MemberList<T> : IMemberList
-        where T : IResourceBase
+        where T : IBaseBase
     {
         public Int32 Min { get; }
         public Int32 Max { get; }

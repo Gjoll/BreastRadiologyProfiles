@@ -34,6 +34,10 @@ namespace FireFragger
             if (this.fragBase.DiffNodes.TryGetElementNode("Composition.section", out ElementTreeNode sectionNode) == false)
                 return;
 
+            this.ClassWriteCode
+                .AppendCode($"ClearSection();")
+                ;
+
             foreach (ElementTreeSlice sectionSlice in sectionNode.Slices.Skip(1))
             {
                 String sliceName = sectionSlice.ElementDefinition.SliceName;
@@ -54,12 +58,18 @@ namespace FireFragger
                 String[] references = this.References(entryNode);
                 String reference;
                 if (references.Length == 1)
-                    reference = references[0].LastUriPart();
+                {
+                    String url = references[0];
+                    reference = url.LastUriPart();
+                    if (url.Trim().ToLower().StartsWith("http://hl7.org/fhir/structuredefinition/"))
+                        reference += "Base";
+                }
                 else
-                    reference = "DomainResource";
+                    reference = "ResourceBase";
 
                 Int32 max = ToMax(sectionSlice.ElementDefinition.Max);
                 String propertyName = sliceName.ToMachineName();
+                String sectionCodeName = $"{propertyName}SectionCode";
 
                 this.ClassFields
                     .BlankLine()
@@ -68,23 +78,42 @@ namespace FireFragger
                     .Summary($"{sectionSlice.ElementDefinition.ElementId}")
                     .SummaryClose()
                     ;
+                this.ClassFields
+                    .AppendCode($"Coding {sectionCodeName} = new Coding(\"{code.System}\", \"{code.Code}\");")
+                    ;
+
                 if (max == 1)
+                {
                     this.ClassFields
                         .AppendCode($"public {reference} {propertyName} {{ get; set; }}")
                         ;
+
+                    this.ClassReadCode
+                        .BlankLine()
+                        .AppendCode($"this.{propertyName} = ReadSection<{reference}>(this.{sectionCodeName});")
+                        ;
+                }
                 else
+                {
                     this.ClassFields
                         .AppendCode($"public List<{reference}> {propertyName} {{ get; }} = new List<{reference}>();")
                         ;
 
+                    this.ClassReadCode
+                        .AppendCode($"ReadSection<{reference}>({sectionCodeName},")
+                        .AppendCode($"        {sectionSlice.ElementDefinition.Min},")
+                        .AppendCode($"        {max},")
+                        .AppendCode($"        this.{propertyName});")
+                        ;
+                }
+
                 this.ClassWriteCode
-                    .BlankLine()
                     .AppendCode($"WriteSection<{reference}>(\"{title}\",")
-                    .AppendCode($"        new Coding(\"{code.System}\", \"{code.Code}\"),")
+                    .AppendCode($"        {sectionCodeName},")
                     .AppendCode($"        {sectionSlice.ElementDefinition.Min},")
                     .AppendCode($"        {max},")
                     .AppendCode($"        this.{propertyName});")
-                ;
+                    ;
 
                 if (max == 1)
                     this.InterfaceFields

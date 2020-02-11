@@ -5,16 +5,22 @@ using System.Text;
 
 namespace BreastRadLib
 {
-    public interface IExtensionBase : IResourceBase
+    public interface IExtensionBase : IBaseBase
     {
     }
 
-    public class ExtensionBase : BaseBase<Extension>, IExtensionBase
+    public class ExtensionBase : BaseBase, IExtensionBase
     {
+        public Extension Resource => (Extension)this.resource;
+
         public override String Id
         {
-            get => this.resource.ElementId;
-            set => this.resource.ElementId = value;
+            get => this.Resource.ElementId;
+            set => this.Resource.ElementId = value;
+        }
+
+        public ExtensionBase(Extension resource) : base(resource)
+        {
         }
     }
 }

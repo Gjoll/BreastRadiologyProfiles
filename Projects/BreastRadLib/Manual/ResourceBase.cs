@@ -9,22 +9,18 @@ namespace BreastRadLib
     {
     }
 
-    public abstract class ResourceBase<T> : BaseBase<T>, IResourceBase
-        where T : Resource, new()
+    public abstract class ResourceBase : BaseBase, IResourceBase
     {
+        DomainResource domainResource => (DomainResource)this.resource;
+
         public override String Id
         {
-            get => this.resource.Id;
-            set => this.resource.Id = value;
+            get => this.domainResource.Id;
+            set => this.domainResource.Id = value;
         }
 
-        public ResourceBase(T resource) : base(resource)
+        public ResourceBase(DomainResource resource) : base(resource)
         {
-        }
-
-        public ResourceBase() : base()
-        {
-            this.resource = new T();
         }
     }
 }

@@ -14,7 +14,7 @@ namespace BreastRadLib
 		//+ Fields
 		//- Fields
 
-		public USFinding()
+		public USFinding(Observation resource) : base(resource)
 		{
 			//+ Constructor
 			//- Constructor

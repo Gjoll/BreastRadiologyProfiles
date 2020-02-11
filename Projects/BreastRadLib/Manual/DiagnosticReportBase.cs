@@ -9,7 +9,12 @@ namespace BreastRadLib
     {
     }
 
-    public class DiagnosticReportBase : ResourceBase<DiagnosticReport>, IDiagnosticReportBase
+    public class DiagnosticReportBase : ResourceBase, IDiagnosticReportBase
     {
+        public DiagnosticReport Resource => (DiagnosticReport)this.resource;
+
+        public DiagnosticReportBase(DiagnosticReport resource) : base(resource)
+        {
+        }
     }
 }

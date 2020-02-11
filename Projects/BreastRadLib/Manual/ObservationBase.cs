@@ -9,9 +9,15 @@ namespace BreastRadLib
     {
     }
 
-    public class ObservationBase: ResourceBase<Observation>, IObservationBase
+    public class ObservationBase: ResourceBase, IObservationBase
     {
+        public Observation Resource => (Observation) this.resource;
+
         List<IMemberList> hasMemberLists = new List<IMemberList>();
+
+        public ObservationBase(Observation resource) : base(resource)
+        {
+        }
 
         protected MemberList<T> CreateHasMemberList<T>(Int32 min, Int32 max)
             where T : IResourceBase
@@ -23,11 +29,11 @@ namespace BreastRadLib
 
         public void LoadHasMembers(ResourceBag resourceBag)
         {
-            foreach (ResourceReference hasMember in resource.HasMember)
-            {
-                //if (resourceBag.TryGetEntry(hasMember.Url, out Bundle.EntryComponent entry) == false)
-                //    throw new Exception("Reference '{hasMember.Url}' not found in bag");
-            }
+            //foreach (ResourceReference hasMember in resource.HasMember)
+            //{
+            //    //if (resourceBag.TryGetEntry(hasMember.Url, out Bundle.EntryComponent entry) == false)
+            //    //    throw new Exception("Reference '{hasMember.Url}' not found in bag");
+            //}
         }
 
         public void Unload(ResourceBag resourceBag)

@@ -17,7 +17,7 @@ namespace BreastRadLib
         public MemberList<IConsistentWith> ConsistentWith {get;}
 		//- Fields
 
-		public MGAbnormalityAsymmetry()
+		public MGAbnormalityAsymmetry(Observation resource) : base(resource)
 		{
 			//+ Constructor
 		

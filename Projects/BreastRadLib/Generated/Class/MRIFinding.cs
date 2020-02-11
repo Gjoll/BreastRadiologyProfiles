@@ -14,7 +14,7 @@ namespace BreastRadLib
 		//+ Fields
 		//- Fields
 
-		public MRIFinding()
+		public MRIFinding(Observation resource) : base(resource)
 		{
 			//+ Constructor
 			//- Constructor

@@ -9,14 +9,40 @@ namespace BreastRadLib
     {
     }
 
-    public class CompositionBase : ResourceBase<Composition>
+    public class CompositionBase : ResourceBase, ICompositionBase
     {
-        protected void WriteSection<T>(String title, Coding code, Int32 min, Int32 max, T item)
+        public Composition Resource => (Composition)this.resource;
+
+        public CompositionBase(Composition resource) : base(resource)
         {
         }
 
-        protected void WriteSection<T>(String title, Coding code, Int32 min, Int32 max, List<T> items)
+        protected void ClearSection()
         {
+        }
+
+        protected void ReadSection<T>(Coding code, Int32 min, Int32 max, List<T> items)
+            where T : IBaseBase
+        {
+            throw new NotImplementedException();
+        }
+
+        protected T ReadSection<T>(Coding code)
+            where T : IBaseBase
+        {
+            throw new NotImplementedException();
+        }
+
+        protected void WriteSection<T>(String title, Coding code, Int32 min, Int32 max, T item)
+            where T : IBaseBase
+        {
+            throw new NotImplementedException();
+        }
+
+        protected void WriteSection<T>(String title, Coding code, Int32 min, Int32 max, List<T> items)
+            where T : IBaseBase
+        {
+            throw new NotImplementedException();
         }
     }
 }

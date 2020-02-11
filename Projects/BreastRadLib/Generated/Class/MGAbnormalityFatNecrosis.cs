@@ -17,7 +17,7 @@ namespace BreastRadLib
         public MemberList<IConsistentWith> ConsistentWith {get;}
 		//- Fields
 
-		public MGAbnormalityFatNecrosis()
+		public MGAbnormalityFatNecrosis(Observation resource) : base(resource)
 		{
 			//+ Constructor
 		

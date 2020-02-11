@@ -14,7 +14,7 @@ namespace BreastRadLib
 		//+ Fields
 		//- Fields
 
-		public BreastRadReport()
+		public BreastRadReport(DiagnosticReport resource) : base(resource)
 		{
 			//+ Constructor
 			//- Constructor

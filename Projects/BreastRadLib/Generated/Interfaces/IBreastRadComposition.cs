@@ -12,10 +12,10 @@ namespace BreastRadLib
 	public interface IBreastRadComposition : ICompositionBase, IHeaderFragment
 	{
 		//+ Fields
-		BreastRadReport Report { get; set; }                                                                                                      // CSDefineComposition.cs:91
-		List<ClinicalImpression> Impressions { get; }                                                                                             // CSDefineComposition.cs:95
-		List<Resource> RelatedResources { get; }                                                                                                  // CSDefineComposition.cs:95
-		List<DomainResource> Recommendations { get; }                                                                                             // CSDefineComposition.cs:95
+		BreastRadReport Report { get; set; }                                                                                                      // CSDefineComposition.cs:121
+		List<ClinicalImpressionBase> Impressions { get; }                                                                                         // CSDefineComposition.cs:125
+		List<ResourceBase> RelatedResources { get; }                                                                                              // CSDefineComposition.cs:125
+		List<ResourceBase> Recommendations { get; }                                                                                               // CSDefineComposition.cs:125
 		//- Fields
 
 		//+ Methods

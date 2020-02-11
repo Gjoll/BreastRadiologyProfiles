@@ -18,7 +18,7 @@ namespace BreastRadLib
         public MemberList<IConsistentWith> ConsistentWith {get;}
 		//- Fields
 
-		public AbnormalityMass()
+		public AbnormalityMass(Observation resource) : base(resource)
 		{
 			//+ Constructor
 		

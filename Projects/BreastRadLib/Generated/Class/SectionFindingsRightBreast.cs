@@ -19,7 +19,7 @@ namespace BreastRadLib
         public MemberList<IUSFinding> USFinding {get;}
 		//- Fields
 
-		public SectionFindingsRightBreast()
+		public SectionFindingsRightBreast(Observation resource) : base(resource)
 		{
 			//+ Constructor
 		

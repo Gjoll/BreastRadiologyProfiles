@@ -28,7 +28,7 @@ namespace BreastRadLib
         public MemberList<IMGBreastDensity> MGBreastDensity {get;}
 		//- Fields
 
-		public MGFinding()
+		public MGFinding(Observation resource) : base(resource)
 		{
 			//+ Constructor
 		

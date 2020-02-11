@@ -14,7 +14,7 @@ namespace BreastRadLib
 		//+ Fields
 		//- Fields
 
-		public ServiceRecommendation()
+		public ServiceRecommendation(ServiceRequest resource) : base(resource)
 		{
 			//+ Constructor
 			//- Constructor

@@ -13,21 +13,15 @@ namespace BreastRadLib
         String Id { get; set; }
     }
 
-    public abstract class BaseBase<T> : IBaseBase
-        where T : Base, new()
+    public abstract class BaseBase : IBaseBase
     {
         public abstract String Id { get; set; }
 
-        protected T resource;
+        protected Base resource;
 
-        public BaseBase(T resource)
+        public BaseBase(Base resource)
         {
             this.resource = resource;
-        }
-
-        public BaseBase()
-        {
-            this.resource = new T();
         }
     }
 }

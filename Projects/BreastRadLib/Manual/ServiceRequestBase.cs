@@ -9,7 +9,12 @@ namespace BreastRadLib
     {
     }
 
-    public class ServiceRequestBase : ResourceBase<ServiceRequest>, IServiceRequestBase
+    public class ServiceRequestBase : ResourceBase, IServiceRequestBase
     {
+        public ServiceRequest Resource => (ServiceRequest)this.resource;
+
+        public ServiceRequestBase(ServiceRequest resource) : base(resource)
+        {
+        }
     }
 }

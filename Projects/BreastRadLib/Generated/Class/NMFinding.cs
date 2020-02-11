@@ -14,7 +14,7 @@ namespace BreastRadLib
 		//+ Fields
 		//- Fields
 
-		public NMFinding()
+		public NMFinding(Observation resource) : base(resource)
 		{
 			//+ Constructor
 			//- Constructor
