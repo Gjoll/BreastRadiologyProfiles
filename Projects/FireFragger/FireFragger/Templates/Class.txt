@@ -10,7 +10,7 @@ using Hl7.Fhir.Serialization;
 namespace BreastRadLib
 {
 	//+*Header
-	public class %ClassName% : BreastRadBase%Interfaces%
+	public class %ClassName% : %FhirBase%Base%Interfaces%
 	//-*Header
 	{
 		//+ Fields
@@ -20,18 +20,6 @@ namespace BreastRadLib
 		{
 			//+ Constructor
 			//- Constructor
-		}
-
-		public void Load(ResourceBag resourceBag, Observation resource)
-		{
-			//+ *LoadMethods
-			//- *LoadMethods
-		}
-
-		public void Unload(ResourceBag resourceBag, Observation resource)
-		{
-			//+ *UnloadMethods
-			//- *UnloadMethods
 		}
 
 		//+ *Methods

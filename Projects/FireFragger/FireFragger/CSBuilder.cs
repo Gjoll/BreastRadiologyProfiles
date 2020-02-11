@@ -161,6 +161,7 @@ namespace FireFragger
                         if (this.IsFragment(sd) == false)
                         {
                             fi.ClassEditor = new CodeEditor();
+                            AddMacros(fi.ClassEditor, fi);
                             fi.ClassEditor.TryAddUserMacro("ClassName", ClassName(fi));
                             fi.ClassEditor.Load(Path.Combine("Templates", "Class.txt"));
                         }
@@ -214,9 +215,9 @@ namespace FireFragger
                 String refInterfaceName = InterfaceName(refFrag);
                 String fieldName = PropertyName(slice.Name);
 
-                classFields.Add($"public HasMemberList<{refInterfaceName}> {fieldName} {{get;}}");
+                classFields.Add($"public MemberList<{refInterfaceName}> {fieldName} {{get;}}");
                 if (level == 0)
-                    interfaceFields.Add($"HasMemberList<{refInterfaceName}> {fieldName} {{get;}}");
+                    interfaceFields.Add($"MemberList<{refInterfaceName}> {fieldName} {{get;}}");
 
                 Int32 min = 0;
                 if (slice.ElementDefinition.Min.HasValue)
@@ -227,7 +228,7 @@ namespace FireFragger
                     if (slice.ElementDefinition.Max != "*")
                         max = Int32.Parse(slice.ElementDefinition.Max);
                 }
-                classInstantiations.Add($"this.{fieldName} = new HasMemberList<{refInterfaceName}>({min}, {max});");
+                classInstantiations.Add($"this.{fieldName} = CreateHasMemberList<{refInterfaceName}>({min}, {max});");
             }
 
             void Build(FragInfo fi, Int32 level)
@@ -270,6 +271,11 @@ namespace FireFragger
             }
         }
 
+        void AddMacros(CodeEditor ce,
+            FragInfo fi)
+        {
+            ce.TryAddUserMacro("FhirBase", fi.StructDef.BaseDefinition.LastUriPart());
+        }
 
         void DefineInterfaces(FragInfo fi)
         {
@@ -279,11 +285,13 @@ namespace FireFragger
                 interfaces.Append($", {InterfaceName(refFrag)}");
             }
 
+            AddMacros(fi.InterfaceEditor, fi);
             fi.InterfaceEditor.TryAddUserMacro("Interfaces", interfaces.ToString());
             fi.InterfaceEditor.Blocks.Find("*Header").Reload();
 
             if (fi.ClassEditor != null)
             {
+                AddMacros(fi.ClassEditor, fi);
                 fi.ClassEditor.TryAddUserMacro("Interfaces", interfaces.ToString());
                 fi.ClassEditor.Blocks.Find("*Header").Reload();
             }

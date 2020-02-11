@@ -13,13 +13,13 @@ namespace BreastRadLib
         public ResourceBag()
         {
             this.bundle = new Bundle();
-            this.bundle.Type = Bundle.BundleType.Batch;
+            this.bundle.Type = Bundle.BundleType.Document;
         }
 
         public ResourceBag(Bundle bundle)
         {
-            if (this.bundle.Type != Bundle.BundleType.Batch)
-                throw new Exception($"Expected bundle type batch, got '{this.bundle.Type}'");
+            if (this.bundle.Type != Bundle.BundleType.Document)
+                throw new Exception($"Expected bundle type 'Document', got '{this.bundle.Type}'");
             this.bundle = bundle;
             foreach (Bundle.EntryComponent entry in bundle.Entry)
                 resources.Add(entry.FullUrl, entry);
