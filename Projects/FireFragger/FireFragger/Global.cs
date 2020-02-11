@@ -17,6 +17,7 @@ namespace FireFragger
 
 
         public const String ClinicalImpressionUrl = "http://hl7.org/fhir/StructureDefinition/ClinicalImpression";
+        public const String CompositionUrl = "http://hl7.org/fhir/StructureDefinition/Composition";
         public const String DiagnosticReportUrl = "http://hl7.org/fhir/StructureDefinition/DiagnosticReport";
         public const String DomainResourceUrl = "http://hl7.org/fhir/StructureDefinition/DomainResource";
         public const String ExtensionUrl = "http://hl7.org/fhir/StructureDefinition/Extension";

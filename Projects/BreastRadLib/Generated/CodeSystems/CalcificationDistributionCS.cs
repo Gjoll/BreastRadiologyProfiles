@@ -10,12 +10,12 @@ using Hl7.Fhir.Serialization;
 namespace BreastRadLib
 {
 	//+ Header
-	public class CalcificationDistributionCS                                                                                                   // CSBuilder.cs:441
+	public class CalcificationDistributionCS                                                                                                   // CSBuilder.cs:391
 	//- Header
 	{
 		//+ Fields
-		const string System = "http://hl7.org/fhir/us/breast-radiology/CodeSystem/CalcificationDistributionCS";                                   // CSBuilder.cs:445
-		                                                                                                                                          // CSBuilder.cs:457
+		const string System = "http://hl7.org/fhir/us/breast-radiology/CodeSystem/CalcificationDistributionCS";                                   // CSBuilder.cs:395
+		                                                                                                                                          // CSBuilder.cs:407
 		/// <summary>
 		/// Grouped (historically, "clustered") This term should be used when relatively few calcifications occupy a small portion of breasttissue.
 		/// The lower limit for use of this descriptor is usually when 5 calcifications are groupedwithin 1 cm of each other or when a definable pattern is identified.
@@ -24,8 +24,8 @@ namespace BreastRadLib
 		/// 
 		/// Valid for the following modalities: MG.
 		/// </summary>
-		public static Coding Code_ClusteredDistribution = new Coding(System, "ClusteredDistribution", "Clustered distribution");                  // CSBuilder.cs:471
-		                                                                                                                                          // CSBuilder.cs:457
+		public static Coding Code_ClusteredDistribution = new Coding(System, "ClusteredDistribution", "Clustered distribution");                  // CSBuilder.cs:421
+		                                                                                                                                          // CSBuilder.cs:407
 		/// <summary>
 		/// Diffuse (historically, "scattered").
 		/// These are calcifications that are distributed randomly throughout the breast.
@@ -33,8 +33,8 @@ namespace BreastRadLib
 		/// [-- Bi-Rads® Atlas — Mammography Fifth Ed. 2013]
 		/// Valid for the following modalities: MG.
 		/// </summary>
-		public static Coding Code_DiffuseDistribution = new Coding(System, "DiffuseDistribution", "Diffuse distribution");                        // CSBuilder.cs:471
-		                                                                                                                                          // CSBuilder.cs:457
+		public static Coding Code_DiffuseDistribution = new Coding(System, "DiffuseDistribution", "Diffuse distribution");                        // CSBuilder.cs:421
+		                                                                                                                                          // CSBuilder.cs:407
 		/// <summary>
 		/// This term should be used when relatively few calcifications occupy a small portion of breast tissue.
 		/// The lower limit for use of this descriptor is usually when 5 calcifications are grouped within 1 cm of each other or when a definable pattern is identified.
@@ -42,8 +42,8 @@ namespace BreastRadLib
 		/// [-- Bi-Rads® Atlas — Mammography Fifth Ed. 2013]
 		/// Valid for the following modalities: MG.
 		/// </summary>
-		public static Coding Code_GroupedDistribution = new Coding(System, "GroupedDistribution", "Grouped distribution");                        // CSBuilder.cs:471
-		                                                                                                                                          // CSBuilder.cs:457
+		public static Coding Code_GroupedDistribution = new Coding(System, "GroupedDistribution", "Grouped distribution");                        // CSBuilder.cs:421
+		                                                                                                                                          // CSBuilder.cs:407
 		/// <summary>
 		/// These are calcifications arrayed in a line.
 		/// This distribution may elevate suspicion for malignancy, as it suggests deposits in a duct.
@@ -51,8 +51,8 @@ namespace BreastRadLib
 		/// [-- Bi-Rads® Atlas — Mammography Fifth Ed. 2013]
 		/// Valid for the following modalities: MG.
 		/// </summary>
-		public static Coding Code_LinearDistribution = new Coding(System, "LinearDistribution", "Linear distribution");                           // CSBuilder.cs:471
-		                                                                                                                                          // CSBuilder.cs:457
+		public static Coding Code_LinearDistribution = new Coding(System, "LinearDistribution", "Linear distribution");                           // CSBuilder.cs:421
+		                                                                                                                                          // CSBuilder.cs:407
 		/// <summary>
 		/// This descriptor is used for numerous calcifications that occupy a large portion of breast tissue (more than 2 cm in greatest dimension), not conforming to a duct distribution.
 		/// Since this distribution may involve most of a quadrant or even more than a single quadrant, malignancy is less likely.
@@ -60,8 +60,8 @@ namespace BreastRadLib
 		/// [-- Bi-Rads® Atlas — Mammography Fifth Ed. 2013]
 		/// Valid for the following modalities: MG.
 		/// </summary>
-		public static Coding Code_RegionalDistribution = new Coding(System, "RegionalDistribution", "Regional distribution");                     // CSBuilder.cs:471
-		                                                                                                                                          // CSBuilder.cs:457
+		public static Coding Code_RegionalDistribution = new Coding(System, "RegionalDistribution", "Regional distribution");                     // CSBuilder.cs:421
+		                                                                                                                                          // CSBuilder.cs:407
 		/// <summary>
 		/// Scattered distributions are also called diffuse distributions.
 		/// These are calcifications that are distributed randomly throughout the breast.
@@ -70,8 +70,8 @@ namespace BreastRadLib
 		/// 
 		/// Valid for the following modalities: MG.
 		/// </summary>
-		public static Coding Code_ScatteredDistribution = new Coding(System, "ScatteredDistribution", "Scattered distribution");                  // CSBuilder.cs:471
-		                                                                                                                                          // CSBuilder.cs:457
+		public static Coding Code_ScatteredDistribution = new Coding(System, "ScatteredDistribution", "Scattered distribution");                  // CSBuilder.cs:421
+		                                                                                                                                          // CSBuilder.cs:407
 		/// <summary>
 		/// Calcifications in a segmental distribution are of concern because they suggest deposits in a duct or ducts and their branches, raising the possibility of extensive or multifocal breast cancer in a lobe or segment of the breast.
 		/// Although benign causes of segmental calcifications exist (e.g.
@@ -80,7 +80,7 @@ namespace BreastRadLib
 		/// [-- Bi-Rads® Atlas — Mammography Fifth Ed. 2013]
 		/// Valid for the following modalities: MG.
 		/// </summary>
-		public static Coding Code_SegmentalDistribution = new Coding(System, "SegmentalDistribution", "Segmental distribution");                  // CSBuilder.cs:471
+		public static Coding Code_SegmentalDistribution = new Coding(System, "SegmentalDistribution", "Segmental distribution");                  // CSBuilder.cs:421
 		//- Fields
 	}
 }

@@ -10,12 +10,12 @@ using Hl7.Fhir.Serialization;
 namespace BreastRadLib
 {
 	//+ Header
-	public class AbnormalityDuctTypeCS                                                                                                         // CSBuilder.cs:441
+	public class AbnormalityDuctTypeCS                                                                                                         // CSBuilder.cs:391
 	//- Header
 	{
 		//+ Fields
-		const string System = "http://hl7.org/fhir/us/breast-radiology/CodeSystem/AbnormalityDuctTypeCS";                                         // CSBuilder.cs:445
-		                                                                                                                                          // CSBuilder.cs:457
+		const string System = "http://hl7.org/fhir/us/breast-radiology/CodeSystem/AbnormalityDuctTypeCS";                                         // CSBuilder.cs:395
+		                                                                                                                                          // CSBuilder.cs:407
 		/// <summary>
 		/// Duct is considered normal.
 		/// It is surrounded by normal cells and collagen in the breast with no abnormalities.
@@ -23,8 +23,8 @@ namespace BreastRadLib
 		/// 
 		/// Valid for the following modalities: MG.
 		/// </summary>
-		public static Coding Code_DuctNormal = new Coding(System, "DuctNormal", "Duct normal");                                                   // CSBuilder.cs:471
-		                                                                                                                                          // CSBuilder.cs:457
+		public static Coding Code_DuctNormal = new Coding(System, "DuctNormal", "Duct normal");                                                   // CSBuilder.cs:421
+		                                                                                                                                          // CSBuilder.cs:407
 		/// <summary>
 		/// The mammographic finding of solitary dilated duct is rare and poorly understood.
 		/// There are anecdotal reports of solitary dilated duct as the only mammographic finding of underlying malignancy, indicating its potential importance in the early detection of breast cancer.
@@ -37,8 +37,8 @@ namespace BreastRadLib
 		/// -- https://www.ajronline.org/doi/full/10.2214/AJR.09.2944
 		/// Valid for the following modalities: MG US.
 		/// </summary>
-		public static Coding Code_SolitaryDilatedDuct = new Coding(System, "SolitaryDilatedDuct", "Solitary dilated duct");                       // CSBuilder.cs:471
-		                                                                                                                                          // CSBuilder.cs:457
+		public static Coding Code_SolitaryDilatedDuct = new Coding(System, "SolitaryDilatedDuct", "Solitary dilated duct");                       // CSBuilder.cs:421
+		                                                                                                                                          // CSBuilder.cs:407
 		/// <summary>
 		/// A noncancerous condition that results in clogged ducts around your nipple.
 		/// While it sometimes causes pain, irritation and discharge, it's generally not a cause for concern.
@@ -47,7 +47,7 @@ namespace BreastRadLib
 		/// 
 		/// Valid for the following modalities: MG US.
 		/// </summary>
-		public static Coding Code_DuctEctasia = new Coding(System, "DuctEctasia", "Duct ectasia");                                                // CSBuilder.cs:471
+		public static Coding Code_DuctEctasia = new Coding(System, "DuctEctasia", "Duct ectasia");                                                // CSBuilder.cs:421
 		//- Fields
 	}
 }

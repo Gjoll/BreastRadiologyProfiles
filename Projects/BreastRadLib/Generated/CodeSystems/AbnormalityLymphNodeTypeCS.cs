@@ -10,12 +10,12 @@ using Hl7.Fhir.Serialization;
 namespace BreastRadLib
 {
 	//+ Header
-	public class AbnormalityLymphNodeTypeCS                                                                                                    // CSBuilder.cs:441
+	public class AbnormalityLymphNodeTypeCS                                                                                                    // CSBuilder.cs:391
 	//- Header
 	{
 		//+ Fields
-		const string System = "http://hl7.org/fhir/us/breast-radiology/CodeSystem/AbnormalityLymphNodeTypeCS";                                    // CSBuilder.cs:445
-		                                                                                                                                          // CSBuilder.cs:457
+		const string System = "http://hl7.org/fhir/us/breast-radiology/CodeSystem/AbnormalityLymphNodeTypeCS";                                    // CSBuilder.cs:395
+		                                                                                                                                          // CSBuilder.cs:407
 		/// <summary>
 		/// Axillary Nodes.
 		/// The axillary nodes are a group of lymph nodes located in the axillary (or armpit) region of the body.
@@ -23,8 +23,8 @@ namespace BreastRadLib
 		/// 
 		/// Valid for the following modalities: MG US.
 		/// </summary>
-		public static Coding Code_NodeAxillary = new Coding(System, "NodeAxillary", "Node axillary");                                             // CSBuilder.cs:471
-		                                                                                                                                          // CSBuilder.cs:457
+		public static Coding Code_NodeAxillary = new Coding(System, "NodeAxillary", "Node axillary");                                             // CSBuilder.cs:421
+		                                                                                                                                          // CSBuilder.cs:407
 		/// <summary>
 		/// Swollen lymph nodes usually occur as a result of infection from bacteria or viruses.
 		/// Rarely, swollen lymph nodes are caused by cancer.Your lymph nodes, also called lymph glands, play a vital role in your body's ability to fight off infections.
@@ -33,50 +33,50 @@ namespace BreastRadLib
 		/// 
 		/// Valid for the following modalities: MG US.
 		/// </summary>
-		public static Coding Code_NodeEnlarged = new Coding(System, "NodeEnlarged", "Node enlarged");                                             // CSBuilder.cs:471
-		                                                                                                                                          // CSBuilder.cs:457
+		public static Coding Code_NodeEnlarged = new Coding(System, "NodeEnlarged", "Node enlarged");                                             // CSBuilder.cs:421
+		                                                                                                                                          // CSBuilder.cs:407
 		/// <summary>
 		/// Valid for the following modalities: MG US.
 		/// </summary>
-		public static Coding Code_NodeFocalCortex = new Coding(System, "NodeFocalCortex", "Node focal cortex");                                   // CSBuilder.cs:471
-		                                                                                                                                          // CSBuilder.cs:457
+		public static Coding Code_NodeFocalCortex = new Coding(System, "NodeFocalCortex", "Node focal cortex");                                   // CSBuilder.cs:421
+		                                                                                                                                          // CSBuilder.cs:407
 		/// <summary>
 		/// (Infraclavicular labeled at upper left.) One or two deltopectoral lymph nodes (or infraclavicular nodes) are found beside the cephalic vein, between the pectoralis major and deltoideus, immediately below the clavicle .
 		/// They are situated in the course of the external collecting trunks of the arm.
 		/// 
 		/// Valid for the following modalities: US.
 		/// </summary>
-		public static Coding Code_NodeInfraclavicular = new Coding(System, "NodeInfraclavicular", "Node infraclavicular");                        // CSBuilder.cs:471
-		                                                                                                                                          // CSBuilder.cs:457
+		public static Coding Code_NodeInfraclavicular = new Coding(System, "NodeInfraclavicular", "Node infraclavicular");                        // CSBuilder.cs:421
+		                                                                                                                                          // CSBuilder.cs:407
 		/// <summary>
 		/// Intramammary lymph nodes are defined as lymph nodes surrounded by breast tissue.
 		/// 
 		/// Valid for the following modalities: MG US.
 		/// </summary>
-		public static Coding Code_NodeIntramammary = new Coding(System, "NodeIntramammary", "Node intramammary");                                 // CSBuilder.cs:471
-		                                                                                                                                          // CSBuilder.cs:457
+		public static Coding Code_NodeIntramammary = new Coding(System, "NodeIntramammary", "Node intramammary");                                 // CSBuilder.cs:421
+		                                                                                                                                          // CSBuilder.cs:407
 		/// <summary>
 		/// Valid for the following modalities: MG US.
 		/// </summary>
-		public static Coding Code_NodeLymph = new Coding(System, "NodeLymph", "Node lymph");                                                      // CSBuilder.cs:471
-		                                                                                                                                          // CSBuilder.cs:457
+		public static Coding Code_NodeLymph = new Coding(System, "NodeLymph", "Node lymph");                                                      // CSBuilder.cs:421
+		                                                                                                                                          // CSBuilder.cs:407
 		/// <summary>
 		/// Valid for the following modalities: MG US.
 		/// </summary>
-		public static Coding Code_NodeLymphNormal = new Coding(System, "NodeLymphNormal", "Node lymph normal");                                   // CSBuilder.cs:471
-		                                                                                                                                          // CSBuilder.cs:457
+		public static Coding Code_NodeLymphNormal = new Coding(System, "NodeLymphNormal", "Node lymph normal");                                   // CSBuilder.cs:421
+		                                                                                                                                          // CSBuilder.cs:407
 		/// <summary>
 		/// The supraclavicular lymph nodes are a set of lymph nodes found just above the clavicle or collarbone, toward the hollow of the neck.
 		/// Lymph nodes are responsible for filtering the lymphatic fluid of unwanted debris and bacteria.
 		/// 
 		/// Valid for the following modalities: US.
 		/// </summary>
-		public static Coding Code_NodeSupraclavicular = new Coding(System, "NodeSupraclavicular", "Node supraclavicular");                        // CSBuilder.cs:471
-		                                                                                                                                          // CSBuilder.cs:457
+		public static Coding Code_NodeSupraclavicular = new Coding(System, "NodeSupraclavicular", "Node supraclavicular");                        // CSBuilder.cs:421
+		                                                                                                                                          // CSBuilder.cs:407
 		/// <summary>
 		/// Valid for the following modalities: MG US.
 		/// </summary>
-		public static Coding Code_NodeUniformThickness = new Coding(System, "NodeUniformThickness", "Node uniform thickness");                    // CSBuilder.cs:471
+		public static Coding Code_NodeUniformThickness = new Coding(System, "NodeUniformThickness", "Node uniform thickness");                    // CSBuilder.cs:421
 		//- Fields
 	}
 }
