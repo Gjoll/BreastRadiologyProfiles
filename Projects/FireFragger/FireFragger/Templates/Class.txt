@@ -16,7 +16,12 @@ namespace BreastRadLib
 		//+ Fields
 		//- Fields
 
-		public %ClassName%(%FhirBase% resource) : base(resource)
+		public %ClassName%(%FhirBase% resource) : this()
+		{
+			this.SetResource(resource);
+		}
+
+		public %ClassName%() : base()
 		{
 			//+ Constructor
 			//- Constructor

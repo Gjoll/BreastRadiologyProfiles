@@ -19,6 +19,12 @@ namespace BreastRadLib
         {
         }
 
+        public ObservationBase() : base()
+        {
+        }
+
+        public override void SetResource(Base r) => this.resource = (Observation)r;
+
         protected MemberList<T> CreateHasMemberList<T>(Int32 min, Int32 max)
             where T : IResourceBase
         {

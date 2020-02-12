@@ -162,8 +162,8 @@ namespace FireFragger
             {
                 String url = fi.StructDef.Url.Trim().ToLower();
                 this.resourceFactoryProfileBlock
-                    .AppendCode("case \"{url}\":")
-                    .AppendCode("    break;")
+                    .AppendCode($"case \"{url}\":")
+                    .AppendCode($"    return new {ClassName(fi)}();")
                     ;
             }
 
@@ -466,6 +466,8 @@ namespace FireFragger
             this.resourceFactoryEditor = new CodeEditor();
             this.resourceFactoryEditor.Load(Path.Combine(this.OutputDir, "Generated", "ResourceFactory.cs"));
             this.resourceFactoryProfileBlock = this.resourceFactoryEditor.Blocks.Find("Profile");
+            this.resourceFactoryProfileBlock.Clear();
+
             if (Directory.Exists(this.OutputDir) == false)
                 Directory.CreateDirectory(this.OutputDir);
 

@@ -16,5 +16,11 @@ namespace BreastRadLib
         public ServiceRequestBase(ServiceRequest resource) : base(resource)
         {
         }
+
+        public ServiceRequestBase() : base()
+        {
+        }
+
+        public override void SetResource(Base r) => this.resource = (ServiceRequest)r;
     }
 }

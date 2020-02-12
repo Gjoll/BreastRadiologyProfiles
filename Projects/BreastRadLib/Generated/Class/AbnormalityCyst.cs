@@ -18,7 +18,12 @@ namespace BreastRadLib
         public MemberList<IAssociatedFeatures> AssociatedFeatures {get;}
 		//- Fields
 
-		public AbnormalityCyst(Observation resource) : base(resource)
+		public AbnormalityCyst(Observation resource) : this()
+		{
+			this.SetResource(resource);
+		}
+
+		public AbnormalityCyst() : base()
 		{
 			//+ Constructor
 		

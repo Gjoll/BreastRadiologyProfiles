@@ -16,5 +16,11 @@ namespace BreastRadLib
         public DiagnosticReportBase(DiagnosticReport resource) : base(resource)
         {
         }
+
+        public DiagnosticReportBase() : base()
+        {
+        }
+
+        public override void SetResource(Base r) => this.resource = (DiagnosticReport)r;
     }
 }

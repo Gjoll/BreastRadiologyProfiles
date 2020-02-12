@@ -14,7 +14,12 @@ namespace BreastRadLib
 		//+ Fields
 		//- Fields
 
-		public MRIFinding(Observation resource) : base(resource)
+		public MRIFinding(Observation resource) : this()
+		{
+			this.SetResource(resource);
+		}
+
+		public MRIFinding() : base()
 		{
 			//+ Constructor
 			//- Constructor

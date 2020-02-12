@@ -22,5 +22,11 @@ namespace BreastRadLib
         public ExtensionBase(Extension resource) : base(resource)
         {
         }
+
+        public ExtensionBase() : base()
+        {
+        }
+
+        public override void SetResource(Base r) => this.resource = (Extension)r;
     }
 }

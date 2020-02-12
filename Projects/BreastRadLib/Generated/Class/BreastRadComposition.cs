@@ -42,7 +42,12 @@ namespace BreastRadLib
 		public ResourceBase Recommendations { get; set; }                                                                                         // CSDefineComposition.cs:91
 		//- Fields
 
-		public BreastRadComposition(Composition resource) : base(resource)
+		public BreastRadComposition(Composition resource) : this()
+		{
+			this.SetResource(resource);
+		}
+
+		public BreastRadComposition() : base()
 		{
 			//+ Constructor
 			//- Constructor

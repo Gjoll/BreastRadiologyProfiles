@@ -17,7 +17,12 @@ namespace BreastRadLib
         public MemberList<IConsistentWith> ConsistentWith {get;}
 		//- Fields
 
-		public AbnormalityForeignObject(Observation resource) : base(resource)
+		public AbnormalityForeignObject(Observation resource) : this()
+		{
+			this.SetResource(resource);
+		}
+
+		public AbnormalityForeignObject() : base()
 		{
 			//+ Constructor
 		

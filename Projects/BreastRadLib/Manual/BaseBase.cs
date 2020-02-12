@@ -23,7 +23,7 @@ namespace BreastRadLib
         {
         }
 
-        //public abstract void SetResource();
+        public abstract void SetResource(Base r);
 
         public BaseBase(Base resource)
         {

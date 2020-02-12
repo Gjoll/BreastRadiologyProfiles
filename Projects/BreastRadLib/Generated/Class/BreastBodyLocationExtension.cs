@@ -14,7 +14,12 @@ namespace BreastRadLib
 		//+ Fields
 		//- Fields
 
-		public BreastBodyLocationExtension(Extension resource) : base(resource)
+		public BreastBodyLocationExtension(Extension resource) : this()
+		{
+			this.SetResource(resource);
+		}
+
+		public BreastBodyLocationExtension() : base()
 		{
 			//+ Constructor
 			//- Constructor

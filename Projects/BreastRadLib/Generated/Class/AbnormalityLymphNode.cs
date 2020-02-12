@@ -17,7 +17,12 @@ namespace BreastRadLib
         public MemberList<IAssociatedFeatures> AssociatedFeatures {get;}
 		//- Fields
 
-		public AbnormalityLymphNode(Observation resource) : base(resource)
+		public AbnormalityLymphNode(Observation resource) : this()
+		{
+			this.SetResource(resource);
+		}
+
+		public AbnormalityLymphNode() : base()
 		{
 			//+ Constructor
 		

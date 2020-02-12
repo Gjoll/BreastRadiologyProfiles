@@ -14,7 +14,12 @@ namespace BreastRadLib
 		//+ Fields
 		//- Fields
 
-		public ObservedFeature(Observation resource) : base(resource)
+		public ObservedFeature(Observation resource) : this()
+		{
+			this.SetResource(resource);
+		}
+
+		public ObservedFeature() : base()
 		{
 			//+ Constructor
 			//- Constructor

@@ -21,6 +21,8 @@ namespace BreastRadLib
         {
         }
 
+        public override void SetResource(Base r) => this.resource = (Composition)r;
+
         protected void ClearSection()
         {
             this.Resource.Section.Clear();

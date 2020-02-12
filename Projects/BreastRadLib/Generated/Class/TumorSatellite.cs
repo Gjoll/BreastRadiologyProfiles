@@ -14,7 +14,12 @@ namespace BreastRadLib
 		//+ Fields
 		//- Fields
 
-		public TumorSatellite(Observation resource) : base(resource)
+		public TumorSatellite(Observation resource) : this()
+		{
+			this.SetResource(resource);
+		}
+
+		public TumorSatellite() : base()
 		{
 			//+ Constructor
 			//- Constructor

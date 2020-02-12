@@ -18,7 +18,12 @@ namespace BreastRadLib
         public MemberList<IObservedFeature> ObservedFeature {get;}
 		//- Fields
 
-		public AssociatedFeatures(Observation resource) : base(resource)
+		public AssociatedFeatures(Observation resource) : this()
+		{
+			this.SetResource(resource);
+		}
+
+		public AssociatedFeatures() : base()
 		{
 			//+ Constructor
 		

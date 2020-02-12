@@ -16,5 +16,10 @@ namespace BreastRadLib
         public ClinicalImpressionBase(ClinicalImpression resource) : base(resource)
         {
         }
+        public ClinicalImpressionBase() : base()
+        {
+        }
+
+        public override void SetResource(Base r) => this.resource = (ClinicalImpression) r;
     }
 }

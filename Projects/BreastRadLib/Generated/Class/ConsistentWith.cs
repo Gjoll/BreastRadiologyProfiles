@@ -14,7 +14,12 @@ namespace BreastRadLib
 		//+ Fields
 		//- Fields
 
-		public ConsistentWith(Observation resource) : base(resource)
+		public ConsistentWith(Observation resource) : this()
+		{
+			this.SetResource(resource);
+		}
+
+		public ConsistentWith() : base()
 		{
 			//+ Constructor
 			//- Constructor

@@ -14,7 +14,12 @@ namespace BreastRadLib
 		//+ Fields
 		//- Fields
 
-		public BodyDistanceFromExtension(Extension resource) : base(resource)
+		public BodyDistanceFromExtension(Extension resource) : this()
+		{
+			this.SetResource(resource);
+		}
+
+		public BodyDistanceFromExtension() : base()
 		{
 			//+ Constructor
 			//- Constructor
