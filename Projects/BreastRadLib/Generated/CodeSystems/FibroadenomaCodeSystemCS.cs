@@ -10,12 +10,12 @@ using Hl7.Fhir.Serialization;
 namespace BreastRadLib
 {
 	//+ Header
-	public class FibroadenomaCodeSystemCS                                                                                                      // CSBuilder.cs:391
+	public class FibroadenomaCodeSystemCS                                                                                                      // CSBuilder.cs:403
 	//- Header
 	{
 		//+ Fields
-		const string System = "http://hl7.org/fhir/us/breast-radiology/CodeSystem/FibroadenomaCodeSystemCS";                                      // CSBuilder.cs:395
-		                                                                                                                                          // CSBuilder.cs:407
+		const string System = "http://hl7.org/fhir/us/breast-radiology/CodeSystem/FibroadenomaCodeSystemCS";                                      // CSBuilder.cs:407
+		                                                                                                                                          // CSBuilder.cs:419
 		/// <summary>
 		/// A fibroadenoma is a benign, or noncancerous, breast tumor.
 		/// Unlike a breast cancer, which grows larger over time and can spread to other organs, a fibroadenoma remains in the breast tissue.
@@ -25,8 +25,8 @@ namespace BreastRadLib
 		/// 
 		/// Valid for the following modalities: MG US.
 		/// </summary>
-		public static Coding Code_Fibroadenoma = new Coding(System, "Fibroadenoma", "Fibroadenoma");                                              // CSBuilder.cs:421
-		                                                                                                                                          // CSBuilder.cs:407
+		public static Coding Code_Fibroadenoma = new Coding(System, "Fibroadenoma", "Fibroadenoma");                                              // CSBuilder.cs:433
+		                                                                                                                                          // CSBuilder.cs:419
 		/// <summary>
 		/// These are non-cancerous breast lumps.
 		/// Fibroadenomas usually go away with age.
@@ -34,7 +34,7 @@ namespace BreastRadLib
 		/// 
 		/// Valid for the following modalities: MG.
 		/// </summary>
-		public static Coding Code_FibroadenomaDegeneration = new Coding(System, "FibroadenomaDegeneration", "Fibroadenoma degeneration");         // CSBuilder.cs:421
+		public static Coding Code_FibroadenomaDegeneration = new Coding(System, "FibroadenomaDegeneration", "Fibroadenoma degeneration");         // CSBuilder.cs:433
 		//- Fields
 	}
 }

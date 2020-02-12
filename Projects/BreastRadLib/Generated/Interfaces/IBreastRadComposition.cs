@@ -13,9 +13,9 @@ namespace BreastRadLib
 	{
 		//+ Fields
 		BreastRadReport Report { get; set; }                                                                                                      // CSDefineComposition.cs:116
-		List<ClinicalImpressionBase> Impressions { get; }                                                                                         // CSDefineComposition.cs:120
-		List<ResourceBase> RelatedResources { get; }                                                                                              // CSDefineComposition.cs:120
-		List<ResourceBase> Recommendations { get; }                                                                                               // CSDefineComposition.cs:120
+		ClinicalImpressionBase Impressions { get; set; }                                                                                          // CSDefineComposition.cs:116
+		ResourceBase RelatedResources { get; set; }                                                                                               // CSDefineComposition.cs:116
+		ResourceBase Recommendations { get; set; }                                                                                                // CSDefineComposition.cs:116
 		//- Fields
 
 		//+ Methods

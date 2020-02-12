@@ -19,6 +19,12 @@ namespace BreastRadLib
 
         protected Base resource;
 
+        public BaseBase()
+        {
+        }
+
+        //public abstract void SetResource();
+
         public BaseBase(Base resource)
         {
             this.resource = resource;

@@ -14,6 +14,9 @@ namespace FireFragger
 {
     class CSBuilder : ConverterBase, IDisposable
     {
+        CodeEditor resourceFactoryEditor;
+        CodeBlockNested resourceFactoryProfileBlock;
+
         public Dictionary<String, CSInfo> CodeSystems;
         public Dictionary<String, CSInfo> LocalCodeSystems;
         public Dictionary<String, VSInfo> ValueSets;
@@ -155,6 +158,15 @@ namespace FireFragger
             this.ConversionInfo(this.GetType().Name,
                fcn,
                $"Processing fragment {fi.StructDef.Name}");
+            if (fi.ClassEditor != null)
+            {
+                String url = fi.StructDef.Url.Trim().ToLower();
+                this.resourceFactoryProfileBlock
+                    .AppendCode("case \"{url}\":")
+                    .AppendCode("    break;")
+                    ;
+            }
+
             DefineInterfaces(fi);
             switch (fi.StructDef.BaseDefinition)
             {
@@ -433,6 +445,8 @@ namespace FireFragger
 
         void SaveAll()
         {
+            this.resourceFactoryEditor.Save();
+            this.fc.Mark(this.resourceFactoryEditor.SavePath);
             foreach (FragInfo fi in this.SDFragments.Values)
             {
                 Save(fi.InterfaceEditor, Path.Combine(this.OutputDir, "Generated", "Interfaces", $"{InterfaceName(fi)}.cs"));
@@ -449,6 +463,9 @@ namespace FireFragger
 
         public void Build()
         {
+            this.resourceFactoryEditor = new CodeEditor();
+            this.resourceFactoryEditor.Load(Path.Combine(this.OutputDir, "Generated", "ResourceFactory.cs"));
+            this.resourceFactoryProfileBlock = this.resourceFactoryEditor.Blocks.Find("Profile");
             if (Directory.Exists(this.OutputDir) == false)
                 Directory.CreateDirectory(this.OutputDir);
 

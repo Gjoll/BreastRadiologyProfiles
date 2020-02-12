@@ -17,18 +17,19 @@ namespace BreastRadLib
         {
         }
 
+        public CompositionBase() : base()
+        {
+        }
+
         protected void ClearSection()
         {
             this.Resource.Section.Clear();
         }
 
-        protected void ReadSection<T>(ResourceBag resourceBag,
-            Coding code, 
-            Int32 min, 
-            Int32 max, 
-            List<T> items)
-            where T : IBaseBase
+
+        Composition.SectionComponent FindSection(Coding code)
         {
+
             bool IsCode(CodeableConcept sectionCode)
             {
                 foreach (Coding c in sectionCode.Coding)
@@ -42,14 +43,32 @@ namespace BreastRadLib
                 return false;
             }
 
-            items.Clear();
             foreach (Composition.SectionComponent section in this.Resource.Section)
             {
                 if (IsCode(section.Code))
-                {
-                }
+                    return section;
             }
-            throw new NotImplementedException();
+            return null;
+        }
+
+        protected void ReadSection<T>(ResourceBag resourceBag,
+            Coding code,
+            Int32 min,
+            Int32 max,
+            List<T> items)
+            where T : ResourceBase, new()
+        {
+            items.Clear();
+            Composition.SectionComponent section = this.FindSection(code);
+            if (section == null)
+                throw new Exception($"Error referencing section '{code.ToString()}'");
+
+            foreach (ResourceReference resRef in section.Entry)
+            {
+                if (resourceBag.TryGetEntry(resRef.Reference, out var entry) == false)
+                    throw new Exception($"Error referencing section resource '{resRef.Reference}'");
+                //T item = new T(entry.Resource);
+            }
         }
 
         protected T ReadSection<T>(ResourceBag resourceBag,
