@@ -14,10 +14,6 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution 
 		.editorconfig = .editorconfig
 	EndProjectSection
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FireFragger", "Projects\FireFragger\FireFragger\FireFragger.csproj", "{5A944C8E-7E5D-42D4-B4D2-175A558E1F5E}"
-EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BreastRadLib", "Projects\BreastRadLib\BreastRadLib.csproj", "{099F40C2-A697-420C-B6E4-59060AE7CB1A}"
-EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GGMerge", "Projects\GGMerge\GGMerge.csproj", "{F01EAED4-F3A6-414D-8848-A6ED32CBCB42}"
 EndProject
 Project("{D954291E-2A0B-460D-934E-DC6B0785DB48}") = "SharedStuff", "Projects\SharedStuff\SharedStuff.shproj", "{8513B166-7129-4842-B8CE-8E67511C1B1C}"
@@ -44,14 +40,6 @@ Global
 		{EB549B93-581C-4759-A08D-39BF80C72481}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{EB549B93-581C-4759-A08D-39BF80C72481}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{EB549B93-581C-4759-A08D-39BF80C72481}.Release|Any CPU.Build.0 = Release|Any CPU
-		{5A944C8E-7E5D-42D4-B4D2-175A558E1F5E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{5A944C8E-7E5D-42D4-B4D2-175A558E1F5E}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{5A944C8E-7E5D-42D4-B4D2-175A558E1F5E}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{5A944C8E-7E5D-42D4-B4D2-175A558E1F5E}.Release|Any CPU.Build.0 = Release|Any CPU
-		{099F40C2-A697-420C-B6E4-59060AE7CB1A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{099F40C2-A697-420C-B6E4-59060AE7CB1A}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{099F40C2-A697-420C-B6E4-59060AE7CB1A}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{099F40C2-A697-420C-B6E4-59060AE7CB1A}.Release|Any CPU.Build.0 = Release|Any CPU
 		{F01EAED4-F3A6-414D-8848-A6ED32CBCB42}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{F01EAED4-F3A6-414D-8848-A6ED32CBCB42}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{F01EAED4-F3A6-414D-8848-A6ED32CBCB42}.Release|Any CPU.ActiveCfg = Release|Any CPU

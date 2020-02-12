@@ -1,3 +1,0 @@
-﻿		//+ Fields
-		%HasMemberFields:lb:prefix=        %
-		//- Fields
