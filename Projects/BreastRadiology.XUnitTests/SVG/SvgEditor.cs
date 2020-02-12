@@ -11,8 +11,6 @@ namespace BreastRadiology.XUnitTests
 {
     class SvgEditor
     {
-        public bool breakFlag = false;
-
         class EndPoint
         {
             public PointF Location { get; set; }
@@ -163,9 +161,6 @@ namespace BreastRadiology.XUnitTests
             colWidth = 0;
             colHeight = 0;
 
-            //if (breakFlag == true)
-            //    Debugger.Break();
-
             if (group.Nodes.Count() > 0)
                 this.RenderSimpleGroup(group, screenX, screenY, lineFlag, out colWidth, out colHeight, endConnectors);
             else if (group.Children.Count() > 0)
@@ -201,7 +196,7 @@ namespace BreastRadiology.XUnitTests
             float topConnectorY = float.MaxValue;
             float bottomConnectorY = float.MinValue;
 
-            List<PointF> startConnectors = new List<PointF>();
+            List<EndPoint> startConnectors = new List<EndPoint>();
 
             foreach (SENode node in group.Nodes)
             {
@@ -214,7 +209,11 @@ namespace BreastRadiology.XUnitTests
                     topConnectorY = connectorY;
                 if (bottomConnectorY < connectorY)
                     bottomConnectorY = connectorY;
-                startConnectors.Add(new PointF(screenX + nodeWidth, col1ScreenY + nodeHeight / 2));
+                startConnectors.Add(new EndPoint
+                {
+                    Location = new PointF(screenX + nodeWidth, col1ScreenY + nodeHeight / 2),
+                    Annotation = node.OutgoingAnnotation
+                });
 
                 endConnectors.Add(new EndPoint
                     {
@@ -283,9 +282,20 @@ namespace BreastRadiology.XUnitTests
 
             if ((lineFlag) && (endConnectorFlag == true))
             {
-                foreach (PointF stubStart in startConnectors)
-                    this.CreateArrow(g, true, false, stubStart.X, stubStart.Y,
-                            screenX + col1Width + this.NodeGapStartX(group), stubStart.Y);
+                foreach (EndPoint stubStart in startConnectors)
+                {
+                    this.CreateArrow(g, true, false, stubStart.Location.X, stubStart.Location.Y,
+                            screenX + col1Width + this.NodeGapStartX(group), stubStart.Location.Y);
+
+                    if (group.ShowCardinalities == true)
+                    {
+                        SvgText t = this.doc.AddText(g);
+                        t.X = this.ToPx(stubStart.Location.X + 0.25f);
+                        t.Y = this.ToPx(stubStart.Location.Y - 0.25f);
+                        t.TextAnchor = "left";
+                        t.Value = stubStart.Annotation;
+                    }
+                }
 
                 // Make vertical line that connects all stubs.
                 if (group.Children.Count() > 0)

@@ -27,6 +27,7 @@
 <line stroke="Black" stroke-width="1.875" marker-end="url(#arrowEnd)" x1="161.99998" y1="33.75" x2="206.99998" y2="33.75" />
 <text x="165.74998" y="30" text-anchor="left"></text>
 <line stroke="Black" stroke-width="1.875" marker-start="url(#arrowStart)" x1="116.99999" y1="43.125" x2="161.99998" y2="43.125" />
+<text x="120.749985" y="39.375" text-anchor="left"></text>
 <line stroke="Black" stroke-width="1.875" x1="161.99998" y1="33.75" x2="161.99998" y2="43.125" />
 </g>
 <g>
@@ -46,6 +47,7 @@
 <line stroke="Black" stroke-width="1.875" marker-end="url(#arrowEnd)" x1="392.99997" y1="198.75" x2="437.99997" y2="198.75" />
 <text x="396.74997" y="195" text-anchor="left">0..1</text>
 <line stroke="Black" stroke-width="1.875" marker-start="url(#arrowStart)" x1="347.99997" y1="33.75" x2="392.99997" y2="33.75" />
+<text x="351.74997" y="30" text-anchor="left"></text>
 <line stroke="Black" stroke-width="1.875" x1="392.99997" y1="24.375" x2="392.99997" y2="198.75" />
 </g>
 <g>
@@ -102,6 +104,7 @@
 </g>
 <line stroke="Black" stroke-width="1.875" marker-end="url(#arrowEnd)" x1="655.49994" y1="198.75" x2="700.49994" y2="198.75" />
 <line stroke="Black" stroke-width="1.875" marker-start="url(#arrowStart)" x1="610.49994" y1="198.75" x2="655.49994" y2="198.75" />
+<text x="614.24994" y="195" text-anchor="left"></text>
 <line stroke="Black" stroke-width="1.875" x1="655.49994" y1="198.75" x2="655.49994" y2="198.75" />
 </g>
 <g>

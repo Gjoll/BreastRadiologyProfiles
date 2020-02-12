@@ -190,8 +190,6 @@ namespace BreastRadiology.XUnitTests
             }
         }
 
-        protected bool breakFlag = false;
-
         protected void MakeComponent(dynamic link,
                 SENodeGroup group)
         {
@@ -201,8 +199,6 @@ namespace BreastRadiology.XUnitTests
             String linkTargetUrl = link.LinkTarget.ToObject<String>();
             String linkSource = link.LinkSource.ToObject<String>();
             String componentHRef = link.ComponentHRef.ToObject<String>().Replace("{SDName}", linkSource.LastUriPart());
-
-            if (linkTargetUrl == "Impressions") breakFlag = true;
 
             SENode node = new SENode(0,
                 this.componentColor,
