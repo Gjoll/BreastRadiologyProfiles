@@ -10,7 +10,7 @@ using Hl7.Fhir.Serialization;
 namespace BreastRadLib
 {
 	//+ Header
-	public class MGDensityVS                                                                                                                   // CSBuilder.cs:338
+	public class MGDensityVS                                                                                                                   // CSBuilder.cs:333
 	//- Header
 	{
 		//+ Fields
@@ -18,36 +18,36 @@ namespace BreastRadLib
 		/// This class creates a type for codings of this class, that implicitly converts to Coding
 		/// Allows type checking for these codes.
 		/// </summary>
-		public class TCoding                                                                                                                      // CSBuilder.cs:359
-		{                                                                                                                                         // CSBuilder.cs:360
-		    Coding value;                                                                                                                         // CSBuilder.cs:361
-		    public static implicit operator Coding(TCoding tCode)                                                                                 // CSBuilder.cs:362
+		public class TCoding                                                                                                                      // CSBuilder.cs:354
+		{                                                                                                                                         // CSBuilder.cs:355
+		    Coding value;                                                                                                                         // CSBuilder.cs:356
+		    public static implicit operator Coding(TCoding tCode)                                                                                 // CSBuilder.cs:357
+		    {                                                                                                                                     // CSBuilder.cs:358
+		        return tCode.value;                                                                                                               // CSBuilder.cs:359
+		    }                                                                                                                                     // CSBuilder.cs:360
+		                                                                                                                                          // CSBuilder.cs:361
+		    public TCoding(Coding value)                                                                                                          // CSBuilder.cs:362
 		    {                                                                                                                                     // CSBuilder.cs:363
-		        return tCode.value;                                                                                                               // CSBuilder.cs:364
+		        this.value= value;                                                                                                                // CSBuilder.cs:364
 		    }                                                                                                                                     // CSBuilder.cs:365
-		                                                                                                                                          // CSBuilder.cs:366
-		    public TCoding(Coding value)                                                                                                          // CSBuilder.cs:367
-		    {                                                                                                                                     // CSBuilder.cs:368
-		        this.value= value;                                                                                                                // CSBuilder.cs:369
-		    }                                                                                                                                     // CSBuilder.cs:370
-		}                                                                                                                                         // CSBuilder.cs:371
-		public TCoding Code_CentralLucent = new TCoding(MGDensityCS.Code_CentralLucent);                                                          // CSBuilder.cs:389
-		public TCoding Code_EqualDensity = new TCoding(MGDensityCS.Code_EqualDensity);                                                            // CSBuilder.cs:389
-		public TCoding Code_FatContaining = new TCoding(MGDensityCS.Code_FatContaining);                                                          // CSBuilder.cs:389
-		public TCoding Code_HighDensity = new TCoding(MGDensityCS.Code_HighDensity);                                                              // CSBuilder.cs:389
-		public TCoding Code_LowDensity = new TCoding(MGDensityCS.Code_LowDensity);                                                                // CSBuilder.cs:389
-		                                                                                                                                          // CSBuilder.cs:344
-		public List<Coding> Members;                                                                                                              // CSBuilder.cs:345
-		                                                                                                                                          // CSBuilder.cs:346
-		public MGDensityVS()                                                                                                                      // CSBuilder.cs:347
-		{                                                                                                                                         // CSBuilder.cs:348
-		    this.Members = new List<Coding>();                                                                                                    // CSBuilder.cs:349
-		    this.Members.Add(this.Code_CentralLucent);                                                                                            // CSBuilder.cs:392
-		    this.Members.Add(this.Code_EqualDensity);                                                                                             // CSBuilder.cs:392
-		    this.Members.Add(this.Code_FatContaining);                                                                                            // CSBuilder.cs:392
-		    this.Members.Add(this.Code_HighDensity);                                                                                              // CSBuilder.cs:392
-		    this.Members.Add(this.Code_LowDensity);                                                                                               // CSBuilder.cs:392
-		}                                                                                                                                         // CSBuilder.cs:351
+		}                                                                                                                                         // CSBuilder.cs:366
+		public TCoding Code_CentralLucent = new TCoding(MGDensityCS.Code_CentralLucent);                                                          // CSBuilder.cs:384
+		public TCoding Code_EqualDensity = new TCoding(MGDensityCS.Code_EqualDensity);                                                            // CSBuilder.cs:384
+		public TCoding Code_FatContaining = new TCoding(MGDensityCS.Code_FatContaining);                                                          // CSBuilder.cs:384
+		public TCoding Code_HighDensity = new TCoding(MGDensityCS.Code_HighDensity);                                                              // CSBuilder.cs:384
+		public TCoding Code_LowDensity = new TCoding(MGDensityCS.Code_LowDensity);                                                                // CSBuilder.cs:384
+		                                                                                                                                          // CSBuilder.cs:339
+		public List<Coding> Members;                                                                                                              // CSBuilder.cs:340
+		                                                                                                                                          // CSBuilder.cs:341
+		public MGDensityVS()                                                                                                                      // CSBuilder.cs:342
+		{                                                                                                                                         // CSBuilder.cs:343
+		    this.Members = new List<Coding>();                                                                                                    // CSBuilder.cs:344
+		    this.Members.Add(this.Code_CentralLucent);                                                                                            // CSBuilder.cs:387
+		    this.Members.Add(this.Code_EqualDensity);                                                                                             // CSBuilder.cs:387
+		    this.Members.Add(this.Code_FatContaining);                                                                                            // CSBuilder.cs:387
+		    this.Members.Add(this.Code_HighDensity);                                                                                              // CSBuilder.cs:387
+		    this.Members.Add(this.Code_LowDensity);                                                                                               // CSBuilder.cs:387
+		}                                                                                                                                         // CSBuilder.cs:346
 		//- Fields
 	}
 }

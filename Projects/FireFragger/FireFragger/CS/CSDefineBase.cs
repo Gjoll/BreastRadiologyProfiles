@@ -102,22 +102,11 @@ namespace FireFragger
                 }
             }
         }
-
-        public void DefineSetResource()
+        protected void DefineBase()
         {
             String profileUrl = this.fragBase.StructDef.Url;
-            this.ClassMethods
-                .SummaryOpen()
-                .Summary("Bind fhir resource to this")
-                .SummaryClose()
-                .AppendCode($"public override void SetResource(Base resource)")
-                .OpenBrace()
-                .AppendCode($"{FhirBase} r = resource as {FhirBase};")
-                .AppendCode($"if (r == null)")
-                .AppendCode($"    throw new Exception(\"resource must be of type {FhirBase}\");")
-                .AppendCode($"this.resource = r;")
+            this.ClassWriteCode
                 .AppendCode($"SetProfileUrl(\"{profileUrl}\");")
-                .CloseBrace()
                 ;
         }
     }

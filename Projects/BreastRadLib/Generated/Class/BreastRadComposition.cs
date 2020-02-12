@@ -56,6 +56,7 @@ namespace BreastRadLib
 		public void Write()
 		{
 		//+ WriteCode
+		SetProfileUrl("http://hl7.org/fhir/us/breast-radiology/StructureDefinition/BreastRadComposition");                                        // CSDefineBase.cs:109
 		ClearSection();                                                                                                                           // CSDefineComposition.cs:38
 		WriteSection<BreastRadReport>("Breast Radiology Report", ReportSectionCode, 1, 1, this.Report);                                           // CSDefineComposition.cs:110
 		WriteSection<ClinicalImpressionBase>("Clinical Impressions", ImpressionsSectionCode, 0, -1, this.Impressions);                            // CSDefineComposition.cs:110
@@ -76,17 +77,6 @@ namespace BreastRadLib
 		}
 
 		//+ Methods
-		/// <summary>
-		/// Bind fhir resource to this
-		/// </summary>
-		public override void SetResource(Base resource)                                                                                           // CSDefineBase.cs:113
-		{                                                                                                                                         // CSDefineBase.cs:114
-		    Composition r = resource as Composition;                                                                                              // CSDefineBase.cs:115
-		    if (r == null)                                                                                                                        // CSDefineBase.cs:116
-		        throw new Exception("resource must be of type Composition");                                                                      // CSDefineBase.cs:117
-		    this.resource = r;                                                                                                                    // CSDefineBase.cs:118
-		    SetProfileUrl("http://hl7.org/fhir/us/breast-radiology/StructureDefinition/BreastRadComposition");                                    // CSDefineBase.cs:119
-		}                                                                                                                                         // CSDefineBase.cs:120
 		//- Methods
 	}
 }

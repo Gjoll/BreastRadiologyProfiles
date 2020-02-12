@@ -136,7 +136,8 @@ namespace FireFragger
             this.InterfaceFields.Clear();
             this.InterfaceMethods.Clear();
             this.MergeFragments();
-            DefineSections();
+            this.DefineBase();
+            this.DefineSections();
             this.csBuilder.ConversionInfo(this.GetType().Name,
                fcn,
                $"Completed {fragBase.StructDef.Url.LastUriPart()}");

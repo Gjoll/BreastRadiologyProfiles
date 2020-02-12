@@ -191,12 +191,7 @@ namespace FireFragger
             }
 
             if (csDef != null)
-            {
                 csDef.Build();
-                if (fi.ClassEditor != null)
-                    csDef.DefineSetResource();
-
-            }
         }
 
         void AddMacros(CodeEditor ce,

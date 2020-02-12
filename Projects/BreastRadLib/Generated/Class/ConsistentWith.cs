@@ -38,17 +38,6 @@ namespace BreastRadLib
 		}
 
 		//+ Methods
-		/// <summary>
-		/// Bind fhir resource to this
-		/// </summary>
-		public override void SetResource(Base resource)                                                                                           // CSDefineBase.cs:113
-		{                                                                                                                                         // CSDefineBase.cs:114
-		    Observation r = resource as Observation;                                                                                              // CSDefineBase.cs:115
-		    if (r == null)                                                                                                                        // CSDefineBase.cs:116
-		        throw new Exception("resource must be of type Observation");                                                                      // CSDefineBase.cs:117
-		    this.resource = r;                                                                                                                    // CSDefineBase.cs:118
-		    SetProfileUrl("http://hl7.org/fhir/us/breast-radiology/StructureDefinition/ConsistentWith");                                          // CSDefineBase.cs:119
-		}                                                                                                                                         // CSDefineBase.cs:120
 		//- Methods
 	}
 }

@@ -10,12 +10,12 @@ using Hl7.Fhir.Serialization;
 namespace BreastRadLib
 {
 	//+ Header
-	public class MassTypeCS                                                                                                                    // CSBuilder.cs:410
+	public class MassTypeCS                                                                                                                    // CSBuilder.cs:405
 	//- Header
 	{
 		//+ Fields
-		const string System = "http://hl7.org/fhir/us/breast-radiology/CodeSystem/MassTypeCS";                                                    // CSBuilder.cs:414
-		                                                                                                                                          // CSBuilder.cs:426
+		const string System = "http://hl7.org/fhir/us/breast-radiology/CodeSystem/MassTypeCS";                                                    // CSBuilder.cs:409
+		                                                                                                                                          // CSBuilder.cs:421
 		/// <summary>
 		/// A breast mass has been identified in the breast.
 		/// This is also known as a breast lump.
@@ -24,32 +24,32 @@ namespace BreastRadLib
 		/// 
 		/// Valid for the following modalities: MG US MRI.
 		/// </summary>
-		public static Coding Code_Mass = new Coding(System, "Mass", "Mass");                                                                      // CSBuilder.cs:440
-		                                                                                                                                          // CSBuilder.cs:426
+		public static Coding Code_Mass = new Coding(System, "Mass", "Mass");                                                                      // CSBuilder.cs:435
+		                                                                                                                                          // CSBuilder.cs:421
 		/// <summary>
 		/// An intraductal mass has been identified in the breast.
 		/// It is a lump that originates in one or more of the milk ducts in the breast.
 		/// 
 		/// Valid for the following modalities: US.
 		/// </summary>
-		public static Coding Code_MassIntraductal = new Coding(System, "MassIntraductal", "Mass intraductal");                                    // CSBuilder.cs:440
-		                                                                                                                                          // CSBuilder.cs:426
+		public static Coding Code_MassIntraductal = new Coding(System, "MassIntraductal", "Mass intraductal");                                    // CSBuilder.cs:435
+		                                                                                                                                          // CSBuilder.cs:421
 		/// <summary>
 		/// A mass that is partially solid has been identified in the breast.
 		/// 
 		/// Valid for the following modalities: MG US.
 		/// </summary>
-		public static Coding Code_MassPartiallySolid = new Coding(System, "MassPartiallySolid", "Mass partially solid");                          // CSBuilder.cs:440
-		                                                                                                                                          // CSBuilder.cs:426
+		public static Coding Code_MassPartiallySolid = new Coding(System, "MassPartiallySolid", "Mass partially solid");                          // CSBuilder.cs:435
+		                                                                                                                                          // CSBuilder.cs:421
 		/// <summary>
 		/// Valid for the following modalities: MG US.
 		/// </summary>
-		public static Coding Code_MassSkinATLASIsSkinLesion = new Coding(System, "MassSkinATLASIsSkinLesion", "Mass skin ATLAS is skin lesion");  // CSBuilder.cs:440
-		                                                                                                                                          // CSBuilder.cs:426
+		public static Coding Code_MassSkinATLASIsSkinLesion = new Coding(System, "MassSkinATLASIsSkinLesion", "Mass skin ATLAS is skin lesion");  // CSBuilder.cs:435
+		                                                                                                                                          // CSBuilder.cs:421
 		/// <summary>
 		/// Valid for the following modalities: MG US.
 		/// </summary>
-		public static Coding Code_MassSolid = new Coding(System, "MassSolid", "Mass solid");                                                      // CSBuilder.cs:440
+		public static Coding Code_MassSolid = new Coding(System, "MassSolid", "Mass solid");                                                      // CSBuilder.cs:435
 		//- Fields
 	}
 }
