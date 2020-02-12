@@ -68,7 +68,9 @@ namespace BreastRadiology.XUnitTests
                         throw new Exception($"Resource '{parentNode.ResourceUrl}' not found!");
 
                     alreadyLinkedResources.Add(parentNode.ResourceUrl);
-                    SENode node = this.CreateResourceNode(parentNode, this.ReferenceColor(parentMapNode), link.Cardinality?.ToString(), true);
+                    SENode node = this.CreateResourceNode(parentNode, this.ReferenceColor(parentMapNode), 
+                        new String[] { link.Cardinality?.ToString() }, 
+                        true);
                     parents.Add(node);
                 }
 
@@ -121,7 +123,10 @@ namespace BreastRadiology.XUnitTests
                                 String linkSource = link.LinkSource.ToObject<String>();
                                 String componentHRef = link.ComponentHRef.ToObject<String>().Replace("{SDName}", linkSource.LastUriPart());
 
-                                SENode node = new SENode(0, LinkTypeColor(link), link.Cardinality?.ToString(), componentHRef);
+                                SENode node = new SENode(0, 
+                                    LinkTypeColor(link), 
+                                    new String[] { link.Cardinality?.ToString() },
+                                    componentHRef);
                                 node.AddTextLine(link.LocalName.ToObject<String>(), componentHRef);
                                 node.AddTextLine("extension", componentHRef);
 
@@ -138,7 +143,9 @@ namespace BreastRadiology.XUnitTests
                                     {
                                         if (this.map.TryGetNode(extUrl, out ResourceMap.Node targetNode) == false)
                                             throw new Exception($"Component resource '{extUrl}' not found!");
-                                        extNode = this.CreateResourceNode(targetNode, this.ReferenceColor(targetNode), link.Cardinality?.ToString(), true);
+                                        extNode = this.CreateResourceNode(targetNode, this.ReferenceColor(targetNode),
+                                            new String[] { link.Cardinality?.ToString() }, 
+                                            true);
                                     }
                                     else
                                     {
@@ -147,7 +154,10 @@ namespace BreastRadiology.XUnitTests
                                             .TrimStart("ValueSet-")
                                             .TrimEnd(".html")
                                             ;
-                                        extNode = new SENode(0, this.fhirColor, link.Cardinality?.ToString(), extUrl);
+                                        extNode = new SENode(0, 
+                                            this.fhirColor, 
+                                            new String[] { link.Cardinality?.ToString() },
+                                            extUrl);
                                         extNode.AddTextLine(name, extUrl);
                                     }
                                     extGroup.AppendNode(extNode);
@@ -185,6 +195,7 @@ namespace BreastRadiology.XUnitTests
             }
 
             //parentsGroup.Sort();
+            e.breakFlag = breakFlag;
             e.Render(parentsGroup, true);
             String outputPath = Path.Combine(this.graphicsDir, FocusMapName(focusNode));
             this.fc?.Mark(outputPath);

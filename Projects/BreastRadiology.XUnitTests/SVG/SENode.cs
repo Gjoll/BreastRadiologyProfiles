@@ -15,16 +15,29 @@ namespace BreastRadiology.XUnitTests
         public String HRef {get; }
         public float Width { get => this.width; set => this.width = value; }
 
+        /// <summary>
+        /// Annotation on the line coming into the node (at line end);
+        /// </summary>
         public String IncomingAnnotation { get; }
+        /// <summary>
+        /// Annotation on the line leaving the node (at start of outgoing line);
+        /// </summary>
+        public String OutgoingAnnotation { get; }
 
         public SENode(float width,
             Color fillColor,
-            String annotation,
+            String[] annotations,
             String hRef = null)
         {
             this.Width = width;
             this.FillColor = fillColor;
-            this.IncomingAnnotation = annotation;
+            if (annotations != null)
+            {
+                if ((annotations.Length > 0) && (annotations[0] != null))
+                    this.IncomingAnnotation = annotations[0];
+                if ((annotations.Length > 1) && (annotations[1] != null))
+                    this.OutgoingAnnotation = annotations[1];
+            }
             this.HRef = hRef;
         }
 

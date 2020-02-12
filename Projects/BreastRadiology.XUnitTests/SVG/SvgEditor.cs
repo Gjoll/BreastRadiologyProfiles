@@ -11,6 +11,8 @@ namespace BreastRadiology.XUnitTests
 {
     class SvgEditor
     {
+        public bool breakFlag = false;
+
         class EndPoint
         {
             public PointF Location { get; set; }
@@ -160,6 +162,9 @@ namespace BreastRadiology.XUnitTests
         {
             colWidth = 0;
             colHeight = 0;
+
+            //if (breakFlag == true)
+            //    Debugger.Break();
 
             if (group.Nodes.Count() > 0)
                 this.RenderSimpleGroup(group, screenX, screenY, lineFlag, out colWidth, out colHeight, endConnectors);
