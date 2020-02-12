@@ -29,7 +29,8 @@ namespace BreastRadiology.XUnitTests
         public float BorderWidth { get; set; } = 0.125f;
         public float LineHeight { get; set; } = 1.25f;
         public float BorderMargin { get; set; } = 0.5f;
-        public float NodeGapStartX { get; set; } = 1.0f;
+        public float NodeGapNoCardStartX { get; set; } = 2.0f;
+        public float NodeGapCardStartX { get; set; } = 3.0f;
         public float NodeGapNoCardEndX { get; set; } = 2.0f;
         public float NodeGapCardEndX { get; set; } = 3.0f;
         public float NodeGapY { get; set; } = 0.5f;
@@ -94,6 +95,13 @@ namespace BreastRadiology.XUnitTests
             return this.NodeGapNoCardEndX;
         }
 
+        public float NodeGapStartX(SENodeGroup g)
+        {
+            if (g.ShowCardinalities == true)
+                return this.NodeGapCardStartX;
+            return this.NodeGapNoCardStartX;
+        }
+
         public void Render(SENodeGroup group,
             bool lineFlag)
         {
@@ -105,7 +113,7 @@ namespace BreastRadiology.XUnitTests
             List<EndPoint> endConnectors = new List<EndPoint>();
 
             this.RenderGroup(group, this.screenX, this.screenY, lineFlag, out float width, out float height, endConnectors);
-            this.root.Width = $"{this.ToPx(this.maxWidth + this.NodeGapStartX + this.NodeGapEndX(group))}";
+            this.root.Width = $"{this.ToPx(this.maxWidth + this.NodeGapStartX(group) + this.NodeGapEndX(group))}";
             this.root.Height = $"{this.ToPx(this.maxHeight + 2 * this.NodeGapY)}";
             this.screenY = this.maxHeight + 4 * this.BorderMargin;
         }
@@ -206,7 +214,7 @@ namespace BreastRadiology.XUnitTests
                 endConnectors.Add(new EndPoint
                     {
                         Location = new PointF(screenX, col1ScreenY + nodeHeight / 2),
-                        Annotation = node.Annotation
+                        Annotation = node.IncomingAnnotation
                     });
                 col1Height += nodeHeight + this.NodeGapY;
                 col1ScreenY += nodeHeight + this.NodeGapY;
@@ -217,7 +225,7 @@ namespace BreastRadiology.XUnitTests
             if (this.maxHeight < col1ScreenY)
                 this.maxHeight = col1ScreenY;
 
-            float col2ScreenX = screenX + col1Width + this.NodeGapStartX + this.NodeGapEndX(group);
+            float col2ScreenX = screenX + col1Width + this.NodeGapStartX(group) + this.NodeGapEndX(group);
             float col2ScreenY = screenY;
 
             float col2Height = 0;
@@ -242,7 +250,7 @@ namespace BreastRadiology.XUnitTests
                     {
                         EndPoint stubEnd = col2EndConnectors[i];
                         endConnectorFlag = true;
-                        float xStart = screenX + col1Width + this.NodeGapStartX;
+                        float xStart = screenX + col1Width + this.NodeGapStartX(group);
                         this.CreateArrow(g, false, true, xStart, stubEnd.Location.Y, stubEnd.Location.X, stubEnd.Location.Y);
 
                         if (child.ShowCardinalities == true)
@@ -260,7 +268,7 @@ namespace BreastRadiology.XUnitTests
                             bottomConnectorY = stubEnd.Location.Y;
                     }
                 }
-                float width = col1Width + this.NodeGapStartX + this.NodeGapEndX(group) + col2GroupWidth;
+                float width = col1Width + this.NodeGapStartX(group) + this.NodeGapEndX(group) + col2GroupWidth;
                 if (colWidth < width)
                     colWidth = width;
 
@@ -271,12 +279,13 @@ namespace BreastRadiology.XUnitTests
             if ((lineFlag) && (endConnectorFlag == true))
             {
                 foreach (PointF stubStart in startConnectors)
-                    this.CreateArrow(g, true, false, stubStart.X, stubStart.Y, screenX + col1Width + this.NodeGapStartX, stubStart.Y);
+                    this.CreateArrow(g, true, false, stubStart.X, stubStart.Y,
+                            screenX + col1Width + this.NodeGapStartX(group), stubStart.Y);
 
                 // Make vertical line that connects all stubs.
                 if (group.Children.Count() > 0)
                 {
-                    float x = screenX + col1Width + this.NodeGapStartX;
+                    float x = screenX + col1Width + this.NodeGapStartX(group);
                     this.CreateLine(g, x, topConnectorY, x, bottomConnectorY);
                 }
             }

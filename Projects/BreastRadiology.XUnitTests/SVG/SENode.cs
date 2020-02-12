@@ -15,7 +15,7 @@ namespace BreastRadiology.XUnitTests
         public String HRef {get; }
         public float Width { get => this.width; set => this.width = value; }
 
-        public String Annotation { get; }
+        public String IncomingAnnotation { get; }
 
         public SENode(float width,
             Color fillColor,
@@ -24,7 +24,7 @@ namespace BreastRadiology.XUnitTests
         {
             this.Width = width;
             this.FillColor = fillColor;
-            this.Annotation = annotation;
+            this.IncomingAnnotation = annotation;
             this.HRef = hRef;
         }
 

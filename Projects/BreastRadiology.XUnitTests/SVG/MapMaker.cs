@@ -195,10 +195,11 @@ namespace BreastRadiology.XUnitTests
             // we never link components to previous child links, not should next item
             // link to this items children. Each component stands alone.
             this.previousChildLinks = new Object[0];
-
             String linkTargetUrl = link.LinkTarget.ToObject<String>();
             String linkSource = link.LinkSource.ToObject<String>();
             String componentHRef = link.ComponentHRef.ToObject<String>().Replace("{SDName}", linkSource.LastUriPart());
+
+            Debug.Assert(linkTargetUrl != "Impressions");
 
             SENode node = new SENode(0, this.componentColor, link.Cardinality?.ToString(), componentHRef);
             node.AddTextLine(linkTargetUrl, componentHRef);

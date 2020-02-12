@@ -296,6 +296,12 @@ namespace BreastRadiology.XUnitTests
                 this.max = e.Max;
             }
 
+            public Cardinality(Int32 min, String max)
+            {
+                this.min = min;
+                this.max = max;
+            }
+
             public override string ToString() => $"{this.min}..{this.max}";
         }
 
