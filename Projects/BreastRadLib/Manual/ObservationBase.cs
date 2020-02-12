@@ -23,7 +23,17 @@ namespace BreastRadLib
         {
         }
 
-        public override void SetResource(Base r) => this.resource = (Observation)r;
+        /// <summary>
+        /// Set the fhir resource to the indicated value.
+        /// </summary>
+        /// <param name="resource"></param>
+        public override void SetResource(Base resource)
+        {
+            Observation r = resource as Observation;
+            if (r == null)
+                throw new Exception("resource must be of type Observation");
+            this.resource = r;
+        }
 
         protected MemberList<T> CreateHasMemberList<T>(Int32 min, Int32 max)
             where T : IResourceBase

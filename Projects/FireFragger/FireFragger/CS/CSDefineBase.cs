@@ -120,6 +120,5 @@ namespace FireFragger
                 .CloseBrace()
                 ;
         }
-
     }
 }

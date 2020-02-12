@@ -1,6 +1,7 @@
 ﻿using Hl7.Fhir.Model;
 using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Text;
 
 namespace BreastRadLib
@@ -9,7 +10,7 @@ namespace BreastRadLib
     {
     }
 
-    public abstract class CompositionBase : ResourceBase, ICompositionBase
+    public class CompositionBase : ResourceBase, ICompositionBase
     {
         public Composition Resource => (Composition)this.resource;
 
@@ -55,19 +56,36 @@ namespace BreastRadLib
             Int32 min,
             Int32 max,
             List<T> items)
-            where T : ResourceBase, new()
+            where T : ResourceBase
         {
             items.Clear();
             Composition.SectionComponent section = this.FindSection(code);
             if (section == null)
-                throw new Exception($"Error referencing section '{code.ToString()}'");
-
+                return;
             foreach (ResourceReference resRef in section.Entry)
             {
                 if (resourceBag.TryGetEntry(resRef.Reference, out var entry) == false)
                     throw new Exception($"Error referencing section resource '{resRef.Reference}'");
-                //T item = new T(entry.Resource);
+                Resource referencedResource = entry.Resource;
+                if (referencedResource.Meta.Profile.Count() != 1)
+                    throw new Exception($"Invalid Meta.profile. Expected 1, got {referencedResource.Meta.Profile.Count()}");
+                String profile = referencedResource.Meta.Profile.First();
+                T item = ResourceFactory.CreateBreastRadProfileResource(profile) as T;
+                if (item == null)
+                    throw new Exception($"Error creating resource of profile {profile}");
             }
+        }
+
+        /// <summary>
+        /// Set the fhir resource to the indicated value.
+        /// </summary>
+        /// <param name="resource"></param>
+        public override void SetResource(Base resource)
+        {
+            Composition r = resource as Composition;
+            if (r == null)
+                throw new Exception("resource must be of type Composition");
+            this.resource = r;
         }
 
         protected T ReadSection<T>(ResourceBag resourceBag,

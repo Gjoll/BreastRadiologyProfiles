@@ -10,7 +10,7 @@ namespace BreastRadLib
     {
     }
 
-    public abstract class ResourceBase : BaseBase, IResourceBase
+    public class ResourceBase : BaseBase, IResourceBase
     {
         DomainResource domainResource => (DomainResource)this.resource;
         String profileUrl;
@@ -27,6 +27,18 @@ namespace BreastRadLib
 
         public ResourceBase(DomainResource resource) : base(resource)
         {
+        }
+
+        /// <summary>
+        /// Set the fhir resource to the indicated value.
+        /// </summary>
+        /// <param name="resource"></param>
+        public override void SetResource(Base resource)
+        {
+            Resource r = resource as Resource;
+            if (r == null)
+                throw new Exception("resource must be of type Resource");
+            this.resource = r;
         }
 
         protected void SetProfileUrl(String profileUrl)

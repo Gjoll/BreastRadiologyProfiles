@@ -70,7 +70,8 @@ namespace FireFragger
                 else
                     reference = "ResourceBase";
 
-                Int32 max = ToMax(sectionSlice.ElementDefinition.Max);
+                Int32 max = ToMax(entryNode.ElementDefinition.Max);
+                Int32 min = entryNode.ElementDefinition.Min.Value;
                 String propertyName = sliceName.ToMachineName();
                 String sectionCodeName = $"{propertyName}SectionCode";
 
@@ -101,12 +102,12 @@ namespace FireFragger
                         ;
 
                     this.ClassReadCode
-                        .AppendCode($"ReadSection<{reference}>(resourceBag, {sectionCodeName}, {sectionSlice.ElementDefinition.Min}, {max}, this.{propertyName});")
+                        .AppendCode($"ReadSection<{reference}>(resourceBag, {sectionCodeName}, {min}, {max}, this.{propertyName});")
                         ;
                 }
 
                 this.ClassWriteCode
-                    .AppendCode($"WriteSection<{reference}>(\"{title}\", {sectionCodeName}, {sectionSlice.ElementDefinition.Min}, {max}, this.{propertyName});")
+                    .AppendCode($"WriteSection<{reference}>(\"{title}\", {sectionCodeName}, {min}, {max}, this.{propertyName});")
                     ;
 
                 if (max == 1)

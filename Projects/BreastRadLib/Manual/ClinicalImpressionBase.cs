@@ -9,7 +9,7 @@ namespace BreastRadLib
     {
     }
 
-    public abstract class ClinicalImpressionBase : ResourceBase, IImpressionBase
+    public class ClinicalImpressionBase : ResourceBase, IImpressionBase
     {
         public ClinicalImpression Resource => (ClinicalImpression)this.resource;
 
@@ -18,6 +18,18 @@ namespace BreastRadLib
         }
         public ClinicalImpressionBase() : base()
         {
+        }
+
+        /// <summary>
+        /// Set the fhir resource to the indicated value.
+        /// </summary>
+        /// <param name="resource"></param>
+        public override void SetResource(Base resource)
+        {
+            ClinicalImpression r = resource as ClinicalImpression;
+            if (r == null)
+                throw new Exception("resource must be of type ClinicalImpression");
+            this.resource = r;
         }
     }
 }
