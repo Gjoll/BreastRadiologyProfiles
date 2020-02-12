@@ -103,7 +103,7 @@ namespace FireFragger
             }
         }
 
-        public void Build()
+        public override void Build()
         {
             DefineHasMembers(this.fragBase);
         }

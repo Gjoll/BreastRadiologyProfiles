@@ -9,7 +9,7 @@ namespace BreastRadLib
     {
     }
 
-    public class ClinicalImpressionBase : ResourceBase, IImpressionBase
+    public abstract class ClinicalImpressionBase : ResourceBase, IImpressionBase
     {
         public ClinicalImpression Resource => (ClinicalImpression)this.resource;
 
@@ -19,7 +19,5 @@ namespace BreastRadLib
         public ClinicalImpressionBase() : base()
         {
         }
-
-        public override void SetResource(Base r) => this.resource = (ClinicalImpression) r;
     }
 }

@@ -168,20 +168,19 @@ namespace FireFragger
             }
 
             DefineInterfaces(fi);
+            CSDefineBase csDef = null;
             switch (fi.StructDef.BaseDefinition)
             {
                 case Global.ObservationUrl:
-                    {
-                        CSDefineObservation def = new CSDefineObservation(this, fi);
-                        def.Build();
-                    }
+                    csDef = new CSDefineObservation(this, fi);
                     break;
 
                 case Global.CompositionUrl:
-                    {
-                        CSDefineComposition def = new CSDefineComposition(this, fi);
-                        def.Build();
-                    }
+                    csDef = new CSDefineComposition(this, fi);
+                    break;
+
+                case Global.ServiceRequestUrl:
+                    csDef = new CSDefineServiceRequest(this, fi);
                     break;
 
                 default:
@@ -189,6 +188,14 @@ namespace FireFragger
                        fcn,
                        $"No builder defined for class {fi.StructDef.BaseDefinition}");
                     break;
+            }
+
+            if (csDef != null)
+            {
+                csDef.Build();
+                if (fi.ClassEditor != null)
+                    csDef.DefineSetResource();
+
             }
         }
 

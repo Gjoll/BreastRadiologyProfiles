@@ -9,7 +9,7 @@ namespace BreastRadLib
     {
     }
 
-    public class ServiceRequestBase : ResourceBase, IServiceRequestBase
+    public abstract class ServiceRequestBase : ResourceBase, IServiceRequestBase
     {
         public ServiceRequest Resource => (ServiceRequest)this.resource;
 
@@ -20,7 +20,5 @@ namespace BreastRadLib
         public ServiceRequestBase() : base()
         {
         }
-
-        public override void SetResource(Base r) => this.resource = (ServiceRequest)r;
     }
 }

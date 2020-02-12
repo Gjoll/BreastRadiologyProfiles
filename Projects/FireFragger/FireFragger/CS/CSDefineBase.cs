@@ -12,7 +12,7 @@ using System.Text;
 
 namespace FireFragger
 {
-    class CSDefineBase
+    abstract class CSDefineBase
     {
         protected CSBuilder csBuilder;
         protected FragInfo fragBase;
@@ -27,6 +27,7 @@ namespace FireFragger
         protected CodeBlockNested InterfaceMethods => fragBase.InterfaceEditor.Blocks.Find("Methods", false);
 
         protected delegate void VisitFragment(FragInfo fi, Int32 level);
+        protected String FhirBase => this.fragBase.StructDef.BaseDefinition.LastUriPart();
 
         protected void VisitFragments(VisitFragment vi,
             FragInfo fragBase)
@@ -70,6 +71,8 @@ namespace FireFragger
             this.fragBase = fragBase;
         }
 
+        public abstract void Build();
+
         protected void MergeFragments()
         {
             foreach (FragInfo fiRef in this.fragBase.ReferencedFragments)
@@ -98,6 +101,24 @@ namespace FireFragger
                     cbm.Merge(this.ClassMethods);
                 }
             }
+        }
+
+        public void DefineSetResource()
+        {
+            String profileUrl = this.fragBase.StructDef.Url;
+            this.ClassMethods
+                .SummaryOpen()
+                .Summary("Bind fhir resource to this")
+                .SummaryClose()
+                .AppendCode($"public override void SetResource(Base resource)")
+                .OpenBrace()
+                .AppendCode($"{FhirBase} r = resource as {FhirBase};")
+                .AppendCode($"if (r == null)")
+                .AppendCode($"    throw new Exception(\"resource must be of type {FhirBase}\");")
+                .AppendCode($"this.resource = r;")
+                .AppendCode($"SetProfileUrl(\"{profileUrl}\");")
+                .CloseBrace()
+                ;
         }
 
     }

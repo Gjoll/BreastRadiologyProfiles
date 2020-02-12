@@ -9,7 +9,7 @@ namespace BreastRadLib
     {
     }
 
-    public class CompositionBase : ResourceBase, ICompositionBase
+    public abstract class CompositionBase : ResourceBase, ICompositionBase
     {
         public Composition Resource => (Composition)this.resource;
 
@@ -20,9 +20,6 @@ namespace BreastRadLib
         public CompositionBase() : base()
         {
         }
-
-        public override void SetResource(Base r) => this.resource = (Composition)r;
-
         protected void ClearSection()
         {
             this.Resource.Section.Clear();

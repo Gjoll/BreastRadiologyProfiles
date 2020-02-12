@@ -80,8 +80,6 @@ namespace FireFragger
                     .Summary($"Section {sliceName}")
                     .Summary($"{sectionSlice.ElementDefinition.ElementId}")
                     .SummaryClose()
-                    ;
-                this.ClassFields
                     .AppendCode($"Coding {sectionCodeName} = new Coding(\"{code.System}\", \"{code.Code}\");")
                     ;
 
@@ -122,7 +120,7 @@ namespace FireFragger
             }
         }
 
-        public void Build()
+        public override void Build()
         {
             const String fcn = "Build";
 

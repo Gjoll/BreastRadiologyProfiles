@@ -10,34 +10,34 @@ using Hl7.Fhir.Serialization;
 namespace BreastRadLib
 {
 	//+ Header
-	public class ConsistentWithQualifierCS                                                                                                     // CSBuilder.cs:403
+	public class ConsistentWithQualifierCS                                                                                                     // CSBuilder.cs:410
 	//- Header
 	{
 		//+ Fields
-		const string System = "http://hl7.org/fhir/us/breast-radiology/CodeSystem/ConsistentWithQualifierCS";                                     // CSBuilder.cs:407
-		                                                                                                                                          // CSBuilder.cs:419
+		const string System = "http://hl7.org/fhir/us/breast-radiology/CodeSystem/ConsistentWithQualifierCS";                                     // CSBuilder.cs:414
+		                                                                                                                                          // CSBuilder.cs:426
 		/// <summary>
 		/// More than one possibility for your diagnosis.
 		/// The process of weighing the probability of one disease versus that of other diseases possibly accounting for a patient's illness.
 		/// 
 		/// Valid for the following modalities: MG US MRI NM.
 		/// </summary>
-		public static Coding Code_DifferentialDiagnosis = new Coding(System, "DifferentialDiagnosis", "Differential diagnosis");                  // CSBuilder.cs:433
-		                                                                                                                                          // CSBuilder.cs:419
+		public static Coding Code_DifferentialDiagnosis = new Coding(System, "DifferentialDiagnosis", "Differential diagnosis");                  // CSBuilder.cs:440
+		                                                                                                                                          // CSBuilder.cs:426
 		/// <summary>
 		/// Valid for the following modalities: MG US MRI NM.
 		/// </summary>
-		public static Coding Code_LikelyRepresents = new Coding(System, "LikelyRepresents", "Likely represents");                                 // CSBuilder.cs:433
-		                                                                                                                                          // CSBuilder.cs:419
+		public static Coding Code_LikelyRepresents = new Coding(System, "LikelyRepresents", "Likely represents");                                 // CSBuilder.cs:440
+		                                                                                                                                          // CSBuilder.cs:426
 		/// <summary>
 		/// Valid for the following modalities: MG US.
 		/// </summary>
-		public static Coding Code_MostLikely = new Coding(System, "MostLikely", "Most likely");                                                   // CSBuilder.cs:433
-		                                                                                                                                          // CSBuilder.cs:419
+		public static Coding Code_MostLikely = new Coding(System, "MostLikely", "Most likely");                                                   // CSBuilder.cs:440
+		                                                                                                                                          // CSBuilder.cs:426
 		/// <summary>
 		/// Valid for the following modalities: MG US MRI NM.
 		/// </summary>
-		public static Coding Code_Resembles = new Coding(System, "Resembles", "Resembles");                                                       // CSBuilder.cs:433
+		public static Coding Code_Resembles = new Coding(System, "Resembles", "Resembles");                                                       // CSBuilder.cs:440
 		//- Fields
 	}
 }
