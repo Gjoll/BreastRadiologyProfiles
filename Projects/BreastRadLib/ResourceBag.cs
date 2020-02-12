@@ -26,9 +26,20 @@ namespace BreastRadLib
         }
 
         public bool TryGetEntry(String url, out Bundle.EntryComponent entry) => this.resources.TryGetValue(url, out entry);
-        public void AddEntry(String fullUrl, DomainResource resource)
+
+        /// <summary>
+        /// Add resource to the bundle and to the resource dictionary.
+        /// </summary>
+        /// <param name="fullUrl"></param>
+        /// <param name="resource"></param>
+        public void AddResource(DomainResource resource)
         {
-            bundle.AddResourceEntry(resource, fullUrl);
+            if (String.IsNullOrEmpty(resource.Id) == false)
+                throw new Exception($"Id is already set");
+
+            resource.Id = $"{Guid.NewGuid().ToString()}";
+            Bundle.EntryComponent entry = bundle.AddResourceEntry(resource, resource.Id);
+            resources.Add(resource.Id, entry);
         }
     }
 }
