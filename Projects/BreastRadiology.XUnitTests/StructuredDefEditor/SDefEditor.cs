@@ -285,21 +285,18 @@ namespace BreastRadiology.XUnitTests
             return this;
         }
 
-        /// <summary>
-        /// Keeps cardinality of element.
-        /// Note: We keep a reference to the element, so if the cardinality is changed after
-        /// this item is instantiated, we will get a current cardinality.
-        /// </summary>
         public class Cardinality
         {
-            ElementDefinition element;
+            Int32 min;
+            String max;
 
             public Cardinality(ElementDefinition e)
             {
-                this.element = e;
+                this.min = e.Min.Value;
+                this.max = e.Max;
             }
 
-            public override string ToString() => $"{this.element.Min}..{this.element.Max}";
+            public override string ToString() => $"{this.min}..{this.max}";
         }
 
         public SDefEditor AddExtensionLink(String url,
@@ -321,19 +318,31 @@ namespace BreastRadiology.XUnitTests
         }
 
         public SDefEditor AddComponentLink(String url,
-            Cardinality cardinality,
+            Cardinality componentCardinality,
             String componentRef,
             String types,
             params String[] targets)
         {
+            return this.AddComponentLink(url, componentCardinality, componentRef, types, null, targets);
+        }
+
+        public SDefEditor AddComponentLink(String url,
+        Cardinality componentCardinality,
+        String componentRef,
+        String types,
+        Cardinality targetCardinality,
+        params String[] targets)
+        {
             dynamic packet = new JObject();
             packet.LinkType = SVGGlobal.ComponentType;
             packet.ShowChildren = false;
-            packet.Cardinality = cardinality.ToString();
+            packet.Cardinality = componentCardinality.ToString();
             packet.LinkTarget = url;
             packet.ComponentHRef = componentRef;
             packet.Types = types;
             packet.References = new JArray(targets);
+            if (targetCardinality != null)
+                packet.TargetCardinality = targetCardinality.ToString();
             this.SDef.AddExtension(Global.ResourceMapLinkUrl, new FhirString(packet.ToString()));
 
             return this;
