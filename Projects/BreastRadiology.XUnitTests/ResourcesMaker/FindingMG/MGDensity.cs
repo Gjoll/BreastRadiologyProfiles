@@ -51,6 +51,8 @@ namespace BreastRadiology.XUnitTests
                              .SetDisplay("Fat containing")
                              .MammoId("214")
                              .ValidModalities(Modalities.MG)
+                             .SetUMLS("The mammogram shows a lot of fatty tissue  meaning " +
+                                 "the density of the breast is likely low density.")
                              .SetACR("This includes all masses containing fat, such as " +
                                  "oil cyst, lipoma or galactocele, as well as mixeddensity " +
                                  "masses such as hamartoma. ",
@@ -74,6 +76,8 @@ namespace BreastRadiology.XUnitTests
                              .SetDisplay("Low density")
                              .MammoId("212")
                              .ValidModalities(Modalities.MG)
+                             .SetUMLS("The mammogram shows the breast is low density, containg " +
+                                 "a lot of fatty tissue.")
                              .SetACR("X-ray attenuation of the mass is less than the expected " +
                                  "attenuation of an equal volume offibroglandular breast " +
                                  "tissue. ",

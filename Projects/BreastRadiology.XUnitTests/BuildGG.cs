@@ -619,7 +619,7 @@ namespace BreastRadiology.XUnitTests
             WriteIds("CorrespondsWithCS",
                 @"Common\CorrespondsWithCS.cs",
                 "Codes",
-                Filter("Corresponds", "Corrosponds with"));
+                Filter("Corresponds", "Corresponds with"));
             WriteIds("ConsistentWith",
                 @"Common\ConsistentWith.cs",
                 "Codes",

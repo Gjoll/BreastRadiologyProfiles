@@ -49,7 +49,7 @@ namespace BreastRadiology.XUnitTests
                         .Description("Many breast masses are found within the zone of fibroglandular " +
                             "tissue or at a fat-fibroglandularjunction. ",
                             "If the mass blurs a tissue plane between fat and " +
-                            "fibroglandular tissue or if the mass producesdistortion " +
+                            "fibroglandular tissue or if the mass produces distortion " +
                             "of the ducts, these findings may be termed architectural " +
                             "distortion. ",
                             "###ACRUS#139")

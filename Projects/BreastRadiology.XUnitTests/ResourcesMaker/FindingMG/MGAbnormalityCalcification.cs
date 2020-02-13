@@ -34,6 +34,20 @@ namespace BreastRadiology.XUnitTests
                              .SetSnomedCode("129760005")
                              .SetSnomedDescription("ClinicalFinding | 129760005 | Radiographic finding " +
                                  "of amorphous calcification (Finding)")
+                             .SetUMLS("Amorphous calcifications, previously known as indistinct " +
+                                 "calcifications, are a morphological descriptor for " +
+                                 "breast calcifications that are small and/or hazy " +
+                                 "such that no clearly defined shape/form can be ascribed. ",
+                                 "Many benign and malignant conditions may be seen " +
+                                 "in association with these calcifications 1.Magnification " +
+                                 "views (specific types of views of the breast where " +
+                                 "certain areas are magnified) as part of a diagnostic " +
+                                 "mammographic evaluation are required to fully assess " +
+                                 "these calcifications.Amorphous calcifications are " +
+                                 "small (80-200 micrometer in diameter) and/or hazy/faint, " +
+                                 "such that a more specific morphologic descriptor " +
+                                 "cannot be assigned. ",
+                                 " ###URL#https://radiopaedia.org > articles > amorphous-calcifications-breast")
                              .SetACR("(historically, \"indistinct\")These are sufficiently " +
                                  "small and/or hazy in appearance that a more specific " +
                                  "particle shapecannot be determined. ",
@@ -58,6 +72,13 @@ namespace BreastRadiology.XUnitTests
                              .SetSnomedCode("129749001")
                              .SetSnomedDescription("ClinicalFinding | 129749001 | Coarse (popcorn-like) " +
                                  "radiographic calcification (Finding)")
+                             .SetUMLS("The classic large 'popcorn-like' calcifications are " +
+                                 "produced by involuting fibroadenomas.These calcifications " +
+                                 "usually do not cause a diagnostic problem.When the " +
+                                 "calcifications in an fibroadenoma are small and numerous, " +
+                                 "they may resemble malignant-type calcifications and " +
+                                 "need a biopsy. ",
+                                 "###URL#https://radiologyassistant.nl/breast/breast-calcifications-differential-diagnosis")
                              .SetACR("These are the classic large (> 2 to 3 mm in greatest " +
                                  "diameter) calcifications produced by an involuting " +
                                  "fibroadenoma.")
@@ -71,6 +92,16 @@ namespace BreastRadiology.XUnitTests
                              .SetSnomedCode("129750001")
                              .SetSnomedDescription("ClinicalFinding | 129750001 | Dystrophic radiographic " +
                                  "calcification (Finding) | [0/0] | R93.8")
+                             .SetUMLS("Dystrophic soft tissue calcification is a broad term " +
+                                 "that encompasses a wide range of pathologies that " +
+                                 "cause soft-tissue calcification and is caused by " +
+                                 "calcification of damaged tissues. ",
+                                 " The amorphous calcification that results may be " +
+                                 "small or large. ",
+                                 " In some cases, ossification may occur - this is " +
+                                 "characterized by cortical formation and a central " +
+                                 "medullary cavity. ",
+                                 "###URL#https://radiopaedia.org/articles/dystrophic-soft-tissue-calcification-1?lang=us")
                              .SetACR("These typically form in the irradiated breast or " +
                                  "in the breast following trauma or surgery. ",
                                  "Thecalcifications are irregular in shape, and they " +
@@ -86,6 +117,12 @@ namespace BreastRadiology.XUnitTests
                              .SetSnomedCode("129751002")
                              .SetSnomedDescription("ClinicalFinding | 129751002 | Eggshell radiographic " +
                                  "calcification (Finding)")
+                             .SetUMLS("Eggshell calcifications in the breast are benign " +
+                                 "peripheral rim like calcificationsThey are typically " +
+                                 "secondary to fat necrosis or calcification of oil " +
+                                 "cysts.thin rim-like calcification (<1 mm in thickness)lucent " +
+                                 "centerssmall to several centimeters in diameter (oil " +
+                                 "cyst)may disappear (fat necrosis) ###URL#https://radiopaedia.org/articles/eggshell-calcification-breast-1?lang=us")
                          ,
                          new ConceptDef()
                              .SetCode("Fine")
@@ -122,6 +159,13 @@ namespace BreastRadiology.XUnitTests
                              .SetSnomedCode("129763007")
                              .SetSnomedDescription("ClinicalFinding | 129763007 | Heterogeneous radiographic " +
                                  "calcification (Finding)")
+                             .SetUMLS("Grouped coarse heterogeneous calcifications are a " +
+                                 "group of irregular and conspicuous microcalcifications, " +
+                                 "smaller than dystrophic calcifications. ",
+                                 "They may be associated with malignancy, but they " +
+                                 "are also present in benign conditions, as fibroadenoma, " +
+                                 "in areas of fibrosis or trauma. ",
+                                 "###URL#https://radiopaedia.org/cases/suspicious-breast-calcifications-grouped-coarse-heterogeneous-1?lang=us")
                              .SetACR("These are irregular, conspicuous calcifications that " +
                                  "are generally between 0.5 mm and 1 mmand tend to " +
                                  "coalesce, but are smaller than dystrophic calcifications. ",
@@ -146,7 +190,7 @@ namespace BreastRadiology.XUnitTests
                                  "calcifications, are a morphological descriptor for " +
                                  "breast calcifications that are small and/or hazy " +
                                  "such that no clearly defined shape/form can be ascribed. ",
-                                 "radiopaedia.org > articles > amorphous-calcifications-breast")
+                                 "###URL#https://radiopaedia.org > articles > amorphous-calcifications-breast")
                          ,
                          new ConceptDef()
                              .SetCode("LargeRodlike")
@@ -157,6 +201,19 @@ namespace BreastRadiology.XUnitTests
                              .SetSnomedCode("129752009")
                              .SetSnomedDescription("ClinicalFinding | 129752009 | Large rod-like radiographic " +
                                  "calcification (Finding)")
+                             .SetUMLS("These are formed within ectatic ducts.These benign " +
+                                 "calcifications form continuous rods that may occasionally " +
+                                 "be branching.They are different from malignant-type " +
+                                 "fine branching calcifications, because they are usually " +
+                                 "> 1 mm in diameter.They may have lucent centers if " +
+                                 "the calcium is in the wall of the duct.These calcifications " +
+                                 "follow a ductal distribution, radiating toward the " +
+                                 "nipple and are usually bilateral (in both breasts).These " +
+                                 "secretory calcifications are most often seen in women " +
+                                 "older than 60 years.Sometimes it is difficult to " +
+                                 "differentiate these from linear calcifications as " +
+                                 "seen in DCIS. ",
+                                 " ###URL#https://radiologyassistant.nl/breast/breast-calcifications-differential-diagnosis")
                              .SetACR("These benign calcifications associated with ductal " +
                                  "ectasia may form solid or discontinuoussmooth linear " +
                                  "rods, most of which are 0.5 mm or larger in diameter. ",
@@ -205,6 +262,10 @@ namespace BreastRadiology.XUnitTests
                              .SetSnomedCode("129754005")
                              .SetSnomedDescription("ClinicalFinding | 129754005 | Lucent-centered radiographic " +
                                  "calcification (Finding)")
+                             .SetUMLS("These are round or oval calcifications that range " +
+                                 "from under 1 mm to over a centimeter.They are the " +
+                                 "result of fat necrosis, calcified debris in ducts, " +
+                                 "and occasional fibroadenomas.###URL#https://radiologyassistant.nl/breast/breast-calcifications-differential-diagnosis")
                          ,
                          new ConceptDef()
                              .SetCode("MilkOfCalcium")
@@ -215,6 +276,14 @@ namespace BreastRadiology.XUnitTests
                              .SetSnomedCode("129753004")
                              .SetSnomedDescription("ClinicalFinding | 129753004 | Milk of calcium radiographic " +
                                  "calcification (Finding)")
+                             .SetUMLS("These are benign sedimented calcifications in macro- " +
+                                 "or microcysts.On craniocaudad views (a specific type " +
+                                 "of view of the breast in radiology) they appear as " +
+                                 "fuzzy, round or amorphous.On a 90 degree lateral " +
+                                 "view  (another specific type of view of the breast " +
+                                 "in radiology) they may appear as semilunar, crescent " +
+                                 "shaped tea cups. ",
+                                 "###URL#https://radiologyassistant.nl/breast/breast-calcifications-differential-diagnosis")
                              .SetACR("This is a manifestation of sedimented calcifications " +
                                  "in macro- or microcysts, usually but notalways grouped. ",
                                  "On the craniocaudal image they are often less evident " +
@@ -261,6 +330,16 @@ namespace BreastRadiology.XUnitTests
                              .SetSnomedCode("129755006")
                              .SetSnomedDescription("ClinicalFinding | 129755006 | Punctate radiographic " +
                                  "calcification (Finding)")
+                             .SetUMLS("Calcification is punctate/round. ",
+                                 "It's different than a \"round\" calcification though " +
+                                 "as it also means the calcifications are less than " +
+                                 ".5 mm in size. ",
+                                 "May warrant a probably benign (non-cancer) assessment " +
+                                 "unless there is also a linear pattern or in a segmental " +
+                                 "distibution. ",
+                                 "This may require and imaging guided biopy or mammographic " +
+                                 "surveillance. ",
+                                 " ###ACRMG#")
                          ,
                          new ConceptDef()
                              .SetCode("Rim")
@@ -286,6 +365,12 @@ namespace BreastRadiology.XUnitTests
                              .SetSnomedCode("129756007")
                              .SetSnomedDescription("ClinicalFinding | 129756007 | Round shaped radiographic " +
                                  "calcification (Finding)")
+                             .SetUMLS("Round calcifications are 0.5-1 mm in size and frequently " +
+                                 "form in the acini of the terminal duct lobular unit.When " +
+                                 "smaller than 0.5 mm, the term 'punctate' is used.Round " +
+                                 "and punctate calcifications can be seen in fibrocystic " +
+                                 "changes or adenosis, skin calcifications, skin talc " +
+                                 "and rarely in DCIS.###URL#https://radiologyassistant.nl/breast/breast-calcifications-differential-diagnosis")
                              .SetACR("When multiple, they may vary in size and therefore " +
                                  "also in opacity. ",
                                  "They may be consideredbenign when diffuse and small " +
@@ -308,9 +393,9 @@ namespace BreastRadiology.XUnitTests
                                  "of calcified skin of breast (Finding) | [0/0] | R92")
                              .SetUMLS("These are usually lucent-centered and pathognomonic " +
                                  "in their appearance. ",
-                                 "Skin calcificationsare most commonly seen along the " +
-                                 "inframammary fold, parasternally, overlying the axillaand " +
-                                 "around the areola. ",
+                                 "Skin calcifications are most commonly seen along " +
+                                 "the inframammary fold, parasternally, overlying the " +
+                                 "axilla and around the areola. ",
                                  "The individual calcific particles usually are tightly " +
                                  "grouped, with individualgroups smaller than 5 mm " +
                                  "in greatest dimension. ",
@@ -326,7 +411,8 @@ namespace BreastRadiology.XUnitTests
                              .SetSnomedDescription("QualifierValue | 34258004 | Spherical shape (Qualifier) " +
                                  "+")
                              .SetUMLS("Calcifications that have formed a  spherical shape " +
-                                 "are usually associated with benign lesions.")
+                                 "are usually associated with benign lesions. ",
+                                 "###ACRMG#")
                          ,
                          new ConceptDef()
                              .SetCode("Suture")
@@ -337,6 +423,9 @@ namespace BreastRadiology.XUnitTests
                              .SetSnomedCode("129758008")
                              .SetSnomedDescription("ClinicalFinding | 129758008 | Radiographic finding " +
                                  "of calcified suture material (Finding)")
+                             .SetUMLS("These are typically linear or tubular in appearance, " +
+                                 "and when present in Mammogram, may show up in a knot " +
+                                 "pattern.")
                              .SetACR("These represent calcium deposited on suture material. ",
                                  "They are typically linear or tubular inappearance " +
                                  "and when present, knots are frequently visible.")
@@ -349,6 +438,12 @@ namespace BreastRadiology.XUnitTests
                              .SetDicom("F-0176B")
                              .SetSnomedDescription("ClinicalFinding | 396779001 | Breast arterial calcification " +
                                  "(Finding) | [0/0] | R92.1")
+                             .SetUMLS("These are linear or form parallel tracks, that are " +
+                                 "usually clearly associated with blood vessels.Vascular " +
+                                 "calcifications noted in womenOn the left typical " +
+                                 "vascular calcifications.If only one side of a vessel " +
+                                 "is calcified, the calcification may simulate intraductal " +
+                                 "(across a group of milk ducts) calcification.###URL#https://radiologyassistant.nl/breast/breast-calcifications-differential-diagnosis")
                              .SetACR("Parallel tracks, or linear tubular calcifications " +
                                  "that are clearly associated with blood vessels.While " +
                                  "most vascular calcification is not difficult to identify, " +
@@ -415,8 +510,7 @@ namespace BreastRadiology.XUnitTests
                         .Description("Calcifications usually can't be felt, but they appear " +
                             "on a mammogram. ",
                             "Depending on how they're clustered and their shape, " +
-                            "size, and number, your doctor may want to do further " +
-                            "tests. ",
+                            "size, and number, further tests may be recommended. ",
                             "Larger \"macrocalcifications\" are usually not associated " +
                             "with cancer.")
                     //- IntroDocDescription

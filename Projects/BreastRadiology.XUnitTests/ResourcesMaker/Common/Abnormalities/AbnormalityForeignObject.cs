@@ -152,6 +152,10 @@ namespace BreastRadiology.XUnitTests
                                 .SetDisplay("Catheter sleeves")
                                 .MammoId("519")
                                 .ValidModalities(Modalities.MG | Modalities.MRI | Modalities.US)
+                                .SetUMLS("A catheter sleeve was viewed in the Mammogram, MRI, " +
+                                    "and/or ultrasound. ",
+                                    "A catheter is a flexible tube used to deliver fluids " +
+                                    "into or withdraw fluids from the body.")
                             ,
                             new ConceptDef()
                                 .SetCode("ChemotherapyPort")
@@ -169,6 +173,13 @@ namespace BreastRadiology.XUnitTests
                                 .ValidModalities(Modalities.MG | Modalities.MRI | Modalities.US)
                                 .SetSnomedCode("470342004")
                                 .SetSnomedDescription("PhysicalObject | Implantable tissue clip (Object)")
+                                .SetUMLS("A titanium-based marker (also known as a \"clip\") is " +
+                                    "placed for most core biopsies to mark the area in " +
+                                    "case surgery will be needed in the future. ",
+                                    "... ",
+                                    "These marker clips are placed at most facilities " +
+                                    "around the country, and are considered a standard " +
+                                    "part of the breast biopsy procedure.")
                             ,
                             new ConceptDef()
                                 .SetCode("Clips")
@@ -177,6 +188,13 @@ namespace BreastRadiology.XUnitTests
                                 .ValidModalities(Modalities.MG | Modalities.MRI | Modalities.US)
                                 .SetSnomedCode("470342004")
                                 .SetSnomedDescription("PhysicalObject | Implantable tissue clip (Object)")
+                                .SetUMLS("A titanium-based marker (also known as a \"clip\") is " +
+                                    "placed for most core biopsies to mark the area in " +
+                                    "case surgery will be needed in the future. ",
+                                    "... ",
+                                    "These marker clips are placed at most facilities " +
+                                    "around the country, and are considered a standard " +
+                                    "part of the breast biopsy procedure.")
                             ,
                             new ConceptDef()
                                 .SetCode("Coil")
@@ -215,6 +233,8 @@ namespace BreastRadiology.XUnitTests
                                 .ValidModalities(Modalities.MG | Modalities.MRI | Modalities.US)
                                 .SetSnomedDescription("ClinicalFinding | 425055008 | Gunshot entry wound " +
                                     "(Disorder) | [0/0] | T14.8")
+                                .SetUMLS("There is a gunshot would present in the body and " +
+                                    "is viewable on the Ultrasound, Mammogram and/or MRI")
                             ,
                             new ConceptDef()
                                 .SetCode("MarkerClip")
@@ -224,6 +244,8 @@ namespace BreastRadiology.XUnitTests
                                 .SetSnomedCode("470272007")
                                 .SetSnomedDescription("PhysicalObject | Implantable lesion localization " +
                                     "marker (Object)")
+                                .SetUMLS("A marker clip (from possible previous biopsy) is " +
+                                    "visable in the Mammogram")
                             ,
                             new ConceptDef()
                                 .SetCode("Metal")
@@ -288,6 +310,8 @@ namespace BreastRadiology.XUnitTests
                                 .SetDisplay("Non-metallic body")
                                 .MammoId("594")
                                 .ValidModalities(Modalities.MG)
+                                .SetUMLS("A non-metallic foreign body was located in the breast " +
+                                    "tissue.")
                             ,
                             new ConceptDef()
                                 .SetCode("Pacemaker")
@@ -318,6 +342,8 @@ namespace BreastRadiology.XUnitTests
                                 .MammoId("535")
                                 .ValidModalities(Modalities.MG | Modalities.MRI | Modalities.US)
                                 .SetSnomedDescription("PhysicalObject | 706640008 | Sponge (Object)")
+                                .SetUMLS("A surgical sponge can be viewed from the images in " +
+                                    "the Mammogram, MRI and/or ultrasound.")
                             ,
                             new ConceptDef()
                                 .SetCode("SurgicalClip")
@@ -326,6 +352,11 @@ namespace BreastRadiology.XUnitTests
                                 .ValidModalities(Modalities.MG | Modalities.MRI | Modalities.US)
                                 .SetSnomedCode("470342004")
                                 .SetSnomedDescription("PhysicalObject | Implantable tissue clip (Object)")
+                                .SetUMLS("A surgical clip can be viewed within the Mammogram, " +
+                                    "MRI and/or Ultrasound. ",
+                                    "A tissue marker (or clip) is placed in your breast " +
+                                    "after a breast biopsy to help locate the site for " +
+                                    "future reference.")
                             ,
                             new ConceptDef()
                                 .SetCode("SurgicalClips")
@@ -334,6 +365,11 @@ namespace BreastRadiology.XUnitTests
                                 .ValidModalities(Modalities.MG | Modalities.MRI | Modalities.US)
                                 .SetSnomedCode("470342004")
                                 .SetSnomedDescription("PhysicalObject | Implantable tissue clip (Object)")
+                                .SetUMLS("Surgical clips can be viewed within the Mammogram, " +
+                                    "MRI and/or Ultrasound. ",
+                                    "A tissue marker (or clip) is placed in your breast " +
+                                    "after a breast biopsy to help locate the site for " +
+                                    "future reference.")
                             ,
                             new ConceptDef()
                                 .SetCode("Swab")
@@ -353,6 +389,14 @@ namespace BreastRadiology.XUnitTests
                                 .SetSnomedCode("470272007")
                                 .SetSnomedDescription("PhysicalObject | Implantable lesion localization " +
                                     "marker (Object)")
+                                .SetUMLS("In review of the MRI, Ultrasound, and/or Mammogram, " +
+                                    "a titanium-based marker (also known as a \"clip\") can " +
+                                    "be viewed inside the breast. ",
+                                    "This is placed for most core biopsies to mark the " +
+                                    "area in case surgery will be needed in the future. ",
+                                    "These marker clips are placed at most facilities " +
+                                    "around the country, and are considered a standard " +
+                                    "part of the breast biopsy procedure.###URL#https://med.nyu.edu/radiology/about-nyu-langone-radiology/subspecialty-sections/breast-imaging/image-guided-procedures")
                             ,
                             new ConceptDef()
                                 .SetCode("TitaniumClips")
@@ -362,6 +406,14 @@ namespace BreastRadiology.XUnitTests
                                 .SetSnomedCode("470272007")
                                 .SetSnomedDescription("PhysicalObject | Implantable lesion localization " +
                                     "marker (Object)")
+                                .SetUMLS("In review of the MRI, Ultrasound, and/or Mammogram, " +
+                                    "a titanium-based marker (also known as a \"clip\") can " +
+                                    "be viewed inside the breast. ",
+                                    "This is placed for most core biopsies to mark the " +
+                                    "area in case surgery will be needed in the future. ",
+                                    "These marker clips are placed at most facilities " +
+                                    "around the country, and are considered a standard " +
+                                    "part of the breast biopsy procedure.###URL#https://med.nyu.edu/radiology/about-nyu-langone-radiology/subspecialty-sections/breast-imaging/image-guided-procedures")
                             ,
                             new ConceptDef()
                                 .SetCode("Wire")

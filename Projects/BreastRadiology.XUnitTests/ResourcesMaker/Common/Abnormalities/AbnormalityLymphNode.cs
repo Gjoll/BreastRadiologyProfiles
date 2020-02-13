@@ -67,6 +67,12 @@ namespace BreastRadiology.XUnitTests
                                 .SetDisplay("Node focal cortex")
                                 .MammoId("662")
                                 .ValidModalities(Modalities.MG | Modalities.US)
+                                .SetUMLS("The mammogram and/or ultrasound show enlargement " +
+                                    "of the cortex. ",
+                                    "Metastatic deposits accumulate in the lymph node " +
+                                    "peripheral area, causing enlargement of the cortex, " +
+                                    "usually focal (at early stages), or uniform. ",
+                                    "###URL#www.ncbi.nlm.nih.gov > pmc > articles > PMC4337126")
                             ,
                             new ConceptDef()
                                 .SetCode("NodeInfraclavicular")
@@ -98,12 +104,19 @@ namespace BreastRadiology.XUnitTests
                                 .SetDisplay("Node lymph")
                                 .MammoId("651")
                                 .ValidModalities(Modalities.MG | Modalities.US)
+                                .SetUMLS("Abnormal lymph node viewed on ultrasound and/or ultrasound. ",
+                                    "Enlarged lymph nodes may warrant comment, clinical " +
+                                    "correlation and additional evaluation, especially " +
+                                    "if new or considerably larger or rounder when compared " +
+                                    "to previous examination. ",
+                                    "###ACRMG#")
                             ,
                             new ConceptDef()
                                 .SetCode("NodeLymphNormal")
                                 .SetDisplay("Node lymph normal")
                                 .MammoId("652")
                                 .ValidModalities(Modalities.MG | Modalities.US)
+                                .SetUMLS("The normal lymph node findings are probably benign.")
                             ,
                             new ConceptDef()
                                 .SetCode("NodeSupraclavicular")
@@ -123,6 +136,13 @@ namespace BreastRadiology.XUnitTests
                                 .SetDisplay("Node uniform thickness")
                                 .MammoId("663")
                                 .ValidModalities(Modalities.MG | Modalities.US)
+                                .SetUMLS("The mammogram and/or ultrasound shows thickening " +
+                                    "of the cortex is an indicator of an early change " +
+                                    "in metastasis. ",
+                                    " The qualitative methods used for the diagnosis of " +
+                                    "lymph node metastases on US include a round morphology, " +
+                                    "hypoechogenicity, loss of central hilum, or eccentric " +
+                                    "cortical hypertrophy.")
                             #endregion // Codes
                             //- Type
                          }

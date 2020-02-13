@@ -191,8 +191,8 @@
             "display": "If previous show no change"
           },
           {
-            "code": "LateralMagnificaionView",
-            "display": "Lateral magnificaion view"
+            "code": "LateralMagnificationView",
+            "display": "Lateral magnification view"
           },
           {
             "code": "LateralMedialView",
@@ -339,8 +339,8 @@
             "display": "Rolled medial view"
           },
           {
-            "code": "ScintiBiopsy",
-            "display": "Scinti biopsy"
+            "code": "ScintimammogramGuidedBiopsy",
+            "display": "Scintimammogram Guided Biopsy"
           },
           {
             "code": "Scintimammography",

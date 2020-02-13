@@ -22,7 +22,7 @@
     {
       "code": "DecreaseInCalcifications",
       "display": "Decrease in calcifications",
-      "definition": "Valid for the following modalities: MG."
+      "definition": "There is a decrease in the number of calcifications found in this mammogram versus the prior mammogram.\r\n\r\nValid for the following modalities: MG."
     },
     {
       "code": "DecreaseInNumber",
@@ -32,12 +32,12 @@
     {
       "code": "DecreaseInSize",
       "display": "Decrease in size",
-      "definition": "Valid for the following modalities: MG US MRI NM."
+      "definition": "The lesion/mass has decreased in size since prior MRI, Nuclear Medicine, Ultrasound and or/Mammogram.\r\n\r\nValid for the following modalities: MG US MRI NM."
     },
     {
       "code": "IncreaseInCalcifications",
       "display": "Increase in calcifications",
-      "definition": "Valid for the following modalities: MG."
+      "definition": "Calcifications have increased in number from previous Mammogram.\r\n\r\nValid for the following modalities: MG."
     },
     {
       "code": "IncreaseInNumber",
@@ -47,7 +47,7 @@
     {
       "code": "IncreaseInSize",
       "display": "Increase in size",
-      "definition": "Valid for the following modalities: MG US MRI NM."
+      "definition": "The mass has increased in size from the last Nuclear Medicine, ultrasound, MRI or mammogram.\r\n\r\nValid for the following modalities: MG US MRI NM."
     },
     {
       "code": "LessProminent",
@@ -62,7 +62,7 @@
     {
       "code": "New",
       "display": "New",
-      "definition": "Valid for the following modalities: MG US MRI NM."
+      "definition": "There are new masses/lesions present since last Mammogram, MRI, Nuclear Medicine and/or Ultrasound.\r\n\r\nValid for the following modalities: MG US MRI NM."
     },
     {
       "code": "NoLongerSeen",
@@ -72,12 +72,12 @@
     {
       "code": "NotSignificantChanged",
       "display": "Not significant changed",
-      "definition": "Valid for the following modalities: MG US MRI NM."
+      "definition": "The mass/lesion has not significantly changed since the last Mammogram.\r\n\r\nValid for the following modalities: MG US MRI NM."
     },
     {
       "code": "PartiallyRemoved",
       "display": "Partially removed",
-      "definition": "Valid for the following modalities: MG."
+      "definition": "The mass was partially removed since last mammogram.\r\n\r\nValid for the following modalities: MG."
     },
     {
       "code": "RepresentsChange",

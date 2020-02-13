@@ -26,12 +26,17 @@ namespace BreastRadiology.XUnitTests
                                  .SetDisplay("Density")
                                  .MammoId("686")
                                  .ValidModalities(Modalities.MG)
+                                 .SetUMLS("The density types are referring to the amount of " +
+                                     " glandular tissue and fibrous connective tissue versus " +
+                                     "levels of fatty tissue.")
                              ,
                              new ConceptDef()
                                  .SetCode("DensityFocalAsymmetry")
                                  .SetDisplay("Density focal asymmetry")
                                  .MammoId("645")
                                  .ValidModalities(Modalities.MG)
+                                 .SetUMLS("The density is focal asymmetry on two mammographic " +
+                                     "views.")
                              ,
                              new ConceptDef()
                                  .SetCode("DensityNodular")
@@ -39,6 +44,7 @@ namespace BreastRadiology.XUnitTests
                                  .MammoId("646")
                                  .ValidModalities(Modalities.MG)
                                  .SetSnomedDescription("not found like tubular shaped")
+                                 .SetUMLS("The nodule found on Mammogram is dense.")
                              ,
                              new ConceptDef()
                                  .SetCode("DensityTubular")
@@ -47,6 +53,8 @@ namespace BreastRadiology.XUnitTests
                                  .ValidModalities(Modalities.MG)
                                  .SetSnomedDescription("ClinicalFinding | 129794007 | Tubular shaped density " +
                                      "of breast (Finding)")
+                                 .SetUMLS("The milk ducts have formed a tubular appearing dense " +
+                                     "structure.")
                              #endregion // Codes
                              //- Type
                          }
@@ -107,6 +115,9 @@ namespace BreastRadiology.XUnitTests
                 e.IntroDoc
                     .ReviewedStatus("NOONE", "")
                     //+ IntroDocDescription
+                        .Description("The density types are referring to the amount of " +
+                            " glandular tissue and fibrous connective tissue versus " +
+                            "levels of fatty tissue.")
                     //- IntroDocDescription
                     ;
 

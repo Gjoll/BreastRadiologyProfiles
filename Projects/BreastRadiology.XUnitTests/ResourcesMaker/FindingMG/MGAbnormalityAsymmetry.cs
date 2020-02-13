@@ -32,9 +32,7 @@ namespace BreastRadiology.XUnitTests
                              .MammoId("691")
                              .ValidModalities(Modalities.MG)
                              .SetUMLS("Breast asymmetry refers to when one breast is a different " +
-                                 "size or shape than the other. ",
-                                 "Uneven or different sized breasts or nipples are " +
-                                 "not usually a cause for concern.")
+                                 "size or shape than the other.")
                          ,
                          new ConceptDef()
                              .SetCode("AsymmetryFocal")
@@ -44,7 +42,7 @@ namespace BreastRadiology.XUnitTests
                              .SetUMLS("Focal asymmetry is visible as a confined asymmetry " +
                                  "with a similar shape on two views but does not fit " +
                                  "the criteria of a mass: that is, it lacks convex " +
-                                 "outer borders and conspicuity (,Fig 4,,). ",
+                                 "outer borders and conspicuity. ",
                                  "In contrast to global asymmetry, it occupies a volume " +
                                  "of less than one quadrant of the breast and is of " +
                                  "more concern. ",
@@ -60,10 +58,7 @@ namespace BreastRadiology.XUnitTests
                              .SetUMLS("Global asymmetry in breast tissue is a form of breast " +
                                  "asymmetry where at least one quadrant of a breast " +
                                  "has a larger amount of fibroglandular density than " +
-                                 "the corresponding area in the contralateral breast. ",
-                                 "There is no mass, suspicious calcification, or architectural " +
-                                 "distortion. ",
-                                 "###URL#https://radiopaedia.org/articles/global-asymmetry-in-breast-tissue?lang=us")
+                                 "the corresponding area in the contralateral breast.")
                          ,
                          new ConceptDef()
                              .SetCode("DevelopingAsymmetry")
@@ -145,9 +140,7 @@ namespace BreastRadiology.XUnitTests
                     .ReviewedStatus("NOONE", "")
                     //+ IntroDocDescription
                         .Description("Breast asymmetry refers to when one breast is a different " +
-                            "size or shape than the other. ",
-                            "Uneven or different sized breasts or nipples are " +
-                            "not usually a cause for concern.")
+                            "size or shape than the other.")
                     //- IntroDocDescription
                     ;
 

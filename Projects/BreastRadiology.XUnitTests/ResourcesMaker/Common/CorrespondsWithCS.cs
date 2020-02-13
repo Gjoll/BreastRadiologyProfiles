@@ -243,6 +243,8 @@ namespace BreastRadiology.XUnitTests
                                 .ValidModalities(Modalities.MG)
                                 .SetSnomedDescription("PhysicalObject | 706314007 | Imaging lesion localization " +
                                     "marker (Object)")
+                                .SetUMLS("The mammogram findings correspond with where the " +
+                                    "skin marker was placed on the breast.")
                             ,
                             new ConceptDef()
                                 .SetCode("Surgery")

@@ -58,8 +58,8 @@ namespace BreastRadiology.XUnitTests
                                  "###URL#https://www.cancer.gov/publications/dictionaries/cancer-terms/def/scattered-fibroglandular-breast-tissue")
                          ,
                          new ConceptDef()
-                             .SetCode("HetrogeneouslyDense")
-                             .SetDisplay("Hetrogeneously dense")
+                             .SetCode("HeterogeneouslyDense")
+                             .SetDisplay("Heterogeneously dense")
                              .MammoId("Row620")
                              .ValidModalities(Modalities.MG)
                              .SetUMLS("A term used to describe breast tissue that has large " +

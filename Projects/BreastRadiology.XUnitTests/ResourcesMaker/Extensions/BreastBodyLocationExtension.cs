@@ -59,22 +59,38 @@ namespace BreastRadiology.XUnitTests
                                  .SetCode("AxillaI")
                                  .SetDisplay("Axilla I")
                                  .MammoId("AxillaI")
+                                 .SetUMLS("There are three levels of axillary lymph nodes (the " +
+                                     "nodes in the underarm or \"axilla\" area): Level I is " +
+                                     "the bottom level, below the lower edge of the pectoralis " +
+                                     "minor muscle. ",
+                                     "###URL#https://www.breastcancer.org/treatment/surgery/lymph_node_removal/axillary_dissection")
                              ,
                              new ConceptDef()
                                  .SetCode("AxillaII")
                                  .SetDisplay("Axilla II")
                                  .MammoId("AxillaII")
+                                 .SetUMLS("There are three levels of axillary lymph nodes (the " +
+                                     "nodes in the underarm or \"axilla\" area):Level II is " +
+                                     "lying underneath the pectoralis minor muscle. ",
+                                     "###URL#https://www.breastcancer.org/treatment/surgery/lymph_node_removal/axillary_dissection")
                              ,
                              new ConceptDef()
                                  .SetCode("AxillaIII")
                                  .SetDisplay("Axilla III")
                                  .MammoId("AxillaIII")
+                                 .SetUMLS("There are three levels of axillary lymph nodes (the " +
+                                     "nodes in the underarm or \"axilla\" area): Level III " +
+                                     "is above the pectoralis minor muscle. ",
+                                     "###URL#https://www.breastcancer.org/treatment/surgery/lymph_node_removal/axillary_dissection")
                              ,
                              new ConceptDef()
                                  .SetCode("InframammaryFold")
                                  .SetDisplay("Inframammary fold")
                                  .MammoId("1515")
                                  .ValidModalities(Modalities.MG | Modalities.MRI | Modalities.NM | Modalities.US)
+                                 .SetUMLS("The mass/lesion is located in the inframammary crease " +
+                                     "where the lower boundary of the breast and the chest " +
+                                     "meet.")
                              ,
                              new ConceptDef()
                                  .SetCode("InSkin")
@@ -90,6 +106,8 @@ namespace BreastRadiology.XUnitTests
                                  .ValidModalities(Modalities.MG | Modalities.US)
                                  .SetSnomedDescription("BodyStructure | 49058007 | Structure of central portion " +
                                      "of breast (Bodypart)")
+                                 .SetUMLS("Central to the nipple (central portion of the breast-behind " +
+                                     "the nipple).")
                              #endregion // Codes
                              //- Regions
                             //new ConceptDef()
@@ -176,8 +194,8 @@ namespace BreastRadiology.XUnitTests
                                  .ValidModalities(Modalities.MG | Modalities.US)
                                  .SetSnomedDescription("ClinicalFinding | 129772004 | 1 o'clock position " +
                                      "on mammogram (Finding) | [0/0] |")
-                                 .SetUMLS("Just like the hands of a clock, this is how doctors " +
-                                     "describe position of the tumor in the breast. ",
+                                 .SetUMLS("Just like the hands of a clock, this is how to describe " +
+                                     "the position of the tumor in the breast. ",
                                      "1 o'clock position is at the 1 o'clock position and " +
                                      "in the Upper Inner Quandrant (UIQ) of the breast.")
                              ,
@@ -188,8 +206,8 @@ namespace BreastRadiology.XUnitTests
                                  .ValidModalities(Modalities.MG | Modalities.US)
                                  .SetSnomedDescription("ClinicalFinding | 129773009 | 2 o'clock position " +
                                      "on mammogram (Finding) | [0/0] |")
-                                 .SetUMLS("Just like the hands of a clock, this is how doctors " +
-                                     "describe position of the tumor in the breast. ",
+                                 .SetUMLS("Just like the hands of a clock, this is how to describe " +
+                                     "the position of the tumor in the breast. ",
                                      "2 o'clock position is at the 2 o'clock position and " +
                                      "in the Upper Inner Quandrant (UIQ) of the breast.")
                              ,
@@ -200,8 +218,8 @@ namespace BreastRadiology.XUnitTests
                                  .ValidModalities(Modalities.MG | Modalities.US)
                                  .SetSnomedDescription("ClinicalFinding | 129774003 | 3 o'clock position " +
                                      "on mammogram (Finding) | [0/0] |")
-                                 .SetUMLS("Just like the hands of a clock, this is how doctors " +
-                                     "describe position of the tumor in the breast. ",
+                                 .SetUMLS("Just like the hands of a clock, this is how to describe " +
+                                     "the position of the tumor in the breast. ",
                                      "3 o'clock position is at the 3 o'clock position.")
                              ,
                              new ConceptDef()
@@ -211,8 +229,8 @@ namespace BreastRadiology.XUnitTests
                                  .ValidModalities(Modalities.MG | Modalities.US)
                                  .SetSnomedDescription("ClinicalFinding | 129775002 | 4 o'clock position " +
                                      "on mammogram (Finding) | [0/0] |")
-                                 .SetUMLS("Just like the hands of a clock, this is how doctors " +
-                                     "describe position of the tumor in the breast. ",
+                                 .SetUMLS("Just like the hands of a clock, this is how to describe " +
+                                     "the position of the tumor in the breast. ",
                                      "4 o'clock position is at the 4 o'clock position and " +
                                      "in the Lower Inner Quandrant (LIQ) of the breast.")
                              ,
@@ -223,8 +241,8 @@ namespace BreastRadiology.XUnitTests
                                  .ValidModalities(Modalities.MG | Modalities.US)
                                  .SetSnomedDescription("ClinicalFinding | 129776001 | 5 o'clock position " +
                                      "on mammogram (Finding) | [0/0] |")
-                                 .SetUMLS("Just like the hands of a clock, this is how doctors " +
-                                     "describe position of the tumor in the breast. ",
+                                 .SetUMLS("Just like the hands of a clock, this is how to describe " +
+                                     "the position of the tumor in the breast. ",
                                      "5 o'clock position is at the 5 o'clock position and " +
                                      "in the Lower Inner Quandrant (LIQ) of the breast.")
                              ,
@@ -235,8 +253,8 @@ namespace BreastRadiology.XUnitTests
                                  .ValidModalities(Modalities.MG | Modalities.US)
                                  .SetSnomedDescription("ClinicalFinding | 129777005 | 6 o'clock position " +
                                      "on mammogram (Finding) | [0/0] |")
-                                 .SetUMLS("Just like the hands of a clock, this is how doctors " +
-                                     "describe position of the tumor in the breast. ",
+                                 .SetUMLS("Just like the hands of a clock, this is how to describe " +
+                                     "the position of the tumor in the breast. ",
                                      "6 o'clock position is at the 6 o'clock position.")
                              ,
                              new ConceptDef()
@@ -246,8 +264,8 @@ namespace BreastRadiology.XUnitTests
                                  .ValidModalities(Modalities.MG | Modalities.US)
                                  .SetSnomedDescription("ClinicalFinding | 129778000 | 7 o'clock position " +
                                      "on mammogram (Finding) | [0/0] |")
-                                 .SetUMLS("Just like the hands of a clock, this is how doctors " +
-                                     "describe position of the tumor in the breast. ",
+                                 .SetUMLS("Just like the hands of a clock, this is how to describe " +
+                                     "the position of the tumor in the breast. ",
                                      "7 o'clock position is at the 7 o'clock position and " +
                                      "in the Lower Outer Quandrant (LOQ) of the breast.")
                              ,
@@ -258,8 +276,8 @@ namespace BreastRadiology.XUnitTests
                                  .ValidModalities(Modalities.MG | Modalities.US)
                                  .SetSnomedDescription("ClinicalFinding | 129779008 | 8 o'clock position " +
                                      "on mammogram (Finding) | [0/0] |")
-                                 .SetUMLS("Just like the hands of a clock, this is how doctors " +
-                                     "describe position of the tumor in the breast. ",
+                                 .SetUMLS("Just like the hands of a clock, this is how to describe " +
+                                     "the position of the tumor in the breast. ",
                                      "8 o'clock position is at the 8 o'clock position and " +
                                      "in the Lower Outer Quandrant (LOQ) of the breast.")
                              ,
@@ -270,8 +288,8 @@ namespace BreastRadiology.XUnitTests
                                  .ValidModalities(Modalities.MG | Modalities.US)
                                  .SetSnomedDescription("ClinicalFinding | 129780006 | 9 o'clock position " +
                                      "on mammogram (Finding) | [0/0] |")
-                                 .SetUMLS("Just like the hands of a clock, this is how doctors " +
-                                     "describe position of the tumor in the breast. ",
+                                 .SetUMLS("Just like the hands of a clock, this is how to describe " +
+                                     "the position of the tumor in the breast. ",
                                      "9 o'clock position is at the 9 o'clock position.")
                              ,
                              new ConceptDef()
@@ -281,8 +299,8 @@ namespace BreastRadiology.XUnitTests
                                  .ValidModalities(Modalities.MG | Modalities.US)
                                  .SetSnomedDescription("ClinicalFinding | 129781005 | 10 o'clock position " +
                                      "on mammogram (Finding) | [0/0] |")
-                                 .SetUMLS("Just like the hands of a clock, this is how doctors " +
-                                     "describe position of the tumor in the breast. ",
+                                 .SetUMLS("Just like the hands of a clock, this is how to describe " +
+                                     "the position of the tumor in the breast. ",
                                      "10 o'clock position is at the 10 o'clock position " +
                                      "and in the Upper Outer Quandrant (UOQ) of the breast.")
                              ,
@@ -293,8 +311,8 @@ namespace BreastRadiology.XUnitTests
                                  .ValidModalities(Modalities.MG | Modalities.US)
                                  .SetSnomedDescription("ClinicalFinding | 129782003 | 11 o'clock position " +
                                      "on mammogram (Finding) | [0/0] |")
-                                 .SetUMLS("Just like the hands of a clock, this is how doctors " +
-                                     "describe position of the tumor in the breast. ",
+                                 .SetUMLS("Just like the hands of a clock, this is how to describe " +
+                                     "the position of the tumor in the breast. ",
                                      "11 o'clock position is at the 11 o'clock position " +
                                      "and in the Upper Outer Quandrant (UOQ) of the breast.")
                              ,
@@ -305,8 +323,8 @@ namespace BreastRadiology.XUnitTests
                                  .ValidModalities(Modalities.MG | Modalities.US)
                                  .SetSnomedDescription("ClinicalFinding | 129783008 | 12 o'clock position " +
                                      "on mammogram (Finding) | [0/0] |")
-                                 .SetUMLS("Just like the hands of a clock, this is how doctors " +
-                                     "describe position of the tumor in the breast. ",
+                                 .SetUMLS("Just like the hands of a clock, this is how to describe " +
+                                     "the position of the tumor in the breast. ",
                                      "12 o'clock position is at the 12 o'clock position.")
                              #endregion // Codes
                              //- ClockPositions
@@ -345,6 +363,8 @@ namespace BreastRadiology.XUnitTests
                                  .MammoId("1018")
                                  .ValidModalities(Modalities.MG | Modalities.US)
                                  .SetSnomedDescription("Not found")
+                                 .SetUMLS("Middle depth in between the anterior and posterior " +
+                                     "portion of the breast.")
                              ,
                              new ConceptDef()
                                  .SetCode("PosteriorDepth")
@@ -353,6 +373,8 @@ namespace BreastRadiology.XUnitTests
                                  .ValidModalities(Modalities.MG | Modalities.US)
                                  .SetSnomedDescription("QualifierValue | 255551008 | Posterior (Qualifier) " +
                                      "+ depth")
+                                 .SetUMLS("Posterior depth (closest to the chest wall) of the " +
+                                     " breast.")
                              #endregion // Codes
                              //- Depth
                          })

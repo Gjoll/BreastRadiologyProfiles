@@ -19,8 +19,8 @@ namespace GGMerge
         public GGMerge()
         {
             InitializeComponent();
-            Encoding.RegisterProvider(System.Text.CodePagesEncodingProvider.Instance);
-            Encoding enc1252 = CodePagesEncodingProvider.Instance.GetEncoding(1252);
+            //Encoding.RegisterProvider(System.Text.CodePagesEncodingProvider.Instance);
+            //Encoding enc1252 = CodePagesEncodingProvider.Instance.GetEncoding(1252);
         }
 
         String sourcePath = null;

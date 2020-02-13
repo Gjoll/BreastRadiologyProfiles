@@ -53,8 +53,7 @@ namespace BreastRadiology.XUnitTests
                     .ReviewedStatus("NOONE", "")
                     //+ IntroDocDescription
                         .Description("Fat necrosis is a benign (not cancer) condition and " +
-                            "does not increase your risk of developing breast " +
-                            "cancer. ",
+                            "does not increase risk of developing breast cancer. ",
                             "It can occur anywhere in the breast and can affect " +
                             "women of any age. ",
                             "Men can also get fat necrosis, but this is very rare. ",

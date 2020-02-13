@@ -67,11 +67,6 @@ namespace BreastRadiology.XUnitTests
                                     "Numerous breast tissue markers are currently available, " +
                                     "with varied shapes, composition, and associated bio-absorbable " +
                                     "components. ",
-                                    "This review serves to familiarize the breast interventionalist " +
-                                    "with the tissue markers most widely available in " +
-                                    "the United States today and to provide guidance regarding " +
-                                    "selection of appropriate markers for various clinical " +
-                                    "settings. ",
                                     "###URL#https://www.ncbi.nlm.nih.gov/pubmed/30059952")
                             ,
                             new ConceptDef()
@@ -93,11 +88,6 @@ namespace BreastRadiology.XUnitTests
                                     "Numerous breast tissue markers are currently available, " +
                                     "with varied shapes, composition, and associated bio-absorbable " +
                                     "components. ",
-                                    "This review serves to familiarize the breast interventionalist " +
-                                    "with the tissue markers most widely available in " +
-                                    "the United States today and to provide guidance regarding " +
-                                    "selection of appropriate markers for various clinical " +
-                                    "settings. ",
                                     "###URL#https://www.ncbi.nlm.nih.gov/pubmed/30059952")
                             ,
                             new ConceptDef()
@@ -130,6 +120,18 @@ namespace BreastRadiology.XUnitTests
                                 .SetDisplay("Cooper distorted")
                                 .MammoId("261")
                                 .ValidModalities(Modalities.US)
+                                .SetUMLS("The cooper's ligaments are fibrous bands extending " +
+                                    "vertically from surface attached to chest wall muscles. ",
+                                    "These ligaments maintain the shape and structure " +
+                                    "of your breasts and help to prevent sagging. ",
+                                    " Cooper's ligaments support the breasts on the chest " +
+                                    "wall, maintain their contour, and keep them in position. ",
+                                    "They become distorted if cancerous tumors grow on " +
+                                    "the ligaments. ",
+                                    "The normal breast contours can be noticeably different " +
+                                    "once they are distorted. ",
+                                    "This can be because of swelling, bulges, retraction, " +
+                                    "etc.")
                             ,
                             new ConceptDef()
                                 .SetCode("CooperThickened")
@@ -137,7 +139,7 @@ namespace BreastRadiology.XUnitTests
                                 .MammoId("262")
                                 .ValidModalities(Modalities.US)
                                 .SetUMLS("The cooper's ligaments are fibrous bands extending " +
-                                    "vertically from surface attach on chest wall muscles. ",
+                                    "vertically from surface attachedto chest wall muscles. ",
                                     "These ligaments maintain the shape and structure " +
                                     "of your breasts and help to prevent sagging. ",
                                     "Cooper's ligaments support the breasts on the chest " +
@@ -157,15 +159,18 @@ namespace BreastRadiology.XUnitTests
                                 .ValidModalities(Modalities.US)
                                 .SetSnomedCode("290077003")
                                 .SetSnomedDescription("Clinical Finding | Edema of breast (Finding)")
-                                .SetUMLS("Edema may be due to blockage of subdermal lymphatics " +
-                                    "by tumor cells or an inflammatory process within " +
-                                    "the breast or axilla.")
+                                .SetUMLS("Edema (swelling of the breasts)  may be due to blockage " +
+                                    "of subdermal lymphatics by tumor cells or an inflammatory " +
+                                    "process within the breast or axilla.")
                             ,
                             new ConceptDef()
                                 .SetCode("EdemaAdj")
                                 .SetDisplay("Edema adj")
                                 .MammoId("259")
                                 .ValidModalities(Modalities.US)
+                                .SetUMLS("This is swelling of one or both breasts. ",
+                                    "A mammographic pattern of skin thickening, increased " +
+                                    "parenchymal density, and interstitial marking.")
                             ,
                             new ConceptDef()
                                 .SetCode("GoldSeed")
@@ -178,9 +183,9 @@ namespace BreastRadiology.XUnitTests
                                 .SetUMLS("Tiny, gold seeds, about the size of a grain of rice, " +
                                     "that are put in and/or around a tumor to show exactly " +
                                     "where it is in the body. ",
-                                    "Doctors are then able to target the tumor directly " +
-                                    "and give higher doses of radiation with less harm " +
-                                    "to nearby healthy tissue. ",
+                                    "The tumor can then be directly targeted and be given " +
+                                    "higher doses of radiation with less harm to nearby " +
+                                    "healthy tissue. ",
                                     "Also called gold fiducial marker seeds, gold fiducial " +
                                     "markers, and gold-seed fiducial markers. ",
                                     "###URL#https://www.cancer.gov/publications/dictionaries/cancer-terms/def/gold-seeds")
@@ -303,8 +308,8 @@ namespace BreastRadiology.XUnitTests
                                 .SetSnomedDescription("ClinicalFinding | Neoplasm of skin of breast (Disorder)")
                                 .SetUMLS("A skin lesion is a part of the skin that has an abnormal " +
                                     "growth or appearance compared to the skin around " +
-                                    "it.In order to diagnose a skin lesion, a dermatologist " +
-                                    "or doctor will conduct a full physical exam.")
+                                    "it.In order to diagnose a skin lesion, a full physical " +
+                                    "exam is necessary.")
                             ,
                             new ConceptDef()
                                 .SetCode("SkinRetraction")

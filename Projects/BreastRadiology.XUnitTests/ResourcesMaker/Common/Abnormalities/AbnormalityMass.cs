@@ -62,12 +62,23 @@ namespace BreastRadiology.XUnitTests
                                 .ValidModalities(Modalities.MG | Modalities.US)
                                 .SetSnomedCode("126510002")
                                 .SetSnomedDescription("ClinicalFinding | Neoplasm of skin of breast (Disorder)")
+                                .SetUMLS("The mammogram and/or ultrasound show a skin lesion. ",
+                                    "This finding may be described in the mammography " +
+                                    "report or annotated on the mammographic image when " +
+                                    "it projects over the breast (especially on two different " +
+                                    "projections) and may be mistaken for an intramammary " +
+                                    "lesion.###ACRMG#")
                             ,
                             new ConceptDef()
                                 .SetCode("MassSolid")
                                 .SetDisplay("Mass solid")
                                 .MammoId("608")
                                 .ValidModalities(Modalities.MG | Modalities.US)
+                                .SetUMLS("The mammogram and/or ultrasound show solid mass of " +
+                                    "the breast. ",
+                                    "This can be nodules, fibrocystic tissue, phylloides " +
+                                    "tumor, breast cancer or metastatic. ",
+                                    "May need a biopsy confirmation.")
                             #endregion // Codes
                             //- Type
                          })

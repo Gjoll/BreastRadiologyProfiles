@@ -35,6 +35,8 @@ namespace BreastRadiology.XUnitTests
                              .SetSnomedCode("129727007")
                              .SetSnomedDescription("ClinicalFinding | Decrease in number of calcifications " +
                                  "since previous mammogram (Finding)")
+                             .SetUMLS("There is a decrease in the number of calcifications " +
+                                 "found in this mammogram versus the prior mammogram.")
                          ,
                          new ConceptDef()
                              .SetCode("DecreaseInNumber")
@@ -54,6 +56,8 @@ namespace BreastRadiology.XUnitTests
                              .SetDicom("M-02530")
                              .SetSnomedCode("19776001")
                              .SetSnomedDescription("ClinicalFinding | 19776001 | Decreased size (Finding)")
+                             .SetUMLS("The lesion/mass has decreased in size since prior " +
+                                 "MRI, Nuclear Medicine, Ultrasound and or/Mammogram.")
                          ,
                          new ConceptDef()
                              .SetCode("IncreaseInCalcifications")
@@ -64,6 +68,8 @@ namespace BreastRadiology.XUnitTests
                              .SetSnomedCode("129726003")
                              .SetSnomedDescription("ClinicalFinding | Increase in number of calcifications " +
                                  "since previous mammogram (Finding)")
+                             .SetUMLS("Calcifications have increased in number from previous " +
+                                 "Mammogram.")
                          ,
                          new ConceptDef()
                              .SetCode("IncreaseInNumber")
@@ -83,6 +89,8 @@ namespace BreastRadiology.XUnitTests
                              .SetDicom("M-02520")
                              .SetSnomedCode("15454001")
                              .SetSnomedDescription("ClinicalFinding | 15454001 | Increased size (Finding)")
+                             .SetUMLS("The mass has increased in size from the last Nuclear " +
+                                 "Medicine, ultrasound, MRI or mammogram.")
                          ,
                          new ConceptDef()
                              .SetCode("LessProminent")
@@ -113,6 +121,8 @@ namespace BreastRadiology.XUnitTests
                              .SetSnomedCode("129721008")
                              .SetSnomedDescription("ClinicalFinding | 129721008 | New finding since previous " +
                                  "mammogram (Finding)")
+                             .SetUMLS("There are new masses/lesions present since last Mammogram, " +
+                                 "MRI, Nuclear Medicine and/or Ultrasound.")
                          ,
                          new ConceptDef()
                              .SetCode("NoLongerSeen")
@@ -131,6 +141,8 @@ namespace BreastRadiology.XUnitTests
                              .SetSnomedCode("129723006")
                              .SetSnomedDescription("ClinicalFinding | 129723006 | No significant change " +
                                  "since previous mammogram (Finding)")
+                             .SetUMLS("The mass/lesion has not significantly changed since " +
+                                 "the last Mammogram.")
                          ,
                          new ConceptDef()
                              .SetCode("PartiallyRemoved")
@@ -141,6 +153,7 @@ namespace BreastRadiology.XUnitTests
                              .SetSnomedCode("129722001")
                              .SetSnomedDescription("ClinicalFinding | 129722001 | Finding partially removed " +
                                  "since previous mammogram (Finding)")
+                             .SetUMLS("The mass was partially removed since last mammogram.")
                          ,
                          new ConceptDef()
                              .SetCode("RepresentsChange")

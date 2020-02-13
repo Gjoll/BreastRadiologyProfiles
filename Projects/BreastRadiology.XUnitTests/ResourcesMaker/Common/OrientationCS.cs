@@ -31,6 +31,7 @@ namespace BreastRadiology.XUnitTests
                              .SetDisplay("Parallel to skin")
                              .MammoId("1508")
                              .ValidModalities(Modalities.MG | Modalities.MRI | Modalities.NM | Modalities.US)
+                             .SetUMLS("The lesion/mass is oriented parellel to skin.")
                              .SetACR("(historically, \"wider-than-tall\" or \"horizontal\")The " +
                                  "long axis of the mass parallels the skin line. ",
                                  "Masses that are only slightly obiquely orientedmight " +
@@ -41,6 +42,7 @@ namespace BreastRadiology.XUnitTests
                              .SetDisplay("Perpendicular to skin (not parallel)")
                              .MammoId("1509")
                              .ValidModalities(Modalities.MG | Modalities.MRI | Modalities.NM | Modalities.US)
+                             .SetUMLS("The lesion/mass is oriented perpendicular to skin.")
                              .SetACR("(historically, \"isodense\")The long axis of the mass " +
                                  "does not lie parallel to the skin line. ",
                                  "The anterior-posterior or verticaldimension is greater " +
@@ -54,12 +56,20 @@ namespace BreastRadiology.XUnitTests
                              .SetDisplay("Taller than wide")
                              .MammoId("1518")
                              .ValidModalities(Modalities.MRI | Modalities.US)
+                             .SetUMLS("The nodule is taller than wide. ",
+                                 "A nodule is said to be taller than wide when it is " +
+                                 "greater in the direction normal to the skin than " +
+                                 "in the parallel ones.")
                          ,
                          new ConceptDef()
                              .SetCode("WiderThanTall")
                              .SetDisplay("Wider than tall")
                              .MammoId("1517")
                              .ValidModalities(Modalities.MRI | Modalities.US)
+                             .SetUMLS("The nodule is wider than tall. ",
+                                 "A nodule is said to be wider than tall when it is " +
+                                 "larger in the direction not parallel to the direction " +
+                                 "of the skin.")
                          #endregion // Codes
                          //- Codes
                      })

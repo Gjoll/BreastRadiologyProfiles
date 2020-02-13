@@ -78,14 +78,15 @@ namespace BreastRadiology.XUnitTests
                                     "of breast (Procedure)")
                                 .SetUMLS("Magnetic Resonance Imaging (MRI) is a test that uses " +
                                     "powerful magnets, radio waves, and a computer to " +
-                                    "make detailed pictures inside your body. ",
-                                    "It helps a doctor to diagnose a disease or injury.")
+                                    "make detailed pictures inside your body.")
                             ,
                             new ConceptDef()
                                 .SetCode("OutsideExam")
                                 .SetDisplay("Outside exam")
                                 .MammoId("286")
                                 .ValidModalities(Modalities.MG)
+                                .SetUMLS("The findings on the Mammogram were not previously " +
+                                    "seen on the outside exam.")
                             ,
                             new ConceptDef()
                                 .SetCode("Scintimammography")

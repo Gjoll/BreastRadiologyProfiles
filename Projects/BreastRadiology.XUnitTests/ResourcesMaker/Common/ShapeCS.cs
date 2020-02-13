@@ -67,13 +67,15 @@ namespace BreastRadiology.XUnitTests
                             .ValidModalities(Modalities.MG | Modalities.MRI | Modalities.US)
                             .SetSnomedCode("129734009")
                             .SetSnomedDescription("ClinicalFinding | Oval shaped lesion (Finding)")
-                            .SetUMLS("A mass that is elliptical or egg-shaped.")
+                            .SetUMLS("There is a mass that is elliptical or egg-shaped.")
                         ,
                         new ConceptDef()
                             .SetCode("Reniform")
                             .SetDisplay("Reniform")
                             .MammoId("27")
                             .ValidModalities(Modalities.MG)
+                            .SetUMLS("There is a mass that is reniform (kidney shape) in " +
+                                "shape.")
                             .SetACR("is a three-dimensional lesion that occupies a space " +
                                 "within the breast.")
                         ,
@@ -84,8 +86,8 @@ namespace BreastRadiology.XUnitTests
                             .ValidModalities(Modalities.MG | Modalities.MRI | Modalities.US)
                             .SetSnomedCode("129733003")
                             .SetSnomedDescription("ClinicalFinding | Round shaped lesion (Finding)")
-                            .SetUMLS("A mass that is spherical, ball-shaped, circular or " +
-                                "global.")
+                            .SetUMLS("There is a mass that is spherical, ball-shaped, circular " +
+                                "or global.")
                         #endregion // Codes
                         //- Codes
                      })

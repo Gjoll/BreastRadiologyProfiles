@@ -526,7 +526,7 @@ namespace BreastRadiology.XUnitTests
                                     "breasts feel tender, lumpy or ropy. ",
                                     "Fibrocystic breasts are composed of tissue that feels " +
                                     "lumpy or rope-like in texture. ",
-                                    "Doctors call this nodular or glandular breast tissue. ",
+                                    "This is called nodular or glandular breast tissue. ",
                                     "###URL#https://www.mayoclinic.org/diseases-conditions/fibrocystic-breasts/symptoms-causes/syc-20350438")
                             ,
                             new ConceptDef()
@@ -540,7 +540,7 @@ namespace BreastRadiology.XUnitTests
                                     "breasts feel tender, lumpy or ropy. ",
                                     "Fibrocystic breasts are composed of tissue that feels " +
                                     "lumpy or rope-like in texture. ",
-                                    "Doctors call this nodular or glandular breast tissue. ",
+                                    "This is called nodular or glandular breast tissue. ",
                                     "###URL#https://www.mayoclinic.org/diseases-conditions/fibrocystic-breasts/symptoms-causes/syc-20350438")
                             ,
                             new ConceptDef()

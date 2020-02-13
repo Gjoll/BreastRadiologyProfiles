@@ -56,8 +56,10 @@ namespace BreastRadiology.XUnitTests
                                 .MammoId("807")
                                 .ValidModalities(Modalities.MG)
                                 .SetSnomedDescription("Procedure | 122548005 | Biopsy of breast (Procedure)")
-                                .SetUMLS("An examination of tissue removed from the body to " +
-                                    "discover the presence, cause or extent of a disease.")
+                                .SetUMLS("An examination under a microscope  of the specific " +
+                                    "tissue removed from the body. ",
+                                    "The examination is used to check for abnormalities " +
+                                    "or cancer cells.")
                             ,
                             new ConceptDef()
                                 .SetCode("MRI")
