@@ -33,8 +33,8 @@ namespace BreastRadiology.XUnitTests
                                 .SetUMLS("A fibroadenoma is a benign, or noncancerous, breast " +
                                     "tumor. ",
                                     "Unlike a breast cancer, which grows larger over time " +
-                                    "and can spread to other organs, a fibroadenoma remains " +
-                                    "in the breast tissue. ",
+                                    "and can spread to other organs, ",
+                                    "a fibroadenoma remains in the breast tissue. ",
                                     "They're pretty small, too. ",
                                     "Most are only 1 or 2 centimeters in size. ",
                                     "www.webmd.com > breast-cancer > what-are-fibroadenomas")
@@ -47,7 +47,8 @@ namespace BreastRadiology.XUnitTests
                                 .SetUMLS("These are non-cancerous breast lumps. ",
                                     "Fibroadenomas usually go away with age. ",
                                     "By the time a woman is menopausal, they will likely " +
-                                    "experience a degeneration of the Fibroadenomas.")
+                                    "experience a degeneration of ",
+                                    "the Fibroadenomas.")
                             #endregion // Codes
                             //- Type
                          })

@@ -34,8 +34,8 @@ namespace BreastRadiology.XUnitTests
                                  .SetSnomedDescription("BodyStructure | 416710001 | Skin and subcutaneous " +
                                      "tissue structure of axilla")
                                  .SetUMLS("The axilla (also, armpit, underarm or oxter) is the " +
-                                     "area on the human body directly under the joint where " +
-                                     "the arm connects to the shoulder. ",
+                                     "area on the human body directly ",
+                                     "under the joint where the arm connects to the shoulder. ",
                                      "It also contains many sweat glands. ",
                                      "###URL#https://en.wikipedia.org/wiki/Axilla")
                              ,
@@ -47,12 +47,14 @@ namespace BreastRadiology.XUnitTests
                                  .SetSnomedDescription("BodyStructure | 38412008 | Structure of axillary " +
                                      "tail of breast (Bodypart)")
                                  .SetUMLS("The tail of Spence (Spence's tail, axillary process, " +
-                                     "axillary tail) is an extension of the tissue of the " +
-                                     "breast that extends into the axilla. ",
+                                     "axillary tail) is an extension ",
+                                     "of the tissue of the breast that extends into the " +
+                                     "axilla. ",
                                      "It is actually an extension of the upper lateral " +
                                      "quadrant of the breast. ",
                                      "It passes into the axilla through an opening in the " +
-                                     "deep fascia called foramen of Langer. ",
+                                     "deep fascia called foramen of ",
+                                     "Langer. ",
                                      "###URL#https://en.wikipedia.org/wiki/Tail_of_Spence")
                              ,
                              new ConceptDef()
@@ -195,9 +197,11 @@ namespace BreastRadiology.XUnitTests
                                  .SetSnomedDescription("ClinicalFinding | 129772004 | 1 o'clock position " +
                                      "on mammogram (Finding) | [0/0] |")
                                  .SetUMLS("Just like the hands of a clock, this is how to describe " +
-                                     "the position of the tumor in the breast. ",
+                                     "the position of the tumor ",
+                                     "in the breast. ",
                                      "1 o'clock position is at the 1 o'clock position and " +
-                                     "in the Upper Inner Quandrant (UIQ) of the breast.")
+                                     "in the Upper Inner Quandrant ",
+                                     "(UIQ) of the breast.")
                              ,
                              new ConceptDef()
                                  .SetCode("2O'clock")
@@ -207,9 +211,11 @@ namespace BreastRadiology.XUnitTests
                                  .SetSnomedDescription("ClinicalFinding | 129773009 | 2 o'clock position " +
                                      "on mammogram (Finding) | [0/0] |")
                                  .SetUMLS("Just like the hands of a clock, this is how to describe " +
-                                     "the position of the tumor in the breast. ",
+                                     "the position of the tumor ",
+                                     "in the breast. ",
                                      "2 o'clock position is at the 2 o'clock position and " +
-                                     "in the Upper Inner Quandrant (UIQ) of the breast.")
+                                     "in the Upper Inner Quandrant ",
+                                     "(UIQ) of the breast.")
                              ,
                              new ConceptDef()
                                  .SetCode("3O'clock")
@@ -219,7 +225,8 @@ namespace BreastRadiology.XUnitTests
                                  .SetSnomedDescription("ClinicalFinding | 129774003 | 3 o'clock position " +
                                      "on mammogram (Finding) | [0/0] |")
                                  .SetUMLS("Just like the hands of a clock, this is how to describe " +
-                                     "the position of the tumor in the breast. ",
+                                     "the position of the tumor ",
+                                     "in the breast. ",
                                      "3 o'clock position is at the 3 o'clock position.")
                              ,
                              new ConceptDef()
@@ -230,9 +237,11 @@ namespace BreastRadiology.XUnitTests
                                  .SetSnomedDescription("ClinicalFinding | 129775002 | 4 o'clock position " +
                                      "on mammogram (Finding) | [0/0] |")
                                  .SetUMLS("Just like the hands of a clock, this is how to describe " +
-                                     "the position of the tumor in the breast. ",
+                                     "the position of the tumor ",
+                                     "in the breast. ",
                                      "4 o'clock position is at the 4 o'clock position and " +
-                                     "in the Lower Inner Quandrant (LIQ) of the breast.")
+                                     "in the Lower Inner Quandrant ",
+                                     "(LIQ) of the breast.")
                              ,
                              new ConceptDef()
                                  .SetCode("5O'clock")
@@ -242,9 +251,11 @@ namespace BreastRadiology.XUnitTests
                                  .SetSnomedDescription("ClinicalFinding | 129776001 | 5 o'clock position " +
                                      "on mammogram (Finding) | [0/0] |")
                                  .SetUMLS("Just like the hands of a clock, this is how to describe " +
-                                     "the position of the tumor in the breast. ",
+                                     "the position of the tumor ",
+                                     "in the breast. ",
                                      "5 o'clock position is at the 5 o'clock position and " +
-                                     "in the Lower Inner Quandrant (LIQ) of the breast.")
+                                     "in the Lower Inner Quandrant ",
+                                     "(LIQ) of the breast.")
                              ,
                              new ConceptDef()
                                  .SetCode("6O'clock")
@@ -254,7 +265,8 @@ namespace BreastRadiology.XUnitTests
                                  .SetSnomedDescription("ClinicalFinding | 129777005 | 6 o'clock position " +
                                      "on mammogram (Finding) | [0/0] |")
                                  .SetUMLS("Just like the hands of a clock, this is how to describe " +
-                                     "the position of the tumor in the breast. ",
+                                     "the position of the tumor ",
+                                     "in the breast. ",
                                      "6 o'clock position is at the 6 o'clock position.")
                              ,
                              new ConceptDef()
@@ -265,9 +277,11 @@ namespace BreastRadiology.XUnitTests
                                  .SetSnomedDescription("ClinicalFinding | 129778000 | 7 o'clock position " +
                                      "on mammogram (Finding) | [0/0] |")
                                  .SetUMLS("Just like the hands of a clock, this is how to describe " +
-                                     "the position of the tumor in the breast. ",
+                                     "the position of the tumor ",
+                                     "in the breast. ",
                                      "7 o'clock position is at the 7 o'clock position and " +
-                                     "in the Lower Outer Quandrant (LOQ) of the breast.")
+                                     "in the Lower Outer Quandrant ",
+                                     "(LOQ) of the breast.")
                              ,
                              new ConceptDef()
                                  .SetCode("8O'clock")
@@ -277,9 +291,11 @@ namespace BreastRadiology.XUnitTests
                                  .SetSnomedDescription("ClinicalFinding | 129779008 | 8 o'clock position " +
                                      "on mammogram (Finding) | [0/0] |")
                                  .SetUMLS("Just like the hands of a clock, this is how to describe " +
-                                     "the position of the tumor in the breast. ",
+                                     "the position of the tumor ",
+                                     "in the breast. ",
                                      "8 o'clock position is at the 8 o'clock position and " +
-                                     "in the Lower Outer Quandrant (LOQ) of the breast.")
+                                     "in the Lower Outer Quandrant ",
+                                     "(LOQ) of the breast.")
                              ,
                              new ConceptDef()
                                  .SetCode("9O'clock")
@@ -289,7 +305,8 @@ namespace BreastRadiology.XUnitTests
                                  .SetSnomedDescription("ClinicalFinding | 129780006 | 9 o'clock position " +
                                      "on mammogram (Finding) | [0/0] |")
                                  .SetUMLS("Just like the hands of a clock, this is how to describe " +
-                                     "the position of the tumor in the breast. ",
+                                     "the position of the tumor ",
+                                     "in the breast. ",
                                      "9 o'clock position is at the 9 o'clock position.")
                              ,
                              new ConceptDef()
@@ -300,9 +317,11 @@ namespace BreastRadiology.XUnitTests
                                  .SetSnomedDescription("ClinicalFinding | 129781005 | 10 o'clock position " +
                                      "on mammogram (Finding) | [0/0] |")
                                  .SetUMLS("Just like the hands of a clock, this is how to describe " +
-                                     "the position of the tumor in the breast. ",
+                                     "the position of the tumor ",
+                                     "in the breast. ",
                                      "10 o'clock position is at the 10 o'clock position " +
-                                     "and in the Upper Outer Quandrant (UOQ) of the breast.")
+                                     "and in the Upper Outer Quandrant ",
+                                     "(UOQ) of the breast.")
                              ,
                              new ConceptDef()
                                  .SetCode("11O'clock")
@@ -312,9 +331,11 @@ namespace BreastRadiology.XUnitTests
                                  .SetSnomedDescription("ClinicalFinding | 129782003 | 11 o'clock position " +
                                      "on mammogram (Finding) | [0/0] |")
                                  .SetUMLS("Just like the hands of a clock, this is how to describe " +
-                                     "the position of the tumor in the breast. ",
+                                     "the position of the tumor ",
+                                     "in the breast. ",
                                      "11 o'clock position is at the 11 o'clock position " +
-                                     "and in the Upper Outer Quandrant (UOQ) of the breast.")
+                                     "and in the Upper Outer Quandrant ",
+                                     "(UOQ) of the breast.")
                              ,
                              new ConceptDef()
                                  .SetCode("12O'clock")
@@ -324,7 +345,8 @@ namespace BreastRadiology.XUnitTests
                                  .SetSnomedDescription("ClinicalFinding | 129783008 | 12 o'clock position " +
                                      "on mammogram (Finding) | [0/0] |")
                                  .SetUMLS("Just like the hands of a clock, this is how to describe " +
-                                     "the position of the tumor in the breast. ",
+                                     "the position of the tumor ",
+                                     "in the breast. ",
                                      "12 o'clock position is at the 12 o'clock position.")
                              #endregion // Codes
                              //- ClockPositions
@@ -352,10 +374,11 @@ namespace BreastRadiology.XUnitTests
                                  .SetUMLS("The breast is divided into anterior, middle and posterior " +
                                      "depth. ",
                                      "The location of any lesion is given when discussed " +
-                                     "in the medical profession, with reference to a quadrant " +
-                                     "or 'clock position,' and the depth within the breast.Anterior " +
-                                     "depth is the outer most depth (closest to the nipple) " +
-                                     "of the breast.")
+                                     "in the medical profession, with ",
+                                     "reference to a quadrant or 'clock position,' and the " +
+                                     "depth within the breast.",
+                                     "Anterior depth is the outer most depth (closest to " +
+                                     "the nipple) of the breast.")
                              ,
                              new ConceptDef()
                                  .SetCode("MiddleDepth")

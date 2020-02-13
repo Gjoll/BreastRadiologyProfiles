@@ -111,7 +111,7 @@ namespace BreastRadiology.XUnitTests
         public void B1_BuildFragments()
         {
             DateTime start = DateTime.Now;
-            Trace.WriteLine("Starting A_BuildFragments");
+            Trace.WriteLine("Starting B1_BuildFragments");
             try
             {
                 ResourcesMaker pc = new ResourcesMaker(this.fc, this.fragmentDir, this.pageDir, this.cacheDir);
@@ -133,14 +133,14 @@ namespace BreastRadiology.XUnitTests
                 Assert.IsTrue(false);
             }
             TimeSpan span = DateTime.Now - start;
-            Trace.WriteLine($"Ending A_BuildFragments [{(Int32)span.TotalSeconds}]");
+            Trace.WriteLine($"Ending B1_BuildFragments [{(Int32)span.TotalSeconds}]");
         }
 
         [TestMethod]
         public void B2_BuildResources()
         {
             DateTime start = DateTime.Now;
-            Trace.WriteLine("Starting B_BuildResources");
+            Trace.WriteLine("Starting B2_BuildResources");
             bool saveMergedFiles = true;
 
             try
@@ -186,7 +186,7 @@ namespace BreastRadiology.XUnitTests
             }
 
             TimeSpan span = DateTime.Now - start;
-            Trace.WriteLine($"Ending B_BuildResources [{(Int32)span.TotalSeconds}]");
+            Trace.WriteLine($"Ending B2_BuildResources [{(Int32)span.TotalSeconds}]");
         }
 
         [TestMethod]
@@ -238,7 +238,7 @@ namespace BreastRadiology.XUnitTests
         public void B3_PatchIntroDocs()
         {
             DateTime start = DateTime.Now;
-            Trace.WriteLine("Starting A_BuildFragments");
+            Trace.WriteLine("Starting B3_PatchIntroDocs");
             try
             {
                 ResourceMap map = new ResourceMap();
@@ -265,14 +265,14 @@ namespace BreastRadiology.XUnitTests
                 Assert.IsTrue(false);
             }
             TimeSpan span = DateTime.Now - start;
-            Trace.WriteLine($"Ending A_BuildFragments [{(Int32)span.TotalSeconds}]");
+            Trace.WriteLine($"Ending B3_PatchIntroDocs [{(Int32)span.TotalSeconds}]");
         }
 
         [TestMethod]
         public void B4_BuildGraphics()
         {
             DateTime start = DateTime.Now;
-            Trace.WriteLine("Starting C_BuildGraphics");
+            Trace.WriteLine("Starting B4_BuildGraphics");
             try
             {
                 if (Directory.Exists(this.graphicsDir) == false)
@@ -326,14 +326,14 @@ namespace BreastRadiology.XUnitTests
                 Assert.IsTrue(false);
             }
             TimeSpan span = DateTime.Now - start;
-            Trace.WriteLine($"Ending C_BuildGraphics [{(Int32)span.TotalSeconds}]");
+            Trace.WriteLine($"Ending B4_BuildGraphics [{(Int32)span.TotalSeconds}]");
         }
 
         [TestMethod]
         public void B5_BuildIG()
         {
             DateTime start = DateTime.Now;
-            Trace.WriteLine("Starting D_BuildIG");
+            Trace.WriteLine("Starting B5_BuildIG");
             try
             {
                 String outputDir = Path.Combine(this.guideDir, "input");
@@ -397,14 +397,14 @@ namespace BreastRadiology.XUnitTests
                 Assert.IsTrue(false);
             }
             TimeSpan span = DateTime.Now - start;
-            Trace.WriteLine($"Ending D_BuildIG [{(Int32)span.TotalSeconds}]");
+            Trace.WriteLine($"Ending B5_BuildIG [{(Int32)span.TotalSeconds}]");
         }
 
         [TestMethod]
         public void B6_RunPublisher()
         {
             DateTime start = DateTime.Now;
-            Trace.WriteLine("Starting F_RunPublisher");
+            Trace.WriteLine("Starting B6_RunPublisher");
             try
             {
                 String executingDir = Path.Combine(DirHelper.FindParentDir("BreastRadiologyProfiles"),
@@ -435,7 +435,7 @@ namespace BreastRadiology.XUnitTests
                 Assert.IsTrue(false);
             }
             TimeSpan span = DateTime.Now - start;
-            Trace.WriteLine($"Ending F_RunPublisher[{(Int32)span.TotalSeconds}]");
+            Trace.WriteLine($"Ending B6_RunPublisher[{(Int32)span.TotalSeconds}]");
         }
 
 
@@ -532,7 +532,6 @@ namespace BreastRadiology.XUnitTests
             }
 
             TimeSpan span = DateTime.Now - start;
-            Trace.WriteLine($"Ending B_BuildResources [{(Int32)span.TotalSeconds}]");
         }
     }
 }

@@ -26,15 +26,20 @@ namespace BreastRadiology.XUnitTests
                             .ValidModalities(Modalities.MG)
                             .SetSnomedDescription("ClinicalFinding | 129769006 | Radiographic calcification " +
                                 "with clustered distribution (Finding)")
-                            .SetUMLS("Grouped (historically, \"clustered\") This term should " +
-                                "be used when relatively few calcifications occupy " +
-                                "a small portion of breasttissue. ",
+                            .SetUMLS("Grouped (historically, \"clustered\") ",
+                                "This term should be used when relatively few calcifications " +
+                                "occupy a small portion ",
+                                "of breast",
+                                "tissue. ",
                                 "The lower limit for use of this descriptor is usually " +
-                                "when 5 calcifications are groupedwithin 1 cm of each " +
-                                "other or when a definable pattern is identified. ",
-                                "The upper limit for useof this descriptor is when " +
-                                "larger numbers of calcifications are grouped within " +
-                                "2 cm of eachother. ",
+                                "when 5 calcifications are grouped",
+                                "within 1 cm of each other or when a definable pattern " +
+                                "is identified. ",
+                                "The upper limit for use",
+                                "of this descriptor is when larger numbers of calcifications " +
+                                "are grouped within 2 ",
+                                "cm of each",
+                                "other. ",
                                 "###ACRMG#73")
                         ,
                         new ConceptDef()
@@ -49,15 +54,10 @@ namespace BreastRadiology.XUnitTests
                                 "be scattered calcifications or multiple similar appearing " +
                                 "clusters of calcifications throughout the whole breast. ",
                                 " Diffuse or scattered distribution is typically seen " +
-                                "in benign entities.Even when clusters of calcifications " +
-                                "are scattered throughout the breast, this favors " +
-                                "a benign entity. ",
+                                "in benign entities.",
+                                "Even when clusters of calcifications are scattered " +
+                                "throughout the breast, this favors a benign entity. ",
                                 "###URL#https://radiologyassistant.nl/breast/breast-calcifications-differential-diagnosis")
-                            .SetACR("Diffuse (historically, \"scattered\"). ",
-                                "These are calcifications that are distributed randomly " +
-                                "throughout the breast. ",
-                                " Punctate and amorphous calcifications in this distribution " +
-                                "are almost always benign, especially if bilateral.")
                         ,
                         new ConceptDef()
                             .SetCode("GroupedDistribution")
@@ -74,14 +74,6 @@ namespace BreastRadiology.XUnitTests
                                 "Linear calcifications, which suggest deposits in " +
                                 "a duct, are suspicious for malignancy. ",
                                 "###URL#https://www.ajronline.org/doi/full/10.2214/AJR.10.5732")
-                            .SetACR("This term should be used when relatively few calcifications " +
-                                "occupy a small portion of breast tissue. ",
-                                "The lower limit for use of this descriptor is usually " +
-                                "when 5 calcifications are grouped within 1 cm of " +
-                                "each other or when a definable pattern is identified. ",
-                                "The upper limit for use of this descriptor is when " +
-                                "larger numbers of calcifications are grouped within " +
-                                "2 cm of each other.)")
                         ,
                         new ConceptDef()
                             .SetCode("LinearDistribution")
@@ -94,13 +86,6 @@ namespace BreastRadiology.XUnitTests
                             .SetUMLS("Linear distribution is typically seen when DCIS fills " +
                                 "the entire duct and its branches with calcifications. ",
                                 "###URL#https://radiologyassistant.nl/breast/breast-calcifications-differential-diagnosis")
-                            .SetACR("These are calcifications arrayed in a line. ",
-                                "This distribution may elevate suspicion for malignancy, " +
-                                "as it suggests deposits in a duct. ",
-                                "Note that both vascular and large rod-like calcifications " +
-                                "also are usually linear in distribution, but that " +
-                                "these typically benign calcifications have a characteristically " +
-                                "benign morphology.)")
                         ,
                         new ConceptDef()
                             .SetCode("RegionalDistribution")
@@ -115,16 +100,6 @@ namespace BreastRadiology.XUnitTests
                                 "Regional distribution according to the BI-RADS atlas " +
                                 "would favor a non-ductal distribution (i.e. ",
                                 "benignity) ###URL#https://radiologyassistant.nl/breast/breast-calcifications-differential-diagnosis")
-                            .SetACR("This descriptor is used for numerous calcifications " +
-                                "that occupy a large portion of breast tissue (more " +
-                                "than 2 cm in greatest dimension), not conforming " +
-                                "to a duct distribution. ",
-                                "Since this distribution may involve most of a quadrant " +
-                                "or even more than a single quadrant, malignancy is " +
-                                "less likely. ",
-                                "However, overall evaluation of regional calcifications " +
-                                "must include particle shape (morphology) as well " +
-                                "as distribution.")
                         ,
                         new ConceptDef()
                             .SetCode("ScatteredDistribution")
@@ -135,9 +110,10 @@ namespace BreastRadiology.XUnitTests
                             .SetUMLS("Scattered distributions are also called diffuse distributions. ",
                                 "These are calcifications that are distributed randomly " +
                                 "throughout the breast. ",
-                                "Punctate andamorphous calcifications in this distribution " +
-                                "are almost always benign, especially if bilateral " +
-                                "(in both breasts). ",
+                                "Punctate and",
+                                "amorphous calcifications in this distribution are " +
+                                "almost always benign, especially ",
+                                "if bilateral (in both breasts). ",
                                 "###ACRMG#70")
                         ,
                         new ConceptDef()
@@ -153,26 +129,13 @@ namespace BreastRadiology.XUnitTests
                                 "of a segment or lobe. ",
                                 " Segmental distribution would favor a ductal distribution " +
                                 "(i.e. ",
-                                "malignancy).Sometimes this differentiation can be " +
-                                "made, but in many cases the differentiation between " +
-                                "'regional' and 'segmental' is problematic, because " +
-                                "it is not clear on a mammogram or MRI where the bounderies " +
+                                "malignancy).",
+                                "Sometimes this differentiation can be made, but in " +
+                                "many cases the differentiation between 'regional' " +
+                                "and 'segmental' is problematic, because it is not " +
+                                "clear on a mammogram or MRI where the bounderies " +
                                 "of a segment (or a lobe) exactly are. ",
                                 "###URL#https://radiologyassistant.nl/breast/breast-calcifications-differential-diagnosis")
-                            .SetACR("Calcifications in a segmental distribution are of " +
-                                "concern because they suggest deposits in a duct or " +
-                                "ducts and their branches, raising the possibility " +
-                                "of extensive or multifocal breast cancer in a lobe " +
-                                "or segment of the breast. ",
-                                "Although benign causes of segmental calcifications " +
-                                "exist (e.g. ",
-                                "large rod-like), the smooth, rod-like morphology " +
-                                "and large size of benign calcifications distinguish " +
-                                "them from finer, more pleomorphic or heterogeneous " +
-                                "malignant calcifications. ",
-                                "A segmental distribution may elevate the degree of " +
-                                "suspicion for calcifications such as punctate or " +
-                                "amorphous forms.")
                         #endregion // Codes
                         //- Codes
                     }));

@@ -48,7 +48,8 @@ namespace BreastRadiology.XUnitTests
                                 .SetUMLS("A medical procedure that removes something from an " +
                                     "area of the body. ",
                                     "These substances can be air, body fluids, or bone " +
-                                    "fragments.###URL#https://medlineplus.gov/ency/article/002216.htm")
+                                    "fragments.",
+                                    "###URL#https://medlineplus.gov/ency/article/002216.htm")
                             ,
                             new ConceptDef()
                                 .SetCode("Biopsy")

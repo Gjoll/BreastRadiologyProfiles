@@ -4,6 +4,7 @@ using Hl7.Fhir.Model;
 using System;
 using System.Collections.Generic;
 using System.IO;
+using System.Linq;
 using System.Text;
 
 namespace BreastRadiology.XUnitTests
@@ -79,11 +80,8 @@ namespace BreastRadiology.XUnitTests
             void Line(String line)
             {
                 line = line.Trim();
-                if (line.Length == 0)
-                    return;
                 if (
-                    (line.Length == 1) &&
-                    (line[0] == '\n') &&
+                    (line.Length == 0) &&
                     (newParagraph == false)
                     )
                 {
@@ -130,7 +128,8 @@ namespace BreastRadiology.XUnitTests
         {
             CodeBlockNested d = CreateDescriptionBlock();
             d.AppendRaw($"<h4>{Title()} Definition</h4>");
-            WriteParagraphs(d, lines);
+            String[] citedLines = ResourcesMaker.FormatUmls(lines.ToList(), true);
+            WriteParagraphs(d, citedLines);
             return this;
         }
 

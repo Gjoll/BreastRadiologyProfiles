@@ -32,9 +32,9 @@ namespace BreastRadiology.XUnitTests
                              .MammoId("215")
                              .ValidModalities(Modalities.MG)
                              .SetUMLS("These are round or oval calcifications that range " +
-                                 "from under 1 mm to over a centimeter.They are the " +
-                                 "result of fat necrosis, calcified debris in ducts, " +
-                                 "and occasional fibroadenomas. ",
+                                 "from under 1 mm to over a centimeter.",
+                                 "They are the result of fat necrosis, calcified debris " +
+                                 "in ducts, and occasional fibroadenomas. ",
                                  "###URL#https://radiologyassistant.nl/breast/breast-calcifications-differential-diagnosis#benign-calcifications-lucent-centered")
                          ,
                          new ConceptDef()
@@ -42,9 +42,10 @@ namespace BreastRadiology.XUnitTests
                              .SetDisplay("Equal density")
                              .MammoId("213")
                              .ValidModalities(Modalities.MG)
-                             .SetACR("(historically, \"isodense\")X-ray attenuation of the " +
-                                 "mass is the same as the expected attenuation of an " +
-                                 "equal volume offibroglandular breast tissue.")
+                             .SetACR("(historically, \"isodense\")",
+                                 "X-ray attenuation of the mass is the same as the " +
+                                 "expected attenuation of an equal volume of",
+                                 "fibroglandular breast tissue.")
                          ,
                          new ConceptDef()
                              .SetCode("FatContaining")
@@ -53,11 +54,6 @@ namespace BreastRadiology.XUnitTests
                              .ValidModalities(Modalities.MG)
                              .SetUMLS("The mammogram shows a lot of fatty tissue  meaning " +
                                  "the density of the breast is likely low density.")
-                             .SetACR("This includes all masses containing fat, such as " +
-                                 "oil cyst, lipoma or galactocele, as well as mixeddensity " +
-                                 "masses such as hamartoma. ",
-                                 "A fat-containing mass will almost always represent " +
-                                 "abenign mass.")
                          ,
                          new ConceptDef()
                              .SetCode("HighDensity")
@@ -65,8 +61,8 @@ namespace BreastRadiology.XUnitTests
                              .MammoId("211")
                              .ValidModalities(Modalities.MG)
                              .SetUMLS("Your breast tissue may be called dense if you have " +
-                                 "a lot of fibrous or glandular tissue and not much " +
-                                 "fat in the breasts. ",
+                                 "a lot of fibrous or glandular ",
+                                 "tissue and not much fat in the breasts. ",
                                  "Having dense breast tissue is common. ",
                                  "Some women have more dense breast tissue than others. ",
                                  "###URL#https://www.cancer.org/cancer/breast-cancer/screening-tests-and-early-detection/mammograms/breast-density-and-your-mammogram-report.html")
@@ -78,13 +74,6 @@ namespace BreastRadiology.XUnitTests
                              .ValidModalities(Modalities.MG)
                              .SetUMLS("The mammogram shows the breast is low density, containg " +
                                  "a lot of fatty tissue.")
-                             .SetACR("X-ray attenuation of the mass is less than the expected " +
-                                 "attenuation of an equal volume offibroglandular breast " +
-                                 "tissue. ",
-                                 "A low density mass may be a group of microcysts. ",
-                                 "If such a findingis identified at mammography, it " +
-                                 "may very well not be malignant but appropriately " +
-                                 "maybe worked up.")
                          #endregion // Codes
                          //- Codes
                      })

@@ -53,11 +53,13 @@ namespace BreastRadiology.XUnitTests
                                     "(Procedure)")
                                 .SetUMLS("Breast ductography (a.k.a. ",
                                     "galactography) is an imaging technique which is used " +
-                                    "to evaluate lesions causing nipple discharge. ",
+                                    "to evaluate lesions causing ",
+                                    "nipple discharge. ",
                                     "It helps in precisely locating the mass within breast " +
-                                    "tissue and gives useful information for surgical " +
-                                    "approach and planning.A blunt-tipped sialogram needle " +
-                                    "(30-gauge) is used for performing the ductogram. ",
+                                    "tissue and gives useful information ",
+                                    "for surgical approach and planning.",
+                                    "A blunt-tipped sialogram needle (30-gauge) is used " +
+                                    "for performing the ductogram. ",
                                     "The abnormal duct is identified and cannulated. ",
                                     "###URL#https://radiopaedia.org/articles/breast-ductography-1?lang=us")
                             ,
@@ -77,8 +79,9 @@ namespace BreastRadiology.XUnitTests
                                 .SetSnomedDescription("Procedure | 241615005 | Magnetic resonance imaging " +
                                     "of breast (Procedure)")
                                 .SetUMLS("Magnetic Resonance Imaging (MRI) is a test that uses " +
-                                    "powerful magnets, radio waves, and a computer to " +
-                                    "make detailed pictures inside your body.")
+                                    "powerful magnets, radio waves, ",
+                                    "and a computer to make detailed pictures inside your " +
+                                    "body.")
                             ,
                             new ConceptDef()
                                 .SetCode("OutsideExam")
@@ -94,8 +97,8 @@ namespace BreastRadiology.XUnitTests
                                 .MammoId("285")
                                 .ValidModalities(Modalities.NM)
                                 .SetUMLS("This is a type of breast imaging that is used to " +
-                                    "detect cancer cells in the breasts of some women " +
-                                    "who have had abnormal mammograms.")
+                                    "detect cancer cells in the breasts ",
+                                    "of some women who have had abnormal mammograms.")
                             ,
                             new ConceptDef()
                                 .SetCode("Ultrasound")

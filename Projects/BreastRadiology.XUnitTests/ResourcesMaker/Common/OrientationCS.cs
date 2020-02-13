@@ -32,10 +32,6 @@ namespace BreastRadiology.XUnitTests
                              .MammoId("1508")
                              .ValidModalities(Modalities.MG | Modalities.MRI | Modalities.NM | Modalities.US)
                              .SetUMLS("The lesion/mass is oriented parellel to skin.")
-                             .SetACR("(historically, \"wider-than-tall\" or \"horizontal\")The " +
-                                 "long axis of the mass parallels the skin line. ",
-                                 "Masses that are only slightly obiquely orientedmight " +
-                                 "be considered parallel.")
                          ,
                          new ConceptDef()
                              .SetCode("PerpendicularToSkin")
@@ -43,13 +39,6 @@ namespace BreastRadiology.XUnitTests
                              .MammoId("1509")
                              .ValidModalities(Modalities.MG | Modalities.MRI | Modalities.NM | Modalities.US)
                              .SetUMLS("The lesion/mass is oriented perpendicular to skin.")
-                             .SetACR("(historically, \"isodense\")The long axis of the mass " +
-                                 "does not lie parallel to the skin line. ",
-                                 "The anterior-posterior or verticaldimension is greater " +
-                                 "than the transverse or horizontal dimension. ",
-                                 "These masses can also beobliquely oriented to the " +
-                                 "skin line. ",
-                                 "Round masses are NOT PARALLEL in their orientation.")
                          ,
                          new ConceptDef()
                              .SetCode("TallerThanWide")

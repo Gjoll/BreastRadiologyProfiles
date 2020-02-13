@@ -37,7 +37,8 @@ namespace BreastRadiology.XUnitTests
                                 .SetUMLS("Need additional Imaging Evaluation and/or prior Mammograms " +
                                     "for comparison. ",
                                     "Recall for additional imaging and/or comparison with " +
-                                    "prior examination(s)        ###ACRUS#")
+                                    "prior examination(s)        ",
+                                    "###ACRUS#")
                             ,
                             new ConceptDef()
                                 .SetCode("Category2")
@@ -63,16 +64,18 @@ namespace BreastRadiology.XUnitTests
                                 .SetSnomedDescription("ClinicalFinding | 397143007 | Mammography assessment " +
                                     "(Category 3)")
                                 .SetUMLS("A finding assessed using this category should have " +
-                                    "a <= 2% likelihood of malignancy, but greater than " +
-                                    "the essentially 0% likelihood of malignancy of a " +
-                                    "characteristically benign finding. ",
+                                    "a <= 2% likelihood of malignancy, ",
+                                    "but greater than the essentially 0% likelihood of " +
+                                    "malignancy of a characteristically ",
+                                    "benign finding. ",
                                     "A probably benign finding is not expected to change " +
-                                    "over the suggested period of imaging surveillance, " +
-                                    "but the interpreting physician prefers to establish " +
-                                    "stability of the finding before recommending management " +
-                                    "limited to routine mammography screening. ",
-                                    " Six month follow-up and/orsurveillance mammography " +
-                                    "is recommended. ",
+                                    "over the suggested period of ",
+                                    "imaging surveillance, but the interpreting physician " +
+                                    "prefers to establish stability ",
+                                    "of the finding before recommending management limited " +
+                                    "to routine mammography screening. ",
+                                    " Six month follow-up and/or",
+                                    "surveillance mammography is recommended. ",
                                     "###ACRUS#")
                             ,
                             new ConceptDef()
@@ -83,13 +86,14 @@ namespace BreastRadiology.XUnitTests
                                 .SetSnomedDescription("ClinicalFinding | 397144001 | Mammography assessment " +
                                     "(Category 4)")
                                 .SetUMLS("This category is reserved for findings that do not " +
-                                    "have the classic appearance of malignancy but are " +
-                                    "sufficiently suspicious to justify a recommendation " +
-                                    "for biopsy. ",
+                                    "have the classic appearance of ",
+                                    "malignancy but are sufficiently suspicious to justify " +
+                                    "a recommendation for biopsy. ",
                                     "There is a 2% likelihood of malignancy (cancer). ",
                                     "Almost all recommendations for breast interventional " +
-                                    "procedures will come from assessments made usingthis " +
-                                    "category. ",
+                                    "procedures will come from assessments ",
+                                    "made using",
+                                    "this category. ",
                                     "###ACRUS#")
                             ,
                             new ConceptDef()
@@ -119,7 +123,8 @@ namespace BreastRadiology.XUnitTests
                                     "It warrants radiologic and pathologic correlation " +
                                     "after tissue diagnosis. ",
                                     "Likelihood of malignancy is > 10% to <= 50% likelihood " +
-                                    "ofmalignancy. ",
+                                    "of",
+                                    "malignancy. ",
                                     "###ACRUS#")
                             ,
                             new ConceptDef()
@@ -128,10 +133,11 @@ namespace BreastRadiology.XUnitTests
                                 .MammoId("178")
                                 .ValidModalities(Modalities.MG | Modalities.MRI | Modalities.NM | Modalities.US)
                                 .SetSnomedDescription("Not found")
-                                .SetUMLS("Category 4C: High suspicion formalignancy. ",
+                                .SetUMLS("Category 4C: High suspicion for",
+                                    "malignancy. ",
                                     "Includes findings that have a high suspicion of malignancy " +
-                                    "but that are not highlysuggestive of malignancy (category " +
-                                    "5). ",
+                                    "but that are not highly",
+                                    "suggestive of malignancy (category 5). ",
                                     "Tissue Diagnosis is highly recommended. ",
                                     " Range for likelihood of malignancy is > 50% to < " +
                                     "95% likelihood of malignancy. ",
@@ -147,7 +153,8 @@ namespace BreastRadiology.XUnitTests
                                     "(Category 5)")
                                 .SetUMLS("Highly Suggestive of Malignancy. ",
                                     "Almost certainly predictive of breast cancer with " +
-                                    "a value of at least 95%. ",
+                                    "a ",
+                                    "value of at least 95%. ",
                                     "Tissue Diagnosis is highly recommended or required. ",
                                     "###ACRUS#")
                             ,
@@ -157,7 +164,8 @@ namespace BreastRadiology.XUnitTests
                                 .MammoId("172")
                                 .ValidModalities(Modalities.MG | Modalities.MRI | Modalities.NM | Modalities.US)
                                 .SetUMLS("Known Biopsy-Proven Malignancy. ",
-                                    "Surgical excision when clinicallyappropriate. ",
+                                    "Surgical excision when clinically",
+                                    "appropriate. ",
                                     "This category is only used for findings on a mammogram " +
                                     "that have already been shown to be cancer by a previous " +
                                     "biopsy. ",
@@ -166,53 +174,6 @@ namespace BreastRadiology.XUnitTests
                                     "###ACRUS#")
                             #endregion // Codes
                             //- Codes
-                        //new ConceptDef()
-                        //    .SetCode("Category-0", "Category 0 - Incomplete")
-                        //    .SetACR("Incomplete � Need Additional Imaging Evaluation and/or Prior Mammograms for Comparison")
-                        //    ,
-                        //new ConceptDef()
-                        //    .SetCode("Category-1", "Category 1 - Negative")
-                        //    .SetACR("Negative Routine mammography screening Essentially 0% likelihood of malignancy")
-                        //    ,
-                        //new ConceptDef()
-                        //    .SetCode("Category-2", "Category 2 - Benign ")
-                        //    .SetACR("Benign Routine mammography screening Essentially 0% likelihood of malignancy")
-                        //    ,
-                        //new ConceptDef()
-                        //    .SetCode("Category-3", "Category 3 - Probably Benign ")
-                        //    .SetACR("Probably Benign Short-interval (6-month) follow-up or surveillance mammography ")
-                        //    ,
-                        //new ConceptDef()
-                        //    .SetCode("Category-4", "Category 4 - Suspicious")
-                        //    .SetACR("Suspicious")
-                        //    ,
-                        //new ConceptDef()
-                        //    .SetCode("Category-4A", "Category 4A - Low suspicion for malignancy")
-                        //    .SetACR("Low suspicion for malignancy")
-                        //    ,
-                        //new ConceptDef()
-                        //    .SetCode("Category-4B", "Category 4B - Moderate suspicion for malignancy")
-                        //    .SetACR("Moderate suspicion for malignancy")
-                        //    ,
-                        //new ConceptDef()
-                        //    .SetCode("Category-4C", "Category 4C - High suspicion for malignancy")
-                        //    .SetACR("High suspicion for malignancy")
-                        //    ,
-                        //new ConceptDef()
-                        //    .SetCode("Category-5", "Category 5 - Highly Suggestive of Malignancy")
-                        //    .SetACR("Highly Suggestive of Malignancy")
-                        //    ,
-                        //new ConceptDef()
-                        //    .SetCode("Category-6", "Category 6 - Known Biopsy-Proven Malignancy")
-                        //    .SetACR("Known Biopsy-Proven Malignancy")
-                        //    ,
-                        //new ConceptDef()
-                        //    .SetCode("Post Biopsy Marker", "Post Biopsy Marker")
-                        //    .SetDefinition("Post Biopsy Marker")
-                        //    ,
-                        //new ConceptDef()
-                        //    .SetCode("Marker Clip Placement", "Marker Clip Placement")
-                        //    .SetDefinition("Marker Clip Placement")
                         })
                     );
 

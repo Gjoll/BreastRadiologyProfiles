@@ -33,7 +33,8 @@ namespace BreastRadiology.XUnitTests
                              .SetSnomedCode("399294002")
                              .SetSnomedDescription("ClinicalFinding |Cyst of breast (Disorder)")
                              .SetUMLS("A cyst is a sac-like pocket of membranous tissue " +
-                                 "that contains fluid, air, or other substances. ",
+                                 "that contains fluid, air, or other ",
+                                 "substances. ",
                                  "Cysts can grow almost anywhere in your body or under " +
                                  "your skin.")
                          ,
@@ -45,15 +46,16 @@ namespace BreastRadiology.XUnitTests
                              .SetSnomedCode("449837001")
                              .SetSnomedDescription("ClinicalFinding | Complex cyst of breast (Disorder)")
                              .SetUMLS("Complex cysts have irregular or scalloped borders, " +
-                                 "thick walls, and some evidence of solid areas and/or " +
-                                 "debris in the fluid. ",
+                                 "thick walls, and some evidence ",
+                                 "of solid areas and/or debris in the fluid. ",
                                  "These solid areas echo back the sound waves from " +
                                  "the ultrasound. ",
                                  "A complex cyst is sometimes aspirated, or drained " +
-                                 "with a fine needle, so that the fluid inside can " +
-                                 "be tested. ",
+                                 "with a fine needle, so that the ",
+                                 "fluid inside can be tested. ",
                                  "If blood or any unusual cells are present, further " +
-                                 "testing may be needed to rule out breast cancer. ",
+                                 "testing may be needed to rule ",
+                                 "out breast cancer. ",
                                  "###URL#https://www.breastcancer.org/symptoms/benign/cysts")
                          ,
                          new ConceptDef()
@@ -63,10 +65,12 @@ namespace BreastRadiology.XUnitTests
                              .ValidModalities(Modalities.MG | Modalities.US)
                              .SetUMLS("Complicated cysts are \"in between\" simple and complex. ",
                                  "Although they share most of the features of simple " +
-                                 "cysts, they tend to have some debris inside them " +
-                                 "and echo back some of the ultrasound waves. ",
+                                 "cysts, they tend to have some ",
+                                 "debris inside them and echo back some of the ultrasound " +
+                                 "waves. ",
                                  "However, they don't have the thick walls or obvious " +
-                                 "solid components that a complex cyst has. ",
+                                 "solid components that a complex ",
+                                 "cyst has. ",
                                  "###URL#https://www.breastcancer.org/symptoms/benign/cysts")
                          ,
                          new ConceptDef()
@@ -97,7 +101,8 @@ namespace BreastRadiology.XUnitTests
                              .SetSnomedCode("399253005")
                              .SetSnomedDescription("ClinicalFinding | Simple cyst of breast (Disorder)")
                              .SetUMLS("A simple cyst is a sac-like pocket of membranous " +
-                                 "tissue that only contains clear fluid.")
+                                 "tissue that only contains clear ",
+                                 "fluid.")
                          ,
                          new ConceptDef()
                              .SetCode("CystWithDebris")
@@ -176,7 +181,8 @@ namespace BreastRadiology.XUnitTests
                     .ReviewedStatus("NOONE", "")
                     //+ IntroDocDescription
                         .Description("A cyst is a sac-like pocket of membranous tissue " +
-                            "that contains fluid, air, or other substances. ",
+                            "that contains fluid, air, or other ",
+                            "substances. ",
                             "Cysts can grow almost anywhere in your body or under " +
                             "your skin.")
                     //- IntroDocDescription

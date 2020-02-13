@@ -112,13 +112,14 @@ namespace BreastRadiology.XUnitTests
                                .Description("A group of tumor cells in an area near the primary " +
                                    "(original) tumor. ",
                                    "In melanoma, satellite tumors occur within 2 centimeters " +
-                                   "of the primary tumor, on or under the skin, and can " +
-                                   "be seen without a microscope. ",
+                                   "of the primary tumor, on ",
+                                   "or under the skin, and can be seen without a microscope. ",
                                    "Satellite tumors may also be found in other types " +
-                                   "of cancer, including cancers of the breast, lung, " +
-                                   "liver, and brain. ",
+                                   "of cancer, including cancers of ",
+                                   "the breast, lung, liver, and brain. ",
                                    "Having a satellite tumor is a sign that the cancer " +
-                                   "has spread from where it first formed. ",
+                                   "has spread from where it first ",
+                                   "formed. ",
                                    "###URL#https://www.cancer.gov/publications/dictionaries/cancer-terms/def/satellite-tumor")
                            //- IntroDocDescription
                            ;

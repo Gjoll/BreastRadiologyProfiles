@@ -59,8 +59,6 @@ namespace BreastRadiology.XUnitTests
 
         Dictionary<String, Resource> resources = new Dictionary<string, Resource>();
 
-        public MammoData Data;
-
         FileCleaner fc;
         String resourceDir;
         String pageDir;
@@ -80,7 +78,6 @@ namespace BreastRadiology.XUnitTests
             const String fcn = "ResourcesMaker";
 
             Self = this;
-            this.Data = new MammoData(this);
 
             this.fc = fc;
             this.resourceDir = resourceDir;
@@ -339,6 +336,118 @@ namespace BreastRadiology.XUnitTests
             doc.Load("ValueSet",
                 Path.Combine(Self.pageDir, $"ValueSet-{binding.Name}-intro.xml"));
             return doc;
+        }
+
+        public static String[] FormatUmls(List<String> lines, bool paragraphTag)
+        {
+            // Make sure all '###'s are on new line.
+            {
+                Int32 i = 0;
+                while (i < lines.Count)
+                {
+                    String line = lines[i];
+                    Int32 index = line.IndexOf("###");
+                    if (index == 0)
+                    {
+                        i += 1;
+                    }
+                    else if (index > 0)
+                    {
+                        String oldLine = line.Substring(0, index);
+                        String newLine = line.Substring(index);
+                        lines.RemoveAt(i);
+                        lines.Insert(i++, "");
+                        lines.Insert(i++, oldLine);
+                        lines.Insert(i++, newLine);
+                    }
+                    else
+                    {
+                        i += 1;
+                    }
+                }
+            }
+            {
+                StringBuilder sb = new StringBuilder();
+
+                if (lines.Count > 0)
+                    while ((lines.Count > 0) && String.IsNullOrWhiteSpace(lines[^1]))
+                        lines.RemoveAt(lines.Count - 1);
+                if (lines.Count == 0)
+                    return new string[0];
+
+                void Citation(String citation)
+                {
+                    citation = citation
+                        .Replace(" ", "&nbsp;")
+                        ;
+                    sb
+                        .AppendLine($" [<ul>{citation}</ul>")
+                        .AppendLine("")
+                        ;
+                }
+
+                void AcrCitation(String name, String page)
+                {
+                    string pageStr = "";
+                    if (String.IsNullOrEmpty(page) == false)
+                        pageStr = $" page {page}";
+                    Citation($"{name}{pageStr}");
+                }
+
+                Int32 i = 0;
+                while (i < lines.Count)
+                {
+                    String line = lines[i++];
+                    if (line.StartsWith("###") == true)
+                    {
+                        line = line.Substring(3);
+                        Int32 index = line.IndexOf('#');
+                        String citationType = line.Substring(0, index);
+                        String page = line.Substring(index + 1);
+                        switch (citationType)
+                        {
+                            case "URL":
+                                Citation(line.Substring(index + 1));
+                                break;
+                            case "ACRUS":
+                                AcrCitation("Breast Imaging Reporting and Data System—Mammography, Fifth Edition", page);
+                                break;
+                            case "ACRMG":
+                                AcrCitation("Breast Imaging Reporting and Data System—Ultrasound, Second Edition", page);
+                                break;
+                            default:
+                                throw new Exception("");
+                        }
+                    }
+                    else
+                    {
+                        Debug.Assert(line.Contains("###") == false);
+                        sb.AppendLine(line);
+                    }
+                }
+                return sb.ToString().ToLines();
+            }
+        }
+
+        public static String FormatLines(IEnumerable<String> iLines)
+        {
+            List<String> lines = iLines.ToList();
+
+            StringBuilder sb = new StringBuilder();
+            void CopyLines(Int32 count)
+            {
+                for (Int32 i = 0; i < count; i++)
+                    sb.Append(lines[i]);
+            }
+
+            if (lines.Count > 0)
+                while ((lines.Count > 0) && String.IsNullOrWhiteSpace(lines[^1]))
+                    lines.RemoveAt(lines.Count - 1);
+            if (lines.Count == 0)
+                return "";
+
+            CopyLines(lines.Count);
+            return sb.ToString();
         }
     }
 }

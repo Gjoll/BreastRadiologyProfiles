@@ -49,7 +49,8 @@ namespace BreastRadiology.XUnitTests
                                 .SetUMLS("A medical procedure that removes something from an " +
                                     "area of the body. ",
                                     "These substances can be air, body fluids, or bone " +
-                                    "fragments.###URL#https://medlineplus.gov/ency/article/002216.htm")
+                                    "fragments.",
+                                    "###URL#https://medlineplus.gov/ency/article/002216.htm")
                             ,
                             new ConceptDef()
                                 .SetCode("Biopsy")
@@ -74,15 +75,19 @@ namespace BreastRadiology.XUnitTests
                                 .SetSnomedDescription("Procedure | 420131003 | Fluoroscopic mammary ductography " +
                                     "(Procedure)")
                                 .SetUMLS("A ductogram, also called a galactogram, is a special " +
-                                    "type of mammogram used for imaging the breast ducts. ",
+                                    "type of mammogram used for imaging ",
+                                    "the breast ducts. ",
                                     "It can aid in diagnosing the cause of abnormal nipple " +
-                                    "discharges.Ductography (also called galactography " +
-                                    "or ductogalactography) is a special type of contrast " +
-                                    "enhanced mammography used for imaging the breast " +
-                                    "ducts. ",
+                                    "discharges.",
+                                    "Ductography (also called galactography or ductogalactography) " +
+                                    "is a special type of ",
+                                    "contrast enhanced mammography used for imaging the " +
+                                    "breast ducts. ",
                                     "Ductography can aid in diagnosing the cause of an " +
-                                    "abnormal nipple discharge and is valuable in diagnosing " +
-                                    "intraductal papillomas and other conditions.###URL#https://www.imaginis.com/mammography/ductogram-galactogram-imaging-the-breast-ducts")
+                                    "abnormal nipple discharge and is ",
+                                    "valuable in diagnosing intraductal papillomas and " +
+                                    "other conditions.",
+                                    "###URL#https://www.imaginis.com/mammography/ductogram-galactogram-imaging-the-breast-ducts")
                             ,
                             new ConceptDef()
                                 .SetCode("IncidentalFinding")
@@ -90,8 +95,8 @@ namespace BreastRadiology.XUnitTests
                                 .MammoId("79")
                                 .ValidModalities(Modalities.MG | Modalities.MRI | Modalities.NM | Modalities.US)
                                 .SetUMLS("A medical finding that wasn't the abnormality of " +
-                                    "the original  mammogram, MRI, nuclear medicine, or " +
-                                    "ultrasound was intended to find.")
+                                    "the original  mammogram, MRI, nuclear ",
+                                    "medicine, or ultrasound was intended to find.")
                             ,
                             new ConceptDef()
                                 .SetCode("Mammo")
@@ -99,7 +104,8 @@ namespace BreastRadiology.XUnitTests
                                 .MammoId("10")
                                 .ValidModalities(Modalities.MRI | Modalities.NM | Modalities.US)
                                 .SetUMLS("The original MRI, Nuclear Medicine, or Ultrasound " +
-                                    "corresponds with the findings on the Mammogram.")
+                                    "corresponds with the findings on ",
+                                    "the Mammogram.")
                             ,
                             new ConceptDef()
                                 .SetCode("MRI")
@@ -109,7 +115,8 @@ namespace BreastRadiology.XUnitTests
                                 .SetSnomedDescription("Procedure | 241615005 | Magnetic resonance imaging " +
                                     "of breast (Procedure)")
                                 .SetUMLS("The original Mammogram, Nuclear Medicine, or Ultrasound " +
-                                    "corresponds with the findings on the MRI.")
+                                    "corresponds with the findings ",
+                                    "on the MRI.")
                             ,
                             new ConceptDef()
                                 .SetCode("NippleDischarge")
@@ -135,7 +142,8 @@ namespace BreastRadiology.XUnitTests
                                 .MammoId("271")
                                 .ValidModalities(Modalities.MG | Modalities.MRI | Modalities.NM | Modalities.US)
                                 .SetUMLS("Mammogram, MRI, Nuclear Medicine, or ultrasound corresponds " +
-                                    "with the pain the patient is experiencing.")
+                                    "with the pain the patient ",
+                                    "is experiencing.")
                             ,
                             new ConceptDef()
                                 .SetCode("Palpated")
@@ -143,8 +151,8 @@ namespace BreastRadiology.XUnitTests
                                 .MammoId("8")
                                 .ValidModalities(Modalities.MG | Modalities.MRI | Modalities.NM | Modalities.US)
                                 .SetUMLS("The Mammogram, Ultrasound, Nuclear Medicine, MRI " +
-                                    "correspond with the palpated (physical exam to touch) " +
-                                    "lump.")
+                                    "correspond with the palpated (physical ",
+                                    "exam to touch) lump.")
                             ,
                             new ConceptDef()
                                 .SetCode("PostOperative")
@@ -189,10 +197,10 @@ namespace BreastRadiology.XUnitTests
                                 .SetUMLS("The initial Mammogram corresponds with the Scinti " +
                                     "results. ",
                                     " Scintigraphy definition is - a diagnostic technique " +
-                                    "in which a two-dimensional picture of internal body " +
-                                    "tissue is produced through the detection of radiation " +
-                                    "emitted by a radioactive substance administered into " +
-                                    "the body.")
+                                    "in which a two-dimensional picture ",
+                                    "of internal body tissue is produced through the detection " +
+                                    "of radiation emitted by ",
+                                    "a radioactive substance administered into the body.")
                             ,
                             new ConceptDef()
                                 .SetCode("Size<Mammo")
@@ -279,7 +287,8 @@ namespace BreastRadiology.XUnitTests
                                 .ValidModalities(Modalities.US)
                                 .SetSnomedDescription("BodyStructure | 134190002 | Trigger point (BodyStructure)")
                                 .SetUMLS("The results of the Ultrasound correspond with where " +
-                                    "the trigger point is around the tumor/lesion. ",
+                                    "the trigger point is around the ",
+                                    "tumor/lesion. ",
                                     "The trigger point is the point where the site of " +
                                     "the pain is.")
                             ,
@@ -289,7 +298,8 @@ namespace BreastRadiology.XUnitTests
                                 .MammoId("270")
                                 .ValidModalities(Modalities.MG | Modalities.MRI | Modalities.NM | Modalities.US)
                                 .SetUMLS("The results of the MRI, Mammogram and/or Nuclear " +
-                                    "Medicine exam, correspond with this Ultrasound.")
+                                    "Medicine exam, correspond with this ",
+                                    "Ultrasound.")
                             #endregion // Codes
                             //- Codes
                         })

@@ -55,19 +55,21 @@ namespace BreastRadiology.XUnitTests
                                 .SetSnomedDescription("PhysicalObject | Implantable lesion localization " +
                                     "marker (Object)")
                                 .SetUMLS("Tissue marker placement after image-guided breast " +
-                                    "biopsy has become a routine component of clinical " +
-                                    "practice. ",
+                                    "biopsy has become a routine component ",
+                                    "of clinical practice. ",
                                     "Marker placement distinguishes multiple biopsied " +
-                                    "lesions within the same breast, prevents re-biopsy " +
-                                    "of benign lesions, enables multi-modality correlation, " +
-                                    "guides pre-operative localization and helps confirm " +
-                                    "surgical target removal. ",
+                                    "lesions within the same breast, ",
+                                    "prevents re-biopsy of benign lesions, enables multi-modality " +
+                                    "correlation, guides ",
+                                    "pre-operative localization and helps confirm surgical " +
+                                    "target removal. ",
                                     "Numerous breast tissue markers are currently available, " +
-                                    "with varied shapes, composition, and associated bio-absorbable " +
-                                    "components. ",
+                                    "with varied shapes, composition, ",
+                                    "and associated bio-absorbable components. ",
                                     "This review serves to familiarize the breast interventionalist " +
-                                    "with the tissue markers most widely available in " +
-                                    "the United States today and to provide guidance regarding " +
+                                    "with the tissue markers ",
+                                    "most widely available in the United States today " +
+                                    "and to provide guidance regarding ",
                                     "selection of appropriate markers for various clinical " +
                                     "settings. ",
                                     "###URL#https://www.ncbi.nlm.nih.gov/pubmed/30059952")
@@ -81,19 +83,21 @@ namespace BreastRadiology.XUnitTests
                                 .SetSnomedDescription("PhysicalObject | Implantable lesion localization " +
                                     "marker (Object)")
                                 .SetUMLS("Tissue marker placement after image-guided breast " +
-                                    "biopsy has become a routine component of clinical " +
-                                    "practice. ",
+                                    "biopsy has become a routine component ",
+                                    "of clinical practice. ",
                                     "Marker placement distinguishes multiple biopsied " +
-                                    "lesions within the same breast, prevents re-biopsy " +
-                                    "of benign lesions, enables multi-modality correlation, " +
-                                    "guides pre-operative localization and helps confirm " +
-                                    "surgical target removal. ",
+                                    "lesions within the same breast, ",
+                                    "prevents re-biopsy of benign lesions, enables multi-modality " +
+                                    "correlation, guides ",
+                                    "pre-operative localization and helps confirm surgical " +
+                                    "target removal. ",
                                     "Numerous breast tissue markers are currently available, " +
-                                    "with varied shapes, composition, and associated bio-absorbable " +
-                                    "components. ",
+                                    "with varied shapes, composition, ",
+                                    "and associated bio-absorbable components. ",
                                     "This review serves to familiarize the breast interventionalist " +
-                                    "with the tissue markers most widely available in " +
-                                    "the United States today and to provide guidance regarding " +
+                                    "with the tissue markers ",
+                                    "most widely available in the United States today " +
+                                    "and to provide guidance regarding ",
                                     "selection of appropriate markers for various clinical " +
                                     "settings. ",
                                     "###URL#https://www.ncbi.nlm.nih.gov/pubmed/30059952")
@@ -109,16 +113,17 @@ namespace BreastRadiology.XUnitTests
                                 .SetUMLS("A breast marker is present in the  breast and is " +
                                     "viewable on the MRI. ",
                                     "Tissue marker placement after image-guided breast " +
-                                    "biopsy has become a routine component of clinical " +
-                                    "practice. ",
+                                    "biopsy has become a routine component ",
+                                    "of clinical practice. ",
                                     "Marker placement distinguishes multiple biopsied " +
-                                    "lesions within the same breast, prevents re-biopsy " +
-                                    "of benign lesions, enables multi-modality correlation, " +
-                                    "guides pre-operative localization and helps confirm " +
-                                    "surgical target removal. ",
+                                    "lesions within the same breast, ",
+                                    "prevents re-biopsy of benign lesions, enables multi-modality " +
+                                    "correlation, guides ",
+                                    "pre-operative localization and helps confirm surgical " +
+                                    "target removal. ",
                                     "Numerous breast tissue markers are currently available, " +
-                                    "with varied shapes, composition, and associated bio-absorbable " +
-                                    "components. ",
+                                    "with varied shapes, composition, ",
+                                    "and associated bio-absorbable components. ",
                                     "www.ncbi.nlm.nih.gov > pubmed")
                             ,
                             new ConceptDef()
@@ -130,19 +135,21 @@ namespace BreastRadiology.XUnitTests
                                 .SetSnomedDescription("PhysicalObject | Implantable lesion localization " +
                                     "marker (Object)")
                                 .SetUMLS("Tissue marker placement after image-guided breast " +
-                                    "biopsy has become a routine component of clinical " +
-                                    "practice. ",
+                                    "biopsy has become a routine component ",
+                                    "of clinical practice. ",
                                     "Marker placement distinguishes multiple biopsied " +
-                                    "lesions within the same breast, prevents re-biopsy " +
-                                    "of benign lesions, enables multi-modality correlation, " +
-                                    "guides pre-operative localization and helps confirm " +
-                                    "surgical target removal. ",
+                                    "lesions within the same breast, ",
+                                    "prevents re-biopsy of benign lesions, enables multi-modality " +
+                                    "correlation, guides ",
+                                    "pre-operative localization and helps confirm surgical " +
+                                    "target removal. ",
                                     "Numerous breast tissue markers are currently available, " +
-                                    "with varied shapes, composition, and associated bio-absorbable " +
-                                    "components. ",
+                                    "with varied shapes, composition, ",
+                                    "and associated bio-absorbable components. ",
                                     "This review serves to familiarize the breast interventionalist " +
-                                    "with the tissue markers most widely available in " +
-                                    "the United States today and to provide guidance regarding " +
+                                    "with the tissue markers ",
+                                    "most widely available in the United States today " +
+                                    "and to provide guidance regarding ",
                                     "selection of appropriate markers for various clinical " +
                                     "settings. ",
                                     "www.ncbi.nlm.nih.gov > pubmed")
@@ -163,8 +170,8 @@ namespace BreastRadiology.XUnitTests
                                 .MammoId("592")
                                 .ValidModalities(Modalities.MG)
                                 .SetUMLS("A soft thin tube called a catheter connects the port " +
-                                    "to a large vein for administering chemotherapy is " +
-                                    "present in the MRI/Ultrasound.")
+                                    "to a large vein for administering ",
+                                    "chemotherapy is present in the MRI/Ultrasound.")
                             ,
                             new ConceptDef()
                                 .SetCode("Clip")
@@ -223,8 +230,8 @@ namespace BreastRadiology.XUnitTests
                                 .MammoId("913")
                                 .ValidModalities(Modalities.MG | Modalities.MRI | Modalities.US)
                                 .SetUMLS("Tiny, gold seeds that are put in and/or around a " +
-                                    "tumor to show exactly where the tumor is are present " +
-                                    "in the ultrasound/MRI.")
+                                    "tumor to show exactly where the ",
+                                    "tumor is are present in the ultrasound/MRI.")
                             ,
                             new ConceptDef()
                                 .SetCode("GunshotWound")
@@ -285,7 +292,8 @@ namespace BreastRadiology.XUnitTests
                                 .SetSnomedDescription("ClinicalFinding | 283169003 | Metal foreign body " +
                                     "in breast (Disorder) | [0/0] | S21.009?")
                                 .SetUMLS("The Mammogram suggests a foreign body in the breast " +
-                                    "that appears to be a metallic object.")
+                                    "that appears to be a metallic ",
+                                    "object.")
                             ,
                             new ConceptDef()
                                 .SetCode("Needle")
@@ -303,7 +311,8 @@ namespace BreastRadiology.XUnitTests
                                 .SetSnomedCode("80919006")
                                 .SetSnomedDescription("PhysicalObject | Jewelry (Object)")
                                 .SetUMLS("The Mammogram suggests a foreign body in the breast " +
-                                    "that appears to be a piece of nipple jewelry.")
+                                    "that appears to be a piece of ",
+                                    "nipple jewelry.")
                             ,
                             new ConceptDef()
                                 .SetCode("Non-metallicBody")
@@ -328,13 +337,13 @@ namespace BreastRadiology.XUnitTests
                                 .ValidModalities(Modalities.MG | Modalities.MRI | Modalities.US)
                                 .SetUMLS("Silicone granuloma shows up on the MRI and/or Ultrasound. ",
                                     "Snowball like hyperechogenic axillary lymph nodes " +
-                                    "in a woman with silicone implants removed due to " +
-                                    "complications. ",
+                                    "in a woman with silicone implants ",
+                                    "removed due to complications. ",
                                     "Specialty. ",
                                     "Dermatology. ",
                                     "Silicone granulomas are a skin condition that occur " +
-                                    "as a reaction to liquid silicones, and are characterized " +
-                                    "by the formation of nodules.")
+                                    "as a reaction to liquid silicones, ",
+                                    "and are characterized by the formation of nodules.")
                             ,
                             new ConceptDef()
                                 .SetCode("Sponge")
@@ -378,8 +387,8 @@ namespace BreastRadiology.XUnitTests
                                 .ValidModalities(Modalities.MG | Modalities.MRI | Modalities.US)
                                 .SetSnomedDescription("PhysicalObject | 408098004 | Swab (Object")
                                 .SetUMLS("A Retained surgical swab appears to have been idenified " +
-                                    "in the breast during the mammogram, ultrasound and/or " +
-                                    "MRI.")
+                                    "in the breast during the ",
+                                    "mammogram, ultrasound and/or MRI.")
                             ,
                             new ConceptDef()
                                 .SetCode("TitaniumClip")
@@ -423,8 +432,8 @@ namespace BreastRadiology.XUnitTests
                                 .SetUMLS("Guidewire is present in the body. ",
                                     " It is viewable in the MRI and/or Ultrasound. ",
                                     "Guidewire is used during medical procedures such " +
-                                    "as biopsy or placement of medical devices such as " +
-                                    "a catheter or pacemaker.")
+                                    "as biopsy or placement of medical ",
+                                    "devices such as a catheter or pacemaker.")
                             ,
                             new ConceptDef()
                                 .SetCode("WireFragment")
@@ -434,8 +443,8 @@ namespace BreastRadiology.XUnitTests
                                 .SetUMLS("A fragment of a guidewire is present in the body. ",
                                     "It is viewable in the MRI and/or Ultrasound. ",
                                     " Guidewire is used during medical procedures such " +
-                                    "as a biopsy or  placement of medical devices such " +
-                                    "as a catheter or pacemaker.")
+                                    "as a biopsy or  placement of medical ",
+                                    "devices such as a catheter or pacemaker.")
                             #endregion // Codes
                              //- Type
                          })

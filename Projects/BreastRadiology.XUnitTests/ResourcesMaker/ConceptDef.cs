@@ -8,6 +8,7 @@ namespace BreastRadiology.XUnitTests
 {
     class ConceptDef
     {
+
         public String Code { get; set; }
         public String Display { get; set; }
         public String Definition
@@ -15,31 +16,50 @@ namespace BreastRadiology.XUnitTests
             get
             {
                 StringBuilder sb = new StringBuilder();
-                void AppendDefLines(String[] lines)
+
+                void WriteParagraphs(String[] lines)
                 {
+                    bool newParagraph = true;
+
+                    void Line(String line)
+                    {
+                        line = line.Trim();
+                        if (
+                            (line.Length == 0) &&
+                            (newParagraph == false)
+                            )
+                        {
+                            newParagraph = true;
+                            return;
+                        }
+
+                        if (newParagraph == true)
+                        {
+                            sb.AppendLine("");
+                            newParagraph = false;
+                        }
+                        sb.AppendLine($"{line} ");
+                    }
+
                     if (lines == null)
                         return;
+
                     foreach (String line in lines)
-                        sb.AppendLine(line);
+                        Line(line);
+                    if (newParagraph == false)
+                        sb.AppendLine("");
                 }
 
-                AppendDefLines(this.definitionText);
+                WriteParagraphs(this.definitionText);
 
-                //if (ResourcesMaker.Self.Data.SelectRow(this.mammoId) == true)
-                //{
-                //    String[] description = ResourcesMaker.Self.Data.UMLS.Split('\n');
-                //    AppendDefLines(description);
-                //}
-
-                if (this.umlsText!= null)
+                if (this.umlsText != null)
                 {
-                    string text = this.FormatUmls(this.umlsText.ToList());
-                    sb.AppendLine(text);
+                    WriteParagraphs(this.umlsText);
                 }
                 else if (this.biRadsText != null)
                 {
-                    AppendDefLines(this.biRadsText);
-                    sb.AppendLine($"[{ResourcesMaker.BiRadCitation}]");
+                    WriteParagraphs(this.biRadsText);
+                    sb.AppendLine($"-- {ResourcesMaker.BiRadCitation}");
                 }
 
                 if (String.IsNullOrEmpty(this.modalities) == false)
@@ -56,57 +76,6 @@ namespace BreastRadiology.XUnitTests
 
         public ConceptDef()
         {
-        }
-
-        private String FormatUmls(List<String> lines)
-        {
-            StringBuilder sb = new StringBuilder();
-            void CopyLines(Int32 count)
-            {
-                for (Int32 i = 0; i < count; i++)
-                    sb.AppendLine(lines[i]);
-            }
-
-            if (lines.Count > 0)
-                while ((lines.Count > 0) && String.IsNullOrWhiteSpace(lines[^1]))
-                    lines.RemoveAt(lines.Count - 1);
-            if (lines.Count == 0)
-                return "";
-
-            String lastLine = lines[^1];
-            if (lastLine.StartsWith("###") == false)
-            {
-                CopyLines(lines.Count);
-                return sb.ToString();
-            }
-
-            void AcrCitation(String name, String page)
-            {
-                sb.Append($"-- {name}");
-                if (String.IsNullOrEmpty(page) == false)
-                    sb.Append($"#{page}");
-                sb.AppendLine("");
-            }
-
-            CopyLines(lines.Count - 1);
-            lastLine = lastLine.Substring(3);
-            Int32 index = lastLine.IndexOf('#');
-            String citationType = lastLine.Substring(0, index);
-            String page = lastLine.Substring(index + 1);
-            switch (citationType)
-            {
-                case "URL":
-                    String hRef = lastLine.Substring(index + 1);
-                    sb.Append($"-- {hRef}");
-                    break;
-                case "ACRUS":
-                    AcrCitation("Breast Imaging Reporting and Data System—Mammography, Fifth Edition", page);
-                    break;
-                case "ACRMG":
-                    AcrCitation("Breast Imaging Reporting and Data System—Ultrasound, Second Edition", page);
-                    break;
-            }
-            return sb.ToString();
         }
 
         public ConceptDef SetCode(String code, String display)
@@ -205,7 +174,7 @@ namespace BreastRadiology.XUnitTests
 
         public ConceptDef SetUMLS(params String[] value)
         {
-            this.umlsText = value;
+            this.umlsText = ResourcesMaker.FormatUmls(value.ToList(), false);
             return this;
         }
     }

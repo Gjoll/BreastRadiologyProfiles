@@ -93,15 +93,14 @@ namespace BreastRadiology.XUnitTests
             return value;
         }
 
-        void AppIfNotNull(CodeBlockNested concept, String name, Object value)
+        bool AppIfNotNull(CodeBlockNested concept, String name, Object value)
         {
             if (value is System.DBNull)
-                return;
+                return false;
 
             String sValue = value.ToString();
             sValue = sValue.Trim()
                     .Replace("\r", "")
-                    .Replace("\n", "")
                 ;
             if (String.IsNullOrEmpty(sValue) == false)
             {
@@ -119,6 +118,7 @@ namespace BreastRadiology.XUnitTests
                     concept.AppendLine($"        {lines[i]})");
                 }
             }
+            return true;
         }
 
         IEnumerable<String> FormatMultiLineText(String text)
@@ -366,8 +366,8 @@ namespace BreastRadiology.XUnitTests
                 //AppIfNotNull(concepts, "SetOneToMany", row[13]);
                 AppIfNotNull(concepts, "SetSnomedDescription", row[SnomedDescriptionCol]);
                 //AppIfNotNull(concepts, "SetICD10", row[ICD10Col]);
-                AppIfNotNull(concepts, "SetUMLS", row[UMLSCol]);
-                AppIfNotNull(concepts, "SetACR", row[ACRCol]);
+                if (AppIfNotNull(concepts, "SetUMLS", row[UMLSCol]) == false)
+                    AppIfNotNull(concepts, "SetACR", row[ACRCol]);
                 if (i < penIds.Length - 1)
                     concepts
                         .AppendLine($",");

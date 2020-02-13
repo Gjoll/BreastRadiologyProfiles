@@ -57,7 +57,8 @@ namespace BreastRadiology.XUnitTests
                                 .SetUMLS("A noncancerous condition that results in clogged " +
                                     "ducts around the nipple. ",
                                     "While it sometimes causes pain, irritation and discharge, " +
-                                    "it's generally not a cause for concern. ",
+                                    "it's generally not a cause ",
+                                    "for concern. ",
                                     "If left untreated, it can eventually obliterate the " +
                                     "breast duct. ",
                                     "www.healthline.com > health > duct-ectasia-of-the-breast")

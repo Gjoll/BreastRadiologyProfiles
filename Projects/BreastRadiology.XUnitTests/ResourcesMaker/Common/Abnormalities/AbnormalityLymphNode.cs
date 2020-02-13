@@ -34,13 +34,15 @@ namespace BreastRadiology.XUnitTests
                                     "(Bodypart)")
                                 .SetUMLS("Axillary Nodes. ",
                                     "The axillary nodes are a group of lymph nodes located " +
-                                    "in the axillary (or armpit) region of the body. ",
+                                    "in the axillary (or armpit) ",
+                                    "region of the body. ",
                                     "They perform the vital function of filtration and " +
-                                    "conduction of lymph from the upper limbs, pectoral " +
-                                    "region, and upper back.There are five axillary lymph " +
-                                    "node groups, namely the lateral (humeral), anterior " +
-                                    "(pectoral), posterior (subscapular), central and " +
-                                    "apical nodes.")
+                                    "conduction of lymph from the upper ",
+                                    "limbs, pectoral region, and upper back.There are " +
+                                    "five axillary lymph node groups, ",
+                                    "namely the lateral (humeral), anterior (pectoral), " +
+                                    "posterior (subscapular), central ",
+                                    "and apical nodes.")
                             ,
                             new ConceptDef()
                                 .SetCode("NodeEnlarged")
@@ -52,15 +54,16 @@ namespace BreastRadiology.XUnitTests
                                     "(Disorder)")
                                 .SetUMLS("Swollen lymph nodes usually occur as a result of " +
                                     "infection from bacteria or viruses. ",
-                                    "Rarely, swollen lymph nodes are caused by cancer.Your " +
-                                    "lymph nodes, also called lymph glands, play a vital " +
-                                    "role in your body's ability to fight off infections. ",
+                                    "Rarely, swollen lymph nodes are caused by cancer.",
+                                    "Your lymph nodes, also called lymph glands, play " +
+                                    "a vital role in your body's ability ",
+                                    "to fight off infections. ",
                                     "They function as filters, trapping viruses, bacteria " +
-                                    "and other causes of illnesses before they can infect " +
-                                    "other parts of your body. ",
+                                    "and other causes of illnesses ",
+                                    "before they can infect other parts of your body. ",
                                     "Common areas where you might notice swollen lymph " +
-                                    "nodes include your neck, under your chin, in your " +
-                                    "armpits and in your groin.")
+                                    "nodes include your neck, under ",
+                                    "your chin, in your armpits and in your groin.")
                             ,
                             new ConceptDef()
                                 .SetCode("NodeFocalCortex")
@@ -82,8 +85,9 @@ namespace BreastRadiology.XUnitTests
                                 .SetSnomedDescription("BodyStructure | 9659009 | Infraclavicular lymph node " +
                                     "(Bodypart)")
                                 .SetUMLS("(Infraclavicular labeled at upper left.) One or two " +
-                                    "deltopectoral lymph nodes (or infraclavicular nodes) " +
-                                    "are found beside the cephalic vein, between the pectoralis " +
+                                    "deltopectoral lymph nodes (or ",
+                                    "infraclavicular nodes) are found beside the cephalic " +
+                                    "vein, between the pectoralis ",
                                     "major and deltoideus, immediately below the clavicle " +
                                     ". ",
                                     "They are situated in the course of the external collecting " +
@@ -126,10 +130,11 @@ namespace BreastRadiology.XUnitTests
                                 .SetSnomedDescription("BodyStructure | 76838003 | Structure of supraclavicular " +
                                     "lymph node (Bodypart)")
                                 .SetUMLS("The supraclavicular lymph nodes are a set of lymph " +
-                                    "nodes found just above the clavicle or collarbone, " +
-                                    "toward the hollow of the neck. ",
+                                    "nodes found just above the clavicle ",
+                                    "or collarbone, toward the hollow of the neck. ",
                                     "Lymph nodes are responsible for filtering the lymphatic " +
-                                    "fluid of unwanted debris and bacteria.")
+                                    "fluid of unwanted debris ",
+                                    "and bacteria.")
                             ,
                             new ConceptDef()
                                 .SetCode("NodeUniformThickness")

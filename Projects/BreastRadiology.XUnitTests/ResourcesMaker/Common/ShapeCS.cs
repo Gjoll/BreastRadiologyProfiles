@@ -58,7 +58,8 @@ namespace BreastRadiology.XUnitTests
                             .SetSnomedCode("129735005")
                             .SetSnomedDescription("ClinicalFinding | Lobular shaped lesion (Finding)")
                             .SetUMLS("A mass that has an undulating  (having a smoothly " +
-                                "rising and falling form or outline) contour.")
+                                "rising and falling form or outline) ",
+                                "contour.")
                         ,
                         new ConceptDef()
                             .SetCode("OvalInShape")
@@ -76,8 +77,6 @@ namespace BreastRadiology.XUnitTests
                             .ValidModalities(Modalities.MG)
                             .SetUMLS("There is a mass that is reniform (kidney shape) in " +
                                 "shape.")
-                            .SetACR("is a three-dimensional lesion that occupies a space " +
-                                "within the breast.")
                         ,
                         new ConceptDef()
                             .SetCode("RoundInShape")
