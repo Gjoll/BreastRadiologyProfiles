@@ -14,7 +14,7 @@ namespace BreastRadiology.XUnitTests
     partial class ResourcesMaker : ConverterBase
     {
         SDTaskVar FindingsLeftBreast = new SDTaskVar(
-            (out StructureDefinition  s) =>
+            (out StructureDefinition s) =>
             {
                 SDefEditor e = Self.CreateEditor("SectionFindingsLeftBreast",
                        "Findings Left Breast",
@@ -30,10 +30,12 @@ namespace BreastRadiology.XUnitTests
                    .AddFragRef(Self.FindingBreastFragment.Value())
                    ;
                 s = e.SDef;
-
-                e.Select("bodySite")
-                    .Pattern(new Coding(Global.Snomed, "80248007", "Left breast structure (body structure)"));
-
+                {
+                    Coding coding = new Coding(Global.Snomed, "80248007", "Left breast structure (body structure)");
+                    e.Select("bodySite")
+                        .Pattern(coding.ToPattern())
+                        .DefaultValue(coding);
+                }
                 e.Select("value[x]")
                     .Definition(new Markdown()
                          .Paragraph("Composite BiRad value for Left Breast.")
@@ -42,7 +44,10 @@ namespace BreastRadiology.XUnitTests
                     ;
 
                 // Set Observation.code to unique value for this profile.
-                e.Select("code").Pattern(Self.ObservationCodeFindingsLeftBreast.ToCodeableConcept().ToPattern());
+                e.Select("code")
+                    .Pattern(Self.ObservationCodeFindingsLeftBreast.ToCodeableConcept().ToPattern())
+                    .DefaultValue(Self.ObservationCodeFindingsLeftBreast.ToCodeableConcept())
+                    ;
 
                 e.IntroDoc
                      .ReviewedStatus("KWA-PEN", "1.1.2020")

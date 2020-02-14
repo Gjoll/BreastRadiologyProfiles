@@ -157,6 +157,16 @@
           "min": 1,
           "max": "1"
         },
+        "defaultValueCodeableConcept": {
+          "coding": [
+            {
+              "system": "http://hl7.org/fhir/us/breast-radiology/CodeSystem/ObservationCodes",
+              "code": "abnormalityLymphNodeObservation",
+              "display": "Abnormality Lymph Node observation"
+            }
+          ],
+          "text": "Abnormality Lymph Node observation"
+        },
         "patternCodeableConcept": {
           "coding": [
             {
@@ -210,6 +220,16 @@
           "path": "Observation.component.code",
           "min": 1,
           "max": "1"
+        },
+        "defaultValueCodeableConcept": {
+          "coding": [
+            {
+              "system": "http://hl7.org/fhir/us/breast-radiology/CodeSystem/ObservationComponentSliceCodes",
+              "code": "abnormalityLymphNodeType",
+              "display": "Component code for 'Lymph Node Type' slice"
+            }
+          ],
+          "text": "Component code for 'Lymph Node Type' slice"
         },
         "patternCodeableConcept": {
           "coding": [

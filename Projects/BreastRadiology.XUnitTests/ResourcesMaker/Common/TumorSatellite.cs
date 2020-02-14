@@ -38,7 +38,10 @@ namespace BreastRadiology.XUnitTests
                    s = e.SDef;
 
                    // Set Observation.code to unique value for this profile.
-                   e.Select("code").Pattern(Self.ObservationCodeTumorSatellite.ToCodeableConcept().ToPattern());
+                   e.Select("code")
+                        .Pattern(Self.ObservationCodeTumorSatellite.ToCodeableConcept().ToPattern())
+                        .DefaultValue(Self.ObservationCodeTumorSatellite.ToCodeableConcept())
+                        ;
 
                    ElementTreeNode sliceElementDef = e.ConfigureSliceByUrlDiscriminator("derivedFrom", false);
                    {

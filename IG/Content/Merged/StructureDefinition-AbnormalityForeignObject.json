@@ -953,6 +953,16 @@
             "code": "CodeableConcept"
           }
         ],
+        "defaultValueCodeableConcept": {
+          "coding": [
+            {
+              "system": "http://hl7.org/fhir/us/breast-radiology/CodeSystem/ObservationCodes",
+              "code": "abnormalityForeignObjectObservation",
+              "display": "Abnormality Foreign Object observation"
+            }
+          ],
+          "text": "Abnormality Foreign Object observation"
+        },
         "patternCodeableConcept": {
           "coding": [
             {
@@ -2917,6 +2927,16 @@
             "code": "CodeableConcept"
           }
         ],
+        "defaultValueCodeableConcept": {
+          "coding": [
+            {
+              "system": "http://hl7.org/fhir/us/breast-radiology/CodeSystem/ObservationComponentSliceCodes",
+              "code": "abnormalityForeignObjectType",
+              "display": "Component code for 'Foreign Object Type' slice"
+            }
+          ],
+          "text": "Component code for 'Foreign Object Type' slice"
+        },
         "patternCodeableConcept": {
           "coding": [
             {
@@ -3285,6 +3305,16 @@
             "code": "CodeableConcept"
           }
         ],
+        "defaultValueCodeableConcept": {
+          "coding": [
+            {
+              "system": "http://hl7.org/fhir/us/breast-radiology/CodeSystem/ObservationComponentSliceCodes",
+              "code": "obsChanges",
+              "display": "Component code for 'Observed Changes' slice"
+            }
+          ],
+          "text": "Component code for 'Observed Changes' slice"
+        },
         "patternCodeableConcept": {
           "coding": [
             {
@@ -3653,6 +3683,16 @@
             "code": "CodeableConcept"
           }
         ],
+        "defaultValueCodeableConcept": {
+          "coding": [
+            {
+              "system": "http://hl7.org/fhir/us/breast-radiology/CodeSystem/ObservationComponentSliceCodes",
+              "code": "targetBiRads",
+              "display": "Component code for 'BiRads Code' slice"
+            }
+          ],
+          "text": "Component code for 'BiRads Code' slice"
+        },
         "patternCodeableConcept": {
           "coding": [
             {
@@ -4021,6 +4061,16 @@
             "code": "CodeableConcept"
           }
         ],
+        "defaultValueCodeableConcept": {
+          "coding": [
+            {
+              "system": "http://hl7.org/fhir/us/breast-radiology/CodeSystem/ObservationComponentSliceCodes",
+              "code": "notPreviouslySeen",
+              "display": "Component code for 'Not Previously Seen' slice"
+            }
+          ],
+          "text": "Component code for 'Not Previously Seen' slice"
+        },
         "patternCodeableConcept": {
           "coding": [
             {
@@ -4389,6 +4439,16 @@
             "code": "CodeableConcept"
           }
         ],
+        "defaultValueCodeableConcept": {
+          "coding": [
+            {
+              "system": "http://hl7.org/fhir/us/breast-radiology/CodeSystem/ObservationComponentSliceCodes",
+              "code": "correspondsWith",
+              "display": "Component code for 'Corresponds With' slice"
+            }
+          ],
+          "text": "Component code for 'Corresponds With' slice"
+        },
         "patternCodeableConcept": {
           "coding": [
             {
@@ -4757,6 +4817,16 @@
             "code": "CodeableConcept"
           }
         ],
+        "defaultValueCodeableConcept": {
+          "coding": [
+            {
+              "system": "http://hl7.org/fhir/us/breast-radiology/CodeSystem/ObservationComponentSliceCodes",
+              "code": "prevDemBy",
+              "display": "Component code for 'Previously Demonstrated By' slice"
+            }
+          ],
+          "text": "Component code for 'Previously Demonstrated By' slice"
+        },
         "patternCodeableConcept": {
           "coding": [
             {
@@ -5064,6 +5134,16 @@
           "path": "Observation.code",
           "min": 1,
           "max": "1"
+        },
+        "defaultValueCodeableConcept": {
+          "coding": [
+            {
+              "system": "http://hl7.org/fhir/us/breast-radiology/CodeSystem/ObservationCodes",
+              "code": "abnormalityForeignObjectObservation",
+              "display": "Abnormality Foreign Object observation"
+            }
+          ],
+          "text": "Abnormality Foreign Object observation"
         },
         "patternCodeableConcept": {
           "coding": [
@@ -5447,6 +5527,16 @@
             "code": "CodeableConcept"
           }
         ],
+        "defaultValueCodeableConcept": {
+          "coding": [
+            {
+              "system": "http://hl7.org/fhir/us/breast-radiology/CodeSystem/ObservationComponentSliceCodes",
+              "code": "abnormalityForeignObjectType",
+              "display": "Component code for 'Foreign Object Type' slice"
+            }
+          ],
+          "text": "Component code for 'Foreign Object Type' slice"
+        },
         "patternCodeableConcept": {
           "coding": [
             {
@@ -5686,6 +5776,16 @@
           "min": 1,
           "max": "1"
         },
+        "defaultValueCodeableConcept": {
+          "coding": [
+            {
+              "system": "http://hl7.org/fhir/us/breast-radiology/CodeSystem/ObservationComponentSliceCodes",
+              "code": "obsChanges",
+              "display": "Component code for 'Observed Changes' slice"
+            }
+          ],
+          "text": "Component code for 'Observed Changes' slice"
+        },
         "patternCodeableConcept": {
           "coding": [
             {
@@ -5743,6 +5843,16 @@
           "path": "Observation.component.code",
           "min": 1,
           "max": "1"
+        },
+        "defaultValueCodeableConcept": {
+          "coding": [
+            {
+              "system": "http://hl7.org/fhir/us/breast-radiology/CodeSystem/ObservationComponentSliceCodes",
+              "code": "targetBiRads",
+              "display": "Component code for 'BiRads Code' slice"
+            }
+          ],
+          "text": "Component code for 'BiRads Code' slice"
         },
         "patternCodeableConcept": {
           "coding": [
@@ -5931,6 +6041,16 @@
             "code": "CodeableConcept"
           }
         ],
+        "defaultValueCodeableConcept": {
+          "coding": [
+            {
+              "system": "http://hl7.org/fhir/us/breast-radiology/CodeSystem/ObservationComponentSliceCodes",
+              "code": "notPreviouslySeen",
+              "display": "Component code for 'Not Previously Seen' slice"
+            }
+          ],
+          "text": "Component code for 'Not Previously Seen' slice"
+        },
         "patternCodeableConcept": {
           "coding": [
             {
@@ -6170,6 +6290,16 @@
           "min": 1,
           "max": "1"
         },
+        "defaultValueCodeableConcept": {
+          "coding": [
+            {
+              "system": "http://hl7.org/fhir/us/breast-radiology/CodeSystem/ObservationComponentSliceCodes",
+              "code": "correspondsWith",
+              "display": "Component code for 'Corresponds With' slice"
+            }
+          ],
+          "text": "Component code for 'Corresponds With' slice"
+        },
         "patternCodeableConcept": {
           "coding": [
             {
@@ -6227,6 +6357,16 @@
           "path": "Observation.component.code",
           "min": 1,
           "max": "1"
+        },
+        "defaultValueCodeableConcept": {
+          "coding": [
+            {
+              "system": "http://hl7.org/fhir/us/breast-radiology/CodeSystem/ObservationComponentSliceCodes",
+              "code": "prevDemBy",
+              "display": "Component code for 'Previously Demonstrated By' slice"
+            }
+          ],
+          "text": "Component code for 'Previously Demonstrated By' slice"
         },
         "patternCodeableConcept": {
           "coding": [

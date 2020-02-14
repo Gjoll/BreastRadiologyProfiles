@@ -377,11 +377,11 @@ namespace BreastRadiology.XUnitTests
 
                 void Citation(String citation)
                 {
-                    citation = citation
-                        .Replace(" ", "&nbsp;")
-                        ;
+                    //citation = citation
+                    //    .Replace(" ", "&nbsp;")
+                    //    ;
                     sb
-                        .AppendLine($" [<ul>{citation}</ul>")
+                        .AppendLine($" [{citation}]")
                         .AppendLine("")
                         ;
                 }

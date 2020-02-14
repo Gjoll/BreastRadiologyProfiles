@@ -176,7 +176,10 @@ namespace BreastRadiology.XUnitTests
                     )
                     ;
                 s = e.SDef;
-                e.Select("code").Pattern(Self.ObservationCodeAbnormalityCyst.ToCodeableConcept().ToPattern());
+                e.Select("code")
+                    .Pattern(Self.ObservationCodeAbnormalityCyst.ToCodeableConcept().ToPattern())
+                    .DefaultValue(Self.ObservationCodeAbnormalityCyst.ToCodeableConcept())
+                    ;
                 e.IntroDoc
                     .ReviewedStatus("NOONE", "")
                     //+ IntroDocDescription

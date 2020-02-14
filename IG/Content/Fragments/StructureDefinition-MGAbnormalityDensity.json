@@ -157,6 +157,16 @@
           "min": 1,
           "max": "1"
         },
+        "defaultValueCodeableConcept": {
+          "coding": [
+            {
+              "system": "http://hl7.org/fhir/us/breast-radiology/CodeSystem/ObservationCodes",
+              "code": "mgAbnormalityDensityObservation",
+              "display": "MG Abnormality Density observation"
+            }
+          ],
+          "text": "MG Abnormality Density observation"
+        },
         "patternCodeableConcept": {
           "coding": [
             {
@@ -221,6 +231,16 @@
           "path": "Observation.component.code",
           "min": 1,
           "max": "1"
+        },
+        "defaultValueCodeableConcept": {
+          "coding": [
+            {
+              "system": "http://hl7.org/fhir/us/breast-radiology/CodeSystem/ObservationComponentSliceCodes",
+              "code": "mgAbnormalityDensityType",
+              "display": "Component code for 'Abnormality Density Type' slice"
+            }
+          ],
+          "text": "Component code for 'Abnormality Density Type' slice"
         },
         "patternCodeableConcept": {
           "coding": [

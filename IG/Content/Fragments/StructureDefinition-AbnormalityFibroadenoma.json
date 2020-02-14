@@ -134,6 +134,16 @@
           "min": 1,
           "max": "1"
         },
+        "defaultValueCodeableConcept": {
+          "coding": [
+            {
+              "system": "http://hl7.org/fhir/us/breast-radiology/CodeSystem/ObservationCodes",
+              "code": "abnormalityFibroadenomaObservation",
+              "display": "Abnormality Fibroadenoma observation"
+            }
+          ],
+          "text": "Abnormality Fibroadenoma observation"
+        },
         "patternCodeableConcept": {
           "coding": [
             {
@@ -187,6 +197,16 @@
           "path": "Observation.component.code",
           "min": 1,
           "max": "1"
+        },
+        "defaultValueCodeableConcept": {
+          "coding": [
+            {
+              "system": "http://hl7.org/fhir/us/breast-radiology/CodeSystem/ObservationComponentSliceCodes",
+              "code": "mgAbnormalityFibroAdenomaType",
+              "display": "Component code for 'FibroAdenoma Type' slice"
+            }
+          ],
+          "text": "Component code for 'FibroAdenoma Type' slice"
         },
         "patternCodeableConcept": {
           "coding": [

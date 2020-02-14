@@ -15,7 +15,7 @@ namespace BreastRadiology.XUnitTests
     partial class ResourcesMaker
     {
         SDTaskVar ConsistentWith = new SDTaskVar(
-               (out StructureDefinition  s) =>
+               (out StructureDefinition s) =>
                    {
                        SDefEditor e = Self.CreateEditor("ConsistentWith",
                         "Consistent With",
@@ -34,7 +34,10 @@ namespace BreastRadiology.XUnitTests
                        s = e.SDef;
 
                        // Set Observation.code to unique value for this profile.
-                       e.Select("code").Pattern(Self.ObservationCodeConsistentWith.ToCodeableConcept().ToPattern());
+                       e.Select("code")
+                            .Pattern(Self.ObservationCodeConsistentWith.ToCodeableConcept().ToPattern())
+                            .DefaultValue(Self.ObservationCodeConsistentWith.ToCodeableConcept())
+                            ;
 
 
                        e.StartComponentSliceing();

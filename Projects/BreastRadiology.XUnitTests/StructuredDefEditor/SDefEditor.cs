@@ -522,7 +522,8 @@ namespace BreastRadiology.XUnitTests
                 };
                 componentCode
                     .Pattern(pattern.ToPattern())
-                                ;
+                    .DefaultValue(pattern)
+                    ;
                 slice.CreateNode(componentCode);
             }
             {
@@ -565,7 +566,10 @@ namespace BreastRadiology.XUnitTests
                 Min = 1,
                 Max = "1"
             };
-            componentCode.Pattern(sliceCode);
+            componentCode
+                .Pattern(sliceCode.ToPattern())
+                .DefaultValue(sliceCode)
+                ;
             return slice.CreateNode(componentCode);
         }
 

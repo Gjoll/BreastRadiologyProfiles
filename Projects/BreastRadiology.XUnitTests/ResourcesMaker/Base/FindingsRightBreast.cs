@@ -32,7 +32,10 @@ namespace BreastRadiology.XUnitTests
                 s = e.SDef;
 
                 // Set Observation.code to unique value for this profile.
-                e.Select("code").Pattern(Self.ObservationCodeFindingsRightBreast.ToCodeableConcept().ToPattern());
+                e.Select("code")
+                    .Pattern(Self.ObservationCodeFindingsRightBreast.ToCodeableConcept().ToPattern())
+                    .DefaultValue(Self.ObservationCodeFindingsRightBreast.ToCodeableConcept())
+                    ;
 
                 e.Select("bodySite")
                     .Pattern(new Coding(Global.Snomed, "73056007", " Right breast structure (body structure) "));

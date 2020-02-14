@@ -805,6 +805,16 @@
             "code": "CodeableConcept"
           }
         ],
+        "defaultValueCodeableConcept": {
+          "coding": [
+            {
+              "system": "http://hl7.org/fhir/us/breast-radiology/CodeSystem/ObservationCodes",
+              "code": "consistentWithObservation",
+              "display": "Consistent With observation"
+            }
+          ],
+          "text": "Consistent With observation"
+        },
         "patternCodeableConcept": {
           "coding": [
             {
@@ -2505,6 +2515,16 @@
             "code": "CodeableConcept"
           }
         ],
+        "defaultValueCodeableConcept": {
+          "coding": [
+            {
+              "system": "http://hl7.org/fhir/us/breast-radiology/CodeSystem/ObservationComponentSliceCodes",
+              "code": "consistentWithValue",
+              "display": "Component code for 'Consistent With Value' slice"
+            }
+          ],
+          "text": "Component code for 'Consistent With Value' slice"
+        },
         "patternCodeableConcept": {
           "coding": [
             {
@@ -2873,6 +2893,16 @@
             "code": "CodeableConcept"
           }
         ],
+        "defaultValueCodeableConcept": {
+          "coding": [
+            {
+              "system": "http://hl7.org/fhir/us/breast-radiology/CodeSystem/ObservationComponentSliceCodes",
+              "code": "consistentWithQualifier",
+              "display": "Component code for 'Consistent With Qualifier' slice"
+            }
+          ],
+          "text": "Component code for 'Consistent With Qualifier' slice"
+        },
         "patternCodeableConcept": {
           "coding": [
             {
@@ -3180,6 +3210,16 @@
           "min": 1,
           "max": "1"
         },
+        "defaultValueCodeableConcept": {
+          "coding": [
+            {
+              "system": "http://hl7.org/fhir/us/breast-radiology/CodeSystem/ObservationCodes",
+              "code": "consistentWithObservation",
+              "display": "Consistent With observation"
+            }
+          ],
+          "text": "Consistent With observation"
+        },
         "patternCodeableConcept": {
           "coding": [
             {
@@ -3459,6 +3499,16 @@
             "code": "CodeableConcept"
           }
         ],
+        "defaultValueCodeableConcept": {
+          "coding": [
+            {
+              "system": "http://hl7.org/fhir/us/breast-radiology/CodeSystem/ObservationComponentSliceCodes",
+              "code": "consistentWithValue",
+              "display": "Component code for 'Consistent With Value' slice"
+            }
+          ],
+          "text": "Component code for 'Consistent With Value' slice"
+        },
         "patternCodeableConcept": {
           "coding": [
             {
@@ -3827,6 +3877,16 @@
             "code": "CodeableConcept"
           }
         ],
+        "defaultValueCodeableConcept": {
+          "coding": [
+            {
+              "system": "http://hl7.org/fhir/us/breast-radiology/CodeSystem/ObservationComponentSliceCodes",
+              "code": "consistentWithQualifier",
+              "display": "Component code for 'Consistent With Qualifier' slice"
+            }
+          ],
+          "text": "Component code for 'Consistent With Qualifier' slice"
+        },
         "patternCodeableConcept": {
           "coding": [
             {
