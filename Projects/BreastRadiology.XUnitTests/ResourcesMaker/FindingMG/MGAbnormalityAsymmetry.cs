@@ -138,9 +138,10 @@ namespace BreastRadiology.XUnitTests
                 s = e.SDef;
 
                 // Set Observation.code to unique value for this profile.
+                CodeableConcept code = Self.ObservationCodeMGAbnormalityAsymmetry.ToCodeableConcept();
                 e.Select("code")
-                    .Pattern(Self.ObservationCodeMGAbnormalityAsymmetry.ToCodeableConcept())
-                    .DefaultValue(Self.ObservationCodeMGAbnormalityAsymmetry)
+                    .Pattern(code.ToPattern())
+                    .DefaultValue(code)
                     ;
 
                 e.IntroDoc

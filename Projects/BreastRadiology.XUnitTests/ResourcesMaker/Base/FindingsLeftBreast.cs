@@ -31,7 +31,7 @@ namespace BreastRadiology.XUnitTests
                    ;
                 s = e.SDef;
                 {
-                    Coding coding = new Coding(Global.Snomed, "80248007", "Left breast structure (body structure)");
+                    CodeableConcept coding = new Coding(Global.Snomed, "80248007", "Left breast structure (body structure)").ToCodeableConcept();
                     e.Select("bodySite")
                         .Pattern(coding.ToPattern())
                         .DefaultValue(coding);
