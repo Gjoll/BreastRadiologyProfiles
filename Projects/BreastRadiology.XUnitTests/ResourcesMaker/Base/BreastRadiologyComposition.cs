@@ -181,40 +181,75 @@ namespace BreastRadiology.XUnitTests
                     }
                 }
 
-                //// Findings Section
-                //{
-                //    ElementTreeNode sliceElementDef = StartSectionSlicing(e);
-                //    {
-                //        String[] targets = new string[] { ObservationUrl };
+                // Findings Right Breast Section
+                {
+                    ElementTreeNode sliceElementDef = StartSectionSlicing(e);
+                    {
+                        String[] targets = new string[] { Self.FindingsRightBreast.Value().Url };
 
-                //        ElementTreeSlice sectionSlice = SliceSection(sliceElementDef,
-                //            "findings",
-                //            "Findings",
-                //            Self.SectionCodeFindings,
-                //            out ElementDefinition entry);
-                //        entry
-                //            .ZeroToMany()
-                //            .Type("Reference", null, targets)
-                //            .Short("Finding reference")
-                //            .Definition("Reference to the finding.")
-                //            ;
-                //        sectionSlice.ElementDefinition
-                //            .Single()
-                //            .SetShort($"Findings Section")
-                //            .SetDefinition(
-                //                new Markdown()
-                //                    .Paragraph($"This section contains references to the report's findings.")
-                //                )
-                //            .MustSupport();
-                //        ;
-                //        e.AddComponentLinkTarget("Findings",
-                //            new SDefEditor.Cardinality(sectionSlice.ElementDefinition),
-                //            Global.ElementAnchor(sectionSlice.ElementDefinition),
-                //            "Section",
-                //            new SDefEditor.Cardinality(entry),
-                //            targets);
-                //    }
-                //}
+                        ElementTreeSlice sectionSlice = SliceSection(sliceElementDef,
+                            "findingsRightBreast",
+                            "Findings Right Breast",
+                            Self.SectionCodeFindingsRightBreast,
+                            out ElementDefinition entry);
+                        entry
+                            .ZeroToOne()
+                            .Type("Reference", null, targets)
+                            .Short("Finding Right breast reference")
+                            .Definition("Reference to the finding for the right breast.")
+                            ;
+                        sectionSlice.ElementDefinition
+                            .Single()
+                            .SetShort($"Findings Section Right Breast")
+                            .SetDefinition(
+                                new Markdown()
+                                    .Paragraph($"This section contains references to the report's findings for the right breast.")
+                                )
+                            .MustSupport();
+                        ;
+                        e.AddComponentLink("Findings Right Breast",
+                            new SDefEditor.Cardinality(sectionSlice.ElementDefinition),
+                            Global.ElementAnchor(sectionSlice.ElementDefinition),
+                            "Section",
+                            new SDefEditor.Cardinality(entry),
+                            targets);
+                    }
+                }
+                
+                // Findings Left Breast Section
+                {
+                    ElementTreeNode sliceElementDef = StartSectionSlicing(e);
+                    {
+                        String[] targets = new string[] { Self.FindingsLeftBreast.Value().Url };
+
+                        ElementTreeSlice sectionSlice = SliceSection(sliceElementDef,
+                            "findingsLeftBreast",
+                            "Findings Left Breast",
+                            Self.SectionCodeFindingsLeftBreast,
+                            out ElementDefinition entry);
+                        entry
+                            .ZeroToOne()
+                            .Type("Reference", null, targets)
+                            .Short("Finding left breast reference")
+                            .Definition("Reference to the finding for the left breast.")
+                            ;
+                        sectionSlice.ElementDefinition
+                            .Single()
+                            .SetShort($"Findings Section Left Breast")
+                            .SetDefinition(
+                                new Markdown()
+                                    .Paragraph($"This section contains references to the report's findings for the left breast.")
+                                )
+                            .MustSupport();
+                        ;
+                        e.AddComponentLink("Findings Left Breast",
+                            new SDefEditor.Cardinality(sectionSlice.ElementDefinition),
+                            Global.ElementAnchor(sectionSlice.ElementDefinition),
+                            "Section",
+                            new SDefEditor.Cardinality(entry),
+                            targets);
+                    }
+                }
 
                 // Related Resources Section
                 {

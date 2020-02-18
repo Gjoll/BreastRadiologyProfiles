@@ -27,6 +27,14 @@
     },
     {
       "url": "http://www.fragment.com/maplink",
+      "valueString": "{\r\n  \"LinkType\": \"component\",\r\n  \"ShowChildren\": false,\r\n  \"Cardinality\": \"1..1\",\r\n  \"LinkTarget\": \"Findings Right Breast\",\r\n  \"ComponentHRef\": \"StructureDefinition-{SDName}-definitions.html#Composition.section:findingsRightBreast\",\r\n  \"Types\": \"Section\",\r\n  \"References\": [\r\n    \"http://hl7.org/fhir/us/breast-radiology/StructureDefinition/SectionFindingsRightBreast\"\r\n  ],\r\n  \"TargetCardinality\": \"0..1\"\r\n}"
+    },
+    {
+      "url": "http://www.fragment.com/maplink",
+      "valueString": "{\r\n  \"LinkType\": \"component\",\r\n  \"ShowChildren\": false,\r\n  \"Cardinality\": \"1..1\",\r\n  \"LinkTarget\": \"Findings Left Breast\",\r\n  \"ComponentHRef\": \"StructureDefinition-{SDName}-definitions.html#Composition.section:findingsLeftBreast\",\r\n  \"Types\": \"Section\",\r\n  \"References\": [\r\n    \"http://hl7.org/fhir/us/breast-radiology/StructureDefinition/SectionFindingsLeftBreast\"\r\n  ],\r\n  \"TargetCardinality\": \"0..1\"\r\n}"
+    },
+    {
+      "url": "http://www.fragment.com/maplink",
       "valueString": "{\r\n  \"LinkType\": \"component\",\r\n  \"ShowChildren\": false,\r\n  \"Cardinality\": \"1..1\",\r\n  \"LinkTarget\": \"Related Resources\",\r\n  \"ComponentHRef\": \"StructureDefinition-{SDName}-definitions.html#Composition.section:relatedResources\",\r\n  \"Types\": \"Section\",\r\n  \"References\": [\r\n    \"http://hl7.org/fhir/StructureDefinition/Resource\"\r\n  ],\r\n  \"TargetCardinality\": \"0..*\"\r\n}"
     },
     {
@@ -271,6 +279,204 @@
       },
       {
         "id": "Composition.section:impressions.section",
+        "path": "Composition.section.section",
+        "min": 0,
+        "max": "0",
+        "base": {
+          "path": "Composition.section.section",
+          "min": 0,
+          "max": "*"
+        }
+      },
+      {
+        "id": "Composition.section:findingsRightBreast",
+        "path": "Composition.section",
+        "sliceName": "findingsRightBreast",
+        "short": "Findings Section Right Breast",
+        "definition": "This section contains references to the report's findings for the right breast.",
+        "min": 1,
+        "max": "1",
+        "base": {
+          "path": "Composition.section",
+          "min": 0,
+          "max": "*"
+        },
+        "mustSupport": true
+      },
+      {
+        "id": "Composition.section:findingsRightBreast.title",
+        "path": "Composition.section.title",
+        "min": 1,
+        "max": "1",
+        "base": {
+          "path": "Composition.section.title",
+          "min": 0,
+          "max": "1"
+        },
+        "fixedString": "Findings Right Breast"
+      },
+      {
+        "id": "Composition.section:findingsRightBreast.code",
+        "path": "Composition.section.code",
+        "min": 1,
+        "max": "1",
+        "base": {
+          "path": "Composition.section.code",
+          "min": 0,
+          "max": "1"
+        },
+        "defaultValueCodeableConcept": {
+          "coding": [
+            {
+              "system": "http://hl7.org/fhir/us/breast-radiology/CodeSystem/CompositionSectionSliceCodes",
+              "code": "sectionCodeFindingsRightBreast",
+              "display": "Code to identify the 'Findings Right Breast' section slice"
+            }
+          ],
+          "text": "Code to identify the 'Findings Right Breast' section slice"
+        },
+        "patternCodeableConcept": {
+          "coding": [
+            {
+              "system": "http://hl7.org/fhir/us/breast-radiology/CodeSystem/CompositionSectionSliceCodes",
+              "code": "sectionCodeFindingsRightBreast"
+            }
+          ]
+        }
+      },
+      {
+        "id": "Composition.section:findingsRightBreast.focus",
+        "path": "Composition.section.focus",
+        "min": 0,
+        "max": "0",
+        "base": {
+          "path": "Composition.section.focus",
+          "min": 0,
+          "max": "1"
+        }
+      },
+      {
+        "id": "Composition.section:findingsRightBreast.entry",
+        "path": "Composition.section.entry",
+        "short": "Finding Right breast reference",
+        "definition": "Reference to the finding for the right breast.",
+        "min": 0,
+        "max": "1",
+        "base": {
+          "path": "Composition.section.entry",
+          "min": 0,
+          "max": "*"
+        },
+        "type": [
+          {
+            "code": "Reference",
+            "targetProfile": [
+              "http://hl7.org/fhir/us/breast-radiology/StructureDefinition/SectionFindingsRightBreast"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "Composition.section:findingsRightBreast.section",
+        "path": "Composition.section.section",
+        "min": 0,
+        "max": "0",
+        "base": {
+          "path": "Composition.section.section",
+          "min": 0,
+          "max": "*"
+        }
+      },
+      {
+        "id": "Composition.section:findingsLeftBreast",
+        "path": "Composition.section",
+        "sliceName": "findingsLeftBreast",
+        "short": "Findings Section Left Breast",
+        "definition": "This section contains references to the report's findings for the left breast.",
+        "min": 1,
+        "max": "1",
+        "base": {
+          "path": "Composition.section",
+          "min": 0,
+          "max": "*"
+        },
+        "mustSupport": true
+      },
+      {
+        "id": "Composition.section:findingsLeftBreast.title",
+        "path": "Composition.section.title",
+        "min": 1,
+        "max": "1",
+        "base": {
+          "path": "Composition.section.title",
+          "min": 0,
+          "max": "1"
+        },
+        "fixedString": "Findings Left Breast"
+      },
+      {
+        "id": "Composition.section:findingsLeftBreast.code",
+        "path": "Composition.section.code",
+        "min": 1,
+        "max": "1",
+        "base": {
+          "path": "Composition.section.code",
+          "min": 0,
+          "max": "1"
+        },
+        "defaultValueCodeableConcept": {
+          "coding": [
+            {
+              "system": "http://hl7.org/fhir/us/breast-radiology/CodeSystem/CompositionSectionSliceCodes",
+              "code": "sectionCodeFindingsLeftBreast",
+              "display": "Code to identify the 'Findings Left Breast' section slice"
+            }
+          ],
+          "text": "Code to identify the 'Findings Left Breast' section slice"
+        },
+        "patternCodeableConcept": {
+          "coding": [
+            {
+              "system": "http://hl7.org/fhir/us/breast-radiology/CodeSystem/CompositionSectionSliceCodes",
+              "code": "sectionCodeFindingsLeftBreast"
+            }
+          ]
+        }
+      },
+      {
+        "id": "Composition.section:findingsLeftBreast.focus",
+        "path": "Composition.section.focus",
+        "min": 0,
+        "max": "0",
+        "base": {
+          "path": "Composition.section.focus",
+          "min": 0,
+          "max": "1"
+        }
+      },
+      {
+        "id": "Composition.section:findingsLeftBreast.entry",
+        "path": "Composition.section.entry",
+        "short": "Finding left breast reference",
+        "definition": "Reference to the finding for the left breast.",
+        "min": 0,
+        "max": "1",
+        "base": {
+          "path": "Composition.section.entry",
+          "min": 0,
+          "max": "*"
+        },
+        "type": [
+          {
+            "code": "Reference",
+            "targetProfile": [
+              "http://hl7.org/fhir/us/breast-radiology/StructureDefinition/SectionFindingsLeftBreast"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "Composition.section:findingsLeftBreast.section",
         "path": "Composition.section.section",
         "min": 0,
         "max": "0",

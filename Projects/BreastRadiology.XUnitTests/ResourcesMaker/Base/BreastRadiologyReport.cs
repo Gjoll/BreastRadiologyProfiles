@@ -15,7 +15,7 @@ namespace BreastRadiology.XUnitTests
     partial class ResourcesMaker : ConverterBase
     {
         SDTaskVar BreastRadiologyReport = new SDTaskVar(
-            (out StructureDefinition  s) =>
+            (out StructureDefinition s) =>
             {
                 SDefEditor e = Self.CreateEditor("BreastRadReport",
                      "Breast Radiology Report",
@@ -52,7 +52,7 @@ namespace BreastRadiology.XUnitTests
                 }
                 {
                     ValueSet binding = Self.BiRadsAssessmentCategoriesVS.Value();
-                    ElementDefinition conclusionCodeDef =  e.Select("conclusionCode")
+                    ElementDefinition conclusionCodeDef = e.Select("conclusionCode")
                         .Single()
                         .Binding(binding, BindingStrength.Required)
                         .MustSupport()
@@ -60,19 +60,11 @@ namespace BreastRadiology.XUnitTests
 
                     e.AddComponentLink("Conclusion Code",
                         new SDefEditor.Cardinality(conclusionCodeDef),
-                        Global.ElementAnchor(conclusionCodeDef), 
-                        "CodeableConcept", 
+                        Global.ElementAnchor(conclusionCodeDef),
+                        "CodeableConcept",
                         binding.Url);
                 }
-                ElementTreeNode sliceElementDef = e.ConfigureSliceByUrlDiscriminator("result", false);
-                {
-                    ElementTreeSlice slice = e.SliceTargetReference( sliceElementDef, Self.FindingsLeftBreast.Value(), 0, "1");
-                    slice.ElementDefinition.MustSupport();
-                }
-                {
-                    ElementTreeSlice slice = e.SliceTargetReference( sliceElementDef, Self.FindingsRightBreast.Value(), 0, "1");
-                    slice.ElementDefinition.MustSupport();
-                }
+                e.Select("result").Zero();
             });
     }
 }

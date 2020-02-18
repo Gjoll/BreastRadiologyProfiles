@@ -28,14 +28,6 @@
     {
       "url": "http://www.fragment.com/maplink",
       "valueString": "{\r\n  \"LinkType\": \"component\",\r\n  \"ShowChildren\": false,\r\n  \"Cardinality\": \"1..1\",\r\n  \"LinkTarget\": \"Conclusion Code\",\r\n  \"ComponentHRef\": \"StructureDefinition-{SDName}-definitions.html#DiagnosticReport.conclusionCode\",\r\n  \"Types\": \"CodeableConcept\",\r\n  \"References\": [\r\n    \"http://hl7.org/fhir/us/breast-radiology/ValueSet/BiRadsAssessmentCategoriesVS\"\r\n  ]\r\n}"
-    },
-    {
-      "url": "http://www.fragment.com/maplink",
-      "valueString": "{\r\n  \"LinkType\": \"target\",\r\n  \"ShowChildren\": false,\r\n  \"Cardinality\": \"0..1\",\r\n  \"LinkTarget\": \"http://hl7.org/fhir/us/breast-radiology/StructureDefinition/SectionFindingsLeftBreast\"\r\n}"
-    },
-    {
-      "url": "http://www.fragment.com/maplink",
-      "valueString": "{\r\n  \"LinkType\": \"target\",\r\n  \"ShowChildren\": false,\r\n  \"Cardinality\": \"0..1\",\r\n  \"LinkTarget\": \"http://hl7.org/fhir/us/breast-radiology/StructureDefinition/SectionFindingsRightBreast\"\r\n}"
     }
   ],
   "url": "http://hl7.org/fhir/us/breast-radiology/StructureDefinition/BreastRadReport",
@@ -101,67 +93,13 @@
       {
         "id": "DiagnosticReport.result",
         "path": "DiagnosticReport.result",
-        "slicing": {
-          "discriminator": [
-            {
-              "type": "value",
-              "path": "url"
-            }
-          ],
-          "ordered": true,
-          "rules": "openAtEnd"
-        },
+        "min": 0,
+        "max": "0",
         "base": {
           "path": "DiagnosticReport.result",
           "min": 0,
           "max": "*"
         }
-      },
-      {
-        "id": "DiagnosticReport.result:sectionFindingsLeftBreast",
-        "path": "DiagnosticReport.result",
-        "sliceName": "sectionFindingsLeftBreast",
-        "short": "'Findings Left Breast' reference",
-        "definition": "This slice references the target 'Findings Left Breast'.",
-        "min": 0,
-        "max": "1",
-        "base": {
-          "path": "DiagnosticReport.result",
-          "min": 0,
-          "max": "*"
-        },
-        "type": [
-          {
-            "code": "Reference",
-            "targetProfile": [
-              "http://hl7.org/fhir/us/breast-radiology/StructureDefinition/SectionFindingsLeftBreast"
-            ]
-          }
-        ],
-        "mustSupport": true
-      },
-      {
-        "id": "DiagnosticReport.result:sectionFindingsRightBreast",
-        "path": "DiagnosticReport.result",
-        "sliceName": "sectionFindingsRightBreast",
-        "short": "'Findings Right Breast' reference",
-        "definition": "This slice references the target 'Findings Right Breast'.",
-        "min": 0,
-        "max": "1",
-        "base": {
-          "path": "DiagnosticReport.result",
-          "min": 0,
-          "max": "*"
-        },
-        "type": [
-          {
-            "code": "Reference",
-            "targetProfile": [
-              "http://hl7.org/fhir/us/breast-radiology/StructureDefinition/SectionFindingsRightBreast"
-            ]
-          }
-        ],
-        "mustSupport": true
       },
       {
         "id": "DiagnosticReport.conclusion",
