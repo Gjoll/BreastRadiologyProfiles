@@ -67,13 +67,16 @@ namespace BreastRadiology.XUnitTests
                             .SetDicom("F-01772")
                             .SetSnomedDescription("ClinicalFinding | 129766004 | Radiographic calcification " +
                                 "with grouped distribution (Finding)")
-                            .SetUMLS("Grouped (or clustered) calcifications, which are " +
-                                "defined as at least five calcifications within 1 " +
-                                "cm3 of tissue, are most often of intermediate concern " +
-                                "for malignancy of the breast. ",
-                                "Linear calcifications, which suggest deposits in " +
-                                "a duct, are suspicious for malignancy. ",
-                                "###URL#https://www.ajronline.org/doi/full/10.2214/AJR.10.5732")
+                            .SetUMLS("This term should be used when relatively few calcifications " +
+                                "occupy a ",
+                                "small portion of breast tissue. ",
+                                "The lower limit for use of this descriptor is usually " +
+                                "when 5 calcifications ",
+                                "are grouped within 1 cm of each other or when a definable " +
+                                "pattern is identified. ",
+                                "The upper limit for use of this descriptor is when " +
+                                "larger numbers of ",
+                                "calcifications are grouped within 2 cm of each other.###ACRMG#74")
                         ,
                         new ConceptDef()
                             .SetCode("LinearDistribution")
@@ -83,9 +86,14 @@ namespace BreastRadiology.XUnitTests
                             .SetDicom("F-01771")
                             .SetSnomedDescription("ClinicalFinding | 129765000 | Radiographic calcification " +
                                 "with linear distribution (Finding)")
-                            .SetUMLS("Linear distribution is typically seen when DCIS fills " +
-                                "the entire duct and its branches with calcifications. ",
-                                "###URL#https://radiologyassistant.nl/breast/breast-calcifications-differential-diagnosis")
+                            .SetUMLS("These are calcifications arrayed in a line. ",
+                                "This distribution may elevate suspicion for malignancy, " +
+                                "as it suggests deposits in a duct. ",
+                                "Note that both vascular and large rod-like calcifications " +
+                                "also are usually linear in distribution, but that " +
+                                "these typically ",
+                                "benign calcifications have a characteristically benign " +
+                                "morphology.###ACRMG#")
                         ,
                         new ConceptDef()
                             .SetCode("RegionalDistribution")
@@ -110,9 +118,8 @@ namespace BreastRadiology.XUnitTests
                             .SetUMLS("Scattered distributions are also called diffuse distributions. ",
                                 "These are calcifications that are distributed randomly " +
                                 "throughout the breast. ",
-                                "Punctate and",
-                                "amorphous calcifications in this distribution are " +
-                                "almost always benign, especially ",
+                                "Punctate and amorphous calcifications in this distribution " +
+                                "are almost always benign, especially ",
                                 "if bilateral (in both breasts). ",
                                 "###ACRMG#70")
                         ,

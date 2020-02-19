@@ -1184,6 +1184,7 @@ namespace BreastRadiology.XUnitTests
                                 .SetDisplay("Unspecified / other")
                                 .MammoId("117")
                                 .ValidModalities(Modalities.MRI | Modalities.US)
+                                .SetUMLS("Unspecified / other")
                             ,
                             new ConceptDef()
                                 .SetCode("VacuumBx")

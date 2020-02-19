@@ -1275,18 +1275,21 @@ namespace BreastRadiology.XUnitTests
                                 .SetDisplay("Likely represents")
                                 .MammoId("536")
                                 .ValidModalities(Modalities.MG | Modalities.MRI | Modalities.NM | Modalities.US)
+                                .SetUMLS("Likely represents")
                             ,
                             new ConceptDef()
                                 .SetCode("MostLikely")
                                 .SetDisplay("Most likely")
                                 .MammoId("581")
                                 .ValidModalities(Modalities.MG | Modalities.US)
+                                .SetUMLS("Most likely")
                             ,
                             new ConceptDef()
                                 .SetCode("Resembles")
                                 .SetDisplay("Resembles")
                                 .MammoId("580")
                                 .ValidModalities(Modalities.MG | Modalities.MRI | Modalities.NM | Modalities.US)
+                                .SetUMLS("Resembles")
                             #endregion // Codes
                             //- Qualifiers
                         })

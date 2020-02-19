@@ -43,6 +43,7 @@ namespace BreastRadiology.XUnitTests
                                 .SetDisplay("Clinical exam")
                                 .MammoId("280")
                                 .ValidModalities(Modalities.MG | Modalities.MRI | Modalities.NM | Modalities.US)
+                                .SetUMLS("Not previously seen on clinical exam.")
                             ,
                             new ConceptDef()
                                 .SetCode("Ductogram")

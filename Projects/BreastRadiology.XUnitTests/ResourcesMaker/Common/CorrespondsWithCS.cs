@@ -207,42 +207,49 @@ namespace BreastRadiology.XUnitTests
                                 .SetDisplay("Size < mammo")
                                 .MammoId("274")
                                 .ValidModalities(Modalities.MRI | Modalities.NM | Modalities.US)
+                                .SetUMLS("size < mammo")
                             ,
                             new ConceptDef()
                                 .SetCode("Size<MRI")
                                 .SetDisplay("Size < MRI")
                                 .MammoId("276")
                                 .ValidModalities(Modalities.MG)
+                                .SetUMLS("size < MRI")
                             ,
                             new ConceptDef()
                                 .SetCode("Size<Palp")
                                 .SetDisplay("Size < palp")
                                 .MammoId("278")
                                 .ValidModalities(Modalities.MG | Modalities.MRI | Modalities.US)
+                                .SetUMLS("size < palp")
                             ,
                             new ConceptDef()
                                 .SetCode("Size<US")
                                 .SetDisplay("Size < US")
                                 .MammoId("320.276")
                                 .ValidModalities(Modalities.MG | Modalities.MRI | Modalities.NM | Modalities.US)
+                                .SetUMLS("size < US")
                             ,
                             new ConceptDef()
                                 .SetCode("Size>Mammo")
                                 .SetDisplay("Size > mammo")
                                 .MammoId("273")
                                 .ValidModalities(Modalities.MRI | Modalities.NM | Modalities.US)
+                                .SetUMLS("size > mammo")
                             ,
                             new ConceptDef()
                                 .SetCode("Size>MRI")
                                 .SetDisplay("Size > MRI")
                                 .MammoId("275")
                                 .ValidModalities(Modalities.MG)
+                                .SetUMLS("size > MRI")
                             ,
                             new ConceptDef()
                                 .SetCode("Size>Palp")
                                 .SetDisplay("Size > palp")
                                 .MammoId("277")
                                 .ValidModalities(Modalities.MG | Modalities.MRI | Modalities.US)
+                                .SetUMLS("size > palp")
                             ,
                             new ConceptDef()
                                 .SetCode("SkinMarker")
@@ -261,6 +268,7 @@ namespace BreastRadiology.XUnitTests
                                 .ValidModalities(Modalities.MG)
                                 .SetSnomedDescription("Procedure | 274331003 | Surgical biopsy of breast " +
                                     "(Procedure)")
+                                .SetUMLS("Surgery")
                             ,
                             new ConceptDef()
                                 .SetCode("SurgicalSite")

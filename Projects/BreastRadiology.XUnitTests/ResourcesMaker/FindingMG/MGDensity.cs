@@ -42,18 +42,22 @@ namespace BreastRadiology.XUnitTests
                              .SetDisplay("Equal density")
                              .MammoId("213")
                              .ValidModalities(Modalities.MG)
-                             .SetACR("(historically, \"isodense\")",
+                             .SetUMLS("(historically, \"isodense\")",
                                  "X-ray attenuation of the mass is the same as the " +
                                  "expected attenuation of an equal volume of",
-                                 "fibroglandular breast tissue.")
+                                 "fibroglandular breast tissue.###ACRMG#")
                          ,
                          new ConceptDef()
                              .SetCode("FatContaining")
                              .SetDisplay("Fat containing")
                              .MammoId("214")
                              .ValidModalities(Modalities.MG)
-                             .SetUMLS("The mammogram shows a lot of fatty tissue  meaning " +
-                                 "the density of the breast is likely low density.")
+                             .SetUMLS("This includes all masses containing fat, such as " +
+                                 "oil cyst, lipoma or galactocele, as well as mixed",
+                                 "density masses such as hamartoma. ",
+                                 "A fat-containing mass will almost always represent " +
+                                 "a",
+                                 "benign mass.###ACRMG#")
                          ,
                          new ConceptDef()
                              .SetCode("HighDensity")
@@ -72,8 +76,14 @@ namespace BreastRadiology.XUnitTests
                              .SetDisplay("Low density")
                              .MammoId("212")
                              .ValidModalities(Modalities.MG)
-                             .SetUMLS("The mammogram shows the breast is low density, containg " +
-                                 "a lot of fatty tissue.")
+                             .SetUMLS("X-ray attenuation of the mass is less than the expected " +
+                                 "attenuation of an equal volume of",
+                                 "fibroglandular breast tissue. ",
+                                 "A low density mass may be a group of microcysts. ",
+                                 "If such a finding",
+                                 "is identified at mammography, it may very well not " +
+                                 "be malignant but appropriately may",
+                                 "be worked up.###ACRMG#")
                          #endregion // Codes
                          //- Codes
                      })

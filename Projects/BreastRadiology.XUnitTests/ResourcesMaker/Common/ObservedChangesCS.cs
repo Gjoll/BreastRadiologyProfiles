@@ -104,6 +104,7 @@ namespace BreastRadiology.XUnitTests
                              .SetSnomedCode("129728002")
                              .SetSnomedDescription("ClinicalFinding | 129728002 | Finding less well defined " +
                                  "since previous mammogram (Finding)")
+                             .SetUMLS("Less prominent")
                          ,
                          new ConceptDef()
                              .SetCode("MoreProminent")
@@ -114,6 +115,7 @@ namespace BreastRadiology.XUnitTests
                              .SetSnomedCode("129729005")
                              .SetSnomedDescription("ClinicalFinding | 129729005 | Finding more defined " +
                                  "since previous mammogram (Finding)")
+                             .SetUMLS("More prominent")
                          ,
                          new ConceptDef()
                              .SetCode("New")
@@ -163,6 +165,7 @@ namespace BreastRadiology.XUnitTests
                              .SetDisplay("Represents change")
                              .MammoId("298")
                              .ValidModalities(Modalities.MG | Modalities.MRI | Modalities.NM | Modalities.US)
+                             .SetUMLS("Represents change")
                          ,
                          new ConceptDef()
                              .SetCode("Stable")
