@@ -138,6 +138,8 @@ namespace BreastRadiology.XUnitTests
                 }
             }
 
+            SnapshotCreator.Create(this.sDef);
+
             this.sDef.SaveJson(fragmentName);
             return true;
         }
