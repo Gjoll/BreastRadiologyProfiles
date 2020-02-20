@@ -485,16 +485,6 @@ namespace BreastRadiology.XUnitTests
 
                 extensionNode = e.ConfigureSliceByUrlDiscriminator("extension", true);
 
-                //Self.SliceAndBindUrl(e,
-                //    extensionNode,
-                //    "laterality",
-                //    "http://hl7.org/fhir/ValueSet/bodysite-laterality",
-                //    "Laterality of the body location",
-                //    new Markdown().Paragraph("The laterality of the body location."),
-                //    out ElementTreeSlice extensionSlice,
-                //    out ElementTreeNode valueXNode
-                //    );
-                //extensionSlice.ElementDefinition.Single();
                 {
                     ElementDefinition extensionDef = e.ApplyExtension(extensionNode,
                         "laterality",
@@ -528,7 +518,7 @@ namespace BreastRadiology.XUnitTests
                         binding,
                         "Quadrant of the body location",
                         new Markdown().Paragraph("The quadrant  of the body location."))
-                        .Single()
+                        .ZeroToOne()
                        ;
 
                     e.AddComponentLink("Quadrant",
@@ -584,7 +574,7 @@ namespace BreastRadiology.XUnitTests
                         binding,
                         "Clock direction of the body location",
                         new Markdown().Paragraph("The clock direction of the body location."))
-                        .Single()
+                        .ZeroToOne()
                         ;
 
                     e.AddComponentLink("ClockDirection",
@@ -611,7 +601,7 @@ namespace BreastRadiology.XUnitTests
                         binding,
                         "Depth of the body location",
                         new Markdown().Paragraph("The depth of the body location."))
-                        .Single()
+                        .ZeroToOne()
                         ;
 
                     e.AddComponentLink("Depth",

@@ -27,7 +27,8 @@ namespace BreastRadiology.XUnitTests
             valueXNode.ElementDefinition
                 .Type("CodeableConcept")
                 .Binding(bindName, BindingStrength.Required)
-                ;
+                .Single()
+            ;
         }
 
         ElementDefinition SliceAndBindVS(SDefEditor e,
@@ -43,8 +44,8 @@ namespace BreastRadiology.XUnitTests
                 binding.Url,
                 shortText,
                 definition,
-            out ElementTreeSlice extensionSlice,
-            out ElementTreeNode valueXNode);
+                out ElementTreeSlice extensionSlice,
+                out ElementTreeNode valueXNode);
             return extensionSlice.ElementDefinition;
         }
 
