@@ -695,6 +695,21 @@
       },
       {
         "id": "Observation.code",
+        "extension": [
+          {
+            "url": "http://www.fragment.com/DefaultValue",
+            "valueCodeableConcept": {
+              "coding": [
+                {
+                  "system": "http://hl7.org/fhir/us/breast-radiology/CodeSystem/ObservationCodes",
+                  "code": "abnormalityFibroadenomaObservation",
+                  "display": "Abnormality Fibroadenoma observation"
+                }
+              ],
+              "text": "Abnormality Fibroadenoma observation"
+            }
+          }
+        ],
         "path": "Observation.code",
         "short": "Type of observation (code / type)",
         "definition": "Describes what was observed. Sometimes this is called the observation \"name\".",
@@ -715,16 +730,6 @@
             "code": "CodeableConcept"
           }
         ],
-        "defaultValueCodeableConcept": {
-          "coding": [
-            {
-              "system": "http://hl7.org/fhir/us/breast-radiology/CodeSystem/ObservationCodes",
-              "code": "abnormalityFibroadenomaObservation",
-              "display": "Abnormality Fibroadenoma observation"
-            }
-          ],
-          "text": "Abnormality Fibroadenoma observation"
-        },
         "patternCodeableConcept": {
           "coding": [
             {
@@ -2408,6 +2413,21 @@
       },
       {
         "id": "Observation.component:fibroAdenomaType.code",
+        "extension": [
+          {
+            "url": "http://www.fragment.com/DefaultValue",
+            "valueCodeableConcept": {
+              "coding": [
+                {
+                  "system": "http://hl7.org/fhir/us/breast-radiology/CodeSystem/ObservationComponentSliceCodes",
+                  "code": "mgAbnormalityFibroAdenomaType",
+                  "display": "Component code for 'FibroAdenoma Type' slice"
+                }
+              ],
+              "text": "Component code for 'FibroAdenoma Type' slice"
+            }
+          }
+        ],
         "path": "Observation.component.code",
         "short": "FibroAdenoma Type component code",
         "definition": "This code identifies the FibroAdenoma Type component.\n Its value shall always be the concept 'Component code for 'FibroAdenoma Type' slice'",
@@ -2425,16 +2445,6 @@
             "code": "CodeableConcept"
           }
         ],
-        "defaultValueCodeableConcept": {
-          "coding": [
-            {
-              "system": "http://hl7.org/fhir/us/breast-radiology/CodeSystem/ObservationComponentSliceCodes",
-              "code": "mgAbnormalityFibroAdenomaType",
-              "display": "Component code for 'FibroAdenoma Type' slice"
-            }
-          ],
-          "text": "Component code for 'FibroAdenoma Type' slice"
-        },
         "patternCodeableConcept": {
           "coding": [
             {
@@ -2664,21 +2674,26 @@
       },
       {
         "id": "Observation.code",
+        "extension": [
+          {
+            "url": "http://www.fragment.com/DefaultValue",
+            "valueCodeableConcept": {
+              "coding": [
+                {
+                  "system": "http://hl7.org/fhir/us/breast-radiology/CodeSystem/ObservationCodes",
+                  "code": "abnormalityFibroadenomaObservation",
+                  "display": "Abnormality Fibroadenoma observation"
+                }
+              ],
+              "text": "Abnormality Fibroadenoma observation"
+            }
+          }
+        ],
         "path": "Observation.code",
         "base": {
           "path": "Observation.code",
           "min": 1,
           "max": "1"
-        },
-        "defaultValueCodeableConcept": {
-          "coding": [
-            {
-              "system": "http://hl7.org/fhir/us/breast-radiology/CodeSystem/ObservationCodes",
-              "code": "abnormalityFibroadenomaObservation",
-              "display": "Abnormality Fibroadenoma observation"
-            }
-          ],
-          "text": "Abnormality Fibroadenoma observation"
         },
         "patternCodeableConcept": {
           "coding": [
@@ -2724,6 +2739,21 @@
       },
       {
         "id": "Observation.component:fibroAdenomaType.code",
+        "extension": [
+          {
+            "url": "http://www.fragment.com/DefaultValue",
+            "valueCodeableConcept": {
+              "coding": [
+                {
+                  "system": "http://hl7.org/fhir/us/breast-radiology/CodeSystem/ObservationComponentSliceCodes",
+                  "code": "mgAbnormalityFibroAdenomaType",
+                  "display": "Component code for 'FibroAdenoma Type' slice"
+                }
+              ],
+              "text": "Component code for 'FibroAdenoma Type' slice"
+            }
+          }
+        ],
         "path": "Observation.component.code",
         "short": "FibroAdenoma Type component code",
         "definition": "This code identifies the FibroAdenoma Type component.\n Its value shall always be the concept 'Component code for 'FibroAdenoma Type' slice'",
@@ -2733,16 +2763,6 @@
           "path": "Observation.component.code",
           "min": 1,
           "max": "1"
-        },
-        "defaultValueCodeableConcept": {
-          "coding": [
-            {
-              "system": "http://hl7.org/fhir/us/breast-radiology/CodeSystem/ObservationComponentSliceCodes",
-              "code": "mgAbnormalityFibroAdenomaType",
-              "display": "Component code for 'FibroAdenoma Type' slice"
-            }
-          ],
-          "text": "Component code for 'FibroAdenoma Type' slice"
         },
         "patternCodeableConcept": {
           "coding": [

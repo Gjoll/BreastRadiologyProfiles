@@ -426,21 +426,26 @@
       },
       {
         "id": "Observation.code",
+        "extension": [
+          {
+            "url": "http://www.fragment.com/DefaultValue",
+            "valueCodeableConcept": {
+              "coding": [
+                {
+                  "system": "http://hl7.org/fhir/us/breast-radiology/CodeSystem/ObservationCodes",
+                  "code": "abnormalityFibroadenomaObservation",
+                  "display": "Abnormality Fibroadenoma observation"
+                }
+              ],
+              "text": "Abnormality Fibroadenoma observation"
+            }
+          }
+        ],
         "path": "Observation.code",
         "base": {
           "path": "Observation.code",
           "min": 1,
           "max": "1"
-        },
-        "defaultValueCodeableConcept": {
-          "coding": [
-            {
-              "system": "http://hl7.org/fhir/us/breast-radiology/CodeSystem/ObservationCodes",
-              "code": "abnormalityFibroadenomaObservation",
-              "display": "Abnormality Fibroadenoma observation"
-            }
-          ],
-          "text": "Abnormality Fibroadenoma observation"
         },
         "patternCodeableConcept": {
           "coding": [
@@ -787,6 +792,21 @@
       },
       {
         "id": "Observation.component:fibroAdenomaType.code",
+        "extension": [
+          {
+            "url": "http://www.fragment.com/DefaultValue",
+            "valueCodeableConcept": {
+              "coding": [
+                {
+                  "system": "http://hl7.org/fhir/us/breast-radiology/CodeSystem/ObservationComponentSliceCodes",
+                  "code": "mgAbnormalityFibroAdenomaType",
+                  "display": "Component code for 'FibroAdenoma Type' slice"
+                }
+              ],
+              "text": "Component code for 'FibroAdenoma Type' slice"
+            }
+          }
+        ],
         "path": "Observation.component.code",
         "short": "FibroAdenoma Type component code",
         "definition": "This code identifies the FibroAdenoma Type component.\n Its value shall always be the concept 'Component code for 'FibroAdenoma Type' slice'",
@@ -804,16 +824,6 @@
             "code": "CodeableConcept"
           }
         ],
-        "defaultValueCodeableConcept": {
-          "coding": [
-            {
-              "system": "http://hl7.org/fhir/us/breast-radiology/CodeSystem/ObservationComponentSliceCodes",
-              "code": "mgAbnormalityFibroAdenomaType",
-              "display": "Component code for 'FibroAdenoma Type' slice"
-            }
-          ],
-          "text": "Component code for 'FibroAdenoma Type' slice"
-        },
         "patternCodeableConcept": {
           "coding": [
             {
@@ -1043,6 +1053,21 @@
       },
       {
         "id": "Observation.component:obsChanges.code",
+        "extension": [
+          {
+            "url": "http://www.fragment.com/DefaultValue",
+            "valueCodeableConcept": {
+              "coding": [
+                {
+                  "system": "http://hl7.org/fhir/us/breast-radiology/CodeSystem/ObservationComponentSliceCodes",
+                  "code": "obsChanges",
+                  "display": "Component code for 'Observed Changes' slice"
+                }
+              ],
+              "text": "Component code for 'Observed Changes' slice"
+            }
+          }
+        ],
         "path": "Observation.component.code",
         "short": "Observed Change In Abnormality component code",
         "definition": "This code identifies the Observed Change In Abnormality components.\n Its value shall always be the concept 'Component code for 'Observed Changes' slice'",
@@ -1052,16 +1077,6 @@
           "path": "Observation.component.code",
           "min": 1,
           "max": "1"
-        },
-        "defaultValueCodeableConcept": {
-          "coding": [
-            {
-              "system": "http://hl7.org/fhir/us/breast-radiology/CodeSystem/ObservationComponentSliceCodes",
-              "code": "obsChanges",
-              "display": "Component code for 'Observed Changes' slice"
-            }
-          ],
-          "text": "Component code for 'Observed Changes' slice"
         },
         "patternCodeableConcept": {
           "coding": [
@@ -1111,6 +1126,21 @@
       },
       {
         "id": "Observation.component:biRadsAssessmentCategory.code",
+        "extension": [
+          {
+            "url": "http://www.fragment.com/DefaultValue",
+            "valueCodeableConcept": {
+              "coding": [
+                {
+                  "system": "http://hl7.org/fhir/us/breast-radiology/CodeSystem/ObservationComponentSliceCodes",
+                  "code": "targetBiRads",
+                  "display": "Component code for 'BiRads Code' slice"
+                }
+              ],
+              "text": "Component code for 'BiRads Code' slice"
+            }
+          }
+        ],
         "path": "Observation.component.code",
         "short": "BiRads Assessment Category component code",
         "definition": "This code identifies the BiRads Assessment Category component.\n Its value shall always be the concept 'Component code for 'BiRads Code' slice'",
@@ -1120,16 +1150,6 @@
           "path": "Observation.component.code",
           "min": 1,
           "max": "1"
-        },
-        "defaultValueCodeableConcept": {
-          "coding": [
-            {
-              "system": "http://hl7.org/fhir/us/breast-radiology/CodeSystem/ObservationComponentSliceCodes",
-              "code": "targetBiRads",
-              "display": "Component code for 'BiRads Code' slice"
-            }
-          ],
-          "text": "Component code for 'BiRads Code' slice"
         },
         "patternCodeableConcept": {
           "coding": [
@@ -1301,6 +1321,21 @@
       },
       {
         "id": "Observation.component:orientation.code",
+        "extension": [
+          {
+            "url": "http://www.fragment.com/DefaultValue",
+            "valueCodeableConcept": {
+              "coding": [
+                {
+                  "system": "http://hl7.org/fhir/us/breast-radiology/CodeSystem/ObservationComponentSliceCodes",
+                  "code": "orientation",
+                  "display": "Component code for 'Orientation' slice"
+                }
+              ],
+              "text": "Component code for 'Orientation' slice"
+            }
+          }
+        ],
         "path": "Observation.component.code",
         "short": "Orientation component code",
         "definition": "This code identifies the Orientation component.\n Its value shall always be the concept 'Component code for 'Orientation' slice'",
@@ -1318,16 +1353,6 @@
             "code": "CodeableConcept"
           }
         ],
-        "defaultValueCodeableConcept": {
-          "coding": [
-            {
-              "system": "http://hl7.org/fhir/us/breast-radiology/CodeSystem/ObservationComponentSliceCodes",
-              "code": "orientation",
-              "display": "Component code for 'Orientation' slice"
-            }
-          ],
-          "text": "Component code for 'Orientation' slice"
-        },
         "patternCodeableConcept": {
           "coding": [
             {
@@ -1679,6 +1704,21 @@
       },
       {
         "id": "Observation.component:shape.code",
+        "extension": [
+          {
+            "url": "http://www.fragment.com/DefaultValue",
+            "valueCodeableConcept": {
+              "coding": [
+                {
+                  "system": "http://hl7.org/fhir/us/breast-radiology/CodeSystem/ObservationComponentSliceCodes",
+                  "code": "shape",
+                  "display": "Component code for 'Shape' slice"
+                }
+              ],
+              "text": "Component code for 'Shape' slice"
+            }
+          }
+        ],
         "path": "Observation.component.code",
         "short": "Shape component code",
         "definition": "This code identifies the Shape component.\n Its value shall always be the concept 'Component code for 'Shape' slice'",
@@ -1696,16 +1736,6 @@
             "code": "CodeableConcept"
           }
         ],
-        "defaultValueCodeableConcept": {
-          "coding": [
-            {
-              "system": "http://hl7.org/fhir/us/breast-radiology/CodeSystem/ObservationComponentSliceCodes",
-              "code": "shape",
-              "display": "Component code for 'Shape' slice"
-            }
-          ],
-          "text": "Component code for 'Shape' slice"
-        },
         "patternCodeableConcept": {
           "coding": [
             {
@@ -2057,6 +2087,21 @@
       },
       {
         "id": "Observation.component:margin.code",
+        "extension": [
+          {
+            "url": "http://www.fragment.com/DefaultValue",
+            "valueCodeableConcept": {
+              "coding": [
+                {
+                  "system": "http://hl7.org/fhir/us/breast-radiology/CodeSystem/ObservationComponentSliceCodes",
+                  "code": "margin",
+                  "display": "Component code for 'Margin' slice"
+                }
+              ],
+              "text": "Component code for 'Margin' slice"
+            }
+          }
+        ],
         "path": "Observation.component.code",
         "short": "Margin component code",
         "definition": "This code identifies the Margin component.\n Its value shall always be the concept 'Component code for 'Margin' slice'",
@@ -2074,16 +2119,6 @@
             "code": "CodeableConcept"
           }
         ],
-        "defaultValueCodeableConcept": {
-          "coding": [
-            {
-              "system": "http://hl7.org/fhir/us/breast-radiology/CodeSystem/ObservationComponentSliceCodes",
-              "code": "margin",
-              "display": "Component code for 'Margin' slice"
-            }
-          ],
-          "text": "Component code for 'Margin' slice"
-        },
         "patternCodeableConcept": {
           "coding": [
             {
@@ -2435,6 +2470,21 @@
       },
       {
         "id": "Observation.component:mgDensity.code",
+        "extension": [
+          {
+            "url": "http://www.fragment.com/DefaultValue",
+            "valueCodeableConcept": {
+              "coding": [
+                {
+                  "system": "http://hl7.org/fhir/us/breast-radiology/CodeSystem/ObservationComponentSliceCodes",
+                  "code": "mgDensity",
+                  "display": "Component code for 'MG Density' slice"
+                }
+              ],
+              "text": "Component code for 'MG Density' slice"
+            }
+          }
+        ],
         "path": "Observation.component.code",
         "short": "Density component code",
         "definition": "This code identifies the Density component.\n Its value shall always be the concept 'Component code for 'MG Density' slice'",
@@ -2452,16 +2502,6 @@
             "code": "CodeableConcept"
           }
         ],
-        "defaultValueCodeableConcept": {
-          "coding": [
-            {
-              "system": "http://hl7.org/fhir/us/breast-radiology/CodeSystem/ObservationComponentSliceCodes",
-              "code": "mgDensity",
-              "display": "Component code for 'MG Density' slice"
-            }
-          ],
-          "text": "Component code for 'MG Density' slice"
-        },
         "patternCodeableConcept": {
           "coding": [
             {
@@ -2691,6 +2731,21 @@
       },
       {
         "id": "Observation.component:obsCount.code",
+        "extension": [
+          {
+            "url": "http://www.fragment.com/DefaultValue",
+            "valueCodeableConcept": {
+              "coding": [
+                {
+                  "system": "http://hl7.org/fhir/us/breast-radiology/CodeSystem/ObservationComponentSliceCodes",
+                  "code": "obsCount",
+                  "display": "Component code for 'Observed Count' slice"
+                }
+              ],
+              "text": "Component code for 'Observed Count' slice"
+            }
+          }
+        ],
         "path": "Observation.component.code",
         "min": 1,
         "max": "1",
@@ -2698,16 +2753,6 @@
           "path": "Observation.component.code",
           "min": 1,
           "max": "1"
-        },
-        "defaultValueCodeableConcept": {
-          "coding": [
-            {
-              "system": "http://hl7.org/fhir/us/breast-radiology/CodeSystem/ObservationComponentSliceCodes",
-              "code": "obsCount",
-              "display": "Component code for 'Observed Count' slice"
-            }
-          ],
-          "text": "Component code for 'Observed Count' slice"
         },
         "patternCodeableConcept": {
           "coding": [
@@ -2763,6 +2808,21 @@
       },
       {
         "id": "Observation.component:obsDistribution.code",
+        "extension": [
+          {
+            "url": "http://www.fragment.com/DefaultValue",
+            "valueCodeableConcept": {
+              "coding": [
+                {
+                  "system": "http://hl7.org/fhir/us/breast-radiology/CodeSystem/ObservationComponentSliceCodes",
+                  "code": "obsDistribution",
+                  "display": "Component code for 'Observed Distribution' slice"
+                }
+              ],
+              "text": "Component code for 'Observed Distribution' slice"
+            }
+          }
+        ],
         "path": "Observation.component.code",
         "short": "Observed distribution of abnormalities component code",
         "definition": "This code identifies the Observed distribution of abnormalities components.\n Its value shall always be the concept 'Component code for 'Observed Distribution' slice'",
@@ -2772,16 +2832,6 @@
           "path": "Observation.component.code",
           "min": 1,
           "max": "1"
-        },
-        "defaultValueCodeableConcept": {
-          "coding": [
-            {
-              "system": "http://hl7.org/fhir/us/breast-radiology/CodeSystem/ObservationComponentSliceCodes",
-              "code": "obsDistribution",
-              "display": "Component code for 'Observed Distribution' slice"
-            }
-          ],
-          "text": "Component code for 'Observed Distribution' slice"
         },
         "patternCodeableConcept": {
           "coding": [
@@ -2831,6 +2881,21 @@
       },
       {
         "id": "Observation.component:obsDistRegionSize.code",
+        "extension": [
+          {
+            "url": "http://www.fragment.com/DefaultValue",
+            "valueCodeableConcept": {
+              "coding": [
+                {
+                  "system": "http://hl7.org/fhir/us/breast-radiology/CodeSystem/ObservationComponentSliceCodes",
+                  "code": "obsSize",
+                  "display": "Component code for 'Observed Size' slice"
+                }
+              ],
+              "text": "Component code for 'Observed Size' slice"
+            }
+          }
+        ],
         "path": "Observation.component.code",
         "min": 1,
         "max": "1",
@@ -2838,16 +2903,6 @@
           "path": "Observation.component.code",
           "min": 1,
           "max": "1"
-        },
-        "defaultValueCodeableConcept": {
-          "coding": [
-            {
-              "system": "http://hl7.org/fhir/us/breast-radiology/CodeSystem/ObservationComponentSliceCodes",
-              "code": "obsSize",
-              "display": "Component code for 'Observed Size' slice"
-            }
-          ],
-          "text": "Component code for 'Observed Size' slice"
         },
         "patternCodeableConcept": {
           "coding": [
@@ -2948,6 +3003,21 @@
       },
       {
         "id": "Observation.component:obsSize.code",
+        "extension": [
+          {
+            "url": "http://www.fragment.com/DefaultValue",
+            "valueCodeableConcept": {
+              "coding": [
+                {
+                  "system": "http://hl7.org/fhir/us/breast-radiology/CodeSystem/ObservationComponentSliceCodes",
+                  "code": "obsSize",
+                  "display": "Component code for 'Observed Size' slice"
+                }
+              ],
+              "text": "Component code for 'Observed Size' slice"
+            }
+          }
+        ],
         "path": "Observation.component.code",
         "min": 1,
         "max": "1",
@@ -2955,16 +3025,6 @@
           "path": "Observation.component.code",
           "min": 1,
           "max": "1"
-        },
-        "defaultValueCodeableConcept": {
-          "coding": [
-            {
-              "system": "http://hl7.org/fhir/us/breast-radiology/CodeSystem/ObservationComponentSliceCodes",
-              "code": "obsSize",
-              "display": "Component code for 'Observed Size' slice"
-            }
-          ],
-          "text": "Component code for 'Observed Size' slice"
         },
         "patternCodeableConcept": {
           "coding": [
@@ -3065,6 +3125,21 @@
       },
       {
         "id": "Observation.component:PreviouslyDemonstratedBy.code",
+        "extension": [
+          {
+            "url": "http://www.fragment.com/DefaultValue",
+            "valueCodeableConcept": {
+              "coding": [
+                {
+                  "system": "http://hl7.org/fhir/us/breast-radiology/CodeSystem/ObservationComponentSliceCodes",
+                  "code": "prevDemBy",
+                  "display": "Component code for 'Previously Demonstrated By' slice"
+                }
+              ],
+              "text": "Component code for 'Previously Demonstrated By' slice"
+            }
+          }
+        ],
         "path": "Observation.component.code",
         "short": "Previously Demonstrated By component code",
         "definition": "This code identifies the Previously Demonstrated By components.\n Its value shall always be the concept 'Component code for 'Previously Demonstrated By' slice'",
@@ -3074,16 +3149,6 @@
           "path": "Observation.component.code",
           "min": 1,
           "max": "1"
-        },
-        "defaultValueCodeableConcept": {
-          "coding": [
-            {
-              "system": "http://hl7.org/fhir/us/breast-radiology/CodeSystem/ObservationComponentSliceCodes",
-              "code": "prevDemBy",
-              "display": "Component code for 'Previously Demonstrated By' slice"
-            }
-          ],
-          "text": "Component code for 'Previously Demonstrated By' slice"
         },
         "patternCodeableConcept": {
           "coding": [

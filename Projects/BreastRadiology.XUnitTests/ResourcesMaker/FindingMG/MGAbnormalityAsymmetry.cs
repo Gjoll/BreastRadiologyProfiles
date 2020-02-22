@@ -141,7 +141,7 @@ namespace BreastRadiology.XUnitTests
                 CodeableConcept code = Self.ObservationCodeMGAbnormalityAsymmetry.ToCodeableConcept();
                 e.Select("code")
                     .Pattern(code.ToPattern())
-                    .DefaultValue(code)
+                    .DefaultValueExtension(code)
                     ;
 
                 e.IntroDoc

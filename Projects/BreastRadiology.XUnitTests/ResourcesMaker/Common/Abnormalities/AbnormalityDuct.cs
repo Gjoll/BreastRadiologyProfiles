@@ -116,7 +116,7 @@ namespace BreastRadiology.XUnitTests
                 // Set Observation.code to unique value for this profile.
                 e.Select("code")
                     .Pattern(Self.ObservationCodeAbnormalityDuct.ToCodeableConcept().ToPattern())
-                    .DefaultValue(Self.ObservationCodeAbnormalityDuct.ToCodeableConcept())
+                    .DefaultValueExtension(Self.ObservationCodeAbnormalityDuct.ToCodeableConcept())
                     ;
 
                 e.IntroDoc

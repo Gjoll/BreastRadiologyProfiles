@@ -687,6 +687,21 @@
       },
       {
         "id": "Observation.code",
+        "extension": [
+          {
+            "url": "http://www.fragment.com/DefaultValue",
+            "valueCodeableConcept": {
+              "coding": [
+                {
+                  "system": "http://hl7.org/fhir/us/breast-radiology/CodeSystem/ObservationCodes",
+                  "code": "abnormalityForeignObjectObservation",
+                  "display": "Abnormality Foreign Object observation"
+                }
+              ],
+              "text": "Abnormality Foreign Object observation"
+            }
+          }
+        ],
         "path": "Observation.code",
         "short": "Type of observation (code / type)",
         "definition": "Describes what was observed. Sometimes this is called the observation \"name\".",
@@ -707,16 +722,6 @@
             "code": "CodeableConcept"
           }
         ],
-        "defaultValueCodeableConcept": {
-          "coding": [
-            {
-              "system": "http://hl7.org/fhir/us/breast-radiology/CodeSystem/ObservationCodes",
-              "code": "abnormalityForeignObjectObservation",
-              "display": "Abnormality Foreign Object observation"
-            }
-          ],
-          "text": "Abnormality Foreign Object observation"
-        },
         "patternCodeableConcept": {
           "coding": [
             {
@@ -2400,6 +2405,21 @@
       },
       {
         "id": "Observation.component:abnormalityForeignObjectType.code",
+        "extension": [
+          {
+            "url": "http://www.fragment.com/DefaultValue",
+            "valueCodeableConcept": {
+              "coding": [
+                {
+                  "system": "http://hl7.org/fhir/us/breast-radiology/CodeSystem/ObservationComponentSliceCodes",
+                  "code": "abnormalityForeignObjectType",
+                  "display": "Component code for 'Foreign Object Type' slice"
+                }
+              ],
+              "text": "Component code for 'Foreign Object Type' slice"
+            }
+          }
+        ],
         "path": "Observation.component.code",
         "short": "Foreign Object Type component code",
         "definition": "This code identifies the Foreign Object Type component.\n Its value shall always be the concept 'Component code for 'Foreign Object Type' slice'",
@@ -2417,16 +2437,6 @@
             "code": "CodeableConcept"
           }
         ],
-        "defaultValueCodeableConcept": {
-          "coding": [
-            {
-              "system": "http://hl7.org/fhir/us/breast-radiology/CodeSystem/ObservationComponentSliceCodes",
-              "code": "abnormalityForeignObjectType",
-              "display": "Component code for 'Foreign Object Type' slice"
-            }
-          ],
-          "text": "Component code for 'Foreign Object Type' slice"
-        },
         "patternCodeableConcept": {
           "coding": [
             {
@@ -2656,21 +2666,26 @@
       },
       {
         "id": "Observation.code",
+        "extension": [
+          {
+            "url": "http://www.fragment.com/DefaultValue",
+            "valueCodeableConcept": {
+              "coding": [
+                {
+                  "system": "http://hl7.org/fhir/us/breast-radiology/CodeSystem/ObservationCodes",
+                  "code": "abnormalityForeignObjectObservation",
+                  "display": "Abnormality Foreign Object observation"
+                }
+              ],
+              "text": "Abnormality Foreign Object observation"
+            }
+          }
+        ],
         "path": "Observation.code",
         "base": {
           "path": "Observation.code",
           "min": 1,
           "max": "1"
-        },
-        "defaultValueCodeableConcept": {
-          "coding": [
-            {
-              "system": "http://hl7.org/fhir/us/breast-radiology/CodeSystem/ObservationCodes",
-              "code": "abnormalityForeignObjectObservation",
-              "display": "Abnormality Foreign Object observation"
-            }
-          ],
-          "text": "Abnormality Foreign Object observation"
         },
         "patternCodeableConcept": {
           "coding": [
@@ -2716,6 +2731,21 @@
       },
       {
         "id": "Observation.component:abnormalityForeignObjectType.code",
+        "extension": [
+          {
+            "url": "http://www.fragment.com/DefaultValue",
+            "valueCodeableConcept": {
+              "coding": [
+                {
+                  "system": "http://hl7.org/fhir/us/breast-radiology/CodeSystem/ObservationComponentSliceCodes",
+                  "code": "abnormalityForeignObjectType",
+                  "display": "Component code for 'Foreign Object Type' slice"
+                }
+              ],
+              "text": "Component code for 'Foreign Object Type' slice"
+            }
+          }
+        ],
         "path": "Observation.component.code",
         "short": "Foreign Object Type component code",
         "definition": "This code identifies the Foreign Object Type component.\n Its value shall always be the concept 'Component code for 'Foreign Object Type' slice'",
@@ -2725,16 +2755,6 @@
           "path": "Observation.component.code",
           "min": 1,
           "max": "1"
-        },
-        "defaultValueCodeableConcept": {
-          "coding": [
-            {
-              "system": "http://hl7.org/fhir/us/breast-radiology/CodeSystem/ObservationComponentSliceCodes",
-              "code": "abnormalityForeignObjectType",
-              "display": "Component code for 'Foreign Object Type' slice"
-            }
-          ],
-          "text": "Component code for 'Foreign Object Type' slice"
         },
         "patternCodeableConcept": {
           "coding": [

@@ -34,7 +34,7 @@ namespace BreastRadiology.XUnitTests
                     CodeableConcept coding = new Coding(Global.Snomed, "80248007", "Left breast structure (body structure)").ToCodeableConcept();
                     e.Select("bodySite")
                         .Pattern(coding.ToPattern())
-                        .DefaultValue(coding);
+                        .DefaultValueExtension(coding);
                 }
                 e.Select("value[x]")
                     .Definition(new Markdown()
@@ -46,7 +46,7 @@ namespace BreastRadiology.XUnitTests
                 // Set Observation.code to unique value for this profile.
                 e.Select("code")
                     .Pattern(Self.ObservationCodeFindingsLeftBreast.ToCodeableConcept().ToPattern())
-                    .DefaultValue(Self.ObservationCodeFindingsLeftBreast.ToCodeableConcept())
+                    .DefaultValueExtension(Self.ObservationCodeFindingsLeftBreast.ToCodeableConcept())
                     ;
 
                 e.IntroDoc

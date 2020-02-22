@@ -727,6 +727,21 @@
       },
       {
         "id": "Observation.code",
+        "extension": [
+          {
+            "url": "http://www.fragment.com/DefaultValue",
+            "valueCodeableConcept": {
+              "coding": [
+                {
+                  "system": "http://hl7.org/fhir/us/breast-radiology/CodeSystem/ObservationCodes",
+                  "code": "abnormalityMassObservation",
+                  "display": "Abnormality Mass observation"
+                }
+              ],
+              "text": "Abnormality Mass observation"
+            }
+          }
+        ],
         "path": "Observation.code",
         "short": "Type of observation (code / type)",
         "definition": "Describes what was observed. Sometimes this is called the observation \"name\".",
@@ -747,16 +762,6 @@
             "code": "CodeableConcept"
           }
         ],
-        "defaultValueCodeableConcept": {
-          "coding": [
-            {
-              "system": "http://hl7.org/fhir/us/breast-radiology/CodeSystem/ObservationCodes",
-              "code": "abnormalityMassObservation",
-              "display": "Abnormality Mass observation"
-            }
-          ],
-          "text": "Abnormality Mass observation"
-        },
         "patternCodeableConcept": {
           "coding": [
             {
@@ -2440,6 +2445,21 @@
       },
       {
         "id": "Observation.component:massType.code",
+        "extension": [
+          {
+            "url": "http://www.fragment.com/DefaultValue",
+            "valueCodeableConcept": {
+              "coding": [
+                {
+                  "system": "http://hl7.org/fhir/us/breast-radiology/CodeSystem/ObservationComponentSliceCodes",
+                  "code": "abnormalityMassType",
+                  "display": "Component code for 'Abnormality Mass Type' slice"
+                }
+              ],
+              "text": "Component code for 'Abnormality Mass Type' slice"
+            }
+          }
+        ],
         "path": "Observation.component.code",
         "short": "Mass Type component code",
         "definition": "This code identifies the Mass Type component.\n Its value shall always be the concept 'Component code for 'Abnormality Mass Type' slice'",
@@ -2457,16 +2477,6 @@
             "code": "CodeableConcept"
           }
         ],
-        "defaultValueCodeableConcept": {
-          "coding": [
-            {
-              "system": "http://hl7.org/fhir/us/breast-radiology/CodeSystem/ObservationComponentSliceCodes",
-              "code": "abnormalityMassType",
-              "display": "Component code for 'Abnormality Mass Type' slice"
-            }
-          ],
-          "text": "Component code for 'Abnormality Mass Type' slice"
-        },
         "patternCodeableConcept": {
           "coding": [
             {
@@ -2695,21 +2705,26 @@
       },
       {
         "id": "Observation.code",
+        "extension": [
+          {
+            "url": "http://www.fragment.com/DefaultValue",
+            "valueCodeableConcept": {
+              "coding": [
+                {
+                  "system": "http://hl7.org/fhir/us/breast-radiology/CodeSystem/ObservationCodes",
+                  "code": "abnormalityMassObservation",
+                  "display": "Abnormality Mass observation"
+                }
+              ],
+              "text": "Abnormality Mass observation"
+            }
+          }
+        ],
         "path": "Observation.code",
         "base": {
           "path": "Observation.code",
           "min": 1,
           "max": "1"
-        },
-        "defaultValueCodeableConcept": {
-          "coding": [
-            {
-              "system": "http://hl7.org/fhir/us/breast-radiology/CodeSystem/ObservationCodes",
-              "code": "abnormalityMassObservation",
-              "display": "Abnormality Mass observation"
-            }
-          ],
-          "text": "Abnormality Mass observation"
         },
         "patternCodeableConcept": {
           "coding": [
@@ -2755,6 +2770,21 @@
       },
       {
         "id": "Observation.component:massType.code",
+        "extension": [
+          {
+            "url": "http://www.fragment.com/DefaultValue",
+            "valueCodeableConcept": {
+              "coding": [
+                {
+                  "system": "http://hl7.org/fhir/us/breast-radiology/CodeSystem/ObservationComponentSliceCodes",
+                  "code": "abnormalityMassType",
+                  "display": "Component code for 'Abnormality Mass Type' slice"
+                }
+              ],
+              "text": "Component code for 'Abnormality Mass Type' slice"
+            }
+          }
+        ],
         "path": "Observation.component.code",
         "short": "Mass Type component code",
         "definition": "This code identifies the Mass Type component.\n Its value shall always be the concept 'Component code for 'Abnormality Mass Type' slice'",
@@ -2764,16 +2794,6 @@
           "path": "Observation.component.code",
           "min": 1,
           "max": "1"
-        },
-        "defaultValueCodeableConcept": {
-          "coding": [
-            {
-              "system": "http://hl7.org/fhir/us/breast-radiology/CodeSystem/ObservationComponentSliceCodes",
-              "code": "abnormalityMassType",
-              "display": "Component code for 'Abnormality Mass Type' slice"
-            }
-          ],
-          "text": "Component code for 'Abnormality Mass Type' slice"
         },
         "patternCodeableConcept": {
           "coding": [

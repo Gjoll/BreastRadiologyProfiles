@@ -49,7 +49,7 @@ namespace BreastRadiology.XUnitTests
                 // Set Observation.code to unique value for this profile.
                 e.Select("code")
                     .Pattern(Self.ObservationCodeMGAbnormalityFatNecrosis.ToCodeableConcept().ToPattern())
-                    .DefaultValue(Self.ObservationCodeMGAbnormalityFatNecrosis.ToCodeableConcept())
+                    .DefaultValueExtension(Self.ObservationCodeMGAbnormalityFatNecrosis.ToCodeableConcept())
                     ;
 
                 e.IntroDoc

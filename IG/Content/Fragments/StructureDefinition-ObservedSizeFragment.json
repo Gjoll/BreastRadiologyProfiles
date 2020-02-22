@@ -2307,6 +2307,21 @@
       },
       {
         "id": "Observation.component:obsSize.code",
+        "extension": [
+          {
+            "url": "http://www.fragment.com/DefaultValue",
+            "valueCodeableConcept": {
+              "coding": [
+                {
+                  "system": "http://hl7.org/fhir/us/breast-radiology/CodeSystem/ObservationComponentSliceCodes",
+                  "code": "obsSize",
+                  "display": "Component code for 'Observed Size' slice"
+                }
+              ],
+              "text": "Component code for 'Observed Size' slice"
+            }
+          }
+        ],
         "path": "Observation.component.code",
         "short": "Type of component observation (code / type)",
         "definition": "Describes what was observed. Sometimes this is called the observation \"code\".",
@@ -2324,16 +2339,6 @@
             "code": "CodeableConcept"
           }
         ],
-        "defaultValueCodeableConcept": {
-          "coding": [
-            {
-              "system": "http://hl7.org/fhir/us/breast-radiology/CodeSystem/ObservationComponentSliceCodes",
-              "code": "obsSize",
-              "display": "Component code for 'Observed Size' slice"
-            }
-          ],
-          "text": "Component code for 'Observed Size' slice"
-        },
         "patternCodeableConcept": {
           "coding": [
             {
@@ -2696,6 +2701,21 @@
       },
       {
         "id": "Observation.component:obsSize.code",
+        "extension": [
+          {
+            "url": "http://www.fragment.com/DefaultValue",
+            "valueCodeableConcept": {
+              "coding": [
+                {
+                  "system": "http://hl7.org/fhir/us/breast-radiology/CodeSystem/ObservationComponentSliceCodes",
+                  "code": "obsSize",
+                  "display": "Component code for 'Observed Size' slice"
+                }
+              ],
+              "text": "Component code for 'Observed Size' slice"
+            }
+          }
+        ],
         "path": "Observation.component.code",
         "min": 1,
         "max": "1",
@@ -2703,16 +2723,6 @@
           "path": "Observation.component.code",
           "min": 1,
           "max": "1"
-        },
-        "defaultValueCodeableConcept": {
-          "coding": [
-            {
-              "system": "http://hl7.org/fhir/us/breast-radiology/CodeSystem/ObservationComponentSliceCodes",
-              "code": "obsSize",
-              "display": "Component code for 'Observed Size' slice"
-            }
-          ],
-          "text": "Component code for 'Observed Size' slice"
         },
         "patternCodeableConcept": {
           "coding": [

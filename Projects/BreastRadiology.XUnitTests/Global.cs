@@ -35,6 +35,7 @@ namespace BreastRadiology.XUnitTests
         public static String IsFragmentExtensionUrl = $"{BaseFragmentUrl}isFragment";
         public static String IncompatibleFragmentUrl = $"{BaseFragmentUrl}incompatibleFragment";
         public static String GroupExtensionUrl = $"{BaseFragmentUrl}Group";
+        public static String DefaultValueExtensionUrl = $"{BaseFragmentUrl}DefaultValue";
 
         public static String ResourceMapNameUrl = $"{BaseFragmentUrl}mapname";
         public static String ResourceMapLinkUrl = $"{BaseFragmentUrl}maplink";

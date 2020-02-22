@@ -508,7 +508,7 @@ namespace BreastRadiology.XUnitTests
                 // Set Observation.code to unique value for this profile.
                 e.Select("code")
                     .Pattern(Self.ObservationCodeAbnormalityForeignObject.ToCodeableConcept().ToPattern())
-                    .DefaultValue(Self.ObservationCodeAbnormalityForeignObject.ToCodeableConcept())
+                    .DefaultValueExtension(Self.ObservationCodeAbnormalityForeignObject.ToCodeableConcept())
                     ;
 
                 e.StartComponentSliceing();

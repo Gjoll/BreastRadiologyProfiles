@@ -715,6 +715,21 @@
       },
       {
         "id": "Observation.code",
+        "extension": [
+          {
+            "url": "http://www.fragment.com/DefaultValue",
+            "valueCodeableConcept": {
+              "coding": [
+                {
+                  "system": "http://hl7.org/fhir/us/breast-radiology/CodeSystem/ObservationCodes",
+                  "code": "mgAbnormalityCalcificationObservation",
+                  "display": "Abnormality Calcification observation"
+                }
+              ],
+              "text": "Abnormality Calcification observation"
+            }
+          }
+        ],
         "path": "Observation.code",
         "short": "Type of observation (code / type)",
         "definition": "Describes what was observed. Sometimes this is called the observation \"name\".",
@@ -735,16 +750,6 @@
             "code": "CodeableConcept"
           }
         ],
-        "defaultValueCodeableConcept": {
-          "coding": [
-            {
-              "system": "http://hl7.org/fhir/us/breast-radiology/CodeSystem/ObservationCodes",
-              "code": "mgAbnormalityCalcificationObservation",
-              "display": "Abnormality Calcification observation"
-            }
-          ],
-          "text": "Abnormality Calcification observation"
-        },
         "patternCodeableConcept": {
           "coding": [
             {
@@ -2428,6 +2433,21 @@
       },
       {
         "id": "Observation.component:calcificationType.code",
+        "extension": [
+          {
+            "url": "http://www.fragment.com/DefaultValue",
+            "valueCodeableConcept": {
+              "coding": [
+                {
+                  "system": "http://hl7.org/fhir/us/breast-radiology/CodeSystem/ObservationComponentSliceCodes",
+                  "code": "mgCalcificationType",
+                  "display": "Component code for 'Calcification Type' slice"
+                }
+              ],
+              "text": "Component code for 'Calcification Type' slice"
+            }
+          }
+        ],
         "path": "Observation.component.code",
         "short": "Calcification Type component code",
         "definition": "This code identifies the Calcification Type component.\n Its value shall always be the concept 'Component code for 'Calcification Type' slice'",
@@ -2445,16 +2465,6 @@
             "code": "CodeableConcept"
           }
         ],
-        "defaultValueCodeableConcept": {
-          "coding": [
-            {
-              "system": "http://hl7.org/fhir/us/breast-radiology/CodeSystem/ObservationComponentSliceCodes",
-              "code": "mgCalcificationType",
-              "display": "Component code for 'Calcification Type' slice"
-            }
-          ],
-          "text": "Component code for 'Calcification Type' slice"
-        },
         "patternCodeableConcept": {
           "coding": [
             {
@@ -2806,6 +2816,21 @@
       },
       {
         "id": "Observation.component:calcificationDistribution.code",
+        "extension": [
+          {
+            "url": "http://www.fragment.com/DefaultValue",
+            "valueCodeableConcept": {
+              "coding": [
+                {
+                  "system": "http://hl7.org/fhir/us/breast-radiology/CodeSystem/ObservationComponentSliceCodes",
+                  "code": "mgCalcificationDistribution",
+                  "display": "Component code for 'Distribution' slice"
+                }
+              ],
+              "text": "Component code for 'Distribution' slice"
+            }
+          }
+        ],
         "path": "Observation.component.code",
         "short": "Calcification Distribution component code",
         "definition": "This code identifies the Calcification Distribution component.\n Its value shall always be the concept 'Component code for 'Distribution' slice'",
@@ -2823,16 +2848,6 @@
             "code": "CodeableConcept"
           }
         ],
-        "defaultValueCodeableConcept": {
-          "coding": [
-            {
-              "system": "http://hl7.org/fhir/us/breast-radiology/CodeSystem/ObservationComponentSliceCodes",
-              "code": "mgCalcificationDistribution",
-              "display": "Component code for 'Distribution' slice"
-            }
-          ],
-          "text": "Component code for 'Distribution' slice"
-        },
         "patternCodeableConcept": {
           "coding": [
             {
@@ -3061,21 +3076,26 @@
       },
       {
         "id": "Observation.code",
+        "extension": [
+          {
+            "url": "http://www.fragment.com/DefaultValue",
+            "valueCodeableConcept": {
+              "coding": [
+                {
+                  "system": "http://hl7.org/fhir/us/breast-radiology/CodeSystem/ObservationCodes",
+                  "code": "mgAbnormalityCalcificationObservation",
+                  "display": "Abnormality Calcification observation"
+                }
+              ],
+              "text": "Abnormality Calcification observation"
+            }
+          }
+        ],
         "path": "Observation.code",
         "base": {
           "path": "Observation.code",
           "min": 1,
           "max": "1"
-        },
-        "defaultValueCodeableConcept": {
-          "coding": [
-            {
-              "system": "http://hl7.org/fhir/us/breast-radiology/CodeSystem/ObservationCodes",
-              "code": "mgAbnormalityCalcificationObservation",
-              "display": "Abnormality Calcification observation"
-            }
-          ],
-          "text": "Abnormality Calcification observation"
         },
         "patternCodeableConcept": {
           "coding": [
@@ -3121,6 +3141,21 @@
       },
       {
         "id": "Observation.component:calcificationType.code",
+        "extension": [
+          {
+            "url": "http://www.fragment.com/DefaultValue",
+            "valueCodeableConcept": {
+              "coding": [
+                {
+                  "system": "http://hl7.org/fhir/us/breast-radiology/CodeSystem/ObservationComponentSliceCodes",
+                  "code": "mgCalcificationType",
+                  "display": "Component code for 'Calcification Type' slice"
+                }
+              ],
+              "text": "Component code for 'Calcification Type' slice"
+            }
+          }
+        ],
         "path": "Observation.component.code",
         "short": "Calcification Type component code",
         "definition": "This code identifies the Calcification Type component.\n Its value shall always be the concept 'Component code for 'Calcification Type' slice'",
@@ -3130,16 +3165,6 @@
           "path": "Observation.component.code",
           "min": 1,
           "max": "1"
-        },
-        "defaultValueCodeableConcept": {
-          "coding": [
-            {
-              "system": "http://hl7.org/fhir/us/breast-radiology/CodeSystem/ObservationComponentSliceCodes",
-              "code": "mgCalcificationType",
-              "display": "Component code for 'Calcification Type' slice"
-            }
-          ],
-          "text": "Component code for 'Calcification Type' slice"
         },
         "patternCodeableConcept": {
           "coding": [
@@ -3189,6 +3214,21 @@
       },
       {
         "id": "Observation.component:calcificationDistribution.code",
+        "extension": [
+          {
+            "url": "http://www.fragment.com/DefaultValue",
+            "valueCodeableConcept": {
+              "coding": [
+                {
+                  "system": "http://hl7.org/fhir/us/breast-radiology/CodeSystem/ObservationComponentSliceCodes",
+                  "code": "mgCalcificationDistribution",
+                  "display": "Component code for 'Distribution' slice"
+                }
+              ],
+              "text": "Component code for 'Distribution' slice"
+            }
+          }
+        ],
         "path": "Observation.component.code",
         "short": "Calcification Distribution component code",
         "definition": "This code identifies the Calcification Distribution component.\n Its value shall always be the concept 'Component code for 'Distribution' slice'",
@@ -3198,16 +3238,6 @@
           "path": "Observation.component.code",
           "min": 1,
           "max": "1"
-        },
-        "defaultValueCodeableConcept": {
-          "coding": [
-            {
-              "system": "http://hl7.org/fhir/us/breast-radiology/CodeSystem/ObservationComponentSliceCodes",
-              "code": "mgCalcificationDistribution",
-              "display": "Component code for 'Distribution' slice"
-            }
-          ],
-          "text": "Component code for 'Distribution' slice"
         },
         "patternCodeableConcept": {
           "coding": [

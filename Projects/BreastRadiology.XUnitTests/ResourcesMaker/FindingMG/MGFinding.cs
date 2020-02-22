@@ -33,7 +33,7 @@ namespace BreastRadiology.XUnitTests
                 s = e.SDef;
                 e.Select("code")
                     .Pattern(Self.ObservationCodeMGFinding.ToCodeableConcept().ToPattern())
-                    .DefaultValue(Self.ObservationCodeMGFinding.ToCodeableConcept())
+                    .DefaultValueExtension(Self.ObservationCodeMGFinding.ToCodeableConcept())
                     ;
 
                 ////$ todo. Incorrect method!!!

@@ -703,6 +703,21 @@
       },
       {
         "id": "Observation.code",
+        "extension": [
+          {
+            "url": "http://www.fragment.com/DefaultValue",
+            "valueCodeableConcept": {
+              "coding": [
+                {
+                  "system": "http://hl7.org/fhir/us/breast-radiology/CodeSystem/ObservationCodes",
+                  "code": "mgAbnormalityAsymmetryObservation",
+                  "display": "MG Abnormality Asymmetry observation"
+                }
+              ],
+              "text": "MG Abnormality Asymmetry observation"
+            }
+          }
+        ],
         "path": "Observation.code",
         "short": "Type of observation (code / type)",
         "definition": "Describes what was observed. Sometimes this is called the observation \"name\".",
@@ -723,16 +738,6 @@
             "code": "CodeableConcept"
           }
         ],
-        "defaultValueCodeableConcept": {
-          "coding": [
-            {
-              "system": "http://hl7.org/fhir/us/breast-radiology/CodeSystem/ObservationCodes",
-              "code": "mgAbnormalityAsymmetryObservation",
-              "display": "MG Abnormality Asymmetry observation"
-            }
-          ],
-          "text": "MG Abnormality Asymmetry observation"
-        },
         "patternCodeableConcept": {
           "coding": [
             {
@@ -2416,6 +2421,21 @@
       },
       {
         "id": "Observation.component:asymmetryType.code",
+        "extension": [
+          {
+            "url": "http://www.fragment.com/DefaultValue",
+            "valueCodeableConcept": {
+              "coding": [
+                {
+                  "system": "http://hl7.org/fhir/us/breast-radiology/CodeSystem/ObservationComponentSliceCodes",
+                  "code": "mgAbnormalityAsymmetryType",
+                  "display": "Component code for 'Abnormality Asymmetry Type' slice"
+                }
+              ],
+              "text": "Component code for 'Abnormality Asymmetry Type' slice"
+            }
+          }
+        ],
         "path": "Observation.component.code",
         "short": "Asymmetry Type component code",
         "definition": "This code identifies the Asymmetry Type component.\n Its value shall always be the concept 'Component code for 'Abnormality Asymmetry Type' slice'",
@@ -2433,16 +2453,6 @@
             "code": "CodeableConcept"
           }
         ],
-        "defaultValueCodeableConcept": {
-          "coding": [
-            {
-              "system": "http://hl7.org/fhir/us/breast-radiology/CodeSystem/ObservationComponentSliceCodes",
-              "code": "mgAbnormalityAsymmetryType",
-              "display": "Component code for 'Abnormality Asymmetry Type' slice"
-            }
-          ],
-          "text": "Component code for 'Abnormality Asymmetry Type' slice"
-        },
         "patternCodeableConcept": {
           "coding": [
             {
@@ -2671,21 +2681,26 @@
       },
       {
         "id": "Observation.code",
+        "extension": [
+          {
+            "url": "http://www.fragment.com/DefaultValue",
+            "valueCodeableConcept": {
+              "coding": [
+                {
+                  "system": "http://hl7.org/fhir/us/breast-radiology/CodeSystem/ObservationCodes",
+                  "code": "mgAbnormalityAsymmetryObservation",
+                  "display": "MG Abnormality Asymmetry observation"
+                }
+              ],
+              "text": "MG Abnormality Asymmetry observation"
+            }
+          }
+        ],
         "path": "Observation.code",
         "base": {
           "path": "Observation.code",
           "min": 1,
           "max": "1"
-        },
-        "defaultValueCodeableConcept": {
-          "coding": [
-            {
-              "system": "http://hl7.org/fhir/us/breast-radiology/CodeSystem/ObservationCodes",
-              "code": "mgAbnormalityAsymmetryObservation",
-              "display": "MG Abnormality Asymmetry observation"
-            }
-          ],
-          "text": "MG Abnormality Asymmetry observation"
         },
         "patternCodeableConcept": {
           "coding": [
@@ -2731,6 +2746,21 @@
       },
       {
         "id": "Observation.component:asymmetryType.code",
+        "extension": [
+          {
+            "url": "http://www.fragment.com/DefaultValue",
+            "valueCodeableConcept": {
+              "coding": [
+                {
+                  "system": "http://hl7.org/fhir/us/breast-radiology/CodeSystem/ObservationComponentSliceCodes",
+                  "code": "mgAbnormalityAsymmetryType",
+                  "display": "Component code for 'Abnormality Asymmetry Type' slice"
+                }
+              ],
+              "text": "Component code for 'Abnormality Asymmetry Type' slice"
+            }
+          }
+        ],
         "path": "Observation.component.code",
         "short": "Asymmetry Type component code",
         "definition": "This code identifies the Asymmetry Type component.\n Its value shall always be the concept 'Component code for 'Abnormality Asymmetry Type' slice'",
@@ -2740,16 +2770,6 @@
           "path": "Observation.component.code",
           "min": 1,
           "max": "1"
-        },
-        "defaultValueCodeableConcept": {
-          "coding": [
-            {
-              "system": "http://hl7.org/fhir/us/breast-radiology/CodeSystem/ObservationComponentSliceCodes",
-              "code": "mgAbnormalityAsymmetryType",
-              "display": "Component code for 'Abnormality Asymmetry Type' slice"
-            }
-          ],
-          "text": "Component code for 'Abnormality Asymmetry Type' slice"
         },
         "patternCodeableConcept": {
           "coding": [

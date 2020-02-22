@@ -524,7 +524,7 @@ namespace BreastRadiology.XUnitTests
                 };
                 componentCode
                     .Pattern(pattern.ToPattern())
-                    .DefaultValue(pattern)
+                    .DefaultValueExtension(pattern)
                     ;
                 slice.CreateNode(componentCode);
             }
@@ -570,7 +570,7 @@ namespace BreastRadiology.XUnitTests
             };
             componentCode
                 .Pattern(sliceCode.ToPattern())
-                .DefaultValue(sliceCode)
+                .DefaultValueExtension(sliceCode)
                 ;
             return slice.CreateNode(componentCode);
         }

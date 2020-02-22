@@ -149,7 +149,7 @@ namespace BreastRadiology.XUnitTests
                 // Set Observation.code to unique value for this profile.
                 e.Select("code")
                     .Pattern(Self.ObservationCodeMGBreastDensity.ToCodeableConcept().ToPattern())
-                    .DefaultValue(Self.ObservationCodeMGBreastDensity.ToCodeableConcept())
+                    .DefaultValueExtension(Self.ObservationCodeMGBreastDensity.ToCodeableConcept())
                     ;
 
                 e.IntroDoc

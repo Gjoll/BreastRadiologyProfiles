@@ -727,6 +727,21 @@
       },
       {
         "id": "Observation.code",
+        "extension": [
+          {
+            "url": "http://www.fragment.com/DefaultValue",
+            "valueCodeableConcept": {
+              "coding": [
+                {
+                  "system": "http://hl7.org/fhir/us/breast-radiology/CodeSystem/ObservationCodes",
+                  "code": "abnormalityCyst",
+                  "display": "Abnormality Cyst observation"
+                }
+              ],
+              "text": "Abnormality Cyst observation"
+            }
+          }
+        ],
         "path": "Observation.code",
         "short": "Type of observation (code / type)",
         "definition": "Describes what was observed. Sometimes this is called the observation \"name\".",
@@ -747,16 +762,6 @@
             "code": "CodeableConcept"
           }
         ],
-        "defaultValueCodeableConcept": {
-          "coding": [
-            {
-              "system": "http://hl7.org/fhir/us/breast-radiology/CodeSystem/ObservationCodes",
-              "code": "abnormalityCyst",
-              "display": "Abnormality Cyst observation"
-            }
-          ],
-          "text": "Abnormality Cyst observation"
-        },
         "patternCodeableConcept": {
           "coding": [
             {
@@ -2440,6 +2445,21 @@
       },
       {
         "id": "Observation.component:cystType.code",
+        "extension": [
+          {
+            "url": "http://www.fragment.com/DefaultValue",
+            "valueCodeableConcept": {
+              "coding": [
+                {
+                  "system": "http://hl7.org/fhir/us/breast-radiology/CodeSystem/ObservationComponentSliceCodes",
+                  "code": "abnormalityCystType",
+                  "display": "Component code for 'Cyst Type' slice"
+                }
+              ],
+              "text": "Component code for 'Cyst Type' slice"
+            }
+          }
+        ],
         "path": "Observation.component.code",
         "short": "Cyst Type component code",
         "definition": "This code identifies the Cyst Type component.\n Its value shall always be the concept 'Component code for 'Cyst Type' slice'",
@@ -2457,16 +2477,6 @@
             "code": "CodeableConcept"
           }
         ],
-        "defaultValueCodeableConcept": {
-          "coding": [
-            {
-              "system": "http://hl7.org/fhir/us/breast-radiology/CodeSystem/ObservationComponentSliceCodes",
-              "code": "abnormalityCystType",
-              "display": "Component code for 'Cyst Type' slice"
-            }
-          ],
-          "text": "Component code for 'Cyst Type' slice"
-        },
         "patternCodeableConcept": {
           "coding": [
             {
@@ -2696,21 +2706,26 @@
       },
       {
         "id": "Observation.code",
+        "extension": [
+          {
+            "url": "http://www.fragment.com/DefaultValue",
+            "valueCodeableConcept": {
+              "coding": [
+                {
+                  "system": "http://hl7.org/fhir/us/breast-radiology/CodeSystem/ObservationCodes",
+                  "code": "abnormalityCyst",
+                  "display": "Abnormality Cyst observation"
+                }
+              ],
+              "text": "Abnormality Cyst observation"
+            }
+          }
+        ],
         "path": "Observation.code",
         "base": {
           "path": "Observation.code",
           "min": 1,
           "max": "1"
-        },
-        "defaultValueCodeableConcept": {
-          "coding": [
-            {
-              "system": "http://hl7.org/fhir/us/breast-radiology/CodeSystem/ObservationCodes",
-              "code": "abnormalityCyst",
-              "display": "Abnormality Cyst observation"
-            }
-          ],
-          "text": "Abnormality Cyst observation"
         },
         "patternCodeableConcept": {
           "coding": [
@@ -2756,6 +2771,21 @@
       },
       {
         "id": "Observation.component:cystType.code",
+        "extension": [
+          {
+            "url": "http://www.fragment.com/DefaultValue",
+            "valueCodeableConcept": {
+              "coding": [
+                {
+                  "system": "http://hl7.org/fhir/us/breast-radiology/CodeSystem/ObservationComponentSliceCodes",
+                  "code": "abnormalityCystType",
+                  "display": "Component code for 'Cyst Type' slice"
+                }
+              ],
+              "text": "Component code for 'Cyst Type' slice"
+            }
+          }
+        ],
         "path": "Observation.component.code",
         "short": "Cyst Type component code",
         "definition": "This code identifies the Cyst Type component.\n Its value shall always be the concept 'Component code for 'Cyst Type' slice'",
@@ -2765,16 +2795,6 @@
           "path": "Observation.component.code",
           "min": 1,
           "max": "1"
-        },
-        "defaultValueCodeableConcept": {
-          "coding": [
-            {
-              "system": "http://hl7.org/fhir/us/breast-radiology/CodeSystem/ObservationComponentSliceCodes",
-              "code": "abnormalityCystType",
-              "display": "Component code for 'Cyst Type' slice"
-            }
-          ],
-          "text": "Component code for 'Cyst Type' slice"
         },
         "patternCodeableConcept": {
           "coding": [

@@ -2376,6 +2376,21 @@
       },
       {
         "id": "Composition.section:report.code",
+        "extension": [
+          {
+            "url": "http://www.fragment.com/DefaultValue",
+            "valueCodeableConcept": {
+              "coding": [
+                {
+                  "system": "http://hl7.org/fhir/us/breast-radiology/CodeSystem/CompositionSectionSliceCodes",
+                  "code": "sectionReport",
+                  "display": "Code to identify the 'Report' section slice"
+                }
+              ],
+              "text": "Code to identify the 'Report' section slice"
+            }
+          }
+        ],
         "path": "Composition.section.code",
         "short": "Classification of section (recommended)",
         "definition": "A code identifying the kind of content contained within the section. This must be consistent with the section title.",
@@ -2393,16 +2408,6 @@
             "code": "CodeableConcept"
           }
         ],
-        "defaultValueCodeableConcept": {
-          "coding": [
-            {
-              "system": "http://hl7.org/fhir/us/breast-radiology/CodeSystem/CompositionSectionSliceCodes",
-              "code": "sectionReport",
-              "display": "Code to identify the 'Report' section slice"
-            }
-          ],
-          "text": "Code to identify the 'Report' section slice"
-        },
         "patternCodeableConcept": {
           "coding": [
             {
@@ -2941,6 +2946,21 @@
       },
       {
         "id": "Composition.section:impressions.code",
+        "extension": [
+          {
+            "url": "http://www.fragment.com/DefaultValue",
+            "valueCodeableConcept": {
+              "coding": [
+                {
+                  "system": "http://hl7.org/fhir/us/breast-radiology/CodeSystem/CompositionSectionSliceCodes",
+                  "code": "sectionImpressions",
+                  "display": "Code to identify the 'Impressions' section slice"
+                }
+              ],
+              "text": "Code to identify the 'Impressions' section slice"
+            }
+          }
+        ],
         "path": "Composition.section.code",
         "short": "Classification of section (recommended)",
         "definition": "A code identifying the kind of content contained within the section. This must be consistent with the section title.",
@@ -2958,16 +2978,6 @@
             "code": "CodeableConcept"
           }
         ],
-        "defaultValueCodeableConcept": {
-          "coding": [
-            {
-              "system": "http://hl7.org/fhir/us/breast-radiology/CodeSystem/CompositionSectionSliceCodes",
-              "code": "sectionImpressions",
-              "display": "Code to identify the 'Impressions' section slice"
-            }
-          ],
-          "text": "Code to identify the 'Impressions' section slice"
-        },
         "patternCodeableConcept": {
           "coding": [
             {
@@ -3506,6 +3516,21 @@
       },
       {
         "id": "Composition.section:findingsRightBreast.code",
+        "extension": [
+          {
+            "url": "http://www.fragment.com/DefaultValue",
+            "valueCodeableConcept": {
+              "coding": [
+                {
+                  "system": "http://hl7.org/fhir/us/breast-radiology/CodeSystem/CompositionSectionSliceCodes",
+                  "code": "sectionCodeFindingsRightBreast",
+                  "display": "Code to identify the 'Findings Right Breast' section slice"
+                }
+              ],
+              "text": "Code to identify the 'Findings Right Breast' section slice"
+            }
+          }
+        ],
         "path": "Composition.section.code",
         "short": "Classification of section (recommended)",
         "definition": "A code identifying the kind of content contained within the section. This must be consistent with the section title.",
@@ -3523,16 +3548,6 @@
             "code": "CodeableConcept"
           }
         ],
-        "defaultValueCodeableConcept": {
-          "coding": [
-            {
-              "system": "http://hl7.org/fhir/us/breast-radiology/CodeSystem/CompositionSectionSliceCodes",
-              "code": "sectionCodeFindingsRightBreast",
-              "display": "Code to identify the 'Findings Right Breast' section slice"
-            }
-          ],
-          "text": "Code to identify the 'Findings Right Breast' section slice"
-        },
         "patternCodeableConcept": {
           "coding": [
             {
@@ -4071,6 +4086,21 @@
       },
       {
         "id": "Composition.section:findingsLeftBreast.code",
+        "extension": [
+          {
+            "url": "http://www.fragment.com/DefaultValue",
+            "valueCodeableConcept": {
+              "coding": [
+                {
+                  "system": "http://hl7.org/fhir/us/breast-radiology/CodeSystem/CompositionSectionSliceCodes",
+                  "code": "sectionCodeFindingsLeftBreast",
+                  "display": "Code to identify the 'Findings Left Breast' section slice"
+                }
+              ],
+              "text": "Code to identify the 'Findings Left Breast' section slice"
+            }
+          }
+        ],
         "path": "Composition.section.code",
         "short": "Classification of section (recommended)",
         "definition": "A code identifying the kind of content contained within the section. This must be consistent with the section title.",
@@ -4088,16 +4118,6 @@
             "code": "CodeableConcept"
           }
         ],
-        "defaultValueCodeableConcept": {
-          "coding": [
-            {
-              "system": "http://hl7.org/fhir/us/breast-radiology/CodeSystem/CompositionSectionSliceCodes",
-              "code": "sectionCodeFindingsLeftBreast",
-              "display": "Code to identify the 'Findings Left Breast' section slice"
-            }
-          ],
-          "text": "Code to identify the 'Findings Left Breast' section slice"
-        },
         "patternCodeableConcept": {
           "coding": [
             {
@@ -4636,6 +4656,21 @@
       },
       {
         "id": "Composition.section:relatedResources.code",
+        "extension": [
+          {
+            "url": "http://www.fragment.com/DefaultValue",
+            "valueCodeableConcept": {
+              "coding": [
+                {
+                  "system": "http://hl7.org/fhir/us/breast-radiology/CodeSystem/CompositionSectionSliceCodes",
+                  "code": "sectionRelatedResources",
+                  "display": "Code to identify the 'RelatedResources' section slice"
+                }
+              ],
+              "text": "Code to identify the 'RelatedResources' section slice"
+            }
+          }
+        ],
         "path": "Composition.section.code",
         "short": "Classification of section (recommended)",
         "definition": "A code identifying the kind of content contained within the section. This must be consistent with the section title.",
@@ -4653,16 +4688,6 @@
             "code": "CodeableConcept"
           }
         ],
-        "defaultValueCodeableConcept": {
-          "coding": [
-            {
-              "system": "http://hl7.org/fhir/us/breast-radiology/CodeSystem/CompositionSectionSliceCodes",
-              "code": "sectionRelatedResources",
-              "display": "Code to identify the 'RelatedResources' section slice"
-            }
-          ],
-          "text": "Code to identify the 'RelatedResources' section slice"
-        },
         "patternCodeableConcept": {
           "coding": [
             {
@@ -5201,6 +5226,21 @@
       },
       {
         "id": "Composition.section:recommendations.code",
+        "extension": [
+          {
+            "url": "http://www.fragment.com/DefaultValue",
+            "valueCodeableConcept": {
+              "coding": [
+                {
+                  "system": "http://hl7.org/fhir/us/breast-radiology/CodeSystem/CompositionSectionSliceCodes",
+                  "code": "sectionCodeRecommendations",
+                  "display": "Code to identify the 'Recommendations' section slice"
+                }
+              ],
+              "text": "Code to identify the 'Recommendations' section slice"
+            }
+          }
+        ],
         "path": "Composition.section.code",
         "short": "Classification of section (recommended)",
         "definition": "A code identifying the kind of content contained within the section. This must be consistent with the section title.",
@@ -5218,16 +5258,6 @@
             "code": "CodeableConcept"
           }
         ],
-        "defaultValueCodeableConcept": {
-          "coding": [
-            {
-              "system": "http://hl7.org/fhir/us/breast-radiology/CodeSystem/CompositionSectionSliceCodes",
-              "code": "sectionCodeRecommendations",
-              "display": "Code to identify the 'Recommendations' section slice"
-            }
-          ],
-          "text": "Code to identify the 'Recommendations' section slice"
-        },
         "patternCodeableConcept": {
           "coding": [
             {
@@ -5640,6 +5670,21 @@
       },
       {
         "id": "Composition.section:report.code",
+        "extension": [
+          {
+            "url": "http://www.fragment.com/DefaultValue",
+            "valueCodeableConcept": {
+              "coding": [
+                {
+                  "system": "http://hl7.org/fhir/us/breast-radiology/CodeSystem/CompositionSectionSliceCodes",
+                  "code": "sectionReport",
+                  "display": "Code to identify the 'Report' section slice"
+                }
+              ],
+              "text": "Code to identify the 'Report' section slice"
+            }
+          }
+        ],
         "path": "Composition.section.code",
         "min": 1,
         "max": "1",
@@ -5647,16 +5692,6 @@
           "path": "Composition.section.code",
           "min": 0,
           "max": "1"
-        },
-        "defaultValueCodeableConcept": {
-          "coding": [
-            {
-              "system": "http://hl7.org/fhir/us/breast-radiology/CodeSystem/CompositionSectionSliceCodes",
-              "code": "sectionReport",
-              "display": "Code to identify the 'Report' section slice"
-            }
-          ],
-          "text": "Code to identify the 'Report' section slice"
         },
         "patternCodeableConcept": {
           "coding": [
@@ -5739,6 +5774,21 @@
       },
       {
         "id": "Composition.section:impressions.code",
+        "extension": [
+          {
+            "url": "http://www.fragment.com/DefaultValue",
+            "valueCodeableConcept": {
+              "coding": [
+                {
+                  "system": "http://hl7.org/fhir/us/breast-radiology/CodeSystem/CompositionSectionSliceCodes",
+                  "code": "sectionImpressions",
+                  "display": "Code to identify the 'Impressions' section slice"
+                }
+              ],
+              "text": "Code to identify the 'Impressions' section slice"
+            }
+          }
+        ],
         "path": "Composition.section.code",
         "min": 1,
         "max": "1",
@@ -5746,16 +5796,6 @@
           "path": "Composition.section.code",
           "min": 0,
           "max": "1"
-        },
-        "defaultValueCodeableConcept": {
-          "coding": [
-            {
-              "system": "http://hl7.org/fhir/us/breast-radiology/CodeSystem/CompositionSectionSliceCodes",
-              "code": "sectionImpressions",
-              "display": "Code to identify the 'Impressions' section slice"
-            }
-          ],
-          "text": "Code to identify the 'Impressions' section slice"
         },
         "patternCodeableConcept": {
           "coding": [
@@ -5838,6 +5878,21 @@
       },
       {
         "id": "Composition.section:findingsRightBreast.code",
+        "extension": [
+          {
+            "url": "http://www.fragment.com/DefaultValue",
+            "valueCodeableConcept": {
+              "coding": [
+                {
+                  "system": "http://hl7.org/fhir/us/breast-radiology/CodeSystem/CompositionSectionSliceCodes",
+                  "code": "sectionCodeFindingsRightBreast",
+                  "display": "Code to identify the 'Findings Right Breast' section slice"
+                }
+              ],
+              "text": "Code to identify the 'Findings Right Breast' section slice"
+            }
+          }
+        ],
         "path": "Composition.section.code",
         "min": 1,
         "max": "1",
@@ -5845,16 +5900,6 @@
           "path": "Composition.section.code",
           "min": 0,
           "max": "1"
-        },
-        "defaultValueCodeableConcept": {
-          "coding": [
-            {
-              "system": "http://hl7.org/fhir/us/breast-radiology/CodeSystem/CompositionSectionSliceCodes",
-              "code": "sectionCodeFindingsRightBreast",
-              "display": "Code to identify the 'Findings Right Breast' section slice"
-            }
-          ],
-          "text": "Code to identify the 'Findings Right Breast' section slice"
         },
         "patternCodeableConcept": {
           "coding": [
@@ -5937,6 +5982,21 @@
       },
       {
         "id": "Composition.section:findingsLeftBreast.code",
+        "extension": [
+          {
+            "url": "http://www.fragment.com/DefaultValue",
+            "valueCodeableConcept": {
+              "coding": [
+                {
+                  "system": "http://hl7.org/fhir/us/breast-radiology/CodeSystem/CompositionSectionSliceCodes",
+                  "code": "sectionCodeFindingsLeftBreast",
+                  "display": "Code to identify the 'Findings Left Breast' section slice"
+                }
+              ],
+              "text": "Code to identify the 'Findings Left Breast' section slice"
+            }
+          }
+        ],
         "path": "Composition.section.code",
         "min": 1,
         "max": "1",
@@ -5944,16 +6004,6 @@
           "path": "Composition.section.code",
           "min": 0,
           "max": "1"
-        },
-        "defaultValueCodeableConcept": {
-          "coding": [
-            {
-              "system": "http://hl7.org/fhir/us/breast-radiology/CodeSystem/CompositionSectionSliceCodes",
-              "code": "sectionCodeFindingsLeftBreast",
-              "display": "Code to identify the 'Findings Left Breast' section slice"
-            }
-          ],
-          "text": "Code to identify the 'Findings Left Breast' section slice"
         },
         "patternCodeableConcept": {
           "coding": [
@@ -6036,6 +6086,21 @@
       },
       {
         "id": "Composition.section:relatedResources.code",
+        "extension": [
+          {
+            "url": "http://www.fragment.com/DefaultValue",
+            "valueCodeableConcept": {
+              "coding": [
+                {
+                  "system": "http://hl7.org/fhir/us/breast-radiology/CodeSystem/CompositionSectionSliceCodes",
+                  "code": "sectionRelatedResources",
+                  "display": "Code to identify the 'RelatedResources' section slice"
+                }
+              ],
+              "text": "Code to identify the 'RelatedResources' section slice"
+            }
+          }
+        ],
         "path": "Composition.section.code",
         "min": 1,
         "max": "1",
@@ -6043,16 +6108,6 @@
           "path": "Composition.section.code",
           "min": 0,
           "max": "1"
-        },
-        "defaultValueCodeableConcept": {
-          "coding": [
-            {
-              "system": "http://hl7.org/fhir/us/breast-radiology/CodeSystem/CompositionSectionSliceCodes",
-              "code": "sectionRelatedResources",
-              "display": "Code to identify the 'RelatedResources' section slice"
-            }
-          ],
-          "text": "Code to identify the 'RelatedResources' section slice"
         },
         "patternCodeableConcept": {
           "coding": [
@@ -6135,6 +6190,21 @@
       },
       {
         "id": "Composition.section:recommendations.code",
+        "extension": [
+          {
+            "url": "http://www.fragment.com/DefaultValue",
+            "valueCodeableConcept": {
+              "coding": [
+                {
+                  "system": "http://hl7.org/fhir/us/breast-radiology/CodeSystem/CompositionSectionSliceCodes",
+                  "code": "sectionCodeRecommendations",
+                  "display": "Code to identify the 'Recommendations' section slice"
+                }
+              ],
+              "text": "Code to identify the 'Recommendations' section slice"
+            }
+          }
+        ],
         "path": "Composition.section.code",
         "min": 1,
         "max": "1",
@@ -6142,16 +6212,6 @@
           "path": "Composition.section.code",
           "min": 0,
           "max": "1"
-        },
-        "defaultValueCodeableConcept": {
-          "coding": [
-            {
-              "system": "http://hl7.org/fhir/us/breast-radiology/CodeSystem/CompositionSectionSliceCodes",
-              "code": "sectionCodeRecommendations",
-              "display": "Code to identify the 'Recommendations' section slice"
-            }
-          ],
-          "text": "Code to identify the 'Recommendations' section slice"
         },
         "patternCodeableConcept": {
           "coding": [
