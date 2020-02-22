@@ -1246,6 +1246,8 @@
           "ordered": true,
           "rules": "openAtEnd"
         },
+        "min": 0,
+        "max": "*",
         "base": {
           "path": "Extension.extension",
           "min": 0,
@@ -1300,6 +1302,8 @@
         "id": "Extension.extension:quadrant.url",
         "path": "Extension.extension.url",
         "definition": "Url for quadrant complex extension item.",
+        "min": 1,
+        "max": "1",
         "type": [
           {
             "code": "uri"
@@ -1346,6 +1350,8 @@
         "id": "Extension.extension:region.url",
         "path": "Extension.extension.url",
         "definition": "Url for region complex extension item.",
+        "min": 1,
+        "max": "1",
         "type": [
           {
             "code": "uri"
@@ -1392,6 +1398,8 @@
         "id": "Extension.extension:clockDirection.url",
         "path": "Extension.extension.url",
         "definition": "Url for clockDirection complex extension item.",
+        "min": 1,
+        "max": "1",
         "type": [
           {
             "code": "uri"
@@ -1438,6 +1446,8 @@
         "id": "Extension.extension:depth.url",
         "path": "Extension.extension.url",
         "definition": "Url for depth complex extension item.",
+        "min": 1,
+        "max": "1",
         "type": [
           {
             "code": "uri"
@@ -1535,6 +1545,8 @@
       {
         "id": "Extension.url",
         "path": "Extension.url",
+        "min": 1,
+        "max": "1",
         "base": {
           "path": "Extension.url",
           "min": 1,

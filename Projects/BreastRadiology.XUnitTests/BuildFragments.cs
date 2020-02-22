@@ -166,8 +166,8 @@ namespace BreastRadiology.XUnitTests
                 preFhir.AddDir(this.fragmentDir, "*.json");
                 if (saveMergedFiles)
                     preFhir.MergedDir = this.mergedDir;
-                preFhir.BreakOnElementId = "Extension.extension:laterality.url";
-                preFhir.BreakOnTitle = "BreastBodyLocationExtension";
+                preFhir.BreakOnElementId = "";
+                preFhir.BreakOnTitle = "";
                 preFhir.Process();
                 preFhir.SaveResources(this.resourcesDir);
 
@@ -426,7 +426,7 @@ namespace BreastRadiology.XUnitTests
                     StringBuilder sb = new StringBuilder();
                     p.FormatErrorMessages(sb);
                     Trace.WriteLine(sb.ToString());
-                    Debug.Assert(false);
+                    Assert.IsTrue(false);
                 }
             }
             catch (Exception err)

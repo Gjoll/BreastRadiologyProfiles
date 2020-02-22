@@ -5626,6 +5626,8 @@
           ],
           "rules": "open"
         },
+        "min": 0,
+        "max": "*",
         "base": {
           "path": "Composition.section",
           "min": 0,

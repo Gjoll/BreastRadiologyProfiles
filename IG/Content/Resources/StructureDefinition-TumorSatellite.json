@@ -2543,6 +2543,8 @@
       {
         "id": "Observation.code",
         "path": "Observation.code",
+        "min": 1,
+        "max": "1",
         "base": {
           "path": "Observation.code",
           "min": 1,
@@ -2596,6 +2598,8 @@
           ],
           "rules": "open"
         },
+        "min": 0,
+        "max": "1",
         "base": {
           "path": "Observation.value[x]",
           "min": 0,
@@ -2777,6 +2781,8 @@
           "ordered": true,
           "rules": "openAtEnd"
         },
+        "min": 0,
+        "max": "*",
         "base": {
           "path": "Observation.derivedFrom",
           "min": 0,

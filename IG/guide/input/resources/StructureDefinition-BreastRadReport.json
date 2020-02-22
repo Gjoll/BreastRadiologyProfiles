@@ -1444,6 +1444,8 @@
       {
         "id": "DiagnosticReport.code",
         "path": "DiagnosticReport.code",
+        "min": 1,
+        "max": "1",
         "base": {
           "path": "DiagnosticReport.code",
           "min": 1,
