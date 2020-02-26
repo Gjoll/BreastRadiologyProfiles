@@ -222,6 +222,21 @@ namespace BreastRadiology.XUnitTests
         }
 
         [TestMethod]
+        public void ValidateBrian()
+        {
+            FhirValidator fv = new FhirValidator(Path.Combine(this.cacheDir, "validation.xml"));
+            fv.StatusErrors += this.StatusErrors;
+            fv.StatusInfo += this.StatusInfo;
+            fv.StatusWarnings += this.StatusWarnings;
+            bool success = fv.ValidateDir(@"c:\Temp\Brian", "*.json", "4.0.0");
+            StringBuilder sb = new StringBuilder();
+            fv.FormatMessages(sb);
+            Trace.WriteLine(sb.ToString());
+            Assert.IsTrue(success);
+            Trace.WriteLine("Validation complete");
+        }
+
+        [TestMethod]
         public void ValidateInputResources()
         {
             FhirValidator fv = new FhirValidator(Path.Combine(this.cacheDir, "validation.xml"));
