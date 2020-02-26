@@ -100,6 +100,23 @@ namespace BreastRadiology.XUnitTests
             this.groupIds.Add(groupId);
         }
 
+        void RemExtensions(StructureDefinition sd)
+        {
+            void Rem(ElementDefinition ed)
+            {
+                foreach (Extension e in ed.Extension.ToArray())
+                {
+                    if (e.Url.StartsWith(Global.BaseFragmentUrl, new StringComparison()))
+                        e.Extension.Remove(e);
+                }
+            }
+
+            foreach (ElementDefinition ed in sd.Snapshot.Element)
+                Rem(ed);
+            foreach (ElementDefinition ed in sd.Differential.Element)
+                Rem(ed);
+        }
+
         void RemoveFragmentExtensions(DomainResource r)
         {
             foreach (Extension e in r.Extension.ToArray())
@@ -107,6 +124,10 @@ namespace BreastRadiology.XUnitTests
                 if (e.Url.StartsWith(Global.BaseFragmentUrl, new StringComparison()))
                     r.Extension.Remove(e);
             }
+
+            StructureDefinition sd = r as StructureDefinition;
+            if (sd != null)
+                RemExtensions(sd);
         }
 
 

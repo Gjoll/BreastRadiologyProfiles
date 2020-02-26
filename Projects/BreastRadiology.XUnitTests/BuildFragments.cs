@@ -15,6 +15,8 @@ using System.Drawing;
 using ExcelDataReader;
 using System.Data;
 using System.Globalization;
+using BreastRadiology.Shared;
+using ClosedXML.Excel;
 
 namespace BreastRadiology.XUnitTests
 {
@@ -481,6 +483,71 @@ namespace BreastRadiology.XUnitTests
             sd.Extension = null;
             sd.Context = null;
             sd.SaveJson(@"c:\Temp\test.json");
+        }
+
+        [TestMethod]
+        public void BuildSpreadSheetOfItems()
+        {
+            DataTable dt;
+            DataTable CreateTable()
+            {
+                DataTable retVal = new DataTable("Pages");
+                retVal.Columns.Add(new DataColumn("Checked", typeof(Boolean)));
+                retVal.Columns.Add(new DataColumn("Link", typeof(String)));
+                retVal.Columns.Add(new DataColumn("Notes", typeof(String)));
+                return retVal;
+            }
+
+            void Add(String path, String filter)
+            {
+                foreach (String file in Directory.GetFiles(path, filter))
+                {
+                    String fileName = Path.GetFileNameWithoutExtension(file);
+                    dt.Rows.Add(
+                        new object[]
+                        {
+                            null,
+                            $"http://build.fhir.org/ig/HL7/fhir-breast-radiology-ig/{fileName}.html",
+                            null
+                        });
+                }
+            }
+            void AddBlank()
+            {
+                dt.Rows.Add(new object[] {null, null, null });
+            }
+
+            dt = CreateTable();
+
+            String resourcesDir = Path.Combine(
+                DirHelper.FindParentDir("BreastRadiologyProfiles"),
+                "IG",
+                "Content",
+                "Resources"
+                );
+            Add(resourcesDir, "StructureDefinition-*.json");
+            AddBlank();
+            AddBlank();
+            AddBlank();
+            Add(resourcesDir, "CodeSystem-*.json");
+            AddBlank();
+            AddBlank();
+            AddBlank();
+            Add(resourcesDir, "ValueSet-*.json");
+            String savePath = @"c:\Temp\BreastRadPages.xlsx";
+
+            XLWorkbook workbook = new XLWorkbook();
+            IXLWorksheet sheet = workbook.Worksheets.Add(dt);
+            sheet.Columns().AdjustToContents();
+            sheet.Columns().Style.Border.BottomBorder = XLBorderStyleValues.Thin;
+            sheet.Columns().Style.Border.TopBorder = XLBorderStyleValues.Thin;
+            sheet.Columns().Style.Border.RightBorder = XLBorderStyleValues.Thin;
+            sheet.Columns().Style.Border.LeftBorder = XLBorderStyleValues.Thin;
+            sheet.Columns().Style.Alignment.WrapText = true;
+            sheet.Columns().Style.Alignment.Horizontal = XLAlignmentHorizontalValues.Left;
+            sheet.Columns().Style.Alignment.Vertical = XLAlignmentVerticalValues.Top;
+            File.Delete(savePath);
+            workbook.SaveAs(savePath);
         }
 
         [TestMethod]
