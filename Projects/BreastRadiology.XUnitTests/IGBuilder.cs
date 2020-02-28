@@ -100,7 +100,7 @@ namespace BreastRadiology.XUnitTests
             this.groupIds.Add(groupId);
         }
 
-        void RemExtensions(StructureDefinition sd)
+        void RemElementExtensions(StructureDefinition sd)
         {
             void Rem(ElementDefinition ed)
             {
@@ -127,7 +127,7 @@ namespace BreastRadiology.XUnitTests
 
             StructureDefinition sd = r as StructureDefinition;
             if (sd != null)
-                RemExtensions(sd);
+                RemElementExtensions(sd);
         }
 
 
