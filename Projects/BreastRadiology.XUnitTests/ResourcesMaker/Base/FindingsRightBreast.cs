@@ -36,10 +36,15 @@ namespace BreastRadiology.XUnitTests
                     .Pattern(Self.ObservationCodeFindingsRightBreast.ToCodeableConcept().ToPattern())
                     .DefaultValueExtension(Self.ObservationCodeFindingsRightBreast.ToCodeableConcept())
                     ;
-
-                e.Select("bodySite")
-                    .Pattern(new Coding(Global.Snomed, "73056007", " Right breast structure (body structure) "));
-
+                {
+                    CodeableConcept coding = new Coding(Global.Snomed, "73056007", "Right breast structure (body structure)")
+                        .ToCodeableConcept();
+                    e.Select("bodySite")
+                        .Single()
+                        .Pattern(coding.ToPattern())
+                        .DefaultValueExtension(coding)
+                        ;
+                }
                 e.Select("value[x]")
                     .Definition(new Markdown()
                          .Paragraph("Composite BiRad value for Right Breast.")

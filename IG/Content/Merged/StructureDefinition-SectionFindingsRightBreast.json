@@ -285,16 +285,36 @@
       },
       {
         "id": "Observation.bodySite",
+        "extension": [
+          {
+            "url": "http://www.fragment.com/DefaultValue",
+            "valueCodeableConcept": {
+              "coding": [
+                {
+                  "system": "http://snomed.info/sct",
+                  "code": "73056007",
+                  "display": "Right breast structure (body structure)"
+                }
+              ],
+              "text": "Right breast structure (body structure)"
+            }
+          }
+        ],
         "path": "Observation.bodySite",
+        "min": 1,
+        "max": "1",
         "base": {
           "path": "Observation.bodySite",
           "min": 0,
           "max": "1"
         },
-        "patternCoding": {
-          "system": "http://snomed.info/sct",
-          "code": "73056007",
-          "display": "Right breast structure (body structure)"
+        "patternCodeableConcept": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "73056007"
+            }
+          ]
         }
       },
       {
@@ -371,6 +391,16 @@
             ]
           }
         ],
+        "constraint": [
+          {
+            "key": "ele-1",
+            "severity": "error",
+            "human": "All FHIR elements must have a @value or children",
+            "expression": "hasValue() or (children().count() > id.count())",
+            "xpath": "@value|f:*|h:div",
+            "source": "http://hl7.org/fhir/StructureDefinition/Element"
+          }
+        ],
         "mustSupport": true,
         "isModifier": false,
         "isSummary": true,
@@ -405,6 +435,16 @@
             "targetProfile": [
               "http://hl7.org/fhir/us/breast-radiology/StructureDefinition/MRIFinding"
             ]
+          }
+        ],
+        "constraint": [
+          {
+            "key": "ele-1",
+            "severity": "error",
+            "human": "All FHIR elements must have a @value or children",
+            "expression": "hasValue() or (children().count() > id.count())",
+            "xpath": "@value|f:*|h:div",
+            "source": "http://hl7.org/fhir/StructureDefinition/Element"
           }
         ],
         "mustSupport": true,
@@ -443,6 +483,16 @@
             ]
           }
         ],
+        "constraint": [
+          {
+            "key": "ele-1",
+            "severity": "error",
+            "human": "All FHIR elements must have a @value or children",
+            "expression": "hasValue() or (children().count() > id.count())",
+            "xpath": "@value|f:*|h:div",
+            "source": "http://hl7.org/fhir/StructureDefinition/Element"
+          }
+        ],
         "mustSupport": true,
         "isModifier": false,
         "isSummary": true,
@@ -477,6 +527,16 @@
             "targetProfile": [
               "http://hl7.org/fhir/us/breast-radiology/StructureDefinition/USFinding"
             ]
+          }
+        ],
+        "constraint": [
+          {
+            "key": "ele-1",
+            "severity": "error",
+            "human": "All FHIR elements must have a @value or children",
+            "expression": "hasValue() or (children().count() > id.count())",
+            "xpath": "@value|f:*|h:div",
+            "source": "http://hl7.org/fhir/StructureDefinition/Element"
           }
         ],
         "mustSupport": true,
