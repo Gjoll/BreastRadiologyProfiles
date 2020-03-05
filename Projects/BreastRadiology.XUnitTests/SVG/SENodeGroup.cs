@@ -46,6 +46,7 @@ namespace BreastRadiology.XUnitTests
 
         public SENodeGroup(String title, bool showCardinalities)
         {
+            //Debug.Assert(showCardinalities == true);
             this.ShowCardinalities = showCardinalities;
             if (title == null)
                 throw new Exception("Title must be non empty for sorting");

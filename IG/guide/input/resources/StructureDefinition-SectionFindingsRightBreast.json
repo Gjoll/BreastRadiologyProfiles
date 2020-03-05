@@ -2232,7 +2232,7 @@
         "definition": "This slice references the target 'Mammography Finding'.",
         "comment": "When using this element, an observation will typically have either a value or a set of related resources, although both may be present in some cases.  For a discussion on the ways Observations can assembled in groups together, see [Notes](observation.html#obsgrouping) below.  Note that a system may calculate results from [QuestionnaireResponse](questionnaireresponse.html)  into a final score and represent the score as an Observation.",
         "min": 0,
-        "max": "*",
+        "max": "1",
         "base": {
           "path": "Observation.hasMember",
           "min": 0,
@@ -2278,7 +2278,7 @@
         "definition": "This slice references the target 'MRI Finding'.",
         "comment": "When using this element, an observation will typically have either a value or a set of related resources, although both may be present in some cases.  For a discussion on the ways Observations can assembled in groups together, see [Notes](observation.html#obsgrouping) below.  Note that a system may calculate results from [QuestionnaireResponse](questionnaireresponse.html)  into a final score and represent the score as an Observation.",
         "min": 0,
-        "max": "*",
+        "max": "1",
         "base": {
           "path": "Observation.hasMember",
           "min": 0,
@@ -2324,7 +2324,7 @@
         "definition": "This slice references the target 'NM Finding'.",
         "comment": "When using this element, an observation will typically have either a value or a set of related resources, although both may be present in some cases.  For a discussion on the ways Observations can assembled in groups together, see [Notes](observation.html#obsgrouping) below.  Note that a system may calculate results from [QuestionnaireResponse](questionnaireresponse.html)  into a final score and represent the score as an Observation.",
         "min": 0,
-        "max": "*",
+        "max": "1",
         "base": {
           "path": "Observation.hasMember",
           "min": 0,
@@ -2370,7 +2370,7 @@
         "definition": "This slice references the target 'Ultra-Sound Finding'.",
         "comment": "When using this element, an observation will typically have either a value or a set of related resources, although both may be present in some cases.  For a discussion on the ways Observations can assembled in groups together, see [Notes](observation.html#obsgrouping) below.  Note that a system may calculate results from [QuestionnaireResponse](questionnaireresponse.html)  into a final score and represent the score as an Observation.",
         "min": 0,
-        "max": "*",
+        "max": "1",
         "base": {
           "path": "Observation.hasMember",
           "min": 0,
@@ -3201,7 +3201,7 @@
         "definition": "This slice references the target 'Mammography Finding'.",
         "comment": "When using this element, an observation will typically have either a value or a set of related resources, although both may be present in some cases.  For a discussion on the ways Observations can assembled in groups together, see [Notes](observation.html#obsgrouping) below.  Note that a system may calculate results from [QuestionnaireResponse](questionnaireresponse.html)  into a final score and represent the score as an Observation.",
         "min": 0,
-        "max": "*",
+        "max": "1",
         "base": {
           "path": "Observation.hasMember",
           "min": 0,
@@ -3247,7 +3247,7 @@
         "definition": "This slice references the target 'MRI Finding'.",
         "comment": "When using this element, an observation will typically have either a value or a set of related resources, although both may be present in some cases.  For a discussion on the ways Observations can assembled in groups together, see [Notes](observation.html#obsgrouping) below.  Note that a system may calculate results from [QuestionnaireResponse](questionnaireresponse.html)  into a final score and represent the score as an Observation.",
         "min": 0,
-        "max": "*",
+        "max": "1",
         "base": {
           "path": "Observation.hasMember",
           "min": 0,
@@ -3293,7 +3293,7 @@
         "definition": "This slice references the target 'NM Finding'.",
         "comment": "When using this element, an observation will typically have either a value or a set of related resources, although both may be present in some cases.  For a discussion on the ways Observations can assembled in groups together, see [Notes](observation.html#obsgrouping) below.  Note that a system may calculate results from [QuestionnaireResponse](questionnaireresponse.html)  into a final score and represent the score as an Observation.",
         "min": 0,
-        "max": "*",
+        "max": "1",
         "base": {
           "path": "Observation.hasMember",
           "min": 0,
@@ -3339,7 +3339,7 @@
         "definition": "This slice references the target 'Ultra-Sound Finding'.",
         "comment": "When using this element, an observation will typically have either a value or a set of related resources, although both may be present in some cases.  For a discussion on the ways Observations can assembled in groups together, see [Notes](observation.html#obsgrouping) below.  Note that a system may calculate results from [QuestionnaireResponse](questionnaireresponse.html)  into a final score and represent the score as an Observation.",
         "min": 0,
-        "max": "*",
+        "max": "1",
         "base": {
           "path": "Observation.hasMember",
           "min": 0,

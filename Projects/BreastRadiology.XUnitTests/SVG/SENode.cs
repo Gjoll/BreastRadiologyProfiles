@@ -6,7 +6,7 @@ using System.Text;
 
 namespace BreastRadiology.XUnitTests
 {
-    [DebuggerDisplay("{AllText()}")]
+    [DebuggerDisplay("{AllText()}{Annotations()}")]
     public class SENode
     {
         private float width;
@@ -45,6 +45,18 @@ namespace BreastRadiology.XUnitTests
         {
         }
 
+        public String Annotations()
+        {
+            StringBuilder sb = new StringBuilder();
+            sb.Append("-");
+            if (String.IsNullOrEmpty(this.IncomingAnnotation) == false)
+                sb.Append(this.IncomingAnnotation);
+            sb.Append("-");
+            if (String.IsNullOrEmpty(this.OutgoingAnnotation) == false)
+                sb.Append(this.OutgoingAnnotation);
+
+            return sb.ToString();
+        }
         public String AllText()
         {
             StringBuilder sb = new StringBuilder();

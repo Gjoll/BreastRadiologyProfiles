@@ -216,7 +216,7 @@ namespace BreastRadiology.XUnitTests
             JArray references = (JArray)link.References;
             if (references != null)
             {
-                SENodeGroup refGroup = new SENodeGroup("ref", false);
+                SENodeGroup refGroup = new SENodeGroup("ref", true);
                 componentGroup.AppendChild(refGroup);
 
                 foreach (JValue item in references)

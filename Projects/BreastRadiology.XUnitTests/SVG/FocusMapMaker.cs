@@ -40,11 +40,11 @@ namespace BreastRadiology.XUnitTests
         {
             if (focusNode.Name.Contains("Fragment", new StringComparison()) == true)
                 return;
-            //Debug.Assert(focusNode.Name != "BreastRadReport");
+            //Debug.Assert(focusNode.Name != "SectionFindingsLeftBreast");
 
             SvgEditor e = new SvgEditor();
-            SENodeGroup parentsGroup = new SENodeGroup("parents", false);
-            SENodeGroup focusGroup = new SENodeGroup("focus", false);
+            SENodeGroup parentsGroup = new SENodeGroup("parents", true);
+            SENodeGroup focusGroup = new SENodeGroup("focus", true);
             SENodeGroup childrenGroup = new SENodeGroup("children", true);
             parentsGroup.AppendChild(focusGroup);
             focusGroup.AppendChild(childrenGroup);
@@ -69,7 +69,7 @@ namespace BreastRadiology.XUnitTests
 
                     alreadyLinkedResources.Add(parentNode.ResourceUrl);
                     SENode node = this.CreateResourceNode(parentNode, this.ReferenceColor(parentMapNode), 
-                        new String[] { link.Cardinality?.ToString() }, 
+                        new String[] { null, link.Cardinality?.ToString() }, 
                         true);
                     parents.Add(node);
                 }
@@ -135,7 +135,7 @@ namespace BreastRadiology.XUnitTests
                                 nodeGroup.AppendNode(node);
 
                                 {
-                                    SENodeGroup extGroup = new SENodeGroup("extension", false);
+                                    SENodeGroup extGroup = new SENodeGroup("extension", true);
                                     nodeGroup.AppendChild(extGroup);
                                     SENode extNode;
                                     String extUrl = link.LinkTarget.ToObject<String>().Trim();
