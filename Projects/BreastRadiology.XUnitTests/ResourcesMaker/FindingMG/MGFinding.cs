@@ -48,7 +48,7 @@ namespace BreastRadiology.XUnitTests
                 e.SliceTargetReference( sliceElementDef, Self.AbnormalityForeignObject.Value());
                 e.SliceTargetReference( sliceElementDef, Self.AbnormalityLymphNode.Value());
                 e.SliceTargetReference( sliceElementDef, Self.AbnormalityMass.Value());
-                e.SliceTargetReference( sliceElementDef, Self.AssociatedFeatures.Value());
+                e.SliceTargetReference( sliceElementDef, Self.AssociatedFeature.Value());
                 e.SliceTargetReference( sliceElementDef, Self.AbnormalityFibroadenoma.Value());
                 e.SliceTargetReference( sliceElementDef, Self.MGAbnormalityArchitecturalDistortion.Value());
                 e.SliceTargetReference( sliceElementDef, Self.MGAbnormalityAsymmetry.Value());

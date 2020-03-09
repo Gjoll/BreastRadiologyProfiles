@@ -695,8 +695,7 @@ namespace BreastRadiology.XUnitTests
                 "Regions",
                     "1015", "1014", "AxillaI", "AxillaII", "AxillaIII", "1515", "1511", "1013");
             WriteIds("ObservedFeature",
-                @"Common\AssociatedFeatures\ObservedFeature.cs", "ObservedFeatureCS",
-                Filter("Associated findings", "Associated findings").Remove("ARCHITECTURAL DISTORTION"));
+                @"Common\AssociatedFeatures\AssociatedFeature.cs", "AssociatedFeatureCS");
 
             this.spreadSheetData.Save();
         }

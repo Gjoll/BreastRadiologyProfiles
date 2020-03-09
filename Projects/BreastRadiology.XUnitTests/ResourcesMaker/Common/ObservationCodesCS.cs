@@ -25,7 +25,7 @@ Observation SectionFindingsRightBreast
             new Coding(this.ObservationCodesUrl, "mgFindingObservationObservation", "MG Finding observation");
         Coding ObservationCodeAbnormalityCyst => 
             new Coding(this.ObservationCodesUrl, "abnormalityCyst", "Abnormality Cyst observation");
-        Coding ObservationCodeAssociatedFeatures =>
+        Coding ObservationCodeAssociatedFeature =>
             new Coding(this.ObservationCodesUrl, "associatedFeaturesObservation", "Associated Features observation");
         Coding ObservationCodeMGAbnormalityArchitecturalDistortion =>
             new Coding(this.ObservationCodesUrl, "mgAbnormalityArchitecturalDistortionObservation", "Abnormality Architectural Distortion observation");
@@ -35,8 +35,6 @@ Observation SectionFindingsRightBreast
             new Coding(this.ObservationCodesUrl, "tumorSatelliteObservation", "Tumor Satellite observation");
         Coding ObservationCodeMGAbnormalityCalcification =>
             new Coding(this.ObservationCodesUrl, "mgAbnormalityCalcificationObservation", "Abnormality Calcification observation");
-        Coding ObservationCodeObservedFeature =>
-            new Coding(this.ObservationCodesUrl, "featureObservation", "Observed Feature observation");
         Coding ObservationCodeAbnormalityDuct =>
             new Coding(this.ObservationCodesUrl, "abnormalityDuctObservation", "Abnormality Duct observation");
         Coding ObservationCodeAbnormalityForeignObject =>
@@ -85,7 +83,7 @@ Observation SectionFindingsRightBreast
                                 .SetDefinition("Observation.code to identify an AbnormalityCyst observation")
                                 ,
                             new ConceptDef()
-                                .SetCode(Self.ObservationCodeAssociatedFeatures)
+                                .SetCode(Self.ObservationCodeAssociatedFeature)
                                 .SetDefinition("Observation.code to identify an AssociatedFeatures observation")
                                 ,
                             new ConceptDef()
@@ -103,10 +101,6 @@ Observation SectionFindingsRightBreast
                             new ConceptDef()
                                 .SetCode(Self.ObservationCodeMGAbnormalityCalcification)
                                 .SetDefinition("Observation.code to identify an MGAbnormalityCalcification observation")
-                                ,
-                            new ConceptDef()
-                                .SetCode(Self.ObservationCodeObservedFeature)
-                                .SetDefinition("Observation.code to identify an ObservedFeature observation")
                                 ,
                             new ConceptDef()
                                 .SetCode(Self.ObservationCodeAbnormalityDuct)

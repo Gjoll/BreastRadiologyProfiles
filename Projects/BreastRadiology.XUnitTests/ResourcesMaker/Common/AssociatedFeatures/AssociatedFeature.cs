@@ -13,17 +13,17 @@ namespace BreastRadiology.XUnitTests
 {
     partial class ResourcesMaker : ConverterBase
     {
-        CSTaskVar ObservedFeatureCS = new CSTaskVar(
+        CSTaskVar AssociatedFeatureCS = new CSTaskVar(
              (out CodeSystem vs) =>
                  vs = Self.CreateCodeSystem(
-                         "ObservedFeatureCS",
-                         "Observed Feature CodeSystem",
-                         "ObservedFeature/CodeSystem",
-                         "Observed Feature seen during a breast examination.",
+                         "AssociatedFeatureCS",
+                         "Associated Feature CodeSystem",
+                         "AssociatedFeature/CodeSystem",
+                         "Associated Feature seen during a breast examination.",
                          Group_CommonCodesCS,
                          new ConceptDef[]
                          {
-                            //+ ObservedFeatureCS
+                            //+ AssociatedFeatureCS
                             #region Codes
                             new ConceptDef()
                                 .SetCode("ArchitecturalDistortion")
@@ -406,21 +406,21 @@ namespace BreastRadiology.XUnitTests
                                     "differential diagnoses. ",
                                     "###URL#https://oxfordmedicine.com/view/10.1093/med/9780190270261.001.0001/med-9780190270261-chapter-48")
                             #endregion // Codes
-                            //- ObservedFeatureCS
+                            //- AssociatedFeatureCS
                          })
              );
 
 
-        VSTaskVar ObservedFeatureVS = new VSTaskVar(
+        VSTaskVar AssociatedFeatureVS = new VSTaskVar(
             (out ValueSet vs) =>
             {
                 vs = Self.CreateValueSet(
-                        "ObservedFeatureVS",
-                        "Observed Feature ValueSet",
-                        "Observed Feature/ValueSet",
-                        "Observed feature observed during a Breast Radiology exam value set",
+                        "AssociatedFeatureVS",
+                        "Associated Feature ValueSet",
+                        "Associated Feature/ValueSet",
+                        "Associated feature observed during a Breast Radiology exam value set",
                         Group_CommonCodesVS,
-                        Self.ObservedFeatureCS.Value());
+                        Self.AssociatedFeatureCS.Value());
 
                 IntroDoc valueSetIntroDoc = Self.CreateIntroDocVS(vs);
                 valueSetIntroDoc
@@ -431,16 +431,16 @@ namespace BreastRadiology.XUnitTests
             }
             );
 
-        SDTaskVar ObservedFeature = new SDTaskVar(
+        SDTaskVar AssociatedFeature = new SDTaskVar(
             (out StructureDefinition s) =>
             {
-                ValueSet binding = Self.ObservedFeatureVS.Value();
+                ValueSet binding = Self.AssociatedFeatureVS.Value();
 
-                SDefEditor e = Self.CreateEditor("ObservedFeature",
-                    "Observed Feature",
-                    "Observed Feature",
+                SDefEditor e = Self.CreateEditor("AssociatedFeature",
+                    "Associated Feature",
+                    "Associated Feature",
                     Global.ObservationUrl,
-                    $"{Group_CommonResources}/AssociatedFeature/ObservedFeature",
+                    $"{Group_CommonResources}/AssociatedFeature/AssociatedFeature",
                         "ObservationLeaf")
                     .AddFragRef(Self.ObservationLeafFragment.Value())
                     .AddFragRef(Self.ObservationNoDeviceFragment.Value())
@@ -448,7 +448,7 @@ namespace BreastRadiology.XUnitTests
                     .AddFragRef(Self.ObservationNoComponentFragment.Value())
                     .AddFragRef(Self.BreastBodyLocationRequiredFragment.Value())
                     .AddFragRef(Self.ObservationComponentObservedCountFragment.Value())
-                    .Description("Observed Feature Observation",
+                    .Description("Associated Feature Observation",
                         new Markdown()
                             .Paragraph("The feature observed is defined by the codeable concept in the value[x] field.")
                     )
@@ -460,18 +460,18 @@ namespace BreastRadiology.XUnitTests
 
                 // Set Observation.code to unique value for this profile.
                 e.Select("code")
-                    .Pattern(Self.ObservationCodeObservedFeature.ToCodeableConcept().ToPattern())
-                    .DefaultValueExtension(Self.ObservationCodeObservedFeature.ToCodeableConcept())
+                    .Pattern(Self.ObservationCodeAssociatedFeature.ToCodeableConcept().ToPattern())
+                    .DefaultValueExtension(Self.ObservationCodeAssociatedFeature.ToCodeableConcept())
                     ;
 
                 e.StartComponentSliceing();
                 e.ComponentSliceCodeableConcept("featureType",
-                    Self.ComponentSliceCodeObservedFeatureType.ToCodeableConcept(),
+                    Self.ComponentSliceCodeAssociatedFeatureType.ToCodeableConcept(),
                     binding,
                     BindingStrength.Required,
                     1,
                     "1",
-                    "Observed Feature Type",
+                    "Associated Feature Type",
                     "defines the observed feature");
             });
     }

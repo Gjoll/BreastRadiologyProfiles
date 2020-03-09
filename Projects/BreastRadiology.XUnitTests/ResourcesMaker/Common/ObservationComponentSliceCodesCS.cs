@@ -46,7 +46,7 @@ namespace BreastRadiology.XUnitTests
             new Coding(this.ObservationComponentSliceCodesUrl, "obsDistribution", "Component code for 'Observed Distribution' slice");
         Coding ComponentSliceCodeObservedCount =>
             new Coding(this.ObservationComponentSliceCodesUrl, "obsCount", "Component code for 'Observed Count' slice");
-        Coding ComponentSliceCodeObservedFeatureType =>
+        Coding ComponentSliceCodeAssociatedFeatureType =>
             new Coding(this.ObservationComponentSliceCodesUrl, "featureType", "Component code for 'Feature Type' slice");
         Coding ComponentSliceCodeOrientation =>
             new Coding(this.ObservationComponentSliceCodesUrl, "orientation", "Component code for 'Orientation' slice");
@@ -147,7 +147,7 @@ namespace BreastRadiology.XUnitTests
                                 .SetDefinition("Code to identify the component slice ObservedSize")
                                 ,
                             new ConceptDef()
-                                .SetCode(Self.ComponentSliceCodeObservedFeatureType)
+                                .SetCode(Self.ComponentSliceCodeAssociatedFeatureType)
                                 .SetDefinition("Code to identify the component slice ObservedFeatureType")
                                 ,
 
