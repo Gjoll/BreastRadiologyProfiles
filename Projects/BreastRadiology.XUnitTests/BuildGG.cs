@@ -694,8 +694,9 @@ namespace BreastRadiology.XUnitTests
                 @"Extensions\BreastBodyLocationExtension.cs",
                 "Regions",
                     "1015", "1014", "AxillaI", "AxillaII", "AxillaIII", "1515", "1511", "1013");
-            WriteIds("ObservedFeature",
-                @"Common\AssociatedFeatures\AssociatedFeature.cs", "AssociatedFeatureCS");
+            WriteIds("AssociatedFeature",
+                @"Common\AssociatedFeatures\AssociatedFeature.cs", "AssociatedFeatureCS",
+                Filter("Associated findings", "Associated findings"));
 
             this.spreadSheetData.Save();
         }
