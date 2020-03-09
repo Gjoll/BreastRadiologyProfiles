@@ -17,7 +17,7 @@
   "description": "Observation Codes code system",
   "caseSensitive": true,
   "content": "complete",
-  "count": 22,
+  "count": 21,
   "concept": [
     {
       "code": "mgFindingObservationObservation",
@@ -53,11 +53,6 @@
       "code": "mgAbnormalityCalcificationObservation",
       "display": "Abnormality Calcification observation",
       "definition": "Observation.code to identify an MGAbnormalityCalcification observation"
-    },
-    {
-      "code": "featureObservation",
-      "display": "Observed Feature observation",
-      "definition": "Observation.code to identify an ObservedFeature observation"
     },
     {
       "code": "abnormalityDuctObservation",

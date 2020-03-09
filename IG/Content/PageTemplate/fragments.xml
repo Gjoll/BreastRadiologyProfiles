@@ -46,6 +46,12 @@
 	    <img src="Frag-AbnormalityMass.svg" alt="AbnormalityMass"/>
 	</object>
 	<p>
+	Fragment Diagram AssociatedFeature
+	</p>
+	<object data="Frag-AssociatedFeature.svg" type="image/svg+xml">
+	    <img src="Frag-AssociatedFeature.svg" alt="AssociatedFeature"/>
+	</object>
+	<p>
 	Fragment Diagram AssociatedFeatures
 	</p>
 	<object data="Frag-AssociatedFeatures.svg" type="image/svg+xml">

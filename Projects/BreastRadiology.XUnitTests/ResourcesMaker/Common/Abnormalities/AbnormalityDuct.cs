@@ -37,8 +37,8 @@ namespace BreastRadiology.XUnitTests
                                     "the nipples.")
                             ,
                             new ConceptDef()
-                                .SetCode("DuctDilatedATLASSolitaryDilatedDuct")
-                                .SetDisplay("Duct dilated ATLAS solitary dilated duct")
+                                .SetCode("SolitaryDilatedDuct")
+                                .SetDisplay("Solitary dilated duct")
                                 .MammoId("694.602")
                                 .ValidModalities(Modalities.MG | Modalities.US)
                                 .SetUMLS("When it is malignant, solitary dilated duct appears " +

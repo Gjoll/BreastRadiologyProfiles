@@ -584,7 +584,9 @@ namespace BreastRadiology.XUnitTests
             WriteIntroDocDescription("MGAbnormalityFatNecrosis", "IntroDocDescription", @"FindingMG\MGAbnormalityFatNecrosis.cs", "688");
 
             //UpdateClass("MGAbnormalityFatNecrosis", "688");
-            WriteIds("BiRads", @"Common\BiRadsAssessmentCategoryCS.cs", "Codes",
+            WriteIds("BiRads", 
+                @"Common\BiRadsAssessmentCategoryCS.cs", 
+                "Codes",
                 Filter("Impression", "Birads").Remove("790", "791", "174", "173"));
 
             WriteIds("AbnormalityCyst",
@@ -695,8 +697,13 @@ namespace BreastRadiology.XUnitTests
                 "Regions",
                     "1015", "1014", "AxillaI", "AxillaII", "AxillaIII", "1515", "1511", "1013");
             WriteIds("AssociatedFeature",
-                @"Common\AssociatedFeatures\AssociatedFeature.cs", "AssociatedFeatureCS",
+                @"Common\AssociatedFeature.cs",
+                "AssociatedFeatureCS",
                 Filter("Associated findings", "Associated findings"));
+            WriteIds("AssociatedFeature",
+                @"Common\AssociatedFeature.cs",
+                "AssociatedFeature2CS",
+                Filter("Associated findings", "Associated findings calcs"));
 
             this.spreadSheetData.Save();
         }
