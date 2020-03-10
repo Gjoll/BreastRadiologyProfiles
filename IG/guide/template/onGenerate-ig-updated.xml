@@ -18,7 +18,7 @@
    <title value="Breast Radiology Reporting - 1st STU ballot"/>
    <status value="draft"/>
    <experimental value="false"/>
-   <date value="2020-03-09T17:13:04-05:00"/>
+   <date value="2020-03-09T20:44:25-05:00"/>
    <publisher value="Hl7 - Clinical Interoperability Council"/>
    <contact>
       <telecom>
@@ -512,21 +512,6 @@
             <valueString value="CodeSystem"/>
          </extension>
          <extension url="http://hl7.org/fhir/StructureDefinition/implementationguide-page">
-            <valueUri value="CodeSystem-ObservedFeatureCS.html"/>
-         </extension>
-         <reference>
-            <reference value="CodeSystem/ObservedFeatureCS"/>
-         </reference>
-         <name value="Observed Feature CodeSystem"/>
-         <description value="Observed Feature seen during a breast examination."/>
-         <exampleBoolean value="false"/>
-         <groupingId value="CommonCodesCS"/>
-      </resource>
-      <resource>
-         <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
-            <valueString value="CodeSystem"/>
-         </extension>
-         <extension url="http://hl7.org/fhir/StructureDefinition/implementationguide-page">
             <valueUri value="CodeSystem-OrientationCS.html"/>
          </extension>
          <reference>
@@ -947,21 +932,6 @@
             <valueString value="ValueSet"/>
          </extension>
          <extension url="http://hl7.org/fhir/StructureDefinition/implementationguide-page">
-            <valueUri value="ValueSet-ObservedFeatureVS.html"/>
-         </extension>
-         <reference>
-            <reference value="ValueSet/ObservedFeatureVS"/>
-         </reference>
-         <name value="Observed Feature ValueSet"/>
-         <description value="Observed feature observed during a Breast Radiology exam value set"/>
-         <exampleBoolean value="false"/>
-         <groupingId value="CommonCodesVS"/>
-      </resource>
-      <resource>
-         <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
-            <valueString value="ValueSet"/>
-         </extension>
-         <extension url="http://hl7.org/fhir/StructureDefinition/implementationguide-page">
             <valueUri value="ValueSet-OrientationVS.html"/>
          </extension>
          <reference>
@@ -1187,21 +1157,6 @@
             <valueString value="StructureDefinition:resource"/>
          </extension>
          <extension url="http://hl7.org/fhir/StructureDefinition/implementationguide-page">
-            <valueUri value="StructureDefinition-AssociatedFeatures.html"/>
-         </extension>
-         <reference>
-            <reference value="StructureDefinition/AssociatedFeatures"/>
-         </reference>
-         <name value="Associated Features"/>
-         <description value="Associated Features Observation"/>
-         <exampleBoolean value="false"/>
-         <groupingId value="CommonResources"/>
-      </resource>
-      <resource>
-         <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
-            <valueString value="StructureDefinition:resource"/>
-         </extension>
-         <extension url="http://hl7.org/fhir/StructureDefinition/implementationguide-page">
             <valueUri value="StructureDefinition-AssociatedFeature.html"/>
          </extension>
          <reference>
@@ -1209,21 +1164,6 @@
          </reference>
          <name value="Associated Feature"/>
          <description value="Associated Feature Observation"/>
-         <exampleBoolean value="false"/>
-         <groupingId value="CommonResources"/>
-      </resource>
-      <resource>
-         <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
-            <valueString value="StructureDefinition:resource"/>
-         </extension>
-         <extension url="http://hl7.org/fhir/StructureDefinition/implementationguide-page">
-            <valueUri value="StructureDefinition-ObservedFeature.html"/>
-         </extension>
-         <reference>
-            <reference value="StructureDefinition/ObservedFeature"/>
-         </reference>
-         <name value="Observed Feature"/>
-         <description value="Observed Feature Observation"/>
          <exampleBoolean value="false"/>
          <groupingId value="CommonResources"/>
       </resource>
@@ -1906,18 +1846,8 @@
                <generation value="generated"/>
             </page>
             <page>
-               <nameUrl value="StructureDefinition-AssociatedFeatures.html"/>
-               <title value="Associated Features"/>
-               <generation value="generated"/>
-            </page>
-            <page>
                <nameUrl value="StructureDefinition-AssociatedFeature.html"/>
                <title value="Associated Feature"/>
-               <generation value="generated"/>
-            </page>
-            <page>
-               <nameUrl value="StructureDefinition-ObservedFeature.html"/>
-               <title value="Observed Feature"/>
                <generation value="generated"/>
             </page>
             <page>
@@ -2028,11 +1958,6 @@
             <page>
                <nameUrl value="ValueSet-ObservedChangesVS.html"/>
                <title value="Observed Changes ValueSet"/>
-               <generation value="generated"/>
-            </page>
-            <page>
-               <nameUrl value="ValueSet-ObservedFeatureVS.html"/>
-               <title value="Observed Feature ValueSet"/>
                <generation value="generated"/>
             </page>
             <page>
@@ -2168,11 +2093,6 @@
             <page>
                <nameUrl value="CodeSystem-ObservedChangesCS.html"/>
                <title value="Observed Changes CodeSystem"/>
-               <generation value="generated"/>
-            </page>
-            <page>
-               <nameUrl value="CodeSystem-ObservedFeatureCS.html"/>
-               <title value="Observed Feature CodeSystem"/>
                <generation value="generated"/>
             </page>
             <page>

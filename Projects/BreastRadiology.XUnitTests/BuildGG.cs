@@ -233,6 +233,47 @@ namespace BreastRadiology.XUnitTests
             WriteIds(className, outputCodePath, csBlockName, (IEnumerable<String>)penIds);
         }
 
+        public IEnumerable<String> RemovePlurals(IEnumerable<String> values)
+        {
+            List<String> items = values.ToList();
+            Int32 i = 0;
+
+            String PenCode(String penId)
+            {
+                if (this.spreadSheetData.TryGetRow(penId, out DataRow row) == false)
+                    throw new Exception($"Missing value for penid '{penId}'");
+
+                return FormatCode(row[this.spreadSheetData.itemNameCol].ToString());
+            }
+
+            bool IsPlural(String id)
+            {
+                String idCode = PenCode(id).Trim();
+                if (idCode.EndsWith("es"))
+                    idCode = idCode.Substring(0, idCode.Length - 2);
+                else if (idCode.EndsWith("s"))
+                    idCode = idCode.Substring(0, idCode.Length - 1);
+                else
+                    return false;
+                for (Int32 j = 0; j < items.Count; j++)
+                {
+                    String otherValue = PenCode(items[j]).Trim();
+                    if (String.Compare(idCode, otherValue, true) == 0)
+                        return true;
+                }
+                return false;
+            }
+
+            while (i < items.Count)
+            {
+                String id = items[i];
+                String value = PenCode(id);
+                if (IsPlural(items[i]) == false)
+                    yield return id;
+                i += 1;
+            }
+        }
+
         String FormatCode(String s)
         {
             Int32 index = s.ToUpper().IndexOf(" ADD PREFIX");
@@ -699,7 +740,7 @@ namespace BreastRadiology.XUnitTests
             WriteIds("AssociatedFeature",
                 @"Common\AssociatedFeature.cs",
                 "AssociatedFeatureCS",
-                Filter("Associated findings", "Associated findings"));
+                RemovePlurals(Filter("Associated findings", "Associated findings")));
             WriteIds("AssociatedFeature",
                 @"Common\AssociatedFeature.cs",
                 "AssociatedFeature2CS",

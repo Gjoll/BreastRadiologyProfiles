@@ -73,28 +73,6 @@ namespace BreastRadiology.XUnitTests
                                      "###URL#https://www.ncbi.nlm.nih.gov/pubmed/30059952")
                              ,
                              new ConceptDef()
-                                 .SetCode("BiopsyClips")
-                                 .SetDisplay("Biopsy clips")
-                                 .MammoId("472.264")
-                                 .ValidModalities(Modalities.MG | Modalities.MRI | Modalities.US)
-                                 .SetSnomedCode("470272007")
-                                 .SetSnomedDescription("Physical Object | Implantable lesion localization " +
-                                     "marker (Object)")
-                                 .SetUMLS("Tissue marker placement after image-guided breast " +
-                                     "biopsy has become a routine component ",
-                                     "of clinical practice. ",
-                                     "Marker placement distinguishes multiple biopsied " +
-                                     "lesions within the same breast, ",
-                                     "prevents re-biopsy of benign lesions, enables multi-modality " +
-                                     "correlation, guides ",
-                                     "pre-operative localization and helps confirm surgical " +
-                                     "target removal. ",
-                                     "Numerous breast tissue markers are currently available, " +
-                                     "with varied shapes, composition, ",
-                                     "and associated bio-absorbable components. ",
-                                     "###URL#https://www.ncbi.nlm.nih.gov/pubmed/30059952")
-                             ,
-                             new ConceptDef()
                                  .SetCode("BrachytherapyTube")
                                  .SetDisplay("Brachytherapy tube")
                                  .MammoId("475")
@@ -373,21 +351,6 @@ namespace BreastRadiology.XUnitTests
                                      "may be used during a single surgical procedure. ",
                                      "They remain inside the patient's body after the wounds " +
                                      "are healed.")
-                             ,
-                             new ConceptDef()
-                                 .SetCode("SurgicalClips")
-                                 .SetDisplay("Surgical clips")
-                                 .MammoId("486")
-                                 .ValidModalities(Modalities.MG)
-                                 .SetSnomedCode("470342004")
-                                 .SetSnomedDescription("PhysicalObject | Implantable tissue clip (Object)")
-                                 .SetUMLS("A series of surgical staples or clips are used during " +
-                                     "surgery. ",
-                                     "In one push of a button the blood supply is cut off " +
-                                     "to the anatomical part being ",
-                                     "removed and a staple line is left in the patient " +
-                                     "and on the side where the pathology ",
-                                     "has been removed.")
                              ,
                              new ConceptDef()
                                  .SetCode("TrabecularThickening")

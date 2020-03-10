@@ -37,10 +37,6 @@
             "display": "Biopsy clip"
           },
           {
-            "code": "BiopsyClips",
-            "display": "Biopsy clips"
-          },
-          {
             "code": "BrachytherapyTube",
             "display": "Brachytherapy tube"
           },
@@ -121,12 +117,36 @@
             "display": "Surgical clip"
           },
           {
-            "code": "SurgicalClips",
-            "display": "Surgical clips"
-          },
-          {
             "code": "TrabecularThickening",
             "display": "Trabecular thickening"
+          },
+          {
+            "code": "CalcificationInMass",
+            "display": "Calcification in mass"
+          },
+          {
+            "code": "CalcificationNotOnMammogarm",
+            "display": "Calcification Not on mammogarm"
+          },
+          {
+            "code": "CalcificationOnMammogram",
+            "display": "Calcification on mammogram"
+          },
+          {
+            "code": "Calcifications",
+            "display": "Calcifications"
+          },
+          {
+            "code": "MicroCalcifications",
+            "display": "Micro calcifications"
+          },
+          {
+            "code": "MilkOfCalcium",
+            "display": "Milk of calcium"
+          },
+          {
+            "code": "RimCalcifications",
+            "display": "Rim calcifications"
           }
         ]
       }
