@@ -74,8 +74,7 @@ namespace BreastRadiology.XUnitTests
         public ElementTreeNode Get(String path)
         {
             // Note: First part is ignored, but has to be present.
-            String tPath = $"Observation.{path}";
-            if (this.snapNode.TryGetElementNode(tPath, out ElementTreeNode retVal) == true)
+            if (this.snapNode.TryGetChild(path, out ElementTreeNode retVal) == true)
                 return retVal;
             throw new Exception($"'{path}' not found");
         }
