@@ -631,7 +631,6 @@ namespace BreastRadiology.XUnitTests
             WriteIntroDocDescription("MGAbnormalityFatNecrosis", "IntroDocDescription", @"FindingMG\MGAbnormalityFatNecrosis.cs", "688");
             WriteIntroDocDescription("TumorSatellite", "IntroDocDescription", @"Common\TumorSatellite.cs", "623");
 
-            //UpdateClass("MGAbnormalityFatNecrosis", "688");
             WriteIds("BiRads",
                 @"Common\BiRadsAssessmentCategoryCS.cs",
                 "Codes",

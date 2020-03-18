@@ -26,7 +26,7 @@ namespace BreastRadiology.XUnitTests
                     .Description("Mammography Finding",
                         new Markdown()
                              .Paragraph("This resource is the Section Head for all Mammography findings.")
-                             .Paragraph("All mammography observation findings are referenced by this resoruces Observation.hasMember field.")
+                             .Paragraph("All mammography observation findings are referenced by this resources Observation.hasMember field.")
                     )
                     .AddFragRef(Self.ObservationSectionFragment.Value())
                     ;

@@ -271,7 +271,7 @@ namespace BreastRadiology.XUnitTests
                         sectionSlice.ElementDefinition
                             .Single()
                             .Short("Related Clinical Resources Section")
-                            .Definition("References to FHIR clinical resoruces used during the exam or referenced by this report.")
+                            .Definition("References to FHIR clinical resources used during the exam or referenced by this report.")
                             .MustSupport();
                         ;
                         e.AddComponentLink("Related Resources",
