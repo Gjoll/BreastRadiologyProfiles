@@ -314,7 +314,7 @@
             "code": "uri"
           }
         ],
-        "fixedUrl": "landMark",
+        "fixedUri": "landMark",
         "isModifier": false,
         "isSummary": false,
         "mapping": [
@@ -477,7 +477,7 @@
             "code": "uri"
           }
         ],
-        "fixedUrl": "distanceFromLandMark",
+        "fixedUri": "distanceFromLandMark",
         "isModifier": false,
         "isSummary": false,
         "mapping": [
@@ -795,7 +795,7 @@
             "code": "uri"
           }
         ],
-        "fixedUrl": "landMark"
+        "fixedUri": "landMark"
       },
       {
         "id": "Extension.extension:landMark.value[x]",
@@ -843,7 +843,7 @@
             "code": "uri"
           }
         ],
-        "fixedUrl": "distanceFromLandMark"
+        "fixedUri": "distanceFromLandMark"
       },
       {
         "id": "Extension.extension:distanceFromLandMark.value[x]",

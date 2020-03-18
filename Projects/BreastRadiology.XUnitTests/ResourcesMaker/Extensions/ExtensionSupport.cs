@@ -81,7 +81,7 @@ namespace BreastRadiology.XUnitTests
                 ElementDefinition elementUrl = new ElementDefinition()
                 .Path($"{extensionNode.ElementDefinition.Path}.url")
                 .ElementId($"{extensionNode.ElementDefinition.Path}:{sliceName}.url")
-                .Value(new FhirUrl(sliceName))
+                .Value(new FhirUri(sliceName))
                 .Type("uri")
                 .Definition(new Markdown()
                     .Paragraph($"Url for {sliceName} complex extension item.")
