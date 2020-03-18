@@ -47,7 +47,7 @@ namespace BreastRadiology.XUnitTests
                     ;
 
                 e.IntroDoc
-                    .ReviewedStatus("NOONE", "")
+                    .ReviewedStatus("No One", "")
                     //+ IntroDocDescription
                         .Description("Many breast masses are found within the zone of fibroglandular " +
                             "tissue or at a fat-fibroglandular",

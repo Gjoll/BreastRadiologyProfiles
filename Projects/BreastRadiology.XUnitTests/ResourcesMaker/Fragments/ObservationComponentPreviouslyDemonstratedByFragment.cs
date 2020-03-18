@@ -37,7 +37,7 @@ namespace BreastRadiology.XUnitTests
                            "Previously Demonstrated By",
                             "specifies what this observation has been previously demonstrated by");
                        e.IntroDoc
-                           .ReviewedStatus("NOONE", "")
+                           .ReviewedStatus("No One", "")
                            ;
                    });
     }

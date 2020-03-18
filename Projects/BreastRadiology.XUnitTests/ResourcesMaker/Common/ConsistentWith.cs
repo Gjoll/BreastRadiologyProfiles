@@ -59,7 +59,7 @@ namespace BreastRadiology.XUnitTests
                             "qualify the 'consistentWith' slice component value");
 
                        e.IntroDoc
-                           .ReviewedStatus("NOONE", "")
+                           .ReviewedStatus("No One", "")
                            ;
                    });
 

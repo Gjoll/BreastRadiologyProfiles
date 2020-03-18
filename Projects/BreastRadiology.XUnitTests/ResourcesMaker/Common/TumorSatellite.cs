@@ -110,7 +110,7 @@ namespace BreastRadiology.XUnitTests
                        }
 
                        e.IntroDoc
-                           .ReviewedStatus("NOONE", "")
+                           .ReviewedStatus("No One", "")
                            //+ IntroDocDescription
                                .Description("A group of tumor cells in an area near the primary " +
                                    "(original) tumor. ",

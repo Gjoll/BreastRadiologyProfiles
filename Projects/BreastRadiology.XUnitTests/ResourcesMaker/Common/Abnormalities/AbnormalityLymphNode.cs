@@ -209,7 +209,7 @@ namespace BreastRadiology.XUnitTests
                     ;
 
                 e.IntroDoc
-                    .ReviewedStatus("NOONE", "")
+                    .ReviewedStatus("No One", "")
                     ;
 
                 e.StartComponentSliceing();

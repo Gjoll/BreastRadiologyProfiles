@@ -464,7 +464,7 @@ namespace BreastRadiology.XUnitTests
 
                         IntroDoc valueSetIntroDoc = Self.CreateIntroDocVS(vs);
                         valueSetIntroDoc
-                            .ReviewedStatus("NOONE", "")
+                            .ReviewedStatus("No One", "")
                         ;
                         String outputPath = valueSetIntroDoc.Save();
                         Self.fc?.Mark(outputPath);
@@ -502,7 +502,7 @@ namespace BreastRadiology.XUnitTests
                 s = e.SDef;
 
                 e.IntroDoc
-                    .ReviewedStatus("NOONE", "")
+                    .ReviewedStatus("No One", "")
                     ;
 
                 // Set Observation.code to unique value for this profile.

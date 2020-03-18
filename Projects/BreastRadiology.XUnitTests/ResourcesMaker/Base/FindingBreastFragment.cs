@@ -26,7 +26,7 @@ namespace BreastRadiology.XUnitTests
                        s = e.SDef;
 
                        e.IntroDoc
-                           .ReviewedStatus("NOONE", "")
+                           .ReviewedStatus("No One", "")
                            ;
                        {
                            ValueSet binding = Self.BiRadsAssessmentCategoriesVS.Value();

@@ -40,7 +40,7 @@ namespace BreastRadiology.XUnitTests
 
         //        e.IntroDoc
         //            .ObservationSection("NM Mass")
-        //            .ReviewedStatus("NOONE", "")
+        //            .ReviewedStatus("No One", "")
         //            ;
 
         //        //ProfileTargetSlice[] targets = new ProfileTargetSlice[]

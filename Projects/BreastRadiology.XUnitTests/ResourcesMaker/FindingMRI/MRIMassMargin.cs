@@ -80,7 +80,7 @@ namespace BreastRadiology.XUnitTests
         //            IntroDoc valueSetIntroDoc = Self.CreateIntroDocVS(binding);
         //            valueSetIntroDoc
         //                .ValueSet(binding);
-        //                .ReviewedStatus("NOONE", "")
+        //                .ReviewedStatus("No One", "")
         //            ;
         //            String outputPath = valueSetIntroDoc.Save();
         //            Self.fc?.Mark(outputPath);
@@ -105,7 +105,7 @@ namespace BreastRadiology.XUnitTests
 
         //        e.IntroDoc
         //            .CodedObservationLeafNode("a MRI margin", binding)
-        //            .ReviewedStatus("NOONE", "")
+        //            .ReviewedStatus("No One", "")
         //            ;
 
         //        e.Select("value[x]")

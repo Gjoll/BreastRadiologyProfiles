@@ -141,7 +141,7 @@ namespace BreastRadiology.XUnitTests
                 {
                     IntroDoc valueSetIntroDoc = Self.CreateIntroDocVS(binding);
                     valueSetIntroDoc
-                        .ReviewedStatus("NOONE", "")
+                        .ReviewedStatus("No One", "")
                     ;
                     String outputPath = valueSetIntroDoc.Save();
                     Self.fc?.Mark(outputPath);
@@ -172,7 +172,6 @@ namespace BreastRadiology.XUnitTests
 
                     .Description("Cyst Observation",
                         new Markdown()
-                            .Paragraph("[PR]")
                     )
                     ;
                 s = e.SDef;
@@ -181,7 +180,7 @@ namespace BreastRadiology.XUnitTests
                     .DefaultValueExtension(Self.ObservationCodeAbnormalityCyst.ToCodeableConcept())
                     ;
                 e.IntroDoc
-                    .ReviewedStatus("NOONE", "")
+                    .ReviewedStatus("No One", "")
                     //+ IntroDocDescription
                         .Description("A cyst is a sac-like pocket of membranous tissue " +
                             "that contains fluid, air, or other ",

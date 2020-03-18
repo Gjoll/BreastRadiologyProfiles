@@ -98,7 +98,7 @@ namespace BreastRadiology.XUnitTests
                         binding);
                 }
                 e.IntroDoc
-                    .ReviewedStatus("NOONE", "")
+                    .ReviewedStatus("No One", "")
                     ;
             });
     }

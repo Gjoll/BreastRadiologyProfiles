@@ -53,7 +53,7 @@ namespace BreastRadiology.XUnitTests
                     ;
 
                 e.IntroDoc
-                    .ReviewedStatus("NOONE", "")
+                    .ReviewedStatus("No One", "")
                     //+ IntroDocDescription
                         .Description("Fat necrosis is a benign (not cancer) condition and " +
                             "does not increase risk of ",

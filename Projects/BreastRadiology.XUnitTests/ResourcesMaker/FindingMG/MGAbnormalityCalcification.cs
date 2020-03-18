@@ -477,7 +477,7 @@ namespace BreastRadiology.XUnitTests
                     ;
 
                 e.IntroDoc
-                    .ReviewedStatus("NOONE", "")
+                    .ReviewedStatus("No One", "")
                     //+ IntroDocDescription
                         .Description("Calcifications usually can't be felt, but they appear " +
                             "on a mammogram. ",

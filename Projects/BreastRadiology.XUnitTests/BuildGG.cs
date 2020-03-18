@@ -312,9 +312,9 @@ namespace BreastRadiology.XUnitTests
                 row[this.spreadSheetData.classCol] = classText;
             }
         }
-        void WriteIntroDocDescription(String className, 
+        void WriteIntroDocDescription(String className,
             String blockName,
-            String outputCodePath, 
+            String outputCodePath,
             String penId)
         {
             CodeEditor editor = new CodeEditor();
@@ -417,17 +417,24 @@ namespace BreastRadiology.XUnitTests
             editor.Save();
         }
 
-        IEnumerable<String> Filter(String listBoxName,
-            String structure)
+        IEnumerable<String> Filter(String listBoxNameName,
+            String structureName,
+            String className = null)
         {
             List<String> retVal = new List<string>();
 
             bool IsMatch(DataRow dr)
             {
-                if (dr[this.spreadSheetData.listBoxNameCol].ToString() != listBoxName)
+                if (dr[this.spreadSheetData.listBoxNameCol].ToString() != listBoxNameName)
                     return false;
-                if (dr[this.spreadSheetData.structureCol].ToString() != structure)
+                if (dr[this.spreadSheetData.structureCol].ToString() != structureName)
                     return false;
+                if (className != null)
+                {
+                    String[] classValue = dr[this.spreadSheetData.classCol].ToString().Split(",");
+                    if ((classValue.Length > 0) && (classValue[0] != className))
+                        return false;
+                }
                 return true;
             }
 
@@ -616,17 +623,17 @@ namespace BreastRadiology.XUnitTests
                 "BreastData.xlsx");
             this.spreadSheetData = new ExcelData(new Info(), filePath, "Sheet3");
 
-            WriteIntroDocDescription("TumorSatellite", "IntroDocDescription", @"Common\TumorSatellite.cs", "623");
             WriteIntroDocDescription("AbnormalityCyst", "IntroDocDescription", @"Common\Abnormalities\AbnormalityCyst.cs", "69");
             WriteIntroDocDescription("AbnormalityArchitecturalDistortion", "IntroDocDescription", @"FindingMG\MGAbnormalityArchitecturalDistortion.cs", "642");
             WriteIntroDocDescription("MGAbnormalityAsymmetry", "IntroDocDescription", @"FindingMG\MGAbnormalityAsymmetry.cs", "691");
             WriteIntroDocDescription("MGAbnormalityCalcification", "IntroDocDescription", @"FindingMG\MGAbnormalityCalcification.cs", "690");
             WriteIntroDocDescription("MGAbnormalityDensity", "IntroDocDescription", @"FindingMG\MGAbnormalityDensity.cs", "686");
             WriteIntroDocDescription("MGAbnormalityFatNecrosis", "IntroDocDescription", @"FindingMG\MGAbnormalityFatNecrosis.cs", "688");
+            WriteIntroDocDescription("TumorSatellite", "IntroDocDescription", @"Common\TumorSatellite.cs", "623");
 
             //UpdateClass("MGAbnormalityFatNecrosis", "688");
-            WriteIds("BiRads", 
-                @"Common\BiRadsAssessmentCategoryCS.cs", 
+            WriteIds("BiRads",
+                @"Common\BiRadsAssessmentCategoryCS.cs",
                 "Codes",
                 Filter("Impression", "Birads").Remove("790", "791", "174", "173"));
 
