@@ -101,6 +101,7 @@ namespace BreastRadiology.XUnitTests
 
                 e.IntroDoc
                     .ReviewedStatus("No One", "")
+                    .MissingDescription()
                     ;
 
                 // Set Observation.code to unique value for this profile.
@@ -117,7 +118,7 @@ namespace BreastRadiology.XUnitTests
                     0,
                     "1",
                     "FibroAdenoma Type",
-                    "refines the fibroadenema type");
+                    "refine the fibroadenema type");
             });
     }
 }

@@ -198,7 +198,7 @@ namespace BreastRadiology.XUnitTests
                     0,
                     "1",
                     "Cyst Type",
-                    "refines the cyst type");
+                    "refine the cyst type");
             });
     }
 }

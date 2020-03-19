@@ -3,8 +3,8 @@
     xsi:schemaLocation="http://hl7.org/fhir ../../src-generated/schemas/fhir-single.xsd">
   <a name="intro"></a>
   <!-- +descriptions-->
-<p style="font-size:large">
-  <u>ACR Mass Definition</u>
+<p>
+  <u style="font-size:large">ACR Mass Definition</u>
 </p>
 <p>
 "MASS" is three dimensional and occupies space. It is seen on two different mammographic
@@ -13,8 +13,8 @@ denser in the center than at the periphery. If a potential mass is seen only on 
 should be called an "ASYMMETRY" until its 3-dimensionality is confirmed
 </p>
   <!-- -descriptions-->
-  <p style="font-size:large">
-    <u>Graphical Overview</u>
+  <p>
+    <u style="font-size:large">Graphical Overview</u>
   </p>
   <p>
     This graph provides an overview of:
@@ -27,16 +27,16 @@ should be called an "ASYMMETRY" until its 3-dimensionality is confirmed
     <img src="Focus-AbnormalityMass.svg" alt="image/svg+xml" />
   </object>
   <!-- +reviewStatus-->
-<p style="font-size:large">
-  <u>Review Status</u>
+<p>
+  <u style="font-size:large">Review Status</u>
 </p>
 Comments and Suggested changes to this implementation guide can be made 
 <a href="https://github.com/HL7/fhir-breast-radiology-ig/projects/1">here</a>
 Reviewed by No One on 
   <!-- -reviewStatus-->
   <!-- +components-->
-  <p style="font-size:large">
-    <u>Member Fields</u>
+  <p>
+    <u style="font-size:large">Member Fields</u>
   </p>
   <p>
     The following parts of this observation are contained within this resource.
@@ -63,8 +63,8 @@ Reviewed by No One on
   </ul>
   <!-- -components-->
   <!-- +hasMember-->
-  <p style="font-size:large">
-    <u>Member Observations</u>
+  <p>
+    <u style="font-size:large">Member Observations</u>
   </p>
   <p>
     The following parts of this observation are stored in seperate observation resources.
@@ -80,8 +80,8 @@ Reviewed by No One on
   </ul>
   <!-- -hasMember-->
   <!-- +profileFragments-->
-  <p style="font-size:large">
-    <u>Profile Fragments</u>
+  <p>
+    <u style="font-size:large">Profile Fragments</u>
   </p>
   <p>
     The following are the fragments that are included in this profile. This is included for developers use to understand

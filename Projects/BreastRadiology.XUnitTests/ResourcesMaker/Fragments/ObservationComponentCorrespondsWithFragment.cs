@@ -35,7 +35,7 @@ namespace BreastRadiology.XUnitTests
                            0,
                            "*",
                            "Corresponds With",
-                            "defines what this observation corresponds with");
+                            "define what this observation corresponds with");
                        e.IntroDoc
                            .ReviewedStatus("No One", "")
                            ;

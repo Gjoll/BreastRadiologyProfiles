@@ -37,6 +37,7 @@ namespace BreastRadiology.XUnitTests
 
                 e.IntroDoc
                     .ReviewedStatus("No One", "")
+                    .MissingDescription()
                     ;
 
                 ////$ todo. Incorrect method!!!

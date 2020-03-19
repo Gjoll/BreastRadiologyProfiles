@@ -39,7 +39,7 @@ namespace BreastRadiology.XUnitTests
                 0,
                 "1",
                 "Shape",
-                "defines the shape of the abnormality");
+                "define the shape of the abnormality");
 
             e.ComponentSliceCodeableConcept("margin",
                 Self.ComponentSliceCodeMargin.ToCodeableConcept(),
@@ -48,7 +48,7 @@ namespace BreastRadiology.XUnitTests
                 0,
                 "1",
                 "Margin",
-                "defines the observed margin of the abnormality");
+                "define the observed margin of the abnormality");
 
             e.ComponentSliceCodeableConcept("mgDensity",
                 Self.ComponentSliceCodeMGDensity.ToCodeableConcept(),
@@ -57,7 +57,7 @@ namespace BreastRadiology.XUnitTests
                 0,
                 "1",
                 "Density",
-                "observed density of the breast tissue",
+                "define the observed density of the breast tissue",
                 Modalities.MG
                 );
         });

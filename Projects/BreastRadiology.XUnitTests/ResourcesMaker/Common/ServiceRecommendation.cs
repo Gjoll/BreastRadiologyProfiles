@@ -36,6 +36,7 @@ namespace BreastRadiology.XUnitTests
                 s = e.SDef;
                 e.IntroDoc
                      .ReviewedStatus("No One", "")
+                     .MissingDescription()
                      ;
                 {
                     ValueSet binding = Self.RecommendationsVS.Value();

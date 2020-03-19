@@ -161,7 +161,7 @@ namespace BreastRadiology.XUnitTests
                     0,
                     "1",
                     "Asymmetry Type",
-                    "refines the asymmetry type");
+                    "refine the asymmetry type");
             });
     }
 }

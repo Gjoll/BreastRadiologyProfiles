@@ -3,15 +3,15 @@
     xsi:schemaLocation="http://hl7.org/fhir ../../src-generated/schemas/fhir-single.xsd">
   <a name="intro"></a>
   <!-- +descriptions-->
-<p style="font-size:large">
-  <u>Mammography Density Definition</u>
+<p>
+  <u style="font-size:large">Mammography Density Definition</u>
 </p>
 <p>
 The density types are referring to the amount of  glandular tissue and fibrous connective tissue versus levels of fatty tissue.
 </p>
   <!-- -descriptions-->
-  <p style="font-size:large">
-    <u>Graphical Overview</u>
+  <p>
+    <u style="font-size:large">Graphical Overview</u>
   </p>
   <p>
     This graph provides an overview of:
@@ -24,16 +24,16 @@ The density types are referring to the amount of  glandular tissue and fibrous c
     <img src="Focus-MGAbnormalityDensity.svg" alt="image/svg+xml" />
   </object>
   <!-- +reviewStatus-->
-<p style="font-size:large">
-  <u>Review Status</u>
+<p>
+  <u style="font-size:large">Review Status</u>
 </p>
 Comments and Suggested changes to this implementation guide can be made 
 <a href="https://github.com/HL7/fhir-breast-radiology-ig/projects/1">here</a>
 Reviewed by No One on 
   <!-- -reviewStatus-->
   <!-- +components-->
-  <p style="font-size:large">
-    <u>Member Fields</u>
+  <p>
+    <u style="font-size:large">Member Fields</u>
   </p>
   <p>
     The following parts of this observation are contained within this resource.
@@ -60,8 +60,8 @@ Reviewed by No One on
   </ul>
   <!-- -components-->
   <!-- +hasMember-->
-  <p style="font-size:large">
-    <u>Member Observations</u>
+  <p>
+    <u style="font-size:large">Member Observations</u>
   </p>
   <p>
     The following parts of this observation are stored in seperate observation resources.
@@ -76,8 +76,8 @@ Reviewed by No One on
   </ul>
   <!-- -hasMember-->
   <!-- +profileFragments-->
-  <p style="font-size:large">
-    <u>Profile Fragments</u>
+  <p>
+    <u style="font-size:large">Profile Fragments</u>
   </p>
   <p>
     The following are the fragments that are included in this profile. This is included for developers use to understand

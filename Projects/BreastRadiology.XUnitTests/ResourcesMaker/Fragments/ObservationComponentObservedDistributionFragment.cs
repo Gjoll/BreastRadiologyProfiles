@@ -36,7 +36,7 @@ namespace BreastRadiology.XUnitTests
                                0,
                                "*",
                                "Observed distribution of abnormalities",
-                               "description of the distribution of a group of abnormalities");
+                               "describe the distribution of a group of abnormalities");
                        }
                        {
                            ValueSet binding = Self.UnitsOfLengthVS.Value();

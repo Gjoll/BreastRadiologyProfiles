@@ -107,6 +107,7 @@ namespace BreastRadiology.XUnitTests
                 s = e.SDef;
                 e.IntroDoc
                      .ReviewedStatus("No One", "")
+                     .MissingDescription()
                      ;
 
                 // Report Section

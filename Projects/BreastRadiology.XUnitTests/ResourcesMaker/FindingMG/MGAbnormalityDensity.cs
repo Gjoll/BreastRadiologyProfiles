@@ -134,7 +134,7 @@ namespace BreastRadiology.XUnitTests
                     1,
                     "1",
                     "Density Type",
-                    "refines the density type");
+                    "refine the density type");
             });
     }
 }

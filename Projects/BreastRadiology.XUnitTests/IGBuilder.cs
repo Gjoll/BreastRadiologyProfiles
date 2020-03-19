@@ -161,7 +161,6 @@ namespace BreastRadiology.XUnitTests
 
             void Save(DomainResource r, String outputName)
             {
-                Debug.Assert(outputName.Contains("StructureDefinition-AbnormalityCyst.json") == false);
                 this.RemoveFragmentExtensions(r);
                 String outputPath = Path.Combine(this.resourceDir, outputName);
                 r.SaveJson(outputPath);

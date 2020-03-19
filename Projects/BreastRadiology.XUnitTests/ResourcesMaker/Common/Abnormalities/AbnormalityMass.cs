@@ -155,7 +155,7 @@ namespace BreastRadiology.XUnitTests
                     0,
                     "1",
                     "Mass Type",
-                    "refines the mass type");
+                    "refine the mass type");
             });
     }
 }

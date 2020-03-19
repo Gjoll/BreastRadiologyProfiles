@@ -32,6 +32,7 @@ namespace BreastRadiology.XUnitTests
 
                 e.IntroDoc
                     .ReviewedStatus("No One", "")
+                    .MissingDescription()
                     ;
 
                 // Set Observation.code to unique value for this profile.

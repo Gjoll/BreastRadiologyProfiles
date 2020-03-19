@@ -210,6 +210,7 @@ namespace BreastRadiology.XUnitTests
 
                 e.IntroDoc
                     .ReviewedStatus("No One", "")
+                    .MissingDescription()
                     ;
 
                 e.StartComponentSliceing();
@@ -220,7 +221,7 @@ namespace BreastRadiology.XUnitTests
                     0,
                     "1",
                     "Lymph Node Type",
-                    "refines the lymph node type");
+                    "refine the lymph node type");
             });
     }
 }

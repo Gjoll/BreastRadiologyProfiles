@@ -121,6 +121,7 @@ namespace BreastRadiology.XUnitTests
 
                 e.IntroDoc
                     .ReviewedStatus("No One", "")
+                    .MissingDescription()
                     ;
 
                 e.StartComponentSliceing();
@@ -131,7 +132,7 @@ namespace BreastRadiology.XUnitTests
                     0,
                     "1",
                     "Duct Type",
-                    "refines the duct type");
+                    "refine the duct type");
             });
     }
 }

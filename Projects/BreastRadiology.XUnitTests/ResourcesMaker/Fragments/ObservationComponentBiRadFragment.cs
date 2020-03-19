@@ -36,7 +36,7 @@ namespace BreastRadiology.XUnitTests
                            0,
                            "1",
                            "BiRads Assessment Category",
-                               "defines the BiRAD risk code");
+                               "define the BiRAD risk code");
                    });
     }
 }

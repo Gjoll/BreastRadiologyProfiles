@@ -48,8 +48,8 @@ namespace BreastRadiology.XUnitTests
                 if (this.reviewStatusBlock == null)
                     throw new Exception($"reviewStatus block missing");
                 this.reviewStatusBlock
-                    .AppendRaw($"<p style=\"font-size:large\">")
-                    .AppendRaw($"  <u>Review Status</u>")
+                    .AppendRaw($"<p>")
+                    .AppendRaw($"  <u style=\"font-size:large\">Review Status</u>")
                     .AppendRaw($"</p>")
                     .AppendRaw($"Comments and Suggested changes to this implementation guide can be made ")
                     .AppendRaw($"<a href=\"https://github.com/HL7/fhir-breast-radiology-ig/projects/1\">here</a>")
@@ -68,8 +68,8 @@ namespace BreastRadiology.XUnitTests
                 return this.descriptionBlock;
             this.descriptionBlock = this.codeEditor.Blocks.Find("descriptions");
             if (this.descriptionBlock == null)
-                throw new Exception($"'descriptions' block missing");
-                ;
+               throw new Exception($"'descriptions' block missing");
+            ;
             return this.descriptionBlock;
         }
         void WriteParagraphs(CodeBlockNested d,
@@ -114,17 +114,22 @@ namespace BreastRadiology.XUnitTests
         {
             CodeBlockNested d = CreateDescriptionBlock();
             d
-                .AppendRaw($"<p style=\"font-size:large\">")
-                .AppendRaw($"  <u>ACR {Title()} Definition</u>")
+                .AppendRaw($"<p>")
+                .AppendRaw($"  <u style=\"font-size:large\">ACR {Title()} Definition</u>")
                 .AppendRaw($"</p>")
                 ;
             WriteParagraphs(d, lines);
             return this;
         }
 
-        [Obsolete]
-        public IntroDoc MammoDescription(String id)
+        public IntroDoc MissingDescription()
         {
+            CodeBlockNested d = CreateDescriptionBlock();
+            d
+                .AppendRaw($"<p>")
+                .AppendRaw($"  <u style=\"font-size:large\";color=\"red\";>{Title()} Missing Description</u>")
+                .AppendRaw($"</p>")
+                ;
             return this;
         }
 
@@ -132,8 +137,8 @@ namespace BreastRadiology.XUnitTests
         {
             CodeBlockNested d = CreateDescriptionBlock();
             d
-                .AppendRaw($"<p style=\"font-size:large\">")
-                .AppendRaw($"  <u>{Title()} Definition</u>")
+                .AppendRaw($"<p>")
+                .AppendRaw($"  <u style=\"font-size:large\">{Title()} Definition</u>")
                 .AppendRaw($"</p>")
                 ;
             String[] citedLines = ResourcesMaker.FormatUmls(lines.ToList(), true);

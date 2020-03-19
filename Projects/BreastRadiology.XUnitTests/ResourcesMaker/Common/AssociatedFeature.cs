@@ -508,6 +508,7 @@ namespace BreastRadiology.XUnitTests
                 s = e.SDef;
                 e.IntroDoc
                     .ReviewedStatus("No One", "")
+                    .MissingDescription()
                     ;
 
                 // Set Observation.code to unique value for this profile.
@@ -524,7 +525,7 @@ namespace BreastRadiology.XUnitTests
                     1,
                     "1",
                     "Associated Feature Type",
-                    "defines the observed feature");
+                    "define the observed feature");
             });
     }
 }

@@ -639,7 +639,10 @@ namespace BreastRadiology.XUnitTests
                         Global.ElementAnchor(extensionSlice.ElementDefinition),
                         false);
                 }
-                e.IntroDoc.ReviewedStatus("No One", "");
+                e.IntroDoc
+                    .ReviewedStatus("No One", "")
+                    .MissingDescription()
+                ;
             });
     }
 }

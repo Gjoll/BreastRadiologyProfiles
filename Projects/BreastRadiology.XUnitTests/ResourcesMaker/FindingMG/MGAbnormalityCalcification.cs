@@ -497,7 +497,7 @@ namespace BreastRadiology.XUnitTests
                     0,
                     "1",
                     "Calcification Type",
-                    "refines the calcification type");
+                    "refine the calcification type");
 
                 e.ComponentSliceCodeableConcept("calcificationDistribution",
                     Self.MGCodeCalcificationDistribution.ToCodeableConcept(),
@@ -506,7 +506,7 @@ namespace BreastRadiology.XUnitTests
                     0,
                     "1",
                     "Calcification Distribution",
-                    "defines the calcification distribution");
+                    "define the calcification distribution");
             });
     }
 }

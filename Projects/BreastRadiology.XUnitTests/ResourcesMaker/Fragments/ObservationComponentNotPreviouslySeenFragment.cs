@@ -30,7 +30,7 @@ namespace BreastRadiology.XUnitTests
                 0,
                 "*",
                 "Not Previously Seen",
-                    "define prevous encounters in which this abnormality was not seen");
+                "define prevous encounters in which this abnormality was not seen");
         });
     }
 }
