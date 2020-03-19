@@ -79,50 +79,51 @@ namespace BreastRadiology.XUnitTests
                 }
 
                 SDefEditor e = Self.CreateEditor("BreastRadComposition",
-                     "Breast Radiology Composition",
-                     "Breast/Radiology/Composition",
-                     Global.CompositionUrl,
-                     Group_BaseResources,
-                     "Resource")
-                     .Description("Breast Radiology Composition",
-                         new Markdown()
-                             .Paragraph("This is the composition resource for the Breast Radiology Fhir Document.", 
-                                        "This resource is based on FHIR Composition resource.")
-                             .Paragraph("A Fhir Document is a Bundle that contains a composition as the first entry and ",
-                                        "provides a single item (bundle) that contains all the resources that are a part of",
-                                        "the Breast Radiology Diagnostic Report.")
-                             .Paragraph("The composition object is an required part of the FHIR Document structure.",
-                                        "One composition must exist, and it must be the first resource stored in the FHIR document bundle.")
-                             .Paragraph("The other exam related resources are referenced through the " +
-                                        "sections defined in this resource.")
-                             .Paragraph("This composition creates the following sections.")
-                             .Paragraph("A. Report Section.",
-                                        "This contains a single reference to the Breast Radiology Report",
-                                        "All Breast Radiology Findings are referenced by the reports results element.")
-                             .Paragraph("B. Impressions Section.",
-                                        "All of the clinical impressions created for this exam are referenced in this section.")
-                             .Paragraph("C. Recommendations Section.",
-                                        "All of the service and medication recommendations created for this exam are referenced in this section.",
-                                        "If a recommendation is in response to a particular observation or finding, then ",
-                                        "the recommendations 'reasonReference' should contain a  reference to the pertinant observation or finding.")
-                     )
-                     .AddFragRef(Self.HeaderFragment.Value())
-                     ;
+                            "Breast Radiology Composition",
+                            "Breast/Radiology/Composition",
+                            Global.CompositionUrl,
+                            Group_BaseResources,
+                            "Resource")
+                        .Description("Breast Radiology Composition",
+                            new Markdown()
+                                .Paragraph("This is the composition resource for the Breast Radiology Fhir Document.",
+                                    "This resource is based on FHIR Composition resource.")
+                                .Paragraph(
+                                    "A Fhir Document is a Bundle that contains a composition as the first entry and ",
+                                    "provides a single item (bundle) that contains all the resources that are a part of",
+                                    "the Breast Radiology Diagnostic Report.")
+                                .Paragraph("The composition object is an required part of the FHIR Document structure.",
+                                    "One composition must exist, and it must be the first resource stored in the FHIR document bundle.")
+                                .Paragraph("The other exam related resources are referenced through the " +
+                                           "sections defined in this resource.")
+                                .Paragraph("This composition creates the following sections.")
+                                .Paragraph("A. Report Section.",
+                                    "This contains a single reference to the Breast Radiology Report",
+                                    "All Breast Radiology Findings are referenced by the reports results element.")
+                                .Paragraph("B. Impressions Section.",
+                                    "All of the clinical impressions created for this exam are referenced in this section.")
+                                .Paragraph("C. Recommendations Section.",
+                                    "All of the service and medication recommendations created for this exam are referenced in this section.",
+                                    "If a recommendation is in response to a particular observation or finding, then ",
+                                    "the recommendations 'reasonReference' should contain a  reference to the pertinant observation or finding.")
+                        )
+                        .AddFragRef(Self.HeaderFragment.Value())
+                    ;
 
                 s = e.SDef;
                 e.IntroDoc
-                     .ReviewedStatus("Needs review by KWA")
-                     .ReviewedStatus("Needs review by Penrad")
-                     .ReviewedStatus("Needs review by MRS")
-                     .ReviewedStatus("Needs review by MagView")
-                     .ReviewedStatus("Needs review by CIMI")
-                     ;
+                    .ReviewedStatus("Needs review by KWA")
+                    .ReviewedStatus("Needs review by Penrad")
+                    .ReviewedStatus("Needs review by MRS")
+                    .ReviewedStatus("Needs review by MagView")
+                    .ReviewedStatus("Needs review by CIMI")
+                    ;
 
                 // Report Section
                 {
                     ElementTreeNode sliceElementDef = StartSectionSlicing(e);
                     {
-                        String[] targets = new string[] { Self.BreastRadiologyReport.Value().Url };
+                        String[] targets = new string[] {Self.BreastRadiologyReport.Value().Url};
 
                         ElementTreeSlice sectionSlice = SliceSection(sliceElementDef,
                             "report",
@@ -142,7 +143,7 @@ namespace BreastRadiology.XUnitTests
                             .SetDefinition(
                                 new Markdown()
                                     .Paragraph($"This section references the single required Breast Radiology Report'.")
-                                )
+                            )
                             .MustSupport();
                         ;
 
@@ -159,7 +160,7 @@ namespace BreastRadiology.XUnitTests
                 {
                     ElementTreeNode sliceElementDef = StartSectionSlicing(e);
                     {
-                        String[] targets = new string[] { Global.ClinicalImpressionUrl };
+                        String[] targets = new string[] {Global.ClinicalImpressionUrl};
 
                         ElementTreeSlice sectionSlice = SliceSection(sliceElementDef,
                             "impressions",
@@ -177,8 +178,9 @@ namespace BreastRadiology.XUnitTests
                             .SetShort($"Impressions Section")
                             .SetDefinition(
                                 new Markdown()
-                                    .Paragraph($"This section contains references to the report's clinical impressions.")
-                                )
+                                    .Paragraph(
+                                        $"This section contains references to the report's clinical impressions.")
+                            )
                             .MustSupport();
                         ;
                         e.AddComponentLink("Impressions",
@@ -194,7 +196,7 @@ namespace BreastRadiology.XUnitTests
                 {
                     ElementTreeNode sliceElementDef = StartSectionSlicing(e);
                     {
-                        String[] targets = new string[] { Self.FindingsRightBreast.Value().Url };
+                        String[] targets = new string[] {Self.FindingsRightBreast.Value().Url};
 
                         ElementTreeSlice sectionSlice = SliceSection(sliceElementDef,
                             "findingsRightBreast",
@@ -212,8 +214,9 @@ namespace BreastRadiology.XUnitTests
                             .SetShort($"Findings Section Right Breast")
                             .SetDefinition(
                                 new Markdown()
-                                    .Paragraph($"This section contains references to the report's findings for the right breast.")
-                                )
+                                    .Paragraph(
+                                        $"This section contains references to the report's findings for the right breast.")
+                            )
                             .MustSupport();
                         ;
                         e.AddComponentLink("Findings Right Breast",
@@ -224,12 +227,12 @@ namespace BreastRadiology.XUnitTests
                             targets);
                     }
                 }
-                
+
                 // Findings Left Breast Section
                 {
                     ElementTreeNode sliceElementDef = StartSectionSlicing(e);
                     {
-                        String[] targets = new string[] { Self.FindingsLeftBreast.Value().Url };
+                        String[] targets = new string[] {Self.FindingsLeftBreast.Value().Url};
 
                         ElementTreeSlice sectionSlice = SliceSection(sliceElementDef,
                             "findingsLeftBreast",
@@ -247,8 +250,9 @@ namespace BreastRadiology.XUnitTests
                             .SetShort($"Findings Section Left Breast")
                             .SetDefinition(
                                 new Markdown()
-                                    .Paragraph($"This section contains references to the report's findings for the left breast.")
-                                )
+                                    .Paragraph(
+                                        $"This section contains references to the report's findings for the left breast.")
+                            )
                             .MustSupport();
                         ;
                         e.AddComponentLink("Findings Left Breast",
@@ -264,7 +268,7 @@ namespace BreastRadiology.XUnitTests
                 {
                     ElementTreeNode sliceElementDef = StartSectionSlicing(e);
                     {
-                        String[] targets = new string[] { Global.ResourceUrl };
+                        String[] targets = new string[] {Global.ResourceUrl};
 
                         ElementTreeSlice sectionSlice = SliceSection(sliceElementDef,
                             "relatedResources",
@@ -280,7 +284,8 @@ namespace BreastRadiology.XUnitTests
                         sectionSlice.ElementDefinition
                             .Single()
                             .Short("Related Clinical Resources Section")
-                            .Definition("References to FHIR clinical resources used during the exam or referenced by this report.")
+                            .Definition(
+                                "References to FHIR clinical resources used during the exam or referenced by this report.")
                             .MustSupport();
                         ;
                         e.AddComponentLink("Related Resources",
@@ -296,7 +301,11 @@ namespace BreastRadiology.XUnitTests
                 {
                     ElementTreeNode sliceElementDef = StartSectionSlicing(e);
                     {
-                        String[] targets = new string[] { Global.MedicationRequestUrl, Global.ServiceRequestUrl, Self.ServiceRecommendation.Value().Url };
+                        String[] targets = new string[]
+                        {
+                            Global.MedicationRequestUrl, Global.ServiceRequestUrl,
+                            Self.ServiceRecommendation.Value().Url
+                        };
 
                         ElementTreeSlice sectionSlice = SliceSection(sliceElementDef,
                             "recommendations",
@@ -312,7 +321,8 @@ namespace BreastRadiology.XUnitTests
                         sectionSlice.ElementDefinition
                             .Single()
                             .Short("Recommendations Section")
-                            .Definition("This section contains references to recommended actions taken in response to the observations and findings of this report.")
+                            .Definition(
+                                "This section contains references to recommended actions taken in response to the observations and findings of this report.")
                             .MustSupport();
                         ;
                         e.AddComponentLink("Recommendations",

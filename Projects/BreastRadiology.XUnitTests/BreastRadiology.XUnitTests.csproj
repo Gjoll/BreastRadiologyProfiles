@@ -62,25 +62,31 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Content Update="C:\Users\Kurt.Gjoll.000\.nuget\packages\fhirkhit.tools.r4\2.0.0\contentFiles\any\netcoreapp2.2\specification.zip">
+    <Content
+      Update="C:\Users\Kurt.Gjoll.000\.nuget\packages\fhirkhit.tools.r4\2.0.0\contentFiles\any\netcoreapp2.2\specification.zip">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Update="C:\Users\Kurt.Gjoll.000\.nuget\packages\fhirkhit.tools.r4\2.1.0\contentFiles\any\netcoreapp2.2\specification.zip">
+    <Content
+      Update="C:\Users\Kurt.Gjoll.000\.nuget\packages\fhirkhit.tools.r4\2.1.0\contentFiles\any\netcoreapp2.2\specification.zip">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Update="C:\Users\Kurt.Gjoll.000\.nuget\packages\fhirkhit.tools.r4\2.5.0\contentFiles\any\netcoreapp2.2\specification.zip">
+    <Content
+      Update="C:\Users\Kurt.Gjoll.000\.nuget\packages\fhirkhit.tools.r4\2.5.0\contentFiles\any\netcoreapp2.2\specification.zip">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Update="C:\Users\Kurt.Gjoll.000\.nuget\packages\fhirkhit.tools.r4\2.6.0\contentFiles\any\netcoreapp2.2\specification.zip">
+    <Content
+      Update="C:\Users\Kurt.Gjoll.000\.nuget\packages\fhirkhit.tools.r4\2.6.0\contentFiles\any\netcoreapp2.2\specification.zip">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Update="C:\Users\Kurt.Gjoll.000\.nuget\packages\fhirkhit.tools.r4\2.9.0\contentFiles\any\netcoreapp2.2\specification.zip">
+    <Content
+      Update="C:\Users\Kurt.Gjoll.000\.nuget\packages\fhirkhit.tools.r4\2.9.0\contentFiles\any\netcoreapp2.2\specification.zip">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
   </ItemGroup>
 
   <ItemGroup>
-    <None Update="C:\Users\Kurt.Gjoll.000\.nuget\packages\fhirkhit.tools.r4\2.0.0\contentFiles\any\netcoreapp2.2\specification.zip">
+    <None
+      Update="C:\Users\Kurt.Gjoll.000\.nuget\packages\fhirkhit.tools.r4\2.0.0\contentFiles\any\netcoreapp2.2\specification.zip">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
     <None Update="DataFiles\ConsistentWithQualifier.txt">

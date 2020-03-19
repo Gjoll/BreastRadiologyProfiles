@@ -40,6 +40,7 @@ namespace BreastRadiology.XUnitTests
 
         CodeBlockNested reviewStatusBlock = null;
         CodeBlockNested descriptionBlock = null;
+
         public IntroDoc ReviewedStatus(String reviewer)
         {
             if (this.reviewStatusBlock == null)
@@ -57,6 +58,7 @@ namespace BreastRadiology.XUnitTests
                     .AppendRaw($"</p>")
                     ;
             }
+
             this.reviewStatusBlock
                 .AppendRaw($"<p>{reviewer}</p>")
                 ;
@@ -70,10 +72,11 @@ namespace BreastRadiology.XUnitTests
                 return this.descriptionBlock;
             this.descriptionBlock = this.codeEditor.Blocks.Find("descriptions");
             if (this.descriptionBlock == null)
-               throw new Exception($"'descriptions' block missing");
+                throw new Exception($"'descriptions' block missing");
             ;
             return this.descriptionBlock;
         }
+
         void WriteParagraphs(CodeBlockNested d,
             String[] lines)
         {
@@ -85,17 +88,19 @@ namespace BreastRadiology.XUnitTests
                 if (
                     (line.Length == 0) &&
                     (newParagraph == false)
-                    )
+                )
                 {
                     d.AppendRaw($"</p>\n");
                     newParagraph = true;
                     return;
                 }
+
                 if (newParagraph == true)
                 {
                     d.AppendRaw($"<p>\n");
                     newParagraph = false;
                 }
+
                 d.AppendRaw($"{line}\n");
             }
 
@@ -109,10 +114,9 @@ namespace BreastRadiology.XUnitTests
         {
             if (this.codeEditor.TryGetUserMacro("Title", out object value) == false)
                 throw new Exception("Error accessing title macro");
-            return (String)value;
+            return (String) value;
         }
 
-        [Obsolete]
         public IntroDoc ACRDescription(params String[] lines)
         {
             CodeBlockNested d = CreateDescriptionBlock();
@@ -137,7 +141,6 @@ namespace BreastRadiology.XUnitTests
             return this;
         }
 
-        [Obsolete]
         public IntroDoc Description(params String[] lines)
         {
             CodeBlockNested d = CreateDescriptionBlock();

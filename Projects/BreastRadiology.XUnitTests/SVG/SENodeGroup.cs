@@ -24,13 +24,12 @@ namespace BreastRadiology.XUnitTests
                     if (child.ShowCardinalities == true)
                         return true;
                 }
+
                 return false;
             }
-            set
-            {
-                this.showCardinalities = value;
-            }
+            set { this.showCardinalities = value; }
         }
+
         bool showCardinalities = true;
 
         /// <summary>

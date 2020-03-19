@@ -46,27 +46,29 @@ namespace BreastRadiology.XUnitTests
             switch (Path.GetExtension(path).ToUpper(CultureInfo.InvariantCulture))
             {
                 case ".XML":
-                    {
-                        FhirXmlParser parser = new FhirXmlParser();
-                        domainResource = parser.Parse<DomainResource>(File.ReadAllText(path));
-                        break;
-                    }
+                {
+                    FhirXmlParser parser = new FhirXmlParser();
+                    domainResource = parser.Parse<DomainResource>(File.ReadAllText(path));
+                    break;
+                }
 
                 case ".JSON":
-                    {
-                        FhirJsonParser parser = new FhirJsonParser();
-                        domainResource = parser.Parse<DomainResource>(File.ReadAllText(path));
-                        break;
-                    }
+                {
+                    FhirJsonParser parser = new FhirJsonParser();
+                    domainResource = parser.Parse<DomainResource>(File.ReadAllText(path));
+                    break;
+                }
 
                 default:
                     throw new Exception($"Unknown extension for serialized fhir resource '{path}'");
             }
+
             if (verifyDel != null)
             {
                 if (verifyDel(domainResource) == false)
                     return;
             }
+
             ResourceMap.Node node = this.CreateMapNode(domainResource);
             if (node == null)
                 return;
@@ -91,14 +93,14 @@ namespace BreastRadiology.XUnitTests
                     String name = fhirResource.Url.LastUriPart();
                     node = this.CreateMapNode(fhirResource.Url,
                         name,
-                        new String[] { name },
+                        new String[] {name},
                         "StructureDefinition",
                         false);
 
                     return true;
                 }
-
             }
+
             return false;
         }
 
@@ -117,7 +119,7 @@ namespace BreastRadiology.XUnitTests
                     yield return link;
                 else
                 {
-                    JArray references = (JArray)link.References;
+                    JArray references = (JArray) link.References;
                     if (references != null)
                     {
                         foreach (JValue item in references)
@@ -177,13 +179,14 @@ namespace BreastRadiology.XUnitTests
 
             foreach (Extension link in r.GetExtensions(Global.ResourceMapLinkUrl))
             {
-                FhirString s = (FhirString)link.Value;
+                FhirString s = (FhirString) link.Value;
 
                 dynamic mapLink = JObject.Parse(s.Value);
                 mapLink.LinkSource = resourceUrl;
                 this.links.Add(mapLink);
                 retVal.AddLink(mapLink);
             }
+
             return retVal;
         }
 

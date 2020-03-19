@@ -37,7 +37,7 @@ namespace BreastRadiology.XUnitTests
         {
             ResourceMap.Node mapNode = this.map.GetNode(reportUrl);
             SENodeGroup rootGroup = new SENodeGroup("root", false);
-            SENode rootNode = this.CreateResourceNode(mapNode, this.focusColor , null);
+            SENode rootNode = this.CreateResourceNode(mapNode, this.focusColor, null);
             rootGroup.AppendNode(rootNode);
             this.AddChildren(mapNode, rootGroup);
             return rootGroup;

@@ -14,7 +14,6 @@ namespace BreastRadiology.XUnitTests
 {
     partial class ResourcesMaker : ConverterBase
     {
-
         //#CSTaskVar USVascularityCS = new CSTaskVar(
         //     () =>
         //         cs = Self.CreateCodeSystem(
@@ -57,7 +56,6 @@ namespace BreastRadiology.XUnitTests
         //                )
         //             })
         //         );
-
 
 
         //#VSTaskVar USVascularityVS = new VSTaskVar(

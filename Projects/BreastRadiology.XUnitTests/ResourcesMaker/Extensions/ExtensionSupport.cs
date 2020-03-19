@@ -15,7 +15,7 @@ namespace BreastRadiology.XUnitTests
     partial class ResourcesMaker : ConverterBase
     {
         void SliceAndBindUrl(SDefEditor e,
-            ElementTreeNode extensionNode, 
+            ElementTreeNode extensionNode,
             String sliceName,
             String bindName,
             String shortText,
@@ -28,18 +28,18 @@ namespace BreastRadiology.XUnitTests
                 .Type("CodeableConcept")
                 .Binding(bindName, BindingStrength.Required)
                 .Single()
-            ;
+                ;
         }
 
         ElementDefinition SliceAndBindVS(SDefEditor e,
-            ElementTreeNode extensionNode, 
+            ElementTreeNode extensionNode,
             String sliceName,
             ValueSet binding,
             String shortText,
             Markdown definition)
         {
             this.SliceAndBindUrl(e,
-                extensionNode, 
+                extensionNode,
                 sliceName,
                 binding.Url,
                 shortText,
@@ -79,22 +79,22 @@ namespace BreastRadiology.XUnitTests
             }
             {
                 ElementDefinition elementUrl = new ElementDefinition()
-                .Path($"{extensionNode.ElementDefinition.Path}.url")
-                .ElementId($"{extensionNode.ElementDefinition.Path}:{sliceName}.url")
-                .Value(new FhirUri(sliceName))
-                .Type("uri")
-                .Definition(new Markdown()
-                    .Paragraph($"Url for {sliceName} complex extension item.")
-                    )
-                ;
+                        .Path($"{extensionNode.ElementDefinition.Path}.url")
+                        .ElementId($"{extensionNode.ElementDefinition.Path}:{sliceName}.url")
+                        .Value(new FhirUri(sliceName))
+                        .Type("uri")
+                        .Definition(new Markdown()
+                            .Paragraph($"Url for {sliceName} complex extension item.")
+                        )
+                    ;
                 extensionSlice.CreateNode(elementUrl);
             }
 
             {
                 ElementDefinition valueBase = e.Get("value[x]").ElementDefinition;
                 ElementDefinition elementValue = new ElementDefinition()
-                    .Path($"{extensionNode.ElementDefinition.Path}.value[x]")
-                    .ElementId($"{extensionNode.ElementDefinition.Path}:{sliceName}.value[x]")
+                        .Path($"{extensionNode.ElementDefinition.Path}.value[x]")
+                        .ElementId($"{extensionNode.ElementDefinition.Path}:{sliceName}.value[x]")
                     ;
                 valueXNode = extensionSlice.CreateNode(elementValue);
             }

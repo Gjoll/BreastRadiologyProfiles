@@ -27,6 +27,7 @@ namespace BreastRadiology.XUnitTests
                 foreach (ValueSet.ConceptReferenceComponent concept in component.Concept)
                     items.Add($"{concept.Code} - {concept.Display}");
             }
+
             return md.List(items.ToArray());
         }
 
@@ -35,7 +36,7 @@ namespace BreastRadiology.XUnitTests
             md
                 .Paragraph($"The type of this {name} may be further refined by one of the following values:")
                 .List(vs)
-            ;
+                ;
             return md;
         }
 
@@ -58,6 +59,5 @@ namespace BreastRadiology.XUnitTests
             md.List(s.ToArray());
             return md;
         }
-
     }
 }

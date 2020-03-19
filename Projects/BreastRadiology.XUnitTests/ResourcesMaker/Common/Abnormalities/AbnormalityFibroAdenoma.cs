@@ -14,57 +14,60 @@ namespace BreastRadiology.XUnitTests
     partial class ResourcesMaker : ConverterBase
     {
         CSTaskVar FibroadenomaCS = new CSTaskVar(
-             (out CodeSystem cs) =>
-                 cs = Self.CreateCodeSystem(
-                         "FibroadenomaCodeSystemCS",
-                         "Fibroadenoma CodeSystem",
-                         "Fibroadenoma/CodeSystem",
-                         "Fibroadenoma values code system.",
-                         Group_CommonCodesCS,
-                         new ConceptDef[]
-                         {
-                            //+ Type
-                            #region Codes
-                            new ConceptDef()
-                                .SetCode("Fibroadenoma")
-                                .SetDisplay("Fibroadenoma")
-                                .MammoId("70")
-                                .ValidModalities(Modalities.MG | Modalities.US)
-                                .SetUMLS("A fibroadenoma is a benign, or noncancerous, breast " +
-                                    "tumor. ",
-                                    "Unlike a breast cancer, which grows larger over time " +
-                                    "and can spread to other organs, ",
-                                    "a fibroadenoma remains in the breast tissue. ",
-                                    "They're pretty small, too. ",
-                                    "Most are only 1 or 2 centimeters in size. ",
-                                    "www.webmd.com > breast-cancer > what-are-fibroadenomas")
-                            ,
-                            new ConceptDef()
-                                .SetCode("FibroadenomaDegeneration")
-                                .SetDisplay("Fibroadenoma degeneration")
-                                .MammoId("695")
-                                .ValidModalities(Modalities.MG)
-                                .SetUMLS("These are non-cancerous breast lumps. ",
-                                    "Fibroadenomas usually go away with age. ",
-                                    "By the time a woman is menopausal, they will likely " +
-                                    "experience a degeneration of ",
-                                    "the Fibroadenomas.")
-                            #endregion // Codes
-                            //- Type
-                         })
-                     );
+            (out CodeSystem cs) =>
+                cs = Self.CreateCodeSystem(
+                    "FibroadenomaCodeSystemCS",
+                    "Fibroadenoma CodeSystem",
+                    "Fibroadenoma/CodeSystem",
+                    "Fibroadenoma values code system.",
+                    Group_CommonCodesCS,
+                    new ConceptDef[]
+                    {
+                        //+ Type
+
+                        #region Codes
+
+                        new ConceptDef()
+                            .SetCode("Fibroadenoma")
+                            .SetDisplay("Fibroadenoma")
+                            .MammoId("70")
+                            .ValidModalities(Modalities.MG | Modalities.US)
+                            .SetUMLS("A fibroadenoma is a benign, or noncancerous, breast " +
+                                     "tumor. ",
+                                "Unlike a breast cancer, which grows larger over time " +
+                                "and can spread to other organs, ",
+                                "a fibroadenoma remains in the breast tissue. ",
+                                "They're pretty small, too. ",
+                                "Most are only 1 or 2 centimeters in size. ",
+                                "www.webmd.com > breast-cancer > what-are-fibroadenomas"),
+                        new ConceptDef()
+                            .SetCode("FibroadenomaDegeneration")
+                            .SetDisplay("Fibroadenoma degeneration")
+                            .MammoId("695")
+                            .ValidModalities(Modalities.MG)
+                            .SetUMLS("These are non-cancerous breast lumps. ",
+                                "Fibroadenomas usually go away with age. ",
+                                "By the time a woman is menopausal, they will likely " +
+                                "experience a degeneration of ",
+                                "the Fibroadenomas.")
+
+                        #endregion // Codes
+
+                        //- Type
+                    })
+        );
 
         VSTaskVar FibroadenomaVS = new VSTaskVar(
             (out ValueSet vs) =>
                 vs = Self.CreateValueSet(
-                        "FibroadenomaVS",
-                        "Fibroadenoma ValueSet",
-                        "FibroadenomaValueSet",
-                        "Fibroadenoma value set.",
-                        Group_CommonCodesVS,
-                        Self.FibroadenomaCS.Value()
-                    )
-            );
+                    "FibroadenomaVS",
+                    "Fibroadenoma ValueSet",
+                    "FibroadenomaValueSet",
+                    "Fibroadenoma value set.",
+                    Group_CommonCodesVS,
+                    Self.FibroadenomaCS.Value()
+                )
+        );
 
         SDTaskVar AbnormalityFibroadenoma = new SDTaskVar(
             (out StructureDefinition s) =>
@@ -72,39 +75,37 @@ namespace BreastRadiology.XUnitTests
                 ValueSet binding = Self.FibroadenomaVS.Value();
 
                 SDefEditor e = Self.CreateEditor("AbnormalityFibroadenoma",
-                        "Fibroadenoma",
-                        "Fibroadenoma",
-                        Global.ObservationUrl,
-                        $"{Group_CommonResources}/AbnormalityFibroadenoma",
-                        "ObservationLeaf")
-                    .AddFragRef(Self.ObservationLeafFragment.Value())
-                    .AddFragRef(Self.ObservationNoDeviceFragment.Value())
-                    .AddFragRef(Self.ObservationNoValueFragment.Value())
-                    .AddFragRef(Self.ObservationNoComponentFragment.Value())
-                    .AddFragRef(Self.CommonComponentsFragment.Value())
-                    .AddFragRef(Self.ObservationComponentShapeFragment.Value())
-                    .AddFragRef(Self.ObservationComponentObservedCountFragment.Value())
-                    .AddFragRef(Self.ObservationComponentObservedDistributionFragment.Value())
-                    .AddFragRef(Self.ObservationComponentObservedSizeFragment.Value())
-                    .AddFragRef(Self.ObservationComponentPreviouslyDemonstratedByFragment.Value())
-
-                    .AddFragRef(Self.ObservationHasMemberAssociatedFeaturesFragment.Value())
-
-                    .Description("Fibroadenoma Observation",
-                        new Markdown()
-                            .Paragraph("[PR]")
-                            .ValidModalities(Modalities.MG | Modalities.US)
-                    )
+                            "Fibroadenoma",
+                            "Fibroadenoma",
+                            Global.ObservationUrl,
+                            $"{Group_CommonResources}/AbnormalityFibroadenoma",
+                            "ObservationLeaf")
+                        .AddFragRef(Self.ObservationLeafFragment.Value())
+                        .AddFragRef(Self.ObservationNoDeviceFragment.Value())
+                        .AddFragRef(Self.ObservationNoValueFragment.Value())
+                        .AddFragRef(Self.ObservationNoComponentFragment.Value())
+                        .AddFragRef(Self.CommonComponentsFragment.Value())
+                        .AddFragRef(Self.ObservationComponentShapeFragment.Value())
+                        .AddFragRef(Self.ObservationComponentObservedCountFragment.Value())
+                        .AddFragRef(Self.ObservationComponentObservedDistributionFragment.Value())
+                        .AddFragRef(Self.ObservationComponentObservedSizeFragment.Value())
+                        .AddFragRef(Self.ObservationComponentPreviouslyDemonstratedByFragment.Value())
+                        .AddFragRef(Self.ObservationHasMemberAssociatedFeaturesFragment.Value())
+                        .Description("Fibroadenoma Observation",
+                            new Markdown()
+                                .Paragraph("[PR]")
+                                .ValidModalities(Modalities.MG | Modalities.US)
+                        )
                     ;
 
                 s = e.SDef;
 
                 e.IntroDoc
-                     .ReviewedStatus("Needs review by KWA")
-                     .ReviewedStatus("Needs review by Penrad")
-                     .ReviewedStatus("Needs review by MRS")
-                     .ReviewedStatus("Needs review by MagView")
-                     .ReviewedStatus("Needs review by CIMI")
+                    .ReviewedStatus("Needs review by KWA")
+                    .ReviewedStatus("Needs review by Penrad")
+                    .ReviewedStatus("Needs review by MRS")
+                    .ReviewedStatus("Needs review by MagView")
+                    .ReviewedStatus("Needs review by CIMI")
                     .MissingDescription()
                     ;
 

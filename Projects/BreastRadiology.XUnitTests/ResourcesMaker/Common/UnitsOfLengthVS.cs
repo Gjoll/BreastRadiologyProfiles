@@ -11,11 +11,11 @@ namespace BreastRadiology.XUnitTests
             (out ValueSet vs) =>
             {
                 vs = Self.CreateValueSet(
-                        "UnitsOfLengthVS",
-                        "UnitsOfLength ValueSet",
-                        "UnitsOfLength/ValueSet",
-                        "UnitsOfLength value set.",
-                        Group_CommonCodesVS);
+                    "UnitsOfLengthVS",
+                    "UnitsOfLength ValueSet",
+                    "UnitsOfLength/ValueSet",
+                    "UnitsOfLength value set.",
+                    Group_CommonCodesVS);
 
                 ValueSet.ConceptSetComponent vsComp = new ValueSet.ConceptSetComponent
                 {
@@ -45,4 +45,3 @@ namespace BreastRadiology.XUnitTests
             });
     }
 }
-

@@ -10,7 +10,6 @@ namespace BreastRadiology.XUnitTests
     partial class ResourceMap
     {
         [DebuggerDisplay("{Name}")]
-
         public class Node
         {
             public String Name => this.ResourceUrl.LastUriPart();
@@ -60,7 +59,7 @@ namespace BreastRadiology.XUnitTests
 
             public void AddLink(dynamic link)
             {
-                String linkTarget = (string)link.LinkTarget;
+                String linkTarget = (string) link.LinkTarget;
 
                 if (this.links.TryGetValue(linkTarget, out dynamic temp) == true)
                     return;

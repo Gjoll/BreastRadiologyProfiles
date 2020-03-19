@@ -10,34 +10,34 @@ namespace BreastRadiology.XUnitTests
     partial class ResourcesMaker
     {
         SDTaskVar ObservationNoComponentFragment = new SDTaskVar(
-            (out StructureDefinition  s) =>
+            (out StructureDefinition s) =>
             {
                 SDefEditor e = Self.CreateFragment("BreastRadObservationNoComponentFragment",
-                    "Observation No Component Fragment",
-                    "Observation/No Component/Fragment",
-                    Global.ObservationUrl)
-                    .Description("Observation No Component fragment",
-                        new Markdown()
-                            .Paragraph("Zero's Observation.component.")
-                    )
-                    .Description("Observation NoComponent Fragment.",
-                        new Markdown()
-                            .Paragraph("Resource fragment used by all BreastRad observations that do not have components.")
-                    )
-                    .AddFragRef(Self.ObservationFragment.Value())
-                ;
+                            "Observation No Component Fragment",
+                            "Observation/No Component/Fragment",
+                            Global.ObservationUrl)
+                        .Description("Observation No Component fragment",
+                            new Markdown()
+                                .Paragraph("Zero's Observation.component.")
+                        )
+                        .Description("Observation NoComponent Fragment.",
+                            new Markdown()
+                                .Paragraph(
+                                    "Resource fragment used by all BreastRad observations that do not have components.")
+                        )
+                        .AddFragRef(Self.ObservationFragment.Value())
+                    ;
                 s = e.SDef;
 
                 e.Select("component").Zero();
 
                 e.IntroDoc
-                     .ReviewedStatus("Needs review by KWA")
-                     .ReviewedStatus("Needs review by Penrad")
-                     .ReviewedStatus("Needs review by MRS")
-                     .ReviewedStatus("Needs review by MagView")
-                     .ReviewedStatus("Needs review by CIMI")
+                    .ReviewedStatus("Needs review by KWA")
+                    .ReviewedStatus("Needs review by Penrad")
+                    .ReviewedStatus("Needs review by MRS")
+                    .ReviewedStatus("Needs review by MagView")
+                    .ReviewedStatus("Needs review by CIMI")
                     ;
             });
-
     }
 }

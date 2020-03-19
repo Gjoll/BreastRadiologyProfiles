@@ -7,7 +7,6 @@ namespace BreastRadiology.XUnitTests
 {
     public class PatternSlice
     {
-
         public String SliceName { get; }
         public String ShortDefinition { get; }
         public Markdown Definition { get; }
@@ -15,11 +14,11 @@ namespace BreastRadiology.XUnitTests
         public Int32 Min { get; }
         public String Max { get; }
 
-        public PatternSlice(String sliceName, 
+        public PatternSlice(String sliceName,
             String shortStr,
             Markdown definition,
-            Element pattern, 
-            Int32 min, 
+            Element pattern,
+            Int32 min,
             String max)
         {
             this.SliceName = sliceName;

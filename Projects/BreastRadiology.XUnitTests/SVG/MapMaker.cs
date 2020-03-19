@@ -42,13 +42,14 @@ namespace BreastRadiology.XUnitTests
                 dynamic link2 = links2[i];
                 if (link1.LinkType.ToObject<String>() != link2.LinkType.ToObject<String>())
                     return true;
-                if (link1.LinkTarget.ToObject<String>() != (String)link2.LinkTarget.ToObject<String>())
+                if (link1.LinkTarget.ToObject<String>() != (String) link2.LinkTarget.ToObject<String>())
                     return true;
             }
+
             return false;
         }
 
-        String[] linkTypes = new string[] { SVGGlobal.ExtensionType, SVGGlobal.TargetType, SVGGlobal.ComponentType };
+        String[] linkTypes = new string[] {SVGGlobal.ExtensionType, SVGGlobal.TargetType, SVGGlobal.ComponentType};
 
         /*
          * Add children. If two adjacent children have same children, then dont create each in a seperate
@@ -67,7 +68,7 @@ namespace BreastRadiology.XUnitTests
         {
             return CreateResourceNode(mapNode,
                 this.LinkTypeColor(link),
-                new String[] { link.Cardinality?.ToString() },
+                new String[] {link.Cardinality?.ToString()},
                 linkFlag);
         }
 
@@ -85,6 +86,7 @@ namespace BreastRadiology.XUnitTests
                 String s = titlePart.Trim();
                 node.AddTextLine(s, hRef);
             }
+
             return node;
         }
 
@@ -191,7 +193,7 @@ namespace BreastRadiology.XUnitTests
         }
 
         protected void MakeComponent(dynamic link,
-                SENodeGroup group)
+            SENodeGroup group)
         {
             // we never link components to previous child links, not should next item
             // link to this items children. Each component stands alone.
@@ -202,7 +204,7 @@ namespace BreastRadiology.XUnitTests
 
             SENode node = new SENode(0,
                 this.componentColor,
-                new String[] { link.Cardinality?.ToString(), link.TargetCardinality?.ToString() },
+                new String[] {link.Cardinality?.ToString(), link.TargetCardinality?.ToString()},
                 componentHRef);
             node.AddTextLine(linkTargetUrl, componentHRef);
 
@@ -213,7 +215,7 @@ namespace BreastRadiology.XUnitTests
             group.AppendChild(componentGroup);
             componentGroup.AppendNode(node);
 
-            JArray references = (JArray)link.References;
+            JArray references = (JArray) link.References;
             if (references != null)
             {
                 SENodeGroup refGroup = new SENodeGroup("ref", true);
@@ -229,7 +231,7 @@ namespace BreastRadiology.XUnitTests
                             throw new Exception($"Component resource '{reference}' not found!");
                         refNode = this.CreateResourceNode(refMapNode,
                             this.ReferenceColor(refMapNode),
-                            new String[] { link.Cardinality?.ToString() },
+                            new String[] {link.Cardinality?.ToString()},
                             true);
 
                         if (link.ShowChildren.ToObject<Boolean>())
@@ -242,10 +244,11 @@ namespace BreastRadiology.XUnitTests
                     {
                         refNode = new SENode(0,
                             this.fhirColor,
-                            new String[] { link.Cardinality?.ToString() },
+                            new String[] {link.Cardinality?.ToString()},
                             reference);
                         refNode.AddTextLine(reference.LastUriPart(), reference);
                     }
+
                     refGroup.AppendNode(refNode);
                 }
             }

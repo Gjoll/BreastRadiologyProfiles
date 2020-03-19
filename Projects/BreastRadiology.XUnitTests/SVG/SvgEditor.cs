@@ -112,7 +112,8 @@ namespace BreastRadiology.XUnitTests
 
             List<EndPoint> endConnectors = new List<EndPoint>();
 
-            this.RenderGroup(group, this.screenX, this.screenY, lineFlag, out float width, out float height, endConnectors);
+            this.RenderGroup(group, this.screenX, this.screenY, lineFlag, out float width, out float height,
+                endConnectors);
             this.root.Width = $"{this.ToPx(this.maxWidth + this.NodeGapStartX(group) + this.NodeGapEndX(group))}";
             this.root.Height = $"{this.ToPx(this.maxHeight + 2 * this.NodeGapY)}";
             this.screenY = this.maxHeight + 4 * this.BorderMargin;
@@ -167,7 +168,8 @@ namespace BreastRadiology.XUnitTests
             {
                 foreach (SENodeGroup childGroup in group.Children)
                 {
-                    this.RenderGroup(childGroup, screenX, screenY, lineFlag, out float tColWidth, out float tColHeight, endConnectors);
+                    this.RenderGroup(childGroup, screenX, screenY, lineFlag, out float tColWidth, out float tColHeight,
+                        endConnectors);
                     colHeight += tColHeight;
                     screenY += tColHeight;
                     if (colWidth < tColWidth)
@@ -216,10 +218,10 @@ namespace BreastRadiology.XUnitTests
                 });
 
                 endConnectors.Add(new EndPoint
-                    {
-                        Location = new PointF(screenX, col1ScreenY + nodeHeight / 2),
-                        Annotation = node.IncomingAnnotation
-                    });
+                {
+                    Location = new PointF(screenX, col1ScreenY + nodeHeight / 2),
+                    Annotation = node.IncomingAnnotation
+                });
                 col1Height += nodeHeight + this.NodeGapY;
                 col1ScreenY += nodeHeight + this.NodeGapY;
             }
@@ -255,7 +257,8 @@ namespace BreastRadiology.XUnitTests
                         EndPoint stubEnd = col2EndConnectors[i];
                         endConnectorFlag = true;
                         float xStart = screenX + col1Width + this.NodeGapStartX(group);
-                        this.CreateArrow(g, false, true, xStart, stubEnd.Location.Y, stubEnd.Location.X, stubEnd.Location.Y);
+                        this.CreateArrow(g, false, true, xStart, stubEnd.Location.Y, stubEnd.Location.X,
+                            stubEnd.Location.Y);
 
                         if (child.ShowCardinalities == true)
                         {
@@ -272,6 +275,7 @@ namespace BreastRadiology.XUnitTests
                             bottomConnectorY = stubEnd.Location.Y;
                     }
                 }
+
                 float width = col1Width + this.NodeGapStartX(group) + this.NodeGapEndX(group) + col2GroupWidth;
                 if (colWidth < width)
                     colWidth = width;
@@ -285,7 +289,7 @@ namespace BreastRadiology.XUnitTests
                 foreach (EndPoint stubStart in startConnectors)
                 {
                     this.CreateArrow(g, true, false, stubStart.Location.X, stubStart.Location.Y,
-                            screenX + col1Width + this.NodeGapStartX(group), stubStart.Location.Y);
+                        screenX + col1Width + this.NodeGapStartX(group), stubStart.Location.Y);
 
                     if (group.ShowCardinalities == true)
                     {
@@ -341,6 +345,7 @@ namespace BreastRadiology.XUnitTests
             {
                 square = this.doc.AddRect(g);
             }
+
             square.Stroke = Color.Black;
             square.StrokeWidth = this.ToPx(this.BorderWidth);
             square.RX = this.ToPx(this.RectRx);
@@ -367,12 +372,14 @@ namespace BreastRadiology.XUnitTests
                         SvgTitle title = this.doc.AddTitle(l);
                         title.Value = line.Title;
                     }
+
                     t = this.doc.AddText(l);
                 }
                 else
                 {
                     t = this.doc.AddText(g);
                 }
+
                 t.X = this.ToPx(width / 2);
                 t.Y = this.ToPx(textY);
                 t.TextAnchor = "middle";

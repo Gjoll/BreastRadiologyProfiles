@@ -68,8 +68,8 @@ namespace BreastRadiology.XUnitTests
                         throw new Exception($"Resource '{parentNode.ResourceUrl}' not found!");
 
                     alreadyLinkedResources.Add(parentNode.ResourceUrl);
-                    SENode node = this.CreateResourceNode(parentNode, this.ReferenceColor(parentMapNode), 
-                        new String[] { null, link.Cardinality?.ToString() }, 
+                    SENode node = this.CreateResourceNode(parentNode, this.ReferenceColor(parentMapNode),
+                        new String[] {null, link.Cardinality?.ToString()},
                         true);
                     parents.Add(node);
                 }
@@ -91,6 +91,7 @@ namespace BreastRadiology.XUnitTests
                             break;
                     }
                 }
+
                 parentsGroup.AppendNodes(targetParents);
                 parentsGroup.AppendNodes(componentParents);
                 parentsGroup.AppendNodes(valueSetParents);
@@ -119,73 +120,78 @@ namespace BreastRadiology.XUnitTests
                             break;
 
                         case SVGGlobal.ExtensionType:
+                        {
+                            String linkSource = link.LinkSource.ToObject<String>();
+                            String componentHRef = link.ComponentHRef.ToObject<String>()
+                                .Replace("{SDName}", linkSource.LastUriPart());
+
+                            SENode node = new SENode(0,
+                                LinkTypeColor(link),
+                                new String[] {link.Cardinality?.ToString()},
+                                componentHRef);
+                            node.AddTextLine(link.LocalName.ToObject<String>(), componentHRef);
+                            node.AddTextLine("extension", componentHRef);
+
+                            SENodeGroup nodeGroup = new SENodeGroup(node.AllText(), true);
+                            extensionChildren.AppendChild(nodeGroup);
+                            nodeGroup.AppendNode(node);
+
                             {
-                                String linkSource = link.LinkSource.ToObject<String>();
-                                String componentHRef = link.ComponentHRef.ToObject<String>().Replace("{SDName}", linkSource.LastUriPart());
-
-                                SENode node = new SENode(0, 
-                                    LinkTypeColor(link), 
-                                    new String[] { link.Cardinality?.ToString() },
-                                    componentHRef);
-                                node.AddTextLine(link.LocalName.ToObject<String>(), componentHRef);
-                                node.AddTextLine("extension", componentHRef);
-
-                                SENodeGroup nodeGroup = new SENodeGroup(node.AllText(), true);
-                                extensionChildren.AppendChild(nodeGroup);
-                                nodeGroup.AppendNode(node);
-
+                                SENodeGroup extGroup = new SENodeGroup("extension", true);
+                                nodeGroup.AppendChild(extGroup);
+                                SENode extNode;
+                                String extUrl = link.LinkTarget.ToObject<String>().Trim();
+                                if (extUrl.ToLower().StartsWith(Global.BreastRadBaseUrl))
                                 {
-                                    SENodeGroup extGroup = new SENodeGroup("extension", true);
-                                    nodeGroup.AppendChild(extGroup);
-                                    SENode extNode;
-                                    String extUrl = link.LinkTarget.ToObject<String>().Trim();
-                                    if (extUrl.ToLower().StartsWith(Global.BreastRadBaseUrl))
-                                    {
-                                        if (this.map.TryGetNode(extUrl, out ResourceMap.Node targetNode) == false)
-                                            throw new Exception($"Component resource '{extUrl}' not found!");
-                                        extNode = this.CreateResourceNode(targetNode, this.ReferenceColor(targetNode),
-                                            new String[] { link.Cardinality?.ToString() }, 
-                                            true);
-                                    }
-                                    else
-                                    {
-                                        String name = extUrl.LastUriPart()
+                                    if (this.map.TryGetNode(extUrl, out ResourceMap.Node targetNode) == false)
+                                        throw new Exception($"Component resource '{extUrl}' not found!");
+                                    extNode = this.CreateResourceNode(targetNode, this.ReferenceColor(targetNode),
+                                        new String[] {link.Cardinality?.ToString()},
+                                        true);
+                                }
+                                else
+                                {
+                                    String name = extUrl.LastUriPart()
                                             .TrimStart("StructureDefinition-")
                                             .TrimStart("ValueSet-")
                                             .TrimEnd(".html")
-                                            ;
-                                        extNode = new SENode(0, 
-                                            this.fhirColor, 
-                                            new String[] { link.Cardinality?.ToString() },
-                                            extUrl);
-                                        extNode.AddTextLine(name, extUrl);
-                                    }
-                                    extGroup.AppendNode(extNode);
+                                        ;
+                                    extNode = new SENode(0,
+                                        this.fhirColor,
+                                        new String[] {link.Cardinality?.ToString()},
+                                        extUrl);
+                                    extNode.AddTextLine(name, extUrl);
                                 }
+
+                                extGroup.AppendNode(extNode);
                             }
+                        }
                             break;
 
                         case SVGGlobal.ValueSetType:
+                        {
+                            if (this.map.TryGetNode(link.LinkTarget.ToObject<String>().ToObject<String>(),
+                                    out ResourceMap.Node childNode) == true)
                             {
-                                if (this.map.TryGetNode(link.LinkTarget.ToObject<String>().ToObject<String>(), out ResourceMap.Node childNode) == true)
-                                {
-                                    SENode node = this.CreateResourceNode(childNode, link, true);
-                                    SENodeGroup nodeGroup = new SENodeGroup(node.AllText(), false);
-                                    valueSetChildren.AppendChild(nodeGroup);
-                                    nodeGroup.AppendNode(node);
-                                }
+                                SENode node = this.CreateResourceNode(childNode, link, true);
+                                SENodeGroup nodeGroup = new SENodeGroup(node.AllText(), false);
+                                valueSetChildren.AppendChild(nodeGroup);
+                                nodeGroup.AppendNode(node);
                             }
+                        }
                             break;
 
                         case SVGGlobal.TargetType:
-                            {
-                                if (this.map.TryGetNode(link.LinkTarget.ToObject<String>(), out ResourceMap.Node childNode) == false)
-                                    throw new Exception($"Child target {link.LinkTarget.ToObject<String>()} not found in map");
-                                SENode node = this.CreateResourceNode(childNode, link, true);
-                                SENodeGroup nodeGroup = new SENodeGroup(node.AllText(), true);
-                                targetChildren.AppendChild(nodeGroup);
-                                nodeGroup.AppendNode(node);
-                            }
+                        {
+                            if (this.map.TryGetNode(link.LinkTarget.ToObject<String>(),
+                                    out ResourceMap.Node childNode) == false)
+                                throw new Exception(
+                                    $"Child target {link.LinkTarget.ToObject<String>()} not found in map");
+                            SENode node = this.CreateResourceNode(childNode, link, true);
+                            SENodeGroup nodeGroup = new SENodeGroup(node.AllText(), true);
+                            targetChildren.AppendChild(nodeGroup);
+                            nodeGroup.AppendNode(node);
+                        }
                             break;
 
                         default:

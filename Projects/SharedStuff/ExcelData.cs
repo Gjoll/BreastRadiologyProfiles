@@ -63,7 +63,9 @@ namespace BreastRadiology.Shared
                     retVal.Columns.Add(newCol);
                 }
             }
+
             Read();
+
             Int32 GetColumn(String name)
             {
                 Int32 index = 0;
@@ -73,6 +75,7 @@ namespace BreastRadiology.Shared
                         return index;
                     index += 1;
                 }
+
                 throw new Exception($"Column {name} not found ");
             }
 
@@ -102,6 +105,7 @@ namespace BreastRadiology.Shared
             {
                 retVal.Add(col.ToString());
             }
+
             return retVal.ToArray();
         }
 
@@ -124,6 +128,7 @@ namespace BreastRadiology.Shared
                         key = newRow[this.idMammoCol].ToString();
                         break;
                 }
+
                 if (rows.ContainsKey(key))
                 {
                     this.converter.ConversionWarn("ExcelData",
@@ -165,6 +170,7 @@ namespace BreastRadiology.Shared
                 while (i < this.dataTable.Rows.Count)
                 {
                     DataRow r = this.dataTable.Rows[i];
+
                     bool Delete()
                     {
                         if (String.IsNullOrWhiteSpace(r[this.classCol].ToString()) == false)
@@ -173,6 +179,7 @@ namespace BreastRadiology.Shared
                             return true;
                         return false;
                     }
+
                     if (Delete())
                         this.dataTable.Rows.RemoveAt(i);
                     else
@@ -216,6 +223,5 @@ namespace BreastRadiology.Shared
                 }
             }
         }
-
     }
 }

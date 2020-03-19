@@ -125,7 +125,7 @@ namespace BreastRadiology.XUnitTests
             if (
                 (this.sDef.IsFragment() == false) &&
                 (this.sDef.BaseDefinition == Global.ObservationUrl)
-                )
+            )
             {
                 if (this.snapNode.TryGetElementNode("Observation.code", out ElementTreeNode codeNode) == false)
                     throw new Exception("Observation.code not found");
@@ -149,7 +149,8 @@ namespace BreastRadiology.XUnitTests
             return this.ConfigureSliceByUrlDiscriminator(extDef, overrideExistingSliceDiscriminator);
         }
 
-        public ElementTreeNode ConfigureSliceByUrlDiscriminator(ElementTreeNode extDef, bool overrideExistingSliceDiscriminator)
+        public ElementTreeNode ConfigureSliceByUrlDiscriminator(ElementTreeNode extDef,
+            bool overrideExistingSliceDiscriminator)
         {
             ElementDefinition.SlicingComponent slicingComponent = new ElementDefinition.SlicingComponent
             {
@@ -182,8 +183,8 @@ namespace BreastRadiology.XUnitTests
         }
 
         public ElementTreeSlice ApplyExtension(String name,
-        String extensionUrl,
-        bool showChildren)
+            String extensionUrl,
+            bool showChildren)
         {
             return this.ApplyExtension(this.Get("extension"), name, extensionUrl);
         }
@@ -203,7 +204,7 @@ namespace BreastRadiology.XUnitTests
             slice.ElementDefinition
                 .SetShort($"{name} extension")
                 .SetDefinition(new Markdown()
-                                    .Paragraph($"This extension slice contains the {name} extension."))
+                    .Paragraph($"This extension slice contains the {name} extension."))
                 .SetComment(ResourcesMaker.componentDefinition)
                 ;
 
@@ -211,7 +212,7 @@ namespace BreastRadiology.XUnitTests
             slice.ElementDefinition.Type.Add(new ElementDefinition.TypeRefComponent
             {
                 Code = "Extension",
-                Profile = new String[] { extensionUrl }
+                Profile = new String[] {extensionUrl}
             });
             return slice;
         }
@@ -237,17 +238,68 @@ namespace BreastRadiology.XUnitTests
             return this;
         }
 
-        public SDefEditor ContactUrl(String value) { this.sDef.ContactUrl(value); return this; }
-        public SDefEditor Publisher(String value) { this.sDef.Publisher(value); return this; }
-        public SDefEditor Title(String value) { this.sDef.Title(value); return this; }
-        public SDefEditor Status(PublicationStatus? value) { this.sDef.Status(value); return this; }
-        public SDefEditor Date(FhirDateTime value) { this.sDef.Date(value); return this; }
-        public SDefEditor Derivation(StructureDefinition.TypeDerivationRule? value) { this.sDef.Derivation(value); return this; }
-        public SDefEditor Abstract(bool? value) { this.sDef.Abstract(value); return this; }
-        public SDefEditor Kind(StructureDefinition.StructureDefinitionKind? value) { this.sDef.Kind(value); return this; }
-        public SDefEditor Version(String value) { this.sDef.Version(value); return this; }
-        public SDefEditor Type(String value) { this.sDef.Type(value); return this; }
-        public SDefEditor Context(StructureDefinition.ExtensionContextType type = StructureDefinition.ExtensionContextType.Element,
+        public SDefEditor ContactUrl(String value)
+        {
+            this.sDef.ContactUrl(value);
+            return this;
+        }
+
+        public SDefEditor Publisher(String value)
+        {
+            this.sDef.Publisher(value);
+            return this;
+        }
+
+        public SDefEditor Title(String value)
+        {
+            this.sDef.Title(value);
+            return this;
+        }
+
+        public SDefEditor Status(PublicationStatus? value)
+        {
+            this.sDef.Status(value);
+            return this;
+        }
+
+        public SDefEditor Date(FhirDateTime value)
+        {
+            this.sDef.Date(value);
+            return this;
+        }
+
+        public SDefEditor Derivation(StructureDefinition.TypeDerivationRule? value)
+        {
+            this.sDef.Derivation(value);
+            return this;
+        }
+
+        public SDefEditor Abstract(bool? value)
+        {
+            this.sDef.Abstract(value);
+            return this;
+        }
+
+        public SDefEditor Kind(StructureDefinition.StructureDefinitionKind? value)
+        {
+            this.sDef.Kind(value);
+            return this;
+        }
+
+        public SDefEditor Version(String value)
+        {
+            this.sDef.Version(value);
+            return this;
+        }
+
+        public SDefEditor Type(String value)
+        {
+            this.sDef.Type(value);
+            return this;
+        }
+
+        public SDefEditor Context(
+            StructureDefinition.ExtensionContextType type = StructureDefinition.ExtensionContextType.Element,
             String expression = "*")
         {
             this.sDef.Context(type, expression);
@@ -334,11 +386,11 @@ namespace BreastRadiology.XUnitTests
         }
 
         public SDefEditor AddComponentLink(String url,
-        Cardinality componentCardinality,
-        String componentRef,
-        String types,
-        Cardinality targetCardinality,
-        params String[] targets)
+            Cardinality componentCardinality,
+            String componentRef,
+            String types,
+            Cardinality targetCardinality,
+            params String[] targets)
         {
             dynamic packet = new JObject();
             packet.LinkType = SVGGlobal.ComponentType;
@@ -358,7 +410,6 @@ namespace BreastRadiology.XUnitTests
 
         public SDefEditor AddTargetLink(String url, Cardinality cardinality, bool showChildren)
         {
-
             dynamic packet = new JObject();
             packet.LinkType = SVGGlobal.TargetType;
             packet.ShowChildren = showChildren;
@@ -432,7 +483,7 @@ namespace BreastRadiology.XUnitTests
             slice.ElementDefinition.Type.Add(new ElementDefinition.TypeRefComponent
             {
                 Code = "Reference",
-                TargetProfile = new String[] { profileUrl }
+                TargetProfile = new String[] {profileUrl}
             });
             return slice;
         }
@@ -461,14 +512,14 @@ namespace BreastRadiology.XUnitTests
         }
 
         public ElementTreeSlice ComponentSliceCodeableConcept(String sliceName,
-                CodeableConcept pattern,
-                ValueSet valueSet,
-                BindingStrength bindingStrength,
-                Int32 minCardinality,
-                String maxCardinality,
-                String componentName,
-                String sliceDefinitionText,
-                Modalities modalities = Modalities.All)
+            CodeableConcept pattern,
+            ValueSet valueSet,
+            BindingStrength bindingStrength,
+            Int32 minCardinality,
+            String maxCardinality,
+            String componentName,
+            String sliceDefinitionText,
+            Modalities modalities = Modalities.All)
         {
             String compStr = maxCardinality == "1" ? compStr = "component" : "components";
             Markdown sliceDefinition;
@@ -489,17 +540,18 @@ namespace BreastRadiology.XUnitTests
                     else
                         introStr = "This slice contains the required components";
                 }
+
                 sliceDefinition = new Markdown()
                     .Paragraph($"{introStr} that {sliceDefinitionText}.",
-                               $"The value of this component is a codeable concept chosen from the {valueSet.Name} valueset.");
+                        $"The value of this component is a codeable concept chosen from the {valueSet.Name} valueset.");
             }
 
             ElementTreeSlice slice = this.AppendSlice("component", sliceName, minCardinality, maxCardinality);
             slice.ElementDefinition
                 .SetShort($"{componentName} component")
-                    .SetDefinition(sliceDefinition)
-                    .SetComment(ResourcesMaker.componentDefinition)
-                    ;
+                .SetDefinition(sliceDefinition)
+                .SetComment(ResourcesMaker.componentDefinition)
+                ;
 
             if (modalities != Modalities.All)
             {
@@ -518,8 +570,8 @@ namespace BreastRadiology.XUnitTests
                     Max = "1",
                     Short = $"{componentName} component code",
                     Definition = new Markdown()
-                                    .Paragraph($"This code identifies the {componentName} {compStr}.",
-                                        $"Its value shall always be the concept '{pattern.Coding[0].Display}'")
+                        .Paragraph($"This code identifies the {componentName} {compStr}.",
+                            $"Its value shall always be the concept '{pattern.Coding[0].Display}'")
                 };
                 componentCode
                     .Pattern(pattern.ToPattern())
@@ -538,11 +590,11 @@ namespace BreastRadiology.XUnitTests
                 };
                 valueX
                     .Binding(valueSet, bindingStrength)
-                                    .Type("CodeableConcept")
-                                    .SetDefinition(new Markdown()
-                                        .Paragraph("Value is a codeable concept.")
-                                     )
-                                ;
+                    .Type("CodeableConcept")
+                    .SetDefinition(new Markdown()
+                        .Paragraph("Value is a codeable concept.")
+                    )
+                    ;
                 slice.CreateNode(valueX);
             }
 
@@ -616,9 +668,9 @@ namespace BreastRadiology.XUnitTests
                 .SetShort($"'{profile.Title}' reference")
                 .SetDefinition(
                     new Markdown()
-                                    .Paragraph($"This slice references the target '{profile.Title}'.")
-                    )
-            ;
+                        .Paragraph($"This slice references the target '{profile.Title}'.")
+                )
+                ;
             this.AddTargetLink(profile.Url.Trim(),
                 new SDefEditor.Cardinality(retVal.ElementDefinition),
                 false);
@@ -634,13 +686,13 @@ namespace BreastRadiology.XUnitTests
         {
             String baseName = sliceElementDef.ElementDefinition.Path.LastPathPart();
             ElementDefinition sliceDef = this.SliceByUrlTarget(sliceElementDef, profile.Url, min, max).ElementDefinition
-                .SetShort($"'{profile.Title}' reference")
-                .SetDefinition(
-                    new Markdown()
-                        .Paragraph($"This slice references the target '{profile.Title}'.")
-                    .ValidModalities(Modalities.MG)
+                    .SetShort($"'{profile.Title}' reference")
+                    .SetDefinition(
+                        new Markdown()
+                            .Paragraph($"This slice references the target '{profile.Title}'.")
+                            .ValidModalities(Modalities.MG)
                     )
-            ;
+                ;
             this.AddTargetLink(profile.Url,
                 new SDefEditor.Cardinality(sliceDef),
                 false);
@@ -663,7 +715,7 @@ namespace BreastRadiology.XUnitTests
         {
             // Fix component code
             ElementTreeNode valueXNode = this.SliceValueXByType(slice,
-                new string[] { "Quantity", "Range" });
+                new string[] {"Quantity", "Range"});
             {
                 Hl7.Fhir.Model.Quantity q = new Hl7.Fhir.Model.Quantity
                 {
@@ -671,16 +723,16 @@ namespace BreastRadiology.XUnitTests
                 };
 
                 ElementDefinition valueX = new ElementDefinition
-                {
-                    Path = $"{slice.ElementDefinition.Path}.value[x]",
-                    ElementId = $"{slice.ElementDefinition.ElementId}.value[x]:valueQuantity",
-                    SliceName = $"valueQuantity",
-                    Min = 0,
-                    Max = "1"
-                }
-                .Pattern(q)
-                .Type("Quantity")
-                ;
+                        {
+                            Path = $"{slice.ElementDefinition.Path}.value[x]",
+                            ElementId = $"{slice.ElementDefinition.ElementId}.value[x]:valueQuantity",
+                            SliceName = $"valueQuantity",
+                            Min = 0,
+                            Max = "1"
+                        }
+                        .Pattern(q)
+                        .Type("Quantity")
+                    ;
                 valueXNode.CreateSlice($"valueQuantity", valueX);
             }
 
@@ -697,16 +749,16 @@ namespace BreastRadiology.XUnitTests
                     }
                 };
                 ElementDefinition valueX = new ElementDefinition
-                {
-                    Path = $"{slice.ElementDefinition.Path}.value[x]",
-                    ElementId = $"{slice.ElementDefinition.ElementId}.value[x]:valueRange",
-                    SliceName = $"valueRange",
-                    Min = 0,
-                    Max = "1"
-                }
-                .Pattern(r)
-                .Type("Range")
-                ;
+                        {
+                            Path = $"{slice.ElementDefinition.Path}.value[x]",
+                            ElementId = $"{slice.ElementDefinition.ElementId}.value[x]:valueRange",
+                            SliceName = $"valueRange",
+                            Min = 0,
+                            Max = "1"
+                        }
+                        .Pattern(r)
+                        .Type("Range")
+                    ;
                 valueXNode.CreateSlice($"valueRange", valueX);
             }
         }

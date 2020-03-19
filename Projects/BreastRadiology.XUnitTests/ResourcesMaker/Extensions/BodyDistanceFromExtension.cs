@@ -21,20 +21,21 @@ namespace BreastRadiology.XUnitTests
                 ElementTreeNode extensionNode;
 
                 e = Self.CreateEditor("BodyDistanceFromExtension",
-                    "Body Distance From Extension",
-                    "Body Dist. From",
-                    Global.ExtensionUrl,
-                    $"{Group_ExtensionResources}/BreastBodyLocation",
-                    "Extension")
-                    .Description("Body Distance From extension",
-                        new Markdown()
-                            .Paragraph("This complex extension adds fields that form a distance measurement from a specified body landmark.",
-                                "The body landmark is defined by a codeable concept",
-                                "The distance is defined by a quantity of metric distance units (cm, mm, etc)."
+                            "Body Distance From Extension",
+                            "Body Dist. From",
+                            Global.ExtensionUrl,
+                            $"{Group_ExtensionResources}/BreastBodyLocation",
+                            "Extension")
+                        .Description("Body Distance From extension",
+                            new Markdown()
+                                .Paragraph(
+                                    "This complex extension adds fields that form a distance measurement from a specified body landmark.",
+                                    "The body landmark is defined by a codeable concept",
+                                    "The distance is defined by a quantity of metric distance units (cm, mm, etc)."
                                 )
-                    )
-                    .Kind(StructureDefinition.StructureDefinitionKind.ComplexType)
-                    .Context()
+                        )
+                        .Kind(StructureDefinition.StructureDefinitionKind.ComplexType)
+                        .Context()
                     ;
                 s = e.SDef;
 
@@ -56,10 +57,11 @@ namespace BreastRadiology.XUnitTests
                         "Body landmark. Origin of distance measurement.",
                         new Markdown()
                             .Paragraph("Body landmark which defines the origin of the measurement.")
-                            .Paragraph("Currently the value set this is bound to does not contain the requiored breast landmarks like nipple."),
+                            .Paragraph(
+                                "Currently the value set this is bound to does not contain the requiored breast landmarks like nipple."),
                         out ElementTreeSlice extensionSlice,
                         out ElementTreeNode valueXNode
-                     );
+                    );
 
                     String binding = "http://hl7.org/fhir/ValueSet/body-site";
                     valueXNode.ElementDefinition
@@ -81,8 +83,8 @@ namespace BreastRadiology.XUnitTests
                         sliceName,
                         "Distance from landmark",
                         new Markdown("Distance from body landmark to body location"),
-                            out ElementTreeSlice extensionSlice,
-                            out ElementTreeNode valueXNode);
+                        out ElementTreeSlice extensionSlice,
+                        out ElementTreeNode valueXNode);
 
                     String binding = Self.UnitsOfLengthVS.Value().Url;
                     valueXNode.ElementDefinition
@@ -98,13 +100,13 @@ namespace BreastRadiology.XUnitTests
                         binding);
                 }
                 e.IntroDoc
-                     .ReviewedStatus("Needs review by KWA")
-                     .ReviewedStatus("Needs review by Penrad")
-                     .ReviewedStatus("Needs review by MRS")
-                     .ReviewedStatus("Needs review by MagView")
-                     .ReviewedStatus("Needs review by CIMI")
+                    .ReviewedStatus("Needs review by KWA")
+                    .ReviewedStatus("Needs review by Penrad")
+                    .ReviewedStatus("Needs review by MRS")
+                    .ReviewedStatus("Needs review by MagView")
+                    .ReviewedStatus("Needs review by CIMI")
                     .Description("This complex extension defines the structure for a distance measurement " +
-                    "from a defined body position.")
+                                 "from a defined body position.")
                     ;
             });
     }

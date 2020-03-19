@@ -8,9 +8,9 @@ namespace BreastRadiology.XUnitTests
 {
     class ConceptDef
     {
-
         public String Code { get; set; }
         public String Display { get; set; }
+
         public String Definition
         {
             get
@@ -27,7 +27,7 @@ namespace BreastRadiology.XUnitTests
                         if (
                             (line.Length == 0) &&
                             (newParagraph == false)
-                            )
+                        )
                         {
                             newParagraph = true;
                             return;
@@ -38,6 +38,7 @@ namespace BreastRadiology.XUnitTests
                             sb.AppendLine("");
                             newParagraph = false;
                         }
+
                         sb.AppendLine($"{line} ");
                     }
 
@@ -67,6 +68,7 @@ namespace BreastRadiology.XUnitTests
                 return sb.ToString();
             }
         }
+
         String modalities { get; set; }
 
         String[] definitionText;
@@ -114,6 +116,7 @@ namespace BreastRadiology.XUnitTests
         public ConceptDef ValidModalities(Modalities modalities)
         {
             StringBuilder sb = new StringBuilder();
+
             void Add(Modalities flag)
             {
                 if ((modalities & flag) == flag)
@@ -134,9 +137,9 @@ namespace BreastRadiology.XUnitTests
         {
             return this;
         }
+
         public ConceptDef SetACR(params String[] lines)
         {
-
             this.biRadsText = lines;
             return this;
         }

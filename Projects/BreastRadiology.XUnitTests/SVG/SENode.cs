@@ -12,13 +12,19 @@ namespace BreastRadiology.XUnitTests
         private float width;
         public List<SEText> TextLines = new List<SEText>();
         public Color FillColor { get; }
-        public String HRef {get; }
-        public float Width { get => this.width; set => this.width = value; }
+        public String HRef { get; }
+
+        public float Width
+        {
+            get => this.width;
+            set => this.width = value;
+        }
 
         /// <summary>
         /// Annotation on the line coming into the node (at line end);
         /// </summary>
         public String IncomingAnnotation { get; }
+
         /// <summary>
         /// Annotation on the line leaving the node (at start of outgoing line);
         /// </summary>
@@ -38,6 +44,7 @@ namespace BreastRadiology.XUnitTests
                 if ((annotations.Length > 1) && (annotations[1] != null))
                     this.OutgoingAnnotation = annotations[1];
             }
+
             this.HRef = hRef;
         }
 
@@ -57,6 +64,7 @@ namespace BreastRadiology.XUnitTests
 
             return sb.ToString();
         }
+
         public String AllText()
         {
             StringBuilder sb = new StringBuilder();

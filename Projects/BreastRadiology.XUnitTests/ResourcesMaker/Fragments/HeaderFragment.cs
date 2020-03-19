@@ -14,14 +14,15 @@ namespace BreastRadiology.XUnitTests
     partial class ResourcesMaker : ConverterBase
     {
         SDTaskVar HeaderFragment = new SDTaskVar(
-            (out StructureDefinition  s) =>
+            (out StructureDefinition s) =>
             {
                 SDefEditor e = Self.CreateFragment("HeaderFragment",
-                    "Header Fragment",
-                    "Common",
-                    Global.ResourceUrl)
+                        "Header Fragment",
+                        "Common",
+                        Global.ResourceUrl)
                     .Description("Common Header Fragment",
-                        new Markdown("Resource fragment used to by all resources to define common values such as Contact and Date.")
+                        new Markdown(
+                            "Resource fragment used to by all resources to define common values such as Contact and Date.")
                     );
                 ContactDetail cd = new ContactDetail();
                 cd.Telecom.Add(new ContactPoint
@@ -33,11 +34,11 @@ namespace BreastRadiology.XUnitTests
                 s = e.SDef;
 
                 e.IntroDoc
-                     .ReviewedStatus("Needs review by KWA")
-                     .ReviewedStatus("Needs review by Penrad")
-                     .ReviewedStatus("Needs review by MRS")
-                     .ReviewedStatus("Needs review by MagView")
-                     .ReviewedStatus("Needs review by CIMI")
+                    .ReviewedStatus("Needs review by KWA")
+                    .ReviewedStatus("Needs review by Penrad")
+                    .ReviewedStatus("Needs review by MRS")
+                    .ReviewedStatus("Needs review by MagView")
+                    .ReviewedStatus("Needs review by CIMI")
                     ;
 
                 e.SDef.Contact.Add(cd);
@@ -46,6 +47,5 @@ namespace BreastRadiology.XUnitTests
                 e.SDef.Publisher = "Hl7-Clinical Interoperability Council";
                 e.SDef.Version = ProfileVersion;
             });
-
     }
 }

@@ -10,7 +10,7 @@ namespace BreastRadiology.XUnitTests
     partial class ResourcesMaker
     {
         SDTaskVar CategoryFragment = new SDTaskVar(
-            (out StructureDefinition  s) =>
+            (out StructureDefinition s) =>
             {
                 SDefEditor e = Self.CreateFragment("CategoryFragment",
                         "Category Fragment",
@@ -18,17 +18,18 @@ namespace BreastRadiology.XUnitTests
                         Global.ObservationUrl)
                     .Description("Fix Observation.category Fragment",
                         new Markdown()
-                            .Paragraph("This fragment slices Observation.category and fixes the observation.code value to 'imaging'.")
+                            .Paragraph(
+                                "This fragment slices Observation.category and fixes the observation.code value to 'imaging'.")
                     );
                 s = e.SDef;
 
                 e.IntroDoc
-                     .ReviewedStatus("Needs review by KWA")
-                     .ReviewedStatus("Needs review by Penrad")
-                     .ReviewedStatus("Needs review by MRS")
-                     .ReviewedStatus("Needs review by MagView")
-                     .ReviewedStatus("Needs review by CIMI")
-                   ;
+                    .ReviewedStatus("Needs review by KWA")
+                    .ReviewedStatus("Needs review by Penrad")
+                    .ReviewedStatus("Needs review by MRS")
+                    .ReviewedStatus("Needs review by MagView")
+                    .ReviewedStatus("Needs review by CIMI")
+                    ;
 
                 {
                     ElementTreeNode eDef = e.Get("category");
@@ -36,10 +37,10 @@ namespace BreastRadiology.XUnitTests
                 }
 
                 e.SliceSelfByPattern("category",
-                    "categoryImaging",
-                    new CodeableConcept("http://terminology.hl7.org/CodeSystem/observation-category", "imaging"))
+                        "categoryImaging",
+                        new CodeableConcept("http://terminology.hl7.org/CodeSystem/observation-category", "imaging"))
                     .Single()
-                ;
+                    ;
             });
     }
 }

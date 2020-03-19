@@ -16,7 +16,9 @@ namespace BreastRadiology.XUnitTests
         String outputDir;
         String resourceDir => Path.Combine(this.outputDir, "resources");
         String pagecontentDir => Path.Combine(this.outputDir, "pagecontent");
+
         String imagesDir => Path.Combine(this.outputDir, "images");
+
         //String IgPath => Path.Combine(this.outputDir, "IGBreastRad.json");
         String ImpGuidePath => Path.Combine(this.outputDir, this.impGuideName);
         String impGuideName;
@@ -92,6 +94,7 @@ namespace BreastRadiology.XUnitTests
         }
 
         HashSet<String> groupIds = new HashSet<string>();
+
         public void AddGrouping(String groupId, String name, String description)
         {
             this.implementationGuide.AddGrouping(groupId, name, description);
@@ -151,8 +154,8 @@ namespace BreastRadiology.XUnitTests
                 if (this.groupIds.Contains(groupId) == false)
                 {
                     this.ConversionError(this.GetType().Name,
-                       fcn,
-                       $"Group {groupId} not defined");
+                        fcn,
+                        $"Group {groupId} not defined");
                     return null;
                 }
 
@@ -206,14 +209,16 @@ namespace BreastRadiology.XUnitTests
             {
                 String groupId = GetGroupPath(codeSystem);
                 Save(codeSystem, $"CodeSystem-{codeSystem.Name}.json");
-                this.implementationGuide.AddIGResource($"CodeSystem/{codeSystem.Name}", codeSystem.Title, codeSystem.Description.ToString(), groupId, false);
+                this.implementationGuide.AddIGResource($"CodeSystem/{codeSystem.Name}", codeSystem.Title,
+                    codeSystem.Description.ToString(), groupId, false);
             }
 
             foreach (ValueSet valueSet in valueSets)
             {
                 String groupId = GetGroupPath(valueSet);
                 Save(valueSet, $"ValueSet-{valueSet.Name}.json");
-                this.implementationGuide.AddIGResource($"ValueSet/{valueSet.Name}", valueSet.Title, valueSet.Description.ToString(), groupId, false);
+                this.implementationGuide.AddIGResource($"ValueSet/{valueSet.Name}", valueSet.Title,
+                    valueSet.Description.ToString(), groupId, false);
             }
 
             foreach (StructureDefinition structureDefinition in structureDefinitions)
@@ -272,6 +277,7 @@ namespace BreastRadiology.XUnitTests
                             Int32 index = structureDefinition.Url.LastIndexOf('/');
                             structureDefinitions.Add(structureDefinition);
                         }
+
                         break;
                 }
             }

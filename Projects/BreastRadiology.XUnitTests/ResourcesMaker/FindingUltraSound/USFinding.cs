@@ -18,16 +18,16 @@ namespace BreastRadiology.XUnitTests
             {
                 //$ Fix me. Incorrect method!!!
                 SDefEditor e = Self.CreateEditor("USFinding",
-                        "Ultra-Sound Finding",
-                        "US Finding",
-                        Global.ObservationUrl,
-                        $"{Group_USResources}",
-                        "ObservationSection")
+                            "Ultra-Sound Finding",
+                            "US Finding",
+                            Global.ObservationUrl,
+                            $"{Group_USResources}",
+                            "ObservationSection")
                         .Description("Ultra Sound Finding",
                             new Markdown()
                         )
-                     .AddFragRef(Self.ObservationSectionFragment.Value())
-                   ;
+                        .AddFragRef(Self.ObservationSectionFragment.Value())
+                    ;
                 s = e.SDef;
 
                 // Set Observation.code to unique value for this profile.
@@ -37,13 +37,13 @@ namespace BreastRadiology.XUnitTests
                     ;
 
                 e.IntroDoc
-                     .ReviewedStatus("Needs review by KWA")
-                     .ReviewedStatus("Needs review by Penrad")
-                     .ReviewedStatus("Needs review by MRS")
-                     .ReviewedStatus("Needs review by MagView")
-                     .ReviewedStatus("Needs review by CIMI")
-                     .Description("This Observation contains all references to all the observations" +
-                                  "and exam information related to a Ultra Sound exam.")
+                    .ReviewedStatus("Needs review by KWA")
+                    .ReviewedStatus("Needs review by Penrad")
+                    .ReviewedStatus("Needs review by MRS")
+                    .ReviewedStatus("Needs review by MagView")
+                    .ReviewedStatus("Needs review by CIMI")
+                    .Description("This Observation contains all references to all the observations" +
+                                 "and exam information related to a Ultra Sound exam.")
                     ;
 
                 //$e.Find("method")

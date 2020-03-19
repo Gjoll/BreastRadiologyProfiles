@@ -15,34 +15,34 @@ namespace BreastRadiology.XUnitTests
     partial class ResourcesMaker
     {
         SDTaskVar ObservationComponentCorrespondsWithFragment = new SDTaskVar(
-               (out StructureDefinition s) =>
-                   {
-                       SDefEditor e = Self.CreateFragment("CorrespondsWithFragment",
-                               "CorrespondsWith Fragment",
-                               "CorrespondsWith Fragment",
-                               Global.ObservationUrl)
-                           .Description("Observation 'Consistent With' Component Fragment",
-                               new Markdown()
-                           )
-                           ;
-                       s = e.SDef;
+            (out StructureDefinition s) =>
+            {
+                SDefEditor e = Self.CreateFragment("CorrespondsWithFragment",
+                            "CorrespondsWith Fragment",
+                            "CorrespondsWith Fragment",
+                            Global.ObservationUrl)
+                        .Description("Observation 'Consistent With' Component Fragment",
+                            new Markdown()
+                        )
+                    ;
+                s = e.SDef;
 
-                       e.StartComponentSliceing();
-                       e.ComponentSliceCodeableConcept("correspondsWith",
-                           Self.ComponentSliceCodeCorrespondsWith.ToCodeableConcept(),
-                           Self.CorrespondsWithVS.Value(),
-                           BindingStrength.Extensible,
-                           0,
-                           "*",
-                           "Corresponds With",
-                            "define what this observation corresponds with");
-                       e.IntroDoc
-                         .ReviewedStatus("Needs review by KWA")
-                         .ReviewedStatus("Needs review by Penrad")
-                         .ReviewedStatus("Needs review by MRS")
-                         .ReviewedStatus("Needs review by MagView")
-                         .ReviewedStatus("Needs review by CIMI")
-                           ;
-                   });
+                e.StartComponentSliceing();
+                e.ComponentSliceCodeableConcept("correspondsWith",
+                    Self.ComponentSliceCodeCorrespondsWith.ToCodeableConcept(),
+                    Self.CorrespondsWithVS.Value(),
+                    BindingStrength.Extensible,
+                    0,
+                    "*",
+                    "Corresponds With",
+                    "define what this observation corresponds with");
+                e.IntroDoc
+                    .ReviewedStatus("Needs review by KWA")
+                    .ReviewedStatus("Needs review by Penrad")
+                    .ReviewedStatus("Needs review by MRS")
+                    .ReviewedStatus("Needs review by MagView")
+                    .ReviewedStatus("Needs review by CIMI")
+                    ;
+            });
     }
 }

@@ -118,6 +118,7 @@ namespace BreastRadiology.XUnitTests
                     concept.AppendLine($"        {lines[i]})");
                 }
             }
+
             return true;
         }
 
@@ -176,15 +177,15 @@ namespace BreastRadiology.XUnitTests
 
                         break;
 
-                    case (char)65533:       // unicode REPLACEMENT CHARACTER - ignore it.
+                    case (char) 65533: // unicode REPLACEMENT CHARACTER - ignore it.
                         break;
 
-                    case (char)8211:       // en dash
-                    case (char)8212:        // em dash
+                    case (char) 8211: // en dash
+                    case (char) 8212: // em dash
                         Add('-');
                         break;
 
-                    case (char)8804:
+                    case (char) 8804:
                         Add('<');
                         Add('=');
                         break;
@@ -199,7 +200,7 @@ namespace BreastRadiology.XUnitTests
                         break;
 
                     case ' ':
-                    case (Char)160:     // non breaking space - break anyways :-)
+                    case (Char) 160: // non breaking space - break anyways :-)
                         Add(c);
                         if (len > Maxlen)
                         {
@@ -210,12 +211,13 @@ namespace BreastRadiology.XUnitTests
                         break;
 
                     default:
-                        Int32 cNum = (Int32)c;
+                        Int32 cNum = (Int32) c;
                         if ((cNum < 0x20) || (cNum > 0x7e))
                         {
                             String s = $"Invalid char '{c}' {cNum}";
                             throw new Exception(s);
                         }
+
                         Add(c);
                         break;
                 }
@@ -230,7 +232,7 @@ namespace BreastRadiology.XUnitTests
             String csBlockName,
             params String[] penIds)
         {
-            WriteIds(className, outputCodePath, csBlockName, (IEnumerable<String>)penIds);
+            WriteIds(className, outputCodePath, csBlockName, (IEnumerable<String>) penIds);
         }
 
         public IEnumerable<String> RemovePlurals(IEnumerable<String> values)
@@ -261,6 +263,7 @@ namespace BreastRadiology.XUnitTests
                     if (String.Compare(idCode, otherValue, true) == 0)
                         return true;
                 }
+
                 return false;
             }
 
@@ -312,6 +315,7 @@ namespace BreastRadiology.XUnitTests
                 row[this.spreadSheetData.classCol] = classText;
             }
         }
+
         void WriteIntroDocDescription(String className,
             String blockName,
             String outputCodePath,
@@ -413,6 +417,7 @@ namespace BreastRadiology.XUnitTests
                     concepts
                         .AppendLine($",");
             }
+
             concepts.AppendLine($"#endregion // Codes");
             editor.Save();
         }
@@ -435,6 +440,7 @@ namespace BreastRadiology.XUnitTests
                     if ((classValue.Length > 0) && (classValue[0] != className))
                         return false;
                 }
+
                 return true;
             }
 
@@ -443,6 +449,7 @@ namespace BreastRadiology.XUnitTests
                 if (IsMatch(item.Value))
                     retVal.Add(item.Key);
             }
+
             return retVal.ToArray();
         }
 
@@ -508,6 +515,7 @@ namespace BreastRadiology.XUnitTests
                         break;
                 }
             }
+
             List<String> retVal = sb.ToString().Split('\n').ToList();
             while ((retVal.Count > 0) && (String.IsNullOrWhiteSpace(retVal[^1])))
                 retVal.RemoveAt(retVal.Count - 1);
@@ -623,12 +631,18 @@ namespace BreastRadiology.XUnitTests
                 "BreastData.xlsx");
             this.spreadSheetData = new ExcelData(new Info(), filePath, "Sheet3");
 
-            WriteIntroDocDescription("AbnormalityCyst", "IntroDocDescription", @"Common\Abnormalities\AbnormalityCyst.cs", "69");
-            WriteIntroDocDescription("AbnormalityArchitecturalDistortion", "IntroDocDescription", @"FindingMG\MGAbnormalityArchitecturalDistortion.cs", "642");
-            WriteIntroDocDescription("MGAbnormalityAsymmetry", "IntroDocDescription", @"FindingMG\MGAbnormalityAsymmetry.cs", "691");
-            WriteIntroDocDescription("MGAbnormalityCalcification", "IntroDocDescription", @"FindingMG\MGAbnormalityCalcification.cs", "690");
-            WriteIntroDocDescription("MGAbnormalityDensity", "IntroDocDescription", @"FindingMG\MGAbnormalityDensity.cs", "686");
-            WriteIntroDocDescription("MGAbnormalityFatNecrosis", "IntroDocDescription", @"FindingMG\MGAbnormalityFatNecrosis.cs", "688");
+            WriteIntroDocDescription("AbnormalityCyst", "IntroDocDescription",
+                @"Common\Abnormalities\AbnormalityCyst.cs", "69");
+            WriteIntroDocDescription("AbnormalityArchitecturalDistortion", "IntroDocDescription",
+                @"FindingMG\MGAbnormalityArchitecturalDistortion.cs", "642");
+            WriteIntroDocDescription("MGAbnormalityAsymmetry", "IntroDocDescription",
+                @"FindingMG\MGAbnormalityAsymmetry.cs", "691");
+            WriteIntroDocDescription("MGAbnormalityCalcification", "IntroDocDescription",
+                @"FindingMG\MGAbnormalityCalcification.cs", "690");
+            WriteIntroDocDescription("MGAbnormalityDensity", "IntroDocDescription",
+                @"FindingMG\MGAbnormalityDensity.cs", "686");
+            WriteIntroDocDescription("MGAbnormalityFatNecrosis", "IntroDocDescription",
+                @"FindingMG\MGAbnormalityFatNecrosis.cs", "688");
             WriteIntroDocDescription("TumorSatellite", "IntroDocDescription", @"Common\TumorSatellite.cs", "623");
 
             WriteIds("BiRads",
@@ -742,7 +756,7 @@ namespace BreastRadiology.XUnitTests
             WriteIds("BreastBodyLocation-Regions",
                 @"Extensions\BreastBodyLocationExtension.cs",
                 "Regions",
-                    "1015", "1014", "AxillaI", "AxillaII", "AxillaIII", "1515", "1511", "1013");
+                "1015", "1014", "AxillaI", "AxillaII", "AxillaIII", "1515", "1511", "1013");
             WriteIds("AssociatedFeature",
                 @"Common\AssociatedFeature.cs",
                 "AssociatedFeatureCS",
@@ -755,6 +769,7 @@ namespace BreastRadiology.XUnitTests
             this.spreadSheetData.Save();
         }
     }
+
     public static class Extensions
     {
         public static IEnumerable<String> Remove(this IEnumerable<String> values,

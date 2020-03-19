@@ -34,6 +34,7 @@ namespace BreastRadiology.XUnitTests
                 return this.baseDirFull;
             }
         }
+
         String baseDirFull;
 
         String cacheDir;
@@ -84,6 +85,7 @@ namespace BreastRadiology.XUnitTests
             this.Message("Warn", className, method, msg);
             return true;
         }
+
         private bool StatusInfo(string className, string method, string msg)
         {
             //if (msg.Contains(" does not resolve", new System.StringComparison()))
@@ -98,6 +100,7 @@ namespace BreastRadiology.XUnitTests
             //this.Message("Info", className, method, msg);
             return true;
         }
+
         private bool StatusErrors(string className, string method, string msg)
         {
             if (msg.Contains(" does not resolve", new System.StringComparison()))
@@ -134,8 +137,9 @@ namespace BreastRadiology.XUnitTests
                 Trace.WriteLine(err.Message);
                 Assert.IsTrue(false);
             }
+
             TimeSpan span = DateTime.Now - start;
-            Trace.WriteLine($"Ending B1_BuildFragments [{(Int32)span.TotalSeconds}]");
+            Trace.WriteLine($"Ending B1_BuildFragments [{(Int32) span.TotalSeconds}]");
         }
 
         [TestMethod]
@@ -188,7 +192,7 @@ namespace BreastRadiology.XUnitTests
             }
 
             TimeSpan span = DateTime.Now - start;
-            Trace.WriteLine($"Ending B2_BuildResources [{(Int32)span.TotalSeconds}]");
+            Trace.WriteLine($"Ending B2_BuildResources [{(Int32) span.TotalSeconds}]");
         }
 
         [TestMethod]
@@ -281,8 +285,9 @@ namespace BreastRadiology.XUnitTests
                 Trace.WriteLine(err.Message);
                 Assert.IsTrue(false);
             }
+
             TimeSpan span = DateTime.Now - start;
-            Trace.WriteLine($"Ending B3_PatchIntroDocs [{(Int32)span.TotalSeconds}]");
+            Trace.WriteLine($"Ending B3_PatchIntroDocs [{(Int32) span.TotalSeconds}]");
         }
 
         [TestMethod]
@@ -332,18 +337,19 @@ namespace BreastRadiology.XUnitTests
                     ResourceMap map = new ResourceMap();
                     map.AddDir(this.fragmentDir, "*.json");
 
-                    FragmentMapMaker fragmentMapMaker = new FragmentMapMaker(this.fc, map, this.graphicsDir, this.pageDir, this.pageTemplateDir);
+                    FragmentMapMaker fragmentMapMaker = new FragmentMapMaker(this.fc, map, this.graphicsDir,
+                        this.pageDir, this.pageTemplateDir);
                     fragmentMapMaker.Create();
                 }
-
             }
             catch (Exception err)
             {
                 Trace.WriteLine(err.Message);
                 Assert.IsTrue(false);
             }
+
             TimeSpan span = DateTime.Now - start;
-            Trace.WriteLine($"Ending B4_BuildGraphics [{(Int32)span.TotalSeconds}]");
+            Trace.WriteLine($"Ending B4_BuildGraphics [{(Int32) span.TotalSeconds}]");
         }
 
         [TestMethod]
@@ -363,35 +369,56 @@ namespace BreastRadiology.XUnitTests
                 p.StatusWarnings += this.StatusWarnings;
                 p.Start(Path.Combine(this.contentDir, "IGBreastRad.xml"));
 
-                p.AddGrouping($"{ResourcesMaker.Group_BaseResources}", "Main Resources", "This section contains the main top level resources that are used in a Breast Radiology Report.");
+                p.AddGrouping($"{ResourcesMaker.Group_BaseResources}", "Main Resources",
+                    "This section contains the main top level resources that are used in a Breast Radiology Report.");
 
-                p.AddGrouping($"{ResourcesMaker.Group_CommonResources}", "Common Resources", "This section contains resources that are commonly used throughout a Breast Radiology Report");
-                p.AddGrouping($"{ResourcesMaker.Group_CommonCodesVS}", "Common ValueSets ", "This section contains value sets that are commonly used throughout a Breast Radiology Report");
-                p.AddGrouping($"{ResourcesMaker.Group_CommonCodesCS}", "Common CodeSystems", "This section contains code systems that are commonly used throughout a Breast Radiology Report");
+                p.AddGrouping($"{ResourcesMaker.Group_CommonResources}", "Common Resources",
+                    "This section contains resources that are commonly used throughout a Breast Radiology Report");
+                p.AddGrouping($"{ResourcesMaker.Group_CommonCodesVS}", "Common ValueSets ",
+                    "This section contains value sets that are commonly used throughout a Breast Radiology Report");
+                p.AddGrouping($"{ResourcesMaker.Group_CommonCodesCS}", "Common CodeSystems",
+                    "This section contains code systems that are commonly used throughout a Breast Radiology Report");
 
-                p.AddGrouping($"{ResourcesMaker.Group_MGResources}", "Mammography Resources", "This section contains resources used specifically in a Mammography exam");
-                p.AddGrouping($"{ResourcesMaker.Group_MGCodesVS}", "Mammography ValueSets", "This section contains value sets used specifically in a Mammography exam");
-                p.AddGrouping($"{ResourcesMaker.Group_MGCodesCS}", "Mammography CodeSystems", "This section contains code systems used specifically in a Mammography exam");
+                p.AddGrouping($"{ResourcesMaker.Group_MGResources}", "Mammography Resources",
+                    "This section contains resources used specifically in a Mammography exam");
+                p.AddGrouping($"{ResourcesMaker.Group_MGCodesVS}", "Mammography ValueSets",
+                    "This section contains value sets used specifically in a Mammography exam");
+                p.AddGrouping($"{ResourcesMaker.Group_MGCodesCS}", "Mammography CodeSystems",
+                    "This section contains code systems used specifically in a Mammography exam");
 
-                p.AddGrouping($"{ResourcesMaker.Group_MRIResources}", "MRI Resources", "This section contains resources used specifically in a MRI exam");
-                p.AddGrouping($"{ResourcesMaker.Group_MRICodesVS}", "MRI ValueSets", "This section contains value sets used specifically in a MRI exam");
-                p.AddGrouping($"{ResourcesMaker.Group_MRICodesCS}", "MRI CodeSystems", "This section contains code systems used specifically in a MRI exam");
+                p.AddGrouping($"{ResourcesMaker.Group_MRIResources}", "MRI Resources",
+                    "This section contains resources used specifically in a MRI exam");
+                p.AddGrouping($"{ResourcesMaker.Group_MRICodesVS}", "MRI ValueSets",
+                    "This section contains value sets used specifically in a MRI exam");
+                p.AddGrouping($"{ResourcesMaker.Group_MRICodesCS}", "MRI CodeSystems",
+                    "This section contains code systems used specifically in a MRI exam");
 
-                p.AddGrouping($"{ResourcesMaker.Group_USResources}", "Ultra-Sound Resources", "This section contains resources used specifically in a Ultra-Sound exam");
-                p.AddGrouping($"{ResourcesMaker.Group_USCodesVS}", "Ultra-Sound ValueSets", "This section contains value sets used specifically in a Ultra-Sound exam");
-                p.AddGrouping($"{ResourcesMaker.Group_USCodesCS}", "Ultra-Sound CodeSystems", "This section contains code systems used specifically in a Ultra-Sound exam");
+                p.AddGrouping($"{ResourcesMaker.Group_USResources}", "Ultra-Sound Resources",
+                    "This section contains resources used specifically in a Ultra-Sound exam");
+                p.AddGrouping($"{ResourcesMaker.Group_USCodesVS}", "Ultra-Sound ValueSets",
+                    "This section contains value sets used specifically in a Ultra-Sound exam");
+                p.AddGrouping($"{ResourcesMaker.Group_USCodesCS}", "Ultra-Sound CodeSystems",
+                    "This section contains code systems used specifically in a Ultra-Sound exam");
 
-                p.AddGrouping($"{ResourcesMaker.Group_NMResources}", "Nuclear Medicine Resources", "This section contains resources used specifically in a Nuclear Medicine exam");
-                p.AddGrouping($"{ResourcesMaker.Group_NMCodesVS}", "Nuclear Medicine ValueSets", "This section contains value sets used specifically in a Nuclear Medicine exam");
-                p.AddGrouping($"{ResourcesMaker.Group_NMCodesCS}", "Nuclear Medicine CodeSystems", "This section contains code systems used specifically in a Nuclear Medicine exam");
+                p.AddGrouping($"{ResourcesMaker.Group_NMResources}", "Nuclear Medicine Resources",
+                    "This section contains resources used specifically in a Nuclear Medicine exam");
+                p.AddGrouping($"{ResourcesMaker.Group_NMCodesVS}", "Nuclear Medicine ValueSets",
+                    "This section contains value sets used specifically in a Nuclear Medicine exam");
+                p.AddGrouping($"{ResourcesMaker.Group_NMCodesCS}", "Nuclear Medicine CodeSystems",
+                    "This section contains code systems used specifically in a Nuclear Medicine exam");
 
-                p.AddGrouping($"{ResourcesMaker.Group_AimResources}", "AIM Resources", "This section contains resources used specifically by AIM");
-                p.AddGrouping($"{ResourcesMaker.Group_AimCodesVS}", "AIM ValueSets", "This section contains value sets used specifically by AIM");
-                p.AddGrouping($"{ResourcesMaker.Group_AimCodesCS}", "AIM CodeSystems", "This section contains code systems used specifically by AIM");
+                p.AddGrouping($"{ResourcesMaker.Group_AimResources}", "AIM Resources",
+                    "This section contains resources used specifically by AIM");
+                p.AddGrouping($"{ResourcesMaker.Group_AimCodesVS}", "AIM ValueSets",
+                    "This section contains value sets used specifically by AIM");
+                p.AddGrouping($"{ResourcesMaker.Group_AimCodesCS}", "AIM CodeSystems",
+                    "This section contains code systems used specifically by AIM");
 
-                p.AddGrouping($"{ResourcesMaker.Group_Fragments}", "Fragments", "This section the fragments that are used to define the resources");
+                p.AddGrouping($"{ResourcesMaker.Group_Fragments}", "Fragments",
+                    "This section the fragments that are used to define the resources");
 
-                p.AddGrouping($"{ResourcesMaker.Group_ExtensionResources}", "Extension", "Extension Resource Definitions");
+                p.AddGrouping($"{ResourcesMaker.Group_ExtensionResources}", "Extension",
+                    "Extension Resource Definitions");
 
                 p.AddResources(this.resourcesDir);
                 p.AddFragments(this.fragmentDir);
@@ -413,8 +440,9 @@ namespace BreastRadiology.XUnitTests
                 Trace.WriteLine(err.Message);
                 Assert.IsTrue(false);
             }
+
             TimeSpan span = DateTime.Now - start;
-            Trace.WriteLine($"Ending B5_BuildIG [{(Int32)span.TotalSeconds}]");
+            Trace.WriteLine($"Ending B5_BuildIG [{(Int32) span.TotalSeconds}]");
         }
 
         [TestMethod]
@@ -451,10 +479,10 @@ namespace BreastRadiology.XUnitTests
                 Trace.WriteLine(err.Message);
                 Assert.IsTrue(false);
             }
-            TimeSpan span = DateTime.Now - start;
-            Trace.WriteLine($"Ending B6_RunPublisher[{(Int32)span.TotalSeconds}]");
-        }
 
+            TimeSpan span = DateTime.Now - start;
+            Trace.WriteLine($"Ending B6_RunPublisher[{(Int32) span.TotalSeconds}]");
+        }
 
 
         [TestMethod]
@@ -491,7 +519,8 @@ namespace BreastRadiology.XUnitTests
 
             FhirJsonParser parser = new FhirJsonParser();
             StructureDefinition sd = parser.Parse<StructureDefinition>(
-                File.ReadAllText(@"C:\Development\HL7\BreastRadiologyProfiles\IG\Content\Fragments\StructureDefinition-BreastBodyLocationExtension.json"));
+                File.ReadAllText(
+                    @"C:\Development\HL7\BreastRadiologyProfiles\IG\Content\Fragments\StructureDefinition-BreastBodyLocationExtension.json"));
 
             sd.Snapshot = null;
             SnapshotCreator.Create(sd);
@@ -504,6 +533,7 @@ namespace BreastRadiology.XUnitTests
         public void BuildSpreadSheetOfItems()
         {
             DataTable dt;
+
             DataTable CreateTable()
             {
                 DataTable retVal = new DataTable("Pages");
@@ -527,9 +557,10 @@ namespace BreastRadiology.XUnitTests
                         });
                 }
             }
+
             void AddBlank()
             {
-                dt.Rows.Add(new object[] {null, null, null });
+                dt.Rows.Add(new object[] {null, null, null});
             }
 
             dt = CreateTable();
@@ -539,7 +570,7 @@ namespace BreastRadiology.XUnitTests
                 "IG",
                 "Content",
                 "Resources"
-                );
+            );
             Add(resourcesDir, "StructureDefinition-*.json");
             AddBlank();
             AddBlank();

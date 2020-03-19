@@ -54,8 +54,7 @@ namespace BreastRadiology.XUnitTests
         const PublicationStatus ProfileStatus = PublicationStatus.Draft;
 
         public static Markdown componentDefinition = new Markdown()
-                                    .Paragraph($"This is one component of a group of components that comprise the observation.")
-            ;
+            .Paragraph($"This is one component of a group of components that comprise the observation.");
 
         Dictionary<String, Resource> resources = new Dictionary<string, Resource>();
 
@@ -106,13 +105,14 @@ namespace BreastRadiology.XUnitTests
                 throw new Exception("Structure Def name can not contains spaces");
 
             title = title.Trim();
-            SDefEditor retVal = new SDefEditor(this, name, CreateUrl(name), baseDefinition, mapName, this.resourceDir, this.pageDir)
-                .Title(title)
-                .Derivation(StructureDefinition.TypeDerivationRule.Constraint)
-                .Abstract(false)
-                .Type(baseDefinition.LastUriPart())
-                .Kind(StructureDefinition.StructureDefinitionKind.Resource)
-                .Status(PublicationStatus.Draft)
+            SDefEditor retVal = new SDefEditor(this, name, CreateUrl(name), baseDefinition, mapName, this.resourceDir,
+                        this.pageDir)
+                    .Title(title)
+                    .Derivation(StructureDefinition.TypeDerivationRule.Constraint)
+                    .Abstract(false)
+                    .Type(baseDefinition.LastUriPart())
+                    .Kind(StructureDefinition.StructureDefinitionKind.Resource)
+                    .Status(PublicationStatus.Draft)
                 ;
 
             retVal.SDef.FhirVersion = FHIRVersion.N4_0_0;
@@ -179,13 +179,14 @@ namespace BreastRadiology.XUnitTests
             retVal.SDef.Abstract = true;
 
             retVal.IntroDoc = new IntroDoc();
-            retVal.IntroDoc.TryAddUserMacro("FragPath", FragmentMapMaker.FragmentMapName(retVal.SDef.Url.LastUriPart()));
+            retVal.IntroDoc.TryAddUserMacro("FragPath",
+                FragmentMapMaker.FragmentMapName(retVal.SDef.Url.LastUriPart()));
             retVal.IntroDoc.TryAddUserMacro("TitleArticle", this.Article(title));
             retVal.IntroDoc.TryAddUserMacro("Title", title);
             retVal.IntroDoc.Load("Fragment",
                 Path.Combine(this.pageDir, $"StructureDefinition-{name}-intro.xml"));
 
-            retVal.SDef.Version = "Fragment";       // this will get stripped out when unfrag'd.
+            retVal.SDef.Version = "Fragment"; // this will get stripped out when unfrag'd.
 
             return retVal;
         }
@@ -284,6 +285,7 @@ namespace BreastRadiology.XUnitTests
                     Display = code.Display
                 });
             }
+
             return vs;
         }
 
@@ -324,6 +326,7 @@ namespace BreastRadiology.XUnitTests
                     this.fc?.Mark(path);
                 }
             }
+
             //Self.Data.BreastData.Save();
         }
 
@@ -410,10 +413,12 @@ namespace BreastRadiology.XUnitTests
                                 Citation(line.Substring(index + 1));
                                 break;
                             case "ACRUS":
-                                AcrCitation("Breast Imaging Reporting and Data System—Mammography, Fifth Edition", page);
+                                AcrCitation("Breast Imaging Reporting and Data System—Mammography, Fifth Edition",
+                                    page);
                                 break;
                             case "ACRMG":
-                                AcrCitation("Breast Imaging Reporting and Data System—Ultrasound, Second Edition", page);
+                                AcrCitation("Breast Imaging Reporting and Data System—Ultrasound, Second Edition",
+                                    page);
                                 break;
                             default:
                                 throw new Exception("");
@@ -425,6 +430,7 @@ namespace BreastRadiology.XUnitTests
                         sb.AppendLine(line);
                     }
                 }
+
                 return sb.ToString().ToLines();
             }
         }
@@ -434,6 +440,7 @@ namespace BreastRadiology.XUnitTests
             List<String> lines = iLines.ToList();
 
             StringBuilder sb = new StringBuilder();
+
             void CopyLines(Int32 count)
             {
                 for (Int32 i = 0; i < count; i++)

@@ -13,23 +13,23 @@ namespace BreastRadiology.XUnitTests
             (out StructureDefinition s) =>
             {
                 SDefEditor e = Self.CreateFragment("ConsistentWithHasMemberFragment",
-                        "ConsistentWith HasMember Fragment",
-                        "ConsistentWith HasMember/Fragment",
-                        Global.ObservationUrl)
-                    .Description("ConsistentWith HasMember fragment",
-                        new Markdown()
-                        .Paragraph("This fragment adds the references for the ConsistentWith HasMember.")
-                     )
-                    .AddFragRef(Self.HeaderFragment.Value())
-                ;
+                            "ConsistentWith HasMember Fragment",
+                            "ConsistentWith HasMember/Fragment",
+                            Global.ObservationUrl)
+                        .Description("ConsistentWith HasMember fragment",
+                            new Markdown()
+                                .Paragraph("This fragment adds the references for the ConsistentWith HasMember.")
+                        )
+                        .AddFragRef(Self.HeaderFragment.Value())
+                    ;
                 s = e.SDef;
 
                 e.IntroDoc
-                     .ReviewedStatus("Needs review by KWA")
-                     .ReviewedStatus("Needs review by Penrad")
-                     .ReviewedStatus("Needs review by MRS")
-                     .ReviewedStatus("Needs review by MagView")
-                     .ReviewedStatus("Needs review by CIMI")
+                    .ReviewedStatus("Needs review by KWA")
+                    .ReviewedStatus("Needs review by Penrad")
+                    .ReviewedStatus("Needs review by MRS")
+                    .ReviewedStatus("Needs review by MagView")
+                    .ReviewedStatus("Needs review by CIMI")
                     ;
                 ElementTreeNode sliceElementDef = e.ConfigureSliceByUrlDiscriminator("hasMember", false);
                 e.SliceTargetReference(sliceElementDef, Self.ConsistentWith.Value(), 0, "*");

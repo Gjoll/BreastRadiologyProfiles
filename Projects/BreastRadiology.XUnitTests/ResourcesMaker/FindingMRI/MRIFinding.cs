@@ -14,30 +14,30 @@ namespace BreastRadiology.XUnitTests
     partial class ResourcesMaker : ConverterBase
     {
         SDTaskVar MRIFinding = new SDTaskVar(
-            (out StructureDefinition  s) =>
+            (out StructureDefinition s) =>
             {
                 //$ Fix me. Incorrect method!!!
                 SDefEditor e = Self.CreateEditor("MRIFinding",
-                        "MRI Finding",
-                        "MRI Finding",
-                        Global.ObservationUrl,
-                        $"{Group_MRIResources}",
-                        "ObservationSection")
-                    .Description("MRI Finding",
-                        new Markdown()
-                    )
-                    .AddFragRef(Self.ObservationSectionFragment.Value())
-                ;
+                            "MRI Finding",
+                            "MRI Finding",
+                            Global.ObservationUrl,
+                            $"{Group_MRIResources}",
+                            "ObservationSection")
+                        .Description("MRI Finding",
+                            new Markdown()
+                        )
+                        .AddFragRef(Self.ObservationSectionFragment.Value())
+                    ;
                 s = e.SDef;
 
                 e.IntroDoc
-                     .ReviewedStatus("Needs review by KWA")
-                     .ReviewedStatus("Needs review by Penrad")
-                     .ReviewedStatus("Needs review by MRS")
-                     .ReviewedStatus("Needs review by MagView")
-                     .ReviewedStatus("Needs review by CIMI")
-                     .Description("This Observation contains all references to all the observations" +
-                                  "and exam information related to a MRI exam.")
+                    .ReviewedStatus("Needs review by KWA")
+                    .ReviewedStatus("Needs review by Penrad")
+                    .ReviewedStatus("Needs review by MRS")
+                    .ReviewedStatus("Needs review by MagView")
+                    .ReviewedStatus("Needs review by CIMI")
+                    .Description("This Observation contains all references to all the observations" +
+                                 "and exam information related to a MRI exam.")
                     ;
 
                 // Set Observation.code to unique value for this profile.

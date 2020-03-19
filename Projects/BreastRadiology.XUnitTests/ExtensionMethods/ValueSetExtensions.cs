@@ -17,6 +17,7 @@ namespace BreastRadiology.XUnitTests
                         return new Coding(component.System, concept.Code, concept.Display);
                 }
             }
+
             throw new Exception($"Code {code} not found in valueset!");
         }
 
@@ -33,6 +34,7 @@ namespace BreastRadiology.XUnitTests
                     }
                 }
             }
+
             throw new Exception($"Code {code} not found in valueset. Remove failed!");
         }
     }

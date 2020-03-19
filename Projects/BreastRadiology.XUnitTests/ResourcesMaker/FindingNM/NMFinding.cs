@@ -14,16 +14,16 @@ namespace BreastRadiology.XUnitTests
     partial class ResourcesMaker : ConverterBase
     {
         SDTaskVar NMFinding = new SDTaskVar(
-            (out StructureDefinition  s) =>
+            (out StructureDefinition s) =>
             {
                 SDefEditor e = Self.CreateEditor("NMFinding",
-                        "NM Finding",
-                        "NM Finding",
-                        Global.ObservationUrl,
-                        $"{Group_NMResources}",
-                        "ObservationSection")
-                    .Description("NM Finding",
-                        new Markdown()
+                            "NM Finding",
+                            "NM Finding",
+                            Global.ObservationUrl,
+                            $"{Group_NMResources}",
+                            "ObservationSection")
+                        .Description("NM Finding",
+                            new Markdown()
                         )
                         .AddFragRef(Self.ObservationSectionFragment.Value())
                     ;
@@ -36,13 +36,13 @@ namespace BreastRadiology.XUnitTests
                     ;
 
                 e.IntroDoc
-                     .ReviewedStatus("Needs review by KWA")
-                     .ReviewedStatus("Needs review by Penrad")
-                     .ReviewedStatus("Needs review by MRS")
-                     .ReviewedStatus("Needs review by MagView")
-                     .ReviewedStatus("Needs review by CIMI")
-                     .Description("This Observation contains all references to all the observations" +
-                                  "and exam information related to a Nuclear Medicine exam.")
+                    .ReviewedStatus("Needs review by KWA")
+                    .ReviewedStatus("Needs review by Penrad")
+                    .ReviewedStatus("Needs review by MRS")
+                    .ReviewedStatus("Needs review by MagView")
+                    .ReviewedStatus("Needs review by CIMI")
+                    .Description("This Observation contains all references to all the observations" +
+                                 "and exam information related to a Nuclear Medicine exam.")
                     ;
 
                 ////$ todo. Incorrect method!!!

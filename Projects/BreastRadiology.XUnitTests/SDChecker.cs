@@ -27,30 +27,31 @@ namespace BreastRadiology.XUnitTests
             if (String.IsNullOrEmpty(id))
             {
                 this.ConversionError(this.GetType().Name,
-                   fcn,
-                   $"{name}. Empty element id found");
+                    fcn,
+                    $"{name}. Empty element id found");
             }
 
             if (ids.Contains(id))
             {
                 this.ConversionError(this.GetType().Name,
-                   fcn,
-                   $"{name}.{id}. Duplicate element id");
+                    fcn,
+                    $"{name}.{id}. Duplicate element id");
             }
+
             ids.Add(id);
 
             if (id.StartsWith(baseName) == false)
             {
                 this.ConversionError(this.GetType().Name,
-                   fcn,
-                   $"{name}.{id}. Should start with {baseName}");
+                    fcn,
+                    $"{name}.{id}. Should start with {baseName}");
             }
 
             if (element.Path.StartsWith(baseName) == false)
             {
                 this.ConversionError(this.GetType().Name,
-                   fcn,
-                   $"{name}.{id}. Path should start with {baseName}");
+                    fcn,
+                    $"{name}.{id}. Path should start with {baseName}");
             }
 
             //if (
@@ -69,14 +70,15 @@ namespace BreastRadiology.XUnitTests
             if (element.Min.HasValue == false)
             {
                 this.ConversionError(this.GetType().Name,
-                   fcn,
-                   $"{name}.{id}. missing min");
+                    fcn,
+                    $"{name}.{id}. missing min");
             }
+
             if (String.IsNullOrEmpty(element.Max))
             {
                 this.ConversionError(this.GetType().Name,
-                   fcn,
-                   $"{name}.{id}. missing max");
+                    fcn,
+                    $"{name}.{id}. missing max");
             }
         }
 

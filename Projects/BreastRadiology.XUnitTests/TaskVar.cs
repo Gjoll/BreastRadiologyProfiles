@@ -22,11 +22,13 @@ namespace BreastRadiology.XUnitTests
                 this.entry(out this.value);
             return this.value;
         }
+
         public TaskVar(Fcn entry)
         {
             this.entry = entry;
         }
     }
+
     class VSTaskVar : TaskVar<ValueSet>
     {
         public VSTaskVar(Fcn entry) : base(entry)

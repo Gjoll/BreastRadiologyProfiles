@@ -70,7 +70,8 @@ namespace BreastRadiology.XUnitTests
                     ResourceMap.Node referencedMapNode = this.map.GetNode(link.LinkTarget.ToObject<String>());
                     fragmentFocusNode.Parents.Add(referencedMapNode);
 
-                    if (this.fragmentNodes.TryGetValue(referencedMapNode.Name, out FragmentNode fragmentParentNode) == false)
+                    if (this.fragmentNodes.TryGetValue(referencedMapNode.Name, out FragmentNode fragmentParentNode) ==
+                        false)
                         throw new Exception($"Internal error. Cant find FragmentNode '{referencedMapNode.Name}' ");
                     fragmentParentNode.Children.Add(focusMapNode);
                 }

@@ -17,22 +17,23 @@ namespace BreastRadiology.XUnitTests
             (out StructureDefinition s) =>
             {
                 SDefEditor e = Self.CreateEditor("SectionFindingsLeftBreast",
-                       "Findings Left Breast",
-                       "Findings/Left Breast",
-                        Global.ObservationUrl,
-                       $"{Group_BaseResources}/Findings/LeftBreast",
-                        "ObservationSection")
-                   .Description("Findings Left Breast Section",
-                       new Markdown()
-                           .Paragraph("This Observation contains references to all the observations" +
-                                      "and exam information related to the left breast.")
-                   )
-                   .AddFragRef(Self.FindingBreastFragment.Value())
-                   ;
+                            "Findings Left Breast",
+                            "Findings/Left Breast",
+                            Global.ObservationUrl,
+                            $"{Group_BaseResources}/Findings/LeftBreast",
+                            "ObservationSection")
+                        .Description("Findings Left Breast Section",
+                            new Markdown()
+                                .Paragraph("This Observation contains references to all the observations" +
+                                           "and exam information related to the left breast.")
+                        )
+                        .AddFragRef(Self.FindingBreastFragment.Value())
+                    ;
                 s = e.SDef;
                 {
-                    CodeableConcept coding = new Coding(Global.Snomed, "80248007", "Left breast structure (body structure)")
-                        .ToCodeableConcept();
+                    CodeableConcept coding =
+                        new Coding(Global.Snomed, "80248007", "Left breast structure (body structure)")
+                            .ToCodeableConcept();
                     e.Select("bodySite")
                         .Single()
                         .Pattern(coding.ToPattern())
@@ -41,8 +42,9 @@ namespace BreastRadiology.XUnitTests
                 }
                 e.Select("value[x]")
                     .Definition(new Markdown()
-                         .Paragraph("Composite BiRad value for Left Breast.")
-                         .Paragraph("Typically this is the most severe of all the BiRad codes set in any of the child observations.")
+                        .Paragraph("Composite BiRad value for Left Breast.")
+                        .Paragraph(
+                            "Typically this is the most severe of all the BiRad codes set in any of the child observations.")
                     )
                     ;
 
@@ -53,12 +55,12 @@ namespace BreastRadiology.XUnitTests
                     ;
 
                 e.IntroDoc
-                     .ReviewedStatus("Needs review by KWA")
-                     .ReviewedStatus("Needs review by Penrad")
-                     .ReviewedStatus("Needs review by MRS")
-                     .ReviewedStatus("Needs review by MagView")
-                     .ReviewedStatus("Needs review by CIMI")
-                     .ReviewedStatus("CIC 22.1.2020")
+                    .ReviewedStatus("Needs review by KWA")
+                    .ReviewedStatus("Needs review by Penrad")
+                    .ReviewedStatus("Needs review by MRS")
+                    .ReviewedStatus("Needs review by MagView")
+                    .ReviewedStatus("Needs review by CIMI")
+                    .ReviewedStatus("CIC 22.1.2020")
                     ;
             });
     }

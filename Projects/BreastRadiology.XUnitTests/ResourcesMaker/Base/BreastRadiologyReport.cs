@@ -18,35 +18,35 @@ namespace BreastRadiology.XUnitTests
             (out StructureDefinition s) =>
             {
                 SDefEditor e = Self.CreateEditor("BreastRadReport",
-                     "Breast Radiology Report",
-                     "Breast/Radiology/Report",
-                     Global.DiagnosticReportUrl,
-                     Group_BaseResources,
-                     "Resource")
-                     .Description("Breast Radiology Diagnostic Report",
-                         new Markdown()
-                             .Paragraph("This resource is one of the components of a Breast Radiology Document.",
-                                        "Each Breast Radiology Document bundle will contain exactly one " +
-                                        "Breast Radiology Document instance that is referenced in the " +
-                                        "document's 'Report' section.")
-                             .Paragraph("This instance will contain the top level results of the exam, " +
-                                        "including the narrative result.")
-                             .Paragraph("This resource is a profile of the Fhir DiagnosticReport " +
-                                        "base resource.")
-                     )
-                     .AddFragRef(Self.HeaderFragment.Value())
-                     .AddFragRef(Self.CategoryFragment.Value())
-                     ;
+                            "Breast Radiology Report",
+                            "Breast/Radiology/Report",
+                            Global.DiagnosticReportUrl,
+                            Group_BaseResources,
+                            "Resource")
+                        .Description("Breast Radiology Diagnostic Report",
+                            new Markdown()
+                                .Paragraph("This resource is one of the components of a Breast Radiology Document.",
+                                    "Each Breast Radiology Document bundle will contain exactly one " +
+                                    "Breast Radiology Document instance that is referenced in the " +
+                                    "document's 'Report' section.")
+                                .Paragraph("This instance will contain the top level results of the exam, " +
+                                           "including the narrative result.")
+                                .Paragraph("This resource is a profile of the Fhir DiagnosticReport " +
+                                           "base resource.")
+                        )
+                        .AddFragRef(Self.HeaderFragment.Value())
+                        .AddFragRef(Self.CategoryFragment.Value())
+                    ;
 
                 s = e.SDef;
                 e.IntroDoc
-                     .ReviewedStatus("Needs review by KWA")
-                     .ReviewedStatus("Needs review by Penrad")
-                     .ReviewedStatus("Needs review by MRS")
-                     .ReviewedStatus("Needs review by MagView")
-                     .ReviewedStatus("Needs review by CIMI")
-                     .ReviewedStatus("CIC 22.1.2020")
-                     ;
+                    .ReviewedStatus("Needs review by KWA")
+                    .ReviewedStatus("Needs review by Penrad")
+                    .ReviewedStatus("Needs review by MRS")
+                    .ReviewedStatus("Needs review by MagView")
+                    .ReviewedStatus("Needs review by CIMI")
+                    .ReviewedStatus("CIC 22.1.2020")
+                    ;
 
                 CodeableConcept code = new CodeableConcept(Global.Loinc, "10193-1");
                 e.Select("code")
@@ -60,14 +60,14 @@ namespace BreastRadiology.XUnitTests
                         .Definition(new Markdown()
                             .Paragraph("This will contain a text version of the complete report.")
                             .Paragraph("The report should be readable without specialized formatting software.")
-                            );
+                        );
                 }
                 {
                     ValueSet binding = Self.BiRadsAssessmentCategoriesVS.Value();
                     ElementDefinition conclusionCodeDef = e.Select("conclusionCode")
-                        .Single()
-                        .Binding(binding, BindingStrength.Required)
-                        .MustSupport()
+                            .Single()
+                            .Binding(binding, BindingStrength.Required)
+                            .MustSupport()
                         ;
 
                     e.AddComponentLink("Conclusion Code",

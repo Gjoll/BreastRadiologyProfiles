@@ -6,9 +6,9 @@ namespace BreastRadiology.XUnitTests
 {
     public class SEText
     {
-        public String Text {get; set; }
-        public String HRef {get; set; }
-        public String Title {get; set; }
+        public String Text { get; set; }
+        public String HRef { get; set; }
+        public String Title { get; set; }
 
         public SEText(String text, String hRef = null, String title = null)
         {

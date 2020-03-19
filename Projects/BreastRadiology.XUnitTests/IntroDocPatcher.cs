@@ -38,6 +38,7 @@ namespace BreastRadiology.XUnitTests
                         case StructureDefinition sd:
                             return sd.IsFragment();
                     }
+
                     return false;
                 });
         }
@@ -86,10 +87,12 @@ namespace BreastRadiology.XUnitTests
 
                 foreach (ElementTreeSlice slice in node.Slices.Skip(1))
                 {
-                    String shortDesc = $"{slice.ElementDefinition.Short} [{slice.ElementDefinition.Min}..{slice.ElementDefinition.Max}]";
+                    String shortDesc =
+                        $"{slice.ElementDefinition.Short} [{slice.ElementDefinition.Min}..{slice.ElementDefinition.Max}]";
                     String anchor = Global.ElementAnchor(slice.ElementDefinition).Replace("{SDName}", sd.Name);
                     items.Add(shortDesc, $"<a href=\"{anchor}\">{shortDesc}</a>");
                 }
+
                 return items.Values.ToArray();
             }
 
@@ -105,6 +108,7 @@ namespace BreastRadiology.XUnitTests
                     String hRef = $"./{fragNode.StructureName}-{fragNode.Name}.html";
                     items.Add(fragNode.Title, $"<a href=\"{hRef}\">{fragNode.Title}</a>");
                 }
+
                 return items.Values.ToArray();
             }
 
@@ -123,10 +127,13 @@ namespace BreastRadiology.XUnitTests
 
                 foreach (ElementTreeSlice slice in node.Slices.Skip(1))
                 {
-                    String shortDesc = $"{slice.ElementDefinition.Short} [{slice.ElementDefinition.Min}..{slice.ElementDefinition.Max}]";
-                    String anchor = $"StructureDefinition-{sd.Name}-definitions.html#Observation.hasMember:{slice.ElementDefinition.SliceName}";
+                    String shortDesc =
+                        $"{slice.ElementDefinition.Short} [{slice.ElementDefinition.Min}..{slice.ElementDefinition.Max}]";
+                    String anchor =
+                        $"StructureDefinition-{sd.Name}-definitions.html#Observation.hasMember:{slice.ElementDefinition.SliceName}";
                     items.Add(shortDesc, $"<a href=\"{anchor}\">{shortDesc}</a>");
                 }
+
                 return items.Values.ToArray();
             }
 

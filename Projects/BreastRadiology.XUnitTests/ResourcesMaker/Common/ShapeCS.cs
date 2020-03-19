@@ -14,32 +14,33 @@ namespace BreastRadiology.XUnitTests
 {
     partial class ResourcesMaker
     {
-
         VSTaskVar ShapeVS = new VSTaskVar(
             (out ValueSet vs) =>
                 vs = Self.CreateValueSet(
-                        "ShapeVS",
-                        "Shape ValueSet",
-                        "Shape/ValueSet",
-                        "Shape value set.",
-                        Group_CommonCodesVS,
-                        Self.ShapeCS.Value()
-                    )
-            );
+                    "ShapeVS",
+                    "Shape ValueSet",
+                    "Shape/ValueSet",
+                    "Shape value set.",
+                    Group_CommonCodesVS,
+                    Self.ShapeCS.Value()
+                )
+        );
 
 
         CSTaskVar ShapeCS = new CSTaskVar(
-             (out CodeSystem cs) =>
-                 cs = Self.CreateCodeSystem(
-                     "ShapeCS",
-                     "Shape CodeSystem",
-                     "Shape/CodeSystem",
-                     "Shape values code system.",
-                     Group_CommonCodesCS,
-                     new ConceptDef[]
-                     {
+            (out CodeSystem cs) =>
+                cs = Self.CreateCodeSystem(
+                    "ShapeCS",
+                    "Shape CodeSystem",
+                    "Shape/CodeSystem",
+                    "Shape values code system.",
+                    Group_CommonCodesCS,
+                    new ConceptDef[]
+                    {
                         //+ Codes
+
                         #region Codes
+
                         new ConceptDef()
                             .SetCode("IrregularInShape")
                             .SetDisplay("Irregular in shape")
@@ -48,8 +49,7 @@ namespace BreastRadiology.XUnitTests
                             .SetSnomedCode("129736006")
                             .SetSnomedDescription("ClinicalFinding | Irregular shaped lesion")
                             .SetUMLS("A mass that can't be characterized by any specific " +
-                                "shape.")
-                        ,
+                                     "shape."),
                         new ConceptDef()
                             .SetCode("LobulatedInShape")
                             .SetDisplay("Lobulated in shape")
@@ -58,9 +58,8 @@ namespace BreastRadiology.XUnitTests
                             .SetSnomedCode("129735005")
                             .SetSnomedDescription("ClinicalFinding | Lobular shaped lesion (Finding)")
                             .SetUMLS("A mass that has an undulating  (having a smoothly " +
-                                "rising and falling form or outline) ",
-                                "contour.")
-                        ,
+                                     "rising and falling form or outline) ",
+                                "contour."),
                         new ConceptDef()
                             .SetCode("OvalInShape")
                             .SetDisplay("Oval in shape")
@@ -68,16 +67,14 @@ namespace BreastRadiology.XUnitTests
                             .ValidModalities(Modalities.MG | Modalities.MRI | Modalities.US)
                             .SetSnomedCode("129734009")
                             .SetSnomedDescription("ClinicalFinding | Oval shaped lesion (Finding)")
-                            .SetUMLS("There is a mass that is elliptical or egg-shaped.")
-                        ,
+                            .SetUMLS("There is a mass that is elliptical or egg-shaped."),
                         new ConceptDef()
                             .SetCode("Reniform")
                             .SetDisplay("Reniform")
                             .MammoId("27")
                             .ValidModalities(Modalities.MG)
                             .SetUMLS("There is a mass that is reniform (kidney shape) in " +
-                                "shape.")
-                        ,
+                                     "shape."),
                         new ConceptDef()
                             .SetCode("RoundInShape")
                             .SetDisplay("Round in shape")
@@ -86,61 +83,12 @@ namespace BreastRadiology.XUnitTests
                             .SetSnomedCode("129733003")
                             .SetSnomedDescription("ClinicalFinding | Round shaped lesion (Finding)")
                             .SetUMLS("There is a mass that is spherical, ball-shaped, circular " +
-                                "or global.")
+                                     "or global.")
+
                         #endregion // Codes
+
                         //- Codes
-                     })
-                 );
+                    })
+        );
     }
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

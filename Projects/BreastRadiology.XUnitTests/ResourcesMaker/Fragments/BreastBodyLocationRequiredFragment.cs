@@ -13,24 +13,25 @@ namespace BreastRadiology.XUnitTests
             (out StructureDefinition s) =>
             {
                 SDefEditor e = Self.CreateFragment("BreastBodyLocationRequiredFragment",
-                        "Breast Body Location (Required) Fragment",
-                        "Breast Body Location/Fragment (Required)",
-                        Global.ObservationUrl)
-                    .Description("Required Breast Body Location fragment",
-                        new Markdown()
-                        .Paragraph("This fragment adds the references for the breast body location extension.")
-                        .Paragraph("The references are required, meaning that the breast body location must exist.")
-                     )
-                    .AddFragRef(Self.HeaderFragment.Value())
-                ;
+                            "Breast Body Location (Required) Fragment",
+                            "Breast Body Location/Fragment (Required)",
+                            Global.ObservationUrl)
+                        .Description("Required Breast Body Location fragment",
+                            new Markdown()
+                                .Paragraph("This fragment adds the references for the breast body location extension.")
+                                .Paragraph(
+                                    "The references are required, meaning that the breast body location must exist.")
+                        )
+                        .AddFragRef(Self.HeaderFragment.Value())
+                    ;
                 s = e.SDef;
 
                 e.IntroDoc
-                     .ReviewedStatus("Needs review by KWA")
-                     .ReviewedStatus("Needs review by Penrad")
-                     .ReviewedStatus("Needs review by MRS")
-                     .ReviewedStatus("Needs review by MagView")
-                     .ReviewedStatus("Needs review by CIMI")
+                    .ReviewedStatus("Needs review by KWA")
+                    .ReviewedStatus("Needs review by Penrad")
+                    .ReviewedStatus("Needs review by MRS")
+                    .ReviewedStatus("Needs review by MagView")
+                    .ReviewedStatus("Needs review by CIMI")
                     ;
 
                 e
@@ -39,24 +40,25 @@ namespace BreastRadiology.XUnitTests
                     ;
 
                 ElementDefinition extension = new ElementDefinition
-                {
-                    ElementId = "Observation.bodySite.extension",
-                    Path = "Observation.bodySite.extension",
-                }
-                .ZeroToMany()
-                .Type("Extension")
-                ;
+                        {
+                            ElementId = "Observation.bodySite.extension",
+                            Path = "Observation.bodySite.extension",
+                        }
+                        .ZeroToMany()
+                        .Type("Extension")
+                    ;
                 ElementTreeNode bodySiteNode = e.Get("bodySite");
                 ElementTreeNode extensionNode = bodySiteNode.DefaultSlice.CreateNode(extension);
                 {
                     StructureDefinition extensionStructDef = Self.BreastBodyLocationExtension.Value();
-                    ElementDefinition extensionDef = e.ApplyExtension(extensionNode, "breastBodyLocation", extensionStructDef).ElementDefinition
-                        .Single()
+                    ElementDefinition extensionDef = e
+                            .ApplyExtension(extensionNode, "breastBodyLocation", extensionStructDef).ElementDefinition
+                            .Single()
                         ;
 
-                    e.AddExtensionLink(extensionStructDef.Url, 
+                    e.AddExtensionLink(extensionStructDef.Url,
                         new SDefEditor.Cardinality(extensionDef),
-                        "Breast Body Location", 
+                        "Breast Body Location",
                         Global.ElementAnchor(extensionDef),
                         false);
                 }
