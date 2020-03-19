@@ -4,7 +4,7 @@
   <a name="intro"></a>
   <!-- +descriptions-->
 <p>
-  <u style="font-size:large">ACR Mammography Breast Density Definition</u>
+  <u>ACR Mammography Breast Density Definition</u>
 </p>
 <p>
 The following four categories of breast composition are defined by the visually estimated content of fibroglandular-density tissue within the breasts. Please note that the
@@ -31,7 +31,7 @@ individual woman.
   </object>
   <!-- +reviewStatus-->
 <p>
-  <u style="font-size:large">Review Status</u>
+  <u>Review Status</u>
 </p>
 Comments and Suggested changes to this implementation guide can be made 
 <a href="https://github.com/HL7/fhir-breast-radiology-ig/projects/1">here</a>

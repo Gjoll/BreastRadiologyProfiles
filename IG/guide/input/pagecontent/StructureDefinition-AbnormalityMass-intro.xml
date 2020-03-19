@@ -4,7 +4,7 @@
   <a name="intro"></a>
   <!-- +descriptions-->
 <p>
-  <u style="font-size:large">ACR Mass Definition</u>
+  <u>ACR Mass Definition</u>
 </p>
 <p>
 "MASS" is three dimensional and occupies space. It is seen on two different mammographic
@@ -28,7 +28,7 @@ should be called an "ASYMMETRY" until its 3-dimensionality is confirmed
   </object>
   <!-- +reviewStatus-->
 <p>
-  <u style="font-size:large">Review Status</u>
+  <u>Review Status</u>
 </p>
 Comments and Suggested changes to this implementation guide can be made 
 <a href="https://github.com/HL7/fhir-breast-radiology-ig/projects/1">here</a>

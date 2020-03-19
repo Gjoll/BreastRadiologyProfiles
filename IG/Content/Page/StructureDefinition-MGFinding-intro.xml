@@ -5,7 +5,7 @@
   <!-- +descriptions-->
   <!-- -descriptions-->
   <p>
-    <u style="font-size:large">Graphical Overview</u>
+    <u style="font-size:large;">Graphical Overview</u>
   </p>
   <p>
     This graph provides an overview of:
@@ -19,17 +19,29 @@
   </object>
   <!-- +reviewStatus-->
 <p>
-  <u style="font-size:large">Review Status</u>
+  <u>Review Status</u>
 </p>
 Comments and Suggested changes to this implementation guide can be made 
 <a href="https://github.com/HL7/fhir-breast-radiology-ig/projects/1">here</a>
 Reviewed by No One on 
   <!-- -reviewStatus-->
   <!-- +components-->
+  <p>
+    <u style="font-size:large;">Member Fields</u>
+  </p>
+  <p>
+    The following parts of this observation are contained within this resource.
+  </p>
+  <p>
+    Each field contains one data item and is stored as an item (slice) in the Observation.component element.
+  </p>
+  <ul>
+    %ComponentList:noexpand:prefix=<li>:suffix=</li>:lb%
+  </ul>
   <!-- -components-->
   <!-- +hasMember-->
   <p>
-    <u style="font-size:large">Member Observations</u>
+    <u style="font-size:large;">Member Observations</u>
   </p>
   <p>
     The following parts of this observation are stored in seperate observation resources.
@@ -38,33 +50,19 @@ Reviewed by No One on
     The reference to each external observation is stored as an item in the Observation.hasMember element.
   </p>
   <ul>
-    
-<li><a href="StructureDefinition-MGFinding-definitions.html#Observation.hasMember:associatedFeature">'Associated Feature' reference [0..*]</a></li>
-<li><a href="StructureDefinition-MGFinding-definitions.html#Observation.hasMember:abnormalityCyst">'Cyst' reference [0..*]</a></li>
-<li><a href="StructureDefinition-MGFinding-definitions.html#Observation.hasMember:abnormalityDuct">'Duct' reference [0..*]</a></li>
-<li><a href="StructureDefinition-MGFinding-definitions.html#Observation.hasMember:abnormalityFibroadenoma">'Fibroadenoma' reference [0..*]</a></li>
-<li><a href="StructureDefinition-MGFinding-definitions.html#Observation.hasMember:abnormalityForeignObject">'Foreign Object' reference [0..*]</a></li>
-<li><a href="StructureDefinition-MGFinding-definitions.html#Observation.hasMember:abnormalityLymphNode">'LymphNode' reference [0..*]</a></li>
-<li><a href="StructureDefinition-MGFinding-definitions.html#Observation.hasMember:mGAbnormalityArchitecturalDistortion">'Mammography Architectural Distortion' reference [0..*]</a></li>
-<li><a href="StructureDefinition-MGFinding-definitions.html#Observation.hasMember:mGAbnormalityAsymmetry">'Mammography Asymmetry' reference [0..*]</a></li>
-<li><a href="StructureDefinition-MGFinding-definitions.html#Observation.hasMember:mGBreastDensity">'Mammography Breast Density' reference [1..1]</a></li>
-<li><a href="StructureDefinition-MGFinding-definitions.html#Observation.hasMember:mGAbnormalityCalcification">'Mammography Calcification' reference [0..*]</a></li>
-<li><a href="StructureDefinition-MGFinding-definitions.html#Observation.hasMember:mGAbnormalityDensity">'Mammography Density' reference [0..*]</a></li>
-<li><a href="StructureDefinition-MGFinding-definitions.html#Observation.hasMember:mGAbnormalityFatNecrosis">'Mammography Fat Necrosis' reference [0..*]</a></li>
-<li><a href="StructureDefinition-MGFinding-definitions.html#Observation.hasMember:abnormalityMass">'Mass' reference [0..*]</a></li>
+    %HasMemberList:noexpand:prefix=<li>:suffix=</li>:lb%
   </ul>
   <!-- -hasMember-->
   <!-- +profileFragments-->
   <p>
-    <u style="font-size:large">Profile Fragments</u>
+    <u style="font-size:large;">Profile Fragments</u>
   </p>
   <p>
     The following are the fragments that are included in this profile. This is included for developers use to understand
     the hierarchy and commonality of disparate profiles..
   </p>
   <ul>
-    
-<li><a href="./StructureDefinition-ObservationSectionFragment.html">Observation Section Fragment</a></li>
+    %FragmentList:noexpand:prefix=<li>:suffix=</li>:lb%
   </ul>
   <!-- -profileFragments-->
 </div>

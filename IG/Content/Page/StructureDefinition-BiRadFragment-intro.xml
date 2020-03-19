@@ -2,7 +2,7 @@
     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
     xsi:schemaLocation="http://hl7.org/fhir ../../src-generated/schemas/fhir-single.xsd">
   <p>
-    <u style="font-size:large">Graphical Overview</u>
+    <u style="font-size:large;">Graphical Overview</u>
   </p>
   <p>
     This graph provides an overview of:
@@ -17,5 +17,15 @@
   <!-- +reviewStatus-->
   <!-- -reviewStatus-->
   <!-- +profileFragments-->
+  <p>
+    <u style="font-size:large;">Profile Fragments</u>
+  </p>
+  <p>
+    The following are the fragments that are included in this profile. This is included for developers use to understand
+    the hierarchy and commonality of disparate profiles..
+  </p>
+  <ul>
+    %FragmentList:noexpand:prefix=<li>:suffix=</li>:lb%
+  </ul>
   <!-- -profileFragments-->
 </div>
