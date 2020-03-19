@@ -53,6 +53,7 @@ namespace BreastRadiology.XUnitTests
 
                     e.AddComponentLink($"Observed Size",
                         new SDefEditor.Cardinality(slice.ElementDefinition),
+                        null,
                         Global.ElementAnchor(sliceDef),
                         "Quantity or Range",
                         binding.Url);

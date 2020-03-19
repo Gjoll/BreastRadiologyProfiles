@@ -25,9 +25,12 @@ namespace BreastRadiology.XUnitTests
                             "Resource")
                         .Description("Service Recommendation",
                             new Markdown()
+                                .Paragraph("Recommended follow-up action to be taken in response to the ",
+                                           "findings of this exam.")
                                 .Paragraph(
                                     "This resource is a profile of ServiceRequest. It's ServiceRequest.code is bound to a value set of common",
-                                    "breast radiology recommendations. It is not meant to be a comprehensive list, just a common list.")
+                                    "breast radiology recommendations. This list is not meant to be comprehensive, just commonly used items will",
+                                    "will be included in the list.")
                                 .Paragraph(
                                     "The Breast Radiology Report contains references to zero or more recommendations, which may include ServiceRecommendation instances",
                                     "but is not limited to only ServiceRecommendation instances.")
@@ -37,12 +40,11 @@ namespace BreastRadiology.XUnitTests
 
                 s = e.SDef;
                 e.IntroDoc
-                    .ReviewedStatus("Needs review by KWA")
+                    .ReviewedStatus("KWA 3/19/10")
                     .ReviewedStatus("Needs review by Penrad")
                     .ReviewedStatus("Needs review by MRS")
                     .ReviewedStatus("Needs review by MagView")
                     .ReviewedStatus("Needs review by CIMI")
-                    .Description("Recommended follow-up action to be taken in response to the findings of this exam.")
                     ;
                 {
                     ValueSet binding = Self.RecommendationsVS.Value();
@@ -50,6 +52,7 @@ namespace BreastRadiology.XUnitTests
 
                     e.AddComponentLink("Service Recommendation Code",
                         new SDefEditor.Cardinality(codeDef),
+                        null,
                         Global.ElementAnchor(codeDef),
                         "CodeableConcept",
                         binding.Url);

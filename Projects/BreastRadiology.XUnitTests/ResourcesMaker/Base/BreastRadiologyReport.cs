@@ -40,7 +40,7 @@ namespace BreastRadiology.XUnitTests
 
                 s = e.SDef;
                 e.IntroDoc
-                    .ReviewedStatus("Needs review by KWA")
+                    .ReviewedStatus("KWA 3/19/20")
                     .ReviewedStatus("Needs review by Penrad")
                     .ReviewedStatus("Needs review by MRS")
                     .ReviewedStatus("Needs review by MagView")
@@ -72,6 +72,7 @@ namespace BreastRadiology.XUnitTests
 
                     e.AddComponentLink("Conclusion Code",
                         new SDefEditor.Cardinality(conclusionCodeDef),
+                        null,
                         Global.ElementAnchor(conclusionCodeDef),
                         "CodeableConcept",
                         binding.Url);

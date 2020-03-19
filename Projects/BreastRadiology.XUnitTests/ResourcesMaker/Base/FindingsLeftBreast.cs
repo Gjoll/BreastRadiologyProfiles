@@ -24,7 +24,7 @@ namespace BreastRadiology.XUnitTests
                             "ObservationSection")
                         .Description("Findings Left Breast Section",
                             new Markdown()
-                                .Paragraph("This Observation contains references to all the observations" +
+                                .Paragraph("This Observation contains references to all the observations",
                                            "and exam information related to the left breast.")
                         )
                         .AddFragRef(Self.FindingBreastFragment.Value())
@@ -55,7 +55,7 @@ namespace BreastRadiology.XUnitTests
                     ;
 
                 e.IntroDoc
-                    .ReviewedStatus("Needs review by KWA")
+                    .ReviewedStatus("KWA 3/19/10")
                     .ReviewedStatus("Needs review by Penrad")
                     .ReviewedStatus("Needs review by MRS")
                     .ReviewedStatus("Needs review by MagView")

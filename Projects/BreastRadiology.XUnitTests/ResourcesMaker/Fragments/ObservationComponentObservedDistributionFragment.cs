@@ -65,6 +65,7 @@ namespace BreastRadiology.XUnitTests
 
                     e.AddComponentLink($"Observed Distribution Region Size",
                         new SDefEditor.Cardinality(slice.ElementDefinition),
+                        null,
                         Global.ElementAnchor(sliceDef),
                         "Quantity or Range",
                         binding.Url);

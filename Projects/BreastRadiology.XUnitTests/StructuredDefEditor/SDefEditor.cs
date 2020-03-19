@@ -359,7 +359,7 @@ namespace BreastRadiology.XUnitTests
         }
 
         public SDefEditor AddExtensionLink(String url,
-            Cardinality cardinality,
+            Cardinality cardinalityLeft,
             String localName,
             String componentRef,
             bool showChildren)
@@ -367,7 +367,7 @@ namespace BreastRadiology.XUnitTests
             dynamic packet = new JObject();
             packet.LinkType = SVGGlobal.ExtensionType;
             packet.ShowChildren = showChildren;
-            packet.Cardinality = cardinality.ToString();
+            packet.CardinalityLeft = cardinalityLeft.ToString();
             packet.ComponentHRef = componentRef;
             packet.LocalName = localName;
             packet.LinkTarget = url;
@@ -377,44 +377,35 @@ namespace BreastRadiology.XUnitTests
         }
 
         public SDefEditor AddComponentLink(String url,
-            Cardinality componentCardinality,
+            Cardinality cardinalityLeft,
+            Cardinality cardinalityRight,
             String componentRef,
             String types,
-            params String[] targets)
-        {
-            return this.AddComponentLink(url, componentCardinality, componentRef, types, null, targets);
-        }
-
-        public SDefEditor AddComponentLink(String url,
-            Cardinality componentCardinality,
-            String componentRef,
-            String types,
-            Cardinality targetCardinality,
             params String[] targets)
         {
             dynamic packet = new JObject();
             packet.LinkType = SVGGlobal.ComponentType;
             packet.ShowChildren = false;
-            if (componentCardinality != null)
-                packet.Cardinality = componentCardinality.ToString();
+            if (cardinalityLeft != null)
+                packet.CardinalityLeft = cardinalityLeft.ToString();
             packet.LinkTarget = url;
             packet.ComponentHRef = componentRef;
             packet.Types = types;
             packet.References = new JArray(targets);
-            if (targetCardinality != null)
-                packet.TargetCardinality = targetCardinality.ToString();
+            if (cardinalityRight != null)
+                packet.CardinalityRight = cardinalityRight.ToString();
             this.SDef.AddExtension(Global.ResourceMapLinkUrl, new FhirString(packet.ToString()));
 
             return this;
         }
 
 
-        public SDefEditor AddTargetLink(String url, Cardinality cardinality, bool showChildren)
+        public SDefEditor AddTargetLink(String url, Cardinality cardinalityLeft, bool showChildren)
         {
             dynamic packet = new JObject();
             packet.LinkType = SVGGlobal.TargetType;
             packet.ShowChildren = showChildren;
-            packet.Cardinality = cardinality.ToString();
+            packet.CardinalityLeft = cardinalityLeft.ToString();
             packet.LinkTarget = url;
             this.SDef.AddExtension(Global.ResourceMapLinkUrl, new FhirString(packet.ToString()));
             return this;
@@ -602,6 +593,7 @@ namespace BreastRadiology.XUnitTests
             String componentRef = Global.ElementAnchor(slice.ElementDefinition);
             this.AddComponentLink(componentName,
                 new SDefEditor.Cardinality(slice.ElementDefinition),
+                null,
                 componentRef,
                 "CodeableConcept",
                 valueSet.Url);

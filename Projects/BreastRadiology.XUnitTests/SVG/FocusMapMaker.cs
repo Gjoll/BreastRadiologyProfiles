@@ -60,7 +60,7 @@ namespace BreastRadiology.XUnitTests
                 {
                     String linkSource = link.LinkSource.ToObject<String>();
                     if (this.map.TryGetNode(linkSource, out ResourceMap.Node parentNode) == false)
-                        throw new Exception($"Parzent extension {linkSource} not found in map");
+                        throw new Exception($"Parent extension {linkSource} not found in map");
                     if (alreadyLinkedResources.Contains(parentNode.ResourceUrl) == true)
                         return;
 
@@ -69,7 +69,7 @@ namespace BreastRadiology.XUnitTests
 
                     alreadyLinkedResources.Add(parentNode.ResourceUrl);
                     SENode node = this.CreateResourceNode(parentNode, this.ReferenceColor(parentMapNode),
-                        new String[] {null, link.Cardinality?.ToString()},
+                        new String[] {null, link.CardinalityLeft?.ToString()},
                         true);
                     parents.Add(node);
                 }
@@ -127,7 +127,7 @@ namespace BreastRadiology.XUnitTests
 
                             SENode node = new SENode(0,
                                 LinkTypeColor(link),
-                                new String[] {link.Cardinality?.ToString()},
+                                new String[] {link.CardinalityLeft?.ToString()},
                                 componentHRef);
                             node.AddTextLine(link.LocalName.ToObject<String>(), componentHRef);
                             node.AddTextLine("extension", componentHRef);
@@ -146,7 +146,7 @@ namespace BreastRadiology.XUnitTests
                                     if (this.map.TryGetNode(extUrl, out ResourceMap.Node targetNode) == false)
                                         throw new Exception($"Component resource '{extUrl}' not found!");
                                     extNode = this.CreateResourceNode(targetNode, this.ReferenceColor(targetNode),
-                                        new String[] {link.Cardinality?.ToString()},
+                                        new String[] {link.CardinalityLeft?.ToString()},
                                         true);
                                 }
                                 else
@@ -158,7 +158,7 @@ namespace BreastRadiology.XUnitTests
                                         ;
                                     extNode = new SENode(0,
                                         this.fhirColor,
-                                        new String[] {link.Cardinality?.ToString()},
+                                        new String[] {link.CardinalityLeft?.ToString()},
                                         extUrl);
                                     extNode.AddTextLine(name, extUrl);
                                 }

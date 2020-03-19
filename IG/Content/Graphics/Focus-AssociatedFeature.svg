@@ -152,7 +152,7 @@
 </a>
 </g>
 <line stroke="Black" stroke-width="1.875" marker-end="url(#arrowEnd)" x1="907.5" y1="33.75" x2="952.5" y2="33.75" />
-<text x="911.25" y="30" text-anchor="left">1..1</text>
+<text x="911.25" y="30" text-anchor="left"></text>
 <line stroke="Black" stroke-width="1.875" marker-start="url(#arrowStart)" x1="862.5" y1="33.75" x2="907.5" y2="33.75" />
 <text x="866.25" y="30" text-anchor="left"></text>
 <line stroke="Black" stroke-width="1.875" x1="907.5" y1="33.75" x2="907.5" y2="33.75" />

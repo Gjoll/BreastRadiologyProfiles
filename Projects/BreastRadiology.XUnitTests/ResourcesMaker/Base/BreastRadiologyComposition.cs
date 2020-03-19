@@ -112,7 +112,7 @@ namespace BreastRadiology.XUnitTests
 
                 s = e.SDef;
                 e.IntroDoc
-                    .ReviewedStatus("Needs review by KWA")
+                    .ReviewedStatus("KWA 3/19/20")
                     .ReviewedStatus("Needs review by Penrad")
                     .ReviewedStatus("Needs review by MRS")
                     .ReviewedStatus("Needs review by MagView")
@@ -148,10 +148,10 @@ namespace BreastRadiology.XUnitTests
                         ;
 
                         e.AddComponentLink("Report",
-                            null, //new SDefEditor.Cardinality(sectionSlice.ElementDefinition),
+                            new SDefEditor.Cardinality(sectionSlice.ElementDefinition),
+                            new SDefEditor.Cardinality(entry),
                             Global.ElementAnchor(sectionSlice.ElementDefinition),
                             "Section",
-                            new SDefEditor.Cardinality(entry),
                             targets);
                     }
                 }
@@ -184,10 +184,10 @@ namespace BreastRadiology.XUnitTests
                             .MustSupport();
                         ;
                         e.AddComponentLink("Impressions",
-                            null, //new SDefEditor.Cardinality(sectionSlice.ElementDefinition),
+                            new SDefEditor.Cardinality(sectionSlice.ElementDefinition),
+                            new SDefEditor.Cardinality(entry),
                             Global.ElementAnchor(sectionSlice.ElementDefinition),
                             "Section",
-                            new SDefEditor.Cardinality(entry),
                             targets);
                     }
                 }
@@ -220,10 +220,10 @@ namespace BreastRadiology.XUnitTests
                             .MustSupport();
                         ;
                         e.AddComponentLink("Findings Right Breast",
-                            null, //new SDefEditor.Cardinality(sectionSlice.ElementDefinition),
+                            new SDefEditor.Cardinality(sectionSlice.ElementDefinition),
+                            new SDefEditor.Cardinality(entry),
                             Global.ElementAnchor(sectionSlice.ElementDefinition),
                             "Section",
-                            new SDefEditor.Cardinality(entry),
                             targets);
                     }
                 }
@@ -256,10 +256,10 @@ namespace BreastRadiology.XUnitTests
                             .MustSupport();
                         ;
                         e.AddComponentLink("Findings Left Breast",
-                            null, //new SDefEditor.Cardinality(sectionSlice.ElementDefinition),
+                            new SDefEditor.Cardinality(sectionSlice.ElementDefinition),
+                            new SDefEditor.Cardinality(entry),
                             Global.ElementAnchor(sectionSlice.ElementDefinition),
                             "Section",
-                            new SDefEditor.Cardinality(entry),
                             targets);
                     }
                 }
@@ -289,10 +289,10 @@ namespace BreastRadiology.XUnitTests
                             .MustSupport();
                         ;
                         e.AddComponentLink("Related Resources",
-                            null, //new SDefEditor.Cardinality(sectionSlice.ElementDefinition),
+                            new SDefEditor.Cardinality(sectionSlice.ElementDefinition),
+                            new SDefEditor.Cardinality(entry),
                             Global.ElementAnchor(sectionSlice.ElementDefinition),
                             "Section",
-                            new SDefEditor.Cardinality(entry),
                             targets);
                     }
                 }
@@ -326,10 +326,10 @@ namespace BreastRadiology.XUnitTests
                             .MustSupport();
                         ;
                         e.AddComponentLink("Recommendations",
-                            null, //new SDefEditor.Cardinality(sectionSlice.ElementDefinition),
+                            new SDefEditor.Cardinality(sectionSlice.ElementDefinition),
+                            new SDefEditor.Cardinality(entry),
                             Global.ElementAnchor(sectionSlice.ElementDefinition),
                             "Section",
-                            new SDefEditor.Cardinality(entry),
                             targets);
                     }
                 }

@@ -26,13 +26,6 @@ namespace BreastRadiology.XUnitTests
                     ;
                 s = e.SDef;
 
-                e.IntroDoc
-                    .ReviewedStatus("Needs review by KWA")
-                    .ReviewedStatus("Needs review by Penrad")
-                    .ReviewedStatus("Needs review by MRS")
-                    .ReviewedStatus("Needs review by MagView")
-                    .ReviewedStatus("Needs review by CIMI")
-                    ;
                 {
                     ValueSet binding = Self.BiRadsAssessmentCategoriesVS.Value();
                     ElementDefinition valueXDef = e.Select("value[x]")
@@ -44,6 +37,7 @@ namespace BreastRadiology.XUnitTests
 
                     e.AddComponentLink("Finding Value",
                         new SDefEditor.Cardinality(valueXDef),
+                        null,
                         Global.ElementAnchor(valueXDef),
                         "CodeableConcept",
                         binding.Url);

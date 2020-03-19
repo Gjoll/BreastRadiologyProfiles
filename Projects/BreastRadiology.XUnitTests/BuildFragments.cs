@@ -303,6 +303,10 @@ namespace BreastRadiology.XUnitTests
                     ResourceMap map = new ResourceMap();
                     map.AddDir(this.resourcesDir, "*.json");
                     {
+                        FocusMapMaker focusMapMaker = new FocusMapMaker(this.fc, map, this.graphicsDir, this.pageDir);
+                        focusMapMaker.Create();
+                    }
+                    {
                         ResourceMapMaker resourceMapMaker = new ResourceMapMaker(this.fc, map);
                         resourceMapMaker.Create(ResourcesMaker.CreateUrl("BreastRadComposition"),
                             Path.Combine(this.graphicsDir, "ProfileOverview.svg"));
@@ -326,11 +330,6 @@ namespace BreastRadiology.XUnitTests
                         ResourceMapMaker resourceMapMaker = new ResourceMapMaker(this.fc, map);
                         resourceMapMaker.Create(ResourcesMaker.CreateUrl("USFinding"),
                             Path.Combine(this.graphicsDir, "USFindings.svg"));
-                    }
-
-                    {
-                        FocusMapMaker focusMapMaker = new FocusMapMaker(this.fc, map, this.graphicsDir, this.pageDir);
-                        focusMapMaker.Create();
                     }
                 }
 

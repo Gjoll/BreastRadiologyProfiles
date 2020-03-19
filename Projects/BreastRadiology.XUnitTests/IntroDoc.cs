@@ -162,7 +162,7 @@ namespace BreastRadiology.XUnitTests
         public String Save()
         {
             String introHtml = this.Render();
-            File.WriteAllText(this.OutputPath, introHtml);
+            FileTools.WriteAllText(this.OutputPath, introHtml);
             return this.OutputPath;
         }
     }

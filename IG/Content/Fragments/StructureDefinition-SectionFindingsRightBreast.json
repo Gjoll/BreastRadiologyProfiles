@@ -22,7 +22,7 @@
   "name": "SectionFindingsRightBreast",
   "title": "Findings Right Breast",
   "status": "draft",
-  "description": "<b>Findings Right Breast Section</b>\n\nThis Observation contains references to all the observationsand exam information related to the left breast.",
+  "description": "<b>Findings Right Breast Section</b>\n\nThis Observation contains references to all the observations\n and exam information related to the left breast.",
   "fhirVersion": "4.0.0",
   "kind": "resource",
   "abstract": false,
@@ -35,7 +35,7 @@
         "id": "Observation",
         "path": "Observation",
         "short": "Findings Right Breast Section",
-        "definition": "This Observation contains references to all the observationsand exam information related to the left breast.",
+        "definition": "This Observation contains references to all the observations\n and exam information related to the left breast.",
         "comment": "Used for simple observations such as device measurements, laboratory atomic results, vital signs, height, weight, smoking status, comments, etc.  Other resources are used to provide context for observations such as laboratory reports, etc.",
         "alias": [
           "Vital Signs",
@@ -2212,7 +2212,7 @@
         "id": "Observation",
         "path": "Observation",
         "short": "Findings Right Breast Section",
-        "definition": "This Observation contains references to all the observationsand exam information related to the left breast.",
+        "definition": "This Observation contains references to all the observations\n and exam information related to the left breast.",
         "base": {
           "path": "Observation",
           "min": 0,

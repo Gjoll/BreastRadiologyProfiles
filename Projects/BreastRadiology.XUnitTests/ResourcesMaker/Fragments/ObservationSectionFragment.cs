@@ -27,14 +27,6 @@ namespace BreastRadiology.XUnitTests
                     ;
                 s = e.SDef;
 
-                e.IntroDoc
-                    .ReviewedStatus("Needs review by KWA")
-                    .ReviewedStatus("Needs review by Penrad")
-                    .ReviewedStatus("Needs review by MRS")
-                    .ReviewedStatus("Needs review by MagView")
-                    .ReviewedStatus("Needs review by CIMI")
-                    ;
-
                 e.Select("interpretation").Zero();
                 e.Select("method").Zero();
                 e.AddIncompatibleFragment(Self.ObservationLeafFragment.Value().Url);

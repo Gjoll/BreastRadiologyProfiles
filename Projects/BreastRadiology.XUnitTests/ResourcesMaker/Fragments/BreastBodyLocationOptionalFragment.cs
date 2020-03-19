@@ -25,11 +25,6 @@ namespace BreastRadiology.XUnitTests
         //            ;
         //        s = e.SDef.Url;
 
-        //        e.IntroDoc
-        //            .Fragment($"Resource fragment used by various observations to include an optional breast body location.")
-        //            .ReviewedStatus("No One", "")
-        //            ;
-
         //        e
         //            .Select("bodySite")
         //            .ZeroToOne()

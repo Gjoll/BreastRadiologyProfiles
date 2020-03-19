@@ -68,7 +68,7 @@ namespace BreastRadiology.XUnitTests
         {
             return CreateResourceNode(mapNode,
                 this.LinkTypeColor(link),
-                new String[] {link.Cardinality?.ToString()},
+                new String[] {link.CardinalityLeft?.ToString()},
                 linkFlag);
         }
 
@@ -204,7 +204,7 @@ namespace BreastRadiology.XUnitTests
 
             SENode node = new SENode(0,
                 this.componentColor,
-                new String[] {link.Cardinality?.ToString(), link.TargetCardinality?.ToString()},
+                new String[] {link.CardinalityLeft?.ToString(), link.CardinalityRight?.ToString()},
                 componentHRef);
             node.AddTextLine(linkTargetUrl, componentHRef);
 
@@ -231,7 +231,7 @@ namespace BreastRadiology.XUnitTests
                             throw new Exception($"Component resource '{reference}' not found!");
                         refNode = this.CreateResourceNode(refMapNode,
                             this.ReferenceColor(refMapNode),
-                            new String[] {link.Cardinality?.ToString()},
+                            new String[0],
                             true);
 
                         if (link.ShowChildren.ToObject<Boolean>())
@@ -244,7 +244,7 @@ namespace BreastRadiology.XUnitTests
                     {
                         refNode = new SENode(0,
                             this.fhirColor,
-                            new String[] {link.Cardinality?.ToString()},
+                            new String[0],
                             reference);
                         refNode.AddTextLine(reference.LastUriPart(), reference);
                     }
