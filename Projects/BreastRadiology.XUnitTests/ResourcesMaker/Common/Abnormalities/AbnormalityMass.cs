@@ -123,8 +123,10 @@ namespace BreastRadiology.XUnitTests
                         .AddFragRef(Self.ObservationComponentPreviouslyDemonstratedByFragment.Value())
                         .AddFragRef(Self.ObservationHasMemberAssociatedFeaturesFragment.Value())
                         .AddFragRef(Self.ObservationHasMemberConsistentWithFragment.Value())
-                        .Description("Mass Observation",
+                        .Description("Mass Abnormality Observation",
                             new Markdown()
+                                .Paragraph("This resource and its referenced child resources contains ",
+                                    "information about a mass abnormality observation ")
                         )
                     ;
 

@@ -29,6 +29,9 @@ namespace BreastRadiology.XUnitTests
                         .AddFragRef(Self.ObservationNoComponentFragment.Value())
                         .Description("'Consistent With' Observation",
                             new Markdown()
+                                .Paragraph("This resource contains information about a determination ",
+                                    "that the parent abnormality is consistent with ",
+                                    "the finding described in this resource.")
                         )
                     ;
                 s = e.SDef;
@@ -64,8 +67,6 @@ namespace BreastRadiology.XUnitTests
                     .ReviewedStatus("Needs review by MRS")
                     .ReviewedStatus("Needs review by MagView")
                     .ReviewedStatus("Needs review by CIMI")
-                    .Description("A determination that the parent abnormality is consistent with " +
-                                 "the finding described in this resource.")
                     ;
             });
 

@@ -88,9 +88,10 @@ namespace BreastRadiology.XUnitTests
                         .AddFragRef(Self.ObservationComponentObservedSizeFragment.Value())
                         .AddFragRef(Self.ObservationComponentPreviouslyDemonstratedByFragment.Value())
                         .AddFragRef(Self.ObservationHasMemberAssociatedFeaturesFragment.Value())
-                        .Description("Fibroadenoma Observation",
+                        .Description("Fibroadenoma Abnormality Observation",
                             new Markdown()
-                                .Paragraph("[PR]")
+                                .Paragraph("This resource and its referenced child resources contains ",
+                                    "information about a fibroadenoma abnormality observation ")
                                 .ValidModalities(Modalities.MG | Modalities.US)
                         )
                     ;

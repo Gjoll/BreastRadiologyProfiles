@@ -25,9 +25,8 @@ namespace BreastRadiology.XUnitTests
                             "ObservationSection")
                         .Description("Mammography Finding",
                             new Markdown()
-                                .Paragraph("This resource is the Section Head for all Mammography findings.")
-                                .Paragraph(
-                                    "All mammography observation findings are referenced by this resources Observation.hasMember field.")
+                                .Paragraph("This Observation contains all references to all the observations" +
+                                           "and exam information related to a Mammography (MG) exam.")
                         )
                         .AddFragRef(Self.ObservationSectionFragment.Value())
                     ;
@@ -64,8 +63,6 @@ namespace BreastRadiology.XUnitTests
                     .ReviewedStatus("Needs review by MRS")
                     .ReviewedStatus("Needs review by MagView")
                     .ReviewedStatus("Needs review by CIMI")
-                    .Description("This Observation contains all references to all the observations" +
-                                 "and exam information related to a Mammography exam.")
                     ;
             });
     }

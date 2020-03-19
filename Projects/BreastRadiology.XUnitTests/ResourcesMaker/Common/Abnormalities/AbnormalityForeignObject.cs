@@ -488,7 +488,11 @@ namespace BreastRadiology.XUnitTests
                             "ObservationSection")
                         .Description("Foreign Object Observation",
                             new Markdown()
-                                .Paragraph("These are foreign objects found during a breast radiology exam:")
+                                .Paragraph("This resource and its referenced child resources contains ",
+                                    "information about foreign objects observed")
+                                .Paragraph("A foreign object is some non-biological item observed in the patient.",
+                                    "These can include misplaced surgical items, trauma related items (bullet fragments), or " +
+                                    "jewelery.")
                         )
                         .AddFragRef(Self.ObservationNoDeviceFragment.Value())
                         .AddFragRef(Self.ObservationNoValueFragment.Value())
@@ -510,9 +514,6 @@ namespace BreastRadiology.XUnitTests
                     .ReviewedStatus("Needs review by MRS")
                     .ReviewedStatus("Needs review by MagView")
                     .ReviewedStatus("Needs review by CIMI")
-                    .Description("A foreign object is some non-biological item observed in the patient.",
-                                 "These can include misplaced surgical items, trauma related items (bullet fragments), or " +
-                                 "jewelery.")
                     ;
 
                 // Set Observation.code to unique value for this profile.

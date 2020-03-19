@@ -193,8 +193,10 @@ namespace BreastRadiology.XUnitTests
                         .AddFragRef(Self.ObservationComponentCorrespondsWithFragment.Value())
                         .AddFragRef(Self.ObservationComponentPreviouslyDemonstratedByFragment.Value())
                         .AddFragRef(Self.ObservationHasMemberAssociatedFeaturesFragment.Value())
-                        .Description("LymphNode Observation",
+                        .Description("LymphNode Abnormality Observation",
                             new Markdown()
+                                .Paragraph("This resource and its referenced child resources contains ",
+                                    "information about a lymph node abnormality observation ")
                         )
                     ;
 

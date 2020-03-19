@@ -107,8 +107,6 @@ namespace BreastRadiology.XUnitTests
                     .ReviewedStatus("Needs review by MRS")
                     .ReviewedStatus("Needs review by MagView")
                     .ReviewedStatus("Needs review by CIMI")
-                    .Description("This complex extension defines the structure for a distance measurement " +
-                                 "from a defined body position.")
                     ;
             });
     }

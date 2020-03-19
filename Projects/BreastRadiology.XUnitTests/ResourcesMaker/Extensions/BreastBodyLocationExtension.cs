@@ -669,8 +669,6 @@ namespace BreastRadiology.XUnitTests
                     .ReviewedStatus("Needs review by MRS")
                     .ReviewedStatus("Needs review by MagView")
                     .ReviewedStatus("Needs review by CIMI")
-                    .Description("This complex extension defines the structure to specify " +
-                                 "a location in the body in a manner consistent with current breast radiology practice.")
                     ;
             });
     }

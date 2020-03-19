@@ -133,7 +133,7 @@ namespace BreastRadiology.XUnitTests
                         .AddFragRef(Self.ObservationComponentPreviouslyDemonstratedByFragment.Value())
                         .AddFragRef(Self.ObservationHasMemberAssociatedFeaturesFragment.Value())
                         .AddFragRef(Self.ObservationHasMemberConsistentWithFragment.Value())
-                        .Description("Asymmetry Observation",
+                        .Description("Asymmetry Abnormality Observation",
                             new Markdown()
                         )
                     ;

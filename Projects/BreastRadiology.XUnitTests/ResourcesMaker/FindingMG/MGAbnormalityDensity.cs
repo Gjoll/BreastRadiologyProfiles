@@ -99,7 +99,7 @@ namespace BreastRadiology.XUnitTests
                         .AddFragRef(Self.ObservationComponentPreviouslyDemonstratedByFragment.Value())
                         .AddFragRef(Self.ObservationHasMemberAssociatedFeaturesFragment.Value())
                         .AddFragRef(Self.ObservationHasMemberConsistentWithFragment.Value())
-                        .Description("Mammography Density Observation",
+                        .Description("Mammography Density Abnormality Observation",
                             new Markdown()
                         )
                     ;

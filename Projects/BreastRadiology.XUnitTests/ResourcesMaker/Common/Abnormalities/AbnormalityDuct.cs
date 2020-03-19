@@ -105,8 +105,10 @@ namespace BreastRadiology.XUnitTests
                         .AddFragRef(Self.ObservationComponentCorrespondsWithFragment.Value())
                         .AddFragRef(Self.ObservationComponentPreviouslyDemonstratedByFragment.Value())
                         .AddFragRef(Self.ObservationHasMemberConsistentWithFragment.Value())
-                        .Description("Duct Observation",
+                        .Description("Duct Abnormality Observation",
                             new Markdown()
+                                .Paragraph("This resource and its referenced child resources contains ",
+                                    "information about a duct abnormality observation ")
                         )
                     ;
 

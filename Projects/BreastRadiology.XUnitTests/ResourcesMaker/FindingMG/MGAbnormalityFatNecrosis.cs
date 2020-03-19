@@ -36,7 +36,7 @@ namespace BreastRadiology.XUnitTests
                         .AddFragRef(Self.ObservationComponentPreviouslyDemonstratedByFragment.Value())
                         .AddFragRef(Self.ObservationHasMemberAssociatedFeaturesFragment.Value())
                         .AddFragRef(Self.ObservationHasMemberConsistentWithFragment.Value())
-                        .Description("Fat Necrosis Observation",
+                        .Description("Fat Necrosis Abnormality Observation",
                             new Markdown()
                                 .Paragraph("[PR]")
                         )

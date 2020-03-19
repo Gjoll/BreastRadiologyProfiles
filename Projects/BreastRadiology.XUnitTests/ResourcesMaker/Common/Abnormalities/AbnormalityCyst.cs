@@ -172,8 +172,10 @@ namespace BreastRadiology.XUnitTests
                         .AddFragRef(Self.ObservationComponentPreviouslyDemonstratedByFragment.Value())
                         .AddFragRef(Self.ObservationHasMemberConsistentWithFragment.Value())
                         .AddFragRef(Self.ObservationHasMemberAssociatedFeaturesFragment.Value())
-                        .Description("Cyst Observation",
+                        .Description("Cyst Abnormality Observation",
                             new Markdown()
+                                .Paragraph("This resource and its referenced child resources contains ",
+                                           "information about a cyst abnormality observation ")
                         )
                     ;
                 s = e.SDef;

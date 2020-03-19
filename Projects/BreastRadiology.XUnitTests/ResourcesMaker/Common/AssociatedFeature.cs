@@ -506,8 +506,9 @@ namespace BreastRadiology.XUnitTests
                         .AddFragRef(Self.ObservationComponentObservedCountFragment.Value())
                         .Description("Associated Feature Observation",
                             new Markdown()
-                                .Paragraph(
-                                    "The feature observed is defined by the codeable concept in the value[x] field.")
+                                    .Paragraph("This resource and its referenced child resources contains ",
+                                               "information about a associated feature observations")
+                                    .Paragraph("The feature observed is defined by the codeable concept in the value[x] field.")
                         )
                     ;
                 s = e.SDef;
@@ -517,7 +518,6 @@ namespace BreastRadiology.XUnitTests
                     .ReviewedStatus("Needs review by MRS")
                     .ReviewedStatus("Needs review by MagView")
                     .ReviewedStatus("Needs review by CIMI")
-                    .Description("An observation of an item that is associated with another abnormnality.")
                     ;
 
                 // Set Observation.code to unique value for this profile.

@@ -25,6 +25,10 @@ namespace BreastRadiology.XUnitTests
                             "ObservationSection")
                         .Description("MRI Finding",
                             new Markdown()
+                                .Paragraph("This Observation contains all references to all the observations" +
+                                           "and exam information related to a Magnetic Resonance Imageing (MRI) exam.")
+                                .Paragraph("As of this ballot, the child observations of an MRI Exam have not",
+                                           "been defined. They will be defined in a later ballot.")
                         )
                         .AddFragRef(Self.ObservationSectionFragment.Value())
                     ;
@@ -36,8 +40,6 @@ namespace BreastRadiology.XUnitTests
                     .ReviewedStatus("Needs review by MRS")
                     .ReviewedStatus("Needs review by MagView")
                     .ReviewedStatus("Needs review by CIMI")
-                    .Description("This Observation contains all references to all the observations" +
-                                 "and exam information related to a MRI exam.")
                     ;
 
                 // Set Observation.code to unique value for this profile.

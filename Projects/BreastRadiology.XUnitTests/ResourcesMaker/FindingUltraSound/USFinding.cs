@@ -25,6 +25,10 @@ namespace BreastRadiology.XUnitTests
                             "ObservationSection")
                         .Description("Ultra Sound Finding",
                             new Markdown()
+                                .Paragraph("This Observation contains all references to all the observations" +
+                                           "and exam information related to an Ultra Sound (US) exam.")
+                                .Paragraph("As of this ballot, the child observations of an US Exam have not",
+                                           "been defined. They will be defined in a later ballot.")
                         )
                         .AddFragRef(Self.ObservationSectionFragment.Value())
                     ;
