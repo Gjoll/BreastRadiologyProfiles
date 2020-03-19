@@ -24,9 +24,7 @@ namespace BreastRadiology.XUnitTests
                     new ConceptDef[]
                     {
                         //+ Type
-
                         #region Codes
-
                         new ConceptDef()
                             .SetCode("Cyst")
                             .SetDisplay("Cyst")
@@ -35,10 +33,11 @@ namespace BreastRadiology.XUnitTests
                             .SetSnomedCode("399294002")
                             .SetSnomedDescription("ClinicalFinding |Cyst of breast (Disorder)")
                             .SetUMLS("A cyst is a sac-like pocket of membranous tissue " +
-                                     "that contains fluid, air, or other ",
+                                "that contains fluid, air, or other ",
                                 "substances. ",
                                 "Cysts can grow almost anywhere in your body or under " +
-                                "your skin."),
+                                "your skin.")
+                        ,
                         new ConceptDef()
                             .SetCode("CystComplex")
                             .SetDisplay("Cyst complex")
@@ -47,7 +46,7 @@ namespace BreastRadiology.XUnitTests
                             .SetSnomedCode("449837001")
                             .SetSnomedDescription("ClinicalFinding | Complex cyst of breast (Disorder)")
                             .SetUMLS("Complex cysts have irregular or scalloped borders, " +
-                                     "thick walls, and some evidence ",
+                                "thick walls, and some evidence ",
                                 "of solid areas and/or debris in the fluid. ",
                                 "These solid areas echo back the sound waves from " +
                                 "the ultrasound. ",
@@ -57,7 +56,8 @@ namespace BreastRadiology.XUnitTests
                                 "If blood or any unusual cells are present, further " +
                                 "testing may be needed to rule ",
                                 "out breast cancer. ",
-                                "###URL#https://www.breastcancer.org/symptoms/benign/cysts"),
+                                "###URL#https://www.breastcancer.org/symptoms/benign/cysts")
+                        ,
                         new ConceptDef()
                             .SetCode("CystComplicated")
                             .SetDisplay("Cyst complicated")
@@ -71,25 +71,28 @@ namespace BreastRadiology.XUnitTests
                                 "However, they don't have the thick walls or obvious " +
                                 "solid components that a complex ",
                                 "cyst has. ",
-                                "###URL#https://www.breastcancer.org/symptoms/benign/cysts"),
+                                "###URL#https://www.breastcancer.org/symptoms/benign/cysts")
+                        ,
                         new ConceptDef()
                             .SetCode("CystMicro")
                             .SetDisplay("Cyst micro")
                             .MammoId("617")
                             .ValidModalities(Modalities.US)
                             .SetUMLS("Is a sac-like pocket of tissue that contains fluid, " +
-                                     "air, or other substances. ",
+                                "air, or other substances. ",
                                 "A Microcyst is small and less than 2-3 mm. ",
                                 "They are often in clusters and only show up on a " +
-                                "mammogram or ultrasound."),
+                                "mammogram or ultrasound.")
+                        ,
                         new ConceptDef()
                             .SetCode("CystOil")
                             .SetDisplay("Cyst oil")
                             .MammoId("636")
                             .ValidModalities(Modalities.MG | Modalities.US)
                             .SetUMLS("Oil cysts are filled with fluid that may feel smooth " +
-                                     "and soft/squishy. ",
-                                "They are caused by the breakdown of fatty tissue."),
+                                "and soft/squishy. ",
+                                "They are caused by the breakdown of fatty tissue.")
+                        ,
                         new ConceptDef()
                             .SetCode("CystSimple")
                             .SetDisplay("Cyst simple")
@@ -98,8 +101,9 @@ namespace BreastRadiology.XUnitTests
                             .SetSnomedCode("399253005")
                             .SetSnomedDescription("ClinicalFinding | Simple cyst of breast (Disorder)")
                             .SetUMLS("A simple cyst is a sac-like pocket of membranous " +
-                                     "tissue that only contains clear ",
-                                "fluid."),
+                                "tissue that only contains clear ",
+                                "fluid.")
+                        ,
                         new ConceptDef()
                             .SetCode("CystWithDebris")
                             .SetDisplay("Cyst with debris")
@@ -109,9 +113,7 @@ namespace BreastRadiology.XUnitTests
                                 "It Is either considered a complex or complicated " +
                                 "cyst. ",
                                 "The type of debris determines what kind of cyst.")
-
                         #endregion // Codes
-
                         //- Type
                     }
                 )
@@ -186,11 +188,11 @@ namespace BreastRadiology.XUnitTests
                     .ReviewedStatus("Needs review by MagView")
                     .ReviewedStatus("Needs review by CIMI")
                     //+ IntroDocDescription
-                    .Description("A cyst is a sac-like pocket of membranous tissue " +
-                                 "that contains fluid, air, or other ",
-                        "substances. ",
-                        "Cysts can grow almost anywhere in your body or under " +
-                        "your skin.")
+                        .Description("A cyst is a sac-like pocket of membranous tissue " +
+                            "that contains fluid, air, or other ",
+                            "substances. ",
+                            "Cysts can grow almost anywhere in your body or under " +
+                            "your skin.")
                     //- IntroDocDescription
                     ;
 

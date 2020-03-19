@@ -26,28 +26,27 @@ namespace BreastRadiology.XUnitTests
                     new ConceptDef[]
                     {
                         //+ Codes
-
                         #region Codes
-
                         new ConceptDef()
                             .SetCode("Category0")
                             .SetDisplay("Category 0 (Incomplete)")
                             .MammoId("36")
                             .ValidModalities(Modalities.MG | Modalities.MRI | Modalities.NM | Modalities.US)
                             .SetSnomedDescription("ClinicalFinding | 397138000 | Mammography assessment " +
-                                                  "(Category 0)")
+                                "(Category 0)")
                             .SetUMLS("Need additional Imaging Evaluation and/or prior Mammograms " +
-                                     "for comparison. ",
+                                "for comparison. ",
                                 "Recall for additional imaging and/or comparison with " +
                                 "prior examination(s)        ",
-                                "###ACRUS#"),
+                                "###ACRUS#")
+                        ,
                         new ConceptDef()
                             .SetCode("Category2")
                             .SetDisplay("Category 2 (Benign)")
                             .MammoId("32")
                             .ValidModalities(Modalities.MG | Modalities.MRI | Modalities.NM | Modalities.US)
                             .SetSnomedDescription("ClinicalFinding | 397141009 | Mammography assessment " +
-                                                  "(Category 2)")
+                                "(Category 2)")
                             .SetUMLS("This is a normal assessment. ",
                                 "Benign refers to a condition, tumor, or growth that " +
                                 "is not cancerous. ",
@@ -55,16 +54,17 @@ namespace BreastRadiology.XUnitTests
                                 "of the body. ",
                                 "It does not invade nearby tissue. ",
                                 " Essentially 0% likelihood of malignancy. ",
-                                "###ACRUS#"),
+                                "###ACRUS#")
+                        ,
                         new ConceptDef()
                             .SetCode("Category3")
                             .SetDisplay("Category 3 (Probably Benign)")
                             .MammoId("33")
                             .ValidModalities(Modalities.MG | Modalities.MRI | Modalities.NM | Modalities.US)
                             .SetSnomedDescription("ClinicalFinding | 397143007 | Mammography assessment " +
-                                                  "(Category 3)")
+                                "(Category 3)")
                             .SetUMLS("A finding assessed using this category should have " +
-                                     "a <= 2% likelihood of malignancy, ",
+                                "a <= 2% likelihood of malignancy, ",
                                 "but greater than the essentially 0% likelihood of " +
                                 "malignancy of a characteristically ",
                                 "benign finding. ",
@@ -76,16 +76,17 @@ namespace BreastRadiology.XUnitTests
                                 "to routine mammography screening. ",
                                 " Six month follow-up and/or",
                                 "surveillance mammography is recommended. ",
-                                "###ACRUS#"),
+                                "###ACRUS#")
+                        ,
                         new ConceptDef()
                             .SetCode("Category4")
                             .SetDisplay("Category 4 (Suspicious)")
                             .MammoId("34")
                             .ValidModalities(Modalities.MG | Modalities.MRI | Modalities.NM | Modalities.US)
                             .SetSnomedDescription("ClinicalFinding | 397144001 | Mammography assessment " +
-                                                  "(Category 4)")
+                                "(Category 4)")
                             .SetUMLS("This category is reserved for findings that do not " +
-                                     "have the classic appearance of ",
+                                "have the classic appearance of ",
                                 "malignancy but are sufficiently suspicious to justify " +
                                 "a recommendation for biopsy. ",
                                 "There is a 2% likelihood of malignancy (cancer). ",
@@ -93,7 +94,8 @@ namespace BreastRadiology.XUnitTests
                                 "procedures will come from assessments ",
                                 "made using",
                                 "this category. ",
-                                "###ACRUS#"),
+                                "###ACRUS#")
+                        ,
                         new ConceptDef()
                             .SetCode("Category4A")
                             .SetDisplay("Category 4A (Low suspicion)")
@@ -109,7 +111,8 @@ namespace BreastRadiology.XUnitTests
                                 "is recommended. ",
                                 "Likelihood of malignancy is > 2% to <= 10% likelihood " +
                                 "of malignancy. ",
-                                "###ACRUS#"),
+                                "###ACRUS#")
+                        ,
                         new ConceptDef()
                             .SetCode("Category4B")
                             .SetDisplay("Category 4B (Moderate suspicion)")
@@ -122,7 +125,8 @@ namespace BreastRadiology.XUnitTests
                                 "Likelihood of malignancy is > 10% to <= 50% likelihood " +
                                 "of",
                                 "malignancy. ",
-                                "###ACRUS#"),
+                                "###ACRUS#")
+                        ,
                         new ConceptDef()
                             .SetCode("Category4C")
                             .SetDisplay("Category 4C (High suspicion)")
@@ -138,20 +142,22 @@ namespace BreastRadiology.XUnitTests
                                 " Range for likelihood of malignancy is > 50% to < " +
                                 "95% likelihood of malignancy. ",
                                 "It is more likely malignant versus benign. ",
-                                "###ACRUS#"),
+                                "###ACRUS#")
+                        ,
                         new ConceptDef()
                             .SetCode("Category5")
                             .SetDisplay("Category 5 (Highly Suggestive of Malignancy)")
                             .MammoId("35")
                             .ValidModalities(Modalities.MG | Modalities.MRI | Modalities.NM | Modalities.US)
                             .SetSnomedDescription("ClinicalFinding | 397145000 | Mammography assessment " +
-                                                  "(Category 5)")
+                                "(Category 5)")
                             .SetUMLS("Highly Suggestive of Malignancy. ",
                                 "Almost certainly predictive of breast cancer with " +
                                 "a ",
                                 "value of at least 95%. ",
                                 "Tissue Diagnosis is highly recommended or required. ",
-                                "###ACRUS#"),
+                                "###ACRUS#")
+                        ,
                         new ConceptDef()
                             .SetCode("Category6")
                             .SetDisplay("Category 6 (Known Biopsy-Proven Malignancy)")
@@ -166,9 +172,7 @@ namespace BreastRadiology.XUnitTests
                                 "Mammograms may be used in this way to see how well " +
                                 "the cancer is responding to treatment. ",
                                 "###ACRUS#")
-
                         #endregion // Codes
-
                         //- Codes
                     })
         );

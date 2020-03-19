@@ -37,21 +37,20 @@ namespace BreastRadiology.XUnitTests
                     new ConceptDef[]
                     {
                         //+ Codes
-
                         #region Codes
-
                         new ConceptDef()
                             .SetCode("Aspiration")
                             .SetDisplay("Aspiration")
                             .MammoId("805")
                             .ValidModalities(Modalities.MG)
                             .SetSnomedDescription("Procedure | 287572003 | Diagnostic aspiration of " +
-                                                  "breast cyst (Procedure) | [0/0] |")
+                                "breast cyst (Procedure) | [0/0] |")
                             .SetUMLS("A medical procedure that removes something from an " +
-                                     "area of the body. ",
+                                "area of the body. ",
                                 "These substances can be air, body fluids, or bone " +
                                 "fragments.",
-                                "###URL#https://medlineplus.gov/ency/article/002216.htm"),
+                                "###URL#https://medlineplus.gov/ency/article/002216.htm")
+                        ,
                         new ConceptDef()
                             .SetCode("Biopsy")
                             .SetDisplay("Biopsy")
@@ -59,28 +58,28 @@ namespace BreastRadiology.XUnitTests
                             .ValidModalities(Modalities.MG)
                             .SetSnomedDescription("Procedure | 122548005 | Biopsy of breast (Procedure)")
                             .SetUMLS("An examination under a microscope  of the specific " +
-                                     "tissue removed from the body. ",
+                                "tissue removed from the body. ",
                                 "The examination is used to check for abnormalities " +
-                                "or cancer cells."),
+                                "or cancer cells.")
+                        ,
                         new ConceptDef()
                             .SetCode("MRI")
                             .SetDisplay("MRI")
                             .MammoId("808")
                             .ValidModalities(Modalities.MG)
                             .SetSnomedDescription("Procedure | 241615005 | Magnetic resonance imaging " +
-                                                  "of breast (Procedure)")
+                                "of breast (Procedure)")
                             .SetUMLS("Findings on the Mammogram was previously demonstrated " +
-                                     "by the MRI."),
+                                "by the MRI.")
+                        ,
                         new ConceptDef()
                             .SetCode("US")
                             .SetDisplay("US")
                             .MammoId("806")
                             .ValidModalities(Modalities.MG)
                             .SetUMLS("Findings on the Mammogram was previously demonstrated " +
-                                     "by the Ultrasound.")
-
+                                "by the Ultrasound.")
                         #endregion // Codes
-
                         //- Codes
                     })
         );

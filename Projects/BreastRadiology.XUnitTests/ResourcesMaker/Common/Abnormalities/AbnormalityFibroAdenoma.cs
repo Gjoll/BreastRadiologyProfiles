@@ -24,22 +24,21 @@ namespace BreastRadiology.XUnitTests
                     new ConceptDef[]
                     {
                         //+ Type
-
                         #region Codes
-
                         new ConceptDef()
                             .SetCode("Fibroadenoma")
                             .SetDisplay("Fibroadenoma")
                             .MammoId("70")
                             .ValidModalities(Modalities.MG | Modalities.US)
                             .SetUMLS("A fibroadenoma is a benign, or noncancerous, breast " +
-                                     "tumor. ",
+                                "tumor. ",
                                 "Unlike a breast cancer, which grows larger over time " +
                                 "and can spread to other organs, ",
                                 "a fibroadenoma remains in the breast tissue. ",
                                 "They're pretty small, too. ",
                                 "Most are only 1 or 2 centimeters in size. ",
-                                "www.webmd.com > breast-cancer > what-are-fibroadenomas"),
+                                "www.webmd.com > breast-cancer > what-are-fibroadenomas")
+                        ,
                         new ConceptDef()
                             .SetCode("FibroadenomaDegeneration")
                             .SetDisplay("Fibroadenoma degeneration")
@@ -50,9 +49,7 @@ namespace BreastRadiology.XUnitTests
                                 "By the time a woman is menopausal, they will likely " +
                                 "experience a degeneration of ",
                                 "the Fibroadenomas.")
-
                         #endregion // Codes
-
                         //- Type
                     })
         );

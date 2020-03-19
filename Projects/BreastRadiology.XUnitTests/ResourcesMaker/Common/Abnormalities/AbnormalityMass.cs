@@ -24,9 +24,7 @@ namespace BreastRadiology.XUnitTests
                     new ConceptDef[]
                     {
                         //+ Type
-
                         #region Codes
-
                         new ConceptDef()
                             .SetCode("Mass")
                             .SetDisplay("Mass")
@@ -36,24 +34,27 @@ namespace BreastRadiology.XUnitTests
                                 "This is also known as a breast lump. ",
                                 " It feels different from the surrounding tissue. ",
                                 "Breast pain, nipple discharge, or skin changes may " +
-                                "be present."),
+                                "be present.")
+                        ,
                         new ConceptDef()
                             .SetCode("MassIntraductal")
                             .SetDisplay("Mass intraductal")
                             .MammoId("621")
                             .ValidModalities(Modalities.US)
                             .SetSnomedDescription("ClinicalFinding | 369753003 | Intraductal tumor configuration " +
-                                                  "(Finding)")
+                                "(Finding)")
                             .SetUMLS("An intraductal mass has been identified in the breast. ",
                                 "It is a lump that originates in one or more of the " +
-                                "milk ducts in the breast."),
+                                "milk ducts in the breast.")
+                        ,
                         new ConceptDef()
                             .SetCode("MassPartiallySolid")
                             .SetDisplay("Mass partially solid")
                             .MammoId("697")
                             .ValidModalities(Modalities.MG | Modalities.US)
                             .SetUMLS("A mass that is partially solid has been identified " +
-                                     "in the breast."),
+                                "in the breast.")
+                        ,
                         new ConceptDef()
                             .SetCode("MassSkinATLASIsSkinLesion")
                             .SetDisplay("Mass skin ATLAS is skin lesion")
@@ -66,20 +67,19 @@ namespace BreastRadiology.XUnitTests
                                 "report or annotated on the mammographic image when " +
                                 "it projects over the breast (especially on two different " +
                                 "projections) and may be mistaken for an intramammary " +
-                                "lesion.###ACRMG#"),
+                                "lesion.###ACRMG#")
+                        ,
                         new ConceptDef()
                             .SetCode("MassSolid")
                             .SetDisplay("Mass solid")
                             .MammoId("608")
                             .ValidModalities(Modalities.MG | Modalities.US)
                             .SetUMLS("The mammogram and/or ultrasound show solid mass of " +
-                                     "the breast. ",
+                                "the breast. ",
                                 "This can be nodules, fibrocystic tissue, phylloides " +
                                 "tumor, breast cancer or metastatic. ",
                                 "May need a biopsy confirmation.")
-
                         #endregion // Codes
-
                         //- Type
                     })
         );

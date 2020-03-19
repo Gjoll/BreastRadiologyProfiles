@@ -79,92 +79,97 @@ namespace BreastRadiology.XUnitTests
                     new ConceptDef[]
                     {
                         //+ Codes
-
                         #region Codes
-
                         new ConceptDef()
                             .SetCode("3DImaging")
                             .SetDisplay("3D Imaging")
                             .MammoId("1828")
                             .ValidModalities(Modalities.MG | Modalities.MRI | Modalities.US)
                             .SetSnomedDescription("Procedure | 450566007 | Digital breast tomosynthesis " +
-                                                  "(Procedure) +")
+                                "(Procedure) +")
                             .SetUMLS("Advanced Technology that takes multiple images, or " +
-                                     "X-rays, of breast tissue to recreate ",
+                                "X-rays, of breast tissue to recreate ",
                                 "a 3-dimensional picture of the breast. ",
-                                "Also called breast tomosynthesis."),
+                                "Also called breast tomosynthesis.")
+                        ,
                         new ConceptDef()
                             .SetCode("3DSpotCC")
                             .SetDisplay("3D spot CC")
                             .MammoId("1830")
                             .ValidModalities(Modalities.MG)
                             .SetSnomedDescription("Procedure | 450566007 | Digital breast tomosynthesis " +
-                                                  "(Procedure) + QualifierValue | 399162004 | Cranio-caudal " +
-                                                  "projection (Qualifier) + SPOT")
+                                "(Procedure) + QualifierValue | 399162004 | Cranio-caudal " +
+                                "projection (Qualifier) + SPOT")
                             .SetUMLS("Advanced Technology that takes multiple images, or " +
-                                     "X-rays, of breast tissue to recreate ",
+                                "X-rays, of breast tissue to recreate ",
                                 "a 3-dimensional picture of the breast. ",
-                                "Cranial-Caudal (CC) is a 3D view from above the breast."),
+                                "Cranial-Caudal (CC) is a 3D view from above the breast.")
+                        ,
                         new ConceptDef()
                             .SetCode("3DSpotLM")
                             .SetDisplay("3D spot LM")
                             .MammoId("1833")
                             .ValidModalities(Modalities.MG)
                             .SetSnomedDescription("Procedure | 450566007 | Digital breast tomosynthesis " +
-                                                  "(Procedure) + QualifierValue | 399352003 | Lateral-medial " +
-                                                  "projection (Qualifier) + SPOT")
+                                "(Procedure) + QualifierValue | 399352003 | Lateral-medial " +
+                                "projection (Qualifier) + SPOT")
                             .SetUMLS("Advanced Technology that takes multiple images, or " +
-                                     "X-rays, of breast tissue to recreate ",
+                                "X-rays, of breast tissue to recreate ",
                                 "a 3-dimensional picture of the breast. ",
-                                "Lateral-medial (LM) is"),
+                                "Lateral-medial (LM) is")
+                        ,
                         new ConceptDef()
                             .SetCode("3DSpotML")
                             .SetDisplay("3D spot ML")
                             .MammoId("1832")
                             .ValidModalities(Modalities.MG)
                             .SetSnomedDescription("Procedure | 450566007 | Digital breast tomosynthesis " +
-                                                  "(Procedure) + QualifierValue | 399260004 | Medial-lateral " +
-                                                  "projection (Qualifier) + SPOT")
+                                "(Procedure) + QualifierValue | 399260004 | Medial-lateral " +
+                                "projection (Qualifier) + SPOT")
                             .SetUMLS("Advanced Technology that takes multiple images, or " +
-                                     "X-rays, of breast tissue to recreate ",
+                                "X-rays, of breast tissue to recreate ",
                                 "a 3-dimensional picture of the breast. ",
-                                "Mediolateral (ML) is"),
+                                "Mediolateral (ML) is")
+                        ,
                         new ConceptDef()
                             .SetCode("3DSpotMLO")
                             .SetDisplay("3D spot MLO")
                             .MammoId("1831")
                             .ValidModalities(Modalities.MG)
                             .SetSnomedDescription("Procedure | 450566007 | Digital breast tomosynthesis " +
-                                                  "(Procedure) + QualifierValue | 399368009 | Medio-lateral " +
-                                                  "oblique projection (Qualifier) + SPOT")
+                                "(Procedure) + QualifierValue | 399368009 | Medio-lateral " +
+                                "oblique projection (Qualifier) + SPOT")
                             .SetUMLS("Advanced Technology that takes multiple images, or " +
-                                     "X-rays, of breast tissue to recreate ",
+                                "X-rays, of breast tissue to recreate ",
                                 "a 3-dimensional picture of the breast. ",
-                                "Mediolateral-oblique (MLO) is"),
+                                "Mediolateral-oblique (MLO) is")
+                        ,
                         new ConceptDef()
                             .SetCode("AdditionalViews")
                             .SetDisplay("Additional views")
                             .MammoId("68")
                             .ValidModalities(Modalities.MG | Modalities.MRI | Modalities.US)
                             .SetUMLS("Additional views in Mammography, MRI and US, help " +
-                                     "increase the chances of finding ",
-                                "any possible tumors in the breast."),
+                                "increase the chances of finding ",
+                                "any possible tumors in the breast.")
+                        ,
                         new ConceptDef()
                             .SetCode("AddlitionalViewsWithPossibleUltrasound")
                             .SetDisplay("Addlitional views with possible ultrasound")
                             .MammoId("87")
                             .ValidModalities(Modalities.MG | Modalities.MRI | Modalities.US)
                             .SetSnomedDescription("Procedure | 47079000 | Ultrasonography of breast " +
-                                                  "(Procedure)")
+                                "(Procedure)")
                             .SetUMLS("Additional views in a Mammogram, MRI or Ultrasound " +
-                                     "are recommended."),
+                                "are recommended.")
+                        ,
                         new ConceptDef()
                             .SetCode("AxillaView")
                             .SetDisplay("Axilla view")
                             .MammoId("1820")
                             .ValidModalities(Modalities.MG | Modalities.US)
                             .SetUMLS("An axillary view (also known as a \"Cleopatra view\") " +
-                                     "is a type of view in mammography. It is ",
+                                "is a type of view in mammography. It is ",
                                 "an exaggerated craniocaudal view for better imaging " +
                                 "of the lateral portion of the ",
                                 "breast to the axillary tail. ",
@@ -176,17 +181,18 @@ namespace BreastRadiology.XUnitTests
                                 "of the breast including the axillary tail, as well " +
                                 "the pectoral muscle and the nipple ",
                                 "in profile. ",
-                                "###URL#https://radiopaedia.org/articles/axillary-view?lang=us"),
+                                "###URL#https://radiopaedia.org/articles/axillary-view?lang=us")
+                        ,
                         new ConceptDef()
                             .SetCode("AxillaryTailView")
                             .SetDisplay("Axillary tail view")
                             .MammoId("45")
                             .ValidModalities(Modalities.MG | Modalities.US)
                             .SetSnomedDescription("Procedure | 241055006 | Mammogram - symptomatic (Procedure) " +
-                                                  "+ QualifierValue | 442580003 | Axillary tissue mammography " +
-                                                  "view (Qualifier)")
+                                "+ QualifierValue | 442580003 | Axillary tissue mammography " +
+                                "view (Qualifier)")
                             .SetUMLS("The tail of Spence (Spence's tail, axillary process, " +
-                                     "axillary tail) is an extension ",
+                                "axillary tail) is an extension ",
                                 "of the tissue of the breast that extends into the " +
                                 "axilla. ",
                                 "It is actually an extension of the upper lateral " +
@@ -194,7 +200,8 @@ namespace BreastRadiology.XUnitTests
                                 "It passes into the axilla through an opening in the " +
                                 "deep fascia called foramen of ",
                                 "Langer. ",
-                                "###URL#https://en.wikipedia.org/wiki/Tail_of_Spence"),
+                                "###URL#https://en.wikipedia.org/wiki/Tail_of_Spence")
+                        ,
                         new ConceptDef()
                             .SetCode("Biopsy")
                             .SetDisplay("Biopsy")
@@ -204,20 +211,22 @@ namespace BreastRadiology.XUnitTests
                                 "An examination under a microscope  of the specific " +
                                 "tissue removed from the body. ",
                                 "The examination is used to check for abnormalities " +
-                                "or cancer cells."),
+                                "or cancer cells.")
+                        ,
                         new ConceptDef()
                             .SetCode("BiopsyBaseOnClinical")
                             .SetDisplay("Biopsy base on clinical")
                             .MammoId("52")
                             .ValidModalities(Modalities.MG | Modalities.MRI | Modalities.US)
-                            .SetUMLS("Based on the clinical exam, a biopsy is recommended."),
+                            .SetUMLS("Based on the clinical exam, a biopsy is recommended.")
+                        ,
                         new ConceptDef()
                             .SetCode("CaudocranialView")
                             .SetDisplay("Caudocranial view")
                             .MammoId("46")
                             .ValidModalities(Modalities.MG | Modalities.US)
                             .SetUMLS("It is recommended that a Caudocranial view is captured " +
-                                     "by Ultrasound and/or Mammogram. ",
+                                "by Ultrasound and/or Mammogram. ",
                                 "It is useful for the study of breasts in the lower " +
                                 "quadrants. ",
                                 "The patient will bend forward at the waist to view " +
@@ -230,210 +239,228 @@ namespace BreastRadiology.XUnitTests
                                 "paddle offers to the mammographer ",
                                 "the possibility to flatten it properly, reducing " +
                                 "the formation of scar folds as well ",
-                                "artifacts from false parenchymal distortion."),
+                                "artifacts from false parenchymal distortion.")
+                        ,
                         new ConceptDef()
                             .SetCode("CCWithCompressionView")
                             .SetDisplay("CC with compression view")
                             .MammoId("84")
                             .ValidModalities(Modalities.MG | Modalities.US)
                             .SetSnomedDescription("Procedure | 439324009 | Mammogram in compression " +
-                                                  "view (Procedure)+ QualifierValue | 399162004 | Cranio-caudal " +
-                                                  "projection (Qualifier)")
+                                "view (Procedure)+ QualifierValue | 399162004 | Cranio-caudal " +
+                                "projection (Qualifier)")
                             .SetUMLS("The recommendation is for a CC with compression view " +
-                                     "to be completed on an Ultrasound and/or Mammogram."),
+                                "to be completed on an Ultrasound and/or Mammogram.")
+                        ,
                         new ConceptDef()
                             .SetCode("CCWithMagnificationView")
                             .SetDisplay("CC with magnification view")
                             .MammoId("82")
                             .ValidModalities(Modalities.MG | Modalities.US)
                             .SetSnomedDescription("Procedure | 241058008 | Mammogram magnification (Procedure) " +
-                                                  "+ QualifierValue | 399162004 | Cranio-caudal projection " +
-                                                  "(Qualifier)")
+                                "+ QualifierValue | 399162004 | Cranio-caudal projection " +
+                                "(Qualifier)")
                             .SetUMLS("The recommendation is for a CC with magnification " +
-                                     "view to be completed on an Ultrasound and/or Mammogram."),
+                                "view to be completed on an Ultrasound and/or Mammogram.")
+                        ,
                         new ConceptDef()
                             .SetCode("CleavageView")
                             .SetDisplay("Cleavage view")
                             .MammoId("44")
                             .ValidModalities(Modalities.MG | Modalities.US)
                             .SetSnomedDescription("Procedure | 241055006 | Mammogram - symptomatic (Procedure) " +
-                                                  "+ QualifierValue | 399161006 | Cleavage mammography " +
-                                                  "view (Qualifier)")
+                                "+ QualifierValue | 399161006 | Cleavage mammography " +
+                                "view (Qualifier)")
                             .SetUMLS("It is recommended that a cleavage view is captured " +
-                                     "via Mammogram and/or Ultrasound. ",
+                                "via Mammogram and/or Ultrasound. ",
                                 "Also called \"valley view\" is a mammogram view that " +
                                 "images the most central portions ",
                                 "of the breasts. ",
                                 "To get as much central tissue as possible, the mammogram " +
                                 "technologist will place ",
                                 "both breasts on the plate at the same time to image " +
-                                "the medial half of both breasts."),
+                                "the medial half of both breasts.")
+                        ,
                         new ConceptDef()
                             .SetCode("ClinicalConsultation")
                             .SetDisplay("Clinical consultation")
                             .MammoId("116")
                             .ValidModalities(Modalities.MG | Modalities.MRI | Modalities.US)
-                            .SetUMLS("A clinical consultation is recommended."),
+                            .SetUMLS("A clinical consultation is recommended.")
+                        ,
                         new ConceptDef()
                             .SetCode("ClinicalCorrelation")
                             .SetDisplay("Clinical correlation")
                             .MammoId("56")
                             .ValidModalities(Modalities.MG | Modalities.MRI | Modalities.US)
                             .SetUMLS("The recommendation is for a clinicial correlation " +
-                                     "and/or comparison to be completed."),
+                                "and/or comparison to be completed.")
+                        ,
                         new ConceptDef()
                             .SetCode("ClinicalFollow-up")
                             .SetDisplay("Clinical follow-up")
                             .MammoId("93")
                             .ValidModalities(Modalities.MG | Modalities.MRI | Modalities.US)
                             .SetUMLS("The recommendation is for a clinical follow-up to " +
-                                     "be completed."),
+                                "be completed.")
+                        ,
                         new ConceptDef()
                             .SetCode("CompareToPriorExams")
                             .SetDisplay("Compare to prior exams")
                             .MammoId("103")
                             .ValidModalities(Modalities.MG | Modalities.US)
                             .SetUMLS("The recommendation is for a compare to prior exams " +
-                                     "to be completed."),
+                                "to be completed.")
+                        ,
                         new ConceptDef()
                             .SetCode("CompressionViews")
                             .SetDisplay("Compression views")
                             .MammoId("43")
                             .ValidModalities(Modalities.MG | Modalities.US)
                             .SetSnomedDescription("Procedure | 439324009 | Mammogram in compression " +
-                                                  "view (Procedure)")
+                                "view (Procedure)")
                             .SetUMLS("It is recommended that a compression view is admininstered " +
-                                     "via Mammogram or Ultrasound. ",
+                                "via Mammogram or Ultrasound. ",
                                 "All mammograms use compression of the breast. ",
                                 "By applying compression to only a specific area of " +
                                 "the breast, the effective pressure ",
                                 "is increased on that spot. ",
                                 "This results in better tissue separation and allows " +
                                 "better visualization of the area ",
-                                "of the breast needing additional examination."),
+                                "of the breast needing additional examination.")
+                        ,
                         new ConceptDef()
                             .SetCode("ConeCompression")
                             .SetDisplay("Cone compression")
                             .MammoId("185")
                             .ValidModalities(Modalities.MG | Modalities.US)
                             .SetSnomedDescription("Procedure | 439324009 | Mammogram in compression " +
-                                                  "view (Procedure)")
+                                "view (Procedure)")
                             .SetUMLS("A cone compression is recommended to catch a specific " +
-                                     "spot or view during the mammogram ",
+                                "spot or view during the mammogram ",
                                 "and/or ultrasound. ",
                                 "Spot views apply the compression to a smaller area " +
                                 "of tissue using a small compression ",
-                                "plate or \"cone\"."),
+                                "plate or \"cone\".")
+                        ,
                         new ConceptDef()
                             .SetCode("CoreBiopsy")
                             .SetDisplay("Core Biopsy")
                             .MammoId("1829")
                             .ValidModalities(Modalities.MG | Modalities.MRI | Modalities.US)
                             .SetSnomedDescription("Procedure | 44578009 | Core needle biopsy of breast " +
-                                                  "(Procedure)")
+                                "(Procedure)")
                             .SetUMLS("It is recommended that a core biopsy procedure is " +
-                                     "administered. ",
+                                "administered. ",
                                 "It is a procedure where a needle is passed through " +
                                 "the skin to take a sample of tissue ",
                                 "from a mass or lump. ",
                                 "The tissue is then examined under a microscope for " +
-                                "any abnormalities."),
+                                "any abnormalities.")
+                        ,
                         new ConceptDef()
                             .SetCode("CraniocaudalView")
                             .SetDisplay("Craniocaudal view")
                             .MammoId("332")
                             .ValidModalities(Modalities.MG)
                             .SetSnomedDescription("Procedure | 241055006 | Mammogram - symptomatic (Procedure) " +
-                                                  "+ QualifierValue | 399162004 | Cranio-caudal projection " +
-                                                  "(Qualifier)")
+                                "+ QualifierValue | 399162004 | Cranio-caudal projection " +
+                                "(Qualifier)")
                             .SetUMLS("Cranial-Caudal (CC) is a view from above the breast " +
-                                     "during a mammogram or ultrasound."),
+                                "during a mammogram or ultrasound.")
+                        ,
                         new ConceptDef()
                             .SetCode("Cryoablation")
                             .SetDisplay("Cryoablation")
                             .MammoId("168")
                             .ValidModalities(Modalities.MG | Modalities.US)
                             .SetUMLS("Uses imaging guidance, a needle-like applicator called " +
-                                     "a cryoprobe, and liquid nitrogen ",
+                                "a cryoprobe, and liquid nitrogen ",
                                 "or argon gas to create intense cold to freeze and " +
                                 "destroy diseased tissue, including ",
                                 "cancer cells. ",
                                 "It may be used to treat a variety of skin conditions " +
                                 "as well as tumors within the ",
-                                "liver, kidneys, bones, lungs and breasts."),
+                                "liver, kidneys, bones, lungs and breasts.")
+                        ,
                         new ConceptDef()
                             .SetCode("CystAspiration")
                             .SetDisplay("Cyst aspiration")
                             .MammoId("51")
                             .ValidModalities(Modalities.MG | Modalities.MRI | Modalities.US)
                             .SetSnomedDescription("Procedure | 287572003 | Diagnostic aspiration of " +
-                                                  "breast cyst (Procedure)")
+                                "breast cyst (Procedure)")
                             .SetUMLS("A cyst aspiration is a procedure used to drain fluid " +
-                                     "from a breast cyst. ",
+                                "from a breast cyst. ",
                                 "The vast majority of cysts are benign (non-cancerous), " +
                                 "though some are quite tender. ",
                                 "Aspirating the fluid from a cyst may alleviate symptoms " +
                                 "or discomfort. ",
                                 "In some cases, specimens are sent to pathology. ",
-                                "###URL#www.carolmilgardbreastcenter.org > Cyst_Aspiration"),
+                                "###URL#www.carolmilgardbreastcenter.org > Cyst_Aspiration")
+                        ,
                         new ConceptDef()
                             .SetCode("CystAspirationForRelief")
                             .SetDisplay("Cyst aspiration for relief")
                             .MammoId("1821")
                             .ValidModalities(Modalities.US)
                             .SetSnomedDescription("Procedure | 287572003 | Diagnostic aspiration of " +
-                                                  "breast cyst (Procedure)")
+                                "breast cyst (Procedure)")
                             .SetUMLS("One way to get relief from the pain of a cyst is " +
-                                     "to remove fluid from ",
+                                "to remove fluid from ",
                                 "the cyst, thereby decreasing the pressure. ",
-                                "This is called aspiration for relief."),
+                                "This is called aspiration for relief.")
+                        ,
                         new ConceptDef()
                             .SetCode("DiagnosticAspiration")
                             .SetDisplay("Diagnostic aspiration")
                             .MammoId("108")
                             .ValidModalities(Modalities.MG | Modalities.MRI | Modalities.US)
                             .SetSnomedDescription("Procedure | 287572003 | Diagnostic aspiration of " +
-                                                  "breast cyst (Procedure)")
+                                "breast cyst (Procedure)")
                             .SetUMLS("This is a fine needle aspiration and is a type of " +
-                                     "biopsy procedure. ",
+                                "biopsy procedure. ",
                                 "In fine needle aspiration, a thin needle is inserted " +
                                 "into an area of abnormal-appearing ",
                                 "tissue or body fluid. ",
-                                "###URL#https://www.webmd.com > a-to-z-guides > fine-needle-aspiration"),
+                                "###URL#https://www.webmd.com > a-to-z-guides > fine-needle-aspiration")
+                        ,
                         new ConceptDef()
                             .SetCode("DiagnosticMammogram")
                             .SetDisplay("Diagnostic Mammogram")
                             .MammoId("1834")
                             .ValidModalities(Modalities.MG)
                             .SetUMLS("While screening mammograms are used as a routine " +
-                                     "check-up for breast health,  diagnostic ",
+                                "check-up for breast health,  diagnostic ",
                                 "mammograms are used after suspicious results on a " +
                                 "screening mammogram or after some ",
                                 "signs of breast cancer alert the physician to check " +
                                 "the tissue.These signs may include ",
                                 "a lump or breast pain. ",
-                                "###URL#https://www.nationalbreastcancer.org/diagnostic-mammogram"),
+                                "###URL#https://www.nationalbreastcancer.org/diagnostic-mammogram")
+                        ,
                         new ConceptDef()
                             .SetCode("DrainageTube")
                             .SetDisplay("Drainage tube")
                             .MammoId("183")
                             .ValidModalities(Modalities.MG | Modalities.MRI | Modalities.US)
                             .SetUMLS("The recommendation is for a drainage tube to be attached " +
-                                     "to breast. ",
+                                "to breast. ",
                                 "A drainage tube is a tube used to remove pus, blood " +
                                 "or other fluids from a wound. ",
                                 "This is a common practice by surgeons or interventional " +
                                 "radiologists. ",
-                                "###URL#https://en.wikipedia.org/wiki/Drain_(surgery)"),
+                                "###URL#https://en.wikipedia.org/wiki/Drain_(surgery)")
+                        ,
                         new ConceptDef()
                             .SetCode("Ductography")
                             .SetDisplay("Ductography")
                             .MammoId("179")
                             .ValidModalities(Modalities.MG | Modalities.MRI | Modalities.US)
                             .SetSnomedDescription("Procedure | 420131003 | Fluoroscopic mammary ductography " +
-                                                  "(Procedure)")
+                                "(Procedure)")
                             .SetUMLS("A ductogram, also called a galactogram, is a special " +
-                                     "type of mammogram used for imaging ",
+                                "type of mammogram used for imaging ",
                                 "the breast ducts. ",
                                 "It can aid in diagnosing the cause of abnormal nipple " +
                                 "discharges.",
@@ -445,15 +472,16 @@ namespace BreastRadiology.XUnitTests
                                 "abnormal nipple discharge and is ",
                                 "valuable in diagnosing intraductal papillomas and " +
                                 "other conditions.",
-                                "###URL#https://www.imaginis.com/mammography/ductogram-galactogram-imaging-the-breast-ducts"),
+                                "###URL#https://www.imaginis.com/mammography/ductogram-galactogram-imaging-the-breast-ducts")
+                        ,
                         new ConceptDef()
                             .SetCode("ExaggeratedCCViews")
                             .SetDisplay("Exaggerated CC views")
                             .MammoId("41")
                             .ValidModalities(Modalities.MG | Modalities.US)
                             .SetSnomedDescription("Procedure | 241055006 | Mammogram - symptomatic (Procedure) " +
-                                                  "+ QualifierValue | 399265009 | Exaggerated cranio-caudal " +
-                                                  "projection (Qualifier)")
+                                "+ QualifierValue | 399265009 | Exaggerated cranio-caudal " +
+                                "projection (Qualifier)")
                             .SetUMLS("An XCCL view is a supplementary mammographic view. ",
                                 "It is a type of exaggerated cranio-caudal view. ",
                                 "It is particularly good for imaging the lateral aspect " +
@@ -475,7 +503,8 @@ namespace BreastRadiology.XUnitTests
                                 "An optimal XCCM view requires the most medial portion " +
                                 "of the breast and the nipple ",
                                 "in profile to be clearly displayed. ",
-                                "###URL#https://radiopaedia.org/articles/xccl-view?lang=us"),
+                                "###URL#https://radiopaedia.org/articles/xccl-view?lang=us")
+                        ,
                         new ConceptDef()
                             .SetCode("FNABiopsy")
                             .SetDisplay("FNA biopsy")
@@ -483,7 +512,7 @@ namespace BreastRadiology.XUnitTests
                             .ValidModalities(Modalities.MG | Modalities.US)
                             .SetSnomedDescription("not matching")
                             .SetUMLS("FNA stands for Fine needle aspiration and this is " +
-                                     "a type of biopsy procedure. ",
+                                "a type of biopsy procedure. ",
                                 "In fine needle aspiration, a thin needle is inserted " +
                                 "into an area of abnormal-appearing ",
                                 "tissue or body fluid.",
@@ -491,101 +520,112 @@ namespace BreastRadiology.XUnitTests
                                 "during fine needle aspiration ",
                                 "can help make a diagnosis or rule out conditions " +
                                 "such as cancer. ",
-                                "###URL#https://www.webmd.com/a-to-z-guides/fine-needle-aspiration#1"),
+                                "###URL#https://www.webmd.com/a-to-z-guides/fine-needle-aspiration#1")
+                        ,
                         new ConceptDef()
                             .SetCode("Follow-up")
                             .SetDisplay("Follow-up")
                             .MammoId("38")
                             .ValidModalities(Modalities.US)
-                            .SetUMLS("It is recommended to make a follow-up appointment."),
+                            .SetUMLS("It is recommended to make a follow-up appointment.")
+                        ,
                         new ConceptDef()
                             .SetCode("Followup3Months")
                             .SetDisplay("Followup 3 months")
                             .MammoId("123")
                             .ValidModalities(Modalities.MG | Modalities.US)
                             .SetUMLS("It is recommended to make a follow-up appointment " +
-                                     "in 3 months."),
+                                "in 3 months.")
+                        ,
                         new ConceptDef()
                             .SetCode("Followup6Months")
                             .SetDisplay("Followup 6 months")
                             .MammoId("119")
                             .ValidModalities(Modalities.MG | Modalities.MRI | Modalities.US)
                             .SetUMLS("It is recommended to make a follow-up appointment " +
-                                     "in 6 months."),
+                                "in 6 months.")
+                        ,
                         new ConceptDef()
                             .SetCode("IfPreviousShowNoChange")
                             .SetDisplay("If previous show no change")
                             .MammoId("89")
                             .ValidModalities(Modalities.MRI | Modalities.US)
                             .SetUMLS("The recommendation is for a if previous show no change " +
-                                     "to be completed."),
+                                "to be completed.")
+                        ,
                         new ConceptDef()
                             .SetCode("LateralMagnificationView")
                             .SetDisplay("Lateral magnification view")
                             .MammoId("161")
                             .ValidModalities(Modalities.MG)
                             .SetSnomedDescription("Procedure | 241058008 | Mammogram magnification (Procedure) " +
-                                                  "+ QualifierValue | 399067008 | Lateral projection " +
-                                                  "(Qualifier)")
+                                "+ QualifierValue | 399067008 | Lateral projection " +
+                                "(Qualifier)")
                             .SetUMLS("The recommendation is for a Lateral magnification " +
-                                     "view to be completed on Mammogram and/or Ultrasound."),
+                                "view to be completed on Mammogram and/or Ultrasound.")
+                        ,
                         new ConceptDef()
                             .SetCode("LateralMedialView")
                             .SetDisplay("Lateral medial view")
                             .MammoId("90")
                             .ValidModalities(Modalities.MG | Modalities.US)
                             .SetSnomedDescription("Procedure | 241055006 | Mammogram - symptomatic (Procedure) " +
-                                                  "+ QualifierValue | 399352003 | Lateral-medial projection " +
-                                                  "(Qualifier)")
+                                "+ QualifierValue | 399352003 | Lateral-medial projection " +
+                                "(Qualifier)")
                             .SetUMLS("There are different views of the breast in mammography. ",
                                 "For the LM view, the tube is lateral and the detector " +
                                 "is placed medially",
-                                "LM view is best for evaluating medial lesions."),
+                                "LM view is best for evaluating medial lesions.")
+                        ,
                         new ConceptDef()
                             .SetCode("LateralView")
                             .SetDisplay("Lateral view")
                             .MammoId("95")
                             .ValidModalities(Modalities.MG | Modalities.US)
                             .SetSnomedDescription("Procedure | 241055006 | Mammogram - symptomatic (Procedure) " +
-                                                  "+ QualifierValue | 399067008 | Lateral projection " +
-                                                  "(Qualifier)")
+                                "+ QualifierValue | 399067008 | Lateral projection " +
+                                "(Qualifier)")
                             .SetUMLS("There are different views of the breast in mammography. ",
                                 "The lateral view is a view obtained at virtually " +
                                 "every diagnostic evaluation. ",
                                 "A lateral view may be obtained as a mediolateral " +
                                 "view (ML) or lateromedial view (LM) ",
                                 "view depending on where the imaging tube and detector " +
-                                "are located."),
+                                "are located.")
+                        ,
                         new ConceptDef()
                             .SetCode("LateralWithCompressionView")
                             .SetDisplay("Lateral with compression view")
                             .MammoId("86")
                             .ValidModalities(Modalities.MG | Modalities.US)
                             .SetSnomedDescription("Procedure | 439324009 | Mammogram in compression " +
-                                                  "view (Procedure) + QualifierValue | 399067008 | Lateral " +
-                                                  "projection (Qualifier)")
+                                "view (Procedure) + QualifierValue | 399067008 | Lateral " +
+                                "projection (Qualifier)")
                             .SetUMLS("The recommendation is for a Lateral with compression " +
-                                     "view to be completed on Mammogram."),
+                                "view to be completed on Mammogram.")
+                        ,
                         new ConceptDef()
                             .SetCode("LateromedialOblique")
                             .SetDisplay("Lateromedial oblique")
                             .MammoId("47")
                             .ValidModalities(Modalities.MG | Modalities.US)
                             .SetSnomedDescription("Procedure | 241055006 | Mammogram - symptomatic (Procedure)+ " +
-                                                  "QualifierValue | 399352003 | Lateral-medial projection " +
-                                                  "(Qualifier)")
+                                "QualifierValue | 399352003 | Lateral-medial projection " +
+                                "(Qualifier)")
                             .SetUMLS("The recommendation is for a lateromedial oblique " +
-                                     "view to be completed on Mammogram and/or Ultrasound."),
+                                "view to be completed on Mammogram and/or Ultrasound.")
+                        ,
                         new ConceptDef()
                             .SetCode("LateromedialView")
                             .SetDisplay("Lateromedial view")
                             .MammoId("96")
                             .ValidModalities(Modalities.MG | Modalities.US)
                             .SetSnomedDescription("Procedure | 241055006 | Mammogram - symptomatic (Procedure) " +
-                                                  "+ QualifierValue | 399352003 | Lateral-medial projection " +
-                                                  "(Qualifier)")
+                                "+ QualifierValue | 399352003 | Lateral-medial projection " +
+                                "(Qualifier)")
                             .SetUMLS("The recommendation is for a lateromedial view to " +
-                                     "be completed on Mammogram and/or Ultrasound."),
+                                "be completed on Mammogram and/or Ultrasound.")
+                        ,
                         new ConceptDef()
                             .SetCode("LymphNodeAssessment")
                             .SetDisplay("Lymph node assessment")
@@ -597,7 +637,8 @@ namespace BreastRadiology.XUnitTests
                                 "a malignant or inflammatory process and the localization " +
                                 "or generalization of that ",
                                 "process. ",
-                                "###URL#https://stanfordmedicine25.stanford.edu/the25/lymph.html"),
+                                "###URL#https://stanfordmedicine25.stanford.edu/the25/lymph.html")
+                        ,
                         new ConceptDef()
                             .SetCode("MagnificationViews")
                             .SetDisplay("Magnification views")
@@ -605,7 +646,7 @@ namespace BreastRadiology.XUnitTests
                             .ValidModalities(Modalities.MG | Modalities.MRI | Modalities.NM | Modalities.US)
                             .SetSnomedDescription("Procedure | 241058008 | Mammogram magnification (Procedure)")
                             .SetUMLS("A magnification view in mammography is performed " +
-                                     "to evaluate and count microcalcifications and ",
+                                "to evaluate and count microcalcifications and ",
                                 "its extension (as well the assessment of the borders " +
                                 "and the tissue structures of ",
                                 "a suspicious area or a mass) by using a magnification " +
@@ -614,7 +655,8 @@ namespace BreastRadiology.XUnitTests
                                 "source. ",
                                 "This allows the acquisition of magnified images (1.5x " +
                                 "to 2x magnification) of the ",
-                                "region of interest. radiopaedia.org > articles > magnification-view-mammography"),
+                                "region of interest. radiopaedia.org > articles > magnification-view-mammography")
+                        ,
                         new ConceptDef()
                             .SetCode("Mammogram")
                             .SetDisplay("Mammogram")
@@ -622,141 +664,157 @@ namespace BreastRadiology.XUnitTests
                             .ValidModalities(Modalities.MRI)
                             .SetSnomedDescription("Procedure | 241055006 | Mammogram - symptomatic (Procedure)")
                             .SetUMLS("An X-Ray picture of the breast. ",
-                                "It's used to look for early signs of breast cancer."),
+                                "It's used to look for early signs of breast cancer.")
+                        ,
                         new ConceptDef()
                             .SetCode("Mammogram3MonthFollow-up")
                             .SetDisplay("Mammogram 3 month follow-up")
                             .MammoId("1822")
                             .ValidModalities(Modalities.MG | Modalities.US)
-                            .SetUMLS("A three month follow-up is recommended."),
+                            .SetUMLS("A three month follow-up is recommended.")
+                        ,
                         new ConceptDef()
                             .SetCode("Mammogram6MonthFollow-up")
                             .SetDisplay("Mammogram 6 month follow-up")
                             .MammoId("1823")
                             .ValidModalities(Modalities.MG | Modalities.US)
-                            .SetUMLS("A six month follow-up is recommended."),
+                            .SetUMLS("A six month follow-up is recommended.")
+                        ,
                         new ConceptDef()
                             .SetCode("MammogramAndUltrasound3MonthFollow-up")
                             .SetDisplay("Mammogram and ultrasound 3 month follow-up")
                             .MammoId("1826")
                             .ValidModalities(Modalities.MG | Modalities.US)
-                            .SetUMLS("A three month follow-up with ultrasound is recommended."),
+                            .SetUMLS("A three month follow-up with ultrasound is recommended.")
+                        ,
                         new ConceptDef()
                             .SetCode("MammogramAndUltrasound6MonthFollow-up")
                             .SetDisplay("Mammogram and ultrasound 6 month follow-up")
                             .MammoId("1827")
                             .ValidModalities(Modalities.MG | Modalities.US)
-                            .SetUMLS("A six month follow-up with ultrasound is recommended."),
+                            .SetUMLS("A six month follow-up with ultrasound is recommended.")
+                        ,
                         new ConceptDef()
                             .SetCode("MediolateralObliqueView")
                             .SetDisplay("Mediolateral oblique view")
                             .MammoId("187")
                             .ValidModalities(Modalities.MG)
                             .SetSnomedDescription("Procedure | 241055006 | Mammogram - symptomatic (Procedure) " +
-                                                  "+ QualifierValue | 399368009 | Medio-lateral oblique " +
-                                                  "projection (Qualifier)")
-                            .SetUMLS("A mediolateral oblique view is recommended."),
+                                "+ QualifierValue | 399368009 | Medio-lateral oblique " +
+                                "projection (Qualifier)")
+                            .SetUMLS("A mediolateral oblique view is recommended.")
+                        ,
                         new ConceptDef()
                             .SetCode("MediolateralView")
                             .SetDisplay("Mediolateral view")
                             .MammoId("162")
                             .ValidModalities(Modalities.MG)
                             .SetSnomedDescription("Procedure | 241055006 | Mammogram - symptomatic (Procedure) " +
-                                                  "+ QualifierValue | 399260004 | Medial-lateral projection " +
-                                                  "(Qualifier)")
-                            .SetUMLS("A mediolateral view is recommended."),
+                                "+ QualifierValue | 399260004 | Medial-lateral projection " +
+                                "(Qualifier)")
+                            .SetUMLS("A mediolateral view is recommended.")
+                        ,
                         new ConceptDef()
                             .SetCode("MLOWithCompressionView")
                             .SetDisplay("MLO with compression view")
                             .MammoId("85")
                             .ValidModalities(Modalities.MG | Modalities.US)
                             .SetSnomedDescription("Procedure | 439324009 | Mammogram in compression " +
-                                                  "view (Procedure) + QualifierValue | 399368009 | Medio-lateral " +
-                                                  "oblique projection (Qualifier)")
+                                "view (Procedure) + QualifierValue | 399368009 | Medio-lateral " +
+                                "oblique projection (Qualifier)")
                             .SetUMLS("An additional MLO with compression view of the breast " +
-                                     "is recommended."),
+                                "is recommended.")
+                        ,
                         new ConceptDef()
                             .SetCode("MLOWithMagnificationView")
                             .SetDisplay("MLO with magnification view")
                             .MammoId("83")
                             .ValidModalities(Modalities.MG | Modalities.US)
                             .SetSnomedDescription("Procedure | 241058008 | Mammogram magnification (Procedure) " +
-                                                  "+ QualifierValue | 399368009 | Medio-lateral oblique " +
-                                                  "projection (Qualifier)")
+                                "+ QualifierValue | 399368009 | Medio-lateral oblique " +
+                                "projection (Qualifier)")
                             .SetUMLS("An additional MLO with magnification view of the " +
-                                     "breast is recommended."),
+                                "breast is recommended.")
+                        ,
                         new ConceptDef()
                             .SetCode("MRI")
                             .SetDisplay("MRI")
                             .MammoId("92")
                             .ValidModalities(Modalities.MG | Modalities.US)
                             .SetSnomedDescription("Procedure | 241615005 | Magnetic resonance imaging " +
-                                                  "of breast (Procedure)")
-                            .SetUMLS("An MRI is recommended."),
+                                "of breast (Procedure)")
+                            .SetUMLS("An MRI is recommended.")
+                        ,
                         new ConceptDef()
                             .SetCode("MRIBiopsy")
                             .SetDisplay("MRI biopsy")
                             .MammoId("120")
                             .ValidModalities(Modalities.MG | Modalities.MRI | Modalities.NM | Modalities.US)
                             .SetSnomedDescription("Procedure | 433008009 | Core needle biopsy of breast " +
-                                                  "using magnetic resonance imaging guidance (Procedure)")
-                            .SetUMLS("An MRI with biopsy is recommended."),
+                                "using magnetic resonance imaging guidance (Procedure)")
+                            .SetUMLS("An MRI with biopsy is recommended.")
+                        ,
                         new ConceptDef()
                             .SetCode("MRIFollow-up")
                             .SetDisplay("MRI follow-up")
                             .MammoId("180")
                             .ValidModalities(Modalities.MRI | Modalities.NM)
-                            .SetUMLS("An MRI follow-up is recommended."),
+                            .SetUMLS("An MRI follow-up is recommended.")
+                        ,
                         new ConceptDef()
                             .SetCode("NeedleLocationAndSurgicalBiopsy")
                             .SetDisplay("Needle location and surgical biopsy")
                             .MammoId("53")
                             .ValidModalities(Modalities.MG | Modalities.MRI | Modalities.US)
-                            .SetUMLS("A Needle localization and surgical biopsy is recommended."),
+                            .SetUMLS("A Needle localization and surgical biopsy is recommended.")
+                        ,
                         new ConceptDef()
                             .SetCode("NippleInProfileView")
                             .SetDisplay("Nipple in profile view")
                             .MammoId("144")
                             .ValidModalities(Modalities.MG)
                             .SetSnomedDescription("Procedure | 241055006 | Mammogram - symptomatic (Procedure) " +
-                                                  "+ QualifierValue | 442581004 | Nipple in profile " +
-                                                  "mammography view (Qualifier)")
+                                "+ QualifierValue | 442581004 | Nipple in profile " +
+                                "mammography view (Qualifier)")
                             .SetUMLS("A technically adequate exam has the nipple in profile, " +
-                                     "allows visualization of the ",
+                                "allows visualization of the ",
                                 "inframammary fold and includes the pectoralis muscle " +
                                 "extending down to the posterior ",
                                 "nipple line (an oblique line drawn straight back " +
                                 "from the nipple.) ",
-                                "###URL#https://www.mammoguide.com/mammo-techniques.html"),
+                                "###URL#https://www.mammoguide.com/mammo-techniques.html")
+                        ,
                         new ConceptDef()
                             .SetCode("OffAngleCCView")
                             .SetDisplay("Off angle CC view")
                             .MammoId("106")
                             .ValidModalities(Modalities.MG | Modalities.US)
                             .SetSnomedDescription("Procedure | 241055006 | Mammogram - symptomatic (Procedure) " +
-                                                  "+ QualifierValue | 399162004 | Cranio-caudal projection " +
-                                                  "(Qualifier)")
+                                "+ QualifierValue | 399162004 | Cranio-caudal projection " +
+                                "(Qualifier)")
                             .SetUMLS("An additional off angle CC view of the breast is " +
-                                     "recommended."),
+                                "recommended.")
+                        ,
                         new ConceptDef()
                             .SetCode("OffAngleMLOView")
                             .SetDisplay("Off angle MLO view")
                             .MammoId("107")
                             .ValidModalities(Modalities.MG | Modalities.US)
                             .SetSnomedDescription("Procedure | 241055006 | Mammogram - symptomatic (Procedure) " +
-                                                  "+ QualifierValue | 399368009 | Medio-lateral oblique " +
-                                                  "projection (Qualifier) +++++")
+                                "+ QualifierValue | 399368009 | Medio-lateral oblique " +
+                                "projection (Qualifier) +++++")
                             .SetUMLS("An additional off angle MLO  view of the breast is " +
-                                     "recommended."),
+                                "recommended.")
+                        ,
                         new ConceptDef()
                             .SetCode("Poss.StereotacticBx")
                             .SetDisplay("Poss. Stereotactic Bx")
                             .MammoId("1837")
                             .ValidModalities(Modalities.MG)
                             .SetSnomedDescription("Procedure | 116334007 | Stereotactically guided core " +
-                                                  "needle biopsy of breast (Procedure) ++ POSSILE")
+                                "needle biopsy of breast (Procedure) ++ POSSILE")
                             .SetUMLS("Stereotactic breast biopsy uses mammography - a specific " +
-                                     "type of breast imaging that ",
+                                "type of breast imaging that ",
                                 "uses low-dose x-rays - to help locate a breast abnormality " +
                                 "and remove a tissue sample ",
                                 "for examination under a microscope. ",
@@ -765,16 +823,17 @@ namespace BreastRadiology.XUnitTests
                                 "an excellent way to evaluate calcium deposits or " +
                                 "tiny masses that are not visible ",
                                 "on ultrasound. ",
-                                "###URL#https://www.radiologyinfo.org/en/info.cfm?pg=breastbixr"),
+                                "###URL#https://www.radiologyinfo.org/en/info.cfm?pg=breastbixr")
+                        ,
                         new ConceptDef()
                             .SetCode("PossibleCoreBiopsy")
                             .SetDisplay("Possible core biopsy")
                             .MammoId("91")
                             .ValidModalities(Modalities.MG | Modalities.US)
                             .SetSnomedDescription("Procedure | 44578009 | Core needle biopsy of breast " +
-                                                  "(Procedure) ++ POSSIBLE")
+                                "(Procedure) ++ POSSIBLE")
                             .SetUMLS("A core needle biopsy (CNB)  uses a hollow needle " +
-                                     "to take out pieces of breast tissue from ",
+                                "to take out pieces of breast tissue from ",
                                 "a suspicious area in an imaging test.",
                                 "The needle may be attached to a spring-loaded tool " +
                                 "that moves the needle in and out ",
@@ -784,84 +843,94 @@ namespace BreastRadiology.XUnitTests
                                 "A small cylinder (core) of tissue is taken out in " +
                                 "the needle. ",
                                 "Several cores are often removed. ",
-                                "###URL#https://www.cancer.org/cancer/breast-cancer/screening-tests-and-early-detection/breast-biopsy/core-needle-biopsy-of-the-breast.html"),
+                                "###URL#https://www.cancer.org/cancer/breast-cancer/screening-tests-and-early-detection/breast-biopsy/core-needle-biopsy-of-the-breast.html")
+                        ,
                         new ConceptDef()
                             .SetCode("PossibleDiagnosticMammogram")
                             .SetDisplay("Possible Diagnostic Mammogram")
                             .MammoId("1836")
                             .ValidModalities(Modalities.MG)
-                            .SetUMLS("A possible diagnostic mammogram is recommended."),
+                            .SetUMLS("A possible diagnostic mammogram is recommended.")
+                        ,
                         new ConceptDef()
                             .SetCode("PossibleStereotacticVacuumBiopsy")
                             .SetDisplay("Possible stereotactic vacuum biopsy")
                             .MammoId("133")
                             .ValidModalities(Modalities.MG)
                             .SetUMLS("Based on the results of the mammogram, a possible " +
-                                     "stereotactic vacuum biopsy is recommended. ",
+                                "stereotactic vacuum biopsy is recommended. ",
                                 "During this type of biopsy, small samples of tissue " +
                                 "are removed from the breast using ",
                                 "a hollow needle, which is precisely guided to the " +
                                 "correct location using x-rays and ",
                                 "computer generated coordinates of the concerning " +
                                 "area of breast tissue. ",
-                                "###URL#https://www.genesishealth.com/care-treatment/cancer/treat/breast/diagnosis/sterotactic_vacuum/"),
+                                "###URL#https://www.genesishealth.com/care-treatment/cancer/treat/breast/diagnosis/sterotactic_vacuum/")
+                        ,
                         new ConceptDef()
                             .SetCode("PossibleSurgicalConsult")
                             .SetDisplay("Possible surgical consult")
                             .MammoId("1805")
                             .ValidModalities(Modalities.NM)
-                            .SetUMLS("A possible surgical consultation may be recommended."),
+                            .SetUMLS("A possible surgical consultation may be recommended.")
+                        ,
                         new ConceptDef()
                             .SetCode("PossibleSurgicalEvaluation")
                             .SetDisplay("Possible surgical evaluation")
                             .MammoId("1806")
                             .ValidModalities(Modalities.NM)
-                            .SetUMLS("A possible surgical evaluation is recommended."),
+                            .SetUMLS("A possible surgical evaluation is recommended.")
+                        ,
                         new ConceptDef()
                             .SetCode("PossibleUltrasound")
                             .SetDisplay("Possible ultrasound")
                             .MammoId("186")
                             .ValidModalities(Modalities.MG)
-                            .SetUMLS("A possible ultrasound is recommended."),
+                            .SetUMLS("A possible ultrasound is recommended.")
+                        ,
                         new ConceptDef()
                             .SetCode("PossibleUltrasoundGuidedBiopsy")
                             .SetDisplay("Possible ultrasound guided biopsy")
                             .MammoId("130")
                             .ValidModalities(Modalities.MG)
                             .SetSnomedDescription("Procedure | 432550005 | Core needle biopsy of breast " +
-                                                  "using ultrasound guidance (Procedure) +++ POSSIBLE")
-                            .SetUMLS("A possible ultrasound guided biopsy is recommended."),
+                                "using ultrasound guidance (Procedure) +++ POSSIBLE")
+                            .SetUMLS("A possible ultrasound guided biopsy is recommended.")
+                        ,
                         new ConceptDef()
                             .SetCode("PossibleVacuumBiopsy")
                             .SetDisplay("Possible vacuum biopsy")
                             .MammoId("132")
                             .ValidModalities(Modalities.MG)
-                            .SetUMLS("A possible vacuum biopsy is recommended."),
+                            .SetUMLS("A possible vacuum biopsy is recommended.")
+                        ,
                         new ConceptDef()
                             .SetCode("RepeatCCView")
                             .SetDisplay("Repeat CC view")
                             .MammoId("135")
                             .ValidModalities(Modalities.MG)
                             .SetSnomedDescription("Procedure | 241055006 | Mammogram - symptomatic (Procedure) " +
-                                                  "+ QualifierValue | 399162004 | Cranio-caudal projection " +
-                                                  "(Qualifier)")
-                            .SetUMLS("Another CC view of Mammogram is recommended."),
+                                "+ QualifierValue | 399162004 | Cranio-caudal projection " +
+                                "(Qualifier)")
+                            .SetUMLS("Another CC view of Mammogram is recommended.")
+                        ,
                         new ConceptDef()
                             .SetCode("RepeatMLOView")
                             .SetDisplay("Repeat MLO view")
                             .MammoId("134")
                             .ValidModalities(Modalities.MG)
                             .SetSnomedDescription("Procedure | 241055006 | Mammogram - symptomatic (Procedure) " +
-                                                  "+ QualifierValue | 399368009 | Medio-lateral oblique " +
-                                                  "projection (Qualifier)")
-                            .SetUMLS("Another MLO view of Mammogram is recommended."),
+                                "+ QualifierValue | 399368009 | Medio-lateral oblique " +
+                                "projection (Qualifier)")
+                            .SetUMLS("Another MLO view of Mammogram is recommended.")
+                        ,
                         new ConceptDef()
                             .SetCode("RolledLateralView")
                             .SetDisplay("Rolled lateral view")
                             .MammoId("49")
                             .ValidModalities(Modalities.MG | Modalities.US)
                             .SetSnomedDescription("Procedure | 399197002 | Lateral rolling of breast " +
-                                                  "(Procedure)")
+                                "(Procedure)")
                             .SetUMLS("A rolled CC lateral view is recommended. ",
                                 "A rolled CC view Is performed to locate a lesion " +
                                 "only visible in the cranio-caudal ",
@@ -879,15 +948,17 @@ namespace BreastRadiology.XUnitTests
                                 "is rotated medially or laterally around the axis " +
                                 "of the nipple prior to applying ",
                                 "compression. ",
-                                "###URL#https://radiopaedia.org/articles/rolled-cc-view-1?lang=us"),
+                                "###URL#https://radiopaedia.org/articles/rolled-cc-view-1?lang=us")
+                        ,
                         new ConceptDef()
                             .SetCode("RolledMedialView")
                             .SetDisplay("Rolled medial view")
                             .MammoId("50")
                             .ValidModalities(Modalities.MG | Modalities.US)
                             .SetSnomedDescription("Procedure | 399226006 | Medial rolling of breast " +
-                                                  "(Procedure)")
-                            .SetUMLS("A rolled medial view is recommended."),
+                                "(Procedure)")
+                            .SetUMLS("A rolled medial view is recommended.")
+                        ,
                         new ConceptDef()
                             .SetCode("ScintimammogramGuidedBiopsy")
                             .SetDisplay("Scintimammogram Guided Biopsy")
@@ -900,7 +971,8 @@ namespace BreastRadiology.XUnitTests
                                 "material, a special camera and a computer to help " +
                                 "investigate a breast abnormality. ",
                                 "This helps to guide the radiologist's biopsy equipment " +
-                                "to the site of the imaging abnormality.###URL#https://www.radiologyinfo.org/en/info.cfm?pg=breastbixr"),
+                                "to the site of the imaging abnormality.###URL#https://www.radiologyinfo.org/en/info.cfm?pg=breastbixr")
+                        ,
                         new ConceptDef()
                             .SetCode("Scintimammography")
                             .SetDisplay("Scintimammography")
@@ -921,14 +993,15 @@ namespace BreastRadiology.XUnitTests
                                 "are present. ",
                                 "It can reduce unnecessary procedures by helping determine " +
                                 "whether a biopsy is needed. ",
-                                "###URL#https://www.radiologyinfo.org/en/info.cfm?pg=scintimammo"),
+                                "###URL#https://www.radiologyinfo.org/en/info.cfm?pg=scintimammo")
+                        ,
                         new ConceptDef()
                             .SetCode("SpotCompression")
                             .SetDisplay("Spot compression")
                             .MammoId("1801")
                             .ValidModalities(Modalities.MG | Modalities.NM | Modalities.US)
                             .SetSnomedDescription("Procedure | 439324009 | Mammogram in compression " +
-                                                  "view (Procedure)")
+                                "view (Procedure)")
                             .SetUMLS("A spot compression is recommended. ",
                                 "A spot view (also known as a spot compression view " +
                                 "or focal compression view) is ",
@@ -946,23 +1019,26 @@ namespace BreastRadiology.XUnitTests
                                 "abnormality or questionable area ",
                                 "or a little cluster of faint microcalcifications " +
                                 "in a dense area. ",
-                                "###URL#https://radiopaedia.org/articles/spot-view-mammography?lang=us"),
+                                "###URL#https://radiopaedia.org/articles/spot-view-mammography?lang=us")
+                        ,
                         new ConceptDef()
                             .SetCode("SpotMagnificationViews")
                             .SetDisplay("Spot magnification views")
                             .MammoId("188")
                             .ValidModalities(Modalities.MG)
                             .SetSnomedDescription("Procedure | 241058008 | Mammogram magnification (Procedure) " +
-                                                  "+++++")
-                            .SetUMLS("Spot magnification views are recommended."),
+                                "+++++")
+                            .SetUMLS("Spot magnification views are recommended.")
+                        ,
                         new ConceptDef()
                             .SetCode("StereotacticBx")
                             .SetDisplay("Stereotactic bx")
                             .MammoId("54")
                             .ValidModalities(Modalities.MG | Modalities.MRI | Modalities.NM | Modalities.US)
                             .SetSnomedDescription("Procedure | 116334007 | Stereotactically guided core " +
-                                                  "needle biopsy of breast (Procedure)")
-                            .SetUMLS("A stereotactic biopsy is recommended."),
+                                "needle biopsy of breast (Procedure)")
+                            .SetUMLS("A stereotactic biopsy is recommended.")
+                        ,
                         new ConceptDef()
                             .SetCode("SuperolateralIOView")
                             .SetDisplay("Superolateral IO view")
@@ -972,14 +1048,15 @@ namespace BreastRadiology.XUnitTests
                                 "The view of the upper outer quadrant of the breast. ",
                                 "This is the quadrant of the breast that is closest " +
                                 "to the armpit. ",
-                                "There are 4 quadrants in the anatomy of a breast."),
+                                "There are 4 quadrants in the anatomy of a breast.")
+                        ,
                         new ConceptDef()
                             .SetCode("SurgicalBiopsy")
                             .SetDisplay("Surgical biopsy")
                             .MammoId("1803")
                             .ValidModalities(Modalities.NM)
                             .SetSnomedDescription("Procedure | 274331003 | Surgical biopsy of breast " +
-                                                  "(Procedure)")
+                                "(Procedure)")
                             .SetUMLS("A surgical biopsy is recommended. ",
                                 "A surgical biopsy is a procedure that involves the " +
                                 "surgical removal of tissue from ",
@@ -989,125 +1066,140 @@ namespace BreastRadiology.XUnitTests
                                 "entire lump or abnormal area) ",
                                 "or incisional (removal of a piece of a lump or abnormal " +
                                 "area). ",
-                                "###URL#https://www.cancer.ca/en/cancer-information/diagnosis-and-treatment/tests-and-procedures/surgical-biopsy/?region=on"),
+                                "###URL#https://www.cancer.ca/en/cancer-information/diagnosis-and-treatment/tests-and-procedures/surgical-biopsy/?region=on")
+                        ,
                         new ConceptDef()
                             .SetCode("SurgicalConsult")
                             .SetDisplay("Surgical consult")
                             .MammoId("101")
                             .ValidModalities(Modalities.MG | Modalities.MRI | Modalities.NM | Modalities.US)
-                            .SetUMLS("A surgical consult is recommended."),
+                            .SetUMLS("A surgical consult is recommended.")
+                        ,
                         new ConceptDef()
                             .SetCode("SurgicalConsultAndBiopsy")
                             .SetDisplay("Surgical consult and biopsy")
                             .MammoId("118")
                             .ValidModalities(Modalities.MG | Modalities.MRI | Modalities.US)
                             .SetSnomedDescription("Procedure | 274331003 | Surgical biopsy of breast " +
-                                                  "(Procedure) ++++")
-                            .SetUMLS("A surgical consult and biopsy is recommended."),
+                                "(Procedure) ++++")
+                            .SetUMLS("A surgical consult and biopsy is recommended.")
+                        ,
                         new ConceptDef()
                             .SetCode("SurgicalEvaluation")
                             .SetDisplay("Surgical evaluation")
                             .MammoId("1802")
                             .ValidModalities(Modalities.NM)
-                            .SetUMLS("The recommendation is for a surgical evaluation."),
+                            .SetUMLS("The recommendation is for a surgical evaluation.")
+                        ,
                         new ConceptDef()
                             .SetCode("SurgicalExcision")
                             .SetDisplay("Surgical excision")
                             .MammoId("1804")
                             .ValidModalities(Modalities.NM)
                             .SetSnomedDescription("Procedure | 237372000 | Excisional biopsy of breast " +
-                                                  "(Procedure)")
-                            .SetUMLS("The recommendation is for a surgical excision."),
+                                "(Procedure)")
+                            .SetUMLS("The recommendation is for a surgical excision.")
+                        ,
                         new ConceptDef()
                             .SetCode("SurgicalOncologicEvaluation")
                             .SetDisplay("Surgical oncologic evaluation")
                             .MammoId("1810")
                             .ValidModalities(Modalities.NM)
-                            .SetUMLS("The recommendation is for a surgical oncologic evaluation."),
+                            .SetUMLS("The recommendation is for a surgical oncologic evaluation.")
+                        ,
                         new ConceptDef()
                             .SetCode("SurgicalOncologicalConsult")
                             .SetDisplay("Surgical oncological consult")
                             .MammoId("1809")
                             .ValidModalities(Modalities.MG | Modalities.MRI | Modalities.NM | Modalities.US)
-                            .SetUMLS("The recommendation is for a surgical oncologic consult."),
+                            .SetUMLS("The recommendation is for a surgical oncologic consult.")
+                        ,
                         new ConceptDef()
                             .SetCode("TangentialView")
                             .SetDisplay("Tangential view")
                             .MammoId("114")
                             .ValidModalities(Modalities.MG | Modalities.US)
-                            .SetUMLS("A tangential view is recommended."),
+                            .SetUMLS("A tangential view is recommended.")
+                        ,
                         new ConceptDef()
                             .SetCode("TangentialViews")
                             .SetDisplay("Tangential views")
                             .MammoId("40")
                             .ValidModalities(Modalities.MG | Modalities.US)
-                            .SetUMLS("Tangential views are recommended."),
+                            .SetUMLS("Tangential views are recommended.")
+                        ,
                         new ConceptDef()
                             .SetCode("Ultrasound")
                             .SetDisplay("Ultrasound")
                             .MammoId("181")
                             .ValidModalities(Modalities.MG | Modalities.MRI | Modalities.NM)
                             .SetSnomedDescription("Procedure | 47079000 | Ultrasonography of breast " +
-                                                  "(Procedure)")
-                            .SetUMLS("An ultrasound is recommended."),
+                                "(Procedure)")
+                            .SetUMLS("An ultrasound is recommended.")
+                        ,
                         new ConceptDef()
                             .SetCode("Ultrasound2ndLook")
                             .SetDisplay("Ultrasound 2nd Look")
                             .MammoId("184")
                             .ValidModalities(Modalities.MG | Modalities.MRI | Modalities.NM | Modalities.US)
-                            .SetUMLS("An additional ultrasound is recommended."),
+                            .SetUMLS("An additional ultrasound is recommended.")
+                        ,
                         new ConceptDef()
                             .SetCode("Ultrasound3MonthFollow-up")
                             .SetDisplay("Ultrasound 3 month follow-up")
                             .MammoId("1824")
                             .ValidModalities(Modalities.MG | Modalities.US)
                             .SetUMLS("An additional ultrasound is recommended in a 3 month " +
-                                     "follow-up."),
+                                "follow-up.")
+                        ,
                         new ConceptDef()
                             .SetCode("Ultrasound6MonthFollow-up")
                             .SetDisplay("Ultrasound 6 month follow-up")
                             .MammoId("1825")
                             .ValidModalities(Modalities.MG | Modalities.US)
                             .SetUMLS("An additional ultrasound is recommended in a 3 month " +
-                                     "follow-up."),
+                                "follow-up.")
+                        ,
                         new ConceptDef()
                             .SetCode("UltrasoundGuidedBx")
                             .SetDisplay("Ultrasound guided bx")
                             .MammoId("55")
                             .ValidModalities(Modalities.MG | Modalities.MRI | Modalities.NM | Modalities.US)
                             .SetSnomedDescription("Procedure | 432550005 | Core needle biopsy of breast " +
-                                                  "using ultrasound guidance (Procedure)")
-                            .SetUMLS("An ultrasound guided biopsy is recommended."),
+                                "using ultrasound guidance (Procedure)")
+                            .SetUMLS("An ultrasound guided biopsy is recommended.")
+                        ,
                         new ConceptDef()
                             .SetCode("UltrasoundLocationAndSurgicalBiopsy")
                             .SetDisplay("Ultrasound location and surgical biopsy")
                             .MammoId("171")
                             .ValidModalities(Modalities.MG | Modalities.US)
                             .SetSnomedDescription("Procedure | 274331003 | Surgical biopsy of breast " +
-                                                  "(Procedure)++++++++++++")
-                            .SetUMLS("An ultrasound localized and surgical biopsy is recommended."),
+                                "(Procedure)++++++++++++")
+                            .SetUMLS("An ultrasound localized and surgical biopsy is recommended.")
+                        ,
                         new ConceptDef()
                             .SetCode("UltrasoundWithPossibleAddlitonalViews")
                             .SetDisplay("Ultrasound with possible addlitonal views")
                             .MammoId("189")
                             .ValidModalities(Modalities.MG)
                             .SetUMLS("An ultrasound with possible additional views are " +
-                                     "recommended."),
+                                "recommended.")
+                        ,
                         new ConceptDef()
                             .SetCode("Unspecified/Other")
                             .SetDisplay("Unspecified / other")
                             .MammoId("117")
                             .ValidModalities(Modalities.MRI | Modalities.US)
-                            .SetUMLS("Unspecified / other"),
+                            .SetUMLS("Unspecified / other")
+                        ,
                         new ConceptDef()
                             .SetCode("VacuumBx")
                             .SetDisplay("Vacuum Bx")
                             .MammoId("131")
                             .ValidModalities(Modalities.MG | Modalities.US)
                             .SetUMLS("A vacuum biopsy is recommended.")
-
                         #endregion // Codes
-
                         //- Codes
                     })
         );

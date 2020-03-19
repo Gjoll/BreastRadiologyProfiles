@@ -24,9 +24,7 @@ namespace BreastRadiology.XUnitTests
                     new ConceptDef[]
                     {
                         //+ Type
-
                         #region Codes
-
                         new ConceptDef()
                             .SetCode("DuctNormal")
                             .SetDisplay("Duct normal")
@@ -36,35 +34,35 @@ namespace BreastRadiology.XUnitTests
                                 "It is surrounded by normal cells and collagen in " +
                                 "the breast with no abnormalities. ",
                                 "A system of ducts in your breast carries milk to " +
-                                "the nipples."),
+                                "the nipples.")
+                        ,
                         new ConceptDef()
                             .SetCode("SolitaryDilatedDuct")
                             .SetDisplay("Solitary dilated duct")
                             .MammoId("694.602")
                             .ValidModalities(Modalities.MG | Modalities.US)
                             .SetUMLS("When it is malignant, solitary dilated duct appears " +
-                                     "to indicate the presence of DCIS. ",
+                                "to indicate the presence of DCIS. ",
                                 "In almost all solitary dilated duct cases, the dilated " +
                                 "duct appears to be filled with some debris, with " +
-                                "or without accompanying fluid, as seen at ultrasound."),
+                                "or without accompanying fluid, as seen at ultrasound.")
+                        ,
                         new ConceptDef()
                             .SetCode("DuctEctasia")
                             .SetDisplay("Duct ectasia")
                             .MammoId("693.614")
                             .ValidModalities(Modalities.MG | Modalities.US)
                             .SetSnomedDescription("ClinicalFinding | 22049009 | Mammary duct ectasia " +
-                                                  "(Disorder) | [0/0] | N60.49")
+                                "(Disorder) | [0/0] | N60.49")
                             .SetUMLS("A noncancerous condition that results in clogged " +
-                                     "ducts around the nipple. ",
+                                "ducts around the nipple. ",
                                 "While it sometimes causes pain, irritation and discharge, " +
                                 "it's generally not a cause ",
                                 "for concern. ",
                                 "If left untreated, it can eventually obliterate the " +
                                 "breast duct. ",
                                 "www.healthline.com > health > duct-ectasia-of-the-breast")
-
                         #endregion // Codes
-
                         //- Type
                     }
                 )

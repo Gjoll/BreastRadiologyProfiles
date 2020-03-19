@@ -25,21 +25,21 @@ namespace BreastRadiology.XUnitTests
                     new ConceptDef[]
                     {
                         //+ Codes
-
                         #region Codes
-
                         new ConceptDef()
                             .SetCode("ParallelToSkin")
                             .SetDisplay("Parallel to skin")
                             .MammoId("1508")
                             .ValidModalities(Modalities.MG | Modalities.MRI | Modalities.NM | Modalities.US)
-                            .SetUMLS("The lesion/mass is oriented parellel to skin."),
+                            .SetUMLS("The lesion/mass is oriented parellel to skin.")
+                        ,
                         new ConceptDef()
                             .SetCode("PerpendicularToSkin")
                             .SetDisplay("Perpendicular to skin (not parallel)")
                             .MammoId("1509")
                             .ValidModalities(Modalities.MG | Modalities.MRI | Modalities.NM | Modalities.US)
-                            .SetUMLS("The lesion/mass is oriented perpendicular to skin."),
+                            .SetUMLS("The lesion/mass is oriented perpendicular to skin.")
+                        ,
                         new ConceptDef()
                             .SetCode("TallerThanWide")
                             .SetDisplay("Taller than wide")
@@ -48,7 +48,8 @@ namespace BreastRadiology.XUnitTests
                             .SetUMLS("The nodule is taller than wide. ",
                                 "A nodule is said to be taller than wide when it is " +
                                 "greater in the direction normal to the skin than " +
-                                "in the parallel ones."),
+                                "in the parallel ones.")
+                        ,
                         new ConceptDef()
                             .SetCode("WiderThanTall")
                             .SetDisplay("Wider than tall")
@@ -58,9 +59,7 @@ namespace BreastRadiology.XUnitTests
                                 "A nodule is said to be wider than tall when it is " +
                                 "larger in the direction not parallel to the direction " +
                                 "of the skin.")
-
                         #endregion // Codes
-
                         //- Codes
                     })
         );

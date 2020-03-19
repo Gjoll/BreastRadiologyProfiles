@@ -24,16 +24,14 @@ namespace BreastRadiology.XUnitTests
                     new ConceptDef[]
                     {
                         //+ Type
-
                         #region Codes
-
                         new ConceptDef()
                             .SetCode("NodeAxillary")
                             .SetDisplay("Node axillary")
                             .MammoId("648")
                             .ValidModalities(Modalities.MG | Modalities.US)
                             .SetSnomedDescription("BodyStructure | 68171009 | Axillary lymph node structure " +
-                                                  "(Bodypart)")
+                                "(Bodypart)")
                             .SetUMLS("Axillary Nodes. ",
                                 "The axillary nodes are a group of lymph nodes located " +
                                 "in the axillary (or armpit) ",
@@ -44,7 +42,8 @@ namespace BreastRadiology.XUnitTests
                                 "five axillary lymph node groups, ",
                                 "namely the lateral (humeral), anterior (pectoral), " +
                                 "posterior (subscapular), central ",
-                                "and apical nodes."),
+                                "and apical nodes.")
+                        ,
                         new ConceptDef()
                             .SetCode("NodeEnlarged")
                             .SetDisplay("Node enlarged")
@@ -52,9 +51,9 @@ namespace BreastRadiology.XUnitTests
                             .ValidModalities(Modalities.MG | Modalities.US)
                             .SetSnomedCode("274744005")
                             .SetSnomedDescription("ClinicalFinding | Localized enlarged lymph nodes " +
-                                                  "(Disorder)")
+                                "(Disorder)")
                             .SetUMLS("Swollen lymph nodes usually occur as a result of " +
-                                     "infection from bacteria or viruses. ",
+                                "infection from bacteria or viruses. ",
                                 "Rarely, swollen lymph nodes are caused by cancer.",
                                 "Your lymph nodes, also called lymph glands, play " +
                                 "a vital role in your body's ability ",
@@ -64,42 +63,46 @@ namespace BreastRadiology.XUnitTests
                                 "before they can infect other parts of your body. ",
                                 "Common areas where you might notice swollen lymph " +
                                 "nodes include your neck, under ",
-                                "your chin, in your armpits and in your groin."),
+                                "your chin, in your armpits and in your groin.")
+                        ,
                         new ConceptDef()
                             .SetCode("NodeFocalCortex")
                             .SetDisplay("Node focal cortex")
                             .MammoId("662")
                             .ValidModalities(Modalities.MG | Modalities.US)
                             .SetUMLS("The mammogram and/or ultrasound show enlargement " +
-                                     "of the cortex. ",
+                                "of the cortex. ",
                                 "Metastatic deposits accumulate in the lymph node " +
                                 "peripheral area, causing enlargement of the cortex, " +
                                 "usually focal (at early stages), or uniform. ",
-                                "###URL#www.ncbi.nlm.nih.gov > pmc > articles > PMC4337126"),
+                                "###URL#www.ncbi.nlm.nih.gov > pmc > articles > PMC4337126")
+                        ,
                         new ConceptDef()
                             .SetCode("NodeInfraclavicular")
                             .SetDisplay("Node infraclavicular")
                             .MammoId("665")
                             .ValidModalities(Modalities.US)
                             .SetSnomedDescription("BodyStructure | 9659009 | Infraclavicular lymph node " +
-                                                  "(Bodypart)")
+                                "(Bodypart)")
                             .SetUMLS("(Infraclavicular labeled at upper left.) One or two " +
-                                     "deltopectoral lymph nodes (or ",
+                                "deltopectoral lymph nodes (or ",
                                 "infraclavicular nodes) are found beside the cephalic " +
                                 "vein, between the pectoralis ",
                                 "major and deltoideus, immediately below the clavicle " +
                                 ". ",
                                 "They are situated in the course of the external collecting " +
-                                "trunks of the arm."),
+                                "trunks of the arm.")
+                        ,
                         new ConceptDef()
                             .SetCode("NodeIntramammary")
                             .SetDisplay("Node intramammary")
                             .MammoId("650")
                             .ValidModalities(Modalities.MG | Modalities.US)
                             .SetSnomedDescription("BodyStructure | 443808008 | Structure of intramammary " +
-                                                  "lymph node (Bodypart)")
+                                "lymph node (Bodypart)")
                             .SetUMLS("Intramammary lymph nodes are defined as lymph nodes " +
-                                     "surrounded by breast tissue."),
+                                "surrounded by breast tissue.")
+                        ,
                         new ConceptDef()
                             .SetCode("NodeLymph")
                             .SetDisplay("Node lymph")
@@ -110,41 +113,42 @@ namespace BreastRadiology.XUnitTests
                                 "correlation and additional evaluation, especially " +
                                 "if new or considerably larger or rounder when compared " +
                                 "to previous examination. ",
-                                "###ACRMG#"),
+                                "###ACRMG#")
+                        ,
                         new ConceptDef()
                             .SetCode("NodeLymphNormal")
                             .SetDisplay("Node lymph normal")
                             .MammoId("652")
                             .ValidModalities(Modalities.MG | Modalities.US)
-                            .SetUMLS("The normal lymph node findings are probably benign."),
+                            .SetUMLS("The normal lymph node findings are probably benign.")
+                        ,
                         new ConceptDef()
                             .SetCode("NodeSupraclavicular")
                             .SetDisplay("Node supraclavicular")
                             .MammoId("666")
                             .ValidModalities(Modalities.US)
                             .SetSnomedDescription("BodyStructure | 76838003 | Structure of supraclavicular " +
-                                                  "lymph node (Bodypart)")
+                                "lymph node (Bodypart)")
                             .SetUMLS("The supraclavicular lymph nodes are a set of lymph " +
-                                     "nodes found just above the clavicle ",
+                                "nodes found just above the clavicle ",
                                 "or collarbone, toward the hollow of the neck. ",
                                 "Lymph nodes are responsible for filtering the lymphatic " +
                                 "fluid of unwanted debris ",
-                                "and bacteria."),
+                                "and bacteria.")
+                        ,
                         new ConceptDef()
                             .SetCode("NodeUniformThickness")
                             .SetDisplay("Node uniform thickness")
                             .MammoId("663")
                             .ValidModalities(Modalities.MG | Modalities.US)
                             .SetUMLS("The mammogram and/or ultrasound shows thickening " +
-                                     "of the cortex is an indicator of an early change " +
-                                     "in metastasis. ",
+                                "of the cortex is an indicator of an early change " +
+                                "in metastasis. ",
                                 " The qualitative methods used for the diagnosis of " +
                                 "lymph node metastases on US include a round morphology, " +
                                 "hypoechogenicity, loss of central hilum, or eccentric " +
                                 "cortical hypertrophy.")
-
                         #endregion // Codes
-
                         //- Type
                     }
                 )
