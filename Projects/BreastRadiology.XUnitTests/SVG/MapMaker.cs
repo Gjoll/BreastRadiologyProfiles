@@ -58,8 +58,8 @@ namespace BreastRadiology.XUnitTests
         protected void AddChildren(ResourceMap.Node mapNode,
             SENodeGroup group)
         {
-            this.AddChildren(mapNode, mapNode.LinksByLinkType(this.linkTypes).ToArray(),
-                group);
+            dynamic[] links = mapNode.LinksByLinkType(this.linkTypes).ToArray();
+            this.AddChildren(mapNode, links, group);
         }
 
         protected SENode CreateResourceNode(ResourceMap.Node mapNode,

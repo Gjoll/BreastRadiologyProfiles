@@ -148,7 +148,7 @@ namespace BreastRadiology.XUnitTests
                         ;
 
                         e.AddComponentLink("Report",
-                            new SDefEditor.Cardinality(sectionSlice.ElementDefinition),
+                            null, //new SDefEditor.Cardinality(sectionSlice.ElementDefinition),
                             Global.ElementAnchor(sectionSlice.ElementDefinition),
                             "Section",
                             new SDefEditor.Cardinality(entry),
@@ -184,7 +184,7 @@ namespace BreastRadiology.XUnitTests
                             .MustSupport();
                         ;
                         e.AddComponentLink("Impressions",
-                            new SDefEditor.Cardinality(sectionSlice.ElementDefinition),
+                            null, //new SDefEditor.Cardinality(sectionSlice.ElementDefinition),
                             Global.ElementAnchor(sectionSlice.ElementDefinition),
                             "Section",
                             new SDefEditor.Cardinality(entry),
@@ -220,7 +220,7 @@ namespace BreastRadiology.XUnitTests
                             .MustSupport();
                         ;
                         e.AddComponentLink("Findings Right Breast",
-                            new SDefEditor.Cardinality(sectionSlice.ElementDefinition),
+                            null, //new SDefEditor.Cardinality(sectionSlice.ElementDefinition),
                             Global.ElementAnchor(sectionSlice.ElementDefinition),
                             "Section",
                             new SDefEditor.Cardinality(entry),
@@ -256,7 +256,7 @@ namespace BreastRadiology.XUnitTests
                             .MustSupport();
                         ;
                         e.AddComponentLink("Findings Left Breast",
-                            new SDefEditor.Cardinality(sectionSlice.ElementDefinition),
+                            null, //new SDefEditor.Cardinality(sectionSlice.ElementDefinition),
                             Global.ElementAnchor(sectionSlice.ElementDefinition),
                             "Section",
                             new SDefEditor.Cardinality(entry),
@@ -289,7 +289,7 @@ namespace BreastRadiology.XUnitTests
                             .MustSupport();
                         ;
                         e.AddComponentLink("Related Resources",
-                            new SDefEditor.Cardinality(sectionSlice.ElementDefinition),
+                            null, //new SDefEditor.Cardinality(sectionSlice.ElementDefinition),
                             Global.ElementAnchor(sectionSlice.ElementDefinition),
                             "Section",
                             new SDefEditor.Cardinality(entry),
@@ -326,7 +326,7 @@ namespace BreastRadiology.XUnitTests
                             .MustSupport();
                         ;
                         e.AddComponentLink("Recommendations",
-                            new SDefEditor.Cardinality(sectionSlice.ElementDefinition),
+                            null, //new SDefEditor.Cardinality(sectionSlice.ElementDefinition),
                             Global.ElementAnchor(sectionSlice.ElementDefinition),
                             "Section",
                             new SDefEditor.Cardinality(entry),

@@ -395,7 +395,8 @@ namespace BreastRadiology.XUnitTests
             dynamic packet = new JObject();
             packet.LinkType = SVGGlobal.ComponentType;
             packet.ShowChildren = false;
-            packet.Cardinality = componentCardinality.ToString();
+            if (componentCardinality != null)
+                packet.Cardinality = componentCardinality.ToString();
             packet.LinkTarget = url;
             packet.ComponentHRef = componentRef;
             packet.Types = types;
