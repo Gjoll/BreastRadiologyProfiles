@@ -1,7 +1,9 @@
 ﻿<div xmlns="http://www.w3.org/1999/xhtml"
     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
     xsi:schemaLocation="http://hl7.org/fhir ../../src-generated/schemas/fhir-single.xsd">
-  <h3 id="focusGraph">Graphical Overview</h3>
+  <p style="font-size:large">
+    <u>Graphical Overview</u>
+  </p>
   <p>
     This graph provides an overview of how and where this resource is
     referenced.
@@ -12,7 +14,9 @@
   <!-- +reviewStatus-->
   <!-- -reviewStatus-->
   <!-- +profileFragments-->
-  <h3 id="profileFragments">Profile Fragments</h3>
+  <p style="font-size:large">
+    <u>Profile Fragments</u>
+  </p>
   <p>
     The following are the fragments that are included in this profile. This is included for developers use to understand
     the hierarchy and commonality of disparate profiles..

@@ -48,13 +48,15 @@ namespace BreastRadiology.XUnitTests
                 if (this.reviewStatusBlock == null)
                     throw new Exception($"reviewStatus block missing");
                 this.reviewStatusBlock
-                    .AppendRaw($"<h3 id=\"reviewStatus\">Review Status</h3>")
+                    .AppendRaw($"<p style=\"font-size:large\">")
+                    .AppendRaw($"  <u>Review Status</u>")
+                    .AppendRaw($"</p>")
                     .AppendRaw($"Comments and Suggested changes to this implementation guide can be made ")
                     .AppendRaw($"<a href=\"https://github.com/HL7/fhir-breast-radiology-ig/projects/1\">here</a>")
                     ;
             }
             this.reviewStatusBlock
-                .AppendRaw($"<p><b>Reviewed by {reviewer} on {dt}</b></p>")
+                .AppendRaw($"Reviewed by {reviewer} on {dt}")
                 ;
 
             return this;
@@ -67,8 +69,6 @@ namespace BreastRadiology.XUnitTests
             this.descriptionBlock = this.codeEditor.Blocks.Find("descriptions");
             if (this.descriptionBlock == null)
                 throw new Exception($"'descriptions' block missing");
-            this.descriptionBlock
-                .AppendRaw($"<h3 id=\"descriptions\">Definitions</h3>")
                 ;
             return this.descriptionBlock;
         }
@@ -113,7 +113,11 @@ namespace BreastRadiology.XUnitTests
         public IntroDoc ACRDescription(params String[] lines)
         {
             CodeBlockNested d = CreateDescriptionBlock();
-            d.AppendRaw($"<h4 id=\"acrDescription\">ACR {Title()} Definition</h4>");
+            d
+                .AppendRaw($"<p style=\"font-size:large\">")
+                .AppendRaw($"  <u>ACR {Title()} Definition</u>")
+                .AppendRaw($"</p>")
+                ;
             WriteParagraphs(d, lines);
             return this;
         }
@@ -127,7 +131,11 @@ namespace BreastRadiology.XUnitTests
         public IntroDoc Description(params String[] lines)
         {
             CodeBlockNested d = CreateDescriptionBlock();
-            d.AppendRaw($"<h4>{Title()} Definition</h4>");
+            d
+                .AppendRaw($"<p style=\"font-size:large\">")
+                .AppendRaw($"  <u>{Title()} Definition</u>")
+                .AppendRaw($"</p>")
+                ;
             String[] citedLines = ResourcesMaker.FormatUmls(lines.ToList(), true);
             WriteParagraphs(d, citedLines);
             return this;

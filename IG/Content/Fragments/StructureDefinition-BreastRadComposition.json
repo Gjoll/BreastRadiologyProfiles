@@ -4471,7 +4471,7 @@
         "path": "Composition.section",
         "sliceName": "relatedResources",
         "short": "Related Clinical Resources Section",
-        "definition": "References to FHIR clinical resoruces used during the exam or referenced by this report.",
+        "definition": "References to FHIR clinical resources used during the exam or referenced by this report.",
         "min": 1,
         "max": "1",
         "base": {
@@ -6062,7 +6062,7 @@
         "path": "Composition.section",
         "sliceName": "relatedResources",
         "short": "Related Clinical Resources Section",
-        "definition": "References to FHIR clinical resoruces used during the exam or referenced by this report.",
+        "definition": "References to FHIR clinical resources used during the exam or referenced by this report.",
         "min": 1,
         "max": "1",
         "base": {

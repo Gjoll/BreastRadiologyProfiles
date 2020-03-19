@@ -138,7 +138,7 @@
   "name": "AbnormalityCyst",
   "title": "Cyst",
   "status": "draft",
-  "description": "<b>Cyst Observation</b>\n\n[PR]",
+  "description": "<b>Cyst Observation</b>",
   "fhirVersion": "4.0.0",
   "kind": "resource",
   "abstract": false,
@@ -151,7 +151,7 @@
         "id": "Observation",
         "path": "Observation",
         "short": "Cyst Observation",
-        "definition": "[PR]",
+        "definition": "Measurements and simple assertions made about a patient, device or other subject.",
         "comment": "Used for simple observations such as device measurements, laboratory atomic results, vital signs, height, weight, smoking status, comments, etc.  Other resources are used to provide context for observations such as laboratory reports, etc.",
         "alias": [
           "Vital Signs",
@@ -2697,7 +2697,6 @@
         "id": "Observation",
         "path": "Observation",
         "short": "Cyst Observation",
-        "definition": "[PR]",
         "base": {
           "path": "Observation",
           "min": 0,

@@ -4,7 +4,9 @@
   <a name="intro"></a>
   <!-- +descriptions-->
   <!-- -descriptions-->
-  <h3 id="focusGraph">Graphical Overview</h3>
+  <p style="font-size:large">
+    <u>Graphical Overview</u>
+  </p>
   <p>
     This graph provides an overview of:
     <ul>
@@ -18,8 +20,9 @@
   <!-- +reviewStatus-->
   <!-- -reviewStatus-->
   <!-- +components-->
-  <a name="components"></a>
-  <h3 id="components">Member Fields</h3>
+  <p style="font-size:large">
+    <u>Member Fields</u>
+  </p>
   <p>
     The following parts of this observation are contained within this resource.
   </p>
@@ -31,8 +34,9 @@
   </ul>
   <!-- -components-->
   <!-- +hasMember-->
-  <a name="hasMembers"></a>
-  <h3 id="hasMember">Member Observations</h3>
+  <p style="font-size:large">
+    <u>Member Observations</u>
+  </p>
   <p>
     The following parts of this observation are stored in seperate observation resources.
   </p>
@@ -44,7 +48,9 @@
   </ul>
   <!-- -hasMember-->
   <!-- +profileFragments-->
-  <h3 id="profileFragments">Profile Fragments</h3>
+  <p style="font-size:large">
+    <u>Profile Fragments</u>
+  </p>
   <p>
     The following are the fragments that are included in this profile. This is included for developers use to understand
     the hierarchy and commonality of disparate profiles..

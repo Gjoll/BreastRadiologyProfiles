@@ -2289,21 +2289,6 @@
       },
       {
         "id": "Observation.component:correspondsWith.code",
-        "extension": [
-          {
-            "url": "http://www.fragment.com/DefaultValue",
-            "valueCodeableConcept": {
-              "coding": [
-                {
-                  "system": "http://hl7.org/fhir/us/breast-radiology/CodeSystem/ObservationComponentSliceCodes",
-                  "code": "correspondsWith",
-                  "display": "Component code for 'Corresponds With' slice"
-                }
-              ],
-              "text": "Component code for 'Corresponds With' slice"
-            }
-          }
-        ],
         "path": "Observation.component.code",
         "short": "Corresponds With component code",
         "definition": "This code identifies the Corresponds With components.\n Its value shall always be the concept 'Component code for 'Corresponds With' slice'",
@@ -2582,21 +2567,6 @@
       },
       {
         "id": "Observation.component:correspondsWith.code",
-        "extension": [
-          {
-            "url": "http://www.fragment.com/DefaultValue",
-            "valueCodeableConcept": {
-              "coding": [
-                {
-                  "system": "http://hl7.org/fhir/us/breast-radiology/CodeSystem/ObservationComponentSliceCodes",
-                  "code": "correspondsWith",
-                  "display": "Component code for 'Corresponds With' slice"
-                }
-              ],
-              "text": "Component code for 'Corresponds With' slice"
-            }
-          }
-        ],
         "path": "Observation.component.code",
         "short": "Corresponds With component code",
         "definition": "This code identifies the Corresponds With components.\n Its value shall always be the concept 'Component code for 'Corresponds With' slice'",

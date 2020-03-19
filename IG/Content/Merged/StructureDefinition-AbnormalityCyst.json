@@ -411,7 +411,7 @@
       ]
     }
   ],
-  "description": "<b>Cyst Observation</b>\n\n[PR]",
+  "description": "<b>Cyst Observation</b>",
   "fhirVersion": "4.0.0",
   "kind": "resource",
   "abstract": false,
@@ -424,7 +424,6 @@
         "id": "Observation",
         "path": "Observation",
         "short": "Cyst Observation",
-        "definition": "[PR]",
         "base": {
           "path": "Observation",
           "min": 0,

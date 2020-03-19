@@ -159,7 +159,7 @@
       ]
     }
   ],
-  "description": "<b>Mammography Finding</b>\n\nThis resource is the Section Head for all Mammography findings.\n\nAll mammography observation findings are referenced by this resoruces Observation.hasMember field.",
+  "description": "<b>Mammography Finding</b>\n\nThis resource is the Section Head for all Mammography findings.\n\nAll mammography observation findings are referenced by this resources Observation.hasMember field.",
   "fhirVersion": "4.0.0",
   "kind": "resource",
   "abstract": false,
@@ -172,7 +172,7 @@
         "id": "Observation",
         "path": "Observation",
         "short": "Mammography Finding",
-        "definition": "This resource is the Section Head for all Mammography findings.\n\nAll mammography observation findings are referenced by this resoruces Observation.hasMember field.",
+        "definition": "This resource is the Section Head for all Mammography findings.\n\nAll mammography observation findings are referenced by this resources Observation.hasMember field.",
         "base": {
           "path": "Observation",
           "min": 0,

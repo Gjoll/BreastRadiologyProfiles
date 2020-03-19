@@ -100,34 +100,31 @@ namespace BreastRadiology.XUnitTests
             this.groupIds.Add(groupId);
         }
 
-        void RemElementExtensions(StructureDefinition sd)
+        void RemoveFragmentExtensions(DomainResource r)
         {
-            void Rem(ElementDefinition ed)
+            void Rem(List<Extension> extensions)
             {
-                foreach (Extension e in ed.Extension.ToArray())
+                Int32 i = 0;
+                while (i < extensions.Count)
                 {
+                    Extension e = extensions[i];
                     if (e.Url.StartsWith(Global.BaseFragmentUrl, new StringComparison()))
-                        e.Extension.Remove(e);
+                        extensions.RemoveAt(i);
+                    else
+                        i += 1;
                 }
             }
 
-            foreach (ElementDefinition ed in sd.Snapshot.Element)
-                Rem(ed);
-            foreach (ElementDefinition ed in sd.Differential.Element)
-                Rem(ed);
-        }
-
-        void RemoveFragmentExtensions(DomainResource r)
-        {
-            foreach (Extension e in r.Extension.ToArray())
-            {
-                if (e.Url.StartsWith(Global.BaseFragmentUrl, new StringComparison()))
-                    r.Extension.Remove(e);
-            }
+            Rem(r.Extension);
 
             StructureDefinition sd = r as StructureDefinition;
             if (sd != null)
-                RemElementExtensions(sd);
+            {
+                foreach (ElementDefinition ed in sd.Snapshot.Element)
+                    Rem(ed.Extension);
+                foreach (ElementDefinition ed in sd.Differential.Element)
+                    Rem(ed.Extension);
+            }
         }
 
 
@@ -164,6 +161,7 @@ namespace BreastRadiology.XUnitTests
 
             void Save(DomainResource r, String outputName)
             {
+                Debug.Assert(outputName.Contains("StructureDefinition-AbnormalityCyst.json") == false);
                 this.RemoveFragmentExtensions(r);
                 String outputPath = Path.Combine(this.resourceDir, outputName);
                 r.SaveJson(outputPath);

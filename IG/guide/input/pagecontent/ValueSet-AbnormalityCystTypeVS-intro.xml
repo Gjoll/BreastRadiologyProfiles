@@ -4,7 +4,9 @@
   <a name="intro"></a>
   <!-- +descriptions-->
   <!-- -descriptions-->
-  <h3 id="focusGraph">Graphical Overview</h3>
+  <p style="font-size:large">
+    <u>Graphical Overview</u>
+  </p>
   <p>
     This graph provides an overview of how and where this value set is
     referenced.
@@ -13,9 +15,11 @@
     <img src="Focus-AbnormalityCystTypeVS.svg" alt="image/svg+xml" />
   </object>
   <!-- +reviewStatus-->
-<h3 id="reviewStatus">Review Status</h3>
+<p style="font-size:large">
+  <u>Review Status</u>
+</p>
 Comments and Suggested changes to this implementation guide can be made 
 <a href="https://github.com/HL7/fhir-breast-radiology-ig/projects/1">here</a>
-<p><b>Reviewed by No One on </b></p>
+Reviewed by No One on 
   <!-- -reviewStatus-->
 </div>

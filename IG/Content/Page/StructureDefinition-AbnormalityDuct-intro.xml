@@ -4,7 +4,9 @@
   <a name="intro"></a>
   <!-- +descriptions-->
   <!-- -descriptions-->
-  <h3 id="focusGraph">Graphical Overview</h3>
+  <p style="font-size:large">
+    <u>Graphical Overview</u>
+  </p>
   <p>
     This graph provides an overview of:
     <ul>
@@ -16,16 +18,19 @@
     <img src="Focus-AbnormalityDuct.svg" alt="image/svg+xml" />
   </object>
   <!-- +reviewStatus-->
-<h3 id="reviewStatus">Review Status</h3>
+<p style="font-size:large">
+  <u>Review Status</u>
+</p>
 Comments and Suggested changes to this implementation guide can be made 
 <a href="https://github.com/HL7/fhir-breast-radiology-ig/projects/1">here</a>
-<p><b>Reviewed by No One on </b></p>
+Reviewed by No One on 
   <!-- -reviewStatus-->
   <!-- +components-->
-  <a name="components"></a>
-  <h3 id="components">Member Fields</h3>
+  <p style="font-size:large">
+    <u>Member Fields</u>
+  </p>
   <p>
-    The following are parts of this observation that are contained within this resource.
+    The following parts of this observation are contained within this resource.
   </p>
   <p>
     Each field contains one data item and is stored as an item (slice) in the Observation.component element.
@@ -49,10 +54,11 @@ Comments and Suggested changes to this implementation guide can be made
   </ul>
   <!-- -components-->
   <!-- +hasMember-->
-  <a name="hasMembers"></a>
-  <h3 id="hasMember">Member Observations</h3>
+  <p style="font-size:large">
+    <u>Member Observations</u>
+  </p>
   <p>
-    The following are parts of this observation that are stored in seperate observation resources.
+    The following parts of this observation are stored in seperate observation resources.
   </p>
   <p>
     The reference to each external observation is stored as an item in the Observation.hasMember element.
@@ -63,7 +69,9 @@ Comments and Suggested changes to this implementation guide can be made
   </ul>
   <!-- -hasMember-->
   <!-- +profileFragments-->
-  <h3 id="profileFragments">Profile Fragments</h3>
+  <p style="font-size:large">
+    <u>Profile Fragments</u>
+  </p>
   <p>
     The following are the fragments that are included in this profile. This is included for developers use to understand
     the hierarchy and commonality of disparate profiles..

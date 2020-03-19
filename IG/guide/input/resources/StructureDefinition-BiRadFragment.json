@@ -2289,21 +2289,6 @@
       },
       {
         "id": "Observation.component:biRadsAssessmentCategory.code",
-        "extension": [
-          {
-            "url": "http://www.fragment.com/DefaultValue",
-            "valueCodeableConcept": {
-              "coding": [
-                {
-                  "system": "http://hl7.org/fhir/us/breast-radiology/CodeSystem/ObservationComponentSliceCodes",
-                  "code": "targetBiRads",
-                  "display": "Component code for 'BiRads Code' slice"
-                }
-              ],
-              "text": "Component code for 'BiRads Code' slice"
-            }
-          }
-        ],
         "path": "Observation.component.code",
         "short": "BiRads Assessment Category component code",
         "definition": "This code identifies the BiRads Assessment Category component.\n Its value shall always be the concept 'Component code for 'BiRads Code' slice'",
@@ -2582,21 +2567,6 @@
       },
       {
         "id": "Observation.component:biRadsAssessmentCategory.code",
-        "extension": [
-          {
-            "url": "http://www.fragment.com/DefaultValue",
-            "valueCodeableConcept": {
-              "coding": [
-                {
-                  "system": "http://hl7.org/fhir/us/breast-radiology/CodeSystem/ObservationComponentSliceCodes",
-                  "code": "targetBiRads",
-                  "display": "Component code for 'BiRads Code' slice"
-                }
-              ],
-              "text": "Component code for 'BiRads Code' slice"
-            }
-          }
-        ],
         "path": "Observation.component.code",
         "short": "BiRads Assessment Category component code",
         "definition": "This code identifies the BiRads Assessment Category component.\n Its value shall always be the concept 'Component code for 'BiRads Code' slice'",
