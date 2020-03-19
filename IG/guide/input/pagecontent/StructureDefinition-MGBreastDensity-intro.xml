@@ -33,9 +33,15 @@ individual woman.
 <p>
   <u style="font-size:large;">Review Status</u>
 </p>
+<p>
 Comments and Suggested changes to this implementation guide can be made 
 <a href="https://github.com/HL7/fhir-breast-radiology-ig/projects/1">here</a>
-Reviewed by No One on 
+</p>
+<p>Needs review by KWA</p>
+<p>Needs review by Penrad</p>
+<p>Needs review by MRS</p>
+<p>Needs review by MagView</p>
+<p>Needs review by CIMI</p>
   <!-- -reviewStatus-->
   <!-- +components-->
   <!-- -components-->
@@ -46,8 +52,11 @@ Reviewed by No One on
     <u style="font-size:large;">Profile Fragments</u>
   </p>
   <p>
-    The following are the fragments that are included in this profile. This is included for developers use to understand
-    the hierarchy and commonality of disparate profiles..
+    The following are the fragments that are included in this profile.
+  </p>
+  <p>
+    This section is included primarily for developers to understand
+    the hierarchy and commonality of each profile.
   </p>
   <ul>
     
