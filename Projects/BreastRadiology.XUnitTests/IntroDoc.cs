@@ -40,7 +40,7 @@ namespace BreastRadiology.XUnitTests
 
         CodeBlockNested reviewStatusBlock = null;
         CodeBlockNested descriptionBlock = null;
-        public IntroDoc ReviewedStatus(String reviewer, String dt)
+        public IntroDoc ReviewedStatus(String reviewer)
         {
             if (this.reviewStatusBlock == null)
             {
@@ -51,12 +51,14 @@ namespace BreastRadiology.XUnitTests
                     .AppendRaw($"<p>")
                     .AppendRaw($"  <u style=\"font-size:large;\">Review Status</u>")
                     .AppendRaw($"</p>")
+                    .AppendRaw($"<p>")
                     .AppendRaw($"Comments and Suggested changes to this implementation guide can be made ")
                     .AppendRaw($"<a href=\"https://github.com/HL7/fhir-breast-radiology-ig/projects/1\">here</a>")
+                    .AppendRaw($"</p>")
                     ;
             }
             this.reviewStatusBlock
-                .AppendRaw($"Reviewed by {reviewer} on {dt}")
+                .AppendRaw($"<p>{reviewer}</p>")
                 ;
 
             return this;
@@ -110,6 +112,7 @@ namespace BreastRadiology.XUnitTests
             return (String)value;
         }
 
+        [Obsolete]
         public IntroDoc ACRDescription(params String[] lines)
         {
             CodeBlockNested d = CreateDescriptionBlock();
@@ -122,6 +125,7 @@ namespace BreastRadiology.XUnitTests
             return this;
         }
 
+        [Obsolete]
         public IntroDoc MissingDescription()
         {
             CodeBlockNested d = CreateDescriptionBlock();
@@ -133,6 +137,7 @@ namespace BreastRadiology.XUnitTests
             return this;
         }
 
+        [Obsolete]
         public IntroDoc Description(params String[] lines)
         {
             CodeBlockNested d = CreateDescriptionBlock();

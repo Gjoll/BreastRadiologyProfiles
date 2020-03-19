@@ -4,7 +4,10 @@
   <a name="intro"></a>
   <!-- +descriptions-->
 <p>
-  <u style="font-size:large;color:red;">Associated Feature Missing Description</u>
+  <u style="font-size:large">Associated Feature Definition</u>
+</p>
+<p>
+An observation of an item that is associated with another abnormnality.
 </p>
   <!-- -descriptions-->
   <p>

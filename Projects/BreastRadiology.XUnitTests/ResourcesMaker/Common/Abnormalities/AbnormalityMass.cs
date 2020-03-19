@@ -138,7 +138,11 @@ namespace BreastRadiology.XUnitTests
                     ;
 
                 e.IntroDoc
-                    .ReviewedStatus("No One", "")
+                     .ReviewedStatus("Needs review by KWA")
+                     .ReviewedStatus("Needs review by Penrad")
+                     .ReviewedStatus("Needs review by MRS")
+                     .ReviewedStatus("Needs review by MagView")
+                     .ReviewedStatus("Needs review by CIMI")
                     .ACRDescription(
                             "\"MASS\" is three dimensional and occupies space. It is seen on two different mammographic ", 
                             "projections. It has completely or partially convex-outward borders and (when radiodense) appears",

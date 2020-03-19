@@ -3,7 +3,10 @@
     xsi:schemaLocation="http://hl7.org/fhir ../../src-generated/schemas/fhir-single.xsd">
   <!-- +descriptions-->
 <p>
-  <u style="font-size:large;color:red;">Breast Body Location Extension Missing Description</u>
+  <u style="font-size:large">Breast Body Location Extension Definition</u>
+</p>
+<p>
+This complex extension defines the structure to specify a location in the body in a manner consistent with current breast radiology practice.
 </p>
   <!-- -descriptions-->
   <p>

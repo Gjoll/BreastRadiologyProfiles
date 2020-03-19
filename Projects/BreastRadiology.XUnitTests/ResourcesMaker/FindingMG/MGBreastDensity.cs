@@ -124,8 +124,12 @@ namespace BreastRadiology.XUnitTests
                 {
                     IntroDoc valueSetIntroDoc = Self.CreateIntroDocVS(binding);
                     valueSetIntroDoc
-                        .ReviewedStatus("No One", "")
-                    ;
+                         .ReviewedStatus("Needs review by KWA")
+                         .ReviewedStatus("Needs review by Penrad")
+                         .ReviewedStatus("Needs review by MRS")
+                         .ReviewedStatus("Needs review by MagView")
+                         .ReviewedStatus("Needs review by CIMI")
+                         ;
                     String outputPath = valueSetIntroDoc.Save();
                     Self.fc?.Mark(outputPath);
                 }
@@ -153,7 +157,11 @@ namespace BreastRadiology.XUnitTests
                     ;
 
                 e.IntroDoc
-                    .ReviewedStatus("No One", "")
+                     .ReviewedStatus("Needs review by KWA")
+                     .ReviewedStatus("Needs review by Penrad")
+                     .ReviewedStatus("Needs review by MRS")
+                     .ReviewedStatus("Needs review by MagView")
+                     .ReviewedStatus("Needs review by CIMI")
                     .ACRDescription(
                         "The following four categories of breast composition are defined by the visually estimated content of fibroglandular-density tissue within the breasts. Please note that the ",
                         "categories are listed as a, b, c, and d so as not to be confused with the numbered BI-RADS® assessment categories. If the breasts are not of apparently equal density, the ",

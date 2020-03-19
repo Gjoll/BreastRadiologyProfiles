@@ -477,8 +477,12 @@ namespace BreastRadiology.XUnitTests
                     ;
 
                 e.IntroDoc
-                    .ReviewedStatus("No One", "")
-                    //+ IntroDocDescription
+                     .ReviewedStatus("Needs review by KWA")
+                     .ReviewedStatus("Needs review by Penrad")
+                     .ReviewedStatus("Needs review by MRS")
+                     .ReviewedStatus("Needs review by MagView")
+                     .ReviewedStatus("Needs review by CIMI")
+                        //+ IntroDocDescription
                         .Description("Calcifications usually can't be felt, but they appear " +
                             "on a mammogram. ",
                             "Depending on how they're clustered and their shape, " +

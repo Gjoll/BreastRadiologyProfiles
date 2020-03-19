@@ -24,8 +24,8 @@ namespace BreastRadiology.XUnitTests
                         "ObservationSection")
                    .Description("Findings Left Breast Section",
                        new Markdown()
-                       .Paragraph("This resource is the head of the tree of observations made of the left breast during a breast radiology exam.")
-                       .Paragraph("Child observations are referenced by the 'Observation.hasMember' field.")
+                           .Paragraph("This Observation contains references to all the observations" +
+                                      "and exam information related to the left breast.")
                    )
                    .AddFragRef(Self.FindingBreastFragment.Value())
                    ;
@@ -53,9 +53,12 @@ namespace BreastRadiology.XUnitTests
                     ;
 
                 e.IntroDoc
-                     .ReviewedStatus("KWA-PEN", "1.1.2020")
-                     .ReviewedStatus("CIC", "22.1.2020")
-                     .MissingDescription()
+                     .ReviewedStatus("Needs review by KWA")
+                     .ReviewedStatus("Needs review by Penrad")
+                     .ReviewedStatus("Needs review by MRS")
+                     .ReviewedStatus("Needs review by MagView")
+                     .ReviewedStatus("Needs review by CIMI")
+                     .ReviewedStatus("CIC 22.1.2020")
                     ;
             });
     }

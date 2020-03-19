@@ -26,9 +26,13 @@ namespace BreastRadiology.XUnitTests
                      .Description("Breast Radiology Diagnostic Report",
                          new Markdown()
                              .Paragraph("This resource is one of the components of a Breast Radiology Document.",
-                                         "It is referenced in the document's 'Report' section ",
-                                         "and contains the report conclusions and findings.")
-                             .Paragraph("This resource is a profile of the Fhir DiagnosticReport base resource.")
+                                        "Each Breast Radiology Document bundle will contain exactly one " +
+                                        "Breast Radiology Document instance that is referenced in the " +
+                                        "document's 'Report' section.")
+                             .Paragraph("This instance will contain the top level results of the exam, " +
+                                        "including the narrative result.")
+                             .Paragraph("This resource is a profile of the Fhir DiagnosticReport " +
+                                        "base resource.")
                      )
                      .AddFragRef(Self.HeaderFragment.Value())
                      .AddFragRef(Self.CategoryFragment.Value())
@@ -36,9 +40,12 @@ namespace BreastRadiology.XUnitTests
 
                 s = e.SDef;
                 e.IntroDoc
-                     .ReviewedStatus("KWA-PEN", "1.1.2020")
-                     .ReviewedStatus("CIC", "22.1.2020")
-                     .MissingDescription()
+                     .ReviewedStatus("Needs review by KWA")
+                     .ReviewedStatus("Needs review by Penrad")
+                     .ReviewedStatus("Needs review by MRS")
+                     .ReviewedStatus("Needs review by MagView")
+                     .ReviewedStatus("Needs review by CIMI")
+                     .ReviewedStatus("CIC 22.1.2020")
                      ;
 
                 CodeableConcept code = new CodeableConcept(Global.Loinc, "10193-1");

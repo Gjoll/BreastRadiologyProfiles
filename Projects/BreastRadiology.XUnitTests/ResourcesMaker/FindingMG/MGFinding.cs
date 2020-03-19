@@ -58,7 +58,13 @@ namespace BreastRadiology.XUnitTests
                 e.SliceTargetReference( sliceElementDef, Self.MGBreastDensity.Value(), 1, "1");
 
                 e.IntroDoc
-                    .ReviewedStatus("No One", "")
+                     .ReviewedStatus("Needs review by KWA")
+                     .ReviewedStatus("Needs review by Penrad")
+                     .ReviewedStatus("Needs review by MRS")
+                     .ReviewedStatus("Needs review by MagView")
+                     .ReviewedStatus("Needs review by CIMI")
+                     .Description("This Observation contains all references to all the observations" +
+                                  "and exam information related to a Mammography exam.")
                     ;
             });
     }

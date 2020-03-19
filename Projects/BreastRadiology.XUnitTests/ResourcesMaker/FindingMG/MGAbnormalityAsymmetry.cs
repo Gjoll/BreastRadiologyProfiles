@@ -105,8 +105,12 @@ namespace BreastRadiology.XUnitTests
                 {
                     IntroDoc valueSetIntroDoc = Self.CreateIntroDocVS(binding);
                     valueSetIntroDoc
-                        .ReviewedStatus("No One", "")
-                    ;
+                         .ReviewedStatus("Needs review by KWA")
+                         .ReviewedStatus("Needs review by Penrad")
+                         .ReviewedStatus("Needs review by MRS")
+                         .ReviewedStatus("Needs review by MagView")
+                         .ReviewedStatus("Needs review by CIMI")
+                         ;
                     String outputPath = valueSetIntroDoc.Save();
                     Self.fc?.Mark(outputPath);
                 }
@@ -145,8 +149,12 @@ namespace BreastRadiology.XUnitTests
                     ;
 
                 e.IntroDoc
-                    .ReviewedStatus("No One", "")
-                    //+ IntroDocDescription
+                     .ReviewedStatus("Needs review by KWA")
+                     .ReviewedStatus("Needs review by Penrad")
+                     .ReviewedStatus("Needs review by MRS")
+                     .ReviewedStatus("Needs review by MagView")
+                     .ReviewedStatus("Needs review by CIMI")
+                        //+ IntroDocDescription
                         .Description("Breast asymmetry refers to when one breast is a different " +
                             "size or shape than the ",
                             "other.")

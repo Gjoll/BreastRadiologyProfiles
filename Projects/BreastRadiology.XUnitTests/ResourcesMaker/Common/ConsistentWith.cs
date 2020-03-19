@@ -15,53 +15,59 @@ namespace BreastRadiology.XUnitTests
     partial class ResourcesMaker
     {
         SDTaskVar ConsistentWith = new SDTaskVar(
-               (out StructureDefinition s) =>
-                   {
-                       SDefEditor e = Self.CreateEditor("ConsistentWith",
+            (out StructureDefinition s) =>
+            {
+                SDefEditor e = Self.CreateEditor("ConsistentWith",
                         "Consistent With",
                         "Consistent/With",
                         Global.ObservationUrl,
                         $"{Group_CommonResources}/ConsistentWith",
                         "ObservationLeaf")
-                           .AddFragRef(Self.ObservationLeafFragment.Value())
-                           .AddFragRef(Self.ObservationNoDeviceFragment.Value())
-                           .AddFragRef(Self.ObservationNoValueFragment.Value())
-                           .AddFragRef(Self.ObservationNoComponentFragment.Value())
-                           .Description("'Consistent With' Observation",
+                    .AddFragRef(Self.ObservationLeafFragment.Value())
+                    .AddFragRef(Self.ObservationNoDeviceFragment.Value())
+                    .AddFragRef(Self.ObservationNoValueFragment.Value())
+                    .AddFragRef(Self.ObservationNoComponentFragment.Value())
+                    .Description("'Consistent With' Observation",
                                new Markdown()
                            )
-                           ;
-                       s = e.SDef;
+                    ;
+                s = e.SDef;
 
-                       // Set Observation.code to unique value for this profile.
-                       e.Select("code")
-                            .Pattern(Self.ObservationCodeConsistentWith.ToCodeableConcept().ToPattern())
-                            .DefaultValueExtension(Self.ObservationCodeConsistentWith.ToCodeableConcept())
-                            ;
+                // Set Observation.code to unique value for this profile.
+                e.Select("code")
+                    .Pattern(Self.ObservationCodeConsistentWith.ToCodeableConcept().ToPattern())
+                    .DefaultValueExtension(Self.ObservationCodeConsistentWith.ToCodeableConcept())
+                    ;
 
 
-                       e.StartComponentSliceing();
-                       e.ComponentSliceCodeableConcept("value",
-                           Self.ComponentSliceCodeConsistentWithValue.ToCodeableConcept(),
-                           Self.ConsistentWithVS.Value(),
-                           BindingStrength.Extensible,
-                           1,
-                           "1",
-                           "Consistent With Value",
-                            "defines what this observation is consistent with");
-                       e.ComponentSliceCodeableConcept("qualifier",
-                           Self.ComponentSliceCodeConsistentWithQualifier.ToCodeableConcept(),
-                           Self.ConsistentWithQualifierVS.Value(),
-                           BindingStrength.Required,
-                           0,
-                           "*",
-                           "Consistent With Qualifier",
-                            "qualify the 'consistentWith' slice component value");
+                e.StartComponentSliceing();
+                e.ComponentSliceCodeableConcept("value",
+                    Self.ComponentSliceCodeConsistentWithValue.ToCodeableConcept(),
+                    Self.ConsistentWithVS.Value(),
+                    BindingStrength.Extensible,
+                    1,
+                    "1",
+                    "Consistent With Value",
+                    "defines what this observation is consistent with");
+                    e.ComponentSliceCodeableConcept("qualifier",
+                    Self.ComponentSliceCodeConsistentWithQualifier.ToCodeableConcept(),
+                    Self.ConsistentWithQualifierVS.Value(),
+                    BindingStrength.Required,
+                    0,
+                    "*",
+                    "Consistent With Qualifier",
+                    "qualify the 'consistentWith' slice component value");
 
-                       e.IntroDoc
-                           .ReviewedStatus("No One", "")
-                           ;
-                   });
+                e.IntroDoc
+                     .ReviewedStatus("Needs review by KWA")
+                     .ReviewedStatus("Needs review by Penrad")
+                     .ReviewedStatus("Needs review by MRS")
+                     .ReviewedStatus("Needs review by MagView")
+                     .ReviewedStatus("Needs review by CIMI")
+                    .Description("A determination that the parent abnormality is consistent with " +
+                                 "the finding described in this resource.")
+                    ;
+               });
 
         VSTaskVar ConsistentWithVS = new VSTaskVar(
             (out ValueSet vs) =>

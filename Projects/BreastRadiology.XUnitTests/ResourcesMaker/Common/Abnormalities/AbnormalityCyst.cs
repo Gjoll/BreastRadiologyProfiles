@@ -141,8 +141,12 @@ namespace BreastRadiology.XUnitTests
                 {
                     IntroDoc valueSetIntroDoc = Self.CreateIntroDocVS(binding);
                     valueSetIntroDoc
-                        .ReviewedStatus("No One", "")
-                    ;
+                         .ReviewedStatus("Needs review by KWA")
+                         .ReviewedStatus("Needs review by Penrad")
+                         .ReviewedStatus("Needs review by MRS")
+                         .ReviewedStatus("Needs review by MagView")
+                         .ReviewedStatus("Needs review by CIMI")
+                         ;
                     String outputPath = valueSetIntroDoc.Save();
                     Self.fc?.Mark(outputPath);
                 }
@@ -180,8 +184,12 @@ namespace BreastRadiology.XUnitTests
                     .DefaultValueExtension(Self.ObservationCodeAbnormalityCyst.ToCodeableConcept())
                     ;
                 e.IntroDoc
-                    .ReviewedStatus("No One", "")
-                    //+ IntroDocDescription
+                     .ReviewedStatus("Needs review by KWA")
+                     .ReviewedStatus("Needs review by Penrad")
+                     .ReviewedStatus("Needs review by MRS")
+                     .ReviewedStatus("Needs review by MagView")
+                     .ReviewedStatus("Needs review by CIMI")
+                        //+ IntroDocDescription
                         .Description("A cyst is a sac-like pocket of membranous tissue " +
                             "that contains fluid, air, or other ",
                             "substances. ",

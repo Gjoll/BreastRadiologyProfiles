@@ -464,9 +464,13 @@ namespace BreastRadiology.XUnitTests
 
                         IntroDoc valueSetIntroDoc = Self.CreateIntroDocVS(vs);
                         valueSetIntroDoc
-                            .ReviewedStatus("No One", "")
-                        ;
-                        String outputPath = valueSetIntroDoc.Save();
+                             .ReviewedStatus("Needs review by KWA")
+                             .ReviewedStatus("Needs review by Penrad")
+                             .ReviewedStatus("Needs review by MRS")
+                             .ReviewedStatus("Needs review by MagView")
+                             .ReviewedStatus("Needs review by CIMI")
+                            ;
+                String outputPath = valueSetIntroDoc.Save();
                         Self.fc?.Mark(outputPath);
             }
             );
@@ -502,8 +506,12 @@ namespace BreastRadiology.XUnitTests
                 s = e.SDef;
 
                 e.IntroDoc
-                    .ReviewedStatus("No One", "")
-                    .MissingDescription()
+                     .ReviewedStatus("Needs review by KWA")
+                     .ReviewedStatus("Needs review by Penrad")
+                     .ReviewedStatus("Needs review by MRS")
+                     .ReviewedStatus("Needs review by MagView")
+                     .ReviewedStatus("Needs review by CIMI")
+                    .Description("A foreign object was observed during the examination")
                     ;
 
                 // Set Observation.code to unique value for this profile.

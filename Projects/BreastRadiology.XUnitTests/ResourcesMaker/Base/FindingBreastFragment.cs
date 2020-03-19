@@ -26,7 +26,11 @@ namespace BreastRadiology.XUnitTests
                        s = e.SDef;
 
                        e.IntroDoc
-                           .ReviewedStatus("No One", "")
+                         .ReviewedStatus("Needs review by KWA")
+                         .ReviewedStatus("Needs review by Penrad")
+                         .ReviewedStatus("Needs review by MRS")
+                         .ReviewedStatus("Needs review by MagView")
+                         .ReviewedStatus("Needs review by CIMI")
                            ;
                        {
                            ValueSet binding = Self.BiRadsAssessmentCategoriesVS.Value();
@@ -50,15 +54,15 @@ namespace BreastRadiology.XUnitTests
                            slice.ElementDefinition.MustSupport();
                        }
                        {
-                           ElementTreeSlice slice = e.SliceTargetReference( sliceElementDef, Self.FindingMri.Value(), 0, "1");
+                           ElementTreeSlice slice = e.SliceTargetReference( sliceElementDef, Self.MRIFinding.Value(), 0, "1");
                            slice.ElementDefinition.MustSupport();
                        }
                        {
-                           ElementTreeSlice slice = e.SliceTargetReference( sliceElementDef, Self.FindingNM.Value(), 0, "1");
+                           ElementTreeSlice slice = e.SliceTargetReference( sliceElementDef, Self.NMFinding.Value(), 0, "1");
                            slice.ElementDefinition.MustSupport();
                        }
                        {
-                           ElementTreeSlice slice = e.SliceTargetReference( sliceElementDef, Self.FindingUltraSound.Value(), 0, "1");
+                           ElementTreeSlice slice = e.SliceTargetReference( sliceElementDef, Self.USFinding.Value(), 0, "1");
                            slice.ElementDefinition.MustSupport();
                        }
                    });

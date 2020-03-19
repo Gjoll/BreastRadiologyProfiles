@@ -86,11 +86,16 @@ namespace BreastRadiology.XUnitTests
                      "Resource")
                      .Description("Breast Radiology Composition",
                          new Markdown()
-                             .Paragraph("This is the composition resource for the Breast Radiology Fhir Document.")
-                             .Paragraph("A Fhir Document is a Bundle that contains a composition as the first entry and",
+                             .Paragraph("This is the composition resource for the Breast Radiology Fhir Document.", 
+                                        "This resource is based on FHIR Composition resource.")
+                             .Paragraph("A Fhir Document is a Bundle that contains a composition as the first entry and ",
                                         "provides a single item (bundle) that contains all the resources that are a part of",
                                         "the Breast Radiology Diagnostic Report.")
-                             .Paragraph("This composition creates the following sections that contain resources related to the document.")
+                             .Paragraph("The composition object is an required part of the FHIR Document structure.",
+                                        "One composition must exist, and it must be the first resource stored in the FHIR document bundle.")
+                             .Paragraph("The other exam related resources are referenced through the " +
+                                        "sections defined in this resource.")
+                             .Paragraph("This composition creates the following sections.")
                              .Paragraph("A. Report Section.",
                                         "This contains a single reference to the Breast Radiology Report",
                                         "All Breast Radiology Findings are referenced by the reports results element.")
@@ -106,8 +111,11 @@ namespace BreastRadiology.XUnitTests
 
                 s = e.SDef;
                 e.IntroDoc
-                     .ReviewedStatus("No One", "")
-                     .MissingDescription()
+                     .ReviewedStatus("Needs review by KWA")
+                     .ReviewedStatus("Needs review by Penrad")
+                     .ReviewedStatus("Needs review by MRS")
+                     .ReviewedStatus("Needs review by MagView")
+                     .ReviewedStatus("Needs review by CIMI")
                      ;
 
                 // Report Section
