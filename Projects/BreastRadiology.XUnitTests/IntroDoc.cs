@@ -49,7 +49,7 @@ namespace BreastRadiology.XUnitTests
                     throw new Exception($"reviewStatus block missing");
                 this.reviewStatusBlock
                     .AppendRaw($"<p>")
-                    .AppendRaw($"  <u style=\"font-size:large\">Review Status</u>")
+                    .AppendRaw($"  <u style=\"font-size:large;\">Review Status</u>")
                     .AppendRaw($"</p>")
                     .AppendRaw($"Comments and Suggested changes to this implementation guide can be made ")
                     .AppendRaw($"<a href=\"https://github.com/HL7/fhir-breast-radiology-ig/projects/1\">here</a>")
@@ -115,7 +115,7 @@ namespace BreastRadiology.XUnitTests
             CodeBlockNested d = CreateDescriptionBlock();
             d
                 .AppendRaw($"<p>")
-                .AppendRaw($"  <u style=\"font-size:large\">ACR {Title()} Definition</u>")
+                .AppendRaw($"  <u style=\"font-size:large;\">ACR {Title()} Definition</u>")
                 .AppendRaw($"</p>")
                 ;
             WriteParagraphs(d, lines);
@@ -127,7 +127,7 @@ namespace BreastRadiology.XUnitTests
             CodeBlockNested d = CreateDescriptionBlock();
             d
                 .AppendRaw($"<p>")
-                .AppendRaw($"  <u style=\"font-size:large\";color=\"red\";>{Title()} Missing Description</u>")
+                .AppendRaw($"  <u style=\"font-size:large;color:red;\">{Title()} Missing Description</u>")
                 .AppendRaw($"</p>")
                 ;
             return this;

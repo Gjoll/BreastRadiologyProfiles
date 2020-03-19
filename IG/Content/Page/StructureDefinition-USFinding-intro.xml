@@ -4,11 +4,11 @@
   <a name="intro"></a>
   <!-- +descriptions-->
 <p>
-  <u><b>Ultra-Sound Finding Missing Description</b></u>
+  <u style="font-size:large;color:red;">Ultra-Sound Finding Missing Description</u>
 </p>
   <!-- -descriptions-->
   <p>
-    <u style="font-size:large">Graphical Overview</u>
+    <u style="font-size:large;">Graphical Overview</u>
   </p>
   <p>
     This graph provides an overview of:
@@ -22,7 +22,7 @@
   </object>
   <!-- +reviewStatus-->
 <p>
-  <u>Review Status</u>
+  <u style="font-size:large;">Review Status</u>
 </p>
 Comments and Suggested changes to this implementation guide can be made 
 <a href="https://github.com/HL7/fhir-breast-radiology-ig/projects/1">here</a>
@@ -34,7 +34,7 @@ Reviewed by No One on
   <!-- -hasMember-->
   <!-- +profileFragments-->
   <p>
-    <u style="font-size:large">Profile Fragments</u>
+    <u style="font-size:large;">Profile Fragments</u>
   </p>
   <p>
     The following are the fragments that are included in this profile. This is included for developers use to understand
