@@ -107,7 +107,7 @@
       ]
     }
   ],
-  "description": "<b>NM Finding</b>",
+  "description": "<b>NM Finding</b>\n\nThis Observation contains all references to all the observationsand exam information related to a Nuclear Medicine (NM) exam.\n\nAs of this ballot, the child observations of an NM Exam have not\n been defined. They will be defined in a later ballot.",
   "fhirVersion": "4.0.0",
   "kind": "resource",
   "abstract": false,
@@ -120,6 +120,7 @@
         "id": "Observation",
         "path": "Observation",
         "short": "NM Finding",
+        "definition": "This Observation contains all references to all the observationsand exam information related to a Nuclear Medicine (NM) exam.\n\nAs of this ballot, the child observations of an NM Exam have not\n been defined. They will be defined in a later ballot.",
         "base": {
           "path": "Observation",
           "min": 0,

@@ -126,7 +126,7 @@
   "name": "MGAbnormalityFatNecrosis",
   "title": "Mammography Fat Necrosis",
   "status": "draft",
-  "description": "<b>Fat Necrosis Observation</b>\n\n[PR]",
+  "description": "<b>Fat Necrosis Abnormality Observation</b>\n\n[PR]",
   "fhirVersion": "4.0.0",
   "kind": "resource",
   "abstract": false,
@@ -138,7 +138,7 @@
       {
         "id": "Observation",
         "path": "Observation",
-        "short": "Fat Necrosis Observation",
+        "short": "Fat Necrosis Abnormality Observation",
         "definition": "[PR]",
         "comment": "Used for simple observations such as device measurements, laboratory atomic results, vital signs, height, weight, smoking status, comments, etc.  Other resources are used to provide context for observations such as laboratory reports, etc.",
         "alias": [
@@ -2301,7 +2301,7 @@
       {
         "id": "Observation",
         "path": "Observation",
-        "short": "Fat Necrosis Observation",
+        "short": "Fat Necrosis Abnormality Observation",
         "definition": "[PR]",
         "base": {
           "path": "Observation",

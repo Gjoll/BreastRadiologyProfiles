@@ -347,7 +347,7 @@
       ]
     }
   ],
-  "description": "<b>Asymmetry Observation</b>",
+  "description": "<b>Asymmetry Abnormality Observation</b>",
   "fhirVersion": "4.0.0",
   "kind": "resource",
   "abstract": false,
@@ -359,7 +359,7 @@
       {
         "id": "Observation",
         "path": "Observation",
-        "short": "Asymmetry Observation",
+        "short": "Asymmetry Abnormality Observation",
         "base": {
           "path": "Observation",
           "min": 0,

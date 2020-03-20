@@ -135,7 +135,7 @@
       ]
     }
   ],
-  "description": "<b>'Consistent With' Observation</b>",
+  "description": "<b>'Consistent With' Observation</b>\n\nThis resource contains information about a determination \nthat the parent abnormality is consistent with \nthe finding described in this resource.",
   "fhirVersion": "4.0.0",
   "kind": "resource",
   "abstract": false,
@@ -148,6 +148,7 @@
         "id": "Observation",
         "path": "Observation",
         "short": "'Consistent With' Observation",
+        "definition": "This resource contains information about a determination \nthat the parent abnormality is consistent with \nthe finding described in this resource.",
         "base": {
           "path": "Observation",
           "min": 0,

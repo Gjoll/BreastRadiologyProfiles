@@ -54,7 +54,7 @@
   "name": "ConsistentWith",
   "title": "Consistent With",
   "status": "draft",
-  "description": "<b>'Consistent With' Observation</b>",
+  "description": "<b>'Consistent With' Observation</b>\n\nThis resource contains information about a determination \nthat the parent abnormality is consistent with \nthe finding described in this resource.",
   "fhirVersion": "4.0.0",
   "kind": "resource",
   "abstract": false,
@@ -67,7 +67,7 @@
         "id": "Observation",
         "path": "Observation",
         "short": "'Consistent With' Observation",
-        "definition": "Measurements and simple assertions made about a patient, device or other subject.",
+        "definition": "This resource contains information about a determination \nthat the parent abnormality is consistent with \nthe finding described in this resource.",
         "comment": "Used for simple observations such as device measurements, laboratory atomic results, vital signs, height, weight, smoking status, comments, etc.  Other resources are used to provide context for observations such as laboratory reports, etc.",
         "alias": [
           "Vital Signs",
@@ -2996,6 +2996,7 @@
         "id": "Observation",
         "path": "Observation",
         "short": "'Consistent With' Observation",
+        "definition": "This resource contains information about a determination \nthat the parent abnormality is consistent with \nthe finding described in this resource.",
         "base": {
           "path": "Observation",
           "min": 0,

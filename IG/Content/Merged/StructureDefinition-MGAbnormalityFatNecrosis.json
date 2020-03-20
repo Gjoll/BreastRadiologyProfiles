@@ -387,7 +387,7 @@
       ]
     }
   ],
-  "description": "<b>Fat Necrosis Observation</b>\n\n[PR]",
+  "description": "<b>Fat Necrosis Abnormality Observation</b>\n\n[PR]",
   "fhirVersion": "4.0.0",
   "kind": "resource",
   "abstract": false,
@@ -399,7 +399,7 @@
       {
         "id": "Observation",
         "path": "Observation",
-        "short": "Fat Necrosis Observation",
+        "short": "Fat Necrosis Abnormality Observation",
         "definition": "[PR]",
         "base": {
           "path": "Observation",

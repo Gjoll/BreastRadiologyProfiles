@@ -371,7 +371,7 @@
       ]
     }
   ],
-  "description": "<b>Duct Observation</b>",
+  "description": "<b>Duct Abnormality Observation</b>\n\nThis resource and its referenced child resources contains \ninformation about a duct abnormality observation",
   "fhirVersion": "4.0.0",
   "kind": "resource",
   "abstract": false,
@@ -383,7 +383,8 @@
       {
         "id": "Observation",
         "path": "Observation",
-        "short": "Duct Observation",
+        "short": "Duct Abnormality Observation",
+        "definition": "This resource and its referenced child resources contains \ninformation about a duct abnormality observation",
         "base": {
           "path": "Observation",
           "min": 0,

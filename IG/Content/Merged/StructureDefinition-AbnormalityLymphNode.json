@@ -391,7 +391,7 @@
       ]
     }
   ],
-  "description": "<b>LymphNode Observation</b>",
+  "description": "<b>LymphNode Abnormality Observation</b>\n\nThis resource and its referenced child resources contains \ninformation about a lymph node abnormality observation",
   "fhirVersion": "4.0.0",
   "kind": "resource",
   "abstract": false,
@@ -403,7 +403,8 @@
       {
         "id": "Observation",
         "path": "Observation",
-        "short": "LymphNode Observation",
+        "short": "LymphNode Abnormality Observation",
+        "definition": "This resource and its referenced child resources contains \ninformation about a lymph node abnormality observation",
         "base": {
           "path": "Observation",
           "min": 0,
