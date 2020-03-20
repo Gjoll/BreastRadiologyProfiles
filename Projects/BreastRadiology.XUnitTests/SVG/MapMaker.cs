@@ -6,6 +6,7 @@ using System.Diagnostics;
 using System.Drawing;
 using System.Linq;
 using System.Text;
+using Microsoft.VisualStudio.TestTools.UnitTesting;
 
 namespace BreastRadiology.XUnitTests
 {
@@ -90,6 +91,14 @@ namespace BreastRadiology.XUnitTests
             return node;
         }
 
+        public bool AlwaysShowChildren = false;
+        bool ShowChildren(dynamic link)
+        {
+            if (this.AlwaysShowChildren == true)
+                return true;
+            return link.ShowChildren.ToObject<Boolean>();
+        }
+
         protected void DirectLink(SENodeGroup group,
             ResourceMap.Node mapNode,
             dynamic link)
@@ -98,10 +107,11 @@ namespace BreastRadiology.XUnitTests
 
             void CreateDirectNode(SENodeGroup g)
             {
-                if (this.map.TryGetNode(linkTargetUrl, out ResourceMap.Node linkTargetNode) == false)
-                    throw new Exception("ResourceMap.Node '{link.ResourceUrl}' not found");
-                SENode node = this.CreateResourceNode(linkTargetNode, link);
-                g.AppendNode(node);
+                if (this.map.TryGetNode(linkTargetUrl, out ResourceMap.Node linkTargetNode) == true)
+                {
+                    SENode node = this.CreateResourceNode(linkTargetNode, link);
+                    g.AppendNode(node);
+                }
             }
 
             dynamic[] childMapLinks = new Object[0];
@@ -109,15 +119,18 @@ namespace BreastRadiology.XUnitTests
             ResourceMap.Node childMapNode = null;
 
             bool linkToLastGroup = false;
-            if (link.ShowChildren.ToObject<Boolean>())
+            if (ShowChildren(link))
             {
-                childMapNode = this.map.GetNode(linkTargetUrl);
-                childMapLinks = childMapNode.LinksByLinkType(this.linkTypes).ToArray();
-                if (childMapLinks.Length > 0)
-                    linkToLastGroup = !this.DifferentChildren(this.previousChildLinks, childMapLinks);
+                if (this.map.TryGetNode(linkTargetUrl, out childMapNode) == true)
+                {
+                    childMapNode = this.map.GetNode(linkTargetUrl);
+                    childMapLinks = childMapNode.LinksByLinkType(this.linkTypes).ToArray();
+                    if (childMapLinks.Length > 0)
+                        linkToLastGroup = !this.DifferentChildren(this.previousChildLinks, childMapLinks);
+                }
             }
 
-            if (linkToLastGroup)
+            if ((linkToLastGroup) & (group.Children.Count() > 0))
             {
                 SENodeGroup groupChild = group.Children.Last();
                 CreateDirectNode(groupChild);
@@ -126,7 +139,7 @@ namespace BreastRadiology.XUnitTests
             {
                 SENodeGroup groupChild = group.AppendChild("", this.showCardinality);
                 CreateDirectNode(groupChild);
-                if (link.ShowChildren.ToObject<Boolean>())
+                if (ShowChildren(link))
                     this.AddChildren(childMapNode,
                         childMapLinks,
                         groupChild);
@@ -234,7 +247,7 @@ namespace BreastRadiology.XUnitTests
                             new String[0],
                             true);
 
-                        if (link.ShowChildren.ToObject<Boolean>())
+                        if (ShowChildren(link))
                         {
                             var childMapNode = this.map.GetNode(reference);
                             this.AddChildren(childMapNode, refGroup);
