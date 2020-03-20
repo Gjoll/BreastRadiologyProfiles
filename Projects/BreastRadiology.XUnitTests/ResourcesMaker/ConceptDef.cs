@@ -64,7 +64,7 @@ namespace BreastRadiology.XUnitTests
                 }
 
                 if (String.IsNullOrEmpty(this.modalities) == false)
-                    sb.AppendLine(this.modalities);
+                    WriteParagraphs(new string[] { this.modalities });
                 return sb.ToString();
             }
         }

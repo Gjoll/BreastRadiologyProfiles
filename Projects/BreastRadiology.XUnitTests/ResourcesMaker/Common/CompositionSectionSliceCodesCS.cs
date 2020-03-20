@@ -53,22 +53,22 @@ namespace BreastRadiology.XUnitTests
                     {
                         new ConceptDef()
                             .SetCode(Self.SectionCodeReport)
-                            .SetDefinition("Slicing CompositionSection Code - Report"),
+                            .SetDefinition("Slicing CompositionSection Code - Report."),
                         new ConceptDef()
                             .SetCode(Self.SectionCodeImpressions)
-                            .SetDefinition("Slicing CompositionSection Code - Impressions"),
+                            .SetDefinition("Slicing CompositionSection Code - Impressions."),
                         new ConceptDef()
                             .SetCode(Self.SectionCodeRelatedResources)
-                            .SetDefinition("Slicing CompositionSection Code - Related Resources"),
+                            .SetDefinition("Slicing CompositionSection Code - Related Resources."),
                         new ConceptDef()
                             .SetCode(Self.SectionCodeRecommendations)
-                            .SetDefinition("Slicing CompositionSection Code - Recommendations"),
+                            .SetDefinition("Slicing CompositionSection Code - Recommendations."),
                         new ConceptDef()
                             .SetCode(Self.SectionCodeFindingsLeftBreast)
-                            .SetDefinition("Slicing CompositionSection Code - Findings Left Breast"),
+                            .SetDefinition("Slicing CompositionSection Code - Findings Left Breast."),
                         new ConceptDef()
                             .SetCode(Self.SectionCodeFindingsRightBreast)
-                            .SetDefinition("Slicing CompositionSection Code - Findings Right Breast")
+                            .SetDefinition("Slicing CompositionSection Code - Findings Right Breast.")
                     })
         );
     }

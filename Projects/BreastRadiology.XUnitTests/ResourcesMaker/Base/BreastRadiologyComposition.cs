@@ -139,10 +139,11 @@ namespace BreastRadiology.XUnitTests
 
                         sectionSlice.ElementDefinition
                             .Single()
-                            .SetShort($"Report Section")
+                            .SetShort($"Report Section.")
                             .SetDefinition(
                                 new Markdown()
-                                    .Paragraph($"This section references the single required Breast Radiology Report'.")
+                                    .Paragraph($"This section references the Breast Radiology Report'.")
+                                    .Paragraph($"One and only one Breast Radiology Report must be included in this section.'.")
                             )
                             .MustSupport();
                         ;
@@ -175,7 +176,7 @@ namespace BreastRadiology.XUnitTests
                             ;
                         sectionSlice.ElementDefinition
                             .Single()
-                            .SetShort($"Impressions Section")
+                            .SetShort($"Impressions Section.")
                             .SetDefinition(
                                 new Markdown()
                                     .Paragraph(
@@ -211,7 +212,7 @@ namespace BreastRadiology.XUnitTests
                             ;
                         sectionSlice.ElementDefinition
                             .Single()
-                            .SetShort($"Findings Section Right Breast")
+                            .SetShort($"Findings Section Right Breast.")
                             .SetDefinition(
                                 new Markdown()
                                     .Paragraph(
@@ -247,7 +248,7 @@ namespace BreastRadiology.XUnitTests
                             ;
                         sectionSlice.ElementDefinition
                             .Single()
-                            .SetShort($"Findings Section Left Breast")
+                            .SetShort($"Findings Section Left Breast.")
                             .SetDefinition(
                                 new Markdown()
                                     .Paragraph(

@@ -49,16 +49,17 @@ namespace BreastRadiology.XUnitTests
                         out ElementTreeSlice slice);
 
                     ElementDefinition sliceDef = slice.ElementDefinition
-                            .SetShort($"Observed Distribution Region Size component")
+                            .SetShort($"Observed Distribution Region Size component.")
                             .SetDefinition(new Markdown()
-                                .Paragraph(
-                                    $"This component slice contains the size of an region inside of which there ",
-                                    $"is a distribution of abnormalities.",
-                                    $"There may be one, two, or three values indicating a size of",
-                                    $"one dimension (length), two dimensions (area), or three dimensions (volume).",
-                                    $"Each dimension can be a quantity (i.e. 5), or a range (1 to 5).",
-                                    $"If the lower bound of the range is set but not the upper bound, then the size is {{lower bound}} or greater.",
-                                    $"If the upper bound of the range is set but not the lower bound, then the size is {{upper bound}} or less.")
+                                .Paragraph($"This component slice contains the size of an region inside of which there ",
+                                             $"is a distribution of abnormalities.")
+                                .Paragraph($"There may be one, two, or three values indicating a size of",
+                                           $"one dimension (length), two dimensions (area), or three dimensions (volume).")
+                                .Paragraph($"Each dimension can be a quantity (i.e. 5), or a range (1 to 5).")
+                                .Paragraph($"If the lower bound of the range is set but not the upper bound, ",
+                                           $"then the size is {{lower bound}} or greater.")
+                                .Paragraph($"If the upper bound of the range is set but not the lower bound, ",
+                                           $"then the size is {{upper bound}} or less.")
                             )
                             .SetComment(componentDefinition)
                         ;

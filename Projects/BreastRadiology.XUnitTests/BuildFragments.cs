@@ -196,66 +196,6 @@ namespace BreastRadiology.XUnitTests
         }
 
         [TestMethod]
-        public void ValidateOutputResources()
-        {
-            String rDir = Path.Combine(this.guideDir,
-                "input",
-                "resources");
-            FhirValidator fv = new FhirValidator();
-            fv.StatusErrors += this.StatusErrors;
-            fv.StatusInfo += this.StatusInfo;
-            fv.StatusWarnings += this.StatusWarnings;
-
-            bool success = fv.ValidateDir(rDir, "*.json", "4.0.0");
-            StringBuilder sb = new StringBuilder();
-            //fv.FormatMessages(sb);
-            //Trace.WriteLine(sb.ToString());
-            Assert.IsTrue(success);
-            Assert.IsTrue(fv.HasErrors == false);
-            Trace.WriteLine("Validation complete");
-        }
-
-        [TestMethod]
-        public void SDCheckInputResources()
-        {
-            SDChecker fv = new SDChecker();
-            fv.StatusErrors += this.StatusErrors;
-            fv.StatusInfo += this.StatusInfo;
-            fv.StatusWarnings += this.StatusWarnings;
-            fv.CheckDir(this.resourcesDir, "*.json");
-        }
-
-        [TestMethod]
-        public void ValidateBrian()
-        {
-            FhirValidator fv = new FhirValidator(Path.Combine(this.cacheDir, "validation.xml"));
-            fv.StatusErrors += this.StatusErrors;
-            fv.StatusInfo += this.StatusInfo;
-            fv.StatusWarnings += this.StatusWarnings;
-            bool success = fv.ValidateDir(@"c:\Temp\Brian", "*.json", "4.0.0");
-            StringBuilder sb = new StringBuilder();
-            fv.FormatMessages(sb);
-            Trace.WriteLine(sb.ToString());
-            Assert.IsTrue(success);
-            Trace.WriteLine("Validation complete");
-        }
-
-        [TestMethod]
-        public void ValidateInputResources()
-        {
-            FhirValidator fv = new FhirValidator(Path.Combine(this.cacheDir, "validation.xml"));
-            fv.StatusErrors += this.StatusErrors;
-            fv.StatusInfo += this.StatusInfo;
-            fv.StatusWarnings += this.StatusWarnings;
-            bool success = fv.ValidateDir(this.resourcesDir, "*.json", "4.0.0");
-            //StringBuilder sb = new StringBuilder();
-            //fv.FormatMessages(sb);
-            //Trace.WriteLine(sb.ToString());
-            //Assert.IsTrue(success);
-            Trace.WriteLine("Validation complete");
-        }
-
-        [TestMethod]
         public void B3_PatchIntroDocs()
         {
             DateTime start = DateTime.Now;
@@ -510,9 +450,69 @@ namespace BreastRadiology.XUnitTests
             this.B6_RunPublisher();
         }
 
+        [TestMethod]
+        public void Z_ValidateOutputResources()
+        {
+            String rDir = Path.Combine(this.guideDir,
+                "input",
+                "resources");
+            FhirValidator fv = new FhirValidator();
+            fv.StatusErrors += this.StatusErrors;
+            fv.StatusInfo += this.StatusInfo;
+            fv.StatusWarnings += this.StatusWarnings;
+
+            bool success = fv.ValidateDir(rDir, "*.json", "4.0.0");
+            StringBuilder sb = new StringBuilder();
+            //fv.FormatMessages(sb);
+            //Trace.WriteLine(sb.ToString());
+            Assert.IsTrue(success);
+            Assert.IsTrue(fv.HasErrors == false);
+            Trace.WriteLine("Validation complete");
+        }
 
         [TestMethod]
-        public void TestFile()
+        public void Z_SDCheckInputResources()
+        {
+            SDChecker fv = new SDChecker();
+            fv.StatusErrors += this.StatusErrors;
+            fv.StatusInfo += this.StatusInfo;
+            fv.StatusWarnings += this.StatusWarnings;
+            fv.CheckDir(this.resourcesDir, "*.json");
+        }
+
+        [TestMethod]
+        public void Z_ValidateBrian()
+        {
+            FhirValidator fv = new FhirValidator(Path.Combine(this.cacheDir, "validation.xml"));
+            fv.StatusErrors += this.StatusErrors;
+            fv.StatusInfo += this.StatusInfo;
+            fv.StatusWarnings += this.StatusWarnings;
+            bool success = fv.ValidateDir(@"c:\Temp\Brian", "*.json", "4.0.0");
+            StringBuilder sb = new StringBuilder();
+            fv.FormatMessages(sb);
+            Trace.WriteLine(sb.ToString());
+            Assert.IsTrue(success);
+            Trace.WriteLine("Validation complete");
+        }
+
+        [TestMethod]
+        public void Z_ValidateInputResources()
+        {
+            FhirValidator fv = new FhirValidator(Path.Combine(this.cacheDir, "validation.xml"));
+            fv.StatusErrors += this.StatusErrors;
+            fv.StatusInfo += this.StatusInfo;
+            fv.StatusWarnings += this.StatusWarnings;
+            bool success = fv.ValidateDir(this.resourcesDir, "*.json", "4.0.0");
+            //StringBuilder sb = new StringBuilder();
+            //fv.FormatMessages(sb);
+            //Trace.WriteLine(sb.ToString());
+            //Assert.IsTrue(success);
+            Trace.WriteLine("Validation complete");
+        }
+
+
+        [TestMethod]
+        public void Z_TestFile()
         {
             FhirStructureDefinitions.Create(this.cacheDir);
             FhirStructureDefinitions.Self.StoreFhirElements();
@@ -530,7 +530,7 @@ namespace BreastRadiology.XUnitTests
         }
 
         [TestMethod]
-        public void BuildSpreadSheetOfItems()
+        public void Z_BuildSpreadSheetOfItems()
         {
             DataTable dt;
 
@@ -596,55 +596,55 @@ namespace BreastRadiology.XUnitTests
             workbook.SaveAs(savePath);
         }
 
-        [TestMethod]
-        public void MergeOneFile()
-        {
-            DateTime start = DateTime.Now;
-            bool saveMergedFiles = true;
+        //[TestMethod]
+        //public void Z_MergeOneFile()
+        //{
+        //    DateTime start = DateTime.Now;
+        //    bool saveMergedFiles = true;
 
-            try
-            {
-                if (Directory.Exists(this.resourcesDir) == false)
-                    Directory.CreateDirectory(this.resourcesDir);
+        //    try
+        //    {
+        //        if (Directory.Exists(this.resourcesDir) == false)
+        //            Directory.CreateDirectory(this.resourcesDir);
 
-                if (saveMergedFiles)
-                {
-                    if (Directory.Exists(this.mergedDir) == false)
-                        Directory.CreateDirectory(this.mergedDir);
-                }
-                else
-                {
-                    if (Directory.Exists(this.mergedDir) == true)
-                        Directory.Delete(this.mergedDir, true);
-                }
+        //        if (saveMergedFiles)
+        //        {
+        //            if (Directory.Exists(this.mergedDir) == false)
+        //                Directory.CreateDirectory(this.mergedDir);
+        //        }
+        //        else
+        //        {
+        //            if (Directory.Exists(this.mergedDir) == true)
+        //                Directory.Delete(this.mergedDir, true);
+        //        }
 
-                PreFhirGenerator preFhir = new PreFhirGenerator(this.fc, this.cacheDir);
-                preFhir.StatusErrors += this.StatusErrors;
-                preFhir.StatusInfo += this.StatusInfo;
-                preFhir.StatusWarnings += this.StatusWarnings;
-                preFhir.AddDir(this.fragmentDir, "*.json");
-                if (saveMergedFiles)
-                    preFhir.MergedDir = this.mergedDir;
-                preFhir.BreakOnElementId = "Extension.extension:laterality.url";
-                preFhir.BreakOnTitle = "BreastBodyLocationExtension";
-                preFhir.ProcessOne(this.fragmentDir, "BreastBodyLocationExtension");
-                preFhir.SaveResources(this.resourcesDir);
+        //        PreFhirGenerator preFhir = new PreFhirGenerator(this.fc, this.cacheDir);
+        //        preFhir.StatusErrors += this.StatusErrors;
+        //        preFhir.StatusInfo += this.StatusInfo;
+        //        preFhir.StatusWarnings += this.StatusWarnings;
+        //        preFhir.AddDir(this.fragmentDir, "*.json");
+        //        if (saveMergedFiles)
+        //            preFhir.MergedDir = this.mergedDir;
+        //        preFhir.BreakOnElementId = "Extension.extension:laterality.url";
+        //        preFhir.BreakOnTitle = "BreastBodyLocationExtension";
+        //        preFhir.ProcessOne(this.fragmentDir, "BreastBodyLocationExtension");
+        //        preFhir.SaveResources(this.resourcesDir);
 
-                if (preFhir.HasErrors)
-                {
-                    StringBuilder sb = new StringBuilder();
-                    preFhir.FormatErrorMessages(sb);
-                    Trace.WriteLine(sb.ToString());
-                    Debug.Assert(false);
-                }
-            }
-            catch (Exception err)
-            {
-                Trace.WriteLine(err.Message);
-                Assert.IsTrue(false);
-            }
+        //        if (preFhir.HasErrors)
+        //        {
+        //            StringBuilder sb = new StringBuilder();
+        //            preFhir.FormatErrorMessages(sb);
+        //            Trace.WriteLine(sb.ToString());
+        //            Debug.Assert(false);
+        //        }
+        //    }
+        //    catch (Exception err)
+        //    {
+        //        Trace.WriteLine(err.Message);
+        //        Assert.IsTrue(false);
+        //    }
 
-            TimeSpan span = DateTime.Now - start;
-        }
+        //    TimeSpan span = DateTime.Now - start;
+        //}
     }
 }

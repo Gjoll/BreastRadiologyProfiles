@@ -202,7 +202,7 @@ namespace BreastRadiology.XUnitTests
             slice.ElementDefinition.Max = "*";
 
             slice.ElementDefinition
-                .SetShort($"{name} extension")
+                .SetShort($"{name} extension.")
                 .SetDefinition(new Markdown()
                     .Paragraph($"This extension slice contains the {name} extension."))
                 .SetComment(ResourcesMaker.componentDefinition)
@@ -540,7 +540,7 @@ namespace BreastRadiology.XUnitTests
 
             ElementTreeSlice slice = this.AppendSlice("component", sliceName, minCardinality, maxCardinality);
             slice.ElementDefinition
-                .SetShort($"{componentName} component")
+                .SetShort($"{componentName} component.")
                 .SetDefinition(sliceDefinition)
                 .SetComment(ResourcesMaker.componentDefinition)
                 ;
@@ -658,7 +658,7 @@ namespace BreastRadiology.XUnitTests
             String baseName = sliceElementDef.ElementDefinition.Path.LastPathPart();
             ElementTreeSlice retVal = this.SliceByUrlTarget(sliceElementDef, profile.Url, min, max);
             retVal.ElementDefinition
-                .SetShort($"'{profile.Title}' reference")
+                .SetShort($"'{profile.Title}' reference.")
                 .SetDefinition(
                     new Markdown()
                         .Paragraph($"This slice references the target '{profile.Title}'.")
@@ -679,11 +679,10 @@ namespace BreastRadiology.XUnitTests
         {
             String baseName = sliceElementDef.ElementDefinition.Path.LastPathPart();
             ElementDefinition sliceDef = this.SliceByUrlTarget(sliceElementDef, profile.Url, min, max).ElementDefinition
-                    .SetShort($"'{profile.Title}' reference")
+                    .SetShort($"'{profile.Title}' reference.")
                     .SetDefinition(
                         new Markdown()
                             .Paragraph($"This slice references the target '{profile.Title}'.")
-                            .ValidModalities(Modalities.MG)
                     )
                 ;
             this.AddTargetLink(profile.Url,

@@ -114,7 +114,7 @@ namespace BreastRadiology.XUnitTests
                         //- Regions
                         //new ConceptDef()
                         //    .SetCode("RetroaReolar", "RetroaReolar Region")
-                        //    .SetDefinition("Central location in the anterior third of the breast close to the nipple"),
+                        //    .SetDefinition("Central location in the anterior third of the breast close to the nipple."),
                     })
         );
 
@@ -633,33 +633,18 @@ namespace BreastRadiology.XUnitTests
                         "CodeableConcept",
                         binding.Url);
                 }
+                /*
+                 * Distance from Nipple
+                 * Distance from ChestWall
+                 * Distance from Skin
+                 */
                 {
                     StructureDefinition extensionStructDef = Self.BodyDistanceFromExtension.Value();
-                    ElementTreeSlice extensionSlice = e.ApplyExtension("distanceFromNipple", extensionStructDef, true);
+                    ElementTreeSlice extensionSlice = e.ApplyExtension("distanceFromLandmark", extensionStructDef, true);
                     extensionSlice.ElementDefinition.ZeroToOne();
                     e.AddExtensionLink(extensionStructDef.Url,
                         new SDefEditor.Cardinality(extensionSlice.ElementDefinition),
-                        "Distance From Nipple",
-                        Global.ElementAnchor(extensionSlice.ElementDefinition),
-                        false);
-                }
-                {
-                    StructureDefinition extensionStructDef = Self.BodyDistanceFromExtension.Value();
-                    ElementTreeSlice extensionSlice =
-                        e.ApplyExtension("distanceFromChestWall", extensionStructDef, true);
-                    extensionSlice.ElementDefinition.ZeroToOne();
-                    e.AddExtensionLink(extensionStructDef.Url,
-                        new SDefEditor.Cardinality(extensionSlice.ElementDefinition),
-                        "Distance From Chest Wall",
-                        Global.ElementAnchor(extensionSlice.ElementDefinition), false);
-                }
-                {
-                    StructureDefinition extensionStructDef = Self.BodyDistanceFromExtension.Value();
-                    ElementTreeSlice extensionSlice = e.ApplyExtension("distanceFromSkin", extensionStructDef, true);
-                    extensionSlice.ElementDefinition.ZeroToOne();
-                    e.AddExtensionLink(extensionStructDef.Url,
-                        new SDefEditor.Cardinality(extensionSlice.ElementDefinition),
-                        "Distance From Skin",
+                        "Distance From Landmark, like nipple, chest wall, skin.",
                         Global.ElementAnchor(extensionSlice.ElementDefinition),
                         false);
                 }

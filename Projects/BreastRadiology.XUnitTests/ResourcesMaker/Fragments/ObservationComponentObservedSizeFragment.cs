@@ -39,7 +39,7 @@ namespace BreastRadiology.XUnitTests
                         out ElementTreeSlice slice);
 
                     ElementDefinition sliceDef = slice.ElementDefinition
-                            .SetShort($"Observed Size component")
+                            .SetShort($"Observed Size component.")
                             .SetDefinition(new Markdown()
                                 .Paragraph($"This component slice contains the size of an item observed.",
                                     $"There may be one, two, or three values indicating a size of",

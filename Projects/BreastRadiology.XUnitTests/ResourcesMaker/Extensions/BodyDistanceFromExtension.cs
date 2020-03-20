@@ -58,7 +58,7 @@ namespace BreastRadiology.XUnitTests
                         new Markdown()
                             .Paragraph("Body landmark which defines the origin of the measurement.")
                             .Paragraph(
-                                "Currently the value set this is bound to does not contain the requiored breast landmarks like nipple."),
+                                "Currently the value set this is bound to does not contain the required breast landmarks like nipple."),
                         out ElementTreeSlice extensionSlice,
                         out ElementTreeNode valueXNode
                     );

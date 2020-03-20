@@ -115,84 +115,84 @@ namespace BreastRadiology.XUnitTests
                     {
                         new ConceptDef()
                             .SetCode(Self.ComponentSliceCodeAbnormalityCystType)
-                            .SetDefinition("Code to identify the component slice AbnormalityCystType"),
+                            .SetDefinition("Code to identify the component slice AbnormalityCystType."),
                         new ConceptDef()
                             .SetCode(Self.ComponentSliceCodeAbnormalityDuctType)
-                            .SetDefinition("Code to identify the component slice AbnormalityDuctType"),
+                            .SetDefinition("Code to identify the component slice AbnormalityDuctType."),
                         new ConceptDef()
                             .SetCode(Self.ComponentSliceCodeAbnormalityFibroAdenomaType)
-                            .SetDefinition("Code to identify the component slice AbnormalityFibroAdenomaType"),
+                            .SetDefinition("Code to identify the component slice AbnormalityFibroAdenomaType."),
                         new ConceptDef()
                             .SetCode(Self.ComponentSliceCodeAbnormalityForeignObjectType)
-                            .SetDefinition("Code to identify the component slice AbnormalityForeignObjectType"),
+                            .SetDefinition("Code to identify the component slice AbnormalityForeignObjectType."),
                         new ConceptDef()
                             .SetCode(Self.ComponentSliceCodeAbnormalityLymphNodeType)
-                            .SetDefinition("Code to identify the component slice AbnormalityLymphNodeType"),
+                            .SetDefinition("Code to identify the component slice AbnormalityLymphNodeType."),
                         new ConceptDef()
                             .SetCode(Self.ComponentSliceCodeAbnormalityMassType)
-                            .SetDefinition("Code to identify the component slice AbnormalityMassType"),
+                            .SetDefinition("Code to identify the component slice AbnormalityMassType."),
 
                         new ConceptDef()
                             .SetCode(Self.ComponentSliceCodeBiRads)
-                            .SetDefinition("Code to identify the component slice BiRads"),
+                            .SetDefinition("Code to identify the component slice BiRads."),
                         new ConceptDef()
                             .SetCode(Self.ComponentSliceCodeConsistentWithValue)
-                            .SetDefinition("Code to identify the component slice ConsistentWithValue"),
+                            .SetDefinition("Code to identify the component slice ConsistentWithValue."),
                         new ConceptDef()
                             .SetCode(Self.ComponentSliceCodeConsistentWithQualifier)
-                            .SetDefinition("Code to identify the component slice ConsistentWithQualifier"),
+                            .SetDefinition("Code to identify the component slice ConsistentWithQualifier."),
                         new ConceptDef()
                             .SetCode(Self.ComponentSliceCodeCorrespondsWith)
-                            .SetDefinition("Code to identify the component slice CorrespondsWith"),
+                            .SetDefinition("Code to identify the component slice CorrespondsWith."),
                         new ConceptDef()
                             .SetCode(Self.ComponentSliceCodePreviouslyDemonstratedBy)
-                            .SetDefinition("Code to identify the component slice Previously Demonstrated By"),
+                            .SetDefinition("Code to identify the component slice Previously Demonstrated By."),
 
                         new ConceptDef()
                             .SetCode(Self.ComponentSliceCodeMargin)
-                            .SetDefinition("Code to identify the component slice Margin"),
+                            .SetDefinition("Code to identify the component slice Margin."),
                         new ConceptDef()
                             .SetCode(Self.ComponentSliceCodeMGDensity)
-                            .SetDefinition("Code to identify the component slice MGDensity"),
+                            .SetDefinition("Code to identify the component slice MGDensity."),
                         new ConceptDef()
                             .SetCode(Self.ComponentSliceCodeNotPreviouslySeen)
-                            .SetDefinition("Code to identify the component slice Not Previously Seen"),
+                            .SetDefinition("Code to identify the component slice Not Previously Seen."),
                         new ConceptDef()
                             .SetCode(Self.ComponentSliceCodeObservedChanges)
-                            .SetDefinition("Code to identify the component slice Observed Changes"),
+                            .SetDefinition("Code to identify the component slice Observed Changes."),
                         new ConceptDef()
                             .SetCode(Self.ComponentSliceCodeObservedCount)
-                            .SetDefinition("Code to identify the component slice ObservedCount"),
+                            .SetDefinition("Code to identify the component slice ObservedCount."),
                         new ConceptDef()
                             .SetCode(Self.ComponentSliceCodeObservedDistribution)
-                            .SetDefinition("Code to identify the component slice ObservedDistribution"),
+                            .SetDefinition("Code to identify the component slice ObservedDistribution."),
                         new ConceptDef()
                             .SetCode(Self.ComponentSliceCodeObservedSize)
-                            .SetDefinition("Code to identify the component slice ObservedSize"),
+                            .SetDefinition("Code to identify the component slice ObservedSize."),
                         new ConceptDef()
                             .SetCode(Self.ComponentSliceCodeAssociatedFeatureType)
-                            .SetDefinition("Code to identify the component slice ObservedFeatureType"),
+                            .SetDefinition("Code to identify the component slice ObservedFeatureType."),
 
                         new ConceptDef()
                             .SetCode(Self.ComponentSliceCodeOrientation)
-                            .SetDefinition("Code to identify the component slice Orientation"),
+                            .SetDefinition("Code to identify the component slice Orientation."),
                         new ConceptDef()
                             .SetCode(Self.ComponentSliceCodeShape)
-                            .SetDefinition("Code to identify the component slice Shape"),
+                            .SetDefinition("Code to identify the component slice Shape."),
 
                         new ConceptDef()
                             .SetCode(Self.MGComponentSliceCodeAbnormalityAsymmetryType)
-                            .SetDefinition("Code to identify the component slice MGCodeAbnormalityAsymmetryType"),
+                            .SetDefinition("Code to identify the component slice MGCodeAbnormalityAsymmetryType."),
                         new ConceptDef()
                             .SetCode(Self.MGComponentSliceCodeAbnormalityDensityType)
-                            .SetDefinition("Code to identify the component slice MGCodeAbnormalityDensityType"),
+                            .SetDefinition("Code to identify the component slice MGCodeAbnormalityDensityType."),
 
                         new ConceptDef()
                             .SetCode(Self.MGComponentSliceCodeCalcificationType)
-                            .SetDefinition("Code to identify the component slice MGCalcificationType"),
+                            .SetDefinition("Code to identify the component slice MGCalcificationType."),
                         new ConceptDef()
                             .SetCode(Self.MGCodeCalcificationDistribution)
-                            .SetDefinition("Code to identify the component slice MGCalcificationDistribution"),
+                            .SetDefinition("Code to identify the component slice MGCalcificationDistribution."),
                     })
         );
     }

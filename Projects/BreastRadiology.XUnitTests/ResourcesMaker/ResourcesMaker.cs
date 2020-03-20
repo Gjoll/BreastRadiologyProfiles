@@ -54,7 +54,7 @@ namespace BreastRadiology.XUnitTests
         const PublicationStatus ProfileStatus = PublicationStatus.Draft;
 
         public static Markdown componentDefinition = new Markdown()
-            .Paragraph($"This is one component of a group of components that comprise the observation.");
+            .Paragraph($"This is one component of a group of components that are part of the observation.");
 
         Dictionary<String, Resource> resources = new Dictionary<string, Resource>();
 

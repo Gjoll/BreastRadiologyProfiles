@@ -51,7 +51,7 @@ namespace BreastRadiology.XUnitTests
                     String baseName = sliceElementDef.ElementDefinition.Path.LastPathPart();
                     ElementTreeSlice treeSlice = e.SliceByUrlTarget(sliceElementDef, Global.ObservationUrl, 0, "1");
                     treeSlice.ElementDefinition
-                        .SetShort($"Tumor Observation reference")
+                        .SetShort($"Tumor Observation reference.")
                         .SetDefinition(
                             new Markdown()
                                 .Paragraph($"This slice references the index tumor.")

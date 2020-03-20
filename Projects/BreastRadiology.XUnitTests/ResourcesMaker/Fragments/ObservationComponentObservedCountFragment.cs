@@ -35,12 +35,14 @@ namespace BreastRadiology.XUnitTests
                 e.SliceValueXByType(slice, new string[] {"Quantity", "Range"});
 
                 ElementDefinition sliceDef = slice.ElementDefinition
-                        .SetShort($"Observed Count component")
+                        .SetShort($"Observed Count component.")
                         .SetDefinition(new Markdown()
                             .Paragraph($"This component slice contains the number of items observed.",
-                                $"This can be a quantity (i.e. 5), or a range (1 to 5).",
-                                $"If the lower bound of the range is set but not the upper bound, then it means {{lower bound}} or more.",
-                                $"If the lower bound of the range is not set but not the upper bound is, then it means {{upper bound}} or less."
+                                $"This can be a quantity (i.e. 5), or a range (1 to 5).")
+                            .Paragraph($"If the lower bound of the range is set but not the upper bound,",
+                                       $"then it means {{lower bound}} or more.")
+                            .Paragraph($"If the lower bound of the range is not set but the upper bound is,",
+                                       $"then it means {{upper bound}} or less."
                             )
                         )
                         .SetComment(componentDefinition)
