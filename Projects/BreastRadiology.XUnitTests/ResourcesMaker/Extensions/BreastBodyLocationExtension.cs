@@ -641,7 +641,7 @@ namespace BreastRadiology.XUnitTests
                 {
                     StructureDefinition extensionStructDef = Self.BodyDistanceFromExtension.Value();
                     ElementTreeSlice extensionSlice = e.ApplyExtension("distanceFromLandmark", extensionStructDef, true);
-                    extensionSlice.ElementDefinition.ZeroToOne();
+                    extensionSlice.ElementDefinition.ZeroToMany();
                     e.AddExtensionLink(extensionStructDef.Url,
                         new SDefEditor.Cardinality(extensionSlice.ElementDefinition),
                         "Distance From Landmark, like nipple, chest wall, skin.",

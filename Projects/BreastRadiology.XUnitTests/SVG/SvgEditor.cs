@@ -24,8 +24,7 @@ namespace BreastRadiology.XUnitTests
         SvgDoc doc;
         SvgRoot root;
 
-        public float screenX = -1;
-        public float screenY = -1;
+        public String RenderTestPoint;
         public float BorderWidth { get; set; } = 0.125f;
         public float LineHeight { get; set; } = 1.25f;
         public float BorderMargin { get; set; } = 0.5f;
@@ -38,6 +37,9 @@ namespace BreastRadiology.XUnitTests
         public float RectRy { get; set; } = 0.25f;
 
         String ToPx(float value) => $"{15 * value}";
+
+        float screenX = -1;
+        float screenY = -1;
 
         float maxWidth = 0;
         float maxHeight = 0;
@@ -327,6 +329,7 @@ namespace BreastRadiology.XUnitTests
         {
             const float CharMod = 0.7f;
 
+            Debug.Assert((this.RenderTestPoint == null) || node.AllText().Contains(RenderTestPoint) == false);
             height = node.TextLines.Count * this.LineHeight + 2 * this.BorderMargin;
             width = node.Width * CharMod + 2 * this.BorderMargin;
 

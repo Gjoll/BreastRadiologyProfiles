@@ -19,7 +19,7 @@ namespace BreastRadiology.XUnitTests
             {
                 SDefEditor e = Self.CreateEditor("TumorSatellite",
                             "Tumor Satellite",
-                            "TumorSatellite",
+                            "Tumor Satellite",
                             Global.ObservationUrl,
                             $"{Group_CommonResources}/TumorSatellite",
                             "ObservationLeaf")

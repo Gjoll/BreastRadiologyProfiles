@@ -14,6 +14,52 @@ namespace BreastRadiology.XUnitTests
 {
     partial class ResourcesMaker : ConverterBase
     {
+
+
+        CSTaskVar BreastLandmarkCS = new CSTaskVar(
+            (out CodeSystem cs) =>
+                cs = Self.CreateCodeSystem(
+                    "BreastLandmarkCS",
+                    "Breast Landmark CodeSystem",
+                    "Breast Landmark/CodeSystem",
+                    "Breast Landmark CodeSystem defines the various breast body locations that can be used as a land mark.",
+                    Group_CommonCodesCS,
+                    new ConceptDef[]
+                    {
+                        #region Codes
+                        new ConceptDef()
+                            .SetCode("Nipple")
+                            .SetDisplay("Nipple")
+                            .SetDefinition("Breast nipple land mark.")
+                        ,
+                        new ConceptDef()
+                            .SetCode("ChestWall")
+                            .SetDisplay("ChestWall")
+                            .SetDefinition("Breast nipple land mark.")
+                        ,
+                        new ConceptDef()
+                            .SetCode("Skin")
+                            .SetDisplay("Skin")
+                            .SetDefinition("Skin land mark.")
+                        ,
+                        #endregion // Codes
+                    }
+                )
+        );
+
+
+        VSTaskVar BreastLandmarkVS = new VSTaskVar(
+            (out ValueSet vs) =>
+                vs = Self.CreateValueSet(
+                    "BreastLandmarkVS",
+                    "Breast Landmark  ValueSet",
+                    "Breast Landmark /ValueSet",
+                    "Breast Landmark value set.",
+                    Group_CommonCodesVS,
+                    Self.BreastLandmarkCS.Value()
+                )
+        );
+
         public SDTaskVar BodyDistanceFromExtension = new SDTaskVar(
             (out StructureDefinition s) =>
             {
@@ -48,6 +94,7 @@ namespace BreastRadiology.XUnitTests
                 e.Select("value[x]").Zero();
 
                 extensionNode = e.ConfigureSliceByUrlDiscriminator("extension", true);
+                ValueSet landMarkBinding = Self.BreastLocationQuadrantVS.Value();
 
                 // Slice land mark.
                 {
@@ -62,19 +109,20 @@ namespace BreastRadiology.XUnitTests
                         out ElementTreeSlice extensionSlice,
                         out ElementTreeNode valueXNode
                     );
-
-                    String binding = "http://hl7.org/fhir/ValueSet/body-site";
+                    extensionSlice.ElementDefinition
+                        .Single()
+                        ;
                     valueXNode.ElementDefinition
-                        .Binding(binding, BindingStrength.Extensible)
+                        .Binding(landMarkBinding, BindingStrength.Extensible)
                         .Type("CodeableConcept")
                         .Single()
                         ;
-                    e.AddComponentLink("Land Mark",
+                    e.AddComponentLink("Landmark",
                         new SDefEditor.Cardinality(extensionSlice.ElementDefinition),
                         null,
                         Global.ElementAnchor(extensionSlice.ElementDefinition),
                         "CodeableConcept",
-                        binding);
+                        landMarkBinding.Url);
                 }
                 {
                     String sliceName = "distanceFromLandMark";
@@ -86,7 +134,9 @@ namespace BreastRadiology.XUnitTests
                         new Markdown("Distance from body landmark to body location"),
                         out ElementTreeSlice extensionSlice,
                         out ElementTreeNode valueXNode);
-
+                    extensionSlice.ElementDefinition
+                        .Single()
+                        ;
                     String binding = Self.UnitsOfLengthVS.Value().Url;
                     valueXNode.ElementDefinition
                         .Type("Quantity")
@@ -101,6 +151,7 @@ namespace BreastRadiology.XUnitTests
                         "Quantity",
                         binding);
                 }
+
                 e.IntroDoc
                     .ReviewedStatus("Needs review by KWA")
                     .ReviewedStatus("Needs review by Penrad")

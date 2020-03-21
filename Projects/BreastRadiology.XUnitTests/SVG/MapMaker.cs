@@ -78,6 +78,7 @@ namespace BreastRadiology.XUnitTests
             String[] annotations,
             bool linkFlag = true)
         {
+            Debug.Assert(mapNode.MapName[0] != "TumorSatellite");
             String hRef = null;
             if (linkFlag)
                 hRef = this.HRef(mapNode);

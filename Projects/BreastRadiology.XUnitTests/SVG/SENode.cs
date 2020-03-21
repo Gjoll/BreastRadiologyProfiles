@@ -23,12 +23,12 @@ namespace BreastRadiology.XUnitTests
         /// <summary>
         /// Annotation on the line coming into the node (at line end);
         /// </summary>
-        public String IncomingAnnotation { get; }
+        public String IncomingAnnotation { get; set; }
 
         /// <summary>
         /// Annotation on the line leaving the node (at start of outgoing line);
         /// </summary>
-        public String OutgoingAnnotation { get; }
+        public String OutgoingAnnotation { get; set; }
 
         public SENode(float width,
             Color fillColor,

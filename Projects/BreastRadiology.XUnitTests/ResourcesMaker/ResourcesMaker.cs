@@ -264,6 +264,7 @@ namespace BreastRadiology.XUnitTests
             });
 
             this.resources.Add(Path.Combine(this.resourceDir, $"ValueSet-{name}.json"), vs);
+            Debug.Assert(mapName.Contains("Tumor Satellite") == false);
             vs.AddExtension(Global.ResourceMapNameUrl, new FhirString(mapName));
 
             if (cs == null)

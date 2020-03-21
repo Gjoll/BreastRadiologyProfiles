@@ -14,21 +14,20 @@ namespace BreastRadiology.XUnitTests
     /// </summary>
     class ResourceMapMaker : MapMaker
     {
+        public SvgEditor SvgEditor = new SvgEditor();
         FileCleaner fc;
 
         public ResourceMapMaker(FileCleaner fc,
             ResourceMap map) : base(map)
         {
             this.fc = fc;
-            base.showCardinality = false;
         }
 
         public void Create(String baseUrl, String outputPath)
         {
-            SvgEditor svgEditor = new SvgEditor();
             SENodeGroup rootGroup = this.CreateNodes(baseUrl);
-            svgEditor.Render(rootGroup, true);
-            svgEditor.Save(outputPath);
+            this.SvgEditor.Render(rootGroup, true);
+            this.SvgEditor.Save(outputPath);
             this.fc?.Mark(outputPath);
         }
 

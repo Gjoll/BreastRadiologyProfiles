@@ -19,11 +19,11 @@
     },
     {
       "url": "http://www.fragment.com/maplink",
-      "valueString": "{\r\n  \"LinkType\": \"component\",\r\n  \"ShowChildren\": false,\r\n  \"CardinalityLeft\": \"0..1\",\r\n  \"LinkTarget\": \"Land Mark\",\r\n  \"ComponentHRef\": \"StructureDefinition-{SDName}-definitions.html#Extension.extension:landMark\",\r\n  \"Types\": \"CodeableConcept\",\r\n  \"References\": [\r\n    \"http://hl7.org/fhir/ValueSet/body-site\"\r\n  ]\r\n}"
+      "valueString": "{\r\n  \"LinkType\": \"component\",\r\n  \"ShowChildren\": false,\r\n  \"CardinalityLeft\": \"1..1\",\r\n  \"LinkTarget\": \"Landmark\",\r\n  \"ComponentHRef\": \"StructureDefinition-{SDName}-definitions.html#Extension.extension:landMark\",\r\n  \"Types\": \"CodeableConcept\",\r\n  \"References\": [\r\n    \"http://hl7.org/fhir/us/breast-radiology/ValueSet/BreastLocationQuadrantVS\"\r\n  ]\r\n}"
     },
     {
       "url": "http://www.fragment.com/maplink",
-      "valueString": "{\r\n  \"LinkType\": \"component\",\r\n  \"ShowChildren\": false,\r\n  \"CardinalityLeft\": \"0..1\",\r\n  \"LinkTarget\": \"Distance From LandMark\",\r\n  \"ComponentHRef\": \"StructureDefinition-{SDName}-definitions.html#Extension.extension:distanceFromLandMark\",\r\n  \"Types\": \"Quantity\",\r\n  \"References\": [\r\n    \"http://hl7.org/fhir/us/breast-radiology/ValueSet/UnitsOfLengthVS\"\r\n  ]\r\n}"
+      "valueString": "{\r\n  \"LinkType\": \"component\",\r\n  \"ShowChildren\": false,\r\n  \"CardinalityLeft\": \"1..1\",\r\n  \"LinkTarget\": \"Distance From LandMark\",\r\n  \"ComponentHRef\": \"StructureDefinition-{SDName}-definitions.html#Extension.extension:distanceFromLandMark\",\r\n  \"Types\": \"Quantity\",\r\n  \"References\": [\r\n    \"http://hl7.org/fhir/us/breast-radiology/ValueSet/UnitsOfLengthVS\"\r\n  ]\r\n}"
     }
   ],
   "url": "http://hl7.org/fhir/us/breast-radiology/StructureDefinition/BodyDistanceFromExtension",
@@ -181,7 +181,7 @@
           "extensions",
           "user content"
         ],
-        "min": 0,
+        "min": 1,
         "max": "1",
         "base": {
           "path": "Element.extension",
@@ -324,7 +324,7 @@
         "isSummary": false,
         "binding": {
           "strength": "extensible",
-          "valueSet": "http://hl7.org/fhir/ValueSet/body-site"
+          "valueSet": "http://hl7.org/fhir/us/breast-radiology/ValueSet/BreastLocationQuadrantVS"
         },
         "mapping": [
           {
@@ -344,7 +344,7 @@
           "extensions",
           "user content"
         ],
-        "min": 0,
+        "min": 1,
         "max": "1",
         "base": {
           "path": "Element.extension",
@@ -747,7 +747,7 @@
         "sliceName": "landMark",
         "short": "Body landmark. Origin of distance measurement.",
         "definition": "Body landmark which defines the origin of the measurement.\n\nCurrently the value set this is bound to does not contain the required breast landmarks like nipple.",
-        "min": 0,
+        "min": 1,
         "max": "1",
         "base": {
           "path": "Extension.extension",
@@ -784,7 +784,7 @@
         ],
         "binding": {
           "strength": "extensible",
-          "valueSet": "http://hl7.org/fhir/ValueSet/body-site"
+          "valueSet": "http://hl7.org/fhir/us/breast-radiology/ValueSet/BreastLocationQuadrantVS"
         }
       },
       {
@@ -793,7 +793,7 @@
         "sliceName": "distanceFromLandMark",
         "short": "Distance from landmark",
         "definition": "Distance from body landmark to body location",
-        "min": 0,
+        "min": 1,
         "max": "1",
         "base": {
           "path": "Extension.extension",

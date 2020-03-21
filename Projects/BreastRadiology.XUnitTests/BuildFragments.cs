@@ -249,6 +249,7 @@ namespace BreastRadiology.XUnitTests
                     {
                         ResourceMapMaker resourceMapMaker = new ResourceMapMaker(this.fc, map);
                         resourceMapMaker.AlwaysShowChildren = true;
+                        // resourceMapMaker.SvgEditor.RenderTestPoint = "Tumor Satellite";
                         resourceMapMaker.Create(ResourcesMaker.CreateUrl("BreastRadComposition"),
                             Path.Combine(this.graphicsDir, "TotalProfile.svg"));
                     }
