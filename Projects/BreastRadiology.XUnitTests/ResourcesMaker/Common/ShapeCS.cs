@@ -46,7 +46,7 @@ namespace BreastRadiology.XUnitTests
                             .ValidModalities(Modalities.MG | Modalities.MRI | Modalities.US)
                             .SetSnomedCode("129736006")
                             .SetSnomedDescription("ClinicalFinding | Irregular shaped lesion")
-                            .SetUMLS("A mass that can't be characterized by any specific " +
+                            .SetUMLS("A mass that can't be characterized by any specific ",
                                 "shape.")
                         ,
                         new ConceptDef()
@@ -56,7 +56,7 @@ namespace BreastRadiology.XUnitTests
                             .ValidModalities(Modalities.MG | Modalities.MRI | Modalities.US)
                             .SetSnomedCode("129735005")
                             .SetSnomedDescription("ClinicalFinding | Lobular shaped lesion (Finding)")
-                            .SetUMLS("A mass that has an undulating  (having a smoothly " +
+                            .SetUMLS("A mass that has an undulating  (having a smoothly ",
                                 "rising and falling form or outline) ",
                                 "contour.")
                         ,
@@ -74,7 +74,7 @@ namespace BreastRadiology.XUnitTests
                             .SetDisplay("Reniform")
                             .MammoId("27")
                             .ValidModalities(Modalities.MG)
-                            .SetUMLS("There is a mass that is reniform (kidney shape) in " +
+                            .SetUMLS("There is a mass that is reniform (kidney shape) in ",
                                 "shape.")
                         ,
                         new ConceptDef()
@@ -84,7 +84,7 @@ namespace BreastRadiology.XUnitTests
                             .ValidModalities(Modalities.MG | Modalities.MRI | Modalities.US)
                             .SetSnomedCode("129733003")
                             .SetSnomedDescription("ClinicalFinding | Round shaped lesion (Finding)")
-                            .SetUMLS("There is a mass that is spherical, ball-shaped, circular " +
+                            .SetUMLS("There is a mass that is spherical, ball-shaped, circular ",
                                 "or global.")
                         #endregion // Codes
                         //- Codes

@@ -26,12 +26,12 @@ namespace BreastRadiology.XUnitTests
                         .Description("Breast Radiology Diagnostic Report",
                             new Markdown()
                                 .Paragraph("This resource is one of the components of a Breast Radiology Document.",
-                                    "Each Breast Radiology Document bundle will contain exactly one " +
-                                    "Breast Radiology Document instance that is referenced in the " +
+                                    "Each Breast Radiology Document bundle will contain exactly one ",
+                                    "Breast Radiology Document instance that is referenced in the ",
                                     "document's 'Report' section.")
-                                .Paragraph("This instance will contain the top level results of the exam, " +
+                                .Paragraph("This instance will contain the top level results of the exam, ",
                                            "including the narrative result.")
-                                .Paragraph("This resource is a profile of the Fhir DiagnosticReport " +
+                                .Paragraph("This resource is a profile of the Fhir DiagnosticReport ",
                                            "base resource.")
                         )
                         .AddFragRef(Self.HeaderFragment.Value())

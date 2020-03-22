@@ -29,8 +29,8 @@ namespace BreastRadiology.XUnitTests
                         .Description("'Tumor Satellite' Observation",
                             new Markdown()
                                 .Paragraph(
-                                    "If a tumor observation's Observation.hasMember field contains a referrence " +
-                                    "to a 'Tumor Satellite' observation, then it is a satellite tumor." +
+                                    "If a tumor observation's Observation.hasMember field contains a referrence ",
+                                    "to a 'Tumor Satellite' observation, then it is a satellite tumor.",
                                     "The tumor that it is a satellite of is called the index tumor.")
                                 .Paragraph(
                                     "The 'Tumor Satellite' observation may contain a reference to the index tumor observation.")
@@ -119,15 +119,15 @@ namespace BreastRadiology.XUnitTests
                         .ReviewedStatus("Needs review by MagView")
                         .ReviewedStatus("Needs review by CIMI")
                         //+ IntroDocDescription
-                            .Description("A group of tumor cells in an area near the primary " +
+                            .Description("A group of tumor cells in an area near the primary ",
                                 "(original) tumor. ",
-                                "In melanoma, satellite tumors occur within 2 centimeters " +
+                                "In melanoma, satellite tumors occur within 2 centimeters ",
                                 "of the primary tumor, on ",
                                 "or under the skin, and can be seen without a microscope. ",
-                                "Satellite tumors may also be found in other types " +
+                                "Satellite tumors may also be found in other types ",
                                 "of cancer, including cancers of ",
                                 "the breast, lung, liver, and brain. ",
-                                "Having a satellite tumor is a sign that the cancer " +
+                                "Having a satellite tumor is a sign that the cancer ",
                                 "has spread from where it first ",
                                 "formed. ",
                                 "###URL#https://www.cancer.gov/publications/dictionaries/cancer-terms/def/satellite-tumor")

@@ -46,8 +46,8 @@ namespace BreastRadiology.XUnitTests
                             .MammoId("1518")
                             .ValidModalities(Modalities.MRI | Modalities.US)
                             .SetUMLS("The nodule is taller than wide. ",
-                                "A nodule is said to be taller than wide when it is " +
-                                "greater in the direction normal to the skin than " +
+                                "A nodule is said to be taller than wide when it is ",
+                                "greater in the direction normal to the skin than ",
                                 "in the parallel ones.")
                         ,
                         new ConceptDef()
@@ -56,8 +56,8 @@ namespace BreastRadiology.XUnitTests
                             .MammoId("1517")
                             .ValidModalities(Modalities.MRI | Modalities.US)
                             .SetUMLS("The nodule is wider than tall. ",
-                                "A nodule is said to be wider than tall when it is " +
-                                "larger in the direction not parallel to the direction " +
+                                "A nodule is said to be wider than tall when it is ",
+                                "larger in the direction not parallel to the direction ",
                                 "of the skin.")
                         #endregion // Codes
                         //- Codes

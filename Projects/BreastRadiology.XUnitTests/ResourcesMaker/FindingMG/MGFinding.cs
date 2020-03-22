@@ -25,7 +25,7 @@ namespace BreastRadiology.XUnitTests
                             "ObservationSection")
                         .Description("Mammography Finding",
                             new Markdown()
-                                .Paragraph("This Observation contains all references to all the observations" +
+                                .Paragraph("This Observation contains all references to all the observations",
                                            "and exam information related to a Mammography (MG) exam.")
                         )
                         .AddFragRef(Self.ObservationSectionFragment.Value())

@@ -32,11 +32,11 @@ namespace BreastRadiology.XUnitTests
                             .SetDisplay("Category 0 (Incomplete)")
                             .MammoId("36")
                             .ValidModalities(Modalities.MG | Modalities.MRI | Modalities.NM | Modalities.US)
-                            .SetSnomedDescription("ClinicalFinding | 397138000 | Mammography assessment " +
+                            .SetSnomedDescription("ClinicalFinding | 397138000 | Mammography assessment ",
                                 "(Category 0)")
-                            .SetUMLS("Need additional Imaging Evaluation and/or prior Mammograms " +
+                            .SetUMLS("Need additional Imaging Evaluation and/or prior Mammograms ",
                                 "for comparison. ",
-                                "Recall for additional imaging and/or comparison with " +
+                                "Recall for additional imaging and/or comparison with ",
                                 "prior examination(s)        ",
                                 "###ACRUS#")
                         ,
@@ -45,12 +45,12 @@ namespace BreastRadiology.XUnitTests
                             .SetDisplay("Category 2 (Benign)")
                             .MammoId("32")
                             .ValidModalities(Modalities.MG | Modalities.MRI | Modalities.NM | Modalities.US)
-                            .SetSnomedDescription("ClinicalFinding | 397141009 | Mammography assessment " +
+                            .SetSnomedDescription("ClinicalFinding | 397141009 | Mammography assessment ",
                                 "(Category 2)")
                             .SetUMLS("This is a normal assessment. ",
-                                "Benign refers to a condition, tumor, or growth that " +
+                                "Benign refers to a condition, tumor, or growth that ",
                                 "is not cancerous. ",
-                                "This means that it does not spread to other parts " +
+                                "This means that it does not spread to other parts ",
                                 "of the body. ",
                                 "It does not invade nearby tissue. ",
                                 " Essentially 0% likelihood of malignancy. ",
@@ -61,18 +61,18 @@ namespace BreastRadiology.XUnitTests
                             .SetDisplay("Category 3 (Probably Benign)")
                             .MammoId("33")
                             .ValidModalities(Modalities.MG | Modalities.MRI | Modalities.NM | Modalities.US)
-                            .SetSnomedDescription("ClinicalFinding | 397143007 | Mammography assessment " +
+                            .SetSnomedDescription("ClinicalFinding | 397143007 | Mammography assessment ",
                                 "(Category 3)")
-                            .SetUMLS("A finding assessed using this category should have " +
+                            .SetUMLS("A finding assessed using this category should have ",
                                 "a <= 2% likelihood of malignancy, ",
-                                "but greater than the essentially 0% likelihood of " +
+                                "but greater than the essentially 0% likelihood of ",
                                 "malignancy of a characteristically ",
                                 "benign finding. ",
-                                "A probably benign finding is not expected to change " +
+                                "A probably benign finding is not expected to change ",
                                 "over the suggested period of ",
-                                "imaging surveillance, but the interpreting physician " +
+                                "imaging surveillance, but the interpreting physician ",
                                 "prefers to establish stability ",
-                                "of the finding before recommending management limited " +
+                                "of the finding before recommending management limited ",
                                 "to routine mammography screening. ",
                                 " Six month follow-up and/or",
                                 "surveillance mammography is recommended. ",
@@ -83,14 +83,14 @@ namespace BreastRadiology.XUnitTests
                             .SetDisplay("Category 4 (Suspicious)")
                             .MammoId("34")
                             .ValidModalities(Modalities.MG | Modalities.MRI | Modalities.NM | Modalities.US)
-                            .SetSnomedDescription("ClinicalFinding | 397144001 | Mammography assessment " +
+                            .SetSnomedDescription("ClinicalFinding | 397144001 | Mammography assessment ",
                                 "(Category 4)")
-                            .SetUMLS("This category is reserved for findings that do not " +
+                            .SetUMLS("This category is reserved for findings that do not ",
                                 "have the classic appearance of ",
-                                "malignancy but are sufficiently suspicious to justify " +
+                                "malignancy but are sufficiently suspicious to justify ",
                                 "a recommendation for biopsy. ",
                                 "There is a 2% likelihood of malignancy (cancer). ",
-                                "Almost all recommendations for breast interventional " +
+                                "Almost all recommendations for breast interventional ",
                                 "procedures will come from assessments ",
                                 "made using",
                                 "this category. ",
@@ -104,12 +104,12 @@ namespace BreastRadiology.XUnitTests
                             .SetSnomedDescription("Not found")
                             .SetUMLS("Low suspicion for malignancy. ",
                                 "A malignant finding is not suspected. ",
-                                "A biopsy or other test will likely still be performed " +
+                                "A biopsy or other test will likely still be performed ",
                                 "in order to determine. ",
                                 "Tissue diagnosis may be recommended. ",
-                                "Six month follow-up and/or surveillance mammography " +
+                                "Six month follow-up and/or surveillance mammography ",
                                 "is recommended. ",
-                                "Likelihood of malignancy is > 2% to <= 10% likelihood " +
+                                "Likelihood of malignancy is > 2% to <= 10% likelihood ",
                                 "of malignancy. ",
                                 "###ACRUS#")
                         ,
@@ -120,9 +120,9 @@ namespace BreastRadiology.XUnitTests
                             .ValidModalities(Modalities.MG | Modalities.MRI | Modalities.NM | Modalities.US)
                             .SetSnomedDescription("Not found")
                             .SetUMLS("Category 4B: Moderate suspicion for malignancy. ",
-                                "It warrants radiologic and pathologic correlation " +
+                                "It warrants radiologic and pathologic correlation ",
                                 "after tissue diagnosis. ",
-                                "Likelihood of malignancy is > 10% to <= 50% likelihood " +
+                                "Likelihood of malignancy is > 10% to <= 50% likelihood ",
                                 "of",
                                 "malignancy. ",
                                 "###ACRUS#")
@@ -135,11 +135,11 @@ namespace BreastRadiology.XUnitTests
                             .SetSnomedDescription("Not found")
                             .SetUMLS("Category 4C: High suspicion for",
                                 "malignancy. ",
-                                "Includes findings that have a high suspicion of malignancy " +
+                                "Includes findings that have a high suspicion of malignancy ",
                                 "but that are not highly",
                                 "suggestive of malignancy (category 5). ",
                                 "Tissue Diagnosis is highly recommended. ",
-                                " Range for likelihood of malignancy is > 50% to < " +
+                                " Range for likelihood of malignancy is > 50% to < ",
                                 "95% likelihood of malignancy. ",
                                 "It is more likely malignant versus benign. ",
                                 "###ACRUS#")
@@ -149,10 +149,10 @@ namespace BreastRadiology.XUnitTests
                             .SetDisplay("Category 5 (Highly Suggestive of Malignancy)")
                             .MammoId("35")
                             .ValidModalities(Modalities.MG | Modalities.MRI | Modalities.NM | Modalities.US)
-                            .SetSnomedDescription("ClinicalFinding | 397145000 | Mammography assessment " +
+                            .SetSnomedDescription("ClinicalFinding | 397145000 | Mammography assessment ",
                                 "(Category 5)")
                             .SetUMLS("Highly Suggestive of Malignancy. ",
-                                "Almost certainly predictive of breast cancer with " +
+                                "Almost certainly predictive of breast cancer with ",
                                 "a ",
                                 "value of at least 95%. ",
                                 "Tissue Diagnosis is highly recommended or required. ",
@@ -166,10 +166,10 @@ namespace BreastRadiology.XUnitTests
                             .SetUMLS("Known Biopsy-Proven Malignancy. ",
                                 "Surgical excision when clinically",
                                 "appropriate. ",
-                                "This category is only used for findings on a mammogram " +
-                                "that have already been shown to be cancer by a previous " +
+                                "This category is only used for findings on a mammogram ",
+                                "that have already been shown to be cancer by a previous ",
                                 "biopsy. ",
-                                "Mammograms may be used in this way to see how well " +
+                                "Mammograms may be used in this way to see how well ",
                                 "the cancer is responding to treatment. ",
                                 "###ACRUS#")
                         #endregion // Codes

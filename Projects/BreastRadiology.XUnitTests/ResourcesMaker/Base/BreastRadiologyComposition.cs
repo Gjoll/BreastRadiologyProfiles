@@ -94,7 +94,7 @@ namespace BreastRadiology.XUnitTests
                                     "the Breast Radiology Diagnostic Report.")
                                 .Paragraph("The composition object is an required part of the FHIR Document structure.",
                                     "One composition must exist, and it must be the first resource stored in the FHIR document bundle.")
-                                .Paragraph("The other exam related resources are referenced through the " +
+                                .Paragraph("The other exam related resources are referenced through the ",
                                            "sections defined in this resource.")
                                 .Paragraph("This composition creates the following sections.")
                                 .Paragraph("A. Report Section.",

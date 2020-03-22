@@ -204,7 +204,7 @@ namespace BreastRadiology.XUnitTests
                         Add(c);
                         if (len > Maxlen)
                         {
-                            sb.Append("\" +\n\"");
+                            sb.Append("\",\n\"");
                             len = 0;
                         }
 

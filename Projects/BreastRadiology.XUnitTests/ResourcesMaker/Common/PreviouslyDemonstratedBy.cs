@@ -43,11 +43,11 @@ namespace BreastRadiology.XUnitTests
                             .SetDisplay("Aspiration")
                             .MammoId("805")
                             .ValidModalities(Modalities.MG)
-                            .SetSnomedDescription("Procedure | 287572003 | Diagnostic aspiration of " +
+                            .SetSnomedDescription("Procedure | 287572003 | Diagnostic aspiration of ",
                                 "breast cyst (Procedure) | [0/0] |")
-                            .SetUMLS("A medical procedure that removes something from an " +
+                            .SetUMLS("A medical procedure that removes something from an ",
                                 "area of the body. ",
-                                "These substances can be air, body fluids, or bone " +
+                                "These substances can be air, body fluids, or bone ",
                                 "fragments.",
                                 "###URL#https://medlineplus.gov/ency/article/002216.htm")
                         ,
@@ -57,9 +57,9 @@ namespace BreastRadiology.XUnitTests
                             .MammoId("807")
                             .ValidModalities(Modalities.MG)
                             .SetSnomedDescription("Procedure | 122548005 | Biopsy of breast (Procedure)")
-                            .SetUMLS("An examination under a microscope  of the specific " +
+                            .SetUMLS("An examination under a microscope  of the specific ",
                                 "tissue removed from the body. ",
-                                "The examination is used to check for abnormalities " +
+                                "The examination is used to check for abnormalities ",
                                 "or cancer cells.")
                         ,
                         new ConceptDef()
@@ -67,9 +67,9 @@ namespace BreastRadiology.XUnitTests
                             .SetDisplay("MRI")
                             .MammoId("808")
                             .ValidModalities(Modalities.MG)
-                            .SetSnomedDescription("Procedure | 241615005 | Magnetic resonance imaging " +
+                            .SetSnomedDescription("Procedure | 241615005 | Magnetic resonance imaging ",
                                 "of breast (Procedure)")
-                            .SetUMLS("Findings on the Mammogram was previously demonstrated " +
+                            .SetUMLS("Findings on the Mammogram was previously demonstrated ",
                                 "by the MRI.")
                         ,
                         new ConceptDef()
@@ -77,7 +77,7 @@ namespace BreastRadiology.XUnitTests
                             .SetDisplay("US")
                             .MammoId("806")
                             .ValidModalities(Modalities.MG)
-                            .SetUMLS("Findings on the Mammogram was previously demonstrated " +
+                            .SetUMLS("Findings on the Mammogram was previously demonstrated ",
                                 "by the Ultrasound.")
                         #endregion // Codes
                         //- Codes

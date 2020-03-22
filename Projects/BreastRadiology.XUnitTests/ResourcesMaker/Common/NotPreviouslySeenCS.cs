@@ -50,16 +50,16 @@ namespace BreastRadiology.XUnitTests
                             .SetDisplay("Ductogram")
                             .MammoId("284")
                             .ValidModalities(Modalities.MG | Modalities.MRI | Modalities.NM | Modalities.US)
-                            .SetSnomedDescription("Procedure | 420131003 | Fluoroscopic mammary ductography " +
+                            .SetSnomedDescription("Procedure | 420131003 | Fluoroscopic mammary ductography ",
                                 "(Procedure)")
                             .SetUMLS("Breast ductography (a.k.a. ",
-                                "galactography) is an imaging technique which is used " +
+                                "galactography) is an imaging technique which is used ",
                                 "to evaluate lesions causing ",
                                 "nipple discharge. ",
-                                "It helps in precisely locating the mass within breast " +
+                                "It helps in precisely locating the mass within breast ",
                                 "tissue and gives useful information ",
                                 "for surgical approach and planning.",
-                                "A blunt-tipped sialogram needle (30-gauge) is used " +
+                                "A blunt-tipped sialogram needle (30-gauge) is used ",
                                 "for performing the ductogram. ",
                                 "The abnormal duct is identified and cannulated. ",
                                 "###URL#https://radiopaedia.org/articles/breast-ductography-1?lang=us")
@@ -77,11 +77,11 @@ namespace BreastRadiology.XUnitTests
                             .SetDisplay("MRI")
                             .MammoId("283")
                             .ValidModalities(Modalities.MG | Modalities.MRI | Modalities.NM | Modalities.US)
-                            .SetSnomedDescription("Procedure | 241615005 | Magnetic resonance imaging " +
+                            .SetSnomedDescription("Procedure | 241615005 | Magnetic resonance imaging ",
                                 "of breast (Procedure)")
-                            .SetUMLS("Magnetic Resonance Imaging (MRI) is a test that uses " +
+                            .SetUMLS("Magnetic Resonance Imaging (MRI) is a test that uses ",
                                 "powerful magnets, radio waves, ",
-                                "and a computer to make detailed pictures inside your " +
+                                "and a computer to make detailed pictures inside your ",
                                 "body.")
                         ,
                         new ConceptDef()
@@ -89,7 +89,7 @@ namespace BreastRadiology.XUnitTests
                             .SetDisplay("Outside exam")
                             .MammoId("286")
                             .ValidModalities(Modalities.MG)
-                            .SetUMLS("The findings on the Mammogram were not previously " +
+                            .SetUMLS("The findings on the Mammogram were not previously ",
                                 "seen on the outside exam.")
                         ,
                         new ConceptDef()
@@ -97,7 +97,7 @@ namespace BreastRadiology.XUnitTests
                             .SetDisplay("Scintimammography")
                             .MammoId("285")
                             .ValidModalities(Modalities.NM)
-                            .SetUMLS("This is a type of breast imaging that is used to " +
+                            .SetUMLS("This is a type of breast imaging that is used to ",
                                 "detect cancer cells in the breasts ",
                                 "of some women who have had abnormal mammograms.")
                         ,
@@ -106,10 +106,10 @@ namespace BreastRadiology.XUnitTests
                             .SetDisplay("Ultrasound")
                             .MammoId("282")
                             .ValidModalities(Modalities.MG | Modalities.MRI | Modalities.NM | Modalities.US)
-                            .SetSnomedDescription("Procedure | 47079000 | Ultrasonography of breast " +
+                            .SetSnomedDescription("Procedure | 47079000 | Ultrasonography of breast ",
                                 "(Procedure)")
                             .SetUMLS("Uses soundwaves to develop ultrasound images. ",
-                                "This information is relayed in real time to produce " +
+                                "This information is relayed in real time to produce ",
                                 "images on a computer screen. ",
                                 "This can help diagnose and treat disease or conditions.")
                         #endregion // Codes

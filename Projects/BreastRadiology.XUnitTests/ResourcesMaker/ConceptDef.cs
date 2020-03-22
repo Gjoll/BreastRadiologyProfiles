@@ -3,6 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using FhirKhit.Tools.R4;
 
 namespace BreastRadiology.XUnitTests
 {
@@ -95,15 +96,15 @@ namespace BreastRadiology.XUnitTests
             return this;
         }
 
-        public ConceptDef SetCode(String value)
+        public ConceptDef SetCode(params String[] lines)
         {
-            this.Code = value;
+            this.Code = lines.Collate();
             return this;
         }
 
-        public ConceptDef SetDisplay(String value)
+        public ConceptDef SetDisplay(params String[] lines)
         {
-            this.Display = value;
+            this.Display = lines.Collate();
             return this;
         }
 
@@ -133,7 +134,7 @@ namespace BreastRadiology.XUnitTests
             return this;
         }
 
-        public ConceptDef SetDicom(String value)
+        public ConceptDef SetDicom(params String[] lines)
         {
             return this;
         }
@@ -150,27 +151,27 @@ namespace BreastRadiology.XUnitTests
             return this;
         }
 
-        public ConceptDef SetSnomedCode(String value)
+        public ConceptDef SetSnomedCode(params String[] lines)
         {
             return this;
         }
 
-        public ConceptDef SetOneToMany(String value)
+        public ConceptDef SetOneToMany(params String[] lines)
         {
             return this;
         }
 
-        public ConceptDef SetSnomedDescription(String value)
+        public ConceptDef SetSnomedDescription(params String[] lines)
         {
             return this;
         }
 
-        public ConceptDef SetICD10(String value)
+        public ConceptDef SetICD10(params String[] lines)
         {
             return this;
         }
 
-        public ConceptDef SetComment(String value)
+        public ConceptDef SetComment(params String[] lines)
         {
             return this;
         }

@@ -283,7 +283,7 @@
       ]
     }
   ],
-  "description": "<b>Foreign Object Observation</b>\n\nThis resource and its referenced child resources contains \ninformation about foreign objects observed\n\nA foreign object is some non-biological item observed in the patient.\n These can include misplaced surgical items, trauma related items (bullet fragments), or jewelery.",
+  "description": "<b>Foreign Object Observation</b>\n\nThis resource and its referenced child resources contains \ninformation about foreign objects observed\n\nA foreign object is some non-biological item observed in the patient.\n These can include misplaced surgical items, trauma related items (bullet fragments), or \njewelery.",
   "fhirVersion": "4.0.0",
   "kind": "resource",
   "abstract": false,
@@ -296,7 +296,7 @@
         "id": "Observation",
         "path": "Observation",
         "short": "Foreign Object Observation",
-        "definition": "This resource and its referenced child resources contains \ninformation about foreign objects observed\n\nA foreign object is some non-biological item observed in the patient.\n These can include misplaced surgical items, trauma related items (bullet fragments), or jewelery.",
+        "definition": "This resource and its referenced child resources contains \ninformation about foreign objects observed\n\nA foreign object is some non-biological item observed in the patient.\n These can include misplaced surgical items, trauma related items (bullet fragments), or \njewelery.",
         "base": {
           "path": "Observation",
           "min": 0,

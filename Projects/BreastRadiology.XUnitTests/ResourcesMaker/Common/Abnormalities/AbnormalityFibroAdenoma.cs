@@ -30,9 +30,9 @@ namespace BreastRadiology.XUnitTests
                             .SetDisplay("Fibroadenoma")
                             .MammoId("70")
                             .ValidModalities(Modalities.MG | Modalities.US)
-                            .SetUMLS("A fibroadenoma is a benign, or noncancerous, breast " +
+                            .SetUMLS("A fibroadenoma is a benign, or noncancerous, breast ",
                                 "tumor. ",
-                                "Unlike a breast cancer, which grows larger over time " +
+                                "Unlike a breast cancer, which grows larger over time ",
                                 "and can spread to other organs, ",
                                 "a fibroadenoma remains in the breast tissue. ",
                                 "They're pretty small, too. ",
@@ -46,7 +46,7 @@ namespace BreastRadiology.XUnitTests
                             .ValidModalities(Modalities.MG)
                             .SetUMLS("These are non-cancerous breast lumps. ",
                                 "Fibroadenomas usually go away with age. ",
-                                "By the time a woman is menopausal, they will likely " +
+                                "By the time a woman is menopausal, they will likely ",
                                 "experience a degeneration of ",
                                 "the Fibroadenomas.")
                         #endregion // Codes

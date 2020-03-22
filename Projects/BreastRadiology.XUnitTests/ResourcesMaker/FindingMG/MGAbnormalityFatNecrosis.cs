@@ -57,23 +57,23 @@ namespace BreastRadiology.XUnitTests
                     .ReviewedStatus("Needs review by MagView")
                     .ReviewedStatus("Needs review by CIMI")
                     //+ IntroDocDescription
-                        .Description("Fat necrosis is a benign (not cancer) condition and " +
+                        .Description("Fat necrosis is a benign (not cancer) condition and ",
                             "does not increase risk of ",
                             "developing breast cancer. ",
-                            "It can occur anywhere in the breast and can affect " +
+                            "It can occur anywhere in the breast and can affect ",
                             "women of any age. ",
                             "Men can also get fat necrosis, but this is very rare.",
-                            " Sometimes a lump can form if an area of the fatty " +
+                            " Sometimes a lump can form if an area of the fatty ",
                             "breast tissue is damaged. ",
-                            "This is called fat necrosis (necrosis is a medical " +
+                            "This is called fat necrosis (necrosis is a medical ",
                             "term used to describe damaged ",
                             "or dead tissue).",
-                            "Damage to the fatty tissue can occur following a " +
+                            "Damage to the fatty tissue can occur following a ",
                             "breast biopsy, radiotherapy to the ",
                             "breast or any breast surgery. ",
-                            "The fatty breast tissue can  also be damaged by a " +
+                            "The fatty breast tissue can  also be damaged by a ",
                             "bruise or injury to the breast. ",
-                            "Sometimes it develops without any trauma and many " +
+                            "Sometimes it develops without any trauma and many ",
                             "women with it don't remember any ",
                             "specific injury. ",
                             "###URL#https://breastcancernow.org/information-support/have-i-got-breast-cancer/breast-pain-other-benign-conditions/fat-necrosis")

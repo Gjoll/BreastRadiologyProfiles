@@ -31,9 +31,9 @@ namespace BreastRadiology.XUnitTests
                             .SetDisplay("Central lucent")
                             .MammoId("215")
                             .ValidModalities(Modalities.MG)
-                            .SetUMLS("These are round or oval calcifications that range " +
+                            .SetUMLS("These are round or oval calcifications that range ",
                                 "from under 1 mm to over a centimeter.",
-                                "They are the result of fat necrosis, calcified debris " +
+                                "They are the result of fat necrosis, calcified debris ",
                                 "in ducts, and occasional fibroadenomas. ",
                                 "###URL#https://radiologyassistant.nl/breast/breast-calcifications-differential-diagnosis#benign-calcifications-lucent-centered")
                         ,
@@ -43,7 +43,7 @@ namespace BreastRadiology.XUnitTests
                             .MammoId("213")
                             .ValidModalities(Modalities.MG)
                             .SetUMLS("(historically, \"isodense\")",
-                                "X-ray attenuation of the mass is the same as the " +
+                                "X-ray attenuation of the mass is the same as the ",
                                 "expected attenuation of an equal volume of",
                                 "fibroglandular breast tissue.###ACRMG#")
                         ,
@@ -52,10 +52,10 @@ namespace BreastRadiology.XUnitTests
                             .SetDisplay("Fat containing")
                             .MammoId("214")
                             .ValidModalities(Modalities.MG)
-                            .SetUMLS("This includes all masses containing fat, such as " +
+                            .SetUMLS("This includes all masses containing fat, such as ",
                                 "oil cyst, lipoma or galactocele, as well as mixed",
                                 "density masses such as hamartoma. ",
-                                "A fat-containing mass will almost always represent " +
+                                "A fat-containing mass will almost always represent ",
                                 "a",
                                 "benign mass.###ACRMG#")
                         ,
@@ -64,7 +64,7 @@ namespace BreastRadiology.XUnitTests
                             .SetDisplay("High density")
                             .MammoId("211")
                             .ValidModalities(Modalities.MG)
-                            .SetUMLS("Your breast tissue may be called dense if you have " +
+                            .SetUMLS("Your breast tissue may be called dense if you have ",
                                 "a lot of fibrous or glandular ",
                                 "tissue and not much fat in the breasts. ",
                                 "Having dense breast tissue is common. ",
@@ -76,12 +76,12 @@ namespace BreastRadiology.XUnitTests
                             .SetDisplay("Low density")
                             .MammoId("212")
                             .ValidModalities(Modalities.MG)
-                            .SetUMLS("X-ray attenuation of the mass is less than the expected " +
+                            .SetUMLS("X-ray attenuation of the mass is less than the expected ",
                                 "attenuation of an equal volume of",
                                 "fibroglandular breast tissue. ",
                                 "A low density mass may be a group of microcysts. ",
                                 "If such a finding",
-                                "is identified at mammography, it may very well not " +
+                                "is identified at mammography, it may very well not ",
                                 "be malignant but appropriately may",
                                 "be worked up.###ACRMG#")
                         #endregion // Codes

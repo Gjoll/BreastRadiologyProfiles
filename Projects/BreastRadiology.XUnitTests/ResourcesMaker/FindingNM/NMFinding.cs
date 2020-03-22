@@ -24,7 +24,7 @@ namespace BreastRadiology.XUnitTests
                             "ObservationSection")
                         .Description("NM Finding",
                             new Markdown()
-                                .Paragraph("This Observation contains all references to all the observations" +
+                                .Paragraph("This Observation contains all references to all the observations",
                                            "and exam information related to a Nuclear Medicine (NM) exam.")
                                 .Paragraph("As of this ballot, the child observations of an NM Exam have not",
                                            "been defined. They will be defined in a later ballot.")
