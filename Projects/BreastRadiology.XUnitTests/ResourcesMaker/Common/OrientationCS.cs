@@ -31,21 +31,24 @@ namespace BreastRadiology.XUnitTests
                             .SetDisplay("Parallel to skin")
                             .MammoId("1508")
                             .ValidModalities(Modalities.MG | Modalities.MRI | Modalities.NM | Modalities.US)
-                            .SetUMLS("The lesion/mass is oriented parellel to skin.")
+                            .SetUMLS(1508, )
+                                "The lesion/mass is oriented parellel to skin.")
                         ,
                         new ConceptDef()
                             .SetCode("PerpendicularToSkin")
                             .SetDisplay("Perpendicular to skin (not parallel)")
                             .MammoId("1509")
                             .ValidModalities(Modalities.MG | Modalities.MRI | Modalities.NM | Modalities.US)
-                            .SetUMLS("The lesion/mass is oriented perpendicular to skin.")
+                            .SetUMLS(1509, )
+                                "The lesion/mass is oriented perpendicular to skin.")
                         ,
                         new ConceptDef()
                             .SetCode("TallerThanWide")
                             .SetDisplay("Taller than wide")
                             .MammoId("1518")
                             .ValidModalities(Modalities.MRI | Modalities.US)
-                            .SetUMLS("The nodule is taller than wide. ",
+                            .SetUMLS(1518, )
+                                "The nodule is taller than wide. ",
                                 "A nodule is said to be taller than wide when it is ",
                                 "greater in the direction normal to the skin than ",
                                 "in the parallel ones.")
@@ -55,7 +58,8 @@ namespace BreastRadiology.XUnitTests
                             .SetDisplay("Wider than tall")
                             .MammoId("1517")
                             .ValidModalities(Modalities.MRI | Modalities.US)
-                            .SetUMLS("The nodule is wider than tall. ",
+                            .SetUMLS(1517, )
+                                "The nodule is wider than tall. ",
                                 "A nodule is said to be wider than tall when it is ",
                                 "larger in the direction not parallel to the direction ",
                                 "of the skin.")

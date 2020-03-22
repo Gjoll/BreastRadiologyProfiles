@@ -57,7 +57,8 @@ namespace BreastRadiology.XUnitTests
                     .ReviewedStatus("Needs review by MagView")
                     .ReviewedStatus("Needs review by CIMI")
                     //+ IntroDocDescription
-                        .Description("Fat necrosis is a benign (not cancer) condition and ",
+                        .Description(688, )
+                            "Fat necrosis is a benign (not cancer) condition and ",
                             "does not increase risk of ",
                             "developing breast cancer. ",
                             "It can occur anywhere in the breast and can affect ",

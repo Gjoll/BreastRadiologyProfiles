@@ -44,9 +44,12 @@ namespace BreastRadiology.XUnitTests
                             .SetDisplay("Irregular in shape")
                             .MammoId("16")
                             .ValidModalities(Modalities.MG | Modalities.MRI | Modalities.US)
-                            .SetSnomedCode("129736006")
-                            .SetSnomedDescription("ClinicalFinding | Irregular shaped lesion")
-                            .SetUMLS("A mass that can't be characterized by any specific ",
+                            .SetSnomedCode(16, )
+                                "129736006")
+                            .SetSnomedDescription(16, )
+                                "ClinicalFinding | Irregular shaped lesion")
+                            .SetUMLS(16, )
+                                "A mass that can't be characterized by any specific ",
                                 "shape.")
                         ,
                         new ConceptDef()
@@ -54,9 +57,12 @@ namespace BreastRadiology.XUnitTests
                             .SetDisplay("Lobulated in shape")
                             .MammoId("190")
                             .ValidModalities(Modalities.MG | Modalities.MRI | Modalities.US)
-                            .SetSnomedCode("129735005")
-                            .SetSnomedDescription("ClinicalFinding | Lobular shaped lesion (Finding)")
-                            .SetUMLS("A mass that has an undulating  (having a smoothly ",
+                            .SetSnomedCode(190, )
+                                "129735005")
+                            .SetSnomedDescription(190, )
+                                "ClinicalFinding | Lobular shaped lesion (Finding)")
+                            .SetUMLS(190, )
+                                "A mass that has an undulating  (having a smoothly ",
                                 "rising and falling form or outline) ",
                                 "contour.")
                         ,
@@ -65,16 +71,20 @@ namespace BreastRadiology.XUnitTests
                             .SetDisplay("Oval in shape")
                             .MammoId("15")
                             .ValidModalities(Modalities.MG | Modalities.MRI | Modalities.US)
-                            .SetSnomedCode("129734009")
-                            .SetSnomedDescription("ClinicalFinding | Oval shaped lesion (Finding)")
-                            .SetUMLS("There is a mass that is elliptical or egg-shaped.")
+                            .SetSnomedCode(15, )
+                                "129734009")
+                            .SetSnomedDescription(15, )
+                                "ClinicalFinding | Oval shaped lesion (Finding)")
+                            .SetUMLS(15, )
+                                "There is a mass that is elliptical or egg-shaped.")
                         ,
                         new ConceptDef()
                             .SetCode("Reniform")
                             .SetDisplay("Reniform")
                             .MammoId("27")
                             .ValidModalities(Modalities.MG)
-                            .SetUMLS("There is a mass that is reniform (kidney shape) in ",
+                            .SetUMLS(27, )
+                                "There is a mass that is reniform (kidney shape) in ",
                                 "shape.")
                         ,
                         new ConceptDef()
@@ -82,9 +92,12 @@ namespace BreastRadiology.XUnitTests
                             .SetDisplay("Round in shape")
                             .MammoId("14")
                             .ValidModalities(Modalities.MG | Modalities.MRI | Modalities.US)
-                            .SetSnomedCode("129733003")
-                            .SetSnomedDescription("ClinicalFinding | Round shaped lesion (Finding)")
-                            .SetUMLS("There is a mass that is spherical, ball-shaped, circular ",
+                            .SetSnomedCode(14, )
+                                "129733003")
+                            .SetSnomedDescription(14, )
+                                "ClinicalFinding | Round shaped lesion (Finding)")
+                            .SetUMLS(14, )
+                                "There is a mass that is spherical, ball-shaped, circular ",
                                 "or global.")
                         #endregion // Codes
                         //- Codes

@@ -31,7 +31,8 @@ namespace BreastRadiology.XUnitTests
                             .SetDisplay("Central lucent")
                             .MammoId("215")
                             .ValidModalities(Modalities.MG)
-                            .SetUMLS("These are round or oval calcifications that range ",
+                            .SetUMLS(215, )
+                                "These are round or oval calcifications that range ",
                                 "from under 1 mm to over a centimeter.",
                                 "They are the result of fat necrosis, calcified debris ",
                                 "in ducts, and occasional fibroadenomas. ",
@@ -42,7 +43,8 @@ namespace BreastRadiology.XUnitTests
                             .SetDisplay("Equal density")
                             .MammoId("213")
                             .ValidModalities(Modalities.MG)
-                            .SetUMLS("(historically, \"isodense\")",
+                            .SetUMLS(213, )
+                                "(historically, \"isodense\")",
                                 "X-ray attenuation of the mass is the same as the ",
                                 "expected attenuation of an equal volume of",
                                 "fibroglandular breast tissue.###ACRMG#")
@@ -52,7 +54,8 @@ namespace BreastRadiology.XUnitTests
                             .SetDisplay("Fat containing")
                             .MammoId("214")
                             .ValidModalities(Modalities.MG)
-                            .SetUMLS("This includes all masses containing fat, such as ",
+                            .SetUMLS(214, )
+                                "This includes all masses containing fat, such as ",
                                 "oil cyst, lipoma or galactocele, as well as mixed",
                                 "density masses such as hamartoma. ",
                                 "A fat-containing mass will almost always represent ",
@@ -64,19 +67,21 @@ namespace BreastRadiology.XUnitTests
                             .SetDisplay("High density")
                             .MammoId("211")
                             .ValidModalities(Modalities.MG)
-                            .SetUMLS("Your breast tissue may be called dense if you have ",
+                            .SetUMLS(211, )
+                                "the breast tissue may be called dense if you have ",
                                 "a lot of fibrous or glandular ",
                                 "tissue and not much fat in the breasts. ",
                                 "Having dense breast tissue is common. ",
                                 "Some women have more dense breast tissue than others. ",
-                                "###URL#https://www.cancer.org/cancer/breast-cancer/screening-tests-and-early-detection/mammograms/breast-density-and-your-mammogram-report.html")
+                                "###URL#https://www.cancer.org/cancer/breast-cancer/screening-tests-and-early-detection/mammograms/breast-density-and-the-mammogram-report.html")
                         ,
                         new ConceptDef()
                             .SetCode("LowDensity")
                             .SetDisplay("Low density")
                             .MammoId("212")
                             .ValidModalities(Modalities.MG)
-                            .SetUMLS("X-ray attenuation of the mass is less than the expected ",
+                            .SetUMLS(212, )
+                                "X-ray attenuation of the mass is less than the expected ",
                                 "attenuation of an equal volume of",
                                 "fibroglandular breast tissue. ",
                                 "A low density mass may be a group of microcysts. ",

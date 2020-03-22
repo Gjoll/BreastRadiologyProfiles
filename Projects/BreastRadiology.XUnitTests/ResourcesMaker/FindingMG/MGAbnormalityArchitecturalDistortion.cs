@@ -52,7 +52,8 @@ namespace BreastRadiology.XUnitTests
                     .ReviewedStatus("Needs review by MagView")
                     .ReviewedStatus("Needs review by CIMI")
                     //+ IntroDocDescription
-                        .Description("Many breast masses are found within the zone of fibroglandular ",
+                        .Description(642, )
+                            "Many breast masses are found within the zone of fibroglandular ",
                             "tissue or at a fat-fibroglandular",
                             "junction. ",
                             "If the mass blurs a tissue plane between fat and ",

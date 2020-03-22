@@ -31,7 +31,8 @@ namespace BreastRadiology.XUnitTests
                             .SetDisplay("Asymmetry")
                             .MammoId("691")
                             .ValidModalities(Modalities.MG)
-                            .SetUMLS("Breast asymmetry refers to when one breast is a different ",
+                            .SetUMLS(691, )
+                                "Breast asymmetry refers to when one breast is a different ",
                                 "size or shape than the ",
                                 "other.")
                         ,
@@ -40,7 +41,8 @@ namespace BreastRadiology.XUnitTests
                             .SetDisplay("Asymmetry focal")
                             .MammoId("643")
                             .ValidModalities(Modalities.MG)
-                            .SetUMLS("Focal asymmetry is visible as a confined asymmetry ",
+                            .SetUMLS(643, )
+                                "Focal asymmetry is visible as a confined asymmetry ",
                                 "with a similar shape on two views ",
                                 "but does not fit the criteria of a mass: that is, ",
                                 "it lacks convex outer borders and ",
@@ -57,7 +59,8 @@ namespace BreastRadiology.XUnitTests
                             .SetDisplay("Asymmetry global")
                             .MammoId("644")
                             .ValidModalities(Modalities.MG)
-                            .SetUMLS("Global asymmetry in breast tissue is a form of breast ",
+                            .SetUMLS(644, )
+                                "Global asymmetry in breast tissue is a form of breast ",
                                 "asymmetry where at least one ",
                                 "quadrant of a breast has a larger amount of fibroglandular ",
                                 "density than the corresponding ",
@@ -68,7 +71,8 @@ namespace BreastRadiology.XUnitTests
                             .SetDisplay("Developing Asymmetry")
                             .MammoId("Row542")
                             .ValidModalities(Modalities.MG)
-                            .SetUMLS("A developing asymmetry is a focal asymmetry that ",
+                            .SetUMLS(Row542, )
+                                "A developing asymmetry is a focal asymmetry that ",
                                 "is new or increased in conspicuity ",
                                 "compared with the previous mammogram. ",
                                 "It is challenging to evaluate, as it often looks ",
@@ -153,7 +157,8 @@ namespace BreastRadiology.XUnitTests
                     .ReviewedStatus("Needs review by MagView")
                     .ReviewedStatus("Needs review by CIMI")
                     //+ IntroDocDescription
-                        .Description("Breast asymmetry refers to when one breast is a different ",
+                        .Description(691, )
+                            "Breast asymmetry refers to when one breast is a different ",
                             "size or shape than the ",
                             "other.")
                     //- IntroDocDescription
