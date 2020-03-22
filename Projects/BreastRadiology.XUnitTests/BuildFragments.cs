@@ -17,6 +17,9 @@ using System.Data;
 using System.Globalization;
 using BreastRadiology.Shared;
 using ClosedXML.Excel;
+using Svg;
+using System.Drawing.Imaging;
+using DocumentFormat.OpenXml.Wordprocessing;
 
 namespace BreastRadiology.XUnitTests
 {
@@ -250,8 +253,22 @@ namespace BreastRadiology.XUnitTests
                         ResourceMapMaker resourceMapMaker = new ResourceMapMaker(this.fc, map);
                         resourceMapMaker.AlwaysShowChildren = true;
                         // resourceMapMaker.SvgEditor.RenderTestPoint = "Tumor Satellite";
+                        String svgPath = Path.Combine(this.graphicsDir, "TotalProfile.svg");
                         resourceMapMaker.Create(ResourcesMaker.CreateUrl("BreastRadComposition"),
-                            Path.Combine(this.graphicsDir, "TotalProfile.svg"));
+                            svgPath);
+
+                        // Create PNG Image from SVG-File
+                        //var svgDoc = Svg.SvgDocument.Open(svgPath);
+                        //svgDoc.AspectRatio = new SvgAspectRatio();
+                        //svgDoc.ShapeRendering = SvgShapeRendering.Auto;
+
+                        //String pngPath = Path.Combine(this.graphicsDir, "TotalProfile.png");
+                        //Int32 dpi = 1;
+                        //Int32 width = 2748 * dpi;
+                        //Int32 height = 38028 * dpi;
+
+                        //Bitmap bmp = svgDoc.Draw(width, height);
+                        //bmp.Save(pngPath, ImageFormat.Png);
                     }
                     {
                         ResourceMapMaker resourceMapMaker = new ResourceMapMaker(this.fc, map);
