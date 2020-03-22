@@ -30,14 +30,14 @@ namespace BreastRadiology.XUnitTests
                             .SetDisplay("Amorphous")
                             .MammoId("702")
                             .ValidModalities(Modalities.MG)
-                            .SetDicom(702, )
+                            .SetDicom("702",
                                 "F-0176C")
-                            .SetSnomedCode(702, )
+                            .SetSnomedCode("702",
                                 "129760005")
-                            .SetSnomedDescription(702, )
+                            .SetSnomedDescription("702",
                                 "ClinicalFinding | 129760005 | Radiographic finding ",
                                 "of amorphous calcification (Finding)")
-                            .SetUMLS(702, )
+                            .SetUMLS("702",
                                 "(historically, \"indistinct\")",
                                 "These are sufficiently small and/or hazy in appearance ",
                                 "that a more specific particle shape",
@@ -61,14 +61,14 @@ namespace BreastRadiology.XUnitTests
                             .SetDisplay("Coarse")
                             .MammoId("704")
                             .ValidModalities(Modalities.MG)
-                            .SetDicom(704, )
+                            .SetDicom("704",
                                 "F-01761")
-                            .SetSnomedCode(704, )
+                            .SetSnomedCode("704",
                                 "129749001")
-                            .SetSnomedDescription(704, )
+                            .SetSnomedDescription("704",
                                 "ClinicalFinding | 129749001 | Coarse (popcorn-like) ",
                                 "radiographic calcification (Finding)")
-                            .SetUMLS(704, )
+                            .SetUMLS("704",
                                 "The classic large 'popcorn-like' calcifications are ",
                                 "produced by involuting fibroadenomas.",
                                 "These calcifications usually do not cause a diagnostic ",
@@ -86,14 +86,14 @@ namespace BreastRadiology.XUnitTests
                             .SetDisplay("Dystrophic")
                             .MammoId("705")
                             .ValidModalities(Modalities.MG)
-                            .SetDicom(705, )
+                            .SetDicom("705",
                                 "F-01762")
-                            .SetSnomedCode(705, )
+                            .SetSnomedCode("705",
                                 "129750001")
-                            .SetSnomedDescription(705, )
+                            .SetSnomedDescription("705",
                                 "ClinicalFinding | 129750001 | Dystrophic radiographic ",
                                 "calcification (Finding) | [0/0] | R93.8")
-                            .SetUMLS(705, )
+                            .SetUMLS("705",
                                 "Dystrophic soft tissue calcification is a broad term ",
                                 "that encompasses a wide range of pathologies that ",
                                 "cause soft-tissue calcification and is caused by ",
@@ -110,14 +110,14 @@ namespace BreastRadiology.XUnitTests
                             .SetDisplay("Eggshell")
                             .MammoId("706")
                             .ValidModalities(Modalities.MG)
-                            .SetDicom(706, )
+                            .SetDicom("706",
                                 "F-01763")
-                            .SetSnomedCode(706, )
+                            .SetSnomedCode("706",
                                 "129751002")
-                            .SetSnomedDescription(706, )
+                            .SetSnomedDescription("706",
                                 "ClinicalFinding | 129751002 | Eggshell radiographic ",
                                 "calcification (Finding)")
-                            .SetUMLS(706, )
+                            .SetUMLS("706",
                                 "Eggshell calcifications in the breast are benign ",
                                 "peripheral rim like calcifications",
                                 "They are typically secondary to fat necrosis or calcification ",
@@ -133,10 +133,10 @@ namespace BreastRadiology.XUnitTests
                             .SetDisplay("Fine")
                             .MammoId("707")
                             .ValidModalities(Modalities.MG)
-                            .SetSnomedDescription(707, )
+                            .SetSnomedDescription("707",
                                 "ClinicalFinding | 129761009 | Fine, linear, (casting) ",
                                 "radiographic calcification (Finding)")
-                            .SetUMLS(707, )
+                            .SetUMLS("707",
                                 "These are thin, linear or curvilinear irregular calcifications ",
                                 "and may be discontinuous.")
                         ,
@@ -145,10 +145,10 @@ namespace BreastRadiology.XUnitTests
                             .SetDisplay("Generic")
                             .MammoId("701")
                             .ValidModalities(Modalities.MG)
-                            .SetSnomedDescription(701, )
+                            .SetSnomedDescription("701",
                                 "ClinicalFinding | 129748009 | Radiographic calcification ",
                                 "finding")
-                            .SetUMLS(701, )
+                            .SetUMLS("701",
                                 "Calcification happens when calcium builds up in body ",
                                 "tissue, blood vessels, or organs. ",
                                 "This buildup can harden and disrupt the body's normal ",
@@ -163,14 +163,14 @@ namespace BreastRadiology.XUnitTests
                             .SetDisplay("Coarse Heterogeneous")
                             .MammoId("708")
                             .ValidModalities(Modalities.MG)
-                            .SetDicom(708, )
+                            .SetDicom("708",
                                 "F-0176F")
-                            .SetSnomedCode(708, )
+                            .SetSnomedCode("708",
                                 "129763007")
-                            .SetSnomedDescription(708, )
+                            .SetSnomedDescription("708",
                                 "ClinicalFinding | 129763007 | Heterogeneous radiographic ",
                                 "calcification (Finding)")
-                            .SetUMLS(708, )
+                            .SetUMLS("708",
                                 "These are irregular, conspicuous calcifications that ",
                                 "are generally between 0.5 mm and 1 mm",
                                 "and tend to coalesce, but are smaller than dystrophic ",
@@ -195,7 +195,7 @@ namespace BreastRadiology.XUnitTests
                             .SetDisplay("Indistinct")
                             .MammoId("709")
                             .ValidModalities(Modalities.MG)
-                            .SetUMLS(709, )
+                            .SetUMLS("709",
                                 "Amorphous calcifications, previously known as indistinct ",
                                 "calcifications, are a morphological ",
                                 "descriptor for breast calcifications that are small ",
@@ -208,14 +208,14 @@ namespace BreastRadiology.XUnitTests
                             .SetDisplay("Large rodlike")
                             .MammoId("710")
                             .ValidModalities(Modalities.MG)
-                            .SetDicom(710, )
+                            .SetDicom("710",
                                 "F-01764")
-                            .SetSnomedCode(710, )
+                            .SetSnomedCode("710",
                                 "129752009")
-                            .SetSnomedDescription(710, )
+                            .SetSnomedDescription("710",
                                 "ClinicalFinding | 129752009 | Large rod-like radiographic ",
                                 "calcification (Finding)")
-                            .SetUMLS(710, )
+                            .SetUMLS("710",
                                 "These benign calcifications associated with ductal ",
                                 "ectasia may form solid or discontinuous",
                                 "smooth linear rods, most of which are 0.5 mm or larger ",
@@ -241,7 +241,7 @@ namespace BreastRadiology.XUnitTests
                             .SetDisplay("Layering")
                             .MammoId("711")
                             .ValidModalities(Modalities.MG)
-                            .SetUMLS(711, )
+                            .SetUMLS("711",
                                 "Layering of calcium within the calcification. ",
                                 "###URL#https://radiologyassistant.nl/breast/breast-calcifications-differential-diagnosis")
                         ,
@@ -250,10 +250,10 @@ namespace BreastRadiology.XUnitTests
                             .SetDisplay("Fine Linear")
                             .MammoId("712")
                             .ValidModalities(Modalities.MG)
-                            .SetSnomedDescription(712, )
+                            .SetSnomedDescription("712",
                                 "ClinicalFinding | 129761009 | Fine, linear, (casting) ",
                                 "radiographic calcification (Finding)")
-                            .SetUMLS(712, )
+                            .SetUMLS("712",
                                 "Also called fine linear branching. ",
                                 "These are thin, linear, irregular calcifications, ",
                                 "which may be discontinuous and ",
@@ -270,14 +270,14 @@ namespace BreastRadiology.XUnitTests
                             .SetDisplay("Lucent-centered")
                             .MammoId("713")
                             .ValidModalities(Modalities.MG)
-                            .SetDicom(713, )
+                            .SetDicom("713",
                                 "F-01766")
-                            .SetSnomedCode(713, )
+                            .SetSnomedCode("713",
                                 "129754005")
-                            .SetSnomedDescription(713, )
+                            .SetSnomedDescription("713",
                                 "ClinicalFinding | 129754005 | Lucent-centered radiographic ",
                                 "calcification (Finding)")
-                            .SetUMLS(713, )
+                            .SetUMLS("713",
                                 "These are round or oval calcifications that range ",
                                 "from under 1 mm to over a centimeter.",
                                 "They are the result of fat necrosis, calcified debris ",
@@ -289,14 +289,14 @@ namespace BreastRadiology.XUnitTests
                             .SetDisplay("Milk of calcium")
                             .MammoId("714")
                             .ValidModalities(Modalities.MG)
-                            .SetDicom(714, )
+                            .SetDicom("714",
                                 "F-01765")
-                            .SetSnomedCode(714, )
+                            .SetSnomedCode("714",
                                 "129753004")
-                            .SetSnomedDescription(714, )
+                            .SetSnomedDescription("714",
                                 "ClinicalFinding | 129753004 | Milk of calcium radiographic ",
                                 "calcification (Finding)")
-                            .SetUMLS(714, )
+                            .SetUMLS("714",
                                 "This is a manifestation of sedimented calcifications ",
                                 "in macro- or microcysts, usually but not",
                                 "always grouped. ",
@@ -325,11 +325,11 @@ namespace BreastRadiology.XUnitTests
                             .SetDisplay("Fine Pleomorphic")
                             .MammoId("715")
                             .ValidModalities(Modalities.MG)
-                            .SetDicom(715, )
+                            .SetDicom("715",
                                 "111344")
-                            .SetSnomedDescription(715, )
+                            .SetSnomedDescription("715",
                                 "not found")
-                            .SetUMLS(715, )
+                            .SetUMLS("715",
                                 "These calcifications are usually more conspicuous ",
                                 "than amorphous forms and are seen ",
                                 "to have",
@@ -347,14 +347,14 @@ namespace BreastRadiology.XUnitTests
                             .SetDisplay("Punctate")
                             .MammoId("716")
                             .ValidModalities(Modalities.MG)
-                            .SetDicom(716, )
+                            .SetDicom("716",
                                 "F-01767")
-                            .SetSnomedCode(716, )
+                            .SetSnomedCode("716",
                                 "129755006")
-                            .SetSnomedDescription(716, )
+                            .SetSnomedDescription("716",
                                 "ClinicalFinding | 129755006 | Punctate radiographic ",
                                 "calcification (Finding)")
-                            .SetUMLS(716, )
+                            .SetUMLS("716",
                                 "Calcification is punctate/round. ",
                                 "It's different than a \"round\" calcification though ",
                                 "as it also means the calcifications are less than ",
@@ -371,9 +371,9 @@ namespace BreastRadiology.XUnitTests
                             .SetDisplay("Rim")
                             .MammoId("717")
                             .ValidModalities(Modalities.MG)
-                            .SetSnomedDescription(717, )
+                            .SetSnomedDescription("717",
                                 "not found")
-                            .SetUMLS(717, )
+                            .SetUMLS("717",
                                 "Eggshell or Rim Calcifications",
                                 "These are very thin benign calcifications that appear ",
                                 "as calcium is deposited on ",
@@ -391,14 +391,14 @@ namespace BreastRadiology.XUnitTests
                             .SetDisplay("Round")
                             .MammoId("718")
                             .ValidModalities(Modalities.MG)
-                            .SetDicom(718, )
+                            .SetDicom("718",
                                 "F-01768")
-                            .SetSnomedCode(718, )
+                            .SetSnomedCode("718",
                                 "129756007")
-                            .SetSnomedDescription(718, )
+                            .SetSnomedDescription("718",
                                 "ClinicalFinding | 129756007 | Round shaped radiographic ",
                                 "calcification (Finding)")
-                            .SetUMLS(718, )
+                            .SetUMLS("718",
                                 "When multiple, they may vary in size and therefore ",
                                 "also in opacity. ",
                                 "They may be considered",
@@ -420,10 +420,10 @@ namespace BreastRadiology.XUnitTests
                             .SetDisplay("Skin")
                             .MammoId("719")
                             .ValidModalities(Modalities.MG)
-                            .SetSnomedDescription(719, )
+                            .SetSnomedDescription("719",
                                 "ClinicalFinding | 129757003 | Radiographic finding ",
                                 "of calcified skin of breast (Finding) | [0/0] | R92")
-                            .SetUMLS(719, )
+                            .SetUMLS("719",
                                 "These are usually lucent-centered and pathognomonic ",
                                 "in their appearance. ",
                                 "Skin calcifications are most commonly seen along ",
@@ -441,10 +441,10 @@ namespace BreastRadiology.XUnitTests
                             .SetDisplay("Spherical")
                             .MammoId("720")
                             .ValidModalities(Modalities.MG)
-                            .SetSnomedDescription(720, )
+                            .SetSnomedDescription("720",
                                 "QualifierValue | 34258004 | Spherical shape (Qualifier) ",
                                 "+")
-                            .SetUMLS(720, )
+                            .SetUMLS("720",
                                 "Calcifications that have formed a  spherical shape ",
                                 "are usually associated with benign ",
                                 "lesions. ",
@@ -455,14 +455,14 @@ namespace BreastRadiology.XUnitTests
                             .SetDisplay("Suture")
                             .MammoId("721")
                             .ValidModalities(Modalities.MG)
-                            .SetDicom(721, )
+                            .SetDicom("721",
                                 "F-0176A")
-                            .SetSnomedCode(721, )
+                            .SetSnomedCode("721",
                                 "129758008")
-                            .SetSnomedDescription(721, )
+                            .SetSnomedDescription("721",
                                 "ClinicalFinding | 129758008 | Radiographic finding ",
                                 "of calcified suture material (Finding)")
-                            .SetUMLS(721, )
+                            .SetUMLS("721",
                                 "Calcified suture materials are typically linear or ",
                                 "tubular in appearance, and when present in Mammogram, ",
                                 "may show up in a knot pattern.")
@@ -472,12 +472,12 @@ namespace BreastRadiology.XUnitTests
                             .SetDisplay("Vascular")
                             .MammoId("722")
                             .ValidModalities(Modalities.MG)
-                            .SetDicom(722, )
+                            .SetDicom("722",
                                 "F-0176B")
-                            .SetSnomedDescription(722, )
+                            .SetSnomedDescription("722",
                                 "ClinicalFinding | 396779001 | Breast arterial calcification ",
                                 "(Finding) | [0/0] | R92.1")
-                            .SetUMLS(722, )
+                            .SetUMLS("722",
                                 "These are linear or form parallel tracks, that are ",
                                 "usually clearly associated with blood vessels.",
                                 "Vascular calcifications noted in women",
@@ -546,7 +546,7 @@ namespace BreastRadiology.XUnitTests
                     .ReviewedStatus("Needs review by MagView")
                     .ReviewedStatus("Needs review by CIMI")
                     //+ IntroDocDescription
-                        .Description(690, )
+                        .Description("690",
                             "Calcifications usually can't be felt, but appear ",
                             "on a mammogram. ",
                             "Depending on  cluster, shape, size, and number, further ",

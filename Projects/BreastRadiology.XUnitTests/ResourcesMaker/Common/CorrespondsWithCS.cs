@@ -44,10 +44,10 @@ namespace BreastRadiology.XUnitTests
                             .SetDisplay("Aspiration")
                             .MammoId("391")
                             .ValidModalities(Modalities.MG | Modalities.US)
-                            .SetSnomedDescription(391, )
+                            .SetSnomedDescription("391",
                                 "Procedure | 287572003 | Diagnostic aspiration of ",
                                 "breast cyst (Procedure)")
-                            .SetUMLS(391, )
+                            .SetUMLS("391",
                                 "A medical procedure that removes something from an ",
                                 "area of the body. ",
                                 "These substances can be air, body fluids, or bone ",
@@ -59,9 +59,9 @@ namespace BreastRadiology.XUnitTests
                             .SetDisplay("Biopsy")
                             .MammoId("392")
                             .ValidModalities(Modalities.MG)
-                            .SetSnomedDescription(392, )
+                            .SetSnomedDescription("392",
                                 "Procedure | 122548005 | Biopsy of breast (Procedure)")
-                            .SetUMLS(392, )
+                            .SetUMLS("392",
                                 "The Mammogram and Biopsy correspond with each other.")
                         ,
                         new ConceptDef()
@@ -69,7 +69,7 @@ namespace BreastRadiology.XUnitTests
                             .SetDisplay("Concern")
                             .MammoId("327")
                             .ValidModalities(Modalities.MG | Modalities.MRI | Modalities.NM | Modalities.US)
-                            .SetUMLS(327, )
+                            .SetUMLS("327",
                                 "The test corresponds with the concern.")
                         ,
                         new ConceptDef()
@@ -77,10 +77,10 @@ namespace BreastRadiology.XUnitTests
                             .SetDisplay("Ductogram")
                             .MammoId("324")
                             .ValidModalities(Modalities.MG)
-                            .SetSnomedDescription(324, )
+                            .SetSnomedDescription("324",
                                 "Procedure | 420131003 | Fluoroscopic mammary ductography ",
                                 "(Procedure)")
-                            .SetUMLS(324, )
+                            .SetUMLS("324",
                                 "A ductogram, also called a galactogram, is a special ",
                                 "type of mammogram used for imaging ",
                                 "the breast ducts. ",
@@ -101,7 +101,7 @@ namespace BreastRadiology.XUnitTests
                             .SetDisplay("Incidental finding")
                             .MammoId("79")
                             .ValidModalities(Modalities.MG | Modalities.MRI | Modalities.NM | Modalities.US)
-                            .SetUMLS(79, )
+                            .SetUMLS("79",
                                 "A medical finding that wasn't the abnormality of ",
                                 "the original  mammogram, MRI, nuclear ",
                                 "medicine, or ultrasound was intended to find.")
@@ -111,7 +111,7 @@ namespace BreastRadiology.XUnitTests
                             .SetDisplay("Mammo")
                             .MammoId("10")
                             .ValidModalities(Modalities.MRI | Modalities.NM | Modalities.US)
-                            .SetUMLS(10, )
+                            .SetUMLS("10",
                                 "The original MRI, Nuclear Medicine, or Ultrasound ",
                                 "corresponds with the findings on ",
                                 "the Mammogram.")
@@ -121,10 +121,10 @@ namespace BreastRadiology.XUnitTests
                             .SetDisplay("MRI")
                             .MammoId("272")
                             .ValidModalities(Modalities.MG | Modalities.MRI | Modalities.NM | Modalities.US)
-                            .SetSnomedDescription(272, )
+                            .SetSnomedDescription("272",
                                 "Procedure | 241615005 | Magnetic resonance imaging ",
                                 "of breast (Procedure)")
-                            .SetUMLS(272, )
+                            .SetUMLS("272",
                                 "The original Mammogram, Nuclear Medicine, or Ultrasound ",
                                 "corresponds with the findings ",
                                 "on the MRI.")
@@ -134,10 +134,10 @@ namespace BreastRadiology.XUnitTests
                             .SetDisplay("Nipple discharge")
                             .MammoId("318")
                             .ValidModalities(Modalities.MG | Modalities.US)
-                            .SetSnomedDescription(318, )
+                            .SetSnomedDescription("318",
                                 "ClinicalFinding | 162166009 | Nipple discharge present ",
                                 "(Disorder) | [0/0] | N64.52 |")
-                            .SetUMLS(318, )
+                            .SetUMLS("318",
                                 "The findings on the Mammogram and/or Ultrasound, ",
                                 "correspond with the nipple discharge.")
                         ,
@@ -146,7 +146,7 @@ namespace BreastRadiology.XUnitTests
                             .SetDisplay("Outside exam")
                             .MammoId("451")
                             .ValidModalities(Modalities.MG)
-                            .SetUMLS(451, )
+                            .SetUMLS("451",
                                 "Previous exam at another clinic that took place separate ",
                                 "from current exam.")
                         ,
@@ -155,7 +155,7 @@ namespace BreastRadiology.XUnitTests
                             .SetDisplay("Pain")
                             .MammoId("271")
                             .ValidModalities(Modalities.MG | Modalities.MRI | Modalities.NM | Modalities.US)
-                            .SetUMLS(271, )
+                            .SetUMLS("271",
                                 "Mammogram, MRI, Nuclear Medicine, or ultrasound corresponds ",
                                 "with the pain the patient ",
                                 "is experiencing.")
@@ -165,7 +165,7 @@ namespace BreastRadiology.XUnitTests
                             .SetDisplay("Palpated")
                             .MammoId("8")
                             .ValidModalities(Modalities.MG | Modalities.MRI | Modalities.NM | Modalities.US)
-                            .SetUMLS(8, )
+                            .SetUMLS("8",
                                 "The Mammogram, Ultrasound, Nuclear Medicine, MRI ",
                                 "correspond with the palpated (physical ",
                                 "exam to touch) lump.")
@@ -175,10 +175,10 @@ namespace BreastRadiology.XUnitTests
                             .SetDisplay("Post operative")
                             .MammoId("325")
                             .ValidModalities(Modalities.MG)
-                            .SetSnomedDescription(325, )
+                            .SetSnomedDescription("325",
                                 "BodyStructure | 312285003 | Post-surgical breast ",
                                 "structure")
-                            .SetUMLS(325, )
+                            .SetUMLS("325",
                                 "The Mammogram corresponds with the post operative ",
                                 "results of the breast incision.")
                         ,
@@ -187,9 +187,9 @@ namespace BreastRadiology.XUnitTests
                             .SetDisplay("Previous biopsy")
                             .MammoId("330")
                             .ValidModalities(Modalities.MRI | Modalities.US)
-                            .SetSnomedDescription(330, )
+                            .SetSnomedDescription("330",
                                 "Procedure | 122548005 | Biopsy of breast (Procedure)")
-                            .SetUMLS(330, )
+                            .SetUMLS("330",
                                 "The previous biopsy results correspond with the MRI ",
                                 "and/or Ultrasound.")
                         ,
@@ -198,7 +198,7 @@ namespace BreastRadiology.XUnitTests
                             .SetDisplay("Prior exam")
                             .MammoId("450")
                             .ValidModalities(Modalities.MG)
-                            .SetUMLS(450, )
+                            .SetUMLS("450",
                                 "The prior exam of the breast, corresponds with the ",
                                 "results of the Mammogram.")
                         ,
@@ -207,7 +207,7 @@ namespace BreastRadiology.XUnitTests
                             .SetDisplay("Redness")
                             .MammoId("326")
                             .ValidModalities(Modalities.MG | Modalities.US)
-                            .SetUMLS(326, )
+                            .SetUMLS("326",
                                 "The redness in the breast, corresponds with the results ",
                                 "of the Mammogram and/or Ultrasound.")
                         ,
@@ -216,7 +216,7 @@ namespace BreastRadiology.XUnitTests
                             .SetDisplay("Scinti")
                             .MammoId("323")
                             .ValidModalities(Modalities.MG)
-                            .SetUMLS(323, )
+                            .SetUMLS("323",
                                 "The initial Mammogram corresponds with the Scinti ",
                                 "results. ",
                                 " Scintigraphy definition is - a diagnostic technique ",
@@ -230,7 +230,7 @@ namespace BreastRadiology.XUnitTests
                             .SetDisplay("Size < mammo")
                             .MammoId("274")
                             .ValidModalities(Modalities.MRI | Modalities.NM | Modalities.US)
-                            .SetUMLS(274, )
+                            .SetUMLS("274",
                                 "size < mammo")
                         ,
                         new ConceptDef()
@@ -238,7 +238,7 @@ namespace BreastRadiology.XUnitTests
                             .SetDisplay("Size < MRI")
                             .MammoId("276")
                             .ValidModalities(Modalities.MG)
-                            .SetUMLS(276, )
+                            .SetUMLS("276",
                                 "size < MRI")
                         ,
                         new ConceptDef()
@@ -246,7 +246,7 @@ namespace BreastRadiology.XUnitTests
                             .SetDisplay("Size < palp")
                             .MammoId("278")
                             .ValidModalities(Modalities.MG | Modalities.MRI | Modalities.US)
-                            .SetUMLS(278, )
+                            .SetUMLS("278",
                                 "size < palp")
                         ,
                         new ConceptDef()
@@ -254,7 +254,7 @@ namespace BreastRadiology.XUnitTests
                             .SetDisplay("Size < US")
                             .MammoId("320.276")
                             .ValidModalities(Modalities.MG | Modalities.MRI | Modalities.NM | Modalities.US)
-                            .SetUMLS(320.276, )
+                            .SetUMLS("320.276",
                                 "size < US")
                         ,
                         new ConceptDef()
@@ -262,7 +262,7 @@ namespace BreastRadiology.XUnitTests
                             .SetDisplay("Size > mammo")
                             .MammoId("273")
                             .ValidModalities(Modalities.MRI | Modalities.NM | Modalities.US)
-                            .SetUMLS(273, )
+                            .SetUMLS("273",
                                 "size > mammo")
                         ,
                         new ConceptDef()
@@ -270,7 +270,7 @@ namespace BreastRadiology.XUnitTests
                             .SetDisplay("Size > MRI")
                             .MammoId("275")
                             .ValidModalities(Modalities.MG)
-                            .SetUMLS(275, )
+                            .SetUMLS("275",
                                 "size > MRI")
                         ,
                         new ConceptDef()
@@ -278,7 +278,7 @@ namespace BreastRadiology.XUnitTests
                             .SetDisplay("Size > palp")
                             .MammoId("277")
                             .ValidModalities(Modalities.MG | Modalities.MRI | Modalities.US)
-                            .SetUMLS(277, )
+                            .SetUMLS("277",
                                 "size > palp")
                         ,
                         new ConceptDef()
@@ -286,10 +286,10 @@ namespace BreastRadiology.XUnitTests
                             .SetDisplay("Skin marker")
                             .MammoId("328")
                             .ValidModalities(Modalities.MG)
-                            .SetSnomedDescription(328, )
+                            .SetSnomedDescription("328",
                                 "PhysicalObject | 706314007 | Imaging lesion localization ",
                                 "marker (Object)")
-                            .SetUMLS(328, )
+                            .SetUMLS("328",
                                 "The mammogram findings correspond with where the ",
                                 "skin marker was placed on the breast.")
                         ,
@@ -298,10 +298,10 @@ namespace BreastRadiology.XUnitTests
                             .SetDisplay("Surgery")
                             .MammoId("393")
                             .ValidModalities(Modalities.MG)
-                            .SetSnomedDescription(393, )
+                            .SetSnomedDescription("393",
                                 "Procedure | 274331003 | Surgical biopsy of breast ",
                                 "(Procedure)")
-                            .SetUMLS(393, )
+                            .SetUMLS("393",
                                 "Surgery")
                         ,
                         new ConceptDef()
@@ -309,7 +309,7 @@ namespace BreastRadiology.XUnitTests
                             .SetDisplay("Surgical site")
                             .MammoId("329")
                             .ValidModalities(Modalities.MRI)
-                            .SetUMLS(329, )
+                            .SetUMLS("329",
                                 "The MRI information corresponds with the surgical ",
                                 "site.")
                         ,
@@ -318,10 +318,10 @@ namespace BreastRadiology.XUnitTests
                             .SetDisplay("Tenderness")
                             .MammoId("322")
                             .ValidModalities(Modalities.MG)
-                            .SetSnomedDescription(322, )
+                            .SetSnomedDescription("322",
                                 "ClinicalFinding | 290080002 | Localized tenderness ",
                                 "of breast (Finding) | [0/0] | N64.4")
-                            .SetUMLS(322, )
+                            .SetUMLS("322",
                                 "The mammogram results correspond with where the patient ",
                                 "feels tenderness.")
                         ,
@@ -330,9 +330,9 @@ namespace BreastRadiology.XUnitTests
                             .SetDisplay("Trigger point")
                             .MammoId("319")
                             .ValidModalities(Modalities.US)
-                            .SetSnomedDescription(319, )
+                            .SetSnomedDescription("319",
                                 "BodyStructure | 134190002 | Trigger point (BodyStructure)")
-                            .SetUMLS(319, )
+                            .SetUMLS("319",
                                 "The results of the Ultrasound correspond with where ",
                                 "the trigger point is around the ",
                                 "tumor/lesion. ",
@@ -344,7 +344,7 @@ namespace BreastRadiology.XUnitTests
                             .SetDisplay("US")
                             .MammoId("270")
                             .ValidModalities(Modalities.MG | Modalities.MRI | Modalities.NM | Modalities.US)
-                            .SetUMLS(270, )
+                            .SetUMLS("270",
                                 "The results of the MRI, Mammogram and/or Nuclear ",
                                 "Medicine exam, correspond with this ",
                                 "Ultrasound.")

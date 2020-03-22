@@ -30,7 +30,7 @@ namespace BreastRadiology.XUnitTests
                             .SetDisplay("Duct normal")
                             .MammoId("692")
                             .ValidModalities(Modalities.MG)
-                            .SetUMLS(692, )
+                            .SetUMLS("692",
                                 "Duct is considered normal. ",
                                 "It is surrounded by normal cells and collagen in ",
                                 "the breast with no abnormalities. ",
@@ -42,7 +42,7 @@ namespace BreastRadiology.XUnitTests
                             .SetDisplay("Solitary dilated duct")
                             .MammoId("694.602")
                             .ValidModalities(Modalities.MG | Modalities.US)
-                            .SetUMLS(694.602, )
+                            .SetUMLS("694.602",
                                 "When it is malignant, solitary dilated duct appears ",
                                 "to indicate the presence of DCIS. ",
                                 "In almost all solitary dilated duct cases, the dilated ",
@@ -54,10 +54,10 @@ namespace BreastRadiology.XUnitTests
                             .SetDisplay("Duct ectasia")
                             .MammoId("693.614")
                             .ValidModalities(Modalities.MG | Modalities.US)
-                            .SetSnomedDescription(693.614, )
+                            .SetSnomedDescription("693.614",
                                 "ClinicalFinding | 22049009 | Mammary duct ectasia ",
                                 "(Disorder) | [0/0] | N60.49")
-                            .SetUMLS(693.614, )
+                            .SetUMLS("693.614",
                                 "A noncancerous condition that results in clogged ",
                                 "ducts around the nipple. ",
                                 "While it sometimes causes pain, irritation and discharge, ",

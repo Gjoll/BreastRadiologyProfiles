@@ -30,7 +30,7 @@ namespace BreastRadiology.XUnitTests
                             .SetDisplay("Mass")
                             .MammoId("58")
                             .ValidModalities(Modalities.MG | Modalities.MRI | Modalities.US)
-                            .SetUMLS(58, )
+                            .SetUMLS("58",
                                 "A breast mass has been identified in the breast. ",
                                 "This is also known as a breast lump. ",
                                 " It feels different from the surrounding tissue. ",
@@ -42,10 +42,10 @@ namespace BreastRadiology.XUnitTests
                             .SetDisplay("Mass intraductal")
                             .MammoId("621")
                             .ValidModalities(Modalities.US)
-                            .SetSnomedDescription(621, )
+                            .SetSnomedDescription("621",
                                 "ClinicalFinding | 369753003 | Intraductal tumor configuration ",
                                 "(Finding)")
-                            .SetUMLS(621, )
+                            .SetUMLS("621",
                                 "An intraductal mass has been identified in the breast. ",
                                 "It is a lump that originates in one or more of the ",
                                 "milk ducts in the breast.")
@@ -55,7 +55,7 @@ namespace BreastRadiology.XUnitTests
                             .SetDisplay("Mass partially solid")
                             .MammoId("697")
                             .ValidModalities(Modalities.MG | Modalities.US)
-                            .SetUMLS(697, )
+                            .SetUMLS("697",
                                 "A mass that is partially solid has been identified ",
                                 "in the breast.")
                         ,
@@ -64,11 +64,11 @@ namespace BreastRadiology.XUnitTests
                             .SetDisplay("Mass skin ATLAS is skin lesion")
                             .MammoId("613")
                             .ValidModalities(Modalities.MG | Modalities.US)
-                            .SetSnomedCode(613, )
+                            .SetSnomedCode("613",
                                 "126510002")
-                            .SetSnomedDescription(613, )
+                            .SetSnomedDescription("613",
                                 "ClinicalFinding | Neoplasm of skin of breast (Disorder)")
-                            .SetUMLS(613, )
+                            .SetUMLS("613",
                                 "The mammogram and/or ultrasound show a skin lesion. ",
                                 "This finding may be described in the mammography ",
                                 "report or annotated on the mammographic image when ",
@@ -81,7 +81,7 @@ namespace BreastRadiology.XUnitTests
                             .SetDisplay("Mass solid")
                             .MammoId("608")
                             .ValidModalities(Modalities.MG | Modalities.US)
-                            .SetUMLS(608, )
+                            .SetUMLS("608",
                                 "The mammogram and/or ultrasound show solid mass of ",
                                 "the breast. ",
                                 "This can be nodules, fibrocystic tissue, phylloides ",

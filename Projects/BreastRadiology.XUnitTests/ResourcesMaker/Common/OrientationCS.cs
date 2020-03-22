@@ -31,7 +31,7 @@ namespace BreastRadiology.XUnitTests
                             .SetDisplay("Parallel to skin")
                             .MammoId("1508")
                             .ValidModalities(Modalities.MG | Modalities.MRI | Modalities.NM | Modalities.US)
-                            .SetUMLS(1508, )
+                            .SetUMLS("1508",
                                 "The lesion/mass is oriented parellel to skin.")
                         ,
                         new ConceptDef()
@@ -39,7 +39,7 @@ namespace BreastRadiology.XUnitTests
                             .SetDisplay("Perpendicular to skin (not parallel)")
                             .MammoId("1509")
                             .ValidModalities(Modalities.MG | Modalities.MRI | Modalities.NM | Modalities.US)
-                            .SetUMLS(1509, )
+                            .SetUMLS("1509",
                                 "The lesion/mass is oriented perpendicular to skin.")
                         ,
                         new ConceptDef()
@@ -47,7 +47,7 @@ namespace BreastRadiology.XUnitTests
                             .SetDisplay("Taller than wide")
                             .MammoId("1518")
                             .ValidModalities(Modalities.MRI | Modalities.US)
-                            .SetUMLS(1518, )
+                            .SetUMLS("1518",
                                 "The nodule is taller than wide. ",
                                 "A nodule is said to be taller than wide when it is ",
                                 "greater in the direction normal to the skin than ",
@@ -58,7 +58,7 @@ namespace BreastRadiology.XUnitTests
                             .SetDisplay("Wider than tall")
                             .MammoId("1517")
                             .ValidModalities(Modalities.MRI | Modalities.US)
-                            .SetUMLS(1517, )
+                            .SetUMLS("1517",
                                 "The nodule is wider than tall. ",
                                 "A nodule is said to be wider than tall when it is ",
                                 "larger in the direction not parallel to the direction ",

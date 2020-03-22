@@ -24,10 +24,10 @@ namespace BreastRadiology.XUnitTests
                             .SetDisplay("Clustered distribution")
                             .MammoId("751")
                             .ValidModalities(Modalities.MG)
-                            .SetSnomedDescription(751, )
+                            .SetSnomedDescription("751",
                                 "ClinicalFinding | 129769006 | Radiographic calcification ",
                                 "with clustered distribution (Finding)")
-                            .SetUMLS(751, )
+                            .SetUMLS("751",
                                 "Grouped (historically, \"clustered\") ",
                                 "This term should be used when relatively few calcifications ",
                                 "occupy a small portion ",
@@ -49,12 +49,12 @@ namespace BreastRadiology.XUnitTests
                             .SetDisplay("Diffuse distribution")
                             .MammoId("752")
                             .ValidModalities(Modalities.MG)
-                            .SetDicom(752, )
+                            .SetDicom("752",
                                 "F-01770")
-                            .SetSnomedDescription(752, )
+                            .SetSnomedDescription("752",
                                 "ClinicalFinding | 129764001 | Radiographic calcification ",
                                 "with diffuse distribution (Finding)")
-                            .SetUMLS(752, )
+                            .SetUMLS("752",
                                 "Diffuse or Scattered: diffuse calcifications may ",
                                 "be scattered calcifications or multiple similar appearing ",
                                 "clusters of calcifications throughout the whole breast. ",
@@ -69,12 +69,12 @@ namespace BreastRadiology.XUnitTests
                             .SetDisplay("Grouped distribution")
                             .MammoId("753")
                             .ValidModalities(Modalities.MG)
-                            .SetDicom(753, )
+                            .SetDicom("753",
                                 "F-01772")
-                            .SetSnomedDescription(753, )
+                            .SetSnomedDescription("753",
                                 "ClinicalFinding | 129766004 | Radiographic calcification ",
                                 "with grouped distribution (Finding)")
-                            .SetUMLS(753, )
+                            .SetUMLS("753",
                                 "This term should be used when relatively few calcifications ",
                                 "occupy a ",
                                 "small portion of breast tissue. ",
@@ -91,12 +91,12 @@ namespace BreastRadiology.XUnitTests
                             .SetDisplay("Linear distribution")
                             .MammoId("754")
                             .ValidModalities(Modalities.MG)
-                            .SetDicom(754, )
+                            .SetDicom("754",
                                 "F-01771")
-                            .SetSnomedDescription(754, )
+                            .SetSnomedDescription("754",
                                 "ClinicalFinding | 129765000 | Radiographic calcification ",
                                 "with linear distribution (Finding)")
-                            .SetUMLS(754, )
+                            .SetUMLS("754",
                                 "These are calcifications arrayed in a line. ",
                                 "This distribution may elevate suspicion for malignancy, ",
                                 "as it suggests deposits in a duct. ",
@@ -111,12 +111,12 @@ namespace BreastRadiology.XUnitTests
                             .SetDisplay("Regional distribution")
                             .MammoId("755")
                             .ValidModalities(Modalities.MG)
-                            .SetDicom(755, )
+                            .SetDicom("755",
                                 "F-01773")
-                            .SetSnomedDescription(755, )
+                            .SetSnomedDescription("755",
                                 "ClinicalFinding | 129767008 | Radiographic calcification ",
                                 "with regional distribution (Finding)")
-                            .SetUMLS(755, )
+                            .SetUMLS("755",
                                 "Scattered in a larger volume (> 2 cc) of breast tissue ",
                                 "and not in the expected ductal distribution. ",
                                 "Regional distribution according to the BI-RADS atlas ",
@@ -128,9 +128,9 @@ namespace BreastRadiology.XUnitTests
                             .SetDisplay("Scattered distribution")
                             .MammoId("756")
                             .ValidModalities(Modalities.MG)
-                            .SetSnomedDescription(756, )
+                            .SetSnomedDescription("756",
                                 "not found")
-                            .SetUMLS(756, )
+                            .SetUMLS("756",
                                 "Scattered distributions are also called diffuse distributions. ",
                                 "These are calcifications that are distributed randomly ",
                                 "throughout the breast. ",
@@ -144,14 +144,14 @@ namespace BreastRadiology.XUnitTests
                             .SetDisplay("Segmental distribution")
                             .MammoId("757")
                             .ValidModalities(Modalities.MG)
-                            .SetDicom(757, )
+                            .SetDicom("757",
                                 "F-01774")
-                            .SetSnomedCode(757, )
+                            .SetSnomedCode("757",
                                 "129768003")
-                            .SetSnomedDescription(757, )
+                            .SetSnomedDescription("757",
                                 "ClinicalFinding | 129768003 | Radiographic calcification ",
                                 "with segmental distribution (Finding)")
-                            .SetUMLS(757, )
+                            .SetUMLS("757",
                                 "Segmental: calcium deposits in ducts and branches ",
                                 "of a segment or lobe. ",
                                 " Segmental distribution would favor a ductal distribution ",

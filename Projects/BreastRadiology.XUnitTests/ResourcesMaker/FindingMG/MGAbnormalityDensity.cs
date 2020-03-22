@@ -25,7 +25,7 @@ namespace BreastRadiology.XUnitTests
                             .SetDisplay("Density")
                             .MammoId("686")
                             .ValidModalities(Modalities.MG)
-                            .SetUMLS(686, )
+                            .SetUMLS("686",
                                 "The density types are referring to the amount of ",
                                 " glandular tissue and fibrous connective tissue versus ",
                                 "levels of fatty tissue.")
@@ -35,7 +35,7 @@ namespace BreastRadiology.XUnitTests
                             .SetDisplay("Density focal asymmetry")
                             .MammoId("645")
                             .ValidModalities(Modalities.MG)
-                            .SetUMLS(645, )
+                            .SetUMLS("645",
                                 "The density is focal asymmetry on two mammographic ",
                                 "views.")
                         ,
@@ -44,9 +44,9 @@ namespace BreastRadiology.XUnitTests
                             .SetDisplay("Density nodular")
                             .MammoId("646")
                             .ValidModalities(Modalities.MG)
-                            .SetSnomedDescription(646, )
+                            .SetSnomedDescription("646",
                                 "not found like tubular shaped")
-                            .SetUMLS(646, )
+                            .SetUMLS("646",
                                 "The nodule found on Mammogram is dense.")
                         ,
                         new ConceptDef()
@@ -54,10 +54,10 @@ namespace BreastRadiology.XUnitTests
                             .SetDisplay("Density tubular")
                             .MammoId("647")
                             .ValidModalities(Modalities.MG)
-                            .SetSnomedDescription(647, )
+                            .SetSnomedDescription("647",
                                 "ClinicalFinding | 129794007 | Tubular shaped density ",
                                 "of breast (Finding)")
-                            .SetUMLS(647, )
+                            .SetUMLS("647",
                                 "The milk ducts have formed a tubular appearing dense ",
                                 "structure.")
                         #endregion // Codes
@@ -125,7 +125,7 @@ namespace BreastRadiology.XUnitTests
                     .ReviewedStatus("Needs review by MagView")
                     .ReviewedStatus("Needs review by CIMI")
                     //+ IntroDocDescription
-                        .Description(686, )
+                        .Description("686",
                             "The density types are referring to the amount of ",
                             " glandular tissue and fibrous connective tissue versus ",
                             "levels of fatty tissue.")

@@ -32,10 +32,10 @@ namespace BreastRadiology.XUnitTests
                             .SetDisplay("Category 0 (Incomplete)")
                             .MammoId("36")
                             .ValidModalities(Modalities.MG | Modalities.MRI | Modalities.NM | Modalities.US)
-                            .SetSnomedDescription(36, )
+                            .SetSnomedDescription("36",
                                 "ClinicalFinding | 397138000 | Mammography assessment ",
                                 "(Category 0)")
-                            .SetUMLS(36, )
+                            .SetUMLS("36",
                                 "Need additional Imaging Evaluation and/or prior Mammograms ",
                                 "for comparison. ",
                                 "Recall for additional imaging and/or comparison with ",
@@ -47,10 +47,10 @@ namespace BreastRadiology.XUnitTests
                             .SetDisplay("Category 2 (Benign)")
                             .MammoId("32")
                             .ValidModalities(Modalities.MG | Modalities.MRI | Modalities.NM | Modalities.US)
-                            .SetSnomedDescription(32, )
+                            .SetSnomedDescription("32",
                                 "ClinicalFinding | 397141009 | Mammography assessment ",
                                 "(Category 2)")
-                            .SetUMLS(32, )
+                            .SetUMLS("32",
                                 "This is a normal assessment. ",
                                 "Benign refers to a condition, tumor, or growth that ",
                                 "is not cancerous. ",
@@ -65,10 +65,10 @@ namespace BreastRadiology.XUnitTests
                             .SetDisplay("Category 3 (Probably Benign)")
                             .MammoId("33")
                             .ValidModalities(Modalities.MG | Modalities.MRI | Modalities.NM | Modalities.US)
-                            .SetSnomedDescription(33, )
+                            .SetSnomedDescription("33",
                                 "ClinicalFinding | 397143007 | Mammography assessment ",
                                 "(Category 3)")
-                            .SetUMLS(33, )
+                            .SetUMLS("33",
                                 "A finding assessed using this category should have ",
                                 "a <= 2% likelihood of malignancy, ",
                                 "but greater than the essentially 0% likelihood of ",
@@ -89,10 +89,10 @@ namespace BreastRadiology.XUnitTests
                             .SetDisplay("Category 4 (Suspicious)")
                             .MammoId("34")
                             .ValidModalities(Modalities.MG | Modalities.MRI | Modalities.NM | Modalities.US)
-                            .SetSnomedDescription(34, )
+                            .SetSnomedDescription("34",
                                 "ClinicalFinding | 397144001 | Mammography assessment ",
                                 "(Category 4)")
-                            .SetUMLS(34, )
+                            .SetUMLS("34",
                                 "This category is reserved for findings that do not ",
                                 "have the classic appearance of ",
                                 "malignancy but are sufficiently suspicious to justify ",
@@ -109,9 +109,9 @@ namespace BreastRadiology.XUnitTests
                             .SetDisplay("Category 4A (Low suspicion)")
                             .MammoId("176")
                             .ValidModalities(Modalities.MG | Modalities.MRI | Modalities.NM | Modalities.US)
-                            .SetSnomedDescription(176, )
+                            .SetSnomedDescription("176",
                                 "Not found")
-                            .SetUMLS(176, )
+                            .SetUMLS("176",
                                 "Low suspicion for malignancy. ",
                                 "A malignant finding is not suspected. ",
                                 "A biopsy or other test will likely still be performed ",
@@ -128,9 +128,9 @@ namespace BreastRadiology.XUnitTests
                             .SetDisplay("Category 4B (Moderate suspicion)")
                             .MammoId("177")
                             .ValidModalities(Modalities.MG | Modalities.MRI | Modalities.NM | Modalities.US)
-                            .SetSnomedDescription(177, )
+                            .SetSnomedDescription("177",
                                 "Not found")
-                            .SetUMLS(177, )
+                            .SetUMLS("177",
                                 "Category 4B: Moderate suspicion for malignancy. ",
                                 "It warrants radiologic and pathologic correlation ",
                                 "after tissue diagnosis. ",
@@ -144,9 +144,9 @@ namespace BreastRadiology.XUnitTests
                             .SetDisplay("Category 4C (High suspicion)")
                             .MammoId("178")
                             .ValidModalities(Modalities.MG | Modalities.MRI | Modalities.NM | Modalities.US)
-                            .SetSnomedDescription(178, )
+                            .SetSnomedDescription("178",
                                 "Not found")
-                            .SetUMLS(178, )
+                            .SetUMLS("178",
                                 "Category 4C: High suspicion for",
                                 "malignancy. ",
                                 "Includes findings that have a high suspicion of malignancy ",
@@ -163,10 +163,10 @@ namespace BreastRadiology.XUnitTests
                             .SetDisplay("Category 5 (Highly Suggestive of Malignancy)")
                             .MammoId("35")
                             .ValidModalities(Modalities.MG | Modalities.MRI | Modalities.NM | Modalities.US)
-                            .SetSnomedDescription(35, )
+                            .SetSnomedDescription("35",
                                 "ClinicalFinding | 397145000 | Mammography assessment ",
                                 "(Category 5)")
-                            .SetUMLS(35, )
+                            .SetUMLS("35",
                                 "Highly Suggestive of Malignancy. ",
                                 "Almost certainly predictive of breast cancer with ",
                                 "a ",
@@ -179,7 +179,7 @@ namespace BreastRadiology.XUnitTests
                             .SetDisplay("Category 6 (Known Biopsy-Proven Malignancy)")
                             .MammoId("172")
                             .ValidModalities(Modalities.MG | Modalities.MRI | Modalities.NM | Modalities.US)
-                            .SetUMLS(172, )
+                            .SetUMLS("172",
                                 "Known Biopsy-Proven Malignancy. ",
                                 "Surgical excision when clinically",
                                 "appropriate. ",

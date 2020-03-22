@@ -30,11 +30,11 @@ namespace BreastRadiology.XUnitTests
                             .SetDisplay("Cyst")
                             .MammoId("69")
                             .ValidModalities(Modalities.MG | Modalities.MRI | Modalities.US)
-                            .SetSnomedCode(69, )
+                            .SetSnomedCode("69",
                                 "399294002")
-                            .SetSnomedDescription(69, )
+                            .SetSnomedDescription("69",
                                 "ClinicalFinding |Cyst of breast (Disorder)")
-                            .SetUMLS(69, )
+                            .SetUMLS("69",
                                 "A cyst is a sac-like pocket of membranous tissue ",
                                 "that contains fluid, air, or other ",
                                 "substances. ",
@@ -46,11 +46,11 @@ namespace BreastRadiology.XUnitTests
                             .SetDisplay("Cyst complex")
                             .MammoId("610")
                             .ValidModalities(Modalities.MG | Modalities.US)
-                            .SetSnomedCode(610, )
+                            .SetSnomedCode("610",
                                 "449837001")
-                            .SetSnomedDescription(610, )
+                            .SetSnomedDescription("610",
                                 "ClinicalFinding | Complex cyst of breast (Disorder)")
-                            .SetUMLS(610, )
+                            .SetUMLS("610",
                                 "Complex cysts have irregular or scalloped borders, ",
                                 "thick walls, and some evidence ",
                                 "of solid areas and/or debris in the fluid. ",
@@ -69,7 +69,7 @@ namespace BreastRadiology.XUnitTests
                             .SetDisplay("Cyst complicated")
                             .MammoId("657")
                             .ValidModalities(Modalities.MG | Modalities.US)
-                            .SetUMLS(657, )
+                            .SetUMLS("657",
                                 "Complicated cysts are \"in between\" simple and complex. ",
                                 "Although they share most of the features of simple ",
                                 "cysts, they tend to have some ",
@@ -85,7 +85,7 @@ namespace BreastRadiology.XUnitTests
                             .SetDisplay("Cyst micro")
                             .MammoId("617")
                             .ValidModalities(Modalities.US)
-                            .SetUMLS(617, )
+                            .SetUMLS("617",
                                 "A microcyst Is a sac-like pocket of tissue that contains ",
                                 "fluid, air, or other substances. ",
                                 "A Microcyst is small and less than 2-3 mm and are ",
@@ -97,7 +97,7 @@ namespace BreastRadiology.XUnitTests
                             .SetDisplay("Cyst oil")
                             .MammoId("636")
                             .ValidModalities(Modalities.MG | Modalities.US)
-                            .SetUMLS(636, )
+                            .SetUMLS("636",
                                 "Oil cysts are filled with fluid that may feel smooth ",
                                 "and soft/squishy. ",
                                 "Oil cysts are caused by the breakdown of fatty tissue.")
@@ -107,11 +107,11 @@ namespace BreastRadiology.XUnitTests
                             .SetDisplay("Cyst simple")
                             .MammoId("609")
                             .ValidModalities(Modalities.MG | Modalities.US)
-                            .SetSnomedCode(609, )
+                            .SetSnomedCode("609",
                                 "399253005")
-                            .SetSnomedDescription(609, )
+                            .SetSnomedDescription("609",
                                 "ClinicalFinding | Simple cyst of breast (Disorder)")
-                            .SetUMLS(609, )
+                            .SetUMLS("609",
                                 "A simple cyst is a sac-like pocket of membranous ",
                                 "tissue that only contains clear ",
                                 "fluid.")
@@ -121,7 +121,7 @@ namespace BreastRadiology.XUnitTests
                             .SetDisplay("Cyst with debris")
                             .MammoId("661")
                             .ValidModalities(Modalities.MG | Modalities.US)
-                            .SetUMLS(661, )
+                            .SetUMLS("661",
                                 "A cyst that is filled with debris and fluid substance. ",
                                 "It Is either considered a complex or complicated ",
                                 "cyst. ",
@@ -203,7 +203,7 @@ namespace BreastRadiology.XUnitTests
                     .ReviewedStatus("Needs review by MagView")
                     .ReviewedStatus("Needs review by CIMI")
                     //+ IntroDocDescription
-                        .Description(69, )
+                        .Description("69",
                             "A cyst is a sac-like pocket of membranous tissue ",
                             "that contains fluid, air, or other ",
                             "substances. ",

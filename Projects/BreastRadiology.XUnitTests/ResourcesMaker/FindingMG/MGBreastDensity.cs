@@ -30,7 +30,7 @@ namespace BreastRadiology.XUnitTests
                             .SetDisplay("Almost entirely fat")
                             .MammoId("Row618")
                             .ValidModalities(Modalities.MG)
-                            .SetUMLS(Row618, )
+                            .SetUMLS("Row618",
                                 "A term used to describe breast tissue that is made ",
                                 "up of almost all fatty tissue. ",
                                 "Fatty breast tissue does not look dense on a mammogram, ",
@@ -48,7 +48,7 @@ namespace BreastRadiology.XUnitTests
                             .SetDisplay("Scattered areas of fibroglandular density")
                             .MammoId("Row619")
                             .ValidModalities(Modalities.MG)
-                            .SetUMLS(Row619, )
+                            .SetUMLS("Row619",
                                 "A term used to describe breast tissue that is made ",
                                 "up of mostly fatty tissue and ",
                                 "also has some dense fibrous tissue and glandular ",
@@ -67,7 +67,7 @@ namespace BreastRadiology.XUnitTests
                             .SetDisplay("Heterogeneously dense")
                             .MammoId("Row620")
                             .ValidModalities(Modalities.MG)
-                            .SetUMLS(Row620, )
+                            .SetUMLS("Row620",
                                 "A term used to describe breast tissue that has large ",
                                 "areas of dense fibrous tissue ",
                                 "and glandular tissue and also has some fatty tissue. ",
@@ -85,7 +85,7 @@ namespace BreastRadiology.XUnitTests
                             .SetDisplay("Extremely dense")
                             .MammoId("Row621")
                             .ValidModalities(Modalities.MG)
-                            .SetUMLS(Row621, )
+                            .SetUMLS("Row621",
                                 "Also called extremely dense breast tissue. ",
                                 "A term used to describe breast tissue that is made ",
                                 "up of almost all dense fibrous ",

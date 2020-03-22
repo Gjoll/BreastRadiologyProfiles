@@ -111,7 +111,7 @@ namespace BreastRadiology.XUnitTests
                             .SetDisplay("Abscess")
                             .MammoId("104")
                             .ValidModalities(Modalities.MG | Modalities.MRI | Modalities.US)
-                            .SetUMLS(104, )
+                            .SetUMLS("104",
                                 "An area within the body tissue that is swollen and ",
                                 "contains an accumulation of pus.")
                         ,
@@ -120,11 +120,11 @@ namespace BreastRadiology.XUnitTests
                             .SetDisplay("Angiolipoma")
                             .MammoId("503")
                             .ValidModalities(Modalities.MRI | Modalities.US)
-                            .SetSnomedCode(503, )
+                            .SetSnomedCode("503",
                                 "404057003")
-                            .SetSnomedDescription(503, )
+                            .SetSnomedDescription("503",
                                 "ClinicalFinding | Angiolipoma (Disorder)")
-                            .SetUMLS(503, )
+                            .SetUMLS("503",
                                 "Angiolipoma is a rare type of lipoma - a growth made ",
                                 "of fat and blood vessels that ",
                                 "develops under the skin. ",
@@ -137,10 +137,10 @@ namespace BreastRadiology.XUnitTests
                             .SetDisplay("Apocrine metaplasia")
                             .MammoId("948")
                             .ValidModalities(Modalities.US)
-                            .SetSnomedDescription(948, )
+                            .SetSnomedDescription("948",
                                 "ClinicalFinding | 37009001 | Apocrine metaplasia ",
                                 "of breast (Disorder) | [0/0] | N60.89")
-                            .SetUMLS(948, )
+                            .SetUMLS("948",
                                 "A benign condition; Apocrine Metaplasia refers to ",
                                 "a particular type of cell change. ",
                                 "This is a type of 'umbrella term' that relates to a ",
@@ -157,7 +157,7 @@ namespace BreastRadiology.XUnitTests
                             .SetDisplay("Artifact")
                             .MammoId("946")
                             .ValidModalities(Modalities.NM)
-                            .SetUMLS(946, )
+                            .SetUMLS("946",
                                 "X-ray artifacts can present in a variety of ways ",
                                 "including abnormal shadows noted ",
                                 "on a radiograph or degraded image quality, and have ",
@@ -177,7 +177,7 @@ namespace BreastRadiology.XUnitTests
                             .SetDisplay("Atypical hyperplasia")
                             .MammoId("545")
                             .ValidModalities(Modalities.MRI)
-                            .SetUMLS(545, )
+                            .SetUMLS("545",
                                 "Atypical hyperplasia is a precancerous condition ",
                                 "that affects cells in the breast. ",
                                 "Atypical hyperplasia describes an accumulation of ",
@@ -197,10 +197,10 @@ namespace BreastRadiology.XUnitTests
                             .SetDisplay("Axillary lymph node")
                             .MammoId("942")
                             .ValidModalities(Modalities.NM)
-                            .SetSnomedDescription(942, )
+                            .SetSnomedDescription("942",
                                 "BodyStructure | 245269009 | Axillary lymph node group ",
                                 "(Bodypart)")
-                            .SetUMLS(942, )
+                            .SetUMLS("942",
                                 "Axillary lymph nodes are the lymph nodes located ",
                                 "in the armpits. ",
                                 "They can become enlarged in many conditions including ",
@@ -218,10 +218,10 @@ namespace BreastRadiology.XUnitTests
                             .SetDisplay("Carcinoma")
                             .MammoId("504")
                             .ValidModalities(Modalities.MG | Modalities.MRI | Modalities.NM | Modalities.US)
-                            .SetSnomedDescription(504, )
+                            .SetSnomedDescription("504",
                                 "ClinicalFinding | 254838004 | Carcinoma of breast ",
                                 "(Disorder) | [4/33] | C50.929")
-                            .SetUMLS(504, )
+                            .SetUMLS("504",
                                 "Carcinoma is a type of cancer that starts in cells ",
                                 "that make up the skin or the tissue ",
                                 "lining organs.")
@@ -231,10 +231,10 @@ namespace BreastRadiology.XUnitTests
                             .SetDisplay("Carcinoma known")
                             .MammoId("510")
                             .ValidModalities(Modalities.MG | Modalities.MRI | Modalities.US)
-                            .SetSnomedDescription(510, )
+                            .SetSnomedDescription("510",
                                 "ClinicalFinding | 254838004 | Carcinoma of breast ",
                                 "(Disorder) | [4/33] | C50.929")
-                            .SetUMLS(510, )
+                            .SetUMLS("510",
                                 "Imaging tests used in diagnosing cancer may include ",
                                 "a computerized tomography (CT) ",
                                 "scan, bone scan, magnetic resonance imaging (MRI), ",
@@ -259,11 +259,11 @@ namespace BreastRadiology.XUnitTests
                             .SetDisplay("Cluster of cysts")
                             .MammoId("577")
                             .ValidModalities(Modalities.MG | Modalities.MRI | Modalities.US)
-                            .SetSnomedCode(577, )
+                            .SetSnomedCode("577",
                                 "399294002")
-                            .SetSnomedDescription(577, )
+                            .SetSnomedDescription("577",
                                 "ClinicalFinding |Cyst of breast (Disorder) ++++++")
-                            .SetUMLS(577, )
+                            .SetUMLS("577",
                                 "A breast cyst is a non-cancerous (benign) fluid-filled ",
                                 "sac in the breast. ",
                                 " Some cysts are too small to feel and others may ",
@@ -276,11 +276,11 @@ namespace BreastRadiology.XUnitTests
                             .SetDisplay("Cyst")
                             .MammoId("565")
                             .ValidModalities(Modalities.MG | Modalities.MRI)
-                            .SetSnomedCode(565, )
+                            .SetSnomedCode("565",
                                 "399294002")
-                            .SetSnomedDescription(565, )
+                            .SetSnomedDescription("565",
                                 "ClinicalFinding |Cyst of breast (Disorder)")
-                            .SetUMLS(565, )
+                            .SetUMLS("565",
                                 "A breast cyst is a non-cancerous (benign) fluid-filled ",
                                 "sac in the breast. ",
                                 " Some cysts are too small to feel and others may ",
@@ -293,11 +293,11 @@ namespace BreastRadiology.XUnitTests
                             .SetDisplay("Cyst complex")
                             .MammoId("61")
                             .ValidModalities(Modalities.MRI | Modalities.US)
-                            .SetSnomedCode(61, )
+                            .SetSnomedCode("61",
                                 "449837001")
-                            .SetSnomedDescription(61, )
+                            .SetSnomedDescription("61",
                                 "ClinicalFinding | Complex cyst of breast (Disorder)")
-                            .SetUMLS(61, )
+                            .SetUMLS("61",
                                 "Complex cysts have irregular or scalloped borders, ",
                                 "thick walls, and some evidence ",
                                 "of solid areas and/or debris in the fluid. ",
@@ -316,7 +316,7 @@ namespace BreastRadiology.XUnitTests
                             .SetDisplay("Cyst complicated")
                             .MammoId("115")
                             .ValidModalities(Modalities.MRI | Modalities.US)
-                            .SetUMLS(115, )
+                            .SetUMLS("115",
                                 "Complicated cysts are \"in between\" simple and complex. ",
                                 "Although they share most of the features of simple ",
                                 "cysts, they tend to have some ",
@@ -332,7 +332,7 @@ namespace BreastRadiology.XUnitTests
                             .SetDisplay("Cyst oil")
                             .MammoId("582")
                             .ValidModalities(Modalities.MG | Modalities.US)
-                            .SetUMLS(582, )
+                            .SetUMLS("582",
                                 "Oil cysts are filled with fluid that may feel smooth ",
                                 "and squishy. ",
                                 "Oil cysts are caused by the breakdown of fatty tissue.")
@@ -342,12 +342,12 @@ namespace BreastRadiology.XUnitTests
                             .SetDisplay("Cyst sebaceous")
                             .MammoId("501")
                             .ValidModalities(Modalities.US)
-                            .SetSnomedCode(501, )
+                            .SetSnomedCode("501",
                                 "76649007")
-                            .SetSnomedDescription(501, )
+                            .SetSnomedDescription("501",
                                 "ClinicalFinding | Sebaceous cyst of skin of breast ",
                                 "(Disorder)")
-                            .SetUMLS(501, )
+                            .SetUMLS("501",
                                 "Sebaceous cysts are common noncancerous cysts of ",
                                 "the skin. ",
                                 "Cysts are abnormalities in the body that may contain ",
@@ -364,11 +364,11 @@ namespace BreastRadiology.XUnitTests
                             .SetDisplay("Cyst simple")
                             .MammoId("60")
                             .ValidModalities(Modalities.MRI | Modalities.US)
-                            .SetSnomedCode(60, )
+                            .SetSnomedCode("60",
                                 "399253005")
-                            .SetSnomedDescription(60, )
+                            .SetSnomedDescription("60",
                                 "ClinicalFinding | Simple cyst of breast (Disorder)")
-                            .SetUMLS(60, )
+                            .SetUMLS("60",
                                 "Simple cysts have smooth, thin, regularly shaped ",
                                 "walls and are completely filled ",
                                 "with fluid. ",
@@ -383,11 +383,11 @@ namespace BreastRadiology.XUnitTests
                             .SetDisplay("Cysts complex")
                             .MammoId("537")
                             .ValidModalities(Modalities.MRI | Modalities.US)
-                            .SetSnomedCode(537, )
+                            .SetSnomedCode("537",
                                 "449837001")
-                            .SetSnomedDescription(537, )
+                            .SetSnomedDescription("537",
                                 "ClinicalFinding | Complex cyst of breast (Disorder)")
-                            .SetUMLS(537, )
+                            .SetUMLS("537",
                                 "Complex cysts have irregular or scalloped borders, ",
                                 "thick walls, and some evidence ",
                                 "of solid areas and/or debris in the fluid. ",
@@ -406,7 +406,7 @@ namespace BreastRadiology.XUnitTests
                             .SetDisplay("Cysts complicated")
                             .MammoId("506")
                             .ValidModalities(Modalities.MRI | Modalities.US)
-                            .SetUMLS(506, )
+                            .SetUMLS("506",
                                 "Complicated cysts are \"in between\" simple and complex. ",
                                 "Although they share most of the features of simple ",
                                 "cysts, they tend to have some ",
@@ -422,7 +422,7 @@ namespace BreastRadiology.XUnitTests
                             .SetDisplay("Cysts micro clustered")
                             .MammoId("505")
                             .ValidModalities(Modalities.US)
-                            .SetUMLS(505, )
+                            .SetUMLS("505",
                                 "Microcysts are tiny, microscopic cysts. ",
                                 "Clustered microcysts are a cluster of these tiny ",
                                 "cysts and only have fluid inside ",
@@ -433,10 +433,10 @@ namespace BreastRadiology.XUnitTests
                             .SetDisplay("DCIS")
                             .MammoId("514")
                             .ValidModalities(Modalities.MG | Modalities.MRI | Modalities.NM | Modalities.US)
-                            .SetSnomedDescription(514, )
+                            .SetSnomedDescription("514",
                                 "BodyStructure | 399935008 | Ductal carcinoma in situ ",
                                 "- category (Morphologic-Abnormality)")
-                            .SetUMLS(514, )
+                            .SetUMLS("514",
                                 "Ductal carcinoma in situ (DCIS) is the presence of ",
                                 "abnormal cells inside a milk duct ",
                                 "in the breast. ",
@@ -451,7 +451,7 @@ namespace BreastRadiology.XUnitTests
                             .SetDisplay("Debris")
                             .MammoId("515")
                             .ValidModalities(Modalities.MG | Modalities.US)
-                            .SetUMLS(515, )
+                            .SetUMLS("515",
                                 "Debris is a substance that is anything other than ",
                                 "a liquid inside of the cyst.")
                         ,
@@ -460,11 +460,11 @@ namespace BreastRadiology.XUnitTests
                             .SetDisplay("Deodorant")
                             .MammoId("589")
                             .ValidModalities(Modalities.MG)
-                            .SetSnomedCode(589, )
+                            .SetSnomedCode("589",
                                 "39432004")
-                            .SetSnomedDescription(589, )
+                            .SetSnomedDescription("589",
                                 "PharmaceuticalBiologicProduct | Deodorant (Product)")
-                            .SetUMLS(589, )
+                            .SetUMLS("589",
                                 "Because estrogen can promote the growth of breast ",
                                 "cancer cells, some scientists have ",
                                 "suggested that the aluminum-based compounds in antiperspirants ",
@@ -480,7 +480,7 @@ namespace BreastRadiology.XUnitTests
                             .SetDisplay("Dermal calcification")
                             .MammoId("572")
                             .ValidModalities(Modalities.MG)
-                            .SetUMLS(572, )
+                            .SetUMLS("572",
                                 "Skin calcifications in the breast usually form in ",
                                 "dermal sweat glands after low grade ",
                                 "folliculitis and inspissation of sebaceous material. ",
@@ -496,10 +496,10 @@ namespace BreastRadiology.XUnitTests
                             .SetDisplay("Duct ectasia")
                             .MammoId("64")
                             .ValidModalities(Modalities.MRI | Modalities.US)
-                            .SetSnomedDescription(64, )
+                            .SetSnomedDescription("64",
                                 "ClinicalFinding | 22049009 | Mammary duct ectasia ",
                                 "(Disorder) | [0/0] | N60.49")
-                            .SetUMLS(64, )
+                            .SetUMLS("64",
                                 "An abnormal dilation of a duct by lipids and cellular ",
                                 "debris. ",
                                 "In  mammary duct the condition, which tends mainly ",
@@ -513,11 +513,11 @@ namespace BreastRadiology.XUnitTests
                             .SetDisplay("Edema")
                             .MammoId("513")
                             .ValidModalities(Modalities.MRI | Modalities.US)
-                            .SetSnomedCode(513, )
+                            .SetSnomedCode("513",
                                 "290077003")
-                            .SetSnomedDescription(513, )
+                            .SetSnomedDescription("513",
                                 "ClinicalFinding | Edema of breast (Finding)")
-                            .SetUMLS(513, )
+                            .SetUMLS("513",
                                 "Breast edema is defined as a mammographic pattern ",
                                 "of skin thickening, increased parenchymal ",
                                 "density, and interstitial marking. ",
@@ -533,9 +533,9 @@ namespace BreastRadiology.XUnitTests
                             .SetDisplay("Fat lobule")
                             .MammoId("523")
                             .ValidModalities(Modalities.US)
-                            .SetSnomedDescription(523, )
+                            .SetSnomedDescription("523",
                                 "no direct match possible fat necrosis?")
-                            .SetUMLS(523, )
+                            .SetUMLS("523",
                                 "Fat Lobule. ",
                                 "The normal breast is composed of numerous fat lobules ",
                                 "mixed with dense fibroglandular ",
@@ -554,11 +554,11 @@ namespace BreastRadiology.XUnitTests
                             .SetDisplay("Fat necrosis")
                             .MammoId("509")
                             .ValidModalities(Modalities.MG | Modalities.MRI | Modalities.US)
-                            .SetSnomedCode(509, )
+                            .SetSnomedCode("509",
                                 "21381006")
-                            .SetSnomedDescription(509, )
+                            .SetSnomedDescription("509",
                                 "ClinicalFinding | Fat necrosis of breast (Disorder)")
-                            .SetUMLS(509, )
+                            .SetUMLS("509",
                                 "Breasts are made up of lobules (milk-producing glands) ",
                                 "and ducts (tubes that carry ",
                                 "milk to the nipple). ",
@@ -576,7 +576,7 @@ namespace BreastRadiology.XUnitTests
                             .SetDisplay("Fibroadenolipoma")
                             .MammoId("500")
                             .ValidModalities(Modalities.MG | Modalities.US)
-                            .SetUMLS(500, )
+                            .SetUMLS("500",
                                 "Another name for Hamartomas, Hamartomas represent ",
                                 "benign proliferation of fibrous, ",
                                 "glandular, and fatty tissue (hence fibro-adeno-lipoma) ",
@@ -592,7 +592,7 @@ namespace BreastRadiology.XUnitTests
                             .SetDisplay("Fibroadenoma")
                             .MammoId("81")
                             .ValidModalities(Modalities.MG | Modalities.MRI | Modalities.NM | Modalities.US)
-                            .SetUMLS(81, )
+                            .SetUMLS("81",
                                 "Fibroadenomas are common benign (non-cancerous) breast ",
                                 "tumors made up of both glandular ",
                                 "tissue and stromal (connective) tissue. ",
@@ -607,7 +607,7 @@ namespace BreastRadiology.XUnitTests
                             .SetDisplay("Fibroadenoma degenerating")
                             .MammoId("587")
                             .ValidModalities(Modalities.MG)
-                            .SetUMLS(587, )
+                            .SetUMLS("587",
                                 "These are non-cancerous breast lumps. ",
                                 "Fibroadenomas usually go away with age. ",
                                 "By the time an individual is menopausal, Fibroadenomas ",
@@ -618,11 +618,11 @@ namespace BreastRadiology.XUnitTests
                             .SetDisplay("Fibrocystic change")
                             .MammoId("538")
                             .ValidModalities(Modalities.MG | Modalities.MRI | Modalities.US)
-                            .SetSnomedCode(538, )
+                            .SetSnomedCode("538",
                                 "367647000")
-                            .SetSnomedDescription(538, )
+                            .SetSnomedDescription("538",
                                 "BodyStructure | Fibrocystic change")
-                            .SetUMLS(538, )
+                            .SetUMLS("538",
                                 "Fibrocystic breast changes lead to the development ",
                                 "of fluid-filled round or oval ",
                                 "sacs (cysts) and more prominent scar-like (fibrous) ",
@@ -638,7 +638,7 @@ namespace BreastRadiology.XUnitTests
                             .SetDisplay("Fibroglandular tissue")
                             .MammoId("94")
                             .ValidModalities(Modalities.MG | Modalities.MRI | Modalities.US)
-                            .SetUMLS(94, )
+                            .SetUMLS("94",
                                 "Fibrocystic breast changes lead to the development ",
                                 "of fluid-filled round or oval ",
                                 "sacs (cysts) and more prominent scar-like (fibrous) ",
@@ -654,9 +654,9 @@ namespace BreastRadiology.XUnitTests
                             .SetDisplay("Fibrosis")
                             .MammoId("578")
                             .ValidModalities(Modalities.MG | Modalities.MRI | Modalities.US)
-                            .SetSnomedDescription(578, )
+                            .SetSnomedDescription("578",
                                 "???????????")
-                            .SetUMLS(578, )
+                            .SetUMLS("578",
                                 "Fibrosis may refer to the connective tissue deposition ",
                                 "that occurs as part of normal ",
                                 "healing or to the excess tissue deposition that occurs ",
@@ -670,7 +670,7 @@ namespace BreastRadiology.XUnitTests
                             .SetDisplay("Fibrous ridge")
                             .MammoId("914")
                             .ValidModalities(Modalities.US)
-                            .SetUMLS(914, )
+                            .SetUMLS("914",
                                 "Fibrous tissue, which extends under the skin, from ",
                                 "the front of the breast to the ",
                                 "back of the chest wall, supports the breast and gives ",
@@ -685,10 +685,10 @@ namespace BreastRadiology.XUnitTests
                             .SetDisplay("Folliculitis")
                             .MammoId("562")
                             .ValidModalities(Modalities.US)
-                            .SetSnomedDescription(562, )
+                            .SetSnomedDescription("562",
                                 "ClinicalFinding | 13600006 | Folliculitis (Disorder) ",
                                 "| [6/113] | L73.9")
-                            .SetUMLS(562, )
+                            .SetUMLS("562",
                                 "Folliculitis is the inflammation of hair follicles ",
                                 "due to an infection, injury, or ",
                                 "irritation. ",
@@ -705,7 +705,7 @@ namespace BreastRadiology.XUnitTests
                             .SetDisplay("Gynecomastia")
                             .MammoId("759")
                             .ValidModalities(Modalities.US)
-                            .SetUMLS(759, )
+                            .SetUMLS("759",
                                 "Gynecomastia is an enlargement or swelling of breast ",
                                 "tissue in males. ",
                                 "It is most commonly caused by male estrogen levels ",
@@ -718,11 +718,11 @@ namespace BreastRadiology.XUnitTests
                             .SetDisplay("Hamartoma")
                             .MammoId("552.544")
                             .ValidModalities(Modalities.MG | Modalities.MRI | Modalities.US)
-                            .SetSnomedCode(552.544, )
+                            .SetSnomedCode("552.544",
                                 "51398009")
-                            .SetSnomedDescription(552.544, )
+                            .SetSnomedDescription("552.544",
                                 "BodyStructure | Hamartoma (Morphologic-Abnormality)")
-                            .SetUMLS(552.544, )
+                            .SetUMLS("552.544",
                                 "A benign (not cancer) growth made up of an abnormal ",
                                 "mixture of cells and tissues ",
                                 "normally found in the area of the body where the ",
@@ -734,11 +734,11 @@ namespace BreastRadiology.XUnitTests
                             .SetDisplay("Hematoma")
                             .MammoId("112")
                             .ValidModalities(Modalities.MG | Modalities.MRI | Modalities.US)
-                            .SetSnomedCode(112, )
+                            .SetSnomedCode("112",
                                 "302924003")
-                            .SetSnomedDescription(112, )
+                            .SetSnomedDescription("112",
                                 "ClinicalFinding | Breast hematoma (Disorder) | N64.89")
-                            .SetUMLS(112, )
+                            .SetUMLS("112",
                                 "A breast hematoma is a collection of blood that forms ",
                                 "under the skin's surface. ",
                                 "It's not unlike having a large bruise in your breast. ",
@@ -754,7 +754,7 @@ namespace BreastRadiology.XUnitTests
                             .SetDisplay("Hormonal stimulation")
                             .MammoId("539")
                             .ValidModalities(Modalities.US)
-                            .SetUMLS(539, )
+                            .SetUMLS("539",
                                 "Hormonal effects of certain medications including ",
                                 "antihypertensives, antidepressants, ",
                                 "H2 blockers,",
@@ -768,7 +768,7 @@ namespace BreastRadiology.XUnitTests
                             .SetDisplay("Intracystic lesion")
                             .MammoId("62")
                             .ValidModalities(Modalities.NM | Modalities.US)
-                            .SetUMLS(62, )
+                            .SetUMLS("62",
                                 "Intracystic tumors of the breast are uncommon and, ",
                                 "at the time of ultrasonography ",
                                 "and aspiration cytology, it is difficult to distinguish ",
@@ -780,10 +780,10 @@ namespace BreastRadiology.XUnitTests
                             .SetDisplay("Intramammary node")
                             .MammoId("566,941")
                             .ValidModalities(Modalities.MG)
-                            .SetSnomedDescription(566,941, )
+                            .SetSnomedDescription("566,941",
                                 "BodyStructure | 443159006 | Intramammary lymph node ",
                                 "group (Bodypart)")
-                            .SetUMLS(566,941, )
+                            .SetUMLS("566,941",
                                 "These are lymph  nodes within the breast tissue. ",
                                 "They are generally 1 cm or smaller",
                                 "in size. ",
@@ -802,11 +802,11 @@ namespace BreastRadiology.XUnitTests
                             .SetDisplay("Lipoma")
                             .MammoId("508")
                             .ValidModalities(Modalities.MG | Modalities.MRI | Modalities.US)
-                            .SetSnomedCode(508, )
+                            .SetSnomedCode("508",
                                 "276891009")
-                            .SetSnomedDescription(508, )
+                            .SetSnomedDescription("508",
                                 "ClinicalFinding | Lipoma of breast (Disorder)")
-                            .SetUMLS(508, )
+                            .SetUMLS("508",
                                 "A lipoma is a slow-growing, fatty lump that's most ",
                                 "often situated between the skin ",
                                 "and the underlying muscle layer. ",
@@ -823,9 +823,9 @@ namespace BreastRadiology.XUnitTests
                             .SetDisplay("Lumpectomy cavity")
                             .MammoId("512")
                             .ValidModalities(Modalities.MRI | Modalities.US)
-                            .SetSnomedDescription(512, )
+                            .SetSnomedDescription("512",
                                 "BodyStructure | 261719000 | Breast cavity (Morphologic-Abnormality)")
-                            .SetUMLS(512, )
+                            .SetUMLS("512",
                                 "With a lumpectomy, the surgeon removes only the tumor ",
                                 "and a small amount of normal ",
                                 "surrounding tissue. ",
@@ -838,9 +838,9 @@ namespace BreastRadiology.XUnitTests
                             .SetDisplay("Lumpectomy site")
                             .MammoId("564")
                             .ValidModalities(Modalities.MRI)
-                            .SetSnomedDescription(564, )
+                            .SetSnomedDescription("564",
                                 "BodyStructure | 261719000 | Breast cavity (Morphologic-Abnormality)")
-                            .SetUMLS(564, )
+                            .SetUMLS("564",
                                 "The area of the breast where the incision is made ",
                                 "during the lumpectomy.")
                         ,
@@ -849,7 +849,7 @@ namespace BreastRadiology.XUnitTests
                             .SetDisplay("Lymph node")
                             .MammoId("74")
                             .ValidModalities(Modalities.MG | Modalities.MRI | Modalities.NM | Modalities.US)
-                            .SetUMLS(74, )
+                            .SetUMLS("74",
                                 "A small bean-shaped structure that is part of the ",
                                 "body's immune system. ",
                                 "Lymph nodes filter substances that travel through ",
@@ -872,12 +872,12 @@ namespace BreastRadiology.XUnitTests
                             .SetDisplay("Lymph node enlarged")
                             .MammoId("541.588")
                             .ValidModalities(Modalities.MRI | Modalities.US)
-                            .SetSnomedCode(541.588, )
+                            .SetSnomedCode("541.588",
                                 "274741002")
-                            .SetSnomedDescription(541.588, )
+                            .SetSnomedDescription("541.588",
                                 "ClinicalFinding | Generalized enlarged lymph nodes ",
                                 "(Disorder) | [0/0] | R59.1")
-                            .SetUMLS(541.588, )
+                            .SetUMLS("541.588",
                                 "Enlarged or swollen lymph nodes usually indicate ",
                                 "a common infection, but can ",
                                 "also signal a medical condition, such as an immune ",
@@ -893,7 +893,7 @@ namespace BreastRadiology.XUnitTests
                             .SetDisplay("Lymph node normal")
                             .MammoId("907")
                             .ValidModalities(Modalities.MG | Modalities.MRI | Modalities.US)
-                            .SetUMLS(907, )
+                            .SetUMLS("907",
                                 "Lymph nodes filter substances that travel through ",
                                 "the lymphatic fluid, and they contain ",
                                 "lymphocytes (white blood cells) that help the body ",
@@ -914,7 +914,7 @@ namespace BreastRadiology.XUnitTests
                             .SetDisplay("Lymph node pathological")
                             .MammoId("540")
                             .ValidModalities(Modalities.MRI)
-                            .SetUMLS(540, )
+                            .SetUMLS("540",
                                 "Lymphadenopathy (or adenopathy) is, if anything, ",
                                 "a broader term, referring to any ",
                                 "pathology of lymph nodes, not necessarily resulting ",
@@ -929,7 +929,7 @@ namespace BreastRadiology.XUnitTests
                             .SetDisplay("Mass solid")
                             .MammoId("63")
                             .ValidModalities(Modalities.MG | Modalities.MRI | Modalities.US)
-                            .SetUMLS(63, )
+                            .SetUMLS("63",
                                 "An abnormal mass of tissue that usually does not ",
                                 "contain cysts or liquid areas. ",
                                 "Solid masses or tumors may be benign (not cancer), ",
@@ -947,7 +947,7 @@ namespace BreastRadiology.XUnitTests
                             .SetDisplay("Mass solid w/tumor vasc")
                             .MammoId("550")
                             .ValidModalities(Modalities.MRI)
-                            .SetUMLS(550, )
+                            .SetUMLS("550",
                                 "An abnormal mass of tissue that usually does not ",
                                 "contain cysts or liquid areas. ",
                                 "Solid masses or tumors may be benign (not cancer), ",
@@ -975,11 +975,11 @@ namespace BreastRadiology.XUnitTests
                             .SetDisplay("Mastitis")
                             .MammoId("524")
                             .ValidModalities(Modalities.MG | Modalities.MRI | Modalities.US)
-                            .SetSnomedDescription(524, )
+                            .SetSnomedDescription("524",
                                 "ClinicalFinding | 45198002 | Mastitis (Disorder) ",
                                 "| [3/51] | P39.0 | Neonatal infective mastitis | ",
                                 "N61 | Inflammatory disorders of breast |")
-                            .SetUMLS(524, )
+                            .SetUMLS("524",
                                 "Infection of the breast tissue resulting in pain, ",
                                 "swelling, warmth and redness.")
                         ,
@@ -988,14 +988,14 @@ namespace BreastRadiology.XUnitTests
                             .SetDisplay("Milk of calcium")
                             .MammoId("571")
                             .ValidModalities(Modalities.MG)
-                            .SetDicom(571, )
+                            .SetDicom("571",
                                 "F-01765")
-                            .SetSnomedCode(571, )
+                            .SetSnomedCode("571",
                                 "129753004")
-                            .SetSnomedDescription(571, )
+                            .SetSnomedDescription("571",
                                 "ClinicalFinding | 129753004 | Milk of calcium radiographic ",
                                 "calcification (Finding)")
-                            .SetUMLS(571, )
+                            .SetUMLS("571",
                                 "The term milk of calcium (MOC) is given to dependent, ",
                                 "sedimented calcification within ",
                                 "a cystic structure or hollow organ. ",
@@ -1008,7 +1008,7 @@ namespace BreastRadiology.XUnitTests
                             .SetDisplay("Multi-focal cancer")
                             .MammoId("944")
                             .ValidModalities(Modalities.NM)
-                            .SetUMLS(944, )
+                            .SetUMLS("944",
                                 "Multifocal breast cancer occurs when there are two ",
                                 "or more tumors in the same breast. ",
                                 "All of the tumors begin in one original tumor. ",
@@ -1021,9 +1021,9 @@ namespace BreastRadiology.XUnitTests
                             .SetDisplay("Papillary lesion")
                             .MammoId("563")
                             .ValidModalities(Modalities.MG | Modalities.US)
-                            .SetSnomedDescription(563, )
+                            .SetSnomedDescription("563",
                                 "need help")
-                            .SetUMLS(563, )
+                            .SetUMLS("563",
                                 "Breast papillary lesions are characterised by growth ",
                                 "inside the milk ducts, and they ",
                                 "represent a heterogeneous pathology. ",
@@ -1041,11 +1041,11 @@ namespace BreastRadiology.XUnitTests
                             .SetDisplay("Papilloma")
                             .MammoId("507")
                             .ValidModalities(Modalities.MG | Modalities.MRI | Modalities.US)
-                            .SetSnomedCode(507, )
+                            .SetSnomedCode("507",
                                 "99571000119102")
-                            .SetSnomedDescription(507, )
+                            .SetSnomedDescription("507",
                                 "ClinicalFinding | Papilloma of breast (Disorder)")
-                            .SetUMLS(507, )
+                            .SetUMLS("507",
                                 "Intraductal papillomas are benign (non-cancerous), ",
                                 "wart-like tumors that grow within ",
                                 "the milk ducts of the breast. ",
@@ -1059,10 +1059,10 @@ namespace BreastRadiology.XUnitTests
                             .SetDisplay("Phyllodes tumor")
                             .MammoId("560")
                             .ValidModalities(Modalities.MRI | Modalities.US)
-                            .SetSnomedDescription(560, )
+                            .SetSnomedDescription("560",
                                 "ClinicalFinding | 712989008 | Phyllodes tumor of ",
                                 "breast (Disorder) | D48.6 |")
-                            .SetUMLS(560, )
+                            .SetUMLS("560",
                                 "Phyllodes tumors of the breast are rare, accounting ",
                                 "for less than 1% of all breast ",
                                 "tumors. ",
@@ -1089,9 +1089,9 @@ namespace BreastRadiology.XUnitTests
                             .SetDisplay("Post lumpectomy scar")
                             .MammoId("590")
                             .ValidModalities(Modalities.MG)
-                            .SetSnomedDescription(590, )
+                            .SetSnomedDescription("590",
                                 "BodyStructure | 63130001 | Surgical scar (Morphologic-Abnormality)")
-                            .SetUMLS(590, )
+                            .SetUMLS("590",
                                 "This is scarring that occurs from the lumpectomy ",
                                 "site. ",
                                 "It can include nerve pain or numbness if scar tissue ",
@@ -1112,9 +1112,9 @@ namespace BreastRadiology.XUnitTests
                             .SetDisplay("Post surgical scar")
                             .MammoId("567.943")
                             .ValidModalities(Modalities.MG | Modalities.NM)
-                            .SetSnomedDescription(567.943, )
+                            .SetSnomedDescription("567.943",
                                 "BodyStructure | 63130001 | Surgical scar (Morphologic-Abnormality)")
-                            .SetUMLS(567.943, )
+                            .SetUMLS("567.943",
                                 "Post surgical scarring happens because of the incisions ",
                                 "needed to surgically remove ",
                                 "tumor, cells, etc. ",
@@ -1127,7 +1127,7 @@ namespace BreastRadiology.XUnitTests
                             .SetDisplay("Previous biopsy")
                             .MammoId("584")
                             .ValidModalities(Modalities.MG)
-                            .SetUMLS(584, )
+                            .SetUMLS("584",
                                 "Findings on mammogram are  consistent with previous ",
                                 "biopsy.")
                         ,
@@ -1136,7 +1136,7 @@ namespace BreastRadiology.XUnitTests
                             .SetDisplay("Previous surgery")
                             .MammoId("585")
                             .ValidModalities(Modalities.MG)
-                            .SetUMLS(585, )
+                            .SetUMLS("585",
                                 "Findings on mammogram are consistent with previous ",
                                 "surgery.")
                         ,
@@ -1145,10 +1145,10 @@ namespace BreastRadiology.XUnitTests
                             .SetDisplay("Previous trauma")
                             .MammoId("586")
                             .ValidModalities(Modalities.MG)
-                            .SetSnomedDescription(586, )
+                            .SetSnomedDescription("586",
                                 "ClinicalFinding | 62112002 | Injury of breast (Disorder) ",
                                 "| [4/41] | S29.9XX?")
-                            .SetUMLS(586, )
+                            .SetUMLS("586",
                                 "Findings on mammogram are consistent with previous ",
                                 "trauma to breast.")
                         ,
@@ -1157,11 +1157,11 @@ namespace BreastRadiology.XUnitTests
                             .SetDisplay("Radial scar")
                             .MammoId("568")
                             .ValidModalities(Modalities.MG | Modalities.US)
-                            .SetSnomedCode(568, )
+                            .SetSnomedCode("568",
                                 "390787006")
-                            .SetSnomedDescription(568, )
+                            .SetSnomedDescription("568",
                                 "ClinicalFinding | Radial scar of breast (Finding)")
-                            .SetUMLS(568, )
+                            .SetUMLS("568",
                                 "Radial scar is a growth that looks like a scar when ",
                                 "the tissue is viewed under a ",
                                 "microscope. ",
@@ -1180,12 +1180,12 @@ namespace BreastRadiology.XUnitTests
                             .SetDisplay("Radiation changes")
                             .MammoId("548")
                             .ValidModalities(Modalities.MRI)
-                            .SetSnomedCode(548, )
+                            .SetSnomedCode("548",
                                 "143501000119107")
-                            .SetSnomedDescription(548, )
+                            .SetSnomedDescription("548",
                                 "SituationWithExplicitContext  | History of radiation ",
                                 "therapy to breast area (Situation)")
-                            .SetUMLS(548, )
+                            .SetUMLS("548",
                                 "Radiation levels during radiation therapy may change ",
                                 "as a result of side effects ",
                                 "or to complete a more aggressive cancer treatment.")
@@ -1195,12 +1195,12 @@ namespace BreastRadiology.XUnitTests
                             .SetDisplay("Radiation therapy")
                             .MammoId("549")
                             .ValidModalities(Modalities.MRI)
-                            .SetSnomedCode(549, )
+                            .SetSnomedCode("549",
                                 "429479009")
-                            .SetSnomedDescription(549, )
+                            .SetSnomedDescription("549",
                                 "SituationWithExplicitContext | History of radiation ",
                                 "therapy (Situation)")
-                            .SetUMLS(549, )
+                            .SetUMLS("549",
                                 "The use of high-energy radiation from x-rays, gamma ",
                                 "rays, neutrons, protons, and ",
                                 "other sources to kill cancer cells and shrink tumors. ",
@@ -1221,7 +1221,7 @@ namespace BreastRadiology.XUnitTests
                             .SetDisplay("Scar")
                             .MammoId("502")
                             .ValidModalities(Modalities.MRI | Modalities.US)
-                            .SetUMLS(502, )
+                            .SetUMLS("502",
                                 "Scar tissue forms as part of the healing process ",
                                 "after a skin injury. ",
                                 "A scar is fibrous tissue made of collagen that replaces ",
@@ -1233,7 +1233,7 @@ namespace BreastRadiology.XUnitTests
                             .SetDisplay("Scar with shadowing")
                             .MammoId("113")
                             .ValidModalities(Modalities.MRI | Modalities.US)
-                            .SetUMLS(113, )
+                            .SetUMLS("113",
                                 "In cases when the appropriate history is not available, ",
                                 "a postsurgical scar may mimic ",
                                 "a malignancy. ",
@@ -1249,7 +1249,7 @@ namespace BreastRadiology.XUnitTests
                             .SetDisplay("Sclerosing adenosis")
                             .MammoId("599")
                             .ValidModalities(Modalities.MG)
-                            .SetUMLS(599, )
+                            .SetUMLS("599",
                                 "Sclerosing adenosis is a type of adenosis in which ",
                                 "enlarged acini become slightly ",
                                 "distorted by surrounded stromal fibrosis (\"sclerosis\"). ",
@@ -1262,9 +1262,9 @@ namespace BreastRadiology.XUnitTests
                             .SetDisplay("Secretory calcification")
                             .MammoId("570")
                             .ValidModalities(Modalities.MG)
-                            .SetSnomedDescription(570, )
+                            .SetSnomedDescription("570",
                                 "??????????????")
-                            .SetUMLS(570, )
+                            .SetUMLS("570",
                                 "Secretory calcifications are benign calcifications ",
                                 "usually in women older than 60. ",
                                 "They classically appear as solid or discontinuous, ",
@@ -1278,7 +1278,7 @@ namespace BreastRadiology.XUnitTests
                             .SetDisplay("Sentinel node")
                             .MammoId("945")
                             .ValidModalities(Modalities.NM)
-                            .SetUMLS(945, )
+                            .SetUMLS("945",
                                 "The sentinel nodes are the first few lymph nodes ",
                                 "into which a tumor drains. ",
                                 "Sentinel node biopsy involves injecting a tracer ",
@@ -1293,11 +1293,11 @@ namespace BreastRadiology.XUnitTests
                             .SetDisplay("Seroma")
                             .MammoId("511.576")
                             .ValidModalities(Modalities.MG | Modalities.MRI | Modalities.US)
-                            .SetSnomedCode(511.576, )
+                            .SetSnomedCode("511.576",
                                 "297178008")
-                            .SetSnomedDescription(511.576, )
+                            .SetSnomedDescription("511.576",
                                 "ClinicalFinding | Breast seroma (Disorder)")
-                            .SetUMLS(511.576, )
+                            .SetUMLS("511.576",
                                 "A breast seroma is a collection (pocket) of serous ",
                                 "fluid that can develop after trauma ",
                                 "to the breast or following procedures such as breast ",
@@ -1312,11 +1312,11 @@ namespace BreastRadiology.XUnitTests
                             .SetDisplay("Skin lesion")
                             .MammoId("583")
                             .ValidModalities(Modalities.MG)
-                            .SetSnomedCode(583, )
+                            .SetSnomedCode("583",
                                 "126510002")
-                            .SetSnomedDescription(583, )
+                            .SetSnomedDescription("583",
                                 "ClinicalFinding | Neoplasm of skin of breast (Disorder)")
-                            .SetUMLS(583, )
+                            .SetUMLS("583",
                                 "A skin lesion is a part of the skin that has an abnormal ",
                                 "growth or appearance compared ",
                                 "to the skin around it. ",
@@ -1332,7 +1332,7 @@ namespace BreastRadiology.XUnitTests
                             .SetDisplay("Surgery")
                             .MammoId("546")
                             .ValidModalities(Modalities.MRI)
-                            .SetUMLS(546, )
+                            .SetUMLS("546",
                                 "The branch of medicine that employs operations in ",
                                 "the treatment of disease or injury. ",
                                 "Surgery can involve cutting, abrading, suturing, ",
@@ -1345,9 +1345,9 @@ namespace BreastRadiology.XUnitTests
                             .SetDisplay("Trauma")
                             .MammoId("547")
                             .ValidModalities(Modalities.MRI)
-                            .SetSnomedDescription(547, )
+                            .SetSnomedDescription("547",
                                 "ClinicalFinding | 62112002 | Injury of breast (Disorder)")
-                            .SetUMLS(547, )
+                            .SetUMLS("547",
                                 "Previous injury to breast consistent with surgery, ",
                                 "infection, etc.")
                         ,
@@ -1356,10 +1356,10 @@ namespace BreastRadiology.XUnitTests
                             .SetDisplay("Vascular calcifications")
                             .MammoId("569")
                             .ValidModalities(Modalities.MG)
-                            .SetSnomedDescription(569, )
+                            .SetSnomedDescription("569",
                                 "ClinicalFinding | 396779001 | Breast arterial calcification ",
                                 "(Finding) | [0/0] | R92.1")
-                            .SetUMLS(569, )
+                            .SetUMLS("569",
                                 "Parallel tracks, or linear tubular calcifications ",
                                 "that are clearly associated with ",
                                 "blood vessels.",
@@ -1379,10 +1379,10 @@ namespace BreastRadiology.XUnitTests
                             .SetDisplay("Venous stasis")
                             .MammoId("947")
                             .ValidModalities(Modalities.NM)
-                            .SetSnomedDescription(947, )
+                            .SetSnomedDescription("947",
                                 "ClinicalFinding | 71897006 | Venous stasis (Finding) ",
                                 "| [0/0] | I87.8")
-                            .SetUMLS(947, )
+                            .SetUMLS("947",
                                 "Venous stasis dermatitis happens when there's a problem ",
                                 "with the veins, that keeps ",
                                 "blood from moving through very well. ",
@@ -1413,7 +1413,7 @@ namespace BreastRadiology.XUnitTests
                             .SetDisplay("Differential diagnosis")
                             .MammoId("561")
                             .ValidModalities(Modalities.MG | Modalities.MRI | Modalities.NM | Modalities.US)
-                            .SetUMLS(561, )
+                            .SetUMLS("561",
                                 "More than one possibility for a diagnosis. ",
                                 "The process of weighing the probability of one disease ",
                                 "versus that of other diseases ",
@@ -1424,7 +1424,7 @@ namespace BreastRadiology.XUnitTests
                             .SetDisplay("Likely represents")
                             .MammoId("536")
                             .ValidModalities(Modalities.MG | Modalities.MRI | Modalities.NM | Modalities.US)
-                            .SetUMLS(536, )
+                            .SetUMLS("536",
                                 "Likely represents")
                         ,
                         new ConceptDef()
@@ -1432,7 +1432,7 @@ namespace BreastRadiology.XUnitTests
                             .SetDisplay("Most likely")
                             .MammoId("581")
                             .ValidModalities(Modalities.MG | Modalities.US)
-                            .SetUMLS(581, )
+                            .SetUMLS("581",
                                 "Most likely")
                         ,
                         new ConceptDef()
@@ -1440,7 +1440,7 @@ namespace BreastRadiology.XUnitTests
                             .SetDisplay("Resembles")
                             .MammoId("580")
                             .ValidModalities(Modalities.MG | Modalities.MRI | Modalities.NM | Modalities.US)
-                            .SetUMLS(580, )
+                            .SetUMLS("580",
                                 "Resembles")
                         #endregion // Codes
                         //- Qualifiers

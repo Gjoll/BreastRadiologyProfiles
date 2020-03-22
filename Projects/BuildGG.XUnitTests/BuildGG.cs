@@ -108,7 +108,7 @@ namespace BreastRadiology.XUnitTests
             if (String.IsNullOrEmpty(sValue) == false)
             {
                 String[] lines = FormatMultiLineText(sValue).ToArray();
-                concept.AppendLine($"    .{name}({penId},");
+                concept.AppendLine($"    .{name}(\"{penId}\",");
                 Int32 i = 0;
                 while (i < lines.Length - 1)
                     concept.AppendLine($"        {lines[i++]}");

@@ -30,10 +30,10 @@ namespace BreastRadiology.XUnitTests
                             .SetDisplay("Node axillary")
                             .MammoId("648")
                             .ValidModalities(Modalities.MG | Modalities.US)
-                            .SetSnomedDescription(648, )
+                            .SetSnomedDescription("648",
                                 "BodyStructure | 68171009 | Axillary lymph node structure ",
                                 "(Bodypart)")
-                            .SetUMLS(648, )
+                            .SetUMLS("648",
                                 "The axillary nodes are a group of lymph nodes located ",
                                 "in the axillary (or armpit) ",
                                 "region of the body. ",
@@ -50,12 +50,12 @@ namespace BreastRadiology.XUnitTests
                             .SetDisplay("Node enlarged")
                             .MammoId("649")
                             .ValidModalities(Modalities.MG | Modalities.US)
-                            .SetSnomedCode(649, )
+                            .SetSnomedCode("649",
                                 "274744005")
-                            .SetSnomedDescription(649, )
+                            .SetSnomedDescription("649",
                                 "ClinicalFinding | Localized enlarged lymph nodes ",
                                 "(Disorder)")
-                            .SetUMLS(649, )
+                            .SetUMLS("649",
                                 "Swollen lymph nodes usually occur as a result of ",
                                 "infection from bacteria or viruses. ",
                                 "Rarely, swollen lymph nodes are caused by cancer.",
@@ -74,7 +74,7 @@ namespace BreastRadiology.XUnitTests
                             .SetDisplay("Node focal cortex")
                             .MammoId("662")
                             .ValidModalities(Modalities.MG | Modalities.US)
-                            .SetUMLS(662, )
+                            .SetUMLS("662",
                                 "The mammogram and/or ultrasound show enlargement ",
                                 "of the cortex. ",
                                 "Metastatic deposits accumulate in the lymph node ",
@@ -87,10 +87,10 @@ namespace BreastRadiology.XUnitTests
                             .SetDisplay("Node infraclavicular")
                             .MammoId("665")
                             .ValidModalities(Modalities.US)
-                            .SetSnomedDescription(665, )
+                            .SetSnomedDescription("665",
                                 "BodyStructure | 9659009 | Infraclavicular lymph node ",
                                 "(Bodypart)")
-                            .SetUMLS(665, )
+                            .SetUMLS("665",
                                 "(Infraclavicular labeled at upper left.) One or two ",
                                 "deltopectoral lymph nodes (or ",
                                 "infraclavicular nodes) are found beside the cephalic ",
@@ -105,10 +105,10 @@ namespace BreastRadiology.XUnitTests
                             .SetDisplay("Node intramammary")
                             .MammoId("650")
                             .ValidModalities(Modalities.MG | Modalities.US)
-                            .SetSnomedDescription(650, )
+                            .SetSnomedDescription("650",
                                 "BodyStructure | 443808008 | Structure of intramammary ",
                                 "lymph node (Bodypart)")
-                            .SetUMLS(650, )
+                            .SetUMLS("650",
                                 "Intramammary lymph nodes are defined as lymph nodes ",
                                 "surrounded by breast tissue.")
                         ,
@@ -117,7 +117,7 @@ namespace BreastRadiology.XUnitTests
                             .SetDisplay("Node lymph")
                             .MammoId("651")
                             .ValidModalities(Modalities.MG | Modalities.US)
-                            .SetUMLS(651, )
+                            .SetUMLS("651",
                                 "Abnormal lymph node viewed on ultrasound and/or ultrasound. ",
                                 "Enlarged lymph nodes may warrant comment, clinical ",
                                 "correlation and additional evaluation, especially ",
@@ -130,7 +130,7 @@ namespace BreastRadiology.XUnitTests
                             .SetDisplay("Node lymph normal")
                             .MammoId("652")
                             .ValidModalities(Modalities.MG | Modalities.US)
-                            .SetUMLS(652, )
+                            .SetUMLS("652",
                                 "The lymph node appears normal and is probably benign.")
                         ,
                         new ConceptDef()
@@ -138,10 +138,10 @@ namespace BreastRadiology.XUnitTests
                             .SetDisplay("Node supraclavicular")
                             .MammoId("666")
                             .ValidModalities(Modalities.US)
-                            .SetSnomedDescription(666, )
+                            .SetSnomedDescription("666",
                                 "BodyStructure | 76838003 | Structure of supraclavicular ",
                                 "lymph node (Bodypart)")
-                            .SetUMLS(666, )
+                            .SetUMLS("666",
                                 "The supraclavicular lymph nodes are a set of lymph ",
                                 "nodes found just above the clavicle ",
                                 "or collarbone, toward the hollow of the neck. ",
@@ -154,7 +154,7 @@ namespace BreastRadiology.XUnitTests
                             .SetDisplay("Node uniform thickness")
                             .MammoId("663")
                             .ValidModalities(Modalities.MG | Modalities.US)
-                            .SetUMLS(663, )
+                            .SetUMLS("663",
                                 "The mammogram and/or ultrasound shows thickening ",
                                 "of the cortex is an indicator of an early change ",
                                 "in metastasis. ",

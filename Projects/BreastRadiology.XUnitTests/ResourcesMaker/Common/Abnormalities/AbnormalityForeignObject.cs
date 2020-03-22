@@ -31,10 +31,10 @@ namespace BreastRadiology.XUnitTests
                             .SetDisplay("BB pellet")
                             .MammoId("532")
                             .ValidModalities(Modalities.MG | Modalities.MRI | Modalities.US)
-                            .SetSnomedDescription(532, )
+                            .SetSnomedDescription("532",
                                 "ClinicalFinding | 283574001 | Pellet wound of breast ",
                                 "(Disorder) | [0/0] | S21.039?")
-                            .SetUMLS(532, )
+                            .SetUMLS("532",
                                 "A BB pellet is present in the body and is visible ",
                                 "by the Mammogram, MRI and/or Ultrasound.")
                         ,
@@ -43,10 +43,10 @@ namespace BreastRadiology.XUnitTests
                             .SetDisplay("BB pellets")
                             .MammoId("531")
                             .ValidModalities(Modalities.MG | Modalities.MRI | Modalities.US)
-                            .SetSnomedDescription(531, )
+                            .SetSnomedDescription("531",
                                 "ClinicalFinding | 283574001 | Pellet wound of breast ",
                                 "(Disorder) | [0/0] | S21.039?")
-                            .SetUMLS(531, )
+                            .SetUMLS("531",
                                 "BB pellets are present in the body and is visible ",
                                 "by the Mammogram, MRI and/or Ultrasound.")
                         ,
@@ -55,12 +55,12 @@ namespace BreastRadiology.XUnitTests
                             .SetDisplay("Biopsy clip")
                             .MammoId("591")
                             .ValidModalities(Modalities.MG | Modalities.MRI | Modalities.US)
-                            .SetSnomedCode(591, )
+                            .SetSnomedCode("591",
                                 "470272007")
-                            .SetSnomedDescription(591, )
+                            .SetSnomedDescription("591",
                                 "PhysicalObject | Implantable lesion localization ",
                                 "marker (Object)")
-                            .SetUMLS(591, )
+                            .SetUMLS("591",
                                 "Tissue marker placement after image-guided breast ",
                                 "biopsy has become a routine component ",
                                 "of clinical practice. ",
@@ -86,12 +86,12 @@ namespace BreastRadiology.XUnitTests
                             .SetDisplay("Biopsy clips")
                             .MammoId("910")
                             .ValidModalities(Modalities.MG | Modalities.MRI | Modalities.US)
-                            .SetSnomedCode(910, )
+                            .SetSnomedCode("910",
                                 "470272007")
-                            .SetSnomedDescription(910, )
+                            .SetSnomedDescription("910",
                                 "PhysicalObject | Implantable lesion localization ",
                                 "marker (Object)")
-                            .SetUMLS(910, )
+                            .SetUMLS("910",
                                 "Tissue marker placement after image-guided breast ",
                                 "biopsy has become a routine component ",
                                 "of clinical practice. ",
@@ -117,12 +117,12 @@ namespace BreastRadiology.XUnitTests
                             .SetDisplay("Breast Marker")
                             .MammoId("906")
                             .ValidModalities(Modalities.MRI)
-                            .SetSnomedCode(906, )
+                            .SetSnomedCode("906",
                                 "470272007")
-                            .SetSnomedDescription(906, )
+                            .SetSnomedDescription("906",
                                 "PhysicalObject | Implantable lesion localization ",
                                 "marker (Object)")
-                            .SetUMLS(906, )
+                            .SetUMLS("906",
                                 "Tissue marker placement after image-guided breast ",
                                 "biopsy has become a routine component ",
                                 "of clinical practice. ",
@@ -148,7 +148,7 @@ namespace BreastRadiology.XUnitTests
                             .SetDisplay("Catheter sleeves")
                             .MammoId("519")
                             .ValidModalities(Modalities.MG | Modalities.MRI | Modalities.US)
-                            .SetUMLS(519, )
+                            .SetUMLS("519",
                                 "A catheter sleeve was viewed in the Mammogram, MRI, ",
                                 "and/or ultrasound. ",
                                 "A catheter is a flexible tube used to deliver fluids ",
@@ -159,7 +159,7 @@ namespace BreastRadiology.XUnitTests
                             .SetDisplay("Chemotherapy port")
                             .MammoId("592")
                             .ValidModalities(Modalities.MG)
-                            .SetUMLS(592, )
+                            .SetUMLS("592",
                                 "A soft thin tube called a catheter connects the port ",
                                 "to a large vein for administering ",
                                 "chemotherapy is present in the MRI/Ultrasound.")
@@ -169,11 +169,11 @@ namespace BreastRadiology.XUnitTests
                             .SetDisplay("Coil")
                             .MammoId("517")
                             .ValidModalities(Modalities.MG | Modalities.MRI | Modalities.US)
-                            .SetSnomedCode(517, )
+                            .SetSnomedCode("517",
                                 "470342004")
-                            .SetSnomedDescription(517, )
+                            .SetSnomedDescription("517",
                                 "PhysicalObject | Implantable tissue clip (Object)")
-                            .SetUMLS(517, )
+                            .SetUMLS("517",
                                 "The coil acts as an antenna to receive the radio ",
                                 "frequency signal. ",
                                 "This is present on the Mammogram, MRI and/or Ultrasound.")
@@ -183,11 +183,11 @@ namespace BreastRadiology.XUnitTests
                             .SetDisplay("Glass")
                             .MammoId("522")
                             .ValidModalities(Modalities.MG | Modalities.MRI | Modalities.US)
-                            .SetSnomedCode(522, )
+                            .SetSnomedCode("522",
                                 "283258005")
-                            .SetSnomedDescription(522, )
+                            .SetSnomedDescription("522",
                                 "ClinicalFinding | Glass in breast (Disorder)")
-                            .SetUMLS(522, )
+                            .SetUMLS("522",
                                 "Glass is present in the body and shows up on the ",
                                 "MRI, Mammogram, and/or Ultrasound.")
                         ,
@@ -196,7 +196,7 @@ namespace BreastRadiology.XUnitTests
                             .SetDisplay("Gold seed")
                             .MammoId("913")
                             .ValidModalities(Modalities.MG | Modalities.MRI | Modalities.US)
-                            .SetUMLS(913, )
+                            .SetUMLS("913",
                                 "Tiny, gold seeds that are put in and/or around a ",
                                 "tumor to show exactly where the ",
                                 "tumor is are present in the ultrasound/MRI.")
@@ -206,10 +206,10 @@ namespace BreastRadiology.XUnitTests
                             .SetDisplay("Gunshot wound")
                             .MammoId("533")
                             .ValidModalities(Modalities.MG | Modalities.MRI | Modalities.US)
-                            .SetSnomedDescription(533, )
+                            .SetSnomedDescription("533",
                                 "ClinicalFinding | 425055008 | Gunshot entry wound ",
                                 "(Disorder) | [0/0] | T14.8")
-                            .SetUMLS(533, )
+                            .SetUMLS("533",
                                 "There is a gunshot would present in the body and ",
                                 "is viewable on the Ultrasound, Mammogram and/or MRI")
                         ,
@@ -218,12 +218,12 @@ namespace BreastRadiology.XUnitTests
                             .SetDisplay("Marker clip")
                             .MammoId("575")
                             .ValidModalities(Modalities.MG)
-                            .SetSnomedCode(575, )
+                            .SetSnomedCode("575",
                                 "470272007")
-                            .SetSnomedDescription(575, )
+                            .SetSnomedDescription("575",
                                 "PhysicalObject | Implantable lesion localization ",
                                 "marker (Object)")
-                            .SetUMLS(575, )
+                            .SetUMLS("575",
                                 "A marker clip (from possible previous biopsy) is ",
                                 "visable in the Mammogram")
                         ,
@@ -232,11 +232,11 @@ namespace BreastRadiology.XUnitTests
                             .SetDisplay("Metal")
                             .MammoId("521")
                             .ValidModalities(Modalities.MG | Modalities.MRI | Modalities.US)
-                            .SetSnomedCode(521, )
+                            .SetSnomedCode("521",
                                 "283169003")
-                            .SetSnomedDescription(521, )
+                            .SetSnomedDescription("521",
                                 "ClinicalFinding | Metal foreign body in breast (Disorder)")
-                            .SetUMLS(521, )
+                            .SetUMLS("521",
                                 "A piece of metal is present in the body and is viewable ",
                                 "on the MRI and/or Ultrasound.")
                         ,
@@ -245,12 +245,12 @@ namespace BreastRadiology.XUnitTests
                             .SetDisplay("Metallic marker")
                             .MammoId("903")
                             .ValidModalities(Modalities.MRI)
-                            .SetSnomedCode(903, )
+                            .SetSnomedCode("903",
                                 "470272007")
-                            .SetSnomedDescription(903, )
+                            .SetSnomedDescription("903",
                                 "PhysicalObject | Implantable lesion localization ",
                                 "marker (Object)")
-                            .SetUMLS(903, )
+                            .SetUMLS("903",
                                 "A metallic tissue marker is present in the ultrasound/MRI.")
                         ,
                         new ConceptDef()
@@ -258,12 +258,12 @@ namespace BreastRadiology.XUnitTests
                             .SetDisplay("Metallic markers")
                             .MammoId("904")
                             .ValidModalities(Modalities.MRI)
-                            .SetSnomedCode(904, )
+                            .SetSnomedCode("904",
                                 "470272007")
-                            .SetSnomedDescription(904, )
+                            .SetSnomedDescription("904",
                                 "PhysicalObject | Implantable lesion localization ",
                                 "marker (Object)")
-                            .SetUMLS(904, )
+                            .SetUMLS("904",
                                 "Metallic tissue markers are present in the MRI/Ultrasound.")
                         ,
                         new ConceptDef()
@@ -271,10 +271,10 @@ namespace BreastRadiology.XUnitTests
                             .SetDisplay("Metallic objects")
                             .MammoId("593")
                             .ValidModalities(Modalities.MG)
-                            .SetSnomedDescription(593, )
+                            .SetSnomedDescription("593",
                                 "ClinicalFinding | 283169003 | Metal foreign body ",
                                 "in breast (Disorder) | [0/0] | S21.009?")
-                            .SetUMLS(593, )
+                            .SetUMLS("593",
                                 "The Mammogram suggests a foreign body in the breast ",
                                 "that appears to be a metallic ",
                                 "object.")
@@ -284,7 +284,7 @@ namespace BreastRadiology.XUnitTests
                             .SetDisplay("Needle")
                             .MammoId("597")
                             .ValidModalities(Modalities.MG)
-                            .SetUMLS(597, )
+                            .SetUMLS("597",
                                 "The Mammogram suggests a foreign body in the breast ",
                                 "that appears to be a needle.")
                         ,
@@ -293,11 +293,11 @@ namespace BreastRadiology.XUnitTests
                             .SetDisplay("Nipple jewelry")
                             .MammoId("598")
                             .ValidModalities(Modalities.MG)
-                            .SetSnomedCode(598, )
+                            .SetSnomedCode("598",
                                 "80919006")
-                            .SetSnomedDescription(598, )
+                            .SetSnomedDescription("598",
                                 "PhysicalObject | Jewelry (Object)")
-                            .SetUMLS(598, )
+                            .SetUMLS("598",
                                 "The Mammogram suggests a foreign body in the breast ",
                                 "that appears to be a piece of ",
                                 "nipple jewelry.")
@@ -307,7 +307,7 @@ namespace BreastRadiology.XUnitTests
                             .SetDisplay("Non-metallic body")
                             .MammoId("594")
                             .ValidModalities(Modalities.MG)
-                            .SetUMLS(594, )
+                            .SetUMLS("594",
                                 "A non-metallic foreign body was located in the breast ",
                                 "tissue.")
                         ,
@@ -316,7 +316,7 @@ namespace BreastRadiology.XUnitTests
                             .SetDisplay("Pacemaker")
                             .MammoId("529")
                             .ValidModalities(Modalities.MG | Modalities.MRI | Modalities.US)
-                            .SetUMLS(529, )
+                            .SetUMLS("529",
                                 "A pacemaker is present showing up on the MRI and/or ",
                                 "Ultrasound.")
                         ,
@@ -325,7 +325,7 @@ namespace BreastRadiology.XUnitTests
                             .SetDisplay("Silicone granuloma")
                             .MammoId("520")
                             .ValidModalities(Modalities.MG | Modalities.MRI | Modalities.US)
-                            .SetUMLS(520, )
+                            .SetUMLS("520",
                                 "Silicone granuloma shows up on the MRI and/or Ultrasound. ",
                                 "Snowball like hyperechogenic axillary lymph nodes ",
                                 "in an individual with silicone implants ",
@@ -341,9 +341,9 @@ namespace BreastRadiology.XUnitTests
                             .SetDisplay("Sponge")
                             .MammoId("535")
                             .ValidModalities(Modalities.MG | Modalities.MRI | Modalities.US)
-                            .SetSnomedDescription(535, )
+                            .SetSnomedDescription("535",
                                 "PhysicalObject | 706640008 | Sponge (Object)")
-                            .SetUMLS(535, )
+                            .SetUMLS("535",
                                 "A surgical sponge can be viewed from the images in ",
                                 "the Mammogram, MRI and/or ultrasound.")
                         ,
@@ -352,11 +352,11 @@ namespace BreastRadiology.XUnitTests
                             .SetDisplay("Surgical clip")
                             .MammoId("911")
                             .ValidModalities(Modalities.MG | Modalities.MRI | Modalities.US)
-                            .SetSnomedCode(911, )
+                            .SetSnomedCode("911",
                                 "470342004")
-                            .SetSnomedDescription(911, )
+                            .SetSnomedDescription("911",
                                 "PhysicalObject | Implantable tissue clip (Object)")
-                            .SetUMLS(911, )
+                            .SetUMLS("911",
                                 "A surgical clip can be viewed within the Mammogram, ",
                                 "MRI and/or Ultrasound. ",
                                 "A tissue marker (or clip) is placed in the breast ",
@@ -368,11 +368,11 @@ namespace BreastRadiology.XUnitTests
                             .SetDisplay("Surgical clips")
                             .MammoId("596")
                             .ValidModalities(Modalities.MG | Modalities.MRI | Modalities.US)
-                            .SetSnomedCode(596, )
+                            .SetSnomedCode("596",
                                 "470342004")
-                            .SetSnomedDescription(596, )
+                            .SetSnomedDescription("596",
                                 "PhysicalObject | Implantable tissue clip (Object)")
-                            .SetUMLS(596, )
+                            .SetUMLS("596",
                                 "Surgical clips can be viewed within the Mammogram, ",
                                 "MRI and/or Ultrasound. ",
                                 "A tissue marker (or clip) is placed in the breast ",
@@ -384,9 +384,9 @@ namespace BreastRadiology.XUnitTests
                             .SetDisplay("Swab")
                             .MammoId("534")
                             .ValidModalities(Modalities.MG | Modalities.MRI | Modalities.US)
-                            .SetSnomedDescription(534, )
+                            .SetSnomedDescription("534",
                                 "PhysicalObject | 408098004 | Swab (Object")
-                            .SetUMLS(534, )
+                            .SetUMLS("534",
                                 "A Retained surgical swab appears to have been idenified ",
                                 "in the breast during the ",
                                 "mammogram, ultrasound and/or MRI.")
@@ -396,12 +396,12 @@ namespace BreastRadiology.XUnitTests
                             .SetDisplay("Titanium clip")
                             .MammoId("528")
                             .ValidModalities(Modalities.MG | Modalities.MRI | Modalities.US)
-                            .SetSnomedCode(528, )
+                            .SetSnomedCode("528",
                                 "470272007")
-                            .SetSnomedDescription(528, )
+                            .SetSnomedDescription("528",
                                 "PhysicalObject | Implantable lesion localization ",
                                 "marker (Object)")
-                            .SetUMLS(528, )
+                            .SetUMLS("528",
                                 "In review of the MRI, Ultrasound, and/or Mammogram, ",
                                 "a titanium-based marker (also known as a \"clip\") can ",
                                 "be viewed inside the breast. ",
@@ -416,12 +416,12 @@ namespace BreastRadiology.XUnitTests
                             .SetDisplay("Titanium clips")
                             .MammoId("530")
                             .ValidModalities(Modalities.MG | Modalities.MRI | Modalities.US)
-                            .SetSnomedCode(530, )
+                            .SetSnomedCode("530",
                                 "470272007")
-                            .SetSnomedDescription(530, )
+                            .SetSnomedDescription("530",
                                 "PhysicalObject | Implantable lesion localization ",
                                 "marker (Object)")
-                            .SetUMLS(530, )
+                            .SetUMLS("530",
                                 "In review of the MRI, Ultrasound, and/or Mammogram, ",
                                 "a titanium-based marker (also known as a \"clip\") can ",
                                 "be viewed inside the breast. ",
@@ -436,7 +436,7 @@ namespace BreastRadiology.XUnitTests
                             .SetDisplay("Wire")
                             .MammoId("518")
                             .ValidModalities(Modalities.MG | Modalities.MRI | Modalities.US)
-                            .SetUMLS(518, )
+                            .SetUMLS("518",
                                 "Guidewire is present in the body. ",
                                 " It is viewable in the MRI and/or Ultrasound. ",
                                 "Guidewire is used during medical procedures such ",
@@ -448,7 +448,7 @@ namespace BreastRadiology.XUnitTests
                             .SetDisplay("Wire fragment")
                             .MammoId("527")
                             .ValidModalities(Modalities.MG | Modalities.MRI | Modalities.US)
-                            .SetUMLS(527, )
+                            .SetUMLS("527",
                                 "A fragment of a guidewire is present in the body. ",
                                 "It is viewable in the MRI and/or Ultrasound. ",
                                 " Guidewire is used during medical procedures such ",

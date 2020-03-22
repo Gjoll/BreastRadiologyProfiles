@@ -31,7 +31,7 @@ namespace BreastRadiology.XUnitTests
                             .SetDisplay("Central lucent")
                             .MammoId("215")
                             .ValidModalities(Modalities.MG)
-                            .SetUMLS(215, )
+                            .SetUMLS("215",
                                 "These are round or oval calcifications that range ",
                                 "from under 1 mm to over a centimeter.",
                                 "They are the result of fat necrosis, calcified debris ",
@@ -43,7 +43,7 @@ namespace BreastRadiology.XUnitTests
                             .SetDisplay("Equal density")
                             .MammoId("213")
                             .ValidModalities(Modalities.MG)
-                            .SetUMLS(213, )
+                            .SetUMLS("213",
                                 "(historically, \"isodense\")",
                                 "X-ray attenuation of the mass is the same as the ",
                                 "expected attenuation of an equal volume of",
@@ -54,7 +54,7 @@ namespace BreastRadiology.XUnitTests
                             .SetDisplay("Fat containing")
                             .MammoId("214")
                             .ValidModalities(Modalities.MG)
-                            .SetUMLS(214, )
+                            .SetUMLS("214",
                                 "This includes all masses containing fat, such as ",
                                 "oil cyst, lipoma or galactocele, as well as mixed",
                                 "density masses such as hamartoma. ",
@@ -67,7 +67,7 @@ namespace BreastRadiology.XUnitTests
                             .SetDisplay("High density")
                             .MammoId("211")
                             .ValidModalities(Modalities.MG)
-                            .SetUMLS(211, )
+                            .SetUMLS("211",
                                 "the breast tissue may be called dense if you have ",
                                 "a lot of fibrous or glandular ",
                                 "tissue and not much fat in the breasts. ",
@@ -80,7 +80,7 @@ namespace BreastRadiology.XUnitTests
                             .SetDisplay("Low density")
                             .MammoId("212")
                             .ValidModalities(Modalities.MG)
-                            .SetUMLS(212, )
+                            .SetUMLS("212",
                                 "X-ray attenuation of the mass is less than the expected ",
                                 "attenuation of an equal volume of",
                                 "fibroglandular breast tissue. ",

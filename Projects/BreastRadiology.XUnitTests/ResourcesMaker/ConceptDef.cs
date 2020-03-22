@@ -134,7 +134,7 @@ namespace BreastRadiology.XUnitTests
             return this;
         }
 
-        public ConceptDef SetDicom(params String[] lines)
+        public ConceptDef SetDicom(String penId, params String[] lines)
         {
             return this;
         }
@@ -151,7 +151,7 @@ namespace BreastRadiology.XUnitTests
             return this;
         }
 
-        public ConceptDef SetSnomedCode(params String[] lines)
+        public ConceptDef SetSnomedCode(String penId, params String[] lines)
         {
             return this;
         }
@@ -161,7 +161,7 @@ namespace BreastRadiology.XUnitTests
             return this;
         }
 
-        public ConceptDef SetSnomedDescription(params String[] lines)
+        public ConceptDef SetSnomedDescription(String penId, params String[] lines)
         {
             return this;
         }
@@ -176,7 +176,8 @@ namespace BreastRadiology.XUnitTests
             return this;
         }
 
-        public ConceptDef SetUMLS(params String[] value)
+        public ConceptDef SetUMLS(String penId,
+            params String[] value)
         {
             this.umlsText = ResourcesMaker.FormatUmls(value.ToList(), false);
             return this;

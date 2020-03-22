@@ -30,7 +30,7 @@ namespace BreastRadiology.XUnitTests
                             .SetDisplay("Architectural distortion")
                             .MammoId("260")
                             .ValidModalities(Modalities.MG | Modalities.MRI | Modalities.US)
-                            .SetUMLS(260, )
+                            .SetUMLS("260",
                                 "Many breast masses are found within the zone of fibroglandular ",
                                 "tissue or at a fat-fibroglandular",
                                 "junction. ",
@@ -46,7 +46,7 @@ namespace BreastRadiology.XUnitTests
                             .SetDisplay("Axillary adenopathy")
                             .MammoId("239")
                             .ValidModalities(Modalities.MG | Modalities.MRI)
-                            .SetUMLS(239, )
+                            .SetUMLS("239",
                                 "Enlarged axillary (under the armpit) lymph nodes. ",
                                 "Additional evaluation is needed to determine the ",
                                 "cause. ",
@@ -57,12 +57,12 @@ namespace BreastRadiology.XUnitTests
                             .SetDisplay("Biopsy clip")
                             .MammoId("471.263")
                             .ValidModalities(Modalities.MG | Modalities.MRI | Modalities.US)
-                            .SetSnomedCode(471.263, )
+                            .SetSnomedCode("471.263",
                                 "470272007")
-                            .SetSnomedDescription(471.263, )
+                            .SetSnomedDescription("471.263",
                                 "Physical Object | Implantable lesion localization ",
                                 "marker (Object)")
-                            .SetUMLS(471.263, )
+                            .SetUMLS("471.263",
                                 "Tissue marker placement after image-guided breast ",
                                 "biopsy has become a routine component ",
                                 "of clinical practice. ",
@@ -82,7 +82,7 @@ namespace BreastRadiology.XUnitTests
                             .SetDisplay("Brachytherapy tube")
                             .MammoId("475")
                             .ValidModalities(Modalities.MG)
-                            .SetUMLS(475, )
+                            .SetUMLS("475",
                                 "Brachytherapy may be temporary or permanent. ",
                                 "Temporary brachytherapy places radioactive material ",
                                 "inside a catheter for a specific ",
@@ -101,9 +101,9 @@ namespace BreastRadiology.XUnitTests
                             .SetDisplay("Chest wall invasion")
                             .MammoId("255")
                             .ValidModalities(Modalities.MG | Modalities.MRI | Modalities.US)
-                            .SetSnomedDescription(255, )
+                            .SetSnomedDescription("255",
                                 "NO FIND")
-                            .SetUMLS(255, )
+                            .SetUMLS("255",
                                 "A tumor of the lung that has invaded the chest wall.")
                         ,
                         new ConceptDef()
@@ -111,7 +111,7 @@ namespace BreastRadiology.XUnitTests
                             .SetDisplay("Cooper distorted")
                             .MammoId("261")
                             .ValidModalities(Modalities.US)
-                            .SetUMLS(261, )
+                            .SetUMLS("261",
                                 "The cooper's ligaments are fibrous bands extending ",
                                 "vertically from surface attached to ",
                                 "chest wall muscles. ",
@@ -133,7 +133,7 @@ namespace BreastRadiology.XUnitTests
                             .SetDisplay("Cooper thickened")
                             .MammoId("262")
                             .ValidModalities(Modalities.US)
-                            .SetUMLS(262, )
+                            .SetUMLS("262",
                                 "The cooper's ligaments are fibrous bands extending ",
                                 "vertically from surface attached",
                                 "to chest wall muscles. ",
@@ -157,11 +157,11 @@ namespace BreastRadiology.XUnitTests
                             .SetDisplay("Edema")
                             .MammoId("258")
                             .ValidModalities(Modalities.US)
-                            .SetSnomedCode(258, )
+                            .SetSnomedCode("258",
                                 "290077003")
-                            .SetSnomedDescription(258, )
+                            .SetSnomedDescription("258",
                                 "Clinical Finding | Edema of breast (Finding)")
-                            .SetUMLS(258, )
+                            .SetUMLS("258",
                                 "Edema (swelling of the breasts)  may be due to blockage ",
                                 "of subdermal lymphatics by tumor cells or an inflammatory ",
                                 "process within the breast or axilla.")
@@ -171,7 +171,7 @@ namespace BreastRadiology.XUnitTests
                             .SetDisplay("Edema adj")
                             .MammoId("259")
                             .ValidModalities(Modalities.US)
-                            .SetUMLS(259, )
+                            .SetUMLS("259",
                                 "This is swelling of one or both breasts. ",
                                 "A mammographic pattern of skin thickening, increased ",
                                 "parenchymal density, and interstitial marking.")
@@ -181,12 +181,12 @@ namespace BreastRadiology.XUnitTests
                             .SetDisplay("Gold Seed")
                             .MammoId("238")
                             .ValidModalities(Modalities.MG)
-                            .SetSnomedCode(238, )
+                            .SetSnomedCode("238",
                                 "470272007")
-                            .SetSnomedDescription(238, )
+                            .SetSnomedDescription("238",
                                 "Physical Object | Implantable lesion localization ",
                                 "marker (Object)")
-                            .SetUMLS(238, )
+                            .SetUMLS("238",
                                 "Tiny, gold seeds, about the size of a grain of rice, ",
                                 "that are put in and/or around ",
                                 "a tumor to show exactly where it is in the body. ",
@@ -203,11 +203,11 @@ namespace BreastRadiology.XUnitTests
                             .SetDisplay("Hematoma")
                             .MammoId("478")
                             .ValidModalities(Modalities.MG)
-                            .SetSnomedCode(478, )
+                            .SetSnomedCode("478",
                                 "302924003")
-                            .SetSnomedDescription(478, )
+                            .SetSnomedDescription("478",
                                 "Clinical Finding | Breast hematoma (Disorder) | N64.89")
-                            .SetUMLS(478, )
+                            .SetUMLS("478",
                                 "A hematoma is a localized bleeding outside of blood ",
                                 "vessels, due to either disease ",
                                 "or trauma including injury or surgery and may involve ",
@@ -220,12 +220,12 @@ namespace BreastRadiology.XUnitTests
                             .SetDisplay("Nipple retraction")
                             .MammoId("477")
                             .ValidModalities(Modalities.MG | Modalities.MRI)
-                            .SetSnomedCode(477, )
+                            .SetSnomedCode("477",
                                 "31845005")
-                            .SetSnomedDescription(477, )
+                            .SetSnomedDescription("477",
                                 "ClinicalFinding | Retraction of nipple (Disorder) ",
                                 "| [2/9] | N64.53")
-                            .SetUMLS(477, )
+                            .SetUMLS("477",
                                 "Retracted nipples lie flat against the areola. ",
                                 "The condition can be the result of inflammation or ",
                                 "scarring of the tissue behind ",
@@ -240,7 +240,7 @@ namespace BreastRadiology.XUnitTests
                             .SetDisplay("NO Chest wall invasion")
                             .MammoId("257")
                             .ValidModalities(Modalities.MRI)
-                            .SetUMLS(257, )
+                            .SetUMLS("257",
                                 "The mass has not attached itself to the chest wall.")
                         ,
                         new ConceptDef()
@@ -248,9 +248,9 @@ namespace BreastRadiology.XUnitTests
                             .SetDisplay("Pectoralis muscle invasion")
                             .MammoId("254")
                             .ValidModalities(Modalities.MRI | Modalities.US)
-                            .SetSnomedDescription(254, )
+                            .SetSnomedDescription("254",
                                 "choices with muscle + invasion")
-                            .SetUMLS(254, )
+                            .SetUMLS("254",
                                 "Pectoralis muscle invasion is when a tumor has become ",
                                 "large enough to invade into ",
                                 "the pectoralis muscle.")
@@ -260,9 +260,9 @@ namespace BreastRadiology.XUnitTests
                             .SetDisplay("Pectoralis muscle involvement")
                             .MammoId("256")
                             .ValidModalities(Modalities.MRI)
-                            .SetSnomedDescription(256, )
+                            .SetSnomedDescription("256",
                                 "choices with muscle + invasion")
-                            .SetUMLS(256, )
+                            .SetUMLS("256",
                                 "Pectoralis muscle involvement of the tumor has been ",
                                 "detected on the MRI by muscle ",
                                 "enhancement with obliteration of the fat plane between ",
@@ -274,9 +274,9 @@ namespace BreastRadiology.XUnitTests
                             .SetDisplay("Pectoralis muscle tenting")
                             .MammoId("253")
                             .ValidModalities(Modalities.MRI | Modalities.US)
-                            .SetSnomedDescription(253, )
+                            .SetSnomedDescription("253",
                                 "NO FIND")
-                            .SetUMLS(253, )
+                            .SetUMLS("253",
                                 "The tent sign is a term referring to a characteristic ",
                                 "appearance of the posterior ",
                                 "edge of the breast parenchyma when a mass (usually ",
@@ -290,12 +290,12 @@ namespace BreastRadiology.XUnitTests
                             .SetDisplay("Post surgical scar")
                             .MammoId("479")
                             .ValidModalities(Modalities.MG)
-                            .SetSnomedCode(479, )
+                            .SetSnomedCode("479",
                                 "442523003")
-                            .SetSnomedDescription(479, )
+                            .SetSnomedDescription("479",
                                 "ClinicalFinding | Surgical scar finding (Finding) ",
                                 "| [2/7] | L90.5 |")
-                            .SetUMLS(479, )
+                            .SetUMLS("479",
                                 "Post surgical scarring happens because of the incisions ",
                                 "needed to surgically remove ",
                                 "tumor, cells, etc. ",
@@ -308,11 +308,11 @@ namespace BreastRadiology.XUnitTests
                             .SetDisplay("Seroma")
                             .MammoId("469")
                             .ValidModalities(Modalities.MG)
-                            .SetSnomedCode(469, )
+                            .SetSnomedCode("469",
                                 "297178008")
-                            .SetSnomedDescription(469, )
+                            .SetSnomedDescription("469",
                                 "ClinicalFinding | Breast seroma (Disorder)")
-                            .SetUMLS(469, )
+                            .SetUMLS("469",
                                 "A breast seroma is a collection (pocket) of serous ",
                                 "fluid that can develop after trauma ",
                                 "to the breast or following procedures such as breast ",
@@ -327,7 +327,7 @@ namespace BreastRadiology.XUnitTests
                             .SetDisplay("Skin involvement")
                             .MammoId("252")
                             .ValidModalities(Modalities.MG | Modalities.MRI | Modalities.US)
-                            .SetUMLS(252, )
+                            .SetUMLS("252",
                                 "The mass or lesion has attached itself to the skin ",
                                 "of the breast. ",
                                 "There are several layers of skin that the mass or ",
@@ -339,11 +339,11 @@ namespace BreastRadiology.XUnitTests
                             .SetDisplay("Skin lesion")
                             .MammoId("473")
                             .ValidModalities(Modalities.MG)
-                            .SetSnomedCode(473, )
+                            .SetSnomedCode("473",
                                 "126510002")
-                            .SetSnomedDescription(473, )
+                            .SetSnomedDescription("473",
                                 "ClinicalFinding | Neoplasm of skin of breast (Disorder)")
-                            .SetUMLS(473, )
+                            .SetUMLS("473",
                                 "A skin lesion is a part of the skin that has an abnormal ",
                                 "growth or appearance compared ",
                                 "to the skin around it.In order to diagnose a skin ",
@@ -354,10 +354,10 @@ namespace BreastRadiology.XUnitTests
                             .SetDisplay("Skin retraction")
                             .MammoId("251")
                             .ValidModalities(Modalities.MG | Modalities.MRI | Modalities.US)
-                            .SetSnomedDescription(251, )
+                            .SetSnomedDescription("251",
                                 "ClinicalFinding | 129796009 | Mammographic skin retraction ",
                                 "of breast (Finding) | [0/0] | N64.5")
-                            .SetUMLS(251, )
+                            .SetUMLS("251",
                                 "Skin retraction (or inversion) or Skin retraction. ",
                                 "Breast cancers that are located near the skin or ",
                                 "nipple may cause scarring within ",
@@ -372,10 +372,10 @@ namespace BreastRadiology.XUnitTests
                             .SetDisplay("Skin thickening")
                             .MammoId("250")
                             .ValidModalities(Modalities.MG | Modalities.MRI | Modalities.US)
-                            .SetSnomedDescription(250, )
+                            .SetSnomedDescription("250",
                                 "ClinicalFinding | 129797000 | Mammographic skin thickening ",
                                 "of breast (Finding) | [0/0] | R92")
-                            .SetUMLS(250, )
+                            .SetUMLS("250",
                                 "The presence of skin thickening on mammography is ",
                                 "variably defined, usually being ",
                                 "more than 2 mm in thickness. ",
@@ -388,11 +388,11 @@ namespace BreastRadiology.XUnitTests
                             .SetDisplay("Surgical clip")
                             .MammoId("485")
                             .ValidModalities(Modalities.MG)
-                            .SetSnomedCode(485, )
+                            .SetSnomedCode("485",
                                 "470342004")
-                            .SetSnomedDescription(485, )
+                            .SetSnomedDescription("485",
                                 "PhysicalObject | Implantable tissue clip (Object)")
-                            .SetUMLS(485, )
+                            .SetUMLS("485",
                                 "Most surgical clips are currently made of titanium, ",
                                 "and as many as 30 to 40 clips ",
                                 "may be used during a single surgical procedure. ",
@@ -404,12 +404,12 @@ namespace BreastRadiology.XUnitTests
                             .SetDisplay("Trabecular thickening")
                             .MammoId("470")
                             .ValidModalities(Modalities.MG)
-                            .SetSnomedCode(470, )
+                            .SetSnomedCode("470",
                                 "129795008")
-                            .SetSnomedDescription(470, )
+                            .SetSnomedDescription("470",
                                 "ClinicalFinding | Mammographic trabecular thickening ",
                                 "of breast (Finding)")
-                            .SetUMLS(470, )
+                            .SetUMLS("470",
                                 "Trabecular thickening-thickening of the Cooper's ligaments ",
                                 "and fibrous stroma-is ",
                                 "an imaging finding of breast edema, usually secondary ",
@@ -428,7 +428,7 @@ namespace BreastRadiology.XUnitTests
                             .SetDisplay("Calcification in mass")
                             .MammoId("233")
                             .ValidModalities(Modalities.US)
-                            .SetUMLS(233, )
+                            .SetUMLS("233",
                                 "Calcifications usually can't be felt, but appear ",
                                 "on a mammogram. ",
                                 "Depending on how calcifications are clustered; shape, ",
@@ -441,7 +441,7 @@ namespace BreastRadiology.XUnitTests
                             .SetDisplay("Calcification Not on mammogarm")
                             .MammoId("235")
                             .ValidModalities(Modalities.US)
-                            .SetUMLS(235, )
+                            .SetUMLS("235",
                                 "Calcifications usually can't be felt, but appear ",
                                 "on a mammogram. ",
                                 "Calcifications can be clustered and their shape, ",
@@ -454,7 +454,7 @@ namespace BreastRadiology.XUnitTests
                             .SetDisplay("Calcification on mammogram")
                             .MammoId("234")
                             .ValidModalities(Modalities.US)
-                            .SetUMLS(234, )
+                            .SetUMLS("234",
                                 "Calcifications are small deposits of calcium that ",
                                 "show up on mammograms as bright ",
                                 "white specks or dots on the soft tissue background ",
@@ -466,7 +466,7 @@ namespace BreastRadiology.XUnitTests
                             .SetDisplay("Calcifications")
                             .MammoId("232")
                             .ValidModalities(Modalities.MG | Modalities.US)
-                            .SetUMLS(232, )
+                            .SetUMLS("232",
                                 "Calcifications are small deposits of calcium that ",
                                 "show up on mammograms as bright ",
                                 "white specks or dots on the soft tissue background ",
@@ -477,10 +477,10 @@ namespace BreastRadiology.XUnitTests
                             .SetDisplay("Micro calcifications")
                             .MammoId("231")
                             .ValidModalities(Modalities.US)
-                            .SetSnomedDescription(231, )
+                            .SetSnomedDescription("231",
                                 "ClinicalFinding | 44771000 | Microcalcifications ",
                                 "of the breast (Disorder) | [1/1] | R92.0")
-                            .SetUMLS(231, )
+                            .SetUMLS("231",
                                 "Micro-calcifications show up as fine, white specks ",
                                 "in a mammogram, similar to grains of salt; usually ",
                                 "noncancerous, but certain patterns can be an early ",
@@ -491,12 +491,12 @@ namespace BreastRadiology.XUnitTests
                             .SetDisplay("Milk of calcium")
                             .MammoId("237")
                             .ValidModalities(Modalities.US)
-                            .SetSnomedCode(237, )
+                            .SetSnomedCode("237",
                                 "129753004")
-                            .SetSnomedDescription(237, )
+                            .SetSnomedDescription("237",
                                 "ClinicalFinding | 129753004 | Milk of calcium radiographic ",
                                 "calcification (Finding)")
-                            .SetUMLS(237, )
+                            .SetUMLS("237",
                                 "The term milk of calcium (MOC) is given to dependent, ",
                                 "sedimented calcification within ",
                                 "a cystic structure or hollow organ. ",
@@ -509,9 +509,9 @@ namespace BreastRadiology.XUnitTests
                             .SetDisplay("Rim calcifications")
                             .MammoId("236")
                             .ValidModalities(Modalities.US)
-                            .SetSnomedDescription(236, )
+                            .SetSnomedDescription("236",
                                 "not found")
-                            .SetUMLS(236, )
+                            .SetUMLS("236",
                                 "These are very thin benign calcifications that appear ",
                                 "as calcium is deposited on ",
                                 "the surface of a sphere. ",
