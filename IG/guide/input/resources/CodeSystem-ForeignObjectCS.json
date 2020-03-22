@@ -21,7 +21,7 @@
   "description": "Foreign objects observed during a Breast Radiology exam code system.",
   "caseSensitive": true,
   "content": "complete",
-  "count": 32,
+  "count": 29,
   "concept": [
     {
       "code": "BBPellet",
@@ -45,12 +45,7 @@
     },
     {
       "code": "BreastMarker",
-      "display": "Breast marker",
-      "definition": "A breast marker is present in the  breast and is \r\nviewable on the MRI. \r\nTissue marker placement after image-guided breast \r\nbiopsy has become a routine component \r\nof clinical practice. \r\nMarker placement distinguishes multiple biopsied \r\nlesions within the same breast, \r\nprevents re-biopsy of benign lesions, enables multi-modality \r\ncorrelation, guides \r\npre-operative localization and helps confirm surgical \r\ntarget removal. \r\nNumerous breast tissue markers are currently available, \r\nwith varied shapes, composition, \r\nand associated bio-absorbable components. \r\nwww.ncbi.nlm.nih.gov > pubmed \r\n\r\n\r\nValid for the following modalities: MRI."
-    },
-    {
-      "code": "BreastMarkers",
-      "display": "Breast markers",
+      "display": "Breast Marker",
       "definition": "Tissue marker placement after image-guided breast \r\nbiopsy has become a routine component \r\nof clinical practice. \r\nMarker placement distinguishes multiple biopsied \r\nlesions within the same breast, \r\nprevents re-biopsy of benign lesions, enables multi-modality \r\ncorrelation, guides \r\npre-operative localization and helps confirm surgical \r\ntarget removal. \r\nNumerous breast tissue markers are currently available, \r\nwith varied shapes, composition, \r\nand associated bio-absorbable components. \r\nThis review serves to familiarize the breast interventionalist \r\nwith the tissue markers \r\nmost widely available in the United States today \r\nand to provide guidance regarding \r\nselection of appropriate markers for various clinical \r\nsettings. \r\nwww.ncbi.nlm.nih.gov > pubmed \r\n\r\n\r\nValid for the following modalities: MRI."
     },
     {
@@ -62,16 +57,6 @@
       "code": "ChemotherapyPort",
       "display": "Chemotherapy port",
       "definition": "A soft thin tube called a catheter connects the port \r\nto a large vein for administering \r\nchemotherapy is present in the MRI/Ultrasound. \r\n\r\n\r\nValid for the following modalities: MG."
-    },
-    {
-      "code": "Clip",
-      "display": "Clip",
-      "definition": "A titanium-based marker (also known as a \"clip\") is \r\nplaced for most core biopsies to mark the area in \r\ncase surgery will be needed in the future. \r\n... \r\nThese marker clips are placed at most facilities \r\naround the country, and are considered a standard \r\npart of the breast biopsy procedure. \r\n\r\n\r\nValid for the following modalities: MG US MRI."
-    },
-    {
-      "code": "Clips",
-      "display": "Clips",
-      "definition": "A titanium-based marker (also known as a \"clip\") is \r\nplaced for most core biopsies to mark the area in \r\ncase surgery will be needed in the future. \r\n... \r\nThese marker clips are placed at most facilities \r\naround the country, and are considered a standard \r\npart of the breast biopsy procedure. \r\n\r\n\r\nValid for the following modalities: MG US MRI."
     },
     {
       "code": "Coil",
@@ -141,7 +126,7 @@
     {
       "code": "SiliconeGranuloma",
       "display": "Silicone granuloma",
-      "definition": "Silicone granuloma shows up on the MRI and/or Ultrasound. \r\nSnowball like hyperechogenic axillary lymph nodes \r\nin a woman with silicone implants \r\nremoved due to complications. \r\nSpecialty. \r\nDermatology. \r\nSilicone granulomas are a skin condition that occur \r\nas a reaction to liquid silicones, \r\nand are characterized by the formation of nodules. \r\n\r\n\r\nValid for the following modalities: MG US MRI."
+      "definition": "Silicone granuloma shows up on the MRI and/or Ultrasound. \r\nSnowball like hyperechogenic axillary lymph nodes \r\nin an individual with silicone implants \r\nremoved due to complications. \r\nSpecialty. \r\nDermatology. \r\nSilicone granulomas are a skin condition that occur \r\nas a reaction to liquid silicones, \r\nand are characterized by the formation of nodules. \r\n\r\n\r\nValid for the following modalities: MG US MRI."
     },
     {
       "code": "Sponge",
@@ -151,12 +136,12 @@
     {
       "code": "SurgicalClip",
       "display": "Surgical clip",
-      "definition": "A surgical clip can be viewed within the Mammogram, \r\nMRI and/or Ultrasound. \r\nA tissue marker (or clip) is placed in your breast \r\nafter a breast biopsy to help locate the site for \r\nfuture reference. \r\n\r\n\r\nValid for the following modalities: MG US MRI."
+      "definition": "A surgical clip can be viewed within the Mammogram, \r\nMRI and/or Ultrasound. \r\nA tissue marker (or clip) is placed in the breast \r\nafter a breast biopsy to help locate the site for \r\nfuture reference. \r\n\r\n\r\nValid for the following modalities: MG US MRI."
     },
     {
       "code": "SurgicalClips",
       "display": "Surgical clips",
-      "definition": "Surgical clips can be viewed within the Mammogram, \r\nMRI and/or Ultrasound. \r\nA tissue marker (or clip) is placed in your breast \r\nafter a breast biopsy to help locate the site for \r\nfuture reference. \r\n\r\n\r\nValid for the following modalities: MG US MRI."
+      "definition": "Surgical clips can be viewed within the Mammogram, \r\nMRI and/or Ultrasound. \r\nA tissue marker (or clip) is placed in the breast \r\nafter a breast biopsy to help locate the site for \r\nfuture reference. \r\n\r\n\r\nValid for the following modalities: MG US MRI."
     },
     {
       "code": "Swab",

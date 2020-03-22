@@ -16,6 +16,8 @@ namespace BreastRadiology.XUnitTests
 {
     partial class ResourcesMaker : ConverterBase
     {
+        public static List<String> UniqueCitations = new List<String>();
+
         public static ResourcesMaker Self { get; set; }
 
         public const String Group_BaseResources = "BaseResources";
@@ -381,6 +383,21 @@ namespace BreastRadiology.XUnitTests
 
                 void Citation(String citation)
                 {
+                    String cleanCit = citation;
+                    if (cleanCit.StartsWith("https://"))
+                        cleanCit = cleanCit.Substring(8);
+                    if (cleanCit.StartsWith("http://"))
+                        cleanCit = cleanCit.Substring(7);
+                    Int32 index = cleanCit.IndexOf('/');
+                    if (index > 0)
+                        cleanCit = cleanCit.Substring(0, index);
+
+                    index = cleanCit.IndexOf('#');
+                    if (index > 0)
+                        cleanCit = cleanCit.Substring(0, index);
+
+                    if (UniqueCitations.Contains(cleanCit) == false)
+                        UniqueCitations.Add(cleanCit);
                     //citation = citation
                     //    .Replace(" ", "&nbsp;")
                     //    ;

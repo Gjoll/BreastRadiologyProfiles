@@ -42,7 +42,7 @@
     {
       "code": "MassSolid",
       "display": "Mass solid",
-      "definition": "The mammogram and/or ultrasound show solid mass of \r\nthe breast. \r\nThis can be nodules, fibrocystic tissue, phylloides \r\ntumor, breast cancer or metastatic. \r\nMay need a biopsy confirmation. \r\n\r\n\r\nValid for the following modalities: MG US."
+      "definition": "The mammogram and/or ultrasound show solid mass of \r\nthe breast. \r\nThis can be nodules, fibrocystic tissue, phylloides \r\ntumor, breast cancer or metastatic. \r\nA biopsy confirmation may be required. \r\n\r\n\r\nValid for the following modalities: MG US."
     }
   ]
 }

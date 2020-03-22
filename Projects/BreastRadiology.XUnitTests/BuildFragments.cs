@@ -127,6 +127,7 @@ namespace BreastRadiology.XUnitTests
                 pc.StatusInfo += this.StatusInfo;
                 pc.StatusWarnings += this.StatusWarnings;
                 pc.CreateResources();
+                ResourcesMaker.UniqueCitations.Sort();
                 if (pc.HasErrors)
                 {
                     StringBuilder sb = new StringBuilder();

@@ -64,11 +64,7 @@
           },
           {
             "code": "BreastMarker",
-            "display": "Breast marker"
-          },
-          {
-            "code": "BreastMarkers",
-            "display": "Breast markers"
+            "display": "Breast Marker"
           },
           {
             "code": "CatheterSleeves",
@@ -77,14 +73,6 @@
           {
             "code": "ChemotherapyPort",
             "display": "Chemotherapy port"
-          },
-          {
-            "code": "Clip",
-            "display": "Clip"
-          },
-          {
-            "code": "Clips",
-            "display": "Clips"
           },
           {
             "code": "Coil",
