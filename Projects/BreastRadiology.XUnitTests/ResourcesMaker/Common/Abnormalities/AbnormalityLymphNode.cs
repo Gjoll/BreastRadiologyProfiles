@@ -32,8 +32,7 @@ namespace BreastRadiology.XUnitTests
                             .ValidModalities(Modalities.MG | Modalities.US)
                             .SetSnomedDescription("BodyStructure | 68171009 | Axillary lymph node structure ",
                                 "(Bodypart)")
-                            .SetUMLS("Axillary Nodes. ",
-                                "The axillary nodes are a group of lymph nodes located ",
+                            .SetUMLS("The axillary nodes are a group of lymph nodes located ",
                                 "in the axillary (or armpit) ",
                                 "region of the body. ",
                                 "They perform the vital function of filtration and ",
@@ -120,7 +119,7 @@ namespace BreastRadiology.XUnitTests
                             .SetDisplay("Node lymph normal")
                             .MammoId("652")
                             .ValidModalities(Modalities.MG | Modalities.US)
-                            .SetUMLS("The normal lymph node findings are probably benign.")
+                            .SetUMLS("The lymph node appears normal and is probably benign.")
                         ,
                         new ConceptDef()
                             .SetCode("NodeSupraclavicular")

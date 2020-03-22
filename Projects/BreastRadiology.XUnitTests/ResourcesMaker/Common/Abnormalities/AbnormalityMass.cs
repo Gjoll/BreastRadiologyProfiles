@@ -78,7 +78,7 @@ namespace BreastRadiology.XUnitTests
                                 "the breast. ",
                                 "This can be nodules, fibrocystic tissue, phylloides ",
                                 "tumor, breast cancer or metastatic. ",
-                                "May need a biopsy confirmation.")
+                                "A biopsy confirmation may be required.")
                         #endregion // Codes
                         //- Type
                     })

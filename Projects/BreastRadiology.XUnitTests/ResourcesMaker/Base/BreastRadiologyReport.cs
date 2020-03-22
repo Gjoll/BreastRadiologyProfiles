@@ -31,7 +31,7 @@ namespace BreastRadiology.XUnitTests
                                     "document's 'Report' section.")
                                 .Paragraph("This instance will contain the top level results of the exam, ",
                                            "including the narrative result.")
-                                .Paragraph("This resource is a profile of the Fhir DiagnosticReport ",
+                                .Paragraph("This resource is a profile of the FHIR DiagnosticReport ",
                                            "base resource.")
                         )
                         .AddFragRef(Self.HeaderFragment.Value())

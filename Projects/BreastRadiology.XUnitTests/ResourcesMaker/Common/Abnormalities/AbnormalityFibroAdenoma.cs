@@ -35,9 +35,8 @@ namespace BreastRadiology.XUnitTests
                                 "Unlike a breast cancer, which grows larger over time ",
                                 "and can spread to other organs, ",
                                 "a fibroadenoma remains in the breast tissue. ",
-                                "They're pretty small, too. ",
                                 "Most are only 1 or 2 centimeters in size. ",
-                                "www.webmd.com > breast-cancer > what-are-fibroadenomas")
+                                "###URL#www.webmd.com > breast-cancer > what-are-fibroadenomas")
                         ,
                         new ConceptDef()
                             .SetCode("FibroadenomaDegeneration")

@@ -119,12 +119,12 @@ namespace BreastRadiology.XUnitTests
                             .ValidModalities(Modalities.MG)
                             .SetSnomedDescription("ClinicalFinding | 129761009 | Fine, linear, (casting) ",
                                 "radiographic calcification (Finding)")
-                            .SetUMLS("These are thin, linear or curvilinear irregular calcifications. ",
-                                "They may be discontinuous.")
+                            .SetUMLS("These are thin, linear or curvilinear irregular calcifications ",
+                                "and may be discontinuous.")
                         ,
                         new ConceptDef()
-                            .SetCode("GenericCalcification")
-                            .SetDisplay("Generic calcification")
+                            .SetCode("Generic")
+                            .SetDisplay("Generic")
                             .MammoId("701")
                             .ValidModalities(Modalities.MG)
                             .SetSnomedDescription("ClinicalFinding | 129748009 | Radiographic calcification ",
@@ -133,14 +133,14 @@ namespace BreastRadiology.XUnitTests
                                 "tissue, blood vessels, or organs. ",
                                 "This buildup can harden and disrupt your body's normal ",
                                 "processes. ",
-                                "Calcium is transported through the bloodstream. ",
-                                "It's also found in every cell. ",
+                                "Calcium is transported through the bloodstream and ",
+                                "is also found in every cell. ",
                                 "As a result, calcification can occur in almost any ",
                                 "part of the body.")
                         ,
                         new ConceptDef()
-                            .SetCode("CourseHeterogeneous")
-                            .SetDisplay("Course Heterogeneous")
+                            .SetCode("CoarseHeterogeneous")
+                            .SetDisplay("Coarse Heterogeneous")
                             .MammoId("708")
                             .ValidModalities(Modalities.MG)
                             .SetDicom("F-0176F")

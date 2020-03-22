@@ -1272,7 +1272,7 @@ namespace BreastRadiology.XUnitTests
                             .SetDisplay("Differential diagnosis")
                             .MammoId("561")
                             .ValidModalities(Modalities.MG | Modalities.MRI | Modalities.NM | Modalities.US)
-                            .SetUMLS("More than one possibility for your diagnosis. ",
+                            .SetUMLS("More than one possibility for a diagnosis. ",
                                 "The process of weighing the probability of one disease ",
                                 "versus that of other diseases ",
                                 "possibly accounting for a patient's illness.")

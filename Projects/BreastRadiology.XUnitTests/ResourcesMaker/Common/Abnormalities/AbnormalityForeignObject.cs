@@ -104,31 +104,7 @@ namespace BreastRadiology.XUnitTests
                         ,
                         new ConceptDef()
                             .SetCode("BreastMarker")
-                            .SetDisplay("Breast marker")
-                            .MammoId("905")
-                            .ValidModalities(Modalities.MRI)
-                            .SetSnomedCode("470272007")
-                            .SetSnomedDescription("PhysicalObject | Implantable lesion localization ",
-                                "marker (Object)")
-                            .SetUMLS("A breast marker is present in the  breast and is ",
-                                "viewable on the MRI. ",
-                                "Tissue marker placement after image-guided breast ",
-                                "biopsy has become a routine component ",
-                                "of clinical practice. ",
-                                "Marker placement distinguishes multiple biopsied ",
-                                "lesions within the same breast, ",
-                                "prevents re-biopsy of benign lesions, enables multi-modality ",
-                                "correlation, guides ",
-                                "pre-operative localization and helps confirm surgical ",
-                                "target removal. ",
-                                "Numerous breast tissue markers are currently available, ",
-                                "with varied shapes, composition, ",
-                                "and associated bio-absorbable components. ",
-                                "www.ncbi.nlm.nih.gov > pubmed")
-                        ,
-                        new ConceptDef()
-                            .SetCode("BreastMarkers")
-                            .SetDisplay("Breast markers")
+                            .SetDisplay("Breast Marker")
                             .MammoId("906")
                             .ValidModalities(Modalities.MRI)
                             .SetSnomedCode("470272007")
@@ -172,36 +148,6 @@ namespace BreastRadiology.XUnitTests
                             .SetUMLS("A soft thin tube called a catheter connects the port ",
                                 "to a large vein for administering ",
                                 "chemotherapy is present in the MRI/Ultrasound.")
-                        ,
-                        new ConceptDef()
-                            .SetCode("Clip")
-                            .SetDisplay("Clip")
-                            .MammoId("908")
-                            .ValidModalities(Modalities.MG | Modalities.MRI | Modalities.US)
-                            .SetSnomedCode("470342004")
-                            .SetSnomedDescription("PhysicalObject | Implantable tissue clip (Object)")
-                            .SetUMLS("A titanium-based marker (also known as a \"clip\") is ",
-                                "placed for most core biopsies to mark the area in ",
-                                "case surgery will be needed in the future. ",
-                                "... ",
-                                "These marker clips are placed at most facilities ",
-                                "around the country, and are considered a standard ",
-                                "part of the breast biopsy procedure.")
-                        ,
-                        new ConceptDef()
-                            .SetCode("Clips")
-                            .SetDisplay("Clips")
-                            .MammoId("516")
-                            .ValidModalities(Modalities.MG | Modalities.MRI | Modalities.US)
-                            .SetSnomedCode("470342004")
-                            .SetSnomedDescription("PhysicalObject | Implantable tissue clip (Object)")
-                            .SetUMLS("A titanium-based marker (also known as a \"clip\") is ",
-                                "placed for most core biopsies to mark the area in ",
-                                "case surgery will be needed in the future. ",
-                                "... ",
-                                "These marker clips are placed at most facilities ",
-                                "around the country, and are considered a standard ",
-                                "part of the breast biopsy procedure.")
                         ,
                         new ConceptDef()
                             .SetCode("Coil")

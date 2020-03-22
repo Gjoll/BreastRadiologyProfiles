@@ -86,10 +86,10 @@ namespace BreastRadiology.XUnitTests
                             "Resource")
                         .Description("Breast Radiology Composition",
                             new Markdown()
-                                .Paragraph("This is the composition resource for the Breast Radiology Fhir Document.",
+                                .Paragraph("This is the composition resource for the Breast Radiology FHIR Document.",
                                     "This resource is based on FHIR Composition resource.")
                                 .Paragraph(
-                                    "A Fhir Document is a Bundle that contains a composition as the first entry and ",
+                                    "A FHIR Document is a Bundle that contains a composition as the first entry and ",
                                     "provides a single item (bundle) that contains all the resources that are a part of",
                                     "the Breast Radiology Diagnostic Report.")
                                 .Paragraph("The composition object is an required part of the FHIR Document structure.",
