@@ -22,6 +22,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BuildGG.XUnitTests", "Proje
 EndProject
 Global
 	GlobalSection(SharedMSBuildProjectFiles) = preSolution
+		Projects\SharedStuff\SharedStuff.projitems*{6f278c6d-21f0-4904-8153-e561696ed1c7}*SharedItemsImports = 5
+		Projects\SharedStuff\SharedStuff.projitems*{7530b57a-ff16-4662-a36f-96d66902b43e}*SharedItemsImports = 5
 		Projects\SharedStuff\SharedStuff.projitems*{8513b166-7129-4842-b8ce-8e67511c1b1c}*SharedItemsImports = 13
 		Projects\SharedStuff\SharedStuff.projitems*{f01eaed4-f3a6-414d-8848-a6ed32cbcb42}*SharedItemsImports = 4
 	EndGlobalSection
