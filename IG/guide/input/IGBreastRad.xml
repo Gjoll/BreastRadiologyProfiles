@@ -48,6 +48,10 @@
       <name value="Common CodeSystems" />
       <description value="This section contains code systems that are commonly used throughout a Breast Radiology Report" />
     </grouping>
+    <grouping id="AcrResources">
+      <name value="ACR Image Resources" />
+      <description value="This section contains resources developed by the ACR" />
+    </grouping>
     <grouping id="MGResources">
       <name value="Mammography Resources" />
       <description value="This section contains resources used specifically in a Mammography exam" />
@@ -889,6 +893,15 @@
       <description value="Ultra Sound Finding" />
       <exampleBoolean value="false" />
       <groupingId value="USResources" />
+    </resource>
+    <resource>
+      <reference>
+        <reference value="StructureDefinition/ImagingContextExtension" />
+      </reference>
+      <name value="Imaging Context Extension" />
+      <description value="Imaging Context Extension" />
+      <exampleBoolean value="false" />
+      <groupingId value="AcrResources" />
     </resource>
     <resource>
       <reference>

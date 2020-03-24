@@ -18,7 +18,7 @@
    <title value="Breast Radiology Reporting - 1st STU ballot"/>
    <status value="draft"/>
    <experimental value="false"/>
-   <date value="2020-03-23T13:52:55-05:00"/>
+   <date value="2020-03-24T12:12:06-05:00"/>
    <publisher value="Hl7 - Clinical Interoperability Council"/>
    <contact>
       <telecom>
@@ -52,6 +52,10 @@
       <grouping id="CommonCodesCS">
          <name value="Common CodeSystems"/>
          <description value="This section contains code systems that are commonly used throughout a Breast Radiology Report"/>
+      </grouping>
+      <grouping id="AcrResources">
+         <name value="ACR Image Resources"/>
+         <description value="This section contains resources developed by the ACR"/>
       </grouping>
       <grouping id="MGResources">
          <name value="Mammography Resources"/>
@@ -1394,6 +1398,21 @@
       </resource>
       <resource>
          <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+            <valueString value="StructureDefinition:extension"/>
+         </extension>
+         <extension url="http://hl7.org/fhir/StructureDefinition/implementationguide-page">
+            <valueUri value="StructureDefinition-ImagingContextExtension.html"/>
+         </extension>
+         <reference>
+            <reference value="StructureDefinition/ImagingContextExtension"/>
+         </reference>
+         <name value="Imaging Context Extension"/>
+         <description value="Imaging Context Extension"/>
+         <exampleBoolean value="false"/>
+         <groupingId value="AcrResources"/>
+      </resource>
+      <resource>
+         <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
             <valueString value="StructureDefinition:resource:abstract"/>
          </extension>
          <extension url="http://hl7.org/fhir/StructureDefinition/implementationguide-page">
@@ -2118,6 +2137,11 @@
             <page>
                <nameUrl value="CodeSystem-ShapeCS.html"/>
                <title value="Shape CodeSystem"/>
+               <generation value="generated"/>
+            </page>
+            <page>
+               <nameUrl value="StructureDefinition-ImagingContextExtension.html"/>
+               <title value="Imaging Context Extension"/>
                <generation value="generated"/>
             </page>
             <page>

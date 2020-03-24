@@ -103,7 +103,7 @@ namespace BreastRadiology.XUnitTests
             this.groupIds.Add(groupId);
         }
 
-        void RemoveFragmentExtensions(DomainResource r)
+        public static void RemoveFragmentExtensions(DomainResource r)
         {
             void Rem(List<Extension> extensions)
             {
@@ -138,7 +138,7 @@ namespace BreastRadiology.XUnitTests
             String Group(DomainResource resource)
             {
                 Extension groupExtension = resource.GetExtension(Global.GroupExtensionUrl);
-                if (resource == null)
+                if (groupExtension == null)
                     throw new Exception($"StructureDefinition {resource.Id} lacks group extension");
                 FhirString value = groupExtension.Value as FhirString;
                 if (value == null)
@@ -164,7 +164,7 @@ namespace BreastRadiology.XUnitTests
 
             void Save(DomainResource r, String outputName)
             {
-                this.RemoveFragmentExtensions(r);
+                RemoveFragmentExtensions(r);
                 String outputPath = Path.Combine(this.resourceDir, outputName);
                 r.SaveJson(outputPath);
                 this.fc?.Mark(outputPath);
@@ -254,7 +254,7 @@ namespace BreastRadiology.XUnitTests
 
             void Save(DomainResource r, String outputName)
             {
-                this.RemoveFragmentExtensions(r);
+                RemoveFragmentExtensions(r);
 
                 String outputPath = Path.Combine(this.resourceDir, outputName);
                 r.SaveJson(outputPath);

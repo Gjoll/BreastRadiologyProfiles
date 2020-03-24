@@ -31,6 +31,8 @@ namespace BreastRadiology.XUnitTests
         public const String Group_AimCodesCS = "AimCodesCS";
         public const String Group_AimCodesVS = "AimCodesVS";
 
+        public const String Group_AcrResources = "AcrResources";
+
         public const String Group_MGResources = "MGResources";
         public const String Group_MGCodesVS = "MGCodesVS";
         public const String Group_MGCodesCS = "MGCodesCS";

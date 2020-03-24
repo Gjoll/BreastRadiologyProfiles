@@ -20,6 +20,7 @@ using ClosedXML.Excel;
 using Svg;
 using System.Drawing.Imaging;
 using DocumentFormat.OpenXml.Wordprocessing;
+using Hl7.Fhir.Specification.Snapshot;
 
 namespace BreastRadiology.XUnitTests
 {
@@ -47,6 +48,7 @@ namespace BreastRadiology.XUnitTests
         String graphicsDir;
         String fragmentDir;
         String resourcesDir;
+        String acrResourceDir;
         String pageDir;
         String pageTemplateDir;
         String mergedDir;
@@ -70,6 +72,7 @@ namespace BreastRadiology.XUnitTests
             this.graphicsDir = Path.Combine(this.contentDir, "Graphics");
             this.fragmentDir = Path.Combine(this.contentDir, "Fragments");
             this.resourcesDir = Path.Combine(this.contentDir, "Resources");
+            this.acrResourceDir = Path.Combine(this.contentDir, "ACR", "Resources");
             this.pageDir = Path.Combine(this.contentDir, "Page");
             this.pageTemplateDir = Path.Combine(this.contentDir, "PageTemplate");
             this.mergedDir = Path.Combine(this.contentDir, "Merged");
@@ -143,7 +146,7 @@ namespace BreastRadiology.XUnitTests
             }
 
             TimeSpan span = DateTime.Now - start;
-            Trace.WriteLine($"Ending B1_BuildFragments [{(Int32) span.TotalSeconds}]");
+            Trace.WriteLine($"Ending B1_BuildFragments [{(Int32)span.TotalSeconds}]");
         }
 
         [TestMethod]
@@ -196,7 +199,7 @@ namespace BreastRadiology.XUnitTests
             }
 
             TimeSpan span = DateTime.Now - start;
-            Trace.WriteLine($"Ending B2_BuildResources [{(Int32) span.TotalSeconds}]");
+            Trace.WriteLine($"Ending B2_BuildResources [{(Int32)span.TotalSeconds}]");
         }
 
         [TestMethod]
@@ -231,7 +234,7 @@ namespace BreastRadiology.XUnitTests
             }
 
             TimeSpan span = DateTime.Now - start;
-            Trace.WriteLine($"Ending B3_PatchIntroDocs [{(Int32) span.TotalSeconds}]");
+            Trace.WriteLine($"Ending B3_PatchIntroDocs [{(Int32)span.TotalSeconds}]");
         }
 
         [TestMethod]
@@ -246,6 +249,7 @@ namespace BreastRadiology.XUnitTests
                 {
                     ResourceMap map = new ResourceMap();
                     map.AddDir(this.resourcesDir, "*.json");
+                    map.AddDir(this.acrResourceDir, "*.json");
                     {
                         FocusMapMaker focusMapMaker = new FocusMapMaker(this.fc, map, this.graphicsDir, this.pageDir);
                         focusMapMaker.Create();
@@ -314,7 +318,7 @@ namespace BreastRadiology.XUnitTests
             }
 
             TimeSpan span = DateTime.Now - start;
-            Trace.WriteLine($"Ending B4_BuildGraphics [{(Int32) span.TotalSeconds}]");
+            Trace.WriteLine($"Ending B4_BuildGraphics [{(Int32)span.TotalSeconds}]");
         }
 
         [TestMethod]
@@ -343,6 +347,9 @@ namespace BreastRadiology.XUnitTests
                     "This section contains value sets that are commonly used throughout a Breast Radiology Report");
                 p.AddGrouping($"{ResourcesMaker.Group_CommonCodesCS}", "Common CodeSystems",
                     "This section contains code systems that are commonly used throughout a Breast Radiology Report");
+
+                p.AddGrouping($"{ResourcesMaker.Group_AcrResources}", "ACR Image Resources",
+                    "This section contains resources developed by the ACR");
 
                 p.AddGrouping($"{ResourcesMaker.Group_MGResources}", "Mammography Resources",
                     "This section contains resources used specifically in a Mammography exam");
@@ -386,6 +393,7 @@ namespace BreastRadiology.XUnitTests
                     "Extension Resource Definitions");
 
                 p.AddResources(this.resourcesDir);
+                p.AddResources(this.acrResourceDir);
                 p.AddFragments(this.fragmentDir);
                 p.AddPageContent(this.pageDir);
                 p.AddPageContent(this.pageTemplateDir);
@@ -407,7 +415,7 @@ namespace BreastRadiology.XUnitTests
             }
 
             TimeSpan span = DateTime.Now - start;
-            Trace.WriteLine($"Ending B5_BuildIG [{(Int32) span.TotalSeconds}]");
+            Trace.WriteLine($"Ending B5_BuildIG [{(Int32)span.TotalSeconds}]");
         }
 
         [TestMethod]
@@ -446,7 +454,7 @@ namespace BreastRadiology.XUnitTests
             }
 
             TimeSpan span = DateTime.Now - start;
-            Trace.WriteLine($"Ending B6_RunPublisher[{(Int32) span.TotalSeconds}]");
+            Trace.WriteLine($"Ending B6_RunPublisher[{(Int32)span.TotalSeconds}]");
         }
 
 
@@ -459,6 +467,8 @@ namespace BreastRadiology.XUnitTests
                 this.fc?.Add(this.pageDir, "*.xml");
                 this.fc?.Add(this.fragmentDir, "*.json");
                 this.fc?.Add(this.resourcesDir, "*.json");
+
+                this.C1_BuildACR();
 
                 this.B1_BuildFragments();
                 this.B2_BuildResources();
@@ -585,7 +595,7 @@ namespace BreastRadiology.XUnitTests
 
             void AddBlank()
             {
-                dt.Rows.Add(new object[] {null, null, null});
+                dt.Rows.Add(new object[] { null, null, null });
             }
 
             dt = CreateTable();
@@ -620,6 +630,30 @@ namespace BreastRadiology.XUnitTests
             File.Delete(savePath);
             workbook.SaveAs(savePath);
         }
+
+        [TestMethod]
+        public void C1_BuildACR()
+        {
+            String extPath = Path.Combine(this.acrResourceDir,
+                "StructureDefinition-ImagingContextExtension.json");
+            String fhirText = File.ReadAllText(extPath);
+            FhirJsonParser parser = new FhirJsonParser();
+            StructureDefinition sDef = parser.Parse< StructureDefinition>(fhirText);
+            sDef.Snapshot = null;
+            SnapshotCreator.Create(sDef);
+            IGBuilder.RemoveFragmentExtensions(sDef);
+
+            sDef.Extension.Add(new Extension
+            {
+                Url = Global.GroupExtensionUrl,
+                Value = new FhirString(ResourcesMaker.Group_AcrResources)
+            });
+
+            sDef.AddExtension(Global.ResourceMapNameUrl, new FhirString("Image Context Extension"));
+
+            sDef.SaveJson(extPath);
+        }
+
 
         //[TestMethod]
         //public void Z_MergeOneFile()

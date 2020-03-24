@@ -212,7 +212,7 @@ namespace BreastRadiology.XUnitTests
             slice.ElementDefinition.Type.Add(new ElementDefinition.TypeRefComponent
             {
                 Code = "Extension",
-                Profile = new String[] {extensionUrl}
+                Profile = new String[] { extensionUrl }
             });
             return slice;
         }
@@ -364,15 +364,7 @@ namespace BreastRadiology.XUnitTests
             String componentRef,
             bool showChildren)
         {
-            dynamic packet = new JObject();
-            packet.LinkType = SVGGlobal.ExtensionType;
-            packet.ShowChildren = showChildren;
-            packet.CardinalityLeft = cardinalityLeft.ToString();
-            packet.ComponentHRef = componentRef;
-            packet.LocalName = localName;
-            packet.LinkTarget = url;
-            this.SDef.AddExtension(Global.ResourceMapLinkUrl, new FhirString(packet.ToString()));
-
+            this.sDef.AddExtensionLink(url, cardinalityLeft, localName, componentRef, showChildren);
             return this;
         }
 
@@ -383,42 +375,25 @@ namespace BreastRadiology.XUnitTests
             String types,
             params String[] targets)
         {
-            dynamic packet = new JObject();
-            packet.LinkType = SVGGlobal.ComponentType;
-            packet.ShowChildren = false;
-            if (cardinalityLeft != null)
-                packet.CardinalityLeft = cardinalityLeft.ToString();
-            packet.LinkTarget = url;
-            packet.ComponentHRef = componentRef;
-            packet.Types = types;
-            packet.References = new JArray(targets);
-            if (cardinalityRight != null)
-                packet.CardinalityRight = cardinalityRight.ToString();
-            this.SDef.AddExtension(Global.ResourceMapLinkUrl, new FhirString(packet.ToString()));
-
+            this.sDef.AddComponentLink(url,
+                cardinalityLeft,
+                cardinalityRight,
+                componentRef,
+                types,
+                targets);
             return this;
         }
 
 
         public SDefEditor AddTargetLink(String url, Cardinality cardinalityLeft, bool showChildren)
         {
-            dynamic packet = new JObject();
-            packet.LinkType = SVGGlobal.TargetType;
-            packet.ShowChildren = showChildren;
-            packet.CardinalityLeft = cardinalityLeft.ToString();
-            packet.LinkTarget = url;
-            this.SDef.AddExtension(Global.ResourceMapLinkUrl, new FhirString(packet.ToString()));
+            this.SDef.AddTargetLink(url, cardinalityLeft, showChildren);
             return this;
         }
 
         public SDefEditor AddValueSetLink(ValueSet vs, bool showChildren)
         {
-            dynamic packet = new JObject();
-            packet.LinkType = SVGGlobal.ValueSetType;
-            packet.ShowChildren = showChildren;
-            packet.LinkTarget = vs.Url;
-            this.SDef.AddExtension(Global.ResourceMapLinkUrl, new FhirString(packet.ToString()));
-
+            this.SDef.AddValueSetLink(vs, showChildren);
             return this;
         }
 
@@ -475,7 +450,7 @@ namespace BreastRadiology.XUnitTests
             slice.ElementDefinition.Type.Add(new ElementDefinition.TypeRefComponent
             {
                 Code = "Reference",
-                TargetProfile = new String[] {profileUrl}
+                TargetProfile = new String[] { profileUrl }
             });
             return slice;
         }
@@ -707,7 +682,7 @@ namespace BreastRadiology.XUnitTests
         {
             // Fix component code
             ElementTreeNode valueXNode = this.SliceValueXByType(slice,
-                new string[] {"Quantity", "Range"});
+                new string[] { "Quantity", "Range" });
             {
                 Hl7.Fhir.Model.Quantity q = new Hl7.Fhir.Model.Quantity
                 {
@@ -715,13 +690,13 @@ namespace BreastRadiology.XUnitTests
                 };
 
                 ElementDefinition valueX = new ElementDefinition
-                        {
-                            Path = $"{slice.ElementDefinition.Path}.value[x]",
-                            ElementId = $"{slice.ElementDefinition.ElementId}.value[x]:valueQuantity",
-                            SliceName = $"valueQuantity",
-                            Min = 0,
-                            Max = "1"
-                        }
+                {
+                    Path = $"{slice.ElementDefinition.Path}.value[x]",
+                    ElementId = $"{slice.ElementDefinition.ElementId}.value[x]:valueQuantity",
+                    SliceName = $"valueQuantity",
+                    Min = 0,
+                    Max = "1"
+                }
                         .Pattern(q)
                         .Type("Quantity")
                     ;
@@ -741,13 +716,13 @@ namespace BreastRadiology.XUnitTests
                     }
                 };
                 ElementDefinition valueX = new ElementDefinition
-                        {
-                            Path = $"{slice.ElementDefinition.Path}.value[x]",
-                            ElementId = $"{slice.ElementDefinition.ElementId}.value[x]:valueRange",
-                            SliceName = $"valueRange",
-                            Min = 0,
-                            Max = "1"
-                        }
+                {
+                    Path = $"{slice.ElementDefinition.Path}.value[x]",
+                    ElementId = $"{slice.ElementDefinition.ElementId}.value[x]:valueRange",
+                    SliceName = $"valueRange",
+                    Min = 0,
+                    Max = "1"
+                }
                         .Pattern(r)
                         .Type("Range")
                     ;
