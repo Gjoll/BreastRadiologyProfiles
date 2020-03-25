@@ -1,23 +1,28 @@
 {
   "resourceType": "StructureDefinition",
-  "url": "http://hl7.org/fhir/us/breast-radiology/StructureDefinition/ImagingContextExtension",
-  "version": "0.0.2",
-  "name": "ImagingContextExtension",
-  "title": "Image Region Extension",
-  "status": "draft",
-  "date": "2019-11-01",
-  "publisher": "Hl7-Clinical Interoperability Council",
-  "contact": [
+  "extension": [
     {
-      "telecom": [
-        {
-          "system": "url",
-          "value": "http://www.hl7.org/Special/committees/cic"
-        }
-      ]
+      "url": "http://www.fragment.com/mapname",
+      "valueString": "Image Study Uid Extension"
+    },
+    {
+      "url": "http://www.fragment.com/Group",
+      "valueString": "AimResources"
+    },
+    {
+      "url": "http://www.fragment.com/fragment",
+      "valueUrl": "http://hl7.org/fhir/us/breast-radiology/StructureDefinition/AcrHeaderFragment"
+    },
+    {
+      "url": "http://www.fragment.com/maplink",
+      "valueString": "{\r\n  \"LinkType\": \"fragment\",\r\n  \"ShowChildren\": false,\r\n  \"LinkTarget\": \"http://hl7.org/fhir/us/breast-radiology/StructureDefinition/AcrHeaderFragment\"\r\n}"
     }
   ],
-  "description": "<b>Imaging Context Extension</b>\n\nImaging Reference context as an extension of DocumentReference",
+  "url": "http://hl7.org/fhir/us/breast-radiology/StructureDefinition/ImageStudyUidExtension",
+  "name": "ImageStudyUidExtension",
+  "title": "Image Study Uid Extension",
+  "status": "draft",
+  "description": "<b>Image Study Uid Extension</b>\n\nSpecifies DICOM Study Uid",
   "fhirVersion": "4.0.0",
   "kind": "complex-type",
   "abstract": false,
@@ -45,8 +50,8 @@
           }
         ],
         "path": "Extension",
-        "short": "Imaging Context Extension",
-        "definition": "Imaging Reference context as an extension of DocumentReference",
+        "short": "Image Study Uid Extension",
+        "definition": "Specifies DICOM Study Uid",
         "min": 0,
         "max": "*",
         "base": {
@@ -126,8 +131,7 @@
             }
           ],
           "description": "Extensions are always sliced by (at least) url",
-          "ordered": true,
-          "rules": "openAtEnd"
+          "rules": "open"
         },
         "short": "Additional content defined by implementations",
         "definition": "May be used to represent additional information that is not part of the basic definition of the element. To make the use of extensions safe and manageable, there is a strict set of governance  applied to the definition and use of extensions. Though any implementer can define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension.",
@@ -146,41 +150,6 @@
         "type": [
           {
             "code": "Extension"
-          }
-        ],
-        "isModifier": false,
-        "isSummary": false,
-        "mapping": [
-          {
-            "identity": "rim",
-            "map": "n/a"
-          }
-        ]
-      },
-      {
-        "id": "Extension.extension:studyUid",
-        "path": "Extension.extension",
-        "sliceName": "studyUid",
-        "short": "studyUid extension.",
-        "definition": "This extension slice contains the studyUid extension.",
-        "comment": "This is one component of a group of components that are part of the observation.",
-        "alias": [
-          "extensions",
-          "user content"
-        ],
-        "min": 0,
-        "max": "1",
-        "base": {
-          "path": "Element.extension",
-          "min": 0,
-          "max": "*"
-        },
-        "type": [
-          {
-            "code": "Extension",
-            "profile": [
-              "http://hl7.org/fhir/us/breast-radiology/StructureDefinition/ImageStudyUidExtension"
-            ]
           }
         ],
         "isModifier": false,
@@ -213,7 +182,7 @@
             "code": "uri"
           }
         ],
-        "fixedUri": "http://hl7.org/fhir/us/breast-radiology/StructureDefinition/ImagingContextExtension",
+        "fixedUri": "http://hl7.org/fhir/us/breast-radiology/StructureDefinition/ImageStudyUidExtension",
         "isModifier": false,
         "isSummary": false,
         "mapping": [
@@ -228,8 +197,8 @@
         "path": "Extension.value[x]",
         "short": "Value of extension",
         "definition": "Value of extension - must be one of a constrained set of the data types (see [Extensibility](extensibility.html) for a list).",
-        "min": 0,
-        "max": "0",
+        "min": 1,
+        "max": "1",
         "base": {
           "path": "Extension.value[x]",
           "min": 0,
@@ -237,151 +206,7 @@
         },
         "type": [
           {
-            "code": "base64Binary"
-          },
-          {
-            "code": "boolean"
-          },
-          {
-            "code": "canonical"
-          },
-          {
-            "code": "code"
-          },
-          {
-            "code": "date"
-          },
-          {
-            "code": "dateTime"
-          },
-          {
-            "code": "decimal"
-          },
-          {
-            "code": "id"
-          },
-          {
-            "code": "instant"
-          },
-          {
-            "code": "integer"
-          },
-          {
-            "code": "markdown"
-          },
-          {
             "code": "oid"
-          },
-          {
-            "code": "positiveInt"
-          },
-          {
-            "code": "string"
-          },
-          {
-            "code": "time"
-          },
-          {
-            "code": "unsignedInt"
-          },
-          {
-            "code": "uri"
-          },
-          {
-            "code": "url"
-          },
-          {
-            "code": "uuid"
-          },
-          {
-            "code": "Address"
-          },
-          {
-            "code": "Age"
-          },
-          {
-            "code": "Annotation"
-          },
-          {
-            "code": "Attachment"
-          },
-          {
-            "code": "CodeableConcept"
-          },
-          {
-            "code": "Coding"
-          },
-          {
-            "code": "ContactPoint"
-          },
-          {
-            "code": "Count"
-          },
-          {
-            "code": "Distance"
-          },
-          {
-            "code": "Duration"
-          },
-          {
-            "code": "HumanName"
-          },
-          {
-            "code": "Identifier"
-          },
-          {
-            "code": "Money"
-          },
-          {
-            "code": "Period"
-          },
-          {
-            "code": "Quantity"
-          },
-          {
-            "code": "Range"
-          },
-          {
-            "code": "Ratio"
-          },
-          {
-            "code": "Reference"
-          },
-          {
-            "code": "SampledData"
-          },
-          {
-            "code": "Signature"
-          },
-          {
-            "code": "Timing"
-          },
-          {
-            "code": "ContactDetail"
-          },
-          {
-            "code": "Contributor"
-          },
-          {
-            "code": "DataRequirement"
-          },
-          {
-            "code": "Expression"
-          },
-          {
-            "code": "ParameterDefinition"
-          },
-          {
-            "code": "RelatedArtifact"
-          },
-          {
-            "code": "TriggerDefinition"
-          },
-          {
-            "code": "UsageContext"
-          },
-          {
-            "code": "Dosage"
           }
         ],
         "isModifier": false,
@@ -410,8 +235,8 @@
           }
         ],
         "path": "Extension",
-        "short": "Imaging Context Extension",
-        "definition": "Imaging Reference context as an extension of DocumentReference",
+        "short": "Image Study Uid Extension",
+        "definition": "Specifies DICOM Study Uid",
         "base": {
           "path": "Extension",
           "min": 0,
@@ -419,55 +244,8 @@
         }
       },
       {
-        "id": "Extension.extension",
-        "path": "Extension.extension",
-        "slicing": {
-          "discriminator": [
-            {
-              "type": "value",
-              "path": "url"
-            }
-          ],
-          "ordered": true,
-          "rules": "openAtEnd"
-        },
-        "min": 0,
-        "max": "*",
-        "base": {
-          "path": "Extension.extension",
-          "min": 0,
-          "max": "*"
-        }
-      },
-      {
-        "id": "Extension.extension:studyUid",
-        "path": "Extension.extension",
-        "sliceName": "studyUid",
-        "short": "studyUid extension.",
-        "definition": "This extension slice contains the studyUid extension.",
-        "comment": "This is one component of a group of components that are part of the observation.",
-        "min": 0,
-        "max": "1",
-        "base": {
-          "path": "Extension.extension",
-          "min": 0,
-          "max": "*"
-        },
-        "type": [
-          {
-            "code": "Extension",
-            "profile": [
-              "http://hl7.org/fhir/us/breast-radiology/StructureDefinition/ImageStudyUidExtension"
-            ]
-          }
-        ],
-        "isModifier": false
-      },
-      {
         "id": "Extension.url",
         "path": "Extension.url",
-        "min": 1,
-        "max": "1",
         "base": {
           "path": "Extension.url",
           "min": 1,
@@ -478,18 +256,23 @@
             "code": "uri"
           }
         ],
-        "fixedUri": "http://hl7.org/fhir/us/breast-radiology/StructureDefinition/ImagingContextExtension"
+        "fixedUri": "http://hl7.org/fhir/us/breast-radiology/StructureDefinition/ImageStudyUidExtension"
       },
       {
         "id": "Extension.value[x]",
         "path": "Extension.value[x]",
-        "min": 0,
-        "max": "0",
+        "min": 1,
+        "max": "1",
         "base": {
           "path": "Extension.value[x]",
           "min": 0,
           "max": "1"
-        }
+        },
+        "type": [
+          {
+            "code": "oid"
+          }
+        ]
       }
     ]
   }

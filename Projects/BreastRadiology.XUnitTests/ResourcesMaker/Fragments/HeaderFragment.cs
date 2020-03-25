@@ -13,7 +13,8 @@ namespace BreastRadiology.XUnitTests
 {
     partial class ResourcesMaker : ConverterBase
     {
-        SDTaskVar HeaderFragment = new SDTaskVar(
+        StructureDefinition HeaderFragment;
+        SDTaskVar BRHeaderFragment= new SDTaskVar(
             (out StructureDefinition s) =>
             {
                 SDefEditor e = Self.CreateFragment("HeaderFragment",

@@ -19,6 +19,7 @@ using BreastRadiology.Shared;
 using ClosedXML.Excel;
 using Svg;
 using System.Drawing.Imaging;
+using System.Linq;
 using DocumentFormat.OpenXml.Wordprocessing;
 using Hl7.Fhir.Specification.Snapshot;
 
@@ -48,10 +49,14 @@ namespace BreastRadiology.XUnitTests
         String graphicsDir;
         String fragmentDir;
         String resourcesDir;
-        String acrResourceDir;
         String pageDir;
         String pageTemplateDir;
         String mergedDir;
+
+        String acrFragmentDir;
+        String acrResourcesDir;
+        String acrGraphicsDir;
+        String acrPageDir;
 
         FileCleaner fc = null;
 
@@ -72,10 +77,15 @@ namespace BreastRadiology.XUnitTests
             this.graphicsDir = Path.Combine(this.contentDir, "Graphics");
             this.fragmentDir = Path.Combine(this.contentDir, "Fragments");
             this.resourcesDir = Path.Combine(this.contentDir, "Resources");
-            this.acrResourceDir = Path.Combine(this.contentDir, "ACR", "Resources");
             this.pageDir = Path.Combine(this.contentDir, "Page");
             this.pageTemplateDir = Path.Combine(this.contentDir, "PageTemplate");
             this.mergedDir = Path.Combine(this.contentDir, "Merged");
+
+            this.acrFragmentDir = Path.Combine(this.contentDir, "ACR", "Fragment");
+            this.acrResourcesDir = Path.Combine(this.contentDir, "ACR", "Resources");
+            this.acrPageDir = Path.Combine(this.contentDir, "ACR", "Page");
+            this.acrGraphicsDir = Path.Combine(this.contentDir, "ACR", "Graphics");
+
         }
 
         private void Message(String import, string className, string method, string msg)
@@ -154,7 +164,7 @@ namespace BreastRadiology.XUnitTests
         {
             DateTime start = DateTime.Now;
             Trace.WriteLine("Starting B2_BuildResources");
-            bool saveMergedFiles = true;
+            bool saveMergedFiles = false;
 
             try
             {
@@ -249,7 +259,6 @@ namespace BreastRadiology.XUnitTests
                 {
                     ResourceMap map = new ResourceMap();
                     map.AddDir(this.resourcesDir, "*.json");
-                    map.AddDir(this.acrResourceDir, "*.json");
                     {
                         FocusMapMaker focusMapMaker = new FocusMapMaker(this.fc, map, this.graphicsDir, this.pageDir);
                         focusMapMaker.Create();
@@ -348,9 +357,6 @@ namespace BreastRadiology.XUnitTests
                 p.AddGrouping($"{ResourcesMaker.Group_CommonCodesCS}", "Common CodeSystems",
                     "This section contains code systems that are commonly used throughout a Breast Radiology Report");
 
-                p.AddGrouping($"{ResourcesMaker.Group_AcrResources}", "ACR Image Resources",
-                    "This section contains resources developed by the ACR");
-
                 p.AddGrouping($"{ResourcesMaker.Group_MGResources}", "Mammography Resources",
                     "This section contains resources used specifically in a Mammography exam");
                 p.AddGrouping($"{ResourcesMaker.Group_MGCodesVS}", "Mammography ValueSets",
@@ -393,9 +399,10 @@ namespace BreastRadiology.XUnitTests
                     "Extension Resource Definitions");
 
                 p.AddResources(this.resourcesDir);
-                p.AddResources(this.acrResourceDir);
+                p.AddResources(this.acrResourcesDir);
                 p.AddFragments(this.fragmentDir);
                 p.AddPageContent(this.pageDir);
+                p.AddPageContent(this.acrPageDir);
                 p.AddPageContent(this.pageTemplateDir);
                 p.AddImages(this.graphicsDir);
                 p.SaveAll();
@@ -468,7 +475,7 @@ namespace BreastRadiology.XUnitTests
                 this.fc?.Add(this.fragmentDir, "*.json");
                 this.fc?.Add(this.resourcesDir, "*.json");
 
-                this.C1_BuildACR();
+                this.C1_Build();
 
                 this.B1_BuildFragments();
                 this.B2_BuildResources();
@@ -632,78 +639,151 @@ namespace BreastRadiology.XUnitTests
         }
 
         [TestMethod]
-        public void C1_BuildACR()
+        public void C1_Build()
         {
-            String extPath = Path.Combine(this.acrResourceDir,
-                "StructureDefinition-ImagingContextExtension.json");
-            String fhirText = File.ReadAllText(extPath);
-            FhirJsonParser parser = new FhirJsonParser();
-            StructureDefinition sDef = parser.Parse< StructureDefinition>(fhirText);
-            sDef.Snapshot = null;
-            SnapshotCreator.Create(sDef);
-            IGBuilder.RemoveFragmentExtensions(sDef);
+            C1_BuildACRFragments();
+            C2_BuildAcrResources();
+            C4_BuildGraphics();
+        }
 
-            sDef.Extension.Add(new Extension
+        [TestMethod]
+        public void C1_BuildACRFragments()
+        {
+            DateTime start = DateTime.Now;
+            Trace.WriteLine("Starting C1_BuildAcrFragments");
+            try
             {
-                Url = Global.GroupExtensionUrl,
-                Value = new FhirString(ResourcesMaker.Group_AcrResources)
-            });
+                ResourcesMaker pc = new ResourcesMaker(this.fc, 
+                    this.acrFragmentDir, 
+                    this.acrPageDir, 
+                    this.cacheDir);
+                pc.StatusErrors += this.StatusErrors;
+                pc.StatusInfo += this.StatusInfo;
+                pc.StatusWarnings += this.StatusWarnings;
+                pc.CreateAcrResources();
+                if (pc.HasErrors)
+                {
+                    StringBuilder sb = new StringBuilder();
+                    pc.FormatErrorMessages(sb);
+                    Trace.WriteLine(sb.ToString());
+                    Debug.Assert(false);
+                }
+            }
+            catch (Exception err)
+            {
+                Trace.WriteLine(err.Message);
+                Assert.IsTrue(false);
+            }
 
-            sDef.AddExtension(Global.ResourceMapNameUrl, new FhirString("Image Context Extension"));
-
-            sDef.SaveJson(extPath);
+            TimeSpan span = DateTime.Now - start;
+            Trace.WriteLine($"Ending C1_BuildAcrFragments [{(Int32)span.TotalSeconds}]");
         }
 
 
-        //[TestMethod]
-        //public void Z_MergeOneFile()
-        //{
-        //    DateTime start = DateTime.Now;
-        //    bool saveMergedFiles = true;
+        [TestMethod]
+        public void C2_BuildAcrResources()
+        {
+            DateTime start = DateTime.Now;
+            Trace.WriteLine("Starting C2_BuildAcrResources");
+            bool saveMergedFiles = false;
 
-        //    try
-        //    {
-        //        if (Directory.Exists(this.resourcesDir) == false)
-        //            Directory.CreateDirectory(this.resourcesDir);
+            try
+            {
+                if (Directory.Exists(this.acrResourcesDir) == false)
+                    Directory.CreateDirectory(this.acrResourcesDir);
 
-        //        if (saveMergedFiles)
-        //        {
-        //            if (Directory.Exists(this.mergedDir) == false)
-        //                Directory.CreateDirectory(this.mergedDir);
-        //        }
-        //        else
-        //        {
-        //            if (Directory.Exists(this.mergedDir) == true)
-        //                Directory.Delete(this.mergedDir, true);
-        //        }
+                if (saveMergedFiles)
+                {
+                    if (Directory.Exists(this.mergedDir) == false)
+                        Directory.CreateDirectory(this.mergedDir);
+                }
+                else
+                {
+                    if (Directory.Exists(this.mergedDir) == true)
+                        Directory.Delete(this.mergedDir, true);
+                }
 
-        //        PreFhirGenerator preFhir = new PreFhirGenerator(this.fc, this.cacheDir);
-        //        preFhir.StatusErrors += this.StatusErrors;
-        //        preFhir.StatusInfo += this.StatusInfo;
-        //        preFhir.StatusWarnings += this.StatusWarnings;
-        //        preFhir.AddDir(this.fragmentDir, "*.json");
-        //        if (saveMergedFiles)
-        //            preFhir.MergedDir = this.mergedDir;
-        //        preFhir.BreakOnElementId = "Extension.extension:laterality.url";
-        //        preFhir.BreakOnTitle = "BreastBodyLocationExtension";
-        //        preFhir.ProcessOne(this.fragmentDir, "BreastBodyLocationExtension");
-        //        preFhir.SaveResources(this.resourcesDir);
+                PreFhirGenerator preFhir = new PreFhirGenerator(this.fc, this.cacheDir);
+                preFhir.StatusErrors += this.StatusErrors;
+                preFhir.StatusInfo += this.StatusInfo;
+                preFhir.StatusWarnings += this.StatusWarnings;
+                preFhir.AddDir(this.acrFragmentDir, "*.json");
+                if (saveMergedFiles)
+                    preFhir.MergedDir = this.mergedDir;
+                preFhir.BreakOnElementId = "";
+                preFhir.BreakOnTitle = "";
+                preFhir.Process();
+                preFhir.SaveResources(this.acrResourcesDir);
 
-        //        if (preFhir.HasErrors)
-        //        {
-        //            StringBuilder sb = new StringBuilder();
-        //            preFhir.FormatErrorMessages(sb);
-        //            Trace.WriteLine(sb.ToString());
-        //            Debug.Assert(false);
-        //        }
-        //    }
-        //    catch (Exception err)
-        //    {
-        //        Trace.WriteLine(err.Message);
-        //        Assert.IsTrue(false);
-        //    }
+                if (preFhir.HasErrors)
+                {
+                    StringBuilder sb = new StringBuilder();
+                    preFhir.FormatErrorMessages(sb);
+                    Trace.WriteLine(sb.ToString());
+                    Debug.Assert(false);
+                }
+            }
+            catch (Exception err)
+            {
+                Trace.WriteLine(err.Message);
+                Assert.IsTrue(false);
+            }
 
-        //    TimeSpan span = DateTime.Now - start;
-        //}
+            TimeSpan span = DateTime.Now - start;
+            Trace.WriteLine($"Ending C2_BuildAcrResources [{(Int32)span.TotalSeconds}]");
+        }
+
+
+
+
+        [TestMethod]
+        public void C4_BuildGraphics()
+        {
+            DateTime start = DateTime.Now;
+            Trace.WriteLine("Starting C4_BuildGraphics");
+            try
+            {
+                if (Directory.Exists(this.graphicsDir) == false)
+                    Directory.CreateDirectory(this.graphicsDir);
+                {
+                    ResourceMap map = new ResourceMap();
+                    map.AddDir(this.acrResourcesDir, "*.json");
+                    {
+                        FocusMapMaker focusMapMaker = new FocusMapMaker(this.fc,
+                            map,
+                            this.acrGraphicsDir,
+                            this.acrPageDir);
+                        focusMapMaker.Create();
+                    }
+                }
+            }
+            catch (Exception err)
+            {
+                Trace.WriteLine(err.Message);
+                Assert.IsTrue(false);
+            }
+
+            TimeSpan span = DateTime.Now - start;
+            Trace.WriteLine($"Ending C4_BuildGraphics [{(Int32)span.TotalSeconds}]");
+        }
+
+
+        [TestMethod]
+        public void C5_ValidateAcr()
+        {
+            // 
+            IGBuilder.RemoveFragmentExtensions(this.acrResourcesDir);
+            FhirValidator fv = new FhirValidator(Path.Combine(this.cacheDir, "validation.xml"));
+            fv.StatusErrors += this.StatusErrors;
+            fv.StatusInfo += this.StatusInfo;
+            fv.StatusWarnings += this.StatusWarnings;
+            bool success = fv.ValidateDir(this.acrResourcesDir, "*.json", "4.0.0");
+            StringBuilder sb = new StringBuilder();
+            fv.FormatMessages(sb);
+            Trace.WriteLine(sb.ToString());
+            Assert.IsTrue(success);
+            Trace.WriteLine("Validation complete");
+        }
+
     }
 }

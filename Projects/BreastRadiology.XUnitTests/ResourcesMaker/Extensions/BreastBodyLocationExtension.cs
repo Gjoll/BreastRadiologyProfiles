@@ -526,7 +526,7 @@ namespace BreastRadiology.XUnitTests
                     ;
                 s = e.SDef;
 
-                e.AddFragRef(Self.HeaderFragment.Value());
+                e.AddFragRef(Self.HeaderFragment);
 
                 e.Select("url")
                     .Type("uri")

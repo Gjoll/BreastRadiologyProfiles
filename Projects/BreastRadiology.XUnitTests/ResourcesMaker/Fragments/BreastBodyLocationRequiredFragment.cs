@@ -22,7 +22,7 @@ namespace BreastRadiology.XUnitTests
                                 .Paragraph(
                                     "The references are required, meaning that the breast body location must exist.")
                         )
-                        .AddFragRef(Self.HeaderFragment.Value())
+                        .AddFragRef(Self.HeaderFragment)
                     ;
                 s = e.SDef;
 

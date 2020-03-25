@@ -31,8 +31,6 @@ namespace BreastRadiology.XUnitTests
         public const String Group_AimCodesCS = "AimCodesCS";
         public const String Group_AimCodesVS = "AimCodesVS";
 
-        public const String Group_AcrResources = "AcrResources";
-
         public const String Group_MGResources = "MGResources";
         public const String Group_MGCodesVS = "MGCodesVS";
         public const String Group_MGCodesCS = "MGCodesCS";
@@ -215,7 +213,7 @@ namespace BreastRadiology.XUnitTests
                 Content = CodeSystem.CodeSystemContentMode.Complete,
                 Count = codes.Count(),
             };
-            cs.AddFragRef(this.HeaderFragment.Value());
+            cs.AddFragRef(this.HeaderFragment);
 
             // store groupPath as an extension. This is an unregistered extension that will be removed before
             // processing is complete.
@@ -257,7 +255,7 @@ namespace BreastRadiology.XUnitTests
                 Title = title,
                 Description = new Markdown(description)
             };
-            vs.AddFragRef(this.HeaderFragment.Value());
+            vs.AddFragRef(this.HeaderFragment);
 
             // store groupPath as an extension. This is an unregistered extension that will be removed before
             // processing is complete.
@@ -303,12 +301,29 @@ namespace BreastRadiology.XUnitTests
 
             // we have to manually force the creation of the following to get
             // all the necessary objects to be created.
+            this.HeaderFragment = BRHeaderFragment.Value();
             this.ObservationCodesCS.Value();
             this.CompositionSectionSliceCodesCS.Value();
             this.ComponentSliceCodesCS.Value();
             this.BreastRadiologyDocument.Value();
             this.BreastRadiologyReport.Value();
             this.UnitsOfLengthVS.Value();
+
+            this.SaveAll();
+        }
+
+        public void CreateAcrResources()
+        {
+            if (Directory.Exists(this.resourceDir) == false)
+                Directory.CreateDirectory(this.resourceDir);
+            if (Directory.Exists(this.pageDir) == false)
+                Directory.CreateDirectory(this.pageDir);
+
+            // we have to manually force the creation of the following to get
+            // all the necessary objects to be created.
+            this.HeaderFragment = AcrHeaderFragment.Value();
+            this.ImagingContextExtension.Value();
+            this.ImageRegionExtension.Value();
 
             this.SaveAll();
         }

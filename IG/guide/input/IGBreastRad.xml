@@ -48,10 +48,6 @@
       <name value="Common CodeSystems" />
       <description value="This section contains code systems that are commonly used throughout a Breast Radiology Report" />
     </grouping>
-    <grouping id="AcrResources">
-      <name value="ACR Image Resources" />
-      <description value="This section contains resources developed by the ACR" />
-    </grouping>
     <grouping id="MGResources">
       <name value="Mammography Resources" />
       <description value="This section contains resources used specifically in a Mammography exam" />
@@ -896,12 +892,66 @@
     </resource>
     <resource>
       <reference>
+        <reference value="CodeSystem/AcrGraphicTypeCS" />
+      </reference>
+      <name value="ACR GraphicType CodeSystem" />
+      <description value="ACR GraphicType code system." />
+      <exampleBoolean value="false" />
+      <groupingId value="AimCodesCS" />
+    </resource>
+    <resource>
+      <reference>
+        <reference value="CodeSystem/GraphicTypeCS" />
+      </reference>
+      <name value="GraphicType CodeSystem" />
+      <description value="GraphicType code system." />
+      <exampleBoolean value="false" />
+      <groupingId value="AimCodesCS" />
+    </resource>
+    <resource>
+      <reference>
+        <reference value="ValueSet/AcrGraphicTypeVS" />
+      </reference>
+      <name value="ACR GraphicType ValueSet" />
+      <description value="ACR GraphicType value set." />
+      <exampleBoolean value="false" />
+      <groupingId value="AimCodesVS" />
+    </resource>
+    <resource>
+      <reference>
+        <reference value="ValueSet/GraphicTypeVS" />
+      </reference>
+      <name value="GraphicType ValueSet" />
+      <description value="GraphicType value set." />
+      <exampleBoolean value="false" />
+      <groupingId value="AimCodesVS" />
+    </resource>
+    <resource>
+      <reference>
+        <reference value="StructureDefinition/ImageRegionExtension" />
+      </reference>
+      <name value="Image Region Extension" />
+      <description value="Image Region Extension" />
+      <exampleBoolean value="false" />
+      <groupingId value="AimResources" />
+    </resource>
+    <resource>
+      <reference>
+        <reference value="StructureDefinition/ImageStudyUidExtension" />
+      </reference>
+      <name value="Image Study Uid Extension" />
+      <description value="Image Study Uid Extension" />
+      <exampleBoolean value="false" />
+      <groupingId value="AimResources" />
+    </resource>
+    <resource>
+      <reference>
         <reference value="StructureDefinition/ImagingContextExtension" />
       </reference>
-      <name value="Imaging Context Extension" />
+      <name value="Image Region Extension" />
       <description value="Imaging Context Extension" />
       <exampleBoolean value="false" />
-      <groupingId value="AcrResources" />
+      <groupingId value="AimResources" />
     </resource>
     <resource>
       <reference>

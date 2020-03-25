@@ -20,7 +20,7 @@ namespace BreastRadiology.XUnitTests
                             new Markdown()
                                 .Paragraph("This fragment adds the references for the Tumor Satellite extension.")
                         )
-                        .AddFragRef(Self.HeaderFragment.Value())
+                        .AddFragRef(Self.HeaderFragment)
                     ;
                 s = e.SDef;
 

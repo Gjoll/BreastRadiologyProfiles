@@ -34,7 +34,7 @@ namespace BreastRadiology.XUnitTests
                                 .Paragraph("This resource is a profile of the FHIR DiagnosticReport ",
                                            "base resource.")
                         )
-                        .AddFragRef(Self.HeaderFragment.Value())
+                        .AddFragRef(Self.HeaderFragment)
                         .AddFragRef(Self.CategoryFragment.Value())
                     ;
 

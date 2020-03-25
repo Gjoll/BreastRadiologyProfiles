@@ -103,6 +103,21 @@ namespace BreastRadiology.XUnitTests
             this.groupIds.Add(groupId);
         }
 
+        public static void RemoveFragmentExtensions(String dir)
+        {
+            foreach (String filePath in Directory.GetFiles(dir, "*.json"))
+            {
+                FhirJsonParser parser = new FhirJsonParser();
+                DomainResource dr = parser.Parse<DomainResource>(File.ReadAllText(filePath));
+                RemoveFragmentExtensions(dr);
+                dr.SaveJson(filePath);
+            }
+
+            foreach (String subDir in Directory.GetDirectories(dir))
+                RemoveFragmentExtensions(subDir);
+        }
+
+
         public static void RemoveFragmentExtensions(DomainResource r)
         {
             void Rem(List<Extension> extensions)

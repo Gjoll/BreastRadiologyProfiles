@@ -107,7 +107,7 @@ namespace BreastRadiology.XUnitTests
                                     "If a recommendation is in response to a particular observation or finding, then ",
                                     "the recommendations 'reasonReference' should contain a  reference to the pertinant observation or finding.")
                         )
-                        .AddFragRef(Self.HeaderFragment.Value())
+                        .AddFragRef(Self.HeaderFragment)
                     ;
 
                 s = e.SDef;

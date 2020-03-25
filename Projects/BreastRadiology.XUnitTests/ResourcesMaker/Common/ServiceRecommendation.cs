@@ -35,7 +35,7 @@ namespace BreastRadiology.XUnitTests
                                     "The Breast Radiology Report contains references to zero or more recommendations, which may include ServiceRecommendation instances",
                                     "but is not limited to only ServiceRecommendation instances.")
                         )
-                        .AddFragRef(Self.HeaderFragment.Value())
+                        .AddFragRef(Self.HeaderFragment)
                     ;
 
                 s = e.SDef;

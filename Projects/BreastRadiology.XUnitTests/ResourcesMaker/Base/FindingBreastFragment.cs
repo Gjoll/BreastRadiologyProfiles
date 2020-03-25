@@ -21,7 +21,7 @@ namespace BreastRadiology.XUnitTests
                                 .Paragraph(
                                     "This fragment defines the elements of a finding section of a left or right breast.")
                         )
-                        .AddFragRef(Self.HeaderFragment.Value())
+                        .AddFragRef(Self.HeaderFragment)
                         .AddFragRef(Self.ObservationNoDeviceFragment.Value())
                     ;
                 s = e.SDef;

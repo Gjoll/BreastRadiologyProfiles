@@ -21,7 +21,7 @@ namespace BreastRadiology.XUnitTests
         //                .Paragraph("This fragment adds the references for the breast body location extension.")
         //                .Paragraph("The references are optional, meaning that the breast body location may exist.")
         //             )
-        //            .AddFragRef(Self.HeaderFragment.Value())
+        //            .AddFragRef(Self.HeaderFragment)
         //            ;
         //        s = e.SDef.Url;
 

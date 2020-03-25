@@ -10,8 +10,8 @@
     This graph provides an overview of how and where this resource is
     referenced.
   </p>
-  <object data="Focus-ImagingContextExtension.svg" type="image/svg+xml">
-    <img src="Focus-ImagingContextExtension.svg" alt="image/svg+xml" />
+  <object data="Focus-ImageRegionExtension.svg" type="image/svg+xml">
+    <img src="Focus-ImageRegionExtension.svg" alt="image/svg+xml" />
   </object>
   <!-- +reviewStatus-->
   <!-- -reviewStatus-->
