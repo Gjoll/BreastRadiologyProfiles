@@ -36,6 +36,9 @@
 		<li>
 		<a href="overview.html">Overview</a> - Overview of the top level Breast Radiology FHIR Document.
 		</li>
+    <li>
+      <a href="acrImagingStudy.html">Image Context Extensions</a> - Image Context Extensions.
+    </li>
 		<li>
 		<a href="mgfinding.html">Mammography Finding</a> - Mammography Finding Resources.
 		</li>

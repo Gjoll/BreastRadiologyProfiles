@@ -9,8 +9,8 @@
 	ability to add image annotations to a FHIR DocumentReference resource.
 	</p>
 	<p>
-		<object data="MgFindings.svg" type="image/svg+xml">
-			<img src="MgFindings.svg" alt="Mammography Finding Overview" />
+		<object data="Focus-ImagingContextExtension.svg" type="image/svg+xml">
+			<img src="Focus-ImagingContextExtension.svg" alt="Imaging Context Overview" />
 		</object>
 	</p>
 </div>

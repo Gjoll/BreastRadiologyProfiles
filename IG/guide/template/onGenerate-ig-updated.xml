@@ -18,7 +18,7 @@
    <title value="Breast Radiology Reporting - 1st STU ballot"/>
    <status value="draft"/>
    <experimental value="false"/>
-   <date value="2020-03-25T13:46:54-05:00"/>
+   <date value="2020-03-25T14:07:31-05:00"/>
    <publisher value="Hl7 - Clinical Interoperability Council"/>
    <contact>
       <telecom>
@@ -1936,6 +1936,11 @@
          <page>
             <nameUrl value="overview.html"/>
             <title value="Overview"/>
+            <generation value="html"/>
+         </page>
+         <page>
+            <nameUrl value="acrImagingStudy.html"/>
+            <title value="Image Context Extensions"/>
             <generation value="html"/>
          </page>
          <page>

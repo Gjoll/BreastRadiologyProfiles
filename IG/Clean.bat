@@ -4,6 +4,14 @@ rmdir /s /q Fragments
 rmdir /s /q Graphics
 rmdir /s /q Page
 rmdir /s /q Resources
+
+pushd ACR
+rmdir /s /q Fragments
+rmdir /s /q Graphics
+rmdir /s /q Page
+rmdir /s /q Resources
+popd
+
 popd
 
 pushd Guide

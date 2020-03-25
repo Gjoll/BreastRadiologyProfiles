@@ -16,6 +16,7 @@ namespace BreastRadiology.XUnitTests
         String outputDir;
         String resourceDir => Path.Combine(this.outputDir, "resources");
         String pagecontentDir => Path.Combine(this.outputDir, "pagecontent");
+        String includesDir => Path.Combine(this.outputDir, "includes");
 
         String imagesDir => Path.Combine(this.outputDir, "images");
 
@@ -81,6 +82,11 @@ namespace BreastRadiology.XUnitTests
                 File.Copy(inputPath, outputPath, true);
                 this.fc?.Mark(outputPath);
             }
+        }
+
+        public void AddIncludes(String inputDir)
+        {
+            this.CopyFiles(inputDir, "*.xml", this.includesDir);
         }
 
         public void AddPageContent(String inputDir)

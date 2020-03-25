@@ -52,6 +52,7 @@ namespace BreastRadiology.XUnitTests
         String pageDir;
         String pageTemplateDir;
         String mergedDir;
+        String includesDir;
 
         String acrFragmentDir;
         String acrResourcesDir;
@@ -79,6 +80,8 @@ namespace BreastRadiology.XUnitTests
             this.resourcesDir = Path.Combine(this.contentDir, "Resources");
             this.pageDir = Path.Combine(this.contentDir, "Page");
             this.pageTemplateDir = Path.Combine(this.contentDir, "PageTemplate");
+            this.includesDir = Path.Combine(this.contentDir, "Includes");
+
             this.mergedDir = Path.Combine(this.contentDir, "Merged");
 
             this.acrFragmentDir = Path.Combine(this.contentDir, "ACR", "Fragment");
@@ -404,6 +407,7 @@ namespace BreastRadiology.XUnitTests
                 p.AddPageContent(this.pageDir);
                 p.AddPageContent(this.acrPageDir);
                 p.AddPageContent(this.pageTemplateDir);
+                p.AddIncludes(this.includesDir);
                 p.AddImages(this.graphicsDir);
                 p.AddImages(this.acrGraphicsDir);
                 p.SaveAll();
