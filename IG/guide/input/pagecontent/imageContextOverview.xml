@@ -8,9 +8,12 @@
 	Included in this Implementation guide is the ImagingContext FHIR extension which provides the
 	ability to add image annotations to a FHIR DocumentReference resource.
 	</p>
+    <p>
+      Click on any of the elements of the graph to go to a section describing that element.
+    </p>
 	<p>
-		<object data="Focus-ImagingContextExtension.svg" type="image/svg+xml">
-			<img src="Focus-ImagingContextExtension.svg" alt="Imaging Context Overview" />
+		<object data="ImagingContextOverview.svg" type="image/svg+xml">
+			<img src="ImagingContextOverview.svg" alt="Imaging Context Overview" />
 		</object>
 	</p>
 </div>

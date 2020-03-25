@@ -655,9 +655,9 @@ namespace BreastRadiology.XUnitTests
             Trace.WriteLine("Starting C1_BuildAcrFragments");
             try
             {
-                ResourcesMaker pc = new ResourcesMaker(this.fc, 
-                    this.acrFragmentDir, 
-                    this.acrPageDir, 
+                ResourcesMaker pc = new ResourcesMaker(this.fc,
+                    this.acrFragmentDir,
+                    this.acrPageDir,
                     this.cacheDir);
                 pc.StatusErrors += this.StatusErrors;
                 pc.StatusInfo += this.StatusInfo;
@@ -773,16 +773,20 @@ namespace BreastRadiology.XUnitTests
             Trace.WriteLine("Starting C4_BuildGraphics");
             try
             {
+                ResourceMap map = new ResourceMap();
+                map.AddDir(this.acrResourcesDir, "*.json");
                 {
-                    ResourceMap map = new ResourceMap();
-                    map.AddDir(this.acrResourcesDir, "*.json");
-                    {
-                        FocusMapMaker focusMapMaker = new FocusMapMaker(this.fc,
-                            map,
-                            this.acrGraphicsDir,
-                            this.acrPageDir);
-                        focusMapMaker.Create();
-                    }
+                    ResourceMapMaker resourceMapMaker = new ResourceMapMaker(this.fc, map);
+                    resourceMapMaker.AlwaysShowChildren = true;
+                    resourceMapMaker.Create(ResourcesMaker.CreateUrl("ImagingContextExtension"),
+                        Path.Combine(this.acrGraphicsDir, "ImagingContextOverview.svg"));
+                }
+                {
+                    FocusMapMaker focusMapMaker = new FocusMapMaker(this.fc,
+                        map,
+                        this.acrGraphicsDir,
+                        this.acrPageDir);
+                    focusMapMaker.Create();
                 }
             }
             catch (Exception err)
