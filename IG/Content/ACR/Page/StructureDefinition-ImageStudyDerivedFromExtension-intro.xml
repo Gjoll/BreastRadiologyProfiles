@@ -10,6 +10,9 @@
     This graph provides an overview of how and where this resource is
     referenced.
   </p>
+  <p>
+    Click on any of the elements of the graph to go to a section describing that element.
+  </p>
   <object data="Focus-ImageStudyDerivedFromExtension.svg" type="image/svg+xml">
     <img src="Focus-ImageStudyDerivedFromExtension.svg" alt="image/svg+xml" />
   </object>
@@ -27,7 +30,8 @@
     the hierarchy and commonality of each profile.
   </p>
   <ul>
-    %FragmentList:noexpand:prefix=<li>:suffix=</li>:lb%
+    
+<li><a href="./StructureDefinition-AcrHeaderFragment.html">ACR Header Fragment</a></li>
   </ul>
   <!-- -profileFragments-->
 </div>

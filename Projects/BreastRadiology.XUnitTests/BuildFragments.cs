@@ -642,9 +642,10 @@ namespace BreastRadiology.XUnitTests
         [TestMethod]
         public void C1_Build()
         {
-            D1_BuildACRFragments();
-            D2_BuildAcrResources();
-            D4_BuildGraphics();
+            this.D1_BuildACRFragments();
+            this.D2_BuildAcrResources();
+            this.D3_PatchIntroDocs();
+            this.D4_BuildGraphics();
         }
 
         [TestMethod]
@@ -726,6 +727,42 @@ namespace BreastRadiology.XUnitTests
             Trace.WriteLine($"Ending C2_BuildAcrResources [{(Int32)span.TotalSeconds}]");
         }
 
+
+
+        [TestMethod]
+        public void D3_PatchIntroDocs()
+        {
+            DateTime start = DateTime.Now;
+            Trace.WriteLine("Starting D3_PatchIntroDocs");
+            try
+            {
+                ResourceMap map = new ResourceMap();
+                map.AddDir(this.resourcesDir, "*.json");
+
+                IntroDocPatcher docPatcher = new IntroDocPatcher(this.acrPageDir);
+                docPatcher.StatusErrors += this.StatusErrors;
+                docPatcher.StatusInfo += this.StatusInfo;
+                docPatcher.StatusWarnings += this.StatusWarnings;
+                docPatcher.AddResourceDir(this.acrResourcesDir);
+                docPatcher.AddFragDir(this.acrFragmentDir);
+                docPatcher.Patch();
+                if (docPatcher.HasErrors)
+                {
+                    StringBuilder sb = new StringBuilder();
+                    docPatcher.FormatErrorMessages(sb);
+                    Trace.WriteLine(sb.ToString());
+                    Debug.Assert(false);
+                }
+            }
+            catch (Exception err)
+            {
+                Trace.WriteLine(err.Message);
+                Assert.IsTrue(false);
+            }
+
+            TimeSpan span = DateTime.Now - start;
+            Trace.WriteLine($"Ending D3_PatchIntroDocs [{(Int32)span.TotalSeconds}]");
+        }
 
 
 

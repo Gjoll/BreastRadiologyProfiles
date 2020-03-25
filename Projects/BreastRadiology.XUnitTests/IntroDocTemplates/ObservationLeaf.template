@@ -14,6 +14,9 @@
       <li>what resources %Title% references</li>
     </ul>
   </p>
+  <p>
+    Click on any of the elements of the graph to go to a section describing that element.
+  </p>
   <object data="%FocusPath%" type="image/svg+xml">
     <img src="%FocusPath%" alt="image/svg+xml" />
   </object>
