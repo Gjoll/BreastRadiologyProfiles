@@ -71,6 +71,11 @@
         <generation value="html"/>
       </page>
       <page>
+        <nameUrl value="acrImagingStudy.html"/>
+        <title value="Image Context Extensions"/>
+        <generation value="html"/>
+      </page>
+      <page>
         <nameUrl value="mgfinding.html"/>
         <title value="Mammography Finding"/>
         <generation value="html"/>

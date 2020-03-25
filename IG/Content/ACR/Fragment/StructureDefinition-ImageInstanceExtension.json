@@ -19,27 +19,27 @@
     },
     {
       "url": "http://www.fragment.com/maplink",
-      "valueString": "{\r\n  \"LinkType\": \"component\",\r\n  \"ShowChildren\": false,\r\n  \"CardinalityLeft\": \"1..1\",\r\n  \"LinkTarget\": \"SopClass\",\r\n  \"ComponentHRef\": \"StructureDefinition-{SDName}-definitions.html#Extension.extension:sopClass\",\r\n  \"Types\": \"Oid\",\r\n  \"References\": []\r\n}"
+      "valueString": "{\r\n  \"LinkType\": \"component\",\r\n  \"ShowChildren\": false,\r\n  \"CardinalityLeft\": \"0..1\",\r\n  \"LinkTarget\": \"SopClass\",\r\n  \"ComponentHRef\": \"StructureDefinition-{SDName}-definitions.html#Extension.extension:sopClass\",\r\n  \"Types\": \"Oid\",\r\n  \"References\": []\r\n}"
     },
     {
       "url": "http://www.fragment.com/maplink",
-      "valueString": "{\r\n  \"LinkType\": \"component\",\r\n  \"ShowChildren\": false,\r\n  \"CardinalityLeft\": \"1..1\",\r\n  \"LinkTarget\": \"Uid\",\r\n  \"ComponentHRef\": \"StructureDefinition-{SDName}-definitions.html#Extension.extension:uid\",\r\n  \"Types\": \"Oid\",\r\n  \"References\": []\r\n}"
+      "valueString": "{\r\n  \"LinkType\": \"component\",\r\n  \"ShowChildren\": false,\r\n  \"CardinalityLeft\": \"0..1\",\r\n  \"LinkTarget\": \"Uid\",\r\n  \"ComponentHRef\": \"StructureDefinition-{SDName}-definitions.html#Extension.extension:uid\",\r\n  \"Types\": \"Oid\",\r\n  \"References\": []\r\n}"
     },
     {
       "url": "http://www.fragment.com/maplink",
-      "valueString": "{\r\n  \"LinkType\": \"component\",\r\n  \"ShowChildren\": false,\r\n  \"CardinalityLeft\": \"1..1\",\r\n  \"LinkTarget\": \"FrameNumber\",\r\n  \"ComponentHRef\": \"StructureDefinition-{SDName}-definitions.html#Extension.extension:frameNumber\",\r\n  \"Types\": \"Oid\",\r\n  \"References\": []\r\n}"
+      "valueString": "{\r\n  \"LinkType\": \"component\",\r\n  \"ShowChildren\": false,\r\n  \"CardinalityLeft\": \"0..*\",\r\n  \"LinkTarget\": \"FrameNumber\",\r\n  \"ComponentHRef\": \"StructureDefinition-{SDName}-definitions.html#Extension.extension:frameNumber\",\r\n  \"Types\": \"Oid\",\r\n  \"References\": []\r\n}"
     },
     {
       "url": "http://www.fragment.com/maplink",
-      "valueString": "{\r\n  \"LinkType\": \"component\",\r\n  \"ShowChildren\": false,\r\n  \"CardinalityLeft\": \"1..1\",\r\n  \"LinkTarget\": \"ObservationUid\",\r\n  \"ComponentHRef\": \"StructureDefinition-{SDName}-definitions.html#Extension.extension:observationUid\",\r\n  \"Types\": \"Oid\",\r\n  \"References\": []\r\n}"
+      "valueString": "{\r\n  \"LinkType\": \"component\",\r\n  \"ShowChildren\": false,\r\n  \"CardinalityLeft\": \"0..1\",\r\n  \"LinkTarget\": \"ObservationUid\",\r\n  \"ComponentHRef\": \"StructureDefinition-{SDName}-definitions.html#Extension.extension:observationUid\",\r\n  \"Types\": \"Oid\",\r\n  \"References\": []\r\n}"
     },
     {
       "url": "http://www.fragment.com/maplink",
-      "valueString": "{\r\n  \"LinkType\": \"component\",\r\n  \"ShowChildren\": false,\r\n  \"CardinalityLeft\": \"1..1\",\r\n  \"LinkTarget\": \"TrackingUid\",\r\n  \"ComponentHRef\": \"StructureDefinition-{SDName}-definitions.html#Extension.extension:trackingUid\",\r\n  \"Types\": \"Oid\",\r\n  \"References\": []\r\n}"
+      "valueString": "{\r\n  \"LinkType\": \"component\",\r\n  \"ShowChildren\": false,\r\n  \"CardinalityLeft\": \"0..1\",\r\n  \"LinkTarget\": \"TrackingUid\",\r\n  \"ComponentHRef\": \"StructureDefinition-{SDName}-definitions.html#Extension.extension:trackingUid\",\r\n  \"Types\": \"Oid\",\r\n  \"References\": []\r\n}"
     },
     {
       "url": "http://www.fragment.com/maplink",
-      "valueString": "{\r\n  \"LinkType\": \"extension\",\r\n  \"ShowChildren\": false,\r\n  \"CardinalityLeft\": \"0..1\",\r\n  \"ComponentHRef\": \"StructureDefinition-{SDName}-definitions.html#Extension.extension:imageRegion\",\r\n  \"LocalName\": \"Image Region\",\r\n  \"LinkTarget\": \"http://hl7.org/fhir/us/breast-radiology/StructureDefinition/ImageInstanceExtension\"\r\n}"
+      "valueString": "{\r\n  \"LinkType\": \"extension\",\r\n  \"ShowChildren\": false,\r\n  \"CardinalityLeft\": \"0..1\",\r\n  \"ComponentHRef\": \"StructureDefinition-{SDName}-definitions.html#Extension.extension:imageRegion\",\r\n  \"LocalName\": \"Image Region\",\r\n  \"LinkTarget\": \"http://hl7.org/fhir/us/breast-radiology/StructureDefinition/ImageRegionExtension\"\r\n}"
     }
   ],
   "url": "http://hl7.org/fhir/us/breast-radiology/StructureDefinition/ImageInstanceExtension",
@@ -197,7 +197,7 @@
           "extensions",
           "user content"
         ],
-        "min": 1,
+        "min": 0,
         "max": "1",
         "base": {
           "path": "Element.extension",
@@ -674,8 +674,8 @@
           "extensions",
           "user content"
         ],
-        "min": 1,
-        "max": "1",
+        "min": 0,
+        "max": "*",
         "base": {
           "path": "Element.extension",
           "min": 0,
@@ -833,8 +833,8 @@
           "extensions",
           "user content"
         ],
-        "min": 1,
-        "max": "1",
+        "min": 0,
+        "max": "*",
         "base": {
           "path": "Element.extension",
           "min": 0,
@@ -1003,7 +1003,7 @@
           {
             "code": "Extension",
             "profile": [
-              "http://hl7.org/fhir/us/breast-radiology/StructureDefinition/ImageInstanceExtension"
+              "http://hl7.org/fhir/us/breast-radiology/StructureDefinition/ImageRegionExtension"
             ]
           }
         ],
@@ -1267,7 +1267,7 @@
         "sliceName": "sopClass",
         "short": "Image Instance SopClass",
         "definition": "Image Instance SopClass",
-        "min": 1,
+        "min": 0,
         "max": "1",
         "base": {
           "path": "Extension.extension",
@@ -1393,8 +1393,8 @@
         "sliceName": "observationUid",
         "short": "Image Instance Observation UID",
         "definition": "Image Instance Observation UID",
-        "min": 1,
-        "max": "1",
+        "min": 0,
+        "max": "*",
         "base": {
           "path": "Extension.extension",
           "min": 0,
@@ -1435,8 +1435,8 @@
         "sliceName": "trackingUid",
         "short": "Image Instance Tracking UID",
         "definition": "Image Instance Tracking UID",
-        "min": 1,
-        "max": "1",
+        "min": 0,
+        "max": "*",
         "base": {
           "path": "Extension.extension",
           "min": 0,
@@ -1489,7 +1489,7 @@
           {
             "code": "Extension",
             "profile": [
-              "http://hl7.org/fhir/us/breast-radiology/StructureDefinition/ImageInstanceExtension"
+              "http://hl7.org/fhir/us/breast-radiology/StructureDefinition/ImageRegionExtension"
             ]
           }
         ],

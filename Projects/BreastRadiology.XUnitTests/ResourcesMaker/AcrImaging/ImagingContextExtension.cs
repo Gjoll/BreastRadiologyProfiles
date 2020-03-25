@@ -54,7 +54,7 @@ namespace BreastRadiology.XUnitTests
                         "studyUid",
                         extensionStructDef.Url)
                         .ElementDefinition
-                        .ZeroToOne();
+                        .Single();
 
                     e.AddExtensionLink(extensionStructDef.Url,
                         new SDefEditor.Cardinality(extensionDef),
@@ -86,7 +86,7 @@ namespace BreastRadiology.XUnitTests
                             "seriesUid",
                             extensionStructDef.Url)
                         .ElementDefinition
-                        .ZeroToOne();
+                        .Single();
 
                     e.AddExtensionLink(extensionStructDef.Url,
                         new SDefEditor.Cardinality(extensionDef),
@@ -102,7 +102,7 @@ namespace BreastRadiology.XUnitTests
                             "instance",
                             extensionStructDef.Url)
                         .ElementDefinition
-                        .ZeroToOne();
+                        .ZeroToMany();
 
                     e.AddExtensionLink(extensionStructDef.Url,
                         new SDefEditor.Cardinality(extensionDef),

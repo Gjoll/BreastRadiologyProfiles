@@ -405,6 +405,7 @@ namespace BreastRadiology.XUnitTests
                 p.AddPageContent(this.acrPageDir);
                 p.AddPageContent(this.pageTemplateDir);
                 p.AddImages(this.graphicsDir);
+                p.AddImages(this.acrGraphicsDir);
                 p.SaveAll();
 
                 //if (p.HasErrors)

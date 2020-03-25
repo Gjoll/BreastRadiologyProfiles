@@ -1,6 +1,24 @@
 {
   "resourceType": "CodeSystem",
   "id": "GraphicTypeCS",
+  "extension": [
+    {
+      "url": "http://www.fragment.com/fragment",
+      "valueUrl": "http://hl7.org/fhir/us/breast-radiology/StructureDefinition/AcrHeaderFragment"
+    },
+    {
+      "url": "http://www.fragment.com/Group",
+      "valueString": "AimCodesCS"
+    },
+    {
+      "url": "http://www.fragment.com/mapname",
+      "valueString": "Common"
+    },
+    {
+      "url": "http://www.fragment.com/Group",
+      "valueString": "Fragment/AcrHeaderFragment"
+    }
+  ],
   "url": "http://hl7.org/fhir/us/breast-radiology/CodeSystem/GraphicTypeCS",
   "version": "0.0.2",
   "name": "GraphicTypeCS",

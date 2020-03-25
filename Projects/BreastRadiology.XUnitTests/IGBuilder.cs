@@ -126,7 +126,11 @@ namespace BreastRadiology.XUnitTests
                 while (i < extensions.Count)
                 {
                     Extension e = extensions[i];
-                    if (e.Url.StartsWith(Global.BaseFragmentUrl, new StringComparison()))
+                    if (
+                        (e.Url.StartsWith(Global.BaseFragmentUrl, new StringComparison())) ||
+                        (e.Url.CompareTo("http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status") == 0) ||
+                        (e.Url.CompareTo("http://hl7.org/fhir/StructureDefinition/structuredefinition-normative-version") == 0)
+                        )
                         extensions.RemoveAt(i);
                     else
                         i += 1;

@@ -1,6 +1,28 @@
 {
   "resourceType": "ValueSet",
   "id": "GraphicTypeVS",
+  "extension": [
+    {
+      "url": "http://www.fragment.com/fragment",
+      "valueUrl": "http://hl7.org/fhir/us/breast-radiology/StructureDefinition/AcrHeaderFragment"
+    },
+    {
+      "url": "http://www.fragment.com/Group",
+      "valueString": "AimCodesVS"
+    },
+    {
+      "url": "http://www.fragment.com/mapname",
+      "valueString": "GraphicType/ValueSet"
+    },
+    {
+      "url": "http://www.fragment.com/mapname",
+      "valueString": "Common"
+    },
+    {
+      "url": "http://www.fragment.com/Group",
+      "valueString": "Fragment/AcrHeaderFragment"
+    }
+  ],
   "url": "http://hl7.org/fhir/us/breast-radiology/ValueSet/GraphicTypeVS",
   "version": "0.0.2",
   "name": "GraphicTypeVS",

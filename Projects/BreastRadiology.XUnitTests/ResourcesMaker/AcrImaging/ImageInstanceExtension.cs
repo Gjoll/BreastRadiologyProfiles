@@ -14,7 +14,7 @@ namespace BreastRadiology.XUnitTests
 {
     partial class ResourcesMaker : ConverterBase
     {
-      
+
         public SDTaskVar ImageInstanceExtension = new SDTaskVar(
             (out StructureDefinition s) =>
             {
@@ -28,29 +28,24 @@ namespace BreastRadiology.XUnitTests
                     out ElementTreeNode valueXNode
                 )
                 {
-                    {
-                        Self.Slice(e,
-                            extensionNode,
-                            sliceName,
-                            shortText,
-                            definition,
-                            out extensionSlice,
-                            out valueXNode
-                        );
-                        extensionSlice.ElementDefinition
-                            .Single()
-                            ;
-                        valueXNode.ElementDefinition
-                            .Type("oid")
-                            .Single()
-                            ;
+                    Self.Slice(e,
+                        extensionNode,
+                        sliceName,
+                        shortText,
+                        definition,
+                        out extensionSlice,
+                        out valueXNode
+                    );
+                    valueXNode.ElementDefinition
+                        .Type("oid")
+                        .Single()
+                        ;
 
-                        e.AddComponentLink(sliceName.ToMachineName(),
-                            new SDefEditor.Cardinality(extensionSlice.ElementDefinition),
-                            null,
-                            Global.ElementAnchor(extensionSlice.ElementDefinition),
-                            "Oid");
-                    }
+                    e.AddComponentLink(sliceName.ToMachineName(),
+                        new SDefEditor.Cardinality(extensionSlice.ElementDefinition),
+                        null,
+                        Global.ElementAnchor(extensionSlice.ElementDefinition),
+                        "Oid");
                 }
 
                 e = Self.CreateEditor("ImageInstanceExtension",
@@ -88,6 +83,9 @@ namespace BreastRadiology.XUnitTests
                         out ElementTreeSlice extensionSlice,
                         out ElementTreeNode valueXNode
                     );
+                    extensionSlice.ElementDefinition
+                        .ZeroToOne()
+                        ;
                 }
 
                 // Slice UID .
@@ -99,6 +97,9 @@ namespace BreastRadiology.XUnitTests
                         out ElementTreeSlice extensionSlice,
                         out ElementTreeNode valueXNode
                     );
+                    extensionSlice.ElementDefinition
+                        .Single()
+                        ;
                 }
 
                 // frameNumber
@@ -114,7 +115,7 @@ namespace BreastRadiology.XUnitTests
                         out ElementTreeNode valueXNode
                     );
                     extensionSlice.ElementDefinition
-                        .Single()
+                        .ZeroToMany()
                         ;
                     valueXNode.ElementDefinition
                         .Type("integer")
@@ -126,6 +127,9 @@ namespace BreastRadiology.XUnitTests
                         null,
                         Global.ElementAnchor(extensionSlice.ElementDefinition),
                         "Oid");
+                    extensionSlice.ElementDefinition
+                        .Single()
+                        ;
                 }
 
                 // Slice Observation UID .
@@ -137,6 +141,9 @@ namespace BreastRadiology.XUnitTests
                         out ElementTreeSlice extensionSlice,
                         out ElementTreeNode valueXNode
                     );
+                    extensionSlice.ElementDefinition
+                        .ZeroToMany()
+                        ;
                 }
 
                 // Slice Tracking UID .
@@ -148,11 +155,14 @@ namespace BreastRadiology.XUnitTests
                         out ElementTreeSlice extensionSlice,
                         out ElementTreeNode valueXNode
                     );
+                    extensionSlice.ElementDefinition
+                        .ZeroToMany()
+                        ;
                 }
 
                 // imageRegion
                 {
-                    StructureDefinition extensionStructDef = Self.ImageInstanceExtension.Value();
+                    StructureDefinition extensionStructDef = Self.ImageRegionExtension.Value();
                     ElementDefinition extensionDef = e.ApplyExtension(extensionNode,
                             "imageRegion",
                             extensionStructDef.Url)

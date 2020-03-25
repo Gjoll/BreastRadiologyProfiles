@@ -1,5 +1,39 @@
 {
   "resourceType": "StructureDefinition",
+  "extension": [
+    {
+      "url": "http://www.fragment.com/mapname",
+      "valueString": "Image Region Extension"
+    },
+    {
+      "url": "http://www.fragment.com/Group",
+      "valueString": "AimResources"
+    },
+    {
+      "url": "http://www.fragment.com/fragment",
+      "valueUrl": "http://hl7.org/fhir/us/breast-radiology/StructureDefinition/AcrHeaderFragment"
+    },
+    {
+      "url": "http://www.fragment.com/maplink",
+      "valueString": "{\r\n  \"LinkType\": \"fragment\",\r\n  \"ShowChildren\": false,\r\n  \"LinkTarget\": \"http://hl7.org/fhir/us/breast-radiology/StructureDefinition/AcrHeaderFragment\"\r\n}"
+    },
+    {
+      "url": "http://www.fragment.com/maplink",
+      "valueString": "{\r\n  \"LinkType\": \"component\",\r\n  \"ShowChildren\": false,\r\n  \"CardinalityLeft\": \"1..1\",\r\n  \"LinkTarget\": \"RegionType\",\r\n  \"ComponentHRef\": \"StructureDefinition-{SDName}-definitions.html#Extension.extension:regionType\",\r\n  \"Types\": \"CodeableConcept\",\r\n  \"References\": [\r\n    \"http://hl7.org/fhir/us/breast-radiology/ValueSet/GraphicTypeVS\"\r\n  ]\r\n}"
+    },
+    {
+      "url": "http://www.fragment.com/maplink",
+      "valueString": "{\r\n  \"LinkType\": \"component\",\r\n  \"ShowChildren\": false,\r\n  \"CardinalityLeft\": \"1..1\",\r\n  \"LinkTarget\": \"Coordinates\",\r\n  \"ComponentHRef\": \"StructureDefinition-{SDName}-definitions.html#Extension.extension:coordinates\",\r\n  \"Types\": \"string\",\r\n  \"References\": []\r\n}"
+    },
+    {
+      "url": "http://www.fragment.com/mapname",
+      "valueString": "Common"
+    },
+    {
+      "url": "http://www.fragment.com/Group",
+      "valueString": "Fragment/AcrHeaderFragment"
+    }
+  ],
   "url": "http://hl7.org/fhir/us/breast-radiology/StructureDefinition/ImageRegionExtension",
   "version": "0.0.2",
   "name": "ImageRegionExtension",

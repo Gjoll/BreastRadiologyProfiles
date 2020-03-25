@@ -1,5 +1,31 @@
 {
   "resourceType": "StructureDefinition",
+  "extension": [
+    {
+      "url": "http://www.fragment.com/mapname",
+      "valueString": "Image Series Extension"
+    },
+    {
+      "url": "http://www.fragment.com/Group",
+      "valueString": "AimResources"
+    },
+    {
+      "url": "http://www.fragment.com/fragment",
+      "valueUrl": "http://hl7.org/fhir/us/breast-radiology/StructureDefinition/AcrHeaderFragment"
+    },
+    {
+      "url": "http://www.fragment.com/maplink",
+      "valueString": "{\r\n  \"LinkType\": \"fragment\",\r\n  \"ShowChildren\": false,\r\n  \"LinkTarget\": \"http://hl7.org/fhir/us/breast-radiology/StructureDefinition/AcrHeaderFragment\"\r\n}"
+    },
+    {
+      "url": "http://www.fragment.com/mapname",
+      "valueString": "Common"
+    },
+    {
+      "url": "http://www.fragment.com/Group",
+      "valueString": "Fragment/AcrHeaderFragment"
+    }
+  ],
   "url": "http://hl7.org/fhir/us/breast-radiology/StructureDefinition/ImageSeriesExtension",
   "version": "0.0.2",
   "name": "ImageSeriesExtension",
