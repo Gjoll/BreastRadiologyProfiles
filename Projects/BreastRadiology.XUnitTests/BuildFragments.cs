@@ -641,13 +641,13 @@ namespace BreastRadiology.XUnitTests
         [TestMethod]
         public void C1_Build()
         {
-            C1_BuildACRFragments();
-            C2_BuildAcrResources();
-            C4_BuildGraphics();
+            D1_BuildACRFragments();
+            D2_BuildAcrResources();
+            D4_BuildGraphics();
         }
 
         [TestMethod]
-        public void C1_BuildACRFragments()
+        public void D1_BuildACRFragments()
         {
             DateTime start = DateTime.Now;
             Trace.WriteLine("Starting C1_BuildAcrFragments");
@@ -681,7 +681,7 @@ namespace BreastRadiology.XUnitTests
 
 
         [TestMethod]
-        public void C2_BuildAcrResources()
+        public void D2_BuildAcrResources()
         {
             DateTime start = DateTime.Now;
             Trace.WriteLine("Starting C2_BuildAcrResources");
@@ -737,7 +737,7 @@ namespace BreastRadiology.XUnitTests
 
 
         [TestMethod]
-        public void C4_BuildGraphics()
+        public void D4_BuildGraphics()
         {
             DateTime start = DateTime.Now;
             Trace.WriteLine("Starting C4_BuildGraphics");
@@ -769,7 +769,7 @@ namespace BreastRadiology.XUnitTests
 
 
         [TestMethod]
-        public void C5_ValidateAcr()
+        public void D5_ValidateAcr()
         {
             // 
             IGBuilder.RemoveFragmentExtensions(this.acrResourcesDir);
@@ -779,6 +779,7 @@ namespace BreastRadiology.XUnitTests
             fv.StatusWarnings += this.StatusWarnings;
             bool success = fv.ValidateDir(this.acrResourcesDir, "*.json", "4.0.0");
             StringBuilder sb = new StringBuilder();
+            fv.FilterMessages("not resolve");
             fv.FormatMessages(sb);
             Trace.WriteLine(sb.ToString());
             Assert.IsTrue(success);

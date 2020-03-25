@@ -47,6 +47,7 @@ namespace BreastRadiology.XUnitTests
 
                 extensionNode = e.ConfigureSliceByUrlDiscriminator("extension", true);
 
+                // Study Oid
                 {
                     StructureDefinition extensionStructDef = Self.ImageStudyExtension.Value();
                     ElementDefinition extensionDef = e.ApplyExtension(extensionNode,
@@ -62,8 +63,23 @@ namespace BreastRadiology.XUnitTests
                         false);
                 }
 
+                // derivedFrom
+                {
+                    StructureDefinition extensionStructDef = Self.ImageStudyDerivedFromExtension.Value();
+                    ElementDefinition extensionDef = e.ApplyExtension(extensionNode,
+                            "derivedFrom",
+                            extensionStructDef.Url)
+                        .ElementDefinition
+                        .ZeroToOne();
 
+                    e.AddExtensionLink(extensionStructDef.Url,
+                        new SDefEditor.Cardinality(extensionDef),
+                        "Derived From",
+                        Global.ElementAnchor(extensionDef),
+                        false);
+                }
 
+                // Series Oid
                 {
                     StructureDefinition extensionStructDef = Self.ImageSeriesExtension.Value();
                     ElementDefinition extensionDef = e.ApplyExtension(extensionNode,
@@ -78,9 +94,23 @@ namespace BreastRadiology.XUnitTests
                         Global.ElementAnchor(extensionDef),
                         false);
                 }
-                
-                
-                
+
+                // instance
+                {
+                    StructureDefinition extensionStructDef = Self.ImageInstanceExtension.Value();
+                    ElementDefinition extensionDef = e.ApplyExtension(extensionNode,
+                            "instance",
+                            extensionStructDef.Url)
+                        .ElementDefinition
+                        .ZeroToOne();
+
+                    e.AddExtensionLink(extensionStructDef.Url,
+                        new SDefEditor.Cardinality(extensionDef),
+                        "Instance",
+                        Global.ElementAnchor(extensionDef),
+                        false);
+                }
+
                 //e.IntroDoc
                 //    ;
             });
