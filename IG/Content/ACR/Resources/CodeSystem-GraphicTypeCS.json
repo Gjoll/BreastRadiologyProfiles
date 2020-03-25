@@ -1,10 +1,28 @@
 {
   "resourceType": "CodeSystem",
-  "id": "AcrGraphicTypeCS",
-  "url": "http://hl7.org/fhir/us/breast-radiology/CodeSystem/AcrGraphicTypeCS",
+  "id": "GraphicTypeCS",
+  "extension": [
+    {
+      "url": "http://www.fragment.com/fragment",
+      "valueUrl": "http://hl7.org/fhir/us/breast-radiology/StructureDefinition/AcrHeaderFragment"
+    },
+    {
+      "url": "http://www.fragment.com/Group",
+      "valueString": "AimCodesCS"
+    },
+    {
+      "url": "http://www.fragment.com/mapname",
+      "valueString": "Common"
+    },
+    {
+      "url": "http://www.fragment.com/Group",
+      "valueString": "Fragment/AcrHeaderFragment"
+    }
+  ],
+  "url": "http://hl7.org/fhir/us/breast-radiology/CodeSystem/GraphicTypeCS",
   "version": "0.0.2",
-  "name": "AcrGraphicTypeCS",
-  "title": "ACR GraphicType CodeSystem",
+  "name": "GraphicTypeCS",
+  "title": "GraphicType CodeSystem",
   "status": "draft",
   "date": "2019-11-01",
   "publisher": "Hl7-Clinical Interoperability Council",
@@ -18,7 +36,7 @@
       ]
     }
   ],
-  "description": "ACR GraphicType code system.",
+  "description": "GraphicType code system.",
   "caseSensitive": true,
   "content": "complete",
   "count": 5,

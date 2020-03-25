@@ -68,26 +68,34 @@ namespace BreastRadiology.XUnitTests
 
         public BuildFragments()
         {
+            String MkDir(params String[] paths)
+            {
+                String retVal = Path.Combine(paths);
+                if (Directory.Exists(retVal) == false)
+                    Directory.CreateDirectory(retVal);
+                return retVal;
+            }
+
             Encoding.RegisterProvider(System.Text.CodePagesEncodingProvider.Instance);
             Encoding enc1252 = CodePagesEncodingProvider.Instance.GetEncoding(1252);
 
-            this.cacheDir = Path.Combine(this.BaseDir, "Cache");
-            this.contentDir = Path.Combine(this.BaseDir, "IG", "Content");
-            this.guideDir = Path.Combine(this.BaseDir, "IG", "Guide");
+            this.cacheDir = MkDir(this.BaseDir, "Cache");
+            this.contentDir = MkDir(this.BaseDir, "IG", "Content");
+            this.guideDir = MkDir(this.BaseDir, "IG", "Guide");
 
-            this.graphicsDir = Path.Combine(this.contentDir, "Graphics");
-            this.fragmentDir = Path.Combine(this.contentDir, "Fragments");
-            this.resourcesDir = Path.Combine(this.contentDir, "Resources");
-            this.pageDir = Path.Combine(this.contentDir, "Page");
-            this.pageTemplateDir = Path.Combine(this.contentDir, "PageTemplate");
-            this.includesDir = Path.Combine(this.contentDir, "Includes");
+            this.graphicsDir = MkDir(this.contentDir, "Graphics");
+            this.fragmentDir = MkDir(this.contentDir, "Fragments");
+            this.resourcesDir = MkDir(this.contentDir, "Resources");
+            this.pageDir = MkDir(this.contentDir, "Page");
+            this.pageTemplateDir = MkDir(this.contentDir, "PageTemplate");
+            this.includesDir = MkDir(this.contentDir, "Includes");
 
-            this.mergedDir = Path.Combine(this.contentDir, "Merged");
+            this.mergedDir = MkDir(this.contentDir, "Merged");
 
-            this.acrFragmentDir = Path.Combine(this.contentDir, "ACR", "Fragment");
-            this.acrResourcesDir = Path.Combine(this.contentDir, "ACR", "Resources");
-            this.acrPageDir = Path.Combine(this.contentDir, "ACR", "Page");
-            this.acrGraphicsDir = Path.Combine(this.contentDir, "ACR", "Graphics");
+            this.acrFragmentDir = MkDir(this.contentDir, "ACR", "Fragment");
+            this.acrResourcesDir = MkDir(this.contentDir, "ACR", "Resources");
+            this.acrPageDir = MkDir(this.contentDir, "ACR", "Page");
+            this.acrGraphicsDir = MkDir(this.contentDir, "ACR", "Graphics");
 
         }
 
@@ -171,15 +179,7 @@ namespace BreastRadiology.XUnitTests
 
             try
             {
-                if (Directory.Exists(this.resourcesDir) == false)
-                    Directory.CreateDirectory(this.resourcesDir);
-
-                if (saveMergedFiles)
-                {
-                    if (Directory.Exists(this.mergedDir) == false)
-                        Directory.CreateDirectory(this.mergedDir);
-                }
-                else
+                if (saveMergedFiles == false)
                 {
                     if (Directory.Exists(this.mergedDir) == true)
                         Directory.Delete(this.mergedDir, true);
@@ -257,8 +257,6 @@ namespace BreastRadiology.XUnitTests
             Trace.WriteLine("Starting B4_BuildGraphics");
             try
             {
-                if (Directory.Exists(this.graphicsDir) == false)
-                    Directory.CreateDirectory(this.graphicsDir);
                 {
                     ResourceMap map = new ResourceMap();
                     map.AddDir(this.resourcesDir, "*.json");
@@ -341,8 +339,6 @@ namespace BreastRadiology.XUnitTests
             try
             {
                 String outputDir = Path.Combine(this.guideDir, "input");
-                if (Directory.Exists(outputDir) == false)
-                    Directory.CreateDirectory(outputDir);
 
                 IGBuilder p = new IGBuilder(this.fc, outputDir);
                 p.StatusErrors += this.StatusErrors;
@@ -694,15 +690,7 @@ namespace BreastRadiology.XUnitTests
 
             try
             {
-                if (Directory.Exists(this.acrResourcesDir) == false)
-                    Directory.CreateDirectory(this.acrResourcesDir);
-
-                if (saveMergedFiles)
-                {
-                    if (Directory.Exists(this.mergedDir) == false)
-                        Directory.CreateDirectory(this.mergedDir);
-                }
-                else
+                if (saveMergedFiles == false)
                 {
                     if (Directory.Exists(this.mergedDir) == true)
                         Directory.Delete(this.mergedDir, true);
@@ -748,8 +736,6 @@ namespace BreastRadiology.XUnitTests
             Trace.WriteLine("Starting C4_BuildGraphics");
             try
             {
-                if (Directory.Exists(this.graphicsDir) == false)
-                    Directory.CreateDirectory(this.graphicsDir);
                 {
                     ResourceMap map = new ResourceMap();
                     map.AddDir(this.acrResourcesDir, "*.json");

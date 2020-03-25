@@ -892,30 +892,12 @@
     </resource>
     <resource>
       <reference>
-        <reference value="CodeSystem/AcrGraphicTypeCS" />
-      </reference>
-      <name value="ACR GraphicType CodeSystem" />
-      <description value="ACR GraphicType code system." />
-      <exampleBoolean value="false" />
-      <groupingId value="AimCodesCS" />
-    </resource>
-    <resource>
-      <reference>
         <reference value="CodeSystem/GraphicTypeCS" />
       </reference>
       <name value="GraphicType CodeSystem" />
       <description value="GraphicType code system." />
       <exampleBoolean value="false" />
       <groupingId value="AimCodesCS" />
-    </resource>
-    <resource>
-      <reference>
-        <reference value="ValueSet/AcrGraphicTypeVS" />
-      </reference>
-      <name value="ACR GraphicType ValueSet" />
-      <description value="ACR GraphicType value set." />
-      <exampleBoolean value="false" />
-      <groupingId value="AimCodesVS" />
     </resource>
     <resource>
       <reference>
@@ -968,15 +950,6 @@
       </reference>
       <name value="Image Study Extension" />
       <description value="Image Study Extension" />
-      <exampleBoolean value="false" />
-      <groupingId value="AimResources" />
-    </resource>
-    <resource>
-      <reference>
-        <reference value="StructureDefinition/ImageStudyUidExtension" />
-      </reference>
-      <name value="Image Study Uid Extension" />
-      <description value="Image Study Uid Extension" />
       <exampleBoolean value="false" />
       <groupingId value="AimResources" />
     </resource>
@@ -1231,7 +1204,7 @@
         <generation value="html"/>
       </page>
       <page>
-        <nameUrl value="acrImagingStudy.html"/>
+        <nameUrl value="imageContextOverview.html"/>
         <title value="Image Context Extensions"/>
         <generation value="html"/>
       </page>

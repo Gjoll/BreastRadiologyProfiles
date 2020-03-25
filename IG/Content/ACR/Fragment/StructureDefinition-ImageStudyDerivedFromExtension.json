@@ -1,23 +1,28 @@
 {
   "resourceType": "StructureDefinition",
-  "url": "http://hl7.org/fhir/us/breast-radiology/StructureDefinition/ImageStudyUidExtension",
-  "version": "0.0.2",
-  "name": "ImageStudyUidExtension",
-  "title": "Image Study Uid Extension",
-  "status": "draft",
-  "date": "2019-11-01",
-  "publisher": "Hl7-Clinical Interoperability Council",
-  "contact": [
+  "extension": [
     {
-      "telecom": [
-        {
-          "system": "url",
-          "value": "http://www.hl7.org/Special/committees/cic"
-        }
-      ]
+      "url": "http://www.fragment.com/mapname",
+      "valueString": "Image Study Derived From Extension"
+    },
+    {
+      "url": "http://www.fragment.com/Group",
+      "valueString": "AimResources"
+    },
+    {
+      "url": "http://www.fragment.com/fragment",
+      "valueUrl": "http://hl7.org/fhir/us/breast-radiology/StructureDefinition/AcrHeaderFragment"
+    },
+    {
+      "url": "http://www.fragment.com/maplink",
+      "valueString": "{\r\n  \"LinkType\": \"fragment\",\r\n  \"ShowChildren\": false,\r\n  \"LinkTarget\": \"http://hl7.org/fhir/us/breast-radiology/StructureDefinition/AcrHeaderFragment\"\r\n}"
     }
   ],
-  "description": "<b>Image Study Uid Extension</b>\n\nSpecifies DICOM Study Uid",
+  "url": "http://hl7.org/fhir/us/breast-radiology/StructureDefinition/ImageStudyDerivedFromExtension",
+  "name": "ImageStudyDerivedFromExtension",
+  "title": "Image Study Derived From Extension",
+  "status": "draft",
+  "description": "<b>Image Study Derived From Extension</b>\n\nSpecifies DICOM Study reference that the current study is derived from",
   "fhirVersion": "4.0.0",
   "kind": "complex-type",
   "abstract": false,
@@ -34,9 +39,19 @@
     "element": [
       {
         "id": "Extension",
+        "extension": [
+          {
+            "url": "http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status",
+            "valueCode": "normative"
+          },
+          {
+            "url": "http://hl7.org/fhir/StructureDefinition/structuredefinition-normative-version",
+            "valueCode": "4.0.0"
+          }
+        ],
         "path": "Extension",
-        "short": "Image Study Uid Extension",
-        "definition": "Specifies DICOM Study Uid",
+        "short": "Image Study Derived From Extension",
+        "definition": "Specifies DICOM Study reference that the current study is derived from",
         "min": 0,
         "max": "*",
         "base": {
@@ -167,7 +182,7 @@
             "code": "uri"
           }
         ],
-        "fixedUri": "http://hl7.org/fhir/us/breast-radiology/StructureDefinition/ImageStudyUidExtension",
+        "fixedUri": "http://hl7.org/fhir/us/breast-radiology/StructureDefinition/ImageStudyDerivedFromExtension",
         "isModifier": false,
         "isSummary": false,
         "mapping": [
@@ -191,7 +206,10 @@
         },
         "type": [
           {
-            "code": "oid"
+            "code": "Reference",
+            "targetProfile": [
+              "http://hl7.org/fhir/us/breast-radiology/StructureDefinition/ImagingContextExtension"
+            ]
           }
         ],
         "isModifier": false,
@@ -209,9 +227,19 @@
     "element": [
       {
         "id": "Extension",
+        "extension": [
+          {
+            "url": "http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status",
+            "valueCode": "normative"
+          },
+          {
+            "url": "http://hl7.org/fhir/StructureDefinition/structuredefinition-normative-version",
+            "valueCode": "4.0.0"
+          }
+        ],
         "path": "Extension",
-        "short": "Image Study Uid Extension",
-        "definition": "Specifies DICOM Study Uid",
+        "short": "Image Study Derived From Extension",
+        "definition": "Specifies DICOM Study reference that the current study is derived from",
         "base": {
           "path": "Extension",
           "min": 0,
@@ -221,8 +249,6 @@
       {
         "id": "Extension.url",
         "path": "Extension.url",
-        "min": 1,
-        "max": "1",
         "base": {
           "path": "Extension.url",
           "min": 1,
@@ -233,7 +259,7 @@
             "code": "uri"
           }
         ],
-        "fixedUri": "http://hl7.org/fhir/us/breast-radiology/StructureDefinition/ImageStudyUidExtension"
+        "fixedUri": "http://hl7.org/fhir/us/breast-radiology/StructureDefinition/ImageStudyDerivedFromExtension"
       },
       {
         "id": "Extension.value[x]",
@@ -247,7 +273,10 @@
         },
         "type": [
           {
-            "code": "oid"
+            "code": "Reference",
+            "targetProfile": [
+              "http://hl7.org/fhir/us/breast-radiology/StructureDefinition/ImagingContextExtension"
+            ]
           }
         ]
       }
