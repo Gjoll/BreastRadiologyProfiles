@@ -20,16 +20,16 @@ namespace BreastRadiology.XUnitTests
                 SDefEditor e;
                 ElementTreeNode extensionNode;
 
-                e = Self.CreateEditor("ImageStudyUidExtension",
-                            "Image Study Uid Extension",
-                            "Image Study Uid Extension",
+                e = Self.CreateEditor("ImageStudyExtension",
+                            "Image Study Extension",
+                            "Image Study Extension",
                             Global.ExtensionUrl,
                             $"{ResourcesMaker.Group_AimResources}",
                             "Extension")
-                        .Description("Image Study Uid Extension",
+                        .Description("Image Study Extension",
                             new Markdown()
                                 .Paragraph(
-                                    "Specifies DICOM Study Uid"
+                                    "Specifies DICOM Study"
                                 )
                         )
                         .Kind(StructureDefinition.StructureDefinitionKind.ComplexType)

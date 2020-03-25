@@ -62,6 +62,25 @@ namespace BreastRadiology.XUnitTests
                         false);
                 }
 
+
+
+                {
+                    StructureDefinition extensionStructDef = Self.ImageSeriesExtension.Value();
+                    ElementDefinition extensionDef = e.ApplyExtension(extensionNode,
+                            "seriesUid",
+                            extensionStructDef.Url)
+                        .ElementDefinition
+                        .ZeroToOne();
+
+                    e.AddExtensionLink(extensionStructDef.Url,
+                        new SDefEditor.Cardinality(extensionDef),
+                        "Series Uid",
+                        Global.ElementAnchor(extensionDef),
+                        false);
+                }
+                
+                
+                
                 //e.IntroDoc
                 //    ;
             });

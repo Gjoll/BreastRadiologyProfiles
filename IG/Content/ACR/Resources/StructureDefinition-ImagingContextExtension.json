@@ -179,7 +179,42 @@
           {
             "code": "Extension",
             "profile": [
-              "http://hl7.org/fhir/us/breast-radiology/StructureDefinition/ImageStudyUidExtension"
+              "http://hl7.org/fhir/us/breast-radiology/StructureDefinition/ImageStudyExtension"
+            ]
+          }
+        ],
+        "isModifier": false,
+        "isSummary": false,
+        "mapping": [
+          {
+            "identity": "rim",
+            "map": "n/a"
+          }
+        ]
+      },
+      {
+        "id": "Extension.extension:seriesUid",
+        "path": "Extension.extension",
+        "sliceName": "seriesUid",
+        "short": "seriesUid extension.",
+        "definition": "This extension slice contains the seriesUid extension.",
+        "comment": "This is one component of a group of components that are part of the observation.",
+        "alias": [
+          "extensions",
+          "user content"
+        ],
+        "min": 0,
+        "max": "1",
+        "base": {
+          "path": "Element.extension",
+          "min": 0,
+          "max": "*"
+        },
+        "type": [
+          {
+            "code": "Extension",
+            "profile": [
+              "http://hl7.org/fhir/us/breast-radiology/StructureDefinition/ImageSeriesExtension"
             ]
           }
         ],
@@ -457,7 +492,31 @@
           {
             "code": "Extension",
             "profile": [
-              "http://hl7.org/fhir/us/breast-radiology/StructureDefinition/ImageStudyUidExtension"
+              "http://hl7.org/fhir/us/breast-radiology/StructureDefinition/ImageStudyExtension"
+            ]
+          }
+        ],
+        "isModifier": false
+      },
+      {
+        "id": "Extension.extension:seriesUid",
+        "path": "Extension.extension",
+        "sliceName": "seriesUid",
+        "short": "seriesUid extension.",
+        "definition": "This extension slice contains the seriesUid extension.",
+        "comment": "This is one component of a group of components that are part of the observation.",
+        "min": 0,
+        "max": "1",
+        "base": {
+          "path": "Extension.extension",
+          "min": 0,
+          "max": "*"
+        },
+        "type": [
+          {
+            "code": "Extension",
+            "profile": [
+              "http://hl7.org/fhir/us/breast-radiology/StructureDefinition/ImageSeriesExtension"
             ]
           }
         ],
