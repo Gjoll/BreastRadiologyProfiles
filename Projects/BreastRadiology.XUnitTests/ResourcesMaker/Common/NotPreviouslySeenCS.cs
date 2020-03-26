@@ -73,8 +73,8 @@ namespace BreastRadiology.XUnitTests
                             .MammoId("281")
                             .ValidModalities(Modalities.MG | Modalities.MRI | Modalities.NM | Modalities.US)
                             .SetUMLS("281",
-                                "An X-Ray picture of the breast. ",
-                                "It's used to look for early signs of breast cancer.")
+                                "A mammogram is an X-Ray picture of the breast. ",
+                                "It is used to look for early signs of breast cancer.")
                         ,
                         new ConceptDef()
                             .SetCode("MRI")
@@ -107,7 +107,7 @@ namespace BreastRadiology.XUnitTests
                             .SetUMLS("285",
                                 "This is a type of breast imaging that is used to ",
                                 "detect cancer cells in the breasts ",
-                                "of some women who have had abnormal mammograms.")
+                                "of some patients who have had abnormal mammograms.")
                         ,
                         new ConceptDef()
                             .SetCode("Ultrasound")

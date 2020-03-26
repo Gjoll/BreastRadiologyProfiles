@@ -739,8 +739,8 @@ namespace BreastRadiology.XUnitTests
                             .SetSnomedDescription("182",
                                 "Procedure | 241055006 | Mammogram - symptomatic (Procedure)")
                             .SetUMLS("182",
-                                "An X-Ray picture of the breast. ",
-                                "It's used to look for early signs of breast cancer.")
+                                "A mammogram is an X-Ray picture of the breast. ",
+                                "It is used to look for early signs of breast cancer.")
                         ,
                         new ConceptDef()
                             .SetCode("Mammogram3MonthFollow-up")
