@@ -241,10 +241,10 @@ namespace SVGLib
 		}
 
 		/// <summary>
-		/// It provides a hint to the SVG user agent about how to optimize its color interpolation and compositing operations.
+		/// It provides a hint to the SVG user agent about how to optimize color interpolation and compositing operations.
 		/// </summary>
 		[Category("Paint")]
-		[Description("It provides a hint to the SVG user agent about how to optimize its color interpolation and compositing operations.")]
+		[Description("It provides a hint to the SVG user agent about how to optimize color interpolation and compositing operations.")]
 		public SvgAttribute._SvgColorRendering ColorRendering
 		{
 			get => (SvgAttribute._SvgColorRendering)GetAttributeIntValue(SvgAttribute._SvgAttribute.attrPaint_ColorRendering);
@@ -295,10 +295,10 @@ namespace SVGLib
 		}
 
 		/// <summary>
-		/// It provides a hint to the SVG user agent about how to optimize its color interpolation and compositing operations.
+		/// It provides a hint to the SVG user agent about how to optimize color interpolation and compositing operations.
 		/// </summary>
 		[Category("Graphics")]
-		[Description("It provides a hint to the SVG user agent about how to optimize its color interpolation and compositing operations.")]
+		[Description("It provides a hint to the SVG user agent about how to optimize color interpolation and compositing operations.")]
 		public SvgAttribute._SvgTextRendering TextRendering
 		{
 			get => (SvgAttribute._SvgTextRendering)GetAttributeIntValue(SvgAttribute._SvgAttribute.attrGraphics_TextRendering);
