@@ -47,14 +47,14 @@ namespace BreastRadiology.XUnitTests
         String guideDir;
 
         String graphicsDir;
-        String fragmentDir;
+        String fragmentsDir;
         String resourcesDir;
         String pageDir;
         String pageTemplateDir;
         String mergedDir;
         String includesDir;
 
-        String acrFragmentDir;
+        String acrFragmentsDir;
         String acrResourcesDir;
         String acrGraphicsDir;
         String acrPageDir;
@@ -84,7 +84,7 @@ namespace BreastRadiology.XUnitTests
             this.guideDir = MkDir(this.BaseDir, "IG", "Guide");
 
             this.graphicsDir = MkDir(this.contentDir, "Graphics");
-            this.fragmentDir = MkDir(this.contentDir, "Fragments");
+            this.fragmentsDir = MkDir(this.contentDir, "Fragments");
             this.resourcesDir = MkDir(this.contentDir, "Resources");
             this.pageDir = MkDir(this.contentDir, "Page");
             this.pageTemplateDir = MkDir(this.contentDir, "PageTemplate");
@@ -92,7 +92,7 @@ namespace BreastRadiology.XUnitTests
 
             this.mergedDir = MkDir(this.contentDir, "Merged");
 
-            this.acrFragmentDir = MkDir(this.contentDir, "ACR", "Fragment");
+            this.acrFragmentsDir = MkDir(this.contentDir, "ACR", "Fragments");
             this.acrResourcesDir = MkDir(this.contentDir, "ACR", "Resources");
             this.acrPageDir = MkDir(this.contentDir, "ACR", "Page");
             this.acrGraphicsDir = MkDir(this.contentDir, "ACR", "Graphics");
@@ -146,7 +146,7 @@ namespace BreastRadiology.XUnitTests
             Trace.WriteLine("Starting B1_BuildFragments");
             try
             {
-                ResourcesMaker pc = new ResourcesMaker(this.fc, this.fragmentDir, this.pageDir, this.cacheDir);
+                ResourcesMaker pc = new ResourcesMaker(this.fc, this.fragmentsDir, this.pageDir, this.cacheDir);
                 pc.StatusErrors += this.StatusErrors;
                 pc.StatusInfo += this.StatusInfo;
                 pc.StatusWarnings += this.StatusWarnings;
@@ -189,7 +189,7 @@ namespace BreastRadiology.XUnitTests
                 preFhir.StatusErrors += this.StatusErrors;
                 preFhir.StatusInfo += this.StatusInfo;
                 preFhir.StatusWarnings += this.StatusWarnings;
-                preFhir.AddDir(this.fragmentDir, "*.json");
+                preFhir.AddDir(this.fragmentsDir, "*.json");
                 if (saveMergedFiles)
                     preFhir.MergedDir = this.mergedDir;
                 preFhir.BreakOnElementId = "";
@@ -230,7 +230,7 @@ namespace BreastRadiology.XUnitTests
                 docPatcher.StatusInfo += this.StatusInfo;
                 docPatcher.StatusWarnings += this.StatusWarnings;
                 docPatcher.AddResourceDir(this.resourcesDir);
-                docPatcher.AddFragDir(this.fragmentDir);
+                docPatcher.AddFragDir(this.fragmentsDir);
                 docPatcher.Patch();
                 if (docPatcher.HasErrors)
                 {
@@ -314,7 +314,7 @@ namespace BreastRadiology.XUnitTests
 
                 {
                     ResourceMap map = new ResourceMap();
-                    map.AddDir(this.fragmentDir, "*.json");
+                    map.AddDir(this.fragmentsDir, "*.json");
 
                     FragmentMapMaker fragmentMapMaker = new FragmentMapMaker(this.fc, map, this.graphicsDir,
                         this.pageDir, this.pageTemplateDir);
@@ -399,7 +399,10 @@ namespace BreastRadiology.XUnitTests
 
                 p.AddResources(this.resourcesDir);
                 p.AddResources(this.acrResourcesDir);
-                p.AddFragments(this.fragmentDir);
+                
+                p.AddFragments(this.fragmentsDir);
+                p.AddFragments(this.acrFragmentsDir);
+
                 p.AddPageContent(this.pageDir);
                 p.AddPageContent(this.acrPageDir);
                 p.AddPageContent(this.pageTemplateDir);
@@ -473,7 +476,7 @@ namespace BreastRadiology.XUnitTests
             {
                 this.fc?.Add(this.graphicsDir, "*.svg");
                 this.fc?.Add(this.pageDir, "*.xml");
-                this.fc?.Add(this.fragmentDir, "*.json");
+                this.fc?.Add(this.fragmentsDir, "*.json");
                 this.fc?.Add(this.resourcesDir, "*.json");
 
                 this.C1_Build();
@@ -656,7 +659,7 @@ namespace BreastRadiology.XUnitTests
             try
             {
                 ResourcesMaker pc = new ResourcesMaker(this.fc,
-                    this.acrFragmentDir,
+                    this.acrFragmentsDir,
                     this.acrPageDir,
                     this.cacheDir);
                 pc.StatusErrors += this.StatusErrors;
@@ -701,7 +704,7 @@ namespace BreastRadiology.XUnitTests
                 preFhir.StatusErrors += this.StatusErrors;
                 preFhir.StatusInfo += this.StatusInfo;
                 preFhir.StatusWarnings += this.StatusWarnings;
-                preFhir.AddDir(this.acrFragmentDir, "*.json");
+                preFhir.AddDir(this.acrFragmentsDir, "*.json");
                 if (saveMergedFiles)
                     preFhir.MergedDir = this.mergedDir;
                 preFhir.BreakOnElementId = "";
@@ -744,7 +747,7 @@ namespace BreastRadiology.XUnitTests
                 docPatcher.StatusInfo += this.StatusInfo;
                 docPatcher.StatusWarnings += this.StatusWarnings;
                 docPatcher.AddResourceDir(this.acrResourcesDir);
-                docPatcher.AddFragDir(this.acrFragmentDir);
+                docPatcher.AddFragDir(this.acrFragmentsDir);
                 docPatcher.Patch();
                 if (docPatcher.HasErrors)
                 {
