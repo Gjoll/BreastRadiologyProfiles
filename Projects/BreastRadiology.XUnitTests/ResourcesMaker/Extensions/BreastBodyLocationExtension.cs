@@ -537,21 +537,38 @@ namespace BreastRadiology.XUnitTests
                 extensionNode = e.ConfigureSliceByUrlDiscriminator("extension", true);
 
                 {
-                    ElementDefinition extensionDef = e.ApplyExtension(extensionNode,
+                    ValueSet binding = Self.LateralityVS.Value();
+
+                    {
+                        IntroDoc valueSetIntroDoc = Self.CreateIntroDocVS(binding);
+                        valueSetIntroDoc
+                            .ReviewedStatus("Needs review by KWA")
+                            .ReviewedStatus("Needs review by Penrad")
+                            .ReviewedStatus("Needs review by MRS")
+                            .ReviewedStatus("Needs review by MagView")
+                            .ReviewedStatus("Needs review by CIMI")
+                            ;
+                        String outputPath = valueSetIntroDoc.Save();
+                        Self.fc?.Mark(outputPath);
+                    }
+
+                    ElementDefinition sliceDef = Self.SliceAndBindVS(e,
+                                extensionNode,
                                 "laterality",
-                                "http://hl7.org/fhir/us/skinwoundassessment/StructureDefinition/BodySideExt")
-                            .ElementDefinition
-                            .Single()
-                            .SetDefinition(new Markdown().Paragraph("The laterality of the body location."))
+                                binding,
+                                "Body side",
+                                new Markdown().Paragraph("The side of the body being examined."))
+                            .ZeroToOne()
                         ;
 
-                    //$ This is the build site url. Fix this when bodysite gets published.
-                    e.AddExtensionLink(
-                        "https://build.fhir.org/ig/HL7/fhir-skin-wound-ig/branches/master/StructureDefinition-BodySideExt.html",
-                        new SDefEditor.Cardinality(extensionDef),
-                        "Laterality",
-                        Global.ElementAnchor(extensionDef), false);
+                    e.AddComponentLink("Laterality",
+                        new SDefEditor.Cardinality(sliceDef),
+                        null,
+                        Global.ElementAnchor(sliceDef),
+                        "CodeableConcept",
+                        binding.Url);
                 }
+
                 {
                     ValueSet binding = Self.BreastLocationQuadrantVS.Value();
 

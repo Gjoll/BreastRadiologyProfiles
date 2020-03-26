@@ -18,7 +18,6 @@ namespace BreastRadiology.XUnitTests
             (out StructureDefinition s) =>
             {
                 SDefEditor e;
-                ElementTreeNode extensionNode;
 
                 e = Self.CreateEditor("ImageStudyDerivedFromExtension",
                             "Image Study Derived From Extension",

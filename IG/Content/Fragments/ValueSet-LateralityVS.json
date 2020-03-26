@@ -1,0 +1,47 @@
+{
+  "resourceType": "ValueSet",
+  "id": "LateralityVS",
+  "extension": [
+    {
+      "url": "http://www.fragment.com/fragment",
+      "valueUrl": "http://hl7.org/fhir/us/breast-radiology/StructureDefinition/HeaderFragment"
+    },
+    {
+      "url": "http://www.fragment.com/Group",
+      "valueString": "CommonCodesVS"
+    },
+    {
+      "url": "http://www.fragment.com/mapname",
+      "valueString": "Laterality/ValueSet"
+    }
+  ],
+  "url": "http://hl7.org/fhir/us/breast-radiology/ValueSet/LateralityVS",
+  "name": "LateralityVS",
+  "title": "Laterality ValueSet",
+  "description": "Laterality value set.",
+  "compose": {
+    "include": [
+      {
+        "system": "http://snomed.info/sct",
+        "concept": [
+          {
+            "code": "51440002",
+            "display": "Right and left"
+          },
+          {
+            "code": "399488007",
+            "display": "Midline"
+          },
+          {
+            "code": "85421007",
+            "display": "Structure of right half of body"
+          },
+          {
+            "code": "31156008",
+            "display": "Structure of left half of body"
+          }
+        ]
+      }
+    ]
+  }
+}

@@ -24,7 +24,7 @@ namespace BreastRadiology.XUnitTests
         SvgDoc doc;
         SvgRoot root;
 
-        public String RenderTestPoint;
+        //public String RenderTestPoint;
         public float BorderWidth { get; set; } = 0.125f;
         public float LineHeight { get; set; } = 1.25f;
         public float BorderMargin { get; set; } = 0.5f;
@@ -329,7 +329,7 @@ namespace BreastRadiology.XUnitTests
         {
             const float CharMod = 0.7f;
 
-            Debug.Assert((this.RenderTestPoint == null) || node.AllText().Contains(RenderTestPoint) == false);
+            //Debug.Assert((this.RenderTestPoint == null) || node.AllText().Contains(RenderTestPoint) == false);
             height = node.TextLines.Count * this.LineHeight + 2 * this.BorderMargin;
             width = node.Width * CharMod + 2 * this.BorderMargin;
 

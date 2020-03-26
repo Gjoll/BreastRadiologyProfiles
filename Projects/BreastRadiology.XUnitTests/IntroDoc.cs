@@ -38,30 +38,30 @@ namespace BreastRadiology.XUnitTests
             this.codeEditor.Load(fullPath);
         }
 
-        CodeBlockNested reviewStatusBlock = null;
+        //CodeBlockNested reviewStatusBlock = null;
         CodeBlockNested descriptionBlock = null;
 
         public IntroDoc ReviewedStatus(String reviewer)
         {
-            if (this.reviewStatusBlock == null)
-            {
-                this.reviewStatusBlock = this.codeEditor.Blocks.Find("reviewStatus");
-                if (this.reviewStatusBlock == null)
-                    throw new Exception($"reviewStatus block missing");
-                this.reviewStatusBlock
-                    .AppendRaw($"<p>")
-                    .AppendRaw($"  <u style=\"font-size:large;\">Review Status</u>")
-                    .AppendRaw($"</p>")
-                    .AppendRaw($"<p>")
-                    .AppendRaw($"Comments and Suggested changes to this implementation guide can be made ")
-                    .AppendRaw($"<a href=\"https://github.com/HL7/fhir-breast-radiology-ig/projects/1\">here</a>")
-                    .AppendRaw($"</p>")
-                    ;
-            }
+            //if (this.reviewStatusBlock == null)
+            //{
+            //    this.reviewStatusBlock = this.codeEditor.Blocks.Find("reviewStatus");
+            //    if (this.reviewStatusBlock == null)
+            //        throw new Exception($"reviewStatus block missing");
+            //    this.reviewStatusBlock
+            //        .AppendRaw($"<p>")
+            //        .AppendRaw($"  <u style=\"font-size:large;\">Review Status</u>")
+            //        .AppendRaw($"</p>")
+            //        .AppendRaw($"<p>")
+            //        .AppendRaw($"Comments and Suggested changes to this implementation guide can be made ")
+            //        .AppendRaw($"<a href=\"https://github.com/HL7/fhir-breast-radiology-ig/projects/1\">here</a>")
+            //        .AppendRaw($"</p>")
+            //        ;
+            //}
 
-            this.reviewStatusBlock
-                .AppendRaw($"<p>{reviewer}</p>")
-                ;
+            //this.reviewStatusBlock
+            //    .AppendRaw($"<p>{reviewer}</p>")
+            //    ;
 
             return this;
         }
