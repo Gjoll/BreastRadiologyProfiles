@@ -15,6 +15,7 @@ namespace BreastRadiology.XUnitTests
 
         String outputDir;
         String resourceDir => Path.Combine(this.outputDir, "resources");
+        String exampleDir => Path.Combine(this.outputDir, "examples");
         String pagecontentDir => Path.Combine(this.outputDir, "pagecontent");
         String includesDir => Path.Combine(this.outputDir, "includes");
 
@@ -327,6 +328,34 @@ namespace BreastRadiology.XUnitTests
                         groupId,
                         false);
                 }
+            }
+        }
+
+        public void AddExamples(String inputDir)
+        {
+            void Save(Resource r, String outputName)
+            {
+                String outputPath = Path.Combine(this.exampleDir, outputName);
+                r.SaveJson(outputPath);
+                this.fc?.Mark(outputPath);
+            }
+
+            foreach (String file in Directory.GetFiles(inputDir))
+            {
+                String fhirText = File.ReadAllText(file);
+                FhirJsonParser parser = new FhirJsonParser();
+                Resource resource = parser.Parse<Resource>(fhirText);
+                String fixedName = Path.GetFileName(file);
+
+                String groupId = "Examples";
+                Save(resource, $"{fixedName}.json");
+                String shortDescription = $"'{resource.TypeName}' example.";
+
+                this.implementationGuide.AddIGResource($"resource.TypeName/{fixedName}",
+                    shortDescription,
+                    shortDescription,
+                    groupId,
+                    false);
             }
         }
     }

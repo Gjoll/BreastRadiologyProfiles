@@ -26,19 +26,16 @@ namespace BreastRadiology.XUnitTests
 
         ResourceMap map;
         FileCleaner fc;
-        String pageDir;
         String pageTemplateDir;
 
         public FragmentMapMaker(FileCleaner fc,
             ResourceMap map,
             String graphicsDir,
-            String pageDir,
             String pageTemplateDir)
         {
             this.fc = fc;
             this.map = map;
             this.graphicsDir = graphicsDir;
-            this.pageDir = pageDir;
             this.pageTemplateDir = pageTemplateDir;
         }
 
@@ -179,7 +176,7 @@ namespace BreastRadiology.XUnitTests
         CodeEditor fragmentsEditor;
         CodeBlockNested fragmentsBlock;
 
-        public void Create()
+        public void Create(bool saveTotalMap)
         {
             this.fragmentsEditor = new CodeEditorXml();
             this.fragmentsEditor.IgnoreMacrosInQuotedStrings = false;
@@ -192,7 +189,8 @@ namespace BreastRadiology.XUnitTests
             this.LinkNodes();
             this.GraphNodes();
 
-            this.fragmentsEditor.Save();
+            if (saveTotalMap == true)
+                this.fragmentsEditor.Save();
         }
     }
 }

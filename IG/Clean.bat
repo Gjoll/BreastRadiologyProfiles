@@ -1,8 +1,9 @@
 pushd Content
-rmdir /s /q Merged
+rmdir /s /q Examples
 rmdir /s /q Fragments
 rmdir /s /q Graphics
 rmdir /s /q Page
+rmdir /s /q Merged
 rmdir /s /q Resources
 
 pushd ACR
@@ -16,6 +17,7 @@ popd
 
 pushd Guide
 pushd input
+rmdir /s /q examples
 rmdir /s /q images
 rmdir /s /q resources
 

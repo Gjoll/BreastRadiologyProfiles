@@ -53,6 +53,7 @@ namespace BreastRadiology.XUnitTests
         String pageTemplateDir;
         String mergedDir;
         String includesDir;
+        String examplesDir;
 
         String acrFragmentsDir;
         String acrResourcesDir;
@@ -89,6 +90,7 @@ namespace BreastRadiology.XUnitTests
             this.pageDir = MkDir(this.contentDir, "Page");
             this.pageTemplateDir = MkDir(this.contentDir, "PageTemplate");
             this.includesDir = MkDir(this.contentDir, "Includes");
+            this.examplesDir = MkDir(this.contentDir, "Examples");
 
             this.mergedDir = MkDir(this.contentDir, "Merged");
 
@@ -261,7 +263,10 @@ namespace BreastRadiology.XUnitTests
                     ResourceMap map = new ResourceMap();
                     map.AddDir(this.resourcesDir, "*.json");
                     {
-                        FocusMapMaker focusMapMaker = new FocusMapMaker(this.fc, map, this.graphicsDir, this.pageDir);
+                        FocusMapMaker focusMapMaker = new FocusMapMaker(this.fc, 
+                            map, 
+                            this.graphicsDir, 
+                            this.pageDir);
                         focusMapMaker.Create();
                     }
                     {
@@ -316,9 +321,11 @@ namespace BreastRadiology.XUnitTests
                     ResourceMap map = new ResourceMap();
                     map.AddDir(this.fragmentsDir, "*.json");
 
-                    FragmentMapMaker fragmentMapMaker = new FragmentMapMaker(this.fc, map, this.graphicsDir,
-                        this.pageDir, this.pageTemplateDir);
-                    fragmentMapMaker.Create();
+                    FragmentMapMaker fragmentMapMaker = new FragmentMapMaker(this.fc, 
+                        map, 
+                        this.graphicsDir,
+                        this.pageTemplateDir);
+                    fragmentMapMaker.Create(true);
                 }
             }
             catch (Exception err)
@@ -332,7 +339,14 @@ namespace BreastRadiology.XUnitTests
         }
 
         [TestMethod]
-        public void B5_BuildIG()
+        public void B5_BuildExamples()
+        {
+            // this is done by the BreastRadiologyLibrary 
+        }
+
+
+        [TestMethod]
+        public void B6_BuildIG()
         {
             DateTime start = DateTime.Now;
             Trace.WriteLine("Starting B5_BuildIG");
@@ -399,7 +413,7 @@ namespace BreastRadiology.XUnitTests
 
                 p.AddResources(this.resourcesDir);
                 p.AddResources(this.acrResourcesDir);
-                
+
                 p.AddFragments(this.fragmentsDir);
                 p.AddFragments(this.acrFragmentsDir);
 
@@ -407,6 +421,7 @@ namespace BreastRadiology.XUnitTests
                 p.AddPageContent(this.acrPageDir);
                 p.AddPageContent(this.pageTemplateDir);
                 p.AddIncludes(this.includesDir);
+                p.AddExamples(this.examplesDir);
                 p.AddImages(this.graphicsDir);
                 p.AddImages(this.acrGraphicsDir);
                 p.SaveAll();
@@ -426,14 +441,14 @@ namespace BreastRadiology.XUnitTests
             }
 
             TimeSpan span = DateTime.Now - start;
-            Trace.WriteLine($"Ending B5_BuildIG [{(Int32)span.TotalSeconds}]");
+            Trace.WriteLine($"Ending B6_BuildIG[{(Int32)span.TotalSeconds}]");
         }
 
         [TestMethod]
-        public void B6_RunPublisher()
+        public void B7_RunPublisher()
         {
             DateTime start = DateTime.Now;
-            Trace.WriteLine("Starting B6_RunPublisher");
+            Trace.WriteLine("Starting B7_RunPublisher");
             try
             {
                 String executingDir = Path.Combine(DirHelper.FindParentDir("BreastRadiologyProfiles"),
@@ -465,7 +480,7 @@ namespace BreastRadiology.XUnitTests
             }
 
             TimeSpan span = DateTime.Now - start;
-            Trace.WriteLine($"Ending B6_RunPublisher[{(Int32)span.TotalSeconds}]");
+            Trace.WriteLine($"Ending B7_RunPublisher[{(Int32)span.TotalSeconds}]");
         }
 
 
@@ -485,7 +500,8 @@ namespace BreastRadiology.XUnitTests
                 this.B2_BuildResources();
                 this.B3_PatchIntroDocs();
                 this.B4_BuildGraphics();
-                this.B5_BuildIG();
+                this.B5_BuildExamples();
+                this.B6_BuildIG();
             }
         }
 
@@ -493,7 +509,7 @@ namespace BreastRadiology.XUnitTests
         public void A2_BuildAndPublish()
         {
             this.A1_Build();
-            this.B6_RunPublisher();
+            this.B7_RunPublisher();
         }
 
         [TestMethod]
@@ -527,18 +543,19 @@ namespace BreastRadiology.XUnitTests
         }
 
         [TestMethod]
-        public void Z_ValidateBrian()
+        public void F_ValidateExamples()
         {
             FhirValidator fv = new FhirValidator(Path.Combine(this.cacheDir, "validation.xml"));
             fv.StatusErrors += this.StatusErrors;
             fv.StatusInfo += this.StatusInfo;
             fv.StatusWarnings += this.StatusWarnings;
-            bool success = fv.ValidateDir(@"c:\Temp\Brian", "*.json", "4.0.0");
+            fv.ValidatorArgs = $" -ig {resourcesDir} ";
+            // C:\Development\HL7\BreastRadiologyProfiles\IG\Guide\input
+            bool success = fv.ValidateDir(this.examplesDir, "*.json", "4.0.0");
             StringBuilder sb = new StringBuilder();
             fv.FormatMessages(sb);
             Trace.WriteLine(sb.ToString());
             Assert.IsTrue(success);
-            Trace.WriteLine("Validation complete");
         }
 
         [TestMethod]
@@ -556,24 +573,6 @@ namespace BreastRadiology.XUnitTests
             Trace.WriteLine("Validation complete");
         }
 
-
-        [TestMethod]
-        public void Z_TestFile()
-        {
-            FhirStructureDefinitions.Create(this.cacheDir);
-            FhirStructureDefinitions.Self.StoreFhirElements();
-
-            FhirJsonParser parser = new FhirJsonParser();
-            StructureDefinition sd = parser.Parse<StructureDefinition>(
-                File.ReadAllText(
-                    @"C:\Development\HL7\BreastRadiologyProfiles\IG\Content\Fragments\StructureDefinition-BreastBodyLocationExtension.json"));
-
-            sd.Snapshot = null;
-            SnapshotCreator.Create(sd);
-            sd.Extension = null;
-            sd.Context = null;
-            sd.SaveJson(@"c:\Temp\test.json");
-        }
 
         [TestMethod]
         public void Z_BuildSpreadSheetOfItems()
@@ -655,7 +654,7 @@ namespace BreastRadiology.XUnitTests
         public void D1_BuildACRFragments()
         {
             DateTime start = DateTime.Now;
-            Trace.WriteLine("Starting C1_BuildAcrFragments");
+            Trace.WriteLine("Starting D1_BuildAcrFragments");
             try
             {
                 ResourcesMaker pc = new ResourcesMaker(this.fc,
@@ -681,7 +680,7 @@ namespace BreastRadiology.XUnitTests
             }
 
             TimeSpan span = DateTime.Now - start;
-            Trace.WriteLine($"Ending C1_BuildAcrFragments [{(Int32)span.TotalSeconds}]");
+            Trace.WriteLine($"Ending D1_BuildAcrFragments [{(Int32)span.TotalSeconds}]");
         }
 
 
@@ -689,7 +688,7 @@ namespace BreastRadiology.XUnitTests
         public void D2_BuildAcrResources()
         {
             DateTime start = DateTime.Now;
-            Trace.WriteLine("Starting C2_BuildAcrResources");
+            Trace.WriteLine("Starting D2_BuildAcrResources");
             bool saveMergedFiles = false;
 
             try
@@ -727,7 +726,7 @@ namespace BreastRadiology.XUnitTests
             }
 
             TimeSpan span = DateTime.Now - start;
-            Trace.WriteLine($"Ending C2_BuildAcrResources [{(Int32)span.TotalSeconds}]");
+            Trace.WriteLine($"Ending D2_BuildAcrResources [{(Int32)span.TotalSeconds}]");
         }
 
 
@@ -773,24 +772,38 @@ namespace BreastRadiology.XUnitTests
         public void D4_BuildGraphics()
         {
             DateTime start = DateTime.Now;
-            Trace.WriteLine("Starting C4_BuildGraphics");
+            Trace.WriteLine("Starting D4_BuildGraphics");
             try
             {
-                ResourceMap map = new ResourceMap();
-                map.AddDir(this.acrResourcesDir, "*.json");
                 {
-                    ResourceMapMaker resourceMapMaker = new ResourceMapMaker(this.fc, map);
-                    resourceMapMaker.AlwaysShowChildren = true;
-                    resourceMapMaker.Create(ResourcesMaker.CreateUrl("ImagingContextExtension"),
-                        Path.Combine(this.acrGraphicsDir, "ImagingContextOverview.svg"));
+                    ResourceMap map = new ResourceMap();
+                    map.AddDir(this.acrResourcesDir, "*.json");
+                    {
+                        ResourceMapMaker resourceMapMaker = new ResourceMapMaker(this.fc, map);
+                        resourceMapMaker.AlwaysShowChildren = true;
+                        resourceMapMaker.Create(ResourcesMaker.CreateUrl("ImagingContextExtension"),
+                            Path.Combine(this.acrGraphicsDir, "ImagingContextOverview.svg"));
+                    }
+                    {
+                        FocusMapMaker focusMapMaker = new FocusMapMaker(this.fc,
+                            map,
+                            this.acrGraphicsDir,
+                            this.acrPageDir);
+                        focusMapMaker.Create();
+                    }
                 }
+
                 {
-                    FocusMapMaker focusMapMaker = new FocusMapMaker(this.fc,
+                    ResourceMap map = new ResourceMap();
+                    map.AddDir(this.acrFragmentsDir, "*.json");
+
+                    FragmentMapMaker fragmentMapMaker = new FragmentMapMaker(this.fc,
                         map,
                         this.acrGraphicsDir,
-                        this.acrPageDir);
-                    focusMapMaker.Create();
+                        this.pageTemplateDir);
+                    fragmentMapMaker.Create(false);
                 }
+
             }
             catch (Exception err)
             {
@@ -799,7 +812,7 @@ namespace BreastRadiology.XUnitTests
             }
 
             TimeSpan span = DateTime.Now - start;
-            Trace.WriteLine($"Ending C4_BuildGraphics [{(Int32)span.TotalSeconds}]");
+            Trace.WriteLine($"Ending D4_BuildGraphics [{(Int32)span.TotalSeconds}]");
         }
 
 
