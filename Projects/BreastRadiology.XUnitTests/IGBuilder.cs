@@ -340,7 +340,7 @@ namespace BreastRadiology.XUnitTests
                 this.fc?.Mark(outputPath);
             }
 
-            foreach (String file in Directory.GetFiles(inputDir))
+            foreach (String file in Directory.GetFiles(inputDir, "*.json"))
             {
                 String fhirText = File.ReadAllText(file);
                 FhirJsonParser parser = new FhirJsonParser();

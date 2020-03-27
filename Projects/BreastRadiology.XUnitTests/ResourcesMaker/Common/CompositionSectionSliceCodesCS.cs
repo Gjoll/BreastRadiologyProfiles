@@ -41,6 +41,10 @@ namespace BreastRadiology.XUnitTests
             new Coding(this.CompositionSectionSliceCodesUrl, "sectionCodeFindingsRightBreast",
                 "Code to identify the 'Findings Right Breast' section slice");
 
+        Coding SectionCodeAdmin =>
+            new Coding(this.CompositionSectionSliceCodesUrl, "sectionCodeAdmin",
+                "Code to identify the 'Admin' section slice");
+
         CSTaskVar CompositionSectionSliceCodesCS = new CSTaskVar(
             (out CodeSystem cs) =>
                 cs = Self.CreateCodeSystem(
@@ -68,7 +72,10 @@ namespace BreastRadiology.XUnitTests
                             .SetDefinition("Slicing CompositionSection Code - Findings Left Breast."),
                         new ConceptDef()
                             .SetCode(Self.SectionCodeFindingsRightBreast)
-                            .SetDefinition("Slicing CompositionSection Code - Findings Right Breast.")
+                            .SetDefinition("Slicing CompositionSection Code - Findings Right Breast."),
+                        new ConceptDef()
+                            .SetCode(Self.SectionCodeAdmin)
+                            .SetDefinition("Slicing CompositionSection Code - Admin.")
                     })
         );
     }

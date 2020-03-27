@@ -334,6 +334,40 @@ namespace BreastRadiology.XUnitTests
                             targets);
                     }
                 }
+
+                // Admin Section
+                {
+                    ElementTreeNode sliceElementDef = StartSectionSlicing(e);
+                    {
+                        String[] targets = new string[] { Global.ResourceUrl };
+
+                        ElementTreeSlice sectionSlice = SliceSection(sliceElementDef,
+                            "admin",
+                            "Admin",
+                            Self.SectionCodeAdmin,
+                            out ElementDefinition entry);
+                        entry
+                            .ZeroToMany()
+                            .Type("Reference", null, targets)
+                            .Short("Administrative section")
+                            .Definition("References to all administrative resources go here.")
+                            ;
+                        sectionSlice.ElementDefinition
+                            .Single()
+                            .Short("Administrative section")
+                            .Definition(
+                                "References to all administrative resources go here.")
+                            .MustSupport();
+                        ;
+                        e.AddComponentLink("Admin",
+                            new SDefEditor.Cardinality(sectionSlice.ElementDefinition),
+                            new SDefEditor.Cardinality(entry),
+                            Global.ElementAnchor(sectionSlice.ElementDefinition),
+                            "Section",
+                            targets);
+                    }
+                }
+
             });
     }
 }
