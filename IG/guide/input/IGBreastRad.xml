@@ -1187,6 +1187,15 @@
       <exampleBoolean value="false" />
       <groupingId value="Fragments" />
     </resource>
+    <resource>
+      <reference>
+        <reference value="resource.TypeName/FhirDocument.SimpleNarrativeOnlyReport.json" />
+      </reference>
+      <name value="'Bundle' example." />
+      <description value="'Bundle' example." />
+      <exampleBoolean value="false" />
+      <groupingId value="Examples" />
+    </resource>
     <!-- You don't need to define any groupings.  The IGPublisher will define them for you.  You only need to do so if your IG is 'special' and it's
       inappropriate to use the defaults.  Feel free to provide feedback about the defaults... -->
     <!--    <resource>

@@ -51,6 +51,7 @@ namespace AutoValidate
             Console.Clear();
             Thread.Sleep(500);
 
+            Console.WriteLine("Starting validation");
             FhirValidator fv = new FhirValidator(ValidationPath);
             fv.JarPath = this.JarPath;
             fv.StatusErrors += this.StatusErrors;
@@ -58,6 +59,8 @@ namespace AutoValidate
             fv.StatusWarnings += this.StatusWarnings;
             fv.ValidatorArgs = $" -ig {this.ResourcesPath} ";
             fv.ValidateDir(this.ExamplesPath, "*.json", "4.0.0");
+            Console.WriteLine("Validation complete");
+            Console.WriteLine("Press 'q' to quit the sample.");
         }
 
         void Run()
@@ -88,7 +91,6 @@ namespace AutoValidate
             do
             {
                 RunValidate();
-                Console.WriteLine("Press 'q' to quit the sample.");
             } while (Console.Read() != 'q');
         }
 

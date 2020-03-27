@@ -1,31 +1,21 @@
 {
   "resourceType": "Bundle",
   "identifier": {
-    "system": "http://www.FrostBiteFallsLocalHospital/fhir/documents",
-    "value": "DocumentIdentifier"
+    "system": "system",
+    "value": "value"
   },
   "type": "document",
-  "timestamp": "2020-03-27T09:50:03.8964606-05:00",
+  "timestamp": "2020-03-27T09:09:57.3610715-05:00",
   "entry": [
     {
-      "fullUrl": "Composition/30c9acd2-7346-40b2-8b3e-0ce5f734e8ce",
+      "fullUrl": "Composition/6a6812c0-7f50-4413-9fb3-b2c860760d21",
       "resource": {
         "resourceType": "Composition",
-        "id": "30c9acd2-7346-40b2-8b3e-0ce5f734e8ce",
+        "id": "6a6812c0-7f50-4413-9fb3-b2c860760d21",
         "meta": {
           "profile": [
             "http://hl7.org/fhir/us/breast-radiology/StructureDefinition/BreastRadComposition"
           ]
-        },
-        "status": "final",
-        "type": {
-          "coding": [
-            {
-              "system": "http://loinc.org",
-              "code": "42132-1"
-            }
-          ],
-          "text": "US Breast screening"
         },
         "subject": {
           "reference": "Patient/Patient1"
@@ -33,13 +23,7 @@
         "encounter": {
           "reference": "Encounter/Encounter1"
         },
-        "date": "2020-03-27T09:50:03.8681029-05:00",
-        "author": [
-          {
-            "reference": "Device/Device1"
-          }
-        ],
-        "title": "Simple Narrative Only Breast Radiology Report",
+        "date": "2020-03-27T09:09:57.2859518-05:00",
         "section": [
           {
             "title": "Breast Radiology Report",
@@ -98,7 +82,7 @@
             "coding": [
               {
                 "system": "http://terminology.hl7.org/CodeSystem/observation-category",
-                "code": "imaging"
+                "code": "Imaging"
               }
             ]
           }

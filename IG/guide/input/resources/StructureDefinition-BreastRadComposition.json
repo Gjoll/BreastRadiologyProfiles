@@ -466,6 +466,15 @@
             "code": "CodeableConcept"
           }
         ],
+        "patternCodeableConcept": {
+          "coding": [
+            {
+              "system": "http://loinc.org",
+              "code": "42132-1"
+            }
+          ],
+          "text": "US Breast screening"
+        },
         "isModifier": false,
         "isSummary": true,
         "binding": {
@@ -2718,7 +2727,7 @@
         "sliceName": "impressions",
         "short": "Impressions Section.",
         "definition": "This section contains references to the report's clinical impressions.",
-        "min": 1,
+        "min": 0,
         "max": "1",
         "base": {
           "path": "Composition.section",
@@ -3273,7 +3282,7 @@
         "sliceName": "findingsRightBreast",
         "short": "Findings Section Right Breast.",
         "definition": "This section contains references to the report's findings for the right breast.",
-        "min": 1,
+        "min": 0,
         "max": "1",
         "base": {
           "path": "Composition.section",
@@ -3828,7 +3837,7 @@
         "sliceName": "findingsLeftBreast",
         "short": "Findings Section Left Breast.",
         "definition": "This section contains references to the report's findings for the left breast.",
-        "min": 1,
+        "min": 0,
         "max": "1",
         "base": {
           "path": "Composition.section",
@@ -4383,7 +4392,7 @@
         "sliceName": "relatedResources",
         "short": "Related Clinical Resources Section",
         "definition": "References to FHIR clinical resources used during the exam or referenced by this report.",
-        "min": 1,
+        "min": 0,
         "max": "1",
         "base": {
           "path": "Composition.section",
@@ -4938,7 +4947,7 @@
         "sliceName": "recommendations",
         "short": "Recommendations Section",
         "definition": "This section contains references to recommended actions taken in response to the observations and findings of this report.",
-        "min": 1,
+        "min": 0,
         "max": "1",
         "base": {
           "path": "Composition.section",
@@ -5495,7 +5504,7 @@
         "sliceName": "admin",
         "short": "Administrative section",
         "definition": "References to all administrative resources go here.",
-        "min": 1,
+        "min": 0,
         "max": "1",
         "base": {
           "path": "Composition.section",
@@ -6054,6 +6063,26 @@
         }
       },
       {
+        "id": "Composition.type",
+        "path": "Composition.type",
+        "min": 1,
+        "max": "1",
+        "base": {
+          "path": "Composition.type",
+          "min": 1,
+          "max": "1"
+        },
+        "patternCodeableConcept": {
+          "coding": [
+            {
+              "system": "http://loinc.org",
+              "code": "42132-1"
+            }
+          ],
+          "text": "US Breast screening"
+        }
+      },
+      {
         "id": "Composition.section",
         "extension": [
           {
@@ -6174,7 +6203,7 @@
         "sliceName": "impressions",
         "short": "Impressions Section.",
         "definition": "This section contains references to the report's clinical impressions.",
-        "min": 1,
+        "min": 0,
         "max": "1",
         "base": {
           "path": "Composition.section",
@@ -6263,7 +6292,7 @@
         "sliceName": "findingsRightBreast",
         "short": "Findings Section Right Breast.",
         "definition": "This section contains references to the report's findings for the right breast.",
-        "min": 1,
+        "min": 0,
         "max": "1",
         "base": {
           "path": "Composition.section",
@@ -6352,7 +6381,7 @@
         "sliceName": "findingsLeftBreast",
         "short": "Findings Section Left Breast.",
         "definition": "This section contains references to the report's findings for the left breast.",
-        "min": 1,
+        "min": 0,
         "max": "1",
         "base": {
           "path": "Composition.section",
@@ -6441,7 +6470,7 @@
         "sliceName": "relatedResources",
         "short": "Related Clinical Resources Section",
         "definition": "References to FHIR clinical resources used during the exam or referenced by this report.",
-        "min": 1,
+        "min": 0,
         "max": "1",
         "base": {
           "path": "Composition.section",
@@ -6530,7 +6559,7 @@
         "sliceName": "recommendations",
         "short": "Recommendations Section",
         "definition": "This section contains references to recommended actions taken in response to the observations and findings of this report.",
-        "min": 1,
+        "min": 0,
         "max": "1",
         "base": {
           "path": "Composition.section",
@@ -6621,7 +6650,7 @@
         "sliceName": "admin",
         "short": "Administrative section",
         "definition": "References to all administrative resources go here.",
-        "min": 1,
+        "min": 0,
         "max": "1",
         "base": {
           "path": "Composition.section",

@@ -17,6 +17,7 @@ namespace BreastRadiology.XUnitTests
         SDTaskVar BreastRadiologyDocument = new SDTaskVar(
             (out StructureDefinition s) =>
             {
+                #region Local Methods
                 // Start Section Sliceing
                 ElementTreeNode StartSectionSlicing(SDefEditor e)
                 {
@@ -77,7 +78,7 @@ namespace BreastRadiology.XUnitTests
                         ;
                     return slice;
                 }
-
+                #endregion
                 SDefEditor e = Self.CreateEditor("BreastRadComposition",
                             "Breast Radiology Composition",
                             "Breast/Radiology/Composition",
@@ -118,7 +119,13 @@ namespace BreastRadiology.XUnitTests
                     .ReviewedStatus("Needs review by MagView")
                     .ReviewedStatus("Needs review by CIMI")
                     ;
-
+                // fix Composition.type
+                {
+                    CodeableConcept code = new CodeableConcept(Global.Loinc, "42132-1", "US Breast screening");
+                    e.Select("type")
+                        .Pattern(code)
+                        .DefaultValueExtension(code);
+                }
                 // Report Section
                 {
                     ElementTreeNode sliceElementDef = StartSectionSlicing(e);
@@ -175,7 +182,7 @@ namespace BreastRadiology.XUnitTests
                             .Definition("Reference to the clinical impression(s).")
                             ;
                         sectionSlice.ElementDefinition
-                            .Single()
+                            .ZeroToOne()
                             .SetShort($"Impressions Section.")
                             .SetDefinition(
                                 new Markdown()
@@ -211,7 +218,7 @@ namespace BreastRadiology.XUnitTests
                             .Definition("Reference to the finding for the right breast.")
                             ;
                         sectionSlice.ElementDefinition
-                            .Single()
+                            .ZeroToOne()
                             .SetShort($"Findings Section Right Breast.")
                             .SetDefinition(
                                 new Markdown()
@@ -247,7 +254,7 @@ namespace BreastRadiology.XUnitTests
                             .Definition("Reference to the finding for the left breast.")
                             ;
                         sectionSlice.ElementDefinition
-                            .Single()
+                            .ZeroToOne()
                             .SetShort($"Findings Section Left Breast.")
                             .SetDefinition(
                                 new Markdown()
@@ -283,7 +290,7 @@ namespace BreastRadiology.XUnitTests
                             .Definition("Reference to the related resource.")
                             ;
                         sectionSlice.ElementDefinition
-                            .Single()
+                            .ZeroToOne()
                             .Short("Related Clinical Resources Section")
                             .Definition(
                                 "References to FHIR clinical resources used during the exam or referenced by this report.")
@@ -320,7 +327,7 @@ namespace BreastRadiology.XUnitTests
                             .Definition("Reference to the recommended action.")
                             ;
                         sectionSlice.ElementDefinition
-                            .Single()
+                            .ZeroToOne()
                             .Short("Recommendations Section")
                             .Definition(
                                 "This section contains references to recommended actions taken in response to the observations and findings of this report.")
@@ -353,7 +360,7 @@ namespace BreastRadiology.XUnitTests
                             .Definition("References to all administrative resources go here.")
                             ;
                         sectionSlice.ElementDefinition
-                            .Single()
+                            .ZeroToOne()
                             .Short("Administrative section")
                             .Definition(
                                 "References to all administrative resources go here.")

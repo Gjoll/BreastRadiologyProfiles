@@ -23,27 +23,27 @@
     },
     {
       "url": "http://www.fragment.com/maplink",
-      "valueString": "{\r\n  \"LinkType\": \"component\",\r\n  \"ShowChildren\": false,\r\n  \"CardinalityLeft\": \"1..1\",\r\n  \"LinkTarget\": \"Impressions\",\r\n  \"ComponentHRef\": \"StructureDefinition-{SDName}-definitions.html#Composition.section:impressions\",\r\n  \"Types\": \"Section\",\r\n  \"References\": [\r\n    \"http://hl7.org/fhir/StructureDefinition/ClinicalImpression\"\r\n  ],\r\n  \"CardinalityRight\": \"0..*\"\r\n}"
+      "valueString": "{\r\n  \"LinkType\": \"component\",\r\n  \"ShowChildren\": false,\r\n  \"CardinalityLeft\": \"0..1\",\r\n  \"LinkTarget\": \"Impressions\",\r\n  \"ComponentHRef\": \"StructureDefinition-{SDName}-definitions.html#Composition.section:impressions\",\r\n  \"Types\": \"Section\",\r\n  \"References\": [\r\n    \"http://hl7.org/fhir/StructureDefinition/ClinicalImpression\"\r\n  ],\r\n  \"CardinalityRight\": \"0..*\"\r\n}"
     },
     {
       "url": "http://www.fragment.com/maplink",
-      "valueString": "{\r\n  \"LinkType\": \"component\",\r\n  \"ShowChildren\": false,\r\n  \"CardinalityLeft\": \"1..1\",\r\n  \"LinkTarget\": \"Findings Right Breast\",\r\n  \"ComponentHRef\": \"StructureDefinition-{SDName}-definitions.html#Composition.section:findingsRightBreast\",\r\n  \"Types\": \"Section\",\r\n  \"References\": [\r\n    \"http://hl7.org/fhir/us/breast-radiology/StructureDefinition/SectionFindingsRightBreast\"\r\n  ],\r\n  \"CardinalityRight\": \"0..1\"\r\n}"
+      "valueString": "{\r\n  \"LinkType\": \"component\",\r\n  \"ShowChildren\": false,\r\n  \"CardinalityLeft\": \"0..1\",\r\n  \"LinkTarget\": \"Findings Right Breast\",\r\n  \"ComponentHRef\": \"StructureDefinition-{SDName}-definitions.html#Composition.section:findingsRightBreast\",\r\n  \"Types\": \"Section\",\r\n  \"References\": [\r\n    \"http://hl7.org/fhir/us/breast-radiology/StructureDefinition/SectionFindingsRightBreast\"\r\n  ],\r\n  \"CardinalityRight\": \"0..1\"\r\n}"
     },
     {
       "url": "http://www.fragment.com/maplink",
-      "valueString": "{\r\n  \"LinkType\": \"component\",\r\n  \"ShowChildren\": false,\r\n  \"CardinalityLeft\": \"1..1\",\r\n  \"LinkTarget\": \"Findings Left Breast\",\r\n  \"ComponentHRef\": \"StructureDefinition-{SDName}-definitions.html#Composition.section:findingsLeftBreast\",\r\n  \"Types\": \"Section\",\r\n  \"References\": [\r\n    \"http://hl7.org/fhir/us/breast-radiology/StructureDefinition/SectionFindingsLeftBreast\"\r\n  ],\r\n  \"CardinalityRight\": \"0..1\"\r\n}"
+      "valueString": "{\r\n  \"LinkType\": \"component\",\r\n  \"ShowChildren\": false,\r\n  \"CardinalityLeft\": \"0..1\",\r\n  \"LinkTarget\": \"Findings Left Breast\",\r\n  \"ComponentHRef\": \"StructureDefinition-{SDName}-definitions.html#Composition.section:findingsLeftBreast\",\r\n  \"Types\": \"Section\",\r\n  \"References\": [\r\n    \"http://hl7.org/fhir/us/breast-radiology/StructureDefinition/SectionFindingsLeftBreast\"\r\n  ],\r\n  \"CardinalityRight\": \"0..1\"\r\n}"
     },
     {
       "url": "http://www.fragment.com/maplink",
-      "valueString": "{\r\n  \"LinkType\": \"component\",\r\n  \"ShowChildren\": false,\r\n  \"CardinalityLeft\": \"1..1\",\r\n  \"LinkTarget\": \"Related Resources\",\r\n  \"ComponentHRef\": \"StructureDefinition-{SDName}-definitions.html#Composition.section:relatedResources\",\r\n  \"Types\": \"Section\",\r\n  \"References\": [\r\n    \"http://hl7.org/fhir/StructureDefinition/Resource\"\r\n  ],\r\n  \"CardinalityRight\": \"0..*\"\r\n}"
+      "valueString": "{\r\n  \"LinkType\": \"component\",\r\n  \"ShowChildren\": false,\r\n  \"CardinalityLeft\": \"0..1\",\r\n  \"LinkTarget\": \"Related Resources\",\r\n  \"ComponentHRef\": \"StructureDefinition-{SDName}-definitions.html#Composition.section:relatedResources\",\r\n  \"Types\": \"Section\",\r\n  \"References\": [\r\n    \"http://hl7.org/fhir/StructureDefinition/Resource\"\r\n  ],\r\n  \"CardinalityRight\": \"0..*\"\r\n}"
     },
     {
       "url": "http://www.fragment.com/maplink",
-      "valueString": "{\r\n  \"LinkType\": \"component\",\r\n  \"ShowChildren\": false,\r\n  \"CardinalityLeft\": \"1..1\",\r\n  \"LinkTarget\": \"Recommendations\",\r\n  \"ComponentHRef\": \"StructureDefinition-{SDName}-definitions.html#Composition.section:recommendations\",\r\n  \"Types\": \"Section\",\r\n  \"References\": [\r\n    \"http://hl7.org/fhir/StructureDefinition/MedicationRequest\",\r\n    \"http://hl7.org/fhir/StructureDefinition/ServiceRequest\",\r\n    \"http://hl7.org/fhir/us/breast-radiology/StructureDefinition/ServiceRecommendation\"\r\n  ],\r\n  \"CardinalityRight\": \"0..*\"\r\n}"
+      "valueString": "{\r\n  \"LinkType\": \"component\",\r\n  \"ShowChildren\": false,\r\n  \"CardinalityLeft\": \"0..1\",\r\n  \"LinkTarget\": \"Recommendations\",\r\n  \"ComponentHRef\": \"StructureDefinition-{SDName}-definitions.html#Composition.section:recommendations\",\r\n  \"Types\": \"Section\",\r\n  \"References\": [\r\n    \"http://hl7.org/fhir/StructureDefinition/MedicationRequest\",\r\n    \"http://hl7.org/fhir/StructureDefinition/ServiceRequest\",\r\n    \"http://hl7.org/fhir/us/breast-radiology/StructureDefinition/ServiceRecommendation\"\r\n  ],\r\n  \"CardinalityRight\": \"0..*\"\r\n}"
     },
     {
       "url": "http://www.fragment.com/maplink",
-      "valueString": "{\r\n  \"LinkType\": \"component\",\r\n  \"ShowChildren\": false,\r\n  \"CardinalityLeft\": \"1..1\",\r\n  \"LinkTarget\": \"Admin\",\r\n  \"ComponentHRef\": \"StructureDefinition-{SDName}-definitions.html#Composition.section:admin\",\r\n  \"Types\": \"Section\",\r\n  \"References\": [\r\n    \"http://hl7.org/fhir/StructureDefinition/Resource\"\r\n  ],\r\n  \"CardinalityRight\": \"0..*\"\r\n}"
+      "valueString": "{\r\n  \"LinkType\": \"component\",\r\n  \"ShowChildren\": false,\r\n  \"CardinalityLeft\": \"0..1\",\r\n  \"LinkTarget\": \"Admin\",\r\n  \"ComponentHRef\": \"StructureDefinition-{SDName}-definitions.html#Composition.section:admin\",\r\n  \"Types\": \"Section\",\r\n  \"References\": [\r\n    \"http://hl7.org/fhir/StructureDefinition/Resource\"\r\n  ],\r\n  \"CardinalityRight\": \"0..*\"\r\n}"
     }
   ],
   "url": "http://hl7.org/fhir/us/breast-radiology/StructureDefinition/BreastRadComposition",
@@ -482,6 +482,20 @@
       },
       {
         "id": "Composition.type",
+        "extension": [
+          {
+            "url": "http://www.fragment.com/DefaultValue",
+            "valueCodeableConcept": {
+              "coding": [
+                {
+                  "system": "http://loinc.org",
+                  "code": "42132-1"
+                }
+              ],
+              "text": "US Breast screening"
+            }
+          }
+        ],
         "path": "Composition.type",
         "short": "Kind of composition (LOINC if possible)",
         "definition": "Specifies the particular kind of composition (e.g. History and Physical, Discharge Summary, Progress Note). This usually equates to the purpose of making the composition.",
@@ -499,6 +513,15 @@
             "code": "CodeableConcept"
           }
         ],
+        "patternCodeableConcept": {
+          "coding": [
+            {
+              "system": "http://loinc.org",
+              "code": "42132-1"
+            }
+          ],
+          "text": "US Breast screening"
+        },
         "isModifier": false,
         "isSummary": true,
         "binding": {
@@ -2766,7 +2789,7 @@
         "sliceName": "impressions",
         "short": "Impressions Section.",
         "definition": "This section contains references to the report's clinical impressions.",
-        "min": 1,
+        "min": 0,
         "max": "1",
         "base": {
           "path": "Composition.section",
@@ -3336,7 +3359,7 @@
         "sliceName": "findingsRightBreast",
         "short": "Findings Section Right Breast.",
         "definition": "This section contains references to the report's findings for the right breast.",
-        "min": 1,
+        "min": 0,
         "max": "1",
         "base": {
           "path": "Composition.section",
@@ -3906,7 +3929,7 @@
         "sliceName": "findingsLeftBreast",
         "short": "Findings Section Left Breast.",
         "definition": "This section contains references to the report's findings for the left breast.",
-        "min": 1,
+        "min": 0,
         "max": "1",
         "base": {
           "path": "Composition.section",
@@ -4476,7 +4499,7 @@
         "sliceName": "relatedResources",
         "short": "Related Clinical Resources Section",
         "definition": "References to FHIR clinical resources used during the exam or referenced by this report.",
-        "min": 1,
+        "min": 0,
         "max": "1",
         "base": {
           "path": "Composition.section",
@@ -5046,7 +5069,7 @@
         "sliceName": "recommendations",
         "short": "Recommendations Section",
         "definition": "This section contains references to recommended actions taken in response to the observations and findings of this report.",
-        "min": 1,
+        "min": 0,
         "max": "1",
         "base": {
           "path": "Composition.section",
@@ -5618,7 +5641,7 @@
         "sliceName": "admin",
         "short": "Administrative section",
         "definition": "References to all administrative resources go here.",
-        "min": 1,
+        "min": 0,
         "max": "1",
         "base": {
           "path": "Composition.section",
@@ -6192,6 +6215,38 @@
         }
       },
       {
+        "id": "Composition.type",
+        "extension": [
+          {
+            "url": "http://www.fragment.com/DefaultValue",
+            "valueCodeableConcept": {
+              "coding": [
+                {
+                  "system": "http://loinc.org",
+                  "code": "42132-1"
+                }
+              ],
+              "text": "US Breast screening"
+            }
+          }
+        ],
+        "path": "Composition.type",
+        "base": {
+          "path": "Composition.type",
+          "min": 1,
+          "max": "1"
+        },
+        "patternCodeableConcept": {
+          "coding": [
+            {
+              "system": "http://loinc.org",
+              "code": "42132-1"
+            }
+          ],
+          "text": "US Breast screening"
+        }
+      },
+      {
         "id": "Composition.section",
         "extension": [
           {
@@ -6325,7 +6380,7 @@
         "sliceName": "impressions",
         "short": "Impressions Section.",
         "definition": "This section contains references to the report's clinical impressions.",
-        "min": 1,
+        "min": 0,
         "max": "1",
         "base": {
           "path": "Composition.section",
@@ -6429,7 +6484,7 @@
         "sliceName": "findingsRightBreast",
         "short": "Findings Section Right Breast.",
         "definition": "This section contains references to the report's findings for the right breast.",
-        "min": 1,
+        "min": 0,
         "max": "1",
         "base": {
           "path": "Composition.section",
@@ -6533,7 +6588,7 @@
         "sliceName": "findingsLeftBreast",
         "short": "Findings Section Left Breast.",
         "definition": "This section contains references to the report's findings for the left breast.",
-        "min": 1,
+        "min": 0,
         "max": "1",
         "base": {
           "path": "Composition.section",
@@ -6637,7 +6692,7 @@
         "sliceName": "relatedResources",
         "short": "Related Clinical Resources Section",
         "definition": "References to FHIR clinical resources used during the exam or referenced by this report.",
-        "min": 1,
+        "min": 0,
         "max": "1",
         "base": {
           "path": "Composition.section",
@@ -6741,7 +6796,7 @@
         "sliceName": "recommendations",
         "short": "Recommendations Section",
         "definition": "This section contains references to recommended actions taken in response to the observations and findings of this report.",
-        "min": 1,
+        "min": 0,
         "max": "1",
         "base": {
           "path": "Composition.section",
@@ -6847,7 +6902,7 @@
         "sliceName": "admin",
         "short": "Administrative section",
         "definition": "References to all administrative resources go here.",
-        "min": 1,
+        "min": 0,
         "max": "1",
         "base": {
           "path": "Composition.section",
