@@ -1,17 +1,17 @@
 {
   "resourceType": "Bundle",
   "identifier": {
-    "system": "http://www.FrostBiteFallsLocalHospital/fhir/documents",
-    "value": "DocumentIdentifier"
+    "system": "urn:ietf:rfc:3986",
+    "value": "731456cb-d387-4a93-9102-878b4cd8fc86"
   },
   "type": "document",
-  "timestamp": "2020-03-27T09:50:03.8964606-05:00",
+  "timestamp": "2020-03-27T10:34:52.964387-05:00",
   "entry": [
     {
-      "fullUrl": "Composition/30c9acd2-7346-40b2-8b3e-0ce5f734e8ce",
+      "fullUrl": "Composition/5ed4505d-918a-4073-b5eb-ffc81531a928",
       "resource": {
         "resourceType": "Composition",
-        "id": "30c9acd2-7346-40b2-8b3e-0ce5f734e8ce",
+        "id": "5ed4505d-918a-4073-b5eb-ffc81531a928",
         "meta": {
           "profile": [
             "http://hl7.org/fhir/us/breast-radiology/StructureDefinition/BreastRadComposition"
@@ -33,7 +33,7 @@
         "encounter": {
           "reference": "Encounter/Encounter1"
         },
-        "date": "2020-03-27T09:50:03.8681029-05:00",
+        "date": "2020-03-27T10:34:52.9330264-05:00",
         "author": [
           {
             "reference": "Device/Device1"
