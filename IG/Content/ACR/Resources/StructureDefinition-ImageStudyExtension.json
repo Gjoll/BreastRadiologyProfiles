@@ -49,8 +49,8 @@
   "abstract": false,
   "context": [
     {
-      "type": "element",
-      "expression": "*"
+      "type": "extension",
+      "expression": "http://hl7.org/fhir/us/breast-radiology/StructureDefinition/ImagingContextExtension"
     }
   ],
   "type": "Extension",

@@ -32,7 +32,8 @@ namespace BreastRadiology.XUnitTests
                                 )
                         )
                         .Kind(StructureDefinition.StructureDefinitionKind.ComplexType)
-                        .Context()
+                        .Context(StructureDefinition.ExtensionContextType.Extension,
+                            Self.ImagingContextExtension.Value().Url)
                     ;
                 s = e.SDef;
 

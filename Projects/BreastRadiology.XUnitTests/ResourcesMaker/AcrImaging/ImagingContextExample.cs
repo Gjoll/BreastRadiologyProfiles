@@ -59,7 +59,7 @@ namespace BreastRadiology.XUnitTests
             {
                 Extension studyUid = new Extension
                 {
-                    Url = ImageStudyExtension.Value().Url,
+                    Url = "studyUid",
                     Value = new Oid("urn:oid:1.2.3.4.5")
                 };
                 e.Extension.Add(studyUid);
