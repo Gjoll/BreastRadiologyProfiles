@@ -18,7 +18,7 @@
    <title value="Breast Radiology Reporting - 1st STU ballot"/>
    <status value="draft"/>
    <experimental value="false"/>
-   <date value="2020-03-28T13:15:03-05:00"/>
+   <date value="2020-03-28T14:09:28-05:00"/>
    <publisher value="Hl7 - Clinical Interoperability Council"/>
    <contact>
       <telecom>
@@ -96,6 +96,10 @@
       <grouping id="ExtensionResources">
          <name value="Extension"/>
          <description value="Extension Resource Definitions"/>
+      </grouping>
+      <grouping id="Examples">
+         <name value="Examples"/>
+         <description value="Example Definitions"/>
       </grouping>
 
 
@@ -2605,6 +2609,21 @@
             <page>
                <nameUrl value="StructureDefinition-BodyDistanceFromExtension.html"/>
                <title value="Body Distance From Extension"/>
+               <generation value="generated"/>
+            </page>
+            <page>
+               <nameUrl value="Bundle-FhirDocumentBundle.html"/>
+               <title value="'Bundle' example."/>
+               <generation value="generated"/>
+            </page>
+            <page>
+               <nameUrl value="Composition-Index.html"/>
+               <title value="'Composition' example."/>
+               <generation value="generated"/>
+            </page>
+            <page>
+               <nameUrl value="DiagnosticReport-Report.html"/>
+               <title value="'DiagnosticReport' example."/>
                <generation value="generated"/>
             </page>
          </page>

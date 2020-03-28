@@ -134,11 +134,6 @@ namespace BreastRadiology.XUnitTests
 
         private bool StatusErrors(string className, string method, string msg)
         {
-            if (msg.Contains(" does not resolve", new System.StringComparison()))
-                return true;
-            if (msg.Contains("Unknown Code System", new System.StringComparison()))
-                return true;
-
             this.Message("Error", className, method, msg);
             return true;
         }
@@ -412,6 +407,9 @@ namespace BreastRadiology.XUnitTests
 
                 p.AddGrouping($"{ResourcesMaker.Group_ExtensionResources}", "Extension",
                     "Extension Resource Definitions");
+
+                p.AddGrouping($"{ResourcesMaker.Group_Examples}", "Examples",
+                    "Example Definitions");
 
                 p.AddResources(this.resourcesDir);
                 p.AddResources(this.acrResourcesDir);

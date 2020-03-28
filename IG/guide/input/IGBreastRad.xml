@@ -116,6 +116,10 @@
       <name value="Extension" />
       <description value="Extension Resource Definitions" />
     </grouping>
+    <grouping id="Examples">
+      <name value="Examples" />
+      <description value="Example Definitions" />
+    </grouping>
     <resource>
       <reference>
         <reference value="CodeSystem/AbnormalityCystTypeCS" />

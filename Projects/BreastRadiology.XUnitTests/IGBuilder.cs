@@ -88,6 +88,9 @@ namespace BreastRadiology.XUnitTests
 
         public void AddGrouping(String groupId, String name, String description)
         {
+            Debug.Assert(groupId.StartsWith(" ") == false);
+            Debug.Assert(groupId.EndsWith(" ") == false);
+
             this.implementationGuide.AddGrouping(groupId, name, description);
             if (this.groupIds.Contains(groupId))
                 throw new Exception($"Group already added");
@@ -330,7 +333,7 @@ namespace BreastRadiology.XUnitTests
                 FhirJsonParser parser = new FhirJsonParser();
                 Resource resource = parser.Parse<Resource>(fhirText);
 
-                String groupId = "Examples";
+                String groupId = ResourcesMaker.Group_Examples;
                 Save(resource, Path.GetFileName(file));
                 String shortDescription = $"'{resource.TypeName}' example.";
 

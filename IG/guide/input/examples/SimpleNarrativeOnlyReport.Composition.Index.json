@@ -101,7 +101,7 @@
   "encounter": {
     "reference": "#Encounter.Encounter1"
   },
-  "date": "2020-03-28T13:13:18.4183761-05:00",
+  "date": "2020-03-28T14:06:57.4753498-05:00",
   "author": [
     {
       "reference": "#Device.Device1"
