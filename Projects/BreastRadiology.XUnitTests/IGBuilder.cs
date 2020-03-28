@@ -12,65 +12,48 @@ namespace BreastRadiology.XUnitTests
 {
     public class IGBuilder : ConverterBase
     {
-        FileCleaner fc;
+        FileCleaner fcGuide;
 
         String outputDir;
-        String resourceDir => Path.Combine(this.outputDir, "resources");
-        String exampleDir => Path.Combine(this.outputDir, "examples");
-        String pagecontentDir => Path.Combine(this.outputDir, "pagecontent");
-        String includesDir => Path.Combine(this.outputDir, "includes");
+        String resourceDir;
+        String exampleDir;
+        String pagecontentDir;
+        String includesDir;
+        String imagesDir;
 
-        String imagesDir => Path.Combine(this.outputDir, "images");
-
-        //String IgPath => Path.Combine(this.outputDir, "IGBreastRad.json");
         String ImpGuidePath => Path.Combine(this.outputDir, this.impGuideName);
         String impGuideName;
-
-
-        //ProfilesEditor profilesEditor;
-        //ExamplesEditor examplesEditor;
-        //ExtensionsEditor extensionsEditor;
-        //CodeSystemsEditor codeSystemsEditor;
-        //ValueSetsEditor valueSetsEditor;
         ImplementationGuideEditor implementationGuide;
 
-        public IGBuilder(FileCleaner fc, String outputDir)
+        public IGBuilder(String outputDir)
         {
+            String SetSubDir(String subDir)
+            {
+                String retVal = Path.Combine(this.outputDir, subDir);
+                if (Directory.Exists(retVal) == false)
+                    Directory.CreateDirectory(retVal);
+                return retVal;
+            }
             this.outputDir = outputDir;
-            if (Directory.Exists(this.resourceDir) == false)
-                Directory.CreateDirectory(this.resourceDir);
+            this.fcGuide = new FileCleaner();
+            this.fcGuide.Add(this.outputDir);
+            this.fcGuide.Mark(Path.Combine(this.outputDir, "ignoreWarnings.txt"));
 
-            if (Directory.Exists(this.pagecontentDir) == false)
-                Directory.CreateDirectory(this.pagecontentDir);
-
-            if (Directory.Exists(this.imagesDir) == false)
-                Directory.CreateDirectory(this.imagesDir);
-
-            this.fc = fc;
+            this.resourceDir = SetSubDir("resources");
+            this.exampleDir = SetSubDir("examples");
+            this.pagecontentDir = SetSubDir("pagecontent");
+            this.imagesDir = SetSubDir("images");
+            this.includesDir = SetSubDir("includes");
         }
 
         public void SaveAll()
         {
             this.implementationGuide.Save(this.ImpGuidePath);
-            this.fc?.Mark(this.ImpGuidePath);
-
-            //this.fc?.Mark(this.IgPath);
-
-            //this.examplesEditor.Save();
-            //this.profilesEditor.Save();
-            //this.extensionsEditor.Save();
-            //this.codeSystemsEditor.Save();
-            //this.valueSetsEditor.Save();
+            this.fcGuide?.Mark(this.ImpGuidePath);
         }
 
         public void Start(String impGuidePath)
         {
-            //this.examplesEditor = new ExamplesEditor(this.outputDir);
-            //this.profilesEditor = new ProfilesEditor(this.outputDir);
-            //this.extensionsEditor = new ExtensionsEditor(this.outputDir);
-            //this.codeSystemsEditor = new CodeSystemsEditor(this.outputDir);
-            //this.valueSetsEditor = new ValueSetsEditor(this.outputDir);
-
             this.impGuideName = Path.GetFileName(impGuidePath);
             this.implementationGuide = new ImplementationGuideEditor(impGuidePath);
         }
@@ -82,7 +65,7 @@ namespace BreastRadiology.XUnitTests
                 String outputPath = Path.Combine(outputDir, Path.GetFileName(inputPath));
 
                 File.Copy(inputPath, outputPath, true);
-                this.fc?.Mark(outputPath);
+                this.fcGuide?.Mark(outputPath);
             }
         }
 
@@ -194,7 +177,7 @@ namespace BreastRadiology.XUnitTests
                 RemoveFragmentExtensions(r);
                 String outputPath = Path.Combine(this.resourceDir, outputName);
                 r.SaveJson(outputPath);
-                this.fc?.Mark(outputPath);
+                this.fcGuide?.Mark(outputPath);
             }
 
             List<StructureDefinition> structureDefinitions = new List<StructureDefinition>();
@@ -285,7 +268,7 @@ namespace BreastRadiology.XUnitTests
 
                 String outputPath = Path.Combine(this.resourceDir, outputName);
                 r.SaveJson(outputPath);
-                this.fc?.Mark(outputPath);
+                this.fcGuide?.Mark(outputPath);
             }
 
             List<StructureDefinition> structureDefinitions = new List<StructureDefinition>();
@@ -338,7 +321,7 @@ namespace BreastRadiology.XUnitTests
             {
                 String outputPath = Path.Combine(this.exampleDir, outputName);
                 r.SaveJson(outputPath);
-                this.fc?.Mark(outputPath);
+                this.fcGuide?.Mark(outputPath);
             }
 
             void DoFile(String file)
