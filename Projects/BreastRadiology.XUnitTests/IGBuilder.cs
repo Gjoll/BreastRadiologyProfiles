@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.IO;
+using System.Linq;
 using FhirKhit.Tools;
 using FhirKhit.Tools.R4;
 using Hl7.Fhir.Model;
@@ -340,23 +341,42 @@ namespace BreastRadiology.XUnitTests
                 this.fc?.Mark(outputPath);
             }
 
-            foreach (String file in Directory.GetFiles(inputDir, "*.json"))
+            void DoFile(String file)
             {
                 String fhirText = File.ReadAllText(file);
                 FhirJsonParser parser = new FhirJsonParser();
                 Resource resource = parser.Parse<Resource>(fhirText);
-                String fixedName = Path.GetFileName(file);
 
                 String groupId = "Examples";
-                Save(resource, $"{fixedName}.json");
+                Save(resource, Path.GetFileName(file));
                 String shortDescription = $"'{resource.TypeName}' example.";
 
-                this.implementationGuide.AddIGResource($"resource.TypeName/{fixedName}",
+                Meta m = resource.Meta;
+                if ((m != null) && (m.Profile != null) && (m.Profile.Any()))
+                {
+                    if (m.Profile.Count() != 1)
+                        throw new NotImplementedException($"Dont know how to handle multiple profiles");
+                    String profile = m.Profile.First();
+                    if (profile.StartsWith(Global.BreastRadBaseUrl))
+                    {
+                        this.implementationGuide.AddIGResource($"{resource.TypeName}/{resource.Id}",
+                            shortDescription,
+                            shortDescription,
+                            groupId,
+                            profile);
+                        return;
+                    }
+                }
+
+                this.implementationGuide.AddIGResource($"{resource.TypeName}/{resource.Id}",
                     shortDescription,
                     shortDescription,
                     groupId,
-                    false);
+                    true);
             }
+
+            foreach (String file in Directory.GetFiles(inputDir, "*.json"))
+                DoFile(file);
         }
     }
 }

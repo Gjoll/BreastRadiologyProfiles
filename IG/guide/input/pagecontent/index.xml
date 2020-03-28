@@ -25,6 +25,7 @@
 		<li>FHIR artifacts to support Nuclear Medicine based findings.</li>
 		<li>Modifications to support non-us realm examinations.</li>
 		<li>Enhancements to support CAD/AI based findings and determinations.</li>
+		<li>Enhancements for provenance, security and signing.</li>
 	</ul>
 	</p>
 	<a name="technicalOverview"> </a>
