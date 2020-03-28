@@ -33,7 +33,8 @@ namespace BreastRadiology.XUnitTests
                                 )
                         )
                         .Kind(StructureDefinition.StructureDefinitionKind.ComplexType)
-                        .Context()
+                        .Context(StructureDefinition.ExtensionContextType.Element,
+                            "DocumentReference")
                     ;
                 s = e.SDef;
 
@@ -113,6 +114,7 @@ namespace BreastRadiology.XUnitTests
 
                 //e.IntroDoc
                 //    ;
+                Self.ImagingContextExample();
             });
     }
 }

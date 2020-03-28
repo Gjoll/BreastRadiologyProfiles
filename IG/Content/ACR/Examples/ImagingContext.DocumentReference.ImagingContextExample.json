@@ -1,0 +1,42 @@
+{
+  "resourceType": "DocumentReference",
+  "id": "ImagingContextExample",
+  "contained": [
+    {
+      "resourceType": "Patient",
+      "id": "Patient1",
+      "name": [
+        {
+          "family": "Moose",
+          "given": [
+            "Bullwinkle"
+          ]
+        }
+      ]
+    }
+  ],
+  "extension": [
+    {
+      "extension": [
+        {
+          "url": "http://hl7.org/fhir/us/breast-radiology/StructureDefinition/ImageStudyExtension",
+          "valueOid": "urn:oid:1.2.3.4.5"
+        }
+      ],
+      "url": "http://hl7.org/fhir/us/breast-radiology/StructureDefinition/ImagingContextExtension"
+    }
+  ],
+  "status": "current",
+  "subject": {
+    "reference": "#Patient1"
+  },
+  "date": "2020-03-28T17:16:11.3008976-05:00",
+  "content": [
+    {
+      "attachment": {
+        "contentType": "application/dicom",
+        "data": ""
+      }
+    }
+  ]
+}

@@ -66,7 +66,7 @@
   "context": [
     {
       "type": "element",
-      "expression": "*"
+      "expression": "DocumentReference"
     }
   ],
   "type": "Extension",

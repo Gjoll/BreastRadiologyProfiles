@@ -20,5 +20,18 @@
   <!-- +reviewStatus-->
   <!-- -reviewStatus-->
   <!-- +profileFragments-->
+  <p>
+    <u style="font-size:large;">Profile Fragments</u>
+  </p>
+  <p>
+    The following are the fragments that are included in this profile.
+  </p>
+  <p>
+    This section is included primarily for developers to understand
+    the hierarchy and commonality of each profile.
+  </p>
+  <ul>
+    %FragmentList:noexpand:prefix=<li>:suffix=</li>:lb%
+  </ul>
   <!-- -profileFragments-->
 </div>

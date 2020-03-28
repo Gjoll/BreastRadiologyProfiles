@@ -31,10 +31,7 @@
     the hierarchy and commonality of each profile.
   </p>
   <ul>
-    
-<li><a href="./StructureDefinition-BreastRadObservationFragment.html">Observation Fragment</a></li>
-<li><a href="./StructureDefinition-BreastRadObservationNoComponentFragment.html">Observation No Component Fragment</a></li>
-<li><a href="./StructureDefinition-BreastRadObservationNoValueFragment.html">Observation NoValue Fragment</a></li>
+    %FragmentList:noexpand:prefix=<li>:suffix=</li>:lb%
   </ul>
   <!-- -profileFragments-->
 </div>

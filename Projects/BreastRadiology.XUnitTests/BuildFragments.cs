@@ -60,6 +60,7 @@ namespace BreastRadiology.XUnitTests
         String acrResourcesDir;
         String acrGraphicsDir;
         String acrPageDir;
+        String acrExamplesDir;
 
         FileCleaner fc = null;
 
@@ -100,7 +101,7 @@ namespace BreastRadiology.XUnitTests
             this.acrResourcesDir = MkDir(this.contentDir, "ACR", "Resources");
             this.acrPageDir = MkDir(this.contentDir, "ACR", "Page");
             this.acrGraphicsDir = MkDir(this.contentDir, "ACR", "Graphics");
-
+            this.acrExamplesDir = MkDir(this.contentDir, "ACR", "Examples");
         }
 
         private void Message(String import, string className, string method, string msg)
@@ -338,7 +339,6 @@ namespace BreastRadiology.XUnitTests
         [TestMethod]
         public void B5_BuildExamples()
         {
-            // this is done by the BreastRadiologyLibrary 
         }
 
 
@@ -561,6 +561,22 @@ namespace BreastRadiology.XUnitTests
             fv.ValidatorArgs = $" -ig {resourcesDir} ";
             // C:\Development\HL7\BreastRadiologyProfiles\IG\Guide\input
             bool success = fv.ValidateDir(this.examplesDir, "*.json", "4.0.0");
+            StringBuilder sb = new StringBuilder();
+            fv.FormatMessages(sb);
+            Trace.WriteLine(sb.ToString());
+            Assert.IsTrue(success);
+        }
+
+        [TestMethod]
+        public void G_ValidateAcrExamples()
+        {
+            FhirValidator fv = new FhirValidator(Path.Combine(this.cacheDir, "validation.xml"));
+            fv.StatusErrors += this.StatusErrors;
+            fv.StatusInfo += this.StatusInfo;
+            fv.StatusWarnings += this.StatusWarnings;
+            fv.ValidatorArgs = $" -ig {resourcesDir} -ig {acrResourcesDir}";
+            // C:\Development\HL7\BreastRadiologyProfiles\IG\Guide\input
+            bool success = fv.ValidateDir(this.acrExamplesDir, "*.json", "4.0.0");
             StringBuilder sb = new StringBuilder();
             fv.FormatMessages(sb);
             Trace.WriteLine(sb.ToString());
@@ -842,6 +858,5 @@ namespace BreastRadiology.XUnitTests
             Assert.IsTrue(success);
             Trace.WriteLine("Validation complete");
         }
-
     }
 }
