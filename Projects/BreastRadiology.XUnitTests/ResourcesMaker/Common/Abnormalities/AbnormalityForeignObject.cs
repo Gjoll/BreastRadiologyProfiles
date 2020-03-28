@@ -387,7 +387,7 @@ namespace BreastRadiology.XUnitTests
                             .SetSnomedDescription("534",
                                 "PhysicalObject | 408098004 | Swab (Object")
                             .SetUMLS("534",
-                                "A Retained surgical swab appears to have been idenified ",
+                                "A Retained surgical swab appears to have been identified ",
                                 "in the breast during the ",
                                 "mammogram, ultrasound and/or MRI.")
                         ,
@@ -497,7 +497,7 @@ namespace BreastRadiology.XUnitTests
                             "ObservationSection")
                         .Description("Foreign Object Observation",
                             new Markdown()
-                                .Paragraph("This resource and its referenced child resources contains ",
+                                .Paragraph("This resource and referenced child resources contain ",
                                     "information about foreign objects observed")
                                 .Paragraph("A foreign object is some non-biological item observed in the patient.",
                                     "These can include misplaced surgical items, trauma related items (bullet fragments), or ",

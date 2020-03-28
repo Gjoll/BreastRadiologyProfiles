@@ -173,7 +173,7 @@ namespace BreastRadiology.XUnitTests
                         "increases. The denser the breast, the larger the lesion(s) that may be obscured. There is considerable intra- and inter-observer variation in visually estimating breast density ",
                         "between any two adjacent density categories. Furthermore, there is only a minimal and insignificant difference in the sensitivity of mammography between the densest breast ",
                         "in a lower-density category and the least dense breast in the next-higher-density category. These factors limit the clinical relevance of breast density categorization for the ",
-                        "individual woman. "
+                        "individual patient. "
                     )
                     ;
                 ElementDefinition valueXDef = e.Select("value[x]")

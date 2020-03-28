@@ -187,7 +187,7 @@ namespace BreastRadiology.XUnitTests
                         .AddFragRef(Self.ObservationHasMemberAssociatedFeaturesFragment.Value())
                         .Description("Cyst Abnormality Observation",
                             new Markdown()
-                                .Paragraph("This resource and its referenced child resources contains ",
+                                .Paragraph("This resource and referenced child resources contain ",
                                            "information about a cyst abnormality observation ")
                         )
                     ;

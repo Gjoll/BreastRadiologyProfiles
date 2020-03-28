@@ -567,7 +567,7 @@ namespace BreastRadiology.XUnitTests
                         .AddFragRef(Self.ObservationComponentObservedCountFragment.Value())
                         .Description("Associated Feature Observation",
                             new Markdown()
-                                    .Paragraph("This resource and its referenced child resources contains ",
+                                    .Paragraph("This resource and referenced child resources contain ",
                                                "information about a associated feature observations")
                                     .Paragraph("The feature observed is defined by the codeable concept in the value[x] field.")
                         )

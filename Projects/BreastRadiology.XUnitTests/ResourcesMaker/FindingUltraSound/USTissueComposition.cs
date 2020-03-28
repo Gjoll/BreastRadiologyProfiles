@@ -37,7 +37,7 @@ namespace BreastRadiology.XUnitTests
         //                .CiteStart(BiRadCitation)
         //                    .Line("A thick zone of homogeneously echogenic fibroglandular parenchyma is present beneath the")
         //                    .Line("thin hypoechoic layer of fat lobules. Many lesions, cancers and fibroadenomas, for example, are")
-        //                    .Line("found within the fibroglandular zone or at its junction with the layer of fat.")
+        //                    .Line("found within the fibroglandular zone or at a junction with the layer of fat.")
         //                .CiteEnd()
         //            ),
         //            new ConceptDef("Heterogeneous",

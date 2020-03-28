@@ -133,7 +133,7 @@ namespace BreastRadiology.XUnitTests
                         .AddFragRef(Self.ObservationHasMemberConsistentWithFragment.Value())
                         .Description("Mass Abnormality Observation",
                             new Markdown()
-                                .Paragraph("This resource and its referenced child resources contains ",
+                                .Paragraph("This resource and referenced child resources contain ",
                                     "information about a mass abnormality observation ")
                         )
                     ;
@@ -156,7 +156,7 @@ namespace BreastRadiology.XUnitTests
                         "\"MASS\" is three dimensional and occupies space. It is seen on two different mammographic ",
                         "projections. It has completely or partially convex-outward borders and (when radiodense) appears",
                         "denser in the center than at the periphery. If a potential mass is seen only on a single projection, it",
-                        "should be called an \"ASYMMETRY\" until its 3-dimensionality is confirmed"
+                        "should be called an \"ASYMMETRY\" until 3-dimensionality is confirmed"
                     )
                     ;
 
