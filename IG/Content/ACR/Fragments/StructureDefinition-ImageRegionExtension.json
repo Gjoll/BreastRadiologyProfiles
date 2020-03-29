@@ -485,10 +485,6 @@
         ],
         "isModifier": false,
         "isSummary": false,
-        "binding": {
-          "strength": "extensible",
-          "valueSet": "http://hl7.org/fhir/us/breast-radiology/ValueSet/GraphicTypeVS"
-        },
         "mapping": [
           {
             "identity": "rim",
@@ -827,11 +823,7 @@
           {
             "code": "string"
           }
-        ],
-        "binding": {
-          "strength": "extensible",
-          "valueSet": "http://hl7.org/fhir/us/breast-radiology/ValueSet/GraphicTypeVS"
-        }
+        ]
       },
       {
         "id": "Extension.url",

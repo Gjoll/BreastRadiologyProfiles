@@ -46,7 +46,7 @@ namespace BreastRadiology.XUnitTests
                 Attachment = new Attachment
                 {
                     ContentType = "application/dicom",
-                    Data = new byte[0]
+                    Data = new byte[] {1, 2, 3, 4 }
                 }
             });
 
@@ -63,6 +63,15 @@ namespace BreastRadiology.XUnitTests
                     Value = new Oid("urn:oid:1.2.3.4.5")
                 };
                 e.Extension.Add(studyUid);
+            }
+
+            {
+                Extension seriesUid = new Extension
+                {
+                    Url = "seriesUid",
+                    Value = new Oid("urn:oid:1.2.3.4.6")
+                };
+                e.Extension.Add(seriesUid);
             }
 
             //{
@@ -91,7 +100,7 @@ namespace BreastRadiology.XUnitTests
             //            CodeSystem regionTypeCS = Self.GraphicTypeCS.Value();
             //            Extension regionType = new Extension
             //            {
-                           
+
             //                Url = "regionType",
             //                Value = new Coding(regionTypeCS.Url, "POLYLINE")
             //            };

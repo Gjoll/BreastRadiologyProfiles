@@ -21,6 +21,10 @@
         {
           "url": "studyUid",
           "valueOid": "urn:oid:1.2.3.4.5"
+        },
+        {
+          "url": "seriesUid",
+          "valueOid": "urn:oid:1.2.3.4.6"
         }
       ],
       "url": "http://hl7.org/fhir/us/breast-radiology/StructureDefinition/ImagingContextExtension"
@@ -30,12 +34,12 @@
   "subject": {
     "reference": "#Patient1"
   },
-  "date": "2020-03-28T17:39:03.8848309-05:00",
+  "date": "2020-03-29T08:04:22.8183441-05:00",
   "content": [
     {
       "attachment": {
         "contentType": "application/dicom",
-        "data": ""
+        "data": "AQIDBA=="
       }
     }
   ]
