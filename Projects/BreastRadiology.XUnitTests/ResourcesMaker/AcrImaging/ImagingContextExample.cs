@@ -74,6 +74,55 @@ namespace BreastRadiology.XUnitTests
                 e.Extension.Add(seriesUid);
             }
 
+            {
+                Extension instance = new Extension
+                {
+                    Url = "imageInstance",
+                };
+                e.Extension.Add(instance);
+
+                {
+                    Extension sopClass = new Extension
+                    {
+                        Url = "sopClass",
+                        Value = new Oid("urn:oid:1.2.3.4.7")
+                    };
+                    instance.Extension.Add(sopClass);
+                }
+                //{
+                //    Extension imageUid = new Extension
+                //    {
+                //        Url = "imageUid",
+                //        Value = new Oid("urn:oid:1.2.3.4.8")
+                //    };
+                //    instance.Extension.Add(imageUid);
+                //}
+                //{
+                //    Extension frameNumber = new Extension
+                //    {
+                //        Url = "frameNumber",
+                //        Value = new Oid("urn:oid:1.2.3.4.9")
+                //    };
+                //    instance.Extension.Add(frameNumber);
+                //}
+                //{
+                //    Extension observationUid = new Extension
+                //    {
+                //        Url = "observationUid",
+                //        Value = new Oid("urn:oid:1.2.3.4.10")
+                //    };
+                //    instance.Extension.Add(observationUid);
+                //}
+                //{
+                //    Extension trackingUid= new Extension
+                //    {
+                //        Url = "trackingUid",
+                //        Value = new Oid("urn:oid:1.2.3.4.11")
+                //    };
+                //    instance.Extension.Add(trackingUid);
+                //}
+            }
+
             //{
             //    Extension studyUid = new Extension
             //    {

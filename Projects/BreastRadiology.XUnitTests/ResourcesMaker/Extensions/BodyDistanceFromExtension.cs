@@ -98,7 +98,7 @@ namespace BreastRadiology.XUnitTests
 
                 // Slice land mark.
                 {
-                    Self.Slice(e,
+                    Self.SliceSimpleExtension(e,
                         extensionNode,
                         "landMark",
                         "Body landmark. Origin of distance measurement.",
@@ -127,7 +127,7 @@ namespace BreastRadiology.XUnitTests
                 {
                     String sliceName = "distanceFromLandMark";
 
-                    Self.Slice(e,
+                    Self.SliceSimpleExtension(e,
                         extensionNode,
                         sliceName,
                         "Distance from landmark",

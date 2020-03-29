@@ -23,7 +23,7 @@ namespace BreastRadiology.XUnitTests
             out ElementTreeSlice extensionSlice,
             out ElementTreeNode valueXNode)
         {
-            this.Slice(e, extensionNode, sliceName, shortText, definition, out extensionSlice, out valueXNode);
+            this.SliceSimpleExtension(e, extensionNode, sliceName, shortText, definition, out extensionSlice, out valueXNode);
             valueXNode.ElementDefinition
                 .Type("CodeableConcept")
                 .Binding(bindName, BindingStrength.Required)
@@ -49,7 +49,7 @@ namespace BreastRadiology.XUnitTests
             return extensionSlice.ElementDefinition;
         }
 
-        void Slice(SDefEditor e,
+        void SliceSimpleExtension(SDefEditor e,
             ElementTreeNode extensionNode,
             String sliceName,
             String shortText,
@@ -99,5 +99,60 @@ namespace BreastRadiology.XUnitTests
                 valueXNode = extensionSlice.CreateNode(elementValue);
             }
         }
+
+
+        void SliceComplexExtension(SDefEditor e,
+            ElementTreeNode extensionNode,
+            String sliceName,
+            String shortText,
+            Markdown definition,
+            out ElementTreeSlice extensionSlice)
+        {
+            extensionSlice = extensionNode.CreateSlice(sliceName);
+            extensionSlice.ElementDefinition
+                .ElementId($"{extensionNode.ElementDefinition.Path}:{sliceName}")
+                .SliceName(sliceName)
+                .Short(shortText)
+                .Definition(definition)
+                .SetCardinality(0, "1")
+                ;
+            extensionSlice.ElementDefinition.Type = null;
+
+            {
+                ElementDefinition elementUrl = new ElementDefinition()
+                        .Path($"{extensionNode.ElementDefinition.Path}.url")
+                        .ElementId($"{extensionNode.ElementDefinition.Path}:{sliceName}.url")
+                        .Value(new FhirUri(sliceName))
+                        .Type("uri")
+                        .Definition(new Markdown()
+                            .Paragraph($"Url for {sliceName} complex extension item.")
+                        )
+                    ;
+                extensionSlice.CreateNode(elementUrl);
+            }
+
+            {
+                ElementDefinition valueBase = e.Get("value[x]").ElementDefinition;
+                ElementDefinition elementValue = new ElementDefinition()
+                        .Path($"{extensionNode.ElementDefinition.Path}.value[x]")
+                        .ElementId($"{extensionNode.ElementDefinition.Path}:{sliceName}.value[x]")
+                    ;
+                var valueXNode = extensionSlice.CreateNode(elementValue);
+                valueXNode.ElementDefinition
+                    .Zero()
+                    ;
+            }
+
+            {
+                ElementDefinition subExtension = new ElementDefinition
+                {
+                    ElementId = $"{extensionNode.ElementDefinition.Path}:{sliceName}.extension",
+                    Path = $"{extensionNode.ElementDefinition.Path}.extension"
+                };
+                subExtension.ZeroToMany();
+                extensionSlice.CreateNode(subExtension);
+            }
+        }
+
     }
 }

@@ -17,12 +17,12 @@ namespace BreastRadiology.XUnitTests
     {
         const String imageInstanceSliceName = "imageInstance";
 
-        void ICStudyOid(SDefEditor e,
+        void ICStudyUid(SDefEditor e,
             ElementTreeNode extensionNode)
         {
-            const String sliceName = "studyOid";
+            const String sliceName = "studyUid";
 
-            Self.Slice(e,
+            Self.SliceSimpleExtension(e,
                 extensionNode,
                 sliceName,
                 "Study Uid",
@@ -52,7 +52,7 @@ namespace BreastRadiology.XUnitTests
                 ElementTreeNode extensionNode)
         // derivedFrom
         {
-            Self.Slice(e,
+            Self.SliceSimpleExtension(e,
                 extensionNode,
                 "derivedFrom",
                 "Image Study Derived From",
@@ -78,12 +78,12 @@ namespace BreastRadiology.XUnitTests
                 "Reference");
         }
 
-        void ICSeriesOid(SDefEditor e,
+        void ICSeriesUid(SDefEditor e,
                 ElementTreeNode extensionNode)
         {
-            const String sliceName = "seriesOid";
+            const String sliceName = "seriesUid";
 
-            Self.Slice(e,
+            Self.SliceSimpleExtension(e,
                 extensionNode,
                 sliceName,
                 "Series Uid",
@@ -115,22 +115,16 @@ namespace BreastRadiology.XUnitTests
 
             ElementTreeNode extensionNode;
             {
-                Self.Slice(e,
+                Self.SliceComplexExtension(e,
                     parentExtensionNode,
                     imageInstanceSliceName,
                     "Image Instance",
                     new Markdown()
-                        .Paragraph("Specifies DICOM Instance")
-                    ,
-                    out ElementTreeSlice extensionSlice,
-                    out ElementTreeNode valueXNode
+                        .Paragraph("Specifies DICOM Instance"),
+                    out ElementTreeSlice extensionSlice
                 );
                 extensionSlice.ElementDefinition
                     .ZeroToMany()
-                    ;
-                valueXNode.ElementDefinition
-                    .Type("code")
-                    .Zero()
                     ;
                 e.AddComponentLink(imageInstanceSliceName.ToMachineName(),
                     new SDefEditor.Cardinality(extensionSlice.ElementDefinition),
@@ -144,7 +138,7 @@ namespace BreastRadiology.XUnitTests
             {
                 const String sliceName = "sopClass";
 
-                Self.Slice(e,
+                Self.SliceSimpleExtension(e,
                     extensionNode,
                     sliceName,
                     "Image SOPClass",
@@ -175,7 +169,7 @@ namespace BreastRadiology.XUnitTests
             {
                 const String sliceName = "imageUid";
 
-                Self.Slice(e,
+                Self.SliceSimpleExtension(e,
                     extensionNode,
                     sliceName,
                     "Image Instance Uid",
@@ -205,7 +199,7 @@ namespace BreastRadiology.XUnitTests
             // frameNumber
             {
                 String sliceName = "frameNumber";
-                Self.Slice(e,
+                Self.SliceSimpleExtension(e,
                     parentExtensionNode,
                     sliceName,
                     "Image frame number",
@@ -228,16 +222,13 @@ namespace BreastRadiology.XUnitTests
                     null,
                     Global.ElementAnchor(extensionSlice.ElementDefinition),
                     "Oid");
-                extensionSlice.ElementDefinition
-                    .Single()
-                    ;
             }
 
             // Slice Observation UID .
             {
                 const String sliceName = "observationUid";
 
-                Self.Slice(e,
+                Self.SliceSimpleExtension(e,
                     extensionNode,
                     sliceName,
                     "Image Instance Observation UID",
@@ -268,7 +259,7 @@ namespace BreastRadiology.XUnitTests
             {
                 const String sliceName = "trackingUid";
 
-                Self.Slice(e,
+                Self.SliceSimpleExtension(e,
                     extensionNode,
                     sliceName,
                     "Image Instance Tracking UID",
@@ -295,7 +286,7 @@ namespace BreastRadiology.XUnitTests
                     "Oid");
             }
 
-            ICRegion(e, extensionNode);
+            //ICRegion(e, extensionNode);
         }
 
         void ICRegion(SDefEditor e,
@@ -305,7 +296,7 @@ namespace BreastRadiology.XUnitTests
 
             ElementTreeNode extensionNode;
             {
-                Self.Slice(e,
+                Self.SliceSimpleExtension(e,
                     parentExtensionNode,
                     imageRegionSliceName,
                     "Image Region",
@@ -334,10 +325,10 @@ namespace BreastRadiology.XUnitTests
 
             // Slice imageRegion .
             {
-                const String sliceName = "regionType ";
+                const String sliceName = "regionType";
 
                 ValueSet regionType = Self.GraphicTypeVS.Value();
-                Self.Slice(e,
+                Self.SliceSimpleExtension(e,
                     extensionNode,
                     sliceName,
                     "Image Region Type",
@@ -366,7 +357,7 @@ namespace BreastRadiology.XUnitTests
 
             // Slice coordinates.
             {
-                Self.Slice(e,
+                Self.SliceSimpleExtension(e,
                     extensionNode,
                     "coordinates",
                     "Image Coordinates",
@@ -445,9 +436,9 @@ namespace BreastRadiology.XUnitTests
 
                 extensionNode = e.ConfigureSliceByUrlDiscriminator("extension", true);
 
-                Self.ICStudyOid(e, extensionNode);
+                Self.ICStudyUid(e, extensionNode);
                 Self.ICDerivedFrom(e, extensionNode);
-                Self.ICSeriesOid(e, extensionNode);
+                Self.ICSeriesUid(e, extensionNode);
                 Self.ICInstance(e, extensionNode);
 
                 e.SDef.Snapshot = null;
