@@ -50,7 +50,6 @@ namespace BreastRadiology.XUnitTests
         String fragmentsDir;
         String resourcesDir;
         String pageDir;
-        String pageContentDir;
         String pageTemplateDir;
         String mergedDir;
         String includesDir;
@@ -90,7 +89,6 @@ namespace BreastRadiology.XUnitTests
             this.fragmentsDir = MkDir(this.contentDir, "Fragments");
             this.resourcesDir = MkDir(this.contentDir, "Resources");
             this.pageDir = MkDir(this.contentDir, "Page");
-            this.pageContentDir = MkDir(this.contentDir, "PageContent");
             this.pageTemplateDir = MkDir(this.contentDir, "PageTemplate");
             this.includesDir = MkDir(this.contentDir, "Includes");
             this.examplesDir = MkDir(this.contentDir, "Examples");
@@ -417,7 +415,6 @@ namespace BreastRadiology.XUnitTests
                 p.AddFragments(this.fragmentsDir);
                 p.AddFragments(this.acrFragmentsDir);
 
-                p.AddPageContent(this.pageContentDir);
                 p.AddPageContent(this.pageDir);
                 p.AddPageContent(this.acrPageDir);
                 p.AddPageContent(this.pageTemplateDir);

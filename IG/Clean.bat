@@ -1,5 +1,5 @@
 pushd Content
-rmdir /s /q Examples
+rem rmdir /s /q Examples
 rmdir /s /q Fragments
 rmdir /s /q Graphics
 rmdir /s /q Page
