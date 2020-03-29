@@ -53,7 +53,8 @@ namespace BreastRadiology.XUnitTests
         String[] linkTypes = new string[] {SVGGlobal.ExtensionType, SVGGlobal.TargetType, SVGGlobal.ComponentType};
 
         /*
-         * Add children. If two adjacent children have same children, then dont create each in a seperate
+         * Add children. If two adjacent children have same children,
+         * then don't create each in a seperate
          * group. Have the two nodes point to the same group of children.
          */
         protected void AddChildren(ResourceMap.Node mapNode,

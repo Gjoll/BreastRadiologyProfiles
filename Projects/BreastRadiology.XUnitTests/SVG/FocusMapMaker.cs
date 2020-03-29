@@ -76,7 +76,6 @@ namespace BreastRadiology.XUnitTests
 
                 List<SENode> componentParents = new List<SENode>();
                 List<SENode> extensionParents = new List<SENode>();
-                List<SENode> valueSetParents = new List<SENode>();
                 List<SENode> targetParents = new List<SENode>();
 
                 foreach (dynamic link in this.map.TargetOrReferenceLinks(focusNode.ResourceUrl))
@@ -94,18 +93,15 @@ namespace BreastRadiology.XUnitTests
 
                 parentsGroup.AppendNodes(targetParents);
                 parentsGroup.AppendNodes(componentParents);
-                parentsGroup.AppendNodes(valueSetParents);
                 parentsGroup.AppendNodes(extensionParents);
             }
             {
                 SENodeGroup targetChildren = new SENodeGroup("A.Targets", true);
                 SENodeGroup componentChildren = new SENodeGroup("B.Components", true);
                 SENodeGroup extensionChildren = new SENodeGroup("C.Extensions", true);
-                SENodeGroup valueSetChildren = new SENodeGroup("D.ValueSets", true);
 
                 childrenGroup.AppendChild(targetChildren);
                 childrenGroup.AppendChild(componentChildren);
-                childrenGroup.AppendChild(valueSetChildren);
                 childrenGroup.AppendChild(extensionChildren);
 
                 foreach (dynamic link in this.map.SourceLinks(focusNode.ResourceUrl))
