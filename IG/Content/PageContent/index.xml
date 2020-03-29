@@ -110,6 +110,14 @@
 			</a>
 		</li>
 	</ul>
+	<a name="trademarks"> </a>
+	<h3>Trade Marks</h3>
+	<ul>
+		<li>"Snomed" and "Snomed CT" are registered trademarks of 
+		    International Health Terminology Standards Development Organisation(IHTSDO).</li>
+		<li>"LOINC" and "RELMA" are registered trademarks of Regenstrief Institute, Inc.</li>
+		<li>"BiRads" is a registered trademarks of the American College of Radiology (ACR).</li>
+	</ul>
 	<a name="terminologySources"> </a>
 	<h3>Terminology Sources</h3>
 	<ul>
