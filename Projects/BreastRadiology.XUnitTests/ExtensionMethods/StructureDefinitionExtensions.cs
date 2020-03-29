@@ -41,19 +41,6 @@ namespace BreastRadiology.XUnitTests
             return sd;
         }
 
-        public static StructureDefinition AddValueSetLink(this StructureDefinition sd, 
-            ValueSet vs, 
-            bool showChildren)
-        {
-            dynamic packet = new JObject();
-            packet.LinkType = SVGGlobal.ValueSetType;
-            packet.ShowChildren = showChildren;
-            packet.LinkTarget = vs.Url;
-            sd.AddExtension(Global.ResourceMapLinkUrl, new FhirString(packet.ToString()));
-
-            return sd;
-        }
-
         internal static StructureDefinition AddComponentLink(this StructureDefinition sd,
             String url,
             SDefEditor.Cardinality cardinalityLeft,

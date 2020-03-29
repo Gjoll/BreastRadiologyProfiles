@@ -168,19 +168,6 @@ namespace BreastRadiology.XUnitTests
                         }
                             break;
 
-                        case SVGGlobal.ValueSetType:
-                        {
-                            if (this.map.TryGetNode(link.LinkTarget.ToObject<String>().ToObject<String>(),
-                                    out ResourceMap.Node childNode) == true)
-                            {
-                                SENode node = this.CreateResourceNode(childNode, link, true);
-                                SENodeGroup nodeGroup = new SENodeGroup(node.AllText(), false);
-                                valueSetChildren.AppendChild(nodeGroup);
-                                nodeGroup.AppendNode(node);
-                            }
-                        }
-                            break;
-
                         case SVGGlobal.TargetType:
                         {
                             if (this.map.TryGetNode(link.LinkTarget.ToObject<String>(),

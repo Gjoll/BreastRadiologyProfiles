@@ -31,7 +31,8 @@
     the hierarchy and commonality of each profile.
   </p>
   <ul>
-    %FragmentList:noexpand:prefix=<li>:suffix=</li>:lb%
+    
+<li><a href="./StructureDefinition-HeaderFragment.html">Header Fragment</a></li>
   </ul>
   <!-- -profileFragments-->
 </div>

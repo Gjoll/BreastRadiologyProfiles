@@ -391,12 +391,6 @@ namespace BreastRadiology.XUnitTests
             return this;
         }
 
-        public SDefEditor AddValueSetLink(ValueSet vs, bool showChildren)
-        {
-            this.SDef.AddValueSetLink(vs, showChildren);
-            return this;
-        }
-
         public ElementTreeSlice AppendSlice(String elementName,
             String sliceName,
             Int32 min = 0,

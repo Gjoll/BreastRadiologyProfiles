@@ -8,7 +8,6 @@ namespace BreastRadiology.XUnitTests
     {
         public const String ComponentType = "component";
         public const String ExtensionType = "extension";
-        public const String ValueSetType = "valueSet";
         public const String TargetType = "target";
     }
 }

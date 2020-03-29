@@ -189,7 +189,6 @@ namespace BreastRadiology.XUnitTests
             {
                 case SVGGlobal.ExtensionType: return this.extensionColor;
                 case SVGGlobal.ComponentType: return this.componentColor;
-                case SVGGlobal.ValueSetType: return this.valueSetColor;
                 case SVGGlobal.TargetType: return this.targetColor;
                 default: throw new NotImplementedException();
             }
@@ -250,7 +249,7 @@ namespace BreastRadiology.XUnitTests
 
                         if (ShowChildren(link))
                         {
-                            var childMapNode = this.map.GetNode(reference);
+                            ResourceMap.Node childMapNode = this.map.GetNode(reference);
                             this.AddChildren(childMapNode, refGroup);
                         }
                     }
