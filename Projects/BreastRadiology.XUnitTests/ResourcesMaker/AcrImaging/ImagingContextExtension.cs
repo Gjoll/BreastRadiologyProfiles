@@ -73,8 +73,7 @@ namespace BreastRadiology.XUnitTests
                     e.AddExtensionLink(subExtensionUrl,
                         new SDefEditor.Cardinality(extensionSlice.ElementDefinition),
                         "Study Uid",
-                        Global.ElementAnchor(extensionSlice.ElementDefinition),
-                        false);
+                        Global.ElementAnchor(extensionSlice.ElementDefinition));
 
                     {
                         ElementDefinition elementUrl = new ElementDefinition()
@@ -111,8 +110,7 @@ namespace BreastRadiology.XUnitTests
                     e.AddExtensionLink(extensionStructDef.Url,
                         new SDefEditor.Cardinality(extensionDef),
                         "Derived From",
-                        Global.ElementAnchor(extensionDef),
-                        false);
+                        Global.ElementAnchor(extensionDef));
                 }
 
                 // Series Oid
@@ -127,8 +125,7 @@ namespace BreastRadiology.XUnitTests
                     e.AddExtensionLink(extensionStructDef.Url,
                         new SDefEditor.Cardinality(extensionDef),
                         "Series Uid",
-                        Global.ElementAnchor(extensionDef),
-                        false);
+                        Global.ElementAnchor(extensionDef));
                 }
 
                 // instance
@@ -143,8 +140,7 @@ namespace BreastRadiology.XUnitTests
                     e.AddExtensionLink(extensionStructDef.Url,
                         new SDefEditor.Cardinality(extensionDef),
                         "Instance",
-                        Global.ElementAnchor(extensionDef),
-                        false);
+                        Global.ElementAnchor(extensionDef));
                 }
                 e.SDef.Snapshot = null;
                 //e.IntroDoc

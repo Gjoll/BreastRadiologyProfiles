@@ -15,31 +15,31 @@
     },
     {
       "url": "http://www.fragment.com/maplink",
-      "valueString": "{\r\n  \"LinkType\": \"fragment\",\r\n  \"ShowChildren\": false,\r\n  \"LinkTarget\": \"http://hl7.org/fhir/us/breast-radiology/StructureDefinition/AcrHeaderFragment\"\r\n}"
+      "valueString": "{\r\n  \"LinkType\": \"fragment\",\r\n  \"LinkTarget\": \"http://hl7.org/fhir/us/breast-radiology/StructureDefinition/AcrHeaderFragment\"\r\n}"
     },
     {
       "url": "http://www.fragment.com/maplink",
-      "valueString": "{\r\n  \"LinkType\": \"component\",\r\n  \"ShowChildren\": false,\r\n  \"CardinalityLeft\": \"0..1\",\r\n  \"LinkTarget\": \"SopClass\",\r\n  \"ComponentHRef\": \"StructureDefinition-{SDName}-definitions.html#Extension.extension:sopClass\",\r\n  \"Types\": \"Oid\",\r\n  \"References\": []\r\n}"
+      "valueString": "{\r\n  \"LinkType\": \"component\",\r\n  \"CardinalityLeft\": \"0..1\",\r\n  \"LinkTarget\": \"SopClass\",\r\n  \"ComponentHRef\": \"StructureDefinition-{SDName}-definitions.html#Extension.extension:sopClass\",\r\n  \"Types\": \"Oid\",\r\n  \"References\": []\r\n}"
     },
     {
       "url": "http://www.fragment.com/maplink",
-      "valueString": "{\r\n  \"LinkType\": \"component\",\r\n  \"ShowChildren\": false,\r\n  \"CardinalityLeft\": \"0..1\",\r\n  \"LinkTarget\": \"Uid\",\r\n  \"ComponentHRef\": \"StructureDefinition-{SDName}-definitions.html#Extension.extension:uid\",\r\n  \"Types\": \"Oid\",\r\n  \"References\": []\r\n}"
+      "valueString": "{\r\n  \"LinkType\": \"component\",\r\n  \"CardinalityLeft\": \"0..1\",\r\n  \"LinkTarget\": \"Uid\",\r\n  \"ComponentHRef\": \"StructureDefinition-{SDName}-definitions.html#Extension.extension:uid\",\r\n  \"Types\": \"Oid\",\r\n  \"References\": []\r\n}"
     },
     {
       "url": "http://www.fragment.com/maplink",
-      "valueString": "{\r\n  \"LinkType\": \"component\",\r\n  \"ShowChildren\": false,\r\n  \"CardinalityLeft\": \"0..*\",\r\n  \"LinkTarget\": \"FrameNumber\",\r\n  \"ComponentHRef\": \"StructureDefinition-{SDName}-definitions.html#Extension.extension:frameNumber\",\r\n  \"Types\": \"Oid\",\r\n  \"References\": []\r\n}"
+      "valueString": "{\r\n  \"LinkType\": \"component\",\r\n  \"CardinalityLeft\": \"0..*\",\r\n  \"LinkTarget\": \"FrameNumber\",\r\n  \"ComponentHRef\": \"StructureDefinition-{SDName}-definitions.html#Extension.extension:frameNumber\",\r\n  \"Types\": \"Oid\",\r\n  \"References\": []\r\n}"
     },
     {
       "url": "http://www.fragment.com/maplink",
-      "valueString": "{\r\n  \"LinkType\": \"component\",\r\n  \"ShowChildren\": false,\r\n  \"CardinalityLeft\": \"0..1\",\r\n  \"LinkTarget\": \"ObservationUid\",\r\n  \"ComponentHRef\": \"StructureDefinition-{SDName}-definitions.html#Extension.extension:observationUid\",\r\n  \"Types\": \"Oid\",\r\n  \"References\": []\r\n}"
+      "valueString": "{\r\n  \"LinkType\": \"component\",\r\n  \"CardinalityLeft\": \"0..1\",\r\n  \"LinkTarget\": \"ObservationUid\",\r\n  \"ComponentHRef\": \"StructureDefinition-{SDName}-definitions.html#Extension.extension:observationUid\",\r\n  \"Types\": \"Oid\",\r\n  \"References\": []\r\n}"
     },
     {
       "url": "http://www.fragment.com/maplink",
-      "valueString": "{\r\n  \"LinkType\": \"component\",\r\n  \"ShowChildren\": false,\r\n  \"CardinalityLeft\": \"0..1\",\r\n  \"LinkTarget\": \"TrackingUid\",\r\n  \"ComponentHRef\": \"StructureDefinition-{SDName}-definitions.html#Extension.extension:trackingUid\",\r\n  \"Types\": \"Oid\",\r\n  \"References\": []\r\n}"
+      "valueString": "{\r\n  \"LinkType\": \"component\",\r\n  \"CardinalityLeft\": \"0..1\",\r\n  \"LinkTarget\": \"TrackingUid\",\r\n  \"ComponentHRef\": \"StructureDefinition-{SDName}-definitions.html#Extension.extension:trackingUid\",\r\n  \"Types\": \"Oid\",\r\n  \"References\": []\r\n}"
     },
     {
       "url": "http://www.fragment.com/maplink",
-      "valueString": "{\r\n  \"LinkType\": \"extension\",\r\n  \"ShowChildren\": false,\r\n  \"CardinalityLeft\": \"0..1\",\r\n  \"ComponentHRef\": \"StructureDefinition-{SDName}-definitions.html#Extension.extension:imageRegion\",\r\n  \"LocalName\": \"Image Region\",\r\n  \"LinkTarget\": \"http://hl7.org/fhir/us/breast-radiology/StructureDefinition/ImageRegionExtension\"\r\n}"
+      "valueString": "{\r\n  \"LinkType\": \"extension\",\r\n  \"CardinalityLeft\": \"0..1\",\r\n  \"ComponentHRef\": \"StructureDefinition-{SDName}-definitions.html#Extension.extension:imageRegion\",\r\n  \"LocalName\": \"Image Region\",\r\n  \"LinkTarget\": \"http://hl7.org/fhir/us/breast-radiology/StructureDefinition/ImageRegionExtension\"\r\n}"
     },
     {
       "url": "http://www.fragment.com/mapname",

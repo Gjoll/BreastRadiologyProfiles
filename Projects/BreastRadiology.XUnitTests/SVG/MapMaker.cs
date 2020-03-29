@@ -95,9 +95,7 @@ namespace BreastRadiology.XUnitTests
         public bool AlwaysShowChildren = false;
         bool ShowChildren(dynamic link)
         {
-            if (this.AlwaysShowChildren == true)
-                return true;
-            return link.ShowChildren.ToObject<Boolean>();
+            return this.AlwaysShowChildren;
         }
 
         protected void DirectLink(SENodeGroup group,

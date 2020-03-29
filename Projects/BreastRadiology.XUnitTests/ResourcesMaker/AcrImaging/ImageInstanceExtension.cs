@@ -172,8 +172,7 @@ namespace BreastRadiology.XUnitTests
                     e.AddExtensionLink(extensionStructDef.Url,
                         new SDefEditor.Cardinality(extensionDef),
                         "Image Region",
-                        Global.ElementAnchor(extensionDef),
-                        false);
+                        Global.ElementAnchor(extensionDef));
                 }
 
                 //e.IntroDoc

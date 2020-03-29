@@ -332,7 +332,6 @@ namespace BreastRadiology.XUnitTests
 
             dynamic packet = new JObject();
             packet.LinkType = "fragment";
-            packet.ShowChildren = false;
             packet.LinkTarget = sd.Url;
             this.SDef.AddExtension(Global.ResourceMapLinkUrl, new FhirString(packet.ToString()));
             return this;
@@ -361,10 +360,9 @@ namespace BreastRadiology.XUnitTests
         public SDefEditor AddExtensionLink(String url,
             Cardinality cardinalityLeft,
             String localName,
-            String componentRef,
-            bool showChildren)
+            String componentRef)
         {
-            this.sDef.AddExtensionLink(url, cardinalityLeft, localName, componentRef, showChildren);
+            this.sDef.AddExtensionLink(url, cardinalityLeft, localName, componentRef);
             return this;
         }
 
@@ -385,9 +383,9 @@ namespace BreastRadiology.XUnitTests
         }
 
 
-        public SDefEditor AddTargetLink(String url, Cardinality cardinalityLeft, bool showChildren)
+        public SDefEditor AddTargetLink(String url, Cardinality cardinalityLeft)
         {
-            this.SDef.AddTargetLink(url, cardinalityLeft, showChildren);
+            this.SDef.AddTargetLink(url, cardinalityLeft);
             return this;
         }
 
@@ -634,8 +632,7 @@ namespace BreastRadiology.XUnitTests
                 )
                 ;
             this.AddTargetLink(profile.Url.Trim(),
-                new SDefEditor.Cardinality(retVal.ElementDefinition),
-                false);
+                new SDefEditor.Cardinality(retVal.ElementDefinition));
 
             return retVal;
         }
@@ -655,8 +652,7 @@ namespace BreastRadiology.XUnitTests
                     )
                 ;
             this.AddTargetLink(profile.Url,
-                new SDefEditor.Cardinality(sliceDef),
-                false);
+                new SDefEditor.Cardinality(sliceDef));
         }
 
         public void SliceComponentSize(String sliceName,
