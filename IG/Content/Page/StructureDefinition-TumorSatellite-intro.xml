@@ -41,32 +41,8 @@ formed.
   <!-- +reviewStatus-->
   <!-- -reviewStatus-->
   <!-- +components-->
-  <p>
-    <u style="font-size:large;">Member Fields</u>
-  </p>
-  <p>
-    The following parts of this observation are contained within this resource.
-  </p>
-  <p>
-    Each field contains one data item and is stored as an item (slice) in the Observation.component element.
-  </p>
-  <ul>
-    %ComponentList:noexpand:prefix=<li>:suffix=</li>:lb%
-  </ul>
   <!-- -components-->
   <!-- +hasMember-->
-  <p>
-    <u style="font-size:large;">Member Observations</u>
-  </p>
-  <p>
-    The following parts of this observation are stored in seperate observation resources.
-  </p>
-  <p>
-    The reference to each external observation is stored as an item in the Observation.hasMember element.
-  </p>
-  <ul>
-    %HasMemberList:noexpand:prefix=<li>:suffix=</li>:lb%
-  </ul>
   <!-- -hasMember-->
   <!-- +profileFragments-->
   <p>
@@ -80,7 +56,10 @@ formed.
     the hierarchy and commonality of each profile.
   </p>
   <ul>
-    %FragmentList:noexpand:prefix=<li>:suffix=</li>:lb%
+    
+<li><a href="./StructureDefinition-ObservationLeafFragment.html">Observation Leaf Fragment</a></li>
+<li><a href="./StructureDefinition-BreastRadObservationNoComponentFragment.html">Observation No Component Fragment</a></li>
+<li><a href="./StructureDefinition-BreastRadObservationNoDeviceFragment.html">Observation NoDevice Fragment</a></li>
   </ul>
   <!-- -profileFragments-->
 </div>

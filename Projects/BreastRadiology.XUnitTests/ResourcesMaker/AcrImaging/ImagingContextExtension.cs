@@ -149,7 +149,7 @@ namespace BreastRadiology.XUnitTests
                 e.SDef.Snapshot = null;
                 //e.IntroDoc
                 //    ;
-                Self.ImagingContextExample();
+                //$Self.ImagingContextExample();
             });
     }
 }
