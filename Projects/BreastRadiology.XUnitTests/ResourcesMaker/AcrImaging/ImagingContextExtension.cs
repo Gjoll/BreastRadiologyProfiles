@@ -17,6 +17,18 @@ namespace BreastRadiology.XUnitTests
         public SDTaskVar ImagingContextExtension = new SDTaskVar(
             (out StructureDefinition s) =>
             {
+                ElementDefinition CreateElement(ElementTreeSlice slice, String name)
+                {
+                    ElementDefinition e = new ElementDefinition
+                    {
+                        Path = $"{slice.ElementDefinition.Path}.{name}",
+                        ElementId = $"{slice.ElementDefinition.ElementId}.{name}"
+                    };
+
+                    slice.CreateNode(e);
+                    return e;
+                }
+
                 SDefEditor e;
                 ElementTreeNode extensionNode;
 
@@ -44,24 +56,47 @@ namespace BreastRadiology.XUnitTests
                     .Type("uri")
                     .Fixed(new FhirUri(e.SDef.Url));
 
-                e.Select("value[x]").Zero();
+                e.Select("value[x]")
+                    .Zero()
+                    .Type("code")
+                    ;
 
                 extensionNode = e.ConfigureSliceByUrlDiscriminator("extension", true);
 
+                ElementDefinition SubExtension(String sliceName,
+                    String subExtensionUrl)
+                {
+                    ElementTreeSlice extensionSlice = e.ApplyExtension(extensionNode,
+                        sliceName,
+                        subExtensionUrl);
+
+                    e.AddExtensionLink(subExtensionUrl,
+                        new SDefEditor.Cardinality(extensionSlice.ElementDefinition),
+                        "Study Uid",
+                        Global.ElementAnchor(extensionSlice.ElementDefinition),
+                        false);
+
+                    {
+                        ElementDefinition elementUrl = new ElementDefinition()
+                                .Path($"{extensionNode.ElementDefinition.Path}.url")
+                                .ElementId($"{extensionNode.ElementDefinition.Path}:{sliceName}.url")
+                                .Value(new FhirUri(sliceName))
+                                .Type("uri")
+                                .Definition(new Markdown()
+                                    .Paragraph($"Url for {sliceName} complex extension item.")
+                                )
+                            ;
+                        extensionSlice.CreateNode(elementUrl);
+                    }
+
+                    return extensionSlice.ElementDefinition;
+                }
+
                 // Study Oid
                 {
-                    StructureDefinition extensionStructDef = Self.ImageStudyExtension.Value();
-                    ElementDefinition extensionDef = e.ApplyExtension(extensionNode,
-                        "studyUid",
-                        extensionStructDef.Url)
-                        .ElementDefinition
-                        .Single();
-
-                    e.AddExtensionLink(extensionStructDef.Url,
-                        new SDefEditor.Cardinality(extensionDef),
-                        "Study Uid",
-                        Global.ElementAnchor(extensionDef),
-                        false);
+                    SubExtension("studyUid", Self.ImageStudyExtension.Value().Url)
+                        .Single()
+                        ;
                 }
 
                 // derivedFrom
@@ -111,7 +146,7 @@ namespace BreastRadiology.XUnitTests
                         Global.ElementAnchor(extensionDef),
                         false);
                 }
-
+                e.SDef.Snapshot = null;
                 //e.IntroDoc
                 //    ;
                 Self.ImagingContextExample();

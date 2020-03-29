@@ -96,7 +96,6 @@ namespace BreastRadiology.XUnitTests
                         .Single()
                         ;
                     valueXNode.ElementDefinition
-                        .Binding(regionType, BindingStrength.Extensible)
                         .Type("string")
                         .Single()
                         ;
