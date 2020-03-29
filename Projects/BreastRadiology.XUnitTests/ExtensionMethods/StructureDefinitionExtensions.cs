@@ -12,12 +12,10 @@ namespace BreastRadiology.XUnitTests
             String url,
             SDefEditor.Cardinality cardinalityLeft,
             String localName,
-            String componentRef,
-            bool showChildren)
+            String componentRef)
         {
             dynamic packet = new JObject();
             packet.LinkType = SVGGlobal.ExtensionType;
-            packet.ShowChildren = showChildren;
             packet.CardinalityLeft = cardinalityLeft.ToString();
             packet.ComponentHRef = componentRef;
             packet.LocalName = localName;
@@ -29,12 +27,10 @@ namespace BreastRadiology.XUnitTests
 
         public static StructureDefinition AddTargetLink(this StructureDefinition sd, 
             String url,
-            SDefEditor.Cardinality cardinalityLeft, 
-            bool showChildren)
+            SDefEditor.Cardinality cardinalityLeft)
         {
             dynamic packet = new JObject();
             packet.LinkType = SVGGlobal.TargetType;
-            packet.ShowChildren = showChildren;
             packet.CardinalityLeft = cardinalityLeft.ToString();
             packet.LinkTarget = url;
             sd.AddExtension(Global.ResourceMapLinkUrl, new FhirString(packet.ToString()));
@@ -42,20 +38,19 @@ namespace BreastRadiology.XUnitTests
         }
 
         public static StructureDefinition AddValueSetLink(this StructureDefinition sd, 
-            ValueSet vs, 
-            bool showChildren)
+            ValueSet vs)
         {
             dynamic packet = new JObject();
             packet.LinkType = SVGGlobal.ValueSetType;
-            packet.ShowChildren = showChildren;
             packet.LinkTarget = vs.Url;
             sd.AddExtension(Global.ResourceMapLinkUrl, new FhirString(packet.ToString()));
 
             return sd;
         }
 
-        internal static StructureDefinition AddComponentLink(this StructureDefinition sd,
+        internal static dynamic AddComponentChildLink(this StructureDefinition sd,
             String url,
+            String parent,
             SDefEditor.Cardinality cardinalityLeft,
             SDefEditor.Cardinality cardinalityRight,
             String componentRef,
@@ -63,8 +58,8 @@ namespace BreastRadiology.XUnitTests
             params String[] targets)
         {
             dynamic packet = new JObject();
-            packet.LinkType = SVGGlobal.ComponentType;
-            packet.ShowChildren = false;
+            packet.LinkType = SVGGlobal.ComponentChildType;
+            packet.Parent = parent;
             if (cardinalityLeft != null)
                 packet.CardinalityLeft = cardinalityLeft.ToString();
             packet.LinkTarget = url;
@@ -74,7 +69,29 @@ namespace BreastRadiology.XUnitTests
             if (cardinalityRight != null)
                 packet.CardinalityRight = cardinalityRight.ToString();
             sd.AddExtension(Global.ResourceMapLinkUrl, new FhirString(packet.ToString()));
-            return sd;
+            return packet;
+        }
+
+        internal static dynamic AddComponentLink(this StructureDefinition sd,
+            String url,
+            SDefEditor.Cardinality cardinalityLeft,
+            SDefEditor.Cardinality cardinalityRight,
+            String componentRef,
+            String types,
+            params String[] targets)
+        {
+            dynamic packet = new JObject();
+            packet.LinkType = SVGGlobal.ComponentType;
+            if (cardinalityLeft != null)
+                packet.CardinalityLeft = cardinalityLeft.ToString();
+            packet.LinkTarget = url;
+            packet.ComponentHRef = componentRef;
+            packet.Types = types;
+            packet.References = new JArray(targets);
+            if (cardinalityRight != null)
+                packet.CardinalityRight = cardinalityRight.ToString();
+            sd.AddExtension(Global.ResourceMapLinkUrl, new FhirString(packet.ToString()));
+            return packet;
         }
     }
 }

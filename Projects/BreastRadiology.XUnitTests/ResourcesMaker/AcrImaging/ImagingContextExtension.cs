@@ -1,6 +1,7 @@
 using System;
 using System.Collections.Generic;
 using System.Diagnostics;
+using System.Drawing;
 using System.IO;
 using System.Linq;
 using System.Text;
@@ -14,23 +15,27 @@ namespace BreastRadiology.XUnitTests
 {
     partial class ResourcesMaker : ConverterBase
     {
-        void SliceOid(SDefEditor e,
-            ElementTreeNode extensionNode,
-            String sliceName,
-            String shortText,
-            Markdown definition,
-            out ElementTreeSlice extensionSlice,
-            out ElementTreeNode valueXNode
-        )
+        const String imageInstanceSliceName = "imageInstance";
+
+        void ICStudyOid(SDefEditor e,
+            ElementTreeNode extensionNode)
         {
+            const String sliceName = "studyOid";
+
             Self.Slice(e,
                 extensionNode,
                 sliceName,
-                shortText,
-                definition,
-                out extensionSlice,
-                out valueXNode
+                "Study Uid",
+                new Markdown()
+                  .Paragraph("Specifies DICOM Study"),
+                out ElementTreeSlice extensionSlice,
+                out ElementTreeNode valueXNode
             );
+
+            extensionSlice.ElementDefinition
+                .Single()
+                ;
+
             valueXNode.ElementDefinition
                 .Type("oid")
                 .Single()
@@ -41,27 +46,6 @@ namespace BreastRadiology.XUnitTests
                 null,
                 Global.ElementAnchor(extensionSlice.ElementDefinition),
                 "Oid");
-        }
-
-        void ICStudyOid(SDefEditor e,
-            ElementTreeNode extensionNode)
-        {
-            SliceOid(e,
-                extensionNode,
-                "studyUid",
-                "Study Uid",
-                new Markdown()
-                    .Paragraph("Specifies DICOM Study"),
-                out ElementTreeSlice extensionSlice,
-                out ElementTreeNode valueXNode
-            );
-            extensionSlice.ElementDefinition
-                .Single()
-                ;
-            valueXNode.ElementDefinition
-                .Type("oid")
-                .Single()
-                ;
         }
 
         void ICDerivedFrom(SDefEditor e,
@@ -97,32 +81,43 @@ namespace BreastRadiology.XUnitTests
         void ICSeriesOid(SDefEditor e,
                 ElementTreeNode extensionNode)
         {
-            SliceOid(e,
+            const String sliceName = "seriesOid";
+
+            Self.Slice(e,
                 extensionNode,
-                "seriesUid",
+                sliceName,
                 "Series Uid",
                 new Markdown()
                     .Paragraph("Specifies DICOM Series"),
                 out ElementTreeSlice extensionSlice,
                 out ElementTreeNode valueXNode
             );
+
             extensionSlice.ElementDefinition
                 .Single()
                 ;
+
             valueXNode.ElementDefinition
                 .Type("oid")
                 .Single()
                 ;
+
+            e.AddComponentLink(sliceName.ToMachineName(),
+                new SDefEditor.Cardinality(extensionSlice.ElementDefinition),
+                null,
+                Global.ElementAnchor(extensionSlice.ElementDefinition),
+                "Oid");
         }
 
         void ICInstance(SDefEditor e,
             ElementTreeNode parentExtensionNode)
         {
+
             ElementTreeNode extensionNode;
             {
                 Self.Slice(e,
                     parentExtensionNode,
-                    "imageInstance",
+                    imageInstanceSliceName,
                     "Image Instance",
                     new Markdown()
                         .Paragraph("Specifies DICOM Instance")
@@ -131,50 +126,80 @@ namespace BreastRadiology.XUnitTests
                     out ElementTreeNode valueXNode
                 );
                 extensionSlice.ElementDefinition
-                    .OneToMany()
+                    .ZeroToMany()
                     ;
                 valueXNode.ElementDefinition
                     .Type("code")
                     .Zero()
                     ;
-                e.AddComponentLink("imageInstance",
+                e.AddComponentLink(imageInstanceSliceName.ToMachineName(),
                     new SDefEditor.Cardinality(extensionSlice.ElementDefinition),
                     null,
                     Global.ElementAnchor(extensionSlice.ElementDefinition),
-                    "XXYYZ");
+                    "Image Instance");
                 extensionNode = extensionSlice.Nodes.GetItem("extension");
             }
 
             // Slice sopClass .
             {
-                SliceOid(e,
-                    parentExtensionNode,
-                    "sopClass",
-                    "Image Instance SopClass",
+                const String sliceName = "sopClass";
+
+                Self.Slice(e,
+                    extensionNode,
+                    sliceName,
+                    "Image SOPClass",
                     new Markdown()
-                        .Paragraph("Image Instance SopClass"),
+                        .Paragraph("Specifies DICOM Image SOPClass"),
                     out ElementTreeSlice extensionSlice,
                     out ElementTreeNode valueXNode
                 );
+
                 extensionSlice.ElementDefinition
                     .ZeroToOne()
                     ;
+
+                valueXNode.ElementDefinition
+                    .Type("oid")
+                    .Single()
+                    ;
+
+                e.AddComponentChildLink(sliceName.ToMachineName(),
+                    imageInstanceSliceName,
+                    new SDefEditor.Cardinality(extensionSlice.ElementDefinition),
+                    null,
+                    Global.ElementAnchor(extensionSlice.ElementDefinition),
+                    "Oid");
             }
 
             // Slice UID .
             {
-                SliceOid(e,
-                    parentExtensionNode,
-                    "uid",
-                    "Image Instance UID",
+                const String sliceName = "imageUid";
+
+                Self.Slice(e,
+                    extensionNode,
+                    sliceName,
+                    "Image Instance Uid",
                     new Markdown()
-                        .Paragraph("Image Instance UID"),
+                        .Paragraph("Specifies DICOM Image Instance Uid"),
                     out ElementTreeSlice extensionSlice,
                     out ElementTreeNode valueXNode
                 );
+
                 extensionSlice.ElementDefinition
+                    .ZeroToOne()
+                    ;
+
+                valueXNode.ElementDefinition
+                    .Type("oid")
                     .Single()
                     ;
+
+                e.AddComponentChildLink(sliceName.ToMachineName(),
+                    imageInstanceSliceName,
+                    new SDefEditor.Cardinality(extensionSlice.ElementDefinition),
+                    null,
+                    Global.ElementAnchor(extensionSlice.ElementDefinition),
+                    "Oid");
             }
 
             // frameNumber
@@ -197,7 +222,8 @@ namespace BreastRadiology.XUnitTests
                     .Single()
                     ;
 
-                e.AddComponentLink(sliceName.ToMachineName(),
+                e.AddComponentChildLink(sliceName.ToMachineName(),
+                    imageInstanceSliceName,
                     new SDefEditor.Cardinality(extensionSlice.ElementDefinition),
                     null,
                     Global.ElementAnchor(extensionSlice.ElementDefinition),
@@ -209,51 +235,166 @@ namespace BreastRadiology.XUnitTests
 
             // Slice Observation UID .
             {
-                SliceOid(e,
-                    parentExtensionNode,
-                    "observationUid",
+                const String sliceName = "observationUid";
+
+                Self.Slice(e,
+                    extensionNode,
+                    sliceName,
                     "Image Instance Observation UID",
                     new Markdown()
                         .Paragraph("Image Instance Observation UID"),
                     out ElementTreeSlice extensionSlice,
                     out ElementTreeNode valueXNode
                 );
+
                 extensionSlice.ElementDefinition
-                    .ZeroToMany()
+                    .ZeroToOne()
                     ;
+
+                valueXNode.ElementDefinition
+                    .Type("oid")
+                    .Single()
+                    ;
+
+                e.AddComponentChildLink(sliceName.ToMachineName(),
+                    imageInstanceSliceName,
+                    new SDefEditor.Cardinality(extensionSlice.ElementDefinition),
+                    null,
+                    Global.ElementAnchor(extensionSlice.ElementDefinition),
+                    "Oid");
             }
 
             // Slice Tracking UID .
             {
-                SliceOid(e,
-                    parentExtensionNode,
-                    "trackingUid",
+                const String sliceName = "trackingUid";
+
+                Self.Slice(e,
+                    extensionNode,
+                    sliceName,
                     "Image Instance Tracking UID",
                     new Markdown()
                         .Paragraph("Image Instance Tracking UID"),
                     out ElementTreeSlice extensionSlice,
                     out ElementTreeNode valueXNode
                 );
+
                 extensionSlice.ElementDefinition
-                    .ZeroToMany()
+                    .ZeroToOne()
                     ;
+
+                valueXNode.ElementDefinition
+                    .Type("oid")
+                    .Single()
+                    ;
+
+                e.AddComponentChildLink(sliceName.ToMachineName(),
+                    imageInstanceSliceName,
+                    new SDefEditor.Cardinality(extensionSlice.ElementDefinition),
+                    null,
+                    Global.ElementAnchor(extensionSlice.ElementDefinition),
+                    "Oid");
             }
 
-            // imageRegion
-            //{
-            //    StructureDefinition extensionStructDef = Self.ImageRegionExtension.Value();
-            //    ElementDefinition extensionDef = e.ApplyExtension(extensionNode,
-            //            "imageRegion",
-            //            extensionStructDef.Url)
-            //        .ElementDefinition
-            //        .ZeroToOne();
+            ICRegion(e, extensionNode);
+        }
 
-            //    e.AddExtensionLink(extensionStructDef.Url,
-            //        new SDefEditor.Cardinality(extensionDef),
-            //        "Image Region",
-            //        Global.ElementAnchor(extensionDef),
-            //        false);
-            //}
+        void ICRegion(SDefEditor e,
+            ElementTreeNode parentExtensionNode)
+        {
+            String imageRegionSliceName = "imageRegion";
+
+            ElementTreeNode extensionNode;
+            {
+                Self.Slice(e,
+                    parentExtensionNode,
+                    imageRegionSliceName,
+                    "Image Region",
+                    new Markdown()
+                        .Paragraph("Specifies region in a DICOM image or frame")
+                    ,
+                    out ElementTreeSlice extensionSlice,
+                    out ElementTreeNode valueXNode
+                );
+                extensionSlice.ElementDefinition
+                    .ZeroToOne()
+                    ;
+                valueXNode.ElementDefinition
+                    .Type("code")
+                    .Zero()
+                    ;
+
+                e.AddComponentChildLink(imageRegionSliceName.ToMachineName(),
+                    imageInstanceSliceName,
+                    new SDefEditor.Cardinality(extensionSlice.ElementDefinition),
+                    null,
+                    Global.ElementAnchor(extensionSlice.ElementDefinition),
+                    "Image Region");
+                extensionNode = extensionSlice.Nodes.GetItem("extension");
+            }
+
+            // Slice imageRegion .
+            {
+                const String sliceName = "regionType ";
+
+                ValueSet regionType = Self.GraphicTypeVS.Value();
+                Self.Slice(e,
+                    extensionNode,
+                    sliceName,
+                    "Image Region Type",
+                    new Markdown()
+                        .Paragraph("Image Region Type."),
+                    out ElementTreeSlice extensionSlice,
+                    out ElementTreeNode valueXNode
+                );
+                extensionSlice.ElementDefinition
+                    .Single()
+                    ;
+                valueXNode.ElementDefinition
+                    .Binding(regionType, BindingStrength.Extensible)
+                    .Type("CodeableConcept")
+                    .Single()
+                    ;
+                e.AddComponentChildLink(sliceName,
+                    imageRegionSliceName,
+                    new SDefEditor.Cardinality(extensionSlice.ElementDefinition),
+                    null,
+                    Global.ElementAnchor(extensionSlice.ElementDefinition),
+                    "CodeableConcept",
+                    regionType.Url);
+
+            }
+
+            // Slice coordinates.
+            {
+                Self.Slice(e,
+                    extensionNode,
+                    "coordinates",
+                    "Image Coordinates",
+                    new Markdown()
+                        .Paragraph("Image Coordinates.")
+                        .Paragraph("String is a series of space separated points.")
+                        .Paragraph("Each point is a comma separated sequence of decimal values",
+                            "one for each dimension of the point.")
+                        .Paragraph("Point may have two or three dimensions.")
+                        .Paragraph("Each and every point in this string will have the same number of dimensions.")
+                    ,
+                    out ElementTreeSlice extensionSlice,
+                    out ElementTreeNode valueXNode
+                );
+                extensionSlice.ElementDefinition
+                    .Single()
+                    ;
+                valueXNode.ElementDefinition
+                    .Type("string")
+                    .Single()
+                    ;
+                e.AddComponentChildLink("Coordinates",
+                    imageRegionSliceName,
+                    new SDefEditor.Cardinality(extensionSlice.ElementDefinition),
+                    null,
+                    Global.ElementAnchor(extensionSlice.ElementDefinition),
+                    "string");
+            }
         }
 
         public SDTaskVar ImagingContextExtension = new SDTaskVar(
@@ -307,22 +448,8 @@ namespace BreastRadiology.XUnitTests
                 Self.ICStudyOid(e, extensionNode);
                 Self.ICDerivedFrom(e, extensionNode);
                 Self.ICSeriesOid(e, extensionNode);
+                Self.ICInstance(e, extensionNode);
 
-                // instance
-                {
-                    StructureDefinition extensionStructDef = Self.ImageInstanceExtension.Value();
-                    ElementDefinition extensionDef = e.ApplyExtension(extensionNode,
-                            "instance",
-                            extensionStructDef.Url)
-                        .ElementDefinition
-                        .ZeroToMany();
-
-                    e.AddExtensionLink(extensionStructDef.Url,
-                        new SDefEditor.Cardinality(extensionDef),
-                        "Instance",
-                        Global.ElementAnchor(extensionDef),
-                        false);
-                }
                 e.SDef.Snapshot = null;
                 //e.IntroDoc
                 //    ;

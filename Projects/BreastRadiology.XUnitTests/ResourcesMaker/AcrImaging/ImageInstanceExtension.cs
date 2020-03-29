@@ -15,7 +15,7 @@ namespace BreastRadiology.XUnitTests
     partial class ResourcesMaker : ConverterBase
     {
 
-        public SDTaskVar ImageInstanceExtension = new SDTaskVar(
+        public SDTaskVar ImageInstanceExtensionX = new SDTaskVar(
             (out StructureDefinition s) =>
             {
                 SDefEditor e;
@@ -161,20 +161,20 @@ namespace BreastRadiology.XUnitTests
                 }
 
                 // imageRegion
-                {
-                    StructureDefinition extensionStructDef = Self.ImageRegionExtension.Value();
-                    ElementDefinition extensionDef = e.ApplyExtension(extensionNode,
-                            "imageRegion",
-                            extensionStructDef.Url)
-                        .ElementDefinition
-                        .ZeroToOne();
+                //{
+                //    StructureDefinition extensionStructDef = Self.ImageRegionExtension.Value();
+                //    ElementDefinition extensionDef = e.ApplyExtension(extensionNode,
+                //            "imageRegion",
+                //            extensionStructDef.Url)
+                //        .ElementDefinition
+                //        .ZeroToOne();
 
-                    e.AddExtensionLink(extensionStructDef.Url,
-                        new SDefEditor.Cardinality(extensionDef),
-                        "Image Region",
-                        Global.ElementAnchor(extensionDef),
-                        false);
-                }
+                //    e.AddExtensionLink(extensionStructDef.Url,
+                //        new SDefEditor.Cardinality(extensionDef),
+                //        "Image Region",
+                //        Global.ElementAnchor(extensionDef),
+                //        false);
+                //}
 
                 //e.IntroDoc
                 //    ;

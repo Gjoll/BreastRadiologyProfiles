@@ -15,23 +15,55 @@
     },
     {
       "url": "http://www.fragment.com/maplink",
-      "valueString": "{\r\n  \"LinkType\": \"fragment\",\r\n  \"ShowChildren\": false,\r\n  \"LinkTarget\": \"http://hl7.org/fhir/us/breast-radiology/StructureDefinition/AcrHeaderFragment\"\r\n}"
+      "valueString": "{\r\n  \"LinkType\": \"fragment\",\r\n  \"LinkTarget\": \"http://hl7.org/fhir/us/breast-radiology/StructureDefinition/AcrHeaderFragment\"\r\n}"
     },
     {
       "url": "http://www.fragment.com/maplink",
-      "valueString": "{\r\n  \"LinkType\": \"component\",\r\n  \"ShowChildren\": false,\r\n  \"CardinalityLeft\": \"0..1\",\r\n  \"LinkTarget\": \"StudyUid\",\r\n  \"ComponentHRef\": \"StructureDefinition-{SDName}-definitions.html#Extension.extension:studyUid\",\r\n  \"Types\": \"Oid\",\r\n  \"References\": []\r\n}"
+      "valueString": "{\r\n  \"LinkType\": \"component\",\r\n  \"CardinalityLeft\": \"1..1\",\r\n  \"LinkTarget\": \"StudyOid\",\r\n  \"ComponentHRef\": \"StructureDefinition-{SDName}-definitions.html#Extension.extension:studyOid\",\r\n  \"Types\": \"Oid\",\r\n  \"References\": []\r\n}"
     },
     {
       "url": "http://www.fragment.com/maplink",
-      "valueString": "{\r\n  \"LinkType\": \"component\",\r\n  \"ShowChildren\": false,\r\n  \"CardinalityLeft\": \"0..1\",\r\n  \"LinkTarget\": \"DerivedFrom\",\r\n  \"ComponentHRef\": \"StructureDefinition-{SDName}-definitions.html#Extension.extension:derivedFrom\",\r\n  \"Types\": \"Reference\",\r\n  \"References\": []\r\n}"
+      "valueString": "{\r\n  \"LinkType\": \"component\",\r\n  \"CardinalityLeft\": \"0..1\",\r\n  \"LinkTarget\": \"DerivedFrom\",\r\n  \"ComponentHRef\": \"StructureDefinition-{SDName}-definitions.html#Extension.extension:derivedFrom\",\r\n  \"Types\": \"Reference\",\r\n  \"References\": []\r\n}"
     },
     {
       "url": "http://www.fragment.com/maplink",
-      "valueString": "{\r\n  \"LinkType\": \"component\",\r\n  \"ShowChildren\": false,\r\n  \"CardinalityLeft\": \"0..1\",\r\n  \"LinkTarget\": \"SeriesUid\",\r\n  \"ComponentHRef\": \"StructureDefinition-{SDName}-definitions.html#Extension.extension:seriesUid\",\r\n  \"Types\": \"Oid\",\r\n  \"References\": []\r\n}"
+      "valueString": "{\r\n  \"LinkType\": \"component\",\r\n  \"CardinalityLeft\": \"1..1\",\r\n  \"LinkTarget\": \"SeriesOid\",\r\n  \"ComponentHRef\": \"StructureDefinition-{SDName}-definitions.html#Extension.extension:seriesOid\",\r\n  \"Types\": \"Oid\",\r\n  \"References\": []\r\n}"
     },
     {
       "url": "http://www.fragment.com/maplink",
-      "valueString": "{\r\n  \"LinkType\": \"extension\",\r\n  \"ShowChildren\": false,\r\n  \"CardinalityLeft\": \"0..*\",\r\n  \"ComponentHRef\": \"StructureDefinition-{SDName}-definitions.html#Extension.extension:instance\",\r\n  \"LocalName\": \"Instance\",\r\n  \"LinkTarget\": \"http://hl7.org/fhir/us/breast-radiology/StructureDefinition/ImageInstanceExtension\"\r\n}"
+      "valueString": "{\r\n  \"LinkType\": \"component\",\r\n  \"CardinalityLeft\": \"0..*\",\r\n  \"LinkTarget\": \"ImageInstance\",\r\n  \"ComponentHRef\": \"StructureDefinition-{SDName}-definitions.html#Extension.extension:imageInstance\",\r\n  \"Types\": \"Image Instance\",\r\n  \"References\": []\r\n}"
+    },
+    {
+      "url": "http://www.fragment.com/maplink",
+      "valueString": "{\r\n  \"LinkType\": \"componentChild\",\r\n  \"Parent\": \"imageInstance\",\r\n  \"CardinalityLeft\": \"0..1\",\r\n  \"LinkTarget\": \"SopClass\",\r\n  \"ComponentHRef\": \"StructureDefinition-{SDName}-definitions.html#Extension.extension.extension:sopClass\",\r\n  \"Types\": \"Oid\",\r\n  \"References\": []\r\n}"
+    },
+    {
+      "url": "http://www.fragment.com/maplink",
+      "valueString": "{\r\n  \"LinkType\": \"componentChild\",\r\n  \"Parent\": \"imageInstance\",\r\n  \"CardinalityLeft\": \"0..1\",\r\n  \"LinkTarget\": \"ImageUid\",\r\n  \"ComponentHRef\": \"StructureDefinition-{SDName}-definitions.html#Extension.extension.extension:imageUid\",\r\n  \"Types\": \"Oid\",\r\n  \"References\": []\r\n}"
+    },
+    {
+      "url": "http://www.fragment.com/maplink",
+      "valueString": "{\r\n  \"LinkType\": \"componentChild\",\r\n  \"Parent\": \"imageInstance\",\r\n  \"CardinalityLeft\": \"0..*\",\r\n  \"LinkTarget\": \"FrameNumber\",\r\n  \"ComponentHRef\": \"StructureDefinition-{SDName}-definitions.html#Extension.extension:frameNumber\",\r\n  \"Types\": \"Oid\",\r\n  \"References\": []\r\n}"
+    },
+    {
+      "url": "http://www.fragment.com/maplink",
+      "valueString": "{\r\n  \"LinkType\": \"componentChild\",\r\n  \"Parent\": \"imageInstance\",\r\n  \"CardinalityLeft\": \"0..1\",\r\n  \"LinkTarget\": \"ObservationUid\",\r\n  \"ComponentHRef\": \"StructureDefinition-{SDName}-definitions.html#Extension.extension.extension:observationUid\",\r\n  \"Types\": \"Oid\",\r\n  \"References\": []\r\n}"
+    },
+    {
+      "url": "http://www.fragment.com/maplink",
+      "valueString": "{\r\n  \"LinkType\": \"componentChild\",\r\n  \"Parent\": \"imageInstance\",\r\n  \"CardinalityLeft\": \"0..1\",\r\n  \"LinkTarget\": \"TrackingUid\",\r\n  \"ComponentHRef\": \"StructureDefinition-{SDName}-definitions.html#Extension.extension.extension:trackingUid\",\r\n  \"Types\": \"Oid\",\r\n  \"References\": []\r\n}"
+    },
+    {
+      "url": "http://www.fragment.com/maplink",
+      "valueString": "{\r\n  \"LinkType\": \"componentChild\",\r\n  \"Parent\": \"imageInstance\",\r\n  \"CardinalityLeft\": \"0..1\",\r\n  \"LinkTarget\": \"ImageRegion\",\r\n  \"ComponentHRef\": \"StructureDefinition-{SDName}-definitions.html#Extension.extension.extension:imageRegion\",\r\n  \"Types\": \"Image Region\",\r\n  \"References\": []\r\n}"
+    },
+    {
+      "url": "http://www.fragment.com/maplink",
+      "valueString": "{\r\n  \"LinkType\": \"componentChild\",\r\n  \"Parent\": \"imageRegion\",\r\n  \"CardinalityLeft\": \"1..1\",\r\n  \"LinkTarget\": \"regionType \",\r\n  \"ComponentHRef\": \"StructureDefinition-{SDName}-definitions.html#Extension.extension.extension.extension:regionType \",\r\n  \"Types\": \"CodeableConcept\",\r\n  \"References\": [\r\n    \"http://hl7.org/fhir/us/breast-radiology/ValueSet/GraphicTypeVS\"\r\n  ]\r\n}"
+    },
+    {
+      "url": "http://www.fragment.com/maplink",
+      "valueString": "{\r\n  \"LinkType\": \"componentChild\",\r\n  \"Parent\": \"imageRegion\",\r\n  \"CardinalityLeft\": \"1..1\",\r\n  \"LinkTarget\": \"Coordinates\",\r\n  \"ComponentHRef\": \"StructureDefinition-{SDName}-definitions.html#Extension.extension.extension.extension:coordinates\",\r\n  \"Types\": \"string\",\r\n  \"References\": []\r\n}"
     }
   ],
   "url": "http://hl7.org/fhir/us/breast-radiology/StructureDefinition/ImagingContextExtension",
@@ -179,9 +211,9 @@
         ]
       },
       {
-        "id": "Extension.extension:studyUid",
+        "id": "Extension.extension:studyOid",
         "path": "Extension.extension",
-        "sliceName": "studyUid",
+        "sliceName": "studyOid",
         "short": "Study Uid",
         "definition": "Specifies DICOM Study",
         "comment": "There can be no stigma associated with the use of extensions by any application, project, or standard - regardless of the institution or jurisdiction that uses or defines the extensions.  The use of extensions is what allows the FHIR specification to retain a core level of simplicity for everyone.",
@@ -211,7 +243,7 @@
         ]
       },
       {
-        "id": "Extension.extension:studyUid.id",
+        "id": "Extension.extension:studyOid.id",
         "path": "Extension.extension.id",
         "representation": [
           "xmlAttr"
@@ -240,7 +272,7 @@
         ]
       },
       {
-        "id": "Extension.extension:studyUid.extension",
+        "id": "Extension.extension:studyOid.extension",
         "path": "Extension.extension.extension",
         "slicing": {
           "discriminator": [
@@ -281,13 +313,13 @@
         ]
       },
       {
-        "id": "Extension.extension:studyUid.url",
+        "id": "Extension.extension:studyOid.url",
         "path": "Extension.extension.url",
         "representation": [
           "xmlAttr"
         ],
         "short": "identifies the meaning of the extension",
-        "definition": "Url for studyUid complex extension item.",
+        "definition": "Url for studyOid complex extension item.",
         "comment": "The definition may point directly to a computable or human-readable definition of the extensibility codes, or it may be a logical URI as declared in some other specification. The definition SHALL be a URI for the Structure Definition defining the extension.",
         "min": 1,
         "max": "1",
@@ -301,7 +333,7 @@
             "code": "uri"
           }
         ],
-        "fixedUri": "studyUid",
+        "fixedUri": "studyOid",
         "isModifier": false,
         "isSummary": false,
         "mapping": [
@@ -312,7 +344,7 @@
         ]
       },
       {
-        "id": "Extension.extension:studyUid.value[x]",
+        "id": "Extension.extension:studyOid.value[x]",
         "path": "Extension.extension.value[x]",
         "short": "Value of extension",
         "definition": "Value of extension - must be one of a constrained set of the data types (see [Extensibility](extensibility.html) for a list).",
@@ -500,9 +532,9 @@
         ]
       },
       {
-        "id": "Extension.extension:seriesUid",
+        "id": "Extension.extension:seriesOid",
         "path": "Extension.extension",
-        "sliceName": "seriesUid",
+        "sliceName": "seriesOid",
         "short": "Series Uid",
         "definition": "Specifies DICOM Series",
         "comment": "There can be no stigma associated with the use of extensions by any application, project, or standard - regardless of the institution or jurisdiction that uses or defines the extensions.  The use of extensions is what allows the FHIR specification to retain a core level of simplicity for everyone.",
@@ -532,7 +564,7 @@
         ]
       },
       {
-        "id": "Extension.extension:seriesUid.id",
+        "id": "Extension.extension:seriesOid.id",
         "path": "Extension.extension.id",
         "representation": [
           "xmlAttr"
@@ -561,7 +593,7 @@
         ]
       },
       {
-        "id": "Extension.extension:seriesUid.extension",
+        "id": "Extension.extension:seriesOid.extension",
         "path": "Extension.extension.extension",
         "slicing": {
           "discriminator": [
@@ -602,13 +634,13 @@
         ]
       },
       {
-        "id": "Extension.extension:seriesUid.url",
+        "id": "Extension.extension:seriesOid.url",
         "path": "Extension.extension.url",
         "representation": [
           "xmlAttr"
         ],
         "short": "identifies the meaning of the extension",
-        "definition": "Url for seriesUid complex extension item.",
+        "definition": "Url for seriesOid complex extension item.",
         "comment": "The definition may point directly to a computable or human-readable definition of the extensibility codes, or it may be a logical URI as declared in some other specification. The definition SHALL be a URI for the Structure Definition defining the extension.",
         "min": 1,
         "max": "1",
@@ -622,7 +654,7 @@
             "code": "uri"
           }
         ],
-        "fixedUri": "seriesUid",
+        "fixedUri": "seriesOid",
         "isModifier": false,
         "isSummary": false,
         "mapping": [
@@ -633,7 +665,7 @@
         ]
       },
       {
-        "id": "Extension.extension:seriesUid.value[x]",
+        "id": "Extension.extension:seriesOid.value[x]",
         "path": "Extension.extension.value[x]",
         "short": "Value of extension",
         "definition": "Value of extension - must be one of a constrained set of the data types (see [Extensibility](extensibility.html) for a list).",
@@ -659,12 +691,12 @@
         ]
       },
       {
-        "id": "Extension.extension:instance",
+        "id": "Extension.extension:imageInstance",
         "path": "Extension.extension",
-        "sliceName": "instance",
-        "short": "instance extension.",
-        "definition": "This extension slice contains the instance extension.",
-        "comment": "This is one component of a group of components that are part of the observation.",
+        "sliceName": "imageInstance",
+        "short": "Image Instance",
+        "definition": "Specifies DICOM Instance",
+        "comment": "There can be no stigma associated with the use of extensions by any application, project, or standard - regardless of the institution or jurisdiction that uses or defines the extensions.  The use of extensions is what allows the FHIR specification to retain a core level of simplicity for everyone.",
         "alias": [
           "extensions",
           "user content"
@@ -678,10 +710,7 @@
         },
         "type": [
           {
-            "code": "Extension",
-            "profile": [
-              "http://hl7.org/fhir/us/breast-radiology/StructureDefinition/ImageInstanceExtension"
-            ]
+            "code": "Extension"
           }
         ],
         "isModifier": false,
@@ -690,6 +719,1409 @@
           {
             "identity": "rim",
             "map": "n/a"
+          }
+        ]
+      },
+      {
+        "id": "Extension.extension:imageInstance.id",
+        "path": "Extension.extension.id",
+        "representation": [
+          "xmlAttr"
+        ],
+        "short": "Unique id for inter-element referencing",
+        "definition": "Unique id for the element within a resource (for internal references). This may be any string value that does not contain spaces.",
+        "min": 0,
+        "max": "1",
+        "base": {
+          "path": "Element.id",
+          "min": 0,
+          "max": "1"
+        },
+        "type": [
+          {
+            "code": "string"
+          }
+        ],
+        "isModifier": false,
+        "isSummary": false,
+        "mapping": [
+          {
+            "identity": "rim",
+            "map": "n/a"
+          }
+        ]
+      },
+      {
+        "id": "Extension.extension:imageInstance.extension",
+        "path": "Extension.extension.extension",
+        "slicing": {
+          "discriminator": [
+            {
+              "type": "value",
+              "path": "url"
+            }
+          ],
+          "description": "Extensions are always sliced by (at least) url",
+          "rules": "open"
+        },
+        "short": "Additional content defined by implementations",
+        "definition": "May be used to represent additional information that is not part of the basic definition of the element. To make the use of extensions safe and manageable, there is a strict set of governance  applied to the definition and use of extensions. Though any implementer can define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension.",
+        "comment": "There can be no stigma associated with the use of extensions by any application, project, or standard - regardless of the institution or jurisdiction that uses or defines the extensions.  The use of extensions is what allows the FHIR specification to retain a core level of simplicity for everyone.",
+        "alias": [
+          "extensions",
+          "user content"
+        ],
+        "min": 0,
+        "max": "0",
+        "base": {
+          "path": "Element.extension",
+          "min": 0,
+          "max": "*"
+        },
+        "type": [
+          {
+            "code": "Extension"
+          }
+        ],
+        "isModifier": false,
+        "isSummary": false,
+        "mapping": [
+          {
+            "identity": "rim",
+            "map": "n/a"
+          }
+        ]
+      },
+      {
+        "id": "Extension.extension:imageInstance.extension:sopClass",
+        "path": "Extension.extension.extension",
+        "sliceName": "sopClass",
+        "short": "Image SOPClass",
+        "definition": "Specifies DICOM Image SOPClass",
+        "comment": "There can be no stigma associated with the use of extensions by any application, project, or standard - regardless of the institution or jurisdiction that uses or defines the extensions.  The use of extensions is what allows the FHIR specification to retain a core level of simplicity for everyone.",
+        "alias": [
+          "extensions",
+          "user content"
+        ],
+        "min": 0,
+        "max": "1",
+        "base": {
+          "path": "Element.extension",
+          "min": 0,
+          "max": "*"
+        },
+        "type": [
+          {
+            "code": "Extension"
+          }
+        ],
+        "isModifier": false,
+        "isSummary": false,
+        "mapping": [
+          {
+            "identity": "rim",
+            "map": "n/a"
+          }
+        ]
+      },
+      {
+        "id": "Extension.extension:imageInstance.extension:sopClass.id",
+        "path": "Extension.extension.extension.id",
+        "representation": [
+          "xmlAttr"
+        ],
+        "short": "Unique id for inter-element referencing",
+        "definition": "Unique id for the element within a resource (for internal references). This may be any string value that does not contain spaces.",
+        "min": 0,
+        "max": "1",
+        "base": {
+          "path": "Element.id",
+          "min": 0,
+          "max": "1"
+        },
+        "type": [
+          {
+            "code": "string"
+          }
+        ],
+        "isModifier": false,
+        "isSummary": false,
+        "mapping": [
+          {
+            "identity": "rim",
+            "map": "n/a"
+          }
+        ]
+      },
+      {
+        "id": "Extension.extension:imageInstance.extension:sopClass.extension",
+        "path": "Extension.extension.extension.extension",
+        "slicing": {
+          "discriminator": [
+            {
+              "type": "value",
+              "path": "url"
+            }
+          ],
+          "description": "Extensions are always sliced by (at least) url",
+          "rules": "open"
+        },
+        "short": "Additional content defined by implementations",
+        "definition": "May be used to represent additional information that is not part of the basic definition of the element. To make the use of extensions safe and manageable, there is a strict set of governance  applied to the definition and use of extensions. Though any implementer can define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension.",
+        "comment": "There can be no stigma associated with the use of extensions by any application, project, or standard - regardless of the institution or jurisdiction that uses or defines the extensions.  The use of extensions is what allows the FHIR specification to retain a core level of simplicity for everyone.",
+        "alias": [
+          "extensions",
+          "user content"
+        ],
+        "min": 0,
+        "max": "0",
+        "base": {
+          "path": "Element.extension",
+          "min": 0,
+          "max": "*"
+        },
+        "type": [
+          {
+            "code": "Extension"
+          }
+        ],
+        "isModifier": false,
+        "isSummary": false,
+        "mapping": [
+          {
+            "identity": "rim",
+            "map": "n/a"
+          }
+        ]
+      },
+      {
+        "id": "Extension.extension:imageInstance.extension:sopClass.url",
+        "path": "Extension.extension.extension.url",
+        "representation": [
+          "xmlAttr"
+        ],
+        "short": "identifies the meaning of the extension",
+        "definition": "Url for sopClass complex extension item.",
+        "comment": "The definition may point directly to a computable or human-readable definition of the extensibility codes, or it may be a logical URI as declared in some other specification. The definition SHALL be a URI for the Structure Definition defining the extension.",
+        "min": 1,
+        "max": "1",
+        "base": {
+          "path": "Extension.url",
+          "min": 1,
+          "max": "1"
+        },
+        "type": [
+          {
+            "code": "uri"
+          }
+        ],
+        "fixedUri": "sopClass",
+        "isModifier": false,
+        "isSummary": false,
+        "mapping": [
+          {
+            "identity": "rim",
+            "map": "N/A"
+          }
+        ]
+      },
+      {
+        "id": "Extension.extension:imageInstance.extension:sopClass.value[x]",
+        "path": "Extension.extension.extension.value[x]",
+        "short": "Value of extension",
+        "definition": "Value of extension - must be one of a constrained set of the data types (see [Extensibility](extensibility.html) for a list).",
+        "min": 1,
+        "max": "1",
+        "base": {
+          "path": "Extension.value[x]",
+          "min": 0,
+          "max": "1"
+        },
+        "type": [
+          {
+            "code": "oid"
+          }
+        ],
+        "isModifier": false,
+        "isSummary": false,
+        "mapping": [
+          {
+            "identity": "rim",
+            "map": "N/A"
+          }
+        ]
+      },
+      {
+        "id": "Extension.extension:imageInstance.extension:imageUid",
+        "path": "Extension.extension.extension",
+        "sliceName": "imageUid",
+        "short": "Image Instance Uid",
+        "definition": "Specifies DICOM Image Instance Uid",
+        "comment": "There can be no stigma associated with the use of extensions by any application, project, or standard - regardless of the institution or jurisdiction that uses or defines the extensions.  The use of extensions is what allows the FHIR specification to retain a core level of simplicity for everyone.",
+        "alias": [
+          "extensions",
+          "user content"
+        ],
+        "min": 0,
+        "max": "1",
+        "base": {
+          "path": "Element.extension",
+          "min": 0,
+          "max": "*"
+        },
+        "type": [
+          {
+            "code": "Extension"
+          }
+        ],
+        "isModifier": false,
+        "isSummary": false,
+        "mapping": [
+          {
+            "identity": "rim",
+            "map": "n/a"
+          }
+        ]
+      },
+      {
+        "id": "Extension.extension:imageInstance.extension:imageUid.id",
+        "path": "Extension.extension.extension.id",
+        "representation": [
+          "xmlAttr"
+        ],
+        "short": "Unique id for inter-element referencing",
+        "definition": "Unique id for the element within a resource (for internal references). This may be any string value that does not contain spaces.",
+        "min": 0,
+        "max": "1",
+        "base": {
+          "path": "Element.id",
+          "min": 0,
+          "max": "1"
+        },
+        "type": [
+          {
+            "code": "string"
+          }
+        ],
+        "isModifier": false,
+        "isSummary": false,
+        "mapping": [
+          {
+            "identity": "rim",
+            "map": "n/a"
+          }
+        ]
+      },
+      {
+        "id": "Extension.extension:imageInstance.extension:imageUid.extension",
+        "path": "Extension.extension.extension.extension",
+        "slicing": {
+          "discriminator": [
+            {
+              "type": "value",
+              "path": "url"
+            }
+          ],
+          "description": "Extensions are always sliced by (at least) url",
+          "rules": "open"
+        },
+        "short": "Additional content defined by implementations",
+        "definition": "May be used to represent additional information that is not part of the basic definition of the element. To make the use of extensions safe and manageable, there is a strict set of governance  applied to the definition and use of extensions. Though any implementer can define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension.",
+        "comment": "There can be no stigma associated with the use of extensions by any application, project, or standard - regardless of the institution or jurisdiction that uses or defines the extensions.  The use of extensions is what allows the FHIR specification to retain a core level of simplicity for everyone.",
+        "alias": [
+          "extensions",
+          "user content"
+        ],
+        "min": 0,
+        "max": "0",
+        "base": {
+          "path": "Element.extension",
+          "min": 0,
+          "max": "*"
+        },
+        "type": [
+          {
+            "code": "Extension"
+          }
+        ],
+        "isModifier": false,
+        "isSummary": false,
+        "mapping": [
+          {
+            "identity": "rim",
+            "map": "n/a"
+          }
+        ]
+      },
+      {
+        "id": "Extension.extension:imageInstance.extension:imageUid.url",
+        "path": "Extension.extension.extension.url",
+        "representation": [
+          "xmlAttr"
+        ],
+        "short": "identifies the meaning of the extension",
+        "definition": "Url for imageUid complex extension item.",
+        "comment": "The definition may point directly to a computable or human-readable definition of the extensibility codes, or it may be a logical URI as declared in some other specification. The definition SHALL be a URI for the Structure Definition defining the extension.",
+        "min": 1,
+        "max": "1",
+        "base": {
+          "path": "Extension.url",
+          "min": 1,
+          "max": "1"
+        },
+        "type": [
+          {
+            "code": "uri"
+          }
+        ],
+        "fixedUri": "imageUid",
+        "isModifier": false,
+        "isSummary": false,
+        "mapping": [
+          {
+            "identity": "rim",
+            "map": "N/A"
+          }
+        ]
+      },
+      {
+        "id": "Extension.extension:imageInstance.extension:imageUid.value[x]",
+        "path": "Extension.extension.extension.value[x]",
+        "short": "Value of extension",
+        "definition": "Value of extension - must be one of a constrained set of the data types (see [Extensibility](extensibility.html) for a list).",
+        "min": 1,
+        "max": "1",
+        "base": {
+          "path": "Extension.value[x]",
+          "min": 0,
+          "max": "1"
+        },
+        "type": [
+          {
+            "code": "oid"
+          }
+        ],
+        "isModifier": false,
+        "isSummary": false,
+        "mapping": [
+          {
+            "identity": "rim",
+            "map": "N/A"
+          }
+        ]
+      },
+      {
+        "id": "Extension.extension:imageInstance.extension:observationUid",
+        "path": "Extension.extension.extension",
+        "sliceName": "observationUid",
+        "short": "Image Instance Observation UID",
+        "definition": "Image Instance Observation UID",
+        "comment": "There can be no stigma associated with the use of extensions by any application, project, or standard - regardless of the institution or jurisdiction that uses or defines the extensions.  The use of extensions is what allows the FHIR specification to retain a core level of simplicity for everyone.",
+        "alias": [
+          "extensions",
+          "user content"
+        ],
+        "min": 0,
+        "max": "1",
+        "base": {
+          "path": "Element.extension",
+          "min": 0,
+          "max": "*"
+        },
+        "type": [
+          {
+            "code": "Extension"
+          }
+        ],
+        "isModifier": false,
+        "isSummary": false,
+        "mapping": [
+          {
+            "identity": "rim",
+            "map": "n/a"
+          }
+        ]
+      },
+      {
+        "id": "Extension.extension:imageInstance.extension:observationUid.id",
+        "path": "Extension.extension.extension.id",
+        "representation": [
+          "xmlAttr"
+        ],
+        "short": "Unique id for inter-element referencing",
+        "definition": "Unique id for the element within a resource (for internal references). This may be any string value that does not contain spaces.",
+        "min": 0,
+        "max": "1",
+        "base": {
+          "path": "Element.id",
+          "min": 0,
+          "max": "1"
+        },
+        "type": [
+          {
+            "code": "string"
+          }
+        ],
+        "isModifier": false,
+        "isSummary": false,
+        "mapping": [
+          {
+            "identity": "rim",
+            "map": "n/a"
+          }
+        ]
+      },
+      {
+        "id": "Extension.extension:imageInstance.extension:observationUid.extension",
+        "path": "Extension.extension.extension.extension",
+        "slicing": {
+          "discriminator": [
+            {
+              "type": "value",
+              "path": "url"
+            }
+          ],
+          "description": "Extensions are always sliced by (at least) url",
+          "rules": "open"
+        },
+        "short": "Additional content defined by implementations",
+        "definition": "May be used to represent additional information that is not part of the basic definition of the element. To make the use of extensions safe and manageable, there is a strict set of governance  applied to the definition and use of extensions. Though any implementer can define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension.",
+        "comment": "There can be no stigma associated with the use of extensions by any application, project, or standard - regardless of the institution or jurisdiction that uses or defines the extensions.  The use of extensions is what allows the FHIR specification to retain a core level of simplicity for everyone.",
+        "alias": [
+          "extensions",
+          "user content"
+        ],
+        "min": 0,
+        "max": "0",
+        "base": {
+          "path": "Element.extension",
+          "min": 0,
+          "max": "*"
+        },
+        "type": [
+          {
+            "code": "Extension"
+          }
+        ],
+        "isModifier": false,
+        "isSummary": false,
+        "mapping": [
+          {
+            "identity": "rim",
+            "map": "n/a"
+          }
+        ]
+      },
+      {
+        "id": "Extension.extension:imageInstance.extension:observationUid.url",
+        "path": "Extension.extension.extension.url",
+        "representation": [
+          "xmlAttr"
+        ],
+        "short": "identifies the meaning of the extension",
+        "definition": "Url for observationUid complex extension item.",
+        "comment": "The definition may point directly to a computable or human-readable definition of the extensibility codes, or it may be a logical URI as declared in some other specification. The definition SHALL be a URI for the Structure Definition defining the extension.",
+        "min": 1,
+        "max": "1",
+        "base": {
+          "path": "Extension.url",
+          "min": 1,
+          "max": "1"
+        },
+        "type": [
+          {
+            "code": "uri"
+          }
+        ],
+        "fixedUri": "observationUid",
+        "isModifier": false,
+        "isSummary": false,
+        "mapping": [
+          {
+            "identity": "rim",
+            "map": "N/A"
+          }
+        ]
+      },
+      {
+        "id": "Extension.extension:imageInstance.extension:observationUid.value[x]",
+        "path": "Extension.extension.extension.value[x]",
+        "short": "Value of extension",
+        "definition": "Value of extension - must be one of a constrained set of the data types (see [Extensibility](extensibility.html) for a list).",
+        "min": 1,
+        "max": "1",
+        "base": {
+          "path": "Extension.value[x]",
+          "min": 0,
+          "max": "1"
+        },
+        "type": [
+          {
+            "code": "oid"
+          }
+        ],
+        "isModifier": false,
+        "isSummary": false,
+        "mapping": [
+          {
+            "identity": "rim",
+            "map": "N/A"
+          }
+        ]
+      },
+      {
+        "id": "Extension.extension:imageInstance.extension:trackingUid",
+        "path": "Extension.extension.extension",
+        "sliceName": "trackingUid",
+        "short": "Image Instance Tracking UID",
+        "definition": "Image Instance Tracking UID",
+        "comment": "There can be no stigma associated with the use of extensions by any application, project, or standard - regardless of the institution or jurisdiction that uses or defines the extensions.  The use of extensions is what allows the FHIR specification to retain a core level of simplicity for everyone.",
+        "alias": [
+          "extensions",
+          "user content"
+        ],
+        "min": 0,
+        "max": "1",
+        "base": {
+          "path": "Element.extension",
+          "min": 0,
+          "max": "*"
+        },
+        "type": [
+          {
+            "code": "Extension"
+          }
+        ],
+        "isModifier": false,
+        "isSummary": false,
+        "mapping": [
+          {
+            "identity": "rim",
+            "map": "n/a"
+          }
+        ]
+      },
+      {
+        "id": "Extension.extension:imageInstance.extension:trackingUid.id",
+        "path": "Extension.extension.extension.id",
+        "representation": [
+          "xmlAttr"
+        ],
+        "short": "Unique id for inter-element referencing",
+        "definition": "Unique id for the element within a resource (for internal references). This may be any string value that does not contain spaces.",
+        "min": 0,
+        "max": "1",
+        "base": {
+          "path": "Element.id",
+          "min": 0,
+          "max": "1"
+        },
+        "type": [
+          {
+            "code": "string"
+          }
+        ],
+        "isModifier": false,
+        "isSummary": false,
+        "mapping": [
+          {
+            "identity": "rim",
+            "map": "n/a"
+          }
+        ]
+      },
+      {
+        "id": "Extension.extension:imageInstance.extension:trackingUid.extension",
+        "path": "Extension.extension.extension.extension",
+        "slicing": {
+          "discriminator": [
+            {
+              "type": "value",
+              "path": "url"
+            }
+          ],
+          "description": "Extensions are always sliced by (at least) url",
+          "rules": "open"
+        },
+        "short": "Additional content defined by implementations",
+        "definition": "May be used to represent additional information that is not part of the basic definition of the element. To make the use of extensions safe and manageable, there is a strict set of governance  applied to the definition and use of extensions. Though any implementer can define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension.",
+        "comment": "There can be no stigma associated with the use of extensions by any application, project, or standard - regardless of the institution or jurisdiction that uses or defines the extensions.  The use of extensions is what allows the FHIR specification to retain a core level of simplicity for everyone.",
+        "alias": [
+          "extensions",
+          "user content"
+        ],
+        "min": 0,
+        "max": "0",
+        "base": {
+          "path": "Element.extension",
+          "min": 0,
+          "max": "*"
+        },
+        "type": [
+          {
+            "code": "Extension"
+          }
+        ],
+        "isModifier": false,
+        "isSummary": false,
+        "mapping": [
+          {
+            "identity": "rim",
+            "map": "n/a"
+          }
+        ]
+      },
+      {
+        "id": "Extension.extension:imageInstance.extension:trackingUid.url",
+        "path": "Extension.extension.extension.url",
+        "representation": [
+          "xmlAttr"
+        ],
+        "short": "identifies the meaning of the extension",
+        "definition": "Url for trackingUid complex extension item.",
+        "comment": "The definition may point directly to a computable or human-readable definition of the extensibility codes, or it may be a logical URI as declared in some other specification. The definition SHALL be a URI for the Structure Definition defining the extension.",
+        "min": 1,
+        "max": "1",
+        "base": {
+          "path": "Extension.url",
+          "min": 1,
+          "max": "1"
+        },
+        "type": [
+          {
+            "code": "uri"
+          }
+        ],
+        "fixedUri": "trackingUid",
+        "isModifier": false,
+        "isSummary": false,
+        "mapping": [
+          {
+            "identity": "rim",
+            "map": "N/A"
+          }
+        ]
+      },
+      {
+        "id": "Extension.extension:imageInstance.extension:trackingUid.value[x]",
+        "path": "Extension.extension.extension.value[x]",
+        "short": "Value of extension",
+        "definition": "Value of extension - must be one of a constrained set of the data types (see [Extensibility](extensibility.html) for a list).",
+        "min": 1,
+        "max": "1",
+        "base": {
+          "path": "Extension.value[x]",
+          "min": 0,
+          "max": "1"
+        },
+        "type": [
+          {
+            "code": "oid"
+          }
+        ],
+        "isModifier": false,
+        "isSummary": false,
+        "mapping": [
+          {
+            "identity": "rim",
+            "map": "N/A"
+          }
+        ]
+      },
+      {
+        "id": "Extension.extension:imageInstance.extension:imageRegion",
+        "path": "Extension.extension.extension",
+        "sliceName": "imageRegion",
+        "short": "Image Region",
+        "definition": "Specifies region in a DICOM image or frame",
+        "comment": "There can be no stigma associated with the use of extensions by any application, project, or standard - regardless of the institution or jurisdiction that uses or defines the extensions.  The use of extensions is what allows the FHIR specification to retain a core level of simplicity for everyone.",
+        "alias": [
+          "extensions",
+          "user content"
+        ],
+        "min": 0,
+        "max": "1",
+        "base": {
+          "path": "Element.extension",
+          "min": 0,
+          "max": "*"
+        },
+        "type": [
+          {
+            "code": "Extension"
+          }
+        ],
+        "isModifier": false,
+        "isSummary": false,
+        "mapping": [
+          {
+            "identity": "rim",
+            "map": "n/a"
+          }
+        ]
+      },
+      {
+        "id": "Extension.extension:imageInstance.extension:imageRegion.id",
+        "path": "Extension.extension.extension.id",
+        "representation": [
+          "xmlAttr"
+        ],
+        "short": "Unique id for inter-element referencing",
+        "definition": "Unique id for the element within a resource (for internal references). This may be any string value that does not contain spaces.",
+        "min": 0,
+        "max": "1",
+        "base": {
+          "path": "Element.id",
+          "min": 0,
+          "max": "1"
+        },
+        "type": [
+          {
+            "code": "string"
+          }
+        ],
+        "isModifier": false,
+        "isSummary": false,
+        "mapping": [
+          {
+            "identity": "rim",
+            "map": "n/a"
+          }
+        ]
+      },
+      {
+        "id": "Extension.extension:imageInstance.extension:imageRegion.extension",
+        "path": "Extension.extension.extension.extension",
+        "slicing": {
+          "discriminator": [
+            {
+              "type": "value",
+              "path": "url"
+            }
+          ],
+          "description": "Extensions are always sliced by (at least) url",
+          "rules": "open"
+        },
+        "short": "Additional content defined by implementations",
+        "definition": "May be used to represent additional information that is not part of the basic definition of the element. To make the use of extensions safe and manageable, there is a strict set of governance  applied to the definition and use of extensions. Though any implementer can define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension.",
+        "comment": "There can be no stigma associated with the use of extensions by any application, project, or standard - regardless of the institution or jurisdiction that uses or defines the extensions.  The use of extensions is what allows the FHIR specification to retain a core level of simplicity for everyone.",
+        "alias": [
+          "extensions",
+          "user content"
+        ],
+        "min": 0,
+        "max": "0",
+        "base": {
+          "path": "Element.extension",
+          "min": 0,
+          "max": "*"
+        },
+        "type": [
+          {
+            "code": "Extension"
+          }
+        ],
+        "isModifier": false,
+        "isSummary": false,
+        "mapping": [
+          {
+            "identity": "rim",
+            "map": "n/a"
+          }
+        ]
+      },
+      {
+        "id": "Extension.extension:imageInstance.extension:imageRegion.extension:regionType",
+        "path": "Extension.extension.extension.extension",
+        "sliceName": "regionType",
+        "short": "Image Region Type",
+        "definition": "Image Region Type.",
+        "comment": "There can be no stigma associated with the use of extensions by any application, project, or standard - regardless of the institution or jurisdiction that uses or defines the extensions.  The use of extensions is what allows the FHIR specification to retain a core level of simplicity for everyone.",
+        "alias": [
+          "extensions",
+          "user content"
+        ],
+        "min": 1,
+        "max": "1",
+        "base": {
+          "path": "Element.extension",
+          "min": 0,
+          "max": "*"
+        },
+        "type": [
+          {
+            "code": "Extension"
+          }
+        ],
+        "isModifier": false,
+        "isSummary": false,
+        "mapping": [
+          {
+            "identity": "rim",
+            "map": "n/a"
+          }
+        ]
+      },
+      {
+        "id": "Extension.extension:imageInstance.extension:imageRegion.extension:regionType .id",
+        "path": "Extension.extension.extension.extension.id",
+        "representation": [
+          "xmlAttr"
+        ],
+        "short": "Unique id for inter-element referencing",
+        "definition": "Unique id for the element within a resource (for internal references). This may be any string value that does not contain spaces.",
+        "min": 0,
+        "max": "1",
+        "base": {
+          "path": "Element.id",
+          "min": 0,
+          "max": "1"
+        },
+        "type": [
+          {
+            "code": "string"
+          }
+        ],
+        "isModifier": false,
+        "isSummary": false,
+        "mapping": [
+          {
+            "identity": "rim",
+            "map": "n/a"
+          }
+        ]
+      },
+      {
+        "id": "Extension.extension:imageInstance.extension:imageRegion.extension:regionType .extension",
+        "path": "Extension.extension.extension.extension.extension",
+        "slicing": {
+          "discriminator": [
+            {
+              "type": "value",
+              "path": "url"
+            }
+          ],
+          "description": "Extensions are always sliced by (at least) url",
+          "rules": "open"
+        },
+        "short": "Additional content defined by implementations",
+        "definition": "May be used to represent additional information that is not part of the basic definition of the element. To make the use of extensions safe and manageable, there is a strict set of governance  applied to the definition and use of extensions. Though any implementer can define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension.",
+        "comment": "There can be no stigma associated with the use of extensions by any application, project, or standard - regardless of the institution or jurisdiction that uses or defines the extensions.  The use of extensions is what allows the FHIR specification to retain a core level of simplicity for everyone.",
+        "alias": [
+          "extensions",
+          "user content"
+        ],
+        "min": 0,
+        "max": "0",
+        "base": {
+          "path": "Element.extension",
+          "min": 0,
+          "max": "*"
+        },
+        "type": [
+          {
+            "code": "Extension"
+          }
+        ],
+        "isModifier": false,
+        "isSummary": false,
+        "mapping": [
+          {
+            "identity": "rim",
+            "map": "n/a"
+          }
+        ]
+      },
+      {
+        "id": "Extension.extension:imageInstance.extension:imageRegion.extension:regionType .url",
+        "path": "Extension.extension.extension.extension.url",
+        "representation": [
+          "xmlAttr"
+        ],
+        "short": "identifies the meaning of the extension",
+        "definition": "Url for regionType  complex extension item.",
+        "comment": "The definition may point directly to a computable or human-readable definition of the extensibility codes, or it may be a logical URI as declared in some other specification. The definition SHALL be a URI for the Structure Definition defining the extension.",
+        "min": 1,
+        "max": "1",
+        "base": {
+          "path": "Extension.url",
+          "min": 1,
+          "max": "1"
+        },
+        "type": [
+          {
+            "code": "uri"
+          }
+        ],
+        "fixedUri": "regionType",
+        "isModifier": false,
+        "isSummary": false,
+        "mapping": [
+          {
+            "identity": "rim",
+            "map": "N/A"
+          }
+        ]
+      },
+      {
+        "id": "Extension.extension:imageInstance.extension:imageRegion.extension:regionType .value[x]",
+        "path": "Extension.extension.extension.extension.value[x]",
+        "short": "Value of extension",
+        "definition": "Value of extension - must be one of a constrained set of the data types (see [Extensibility](extensibility.html) for a list).",
+        "min": 1,
+        "max": "1",
+        "base": {
+          "path": "Extension.value[x]",
+          "min": 0,
+          "max": "1"
+        },
+        "type": [
+          {
+            "code": "CodeableConcept"
+          }
+        ],
+        "isModifier": false,
+        "isSummary": false,
+        "binding": {
+          "strength": "extensible",
+          "valueSet": "http://hl7.org/fhir/us/breast-radiology/ValueSet/GraphicTypeVS"
+        },
+        "mapping": [
+          {
+            "identity": "rim",
+            "map": "N/A"
+          }
+        ]
+      },
+      {
+        "id": "Extension.extension:imageInstance.extension:imageRegion.extension:coordinates",
+        "path": "Extension.extension.extension.extension",
+        "sliceName": "coordinates",
+        "short": "Image Coordinates",
+        "definition": "Image Coordinates.\n\nString is a series of space separated points.\n\nEach point is a comma separated sequence of decimal values\n one for each dimension of the point.\n\nPoint may have two or three dimensions.\n\nEach and every point in this string will have the same number of dimensions.",
+        "comment": "There can be no stigma associated with the use of extensions by any application, project, or standard - regardless of the institution or jurisdiction that uses or defines the extensions.  The use of extensions is what allows the FHIR specification to retain a core level of simplicity for everyone.",
+        "alias": [
+          "extensions",
+          "user content"
+        ],
+        "min": 1,
+        "max": "1",
+        "base": {
+          "path": "Element.extension",
+          "min": 0,
+          "max": "*"
+        },
+        "type": [
+          {
+            "code": "Extension"
+          }
+        ],
+        "isModifier": false,
+        "isSummary": false,
+        "mapping": [
+          {
+            "identity": "rim",
+            "map": "n/a"
+          }
+        ]
+      },
+      {
+        "id": "Extension.extension:imageInstance.extension:imageRegion.extension:coordinates.id",
+        "path": "Extension.extension.extension.extension.id",
+        "representation": [
+          "xmlAttr"
+        ],
+        "short": "Unique id for inter-element referencing",
+        "definition": "Unique id for the element within a resource (for internal references). This may be any string value that does not contain spaces.",
+        "min": 0,
+        "max": "1",
+        "base": {
+          "path": "Element.id",
+          "min": 0,
+          "max": "1"
+        },
+        "type": [
+          {
+            "code": "string"
+          }
+        ],
+        "isModifier": false,
+        "isSummary": false,
+        "mapping": [
+          {
+            "identity": "rim",
+            "map": "n/a"
+          }
+        ]
+      },
+      {
+        "id": "Extension.extension:imageInstance.extension:imageRegion.extension:coordinates.extension",
+        "path": "Extension.extension.extension.extension.extension",
+        "slicing": {
+          "discriminator": [
+            {
+              "type": "value",
+              "path": "url"
+            }
+          ],
+          "description": "Extensions are always sliced by (at least) url",
+          "rules": "open"
+        },
+        "short": "Additional content defined by implementations",
+        "definition": "May be used to represent additional information that is not part of the basic definition of the element. To make the use of extensions safe and manageable, there is a strict set of governance  applied to the definition and use of extensions. Though any implementer can define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension.",
+        "comment": "There can be no stigma associated with the use of extensions by any application, project, or standard - regardless of the institution or jurisdiction that uses or defines the extensions.  The use of extensions is what allows the FHIR specification to retain a core level of simplicity for everyone.",
+        "alias": [
+          "extensions",
+          "user content"
+        ],
+        "min": 0,
+        "max": "0",
+        "base": {
+          "path": "Element.extension",
+          "min": 0,
+          "max": "*"
+        },
+        "type": [
+          {
+            "code": "Extension"
+          }
+        ],
+        "isModifier": false,
+        "isSummary": false,
+        "mapping": [
+          {
+            "identity": "rim",
+            "map": "n/a"
+          }
+        ]
+      },
+      {
+        "id": "Extension.extension:imageInstance.extension:imageRegion.extension:coordinates.url",
+        "path": "Extension.extension.extension.extension.url",
+        "representation": [
+          "xmlAttr"
+        ],
+        "short": "identifies the meaning of the extension",
+        "definition": "Url for coordinates complex extension item.",
+        "comment": "The definition may point directly to a computable or human-readable definition of the extensibility codes, or it may be a logical URI as declared in some other specification. The definition SHALL be a URI for the Structure Definition defining the extension.",
+        "min": 1,
+        "max": "1",
+        "base": {
+          "path": "Extension.url",
+          "min": 1,
+          "max": "1"
+        },
+        "type": [
+          {
+            "code": "uri"
+          }
+        ],
+        "fixedUri": "coordinates",
+        "isModifier": false,
+        "isSummary": false,
+        "mapping": [
+          {
+            "identity": "rim",
+            "map": "N/A"
+          }
+        ]
+      },
+      {
+        "id": "Extension.extension:imageInstance.extension:imageRegion.extension:coordinates.value[x]",
+        "path": "Extension.extension.extension.extension.value[x]",
+        "short": "Value of extension",
+        "definition": "Value of extension - must be one of a constrained set of the data types (see [Extensibility](extensibility.html) for a list).",
+        "min": 1,
+        "max": "1",
+        "base": {
+          "path": "Extension.value[x]",
+          "min": 0,
+          "max": "1"
+        },
+        "type": [
+          {
+            "code": "string"
+          }
+        ],
+        "isModifier": false,
+        "isSummary": false,
+        "mapping": [
+          {
+            "identity": "rim",
+            "map": "N/A"
+          }
+        ]
+      },
+      {
+        "id": "Extension.extension:imageInstance.extension:imageRegion.url",
+        "path": "Extension.extension.extension.url",
+        "representation": [
+          "xmlAttr"
+        ],
+        "short": "identifies the meaning of the extension",
+        "definition": "Url for imageRegion complex extension item.",
+        "comment": "The definition may point directly to a computable or human-readable definition of the extensibility codes, or it may be a logical URI as declared in some other specification. The definition SHALL be a URI for the Structure Definition defining the extension.",
+        "min": 1,
+        "max": "1",
+        "base": {
+          "path": "Extension.url",
+          "min": 1,
+          "max": "1"
+        },
+        "type": [
+          {
+            "code": "uri"
+          }
+        ],
+        "fixedUri": "imageRegion",
+        "isModifier": false,
+        "isSummary": false,
+        "mapping": [
+          {
+            "identity": "rim",
+            "map": "N/A"
+          }
+        ]
+      },
+      {
+        "id": "Extension.extension:imageInstance.extension:imageRegion.value[x]",
+        "path": "Extension.extension.extension.value[x]",
+        "short": "Value of extension",
+        "definition": "Value of extension - must be one of a constrained set of the data types (see [Extensibility](extensibility.html) for a list).",
+        "min": 0,
+        "max": "0",
+        "base": {
+          "path": "Extension.value[x]",
+          "min": 0,
+          "max": "1"
+        },
+        "type": [
+          {
+            "code": "code"
+          }
+        ],
+        "isModifier": false,
+        "isSummary": false,
+        "mapping": [
+          {
+            "identity": "rim",
+            "map": "N/A"
+          }
+        ]
+      },
+      {
+        "id": "Extension.extension:imageInstance.url",
+        "path": "Extension.extension.url",
+        "representation": [
+          "xmlAttr"
+        ],
+        "short": "identifies the meaning of the extension",
+        "definition": "Url for imageInstance complex extension item.",
+        "comment": "The definition may point directly to a computable or human-readable definition of the extensibility codes, or it may be a logical URI as declared in some other specification. The definition SHALL be a URI for the Structure Definition defining the extension.",
+        "min": 1,
+        "max": "1",
+        "base": {
+          "path": "Extension.url",
+          "min": 1,
+          "max": "1"
+        },
+        "type": [
+          {
+            "code": "uri"
+          }
+        ],
+        "fixedUri": "imageInstance",
+        "isModifier": false,
+        "isSummary": false,
+        "mapping": [
+          {
+            "identity": "rim",
+            "map": "N/A"
+          }
+        ]
+      },
+      {
+        "id": "Extension.extension:imageInstance.value[x]",
+        "path": "Extension.extension.value[x]",
+        "short": "Value of extension",
+        "definition": "Value of extension - must be one of a constrained set of the data types (see [Extensibility](extensibility.html) for a list).",
+        "min": 0,
+        "max": "0",
+        "base": {
+          "path": "Extension.value[x]",
+          "min": 0,
+          "max": "1"
+        },
+        "type": [
+          {
+            "code": "code"
+          }
+        ],
+        "isModifier": false,
+        "isSummary": false,
+        "mapping": [
+          {
+            "identity": "rim",
+            "map": "N/A"
+          }
+        ]
+      },
+      {
+        "id": "Extension.extension:frameNumber",
+        "path": "Extension.extension",
+        "sliceName": "frameNumber",
+        "short": "Image frame number",
+        "definition": "Image frame number",
+        "comment": "There can be no stigma associated with the use of extensions by any application, project, or standard - regardless of the institution or jurisdiction that uses or defines the extensions.  The use of extensions is what allows the FHIR specification to retain a core level of simplicity for everyone.",
+        "alias": [
+          "extensions",
+          "user content"
+        ],
+        "min": 1,
+        "max": "1",
+        "base": {
+          "path": "Element.extension",
+          "min": 0,
+          "max": "*"
+        },
+        "type": [
+          {
+            "code": "Extension"
+          }
+        ],
+        "isModifier": false,
+        "isSummary": false,
+        "mapping": [
+          {
+            "identity": "rim",
+            "map": "n/a"
+          }
+        ]
+      },
+      {
+        "id": "Extension.extension:frameNumber.id",
+        "path": "Extension.extension.id",
+        "representation": [
+          "xmlAttr"
+        ],
+        "short": "Unique id for inter-element referencing",
+        "definition": "Unique id for the element within a resource (for internal references). This may be any string value that does not contain spaces.",
+        "min": 0,
+        "max": "1",
+        "base": {
+          "path": "Element.id",
+          "min": 0,
+          "max": "1"
+        },
+        "type": [
+          {
+            "code": "string"
+          }
+        ],
+        "isModifier": false,
+        "isSummary": false,
+        "mapping": [
+          {
+            "identity": "rim",
+            "map": "n/a"
+          }
+        ]
+      },
+      {
+        "id": "Extension.extension:frameNumber.extension",
+        "path": "Extension.extension.extension",
+        "slicing": {
+          "discriminator": [
+            {
+              "type": "value",
+              "path": "url"
+            }
+          ],
+          "description": "Extensions are always sliced by (at least) url",
+          "rules": "open"
+        },
+        "short": "Additional content defined by implementations",
+        "definition": "May be used to represent additional information that is not part of the basic definition of the element. To make the use of extensions safe and manageable, there is a strict set of governance  applied to the definition and use of extensions. Though any implementer can define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension.",
+        "comment": "There can be no stigma associated with the use of extensions by any application, project, or standard - regardless of the institution or jurisdiction that uses or defines the extensions.  The use of extensions is what allows the FHIR specification to retain a core level of simplicity for everyone.",
+        "alias": [
+          "extensions",
+          "user content"
+        ],
+        "min": 0,
+        "max": "0",
+        "base": {
+          "path": "Element.extension",
+          "min": 0,
+          "max": "*"
+        },
+        "type": [
+          {
+            "code": "Extension"
+          }
+        ],
+        "isModifier": false,
+        "isSummary": false,
+        "mapping": [
+          {
+            "identity": "rim",
+            "map": "n/a"
+          }
+        ]
+      },
+      {
+        "id": "Extension.extension:frameNumber.url",
+        "path": "Extension.extension.url",
+        "representation": [
+          "xmlAttr"
+        ],
+        "short": "identifies the meaning of the extension",
+        "definition": "Url for frameNumber complex extension item.",
+        "comment": "The definition may point directly to a computable or human-readable definition of the extensibility codes, or it may be a logical URI as declared in some other specification. The definition SHALL be a URI for the Structure Definition defining the extension.",
+        "min": 1,
+        "max": "1",
+        "base": {
+          "path": "Extension.url",
+          "min": 1,
+          "max": "1"
+        },
+        "type": [
+          {
+            "code": "uri"
+          }
+        ],
+        "fixedUri": "frameNumber",
+        "isModifier": false,
+        "isSummary": false,
+        "mapping": [
+          {
+            "identity": "rim",
+            "map": "N/A"
+          }
+        ]
+      },
+      {
+        "id": "Extension.extension:frameNumber.value[x]",
+        "path": "Extension.extension.value[x]",
+        "short": "Value of extension",
+        "definition": "Value of extension - must be one of a constrained set of the data types (see [Extensibility](extensibility.html) for a list).",
+        "min": 1,
+        "max": "1",
+        "base": {
+          "path": "Extension.value[x]",
+          "min": 0,
+          "max": "1"
+        },
+        "type": [
+          {
+            "code": "integer"
+          }
+        ],
+        "isModifier": false,
+        "isSummary": false,
+        "mapping": [
+          {
+            "identity": "rim",
+            "map": "N/A"
           }
         ]
       },
@@ -795,9 +2227,9 @@
         }
       },
       {
-        "id": "Extension.extension:studyUid",
+        "id": "Extension.extension:studyOid",
         "path": "Extension.extension",
-        "sliceName": "studyUid",
+        "sliceName": "studyOid",
         "short": "Study Uid",
         "definition": "Specifies DICOM Study",
         "min": 1,
@@ -809,24 +2241,24 @@
         }
       },
       {
-        "id": "Extension.extension:studyUid.extension",
+        "id": "Extension.extension:studyOid.extension",
         "path": "Extension.extension.extension",
         "min": 0,
         "max": "0"
       },
       {
-        "id": "Extension.extension:studyUid.url",
+        "id": "Extension.extension:studyOid.url",
         "path": "Extension.extension.url",
-        "definition": "Url for studyUid complex extension item.",
+        "definition": "Url for studyOid complex extension item.",
         "type": [
           {
             "code": "uri"
           }
         ],
-        "fixedUri": "studyUid"
+        "fixedUri": "studyOid"
       },
       {
-        "id": "Extension.extension:studyUid.value[x]",
+        "id": "Extension.extension:studyOid.value[x]",
         "path": "Extension.extension.value[x]",
         "min": 1,
         "max": "1",
@@ -882,9 +2314,9 @@
         ]
       },
       {
-        "id": "Extension.extension:seriesUid",
+        "id": "Extension.extension:seriesOid",
         "path": "Extension.extension",
-        "sliceName": "seriesUid",
+        "sliceName": "seriesOid",
         "short": "Series Uid",
         "definition": "Specifies DICOM Series",
         "min": 1,
@@ -896,24 +2328,24 @@
         }
       },
       {
-        "id": "Extension.extension:seriesUid.extension",
+        "id": "Extension.extension:seriesOid.extension",
         "path": "Extension.extension.extension",
         "min": 0,
         "max": "0"
       },
       {
-        "id": "Extension.extension:seriesUid.url",
+        "id": "Extension.extension:seriesOid.url",
         "path": "Extension.extension.url",
-        "definition": "Url for seriesUid complex extension item.",
+        "definition": "Url for seriesOid complex extension item.",
         "type": [
           {
             "code": "uri"
           }
         ],
-        "fixedUri": "seriesUid"
+        "fixedUri": "seriesOid"
       },
       {
-        "id": "Extension.extension:seriesUid.value[x]",
+        "id": "Extension.extension:seriesOid.value[x]",
         "path": "Extension.extension.value[x]",
         "min": 1,
         "max": "1",
@@ -924,28 +2356,351 @@
         ]
       },
       {
-        "id": "Extension.extension:instance",
+        "id": "Extension.extension:imageInstance",
         "path": "Extension.extension",
-        "sliceName": "instance",
-        "short": "instance extension.",
-        "definition": "This extension slice contains the instance extension.",
-        "comment": "This is one component of a group of components that are part of the observation.",
+        "sliceName": "imageInstance",
+        "short": "Image Instance",
+        "definition": "Specifies DICOM Instance",
         "min": 0,
         "max": "*",
         "base": {
           "path": "Extension.extension",
           "min": 0,
           "max": "*"
-        },
+        }
+      },
+      {
+        "id": "Extension.extension:imageInstance.extension",
+        "path": "Extension.extension.extension",
+        "min": 0,
+        "max": "0"
+      },
+      {
+        "id": "Extension.extension.extension:sopClass",
+        "path": "Extension.extension.extension",
+        "sliceName": "sopClass",
+        "short": "Image SOPClass",
+        "definition": "Specifies DICOM Image SOPClass",
+        "min": 0,
+        "max": "1"
+      },
+      {
+        "id": "Extension.extension.extension:sopClass.extension",
+        "path": "Extension.extension.extension.extension",
+        "min": 0,
+        "max": "0"
+      },
+      {
+        "id": "Extension.extension.extension:sopClass.url",
+        "path": "Extension.extension.extension.url",
+        "definition": "Url for sopClass complex extension item.",
         "type": [
           {
-            "code": "Extension",
-            "profile": [
-              "http://hl7.org/fhir/us/breast-radiology/StructureDefinition/ImageInstanceExtension"
-            ]
+            "code": "uri"
           }
         ],
-        "isModifier": false
+        "fixedUri": "sopClass"
+      },
+      {
+        "id": "Extension.extension.extension:sopClass.value[x]",
+        "path": "Extension.extension.extension.value[x]",
+        "min": 1,
+        "max": "1",
+        "type": [
+          {
+            "code": "oid"
+          }
+        ]
+      },
+      {
+        "id": "Extension.extension.extension:imageUid",
+        "path": "Extension.extension.extension",
+        "sliceName": "imageUid",
+        "short": "Image Instance Uid",
+        "definition": "Specifies DICOM Image Instance Uid",
+        "min": 0,
+        "max": "1"
+      },
+      {
+        "id": "Extension.extension.extension:imageUid.extension",
+        "path": "Extension.extension.extension.extension",
+        "min": 0,
+        "max": "0"
+      },
+      {
+        "id": "Extension.extension.extension:imageUid.url",
+        "path": "Extension.extension.extension.url",
+        "definition": "Url for imageUid complex extension item.",
+        "type": [
+          {
+            "code": "uri"
+          }
+        ],
+        "fixedUri": "imageUid"
+      },
+      {
+        "id": "Extension.extension.extension:imageUid.value[x]",
+        "path": "Extension.extension.extension.value[x]",
+        "min": 1,
+        "max": "1",
+        "type": [
+          {
+            "code": "oid"
+          }
+        ]
+      },
+      {
+        "id": "Extension.extension.extension:observationUid",
+        "path": "Extension.extension.extension",
+        "sliceName": "observationUid",
+        "short": "Image Instance Observation UID",
+        "definition": "Image Instance Observation UID",
+        "min": 0,
+        "max": "1"
+      },
+      {
+        "id": "Extension.extension.extension:observationUid.extension",
+        "path": "Extension.extension.extension.extension",
+        "min": 0,
+        "max": "0"
+      },
+      {
+        "id": "Extension.extension.extension:observationUid.url",
+        "path": "Extension.extension.extension.url",
+        "definition": "Url for observationUid complex extension item.",
+        "type": [
+          {
+            "code": "uri"
+          }
+        ],
+        "fixedUri": "observationUid"
+      },
+      {
+        "id": "Extension.extension.extension:observationUid.value[x]",
+        "path": "Extension.extension.extension.value[x]",
+        "min": 1,
+        "max": "1",
+        "type": [
+          {
+            "code": "oid"
+          }
+        ]
+      },
+      {
+        "id": "Extension.extension.extension:trackingUid",
+        "path": "Extension.extension.extension",
+        "sliceName": "trackingUid",
+        "short": "Image Instance Tracking UID",
+        "definition": "Image Instance Tracking UID",
+        "min": 0,
+        "max": "1"
+      },
+      {
+        "id": "Extension.extension.extension:trackingUid.extension",
+        "path": "Extension.extension.extension.extension",
+        "min": 0,
+        "max": "0"
+      },
+      {
+        "id": "Extension.extension.extension:trackingUid.url",
+        "path": "Extension.extension.extension.url",
+        "definition": "Url for trackingUid complex extension item.",
+        "type": [
+          {
+            "code": "uri"
+          }
+        ],
+        "fixedUri": "trackingUid"
+      },
+      {
+        "id": "Extension.extension.extension:trackingUid.value[x]",
+        "path": "Extension.extension.extension.value[x]",
+        "min": 1,
+        "max": "1",
+        "type": [
+          {
+            "code": "oid"
+          }
+        ]
+      },
+      {
+        "id": "Extension.extension.extension:imageRegion",
+        "path": "Extension.extension.extension",
+        "sliceName": "imageRegion",
+        "short": "Image Region",
+        "definition": "Specifies region in a DICOM image or frame",
+        "min": 0,
+        "max": "1"
+      },
+      {
+        "id": "Extension.extension.extension:imageRegion.extension",
+        "path": "Extension.extension.extension.extension",
+        "min": 0,
+        "max": "0"
+      },
+      {
+        "id": "Extension.extension.extension.extension:regionType",
+        "path": "Extension.extension.extension.extension",
+        "sliceName": "regionType",
+        "short": "Image Region Type",
+        "definition": "Image Region Type.",
+        "min": 1,
+        "max": "1"
+      },
+      {
+        "id": "Extension.extension.extension.extension:regionType .extension",
+        "path": "Extension.extension.extension.extension.extension",
+        "min": 0,
+        "max": "0"
+      },
+      {
+        "id": "Extension.extension.extension.extension:regionType .url",
+        "path": "Extension.extension.extension.extension.url",
+        "definition": "Url for regionType  complex extension item.",
+        "type": [
+          {
+            "code": "uri"
+          }
+        ],
+        "fixedUri": "regionType"
+      },
+      {
+        "id": "Extension.extension.extension.extension:regionType .value[x]",
+        "path": "Extension.extension.extension.extension.value[x]",
+        "min": 1,
+        "max": "1",
+        "type": [
+          {
+            "code": "CodeableConcept"
+          }
+        ],
+        "binding": {
+          "strength": "extensible",
+          "valueSet": "http://hl7.org/fhir/us/breast-radiology/ValueSet/GraphicTypeVS"
+        }
+      },
+      {
+        "id": "Extension.extension.extension.extension:coordinates",
+        "path": "Extension.extension.extension.extension",
+        "sliceName": "coordinates",
+        "short": "Image Coordinates",
+        "definition": "Image Coordinates.\n\nString is a series of space separated points.\n\nEach point is a comma separated sequence of decimal values\n one for each dimension of the point.\n\nPoint may have two or three dimensions.\n\nEach and every point in this string will have the same number of dimensions.",
+        "min": 1,
+        "max": "1"
+      },
+      {
+        "id": "Extension.extension.extension.extension:coordinates.extension",
+        "path": "Extension.extension.extension.extension.extension",
+        "min": 0,
+        "max": "0"
+      },
+      {
+        "id": "Extension.extension.extension.extension:coordinates.url",
+        "path": "Extension.extension.extension.extension.url",
+        "definition": "Url for coordinates complex extension item.",
+        "type": [
+          {
+            "code": "uri"
+          }
+        ],
+        "fixedUri": "coordinates"
+      },
+      {
+        "id": "Extension.extension.extension.extension:coordinates.value[x]",
+        "path": "Extension.extension.extension.extension.value[x]",
+        "min": 1,
+        "max": "1",
+        "type": [
+          {
+            "code": "string"
+          }
+        ]
+      },
+      {
+        "id": "Extension.extension.extension:imageRegion.url",
+        "path": "Extension.extension.extension.url",
+        "definition": "Url for imageRegion complex extension item.",
+        "type": [
+          {
+            "code": "uri"
+          }
+        ],
+        "fixedUri": "imageRegion"
+      },
+      {
+        "id": "Extension.extension.extension:imageRegion.value[x]",
+        "path": "Extension.extension.extension.value[x]",
+        "min": 0,
+        "max": "0",
+        "type": [
+          {
+            "code": "code"
+          }
+        ]
+      },
+      {
+        "id": "Extension.extension:imageInstance.url",
+        "path": "Extension.extension.url",
+        "definition": "Url for imageInstance complex extension item.",
+        "type": [
+          {
+            "code": "uri"
+          }
+        ],
+        "fixedUri": "imageInstance"
+      },
+      {
+        "id": "Extension.extension:imageInstance.value[x]",
+        "path": "Extension.extension.value[x]",
+        "min": 0,
+        "max": "0",
+        "type": [
+          {
+            "code": "code"
+          }
+        ]
+      },
+      {
+        "id": "Extension.extension:frameNumber",
+        "path": "Extension.extension",
+        "sliceName": "frameNumber",
+        "short": "Image frame number",
+        "definition": "Image frame number",
+        "min": 1,
+        "max": "1",
+        "base": {
+          "path": "Extension.extension",
+          "min": 0,
+          "max": "*"
+        }
+      },
+      {
+        "id": "Extension.extension:frameNumber.extension",
+        "path": "Extension.extension.extension",
+        "min": 0,
+        "max": "0"
+      },
+      {
+        "id": "Extension.extension:frameNumber.url",
+        "path": "Extension.extension.url",
+        "definition": "Url for frameNumber complex extension item.",
+        "type": [
+          {
+            "code": "uri"
+          }
+        ],
+        "fixedUri": "frameNumber"
+      },
+      {
+        "id": "Extension.extension:frameNumber.value[x]",
+        "path": "Extension.extension.value[x]",
+        "min": 1,
+        "max": "1",
+        "type": [
+          {
+            "code": "integer"
+          }
+        ]
       },
       {
         "id": "Extension.url",

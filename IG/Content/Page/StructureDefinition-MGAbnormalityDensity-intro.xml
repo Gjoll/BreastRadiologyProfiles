@@ -42,7 +42,21 @@ levels of fatty tissue.
     Each field contains one data item and is stored as an item (slice) in the Observation.component element.
   </p>
   <ul>
-    %ComponentList:noexpand:prefix=<li>:suffix=</li>:lb%
+    
+<li><a href="StructureDefinition-MGAbnormalityDensity-definitions.html#Observation.component:biRadsAssessmentCategory">BiRads Assessment Category component. [0..1]</a></li>
+<li><a href="StructureDefinition-MGAbnormalityDensity-definitions.html#Observation.component:correspondsWith">Corresponds With component. [0..*]</a></li>
+<li><a href="StructureDefinition-MGAbnormalityDensity-definitions.html#Observation.component:mgDensity">Density component. [0..1]</a></li>
+<li><a href="StructureDefinition-MGAbnormalityDensity-definitions.html#Observation.component:densityType">Density Type component. [1..1]</a></li>
+<li><a href="StructureDefinition-MGAbnormalityDensity-definitions.html#Observation.component:margin">Margin component. [0..1]</a></li>
+<li><a href="StructureDefinition-MGAbnormalityDensity-definitions.html#Observation.component:notPreviouslySeen">Not Previously Seen component. [0..*]</a></li>
+<li><a href="StructureDefinition-MGAbnormalityDensity-definitions.html#Observation.component:obsChanges">Observed Change In Abnormality component. [0..*]</a></li>
+<li><a href="StructureDefinition-MGAbnormalityDensity-definitions.html#Observation.component:obsCount">Observed Count component. [0..1]</a></li>
+<li><a href="StructureDefinition-MGAbnormalityDensity-definitions.html#Observation.component:obsDistribution">Observed distribution of abnormalities component. [0..*]</a></li>
+<li><a href="StructureDefinition-MGAbnormalityDensity-definitions.html#Observation.component:obsDistRegionSize">Observed Distribution Region Size component. [0..3]</a></li>
+<li><a href="StructureDefinition-MGAbnormalityDensity-definitions.html#Observation.component:obsSize">Observed Size component. [0..3]</a></li>
+<li><a href="StructureDefinition-MGAbnormalityDensity-definitions.html#Observation.component:orientation">Orientation component. [0..1]</a></li>
+<li><a href="StructureDefinition-MGAbnormalityDensity-definitions.html#Observation.component:PreviouslyDemonstratedBy">Previously Demonstrated By component. [0..*]</a></li>
+<li><a href="StructureDefinition-MGAbnormalityDensity-definitions.html#Observation.component:shape">Shape component. [0..1]</a></li>
   </ul>
   <!-- -components-->
   <!-- +hasMember-->
@@ -56,7 +70,9 @@ levels of fatty tissue.
     The reference to each external observation is stored as an item in the Observation.hasMember element.
   </p>
   <ul>
-    %HasMemberList:noexpand:prefix=<li>:suffix=</li>:lb%
+    
+<li><a href="StructureDefinition-MGAbnormalityDensity-definitions.html#Observation.hasMember:associatedFeature">'Associated Feature' reference. [0..*]</a></li>
+<li><a href="StructureDefinition-MGAbnormalityDensity-definitions.html#Observation.hasMember:consistentWith">'Consistent With' reference. [0..*]</a></li>
   </ul>
   <!-- -hasMember-->
   <!-- +profileFragments-->
@@ -71,7 +87,21 @@ levels of fatty tissue.
     the hierarchy and commonality of each profile.
   </p>
   <ul>
-    %FragmentList:noexpand:prefix=<li>:suffix=</li>:lb%
+    
+<li><a href="./StructureDefinition-AssociatedFeaturesHasMemberFragment.html">AssociatedFeatures HasMember Fragment</a></li>
+<li><a href="./StructureDefinition-CommonComponentsFragment.html">Common Components Fragment</a></li>
+<li><a href="./StructureDefinition-ConsistentWithHasMemberFragment.html">ConsistentWith HasMember Fragment</a></li>
+<li><a href="./StructureDefinition-CorrespondsWithFragment.html">CorrespondsWith Fragment</a></li>
+<li><a href="./StructureDefinition-NotPreviouslySeenComponentFragment.html">Not Previously Seen Component Fragment</a></li>
+<li><a href="./StructureDefinition-ObservationLeafFragment.html">Observation Leaf Fragment</a></li>
+<li><a href="./StructureDefinition-BreastRadObservationNoComponentFragment.html">Observation No Component Fragment</a></li>
+<li><a href="./StructureDefinition-BreastRadObservationNoDeviceFragment.html">Observation NoDevice Fragment</a></li>
+<li><a href="./StructureDefinition-BreastRadObservationNoValueFragment.html">Observation NoValue Fragment</a></li>
+<li><a href="./StructureDefinition-ObservedCountFragment.html">ObservedCount Fragment</a></li>
+<li><a href="./StructureDefinition-ObservedDistributionFragment.html">ObservedDistribution Fragment</a></li>
+<li><a href="./StructureDefinition-ObservedSizeFragment.html">ObservedSize Fragment</a></li>
+<li><a href="./StructureDefinition-PreviouslyDemonstratedByFragment.html">PreviouslyDemonstratedBy Fragment</a></li>
+<li><a href="./StructureDefinition-ShapeComponentsFragment.html">Shape Components Fragment</a></li>
   </ul>
   <!-- -profileFragments-->
 </div>

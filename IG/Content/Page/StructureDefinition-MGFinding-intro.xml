@@ -23,18 +23,6 @@
   <!-- +reviewStatus-->
   <!-- -reviewStatus-->
   <!-- +components-->
-  <p>
-    <u style="font-size:large;">Member Fields</u>
-  </p>
-  <p>
-    The following parts of this observation are contained within this resource.
-  </p>
-  <p>
-    Each field contains one data item and is stored as an item (slice) in the Observation.component element.
-  </p>
-  <ul>
-    %ComponentList:noexpand:prefix=<li>:suffix=</li>:lb%
-  </ul>
   <!-- -components-->
   <!-- +hasMember-->
   <p>
@@ -47,7 +35,20 @@
     The reference to each external observation is stored as an item in the Observation.hasMember element.
   </p>
   <ul>
-    %HasMemberList:noexpand:prefix=<li>:suffix=</li>:lb%
+    
+<li><a href="StructureDefinition-MGFinding-definitions.html#Observation.hasMember:associatedFeature">'Associated Feature' reference. [0..*]</a></li>
+<li><a href="StructureDefinition-MGFinding-definitions.html#Observation.hasMember:abnormalityCyst">'Cyst' reference. [0..*]</a></li>
+<li><a href="StructureDefinition-MGFinding-definitions.html#Observation.hasMember:abnormalityDuct">'Duct' reference. [0..*]</a></li>
+<li><a href="StructureDefinition-MGFinding-definitions.html#Observation.hasMember:abnormalityFibroadenoma">'Fibroadenoma' reference. [0..*]</a></li>
+<li><a href="StructureDefinition-MGFinding-definitions.html#Observation.hasMember:abnormalityForeignObject">'Foreign Object' reference. [0..*]</a></li>
+<li><a href="StructureDefinition-MGFinding-definitions.html#Observation.hasMember:abnormalityLymphNode">'LymphNode' reference. [0..*]</a></li>
+<li><a href="StructureDefinition-MGFinding-definitions.html#Observation.hasMember:mGAbnormalityArchitecturalDistortion">'Mammography Architectural Distortion' reference. [0..*]</a></li>
+<li><a href="StructureDefinition-MGFinding-definitions.html#Observation.hasMember:mGAbnormalityAsymmetry">'Mammography Asymmetry' reference. [0..*]</a></li>
+<li><a href="StructureDefinition-MGFinding-definitions.html#Observation.hasMember:mGBreastDensity">'Mammography Breast Density' reference. [1..1]</a></li>
+<li><a href="StructureDefinition-MGFinding-definitions.html#Observation.hasMember:mGAbnormalityCalcification">'Mammography Calcification' reference. [0..*]</a></li>
+<li><a href="StructureDefinition-MGFinding-definitions.html#Observation.hasMember:mGAbnormalityDensity">'Mammography Density' reference. [0..*]</a></li>
+<li><a href="StructureDefinition-MGFinding-definitions.html#Observation.hasMember:mGAbnormalityFatNecrosis">'Mammography Fat Necrosis' reference. [0..*]</a></li>
+<li><a href="StructureDefinition-MGFinding-definitions.html#Observation.hasMember:abnormalityMass">'Mass' reference. [0..*]</a></li>
   </ul>
   <!-- -hasMember-->
   <!-- +profileFragments-->
@@ -62,7 +63,8 @@
     the hierarchy and commonality of each profile.
   </p>
   <ul>
-    %FragmentList:noexpand:prefix=<li>:suffix=</li>:lb%
+    
+<li><a href="./StructureDefinition-ObservationSectionFragment.html">Observation Section Fragment</a></li>
   </ul>
   <!-- -profileFragments-->
 </div>

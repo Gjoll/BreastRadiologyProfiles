@@ -51,8 +51,7 @@ namespace BreastRadiology.XUnitTests
                     e.AddExtensionLink(extensionStructDef.Url,
                         new SDefEditor.Cardinality(extensionDef),
                         "Breast Body Location",
-                        Global.ElementAnchor(extensionDef),
-                        false);
+                        Global.ElementAnchor(extensionDef));
                 }
             });
     }

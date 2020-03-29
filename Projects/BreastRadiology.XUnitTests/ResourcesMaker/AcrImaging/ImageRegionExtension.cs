@@ -14,7 +14,7 @@ namespace BreastRadiology.XUnitTests
 {
     partial class ResourcesMaker : ConverterBase
     {
-        public SDTaskVar ImageRegionExtension = new SDTaskVar(
+        public SDTaskVar ImageRegionExtensionX = new SDTaskVar(
             (out StructureDefinition s) =>
             {
                 SDefEditor e;

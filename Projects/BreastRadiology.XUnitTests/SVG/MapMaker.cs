@@ -43,14 +43,14 @@ namespace BreastRadiology.XUnitTests
                 dynamic link2 = links2[i];
                 if (link1.LinkType.ToObject<String>() != link2.LinkType.ToObject<String>())
                     return true;
-                if (link1.LinkTarget.ToObject<String>() != (String) link2.LinkTarget.ToObject<String>())
+                if (link1.LinkTarget.ToObject<String>() != (String)link2.LinkTarget.ToObject<String>())
                     return true;
             }
 
             return false;
         }
 
-        String[] linkTypes = new string[] {SVGGlobal.ExtensionType, SVGGlobal.TargetType, SVGGlobal.ComponentType};
+        String[] linkTypes = new string[] { SVGGlobal.ExtensionType, SVGGlobal.TargetType, SVGGlobal.ComponentType };
 
         /*
          * Add children. If two adjacent children have same children, then dont create each in a seperate
@@ -69,7 +69,7 @@ namespace BreastRadiology.XUnitTests
         {
             return CreateResourceNode(mapNode,
                 this.LinkTypeColor(link),
-                new String[] {link.CardinalityLeft?.ToString()},
+                new String[] { link.CardinalityLeft?.ToString() },
                 linkFlag);
         }
 
@@ -95,9 +95,7 @@ namespace BreastRadiology.XUnitTests
         public bool AlwaysShowChildren = false;
         bool ShowChildren(dynamic link)
         {
-            if (this.AlwaysShowChildren == true)
-                return true;
-            return link.ShowChildren.ToObject<Boolean>();
+            return this.AlwaysShowChildren;
         }
 
         protected void DirectLink(SENodeGroup group,
@@ -159,7 +157,8 @@ namespace BreastRadiology.XUnitTests
                 switch (link.LinkType.ToObject<String>())
                 {
                     case SVGGlobal.ComponentType:
-                        MakeComponent(link, group);
+                        String linkTarget = link.LinkTarget;
+                        MakeComponent(mapNode, link, group, linkTarget);
                         break;
 
                     default:
@@ -206,32 +205,40 @@ namespace BreastRadiology.XUnitTests
             }
         }
 
-        protected void MakeComponent(dynamic link,
-            SENodeGroup group)
+        protected void MakeComponent(ResourceMap.Node mapNode,
+            dynamic link,
+            SENodeGroup group,
+            String baseName)
         {
-            // we never link components to previous child links, not should next item
-            // link to this items children. Each component stands alone.
-            this.previousChildLinks = new Object[0];
-            String linkTargetUrl = link.LinkTarget.ToObject<String>();
-            String linkSource = link.LinkSource.ToObject<String>();
-            String componentHRef = link.ComponentHRef.ToObject<String>().Replace("{SDName}", linkSource.LastUriPart());
-
-            SENode node = new SENode(0,
-                this.componentColor,
-                new String[] {link.CardinalityLeft?.ToString(), link.CardinalityRight?.ToString()},
-                componentHRef);
-            node.AddTextLine(linkTargetUrl, componentHRef);
-
-            String types = link.Types?.ToObject<String>();
-            if (String.IsNullOrEmpty(types) == false)
-                node.AddTextLine(types, componentHRef);
-            SENodeGroup componentGroup = new SENodeGroup(node.AllText(), this.showCardinality);
-            group.AppendChild(componentGroup);
-            componentGroup.AppendNode(node);
-
-            JArray references = (JArray) link.References;
-            if (references != null)
+            void DoComponentChildren(SENodeGroup componentGroup,
+                String parent)
             {
+                dynamic[] children = mapNode.LinksByLinkType(SVGGlobal.ComponentChildType)
+                    .Where((a) => String.Compare((String) a.Parent, parent, true) == 0)
+                    .ToArray();
+                if (children.Length == 0)
+                    return;
+                SENodeGroup refGroup = new SENodeGroup("ref", true);
+                componentGroup.AppendChild(refGroup);
+
+                foreach (dynamic child in children)
+                {
+                    String targetName = child.LinkTarget;
+                    this.MakeComponent(
+                        mapNode,
+                        child,
+                        refGroup,
+                        targetName);
+                }
+            }
+
+            void DoReferences(SENodeGroup componentGroup)
+            {
+                JArray references = (JArray)link.References;
+                if (references == null)
+                    return;
+                if (references.Count == 0)
+                    return;
                 SENodeGroup refGroup = new SENodeGroup("ref", true);
                 componentGroup.AppendChild(refGroup);
 
@@ -266,6 +273,31 @@ namespace BreastRadiology.XUnitTests
                     refGroup.AppendNode(refNode);
                 }
             }
+
+            String linkTarget = link?.LinkTarget;
+            //Debug.Assert(linkTarget != "imageInstance");
+
+            // we never link components to previous child links, not should next item
+            // link to this items children. Each component stands alone.
+            this.previousChildLinks = new Object[0];
+            String linkTargetUrl = link.LinkTarget.ToObject<String>();
+            String linkSource = link.LinkSource.ToObject<String>();
+            String componentHRef = link.ComponentHRef.ToObject<String>().Replace("{SDName}", linkSource.LastUriPart());
+
+            SENode node = new SENode(0,
+                this.componentColor,
+                new String[] { link.CardinalityLeft?.ToString(), link.CardinalityRight?.ToString() },
+                componentHRef);
+            node.AddTextLine(linkTargetUrl, componentHRef);
+
+            String types = link.Types?.ToObject<String>();
+            if (String.IsNullOrEmpty(types) == false)
+                node.AddTextLine(types, componentHRef);
+            SENodeGroup componentGroup = new SENodeGroup(node.AllText(), this.showCardinality);
+            group.AppendChild(componentGroup);
+            componentGroup.AppendNode(node);
+            DoReferences(componentGroup);
+            DoComponentChildren(componentGroup, linkTarget);
         }
     }
 }

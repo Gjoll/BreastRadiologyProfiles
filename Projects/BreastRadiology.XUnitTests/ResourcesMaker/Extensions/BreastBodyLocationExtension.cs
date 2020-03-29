@@ -706,13 +706,12 @@ namespace BreastRadiology.XUnitTests
                  */
                 {
                     StructureDefinition extensionStructDef = Self.BodyDistanceFromExtension.Value();
-                    ElementTreeSlice extensionSlice = e.ApplyExtension("distanceFromLandmark", extensionStructDef, true);
+                    ElementTreeSlice extensionSlice = e.ApplyExtension("distanceFromLandmark", extensionStructDef);
                     extensionSlice.ElementDefinition.ZeroToMany();
                     e.AddExtensionLink(extensionStructDef.Url,
                         new SDefEditor.Cardinality(extensionSlice.ElementDefinition),
                         "Distance From Landmark, like nipple, chest wall, skin.",
-                        Global.ElementAnchor(extensionSlice.ElementDefinition),
-                        false);
+                        Global.ElementAnchor(extensionSlice.ElementDefinition));
                 }
                 e.IntroDoc
                     .ReviewedStatus("Needs review by KWA")

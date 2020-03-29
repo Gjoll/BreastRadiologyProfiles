@@ -169,10 +169,9 @@ namespace BreastRadiology.XUnitTests
         }
 
         public ElementTreeSlice ApplyExtension(String name,
-            StructureDefinition sd,
-            bool showChildren)
+            StructureDefinition sd)
         {
-            return this.ApplyExtension(name, sd.Url, showChildren);
+            return this.ApplyExtension(name, sd.Url);
         }
 
         public ElementTreeSlice ApplyExtension(ElementTreeNode extDef,
@@ -183,8 +182,7 @@ namespace BreastRadiology.XUnitTests
         }
 
         public ElementTreeSlice ApplyExtension(String name,
-            String extensionUrl,
-            bool showChildren)
+            String extensionUrl)
         {
             return this.ApplyExtension(this.Get("extension"), name, extensionUrl);
         }
@@ -332,7 +330,6 @@ namespace BreastRadiology.XUnitTests
 
             dynamic packet = new JObject();
             packet.LinkType = "fragment";
-            packet.ShowChildren = false;
             packet.LinkTarget = sd.Url;
             this.SDef.AddExtension(Global.ResourceMapLinkUrl, new FhirString(packet.ToString()));
             return this;
@@ -361,39 +358,53 @@ namespace BreastRadiology.XUnitTests
         public SDefEditor AddExtensionLink(String url,
             Cardinality cardinalityLeft,
             String localName,
-            String componentRef,
-            bool showChildren)
+            String componentRef)
         {
-            this.sDef.AddExtensionLink(url, cardinalityLeft, localName, componentRef, showChildren);
+            this.sDef.AddExtensionLink(url, cardinalityLeft, localName, componentRef);
             return this;
         }
 
-        public SDefEditor AddComponentLink(String url,
+        public dynamic AddComponentLink(String url,
             Cardinality cardinalityLeft,
             Cardinality cardinalityRight,
             String componentRef,
             String types,
             params String[] targets)
         {
-            this.sDef.AddComponentLink(url,
+            return this.sDef.AddComponentLink(url,
                 cardinalityLeft,
                 cardinalityRight,
                 componentRef,
                 types,
                 targets);
+        }
+
+        public dynamic AddComponentChildLink(String url,
+            String parent,
+            Cardinality cardinalityLeft,
+            Cardinality cardinalityRight,
+            String componentRef,
+            String types,
+            params String[] targets)
+        {
+            return this.sDef.AddComponentChildLink(url,
+                parent,
+                cardinalityLeft,
+                cardinalityRight,
+                componentRef,
+                types,
+                targets);
+        }
+
+        public SDefEditor AddTargetLink(String url, Cardinality cardinalityLeft)
+        {
+            this.SDef.AddTargetLink(url, cardinalityLeft);
             return this;
         }
 
-
-        public SDefEditor AddTargetLink(String url, Cardinality cardinalityLeft, bool showChildren)
+        public SDefEditor AddValueSetLink(ValueSet vs)
         {
-            this.SDef.AddTargetLink(url, cardinalityLeft, showChildren);
-            return this;
-        }
-
-        public SDefEditor AddValueSetLink(ValueSet vs, bool showChildren)
-        {
-            this.SDef.AddValueSetLink(vs, showChildren);
+            this.SDef.AddValueSetLink(vs);
             return this;
         }
 
@@ -640,8 +651,7 @@ namespace BreastRadiology.XUnitTests
                 )
                 ;
             this.AddTargetLink(profile.Url.Trim(),
-                new SDefEditor.Cardinality(retVal.ElementDefinition),
-                false);
+                new SDefEditor.Cardinality(retVal.ElementDefinition));
 
             return retVal;
         }
@@ -661,8 +671,7 @@ namespace BreastRadiology.XUnitTests
                     )
                 ;
             this.AddTargetLink(profile.Url,
-                new SDefEditor.Cardinality(sliceDef),
-                false);
+                new SDefEditor.Cardinality(sliceDef));
         }
 
         public void SliceComponentSize(String sliceName,

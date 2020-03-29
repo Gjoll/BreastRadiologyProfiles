@@ -325,7 +325,6 @@ namespace BreastRadiology.XUnitTests
             // all the necessary objects to be created.
             this.HeaderFragment = AcrHeaderFragment.Value();
             this.ImagingContextExtension.Value();
-            this.ImageRegionExtension.Value();
 
             this.SaveAll();
         }
