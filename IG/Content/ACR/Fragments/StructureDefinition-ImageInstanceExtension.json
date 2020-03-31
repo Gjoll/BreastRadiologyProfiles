@@ -47,7 +47,7 @@
   "title": "Image Instance Extension",
   "status": "draft",
   "description": "<b>Image Instance Extension</b>\n\nSpecifies DICOM Instance",
-  "fhirVersion": "4.0.0",
+  "fhirVersion": "4.0.1",
   "kind": "complex-type",
   "abstract": false,
   "context": [

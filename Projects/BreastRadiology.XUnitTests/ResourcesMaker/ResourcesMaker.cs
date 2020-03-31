@@ -52,7 +52,6 @@ namespace BreastRadiology.XUnitTests
         public const String Group_Examples = "Examples";
 
         public static String BiRadCitation = "-- Bi-Rads® Atlas — Mammography Fifth Ed. 2013";
-        //#const FHIRVersion FVersion = FHIRVersion.N4_0_0;
 
         const String ProfileVersion = "0.0.2";
         const PublicationStatus ProfileStatus = PublicationStatus.Draft;
@@ -119,7 +118,7 @@ namespace BreastRadiology.XUnitTests
                     .Status(PublicationStatus.Draft)
                 ;
 
-            retVal.SDef.FhirVersion = FHIRVersion.N4_0_0;
+            retVal.SDef.FhirVersion = FHIRVersion.N4_0_1;
 
             this.Editors.Add(retVal.SDef.Url, retVal);
 

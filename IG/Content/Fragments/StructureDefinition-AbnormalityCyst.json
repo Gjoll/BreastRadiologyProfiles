@@ -139,7 +139,7 @@
   "title": "Cyst",
   "status": "draft",
   "description": "<b>Cyst Abnormality Observation</b>\n\nThis resource and referenced child resources contain \ninformation about a cyst abnormality observation",
-  "fhirVersion": "4.0.0",
+  "fhirVersion": "4.0.1",
   "kind": "resource",
   "abstract": false,
   "type": "Observation",

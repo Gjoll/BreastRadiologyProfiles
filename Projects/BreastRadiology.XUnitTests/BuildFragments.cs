@@ -28,7 +28,7 @@ namespace BreastRadiology.XUnitTests
     [TestClass]
     public sealed class BuildFragments : IDisposable
     {
-        const String BaseDirName = "BreastRadiologyProfiles";
+        const String BaseDirName = "BreastRadiologyProfilesV2";
 
         String BaseDir
         {
@@ -449,7 +449,7 @@ namespace BreastRadiology.XUnitTests
             Trace.WriteLine("Starting B7_RunPublisher");
             try
             {
-                String executingDir = Path.Combine(DirHelper.FindParentDir("BreastRadiologyProfiles"),
+                String executingDir = Path.Combine(DirHelper.FindParentDir("BreastRadiologyProfilesV2"),
                     "IG",
                     "guide");
                 String jarPath = Path.Combine(executingDir, "input-cache", "org.hl7.fhir.publisher.jar");
@@ -556,7 +556,7 @@ namespace BreastRadiology.XUnitTests
             fv.StatusInfo += this.StatusInfo;
             fv.StatusWarnings += this.StatusWarnings;
             fv.ValidatorArgs = $" -ig {resourcesDir} ";
-            // C:\Development\HL7\BreastRadiologyProfiles\IG\Guide\input
+            // C:\Development\HL7\BreastRadiologyProfilesV2\IG\Guide\input
             bool success = fv.ValidateDir(this.examplesDir, "*.json", "4.0.0");
             StringBuilder sb = new StringBuilder();
             fv.FormatMessages(sb);
@@ -572,7 +572,7 @@ namespace BreastRadiology.XUnitTests
             fv.StatusInfo += this.StatusInfo;
             fv.StatusWarnings += this.StatusWarnings;
             fv.ValidatorArgs = $" -ig {resourcesDir} -ig {acrResourcesDir}";
-            // C:\Development\HL7\BreastRadiologyProfiles\IG\Guide\input
+            // C:\Development\HL7\BreastRadiologyProfilesV2\IG\Guide\input
             bool success = fv.ValidateDir(this.acrExamplesDir, "*.json", "4.0.0");
             StringBuilder sb = new StringBuilder();
             fv.FormatMessages(sb);
@@ -633,7 +633,7 @@ namespace BreastRadiology.XUnitTests
             dt = CreateTable();
 
             String resourcesDir = Path.Combine(
-                DirHelper.FindParentDir("BreastRadiologyProfiles"),
+                DirHelper.FindParentDir("BreastRadiologyProfilesV2"),
                 "IG",
                 "Content",
                 "Resources"

@@ -41,7 +41,7 @@ namespace BreastRadiology.XUnitTests
             this.snapNode = l.Create(this.baseDef.Snapshot.Element);
         }
 
-        const String BaseDirName = "BreastRadiologyProfiles";
+        const String BaseDirName = "BreastRadiologyProfilesV2";
         Int32 anchorNum = 1;
 
         void DumpHeader(CodeBlockNested b,

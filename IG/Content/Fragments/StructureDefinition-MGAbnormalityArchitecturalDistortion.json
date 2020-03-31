@@ -103,7 +103,7 @@
   "title": "Mammography Architectural Distortion",
   "status": "draft",
   "description": "<b>Architectural Distortion Observation</b>",
-  "fhirVersion": "4.0.0",
+  "fhirVersion": "4.0.1",
   "kind": "resource",
   "abstract": false,
   "type": "Observation",

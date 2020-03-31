@@ -43,7 +43,7 @@
   "title": "Mammography Breast Density",
   "status": "draft",
   "description": "<b>Breast Density Observation</b>",
-  "fhirVersion": "4.0.0",
+  "fhirVersion": "4.0.1",
   "kind": "resource",
   "abstract": false,
   "type": "Observation",

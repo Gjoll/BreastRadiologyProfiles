@@ -38,7 +38,7 @@ namespace BreastRadiology.XUnitTests
     [TestClass]
     public sealed class BuildGG
     {
-        const String BaseDirName = "BreastRadiologyProfiles";
+        const String BaseDirName = "BreastRadiologyProfilesV2";
 
         String BaseDir
         {
@@ -603,7 +603,7 @@ namespace BreastRadiology.XUnitTests
         //        row[source.umlsCol] = sb.ToString();
         //    }
 
-        //    String baseDir = DirHelper.FindParentDir("BreastRadiologyProfiles");
+        //    String baseDir = DirHelper.FindParentDir("BreastRadiologyProfilesV2");
         //    String filePath = Path.Combine(baseDir,
         //        "..",
         //        "BRDocs",

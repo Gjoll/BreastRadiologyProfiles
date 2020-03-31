@@ -31,7 +31,7 @@
   "title": "Image Region Extension",
   "status": "draft",
   "description": "<b>Image Region Extension</b>\n\nSpecifies region in a DICOM image or frame",
-  "fhirVersion": "4.0.0",
+  "fhirVersion": "4.0.1",
   "kind": "complex-type",
   "abstract": false,
   "context": [

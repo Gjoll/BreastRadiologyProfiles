@@ -88,8 +88,9 @@ namespace BreastRadiology.XUnitTests
 
         public void AddGrouping(String groupId, String name, String description)
         {
-            Debug.Assert(groupId.StartsWith(" ") == false);
-            Debug.Assert(groupId.EndsWith(" ") == false);
+            groupId = groupId.Trim();
+            name = name.Trim();
+            description = description.Trim();
 
             this.implementationGuide.AddGrouping(groupId, name, description);
             if (this.groupIds.Contains(groupId))

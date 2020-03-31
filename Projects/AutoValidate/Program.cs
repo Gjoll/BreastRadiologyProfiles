@@ -9,10 +9,10 @@ namespace AutoValidate
 {
     class Program
     {
-        String ValidationPath = @"C:\Development\HL7\BreastRadiologyProfiles\Cache\validation.xml";
-        String ResourcesPath = @"C:\Development\HL7\BreastRadiologyProfiles\IG\Content\Resources";
-        String ExamplesPath = @"C:\Development\HL7\BreastRadiologyProfiles\IG\Content\Examples";
-        String JarPath = @"C:\Development\HL7\BreastRadiologyProfiles\Projects\BreastRadiology.XUnitTests\org.hl7.fhir.validator.jar";
+        String ValidationPath = @"C:\Development\HL7\BreastRadiologyProfilesV2\Cache\validation.xml";
+        String ResourcesPath = @"C:\Development\HL7\BreastRadiologyProfilesV2\IG\Content\Resources";
+        String ExamplesPath = @"C:\Development\HL7\BreastRadiologyProfilesV2\IG\Content\Examples";
+        String JarPath = @"C:\Development\HL7\BreastRadiologyProfilesV2\Projects\BreastRadiology.XUnitTests\org.hl7.fhir.validator.jar";
 
         FileSystemWatcher watcher;
 

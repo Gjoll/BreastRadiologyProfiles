@@ -127,7 +127,7 @@
   "title": "Mammography Calcification",
   "status": "draft",
   "description": "<b>Calcification Abnormality Observation</b>",
-  "fhirVersion": "4.0.0",
+  "fhirVersion": "4.0.1",
   "kind": "resource",
   "abstract": false,
   "type": "Observation",
