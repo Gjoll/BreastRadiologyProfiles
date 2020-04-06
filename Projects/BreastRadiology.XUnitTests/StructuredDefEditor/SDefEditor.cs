@@ -565,7 +565,7 @@ namespace BreastRadiology.XUnitTests
                 slice.CreateNode(valueX);
             }
 
-            String componentRef = Global.ElementAnchor(slice.ElementDefinition);
+            String componentRef = Global.ElementAnchor(valueSet, slice.ElementDefinition);
             this.AddComponentLink(componentName,
                 new SDefEditor.Cardinality(slice.ElementDefinition),
                 null,

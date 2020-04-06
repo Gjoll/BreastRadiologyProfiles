@@ -15,7 +15,7 @@
     },
     {
       "url": "http://www.fragment.com/maplink",
-      "valueString": "{\r\n  \"LinkType\": \"component\",\r\n  \"ShowChildren\": false,\r\n  \"CardinalityLeft\": \"0..*\",\r\n  \"LinkTarget\": \"Corresponds With\",\r\n  \"ComponentHRef\": \"StructureDefinition-{SDName}-definitions.html#Observation.component:correspondsWith\",\r\n  \"Types\": \"CodeableConcept\",\r\n  \"References\": [\r\n    \"http://hl7.org/fhir/us/breast-radiology/ValueSet/CorrespondsWithVS\"\r\n  ]\r\n}"
+      "valueString": "{\r\n  \"LinkType\": \"component\",\r\n  \"ShowChildren\": false,\r\n  \"CardinalityLeft\": \"0..*\",\r\n  \"LinkTarget\": \"Corresponds With\",\r\n  \"ComponentHRef\": \"StructureDefinition-CorrespondsWithVS-definitions.html#Observation.component:correspondsWith\",\r\n  \"Types\": \"CodeableConcept\",\r\n  \"References\": [\r\n    \"http://hl7.org/fhir/us/breast-radiology/ValueSet/CorrespondsWithVS\"\r\n  ]\r\n}"
     }
   ],
   "url": "http://hl7.org/fhir/us/breast-radiology/StructureDefinition/CorrespondsWithFragment",

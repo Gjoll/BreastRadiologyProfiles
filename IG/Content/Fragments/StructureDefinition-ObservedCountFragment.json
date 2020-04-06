@@ -15,7 +15,7 @@
     },
     {
       "url": "http://www.fragment.com/maplink",
-      "valueString": "{\r\n  \"LinkType\": \"component\",\r\n  \"ShowChildren\": false,\r\n  \"CardinalityLeft\": \"0..1\",\r\n  \"LinkTarget\": \"Observed Count\",\r\n  \"ComponentHRef\": \"StructureDefinition-{SDName}-definitions.html#Observation.component:obsCount\",\r\n  \"Types\": \"Quantity or Range\",\r\n  \"References\": []\r\n}"
+      "valueString": "{\r\n  \"LinkType\": \"component\",\r\n  \"ShowChildren\": false,\r\n  \"CardinalityLeft\": \"0..1\",\r\n  \"LinkTarget\": \"Observed Count\",\r\n  \"ComponentHRef\": \"StructureDefinition-ObservedCountFragment-definitions.html#Observation.component:obsCount\",\r\n  \"Types\": \"Quantity or Range\",\r\n  \"References\": []\r\n}"
     }
   ],
   "url": "http://hl7.org/fhir/us/breast-radiology/StructureDefinition/ObservedCountFragment",

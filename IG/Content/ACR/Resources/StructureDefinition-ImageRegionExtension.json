@@ -19,11 +19,11 @@
     },
     {
       "url": "http://www.fragment.com/maplink",
-      "valueString": "{\r\n  \"LinkType\": \"component\",\r\n  \"ShowChildren\": false,\r\n  \"CardinalityLeft\": \"1..1\",\r\n  \"LinkTarget\": \"RegionType\",\r\n  \"ComponentHRef\": \"StructureDefinition-{SDName}-definitions.html#Extension.extension:regionType\",\r\n  \"Types\": \"CodeableConcept\",\r\n  \"References\": [\r\n    \"http://hl7.org/fhir/us/breast-radiology/ValueSet/GraphicTypeVS\"\r\n  ]\r\n}"
+      "valueString": "{\r\n  \"LinkType\": \"component\",\r\n  \"ShowChildren\": false,\r\n  \"CardinalityLeft\": \"1..1\",\r\n  \"LinkTarget\": \"RegionType\",\r\n  \"ComponentHRef\": \"StructureDefinition-ImageRegionExtension-definitions.html#Extension.extension:regionType\",\r\n  \"Types\": \"CodeableConcept\",\r\n  \"References\": [\r\n    \"http://hl7.org/fhir/us/breast-radiology/ValueSet/GraphicTypeVS\"\r\n  ]\r\n}"
     },
     {
       "url": "http://www.fragment.com/maplink",
-      "valueString": "{\r\n  \"LinkType\": \"component\",\r\n  \"ShowChildren\": false,\r\n  \"CardinalityLeft\": \"1..1\",\r\n  \"LinkTarget\": \"Coordinates\",\r\n  \"ComponentHRef\": \"StructureDefinition-{SDName}-definitions.html#Extension.extension:coordinates\",\r\n  \"Types\": \"string\",\r\n  \"References\": []\r\n}"
+      "valueString": "{\r\n  \"LinkType\": \"component\",\r\n  \"ShowChildren\": false,\r\n  \"CardinalityLeft\": \"1..1\",\r\n  \"LinkTarget\": \"Coordinates\",\r\n  \"ComponentHRef\": \"StructureDefinition-ImageRegionExtension-definitions.html#Extension.extension:coordinates\",\r\n  \"Types\": \"string\",\r\n  \"References\": []\r\n}"
     },
     {
       "url": "http://www.fragment.com/mapname",
@@ -46,7 +46,7 @@
       "telecom": [
         {
           "system": "url",
-          "value": "http://www.hl7.org/Special/committees/cic"
+          "value": "http://hl7.org/Special/committees/cic"
         }
       ]
     }

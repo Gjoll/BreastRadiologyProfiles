@@ -23,7 +23,7 @@
     },
     {
       "url": "http://www.fragment.com/maplink",
-      "valueString": "{\r\n  \"LinkType\": \"extension\",\r\n  \"ShowChildren\": false,\r\n  \"CardinalityLeft\": \"1..1\",\r\n  \"ComponentHRef\": \"StructureDefinition-{SDName}-definitions.html#Observation.bodySite.extension:breastBodyLocation\",\r\n  \"LocalName\": \"Breast Body Location\",\r\n  \"LinkTarget\": \"http://hl7.org/fhir/us/breast-radiology/StructureDefinition/BreastBodyLocationExtension\"\r\n}"
+      "valueString": "{\r\n  \"LinkType\": \"extension\",\r\n  \"ShowChildren\": false,\r\n  \"CardinalityLeft\": \"1..1\",\r\n  \"ComponentHRef\": \"StructureDefinition-BreastBodyLocationRequiredFragment-definitions.html#Observation.bodySite.extension:breastBodyLocation\",\r\n  \"LocalName\": \"Breast Body Location\",\r\n  \"LinkTarget\": \"http://hl7.org/fhir/us/breast-radiology/StructureDefinition/BreastBodyLocationExtension\"\r\n}"
     }
   ],
   "url": "http://hl7.org/fhir/us/breast-radiology/StructureDefinition/BreastBodyLocationRequiredFragment",

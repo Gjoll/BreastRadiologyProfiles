@@ -158,7 +158,7 @@ namespace BreastRadiology.XUnitTests
                         e.AddComponentLink("Report",
                             new SDefEditor.Cardinality(sectionSlice.ElementDefinition),
                             new SDefEditor.Cardinality(entry),
-                            Global.ElementAnchor(sectionSlice.ElementDefinition),
+                            Global.ElementAnchor(s, sectionSlice.ElementDefinition),
                             "Section",
                             targets);
                     }
@@ -194,7 +194,7 @@ namespace BreastRadiology.XUnitTests
                         e.AddComponentLink("Impressions",
                             new SDefEditor.Cardinality(sectionSlice.ElementDefinition),
                             new SDefEditor.Cardinality(entry),
-                            Global.ElementAnchor(sectionSlice.ElementDefinition),
+                            Global.ElementAnchor(s, sectionSlice.ElementDefinition),
                             "Section",
                             targets);
                     }
@@ -230,7 +230,7 @@ namespace BreastRadiology.XUnitTests
                         e.AddComponentLink("Findings Right Breast",
                             new SDefEditor.Cardinality(sectionSlice.ElementDefinition),
                             new SDefEditor.Cardinality(entry),
-                            Global.ElementAnchor(sectionSlice.ElementDefinition),
+                            Global.ElementAnchor(s, sectionSlice.ElementDefinition),
                             "Section",
                             targets);
                     }
@@ -266,7 +266,7 @@ namespace BreastRadiology.XUnitTests
                         e.AddComponentLink("Findings Left Breast",
                             new SDefEditor.Cardinality(sectionSlice.ElementDefinition),
                             new SDefEditor.Cardinality(entry),
-                            Global.ElementAnchor(sectionSlice.ElementDefinition),
+                            Global.ElementAnchor(s, sectionSlice.ElementDefinition),
                             "Section",
                             targets);
                     }
@@ -299,7 +299,7 @@ namespace BreastRadiology.XUnitTests
                         e.AddComponentLink("Related Resources",
                             new SDefEditor.Cardinality(sectionSlice.ElementDefinition),
                             new SDefEditor.Cardinality(entry),
-                            Global.ElementAnchor(sectionSlice.ElementDefinition),
+                            Global.ElementAnchor(s, sectionSlice.ElementDefinition),
                             "Section",
                             targets);
                     }
@@ -336,7 +336,7 @@ namespace BreastRadiology.XUnitTests
                         e.AddComponentLink("Recommendations",
                             new SDefEditor.Cardinality(sectionSlice.ElementDefinition),
                             new SDefEditor.Cardinality(entry),
-                            Global.ElementAnchor(sectionSlice.ElementDefinition),
+                            Global.ElementAnchor(s, sectionSlice.ElementDefinition),
                             "Section",
                             targets);
                     }
@@ -369,7 +369,7 @@ namespace BreastRadiology.XUnitTests
                         e.AddComponentLink("Admin",
                             new SDefEditor.Cardinality(sectionSlice.ElementDefinition),
                             new SDefEditor.Cardinality(entry),
-                            Global.ElementAnchor(sectionSlice.ElementDefinition),
+                            Global.ElementAnchor(s, sectionSlice.ElementDefinition),
                             "Section",
                             targets);
                     }

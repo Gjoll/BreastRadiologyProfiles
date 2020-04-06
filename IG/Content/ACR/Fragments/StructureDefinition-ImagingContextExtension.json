@@ -19,19 +19,19 @@
     },
     {
       "url": "http://www.fragment.com/maplink",
-      "valueString": "{\r\n  \"LinkType\": \"extension\",\r\n  \"ShowChildren\": false,\r\n  \"CardinalityLeft\": \"0..*\",\r\n  \"ComponentHRef\": \"StructureDefinition-{SDName}-definitions.html#Extension.extension:studyUid\",\r\n  \"LocalName\": \"Study Uid\",\r\n  \"LinkTarget\": \"http://hl7.org/fhir/us/breast-radiology/StructureDefinition/ImageStudyExtension\"\r\n}"
+      "valueString": "{\r\n  \"LinkType\": \"extension\",\r\n  \"ShowChildren\": false,\r\n  \"CardinalityLeft\": \"0..*\",\r\n  \"ComponentHRef\": \"StructureDefinition-ImagingContextExtension-definitions.html#Extension.extension:studyUid\",\r\n  \"LocalName\": \"Study Uid\",\r\n  \"LinkTarget\": \"http://hl7.org/fhir/us/breast-radiology/StructureDefinition/ImageStudyExtension\"\r\n}"
     },
     {
       "url": "http://www.fragment.com/maplink",
-      "valueString": "{\r\n  \"LinkType\": \"extension\",\r\n  \"ShowChildren\": false,\r\n  \"CardinalityLeft\": \"0..1\",\r\n  \"ComponentHRef\": \"StructureDefinition-{SDName}-definitions.html#Extension.extension:derivedFrom\",\r\n  \"LocalName\": \"Derived From\",\r\n  \"LinkTarget\": \"http://hl7.org/fhir/us/breast-radiology/StructureDefinition/ImageStudyDerivedFromExtension\"\r\n}"
+      "valueString": "{\r\n  \"LinkType\": \"extension\",\r\n  \"ShowChildren\": false,\r\n  \"CardinalityLeft\": \"0..1\",\r\n  \"ComponentHRef\": \"StructureDefinition-ImagingContextExtension-definitions.html#Extension.extension:derivedFrom\",\r\n  \"LocalName\": \"Derived From\",\r\n  \"LinkTarget\": \"http://hl7.org/fhir/us/breast-radiology/StructureDefinition/ImageStudyDerivedFromExtension\"\r\n}"
     },
     {
       "url": "http://www.fragment.com/maplink",
-      "valueString": "{\r\n  \"LinkType\": \"extension\",\r\n  \"ShowChildren\": false,\r\n  \"CardinalityLeft\": \"1..1\",\r\n  \"ComponentHRef\": \"StructureDefinition-{SDName}-definitions.html#Extension.extension:seriesUid\",\r\n  \"LocalName\": \"Series Uid\",\r\n  \"LinkTarget\": \"http://hl7.org/fhir/us/breast-radiology/StructureDefinition/ImageSeriesExtension\"\r\n}"
+      "valueString": "{\r\n  \"LinkType\": \"extension\",\r\n  \"ShowChildren\": false,\r\n  \"CardinalityLeft\": \"1..1\",\r\n  \"ComponentHRef\": \"StructureDefinition-ImagingContextExtension-definitions.html#Extension.extension:seriesUid\",\r\n  \"LocalName\": \"Series Uid\",\r\n  \"LinkTarget\": \"http://hl7.org/fhir/us/breast-radiology/StructureDefinition/ImageSeriesExtension\"\r\n}"
     },
     {
       "url": "http://www.fragment.com/maplink",
-      "valueString": "{\r\n  \"LinkType\": \"extension\",\r\n  \"ShowChildren\": false,\r\n  \"CardinalityLeft\": \"0..*\",\r\n  \"ComponentHRef\": \"StructureDefinition-{SDName}-definitions.html#Extension.extension:instance\",\r\n  \"LocalName\": \"Instance\",\r\n  \"LinkTarget\": \"http://hl7.org/fhir/us/breast-radiology/StructureDefinition/ImageInstanceExtension\"\r\n}"
+      "valueString": "{\r\n  \"LinkType\": \"extension\",\r\n  \"ShowChildren\": false,\r\n  \"CardinalityLeft\": \"0..*\",\r\n  \"ComponentHRef\": \"StructureDefinition-ImagingContextExtension-definitions.html#Extension.extension:instance\",\r\n  \"LocalName\": \"Instance\",\r\n  \"LinkTarget\": \"http://hl7.org/fhir/us/breast-radiology/StructureDefinition/ImageInstanceExtension\"\r\n}"
     }
   ],
   "url": "http://hl7.org/fhir/us/breast-radiology/StructureDefinition/ImagingContextExtension",

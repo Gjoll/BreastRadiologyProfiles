@@ -70,7 +70,7 @@ namespace BreastRadiology.XUnitTests
                     e.AddComponentLink("RegionType",
                         new SDefEditor.Cardinality(extensionSlice.ElementDefinition),
                         null,
-                        Global.ElementAnchor(extensionSlice.ElementDefinition),
+                        Global.ElementAnchor(s, extensionSlice.ElementDefinition),
                         "CodeableConcept",
                         regionType.Url);
                 }
@@ -102,7 +102,7 @@ namespace BreastRadiology.XUnitTests
                     e.AddComponentLink("Coordinates",
                         new SDefEditor.Cardinality(extensionSlice.ElementDefinition),
                         null,
-                        Global.ElementAnchor(extensionSlice.ElementDefinition),
+                        Global.ElementAnchor(s, extensionSlice.ElementDefinition),
                         "string");
                 }
 

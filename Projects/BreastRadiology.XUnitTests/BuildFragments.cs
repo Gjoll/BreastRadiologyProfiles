@@ -549,20 +549,35 @@ namespace BreastRadiology.XUnitTests
         }
 
         [TestMethod]
-        public void F_ValidateExamples()
+        public void F_ValidateCovid()
         {
             FhirValidator fv = new FhirValidator(Path.Combine(this.cacheDir, "validation.xml"));
             fv.StatusErrors += this.StatusErrors;
             fv.StatusInfo += this.StatusInfo;
             fv.StatusWarnings += this.StatusWarnings;
-            fv.ValidatorArgs = $" -ig {resourcesDir} ";
-            // C:\Development\HL7\BreastRadiologyProfilesV2\IG\Guide\input
-            bool success = fv.ValidateDir(this.examplesDir, "*.json", "4.0.0");
+            // fv.ValidatorArgs = @$" -ig C:\Development\covid-19\input";
+            bool success = fv.ValidateDir(@"C:\Development\covid-19\input", "*.json", "4.0.0");
             StringBuilder sb = new StringBuilder();
             fv.FormatMessages(sb);
             Trace.WriteLine(sb.ToString());
             Assert.IsTrue(success);
         }
+
+        //[TestMethod]
+        //public void F_ValidateExamples()
+        //{
+        //    FhirValidator fv = new FhirValidator(Path.Combine(this.cacheDir, "validation.xml"));
+        //    fv.StatusErrors += this.StatusErrors;
+        //    fv.StatusInfo += this.StatusInfo;
+        //    fv.StatusWarnings += this.StatusWarnings;
+        //    fv.ValidatorArgs = $" -ig {resourcesDir} ";
+        //    // C:\Development\HL7\BreastRadiologyProfilesV2\IG\Guide\input
+        //    bool success = fv.ValidateDir(this.examplesDir, "*.json", "4.0.0");
+        //    StringBuilder sb = new StringBuilder();
+        //    fv.FormatMessages(sb);
+        //    Trace.WriteLine(sb.ToString());
+        //    Assert.IsTrue(success);
+        //}
 
         [TestMethod]
         public void G_ValidateAcrExamples()
@@ -579,6 +594,80 @@ namespace BreastRadiology.XUnitTests
             Trace.WriteLine(sb.ToString());
             Assert.IsTrue(success);
         }
+
+        [TestMethod]
+        public void Z_CheckTelecom()
+        {
+            ContactDetail Contact()
+            {
+                ContactDetail cd = new ContactDetail();
+                cd.Telecom.Add(new ContactPoint
+                {
+                    System = ContactPoint.ContactPointSystem.Url,
+                    Value = Global.ContactUrl
+                });
+                return cd;
+            }
+
+            foreach (String sDefPath in Directory.GetFiles(
+                @"C:\Development\HL7\BreastRadiologyProfilesV2\IG\Guide\input\resources",
+                "*.json"))
+            {
+                FhirJsonParser parser = new FhirJsonParser();
+                DomainResource dr = parser.Parse<DomainResource>(File.ReadAllText(sDefPath));
+                switch (dr)
+                {
+                    case CodeSystem cs:
+                    {
+                        if (cs.Contact.Count == 0)
+                        {
+                            cs.Contact.Add(Contact());
+                            cs.SaveJson(sDefPath);
+                        }
+
+                        Debug.Assert(cs.Contact.Count > 0);
+                        ContactDetail cd = cs.Contact[0];
+                        Debug.Assert(cd.Telecom.Count == 1);
+                        Debug.Assert(cd.Telecom[0].Value ==
+                                     @"http://hl7.org/Special/committees/cic");
+                    }
+                        break;
+
+                    case ValueSet vs:
+                    {
+                        if (vs.Contact.Count == 0)
+                        {
+                            vs.Contact.Add(Contact());
+                            vs.SaveJson(sDefPath);
+                        }
+
+                            Debug.Assert(vs.Contact.Count > 0);
+                        ContactDetail cd = vs.Contact[0];
+                        Debug.Assert(cd.Telecom.Count == 1);
+                        Debug.Assert(cd.Telecom[0].Value ==
+                                     @"http://hl7.org/Special/committees/cic");
+                    }
+                        break;
+                    case StructureDefinition sDef:
+                    {
+                        if (sDef.Contact.Count == 0)
+                        {
+                            sDef.Contact.Add(Contact());
+                            sDef.SaveJson(sDefPath);
+                        }
+
+                            Debug.Assert(sDef.Contact.Count > 0);
+                        ContactDetail cd = sDef.Contact[0];
+                        Debug.Assert(cd.Telecom.Count == 1);
+                        Debug.Assert(cd.Telecom[0].Value == 
+                                                  @"http://hl7.org/Special/committees/cic");
+                    }
+                        break;
+                }
+
+            }
+        }
+
 
         [TestMethod]
         public void Z_ValidateInputResources()

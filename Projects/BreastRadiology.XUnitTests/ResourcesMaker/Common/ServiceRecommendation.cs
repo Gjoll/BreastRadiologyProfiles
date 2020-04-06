@@ -53,7 +53,7 @@ namespace BreastRadiology.XUnitTests
                     e.AddComponentLink("Service Recommendation Code",
                         new SDefEditor.Cardinality(codeDef),
                         null,
-                        Global.ElementAnchor(codeDef),
+                        Global.ElementAnchor(s, codeDef),
                         "CodeableConcept",
                         binding.Url);
                 }

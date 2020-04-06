@@ -51,7 +51,7 @@ namespace BreastRadiology.XUnitTests
                 e.AddComponentLink($"Observed Count",
                     new SDefEditor.Cardinality(slice.ElementDefinition),
                     null,
-                    Global.ElementAnchor(sliceDef),
+                    Global.ElementAnchor(e.SDef, sliceDef),
                     "Quantity or Range");
             });
     }

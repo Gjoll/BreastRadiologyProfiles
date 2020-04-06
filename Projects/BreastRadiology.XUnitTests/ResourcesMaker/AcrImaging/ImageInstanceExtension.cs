@@ -44,7 +44,7 @@ namespace BreastRadiology.XUnitTests
                     e.AddComponentLink(sliceName.ToMachineName(),
                         new SDefEditor.Cardinality(extensionSlice.ElementDefinition),
                         null,
-                        Global.ElementAnchor(extensionSlice.ElementDefinition),
+                        Global.ElementAnchor(e.SDef, extensionSlice.ElementDefinition),
                         "Oid");
                 }
 
@@ -125,7 +125,7 @@ namespace BreastRadiology.XUnitTests
                     e.AddComponentLink(sliceName.ToMachineName(),
                         new SDefEditor.Cardinality(extensionSlice.ElementDefinition),
                         null,
-                        Global.ElementAnchor(extensionSlice.ElementDefinition),
+                        Global.ElementAnchor(s, extensionSlice.ElementDefinition),
                         "Oid");
                     extensionSlice.ElementDefinition
                         .Single()
@@ -172,7 +172,7 @@ namespace BreastRadiology.XUnitTests
                     e.AddExtensionLink(extensionStructDef.Url,
                         new SDefEditor.Cardinality(extensionDef),
                         "Image Region",
-                        Global.ElementAnchor(extensionDef),
+                        Global.ElementAnchor(s, extensionDef),
                         false);
                 }
 

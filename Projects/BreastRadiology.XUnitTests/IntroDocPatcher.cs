@@ -89,7 +89,7 @@ namespace BreastRadiology.XUnitTests
                 {
                     String shortDesc =
                         $"{slice.ElementDefinition.Short} [{slice.ElementDefinition.Min}..{slice.ElementDefinition.Max}]";
-                    String anchor = Global.ElementAnchor(slice.ElementDefinition).Replace("{SDName}", sd.Name);
+                    String anchor = Global.ElementAnchor(sd, slice.ElementDefinition).Replace("{SDName}", sd.Name);
                     items.Add(shortDesc, $"<a href=\"{anchor}\">{shortDesc}</a>");
                 }
 

@@ -1,4 +1,5 @@
 ﻿using FhirKhit.Tools;
+using FhirKhit.Tools.R4;
 using Hl7.Fhir.Model;
 using PreFhir;
 using System;
@@ -29,8 +30,7 @@ namespace BreastRadiology.XUnitTests
         public const String RiskAssessmentUrl = "http://hl7.org/fhir/StructureDefinition/RiskAssessment";
         public const String ServiceRequestUrl = "http://hl7.org/fhir/StructureDefinition/ServiceRequest";
 
-        public const String ContactUrl = "http://www.hl7.org/Special/committees/cic";
-
+        public const String ContactUrl = "http://hl7.org/Special/committees/cic";
         public const String BaseFragmentUrl = "http://www.fragment.com/";
         public static String FragmentUrl = $"{BaseFragmentUrl}fragment";
         public static String IsFragmentExtensionUrl = $"{BaseFragmentUrl}isFragment";
@@ -41,14 +41,10 @@ namespace BreastRadiology.XUnitTests
         public static String ResourceMapNameUrl = $"{BaseFragmentUrl}mapname";
         public static String ResourceMapLinkUrl = $"{BaseFragmentUrl}maplink";
 
-        public static String ElementAnchor(ElementDefinition e)
+        public static String ElementAnchor(DomainResource r, ElementDefinition e)
         {
-            Int32 pIndex = e.ElementId.IndexOf('.');
-            if (pIndex < 0)
-                pIndex = e.ElementId.Length;
-            String id = "{SDName}" + e.ElementId.Substring(pIndex);
-
-            return $"StructureDefinition-" + "{SDName}" + $"-definitions.html#{e.ElementId}";
+            String resourceName = r.GetUrl().LastUriPart();
+            return $"StructureDefinition-" + resourceName + $"-definitions.html#{e.ElementId}";
         }
     }
 }

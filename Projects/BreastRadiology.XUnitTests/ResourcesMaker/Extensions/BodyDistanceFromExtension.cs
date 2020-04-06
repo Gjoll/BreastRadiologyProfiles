@@ -120,7 +120,7 @@ namespace BreastRadiology.XUnitTests
                     e.AddComponentLink("Landmark",
                         new SDefEditor.Cardinality(extensionSlice.ElementDefinition),
                         null,
-                        Global.ElementAnchor(extensionSlice.ElementDefinition),
+                        Global.ElementAnchor(e.SDef, extensionSlice.ElementDefinition),
                         "CodeableConcept",
                         landMarkBinding.Url);
                 }
@@ -147,7 +147,7 @@ namespace BreastRadiology.XUnitTests
                     e.AddComponentLink("Distance From LandMark",
                         new SDefEditor.Cardinality(extensionSlice.ElementDefinition),
                         null,
-                        Global.ElementAnchor(extensionSlice.ElementDefinition),
+                        Global.ElementAnchor(s, extensionSlice.ElementDefinition),
                         "Quantity",
                         binding);
                 }

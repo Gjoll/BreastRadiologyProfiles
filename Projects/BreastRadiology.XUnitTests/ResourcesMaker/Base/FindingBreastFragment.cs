@@ -38,7 +38,7 @@ namespace BreastRadiology.XUnitTests
                     e.AddComponentLink("Finding Value",
                         new SDefEditor.Cardinality(valueXDef),
                         null,
-                        Global.ElementAnchor(valueXDef),
+                        Global.ElementAnchor(s, valueXDef),
                         "CodeableConcept",
                         binding.Url);
                 }

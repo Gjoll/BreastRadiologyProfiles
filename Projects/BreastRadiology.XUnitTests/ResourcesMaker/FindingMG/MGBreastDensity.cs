@@ -183,7 +183,7 @@ namespace BreastRadiology.XUnitTests
                 e.AddComponentLink("Breast Density Value",
                     new SDefEditor.Cardinality(e.Select("value[x]")),
                     null,
-                    Global.ElementAnchor(valueXDef),
+                    Global.ElementAnchor(s, valueXDef),
                     "CodeableConcept",
                     binding.Url);
             });

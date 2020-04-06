@@ -564,7 +564,7 @@ namespace BreastRadiology.XUnitTests
                     e.AddComponentLink("Laterality",
                         new SDefEditor.Cardinality(sliceDef),
                         null,
-                        Global.ElementAnchor(sliceDef),
+                        Global.ElementAnchor(s, sliceDef),
                         "CodeableConcept",
                         binding.Url);
                 }
@@ -597,7 +597,7 @@ namespace BreastRadiology.XUnitTests
                     e.AddComponentLink("Quadrant",
                         new SDefEditor.Cardinality(sliceDef),
                         null,
-                        Global.ElementAnchor(sliceDef),
+                        Global.ElementAnchor(s, sliceDef),
                         "CodeableConcept",
                         binding.Url);
                 }
@@ -630,7 +630,7 @@ namespace BreastRadiology.XUnitTests
                     e.AddComponentLink("Region",
                         new SDefEditor.Cardinality(sliceDef),
                         null,
-                        Global.ElementAnchor(extensionNode.ElementDefinition),
+                        Global.ElementAnchor(s, extensionNode.ElementDefinition),
                         "CodeableConcept",
                         binding.Url);
                 }
@@ -663,7 +663,7 @@ namespace BreastRadiology.XUnitTests
                     e.AddComponentLink("ClockDirection",
                         new SDefEditor.Cardinality(sliceDef),
                         null,
-                        Global.ElementAnchor(extensionNode.ElementDefinition),
+                        Global.ElementAnchor(s, extensionNode.ElementDefinition),
                         "CodeableConcept",
                         binding.Url);
                 }
@@ -695,7 +695,7 @@ namespace BreastRadiology.XUnitTests
                     e.AddComponentLink("Depth",
                         new SDefEditor.Cardinality(sliceDef),
                         null,
-                        Global.ElementAnchor(extensionNode.ElementDefinition),
+                        Global.ElementAnchor(s, extensionNode.ElementDefinition),
                         "CodeableConcept",
                         binding.Url);
                 }
@@ -711,7 +711,7 @@ namespace BreastRadiology.XUnitTests
                     e.AddExtensionLink(extensionStructDef.Url,
                         new SDefEditor.Cardinality(extensionSlice.ElementDefinition),
                         "Distance From Landmark, like nipple, chest wall, skin.",
-                        Global.ElementAnchor(extensionSlice.ElementDefinition),
+                        Global.ElementAnchor(s, extensionSlice.ElementDefinition),
                         false);
                 }
                 e.IntroDoc
